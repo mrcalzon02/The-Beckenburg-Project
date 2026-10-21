@@ -1,0 +1,600 @@
+{
+  "version": 1,
+  "id": "WLD-04",
+  "title": "Widow's Peak Fire Lookout",
+  "region": "Northern Woodlands",
+  "scale": "Small / vertical outpost",
+  "status": "rough-layout-only",
+  "intent": "A small hillside station clusters around a steep but bounded path and a tall lookout. Investigations span hut, ruined station and clearing; the tower is an optional risky observation branch.",
+  "site_bounds": [
+    0,
+    -2,
+    58,
+    88
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Forest-road van apron",
+      "bounds": [
+        20,
+        72,
+        36,
+        84
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Lower trail gate",
+      "bounds": [
+        20,
+        60,
+        36,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lower",
+      "name": "Lower signed trail",
+      "bounds": [
+        8,
+        42,
+        20,
+        60
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "bend",
+      "name": "Boulder trail bend",
+      "bounds": [
+        20,
+        30,
+        36,
+        42
+      ],
+      "y": 3,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "clearing",
+      "name": "Hillside clearing",
+      "bounds": [
+        20,
+        14,
+        40,
+        30
+      ],
+      "y": 6,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "hut",
+      "name": "Maintenance hut",
+      "bounds": [
+        4,
+        14,
+        20,
+        26
+      ],
+      "y": 6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "ruin",
+      "name": "Ruined ranger station",
+      "bounds": [
+        40,
+        14,
+        54,
+        30
+      ],
+      "y": 6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "store",
+      "name": "Ranger store",
+      "bounds": [
+        40,
+        30,
+        50,
+        40
+      ],
+      "y": 6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "return",
+      "name": "Contour return path",
+      "bounds": [
+        36,
+        42,
+        50,
+        60
+      ],
+      "y": 3,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "foot",
+      "name": "Tower footing / fenced base",
+      "bounds": [
+        24,
+        2,
+        36,
+        14
+      ],
+      "y": 6,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "landing",
+      "name": "Tower midway landing",
+      "bounds": [
+        24,
+        2,
+        28,
+        14
+      ],
+      "y": 10.5,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cab",
+      "name": "Lookout cab",
+      "bounds": [
+        24,
+        2,
+        30,
+        8
+      ],
+      "y": 15,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "deck",
+      "name": "Lookout exterior deck",
+      "bounds": [
+        30,
+        2,
+        36,
+        8
+      ],
+      "y": 15,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          78.0
+        ],
+        [
+          28.0,
+          0,
+          66.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "lower",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          14.0,
+          0,
+          51.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "lower",
+      "b": "bend",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          14.0,
+          0,
+          51.0
+        ],
+        [
+          28.0,
+          3,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L04",
+      "a": "bend",
+      "b": "clearing",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          3,
+          36.0
+        ],
+        [
+          30.0,
+          6,
+          22.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L05",
+      "a": "clearing",
+      "b": "hut",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          12.0,
+          6,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "hut",
+      "b": "bend",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          12.0,
+          6,
+          20.0
+        ],
+        [
+          28.0,
+          3,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L07",
+      "a": "clearing",
+      "b": "ruin",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          47.0,
+          6,
+          22.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "ruin",
+      "b": "store",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          47.0,
+          6,
+          22.0
+        ],
+        [
+          45.0,
+          6,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "store",
+      "b": "return",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          45.0,
+          6,
+          35.0
+        ],
+        [
+          43.0,
+          3,
+          51.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L10",
+      "a": "return",
+      "b": "entry",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          43.0,
+          3,
+          51.0
+        ],
+        [
+          28.0,
+          0,
+          66.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L11",
+      "a": "return",
+      "b": "clearing",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          43.0,
+          3,
+          51.0
+        ],
+        [
+          30.0,
+          6,
+          22.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L12",
+      "a": "clearing",
+      "b": "foot",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          30.0,
+          6,
+          8.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "foot",
+      "b": "landing",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          6,
+          8.0
+        ],
+        [
+          26.0,
+          10.5,
+          8.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4.5,
+      "construction": "Reserve at least 7.2 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L14",
+      "a": "landing",
+      "b": "cab",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          26.0,
+          10.5,
+          8.0
+        ],
+        [
+          27.0,
+          15,
+          5.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4.5,
+      "construction": "Reserve at least 7.2 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L15",
+      "a": "cab",
+      "b": "deck",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          27.0,
+          15,
+          5.0
+        ],
+        [
+          33.0,
+          15,
+          5.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    }
+  ],
+  "loops": [
+    [
+      "bend",
+      "clearing",
+      "hut",
+      "bend"
+    ],
+    [
+      "entry",
+      "lower",
+      "bend",
+      "clearing",
+      "return",
+      "entry"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      28.0,
+      0,
+      78.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        28.0,
+        0,
+        74.372
+      ],
+      [
+        28.0,
+        0,
+        66.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "clearing",
+      "point": [
+        30.0,
+        6,
+        22.0
+      ],
+      "installation": "Grounded clearing containment posts"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "hut",
+      "point": [
+        12.0,
+        6,
+        20.0
+      ],
+      "installation": "Maintenance wash purification"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "ruin",
+      "point": [
+        47.0,
+        6,
+        22.0
+      ],
+      "installation": "Watchkeeper remembrance station"
+    }
+  ],
+  "circulation": "Contour return avoids requiring a retreat down the same narrow ascent. Tower has one guarded stair route and a visible warning before ascent; no mandatory anchor, rite or objective may depend on surviving a blocked cab.",
+  "systems": "Wind exposure increases above the clearing. Radio, sighting table and ordinary weather instruments belong to station history, not free player equipment. Lightning exposure must be telegraphed and bounded.",
+  "campaign": "Final transmission transcript in station and sighting log in cab. A mission can investigate the transmissions without forcing a tower climb during a hunt.",
+  "refine": [
+    "Refine tower into at least four actual stair flights with landings; the two diagram connectors are grouped reservations.",
+    "The single tower exit is a deliberate risk requiring playtest; do not promise hunt fairness from graph connectivity.",
+    "Hillside grades and contour return need terrain support and collision tests."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ]
+}
