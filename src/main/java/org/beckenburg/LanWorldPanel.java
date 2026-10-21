@@ -319,8 +319,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 if(p.size()!=4&&p.size()!=9)throw new IllegalArgumentException("Bad Twin pose packet");
                 String member=p.get(1);
                 if(!member.equals("b"))throw new IllegalArgumentException("Unknown paired actor");
-                int eventTick=LanProtocol.integer(p.get(p.size()-2),0,99999999);
-                if(p.size()==4)eventTick=LanProtocol.integer(p.get(3),0,99999999);
+                int eventTick=LanProtocol.integer(p.get(p.size()==4?3:7),0,99999999);
                 if(eventTick>=pairedGhostTicks.getOrDefault(member,-1)){
                     pairedGhostTicks.put(member,eventTick);
                     if(p.size()==4){
