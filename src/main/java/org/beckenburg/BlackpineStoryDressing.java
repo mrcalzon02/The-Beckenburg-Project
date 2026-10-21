@@ -73,14 +73,14 @@ public final class BlackpineStoryDressing {
                 var r=base.room(story.room());double fy=r.y();
                 // Utility runs are surface mounted on the real north wall, away from door openings.
                 wall("electric_branch",r.id(),r.x1()-1.3,r.z0()+.085,0);
-                wall("wall_damage",r.id(),r.x0()+.095,r.z1()-1.35,Math.PI/2);
+                wall("wall_damage",r.id(),r.x0()+.095,r.z1()-1.35,-Math.PI/2);
                 wall("damp_wall",r.id(),r.x1()-1.45,r.z1()-.095,Math.PI);
                 item("floor_wear",r.id(),r.x0()+1.4,fy+.004,r.z1()-1.4,.23,"floor-surface");
                 // A readable room ledger also participates in the map data hash, without a new UI.
                 sockets.add(new Socket("blackpine-room-history-"+r.id(),"site_history",r.id(),r.x0()+.10,fy,r.z0()+.1,0,
                     story.formerUse()+" | "+story.heat()+" | "+story.condition()+" | "+story.recentTrace()));
             }
-            wall("calendar",1,45.9,42.7,-Math.PI/2);wall("calendar",9,23.9,6.5,-Math.PI/2);
+            wall("calendar",1,45.9,42.7,Math.PI/2);wall("calendar",9,23.9,6.5,Math.PI/2);
             solid("camp_bed",4,14.9,22.4,0,.465,1.025,.82);
             solid("camp_bed",4,9.1,23.8,0,.465,1.025,.82);
             solid("camp_bed",4,14.9,15.5,0,.465,1.025,.82);
@@ -103,12 +103,12 @@ public final class BlackpineStoryDressing {
             item("clothes",7,39.05,0,8.9,.4,"floor");item("food_trash",7,38.0,0,10.8,.5,"floor");
             for(int room:new int[]{4,6,10}){
                 var r=base.room(room);item("level_story_work_boots_worn",room,r.x0()+.5,0,r.z1()-2.3,0,"floor");
-                wall("coat",room,r.x0()+.10,r.z1()-3.2,Math.PI/2);
+                wall("coat",room,r.x0()+.10,r.z1()-3.2,-Math.PI/2);
             }
             for(double[] at:new double[][]{{5,10.9,40.8},{0,51.2,21.3},{1,45.2,43.2}})
                 solid("leak_bucket",(int)at[0],at[1],at[2],0,.22,.22,.52);
-            boards(4,15.88,18,-Math.PI/2);boards(7,34.12,8,Math.PI/2);
-            wall("damp_wall",4,15.87,18.15,-Math.PI/2);wall("damp_wall",7,34.13,8.1,Math.PI/2);
+            boards(4,15.88,18,Math.PI/2);boards(7,34.12,8,-Math.PI/2);
+            wall("damp_wall",4,15.87,18.15,Math.PI/2);wall("damp_wall",7,34.13,8.1,-Math.PI/2);
             // Readable service sheet uses its own support, so it never floats on a wall or in a route.
             item("records",8,49,1.006,47,0,"wooden_crate_1");
             sockets.add(new Socket("blackpine-story-SERVICE","story",8,49,1.006,47,0,"SERVICE"));
