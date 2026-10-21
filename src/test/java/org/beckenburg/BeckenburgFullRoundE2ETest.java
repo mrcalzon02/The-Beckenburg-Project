@@ -152,7 +152,15 @@ public final class BeckenburgFullRoundE2ETest {
             for(LanCase.Tool tool:LanCase.Tool.values()){
                 int a=owner.position(),b=guest.position();
                 owner.client.scan(tool);
-                String answer=owner.await("ACCEPT|SCAN|",a,deadline);
+                // A negative host response is actionable diagnostic evidence, not
+                // a reason to wait 55 seconds for a success packet that will never arrive.
+                // Preserve the original positive acceptance requirement.
+                String answer=owner.awaitFrame(response->
+                    response.startsWith("ACCEPT|SCAN|")||response.startsWith("REJECT|"),
+                    a,Math.min(deadline,System.nanoTime()+TimeUnit.SECONDS.toNanos(8)),
+                    "host scan answer "+tool);
+                check(answer.startsWith("ACCEPT|SCAN|"),
+                    "Host rejected "+tool+" scan after valid adjacent travel: "+answer);
                 check(answer.contains("READING"),"scan is a measured result, not an auto clue: "+tool);
                 String record=guest.awaitFrame(f->f.startsWith("CASEFILE|")&&
                     f.contains("|"+tool+"|"),b,deadline,"shared casefile "+tool);
