@@ -23,3 +23,4 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 - **WLD-04 / Widow's Peak Fire Lookout**: 13 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-05 / Dead Man's Claim**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-06 / Drowned Fisherman's Wharf**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+- **WLD-07 / Saint Bartholomew's Forgotten Cemetery**: 13 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
