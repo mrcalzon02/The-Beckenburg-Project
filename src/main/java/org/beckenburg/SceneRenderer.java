@@ -1541,10 +1541,21 @@ public final class SceneRenderer {
         boolean visible=session.outcome()==InvestigationSession.Outcome.ACTIVE
                 &&session.ghostManifesting();
         int room=session.ghostRoom();
+        GhostIdentity.Type type=session.ghostVisualType();
+        boolean twins=type.baseType()==GhostIdentity.Type.TWINS;
         Apparition figure=visible?new Apparition(
                 map.centerX(room),map.floorY(room),map.centerZ(room),
-                LanGhostAnimation.Phase.LURK,0,0,false,session.ghostVisualType().ancient(),
-                CharacterVisuals.ghost(session.ghostVisualType())):null;
+                LanGhostAnimation.Phase.LURK,0,0,false,type.ancient(),
+                twins?(type.ancient()?"ancient_twins_a":"twins_a"):CharacterVisuals.ghost(type)):null;
+        if(visible&&twins){
+            var primary=new LanGhostSpatial.Pose(room,map.centerX(room),
+                map.floorY(room),map.centerZ(room),0);
+            var secondary=TwinGhostPair.position(map,primary,(int)Math.floor(clock*10)).get(1).pose();
+            setAdditionalGhostBodies(List.of(new Apparition(
+                secondary.x(),secondary.y(),secondary.z(),LanGhostAnimation.Phase.LURK,
+                secondary.heading(),0,false,type.ancient(),
+                type.ancient()?"ancient_twins_b":"twins_b")));
+        }else setAdditionalGhostBodies(List.of());
         // Solo mode has room-based manifestation authority rather than a LAN
         // world pose. Preserve that placement, but render the actual archetype.
         render(map,room,visible,
