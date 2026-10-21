@@ -8,6 +8,7 @@ public final class LivedAssets {
         "level_lived_shelf","level_lived_pantry","level_lived_curio","level_lived_sideboard","level_lived_card_table",
         "level_lived_ottoman","level_lived_trunk","level_lived_desk_clutter","level_lived_kitchenware","level_lived_toy_basket","level_lived_linen_press",
         "level_loose_mug","level_loose_bottle","level_loose_book","level_loose_tin","level_loose_bowl","level_loose_toy","level_loose_frame","level_loose_candlestick",
+        "level_laundry_washer","level_laundry_hamper","level_bath_shower","level_bath_shower_rail","level_bathroom_wall_set","level_laundry_shelf","level_bathroom_caddy","level_yard_clothesline","level_school_urinal","level_event_smoke_alarm",
         "level_event_phone","level_event_alarm_clock","level_event_fire_alarm","level_event_radio","level_event_boom_box","level_event_side_table");
     public static final Set<String> SOURCED=Set.of("coffee_table_1","display_cabinet_mp_1","display_cabinet_mp_2_1","shelf_mp_4","table_large_2",
         "cardboard_box_1","cardboard_box_2","wooden_crate_2","metal_barrel_mp_1","book_mp_3","book_mp_4","book_mp_5","notebook_1","pencil_mp_1",

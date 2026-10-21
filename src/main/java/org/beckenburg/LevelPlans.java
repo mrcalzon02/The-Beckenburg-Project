@@ -138,7 +138,7 @@ public final class LevelPlans {
         b.flight(10,8,41.3,16.7,41.3,21.5,0,3);
         b.window(1,12,12,0,23,false);b.window(2,12,12,0,15,false);
         b.window(6,12,12,3,23,false);b.window(7,12,12,3,15,false);
-        b.furnish();b.floorProp("level_bath_basin",5,25.4,13.5,1,-Math.PI/2,.325,.25,.86);
+        b.furnish();b.floorProp("level_bath_basin",5,25.63,13.5,1,Math.PI/2,.325,.25,.86);
         b.floorProp("level_stall",10,35,14,1,0,1.415,.095,1.32);
         b.floorProp("level_stall",10,35,20,1,0,1.415,.095,1.32);
         for(double x:new double[]{33,34.5})b.floorProp("level_hay_bale",10,x,10.6,1,0,.6,.39,.69);
@@ -312,7 +312,7 @@ public final class LevelPlans {
                     floorProp("wardrobe_mp_1",i,r.x1()-1,r.z1()-1,.9,0,.7,.45,1.9);
                 }else if(n.contains("bath")||n.contains("washroom")||n.contains("hydrotherapy")){
                     prop("toilet_mp_1",i,x,y+.235,z,1,0,.29,.45,.8,"floor-plumbing");
-                    floorProp("level_bath_basin",i,r.x1()-.5,r.z0()+1.5,1,-Math.PI/2,.325,.25,.86);
+                    floorProp("level_bath_basin",i,r.x1()-.37,r.z0()+1.5,1,Math.PI/2,.325,.25,.86);
                     floorProp("level_bathtub",i,r.x1()-1.1,r.z1()-.6,1,0,.8,.375,.6);
                 }else if(n.contains("boiler")||n.contains("cellar")||n.contains("maintenance")||n.contains("shed")||n.contains("barn")){
                     floorProp("shelf_mp_6",i,r.x0()+1.5,r.z0()+.16,1,0,.41,.11,1.29);
@@ -337,6 +337,7 @@ public final class LevelPlans {
         }
         LevelDefinition finish(int breaker,int main){
             clearCirculation();
+            DomesticFitout.populate(this);
             if(id.equals("house")||id.equals("farmhouse")||id.equals("school"))LevelDressing.populate(this);
             List<Prop> furnishingOverlays=new ArrayList<>();
             for(Prop p:props){
@@ -354,7 +355,7 @@ public final class LevelPlans {
             // Choose the aged skin after placement/support/collision are finalized.
             // Clean library assets remain available without changing any geometry.
             props.replaceAll(p->new Prop(LivedAssets.worn(p.mesh()),p.room(),p.x(),p.y(),p.z(),p.scale(),p.yaw(),p.halfX(),p.halfZ(),p.height(),LivedAssets.worn(p.support())));
-            Room van=rooms.get(14);return new LevelDefinition(id,"production-2026-10-20-van-human-scale-v1",title,rooms,portals,stairs,voids,props,sockets,colliders,new Dock(van.cx(),0,van.cz(),-Math.PI/2),ambience);
+            Room van=rooms.get(14);return new LevelDefinition(id,"production-2026-10-20-lived-location-v1",title,rooms,portals,stairs,voids,props,sockets,colliders,new Dock(van.cx(),0,van.cz(),-Math.PI/2),ambience);
         }
         boolean circulation(Prop p,double x,double z){
             Room r=rooms.get(p.room());double hx=Math.abs(Math.cos(p.yaw()))*p.halfX()+Math.abs(Math.sin(p.yaw()))*p.halfZ();

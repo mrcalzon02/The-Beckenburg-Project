@@ -278,5 +278,85 @@
     "all_diffuse_images_replaced": true,
     "clean_glb_sha256": "a7b3daa835dbd35b7e281cb40ea0d618ec212714cc4edc4a1710a3d4ba6101d3",
     "worn_glb_sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4"
+  },
+  {
+    "family": "level_laundry_washer",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "135b2ddd9975c0d82f651a0a4493126c3f24ca5f73e49c84ab6827e7bdfd6de9",
+    "worn_glb_sha256": "f11cae0d1344441dadf1831617486fc8d454577a30070908cbb43780ffdbd3c1"
+  },
+  {
+    "family": "level_laundry_hamper",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "5a0fb5582259f47573973b66b46e7bdc99a875b80436ddc63ff2676b0aab8f6a",
+    "worn_glb_sha256": "72ebdcae7f040670391aef469d5ce779689b4560d2ed6970caac2d8813836d68"
+  },
+  {
+    "family": "level_bathroom_wall_set",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "02b4837e894f2a4f6d1c59437181c26ced1be7c32b139224df2f09c52eed5361",
+    "worn_glb_sha256": "a931177eb1c376bd47d72cacc3ede03272eb868ea5a6c8da979e27b7896515bb"
+  },
+  {
+    "family": "level_laundry_shelf",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "4127e9f0fdc90a1ac868a45dbedf8561031be3b40e56bf5003013c4742b4b5ff",
+    "worn_glb_sha256": "0762ab6403e0027893a072a39bc5afdf9d25e9c7b20e478d76f8db479979c3b9"
+  },
+  {
+    "family": "level_bathroom_caddy",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "f5fe3f688d739200a99cdb0fd220347fc5f42f8df9494f1f0dfea18b3f36b99e",
+    "worn_glb_sha256": "24ffc38af8916e2208549f36d15ae9b6e1d37fdacf8427a876f921bf67cc3362"
+  },
+  {
+    "family": "level_yard_clothesline",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "aff2a60eec067a970d59b1ff781d664d2a2be50c3744700345283f510cebed3d",
+    "worn_glb_sha256": "96de551e3d3f9d21e4208c8c73296a709a3f8fdf1527afb1757bd678dea0df60"
+  },
+  {
+    "family": "level_event_smoke_alarm",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "c258c06381a95d24fc567486c2f34998cf808e0f43b5e0e8db85208f33dfa580",
+    "worn_glb_sha256": "2947f530f1b55ba748bed05a1ff11c2aefa00f7e898df490a44bcb80f12c6e4c"
+  },
+  {
+    "family": "level_school_urinal",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "a4bdd0245a332e11ada1cff5dcb2a7a2e84d7df0b3caa650e1de6664758e4621",
+    "worn_glb_sha256": "8b465dca94150b6f232b1c1cb5b287b995add34d62d2c7c4a1c6e2a881b367f3"
+  },
+  {
+    "family": "level_bath_shower",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "3863c18f7f10ef371e98d274b27f4bf2c06359157ce900861811632a8f141727",
+    "worn_glb_sha256": "bba9bdea9ab14b4f42976a950c4de440fe9f0ea3a253ef06c4dba53ed63466e1"
+  },
+  {
+    "family": "level_bath_shower_rail",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "28c18907a9353cdceb2411a1a8995127862aadb5684dccda6de05c9a3d4bfb2c",
+    "worn_glb_sha256": "ae47a71ea41706abde9efd408ce305e6d2e60dcbf4d4e2c4d176a67b25b9082e"
   }
 ]

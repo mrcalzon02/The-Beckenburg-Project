@@ -3,9 +3,9 @@ import java.util.*;
 import org.beckenburg.LevelDefinition.*;
 /** Authored event fixtures. Only accepted host events or physical player use change state. */
 public final class HauntedFixtures {
-    public enum Kind { PHONE,ALARM_CLOCK,FIRE_ALARM,RADIO,BOOM_BOX,SINK_BATH,SINK_KITCHEN;
-        public String mesh(){return name().startsWith("SINK")?null:"level_event_"+name().toLowerCase(Locale.ROOT)+"_worn";}
-        public LanSound.Cue cue(){return switch(this){case PHONE->LanSound.Cue.PHONE_RING;case ALARM_CLOCK->LanSound.Cue.ALARM_BELL;case FIRE_ALARM->LanSound.Cue.FIRE_BELL;case RADIO,BOOM_BOX->LanSound.Cue.RADIO_PLAY;default->LanSound.Cue.RUNNING_WATER;};}
+    public enum Kind { PHONE,ALARM_CLOCK,FIRE_ALARM,RADIO,BOOM_BOX,SINK_BATH,SINK_KITCHEN,WASHING_MACHINE,SMOKE_ALARM;
+        public String mesh(){return name().startsWith("SINK")||this==WASHING_MACHINE?null:"level_event_"+name().toLowerCase(Locale.ROOT)+"_worn";}
+        public LanSound.Cue cue(){return switch(this){case PHONE->LanSound.Cue.PHONE_RING;case ALARM_CLOCK->LanSound.Cue.ALARM_BELL;case FIRE_ALARM,SMOKE_ALARM->LanSound.Cue.FIRE_BELL;case WASHING_MACHINE->LanSound.Cue.ELECTRIC_HUM;case RADIO,BOOM_BOX->LanSound.Cue.RADIO_PLAY;default->LanSound.Cue.RUNNING_WATER;};}
     }
     public record State(int id,Kind kind,int room,double x,double y,double z,double yaw,boolean active,int water,int until,int revision){}
     public record Sound(State source,LanSound.Cue cue){}
@@ -21,6 +21,7 @@ public final class HauntedFixtures {
                 double x=p.x()+Math.cos(p.yaw())*.22-Math.sin(p.yaw())*.20,z=p.z()+Math.sin(p.yaw())*.22+Math.cos(p.yaw())*.20;
                 add(Kind.ALARM_CLOCK,p.room(),x,p.y()+.644,z,p.yaw());
             }
+            if(LivedAssets.base(p.mesh()).equals("level_laundry_washer"))add(Kind.WASHING_MACHINE,p.room(),p.x(),p.y()+.76,p.z(),p.yaw());
             if(p.mesh().equals("level_bath_basin"))add(Kind.SINK_BATH,p.room(),p.x(),p.y()+.86,p.z(),p.yaw());
             if(p.mesh().equals("level_kitchen_counter"))add(Kind.SINK_KITCHEN,p.room(),p.x()-Math.cos(p.yaw())*.6,p.y()+.92,p.z()-Math.sin(p.yaw())*.6,p.yaw());
         }

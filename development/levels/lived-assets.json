@@ -877,6 +877,506 @@
       "family": "level_event_side_table"
     },
     {
+      "id": "level_laundry_washer",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "135b2ddd9975c0d82f651a0a4493126c3f24ca5f73e49c84ab6827e7bdfd6de9",
+      "bytes": 141496,
+      "triangles": 1704,
+      "bounds": [
+        [
+          -0.3149999976158142,
+          0.0,
+          -0.3530000150203705
+        ],
+        [
+          0.3149999976158142,
+          0.8725000619888306,
+          0.37049999833106995
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_laundry_washer.blend",
+      "variant": "clean",
+      "family": "level_laundry_washer"
+    },
+    {
+      "id": "level_laundry_hamper",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "5a0fb5582259f47573973b66b46e7bdc99a875b80436ddc63ff2676b0aab8f6a",
+      "bytes": 428248,
+      "triangles": 6209,
+      "bounds": [
+        [
+          -0.23850201070308685,
+          0.004999999888241291,
+          -0.19402113556861877
+        ],
+        [
+          0.23850201070308685,
+          0.5961679220199585,
+          0.19364610314369202
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_laundry_hamper.blend",
+      "variant": "clean",
+      "family": "level_laundry_hamper"
+    },
+    {
+      "id": "level_laundry_shelf",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "4127e9f0fdc90a1ac868a45dbedf8561031be3b40e56bf5003013c4742b4b5ff",
+      "bytes": 73196,
+      "triangles": 512,
+      "bounds": [
+        [
+          -0.375,
+          1.0519225597381592,
+          -0.006538815796375275
+        ],
+        [
+          0.375,
+          1.5299999713897705,
+          0.24500000476837158
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_laundry_shelf.blend",
+      "variant": "clean",
+      "family": "level_laundry_shelf"
+    },
+    {
+      "id": "level_bathroom_caddy",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f5fe3f688d739200a99cdb0fd220347fc5f42f8df9494f1f0dfea18b3f36b99e",
+      "bytes": 50680,
+      "triangles": 312,
+      "bounds": [
+        [
+          -0.12999999523162842,
+          0.0,
+          -0.16500000655651093
+        ],
+        [
+          0.16500000655651093,
+          0.675000011920929,
+          0.12999999523162842
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_bathroom_caddy.blend",
+      "variant": "clean",
+      "family": "level_bathroom_caddy"
+    },
+    {
+      "id": "level_yard_clothesline",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "aff2a60eec067a970d59b1ff781d664d2a2be50c3744700345283f510cebed3d",
+      "bytes": 105212,
+      "triangles": 1166,
+      "bounds": [
+        [
+          -1.8361401557922363,
+          0.0,
+          -0.4000000059604645
+        ],
+        [
+          1.8361401557922363,
+          1.9600000381469727,
+          0.4000000059604645
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_yard_clothesline.blend",
+      "variant": "clean",
+      "family": "level_yard_clothesline"
+    },
+    {
+      "id": "level_event_smoke_alarm",
+      "library": "events",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c258c06381a95d24fc567486c2f34998cf808e0f43b5e0e8db85208f33dfa580",
+      "bytes": 77860,
+      "triangles": 800,
+      "bounds": [
+        [
+          -0.07800000160932541,
+          0.012000001966953278,
+          -0.0
+        ],
+        [
+          0.07800000160932541,
+          0.1680000126361847,
+          0.06450000405311584
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_event_smoke_alarm.blend",
+      "variant": "clean",
+      "family": "level_event_smoke_alarm"
+    },
+    {
+      "id": "level_school_urinal",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "a4bdd0245a332e11ada1cff5dcb2a7a2e84d7df0b3caa650e1de6664758e4621",
+      "bytes": 41892,
+      "triangles": 416,
+      "bounds": [
+        [
+          -0.18000000715255737,
+          0.41999998688697815,
+          -0.02250000089406967
+        ],
+        [
+          0.18000000715255737,
+          1.2340000867843628,
+          0.17000000178813934
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_school_urinal.blend",
+      "variant": "clean",
+      "family": "level_school_urinal"
+    },
+    {
+      "id": "level_bath_shower",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3863c18f7f10ef371e98d274b27f4bf2c06359157ce900861811632a8f141727",
+      "bytes": 146680,
+      "triangles": 1720,
+      "bounds": [
+        [
+          -0.47999998927116394,
+          0.007500000298023224,
+          -0.4595000147819519
+        ],
+        [
+          0.4814999997615814,
+          2.200000047683716,
+          0.4475000202655792
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_bath_shower.blend",
+      "variant": "clean",
+      "family": "level_bath_shower"
+    },
+    {
+      "id": "level_bath_shower_rail",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "28c18907a9353cdceb2411a1a8995127862aadb5684dccda6de05c9a3d4bfb2c",
+      "bytes": 102968,
+      "triangles": 1292,
+      "bounds": [
+        [
+          -0.7870000004768372,
+          0.24812008440494537,
+          -0.5199999809265137
+        ],
+        [
+          0.7870000004768372,
+          2.115635871887207,
+          0.3656359910964966
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_bath_shower_rail.blend",
+      "variant": "clean",
+      "family": "level_bath_shower_rail"
+    },
+    {
+      "id": "level_bathroom_wall_set",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "67a8a664a5be61337ac3814c438d6f160dd38dd58e0ba3ebf069c26f91d7977f",
+      "bytes": 86024,
+      "triangles": 442,
+      "bounds": [
+        [
+          -0.7820000052452087,
+          0.5199999809265137,
+          -0.004999995231628418
+        ],
+        [
+          0.28999999165534973,
+          1.9900000095367432,
+          0.1850000023841858
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_bathroom_wall_set.blend",
+      "variant": "clean",
+      "family": "level_bathroom_wall_set"
+    },
+    {
+      "id": "level_bathroom_wall_set_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "097825c0e6714bf0ae219cc9810bb82d090b385040d3378942ee009bb5999900",
+      "bytes": 92440,
+      "triangles": 442,
+      "bounds": [
+        [
+          -0.7820000052452087,
+          0.5199999809265137,
+          -0.004999995231628418
+        ],
+        [
+          0.28999999165534973,
+          1.9900000095367432,
+          0.1850000023841858
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_bathroom_wall_set_worn.blend",
+      "variant": "worn",
+      "family": "level_bathroom_wall_set"
+    },
+    {
+      "id": "level_bath_shower_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "bba9bdea9ab14b4f42976a950c4de440fe9f0ea3a253ef06c4dba53ed63466e1",
+      "bytes": 150860,
+      "triangles": 1720,
+      "bounds": [
+        [
+          -0.47999998927116394,
+          0.007500000298023224,
+          -0.4595000147819519
+        ],
+        [
+          0.4814999997615814,
+          2.200000047683716,
+          0.4475000202655792
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_bath_shower_worn.blend",
+      "variant": "worn",
+      "family": "level_bath_shower"
+    },
+    {
+      "id": "level_bath_shower_rail_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "ae47a71ea41706abde9efd408ce305e6d2e60dcbf4d4e2c4d176a67b25b9082e",
+      "bytes": 105412,
+      "triangles": 1292,
+      "bounds": [
+        [
+          -0.7870000004768372,
+          0.24812008440494537,
+          -0.5199999809265137
+        ],
+        [
+          0.7870000004768372,
+          2.115635871887207,
+          0.3656359910964966
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_bath_shower_rail_worn.blend",
+      "variant": "worn",
+      "family": "level_bath_shower_rail"
+    },
+    {
+      "id": "level_laundry_washer_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f11cae0d1344441dadf1831617486fc8d454577a30070908cbb43780ffdbd3c1",
+      "bytes": 145344,
+      "triangles": 1704,
+      "bounds": [
+        [
+          -0.3149999976158142,
+          0.0,
+          -0.3530000150203705
+        ],
+        [
+          0.3149999976158142,
+          0.8725000619888306,
+          0.37049999833106995
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_laundry_washer_worn.blend",
+      "variant": "worn",
+      "family": "level_laundry_washer"
+    },
+    {
+      "id": "level_laundry_hamper_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "72ebdcae7f040670391aef469d5ce779689b4560d2ed6970caac2d8813836d68",
+      "bytes": 429120,
+      "triangles": 6209,
+      "bounds": [
+        [
+          -0.23850201070308685,
+          0.004999999888241291,
+          -0.19402113556861877
+        ],
+        [
+          0.23850201070308685,
+          0.5961679220199585,
+          0.19364610314369202
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_laundry_hamper_worn.blend",
+      "variant": "worn",
+      "family": "level_laundry_hamper"
+    },
+    {
+      "id": "level_laundry_shelf_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "0762ab6403e0027893a072a39bc5afdf9d25e9c7b20e478d76f8db479979c3b9",
+      "bytes": 76432,
+      "triangles": 512,
+      "bounds": [
+        [
+          -0.375,
+          1.0519225597381592,
+          -0.006538815796375275
+        ],
+        [
+          0.375,
+          1.5299999713897705,
+          0.24500000476837158
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_laundry_shelf_worn.blend",
+      "variant": "worn",
+      "family": "level_laundry_shelf"
+    },
+    {
+      "id": "level_bathroom_caddy_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "24ffc38af8916e2208549f36d15ae9b6e1d37fdacf8427a876f921bf67cc3362",
+      "bytes": 53524,
+      "triangles": 312,
+      "bounds": [
+        [
+          -0.12999999523162842,
+          0.0,
+          -0.16500000655651093
+        ],
+        [
+          0.16500000655651093,
+          0.675000011920929,
+          0.12999999523162842
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_bathroom_caddy_worn.blend",
+      "variant": "worn",
+      "family": "level_bathroom_caddy"
+    },
+    {
+      "id": "level_yard_clothesline_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "96de551e3d3f9d21e4208c8c73296a709a3f8fdf1527afb1757bd678dea0df60",
+      "bytes": 106860,
+      "triangles": 1166,
+      "bounds": [
+        [
+          -1.8361401557922363,
+          0.0,
+          -0.4000000059604645
+        ],
+        [
+          1.8361401557922363,
+          1.9600000381469727,
+          0.4000000059604645
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_yard_clothesline_worn.blend",
+      "variant": "worn",
+      "family": "level_yard_clothesline"
+    },
+    {
+      "id": "level_event_smoke_alarm_worn",
+      "library": "events",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "2947f530f1b55ba748bed05a1ff11c2aefa00f7e898df490a44bcb80f12c6e4c",
+      "bytes": 81300,
+      "triangles": 800,
+      "bounds": [
+        [
+          -0.07800000160932541,
+          0.012000001966953278,
+          -0.0
+        ],
+        [
+          0.07800000160932541,
+          0.1680000126361847,
+          0.06450000405311584
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_event_smoke_alarm_worn.blend",
+      "variant": "worn",
+      "family": "level_event_smoke_alarm"
+    },
+    {
+      "id": "level_school_urinal_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "8b465dca94150b6f232b1c1cb5b287b995add34d62d2c7c4a1c6e2a881b367f3",
+      "bytes": 42840,
+      "triangles": 416,
+      "bounds": [
+        [
+          -0.18000000715255737,
+          0.41999998688697815,
+          -0.02250000089406967
+        ],
+        [
+          0.18000000715255737,
+          1.2340000867843628,
+          0.17000000178813934
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_school_urinal_worn.blend",
+      "variant": "worn",
+      "family": "level_school_urinal"
+    },
+    {
       "id": "level_event_phone_worn",
       "library": "events",
       "license": "CC0-1.0",
@@ -1927,6 +2427,56 @@
       "glb": "a7b3daa835dbd35b7e281cb40ea0d618ec212714cc4edc4a1710a3d4ba6101d3",
       "blend": "3b2083db3b70112e82e73354e97716cc8bf080cb9dc2958b2a624a79b44e0ab8",
       "preview": "cd5dcb8fda996ac85e122dfc5b224f20f6ff6fc76204ab4cd1aaab20a30b64b4"
+    },
+    "level_laundry_washer": {
+      "glb": "135b2ddd9975c0d82f651a0a4493126c3f24ca5f73e49c84ab6827e7bdfd6de9",
+      "blend": "3867f6c3c69017079b14e31cfe866ef4431a294ff9d1022cfaacfa6b160a9a33",
+      "preview": "559d27e3908aa912b56cf299983bd9230e22bfbcb6100ff7f3c72a848979932c"
+    },
+    "level_laundry_hamper": {
+      "glb": "5a0fb5582259f47573973b66b46e7bdc99a875b80436ddc63ff2676b0aab8f6a",
+      "blend": "e9f1fee5c3ee2ded02b12760ad3bd5433b43f240520efeab1b312be37b293bfe",
+      "preview": "b383cc22b591dbd6d729e81812fe6ac840bbeaa6b9ebc9ce5a5db83dc29b1490"
+    },
+    "level_laundry_shelf": {
+      "glb": "4127e9f0fdc90a1ac868a45dbedf8561031be3b40e56bf5003013c4742b4b5ff",
+      "blend": "6fd813d861b0922bb507a4dc67f4b447e73ed5a4a6f25912074954f238d7c36a",
+      "preview": "1cdb551433037bdb7f4f228737f85ae89e2774f8084ccdf38064b8d5996b1d53"
+    },
+    "level_bathroom_caddy": {
+      "glb": "f5fe3f688d739200a99cdb0fd220347fc5f42f8df9494f1f0dfea18b3f36b99e",
+      "blend": "9d0d3ab599472c52b59dc3e362b9054e3aad2769b95a329b712197ec2b28ab35",
+      "preview": "561078aa7c24320e07d1164cbf4348b714fbf62d561e01a6f2d866ca5f4ae0c0"
+    },
+    "level_yard_clothesline": {
+      "glb": "aff2a60eec067a970d59b1ff781d664d2a2be50c3744700345283f510cebed3d",
+      "blend": "4769fa846106cf80a86236099631a12f93c797eb860f46fbab08323599952309",
+      "preview": "7fab84e12031679ef83390c3b6dd33ece67ed11d8febedde1aff3b3079e1a23e"
+    },
+    "level_event_smoke_alarm": {
+      "glb": "c258c06381a95d24fc567486c2f34998cf808e0f43b5e0e8db85208f33dfa580",
+      "blend": "a8d02a0c6eee726ff37ce6e109de11e2f5d4ffbd66773e3b969166250059ec25",
+      "preview": "8d2652410d5169b8ef2f7a5ac72a7c881b3170c7cc9e1d4c3fffc1d7ed8fa45a"
+    },
+    "level_school_urinal": {
+      "glb": "a4bdd0245a332e11ada1cff5dcb2a7a2e84d7df0b3caa650e1de6664758e4621",
+      "blend": "9e5a2fa000e66081abc425b6bfed6759a257462688fa398e4063931d658e26c4",
+      "preview": "ac0afe015f37cd16e4f1de644ab034bb5eb95bbf7e17d8e5909f55964487fbdc"
+    },
+    "level_bath_shower": {
+      "glb": "3863c18f7f10ef371e98d274b27f4bf2c06359157ce900861811632a8f141727",
+      "blend": "cc068d405617f987539c41be1f1254620fed4a48b96b7fa6df3c60bf98ffbea0",
+      "preview": "9c26c9ecde2ca73bdbaaf644377be97c29c97ea41c1eaaf3aecfe5667cc3de30"
+    },
+    "level_bath_shower_rail": {
+      "glb": "28c18907a9353cdceb2411a1a8995127862aadb5684dccda6de05c9a3d4bfb2c",
+      "blend": "1d96a803e1f1ffa57c1051eb62c03f22eed6c2256a8e4ace991f9ca38053e0ac",
+      "preview": "c31b11c563e682bdc3da2b95c56cfbf53bc5c0ad0db865f5ee79fdb5264ea05c"
+    },
+    "level_bathroom_wall_set": {
+      "glb": "67a8a664a5be61337ac3814c438d6f160dd38dd58e0ba3ebf069c26f91d7977f",
+      "blend": "fc95beab52398ad12b4a40b143eaeee7b0eac7405d6efdd2602f0816732dbd79",
+      "preview": "bac47a101013a12835bc3dd9f817a559854de4509a0dd4d76f632543de06d3a5"
     }
   }
 }
