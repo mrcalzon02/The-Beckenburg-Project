@@ -2,7 +2,7 @@
 
 Planning pass, 21 October 2026. Scope: **nine initial investigation families, thirteen proposed remote sites, and Castle Beckenburg headquarters**. Open [REVIEW.html](REVIEW.html) for the complete visual map list. Each map has an editable `layout.json`, a measured multi-floor `plan.svg`, a readable brief and an OBJ volume study. JSON is the planning authority; derived files are rebuilt with `python development/levels/layouts/build_review.py`.
 
-These are original rough spatial proposals, not playable maps, collision meshes or architectural surveys. The three established maps are traced from their current `LevelPlans.java` architecture rather than replaced. The remaining six families receive distinct replacement proposals for the shared cross-wing prototype. No runtime IDs, availability flags, stage ledger or campaign implementation changes are made.
+These are original rough spatial proposals, not playable maps, collision meshes or architectural surveys. House, Farmhouse, School and the locked Church definition are traced from current `LevelPlans.java` architecture. Five families receive distinct replacement proposals for the shared cross-wing prototype. No runtime IDs, availability flags, stage ledger or campaign implementation changes are made.
 
 ## Read the plans
 

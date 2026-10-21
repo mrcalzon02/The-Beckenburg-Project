@@ -1,0 +1,750 @@
+{
+  "version": 1,
+  "id": "MANSION",
+  "title": "Blackthorn Manor",
+  "region": "Beckenburg district",
+  "scale": "Large / estate",
+  "status": "rough-layout-only",
+  "intent": "An asymmetric service court beside a formal reception wing; grand stair and attic are offset from the kitchen servants route.",
+  "site_bounds": [
+    0,
+    1,
+    58,
+    81
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Carriage-drive van apron",
+      "bounds": [
+        20,
+        65,
+        36,
+        77
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Entrance terrace",
+      "bounds": [
+        20,
+        55,
+        36,
+        65
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "foyer",
+      "name": "Entrance foyer",
+      "bounds": [
+        20,
+        45,
+        36,
+        55
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "stair",
+      "name": "Grand stair hall",
+      "bounds": [
+        20,
+        27,
+        28,
+        45
+      ],
+      "y": 0,
+      "height": 7.2,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "drawing",
+      "name": "Drawing room",
+      "bounds": [
+        4,
+        45,
+        20,
+        55
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "library",
+      "name": "Library",
+      "bounds": [
+        4,
+        27,
+        20,
+        45
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "ballroom",
+      "name": "Ballroom",
+      "bounds": [
+        36,
+        27,
+        54,
+        55
+      ],
+      "y": 0,
+      "height": 7.2,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dining",
+      "name": "Dining hall",
+      "bounds": [
+        36,
+        15,
+        54,
+        27
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "scullery",
+      "name": "Scullery / kitchen",
+      "bounds": [
+        36,
+        5,
+        54,
+        15
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "service",
+      "name": "Servants corridor",
+      "bounds": [
+        28,
+        15,
+        36,
+        45
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "garden",
+      "name": "Walled rear garden",
+      "bounds": [
+        4,
+        5,
+        28,
+        27
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "greenhouse",
+      "name": "Greenhouse",
+      "bounds": [
+        4,
+        5,
+        16,
+        15
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "gallery",
+      "name": "Upper gallery",
+      "bounds": [
+        20,
+        27,
+        28,
+        55
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "suite",
+      "name": "Master suite",
+      "bounds": [
+        4,
+        27,
+        20,
+        45
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "servants",
+      "name": "Upper servants passage",
+      "bounds": [
+        28,
+        15,
+        36,
+        55
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "attic",
+      "name": "Attic archive",
+      "bounds": [
+        4,
+        27,
+        20,
+        45
+      ],
+      "y": 7.2,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cellar",
+      "name": "Wine cellar",
+      "bounds": [
+        36,
+        15,
+        54,
+        27
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          71.0
+        ],
+        [
+          28.0,
+          0,
+          60.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "foyer",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          60.0
+        ],
+        [
+          28.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "foyer",
+      "b": "drawing",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          28.0,
+          0,
+          50.0
+        ],
+        [
+          12.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "drawing",
+      "b": "library",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          12.0,
+          0,
+          50.0
+        ],
+        [
+          12.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "library",
+      "b": "stair",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          12.0,
+          0,
+          36.0
+        ],
+        [
+          24.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "stair",
+      "b": "foyer",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          0,
+          36.0
+        ],
+        [
+          28.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "stair",
+      "b": "service",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          0,
+          36.0
+        ],
+        [
+          32.0,
+          0,
+          30.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "service",
+      "b": "scullery",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          30.0
+        ],
+        [
+          45.0,
+          0,
+          10.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "scullery",
+      "b": "dining",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          45.0,
+          0,
+          10.0
+        ],
+        [
+          45.0,
+          0,
+          21.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "dining",
+      "b": "ballroom",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          45.0,
+          0,
+          21.0
+        ],
+        [
+          45.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "ballroom",
+      "b": "foyer",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          45.0,
+          0,
+          41.0
+        ],
+        [
+          28.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "library",
+      "b": "garden",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          12.0,
+          0,
+          36.0
+        ],
+        [
+          16.0,
+          0,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "garden",
+      "b": "greenhouse",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          16.0,
+          0,
+          16.0
+        ],
+        [
+          10.0,
+          0,
+          10.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "garden",
+      "b": "scullery",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          16.0,
+          0,
+          16.0
+        ],
+        [
+          45.0,
+          0,
+          10.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L15",
+      "a": "stair",
+      "b": "gallery",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          0,
+          36.0
+        ],
+        [
+          24.0,
+          3.6,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.6,
+      "construction": "Reserve at least 5.76 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L16",
+      "a": "gallery",
+      "b": "suite",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          3.6,
+          41.0
+        ],
+        [
+          12.0,
+          3.6,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L17",
+      "a": "gallery",
+      "b": "servants",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          3.6,
+          41.0
+        ],
+        [
+          32.0,
+          3.6,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L18",
+      "a": "servants",
+      "b": "service",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          3.6,
+          35.0
+        ],
+        [
+          32.0,
+          0,
+          30.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.6,
+      "construction": "Reserve at least 5.76 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L19",
+      "a": "servants",
+      "b": "attic",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          3.6,
+          35.0
+        ],
+        [
+          12.0,
+          7.2,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.6,
+      "construction": "Reserve at least 5.76 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L20",
+      "a": "service",
+      "b": "cellar",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          30.0
+        ],
+        [
+          45.0,
+          -3,
+          21.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "foyer",
+      "drawing",
+      "library",
+      "stair",
+      "foyer"
+    ],
+    [
+      "foyer",
+      "stair",
+      "service",
+      "scullery",
+      "dining",
+      "ballroom",
+      "foyer"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      28.0,
+      0,
+      71.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        28.0,
+        0,
+        67.372
+      ],
+      [
+        28.0,
+        0,
+        60.0
+      ]
+    ],
+    "logistics": "Existing shared van on a level service apron/roadhead; no new transport mechanic."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "attic",
+      "point": [
+        12.0,
+        7.2,
+        36.0
+      ],
+      "installation": "Chained iron containment circle"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "library",
+      "point": [
+        12.0,
+        0,
+        36.0
+      ],
+      "installation": "Marble purification basin"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "ballroom",
+      "point": [
+        45.0,
+        0,
+        41.0
+      ],
+      "installation": "Family commemorative plinth"
+    }
+  ],
+  "circulation": "Formal loop runs through foyer, drawing room and library. Separate kitchen/service loop reaches ballroom without crossing the grand stair. Attic is a deliberate terminal search with warning at the upper servants passage; retreat via that passage and grand gallery.",
+  "systems": "Reception, service and upper suites have separate circuits. Tall ballroom carries sound differently from bookshelves and low attic rafters; greenhouse and garden have exposed weather baselines.",
+  "campaign": "Estate correspondence introduces suppliers and family patrons. Optional attic archive revisits use the same reserved geometry; no hidden story room is required for a legal rite.",
+  "refine": [
+    "Grand stair requires a two-flight return and real gallery void; upper gallery rectangle is a planning envelope around that void.",
+    "Draw attic headroom under roof slopes before placing the 4.4 m ritual square.",
+    "Compare with approved mansion board; refine servants access and door apertures before replacing the cross-wing prototype."
+  ],
+  "sources": [
+    "docs/environments/ROOM_AND_ASSET_REQUIREMENTS.md",
+    "docs/environments/THREE_RITUAL_SITES.md",
+    "development/levels/ARCHITECTURAL_REFERENCES.md"
+  ]
+}
