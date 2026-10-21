@@ -43,7 +43,27 @@ public final class LanTwinSightingPrivacyTest {
             a.client.ready();b.client.ready();g.client.ready();
             a.await("LOBBY|2|HUMAN|3|WAITING");
             a.client.start();a.await("INFO|mission started");
-            for(int room:new int[]{11,8,5,4}){
+            // Real authored level topology changes with site revisions. Choose
+            // legal adjacent transitions instead of assuming an obsolete route.
+            HouseMap level=new HouseMap();
+            int start=HouseMap.EXTRACTION_ROOM,target=4;
+            int[] parent=new int[HouseMap.ROOM_COUNT];
+            java.util.Arrays.fill(parent,-1);
+            java.util.ArrayDeque<Integer> open=new java.util.ArrayDeque<>();
+            open.add(start);parent[start]=start;
+            while(!open.isEmpty()&&parent[target]<0){
+                int from=open.removeFirst();
+                for(int neighbor:level.adjacentRooms(from))
+                    if(neighbor>=0&&neighbor<parent.length&&parent[neighbor]<0){
+                        parent[neighbor]=from;open.addLast(neighbor);
+                    }
+            }
+            check(parent[target]>=0,"current site must contain a legal van-to-ghost route");
+            java.util.ArrayList<Integer> route=new java.util.ArrayList<>();
+            for(int current=target;current!=start;current=parent[current])
+                route.add(current);
+            java.util.Collections.reverse(route);
+            for(int room:route){
                 a.client.move(room);a.await("ACCEPT|MOVE|"+room);
             }
             a.client.view3D();a.await("ACCEPT|VIEW3D");
