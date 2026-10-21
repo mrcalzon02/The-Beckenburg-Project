@@ -2,6 +2,12 @@
   "status": "partial-pass",
   "maps": [
     {
+      "id": "FARMHOUSE",
+      "zones": 15,
+      "checks": 187,
+      "result": "pass"
+    },
+    {
       "id": "HOUSE",
       "zones": 15,
       "checks": 200,
@@ -14,7 +20,6 @@
     "castle",
     "church",
     "college",
-    "farmhouse",
     "mansion",
     "prison",
     "school",

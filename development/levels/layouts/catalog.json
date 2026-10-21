@@ -3,6 +3,14 @@
   "status": "planning-only",
   "maps": [
     {
+      "id": "FARMHOUSE",
+      "title": "Hollowmere Farm",
+      "folder": "farmhouse",
+      "region": "Beckenburg district",
+      "zone_count": 15,
+      "status": "rough-layout-only"
+    },
+    {
       "id": "HOUSE",
       "title": "The Briar House",
       "folder": "house",
