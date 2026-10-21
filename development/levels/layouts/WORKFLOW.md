@@ -29,3 +29,4 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 - **WLD-10 / Monastery of Ashen Bells**: 17 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-11 / Mourning Marsh**: 13 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-12 / Gallows Pass Railway**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+- **WLD-13 / Greywater Cannery**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.

@@ -126,11 +126,16 @@
       "zones": 14,
       "checks": 187,
       "result": "pass"
+    },
+    {
+      "id": "WLD-13",
+      "zones": 14,
+      "checks": 207,
+      "result": "pass"
     }
   ],
   "missing": [
-    "castle",
-    "wld-13"
+    "castle"
   ],
   "limitations": [
     "No runtime geometry or collision loaded.",

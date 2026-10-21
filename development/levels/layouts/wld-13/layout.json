@@ -1,0 +1,679 @@
+{
+  "version": 1,
+  "id": "WLD-13",
+  "title": "Greywater Cannery",
+  "region": "Coastal Territories",
+  "scale": "Medium-large / industrial wilderness",
+  "status": "rough-layout-only",
+  "intent": "A shore-side processing hall connects cold stores, boiler plant and shipping dock. Workers housing sits along the forest edge, linked by a short service-yard loop.",
+  "site_bounds": [
+    -20,
+    -4,
+    68,
+    92
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Forest-road van apron",
+      "bounds": [
+        24,
+        76,
+        40,
+        88
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Cannery gate / service yard",
+      "bounds": [
+        24,
+        62,
+        44,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "processing",
+      "name": "Fish-processing floor",
+      "bounds": [
+        24,
+        26,
+        48,
+        56
+      ],
+      "y": 0,
+      "height": 6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cold",
+      "name": "Refrigerated stores",
+      "bounds": [
+        48,
+        26,
+        64,
+        44
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "boiler",
+      "name": "Boiler house",
+      "bounds": [
+        8,
+        26,
+        24,
+        44
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "wash",
+      "name": "Workers washroom",
+      "bounds": [
+        8,
+        44,
+        24,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "office",
+      "name": "Managers office",
+      "bounds": [
+        24,
+        14,
+        36,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "stores",
+      "name": "Packing / dry stores",
+      "bounds": [
+        36,
+        14,
+        48,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dock",
+      "name": "Shipping dock",
+      "bounds": [
+        24,
+        0,
+        48,
+        14
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "bunk",
+      "name": "Workers bunkhouse",
+      "bounds": [
+        -8,
+        44,
+        8,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "mess",
+      "name": "Workers mess",
+      "bounds": [
+        -8,
+        26,
+        8,
+        44
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "forest",
+      "name": "Forest edge return",
+      "bounds": [
+        -16,
+        26,
+        -8,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "side-yard",
+      "name": "East service return",
+      "bounds": [
+        48,
+        44,
+        64,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "gallery",
+      "name": "Inspection mezzanine",
+      "bounds": [
+        24,
+        26,
+        30,
+        56
+      ],
+      "y": 3,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          82.0
+        ],
+        [
+          34.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "processing",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          69.0
+        ],
+        [
+          36.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "entry",
+      "b": "wash",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          69.0
+        ],
+        [
+          16.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "wash",
+      "b": "boiler",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          16.0,
+          0,
+          50.0
+        ],
+        [
+          16.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "boiler",
+      "b": "processing",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          16.0,
+          0,
+          35.0
+        ],
+        [
+          36.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "processing",
+      "b": "cold",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          41.0
+        ],
+        [
+          56.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "cold",
+      "b": "side-yard",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          56.0,
+          0,
+          35.0
+        ],
+        [
+          56.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "side-yard",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          56.0,
+          0,
+          53.0
+        ],
+        [
+          34.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "processing",
+      "b": "office",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          41.0
+        ],
+        [
+          30.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "office",
+      "b": "stores",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          30.0,
+          0,
+          20.0
+        ],
+        [
+          42.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "stores",
+      "b": "processing",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          42.0,
+          0,
+          20.0
+        ],
+        [
+          36.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "stores",
+      "b": "dock",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          42.0,
+          0,
+          20.0
+        ],
+        [
+          36.0,
+          0,
+          7.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "dock",
+      "b": "office",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          7.0
+        ],
+        [
+          30.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "wash",
+      "b": "bunk",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          16.0,
+          0,
+          50.0
+        ],
+        [
+          0.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L15",
+      "a": "bunk",
+      "b": "mess",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          0.0,
+          0,
+          53.0
+        ],
+        [
+          0.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L16",
+      "a": "mess",
+      "b": "boiler",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          0.0,
+          0,
+          35.0
+        ],
+        [
+          16.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L17",
+      "a": "bunk",
+      "b": "forest",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          0.0,
+          0,
+          53.0
+        ],
+        [
+          -12.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L18",
+      "a": "forest",
+      "b": "mess",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          -12.0,
+          0,
+          44.0
+        ],
+        [
+          0.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L19",
+      "a": "processing",
+      "b": "gallery",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          41.0
+        ],
+        [
+          27.0,
+          3,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "entry",
+      "processing",
+      "cold",
+      "side-yard",
+      "entry"
+    ],
+    [
+      "processing",
+      "office",
+      "stores",
+      "processing"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      82.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        78.372
+      ],
+      [
+        34.0,
+        0,
+        69.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "processing",
+      "point": [
+        36.0,
+        0,
+        41.0
+      ],
+      "installation": "Grounded loading-floor containment seal"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "wash",
+      "point": [
+        16.0,
+        0,
+        50.0
+      ],
+      "installation": "Workers purification wash"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "mess",
+      "point": [
+        0.0,
+        0,
+        35.0
+      ],
+      "installation": "Payroll remembrance table"
+    }
+  ],
+  "circulation": "Processing hall has two service exits plus shipping access. Separate worker loop reaches bunkhouse and mess without crossing machines. Mezzanine is optional observation; all rites remain at ground level.",
+  "systems": "Cold-room gradients, boiler heat, wet floors, refrigeration noise and forest wind remain real normal signals. Industrial machinery is ordinary map infrastructure, never free investigator gear.",
+  "campaign": "Manager ledger and worker payroll continue beyond closure; dock log can connect to Drowned Wharf. A forest boundary implies wider wilderness without adding empty playable kilometres.",
+  "refine": [
+    "Research cannery processing/boiler separation and shore construction before detailed meshes.",
+    "Refine machine islands around at least two clear hall lanes and a reachable cold-store manual release.",
+    "Cold-store doors must always have an interior escape; no powered lock may create a permanent hunt trap."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ]
+}
