@@ -95,6 +95,30 @@ def repair_bench():
     p.append(s.box('Saved offcut',(.42,.1,.18),(.85,.35,.14),m['pine']))
     return p,dict(function='Repair bench, vice, sharpening stone, oil and five hand-tool silhouettes',runtime='Ready static workbench kit; tools are scenery, not inventory pickups',placement='Blackpine repair shed, against the north wall')
 
+def crew_footlocker():
+    m=b.init();p=[]
+    p.append(s.box('Trunk bottom',(0,0,.055),(.86,.47,.07),m['oak']))
+    for y in [-.235,.235]:p.append(s.box('Trunk long side',(0,y,.23),(.86,.035,.34),m['green']))
+    for x in [-.43,.43]:p.append(s.box('Trunk end',(x,0,.23),(.035,.47,.34),m['green']))
+    for x in [-.32,.32]:
+        for y in [-.255,.255]:p.append(s.box('Rusted trunk band',(x,y,.23),(.045,.018,.34),m['iron']))
+    for x in [-.34,.34]:
+        p.append(s.rod('Lid hinge',(x-.07,.24,.40),(x+.07,.24,.40),.018,m['brass'],8))
+    # Lid tilted back: actual geometry, hinge at rear upper edge.
+    lid=s.box('Open slatted lid',(0,.39,.60),(.89,.045,.51),m['green']);lid.rotation_euler[0]=-.37;p.append(lid)
+    p.append(s.box('Tarnished name card holder',(0,-.259,.27),(.22,.014,.09),m['brass']))
+    p.append(s.box('Faded crew card',(0,-.269,.27),(.18,.005,.06),m['paper']))
+    p.append(s.box('Broken clasp',(0,-.276,.35),(.055,.018,.09),m['iron']))
+    for x in [-.45,.45]:p+=s.tube('End carrying handle',[(x,-.07,.29),(x*1.08,-.07,.23),(x*1.08,.07,.23),(x,.07,.29)],.012,m['leather'],6)
+    for i,key in enumerate(['cloth','blue','cloth']):p.append(s.box('Folded shirt inside',(-.18,.01,.13+i*.055),(.34,.32,.052),m[key],.012))
+    p.append(s.box('Personal envelope',(.17,.0,.27),(.22,.16,.005),m['paper']))
+    p.append(s.box('Small saved photograph',(.17,.0,.277),(.12,.10,.004),m['enamel']))
+    for x in [.14,.19]:p.append(s.box('Photo silhouette',(x,0,.280),(.025,.045,.002),m['iron']))
+    p.append(s.lathe('Pocket thermos',[(0,.037),(.23,.037),(.25,.030)],m['steel'],10,(.30,.05,.10)))
+    for i in range(4):p.append(s.rod('Spare boot lace',(-.02+i*.018,-.15,.30),(.03+i*.018,-.11,.30),.0025,m['black'],4))
+    p.append(s.box('Worn mending packet',(.12,.12,.23),(.14,.09,.045),m['leather']))
+    return p,dict(function='Open crew footlocker with shirts, personal card/photo, thermos, laces and mending packet',runtime='Ready static personal-effects kit; lid and belongings are not interactive',placement='Blackpine bunkhouse, beside surviving beds and away from door approaches')
+
 name=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'bandsaw'
 parts,notes=globals()[name]()
 b.export('level_work_'+name,parts,'working-place-details',view=(4,-6,3.5))

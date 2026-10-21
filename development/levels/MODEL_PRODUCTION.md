@@ -21,3 +21,9 @@ Next useful candidates: rail log carriage, repair bench and hand tools, sawdust 
 `level_work_repair_bench`: 715 triangles. Self-supporting timber bench/backboard, vice, spanner, hammer, toothed hand saw, screwdriver, plane, sharpening stone, oil tin and saved offcut. Placed X47.0/Z46.7 in the repair shed with generator and sawhorse clearance. Native source reopened, UV and packed textures verified, runtime mesh/support/collision and clear-spawn/rite checks passed. Static tools are not new inventory pickups.
 
 [Manifest](production/repair_bench.json) · [Source](blender/level_work_repair_bench.blend) · [Studio](previews/level_work_repair_bench.png) · [Runtime](previews/model-production/blackpine-level_work_repair_bench.png).
+
+## 04 / crew footlocker and personal effects
+
+`level_work_crew_footlocker`: 628 triangles. An open hinged trunk, rusted bands, faded crew card, folded shirts, personal photograph/envelope, thermos, spare boot laces and mending packet. Two supported instances sit beside surviving bunkhouse beds at X13.3/Z24.4 and X10.4/Z24.2. Native source/UV/packed images and physical support/bounds, clear spawns/rites and readable records pass. Static original kit; no trunk inventory or lid simulation.
+
+[Manifest](production/crew_footlocker.json) · [Source](blender/level_work_crew_footlocker.blend) · [Studio](previews/level_work_crew_footlocker.png) · [Runtime](previews/model-production/blackpine-level_work_crew_footlocker.png).
