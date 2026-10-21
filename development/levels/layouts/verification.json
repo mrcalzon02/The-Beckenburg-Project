@@ -1,0 +1,40 @@
+{
+  "status": "partial-pass",
+  "maps": [
+    {
+      "id": "HOUSE",
+      "zones": 15,
+      "checks": 200,
+      "result": "pass"
+    }
+  ],
+  "missing": [
+    "academy",
+    "asylum",
+    "castle",
+    "church",
+    "college",
+    "farmhouse",
+    "mansion",
+    "prison",
+    "school",
+    "wld-01",
+    "wld-02",
+    "wld-03",
+    "wld-04",
+    "wld-05",
+    "wld-06",
+    "wld-07",
+    "wld-08",
+    "wld-09",
+    "wld-10",
+    "wld-11",
+    "wld-12",
+    "wld-13"
+  ],
+  "limitations": [
+    "No runtime geometry or collision loaded.",
+    "Route lines are circulation reservations; shell openings, stair geometry, terrain support and clearance require refinement.",
+    "No human/AI ghost traversal, game timings, LAN replication, campaign persistence or performance verified."
+  ]
+}

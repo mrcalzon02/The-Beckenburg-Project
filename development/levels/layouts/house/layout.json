@@ -1,0 +1,699 @@
+{
+  "version": 1,
+  "id": "HOUSE",
+  "title": "The Briar House",
+  "region": "Beckenburg district",
+  "scale": "Established reference",
+  "status": "rough-layout-only",
+  "intent": "Trace of current authored architecture for review. Preserve its measured footprint and floor elevations while planning the full roster.",
+  "site_bounds": [
+    -2,
+    -2,
+    34,
+    47.4
+  ],
+  "zones": [
+    {
+      "id": "r00",
+      "name": "Foyer",
+      "bounds": [
+        18.0,
+        21.0,
+        24.0,
+        24.0
+      ],
+      "y": 0.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r01",
+      "name": "Living room",
+      "bounds": [
+        12.0,
+        17.0,
+        18.0,
+        24.0
+      ],
+      "y": 0.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r02",
+      "name": "Family kitchen",
+      "bounds": [
+        12.0,
+        10.0,
+        18.0,
+        17.0
+      ],
+      "y": 0.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r03",
+      "name": "Dining nook",
+      "bounds": [
+        18.0,
+        10.0,
+        24.0,
+        15.0
+      ],
+      "y": 0.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r04",
+      "name": "Main hall and stair",
+      "bounds": [
+        18.0,
+        15.0,
+        24.0,
+        21.0
+      ],
+      "y": 0.0,
+      "height": 3.0,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r05",
+      "name": "Upper landing",
+      "bounds": [
+        18.0,
+        15.0,
+        24.0,
+        24.0
+      ],
+      "y": 3.0,
+      "height": 3.0,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r06",
+      "name": "Master bedroom",
+      "bounds": [
+        12.0,
+        17.0,
+        18.0,
+        24.0
+      ],
+      "y": 3.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r07",
+      "name": "Child bedroom",
+      "bounds": [
+        12.0,
+        10.0,
+        18.0,
+        17.0
+      ],
+      "y": 3.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r08",
+      "name": "Bathroom",
+      "bounds": [
+        18.0,
+        10.0,
+        24.0,
+        15.0
+      ],
+      "y": 3.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r09",
+      "name": "Cellar stair landing",
+      "bounds": [
+        18.0,
+        15.0,
+        24.0,
+        24.0
+      ],
+      "y": -3.0,
+      "height": 3.0,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r10",
+      "name": "Boiler and breaker room",
+      "bounds": [
+        18.0,
+        10.0,
+        24.0,
+        15.0
+      ],
+      "y": -3.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r11",
+      "name": "Cellar storage",
+      "bounds": [
+        12.0,
+        10.0,
+        18.0,
+        24.0
+      ],
+      "y": -3.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "grounds",
+      "name": "Rear grounds / exterior",
+      "bounds": [
+        6,
+        2,
+        30,
+        24
+      ],
+      "y": 0,
+      "height": 12,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Approach / arrival",
+      "bounds": [
+        2,
+        24,
+        30,
+        43.4
+      ],
+      "y": 0,
+      "height": 12,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "stage",
+      "name": "Van service apron",
+      "bounds": [
+        14,
+        30,
+        30,
+        42
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "r00",
+      "b": "r01",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          0.0,
+          22.5
+        ],
+        [
+          15.0,
+          0.0,
+          20.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L02",
+      "a": "r01",
+      "b": "r02",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          0.0,
+          20.5
+        ],
+        [
+          15.0,
+          0.0,
+          13.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L03",
+      "a": "r02",
+      "b": "r03",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          0.0,
+          13.5
+        ],
+        [
+          21.0,
+          0.0,
+          12.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L04",
+      "a": "r03",
+      "b": "r04",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          0.0,
+          12.5
+        ],
+        [
+          21.0,
+          0.0,
+          18.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L05",
+      "a": "r04",
+      "b": "r00",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          0.0,
+          18.0
+        ],
+        [
+          21.0,
+          0.0,
+          22.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L06",
+      "a": "r01",
+      "b": "r04",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          0.0,
+          20.5
+        ],
+        [
+          21.0,
+          0.0,
+          18.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L07",
+      "a": "r05",
+      "b": "r06",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          3.0,
+          19.5
+        ],
+        [
+          15.0,
+          3.0,
+          20.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L08",
+      "a": "r05",
+      "b": "r07",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          3.0,
+          19.5
+        ],
+        [
+          15.0,
+          3.0,
+          13.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L09",
+      "a": "r05",
+      "b": "r08",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          3.0,
+          19.5
+        ],
+        [
+          21.0,
+          3.0,
+          12.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L10",
+      "a": "r06",
+      "b": "r07",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          3.0,
+          20.5
+        ],
+        [
+          15.0,
+          3.0,
+          13.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L11",
+      "a": "r09",
+      "b": "r10",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          -3.0,
+          19.5
+        ],
+        [
+          21.0,
+          -3.0,
+          12.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L12",
+      "a": "r09",
+      "b": "r11",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          -3.0,
+          19.5
+        ],
+        [
+          15.0,
+          -3.0,
+          17.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L13",
+      "a": "r10",
+      "b": "r11",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          -3.0,
+          12.5
+        ],
+        [
+          15.0,
+          -3.0,
+          17.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L14",
+      "a": "r00",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          21.0,
+          0.0,
+          22.5
+        ],
+        [
+          16.0,
+          0,
+          33.7
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L15",
+      "a": "r02",
+      "b": "grounds",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0.0,
+          13.5
+        ],
+        [
+          18.0,
+          0,
+          13.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L16",
+      "a": "r04",
+      "b": "r05",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          22.5,
+          0.0,
+          15.6
+        ],
+        [
+          22.5,
+          3.0,
+          20.4
+        ]
+      ],
+      "note": "Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",
+      "rise_m": 3.0,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L17",
+      "a": "r09",
+      "b": "r04",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          19.8,
+          -3.0,
+          20.4
+        ],
+        [
+          19.8,
+          0.0,
+          15.6
+        ]
+      ],
+      "note": "Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",
+      "rise_m": 3.0,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L18",
+      "a": "grounds",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          18.0,
+          0,
+          13.0
+        ],
+        [
+          16.0,
+          0,
+          33.7
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L19",
+      "a": "entry",
+      "b": "stage",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          16.0,
+          0,
+          33.7
+        ],
+        [
+          22.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    }
+  ],
+  "loops": [
+    [
+      "r00",
+      "r01",
+      "r02",
+      "r03",
+      "r04",
+      "r00"
+    ],
+    [
+      "r00",
+      "entry",
+      "grounds",
+      "r02",
+      "r01",
+      "r00"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      22,
+      0,
+      36
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        22,
+        0,
+        32.372
+      ],
+      [
+        16.0,
+        0,
+        33.7
+      ]
+    ],
+    "logistics": "Existing shared van on a level service apron/roadhead; no new transport mechanic."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "r11",
+      "point": [
+        15.0,
+        -3.0,
+        17.0
+      ],
+      "installation": "Cellar containment circle"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "r02",
+      "point": [
+        15.0,
+        0.0,
+        13.5
+      ],
+      "installation": "Kitchen purification basin"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "r01",
+      "point": [
+        15.0,
+        0.0,
+        20.5
+      ],
+      "installation": "Family remembrance stand"
+    }
+  ],
+  "circulation": "Use the existing interior loops and distinct rear exits. Staging, outdoor grounds and exact door/stair construction remain governed by current runtime coordinates.",
+  "systems": "Separate boiler circuit, insulated bedrooms, wet bathroom and exposed yard. Existing floor surfaces at -3/0/+3 m and main block X12\u201324/Z10\u201324 are retained.",
+  "campaign": "Nearby introductory survey, return visits to family documents, controlled retreat. Reuse the same zones for future ghost-versus-investigator contracts.",
+  "refine": [
+    "The old House ritual table uses obsolete room numbers and a library absent from this building. The proposed three clear areas use current cellar storage, kitchen and living room; final installation choices require reconciliation before runtime changes.",
+    "Existing runtime ritual sockets differ from these planning reservations; this pass does not relocate them.",
+    "Rear exterior rectangle underlies the building; room ownership must prioritize interiors as in the existing implementation.",
+    "Compare each traced floor against latest scene exports; validate exact supported van exit and both stair flights before construction changes."
+  ],
+  "sources": [
+    "src/main/java/org/beckenburg/LevelPlans.java (house/farm/school methods, read 2026-10-21)",
+    "development/levels/ARCHITECTURAL_REFERENCES.md",
+    "docs/environments/THREE_RITUAL_SITES.md"
+  ]
+}

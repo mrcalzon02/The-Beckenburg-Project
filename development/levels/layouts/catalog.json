@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "status": "planning-only",
+  "maps": [
+    {
+      "id": "HOUSE",
+      "title": "The Briar House",
+      "folder": "house",
+      "region": "Beckenburg district",
+      "zone_count": 15,
+      "status": "rough-layout-only"
+    }
+  ]
+}
