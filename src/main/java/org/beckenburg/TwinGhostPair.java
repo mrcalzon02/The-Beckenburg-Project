@@ -54,12 +54,12 @@ public final class TwinGhostPair {
         return List.of(new Member("a",primary),new Member("b",echo));
     }
 
-    public static String wire(Member member,int tick,boolean visible) {
+    public static String wire(Member member,int tick,boolean visible,boolean ancient) {
         if(tick<0)throw new IllegalArgumentException("negative tick");
         if(!visible)return "TWIN|"+member.id()+"|HIDDEN|"+tick;
         LanGhostSpatial.Pose p=member.pose();
         return "TWIN|"+member.id()+"|VISIBLE|"+Math.round(p.x()*1000)+
             "|"+Math.round(p.y()*1000)+"|"+Math.round(p.z()*1000)+
-            "|"+p.heading()+"|"+tick;
+            "|"+p.heading()+"|"+tick+"|"+(ancient?"GREEN":"BASE");
     }
 }
