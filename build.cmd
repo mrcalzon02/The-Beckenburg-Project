@@ -18,6 +18,8 @@ if not exist build\classes\org\beckenburg mkdir build\classes\org\beckenburg
 copy /Y assets\runtime\directional-sprites.zip build\classes\org\beckenburg\directional-sprites.zip >nul || exit /b 1
 if not exist assets\runtime\character-directions.zip (echo ERROR: required approved character direction sprites missing & exit /b 1)
 copy /Y assets\runtime\character-directions.zip build\classes\org\beckenburg\character-directions.zip >nul || exit /b 1
+if not exist assets\runtime\twins-directions.zip (echo ERROR: independent Twins PNGs missing & exit /b 1)
+copy /Y assets\runtime\twins-directions.zip build\classes\org\beckenburg\twins-directions.zip >nul || exit /b 1
 if not exist build\classes\org\beckenburg\elder-masters mkdir build\classes\org\beckenburg\elder-masters
 for %%G in (elder-blade-demon elder-plague-demon elder-nothic) do (
  if not exist "assets\runtime\elder-masters\%%G.png" (echo ERROR missing Elder master %%G & exit /b 1)
