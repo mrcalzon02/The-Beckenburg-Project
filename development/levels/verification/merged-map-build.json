@@ -1,0 +1,32 @@
+{
+  "tree": "2d74956754ff85408ff53587cb153ddeb4cfeec2",
+  "main_and_test_compilation": "pass",
+  "tests": [
+    {
+      "test": "CrouchAndOutdoorHidingTest",
+      "pass": true
+    },
+    {
+      "test": "BlackpineGrayboxTest",
+      "pass": true
+    },
+    {
+      "test": "AuthoredLevelPhysicsTest",
+      "pass": true
+    },
+    {
+      "test": "SprintStaminaTest",
+      "pass": true
+    },
+    {
+      "test": "VanHidingTest",
+      "pass": true
+    },
+    {
+      "test": "InteractionFocusTest",
+      "pass": true
+    }
+  ],
+  "real_tcp_crouch_and_ctrl_dispatch": "pass",
+  "uncommitted_lighting_changes_included": false
+}

@@ -3,6 +3,8 @@ Version: 0.2, updated 2026-10-15. **Solo gameplay alpha source implemented and c
 
 ## All-map rough layouts (2026-10-21)
 
+The first reuse-first construction milestone is [Blackpine's physically checked graybox](../development/levels/BLACKPINE_BUILD.md), with compact buildings around an exposed yard. [Crouching and sparse shrub refuge](../development/levels/OUTDOOR_REFUGE_AND_CROUCH.md) are implemented in source and checked in solo/host movement and real TCP controls. Blackpine remains locked pending dressing, hunt/ritual and native-window acceptance.
+
 The [rough layout atlas](../development/levels/layouts/REVIEW.html) and [complete map list](../development/levels/layouts/MAP_LIST.md) cover all nine original families, thirteen remote proposals and the Castle Beckenburg headquarters expansion. Every location has measured space reservations, floor diagrams, route cycles, van staging, three rite areas and refinement notes, with an individual layout commit. These are planning artifacts; they do not unlock maps or establish playable geometry, campaign implementation or shipping acceptance.
 
 ## Castle and campaign UI implementation / ritual requirements (2026-10-20)

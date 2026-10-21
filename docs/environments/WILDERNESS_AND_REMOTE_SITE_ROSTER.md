@@ -1,10 +1,10 @@
 # The Beckenburg Project — Wilderness and Remote Investigation Roster
 
-**Status:** concept/design proposals, 2026-10-20. No listed site is claimed as implemented, selectable, modeled, tested, or part of the binding nine-family initial-release contract. The existing implementation record is [LOCATION_EXPANSION.md](../LOCATION_EXPANSION.md); the existing nine-family build plan remains [ROOM_AND_ASSET_REQUIREMENTS.md](ROOM_AND_ASSET_REQUIREMENTS.md).
+**Status:** roster proposals, updated 2026-10-21. All thirteen have rough spatial plans. Blackpine now has a [constructed development graybox](../../development/levels/BLACKPINE_BUILD.md), checked for physical doors, stairs and routes; it is not selectable or production accepted. The other twelve remain planning-only. None is added to the binding nine-family initial-release contract. The existing implementation record is [LOCATION_EXPANSION.md](../LOCATION_EXPANSION.md); the existing nine-family build plan remains [ROOM_AND_ASSET_REQUIREMENTS.md](ROOM_AND_ASSET_REQUIREMENTS.md).
 
 ## Design intent
 
-**Rough spatial planning update, 2026-10-21:** all thirteen named sites now have individual measured planning packets in the [all-map layout atlas](../../development/levels/layouts/REVIEW.html). Bounds, floors, circulation cycles, logistics, environmental baselines and three ritual reservations are authored; physical geometry and gameplay remain unimplemented. See the [complete map list](../../development/levels/layouts/MAP_LIST.md) for the nine original families and Castle headquarters as well.
+**Rough spatial planning update, 2026-10-21:** all thirteen named sites now have individual measured planning packets in the [all-map layout atlas](../../development/levels/layouts/REVIEW.html). Bounds, floors, circulation cycles, logistics, environmental baselines and three ritual reservations are authored. Blackpine has begun physical construction; the others have no runtime geometry. See the [complete map list](../../development/levels/layouts/MAP_LIST.md) for the nine original families and Castle headquarters as well.
 
 Give every location a memorable proper name, place identity, history, recognizable geometry, unique environmental behavior, and discoverable narrative. A site is not a fixed ghost encounter: its local history and persistent discoveries coexist with scenario-selected ghosts, evidence, anchors, ritual choices, weather, and contracts. Replays must remain meaningfully variable. Outdoor maps should feel remote and exposed without becoming empty expanses or frustrating searches.
 
