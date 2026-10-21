@@ -1,6 +1,6 @@
 {
   "identity": "twins",
-  "version": "two-independent-source-cutouts-v1",
+  "version": "two-independent-source-cutouts-v2",
   "source": "assets/concept-art/v001/03-ghosts/twins-ghost-profile.png",
   "source_sha256": "cbece996e02fdcc3ad301c546fc63d8e406a7a61c9e370938544c380b931627a",
   "directions": {
@@ -8,96 +8,120 @@
       "a": {
         "path": "twins/a/front.png",
         "source_crop": [
-          16,
+          17,
           280,
-          119,
+          128,
           616
         ],
-        "visible_pixels": 9231,
-        "sha256": "11c68e23ba2cfd5682f5ac55ac77ef9913ad00d99489cc1ceef4d76cbc06c9f6"
+        "visible_pixels": 9478,
+        "head_pixels": 1751,
+        "torso_pixels": 5041,
+        "feet_pixels": 2470,
+        "sha256": "f91027108dd19db35e5aac79378b1474c0bd5f0d804a5a51d2deafdb136f50b0"
       },
       "b": {
         "path": "twins/b/front.png",
         "source_crop": [
-          108,
+          126,
           280,
-          224,
+          231,
           616
         ],
-        "visible_pixels": 9921,
-        "sha256": "139eb60917f4f5b5239fe99845425a610deaa06a5ca084899c6e42db2b48c4ad"
+        "visible_pixels": 8535,
+        "head_pixels": 1690,
+        "torso_pixels": 4927,
+        "feet_pixels": 1739,
+        "sha256": "42be84e0fd54f057f9534a31cb96b4dd65fd4b7a3378a3330826907dda5e226c"
       }
     },
     "side": {
       "a": {
         "path": "twins/a/side.png",
         "source_crop": [
-          237,
-          283,
-          311,
+          242,
+          281,
+          316,
           614
         ],
-        "visible_pixels": 7681,
-        "sha256": "62039af86ec54507b03efce30846284e9da3ed131eeb62a6f6bf133a60aefbd1"
+        "visible_pixels": 8020,
+        "head_pixels": 1353,
+        "torso_pixels": 3997,
+        "feet_pixels": 2523,
+        "sha256": "88c132ba0208bee8bc19493536e9be470b4664c43f49f21caa3a5f35286e07c3"
       },
       "b": {
         "path": "twins/b/side.png",
         "source_crop": [
-          307,
-          283,
-          383,
+          315,
+          281,
+          384,
           614
         ],
-        "visible_pixels": 7609,
-        "sha256": "af375f0735328f3d905a53bc8410d26dd08524123953a46174394f7396817ef3"
+        "visible_pixels": 6265,
+        "head_pixels": 1517,
+        "torso_pixels": 2953,
+        "feet_pixels": 1647,
+        "sha256": "857ebd1717a0f69a2130570e3b14c165b8fdb802d66572b1b2539f7d33b2db4a"
       }
     },
     "back": {
       "a": {
         "path": "twins/a/back.png",
         "source_crop": [
-          390,
-          278,
-          473,
-          611
+          475,
+          280,
+          555,
+          614
         ],
-        "visible_pixels": 7802,
-        "sha256": "cd39f91f66247c8c63281e8f89e6ed74fce3e7a64513a5eb04e52cd1c2db286d"
+        "visible_pixels": 6776,
+        "head_pixels": 1718,
+        "torso_pixels": 3465,
+        "feet_pixels": 1424,
+        "sha256": "21e31d955db75d06d5f0ec5c9fb4e1b890bed0b32f8a0508a157e909ed31c012"
       },
       "b": {
         "path": "twins/b/back.png",
         "source_crop": [
-          467,
-          278,
-          556,
-          611
+          392,
+          280,
+          480,
+          614
         ],
-        "visible_pixels": 7360,
-        "sha256": "6db0447de4a7bc854cf9b49641f1654d2f75a02269a07eb40a946cc4436f0908"
+        "visible_pixels": 8241,
+        "head_pixels": 1674,
+        "torso_pixels": 4427,
+        "feet_pixels": 1963,
+        "sha256": "74a75ee0c7aec16f4fd4f7bbe5227f9c92c6c449d03b9cf5bc82c532197723c7"
       }
     },
     "three_quarter": {
       "a": {
         "path": "twins/a/three_quarter.png",
         "source_crop": [
-          557,
-          280,
-          663,
+          587,
+          281,
+          676,
           615
         ],
-        "visible_pixels": 12285,
-        "sha256": "9129ea783564ffc5520e271b37e806220db96fa548fd09397e4aa0116bf51c10"
+        "visible_pixels": 6819,
+        "head_pixels": 1316,
+        "torso_pixels": 4112,
+        "feet_pixels": 1236,
+        "sha256": "6aa1d2568e11d0179efa08f7975cc1dc6373586d7e296311a5f86f51e397cd78"
       },
       "b": {
         "path": "twins/b/three_quarter.png",
         "source_crop": [
-          651,
-          280,
-          754,
+          672,
+          281,
+          756,
           615
         ],
-        "visible_pixels": 13759,
-        "sha256": "0094076837b473c97e92daff2726696b10cf67b35875573fb59cb53594987f49"
+        "visible_pixels": 8959,
+        "head_pixels": 1741,
+        "torso_pixels": 4581,
+        "feet_pixels": 2507,
+        "sha256": "f132ff8b7ef3d9ed7b131f8b6c14c06231ca102e8780db977d22658c9ae13458"
       }
     }
   },
@@ -105,5 +129,5 @@
     128,
     224
   ],
-  "archive_sha256": "72656de3784256f24961fdf13ea22f3039c36b913f81b0a383d37c3d4adb5c9e"
+  "archive_sha256": "bfef67b98900909647af74a2f5dc20af2642299182f83d92c6800560e69aaa97"
 }
