@@ -19,6 +19,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final java.util.Map<Integer,Boolean> videoPowered=new HashMap<>();
     private final java.util.Map<String,Integer> batterySeconds=new HashMap<>();
     private final Map<Integer,SceneRenderer.RemoteBody> peers=new HashMap<>();
+    private final Map<Integer,String> hunterVisuals=new HashMap<>();
     private final Map<Integer,String> hunterNames=new HashMap<>();
     private final java.util.ArrayDeque<LanChat.Entry> chatHistory=new java.util.ArrayDeque<>();
     private final JTextField chatInput=new JTextField();
@@ -267,6 +268,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 int hunter=LanProtocol.integer(p.get(1),0,5);
                 String nickname=LanProtocol.cleanName(p.get(2));
                 if(hunter!=seat)hunterNames.put(hunter,nickname);
+            }else if(p.size()==3&&p.get(0).equals("VISUAL")){
+                int who=LanProtocol.integer(p.get(1),0,5);
+                String look=CharacterVisuals.hunter(p.get(2));
+                hunterVisuals.put(who,look);
+                SceneRenderer.RemoteBody existing=peers.get(who);
+                if(existing!=null)peers.put(who,new SceneRenderer.RemoteBody(
+                    existing.x(),existing.y(),existing.z(),existing.slot(),existing.heading(),look));
             }else if(p.size()==7&&p.get(0).equals("BODY")){
                 int who=LanProtocol.integer(p.get(1),0,5);
                 double x=LanProtocol.integer(p.get(2),0,map.width()*1000)/1000.0;
@@ -275,10 +283,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 int heading=LanProtocol.integer(p.get(5),0,359);
                 tick=LanProtocol.integer(p.get(6),0,99999999);
                 if(who==seat){renderer.x=x;renderer.z=z;renderer.eyeHeight=y+1.62;feedback="HOST SYNC ACTIVE — movement and doors server controlled";}
-                else peers.put(who,new SceneRenderer.RemoteBody(x,y,z,who,heading));
+                else peers.put(who,new SceneRenderer.RemoteBody(x,y,z,who,heading,
+                    hunterVisuals.getOrDefault(who,"observer")));
             }else if(p.size()==3&&p.get(0).equals("PEER")&&p.get(1).equals("LEFT")){
                 int gone=LanProtocol.integer(p.get(2),0,5);
-                if(gone!=seat){peers.remove(gone);hunterNames.remove(gone);}
+                if(gone!=seat){peers.remove(gone);hunterNames.remove(gone);hunterVisuals.remove(gone);}
                 feedback="INVESTIGATOR "+(gone+1)+" DISCONNECTED - CASE CONTINUES";
             }else if((p.size()==2||p.size()==3||p.size()==4)&&p.get(0).equals("FORM")){
                 if(!p.get(1).equals("ORBS")&&!p.get(1).equals("FIGURE")
