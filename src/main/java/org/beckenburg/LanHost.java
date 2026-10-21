@@ -2248,7 +2248,7 @@ public final class LanHost implements AutoCloseable {
                     String twinSight=LanApparition.frame(map,world.body(i),true,echo.pose(),
                             ghost.manifested(),tick);
                     boolean twinVisible=twinSight.startsWith("APPARITION|VISIBLE|");
-                    reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible));
+                    reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible,ghostType.ancient()));
                 }
             }
         }
