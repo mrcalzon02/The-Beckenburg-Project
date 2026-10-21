@@ -96,11 +96,16 @@
       "zones": 13,
       "checks": 167,
       "result": "pass"
+    },
+    {
+      "id": "WLD-08",
+      "zones": 14,
+      "checks": 215,
+      "result": "pass"
     }
   ],
   "missing": [
     "castle",
-    "wld-08",
     "wld-09",
     "wld-10",
     "wld-11",

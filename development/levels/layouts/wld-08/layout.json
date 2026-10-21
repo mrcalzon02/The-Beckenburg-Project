@@ -1,0 +1,705 @@
+{
+  "version": 1,
+  "id": "WLD-08",
+  "title": "Northwatch Research Station",
+  "region": "Northern Expanse",
+  "scale": "Medium / polar compound",
+  "status": "rough-layout-only",
+  "intent": "A compact ring of insulated prefabs surrounds a flagged service court. A heated tunnel links lab, dormitory and generator while the instrument array remains an exposed optional branch.",
+  "site_bounds": [
+    -2,
+    -4,
+    74,
+    86
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Prepared station van apron",
+      "bounds": [
+        24,
+        70,
+        40,
+        82
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Flagged arrival lane",
+      "bounds": [
+        24,
+        56,
+        40,
+        70
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "court",
+      "name": "Station service court",
+      "bounds": [
+        20,
+        26,
+        44,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lab",
+      "name": "Observation laboratory",
+      "bounds": [
+        2,
+        26,
+        20,
+        44
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dorm",
+      "name": "Dormitory",
+      "bounds": [
+        44,
+        26,
+        62,
+        44
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "mess",
+      "name": "Mess / galley",
+      "bounds": [
+        44,
+        44,
+        62,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "radio",
+      "name": "Radio room",
+      "bounds": [
+        20,
+        12,
+        32,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "records",
+      "name": "Log archive",
+      "bounds": [
+        32,
+        12,
+        44,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "generator",
+      "name": "Generator / water shed",
+      "bounds": [
+        2,
+        8,
+        20,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "array",
+      "name": "Exterior instrument array",
+      "bounds": [
+        44,
+        0,
+        62,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "store",
+      "name": "Cold stores",
+      "bounds": [
+        2,
+        44,
+        20,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "tunnel",
+      "name": "Heated service tunnel",
+      "bounds": [
+        20,
+        26,
+        44,
+        36
+      ],
+      "y": -2.5,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "tunnel-n",
+      "name": "Generator tunnel branch",
+      "bounds": [
+        2,
+        18,
+        20,
+        26
+      ],
+      "y": -2.5,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "shelter",
+      "name": "Array wind shelter",
+      "bounds": [
+        62,
+        8,
+        70,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          76.0
+        ],
+        [
+          32.0,
+          0,
+          63.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "court",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          63.0
+        ],
+        [
+          32.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "court",
+      "b": "lab",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          41.0
+        ],
+        [
+          11.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "lab",
+      "b": "store",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          35.0
+        ],
+        [
+          11.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "store",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          11.0,
+          0,
+          50.0
+        ],
+        [
+          32.0,
+          0,
+          63.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "court",
+      "b": "dorm",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          41.0
+        ],
+        [
+          53.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "dorm",
+      "b": "mess",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          53.0,
+          0,
+          35.0
+        ],
+        [
+          53.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "mess",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          53.0,
+          0,
+          50.0
+        ],
+        [
+          32.0,
+          0,
+          63.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "court",
+      "b": "radio",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          41.0
+        ],
+        [
+          26.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "radio",
+      "b": "records",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          26.0,
+          0,
+          19.0
+        ],
+        [
+          38.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "records",
+      "b": "court",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          38.0,
+          0,
+          19.0
+        ],
+        [
+          32.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "radio",
+      "b": "generator",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          26.0,
+          0,
+          19.0
+        ],
+        [
+          11.0,
+          0,
+          17.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "generator",
+      "b": "lab",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          17.0
+        ],
+        [
+          11.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "records",
+      "b": "array",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          38.0,
+          0,
+          19.0
+        ],
+        [
+          53.0,
+          0,
+          10.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L15",
+      "a": "array",
+      "b": "dorm",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          53.0,
+          0,
+          10.0
+        ],
+        [
+          53.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L16",
+      "a": "array",
+      "b": "shelter",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          53.0,
+          0,
+          10.0
+        ],
+        [
+          66.0,
+          0,
+          14.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L17",
+      "a": "lab",
+      "b": "tunnel",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          35.0
+        ],
+        [
+          32.0,
+          -2.5,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 2.5,
+      "construction": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L18",
+      "a": "tunnel",
+      "b": "dorm",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          -2.5,
+          31.0
+        ],
+        [
+          53.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 2.5,
+      "construction": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L19",
+      "a": "tunnel",
+      "b": "tunnel-n",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          -2.5,
+          31.0
+        ],
+        [
+          11.0,
+          -2.5,
+          22.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L20",
+      "a": "tunnel-n",
+      "b": "generator",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          -2.5,
+          22.0
+        ],
+        [
+          11.0,
+          0,
+          17.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 2.5,
+      "construction": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "entry",
+      "court",
+      "dorm",
+      "mess",
+      "entry"
+    ],
+    [
+      "court",
+      "lab",
+      "generator",
+      "radio",
+      "court"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      76.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        72.372
+      ],
+      [
+        32.0,
+        0,
+        63.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "lab",
+      "point": [
+        11.0,
+        0,
+        35.0
+      ],
+      "installation": "Anchored research containment frame"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "mess",
+      "point": [
+        53.0,
+        0,
+        50.0
+      ],
+      "installation": "Galley purification basin"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "radio",
+      "point": [
+        26.0,
+        0,
+        19.0
+      ],
+      "installation": "Crew remembrance station"
+    }
+  ],
+  "circulation": "Flagged court is the visual reference; return routes remain traversable in all allowed weather. Heated tunnel gives an interior alternative rather than a mandatory long snow crossing. Array is visible from the radio room and has a near shelter.",
+  "systems": "Outdoor freezing is weather, never automatic paranormal evidence. Calibrated inside/outside baselines, generator vibration and ventilation must preserve tool usefulness. Snow visuals may not erase paths or alter collision per client.",
+  "campaign": "Observation logs and contradictory transmissions support the remote campaign arc. Van deployment is a pre-established station logistics arrangement; this plan creates no polar driving minigame.",
+  "refine": [
+    "Verify physical prefabs and tunnel fire/vent separation with primary station references before detailed construction.",
+    "Snowdrift barriers must leave two clear loops and one readable retreat route at every allowed condition.",
+    "Station expansion and radio plot remain design-only until persistence and legal events exist."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md",
+    "https://www.bas.ac.uk/project/signy-research-station-modernisation/ (text inspected 2026-10-21: separate house, stores and generator functions only; fictional station geometry authored)"
+  ]
+}
