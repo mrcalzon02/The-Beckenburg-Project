@@ -1218,11 +1218,13 @@ public final class SceneRenderer {
         }
     }
     /** First-person network rendering with low-poly teammate models and host-managed doors. */
-    public record RemoteBody(double x,double y,double z,int slot,int heading) {
-        public RemoteBody(double x,double z,int slot,int heading){this(x,0,z,slot,heading);}
+    public record RemoteBody(double x,double y,double z,int slot,int heading,String appearance) {
+        public RemoteBody(double x,double y,double z,int slot,int heading){this(x,y,z,slot,heading,"observer");}
+        public RemoteBody(double x,double z,int slot,int heading){this(x,0,z,slot,heading,"observer");}
         public RemoteBody(double x,double z,int slot){this(x,z,slot,0);}
         public RemoteBody {
-            if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z)||slot<0||slot>=6||heading<0||heading>=360)
+            if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z)||slot<0||slot>=6||heading<0||heading>=360
+                    ||!CharacterVisuals.isHunter(appearance))
                 throw new IllegalArgumentException("invalid remote body");
         }
     }
@@ -1598,9 +1600,11 @@ public final class SceneRenderer {
             if(apparition!=null&&apparition.orb()){
                 renderSpiritOrb(gx,gz,(apparition==null?map.floorY(ghostRoom):apparition.y())+.98+.18*Math.sin(clock*4),clock,apparition.greenTint());
             }else{
+                String appearance=apparition==null?"banshee":apparition.appearance();
+                CharacterVisuals.Shape shape=CharacterVisuals.shape(appearance);
                 DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,gx,gz,
                     apparition==null?0:apparition.heading(),
-                    apparition==null?"banshee":apparition.appearance(),1.95*stature,1.16,
+                    appearance,shape.height()*stature,shape.width(),
                     (apparition==null?map.floorY(ghostRoom):apparition.y())-(eyeHeight-1.62)+.09*Math.sin(clock*3)+lift,alpha,lamp,renderWidth,renderHeight,focal,
                     apparition!=null&&apparition.greenTint(),phase,
                     Math.floorMod((int)Math.floor(clock*10),4));
@@ -1615,7 +1619,10 @@ public final class SceneRenderer {
             double distance=Math.hypot(person.x()-x,person.z()-z);
             if(distance>14||distance<1.35)continue;
             DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,person.x(),person.z(),
-                person.heading(),"observer",1.75,1.04,person.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
+                person.heading(),person.appearance(),
+                CharacterVisuals.shape(person.appearance()).height(),
+                CharacterVisuals.shape(person.appearance()).width(),
+                person.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
         }
     }
     /** A real luminous orb in perspective, occluded by walls and the existing Z-buffer. */
