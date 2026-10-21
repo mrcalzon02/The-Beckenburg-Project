@@ -1,6 +1,6 @@
 {
   "identity": "twins",
-  "version": "two-independent-source-cutouts-v2",
+  "version": "two-independent-source-cutouts-v3-full-silhouette",
   "source": "assets/concept-art/v001/03-ghosts/twins-ghost-profile.png",
   "source_sha256": "cbece996e02fdcc3ad301c546fc63d8e406a7a61c9e370938544c380b931627a",
   "directions": {
@@ -43,11 +43,11 @@
           316,
           614
         ],
-        "visible_pixels": 8020,
-        "head_pixels": 1353,
-        "torso_pixels": 3997,
-        "feet_pixels": 2523,
-        "sha256": "88c132ba0208bee8bc19493536e9be470b4664c43f49f21caa3a5f35286e07c3"
+        "visible_pixels": 5669,
+        "head_pixels": 891,
+        "torso_pixels": 3035,
+        "feet_pixels": 1589,
+        "sha256": "abb7ce512e46a991d0cbedd12373f09993a1a8ba05422559faee8e10f51bb055"
       },
       "b": {
         "path": "twins/b/side.png",
@@ -117,11 +117,11 @@
           756,
           615
         ],
-        "visible_pixels": 8959,
-        "head_pixels": 1741,
-        "torso_pixels": 4581,
-        "feet_pixels": 2507,
-        "sha256": "f132ff8b7ef3d9ed7b131f8b6c14c06231ca102e8780db977d22658c9ae13458"
+        "visible_pixels": 9114,
+        "head_pixels": 1704,
+        "torso_pixels": 5179,
+        "feet_pixels": 2023,
+        "sha256": "6d2409b9d4bdad0126ef6c25dec4f1a1adfe421d08fa42c0867893c59e7d164b"
       }
     }
   },
@@ -129,5 +129,5 @@
     128,
     224
   ],
-  "archive_sha256": "bfef67b98900909647af74a2f5dc20af2642299182f83d92c6800560e69aaa97"
+  "archive_sha256": "6646b02471e3744003da614581b9b4020a61125c429ce76a7c4440c6ca320240"
 }
