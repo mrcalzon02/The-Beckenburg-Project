@@ -3,6 +3,14 @@
   "status": "planning-only",
   "maps": [
     {
+      "id": "ACADEMY",
+      "title": "St. Alban Academy",
+      "folder": "academy",
+      "region": "Beckenburg district",
+      "zone_count": 17,
+      "status": "rough-layout-only"
+    },
+    {
       "id": "ASYLUM",
       "title": "St. Dymphna Hospital",
       "folder": "asylum",

@@ -1,0 +1,743 @@
+{
+  "version": 1,
+  "id": "ACADEMY",
+  "title": "St. Alban Academy",
+  "region": "Beckenburg district",
+  "scale": "Medium-large / cloister",
+  "status": "rough-layout-only",
+  "intent": "Four unequal ranges frame a real open quadrangle. Public teaching stays on the south/east, library on the west, upper dormitories on the north, and sealed archive below.",
+  "site_bounds": [
+    -4,
+    -4,
+    72,
+    84
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Gate van apron",
+      "bounds": [
+        24,
+        68,
+        40,
+        80
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Front gate court",
+      "bounds": [
+        24,
+        58,
+        40,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "reception",
+      "name": "Reception hall",
+      "bounds": [
+        24,
+        46,
+        40,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "south",
+      "name": "South cloister",
+      "bounds": [
+        12,
+        40,
+        52,
+        46
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "west",
+      "name": "West cloister",
+      "bounds": [
+        12,
+        16,
+        18,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "north",
+      "name": "North cloister",
+      "bounds": [
+        12,
+        10,
+        52,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "east",
+      "name": "East cloister",
+      "bounds": [
+        46,
+        16,
+        52,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "quad",
+      "name": "Inner quadrangle",
+      "bounds": [
+        18,
+        16,
+        46,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "library",
+      "name": "Library",
+      "bounds": [
+        0,
+        16,
+        12,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lecture",
+      "name": "Lecture room",
+      "bounds": [
+        52,
+        26,
+        68,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lab",
+      "name": "Laboratory / study",
+      "bounds": [
+        52,
+        10,
+        68,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dining",
+      "name": "Dining hall",
+      "bounds": [
+        18,
+        0,
+        46,
+        10
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "office",
+      "name": "Headmaster office",
+      "bounds": [
+        0,
+        0,
+        12,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dorm",
+      "name": "Upper dormitory",
+      "bounds": [
+        18,
+        0,
+        46,
+        10
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "upper",
+      "name": "Upper north gallery",
+      "bounds": [
+        12,
+        10,
+        52,
+        16
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "archive",
+      "name": "Basement archive",
+      "bounds": [
+        0,
+        16,
+        12,
+        40
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "rear",
+      "name": "Rear quadrangle / service yard",
+      "bounds": [
+        52,
+        40,
+        68,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          74.0
+        ],
+        [
+          32.0,
+          0,
+          63.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "reception",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          63.0
+        ],
+        [
+          32.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "reception",
+      "b": "south",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          52.0
+        ],
+        [
+          32.0,
+          0,
+          43.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "south",
+      "b": "west",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          43.0
+        ],
+        [
+          15.0,
+          0,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "west",
+      "b": "north",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          0,
+          28.0
+        ],
+        [
+          32.0,
+          0,
+          13.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "north",
+      "b": "east",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          13.0
+        ],
+        [
+          49.0,
+          0,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "east",
+      "b": "south",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          49.0,
+          0,
+          28.0
+        ],
+        [
+          32.0,
+          0,
+          43.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "south",
+      "b": "quad",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          43.0
+        ],
+        [
+          32.0,
+          0,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "quad",
+      "b": "north",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          28.0
+        ],
+        [
+          32.0,
+          0,
+          13.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "west",
+      "b": "library",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          0,
+          28.0
+        ],
+        [
+          6.0,
+          0,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "north",
+      "b": "dining",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          13.0
+        ],
+        [
+          32.0,
+          0,
+          5.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "north",
+      "b": "office",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          13.0
+        ],
+        [
+          6.0,
+          0,
+          8.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "east",
+      "b": "lecture",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          49.0,
+          0,
+          28.0
+        ],
+        [
+          60.0,
+          0,
+          33.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "lecture",
+      "b": "lab",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          60.0,
+          0,
+          33.0
+        ],
+        [
+          60.0,
+          0,
+          18.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L15",
+      "a": "lab",
+      "b": "east",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          60.0,
+          0,
+          18.0
+        ],
+        [
+          49.0,
+          0,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L16",
+      "a": "south",
+      "b": "rear",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          43.0
+        ],
+        [
+          60.0,
+          0,
+          49.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L17",
+      "a": "rear",
+      "b": "lecture",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          60.0,
+          0,
+          49.0
+        ],
+        [
+          60.0,
+          0,
+          33.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L18",
+      "a": "north",
+      "b": "upper",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          13.0
+        ],
+        [
+          32.0,
+          3.6,
+          13.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.6,
+      "construction": "Reserve at least 5.76 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L19",
+      "a": "upper",
+      "b": "dorm",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          3.6,
+          13.0
+        ],
+        [
+          32.0,
+          3.6,
+          5.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L20",
+      "a": "west",
+      "b": "archive",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          0,
+          28.0
+        ],
+        [
+          6.0,
+          -3,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "south",
+      "west",
+      "north",
+      "east",
+      "south"
+    ],
+    [
+      "east",
+      "lecture",
+      "lab",
+      "east"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      74.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        70.372
+      ],
+      [
+        32.0,
+        0,
+        63.0
+      ]
+    ],
+    "logistics": "Existing shared van on a level service apron/roadhead; no new transport mechanic."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "archive",
+      "point": [
+        6.0,
+        -3,
+        28.0
+      ],
+      "installation": "Locked archive seal grid"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "lab",
+      "point": [
+        60.0,
+        0,
+        18.0
+      ],
+      "installation": "Reagent purification station"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "library",
+      "point": [
+        6.0,
+        0,
+        28.0
+      ],
+      "installation": "Founders remembrance lectern"
+    }
+  ],
+  "circulation": "Cloister ring is the main pursuit loop with the open quad as a short exposed alternative. Teaching-room loop branches east; service yard provides a second ground-level return. Upper dorms are a bounded search branch rather than a duplicate teaching floor.",
+  "systems": "Stone cloister reverberation contrasts with library absorption. Archive humidity, laboratory apparatus and dining heat use ordinary baselines; lore puzzles never gate all legal ritual routes.",
+  "campaign": "Founders records and student accounts can inform Castle research restoration while remaining separate from measured encounter evidence.",
+  "refine": [
+    "Reference pass must inspect a real cloister/academic plan before shell work; current proportions are original reservations.",
+    "Engineer upper-gallery stairs, archive descent and real continuous cloister openings.",
+    "Do not conflate this compact esoteric academy with the larger multi-building college."
+  ],
+  "sources": [
+    "docs/environments/ROOM_AND_ASSET_REQUIREMENTS.md",
+    "docs/environments/THREE_RITUAL_SITES.md",
+    "development/levels/ARCHITECTURAL_REFERENCES.md"
+  ]
+}

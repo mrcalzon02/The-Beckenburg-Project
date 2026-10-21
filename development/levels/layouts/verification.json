@@ -2,6 +2,12 @@
   "status": "partial-pass",
   "maps": [
     {
+      "id": "ACADEMY",
+      "zones": 17,
+      "checks": 238,
+      "result": "pass"
+    },
+    {
       "id": "ASYLUM",
       "zones": 16,
       "checks": 229,
@@ -39,7 +45,6 @@
     }
   ],
   "missing": [
-    "academy",
     "castle",
     "church",
     "college",
