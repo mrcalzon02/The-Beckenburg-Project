@@ -10,3 +10,4 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 
 - **HOUSE / The Briar House**: 15 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **FARMHOUSE / Hollowmere Farm**: 15 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+- **SCHOOL / Ravenshade School**: 15 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.

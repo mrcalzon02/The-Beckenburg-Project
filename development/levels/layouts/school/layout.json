@@ -1,0 +1,734 @@
+{
+  "version": 1,
+  "id": "SCHOOL",
+  "title": "Ravenshade School",
+  "region": "Beckenburg district",
+  "scale": "Established reference",
+  "status": "rough-layout-only",
+  "intent": "Trace of current authored architecture for review. Preserve its measured footprint and floor elevations while planning the full roster.",
+  "site_bounds": [
+    -3,
+    -3,
+    55,
+    62.4
+  ],
+  "zones": [
+    {
+      "id": "r00",
+      "name": "Front office and foyer",
+      "bounds": [
+        20.0,
+        32.0,
+        28.0,
+        38.0
+      ],
+      "y": 0.0,
+      "height": 3.6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r01",
+      "name": "Main school corridor",
+      "bounds": [
+        20.0,
+        12.0,
+        28.0,
+        32.0
+      ],
+      "y": 0.0,
+      "height": 3.6,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r02",
+      "name": "Classroom A",
+      "bounds": [
+        10.0,
+        24.0,
+        20.0,
+        38.0
+      ],
+      "y": 0.0,
+      "height": 3.6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r03",
+      "name": "Science classroom",
+      "bounds": [
+        10.0,
+        12.0,
+        20.0,
+        24.0
+      ],
+      "y": 0.0,
+      "height": 3.6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r04",
+      "name": "Cafeteria",
+      "bounds": [
+        28.0,
+        24.0,
+        40.0,
+        38.0
+      ],
+      "y": 0.0,
+      "height": 3.6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r05",
+      "name": "Nurse office",
+      "bounds": [
+        28.0,
+        18.0,
+        34.0,
+        24.0
+      ],
+      "y": 0.0,
+      "height": 3.6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r06",
+      "name": "Gymnasium",
+      "bounds": [
+        34.0,
+        8.0,
+        46.0,
+        24.0
+      ],
+      "y": 0.0,
+      "height": 7.2,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r07",
+      "name": "Upper locker corridor",
+      "bounds": [
+        20.0,
+        12.0,
+        28.0,
+        38.0
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r08",
+      "name": "School library",
+      "bounds": [
+        10.0,
+        24.0,
+        20.0,
+        38.0
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r09",
+      "name": "Classroom B",
+      "bounds": [
+        10.0,
+        12.0,
+        20.0,
+        24.0
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r10",
+      "name": "Assembly hall",
+      "bounds": [
+        28.0,
+        24.0,
+        40.0,
+        38.0
+      ],
+      "y": 3.6,
+      "height": 4.5,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "r11",
+      "name": "Boiler and electrical room",
+      "bounds": [
+        10.0,
+        12.0,
+        34.0,
+        38.0
+      ],
+      "y": -3.0,
+      "height": 3.0,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "grounds",
+      "name": "Rear grounds / exterior",
+      "bounds": [
+        5,
+        1,
+        51,
+        38
+      ],
+      "y": 0,
+      "height": 12,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Approach / arrival",
+      "bounds": [
+        1,
+        38,
+        51,
+        58.4
+      ],
+      "y": 0,
+      "height": 12,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "stage",
+      "name": "Van service apron",
+      "bounds": [
+        20.0,
+        45,
+        36.0,
+        57
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "r00",
+      "b": "r01",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          0.0,
+          35.0
+        ],
+        [
+          24.0,
+          0.0,
+          22.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L02",
+      "a": "r00",
+      "b": "r02",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          0.0,
+          35.0
+        ],
+        [
+          15.0,
+          0.0,
+          31.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L03",
+      "a": "r00",
+      "b": "r04",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          0.0,
+          35.0
+        ],
+        [
+          34.0,
+          0.0,
+          31.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L04",
+      "a": "r01",
+      "b": "r02",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          0.0,
+          22.0
+        ],
+        [
+          15.0,
+          0.0,
+          31.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L05",
+      "a": "r01",
+      "b": "r03",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          0.0,
+          22.0
+        ],
+        [
+          15.0,
+          0.0,
+          18.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L06",
+      "a": "r01",
+      "b": "r05",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          0.0,
+          22.0
+        ],
+        [
+          31.0,
+          0.0,
+          21.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L07",
+      "a": "r02",
+      "b": "r03",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          0.0,
+          31.0
+        ],
+        [
+          15.0,
+          0.0,
+          18.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L08",
+      "a": "r04",
+      "b": "r05",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          34.0,
+          0.0,
+          31.0
+        ],
+        [
+          31.0,
+          0.0,
+          21.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L09",
+      "a": "r04",
+      "b": "r06",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          34.0,
+          0.0,
+          31.0
+        ],
+        [
+          40.0,
+          0.0,
+          16.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L10",
+      "a": "r05",
+      "b": "r06",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          31.0,
+          0.0,
+          21.0
+        ],
+        [
+          40.0,
+          0.0,
+          16.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L11",
+      "a": "r07",
+      "b": "r08",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          3.6,
+          25.0
+        ],
+        [
+          15.0,
+          3.6,
+          31.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L12",
+      "a": "r07",
+      "b": "r09",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          3.6,
+          25.0
+        ],
+        [
+          15.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L13",
+      "a": "r07",
+      "b": "r10",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          24.0,
+          3.6,
+          25.0
+        ],
+        [
+          34.0,
+          3.6,
+          31.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L14",
+      "a": "r08",
+      "b": "r09",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          3.6,
+          31.0
+        ],
+        [
+          15.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L15",
+      "a": "r00",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          24.0,
+          0.0,
+          35.0
+        ],
+        [
+          26.0,
+          0,
+          48.2
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L16",
+      "a": "r03",
+      "b": "grounds",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0.0,
+          18.0
+        ],
+        [
+          28.0,
+          0,
+          19.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L17",
+      "a": "r06",
+      "b": "grounds",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          40.0,
+          0.0,
+          16.0
+        ],
+        [
+          28.0,
+          0,
+          19.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+    },
+    {
+      "id": "L18",
+      "a": "r01",
+      "b": "r07",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          21.5,
+          0.0,
+          13.3
+        ],
+        [
+          21.5,
+          3.6,
+          18.1
+        ]
+      ],
+      "note": "Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",
+      "rise_m": 3.6,
+      "construction": "Reserve at least 5.76 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L19",
+      "a": "r11",
+      "b": "r01",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          26.5,
+          -3.0,
+          30.1
+        ],
+        [
+          26.5,
+          0.0,
+          25.3
+        ]
+      ],
+      "note": "Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",
+      "rise_m": 3.0,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L20",
+      "a": "grounds",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          19.5
+        ],
+        [
+          26.0,
+          0,
+          48.2
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L21",
+      "a": "entry",
+      "b": "stage",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          26.0,
+          0,
+          48.2
+        ],
+        [
+          28.0,
+          0,
+          51.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    }
+  ],
+  "loops": [
+    [
+      "r00",
+      "r02",
+      "r01",
+      "r00"
+    ],
+    [
+      "r04",
+      "r05",
+      "r06",
+      "r04"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      28.0,
+      0,
+      51
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        28.0,
+        0,
+        47.372
+      ],
+      [
+        26.0,
+        0,
+        48.2
+      ]
+    ],
+    "logistics": "Existing shared van on a level service apron/roadhead; no new transport mechanic."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "r06",
+      "point": [
+        40.0,
+        0.0,
+        16.0
+      ],
+      "installation": "Gym containment square"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "r03",
+      "point": [
+        15.0,
+        0.0,
+        18.0
+      ],
+      "installation": "Science wash station"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "r08",
+      "point": [
+        15.0,
+        3.6,
+        31.0
+      ],
+      "installation": "Library remembrance desk"
+    }
+  ],
+  "circulation": "Use the existing interior loops and distinct rear exits. Staging, outdoor grounds and exact door/stair construction remain governed by current runtime coordinates.",
+  "systems": "Ground teaching wings, upper library/assembly at +3.6, service basement at -3. Gym is a distinct 7.2 m high offset volume. Bells, water and plant sounds remain ordinary until a lawful event changes them.",
+  "campaign": "Records and witness recollections support a longer institutional search. Ghost campaign later reuses the same doors and stairs.",
+  "refine": [
+    "Keep gym roof and upper assembly volume independent; avoid phantom floors over the gym.",
+    "Two routes connect gym/cafeteria/nurse wing; verify real door swings and refuge positions at full team capacity.",
+    "Library rite requires a real cleared furniture area in the upper plan; no runtime placement is changed here."
+  ],
+  "sources": [
+    "src/main/java/org/beckenburg/LevelPlans.java (house/farm/school methods, read 2026-10-21)",
+    "development/levels/ARCHITECTURAL_REFERENCES.md",
+    "docs/environments/THREE_RITUAL_SITES.md"
+  ]
+}

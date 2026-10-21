@@ -12,6 +12,12 @@
       "zones": 15,
       "checks": 200,
       "result": "pass"
+    },
+    {
+      "id": "SCHOOL",
+      "zones": 15,
+      "checks": 222,
+      "result": "pass"
     }
   ],
   "missing": [
@@ -22,7 +28,6 @@
     "college",
     "mansion",
     "prison",
-    "school",
     "wld-01",
     "wld-02",
     "wld-03",
