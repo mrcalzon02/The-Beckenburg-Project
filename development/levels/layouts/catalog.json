@@ -3,6 +3,14 @@
   "status": "planning-only",
   "maps": [
     {
+      "id": "ASYLUM",
+      "title": "St. Dymphna Hospital",
+      "folder": "asylum",
+      "region": "Beckenburg district",
+      "zone_count": 16,
+      "status": "rough-layout-only"
+    },
+    {
       "id": "FARMHOUSE",
       "title": "Hollowmere Farm",
       "folder": "farmhouse",
