@@ -1,0 +1,660 @@
+{
+  "version": 1,
+  "id": "WLD-01",
+  "title": "Blackpine Logging Camp",
+  "region": "Northern Woodlands",
+  "scale": "Medium-large / dispersed buildings",
+  "status": "rough-layout-only",
+  "intent": "A horseshoe of working buildings around a log yard, with a separate cabin path and original foundations beyond the sawmill. Distinct roofs and yard landmarks bound the search.",
+  "site_bounds": [
+    -2,
+    0,
+    66,
+    94
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Logging-road van apron",
+      "bounds": [
+        24,
+        78,
+        40,
+        90
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Camp gate and roadhead",
+      "bounds": [
+        24,
+        66,
+        40,
+        78
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "yard",
+      "name": "Stacked-timber yard",
+      "bounds": [
+        20,
+        38,
+        44,
+        66
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "mill",
+      "name": "Sawmill floor",
+      "bounds": [
+        44,
+        30,
+        62,
+        58
+      ],
+      "y": 0,
+      "height": 6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "mill-deck",
+      "name": "Sawmill inspection deck",
+      "bounds": [
+        44,
+        30,
+        50,
+        48
+      ],
+      "y": 3,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "mess",
+      "name": "Mess hall",
+      "bounds": [
+        2,
+        42,
+        20,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "bunk",
+      "name": "Bunkhouse",
+      "bounds": [
+        2,
+        22,
+        20,
+        42
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cabin-a",
+      "name": "Foreman cabin",
+      "bounds": [
+        24,
+        14,
+        34,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cabin-b",
+      "name": "Logging cabin",
+      "bounds": [
+        38,
+        10,
+        48,
+        22
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "shed",
+      "name": "Equipment repair shed",
+      "bounds": [
+        44,
+        58,
+        58,
+        70
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "wash",
+      "name": "Washhouse",
+      "bounds": [
+        2,
+        58,
+        12,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "foundations",
+      "name": "Original foundations",
+      "bounds": [
+        48,
+        4,
+        62,
+        22
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "trail",
+      "name": "Cabin trail junction",
+      "bounds": [
+        20,
+        26,
+        44,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "store",
+      "name": "Payroll / stores office",
+      "bounds": [
+        20,
+        4,
+        34,
+        14
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          84.0
+        ],
+        [
+          32.0,
+          0,
+          72.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "yard",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          72.0
+        ],
+        [
+          32.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "yard",
+      "b": "mess",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          52.0
+        ],
+        [
+          11.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "mess",
+      "b": "bunk",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          50.0
+        ],
+        [
+          11.0,
+          0,
+          32.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "bunk",
+      "b": "trail",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          11.0,
+          0,
+          32.0
+        ],
+        [
+          32.0,
+          0,
+          32.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "trail",
+      "b": "yard",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          32.0
+        ],
+        [
+          32.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "trail",
+      "b": "cabin-a",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          32.0
+        ],
+        [
+          29.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "cabin-a",
+      "b": "store",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          0,
+          20.0
+        ],
+        [
+          27.0,
+          0,
+          9.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "store",
+      "b": "cabin-b",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          27.0,
+          0,
+          9.0
+        ],
+        [
+          43.0,
+          0,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "cabin-b",
+      "b": "trail",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          43.0,
+          0,
+          16.0
+        ],
+        [
+          32.0,
+          0,
+          32.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "cabin-b",
+      "b": "foundations",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          43.0,
+          0,
+          16.0
+        ],
+        [
+          55.0,
+          0,
+          13.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "foundations",
+      "b": "mill",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          55.0,
+          0,
+          13.0
+        ],
+        [
+          53.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "mill",
+      "b": "yard",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          53.0,
+          0,
+          44.0
+        ],
+        [
+          32.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "yard",
+      "b": "shed",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          52.0
+        ],
+        [
+          51.0,
+          0,
+          64.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L15",
+      "a": "shed",
+      "b": "mill",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          51.0,
+          0,
+          64.0
+        ],
+        [
+          53.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L16",
+      "a": "mess",
+      "b": "wash",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          50.0
+        ],
+        [
+          7.0,
+          0,
+          63.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L17",
+      "a": "wash",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          7.0,
+          0,
+          63.0
+        ],
+        [
+          32.0,
+          0,
+          72.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L18",
+      "a": "mill",
+      "b": "mill-deck",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          53.0,
+          0,
+          44.0
+        ],
+        [
+          47.0,
+          3,
+          39.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "yard",
+      "mess",
+      "bunk",
+      "trail",
+      "yard"
+    ],
+    [
+      "yard",
+      "mill",
+      "shed",
+      "yard"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      84.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        80.372
+      ],
+      [
+        32.0,
+        0,
+        72.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "mill",
+      "point": [
+        53.0,
+        0,
+        44.0
+      ],
+      "installation": "Grounded industrial containment ring"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "wash",
+      "point": [
+        7.0,
+        0,
+        63.0
+      ],
+      "installation": "Washhouse purification vessel"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "mess",
+      "point": [
+        11.0,
+        0,
+        50.0
+      ],
+      "installation": "Workers memorial table"
+    }
+  ],
+  "circulation": "Main yard/mess/bunkhouse loop is short and sheltered on one side. Sawmill/shed loop is more exposed. Two cabin-trail returns avoid a long compulsory dead end. Inspection deck is optional; all rites stay on the ground.",
+  "systems": "Mill, domestic and service electrical districts; timber stacks break sightlines without moving between graphics presets. Wind, loose roofing and inert machinery produce ordinary sounds; any powered event needs a real source/state.",
+  "campaign": "Payroll omissions in stores, manifest in sawmill office and personal accounts in bunkhouse. Proposed shipping connection to Dead Man's Claim is a found-document thread, never automatic ghost evidence.",
+  "refine": [
+    "First remote construction exemplar after the established house reference: prove all tools, three rites and human/AI ghost access here.",
+    "Subdivide sawmill into believable machine and circulation bays while retaining the diagram footprint.",
+    "Inspect primary logging-camp building references before shell work; proposed metres are not historical measurements."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md",
+    "https://npgallery.nps.gov/GetAsset/693f6b20-44db-4db6-bbc7-2290ab12d7a2 (indexed primary text inspected 2026-10-21: multiple habitation and service buildings; no source dimensions copied)"
+  ]
+}

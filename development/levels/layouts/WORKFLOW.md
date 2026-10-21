@@ -17,3 +17,4 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 - **ACADEMY / St. Alban Academy**: 17 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **COLLEGE / Beckenburg College**: 17 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **CHURCH / St. Brigid Parish**: 15 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+- **WLD-01 / Blackpine Logging Camp**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
