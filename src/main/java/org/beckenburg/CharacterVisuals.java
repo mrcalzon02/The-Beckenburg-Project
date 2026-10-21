@@ -15,6 +15,33 @@ public final class CharacterVisuals {
     private CharacterVisuals() { }
 
     public enum Hunter { CLERIC, OBSERVER, DEMONOLOGIST }
+    /**
+     * The source-art bridge has alternate-gender and alternative-model boards,
+     * but NO complete verified four-view runtime exports for those appearances.
+     * They are deliberately not selectable as different textures yet.
+     */
+    public enum Variant { BASE, ALTERNATE_GENDER, ALTERNATIVE_MODEL }
+    public record Appearance(String requestedIdentity,Variant requestedVariant,
+                             String runtimeIdentity,boolean inheritedBase) {
+        public Appearance {
+            if(requestedIdentity==null||runtimeIdentity==null||requestedVariant==null)
+                throw new IllegalArgumentException("missing appearance binding");
+        }
+    }
+
+    public static Appearance hunterAppearance(Hunter hunter,Variant variant) {
+        if(hunter==null||variant==null)throw new IllegalArgumentException("missing Hunter or variant");
+        String base=hunter.name().toLowerCase(Locale.ROOT);
+        return new Appearance(base,variant,base,variant!=Variant.BASE);
+    }
+
+    public static Appearance ghostAppearance(GhostIdentity.Type identity,Variant variant) {
+        if(identity==null||variant==null)throw new IllegalArgumentException("missing ghost or variant");
+        if(identity.elder()&&variant!=Variant.BASE)
+            throw new IllegalArgumentException("Elders have no approved alternate-gender master");
+        String base=ghost(identity);
+        return new Appearance(base,variant,base,variant!=Variant.BASE);
+    }
 
     public record Shape(double height,double width) {
         public Shape {
