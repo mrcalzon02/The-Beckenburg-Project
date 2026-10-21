@@ -8,6 +8,8 @@ import java.io.IOException;
 public final class LanLobbyWindow extends JFrame {
     private final JTextField ip=new JTextField("127.0.0.1",13),port=new JTextField("27717",5),name=new JTextField("Investigator",11);
     private final JComboBox<String> role=new JComboBox<>(new String[]{"Hunter","Ghost"});
+    private final JComboBox<CharacterVisuals.Hunter> hunterAppearance=
+        new JComboBox<>(CharacterVisuals.Hunter.values());
     private final JPasswordField roomPassword=new JPasswordField(9);
     private final JToggleButton lobbyLock=new JToggleButton("Lock joins");
     private final JButton hostInfo=new JButton("Host info");
@@ -73,6 +75,17 @@ public final class LanLobbyWindow extends JFrame {
         connectActions.add(lobbyLock);
         connectActions.add(new JLabel("Investigation location"));
         connectActions.add(siteChoice);
+        connectActions.add(new JLabel("Hunter art"));
+        connectActions.add(hunterAppearance);
+        hunterAppearance.setToolTipText("Approved directional appearance, visible to other investigators");
+        hunterAppearance.setSelectedItem(CharacterVisuals.Hunter.OBSERVER);
+        role.addActionListener(e->hunterAppearance.setEnabled(role.getSelectedIndex()==0
+                &&(connection==null||!missionRunning)));
+        hunterAppearance.addActionListener(e->{
+            if(connection!=null&&"GHOST".equals(connection.seat())==false&&!missionRunning)
+                action(()->connection.selectVisual(
+                    (CharacterVisuals.Hunter)hunterAppearance.getSelectedItem()));
+        });
         siteChoice.setToolTipText("The LAN host chooses the actual shared investigation map");
         lobbyLock.setEnabled(false);hostInfo.setEnabled(false);
         JPanel info=new JPanel(new GridLayout(3,1,0,4));
@@ -357,6 +370,9 @@ public final class LanLobbyWindow extends JFrame {
                         return; // Stale connection completed after EOF or a replacement request.
                     }
                     hosted=own;connection=client;busy=false;
+                    if(!"GHOST".equals(client.seat()))
+                        action(()->client.selectVisual((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem()));
+                    hunterAppearance.setEnabled(!"GHOST".equals(client.seat()));
                     resumeTicket=null;reconnect.setEnabled(false);
                     if(hosted!=null)clearSavedResume();
                     else saveResume(client);
@@ -418,6 +434,7 @@ public final class LanLobbyWindow extends JFrame {
                     missionRunning=true;worldMode=false;
                     role.setSelectedIndex("GHOST".equals(restored.seat())?1:0);
                     role.setEnabled(false);reconnect.setEnabled(false);
+                    hunterAppearance.setEnabled(false);
                     roomPassword.setEnabled(false);
                     lobbyLock.setEnabled(hosted!=null);
                     if(hosted!=null)lobbyLock.setSelected(hosted.lobbyLocked());
@@ -496,6 +513,7 @@ public final class LanLobbyWindow extends JFrame {
             if(hosted!=null&&!localHostSurvives){hosted.close();hosted=null;}
             myRoom=HouseMap.EXTRACTION_ROOM;
             role.setEnabled(!localHostSurvives);ghostJoined=false;remoteLook=null;
+            hunterAppearance.setEnabled(!localHostSurvives&&role.getSelectedIndex()==0);
             roomPassword.setEnabled(hosted==null);
             siteChoice.setEnabled(hosted==null);
             lobbyLock.setEnabled(localHostSurvives);
