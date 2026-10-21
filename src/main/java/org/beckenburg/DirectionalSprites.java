@@ -19,13 +19,15 @@ public final class DirectionalSprites {
     private static final double FOCAL=153.0,NEAR=.065; // exactly match SceneRenderer
     private static final String[] FACINGS={"front","front","side", "back_three_quarter",
             "back","back_three_quarter_mirrored","side_mirrored","front"};
-    private static final Map<String,BufferedImage> IMAGES=load();
+    // Direction names must initialize before load(): Java runs static fields in
+    // declaration order, and a null MASTER_DIRECTIONS breaks packaged startup.
     // The master boards actually provide four views: front, side, back, rear 3/4.
     // Diagonal angles reuse only these real source views until dedicated art is approved.
     private static final String[] MASTER_FACINGS={
         "front","front","side","three_quarter","back","three_quarter","side","front"
     };
     private static final String[] MASTER_DIRECTIONS={"front","side","back","three_quarter"};
+    private static final Map<String,BufferedImage> IMAGES=load();
     private DirectionalSprites() { }
 
     private static Map<String,BufferedImage> load(){
