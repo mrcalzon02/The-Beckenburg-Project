@@ -1,0 +1,41 @@
+{
+  "license": "CC0-1.0",
+  "libraries": [
+    {
+      "id": "industrial",
+      "title": "Boilers, heating and service machinery",
+      "license": "CC0-1.0",
+      "count": 18,
+      "manifest": "assets/beckenburg/libraries/industrial/manifest.json",
+      "download": "assets/beckenburg/libraries/industrial/beckenburg-industrial-cc0.zip",
+      "sha256": "7e6b29c8d83913119699fd3a3079b2e38bc089ac0c85a30c4775348c1b2174c8"
+    },
+    {
+      "id": "household",
+      "title": "Inherited furniture and household curiosities",
+      "license": "CC0-1.0",
+      "count": 38,
+      "manifest": "assets/beckenburg/libraries/household/manifest.json",
+      "download": "assets/beckenburg/libraries/household/beckenburg-household-cc0.zip",
+      "sha256": "22e85a356548e80ae59dfd2b0a43047cbe0bc7d429fc79be51ddce7f3d94541c"
+    },
+    {
+      "id": "hiding",
+      "title": "Walk-in hiding cupboard",
+      "license": "CC0-1.0",
+      "count": 2,
+      "manifest": "assets/beckenburg/libraries/hiding/manifest.json",
+      "download": "assets/beckenburg/libraries/hiding/beckenburg-hiding-cc0.zip",
+      "sha256": "105044f3292d5668350751aaf43348281cb908bf3bf80a390717c4755084c179"
+    },
+    {
+      "id": "events",
+      "title": "Ghost event fixtures",
+      "license": "CC0-1.0",
+      "count": 12,
+      "manifest": "assets/beckenburg/libraries/events/manifest.json",
+      "download": "assets/beckenburg/libraries/events/beckenburg-events-cc0.zip",
+      "sha256": "e52d90bead5f592a280f75d94d3384bf8746887705de1ba362211d78a0678e67"
+    }
+  ]
+}

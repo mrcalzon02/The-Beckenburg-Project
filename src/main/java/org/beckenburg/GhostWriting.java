@@ -1,0 +1,109 @@
+package org.beckenburg;
+
+import java.util.Objects;
+
+/**
+ * Server-authoritative authored writing after a real ghost interaction with a placed book.
+ * Mark style is descriptive evidence; it must not reveal the species on its own.
+ */
+public final class GhostWriting {
+    public enum Style { CHILD_DRAWINGS, FRANTIC_SCRAWLS, RITUAL_CIRCLES }
+    public record Page(int room,int eventTick,Style style,String description) {
+        public Page {
+            if(room<0||eventTick<0||style==null||description==null||description.isBlank())
+                throw new IllegalArgumentException("invalid writing");
+        }
+    }
+    private int room=-1,placedBy=-1,placedTick=-1;
+    private boolean physicallyPlaced;
+    private double placedX,placedY,placedZ;
+    private EquipmentTiers.Tier tier=EquipmentTiers.Tier.I;
+    private Page page;
+    public boolean placed(){return room>=0;}
+    public int room(){return room;}
+    public Page page(){return page;}
+    public boolean physicallyPlaced(){return placed()&&physicallyPlaced;}
+    public double x(){return placedX;}
+    public double y(){return placedY;}
+    public double z(){return placedZ;}
+    public EquipmentTiers.Tier tier(){return tier;}
+    public boolean reachable(LanWorld.Body body,double distance){
+        if(body==null||body.room()!=room||!placed())return false;
+        return !physicallyPlaced
+            ||Math.abs(body.y()-placedY)<=.8
+              &&Math.hypot(body.x()-placedX,body.z()-placedZ)<=distance;
+    }
+    public String deploymentFrame(){
+        if(!physicallyPlaced())throw new IllegalStateException("no physical book deployed");
+        return "BOOK|DEPLOYED|"+room+"|"+Math.round(placedX*1000)+"|"
+            +Math.round(placedY*1000)+"|"+Math.round(placedZ*1000)+"|"+tier;
+    }
+    public void place(int seat,int room,int tick,double x,double y,double z,
+                      EquipmentTiers.Tier tier){
+        if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z)
+                ||x<0||z<0||tier==null)
+            throw new IllegalArgumentException("invalid book position");
+        place(seat,room,tick);
+        this.physicallyPlaced=true;
+        this.placedX=x;this.placedY=y;this.placedZ=z;this.tier=tier;
+    }
+    public void place(int seat,int room,int tick){
+        if(seat<0||seat>5||room<0||tick<0)
+            throw new IllegalArgumentException("invalid placement");
+        this.room=room;placedBy=seat;placedTick=tick;page=null;
+        physicallyPlaced=false;placedX=0;placedY=0;placedZ=0;
+        tier=EquipmentTiers.Tier.I;
+    }
+    public boolean removeNear(int seat,LanWorld.Body body){
+        if(!reachable(body,1.6))return false;
+        return remove(seat,body.room());
+    }
+    public boolean remove(int seat,int room){
+        if(seat<0||seat>5||this.room!=room)return false;
+        this.room=-1;this.placedBy=-1;this.placedTick=-1;page=null;
+        physicallyPlaced=false;placedX=0;placedY=0;placedZ=0;
+        return true;
+    }
+    /**
+     * Only an actual disturbance/manifestation/signature in the same room, after
+     * placement, can mark a page. The caller must submit an already-authorized
+     * GhostDomain.Resolution; no player chooses the writing content.
+     */
+    /** Compatibility overload for generic ghost-writing event fixtures. */
+    public boolean witness(long caseSeed,int tick,GhostDomain.Resolution event){
+        return witnessAllowed(caseSeed,tick,event,Style.values());
+    }
+    /** Live authored style is restricted to the ghost's published evidence profile. */
+    public boolean witness(long caseSeed,int tick,GhostDomain.Resolution event,
+            GhostIdentity.Type species){
+        return witnessAllowed(caseSeed,tick,event,
+            GhostEvidenceProfile.availableWriting(Objects.requireNonNull(species)));
+    }
+    private boolean witnessAllowed(long caseSeed,int tick,GhostDomain.Resolution event,
+            Style[] permitted){
+        Objects.requireNonNull(event);
+        if(permitted.length==0)return false;
+        if(page!=null||room<0||tick<=placedTick||!event.applied()
+           ||event.room()!=room)return false;
+        if(event.action()!=GhostDomain.Action.DISTURB
+           &&event.action()!=GhostDomain.Action.MANIFEST
+           &&event.action()!=GhostDomain.Action.SIGNATURE)return false;
+        long mixed=caseSeed ^ ((long)tick*0x9e3779b97f4a7c15L)
+                 ^ ((long)room*0xbf58476d1ce4e5b9L);
+        mixed^=mixed>>>30;mixed*=0xbf58476d1ce4e5b9L;
+        mixed^=mixed>>>27;mixed*=0x94d049bb133111ebL;
+        mixed^=mixed>>>31;
+        Style style=permitted[(int)Math.floorMod(mixed,permitted.length)];
+        String detail=switch(style){
+            case CHILD_DRAWINGS->"Childlike figures, uneven houses and repeated eyes";
+            case FRANTIC_SCRAWLS->"Layered frantic strokes, broken lines and crossed-out words";
+            case RITUAL_CIRCLES->"Concentric rings and hand-drawn ritual geometry";
+        };
+        page=new Page(room,tick,style,detail);
+        return true;
+    }
+    public String inspect(int observedRoom){
+        if(observedRoom!=room||room<0)return "No writing book at this location";
+        return page==null?"Blank page - no ghost-authored writing":page.description();
+    }
+}

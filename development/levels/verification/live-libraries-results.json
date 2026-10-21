@@ -1,0 +1,515 @@
+{
+  "verified_at": "2026-10-20T23:02:42.866594+00:00",
+  "published_commit": "e70088d6",
+  "page": "https://mrcalzon02.github.io/HB-TTRPG-tools/beckenburg-asset-libraries.html",
+  "libraries": [
+    {
+      "id": "industrial",
+      "variants": 18,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "household",
+      "variants": 38,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "hiding",
+      "variants": 2,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "events",
+      "variants": 12,
+      "license": "CC0-1.0"
+    }
+  ],
+  "downloads": [
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_boiler_coal.glb",
+      "kind": "GLB",
+      "bytes": 366460,
+      "sha256": "14cafe688d111e5696ea01e828e871ba1afa945ddfdc4d90df1e802cbd64c4fd"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_boiler_oil.glb",
+      "kind": "GLB",
+      "bytes": 130860,
+      "sha256": "be3c4e46ada3eef5b07bb4d3a479dd7ed6fd887cdcea61621cce214349126ac6"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_boiler_modern.glb",
+      "kind": "GLB",
+      "bytes": 145616,
+      "sha256": "6be8ac8bf1a2db12acb36d5354721da40f5281924ec58a3d6b91ec9ba5740fd1"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_expansion_vessel.glb",
+      "kind": "GLB",
+      "bytes": 81632,
+      "sha256": "09718e1e0e1d21d396776a2656bd4f93b148a679a73ae2b48fcd1af0168191c4"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_school_pipework.glb",
+      "kind": "GLB",
+      "bytes": 378280,
+      "sha256": "5a96fc5dc9f832776196d34186baf20d66c43ba995dc257f8bd2fe6dfe2b3efa"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_electrical_bank.glb",
+      "kind": "GLB",
+      "bytes": 80220,
+      "sha256": "e6262da171dda006543663b2c23f0b80bc0744130192f13c4fd50bf80f1d7cb3"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_workbench.glb",
+      "kind": "GLB",
+      "bytes": 95696,
+      "sha256": "ff58b646de7af142a2d17a2de6d30af4c87fc570a0fbc39fe41f56d1073197c3"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_radiator.glb",
+      "kind": "GLB",
+      "bytes": 149064,
+      "sha256": "27a3d61a3c0fa643e07dc5f39af1321131ee7f32dac2b686b6a79f219afe499a"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_coal_bunker.glb",
+      "kind": "GLB",
+      "bytes": 169692,
+      "sha256": "764c16aa8e392084126f12258851f2bbd0b6a0546b5c11891e3f252cc29953cd"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_boiler_coal_worn.glb",
+      "kind": "GLB",
+      "bytes": 370524,
+      "sha256": "4b810182d3e3f990d98cf9b9ca098977309c395f3b2b57b5dbda8b85e9c8bc82"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_boiler_oil_worn.glb",
+      "kind": "GLB",
+      "bytes": 137224,
+      "sha256": "b99b96ea3dade713dc4a235c54119c89f64ef153436e2c2021fe800c157385da"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_boiler_modern_worn.glb",
+      "kind": "GLB",
+      "bytes": 152136,
+      "sha256": "20ee5d6959c9940f9ede3206189534ef905581f262655cba85dddfed16197d7a"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_expansion_vessel_worn.glb",
+      "kind": "GLB",
+      "bytes": 85516,
+      "sha256": "640c49f626d26dc763c95daa46dc2c3ad6089d869fcbe86b66fbce5a00a6de8f"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_school_pipework_worn.glb",
+      "kind": "GLB",
+      "bytes": 382964,
+      "sha256": "e382082904843eb85845f429e494a28abd69e13c6ce4686effcf1900927a3bea"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_electrical_bank_worn.glb",
+      "kind": "GLB",
+      "bytes": 85080,
+      "sha256": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_workbench_worn.glb",
+      "kind": "GLB",
+      "bytes": 101164,
+      "sha256": "559f445c412bdc73d16412f67aaee4ef8acccd4fbc14980102935935a82bed94"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_radiator_worn.glb",
+      "kind": "GLB",
+      "bytes": 152996,
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/models/level_coal_bunker_worn.glb",
+      "kind": "GLB",
+      "bytes": 171164,
+      "sha256": "ec3aabb2cfc436e5e261b7c170c0f5f2abd5800268352025e6ce85037b5d89fa"
+    },
+    {
+      "path": "assets/beckenburg/libraries/industrial/beckenburg-industrial-cc0.zip",
+      "kind": "ZIP",
+      "bytes": 21001307,
+      "sha256": "7e6b29c8d83913119699fd3a3079b2e38bc089ac0c85a30c4775348c1b2174c8"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_shelf.glb",
+      "kind": "GLB",
+      "bytes": 301708,
+      "sha256": "991908b343bd5ebcbb0b32e6af8e84fd2c644f8672b376ee64f46b30065ca8ff"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_pantry.glb",
+      "kind": "GLB",
+      "bytes": 275624,
+      "sha256": "10d0c73e671892f8f9aedcae6f52852981c06ba041af461a1d7059ea827fef5d"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_curio.glb",
+      "kind": "GLB",
+      "bytes": 221316,
+      "sha256": "67547069ecf925e8638107bd67dbf77584d3b975215e2d1cf30f4022edf0e2bf"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_sideboard.glb",
+      "kind": "GLB",
+      "bytes": 112068,
+      "sha256": "484d210a286489cfdae40212f32414159e4a55ebd52d9b82775217ca78b187f7"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_card_table.glb",
+      "kind": "GLB",
+      "bytes": 83940,
+      "sha256": "b9baf86f5fa30393424eb212013539b5bb44cee5c3aebc193d2b3895cac94009"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_ottoman.glb",
+      "kind": "GLB",
+      "bytes": 46060,
+      "sha256": "ccb94eec2ceba3232694d533873dccec67e92875570e7887fe341b3e27c67730"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_trunk.glb",
+      "kind": "GLB",
+      "bytes": 68224,
+      "sha256": "85c700a2b096053ec0380683b2b56009fcd1a4fd9d3ad79e469fdba9e9629f02"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_desk_clutter.glb",
+      "kind": "GLB",
+      "bytes": 45304,
+      "sha256": "425a8311053ccad06a2ebd7142d19f4e5d23ea36bf5523bf36bdeabfabd2d4be"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_kitchenware.glb",
+      "kind": "GLB",
+      "bytes": 61416,
+      "sha256": "9026dd8b71b0d74af795e042ad88d5316116f6fb015e2167e84d191c186fb69d"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_toy_basket.glb",
+      "kind": "GLB",
+      "bytes": 84444,
+      "sha256": "05b6c44f38e9d8d6ccfa8bd8c58c7935816cea1f8bf401c3e4b87d5c1fe4340a"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_linen_press.glb",
+      "kind": "GLB",
+      "bytes": 36288,
+      "sha256": "44aff6476554aa54b8c017ad66f8fabe3cf927dd4333089a025630149c913af4"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_mug.glb",
+      "kind": "GLB",
+      "bytes": 24856,
+      "sha256": "eb28ec1631c5aec8553cc7cf8d26ab33cb49f8694fa7c8c3871be3a019199769"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_bottle.glb",
+      "kind": "GLB",
+      "bytes": 35492,
+      "sha256": "98f2be3b4a36e9b77bc944c8dd0d96401504c3b1746151b7f8e5217feb5e7fff"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_book.glb",
+      "kind": "GLB",
+      "bytes": 34300,
+      "sha256": "3973cb1a0d6fbb60f27ee91028a6d926bae3a4617c9c3378e1bf747dc6c549ae"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_tin.glb",
+      "kind": "GLB",
+      "bytes": 32464,
+      "sha256": "72626d17b393c786f921dd8decf48ad23960930316996edf5277acf195c4510d"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_bowl.glb",
+      "kind": "GLB",
+      "bytes": 27908,
+      "sha256": "bdfba868a614a561537da8c6d8d80a28bf451491e00ff134ffefd69609c22bc3"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_toy.glb",
+      "kind": "GLB",
+      "bytes": 38512,
+      "sha256": "d7ac84f76c6233252d40b23897c17e7092712139c904abba90571fc4114e2dbf"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_frame.glb",
+      "kind": "GLB",
+      "bytes": 27216,
+      "sha256": "ad3da69c6df33a5219ca8ba3ea91ca3dba10fe007af0ee9d6930f4e844f9d58b"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_candlestick.glb",
+      "kind": "GLB",
+      "bytes": 38644,
+      "sha256": "66e8527e26039632d22d8ac6b2a222147e00bc48612761bc0c702cc40d1d94ec"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_mug_worn.glb",
+      "kind": "GLB",
+      "bytes": 25004,
+      "sha256": "449cdc544ed7304630ad63a128acabb03d8fb3b85182abdb04d7b50c90d3320a"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_bottle_worn.glb",
+      "kind": "GLB",
+      "bytes": 37736,
+      "sha256": "32eeea775d1972c0e58ed60352152a2023c476730519e931c29e3987151a8571"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_book_worn.glb",
+      "kind": "GLB",
+      "bytes": 37524,
+      "sha256": "cbeb20e3f7d0575e196cc3c14c6b16607a2c9d1623cb22301b62f523126a3bc8"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_tin_worn.glb",
+      "kind": "GLB",
+      "bytes": 35672,
+      "sha256": "fef263a52b924f87a3aaccc1a4cbf7064de1f77abe278c8478080f83c682a40e"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_bowl_worn.glb",
+      "kind": "GLB",
+      "bytes": 29120,
+      "sha256": "de51ea6ee547f9d47ee5a4160c6f638da896ea02f0231d132face0e455aa6e83"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_toy_worn.glb",
+      "kind": "GLB",
+      "bytes": 40908,
+      "sha256": "6ebdcb6f865de6112704ed46f18f6782667ee8601389a93a8cd4f77f6db3aed5"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_frame_worn.glb",
+      "kind": "GLB",
+      "bytes": 28692,
+      "sha256": "357a93db52d3a358de614b56c91c1467b2de982538fa9718cf7188a431918ba6"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_loose_candlestick_worn.glb",
+      "kind": "GLB",
+      "bytes": 40652,
+      "sha256": "efdfb52216d5d3f28c614624154c29c4ab4a32a4bd5b239aa0f1674c03362134"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_shelf_worn.glb",
+      "kind": "GLB",
+      "bytes": 306012,
+      "sha256": "e51cce57a52da8633bb240b99d64c5f84f71913361fe510d04f6137c58da6d03"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_pantry_worn.glb",
+      "kind": "GLB",
+      "bytes": 279012,
+      "sha256": "941273b6a4c428fac053bc9659d03bd15b1827239a32b1c36ae45a08439a672b"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_curio_worn.glb",
+      "kind": "GLB",
+      "bytes": 226040,
+      "sha256": "820a79187b1a7a7d0a2d1fa8dd8756308597305bcf56a080bcf9e414eac53117"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_sideboard_worn.glb",
+      "kind": "GLB",
+      "bytes": 116800,
+      "sha256": "e8b8c49566cf79f525007920b043668f31bc0ea7a1e25753200401adc2560a4f"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_card_table_worn.glb",
+      "kind": "GLB",
+      "bytes": 88860,
+      "sha256": "e6efc6d94cf9dd1c7bef3f20244efdff42c1be19d96d5f8d679a9abd76dd1590"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_ottoman_worn.glb",
+      "kind": "GLB",
+      "bytes": 47492,
+      "sha256": "0b7ec645c5a4c69aee46e509b746c13c17a0c4fdf6ed22de767e9483bdee8797"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_trunk_worn.glb",
+      "kind": "GLB",
+      "bytes": 72680,
+      "sha256": "4b28dd2536f2a23f7ed65d691a4c506c145e2bf88bdce04fd1a29610fba61544"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_desk_clutter_worn.glb",
+      "kind": "GLB",
+      "bytes": 47744,
+      "sha256": "747cca078d2ecfeb3d44646798994ea6aca93294285693c6fd8708d169f58e76"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_kitchenware_worn.glb",
+      "kind": "GLB",
+      "bytes": 61736,
+      "sha256": "8f31cfcee5d4dad028013c8d3bef0d480dd2a0055ece30b3e8dc4771fde650a7"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_toy_basket_worn.glb",
+      "kind": "GLB",
+      "bytes": 87448,
+      "sha256": "5aa5a80809a31c5610686b34b628507a8237266b25c8a16474faafda01210e95"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/models/level_lived_linen_press_worn.glb",
+      "kind": "GLB",
+      "bytes": 37672,
+      "sha256": "0423b74fbd766023dbf207e3ba7aeb51bf7282b52dc9dca020da6ada1fbc10c4"
+    },
+    {
+      "path": "assets/beckenburg/libraries/household/beckenburg-household-cc0.zip",
+      "kind": "ZIP",
+      "bytes": 40573379,
+      "sha256": "22e85a356548e80ae59dfd2b0a43047cbe0bc7d429fc79be51ddce7f3d94541c"
+    },
+    {
+      "path": "assets/beckenburg/libraries/hiding/models/level_hiding_cupboard.glb",
+      "kind": "GLB",
+      "bytes": 185812,
+      "sha256": "72f1c1d2d709455f1832f9641fc770f5e04b7dd320f64aefaa5b60fe7024dd90"
+    },
+    {
+      "path": "assets/beckenburg/libraries/hiding/models/level_hiding_cupboard_worn.glb",
+      "kind": "GLB",
+      "bytes": 188520,
+      "sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "path": "assets/beckenburg/libraries/hiding/beckenburg-hiding-cc0.zip",
+      "kind": "ZIP",
+      "bytes": 2407546,
+      "sha256": "105044f3292d5668350751aaf43348281cb908bf3bf80a390717c4755084c179"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_phone.glb",
+      "kind": "GLB",
+      "bytes": 97516,
+      "sha256": "57ac8c72887fc004696fcd4322fec2766239092d80fa5fcdeb9fc097e91962f0"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_alarm_clock.glb",
+      "kind": "GLB",
+      "bytes": 73904,
+      "sha256": "2e3e0c5973bfdffc5d0fc50d1541100d2842b9bd02182a3735684bd71d1efec8"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_fire_alarm.glb",
+      "kind": "GLB",
+      "bytes": 47980,
+      "sha256": "c9cca7e17d5abc40bf6ccd39c725968020f9aa6a643473f366ce4a885d4c0d3f"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_radio.glb",
+      "kind": "GLB",
+      "bytes": 98868,
+      "sha256": "c81e6e6e1cbc1b7d05a0b7d1aa7482d4190b6389c5a5427c05a175feefe1c00c"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_boom_box.glb",
+      "kind": "GLB",
+      "bytes": 138708,
+      "sha256": "b3d2f335453c7b69927f03754965094f0617720e6b69c13b55fa0ebd44353377"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_side_table.glb",
+      "kind": "GLB",
+      "bytes": 51464,
+      "sha256": "a7b3daa835dbd35b7e281cb40ea0d618ec212714cc4edc4a1710a3d4ba6101d3"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_phone_worn.glb",
+      "kind": "GLB",
+      "bytes": 99436,
+      "sha256": "fd208f1a804faa2f8ef7999eff59cfec5485d7e5d85fb07d006050b70d033cd6"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_alarm_clock_worn.glb",
+      "kind": "GLB",
+      "bytes": 77524,
+      "sha256": "7bc018478504df531537f43308083a65d60ad6e7e299e717754497b169e699da"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_fire_alarm_worn.glb",
+      "kind": "GLB",
+      "bytes": 51600,
+      "sha256": "f655d768c8f2638f8516194b7e8cfb2147798e61fdd37f1994bb5a42c93763bb"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_radio_worn.glb",
+      "kind": "GLB",
+      "bytes": 103016,
+      "sha256": "faf827c0cedc0239c0f276e61f35f99b9cea92204b0b562f6dce0d79bb389627"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_boom_box_worn.glb",
+      "kind": "GLB",
+      "bytes": 142748,
+      "sha256": "741006a30e850f06e35eb0a33b6ca71eb4f5a9a0fee6c46669f6d6895471ca01"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/models/level_event_side_table_worn.glb",
+      "kind": "GLB",
+      "bytes": 52844,
+      "sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/audio/alarm_bell.wav",
+      "kind": "EXTRA",
+      "bytes": 38444,
+      "sha256": "22c13c75ba5a1b31f11c319ff7e4dd9b15db77230df4337cdb5d7c7a55ea5fac"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/audio/fire_bell.wav",
+      "kind": "EXTRA",
+      "bytes": 38444,
+      "sha256": "209d9371b4f9f14a3a90bd2906a570bc928291ffb62aeeb9625d3f39064cd204"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/audio/phone_ring.wav",
+      "kind": "EXTRA",
+      "bytes": 38444,
+      "sha256": "9700b6057b1db8ca85f2c349c95d19b270cbbe5dbd0f411f211e346256618202"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/audio/radio_play.wav",
+      "kind": "EXTRA",
+      "bytes": 38444,
+      "sha256": "07585658f34f8980589a60360e40a628c9025001ab137de25fea9d2d52bcc03f"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/audio/running_water.wav",
+      "kind": "EXTRA",
+      "bytes": 38444,
+      "sha256": "f98bfddd42f38a9d366b016a70bb26ffed874d7be443bb43ac1a35fd6d51bb59"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/INTERACTION.md",
+      "kind": "EXTRA",
+      "bytes": 1430,
+      "sha256": "fe431838a82f1d9e05be92bb80ffda5f5f1718b713360ac753c95e4548936ae4"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/activation-examples.json",
+      "kind": "EXTRA",
+      "bytes": 1235,
+      "sha256": "2cc484cf06aaa5f73f3188c4a1faa796a72b1e1e12ac89bcf8896e57dd19bca4"
+    },
+    {
+      "path": "assets/beckenburg/libraries/events/beckenburg-events-cc0.zip",
+      "kind": "ZIP",
+      "bytes": 12957556,
+      "sha256": "e52d90bead5f592a280f75d94d3384bf8746887705de1ba362211d78a0678e67"
+    }
+  ]
+}

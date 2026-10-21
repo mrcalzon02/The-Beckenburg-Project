@@ -1,0 +1,108 @@
+package org.beckenburg;
+
+import java.util.EnumSet;
+import java.util.Objects;
+
+/**
+ * Published investigator reference: which observations are compatible with each
+ * species. Never inspect the current host's hidden ghost during journal filtering.
+ *
+ * These are evidence *possibilities*, not confirmation or an enforced scan count.
+ */
+public final class GhostEvidenceProfile {
+    private GhostEvidenceProfile(){}
+    private static EnumSet<GhostIdentity.Type> types(GhostIdentity.Type... choices){
+        EnumSet<GhostIdentity.Type> set=EnumSet.noneOf(GhostIdentity.Type.class);
+        for(var choice:choices)set.add(choice);
+        return set;
+    }
+    /** Species EMF signature, separate from baseline/weather EMF fluctuation. */
+    public enum EmfBand { HIGH, LOW_MID, NONE }
+    private static final EnumSet<GhostIdentity.Type> NONE_EMF=types(
+        GhostIdentity.Type.SHADE,GhostIdentity.Type.SPECTER,GhostIdentity.Type.HANTU,
+        GhostIdentity.Type.ELDER_PLAGUE_DEMON);
+    private static final EnumSet<GhostIdentity.Type> LOW_MID_EMF=types(
+        GhostIdentity.Type.POSSESSIVE,GhostIdentity.Type.YOKAI,
+        GhostIdentity.Type.BANSHEE,GhostIdentity.Type.WRAITH,GhostIdentity.Type.SPIRIT,
+        GhostIdentity.Type.ELDER_NOTHIC);
+    private static final EnumSet<GhostIdentity.Type> DOTS_GHOSTS=types(
+        GhostIdentity.Type.WRAITH,GhostIdentity.Type.SHADE,GhostIdentity.Type.SPECTER);
+    public static EmfBand emfBand(GhostIdentity.Type type){
+        Objects.requireNonNull(type);
+        GhostIdentity.Type base=type.baseType();
+        return NONE_EMF.contains(base)?EmfBand.NONE:
+            LOW_MID_EMF.contains(base)?EmfBand.LOW_MID:EmfBand.HIGH;
+    }
+    public static boolean emfSuppressed(GhostIdentity.Type type){
+        return emfBand(type)==EmfBand.NONE;
+    }
+    public static boolean dotsVisible(GhostIdentity.Type type){
+        return DOTS_GHOSTS.contains(Objects.requireNonNull(type));
+    }
+    // Thermal tendencies define an extreme a species CAN generate, not a
+    // mandatory value on each scan. All species show ordinary room fluctuations.
+    private static final EnumSet<GhostIdentity.Type> COLD=types(
+        GhostIdentity.Type.BANSHEE,GhostIdentity.Type.SHADE,
+        GhostIdentity.Type.SPIRIT,GhostIdentity.Type.HANTU,
+        GhostIdentity.Type.ELDER_PLAGUE_DEMON);
+    private static final EnumSet<GhostIdentity.Type> HOT=types(
+        GhostIdentity.Type.POLTERGEIST,GhostIdentity.Type.DEMON,
+        GhostIdentity.Type.DEVIL,GhostIdentity.Type.MIMIC,
+        GhostIdentity.Type.ELDER_BLADE_DEMON);
+    private static final EnumSet<GhostIdentity.Type> CHILD=types(
+        GhostIdentity.Type.POSSESSIVE,GhostIdentity.Type.SPIRIT,
+        GhostIdentity.Type.MIMIC,GhostIdentity.Type.TWINS);
+    private static final EnumSet<GhostIdentity.Type> SCRAWL=types(
+        GhostIdentity.Type.POLTERGEIST,GhostIdentity.Type.DEMON,
+        GhostIdentity.Type.WRAITH,GhostIdentity.Type.DEVIL,
+        GhostIdentity.Type.MIMIC,GhostIdentity.Type.BANSHEE,
+        GhostIdentity.Type.ELDER_BLADE_DEMON);
+    private static final EnumSet<GhostIdentity.Type> CIRCLE=types(
+        GhostIdentity.Type.POSSESSIVE,GhostIdentity.Type.DEMON,
+        GhostIdentity.Type.SHADE,GhostIdentity.Type.SPECTER,
+        GhostIdentity.Type.DEVIL,GhostIdentity.Type.WRAITH,GhostIdentity.Type.YOKAI,
+        GhostIdentity.Type.ELDER_NOTHIC);
+
+    /** Shared between the simulated heat/cold generator and manual ghost guide. */
+    public static EvidenceSignals.Polarity thermal(GhostIdentity.Type type){
+        Objects.requireNonNull(type);
+        GhostIdentity.Type base=type.baseType();
+        return COLD.contains(base)?EvidenceSignals.Polarity.COLD:
+               HOT.contains(base)?EvidenceSignals.Polarity.HOT:EvidenceSignals.Polarity.NONE;
+    }
+    /** Hantu remains non-writing; Yokai ritual circles, Banshee frantic
+     * scrawls, and Twins child drawings are now additional authored producers.
+     * Writing styles remain one family, not separate quota slots.
+     */
+    public static boolean writing(GhostIdentity.Type type,GhostWriting.Style style){
+        Objects.requireNonNull(type);Objects.requireNonNull(style);
+        GhostIdentity.Type base=type.baseType();
+        return switch(style){
+            case CHILD_DRAWINGS->CHILD.contains(base);
+            case FRANTIC_SCRAWLS->SCRAWL.contains(base);
+            case RITUAL_CIRCLES->CIRCLE.contains(base);
+        };
+    }
+    public static GhostWriting.Style[] availableWriting(GhostIdentity.Type type){
+        Objects.requireNonNull(type);
+        return java.util.Arrays.stream(GhostWriting.Style.values())
+            .filter(style->writing(type,style)).toArray(GhostWriting.Style[]::new);
+    }
+    public static boolean compatible(GhostIdentity.Type type,GhostFieldGuide.Clue clue){
+        Objects.requireNonNull(type);Objects.requireNonNull(clue);
+        return switch(clue){
+            case EMF_OVER_SIX->emfBand(type)==EmfBand.HIGH;
+            case EMF_LOW_MID->emfBand(type)==EmfBand.LOW_MID;
+            case EMF_SUPPRESSION->emfBand(type)==EmfBand.NONE;
+            case EXTREME_COLD->thermal(type)==EvidenceSignals.Polarity.COLD;
+            case EXTREME_HEAT->thermal(type)==EvidenceSignals.Polarity.HOT;
+            case WRITING_CHILD->writing(type,GhostWriting.Style.CHILD_DRAWINGS);
+            case WRITING_SCRAWL->writing(type,GhostWriting.Style.FRANTIC_SCRAWLS);
+            case WRITING_RITUAL->writing(type,GhostWriting.Style.RITUAL_CIRCLES);
+            case GHOST_WRITING->availableWriting(type).length>0;
+            case SPIRIT_REPLY->true; // all current spirits can reply if actually nearby
+            case DOTS_PATTERN->dotsVisible(type); // only three ghost species manifest in D.O.T.S.
+            default->true; // physical and behavioral traits are evaluated by the field guide
+        };
+    }
+}
