@@ -2225,23 +2225,30 @@ public final class LanHost implements AutoCloseable {
             Peer hunter=seats[i];
             if(hunter!=null && hunter.worldMode) {
                 GhostTraits.Sight form=GhostTraits.of(ghostType).sight();
-                boolean orbAllowed=mission.allowsEvidence(HardEvidenceQuota.Family.ORBS);
+                // Orb samples and apparition bodies are distinct simulation events:
+                // a suppressed ORBS evidence family must not hide an otherwise visible
+                // Yokai, Hantu or Twin silhouette.
                 String sight=LanApparition.frame(map,world.body(i),true,pose,
-                    ghost.manifested()&&form!=GhostTraits.Sight.CAMERA_ONLY
-                        &&(form!=GhostTraits.Sight.ORBS||orbAllowed),tick);
+                    ghost.manifested()&&form!=GhostTraits.Sight.CAMERA_ONLY,tick);
                 if(sight.startsWith("APPARITION|VISIBLE|")) {
                     // Artwork is a visible cosmetic manifestation, never an evidence verdict.
                     // No identity/appearance packet is sent before actual line-of-sight disclosure.
-                    if(form==GhostTraits.Sight.ORBS)
-                        reply(hunter,"FORM|ORBS"+(ghostType.ancient()?"|GREEN":""));
-                    else
-                        reply(hunter,"FORM|FIGURE|"+(ghostType.ancient()?"GREEN":"BASE")
-                                +"|"+ghostType.name());
+                    reply(hunter,"FORM|FIGURE|"+(ghostType.ancient()?"GREEN":"BASE")
+                            +"|"+ghostType.name());
                 }
                 reply(hunter,sight);
                 if(sight.startsWith("APPARITION|VISIBLE|")) {
                     LanGhostAnimation.Motion motion=animation.project(true,pendingStrike!=null,pose.heading(),tick);
                     reply(hunter,motion.frame()); // No private coordinates, only already-disclosed sight.
+                }
+                if(ghostType.baseType()==GhostIdentity.Type.TWINS) {
+                    // Companion B has its own bounded world pose and per-Hunter
+                    // occlusion; an unseen twin has no leaked world coordinates.
+                    var echo=TwinGhostPair.position(map,pose,tick).get(1);
+                    String twinSight=LanApparition.frame(map,world.body(i),true,echo.pose(),
+                            ghost.manifested(),tick);
+                    boolean twinVisible=twinSight.startsWith("APPARITION|VISIBLE|");
+                    reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible));
                 }
             }
         }
