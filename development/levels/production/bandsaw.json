@@ -1,0 +1,26 @@
+{
+  "id": "level_work_bandsaw",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "1e43ced70a4c8e3b0a4b36d431d2d7a424ff72439ad800606ed5ec3eaa0c9a44",
+  "bytes": 176700,
+  "triangles": 2114,
+  "bounds": [
+    [
+      -0.9928935766220093,
+      0.0,
+      -0.6399999856948853
+    ],
+    [
+      1.4449999332427979,
+      3.2713840007781982,
+      0.7299999594688416
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_bandsaw.blend",
+  "function": "Static decommissioned mill bandsaw; guarded return and supported feed table",
+  "runtime": "Ready static environment mesh; no powered cutting or animation",
+  "placement": "Blackpine sawmill, outside ritual and stair routes"
+}

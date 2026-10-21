@@ -54,6 +54,6 @@ public final class BlackpineLevel {
         var sockets=new ArrayList<>(level.sockets());sockets.removeIf(s->s.type().equals("ritual"));
         int[] rooms={0,5,2};String[] rites={"banishment","cleansing","absolution"};
         for(int i=0;i<3;i++){var r=level.room(rooms[i]);sockets.add(new Socket("blackpine-ritual-"+rites[i],"ritual",r.id(),(r.x0()+r.x1())/2,r.y(),(r.z0()+r.z1())/2,0,rites[i]));}
-        return SiteTerrain.gradeLevel(BlackpineStoryDressing.apply(BlackpineDressing.apply(new LevelDefinition(level.id(),"blackpine-graybox-v1",level.title(),level.rooms(),level.portals(),level.stairs(),level.voids(),level.props(),sockets,level.colliders(),level.dock(),level.ambience()))));
+        return SiteTerrain.gradeLevel(BlackpineProductionAssets.apply(BlackpineStoryDressing.apply(BlackpineDressing.apply(new LevelDefinition(level.id(),"blackpine-graybox-v1",level.title(),level.rooms(),level.portals(),level.stairs(),level.voids(),level.props(),sockets,level.colliders(),level.dock(),level.ambience())))));
     }
 }
