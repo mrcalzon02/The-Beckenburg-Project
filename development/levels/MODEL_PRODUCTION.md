@@ -27,3 +27,9 @@ Next useful candidates: rail log carriage, repair bench and hand tools, sawdust 
 `level_work_crew_footlocker`: 628 triangles. An open hinged trunk, rusted bands, faded crew card, folded shirts, personal photograph/envelope, thermos, spare boot laces and mending packet. Two supported instances sit beside surviving bunkhouse beds at X13.3/Z24.4 and X10.4/Z24.2. Native source/UV/packed images and physical support/bounds, clear spawns/rites and readable records pass. Static original kit; no trunk inventory or lid simulation.
 
 [Manifest](production/crew_footlocker.json) · [Source](blender/level_work_crew_footlocker.blend) · [Studio](previews/level_work_crew_footlocker.png) · [Runtime](previews/model-production/blackpine-level_work_crew_footlocker.png).
+
+## 05 / hearth tending kit
+
+`level_work_hearth_tools`: 1118 triangles. Free-standing rack with shovel, poker and tongs, a lidded cold-ash pail, wire handle and split kindling. Used beside the foreman and mess fireplaces. Reopened native source, UV/packed images, full-source bounds, floor support, clear spawns/rites and readable-record checks pass. Tools and ash are static scenery.
+
+[Manifest](production/hearth_tools.json) · [Source](blender/level_work_hearth_tools.blend) · [Studio](previews/level_work_hearth_tools.png) · [Runtime](previews/model-production/blackpine-level_work_hearth_tools.png).

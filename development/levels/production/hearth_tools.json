@@ -1,0 +1,26 @@
+{
+  "id": "level_work_hearth_tools",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "0f16e3e71198c03d061196e0748d12e8f751c0a677ef063a46221f0d51b90d2c",
+  "bytes": 90796,
+  "triangles": 1118,
+  "bounds": [
+    [
+      -0.38494181632995605,
+      0.0,
+      -0.4033472537994385
+    ],
+    [
+      0.3799999952316284,
+      1.053856372833252,
+      0.21000000834465027
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_hearth_tools.blend",
+  "function": "Cold ash pail, freestanding poker/shovel/tongs rack and split kindling",
+  "runtime": "Ready static hearth detail; no live heat, ash or fire simulation",
+  "placement": "Blackpine foreman and mess hearths, supported clear of walking aisles"
+}

@@ -119,6 +119,23 @@ def crew_footlocker():
     p.append(s.box('Worn mending packet',(.12,.12,.23),(.14,.09,.045),m['leather']))
     return p,dict(function='Open crew footlocker with shirts, personal card/photo, thermos, laces and mending packet',runtime='Ready static personal-effects kit; lid and belongings are not interactive',placement='Blackpine bunkhouse, beside surviving beds and away from door approaches')
 
+def hearth_tools():
+    m=b.init();p=[s.box('Freestanding fire tool rack base',(.18,.04,.035),(.36,.31,.07),m['iron'])]
+    p.append(s.rod('Rack upright',(.18,.11,.06),(.18,.11,1.05),.025,m['iron'],8))
+    p.append(s.rod('Hanging tool rail',(-.02,.11,1.04),(.38,.11,1.04),.016,m['iron'],6))
+    for x in [0,.16,.32]:
+        p+=b.ring('Hanging handle loop',(x,.03,.97),.036,.008,m['iron'],segments=8)
+        p.append(s.rod('Fire tool shaft',(x,.03,.94),(x,.03,.25),.009,m['iron'],6))
+    p.append(s.mesh('Ash shovel pan',[(-.07,.02,.12),(.07,.02,.12),(.055,.03,.30),(-.055,.03,.30)],[(0,1,2,3),(3,2,1,0)],m['iron']))
+    p.append(s.rod('Poker bent tip',(.16,.03,.25),(.22,.03,.20),.01,m['iron'],6))
+    p.append(s.rod('Tongs second arm',(.32,.03,.78),(.36,-.015,.20),.009,m['iron'],6))
+    p.append(s.lathe('Lidded cold ash pail',[(0,.12),(.24,.16),(.27,.16),(.28,.12)],m['iron'],12,(-.22,-.05,0)))
+    p.append(s.rod('Pail lid',(-.22,-.05,.275),(-.22,-.05,.285),.16,m['iron'],12))
+    p+=s.tube('Lid handle',[(-.26,-.05,.285),(-.26,-.05,.32),(-.18,-.05,.32),(-.18,-.05,.285)],.008,m['steel'],6)
+    p+=b.ring('Pail wire handle',(-.22,-.05,.26),.16,.006,m['steel'],segments=10)
+    for i in range(5):p.append(s.rod('Dry split kindling',(-.35+i*.045,.20,.04),(-.35+i*.045,.40,.05+i*.006),.021,m['pine'],5))
+    return p,dict(function='Cold ash pail, freestanding poker/shovel/tongs rack and split kindling',runtime='Ready static hearth detail; no live heat, ash or fire simulation',placement='Blackpine foreman and mess hearths, supported clear of walking aisles')
+
 name=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'bandsaw'
 parts,notes=globals()[name]()
 b.export('level_work_'+name,parts,'working-place-details',view=(4,-6,3.5))
