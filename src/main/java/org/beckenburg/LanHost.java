@@ -257,6 +257,7 @@ public final class LanHost implements AutoCloseable {
                         LanProtocol.write(out,"REJECT|reconnect seat expired or unavailable");return;
                     }
                     peer=new Peer(socket,in,out,slot,waiting.name);
+                    peer.hunterVisual=waiting.hunterVisual;
                     peer.lastPongTick=tick;
                     peer.lastGhostActionSequence=waiting.lastActionSequence;
                     peer.lastGhostPoseSequence=waiting.lastPoseSequence;
@@ -277,6 +278,8 @@ public final class LanHost implements AutoCloseable {
                         for(int i=0;i<HUNTERS;i++)if(i!=slot&&seats[i]!=null)
                             reply(peer,"PLAYERNAME|"+i+"|"+seats[i].name);
                         notifyHunters("PLAYERNAME|"+slot+"|"+peer.name);
+                        sendHunterVisuals(peer);
+                        notifyHunters("VISUAL|"+slot+"|"+peer.hunterVisual);
                         reply(peer,"PARTY|"+contract.hunters()+"|"+contract.partyDifficulty());
                     }else notifyHunters("INFO|human ghost reconnected - AI released control");
                     broadcastLobby();broadcastState();broadcastProgress();broadcastWorld();
@@ -319,6 +322,8 @@ public final class LanHost implements AutoCloseable {
                         for(int i=0;i<HUNTERS;i++)if(i!=slot&&seats[i]!=null)
                             reply(peer,"PLAYERNAME|"+i+"|"+seats[i].name);
                         notifyHunters("PLAYERNAME|"+slot+"|"+nickname);
+                        sendHunterVisuals(peer);
+                        notifyHunters("VISUAL|"+slot+"|"+peer.hunterVisual);
                     }
                     broadcastLobby();
                 }
@@ -445,6 +450,14 @@ public final class LanHost implements AutoCloseable {
                     notifyAllPeers("LOBBYCHAT|"+(peer.slot==GHOST_SEAT?"GHOST":"H"+(peer.slot+1))
                         +"|"+peer.name+"|"+words);
                 }
+                case "VISUAL" -> {
+                    // Cosmetic selection is explicitly role-filtered. A ghost
+                    // never receives hunter costume metadata through this channel.
+                    if(p.size()!=2||peer.slot>=HUNTERS||running)
+                        throw new IllegalArgumentException("hunter appearance can be chosen only in lobby");
+                    peer.hunterVisual=CharacterVisuals.hunter(p.get(1));
+                    notifyHunters("VISUAL|"+peer.slot+"|"+peer.hunterVisual);
+                }
                 case "READY" -> {
                     if(p.size()!=1||running)throw new IllegalArgumentException("invalid ready command");
                     peer.ready=!peer.ready;broadcastLobby();
@@ -487,6 +500,7 @@ public final class LanHost implements AutoCloseable {
                     for(int i=0;i<HUNTERS;i++)
                         if(i!=peer.slot&&seats[i]!=null)
                             reply(peer,"PLAYERNAME|"+i+"|"+seats[i].name);
+                    sendHunterVisuals(peer);
                     broadcastWorld();broadcastApparitions();broadcastCounters();sendCounterAmmo(peer);
                     reply(peer,"CAMERA|RESET");
                     for(LanVideoCameras.Camera station:cameras.all()){
@@ -2339,6 +2353,14 @@ public final class LanHost implements AutoCloseable {
             notifyHunters(packet);
         }
     }
+    private void sendHunterVisuals(Peer destination){
+        if(destination.slot==GHOST_SEAT)return;
+        for(int i=0;i<HUNTERS;i++){
+            String appearance=seats[i]!=null?seats[i].hunterVisual:
+                    reserved[i]!=null?reserved[i].hunterVisual:null;
+            if(appearance!=null)reply(destination,"VISUAL|"+i+"|"+appearance);
+        }
+    }
     private void broadcastWorld(){
         broadcastRack();
         broadcastFixtures();
@@ -2379,11 +2401,12 @@ public final class LanHost implements AutoCloseable {
         clock.shutdownNow();workers.shutdownNow();
     }
     private static final class Reservation {
-        final String name,token,previousToken;
+        final String name,token,previousToken,hunterVisual;
         final long expiresNanos,lastActionSequence,lastPoseSequence;
         final boolean worldMode;
         Reservation(Peer p,long expires){
             name=p.name;token=p.resumeToken;previousToken=p.previousResumeToken;
+            hunterVisual=p.hunterVisual;
             expiresNanos=expires;
             lastActionSequence=p.lastGhostActionSequence;
             lastPoseSequence=p.lastGhostPoseSequence;
@@ -2395,6 +2418,7 @@ public final class LanHost implements AutoCloseable {
         final LanOutboundQueue outbound;
         final String resumeToken=newResumeToken();
         String previousResumeToken; // erased after client confirms durable replacement
+        String hunterVisual="observer"; // no gameplay authority, never sent to ghost
         long unconfirmedResumeDeadlineNanos; // no unlimited grace via failed reconnect loop
         boolean ready,worldMode,ghostWorldMode,intentionalLeave;
         long lastGhostPoseSequence=-1,lastGhostActionSequence=-1;
