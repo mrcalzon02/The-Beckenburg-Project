@@ -71,7 +71,28 @@ def matte(source, box, facing, member):
     opaque=cv2.GaussianBlur(opaque,(3,3),.48)
     rgba=Image.fromarray(np.dstack((patch,opaque)),"RGBA")
     bb=rgba.getbbox()
-    if bb is None:raise ValueError("empty alpha")
+    # GrabCut can leave a convincing-looking central dress but silently lose
+    # an entire head or feet. Check coverage in SOURCE coordinates, before
+    # scaling: canvas-level "head pixels" can actually be displaced torso.
+    if bb is None or bb[1]>45 or bb[3]<290:
+        # Recover disconnected dark hair and shoes against the near-black
+        # background of the canonical master, keeping each real silhouette
+        # component rather than selecting only the largest surviving skirt.
+        candidate=np.uint8((patch.max(axis=2)>25)*255)
+        candidate[:edge,:]=candidate[-edge:,:]=0
+        candidate[:,:edge]=candidate[:,-edge:]=0
+        candidate=cv2.morphologyEx(candidate,cv2.MORPH_CLOSE,
+            cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(5,5)))
+        total,labels,stats,_=cv2.connectedComponentsWithStats(candidate,8)
+        recovered=np.zeros_like(candidate)
+        for component in range(1,total):
+            if stats[component,cv2.CC_STAT_AREA]>=45:
+                recovered[labels==component]=255
+        rgba=Image.fromarray(np.dstack((patch,
+            cv2.GaussianBlur(recovered,(3,3),.48))),"RGBA")
+        bb=rgba.getbbox()
+    if bb is None or bb[1]>45 or bb[3]<290:
+        raise ValueError(f"Unacceptable head/feet crop {facing}/{member}: {bb}")
     rgba=rgba.crop(bb)
     factor=min(116/rgba.width,214/rgba.height)
     nw,nh=max(1,round(rgba.width*factor)),max(1,round(rgba.height*factor))
@@ -85,7 +106,7 @@ def main():
     if board.size!=(1448,1086):
         raise RuntimeError(f"Unexpected canonical Twins master dimensions: {board.size}")
     collage=Image.new("RGBA",(4*128,2*224),(24,24,28,255))
-    manifest={"identity":"twins","version":"two-independent-source-cutouts-v2",
+    manifest={"identity":"twins","version":"two-independent-source-cutouts-v3-full-silhouette",
         "source":SOURCE.relative_to(ROOT).as_posix(),
         "source_sha256":hashlib.sha256(original).hexdigest(),
         "directions":{},"canvas":CANVAS}
