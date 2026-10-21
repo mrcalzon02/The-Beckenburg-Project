@@ -1,0 +1,30 @@
+{
+  "license": "CC0-1.0",
+  "central_clear_radius_m": 0.36,
+  "concealment_requires": "crouched, stationary, available authored socket; nearby ghost search reveals",
+  "assets": [
+    {
+      "id": "level_shrub_refuge",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "1a6a7ccf51e6742fbd3e97380809de009ac9438188d43ca1f8f4e2b1eae249ad",
+      "bytes": 49684,
+      "triangles": 464,
+      "bounds": [
+        [
+          -1.1524912118911743,
+          -0.0023335188161581755,
+          -1.1524912118911743
+        ],
+        [
+          1.2599999904632568,
+          1.4500000476837158,
+          1.1524912118911743
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_shrub_refuge.blend"
+    }
+  ]
+}

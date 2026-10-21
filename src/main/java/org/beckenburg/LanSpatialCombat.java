@@ -42,7 +42,7 @@ public final class LanSpatialCombat {
         double dy=body.y()-ghost.y();
             double d2=dx*dx+dy*dy+dz*dz;
         return Double.isFinite(d2)&&d2<=STRIKE_RANGE*STRIKE_RANGE
-                &&map.clearLineOfSight(ghost.x(),ghost.y()+1.3,ghost.z(),body.x(),body.y()+1.3,body.z());
+                &&map.clearLineOfSight(ghost.x(),ghost.y()+1.3,ghost.z(),body.x(),body.y()+(world.crouched(seat)?.78:1.3),body.z());
     }
 
     /** Check fixed geometry and closed doors with short ray samples; no client coordinates involved. */

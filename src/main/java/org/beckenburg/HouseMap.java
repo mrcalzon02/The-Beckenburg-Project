@@ -26,7 +26,10 @@ public final class HouseMap {
     private final VanStaging van;
     public HouseMap(){this(Site.HOUSE);}
     public HouseMap(Site site){
-        this.site=Objects.requireNonNull(site);level=LevelPlans.build(site);guards=level.guards();
+        this(site,LevelPlans.build(site));
+    }
+    HouseMap(Site site,LevelDefinition definition){
+        this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
         Dock d=level.dock();van=new VanStaging(new VanStaging.Placement(d.x(),d.z(),d.yaw()));
         // Fixture anchors must be fixed before door state or difficulty can change.
         // Author access against every potential cupboard, then restore the default.
@@ -147,11 +150,14 @@ public final class HouseMap {
         return false;
     }
     private static boolean boxHit(double x,double y,double z,double radius,double bx,double by,double bz,double hx,double hz,double height,double yaw){
-        if(y+1.78<=by+.02||y>=by+height-.02)return false;
+        return boxHit(x,y,z,radius,bx,by,bz,hx,hz,height,yaw,HunterPosture.STANDING_HEIGHT);
+    }
+    private static boolean boxHit(double x,double y,double z,double radius,double bx,double by,double bz,double hx,double hz,double height,double yaw,double bodyHeight){
+        if(y+bodyHeight<=by+.02||y>=by+height-.02)return false;
         double dx=x-bx,dz=z-bz,c=Math.cos(yaw),s=Math.sin(yaw);
         return Math.abs(dx*c+dz*s)<hx+radius&&Math.abs(-dx*s+dz*c)<hz+radius;
     }
-    private boolean wallOpening(Room room,boolean edgeAlongX,double normal,double tangent,double y,double radius,boolean ray,int selectedPortal){
+    private boolean wallOpening(Room room,boolean edgeAlongX,double normal,double tangent,double y,double radius,boolean ray,int selectedPortal,double bodyHeight){
         for(Portal p:level.portalsFrom(room.id())){
             if(p.kind().equals("stair"))continue;
             if(p.alongX()!=edgeAlongX)continue;
@@ -159,45 +165,49 @@ public final class HouseMap {
             if(Math.abs(plane-normal)>.55||Math.abs(tangent-mid)>p.width()/2-radius)continue;
             if(p.kind().equals("window")){
                 if(ray&&y>p.y()+1.0&&y<p.y()+2.35)return true;
-            }else if(y>=p.y()-.10&&y+(ray?0:1.78)<=p.y()+2.45
+            }else if(y>=p.y()-.10&&y+(ray?0:bodyHeight)<=p.y()+2.45
                     &&(!p.door()||doorOpen(p.id())||p.id()==selectedPortal))return true;
         }
         for(Stair stair:level.stairs())if((stair.a()==room.id()||stair.b()==room.id())
                 &&stair.contains(edgeAlongX?tangent:normal,edgeAlongX?normal:tangent,radius)
                 &&y>=stair.yAt(edgeAlongX?tangent:normal,edgeAlongX?normal:tangent)-.12
+                    -(radius+LevelDefinition.WALL_HALF_THICKNESS)*Math.abs(stair.y1()-stair.y0())/Math.hypot(stair.x1()-stair.x0(),stair.z1()-stair.z0())
                 &&y<=stair.yAt(edgeAlongX?tangent:normal,edgeAlongX?normal:tangent)+2.4)return true;
         return false;
     }
     /** Every indoor perimeter remains solid even when exterior support overlaps it. */
     private boolean wallBlocked(double x,double y,double z,double radius,boolean ray){return wallBlocked(x,y,z,radius,ray,-1);}
-    private boolean wallBlocked(double x,double y,double z,double radius,boolean ray,int selectedPortal){
+    private boolean wallBlocked(double x,double y,double z,double radius,boolean ray,int selectedPortal){return wallBlocked(x,y,z,radius,ray,selectedPortal,HunterPosture.STANDING_HEIGHT);}
+    private boolean wallBlocked(double x,double y,double z,double radius,boolean ray,int selectedPortal,double bodyHeight){
         for(Room r:level.rooms()){
-            if(r.outside()||y+(ray?0:1.78)<=r.y()+.03||y>=r.y()+r.height())continue;
+            if(r.outside()||y+(ray?0:bodyHeight)<=r.y()+.03||y>=r.y()+r.height())continue;
             if(r.name().toLowerCase().contains("loft")&&y>=r.y()+1.0)continue;
             if(x>=r.x0()-radius&&x<=r.x1()+radius){
-                if(Math.abs(z-r.z0())<radius+LevelDefinition.WALL_HALF_THICKNESS+.005&&!wallOpening(r,true,r.z0(),x,y,radius,ray,selectedPortal))return true;
-                if(Math.abs(z-r.z1())<radius+LevelDefinition.WALL_HALF_THICKNESS+.005&&!wallOpening(r,true,r.z1(),x,y,radius,ray,selectedPortal))return true;
+                if(Math.abs(z-r.z0())<radius+LevelDefinition.WALL_HALF_THICKNESS+.005&&!wallOpening(r,true,r.z0(),x,y,radius,ray,selectedPortal,bodyHeight))return true;
+                if(Math.abs(z-r.z1())<radius+LevelDefinition.WALL_HALF_THICKNESS+.005&&!wallOpening(r,true,r.z1(),x,y,radius,ray,selectedPortal,bodyHeight))return true;
             }
             if(z>=r.z0()-radius&&z<=r.z1()+radius){
-                if(Math.abs(x-r.x0())<radius+LevelDefinition.WALL_HALF_THICKNESS+.005&&!wallOpening(r,false,r.x0(),z,y,radius,ray,selectedPortal))return true;
-                if(Math.abs(x-r.x1())<radius+LevelDefinition.WALL_HALF_THICKNESS+.005&&!wallOpening(r,false,r.x1(),z,y,radius,ray,selectedPortal))return true;
+                if(Math.abs(x-r.x0())<radius+LevelDefinition.WALL_HALF_THICKNESS+.005&&!wallOpening(r,false,r.x0(),z,y,radius,ray,selectedPortal,bodyHeight))return true;
+                if(Math.abs(x-r.x1())<radius+LevelDefinition.WALL_HALF_THICKNESS+.005&&!wallOpening(r,false,r.x1(),z,y,radius,ray,selectedPortal,bodyHeight))return true;
             }
         }
         return false;
     }
-    public boolean traversable(double x,double y,double z){
-        if(!finite(x,y,z))return false;double radius=.22;
-        if(!supported(x,y,z,radius)||wallBlocked(x,y,z,radius,false))return false;
+    public boolean traversable(double x,double y,double z){return traversable(x,y,z,HunterPosture.STANDING_HEIGHT);}
+    public boolean traversable(double x,double y,double z,double bodyHeight){
+        if(!finite(x,y,z,bodyHeight)||bodyHeight<.9||bodyHeight>2.0)return false;double radius=.22;
+        if(!supported(x,y,z,radius)||wallBlocked(x,y,z,radius,false,-1,bodyHeight))return false;
         for(double[] d:new double[][]{{-radius,0},{radius,0},{0,-radius},{0,radius}})
             if(!supported(x+d[0],y,z+d[1],0))return false;
-        for(Portal p:level.portals())if(p.door()&&!doorOpen(p.id())&&boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.alongX()?p.width()/2:.10,p.alongX()?.10:p.width()/2,2.4,0))return false;
-        for(Collider p:level.colliders())if(boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;
-        for(Collider p:closetColliders)if(boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;
+        for(Portal p:level.portals())if(p.door()&&!doorOpen(p.id())&&boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.alongX()?p.width()/2:.10,p.alongX()?.10:p.width()/2,2.4,0,bodyHeight))return false;
+        for(Collider p:level.colliders())if(boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw(),bodyHeight))return false;
+        for(Collider p:closetColliders)if(boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw(),bodyHeight))return false;
         for(Guard g:guards)if(boxHit(x,y,z,radius,(g.x0()+g.x1())/2,g.y(),(g.z0()+g.z1())/2,
-            Math.max(.035,Math.abs(g.x1()-g.x0())/2),Math.max(.035,Math.abs(g.z1()-g.z0())/2),1.0,0))return false;
+            Math.max(.035,Math.abs(g.x1()-g.x0())/2),Math.max(.035,Math.abs(g.z1()-g.z0())/2),1.0,0,bodyHeight))return false;
         if(Math.abs(y-level.dock().y())<1.5&&(van.collides(x,z,radius)||VanArrivalStreet.collision(van,x,z,radius)))return false;
         // A higher deck is a solid ceiling unless its authored stair opening removes it.
-        for(Room r:level.rooms())if(r.y()>y+.12&&r.y()<y+1.82&&x>r.x0()-radius&&x<r.x1()+radius&&z>r.z0()-radius&&z<r.z1()+radius&&!level.floorVoid(x,r.y(),z))return false;
+        for(Room r:level.rooms())if(r.y()>y+.12&&r.y()<y+bodyHeight+.04&&x>r.x0()-radius&&x<r.x1()+radius&&z>r.z0()-radius&&z<r.z1()+radius&&!level.floorVoid(x,r.y(),z))return false;
+        for(Room r:level.rooms())if(!r.outside()&&x>r.x0()&&x<r.x1()&&z>r.z0()&&z<r.z1()&&y>=r.y()-.05&&r.y()+r.height()>y+.12&&y+bodyHeight>r.y()+r.height()-.03&&!level.floorVoid(x,r.y()+r.height(),z))return false;
         return true;
     }
     public boolean traversable(double x,double z){Double deck=van.supportHeight(x,z);int r=roomAt(x,z);return r>=0&&traversable(x,deck==null?floorY(r):deck,z);}
@@ -212,13 +222,14 @@ public final class HouseMap {
         return best;
     }
     /** Swept horizontal input; elevation comes solely from contiguous authored support. */
-    public Vec resolveMove(Vec from,double x,double z){
+    public Vec resolveMove(Vec from,double x,double z){return resolveMove(from,x,z,HunterPosture.STANDING_HEIGHT);}
+    public Vec resolveMove(Vec from,double x,double z,double bodyHeight){
         if(from==null||!finite(from.x(),from.y(),from.z(),x,z))return null;
         double distance=Math.hypot(x-from.x(),z-from.z());if(distance>2)return null;
         int steps=Math.max(1,(int)Math.ceil(distance/.055));Vec at=from;
         for(int i=1;i<=steps;i++){
             double nx=from.x()+(x-from.x())*i/steps,nz=from.z()+(z-from.z())*i/steps;
-            Double y=supportNear(nx,nz,at.y());if(y==null||!traversable(nx,y,nz))return null;at=new Vec(nx,y,nz);
+            Double y=supportNear(nx,nz,at.y());if(y==null||!traversable(nx,y,nz,bodyHeight))return null;at=new Vec(nx,y,nz);
         }
         return at;
     }

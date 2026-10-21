@@ -24,7 +24,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private long last=System.nanoTime();
     private double clock;
     private double elevation;
-    private boolean castleLightsOn=true;
+    private boolean castleLightsOn=true,crouched;
     private String notice="Welcome to Beckenburg Castle. The equipment is real; look and press E.";
     private int noticeTicks=100;
     public CastleHubPanel(ProfileStore profile,Actions actions){
@@ -57,7 +57,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         double norm=Math.hypot(forward,strafe);
         if(norm>0){
             double priorX=renderer.x,priorZ=renderer.z;
-            double speed=(down.contains(KeyEvent.VK_SHIFT)?3.9:2.6)*dt/norm;
+            double speed=(crouched?2.6*HunterPosture.CROUCH_SPEED:down.contains(KeyEvent.VK_SHIFT)?3.9:2.6)*dt/norm;
             double dx=(Math.sin(renderer.yaw)*forward-Math.cos(renderer.yaw)*strafe)*speed;
             double dz=(Math.cos(renderer.yaw)*forward+Math.sin(renderer.yaw)*strafe)*speed;
             double targetX=renderer.x+dx,targetZ=renderer.z+dz;
@@ -73,7 +73,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 GameSfx.play(map.footstep(renderer.x,renderer.z,elevation));
         }
         clock+=dt;
-        renderer.eyeHeight=1.62+elevation;
+        renderer.eyeHeight=HunterPosture.eye(crouched)+elevation;
         GraphicsOptions.current().configure(renderer,getWidth(),getHeight(),true);
         renderer.drawCastle(map,clock,castleLightsOn);
         if(noticeTicks>0)noticeTicks--;
@@ -128,6 +128,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             else use(CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null?
                 null:map.aimed(renderer.x,renderer.z,renderer.yaw));
         }
+        if(key==KeyEvent.VK_CONTROL){crouched=!crouched;notice=crouched?"Crouched / Ctrl to stand":"Standing";noticeTicks=60;}
         if(key==KeyEvent.VK_F)renderer.lamp=!renderer.lamp;
         if(key==KeyEvent.VK_L){
             castleLightsOn=!castleLightsOn;GameSfx.play(LanSound.Cue.SWITCH);

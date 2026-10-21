@@ -17,7 +17,11 @@ public final class LooseClutter {
         Kind(double radius,double half,double mass,String description){this.radius=radius;this.half=half;this.mass=mass;this.description=description;}
         public String mesh(){return "level_loose_"+name().toLowerCase(Locale.ROOT)+"_worn";}
     }
-    public record Observer(int seat,double x,double y,double z,double yaw,double pitch,boolean exposed){}
+    public record Observer(int seat,double x,double y,double z,double yaw,double pitch,boolean exposed,double eye){
+        public Observer(int seat,double x,double y,double z,double yaw,double pitch,boolean exposed){this(seat,x,y,z,yaw,pitch,exposed,HunterPosture.STANDING_EYE);}
+        public Observer {if(!Double.isFinite(eye)||eye<.8||eye>1.7)throw new IllegalArgumentException("observer eye height");}
+        public double eyeY(){return y+eye;}
+    }
     public record State(int id,Kind kind,double x,double y,double z,double yaw,double roll,int holder){}
     public record Hit(int seat,int damage,int object){}
     public record Noise(double x,double y,double z,double speed){}
@@ -74,9 +78,9 @@ public final class LooseClutter {
     public synchronized State aimed(Observer o){
         double best=2.0;State result=null;
         for(Item i:items)if(i.holder==-1){
-            double dx=i.x-o.x,dy=i.y-o.y-1.62,dz=i.z-o.z,d=Math.sqrt(dx*dx+dy*dy+dz*dz);
+            double dx=i.x-o.x,dy=i.y-o.eyeY(),dz=i.z-o.z,d=Math.sqrt(dx*dx+dy*dy+dz*dz);
             double dot=dx*(Math.sin(o.yaw)*Math.cos(o.pitch))+dy*Math.sin(o.pitch)+dz*Math.cos(o.yaw)*Math.cos(o.pitch);
-            if(d<best&&dot>0&&dot/d>.91&&map.clearLineOfSight(o.x,o.y+1.62,o.z,i.x,i.y,i.z)){best=d;result=i.state();}
+            if(d<best&&dot>0&&dot/d>.91&&map.clearLineOfSight(o.x,o.eyeY(),o.z,i.x,i.y,i.z)){best=d;result=i.state();}
         }return result;
     }
     /** E pickup uses the same exact visible mesh as its prompt, including an object's edge. */
@@ -105,8 +109,8 @@ public final class LooseClutter {
         }last[o.seat]=tick;
     }
     private void carry(Item i,Observer o){
-        double x=o.x+Math.sin(o.yaw)*.62,z=o.z+Math.cos(o.yaw)*.62,y=o.y+1.35;
-        if(map.clearLineOfSight(o.x,o.y+1.35,o.z,x,y,z)){i.x=x;i.y=y;i.z=z;}
+        double x=o.x+Math.sin(o.yaw)*.62,z=o.z+Math.cos(o.yaw)*.62,y=o.eyeY()-.27;
+        if(map.clearLineOfSight(o.x,o.eyeY()-.27,o.z,x,y,z)){i.x=x;i.y=y;i.z=z;}
         else{i.x=o.x;i.y=y;i.z=o.z;}
     }
     /** Shared solo/host rule: sanity events fling props; only a poltergeist DISTURB aims armed throws. */
@@ -171,7 +175,7 @@ public final class LooseClutter {
                 if(ny>oy&&!map.clearObjectPath(ox,oy,oz,nx,ny,nz,i.kind.radius,extent)){noise(i,Math.abs(i.vy));i.vy*=-.25;ny=oy;}
                 i.x=nx;i.y=ny;i.z=nz;
                 double speed=Math.sqrt(i.vx*i.vx+i.vy*i.vy+i.vz*i.vz);
-                if(speed>2)for(Observer o:observers)if(o.exposed&&!(i.immunity>0&&o.seat==i.thrower)&&i.y>o.y+.15&&i.y<o.y+1.8
+                if(speed>2)for(Observer o:observers)if(o.exposed&&!(i.immunity>0&&o.seat==i.thrower)&&i.y>o.y+.15&&i.y<o.eyeY()+.16
                         &&Math.hypot(i.x-o.x,i.z-o.z)<i.kind.radius+.25){
                     if(i.armed)hits.add(new Hit(o.seat,Math.min(15,Math.max(1,(int)Math.round(i.kind.mass*speed*1.8))),i.id));
                     i.armed=false;i.vx*=-.2;i.vz*=-.2;i.vy*=.2;break;

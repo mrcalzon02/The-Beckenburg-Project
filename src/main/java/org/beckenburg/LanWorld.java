@@ -15,15 +15,26 @@ public final class LanWorld {
     private final int[] lastDoorTick={-3,-3,-3,-3,-3,-3};
     private double playerSpeed=1.0,sprintSpeed=1.5;
     private int hidingDensity=70;
-    private final boolean[] hiding=new boolean[6];
+    private final boolean[] hiding=new boolean[6],crouched=new boolean[6],shrubHiding=new boolean[6];
+    public boolean crouched(int seat){seat(seat);return crouched[seat];}
+    public boolean posture(int seat,boolean low){
+        seat(seat);var b=body(seat);
+        if(!HunterPosture.fits(map,new LevelDefinition.Vec(b.x(),b.y(),b.z()),low))throw new IllegalArgumentException("not enough headroom to stand");
+        crouched[seat]=low;if(!low&&shrubHiding[seat]){hiding[seat]=false;shrubHiding[seat]=false;}return low;
+    }
+    public String postureFrame(int seat,int tick){return "POSTURE|"+seat+"|"+(crouched(seat)?1:0)+"|"+tick;}
+    public void revealOutdoorNear(double x,double y,double z){
+        for(int i=0;i<6;i++)if(shrubHiding[i]&&Math.abs(ys[i]-y)<1.6&&Math.hypot(xs[i]-x,zs[i]-z)<2.4){hiding[i]=false;shrubHiding[i]=false;}
+    }
     private boolean exitSealed;
     /** The investigation/van boundary is sealed only while a true Frenzy is active. */
     public void setExitSealed(boolean sealed){exitSealed=sealed;}
     public boolean exitSealed(){return exitSealed;}
-    public boolean hidden(int seat){seat(seat);return hiding[seat];}
+    public boolean hidden(int seat){seat(seat);if(shrubHiding[seat]&&(!crouched[seat]||OutdoorHiding.containing(map.level(),xs[seat],ys[seat],zs[seat],hidingDensity)==null)){hiding[seat]=false;shrubHiding[seat]=false;}return hiding[seat];}
     public boolean toggleHide(int seat){
         seat(seat);
-        if(hiding[seat]){hiding[seat]=false;return false;}
+        if(hidden(seat)){hiding[seat]=false;shrubHiding[seat]=false;return false;}
+        if(crouched[seat]&&OutdoorHiding.containing(map.level(),xs[seat],ys[seat],zs[seat],hidingDensity)!=null){hiding[seat]=true;shrubHiding[seat]=true;return true;}
         var pocket=map.hidingSpot(body(seat).room(),hidingDensity);
         if(pocket==null||!LevelClosets.inside(map.level().socket("hide",body(seat).room()),xs[seat],ys[seat],zs[seat]))
             throw new IllegalArgumentException("no hiding place within reach");
@@ -54,7 +65,7 @@ public final class LanWorld {
     public void setRoom(int seat,int room){
         seat(seat);
         if(room<0||room>=HouseMap.ROOM_COUNT)throw new IllegalArgumentException("invalid room");
-        var spawn=map.spawn(room);xs[seat]=spawn.x();ys[seat]=spawn.y();zs[seat]=spawn.z();hiding[seat]=false;
+        var spawn=map.spawn(room);xs[seat]=spawn.x();ys[seat]=spawn.y();zs[seat]=spawn.z();hiding[seat]=false;shrubHiding[seat]=false;crouched[seat]=false;
     }
     public Body body(int seat){seat(seat);return new Body(xs[seat],ys[seat],zs[seat],headings[seat],map.roomAt(xs[seat],ys[seat],zs[seat]));}
     /** A stationary player recharges on the same host 10 Hz clock as movement. */
@@ -79,20 +90,20 @@ public final class LanWorld {
         if(tick<=lastTick[seat])throw new IllegalArgumentException("movement rate exceeded");
         lastTick[seat]=tick; // failed collisions still consume the per-tick movement allowance.
         double magnitude=Math.hypot(dx,dz);
-        boolean running=wantsSprint&&sprint!=CustomContract.Sprint.DISABLED
+        boolean running=wantsSprint&&!crouched[seat]&&sprint!=CustomContract.Sprint.DISABLED
             &&(sprint==CustomContract.Sprint.UNLIMITED||stamina[seat]>0);
-        double speed=SPEED*playerSpeed*(running?sprintSpeed:1);
+        double speed=SPEED*playerSpeed*HunterPosture.speed(crouched[seat])*(running?sprintSpeed:1);
         double x=xs[seat]+speed*dx/magnitude,z=zs[seat]+speed*dz/magnitude;
-        var destination=map.resolveMove(new LevelDefinition.Vec(xs[seat],ys[seat],zs[seat]),x,z);
+        var destination=map.resolveMove(new LevelDefinition.Vec(xs[seat],ys[seat],zs[seat]),x,z,HunterPosture.height(crouched[seat]));
         if(destination==null)throw new IllegalArgumentException("blocked by world collision");
         if(exitSealed && body(seat).room()!=HouseMap.EXTRACTION_ROOM
                 &&map.roomAt(destination.x(),destination.y(),destination.z())==HouseMap.EXTRACTION_ROOM)
             throw new IllegalArgumentException("frenzy sealed the van extraction threshold");
         // Forbid diagonal corner cutting; each axis must independently clear the collision radius.
-        if(map.resolveMove(new LevelDefinition.Vec(xs[seat],ys[seat],zs[seat]),x,zs[seat])==null
-            ||map.resolveMove(new LevelDefinition.Vec(xs[seat],ys[seat],zs[seat]),xs[seat],z)==null)
+        if(map.resolveMove(new LevelDefinition.Vec(xs[seat],ys[seat],zs[seat]),x,zs[seat],HunterPosture.height(crouched[seat]))==null
+            ||map.resolveMove(new LevelDefinition.Vec(xs[seat],ys[seat],zs[seat]),xs[seat],z,HunterPosture.height(crouched[seat]))==null)
             throw new IllegalArgumentException("blocked by world collision");
-        xs[seat]=destination.x();ys[seat]=destination.y();zs[seat]=destination.z();hiding[seat]=false;
+        xs[seat]=destination.x();ys[seat]=destination.y();zs[seat]=destination.z();hiding[seat]=false;shrubHiding[seat]=false;
         if(running){
             lastSprintTick[seat]=tick;
             if(sprint==CustomContract.Sprint.LIMITED)stamina[seat]--;

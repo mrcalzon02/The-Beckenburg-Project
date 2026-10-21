@@ -405,7 +405,7 @@ public final class InvestigationGame {
     }
     private void showControls(){
         JTextArea help=new JTextArea(
-            "CASTLE / SOLO\nWASD move  |  Shift sprint  |  Click mouse-look  |  F light  |  E interact\n"+
+            "CASTLE / SOLO\nWASD move  |  Shift sprint  |  Ctrl crouch  |  Click mouse-look  |  F light  |  E interact\n"+
             "1–4 select gear  |  R use  |  C ward  |  B ritual  |  J journal  |  M map\n"+
             "Q (hold) callouts  |  L hide in cupboard / emerge  |  X extract  |  Escape pause or return to menu\n\n"+
             "LOOSE OBJECTS (solo and LAN)\nF5 pick up/drop within 2m | ] turn in hand | F12 throw along your view\nDescriptions appear while examining; poltergeist projectiles injure on contact. E toggles aimed phones, alarms, radios and taps.\n\n"+
@@ -538,7 +538,7 @@ public final class InvestigationGame {
             timer=new javax.swing.Timer(33,e->frame());timer.start();
         }
         void close(){timer.stop();down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
-        private double feetY(){return scene.eyeHeight-1.62;}
+        private double feetY(){return scene.eyeHeight-HunterPosture.eye(session.crouched());}
         private int currentRoom(){return map.roomAt(scene.x,feetY(),scene.z);}
         private boolean atVanFloor(){return Math.abs(feetY()-map.floorY(HouseMap.EXTRACTION_ROOM))<.25;}
         private EquipmentLoadout.Item aimedRack(){return atVanFloor()
@@ -619,15 +619,15 @@ public final class InvestigationGame {
             if(length>0 && (session.outcome()==InvestigationSession.Outcome.ACTIVE || session.outcome()==InvestigationSession.Outcome.CLEANSED)){
                 double priorX=scene.x,priorZ=scene.z;
                 forward/=length;strafe/=length;
-                double speed=down.contains(KeyEvent.VK_SHIFT)?3.6:2.4;
+                double speed=session.crouched()?2.4*HunterPosture.CROUCH_SPEED:down.contains(KeyEvent.VK_SHIFT)?3.6:2.4;
                 double dx=(Math.sin(scene.yaw)*forward-Math.cos(scene.yaw)*strafe)*dt*speed;
                 double dz=(Math.cos(scene.yaw)*forward+Math.sin(scene.yaw)*strafe)*dt*speed;
-                var moved=map.resolveMove(new LevelDefinition.Vec(scene.x,feetY(),scene.z),scene.x+dx,scene.z+dz);
+                var moved=map.resolveMove(new LevelDefinition.Vec(scene.x,feetY(),scene.z),scene.x+dx,scene.z+dz,HunterPosture.height(session.crouched()));
                 if(moved==null){
-                    moved=map.resolveMove(new LevelDefinition.Vec(scene.x,feetY(),scene.z),scene.x+dx,scene.z);
-                    if(moved==null)moved=map.resolveMove(new LevelDefinition.Vec(scene.x,feetY(),scene.z),scene.x,scene.z+dz);
+                    moved=map.resolveMove(new LevelDefinition.Vec(scene.x,feetY(),scene.z),scene.x+dx,scene.z,HunterPosture.height(session.crouched()));
+                    if(moved==null)moved=map.resolveMove(new LevelDefinition.Vec(scene.x,feetY(),scene.z),scene.x,scene.z+dz,HunterPosture.height(session.crouched()));
                 }
-                if(moved!=null){session.leaveHiding();scene.x=moved.x();scene.z=moved.z();scene.eyeHeight=moved.y()+1.62;}
+                if(moved!=null){session.leaveHiding();scene.x=moved.x();scene.z=moved.z();scene.eyeHeight=moved.y()+HunterPosture.eye(session.crouched());}
                 if(Math.hypot(scene.x-priorX,scene.z-priorZ)>.0001)
                     GameSfx.play(LanSound.stepCue(map,currentRoom()));
             }
@@ -722,9 +722,10 @@ public final class InvestigationGame {
                 scene.lamp=!scene.lamp;
                 GameSfx.play(scene.lamp?LanSound.Cue.DEVICE_ON:LanSound.Cue.DEVICE_OFF);
             }
+            if(key==KeyEvent.VK_CONTROL){double feet=feetY();if(session.posture(!session.crouched(),scene.x,feet,scene.z))scene.eyeHeight=feet+HunterPosture.eye(session.crouched());}
             if(key==KeyEvent.VK_L)session.toggleHide(scene.x,feetY(),scene.z);
             if(key==KeyEvent.VK_F5||key==KeyEvent.VK_F12||key==KeyEvent.VK_CLOSE_BRACKET){
-                var o=new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true);
+                var o=new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true,HunterPosture.eye(session.crouched()));
                 int id=map.clutter().held(0);var aimed=map.clutter().aimed(o);if(id<0&&aimed!=null)id=aimed.id();
                 if(id>0)try{session.clutterLook(scene.yaw,scene.pitch);session.clutterAction(key==KeyEvent.VK_F12?"THROW":key==KeyEvent.VK_CLOSE_BRACKET?"ROTATE":map.clutter().held(0)>=0?"DROP":"TAKE",id,scene.x,feetY(),scene.z);}
                 catch(IllegalArgumentException ex){showVanNotice(ex.getMessage());}
@@ -752,14 +753,14 @@ public final class InvestigationGame {
             down.add(key);repaint();
         }
         private InteractionFocus.Target focusTarget(){
-            return InteractionFocus.pick(map,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,!session.hidden()&&session.health()>0),VanRackStock.solo(profile,loadout));
+            return InteractionFocus.pick(map,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,!session.hidden()&&session.health()>0,HunterPosture.eye(session.crouched())),VanRackStock.solo(profile,loadout));
         }
         private void interactFocused(){
             if(journalShown||mapShown||briefingShown||wheelOpen)return;
             var target=focusTarget();if(target==null)return;
             try{switch(target.kind()){
-                case CLUTTER -> map.clutter().takeFocused(Integer.parseInt(target.id()),new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true),session.ticks());
-                case FIXTURE -> {int id=Integer.parseInt(target.id());map.fixtures().toggleFocused(id,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true),session.ticks());GameSfx.fixtureState(map.fixtures().state(id));}
+                case CLUTTER -> map.clutter().takeFocused(Integer.parseInt(target.id()),new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true,HunterPosture.eye(session.crouched())),session.ticks());
+                case FIXTURE -> {int id=Integer.parseInt(target.id());map.fixtures().toggleFocused(id,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true,HunterPosture.eye(session.crouched())),session.ticks());GameSfx.fixtureState(map.fixtures().state(id));}
                 case RACK -> {
                     String id=target.id().split(":")[0];
                     if(id.equals("HEALTH_SUPPLIES")||id.equals("SANITY_MEDICATION")){

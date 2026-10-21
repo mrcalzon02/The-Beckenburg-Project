@@ -336,6 +336,7 @@ public final class LevelPlans {
         LevelDefinition finish(int breaker,int main){
             clearCirculation();
             DomesticFitout.populate(this);
+            OutdoorHiding.populate(this);
             if(id.equals("house")||id.equals("farmhouse")||id.equals("school"))LevelDressing.populate(this);
             List<Prop> furnishingOverlays=new ArrayList<>();
             for(Prop p:props){

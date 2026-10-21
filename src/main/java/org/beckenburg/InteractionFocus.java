@@ -18,7 +18,7 @@ public final class InteractionFocus {
         var triangles=GlbProps.model(key).triangles();
         if(key.equals("monitoring_screen_mp_1"))triangles=triangles.stream().map(t->new GlbProps.Triangle(VanInteriorLayout.vertex(key,t.a()),VanInteriorLayout.vertex(key,t.b()),VanInteriorLayout.vertex(key,t.c()),t.material())).toList();
         return new Mesh(triangles,VanInteriorLayout.bounds(key));});}
-    private static double[] ray(LooseClutter.Observer o){return new double[]{o.x(),o.y()+1.62,o.z(),Math.sin(o.yaw())*Math.cos(o.pitch()),Math.sin(o.pitch()),Math.cos(o.yaw())*Math.cos(o.pitch())};}
+    private static double[] ray(LooseClutter.Observer o){return new double[]{o.x(),o.eyeY(),o.z(),Math.sin(o.yaw())*Math.cos(o.pitch()),Math.sin(o.pitch()),Math.cos(o.yaw())*Math.cos(o.pitch())};}
     private static double box(double[] r,VanInteriorLayout.Bounds b){
         double near=0,far=2.05;double[] lo={b.x0(),b.y0(),b.z0()},hi={b.x1(),b.y1(),b.z1()};
         for(int n=0;n<3;n++){if(Math.abs(r[n+3])<1e-10){if(r[n]<lo[n]||r[n]>hi[n])return Double.POSITIVE_INFINITY;}

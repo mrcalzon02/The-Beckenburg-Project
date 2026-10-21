@@ -608,7 +608,7 @@ public final class LanHost implements AutoCloseable {
                     var b=world.body(peer.slot);
                     if(Math.abs(Math.atan2(Math.sin(yaw-Math.toRadians(b.heading())),Math.cos(yaw-Math.toRadians(b.heading()))))>.025)
                         throw new IllegalArgumentException("interaction heading changed");
-                    var observer=new LooseClutter.Observer(peer.slot,b.x(),b.y(),b.z(),yaw,pitch,!world.hidden(peer.slot));
+                    var observer=new LooseClutter.Observer(peer.slot,b.x(),b.y(),b.z(),yaw,pitch,!world.hidden(peer.slot),HunterPosture.eye(world.crouched(peer.slot)));
                     boolean[] present=new boolean[HUNTERS];for(int n=0;n<HUNTERS;n++)present[n]=seats[n]!=null||reserved[n]!=null;
                     var target=InteractionFocus.pick(map,observer,VanRackStock.aggregate(equipment,supplies,counters,present));
                     if(target==null||!target.kind().name().equals(p.get(1))||!target.id().equals(p.get(2)))
@@ -718,7 +718,7 @@ public final class LanHost implements AutoCloseable {
                 case "DEVICE" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=4)throw new IllegalArgumentException("device use unavailable");
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(3)));ensureActiveHunter(peer);
-                    var b=world.body(peer.slot);map.fixtures().toggle(LanProtocol.integer(p.get(1),1,100),new LooseClutter.Observer(peer.slot,b.x(),b.y(),b.z(),Math.toRadians(b.heading()),LanProtocol.integer(p.get(2),-1400,1400)/1000.0,!world.hidden(peer.slot)),tick);
+                    var b=world.body(peer.slot);map.fixtures().toggle(LanProtocol.integer(p.get(1),1,100),new LooseClutter.Observer(peer.slot,b.x(),b.y(),b.z(),Math.toRadians(b.heading()),LanProtocol.integer(p.get(2),-1400,1400)/1000.0,!world.hidden(peer.slot),HunterPosture.eye(world.crouched(peer.slot))),tick);
                     reply(peer,"ACCEPT|DEVICE");broadcastFixtures();
                 }
                 case "OBJECT" -> {
@@ -726,7 +726,7 @@ public final class LanHost implements AutoCloseable {
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(4)));ensureActiveHunter(peer);
                     if(world.hidden(peer.slot))throw new IllegalArgumentException("emerge before handling objects");
                     var body=world.body(peer.slot);
-                    var observer=new LooseClutter.Observer(peer.slot,body.x(),body.y(),body.z(),Math.toRadians(body.heading()),LanProtocol.integer(p.get(3),-1400,1400)/1000.0,true);
+                    var observer=new LooseClutter.Observer(peer.slot,body.x(),body.y(),body.z(),Math.toRadians(body.heading()),LanProtocol.integer(p.get(3),-1400,1400)/1000.0,true,HunterPosture.eye(world.crouched(peer.slot)));
                     map.clutter().action(p.get(1),LanProtocol.integer(p.get(2),1,500),observer,tick);
                     reply(peer,"ACCEPT|OBJECT");broadcastClutter();
                 }
@@ -755,6 +755,12 @@ public final class LanHost implements AutoCloseable {
                     }
                     // Room-level topology proof only; physical door and body collision still need synced transform validation.
                     hunterRooms[peer.slot]=target;world.setRoom(peer.slot,target);recordSound(peer.slot,LanGhostPursuit.Sound.FOOTSTEP);reply(peer,"ACCEPT|MOVE|"+target);broadcastState();broadcastWorld();
+                }
+                case "CROUCH" -> {
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=3)throw new IllegalArgumentException("hunter posture requires world view");
+                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(2)));ensureActiveHunter(peer);
+                    world.posture(peer.slot,LanProtocol.integer(p.get(1),0,1)==1);
+                    reply(peer,"HIDING|"+(world.hidden(peer.slot)?1:0));broadcastWorld();
                 }
                 case "HIDE" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
@@ -2029,6 +2035,7 @@ public final class LanHost implements AutoCloseable {
             expireDisconnectedSeats();
             if(!running)return;
             world.advanceStamina(tick);
+            var coverSearch=ghostPose.pose();world.revealOutdoorNear(coverSearch.x(),coverSearch.y(),coverSearch.z());
             var fixtureSounds=map.fixtures().advance(tick);broadcastFixtures();
             for(var sound:fixtureSounds){
                 var f=sound.source();sensorSound(f.room(),f.x(),f.z(),Math.max(1,sound.cue().baseGain/10));for(int seat=0;seat<HUNTERS;seat++)if(seats[seat]!=null&&seats[seat].worldMode){
@@ -2256,7 +2263,7 @@ public final class LanHost implements AutoCloseable {
     private java.util.List<LooseClutter.Observer> clutterObservers(){
         var result=new java.util.ArrayList<LooseClutter.Observer>();
         for(int i=0;i<HUNTERS;i++)if((seats[i]!=null||reserved[i]!=null)&&mission.alive(i)){
-            var b=world.body(i);result.add(new LooseClutter.Observer(i,b.x(),b.y(),b.z(),Math.toRadians(b.heading()),0,!world.hidden(i)));
+            var b=world.body(i);result.add(new LooseClutter.Observer(i,b.x(),b.y(),b.z(),Math.toRadians(b.heading()),0,!world.hidden(i),HunterPosture.eye(world.crouched(i))));
         }return result;
     }
     private final Map<Peer,String> clutterSent=new WeakHashMap<>();
@@ -2373,7 +2380,7 @@ public final class LanHost implements AutoCloseable {
         // A disconnected hunter remains physically present and vulnerable for the
         // entire reservation window, not invisible until the UI reconnects.
         for(int i=0;i<HUNTERS;i++)if((seats[i]!=null||reserved[i]!=null)&&mission.alive(i))
-            notifyHunters(world.bodyFrame(i,tick));
+            {notifyHunters(world.bodyFrame(i,tick));notifyHunters(world.postureFrame(i,tick));if(seats[i]!=null)reply(seats[i],"HIDING|"+(world.hidden(i)?1:0));}
     }
     private void broadcastState(){
         GhostDomain.Observation o=ghost.observe();

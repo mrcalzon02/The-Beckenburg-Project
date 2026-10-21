@@ -134,6 +134,7 @@ public final class LanClient implements AutoCloseable {
         send("STEP|"+dx+"|"+dz+"|"+(running?1:0)+"|"+(++sequence));
     }
     public synchronized void vanMonitor()throws IOException {send("VANMON|"+(++sequence));}
+    public synchronized void crouch(boolean low)throws IOException {send("CROUCH|"+(low?1:0)+"|"+(++sequence));}
     public synchronized void hide()throws IOException {send("HIDE|"+(++sequence));}
     public synchronized void interact(InteractionFocus.Target target,double yaw,double pitch)throws IOException {
         int heading=Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360);

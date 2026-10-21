@@ -37,7 +37,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final int[] medicine=new int[6];
     private VanTelemetry.Display meters;
     private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
-    private boolean vanDisplay,concealed;
+    private boolean vanDisplay,concealed,crouched;
+    private final Map<Integer,Boolean> hunterPostures=new HashMap<>();
+    private double eyeOffset(){return HunterPosture.eye(crouched);}
     private int vanMapScroll;
     private final Map<Integer,VanSensorStations.Station> sensorNodes=new HashMap<>();
     private final Map<Integer,VanSiteMapScreen.Reading> sensorReadings=new HashMap<>();
@@ -277,7 +279,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 hunterVisuals.put(who,look);
                 SceneRenderer.RemoteBody existing=peers.get(who);
                 if(existing!=null)peers.put(who,new SceneRenderer.RemoteBody(
-                    existing.x(),existing.y(),existing.z(),existing.slot(),existing.heading(),look));
+                    existing.x(),existing.y(),existing.z(),existing.slot(),existing.heading(),look,existing.crouched()));
+            }else if(p.size()==4&&p.get(0).equals("POSTURE")){
+                int who=LanProtocol.integer(p.get(1),0,5);boolean low=LanProtocol.integer(p.get(2),0,1)==1;
+                hunterPostures.put(who,low);
+                if(who==seat){double feet=renderer.eyeHeight-eyeOffset();crouched=low;renderer.eyeHeight=feet+eyeOffset();}
+                else{var prior=peers.get(who);if(prior!=null)peers.put(who,new SceneRenderer.RemoteBody(prior.x(),prior.y(),prior.z(),prior.slot(),prior.heading(),prior.appearance(),low));}
             }else if(p.size()==7&&p.get(0).equals("BODY")){
                 int who=LanProtocol.integer(p.get(1),0,5);
                 double x=LanProtocol.integer(p.get(2),0,map.width()*1000)/1000.0;
@@ -285,9 +292,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 double z=LanProtocol.integer(p.get(4),0,map.height()*1000)/1000.0;
                 int heading=LanProtocol.integer(p.get(5),0,359);
                 tick=LanProtocol.integer(p.get(6),0,99999999);
-                if(who==seat){renderer.x=x;renderer.z=z;renderer.eyeHeight=y+1.62;feedback="HOST SYNC ACTIVE — movement and doors server controlled";}
+                if(who==seat){renderer.x=x;renderer.z=z;renderer.eyeHeight=y+eyeOffset();feedback="HOST SYNC ACTIVE — movement and doors server controlled";}
                 else peers.put(who,new SceneRenderer.RemoteBody(x,y,z,who,heading,
-                    hunterVisuals.getOrDefault(who,"observer")));
+                    hunterVisuals.getOrDefault(who,"observer"),hunterPostures.getOrDefault(who,false)));
             }else if(p.size()==3&&p.get(0).equals("PEER")&&p.get(1).equals("LEFT")){
                 int gone=LanProtocol.integer(p.get(2),0,5);
                 if(gone!=seat){peers.remove(gone);hunterNames.remove(gone);hunterVisuals.remove(gone);}
@@ -731,7 +738,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final VanRackStock.Receiver rackSnapshot=new VanRackStock.Receiver();
     private boolean insideVan(){
         var local=map.van().local(renderer.x,renderer.z);
-        return map.roomAt(renderer.x,renderer.eyeHeight-1.62,renderer.z)==HouseMap.EXTRACTION_ROOM
+        return map.roomAt(renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z)==HouseMap.EXTRACTION_ROOM
             &&Math.abs(local.x())<VanStaging.HALF_WIDTH-.2
             &&local.z()>=VanStaging.FRONT&&local.z()<VanStaging.REAR-.2;
     }
@@ -801,7 +808,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     }
     private void frame(){
         atmosphere.setActive(isShowing());
-        int outdoorRoom=map.roomAt(renderer.x,renderer.eyeHeight-1.62,renderer.z);
+        int outdoorRoom=map.roomAt(renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z);
         buildingAudio.setContext(outdoorRoom,lights.breaker());
         buildingAudio.setActive(isShowing()&&caseResult.isEmpty());
         atmosphere.setOutside(outdoorRoom>=0&&map.outside(outdoorRoom));
@@ -826,7 +833,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 int mx=(int)Math.round(dx/len*100),mz=(int)Math.round(dz/len*100);
                 if(mx!=0||mz!=0){
                     concealed=false;
-                    client.step(mx,mz,keys.contains(KeyEvent.VK_SHIFT));
+                    client.step(mx,mz,!crouched&&keys.contains(KeyEvent.VK_SHIFT));
                 }
             }
             int heading=Math.floorMod((int)Math.round(Math.toDegrees(renderer.yaw)),360);
@@ -965,12 +972,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             g.setColor(new Color(10,17,25,225));g.fillRoundRect(12,10,cardW,69,9,9);
             g.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));
             g.setColor(new Color(234,222,189));
-            g.drawString("HUNTER "+(seat+1)+" / "+map.roomName(map.roomAt(renderer.x,renderer.eyeHeight-1.62,renderer.z))+
+            g.drawString("HUNTER "+(seat+1)+" / "+map.roomName(map.roomAt(renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z))+
                 (currentWeather==null?"":" / "+currentWeather.weather()+" "+
                     currentWeather.intensity()),24,31);
             g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
             g.setColor(health<35?new Color(246,151,144):new Color(177,223,195));
-            g.drawString("HP "+health+"   SANITY "+sanity+"   PARTY "+(peers.size()+1)+"/"+partySize+
+            g.drawString((crouched?"CROUCHED  ":"")+"HP "+health+"   SANITY "+sanity+"   PARTY "+(peers.size()+1)+"/"+partySize+
                 "   DIFFICULTY +"+partyDifficulty,24,49);
             g.setColor(new Color(216,201,165));
             g.drawString("CASE "+casefile.size()+" READINGS / "+hardEvidenceLevel.name()+
@@ -1020,7 +1027,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 g.setColor(new Color(13,19,27,245));g.fillRoundRect(hx,hy,hw,210,10,10);
                 g.setColor(new Color(236,207,157));g.drawString("HUNTER CONTROLS  /  F1 CLOSE",hx+18,hy+29);
                 g.setColor(new Color(218,225,221));
-                String[] hints={"WASD move  /  SHIFT sprint  /  CLICK mouse-look",
+                String[] hints={"WASD move / Ctrl crouch  /  SHIFT sprint  /  CLICK mouse-look",
                     "1-4 equip / R use / F place light / E interact / F6 rack",
                     "Z cross / G ward / H salt / K medicine / M large van map",
                     "J casefile  /  TAB journal  /  I guess  /  P submit",
@@ -1353,7 +1360,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(casefileOpen)return; // An open journal never triggers world equipment or movement.
         switch(e.getKeyCode()){
             case KeyEvent.VK_F5,KeyEvent.VK_F12,KeyEvent.VK_CLOSE_BRACKET -> {
-                var o=new LooseClutter.Observer(seat,renderer.x,renderer.eyeHeight-1.62,renderer.z,renderer.yaw,renderer.pitch,true);
+                var o=new LooseClutter.Observer(seat,renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z,renderer.yaw,renderer.pitch,true,eyeOffset());
                 int id=map.clutter().held(seat);var aimed=map.clutter().aimed(o);
                 if(id<0&&aimed!=null)id=aimed.id();
                 if(id>0){int chosen=id;String action=e.getKeyCode()==KeyEvent.VK_F12?"THROW":e.getKeyCode()==KeyEvent.VK_CLOSE_BRACKET?"ROTATE":map.clutter().held(seat)>=0?"DROP":"TAKE";
@@ -1399,6 +1406,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             case KeyEvent.VK_F8 -> sendAction("deploy writing book",()->client.placeBook());
             case KeyEvent.VK_F9 -> sendAction("inspect writing book",()->client.readBook());
             case KeyEvent.VK_F10 -> sendAction("retrieve writing book",()->client.takeBook());
+            case KeyEvent.VK_CONTROL -> {if(health>0&&keys.add(KeyEvent.VK_CONTROL))sendAction("crouch",()->client.crouch(!crouched));}
             case KeyEvent.VK_L -> sendAction("hide",()->client.hide());
             // M opens the full-size van map before ordinary world hotkeys.
             case KeyEvent.VK_K -> showSupplyStore();
@@ -1425,7 +1433,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
     }
     private InteractionFocus.Target focusTarget(){
-        return InteractionFocus.pick(map,new LooseClutter.Observer(seat,renderer.x,renderer.eyeHeight-1.62,renderer.z,renderer.yaw,renderer.pitch,health>0&&!concealed),rackSnapshot.stock());
+        return InteractionFocus.pick(map,new LooseClutter.Observer(seat,renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z,renderer.yaw,renderer.pitch,health>0&&!concealed,eyeOffset()),rackSnapshot.stock());
     }
     @FunctionalInterface private interface NetworkAction {void run()throws IOException;}
     private void sendAction(String verb,NetworkAction action){

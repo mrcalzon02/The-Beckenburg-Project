@@ -42,8 +42,8 @@ public final class InvestigationSession {
     public void clutterLook(double yaw,double pitch){clutterYaw=yaw;clutterPitch=pitch;}
     public void clutterAction(String action,int id,double x,double y,double z){
         if(outcome!=Outcome.ACTIVE)throw new IllegalArgumentException("case is not active");
-        map.clutter().action(action,id,new LooseClutter.Observer(0,x,y,z,clutterYaw,clutterPitch,!hidden&&health>0),ticks);
-        log(map.clutter().hint(new LooseClutter.Observer(0,x,y,z,clutterYaw,clutterPitch,true)));
+        map.clutter().action(action,id,new LooseClutter.Observer(0,x,y,z,clutterYaw,clutterPitch,!hidden&&health>0,HunterPosture.eye(crouched)),ticks);
+        log(map.clutter().hint(new LooseClutter.Observer(0,x,y,z,clutterYaw,clutterPitch,true,HunterPosture.eye(crouched))));
     }
     private RoomLighting roomLights;
     public void connectLighting(RoomLighting roomLights){this.roomLights=roomLights;}
@@ -51,16 +51,24 @@ public final class InvestigationSession {
     private final AmbientSanity ambientSanity=new AmbientSanity();
     private final GhostDomain.AiController ghostAi;
     private boolean prepared, haunted, rewarded;
-    private boolean hidden;
+    private boolean hidden,shrubHidden,crouched;
+    public boolean crouched(){return crouched;}
+    public boolean posture(boolean low,double x,double y,double z){
+        if(!HunterPosture.fits(map,new LevelDefinition.Vec(x,y,z),low)){log("Not enough headroom to stand.");return false;}
+        crouched=low;if(!low&&shrubHidden)leaveHiding();return true;
+    }
     private LevelDefinition.Vec hidingAt;
     public boolean hidden(){return hidden;}
-    public void leaveHiding(){if(hidden){hidden=false;hidingAt=null;log("You left the cupboard's concealment.");}}
+    public void leaveHiding(){if(hidden){hidden=false;shrubHidden=false;hidingAt=null;log("You left concealment.");}}
     public boolean toggleHide(double x,double y,double z){
         if(hidden){leaveHiding();return true;}
         int room=map.roomAt(x,y,z);
+        if(outcome==Outcome.ACTIVE&&crouched&&OutdoorHiding.containing(map.level(),x,y,z,map.hidingDensity())!=null){
+            hidden=true;shrubHidden=true;hidingAt=new LevelDefinition.Vec(x,y,z);log("HIDDEN IN SHRUB / moving, standing or a nearby searching ghost exposes you.");return true;
+        }
         if(outcome!=Outcome.ACTIVE||!LevelClosets.available(map.level(),room,map.hidingDensity())
                 ||!LevelClosets.inside(map.level().socket("hide",room),x,y,z)||!map.traversable(x,y,z)){
-            log("Step inside an available hiding cupboard first.");return false;
+            log("Enter an available cupboard, or crouch inside a dense shrub first.");return false;
         }
         hidden=true;hidingAt=new LevelDefinition.Vec(x,y,z);log("HIDDEN IN CUPBOARD / L to emerge. Moving exposes you.");return true;
     }
@@ -142,7 +150,7 @@ public final class InvestigationSession {
     public Outcome outcome() { return outcome; }
     public String message() { return message; }
     public List<String> journal() { return Collections.unmodifiableList(journal); }
-    public String statusLine() { return (hidden?"HIDDEN  ":"")+"INJURY " + (100-health) + "  FEAR " + stress + "  MEASURED TOOLS " + measuredTools.size() + "  WARDS " + wards; }
+    public String statusLine() { return (hidden?"HIDDEN  ":"")+(crouched?"CROUCHED  ":"")+"INJURY " + (100-health) + "  FEAR " + stress + "  MEASURED TOOLS " + measuredTools.size() + "  WARDS " + wards; }
     private void log(String text) {
         message = text;
         journal.add(String.format("%02d:%02d  %s",ticks/600,(ticks/10)%60,text));
@@ -167,10 +175,10 @@ public final class InvestigationSession {
             var f=sound.source();var cue=LanSound.project(map,new LanWorld.Body(playerX,playerY,playerZ,0,playerRoom),f.room(),f.x(),f.y(),f.z(),sound.cue(),ticks);
             if(cue!=null)GameSfx.fixtureSound(f,cue);
         }
-        var clutterObserver=new LooseClutter.Observer(0,playerX,playerY,playerZ,clutterYaw,clutterPitch,!hidden&&health>0);
+        var clutterObserver=new LooseClutter.Observer(0,playerX,playerY,playerZ,clutterYaw,clutterPitch,!hidden&&health>0,HunterPosture.eye(crouched));
         for(var hit:map.clutter().advance(List.of(clutterObserver))){health=Math.max(0,health-hit.damage());log("Struck by a flying object! -"+hit.damage()+" health.");if(health==0){finish(Outcome.LOST);return;}}
         if(hidden&&(hidingAt==null||Math.hypot(playerX-hidingAt.x(),playerZ-hidingAt.z())>.02
-                ||Math.abs(playerY-hidingAt.y())>.1||!LevelClosets.available(map.level(),playerRoom,map.hidingDensity())))leaveHiding();
+                ||Math.abs(playerY-hidingAt.y())>.1||(shrubHidden?(!crouched||OutdoorHiding.containing(map.level(),playerX,playerY,playerZ,map.hidingDensity())==null||ghost.room()==playerRoom&&Math.hypot(playerX-map.centerX(playerRoom),playerZ-map.centerZ(playerRoom))<2.4):!LevelClosets.available(map.level(),playerRoom,map.hidingDensity()))))leaveHiding();
         ghost.advance(ticks,playerRoom,playerRoom==ghost.room()&&!hidden?1:0);
         boolean indoor=playerRoom>=0&&playerRoom<HouseMap.INDOOR_ROOMS;
         boolean light=carriedLight||(indoor&&(roomLights==null

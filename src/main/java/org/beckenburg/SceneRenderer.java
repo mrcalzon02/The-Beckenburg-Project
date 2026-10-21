@@ -665,7 +665,7 @@ public final class SceneRenderer {
         }
         var p=van.world(home.streetFace()-home.side()*.16,home.frontageZ());imported(out,"door_1_loose",p.x(),0,p.z(),1.05,van.placement().yaw()+home.side()*Math.PI/2);
     }
-    private final java.util.Map<HouseMap.Site,List<Face>> enclosureFaces=new java.util.EnumMap<>(HouseMap.Site.class);
+    private final java.util.Map<String,List<Face>> enclosureFaces=new java.util.HashMap<>();
     private List<Face> enclosureScenery(LevelDefinition level){
         List<Face> faces=new ArrayList<>();
         double x0=level.room(13).x0()-45,x1=level.room(13).x1()+60,z0=level.room(12).z0()-50,z1=level.room(13).z1()+50;
@@ -957,7 +957,7 @@ public final class SceneRenderer {
         }
         return out;
     }
-    private final java.util.Map<HouseMap.Site,List<Face>> levelShells=new java.util.EnumMap<>(HouseMap.Site.class);
+    private final java.util.Map<String,List<Face>> levelShells=new java.util.HashMap<>();
     private boolean exportFullLevel;
 
     private static void own(List<Face> out,List<Face> faces,int room){for(Face f:faces)out.add(f.owned(room));}
@@ -1092,6 +1092,7 @@ public final class SceneRenderer {
             own(out,part,r.id());
         }
         for(var p:level.props()){
+            if(p.mesh().equals("level_shrub_refuge")&&OutdoorHiding.containing(level,p.x(),p.y(),p.z(),map.hidingDensity())==null)continue;
             List<Face> part=new ArrayList<>();imported(part,p.mesh(),p.x(),p.y(),p.z(),p.scale(),p.yaw());own(out,part,p.room());
         }
         for(var s:level.stairs()){
@@ -1143,9 +1144,9 @@ public final class SceneRenderer {
                 ((nearPlane(n.x0(),plane)||nearPlane(n.x1(),plane))&&n.z0()<r.z1()&&n.z1()>r.z0())));
     }
     private void levelArchitecture(List<Face> out,HouseMap map){
-        own(out,enclosureFaces.computeIfAbsent(map.site(),key->enclosureScenery(map.level())),13);
+        own(out,enclosureFaces.computeIfAbsent(map.level().revision(),key->enclosureScenery(map.level())),13);
         if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of());}
-        for(Face f:levelShells.computeIfAbsent(map.site(),s->buildLevelShell(map))){
+        for(Face f:levelShells.computeIfAbsent(map.level().revision()+":"+map.hidingDensity(),s->buildLevelShell(map))){
             double cx=(f.a.x+f.b.x+f.c.x)/3,cz=(f.a.z+f.b.z+f.c.z)/3;
             out.add(f); // Opaque distant architecture must still occlude the night sky.
         }
@@ -1297,7 +1298,8 @@ public final class SceneRenderer {
         }
     }
     /** First-person network rendering with low-poly teammate models and host-managed doors. */
-    public record RemoteBody(double x,double y,double z,int slot,int heading,String appearance) {
+    public record RemoteBody(double x,double y,double z,int slot,int heading,String appearance,boolean crouched) {
+        public RemoteBody(double x,double y,double z,int slot,int heading,String appearance){this(x,y,z,slot,heading,appearance,false);}
         public RemoteBody(double x,double y,double z,int slot,int heading){this(x,y,z,slot,heading,"observer");}
         public RemoteBody(double x,double z,int slot,int heading){this(x,0,z,slot,heading,"observer");}
         public RemoteBody(double x,double z,int slot){this(x,z,slot,0);}
@@ -1314,9 +1316,9 @@ public final class SceneRenderer {
         double distance=Math.hypot(teammate.x()-x,teammate.z()-z);
         if(distance<1.35||distance>14.0)return null;
         // Closed doors and solid walls suppress labels even before the raster check.
-        if(!map.clearLineOfSight(x,eyeHeight,z,teammate.x(),teammate.y()+1.35,teammate.z()))return null;
-        Point torso=camera(new Point(teammate.x(),teammate.y()+1.35,teammate.z()));
-        Point head=camera(new Point(teammate.x(),teammate.y()+1.95,teammate.z()));
+        if(!map.clearLineOfSight(x,eyeHeight,z,teammate.x(),teammate.y()+(teammate.crouched()?.78:1.35),teammate.z()))return null;
+        Point torso=camera(new Point(teammate.x(),teammate.y()+(teammate.crouched()?.78:1.35),teammate.z()));
+        Point head=camera(new Point(teammate.x(),teammate.y()+(teammate.crouched()?1.2:1.95),teammate.z()));
         if(torso.z<NEAR||torso.z>14.0||head.z<NEAR)return null;
         double cx=renderWidth*.5+torso.x/torso.z*focal;
         double cy=renderHeight*.5-torso.y/torso.z*focal;
@@ -1707,7 +1709,7 @@ public final class SceneRenderer {
             if(distance>14||distance<1.35)continue;
             DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,person.x(),person.z(),
                 person.heading(),person.appearance(),
-                CharacterVisuals.shape(person.appearance()).height(),
+                CharacterVisuals.shape(person.appearance()).height()*(person.crouched()?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1),
                 CharacterVisuals.shape(person.appearance()).width(),
                 person.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
         }
