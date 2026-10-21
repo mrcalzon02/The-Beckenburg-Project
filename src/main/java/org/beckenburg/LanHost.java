@@ -2332,6 +2332,13 @@ public final class LanHost implements AutoCloseable {
         if(pose.room()>=0&&pose.room()<HouseMap.INDOOR_ROOMS)
             emitSensorAlerts(fieldDetectors.movement("G",pose.room(),pose.x(),pose.z(),
                 tick,map,stations));
+        if(ghostType.baseType()==GhostIdentity.Type.TWINS){
+            var second=TwinGhostPair.position(map,pose,tick).get(1).pose();
+            if(second.room()>=0&&second.room()<HouseMap.INDOOR_ROOMS
+                    &&Math.hypot(second.x()-pose.x(),second.z()-pose.z())>.2)
+                emitSensorAlerts(fieldDetectors.movement("G2",second.room(),
+                    second.x(),second.z(),tick,map,stations));
+        }
         for(int seat=0;seat<HUNTERS;seat++)
             if((seats[seat]!=null||reserved[seat]!=null)&&mission.alive(seat)){
                 LanWorld.Body body=world.body(seat);
