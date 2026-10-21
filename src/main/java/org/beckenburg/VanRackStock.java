@@ -10,7 +10,14 @@ public final class VanRackStock {
             if(!(FieldEquipment.functional(id)||Set.of("SALT","CRUCIFIX","WARD","HEALTH_SUPPLIES","SANITY_MEDICATION").contains(id))||count<1||count>48)
                 throw new IllegalArgumentException("invalid physical rack stock");
         }
-        public String model(){return EquipmentModelCatalog.model(id.equals("WARD")?"CHALK_SIGIL_KIT":id,tier);}
+        /** Stored tripods retain their authored folded mesh at native metres.
+         * The expanded tripod is reserved for physically deployed camera stands.
+         */
+        public String model(){
+            return id.equals("TRIPOD")
+                ?EquipmentModelCatalog.variant("TRIPOD",tier,"folded")
+                :EquipmentModelCatalog.model(id.equals("WARD")?"CHALK_SIGIL_KIT":id,tier);
+        }
     }
     private static void add(Map<String,Entry> result,String id,EquipmentTiers.Tier tier,int count){
         if(count<=0)return;String key=id+":"+tier;Entry old=result.get(key);result.put(key,new Entry(id,tier,count+(old==null?0:old.count)));
