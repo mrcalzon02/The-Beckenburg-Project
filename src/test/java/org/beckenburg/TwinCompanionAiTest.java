@@ -30,8 +30,13 @@ public final class TwinCompanionAiTest {
             if(activity!=null){
                 check(activity==GhostDomain.Action.DISTURB||activity==GhostDomain.Action.WHISPER,
                     "Companion may not create independent untelegraphed strikes");
-                var done=domain.dispatch(new GhostDomain.Command(activity,4,tick,GhostDomain.Source.AI));
-                check(done.applied(),"AI uses same legal actions and energy as human Twin");
+                // The event happens where the AI sister actually stands, even
+                // when the controlled Twin remains elsewhere.
+                var done=domain.dispatchCompanionMinor(new GhostDomain.Command(
+                    activity,pose.room(),tick,GhostDomain.Source.AI),false);
+                check(done.applied(),"AI uses actual room and shared energy/cooldown");
+                check(done.room()==pose.room()&&domain.room()==4&&done.harm()==0,
+                    "Independent sister changes neither the player Twin's location nor damage budget");
                 minorAction=true;
             }
         }
