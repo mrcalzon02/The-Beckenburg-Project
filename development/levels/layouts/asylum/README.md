@@ -92,3 +92,7 @@ Case files and staff correspondence present conflicting testimony respectfully. 
 
 - docs/environments/ROOM_AND_ASSET_REQUIREMENTS.md
 - https://planning.dc.gov/sites/default/files/dc/sites/op/publication/attachments/St%20Elizabeths%20Brochure.pdf (indexed text inspected 2026-10-21; wards staggered for light; dimensions authored)
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

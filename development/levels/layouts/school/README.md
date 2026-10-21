@@ -94,3 +94,7 @@ Records and witness recollections support a longer institutional search. Ghost c
 - src/main/java/org/beckenburg/LevelPlans.java (house/farm/school methods, read 2026-10-21)
 - development/levels/ARCHITECTURAL_REFERENCES.md
 - docs/environments/THREE_RITUAL_SITES.md
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

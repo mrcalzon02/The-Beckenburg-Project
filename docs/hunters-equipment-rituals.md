@@ -1,6 +1,8 @@
 # The Beckenburg Project — Hunter, Evidence, Ritual and Economy Requirements
 Status: design specification, not shipped gameplay.
 
+Shared setting authority: [Emergence Day and the reclamation world](LORE_BIBLE.md). The playable disciplines represent the Lantern Concord (Cleric), Meridian Survey (Observer) and Ashen Collegium (Demonologist). Identification serves removing the threat and returning a site to ordinary life.
+
 ## Shared hunter baseline
 All three players have first-person movement, crouch/sprint, carry/drop/use, flashlight, map and journal, local/team communication, injury/stress state, limited inventory and standard escape/ward knowledge. They can communicate location and evidence and perform a slow fallback version of critical investigation. Role differences are efficiencies and signature tactics, not permanent unwinnable locks. Inventory and progression must be authoritative on the host.
 

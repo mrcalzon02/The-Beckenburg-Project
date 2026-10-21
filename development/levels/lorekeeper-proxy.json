@@ -1,0 +1,24 @@
+{
+  "id": "level_npc_matthis_rook_proxy",
+  "library": "npc-prototype",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "4306fe294a75b04a05e1b4b6ed89dadc4031bce691d3994eca27cb0f23c3ea5d",
+  "bytes": 133536,
+  "triangles": 1239,
+  "bounds": [
+    [
+      -0.37373775243759155,
+      0.0,
+      -0.23999997973442078
+    ],
+    [
+      0.3705557584762573,
+      1.690000057220459,
+      0.24181360006332397
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_npc_matthis_rook_proxy.blend",
+  "art_status": "Original low-poly proxy, NOT approved master art or finished character animation"
+}

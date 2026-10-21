@@ -93,3 +93,7 @@ Observation logs and contradictory transmissions support the remote campaign arc
 - docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md
 - docs/environments/SHARED_VAN_MODULE.md
 - https://www.bas.ac.uk/project/signy-research-station-modernisation/ (text inspected 2026-10-21: separate house, stores and generator functions only; fictional station geometry authored)
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

@@ -6,8 +6,8 @@ The location needs a past that can be inferred before reading a document. Detail
 
 - **November 2009:** logging work suspended. The foreman expected a fortnight's interruption. Coats, beds, tools and family belongings remained. The final payroll records eleven signatures; dispatch lists nine crew places on the last truck. This unresolved administrative discrepancy does not establish anyone's death or identify the ghost.
 - **The empty years:** water isolated, oil plant out of service, window-frame leaks, damp walls, surface splits, worn thresholds and buckets beneath drips. These marks do not remove the physical walking floor.
-- **February 2025:** two people shelter for three nights in the logging cabin. One blue bedroll, clothes, opened tins, a bottle, wrappers and a journal form a small localized cluster. The west window is boarded. Their note leaves the old office records untouched.
-- **March 2025:** a caretaker isolates generator fuel and records the locked inspection power inlet, the dry water supply and the moved washhouse bucket. Existing gameplay lighting circuits still operate through maintenance power.
+- **February 2025:** two survivors displaced by Emergence Day shelter for three nights in the logging cabin. One blue bedroll, clothes, opened tins, a bottle, wrappers and a journal form a small localized cluster. The west window is boarded. Their note leaves the old office records untouched.
+- **March 2025:** a caretaker records a Meridian road inspection and isolates generator fuel and records the locked inspection power inlet, the dry water supply and the moved washhouse bucket. Existing gameplay lighting circuits still operate through maintenance power.
 
 These are fictional authored dates, not dates calculated from the player's clock. Weathering and fresh traces should remain consistent with this layering. Campaign links to other locations remain provisional records to investigate.
 
@@ -43,3 +43,5 @@ Before dressing each location, write its occupation/closure/reuse timeline and a
 Support objects on real surfaces; connect pipes/flues to their destination; keep portals, spawn points, walking aisles, stairs and ritual footprints clear. Collision, terrain, rendering and readable aiming must agree. Reuse this kit across the atlas once each map has its own authored story; earlier maps have not been automatically redressed by this change.
 
 Acceptance includes source/hash/texture checks, physical support and centre-ray reading, full swept navigation, ritual clearance, actual renderer views and native scene inspection. Remaining Blackpine work includes working-mill machinery, site signage, a finer weather/lighting pass, hunt/ritual acceptance and production integration. Current history is not paranormal evidence or a completed campaign.
+
+Shared setting: [Emergence Day and the Common Archive](../../docs/LORE_BIBLE.md). Pre-2009 closure, late-2022 catastrophe and 2025 survival traces are distinct layers. Matthis Rook has an approved in-game portrait; full master art remains pending.

@@ -96,3 +96,7 @@ Administration and residence records support a single bounded campus dossier. Fu
 - docs/environments/ROOM_AND_ASSET_REQUIREMENTS.md
 - docs/environments/THREE_RITUAL_SITES.md
 - development/levels/ARCHITECTURAL_REFERENCES.md
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

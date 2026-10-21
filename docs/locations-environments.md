@@ -1,6 +1,8 @@
 # The Beckenburg Project — 3D Environment, Sites and Zone Authoring
 Status: design. The nine site categories are a location roadmap, **not nine shipped maps**.
 
+Shared setting authority: [Emergence Day and the reclamation world](LORE_BIBLE.md). The playable disciplines represent the Lantern Concord (Cleric), Meridian Survey (Observer) and Ashen Collegium (Demonologist). Identification serves removing the threat and returning a site to ordinary life.
+
 ## Site graph and zone data contract
 Every authored site has stable map ID/version, metadata (era, climate, occupancy history), exterior staging/insertion/extraction points, world origin and measured scale, one or more floors, room polygons or volumes, vertical connectors, door/threshold links, traversal graph, spectral shortcuts, breaker/electrical circuits, lighting/heat/ventilation controls, physics prop groups, sound occlusion volumes, ritual anchor sockets and narrative clues. A ZoneRecord includes id, display name, floor, bounds, parent region, tags, adjacency, doors/portals, safe/unsafe spawn sets, eligible evidence emitters, local ambience, placeable surface categories, haunt affinity and validation metadata.
 

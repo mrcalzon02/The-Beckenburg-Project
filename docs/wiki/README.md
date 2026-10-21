@@ -2,7 +2,7 @@
 
 **Source-derived reference | 18 October 2026 | Java 17 alpha / production roadmap**
 
-The Beckenburg Project is an original asymmetric supernatural investigation game. Hunters investigate a haunted building and resolve its haunting by identifying the entity, warding its anchor and completing the correct rite. A ghost can be operated by another player or by AI under the same host-controlled rules.
+The Beckenburg Project is a supernatural reclamation game set after Emergence Day in late 2022. Humanity fights to make occupied places safe for ordinary people; investigation supports that purpose. [Shared world lore and the Castle Common Archive](../LORE_BIBLE.md). Hunters investigate a haunted building and resolve its haunting by identifying the entity, warding its anchor and completing the correct rite. A ghost can be operated by another player or by AI under the same host-controlled rules.
 
 **How to read this wiki:** **In source** = a rule, catalog record, UI or code path exists in current Java source, not an independent claim that a packaged Windows build has passed acceptance. **Prototype** = usable in a limited solo or LAN game path. **Planned** = specified in project documents but not yet a full playable feature. The [stage ledger](../stage-ledger.json) and [quality gates](../QUALITY_GATES.md) govern verification.
 

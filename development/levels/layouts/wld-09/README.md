@@ -91,3 +91,7 @@ Shift logs and mismatched alarm times underpin an industrial case. The crest pro
 - docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md
 - docs/environments/SHARED_VAN_MODULE.md
 - https://www.nps.gov/pagr/learn/historyculture/hydroelectric-plant.htm (text inspected 2026-10-21: turbine-hall function; not a reproduced dam plan)
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

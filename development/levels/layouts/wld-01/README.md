@@ -91,3 +91,7 @@ Payroll omissions in stores, manifest in sawmill office and personal accounts in
 - docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md
 - docs/environments/SHARED_VAN_MODULE.md
 - https://npgallery.nps.gov/GetAsset/693f6b20-44db-4db6-bbc7-2290ab12d7a2 (indexed primary text inspected 2026-10-21: multiple habitation and service buildings; no source dimensions copied)
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

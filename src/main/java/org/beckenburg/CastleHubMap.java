@@ -11,14 +11,18 @@ public final class CastleHubMap {
         CONTRACT(13.5,6.8,"CAMPAIGN CONTRACT BOARD"),
         EXPEDITION(13.5,16.6,"EXPEDITION VAN / START CASE"),
         MULTIPLAYER(22.5,16.6,"NETWORK DESK / HOST OR JOIN"),
-        SPECTRAL(5.0,16.6,"SPECTRAL PRACTICE");
+        SPECTRAL(5.0,16.6,"SPECTRAL PRACTICE"),
+        ARCHIVE(36.0,11.8,"MATTHIS ROOK / COMMON ARCHIVE");
         public final double x,z;public final String label;
         Station(double x,double z,String label){this.x=x;this.z=z;this.label=label;}
     }
     /** Small, authored real GLB furnishings with matching walkable collision footprints. */
     public record Furnishing(String mesh,double x,double z,double scale,double yaw,
                              double halfWidth,double halfDepth) { }
-    private static final java.util.List<Furnishing> FURNISHINGS=CastleHubDecor.furnishings();
+    private static final java.util.List<Furnishing> FURNISHINGS=archiveFurnishings();
+    private static java.util.List<Furnishing> archiveFurnishings(){
+        var all=new java.util.ArrayList<>(CastleHubDecor.furnishings());all.addAll(CastleArchive.furnishings());return java.util.List.copyOf(all);
+    }
     public static java.util.List<Furnishing> furnishings(){return FURNISHINGS;}
     /** Articulated H-plan with real hall passages, two connected eastern service
      * wings, a covered north block and an open south courtyard.

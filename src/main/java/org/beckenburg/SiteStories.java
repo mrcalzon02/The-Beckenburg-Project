@@ -13,7 +13,7 @@ public final class SiteStories {
   case "blackpine"->new Identity("Blackpine Logging Camp","North Forest logging road","A shuttered working camp. Payroll records and a shipping manifest disagree about the final crews. This fictional history does not identify the current haunting.");
   case "school"->new Identity("Ravenshade School","8 School Road, Beckenburg","Founded in 1894. The infant department opened in 1911 and a secondary extension followed in 1956. Successive coal, oil and modern boilers survive below the school.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
- public static Document document(String site,String id){if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
+ public static Document document(String site,String id){if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
   case "HISTORY"->new Document(id,place.title(),List.of(place.address(),place.history(),"Local history and household records. These details do not identify the haunting."));
   case "LETTERS"->new Document(id,site.equals("school")?"Caretaker's service papers":"Tied correspondence",site.equals("house")?List.of("17 Briar Lane. Mrs E. Vale, 1983.","Please keep Mother's mending tin. The little blue lid still fits, and her needles are inside.","The plumbing men return on Thursday. Leave the cellar laundry clear; the old photographs can stay on the sideboard."):
    site.equals("farmhouse")?List.of("Hollowmere Farm, Mill Road. Spring work list.","Put the clean linen on the yard line. Boots stay by the shed, not beside the upstairs washbasin.","The 1947 repair receipts are tied beneath these letters. Keep them with the farm papers."):
@@ -31,6 +31,7 @@ public final class SiteStories {
   int room=b.id.equals("school")?0:1;
   // The centre-front of each sideboard is clear of its built-in books, photographs and cup.
   reading(b,"LETTERS","level_story_letters",room,"level_lived_sideboard",.850,0,.17);
+  reading(b,"EMERGENCE","level_trace_journal",room,"level_lived_sideboard",.850,-.44,.17);
   if(!b.id.equals("school"))b.props.removeIf(p->p.room()==6&&p.mesh().equals("notebook_1"));
   if(!b.id.equals("school"))reading(b,"MENDING","level_story_sewing_tin",6,"bedside_table_1",.644,-.21,-.10);
   if(b.id.equals("farmhouse")){
