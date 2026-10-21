@@ -19,7 +19,12 @@ public final class LivedLevelDressingTest {
             List<Socket> closets=level.sockets().stream().filter(s->s.type().equals("hide")).toList();
             check(closets.size()>=5,site+" cupboards must be scattered across the site");
             map.configureHiding(0);int absent=triangles(map);map.configureHiding(100);int present=triangles(map);
-            check(present-absent==closets.size()*GlbProps.model("level_hiding_cupboard_worn").triangles().size(),site+" difficulty must change actual closet geometry");
+            int expectedClosetTriangles=closets.size()*GlbProps.model("level_hiding_cupboard_worn").triangles().size();
+            check(present-absent==expectedClosetTriangles,
+                site+" difficulty must change actual closet geometry: absent="+absent+
+                " present="+present+" delta="+(present-absent)+
+                " expected="+expectedClosetTriangles+" count="+closets.size()+
+                " perCloset="+GlbProps.model("level_hiding_cupboard_worn").triangles().size());
             for(Socket s:closets){
                 check(map.hidingSpot(s.room(),0)==null&&map.hidingSpot(s.room(),100)!=null,"0/100 presence contract");
                 int previous=0;
