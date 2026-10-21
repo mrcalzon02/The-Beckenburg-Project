@@ -23,13 +23,17 @@ PREVIEW=ROOT/"development/verification/twins-two-body-turnarounds.png"
 # each split around the two individually identifiable blue/red members.
 # Tight sub-rectangles avoid all captions, closeups, and the other member.
 RECTS={
- "front":{"a":(16,280,119,616),"b":(108,280,224,616)},
- "side":{"a":(237,283,311,614),"b":(307,283,383,614)},
- "back":{"a":(390,278,473,611),"b":(467,278,556,611)},
- "three_quarter":{"a":(557,280,663,615),"b":(651,280,754,615)}
+ "front":{"a":(17,280,128,616),"b":(126,280,231,616)},
+ "side":{"a":(242,281,316,614),"b":(315,281,384,614)},
+ # In the BACK source the pink sister is LEFT, blue sister RIGHT.
+ # The former script swapped both identities and failed cross-view continuity.
+ "back":{"a":(475,280,555,614),"b":(392,280,480,614)},
+ # Three-quarter models are at the RIGHT of the panel. Old x557/x651
+ # split their torsos and frequently removed both heads.
+ "three_quarter":{"a":(587,281,676,615),"b":(672,281,756,615)}
 }
 CANVAS=(128,224)
-def matte(source, box):
+def matte(source, box, facing, member):
     patch=np.asarray(source.crop(box).convert("RGB"))
     h,w=patch.shape[:2]
     seg=np.full((h,w),cv2.GC_PR_BGD,dtype=np.uint8)
@@ -38,7 +42,24 @@ def matte(source, box):
     seg[:,:edge]=seg[:,-edge:]=cv2.GC_BGD
     yy,xx=np.ogrid[:h,:w]
     seg[(yy>h*.035)&(yy<h*.97)&(xx>w*.14)&(xx<w*.86)]=cv2.GC_PR_FGD
-    seg[(yy>h*.18)&(yy<h*.51)&(xx>w*.36)&(xx<w*.63)]=cv2.GC_FGD
+    # Positive seeds stay inside the actual head, torso and skirt of the
+    # individually identified sibling. Center-only seeds lose faces on
+    # asymmetric three-quarter and rear poses.
+    head_x={
+        "front":{"a":.46,"b":.56},
+        "side":{"a":.56,"b":.40},
+        "back":{"a":.53,"b":.58},
+        "three_quarter":{"a":.55,"b":.42},
+    }[facing][member]
+    torso_x={
+        "front":{"a":.46,"b":.50},
+        "side":{"a":.50,"b":.50},
+        "back":{"a":.53,"b":.49},
+        "three_quarter":{"a":.46,"b":.48},
+    }[facing][member]
+    seg[(yy>h*.12)&(yy<h*.20)&(np.abs(xx/w-head_x)<.055)]=cv2.GC_FGD
+    seg[(yy>h*.32)&(yy<h*.54)&(np.abs(xx/w-torso_x)<.10)]=cv2.GC_FGD
+    seg[(yy>h*.65)&(yy<h*.72)&(np.abs(xx/w-torso_x)<.08)]=cv2.GC_FGD
     bg=np.zeros((1,65),np.float64);fg=np.zeros((1,65),np.float64)
     cv2.grabCut(cv2.cvtColor(patch,cv2.COLOR_RGB2BGR),seg,None,bg,fg,6,cv2.GC_INIT_WITH_MASK)
     opaque=np.where((seg==cv2.GC_FGD)|(seg==cv2.GC_PR_FGD),255,0).astype(np.uint8)
@@ -64,7 +85,7 @@ def main():
     if board.size!=(1448,1086):
         raise RuntimeError(f"Unexpected canonical Twins master dimensions: {board.size}")
     collage=Image.new("RGBA",(4*128,2*224),(24,24,28,255))
-    manifest={"identity":"twins","version":"two-independent-source-cutouts-v1",
+    manifest={"identity":"twins","version":"two-independent-source-cutouts-v2",
         "source":SOURCE.relative_to(ROOT).as_posix(),
         "source_sha256":hashlib.sha256(original).hexdigest(),
         "directions":{},"canvas":CANVAS}
@@ -75,10 +96,18 @@ def main():
             rectangle=members[member]
             assert 0<=rectangle[0]<rectangle[2]<=board.width
             assert 0<=rectangle[1]<rectangle[3]<=board.height
-            rgba=matte(board,rectangle)
+            rgba=matte(board,rectangle,facing,member)
             pixels=np.asarray(rgba)
             count=int(np.count_nonzero(pixels[:,:,3]>=24))
-            if not 600<count<0.76*128*224:raise RuntimeError(f"Bad matte {facing}/{member}: {count}")
+            if not 1200<count<0.76*128*224:raise RuntimeError(f"Bad matte {facing}/{member}: {count}")
+            top=int(np.count_nonzero(pixels[6:62,:,3]>=24))
+            middle=int(np.count_nonzero(pixels[64:158,:,3]>=24))
+            feet=int(np.count_nonzero(pixels[159:220,:,3]>=24))
+            # Don't accept merely a severed skirt or an upper-body-only crop.
+            if top<100 or middle<420 or feet<70:
+                raise RuntimeError(
+                    f"Head/body/feet missing from {facing}/{member}: "
+                    f"top={top} torso={middle} feet={feet}")
             collage.alpha_composite(rgba,(column*128,row*224))
             contents=io.BytesIO()
             rgba.save(contents,format="PNG")
@@ -87,7 +116,8 @@ def main():
             entries.append((filename,binary))
             manifest["directions"][facing][member]={
                 "path":filename,"source_crop":rectangle,
-                "visible_pixels":count,"sha256":hashlib.sha256(binary).hexdigest()}
+                "visible_pixels":count,"head_pixels":top,"torso_pixels":middle,
+                "feet_pixels":feet,"sha256":hashlib.sha256(binary).hexdigest()}
     TARGET.parent.mkdir(parents=True,exist_ok=True)
     with zipfile.ZipFile(TARGET,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for name,data in entries:
