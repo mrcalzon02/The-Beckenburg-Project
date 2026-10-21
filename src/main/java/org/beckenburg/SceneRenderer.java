@@ -1463,8 +1463,17 @@ public final class SceneRenderer {
         render(map,-1,apparition!=null,-1,-1,clock,others,apparition,markers);
     }
     public void draw(HouseMap map,InvestigationSession session,double clock){
-        render(map,session.ghostRoom(),session.outcome()==InvestigationSession.Outcome.ACTIVE && session.ghostManifesting(),
-            session.wardPrepared()?session.anchorRoom():-1,-1,clock,List.of(),null,session.counterMarks());
+        boolean visible=session.outcome()==InvestigationSession.Outcome.ACTIVE
+                &&session.ghostManifesting();
+        int room=session.ghostRoom();
+        Apparition figure=visible?new Apparition(
+                map.centerX(room),map.floorY(room),map.centerZ(room),
+                LanGhostAnimation.Phase.LURK,0,0,false,session.ghostVisualType().ancient(),
+                CharacterVisuals.ghost(session.ghostVisualType())):null;
+        // Solo mode has room-based manifestation authority rather than a LAN
+        // world pose. Preserve that placement, but render the actual archetype.
+        render(map,room,visible,
+            session.wardPrepared()?session.anchorRoom():-1,-1,clock,List.of(),figure,session.counterMarks());
     }
     /** Spectral viewpoint: only a room-local sensed hunter is rendered. */
     public void drawPractice(HouseMap map,int visibleHunterRoom,double clock){
