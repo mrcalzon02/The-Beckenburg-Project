@@ -93,7 +93,7 @@ rem Separate smoke/acceptance track: does NOT publish and does NOT replace relea
 if not exist build\e2e mkdir build\e2e
 rem Verify the *packaged* approved character art and real Hunter LAN cosmetics,
 rem including incomplete gender fallback and distinct Ancient appearances.
-for %%T in (CharacterDirectionalVisualTest LanHunterVisualNetworkTest HandheldSpiritBoxEvidenceTest) do java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.%%T || exit /b 1
+for %%T in (CharacterDirectionalVisualTest CharacterSpriteWorldMotionTest LanHunterVisualNetworkTest HandheldSpiritBoxEvidenceTest) do java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.%%T || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.VanModuleIntegrationTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.VanStreetAndCabinProportionsTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.VanArrivalStreetTest || exit /b 1
