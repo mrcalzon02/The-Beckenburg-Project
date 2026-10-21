@@ -9,3 +9,9 @@ One original model at a time: source geometry and packed diffuse → native GLB 
 [Manifest and hash](production/bandsaw.json) · [Editable source](blender/level_work_bandsaw.blend) · [Studio render](previews/level_work_bandsaw.png) · [Actual game view](previews/model-production/blackpine-level_work_bandsaw.png).
 
 Next useful candidates: rail log carriage, repair bench and hand tools, sawdust collection/ducting, crew footlockers and survivor cooking/repair details. Keep working routes broad and existing rites/spawns accessible. These are usable art assets and checked static placements, not production acceptance of the entire map.
+
+## 02 / rail log carriage
+
+`level_work_log_carriage`: 2348 source triangles. Flanged wheels, bolted timber bearers, rails/stops, screw clamping dogs and a partly milled log with cut-end growth rings. Placed X43.2/Z30.6 in the sawmill, aligned toward the bandsaw and outside the ritual reserve. Original native source, packed diffuse, studio and real runtime views, and matching collision/support checks are complete. Static scenery; no wheel or log simulation.
+
+[Manifest](production/log_carriage.json) · [Source](blender/level_work_log_carriage.blend) · [Studio](previews/level_work_log_carriage.png) · [Runtime](previews/model-production/blackpine-level_work_log_carriage.png).

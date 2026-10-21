@@ -38,6 +38,32 @@ def bandsaw():
     p.append(s.box('Unplugged isolator plug',(-.86,-.10,.04),(.065,.10,.065),m['iron']))
     return p,dict(function='Static decommissioned mill bandsaw; guarded return and supported feed table',runtime='Ready static environment mesh; no powered cutting or animation',placement='Blackpine sawmill, outside ritual and stair routes')
 
+def log_carriage():
+    m=b.init();p=[]
+    for x in [-.63,.63]:
+        p.append(s.box('Mill carriage rail',(x,0,.055),(.07,3.8,.11),m['steel']))
+        for y in [-1.45,1.45]:
+            p.append(s.rod('Flanged carriage wheel',(x-.07,y,.21),(x+.07,y,.21),.17,m['iron'],12))
+            p.append(s.rod('Outer wheel flange',(x-.08,y,.21),(x-.06,y,.21),.19,m['rust'],12))
+    for y in [-1.4,0,1.4]:
+        p.append(s.box('Oak cross bearer',(0,y,.42),(1.62,.24,.20),m['oak']))
+        for x in [-.63,.63]:p.append(s.rod('Bearer fixing bolt',(x,y,.51),(x,y,.55),.025,m['iron'],6))
+    for x in [-.63,.63]:p.append(s.box('Rolling underframe',(x,0,.32),(.12,3.2,.16),m['iron']))
+    p.append(s.rod('Partly milled log',(0,-1.65,.81),(0,1.65,.81),.31,m['oak'],12))
+    p.append(s.box('First flat sawn face',(0,0,1.055),(.38,3.27,.035),m['pine']))
+    for y in [-1.654,1.654]:
+        p.append(s.rod('Pale cut end',(0,y,.81),(0,y+.003,.81),.285,m['pine'],12))
+        for r in [.08,.16,.24]:
+            # Growth rings lie in the X/Z end plane.
+            p+=b.ring('Visible growth ring',(0,y-.003,.81),r,.0025,m['oak'],segments=12)
+    for y in [-1.15,1.15]:
+        p.append(s.box('Log dog guide',(.54,y,.63),(.16,.19,.56),m['iron']))
+        p+=s.tube('Clamping dog',[(.54,y,.89),(.31,y,1.0),(.17,y,.96)],.027,m['rust'],6)
+        p.append(s.rod('Clamp screw',(.55,y,.47),(.77,y,.47),.019,m['brass'],6))
+        p.append(s.rod('Screw handle',(.78,y-.10,.47),(.78,y+.10,.47),.012,m['iron'],6))
+    for y in [-1.75,1.75]:p.append(s.box('Rail end stop',(0,y,.13),(1.48,.11,.15),m['oak']))
+    return p,dict(function='Stopped rail log carriage with growth rings, sawn face and clamping dogs',runtime='Ready static environment mesh; wheels and log are not simulated',placement='Blackpine mill feed route, aligned toward bandsaw and clear of ritual')
+
 name=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'bandsaw'
 parts,notes=globals()[name]()
 b.export('level_work_'+name,parts,'working-place-details',view=(4,-6,3.5))

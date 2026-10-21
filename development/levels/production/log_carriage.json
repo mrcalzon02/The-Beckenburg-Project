@@ -1,0 +1,26 @@
+{
+  "id": "level_work_log_carriage",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "f7b2fcf8cbe8cc15e6c8e6427dc6d44f743dd540b80048f377d76c9508b63434",
+  "bytes": 184820,
+  "triangles": 2348,
+  "bounds": [
+    [
+      -0.8100000023841858,
+      0.0,
+      -1.899999976158142
+    ],
+    [
+      0.8100000619888306,
+      1.1200000047683716,
+      1.899999976158142
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_log_carriage.blend",
+  "function": "Stopped rail log carriage with growth rings, sawn face and clamping dogs",
+  "runtime": "Ready static environment mesh; wheels and log are not simulated",
+  "placement": "Blackpine mill feed route, aligned toward bandsaw and clear of ritual"
+}
