@@ -14,10 +14,10 @@
       "id": "household",
       "title": "Inherited furniture and household curiosities",
       "license": "CC0-1.0",
-      "count": 56,
+      "count": 62,
       "manifest": "assets/libraries/household/manifest.json",
       "download": "assets/libraries/household/beckenburg-household-cc0.zip",
-      "sha256": "c047b01af5fccb8864ee1f857d780dddc2cef23f6c42e3937da3dcb206869632"
+      "sha256": "ec1226e3cd8c89002d5ff7a07c691231f0cfd82ce9b9d4a622a1de808293f961"
     },
     {
       "id": "hiding",
@@ -36,6 +36,15 @@
       "manifest": "assets/libraries/events/manifest.json",
       "download": "assets/libraries/events/beckenburg-events-cc0.zip",
       "sha256": "15a921c4874bd3c6a9971ad956597d68e9ad74c84b76dba1aa7ac57b4fc57216"
+    },
+    {
+      "id": "enclosures",
+      "title": "Enclosures, landscape and location signs",
+      "license": "CC0-1.0",
+      "count": 20,
+      "manifest": "assets/libraries/enclosures/manifest.json",
+      "download": "assets/libraries/enclosures/beckenburg-enclosures-cc0.zip",
+      "sha256": "3f200aed5b709d8c548b894a212a212ee9df8b972c3994aed652b88c71d7613f"
     }
   ]
 }

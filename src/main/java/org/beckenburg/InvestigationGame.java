@@ -495,6 +495,7 @@ public final class InvestigationGame {
         private TeamCallout.Ping lastPing;
         private String vanNotice="";
         private int vanNoticeExpires;
+        private String storyReading="";
         private boolean briefingShown,interactionHeld;private int mapFloor;
         private int useHeldUntilTick;
         private final VanTelemetry monitor=new VanTelemetry(20261017L);
@@ -771,7 +772,7 @@ public final class InvestigationGame {
                         loadout.pickup(item);
                     }
                 }
-                case INTERFACE -> {if(target.id().equals("MAP"))mapShown=true;else if(target.id().equals("COMPUTER"))journalShown=true;else briefingShown=true;down.clear();mouseLook.release();}
+                case INTERFACE -> {storyReading=target.id().startsWith("STORY_")?target.id().substring(6):"";if(target.id().equals("MAP"))mapShown=true;else if(target.id().equals("COMPUTER"))journalShown=true;else briefingShown=true;down.clear();mouseLook.release();}
                 case SWITCH -> lights.toggle(Integer.parseInt(target.id()));
                 case BREAKER -> {powerOn=!powerOn;syncEnvironment();}
                 case DOOR -> {int id=Integer.parseInt(target.id());map.toggleDoor(id);if(!map.traversable(scene.x,feetY(),scene.z)){map.toggleDoor(id);throw new IllegalArgumentException("Doorway occupied.");}}
@@ -786,7 +787,7 @@ public final class InvestigationGame {
         private void useVan(VanStaging.Station station){
             switch(station){
                 case BRIEFING -> {
-                    briefingShown=!briefingShown;
+                    storyReading="";briefingShown=!briefingShown;
                     showVanNotice(briefingShown?"CASE BOARD OPEN — current role, objectives and progress":"Case board closed.");
                 }
                 case EQUIPMENT -> takeRackItem();
@@ -941,6 +942,7 @@ public final class InvestigationGame {
             g.setColor(new Color(174,183,194));g.drawString("UNCERTAIN / DELAYED",x+10,y+167);
         }
         private void drawBriefing(Graphics2D g){
+            if(!storyReading.isEmpty()){SiteStories.draw(g,getWidth(),getHeight()-82,map,storyReading);return;}
             int width=440,x=Math.max(12,(getWidth()-width)/2),y=65;
             g.setColor(new Color(14,19,26,238));g.fillRoundRect(x,y,width,140,8,8);
             g.setColor(new Color(233,197,142));g.drawString("VAN / BECKENBURG FIELD BRIEFING",x+16,y+26);

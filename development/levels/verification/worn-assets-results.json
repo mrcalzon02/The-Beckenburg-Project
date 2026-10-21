@@ -280,28 +280,12 @@
     "worn_glb_sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4"
   },
   {
-    "family": "level_laundry_washer",
-    "clean_sources_unchanged": true,
-    "geometry_uv_indices_transforms_identical": true,
-    "all_diffuse_images_replaced": true,
-    "clean_glb_sha256": "135b2ddd9975c0d82f651a0a4493126c3f24ca5f73e49c84ab6827e7bdfd6de9",
-    "worn_glb_sha256": "f11cae0d1344441dadf1831617486fc8d454577a30070908cbb43780ffdbd3c1"
-  },
-  {
     "family": "level_laundry_hamper",
     "clean_sources_unchanged": true,
     "geometry_uv_indices_transforms_identical": true,
     "all_diffuse_images_replaced": true,
     "clean_glb_sha256": "5a0fb5582259f47573973b66b46e7bdc99a875b80436ddc63ff2676b0aab8f6a",
     "worn_glb_sha256": "72ebdcae7f040670391aef469d5ce779689b4560d2ed6970caac2d8813836d68"
-  },
-  {
-    "family": "level_bathroom_wall_set",
-    "clean_sources_unchanged": true,
-    "geometry_uv_indices_transforms_identical": true,
-    "all_diffuse_images_replaced": true,
-    "clean_glb_sha256": "02b4837e894f2a4f6d1c59437181c26ced1be7c32b139224df2f09c52eed5361",
-    "worn_glb_sha256": "a931177eb1c376bd47d72cacc3ede03272eb868ea5a6c8da979e27b7896515bb"
   },
   {
     "family": "level_laundry_shelf",
@@ -358,5 +342,125 @@
     "all_diffuse_images_replaced": true,
     "clean_glb_sha256": "28c18907a9353cdceb2411a1a8995127862aadb5684dccda6de05c9a3d4bfb2c",
     "worn_glb_sha256": "ae47a71ea41706abde9efd408ce305e6d2e60dcbf4d4e2c4d176a67b25b9082e"
+  },
+  {
+    "family": "level_bathroom_wall_set",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "67a8a664a5be61337ac3814c438d6f160dd38dd58e0ba3ebf069c26f91d7977f",
+    "worn_glb_sha256": "097825c0e6714bf0ae219cc9810bb82d090b385040d3378942ee009bb5999900"
+  },
+  {
+    "family": "level_laundry_washer",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "d06759ff644e421f9b225c19ccad5b12ee658b23971af02bb5f8f17e8aeb1f14",
+    "worn_glb_sha256": "b1087bd02eda83e124b89672f8ea3e12473b3b7b6f0355fd0f7ebd1cab0e509a"
+  },
+  {
+    "family": "level_enclosure_garden",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "7cdd6bead070c82884ef8fce77a6c9f1452189eb6d3bd46264c8438a0156d6ed",
+    "worn_glb_sha256": "ff3909bc4f3db3333c446040efa06878c06bb58fd945d0b43b162a384aca20d5"
+  },
+  {
+    "family": "level_enclosure_field",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "9a9e282b07e91540ba69a4ca90292646fdd7093a66f32c04af62eb833e1d7515",
+    "worn_glb_sha256": "8c6c9fc042e084596b9c16119357dce58b84d4b134fc7e49606f2ef7b48be092"
+  },
+  {
+    "family": "level_enclosure_urban",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "6799d18a2a32a5de277a7b06f5f61b26bb79b923b21d98baace43d6af0f43b57",
+    "worn_glb_sha256": "10d41e8274b00ebdf354d22b203c6c0ba33ad0bbec3d5c05627864d236440ed3"
+  },
+  {
+    "family": "level_tree_conifer",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "645056d37d742b5f25289a54ae728e6bf77041077c3b56052f8c531369bf71f0",
+    "worn_glb_sha256": "c2bcdef08288d2eb821454922b235251e7d0eb68e81548e53c09d055bf86be1b"
+  },
+  {
+    "family": "level_tree_broadleaf",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "99ee6e4e9ae4ccb731f6cf2ccfd71077988d698adbb8cd6d2ea67cd01184bfe9",
+    "worn_glb_sha256": "900ef8f3a228a20c7ee35b948e50d62af49b199fb4be6e7e71486f82f277ae00"
+  },
+  {
+    "family": "level_story_letters",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+    "worn_glb_sha256": "02a0ce254acc6ec2fcf85df9554ac7d60f445c785618d09ae042755e56563db4"
+  },
+  {
+    "family": "level_story_sewing_tin",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "708948f1ef984d6c3606d428c079f60ab72b8428e895086d0ad33dfb3db183fd",
+    "worn_glb_sha256": "09d06dad997d55276ce497a95008ba60b3c322c170b2b51457110b89bb4dcb04"
+  },
+  {
+    "family": "level_story_work_boots",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "1128ed559ff29be297b667415dcc175398c74212fcd1bfc4bfeeb902eaae6198",
+    "worn_glb_sha256": "b2cb0f62ddf87fa2a7a087293625f7ccc69e1fab4bd665fab1537b40ebeaf6b8"
+  },
+  {
+    "family": "level_sign_house",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "0340d0b8a6079cdea4f8db3d58d205873b605933e9dce8751c87a3746fe3d2c4",
+    "worn_glb_sha256": "e0ceb6791bf17649adc6b136aad8a68f86483a2a2887f2127f0ace15081b1fa0"
+  },
+  {
+    "family": "level_sign_farmhouse",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "190b766f3b9251c73cbdc3dcce91994a0cb8fe281784dcd355979293b0b6a125",
+    "worn_glb_sha256": "142857e145bd24ce4afe845df41dc853d82c122001eaa6abc9489457e5a363e5"
+  },
+  {
+    "family": "level_sign_school",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "9195d5dc86c257a9b1a76f3bb34ba54def6fd6a05471ef1327dae08132f56ca5",
+    "worn_glb_sha256": "3df0c1811272d0a542de1f265cecb6ff56ee6000104104a0be694c775ab4c2c8"
+  },
+  {
+    "family": "level_sign_mens",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "f1861a7b2dee3a3130a6c522e366050d0e3c9d543bde6b8c86fd966f8ea41cd6",
+    "worn_glb_sha256": "a8165a51f696ce57c4dccc4b4f67a939125cf7068922153d0300f1a3d5936228"
+  },
+  {
+    "family": "level_sign_womens",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "52ddf48a4f9a7f15932fa63e37b0e4df53c8a906fde1eb2559934f3043ae9e75",
+    "worn_glb_sha256": "fb15ac1296736134b2acf630d17f45656f138dc5516386ae3c42943a8e9bb506"
   }
 ]

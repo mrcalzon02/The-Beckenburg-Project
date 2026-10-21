@@ -580,6 +580,28 @@ public final class SceneRenderer {
             return;
         }
         List<Face> road=new ArrayList<>();
+        arrivalRoadGeometry(road,van);
+        arrivalSurroundings(road,van,LevelEnclosure.setting(map.level().id()));
+        cachedRoadSite=van;
+        cachedRoadFaces=List.copyOf(road);
+        out.addAll(cachedRoadFaces);
+    }
+
+    private static void arrivalSurroundings(List<Face> road,VanStaging van,LevelEnclosure.Setting setting){
+        if(setting==LevelEnclosure.Setting.SUBURBAN){
+            for(var home:VanStreetHouses.HOMES)streetResidence(road,van,home);
+            streetTerminus(road,van);
+        }else if(setting==LevelEnclosure.Setting.URBAN){
+            for(var home:VanStreetHouses.HOMES)urbanStreetBlock(road,van,home);
+            streetTerminus(road,van);
+        }else{
+            // The blocked playable road continues visually into the woods/mountains.
+            int asphalt=VanArrivalStreet.surfaceMaterial(false);
+            roadSurface(road,van,new VanArrivalStreet.RoadTile("kenney_road_asphalt_straight",0,(VanArrivalTile.distantRoadEnd()+VanArrivalStreet.ROAD_END)/2,8.4,VanArrivalStreet.ROAD_END-VanArrivalTile.distantRoadEnd()),asphalt);
+        }
+    }
+    /** Exportable independent module: road, kerbs, walkway, paint and parked traffic. */
+    private static void arrivalRoadGeometry(List<Face> road,VanStaging van){
         int asphalt=VanArrivalStreet.surfaceMaterial(false),
             pavement=VanArrivalStreet.surfaceMaterial(true);
         if(asphalt==pavement)
@@ -625,21 +647,53 @@ public final class SceneRenderer {
             2.30,.025,VanStaging.FRONT-VanArrivalStreet.ROAD_START,
             MaterialAtlas.CONCRETE);
 
-        // The roadway sits inside a real block of homes, not an infinite
-        // void or a random solid boundary. Medieval Kenney window elements
-        // are used only as dimensioned facade details.
-        for(VanStreetHouses.House home:VanStreetHouses.HOMES)
-            streetResidence(road,van,home);
-        streetTerminus(road,van);
         // Original GGBot parked cars, all clear of the rear-door walking path.
         for(VanArrivalStreet.RoadObject vehicle:VanArrivalStreet.parkedVehicles()){
             VanStaging.Position p=van.world(vehicle.x(),vehicle.z());
             imported(road,vehicle.mesh(),p.x(),.065,p.z(),vehicle.scale(),
                 van.placement().yaw()+vehicle.yaw());
         }
-        cachedRoadSite=van;
-        cachedRoadFaces=List.copyOf(road);
-        out.addAll(cachedRoadFaces);
+    }
+    private static void urbanStreetBlock(List<Face> out,VanStaging van,VanStreetHouses.House home){
+        double x0=home.buildingStartX(),z0=home.frontageStartZ(),h=8.6;
+        vanBox(out,van,x0,0,z0,home.depth(),h,home.frontage(),MaterialAtlas.STONE);
+        vanBox(out,van,x0-.08,h,z0-.08,home.depth()+.16,.22,home.frontage()+.16,MaterialAtlas.CONCRETE);
+        for(double floor:new double[]{1.3,3.8,6.3})for(double zz:new double[]{home.frontageZ()-1.25,home.frontageZ()+1.25}){
+            var p=van.world(home.streetFace()-home.side()*.14,zz);imported(out,"kenney_medieval_wall_pane_wood_window",p.x(),floor,p.z(),.78,van.placement().yaw()+home.side()*Math.PI/2);
+        }
+        var p=van.world(home.streetFace()-home.side()*.16,home.frontageZ());imported(out,"door_1_loose",p.x(),0,p.z(),1.05,van.placement().yaw()+home.side()*Math.PI/2);
+    }
+    private final java.util.Map<HouseMap.Site,List<Face>> enclosureFaces=new java.util.EnumMap<>(HouseMap.Site.class);
+    private List<Face> enclosureScenery(LevelDefinition level){
+        List<Face> faces=new ArrayList<>();
+        double x0=level.room(13).x0()-45,x1=level.room(13).x1()+60,z0=level.room(12).z0()-50,z1=level.room(13).z1()+50;
+        int ground=LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN?LevelMaterials.CONCRETE:MaterialAtlas.FOLIAGE;
+        texturedQuad(faces,new Point(x0,-.08,z0),new Point(x1,-.08,z0),new Point(x1,-.08,z1),new Point(x0,-.08,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
+        for(var socket:level.sockets()){
+            if(socket.type().equals("enclosure")){
+                String[] parts=socket.style().split(":");double length=Double.parseDouble(parts[1]);int count=(int)Math.ceil(length/2);double width=length/count,angle=-socket.yaw();
+                for(int i=0;i<count;i++){double offset=-length/2+width*(i+.5);imported(faces,"level_enclosure_"+parts[0]+"_worn",socket.x()+offset*Math.cos(angle),socket.y(),socket.z()+offset*Math.sin(angle),width/2,1,1,angle);}
+            }
+            if(socket.type().equals("landscape_tree"))imported(faces,socket.style(),socket.x(),socket.y(),socket.z(),1,socket.yaw());
+        }
+        if(LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.MOUNTAIN){
+            double cx=(level.room(12).x0()+level.room(12).x1())/2,cz=(level.room(12).z0()+level.room(13).z1())/2;
+            for(int ring=0;ring<2;ring++)for(int i=0;i<18;i++){
+                double a=i*Math.PI/9,b=(i+1)*Math.PI/9,r=62+ring*29,h=26+9*Math.sin(i*2.3+ring)+ring*11;
+                Point left=new Point(cx+Math.cos(a)*r,-5,cz+Math.sin(a)*r),right=new Point(cx+Math.cos(b)*r,-5,cz+Math.sin(b)*r),peak=new Point(cx+Math.cos((a+b)/2)*(r+8),h,cz+Math.sin((a+b)/2)*(r+8));
+                texturedQuad(faces,left,peak,right,right,MaterialAtlas.STONE,0,0,4,8,8,0,8,0,ring==0?0x66716d:0x657386);
+            }
+        }
+        // City service yards are backed by taller, closely spaced masonry blocks.
+        if(LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN){
+            for(double xx=level.room(12).x0()-15;xx<level.room(12).x1()+15;xx+=8){
+                double zz=level.room(12).z0()-8;double h=8+((int)Math.abs(xx)%3)*1.8;
+                texturedBox(faces,xx,0,zz,7,h,5,LevelMaterials.STONE);
+                for(double y=1.2;y<h-1;y+=2.3)for(double dx:new double[]{1.1,3.3,5.5})imported(faces,"kenney_medieval_wall_pane_wood_window",xx+dx,y,zz+5.14,.7,0);
+                texturedBox(faces,xx-.06,h,zz-.06,7.12,.18,5.12,LevelMaterials.CONCRETE);
+            }
+        }
+        return List.copyOf(faces);
     }
 
     /** Three visually distinct small PS-era rite installations at fixed room sockets. */
@@ -1076,6 +1130,8 @@ public final class SceneRenderer {
                 ((nearPlane(n.x0(),plane)||nearPlane(n.x1(),plane))&&n.z0()<r.z1()&&n.z1()>r.z0())));
     }
     private void levelArchitecture(List<Face> out,HouseMap map){
+        own(out,enclosureFaces.computeIfAbsent(map.site(),key->enclosureScenery(map.level())),13);
+        if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of());}
         for(Face f:levelShells.computeIfAbsent(map.site(),s->buildLevelShell(map))){
             double cx=(f.a.x+f.b.x+f.c.x)/3,cz=(f.a.z+f.b.z+f.c.z)/3;
             out.add(f); // Opaque distant architecture must still occlude the night sky.
@@ -1111,6 +1167,7 @@ public final class SceneRenderer {
                 String mesh=s.style().contains("utility")||s.style().contains("industrial")?"level_utility_light":s.style().contains("sconce")||s.style().contains("porch")?"level_wall_sconce":"level_domestic_light";
                 imported(part,mesh,s.x(),s.y(),s.z(),1,-s.yaw());
             }
+            if(s.type().equals("place_label"))imported(part,s.style().startsWith("MENS")?"level_sign_mens_worn":"level_sign_womens_worn",s.x(),s.y()-.18,s.z(),.54,-s.yaw());
             if(s.type().equals("partition")){
                 String[] shape=s.style().split(":");double w=Double.parseDouble(shape[0]),h=Double.parseDouble(shape[1]);List<Face> local=new ArrayList<>();
                 // Two disjoint heights: no coplanar tile/plaster overlays.

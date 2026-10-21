@@ -1,10 +1,10 @@
 """Reopen the native public Blender libraries; verify real Asset Browser metadata."""
 import bpy,json
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[2];SITE=ROOT.parents[1]
-index=json.loads((SITE/'assets/beckenburg/libraries/index.json').read_text())
+ROOT=Path(__file__).resolve().parents[2];SITE=ROOT
+index=json.loads((SITE/'assets/libraries/index.json').read_text())
 for library in index['libraries']:
-    file=SITE/f'assets/beckenburg/libraries/{library["id"]}/asset-library.blend'
+    file=SITE/f'assets/libraries/{library["id"]}/asset-library.blend'
     bpy.ops.wm.open_mainfile(filepath=str(file));assets=[obj for obj in bpy.data.objects if obj.asset_data]
     assert len(assets)==library['count']
     for obj in assets:

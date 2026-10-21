@@ -63,13 +63,13 @@ fixture_path=SRC/'event-fixtures.json'
 if fixture_path.exists():
     fixtures_collection=collection('EVENT fixtures — individual activation and water anchors')
     for state in json.loads(fixture_path.read_text()):
-        if state['kind'].startswith('SINK'):
+        if state['kind'].startswith('SINK') or state['kind']=='WASHING_MACHINE':
             obj=bpy.data.objects.new('Event '+str(state['id'])+' '+state['kind'],None)
         else:
             asset='level_event_'+state['kind'].lower()+'_worn'
             with bpy.data.libraries.load(str(ROOT/f'development/levels/blender/{asset}.blend'),link=False) as (incoming,outgoing):outgoing.objects=[asset]
             obj=outgoing.objects[0];obj.name='Event '+str(state['id'])+' '+state['kind']
-        fixtures_collection.objects.link(obj);obj.location=(state['x'],-state['z'],state['y']);obj.rotation_euler.z=-state['yaw']
+        fixtures_collection.objects.link(obj);obj.location=(state['x'],-state['z'],state['y']);obj.rotation_euler.z=-state['yaw'];obj.scale=(state.get('scale',1),)*3
         obj['event_fixture_id']=state['id'];obj['event_kind']=state['kind'];obj['room']=state['room'];obj['active']=state['active'];obj['water_level_0_1000']=state['water']
         obj['interaction']='Hunter E toggles; ghost F5 requests a normal costed DISTURB event; state is host-owned'
 metadata=collection('AUTHORING sockets, portals, stair support and collision')
@@ -94,7 +94,12 @@ for s in definition['sockets']:
 bpy.ops.object.light_add(type='SUN',location=(15,-15,20));bpy.context.object.rotation_euler=(.38,-.55,-.9);bpy.context.object.data.energy=.7;bpy.context.object.data.color=(.40,.55,.85)
 camera_poses={'house':((28,-34,3.8),(19,-19,3.0)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
-              'school':((58,-57,17),(28,-24,3.5))}
+              'school':((58,-57,17),(28,-24,3.5)),
+              'arrival-road':((12,-14,9),(0,5,1.0)),
+              'enclosure-suburban':((63,-65,36),(22,-24,0)),
+              'enclosure-woodland':((73,-73,45),(27,-25,0)),
+              'enclosure-urban':((75,-75,46),(28,-28,0)),
+              'enclosure-mountain':((81,-78,35),(28,-25,9))}
 position,look_at=camera_poses[name]
 bpy.ops.object.camera_add(location=position);cam=bpy.context.object
 target=Vector(look_at);cam.rotation_euler=(target-cam.location).to_track_quat('-Z','Y').to_euler();cam.data.lens=30;scene.camera=cam
@@ -102,7 +107,7 @@ scene.render.engine='CYCLES';scene.cycles.samples=24;scene.cycles.use_denoising=
 scene.render.resolution_x=1280;scene.render.resolution_y=800;scene.render.resolution_percentage=100
 scene.view_settings.view_transform='Standard';scene.view_settings.look='None';scene.view_settings.exposure=.6
 scene['level_id']=definition['id'];scene['revision']=definition['revision'];scene['source_of_truth']='LevelPlans.java / LevelDefinition.java; regenerate after layout edits'
-scene['hiding_density']=100;scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
+scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get('hidingDensity',100);scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
 out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
 bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+'-complete.blend')),compress=True)
 scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/f'development/levels/previews/{name}-blender-exterior.png');bpy.ops.render.render(write_still=True)

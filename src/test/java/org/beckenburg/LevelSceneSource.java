@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 
 /** Exports the exact runtime triangles, UVs, textures and authored sockets for Blender. */
 public final class LevelSceneSource {
+    record Module(String id,String revision,String title,List<LevelDefinition.Room> rooms,List<LevelDefinition.Socket> sockets,List<LevelDefinition.Portal> portals,List<LevelDefinition.Collider> colliders,LevelDefinition.Dock dock){}
     record LooseSource(LooseClutter.State state,double half,double radius,double mass){}
     static Object read(Object value,String field)throws Exception{
         Method m=value.getClass().getDeclaredMethod(field);m.setAccessible(true);return m.invoke(value);
@@ -25,6 +26,7 @@ public final class LevelSceneSource {
     }
     @SuppressWarnings("unchecked")
     public static void main(String[] args)throws Exception{
+        if(args.length>0&&(args[0].equals("ARRIVAL")||args[0].startsWith("ENCLOSURE_"))){module(args[0]);return;}
         HouseMap map=new HouseMap(args.length>0?HouseMap.Site.valueOf(args[0]):HouseMap.Site.HOUSE);
         map.configureHiding(100); // Editable authoring source includes every potential cupboard.
         Path out=Path.of("build/level-verification/scenes",map.level().id());Files.createDirectories(out.resolve("textures"));
@@ -36,14 +38,20 @@ public final class LevelSceneSource {
         Files.writeString(out.resolve("loose-objects.json"),json(map.clutter().states().stream().map(s->new LooseSource(s,s.kind().half,s.kind().radius,s.kind().mass)).toList()));
         Files.writeString(out.resolve("event-fixtures.json"),json(map.fixtures().states()));
         Files.writeString(out.resolve("scene-settings.json"),"{\"hidingDensity\":100}");
-        Files.writeString(out.resolve("geometry.json"),json(faces));
+        writeFaces(out,faces);
+    }
+    @SuppressWarnings("unchecked")
+    static void writeFaces(Path out,List<Object> faces)throws Exception{
+        Files.createDirectories(out.resolve("textures"));Files.writeString(out.resolve("geometry.json"),json(faces));
         Set<Integer> mats=new TreeSet<>();for(Object f:faces)mats.add((Integer)read(f,"material"));
         Field tex=GlbProps.class.getDeclaredField("textures");tex.setAccessible(true);
         Field factors=GlbProps.class.getDeclaredField("diffuseFactors");factors.setAccessible(true);
         List<BufferedImage> images=(List<BufferedImage>)tex.get(null);List<double[]> colors=(List<double[]>)factors.get(null);
         for(int mat:mats)if(mat>=0){
             BufferedImage im;
-            if(mat>=256){
+            if(mat==GlbProps.VAN_MAP_MATERIAL){
+                im=new BufferedImage(256,256,BufferedImage.TYPE_INT_RGB);for(int y=0;y<256;y++)for(int x=0;x<256;x++)im.setRGB(x,y,GlbProps.sample(mat,(x+.5)/256.0,1-(y+.5)/256.0));
+            }else if(mat>=256){
                 BufferedImage original=images.get(mat-256);im=new BufferedImage(original.getWidth(),original.getHeight(),BufferedImage.TYPE_INT_RGB);
                 double[] c=colors.get(mat-256);
                 for(int y=0;y<im.getHeight();y++)for(int x=0;x<im.getWidth();x++){
@@ -55,6 +63,23 @@ public final class LevelSceneSource {
             }
             ImageIO.write(im,"PNG",out.resolve("textures/"+mat+".png").toFile());
         }
-        System.out.println("Exact runtime source "+map.level().id()+": "+faces.size()+" textured triangles, "+mats.size()+" materials");
+        System.out.println("Exact runtime source "+out.getFileName()+": "+faces.size()+" textured triangles, "+mats.size()+" materials");
     }
+    static void invoke(SceneRenderer scene,String name,Class<?> argument,Object value,List<Object> faces)throws Exception{var method=SceneRenderer.class.getDeclaredMethod(name,List.class,argument);method.setAccessible(true);method.invoke(scene,faces,value);}
+    static void module(String mode)throws Exception{
+        var scene=new SceneRenderer();List<Object> faces=new ArrayList<>();String name;Object definition;
+        if(mode.equals("ARRIVAL")){
+            name="arrival-road";var van=new VanStaging(new VanStaging.Placement(0,0,0));invoke(scene,"arrivalRoadGeometry",VanStaging.class,van,faces);
+            var mesh=SceneRenderer.class.getDeclaredMethod("vanModel",List.class,VanStaging.class,Set.class);mesh.setAccessible(true);mesh.invoke(scene,faces,van,Set.of());
+            var rooms=List.of(new LevelDefinition.Room(13,"Shared arrival tile",-6.3,-22,6.3,5,0,12,"asphalt","exterior",new LevelDefinition.Vec(0,0,-6)),new LevelDefinition.Room(14,"Van interior",-.892,-2.128,.892,2.128,.5,2.125,"asphalt","van",new LevelDefinition.Vec(0,.5,0)));
+            definition=new Module(name,VanArrivalTile.ID,"Shared van and arrival road",rooms,List.of(new LevelDefinition.Socket("van-anchor","arrival_tile",13,0,0,0,0,VanArrivalTile.ID)),List.of(),List.of(),new LevelDefinition.Dock(0,0,0,0));
+        }else{
+            var setting=LevelEnclosure.Setting.valueOf(mode.substring(10));var template=LevelEnclosure.template(setting);definition=template;name=template.id();
+            var method=SceneRenderer.class.getDeclaredMethod("enclosureScenery",LevelDefinition.class);method.setAccessible(true);faces.addAll((List<?>)method.invoke(scene,definition));
+            var d=template.dock();var van=new VanStaging(new VanStaging.Placement(d.x(),d.z(),d.yaw()));invoke(scene,"arrivalRoadGeometry",VanStaging.class,van,faces);
+            method=SceneRenderer.class.getDeclaredMethod("arrivalSurroundings",List.class,VanStaging.class,LevelEnclosure.Setting.class);method.setAccessible(true);method.invoke(scene,faces,van,setting);
+        }
+        Path out=Path.of("build/level-verification/scenes",name);Files.createDirectories(out);Files.writeString(out.resolve("definition.json"),json(definition));Files.writeString(out.resolve("scene-settings.json"),"{\"hidingDensity\":0}");writeFaces(out,faces);
+    }
+
 }

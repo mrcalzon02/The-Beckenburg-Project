@@ -1045,6 +1045,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     g.drawString("CAM "+(chosen.owner()+1)+" LIVE / C NEXT",vx+4,vy+vh+15);
                 }
             }
+            if(interfaceOpen.startsWith("STORY_"))SiteStories.draw(g,getWidth(),h,map,interfaceOpen.substring(6));
             if(interfaceOpen.equals("BRIEFING")){
                 int x=30,y=125;g.setColor(new Color(10,17,23,248));g.fillRoundRect(18,88,getWidth()-36,Math.min(h-110,345),12,12);g.setColor(new Color(231,212,171));g.setFont(new Font(Font.MONOSPACED,Font.BOLD,14));g.drawString("CONTRACT BOARD / ESC CLOSE",x,112);
                 g.setFont(new Font(Font.SANS_SERIF,Font.PLAIN,14));

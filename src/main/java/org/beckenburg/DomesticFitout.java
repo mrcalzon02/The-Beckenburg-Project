@@ -69,7 +69,7 @@ final class DomesticFitout {
    }
    if(side==0){b.props.add(new Prop("level_school_urinal",room,27.915,3.6,start+1.15,.75,Math.PI/2,0,0,1.0,"wall"));partition(b,room,27.15,start+.70,27.15,start+1.65,1.5);}
    b.socket("device",room,25.05,5.95,start+.065,0,"SMOKE_ALARM");
-   b.socket("place_label",room,24.73,5.1,doorZ,-Math.PI/2,side==0?"MENS WASHROOM":"WOMENS WASHROOM");
+   b.socket("place_label",room,24.73,6.25,doorZ,-Math.PI/2,side==0?"MENS WASHROOM":"WOMENS WASHROOM");
   }
   add(b,"level_laundry_hamper",5,33.2,19.2,0,.235,.20,.60);
  }

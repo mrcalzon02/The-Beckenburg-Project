@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];SITE=ROOT
 rows=json.loads((ROOT/'development/levels/lived-assets.json').read_text())['assets']
 selected=set(sys.argv[sys.argv.index('--')+1:]) if '--' in sys.argv else set()
-for library in ['industrial','household','hiding','events']:
+for library in ['industrial','household','hiding','events','enclosures']:
     if selected and library not in selected:continue
     if not any(r['library']==library for r in rows):continue
     bpy.ops.wm.read_factory_settings(use_empty=True);bpy.context.preferences.filepaths.save_version=0

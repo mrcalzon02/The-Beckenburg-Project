@@ -1127,6 +1127,656 @@
       "family": "level_laundry_washer"
     },
     {
+      "id": "level_enclosure_garden",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "7cdd6bead070c82884ef8fce77a6c9f1452189eb6d3bd46264c8438a0156d6ed",
+      "bytes": 41772,
+      "triangles": 432,
+      "bounds": [
+        [
+          -1.0,
+          0.0,
+          -0.05250000208616257
+        ],
+        [
+          0.9999999403953552,
+          1.9600000381469727,
+          0.04500000178813934
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_enclosure_garden.blend",
+      "variant": "clean",
+      "family": "level_enclosure_garden"
+    },
+    {
+      "id": "level_enclosure_field",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "9a9e282b07e91540ba69a4ca90292646fdd7093a66f32c04af62eb833e1d7515",
+      "bytes": 37424,
+      "triangles": 268,
+      "bounds": [
+        [
+          -1.0049999952316284,
+          0.0,
+          -0.054999999701976776
+        ],
+        [
+          1.0049998760223389,
+          1.399999976158142,
+          0.07250000536441803
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_enclosure_field.blend",
+      "variant": "clean",
+      "family": "level_enclosure_field"
+    },
+    {
+      "id": "level_enclosure_urban",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "6799d18a2a32a5de277a7b06f5f61b26bb79b923b21d98baace43d6af0f43b57",
+      "bytes": 83332,
+      "triangles": 940,
+      "bounds": [
+        [
+          -1.0,
+          0.0,
+          -0.15000000596046448
+        ],
+        [
+          1.0,
+          1.8700000047683716,
+          0.15000000596046448
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_enclosure_urban.blend",
+      "variant": "clean",
+      "family": "level_enclosure_urban"
+    },
+    {
+      "id": "level_tree_conifer",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "645056d37d742b5f25289a54ae728e6bf77041077c3b56052f8c531369bf71f0",
+      "bytes": 30928,
+      "triangles": 284,
+      "bounds": [
+        [
+          -1.5504928827285767,
+          -0.0029992086347192526,
+          -1.6249327659606934
+        ],
+        [
+          1.649999976158142,
+          7.5,
+          1.6249327659606934
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_tree_conifer.blend",
+      "variant": "clean",
+      "family": "level_tree_conifer"
+    },
+    {
+      "id": "level_tree_broadleaf",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "99ee6e4e9ae4ccb731f6cf2ccfd71077988d698adbb8cd6d2ea67cd01184bfe9",
+      "bytes": 48320,
+      "triangles": 492,
+      "bounds": [
+        [
+          -2.396916389465332,
+          -0.0029992086347192526,
+          -2.075472831726074
+        ],
+        [
+          2.396916389465332,
+          7.28000020980835,
+          2.075472831726074
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_tree_broadleaf.blend",
+      "variant": "clean",
+      "family": "level_tree_broadleaf"
+    },
+    {
+      "id": "level_story_letters",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+      "bytes": 37172,
+      "triangles": 264,
+      "bounds": [
+        [
+          -0.1308739334344864,
+          0.0005000000819563866,
+          -0.10631903260946274
+        ],
+        [
+          0.14303793013095856,
+          0.035711903125047684,
+          0.10581869632005692
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_story_letters.blend",
+      "variant": "clean",
+      "family": "level_story_letters"
+    },
+    {
+      "id": "level_story_sewing_tin",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "708948f1ef984d6c3606d428c079f60ab72b8428e895086d0ad33dfb3db183fd",
+      "bytes": 88464,
+      "triangles": 952,
+      "bounds": [
+        [
+          -0.125,
+          0.0,
+          -0.10999999940395355
+        ],
+        [
+          0.3149999976158142,
+          0.1679510474205017,
+          0.08500000089406967
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_story_sewing_tin.blend",
+      "variant": "clean",
+      "family": "level_story_sewing_tin"
+    },
+    {
+      "id": "level_story_work_boots",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "1128ed559ff29be297b667415dcc175398c74212fcd1bfc4bfeeb902eaae6198",
+      "bytes": 72008,
+      "triangles": 792,
+      "bounds": [
+        [
+          -0.20499999821186066,
+          0.0010000000474974513,
+          -0.13500000536441803
+        ],
+        [
+          0.20499999821186066,
+          0.3199999928474426,
+          0.1850000023841858
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_story_work_boots.blend",
+      "variant": "clean",
+      "family": "level_story_work_boots"
+    },
+    {
+      "id": "level_sign_house",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "0340d0b8a6079cdea4f8db3d58d205873b605933e9dce8751c87a3746fe3d2c4",
+      "bytes": 107188,
+      "triangles": 1188,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_house.blend",
+      "variant": "clean",
+      "family": "level_sign_house"
+    },
+    {
+      "id": "level_sign_farmhouse",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "190b766f3b9251c73cbdc3dcce91994a0cb8fe281784dcd355979293b0b6a125",
+      "bytes": 103272,
+      "triangles": 1132,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_farmhouse.blend",
+      "variant": "clean",
+      "family": "level_sign_farmhouse"
+    },
+    {
+      "id": "level_sign_school",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "9195d5dc86c257a9b1a76f3bb34ba54def6fd6a05471ef1327dae08132f56ca5",
+      "bytes": 112792,
+      "triangles": 1268,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_school.blend",
+      "variant": "clean",
+      "family": "level_sign_school"
+    },
+    {
+      "id": "level_sign_mens",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f1861a7b2dee3a3130a6c522e366050d0e3c9d543bde6b8c86fd966f8ea41cd6",
+      "bytes": 66580,
+      "triangles": 608,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_mens.blend",
+      "variant": "clean",
+      "family": "level_sign_mens"
+    },
+    {
+      "id": "level_sign_womens",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "52ddf48a4f9a7f15932fa63e37b0e4df53c8a906fde1eb2559934f3043ae9e75",
+      "bytes": 71344,
+      "triangles": 676,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_womens.blend",
+      "variant": "clean",
+      "family": "level_sign_womens"
+    },
+    {
+      "id": "level_sign_house_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "e0ceb6791bf17649adc6b136aad8a68f86483a2a2887f2127f0ace15081b1fa0",
+      "bytes": 109388,
+      "triangles": 1188,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_house_worn.blend",
+      "variant": "worn",
+      "family": "level_sign_house"
+    },
+    {
+      "id": "level_sign_farmhouse_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "142857e145bd24ce4afe845df41dc853d82c122001eaa6abc9489457e5a363e5",
+      "bytes": 105476,
+      "triangles": 1132,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_farmhouse_worn.blend",
+      "variant": "worn",
+      "family": "level_sign_farmhouse"
+    },
+    {
+      "id": "level_sign_school_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3df0c1811272d0a542de1f265cecb6ff56ee6000104104a0be694c775ab4c2c8",
+      "bytes": 114988,
+      "triangles": 1268,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_school_worn.blend",
+      "variant": "worn",
+      "family": "level_sign_school"
+    },
+    {
+      "id": "level_sign_mens_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "a8165a51f696ce57c4dccc4b4f67a939125cf7068922153d0300f1a3d5936228",
+      "bytes": 68776,
+      "triangles": 608,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_mens_worn.blend",
+      "variant": "worn",
+      "family": "level_sign_mens"
+    },
+    {
+      "id": "level_sign_womens_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "fb15ac1296736134b2acf630d17f45656f138dc5516386ae3c42943a8e9bb506",
+      "bytes": 73544,
+      "triangles": 676,
+      "bounds": [
+        [
+          -0.8399999737739563,
+          0.0,
+          -0.0
+        ],
+        [
+          0.8399999737739563,
+          0.36000001430511475,
+          0.05299999937415123
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_sign_womens_worn.blend",
+      "variant": "worn",
+      "family": "level_sign_womens"
+    },
+    {
+      "id": "level_enclosure_garden_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "ff3909bc4f3db3333c446040efa06878c06bb58fd945d0b43b162a384aca20d5",
+      "bytes": 42112,
+      "triangles": 432,
+      "bounds": [
+        [
+          -1.0,
+          0.0,
+          -0.05250000208616257
+        ],
+        [
+          0.9999999403953552,
+          1.9600000381469727,
+          0.04500000178813934
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_enclosure_garden_worn.blend",
+      "variant": "worn",
+      "family": "level_enclosure_garden"
+    },
+    {
+      "id": "level_enclosure_field_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "8c6c9fc042e084596b9c16119357dce58b84d4b134fc7e49606f2ef7b48be092",
+      "bytes": 38624,
+      "triangles": 268,
+      "bounds": [
+        [
+          -1.0049999952316284,
+          0.0,
+          -0.054999999701976776
+        ],
+        [
+          1.0049998760223389,
+          1.399999976158142,
+          0.07250000536441803
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_enclosure_field_worn.blend",
+      "variant": "worn",
+      "family": "level_enclosure_field"
+    },
+    {
+      "id": "level_enclosure_urban_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "10d41e8274b00ebdf354d22b203c6c0ba33ad0bbec3d5c05627864d236440ed3",
+      "bytes": 85484,
+      "triangles": 940,
+      "bounds": [
+        [
+          -1.0,
+          0.0,
+          -0.15000000596046448
+        ],
+        [
+          1.0,
+          1.8700000047683716,
+          0.15000000596046448
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_enclosure_urban_worn.blend",
+      "variant": "worn",
+      "family": "level_enclosure_urban"
+    },
+    {
+      "id": "level_tree_conifer_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c2bcdef08288d2eb821454922b235251e7d0eb68e81548e53c09d055bf86be1b",
+      "bytes": 31804,
+      "triangles": 284,
+      "bounds": [
+        [
+          -1.5504928827285767,
+          -0.0029992086347192526,
+          -1.6249327659606934
+        ],
+        [
+          1.649999976158142,
+          7.5,
+          1.6249327659606934
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_tree_conifer_worn.blend",
+      "variant": "worn",
+      "family": "level_tree_conifer"
+    },
+    {
+      "id": "level_tree_broadleaf_worn",
+      "library": "enclosures",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "900ef8f3a228a20c7ee35b948e50d62af49b199fb4be6e7e71486f82f277ae00",
+      "bytes": 49200,
+      "triangles": 492,
+      "bounds": [
+        [
+          -2.396916389465332,
+          -0.0029992086347192526,
+          -2.075472831726074
+        ],
+        [
+          2.396916389465332,
+          7.28000020980835,
+          2.075472831726074
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_tree_broadleaf_worn.blend",
+      "variant": "worn",
+      "family": "level_tree_broadleaf"
+    },
+    {
+      "id": "level_story_letters_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "02a0ce254acc6ec2fcf85df9554ac7d60f445c785618d09ae042755e56563db4",
+      "bytes": 39184,
+      "triangles": 264,
+      "bounds": [
+        [
+          -0.1308739334344864,
+          0.0005000000819563866,
+          -0.10631903260946274
+        ],
+        [
+          0.14303793013095856,
+          0.035711903125047684,
+          0.10581869632005692
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_story_letters_worn.blend",
+      "variant": "worn",
+      "family": "level_story_letters"
+    },
+    {
+      "id": "level_story_sewing_tin_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "09d06dad997d55276ce497a95008ba60b3c322c170b2b51457110b89bb4dcb04",
+      "bytes": 91176,
+      "triangles": 952,
+      "bounds": [
+        [
+          -0.125,
+          0.0,
+          -0.10999999940395355
+        ],
+        [
+          0.3149999976158142,
+          0.1679510474205017,
+          0.08500000089406967
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_story_sewing_tin_worn.blend",
+      "variant": "worn",
+      "family": "level_story_sewing_tin"
+    },
+    {
+      "id": "level_story_work_boots_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b2cb0f62ddf87fa2a7a087293625f7ccc69e1fab4bd665fab1537b40ebeaf6b8",
+      "bytes": 74148,
+      "triangles": 792,
+      "bounds": [
+        [
+          -0.20499999821186066,
+          0.0010000000474974513,
+          -0.13500000536441803
+        ],
+        [
+          0.20499999821186066,
+          0.3199999928474426,
+          0.1850000023841858
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_story_work_boots_worn.blend",
+      "variant": "worn",
+      "family": "level_story_work_boots"
+    },
+    {
       "id": "level_laundry_washer_worn",
       "library": "household",
       "license": "CC0-1.0",
@@ -2477,6 +3127,71 @@
       "glb": "d06759ff644e421f9b225c19ccad5b12ee658b23971af02bb5f8f17e8aeb1f14",
       "blend": "0e673426fe5ef9455e119359aa31782c1ac315ccffaa3cffacb2a40c61152eb2",
       "preview": "147cfdd72a01202cfd20ee023f84146becf28d1b009dac647b548cc2761d8a49"
+    },
+    "level_enclosure_garden": {
+      "glb": "7cdd6bead070c82884ef8fce77a6c9f1452189eb6d3bd46264c8438a0156d6ed",
+      "blend": "be149d5a8833cf49d071aea6c92381cc4a46272db6850af3b3b7f180f074e89f",
+      "preview": "12ef571783f25527c21debf89e02d84b8de08a32d7a85849c72c70698b7c9c87"
+    },
+    "level_enclosure_field": {
+      "glb": "9a9e282b07e91540ba69a4ca90292646fdd7093a66f32c04af62eb833e1d7515",
+      "blend": "6c07d2df71e39dcfa969d772446c058e7dab986860f99b9abcd360899e33eef3",
+      "preview": "e77cd8532779ecc3ac4dc9a9756d075e4f35b74fdf59b9cf622032b3e8fd4493"
+    },
+    "level_enclosure_urban": {
+      "glb": "6799d18a2a32a5de277a7b06f5f61b26bb79b923b21d98baace43d6af0f43b57",
+      "blend": "547e27f204ff2b4a4da63f76d9cb8cf6ce9aa61f4e0cddc6afa93b91bb351307",
+      "preview": "6d3631b77cb9465795f64c2a03bae9468c1138f1658aa106dee88132774ec56e"
+    },
+    "level_tree_conifer": {
+      "glb": "645056d37d742b5f25289a54ae728e6bf77041077c3b56052f8c531369bf71f0",
+      "blend": "0a3f3ae2a6881d171ccb33e8baf070b976f202652a79a9dafc5d8aba125840ec",
+      "preview": "a106b3e8cabdd0bc85ae48ddcd3b690b30b8412e129454d29b82df5951d988e4"
+    },
+    "level_tree_broadleaf": {
+      "glb": "99ee6e4e9ae4ccb731f6cf2ccfd71077988d698adbb8cd6d2ea67cd01184bfe9",
+      "blend": "6a1135fea0cad4cc15a407a497cca54bca44b54638174fdffc1787622789225f",
+      "preview": "fc662e3f3a71ef0124b63da315bc306182643b3292b4bb513ad00f7b9817fc5b"
+    },
+    "level_story_letters": {
+      "glb": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+      "blend": "bf8a941740270d8fa8115ab53b356599147a70cd4647b892f0b4aaf19a0fe807",
+      "preview": "1599b8e6bfb70c34f39491d369c58be16c40433926f23f255423859d85d90fa9"
+    },
+    "level_story_sewing_tin": {
+      "glb": "708948f1ef984d6c3606d428c079f60ab72b8428e895086d0ad33dfb3db183fd",
+      "blend": "2a4fa2333f601772f72806ff8e3ce19cf6ec00d6d6684b994d1fb04d86f775e4",
+      "preview": "2393e661dadbbf34f3af8d773162e14b0f97552ddc4a1c06831d136266adc381"
+    },
+    "level_story_work_boots": {
+      "glb": "1128ed559ff29be297b667415dcc175398c74212fcd1bfc4bfeeb902eaae6198",
+      "blend": "c2c8ecbfa9fe9e6345452f58a4e8c750c6288a26dacf4a3a99f9f1a8b6c3a27a",
+      "preview": "c4008045ce6a0c0bfb6ccf1f0e78a50eef0f55db7d442fb0f5801808f6b636e2"
+    },
+    "level_sign_house": {
+      "glb": "0340d0b8a6079cdea4f8db3d58d205873b605933e9dce8751c87a3746fe3d2c4",
+      "blend": "b82251ae836226f28f3df1aeb3501c8457bc7db78c27e52583b2976ed186351a",
+      "preview": "ff8ba82619d360d83eb0189bfbe93b0ab36b2d5f32b08bb2c1d2f9f75e2e79af"
+    },
+    "level_sign_farmhouse": {
+      "glb": "190b766f3b9251c73cbdc3dcce91994a0cb8fe281784dcd355979293b0b6a125",
+      "blend": "8c59cbf75691746e2060b43c8f9ef92069b88c4d83c95763cddd18824935fa66",
+      "preview": "34fd7eb9dfb386669e249ebd28383e6157384abd5457d7200079007052cff038"
+    },
+    "level_sign_school": {
+      "glb": "9195d5dc86c257a9b1a76f3bb34ba54def6fd6a05471ef1327dae08132f56ca5",
+      "blend": "d3ae3ed405a430c4a881e9d553a2f526416c3c7ad6539a358dd456aa764a8343",
+      "preview": "b8f9d430e582e66bdae773e6d9c5a56bfcbe0582ea9e7274fb545b2fb00ecd0e"
+    },
+    "level_sign_mens": {
+      "glb": "f1861a7b2dee3a3130a6c522e366050d0e3c9d543bde6b8c86fd966f8ea41cd6",
+      "blend": "2e868807d80426cfc9992c70ff8992094a08c4a771b9fba062d5baabdcd82f80",
+      "preview": "c1c7a61e43fbf9b78a4e8c146838fe0dc695939a1e3ebe39f7c862c35b9054ae"
+    },
+    "level_sign_womens": {
+      "glb": "52ddf48a4f9a7f15932fa63e37b0e4df53c8a906fde1eb2559934f3043ae9e75",
+      "blend": "fa516e500dc0002c79550d343b3d12561acac7188b2f41061f2902ad79baed09",
+      "preview": "3c27e273db814f7730a1c914ea4cd123d2e7110f4210304cba4b370d22b4b657"
     }
   }
 }

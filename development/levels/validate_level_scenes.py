@@ -32,9 +32,9 @@ for site in ['house','farmhouse','school']:
     for state in fixtures:
         obj=devices[state['id']]
         assert obj['event_kind']==state['kind'] and obj['room']==state['room']
-        assert obj.type==('EMPTY' if state['kind'].startswith('SINK') else 'MESH')
+        assert obj.type==('EMPTY' if (state['kind'].startswith('SINK') or state['kind']=='WASHING_MACHINE') else 'MESH')
         close(obj.location,(state['x'],-state['z'],state['y']))
-        close(obj.rotation_euler,(0,0,-state['yaw']))
+        close(obj.rotation_euler,(0,0,-state['yaw']));close(obj.scale,(state.get('scale',1),)*3)
     triangles=sum(len(o.data.polygons) for o in objects if o.type=='MESH' and o.get('source','').startswith('Exact runtime'))
     assert triangles==len(json.loads((source/'geometry.json').read_text()))
     assert all(image.packed_file for image in bpy.data.images if image.source=='FILE')

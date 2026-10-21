@@ -7,16 +7,16 @@ from concurrent.futures import ThreadPoolExecutor
 from urllib.request import urlopen,Request
 from datetime import datetime,timezone
 import json,hashlib,argparse
-ROOT=Path(__file__).resolve().parents[2];SITE=ROOT.parents[1]
+ROOT=Path(__file__).resolve().parents[2];SITE=ROOT
 ap=argparse.ArgumentParser();ap.add_argument('--published-commit',required=True);args=ap.parse_args()
-BASE='https://mrcalzon02.github.io/HB-TTRPG-tools/'
+BASE='https://mrcalzon02.github.io/The-Beckenburg-Project/'
 def get(path):
     with urlopen(Request(BASE+path,headers={'User-Agent':'Beckenburg-asset-publication-verifier/1.0'}),timeout=90) as response:
         assert response.status==200
         return response.read()
 def digest(data):return hashlib.sha256(data).hexdigest()
-index=json.loads(get('assets/beckenburg/libraries/index.json'))
-assert index==json.loads((SITE/'assets/beckenburg/libraries/index.json').read_text()),'Live index differs from validated local publication'
+index=json.loads(get('assets/libraries/index.json'))
+assert index==json.loads((SITE/'assets/libraries/index.json').read_text()),'Live index differs from validated local publication'
 page=get('beckenburg-asset-libraries.html').decode('utf-8')
 assert 'Clean version' in page and 'Worn version' in page
 assert page.count('class="license">CC0 1.0')==sum(library['count'] for library in index['libraries'])
@@ -25,7 +25,7 @@ for library in index['libraries']:
     manifest=json.loads(get(library['manifest']))
     assert manifest==json.loads((SITE/library['manifest']).read_text())
     assert manifest['license']=='CC0-1.0' and set(manifest['variants'])=={'clean','worn'}
-    assert 'CC0 1.0 Universal' in get(f'assets/beckenburg/libraries/{library["id"]}/LICENSE.txt').decode()
+    assert 'CC0 1.0 Universal' in get(f'assets/libraries/{library["id"]}/LICENSE.txt').decode()
     for asset in manifest['assets']:jobs.append((asset['files']['models'],asset['sha256'],'GLB'))
     for extra in manifest.get('extras',[]):jobs.append((extra['path'],extra['sha256'],'EXTRA'))
     jobs.append((library['download'],library['sha256'],'ZIP'))

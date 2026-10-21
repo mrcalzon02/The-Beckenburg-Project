@@ -55,6 +55,8 @@ public final class InteractionFocus {
         for(var f:map.fixtures().states())if(f.kind().mesh()!=null)candidate(targets,Kind.FIXTURE,""+f.id(),label(f.kind().name()),hit(f.kind().mesh(),r,f.x(),f.y(),f.z(),f.yaw(),f.scale()));
         for(var prop:map.level().props()){
             double distance=hit(prop.mesh(),r,prop.x(),prop.y(),prop.z(),prop.yaw(),prop.scale());blocker=Math.min(blocker,distance);
+            for(var story:map.level().sockets())if(story.type().equals("story")&&story.room()==prop.room()&&Math.hypot(story.x()-prop.x(),story.z()-prop.z())<.02&&prop.mesh().startsWith("level_"))
+                candidate(targets,Kind.INTERFACE,"STORY_"+story.style(),SiteStories.document(map.level().id(),story.style()).title(),distance);
             for(var f:map.fixtures().states())if(f.kind().mesh()==null&&f.room()==prop.room()&&((f.kind()==HauntedFixtures.Kind.SINK_BATH&&prop.mesh().equals("level_bath_basin"))||(f.kind()==HauntedFixtures.Kind.SINK_KITCHEN&&prop.mesh().equals("level_kitchen_counter"))||(f.kind()==HauntedFixtures.Kind.WASHING_MACHINE&&LivedAssets.base(prop.mesh()).equals("level_laundry_washer")))){
                 if(distance<2&&Math.hypot(r[0]+r[3]*distance-f.x(),r[2]+r[5]*distance-f.z())<.48)candidate(targets,Kind.FIXTURE,""+f.id(),f.kind()==HauntedFixtures.Kind.SINK_BATH?"Bathroom sink":f.kind()==HauntedFixtures.Kind.WASHING_MACHINE?"Washing machine":"Kitchen sink",distance);
             }

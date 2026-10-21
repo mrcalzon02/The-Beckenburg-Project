@@ -254,7 +254,7 @@ public final class LevelPlans {
             double vanX=Math.max(22,(x0+x1)/2);
             // The shared road extends twenty metres behind the cargo sill.
             // Ground support is exterior approach, not the van's ghost-safe interior.
-            r(entry,Math.min(x0,vanX-21),front,x1,Math.max(end,apron+13.4),0,12,"stone",(x0+x1)/2,(front+apron)/2);
+            r(entry,VanArrivalTile.supportLeft(vanX,x0),front,x1,Math.max(end,apron+13.4),0,12,"stone",(x0+x1)/2,(front+apron)/2);
             r("Van cargo interior",vanX+VanStaging.FRONT,apron+6-VanStaging.INTERIOR_HALF_WIDTH,
                 vanX+VanStaging.REAR,apron+6+VanStaging.INTERIOR_HALF_WIDTH,VanStaging.FLOOR_Y,VanStaging.INTERIOR_HEIGHT,"asphalt",vanX,apron+6);
             portal(12,13,x0+2,0,front,3,true,"open");
@@ -347,11 +347,13 @@ public final class LevelPlans {
                     furnishingOverlays.add(new Prop("level_table_lamp",p.room(),p.x(),p.y()+.64*p.scale(),p.z()-.08*p.scale(),1,0,0,0,.495,p.mesh()));
             }
             props.addAll(furnishingOverlays);
+            LevelEnclosure.populate(this);
+            SiteStories.populate(this);
             for(int i=0;i<12;i++)installSwitch(i);
             Room utility=rooms.get(breaker);socket("breaker",breaker,utility.x0()+.035,utility.y()+1.35,utility.z0()+2,Math.PI/2,"electrical-panel");
             int[] ritualRooms={main,(main+3)%12,12};String[] rites={"banishment","cleansing","absolution"};
             for(int i=0;i<3;i++){Room r=rooms.get(ritualRooms[i]);socket("ritual",r.id(),r.cx(),r.y(),r.cz(),0,rites[i]);}
-            for(Prop p:props)if(p.halfX()>0&&p.halfZ()>0){double off=originOffsetZ(p);colliders.add(new Collider(p.x()-Math.sin(p.yaw())*off,p.y(),p.z()+Math.cos(p.yaw())*off,p.halfX(),p.halfZ(),p.height(),p.yaw()));}
+            for(Prop p:props)if(p.halfX()>0&&p.halfZ()>0){double off=originOffsetZ(p);colliders.add(new Collider(p.x()-Math.sin(p.yaw())*off,p.y(),p.z()+Math.cos(p.yaw())*off,p.halfX(),p.halfZ(),p.mesh().equals("level_lived_sideboard")?.85:p.height(),p.yaw()));}
             // Choose the aged skin after placement/support/collision are finalized.
             // Clean library assets remain available without changing any geometry.
             props.replaceAll(p->new Prop(LivedAssets.worn(p.mesh()),p.room(),p.x(),p.y(),p.z(),p.scale(),p.yaw(),p.halfX(),p.halfZ(),p.height(),LivedAssets.worn(p.support())));
