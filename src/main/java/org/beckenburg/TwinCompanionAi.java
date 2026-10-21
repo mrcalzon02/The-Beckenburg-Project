@@ -42,11 +42,11 @@ public final class TwinCompanionAi {
     public int lastActivityTick(){return lastActivityTick;}
 
     /** A real in-world acoustic event, not perpetual access to hunter locations. */
-    public void heard(int room,double x,double z,LanGhostPursuit.Sound sound,int tick){
+    public void heard(int room,double x,double z,LanGhostPursuit.Sound sound,int tick,MissionWeather.State weather){
         Objects.requireNonNull(sound);
         if(tick<0||!Double.isFinite(x)||!Double.isFinite(z)||room<0
                 ||room>=HouseMap.EXTRACTION_ROOM)return;
-        if(!LanAcoustics.audible(map,pose.room(),room,sound,MissionWeather.State.CLEAR))return;
+        if(!LanAcoustics.audible(map,pose.room(),room,sound,Objects.requireNonNull(weather)))return;
         lastNoiseTick=tick;
         noiseRoom=room;
         noiseX=x;noiseZ=z;
