@@ -4,7 +4,7 @@
 
 A shore-side processing hall connects cold stores, boiler plant and shipping dock. Workers housing sits along the forest edge, linked by a short service-yard loop.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -39,13 +39,13 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | Link | Zones | Clear width | Route / construction note |
 |---|---|---|---|
 | L01 | stage ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L02 | entry ↔ processing | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L03 | entry ↔ wash | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L02 | entry ↔ processing | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L03 | entry ↔ wash | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L04 | wash ↔ boiler | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L05 | boiler ↔ processing | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L06 | processing ↔ cold | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L07 | cold ↔ side-yard | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L08 | side-yard ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L08 | side-yard ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L09 | processing ↔ office | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L10 | office ↔ stores | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L11 | stores ↔ processing | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |

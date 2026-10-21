@@ -66,9 +66,11 @@ def validate(d):
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--partial',action='store_true');args=ap.parse_args()
-    results=[]; folders=set()
+    results=[]; folders=set(); map_ids=set()
     for f in sorted(ROOT.glob('*/layout.json')):
         folders.add(f.parent.name);d=json.loads(f.read_text(encoding='utf-8'));count=validate(d)
+        assert d['id']==f.parent.name.upper() and d['id'] not in map_ids
+        map_ids.add(d['id'])
         ET.parse(f.parent/'plan.svg')
         obj=(f.parent/'blockout.obj').read_text(encoding='utf-8')
         assert obj.count('\no ')==len(d['zones'])
@@ -78,6 +80,9 @@ def main():
     if not args.partial:assert not missing,missing
     catalog=json.loads((ROOT/'catalog.json').read_text(encoding='utf-8'))
     assert len(catalog['maps'])==len(results)
+    assert {m['id'] for m in catalog['maps']}==map_ids
+    roster=(ROOT.parents[2]/'docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md').read_text(encoding='utf-8')
+    assert all(f'WLD-{i:02}' in roster for i in range(1,14))
     report={'status':'partial-pass' if missing else 'planning-checks-pass','maps':results,'missing':missing,
       'limitations':['No runtime geometry or collision loaded.','Route lines are circulation reservations; shell openings, stair geometry, terrain support and clearance require refinement.','No human/AI ghost traversal, game timings, LAN replication, campaign persistence or performance verified.']}
     (ROOT/'verification.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')

@@ -4,7 +4,7 @@
 
 Four unequal ranges frame a real open quadrangle. Public teaching stays on the south/east, library on the west, upper dormitories on the north, and sealed archive below.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 

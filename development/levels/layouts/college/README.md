@@ -4,7 +4,7 @@
 
 Three distinct campus buildings share a compact green: teaching block west, library north, residence/union east. A service tunnel and upper library bridge create alternate routes.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -21,7 +21,7 @@ Planning only. Bounds and links are reservations; walkability, shell constructio
 | lab | Laboratory | [18, 18, 32, 38] | 0 / 3 m | Investigation and ordinary objects |
 | library | Library reading room | [18, 0, 46, 14] | 0 / 3 m | Investigation and ordinary objects |
 | stacks | Library stacks | [18, 0, 46, 14] | 3.6 / 3 m | Investigation and ordinary objects |
-| bridge | Upper campus bridge | [32, 14, 46, 20] | 3.6 / 3 m | Investigation and ordinary objects |
+| bridge | Upper campus bridge | [32, 14, 46, 22] | 3.6 / 3 m | Investigation and ordinary objects |
 | dorm | Dormitory corridor / rooms | [46, 20, 62, 38] | 3.6 / 3 m | Investigation and ordinary objects |
 | res-lobby | Residence stair lobby | [46, 20, 62, 38] | 0 / 3 m | Investigation and ordinary objects |
 | union | Union cafe | [46, 38, 62, 50] | 0 / 3 m | Investigation and ordinary objects |
@@ -43,13 +43,13 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 |---|---|---|---|
 | L01 | stage ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L02 | entry ↔ plaza | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L03 | plaza ↔ lobby | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L03 | plaza ↔ lobby | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L04 | lobby ↔ lecture | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L05 | lecture ↔ lab | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L06 | lab ↔ seminar | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L07 | seminar ↔ lobby | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L08 | lab ↔ library | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L09 | library ↔ res-lobby | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L08 | lab ↔ library | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L09 | library ↔ res-lobby | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L10 | res-lobby ↔ union | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L11 | union ↔ plaza | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L12 | union ↔ admin | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
@@ -60,7 +60,7 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | L17 | bridge ↔ dorm | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L18 | dorm ↔ res-lobby | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L19 | lab ↔ tunnel | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L20 | tunnel ↔ tunnel-west | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L20 | tunnel ↔ tunnel-west | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L21 | tunnel-west ↔ lobby | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 
 ## Arrival and extraction

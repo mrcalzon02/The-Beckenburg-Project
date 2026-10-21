@@ -193,7 +193,12 @@
       "y": 0,
       "height": 12,
       "kind": "outside",
-      "purpose": "Investigation and ordinary objects"
+      "purpose": "Investigation and ordinary objects",
+      "label_point": [
+        7,
+        0,
+        5
+      ]
     },
     {
       "id": "entry",
@@ -207,7 +212,12 @@
       "y": 0,
       "height": 12,
       "kind": "outside",
-      "purpose": "Investigation and ordinary objects"
+      "purpose": "Investigation and ordinary objects",
+      "label_point": [
+        7,
+        0,
+        34
+      ]
     },
     {
       "id": "stage",
@@ -230,7 +240,7 @@
       "a": "r00",
       "b": "r01",
       "kind": "level",
-      "width": 1.5,
+      "width": 1.1,
       "points": [
         [
           23.0,
@@ -238,19 +248,33 @@
           24.5
         ],
         [
+          20.0,
+          0.0,
+          24.0
+        ],
+        [
           16.0,
           0.0,
           23.0
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          20.0,
+          0.0,
+          24.0
+        ],
+        "width_m": 1.1,
+        "along_x": false
+      }
     },
     {
       "id": "L02",
       "a": "r01",
       "b": "r02",
       "kind": "level",
-      "width": 1.5,
+      "width": 1.1,
       "points": [
         [
           16.0,
@@ -260,17 +284,31 @@
         [
           16.0,
           0.0,
+          19.0
+        ],
+        [
+          16.0,
+          0.0,
           15.5
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          16.0,
+          0.0,
+          19.0
+        ],
+        "width_m": 1.1,
+        "along_x": true
+      }
     },
     {
       "id": "L03",
       "a": "r02",
       "b": "r03",
       "kind": "level",
-      "width": 1.5,
+      "width": 1.1,
       "points": [
         [
           16.0,
@@ -278,19 +316,33 @@
           15.5
         ],
         [
+          20.0,
+          0.0,
+          13.5
+        ],
+        [
           23.0,
           0.0,
           13.5
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          20.0,
+          0.0,
+          13.5
+        ],
+        "width_m": 1.1,
+        "along_x": false
+      }
     },
     {
       "id": "L04",
       "a": "r03",
       "b": "r04",
       "kind": "level",
-      "width": 1.5,
+      "width": 1.1,
       "points": [
         [
           23.0,
@@ -298,24 +350,43 @@
           13.5
         ],
         [
+          21.5,
+          0.0,
+          15.0
+        ],
+        [
           23.0,
           0.0,
           18.5
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          21.5,
+          0.0,
+          15.0
+        ],
+        "width_m": 1.1,
+        "along_x": true
+      }
     },
     {
       "id": "L05",
       "a": "r04",
       "b": "r00",
       "kind": "level",
-      "width": 1.5,
+      "width": 1.25,
       "points": [
         [
           23.0,
           0.0,
           18.5
+        ],
+        [
+          21.5,
+          0.0,
+          22.0
         ],
         [
           23.0,
@@ -323,19 +394,33 @@
           24.5
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          21.5,
+          0.0,
+          22.0
+        ],
+        "width_m": 1.25,
+        "along_x": true
+      }
     },
     {
       "id": "L06",
       "a": "r05",
       "b": "r06",
       "kind": "level",
-      "width": 1.5,
+      "width": 1.05,
       "points": [
         [
           23.0,
           3.0,
           19.5
+        ],
+        [
+          20.0,
+          3.0,
+          23.0
         ],
         [
           16.0,
@@ -343,14 +428,23 @@
           23.0
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          20.0,
+          3.0,
+          23.0
+        ],
+        "width_m": 1.05,
+        "along_x": false
+      }
     },
     {
       "id": "L07",
       "a": "r05",
       "b": "r07",
       "kind": "level",
-      "width": 1.5,
+      "width": 1.05,
       "points": [
         [
           23.0,
@@ -358,19 +452,33 @@
           19.5
         ],
         [
+          20.0,
+          3.0,
+          18.2
+        ],
+        [
           16.0,
           3.0,
           15.5
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          20.0,
+          3.0,
+          18.2
+        ],
+        "width_m": 1.05,
+        "along_x": false
+      }
     },
     {
       "id": "L08",
       "a": "r00",
       "b": "grounds",
       "kind": "level",
-      "width": 2,
+      "width": 1.2,
       "points": [
         [
           23.0,
@@ -378,19 +486,43 @@
           24.5
         ],
         [
-          26.5,
+          23.0,
+          0.0,
+          27.0
+        ],
+        [
+          23.0,
+          0.0,
+          28.0
+        ],
+        [
+          7,
+          0.0,
+          28.0
+        ],
+        [
+          7,
           0,
-          16.5
+          5
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          23.0,
+          0.0,
+          27.0
+        ],
+        "width_m": 1.2,
+        "along_x": true
+      }
     },
     {
       "id": "L09",
       "a": "r02",
       "b": "grounds",
       "kind": "level",
-      "width": 2,
+      "width": 1.1,
       "points": [
         [
           16.0,
@@ -398,19 +530,43 @@
           15.5
         ],
         [
-          26.5,
+          16.0,
+          0.0,
+          12.0
+        ],
+        [
+          16.0,
+          0.0,
+          11.0
+        ],
+        [
+          7,
+          0.0,
+          11.0
+        ],
+        [
+          7,
           0,
-          16.5
+          5
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          16.0,
+          0.0,
+          12.0
+        ],
+        "width_m": 1.1,
+        "along_x": true
+      }
     },
     {
       "id": "L10",
       "a": "r10",
       "b": "grounds",
       "kind": "level",
-      "width": 2,
+      "width": 2.4,
       "points": [
         [
           37.0,
@@ -418,19 +574,48 @@
           16.5
         ],
         [
-          26.5,
+          31.0,
+          0.0,
+          16.0
+        ],
+        [
+          30.0,
+          0.0,
+          16.0
+        ],
+        [
+          30.0,
+          0.0,
+          5
+        ],
+        [
+          7,
+          0.0,
+          5
+        ],
+        [
+          7,
           0,
-          16.5
+          5
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          31.0,
+          0.0,
+          16.0
+        ],
+        "width_m": 2.4,
+        "along_x": false
+      }
     },
     {
       "id": "L11",
       "a": "r11",
       "b": "grounds",
       "kind": "level",
-      "width": 2,
+      "width": 1.3,
       "points": [
         [
           35.0,
@@ -438,12 +623,41 @@
           27.5
         ],
         [
-          26.5,
+          31.0,
+          0.0,
+          27.0
+        ],
+        [
+          30.0,
+          0.0,
+          27.0
+        ],
+        [
+          30.0,
+          0.0,
+          5
+        ],
+        [
+          7,
+          0.0,
+          5
+        ],
+        [
+          7,
           0,
-          16.5
+          5
         ]
       ],
-      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source."
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          31.0,
+          0.0,
+          27.0
+        ],
+        "width_m": 1.3,
+        "along_x": false
+      }
     },
     {
       "id": "L12",
@@ -519,14 +733,14 @@
       "width": 2,
       "points": [
         [
-          26.5,
+          7,
           0,
-          16.5
+          5
         ],
         [
-          24.5,
+          7,
           0,
-          40.7
+          34
         ]
       ],
       "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
@@ -539,9 +753,9 @@
       "width": 2,
       "points": [
         [
-          24.5,
+          7,
           0,
-          40.7
+          34
         ],
         [
           26.5,
@@ -635,5 +849,11 @@
     "src/main/java/org/beckenburg/LevelPlans.java (house/farm/school methods, read 2026-10-21)",
     "development/levels/ARCHITECTURAL_REFERENCES.md",
     "docs/environments/THREE_RITUAL_SITES.md"
-  ]
+  ],
+  "source_trace": {
+    "path": "src/main/java/org/beckenburg/LevelPlans.java",
+    "sha256": "b90268837b67f80f001957cba2e518cd9c1a84263955a594fed31de9c8896d60",
+    "method": "farm",
+    "note": "Room bounds, elevations, door centres and stair endpoints traced; outdoor circulation lines and ritual clear areas are planning reservations."
+  }
 }

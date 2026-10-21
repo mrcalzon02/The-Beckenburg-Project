@@ -4,7 +4,7 @@
 
 A stepped pavilion plan: administration faces a daylight court, with a quiet ward west and wet treatment/service spaces east. This replaces the generic cross-wing layout.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 

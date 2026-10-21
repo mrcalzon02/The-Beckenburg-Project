@@ -31,3 +31,13 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 - **WLD-12 / Gallows Pass Railway**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-13 / Greywater Cannery**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **CASTLE / Castle Beckenburg**: 23 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+
+## Full planning pass / visual QA
+
+All 23 packets passed the complete roster check, bounds/overlap checks, connected route graph, two declared cycles per map, three distinct clear rite reservations and van-ramp transform checks. Rendered all 23 SVGs to PNG and inspected the complete contact sheet plus full House, Red Mesa and Marsh plans. Corrected ground support drawing order, moved original exterior labels out of building footprints, retained exact existing door centres/widths and stair endpoints, and routed adjacent-space connections through shared thresholds. Corrected the monastery gatehouse/cloister overlap. These remain planning checks, not runtime navigation acceptance.
+
+The local browser preview could not reach the Windows localhost server, so no browser interaction acceptance is claimed. The portable HTML atlas and rendered PNGs are delivered directly. Package CRC and per-file SHA-256 checks cover the archive. No Java runtime or site unlock changed in the planning pass.
+
+## Next unfinished work after the complete roster
+
+User requested reuse-first construction, normal building sizes with large exposed places, sparse outdoor shrub hiding and real crouching. Follow [REUSE_BUILD_ORDER.md](REUSE_BUILD_ORDER.md). Blackpine is the first build: compact timber/industrial structures, exposed yard and transferable woodland/refuge systems. Crouching was absent at intake; existing hiding was cupboard-only. Implement and verify posture and cover rather than describing a lowered camera as completed crouch collision.

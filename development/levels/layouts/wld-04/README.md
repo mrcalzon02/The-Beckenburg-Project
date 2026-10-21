@@ -4,7 +4,7 @@
 
 A small hillside station clusters around a steep but bounded path and a tall lookout. Investigations span hut, ruined station and clearing; the tower is an optional risky observation branch.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -38,7 +38,7 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | Link | Zones | Clear width | Route / construction note |
 |---|---|---|---|
 | L01 | stage ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L02 | entry ↔ lower | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L02 | entry ↔ lower | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L03 | lower ↔ bend | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L04 | bend ↔ clearing | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L05 | clearing ↔ hut | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |

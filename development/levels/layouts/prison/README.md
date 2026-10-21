@@ -4,7 +4,7 @@
 
 Two parallel cell blocks face a bounded exercise yard. Administration forms a front bar and mess/medical spaces close the rear, giving a legible perimeter circuit.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -20,7 +20,7 @@ Planning only. Bounds and links are reservations; walkability, shell constructio
 | block-a | Main cell block | [10, 22, 22, 58] | 0 / 6.8 m | Investigation and ordinary objects |
 | block-b | Secondary cell block | [46, 22, 58, 58] | 0 / 6.8 m | Investigation and ordinary objects |
 | yard | Exercise yard | [22, 22, 46, 58] | 0 / 3 m | Investigation and ordinary objects |
-| cross | Rear cross passage | [22, 16, 46, 22] | 0 / 3 m | Investigation and ordinary objects |
+| cross | Rear cross passage | [10, 16, 58, 22] | 0 / 3 m | Investigation and ordinary objects |
 | mess | Mess hall | [10, 4, 28, 16] | 0 / 3 m | Investigation and ordinary objects |
 | medical | Infirmary | [28, 4, 46, 16] | 0 / 3 m | Investigation and ordinary objects |
 | chapel | Chapel / visitation | [58, 34, 70, 52] | 0 / 3 m | Investigation and ordinary objects |

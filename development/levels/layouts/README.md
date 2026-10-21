@@ -1,6 +1,8 @@
 # Rough map layout atlas
 
-Planning pass, 21 October 2026. Scope: **nine initial investigation families, thirteen proposed remote sites, and Castle Beckenburg headquarters**. Open [REVIEW.html](REVIEW.html) for the complete visual map list. Each map has an editable `layout.json`, a measured multi-floor `plan.svg`, a readable brief and an OBJ volume study. JSON is the planning authority; derived files are rebuilt with `python development/levels/layouts/build_review.py`.
+Planning pass, 21 October 2026. Scope: **nine initial investigation families, thirteen proposed remote sites, and Castle Beckenburg headquarters**. Open [REVIEW.html](REVIEW.html) for the complete visual map list, [MAP_LIST.md](MAP_LIST.md) for the build backlog, or [ATLAS.png](ATLAS.png) for a single-sheet overview. Each map has an editable `layout.json`, a measured multi-floor `plan.svg`, a readable brief and an OBJ volume study. JSON is the planning authority; derived files are rebuilt with `python development/levels/layouts/build_review.py`.
+
+PNG previews are visual-review snapshots. Regenerate them after changing coordinates using `node development/levels/layouts/render_previews.cjs` in a Node environment with `sharp`; the SVG/JSON workflow uses Python's standard library. The complete review package is also available as [map-layout-atlas.zip](map-layout-atlas.zip).
 
 These are original rough spatial proposals, not playable maps, collision meshes or architectural surveys. House, Farmhouse, School and the locked Church definition are traced from current `LevelPlans.java` architecture. Five families receive distinct replacement proposals for the shared cross-wing prototype. No runtime IDs, availability flags, stage ledger or campaign implementation changes are made.
 

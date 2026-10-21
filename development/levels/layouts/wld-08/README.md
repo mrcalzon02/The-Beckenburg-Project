@@ -4,7 +4,7 @@
 
 A compact ring of insulated prefabs surrounds a flagged service court. A heated tunnel links lab, dormitory and generator while the instrument array remains an exposed optional branch.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -42,21 +42,21 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | L02 | entry ↔ court | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L03 | court ↔ lab | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L04 | lab ↔ store | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L05 | store ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L05 | store ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L06 | court ↔ dorm | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L07 | dorm ↔ mess | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L08 | mess ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L08 | mess ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L09 | court ↔ radio | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L10 | radio ↔ records | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L11 | records ↔ court | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L12 | radio ↔ generator | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L13 | generator ↔ lab | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L14 | records ↔ array | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L15 | array ↔ dorm | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L15 | array ↔ dorm | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L16 | array ↔ shelter | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L17 | lab ↔ tunnel | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L18 | tunnel ↔ dorm | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L19 | tunnel ↔ tunnel-n | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L19 | tunnel ↔ tunnel-n | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L20 | tunnel-n ↔ generator | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 
 ## Arrival and extraction

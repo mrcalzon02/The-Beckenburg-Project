@@ -21,9 +21,11 @@
 <path d="M70.0,609.3 h441.3" stroke="#dfdfd8"/><text x="40.0" y="613.3" class="small">70</text>
 <path d="M70.0,674.1 h441.3" stroke="#dfdfd8"/><text x="40.0" y="678.1" class="small">80</text>
 <path d="M70.0,739.0 h441.3" stroke="#dfdfd8"/><text x="40.0" y="743.0" class="small">90</text>
-<rect x="238.7" y="661.2" width="103.8" height="77.9" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Logging-road van apron; 16 × 12 m; Y 0</title></rect>
 <rect x="238.7" y="583.3" width="103.8" height="77.9" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Camp gate and roadhead; 16 × 12 m; Y 0</title></rect>
 <rect x="212.8" y="401.6" width="155.7" height="181.7" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Stacked-timber yard; 24 × 28 m; Y 0</title></rect>
+<rect x="394.5" y="181.0" width="90.9" height="116.8" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Original foundations; 14 × 18 m; Y 0</title></rect>
+<rect x="212.8" y="323.7" width="155.7" height="77.9" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Cabin trail junction; 24 × 12 m; Y 0</title></rect>
+<rect x="238.7" y="661.2" width="103.8" height="77.9" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Logging-road van apron; 16 × 12 m; Y 0</title></rect>
 <rect x="368.5" y="349.7" width="116.8" height="181.7" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Sawmill floor; 18 × 28 m; Y 0</title></rect>
 <rect x="96.0" y="427.6" width="116.8" height="103.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Mess hall; 18 × 16 m; Y 0</title></rect>
 <rect x="96.0" y="297.8" width="116.8" height="129.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Bunkhouse; 18 × 20 m; Y 0</title></rect>
@@ -31,26 +33,24 @@
 <rect x="329.6" y="219.9" width="64.9" height="77.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Logging cabin; 10 × 12 m; Y 0</title></rect>
 <rect x="368.5" y="531.4" width="90.9" height="77.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Equipment repair shed; 14 × 12 m; Y 0</title></rect>
 <rect x="96.0" y="531.4" width="64.9" height="64.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Washhouse; 10 × 10 m; Y 0</title></rect>
-<rect x="394.5" y="181.0" width="90.9" height="116.8" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Original foundations; 14 × 18 m; Y 0</title></rect>
-<rect x="212.8" y="323.7" width="155.7" height="77.9" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Cabin trail junction; 24 × 12 m; Y 0</title></rect>
 <rect x="212.8" y="181.0" width="90.9" height="64.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Payroll / stores office; 14 × 10 m; Y 0</title></rect>
-<path d="M290.6,700.1 L290.6,622.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M290.6,622.2 L290.6,492.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M290.6,492.4 L154.4,479.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M154.4,479.5 L154.4,362.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L04: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M154.4,362.7 L290.6,362.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L05: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M290.6,362.7 L290.6,492.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L06: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M290.6,362.7 L271.2,284.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L07: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M271.2,284.8 L258.2,213.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L08: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M258.2,213.4 L362.0,258.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L09: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M362.0,258.8 L290.6,362.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L10: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M362.0,258.8 L439.9,239.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L11: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M439.9,239.4 L426.9,440.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L12: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M426.9,440.5 L290.6,492.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L13: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M290.6,492.4 L413.9,570.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L14: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M413.9,570.3 L426.9,440.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L15: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M154.4,479.5 L128.4,563.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L16: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M128.4,563.8 L290.6,622.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L17: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M290.6,700.1 L290.6,661.2 L290.6,622.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M290.6,622.2 L290.6,583.3 L290.6,492.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M290.6,492.4 L212.8,479.5 L154.4,479.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M154.4,479.5 L154.4,427.6 L154.4,362.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L04: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M154.4,362.7 L212.8,362.7 L290.6,362.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L05: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M290.6,362.7 L290.6,401.6 L290.6,492.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L06: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M290.6,362.7 L271.2,323.7 L271.2,284.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L07: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M271.2,284.8 L271.2,245.9 L258.2,213.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L08: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M258.2,213.4 L362.0,258.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L09: Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.</title></path>
+<path d="M362.0,258.8 L290.6,362.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L10: Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.</title></path>
+<path d="M362.0,258.8 L394.5,258.8 L439.9,239.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L11: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M439.9,239.4 L426.9,440.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L12: Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.</title></path>
+<path d="M426.9,440.5 L368.5,466.5 L290.6,492.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L13: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M290.6,492.4 L368.5,557.3 L413.9,570.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L14: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M413.9,570.3 L413.9,531.4 L426.9,440.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L15: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M154.4,479.5 L128.4,531.4 L128.4,563.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L16: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M128.4,563.8 L290.6,622.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L17: Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.</title></path>
 <path d="M426.9,440.5 L388.0,408.1" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L18: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <text x="430.9" y="435.5" class="small">↕ L18</text>
 <circle cx="290.6" cy="700.1" r="10" fill="#f8f7f1" stroke="#536477"/><text x="290.6" y="704.1" text-anchor="middle" class="small">1</text>

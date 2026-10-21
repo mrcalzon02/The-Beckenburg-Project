@@ -4,7 +4,7 @@
 
 A shore street feeds two parallel working piers joined by a cross-dock. Cottages sit on land, work sheds on piles, and a dry tidal undercroft is reached by two guarded descents.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -24,8 +24,8 @@ Planning only. Bounds and links are reservations; walkability, shell constructio
 | net | Net shed | [44, 10, 56, 24] | 0 / 3 m | Investigation and ordinary objects |
 | fish | Fish house | [24, 10, 40, 24] | 0 / 3 m | Investigation and ordinary objects |
 | undercroft | Dry tidal undercroft | [24, 24, 40, 36] | -2.5 / 3 m | Investigation and ordinary objects |
-| west-stair | West shore stair bay | [12, 28, 20, 36] | 0 / 3 m | Investigation and ordinary objects |
-| east-stair | East shore stair bay | [44, 28, 52, 36] | 0 / 3 m | Investigation and ordinary objects |
+| west-stair | West shore stair bay | [12, 28, 24, 38] | 0 / 3 m | Investigation and ordinary objects |
+| east-stair | East shore stair bay | [40, 28, 52, 38] | 0 / 3 m | Investigation and ordinary objects |
 
 ## Routes and retreat
 
@@ -39,8 +39,8 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | Link | Zones | Clear width | Route / construction note |
 |---|---|---|---|
 | L01 | stage ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L02 | entry ↔ cottage-a | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L03 | entry ↔ cottage-b | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L02 | entry ↔ cottage-a | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L03 | entry ↔ cottage-b | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L04 | entry ↔ quay | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L05 | cottage-a ↔ quay | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L06 | cottage-b ↔ quay | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |

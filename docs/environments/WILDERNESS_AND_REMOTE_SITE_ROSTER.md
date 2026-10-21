@@ -4,6 +4,8 @@
 
 ## Design intent
 
+**Rough spatial planning update, 2026-10-21:** all thirteen named sites now have individual measured planning packets in the [all-map layout atlas](../../development/levels/layouts/REVIEW.html). Bounds, floors, circulation cycles, logistics, environmental baselines and three ritual reservations are authored; physical geometry and gameplay remain unimplemented. See the [complete map list](../../development/levels/layouts/MAP_LIST.md) for the nine original families and Castle headquarters as well.
+
 Give every location a memorable proper name, place identity, history, recognizable geometry, unique environmental behavior, and discoverable narrative. A site is not a fixed ghost encounter: its local history and persistent discoveries coexist with scenario-selected ghosts, evidence, anchors, ritual choices, weather, and contracts. Replays must remain meaningfully variable. Outdoor maps should feel remote and exposed without becoming empty expanses or frustrating searches.
 
 The setting already establishes Castle Beckenburg as a persistent operational headquarters during humanity's supernatural reclamation. Region names below are **campaign geography proposals**, not a confirmed world map. Distances, dates, histories, and cross-site connections are fiction awaiting narrative review.

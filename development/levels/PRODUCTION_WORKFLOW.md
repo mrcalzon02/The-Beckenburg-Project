@@ -1,5 +1,7 @@
 # Repeatable authored-level workflow
 
+The 2026-10-21 breadth-first planning pass is recorded in [the all-map layout atlas](layouts/README.md): nine original investigation families, thirteen remote proposals and Castle headquarters each have a separate rough-layout checkpoint. This fulfills the user's planning request before refinement; it does not bypass the construction and acceptance gates below. Individual layout refinement risks and the next unfinished steps are in [layouts/WORKFLOW.md](layouts/WORKFLOW.md).
+
 The current order is House → Farmhouse → School. Mansion, Prison, Asylum, Academy, College and Church stay in production and locked. Reusing a parameterized cross-wing layout does not complete those six locations.
 
 ## 1. Establish the building before the asset list

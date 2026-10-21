@@ -43,26 +43,26 @@
 <path d="M70.0,1302.5 h415.9" stroke="#dfdfd8"/><text x="40.0" y="1306.5" class="small">70</text>
 <path d="M70.0,1371.8 h415.9" stroke="#dfdfd8"/><text x="40.0" y="1375.8" class="small">80</text>
 <path d="M70.0,1441.1 h415.9" stroke="#dfdfd8"/><text x="40.0" y="1445.1" class="small">90</text>
-<rect x="222.5" y="955.9" width="110.9" height="152.5" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main haul junction; 16 × 22 m; Y -6</title></rect>
 <rect x="97.7" y="955.9" width="124.8" height="152.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>West ore room; 18 × 22 m; Y -6</title></rect>
 <rect x="333.4" y="955.9" width="124.8" height="152.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>East ore room; 18 × 22 m; Y -6</title></rect>
-<rect x="167.0" y="872.7" width="221.8" height="83.2" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>North crosscut; 32 × 12 m; Y -6</title></rect>
 <rect x="388.9" y="872.7" width="69.3" height="83.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Collapsed lift barrier bay; 10 × 12 m; Y -6</title></rect>
+<rect x="222.5" y="955.9" width="110.9" height="152.5" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main haul junction; 16 × 22 m; Y -6</title></rect>
+<rect x="167.0" y="872.7" width="221.8" height="83.2" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>North crosscut; 32 × 12 m; Y -6</title></rect>
 <rect x="97.7" y="1108.4" width="124.8" height="138.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Ventilation return; 18 × 20 m; Y -6</title></rect>
 <path d="M291.8,1177.7 L278.0,1032.2" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L09: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <text x="282.0" y="1027.2" class="small">↕ L09</text>
-<path d="M278.0,1032.2 L160.1,1032.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L10: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M160.1,1032.2 L278.0,914.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L11: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M278.0,914.3 L395.8,1032.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L12: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M395.8,1032.2 L278.0,1032.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L13: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M278.0,914.3 L423.5,914.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L14: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M278.0,1032.2 L222.5,1032.2 L160.1,1032.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L10: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M160.1,1032.2 L194.8,955.9 L278.0,914.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L11: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M278.0,914.3 L361.1,955.9 L395.8,1032.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L12: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M395.8,1032.2 L333.4,1032.2 L278.0,1032.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L13: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M278.0,914.3 L388.9,914.3 L423.5,914.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L14: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <path d="M160.1,1032.2 L160.1,1032.2" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L15: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <text x="164.1" y="1027.2" class="small">↕ L15</text>
 <path d="M160.1,1032.2 L160.1,1177.7" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L16: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <text x="164.1" y="1172.7" class="small">↕ L16</text>
 <path d="M160.1,1177.7 L291.8,1177.7" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L17: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <text x="164.1" y="1172.7" class="small">↕ L17</text>
-<path d="M160.1,1032.2 L160.1,1177.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L18: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M160.1,1032.2 L160.1,1108.4 L160.1,1177.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L18: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <circle cx="278.0" cy="1032.2" r="10" fill="#f8f7f1" stroke="#536477"/><text x="278.0" y="1036.2" text-anchor="middle" class="small">7</text>
 <circle cx="160.1" cy="1032.2" r="10" fill="#f8f7f1" stroke="#536477"/><text x="160.1" y="1036.2" text-anchor="middle" class="small">8</text>
 <circle cx="395.8" cy="1032.2" r="10" fill="#f8f7f1" stroke="#536477"/><text x="395.8" y="1036.2" text-anchor="middle" class="small">9</text>
@@ -88,21 +88,21 @@
 <path d="M70.0,1992.5 h415.9" stroke="#dfdfd8"/><text x="40.0" y="1996.5" class="small">70</text>
 <path d="M70.0,2061.8 h415.9" stroke="#dfdfd8"/><text x="40.0" y="2065.8" class="small">80</text>
 <path d="M70.0,2131.1 h415.9" stroke="#dfdfd8"/><text x="40.0" y="2135.1" class="small">90</text>
-<rect x="222.5" y="2034.1" width="110.9" height="83.2" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Mine-road van apron; 16 × 12 m; Y 0</title></rect>
 <rect x="222.5" y="1937.0" width="138.6" height="97.0" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Mine gate / surface yard; 20 × 14 m; Y 0</title></rect>
+<rect x="222.5" y="1798.4" width="138.6" height="138.6" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Adit mouth; 20 × 20 m; Y 0</title></rect>
+<rect x="222.5" y="2034.1" width="110.9" height="83.2" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Mine-road van apron; 16 × 12 m; Y 0</title></rect>
 <rect x="97.7" y="1826.1" width="124.8" height="110.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Miners shack; 18 × 16 m; Y 0</title></rect>
 <rect x="361.1" y="1826.1" width="97.0" height="110.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Assay office; 14 × 16 m; Y 0</title></rect>
 <rect x="97.7" y="1715.2" width="83.2" height="110.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Surface stores; 12 × 16 m; Y 0</title></rect>
-<rect x="222.5" y="1798.4" width="138.6" height="138.6" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Adit mouth; 20 × 20 m; Y 0</title></rect>
 <rect x="361.1" y="1715.2" width="97.0" height="110.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Surface washhouse; 14 × 16 m; Y 0</title></rect>
-<path d="M278.0,2075.7 L291.8,1985.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M291.8,1985.6 L160.1,1881.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M291.8,1985.6 L409.7,1881.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M160.1,1881.6 L139.3,1770.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L04: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M139.3,1770.7 L291.8,1867.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L05: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M291.8,1867.7 L291.8,1985.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L06: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M409.7,1881.6 L409.7,1770.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L07: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M409.7,1770.7 L291.8,1867.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L08: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M278.0,2075.7 L278.0,2034.1 L291.8,1985.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M291.8,1985.6 L160.1,1881.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.</title></path>
+<path d="M291.8,1985.6 L409.7,1881.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.</title></path>
+<path d="M160.1,1881.6 L139.3,1826.1 L139.3,1770.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L04: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M139.3,1770.7 L291.8,1867.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L05: Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.</title></path>
+<path d="M291.8,1867.7 L291.8,1937.0 L291.8,1985.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L06: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M409.7,1881.6 L409.7,1826.1 L409.7,1770.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L07: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M409.7,1770.7 L361.1,1812.3 L291.8,1867.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L08: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <path d="M291.8,1867.7 L278.0,1722.2" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L09: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <text x="295.8" y="1862.7" class="small">↕ L09</text>
 <path d="M160.1,1867.7 L291.8,1867.7" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L17: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>

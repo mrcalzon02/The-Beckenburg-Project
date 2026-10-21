@@ -4,7 +4,7 @@
 
 Two short woodland trail loops link readable tent clusters, ranger services and lake frontage. The lake is a hard boundary, with no required swimming or boat traversal.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -38,19 +38,19 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | Link | Zones | Clear width | Route / construction note |
 |---|---|---|---|
 | L01 | stage ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L02 | entry ↔ ranger | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L03 | entry ↔ bath | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L04 | ranger ↔ camp-a | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L05 | camp-a ↔ pavilion | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L06 | pavilion ↔ bath | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L07 | pavilion ↔ camp-b | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L08 | camp-b ↔ junction | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L09 | junction ↔ camp-a | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L10 | camp-a ↔ camper | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L02 | entry ↔ ranger | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L03 | entry ↔ bath | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L04 | ranger ↔ camp-a | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L05 | camp-a ↔ pavilion | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L06 | pavilion ↔ bath | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L07 | pavilion ↔ camp-b | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L08 | camp-b ↔ junction | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L09 | junction ↔ camp-a | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L10 | camp-a ↔ camper | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L11 | junction ↔ shore | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L12 | shore ↔ dock | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L13 | shore ↔ creek | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L14 | creek ↔ camp-b | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L13 | shore ↔ creek | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L14 | creek ↔ camp-b | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L15 | ranger ↔ store | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 
 ## Arrival and extraction

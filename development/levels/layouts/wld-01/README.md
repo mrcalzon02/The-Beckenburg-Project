@@ -4,7 +4,7 @@
 
 A horseshoe of working buildings around a log yard, with a separate cabin path and original foundations beyond the sawmill. Distinct roofs and yard landmarks bound the search.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -46,15 +46,15 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | L06 | trail ↔ yard | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L07 | trail ↔ cabin-a | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L08 | cabin-a ↔ store | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L09 | store ↔ cabin-b | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L10 | cabin-b ↔ trail | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L09 | store ↔ cabin-b | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L10 | cabin-b ↔ trail | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L11 | cabin-b ↔ foundations | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L12 | foundations ↔ mill | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L12 | foundations ↔ mill | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L13 | mill ↔ yard | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L14 | yard ↔ shed | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L15 | shed ↔ mill | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L16 | mess ↔ wash | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L17 | wash ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L17 | wash ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L18 | mill ↔ mill-deck | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 
 ## Arrival and extraction

@@ -4,7 +4,7 @@
 
 A bounded canyon floor rises through a switchback terrace into fictional cliff dwellings and branching caves. Modern expedition traces provide the investigation installations.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -49,10 +49,10 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | L09 | dwellings ↔ gallery | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L10 | gallery ↔ fork | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L11 | fork ↔ chamber | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L12 | chamber ↔ upper-path | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L12 | chamber ↔ upper-path | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L13 | gallery ↔ lower-cave | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L14 | lower-cave ↔ return | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L15 | return ↔ lower-path | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L15 | return ↔ lower-path | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L16 | gallery ↔ alcove | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 
 ## Arrival and extraction

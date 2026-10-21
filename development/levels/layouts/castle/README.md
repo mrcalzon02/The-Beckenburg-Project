@@ -4,7 +4,7 @@
 
 A complete proposed headquarters plan around a courtyard: briefing and dispatch at the south gate, archive and lodging west, armory/workshop/infirmary east, sanctuary and research north, protected training annex beyond the archive.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -50,7 +50,7 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | L01 | stage ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L02 | entry ↔ court | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L03 | entry ↔ great | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L04 | great ↔ map | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L04 | great ↔ map | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L05 | map ↔ court | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L06 | great ↔ dining | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L07 | dining ↔ map | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
@@ -66,7 +66,7 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | L17 | radio ↔ research | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L18 | research ↔ chapel | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L19 | chapel ↔ north | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L20 | archive ↔ north | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L20 | west ↔ north | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L21 | west ↔ upper | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L22 | upper ↔ lodging | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L23 | upper ↔ restoration | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |

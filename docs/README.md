@@ -1,6 +1,10 @@
 # The Beckenburg Project — Master Game Design Document
 Version: 0.2, updated 2026-10-15. **Solo gameplay alpha source implemented and committed**: nine-zone Java 17-targeted Swing/software-3D case with an AI Spirit, field tools, wards, cleansing, extraction and local rewards. Source implementation commit: [`0a1f8a0`](https://github.com/mrcalzon02/HB-TTRPG-tools/commit/0a1f8a0dd3ae56f233d50f70a0d6a0fccd237f0f); headless and Linux virtual-display tests passed locally. This is **not** a finished Windows release, 3v1 LAN game or human/AI parity implementation. The approved concept PNGs remain independently archived locally but **not verified as GitHub image blobs or visible gallery assets**; see [artwork archive status](art/ASSET_ARCHIVAL_STATUS.md).
 
+## All-map rough layouts (2026-10-21)
+
+The [rough layout atlas](../development/levels/layouts/REVIEW.html) and [complete map list](../development/levels/layouts/MAP_LIST.md) cover all nine original families, thirteen remote proposals and the Castle Beckenburg headquarters expansion. Every location has measured space reservations, floor diagrams, route cycles, van staging, three rite areas and refinement notes, with an individual layout commit. These are planning artifacts; they do not unlock maps or establish playable geometry, campaign implementation or shipping acceptance.
+
 ## Castle and campaign UI implementation / ritual requirements (2026-10-20)
 
 The [castle readiness/tutorial audit](environments/CASTLE_TUTORIAL_AND_READINESS.md) distinguishes the real walkable castle and new HQ orientation from unfinished training annex and headquarters features. The [three differentiated ritual protocols](RITUAL_PROTOCOLS_DETAILED.md) enumerate Banishment, Cleansing and Absolution preparation, equipment, phases, counterplay and tests. A first campaign contract board is in source, but **persistent campaign story, hired NPC allies, ghost campaign and fully distinct rituals remain future work**.

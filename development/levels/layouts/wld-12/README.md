@@ -4,7 +4,7 @@
 
 A bounded railway cutting runs past derailed coaches to a tunnel. A maintenance siding path parallels the track, while a guarded trestle has a service walkway beneath its deck.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -39,23 +39,23 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | Link | Zones | Clear width | Route / construction note |
 |---|---|---|---|
 | L01 | stage ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L02 | entry ↔ signal | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L02 | entry ↔ signal | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L03 | signal ↔ cutting | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L04 | entry ↔ siding | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L05 | cutting ↔ coach-a | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L04 | entry ↔ siding | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L05 | cutting ↔ coach-a | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L06 | coach-a ↔ west-return | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L07 | west-return ↔ signal | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L08 | cutting ↔ coach-b | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L08 | cutting ↔ coach-b | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L09 | coach-b ↔ siding | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L10 | cutting ↔ trestle | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L11 | trestle ↔ tunnel | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L12 | tunnel ↔ refuge | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L13 | refuge ↔ crossing | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L14 | crossing ↔ siding | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L14 | crossing ↔ siding | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L15 | siding ↔ store | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L16 | trestle ↔ lower | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L17 | lower ↔ west-return | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L18 | crossing ↔ trestle | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L18 | crossing ↔ trestle | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 
 ## Arrival and extraction
 

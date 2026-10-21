@@ -37,35 +37,35 @@
 <path d="M70.0,1246.1 h541.0" stroke="#dfdfd8"/><text x="40.0" y="1250.1" class="small">40</text>
 <path d="M70.0,1339.3 h541.0" stroke="#dfdfd8"/><text x="40.0" y="1343.3" class="small">50</text>
 <path d="M70.0,1432.6 h541.0" stroke="#dfdfd8"/><text x="40.0" y="1436.6" class="small">60</text>
+<rect x="144.6" y="882.3" width="429.1" height="345.1" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Rear grounds / exterior; 46 × 37 m; Y 0</title></rect>
+<rect x="107.3" y="1227.4" width="466.4" height="190.3" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Approach / arrival; 50 × 20.4 m; Y 0</title></rect>
+<rect x="284.5" y="1292.7" width="149.2" height="111.9" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Van service apron; 16 × 12 m; Y 0</title></rect>
 <rect x="284.5" y="1171.5" width="74.6" height="56.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Front office and foyer; 8 × 6 m; Y 0</title></rect>
-<rect x="284.5" y="984.9" width="74.6" height="186.5" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main school corridor; 8 × 20 m; Y 0</title></rect>
 <rect x="191.3" y="1096.8" width="93.3" height="130.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Classroom A; 10 × 14 m; Y 0</title></rect>
 <rect x="191.3" y="984.9" width="93.3" height="111.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Science classroom; 10 × 12 m; Y 0</title></rect>
 <rect x="359.1" y="1096.8" width="111.9" height="130.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Cafeteria; 12 × 14 m; Y 0</title></rect>
 <rect x="359.1" y="1040.9" width="56.0" height="56.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Nurse office; 6 × 6 m; Y 0</title></rect>
 <rect x="415.1" y="947.6" width="111.9" height="149.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Gymnasium; 12 × 16 m; Y 0</title></rect>
-<rect x="144.6" y="882.3" width="429.1" height="345.1" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Rear grounds / exterior; 46 × 37 m; Y 0</title></rect>
-<rect x="107.3" y="1227.4" width="466.4" height="190.3" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Approach / arrival; 50 × 20.4 m; Y 0</title></rect>
-<rect x="284.5" y="1292.7" width="149.2" height="111.9" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Van service apron; 16 × 12 m; Y 0</title></rect>
-<path d="M321.8,1199.4 L321.8,1078.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M321.8,1199.4 L237.9,1162.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M321.8,1199.4 L415.1,1162.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M321.8,1078.2 L237.9,1162.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L04: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M321.8,1078.2 L237.9,1040.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L05: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M321.8,1078.2 L387.1,1068.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L06: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M237.9,1162.1 L237.9,1040.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L07: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M415.1,1162.1 L387.1,1068.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L08: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M415.1,1162.1 L471.1,1022.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L09: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M387.1,1068.9 L471.1,1022.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L10: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M321.8,1199.4 L340.5,1322.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L15: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M237.9,1040.9 L359.1,1054.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L16: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M471.1,1022.2 L359.1,1054.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L17: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<rect x="284.5" y="984.9" width="74.6" height="186.5" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main school corridor; 8 × 20 m; Y 0</title></rect>
+<path d="M321.8,1199.4 L321.8,1171.5 L321.8,1078.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M321.8,1199.4 L284.5,1199.4 L237.9,1162.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M321.8,1199.4 L359.1,1199.4 L415.1,1162.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M321.8,1078.2 L284.5,1134.1 L237.9,1162.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L04: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M321.8,1078.2 L284.5,1040.9 L237.9,1040.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L05: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M321.8,1078.2 L359.1,1068.9 L387.1,1068.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L06: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M237.9,1162.1 L237.9,1096.8 L237.9,1040.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L07: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M415.1,1162.1 L387.1,1096.8 L387.1,1068.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L08: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M415.1,1162.1 L443.1,1096.8 L471.1,1022.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L09: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M387.1,1068.9 L415.1,1068.9 L471.1,1022.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L10: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M321.8,1199.4 L321.8,1227.4 L321.8,1236.7 L163.3,1236.7 L163.3,1255.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L15: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M237.9,1040.9 L237.9,984.9 L237.9,975.6 L163.3,975.6 L163.3,910.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L16: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M471.1,1022.2 L471.1,947.6 L471.1,938.3 L163.3,938.3 L163.3,910.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L17: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
 <path d="M298.5,997.0 L298.5,1041.8" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L18: Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.</title></path>
 <text x="302.5" y="992.0" class="small">↕ L18</text>
 <path d="M345.2,1153.7 L345.2,1109.0" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L19: Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.</title></path>
 <text x="349.2" y="1104.0" class="small">↕ L19</text>
-<path d="M359.1,1054.9 L340.5,1322.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L20: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
-<path d="M340.5,1322.6 L359.1,1348.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L21: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M163.3,910.3 L163.3,1255.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L20: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M163.3,1255.4 L359.1,1348.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L21: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
 <circle cx="321.8" cy="1199.4" r="10" fill="#f8f7f1" stroke="#536477"/><text x="321.8" y="1203.4" text-anchor="middle" class="small">1</text>
 <circle cx="321.8" cy="1078.2" r="10" fill="#f8f7f1" stroke="#536477"/><text x="321.8" y="1082.2" text-anchor="middle" class="small">2</text>
 <circle cx="237.9" cy="1162.1" r="10" fill="#f8f7f1" stroke="#536477"/><text x="237.9" y="1166.1" text-anchor="middle" class="small">3</text>
@@ -73,8 +73,8 @@
 <circle cx="415.1" cy="1162.1" r="10" fill="#f8f7f1" stroke="#536477"/><text x="415.1" y="1166.1" text-anchor="middle" class="small">5</text>
 <circle cx="387.1" cy="1068.9" r="10" fill="#f8f7f1" stroke="#536477"/><text x="387.1" y="1072.9" text-anchor="middle" class="small">6</text>
 <circle cx="471.1" cy="1022.2" r="10" fill="#f8f7f1" stroke="#536477"/><text x="471.1" y="1026.2" text-anchor="middle" class="small">7</text>
-<circle cx="359.1" cy="1054.9" r="10" fill="#f8f7f1" stroke="#536477"/><text x="359.1" y="1058.9" text-anchor="middle" class="small">13</text>
-<circle cx="340.5" cy="1322.6" r="10" fill="#f8f7f1" stroke="#536477"/><text x="340.5" y="1326.6" text-anchor="middle" class="small">14</text>
+<circle cx="163.3" cy="910.3" r="10" fill="#f8f7f1" stroke="#536477"/><text x="163.3" y="914.3" text-anchor="middle" class="small">13</text>
+<circle cx="163.3" cy="1255.4" r="10" fill="#f8f7f1" stroke="#536477"/><text x="163.3" y="1259.4" text-anchor="middle" class="small">14</text>
 <circle cx="359.1" cy="1348.7" r="10" fill="#f8f7f1" stroke="#536477"/><text x="359.1" y="1352.7" text-anchor="middle" class="small">15</text>
 <rect x="450.6" y="1001.7" width="41.0" height="41.0" fill="none" stroke="#812c6b" stroke-width="2"/><text x="494.6" y="1022.2" class="label">B</text>
 <rect x="217.4" y="1020.4" width="41.0" height="41.0" fill="none" stroke="#812c6b" stroke-width="2"/><text x="261.4" y="1040.9" class="label">C</text>
@@ -95,14 +95,14 @@
 <path d="M70.0,1936.1 h541.0" stroke="#dfdfd8"/><text x="40.0" y="1940.1" class="small">40</text>
 <path d="M70.0,2029.3 h541.0" stroke="#dfdfd8"/><text x="40.0" y="2033.3" class="small">50</text>
 <path d="M70.0,2122.6 h541.0" stroke="#dfdfd8"/><text x="40.0" y="2126.6" class="small">60</text>
-<rect x="284.5" y="1674.9" width="74.6" height="242.5" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper locker corridor; 8 × 26 m; Y 3.6</title></rect>
 <rect x="191.3" y="1786.8" width="93.3" height="130.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>School library; 10 × 14 m; Y 3.6</title></rect>
 <rect x="191.3" y="1674.9" width="93.3" height="111.9" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Classroom B; 10 × 12 m; Y 3.6</title></rect>
 <rect x="359.1" y="1786.8" width="111.9" height="130.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Assembly hall; 12 × 14 m; Y 3.6</title></rect>
-<path d="M321.8,1796.2 L237.9,1852.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L11: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M321.8,1796.2 L237.9,1730.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L12: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M321.8,1796.2 L415.1,1852.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L13: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
-<path d="M237.9,1852.1 L237.9,1730.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L14: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<rect x="284.5" y="1674.9" width="74.6" height="242.5" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper locker corridor; 8 × 26 m; Y 3.6</title></rect>
+<path d="M321.8,1796.2 L284.5,1852.1 L237.9,1852.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L11: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M321.8,1796.2 L284.5,1749.5 L237.9,1730.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L12: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M321.8,1796.2 L359.1,1852.1 L415.1,1852.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L13: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
+<path d="M237.9,1852.1 L237.9,1786.8 L237.9,1730.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L14: Existing door relation traced from LevelPlans; exact aperture stays in runtime source.</title></path>
 <path d="M298.5,1687.0 L298.5,1731.8" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L18: Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.</title></path>
 <text x="302.5" y="1726.8" class="small">↕ L18</text>
 <circle cx="321.8" cy="1796.2" r="10" fill="#f8f7f1" stroke="#536477"/><text x="321.8" y="1800.2" text-anchor="middle" class="small">8</text>

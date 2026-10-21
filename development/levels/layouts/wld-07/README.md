@@ -4,7 +4,7 @@
 
 A bounded burial ground is organized by a main avenue and memorial ring. Ruined chapel and caretaker cottage face the approach; two ossuary entrances join underground.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -39,8 +39,8 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 |---|---|---|---|
 | L01 | stage ↔ entry | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L02 | entry ↔ avenue | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L03 | entry ↔ chapel | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L04 | entry ↔ cottage | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L03 | entry ↔ chapel | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
+| L04 | entry ↔ cottage | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement. |
 | L05 | chapel ↔ garden | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L06 | garden ↔ avenue | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L07 | avenue ↔ east-graves | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |

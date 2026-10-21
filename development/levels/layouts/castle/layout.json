@@ -352,10 +352,23 @@
         [
           60.0,
           0,
+          84.0
+        ],
+        [
+          60.0,
+          0,
           78.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          60.0,
+          0,
+          84.0
+        ],
+        "clear_width_m": 2
+      }
     },
     {
       "id": "L02",
@@ -370,12 +383,25 @@
           78.0
         ],
         [
+          60.0,
+          0,
+          72.0
+        ],
+        [
           48.0,
           0,
           50.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          60.0,
+          0,
+          72.0
+        ],
+        "clear_width_m": 2
+      }
     },
     {
       "id": "L03",
@@ -390,12 +416,25 @@
           78.0
         ],
         [
+          48.0,
+          0,
+          78.0
+        ],
+        [
           36.0,
           0,
           79.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.0,
+          0,
+          78.0
+        ],
+        "clear_width_m": 2
+      }
     },
     {
       "id": "L04",
@@ -415,7 +454,7 @@
           64.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
     },
     {
       "id": "L05",
@@ -430,12 +469,25 @@
           64.0
         ],
         [
+          24.0,
+          0,
+          64.0
+        ],
+        [
           48.0,
           0,
           50.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          24.0,
+          0,
+          64.0
+        ],
+        "clear_width_m": 2
+      }
     },
     {
       "id": "L06",
@@ -450,12 +502,25 @@
           79.0
         ],
         [
+          24.0,
+          0,
+          79.0
+        ],
+        [
           14.0,
           0,
           79.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          24.0,
+          0,
+          79.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L07",
@@ -472,10 +537,23 @@
         [
           14.0,
           0,
+          72.0
+        ],
+        [
+          14.0,
+          0,
           64.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          14.0,
+          0,
+          72.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L08",
@@ -492,10 +570,23 @@
         [
           21.0,
           0,
+          56.0
+        ],
+        [
+          21.0,
+          0,
           42.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          21.0,
+          0,
+          56.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L09",
@@ -510,12 +601,25 @@
           42.0
         ],
         [
+          18.0,
+          0,
+          42.0
+        ],
+        [
           11.0,
           0,
           42.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          18.0,
+          0,
+          42.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L10",
@@ -530,12 +634,25 @@
           42.0
         ],
         [
+          24.0,
+          0,
+          42.0
+        ],
+        [
           48.0,
           0,
           50.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          24.0,
+          0,
+          42.0
+        ],
+        "clear_width_m": 2
+      }
     },
     {
       "id": "L11",
@@ -550,12 +667,25 @@
           50.0
         ],
         [
+          72.0,
+          0,
+          64.0
+        ],
+        [
           82.0,
           0,
           64.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          72.0,
+          0,
+          64.0
+        ],
+        "clear_width_m": 2
+      }
     },
     {
       "id": "L12",
@@ -572,10 +702,23 @@
         [
           82.0,
           0,
+          56.0
+        ],
+        [
+          82.0,
+          0,
           46.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          82.0,
+          0,
+          56.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L13",
@@ -592,10 +735,23 @@
         [
           82.0,
           0,
+          36.0
+        ],
+        [
+          82.0,
+          0,
           28.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          82.0,
+          0,
+          36.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L14",
@@ -610,12 +766,25 @@
           28.0
         ],
         [
+          72.0,
+          0,
+          30.5
+        ],
+        [
           48.0,
           0,
           30.5
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          72.0,
+          0,
+          30.5
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L15",
@@ -632,10 +801,23 @@
         [
           48.0,
           0,
+          30.5
+        ],
+        [
+          48.0,
+          0,
           50.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.0,
+          0,
+          30.5
+        ],
+        "clear_width_m": 2
+      }
     },
     {
       "id": "L16",
@@ -652,10 +834,23 @@
         [
           65.0,
           0,
+          28.0
+        ],
+        [
+          65.0,
+          0,
           20.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          65.0,
+          0,
+          28.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L17",
@@ -670,12 +865,25 @@
           20.0
         ],
         [
+          58.0,
+          0,
+          20.0
+        ],
+        [
           50.0,
           0,
           20.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          58.0,
+          0,
+          20.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L18",
@@ -690,12 +898,25 @@
           20.0
         ],
         [
+          42.0,
+          0,
+          20.0
+        ],
+        [
           33.0,
           0,
           20.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          42.0,
+          0,
+          20.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L19",
@@ -710,24 +931,9 @@
           20.0
         ],
         [
-          48.0,
+          33.0,
           0,
-          30.5
-        ]
-      ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
-    },
-    {
-      "id": "L20",
-      "a": "archive",
-      "b": "north",
-      "kind": "level",
-      "width": 1.5,
-      "points": [
-        [
-          11.0,
-          0,
-          42.0
+          28.0
         ],
         [
           48.0,
@@ -735,7 +941,48 @@
           30.5
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          33.0,
+          0,
+          28.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L20",
+      "a": "west",
+      "b": "north",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          0,
+          42.0
+        ],
+        [
+          24.0,
+          0,
+          30.5
+        ],
+        [
+          48.0,
+          0,
+          30.5
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          24.0,
+          0,
+          30.5
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L21",
@@ -772,12 +1019,25 @@
           50.0
         ],
         [
+          18.0,
+          3.6,
+          42.0
+        ],
+        [
           11.0,
           3.6,
           42.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          18.0,
+          3.6,
+          42.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L23",
@@ -836,12 +1096,25 @@
           42.0
         ],
         [
+          4.0,
+          0,
+          49.0
+        ],
+        [
           -11.0,
           0,
           49.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          4.0,
+          0,
+          49.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L26",
@@ -858,10 +1131,23 @@
         [
           -21.0,
           0,
+          42.0
+        ],
+        [
+          -21.0,
+          0,
           35.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          -21.0,
+          0,
+          42.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L27",
@@ -878,10 +1164,23 @@
         [
           -11.0,
           0,
+          42.0
+        ],
+        [
+          -11.0,
+          0,
           35.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          -11.0,
+          0,
+          42.0
+        ],
+        "clear_width_m": 1.5
+      }
     },
     {
       "id": "L28",
@@ -898,10 +1197,23 @@
         [
           -1.0,
           0,
+          42.0
+        ],
+        [
+          -1.0,
+          0,
           35.0
         ]
       ],
-      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          -1.0,
+          0,
+          42.0
+        ],
+        "clear_width_m": 1.5
+      }
     }
   ],
   "loops": [

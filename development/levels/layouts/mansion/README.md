@@ -4,7 +4,7 @@
 
 An asymmetric service court beside a formal reception wing; grand stair and attic are offset from the kitchen servants route.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -21,7 +21,7 @@ Planning only. Bounds and links are reservations; walkability, shell constructio
 | ballroom | Ballroom | [36, 27, 54, 55] | 0 / 7.2 m | Investigation and ordinary objects |
 | dining | Dining hall | [36, 15, 54, 27] | 0 / 3 m | Investigation and ordinary objects |
 | scullery | Scullery / kitchen | [36, 5, 54, 15] | 0 / 3 m | Investigation and ordinary objects |
-| service | Servants corridor | [28, 15, 36, 45] | 0 / 3 m | Investigation and ordinary objects |
+| service | Servants corridor | [28, 5, 36, 45] | 0 / 3 m | Investigation and ordinary objects |
 | garden | Walled rear garden | [4, 5, 28, 27] | 0 / 3 m | Investigation and ordinary objects |
 | greenhouse | Greenhouse | [4, 5, 16, 15] | 0 / 3 m | Investigation and ordinary objects |
 | gallery | Upper gallery | [20, 27, 28, 55] | 3.6 / 3 m | Investigation and ordinary objects |
@@ -54,7 +54,7 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 | L11 | ballroom ↔ foyer | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L12 | library ↔ garden | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L13 | garden ↔ greenhouse | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
-| L14 | garden ↔ scullery | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
+| L14 | garden ↔ service | 2 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L15 | stair ↔ gallery | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L16 | gallery ↔ suite | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |
 | L17 | gallery ↔ servants | 1.5 m | Reserve a supported route and actual boundary opening; centre line is schematic. |

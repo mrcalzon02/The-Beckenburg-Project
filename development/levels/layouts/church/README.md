@@ -4,7 +4,7 @@
 
 Trace of current authored architecture for review. Preserve its measured footprint and floor elevations while planning the full roster.
 
-[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
+[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)
 
 Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.
 
@@ -39,18 +39,18 @@ Every listed loop is an authored graph cycle, not a verified physical pursuit ro
 
 | Link | Zones | Clear width | Route / construction note |
 |---|---|---|---|
-| L01 | r00 ↔ r01 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L02 | r00 ↔ r02 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L03 | r00 ↔ r03 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L04 | r00 ↔ r04 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L01 | r00 ↔ r01 | 1.8 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L02 | r00 ↔ r02 | 1.1 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L03 | r00 ↔ r03 | 1.1 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L04 | r00 ↔ r04 | 2 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
 | L05 | r00 ↔ r05 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L06 | r05 ↔ r06 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L07 | r04 ↔ r06 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L08 | r02 ↔ r03 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L09 | r07 ↔ r08 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L10 | r07 ↔ r09 | 1.5 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L11 | r01 ↔ entry | 2 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
-| L12 | r06 ↔ grounds | 2 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L06 | r05 ↔ r06 | 1.1 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L07 | r04 ↔ r06 | 1.1 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L08 | r02 ↔ r03 | 1.1 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L09 | r07 ↔ r08 | 1.05 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L10 | r07 ↔ r09 | 1.05 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L11 | r01 ↔ entry | 1.8 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
+| L12 | r06 ↔ grounds | 1.1 m | Existing door relation traced from LevelPlans; exact aperture stays in runtime source. |
 | L13 | r00 ↔ r07 | 1.5 m | Existing stair relation; preserve actual separate runtime flights, deck cuts and guards. |
 | L14 | r11 ↔ r00 | 1.5 m | Existing stair relation; preserve actual separate runtime flights, deck cuts and guards. |
 | L15 | r08 ↔ r10 | 1.5 m | Existing stair relation; preserve actual separate runtime flights, deck cuts and guards. |

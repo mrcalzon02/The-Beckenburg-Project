@@ -12,6 +12,8 @@ def esc(value):
     return html.escape(str(value), quote=True)
 
 def center(zone):
+    if 'label_point' in zone:
+        return zone['label_point']
     a,b,c,d = zone['bounds']
     return [(a+c)/2, zone['y'], (b+d)/2]
 
@@ -40,7 +42,9 @@ def render_svg(data):
         for z in range(math.ceil(bx[1]/10)*10, math.floor(bx[3]/10)*10+1, 10):
             px,pz = point(bx[0],z)
             out.append(f'<path d="M{px:.1f},{pz:.1f} h{(bx[2]-bx[0])*scale:.1f}" stroke="#dfdfd8"/><text x="{px-30:.1f}" y="{pz+4:.1f}" class="small">{z}</text>')
-        for i,zone in enumerate(zones,1):
+        # Exterior support may intentionally underlie the original building.
+        # Draw it first so ground-floor room footprints remain readable.
+        for zone in sorted(zones,key=lambda z: {'outside':0,'staging':1,'inside':2,'hazard':2,'circulation':3}[z['kind']]):
             if zone['y'] != y: continue
             a,b,c,d = zone['bounds']; px,pz = point(a,b)
             out.append(f'<rect x="{px:.1f}" y="{pz:.1f}" width="{(c-a)*scale:.1f}" height="{(d-b)*scale:.1f}" fill="{COLORS[zone["kind"]]}" stroke="#536477" stroke-width="1.4"><title>{esc(zone["name"])}; {c-a:g} × {d-b:g} m; Y {y:g}</title></rect>')
@@ -92,7 +96,7 @@ def render_obj(data):
 
 def brief(data):
     out=[f'# {data["title"]}', '',f'**{data["id"]} · {data["region"]} · {data["scale"]} · rough layout v1**', '', data['intent'], '',
-         '[Measured floor plans](plan.svg) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)', '',
+         '[Measured floor plans](plan.svg) · [PNG preview](plan.png) · [Editable coordinates](layout.json) · [Volume study](blockout.obj)', '',
          'Planning only. Bounds and links are reservations; walkability, shell construction and gameplay remain unverified.', '',
          '## Spaces', '', '| ID | Space | X/Z bounds (m) | Standing Y / height | Function |', '|---|---|---|---|---|']
     for z in data['zones']:
@@ -123,6 +127,15 @@ def main():
         cards.append(f'<article data-region="{esc(d["region"])}"><h2>{esc(d["title"])}</h2><p>{esc(d["id"])} · {esc(d["region"])} · {len(d["zones"])} spaces</p><p>{esc(d["intent"])}</p><a href="{rel}/plan.svg" target="_blank"><img loading="lazy" src="{rel}/plan.svg" alt="Measured layout for {esc(d["title"])}"/></a><nav><a href="{rel}/plan.svg">Full plan</a><a href="{rel}/README.md">Brief</a><a href="{rel}/layout.json">Coordinates</a><a href="{rel}/blockout.obj">Volume study</a></nav></article>')
         rows.append({'id':d['id'],'title':d['title'],'folder':rel,'region':d['region'],'zone_count':len(d['zones']),'status':'rough-layout-only'})
     (ROOT/'catalog.json').write_text(json.dumps({'version':1,'status':'planning-only','maps':rows},indent=2)+'\n',encoding='utf-8')
+    map_list=['# Complete proposed map list', '', 'Planning baseline, 21 October 2026. Every row has a rough measured layout and an individual layout commit. Investigation roster: nine original families + thirteen remote proposals; Castle is a separate headquarters.', '',
+      '[Visual atlas](REVIEW.html) · [Contact sheet](ATLAS.png) · [Workflow / refinement gates](WORKFLOW.md)', '',
+      '| Location | Region | Layout | Runtime position at intake |','|---|---|---|---|']
+    for row in rows:
+        status='Existing selectable site; retain current geometry' if row['folder'] in ('house','farmhouse','school') else 'Existing hub; expansion is proposed' if row['folder']=='castle' else 'Locked authored definition; not production accepted' if row['folder']=='church' else 'Locked shared prototype; distinct replacement layout proposed' if row['folder'] in ('mansion','prison','asylum','academy','college') else 'Proposed remote site; no runtime implementation'
+        map_list.append(f'| {row["title"]} | {row["region"]} | [{row["zone_count"]} spaces]({row["folder"]}/README.md) | {status} |')
+    map_list+=['', 'All layouts remain rough planning. A space count is a reservation count, not implemented room or finished-content credit. Mission selection, campaign state and shipping-stage status remain governed by existing runtime code and the stage ledger.', '',
+      'Next: review this complete roster, then refine the House construction reference. Refine remote exemplars in order Blackpine → Hollow Creek → Red Mesa. Each map brief records its own unresolved geometry, reference and fairness questions.']
+    (ROOT/'MAP_LIST.md').write_text('\n'.join(map_list)+'\n',encoding='utf-8')
     (ROOT/'REVIEW.html').write_text('''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Beckenburg — rough map atlas</title><style>
 *{box-sizing:border-box}body{margin:0;background:#121c24;color:#e6e9e9;font:16px/1.55 system-ui,sans-serif}header{max-width:1450px;margin:auto;padding:40px 28px 22px}h1{font-size:38px;line-height:1.15}header p{max-width:960px;color:#bac7cc}input{width:100%;max-width:620px;padding:14px;font:inherit;border:1px solid #5b737f;border-radius:6px;background:#243541;color:white}main{max-width:1450px;margin:auto;padding:20px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:24px}article{background:#21313d;border:1px solid #3e5664;border-radius:10px;overflow:hidden;padding:24px}article h2{margin:0;font-size:25px}article p{color:#c9d2d6}article img{width:100%;max-height:480px;object-fit:contain;background:#f5f4ef;border-radius:4px}nav{display:flex;gap:18px;flex-wrap:wrap;padding-top:12px}a{color:#a8dfe8}a:focus-visible,input:focus-visible{outline:3px solid #ffd17d;outline-offset:4px}footer{padding:30px;text-align:center;color:#aebcc4}@media(max-width:520px){main{grid-template-columns:1fr;padding:12px}header{padding:24px}h1{font-size:30px}article{padding:16px}}
 </style><header><p>THE BECKENBURG PROJECT / 21 OCTOBER 2026</p><h1>Rough map layout atlas</h1><p>''' + str(len(cards)) + ''' measured planning packets. Nine initial investigation families, thirteen remote proposals, one headquarters. Layouts and volume studies remain unverified for runtime traversal. Select a full plan to inspect every floor at readable scale.</p><label for="search">Find a location or region</label><br><input id="search" type="search" placeholder="House, Northern Woodlands, mine…"><p id="count" role="status"></p></header><main>'''+'\n'.join(cards)+'''</main><footer>Editable JSON → measured SVG + brief + OBJ volume study. No playable-site unlocks are implied.</footer><script>const input=document.querySelector('#search'),cards=[...document.querySelectorAll('article')];function filter(){let n=0;cards.forEach(c=>{c.hidden=!c.textContent.toLowerCase().includes(input.value.toLowerCase());if(!c.hidden)n++});document.querySelector('#count').textContent=n+' of '+cards.length+' layouts'}input.addEventListener('input',filter);filter()</script></html>''',encoding='utf-8')
