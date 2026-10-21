@@ -92,6 +92,8 @@ public final class InvestigationSession {
     public String missionId() { return missionId; }
     public int anchorRoom() { return anchorRoom; } // simulation/test authority; do not expose in player HUD
     public int ghostRoom() { return ghost.room(); }
+    /** Render-only identity for local manifestations; never publish to the player's deduction HUD. */
+    GhostIdentity.Type ghostVisualType(){return ghost.type();}
     /** Used only by the local simulated van sensor, never by the hunter's HUD. */
     int ghostEnergy(){return ghost.energy();}
     public java.util.List<SceneRenderer.WorldMark> counterMarks(){
