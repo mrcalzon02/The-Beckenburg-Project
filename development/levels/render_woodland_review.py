@@ -28,7 +28,7 @@ if LINEUP:
     views=[('foliage-one-source-eight-instances',(17,-33,12),(17,0,3.6),True)]
 else:
     path=ROOT/'development/levels/blender/blackpine-dressed.blend';bpy.ops.wm.open_mainfile(filepath=str(path));scene=bpy.context.scene
-    scene['source_of_truth']='BlackpineLevel.java / BlackpineDressing.java / SiteTerrain.java / SceneryInstances.java / FoliageVariation.java'
+    scene['source_of_truth']='BlackpineLevel.java / BlackpineDressing.java / BlackpineStoryDressing.java / BlackpineProductionAssets.java / SiteTerrain.java / SceneryInstances.java / FoliageVariation.java'
     scene['inspection_note']='Daylight renders are art/placement review. Runtime remains the actual night environment.'
     bpy.ops.wm.save_as_mainfile(filepath=str(path),compress=True)
     views=[('blackpine-dressed-daylight-overview',(78,-83,49),(33,-30,1.3),False),

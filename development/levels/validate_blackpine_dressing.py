@@ -5,6 +5,8 @@ ROOT=Path(__file__).resolve().parents[2]
 source=ROOT/'build/level-verification/scenes/blackpine'
 definition=json.loads((source/'definition.json').read_text())
 manifest={'assets':sum([json.loads((ROOT/'development/levels'/name).read_text())['assets'] for name in ['woodland-detail-assets.json','story-detail-assets.json']],[])}
+manifest['assets'] += [json.loads(p.read_text()) for p in sorted((ROOT/'development/levels/production').glob('*.json'))]
+manifest['assets'].append(json.loads((ROOT/'development/levels/lorekeeper-proxy.json').read_text()))
 checked=[]
 for asset in manifest['assets']:
     model=ROOT/f"assets/runtime/models/{asset['id']}.glb"
@@ -33,4 +35,4 @@ result=dict(status='pass',level='blackpine',revision=definition['revision'],runt
     socket_transforms_match=True,all_diffuse_images_packed=True,outdoor_refuges=3,
     blend_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),limitations=['Development dressed site; not unlocked or production accepted.','Daylight art-inspection images do not change runtime night lighting.','No native interactive playthrough or target-hardware performance acceptance.'])
 (ROOT/'development/levels/verification/blackpine-dressed-scene.json').write_text(json.dumps(result,indent=2)+'\n')
-print('PASS all 39 original native assets, hashes, packed images, exact runtime triangles and authored socket positions',flush=True)
+print('PASS all',len(checked),'native assets, hashes, packed images, exact runtime triangles and authored socket positions',flush=True)
