@@ -2248,7 +2248,13 @@ public final class LanHost implements AutoCloseable {
                     String twinSight=LanApparition.frame(map,world.body(i),true,echo.pose(),
                             ghost.manifested(),tick);
                     boolean twinVisible=twinSight.startsWith("APPARITION|VISIBLE|");
-                    reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible,ghostType.ancient()));
+                    if(twinVisible){
+                        reply(hunter,TwinGhostPair.wire(echo,tick,true,ghostType.ancient()));
+                        hunter.hasSeenTwinCompanion=true;
+                    }else if(hunter.hasSeenTwinCompanion){
+                        reply(hunter,TwinGhostPair.wire(echo,tick,false,ghostType.ancient()));
+                        hunter.hasSeenTwinCompanion=false;
+                    }
                 }
                 // Real remote cameras observe their own field of view and LOS.
                 // A CAMERA_ONLY species is not exposed to the direct Hunter feed.
@@ -2264,7 +2270,13 @@ public final class LanHost implements AutoCloseable {
                         var echo=TwinGhostPair.position(map,pose,tick).get(1);
                         boolean second=powered&&insideVan(i)
                             &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested());
-                        reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),second,ghostType,tick));
+                        if(second){
+                            reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),true,ghostType,tick));
+                            hunter.seenTwinOnCamera[camera.owner()]=true;
+                        }else if(hunter.seenTwinOnCamera[camera.owner()]){
+                            reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),false,ghostType,tick));
+                            hunter.seenTwinOnCamera[camera.owner()]=false;
+                        }
                     }
                 }
             }
@@ -2453,6 +2465,9 @@ public final class LanHost implements AutoCloseable {
         String hunterVisual="observer"; // no gameplay authority, never sent to ghost
         long unconfirmedResumeDeadlineNanos; // no unlimited grace via failed reconnect loop
         boolean ready,worldMode,ghostWorldMode,intentionalLeave;
+        // A hidden member B must not identify a Twins case before actual sight.
+        boolean hasSeenTwinCompanion;
+        final boolean[] seenTwinOnCamera=new boolean[HUNTERS];
         long lastGhostPoseSequence=-1,lastGhostActionSequence=-1;
         long pingSentNanos;
         int expectedPongTick=-1,lastPongTick;
