@@ -2250,6 +2250,19 @@ public final class LanHost implements AutoCloseable {
                     boolean twinVisible=twinSight.startsWith("APPARITION|VISIBLE|");
                     reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible,ghostType.ancient()));
                 }
+                // Real remote cameras observe their own field of view and LOS.
+                // A CAMERA_ONLY species is not exposed to the direct Hunter feed.
+                for(LanVideoCameras.Camera camera:cameras.all()){
+                    boolean powered=equipment[camera.owner()].powered("VIDEO_CAMERA")
+                        &&equipment[camera.owner()].batterySecondsLeft("VIDEO_CAMERA")>0;
+                    boolean seen=powered&&LanCameraSight.sees(map,camera,pose,ghost.manifested());
+                    reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick));
+                    if(ghostType.baseType()==GhostIdentity.Type.TWINS){
+                        var echo=TwinGhostPair.position(map,pose,tick).get(1);
+                        boolean second=powered&&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested());
+                        reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),second,ghostType,tick));
+                    }
+                }
             }
         }
     }
