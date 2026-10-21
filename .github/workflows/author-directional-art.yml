@@ -1,0 +1,67 @@
+name: Author approved four-direction sprites
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/author-directional-art.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: beckenburg-four-view-art
+  cancel-in-progress: false
+
+jobs:
+  build-approved-sprites:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic image authoring tools
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0 opencv-python-headless==4.12.0.88 "numpy>=2,<2.3"
+      - name: Extract only approved character source turnarounds
+        run: |
+          python tools/build_directional_art.py
+          test -s assets/runtime/character-directions.zip
+          test -s assets/runtime/character-directions-manifest.json
+          test -s development/verification/character-directions-preview.png
+      - name: Verify standalone artifact entry count and PNG alpha
+        run: |
+          python - <<'PY'
+          import json,zipfile,io
+          from PIL import Image
+          from pathlib import Path
+          data=json.loads(Path('assets/runtime/character-directions-manifest.json').read_text())
+          with zipfile.ZipFile('assets/runtime/character-directions.zip') as z:
+              assert len(z.namelist())==24, len(z.namelist())
+              for name in z.namelist():
+                  image=Image.open(io.BytesIO(z.read(name)))
+                  assert image.mode=='RGBA' and image.size==(128,224),name
+                  assert image.getchannel('A').getextrema()==(0,255),name
+          assert len(data['variants'])==6
+          print('PASS 24 unique directional sprites, exact 128x224 RGBA and six independent source identities')
+          PY
+      - name: Commit original-image-derived runtime sprites, manifest and review image
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/runtime/character-directions.zip assets/runtime/character-directions-manifest.json development/verification/character-directions-preview.png
+          if git diff --cached --quiet; then
+            echo "Approved character artifact unchanged"
+            exit 0
+          fi
+          git commit -m "Package approved Hunter and Elder four-view art with per-source provenance"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          git fetch origin main
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
+          echo "VERIFIED: authored character asset commit $(git rev-parse HEAD)"
