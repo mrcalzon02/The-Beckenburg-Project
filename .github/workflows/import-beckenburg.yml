@@ -1,0 +1,59 @@
+name: Beckenburg one-time standalone migration
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-beckenburg.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: beckenburg-standalone-import
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    steps:
+      - name: Check out the new repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Fetch only Beckenburg paths from the pinned homebrew revision
+        shell: bash
+        env:
+          SOURCE_COMMIT: a4e0da912d4c297830e4c31b03362086310fd4cd
+        run: |
+          set -euo pipefail
+          git clone --filter=blob:none --sparse --no-checkout \
+            https://github.com/mrcalzon02/HB-TTRPG-tools.git "$RUNNER_TEMP/beckenburg-source"
+          git -C "$RUNNER_TEMP/beckenburg-source" sparse-checkout set \
+            software/beckenburg assets/beckenburg docs/beckenburg .github/workflows
+          git -C "$RUNNER_TEMP/beckenburg-source" checkout --detach "$SOURCE_COMMIT"
+          test "$(git -C "$RUNNER_TEMP/beckenburg-source" rev-parse HEAD)" = "$SOURCE_COMMIT"
+
+      - name: Copy game, models, art, documentation, and workflows with SHA-256 verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/import_from_homebrew.py "$RUNNER_TEMP/beckenburg-source" .
+          test -s docs/migration/IMPORT_MANIFEST.json
+          test -s src/main/java/org/beckenburg/InvestigationGame.java
+          test -s assets/runtime/directional-sprites.zip
+          test -s development/levels/blender/house-complete.blend
+
+      - name: Push verified destination source; do not rewrite source repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Import Beckenburg source and authored assets from frozen HB-TTRPG-tools revision"
+          git push origin HEAD:main
