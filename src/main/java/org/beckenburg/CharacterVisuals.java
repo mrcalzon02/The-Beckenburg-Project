@@ -37,8 +37,8 @@ public final class CharacterVisuals {
 
     public static Appearance ghostAppearance(GhostIdentity.Type identity,Variant variant) {
         if(identity==null||variant==null)throw new IllegalArgumentException("missing ghost or variant");
-        if(identity.elder()&&variant!=Variant.BASE)
-            throw new IllegalArgumentException("Elders have no approved alternate-gender master");
+        // Elders have no authored alternate-gender masters yet either:
+        // requesting an incomplete variant retains their exact Elder base art.
         String base=ghost(identity);
         return new Appearance(base,variant,base,variant!=Variant.BASE);
     }
