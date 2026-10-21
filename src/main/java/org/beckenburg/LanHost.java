@@ -1686,7 +1686,10 @@ public final class LanHost implements AutoCloseable {
     }
     /** Hunter-only positional acoustic projection; never a ghost pose or private team feed. */
     private void broadcastGhostSound(LanSound.Cue cue){
-        LanGhostSpatial.Pose pose=ghostPose.pose();
+        broadcastGhostSound(cue,ghostPose.pose());
+    }
+    /** Sound and audio recording must originate from the physical acting Twin. */
+    private void broadcastGhostSound(LanSound.Cue cue,LanGhostSpatial.Pose pose){
         sensorSound(pose.room(),pose.x(),pose.z(),Math.max(1,cue.baseGain/10));
         for(int i=0;i<HUNTERS;i++){
             if((seats[i]==null||!seats[i].worldMode)
@@ -1746,6 +1749,10 @@ public final class LanHost implements AutoCloseable {
         resolveGhostAction(result,-1);
     }
     private void resolveGhostAction(GhostDomain.Resolution result,int requestedDevice){
+        resolveGhostAction(result,requestedDevice,null);
+    }
+    private void resolveGhostAction(GhostDomain.Resolution result,int requestedDevice,
+                                    LanGhostSpatial.Pose soundOrigin){
         if(!result.applied())return;
         map.fixtures().witness(result,tick,requestedDevice);
         map.clutter().haunt(ghostType,result,clutterObservers(),tick);
@@ -1794,7 +1801,10 @@ public final class LanHost implements AutoCloseable {
             case SIGNATURE->LanSound.Cue.SIGNATURE;
             default->null;
         };
-        if(cue!=null)broadcastGhostSound(cue);
+        if(cue!=null){
+            if(soundOrigin==null)broadcastGhostSound(cue);
+            else broadcastGhostSound(cue,soundOrigin);
+        }
         // These are explicitly sound-only variants of *real* accepted haunts:
         // no fabricated evidence packets, no fake footsteps, no guessed ghost coordinates.
         if((result.action()==GhostDomain.Action.DISTURB
@@ -2170,13 +2180,22 @@ public final class LanHost implements AutoCloseable {
             if(twinCompanion!=null&&frenzy.phase()==GhostFrenzy.Phase.CALM){
                 GhostDomain.Action secondary=twinCompanion.chooseActivity(ghost.observe(),tick);
                 if(secondary!=null){
-                    var result=ghost.dispatch(new GhostDomain.Command(
-                        secondary,ghost.room(),++hostGhostActionSequence,GhostDomain.Source.AI));
+                    // The sister's haunting originates where she is standing,
+                    // not the player's room. Still ONE domain, cost, cooldown and
+                    // rite; no second STRIKE or duplicate hit.
+                    var companion=twinCompanion.pose();
+                    boolean heard=false;
+                    for(int seat=0;seat<HUNTERS;seat++)
+                        if((seats[seat]!=null||reserved[seat]!=null)
+                                &&mission.alive(seat)&&hunterRooms[seat]==companion.room()){
+                            heard=true;break;
+                        }
+                    var result=ghost.dispatchCompanionMinor(new GhostDomain.Command(
+                        secondary,companion.room(),++hostGhostActionSequence,
+                        GhostDomain.Source.AI),heard);
                     if(result.applied()){
                         actionCadence.completed(tick,result);
-                        resolveGhostAction(result);
-                        var companion=twinCompanion.pose();
-                        sensorSound(companion.room(),companion.x(),companion.z(),5);
+                        resolveGhostAction(result,-1,companion);
                         Peer twinPlayer=seats[GHOST_SEAT];
                         if(twinPlayer!=null)reply(twinPlayer,
                             "GCOMPANION_ACTION|"+secondary+"|"+tick);
