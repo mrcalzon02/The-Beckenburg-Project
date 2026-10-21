@@ -12,6 +12,7 @@ for folder in ['models','level-textures']:
     shutil.copytree(ROOT/'assets/runtime'/folder,resources/folder,dirs_exist_ok=True)
 classpath=os.pathsep.join([str(BUILD),str(ROOT/'build/posture-classes'),str(ROOT/'build/classes')])
 tests=['TerrainAndRecoveryTest','BlackpineDressingTest','FoliageVariationTest','SceneryInstancesTest','BlackpineGrayboxTest','CrouchAndOutdoorHidingTest','AuthoredLevelPhysicsTest','LevelSurfaceIntegrityTest','InteractionFocusTest','LevelEnclosureTest','GraphicsOptionsTest','WorldViewHandednessTest','HeldDeviceReadoutTest','LanCaseFileHudTest','LanGhostHearingHudTest','LanIncapacitationHudTest','LanTelegraphedHudTest','LanSoundHudTest','ManualEvidenceHudTest']
+tests+=['BlackpineStoryTest']
 results=[]
 if len(sys.argv)>1:tests=[t for t in tests if t in sys.argv[1:]]
 out=ROOT/'development/levels/verification/blackpine-dressing.json'
