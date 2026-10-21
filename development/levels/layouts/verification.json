@@ -1,5 +1,5 @@
 {
-  "status": "partial-pass",
+  "status": "planning-checks-pass",
   "maps": [
     {
       "id": "ACADEMY",
@@ -11,6 +11,12 @@
       "id": "ASYLUM",
       "zones": 16,
       "checks": 229,
+      "result": "pass"
+    },
+    {
+      "id": "CASTLE",
+      "zones": 23,
+      "checks": 381,
       "result": "pass"
     },
     {
@@ -134,9 +140,7 @@
       "result": "pass"
     }
   ],
-  "missing": [
-    "castle"
-  ],
+  "missing": [],
   "limitations": [
     "No runtime geometry or collision loaded.",
     "Route lines are circulation reservations; shell openings, stair geometry, terrain support and clearance require refinement.",

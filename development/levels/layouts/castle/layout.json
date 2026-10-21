@@ -1,0 +1,994 @@
+{
+  "version": 1,
+  "id": "CASTLE",
+  "title": "Castle Beckenburg",
+  "region": "Headquarters",
+  "scale": "Hub / campaign facility expansion",
+  "status": "rough-layout-only",
+  "intent": "A complete proposed headquarters plan around a courtyard: briefing and dispatch at the south gate, archive and lodging west, armory/workshop/infirmary east, sanctuary and research north, protected training annex beyond the archive.",
+  "site_bounds": [
+    -30,
+    8,
+    96,
+    100
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Expedition van departure apron",
+      "bounds": [
+        52,
+        84,
+        68,
+        96
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Gatehouse / arrival court",
+      "bounds": [
+        48,
+        72,
+        72,
+        84
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "court",
+      "name": "Central castle courtyard",
+      "bounds": [
+        24,
+        28,
+        72,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "great",
+      "name": "Great hall / briefing",
+      "bounds": [
+        24,
+        72,
+        48,
+        86
+      ],
+      "y": 0,
+      "height": 6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "map",
+      "name": "Map / assignment office",
+      "bounds": [
+        4,
+        56,
+        24,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dining",
+      "name": "Kitchen / common room",
+      "bounds": [
+        4,
+        72,
+        24,
+        86
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "west",
+      "name": "West service passage",
+      "bounds": [
+        18,
+        28,
+        24,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "archive",
+      "name": "Occult archive / study",
+      "bounds": [
+        4,
+        28,
+        18,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "armory",
+      "name": "Armory / supply shop",
+      "bounds": [
+        72,
+        56,
+        92,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "workshop",
+      "name": "Machine / chemistry workshop",
+      "bounds": [
+        72,
+        36,
+        92,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "infirmary",
+      "name": "Infirmary",
+      "bounds": [
+        72,
+        20,
+        92,
+        36
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "chapel",
+      "name": "Chapel / sanctuary",
+      "bounds": [
+        24,
+        12,
+        42,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "research",
+      "name": "Research laboratory",
+      "bounds": [
+        42,
+        12,
+        58,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "radio",
+      "name": "Radio / network operations",
+      "bounds": [
+        58,
+        12,
+        72,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "upper",
+      "name": "Upper west gallery",
+      "bounds": [
+        18,
+        28,
+        24,
+        72
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lodging",
+      "name": "Investigator accommodation",
+      "bounds": [
+        4,
+        28,
+        18,
+        56
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "restoration",
+      "name": "Restoration gallery",
+      "bounds": [
+        24,
+        72,
+        48,
+        86
+      ],
+      "y": 6.5,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "vault",
+      "name": "Captured relic vault",
+      "bounds": [
+        4,
+        28,
+        18,
+        56
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "train-entry",
+      "name": "Protected training vestibule",
+      "bounds": [
+        -26,
+        42,
+        4,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "train-b",
+      "name": "Banishment training bay",
+      "bounds": [
+        -26,
+        28,
+        -16,
+        42
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "train-c",
+      "name": "Cleansing training bay",
+      "bounds": [
+        -16,
+        28,
+        -6,
+        42
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "train-a",
+      "name": "Absolution training bay",
+      "bounds": [
+        -6,
+        28,
+        4,
+        42
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "north",
+      "name": "North covered walk",
+      "bounds": [
+        24,
+        28,
+        72,
+        33
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          60.0,
+          0,
+          90.0
+        ],
+        [
+          60.0,
+          0,
+          78.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "court",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          60.0,
+          0,
+          78.0
+        ],
+        [
+          48.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "entry",
+      "b": "great",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          60.0,
+          0,
+          78.0
+        ],
+        [
+          36.0,
+          0,
+          79.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "great",
+      "b": "map",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          79.0
+        ],
+        [
+          14.0,
+          0,
+          64.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "map",
+      "b": "court",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          14.0,
+          0,
+          64.0
+        ],
+        [
+          48.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "great",
+      "b": "dining",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          79.0
+        ],
+        [
+          14.0,
+          0,
+          79.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "dining",
+      "b": "map",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          14.0,
+          0,
+          79.0
+        ],
+        [
+          14.0,
+          0,
+          64.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "map",
+      "b": "west",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          14.0,
+          0,
+          64.0
+        ],
+        [
+          21.0,
+          0,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "west",
+      "b": "archive",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          0,
+          42.0
+        ],
+        [
+          11.0,
+          0,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "west",
+      "b": "court",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          21.0,
+          0,
+          42.0
+        ],
+        [
+          48.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "court",
+      "b": "armory",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          48.0,
+          0,
+          50.0
+        ],
+        [
+          82.0,
+          0,
+          64.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "armory",
+      "b": "workshop",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          82.0,
+          0,
+          64.0
+        ],
+        [
+          82.0,
+          0,
+          46.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "workshop",
+      "b": "infirmary",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          82.0,
+          0,
+          46.0
+        ],
+        [
+          82.0,
+          0,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "infirmary",
+      "b": "north",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          82.0,
+          0,
+          28.0
+        ],
+        [
+          48.0,
+          0,
+          30.5
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L15",
+      "a": "north",
+      "b": "court",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          48.0,
+          0,
+          30.5
+        ],
+        [
+          48.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L16",
+      "a": "north",
+      "b": "radio",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          48.0,
+          0,
+          30.5
+        ],
+        [
+          65.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L17",
+      "a": "radio",
+      "b": "research",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          65.0,
+          0,
+          20.0
+        ],
+        [
+          50.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L18",
+      "a": "research",
+      "b": "chapel",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          50.0,
+          0,
+          20.0
+        ],
+        [
+          33.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L19",
+      "a": "chapel",
+      "b": "north",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          33.0,
+          0,
+          20.0
+        ],
+        [
+          48.0,
+          0,
+          30.5
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L20",
+      "a": "archive",
+      "b": "north",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          42.0
+        ],
+        [
+          48.0,
+          0,
+          30.5
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L21",
+      "a": "west",
+      "b": "upper",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          0,
+          42.0
+        ],
+        [
+          21.0,
+          3.6,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.6,
+      "construction": "Reserve at least 5.76 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L22",
+      "a": "upper",
+      "b": "lodging",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          3.6,
+          50.0
+        ],
+        [
+          11.0,
+          3.6,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L23",
+      "a": "upper",
+      "b": "restoration",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          3.6,
+          50.0
+        ],
+        [
+          36.0,
+          6.5,
+          79.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 2.9,
+      "construction": "Reserve at least 4.64 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L24",
+      "a": "archive",
+      "b": "vault",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          42.0
+        ],
+        [
+          11.0,
+          -3,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L25",
+      "a": "archive",
+      "b": "train-entry",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          42.0
+        ],
+        [
+          -11.0,
+          0,
+          49.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L26",
+      "a": "train-entry",
+      "b": "train-b",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          -11.0,
+          0,
+          49.0
+        ],
+        [
+          -21.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L27",
+      "a": "train-entry",
+      "b": "train-c",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          -11.0,
+          0,
+          49.0
+        ],
+        [
+          -11.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L28",
+      "a": "train-entry",
+      "b": "train-a",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          -11.0,
+          0,
+          49.0
+        ],
+        [
+          -1.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    }
+  ],
+  "loops": [
+    [
+      "entry",
+      "great",
+      "map",
+      "court",
+      "entry"
+    ],
+    [
+      "court",
+      "armory",
+      "workshop",
+      "infirmary",
+      "north",
+      "court"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      60.0,
+      0,
+      90.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        60.0,
+        0,
+        86.372
+      ],
+      [
+        60.0,
+        0,
+        78.0
+      ]
+    ],
+    "logistics": "Existing shared van on a level service apron/roadhead; no new transport mechanic."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "train-b",
+      "point": [
+        -21.0,
+        0,
+        35.0
+      ],
+      "installation": "Isolated practice containment installation"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "train-c",
+      "point": [
+        -11.0,
+        0,
+        35.0
+      ],
+      "installation": "Isolated practice purification installation"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "train-a",
+      "point": [
+        -1.0,
+        0,
+        35.0
+      ],
+      "installation": "Isolated practice remembrance installation"
+    }
+  ],
+  "circulation": "Arrival gives immediate access to briefing, contracts, equipment and departure. Courtyard loop links every core service without a compulsory upstairs tour. Lodging/restoration/vault are bounded side branches; protected training is isolated from peaceful headquarters circulation.",
+  "systems": "Facility districts have their own circuits, ventilation and acoustic transitions. Chapel, medical, workshop and relic storage remain different functions. Castle restoration may change decoration and service availability, never silently erase the only route or unlock a live hunt in the refuge.",
+  "campaign": "Assignment office holds regional dossiers; archive records discoveries; armory owns gear; infirmary supports recovery; lodging supports future hired allies; workshop/research/restoration support later services. Research and companion behavior, purchases, persistence and hiring remain separate unimplemented systems.",
+  "refine": [
+    "This is an expansion reservation for the existing hub, not a claim that the current CastleHub geometry matches these coordinates. Preserve working stations when integrating.",
+    "Split chemistry work from relic containment and occupied accommodation with real construction; review source references before building.",
+    "Upper restoration at +6.5 m needs a reserved connecting stair tower, real return flights and clear gallery bearings; no invented room teleport.",
+    "Train three protocols in physically separated bays with real reset/egress controls; training should grant no free campaign rewards."
+  ],
+  "sources": [
+    "docs/locations-environments.md (Castle facilities)",
+    "docs/environments/CASTLE_TUTORIAL_AND_READINESS.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/RITUAL_PROTOCOLS_DETAILED.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ]
+}
