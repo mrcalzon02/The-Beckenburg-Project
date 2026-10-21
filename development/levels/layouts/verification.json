@@ -14,6 +14,12 @@
       "result": "pass"
     },
     {
+      "id": "COLLEGE",
+      "zones": 17,
+      "checks": 231,
+      "result": "pass"
+    },
+    {
       "id": "FARMHOUSE",
       "zones": 15,
       "checks": 187,
@@ -47,7 +53,6 @@
   "missing": [
     "castle",
     "church",
-    "college",
     "wld-01",
     "wld-02",
     "wld-03",

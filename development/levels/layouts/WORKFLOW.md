@@ -15,3 +15,4 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 - **PRISON / Beckenburg Penitentiary**: 16 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **ASYLUM / St. Dymphna Hospital**: 16 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **ACADEMY / St. Alban Academy**: 17 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+- **COLLEGE / Beckenburg College**: 17 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
