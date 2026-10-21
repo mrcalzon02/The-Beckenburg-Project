@@ -11,7 +11,7 @@ public final class LegacySiteStoryCapture {
                 var spawn=map.spawn(s.room());LevelVisualCapture.capture(scene,map,out,s.style().toLowerCase(Locale.ROOT),spawn.x(),spawn.y(),spawn.z(),s.x(),s.y()+.06,s.z());
             }
             var eye=map.van().world(0,.8);var target=map.van().world(.83,.8);
-            LevelVisualCapture.capture(scene,map,out,"van-case-clipboard",eye.x(),VanStaging.FLOOR_Y,eye.z(),target.x(),VanStaging.FLOOR_Y+.90,target.z());
+            LevelVisualCapture.capture(scene,map,out,"van-case-clipboard",eye.x(),VanStaging.FLOOR_Y,eye.z(),target.x(),VanStaging.FLOOR_Y+.56,target.z());
         }
     }
 }
