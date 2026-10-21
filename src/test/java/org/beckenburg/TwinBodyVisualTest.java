@@ -25,6 +25,16 @@ public final class TwinBodyVisualTest {
             check(a.getColorModel().hasAlpha()&&b.getColorModel().hasAlpha(),
                 "Independent transparent body contours");
             check(fingerprint(a)!=fingerprint(b),"Twins were incorrectly flattened into the same sprite");
+            // Golden frames were visually compared with the approved master, not
+            // accepted merely for alpha coverage or dimensions. GrabCut previously
+            // erased Twin A's side-view hair/feet and Twin B's three-quarter feet.
+            // Preserve these exact source-derived silhouettes in the shipped JAR.
+            if(facing==2)
+                check(fingerprint(a)==-6517389577909631165L,
+                    "Twin A side-view head/feet crop differs from approved complete art");
+            if(facing==5)
+                check(fingerprint(b)==4819383925312170537L,
+                    "Twin B three-quarter feet crop differs from approved complete art");
             check(DirectionalSprites.frame("ancient_twins_a",facing)==a,
                 "Ancient member A must reuse its proper parent, not a third person");
             check(DirectionalSprites.frame("ancient_twins_b",facing)==b,
