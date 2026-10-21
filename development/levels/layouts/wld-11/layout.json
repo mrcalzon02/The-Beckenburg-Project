@@ -1,0 +1,566 @@
+{
+  "version": 1,
+  "id": "WLD-11",
+  "title": "Mourning Marsh",
+  "region": "Coastal Territories",
+  "scale": "Medium / stilt settlement",
+  "status": "rough-layout-only",
+  "intent": "A small settlement straddles a main raised boardwalk and a parallel service boardwalk. Homes, chapel and warehouse are reachable on dry supported decks; flooded terrain is a visible boundary.",
+  "site_bounds": [
+    8,
+    -10,
+    70,
+    92
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Causeway van apron",
+      "bounds": [
+        24,
+        76,
+        40,
+        88
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Raised causeway landing",
+      "bounds": [
+        24,
+        62,
+        40,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "main",
+      "name": "Main settlement boardwalk",
+      "bounds": [
+        28,
+        14,
+        32,
+        62
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "service",
+      "name": "Service boardwalk",
+      "bounds": [
+        48,
+        14,
+        52,
+        62
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "south-deck",
+      "name": "South crossing deck",
+      "bounds": [
+        28,
+        56,
+        52,
+        62
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "north-deck",
+      "name": "North crossing deck",
+      "bounds": [
+        28,
+        8,
+        52,
+        14
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "house-a",
+      "name": "West stilt house",
+      "bounds": [
+        12,
+        38,
+        28,
+        54
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "house-b",
+      "name": "East stilt house",
+      "bounds": [
+        52,
+        38,
+        66,
+        54
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "chapel",
+      "name": "Settlement chapel",
+      "bounds": [
+        12,
+        16,
+        28,
+        34
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "warehouse",
+      "name": "Flooded warehouse dry deck",
+      "bounds": [
+        32,
+        14,
+        48,
+        36
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "shack",
+      "name": "Fishing shack",
+      "bounds": [
+        52,
+        18,
+        64,
+        32
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "ferry",
+      "name": "Ferry stage",
+      "bounds": [
+        28,
+        -6,
+        40,
+        8
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "pump",
+      "name": "Pump / wash shelter",
+      "bounds": [
+        52,
+        54,
+        64,
+        64
+      ],
+      "y": 1.2,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          82.0
+        ],
+        [
+          32.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "south-deck",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          69.0
+        ],
+        [
+          40.0,
+          1.2,
+          59.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 1.2,
+      "construction": "Reserve at least 1.92 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L03",
+      "a": "south-deck",
+      "b": "main",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          40.0,
+          1.2,
+          59.0
+        ],
+        [
+          30.0,
+          1.2,
+          38.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "south-deck",
+      "b": "service",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          40.0,
+          1.2,
+          59.0
+        ],
+        [
+          50.0,
+          1.2,
+          38.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "main",
+      "b": "north-deck",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          1.2,
+          38.0
+        ],
+        [
+          40.0,
+          1.2,
+          11.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "north-deck",
+      "b": "service",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          40.0,
+          1.2,
+          11.0
+        ],
+        [
+          50.0,
+          1.2,
+          38.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "main",
+      "b": "house-a",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          1.2,
+          38.0
+        ],
+        [
+          20.0,
+          1.2,
+          46.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "service",
+      "b": "house-b",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          50.0,
+          1.2,
+          38.0
+        ],
+        [
+          59.0,
+          1.2,
+          46.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "main",
+      "b": "chapel",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          1.2,
+          38.0
+        ],
+        [
+          20.0,
+          1.2,
+          25.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "main",
+      "b": "warehouse",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          1.2,
+          38.0
+        ],
+        [
+          40.0,
+          1.2,
+          25.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "warehouse",
+      "b": "service",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          40.0,
+          1.2,
+          25.0
+        ],
+        [
+          50.0,
+          1.2,
+          38.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "service",
+      "b": "shack",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          50.0,
+          1.2,
+          38.0
+        ],
+        [
+          58.0,
+          1.2,
+          25.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "north-deck",
+      "b": "ferry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          40.0,
+          1.2,
+          11.0
+        ],
+        [
+          34.0,
+          1.2,
+          1.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "service",
+      "b": "pump",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          50.0,
+          1.2,
+          38.0
+        ],
+        [
+          58.0,
+          1.2,
+          59.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    }
+  ],
+  "loops": [
+    [
+      "south-deck",
+      "main",
+      "north-deck",
+      "service",
+      "south-deck"
+    ],
+    [
+      "main",
+      "warehouse",
+      "service",
+      "north-deck",
+      "main"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      82.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        78.372
+      ],
+      [
+        32.0,
+        0,
+        69.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "warehouse",
+      "point": [
+        40.0,
+        1.2,
+        25.0
+      ],
+      "installation": "Dry-deck containment frame"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "pump",
+      "point": [
+        58.0,
+        1.2,
+        59.0
+      ],
+      "installation": "Pump-shelter purification vessel"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "chapel",
+      "point": [
+        20.0,
+        1.2,
+        25.0
+      ],
+      "installation": "Settlement remembrance stand"
+    }
+  ],
+  "circulation": "Parallel boardwalks and two crossings keep every required building connected without entering water. A broad graded entrance rises to the +1.2 m decks. Ferry stage is reachable scenery, not extraction transport; return remains to the land-based van.",
+  "systems": "Flooded lower warehouse floor is visible below the dry route and excluded from navigation. Water reflection, insects, pumps and timber creak have ordinary sources; fog cannot hide all route markers.",
+  "campaign": "Property deeds describe homes lost to water; the actual reachable homes remain fixed. Reclaimed settlement contracts may revisit records without requiring a simulated receding tide.",
+  "refine": [
+    "Replace long boardwalk envelopes with measured supports, continuous deck meshes and invariant rails; ensure 2 m clear width.",
+    "Define flood plane and collision once per mission; no required wading, swimming or leap.",
+    "The entrance rise needs a real supported ramp and level intermediate landings."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ]
+}

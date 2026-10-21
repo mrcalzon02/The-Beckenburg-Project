@@ -27,3 +27,4 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 - **WLD-08 / Northwatch Research Station**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-09 / Blackwater Hydroelectric Dam**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-10 / Monastery of Ashen Bells**: 17 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+- **WLD-11 / Mourning Marsh**: 13 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
