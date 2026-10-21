@@ -21,11 +21,16 @@ public final class LanTwinSightingPrivacyTest {
         }
         String await(String prefix)throws Exception{
             long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(13);
+            String lastRejection="";
             while(System.nanoTime()<deadline){
                 String msg=inbox.poll(90,TimeUnit.MILLISECONDS);
                 if(msg!=null&&msg.startsWith(prefix))return msg;
+                if(msg!=null&&(msg.startsWith("REJECT|")||msg.startsWith("INFO|host simulation stopped")))
+                    lastRejection=msg;
             }
-            throw new AssertionError("Missing "+prefix+" on "+client.seat());
+            throw new AssertionError("Missing "+prefix+" on "+client.seat()
+                +" / host response: "+(lastRejection.isEmpty()?"none":lastRejection)
+                +" / last packets: "+history.subList(Math.max(0,history.size()-8),history.size()));
         }
         @Override public void close(){client.close();}
     }
