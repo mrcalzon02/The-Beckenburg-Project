@@ -66,6 +66,9 @@ final class LevelDressing {
         b.props.add(new Prop(mesh,room,x,y,z,scale,yaw,0,0,.30,"dressed-surface"));
     }
     private void build(){
+        for(var s:b.sockets)if(s.type().equals("service_reservation")){
+            String[] size=s.style().split(":");reserved.add(prop("service-reservation",s.room(),s.x(),s.y(),s.z(),0,Double.parseDouble(size[0])/2,Double.parseDouble(size[1])/2,3,"reservation"));
+        }
         b.sockets.removeIf(s->s.type().equals("hide"));
         int[] closets=switch(b.id){case "house"->new int[]{1,3,6,7,11};case "farmhouse"->new int[]{0,1,5,6,7,9,11};default->new int[]{2,4,5,8,9,11};};
         for(int room:closets)closet(room);

@@ -2,8 +2,8 @@
 from pathlib import Path
 from html.parser import HTMLParser
 import json,hashlib,struct,zipfile
-ROOT=Path(__file__).resolve().parents[2];SITE=ROOT.parents[1]
-index=json.loads((SITE/'assets/beckenburg/libraries/index.json').read_text());count=0
+ROOT=Path(__file__).resolve().parents[2];SITE=ROOT
+index=json.loads((SITE/'assets/libraries/index.json').read_text());count=0
 assert index['license']=='CC0-1.0'
 for library in index['libraries']:
     manifest_path=SITE/library['manifest'];manifest=json.loads(manifest_path.read_text())

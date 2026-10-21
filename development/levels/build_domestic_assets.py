@@ -23,7 +23,7 @@ def washer():
  for dx,z in [(-.075,.46),(.05,.36),(.09,.46)]:p.append(s.rod('Dim steel drum reflection',(dx,-.328,z),(dx+.03,-.329,z+.035),.012,m['steel'],5))
  p += [s.box('Door hinge',(-.222,-.331,.41),(.038,.027,.10),m['steel'],.008),s.box('Attached door pull',(.201,-.353,.43),(.035,.035,.105),m['ivory'],.012),s.box('Control fascia',(0,-.314,.755),(.55,.016,.095),m['ivory'],.01),s.box('Detergent drawer',(-.173,-.326,.754),(.16,.012,.065),m['enamel'],.006),s.rod('Selector spindle',(.12,-.324,.756),(.12,-.348,.756),.034,m['black'],12)]
  for x in [-.02,.03,.21]:p.append(s.rod('Sealed programme key',(x,-.327,.755),(x,-.337,.755),.009,m['iron'],8))
- p+=s.tube('Supply hose',[(.19,.30,.60),(.19,.34,.60),(.19,.34,.82)],.013,m['black'],8)
+ p+=s.tube('Supply hose',[(.19,.30,.60),(.19,.42,.60),(.19,.42,.82)],.013,m['black'],8)
  for x in [-.23,.23]:
   for y in [-.23,.23]:p.append(s.rod('Adjustable rubber foot',(x,y,0),(x,y,.04),.03,m['black'],8))
  b.export('level_laundry_washer',p,'household',view=(1,-1.6,1))

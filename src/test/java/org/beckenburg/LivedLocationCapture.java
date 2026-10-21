@@ -12,5 +12,18 @@ public final class LivedLocationCapture {
   view(s,map,"house-02-basin-and-toiletries",21,4.62,12.5,23.6,4.3,11.5);
   view(s,map,"house-03-bath-and-wall-supported-shower",20.8,4.62,12.2,22.9,4.1,14.4);
   view(s,map,"house-04-laundry-utility-room",21,-1.38,13.3,23.5,-2.05,13.7);
+  view(s,map,"house-05-toilet-and-hamper",21,4.62,12.8,19.1,3.65,11.4);
+  map=new HouseMap(HouseMap.Site.FARMHOUSE);
+  for(var p:map.level().portals())if(p.door()&&p.a()==p.b())map.toggleDoor(p.id());
+  view(s,map,"farm-01-private-washroom",23.4,4.62,14.7,24.5,3.8,12.7);
+  view(s,map,"farm-02-shower-and-hamper",24.1,4.62,13.3,25.2,4.0,14.9);
+  view(s,map,"farm-03-shed-laundry",34.6,1.62,26.8,33.6,.8,24.5);
+  view(s,map,"farm-04-yard-drying-line",8.5,1.62,10.4,8.5,1.0,7.5);
+  map=new HouseMap(HouseMap.Site.SCHOOL);
+  for(var p:map.level().portals())if(p.door()&&p.a()==p.b())map.toggleDoor(p.id());
+  view(s,map,"school-01-boys-handwash-and-urinal",25.35,5.22,15.2,26.9,4.4,13.6);
+  view(s,map,"school-02-boys-private-cubicles",25.5,5.22,16.5,27.3,4.2,17.2);
+  view(s,map,"school-03-girls-handwash",25.2,5.22,22.5,26.5,4.4,20.9);
+  view(s,map,"school-04-upper-corridor-clearance",22.4,5.22,18.2,24.8,4.7,22);
  }
 }

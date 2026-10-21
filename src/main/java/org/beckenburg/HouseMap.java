@@ -69,6 +69,7 @@ public final class HouseMap {
     private static void checkRoom(int room){if(room<0||room>=15)throw new IllegalArgumentException("invalid room");}
     private static boolean finite(double... values){for(double v:values)if(!Double.isFinite(v))return false;return true;}
     private boolean inPortal(Portal p,double x,double z,double radius){
+        if(p.a()==p.b())return p.alongX()?Math.abs(x-p.x())<=p.width()/2-radius&&Math.abs(z-p.z())<=.20:Math.abs(z-p.z())<=p.width()/2-radius&&Math.abs(x-p.x())<=.20;
         Room a=level.room(p.a()),b=level.room(p.b());
         if(p.alongX())return Math.abs(x-p.x())<=p.width()/2-radius
             &&z>=Math.min(a.z1(),b.z1())-.20&&z<=Math.max(a.z0(),b.z0())+.20;
@@ -127,9 +128,9 @@ public final class HouseMap {
     }
     public boolean toggleNearestDoor(double x,double z){int r=roomAt(x,z);return r>=0&&toggleNearestDoor(x,floorY(r),z);}
     public boolean openDoorBetweenRooms(int from,int to){
-        for(Portal p:level.portals())if(p.joins(from,to)&&p.door())return openDoors.add(p.id());return false;
+        boolean changed=false;for(Portal p:level.portals())if(p.joins(from,to)&&p.door())changed|=openDoors.add(p.id());return changed;
     }
-    public List<Integer> adjacentRooms(int room){checkRoom(room);return level.portalsFrom(room).stream().filter(p->!p.kind().equals("window")).map(p->p.a()==room?p.b():p.a()).distinct().toList();}
+    public List<Integer> adjacentRooms(int room){checkRoom(room);return level.portalsFrom(room).stream().filter(p->!p.kind().equals("window")).map(p->p.a()==room?p.b():p.a()).filter(next->next!=room).distinct().toList();}
     public List<Integer> ghostExits(int room){return room==14?List.of():adjacentRooms(room).stream().filter(r->r!=14).toList();}
     public int[] doorBetweenRooms(int a,int b){for(Portal p:level.portals())if(p.joins(a,b)&&p.door())return new int[]{(int)p.x(),(int)p.z()};return null;}
     public boolean doorwayAlongX(int x,int z){return level.portals().stream().anyMatch(p->(int)p.x()==x&&(int)p.z()==z&&!p.alongX());}

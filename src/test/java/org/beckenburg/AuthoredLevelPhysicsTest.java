@@ -22,7 +22,7 @@ public final class AuthoredLevelPhysicsTest {
     double dx=p.alongX()?0:.6,dz=p.alongX()?.6:0;
     Vec a=new Vec(p.x()-dx,p.y(),p.z()-dz);
     check(map.resolveMove(a,p.x()+dx,p.z()+dz)==null,site+" closed door crossed "+p.id());
-    map.openDoorBetweenRooms(p.a(),p.b());
+    if(!map.doorOpen(p.id()))map.toggleDoor(p.id());
     check(map.resolveMove(a,p.x()+dx,p.z()+dz)!=null,site+" open door blocked "+p.id());
    }
    for(Stair stair:map.level().stairs()){

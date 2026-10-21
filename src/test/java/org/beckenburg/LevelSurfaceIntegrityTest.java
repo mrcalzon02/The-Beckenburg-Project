@@ -50,6 +50,10 @@ public final class LevelSurfaceIntegrityTest {
                 double expected=(r.x1()-r.x0())*(r.z1()-r.z0());
                 for(var v:level.voids())if(Math.abs(v.y()-r.y())<.01)
                     expected-=Math.max(0,Math.min(v.x1(),r.x1())-Math.max(v.x0(),r.x0()))*Math.max(0,Math.min(v.z1(),r.z1())-Math.max(v.z0(),r.z0()));
+                for(var patch:level.sockets())if(patch.room()==r.id()&&patch.type().equals("floor_cutout")){
+                    String[] shape=patch.style().split(":");expected-=Double.parseDouble(shape[0])*Double.parseDouble(shape[1]);
+                    check(level.props().stream().anyMatch(p->p.room()==r.id()&&LivedAssets.base(p.mesh()).equals("level_bath_shower")&&Math.abs(p.x()-patch.x())<.01&&Math.abs(p.z()-patch.z())<.01),"floor cutout has no real recessed tray");
+                }
                 check(Math.abs(floorArea(deck,level,r)-expected)<EPS,site+" floor area lost outside apertures "+r.id());
                 for(boolean alongX:new boolean[]{true,false})for(double plane:alongX?new double[]{r.z0(),r.z1()}:new double[]{r.x0(),r.x1()}){
                     var faces=generated("levelWall",new Class<?>[]{List.class,LevelDefinition.class,Room.class,boolean.class,double.class,double.class,double.class},

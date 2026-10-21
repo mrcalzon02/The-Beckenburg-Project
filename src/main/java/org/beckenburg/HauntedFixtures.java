@@ -7,12 +7,13 @@ public final class HauntedFixtures {
         public String mesh(){return name().startsWith("SINK")||this==WASHING_MACHINE?null:"level_event_"+name().toLowerCase(Locale.ROOT)+"_worn";}
         public LanSound.Cue cue(){return switch(this){case PHONE->LanSound.Cue.PHONE_RING;case ALARM_CLOCK->LanSound.Cue.ALARM_BELL;case FIRE_ALARM,SMOKE_ALARM->LanSound.Cue.FIRE_BELL;case WASHING_MACHINE->LanSound.Cue.ELECTRIC_HUM;case RADIO,BOOM_BOX->LanSound.Cue.RADIO_PLAY;default->LanSound.Cue.RUNNING_WATER;};}
     }
-    public record State(int id,Kind kind,int room,double x,double y,double z,double yaw,boolean active,int water,int until,int revision){}
+    public record State(int id,Kind kind,int room,double x,double y,double z,double yaw,double scale,boolean active,int water,int until,int revision){}
     public record Sound(State source,LanSound.Cue cue){}
-    private static final class Fixture {int id,room,water,until,revision;Kind kind;double x,y,z,yaw;boolean active;
-        State state(){return new State(id,kind,room,x,y,z,yaw,active,water,until,revision);}}
+    private static final class Fixture {int id,room,water,until,revision;Kind kind;double x,y,z,yaw,scale=1;boolean active;
+        State state(){return new State(id,kind,room,x,y,z,yaw,scale,active,water,until,revision);}}
     private final HouseMap map;private final List<Fixture> fixtures=new ArrayList<>();
-    private void add(Kind kind,int room,double x,double y,double z,double yaw){var f=new Fixture();f.id=fixtures.size()+1;f.kind=kind;f.room=room;f.x=x;f.y=y;f.z=z;f.yaw=yaw;fixtures.add(f);}
+    private void add(Kind kind,int room,double x,double y,double z,double yaw){add(kind,room,x,y,z,yaw,1);}
+    private void add(Kind kind,int room,double x,double y,double z,double yaw,double scale){var f=new Fixture();f.id=fixtures.size()+1;f.kind=kind;f.room=room;f.x=x;f.y=y;f.z=z;f.yaw=yaw;f.scale=scale;fixtures.add(f);}
     public HauntedFixtures(HouseMap map){this.map=map;
         if(map.site()!=HouseMap.Site.HOUSE&&map.site()!=HouseMap.Site.FARMHOUSE&&map.site()!=HouseMap.Site.SCHOOL)return;
         for(var s:map.level().sockets())if(s.type().equals("device"))add(Kind.valueOf(s.style()),s.room(),s.x(),s.y(),s.z(),s.yaw());
@@ -22,8 +23,8 @@ public final class HauntedFixtures {
                 add(Kind.ALARM_CLOCK,p.room(),x,p.y()+.644,z,p.yaw());
             }
             if(LivedAssets.base(p.mesh()).equals("level_laundry_washer"))add(Kind.WASHING_MACHINE,p.room(),p.x(),p.y()+.76,p.z(),p.yaw());
-            if(p.mesh().equals("level_bath_basin"))add(Kind.SINK_BATH,p.room(),p.x(),p.y()+.86,p.z(),p.yaw());
-            if(p.mesh().equals("level_kitchen_counter"))add(Kind.SINK_KITCHEN,p.room(),p.x()-Math.cos(p.yaw())*.6,p.y()+.92,p.z()-Math.sin(p.yaw())*.6,p.yaw());
+            if(p.mesh().equals("level_bath_basin"))add(Kind.SINK_BATH,p.room(),p.x(),p.y()+.86*p.scale(),p.z(),p.yaw(),p.scale());
+            if(p.mesh().equals("level_kitchen_counter"))add(Kind.SINK_KITCHEN,p.room(),p.x()-Math.cos(p.yaw())*.6*p.scale(),p.y()+.92*p.scale(),p.z()-Math.sin(p.yaw())*.6*p.scale(),p.yaw(),p.scale());
         }
         for(var s:map.level().sockets())if(s.type().equals("switch")){
             var r=map.level().room(s.room());double x=s.x(),z=s.z(),yaw;

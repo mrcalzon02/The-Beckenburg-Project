@@ -161,11 +161,11 @@ public final class SceneRenderer {
             }
         }
     }
-    private static Point fixturePoint(HauntedFixtures.State f,double x,double y,double z){return new Point(f.x()+x*Math.cos(f.yaw())-z*Math.sin(f.yaw()),f.y()+y,f.z()+x*Math.sin(f.yaw())+z*Math.cos(f.yaw()));}
+    private static Point fixturePoint(HauntedFixtures.State f,double x,double y,double z){return new Point(f.x()+f.scale()*(x*Math.cos(f.yaw())-z*Math.sin(f.yaw())),f.y()+y*f.scale(),f.z()+f.scale()*(x*Math.sin(f.yaw())+z*Math.cos(f.yaw())));}
     private void eventFixtures(List<Face> out,HouseMap map){
         for(var f:map.fixtures().states()){
             String mesh=f.kind().mesh();
-            if(mesh!=null)imported(out,mesh,f.x(),f.y(),f.z(),1,f.yaw()+(f.active()&&f.kind()==HauntedFixtures.Kind.ALARM_CLOCK?Math.sin(roomLightTick*2)*.018:0));
+            if(mesh!=null)imported(out,mesh,f.x(),f.y(),f.z(),f.scale(),f.yaw()+(f.active()&&f.kind()==HauntedFixtures.Kind.ALARM_CLOCK?Math.sin(roomLightTick*2)*.018:0));
             if(f.active()&&(f.kind()==HauntedFixtures.Kind.FIRE_ALARM||f.kind()==HauntedFixtures.Kind.RADIO||f.kind()==HauntedFixtures.Kind.BOOM_BOX)){
                 double y=f.kind()==HauntedFixtures.Kind.FIRE_ALARM?.27:f.kind()==HauntedFixtures.Kind.RADIO?.164:.197;
                 int color=f.kind()==HauntedFixtures.Kind.FIRE_ALARM&&roomLightTick%8<4?0xffefd0:0xc29f4c;
@@ -173,12 +173,13 @@ public final class SceneRenderer {
             }
             if(f.water()>0){
                 double rx=f.kind()==HauntedFixtures.Kind.SINK_KITCHEN?.32:.175,rz=f.kind()==HauntedFixtures.Kind.SINK_KITCHEN?.145:.13;
-                double y=-.20+.155*f.water()/1000.0;Point center=fixturePoint(f,0,y,0);
+                double y=f.kind()==HauntedFixtures.Kind.SINK_KITCHEN?-.181+.130*f.water()/1000.0:-.152+.105*f.water()/1000.0;Point center=fixturePoint(f,0,y,0);
                 for(int n=0;n<24;n++){double a=n*Math.PI/12,b=(n+1)*Math.PI/12;
                     Point p=fixturePoint(f,Math.cos(a)*rx,y,Math.sin(a)*rz),q=fixturePoint(f,Math.cos(b)*rx,y,Math.sin(b)*rz);
                     out.add(new Face(center,q,p,n%3==0?0x55757b:0x45656b,-1,0,0,0,0,0,0,f.room()));}
                 if(f.active()){
-                    Point top=fixturePoint(f,0,.11,-.03),bottom=fixturePoint(f,0,y,-.03);
+                    double spout=f.kind()==HauntedFixtures.Kind.SINK_KITCHEN?-.04:-.03;
+                    Point top=fixturePoint(f,0,.20,spout),bottom=fixturePoint(f,0,y,spout);
                     box(out,top.x-.004,bottom.y,top.z-.004,.008,top.y-bottom.y,.008,0x72969d);
                 }
             }
@@ -988,6 +989,11 @@ public final class SceneRenderer {
             if(indoor.x0()>r.x0()&&indoor.x0()<r.x1())xs.add(indoor.x0());if(indoor.x1()>r.x0()&&indoor.x1()<r.x1())xs.add(indoor.x1());
             if(indoor.z0()>r.z0()&&indoor.z0()<r.z1())zs.add(indoor.z0());if(indoor.z1()>r.z0()&&indoor.z1()<r.z1())zs.add(indoor.z1());
         }
+        var floorPatches=level.sockets().stream().filter(p->p.room()==r.id()&&(p.type().equals("floor_finish")||p.type().equals("floor_cutout"))).toList();
+        if(!ceiling)for(var patch:floorPatches){String[] shape=patch.style().split(":");double w=Double.parseDouble(shape[0])/2,d=Double.parseDouble(shape[1])/2;
+            for(double edge:new double[]{patch.x()-w,patch.x()+w})if(edge>r.x0()&&edge<r.x1())xs.add(edge);
+            for(double edge:new double[]{patch.z()-d,patch.z()+d})if(edge>r.z0()&&edge<r.z1())zs.add(edge);
+        }
         var xx=new ArrayList<>(xs);var zz=new ArrayList<>(zs);
         for(int i=0;i<xx.size()-1;i++)for(int j=0;j<zz.size()-1;j++){
             double x0=xx.get(i),x1=xx.get(i+1),z0=zz.get(j),z1=zz.get(j+1),mx=(x0+x1)/2,mz=(z0+z1)/2;
@@ -998,6 +1004,8 @@ public final class SceneRenderer {
                 &&in.x0()<=r.x0()&&in.x1()>=r.x1()&&in.z0()<=r.z0()&&in.z1()>=r.z1()
                 &&((in.x1()-in.x0())*(in.z1()-in.z0())>(r.x1()-r.x0())*(r.z1()-r.z0())+.01||in.id()<r.id())))continue;
             int mat=ceiling?LevelMaterials.CEILING:LevelMaterials.floor(r);
+            boolean cut=false;if(!ceiling)for(var patch:floorPatches){String[] shape=patch.style().split(":");if(Math.abs(mx-patch.x())<Double.parseDouble(shape[0])/2&&Math.abs(mz-patch.z())<Double.parseDouble(shape[1])/2){if(patch.type().equals("floor_cutout"))cut=true;else mat=LevelMaterials.TILE;}}
+            if(cut)continue;
             if(ceiling)texturedQuad(out,new Point(x0,surface,z0),new Point(x1,surface,z0),new Point(x1,surface,z1),new Point(x0,surface,z1),mat,x0/4,z0/4,x1/4,z0/4,x1/4,z1/4,x0/4,z1/4,0xffffff);
             else texturedQuad(out,new Point(x0,surface,z1),new Point(x1,surface,z1),new Point(x1,surface,z0),new Point(x0,surface,z0),mat,x0/4,z1/4,x1/4,z1/4,x1/4,z0/4,x0/4,z0/4,0xffffff);
         }
@@ -1102,6 +1110,13 @@ public final class SceneRenderer {
             if(s.type().equals("light")){
                 String mesh=s.style().contains("utility")||s.style().contains("industrial")?"level_utility_light":s.style().contains("sconce")||s.style().contains("porch")?"level_wall_sconce":"level_domestic_light";
                 imported(part,mesh,s.x(),s.y(),s.z(),1,-s.yaw());
+            }
+            if(s.type().equals("partition")){
+                String[] shape=s.style().split(":");double w=Double.parseDouble(shape[0]),h=Double.parseDouble(shape[1]);List<Face> local=new ArrayList<>();
+                // Two disjoint heights: no coplanar tile/plaster overlays.
+                double lower=Math.min(1.25,h);texturedBox(local,-w/2,0,-.06,w,lower,.12,LevelMaterials.WALL_TILE);
+                if(h>lower)texturedBox(local,-w/2,lower,-.06,w,h-lower,.12,LevelMaterials.PLASTER);
+                for(Face f:local)part.add(new Face(mountPoint(f.a,s),mountPoint(f.b,s),mountPoint(f.c,s),f.color,f.material,f.au,f.av,f.bu,f.bv,f.cu,f.cv));
             }
             if(s.type().equals("breaker")){
                 List<Face> local=new ArrayList<>();

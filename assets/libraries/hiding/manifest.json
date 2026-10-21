@@ -33,9 +33,9 @@
       "variant": "clean",
       "family": "level_hiding_cupboard",
       "files": {
-        "models": "assets/beckenburg/libraries/hiding/models/level_hiding_cupboard.glb",
-        "source": "assets/beckenburg/libraries/hiding/source/level_hiding_cupboard.blend",
-        "previews": "assets/beckenburg/libraries/hiding/previews/level_hiding_cupboard.png"
+        "models": "assets/libraries/hiding/models/level_hiding_cupboard.glb",
+        "source": "assets/libraries/hiding/source/level_hiding_cupboard.blend",
+        "previews": "assets/libraries/hiding/previews/level_hiding_cupboard.png"
       }
     },
     {
@@ -63,9 +63,9 @@
       "variant": "worn",
       "family": "level_hiding_cupboard",
       "files": {
-        "models": "assets/beckenburg/libraries/hiding/models/level_hiding_cupboard_worn.glb",
-        "source": "assets/beckenburg/libraries/hiding/source/level_hiding_cupboard_worn.blend",
-        "previews": "assets/beckenburg/libraries/hiding/previews/level_hiding_cupboard_worn.png"
+        "models": "assets/libraries/hiding/models/level_hiding_cupboard_worn.glb",
+        "source": "assets/libraries/hiding/source/level_hiding_cupboard_worn.blend",
+        "previews": "assets/libraries/hiding/previews/level_hiding_cupboard_worn.png"
       }
     }
   ],

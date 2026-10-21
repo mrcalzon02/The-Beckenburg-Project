@@ -1,0 +1,15 @@
+{
+  "license":"CC0-1.0",
+  "provenance":"Original deterministic oscillators, noise and newly composed melodies. No third-party audio.",
+  "sample_rate":16000,
+  "files":[
+    {"file":"original_telephone.wav","seconds":4,"sha256":"689e091ee252d15c9d4e339690632800bc6a27e559e8a66bbb56057e7c37f1ba"},
+    {"file":"original_bedside_bell.wav","seconds":2,"sha256":"0897f65d9fae3086a50f82a0239aee9370300a3ef92f9ef182d88f39c094fedc"},
+    {"file":"original_old_fire_gong.wav","seconds":2,"sha256":"34e55d9653d98f8c13621da4035a2d0b8566f532ec4588acb1496c829b60fa8d"},
+    {"file":"original_smoke_alarm.wav","seconds":3,"sha256":"9162e682e44e9400f1c3c87f47a9c1ec882d782dfb1492ca20921bdd6dc54e58"},
+    {"file":"original_radio.wav","seconds":8,"sha256":"3620a01fdb08a41753bdfe518fc55a9c8ac8df899ce186fa5f2b82b8baddf861"},
+    {"file":"original_boom_box.wav","seconds":8,"sha256":"b088fb2ba88bbbd1509ce996ac693ab8c1b7cf0d16cf30a0d7242566fa066620"},
+    {"file":"original_running_water.wav","seconds":2,"sha256":"a88160a5804ef2e5bf6dd0c5102322ea22ae81ae629642ac5e3a4adbbd3b9aaf"},
+    {"file":"original_washer.wav","seconds":8,"sha256":"ac252d0fe0d7dc3098bb0a4fccc5839520b9d40d3163e319b892e88391cd791a"}
+  ]
+}

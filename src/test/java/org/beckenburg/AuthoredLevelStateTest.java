@@ -8,7 +8,7 @@ public final class AuthoredLevelStateTest {
    for(Portal portal:map.level().portals())if(portal.door()){
     double dx=portal.alongX()?0:.45,dz=portal.alongX()?.45:0;
     check(!map.clearLineOfSight(portal.x()-dx,portal.y()+1.3,portal.z()-dz,portal.x()+dx,portal.y()+1.3,portal.z()+dz),"closed door sight "+site+"/"+portal.id());
-    map.openDoorBetweenRooms(portal.a(),portal.b());
+    if(!map.doorOpen(portal.id()))map.toggleDoor(portal.id());
    }
    peer.applyDoorSnapshot(map.doorSnapshot());for(Portal p:map.level().portals())if(p.door())check(peer.doorOpen(p.id()),"door snapshot");
    for(Portal p:map.level().portals())if(p.kind().equals("window")){

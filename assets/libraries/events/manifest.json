@@ -33,9 +33,9 @@
       "variant": "clean",
       "family": "level_event_phone",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_phone.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_phone.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_phone.png"
+        "models": "assets/libraries/events/models/level_event_phone.glb",
+        "source": "assets/libraries/events/source/level_event_phone.blend",
+        "previews": "assets/libraries/events/previews/level_event_phone.png"
       }
     },
     {
@@ -63,9 +63,9 @@
       "variant": "clean",
       "family": "level_event_alarm_clock",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_alarm_clock.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_alarm_clock.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_alarm_clock.png"
+        "models": "assets/libraries/events/models/level_event_alarm_clock.glb",
+        "source": "assets/libraries/events/source/level_event_alarm_clock.blend",
+        "previews": "assets/libraries/events/previews/level_event_alarm_clock.png"
       }
     },
     {
@@ -93,9 +93,9 @@
       "variant": "clean",
       "family": "level_event_fire_alarm",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_fire_alarm.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_fire_alarm.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_fire_alarm.png"
+        "models": "assets/libraries/events/models/level_event_fire_alarm.glb",
+        "source": "assets/libraries/events/source/level_event_fire_alarm.blend",
+        "previews": "assets/libraries/events/previews/level_event_fire_alarm.png"
       }
     },
     {
@@ -123,9 +123,9 @@
       "variant": "clean",
       "family": "level_event_radio",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_radio.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_radio.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_radio.png"
+        "models": "assets/libraries/events/models/level_event_radio.glb",
+        "source": "assets/libraries/events/source/level_event_radio.blend",
+        "previews": "assets/libraries/events/previews/level_event_radio.png"
       }
     },
     {
@@ -153,9 +153,9 @@
       "variant": "clean",
       "family": "level_event_boom_box",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_boom_box.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_boom_box.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_boom_box.png"
+        "models": "assets/libraries/events/models/level_event_boom_box.glb",
+        "source": "assets/libraries/events/source/level_event_boom_box.blend",
+        "previews": "assets/libraries/events/previews/level_event_boom_box.png"
       }
     },
     {
@@ -183,9 +183,69 @@
       "variant": "clean",
       "family": "level_event_side_table",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_side_table.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_side_table.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_side_table.png"
+        "models": "assets/libraries/events/models/level_event_side_table.glb",
+        "source": "assets/libraries/events/source/level_event_side_table.blend",
+        "previews": "assets/libraries/events/previews/level_event_side_table.png"
+      }
+    },
+    {
+      "id": "level_event_smoke_alarm",
+      "library": "events",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c258c06381a95d24fc567486c2f34998cf808e0f43b5e0e8db85208f33dfa580",
+      "bytes": 77860,
+      "triangles": 800,
+      "bounds": [
+        [
+          -0.07800000160932541,
+          0.012000001966953278,
+          -0.0
+        ],
+        [
+          0.07800000160932541,
+          0.1680000126361847,
+          0.06450000405311584
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_event_smoke_alarm.blend",
+      "variant": "clean",
+      "family": "level_event_smoke_alarm",
+      "files": {
+        "models": "assets/libraries/events/models/level_event_smoke_alarm.glb",
+        "source": "assets/libraries/events/source/level_event_smoke_alarm.blend",
+        "previews": "assets/libraries/events/previews/level_event_smoke_alarm.png"
+      }
+    },
+    {
+      "id": "level_event_smoke_alarm_worn",
+      "library": "events",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "2947f530f1b55ba748bed05a1ff11c2aefa00f7e898df490a44bcb80f12c6e4c",
+      "bytes": 81300,
+      "triangles": 800,
+      "bounds": [
+        [
+          -0.07800000160932541,
+          0.012000001966953278,
+          -0.0
+        ],
+        [
+          0.07800000160932541,
+          0.1680000126361847,
+          0.06450000405311584
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_event_smoke_alarm_worn.blend",
+      "variant": "worn",
+      "family": "level_event_smoke_alarm",
+      "files": {
+        "models": "assets/libraries/events/models/level_event_smoke_alarm_worn.glb",
+        "source": "assets/libraries/events/source/level_event_smoke_alarm_worn.blend",
+        "previews": "assets/libraries/events/previews/level_event_smoke_alarm_worn.png"
       }
     },
     {
@@ -213,9 +273,9 @@
       "variant": "worn",
       "family": "level_event_phone",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_phone_worn.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_phone_worn.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_phone_worn.png"
+        "models": "assets/libraries/events/models/level_event_phone_worn.glb",
+        "source": "assets/libraries/events/source/level_event_phone_worn.blend",
+        "previews": "assets/libraries/events/previews/level_event_phone_worn.png"
       }
     },
     {
@@ -243,9 +303,9 @@
       "variant": "worn",
       "family": "level_event_alarm_clock",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_alarm_clock_worn.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_alarm_clock_worn.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_alarm_clock_worn.png"
+        "models": "assets/libraries/events/models/level_event_alarm_clock_worn.glb",
+        "source": "assets/libraries/events/source/level_event_alarm_clock_worn.blend",
+        "previews": "assets/libraries/events/previews/level_event_alarm_clock_worn.png"
       }
     },
     {
@@ -273,9 +333,9 @@
       "variant": "worn",
       "family": "level_event_fire_alarm",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_fire_alarm_worn.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_fire_alarm_worn.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_fire_alarm_worn.png"
+        "models": "assets/libraries/events/models/level_event_fire_alarm_worn.glb",
+        "source": "assets/libraries/events/source/level_event_fire_alarm_worn.blend",
+        "previews": "assets/libraries/events/previews/level_event_fire_alarm_worn.png"
       }
     },
     {
@@ -303,9 +363,9 @@
       "variant": "worn",
       "family": "level_event_radio",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_radio_worn.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_radio_worn.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_radio_worn.png"
+        "models": "assets/libraries/events/models/level_event_radio_worn.glb",
+        "source": "assets/libraries/events/source/level_event_radio_worn.blend",
+        "previews": "assets/libraries/events/previews/level_event_radio_worn.png"
       }
     },
     {
@@ -333,9 +393,9 @@
       "variant": "worn",
       "family": "level_event_boom_box",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_boom_box_worn.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_boom_box_worn.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_boom_box_worn.png"
+        "models": "assets/libraries/events/models/level_event_boom_box_worn.glb",
+        "source": "assets/libraries/events/source/level_event_boom_box_worn.blend",
+        "previews": "assets/libraries/events/previews/level_event_boom_box_worn.png"
       }
     },
     {
@@ -363,54 +423,114 @@
       "variant": "worn",
       "family": "level_event_side_table",
       "files": {
-        "models": "assets/beckenburg/libraries/events/models/level_event_side_table_worn.glb",
-        "source": "assets/beckenburg/libraries/events/source/level_event_side_table_worn.blend",
-        "previews": "assets/beckenburg/libraries/events/previews/level_event_side_table_worn.png"
+        "models": "assets/libraries/events/models/level_event_side_table_worn.glb",
+        "source": "assets/libraries/events/source/level_event_side_table_worn.blend",
+        "previews": "assets/libraries/events/previews/level_event_side_table_worn.png"
       }
     }
   ],
   "extras": [
     {
-      "path": "assets/beckenburg/libraries/events/audio/alarm_bell.wav",
+      "path": "assets/libraries/events/audio/alarm_bell.wav",
       "archive_path": "audio/alarm_bell.wav",
       "license": "CC0-1.0",
       "sha256": "22c13c75ba5a1b31f11c319ff7e4dd9b15db77230df4337cdb5d7c7a55ea5fac"
     },
     {
-      "path": "assets/beckenburg/libraries/events/audio/fire_bell.wav",
+      "path": "assets/libraries/events/audio/fire_bell.wav",
       "archive_path": "audio/fire_bell.wav",
       "license": "CC0-1.0",
       "sha256": "209d9371b4f9f14a3a90bd2906a570bc928291ffb62aeeb9625d3f39064cd204"
     },
     {
-      "path": "assets/beckenburg/libraries/events/audio/phone_ring.wav",
+      "path": "assets/libraries/events/audio/original_bedside_bell.wav",
+      "archive_path": "audio/original_bedside_bell.wav",
+      "license": "CC0-1.0",
+      "sha256": "0897f65d9fae3086a50f82a0239aee9370300a3ef92f9ef182d88f39c094fedc"
+    },
+    {
+      "path": "assets/libraries/events/audio/original_boom_box.wav",
+      "archive_path": "audio/original_boom_box.wav",
+      "license": "CC0-1.0",
+      "sha256": "b088fb2ba88bbbd1509ce996ac693ab8c1b7cf0d16cf30a0d7242566fa066620"
+    },
+    {
+      "path": "assets/libraries/events/audio/original_old_fire_gong.wav",
+      "archive_path": "audio/original_old_fire_gong.wav",
+      "license": "CC0-1.0",
+      "sha256": "34e55d9653d98f8c13621da4035a2d0b8566f532ec4588acb1496c829b60fa8d"
+    },
+    {
+      "path": "assets/libraries/events/audio/original_radio.wav",
+      "archive_path": "audio/original_radio.wav",
+      "license": "CC0-1.0",
+      "sha256": "3620a01fdb08a41753bdfe518fc55a9c8ac8df899ce186fa5f2b82b8baddf861"
+    },
+    {
+      "path": "assets/libraries/events/audio/original_running_water.wav",
+      "archive_path": "audio/original_running_water.wav",
+      "license": "CC0-1.0",
+      "sha256": "a88160a5804ef2e5bf6dd0c5102322ea22ae81ae629642ac5e3a4adbbd3b9aaf"
+    },
+    {
+      "path": "assets/libraries/events/audio/original_smoke_alarm.wav",
+      "archive_path": "audio/original_smoke_alarm.wav",
+      "license": "CC0-1.0",
+      "sha256": "9162e682e44e9400f1c3c87f47a9c1ec882d782dfb1492ca20921bdd6dc54e58"
+    },
+    {
+      "path": "assets/libraries/events/audio/original_telephone.wav",
+      "archive_path": "audio/original_telephone.wav",
+      "license": "CC0-1.0",
+      "sha256": "689e091ee252d15c9d4e339690632800bc6a27e559e8a66bbb56057e7c37f1ba"
+    },
+    {
+      "path": "assets/libraries/events/audio/original_washer.wav",
+      "archive_path": "audio/original_washer.wav",
+      "license": "CC0-1.0",
+      "sha256": "ac252d0fe0d7dc3098bb0a4fccc5839520b9d40d3163e319b892e88391cd791a"
+    },
+    {
+      "path": "assets/libraries/events/audio/phone_ring.wav",
       "archive_path": "audio/phone_ring.wav",
       "license": "CC0-1.0",
       "sha256": "9700b6057b1db8ca85f2c349c95d19b270cbbe5dbd0f411f211e346256618202"
     },
     {
-      "path": "assets/beckenburg/libraries/events/audio/radio_play.wav",
+      "path": "assets/libraries/events/audio/radio_play.wav",
       "archive_path": "audio/radio_play.wav",
       "license": "CC0-1.0",
       "sha256": "07585658f34f8980589a60360e40a628c9025001ab137de25fea9d2d52bcc03f"
     },
     {
-      "path": "assets/beckenburg/libraries/events/audio/running_water.wav",
+      "path": "assets/libraries/events/audio/running_water.wav",
       "archive_path": "audio/running_water.wav",
       "license": "CC0-1.0",
       "sha256": "f98bfddd42f38a9d366b016a70bb26ffed874d7be443bb43ac1a35fd6d51bb59"
     },
     {
-      "path": "assets/beckenburg/libraries/events/INTERACTION.md",
+      "path": "assets/libraries/events/INTERACTION.md",
       "archive_path": "INTERACTION.md",
       "license": "CC0-1.0",
-      "sha256": "fe431838a82f1d9e05be92bb80ffda5f5f1718b713360ac753c95e4548936ae4"
+      "sha256": "85eddd25542e6bf16cbd81c7340a5fb5ca70cddb38767bfbbb848ac1d2dd5b04"
     },
     {
-      "path": "assets/beckenburg/libraries/events/activation-examples.json",
+      "path": "assets/libraries/events/activation-examples.json",
       "archive_path": "activation-examples.json",
       "license": "CC0-1.0",
-      "sha256": "2cc484cf06aaa5f73f3188c4a1faa796a72b1e1e12ac89bcf8896e57dd19bca4"
+      "sha256": "db7ce99e66f34d52ef8d88db7228d2b8b4655ee81b382ea7432ff056afad0314"
+    },
+    {
+      "path": "assets/libraries/events/audio/original-sound-manifest.json",
+      "archive_path": "audio/original-sound-manifest.json",
+      "license": "CC0-1.0",
+      "sha256": "50236ca2223f8f8e3af36ff67abb7352c493e2277ae706be8b323154ac7184c5"
+    },
+    {
+      "path": "assets/libraries/events/audio/LICENSE.txt",
+      "archive_path": "audio/LICENSE.txt",
+      "license": "CC0-1.0",
+      "sha256": "ae1a41f1e5b83c5a3e7841919ca8c27857eb838cda443a2adbe6ae7213cd2742"
     }
   ]
 }

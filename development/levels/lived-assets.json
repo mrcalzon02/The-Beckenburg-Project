@@ -877,31 +877,6 @@
       "family": "level_event_side_table"
     },
     {
-      "id": "level_laundry_washer",
-      "library": "household",
-      "license": "CC0-1.0",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "sha256": "135b2ddd9975c0d82f651a0a4493126c3f24ca5f73e49c84ab6827e7bdfd6de9",
-      "bytes": 141496,
-      "triangles": 1704,
-      "bounds": [
-        [
-          -0.3149999976158142,
-          0.0,
-          -0.3530000150203705
-        ],
-        [
-          0.3149999976158142,
-          0.8725000619888306,
-          0.37049999833106995
-        ]
-      ],
-      "source": "original geometry and procedural textures",
-      "editable": "development/levels/blender/level_laundry_washer.blend",
-      "variant": "clean",
-      "family": "level_laundry_washer"
-    },
-    {
       "id": "level_laundry_hamper",
       "library": "household",
       "license": "CC0-1.0",
@@ -1127,6 +1102,56 @@
       "family": "level_bathroom_wall_set"
     },
     {
+      "id": "level_laundry_washer",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "d06759ff644e421f9b225c19ccad5b12ee658b23971af02bb5f8f17e8aeb1f14",
+      "bytes": 141500,
+      "triangles": 1704,
+      "bounds": [
+        [
+          -0.3149999976158142,
+          0.0,
+          -0.43299999833106995
+        ],
+        [
+          0.3149999976158142,
+          0.8725000619888306,
+          0.37049999833106995
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_laundry_washer.blend",
+      "variant": "clean",
+      "family": "level_laundry_washer"
+    },
+    {
+      "id": "level_laundry_washer_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b1087bd02eda83e124b89672f8ea3e12473b3b7b6f0355fd0f7ebd1cab0e509a",
+      "bytes": 145344,
+      "triangles": 1704,
+      "bounds": [
+        [
+          -0.3149999976158142,
+          0.0,
+          -0.43299999833106995
+        ],
+        [
+          0.3149999976158142,
+          0.8725000619888306,
+          0.37049999833106995
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_laundry_washer_worn.blend",
+      "variant": "worn",
+      "family": "level_laundry_washer"
+    },
+    {
       "id": "level_bathroom_wall_set_worn",
       "library": "household",
       "license": "CC0-1.0",
@@ -1200,31 +1225,6 @@
       "editable": "development/levels/blender/level_bath_shower_rail_worn.blend",
       "variant": "worn",
       "family": "level_bath_shower_rail"
-    },
-    {
-      "id": "level_laundry_washer_worn",
-      "library": "household",
-      "license": "CC0-1.0",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "sha256": "f11cae0d1344441dadf1831617486fc8d454577a30070908cbb43780ffdbd3c1",
-      "bytes": 145344,
-      "triangles": 1704,
-      "bounds": [
-        [
-          -0.3149999976158142,
-          0.0,
-          -0.3530000150203705
-        ],
-        [
-          0.3149999976158142,
-          0.8725000619888306,
-          0.37049999833106995
-        ]
-      ],
-      "source": "original geometry and procedural textures",
-      "editable": "development/levels/blender/level_laundry_washer_worn.blend",
-      "variant": "worn",
-      "family": "level_laundry_washer"
     },
     {
       "id": "level_laundry_hamper_worn",
@@ -2428,11 +2428,6 @@
       "blend": "3b2083db3b70112e82e73354e97716cc8bf080cb9dc2958b2a624a79b44e0ab8",
       "preview": "cd5dcb8fda996ac85e122dfc5b224f20f6ff6fc76204ab4cd1aaab20a30b64b4"
     },
-    "level_laundry_washer": {
-      "glb": "135b2ddd9975c0d82f651a0a4493126c3f24ca5f73e49c84ab6827e7bdfd6de9",
-      "blend": "3867f6c3c69017079b14e31cfe866ef4431a294ff9d1022cfaacfa6b160a9a33",
-      "preview": "559d27e3908aa912b56cf299983bd9230e22bfbcb6100ff7f3c72a848979932c"
-    },
     "level_laundry_hamper": {
       "glb": "5a0fb5582259f47573973b66b46e7bdc99a875b80436ddc63ff2676b0aab8f6a",
       "blend": "e9f1fee5c3ee2ded02b12760ad3bd5433b43f240520efeab1b312be37b293bfe",
@@ -2477,6 +2472,11 @@
       "glb": "67a8a664a5be61337ac3814c438d6f160dd38dd58e0ba3ebf069c26f91d7977f",
       "blend": "fc95beab52398ad12b4a40b143eaeee7b0eac7405d6efdd2602f0816732dbd79",
       "preview": "bac47a101013a12835bc3dd9f817a559854de4509a0dd4d76f632543de06d3a5"
+    },
+    "level_laundry_washer": {
+      "glb": "d06759ff644e421f9b225c19ccad5b12ee658b23971af02bb5f8f17e8aeb1f14",
+      "blend": "0e673426fe5ef9455e119359aa31782c1ac315ccffaa3cffacb2a40c61152eb2",
+      "preview": "147cfdd72a01202cfd20ee023f84146becf28d1b009dac647b548cc2761d8a49"
     }
   }
 }

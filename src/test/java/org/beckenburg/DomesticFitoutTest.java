@@ -22,6 +22,18 @@ public final class DomesticFitoutTest {
   var o=InteractionFocusTest.find(map,washer.x(),washer.y(),washer.z(),InteractionFocus.Kind.FIXTURE,""+washer.id(),List.of());check(o!=null,"washer cannot be used through exact E interaction");
   map.fixtures().toggleFocused(washer.id(),o,1);check(map.fixtures().state(washer.id()).active(),"washer cannot be started");map.fixtures().toggleFocused(washer.id(),o,2);check(!map.fixtures().state(washer.id()).active(),"washer cannot be stopped");
   check(FixtureSoundscape.sound(washer.kind())==FixtureSoundscape.Sound.WASHER,"wrong washer audio");
+  var farm=new HouseMap(HouseMap.Site.FARMHOUSE);check(count(farm,"toilet_mp_1")==1&&count(farm,"level_bath_shower")==1,"farm private bathroom incomplete");
+  check(count(farm,"level_laundry_washer")==1&&count(farm,"level_yard_clothesline")==1,"farm washing/drying missing");
+  var school=new HouseMap(HouseMap.Site.SCHOOL);check(count(school,"toilet_mp_1")==6,"school needs three private cubicles per washroom");
+  var sinks=school.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.SINK_BATH).toList();
+  check(sinks.size()==4&&sinks.stream().filter(f->f.scale()==.72).count()==2&&sinks.stream().filter(f->f.scale()==1).count()==2,"mixed-age school handwashing heights lost");
+  check(school.level().props().stream().filter(p->p.mesh().equals("toilet_mp_1")&&p.scale()==.72).count()==2,"younger pupils need appropriately sized toilets");
+  for(HouseMap site:List.of(farm,school))for(var door:site.level().portals())if(door.door()&&door.a()==door.b()){
+   double dx=door.alongX()?0:.55,dz=door.alongX()?.55:0,y=door.y()+1.1;
+   check(!site.clearInteractionSight(door.x()-dx,y,door.z()-dz,door.x()+dx,y,door.z()+dz,-1),"privacy door must block sight while shut "+door.id());
+   site.toggleDoor(door.id());check(site.clearInteractionSight(door.x()-dx,y,door.z()-dz,door.x()+dx,y,door.z()+dz,-1),"privacy door must clear sight when open "+door.id());
+  }
+  for(var f:sinks){var observer=InteractionFocusTest.find(school,f.x(),f.y()-.12*f.scale(),f.z()+.19*f.scale(),InteractionFocus.Kind.FIXTURE,""+f.id(),List.of());check(observer!=null,"school basin not usable by exact crosshair "+f.id());}
   System.out.println("PASS complete house plumbing/laundry, room-facing basin, native shell fit and exact usable washer with its own sound");
  }
 }
