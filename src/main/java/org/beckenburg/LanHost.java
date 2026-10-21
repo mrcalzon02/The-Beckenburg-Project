@@ -29,6 +29,8 @@ public final class LanHost implements AutoCloseable {
     private final AmbientSanity ambientSanity=new AmbientSanity();
     private final LanWorld world;
     private final LanGhostSpatial ghostPose;
+    /** Persistent independently simulated AI sister whenever this case is Twins. */
+    private final TwinCompanionAi twinCompanion;
     private final GhostDomain ghost;
     private final GhostActionCadence actionCadence;
     private final LanCase mission;
@@ -138,6 +140,8 @@ public final class LanHost implements AutoCloseable {
         world.configure(contract);
         ghostPose.configureSpeed(contract.ghostSpeed());
         ghostPose.configureBurst(ghostType,contract.ghostSprintSeconds());
+        twinCompanion=ghostType.baseType()==GhostIdentity.Type.TWINS
+            ?new TwinCompanionAi(map,ghostPose.pose(),0x7477696e73L+ghostType.ordinal()):null;
         ghost=new GhostDomain(map,4,type);
         frenzy=new GhostFrenzy(type);
         actionCadence=new GhostActionCadence(type);
@@ -553,6 +557,7 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,"VOICEKEY|"+voice.port()+"|"+voice.register(peer.slot,peer.socket.getInetAddress()));
                     reply(peer,"GTYPE|"+ghostType+"|"+ghostType.behavior());
                     reply(peer,ghostPose.frame(tick));reply(peer,frenzyFrame());
+                    if(twinCompanion!=null)reply(peer,twinCompanion.playerFrame(ghostType.ancient(),tick));
                     broadcastState();sendGhostPrompt();
                 }
                 case "GSTEP" -> {
@@ -1584,6 +1589,8 @@ public final class LanHost implements AutoCloseable {
             if(body.room()==HouseMap.EXTRACTION_ROOM&&type!=LanGhostPursuit.Sound.VOICE)
                 actorCue(seat,cue);
         }
+        if(twinCompanion!=null)
+            twinCompanion.heard(hunterRooms[seat],body.x(),body.z(),type,tick,weather.state());
         boolean heard=LanAcoustics.audible(map,ghost.room(),hunterRooms[seat],type,
             weather.state());
         if(heard){
@@ -2066,6 +2073,13 @@ public final class LanHost implements AutoCloseable {
             for(int i=0;i<HUNTERS;i++)if((seats[i]!=null||reserved[i]!=null)&&mission.alive(i)
                     &&hunterRooms[i]==ghost.room()){audible=hunterRooms[i];occupants++;}
             ghost.advance(tick,audible,occupants);
+            if(twinCompanion!=null){
+                twinCompanion.advance(tick,ghostPose.pose());
+                if(twinCompanion.moved()&&ghost.manifested()&&tick%10==0){
+                    var companion=twinCompanion.pose();
+                    sensorSound(companion.room(),companion.x(),companion.z(),3);
+                }
+            }
             sampleMotionDetectors();
             if(frenzy.raging()){
                 ghost.reveal(12);
@@ -2151,6 +2165,24 @@ public final class LanHost implements AutoCloseable {
                     }
                 }
             }}
+            // Member B keeps playing as an AI even when member A is human.
+            // GhostDomain remains the ONE supernatural energy/action authority.
+            if(twinCompanion!=null&&frenzy.phase()==GhostFrenzy.Phase.CALM){
+                GhostDomain.Action secondary=twinCompanion.chooseActivity(ghost.observe(),tick);
+                if(secondary!=null){
+                    var result=ghost.dispatch(new GhostDomain.Command(
+                        secondary,ghost.room(),++hostGhostActionSequence,GhostDomain.Source.AI));
+                    if(result.applied()){
+                        actionCadence.completed(tick,result);
+                        resolveGhostAction(result);
+                        var companion=twinCompanion.pose();
+                        sensorSound(companion.room(),companion.x(),companion.z(),5);
+                        Peer twinPlayer=seats[GHOST_SEAT];
+                        if(twinPlayer!=null)reply(twinPlayer,
+                            "GCOMPANION_ACTION|"+secondary+"|"+tick);
+                    }
+                }
+            }
             // Runs even with a connected human ghost; without a human it is the
             // safety floor beneath AI's normal behavior scheduler.
             enforceGhostDeadline();
@@ -2202,6 +2234,8 @@ public final class LanHost implements AutoCloseable {
             if(tick%5==0){broadcastState();broadcastApparitions();broadcastProgress();broadcastWorld();
                 if(seats[GHOST_SEAT]!=null&&seats[GHOST_SEAT].ghostWorldMode){
                     reply(seats[GHOST_SEAT],ghostPose.frame(tick));
+                    if(twinCompanion!=null)
+                        reply(seats[GHOST_SEAT],twinCompanion.playerFrame(ghostType.ancient(),tick));
                     sendGhostPrompt();
                 }}
             maintainPeerHealth();
@@ -2251,17 +2285,11 @@ public final class LanHost implements AutoCloseable {
                 if(ghostType.baseType()==GhostIdentity.Type.TWINS) {
                     // Companion B has its own bounded world pose and per-Hunter
                     // occlusion; an unseen twin has no leaked world coordinates.
-                    var echo=TwinGhostPair.position(map,pose,tick).get(1);
+                    var echo=new TwinGhostPair.Member("b",twinCompanion.pose());
                     String twinSight=LanApparition.frame(map,world.body(i),true,echo.pose(),
                             ghost.manifested(),tick);
                     boolean twinVisible=twinSight.startsWith("APPARITION|VISIBLE|");
-                    if(twinVisible){
-                        reply(hunter,TwinGhostPair.wire(echo,tick,true,ghostType.ancient()));
-                        hunter.hasSeenTwinCompanion=true;
-                    }else if(hunter.hasSeenTwinCompanion){
-                        reply(hunter,TwinGhostPair.wire(echo,tick,false,ghostType.ancient()));
-                        hunter.hasSeenTwinCompanion=false;
-                    }
+                    reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible,ghostType.ancient()));
                 }
                 // Real remote cameras observe their own field of view and LOS.
                 // A CAMERA_ONLY species is not exposed to the direct Hunter feed.
@@ -2274,16 +2302,11 @@ public final class LanHost implements AutoCloseable {
                         &&LanCameraSight.sees(map,camera,pose,ghost.manifested());
                     reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick));
                     if(ghostType.baseType()==GhostIdentity.Type.TWINS){
-                        var echo=TwinGhostPair.position(map,pose,tick).get(1);
+                        var echo=new TwinGhostPair.Member("b",twinCompanion.pose());
                         boolean second=powered&&insideVan(i)
                             &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested());
-                        if(second){
-                            reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),true,ghostType,tick));
-                            hunter.seenTwinOnCamera[camera.owner()]=true;
-                        }else if(hunter.seenTwinOnCamera[camera.owner()]){
-                            reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),false,ghostType,tick));
-                            hunter.seenTwinOnCamera[camera.owner()]=false;
-                        }
+                        reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),
+                            second,ghostType,tick));
                     }
                 }
             }
@@ -2352,7 +2375,7 @@ public final class LanHost implements AutoCloseable {
             emitSensorAlerts(fieldDetectors.movement("G",pose.room(),pose.x(),pose.z(),
                 tick,map,stations));
         if(ghostType.baseType()==GhostIdentity.Type.TWINS){
-            var second=TwinGhostPair.position(map,pose,tick).get(1).pose();
+            var second=new TwinGhostPair.Member("b",twinCompanion.pose()).pose();
             if(second.room()>=0&&second.room()<HouseMap.INDOOR_ROOMS
                     &&Math.hypot(second.x()-pose.x(),second.z()-pose.z())>.2)
                 emitSensorAlerts(fieldDetectors.movement("G2",second.room(),
@@ -2472,9 +2495,7 @@ public final class LanHost implements AutoCloseable {
         String hunterVisual="observer"; // no gameplay authority, never sent to ghost
         long unconfirmedResumeDeadlineNanos; // no unlimited grace via failed reconnect loop
         boolean ready,worldMode,ghostWorldMode,intentionalLeave;
-        // A hidden member B must not identify a Twins case before actual sight.
-        boolean hasSeenTwinCompanion;
-        final boolean[] seenTwinOnCamera=new boolean[HUNTERS];
+
         long lastGhostPoseSequence=-1,lastGhostActionSequence=-1;
         long pingSentNanos;
         int expectedPongTick=-1,lastPongTick;
