@@ -2,6 +2,15 @@ name: Beckenburg Full Multiplayer Acceptance
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'assets/runtime/**'
+      - 'build.cmd'
+      - 'build.sh'
+      - 'regression-tests.txt'
+      - '.github/workflows/beckenburg-full-round-e2e.yml'
 
 permissions:
   contents: read
