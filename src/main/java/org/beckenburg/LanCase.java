@@ -219,6 +219,15 @@ public final class LanCase {
         if(tool==null||room<0||room>=HouseMap.ROOM_COUNT||tick<0
                 ||eventStrength<0||eventStrength>10)
             return new Report(false,"invalid environmental scan context");
+        if(tool==Tool.SPIRIT_BOX){
+            // A handheld Spirit Box samples an actual nearby voice event. The
+            // unattended station variant intentionally cannot collect speech.
+            // Silence is a valid direct observation, not a rejected button press.
+            boolean reply=allowsEvidence(HardEvidenceQuota.Family.SPIRIT_BOX)
+                &&room==ghostRoom&&room==eventRoom&&eventStrength>0;
+            return new Report(true,"READING SPIRIT_BOX in "+room+" - "
+                +(reply?"Voice response detected":"No response detected"));
+        }
         return stationMeasured(tool,room,ghostRoom,tick,eventRoom,eventStrength);
     }
     /**
