@@ -44,7 +44,7 @@ public final class RoomLighting {
     public int aimed(HouseMap map,double x,double z,double yaw){
         if(map==null)return -1;
         int room=map.roomAt(x,z);
-        return room<0?-1:aimed(map,x,map.floorY(room),z,yaw);
+        return room<0?-1:aimed(map,x,map.groundHeight(x,z,room),z,yaw);
     }
     public int aimed(HouseMap map,double x,double feetY,double z,double yaw){
         if(map==null||!Double.isFinite(x)||!Double.isFinite(feetY)

@@ -101,7 +101,7 @@ public final class LanSound {
     public static CueEvent project(HouseMap map, LanWorld.Body listener, int sourceRoom,
                                    double sourceX, double sourceZ, Cue cue, int tick) {
         if(map==null||sourceRoom<0||sourceRoom>=map.roomCount())return null;
-        return project(map,listener,sourceRoom,sourceX,map.floorY(sourceRoom),sourceZ,cue,tick);
+        return project(map,listener,sourceRoom,sourceX,map.groundHeight(sourceX,sourceZ,sourceRoom),sourceZ,cue,tick);
     }
     /** Source and listener elevations are authoritative standing surfaces. */
     public static CueEvent project(HouseMap map,LanWorld.Body listener,int sourceRoom,

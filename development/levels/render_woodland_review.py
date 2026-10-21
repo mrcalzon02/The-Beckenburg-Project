@@ -28,12 +28,14 @@ if LINEUP:
     views=[('foliage-one-source-eight-instances',(17,-33,12),(17,0,3.6),True)]
 else:
     path=ROOT/'development/levels/blender/blackpine-dressed.blend';bpy.ops.wm.open_mainfile(filepath=str(path));scene=bpy.context.scene
-    scene['source_of_truth']='BlackpineLevel.java / BlackpineDressing.java / SceneryInstances.java / FoliageVariation.java'
+    scene['source_of_truth']='BlackpineLevel.java / BlackpineDressing.java / SiteTerrain.java / SceneryInstances.java / FoliageVariation.java'
     scene['inspection_note']='Daylight renders are art/placement review. Runtime remains the actual night environment.'
+    bpy.ops.wm.save_as_mainfile(filepath=str(path),compress=True)
     views=[('blackpine-dressed-daylight-overview',(78,-83,49),(33,-30,1.3),False),
            ('blackpine-dressed-well-and-patio',(35,-31,8),(25,-20,1.0),False),
            ('blackpine-dressed-forest-edge',(64,-39,4.2),(83,-28,3.5),False)]
 scene.world.node_tree.nodes['Background'].inputs[0].default_value=(.35,.42,.51,1);scene.world.node_tree.nodes['Background'].inputs[1].default_value=.65
+scene.unit_settings.system='METRIC';scene.unit_settings.scale_length=1
 for obj in scene.objects:
     if obj.type=='LIGHT':obj.data.energy=0
 bpy.ops.object.light_add(type='SUN',location=(25,-35,50));sun=bpy.context.object;sun.name='Inspection daylight only';sun.data.energy=2.1;sun.data.color=(1,.93,.81);sun.rotation_euler=(.45,-.5,-.55)

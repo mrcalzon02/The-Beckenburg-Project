@@ -50,6 +50,12 @@ public final class GlbProps {
     private static final List<BufferedImage> textures=new ArrayList<>();
     private static final List<double[]> diffuseFactors=new ArrayList<>();
     private static final Map<Long,Integer> foliagePalettes=new HashMap<>();
+    private static final Map<String,Integer> surfaceMaterials=new HashMap<>();
+    public static synchronized int surfaceMaterial(String name,BufferedImage image){
+        Integer cached=surfaceMaterials.get(name);if(cached!=null)return cached;
+        if(image==null||image.getWidth()>2048||image.getHeight()>2048)throw new IllegalArgumentException("terrain diffuse budget");
+        int id=TEXTURE_BASE+textures.size();textures.add(image);materialNames.add(name);diffuseFactors.add(new double[]{1,1,1,1});surfaceMaterials.put(name,id);return id;
+    }
     /** Sixteen bounded texel variants per leaf material. Source UVs and shared source pixels remain intact. */
     public static synchronized int foliageMaterial(int original,long seed){
         int variant=Math.floorMod((int)(seed^(seed>>>32)),16);

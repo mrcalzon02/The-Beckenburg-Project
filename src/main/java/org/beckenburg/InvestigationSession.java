@@ -200,7 +200,7 @@ public final class InvestigationSession {
             }
         }
         HunterCounters.Impact counter=counters.advance(map,ghost.type(),ghost,
-            new LanGhostSpatial.Pose(ghost.room(),map.centerX(ghost.room()),map.floorY(ghost.room()),map.centerZ(ghost.room()),0),ticks);
+            new LanGhostSpatial.Pose(ghost.room(),map.centerX(ghost.room()),standingY(map.centerX(ghost.room()),map.centerZ(ghost.room())),map.centerZ(ghost.room()),0),ticks);
         if(counter.saltTrack())log("Salt tracks: the grounded ghost is visible and slowed.");
         if(counter.repelled())log("Cross struck the manifestation: attack interrupted.");
         GhostDomain.Command command=ghostAi.decide(ghost.observe());
@@ -277,7 +277,7 @@ public final class InvestigationSession {
                 boolean visible=haunted&&room==ghost.room()
                     &&CameraAim.onTarget(x,z,yaw,map.centerX(ghost.room()),map.centerZ(ghost.room()))
                     &&map.clearLineOfSight(x,y+1.62,z,map.centerX(ghost.room()),
-                        map.floorY(ghost.room())+1.2,map.centerZ(ghost.room()));
+                        standingY(map.centerX(ghost.room()),map.centerZ(ghost.room()))+1.2,map.centerZ(ghost.room()));
                 if(visible&&!apparitionPhotographed){
                     apparitionPhotographed=true;
                     log("APPARITION PHOTOGRAPHED. The developed image will count in your case payout.");
@@ -372,7 +372,7 @@ public final class InvestigationSession {
         else if(outcome==Outcome.CLEANSED) log("Site secured. Beckenburg case closed.");
         return outcome!=Outcome.LOST;
     }
-    private double standingY(double x,double z){int room=map.roomAt(x,z);return room<0?0:map.floorY(room);}
+    private double standingY(double x,double z){return map.groundHeight(x,z,map.roomAt(x,z));}
     private void finish(Outcome result) {
         if(rewarded)return;
         outcome=result;rewarded=true;

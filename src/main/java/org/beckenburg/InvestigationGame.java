@@ -505,6 +505,7 @@ public final class InvestigationGame {
         private int frameCount;
         private long last=System.nanoTime();
         private double accumulator;
+        private int lastSupportedRoom=HouseMap.EXTRACTION_ROOM;
         GamePanel(InvestigationSession.Role role,int ordinal,SiteCatalog.Location site,
                 SiteCatalog.Conditions mode,MissionWeather.Mode weatherMode,
                 EvidenceSignals.Weather selectedWeather,int severity){
@@ -603,6 +604,10 @@ public final class InvestigationGame {
                 p.z()>=VanStaging.FRONT && p.z()<VanStaging.REAR-.2;
         }
         private void frame(){
+            var prior=new LevelDefinition.Vec(scene.x,feetY(),scene.z);
+            var supported=GroundRecovery.recover(map,prior,lastSupportedRoom,HunterPosture.height(session.crouched()));
+            if(!supported.equals(prior)){scene.x=supported.x();scene.z=supported.z();scene.eyeHeight=supported.y()+HunterPosture.eye(session.crouched());}
+            int safe=map.roomAt(scene.x,feetY(),scene.z);if(safe>=0&&map.traversable(scene.x,feetY(),scene.z,HunterPosture.height(session.crouched())))lastSupportedRoom=safe;
             atmosphere.setActive(isShowing());
             buildingSoundscape.setActive(isShowing());
             int outdoorRoom=currentRoom();

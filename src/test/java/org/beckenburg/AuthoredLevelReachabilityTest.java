@@ -25,7 +25,7 @@ public final class AuthoredLevelReachabilityTest {
     if(!reached){System.out.println("UNREACHABLE "+site+" room="+room.id()+" "+room.name());failures++;}
    }
    for(Socket socket:map.level().sockets())if(Set.of("switch","breaker","ritual","evidence","hide","outdoor-hide").contains(socket.type())){
-    double floor=map.floorY(socket.room());
+    double floor=map.groundHeight(socket.x(),socket.z(),socket.room());
     boolean reached=reachable.stream().anyMatch(p->Math.abs(p.y()-floor)<.2&&map.roomAt(p.x(),p.y(),p.z())==socket.room()&&Math.hypot(p.x()-socket.x(),p.z()-socket.z())<(socket.type().equals("outdoor-hide")?.3:socket.type().equals("hide")?.8:1.45));
     if(!reached){System.out.println("UNREACHABLE SOCKET "+site+" "+socket.type()+" room="+socket.room());failures++;}
    }

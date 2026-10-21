@@ -675,11 +675,18 @@ public final class SceneRenderer {
         double x0=level.room(13).x0()-45,x1=level.room(13).x1()+60,z0=level.room(12).z0()-50,z1=level.room(13).z1()+50;
         int ground=LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN?LevelMaterials.CONCRETE:MaterialAtlas.FOLIAGE;
         if(level.id().equals("blackpine"))ground=GlbProps.model("level_woodland_floor").triangles().get(0).material();
-        texturedQuad(faces,new Point(x0,-.08,z0),new Point(x1,-.08,z0),new Point(x1,-.08,z1),new Point(x0,-.08,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
+        var terrain=SiteTerrain.of(level);
+        if(terrain==null)texturedQuad(faces,new Point(x0,-.08,z0),new Point(x1,-.08,z0),new Point(x1,-.08,z1),new Point(x0,-.08,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
+        else terrainBackdrop(faces,terrain,x0,z0,x1,z1,ground);
         for(var socket:level.sockets()){
             if((socket.type().equals("enclosure")||socket.type().equals("parcel_fence"))){
                 String[] parts=socket.style().split(":");double length=Double.parseDouble(parts[1]);int count=(int)Math.ceil(length/2);double width=length/count,angle=-socket.yaw();
-                for(int i=0;i<count;i++){double offset=-length/2+width*(i+.5);imported(faces,"level_enclosure_"+parts[0]+"_worn",socket.x()+offset*Math.cos(angle),socket.y(),socket.z()+offset*Math.sin(angle),width/2,1,1,angle);}
+                for(int i=0;i<count;i++){
+                    double offset=-length/2+width*(i+.5);var segment=new ArrayList<Face>();
+                    imported(segment,"level_enclosure_"+parts[0]+"_worn",socket.x()+offset*Math.cos(angle),socket.y(),socket.z()+offset*Math.sin(angle),width/2,1,1,angle);
+                    if(terrain==null||socket.room()<12)faces.addAll(segment);
+                    else for(var f:segment)faces.add(new Face(terrainMount(f.a,terrain,socket.y()),terrainMount(f.b,terrain,socket.y()),terrainMount(f.c,terrain,socket.y()),f.color,f.material,f.au,f.av,f.bu,f.bv,f.cu,f.cv));
+                }
             }
         }
         if(level.id().startsWith("enclosure-"))flattenInstances(faces,new SceneryInstances(level,0));
@@ -860,7 +867,7 @@ public final class SceneRenderer {
         incense.removeIf(b->b.untilTick()<roomLightTick);
         for(IncenseSmoke burn:incense){
             if(Math.hypot(burn.x()-x,burn.z()-z)>13.5)continue;
-            double floor=map.floorY(burn.room());
+            double floor=map.groundHeight(burn.x(),burn.z(),burn.room());
             imported(out,EquipmentModelCatalog.variant("INCENSE",
                 EquipmentTiers.Tier.I,"burning"),burn.x(),floor+.045,
                 burn.z(),.7,0);
@@ -879,7 +886,7 @@ public final class SceneRenderer {
         // Physical array models appear only for host-authorized placed nodes.
         for(VanSensorStations.Station node:sensorPositions.values()){
             if(Math.hypot(node.x()-x,node.z()-z)>13.5)continue;
-            imported(out,node.model(),node.x(),map.floorY(node.room())+.04,
+            imported(out,node.model(),node.x(),map.groundHeight(node.x(),node.z(),node.room())+.04,
                 node.z(),1.0,0);
         }
         // This device exists ONLY after an owner physically deploys it.
@@ -913,7 +920,7 @@ public final class SceneRenderer {
         if(dotsPassRoom>=0&&dotsPassUntil>=roomLightTick
                 &&Math.hypot(dotsPassX-x,dotsPassZ-z)<13.5){
             for(int layer=0;layer<10;layer++){
-                double y=map.floorY(dotsPassRoom)+.19+layer*.135;
+                double y=map.groundHeight(dotsPassX,dotsPassZ,dotsPassRoom)+.19+layer*.135;
                 double span=.14+Math.sin(Math.PI*layer/10.0)*.17;
                 for(int dot=-2;dot<=2;dot++)
                     box(out,dotsPassX+dot*span/3-.02,y,dotsPassZ-.03,
@@ -1090,6 +1097,8 @@ public final class SceneRenderer {
         quad(out,new Point(x0+ex,y0+.90,z0+ez),new Point(x1+ex,y1+.90,z1+ez),new Point(x1+ex,y1+.96,z1+ez),new Point(x0+ex,y0+.96,z0+ez),0x685035);
     }
     private static void levelDeck(List<Face> out,LevelDefinition level,LevelDefinition.Room r,boolean ceiling){
+        var terrain=SiteTerrain.of(level);
+        if(!ceiling&&terrain!=null&&r.outside()&&r.id()!=14){terrainDeck(out,terrain,r);return;}
         double deck=ceiling?r.y()+r.height():r.y(),surface=ceiling?deck-.04:deck;
         java.util.TreeSet<Double> xs=new java.util.TreeSet<>(),zs=new java.util.TreeSet<>();
         xs.add(r.x0());xs.add(r.x1());zs.add(r.z0());zs.add(r.z1());
@@ -1124,6 +1133,25 @@ public final class SceneRenderer {
             if(cut)continue;
             if(ceiling)texturedQuad(out,new Point(x0,surface,z0),new Point(x1,surface,z0),new Point(x1,surface,z1),new Point(x0,surface,z1),mat,x0/4,z0/4,x1/4,z0/4,x1/4,z1/4,x0/4,z1/4,0xffffff);
             else texturedQuad(out,new Point(x0,surface,z1),new Point(x1,surface,z1),new Point(x1,surface,z0),new Point(x0,surface,z0),mat,x0/4,z1/4,x1/4,z1/4,x1/4,z0/4,x0/4,z0/4,0xffffff);
+        }
+    }
+    private static void terrainDeck(List<Face> out,SiteTerrain terrain,LevelDefinition.Room room){
+        int material=terrain.material();
+        for(int iz=0;iz<terrain.nz-1;iz++)for(int ix=0;ix<terrain.nx-1;ix++){
+            double x=terrain.x0+ix*SiteTerrain.STEP,z=terrain.z0+iz*SiteTerrain.STEP,xb=x+SiteTerrain.STEP,zb=z+SiteTerrain.STEP,mx=(x+xb)/2,mz=(z+zb)/2;
+            if(mx<room.x0()||mx>room.x1()||mz<room.z0()||mz>room.z1()||terrain.indoors(mx,mz))continue;
+            texturedQuad(out,new Point(x,terrain.vertexHeight(ix,iz),z),new Point(xb,terrain.vertexHeight(ix+1,iz),z),new Point(xb,terrain.vertexHeight(ix+1,iz+1),zb),new Point(x,terrain.vertexHeight(ix,iz+1),zb),material,terrain.u(x),terrain.v(z),terrain.u(xb),terrain.v(z),terrain.u(xb),terrain.v(zb),terrain.u(x),terrain.v(zb),0xffffff);
+        }
+    }
+    private static Point terrainMount(Point p,SiteTerrain terrain,double oldBase){return new Point(p.x,p.y-oldBase+terrain.height(p.x,p.z),p.z);}
+    private static void terrainBackdrop(List<Face> out,SiteTerrain terrain,double x0,double z0,double x1,double z1,int material){
+        var xs=new java.util.TreeSet<Double>();var zs=new java.util.TreeSet<Double>();
+        xs.add(x1);xs.add(terrain.x0);xs.add(terrain.x1);zs.add(z1);zs.add(terrain.z0);zs.add(terrain.z1);
+        for(double x=x0;x<x1;x+=4)xs.add(x);for(double z=z0;z<z1;z+=4)zs.add(z);
+        var xx=new ArrayList<>(xs);var zz=new ArrayList<>(zs);
+        for(int i=0;i<xx.size()-1;i++)for(int j=0;j<zz.size()-1;j++){
+            double a=xx.get(i),b=xx.get(i+1),c=zz.get(j),d=zz.get(j+1);if(terrain.contains((a+b)/2,(c+d)/2))continue;
+            texturedQuad(out,new Point(a,terrain.height(a,c),c),new Point(b,terrain.height(b,c),c),new Point(b,terrain.height(b,d),d),new Point(a,terrain.height(a,d),d),material,a*.3,c*.3,b*.3,c*.3,b*.3,d*.3,a*.3,d*.3,0x9a9e89);
         }
     }
     private static List<Face> buildLevelShell(HouseMap map){
@@ -1587,7 +1615,7 @@ public final class SceneRenderer {
                 &&session.ghostManifesting();
         int room=session.ghostRoom();
         Apparition figure=visible?new Apparition(
-                map.centerX(room),map.floorY(room),map.centerZ(room),
+                map.centerX(room),map.groundHeight(map.centerX(room),map.centerZ(room),room),map.centerZ(room),
                 LanGhostAnimation.Phase.LURK,0,0,false,session.ghostVisualType().ancient(),
                 CharacterVisuals.ghost(session.ghostVisualType())):null;
         // Solo mode has room-based manifestation authority rather than a LAN
@@ -1736,14 +1764,14 @@ public final class SceneRenderer {
                     ?Math.max(45,(int)(255*progress/(double)LanGhostAnimation.MATERIALIZE_TICKS))
                     :phase==LanGhostAnimation.Phase.RECOVER?205:255;
             if(apparition!=null&&apparition.orb()){
-                renderSpiritOrb(gx,gz,(apparition==null?map.floorY(ghostRoom):apparition.y())+.98+.18*Math.sin(clock*4),clock,apparition.greenTint());
+                renderSpiritOrb(gx,gz,(apparition==null?map.groundHeight(gx,gz,ghostRoom):apparition.y())+.98+.18*Math.sin(clock*4),clock,apparition.greenTint());
             }else{
                 String appearance=apparition==null?"banshee":apparition.appearance();
                 CharacterVisuals.Shape shape=CharacterVisuals.shape(appearance);
                 DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,gx,gz,
                     apparition==null?0:apparition.heading(),
                     appearance,shape.height()*stature,shape.width(),
-                    (apparition==null?map.floorY(ghostRoom):apparition.y())-(eyeHeight-1.62)+.09*Math.sin(clock*3)+lift,alpha,lamp,renderWidth,renderHeight,focal,
+                    (apparition==null?map.groundHeight(gx,gz,ghostRoom):apparition.y())-(eyeHeight-1.62)+.09*Math.sin(clock*3)+lift,alpha,lamp,renderWidth,renderHeight,focal,
                     apparition!=null&&apparition.greenTint(),phase,
                     Math.floorMod((int)Math.floor(clock*10),4));
             }
@@ -1751,7 +1779,7 @@ public final class SceneRenderer {
         if(hunterRoom>=0){
             DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
                 map.centerX(hunterRoom)-1.25,map.centerZ(hunterRoom)+2.0,
-                0,"observer",1.75,1.04,map.floorY(hunterRoom)-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
+                0,"observer",1.75,1.04,map.groundHeight(map.centerX(hunterRoom)-1.25,map.centerZ(hunterRoom)+2,hunterRoom)-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
         }
         for(RemoteBody person:others){
             double distance=Math.hypot(person.x()-x,person.z()-z);

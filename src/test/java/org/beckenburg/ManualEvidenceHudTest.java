@@ -21,7 +21,7 @@ public final class ManualEvidenceHudTest {
                 ok(ui.journalAllows(GhostIdentity.Type.SHADE),"no tick starts fully permissive");
                 ui.onEvent("NOTE|EMF_OVER_SIX|SEEN|0|20");
                 ok(!ui.journalAllows(GhostIdentity.Type.SHADE),"manual high EMF greys Shade");
-                ok(ui.journalAllows(GhostIdentity.Type.SPIRIT),"valid ghosts remain visible");
+                ok(ui.journalAllows(GhostIdentity.Type.POLTERGEIST),"high-EMF ghosts remain visible");
                 ok(ui.handleJournalClick(351,82+86+6*22+3,false),
                    "greyed Shade remains clickable in full ghost roster");
                 ok(ui.selectedGuess()==GhostIdentity.Type.SHADE,

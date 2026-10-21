@@ -13,11 +13,11 @@ public final class SensorCoverage {
                 ||!Double.isFinite(x)||!Double.isFinite(z)
                 ||Math.hypot(x-station.x(),z-station.z())>radius(station))
             return false;
-        double y=map.floorY(room)+1.0;
+        double y=map.groundHeight(x,z,room)+1.0,sourceY=map.groundHeight(station.x(),station.z(),station.room())+1;
         // The room and a physical line-of-sight test must both pass. Neither
         // neighboring wings nor walls become part of the detector's circle.
         return map.roomAt(x,y,z)==room
-            &&map.roomAt(station.x(),y,station.z())==room
-            &&map.clearLineOfSight(station.x(),y,station.z(),x,y,z);
+            &&map.roomAt(station.x(),sourceY,station.z())==room
+            &&map.clearLineOfSight(station.x(),sourceY,station.z(),x,y,z);
     }
 }

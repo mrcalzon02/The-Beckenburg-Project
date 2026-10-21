@@ -26,9 +26,11 @@ public final class SceneryInstances {
         public final Template template;public final String mesh;public final int room;
         public final double x,y,z,sx,sy,sz,yaw,cx,cy,cz,radius;
         public final FoliageVariation.Profile variation;private final int[] materials;
+        private final SiteTerrain terrain;
         private final double cosYaw,sinYaw;
-        Instance(Template template,int room,double x,double y,double z,double sx,double sy,double sz,double yaw){
+        Instance(Template template,int room,double x,double y,double z,double sx,double sy,double sz,double yaw,SiteTerrain terrain){
             this.template=template;mesh=template.mesh;this.room=room;this.x=x;this.y=y;this.z=z;this.sx=sx;this.sy=sy;this.sz=sz;this.yaw=yaw;
+            this.terrain=terrain;
             variation=FoliageVariation.profile(mesh,x,z);materials=template.materials.clone();
             cosYaw=Math.cos(yaw+variation.rotation());sinYaw=Math.sin(yaw+variation.rotation());
             for(int i=0;i<materials.length;i++)if(mesh.equals("tv_mp_1")&&GlbProps.materialName(materials[i]).equals("crt_screen_mp_1"))materials[i]=GlbProps.televisionMaterial(x,y,z);
@@ -39,7 +41,10 @@ public final class SceneryInstances {
         }
         public Vec point(int i){
             var v=template.vertex(i);var p=variation.point(v.x()*sx,v.y()*sy,v.z()*sz,template.height*sy);
-            return new Vec(x+p.x()*cosYaw-p.z()*sinYaw,y+p.y(),z+p.x()*sinYaw+p.z()*cosYaw);
+            double wx=x+p.x()*cosYaw-p.z()*sinYaw,wz=z+p.x()*sinYaw+p.z()*cosYaw;
+            // Project soft foliage roots onto the height field; stems retain world-up, not the terrain normal.
+            boolean conform=terrain!=null&&room>=12&&FoliageVariation.foliage(mesh)&&!mesh.startsWith("level_tree_");
+            return new Vec(wx,conform?terrain.height(wx,wz)+(y-terrain.height(x,z))+p.y():y+p.y(),wz);
         }
         public int material(int triangle){return materials[template.materialSlots[triangle]];}
         public boolean visible(double cameraX,double eye,double cameraZ,double heading,double pitch,double hx,double hy,double near){
@@ -50,22 +55,23 @@ public final class SceneryInstances {
     }
     private final List<Instance> instances;private final List<Template> templates;
     public SceneryInstances(LevelDefinition level,int hidingDensity){
+        SiteTerrain terrain=SiteTerrain.of(level);
         var sources=new LinkedHashMap<String,Template>();var placements=new ArrayList<Instance>();
         for(var p:level.props()){
             if(p.mesh().equals("level_shrub_refuge")&&OutdoorHiding.containing(level,p.x(),p.y(),p.z(),hidingDensity)==null)continue;
-            add(sources,placements,p.mesh(),p.room(),p.x(),p.y(),p.z(),p.scale(),p.scale(),p.scale(),p.yaw());
+            add(sources,placements,p.mesh(),p.room(),p.x(),p.y(),p.z(),p.scale(),p.scale(),p.scale(),p.yaw(),terrain);
         }
         for(var s:level.sockets()){
             if(s.type().equals("landscape_detail")){
                 String[] shape=s.style().split("\\|");if(shape.length!=4)throw new IllegalArgumentException("landscape scale contract");
-                add(sources,placements,shape[0],s.room(),s.x(),s.y(),s.z(),Double.parseDouble(shape[1]),Double.parseDouble(shape[2]),Double.parseDouble(shape[3]),s.yaw());
-            }else if(s.type().equals("landscape_tree"))add(sources,placements,s.style(),s.room(),s.x(),s.y(),s.z(),1,1,1,s.yaw());
+                add(sources,placements,shape[0],s.room(),s.x(),s.y(),s.z(),Double.parseDouble(shape[1]),Double.parseDouble(shape[2]),Double.parseDouble(shape[3]),s.yaw(),terrain);
+            }else if(s.type().equals("landscape_tree"))add(sources,placements,s.style(),s.room(),s.x(),s.y(),s.z(),1,1,1,s.yaw(),terrain);
         }
         instances=List.copyOf(placements);templates=List.copyOf(sources.values());
     }
-    private static void add(Map<String,Template> sources,List<Instance> instances,String mesh,int room,double x,double y,double z,double sx,double sy,double sz,double yaw){
+    private static void add(Map<String,Template> sources,List<Instance> instances,String mesh,int room,double x,double y,double z,double sx,double sy,double sz,double yaw,SiteTerrain terrain){
         if(!Double.isFinite(sx+sy+sz+x+y+z+yaw)||sx<=0||sy<=0||sz<=0)throw new IllegalArgumentException("invalid scenery transform");
-        instances.add(new Instance(sources.computeIfAbsent(mesh,Template::new),room,x,y,z,sx,sy,sz,yaw));
+        instances.add(new Instance(sources.computeIfAbsent(mesh,Template::new),room,x,y,z,sx,sy,sz,yaw,terrain));
     }
     public List<Instance> instances(){return instances;}public List<Template> templates(){return templates;}
     public long expandedTriangles(){return instances.stream().mapToLong(i->i.template.triangleCount()).sum();}

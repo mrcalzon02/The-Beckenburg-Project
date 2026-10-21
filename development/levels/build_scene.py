@@ -42,6 +42,8 @@ for (room,mid,color),group in groups.items():
         for i in poly.loop_indices:layer.data[i].uv=uv[mesh.loops[i].vertex_index]
     obj=bpy.data.objects.new(f'Runtime room {room} material {mid}',mesh);rooms.get(room,rooms[13]).objects.link(obj);mesh.materials.append(materials[key])
     obj['source']='Exact runtime SceneRenderer triangles, original UV and material';obj['zone']=room
+    # Paper-thin soil/litter stamps are surface detail, not shadow-casting roofs.
+    if name=='blackpine' and room==12 and verts and .005<=min(p[2] for p in verts) and max(p[2] for p in verts)<.04:obj.visible_shadow=False
 
 loose_path=SRC/'loose-objects.json'
 if loose_path.exists():

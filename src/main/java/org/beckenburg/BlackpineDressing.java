@@ -11,9 +11,9 @@ public final class BlackpineDressing {
         "level_camp_rainbarrel","level_camp_bench","level_woodland_grass","level_woodland_fern","level_woodland_flowers",
         "level_woodland_scrub","level_woodland_stump","level_woodland_boulder","level_woodland_deadfall",
         "level_woodland_track","level_woodland_litter","level_woodland_floor","level_woodland_bank");
-    /** Irregular overlapping stamps follow these real routes. Values are centreline X/Z metres. */
+    /** Actual worn route centrelines, baked into the shared terrain diffuse and erosion profile. */
     public static final List<double[]> ROUTES=List.of(
-        new double[]{35.5,60,33,55,31,50,29,45,30,38,33,32,38,25,40,25},
+        new double[]{35.5,60,38,56,35,51,31,50,29,45,30,38,33,32,38,25,40,25},
         new double[]{31,50,25,49,18,48,18,46},
         new double[]{25,49,13,47,13,40,14,40},
         new double[]{13,47,9,44,9,42},
@@ -21,7 +21,7 @@ public final class BlackpineDressing {
         new double[]{26,30,27,23,27,18,27,16},
         new double[]{27,23,34,18,37,14,37,12},
         new double[]{27,18,24,16,21,14,21,12},
-        new double[]{33,55,40,56,47,56,47,54},
+        new double[]{38,56,43,56,47,56,47,54},
         new double[]{38,25,38,32,38,41,40,41},
         new double[]{52,34,55,32,58,29,60,27,62,25,62,23},
         new double[]{29,45,27,40,26,38}
@@ -35,9 +35,10 @@ public final class BlackpineDressing {
         final LevelDefinition base;
         final List<Prop> props;final List<Socket> sockets;final List<Collider> colliders;
         final Random rng=new Random(0xB1AC071E);
+        int detailSequence;
         Dressing(LevelDefinition l){base=l;props=new ArrayList<>(l.props());sockets=new ArrayList<>(l.sockets());colliders=new ArrayList<>(l.colliders());}
         void detail(String mesh,int room,double x,double y,double z,double sx,double sy,double sz,double yaw){
-            sockets.add(new Socket("blackpine-detail-"+sockets.size(),"landscape_detail",room,x,y,z,yaw,mesh+"|"+sx+"|"+sy+"|"+sz));
+            sockets.add(new Socket("blackpine-detail-"+detailSequence++,"landscape_detail",room,x,y,z,yaw,mesh+"|"+sx+"|"+sy+"|"+sz));
         }
         void prop(String mesh,int room,double x,double z,double yaw,double hx,double hz,double height){
             props.add(new Prop(mesh,room,x,0,z,1,yaw,hx,hz,height,"floor"));
@@ -49,7 +50,7 @@ public final class BlackpineDressing {
             hearth(6,24.95,9.5,24.25);hearth(2,14.95,44.1,14.25);
             prop("level_camp_logpile",12,54.6,41.2,0,1.37,.71,.97);
             prop("level_camp_logpile",12,57.7,41.2,0,1.37,.71,.97);
-            prop("level_camp_logpile",12,43,55.8,0,1.37,.71,.97);
+            prop("level_camp_logpile",12,43,58.5,0,1.37,.71,.97);
             prop("level_camp_sawhorse",12,52.8,44.2,.20,.84,.38,.97);
             prop("level_camp_sawhorse",8,48.7,47.5,Math.PI/2,.84,.38,.97);
             barrel(29.35,15.58);barrel(21.35,45.58);barrel(11.35,41.58);
@@ -58,10 +59,11 @@ public final class BlackpineDressing {
             prop("level_camp_bench",12,16.5,47.1,Math.PI/2,.875,.31,.91);
             prop("level_woodland_stump",12,53.8,45.5,0,.45,.45,.53);
             // No new refuge sockets: low verge plants cannot conceal a hunter.
-            paths();yardPlants();forest();
+            yardPlants();forest();
         }
         void canopy(double x,double z){
-            prop("level_camp_patio",12,x,z,0,0,0,.01);
+            // Eight millimetres separates the stone face from the underlying soil; feet retain Y=0.
+            props.add(new Prop("level_camp_patio",12,x,.008,z,1,0,0,0,.01,"floor"));
             prop("level_camp_canopy",12,x,z,0,0,0,3.08);
             for(double dx:new double[]{-1.75,1.75})colliders.add(new Collider(x+dx,0,z+1.1,.07,.07,2.54,0));
             // Conservative lowest roof underside; a standing hunter has clear headroom below it.
@@ -77,36 +79,17 @@ public final class BlackpineDressing {
             colliders.add(new Collider(x,0,z,.38,.38,1.18,0));
             colliders.add(new Collider(x+.2,1.18,z-.2,.04,.04,1.72,0));
         }
-        void paths(){
-            int n=0;
-            for(double[] route:ROUTES)for(int i=0;i<route.length-2;i+=2){
-                double ax=route[i],az=route[i+1],bx=route[i+2],bz=route[i+3];
-                double length=Math.hypot(bx-ax,bz-az),yaw=-Math.atan2(bx-ax,bz-az);
-                int count=(int)Math.ceil(length/.78);
-                for(int j=0;j<=count;j++){
-                    double t=j/(double)count,x=ax+(bx-ax)*t,z=az+(bz-az)*t;
-                    if(patioReserve(x,z,1))continue;
-                    detail("level_woodland_track",12,x,.012+(n++%5)*.0008,z,1.45+rng.nextDouble()*.32,1,1.65,yaw);
-                }
-            }
-            // Sparse scuffs/needle islands retain the open working yard instead of carpeting it.
-            for(int i=0;i<90;i++){
-                double x=5+rng.nextDouble()*61,z=3+rng.nextDouble()*55;
-                if(clearPlant(x,z,.5,false)&&distanceToPath(x,z)>1.05)
-                    detail("level_woodland_litter",12,x,.007,z,1.0+rng.nextDouble()*2,1,1+rng.nextDouble()*2,rng.nextDouble()*6.28);
-            }
-        }
         void yardPlants(){
             for(int i=0;i<660;i++){
                 double x=4.5+rng.nextDouble()*62,z=2.5+rng.nextDouble()*56;
-                if(!clearPlant(x,z,.65,true)||distanceToPath(x,z)<1.25)continue;
+                if(!clearPlant(x,z,.65,true)||distanceToPath(x,z)<1.75)continue;
                 if(x>24&&x<40&&z>22&&z<49&&rng.nextDouble()<.82)continue;
                 String mesh=i%17==0?"level_woodland_flowers":i%8==0?"level_woodland_fern":i%19==0?"level_woodland_scrub":"level_woodland_grass";
                 double scale=.65+rng.nextDouble()*.5;
                 detail(mesh,12,x,0,z,scale,scale,scale,rng.nextDouble()*Math.PI*2);
             }
             // Deliberately tended little flower patches beside the foreman's stoop and mess.
-            for(double[] patch:new double[][]{{29.7,18.3},{24.3,18.3},{20.7,48.3},{8,43.3}})
+            for(double[] patch:new double[][]{{29.7,18.3},{24.3,18.3},{20.7,48.3},{7,43.3}})
                 for(int i=0;i<3;i++)detail("level_woodland_flowers",12,patch[0]+(i-1)*.34,0,patch[1],.8,.8,.8,i);
         }
         boolean clearPlant(double x,double z,double margin,boolean fixtures){
