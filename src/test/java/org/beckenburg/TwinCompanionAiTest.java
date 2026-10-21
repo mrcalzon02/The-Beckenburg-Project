@@ -53,6 +53,39 @@ public final class TwinCompanionAiTest {
             "Ancient Twins must use the approved green companion appearance");
         check(GhostIdentity.Type.TWINS.baseType()==GhostIdentity.Type.TWINS,
             "Both actors remain a single species and ritual identity");
-        System.out.println("PASS human Twin keeps an autonomous AI sister, real geometry, ghost activity and one shared energy authority");
+
+        // A heard sound beyond a door must not make the other Twin open it
+        // telekinetically across the room. The door opens only at physical reach.
+        HouseMap doorwayMap=new HouseMap();
+        var calm=new MissionWeather.State(EvidenceSignals.Season.AUTUMN,
+            EvidenceSignals.Weather.CLEAR,MissionWeather.Mode.FIXED,1,0);
+        boolean testedRemoteDoor=false;
+        for(int home=0;home<HouseMap.INDOOR_ROOMS&&!testedRemoteDoor;home++){
+            var homeSpawn=doorwayMap.spawn(home);
+            var stationary=new LanGhostSpatial.Pose(home,homeSpawn.x(),
+                homeSpawn.y(),homeSpawn.z(),180);
+            var walker=new TwinCompanionAi(doorwayMap,stationary,20261021L);
+            int current=walker.pose().room();
+            for(var door:doorwayMap.level().portalsFrom(current)){
+                int next=door.a()==current?door.b():door.a();
+                if(!door.door()||next>=HouseMap.EXTRACTION_ROOM
+                        ||!doorwayMap.ghostExits(current).contains(next)
+                        ||doorwayMap.doorOpen(door.id())
+                        ||Math.hypot(walker.pose().x()-door.x(),walker.pose().z()-door.z())<=2.0
+                        ||!LanAcoustics.audible(doorwayMap,current,next,
+                            LanGhostPursuit.Sound.RITUAL,calm))continue;
+                walker.heard(next,doorwayMap.centerX(next),doorwayMap.centerZ(next),
+                    LanGhostPursuit.Sound.RITUAL,1,calm);
+                check(!doorwayMap.doorOpen(door.id()),
+                    "Hearing through a closed door must not remotely open it");
+                walker.advance(1,stationary);
+                check(!doorwayMap.doorOpen(door.id()),
+                    "Selecting a neighboring room must not open a distant door");
+                testedRemoteDoor=true;
+                break;
+            }
+        }
+        check(testedRemoteDoor,"The authored house must expose a reachable distant door");
+        System.out.println("PASS human Twin keeps an autonomous AI sister, real geometry, ghost activity and one shared energy authority; doors require physical approach");
     }
 }

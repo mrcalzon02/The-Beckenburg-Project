@@ -65,6 +65,15 @@ public final class TwinCompanionAi {
         }
         double dx=targetX-pose.x(),dz=targetZ-pose.z();
         double distance=Math.hypot(dx,dz);
+        if(targetRoom!=pose.room()&&distance<=1.35){
+            // A Twin opens a door only when physically at that doorway.
+            // Merely hearing a hunter in another room cannot remotely operate it.
+            for(Portal door:map.level().portalsFrom(pose.room())){
+                if(door.door()&&door.joins(pose.room(),targetRoom)
+                        &&Math.hypot(pose.x()-door.x(),pose.z()-door.z())<=1.35)
+                    map.openDoorBetweenRooms(pose.room(),targetRoom);
+            }
+        }
         if(distance<.23){
             if(targetRoom!=pose.room()&&map.ghostExits(pose.room()).contains(targetRoom)){
                 // A door-connected transition uses the authored portal. The AI
@@ -123,7 +132,6 @@ public final class TwinCompanionAi {
                 .filter(p->p.joins(pose.room(),noiseRoom)).toList();
             if(!doors.isEmpty()){
                 Portal p=doors.get(0);
-                if(p.door())map.openDoorBetweenRooms(pose.room(),noiseRoom);
                 intent=Intent.TRAVEL;targetRoom=noiseRoom;
                 targetX=p.x();targetZ=p.z();
                 goalUntil=tick+80;nextGoalTick=tick+35;
