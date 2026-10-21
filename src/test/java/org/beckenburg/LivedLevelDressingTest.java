@@ -20,11 +20,22 @@ public final class LivedLevelDressingTest {
             check(closets.size()>=5,site+" cupboards must be scattered across the site");
             map.configureHiding(0);int absent=triangles(map);map.configureHiding(100);int present=triangles(map);
             int expectedClosetTriangles=closets.size()*GlbProps.model("level_hiding_cupboard_worn").triangles().size();
-            check(present-absent==expectedClosetTriangles,
-                site+" difficulty must change actual closet geometry: absent="+absent+
+            // Difficulty also enables authored outdoor shrub cover, which the
+            // production renderer includes in the same full-level triangle total.
+            // Count *both* actually rendered geometry families rather than
+            // assuming only cupboards change between density 0 and 100.
+            int expectedShrubTriangles=0;
+            for(Prop prop:level.props())if(prop.mesh().equals("level_shrub_refuge")){
+                boolean hiddenAtZero=OutdoorHiding.containing(level,prop.x(),prop.y(),prop.z(),0)!=null;
+                boolean visibleAtHundred=OutdoorHiding.containing(level,prop.x(),prop.y(),prop.z(),100)!=null;
+                expectedShrubTriangles+=((visibleAtHundred?1:0)-(hiddenAtZero?1:0))
+                    *GlbProps.model("level_shrub_refuge").triangles().size();
+            }
+            check(present-absent==expectedClosetTriangles+expectedShrubTriangles,
+                site+" difficulty must change real cupboard AND outdoor cover geometry: absent="+absent+
                 " present="+present+" delta="+(present-absent)+
-                " expected="+expectedClosetTriangles+" count="+closets.size()+
-                " perCloset="+GlbProps.model("level_hiding_cupboard_worn").triangles().size());
+                " expected="+(expectedClosetTriangles+expectedShrubTriangles)+
+                " closets="+expectedClosetTriangles+" outdoorCover="+expectedShrubTriangles);
             for(Socket s:closets){
                 check(map.hidingSpot(s.room(),0)==null&&map.hidingSpot(s.room(),100)!=null,"0/100 presence contract");
                 int previous=0;
