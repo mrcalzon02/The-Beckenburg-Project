@@ -10,6 +10,7 @@ public final class SiteStories {
  public static Identity identity(String site){return switch(site){
   case "house"->new Identity("The Briar House","17 Briar Lane, Beckenburg","Built in 1886. Three generations of the Vale family kept the house; its plumbing was renewed in 1983, while the old cellar became the laundry.");
   case "farmhouse"->new Identity("Hollowmere Farm","4 Mill Road, Beckenburg","Farmhouse dated 1798. Repaired after the 1947 winter; the landing washroom and shed laundry were later additions. The orchard and drying yard remain in use.");
+  case "blackpine"->new Identity("Blackpine Logging Camp","North Forest logging road","A shuttered working camp. Payroll records and a shipping manifest disagree about the final crews. This fictional history does not identify the current haunting.");
   case "school"->new Identity("Ravenshade School","8 School Road, Beckenburg","Founded in 1894. The infant department opened in 1911 and a secondary extension followed in 1956. Successive coal, oil and modern boilers survive below the school.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
  public static Document document(String site,String id){var place=identity(site);return switch(id){

@@ -5,7 +5,7 @@ import org.beckenburg.LevelDefinition.*;
 public final class LevelEnclosure {
  private LevelEnclosure(){}
  public enum Setting { SUBURBAN,WOODLAND,URBAN,MOUNTAIN }
- public static Setting setting(String id){if(id.startsWith("enclosure-"))return Setting.valueOf(id.substring(10).toUpperCase(java.util.Locale.ROOT));return switch(id){case "house","mansion"->Setting.SUBURBAN;case "farmhouse"->Setting.WOODLAND;case "castle"->Setting.MOUNTAIN;default->Setting.URBAN;};}
+ public static Setting setting(String id){if(id.startsWith("enclosure-"))return Setting.valueOf(id.substring(10).toUpperCase(java.util.Locale.ROOT));return switch(id){case "house","mansion"->Setting.SUBURBAN;case "farmhouse","blackpine"->Setting.WOODLAND;case "castle"->Setting.MOUNTAIN;default->Setting.URBAN;};}
  public record Edge(double x0,double z0,double x1,double z1,double inwardX,double inwardZ){public double length(){return Math.hypot(x1-x0,z1-z0);}}
  /** Boundary of the union, not a bounding rectangle that could enclose unsupported gaps. */
  public static List<Edge> edges(List<Room> rooms){

@@ -1,0 +1,16 @@
+{
+  "status": "graybox-source-checks-pass",
+  "level": "blackpine",
+  "revision": "blackpine-graybox-v1-40e0c16e9ac4fd0c",
+  "runtime_triangles": 106851,
+  "space_count": 15,
+  "outdoor_refuges": 3,
+  "distinct_rite_rooms": 3,
+  "all_socket_transforms_match": true,
+  "all_diffuse_images_packed": true,
+  "blend_sha256": "12b4b6de61637bb913ee5fca0b95d642dcf41bb055cbbeecbe4fd503b37cb146",
+  "limitations": [
+    "Not a selectable production map.",
+    "No native interactive Windows walkthrough or target-hardware performance acceptance."
+  ]
+}

@@ -99,7 +99,8 @@ if lighting_path.exists():
             direction=Vector((source['dx'],-source['dz'],source['dy']));lamp.rotation_euler=direction.to_track_quat('-Z','Y').to_euler();lamp.data.spot_size=math.radians(114 if kind=='TABLE_LAMP' else 122 if kind=='FLUORESCENT' else 95);lamp.data.spot_blend=.45 if kind=='TABLE_LAMP' else .22
         lamp['source_kind']=kind;lamp['source_id']=source['id'];lamp['runtime_range_m']=source['radius'];lamp['circuit']=source['room'];lamp['fixture_controller']=source['fixture']
 bpy.ops.object.light_add(type='SUN',location=(15,-15,20));bpy.context.object.rotation_euler=(.38,-.55,-.9);bpy.context.object.data.energy=.7;bpy.context.object.data.color=(.40,.55,.85)
-camera_poses={'house':((28,-34,3.8),(19,-19,3.0)),
+camera_poses={'blackpine':((79,-85,46),(33,-30,1.5)),
+              'house':((28,-34,3.8),(19,-19,3.0)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
               'school':((58,-57,17),(28,-24,3.5)),
               'arrival-road':((12,-14,9),(0,5,1.0)),
@@ -114,10 +115,11 @@ target=Vector(look_at);cam.rotation_euler=(target-cam.location).to_track_quat('-
 scene.render.engine='CYCLES';scene.cycles.samples=24;scene.cycles.use_denoising=True
 scene.render.resolution_x=1280;scene.render.resolution_y=800;scene.render.resolution_percentage=100
 scene.view_settings.view_transform='Standard';scene.view_settings.look='None';scene.view_settings.exposure=.6
-scene['level_id']=definition['id'];scene['revision']=definition['revision'];scene['source_of_truth']='LevelPlans.java / LevelDefinition.java; regenerate after layout edits'
+scene['level_id']=definition['id'];scene['revision']=definition['revision'];scene['source_of_truth']=('BlackpineLevel.java' if name=='blackpine' else 'LevelPlans.java')+' / LevelDefinition.java; regenerate after layout edits'
+scene['production_status']='development graybox' if name=='blackpine' else 'authored scene; see acceptance notes'
 sys.path.insert(0,str(ROOT/'development/levels'));import scene_metadata;scene_metadata.apply(scene,definition)
 scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get('hidingDensity',100);scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
 out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
-bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+'-complete.blend')),compress=True)
+bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+('-graybox.blend' if name=='blackpine' else '-complete.blend'))),compress=True)
 scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/f'development/levels/previews/{name}-blender-exterior.png');bpy.ops.render.render(write_still=True)
 print('EDITABLE_LEVEL_COMPLETE',name,len(faces),'runtime triangles')

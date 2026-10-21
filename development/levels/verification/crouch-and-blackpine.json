@@ -1,0 +1,35 @@
+{
+  "status": "targeted-checks-pass",
+  "java": "Java 17 main and test compilation",
+  "physical_posture": "1.78 m standing / 1.05 m crouched; stand rejection under 1.30 m obstruction; no sprint while crouching; feet stable",
+  "network": "Real loopback TCP posture, Ctrl key dispatch and exact-ray interaction tests passed",
+  "blackpine": "15 spaces, three rite rooms, three outdoor refuges; physical doors and both stair directions checked",
+  "van_reachability": {
+    "visited_supported_positions": 301405,
+    "all_zones_and_functional_sockets_reached": true,
+    "outdoor_hide_approach_radius_m": 0.3
+  },
+  "regressions_passed": [
+    "AuthoredLevelPhysicsTest",
+    "AuthoredLevelStateTest",
+    "AuthoredUtilitiesTest",
+    "SoloElevationTest",
+    "SprintStaminaTest",
+    "VanHidingTest",
+    "LevelEnclosureTest",
+    "SurroundingClearanceTest",
+    "LevelSurfaceIntegrityTest",
+    "InteractionFocusTest",
+    "HauntedFixturesTest",
+    "LooseClutterTest",
+    "RoomAcousticPresetsTest",
+    "WorldViewHandednessTest",
+    "HeldDeviceReadoutTest",
+    "InteractionNetworkTest"
+  ],
+  "limitations": [
+    "Blackpine remains an unselectable development graybox.",
+    "No native interactive Windows walkthrough, full ghost/equipment matrix or target performance acceptance.",
+    "Remote crouch uses a reduced-height existing sprite pending dedicated kneeling animation."
+  ]
+}
