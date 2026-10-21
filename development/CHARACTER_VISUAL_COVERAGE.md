@@ -41,8 +41,8 @@ The `CharacterVisuals` registry tracks `BASE`,
 - Incomplete Hunter variants resolve to their **own class's** base appearance.
 - Incomplete original/Ancient ghost variants resolve to their **own ghost
   identity's** base appearance; Ancient green identity is preserved.
-- Elder variants cannot be requested because the master list does not contain
-  alternate-gender Elder art.
+- Incomplete Elder variants also resolve to their **own Elder baseline**;
+  no alternate-gender Elder master exists yet, and the UI does not advertise one.
 - The lobby only offers three currently complete Hunter base choices. We do
   not display an unfinished gender variant as if it were a separate selectable
   visual or introduce false distinctions between actual art.
