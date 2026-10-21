@@ -1,0 +1,133 @@
+{
+  "identity": "twins",
+  "version": "two-independent-source-cutouts-v2",
+  "source": "assets/concept-art/v001/03-ghosts/twins-ghost-profile.png",
+  "source_sha256": "cbece996e02fdcc3ad301c546fc63d8e406a7a61c9e370938544c380b931627a",
+  "directions": {
+    "front": {
+      "a": {
+        "path": "twins/a/front.png",
+        "source_crop": [
+          17,
+          280,
+          128,
+          616
+        ],
+        "visible_pixels": 9478,
+        "head_pixels": 1751,
+        "torso_pixels": 5041,
+        "feet_pixels": 2470,
+        "sha256": "f91027108dd19db35e5aac79378b1474c0bd5f0d804a5a51d2deafdb136f50b0"
+      },
+      "b": {
+        "path": "twins/b/front.png",
+        "source_crop": [
+          126,
+          280,
+          231,
+          616
+        ],
+        "visible_pixels": 8535,
+        "head_pixels": 1690,
+        "torso_pixels": 4927,
+        "feet_pixels": 1739,
+        "sha256": "42be84e0fd54f057f9534a31cb96b4dd65fd4b7a3378a3330826907dda5e226c"
+      }
+    },
+    "side": {
+      "a": {
+        "path": "twins/a/side.png",
+        "source_crop": [
+          242,
+          281,
+          316,
+          614
+        ],
+        "visible_pixels": 8020,
+        "head_pixels": 1353,
+        "torso_pixels": 3997,
+        "feet_pixels": 2523,
+        "sha256": "88c132ba0208bee8bc19493536e9be470b4664c43f49f21caa3a5f35286e07c3"
+      },
+      "b": {
+        "path": "twins/b/side.png",
+        "source_crop": [
+          315,
+          281,
+          384,
+          614
+        ],
+        "visible_pixels": 6265,
+        "head_pixels": 1517,
+        "torso_pixels": 2953,
+        "feet_pixels": 1647,
+        "sha256": "857ebd1717a0f69a2130570e3b14c165b8fdb802d66572b1b2539f7d33b2db4a"
+      }
+    },
+    "back": {
+      "a": {
+        "path": "twins/a/back.png",
+        "source_crop": [
+          475,
+          280,
+          555,
+          614
+        ],
+        "visible_pixels": 6776,
+        "head_pixels": 1718,
+        "torso_pixels": 3465,
+        "feet_pixels": 1424,
+        "sha256": "21e31d955db75d06d5f0ec5c9fb4e1b890bed0b32f8a0508a157e909ed31c012"
+      },
+      "b": {
+        "path": "twins/b/back.png",
+        "source_crop": [
+          392,
+          280,
+          480,
+          614
+        ],
+        "visible_pixels": 8241,
+        "head_pixels": 1674,
+        "torso_pixels": 4427,
+        "feet_pixels": 1963,
+        "sha256": "74a75ee0c7aec16f4fd4f7bbe5227f9c92c6c449d03b9cf5bc82c532197723c7"
+      }
+    },
+    "three_quarter": {
+      "a": {
+        "path": "twins/a/three_quarter.png",
+        "source_crop": [
+          587,
+          281,
+          676,
+          615
+        ],
+        "visible_pixels": 6819,
+        "head_pixels": 1316,
+        "torso_pixels": 4112,
+        "feet_pixels": 1236,
+        "sha256": "6aa1d2568e11d0179efa08f7975cc1dc6373586d7e296311a5f86f51e397cd78"
+      },
+      "b": {
+        "path": "twins/b/three_quarter.png",
+        "source_crop": [
+          672,
+          281,
+          756,
+          615
+        ],
+        "visible_pixels": 8959,
+        "head_pixels": 1741,
+        "torso_pixels": 4581,
+        "feet_pixels": 2507,
+        "sha256": "f132ff8b7ef3d9ed7b131f8b6c14c06231ca102e8780db977d22658c9ae13458"
+      }
+    }
+  },
+  "canvas": [
+    128,
+    224
+  ],
+  "archive_sha256": "bfef67b98900909647af74a2f5dc20af2642299182f83d92c6800560e69aaa97"
+}

@@ -7,7 +7,7 @@ import java.util.List;
 public final class DirectionalSpritesIntegrationTest {
     private static void check(boolean ok,String why){if(!ok)throw new AssertionError(why);}
     public static void main(String[] args) {
-        check(DirectionalSprites.frameCount()==33,"12 legacy frames plus 24 approved four-view source frames with Observer overlap");
+        check(DirectionalSprites.frameCount()==41,"12 legacy frames plus 24 approved four-view source frames with Observer overlap");
         for(int i=0;i<8;i++){
             check(DirectionalSprites.frame("observer",i)!=null,"observer facing "+i);
             check(DirectionalSprites.frame("banshee",i)!=null,"banshee facing "+i);
