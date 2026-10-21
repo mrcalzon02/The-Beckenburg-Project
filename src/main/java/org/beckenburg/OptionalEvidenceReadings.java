@@ -113,6 +113,39 @@ public final class OptionalEvidenceReadings {
                   "Copied voice: recorded waveform correlation and delay",
                   "Ghost audibly imitates an actually captured voice"));
             case ANCIENT_POSSESSIVE, ANCIENT_POLTERGEIST, ANCIENT_DEMON, ANCIENT_YOKAI, ANCIENT_BANSHEE, ANCIENT_WRAITH, ANCIENT_SHADE, ANCIENT_SPECTER, ANCIENT_HANTU, ANCIENT_TWINS -> ancientPlan(ghost);
+            // The three approved Elder identities already have distinct future
+            // instrument families in GhostEvidenceMatrix. Keep descriptions
+            // explicitly event-bound; these are specs, not fabricated observations.
+            case ELDER_BLADE_DEMON -> List.of(
+                t(EquipmentRegistry.Evidence.STRUCTURED_LIGHT,"LASER_GRID",
+                  "Blade crossing: broken beams and occlusion duration",
+                  "A materialized blade demon moves its physical weapon through the deployed grid"),
+                t(EquipmentRegistry.Evidence.OBJECT_IMPRINT,"OBJECT_IMPRINT_SCANNER",
+                  "Blade contact: strike point and residue strength",
+                  "The demon actually strikes an interactable surface or object"),
+                t(EquipmentRegistry.Evidence.SEISMIC_IMPACT,"SEISMIC_RECORDER",
+                  "Heavy impact: measured floor velocity and duration",
+                  "The Elder blade demon makes physical contact with the floor during a charge"));
+            case ELDER_PLAGUE_DEMON -> List.of(
+                t(EquipmentRegistry.Evidence.ATMOSPHERIC_REVERSAL,"BAROMETRIC_PROBE",
+                  "Displaced atmosphere: pressure differential and duration",
+                  "A real Elder plague manifestation changes room air pressure near a probe"),
+                t(EquipmentRegistry.Evidence.ECTOPLASM,"ECTOPLASM_SAMPLER",
+                  "Deposited residue: measured mass and persistence",
+                  "The manifested Elder leaves sampleable material on an existing surface"),
+                t(EquipmentRegistry.Evidence.RESONANCE,"RESONANCE_TUNER",
+                  "Manifestation harmonics: frequency and intensity",
+                  "The Elder performs an actual audible signature event"));
+            case ELDER_NOTHIC -> List.of(
+                t(EquipmentRegistry.Evidence.SEISMIC_IMPACT,"SEISMIC_RECORDER",
+                  "Heavy footsteps: floor velocity and spacing",
+                  "The Elder Nothic physically moves across the instrument detection range"),
+                t(EquipmentRegistry.Evidence.SPECTRAL_SHADOW,"SPECTRAL_PRISM",
+                  "Observed mass: silhouette area and persistence",
+                  "A real camera-visible Nothic apparition occludes part of the camera view"),
+                t(EquipmentRegistry.Evidence.STRUCTURED_LIGHT,"LASER_GRID",
+                  "Large-body crossing: interrupted rays and duration",
+                  "The Nothic moves its actual manifested silhouette across an active grid"));
             case TWINS -> List.of(
                 t(EquipmentRegistry.Evidence.SEISMIC_IMPACT,"SEISMIC_RECORDER",
                   "Paired knocks: peaks in mm/s and inter-event gap in ms",
