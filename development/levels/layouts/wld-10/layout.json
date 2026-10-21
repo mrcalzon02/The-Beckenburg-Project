@@ -1,0 +1,765 @@
+{
+  "version": 1,
+  "id": "WLD-10",
+  "title": "Monastery of Ashen Bells",
+  "region": "Highland Frontier",
+  "scale": "Medium-large / remote cloister",
+  "status": "rough-layout-only",
+  "intent": "A compact enclosed monastery wraps a high garden, with a detached bell stair on the east and catacombs below the north range. Its service path and terraces distinguish it from the urban academy.",
+  "site_bounds": [
+    -12,
+    -2,
+    72,
+    90
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Mountain-road van apron",
+      "bounds": [
+        24,
+        74,
+        40,
+        86
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Monastery gate terrace",
+      "bounds": [
+        24,
+        62,
+        40,
+        74
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "gatehouse",
+      "name": "Gatehouse",
+      "bounds": [
+        24,
+        56,
+        40,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "west",
+      "name": "West cloister",
+      "bounds": [
+        8,
+        22,
+        14,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "east",
+      "name": "East cloister",
+      "bounds": [
+        44,
+        22,
+        50,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "north",
+      "name": "North cloister",
+      "bounds": [
+        8,
+        16,
+        50,
+        22
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "south",
+      "name": "South cloister",
+      "bounds": [
+        8,
+        50,
+        50,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "garden",
+      "name": "Herb garden",
+      "bounds": [
+        14,
+        22,
+        44,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "archive",
+      "name": "Archive",
+      "bounds": [
+        8,
+        2,
+        28,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "refectory",
+      "name": "Refectory",
+      "bounds": [
+        50,
+        30,
+        68,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dorm",
+      "name": "Dormitory",
+      "bounds": [
+        -8,
+        22,
+        8,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "tower-base",
+      "name": "Bell tower stair base",
+      "bounds": [
+        50,
+        16,
+        60,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "bell",
+      "name": "Bell chamber",
+      "bounds": [
+        50,
+        16,
+        60,
+        30
+      ],
+      "y": 6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "catacombs",
+      "name": "Catacomb cross passage",
+      "bounds": [
+        8,
+        16,
+        50,
+        22
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "chamber",
+      "name": "Subterranean chapter chamber",
+      "bounds": [
+        8,
+        2,
+        28,
+        16
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "vestry",
+      "name": "Wash / vestry",
+      "bounds": [
+        28,
+        2,
+        44,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "rear",
+      "name": "Rear service terrace",
+      "bounds": [
+        60,
+        16,
+        68,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          80.0
+        ],
+        [
+          32.0,
+          0,
+          68.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "gatehouse",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          68.0
+        ],
+        [
+          32.0,
+          0,
+          59.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "gatehouse",
+      "b": "south",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          59.0
+        ],
+        [
+          29.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "south",
+      "b": "west",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          0,
+          53.0
+        ],
+        [
+          11.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "west",
+      "b": "north",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "north",
+      "b": "east",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "east",
+      "b": "south",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          29.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "south",
+      "b": "garden",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          29.0,
+          0,
+          53.0
+        ],
+        [
+          29.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "garden",
+      "b": "north",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          29.0,
+          0,
+          36.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "west",
+      "b": "dorm",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          0.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "north",
+      "b": "archive",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          9.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "archive",
+      "b": "vestry",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          18.0,
+          0,
+          9.0
+        ],
+        [
+          36.0,
+          0,
+          9.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "vestry",
+      "b": "north",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          9.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "east",
+      "b": "refectory",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L15",
+      "a": "east",
+      "b": "tower-base",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          55.0,
+          0,
+          23.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L16",
+      "a": "tower-base",
+      "b": "bell",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          55.0,
+          0,
+          23.0
+        ],
+        [
+          55.0,
+          6,
+          23.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L17",
+      "a": "tower-base",
+      "b": "rear",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          55.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          23.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L18",
+      "a": "rear",
+      "b": "refectory",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          64.0,
+          0,
+          23.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L19",
+      "a": "north",
+      "b": "catacombs",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          -3,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L20",
+      "a": "catacombs",
+      "b": "chamber",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          9.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L21",
+      "a": "catacombs",
+      "b": "west",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          -3,
+          19.0
+        ],
+        [
+          11.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "south",
+      "west",
+      "north",
+      "east",
+      "south"
+    ],
+    [
+      "north",
+      "archive",
+      "vestry",
+      "north"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      80.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        76.372
+      ],
+      [
+        32.0,
+        0,
+        68.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "chamber",
+      "point": [
+        18.0,
+        -3,
+        9.0
+      ],
+      "installation": "Removable chapter containment seal"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "vestry",
+      "point": [
+        36.0,
+        0,
+        9.0
+      ],
+      "installation": "Purification basin"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "refectory",
+      "point": [
+        59.0,
+        0,
+        40.0
+      ],
+      "installation": "Community remembrance lectern"
+    }
+  ],
+  "circulation": "Cloister and garden are the main surface loop; service terrace links refectory to tower base. Catacombs have two independent descents. Bell chamber is a short observation branch with no required rite above a single stair.",
+  "systems": "Windward bell tower, still garden and stone underground have contrasting acoustics. Bell events require a physical bell/striker and lawful cause; the ledger is narrative, not a guaranteed supernatural reading.",
+  "campaign": "Silence, missing community records and an impossible toll ledger can connect to cemetery parish gaps. Monastic practice itself is not evidence of evil.",
+  "refine": [
+    "Inspect monastery and bell-frame structural references before detailed shell work.",
+    "Preserve the open cloister void; never cap the garden with an inferred roof.",
+    "Engineer tower flights and two catacomb entries; all core rituals remain below tower level."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ]
+}
