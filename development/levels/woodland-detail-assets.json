@@ -1,0 +1,466 @@
+{
+  "license": "CC0-1.0",
+  "coordinate_contract": "metres; Blender Z up, glTF Y up; preserve native origin",
+  "assets": [
+    {
+      "id": "level_camp_well",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "a314e6ff1fd0a7925800a30a415c96ed0ac9823f837e9cffafce1f20ea8db0ef",
+      "bytes": 168356,
+      "triangles": 1980,
+      "bounds": [
+        [
+          -1.2087781429290771,
+          0.0,
+          -0.9399999976158142
+        ],
+        [
+          1.2300000190734863,
+          2.8334081172943115,
+          0.9399999976158142
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_well.blend"
+    },
+    {
+      "id": "level_camp_patio",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "5866dce247ece3b5d5509c4c927b289ecbed9562e90024529861272125786351",
+      "bytes": 166556,
+      "triangles": 2112,
+      "bounds": [
+        [
+          -1.9999245405197144,
+          -0.10999999940395355,
+          -1.4997068643569946
+        ],
+        [
+          2.0003998279571533,
+          0.0,
+          1.497198224067688
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_patio.blend"
+    },
+    {
+      "id": "level_camp_canopy",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "a853b27716dbbd08546364b132a7a287f8354e82093b451efdfc304b98004c46",
+      "bytes": 22728,
+      "triangles": 160,
+      "bounds": [
+        [
+          -2.059999942779541,
+          0.0,
+          -1.3000000715255737
+        ],
+        [
+          2.190000057220459,
+          3.0799999237060547,
+          1.340000033378601
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_canopy.blend"
+    },
+    {
+      "id": "level_camp_fireplace",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c05e6608c51fd68d581273a570d3618799b8c59e8c4aab5e19923ccf152621c9",
+      "bytes": 105048,
+      "triangles": 1032,
+      "bounds": [
+        [
+          -0.9800000190734863,
+          0.0,
+          -0.42499998211860657
+        ],
+        [
+          0.9800000190734863,
+          1.9900000095367432,
+          0.7250000238418579
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_fireplace.blend"
+    },
+    {
+      "id": "level_camp_chimney",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "7528f2c088b0dd1d04a69b18ff0c5c9723fed35f64de3732509e177c2804e8de",
+      "bytes": 97664,
+      "triangles": 1130,
+      "bounds": [
+        [
+          -0.550000011920929,
+          0.004500001668930054,
+          -0.4699999988079071
+        ],
+        [
+          0.550000011920929,
+          4.840000152587891,
+          0.4699999988079071
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_chimney.blend"
+    },
+    {
+      "id": "level_camp_logpile",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "8fbf719cd614cc08779d1cfa48b87a3432f2ef1b40644068dfe694c105fbc976",
+      "bytes": 82336,
+      "triangles": 1176,
+      "bounds": [
+        [
+          -1.5,
+          0.0,
+          -0.6915569305419922
+        ],
+        [
+          1.5,
+          0.9578731060028076,
+          0.699999988079071
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_logpile.blend"
+    },
+    {
+      "id": "level_camp_sawhorse",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "2efd0bcba7020e866426812dec254944701b5583fa51a48f27a98e6aa20036a1",
+      "bytes": 25544,
+      "triangles": 108,
+      "bounds": [
+        [
+          -0.824999988079071,
+          -0.02266007661819458,
+          -0.42092224955558777
+        ],
+        [
+          0.824999988079071,
+          0.9699999690055847,
+          0.42092224955558777
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_sawhorse.blend"
+    },
+    {
+      "id": "level_camp_rainbarrel",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "fb28c1507aef8937d47299deb290b98bbc15be70286c731c52830f0cf2d6216f",
+      "bytes": 111512,
+      "triangles": 1280,
+      "bounds": [
+        [
+          -0.3799999952316284,
+          0.0,
+          -0.3799999952316284
+        ],
+        [
+          0.3799999952316284,
+          2.9000000953674316,
+          0.49000000953674316
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_rainbarrel.blend"
+    },
+    {
+      "id": "level_camp_bench",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bytes": 21604,
+      "triangles": 144,
+      "bounds": [
+        [
+          -0.875,
+          0.0,
+          -0.3396117687225342
+        ],
+        [
+          0.875,
+          0.8799999952316284,
+          0.2750000059604645
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_bench.blend"
+    },
+    {
+      "id": "level_woodland_grass",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c8a50f4349f4260f748d75d68b9505f48c8c7e757ec449345d6f3a295b0b949a",
+      "bytes": 16420,
+      "triangles": 28,
+      "bounds": [
+        [
+          -0.48519477248191833,
+          0.0,
+          -0.4622957706451416
+        ],
+        [
+          0.4607219696044922,
+          0.3561156094074249,
+          0.42131125926971436
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_grass.blend"
+    },
+    {
+      "id": "level_woodland_fern",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c7d10f02457b5d9b22193dcf2aa61c621332235b1f5e62dfa050765be6091a03",
+      "bytes": 13428,
+      "triangles": 70,
+      "bounds": [
+        [
+          -0.5180248022079468,
+          0.12664532661437988,
+          -0.5680859684944153
+        ],
+        [
+          0.5816666483879089,
+          0.46951085329055786,
+          0.5580859780311584
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_fern.blend"
+    },
+    {
+      "id": "level_woodland_flowers",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "74e036bc66fc6d341379233337ef6f65433f4288a93b03db0a2e4c4385d8b058",
+      "bytes": 31728,
+      "triangles": 153,
+      "bounds": [
+        [
+          -0.2603534460067749,
+          0.0,
+          -0.29389798641204834
+        ],
+        [
+          0.3430587649345398,
+          0.3651891052722931,
+          0.22306843101978302
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_flowers.blend"
+    },
+    {
+      "id": "level_woodland_scrub",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "556d1de6fda280957b0e26b197547f5e40945ae482ec474875444cc221dba6ef",
+      "bytes": 27008,
+      "triangles": 180,
+      "bounds": [
+        [
+          -0.5306292772293091,
+          -0.0070778424851596355,
+          -0.5044749975204468
+        ],
+        [
+          0.5841045379638672,
+          0.699999988079071,
+          0.5044749975204468
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_scrub.blend"
+    },
+    {
+      "id": "level_woodland_stump",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "510a9b87fd20bf9fd763d7c6e53b2a1da00625c1a2e3fbeee1d14aad6a8e825a",
+      "bytes": 24924,
+      "triangles": 208,
+      "bounds": [
+        [
+          -0.5554589033126831,
+          -0.02470903843641281,
+          -0.49358248710632324
+        ],
+        [
+          0.5554589033126831,
+          0.5249999761581421,
+          0.49358248710632324
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_stump.blend"
+    },
+    {
+      "id": "level_woodland_boulder",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "4b24808d3fb3180d0f859ebc5f9c265a78558d5e5253a7e5fbd4294f2dd674e4",
+      "bytes": 14340,
+      "triangles": 22,
+      "bounds": [
+        [
+          -0.8049824833869934,
+          -0.22999998927116394,
+          -0.5273967981338501
+        ],
+        [
+          0.8049824833869934,
+          0.7699999809265137,
+          0.5273967981338501
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_boulder.blend"
+    },
+    {
+      "id": "level_woodland_deadfall",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "51c9f94860a00c02b0c008ceee52cb884076daa8c1db0f45b8956e1497beff06",
+      "bytes": 11512,
+      "triangles": 92,
+      "bounds": [
+        [
+          -2.3018839359283447,
+          -0.016649529337882996,
+          -0.6082586646080017
+        ],
+        [
+          2.3018839359283447,
+          0.4566495418548584,
+          0.6082586646080017
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_deadfall.blend"
+    },
+    {
+      "id": "level_woodland_track",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c7da5ee2159dadbace02636ba2962ebc6a856fbc6fb418bb4e2c219d371db11e",
+      "bytes": 15996,
+      "triangles": 30,
+      "bounds": [
+        [
+          -0.5,
+          0.0,
+          -0.5
+        ],
+        [
+          0.5,
+          0.0010000000474974513,
+          0.5
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_track.blend"
+    },
+    {
+      "id": "level_woodland_litter",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "90dabfb93fa4a191de92cd17efafb87b4010557249b5780d87ec533ab70d0fee",
+      "bytes": 17448,
+      "triangles": 30,
+      "bounds": [
+        [
+          -0.4399999976158142,
+          0.0,
+          -0.47999998927116394
+        ],
+        [
+          0.4399999976158142,
+          0.0010000000474974513,
+          0.47999998927116394
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_litter.blend"
+    },
+    {
+      "id": "level_woodland_floor",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "9ae09c7ddb68fad2031faab32ab55802d9fa4d855cec2cd7f6e167ab0d8b868c",
+      "bytes": 8172,
+      "triangles": 12,
+      "bounds": [
+        [
+          -0.5,
+          0.0,
+          -0.5
+        ],
+        [
+          0.5,
+          0.0,
+          0.5
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_floor.blend"
+    },
+    {
+      "id": "level_woodland_bank",
+      "library": "woodland-details",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "9375b9cc8817f50d369ec9cbe37a69b7ddf888de780a00112087c6fa3fcae687",
+      "bytes": 7900,
+      "triangles": 24,
+      "bounds": [
+        [
+          -6.0,
+          -0.11999999731779099,
+          -4.5
+        ],
+        [
+          6.0,
+          2.3725507259368896,
+          4.5
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_woodland_bank.blend"
+    }
+  ]
+}
