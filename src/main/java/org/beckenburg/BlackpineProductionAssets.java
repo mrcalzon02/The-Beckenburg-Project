@@ -4,7 +4,7 @@ import org.beckenburg.LevelDefinition.*;
 /** Small individually committed model-production passes, placed in their real working context. */
 public final class BlackpineProductionAssets {
     private BlackpineProductionAssets(){}
-    public static final Set<String> ASSETS=Set.of("level_work_bandsaw","level_work_log_carriage","level_work_repair_bench","level_work_crew_footlocker","level_work_hearth_tools","level_work_boot_rack","level_work_survivor_cookbox");
+    public static final Set<String> ASSETS=Set.of("level_work_bandsaw","level_work_log_carriage","level_work_repair_bench","level_work_crew_footlocker","level_work_hearth_tools","level_work_boot_rack","level_work_survivor_cookbox","level_work_camp_sign");
     public static LevelDefinition apply(LevelDefinition l){
         var props=new ArrayList<>(l.props());var colliders=new ArrayList<>(l.colliders());
         add(props,colliders,"level_work_bandsaw",0,42.6,33.8,0,1.48,.74,3.28);
@@ -16,6 +16,7 @@ public final class BlackpineProductionAssets {
         add(props,colliders,"level_work_hearth_tools",2,15.15,45.25,.2,.42,.43,1.07);
         add(props,colliders,"level_work_boot_rack",5,11.50,38.8,Math.PI/2,.71,.25,1.18);
         add(props,colliders,"level_work_survivor_cookbox",7,34.9,9.0,-.08,.44,.34,.93);
+        add(props,colliders,"level_work_camp_sign",12,40.5,58.3,0,1.21,.09,2.10);
         return new LevelDefinition(l.id(),"blackpine-model-passes-v1",l.title(),l.rooms(),l.portals(),l.stairs(),l.voids(),props,l.sockets(),colliders,l.dock(),l.ambience());
     }
     private static void add(List<Prop> props,List<Collider> colliders,String mesh,int room,double x,double z,double yaw,double hx,double hz,double h){

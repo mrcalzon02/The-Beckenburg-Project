@@ -10,7 +10,7 @@ public final class ProductionAssetCapture {
         for(var p:map.level().props())if(BlackpineProductionAssets.ASSETS.contains(p.mesh())){
             var r=map.level().room(p.room());double co=Math.cos(p.yaw()),sn=Math.sin(p.yaw());
             double x=Math.max(r.x0()+.45,Math.min(r.x1()-.45,p.x()+2.8*co-2.7*sn));
-            double z=Math.max(r.z0()+.45,Math.min(r.z1()-.45,p.z()+2.8*sn+2.7*co)),y=map.floorY(p.room());
+            double z=Math.max(r.z0()+.45,Math.min(r.z1()-.45,p.z()+2.8*sn+2.7*co)),y=map.groundHeight(x,z,p.room());
             LevelVisualCapture.capture(scene,map,out,p.mesh(),x,y,z,p.x(),p.y()+Math.min(1.5,p.height()*.65),p.z());
         }
     }

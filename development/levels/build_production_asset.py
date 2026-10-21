@@ -173,6 +173,24 @@ def survivor_cookbox():
     p.append(s.box('Dented lunch tin',(0,-.05,.20),(.38,.28,.24),m['steel'],.02))
     return p,dict(function='Salvaged cook crate, lidded soot-dark pot, wire bail, mug, ration parcel and spoon',runtime='Ready static survivor cooking kit; cold pot and non-interactive supplies',placement='Blackpine logging cabin recent occupation layer, beside its stove area')
 
+def camp_sign():
+    m=b.init();p=[]
+    for x in [-1.03,1.03]:
+        p.append(s.box('Old sign bearing post',(x,0,1.04),(.11,.13,2.08),m['oak']))
+        p.append(s.box('Post iron ground shoe',(x,0,.13),(.14,.16,.26),m['rust']))
+    for z in [1.33,1.57,1.81]:p.append(s.box('Camp name plank',(0,0,z),(2.40,.10,.225),m['pine']))
+    p.append(s.box('Later survey warning board',(0,-.01,.92),(2.0,.09,.38),m['enamel']))
+    for x in [-1.01,1.01]:
+        for z in [1.34,1.8]:p.append(s.rod('Sign fixing head',(x,-.057,z),(x,-.068,z),.018,m['iron'],6))
+    def text(body,size,z,mat):
+        curve=bpy.data.curves.new('Original sign text','FONT');curve.body=body;curve.size=size;curve.align_x='CENTER';curve.resolution_u=1;curve.extrude=.0008
+        o=bpy.data.objects.new(body,curve);bpy.context.collection.objects.link(o);o.location=(0,-.062,z);o.rotation_euler=(math.pi/2,0,0);curve.materials.append(mat)
+        bpy.ops.object.select_all(action='DESELECT');o.select_set(True);bpy.context.view_layer.objects.active=o;bpy.ops.object.convert(target='MESH');o=bpy.context.object;s.uv_project(o);p.append(o)
+    text('BLACKPINE',.26,1.68,m['black']);text('LOGGING CAMP',.16,1.39,m['black'])
+    text('ROAD SURVEYED',.13,.97,m['blue']);text('SITE NOT CLEARED',.13,.80,m['red'])
+    p.append(s.mesh('Direction arrow',[(-.35,-.02,.61),(.2,-.02,.61),(.2,-.02,.68),(.43,-.02,.55),(.2,-.02,.42),(.2,-.02,.49),(-.35,-.02,.49)],[(0,1,2,3,4,5,6),(6,5,4,3,2,1,0)],m['enamel']))
+    return p,dict(function='Original camp-name sign and later road-survey warning, readable mesh lettering',runtime='Ready static sign; surveyed road is explicitly not a cleared camp or unlock',placement='Blackpine arrival yard verge, outside baked path core')
+
 name=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'bandsaw'
 parts,notes=globals()[name]()
 b.export('level_work_'+name,parts,'working-place-details',view=(4,-6,3.5))

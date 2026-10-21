@@ -12,6 +12,10 @@ public final class ProductionAssetTest {
                     check(Math.abs(v.x())<=p.halfX()+.002&&Math.abs(v.z())<=p.halfZ()+.002&&v.y()>=-.002&&v.y()<=p.height()+.002,"solid bounds include actual native source "+id);
                 check(Math.abs(p.y()-map.groundHeight(p.x(),p.z(),p.room()))<.01,"native floor pivot supported "+id);
                 check(!map.traversable(p.x(),p.y(),p.z()),"matching solid body "+id);
+                if(p.room()>=12)for(var t:mesh.triangles())for(var v:new GlbProps.Vertex[]{t.a(),t.b(),t.c()}){
+                    double co=Math.cos(p.yaw()),sn=Math.sin(p.yaw()),x=p.x()+v.x()*co-v.z()*sn,z=p.z()+v.x()*sn+v.z()*co;
+                    check(BlackpineDressing.distanceToPath(x,z)>1.25,"whole outdoor object clear of baked path core "+id);
+                }
                 check(l.sockets().stream().filter(s->s.type().equals("ritual")).noneMatch(s->s.room()==p.room()&&Math.abs(s.x()-p.x())<p.halfX()+1.25&&Math.abs(s.z()-p.z())<p.halfZ()+1.25),"outside rite reservations "+id);
             }
         }

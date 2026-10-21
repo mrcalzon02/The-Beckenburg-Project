@@ -45,3 +45,9 @@ Next useful candidates: rail log carriage, repair bench and hand tools, sawdust 
 `level_work_survivor_cookbox`: 1048 triangles. Salvaged slatted crate and supported lid, soot-dark lidded pot and wire bail, enamel mug, wrapped ration, spoon, cooking rag and dented lunch tin. Placed X34.9/Z9.0 in the recently occupied logging cabin. Source/UV/packed-image reopening, native bounds, support, collision, spawn/rite and readable-record checks pass. Static cold cooking gear, reusable in remote refuges and campgrounds.
 
 [Manifest](production/survivor_cookbox.json) · [Source](blender/level_work_survivor_cookbox.blend) · [Studio](previews/level_work_survivor_cookbox.png) · [Runtime](previews/model-production/blackpine-level_work_survivor_cookbox.png).
+
+## 08 / camp entrance and return-route sign
+
+`level_work_camp_sign`: 2021 triangles. Bearing posts and iron shoes, three name planks, original readable mesh lettering, a later road-survey warning and direction arrow. Placed X40.5/Z58.3 on the arrival verge. Every source vertex stays more than 1.25 m from baked path centrelines. Native/source support and collision tests pass; the sign explicitly says the road is surveyed and the site is not cleared.
+
+[Manifest](production/camp_sign.json) · [Source](blender/level_work_camp_sign.blend) · [Studio](previews/level_work_camp_sign.png) · [Runtime](previews/model-production/blackpine-level_work_camp_sign.png).
