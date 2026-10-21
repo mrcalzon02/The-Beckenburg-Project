@@ -164,6 +164,37 @@ public final class GhostDomain {
         harm=GhostTraits.harm(archetype,harm);
         return new Resolution(true, "accepted", a, room, energy, fear, harm, manifested());
     }
+    private long lastCompanionSequence=-1;
+    /**
+     * The other Twin acts from HER physical room, without moving the main ghost
+     * identity/anchor or obtaining a second energy pool. These are nonlethal,
+     * ordinary shared-cooldown actions, not a second strike executor.
+     *
+     * Used only for the host's genuine TwinCompanionAi body. The caller supplies
+     * the already-authoritative pose's room, never client-reported coordinates.
+     */
+    public Resolution dispatchCompanionMinor(Command command,boolean hearsCompanion) {
+        Objects.requireNonNull(command,"command");
+        Action action=command.action();
+        if(archetype.baseType()!=GhostIdentity.Type.TWINS
+                ||command.source()!=Source.AI
+                ||(action!=Action.WHISPER&&action!=Action.DISTURB)
+                ||command.targetRoom()<0||command.targetRoom()>=map.interiorRoomCount()
+                ||command.sequence()<0||command.sequence()<=lastCompanionSequence)
+            return rejected(command,"not a valid independent Twin minor action");
+        lastCompanionSequence=command.sequence();
+        int cost=GhostBehavior.cost(archetype,action,COST[action.ordinal()]);
+        int cooldown=GhostBehavior.cooldown(archetype,action,COOLDOWN[action.ordinal()]);
+        if(tick<1||tick<suppressedUntil||energy<cost
+                ||tick-lastActionTick[action.ordinal()]<cooldown)
+            return rejected(command,"shared energy, suppression or cooldown prevents companion action");
+        energy-=cost;
+        lastActionTick[action.ordinal()]=tick;
+        int fear=hearsCompanion?(action==Action.WHISPER?2:3):0;
+        fear=GhostTraits.fear(archetype,GhostBehavior.fear(archetype,action,fear));
+        return new Resolution(true,"accepted companion action",action,
+            command.targetRoom(),energy,fear,0,manifested());
+    }
     private Resolution rejected(Command command, String why) {
         return new Resolution(false, why, command.action(), room, energy, 0, 0, manifested());
     }
