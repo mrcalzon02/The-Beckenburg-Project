@@ -1,0 +1,340 @@
+{
+  "format": "approved-master-turnaround-only-v1",
+  "directions": [
+    "front",
+    "side",
+    "back",
+    "three_quarter"
+  ],
+  "size": [
+    128,
+    224
+  ],
+  "variants": {
+    "cleric": {
+      "source": "assets/concept-art/v001/01-hunters/cleric-character-profile.png",
+      "source_sha256": "3b317eaa11116893d1f98e7df37d355f5ad7f4fe4c97b55b5b36fcb56e8f9a41",
+      "views": {
+        "front": {
+          "entry": "assets/cleric/front.png",
+          "bytes": 37023,
+          "sha256": "ab4c7e65153149c9a649b352707f000c98525605e07e5540cc81e6981b8c4f68",
+          "visible_pixels": 14979,
+          "crop": [
+            24,
+            300,
+            218,
+            727
+          ]
+        },
+        "side": {
+          "entry": "assets/cleric/side.png",
+          "bytes": 21601,
+          "sha256": "6708d343a8b0d08351fe50e1e96760b3a0452e18c91e7b01ef480673dcea9467",
+          "visible_pixels": 7472,
+          "crop": [
+            227,
+            300,
+            379,
+            727
+          ]
+        },
+        "back": {
+          "entry": "assets/cleric/back.png",
+          "bytes": 37988,
+          "sha256": "8bc05bb8526a4159f0c2648c7a926b3d2e0d6b857cac78b3fd204810c5cf5af4",
+          "visible_pixels": 16242,
+          "crop": [
+            385,
+            300,
+            572,
+            727
+          ]
+        },
+        "three_quarter": {
+          "entry": "assets/cleric/three_quarter.png",
+          "bytes": 32799,
+          "sha256": "276a8a097585c5856466b946294cb46f03d7210d4aac165f899b58a291000505",
+          "visible_pixels": 13388,
+          "crop": [
+            581,
+            300,
+            747,
+            727
+          ]
+        }
+      }
+    },
+    "observer": {
+      "source": "assets/concept-art/v001/01-hunters/observer-character-profile.png",
+      "source_sha256": "ec8c6be769c473542701e9435f8a265a1b5792df6928f81e387ec22cdf5ba0eb",
+      "views": {
+        "front": {
+          "entry": "assets/observer/front.png",
+          "bytes": 36322,
+          "sha256": "52ca9df81be9138848d005517565cd2bd3b4a2bf32a0dfa8a13c54a5168c9770",
+          "visible_pixels": 14986,
+          "crop": [
+            24,
+            294,
+            206,
+            685
+          ]
+        },
+        "side": {
+          "entry": "assets/observer/side.png",
+          "bytes": 24075,
+          "sha256": "33a8a63877fbeabfdc7430f83420628a36fe068a3d3b89fa34e1c796e2e4c294",
+          "visible_pixels": 8503,
+          "crop": [
+            215,
+            294,
+            370,
+            685
+          ]
+        },
+        "back": {
+          "entry": "assets/observer/back.png",
+          "bytes": 32121,
+          "sha256": "8ba33c15c879e8fdc520f76fcf3bbda6b1bc11d73c3b1a935b51a4bd963df1cc",
+          "visible_pixels": 13410,
+          "crop": [
+            383,
+            294,
+            554,
+            685
+          ]
+        },
+        "three_quarter": {
+          "entry": "assets/observer/three_quarter.png",
+          "bytes": 31682,
+          "sha256": "e5b4068540b37daf636a7f875ed118fd464d8729531a2acfaa42a2192efe5baa",
+          "visible_pixels": 12960,
+          "crop": [
+            574,
+            294,
+            735,
+            685
+          ]
+        }
+      }
+    },
+    "demonologist": {
+      "source": "assets/concept-art/v001/01-hunters/demonologist-character-profile.png",
+      "source_sha256": "3b074ecf8884a9190e593e7115befe02f520aaaf3d68dcef8882327bac9a8ca3",
+      "views": {
+        "front": {
+          "entry": "assets/demonologist/front.png",
+          "bytes": 42606,
+          "sha256": "933d62eeb1f05d7a15f9dc4ebdd596b507507ce9d4e7ab89421757bd68e1c032",
+          "visible_pixels": 16730,
+          "crop": [
+            23,
+            291,
+            208,
+            690
+          ]
+        },
+        "side": {
+          "entry": "assets/demonologist/side.png",
+          "bytes": 27239,
+          "sha256": "4ab02ce2612db992431c3d882f697fb7ac07cb9c48973249ccd5a899f702c336",
+          "visible_pixels": 9579,
+          "crop": [
+            215,
+            291,
+            371,
+            690
+          ]
+        },
+        "back": {
+          "entry": "assets/demonologist/back.png",
+          "bytes": 40847,
+          "sha256": "3e084e4018d31ed554ff50b1d2f283e69615760e170ddf2037fe1f63eaddb83d",
+          "visible_pixels": 16577,
+          "crop": [
+            380,
+            291,
+            544,
+            690
+          ]
+        },
+        "three_quarter": {
+          "entry": "assets/demonologist/three_quarter.png",
+          "bytes": 40396,
+          "sha256": "2a162d649c7d9f4015074aa90d20f7cef6f49a18aec7bcbbab61c56526032bdf",
+          "visible_pixels": 16451,
+          "crop": [
+            550,
+            291,
+            734,
+            690
+          ]
+        }
+      }
+    },
+    "elder_blade_demon": {
+      "source": "assets/concept-art/v001/03-ghosts/elder-blade-demon-master-concept.png",
+      "source_sha256": "440f5086f2e8173872d36a33eaebe2002e4ca589ce082a0105fc05f151038105",
+      "views": {
+        "front": {
+          "entry": "assets/elder_blade_demon/front.png",
+          "bytes": 39936,
+          "sha256": "95d7ff5b8cbf7ff9c16122f3c16f6adfb2795cf26e02e95c0846c8a72f50b50d",
+          "visible_pixels": 13989,
+          "crop": [
+            18,
+            263,
+            240,
+            638
+          ]
+        },
+        "side": {
+          "entry": "assets/elder_blade_demon/side.png",
+          "bytes": 35858,
+          "sha256": "b4285437cdd569e7b04375f38e8a9fed68d4909d306877c6bfd4e21624f76fa7",
+          "visible_pixels": 11853,
+          "crop": [
+            243,
+            263,
+            407,
+            638
+          ]
+        },
+        "back": {
+          "entry": "assets/elder_blade_demon/back.png",
+          "bytes": 36413,
+          "sha256": "64ff5ec6e885626dd8f5f8b4ddd14a5b5b1e688bf413f53d85daa2f4ca16fdb2",
+          "visible_pixels": 13129,
+          "crop": [
+            411,
+            263,
+            611,
+            638
+          ]
+        },
+        "three_quarter": {
+          "entry": "assets/elder_blade_demon/three_quarter.png",
+          "bytes": 35595,
+          "sha256": "f3c90e48c6210406a6c394243b4898409913638b0d6e34828a6d9f3700258393",
+          "visible_pixels": 11906,
+          "crop": [
+            614,
+            263,
+            865,
+            638
+          ]
+        }
+      }
+    },
+    "elder_plague_demon": {
+      "source": "assets/concept-art/v001/03-ghosts/elder-plague-demon-master-concept.png",
+      "source_sha256": "326e2e1f8b6c3e3170003b2d0d99008df2f61eb4d8599d7ab0caa63521620ee7",
+      "views": {
+        "front": {
+          "entry": "assets/elder_plague_demon/front.png",
+          "bytes": 32611,
+          "sha256": "aed00ec936bb80ae9fe901b730108db0343483c9c9c84a541016ffbb3e924859",
+          "visible_pixels": 10385,
+          "crop": [
+            16,
+            235,
+            258,
+            581
+          ]
+        },
+        "side": {
+          "entry": "assets/elder_plague_demon/side.png",
+          "bytes": 46880,
+          "sha256": "08520968ccd4ce327f4f8d8296d3610bf637069448782b63070de47f63c1bfba",
+          "visible_pixels": 16457,
+          "crop": [
+            260,
+            235,
+            432,
+            581
+          ]
+        },
+        "back": {
+          "entry": "assets/elder_plague_demon/back.png",
+          "bytes": 39043,
+          "sha256": "6fbf09de5fd3b4efc6753626c41d92b237a09ae037c02ff19d4dd38e7939e656",
+          "visible_pixels": 13212,
+          "crop": [
+            435,
+            235,
+            641,
+            581
+          ]
+        },
+        "three_quarter": {
+          "entry": "assets/elder_plague_demon/three_quarter.png",
+          "bytes": 37439,
+          "sha256": "3a148b8261a3edd9679a36a1c0aec3f80b65bbf7ef4be576cea1bb5bc9879ffa",
+          "visible_pixels": 12220,
+          "crop": [
+            645,
+            235,
+            848,
+            581
+          ]
+        }
+      }
+    },
+    "elder_nothic": {
+      "source": "assets/concept-art/v001/03-ghosts/elder-nothic-master-concept.png",
+      "source_sha256": "1be6296beb19f71829ee7dd74db057d4fee3307d335cc978a4392e3413275c1c",
+      "views": {
+        "front": {
+          "entry": "assets/elder_nothic/front.png",
+          "bytes": 31506,
+          "sha256": "fd921d621b52dfd8910f553b9d1e14061c06b8508f11d7b4e7919893cfff29df",
+          "visible_pixels": 13636,
+          "crop": [
+            16,
+            186,
+            283,
+            515
+          ]
+        },
+        "side": {
+          "entry": "assets/elder_nothic/side.png",
+          "bytes": 40219,
+          "sha256": "8545e7e126d784bb69661c0e6a196918f332023bd4f94752de830e09c3648765",
+          "visible_pixels": 18301,
+          "crop": [
+            286,
+            186,
+            475,
+            515
+          ]
+        },
+        "back": {
+          "entry": "assets/elder_nothic/back.png",
+          "bytes": 33137,
+          "sha256": "455b19ea3a2c4aebb145a6e04dffd0a5e619f6ae21730cc042423452e48c789e",
+          "visible_pixels": 15785,
+          "crop": [
+            478,
+            186,
+            705,
+            515
+          ]
+        },
+        "three_quarter": {
+          "entry": "assets/elder_nothic/three_quarter.png",
+          "bytes": 36559,
+          "sha256": "d26ba1f443ff609c6263820d571ed7aeaa36c0325277f7e2b14375c7c05e5964",
+          "visible_pixels": 16452,
+          "crop": [
+            710,
+            186,
+            931,
+            515
+          ]
+        }
+      }
+    }
+  },
+  "archive_sha256": "f28a16367f55787b97b5fbb6f79dd5f98109628f23616709da9750b5c88564b0"
+}
