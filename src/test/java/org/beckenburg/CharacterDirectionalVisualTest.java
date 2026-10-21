@@ -73,11 +73,12 @@ public final class CharacterDirectionalVisualTest {
             check(alt.inheritedBase()&&alt.runtimeIdentity().equals(CharacterVisuals.ghost(ghost)),
                 "Missing ghost gender variant must preserve its own identity");
         }
-        boolean elderVariantRejected=false;
-        try{CharacterVisuals.ghostAppearance(GhostIdentity.Type.ELDER_NOTHIC,
-                CharacterVisuals.Variant.ALTERNATE_GENDER);}
-        catch(IllegalArgumentException expected){elderVariantRejected=true;}
-        check(elderVariantRejected,"Do not invent missing Elder gender masters");
+        var elderBase=CharacterVisuals.ghostAppearance(GhostIdentity.Type.ELDER_NOTHIC,
+                CharacterVisuals.Variant.BASE);
+        var elderAlt=CharacterVisuals.ghostAppearance(GhostIdentity.Type.ELDER_NOTHIC,
+                CharacterVisuals.Variant.ALTERNATE_GENDER);
+        check(elderAlt.inheritedBase()&&elderAlt.runtimeIdentity().equals(elderBase.runtimeIdentity()),
+                "Incomplete Elder gender art must render its own approved baseline");
         BufferedImage ancient=DirectionalSprites.frame("ancient_banshee",0,
                 LanGhostAnimation.Phase.WALK,2);
         BufferedImage original=DirectionalSprites.frame("banshee",0,
