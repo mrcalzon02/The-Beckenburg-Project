@@ -1,0 +1,752 @@
+{
+  "version": 1,
+  "id": "PRISON",
+  "title": "Beckenburg Penitentiary",
+  "region": "Beckenburg district",
+  "scale": "Large / secured compound",
+  "status": "rough-layout-only",
+  "intent": "Two parallel cell blocks face a bounded exercise yard. Administration forms a front bar and mess/medical spaces close the rear, giving a legible perimeter circuit.",
+  "site_bounds": [
+    6,
+    0,
+    74,
+    94
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Perimeter van apron",
+      "bounds": [
+        26,
+        78,
+        42,
+        90
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Perimeter gate approach",
+      "bounds": [
+        26,
+        68,
+        42,
+        78
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "sally",
+      "name": "Vehicle sally port",
+      "bounds": [
+        26,
+        58,
+        42,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "intake",
+      "name": "Intake and records",
+      "bounds": [
+        10,
+        58,
+        26,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "guard",
+      "name": "Guard station",
+      "bounds": [
+        42,
+        58,
+        54,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "block-a",
+      "name": "Main cell block",
+      "bounds": [
+        10,
+        22,
+        22,
+        58
+      ],
+      "y": 0,
+      "height": 6.8,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "block-b",
+      "name": "Secondary cell block",
+      "bounds": [
+        46,
+        22,
+        58,
+        58
+      ],
+      "y": 0,
+      "height": 6.8,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "yard",
+      "name": "Exercise yard",
+      "bounds": [
+        22,
+        22,
+        46,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cross",
+      "name": "Rear cross passage",
+      "bounds": [
+        22,
+        16,
+        46,
+        22
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "mess",
+      "name": "Mess hall",
+      "bounds": [
+        10,
+        4,
+        28,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "medical",
+      "name": "Infirmary",
+      "bounds": [
+        28,
+        4,
+        46,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "chapel",
+      "name": "Chapel / visitation",
+      "bounds": [
+        58,
+        34,
+        70,
+        52
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "isolation",
+      "name": "Isolation wing",
+      "bounds": [
+        58,
+        16,
+        70,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "gallery-a",
+      "name": "A-block upper gallery",
+      "bounds": [
+        10,
+        22,
+        14,
+        58
+      ],
+      "y": 3.4,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "gallery-b",
+      "name": "B-block upper gallery",
+      "bounds": [
+        54,
+        22,
+        58,
+        58
+      ],
+      "y": 3.4,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "plant",
+      "name": "Boiler and maintenance",
+      "bounds": [
+        22,
+        22,
+        46,
+        42
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          84.0
+        ],
+        [
+          34.0,
+          0,
+          73.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "sally",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          73.0
+        ],
+        [
+          34.0,
+          0,
+          63.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "sally",
+      "b": "intake",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          34.0,
+          0,
+          63.0
+        ],
+        [
+          18.0,
+          0,
+          63.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "sally",
+      "b": "guard",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          34.0,
+          0,
+          63.0
+        ],
+        [
+          48.0,
+          0,
+          63.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "intake",
+      "b": "block-a",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          18.0,
+          0,
+          63.0
+        ],
+        [
+          16.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "guard",
+      "b": "block-b",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          48.0,
+          0,
+          63.0
+        ],
+        [
+          52.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "sally",
+      "b": "yard",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          63.0
+        ],
+        [
+          34.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "block-a",
+      "b": "yard",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          16.0,
+          0,
+          40.0
+        ],
+        [
+          34.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "block-b",
+      "b": "yard",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          52.0,
+          0,
+          40.0
+        ],
+        [
+          34.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "block-a",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          16.0,
+          0,
+          40.0
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "block-b",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          52.0,
+          0,
+          40.0
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "yard",
+      "b": "cross",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          40.0
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "cross",
+      "b": "mess",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          34.0,
+          0,
+          19.0
+        ],
+        [
+          19.0,
+          0,
+          10.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "mess",
+      "b": "medical",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          19.0,
+          0,
+          10.0
+        ],
+        [
+          37.0,
+          0,
+          10.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L15",
+      "a": "medical",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          37.0,
+          0,
+          10.0
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L16",
+      "a": "block-b",
+      "b": "chapel",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          52.0,
+          0,
+          40.0
+        ],
+        [
+          64.0,
+          0,
+          43.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L17",
+      "a": "chapel",
+      "b": "isolation",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          64.0,
+          0,
+          43.0
+        ],
+        [
+          64.0,
+          0,
+          25.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L18",
+      "a": "isolation",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          64.0,
+          0,
+          25.0
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L19",
+      "a": "block-a",
+      "b": "gallery-a",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          16.0,
+          0,
+          40.0
+        ],
+        [
+          12.0,
+          3.4,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.4,
+      "construction": "Reserve at least 5.44 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L20",
+      "a": "block-b",
+      "b": "gallery-b",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          52.0,
+          0,
+          40.0
+        ],
+        [
+          56.0,
+          3.4,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.4,
+      "construction": "Reserve at least 5.44 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L21",
+      "a": "cross",
+      "b": "plant",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          34.0,
+          0,
+          19.0
+        ],
+        [
+          34.0,
+          -3,
+          32.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "sally",
+      "intake",
+      "block-a",
+      "yard",
+      "sally"
+    ],
+    [
+      "yard",
+      "block-a",
+      "cross",
+      "block-b",
+      "yard"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      34.0,
+      0,
+      84.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        34.0,
+        0,
+        80.372
+      ],
+      [
+        34.0,
+        0,
+        73.0
+      ]
+    ],
+    "logistics": "Existing shared van on a level service apron/roadhead; no new transport mechanic."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "isolation",
+      "point": [
+        64.0,
+        0,
+        25.0
+      ],
+      "installation": "Bolted suppression seal"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "medical",
+      "point": [
+        37.0,
+        0,
+        10.0
+      ],
+      "installation": "Clinical purification wash"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "chapel",
+      "point": [
+        64.0,
+        0,
+        43.0
+      ],
+      "installation": "Reconciliation memorial"
+    }
+  ],
+  "circulation": "Yard is the orientation landmark. Two cell-block routes join front intake and rear cross passage. Mechanical manual releases on both sides of security gates prevent power failure or ghost action from making permanent traps. Upper galleries are narrow observational branches, not the only way out.",
+  "systems": "Security gates, lighting and plant have explicit independent circuits. Metal galleries, concrete cell rows and open yard require distinct audio portals. Cell bays remain a later subdivision of each block, with stable child IDs.",
+  "campaign": "Visitor records, medical accounts and guard rotas support contradictory history without equating incarceration with supernatural evil.",
+  "refine": [
+    "Lay out real individual cells and upper gallery voids; block volumes alone are not complete cell geometry.",
+    "Test two-sided manual gate release during all power states before allowing hunts.",
+    "Primary reference text inspected: https://www.nps.gov/places/000/alcatraz-cellhouse.htm \u2014 separate blocks and hospital; dimensions here are fictional game proposals."
+  ],
+  "sources": [
+    "docs/environments/ROOM_AND_ASSET_REQUIREMENTS.md",
+    "docs/environments/THREE_RITUAL_SITES.md",
+    "https://www.nps.gov/places/000/alcatraz-cellhouse.htm (text inspected 2026-10-21; not a measured reproduction)"
+  ]
+}

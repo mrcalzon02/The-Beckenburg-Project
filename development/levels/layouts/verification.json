@@ -20,6 +20,12 @@
       "result": "pass"
     },
     {
+      "id": "PRISON",
+      "zones": 16,
+      "checks": 243,
+      "result": "pass"
+    },
+    {
       "id": "SCHOOL",
       "zones": 15,
       "checks": 222,
@@ -32,7 +38,6 @@
     "castle",
     "church",
     "college",
-    "prison",
     "wld-01",
     "wld-02",
     "wld-03",

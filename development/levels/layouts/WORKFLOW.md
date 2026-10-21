@@ -12,3 +12,4 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 - **FARMHOUSE / Hollowmere Farm**: 15 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **SCHOOL / Ravenshade School**: 15 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **MANSION / Blackthorn Manor**: 17 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+- **PRISON / Beckenburg Penitentiary**: 16 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
