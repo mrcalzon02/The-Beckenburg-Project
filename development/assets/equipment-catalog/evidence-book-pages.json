@@ -1,0 +1,660 @@
+{
+  "assets": [
+    {
+      "tier": 1,
+      "state": "open",
+      "model": "assets/runtime/models/blender_ghost_writing_book_1_open.glb",
+      "sha256": "a0ef43508c15d2cfce5f14d638b979d057c31c3d941b677184ef99177584c40f",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.3700000047683716,
+        0.23784789443016052,
+        0.04399999976158142
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-1-blank.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-1-blank.png",
+      "page_art_sha256": "5780f811a510a0e6827747684439808a3797c812b7f6bfe2d8c78093d5345bb5"
+    },
+    {
+      "tier": 1,
+      "state": "open_child_drawings",
+      "model": "assets/runtime/models/blender_ghost_writing_book_1_open_child_drawings.glb",
+      "sha256": "fb6ec2e1cdcbe1cf18988e1587d43cc1d1957be9e34af81916fe97beae463d9c",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.3700000047683716,
+        0.23784789443016052,
+        0.04399999976158142
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.001",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-1-child_drawings.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-1-child_drawings.png",
+      "page_art_sha256": "c37e7c68a4714d01019b5151fd3a929c83948fae05b324de32564242e04c8f94"
+    },
+    {
+      "tier": 1,
+      "state": "open_frantic_scrawls",
+      "model": "assets/runtime/models/blender_ghost_writing_book_1_open_frantic_scrawls.glb",
+      "sha256": "d301e3e5dad89c4b42260d0defb9056c745c93fb73a0d764e19a5ee8dc92c5e1",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.3700000047683716,
+        0.23784789443016052,
+        0.04399999976158142
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.002",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-1-frantic_scrawls.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-1-frantic_scrawls.png",
+      "page_art_sha256": "7c8486ec16d98050204a785a4ce6be7664ce9c5edb8fb669470a85ab2acbb53f"
+    },
+    {
+      "tier": 1,
+      "state": "open_ritual_circles",
+      "model": "assets/runtime/models/blender_ghost_writing_book_1_open_ritual_circles.glb",
+      "sha256": "ca43078529348fa6c156ac4cf39500639151fb5354411594396b16a35d769952",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.3700000047683716,
+        0.23784789443016052,
+        0.04399999976158142
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.003",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-1-ritual_circles.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-1-ritual_circles.png",
+      "page_art_sha256": "2f5d625e981bc44ca29cbe3a5c067ccb6f1d82ad1201efa7c1f617b299e83518"
+    },
+    {
+      "tier": 2,
+      "state": "open",
+      "model": "assets/runtime/models/blender_ghost_writing_book_2_open.glb",
+      "sha256": "f4504e16ba5d576d8a9d6beb6dd92fd92ea3dd6bcfe8476d59098aaf9157be06",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.3700000047683716,
+        0.23784789443016052,
+        0.04399999976158142
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.004",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-2-blank.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-2-blank.png",
+      "page_art_sha256": "b772486639e59114bf3d0669ef78732656e600fe73ea998c75bf021d747840e2"
+    },
+    {
+      "tier": 2,
+      "state": "open_child_drawings",
+      "model": "assets/runtime/models/blender_ghost_writing_book_2_open_child_drawings.glb",
+      "sha256": "27c8b5ede8f5d073b24f29c4e358384f5caa0c0bd969cf875e86879fa66ead51",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.3700000047683716,
+        0.23784789443016052,
+        0.04399999976158142
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.005",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-2-child_drawings.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-2-child_drawings.png",
+      "page_art_sha256": "28ea68f5b73a28dc1f2ca315ef56b826dd3923f11a5de29a30e60d6ca1f5b295"
+    },
+    {
+      "tier": 2,
+      "state": "open_frantic_scrawls",
+      "model": "assets/runtime/models/blender_ghost_writing_book_2_open_frantic_scrawls.glb",
+      "sha256": "e5fb310b0106eeafc7bd6cc0e89fbbfffe83db1ee7aec21d3c7c156d4ef5f037",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.3700000047683716,
+        0.23784789443016052,
+        0.04399999976158142
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.006",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-2-frantic_scrawls.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-2-frantic_scrawls.png",
+      "page_art_sha256": "2e77294b61cabc631a4cc2f754ed0120d120f6e4ffb7a0afdf21ed6a2f6becf4"
+    },
+    {
+      "tier": 2,
+      "state": "open_ritual_circles",
+      "model": "assets/runtime/models/blender_ghost_writing_book_2_open_ritual_circles.glb",
+      "sha256": "406397f8829997b44ab37c71b86862ca297f328709f17990c416ee78147c12d3",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.3700000047683716,
+        0.23784789443016052,
+        0.04399999976158142
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.007",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-2-ritual_circles.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-2-ritual_circles.png",
+      "page_art_sha256": "180e56707b4c9183258ee76aed9350dd2a8550f60edb6bd1a626c403ede3376d"
+    },
+    {
+      "tier": 3,
+      "state": "open",
+      "model": "assets/runtime/models/blender_ghost_writing_book_3_open.glb",
+      "sha256": "cc732e8b74e54819524fff1c53b1981f53ac31a4da2b76bc71623481564a914e",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.41999998688697815,
+        0.2699894905090332,
+        0.04581606015563011
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.008",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-3-blank.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-3-blank.png",
+      "page_art_sha256": "9a0e09797462fc7af038e67aecd10d568ed3b193242cf0ec0ccccd68f43a3a7c"
+    },
+    {
+      "tier": 3,
+      "state": "open_child_drawings",
+      "model": "assets/runtime/models/blender_ghost_writing_book_3_open_child_drawings.glb",
+      "sha256": "347c5f30ffde83c918daae9886b568ea3c556ac27340ea8ab6f1656ae0dac6a1",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.41999998688697815,
+        0.2699894905090332,
+        0.04581606015563011
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.009",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-3-child_drawings.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-3-child_drawings.png",
+      "page_art_sha256": "da3dddee66a4da4d53a1c8509732fa364f4288a1713ace2eb8267648c6ef3e28"
+    },
+    {
+      "tier": 3,
+      "state": "open_frantic_scrawls",
+      "model": "assets/runtime/models/blender_ghost_writing_book_3_open_frantic_scrawls.glb",
+      "sha256": "a441e9f13cbb0557bdbaaca019f12d1f3304f4767638024f376891a1e947dc3e",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.41999998688697815,
+        0.2699894905090332,
+        0.04581606015563011
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.010",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-3-frantic_scrawls.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-3-frantic_scrawls.png",
+      "page_art_sha256": "e0b46677657a9a057690f666950be019016932e1694c7356087c087ef4555617"
+    },
+    {
+      "tier": 3,
+      "state": "open_ritual_circles",
+      "model": "assets/runtime/models/blender_ghost_writing_book_3_open_ritual_circles.glb",
+      "sha256": "8d7752a477f8d8e0b5d9ea7ada882cce0427920e2092808a17346e0e1153d8aa",
+      "triangles": 90,
+      "dimensions_blender_z_up": [
+        0.41999998688697815,
+        0.2699894905090332,
+        0.04581606015563011
+      ],
+      "materials": 3,
+      "texture_images": [
+        {
+          "name": "books_mp_1.011",
+          "size": [
+            256,
+            256
+          ]
+        },
+        {
+          "name": "Medical Ritual blank antique book paper 128px diffuse",
+          "size": [
+            128,
+            128
+          ]
+        },
+        {
+          "name": "tier-3-ritual_circles.png",
+          "size": [
+            1024,
+            768
+          ]
+        }
+      ],
+      "component_vertex_groups": [
+        "open_book_mp_1",
+        "blank curved writing leaf",
+        "blank curved writing leaf.001"
+      ],
+      "existing_unchanged": false,
+      "variants": {},
+      "features": [
+        "Original binding, cover and source UVs preserved",
+        "Painted parchment follows curved leaves; no floating page overlay",
+        "Blank until a real authorized writing event; all three styles available at every tier; style is not a species verdict"
+      ],
+      "sockets_gltf_y_up": {},
+      "editable": "development/assets/equipment-catalog/blender/ghost_writing_book.blend",
+      "license": "Owner-provided original game-use subset and original authored geometry; individual sources recorded in rebuild provenance",
+      "online_integration_status": "Asset delivery; gameplay/packaging left for online integration",
+      "page_art": "development/assets/equipment-catalog/textures/evidence-books/tier-3-ritual_circles.png",
+      "page_art_sha256": "286c6729b6be842ad3b443d8b300f0b3825910ad7bc1032fd14531a3cd936006"
+    }
+  ],
+  "sources": [
+    {
+      "name": "open_book_mp_1.glb",
+      "sha256": "1b7199f26c1313f661f025dff618535752ae40ddb9626f083b7f449cf8aa5795",
+      "source": "C:\\Users\\Admin\\Documents\\ChatGPT\\Phasmaphobia alike\\The-Beckenburg-Project\\assets\\runtime\\models\\open_book_mp_1.glb",
+      "policy": "Owner-provided original game asset; preserve source materials and UVs"
+    }
+  ]
+}

@@ -13,7 +13,7 @@ public final class SiteStories {
   case "blackpine"->new Identity("Blackpine Logging Camp","North Forest logging road","A shuttered working camp. Payroll records and a shipping manifest disagree about the final crews. This fictional history does not identify the current haunting.");
   case "school"->new Identity("Ravenshade School","8 School Road, Beckenburg","Founded in 1894. The infant department opened in 1911 and a secondary extension followed in 1956. Successive coal, oil and modern boilers survive below the school.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
- public static Document document(String site,String id){if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
+ public static Document document(String site,String id){if(id.startsWith("ROOM_"))return LegacySiteStories.document(site,Integer.parseInt(id.substring(5)));if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
   case "HISTORY"->new Document(id,place.title(),List.of(place.address(),place.history(),"Local history and household records. These details do not identify the haunting."));
   case "LETTERS"->new Document(id,site.equals("school")?"Caretaker's service papers":"Tied correspondence",site.equals("house")?List.of("17 Briar Lane. Mrs E. Vale, 1983.","Please keep Mother's mending tin. The little blue lid still fits, and her needles are inside.","The plumbing men return on Thursday. Leave the cellar laundry clear; the old photographs can stay on the sideboard."):
    site.equals("farmhouse")?List.of("Hollowmere Farm, Mill Road. Spring work list.","Put the clean linen on the yard line. Boots stay by the shed, not beside the upstairs washbasin.","The 1947 repair receipts are tied beneath these letters. Keep them with the farm papers."):
@@ -41,15 +41,8 @@ public final class SiteStories {
   var entry=b.rooms.get(0);double x=entry.x0()+1.2,z=entry.z1()+.10;
   b.props.add(new Prop("level_sign_"+b.id,0,x,1.75,z,1,0,0,0,.36,"exterior-wall"));b.socket("story",0,x,1.93,z,0,"HISTORY");
  }
- public static void draw(Graphics2D source,int width,int height,HouseMap map,String id){
-  Document d=document(map.level().id(),id);Graphics2D g=(Graphics2D)source.create();try{
-   int w=Math.min(670,width-36),x=(width-w)/2,y=Math.max(22,(height-340)/2),line=23;
-   g.setColor(new Color(20,23,23,248));g.fillRoundRect(x,y,w,Math.min(340,height-44),10,10);g.setFont(new Font(Font.SANS_SERIF,Font.BOLD,16));g.setColor(new Color(226,209,166));g.drawString(d.title(),x+20,y+29);
-   g.setFont(new Font(Font.SANS_SERIF,Font.PLAIN,14));g.setColor(new Color(216,214,198));int yy=y+60;
-   for(String paragraph:d.lines()){
-    String row="";for(String word:paragraph.split(" ")){String next=row.isEmpty()?word:row+" "+word;if(g.getFontMetrics().stringWidth(next)>w-40&&!row.isEmpty()){g.drawString(row,x+20,yy);yy+=line;row=word;}else row=next;}g.drawString(row,x+20,yy);yy+=line+10;
-   }
-   g.setColor(new Color(164,175,169));g.drawString("E / ESC CLOSE",x+20,y+Math.min(340,height-44)-18);
-  }finally{g.dispose();}
+ public static void draw(Graphics2D g,int width,int height,HouseMap map,String id){draw(g,width,height,map,id,new SiteCaseFiles.Reader());}
+ public static void draw(Graphics2D g,int width,int height,HouseMap map,String id,SiteCaseFiles.Reader reader){
+  var d=document(map.level().id(),id);SiteCaseFiles.sheet(g,width,height,d.title(),d.lines(),reader);
  }
 }

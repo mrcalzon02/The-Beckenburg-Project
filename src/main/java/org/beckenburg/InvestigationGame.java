@@ -497,6 +497,7 @@ public final class InvestigationGame {
         private int vanNoticeExpires;
         private String storyReading="";
         private boolean briefingShown,interactionHeld;private int mapFloor;
+        private final SiteCaseFiles.Reader assignmentReader=new SiteCaseFiles.Reader(),storyReader=new SiteCaseFiles.Reader();
         private int useHeldUntilTick;
         private final VanTelemetry monitor=new VanTelemetry(20261017L);
         private final AtmosphereAudio atmosphere=new AtmosphereAudio(AtmosphereAudio.Scene.FIELD);
@@ -694,7 +695,7 @@ public final class InvestigationGame {
             }
             if(helpVisible){if(key==KeyEvent.VK_ESCAPE){helpVisible=false;repaint();}return;}
             if(key==KeyEvent.VK_ESCAPE){if(mapShown||journalShown||briefingShown){mapShown=journalShown=briefingShown=false;down.clear();repaint();return;}if(wheelOpen){wheelOpen=false;down.remove(KeyEvent.VK_Q);repaint();}else pause();return;}
-            if(briefingShown){if(key==KeyEvent.VK_E)briefingShown=false;down.clear();repaint();return;}
+            if(briefingShown){if(key==KeyEvent.VK_E)briefingShown=false;else (storyReading.isEmpty()?assignmentReader:storyReader).key(key);down.clear();repaint();return;}
             if(mapShown){
                 if(key==KeyEvent.VK_PAGE_UP)mapFloor++;else if(key==KeyEvent.VK_PAGE_DOWN)mapFloor--;else if(key==KeyEvent.VK_M||key==KeyEvent.VK_E)mapShown=false;
                 down.clear();repaint();return;
@@ -778,7 +779,7 @@ public final class InvestigationGame {
                         loadout.pickup(item);
                     }
                 }
-                case INTERFACE -> {storyReading=target.id().startsWith("STORY_")?target.id().substring(6):"";if(target.id().equals("MAP"))mapShown=true;else if(target.id().equals("COMPUTER"))journalShown=true;else briefingShown=true;down.clear();mouseLook.release();}
+                case INTERFACE -> {assignmentReader.reset();storyReader.reset();storyReading=target.id().startsWith("STORY_")?target.id().substring(6):"";if(target.id().equals("MAP"))mapShown=true;else if(target.id().equals("COMPUTER"))journalShown=true;else briefingShown=true;down.clear();mouseLook.release();}
                 case SWITCH -> lights.toggle(Integer.parseInt(target.id()));
                 case BREAKER -> {powerOn=!powerOn;map.fixtures().power(powerOn);syncEnvironment();}
                 case DOOR -> {int id=Integer.parseInt(target.id());map.toggleDoor(id);if(!map.traversable(scene.x,feetY(),scene.z)){map.toggleDoor(id);throw new IllegalArgumentException("Doorway occupied.");}}
@@ -793,7 +794,7 @@ public final class InvestigationGame {
         private void useVan(VanStaging.Station station){
             switch(station){
                 case BRIEFING -> {
-                    storyReading="";briefingShown=!briefingShown;
+                    storyReading="";assignmentReader.reset();briefingShown=!briefingShown;
                     showVanNotice(briefingShown?"CASE BOARD OPEN — current role, objectives and progress":"Case board closed.");
                 }
                 case EQUIPMENT -> takeRackItem();
@@ -948,15 +949,8 @@ public final class InvestigationGame {
             g.setColor(new Color(174,183,194));g.drawString("UNCERTAIN / DELAYED",x+10,y+167);
         }
         private void drawBriefing(Graphics2D g){
-            if(!storyReading.isEmpty()){SiteStories.draw(g,getWidth(),getHeight()-82,map,storyReading);return;}
-            int width=440,x=Math.max(12,(getWidth()-width)/2),y=65;
-            g.setColor(new Color(14,19,26,238));g.fillRoundRect(x,y,width,140,8,8);
-            g.setColor(new Color(233,197,142));g.drawString("VAN / BECKENBURG FIELD BRIEFING",x+16,y+26);
-            g.setColor(new Color(210,216,225));
-            g.drawString("Role: "+session.role()+"  /  Threat: SPIRIT (test contract)",x+16,y+50);
-            g.drawString("Gather EMF, temperature and spirit-box readings.",x+16,y+74);
-            g.drawString("Ward the anchor; cleanse; return to this van.",x+16,y+96);
-            g.drawString("Evidence "+session.evidenceCount()+"/3  Wards "+session.wards()+"  HP "+session.health()+"  Photo "+(session.apparitionPhotographed()?"YES":"NO"),x+16,y+119);
+            if(!storyReading.isEmpty()){SiteStories.draw(g,getWidth(),getHeight()-82,map,storyReading,storyReader);return;}
+            assignmentReader.draw(g,getWidth(),getHeight()-82,map,java.util.List.of("FIELD STATUS: "+session.evidenceCount()+" verified readings; "+session.wards()+" wards; health "+session.health()+". Return to the van after cleansing."));
         }
         private void drawJournal(Graphics2D g){
             int boxW=Math.min(490,getWidth()-50),x=getWidth()-boxW-18,y=70,boxH=Math.min(getHeight()-165,395);

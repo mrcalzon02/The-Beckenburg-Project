@@ -84,6 +84,7 @@ public final class SceneRenderer {
     public double writingBookX,writingBookY,writingBookZ;
     public boolean writingBookHasPosition;
     public EquipmentTiers.Tier writingBookTier=EquipmentTiers.Tier.I;
+    public GhostWriting.Style writingBookStyle;
     public final java.util.Map<Integer,VanTripods.Stand> tripods=new java.util.HashMap<>();
     public final java.util.Map<String,LanPortableLights.Light> portablePositions=new java.util.HashMap<>();
     public final java.util.Map<Integer,LanVideoCameras.Camera> videoCameras=
@@ -375,6 +376,10 @@ public final class SceneRenderer {
     private java.util.List<VanRackStock.Entry> cachedVanInventory;
     private void vanModel(List<Face> faces,VanStaging van,
                           java.util.Set<EquipmentLoadout.Item> stock){
+        vanModel(faces,van,stock,null);
+    }
+    private void vanModel(List<Face> faces,VanStaging van,
+                          java.util.Set<EquipmentLoadout.Item> stock,HouseMap map){
         // The 42-position geometry is expensive to decode and transform.
         // Reuse the actual built mesh until the authoritative cargo doors,
         // purchased stock or upgraded LAN equipment changes.
@@ -384,7 +389,7 @@ public final class SceneRenderer {
             return;
         }
         List<Face> constructed=new ArrayList<>();
-        buildVanModel(constructed,van,stock);
+        buildVanModel(constructed,van,stock,map);
         cachedVan=van;
         cachedVanDoors=van.cargoDoorClosed();
         cachedVanStock=java.util.Set.copyOf(stock);
@@ -394,7 +399,7 @@ public final class SceneRenderer {
         faces.addAll(cachedVanFaces);
     }
     private void buildVanModel(List<Face> faces,VanStaging van,
-                               java.util.Set<EquipmentLoadout.Item> stock){
+                               java.util.Set<EquipmentLoadout.Item> stock,HouseMap map){
         double w=VanStaging.HALF_WIDTH,f=VanStaging.FRONT,r=VanStaging.REAR;
         double floor=VanStaging.FLOOR_Y,h=VanStaging.ROOF_Y,iw=VanStaging.INTERIOR_HALF_WIDTH;
         double ir=VanStaging.INTERIOR_ROOF_HALF_WIDTH,shoulder=VanStaging.ROOF_SHOULDER_Y;
@@ -469,6 +474,14 @@ public final class SceneRenderer {
                     int material=screen&&fixture.purpose().equals("main command monitor")
                         ?GlbProps.VAN_MAP_MATERIAL:t.material();
                     faces.add(new Face(pp[0],pp[1],pp[2],0xffffff,material,t.a().u(),screen?1-t.a().v():t.a().v(),t.b().u(),screen?1-t.b().v():t.b().v(),t.c().u(),screen?1-t.c().v():t.c().v()));
+                }
+            }else if(map!=null&&fixture.mesh().equals("blender_clipboards_fixed")){
+                double angle=van.placement().yaw()+fixture.yaw();
+                for(var t:GlbProps.model(fixture.mesh()).triangles()){
+                    var vv=new GlbProps.Vertex[]{t.a(),t.b(),t.c()};Point[] pp=new Point[3];double[] uv=new double[6];
+                    boolean paper=GlbProps.materialName(t.material()).contains("Unwritten assignment paper")&&java.util.Arrays.stream(vv).allMatch(v->v.z()>.0077);
+                    for(int i=0;i<3;i++){var v=vv[i];pp[i]=new Point(p.x()+fixture.scale()*(v.x()*Math.cos(angle)-v.z()*Math.sin(angle)),fixture.y()+v.y()*fixture.scale(),p.z()+fixture.scale()*(v.x()*Math.sin(angle)+v.z()*Math.cos(angle)));uv[i*2]=paper?.02+.96*(v.x()+.1025)/.205:v.u();uv[i*2+1]=paper?.02+.96*(v.y()-.0225)/.277:v.v();}
+                    faces.add(new Face(pp[0],pp[1],pp[2],0xffffff,paper?SiteCaseFiles.material(map):t.material(),uv[0],uv[1],uv[2],uv[3],uv[4],uv[5]));
                 }
             }else imported(faces,fixture.mesh(),p.x(),fixture.y(),p.z(),fixture.scale(),van.placement().yaw()+fixture.yaw());
         }
@@ -841,7 +854,7 @@ public final class SceneRenderer {
             }
         }
         if(Math.hypot(map.van().placement().x()-x,map.van().placement().z()-z)<14)
-            vanModel(out,map.van(),rackStock);
+            vanModel(out,map.van(),rackStock,map);
         // Road and traffic props are exterior-only. Nearby rooms never instantiate
         // a second duplicate set of these global world objects.
         if(Math.hypot(x-map.van().placement().x(),z-map.van().placement().z())<20)
@@ -930,11 +943,9 @@ public final class SceneRenderer {
         if(placedWritingBookRoom>=0&&placedWritingBookRoom<HouseMap.INDOOR_ROOMS){
             double bx=writingBookHasPosition?writingBookX:map.centerX(placedWritingBookRoom)-.5;
             double bz=writingBookHasPosition?writingBookZ:map.centerZ(placedWritingBookRoom)-.35;
-            double by=writingBookHasPosition?writingBookY+.075:map.floorY(placedWritingBookRoom)+.075;
+            double by=writingBookHasPosition?writingBookY:map.groundHeight(bx,bz,placedWritingBookRoom);
             if(Math.hypot(bx-x,bz-z)<14)
-                imported(out,writingBookHasPosition
-                    ?EquipmentModelCatalog.variant("GHOST_WRITING_BOOK",writingBookTier,"open")
-                    :"open_book_mp_1",bx,by,bz,writingBookHasPosition?1.0:1.65,0);
+                imported(out,EquipmentModelCatalog.variant("GHOST_WRITING_BOOK",writingBookHasPosition?writingBookTier:EquipmentTiers.Tier.I,writingBookStyle==null?"open":"open_"+writingBookStyle.name().toLowerCase(java.util.Locale.ROOT)),bx,by,bz,1.0,0);
         }
         // Character bodies are rendered as directional alpha-masked sprites after geometry.
         if(wardRoom>=0){
@@ -1219,7 +1230,7 @@ public final class SceneRenderer {
     private void levelArchitecture(List<Face> out,HouseMap map){
         scenery(map); // Invalidate the reference expansion as well when level/density changes.
         own(out,enclosureFaces.computeIfAbsent(map.level().revision(),key->enclosureScenery(map.level())),13);
-        if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of());}
+        if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of(),map);}
         for(Face f:levelShells.computeIfAbsent(map.level().revision()+":"+map.hidingDensity(),s->buildLevelShell(map))){
             double cx=(f.a.x+f.b.x+f.c.x)/3,cz=(f.a.z+f.b.z+f.c.z)/3;
             out.add(f); // Opaque distant architecture must still occlude the night sky.

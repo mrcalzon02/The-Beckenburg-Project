@@ -92,6 +92,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private int casefileScroll;
     private boolean casefileOpen,helpVisible,interactionHeld;
     private String interfaceOpen="";private int mapFloor;
+    private final SiteCaseFiles.Reader assignmentReader=new SiteCaseFiles.Reader(),storyReader=new SiteCaseFiles.Reader();
     private final FieldJournal fieldNotes=new FieldJournal();
     private int journalPage,guideCursor,guideGhostIndex;
     private GhostIdentity.Type selectedGuess=GhostIdentity.Type.SPIRIT;
@@ -340,7 +341,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     lastMotionTick=motion.tick();
                 }
             }else if(p.size()==3&&p.get(0).equals("INTERACTED")&&p.get(1).equals("INTERFACE")){
-                if(p.get(2).equals("COMPUTER")){casefileOpen=true;journalPage=0;}else interfaceOpen=p.get(2);keys.clear();mouseLook.release();
+                if(p.get(2).equals("COMPUTER")){casefileOpen=true;journalPage=0;}else {interfaceOpen=p.get(2);assignmentReader.reset();storyReader.reset();}keys.clear();mouseLook.release();
                 feedback="Opened "+p.get(2).toLowerCase(java.util.Locale.ROOT);
             }else if(p.size()==3&&p.get(0).equals("LIGHTS")){
                 lights.acceptSnapshot(p.get(1));
@@ -638,7 +639,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 feedback=map.van().cargoDoorClosed()
                     ?"VAN CARGO DOOR CLOSED":"VAN CARGO DOOR OPEN";
             }else if(frame.startsWith("BOOK|")){
-                if(p.size()==7&&p.get(1).equals("DEPLOYED")){
+                if(p.size()==4&&p.get(1).equals("WRITTEN")){
+                    int room=LanProtocol.integer(p.get(2),0,HouseMap.INDOOR_ROOMS-1);
+                    if(room==renderer.placedWritingBookRoom)renderer.writingBookStyle=GhostWriting.Style.valueOf(p.get(3));
+                }else if(p.size()==7&&p.get(1).equals("DEPLOYED")){
+                    renderer.writingBookStyle=null;
                     renderer.placedWritingBookRoom=LanProtocol.integer(p.get(2),0,HouseMap.INDOOR_ROOMS-1);
                     renderer.writingBookX=LanProtocol.integer(p.get(3),0,map.width()*1000)/1000.0;
                     renderer.writingBookY=LanProtocol.integer(p.get(4),-50000,50000)/1000.0;
@@ -646,10 +651,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     renderer.writingBookTier=EquipmentTiers.Tier.valueOf(p.get(6));
                     renderer.writingBookHasPosition=true;
                 }else if(p.size()==3&&p.get(1).equals("DEPLOYED")){
+                    renderer.writingBookStyle=null;
                     renderer.placedWritingBookRoom=LanProtocol.integer(p.get(2),0,HouseMap.INDOOR_ROOMS-1);
                     renderer.writingBookHasPosition=false;
                 }else if(p.size()==3&&p.get(1).equals("REMOVED")){
                     renderer.placedWritingBookRoom=-1;
+                    renderer.writingBookStyle=null;
                     renderer.writingBookHasPosition=false;
                 }
                 feedback="WRITING BOOK: "+frame.substring(5);
@@ -891,6 +898,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             videoRenderer.writingBookZ=renderer.writingBookZ;
             videoRenderer.writingBookHasPosition=renderer.writingBookHasPosition;
             videoRenderer.writingBookTier=renderer.writingBookTier;
+            videoRenderer.writingBookStyle=renderer.writingBookStyle;
             videoRenderer.sensorPositions.clear();
             videoRenderer.sensorPositions.putAll(renderer.sensorPositions);
             videoRenderer.dotsPassRoom=renderer.dotsPassRoom;
@@ -1052,12 +1060,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     g.drawString("CAM "+(chosen.owner()+1)+" LIVE / C NEXT",vx+4,vy+vh+15);
                 }
             }
-            if(interfaceOpen.startsWith("STORY_"))SiteStories.draw(g,getWidth(),h,map,interfaceOpen.substring(6));
+            if(interfaceOpen.startsWith("STORY_"))SiteStories.draw(g,getWidth(),h,map,interfaceOpen.substring(6),storyReader);
             if(interfaceOpen.equals("BRIEFING")){
-                int x=30,y=125;g.setColor(new Color(10,17,23,248));g.fillRoundRect(18,88,getWidth()-36,Math.min(h-110,345),12,12);g.setColor(new Color(231,212,171));g.setFont(new Font(Font.MONOSPACED,Font.BOLD,14));g.drawString("CONTRACT BOARD / ESC CLOSE",x,112);
-                g.setFont(new Font(Font.SANS_SERIF,Font.PLAIN,14));
-                for(String line:dailyBrief.split(" / |;")){g.drawString(line.substring(0,Math.min(line.length(),95)),x,y+=24);}
-                for(var task:dailyTasks)if(y<h-60){g.setColor(completedTasks.contains(task)?new Color(149,217,164):new Color(205,201,180));g.drawString((completedTasks.contains(task)?"[DONE] ":"[    ] ")+task.label,x,y+=24);}
+                var status=new java.util.ArrayList<String>();
+                for(var task:dailyTasks)status.add((completedTasks.contains(task)?"[DONE] ":"[OPEN] ")+task.label);
+                assignmentReader.draw(g,getWidth(),h,map,status);
             }
             drawChat(g,h);
             if(vanDisplay&&(interfaceOpen.isEmpty()||interfaceOpen.equals("RELAY")))drawVanMeters(g,h);
@@ -1298,6 +1305,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             repaint();return;
         }
         if(!interfaceOpen.isEmpty()){
+            if(interfaceOpen.equals("BRIEFING")||interfaceOpen.startsWith("STORY_")){
+                if(e.getKeyCode()==KeyEvent.VK_ESCAPE||e.getKeyCode()==KeyEvent.VK_E)interfaceOpen="";
+                else (interfaceOpen.equals("BRIEFING")?assignmentReader:storyReader).key(e.getKeyCode());
+                keys.clear();repaint();return;
+            }
             if(interfaceOpen.equals("MAP")&&e.getKeyCode()==KeyEvent.VK_C){
                 cycleVanCamera();repaint();return;
             }
