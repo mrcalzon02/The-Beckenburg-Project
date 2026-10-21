@@ -21,17 +21,40 @@ public final class LanAudio implements AutoCloseable {
         PREFS.putInt("effects_volume",value);
     }
     private static final AudioFormat FORMAT=new AudioFormat(SAMPLE_RATE,16,2,true,false);
-    private record Playback(LanSound.CueEvent cue,byte[] pcm) { }
+    private record Playback(LanSound.CueEvent cue,byte[] pcm,int source,int generation) { Playback(LanSound.CueEvent cue,byte[] pcm){this(cue,pcm,-1,0);} }
     private static final int BLOCK_FRAMES=512,MAX_VOICES=12;
     private final BlockingQueue<Playback> queue=new ArrayBlockingQueue<>(32);
     private final Thread worker;
     private volatile boolean closed;
+    /** A generation change cancels a source even if off/on occurs between two mixer blocks. */
+    public static final class FixtureGate {
+        private final java.util.Map<Integer,Boolean> active=new java.util.concurrent.ConcurrentHashMap<>();
+        private final java.util.Map<Integer,Integer> generation=new java.util.concurrent.ConcurrentHashMap<>();
+        public synchronized void state(int id,boolean on){if(id<1||id>100)throw new IllegalArgumentException("fixture id");if(active.getOrDefault(id,false)!=on){generation.merge(id,1,Integer::sum);active.put(id,on);}}
+        public int generation(int id){return generation.getOrDefault(id,0);}
+        public boolean valid(int id,int version){return id<0||active.getOrDefault(id,false)&&generation(id)==version;}
+    }
+    private final FixtureGate fixtureGate=new FixtureGate();
+    private final java.util.Map<Integer,Long> fixturePhase=new java.util.HashMap<>();
+    public synchronized void fixtureState(HauntedFixtures.State state){
+        fixtureGate.state(state.id(),state.active());
+        if(!state.active()){queue.removeIf(p->p.source()==state.id());fixturePhase.remove(state.id());}
+    }
+    public synchronized void clearFixtures(){for(int id=1;id<=100;id++)fixtureGate.state(id,false);queue.removeIf(p->p.source()>0);fixturePhase.clear();}
+    public synchronized void playFixture(HauntedFixtures.State source,LanSound.CueEvent cue){
+        if(source==null||cue==null||!source.active())return;fixtureState(source);
+        long first=fixturePhase.getOrDefault(source.id(),0L);int count=9600;
+        byte[] pcm=FixtureSoundscape.render(FixtureSoundscape.sound(source.kind()),first,count,cue.pan(),cue.volume()*effectsVolume()/100);
+        fixturePhase.put(source.id(),first+count);enqueue(new Playback(cue,pcm,source.id(),fixtureGate.generation(source.id())));
+    }
+
 
     private static final class Voice {
         final byte[] pcm;
-        final int priority;
+        final int priority,source,generation;
         int position;
-        Voice(byte[] pcm,int priority){this.pcm=pcm;this.priority=priority;}
+        Voice(byte[] pcm,int priority){this(pcm,priority,-1,0);}
+        Voice(byte[] pcm,int priority,int source,int generation){this.pcm=pcm;this.priority=priority;this.source=source;this.generation=generation;}
     }
     public LanAudio(){
         worker=new Thread(this::run,"beckenburg-positional-audio");
@@ -83,7 +106,7 @@ public final class LanAudio implements AutoCloseable {
             pcm=RecordedSfx.render(pending.cue(),effectsVolume());
             if(pcm==null)pcm=synthesize(pending.cue());
         }
-        return new Voice(pcm,priority(pending));
+        return new Voice(pcm,priority(pending),pending.source(),pending.generation());
     }
     private static void admit(java.util.List<Voice> voices,Voice newcomer){
         if(newcomer.pcm.length<4)return;
@@ -127,6 +150,13 @@ public final class LanAudio implements AutoCloseable {
         admit(voices,new Voice(first,1));admit(voices,new Voice(second,4));
         return mix(voices);
     }
+    /** Pure PCM fixture-cancellation check using the exact production voice filter and mixer. */
+    public static byte[] mixFixtureBlock(byte[][] pcm,int[] ids,int[] generations,FixtureGate gate){
+        java.util.List<Voice> voices=new java.util.ArrayList<>();
+        for(int n=0;n<pcm.length;n++)admit(voices,new Voice(pcm[n],1,ids[n],generations[n]));
+        pruneFixtures(voices,gate);return mix(voices);
+    }
+    private static void pruneFixtures(java.util.List<Voice> voices,FixtureGate gate){voices.removeIf(v->!gate.valid(v.source,v.generation));}
     private void run(){
         java.util.List<Voice> voices=new java.util.ArrayList<>();
         SourceDataLine line=null;
@@ -138,7 +168,8 @@ public final class LanAudio implements AutoCloseable {
                     admit(voices,render(first));
                 }
                 Playback next;
-                while((next=queue.poll())!=null)admit(voices,render(next));
+                while((next=queue.poll())!=null)if(fixtureGate.valid(next.source(),next.generation()))admit(voices,render(next));
+                pruneFixtures(voices,fixtureGate);
                 if(voices.isEmpty())continue;
                 if(line==null){
                     line=(SourceDataLine)AudioSystem.getLine(new DataLine.Info(SourceDataLine.class,FORMAT));

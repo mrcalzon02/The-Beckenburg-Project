@@ -60,12 +60,12 @@ public final class HauntedFixtures {
     public synchronized void toggleFocused(int id,LooseClutter.Observer o,int tick){
         var target=InteractionFocus.pick(map,o,List.of());
         if(!o.exposed()||target==null||target.kind()!=InteractionFocus.Kind.FIXTURE||!target.id().equals(""+id))throw new IllegalArgumentException("look directly at the fixture");
-        Fixture f=get(id);f.active=!f.active;f.until=f.active?tick+200:0;f.revision++;
+        Fixture f=get(id);f.active=!f.active;f.until=0;f.revision++;
     }
     public synchronized void toggle(int id,LooseClutter.Observer o,int tick){
         if(!o.exposed())throw new IllegalArgumentException("cannot use fixture now");
         var aimed=aimed(o.x(),o.y(),o.z(),o.yaw(),o.pitch());if(aimed==null||aimed.id!=id)throw new IllegalArgumentException("aim at fixture within reach");
-        Fixture f=get(id);f.active=!f.active;f.until=f.active?tick+200:0;f.revision++;
+        Fixture f=get(id);f.active=!f.active;f.until=0;f.revision++;
     }
     public synchronized void activate(int id,int room,int tick){Fixture f=get(id);if(f.room!=room)throw new IllegalArgumentException("fixture is in another room");f.active=true;f.until=tick+200;f.revision++;}
     public synchronized void witness(GhostDomain.Resolution event,int tick,int requested){
@@ -77,9 +77,9 @@ public final class HauntedFixtures {
     public synchronized List<Sound> advance(int tick){
         List<Sound> sounds=new ArrayList<>();
         for(var f:fixtures){
-            if(f.active&&tick>=f.until){f.active=false;f.revision++;}
+            if(f.active&&f.until>0&&tick>=f.until){f.active=false;f.revision++;}
             if(f.kind.name().startsWith("SINK")){int before=f.water;f.water=Math.max(0,Math.min(1000,f.water+(f.active?6:-10)));if(f.water!=before)f.revision++;}
-            int cadence=switch(f.kind){case ALARM_CLOCK->8;case PHONE,FIRE_ALARM->10;default->6;};
+            int cadence=6;
             if(f.active&&tick%cadence==0)sounds.add(new Sound(f.state(),f.kind.cue()));
         }return sounds;
     }

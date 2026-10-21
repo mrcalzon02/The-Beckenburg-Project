@@ -536,7 +536,7 @@ public final class InvestigationGame {
             scene.draw(map,session,0);
             timer=new javax.swing.Timer(33,e->frame());timer.start();
         }
-        void close(){timer.stop();down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();}
+        void close(){timer.stop();down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
         private double feetY(){return scene.eyeHeight-1.62;}
         private int currentRoom(){return map.roomAt(scene.x,feetY(),scene.z);}
         private boolean atVanFloor(){return Math.abs(feetY()-map.floorY(HouseMap.EXTRACTION_ROOM))<.25;}
@@ -758,7 +758,7 @@ public final class InvestigationGame {
             var target=focusTarget();if(target==null)return;
             try{switch(target.kind()){
                 case CLUTTER -> map.clutter().takeFocused(Integer.parseInt(target.id()),new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true),session.ticks());
-                case FIXTURE -> map.fixtures().toggleFocused(Integer.parseInt(target.id()),new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true),session.ticks());
+                case FIXTURE -> {int id=Integer.parseInt(target.id());map.fixtures().toggleFocused(id,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true),session.ticks());GameSfx.fixtureState(map.fixtures().state(id));}
                 case RACK -> {
                     String id=target.id().split(":")[0];
                     if(id.equals("HEALTH_SUPPLIES")||id.equals("SANITY_MEDICATION")){

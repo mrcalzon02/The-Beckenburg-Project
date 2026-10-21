@@ -57,12 +57,12 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));
                 map.configureHiding(camera.hidingDensity);
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
-                buildingAudio.setMap(map);
+                buildingAudio.setMap(map);audio.clearFixtures();
                 feedback="SPECTRAL TERRITORY: "+map.site();
             }else if(p.size()==5&&p.get(0).equals("DEVICE_SOUND")){
-                var device=map.fixtures().state(LanProtocol.integer(p.get(1),1,100));audio.play(new LanSound.CueEvent(device.kind().cue(),LanProtocol.integer(p.get(2),-100,100),LanProtocol.integer(p.get(3),0,100),LanProtocol.integer(p.get(4),0,99999999)));
+                var device=map.fixtures().state(LanProtocol.integer(p.get(1),1,100));audio.playFixture(device,new LanSound.CueEvent(device.kind().cue(),LanProtocol.integer(p.get(2),-100,100),LanProtocol.integer(p.get(3),0,100),LanProtocol.integer(p.get(4),0,99999999)));
             }else if(p.size()==6&&p.get(0).equals("FIXTURE")){
-                map.fixtures().accept(p);
+                map.fixtures().accept(p);audio.fixtureState(map.fixtures().state(LanProtocol.integer(p.get(1),1,100)));
             }else if(p.size()==2&&p.get(0).equals("CLUTTER")){
                 map.clutter().acceptOne(p.get(1));
             }else if(p.size()==2&&p.get(0).equals("HIDECONFIG")){

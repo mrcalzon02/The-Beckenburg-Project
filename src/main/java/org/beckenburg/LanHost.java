@@ -2029,9 +2029,10 @@ public final class LanHost implements AutoCloseable {
             expireDisconnectedSeats();
             if(!running)return;
             world.advanceStamina(tick);
-            for(var sound:map.fixtures().advance(tick)){
+            var fixtureSounds=map.fixtures().advance(tick);broadcastFixtures();
+            for(var sound:fixtureSounds){
                 var f=sound.source();sensorSound(f.room(),f.x(),f.z(),Math.max(1,sound.cue().baseGain/10));for(int seat=0;seat<HUNTERS;seat++)if(seats[seat]!=null&&seats[seat].worldMode){
-                    var cue=LanSound.project(map,world.body(seat),f.room(),f.x(),f.y(),f.z(),sound.cue(),tick);if(cue!=null)reply(seats[seat],cue.frame());
+                    var cue=LanSound.project(map,world.body(seat),f.room(),f.x(),f.y(),f.z(),sound.cue(),tick);if(cue!=null)reply(seats[seat],"DEVICE_SOUND|"+f.id()+"|"+cue.pan()+"|"+cue.volume()+"|"+tick);
                 }
                 Peer spirit=seats[GHOST_SEAT];if(spirit!=null&&spirit.ghostWorldMode){var pose=ghostPose.pose();var cue=LanSound.project(map,new LanWorld.Body(pose.x(),pose.y(),pose.z(),0,pose.room()),f.room(),f.x(),f.y(),f.z(),sound.cue(),tick);if(cue!=null)reply(spirit,"DEVICE_SOUND|"+f.id()+"|"+cue.pan()+"|"+cue.volume()+"|"+tick);}
             }

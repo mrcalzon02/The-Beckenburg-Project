@@ -26,6 +26,9 @@ public final class GameSfx {
         Player.AUDIO.play(new LanSound.CueEvent(cue,0,
             footstepVolume(cue),0));
     }
+    public static void fixtureState(HauntedFixtures.State source){Player.AUDIO.fixtureState(source);}
+    public static void fixtureSound(HauntedFixtures.State source,LanSound.CueEvent cue){Player.AUDIO.playFixture(source,cue);}
+    public static void clearFixtures(){Player.AUDIO.clearFixtures();}
     private static int footstepVolume(LanSound.Cue cue){
         return switch(cue){
             case STEP,STEP_STONE->48;

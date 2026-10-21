@@ -1,0 +1,27 @@
+[
+  {
+    "test": "FixtureSoundscapeTest",
+    "exit_code": 0,
+    "output": "PASS eight distinct original quantized loops, continuous phases, source-specific PCM cancellation, stale voice rejection, independent sounds and manual/ghost lifetimes\n"
+  },
+  {
+    "test": "HauntedFixturesTest",
+    "exit_code": 0,
+    "output": "PASS HOUSE: 19 physically mounted and reachable devices, including 12 room alarms\nPASS FARMHOUSE: 19 physically mounted and reachable devices, including 12 room alarms\nPASS SCHOOL: 17 physically mounted and reachable devices, including 12 room alarms\nPASS authorized AI/human activation, manual switches, rejected events/reach, timed ringing, water filling/draining, bounded replication and five distinct soundscapes\n"
+  },
+  {
+    "test": "LooseClutterNetworkTest",
+    "exit_code": 0,
+    "output": "PASS real sockets: pickup/throw/ownership/privacy, ghost fixture activation/replay, rejected remote switching and reachable player deactivation\n"
+  },
+  {
+    "test": "InteractionNetworkTest",
+    "exit_code": 0,
+    "output": "PASS real-socket centre-ray clutter and shelf pickups, exact stock decrement, forged/stale target rejection and hunter-only interaction\n"
+  },
+  {
+    "test": "LanSoundTest",
+    "exit_code": 0,
+    "output": "PASS: listener-relative host sound projection, ghost privacy, bounded frames, stereo PCM and mute amplitude\n"
+  }
+]

@@ -220,15 +220,18 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
                 renderer.eyeHeight=map.floorY(HouseMap.EXTRACTION_ROOM)+1.62;
                 rackSnapshot.reset();
-                buildingAudio.setMap(map);
+                buildingAudio.setMap(map);audio.clearFixtures();
                 peers.clear();videoCameras.clear();renderer.videoCameras.clear();renderer.dotsPositions.clear();apparition=null;
                 renderer.x=map.van().placement().x();
                 renderer.z=map.van().placement().z();
                 feedback="INVESTIGATION: "+map.site();
             }else if(rackSnapshot.accept(p)){
                 // Atomic host-owned remaining stock, shared by all hunter views.
+            }else if(p.size()==5&&p.get(0).equals("DEVICE_SOUND")){
+                var device=map.fixtures().state(LanProtocol.integer(p.get(1),1,100));var cue=new LanSound.CueEvent(device.kind().cue(),LanProtocol.integer(p.get(2),-100,100),LanProtocol.integer(p.get(3),0,100),LanProtocol.integer(p.get(4),0,99999999));audio.playFixture(device,cue);
+                soundCaption=device.kind().name().replace('_',' ')+" / "+(cue.pan()< -25?"LEFT":cue.pan()>25?"RIGHT":"AHEAD");soundUntilTick=cue.tick()+8;
             }else if(p.size()==6&&p.get(0).equals("FIXTURE")){
-                map.fixtures().accept(p);
+                map.fixtures().accept(p);audio.fixtureState(map.fixtures().state(LanProtocol.integer(p.get(1),1,100)));
             }else if(p.size()==2&&p.get(0).equals("CLUTTER")){
                 map.clutter().acceptOne(p.get(1));
             }else if(p.get(0).equals("CHAT")){
