@@ -92,8 +92,9 @@ DirectionalSpritesIntegrationTest
 CharacterDirectionalVisualTest
 CharacterSpriteWorldMotionTest
 TwinBodyVisualTest
+TwinCompanionAiTest
 LanCameraSightTest
-LanTwinSightingPrivacyTest
+LanTwinPlayerCompanionTest
 LanApparitionRenderTest
 LanApparitionIntegrationTest
 LanGhostIntegrationTest
