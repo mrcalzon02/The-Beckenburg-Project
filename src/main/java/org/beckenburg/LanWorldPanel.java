@@ -46,6 +46,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private int lastVanPoll=-100000,lastMapTextureTick=-100000;
     private final List<SceneRenderer.WorldMark> counterMarks=new ArrayList<>();
     private SceneRenderer.Apparition apparition;
+    private final Map<String,SceneRenderer.Apparition> pairedGhostBodies=new HashMap<>();
+    private final Map<String,Integer> pairedGhostTicks=new HashMap<>();
     private boolean orbForm,greenGhostForm;
     private String ghostAppearance="banshee";
     private int apparitionWarningTick=-1;
@@ -222,6 +224,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 rackSnapshot.reset();
                 buildingAudio.setMap(map);audio.clearFixtures();
                 peers.clear();videoCameras.clear();renderer.videoCameras.clear();renderer.dotsPositions.clear();apparition=null;
+                pairedGhostBodies.clear();pairedGhostTicks.clear();
+                renderer.setAdditionalGhostBodies(List.of());
+                videoRenderer.setAdditionalGhostBodies(List.of());
                 renderer.x=map.van().placement().x();
                 renderer.z=map.van().placement().z();
                 feedback="INVESTIGATION: "+map.site();
@@ -305,7 +310,36 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     if(visual.ancient()!=greenGhostForm)
                         throw new IllegalArgumentException("inconsistent ghost form tint");
                     ghostAppearance=visual.name().toLowerCase(java.util.Locale.ROOT);
+                    if(visual.baseType()==GhostIdentity.Type.TWINS)
+                        ghostAppearance=(visual.ancient()?"ancient_":"")+"twins_a";
                 }else ghostAppearance="banshee";
+            }else if(p.get(0).equals("TWIN")){
+                // A paired-body packet is per-Hunter LOS-filtered by the host;
+                // it never creates an additional GhostDomain or evidence clue.
+                if(p.size()!=4&&p.size()!=9)throw new IllegalArgumentException("Bad Twin pose packet");
+                String member=p.get(1);
+                if(!member.equals("b"))throw new IllegalArgumentException("Unknown paired actor");
+                int eventTick=LanProtocol.integer(p.get(p.size()-2),0,99999999);
+                if(p.size()==4)eventTick=LanProtocol.integer(p.get(3),0,99999999);
+                if(eventTick>=pairedGhostTicks.getOrDefault(member,-1)){
+                    pairedGhostTicks.put(member,eventTick);
+                    if(p.size()==4){
+                        if(!p.get(2).equals("HIDDEN"))throw new IllegalArgumentException("Bad Twin clear");
+                        pairedGhostBodies.remove(member);
+                    }else{
+                        if(!p.get(2).equals("VISIBLE"))throw new IllegalArgumentException("Bad Twin visibility");
+                        double tx=LanProtocol.integer(p.get(3),0,map.width()*1000)/1000.0;
+                        double ty=LanProtocol.integer(p.get(4),-50000,50000)/1000.0;
+                        double tz=LanProtocol.integer(p.get(5),0,map.height()*1000)/1000.0;
+                        int heading=LanProtocol.integer(p.get(6),0,359);
+                        String tint=p.get(8);
+                        if(!tint.equals("GREEN")&&!tint.equals("BASE"))
+                            throw new IllegalArgumentException("Invalid Twin tint");
+                        pairedGhostBodies.put(member,new SceneRenderer.Apparition(
+                            tx,ty,tz,LanGhostAnimation.Phase.LURK,heading,0,false,
+                            tint.equals("GREEN"),tint.equals("GREEN")?"ancient_twins_b":"twins_b"));
+                    }
+                }
             }else if(p.get(0).equals("APPARITION")){
                 if(p.size()==3 && p.get(1).equals("HIDDEN")){
                     apparition=null;
@@ -857,6 +891,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
         renderer.rackToolTiers=java.util.Map.of();
         renderer.rackInventory=rackSnapshot.stock();
+        renderer.setAdditionalGhostBodies(new ArrayList<>(pairedGhostBodies.values()));
         renderer.drawNetwork(map,new ArrayList<>(peers.values()),apparition,tick*.1,List.copyOf(counterMarks));
         // Van receiver renders the *same live world* from the physical camera's
         // position. No canned image, inferred spectral object or proof overlay.
