@@ -136,6 +136,21 @@ def hearth_tools():
     for i in range(5):p.append(s.rod('Dry split kindling',(-.35+i*.045,.20,.04),(-.35+i*.045,.40,.05+i*.006),.021,m['pine'],5))
     return p,dict(function='Cold ash pail, freestanding poker/shovel/tongs rack and split kindling',runtime='Ready static hearth detail; no live heat, ash or fire simulation',placement='Blackpine foreman and mess hearths, supported clear of walking aisles')
 
+def boot_rack():
+    m=b.init();p=[]
+    for x in [-.62,.62]:
+        for y in [-.18,.18]:p.append(s.box('Washhouse rack leg',(x,y,.53),(.07,.07,1.06),m['oak']))
+    for z in [.10,.39]:
+        for i in range(5):p.append(s.box('Open drying slat',(0,-.20+i*.10,z),(1.40,.065,.045),m['pine']))
+    p.append(s.box('Rack upper back rail',(0,.18,1.11),(1.40,.075,.12),m['oak']))
+    p.append(s.rod('Hanging towel rail',(-.60,-.08,1.03),(.60,-.08,1.03),.019,m['steel'],8))
+    for x in [-.41,.11]:
+        p.append(s.mesh('Draped old wash towel',[(x,-.12,1.02),(x+.30,-.12,1.02),(x+.30,-.14,.56),(x+.23,-.15,.53),(x+.08,-.14,.55),(x,-.14,.54)],[(0,1,2,3,4,5),(5,4,3,2,1,0)],m['cloth' if x<0 else 'blue']))
+    # Reuse the project's original CC0 boots, retaining their UV/materials.
+    boots=s.import_source('level_story_work_boots_worn',location=(-.38,-.01,.125),scale=.82);p.append(boots)
+    for i in range(3):p.append(s.box('Folded wash cloth',(.40,0,.15+i*.045),(.30,.28,.043),m['cloth'],.01))
+    return p,dict(function='Open boot-drying rack, old work boots, folded cloths and two draped towels',runtime='Ready static washhouse furnishing; boots retain original source UV/materials',derived_sources=s.SOURCE_LOG,placement='Blackpine washhouse east wall, outside the clear central rite')
+
 name=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'bandsaw'
 parts,notes=globals()[name]()
 b.export('level_work_'+name,parts,'working-place-details',view=(4,-6,3.5))

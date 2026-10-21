@@ -33,3 +33,9 @@ Next useful candidates: rail log carriage, repair bench and hand tools, sawdust 
 `level_work_hearth_tools`: 1118 triangles. Free-standing rack with shovel, poker and tongs, a lidded cold-ash pail, wire handle and split kindling. Used beside the foreman and mess fireplaces. Reopened native source, UV/packed images, full-source bounds, floor support, clear spawns/rites and readable-record checks pass. Tools and ash are static scenery.
 
 [Manifest](production/hearth_tools.json) · [Source](blender/level_work_hearth_tools.blend) · [Studio](previews/level_work_hearth_tools.png) · [Runtime](previews/model-production/blackpine-level_work_hearth_tools.png).
+
+## 06 / washhouse boot and towel rack
+
+`level_work_boot_rack`: 1140 triangles. Slatted open drying rack, two draped towels, folded cloths and the existing original worn boots with preserved UV/materials. Placed at X11.50/Z38.8 against the washhouse east wall, facing into the room and outside the central ritual footprint. Source reopens with packed images, runtime native bounds/support and clear-spawn/rite/reading checks pass.
+
+[Manifest and reused-source hash](production/boot_rack.json) · [Source](blender/level_work_boot_rack.blend) · [Studio](previews/level_work_boot_rack.png) · [Runtime](previews/model-production/blackpine-level_work_boot_rack.png).
