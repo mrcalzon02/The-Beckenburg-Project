@@ -20,6 +20,12 @@ public final class DirectionalSprites {
     private static final String[] FACINGS={"front","front","side", "back_three_quarter",
             "back","back_three_quarter_mirrored","side_mirrored","front"};
     private static final Map<String,BufferedImage> IMAGES=load();
+    // The master boards actually provide four views: front, side, back, rear 3/4.
+    // Diagonal angles reuse only these real source views until dedicated art is approved.
+    private static final String[] MASTER_FACINGS={
+        "front","front","side","three_quarter","back","three_quarter","side","front"
+    };
+    private static final String[] MASTER_DIRECTIONS={"front","side","back","three_quarter"};
     private DirectionalSprites() { }
 
     private static Map<String,BufferedImage> load(){
@@ -49,12 +55,50 @@ public final class DirectionalSprites {
                     throw new IllegalStateException("Missing character frame: "+person+"/"+facing);
             }
         }
+        // All six character-specific approved profiles are extracted from their
+        // original four-view concept panels. An incomplete asset is a build defect,
+        // never a reason to repaint every Hunter as the Observer/Banshee.
+        try(var source=DirectionalSprites.class.getResourceAsStream("character-directions.zip")){
+            if(source==null)throw new IllegalStateException("Missing approved four-view character resource");
+            int count=0;
+            try(var zip=new ZipInputStream(source)){
+                ZipEntry entry;
+                while((entry=zip.getNextEntry())!=null){
+                    String name=entry.getName();
+                    if(!entry.isDirectory()){
+                        String[] parts=name.split("/");
+                        if(parts.length!=3||!parts[0].equals("assets")
+                                ||!CharacterVisuals.isHunter(parts[1])&&!CharacterVisuals.isElder(parts[1])
+                                ||!java.util.Arrays.asList(MASTER_DIRECTIONS).contains(parts[2].replace(".png",""))
+                                ||!parts[2].endsWith(".png"))
+                            throw new IOException("Unexpected approved sprite entry: "+name);
+                        BufferedImage image=ImageIO.read(zip);
+                        if(image==null||!image.getColorModel().hasAlpha()
+                                ||image.getWidth()!=128||image.getHeight()!=224)
+                            throw new IOException("Invalid master sprite dimensions/alpha: "+name);
+                        if(frames.put(parts[1]+"/"+parts[2].substring(0,parts[2].length()-4),image)!=null
+                                &&!parts[1].equals("observer"))
+                            throw new IOException("Duplicate master sprite: "+name);
+                        count++;
+                    }
+                    zip.closeEntry();
+                }
+            }
+            if(count!=24)throw new IOException("Expected 24 master sprite frames, received "+count);
+            for(String identity:new String[]{"cleric","observer","demonologist",
+                    "elder_blade_demon","elder_plague_demon","elder_nothic"})
+                for(String view:MASTER_DIRECTIONS)
+                    if(!frames.containsKey(identity+"/"+view))
+                        throw new IOException("Missing master sprite "+identity+"/"+view);
+        }catch(IOException ex){throw new IllegalStateException("Cannot read approved directional master art",ex);}
         return Map.copyOf(frames);
     }
     public static int frameCount(){return IMAGES.size();}
     public static BufferedImage frame(String character,int facing){
         if(facing<0||facing>=8)throw new IllegalArgumentException("facing must be 0..7");
-        BufferedImage image=IMAGES.get(character+"/"+FACINGS[facing]);
+        String direction=(CharacterVisuals.isHunter(character)||CharacterVisuals.isElder(character))
+                ?MASTER_FACINGS[facing]:FACINGS[facing];
+        BufferedImage image=IMAGES.get(character+"/"+direction);
         if(image==null)throw new IllegalArgumentException("Unknown character sprite: "+character);
         return image;
     }
@@ -66,9 +110,21 @@ public final class DirectionalSprites {
         // Ancient sprites reuse the exact same approved parent art on every facing.
         // Green tint is applied in draw(), never a separate species atlas.
         String spriteSource=character.startsWith("ancient_")?character.substring("ancient_".length()):character;
-        BufferedImage expanded=GhostSpriteAtlas.frame(spriteSource,facing,GhostSpriteAtlas.state(phase),animationFrame);
+        // The present 8-state atlases contain only source-derived static cutouts.
+        // Do not cycle pseudo-walk/attack frames until coherent animation is approved.
+        // Restrict active runtime selection to four genuine source angles.
+        int originalView=switch(facing) {
+            case 0,1,7 -> 0;
+            case 2,6 -> 2;
+            case 3,5 -> 3;
+            default -> 4;
+        };
+        BufferedImage expanded=GhostSpriteAtlas.frame(spriteSource,originalView,"idle",0);
         if(expanded!=null)return expanded;
-        return frame(IMAGES.containsKey(spriteSource+"/front")?spriteSource:"banshee",facing);
+        if(CharacterVisuals.isHunter(spriteSource)||CharacterVisuals.isElder(spriteSource)
+                ||spriteSource.equals("banshee"))
+            return frame(spriteSource,facing);
+        throw new IllegalArgumentException("Missing distinct approved ghost sprite: "+character);
     }
     /** Entity heading zero looks +Z; facing zero when camera looks at its face. */
     public static int facing(int heading,double entityX,double entityZ,double camX,double camZ){
@@ -153,7 +209,9 @@ public final class DirectionalSprites {
                 red=(int)(Math.min(255,red)*(1-fog)+18*fog);
                 green=(int)(Math.min(255,green)*(1-fog)+21*fog);
                 blue=(int)(Math.min(255,blue)*(1-fog)+30*fog);
-                if(ancientTint){
+                // Ancients already have their approved green variant stored in v3.
+                // Double tint is permitted only for the explicitly legacy base fallback.
+                if(ancientTint&&!GhostSpriteAtlas.supports(character)){
                     red=(int)(red*.33);
                     green=Math.min(255,(int)(green*.80+53));
                     blue=(int)(blue*.35);
