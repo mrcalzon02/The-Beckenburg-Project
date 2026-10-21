@@ -107,9 +107,10 @@ public final class DirectionalSprites {
      */
     public static BufferedImage frame(String character,int facing,LanGhostAnimation.Phase phase,int animationFrame){
         if(facing<0||facing>=8||phase==null)throw new IllegalArgumentException("invalid facing/phase");
-        // Ancient sprites reuse the exact same approved parent art on every facing.
-        // Green tint is applied in draw(), never a separate species atlas.
-        String spriteSource=character.startsWith("ancient_")?character.substring("ancient_".length()):character;
+        // The full 23-identity atlas already includes ten separately green-tinted
+        // Ancient appearances. Use their actual packaged art before considering a
+        // source fallback; stripping ancient_ would incorrectly draw the base ghost.
+        String spriteSource=character;
         // The present 8-state atlases contain only source-derived static cutouts.
         // Do not cycle pseudo-walk/attack frames until coherent animation is approved.
         // Restrict active runtime selection to four genuine source angles.
