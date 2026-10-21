@@ -63,6 +63,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --check
+          # The pinned source contains intentional Markdown trailing spaces and preserved
+          # historical whitespace. The import SHA-256 manifest verifies original bytes.
+          # Do not fail or mutate archival content using git diff --check.
+          if git diff --cached --quiet; then
+            echo 'ERROR: No Beckenburg files were staged after verified import' >&2
+            exit 1
+          fi
           git commit -m "Import Beckenburg source and authored assets from frozen HB-TTRPG-tools revision"
           git push origin HEAD:main
