@@ -1,0 +1,109 @@
+{
+  "identity": "twins",
+  "version": "two-independent-source-cutouts-v1",
+  "source": "assets/concept-art/v001/03-ghosts/twins-ghost-profile.png",
+  "source_sha256": "cbece996e02fdcc3ad301c546fc63d8e406a7a61c9e370938544c380b931627a",
+  "directions": {
+    "front": {
+      "a": {
+        "path": "twins/a/front.png",
+        "source_crop": [
+          16,
+          280,
+          119,
+          616
+        ],
+        "visible_pixels": 9231,
+        "sha256": "11c68e23ba2cfd5682f5ac55ac77ef9913ad00d99489cc1ceef4d76cbc06c9f6"
+      },
+      "b": {
+        "path": "twins/b/front.png",
+        "source_crop": [
+          108,
+          280,
+          224,
+          616
+        ],
+        "visible_pixels": 9921,
+        "sha256": "139eb60917f4f5b5239fe99845425a610deaa06a5ca084899c6e42db2b48c4ad"
+      }
+    },
+    "side": {
+      "a": {
+        "path": "twins/a/side.png",
+        "source_crop": [
+          237,
+          283,
+          311,
+          614
+        ],
+        "visible_pixels": 7681,
+        "sha256": "62039af86ec54507b03efce30846284e9da3ed131eeb62a6f6bf133a60aefbd1"
+      },
+      "b": {
+        "path": "twins/b/side.png",
+        "source_crop": [
+          307,
+          283,
+          383,
+          614
+        ],
+        "visible_pixels": 7609,
+        "sha256": "af375f0735328f3d905a53bc8410d26dd08524123953a46174394f7396817ef3"
+      }
+    },
+    "back": {
+      "a": {
+        "path": "twins/a/back.png",
+        "source_crop": [
+          390,
+          278,
+          473,
+          611
+        ],
+        "visible_pixels": 7802,
+        "sha256": "cd39f91f66247c8c63281e8f89e6ed74fce3e7a64513a5eb04e52cd1c2db286d"
+      },
+      "b": {
+        "path": "twins/b/back.png",
+        "source_crop": [
+          467,
+          278,
+          556,
+          611
+        ],
+        "visible_pixels": 7360,
+        "sha256": "6db0447de4a7bc854cf9b49641f1654d2f75a02269a07eb40a946cc4436f0908"
+      }
+    },
+    "three_quarter": {
+      "a": {
+        "path": "twins/a/three_quarter.png",
+        "source_crop": [
+          557,
+          280,
+          663,
+          615
+        ],
+        "visible_pixels": 12285,
+        "sha256": "9129ea783564ffc5520e271b37e806220db96fa548fd09397e4aa0116bf51c10"
+      },
+      "b": {
+        "path": "twins/b/three_quarter.png",
+        "source_crop": [
+          651,
+          280,
+          754,
+          615
+        ],
+        "visible_pixels": 13759,
+        "sha256": "0094076837b473c97e92daff2726696b10cf67b35875573fb59cb53594987f49"
+      }
+    }
+  },
+  "canvas": [
+    128,
+    224
+  ],
+  "archive_sha256": "72656de3784256f24961fdf13ea22f3039c36b913f81b0a383d37c3d4adb5c9e"
+}
