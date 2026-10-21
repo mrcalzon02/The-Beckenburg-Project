@@ -19,7 +19,7 @@ public final class VanStreetHouses {
                 throw new IllegalArgumentException("Invalid street residence");
         }
         public int side(){return outerX<0?-1:1;}
-        public double streetFace(){return side()*(VanArrivalStreet.ROAD_HALF_WIDTH+2.65);}
+        public double streetFace(){return side()*(VanArrivalStreet.ROAD_HALF_WIDTH+3.25);}
         public double buildingStartX(){return side()>0?streetFace():streetFace()-depth;}
         public double buildingEndX(){return side()>0?streetFace()+depth:streetFace();}
         public double frontageStartZ(){return frontageZ-frontage*.5;}
@@ -50,7 +50,7 @@ public final class VanStreetHouses {
      */
     public record EndBuilding(double centreZ,double width,double depth,double height){}
     public static final EndBuilding TERMINUS=new EndBuilding(
-        VanArrivalStreet.ROAD_END-3.0,11.2,3.9,5.4);
+        VanArrivalStreet.ROAD_END-4.6,11.2,3.9,5.4);
     static{
         for(House house:HOMES)
             if(house.intrudesOnStreet())

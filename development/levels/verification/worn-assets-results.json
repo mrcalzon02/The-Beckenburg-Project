@@ -462,5 +462,21 @@
     "all_diffuse_images_replaced": true,
     "clean_glb_sha256": "52ddf48a4f9a7f15932fa63e37b0e4df53c8a906fde1eb2559934f3043ae9e75",
     "worn_glb_sha256": "fb15ac1296736134b2acf630d17f45656f138dc5516386ae3c42943a8e9bb506"
+  },
+  {
+    "family": "level_light_bare_bulb",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "aeaa6e800896e040d69260d00a5ae126f069f050a3a2e77b18c5e59b9d56e975",
+    "worn_glb_sha256": "667f0cea625077c360859656e4a574f4e8a330f738e76153c0419ef18ded3d23"
+  },
+  {
+    "family": "level_light_candle_chandelier",
+    "clean_sources_unchanged": true,
+    "geometry_uv_indices_transforms_identical": true,
+    "all_diffuse_images_replaced": true,
+    "clean_glb_sha256": "2186e5a82dce53feb13ffa6b57db07f2928edf4b6d36d0455cdbd41f812c13fa",
+    "worn_glb_sha256": "63c8f958cb4741026bc5545f6598f1b7fb5b4ef2d10dd71a616982418973b3dc"
   }
 ]

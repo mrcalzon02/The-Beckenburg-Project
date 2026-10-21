@@ -632,7 +632,7 @@ public final class LanHost implements AutoCloseable {
                         }
                         case INTERFACE -> reply(peer,"INTERACTED|INTERFACE|"+target.id());
                         case SWITCH -> {lights.toggle(Integer.parseInt(target.id()));notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));}
-                        case BREAKER -> {lights.setBreaker(!lights.breaker());notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));}
+                        case BREAKER -> {lights.setBreaker(!lights.breaker());map.fixtures().power(lights.breaker());notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));}
                         case WINDOW -> map.toggleWindow(Integer.parseInt(target.id()));
                         case DOOR -> {
                             int id=Integer.parseInt(target.id());map.toggleDoor(id);
@@ -674,7 +674,7 @@ public final class LanHost implements AutoCloseable {
                     LanWorld.Body body=world.body(peer.slot);
                     var breaker=RoomLighting.breaker(map);
                     if(breaker==null||body.room()!=breaker.room()||Math.abs(body.y()+1.3-breaker.y())>1.5||Math.hypot(body.x()-breaker.x(),body.z()-breaker.z())>1.5)throw new IllegalArgumentException("breaker out of reach");
-                    lights.setBreaker(!lights.breaker());
+                    lights.setBreaker(!lights.breaker());map.fixtures().power(lights.breaker());
                     notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));
                     reply(peer,"ACCEPT|POWER|"+(lights.breaker()?"ON":"OFF"));
                     recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,LanSound.Cue.BREAKER);

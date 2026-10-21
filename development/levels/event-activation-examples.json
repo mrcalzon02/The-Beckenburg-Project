@@ -3,15 +3,96 @@
   "authorship": "Original Beckenburg activation example data and synthesized device audio",
   "tick_seconds": 0.1,
   "event_duration_ticks": 200,
-  "ghost_trigger_actions": ["DISTURB", "MANIFEST", "SIGNATURE"],
+  "ghost_trigger_actions": [
+    "DISTURB",
+    "MANIFEST",
+    "SIGNATURE"
+  ],
   "requires_accepted_authoritative_event": true,
-  "player_controls": {"interact": "toggle within reach and sight", "ghost_interact": "request normal costed disturbance"},
+  "player_controls": {
+    "interact": "E; exact visible object within two metres; same start/stop control for player and ghost activation",
+    "manual_lifetime": "until explicitly switched off",
+    "ghost_interact": "request a normal costed disturbance"
+  },
   "devices": [
-    {"kind": "PHONE", "model_family": "level_event_phone", "sound": "audio/phone_ring.wav", "repeat_ticks": 10},
-    {"kind": "ALARM_CLOCK", "model_family": "level_event_alarm_clock", "sound": "audio/alarm_bell.wav", "repeat_ticks": 8},
-    {"kind": "FIRE_ALARM", "model_family": "level_event_fire_alarm", "sound": "audio/fire_bell.wav", "repeat_ticks": 10, "strobe_period_ticks": 8},
-    {"kind": "RADIO", "model_family": "level_event_radio", "sound": "audio/radio_play.wav", "repeat_ticks": 6},
-    {"kind": "BOOM_BOX", "model_family": "level_event_boom_box", "sound": "audio/radio_play.wav", "repeat_ticks": 6},
-    {"kind": "SINK", "sound": "audio/running_water.wav", "repeat_ticks": 6, "fill_per_tick": 6, "drain_per_tick": 10, "maximum_level": 1000, "surface": "inset below the existing basin rim"}
-  ]
+    {
+      "kind": "PHONE",
+      "model_family": "level_event_phone",
+      "sound": "audio/original_telephone.wav",
+      "repeat_ticks": 6
+    },
+    {
+      "kind": "ALARM_CLOCK",
+      "model_family": "level_event_alarm_clock",
+      "sound": "audio/original_bedside_bell.wav",
+      "repeat_ticks": 6
+    },
+    {
+      "kind": "FIRE_ALARM",
+      "model_family": "level_event_fire_alarm",
+      "sound": "audio/original_old_fire_gong.wav",
+      "repeat_ticks": 6,
+      "strobe_period_ticks": 8
+    },
+    {
+      "kind": "RADIO",
+      "model_family": "level_event_radio",
+      "sound": "audio/original_radio.wav",
+      "repeat_ticks": 6
+    },
+    {
+      "kind": "BOOM_BOX",
+      "model_family": "level_event_boom_box",
+      "sound": "audio/original_boom_box.wav",
+      "repeat_ticks": 6
+    },
+    {
+      "kind": "SINK",
+      "sound": "audio/original_running_water.wav",
+      "repeat_ticks": 6,
+      "fill_per_tick": 6,
+      "drain_per_tick": 10,
+      "maximum_level": 1000,
+      "surface": "inset below the existing basin rim"
+    },
+    {
+      "kind": "SMOKE_ALARM",
+      "model_family": "level_event_smoke_alarm",
+      "sound": "audio/original_smoke_alarm.wav",
+      "repeat_ticks": 6
+    },
+    {
+      "kind": "WASHING_MACHINE",
+      "model_family": "level_laundry_washer",
+      "model_library": "household",
+      "sound": "audio/original_washer.wav",
+      "repeat_ticks": 6
+    },
+    {
+      "kind": "TELEVISION",
+      "model_binding": "external geometry; television mesh is not included in this CC0 archive",
+      "sound": "audio/original_tv_static.wav",
+      "repeat_ticks": 6,
+      "light": "directional white screen glow; stops with source state",
+      "mains_power": true
+    },
+    {
+      "kind": "TABLE_LAMP",
+      "model_binding": "external geometry; bedside lamp mesh is not included in this CC0 archive",
+      "sound": null,
+      "light": "warm downward cone, soft shade spill and weaker upper opening",
+      "mains_power": true
+    },
+    {
+      "kind": "LIGHT_SWITCH",
+      "model_binding": "external geometry; switch mesh is not included in this CC0 archive",
+      "sound": null,
+      "light": "controls only the authored local washroom fittings"
+    }
+  ],
+  "audio_transport": {
+    "chunk_ticks": 6,
+    "phase": "continuous per source",
+    "stop": "cancel queued and playing voices for this source ID only"
+  }
 }

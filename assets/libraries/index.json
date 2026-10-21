@@ -8,16 +8,16 @@
       "count": 18,
       "manifest": "assets/libraries/industrial/manifest.json",
       "download": "assets/libraries/industrial/beckenburg-industrial-cc0.zip",
-      "sha256": "11ad1f9fe6a4679405f53fd1c758432bc77e44abd587c3a761d6e2228dbf8a97"
+      "sha256": "8c7ac06674b50f7f51d11499be773c2861f7ebd94c63b45d7184f80bb91174d3"
     },
     {
       "id": "household",
       "title": "Inherited furniture and household curiosities",
       "license": "CC0-1.0",
-      "count": 62,
+      "count": 66,
       "manifest": "assets/libraries/household/manifest.json",
       "download": "assets/libraries/household/beckenburg-household-cc0.zip",
-      "sha256": "ec1226e3cd8c89002d5ff7a07c691231f0cfd82ce9b9d4a622a1de808293f961"
+      "sha256": "b066424825e91bd72dd439db6d703cdcd5ff706b4e6e26f394a5fca215a5d0db"
     },
     {
       "id": "hiding",
@@ -26,7 +26,7 @@
       "count": 2,
       "manifest": "assets/libraries/hiding/manifest.json",
       "download": "assets/libraries/hiding/beckenburg-hiding-cc0.zip",
-      "sha256": "1164528dd077bd8a1f8ad413488835ce955d0d2e5b1a99dded4dd2bb3d29a95a"
+      "sha256": "61df4a3dafe4514a7ac65b3552064a14b74314589dfaab060dfa6ec4e47a2304"
     },
     {
       "id": "events",
@@ -35,7 +35,7 @@
       "count": 14,
       "manifest": "assets/libraries/events/manifest.json",
       "download": "assets/libraries/events/beckenburg-events-cc0.zip",
-      "sha256": "15a921c4874bd3c6a9971ad956597d68e9ad74c84b76dba1aa7ac57b4fc57216"
+      "sha256": "4d894f1e5754b08a016d6716e239413839ea409f0b6fb12badea60f1b64f8b67"
     },
     {
       "id": "enclosures",
@@ -44,7 +44,7 @@
       "count": 20,
       "manifest": "assets/libraries/enclosures/manifest.json",
       "download": "assets/libraries/enclosures/beckenburg-enclosures-cc0.zip",
-      "sha256": "3f200aed5b709d8c548b894a212a212ee9df8b972c3994aed652b88c71d7613f"
+      "sha256": "e585e8082fb1da8c036bfdc59bbca178dc9868bd9b93fde2052f4e3b7ecc1968"
     }
   ]
 }

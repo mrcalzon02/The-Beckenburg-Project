@@ -26,7 +26,7 @@ public final class LevelSceneSource {
     }
     @SuppressWarnings("unchecked")
     public static void main(String[] args)throws Exception{
-        if(args.length>0&&(args[0].equals("ARRIVAL")||args[0].startsWith("ENCLOSURE_"))){module(args[0]);return;}
+        if(args.length>0&&(args[0].equals("ARRIVAL")||args[0].equals("CASTLE_SURROUNDINGS")||args[0].startsWith("ENCLOSURE_"))){module(args[0]);return;}
         HouseMap map=new HouseMap(args.length>0?HouseMap.Site.valueOf(args[0]):HouseMap.Site.HOUSE);
         map.configureHiding(100); // Editable authoring source includes every potential cupboard.
         Path out=Path.of("build/level-verification/scenes",map.level().id());Files.createDirectories(out.resolve("textures"));
@@ -37,6 +37,7 @@ public final class LevelSceneSource {
         Files.writeString(out.resolve("definition.json"),json(map.level()));
         Files.writeString(out.resolve("loose-objects.json"),json(map.clutter().states().stream().map(s->new LooseSource(s,s.kind().half,s.kind().radius,s.kind().mass)).toList()));
         Files.writeString(out.resolve("event-fixtures.json"),json(map.fixtures().states()));
+        Files.writeString(out.resolve("lighting-sources.json"),json(new FixtureLighting(map).sources()));
         Files.writeString(out.resolve("scene-settings.json"),"{\"hidingDensity\":100}");
         writeFaces(out,faces);
     }
@@ -68,7 +69,10 @@ public final class LevelSceneSource {
     static void invoke(SceneRenderer scene,String name,Class<?> argument,Object value,List<Object> faces)throws Exception{var method=SceneRenderer.class.getDeclaredMethod(name,List.class,argument);method.setAccessible(true);method.invoke(scene,faces,value);}
     static void module(String mode)throws Exception{
         var scene=new SceneRenderer();List<Object> faces=new ArrayList<>();String name;Object definition;
-        if(mode.equals("ARRIVAL")){
+        if(mode.equals("CASTLE_SURROUNDINGS")){
+            name="castle-surroundings";var method=SceneRenderer.class.getDeclaredMethod("castleSurroundings");method.setAccessible(true);faces.addAll((List<?>)method.invoke(scene));
+            definition=new Module(name,"castle-mountain-v1","Castle mountain surroundings",List.of(new LevelDefinition.Room(13,"Castle mountain backdrop",-180,-160,220,220,0,80,"earth","exterior",new LevelDefinition.Vec(15.5,0,34))),List.of(),List.of(),List.of(),new LevelDefinition.Dock(15.5,0,34,Math.PI));
+        }else if(mode.equals("ARRIVAL")){
             name="arrival-road";var van=new VanStaging(new VanStaging.Placement(0,0,0));invoke(scene,"arrivalRoadGeometry",VanStaging.class,van,faces);
             var mesh=SceneRenderer.class.getDeclaredMethod("vanModel",List.class,VanStaging.class,Set.class);mesh.setAccessible(true);mesh.invoke(scene,faces,van,Set.of());
             var rooms=List.of(new LevelDefinition.Room(13,"Shared arrival tile",-6.3,-22,6.3,5,0,12,"asphalt","exterior",new LevelDefinition.Vec(0,0,-6)),new LevelDefinition.Room(14,"Van interior",-.892,-2.128,.892,2.128,.5,2.125,"asphalt","van",new LevelDefinition.Vec(0,.5,0)));

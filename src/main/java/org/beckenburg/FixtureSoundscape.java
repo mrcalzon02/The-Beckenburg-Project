@@ -3,10 +3,10 @@ package org.beckenburg;
 public final class FixtureSoundscape {
  private FixtureSoundscape(){}
  public static final int RATE=16000;
- public enum Sound { TELEPHONE,BEDSIDE_BELL,OLD_FIRE_GONG,SMOKE_ALARM,RADIO,BOOM_BOX,RUNNING_WATER,WASHER }
+ public enum Sound { TELEPHONE,BEDSIDE_BELL,OLD_FIRE_GONG,SMOKE_ALARM,RADIO,BOOM_BOX,RUNNING_WATER,WASHER,TV_STATIC }
  public static Sound sound(HauntedFixtures.Kind kind){return switch(kind.name()){
   case "PHONE"->Sound.TELEPHONE;case "ALARM_CLOCK"->Sound.BEDSIDE_BELL;case "FIRE_ALARM"->Sound.OLD_FIRE_GONG;case "SMOKE_ALARM"->Sound.SMOKE_ALARM;
-  case "RADIO"->Sound.RADIO;case "BOOM_BOX"->Sound.BOOM_BOX;case "WASHING_MACHINE"->Sound.WASHER;default->Sound.RUNNING_WATER;};}
+  case "RADIO"->Sound.RADIO;case "BOOM_BOX"->Sound.BOOM_BOX;case "WASHING_MACHINE"->Sound.WASHER;case "TELEVISION"->Sound.TV_STATIC;default->Sound.RUNNING_WATER;};}
  public static int frames(Sound kind){return RATE*switch(kind){case TELEPHONE->4;case RADIO,BOOM_BOX,WASHER->8;case SMOKE_ALARM->3;default->2;};}
  private static final int[] RADIO_NOTES={60,64,67,71,69,64,62,67,65,69,72,69,67,64,62,59},BOOM_NOTES={48,55,60,58,53,60,65,63,55,62,67,65,53,60,58,55};
  private static double noise(long frame){long h=frame*0x9e3779b97f4a7c15L+0x4245434bL;h^=h>>>29;h*=0xbf58476d1ce4e5b9L;return ((h>>>40)&0xffffff)/8388607.5-1;}
@@ -30,6 +30,7 @@ public final class FixtureSoundscape {
     v+=noise(n/4)*(kind==Sound.RADIO?.012:.003);
    }
    case RUNNING_WATER -> {v=(noise(n/2)*.19+noise(n/5)*.12+noise(n/13)*.06)*(0.82+.18*sine(3,t));double a=t%.31;v+=sine(1150,a)*Math.exp(-a*50)*.07;}
+   case TV_STATIC -> {v=(noise(n)*.17+noise(n/3)*.06)*(0.91+.09*sine(50,t));}
    case WASHER -> {v=(sine(58,t)*.11+sine(117,t)*.035)*(0.65+.35*sine(1.15,t))+noise(n/7)*.025;double a=t%.73;v+=sine(83,a)*Math.exp(-a*26)*.11;}
   }
   return (short)(Math.round(Math.max(-.72,Math.min(.72,v))*120)*256);

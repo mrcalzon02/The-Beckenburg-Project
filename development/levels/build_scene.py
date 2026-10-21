@@ -63,7 +63,7 @@ fixture_path=SRC/'event-fixtures.json'
 if fixture_path.exists():
     fixtures_collection=collection('EVENT fixtures — individual activation and water anchors')
     for state in json.loads(fixture_path.read_text()):
-        if state['kind'].startswith('SINK') or state['kind']=='WASHING_MACHINE':
+        if state['kind'].startswith('SINK') or state['kind'] in ('WASHING_MACHINE','TELEVISION','TABLE_LAMP','LIGHT_SWITCH'):
             obj=bpy.data.objects.new('Event '+str(state['id'])+' '+state['kind'],None)
         else:
             asset='level_event_'+state['kind'].lower()+'_worn'
@@ -86,11 +86,18 @@ for i,c in enumerate(definition['colliders']):
 
 scene=bpy.context.scene;scene.world=bpy.data.worlds.new('Night environment');scene.world.use_nodes=True
 scene.world.node_tree.nodes['Background'].inputs[0].default_value=(.07,.105,.18,1);scene.world.node_tree.nodes['Background'].inputs[1].default_value=.23
-for s in definition['sockets']:
-    if s['type']!='light':continue
-    bpy.ops.object.light_add(type='POINT',location=(s['x'],-s['z'],s['y']-.22))
-    lamp=bpy.context.object;lamp.name=s['id']+' circuit '+str(s['room']);lamp.data.energy=65 if s['style']=='utility' else 95
-    lamp.data.color=(.95,.81,.54) if s['style']!='utility' else (.72,.80,.87);lamp.data.shadow_soft_size=.23
+lighting_path=SRC/'lighting-sources.json'
+if lighting_path.exists():
+    fixtures={s['id']:s for s in json.loads(fixture_path.read_text())} if fixture_path.exists() else {}
+    for source in json.loads(lighting_path.read_text()):
+        kind=source['kind'];spot=kind in ['FLUORESCENT','TABLE_LAMP','TELEVISION']
+        bpy.ops.object.light_add(type='SPOT' if spot else 'POINT',location=(source['x'],-source['z'],source['y']))
+        lamp=bpy.context.object;lamp.name='Physical '+kind+' '+str(source['id'])+' circuit '+str(source['room']);lamp.data.color=(source['red'],source['green'],source['blue']);lamp.data.energy=source['power']*100
+        if source['fixture']>0 and not fixtures[source['fixture']]['active']:lamp.data.energy=0
+        lamp.data.shadow_soft_size=.16 if kind in ['TABLE_LAMP','CANDLE_CHANDELIER'] else .06
+        if spot:
+            direction=Vector((source['dx'],-source['dz'],source['dy']));lamp.rotation_euler=direction.to_track_quat('-Z','Y').to_euler();lamp.data.spot_size=math.radians(114 if kind=='TABLE_LAMP' else 122 if kind=='FLUORESCENT' else 95);lamp.data.spot_blend=.45 if kind=='TABLE_LAMP' else .22
+        lamp['source_kind']=kind;lamp['source_id']=source['id'];lamp['runtime_range_m']=source['radius'];lamp['circuit']=source['room'];lamp['fixture_controller']=source['fixture']
 bpy.ops.object.light_add(type='SUN',location=(15,-15,20));bpy.context.object.rotation_euler=(.38,-.55,-.9);bpy.context.object.data.energy=.7;bpy.context.object.data.color=(.40,.55,.85)
 camera_poses={'house':((28,-34,3.8),(19,-19,3.0)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
@@ -99,7 +106,8 @@ camera_poses={'house':((28,-34,3.8),(19,-19,3.0)),
               'enclosure-suburban':((63,-65,36),(22,-24,0)),
               'enclosure-woodland':((73,-73,45),(27,-25,0)),
               'enclosure-urban':((75,-75,46),(28,-28,0)),
-              'enclosure-mountain':((81,-78,35),(28,-25,9))}
+              'enclosure-mountain':((81,-78,35),(28,-25,9)),
+              'castle-surroundings':((65,-83,24),(22,-25,9))}
 position,look_at=camera_poses[name]
 bpy.ops.object.camera_add(location=position);cam=bpy.context.object
 target=Vector(look_at);cam.rotation_euler=(target-cam.location).to_track_quat('-Z','Y').to_euler();cam.data.lens=30;scene.camera=cam
@@ -107,6 +115,7 @@ scene.render.engine='CYCLES';scene.cycles.samples=24;scene.cycles.use_denoising=
 scene.render.resolution_x=1280;scene.render.resolution_y=800;scene.render.resolution_percentage=100
 scene.view_settings.view_transform='Standard';scene.view_settings.look='None';scene.view_settings.exposure=.6
 scene['level_id']=definition['id'];scene['revision']=definition['revision'];scene['source_of_truth']='LevelPlans.java / LevelDefinition.java; regenerate after layout edits'
+sys.path.insert(0,str(ROOT/'development/levels'));import scene_metadata;scene_metadata.apply(scene,definition)
 scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get('hidingDensity',100);scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
 out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
 bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+'-complete.blend')),compress=True)

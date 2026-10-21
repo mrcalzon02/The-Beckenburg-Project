@@ -939,6 +939,126 @@
       }
     },
     {
+      "id": "level_light_bare_bulb",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "aeaa6e800896e040d69260d00a5ae126f069f050a3a2e77b18c5e59b9d56e975",
+      "bytes": 45396,
+      "triangles": 320,
+      "bounds": [
+        [
+          -0.09000000357627869,
+          -0.6200000047683716,
+          -0.09000000357627869
+        ],
+        [
+          0.09000000357627869,
+          0.0,
+          0.09000000357627869
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_light_bare_bulb.blend",
+      "variant": "clean",
+      "family": "level_light_bare_bulb",
+      "files": {
+        "models": "assets/libraries/household/models/level_light_bare_bulb.glb",
+        "source": "assets/libraries/household/source/level_light_bare_bulb.blend",
+        "previews": "assets/libraries/household/previews/level_light_bare_bulb.png"
+      }
+    },
+    {
+      "id": "level_light_candle_chandelier",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "2186e5a82dce53feb13ffa6b57db07f2928edf4b6d36d0455cdbd41f812c13fa",
+      "bytes": 151232,
+      "triangles": 2044,
+      "bounds": [
+        [
+          -0.48500001430511475,
+          -0.9048340320587158,
+          -0.43141016364097595
+        ],
+        [
+          0.48500001430511475,
+          0.0,
+          0.43141016364097595
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_light_candle_chandelier.blend",
+      "variant": "clean",
+      "family": "level_light_candle_chandelier",
+      "files": {
+        "models": "assets/libraries/household/models/level_light_candle_chandelier.glb",
+        "source": "assets/libraries/household/source/level_light_candle_chandelier.blend",
+        "previews": "assets/libraries/household/previews/level_light_candle_chandelier.png"
+      }
+    },
+    {
+      "id": "level_light_bare_bulb_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "667f0cea625077c360859656e4a574f4e8a330f738e76153c0419ef18ded3d23",
+      "bytes": 48120,
+      "triangles": 320,
+      "bounds": [
+        [
+          -0.09000000357627869,
+          -0.6200000047683716,
+          -0.09000000357627869
+        ],
+        [
+          0.09000000357627869,
+          0.0,
+          0.09000000357627869
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_light_bare_bulb_worn.blend",
+      "variant": "worn",
+      "family": "level_light_bare_bulb",
+      "files": {
+        "models": "assets/libraries/household/models/level_light_bare_bulb_worn.glb",
+        "source": "assets/libraries/household/source/level_light_bare_bulb_worn.blend",
+        "previews": "assets/libraries/household/previews/level_light_bare_bulb_worn.png"
+      }
+    },
+    {
+      "id": "level_light_candle_chandelier_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "63c8f958cb4741026bc5545f6598f1b7fb5b4ef2d10dd71a616982418973b3dc",
+      "bytes": 155040,
+      "triangles": 2044,
+      "bounds": [
+        [
+          -0.48500001430511475,
+          -0.9048340320587158,
+          -0.43141016364097595
+        ],
+        [
+          0.48500001430511475,
+          0.0,
+          0.43141016364097595
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_light_candle_chandelier_worn.blend",
+      "variant": "worn",
+      "family": "level_light_candle_chandelier",
+      "files": {
+        "models": "assets/libraries/household/models/level_light_candle_chandelier_worn.glb",
+        "source": "assets/libraries/household/source/level_light_candle_chandelier_worn.blend",
+        "previews": "assets/libraries/household/previews/level_light_candle_chandelier_worn.png"
+      }
+    },
+    {
       "id": "level_story_letters_worn",
       "library": "household",
       "license": "CC0-1.0",

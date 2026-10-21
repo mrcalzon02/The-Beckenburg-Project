@@ -26,7 +26,8 @@ public final class AuthoredUtilitiesTest {
                     check(normal>.12||tangent>portal.width()/2+.08,site+" switch has solid backing outside opening "+room+" / "+portal.id());
                 }
                 var fixture=map.level().socket("light",room);
-                check(fixture!=null&&Math.abs(fixture.y()-map.floorY(room)-map.level().room(room).height())<.1,
+                double ceiling=map.floorY(room)+map.level().room(room).height();if(fixture!=null)for(var upper:map.level().rooms())if(!upper.outside()&&upper.y()>map.floorY(room)+1.9&&fixture.x()>upper.x0()&&fixture.x()<upper.x1()&&fixture.z()>upper.z0()&&fixture.z()<upper.z1())ceiling=Math.min(ceiling,upper.y());
+                check(fixture!=null&&Math.abs(fixture.y()-ceiling)<.1,
                     site+" light socket attaches to ceiling "+room);
                 boolean reachable=false;int floorCandidates=0,clearCandidates=0;
                 for(int direction=0;direction<16;direction++){

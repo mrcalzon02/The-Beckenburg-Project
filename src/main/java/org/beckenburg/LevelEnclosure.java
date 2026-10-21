@@ -43,6 +43,11 @@ public final class LevelEnclosure {
   var vanRoom=b.rooms.get(14);var van=new VanStaging(new VanStaging.Placement(vanRoom.cx(),vanRoom.cz(),-Math.PI/2));
   b.socket("arrival_tile",13,vanRoom.cx(),0,vanRoom.cz(),Math.PI/2,VanArrivalTile.ID);
   if(setting==Setting.SUBURBAN||setting==Setting.URBAN){
+   // North-side residences occupy explicitly closed neighbour parcels; south-side homes stand beyond the outer fence.
+   for(var home:VanStreetHouses.HOMES)if(home.side()>0){double front=home.streetFace()-.45,back=home.streetFace()+home.depth()+.25,lo=home.frontageStartZ()-.25,hi=home.frontageEndZ()+.25;
+    var corners=List.of(van.world(front,lo),van.world(back,lo),van.world(back,hi),van.world(front,hi));
+    for(int i=0;i<4;i++){var a=corners.get(i);var c=corners.get((i+1)%4);double length=Math.hypot(c.x()-a.x(),c.z()-a.z()),angle=Math.atan2(c.z()-a.z(),c.x()-a.x()),x=(a.x()+c.x())/2,z=(a.z()+c.z())/2;b.socket("parcel_fence",13,x,0,z,-angle,family+":"+length);b.colliders.add(new Collider(x,0,z,length/2,.10,height,angle));}
+   }
    for(var h:VanStreetHouses.HOMES){double lx=(h.buildingStartX()+h.buildingEndX())/2,lz=h.frontageZ();var p=van.world(lx,lz);b.colliders.add(new Collider(p.x(),0,p.z(),h.depth()/2,h.frontage()/2,setting==Setting.URBAN?8:h.wallHeight(),van.placement().yaw()));}
    var h=VanStreetHouses.TERMINUS;var p=van.world(0,h.centreZ());b.colliders.add(new Collider(p.x(),0,p.z(),h.width()/2,h.depth()/2,h.height(),van.placement().yaw()));
   }

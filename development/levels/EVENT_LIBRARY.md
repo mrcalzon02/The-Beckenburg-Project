@@ -1,11 +1,13 @@
 # Beckenburg ghost-event fixture library
 
-CC0 1.0 Universal. Original models, procedural textures, preview renders, synthesized audio and activation example data. Commercial use, modification and redistribution are permitted; attribution is not required.
+CC0 1.0 Universal. The original files enumerated in the library manifest may be used, modified and redistributed commercially; attribution is not required.
 
-Six model families, each with Clean and Worn versions: telephone, alarm clock, fire alarm, radio, boom box, and side table. GLBs use metres, +Y up and local +Z front; Blender sources use +Z up and −Y front. Models retain floor origins. Use the rear face of the fire-alarm mounting plate against a solid wall.
+Seven standalone model families have separate Clean and Worn versions: rotary telephone, twin-bell bedside alarm, old fire gong, modern smoke detector, portable radio, cassette boom box and the turned-leg telephone table. GLBs use metres, +Y up and local +Z front. Blender sources use +Z up and -Y front. Native origins and embedded textures are preserved.
 
-`audio/` contains five original synthesized 16kHz, 16-bit stereo WAVs. `activation-examples.json` provides portable state/timing examples for an engine integration. `asset-library.blend` contains native Blender Asset Browser entries with embedded previews and CC0 tags.
+The audio folder contains fourteen original WAVs: five legacy short cues and nine continuous source loops. The new loops are mono 16kHz, quantized to eight-bit steps in a signed 16-bit container; runtime stereo position is applied separately. They include distinct telephone, bedside bell, fire gong, smoke alarm, radio melody, boom-box melody, running water, washer and TV-static sounds. Both melodies are newly composed. No outside recording, song or sample is used. original-sound-manifest.json records exact hashes and durations.
 
-The Beckenburg implementation supports ghost-triggered ringing, alarm/strobe activity, radio playback, and running/filling/draining sinks. Players can toggle reachable fixtures. The engine code is outside this asset dedication; these download files are enumerated in the library manifest. Reuse the models and examples in your own interaction system.
+A manual E activation persists until stopped. An accepted ghost activation lasts up to 200 ticks at 0.1 seconds per tick. Six-tick playback chunks preserve each source's loop phase. Stopping one source cancels its queued and currently mixed sound; it does not mute other devices. The host validates the exact visible mesh within two metres and rejects hidden/dead, stale and forged interactions.
 
-See the CC0 LICENSE.txt for the dedication. Sink fixture models are part of the game's earlier environment sources; the activation examples describe their water states, while this archive contains the six standalone families listed above.
+Activation examples describe generic sink, washer, television, bedside-lamp and washroom-switch bindings. The original washer, smoke detector and new lighting models are in the relevant household/event libraries. Purchased television, basin, table-lamp and switch geometry used by the game is outside these original downloads and outside this CC0 dedication. Bind those examples to your own suitable geometry.
+
+The engine code is outside this asset dedication. See LICENSE.txt and manifest.json for the exact dedicated files.

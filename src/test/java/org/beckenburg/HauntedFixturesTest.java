@@ -3,14 +3,12 @@ import java.util.*;
 /** Real mounted devices, event authorization, filling/draining and distinct positional cue sources. */
 public final class HauntedFixturesTest {
     static LooseClutter.Observer operator(HouseMap map,HauntedFixtures.State f){
-        var r=map.level().room(f.room());
-        for(double d:new double[]{1,1.4,.7})for(int n=0;n<24;n++){
-            double x=f.x()+Math.cos(n*Math.PI/12)*d,z=f.z()+Math.sin(n*Math.PI/12)*d;
-            if(map.roomAt(x,r.y(),z)!=r.id()||!map.traversable(x,r.y(),z))continue;
-            double dx=f.x()-x,dz=f.z()-z;
-            var o=new LooseClutter.Observer(0,x,r.y(),z,Math.atan2(dx,dz),Math.atan2(f.y()+.1-r.y()-1.62,Math.hypot(dx,dz)),true);
-            var aimed=map.fixtures().aimed(x,r.y(),z,o.yaw(),o.pitch());if(aimed!=null&&aimed.id()==f.id())return o;
-        }throw new AssertionError("No real reachable operating point: "+map.site()+" "+f.kind()+" room "+r.name());
+        double y=f.y()+.1,x=f.x(),z=f.z();
+        if(f.kind()==HauntedFixtures.Kind.SINK_BATH||f.kind()==HauntedFixtures.Kind.SINK_KITCHEN){y=f.y()-.12*f.scale();x-=Math.sin(f.yaw())*.19*f.scale();z+=Math.cos(f.yaw())*.19*f.scale();}
+        else if(f.kind()==HauntedFixtures.Kind.TELEVISION){y=f.y()+.32*f.scale();x-=Math.sin(f.yaw())*.31*f.scale();z+=Math.cos(f.yaw())*.31*f.scale();}
+        else if(f.kind().mesh()!=null){var b=VanInteriorLayout.bounds(f.kind().mesh());y=f.y()+(b.y0()+b.y1())/2*f.scale();}
+        var o=InteractionFocusTest.find(map,x,y,z,InteractionFocus.Kind.FIXTURE,""+f.id(),List.of());if(o!=null)return o;
+        throw new AssertionError("No real reachable operating point: "+map.site()+" "+f.kind()+" room "+map.roomName(f.room()));
     }
     public static void main(String[] args){
         for(var site:AuthoredTestSupport.SITES){
@@ -18,7 +16,7 @@ public final class HauntedFixturesTest {
             LooseClutterTest.check(fixtures.states().stream().filter(f->f.kind()==HauntedFixtures.Kind.FIRE_ALARM).count()==12,"each indoor room needs an individually placed alarm");
             for(var f:fixtures.states()){
                 if(f.kind().mesh()!=null)LooseClutterTest.check(!GlbProps.model(f.kind().mesh()).triangles().isEmpty(),"missing actual fixture mesh");
-                var o=operator(map,f);fixtures.toggle(f.id(),o,1);LooseClutterTest.check(fixtures.state(f.id()).active(),"player activation");fixtures.toggle(f.id(),o,2);
+                boolean before=f.active();var o=operator(map,f);fixtures.toggle(f.id(),o,1);LooseClutterTest.check(fixtures.state(f.id()).active()!=before,"player toggles the actual initial state");fixtures.toggle(f.id(),o,2);
                 if(f.kind()==HauntedFixtures.Kind.FIRE_ALARM){
                     var room=map.level().room(f.room());LooseClutterTest.check(Math.abs(f.y()-room.y()-2)<.001,"wall alarm mount elevation");
                     for(var p:map.level().portals())if(!p.kind().equals("stair")&&Math.abs(p.y()-room.y())<.1&&(p.a()==f.room()||p.b()==f.room()))

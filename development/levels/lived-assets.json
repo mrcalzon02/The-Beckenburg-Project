@@ -1452,6 +1452,106 @@
       "family": "level_sign_womens"
     },
     {
+      "id": "level_light_bare_bulb",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "aeaa6e800896e040d69260d00a5ae126f069f050a3a2e77b18c5e59b9d56e975",
+      "bytes": 45396,
+      "triangles": 320,
+      "bounds": [
+        [
+          -0.09000000357627869,
+          -0.6200000047683716,
+          -0.09000000357627869
+        ],
+        [
+          0.09000000357627869,
+          0.0,
+          0.09000000357627869
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_light_bare_bulb.blend",
+      "variant": "clean",
+      "family": "level_light_bare_bulb"
+    },
+    {
+      "id": "level_light_candle_chandelier",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "2186e5a82dce53feb13ffa6b57db07f2928edf4b6d36d0455cdbd41f812c13fa",
+      "bytes": 151232,
+      "triangles": 2044,
+      "bounds": [
+        [
+          -0.48500001430511475,
+          -0.9048340320587158,
+          -0.43141016364097595
+        ],
+        [
+          0.48500001430511475,
+          0.0,
+          0.43141016364097595
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_light_candle_chandelier.blend",
+      "variant": "clean",
+      "family": "level_light_candle_chandelier"
+    },
+    {
+      "id": "level_light_bare_bulb_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "667f0cea625077c360859656e4a574f4e8a330f738e76153c0419ef18ded3d23",
+      "bytes": 48120,
+      "triangles": 320,
+      "bounds": [
+        [
+          -0.09000000357627869,
+          -0.6200000047683716,
+          -0.09000000357627869
+        ],
+        [
+          0.09000000357627869,
+          0.0,
+          0.09000000357627869
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_light_bare_bulb_worn.blend",
+      "variant": "worn",
+      "family": "level_light_bare_bulb"
+    },
+    {
+      "id": "level_light_candle_chandelier_worn",
+      "library": "household",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "63c8f958cb4741026bc5545f6598f1b7fb5b4ef2d10dd71a616982418973b3dc",
+      "bytes": 155040,
+      "triangles": 2044,
+      "bounds": [
+        [
+          -0.48500001430511475,
+          -0.9048340320587158,
+          -0.43141016364097595
+        ],
+        [
+          0.48500001430511475,
+          0.0,
+          0.43141016364097595
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_light_candle_chandelier_worn.blend",
+      "variant": "worn",
+      "family": "level_light_candle_chandelier"
+    },
+    {
       "id": "level_sign_house_worn",
       "library": "enclosures",
       "license": "CC0-1.0",
@@ -3192,6 +3292,16 @@
       "glb": "52ddf48a4f9a7f15932fa63e37b0e4df53c8a906fde1eb2559934f3043ae9e75",
       "blend": "fa516e500dc0002c79550d343b3d12561acac7188b2f41061f2902ad79baed09",
       "preview": "3c27e273db814f7730a1c914ea4cd123d2e7110f4210304cba4b370d22b4b657"
+    },
+    "level_light_bare_bulb": {
+      "glb": "aeaa6e800896e040d69260d00a5ae126f069f050a3a2e77b18c5e59b9d56e975",
+      "blend": "5b56dfd2d3fa59eca7a9e76e9e0daebe9ed999ef9055bb8fe79542388ac1a05d",
+      "preview": "cf4f084b919441ec9e1ac4a47403524220ace14f32252de81b5389aa030b947b"
+    },
+    "level_light_candle_chandelier": {
+      "glb": "2186e5a82dce53feb13ffa6b57db07f2928edf4b6d36d0455cdbd41f812c13fa",
+      "blend": "06b95fdd48c463c46aae876a43b9b619298ebba03d05afba8fd728eab2256a4a",
+      "preview": "8214401aa7f4e308e7011a7a2f9780b1360799d55d1eb22b27b5d2b0ba4a27b4"
     }
   }
 }

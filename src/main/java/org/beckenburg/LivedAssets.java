@@ -3,7 +3,7 @@ import java.util.Set;
 /** Original CC0 libraries and separately licensed unchanged source props. */
 public final class LivedAssets {
     private LivedAssets(){}
-    public static final Set<String> ORIGINAL=Set.of("level_sign_house","level_sign_farmhouse","level_sign_school","level_sign_mens","level_sign_womens","level_enclosure_garden","level_enclosure_field","level_enclosure_urban","level_tree_conifer","level_tree_broadleaf","level_story_letters","level_story_sewing_tin","level_story_work_boots","level_boiler_coal","level_boiler_oil","level_boiler_modern","level_expansion_vessel",
+    public static final Set<String> ORIGINAL=Set.of("level_light_bare_bulb","level_light_candle_chandelier","level_sign_house","level_sign_farmhouse","level_sign_school","level_sign_mens","level_sign_womens","level_enclosure_garden","level_enclosure_field","level_enclosure_urban","level_tree_conifer","level_tree_broadleaf","level_story_letters","level_story_sewing_tin","level_story_work_boots","level_boiler_coal","level_boiler_oil","level_boiler_modern","level_expansion_vessel",
         "level_school_pipework","level_electrical_bank","level_workbench","level_radiator","level_hiding_cupboard","level_coal_bunker",
         "level_lived_shelf","level_lived_pantry","level_lived_curio","level_lived_sideboard","level_lived_card_table",
         "level_lived_ottoman","level_lived_trunk","level_lived_desk_clutter","level_lived_kitchenware","level_lived_toy_basket","level_lived_linen_press",

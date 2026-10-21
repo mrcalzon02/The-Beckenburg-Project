@@ -21,9 +21,9 @@ public final class LivedLocationCapture {
   view(s,map,"farm-04-yard-drying-line",8.5,1.62,10.4,8.5,1.0,7.5);
   map=new HouseMap(HouseMap.Site.SCHOOL);
   for(var p:map.level().portals())if(p.door()&&p.a()==p.b())map.toggleDoor(p.id());
-  view(s,map,"school-01-boys-handwash-and-urinal",25.35,5.22,15.2,26.9,4.4,13.6);
-  view(s,map,"school-02-boys-private-cubicles",25.5,5.22,16.5,27.3,4.2,17.2);
-  view(s,map,"school-03-girls-handwash",25.2,5.22,22.5,26.5,4.4,20.9);
+  view(s,map,"school-01-boys-handwash-and-urinal",26.0,5.22,14.65,26.1,4.5,13.4);
+  view(s,map,"school-02-boys-private-cubicles",26.6,5.22,17.175,27.42,4.2,17.175);
+  view(s,map,"school-03-girls-handwash",26.0,5.22,22.1,26.1,4.5,20.9);
   view(s,map,"school-04-upper-corridor-clearance",22.4,5.22,18.2,24.8,4.7,22);
  }
 }

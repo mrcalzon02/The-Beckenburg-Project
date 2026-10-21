@@ -64,8 +64,6 @@ public final class LevelPlans {
         b.floorProp("level_fireplace",1,12.5,22.4,1,Math.PI/2,.775,.471,2.88);
         b.colliders.add(new Collider(18.3,0,26.6,.1,.1,2.6,0));
         b.colliders.add(new Collider(23.7,0,26.6,.1,.1,2.6,0));
-        b.colliders.add(new Collider(13.4,0,29.5,6.4,.09,.85,0));
-        b.colliders.add(new Collider(25.6,0,29.5,3.4,.09,.85,0));
         return b.finish(10,4);
     }
 
@@ -347,9 +345,19 @@ public final class LevelPlans {
                     furnishingOverlays.add(new Prop("level_table_lamp",p.room(),p.x(),p.y()+.64*p.scale(),p.z()-.08*p.scale(),1,0,0,0,.495,p.mesh()));
             }
             props.addAll(furnishingOverlays);
+            for(int i=0;i<sockets.size();i++){var s=sockets.get(i);if(!s.type().equals("light"))continue;var r=rooms.get(s.room());String kind=r.name().toLowerCase();String style=s.style();
+                if(id.equals("farmhouse")&&(kind.contains("barn")||kind.contains("shed"))||id.equals("house")&&kind.contains("cellar"))style="bare-bulb";
+                if((id.equals("house")||id.equals("farmhouse"))&&kind.contains("dining"))style="candle-chandelier";
+                double mount=s.y();for(var upper:rooms)if(!upper.outside()&&upper.y()>r.y()+1.9&&upper.y()<mount&&s.x()>upper.x0()&&s.x()<upper.x1()&&s.z()>upper.z0()&&s.z()<upper.z1())mount=upper.y()-.025;
+                if(!style.equals(s.style())||mount!=s.y())sockets.set(i,new Socket(s.id(),s.type(),s.room(),s.x(),mount,s.z(),s.yaw(),style));
+            }
+            props.removeIf(p->p.mesh().equals("book_mp_2")&&p.support().equals("tv_table_1_4"));
+            for(var p:List.copyOf(props))if(p.mesh().equals("tv_table_1_4"))props.add(new Prop("tv_mp_1",p.room(),p.x(),p.y()+.592,p.z()-.08,.8,p.yaw(),0,0,.64,p.mesh()));
             LevelEnclosure.populate(this);
             SiteStories.populate(this);
             for(int i=0;i<12;i++)installSwitch(i);
+            for(int room=0;room<12;room++){final int ri=room;if(sockets.stream().anyMatch(s->s.type().equals("light")&&s.room()==ri&&s.style().equals("candle-chandelier"))){var plate=sockets.stream().filter(s->s.type().equals("switch")&&s.room()==ri).findFirst().orElseThrow();socket("light",ri,plate.x(),plate.y()+.90,plate.z(),plate.yaw(),"sconce");}}
+
             Room utility=rooms.get(breaker);socket("breaker",breaker,utility.x0()+.035,utility.y()+1.35,utility.z0()+2,Math.PI/2,"electrical-panel");
             int[] ritualRooms={main,(main+3)%12,12};String[] rites={"banishment","cleansing","absolution"};
             for(int i=0;i<3;i++){Room r=rooms.get(ritualRooms[i]);socket("ritual",r.id(),r.cx(),r.y(),r.cz(),0,rites[i]);}

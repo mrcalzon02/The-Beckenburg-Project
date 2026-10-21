@@ -35,7 +35,7 @@ public final class SceneRenderer {
     }
     private static final int[] BAYER={0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5};
     private record Point(double x,double y,double z) { }
-    private record Vertex(Point p,double u,double v) { }
+    private record Vertex(Point p,double u,double v,double r,double g,double b) { Vertex(Point p,double u,double v){this(p,u,v,-1,-1,-1);} }
     private record Face(Point a,Point b,Point c,int color,int material,
                         double au,double av,double bu,double bv,double cu,double cv,int room) {
         Face(Point a,Point b,Point c,int color,int material,double au,double av,double bu,double bv,double cu,double cv){this(a,b,c,color,material,au,av,bu,bv,cu,cv,-1);}
@@ -165,7 +165,8 @@ public final class SceneRenderer {
     private void eventFixtures(List<Face> out,HouseMap map){
         for(var f:map.fixtures().states()){
             String mesh=f.kind().mesh();
-            if(mesh!=null)imported(out,mesh,f.x(),f.y(),f.z(),f.scale(),f.yaw()+(f.active()&&f.kind()==HauntedFixtures.Kind.ALARM_CLOCK?Math.sin(roomLightTick*2)*.018:0));
+            if(f.kind()==HauntedFixtures.Kind.TELEVISION)GlbProps.updateTelevision(GlbProps.televisionMaterial(f.x(),f.y(),f.z()),f.active()&&(roomLights==null||roomLights.breaker()),roomLightTick);
+            if(mesh!=null&&f.kind()!=HauntedFixtures.Kind.LIGHT_SWITCH)imported(out,mesh,f.x(),f.y(),f.z(),f.scale(),f.yaw()+(f.active()&&f.kind()==HauntedFixtures.Kind.ALARM_CLOCK?Math.sin(roomLightTick*2)*.018:0));
             if(f.active()&&(f.kind()==HauntedFixtures.Kind.FIRE_ALARM||f.kind()==HauntedFixtures.Kind.RADIO||f.kind()==HauntedFixtures.Kind.BOOM_BOX)){
                 double y=f.kind()==HauntedFixtures.Kind.FIRE_ALARM?.27:f.kind()==HauntedFixtures.Kind.RADIO?.164:.197;
                 int color=f.kind()==HauntedFixtures.Kind.FIRE_ALARM&&roomLightTick%8<4?0xffefd0:0xc29f4c;
@@ -201,7 +202,7 @@ public final class SceneRenderer {
                 pp[i]=new Point(x+sx*v.x()*cos-sz*v.z()*sin,
                     y+sy*v.y(),z+sx*v.x()*sin+sz*v.z()*cos);
             }
-            out.add(new Face(pp[0],pp[1],pp[2],0xffffff,t.material(),
+            out.add(new Face(pp[0],pp[1],pp[2],0xffffff,id.equals("tv_mp_1")&&GlbProps.materialName(t.material()).equals("crt_screen_mp_1")?GlbProps.televisionMaterial(x,y,z):t.material(),
                 vv[0].u(),vv[0].v(),vv[1].u(),vv[1].v(),
                 vv[2].u(),vv[2].v()));
         }
@@ -451,6 +452,7 @@ public final class SceneRenderer {
         }
         for(double z:new double[]{-1.2,-.2,.8})
             vanBox(faces,van,.85,floor+1.36,z-.10,.04,.14,.20,MaterialAtlas.IRON);
+        for(double zz:new double[]{-1.1,.9}){var pos=van.world(0,zz);imported(faces,"level_utility_light",pos.x(),VanInteriorLayout.ROOF_Y-.025,pos.z(),.5,van.placement().yaw());}
         for(VanInteriorLayout.Fixture fixture:VanInteriorLayout.FIXTURES){
             if(!VanInteriorLayout.insideShell(fixture))throw new IllegalStateException("VAN furniture outside cabin: "+fixture.purpose());
             var p=van.world(fixture.localX(),fixture.localZ());
@@ -670,20 +672,13 @@ public final class SceneRenderer {
         int ground=LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN?LevelMaterials.CONCRETE:MaterialAtlas.FOLIAGE;
         texturedQuad(faces,new Point(x0,-.08,z0),new Point(x1,-.08,z0),new Point(x1,-.08,z1),new Point(x0,-.08,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
         for(var socket:level.sockets()){
-            if(socket.type().equals("enclosure")){
+            if((socket.type().equals("enclosure")||socket.type().equals("parcel_fence"))){
                 String[] parts=socket.style().split(":");double length=Double.parseDouble(parts[1]);int count=(int)Math.ceil(length/2);double width=length/count,angle=-socket.yaw();
                 for(int i=0;i<count;i++){double offset=-length/2+width*(i+.5);imported(faces,"level_enclosure_"+parts[0]+"_worn",socket.x()+offset*Math.cos(angle),socket.y(),socket.z()+offset*Math.sin(angle),width/2,1,1,angle);}
             }
             if(socket.type().equals("landscape_tree"))imported(faces,socket.style(),socket.x(),socket.y(),socket.z(),1,socket.yaw());
         }
-        if(LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.MOUNTAIN){
-            double cx=(level.room(12).x0()+level.room(12).x1())/2,cz=(level.room(12).z0()+level.room(13).z1())/2;
-            for(int ring=0;ring<2;ring++)for(int i=0;i<18;i++){
-                double a=i*Math.PI/9,b=(i+1)*Math.PI/9,r=62+ring*29,h=26+9*Math.sin(i*2.3+ring)+ring*11;
-                Point left=new Point(cx+Math.cos(a)*r,-5,cz+Math.sin(a)*r),right=new Point(cx+Math.cos(b)*r,-5,cz+Math.sin(b)*r),peak=new Point(cx+Math.cos((a+b)/2)*(r+8),h,cz+Math.sin((a+b)/2)*(r+8));
-                texturedQuad(faces,left,peak,right,right,MaterialAtlas.STONE,0,0,4,8,8,0,8,0,ring==0?0x66716d:0x657386);
-            }
-        }
+        if(LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.MOUNTAIN)mountains(faces,(level.room(12).x0()+level.room(12).x1())/2,(level.room(12).z0()+level.room(13).z1())/2);
         // City service yards are backed by taller, closely spaced masonry blocks.
         if(LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN){
             for(double xx=level.room(12).x0()-15;xx<level.room(12).x1()+15;xx+=8){
@@ -694,6 +689,24 @@ public final class SceneRenderer {
             }
         }
         return List.copyOf(faces);
+    }
+
+    private static void mountains(List<Face> faces,double cx,double cz){
+        for(var ridge:CastleSurroundings.mountains(cx,cz)){
+            Point left=new Point(ridge.x0(),-6,ridge.z0()),right=new Point(ridge.x1(),-6,ridge.z1()),peakBase=new Point(ridge.peakX(),-6,ridge.peakZ()),peak=new Point(ridge.peakX(),ridge.height(),ridge.peakZ()),lt=new Point(ridge.x0(),ridge.heightLeft(),ridge.z0()),rt=new Point(ridge.x1(),ridge.heightRight(),ridge.z1());
+            texturedQuad(faces,left,lt,peak,peakBase,LevelMaterials.ROCK,0,0,0,7,8,14,8,0,0x83918e);texturedQuad(faces,peakBase,peak,rt,right,LevelMaterials.ROCK,8,0,8,14,16,7,16,0,0x748488);
+        }
+    }
+    private List<Face> castleEnvironment;
+    private List<Face> castleSurroundings(){
+        if(castleEnvironment!=null)return castleEnvironment;List<Face> out=new ArrayList<>();
+        texturedQuad(out,new Point(-180,-.12,-160),new Point(220,-.12,-160),new Point(220,-.12,220),new Point(-180,-.12,220),MaterialAtlas.FOLIAGE,0,0,100,0,100,95,0,95,0x6e7866);
+        for(var tree:CastleSurroundings.trees())imported(out,"level_tree_conifer_worn",tree.x(),0,tree.z(),tree.scale(),tree.x()*.2);
+        mountains(out,22,17);var points=CastleSurroundings.road();int asphalt=VanArrivalStreet.surfaceMaterial(false);double uv=0;
+        for(int i=0;i<points.size()-1;i++){var a=points.get(i);var b=points.get(i+1);double dx=b.x()-a.x(),dz=b.z()-a.z(),length=Math.hypot(dx,dz),ox=dz/length*2.6,oz=-dx/length*2.6;texturedQuad(out,new Point(a.x()-ox,-.055,a.z()-oz),new Point(a.x()+ox,-.055,a.z()+oz),new Point(b.x()+ox,-.055,b.z()+oz),new Point(b.x()-ox,-.055,b.z()-oz),asphalt,0,uv,2.6,uv,2.6,uv+length*.48,0,uv+length*.48,0x96958a);uv+=length*.48;}
+        // A shut timber gate sits on the existing closed castle perimeter; it does not imply a traversable exit.
+        imported(out,"door_1_loose",16.75,0,34.035,1.25,2.7/2.1,1,0);imported(out,"door_1_loose",14.25,0,34.035,1.25,2.7/2.1,1,Math.PI);
+        castleEnvironment=List.copyOf(out);return castleEnvironment;
     }
 
     /** Three visually distinct small PS-era rite installations at fixed room sockets. */
@@ -1162,9 +1175,10 @@ public final class SceneRenderer {
         for(var s:map.level().sockets()){
             if(!exportFullLevel&&Math.hypot(s.x()-x,s.z()-z)>20)continue;
             List<Face> part=new ArrayList<>();
+            if(s.type().equals("device")&&s.style().equals("LIGHT_SWITCH"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,s.yaw());
             if(s.type().equals("switch"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,-s.yaw());
             if(s.type().equals("light")){
-                String mesh=s.style().contains("utility")||s.style().contains("industrial")?"level_utility_light":s.style().contains("sconce")||s.style().contains("porch")?"level_wall_sconce":"level_domestic_light";
+                String mesh=s.style().equals("bare-bulb")?"level_light_bare_bulb_worn":s.style().equals("candle-chandelier")?"level_light_candle_chandelier_worn":s.style().contains("utility")||s.style().contains("industrial")?"level_utility_light":s.style().contains("sconce")||s.style().contains("porch")?"level_wall_sconce":"level_domestic_light";
                 imported(part,mesh,s.x(),s.y(),s.z(),1,-s.yaw());
             }
             if(s.type().equals("place_label"))imported(part,s.style().startsWith("MENS")?"level_sign_mens_worn":"level_sign_womens_worn",s.x(),s.y()-.18,s.z(),.54,-s.yaw());
@@ -1237,13 +1251,6 @@ public final class SceneRenderer {
         // Rear patio, walk, low boundary fencing, and gate opening align with navigation.
         texturedBox(skin,13.4,-.04,6.6,3.2,.06,3.3,LevelMaterials.STONE);
         texturedBox(skin,20.35,-.015,26.8,1.3,.035,3.2,LevelMaterials.STONE);
-        for(double xx=7;xx<=29;xx+=.40)if(xx<19.8||xx>22.2){
-            texturedBox(skin,xx-.035,0,29.5,.07,.85,.055,LevelMaterials.CLADDING);
-        }
-        for(double zz:new double[]{29.48})for(double yy:new double[]{.22,.62}){
-            texturedBox(skin,7,yy,zz,12.8,.06,.055,LevelMaterials.WOOD);
-            texturedBox(skin,22.2,yy,zz,6.8,.06,.055,LevelMaterials.WOOD);
-        }
         own(out,skin,13);
     }
     private static void clapEdge(List<Face> out,boolean ax,double plane,double from,double to,double y){
@@ -1277,7 +1284,7 @@ public final class SceneRenderer {
                 Point v=new Point(first.p.x+(next.p.x-first.p.x)*t,
                     first.p.y+(next.p.y-first.p.y)*t,NEAR);
                 out.add(new Vertex(v,first.u+(next.u-first.u)*t,
-                    first.v+(next.v-first.v)*t));
+                    first.v+(next.v-first.v)*t,first.r+(next.r-first.r)*t,first.g+(next.g-first.g)*t,first.b+(next.b-first.b)*t));
             }
         }
         return out;
@@ -1357,11 +1364,6 @@ public final class SceneRenderer {
         texturedQuad(out,new Point(x0,y0,z0),new Point(x1,y0,z1),
             new Point(x1,y1,z1),new Point(x0,y1,z0),wall.material(),
             0,y0,length,y0,length,y1,0,y1,0xffffff);
-        // Reverse surface prevents invisible reverse sides when renderer
-        // evolves toward one-sided rasterization.
-        texturedQuad(out,new Point(x1,y0,z1),new Point(x0,y0,z0),
-            new Point(x0,y1,z0),new Point(x1,y1,z1),wall.material(),
-            0,y0,length,y0,length,y1,0,y1,0xc8c2ba);
     }
     private void castleShell(List<Face> out){
         for(CastleHubArchitecturalPlan.Wall wall:CastleHubArchitecturalPlan.walls()){
@@ -1431,10 +1433,10 @@ public final class SceneRenderer {
     /** Castle hub renders with the same perspective, clipping and textured depth buffer as missions. */
     public void drawCastle(CastleHubMap map,double clock){drawCastle(map,clock,true);}
     public void drawCastle(CastleHubMap map,double clock,boolean lightsOn){
-        environmentLight=lightsOn?1.0:.40;
+        environmentLight=1;lightingMap=null;if(castleLighting==null)castleLighting=new FixtureLighting(map);fixtureLighting=castleLighting;castleLighting.castleFrame(lightsOn,(int)(clock*10));
         paintSky(clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
-        List<Face> castle=new ArrayList<>();
+        List<Face> castle=new ArrayList<>();castle.addAll(castleSurroundings());
         for(int zz=1;zz<CastleHubMap.HEIGHT-1;zz++)for(int xx=1;xx<CastleHubMap.WIDTH-1;xx++){
             if(map.solid(xx,zz)||Math.hypot(xx+.5-x,zz+.5-z)>16)continue;
             int stone=map.floorMaterial(xx+.5,zz+.5);
@@ -1514,11 +1516,7 @@ public final class SceneRenderer {
         box(castle,12.75,0,11.20,.40,3.0,.38,0x625c60);
         box(castle,14.10,0,11.20,.40,3.0,.38,0x625c60);
         box(castle,12.75,2.9,11.20,1.75,.36,.38,0xa69178);
-        for(Face face:castle){
-            List<Vertex> points=clip(new Vertex(camera(face.a),face.au,face.av),
-                new Vertex(camera(face.b),face.bu,face.bv),new Vertex(camera(face.c),face.cu,face.cv));
-            for(int i=1;i<points.size()-1;i++)triangle(points.get(0),points.get(i),points.get(i+1),face.color,face.material);
-        }
+        for(Face face:castle){double mx=(face.a.x+face.b.x+face.c.x)/3,mz=(face.a.z+face.b.z+face.c.z)/3;int room=mx<0||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;drawLitFace(face,room,0);}
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
     }
@@ -1561,28 +1559,36 @@ public final class SceneRenderer {
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
         paintSky(clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
+        if(lightingMap!=map){lightingMap=map;fixtureLighting=new FixtureLighting(map);}fixtureLighting.frame(roomLights,roomLightTick);
         for(Face face:scene(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,clock,others,apparition,markers)){
-            List<Vertex> pts=clip(new Vertex(camera(face.a),face.au,face.av),
-                new Vertex(camera(face.b),face.bu,face.bv),new Vertex(camera(face.c),face.cu,face.cv));
-            int room=face.room>=0?face.room:map.roomAt((face.a.x+face.b.x+face.c.x)/3,
-                (face.a.y+face.b.y+face.c.y)/3,(face.a.z+face.b.z+face.c.z)/3);
-            double lighting=roomLights==null?1:roomLights.brightness(room,roomLightTick);
-            double fx=(face.a.x+face.b.x+face.c.x)/3;
-            double fz=(face.a.z+face.b.z+face.c.z)/3;
-            for(LanPortableLights.Light source:portablePositions.values())
-                if(source.on()&&source.room()==room){
-                    double radius=source.tool().equals("FIRELIGHT")?4.8:3.2;
-                    double distance=Math.hypot(source.x()-fx,source.z()-fz);
-                    lighting=Math.min(1.0,lighting+
-                        Math.max(0,1-distance/radius)*
-                        (source.tool().equals("FIRELIGHT")?.38:.22));
-                }
-            for(int i=1;i<pts.size()-1;i++)triangle(pts.get(0),pts.get(i),pts.get(i+1),
-                face.color,face.material,lighting);
+            int room=face.room>=0?face.room:map.roomAt((face.a.x+face.b.x+face.c.x)/3,(face.a.y+face.b.y+face.c.y)/3,(face.a.z+face.b.z+face.c.z)/3);
+            drawLitFace(face,room,0);
         }
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
+    }
+    private static Point mid(Point a,Point b){return new Point((a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2);}
+    private static double edge2(Point a,Point b){return (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y)+(a.z-b.z)*(a.z-b.z);}
+    /** Large walls need real intermediate light samples so narrow beams cannot become room-wide tints. */
+    private void drawLitFace(Face f,int room,int depth){
+        Point ca0=camera(f.a),cb0=camera(f.b),cc0=camera(f.c);double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
+        if(ca0.z<NEAR&&cb0.z<NEAR&&cc0.z<NEAR||ca0.x>ca0.z*hx&&cb0.x>cb0.z*hx&&cc0.x>cc0.z*hx||ca0.x< -ca0.z*hx&&cb0.x< -cb0.z*hx&&cc0.x< -cc0.z*hx||ca0.y>ca0.z*hy&&cb0.y>cb0.z*hy&&cc0.y>cc0.z*hy||ca0.y< -ca0.z*hy&&cb0.y< -cb0.z*hy&&cc0.y< -cc0.z*hy)return;
+
+        if(room>=0&&room<12&&depth<4&&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
+            Point ab=mid(f.a,f.b),bc=mid(f.b,f.c),ca=mid(f.c,f.a);double abu=(f.au+f.bu)/2,abv=(f.av+f.bv)/2,bcu=(f.bu+f.cu)/2,bcv=(f.bv+f.cv)/2,cau=(f.cu+f.au)/2,cav=(f.cv+f.av)/2;
+            drawLitFace(new Face(f.a,ab,ca,f.color,f.material,f.au,f.av,abu,abv,cau,cav),room,depth+1);drawLitFace(new Face(ab,f.b,bc,f.color,f.material,abu,abv,f.bu,f.bv,bcu,bcv),room,depth+1);drawLitFace(new Face(ca,bc,f.c,f.color,f.material,cau,cav,bcu,bcv,f.cu,f.cv),room,depth+1);drawLitFace(new Face(ab,bc,ca,f.color,f.material,abu,abv,bcu,bcv,cau,cav),room,depth+1);return;
+        }
+        List<Vertex> pts=clip(litVertex(f.a,f.au,f.av,f.material,room),litVertex(f.b,f.bu,f.bv,f.material,room),litVertex(f.c,f.cu,f.cv,f.material,room));for(int i=1;i<pts.size()-1;i++)triangle(pts.get(0),pts.get(i),pts.get(i+1),f.color,f.material,1);
+    }
+    private HouseMap lightingMap;private FixtureLighting fixtureLighting,castleLighting;
+    private Vertex litVertex(Point p,double u,double v,int material,int room){
+        var rgb=fixtureLighting.sample(room,p.x,p.y,p.z);var glow=fixtureLighting.emission(material,p.x,p.y,p.z);double r=Math.max(rgb.r(),glow.r()),g=Math.max(rgb.g(),glow.g()),b=Math.max(rgb.b(),glow.b());
+        for(var source:portablePositions.values())if(lightingMap!=null&&source.on()){
+            double dx=p.x-source.x(),dy=p.y-(source.y()+.2),dz=p.z-source.z(),radius=source.tool().equals("FIRELIGHT")?4.8:3.2,d=Math.sqrt(dx*dx+dy*dy+dz*dz);
+            if(d<radius&&lightingMap.clearLineOfSight(source.x(),source.y()+.25,source.z(),p.x,p.y+.04,p.z)){double add=(1-d/radius)*.65;r+=add;g+=add*(source.tool().equals("FIRELIGHT")?.65:1);b+=add*(source.tool().equals("FIRELIGHT")?.28:1);}
+        }
+        return new Vertex(camera(p),u,v,r,g,b);
     }
     /** Paint the world-fixed night panorama behind all world geometry, even indoors.
      * Real window apertures and depth-tested castle stonework occlude the background.
@@ -1772,10 +1778,12 @@ public final class SceneRenderer {
             double cone=flameLamp?1.0:Math.max(0,1-aim/.44);
             double beam=lamp?lampIntensity*Math.max(0,1-d/lampReach)*cone:0;
             double light=(.075+.98*roomLevel+beam)*environmentLight*Math.max(.22,1-d/26.0);
+            double lr=light,lg=light,lb=light;
+            if(va.r>=0){lr=((u*va.r/a.z+v*vb.r/b.z+w*vc.r/c.z)/inv+beam)*environmentLight;lg=((u*va.g/a.z+v*vb.g/b.z+w*vc.g/c.z)/inv+beam)*environmentLight;lb=((u*va.b/a.z+v*vb.b/b.z+w*vc.b/c.z)/inv+beam)*environmentLight;}
             double lightingDither=psxPreset==PsxPipeline.Preset.OFF?0:
                 (BAYER[(px&3)+((py&3)<<2)]-7.5)/140.0;
             light=Math.max(.1,Math.min(1.45,light+lightingDither));
-            int red=(int)(((color>>16)&255)*light),green=(int)(((color>>8)&255)*light),blue=(int)((color&255)*light);
+            int red=(int)(((color>>16)&255)*Math.max(.025,Math.min(1.6,lr+lightingDither))),green=(int)(((color>>8)&255)*Math.max(.025,Math.min(1.6,lg+lightingDither))),blue=(int)((color&255)*Math.max(.025,Math.min(1.6,lb+lightingDither)));
             double fog=Math.min(.92,Math.max(0,(d-5)/15)*fogDensity);
             red=(int)(red*(1-fog)+18*fog);green=(int)(green*(1-fog)+21*fog);blue=(int)(blue*(1-fog)+30*fog);
             pixels[k]=(Math.min(255,red)<<16)|(Math.min(255,green)<<8)|Math.min(255,blue);

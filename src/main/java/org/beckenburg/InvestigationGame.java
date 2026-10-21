@@ -548,7 +548,7 @@ public final class InvestigationGame {
             scene.environmentLight=conditions.lightMultiplier()*(powerOn?1.0:.48);
             scene.fogDensity=conditions.fogMultiplier();
             scene.environmentPowerOn=powerOn;
-            lights.setBreaker(powerOn);
+            lights.setBreaker(powerOn);map.fixtures().power(powerOn);
         }
         private boolean nearBreaker(){
             return RoomLighting.breakerAimed(map,scene.x,feetY(),scene.z,scene.yaw);
@@ -774,7 +774,7 @@ public final class InvestigationGame {
                 }
                 case INTERFACE -> {storyReading=target.id().startsWith("STORY_")?target.id().substring(6):"";if(target.id().equals("MAP"))mapShown=true;else if(target.id().equals("COMPUTER"))journalShown=true;else briefingShown=true;down.clear();mouseLook.release();}
                 case SWITCH -> lights.toggle(Integer.parseInt(target.id()));
-                case BREAKER -> {powerOn=!powerOn;syncEnvironment();}
+                case BREAKER -> {powerOn=!powerOn;map.fixtures().power(powerOn);syncEnvironment();}
                 case DOOR -> {int id=Integer.parseInt(target.id());map.toggleDoor(id);if(!map.traversable(scene.x,feetY(),scene.z)){map.toggleDoor(id);throw new IllegalArgumentException("Doorway occupied.");}}
                 case WINDOW -> map.toggleWindow(Integer.parseInt(target.id()));
                 case VAN_DOOR -> {if(map.van().toggleCargoDoor()&&!map.traversable(scene.x,feetY(),scene.z)){map.van().toggleCargoDoor();throw new IllegalArgumentException("Van doorway occupied.");}}

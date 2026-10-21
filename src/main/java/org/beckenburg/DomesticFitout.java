@@ -38,6 +38,7 @@ final class DomesticFitout {
   for(double[] wall:new double[][]{{0,-.442,.48,.025},{.464,0,.025,.445}}){double wx=x+wall[0]*Math.cos(yaw)-wall[1]*Math.sin(yaw),wz=z+wall[0]*Math.sin(yaw)+wall[1]*Math.cos(yaw);b.colliders.add(new Collider(wx,y,wz,wall[2],wall[3],2.12,yaw));}
  }
  static void farm(LevelPlans.B b){
+  b.socket("light",10,37,5.975,12.5,0,"bare-bulb");
   // Northern landing bay becomes a private washroom, leaving the stair/bedroom route to the west.
   b.props.removeIf(p->p.room()==5&&p.x()>22.45&&p.z()<15.6);
   partition(b,5,22.6,12.08,22.6,15.4,3);partition(b,5,22.6,15.4,22.8,15.4,3);partition(b,5,23.8,15.4,25.92,15.4,3);header(b,5,23.3,15.4,1,true,3);b.door(5,5,23.3,3,15.4,1,true);
@@ -45,6 +46,7 @@ final class DomesticFitout {
   basin(b,5,23.25,12.48,1,0);toilet(b,5,25.2,12.58,1,0);shower(b,5,25.3,14.85,Math.PI);
   wallKit(b,"level_bathroom_wall_set",5,23.25,12.085,0);add(b,"level_laundry_hamper",5,23.0,14.05,0,.235,.20,.60);add(b,"level_bathroom_caddy",5,24.55,12.6,0,.22,.18,.70);
   b.socket("device",5,24.3,5.3,12.085,0,"SMOKE_ALARM");
+  b.socket("device",5,22.685,4.20,14.65,-Math.PI/2,"LIGHT_SWITCH");String controller=b.sockets.get(b.sockets.size()-1).id();b.socket("light",5,24.3,5.975,13.7,0,"domestic@"+controller);
   add(b,"level_laundry_washer",11,33.6,24.5,0,.32,.34,.88);wallKit(b,"level_laundry_shelf",11,33.6,24.085,0);
   b.props.add(new Prop("level_yard_clothesline",12,8.5,0,7.5,1,0,0,0,2,"grounded-yard-furniture"));
   for(double x:new double[]{6.7,10.3})b.colliders.add(new Collider(x,0,7.5,.045,.045,1.96,0));
@@ -69,6 +71,8 @@ final class DomesticFitout {
    }
    if(side==0){b.props.add(new Prop("level_school_urinal",room,27.915,3.6,start+1.15,.75,Math.PI/2,0,0,1.0,"wall"));partition(b,room,27.15,start+.70,27.15,start+1.65,1.5);}
    b.socket("device",room,25.05,5.95,start+.065,0,"SMOKE_ALARM");
+   b.socket("device",room,25.0,4.80,start+.085,0,"LIGHT_SWITCH");String controller=b.sockets.get(b.sockets.size()-1).id();
+   b.socket("light",room,26.4,7.175,start+1.0,0,"utility@"+controller);b.socket("light",room,27.0,7.175,start+4.5,0,"utility@"+controller);
    b.socket("place_label",room,24.73,6.25,doorZ,-Math.PI/2,side==0?"MENS WASHROOM":"WOMENS WASHROOM");
   }
   add(b,"level_laundry_hamper",5,33.2,19.2,0,.235,.20,.60);
