@@ -36,6 +36,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private int lastHearingTick=-1;
     private String ghostSpecies="UNKNOWN",behaviorName="RESTLESS";
     private GhostIdentity.Type revealedType;
+    private SceneRenderer.Apparition companion; // actual host AI sister, never a player-offset placeholder
 
     public LanGhostPanel(LanClient client){
         this.client=Objects.requireNonNull(client);
@@ -59,6 +60,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
                 buildingAudio.setMap(map);audio.clearFixtures();
                 feedback="SPECTRAL TERRITORY: "+map.site();
+                companion=null;camera.setAdditionalGhostBodies(List.of());
             }else if(p.size()==5&&p.get(0).equals("DEVICE_SOUND")){
                 var device=map.fixtures().state(LanProtocol.integer(p.get(1),1,100));audio.playFixture(device,new LanSound.CueEvent(device.kind().cue(),LanProtocol.integer(p.get(2),-100,100),LanProtocol.integer(p.get(3),0,100),LanProtocol.integer(p.get(4),0,99999999)));
             }else if(p.size()==6&&p.get(0).equals("FIXTURE")){
@@ -83,6 +85,25 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 if(map.roomAt(x,y,z)!=next)throw new IllegalArgumentException("inconsistent spectral coordinates");
                 room=next;camera.x=x;camera.z=z;camera.eyeHeight=y+1.62;
                 feedback="HOST SPECTRAL POSE SYNCHRONIZED";
+            }else if(p.size()==7&&p.get(0).equals("GCOMPANION")){
+                double x=LanProtocol.integer(p.get(1),0,map.width()*1000)/1000.0;
+                double y=LanProtocol.integer(p.get(2),-50000,50000)/1000.0;
+                double z=LanProtocol.integer(p.get(3),0,map.height()*1000)/1000.0;
+                int heading=LanProtocol.integer(p.get(4),0,359);
+                boolean ancient=LanProtocol.integer(p.get(5),0,1)==1;
+                int sentTick=LanProtocol.integer(p.get(6),0,99999999);
+                if(map.roomAt(x,y,z)<0||map.roomAt(x,y,z)>=HouseMap.EXTRACTION_ROOM)
+                    throw new IllegalArgumentException("AI Twin outside playable space");
+                if(revealedType!=null&&revealedType.baseType()!=GhostIdentity.Type.TWINS)
+                    throw new IllegalArgumentException("non-Twins case has no companion");
+                if(sentTick>=tick-10){
+                    companion=new SceneRenderer.Apparition(x,y,z,LanGhostAnimation.Phase.LURK,
+                        heading,0,false,ancient,ancient?"ancient_twins_b":"twins_b");
+                }
+            }else if(p.size()==3&&p.get(0).equals("GCOMPANION_ACTION")){
+                GhostDomain.Action.valueOf(p.get(1));
+                LanProtocol.integer(p.get(2),0,99999999);
+                feedback="YOUR TWIN ACTED: "+p.get(1);
             }else if(p.size()==4&&p.get(0).equals("STAMINA")){
                 burstRemaining=LanProtocol.integer(p.get(1),0,300);
                 burstMax=LanProtocol.integer(p.get(2),0,300);
@@ -196,6 +217,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             int heading=Math.floorMod((int)Math.round(Math.toDegrees(camera.yaw)),360);
             if(room>=0&&lastTurn!=heading){client.ghostTurn(heading);lastTurn=heading;}
         }catch(IOException ex){feedback="Disconnected: "+ex.getMessage();close();}
+        // The ghost player sees her actual AI sibling in the world, including
+        // when the sibling independently patrols another accessible room.
+        camera.setAdditionalGhostBodies(companion==null?List.of():List.of(companion));
         if(room>=0)camera.drawNetwork(map,List.of(),-1,tick*.1);
         repaint();
     }
