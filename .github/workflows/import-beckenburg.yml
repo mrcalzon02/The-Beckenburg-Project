@@ -33,7 +33,7 @@ jobs:
           git clone --filter=blob:none --sparse --no-checkout \
             https://github.com/mrcalzon02/HB-TTRPG-tools.git "$RUNNER_TEMP/beckenburg-source"
           git -C "$RUNNER_TEMP/beckenburg-source" sparse-checkout set \
-            software/beckenburg assets/beckenburg docs/beckenburg .github/workflows
+            software/beckenburg assets/beckenburg docs/beckenburg
           git -C "$RUNNER_TEMP/beckenburg-source" checkout --detach "$SOURCE_COMMIT"
           test "$(git -C "$RUNNER_TEMP/beckenburg-source" rev-parse HEAD)" = "$SOURCE_COMMIT"
 
@@ -45,7 +45,16 @@ jobs:
           test -s docs/migration/IMPORT_MANIFEST.json
           test -s src/main/java/org/beckenburg/InvestigationGame.java
           test -s assets/runtime/directional-sprites.zip
+          test -s assets/concept-art/v001/03-ghosts/elder-plague-demon-master-concept.png
+          test -s styles.css
+          test -s workspace-landing.css
+          test -s docs/migration/CUTOVER.md
           test -s development/levels/blender/house-complete.blend
+
+      - name: Check repository write access without publishing a partial import
+        shell: bash
+        run: |
+          git push --dry-run origin HEAD:main
 
       - name: Push verified destination source; do not rewrite source repository
         shell: bash
