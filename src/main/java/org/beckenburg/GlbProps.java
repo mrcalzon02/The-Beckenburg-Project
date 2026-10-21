@@ -49,6 +49,22 @@ public final class GlbProps {
     public static synchronized String materialName(int material){int i=material-TEXTURE_BASE;return i>=0&&i<materialNames.size()?materialNames.get(i):"";}
     private static final List<BufferedImage> textures=new ArrayList<>();
     private static final List<double[]> diffuseFactors=new ArrayList<>();
+    private static final Map<Long,Integer> foliagePalettes=new HashMap<>();
+    /** Sixteen bounded texel variants per leaf material. Source UVs and shared source pixels remain intact. */
+    public static synchronized int foliageMaterial(int original,long seed){
+        int variant=Math.floorMod((int)(seed^(seed>>>32)),16);
+        long key=((long)original<<32)|variant;Integer cached=foliagePalettes.get(key);if(cached!=null)return cached;
+        BufferedImage source=textures.get(original-TEXTURE_BASE),copy=new BufferedImage(source.getWidth(),source.getHeight(),BufferedImage.TYPE_INT_RGB);
+        double warmth=(variant%4-1.5)*.025,brightness=.89+(variant/4)*.035;
+        for(int y=0;y<source.getHeight();y++)for(int x=0;x<source.getWidth();x++){
+            int rgb=source.getRGB(x,y),hash=(x*73856093)^(y*19349663)^(variant*83492791);hash^=hash>>>13;
+            double speckle=1+(Math.floorMod(hash,17)-8)*.006+.018*Math.sin((x+variant*3)*.24+(y-variant)*.33);
+            int r=(int)(((rgb>>16)&255)*(brightness+warmth)*speckle),g=(int)(((rgb>>8)&255)*brightness*speckle),b=(int)((rgb&255)*(brightness-warmth)*speckle);
+            copy.setRGB(x,y,(Math.min(255,r)<<16)|(Math.min(255,g)<<8)|Math.min(255,b));
+        }
+        int id=TEXTURE_BASE+textures.size();textures.add(copy);materialNames.add(materialName(original)+" foliage texel variant "+variant);
+        diffuseFactors.add(diffuseFactors.get(original-TEXTURE_BASE).clone());foliagePalettes.put(key,id);return id;
+    }
     private static final Map<String,Integer> televisionMaterials=new HashMap<>();
     private static final Map<Integer,Integer> televisionPhases=new HashMap<>();
     public static synchronized int televisionMaterial(double x,double y,double z){String key=x+":"+y+":"+z;return televisionMaterials.computeIfAbsent(key,k->{int id=TEXTURE_BASE+textures.size();textures.add(new BufferedImage(128,64,BufferedImage.TYPE_INT_RGB));diffuseFactors.add(new double[]{1,1,1,1});materialNames.add("Television static surface");return id;});}

@@ -193,16 +193,20 @@ public final class SceneRenderer {
     /** Source triangles with independent axis scales for medieval wall modules. */
     private static void imported(List<Face> out,String id,
             double x,double y,double z,double sx,double sy,double sz,double yaw){
-        final double cos=Math.cos(yaw),sin=Math.sin(yaw);
-        for(GlbProps.Triangle t:GlbProps.model(id).triangles()){
+        var model=GlbProps.model(id);var variation=FoliageVariation.profile(id,x,z);
+        final double cos=Math.cos(yaw+variation.rotation()),sin=Math.sin(yaw+variation.rotation());
+        double height=FoliageVariation.foliage(id)?model.triangles().stream().flatMap(t->java.util.stream.Stream.of(t.a(),t.b(),t.c())).mapToDouble(GlbProps.Vertex::y).max().orElse(1)*sy:1;
+        for(GlbProps.Triangle t:model.triangles()){
             GlbProps.Vertex[] vv={t.a(),t.b(),t.c()};
             Point[] pp=new Point[3];
             for(int i=0;i<3;i++){
                 GlbProps.Vertex v=vv[i];
-                pp[i]=new Point(x+sx*v.x()*cos-sz*v.z()*sin,
-                    y+sy*v.y(),z+sx*v.x()*sin+sz*v.z()*cos);
+                var p=variation.point(sx*v.x(),sy*v.y(),sz*v.z(),height);
+                pp[i]=new Point(x+p.x()*cos-p.z()*sin,
+                    y+p.y(),z+p.x()*sin+p.z()*cos);
             }
-            out.add(new Face(pp[0],pp[1],pp[2],0xffffff,id.equals("tv_mp_1")&&GlbProps.materialName(t.material()).equals("crt_screen_mp_1")?GlbProps.televisionMaterial(x,y,z):t.material(),
+            int material=FoliageVariation.foliage(id)&&FoliageVariation.leafMaterial(GlbProps.materialName(t.material()))?GlbProps.foliageMaterial(t.material(),variation.seed()):t.material();
+            out.add(new Face(pp[0],pp[1],pp[2],0xffffff,id.equals("tv_mp_1")&&GlbProps.materialName(t.material()).equals("crt_screen_mp_1")?GlbProps.televisionMaterial(x,y,z):material,
                 vv[0].u(),vv[0].v(),vv[1].u(),vv[1].v(),
                 vv[2].u(),vv[2].v()));
         }
@@ -670,14 +674,15 @@ public final class SceneRenderer {
         List<Face> faces=new ArrayList<>();
         double x0=level.room(13).x0()-45,x1=level.room(13).x1()+60,z0=level.room(12).z0()-50,z1=level.room(13).z1()+50;
         int ground=LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN?LevelMaterials.CONCRETE:MaterialAtlas.FOLIAGE;
+        if(level.id().equals("blackpine"))ground=GlbProps.model("level_woodland_floor").triangles().get(0).material();
         texturedQuad(faces,new Point(x0,-.08,z0),new Point(x1,-.08,z0),new Point(x1,-.08,z1),new Point(x0,-.08,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
         for(var socket:level.sockets()){
             if((socket.type().equals("enclosure")||socket.type().equals("parcel_fence"))){
                 String[] parts=socket.style().split(":");double length=Double.parseDouble(parts[1]);int count=(int)Math.ceil(length/2);double width=length/count,angle=-socket.yaw();
                 for(int i=0;i<count;i++){double offset=-length/2+width*(i+.5);imported(faces,"level_enclosure_"+parts[0]+"_worn",socket.x()+offset*Math.cos(angle),socket.y(),socket.z()+offset*Math.sin(angle),width/2,1,1,angle);}
             }
-            if(socket.type().equals("landscape_tree"))imported(faces,socket.style(),socket.x(),socket.y(),socket.z(),1,socket.yaw());
         }
+        if(level.id().startsWith("enclosure-"))flattenInstances(faces,new SceneryInstances(level,0));
         if(LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.MOUNTAIN)mountains(faces,(level.room(12).x0()+level.room(12).x1())/2,(level.room(12).z0()+level.room(13).z1())/2);
         // City service yards are backed by taller, closely spaced masonry blocks.
         if(LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN){
@@ -961,6 +966,49 @@ public final class SceneRenderer {
     private boolean exportFullLevel;
 
     private static void own(List<Face> out,List<Face> faces,int room){for(Face f:faces)out.add(f.owned(room));}
+    private boolean instancedScenery=true;
+    private SceneryInstances sceneryInstances;
+    private String sceneryRevision;
+    private List<Face> expandedScenery;
+    private Point[] instancePoints=new Point[0];
+    public record InstanceStats(int instances,int visible,int culled,int templates,long expandedTriangles,long sharedTriangles,long submittedTriangles){}
+    private InstanceStats instanceStats=new InstanceStats(0,0,0,0,0,0,0);
+    public InstanceStats instanceStats(){return instanceStats;}
+    /** Reference path for visual/performance comparison; UI and authoritative world state are unaffected. */
+    public void setInstancedScenery(boolean enabled){instancedScenery=enabled;if(enabled)expandedScenery=null;}
+    private SceneryInstances scenery(HouseMap map){
+        String key=map.level().revision()+":"+map.hidingDensity();
+        if(!key.equals(sceneryRevision)){
+            sceneryInstances=new SceneryInstances(map.level(),map.hidingDensity());sceneryRevision=key;expandedScenery=null;
+        }
+        return sceneryInstances;
+    }
+    private static Point[] transformed(SceneryInstances.Instance instance,Point[] scratch){
+        int count=instance.template.vertexCount();if(scratch.length<count)scratch=new Point[count];
+        for(int i=0;i<count;i++){var p=instance.point(i);scratch[i]=new Point(p.x(),p.y(),p.z());}return scratch;
+    }
+    private static Face instanceFace(SceneryInstances.Instance instance,int triangle,Point[] points){
+        var mesh=instance.template;int a=mesh.index(triangle*3),b=mesh.index(triangle*3+1),c=mesh.index(triangle*3+2);
+        var av=mesh.vertex(a);var bv=mesh.vertex(b);var cv=mesh.vertex(c);
+        return new Face(points[a],points[b],points[c],0xffffff,instance.material(triangle),av.u(),av.v(),bv.u(),bv.v(),cv.u(),cv.v(),instance.room);
+    }
+    private static void flattenInstances(List<Face> out,SceneryInstances scene){
+        Point[] scratch=new Point[0];for(var instance:scene.instances()){
+            scratch=transformed(instance,scratch);
+            for(int i=0;i<instance.template.triangleCount();i++)out.add(instanceFace(instance,i,scratch));
+        }
+    }
+    private void drawSceneryInstances(HouseMap map){
+        var scene=scenery(map);int visible=0;long triangles=0;
+        double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
+        for(var instance:scene.instances()){
+            if(!instance.visible(x,eyeHeight,z,yaw,pitch,hx,hy,NEAR))continue;
+            visible++;instancePoints=transformed(instance,instancePoints);
+            for(int i=0;i<instance.template.triangleCount();i++)drawLitFace(instanceFace(instance,i,instancePoints),instance.room,0);
+            triangles+=instance.template.triangleCount();
+        }
+        instanceStats=new InstanceStats(scene.instances().size(),visible,scene.instances().size()-visible,scene.templates().size(),scene.expandedTriangles(),scene.sharedTriangles(),triangles);
+    }
     private static boolean nearPlane(double a,double b){return Math.abs(a-b)<.12;}
     private static void levelWallPatch(List<Face> out,LevelDefinition.Room r,boolean alongX,double plane,
             double from,double to,double bottom,double top,int material){
@@ -1071,6 +1119,7 @@ public final class SceneRenderer {
                 &&in.x0()<=r.x0()&&in.x1()>=r.x1()&&in.z0()<=r.z0()&&in.z1()>=r.z1()
                 &&((in.x1()-in.x0())*(in.z1()-in.z0())>(r.x1()-r.x0())*(r.z1()-r.z0())+.01||in.id()<r.id())))continue;
             int mat=ceiling?LevelMaterials.CEILING:LevelMaterials.floor(r);
+            if(!ceiling&&level.id().equals("blackpine")&&r.outside()&&r.id()!=14)mat=GlbProps.model("level_woodland_floor").triangles().get(0).material();
             boolean cut=false;if(!ceiling)for(var patch:floorPatches){String[] shape=patch.style().split(":");if(Math.abs(mx-patch.x())<Double.parseDouble(shape[0])/2&&Math.abs(mz-patch.z())<Double.parseDouble(shape[1])/2){if(patch.type().equals("floor_cutout"))cut=true;else mat=LevelMaterials.TILE;}}
             if(cut)continue;
             if(ceiling)texturedQuad(out,new Point(x0,surface,z0),new Point(x1,surface,z0),new Point(x1,surface,z1),new Point(x0,surface,z1),mat,x0/4,z0/4,x1/4,z0/4,x1/4,z1/4,x0/4,z1/4,0xffffff);
@@ -1090,10 +1139,6 @@ public final class SceneRenderer {
                 levelWall(part,level,r,false,r.x1(),r.z0(),r.z1());
             }
             own(out,part,r.id());
-        }
-        for(var p:level.props()){
-            if(p.mesh().equals("level_shrub_refuge")&&OutdoorHiding.containing(level,p.x(),p.y(),p.z(),map.hidingDensity())==null)continue;
-            List<Face> part=new ArrayList<>();imported(part,p.mesh(),p.x(),p.y(),p.z(),p.scale(),p.yaw());own(out,part,p.room());
         }
         for(var s:level.stairs()){
             List<Face> part=new ArrayList<>();double dx=(s.x1()-s.x0())/s.steps(),dz=(s.z1()-s.z0())/s.steps(),rise=(s.y1()-s.y0())/s.steps();
@@ -1144,12 +1189,15 @@ public final class SceneRenderer {
                 ((nearPlane(n.x0(),plane)||nearPlane(n.x1(),plane))&&n.z0()<r.z1()&&n.z1()>r.z0())));
     }
     private void levelArchitecture(List<Face> out,HouseMap map){
+        scenery(map); // Invalidate the reference expansion as well when level/density changes.
         own(out,enclosureFaces.computeIfAbsent(map.level().revision(),key->enclosureScenery(map.level())),13);
         if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of());}
         for(Face f:levelShells.computeIfAbsent(map.level().revision()+":"+map.hidingDensity(),s->buildLevelShell(map))){
             double cx=(f.a.x+f.b.x+f.c.x)/3,cz=(f.a.z+f.b.z+f.c.z)/3;
             out.add(f); // Opaque distant architecture must still occlude the night sky.
         }
+        if(exportFullLevel)flattenInstances(out,scenery(map));
+        else if(!instancedScenery){if(expandedScenery==null){var flat=new ArrayList<Face>();flattenInstances(flat,scenery(map));expandedScenery=List.copyOf(flat);}out.addAll(expandedScenery);}
         for(var s:map.level().sockets())if(s.type().equals("hide")&&LevelClosets.available(map.level(),s.room(),map.hidingDensity())){
             List<Face> closet=new ArrayList<>();imported(closet,"level_hiding_cupboard_worn",s.x(),s.y(),s.z(),1,s.yaw());own(out,closet,s.room());
         }
@@ -1566,6 +1614,7 @@ public final class SceneRenderer {
             int room=face.room>=0?face.room:map.roomAt((face.a.x+face.b.x+face.c.x)/3,(face.a.y+face.b.y+face.c.y)/3,(face.a.z+face.b.z+face.c.z)/3);
             drawLitFace(face,room,0);
         }
+        if(instancedScenery)drawSceneryInstances(map);
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
