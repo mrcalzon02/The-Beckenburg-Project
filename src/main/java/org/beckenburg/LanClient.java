@@ -152,6 +152,12 @@ public final class LanClient implements AutoCloseable {
         Objects.requireNonNull(kind);Objects.requireNonNull(tier);
         send("USESUPPLY|"+kind+"|"+tier+"|"+(++sequence));
     }
+    /** A visual identity is a lobby-only cosmetic command, never a player ability. */
+    public synchronized void selectVisual(CharacterVisuals.Hunter look)throws IOException {
+        Objects.requireNonNull(look);
+        if("GHOST".equals(seat))throw new IllegalArgumentException("Ghost may not select a Hunter body");
+        send("VISUAL|"+look.name());
+    }
     public synchronized void turn(int degrees)throws IOException {send("TURN|"+degrees+"|"+(++sequence));}
     public synchronized void window()throws IOException {send("WINDOW|"+(++sequence));}
     public synchronized void door()throws IOException {send("DOOR|"+(++sequence));}
