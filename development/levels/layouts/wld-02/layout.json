@@ -1,0 +1,585 @@
+{
+  "version": 1,
+  "id": "WLD-02",
+  "title": "Camp Hollow Creek",
+  "region": "Northern Woodlands",
+  "scale": "Medium / lakeside campground",
+  "status": "rough-layout-only",
+  "intent": "Two short woodland trail loops link readable tent clusters, ranger services and lake frontage. The lake is a hard boundary, with no required swimming or boat traversal.",
+  "site_bounds": [
+    -2,
+    -14,
+    62,
+    88
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Camp-road van apron",
+      "bounds": [
+        24,
+        72,
+        40,
+        84
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Ranger gate / noticeboard",
+      "bounds": [
+        24,
+        60,
+        40,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "ranger",
+      "name": "Ranger cabin",
+      "bounds": [
+        8,
+        48,
+        22,
+        60
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "bath",
+      "name": "Bathhouse",
+      "bounds": [
+        42,
+        48,
+        56,
+        60
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "pavilion",
+      "name": "Dining pavilion",
+      "bounds": [
+        24,
+        34,
+        40,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "camp-a",
+      "name": "West tent pitches",
+      "bounds": [
+        6,
+        28,
+        22,
+        46
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "camp-b",
+      "name": "East tent pitches",
+      "bounds": [
+        42,
+        28,
+        58,
+        46
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "junction",
+      "name": "Trail-marker junction",
+      "bounds": [
+        24,
+        20,
+        40,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "camper",
+      "name": "Abandoned camper",
+      "bounds": [
+        8,
+        14,
+        18,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "shore",
+      "name": "Lakeside clearing",
+      "bounds": [
+        24,
+        4,
+        40,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dock",
+      "name": "Lake dock",
+      "bounds": [
+        24,
+        -10,
+        32,
+        4
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "creek",
+      "name": "Creek footbridge",
+      "bounds": [
+        42,
+        8,
+        54,
+        18
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "store",
+      "name": "Ranger tool store",
+      "bounds": [
+        2,
+        48,
+        8,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          78.0
+        ],
+        [
+          32.0,
+          0,
+          66.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "ranger",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          66.0
+        ],
+        [
+          15.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L03",
+      "a": "entry",
+      "b": "bath",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          66.0
+        ],
+        [
+          49.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L04",
+      "a": "ranger",
+      "b": "camp-a",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0,
+          54.0
+        ],
+        [
+          14.0,
+          0,
+          37.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L05",
+      "a": "camp-a",
+      "b": "pavilion",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          14.0,
+          0,
+          37.0
+        ],
+        [
+          32.0,
+          0,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L06",
+      "a": "pavilion",
+      "b": "bath",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          42.0
+        ],
+        [
+          49.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L07",
+      "a": "pavilion",
+      "b": "camp-b",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          42.0
+        ],
+        [
+          50.0,
+          0,
+          37.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L08",
+      "a": "camp-b",
+      "b": "junction",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          50.0,
+          0,
+          37.0
+        ],
+        [
+          32.0,
+          0,
+          27.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L09",
+      "a": "junction",
+      "b": "camp-a",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          27.0
+        ],
+        [
+          14.0,
+          0,
+          37.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L10",
+      "a": "camp-a",
+      "b": "camper",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          14.0,
+          0,
+          37.0
+        ],
+        [
+          13.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L11",
+      "a": "junction",
+      "b": "shore",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          27.0
+        ],
+        [
+          32.0,
+          0,
+          12.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L12",
+      "a": "shore",
+      "b": "dock",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          12.0
+        ],
+        [
+          28.0,
+          0,
+          -3.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L13",
+      "a": "shore",
+      "b": "creek",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          12.0
+        ],
+        [
+          48.0,
+          0,
+          13.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L14",
+      "a": "creek",
+      "b": "camp-b",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          48.0,
+          0,
+          13.0
+        ],
+        [
+          50.0,
+          0,
+          37.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L15",
+      "a": "ranger",
+      "b": "store",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          15.0,
+          0,
+          54.0
+        ],
+        [
+          5.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    }
+  ],
+  "loops": [
+    [
+      "entry",
+      "ranger",
+      "camp-a",
+      "pavilion",
+      "bath",
+      "entry"
+    ],
+    [
+      "junction",
+      "shore",
+      "creek",
+      "camp-b",
+      "junction"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      78.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        74.372
+      ],
+      [
+        32.0,
+        0,
+        66.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "shore",
+      "point": [
+        32.0,
+        0,
+        12.0
+      ],
+      "installation": "Temporary expedition containment posts"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "bath",
+      "point": [
+        49.0,
+        0,
+        54.0
+      ],
+      "installation": "Bathhouse cleansing station"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "pavilion",
+      "point": [
+        32.0,
+        0,
+        42.0
+      ],
+      "installation": "Guest remembrance stand"
+    }
+  ],
+  "circulation": "Ranger, pavilion and bathhouse roofs act as landmarks. A central path and two signed loop trails keep the search bounded. Dock is a short visible terminal branch with no mandatory rite and no safe-water escape exploit.",
+  "systems": "Rain runoff, creek audio, lake wind and ordinary campfire remnants have explicit baseline causes. Sheltered device-placement surfaces belong to actual deployed loadouts; no free equipment is scenery.",
+  "campaign": "Guest ledger at ranger desk, mismatched trail markers and an abandoned camper account. Revisit exposes alternate interpretation of the same physical paths rather than inventing an unbuilt island.",
+  "refine": [
+    "Second remote exemplar: test shelter/calibration and tent visibility without foliage changing hiding geometry.",
+    "Refine boardwalk/bridge supports, rails, lake collision and dock retreat timing.",
+    "References and campground-specific sanitary/service construction still need measured review."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ]
+}

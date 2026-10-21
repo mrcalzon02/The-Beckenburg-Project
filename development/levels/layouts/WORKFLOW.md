@@ -18,3 +18,4 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 - **COLLEGE / Beckenburg College**: 17 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **CHURCH / St. Brigid Parish**: 15 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-01 / Blackpine Logging Camp**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+- **WLD-02 / Camp Hollow Creek**: 13 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
