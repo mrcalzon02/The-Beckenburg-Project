@@ -64,10 +64,45 @@ def log_carriage():
     for y in [-1.75,1.75]:p.append(s.box('Rail end stop',(0,y,.13),(1.48,.11,.15),m['oak']))
     return p,dict(function='Stopped rail log carriage with growth rings, sawn face and clamping dogs',runtime='Ready static environment mesh; wheels and log are not simulated',placement='Blackpine mill feed route, aligned toward bandsaw and clear of ritual')
 
+def repair_bench():
+    m=b.init();p=[]
+    for x in [-1.05,1.05]:
+        for y in [-.29,.29]:p.append(s.box('Braced bench leg',(x,y,.43),(.11,.11,.86),m['oak']))
+        p.append(s.box('Lower end bearer',(x,0,.22),(.12,.68,.12),m['oak']))
+    for y in [-.29,.29]:p.append(s.box('Long bench stretcher',(0,y,.25),(2.1,.075,.12),m['oak']))
+    for i in range(5):p.append(s.box('Worn timber bench plank',(0,-.30+i*.15,.88),(2.45,.144,.085),m['pine']))
+    p.append(s.box('Bench backboard',(0,.36,1.28),(2.43,.07,.73),m['oak']))
+    for x in [-.9,-.45,0,.45,.9]:p.append(s.rod('Tool hook',(x,.30,1.43),(x,.22,1.43),.012,m['iron'],6))
+    # Different readable silhouettes: spanner, claw hammer, hand saw, screwdriver and plane.
+    p.append(s.rod('Hanging spanner shank',(-.90,.22,1.40),(-.90,.22,1.10),.022,m['steel'],6))
+    for z in [1.40,1.10]:
+        for x in [-.94,-.86]:p.append(s.box('Open spanner jaw',(x,.22,z),(.024,.045,.08),m['steel']))
+    p.append(s.rod('Hammer wooden handle',(-.45,.22,1.35),(-.45,.22,1.03),.023,m['pine'],6))
+    p.append(s.box('Hammer head',(-.45,.22,1.36),(.22,.06,.065),m['iron']))
+    p.append(s.mesh('Hanging hand saw',[(.03,.22,1.40),(.18,.22,1.11),(.52,.22,1.11),(.31,.22,1.40)],[(0,1,2,3),(3,2,1,0)],m['steel']))
+    for i in range(13):p.append(s.mesh('Saw tooth',[(.18+i*.025,.22,1.11),(.192+i*.025,.22,1.09),(.205+i*.025,.22,1.11)],[(0,1,2),(2,1,0)],m['steel']))
+    p.append(s.box('Saw wooden handle',(.08,.22,1.38),(.13,.075,.17),m['oak'],.025))
+    p.append(s.rod('Screwdriver shaft',(.9,.22,1.4),(.9,.22,1.09),.009,m['steel'],6))
+    p.append(s.rod('Screwdriver grip',(.9,.22,1.23),(.9,.22,1.08),.028,m['red'],8))
+    p.append(s.box('Bench vice fixed jaw',(-.80,-.22,1.02),(.25,.23,.18),m['iron'],.015))
+    p.append(s.box('Bench vice moving jaw',(-.80,-.46,1.02),(.25,.09,.18),m['iron']))
+    p.append(s.rod('Vice lead screw',(-.80,-.23,.96),(-.80,-.58,.96),.019,m['steel'],8))
+    p.append(s.rod('Vice sliding handle',(-.94,-.59,.96),(-.66,-.59,.96),.012,m['steel'],6))
+    p.append(s.box('Hand plane sole',(.43,-.06,.945),(.15,.34,.045),m['iron']))
+    p.append(s.box('Plane wooden tote',(.43,.02,1.01),(.065,.08,.12),m['oak'],.02))
+    p.append(s.box('Sharpening stone',(.10,-.25,.96),(.22,.11,.045),m['iron']))
+    p.append(s.lathe('Uncapped oil tin',[(0,.06),(.20,.06),(.23,.03)],m['rust'],10,(.94,-.18,.925)))
+    p.append(s.box('Saved offcut',(.42,.1,.18),(.85,.35,.14),m['pine']))
+    return p,dict(function='Repair bench, vice, sharpening stone, oil and five hand-tool silhouettes',runtime='Ready static workbench kit; tools are scenery, not inventory pickups',placement='Blackpine repair shed, against the north wall')
+
 name=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'bandsaw'
 parts,notes=globals()[name]()
 b.export('level_work_'+name,parts,'working-place-details',view=(4,-6,3.5))
 entry=b.LOG[0];entry.update(notes)
 folder=ROOT/'development/levels/production';folder.mkdir(exist_ok=True)
 (folder/(name+'.json')).write_text(json.dumps(entry,indent=2)+'\n')
+bpy.ops.wm.open_mainfile(filepath=str(ROOT/entry['editable']))
+obj=bpy.data.objects[entry['id']];obj.data.calc_loop_triangles()
+assert len(obj.data.loop_triangles)==entry['triangles'] and obj.data.uv_layers
+assert all(image.packed_file for image in bpy.data.images if image.source=='FILE')
 print('PRODUCTION_ASSET_COMPLETE',name,entry['triangles'],flush=True)

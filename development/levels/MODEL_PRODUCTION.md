@@ -15,3 +15,9 @@ Next useful candidates: rail log carriage, repair bench and hand tools, sawdust 
 `level_work_log_carriage`: 2348 source triangles. Flanged wheels, bolted timber bearers, rails/stops, screw clamping dogs and a partly milled log with cut-end growth rings. Placed X43.2/Z30.6 in the sawmill, aligned toward the bandsaw and outside the ritual reserve. Original native source, packed diffuse, studio and real runtime views, and matching collision/support checks are complete. Static scenery; no wheel or log simulation.
 
 [Manifest](production/log_carriage.json) · [Source](blender/level_work_log_carriage.blend) · [Studio](previews/level_work_log_carriage.png) · [Runtime](previews/model-production/blackpine-level_work_log_carriage.png).
+
+## 03 / repair bench and hand tools
+
+`level_work_repair_bench`: 715 triangles. Self-supporting timber bench/backboard, vice, spanner, hammer, toothed hand saw, screwdriver, plane, sharpening stone, oil tin and saved offcut. Placed X47.0/Z46.7 in the repair shed with generator and sawhorse clearance. Native source reopened, UV and packed textures verified, runtime mesh/support/collision and clear-spawn/rite checks passed. Static tools are not new inventory pickups.
+
+[Manifest](production/repair_bench.json) · [Source](blender/level_work_repair_bench.blend) · [Studio](previews/level_work_repair_bench.png) · [Runtime](previews/model-production/blackpine-level_work_repair_bench.png).

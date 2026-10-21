@@ -1,0 +1,26 @@
+{
+  "id": "level_work_repair_bench",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "86a147bb6c4c1dfadb7f85ea05431dd7055bcdb574d7829a4c2a24a2219bbd56",
+  "bytes": 86652,
+  "triangles": 715,
+  "bounds": [
+    [
+      -1.225000023841858,
+      0.0,
+      -0.39500001072883606
+    ],
+    [
+      1.2250001430511475,
+      1.6449999809265137,
+      0.6019999980926514
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_repair_bench.blend",
+  "function": "Repair bench, vice, sharpening stone, oil and five hand-tool silhouettes",
+  "runtime": "Ready static workbench kit; tools are scenery, not inventory pickups",
+  "placement": "Blackpine repair shed, against the north wall"
+}
