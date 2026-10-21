@@ -19,3 +19,4 @@ Unrelated in-progress scene, library, lighting and preview edits were present at
 - **CHURCH / St. Brigid Parish**: 15 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-01 / Blackpine Logging Camp**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
 - **WLD-02 / Camp Hollow Creek**: 13 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
+- **WLD-03 / Red Mesa Ancestral Caves**: 14 space reservations authored. Planning validation passed; runtime geometry and physical access remain pending.
