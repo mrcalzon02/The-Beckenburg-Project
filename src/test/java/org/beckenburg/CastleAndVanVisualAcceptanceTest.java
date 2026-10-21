@@ -71,9 +71,14 @@ public final class CastleAndVanVisualAcceptanceTest {
         for(var fixture:VanInteriorLayout.FIXTURES)
             ok(VanInteriorLayout.insideShell(fixture),
                 "real van cargo dimensions: "+fixture.purpose());
-        for(double z=-1.85;z<=1.75;z+=.15)
+        // Validate the actual central cargo aisle up to the workstation.
+        // The front desk occupies z>=1.42; demanding walk-through there
+        // incorrectly treats solid fitted furniture as empty floor.
+        for(double z=VanStaging.FRONT+.25;z<=1.15;z+=.15)
             ok(VanInteriorLayout.openAisle(0,z),
-                "continuous clear central walkway in van");
+                "continuous clear central cargo aisle at local z="+z);
+        ok(!VanInteriorLayout.openAisle(0,1.60),
+            "fitted front workstation must remain physically occupied");
         SceneRenderer vanRender=new SceneRenderer();
         var site=new HouseMap();
         var van=site.van();
