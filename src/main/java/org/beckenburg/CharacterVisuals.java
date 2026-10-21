@@ -58,7 +58,9 @@ public final class CharacterVisuals {
         "demonologist",new Shape(1.80,1.08),
         "elder_blade_demon",new Shape(2.72,2.05),
         "elder_plague_demon",new Shape(2.86,2.17),
-        "elder_nothic",new Shape(3.15,2.34)
+        "elder_nothic",new Shape(3.15,2.34),
+        "twins_a",new Shape(1.62,.88),
+        "twins_b",new Shape(1.57,.86)
     );
 
     public static String hunter(String raw) {
@@ -71,7 +73,14 @@ public final class CharacterVisuals {
         if(type==null)throw new IllegalArgumentException("missing ghost type");
         return type.name().toLowerCase(Locale.ROOT);
     }
+    public static boolean isTwinActor(String id) {
+        return id!=null&&(id.equals("twins_a")||id.equals("twins_b")
+            ||id.equals("ancient_twins_a")||id.equals("ancient_twins_b"));
+    }
     public static boolean isHunter(String id) {return HUNTERS.contains(id);}
     public static boolean isElder(String id) {return ELDERS.contains(id);}
-    public static Shape shape(String id) {return SHAPES.getOrDefault(id,new Shape(1.95,1.16));}
+    public static Shape shape(String id) {
+        if(id!=null&&id.startsWith("ancient_twins_"))id=id.substring("ancient_".length());
+        return SHAPES.getOrDefault(id,new Shape(1.95,1.16));
+    }
 }

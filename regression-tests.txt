@@ -91,6 +91,9 @@ GhostSpriteAtlasIntegrationTest
 DirectionalSpritesIntegrationTest
 CharacterDirectionalVisualTest
 CharacterSpriteWorldMotionTest
+TwinBodyVisualTest
+LanCameraSightTest
+LanTwinSightingPrivacyTest
 LanApparitionRenderTest
 LanApparitionIntegrationTest
 LanGhostIntegrationTest

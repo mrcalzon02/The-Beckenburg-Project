@@ -18,7 +18,7 @@ public final class CharacterDirectionalVisualTest {
     public static void main(String[] args){
         check(CharacterVisuals.HUNTERS.size()==3,"Three approved hunter classes");
         check(CharacterVisuals.ELDERS.size()==3,"Three distinct approved Elder entities");
-        check(DirectionalSprites.frameCount()==33,
+        check(DirectionalSprites.frameCount()==41,
             "All legacy and newly packaged master direction files must be distinct");
         long observer=signature(DirectionalSprites.frame("observer",0));
         long[] heads=new long[6];

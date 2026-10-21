@@ -1,0 +1,60 @@
+name: Author independent Twins ghost cutouts
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/author-twins-art.yml'
+      - 'tools/build_twins_art.py'
+      - 'assets/concept-art/v001/03-ghosts/twins-ghost-profile.png'
+permissions:
+  contents: write
+concurrency:
+  group: beckenburg-two-body-art
+  cancel-in-progress: false
+jobs:
+  two-source-figures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned image-authoring dependencies
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0 opencv-python-headless==4.12.0.88 "numpy>=2,<2.3"
+      - name: Author independent canonical Twin bodies
+        run: python tools/build_twins_art.py
+      - name: Verify both actors and all source-facing PNG images
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import io,zipfile,json,hashlib
+          from PIL import Image
+          archive=Path("assets/runtime/twins-directions.zip")
+          manifest=json.loads(Path("assets/runtime/twins-directions-manifest.json").read_text())
+          assert manifest["archive_sha256"]==hashlib.sha256(archive.read_bytes()).hexdigest()
+          with zipfile.ZipFile(archive) as z:
+              expected={f"twins/{actor}/{view}.png" for actor in ("a","b") for view in ("front","side","back","three_quarter")}
+              assert set(z.namelist())==expected
+              for name in expected:
+                  image=Image.open(io.BytesIO(z.read(name)))
+                  assert image.mode=="RGBA" and image.size==(128,224),name
+                  assert image.getchannel("A").getextrema()==(0,255),name
+          print("PASS both complete, separate Twins actor sets; no composite sheet shipped")
+          PY
+      - name: Commit approved source-derived Twins separately
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/runtime/twins-directions.zip assets/runtime/twins-directions-manifest.json development/verification/twins-two-body-turnarounds.png
+          if git diff --cached --quiet; then echo "Twins art unchanged"; exit 0; fi
+          git commit -m "Package two individual Twins from canonical four-view master"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          git fetch origin main
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
+          echo "VERIFIED: $(git rev-parse HEAD)"

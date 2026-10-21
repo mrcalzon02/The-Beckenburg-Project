@@ -58,6 +58,11 @@ public final class SceneRenderer {
     public boolean flameLamp;
     /** Cosmetic effects follow received authority, never determine paranormal evidence. */
     public GhostIdentity.Rite activeRite;
+    private List<Apparition> additionalGhostBodies=List.of();
+    /** Already per-viewer-authorized bodies only; no client-side ghost guessing. */
+    public void setAdditionalGhostBodies(List<Apparition> visible){
+        additionalGhostBodies=List.copyOf(visible);
+    }
     public int strikeUntilTick=-1;
     /** Real tier optics controls actual in-world illumination, not a HUD indicator. */
     public void setLampHardware(EquipmentTiers.Tier tier,boolean flameOnly){
@@ -1536,10 +1541,21 @@ public final class SceneRenderer {
         boolean visible=session.outcome()==InvestigationSession.Outcome.ACTIVE
                 &&session.ghostManifesting();
         int room=session.ghostRoom();
+        GhostIdentity.Type type=session.ghostVisualType();
+        boolean twins=type.baseType()==GhostIdentity.Type.TWINS;
         Apparition figure=visible?new Apparition(
                 map.centerX(room),map.floorY(room),map.centerZ(room),
-                LanGhostAnimation.Phase.LURK,0,0,false,session.ghostVisualType().ancient(),
-                CharacterVisuals.ghost(session.ghostVisualType())):null;
+                LanGhostAnimation.Phase.LURK,0,0,false,type.ancient(),
+                twins?(type.ancient()?"ancient_twins_a":"twins_a"):CharacterVisuals.ghost(type)):null;
+        if(visible&&twins){
+            var primary=new LanGhostSpatial.Pose(room,map.centerX(room),
+                map.floorY(room),map.centerZ(room),0);
+            var secondary=TwinGhostPair.position(map,primary,(int)Math.floor(clock*10)).get(1).pose();
+            setAdditionalGhostBodies(List.of(new Apparition(
+                secondary.x(),secondary.y(),secondary.z(),LanGhostAnimation.Phase.LURK,
+                secondary.heading(),0,false,type.ancient(),
+                type.ancient()?"ancient_twins_b":"twins_b")));
+        }else setAdditionalGhostBodies(List.of());
         // Solo mode has room-based manifestation authority rather than a LAN
         // world pose. Preserve that placement, but render the actual archetype.
         render(map,room,visible,
@@ -1697,6 +1713,25 @@ public final class SceneRenderer {
                     Math.floorMod((int)Math.floor(clock*10),4));
             }
         }
+        // Separate Twin member B is positioned and disclosed by the host.
+        // It does not create a second GhostDomain or a second damage source.
+        for(Apparition companion:additionalGhostBodies){
+            if(companion.orb()){
+                renderSpiritOrb(companion.x(),companion.z(),companion.y()+.98,clock,companion.greenTint());
+            }else{
+                CharacterVisuals.Shape shape=CharacterVisuals.shape(companion.appearance());
+                DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,companion.x(),companion.z(),
+                    companion.heading(),companion.appearance(),shape.height(),shape.width(),
+                    companion.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal,
+                    companion.greenTint(),companion.phase(),0);
+            }
+        }
+        if(apparition!=null&&CharacterVisuals.isTwinActor(apparition.appearance())
+                &&!additionalGhostBodies.isEmpty()){
+            for(Apparition companion:additionalGhostBodies)
+                if(CharacterVisuals.isTwinActor(companion.appearance()))
+                    renderPairedTether(apparition,companion,clock);
+        }
         if(hunterRoom>=0){
             DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
                 map.centerX(hunterRoom)-1.25,map.centerZ(hunterRoom)+2.0,
@@ -1710,6 +1745,26 @@ public final class SceneRenderer {
                 CharacterVisuals.shape(person.appearance()).height(),
                 CharacterVisuals.shape(person.appearance()).width(),
                 person.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
+        }
+    }
+    /** Linked Twin effect connects only two already visible physical actors. */
+    private void renderPairedTether(Apparition a,Apparition b,double clock){
+        for(int i=0;i<=24;i++){
+            double t=i/24.0;
+            double lift=.68+.13*Math.sin(t*Math.PI)+.035*Math.sin(clock*4+t*13);
+            Point projected=camera(new Point(
+                a.x()*(1-t)+b.x()*t,
+                a.y()*(1-t)+b.y()*t+lift,
+                a.z()*(1-t)+b.z()*t));
+            if(projected.z<NEAR||projected.z>16)continue;
+            int sx=(int)Math.round(renderWidth*.5+projected.x/projected.z*focal);
+            int sy=(int)Math.round(renderHeight*.5-projected.y/projected.z*focal);
+            if(sx<0||sy<0||sx>=renderWidth||sy>=renderHeight)continue;
+            int at=sy*renderWidth+sx;
+            if(projected.z<=depths[at]+.015){
+                pixels[at]=(i%3==0?0xbca0fb:0x8468cc);
+                depths[at]=Math.min(depths[at],projected.z);
+            }
         }
     }
     /** A real luminous orb in perspective, occluded by walls and the existing Z-buffer. */
