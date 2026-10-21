@@ -12,6 +12,8 @@ cp assets/runtime/directional-sprites.zip build/classes/org/beckenburg/direction
 # Six distinct identity-locked four-view Hunter/Elder character profiles.
 test -s assets/runtime/character-directions.zip
 cp assets/runtime/character-directions.zip build/classes/org/beckenburg/character-directions.zip
+test -s assets/runtime/twins-directions.zip
+cp assets/runtime/twins-directions.zip build/classes/org/beckenburg/twins-directions.zip
 # Accepted Elder master art for the illustrated ghost logbook.
 mkdir -p build/classes/org/beckenburg/elder-masters
 for elder in elder-blade-demon elder-plague-demon elder-nothic; do

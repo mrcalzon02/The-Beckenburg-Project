@@ -2225,23 +2225,59 @@ public final class LanHost implements AutoCloseable {
             Peer hunter=seats[i];
             if(hunter!=null && hunter.worldMode) {
                 GhostTraits.Sight form=GhostTraits.of(ghostType).sight();
-                boolean orbAllowed=mission.allowsEvidence(HardEvidenceQuota.Family.ORBS);
+                // Orb samples and apparition bodies are distinct simulation events:
+                // a suppressed ORBS evidence family must not hide an otherwise visible
+                // Yokai, Hantu or Twin silhouette.
                 String sight=LanApparition.frame(map,world.body(i),true,pose,
-                    ghost.manifested()&&form!=GhostTraits.Sight.CAMERA_ONLY
-                        &&(form!=GhostTraits.Sight.ORBS||orbAllowed),tick);
+                    ghost.manifested()&&form!=GhostTraits.Sight.CAMERA_ONLY,tick);
                 if(sight.startsWith("APPARITION|VISIBLE|")) {
                     // Artwork is a visible cosmetic manifestation, never an evidence verdict.
                     // No identity/appearance packet is sent before actual line-of-sight disclosure.
-                    if(form==GhostTraits.Sight.ORBS)
-                        reply(hunter,"FORM|ORBS"+(ghostType.ancient()?"|GREEN":""));
-                    else
-                        reply(hunter,"FORM|FIGURE|"+(ghostType.ancient()?"GREEN":"BASE")
-                                +"|"+ghostType.name());
+                    reply(hunter,"FORM|FIGURE|"+(ghostType.ancient()?"GREEN":"BASE")
+                            +"|"+ghostType.name());
                 }
                 reply(hunter,sight);
                 if(sight.startsWith("APPARITION|VISIBLE|")) {
                     LanGhostAnimation.Motion motion=animation.project(true,pendingStrike!=null,pose.heading(),tick);
                     reply(hunter,motion.frame()); // No private coordinates, only already-disclosed sight.
+                }
+                if(ghostType.baseType()==GhostIdentity.Type.TWINS) {
+                    // Companion B has its own bounded world pose and per-Hunter
+                    // occlusion; an unseen twin has no leaked world coordinates.
+                    var echo=TwinGhostPair.position(map,pose,tick).get(1);
+                    String twinSight=LanApparition.frame(map,world.body(i),true,echo.pose(),
+                            ghost.manifested(),tick);
+                    boolean twinVisible=twinSight.startsWith("APPARITION|VISIBLE|");
+                    if(twinVisible){
+                        reply(hunter,TwinGhostPair.wire(echo,tick,true,ghostType.ancient()));
+                        hunter.hasSeenTwinCompanion=true;
+                    }else if(hunter.hasSeenTwinCompanion){
+                        reply(hunter,TwinGhostPair.wire(echo,tick,false,ghostType.ancient()));
+                        hunter.hasSeenTwinCompanion=false;
+                    }
+                }
+                // Real remote cameras observe their own field of view and LOS.
+                // A CAMERA_ONLY species is not exposed to the direct Hunter feed.
+                for(LanVideoCameras.Camera camera:cameras.all()){
+                    boolean powered=equipment[camera.owner()].powered("VIDEO_CAMERA")
+                        &&equipment[camera.owner()].batterySecondsLeft("VIDEO_CAMERA")>0;
+                    // This feed is physically accessible at the van receiver,
+                    // not an omniscient radio broadcast to field investigators.
+                    boolean seen=powered&&insideVan(i)
+                        &&LanCameraSight.sees(map,camera,pose,ghost.manifested());
+                    reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick));
+                    if(ghostType.baseType()==GhostIdentity.Type.TWINS){
+                        var echo=TwinGhostPair.position(map,pose,tick).get(1);
+                        boolean second=powered&&insideVan(i)
+                            &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested());
+                        if(second){
+                            reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),true,ghostType,tick));
+                            hunter.seenTwinOnCamera[camera.owner()]=true;
+                        }else if(hunter.seenTwinOnCamera[camera.owner()]){
+                            reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),false,ghostType,tick));
+                            hunter.seenTwinOnCamera[camera.owner()]=false;
+                        }
+                    }
                 }
             }
         }
@@ -2308,6 +2344,13 @@ public final class LanHost implements AutoCloseable {
         if(pose.room()>=0&&pose.room()<HouseMap.INDOOR_ROOMS)
             emitSensorAlerts(fieldDetectors.movement("G",pose.room(),pose.x(),pose.z(),
                 tick,map,stations));
+        if(ghostType.baseType()==GhostIdentity.Type.TWINS){
+            var second=TwinGhostPair.position(map,pose,tick).get(1).pose();
+            if(second.room()>=0&&second.room()<HouseMap.INDOOR_ROOMS
+                    &&Math.hypot(second.x()-pose.x(),second.z()-pose.z())>.2)
+                emitSensorAlerts(fieldDetectors.movement("G2",second.room(),
+                    second.x(),second.z(),tick,map,stations));
+        }
         for(int seat=0;seat<HUNTERS;seat++)
             if((seats[seat]!=null||reserved[seat]!=null)&&mission.alive(seat)){
                 LanWorld.Body body=world.body(seat);
@@ -2422,6 +2465,9 @@ public final class LanHost implements AutoCloseable {
         String hunterVisual="observer"; // no gameplay authority, never sent to ghost
         long unconfirmedResumeDeadlineNanos; // no unlimited grace via failed reconnect loop
         boolean ready,worldMode,ghostWorldMode,intentionalLeave;
+        // A hidden member B must not identify a Twins case before actual sight.
+        boolean hasSeenTwinCompanion;
+        final boolean[] seenTwinOnCamera=new boolean[HUNTERS];
         long lastGhostPoseSequence=-1,lastGhostActionSequence=-1;
         long pingSentNanos;
         int expectedPongTick=-1,lastPongTick;

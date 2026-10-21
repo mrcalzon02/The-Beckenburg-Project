@@ -93,14 +93,50 @@ public final class DirectionalSprites {
                     if(!frames.containsKey(identity+"/"+view))
                         throw new IOException("Missing master sprite "+identity+"/"+view);
         }catch(IOException ex){throw new IllegalStateException("Cannot read approved directional master art",ex);}
+
+        // Twins always have two separately segmented physical actor images.
+        try(var source=DirectionalSprites.class.getResourceAsStream("twins-directions.zip")){
+            if(source==null)throw new IllegalStateException("Missing shipped two-body Twins character art");
+            int count=0;
+            try(var zip=new ZipInputStream(source)){
+                ZipEntry entry;
+                while((entry=zip.getNextEntry())!=null) {
+                    if(entry.isDirectory()){zip.closeEntry();continue;}
+                    String name=entry.getName();
+                    String[] parts=name.split("/");
+                    if(parts.length!=3||!parts[0].equals("twins")
+                            ||!(parts[1].equals("a")||parts[1].equals("b"))
+                            ||!parts[2].endsWith(".png")
+                            ||!java.util.Arrays.asList(MASTER_DIRECTIONS)
+                                    .contains(parts[2].substring(0,parts[2].length()-4)))
+                        throw new IOException("Unexpected Twins actor frame "+name);
+                    BufferedImage image=ImageIO.read(zip);
+                    if(image==null||image.getWidth()!=128||image.getHeight()!=224
+                            ||!image.getColorModel().hasAlpha())
+                        throw new IOException("Bad Twins actor image "+name);
+                    String key="twins_"+parts[1]+"/"+parts[2].substring(0,parts[2].length()-4);
+                    if(frames.putIfAbsent(key,image)!=null)
+                        throw new IOException("Duplicate Twins actor image "+key);
+                    count++;
+                    zip.closeEntry();
+                }
+            }
+            if(count!=8)throw new IOException("Expected eight separate Twins actor images, got "+count);
+            for(String actor:new String[]{"twins_a","twins_b"})
+                for(String direction:MASTER_DIRECTIONS)
+                    if(!frames.containsKey(actor+"/"+direction))
+                        throw new IOException("Missing "+actor+"/"+direction);
+        }catch(IOException ex){throw new IllegalStateException("Cannot load both canonical Twins",ex);}
         return Map.copyOf(frames);
     }
     public static int frameCount(){return IMAGES.size();}
     public static BufferedImage frame(String character,int facing){
         if(facing<0||facing>=8)throw new IllegalArgumentException("facing must be 0..7");
-        String direction=(CharacterVisuals.isHunter(character)||CharacterVisuals.isElder(character))
-                ?MASTER_FACINGS[facing]:FACINGS[facing];
-        BufferedImage image=IMAGES.get(character+"/"+direction);
+        String direction=(CharacterVisuals.isHunter(character)||CharacterVisuals.isElder(character)
+                ||CharacterVisuals.isTwinActor(character))?MASTER_FACINGS[facing]:FACINGS[facing];
+        String identity=character!=null&&character.startsWith("ancient_twins_")
+                ?character.substring("ancient_".length()):character;
+        BufferedImage image=IMAGES.get(identity+"/"+direction);
         if(image==null)throw new IllegalArgumentException("Unknown character sprite: "+character);
         return image;
     }
@@ -112,7 +148,10 @@ public final class DirectionalSprites {
         // The full 23-identity atlas already includes ten separately green-tinted
         // Ancient appearances. Use their actual packaged art before considering a
         // source fallback; stripping ancient_ would incorrectly draw the base ghost.
+
         String spriteSource=character;
+        if(CharacterVisuals.isTwinActor(spriteSource))
+            return frame(spriteSource,facing);
         // The present 8-state atlases contain only source-derived static cutouts.
         // Do not cycle pseudo-walk/attack frames until coherent animation is approved.
         // Restrict active runtime selection to four genuine source angles.
