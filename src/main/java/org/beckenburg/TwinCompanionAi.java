@@ -157,12 +157,11 @@ public final class TwinCompanionAi {
 
     /**
      * Occasional independent haunting. Shared GhostDomain validates cost,
-     * cooldown, energy and room; only harmless/disturbing events are chosen.
+     * cooldown and energy, but resolves from this sibling's actual room.
      * A separate Twin NEVER doubles a single STRIKE or damage resolution.
      */
     public GhostDomain.Action chooseActivity(GhostDomain.Observation shared,int tick){
-        if(shared==null||tick-lastActionTick<75||!moved&&intent!=Intent.INVESTIGATE
-                ||pose.room()!=shared.room())return null;
+        if(shared==null||tick-lastActionTick<75||!moved&&intent!=Intent.INVESTIGATE)return null;
         var legal=shared.legalActions();
         GhostDomain.Action action=null;
         if(tick-lastNoiseTick<45&&legal.contains(GhostDomain.Action.DISTURB))
