@@ -2255,11 +2255,15 @@ public final class LanHost implements AutoCloseable {
                 for(LanVideoCameras.Camera camera:cameras.all()){
                     boolean powered=equipment[camera.owner()].powered("VIDEO_CAMERA")
                         &&equipment[camera.owner()].batterySecondsLeft("VIDEO_CAMERA")>0;
-                    boolean seen=powered&&LanCameraSight.sees(map,camera,pose,ghost.manifested());
+                    // This feed is physically accessible at the van receiver,
+                    // not an omniscient radio broadcast to field investigators.
+                    boolean seen=powered&&insideVan(i)
+                        &&LanCameraSight.sees(map,camera,pose,ghost.manifested());
                     reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick));
                     if(ghostType.baseType()==GhostIdentity.Type.TWINS){
                         var echo=TwinGhostPair.position(map,pose,tick).get(1);
-                        boolean second=powered&&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested());
+                        boolean second=powered&&insideVan(i)
+                            &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested());
                         reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),second,ghostType,tick));
                     }
                 }
