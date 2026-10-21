@@ -36,7 +36,7 @@ public final class CastleHubIntegrationTest {
         }
         for(int gate:new int[]{5,13,22})
             ok(map.traversable(gate+.5,11.5),"medieval gate passage remains physically open");
-        ok(CastleHubDecor.ACCENTS.size()>=7,"working offices with actual interior props");
+        ok(CastleHubDecor.ACCENTS.size()+CastleArchive.ACCENTS.size()>=7,"working offices and archive with actual interior props");
         ok(CastleHubDecor.LIGHTS.size()>=8,"distinct on/off GLB lamps");
         for(CastleHubDecor.Accent a:CastleHubDecor.ACCENTS)
             ok(GlbProps.model(a.mesh()).triangles().size()>2,"decor mesh "+a.mesh());

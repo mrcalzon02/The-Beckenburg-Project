@@ -1576,7 +1576,7 @@ public final class SceneRenderer {
                     imported(castle,"display_cabinet_mp_2",px,0,pz,.78,0);
                     imported(castle,"cross_mp_2",px,1.06,pz,.65,0);
                 }
-                case ARCHIVE -> imported(castle,"level_trace_records",px-.30,.754,pz,1,0);
+                case ARCHIVE -> {for(var a:CastleArchive.ACCENTS)imported(castle,a.mesh(),a.x(),a.y(),a.z(),a.scale(),a.yaw());}
             }
         }
         // Purchased source-backed fixtures occupy authored locations and match hub collision.

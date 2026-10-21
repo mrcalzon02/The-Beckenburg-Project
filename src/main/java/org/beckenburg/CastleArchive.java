@@ -11,6 +11,9 @@ import javax.imageio.ImageIO;
 public final class CastleArchive {
     private CastleArchive(){}
     public static final double KEEPER_X=36,KEEPER_Z=10.35;
+    public static final List<CastleHubDecor.Accent> ACCENTS=List.of(
+        new CastleHubDecor.Accent("level_trace_records",35.70,.754,11.80,1,0),
+        new CastleHubDecor.Accent("level_trace_journal",36.45,.754,11.50,1,.10));
     public static List<CastleHubMap.Furnishing> furnishings(){return List.of(
         new CastleHubMap.Furnishing("level_npc_matthis_rook_proxy",KEEPER_X,KEEPER_Z,1,0,.42,.28));}
     public static final class Reader {
