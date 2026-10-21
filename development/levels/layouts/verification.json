@@ -120,11 +120,16 @@
       "zones": 13,
       "checks": 157,
       "result": "pass"
+    },
+    {
+      "id": "WLD-12",
+      "zones": 14,
+      "checks": 187,
+      "result": "pass"
     }
   ],
   "missing": [
     "castle",
-    "wld-12",
     "wld-13"
   ],
   "limitations": [
