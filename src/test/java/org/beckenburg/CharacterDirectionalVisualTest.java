@@ -58,6 +58,32 @@ public final class CharacterDirectionalVisualTest {
         check(shaped.height()>CharacterVisuals.shape("observer").height(),
             "Elder must not render as Hunter-sized");
         check(!CharacterVisuals.isHunter("banshee"),"Ghost cannot masquerade as selectable Hunter");
+        for(CharacterVisuals.Hunter hunter:CharacterVisuals.Hunter.values()){
+            var base=CharacterVisuals.hunterAppearance(hunter,CharacterVisuals.Variant.BASE);
+            var missing=CharacterVisuals.hunterAppearance(hunter,CharacterVisuals.Variant.ALTERNATE_GENDER);
+            check(base.runtimeIdentity().equals(missing.runtimeIdentity())
+                    &&!base.inheritedBase()&&missing.inheritedBase(),
+                "Unfinished gender variant must use that class's own base art");
+            check(signature(DirectionalSprites.frame(missing.runtimeIdentity(),0))
+                    ==signature(DirectionalSprites.frame(base.runtimeIdentity(),0)),
+                "Fallback art must retain Hunter identity");
+        }
+        for(GhostIdentity.Type ghost:GhostIdentity.Type.values())if(!ghost.elder()){
+            var alt=CharacterVisuals.ghostAppearance(ghost,CharacterVisuals.Variant.ALTERNATE_GENDER);
+            check(alt.inheritedBase()&&alt.runtimeIdentity().equals(CharacterVisuals.ghost(ghost)),
+                "Missing ghost gender variant must preserve its own identity");
+        }
+        boolean elderVariantRejected=false;
+        try{CharacterVisuals.ghostAppearance(GhostIdentity.Type.ELDER_NOTHIC,
+                CharacterVisuals.Variant.ALTERNATE_GENDER);}
+        catch(IllegalArgumentException expected){elderVariantRejected=true;}
+        check(elderVariantRejected,"Do not invent missing Elder gender masters");
+        BufferedImage ancient=DirectionalSprites.frame("ancient_banshee",0,
+                LanGhostAnimation.Phase.WALK,2);
+        BufferedImage original=DirectionalSprites.frame("banshee",0,
+                LanGhostAnimation.Phase.WALK,2);
+        check(signature(ancient)!=signature(original),
+                "Ancient sprite must use its actual green source variant, not a base copy");
         boolean invalid=false;
         try{CharacterVisuals.hunter("unknown");}catch(IllegalArgumentException expected){invalid=true;}
         check(invalid,"Unapproved Hunter identity must be rejected");
