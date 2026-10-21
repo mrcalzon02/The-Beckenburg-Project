@@ -51,3 +51,10 @@ Next useful candidates: rail log carriage, repair bench and hand tools, sawdust 
 `level_work_camp_sign`: 2021 triangles. Bearing posts and iron shoes, three name planks, original readable mesh lettering, a later road-survey warning and direction arrow. Placed X40.5/Z58.3 on the arrival verge. Every source vertex stays more than 1.25 m from baked path centrelines. Native/source support and collision tests pass; the sign explicitly says the road is surveyed and the site is not cleared.
 
 [Manifest](production/camp_sign.json) · [Source](blender/level_work_camp_sign.blend) · [Studio](previews/level_work_camp_sign.png) · [Runtime](previews/model-production/blackpine-level_work_camp_sign.png).
+
+
+## Construction revision / 21 October
+
+All eight first-run assets were revisited after the visual review. The direction arrow now bolts to a crossrail between the posts; lettering sits against the sign faces. The cookbox has a connected, upward-facing concave spoon and supported lunch tin. The footlocker lid meets its hinges and its belongings rest on a tray. Boot-rack shelves have end bearers; towels wrap over the real rail. Tool hooks reach the repair-bench backboard; spanner, saw handle, vice, screwdriver, stone and lower-shelf offcut have connected/supporting geometry. The bandsaw has open cast wheel rims and real spokes; the carriage has an actual truncated sawn log and wheels at rail-head height. The separate bedroll pillow rests in a clear head space, with quilt underside and connected zipper pull.
+
+The regenerated eight assets total 12,387 source triangles; per-asset current counts/bounds are in their manifests (superseding the initial counts above). Native construction audit covers nine models including the bedroll. Separate loose kindling is floor-supported. Runtime native bounds, physical supports and spawn/rite clearances pass. Conservative part bounds are not a substitute for final visual acceptance, and these remain revised development art pending the user's review.

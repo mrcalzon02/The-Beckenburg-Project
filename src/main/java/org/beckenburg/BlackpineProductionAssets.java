@@ -10,8 +10,8 @@ public final class BlackpineProductionAssets {
         add(props,colliders,"level_work_bandsaw",0,42.6,33.8,0,1.48,.74,3.28);
         add(props,colliders,"level_work_log_carriage",0,43.2,30.6,0,.85,1.91,1.14);
         add(props,colliders,"level_work_repair_bench",8,47.0,46.7,0,1.24,.62,1.66);
-        add(props,colliders,"level_work_crew_footlocker",4,13.3,24.4,0,.50,.52,.86);
-        add(props,colliders,"level_work_crew_footlocker",4,10.4,24.2,.12,.50,.52,.86);
+        add(props,colliders,"level_work_crew_footlocker",4,13.3,24.4,0,.50,.52,.90);
+        add(props,colliders,"level_work_crew_footlocker",4,10.4,24.2,.12,.50,.52,.90);
         add(props,colliders,"level_work_hearth_tools",6,24.55,11.35,0,.42,.43,1.07);
         add(props,colliders,"level_work_hearth_tools",2,15.15,45.25,.2,.42,.43,1.07);
         add(props,colliders,"level_work_boot_rack",5,11.50,38.8,Math.PI/2,.71,.25,1.18);

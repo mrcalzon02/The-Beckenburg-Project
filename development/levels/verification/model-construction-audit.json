@@ -1,0 +1,92 @@
+{
+  "status": "explicit-checks-pass; conservative island flags require visual inspection",
+  "models": [
+    {
+      "asset": "level_work_bandsaw",
+      "named_parts": 117,
+      "floor_supported_islands": [],
+      "explicit_checks": [],
+      "disconnected_islands_to_inspect": []
+    },
+    {
+      "asset": "level_work_boot_rack",
+      "named_parts": 28,
+      "floor_supported_islands": [],
+      "explicit_checks": [],
+      "disconnected_islands_to_inspect": []
+    },
+    {
+      "asset": "level_work_camp_sign",
+      "named_parts": 20,
+      "floor_supported_islands": [],
+      "explicit_checks": [
+        "arrow bolted to bearing rail attached to posts"
+      ],
+      "disconnected_islands_to_inspect": []
+    },
+    {
+      "asset": "level_work_crew_footlocker",
+      "named_parts": 51,
+      "floor_supported_islands": [],
+      "explicit_checks": [
+        "lid intersects its real hinges and trunk rests at native floor"
+      ],
+      "disconnected_islands_to_inspect": []
+    },
+    {
+      "asset": "level_work_hearth_tools",
+      "named_parts": 59,
+      "floor_supported_islands": [
+        [
+          "Dry split kindling.001"
+        ],
+        [
+          "Dry split kindling.002"
+        ],
+        [
+          "Dry split kindling"
+        ],
+        [
+          "Dry split kindling.004"
+        ],
+        [
+          "Dry split kindling.003"
+        ]
+      ],
+      "explicit_checks": [],
+      "disconnected_islands_to_inspect": []
+    },
+    {
+      "asset": "level_work_log_carriage",
+      "named_parts": 108,
+      "floor_supported_islands": [],
+      "explicit_checks": [],
+      "disconnected_islands_to_inspect": []
+    },
+    {
+      "asset": "level_work_repair_bench",
+      "named_parts": 54,
+      "floor_supported_islands": [],
+      "explicit_checks": [],
+      "disconnected_islands_to_inspect": []
+    },
+    {
+      "asset": "level_work_survivor_cookbox",
+      "named_parts": 52,
+      "floor_supported_islands": [],
+      "explicit_checks": [
+        "upward concave utensil bowl connected to handle and supported on lid"
+      ],
+      "disconnected_islands_to_inspect": []
+    },
+    {
+      "asset": "level_trace_bedroll",
+      "named_parts": 51,
+      "floor_supported_islands": [],
+      "explicit_checks": [
+        "pillow supported on mat with head area clear of quilt geometry"
+      ],
+      "disconnected_islands_to_inspect": []
+    }
+  ]
+}

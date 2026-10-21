@@ -48,9 +48,33 @@ def belongings():
     for i in range(6):
         o=s.box('Discarded folded work clothes',((i%2)*.18-.09,(i%3)*.09-.09,.025+i*.024),(.40-i*.025,.29,.045),m['blue' if i%2 else 'cloth']);o.rotation_euler[2]=i*.61;p.append(o)
     p.append(s.rod('One stocking',(-.24,0,.02),(-.30,.19,.02),.035,m['green'],6));finish('clothes',p)
-    m=b.init();p=[s.box('Recent sleeping mat',(0,0,.025),(.66,1.86,.05),m['black'],.02)]
-    for i in range(9):p.append(s.box('Sleeping bag stitched baffle',(0,-.72+i*.18,.12),(.62,.17,.17),m['blue'],.05))
-    p.append(s.box('Recent pillow',(.04,.70,.13),(.48,.27,.13),m['cloth'],.045));finish('bedroll',p)
+
+def bedroll():
+    m=b.init();p=[s.box('Recent sleeping mat',(0,0,.025),(.66,1.86,.05),m['black'],.015)]
+    # The quilt stops below the head space. The pillow has its own visible volume
+    # resting on the mat rather than being swallowed inside a full-length baffle.
+    verts=[];rows=[-.80,-.64,-.48,-.32,-.16,0,.16,.32,.43]
+    for i,y in enumerate(rows):
+        width=.24+.065*math.sin((i+1)/10*math.pi);offset=.008*math.sin(i*1.7)
+        for j,t in enumerate([-1,-.72,0,.72,1]):
+            h=[.07,.145,.174,.15,.07][j]+.005*math.sin(i*2+j)
+            verts.append((offset+t*width,y,h))
+    faces=[(i*5+j,i*5+j+1,(i+1)*5+j+1,(i+1)*5+j) for i in range(8) for j in range(4)]
+    p.append(s.mesh('Sleeping bag quilted shell',verts,faces,m['blue']))
+    boundary=[verts[i*5] for i in range(9)]+[verts[40+j] for j in range(1,5)]+[verts[i*5+4] for i in range(7,-1,-1)]+[verts[j] for j in range(3,0,-1)]
+    n=len(boundary);under=boundary+[(x,y,.05) for x,y,z in boundary]
+    p.append(s.mesh('Sleeping bag supported underside',under,[(i,(i+1)%n,(i+1)%n+n,i+n) for i in range(n)]+[tuple(range(n,2*n))],m['blue']))
+    for i in range(1,8):
+        y=rows[i];p+=s.tube('Sewn transverse baffle',[(verts[i*5+j][0],y,verts[i*5+j][2]+.001) for j in range(5)],.0016,m['black'],4)
+    p+=s.tube('Side zipper',[verts[i*5+4] for i in range(9)],.006,m['iron'],6)
+    t=(.36-.32)/(.43-.32);edge=tuple(verts[39][j]*(1-t)+verts[44][j]*t for j in range(3))
+    p.append(s.rod('Zipper pull connecting link',edge,(edge[0],.36,edge[2]+.02),.004,m['steel'],6))
+    p+=b.ring('Zipper pull tab',(edge[0]+.022,.36,edge[2]+.02),.022,.004,m['steel'],segments=8)
+    p.append(s.box('Separate exposed pillow',(-.015,.685,.124),(.49,.29,.14),m['cloth'],.034))
+    for x in [-.22,.22]:p.append(s.box('Mat carrying loop',(x,-.90,.047),(.09,.055,.025),m['leather'],.006))
+    finish('bedroll',p,view=(2,-3,3))
+
+def food_trash():
     m=b.init();p=[]
     for i in range(5):
         x=-.22+i*.11;y=.09*math.sin(i*3)
@@ -136,6 +160,13 @@ def bed():
     p.append(s.box('Folded wool blanket',(0,-.47,.57),(.83,.72,.07),m['green'],.01))
     p.append(s.box('Flattened pillow',(.02,.72,.58),(.54,.32,.12),m['paper'],.025));finish('camp_bed',p)
 
-records();records(True);wall_items();belongings();damage();stove();services();bed()
-(ROOT/'development/levels/story-detail-assets.json').write_text(json.dumps({'license':'CC0-1.0','contract':'metres; preserve native origin, UV and material; wall modules face +Z','assets':b.LOG},indent=2)+'\n')
+manifest_path=ROOT/'development/levels/story-detail-assets.json'
+target=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else None
+if target:
+    globals()[target]();manifest=json.loads(manifest_path.read_text())
+    replacements={a['id']:a for a in b.LOG};manifest['assets']=[replacements.get(a['id'],a) for a in manifest['assets']]
+else:
+    records();records(True);wall_items();belongings();bedroll();food_trash();damage();stove();services();bed()
+    manifest={'license':'CC0-1.0','contract':'metres; preserve native origin, UV and material; wall modules face +Z','assets':b.LOG}
+manifest_path.write_text(json.dumps(manifest,indent=2)+'\n')
 print('STORY_DETAILS_COMPLETE',len(b.LOG),flush=True)
