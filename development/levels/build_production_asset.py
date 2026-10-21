@@ -151,6 +151,28 @@ def boot_rack():
     for i in range(3):p.append(s.box('Folded wash cloth',(.40,0,.15+i*.045),(.30,.28,.043),m['cloth'],.01))
     return p,dict(function='Open boot-drying rack, old work boots, folded cloths and two draped towels',runtime='Ready static washhouse furnishing; boots retain original source UV/materials',derived_sources=s.SOURCE_LOG,placement='Blackpine washhouse east wall, outside the clear central rite')
 
+def survivor_cookbox():
+    m=b.init();p=[]
+    for i in range(4):
+        for y in [-.26,.26]:p.append(s.box('Salvaged cook crate side',(0,y,.075+i*.105),(.78,.045,.092),m['pine']))
+        for x in [-.39,.39]:p.append(s.box('Salvaged crate end',(x,0,.075+i*.105),(.045,.54,.092),m['pine']))
+    p.append(s.box('Crate base',(0,0,.025),(.78,.54,.05),m['oak']))
+    for x in [-.32,.32]:
+        for y in [-.285,.285]:p.append(s.box('Crate corner batten',(x,y,.22),(.07,.035,.43),m['oak']))
+    p.append(s.box('Loose supported lid',(0,.02,.46),(.84,.62,.055),m['pine']))
+    p.append(s.lathe('Blackened cooking pot',[(0,.14),(.04,.16),(.25,.16),(.26,.14),(.025,.12)],m['iron'],12,(-.16,-.015,.49)))
+    p+=b.ring('Pot wire bail',(-.16,-.015,.74),.17,.008,m['steel'],segments=12)
+    p.append(s.rod('Pot lid',(-.16,-.015,.755),(-.16,-.015,.768),.16,m['iron'],12))
+    p.append(s.box('Pot lid knob',(-.16,-.015,.79),(.06,.05,.045),m['black']))
+    p+=b.mug(.23,-.13,.49,m)
+    p.append(s.box('Cloth wrapped ration',(.21,.13,.55),(.28,.20,.12),m['cloth'],.015))
+    for x in [.15,.27]:p.append(s.box('Parcel string',(x,.13,.613),(.005,.205,.004),m['paper']))
+    p.append(s.rod('Salvaged spoon',(-.30,-.23,.50),(.01,-.23,.50),.005,m['steel'],6))
+    p.append(s.rod('Spoon bowl',(-.31,-.23,.50),(-.34,-.23,.50),.022,m['steel'],8))
+    for i in range(3):p.append(s.box('Folded cooking rag',(-.15,.13,.47+i*.012),(.25,.18,.011),m['cloth']))
+    p.append(s.box('Dented lunch tin',(0,-.05,.20),(.38,.28,.24),m['steel'],.02))
+    return p,dict(function='Salvaged cook crate, lidded soot-dark pot, wire bail, mug, ration parcel and spoon',runtime='Ready static survivor cooking kit; cold pot and non-interactive supplies',placement='Blackpine logging cabin recent occupation layer, beside its stove area')
+
 name=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'bandsaw'
 parts,notes=globals()[name]()
 b.export('level_work_'+name,parts,'working-place-details',view=(4,-6,3.5))

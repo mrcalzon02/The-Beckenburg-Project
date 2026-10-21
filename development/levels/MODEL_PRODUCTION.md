@@ -39,3 +39,9 @@ Next useful candidates: rail log carriage, repair bench and hand tools, sawdust 
 `level_work_boot_rack`: 1140 triangles. Slatted open drying rack, two draped towels, folded cloths and the existing original worn boots with preserved UV/materials. Placed at X11.50/Z38.8 against the washhouse east wall, facing into the room and outside the central ritual footprint. Source reopens with packed images, runtime native bounds/support and clear-spawn/rite/reading checks pass.
 
 [Manifest and reused-source hash](production/boot_rack.json) · [Source](blender/level_work_boot_rack.blend) · [Studio](previews/level_work_boot_rack.png) · [Runtime](previews/model-production/blackpine-level_work_boot_rack.png).
+
+## 07 / survivor cookbox
+
+`level_work_survivor_cookbox`: 1048 triangles. Salvaged slatted crate and supported lid, soot-dark lidded pot and wire bail, enamel mug, wrapped ration, spoon, cooking rag and dented lunch tin. Placed X34.9/Z9.0 in the recently occupied logging cabin. Source/UV/packed-image reopening, native bounds, support, collision, spawn/rite and readable-record checks pass. Static cold cooking gear, reusable in remote refuges and campgrounds.
+
+[Manifest](production/survivor_cookbox.json) · [Source](blender/level_work_survivor_cookbox.blend) · [Studio](previews/level_work_survivor_cookbox.png) · [Runtime](previews/model-production/blackpine-level_work_survivor_cookbox.png).
