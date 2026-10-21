@@ -12,8 +12,7 @@ def rename(path):
     for a, b in (("software/beckenburg/", ""), ("docs/beckenburg/", "docs/"), ("assets/beckenburg/", "assets/")):
         if path.startswith(a): return b + path[len(a):]
     if path in ("beckenburg.html", "beckenburg-asset-libraries.html",
-                ".github/workflows/beckenburg-release.yml",
-                ".github/workflows/beckenburg-full-round-e2e.yml"): return path
+                "styles.css", "workspace-landing.css"): return path
     return None
 
 def rewrite(path, content):
@@ -40,19 +39,6 @@ def rewrite(path, content):
             (OLD_REPO, NEW_REPO), ("software/beckenburg/", ""), ("docs/beckenburg/", "docs/"),
             ("assets/beckenburg/", "assets/")):
             changed = changed.replace(original, new)
-    elif path == ".github/workflows/beckenburg-full-round-e2e.yml":
-        changed = content.decode("utf-8").replace("software/beckenburg/**", "src/**")
-        changed = changed.replace("working-directory: software/beckenburg", "working-directory: .")
-        changed = changed.replace("software/beckenburg/build/e2e/**", "build/e2e/**")
-        changed = changed.replace("      - 'src/**'", "      - 'src/**'\n      - 'assets/**'\n      - 'development/**'\n      - 'build.cmd'\n      - 'build.sh'")
-    elif path == ".github/workflows/beckenburg-release.yml":
-        changed = content.decode("utf-8")
-        # The first independent publication is manually gated until its Windows suite passes.
-        changed = changed.replace(
-            "  push:\n    branches: [main]\n    paths:\n      - 'software/beckenburg/**'\n      - '.github/workflows/beckenburg-release.yml'\n", "")
-        changed = changed.replace("working-directory: software/beckenburg", "working-directory: .")
-        changed = changed.replace("'software\\beckenburg'", "'.'")
-        changed = changed.replace("$new = [version]'0.1.0'", "$new = [version]'0.1.13'")
     return changed.encode("utf-8") if changed is not None else content
 
 def main():
@@ -89,7 +75,8 @@ def main():
         "assets/concept-art/v001/03-ghosts/elder-plague-demon-master-concept.png",
         "assets/libraries/household/beckenburg-household-cc0.zip",
         "development/levels/blender/house-complete.blend", "docs/stage-ledger.json",
-        ".github/workflows/beckenburg-release.yml", ".github/workflows/beckenburg-full-round-e2e.yml")
+        "beckenburg.html", "beckenburg-asset-libraries.html",
+        "styles.css", "workspace-landing.css")
     for file in required: assert file in seen, "Missing required file " + file
     (dest/"index.html").write_bytes((dest/"beckenburg.html").read_bytes())
     (dest/".gitignore").write_text(
