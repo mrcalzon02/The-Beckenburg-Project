@@ -118,13 +118,18 @@ public final class BeckenburgUpdates {
     public static Release check(String current,boolean includePrereleases)throws IOException,InterruptedException{
         // The Foundry hosts multiple independent products; compare only our tagged stable releases.
         Release newest=null;
+        BeckenburgDeveloperTrace.update("feed-start","installed="+current);
         for(int page=1;page<=10;page++){
+            BeckenburgDeveloperTrace.update("feed-page","page="+page);
             String body=new String(fetch(API+"?per_page=100&page="+page,MAX_FEED),StandardCharsets.UTF_8);
             Object json=new Json(body).parse();
             if(!(json instanceof List<?> entries))throw new IOException("GitHub release feed malformed");
             Release candidate=select(body,newest==null?current:newest.version(),includePrereleases);
             if(candidate!=null)newest=candidate;
-            if(entries.size()<100)return newest;
+            if(entries.size()<100){
+                BeckenburgDeveloperTrace.update("feed-complete","pages="+page+" entries_last_page="+entries.size()+" selected="+(newest==null?"none":newest.tag()));
+                return newest;
+            }
         }
         throw new IOException("Release feed page limit exceeded");
     }
@@ -145,6 +150,7 @@ public final class BeckenburgUpdates {
                 .GET().build();
             HttpResponse<InputStream> response=HTTP.send(req,HttpResponse.BodyHandlers.ofInputStream());
             int code=response.statusCode();
+            BeckenburgDeveloperTrace.update("http-response","host="+url.getHost()+" status="+code+" redirects="+redirects);
             if(code==200)return response.body();
             response.body().close();
             if(code!=301&&code!=302&&code!=303&&code!=307&&code!=308)
@@ -168,6 +174,7 @@ public final class BeckenburgUpdates {
             throw new IllegalArgumentException("Untrusted installer");
         if(!trustedAsset(release.sumsUrl(),release.tag(),"SHA256SUMS.txt"))
             throw new IllegalArgumentException("Untrusted checksums");
+        BeckenburgDeveloperTrace.update("checksum-fetch","tag="+release.tag());
         String contents=new String(fetch(release.sumsUrl(),65536),StandardCharsets.UTF_8);
         String expected="";
         for(String line:contents.split("\\R")){
@@ -196,6 +203,7 @@ public final class BeckenburgUpdates {
             if(read!=release.size()||!MessageDigest.isEqual(
                 digest.digest(),java.util.HexFormat.of().parseHex(expected)))
                 throw new IOException("Installer size/checksum verification failed");
+            BeckenburgDeveloperTrace.update("installer-verified","tag="+release.tag()+" bytes="+read);
             Files.move(tmp,dest,StandardCopyOption.REPLACE_EXISTING);
             return dest;
         }finally{Files.deleteIfExists(tmp);}
