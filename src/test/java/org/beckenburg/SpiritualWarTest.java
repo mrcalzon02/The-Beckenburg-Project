@@ -63,10 +63,15 @@ public final class SpiritualWarTest {
         timed.join(tg, SpiritualWar.Side.GHOST, standardGhost());
         reject(() -> timed.advanceTime(1));
         timed.start();
+        var visual = new SceneRenderer();
+        visual.syncSpiritualWarSanctuary(timed);
+        check(visual.spiritualWarVanSanctuaryVisible(), "Blue van boundary enabled at match start");
         reject(() -> timed.advanceTime(-1));
         check(timed.vanProtected(), "Van starts protected");
         timed.advanceTime(900);
         check(!timed.vanProtected(), "Van unprotected at fifteen minutes");
+        visual.syncSpiritualWarSanctuary(timed);
+        check(!visual.spiritualWarVanSanctuaryVisible(), "Blue boundary removed with sanctuary");
         timed.advanceTime(899);
         check(timed.remainingSeconds() == 1 && timed.result() == SpiritualWar.Result.ACTIVE,
             "Still active with one second remaining");
