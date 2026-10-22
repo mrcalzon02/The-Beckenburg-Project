@@ -39,6 +39,12 @@ for %%T in (ambient-cold-unresolved-drone.zip ambient-sombra-profunda.zip castle
   copy /Y "assets\runtime\music\%%T" "build\classes\org\beckenburg\music\%%T" >nul || exit /b 1
 )
 rem Optional CC0 NOX Foley subset: only curated, converted WAVs; no source archive.
+rem Preserve all twelve original WAVs and twenty-five textured weather VFX GLBs.
+if not exist build\classes\org\beckenburg\weather mkdir build\classes\org\beckenburg\weather
+for %%W in (audio_00 audio_01 audio_02 audio_03 audio_04 audio_05 atmosphere cloud_to_ground fork horizontal_arc sheet) do (
+  if not exist "assets\runtime\weather\%%W.zip" (echo ERROR: missing Shared PSX Weather v1 pack %%W & exit /b 1)
+  copy /Y "assets\runtime\weather\%%W.zip" "build\classes\org\beckenburg\weather\%%W.zip" >nul || exit /b 1
+)
 if exist assets\runtime\sfx (
   if not exist build\classes\org\beckenburg\sfx mkdir build\classes\org\beckenburg\sfx
   for %%S in (assets\runtime\sfx\*.wav) do (

@@ -38,6 +38,12 @@ for track in "ambient-cold-unresolved-drone.zip" "ambient-sombra-profunda.zip" "
   cp "assets/runtime/music/$track" "build/classes/org/beckenburg/music/$track"
 done
 # Optional CC0 NOX recorded Foley subset (only reviewed WAVs, never the 988 MB source ZIP).
+# Original Shared PSX Weather v1 audio and textured mesh packs are mandatory.
+mkdir -p build/classes/org/beckenburg/weather
+for pack in audio_00 audio_01 audio_02 audio_03 audio_04 audio_05 atmosphere cloud_to_ground fork horizontal_arc sheet; do
+  test -s "assets/runtime/weather/${pack}.zip" || { echo "Missing weather v1 pack: ${pack}"; exit 1; }
+  cp "assets/runtime/weather/${pack}.zip" "build/classes/org/beckenburg/weather/${pack}.zip"
+done
 if [ -d assets/runtime/sfx ]; then
   mkdir -p build/classes/org/beckenburg/sfx
   for sample in assets/runtime/sfx/*.wav; do
