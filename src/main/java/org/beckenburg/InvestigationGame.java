@@ -578,6 +578,7 @@ public final class InvestigationGame {
             session.configureParty(campaignMode&&withAssistant?2:1);
             assistant=campaignMode&&withAssistant?new CampaignAlly(map,session):null;
             session.connectLighting(lights);
+            atmosphere.setModule(scene.weatherModule());
             scene.setWeather(session.weather());
             atmosphere.setWeather(session.weather());
             scene.roomLights=lights;

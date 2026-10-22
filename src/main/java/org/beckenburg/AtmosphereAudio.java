@@ -19,6 +19,10 @@ public final class AtmosphereAudio implements AutoCloseable {
         soundtrack.setActive(visible);
         if(weatherBed!=null)weatherBed.setActive(visible);
     }
+    /** The visible primary viewport owns the weather's delayed audio events. */
+    public void setModule(dev.mrcalzon.weather.WeatherModule module){
+        if(weatherBed!=null)weatherBed.setModule(module);
+    }
     public void setWeather(MissionWeather.State weather){
         if(weatherBed!=null)weatherBed.setWeather(weather);
     }

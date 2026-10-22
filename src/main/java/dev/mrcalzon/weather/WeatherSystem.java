@@ -70,7 +70,7 @@ public final class WeatherSystem {
            !Double.isFinite(bearing)||!Double.isFinite(height))
             throw new IllegalArgumentException("Invalid relative strike");
         strikeAt(observerX+distance*Math.cos(bearing),
-            observerY+distance*Math.sin(bearing),height,family,mode);
+            observerY+height,observerZ+distance*Math.sin(bearing),family,mode);
     }
     public void setAutoLightning(boolean enabled){autoLightning=enabled;}
     public void setFlashesEnabled(boolean enabled){flashesEnabled=enabled;}
@@ -100,7 +100,7 @@ public final class WeatherSystem {
         if(autoLightning&&target.storm()&&currentRain>.5&&now>=nextStormStrike){
             long r=hash(seed^++sequence);double bearing=(r&65535)/65535.0*Math.PI*2;
             double dist=18+((r>>>16)&65535)/65535.0*75;
-            strikeRelative(dist,bearing,observerZ+18+((r>>>32)&7),
+            strikeRelative(dist,bearing,18+((r>>>32)&7),
                 WeatherMeshes.LIGHTNING_FAMILIES[(int)((r>>>39)&3)],StrikeMode.FULL);
             nextStormStrike=now+3500+((r>>>44)&8191);
         }
@@ -160,8 +160,8 @@ public final class WeatherSystem {
         }
         if(currentFog>.12){
             String id=currentFog>.70?"weather_dense_fog_bank":"weather_ground_fog_bank";
-            sink.emit(new WeatherMeshes.Instance(id,view.x()+12,view.y()+12,
-                view.z()-.5,windHeading,2.7,currentFog*.30));
+            sink.emit(new WeatherMeshes.Instance(id,view.x()+12,view.y()-.5,
+                view.z()+6,windHeading,2.7,currentFog*.30));
         }
         if(currentRain>.72||target==WeatherType.OVERCAST)
             sink.emit(new WeatherMeshes.Instance(

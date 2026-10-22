@@ -39,6 +39,12 @@ for %%T in (ambient-cold-unresolved-drone.zip ambient-sombra-profunda.zip castle
   copy /Y "assets\runtime\music\%%T" "build\classes\org\beckenburg\music\%%T" >nul || exit /b 1
 )
 rem Optional CC0 NOX Foley subset: only curated, converted WAVs; no source archive.
+rem Preserve all twelve original WAVs and twenty-five textured weather VFX GLBs.
+if not exist build\classes\org\beckenburg\weather mkdir build\classes\org\beckenburg\weather
+for %%W in (audio_00 audio_01 audio_02 audio_03 audio_04 audio_05 atmosphere cloud_to_ground fork horizontal_arc sheet) do (
+  if not exist "assets\runtime\weather\%%W.zip" (echo ERROR: missing Shared PSX Weather v1 pack %%W & exit /b 1)
+  copy /Y "assets\runtime\weather\%%W.zip" "build\classes\org\beckenburg\weather\%%W.zip" >nul || exit /b 1
+)
 if exist assets\runtime\sfx (
   if not exist build\classes\org\beckenburg\sfx mkdir build\classes\org\beckenburg\sfx
   for %%S in (assets\runtime\sfx\*.wav) do (
@@ -96,7 +102,7 @@ rem Separate smoke/acceptance track: does NOT publish and does NOT replace relea
 if not exist build\e2e mkdir build\e2e
 rem Verify the *packaged* approved character art and real Hunter LAN cosmetics,
 rem including incomplete gender fallback and distinct Ancient appearances.
-for %%T in (GhostHauntingFolioTest CharacterDirectionalVisualTest CharacterSpriteWorldMotionTest TwinBodyVisualTest TwinCompanionAiTest TwinCompanionSharedActionTest LanCameraSightTest LanCameraOnlyGhostIntegrationTest LanTwinPlayerCompanionTest LanHunterVisualNetworkTest CampaignCareerTest CampaignProgressionAndStoreTest CampaignStoryProgressionTest CampaignPartyRulesTest CampaignAllyTest CampaignAllyChatTest CampaignBoardPanelTest GhostPracticeTest GhostPracticeHunterAiTest GhostPracticeInvestigationTest GhostPracticeCommsTest LanSoundTest HandheldSpiritBoxEvidenceTest) do java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.%%T || exit /b 1
+for %%T in (WeatherAssetsIntegrationTest GhostHauntingFolioTest CharacterDirectionalVisualTest CharacterSpriteWorldMotionTest TwinBodyVisualTest TwinCompanionAiTest TwinCompanionSharedActionTest LanCameraSightTest LanCameraOnlyGhostIntegrationTest LanTwinPlayerCompanionTest LanHunterVisualNetworkTest CampaignCareerTest CampaignProgressionAndStoreTest CampaignStoryProgressionTest CampaignPartyRulesTest CampaignAllyTest CampaignAllyChatTest CampaignBoardPanelTest GhostPracticeTest GhostPracticeHunterAiTest GhostPracticeInvestigationTest GhostPracticeCommsTest LanSoundTest HandheldSpiritBoxEvidenceTest) do java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.%%T || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.VanModuleIntegrationTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.VanStreetAndCabinProportionsTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.VanArrivalStreetTest || exit /b 1

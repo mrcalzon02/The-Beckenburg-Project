@@ -87,6 +87,8 @@ public final class SceneRenderer {
     private final dev.mrcalzon.weather.WeatherModule weatherFx=
         new dev.mrcalzon.weather.WeatherModule(0x4245434b454e4255L);
     private boolean weatherInitialized;
+    private int weatherRevision=-1;
+    public dev.mrcalzon.weather.WeatherModule weatherModule(){return weatherFx;}
     private double lastWeatherClock=Double.NaN,weatherLightScale=1.0,weatherFogScale=1.0;
     {
         weatherFx.setTimeOfDay(.86);
@@ -95,7 +97,14 @@ public final class SceneRenderer {
     }
     public void setWeather(MissionWeather.State state){
         if(state==null)throw new IllegalArgumentException("weather state");
+        if(weatherInitialized&&weatherRevision==state.revision()
+                &&weatherKind==state.weather()&&weatherIntensity==state.intensity())return;
         weatherKind=state.weather();weatherIntensity=state.intensity();
+        weatherRevision=state.revision();
+        double baseC=switch(state.season()){
+            case WINTER -> -6;case SPRING -> 7;case SUMMER -> 19;case AUTUMN -> 8;
+        };
+        weatherFx.setTemperature(state.moduleType().snow>0?Math.min(-4,baseC):baseC);
         weatherFx.setWeather(state.moduleType(),weatherInitialized?6.0+state.intensity()*2.0:0);
         double wind=switch(state.weather()){
             case CLEAR,FOG,DENSE_FOG,MIASMA,HEATWAVE->.7+state.intensity()*.35;
@@ -1617,7 +1626,7 @@ public final class SceneRenderer {
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
-        paintSky(clock);
+        paintSky(map,clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         if(lightingMap!=map){lightingMap=map;fixtureLighting=new FixtureLighting(map);}fixtureLighting.frame(roomLights,roomLightTick);
         for(Face face:scene(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,clock,others,apparition,markers)){
@@ -1625,6 +1634,7 @@ public final class SceneRenderer {
             drawLitFace(face,room,0);
         }
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
+        renderWeatherMeshes();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
         int localRoom=map.roomAt(x,eyeHeight-.85,z);
@@ -1642,7 +1652,42 @@ public final class SceneRenderer {
             Point ab=mid(f.a,f.b),bc=mid(f.b,f.c),ca=mid(f.c,f.a);double abu=(f.au+f.bu)/2,abv=(f.av+f.bv)/2,bcu=(f.bu+f.cu)/2,bcv=(f.bv+f.cv)/2,cau=(f.cu+f.au)/2,cav=(f.cv+f.av)/2;
             drawLitFace(new Face(f.a,ab,ca,f.color,f.material,f.au,f.av,abu,abv,cau,cav),room,depth+1);drawLitFace(new Face(ab,f.b,bc,f.color,f.material,abu,abv,f.bu,f.bv,bcu,bcv),room,depth+1);drawLitFace(new Face(ca,bc,f.c,f.color,f.material,cau,cav,bcu,bcv,f.cu,f.cv),room,depth+1);drawLitFace(new Face(ab,bc,ca,f.color,f.material,abu,abv,bcu,bcv,cau,cav),room,depth+1);return;
         }
-        List<Vertex> pts=clip(litVertex(f.a,f.au,f.av,f.material,room),litVertex(f.b,f.bu,f.bv,f.material,room),litVertex(f.c,f.cu,f.cv,f.material,room));for(int i=1;i<pts.size()-1;i++)triangle(pts.get(0),pts.get(i),pts.get(i+1),f.color,f.material,1);
+        List<Vertex> pts=clip(litVertex(f.a,f.au,f.av,f.material,room),litVertex(f.b,f.bu,f.bv,f.material,room),litVertex(f.c,f.cu,f.cv,f.material,room));var weather=weatherCoating(f,room);
+        double wet=weather==null?0:weather.wet();
+        double snow=weather==null?0:Math.min(1,weather.snowMetres()/.06);
+        for(int i=1;i<pts.size()-1;i++)
+            triangle(pts.get(0),pts.get(i),pts.get(i+1),f.color,f.material,1,wet,snow);
+    }
+    /** Register only exposed walkable ground or outward roof faces. Real room
+     * topology, not ghost location, determines if a surface sees the sky. */
+    private dev.mrcalzon.weather.WeatherSurfaceGrid.Sample weatherCoating(Face f,int room){
+        if(lightingMap==null||room<0)return null;
+        double avgY=(f.a.y()+f.b.y()+f.c.y())/3;
+        double minY=Math.min(f.a.y(),Math.min(f.b.y(),f.c.y())),
+            maxY=Math.max(f.a.y(),Math.max(f.b.y(),f.c.y()));
+        double ax=f.b.x()-f.a.x(),az=f.b.z()-f.a.z(),
+            bx=f.c.x()-f.a.x(),bz=f.c.z()-f.a.z();
+        double normalY=Math.abs(ax*bz-az*bx);
+        double area=Math.sqrt(normalY*normalY+
+            Math.pow((f.b.y()-f.a.y())*bz-az*(f.c.y()-f.a.y()),2)+
+            Math.pow(ax*(f.c.y()-f.a.y())-(f.b.y()-f.a.y())*bx,2));
+        if(area<.00001||normalY/area<.60)return null;
+        boolean outside=lightingMap.outside(room);
+        boolean roof=!outside&&avgY>lightingMap.floorY(room)+2.4;
+        if(!outside&&!roof)return null;
+        if(outside&&maxY-minY>.5&&!roof)return null;
+        double mx=(f.a.x()+f.b.x()+f.c.x())/3,
+            mz=(f.a.z()+f.b.z()+f.c.z())/3;
+        int sx=(int)Math.floor(mx/3),sz=(int)Math.floor(mz/3);
+        int id=Math.floorMod(31*(31*(room+1)+sx)+sz,2147483646);
+        var grid=weatherFx.surfaces();
+        if(grid.surface(id)==null){
+            var material=f.material==LevelMaterials.WOOD
+                ?dev.mrcalzon.weather.WeatherSurfaceGrid.Material.WOOD
+                :dev.mrcalzon.weather.WeatherSurfaceGrid.Material.STONE;
+            grid.register(id,material,1);
+        }
+        return grid.shade(id,0x808080);
     }
     private HouseMap lightingMap;private FixtureLighting fixtureLighting,castleLighting;
     private Vertex litVertex(Point p,double u,double v,int material,int room){
@@ -1657,10 +1702,14 @@ public final class SceneRenderer {
      * Real window apertures and depth-tested castle stonework occlude the background.
      * The sky never writes depth, and has no copyright-dependent source images.
      */
-    void paintSky(double clock){
+    void paintSky(double clock){paintSky(null,clock);}
+    private void paintSky(HouseMap map,double clock){
         double delta=Double.isNaN(lastWeatherClock)?.05:Math.max(0,Math.min(1,clock-lastWeatherClock));
         lastWeatherClock=clock;
-        weatherFx.advance(delta,dev.mrcalzon.weather.WeatherView.outdoors(x,z,eyeHeight,yaw));
+        int room=map==null?-1:map.roomAt(x,eyeHeight-.85,z);
+        boolean outdoors=map==null||room>=0&&map.outside(room);
+        weatherFx.advance(delta,new dev.mrcalzon.weather.WeatherView(
+            x,eyeHeight,z,yaw,outdoors?1:0));
         var wx=weatherFx.weather().state();
         weatherLightScale=Math.max(.50,1-(1-wx.visibility())*.24)+wx.flash()*2.2;
         weatherFogScale=1+(1-wx.visibility())*3.1;
@@ -1671,9 +1720,6 @@ public final class SceneRenderer {
             g.setColor(new java.awt.Color(18,24,32));
             g.fillRect(0,0,renderWidth,renderHeight);
             weatherFx.renderSky(g,renderWidth,renderHeight);
-            // Precipitation is drawn before solid geometry so real walls and roofs
-            // occlude it naturally rather than painting rain or snow through interiors.
-            weatherFx.renderOverlay(g,renderWidth,renderHeight);
         }finally{g.dispose();}
 
         final int horizon=(int)Math.round(renderHeight*.56+Math.tan(pitch)*focal);
@@ -1683,6 +1729,11 @@ public final class SceneRenderer {
                     +5*Math.sin(bearing*13.2));
             for(int sy=Math.max(0,hills);sy<renderHeight;sy++)pixels[sy*renderWidth+sx]=0x18202a;
         }
+        // Weather particles must be in front of hills but behind opaque walls.
+        java.awt.Graphics2D precipitation=frame.createGraphics();
+        try{precipitation.setComposite(java.awt.AlphaComposite.SrcOver);
+            weatherFx.renderOverlay(precipitation,renderWidth,renderHeight);
+        }finally{precipitation.dispose();}
     }
     /** Billboards share the world Z-buffer, so room walls correctly hide hunter and ghost bodies.
      * Visibility, headings and phase remain projected from the host's simulation.
@@ -1754,6 +1805,60 @@ public final class SceneRenderer {
                 person.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
         }
     }
+    /** Render the actual v1 glTF meshes with perspective UVs and alpha. The
+     * existing opaque world and sprites occlude precipitation and lightning. */
+    private void renderWeatherMeshes(){
+        weatherFx.emitMeshes(instance->{
+            if(instance.opacity()<=.001
+                    ||Math.hypot(instance.x()-x,instance.z()-z)>130)return;
+            double sin=Math.sin(instance.yaw()),cos=Math.cos(instance.yaw());
+            for(var t:WeatherAssetLibrary.mesh(instance.meshId()).triangles()){
+                GlbProps.Vertex[] v={t.a(),t.b(),t.c()};
+                Vertex[] projected=new Vertex[3];
+                for(int i=0;i<3;i++){
+                    var p=v[i];double scale=instance.scale();
+                    Point at=new Point(instance.x()+scale*(p.x()*cos-p.z()*sin),
+                        instance.y()+scale*p.y(),
+                        instance.z()+scale*(p.x()*sin+p.z()*cos));
+                    projected[i]=new Vertex(camera(at),p.u(),p.v());
+                }
+                List<Vertex> polygon=clip(projected[0],projected[1],projected[2]);
+                for(int i=1;i+1<polygon.size();i++)
+                    weatherTriangle(polygon.get(0),polygon.get(i),polygon.get(i+1),
+                        t.material(),instance.opacity());
+            }
+        });
+    }
+    private void weatherTriangle(Vertex va,Vertex vb,Vertex vc,int material,double opacity){
+        Point a=va.p(),b=vb.p(),c=vc.p();
+        double x0=renderWidth*.5+a.x()/a.z()*focal,y0=renderHeight*.5-a.y()/a.z()*focal;
+        double x1=renderWidth*.5+b.x()/b.z()*focal,y1=renderHeight*.5-b.y()/b.z()*focal;
+        double x2=renderWidth*.5+c.x()/c.z()*focal,y2=renderHeight*.5-c.y()/c.z()*focal;
+        double denom=(y1-y2)*(x0-x2)+(x2-x1)*(y0-y2);
+        if(Math.abs(denom)<1e-8)return;
+        int lowX=Math.max(0,(int)Math.floor(Math.min(x0,Math.min(x1,x2))));
+        int highX=Math.min(renderWidth-1,(int)Math.ceil(Math.max(x0,Math.max(x1,x2))));
+        int lowY=Math.max(0,(int)Math.floor(Math.min(y0,Math.min(y1,y2))));
+        int highY=Math.min(renderHeight-1,(int)Math.ceil(Math.max(y0,Math.max(y1,y2))));
+        for(int py=lowY;py<=highY;py++)for(int px=lowX;px<=highX;px++){
+            double u=((y1-y2)*(px+.5-x2)+(x2-x1)*(py+.5-y2))/denom;
+            double v=((y2-y0)*(px+.5-x2)+(x0-x2)*(py+.5-y2))/denom,w=1-u-v;
+            if(u<0||v<0||w<0)continue;
+            double inv=u/a.z()+v/b.z()+w/c.z();
+            if(inv<=0)continue;
+            int at=py*renderWidth+px;
+            if(1/inv>=depths[at])continue;
+            double tu=(u*va.u()/a.z()+v*vb.u()/b.z()+w*vc.u()/c.z())/inv;
+            double tv=(u*va.v()/a.z()+v*vb.v()/b.z()+w*vc.v()/c.z())/inv;
+            int alpha=(int)(GlbProps.sampleAlpha(material,tu,tv)*opacity);
+            if(alpha<=3)continue;
+            int color=GlbProps.sample(material,tu,tv),old=pixels[at];
+            int red=(((color>>16)&255)*alpha+((old>>16)&255)*(255-alpha))/255;
+            int green=(((color>>8)&255)*alpha+((old>>8)&255)*(255-alpha))/255;
+            int blue=((color&255)*alpha+(old&255)*(255-alpha))/255;
+            pixels[at]=(red<<16)|(green<<8)|blue;
+        }
+    }
     /** Linked Twin effect connects only two already visible physical actors. */
     private void renderPairedTether(Apparition a,Apparition b,double clock){
         for(int i=0;i<=24;i++){
@@ -1798,6 +1903,10 @@ public final class SceneRenderer {
         triangle(va,vb,vc,tint,material,1);
     }
     private void triangle(Vertex va,Vertex vb,Vertex vc,int tint,int material,double roomLevel){
+        triangle(va,vb,vc,tint,material,roomLevel,0,0);
+    }
+    private void triangle(Vertex va,Vertex vb,Vertex vc,int tint,int material,
+            double roomLevel,double wet,double snow){
         Point a=va.p,b=vb.p,c=vc.p;
         int color=tint;
         double x0=PsxPipeline.snap(renderWidth*.5+a.x/a.z*focal,psxPreset),y0=PsxPipeline.snap(renderHeight*.5-a.y/a.z*focal,psxPreset);
@@ -1831,6 +1940,15 @@ public final class SceneRenderer {
                 color=((tr*((tint>>16)&255)/255)<<16) |
                     ((tg*((tint>>8)&255)/255)<<8) |
                      (tb*(tint&255)/255);
+            }
+            if(wet>0||snow>0){
+                // Preserve the original scene texture. Wetness darkens it; snow
+                // whitens only exposed horizontal surfaces, not room walls.
+                double dark=1-.38*wet;
+                int red=(int)Math.min(255,((color>>16)&255)*dark*(1-snow)+224*snow);
+                int green=(int)Math.min(255,((color>>8)&255)*dark*(1-snow)+232*snow);
+                int blue=(int)Math.min(255,(color&255)*(dark+.02*wet)*(1-snow)+237*snow);
+                color=(red<<16)|(green<<8)|blue;
             }
             // Flashlight is a bounded near-field additive beam; turning room lights off
             // genuinely darkens distant geometry instead of only tinting a HUD icon.
