@@ -545,7 +545,9 @@ public final class InvestigationGame {
                 throw new IllegalArgumentException("Campaign assignment required only for story");
             this.campaignMode=campaignMode;
             this.chapter=chapter;
+            BeckenburgDeveloperTrace.caseStage("loading map geometry");
             map=new HouseMap(SiteCatalog.mapFor(site));
+            BeckenburgDeveloperTrace.caseStage("initializing soundscape");
             buildingSoundscape=new LevelSoundscape(map);
             callouts=new TeamCallout.Board(map);
             location=site;conditions=java.util.Objects.requireNonNull(mode);
@@ -578,6 +580,7 @@ public final class InvestigationGame {
             long roundSeed=campaignMode?campaignSeed:20261015L+ordinal;
             GhostIdentity.Type assigned=campaignMode?chapter.ghost():
                 CampaignStory.rollFreePlay(roundSeed);
+            BeckenburgDeveloperTrace.caseStage("initializing ghost and investigation session");
             session=new InvestigationSession(map,role,roundSeed,profile.level(role),assigned);
             session.configureWeather(weatherMode,selectedWeather,severity);
             session.configureParty(campaignMode&&withAssistant?2:1);
@@ -590,9 +593,12 @@ public final class InvestigationGame {
             scene.roomLightTick=0;
             scene.rackStock=profile.equipment();
             scene.rackInventory=VanRackStock.solo(profile,loadout);
+            BeckenburgDeveloperTrace.caseStage("rendering first scene");
             scene.draw(map,session,0,
                 assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
+            BeckenburgDeveloperTrace.caseStage("first scene complete; starting simulation timer");
             timer=new javax.swing.Timer(33,e->frame());timer.start();
+            BeckenburgDeveloperTrace.caseStage("active");
         }
         void close(){timer.stop();down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
         @Override public void doLayout(){
