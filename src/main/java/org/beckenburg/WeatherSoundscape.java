@@ -43,8 +43,8 @@ public final class WeatherSoundscape implements AutoCloseable {
     }
     static boolean hasRecordedLoop(EvidenceSignals.Weather weather){
         return switch(weather){
-            case RAIN,THUNDERSTORM->RAIN!=null;
-            case WIND->WIND!=null;
+            case DRIZZLE,RAIN,HEAVY_RAIN,THUNDERSTORM,SLEET,HAIL->RAIN!=null;
+            case OVERCAST,BLIZZARD,DUST_STORM,ASHFALL,WIND->WIND!=null;
             default->false;
         };
     }
@@ -52,8 +52,11 @@ public final class WeatherSoundscape implements AutoCloseable {
     static short playbackSample(EvidenceSignals.Weather weather,int intensity,
             boolean outside,long index){
         short procedural=sample(weather,intensity,outside,index);
-        short[] bed=weather==EvidenceSignals.Weather.WIND?WIND:
-            weather==EvidenceSignals.Weather.RAIN||weather==EvidenceSignals.Weather.THUNDERSTORM?RAIN:null;
+        short[] bed=switch(weather){
+            case OVERCAST,BLIZZARD,DUST_STORM,ASHFALL,WIND->WIND;
+            case DRIZZLE,RAIN,HEAVY_RAIN,THUNDERSTORM,SLEET,HAIL->RAIN;
+            default->null;
+        };
         if(bed==null)return procedural;
         double weatherGain=(outside?1:.23)*(.6+intensity*.35);
         int captured=bed[(int)(index%bed.length)];
@@ -83,10 +86,20 @@ public final class WeatherSoundscape implements AutoCloseable {
         double low=Math.sin(t*2*Math.PI*39)*.16+Math.sin(t*2*Math.PI*73)*.10;
         double bed=switch(weather){
             case CLEAR ->.045*gust*noise;
-            case FOG ->.045*noise+.1*gust*low;
-            case WIND ->.23*gust*noise+.34*low;
+            case OVERCAST ->.11*gust*noise+.15*low;
+            case DRIZZLE ->.16*noise+.05*low;
             case RAIN ->.32*noise+.07*low;
+            case HEAVY_RAIN ->.50*noise+.12*low;
+            case FOG ->.045*noise+.10*gust*low;
+            case DENSE_FOG ->.035*noise+.16*gust*low;
             case SNOW ->.09*gust*noise+.13*low;
+            case BLIZZARD ->.34*gust*noise+.34*low;
+            case SLEET ->.37*noise+.20*gust*low;
+            case HAIL ->.42*noise+.18*Math.sin(t*2*Math.PI*117);
+            case DUST_STORM ->.30*gust*noise+.28*low;
+            case ASHFALL ->.14*gust*noise+.22*low;
+            case MIASMA ->.07*noise+.16*Math.sin(t*2*Math.PI*31)+.07*Math.sin(t*2*Math.PI*53);
+            case WIND ->.23*gust*noise+.34*low;
             case HEATWAVE ->.065*noise+.10*Math.sin(t*2*Math.PI*210)*Math.sin(t*7);
             case THUNDERSTORM ->{
                 double cycle=t%17;
