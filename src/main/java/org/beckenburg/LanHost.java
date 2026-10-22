@@ -455,8 +455,8 @@ public final class LanHost implements AutoCloseable {
                         +"|"+peer.name+"|"+words);
                 }
                 case "VISUAL" -> {
-                    // The approved class selection also becomes host-authoritative gameplay
-                    // at mission start. The ghost is never sent Hunter class details.
+                    // Cosmetic selection is explicitly role-filtered. A ghost
+                    // never receives hunter costume metadata through this channel.
                     if(p.size()!=2||peer.slot>=HUNTERS||running)
                         throw new IllegalArgumentException("hunter appearance can be chosen only in lobby");
                     peer.hunterVisual=CharacterVisuals.hunter(p.get(1));
@@ -476,9 +476,6 @@ public final class LanHost implements AutoCloseable {
                         if(seats[i]==null||!seats[i].ready)
                             throw new IllegalArgumentException("configured hunter party must be ready");
                     if(seats[GHOST_SEAT]!=null&&!seats[GHOST_SEAT].ready)throw new IllegalArgumentException("ghost must be ready");
-                    for(int i=0;i<contract.hunters();i++)
-                        mission.configureHunterRole(i,CharacterVisuals.Hunter.valueOf(
-                            seats[i].hunterVisual.toUpperCase(java.util.Locale.ROOT)));
                     running=true;everStarted=true;tick=0;
                     notifyAllPeers("SITE|"+map.site().name()+"|"+map.level().revision());
                     notifyAllPeers("INFO|mission started with "+(seats[GHOST_SEAT]==null?"AI":"human")+" ghost");
@@ -2321,12 +2318,12 @@ public final class LanHost implements AutoCloseable {
                     // This feed is physically accessible at the van receiver,
                     // not an omniscient radio broadcast to field investigators.
                     boolean seen=powered&&insideVan(i)
-                        &&LanCameraSight.sees(map,camera,pose,ghost.manifested());
+                        &&LanCameraSight.sees(map,camera,pose,ghost.manifested(),ghostType,"a");
                     reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick));
                     if(ghostType.baseType()==GhostIdentity.Type.TWINS){
                         var echo=new TwinGhostPair.Member("b",twinCompanion.pose());
                         boolean second=powered&&insideVan(i)
-                            &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested());
+                            &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested(),ghostType,"b");
                         reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),
                             second,ghostType,tick));
                     }

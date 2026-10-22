@@ -30,6 +30,16 @@ public final class LanCameraSightTest {
             Math.floorMod(towards+180,360),EquipmentTiers.Tier.II);
         check(!LanCameraSight.sees(map,away,ghost,true),
             "Camera must not see behind its physical lens");
+        check(LanCameraSight.sees(map,camera,ghost,true,GhostIdentity.Type.SHADE,"a"),
+            "Shade body must intersect the actual camera frustum and wall-free lens");
+        check(LanCameraSight.sees(map,camera,ghost,true,GhostIdentity.Type.SPECTER,"a"),
+            "Specter must use the same real camera optics");
+        // A high-positioned lens with a short horizontal reach can point
+        // straight at the floor plan while the *entire figure* is offscreen.
+        var tooHigh=new LanVideoCameras.Camera(0,4,origin.x(),origin.y()+4.0,
+            origin.z(),towards,EquipmentTiers.Tier.I);
+        check(!LanCameraSight.sees(map,tooHigh,ghost,true,GhostIdentity.Type.SHADE,"a"),
+            "Offscreen ghost must not become visible just because its floor XZ is within FOV");
         String visible=LanCameraSight.frame(camera,"a",ghost,true,
             GhostIdentity.Type.SHADE,21);
         String hidden=LanCameraSight.frame(camera,"a",ghost,false,

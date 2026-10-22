@@ -95,6 +95,7 @@ TwinBodyVisualTest
 TwinCompanionAiTest
 TwinCompanionSharedActionTest
 LanCameraSightTest
+LanCameraOnlyGhostIntegrationTest
 LanTwinPlayerCompanionTest
 LanApparitionRenderTest
 LanApparitionIntegrationTest
@@ -132,7 +133,6 @@ LobbyGhostAvatarTest
 LanHunterNameplateTest
 LanPrivateHunterNamesTest
 LanHunterVisualNetworkTest
-LanHunterClassRulesTest
 LanChatTest
 LanChatIntegrationTest
 LanVoiceCodecTest

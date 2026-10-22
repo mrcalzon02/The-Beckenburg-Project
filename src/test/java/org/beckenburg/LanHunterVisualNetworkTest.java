@@ -53,12 +53,6 @@ public final class LanHunterVisualNetworkTest {
             a.client.ready();b.client.ready();ghost.client.ready();
             a.await("LOBBY|2|HUMAN|3|WAITING");
             a.client.start();a.await("INFO|mission started");
-            String clericState=a.await("PROGRESS|");
-            String demonState=b.await("PROGRESS|");
-            check(clericState.split("\\|")[3].equals("3"),
-                "Cleric must receive its third real ward at mission start");
-            check(demonState.split("\\|")[3].equals("2"),
-                "Demonologist must retain normal ward capacity");
             b.inbox.clear();
             b.client.view3D();b.await("ACCEPT|VIEW3D");
             check(b.await("VISUAL|0|cleric").equals("VISUAL|0|cleric"),

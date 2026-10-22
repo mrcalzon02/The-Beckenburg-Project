@@ -49,8 +49,6 @@ public final class LanCase {
     private int lastGuessTick=-1000;
     private final int[] health={100,100,100,100,100,100},stress=new int[6],wards={2,2,2,2,2,2};
     private final boolean[] active={true,true,true,false,false,false};
-    private final CharacterVisuals.Hunter[] hunterRoles=new CharacterVisuals.Hunter[6];
-    private final boolean[] roleAssigned=new boolean[6];
     private int sanityDrainRate=100,partyThreat;
     public void configurePartyThreat(int bonus){
         if(bonus<1||bonus>6)throw new IllegalArgumentException("party difficulty must be +1..+6");
@@ -65,16 +63,6 @@ public final class LanCase {
     public void configureHunters(int count){
         if(count<1||count>6||outcome!=Outcome.ACTIVE)throw new IllegalArgumentException("1-6 hunters required");
         for(int i=0;i<6;i++)active[i]=i<count;
-    }
-    /** Host binds the validated lobby class once. A reconnect cannot replenish charges. */
-    public void configureHunterRole(int seat,CharacterVisuals.Hunter role){
-        hunter(seat);
-        java.util.Objects.requireNonNull(role);
-        if(!active[seat]||outcome!=Outcome.ACTIVE||roleAssigned[seat])
-            throw new IllegalStateException("hunter role already assigned or inactive");
-        hunterRoles[seat]=role;
-        roleAssigned[seat]=true;
-        if(role==CharacterVisuals.Hunter.CLERIC)wards[seat]=3;
     }
     public void setStartingSanity(int value){
         if(value<0||value>100)throw new IllegalArgumentException("invalid starting sanity");
@@ -97,7 +85,6 @@ public final class LanCase {
         missionMap=java.util.Objects.requireNonNull(map);
         if(anchor<0||anchor>=HouseMap.INDOOR_ROOMS)throw new IllegalArgumentException("invalid anchor");
         this.anchor=anchor;
-        java.util.Arrays.fill(hunterRoles,CharacterVisuals.Hunter.OBSERVER);
     }
     private static void hunter(int seat){if(seat<0||seat>=6)throw new IllegalArgumentException("hunter seat required");}
     public Outcome outcome(){return outcome;}
@@ -313,7 +300,7 @@ public final class LanCase {
         if(outcome!=Outcome.ACTIVE||!active[seat]||health[seat]<=0)return new Report(false,"cannot ward now");
         if(wards[seat]<=0)return new Report(false,"no wards remaining");
         wards[seat]--;
-        stress[seat]=Math.max(0,stress[seat]-(hunterRoles[seat]==CharacterVisuals.Hunter.CLERIC?35:20));
+        stress[seat]=Math.max(0,stress[seat]-20);
         if(room==anchor)wardRoom=room;
         return new Report(true,room==anchor?"ANCHOR WARD PREPARED":"DEFENSIVE WARD PLACED");
     }
@@ -364,11 +351,8 @@ public final class LanCase {
             stress[i]=Math.min(100,stress[i]+drainRemainder[i]/10000);
             drainRemainder[i]%=10000;
             int physical=effect.harm()*(100+partyThreat*10)/100;
-            if(physical>0){
-                int wound=wardRoom==room?Math.min(4,physical)
-                    :hunterRoles[i]==CharacterVisuals.Hunter.CLERIC?Math.min(8,physical):physical;
-                health[i]=Math.max(0,health[i]-Math.max(1,wound));
-            }
+            if(physical>0)health[i]=Math.max(0,health[i]-
+                Math.max(1,wardRoom==room?Math.min(4,physical):physical));
         }
         if(ritualProgress>=0 && room==ritualRoom
                 &&(effect.action()==GhostDomain.Action.DISTURB
