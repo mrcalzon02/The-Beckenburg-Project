@@ -67,7 +67,8 @@ public final class CampaignStorePanel extends JPanel {
         try{
             boolean bought=offer.equipment()!=null?profile.purchaseEquipment(offer.equipment()):
                 profile.purchase(offer.kind(),offer.tier());
-            refresh();afterPurchase.run();
+            refresh();
+            if(bought)afterPurchase.run();
             return bought;
         }catch(IOException error){
             details.setText("Purchase could not be saved.\n"+error.getMessage());
