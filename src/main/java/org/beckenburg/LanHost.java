@@ -2325,13 +2325,15 @@ public final class LanHost implements AutoCloseable {
                     // This feed is physically accessible at the van receiver,
                     // not an omniscient radio broadcast to field investigators.
                     boolean seen=powered&&insideVan(i)
-                        &&LanCameraSight.sees(map,camera,pose,ghost.manifested(),ghostType,"a");
+                        &&LanCameraSight.sees(map,camera,pose,ghost.manifested(),ghostType,"a",
+                            signatureReveal);
                     reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick,
                         signatureReveal));
                     if(ghostType.baseType()==GhostIdentity.Type.TWINS){
                         var echo=new TwinGhostPair.Member("b",twinCompanion.pose());
                         boolean second=powered&&insideVan(i)
-                            &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested(),ghostType,"b");
+                            &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested(),ghostType,"b",
+                                signatureReveal);
                         reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),
                             second,ghostType,tick,signatureReveal));
                     }
