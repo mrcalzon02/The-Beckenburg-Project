@@ -261,6 +261,16 @@ public final class LanLobbyWindow extends JFrame {
         var weatherMode=new JComboBox<>(MissionWeather.Mode.values());
         weatherMode.setSelectedItem(custom.weatherMode());
         var weatherChoice=new JComboBox<>(MissionWeather.selectableWeather());
+        weatherChoice.setRenderer(new DefaultListCellRenderer(){
+            @Override public Component getListCellRendererComponent(JList<?> list,Object value,
+                    int index,boolean selected,boolean focus){
+                JLabel label=(JLabel)super.getListCellRendererComponent(
+                    list,value,index,selected,focus);
+                if(value instanceof EvidenceSignals.Weather weather)
+                    label.setText(MissionWeather.displayName(weather));
+                return label;
+            }
+        });
         weatherChoice.setSelectedItem(custom.fixedWeather());
         var weatherIntensity=spin(custom.weatherIntensity(),1,3,1);
         var sprint=new JComboBox<>(CustomContract.Sprint.values());
