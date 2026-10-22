@@ -15,6 +15,41 @@ public final class InvestigationSession {
     private final HouseMap map;
     private final Random random;
     private final Role role;
+    private final HunterDiscipline classSkills=new HunterDiscipline(1);
+    private CharacterVisuals.Hunter discipline(){return CharacterVisuals.Hunter.valueOf(role.name());}
+    public HunterDiscipline.Result classAbility(HunterDiscipline.Ability ability,double x,double y,double z){
+        if(outcome!=Outcome.ACTIVE||health<=0||!map.traversable(x,y,z))
+            return new HunterDiscipline.Result(false,"Cannot use discipline now");
+        HunterDiscipline.Result result=classSkills.activate(0,discipline(),ability,ticks);
+        if(!result.accepted())return result;
+        switch(ability){
+            case COMFORT -> stress=Math.max(0,stress-20);
+            case SURVEY -> {
+                log("SURVEY / "+rawEmfAt(x,y,z)+" / "+rawTemperatureAt(x,y,z)
+                    +" / field readings only, not verified evidence");
+            }
+            case INVOKE -> {
+                stress=Math.min(100,stress+16);
+                // An invocation risks the user, and can provoke a present ghost,
+                // but never exposes a remote true anchor or its species.
+                if(ghost.room()==map.roomAt(x,y,z))ghost.reveal(12);
+            }
+            default -> {}
+        }
+        log(ability.label+" / "+result.message());
+        return result;
+    }
+    /** Companion benefits use the same effect sizes as human abilities. */
+    public boolean companionSkill(HunterDiscipline.Ability ability,boolean nearPlayer){
+        if(outcome!=Outcome.ACTIVE||health<=0)return false;
+        switch(ability){
+            case COMFORT -> {if(nearPlayer)stress=Math.max(0,stress-20);}
+            case HALLOW -> {if(nearPlayer)classSkills.shareHallow(0,ticks);}
+            case INVOKE -> { /* The companion carries the risk, not the remote player. */ }
+            default -> {}
+        }
+        return true;
+    }
     private final String missionId=UUID.randomUUID().toString();
     private final int anchorRoom;
     private final int[] spectralTrace=new int[HouseMap.ROOM_COUNT];
@@ -201,10 +236,11 @@ public final class InvestigationSession {
             ||roomLights.brightness(playerRoom,ticks)>.32));
         int stressFromRoom=ambientSanity.advance(0,indoor,1,light,
             playerRoom==ghost.room(),GhostTraits.of(ghost.type()).charge());
-        if(stressFromRoom>0)stress=Math.min(100,stress+stressFromRoom);
+        if(stressFromRoom>0)stress=Math.min(100,stress+
+            classSkills.fear(0,discipline(),ticks,stressFromRoom));
         int feed=GhostTraits.passiveFear(ghost.type(),ticks,playerRoom==ghost.room()?1:0);
         if(feed>0){
-            stress=Math.min(100,stress+feed);
+            stress=Math.min(100,stress+classSkills.fear(0,discipline(),ticks,feed));
             if(ticks%90==0)log("Your sanity keeps draining. Something is feeding on your presence.");
         }
         if(ghost.room()>=0&&ghost.room()<spectralTrace.length){
@@ -255,7 +291,8 @@ public final class InvestigationSession {
                     };
                     if(effect!=null)roomLights.pulse(result.room(),effect,ticks);
                 }
-                if(result.fear()>0) stress=Math.min(100,stress+result.fear());
+                if(result.fear()>0) stress=Math.min(100,stress+
+                    classSkills.fear(0,discipline(),ticks,result.fear()));
                 // Only present events a hunter could plausibly hear in their current room.
                 if(playerRoom==result.room() && result.action()==GhostDomain.Action.WHISPER)
                     log("An indistinct whisper moves through "+map.roomName(playerRoom)+".");
@@ -263,7 +300,8 @@ public final class InvestigationSession {
                     log("Loose objects shudder in "+map.roomName(playerRoom)+".");
                 map.clutter().haunt(ghost.type(),result,List.of(clutterObserver),ticks);
                 if(result.harm()>0&&!hidden) {
-                    int wound=prepared?Math.min(result.harm(),4):role==Role.CLERIC?Math.min(result.harm(),8):result.harm();
+                    int wound=classSkills.harm(0,discipline(),ticks,
+                        prepared?Math.min(result.harm(),4):result.harm());
                     health=Math.max(0,health-wound);
                     log("A spectral strike! -"+wound+" health. Retreat, or use protective wards.");
                     if(health==0) finish(Outcome.LOST);
@@ -272,7 +310,7 @@ public final class InvestigationSession {
         }
         haunted=ghost.manifested();
         if(haunted && playerRoom==ghost.room() && ticks%10==0)
-            stress=Math.min(100,stress+1);
+            stress=Math.min(100,stress+classSkills.fear(0,discipline(),ticks,1));
     }
 
     /** In-hand use has real case effects. Only three evidence instruments count toward a cleansing. */
