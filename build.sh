@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 mkdir -p build
 rm -rf build/classes build/test
 mkdir -p build/classes build/test
-javac --release 17 -encoding UTF-8 -d build/classes src/main/java/org/beckenburg/*.java
+javac --release 17 -encoding UTF-8 -d build/classes src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/*.java
 # The shipped JAR and the test classpath must include the actual in-game sprite resource.
 test -s assets/runtime/directional-sprites.zip
 mkdir -p build/classes/org/beckenburg
@@ -251,6 +251,6 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldRenderTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanLobbyTest
 if [ -f src/test/java/org/beckenburg/SmokeTest.java ]; then java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SmokeTest; fi
-jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes org/beckenburg
+jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes org/beckenburg -C build/classes dev/mrcalzon/weather
 printf '%s\n' 'Built build/beckenburg-game.jar'
 if [ "${1:-}" = run ]; then java -jar build/beckenburg-game.jar; fi
