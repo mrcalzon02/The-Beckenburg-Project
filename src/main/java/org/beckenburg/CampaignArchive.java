@@ -42,7 +42,8 @@ public final class CampaignArchive {
             int xp,int before,int after){
         if(session.outcome()==InvestigationSession.Outcome.ACTIVE)
             throw new IllegalArgumentException("active case");
-        var source=session.journal(),journal=new ArrayList<String>();
+        var source=session.journal();
+        var journal=new ArrayList<String>();
         for(int i=Math.max(0,source.size()-12);i<source.size();i++){
             String line=source.get(i).replace("\n"," ").replace("\r"," ");
             journal.add(line.substring(0,Math.min(240,line.length())));
