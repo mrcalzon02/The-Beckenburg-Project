@@ -15,6 +15,35 @@ import java.util.Set;
 public final class ProfileStore {
     private final Path file;
     private int currency, experience;
+    // Optional schema-v1 campaign fields preserve all existing save files.
+    private boolean assistantHired;
+    private long campaignSerial;
+    private final java.util.EnumMap<SiteCatalog.Location,Integer> siteVisits=
+        new java.util.EnumMap<>(SiteCatalog.Location.class);
+    private final java.util.EnumMap<SiteCatalog.Location,Integer> siteClears=
+        new java.util.EnumMap<>(SiteCatalog.Location.class);
+    public static final int ASSISTANT_HIRE_COST=180;
+    public boolean assistantHired(){return assistantHired;}
+    public int visits(SiteCatalog.Location site){return siteVisits.getOrDefault(site,0);}
+    public int clears(SiteCatalog.Location site){return siteClears.getOrDefault(site,0);}
+    /** A single paid recruit arrives with their own issued thermometer. */
+    public boolean hireAssistant()throws IOException{
+        if(blocked)throw new IOException("Profile load failed; recruitment blocked");
+        if(assistantHired||currency<ASSISTANT_HIRE_COST)return false;
+        currency-=ASSISTANT_HIRE_COST;assistantHired=true;
+        try{save();}catch(IOException e){currency+=ASSISTANT_HIRE_COST;assistantHired=false;throw e;}
+        return true;
+    }
+    /** Durable dispatch serial: even restarts cannot silently repeat campaign seeds. */
+    public long nextCampaignSeed(SiteCatalog.Location site)throws IOException{
+        SiteCatalog.requirePlayable(site);
+        if(blocked)throw new IOException("Profile load failed; contract dispatch blocked");
+        long previous=campaignSerial;
+        if(previous==Long.MAX_VALUE)throw new IOException("Campaign contract serial exhausted");
+        campaignSerial++;
+        try{save();}catch(IOException e){campaignSerial=previous;throw e;}
+        return (campaignSerial*0x9E3779B97F4A7C15L)^((long)site.ordinal()<<43);
+    }
     private final Set<String> awarded=new HashSet<>();
     private boolean blocked;
     private final int[][] medicines=new int[2][3];
@@ -78,6 +107,17 @@ public final class ProfileStore {
             int xp=Integer.parseInt(p.getProperty("experience"));
             if(money<0||xp<0)throw new NumberFormatException("negative balance");
             currency=money;experience=xp;
+            assistantHired=Boolean.parseBoolean(p.getProperty("campaign.assistant","false"));
+            campaignSerial=Long.parseLong(p.getProperty("campaign.serial","0"));
+            if(campaignSerial<0)throw new NumberFormatException("negative campaign serial");
+            siteVisits.clear();siteClears.clear();
+            for(SiteCatalog.Location site:SiteCatalog.Location.values()){
+                int visits=Integer.parseInt(p.getProperty("campaign.visits."+site.name(),"0"));
+                int clears=Integer.parseInt(p.getProperty("campaign.clears."+site.name(),"0"));
+                if(visits<0||clears<0||clears>visits||visits>1000000)
+                    throw new NumberFormatException("invalid campaign results for "+site);
+                siteVisits.put(site,visits);siteClears.put(site,clears);
+            }
             for(FieldSupplies.Kind kind:FieldSupplies.Kind.values())
                 for(FieldSupplies.Tier tier:FieldSupplies.Tier.values()){
                     String key="supply."+kind+"."+tier;
@@ -122,15 +162,30 @@ public final class ProfileStore {
         return true;
     }
     public boolean addPayout(InvestigationSession session) throws IOException {
-        // Caller issues one award per unique mission instance; this is a local solo prototype.
+        return addPayout(session,null);
+    }
+    /** Campaign outcome and payout settle in ONE idempotent saved receipt. */
+    public boolean addPayout(InvestigationSession session,SiteCatalog.Location campaignSite) throws IOException {
+        if(campaignSite!=null)SiteCatalog.requirePlayable(campaignSite);
         if(session.outcome()==InvestigationSession.Outcome.ACTIVE)throw new IllegalStateException("mission unresolved");
         if(blocked)throw new IOException("Profile load failed; payouts blocked until recovery.");
         if(awarded.contains(session.missionId()))return false;
         int oldMoney=currency,oldXp=experience;
+        int oldVisits=campaignSite==null?0:visits(campaignSite);
+        int oldClears=campaignSite==null?0:clears(campaignSite);
         currency=Math.addExact(currency,session.payout());
         experience=Math.addExact(experience,session.outcome()==InvestigationSession.Outcome.CLEANSED?100:20);
         awarded.add(session.missionId());
-        try{save();}catch(IOException ex){currency=oldMoney;experience=oldXp;awarded.remove(session.missionId());throw ex;}
+        if(campaignSite!=null){
+            siteVisits.put(campaignSite,Math.addExact(oldVisits,1));
+            if(session.outcome()==InvestigationSession.Outcome.CLEANSED)
+                siteClears.put(campaignSite,Math.addExact(oldClears,1));
+        }
+        try{save();}catch(IOException ex){
+            currency=oldMoney;experience=oldXp;awarded.remove(session.missionId());
+            if(campaignSite!=null){siteVisits.put(campaignSite,oldVisits);siteClears.put(campaignSite,oldClears);}
+            throw ex;
+        }
         return true;
     }
     /**
@@ -164,6 +219,10 @@ public final class ProfileStore {
             // Candidate was already validated, so in-memory state can be updated without reopening.
             currency = candidate.currency;
             experience = candidate.experience;
+            assistantHired = candidate.assistantHired;
+            campaignSerial = candidate.campaignSerial;
+            siteVisits.clear();siteVisits.putAll(candidate.siteVisits);
+            siteClears.clear();siteClears.putAll(candidate.siteClears);
             blocked = false; // successful valid import can recover a previously corrupt profile
             awarded.clear(); awarded.addAll(candidate.awarded);
             purchasedEquipment.clear(); purchasedEquipment.addAll(candidate.purchasedEquipment);
@@ -180,6 +239,12 @@ public final class ProfileStore {
         Path tmp=Files.createTempFile(parent,"profile-",".tmp");
         try{
             Properties p=new Properties();p.setProperty("schema","1");
+            p.setProperty("campaign.assistant",Boolean.toString(assistantHired));
+            p.setProperty("campaign.serial",Long.toString(campaignSerial));
+            for(SiteCatalog.Location site:SiteCatalog.Location.values()){
+                p.setProperty("campaign.visits."+site.name(),Integer.toString(visits(site)));
+                p.setProperty("campaign.clears."+site.name(),Integer.toString(clears(site)));
+            }
             p.setProperty("currency",Integer.toString(currency));p.setProperty("experience",Integer.toString(experience));
             p.setProperty("awarded",String.join(",",new ArrayList<>(awarded)));
             for(EquipmentLoadout.Item item:EquipmentLoadout.Item.values())

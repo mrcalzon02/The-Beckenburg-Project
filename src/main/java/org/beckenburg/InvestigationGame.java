@@ -156,10 +156,8 @@ public final class InvestigationGame {
     private void showCampaign(){
         if(campaign!=null){cards.remove(campaign);campaign=null;}
         campaign=new CampaignBoardPanel(profile,new CampaignBoardPanel.Actions(){
-            @Override public void deploy(SiteCatalog.Location location){
-                SiteCatalog.requirePlayable(location);
-                locationPicker.setSelectedItem(location);
-                begin();
+            @Override public void deploy(SiteCatalog.Location location,boolean withAssistant){
+                beginCampaign(location,withAssistant);
             }
             @Override public void castle(){showCastle();}
             @Override public void tutorial(){showCastleOrientation();}
@@ -448,7 +446,20 @@ public final class InvestigationGame {
             "Import refused; your existing progress was not intentionally overwritten: "+ex.getMessage(),
             "Import failed",JOptionPane.ERROR_MESSAGE);}
     }
-    private void begin(){
+    private void beginCampaign(SiteCatalog.Location location,boolean withAssistant){
+        SiteCatalog.requirePlayable(location);
+        if(withAssistant&&!profile.assistantHired())throw new IllegalStateException("Assistant not hired");
+        try{
+            long seed=profile.nextCampaignSeed(location);
+            locationPicker.setSelectedItem(location);
+            begin(true,withAssistant,seed);
+        }catch(IOException failed){
+            JOptionPane.showMessageDialog(window,"Campaign dispatch could not be saved: "+failed.getMessage(),
+                "Contract unavailable",JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    private void begin(){begin(false,false,0);}
+    private void begin(boolean campaignMode,boolean withAssistant,long seed){
         if(game!=null){game.close();cards.remove(game);game=null;}
         if(ghostPractice!=null){ghostPractice.close();cards.remove(ghostPractice);ghostPractice=null;}
         caseNumber++;
@@ -458,7 +469,7 @@ public final class InvestigationGame {
             location,(SiteCatalog.Conditions)conditionsPicker.getSelectedItem(),
             (MissionWeather.Mode)weatherModePicker.getSelectedItem(),
             (EvidenceSignals.Weather)weatherPicker.getSelectedItem(),
-            (Integer)weatherSeverityPicker.getSelectedItem());
+            (Integer)weatherSeverityPicker.getSelectedItem(),campaignMode,withAssistant,seed);
         cards.add(game,"play");((CardLayout)cards.getLayout()).show(cards,"play");
         SwingUtilities.invokeLater(game::requestFocusInWindow);
     }
@@ -482,6 +493,8 @@ public final class InvestigationGame {
         private final SceneRenderer scene=new SceneRenderer();
         private final RoomLighting lights=new RoomLighting();
         private final InvestigationSession session;
+        private final boolean campaignMode;
+        private final CampaignAlly assistant;
         private final javax.swing.Timer timer;
         private final EquipmentLoadout loadout=new EquipmentLoadout();
         private final SiteCatalog.Location location;
@@ -507,8 +520,10 @@ public final class InvestigationGame {
         private double accumulator;
         GamePanel(InvestigationSession.Role role,int ordinal,SiteCatalog.Location site,
                 SiteCatalog.Conditions mode,MissionWeather.Mode weatherMode,
-                EvidenceSignals.Weather selectedWeather,int severity){
+                EvidenceSignals.Weather selectedWeather,int severity,
+                boolean campaignMode,boolean withAssistant,long campaignSeed){
             SiteCatalog.requirePlayable(site);
+            this.campaignMode=campaignMode;
             map=new HouseMap(SiteCatalog.mapFor(site));
             buildingSoundscape=new LevelSoundscape(map);
             callouts=new TeamCallout.Board(map);
@@ -525,8 +540,10 @@ public final class InvestigationGame {
             addKeyListener(this);addMouseMotionListener(mouseLook);addMouseListener(mouseLook);
             addFocusListener(mouseLook);addFocusListener(this);
             // Reproducible case seed, varies by session, no silent random site conversion.
-            session=new InvestigationSession(map,role,20261015L+ordinal);
+            session=new InvestigationSession(map,role,
+                campaignMode?campaignSeed:20261015L+ordinal);
             session.configureWeather(weatherMode,selectedWeather,severity);
+            assistant=campaignMode&&withAssistant?new CampaignAlly(map,session):null;
             session.connectLighting(lights);
             scene.setWeather(session.weather());
             atmosphere.setWeather(session.weather());
@@ -534,7 +551,8 @@ public final class InvestigationGame {
             scene.roomLightTick=0;
             scene.rackStock=profile.equipment();
             scene.rackInventory=VanRackStock.solo(profile,loadout);
-            scene.draw(map,session,0);
+            scene.draw(map,session,0,
+                assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
             timer=new javax.swing.Timer(33,e->frame());timer.start();
         }
         void close(){timer.stop();down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
@@ -635,6 +653,7 @@ public final class InvestigationGame {
             while(accumulator>=.1){
                 session.clutterLook(scene.yaw,scene.pitch);
                 session.tick(scene.x,feetY(),scene.z,scene.lamp);
+                if(assistant!=null)assistant.advance(scene.x,feetY(),scene.z);
                 if(!map.clutter().drainNoises().isEmpty())GameSfx.play(LanSound.Cue.IMPACT);
                 int activity=monitor.sample(session.ticks(),session.ghostEnergy());
                 if(session.ticks()%12==0){
@@ -648,7 +667,9 @@ public final class InvestigationGame {
             atmosphere.setWeather(session.weather());
             GraphicsOptions.current().configure(scene,getWidth(),getHeight(),true);
             scene.rackInventory=VanRackStock.solo(profile,loadout);
-            scene.draw(map,session,frameCount++/30.0);repaint();
+            scene.draw(map,session,frameCount++/30.0,
+                assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
+            repaint();
             if(session.outcome()==InvestigationSession.Outcome.LOST){
                 timer.stop();endCase("You were overcome. The case remains open.");
             }
@@ -656,7 +677,7 @@ public final class InvestigationGame {
         private void endCase(String details){
             if(claimSaved){return;}claimSaved=true;
             String result=details+"\nMission: "+session.outcome()+"\nCompensation: £"+session.payout();
-            try{profile.addPayout(session);}catch(IOException | ArithmeticException ex){result+="\nWARNING: profile could not be saved: "+ex.getMessage();}
+            try{profile.addPayout(session,campaignMode?location:null);}catch(IOException | ArithmeticException ex){result+="\nWARNING: profile could not be saved: "+ex.getMessage();}
             JOptionPane.showMessageDialog(window,result,"Case report",JOptionPane.INFORMATION_MESSAGE);
             SwingUtilities.invokeLater(InvestigationGame.this::returnHome);
         }
@@ -718,6 +739,17 @@ public final class InvestigationGame {
                 loadout.select(key-KeyEvent.VK_1);
                 GameSfx.play(LanSound.Cue.SELECT);
             }
+            if(key==KeyEvent.VK_U&&assistant!=null){
+                if(assistant.order()==CampaignAlly.Order.FOLLOW)assistant.hold();
+                else assistant.follow();
+                showVanNotice("Assistant: "+assistant.report());
+            }
+            if(key==KeyEvent.VK_I&&assistant!=null){
+                showVanNotice(assistant.readThermometer());
+            }
+            if(key==KeyEvent.VK_P&&assistant!=null){
+                orderAssistantZone();
+            }
             if(key==KeyEvent.VK_F){
                 scene.lamp=!scene.lamp;
                 GameSfx.play(scene.lamp?LanSound.Cue.DEVICE_ON:LanSound.Cue.DEVICE_OFF);
@@ -751,6 +783,20 @@ public final class InvestigationGame {
             if(key==KeyEvent.VK_M){mapShown=!mapShown;down.clear();mouseLook.release();GameSfx.play(LanSound.Cue.BOOK);}
             if(key==KeyEvent.VK_X && session.extract(scene.x,feetY(),scene.z)) {timer.stop();endCase("Extraction processed.");return;}
             down.add(key);repaint();
+        }
+        private void orderAssistantZone(){
+            timer.stop();down.clear();mouseLook.release();
+            String[] zones=new String[HouseMap.ROOM_COUNT];
+            for(int i=0;i<zones.length;i++)zones[i]=i+"  /  "+map.roomName(i);
+            Object selected=JOptionPane.showInputDialog(window,
+                "Assistant destination","FIELD ORDER",JOptionPane.PLAIN_MESSAGE,
+                null,zones,zones[currentRoom()<0?0:currentRoom()]);
+            if(selected!=null){
+                int room=Integer.parseInt(selected.toString().split("  /  ")[0]);
+                assistant.investigate(room);
+                showVanNotice(assistant.report());
+            }
+            last=System.nanoTime();timer.start();requestFocusInWindow();
         }
         private InteractionFocus.Target focusTarget(){
             return InteractionFocus.pick(map,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,!session.hidden()&&session.health()>0,HunterPosture.eye(session.crouched())),VanRackStock.solo(profile,loadout));
@@ -849,6 +895,16 @@ public final class InvestigationGame {
                     g.setColor(new Color(14,19,25,228));
                     g.fillRoundRect(12,88,Math.min(width-24,610),30,7,7);
                     g.setColor(new Color(182,218,205));g.drawString(msg,23,108);
+                }
+                if(assistant!=null){
+                    g.setColor(new Color(13,20,27,224));
+                    g.fillRoundRect(12,157,Math.min(width-24,685),39,7,7);
+                    g.setColor(new Color(169,224,193));
+                    g.drawString("ALLY  "+assistant.order()+"  /  "+map.roomName(assistant.room())+
+                        "  /  U follow/hold  I thermometer  P destination",23,173);
+                    g.setColor(new Color(210,218,202));
+                    String observed=assistant.report();
+                    g.drawString(observed.substring(0,Math.min(88,observed.length())),23,190);
                 }
                 if(lastPing!=null && callouts.visible(session.ticks()).contains(lastPing)){
                     g.setColor(new Color(238,196,109));

@@ -1,6 +1,8 @@
 package org.beckenburg;
 
 import java.nio.file.Path;
+import java.nio.file.Files;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.swing.*;
 
@@ -16,6 +18,9 @@ public final class CampaignBoardPanelTest {
         }return null;
     }
     public static void main(String[] args)throws Exception{
+        Path temp=Files.createTempDirectory("beckenburg-campaign-board").resolve("career.properties");
+        var profile=new ProfileStore(temp);
+        profile.addNetworkPayout(UUID.randomUUID(),ProfileStore.ASSISTANT_HIRE_COST+70,0);
         SwingUtilities.invokeAndWait(()->{
             var data=CampaignBoardPanel.catalog();
             ok(data.size()==22,"nine base families plus thirteen remote concepts");
@@ -23,21 +28,35 @@ public final class CampaignBoardPanelTest {
             ok(data.stream().filter(CampaignBoardPanel.Entry::playable).count()>=1,"real map exists");
             ok(data.stream().filter(x->x.map()==null).noneMatch(CampaignBoardPanel.Entry::playable),"remote concepts locked");
             AtomicInteger launches=new AtomicInteger();
-            CampaignBoardPanel board=new CampaignBoardPanel(new ProfileStore(Path.of("test-profile-not-used")),
+            java.util.concurrent.atomic.AtomicBoolean deployedAssistant=new java.util.concurrent.atomic.AtomicBoolean();
+            CampaignBoardPanel board=new CampaignBoardPanel(profile,
                 new CampaignBoardPanel.Actions(){
-                    @Override public void deploy(SiteCatalog.Location map){
-                        ok(map.playable(),"only authorized geometry");launches.incrementAndGet();}
+                    @Override public void deploy(SiteCatalog.Location map,boolean withAssistant){
+                        ok(map.playable(),"only authorized geometry");
+                        deployedAssistant.set(withAssistant);
+                        launches.incrementAndGet();}
                     @Override public void castle(){}
                     @Override public void tutorial(){}
                 });
             JList<?> list=named(board,"campaign.contracts",JList.class);
             JButton deploy=named(board,"campaign.deploy",JButton.class);
-            ok(list!=null&&deploy!=null,"direct UI controls present");
+            JButton recruit=named(board,"campaign.recruit",JButton.class);
+            JCheckBox assistant=named(board,"campaign.assistant",JCheckBox.class);
+            ok(list!=null&&deploy!=null&&recruit!=null&&assistant!=null,
+                "direct campaign and companion controls present");
+            ok(recruit.isEnabled()&&!assistant.isEnabled(),
+                "Owned currency funds a real recruit, not an already-deployed ally");
+            recruit.doClick();
+            ok(profile.assistantHired()&&assistant.isEnabled()&&assistant.isSelected(),
+                "Recruit transaction must enable the actual AI slot");
             list.setSelectedIndex(9);ok(!deploy.isEnabled(),"Blackpine planned, no deploy");
             deploy.doClick();ok(launches.get()==0,"disabled dispatch blocked");
             list.setSelectedIndex(0);ok(deploy.isEnabled(),"house can deploy");
-            deploy.doClick();ok(launches.get()==1,"real playable map dispatch");
+            deploy.doClick();
+            ok(launches.get()==1&&deployedAssistant.get(),
+                "Real playable map dispatch includes the hired companion");
         });
-        System.out.println("PASS campaign board locked concepts and working deployment callback");
+        Files.deleteIfExists(temp);Files.deleteIfExists(temp.getParent());
+        System.out.println("PASS campaign board has playable contracts, persistent recruit and actual companion dispatch");
     }
 }

@@ -295,6 +295,28 @@ public final class InvestigationSession {
         };
     }
 
+    /**
+     * An embodied AI technician may read only the air at its real position.
+     * This uses exactly the player's thermometer physics but never writes a
+     * journal entry, labels evidence, or reveals a hidden ghost identity.
+     */
+    public String rawTemperatureAt(double x,double y,double z){
+        if(outcome!=Outcome.ACTIVE||!map.traversable(x,y,z))return null;
+        int room=map.roomAt(x,y,z);
+        if(room<0)return null;
+        int age=ticks-lastEvidenceTick;
+        int power=age>=0&&age<=40&&lastEvidenceRoom==room
+            ?Math.max(0,lastEvidenceStrength-age/7):0;
+        boolean indoor=room<HouseMap.INDOOR_ROOMS;
+        boolean heated=roomLights==null||roomLights.breaker();
+        var location=new EvidenceSignals.Location(season,missionWeather.state().weather(),
+            14,room,indoor,heated);
+        var measured=EvidenceSignals.temperature(evidenceSeed,ticks,location,
+            thermalPolarity,room==anchorRoom,power,missionWeather.state().intensity());
+        return "Air "+measured.displayText(EvidenceSignals.Unit.CELSIUS)
+            +" / "+measured.displayText(EvidenceSignals.Unit.FAHRENHEIT);
+    }
+
     /** Environmental measurements mirror the LAN's numeric evidence model. */
     /** A valid scan ALWAYS produces a measurement and a journal entry. */
     public boolean scan(Instrument tool, double x, double z) {
@@ -316,14 +338,7 @@ public final class InvestigationSession {
                 reading="EMF "+measured.level()+"/10";
             }
             case THERMOMETER -> {
-                boolean indoor=room<HouseMap.INDOOR_ROOMS;
-                boolean heated=roomLights==null||roomLights.breaker();
-                var location=new EvidenceSignals.Location(season,missionWeather.state().weather(),
-                    14,room,indoor,heated);
-                var measured=EvidenceSignals.temperature(evidenceSeed,ticks,location,
-                    thermalPolarity,room==anchorRoom,eventPower,missionWeather.state().intensity());
-                reading="Air "+measured.displayText(EvidenceSignals.Unit.CELSIUS)
-                    +" / "+measured.displayText(EvidenceSignals.Unit.FAHRENHEIT);
+                reading=rawTemperatureAt(x,y,z);
             }
             case SPIRIT_BOX -> reading=room==ghost.room()
                 ?"Voice response detected":"No response detected";

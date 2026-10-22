@@ -8,7 +8,7 @@ import java.util.Objects;
 /** Compact campaign contract browser. Only genuine SiteCatalog maps can deploy. */
 public final class CampaignBoardPanel extends JPanel {
     public interface Actions {
-        void deploy(SiteCatalog.Location location);
+        void deploy(SiteCatalog.Location location,boolean withAssistant);
         void castle();
         void tutorial();
     }
@@ -45,6 +45,8 @@ public final class CampaignBoardPanel extends JPanel {
     private final JLabel status=new JLabel();
     private final JTextArea dossier=new JTextArea();
     private final JButton deploy=button("DEPLOY SELECTED CASE");
+    private final JButton recruit=button("HIRE FIELD ASSISTANT  /  £"+ProfileStore.ASSISTANT_HIRE_COST);
+    private final JCheckBox bringAssistant=new JCheckBox("Deploy assistant");
     private final JLabel account=new JLabel();
     private final ProfileStore profile;
     private final Actions actions;
@@ -94,12 +96,29 @@ public final class CampaignBoardPanel extends JPanel {
         JButton tutorial=button("CASTLE ORIENTATION");
         JButton back=button("RETURN TO CASTLE");
         deploy.setName("campaign.deploy");
-        controls.add(deploy);controls.add(tutorial);controls.add(back);
+        recruit.setName("campaign.recruit");
+        bringAssistant.setName("campaign.assistant");
+        bringAssistant.setOpaque(false);
+        bringAssistant.setForeground(PAPER);
+        bringAssistant.setSelected(profile.assistantHired());
+        controls.add(deploy);controls.add(bringAssistant);controls.add(recruit);
+        controls.add(tutorial);controls.add(back);
         footer.add(controls,BorderLayout.SOUTH);add(footer,BorderLayout.SOUTH);
         contracts.addListSelectionListener(event->{if(!event.getValueIsAdjusting())updateSelection();});
         deploy.addActionListener(event->{
             Entry entry=contracts.getSelectedValue();
-            if(entry!=null&&entry.playable())actions.deploy(entry.map());
+            if(entry!=null&&entry.playable())
+                actions.deploy(entry.map(),bringAssistant.isSelected()&&profile.assistantHired());
+        });
+        recruit.addActionListener(event->{
+            try{
+                if(profile.hireAssistant()){
+                    bringAssistant.setSelected(true);
+                    refreshLedger();
+                }
+            }catch(java.io.IOException failed){
+                status.setText("Recruitment was not saved: "+failed.getMessage());
+            }
         });
         tutorial.addActionListener(event->actions.tutorial());
         back.addActionListener(event->actions.castle());
@@ -107,16 +126,22 @@ public final class CampaignBoardPanel extends JPanel {
         contracts.setSelectedIndex(0);
     }
     public void refreshLedger(){
-        account.setText("CURRENT PROFILE   £"+profile.currency()+"   /   XP "+profile.experience()
-            +"    •    Campaign progression and hired allies: not implemented");
+        account.setText("LEDGER  £"+profile.currency()+"  /  XP "+profile.experience()+
+            "  /  "+(profile.assistantHired()?"1 field assistant retained":"No active recruits"));
+        recruit.setEnabled(!profile.assistantHired()&&profile.currency()>=ProfileStore.ASSISTANT_HIRE_COST);
+        if(profile.assistantHired())recruit.setText("ASSISTANT RECRUITED");
+        bringAssistant.setEnabled(profile.assistantHired());
+        updateSelection();
     }
     private void updateSelection(){
         Entry entry=contracts.getSelectedValue();
         boolean ready=entry!=null&&entry.playable();
         deploy.setEnabled(ready);
         if(entry==null){dossier.setText("");status.setText("SELECT A CONTRACT");return;}
+        String progress=entry.map()==null?"": "\n\nVISITS   "+profile.visits(entry.map())+
+            "   /   CLEARED   "+profile.clears(entry.map());
         dossier.setText(entry.name()+"\n\nREGION   "+entry.region()+
-            "\n\n"+entry.dossier()+
+            progress+"\n\n"+entry.dossier()+
             "\n\n"+(ready?"Playable investigation. Deployment uses your currently selected discipline and conditions.":
             "Concept only. This site cannot be deployed until unique geometry, rituals, evidence and navigation pass acceptance."));
         dossier.setCaretPosition(0);

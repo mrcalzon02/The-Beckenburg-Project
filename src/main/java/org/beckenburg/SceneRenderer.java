@@ -5,6 +5,7 @@ import java.awt.image.DataBufferInt;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /** True perspective-triangle software rasterizer, depth tested at a period-appropriate 320x200. */
 public final class SceneRenderer {
@@ -1540,6 +1541,11 @@ public final class SceneRenderer {
         render(map,-1,apparition!=null,-1,-1,clock,others,apparition,markers);
     }
     public void draw(HouseMap map,InvestigationSession session,double clock){
+        draw(map,session,clock,List.of());
+    }
+    public void draw(HouseMap map,InvestigationSession session,double clock,
+            List<RemoteBody> allies){
+        Objects.requireNonNull(allies);
         boolean visible=session.outcome()==InvestigationSession.Outcome.ACTIVE
                 &&session.ghostManifesting();
         int room=session.ghostRoom();
@@ -1561,7 +1567,7 @@ public final class SceneRenderer {
         // Solo mode has room-based manifestation authority rather than a LAN
         // world pose. Preserve that placement, but render the actual archetype.
         render(map,room,visible,
-            session.wardPrepared()?session.anchorRoom():-1,-1,clock,List.of(),figure,session.counterMarks());
+            session.wardPrepared()?session.anchorRoom():-1,-1,clock,allies,figure,session.counterMarks());
     }
     /** Spectral viewpoint: only a room-local sensed hunter is rendered. */
     public void drawPractice(HouseMap map,int visibleHunterRoom,double clock){
