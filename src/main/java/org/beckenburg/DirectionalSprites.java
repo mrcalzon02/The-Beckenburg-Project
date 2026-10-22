@@ -132,6 +132,8 @@ public final class DirectionalSprites {
     public static int frameCount(){return IMAGES.size();}
     public static BufferedImage frame(String character,int facing){
         if(facing<0||facing>=8)throw new IllegalArgumentException("facing must be 0..7");
+        if(GhostManifestationVisual.UNREVEALED.equals(character))
+            return GhostManifestationVisual.frame();
         String direction=(CharacterVisuals.isHunter(character)||CharacterVisuals.isElder(character)
                 ||CharacterVisuals.isTwinActor(character))?MASTER_FACINGS[facing]:FACINGS[facing];
         String identity=character!=null&&character.startsWith("ancient_twins_")
@@ -145,6 +147,8 @@ public final class DirectionalSprites {
      */
     public static BufferedImage frame(String character,int facing,LanGhostAnimation.Phase phase,int animationFrame){
         if(facing<0||facing>=8||phase==null)throw new IllegalArgumentException("invalid facing/phase");
+        if(GhostManifestationVisual.UNREVEALED.equals(character))
+            return GhostManifestationVisual.frame();
         // The full 23-identity atlas already includes ten separately green-tinted
         // Ancient appearances. Use their actual packaged art before considering a
         // source fallback; stripping ancient_ would incorrectly draw the base ghost.

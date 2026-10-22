@@ -1569,17 +1569,20 @@ public final class SceneRenderer {
         int room=session.ghostRoom();
         GhostIdentity.Type type=session.ghostVisualType();
         boolean twins=type.baseType()==GhostIdentity.Type.TWINS;
+        boolean signatureReveal=session.ghostSignatureVisible();
         Apparition figure=visible?new Apparition(
                 map.centerX(room),map.floorY(room),map.centerZ(room),
-                LanGhostAnimation.Phase.LURK,0,0,false,type.ancient(),
+                signatureReveal?LanGhostAnimation.Phase.SIGNATURE:LanGhostAnimation.Phase.LURK,
+                0,0,false,signatureReveal&&type.ancient(),
                 twins?(type.ancient()?"ancient_twins_a":"twins_a"):CharacterVisuals.ghost(type)):null;
         if(visible&&twins){
             var primary=new LanGhostSpatial.Pose(room,map.centerX(room),
                 map.floorY(room),map.centerZ(room),0);
             var secondary=TwinGhostPair.position(map,primary,(int)Math.floor(clock*10)).get(1).pose();
             setAdditionalGhostBodies(List.of(new Apparition(
-                secondary.x(),secondary.y(),secondary.z(),LanGhostAnimation.Phase.LURK,
-                secondary.heading(),0,false,type.ancient(),
+                secondary.x(),secondary.y(),secondary.z(),
+                signatureReveal?LanGhostAnimation.Phase.SIGNATURE:LanGhostAnimation.Phase.LURK,
+                secondary.heading(),0,false,signatureReveal&&type.ancient(),
                 type.ancient()?"ancient_twins_b":"twins_b")));
         }else setAdditionalGhostBodies(List.of());
         // Solo mode has room-based manifestation authority rather than a LAN
@@ -1694,13 +1697,15 @@ public final class SceneRenderer {
             if(apparition!=null&&apparition.orb()){
                 renderSpiritOrb(gx,gz,(apparition==null?map.floorY(ghostRoom):apparition.y())+.98+.18*Math.sin(clock*4),clock,apparition.greenTint());
             }else{
-                String appearance=apparition==null?"banshee":apparition.appearance();
+                String appearance=GhostManifestationVisual.appearance(
+                    apparition==null?"banshee":apparition.appearance(),phase);
                 CharacterVisuals.Shape shape=CharacterVisuals.shape(appearance);
                 DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,gx,gz,
                     apparition==null?0:apparition.heading(),
                     appearance,shape.height()*stature,shape.width(),
                     (apparition==null?map.floorY(ghostRoom):apparition.y())-(eyeHeight-1.62)+.09*Math.sin(clock*3)+lift,alpha,lamp,renderWidth,renderHeight,focal,
-                    apparition!=null&&apparition.greenTint(),phase,
+                    apparition!=null&&apparition.greenTint()
+                        &&GhostManifestationVisual.revealsIdentity(phase),phase,
                     Math.floorMod((int)Math.floor(clock*10),4));
             }
         }
@@ -1710,11 +1715,15 @@ public final class SceneRenderer {
             if(companion.orb()){
                 renderSpiritOrb(companion.x(),companion.z(),companion.y()+.98,clock,companion.greenTint());
             }else{
-                CharacterVisuals.Shape shape=CharacterVisuals.shape(companion.appearance());
+                String appearance=GhostManifestationVisual.appearance(
+                    companion.appearance(),companion.phase());
+                CharacterVisuals.Shape shape=CharacterVisuals.shape(appearance);
                 DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,companion.x(),companion.z(),
-                    companion.heading(),companion.appearance(),shape.height(),shape.width(),
+                    companion.heading(),appearance,shape.height(),shape.width(),
                     companion.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal,
-                    companion.greenTint(),companion.phase(),0);
+                    companion.greenTint()
+                        &&GhostManifestationVisual.revealsIdentity(companion.phase()),
+                    companion.phase(),0);
             }
         }
         if(apparition!=null&&CharacterVisuals.isTwinActor(apparition.appearance())

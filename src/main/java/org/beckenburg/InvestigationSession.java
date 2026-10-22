@@ -59,6 +59,7 @@ public final class InvestigationSession {
     private final AmbientSanity ambientSanity=new AmbientSanity();
     private final GhostDomain.AiController ghostAi;
     private boolean prepared, haunted, rewarded;
+    private int signatureAppearanceUntil=-1;
     private boolean hidden,shrubHidden,crouched;
     public boolean crouched(){return crouched;}
     public boolean posture(boolean low,double x,double y,double z){
@@ -169,6 +170,10 @@ public final class InvestigationSession {
     public boolean hasEvidence(Instrument instrument) { return measuredTools.contains(instrument); }
     public boolean wardPrepared() { return prepared; }
     public boolean ghostManifesting() { return haunted; }
+    /** Cosmetic-only temporary authorization; never an evidence confirmation. */
+    public boolean ghostSignatureVisible() {
+        return haunted && ticks<=signatureAppearanceUntil;
+    }
     public Outcome outcome() { return outcome; }
     public String message() { return message; }
     public List<String> journal() { return Collections.unmodifiableList(journal); }
@@ -229,6 +234,8 @@ public final class InvestigationSession {
         if(command!=null) {
             GhostDomain.Resolution result=ghost.dispatch(command);
             if(result.applied()) {
+                if(result.action()==GhostDomain.Action.SIGNATURE)
+                    signatureAppearanceUntil=ticks+9;
                 map.fixtures().witness(result,ticks,-1);
                 LanSound.Cue sound=switch(result.action()){
                     case DRIFT->LanSound.Cue.GHOST_DRIFT;
