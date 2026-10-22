@@ -44,7 +44,7 @@ public final class LanCaseFileIntegrationTest {
             ok(LanEvidenceJournal.Entry.decode(d.await("CASEFILE|")).finding()
                     ==LanEvidenceJournal.Finding.OBSERVED,"third hunter receives weak reading");
             for(int room:new int[]{11,8,5,4}){
-                h.client.move(room);h.await("ACCEPT|MOVE|"+room);
+                LanTestRoomTravel.move(h.client,h::await,room);
             }
             h.client.scan(LanCase.Tool.THERMOMETER);
             h.await("ACCEPT|SCAN|READING");
