@@ -119,7 +119,9 @@ public final class LanSound {
         double dx=sourceX-listener.x(),dy=sourceY-listener.y(),dz=sourceZ-listener.z();
         double horizontal=Math.hypot(dx,dz),distance=Math.sqrt(dx*dx+dy*dy+dz*dz);
         // Nearby sounds remain useful; distance and material both lower their perceptibility.
-        int gain=(int)Math.round(cue.baseGain-absorption*11-Math.max(0,distance-2)*2.0);
+        int gain=(int)Math.round(cue.baseGain-absorption*11-
+            Math.max(0,distance-2)*2.0+
+            RoomAcousticPresets.eventGain(map.level(),sourceRoom,listener.room()));
         if(gain<12)return null;
         gain=Math.min(100,gain);
         double angle=Math.toRadians(listener.heading());

@@ -653,6 +653,19 @@ public final class InvestigationGame {
             while(accumulator>=.1){
                 session.clutterLook(scene.yaw,scene.pitch);
                 session.tick(scene.x,feetY(),scene.z,scene.lamp);
+                var listener=new LanWorld.Body(scene.x,feetY(),scene.z,
+                    Math.floorMod((int)Math.round(Math.toDegrees(scene.yaw)),360),
+                    currentRoom());
+                for(var cue:session.drainWorldSounds()){
+                    GameSfx.playAt(map,listener,cue.room(),cue.x(),cue.y(),cue.z(),
+                        cue.cue(),cue.tick(),session.weather());
+                    if(assistant!=null){
+                        var heard=LanSound.project(map,assistant.listener(),cue.room(),
+                            cue.x(),cue.y(),cue.z(),cue.cue(),cue.tick());
+                        assistant.hear(LanSound.weatherMask(heard,session.weather(),
+                            map.outside(cue.room())||map.outside(assistant.room())));
+                    }
+                }
                 if(assistant!=null)assistant.advance(scene.x,feetY(),scene.z);
                 if(!map.clutter().drainNoises().isEmpty())GameSfx.play(LanSound.Cue.IMPACT);
                 int activity=monitor.sample(session.ticks(),session.ghostEnergy());

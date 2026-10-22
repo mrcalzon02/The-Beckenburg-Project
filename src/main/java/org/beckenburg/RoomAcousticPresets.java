@@ -97,6 +97,23 @@ public final class RoomAcousticPresets {
         return Math.max(0,Math.min(5,(int)Math.round(
             type.transientGain*1.6+(powered?type.powerGain*18:0))));
     }
+    /** Hard rooms reflect an event; furnishings absorb it. The independent
+     * level soundscape supplies the room's continuous acoustic tail. */
+    public static int eventGain(LevelDefinition level,int source,int listener){
+        return (reflection(forRoom(level,source))+reflection(forRoom(level,listener)))/2;
+    }
+    private static int reflection(Type type){
+        return switch(type){
+            case SOFT_BEDROOM,LIBRARY->-9;
+            case TIMBER_LIVING,CLASSROOM->-3;
+            case KITCHEN,WET_TILE->2;
+            case CORRIDOR,CELLAR->4;
+            case STONE_HALL->7;
+            case MECHANICAL->1;
+            case GENERIC,MEDICAL_WARD->0;
+            case OUTDOOR->-4;
+        };
+    }
     /** Source-level gain, never a supernatural signature. */
     public static int microphoneLevel(LevelDefinition level,int room,int raw){
         if(raw<1||raw>10)throw new IllegalArgumentException("invalid source gain");

@@ -26,6 +26,18 @@ public final class GameSfx {
         Player.AUDIO.play(new LanSound.CueEvent(cue,0,
             footstepVolume(cue),0));
     }
+    /** Actual solo world events use the same heading/elevation/door/room
+     * projector as multiplayer. UI clicks still use local non-positional audio. */
+    public static void playAt(HouseMap map,LanWorld.Body listener,
+            int room,double x,double y,double z,LanSound.Cue source,int tick,
+            MissionWeather.State weather){
+        if(Boolean.getBoolean("beckenburg.audio.mute"))return;
+        LanSound.CueEvent event=LanSound.project(map,listener,room,x,y,z,source,tick);
+        if(event==null)return;
+        event=LanSound.weatherMask(event,weather,
+            map.outside(room)||map.outside(listener.room()));
+        if(event!=null)Player.AUDIO.play(event);
+    }
     public static void fixtureState(HauntedFixtures.State source){Player.AUDIO.fixtureState(source);}
     public static void fixtureSound(HauntedFixtures.State source,LanSound.CueEvent cue){Player.AUDIO.playFixture(source,cue);}
     public static void clearFixtures(){Player.AUDIO.clearFixtures();}

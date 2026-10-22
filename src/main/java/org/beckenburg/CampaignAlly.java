@@ -28,6 +28,24 @@ public final class CampaignAlly {
     public int room(){return map.roomAt(position.x(),position.y(),position.z());}
     public Order order(){return order;}
     public String report(){return report;}
+    /** Hearing uses only the exact SOUND cue a human ear could receive.
+     * The companion never sees the Ghost controller or automatically confirms clues.
+     */
+    public LanWorld.Body listener(){
+        return new LanWorld.Body(position.x(),position.y(),position.z(),heading,room());
+    }
+    public void hear(LanSound.CueEvent sound){
+        if(sound==null)return;
+        String direction=sound.pan()>25?"right":sound.pan()<-25?"left":"ahead";
+        boolean danger=sound.cue().tier()==LanSound.Tier.DANGEROUS
+            ||sound.cue().tier()==LanSound.Tier.SIGNATURE;
+        if(danger&&order==Order.INVESTIGATE){
+            order=Order.FOLLOW;destination=-1;
+        }
+        report="T"+sound.tick()+" / "+map.roomName(room())+
+            " / heard "+sound.cue().caption().toLowerCase(java.util.Locale.ROOT)+
+            " ("+direction+")"+(danger?" / regrouping":"");
+    }
     public int destination(){return destination;}
     public void follow(){order=Order.FOLLOW;destination=-1;report="Following investigator."; }
     public void hold(){order=Order.HOLD;destination=-1;report="Holding at "+map.roomName(room())+"."; }

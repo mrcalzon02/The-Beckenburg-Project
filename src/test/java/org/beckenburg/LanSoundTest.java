@@ -30,6 +30,20 @@ public final class LanSoundTest {
         ok(LanSound.project(map,van,room,cx,cz,LanSound.Cue.WHISPER,15)==null,"van is acoustically excluded");
         ok(LanSound.project(map,facingNorth,room,Double.NaN,cz,LanSound.Cue.STRIKE,15)==null,"reject non-finite source");
         ok(LanSound.decode(right.frame()).equals(right),"wire frame roundtrip");
+        // The same physical cue is sharper in hard corridors than soft bedrooms.
+        // The underlying room bed and doors are independently modeled.
+        int hall=4,bedroom=6;
+        var hallBody=new LanWorld.Body(map.centerX(hall),map.centerZ(hall),0,hall);
+        var bedBody=new LanWorld.Body(map.centerX(bedroom),map.centerZ(bedroom),0,bedroom);
+        var hard=LanSound.project(map,hallBody,hall,map.centerX(hall),map.centerZ(hall),
+            LanSound.Cue.DISTURB,30);
+        var soft=LanSound.project(map,bedBody,bedroom,map.centerX(bedroom),
+            map.centerZ(bedroom),LanSound.Cue.DISTURB,30);
+        ok(hard!=null&&soft!=null&&hard.volume()>soft.volume()+4,
+            "Hard corridor and furnished bedroom must acoustically shape the same sound");
+        ok(RoomAcousticPresets.forRoom(map.level(),hall)==RoomAcousticPresets.Type.CORRIDOR
+            &&RoomAcousticPresets.forRoom(map.level(),bedroom)==RoomAcousticPresets.Type.SOFT_BEDROOM,
+            "Room acoustic mappings use real authored profiles");
         for(String invalid:new String[]{"SOUND|FOOTFALL|9|80|1","SOUND|WHISPER|-101|80|1",
                 "SOUND|WHISPER|25|0|1","SOUND|WHISPER|25|80|-1","SOUND|MANIFEST|25|80|0|extra"}){
             boolean rejected=false;try{LanSound.decode(invalid);}catch(IllegalArgumentException e){rejected=true;}

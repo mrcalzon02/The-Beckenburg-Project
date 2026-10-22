@@ -24,6 +24,13 @@ public final class InvestigationSession {
     private final java.util.Map<Instrument,String> lastReadings=new java.util.EnumMap<>(Instrument.class);
     public String deviceReading(String kind){try{return lastReadings.get(Instrument.valueOf(kind));}catch(IllegalArgumentException ignored){return null;}}
     private final ArrayList<String> journal = new ArrayList<>();
+    /** Actual completed haunt events; these do not confer evidence. */
+    public record WorldCue(int room,double x,double y,double z,LanSound.Cue cue,int tick){}
+    private final java.util.ArrayDeque<WorldCue> pendingSounds=new java.util.ArrayDeque<>();
+    public List<WorldCue> drainWorldSounds(){
+        List<WorldCue> events=List.copyOf(pendingSounds);
+        pendingSounds.clear();return events;
+    }
     private Outcome outcome = Outcome.ACTIVE;
     private int ticks, health = 100, stress, wards, payouts;
     private final long evidenceSeed;
@@ -208,6 +215,18 @@ public final class InvestigationSession {
             GhostDomain.Resolution result=ghost.dispatch(command);
             if(result.applied()) {
                 map.fixtures().witness(result,ticks,-1);
+                LanSound.Cue sound=switch(result.action()){
+                    case DRIFT->LanSound.Cue.GHOST_DRIFT;
+                    case WHISPER->LanSound.Cue.WHISPER;
+                    case DISTURB->LanSound.Cue.DISTURB;
+                    case MANIFEST->LanSound.Cue.MANIFEST;
+                    case STRIKE->LanSound.Cue.STRIKE;
+                    case SIGNATURE->LanSound.Cue.SIGNATURE;
+                };
+                if(pendingSounds.size()==24)pendingSounds.removeFirst();
+                pendingSounds.addLast(new WorldCue(result.room(),
+                    map.centerX(result.room()),map.floorY(result.room()),
+                    map.centerZ(result.room()),sound,ticks));
                 int power=switch(result.action()){
                     case WHISPER->3;case DISTURB->8;case MANIFEST->9;
                     case STRIKE,SIGNATURE->10;case DRIFT->0;

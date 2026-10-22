@@ -1569,9 +1569,15 @@ public final class SceneRenderer {
         render(map,room,visible,
             session.wardPrepared()?session.anchorRoom():-1,-1,clock,allies,figure,session.counterMarks());
     }
-    /** Spectral viewpoint: only a room-local sensed hunter is rendered. */
+    /** Training spectator compatibility with original fixed dummy viewport. */
     public void drawPractice(HouseMap map,int visibleHunterRoom,double clock){
         render(map,-1,false,-1,visibleHunterRoom,clock,List.of());
+    }
+    /** Real embodied AI Hunter is a depth-occluded directional character,
+     * never the old immobile practice dummy. Only sensed bodies are supplied.
+     */
+    public void drawPractice(HouseMap map,List<RemoteBody> visibleHunters,double clock){
+        render(map,-1,false,-1,-1,clock,visibleHunters);
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,double clock,List<RemoteBody> others){
         render(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,clock,others,null);

@@ -42,6 +42,14 @@ public final class CampaignAllyTest {
                 "; ended in "+assistant.room()+" / "+assistant.report());
             check(investigation.journal().size()==notes,
                 "Automatic zone examination never writes evidence into player journal");
+            assistant.investigate(neighbor);
+            assistant.hear(new LanSound.CueEvent(LanSound.Cue.STRIKE,50,80,
+                investigation.ticks()));
+            check(assistant.order()==CampaignAlly.Order.FOLLOW
+                &&assistant.report().contains("regrouping"),
+                "AI companion must hear dangerous events and abandon unsafe unattended search");
+            check(investigation.journal().size()==notes,
+                "An AI hearing a sound must not forge or confirm an evidence clue");
             assistant.follow();check(assistant.order()==CampaignAlly.Order.FOLLOW,
                 "Regroup must resume player-follow order");
             System.out.println("PASS "+site+": real swept ally movement, orders, issued thermometer and manual journal");

@@ -1,17 +1,16 @@
 package org.beckenburg;
 
 import java.util.List;
-import java.util.Random;
 
 /** A genuine HUMAN-origin controller exercising the same local GhostDomain dispatcher as AI.
- * One scripted hunter is present solely to practice counterplay. NOT a network match or hunter AI.
+ * One embodied, hearing Hunter AI now patrols; still a local training match, not a campaign.
  */
 public final class GhostPracticeSession {
     public enum Outcome { ACTIVE, TWO_STRIKES }
     private final HouseMap map;
     private final GhostDomain ghost;
-    private final Random patrol;
-    private int tick, hunterRoom, strikes;
+    private final GhostPracticeHunterAi hunter;
+    private int tick, strikes;
     private long sequence;
     private Outcome outcome=Outcome.ACTIVE;
     private String status="Listen for a nearby investigator. Haunt, manifest, then strike.";
@@ -22,8 +21,7 @@ public final class GhostPracticeSession {
         if (!map.valid()) throw new IllegalArgumentException("invalid practice map");
         int anchor=(int)Math.floorMod(seed, map.interiorRoomCount());
         ghost=new GhostDomain(map,anchor);
-        hunterRoom=anchor;
-        patrol=new Random(seed ^ 0x6245434b454e4255L);
+        hunter=new GhostPracticeHunterAi(map,anchor,seed);
     }
     public int tickCount(){return tick;}
     public int ghostRoom(){return ghost.room();}
@@ -32,18 +30,18 @@ public final class GhostPracticeSession {
     public String status(){return status;}
     public GhostDomain.Observation observation(){return ghost.observe();}
     /** The simulated hunter's exact location is deliberately concealed unless the ghost senses them. */
-    public int visibleHunterRoom(){return ghost.observe().hearsHunter()?hunterRoom:-1;}
+    public int visibleHunterRoom(){return ghost.observe().hearsHunter()?hunter.room():-1;}
+    public List<SceneRenderer.RemoteBody> visibleHunterBodies(){
+        return visibleHunterRoom()<0?List.of():List.of(hunter.sprite());
+    }
+    public GhostPracticeHunterAi hunter(){return hunter;}
     public GhostDomain.Resolution lastResolution(){return lastResolution;}
 
     public void tick(){
         if(outcome!=Outcome.ACTIVE)return;
         tick++;
-        // Give newcomers time to learn the manifestation/strike window before a patrol begins.
-        if(tick>320 && tick%140==0){
-            List<Integer> exits=map.ghostExits(hunterRoom);
-            if(!exits.isEmpty())hunterRoom=exits.get(patrol.nextInt(exits.size()));
-        }
-        ghost.advance(tick,hunterRoom);
+        hunter.advance(tick);
+        ghost.advance(tick,hunter.room());
     }
     public GhostDomain.Resolution act(GhostDomain.Action action,int targetRoom){
         if(action==null)throw new IllegalArgumentException("action");
@@ -55,7 +53,21 @@ public final class GhostPracticeSession {
             status="Rejected: "+result.reason()+".";
             return result;
         }
+        // Only the projected audible cue crosses into Hunter AI perception.
+        // No hidden Ghost identity, true location or anchor is provided.
+        LanSound.Cue cue=switch(action){
+            case DRIFT->LanSound.Cue.GHOST_DRIFT;
+            case WHISPER->LanSound.Cue.WHISPER;
+            case DISTURB->LanSound.Cue.DISTURB;
+            case MANIFEST->LanSound.Cue.MANIFEST;
+            case STRIKE->LanSound.Cue.STRIKE;
+            case SIGNATURE->LanSound.Cue.SIGNATURE;
+        };
+        hunter.hear(LanSound.project(map,hunter.listener(),result.room(),
+            map.centerX(result.room()),map.floorY(result.room()),
+            map.centerZ(result.room()),cue,tick));
         if(result.harm()>0){
+            hunter.wounded(result.harm());
             strikes++;
             status="Strike registered ("+strikes+"/2). Energy "+result.energy()+".";
             if(strikes==2){outcome=Outcome.TWO_STRIKES;status="Ghost training complete. Two legal strikes registered.";}

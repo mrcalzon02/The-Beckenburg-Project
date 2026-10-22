@@ -26,7 +26,7 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
         // Face the first audible investigator, not an empty wall at startup.
         renderer.yaw=-.56;renderer.pitch=-.04;
         syncCamera();
-        renderer.drawPractice(map,practice.visibleHunterRoom(),0);
+        renderer.drawPractice(map,practice.visibleHunterBodies(),0);
         timer=new javax.swing.Timer(33,e->frame());timer.start();
     }
     public void close(){timer.stop();mouseLook.close();}
@@ -40,7 +40,7 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
         accumulator+=dt;
         while(accumulator>=.1){practice.tick();accumulator-=.1;}
         syncCamera();
-        renderer.drawPractice(map,practice.visibleHunterRoom(),practice.tickCount()*.1);
+        renderer.drawPractice(map,practice.visibleHunterBodies(),practice.tickCount()*.1);
         repaint();
     }
     private List<Integer> exits(){return practice.observation().exits();}
@@ -104,6 +104,8 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
             GhostDomain.Observation obs=practice.observation();
             g.drawString("SPECTRAL ROOM "+map.roomName(obs.room())+"    ENERGY "+obs.energy()+"/100",14,46);
             g.drawString(obs.hearsHunter()?"PRESENCE: HUNTER AUDIBLE NEARBY":"PRESENCE: SILENT",14,67);
+            g.drawString("HUNTER AI: "+practice.hunter().intent()+
+                " / HEALTH "+practice.hunter().health(),14,88);
             g.drawString("+",getWidth()/2,stageH/2);
             g.setColor(new Color(18,19,28));g.fillRect(0,stageH,getWidth(),getHeight()-stageH);
             g.setColor(new Color(225,211,236));
