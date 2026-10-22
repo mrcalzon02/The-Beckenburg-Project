@@ -15,7 +15,11 @@ public final class GhostPracticeHunterAi {
     private LevelDefinition.Vec position;
     private int heading, target=-1, lastHeard=-10000, soundPan, alert, health=100;
     private int orderTick, lastScan=-10000, lastCounter=-10000, dangerTick=-10000, sightTick=-10000;
-    private int stress;
+    private int stress,totalScans,searchUntil=-1;
+    private LevelDefinition.Vec audibleSearchPoint;
+    // These are tentative room-level suspicions from the Hunter's own
+    // instrument readings and auditory impressions, never the true anchor.
+    private final int[] suspicion=new int[HouseMap.ROOM_COUNT];
     private final EquipmentLoadout inventory=new EquipmentLoadout();
     public record FieldNote(int tick,int room,EquipmentLoadout.Item tool,String reading){
         public FieldNote{
@@ -41,8 +45,21 @@ public final class GhostPracticeHunterAi {
     public int alert(){return alert;}
     public int stress(){return stress;}
     public String intent(){return intent;}
-    public int instrumentCount(){return observations.size();}
+    public int instrumentCount(){return totalScans;}
     public List<FieldNote> observations(){return List.copyOf(observations);}
+    public int suspectedRoom(){
+        int best=-1,score=2;
+        for(int i=0;i<HouseMap.EXTRACTION_ROOM;i++)
+            if(suspicion[i]>score){best=i;score=suspicion[i];}
+        return best;
+    }
+    public int suspicion(int room){
+        if(room<0||room>=HouseMap.ROOM_COUNT)throw new IllegalArgumentException("room");
+        return suspicion[room];
+    }
+    public boolean pursuingSound(int tick){
+        return audibleSearchPoint!=null&&tick<=searchUntil;
+    }
     public EquipmentLoadout.Item equipped(){return inventory.equipped();}
     /**
      * The field worker decides when to use an actually issued tool. The world,
@@ -51,7 +68,7 @@ public final class GhostPracticeHunterAi {
     public EquipmentLoadout.Item toolDue(int tick){
         if(health<=0||tick<0||tick-lastScan<65||room()<0
                 ||room()>=HouseMap.EXTRACTION_ROOM)return null;
-        return (observations.size()%2==0)
+        return (totalScans%2==0)
             ?EquipmentLoadout.Item.EMF:EquipmentLoadout.Item.THERMOMETER;
     }
     public void observed(int tick,EquipmentLoadout.Item tool,String value){
@@ -60,7 +77,30 @@ public final class GhostPracticeHunterAi {
         inventory.pickup(tool);
         lastScan=tick;
         if(observations.size()==48)observations.removeFirst();
-        observations.addLast(new FieldNote(tick,room(),tool,value));
+        int site=room();
+        observations.addLast(new FieldNote(tick,site,tool,value));
+        totalScans++;
+        // Interpret only observed numeric values. Neither Ghost type nor the
+        // true anchor is available to this AI. Abnormal weather can mislead it.
+        try{
+            if(tool==EquipmentLoadout.Item.EMF && value.startsWith("EMF ")){
+                int slash=value.indexOf('/',4);
+                if(slash>4){
+                    int level=Integer.parseInt(value.substring(4,slash));
+                    if(level>=8)suspicion[site]=Math.min(40,suspicion[site]+3);
+                    else if(level>=6)suspicion[site]=Math.min(40,suspicion[site]+1);
+                }
+            }else if(tool==EquipmentLoadout.Item.THERMOMETER&&value.startsWith("Air ")){
+                int unit=value.indexOf('°');
+                if(unit>4){
+                    double degrees=Double.parseDouble(value.substring(4,unit));
+                    if(degrees<=0||degrees>=33)
+                        suspicion[site]=Math.min(40,suspicion[site]+3);
+                }
+            }
+        }catch(NumberFormatException unreadable){
+            // Record the imperfect instrument text; never manufacture a clue.
+        }
         intent="Recording "+tool.label.toLowerCase(java.util.Locale.ROOT)+" measurements";
     }
     /** Only after actual visual confirmation (checked by session world geometry). */
@@ -89,7 +129,7 @@ public final class GhostPracticeHunterAi {
         if(fear<=0)return;
         stress=Math.min(100,stress+fear);
         if(stress>=55){alert=Math.min(100,alert+20);intent="Retreating from supernatural pressure";
-            target=-1;}
+            target=-1;audibleSearchPoint=null;}
     }
     public SceneRenderer.RemoteBody sprite(){
         return new SceneRenderer.RemoteBody(position.x(),position.y(),position.z(),
@@ -107,19 +147,26 @@ public final class GhostPracticeHunterAi {
                 ||heard.cue()==LanSound.Cue.MANIFEST)dangerTick=heard.tick();
         alert=Math.min(100,alert+Math.max(3,heard.volume()/7));
         intent="Investigating an audible disturbance";
-        if(target<0&&room()>=0&&room()<HouseMap.EXTRACTION_ROOM){
-            // Guess a route from a coarse stereo bearing, not secret ghost coords.
-            double aim=Math.toRadians(heading)-Math.asin(Math.max(-1,Math.min(1,soundPan/100d)));
-            double dx=Math.sin(aim),dz=Math.cos(aim);
-            double best=-2;
-            for(int next:map.ghostExits(room())){
-                for(var p:map.level().portalsFrom(room()))if(p.joins(room(),next)&&!p.kind().equals("window")){
-                    double vx=p.x()-position.x(),vz=p.z()-position.z(),distance=Math.hypot(vx,vz);
-                    if(distance<.01)continue;
-                    double score=(vx*dx+vz*dz)/distance;
-                    if(score>best){best=score;target=next;orderTick=heard.tick();}
+        if(room()>=0&&room()<HouseMap.EXTRACTION_ROOM){
+            // Loud event perceived *in this room*: first inspect the local
+            // bearing. Pan is coarse and has NO source distance or coordinates.
+            if(heard.volume()>=24&&stress<55){
+                double aim=Math.toRadians(heading)-
+                    Math.asin(Math.max(-1,Math.min(1,soundPan/100d)));
+                for(double distance:new double[]{2.5,1.75,1.0,.6}){
+                    double x=position.x()+Math.sin(aim)*distance;
+                    double z=position.z()+Math.cos(aim)*distance;
+                    if(map.roomAt(x,position.y(),z)==room()
+                            &&map.traversable(x,position.y(),z)
+                            &&map.clearLineOfSight(position.x(),position.y()+1.3,position.z(),
+                                x,position.y()+1.3,z)){
+                        audibleSearchPoint=new LevelDefinition.Vec(x,position.y(),z);
+                        searchUntil=heard.tick()+90;target=-1;break;
+                    }
                 }
             }
+            if(heard.volume()>=75&&heard.cue().tier()!=LanSound.Tier.AMBIENT)
+                suspicion[room()]=Math.min(40,suspicion[room()]+1);
         }
     }
     public void wounded(int damage){
@@ -129,7 +176,7 @@ public final class GhostPracticeHunterAi {
         dangerTick=Math.max(dangerTick,lastHeard);
         intent="Injured; seeking an exit";
         // Injuries do not reveal the ghost; any retreat still uses walkable rooms.
-        target=-1;
+        target=-1;audibleSearchPoint=null;
     }
     public void advance(int tick){
         if(health==0)return;
@@ -137,12 +184,30 @@ public final class GhostPracticeHunterAi {
         if(lastHeard<tick-120)alert=Math.max(0,alert-1);
         int here=room();
         if(here<0||here==HouseMap.EXTRACTION_ROOM){intent="Route obstructed";return;}
+        if(audibleSearchPoint!=null){
+            if(tick<=searchUntil&&Math.hypot(
+                    position.x()-audibleSearchPoint.x(),
+                    position.z()-audibleSearchPoint.z())>.38){
+                intent="Checking an audible direction";
+                walkToward(audibleSearchPoint.x(),audibleSearchPoint.z());
+                return;
+            }
+            audibleSearchPoint=null;target=-1;
+        }
         if(target<0||target==here||tick-orderTick>280){
             List<Integer> destinations=map.ghostExits(here);
             if(destinations.isEmpty()){intent="Holding position";return;}
-            target=destinations.get(random.nextInt(destinations.size()));
+            // Return to rooms with strong *observed* readings where possible,
+            // otherwise keep patrolling. Suspicions can be wrong.
+            int bestScore=2;
+            int favored=-1;
+            for(int next:destinations)if(suspicion[next]>bestScore){
+                bestScore=suspicion[next];favored=next;
+            }
+            target=favored>=0?favored:destinations.get(random.nextInt(destinations.size()));
             orderTick=tick;
-            intent=alert>20?"Checking nearby disturbance":"Sweeping adjacent rooms";
+            intent=favored>=0?"Rechecking anomalous readings":
+                alert>20?"Checking nearby disturbance":"Sweeping adjacent rooms";
         }
         LevelDefinition.Portal portal=null;
         for(var p:map.level().portalsFrom(here))
@@ -161,6 +226,9 @@ public final class GhostPracticeHunterAi {
                 gx+=.85*(direction==0?1:direction);
             }
         }
+        walkToward(gx,gz);
+    }
+    private void walkToward(double gx,double gz){
         double dx=gx-position.x(),dz=gz-position.z(),length=Math.hypot(dx,dz);
         if(length<.01)return;
         double angle=Math.atan2(dx,dz),stride=Math.min(.19,length);

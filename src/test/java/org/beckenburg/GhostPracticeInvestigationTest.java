@@ -61,6 +61,40 @@ public final class GhostPracticeInvestigationTest {
                 "Merely seeing a manifestation must not cause a fictitious strike");
             ok(practice.outcome()==GhostPracticeSession.Outcome.ACTIVE,
                 "Evidence or a defensive ward must not silently win the mission");
+            // A Hunter's inferences are formed from numeric readings, not
+            // the private ghost anchor or identity.
+            var analyst=new GhostPracticeHunterAi(map,4,61896L);
+            ok(analyst.suspectedRoom()==-1,"No unwitnessed ghost location hints");
+            for(int i=0;i<52;i++){
+                int sampleTick=1+i*65;
+                EquipmentLoadout.Item tool=analyst.toolDue(sampleTick);
+                ok(tool!=null,"Genuinely issued instrument due");
+                analyst.observed(sampleTick,tool,
+                    tool==EquipmentLoadout.Item.EMF?
+                        (i==0?"EMF 9/10":"EMF 3/10"):
+                        "Air 12.0°C / 53.6°F");
+            }
+            ok(analyst.instrumentCount()==52&&analyst.observations().size()==48,
+                "Bounded field notebook must not reset scanner alternation at capacity");
+            ok(analyst.suspectedRoom()==4&&analyst.suspicion(4)>=3,
+                "Only local abnormal readings create a tentative hotspot");
+            ok(analyst.toolDue(1+52*65)==EquipmentLoadout.Item.EMF,
+                "Sensor selection must remain stable after rolling notebook retention");
+            var scout=new GhostPracticeHunterAi(map,4,14573L);
+            var cue=LanSound.project(map,scout.listener(),4,map.centerX(4),
+                map.floorY(4),map.centerZ(4),LanSound.Cue.DISTURB,320);
+            ok(cue!=null,"Real world sound must pass through local acoustic projection");
+            scout.hear(cue);
+            ok(scout.pursuingSound(320),
+                "AI must investigate a walkable local sound bearing, not auto-track the Ghost");
+            var beforeScout=scout.position();
+            scout.advance(321);
+            ok(scout.intent().contains("audible direction"),
+                "Audio causes a local on-foot search rather than arbitrary portal travel");
+            ok(Math.hypot(beforeScout.x()-scout.position().x(),
+                beforeScout.z()-scout.position().z())<=.191
+                &&map.traversable(scout.position().x(),scout.position().y(),scout.position().z()),
+                "Sound search movement obeys exactly the same sweep and collision as patrol");
             System.out.println("PASS "+site+
                 ": AI instruments, finite actual counter, geometry and no automatic confirmation");
         }
