@@ -747,6 +747,17 @@ public final class InvestigationGame {
                             map.outside(cue.room())||map.outside(assistant.room())));
                     }
                 }
+                for(var beat:session.drainHauntSounds()){
+                    GameSfx.playHauntingAt(map,listener,beat,session.weather());
+                    if(assistant!=null){
+                        var score=GhostHauntingChoreography.forEvent(beat.id());
+                        var cue=score.beats().get(beat.beat()).cue();
+                        var heard=LanSound.project(map,assistant.listener(),
+                            beat.room(),beat.x(),beat.y(),beat.z(),cue,beat.tick());
+                        assistant.hear(LanSound.weatherMask(heard,session.weather(),
+                            map.outside(beat.room())||map.outside(assistant.room())));
+                    }
+                }
                 if(assistant!=null){
                     assistant.advance(scene.x,feetY(),scene.z);
                     collectAssistantChat();

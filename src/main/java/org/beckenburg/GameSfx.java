@@ -38,6 +38,22 @@ public final class GameSfx {
             map.outside(room)||map.outside(listener.room()));
         if(event!=null)Player.AUDIO.play(event);
     }
+    /** Solo authored sound stages use the same real LOS, room and weather projector. */
+    public static void playHauntingAt(HouseMap map,LanWorld.Body listener,
+            InvestigationSession.HauntSound source,MissionWeather.State weather){
+        if(Boolean.getBoolean("beckenburg.audio.mute"))return;
+        var score=GhostHauntingChoreography.forEvent(source.id());
+        if(score==null)return;
+        var beat=score.beats().get(source.beat());
+        var sound=LanSound.project(map,listener,source.room(),
+            source.x(),source.y(),source.z(),beat.cue(),source.tick());
+        sound=LanSound.weatherMask(sound,weather,
+            map.outside(source.room())||map.outside(listener.room()));
+        if(sound==null)return;
+        Player.AUDIO.playHaunting(new GhostHauntingChoreography.SoundFrame(
+            source.id(),source.beat(),sound.pan(),
+            Math.max(1,sound.volume()*beat.gainPercent()/100),source.tick()));
+    }
     public static void fixtureState(HauntedFixtures.State source){Player.AUDIO.fixtureState(source);}
     public static void fixtureSound(HauntedFixtures.State source,LanSound.CueEvent cue){Player.AUDIO.playFixture(source,cue);}
     public static void clearFixtures(){Player.AUDIO.clearFixtures();}

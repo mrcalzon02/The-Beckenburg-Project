@@ -27,6 +27,13 @@ public final class InvestigationSession {
     /** Actual completed haunt events; these do not confer evidence. */
     public record WorldCue(int room,double x,double y,double z,LanSound.Cue cue,int tick){}
     private final java.util.ArrayDeque<WorldCue> pendingSounds=new java.util.ArrayDeque<>();
+    public record HauntSound(int room,double x,double y,double z,String id,int beat,int tick){}
+    private final java.util.ArrayDeque<HauntSound> stagedHauntSounds=
+        new java.util.ArrayDeque<>();
+    public List<HauntSound> drainHauntSounds(){
+        List<HauntSound> out=List.copyOf(stagedHauntSounds);
+        stagedHauntSounds.clear();return out;
+    }
     public List<WorldCue> drainWorldSounds(){
         List<WorldCue> events=List.copyOf(pendingSounds);
         pendingSounds.clear();return events;
@@ -262,10 +269,12 @@ public final class InvestigationSession {
                 map.fixtures().witness(result,ticks,-1);
                 LanSound.Cue sound=haunt==null
                     ?LanSound.Cue.GHOST_DRIFT:haunt.entry().cue();
-                if(pendingSounds.size()==24)pendingSounds.removeFirst();
-                pendingSounds.addLast(new WorldCue(result.room(),
-                    map.centerX(result.room()),map.floorY(result.room()),
-                    map.centerZ(result.room()),sound,ticks));
+                if(haunt==null||GhostHauntingChoreography.forEvent(haunt.entry().id())==null){
+                    if(pendingSounds.size()==24)pendingSounds.removeFirst();
+                    pendingSounds.addLast(new WorldCue(result.room(),
+                        map.centerX(result.room()),map.floorY(result.room()),
+                        map.centerZ(result.room()),sound,ticks));
+                }
                 int power=switch(result.action()){
                     case WHISPER->3;case DISTURB->8;case MANIFEST->9;
                     case STRIKE,SIGNATURE->10;case DRIFT->0;
@@ -302,6 +311,14 @@ public final class InvestigationSession {
                     if(health==0) finish(Outcome.LOST);
                 }
             }
+        }
+        for(var event:hauntings){
+            int beat=GhostHauntingChoreography.dueIndex(event,ticks);
+            if(beat<0)continue;
+            if(stagedHauntSounds.size()==24)stagedHauntSounds.removeFirst();
+            stagedHauntSounds.addLast(new HauntSound(event.room(),
+                map.centerX(event.room()),map.floorY(event.room()),
+                map.centerZ(event.room()),event.entry().id(),beat,ticks));
         }
         haunted=ghost.manifested();
         hauntings.removeIf(event->ticks>=event.untilTick());
