@@ -40,7 +40,7 @@ public final class LanSoundIntegrationTest {
             Peer ghost=new Peer(host.port(),true,"Specter")){
             a.client.ready();b.client.ready();c.client.ready();ghost.client.ready();
             a.await("LOBBY|3|HUMAN|4|WAITING");a.client.start();a.await("INFO|mission started");
-            for(int room:new int[]{11,8,5,4}){a.client.move(room);a.await("ACCEPT|MOVE|"+room);}
+            for(int room:new int[]{11,8,5,4}){LanTestRoomTravel.move(a.client,a::await,room);}
             a.client.view3D();a.await("ACCEPT|VIEW3D");
             b.client.view3D();b.await("ACCEPT|VIEW3D");
             c.client.view3D();c.await("ACCEPT|VIEW3D");
