@@ -144,6 +144,19 @@ public final class GlbProps {
         int blue=Math.max(0,Math.min(255,(int)Math.round((rgb&255)*factor[2])));
         return (red<<16)|(green<<8)|blue;
     }
+    /** Preserve original alpha for the shared VFX GLBs; ordinary room materials
+     * retain the game's existing opaque software-rasterizer path. */
+    public static synchronized int sampleAlpha(int material,double u,double v){
+        int index=material-TEXTURE_BASE;
+        if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
+            throw new IllegalArgumentException("Invalid imported alpha");
+        BufferedImage image=textures.get(index);
+        int x=Math.min(image.getWidth()-1,(int)((u-Math.floor(u))*image.getWidth()));
+        int y=Math.min(image.getHeight()-1,(int)((1.0-(v-Math.floor(v)))*image.getHeight()));
+        int texAlpha=(image.getRGB(x,y)>>>24)&255;
+        return Math.max(0,Math.min(255,(int)Math.round(
+            texAlpha*diffuseFactors.get(index)[3])));
+    }
     @SuppressWarnings("unchecked")
     private static Map<String,Object> obj(Object value){return (Map<String,Object>)value;}
     @SuppressWarnings("unchecked")
