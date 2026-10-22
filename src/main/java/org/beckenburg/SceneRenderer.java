@@ -87,6 +87,8 @@ public final class SceneRenderer {
     private final dev.mrcalzon.weather.WeatherModule weatherFx=
         new dev.mrcalzon.weather.WeatherModule(0x4245434b454e4255L);
     private boolean weatherInitialized;
+    private int weatherRevision=-1;
+    public dev.mrcalzon.weather.WeatherModule weatherModule(){return weatherFx;}
     private double lastWeatherClock=Double.NaN,weatherLightScale=1.0,weatherFogScale=1.0;
     {
         weatherFx.setTimeOfDay(.86);
@@ -95,7 +97,14 @@ public final class SceneRenderer {
     }
     public void setWeather(MissionWeather.State state){
         if(state==null)throw new IllegalArgumentException("weather state");
+        if(weatherInitialized&&weatherRevision==state.revision()
+                &&weatherKind==state.weather()&&weatherIntensity==state.intensity())return;
         weatherKind=state.weather();weatherIntensity=state.intensity();
+        weatherRevision=state.revision();
+        double baseC=switch(state.season()){
+            case WINTER -> -6;case SPRING -> 7;case SUMMER -> 19;case AUTUMN -> 8;
+        };
+        weatherFx.setTemperature(state.moduleType().snow>0?Math.min(-4,baseC):baseC);
         weatherFx.setWeather(state.moduleType(),weatherInitialized?6.0+state.intensity()*2.0:0);
         double wind=switch(state.weather()){
             case CLEAR,FOG,DENSE_FOG,MIASMA,HEATWAVE->.7+state.intensity()*.35;
@@ -1617,7 +1626,7 @@ public final class SceneRenderer {
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
-        paintSky(clock);
+        paintSky(map,clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         if(lightingMap!=map){lightingMap=map;fixtureLighting=new FixtureLighting(map);}fixtureLighting.frame(roomLights,roomLightTick);
         for(Face face:scene(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,clock,others,apparition,markers)){
@@ -1625,6 +1634,7 @@ public final class SceneRenderer {
             drawLitFace(face,room,0);
         }
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
+        renderWeatherMeshes();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
         int localRoom=map.roomAt(x,eyeHeight-.85,z);
@@ -1657,10 +1667,14 @@ public final class SceneRenderer {
      * Real window apertures and depth-tested castle stonework occlude the background.
      * The sky never writes depth, and has no copyright-dependent source images.
      */
-    void paintSky(double clock){
+    void paintSky(double clock){paintSky(null,clock);}
+    private void paintSky(HouseMap map,double clock){
         double delta=Double.isNaN(lastWeatherClock)?.05:Math.max(0,Math.min(1,clock-lastWeatherClock));
         lastWeatherClock=clock;
-        weatherFx.advance(delta,dev.mrcalzon.weather.WeatherView.outdoors(x,z,eyeHeight,yaw));
+        int room=map==null?-1:map.roomAt(x,eyeHeight-.85,z);
+        boolean outdoors=map==null||room>=0&&map.outside(room);
+        weatherFx.advance(delta,new dev.mrcalzon.weather.WeatherView(
+            x,eyeHeight,z,yaw,outdoors?1:0));
         var wx=weatherFx.weather().state();
         weatherLightScale=Math.max(.50,1-(1-wx.visibility())*.24)+wx.flash()*2.2;
         weatherFogScale=1+(1-wx.visibility())*3.1;
@@ -1671,9 +1685,6 @@ public final class SceneRenderer {
             g.setColor(new java.awt.Color(18,24,32));
             g.fillRect(0,0,renderWidth,renderHeight);
             weatherFx.renderSky(g,renderWidth,renderHeight);
-            // Precipitation is drawn before solid geometry so real walls and roofs
-            // occlude it naturally rather than painting rain or snow through interiors.
-            weatherFx.renderOverlay(g,renderWidth,renderHeight);
         }finally{g.dispose();}
 
         final int horizon=(int)Math.round(renderHeight*.56+Math.tan(pitch)*focal);
@@ -1683,6 +1694,11 @@ public final class SceneRenderer {
                     +5*Math.sin(bearing*13.2));
             for(int sy=Math.max(0,hills);sy<renderHeight;sy++)pixels[sy*renderWidth+sx]=0x18202a;
         }
+        // Weather particles must be in front of hills but behind opaque walls.
+        java.awt.Graphics2D g=frame.createGraphics();
+        try{g.setComposite(java.awt.AlphaComposite.SrcOver);
+            weatherFx.renderOverlay(g,renderWidth,renderHeight);
+        }finally{g.dispose();}
     }
     /** Billboards share the world Z-buffer, so room walls correctly hide hunter and ghost bodies.
      * Visibility, headings and phase remain projected from the host's simulation.
@@ -1752,6 +1768,60 @@ public final class SceneRenderer {
                 CharacterVisuals.shape(person.appearance()).height()*(person.crouched()?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1),
                 CharacterVisuals.shape(person.appearance()).width(),
                 person.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
+        }
+    }
+    /** Render the actual v1 glTF meshes with perspective UVs and alpha. The
+     * existing opaque world and sprites occlude precipitation and lightning. */
+    private void renderWeatherMeshes(){
+        weatherFx.emitMeshes(instance->{
+            if(instance.opacity()<=.001
+                    ||Math.hypot(instance.x()-x,instance.z()-z)>130)return;
+            double sin=Math.sin(instance.yaw()),cos=Math.cos(instance.yaw());
+            for(var t:WeatherAssetLibrary.mesh(instance.meshId()).triangles()){
+                GlbProps.Vertex[] v={t.a(),t.b(),t.c()};
+                Vertex[] projected=new Vertex[3];
+                for(int i=0;i<3;i++){
+                    var p=v[i];double scale=instance.scale();
+                    Point at=new Point(instance.x()+scale*(p.x()*cos-p.z()*sin),
+                        instance.y()+scale*p.y(),
+                        instance.z()+scale*(p.x()*sin+p.z()*cos));
+                    projected[i]=new Vertex(camera(at),p.u(),p.v());
+                }
+                List<Vertex> polygon=clip(projected[0],projected[1],projected[2]);
+                for(int i=1;i+1<polygon.size();i++)
+                    weatherTriangle(polygon.get(0),polygon.get(i),polygon.get(i+1),
+                        t.material(),instance.opacity());
+            }
+        });
+    }
+    private void weatherTriangle(Vertex va,Vertex vb,Vertex vc,int material,double opacity){
+        Point a=va.p(),b=vb.p(),c=vc.p();
+        double x0=renderWidth*.5+a.x()/a.z()*focal,y0=renderHeight*.5-a.y()/a.z()*focal;
+        double x1=renderWidth*.5+b.x()/b.z()*focal,y1=renderHeight*.5-b.y()/b.z()*focal;
+        double x2=renderWidth*.5+c.x()/c.z()*focal,y2=renderHeight*.5-c.y()/c.z()*focal;
+        double denom=(y1-y2)*(x0-x2)+(x2-x1)*(y0-y2);
+        if(Math.abs(denom)<1e-8)return;
+        int lowX=Math.max(0,(int)Math.floor(Math.min(x0,Math.min(x1,x2))));
+        int highX=Math.min(renderWidth-1,(int)Math.ceil(Math.max(x0,Math.max(x1,x2))));
+        int lowY=Math.max(0,(int)Math.floor(Math.min(y0,Math.min(y1,y2))));
+        int highY=Math.min(renderHeight-1,(int)Math.ceil(Math.max(y0,Math.max(y1,y2))));
+        for(int py=lowY;py<=highY;py++)for(int px=lowX;px<=highX;px++){
+            double u=((y1-y2)*(px+.5-x2)+(x2-x1)*(py+.5-y2))/denom;
+            double v=((y2-y0)*(px+.5-x2)+(x0-x2)*(py+.5-y2))/denom,w=1-u-v;
+            if(u<0||v<0||w<0)continue;
+            double inv=u/a.z()+v/b.z()+w/c.z();
+            if(inv<=0)continue;
+            int at=py*renderWidth+px;
+            if(1/inv>=depths[at])continue;
+            double tu=(u*va.u()/a.z()+v*vb.u()/b.z()+w*vc.u()/c.z())/inv;
+            double tv=(u*va.v()/a.z()+v*vb.v()/b.z()+w*vc.v()/c.z())/inv;
+            int alpha=(int)(GlbProps.sampleAlpha(material,tu,tv)*opacity);
+            if(alpha<=3)continue;
+            int color=GlbProps.sample(material,tu,tv),old=pixels[at];
+            int red=(((color>>16)&255)*alpha+((old>>16)&255)*(255-alpha))/255;
+            int green=(((color>>8)&255)*alpha+((old>>8)&255)*(255-alpha))/255;
+            int blue=((color&255)*alpha+(old&255)*(255-alpha))/255;
+            pixels[at]=(red<<16)|(green<<8)|blue;
         }
     }
     /** Linked Twin effect connects only two already visible physical actors. */
