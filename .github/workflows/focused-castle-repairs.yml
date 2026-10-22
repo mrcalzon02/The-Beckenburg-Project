@@ -5,6 +5,9 @@ on:
     paths:
       - 'src/main/java/org/beckenburg/CastleHub*.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/main/java/org/beckenburg/FixtureLighting.java'
+      - 'src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java'
+      - 'src/test/java/org/beckenburg/LightingOcclusionRepairTest.java'
       - 'src/main/java/org/beckenburg/GlbProps.java'
       - 'src/main/java/org/beckenburg/VanArrivalStreet.java'
       - 'tools/ggbot_blend_export.py'
@@ -51,6 +54,10 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleLiveRepairTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleLiveRepairTest
+          if errorlevel 1 exit /b 1
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\LightingOcclusionRepairTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.LightingOcclusionRepairTest
           if errorlevel 1 exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\GgBotBlenderSourceUvTest.java
           if errorlevel 1 exit /b 1

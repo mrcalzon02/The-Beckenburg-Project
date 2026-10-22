@@ -7,9 +7,9 @@ public final class FixtureLighting {
  public record Source(int id,Kind kind,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double red,double green,double blue){}
  private record Key(int room,long x,long y,long z){}
  private record Shadow(int source,long x,long y,long z){}
- private final HouseMap map;private final List<Source> sources=new ArrayList<>();private final Map<Key,RGB> colours=new HashMap<>();private final Map<Shadow,Boolean> sight=new HashMap<>();
+ private final HouseMap map;private final CastleHubMap castle;private final List<Source> sources=new ArrayList<>();private final Map<Key,RGB> colours=new HashMap<>();private final Map<Shadow,Boolean> sight=new HashMap<>();
  private String geometry="",state="";private double[] factors=new double[0];
- public FixtureLighting(HouseMap map){this.map=map;
+ public FixtureLighting(HouseMap map){this.map=map;this.castle=null;
   for(var s:map.level().sockets())if(s.type().equals("light")){
    int control=controller(s);
    if(s.style().equals("bare-bulb"))add(Kind.BARE_BULB,s.room(),0,s.x(),s.y()-.565,s.z(),0,-1,0,8,4.5,1,.86,.65);
@@ -24,20 +24,66 @@ public final class FixtureLighting {
   factors=new double[sources.size()];
  }
  private int controller(LevelDefinition.Socket socket){int at=socket.style().indexOf('@');if(at<0)return 0;String key=socket.style().substring(at+1);var plate=map.level().sockets().stream().filter(s->s.id().equals(key)).findFirst().orElseThrow();return map.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.LIGHT_SWITCH&&Math.hypot(f.x()-plate.x(),f.z()-plate.z())<.001).findFirst().orElseThrow().id();}
- public FixtureLighting(CastleHubMap castle){map=null;
+ public FixtureLighting(CastleHubMap castle){map=null;this.castle=Objects.requireNonNull(castle);
   for(var light:CastleHubDecor.LIGHTS){var bounds=VanInteriorLayout.bounds(light.on());double y=light.y()-(light.mount()==CastleHubDecor.Mount.CEILING?(bounds.y1()-bounds.y0())*light.scale()*.55:0);
    Kind kind=light.on().contains("ceiling_lamp_4")?Kind.CANDLE_CHANDELIER:light.mount()==CastleHubDecor.Mount.WALL?Kind.WALL_SCONCE:Kind.FROSTED_DOME;
-   add(kind,0,0,light.x(),y,light.z(),0,-1,0,kind==Kind.CANDLE_CHANDELIER?7.2:6.2,kind==Kind.CANDLE_CHANDELIER?4.2:3.0,1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
+   add(kind,0,0,light.x(),y,light.z(),0,-1,0,kind==Kind.CANDLE_CHANDELIER?10.5:9.8,kind==Kind.CANDLE_CHANDELIER?3.2:2.5,1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
   }factors=new double[sources.size()];
  }
  public void castleFrame(boolean on,int tick){String stamp=on+":"+(tick/3);if(!state.equals(stamp)){colours.clear();state=stamp;}for(var source:sources)factors[source.id]=source.kind==Kind.CANDLE_CHANDELIER?.94+.06*Math.sin(tick*.3+source.id):on?1:0;}
- private boolean clear(double ax,double ay,double az,double bx,double by,double bz){
+ /** Unified shadow decision for all live light emitters. Investigations use
+  * HouseMap's existing 3D doors, colliders and multi-storey visibility.
+  * Castle uses its authored solid wall segments, decks and room ceilings.
+  * The caller never falls back to unoccluded brightness. */
+ boolean clear(double ax,double ay,double az,double bx,double by,double bz){
   if(map!=null)return map.clearLineOfSight(ax,ay,az,bx,by,bz);
-  for(var wall:CastleHubArchitecturalPlan.walls())if(!wall.hasDoor()){
-   double da=wall.horizontal()?az-wall.z0():ax-wall.x0(),db=wall.horizontal()?bz-wall.z0():bx-wall.x0();if(da*db>=0||Math.abs(da-db)<.00001)continue;
-   double t=da/(da-db),y=ay+(by-ay)*t,along=wall.horizontal()?ax+(bx-ax)*t:az+(bz-az)*t,lo=wall.horizontal()?Math.min(wall.x0(),wall.x1()):Math.min(wall.z0(),wall.z1()),hi=wall.horizontal()?Math.max(wall.x0(),wall.x1()):Math.max(wall.z0(),wall.z1());if(along>lo-.02&&along<hi+.02&&y>wall.bottom()&&y<wall.top())return false;
+  return castleRayClear(castle,ax,ay,az,bx,by,bz);
+ }
+ static boolean castleRayClear(CastleHubMap map,double ax,double ay,double az,double bx,double by,double bz){
+  if(map==null||!Double.isFinite(ax+ay+az+bx+by+bz))return false;
+  final double EPS=0.0001;
+  for(var wall:CastleHubArchitecturalPlan.walls()){
+   if(wall.hasDoor())continue; // markers denote OPENINGS, not solid faces
+   double da=wall.horizontal()?az-wall.z0():ax-wall.x0();
+   double db=wall.horizontal()?bz-wall.z0():bx-wall.x0();
+   if(Math.abs(db-da)<EPS)continue;
+   double t=-da/(db-da);
+   if(t<=EPS||t>=1-EPS)continue;
+   double y=ay+(by-ay)*t;
+   double along=wall.horizontal()?ax+(bx-ax)*t:az+(bz-az)*t;
+   double lo=wall.horizontal()?Math.min(wall.x0(),wall.x1()):Math.min(wall.z0(),wall.z1());
+   double hi=wall.horizontal()?Math.max(wall.x0(),wall.x1()):Math.max(wall.z0(),wall.z1());
+   if(along>lo-EPS&&along<hi+EPS&&y>wall.bottom()+EPS&&y<wall.top()-EPS)
+    return false;
   }
-  for(var deck:CastleHubArchitecturalPlan.decks())if((ay-deck.height())*(by-deck.height())<0){double t=(deck.height()-ay)/(by-ay),x=ax+(bx-ax)*t,z=az+(bz-az)*t;if(x>deck.x0()&&x<deck.x1()&&z>deck.z0()&&z<deck.z1()&&!CastleHubArchitecturalPlan.onStairs(x,z))return false;}
+  // Upper decks have solid floors. The staircase is the only designed opening.
+  for(var deck:CastleHubArchitecturalPlan.decks()){
+   double dh=deck.height();
+   if((ay-dh)*(by-dh)>=0||Math.abs(by-ay)<EPS)continue;
+   double t=(dh-ay)/(by-ay);
+   if(t<=EPS||t>=1-EPS)continue;
+   double x=ax+(bx-ax)*t,z=az+(bz-az)*t;
+   if(x>deck.x0()+EPS&&x<deck.x1()-EPS
+      &&z>deck.z0()+EPS&&z<deck.z1()-EPS
+      &&!CastleHubArchitecturalPlan.onStairs(x,z))return false;
+  }
+  // Downstairs ceilings and roofs are also opaque to light: the old path
+  // missed these planes and illuminated downstairs surfaces from above.
+  for(double ceiling:new double[]{CastleHubArchitecturalPlan.GROUND_CEILING-.16,
+                                  CastleHubArchitecturalPlan.GROUND_CEILING,
+                                  CastleHubArchitecturalPlan.UPPER_CEILING}){
+   if((ay-ceiling)*(by-ceiling)>=0||Math.abs(by-ay)<EPS)continue;
+   double t=(ceiling-ay)/(by-ay);
+   if(t<=EPS||t>=1-EPS)continue;
+   double x=ax+(bx-ax)*t,z=az+(bz-az)*t;
+   if(x<=0||x>=CastleHubMap.WIDTH||z<=0||z>=CastleHubMap.HEIGHT
+      ||map.solid((int)Math.floor(x),(int)Math.floor(z))
+      ||map.outside(x,z)||CastleHubArchitecturalPlan.onStairs(x,z))continue;
+   if(ceiling==CastleHubArchitecturalPlan.UPPER_CEILING){
+    if(CastleHubArchitecturalPlan.upperWalkable(x,z))return false;
+   }else if(Math.abs(CastleHubArchitecturalPlan.groundCeilingHeight(x,z)-ceiling)<EPS)
+    return false;
+  }
   return true;
  }
  private void add(Kind k,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double r,double g,double b){sources.add(new Source(sources.size(),k,room,fixture,x,y,z,dx,dy,dz,radius,power,r,g,b));}
@@ -64,11 +110,11 @@ public final class FixtureLighting {
   case FROSTED_DOME->.18+.82*smooth(-.08,.42,dot);default->1;};}
  public RGB sample(int room,double x,double y,double z){
   Key key=new Key(room,Math.round(x*16),Math.round(y*16),Math.round(z*16));RGB cached=colours.get(key);if(cached!=null)return cached;
-  double r=(room<0||room>=12)?.31:.055,g=(room<0||room>=12)?.34:.059,b=(room<0||room>=12)?.41:.073;
+  double r=(room<0||room>=12)?.27:(castle!=null?.125:.055),g=(room<0||room>=12)?.29:(castle!=null?.129:.059),b=(room<0||room>=12)?.34:(castle!=null?.14:.073);
   for(var source:sources){double factor=factors[source.id];if(factor<.001)continue;
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
-   double fade=1-d/source.radius,weight=source.power*factor*angle*fade*fade/(1+.13*d2);if(weight<.002)continue;
+   double fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2);if(weight<.002)continue;
    Shadow shadow=new Shadow(source.id,key.x,key.y,key.z);Boolean visible=sight.get(shadow);
    if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);visible=clear(source.x,source.y,source.z,x-dx*back,y-dy*back,z-dz*back);sight.put(shadow,visible);}
    if(visible){r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}

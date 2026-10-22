@@ -1523,6 +1523,11 @@ public final class SceneRenderer {
         paintSky(clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         List<Face> castle=new ArrayList<>();castle.addAll(castleSurroundings());
+        // A continuous sub-floor seals cracks at mismatched tiled-wall boundaries.
+        // Fine floor finishes remain at Y=0; the backing is entirely BELOW them.
+        texturedQuad(castle,new Point(1,-.04,1),new Point(43,-.04,1),
+            new Point(43,-.04,34),new Point(1,-.04,34),MaterialAtlas.STONE,
+            1,1,43,1,43,34,1,34,0x77736e);
         for(int zz=1;zz<CastleHubMap.HEIGHT-1;zz++)for(int xx=1;xx<CastleHubMap.WIDTH-1;xx++){
             if(map.solid(xx,zz)||Math.hypot(xx+.5-x,zz+.5-z)>16)continue;
             int stone=map.floorMaterial(xx+.5,zz+.5);
@@ -1752,7 +1757,7 @@ public final class SceneRenderer {
         Point ca0=camera(f.a),cb0=camera(f.b),cc0=camera(f.c);double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
         if(ca0.z<NEAR&&cb0.z<NEAR&&cc0.z<NEAR||ca0.x>ca0.z*hx&&cb0.x>cb0.z*hx&&cc0.x>cc0.z*hx||ca0.x< -ca0.z*hx&&cb0.x< -cb0.z*hx&&cc0.x< -cc0.z*hx||ca0.y>ca0.z*hy&&cb0.y>cb0.z*hy&&cc0.y>cc0.z*hy||ca0.y< -ca0.z*hy&&cb0.y< -cb0.z*hy&&cc0.y< -cc0.z*hy)return;
 
-        if(room>=0&&room<12&&depth<4&&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
+        if(room>=0&&(room<12||fixtureLighting==castleLighting)&&depth<4&&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
             Point ab=mid(f.a,f.b),bc=mid(f.b,f.c),ca=mid(f.c,f.a);double abu=(f.au+f.bu)/2,abv=(f.av+f.bv)/2,bcu=(f.bu+f.cu)/2,bcv=(f.bv+f.cv)/2,cau=(f.cu+f.au)/2,cav=(f.cv+f.av)/2;
             drawLitFace(new Face(f.a,ab,ca,f.color,f.material,f.au,f.av,abu,abv,cau,cav),room,depth+1);drawLitFace(new Face(ab,f.b,bc,f.color,f.material,abu,abv,f.bu,f.bv,bcu,bcv),room,depth+1);drawLitFace(new Face(ca,bc,f.c,f.color,f.material,cau,cav,bcu,bcv,f.cu,f.cv),room,depth+1);drawLitFace(new Face(ab,bc,ca,f.color,f.material,abu,abv,bcu,bcv,cau,cav),room,depth+1);return;
         }

@@ -32,8 +32,8 @@ public final class CastleHubArchitecturalPlan {
     private static final List<Roof> ROOFS=List.of(
         new Roof(1,10,1,34,GROUND_CEILING,1.70,MaterialAtlas.STONE),
         new Roof(10.8,19,1.2,10.7,UPPER_CEILING,2.0,MaterialAtlas.STONE),
-        new Roof(20,28,1,34,GROUND_CEILING,1.85,MaterialAtlas.STONE),
-        new Roof(29,43,4,34,GROUND_CEILING,2.20,MaterialAtlas.AGED_WOOD)
+        new Roof(20,28.7,1,34,GROUND_CEILING,1.85,MaterialAtlas.STONE),
+        new Roof(28.6,43,4,34,GROUND_CEILING,2.20,MaterialAtlas.AGED_WOOD)
     );
     public static List<Roof> roofs(){return ROOFS;}
     public static boolean roofedAt(double x,double z){
