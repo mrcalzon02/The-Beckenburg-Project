@@ -252,7 +252,7 @@ jobs:
           }
 
       - name: Publish draft, verify all assets, then publish independent release
-        if: steps.regression.outcome == 'success' && steps.multiplayer.outcome == 'success' && steps.desktop.outcome == 'success' && steps.native.outcome == 'success'
+        if: steps.artifacts.outcome == 'success'
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
@@ -263,6 +263,10 @@ jobs:
           EXE: ${{ steps.artifacts.outputs.exe_name }}
           MSI: ${{ steps.artifacts.outputs.msi_name }}
           PORTABLE: ${{ steps.artifacts.outputs.zip_name }}
+          REGRESSION: ${{ steps.regression.outcome }}
+          MULTIPLAYER: ${{ steps.multiplayer.outcome }}
+          DESKTOP: ${{ steps.desktop.outcome }}
+          NATIVE: ${{ steps.native.outcome }}
         run: |
           $ErrorActionPreference='Stop'
           # Each serialized main-branch run publishes its own tested SHA.
@@ -274,7 +278,9 @@ jobs:
           }
           $names=@($env:EXE,$env:MSI,$env:PORTABLE,'SHA256SUMS.txt')
           $files=@($names | ForEach-Object { Join-Path $env:ARTIFACT_DIR $_ })
-          $notes="Beckenburg $env:VERSION - Java 17 asymmetric ghost-hunting development build.`n`n" +
+          $accepted=$env:REGRESSION -eq 'success' -and $env:MULTIPLAYER -eq 'success' -and $env:DESKTOP -eq 'success' -and $env:NATIVE -eq 'success'
+          $label=if ($accepted) { 'ACCEPTED' } else { 'UNVERIFIED DEVELOPMENT BUILD - acceptance failures' }
+          $notes="[$label] Beckenburg $env:VERSION - Java 17 asymmetric ghost-hunting development build.`n`n" +
                  "Windows x64 EXE installer, MSI installer and self-contained portable ZIP (no Java installation required).`n" +
                  "Use the in-game Updates control to check only beckenburg-v* releases. Installers are unsigned; Windows may display a warning.`n" +
                  "This is an early playable build, not a finished release-ready game."
@@ -301,15 +307,21 @@ jobs:
             if ($asset.Count -ne 1 -or $asset[0].size -le 0) { throw "Release asset readback failed: $name" }
             Write-Host "Verified remotely: $name ($($asset[0].size) bytes)"
           }
-          gh release edit $env:TAG --draft=false --latest
+          if ($accepted) {
+            gh release edit $env:TAG --draft=false --prerelease=false --latest
+          } else {
+            gh release edit $env:TAG --draft=false --prerelease --latest=false
+          }
           if ($LASTEXITCODE -ne 0) { throw 'Release publish failed; verify draft on GitHub' }
           $verified=gh release view $env:TAG --json isDraft,tagName,assets | ConvertFrom-Json
           if ($verified.isDraft -or $verified.tagName -ne $env:TAG) { throw 'Published release readback failed' }
-          $latest=gh api "repos/$env:GH_REPO/releases/latest" --jq .tag_name
-          if ($LASTEXITCODE -ne 0 -or $latest.Trim() -ne $env:TAG) {
-            throw "Latest GitHub release did not match published Beckenburg build: $latest"
+          if ($accepted) {
+            $latest=gh api "repos/$env:GH_REPO/releases/latest" --jq .tag_name
+            if ($LASTEXITCODE -ne 0 -or $latest.Trim() -ne $env:TAG) {
+              throw "Latest GitHub release did not match published Beckenburg build: $latest"
+            }
           }
-          Write-Host "PUBLISHED AND VERIFIED LATEST: https://github.com/$env:GH_REPO/releases/tag/$env:TAG"
+          Write-Host "PUBLISHED AND VERIFIED ($label): https://github.com/$env:GH_REPO/releases/tag/$env:TAG"
 
       - name: Fail acceptance after preserving installer artifacts
         if: always()
@@ -324,5 +336,5 @@ jobs:
           if ($env:ARTIFACTS -ne 'success') { throw 'Windows installer packaging failed' }
           if ($env:REGRESSION -ne 'success' -or $env:MULTIPLAYER -ne 'success' -or
               $env:DESKTOP -ne 'success' -or $env:NATIVE -ne 'success') {
-            throw 'Acceptance failed; candidate installers are available from this workflow run, not published as verified latest'
+            throw 'Acceptance failed; packaged installers published as an unverified prerelease, not latest stable'
           }
