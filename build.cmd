@@ -92,6 +92,11 @@ rem Verify authored multi-storey levels before the historical release suite.
 for %%T in (AuthoredLevelPhysicsTest AuthoredLevelReachabilityTest AuthoredLevelStateTest AuthoredLevelNetworkTest AuthoredLevelRitualCaseTest AuthoredUtilitiesTest SoloElevationTest EquipmentAssetAssignmentsTest LevelRenderAcceptanceTest WorldViewHandednessTest LevelSurfaceIntegrityTest LivedLevelDressingTest LooseClutterTest LooseClutterNetworkTest HauntedFixturesTest VanHumanScaleTest VanRackStockTest VanRackNetworkTest InteractionFocusTest InteractionNetworkTest HeldDeviceReadoutTest FixtureSoundscapeTest DomesticFitoutTest LevelEnclosureTest PhysicalLightingTest SurroundingClearanceTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
 rem Both release and E2E verify the same freshly assembled jar payload.
 :package_jar_only
+if not exist build\classes\org\beckenburg mkdir build\classes\org\beckenburg
+if defined BECKENBURG_RELEASE_VERSION (
+  > build\classes\org\beckenburg\release.properties echo version=%BECKENBURG_RELEASE_VERSION%
+  >> build\classes\org\beckenburg\release.properties echo source_sha=%BECKENBURG_SOURCE_SHA%
+)
 jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather || exit /b 1
 if /I "%~1"=="package" goto packaged
 if /I "%~1"=="e2e" goto e2e
