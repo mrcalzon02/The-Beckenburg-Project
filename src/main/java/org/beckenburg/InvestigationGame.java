@@ -463,18 +463,23 @@ public final class InvestigationGame {
     private void begin(){begin(false,false,0,null);}
     private void begin(boolean campaignMode,boolean withAssistant,long seed,
             CampaignStory.Chapter chapter){
+        BeckenburgDeveloperTrace.caseStart("campaign="+campaignMode+" assistant="+withAssistant+" seed="+seed);
+        BeckenburgDeveloperTrace.caseStage("closing previous panels");
         if(game!=null){game.close();cards.remove(game);game=null;}
         if(ghostPractice!=null){ghostPractice.close();cards.remove(ghostPractice);ghostPractice=null;}
         caseNumber++;
         SiteCatalog.Location location=(SiteCatalog.Location)locationPicker.getSelectedItem();
         SiteCatalog.requirePlayable(location);
+        BeckenburgDeveloperTrace.caseStage("constructing GamePanel "+location);
         game=new GamePanel((InvestigationSession.Role)rolePicker.getSelectedItem(),caseNumber,
             location,(SiteCatalog.Conditions)conditionsPicker.getSelectedItem(),
             (MissionWeather.Mode)weatherModePicker.getSelectedItem(),
             (EvidenceSignals.Weather)weatherPicker.getSelectedItem(),
             (Integer)weatherSeverityPicker.getSelectedItem(),campaignMode,withAssistant,seed,
             chapter);
+        BeckenburgDeveloperTrace.caseStage("GamePanel constructor completed");
         cards.add(game,"play");((CardLayout)cards.getLayout()).show(cards,"play");
+        BeckenburgDeveloperTrace.caseStage("case view displayed");
         SwingUtilities.invokeLater(game::requestFocusInWindow);
     }
     private void beginGhost(){
