@@ -4,7 +4,7 @@ The authoritative application is the **standalone** [The Beckenburg Project](htt
 
 ## Continuous Windows package publication
 
-`.github/workflows/beckenburg-release.yml` runs on **every push to `main`** (including documentation-only changes), and can be manually dispatched to select a minor/major bump. Branches and unmerged pull requests **never publish**. A single release job serializes version allocation; the default bump is patch. Superseded revisions are checked again before publication. Tags and releases are not source-branch pushes, so they do not recursively trigger another build.
+`.github/workflows/beckenburg-release.yml` runs on **every push to `main`** (including documentation-only changes), and can be manually dispatched to select a minor/major bump. Branches and unmerged pull requests **never publish**. A single release job serializes version allocation; the default bump is patch. Each passing serialized run publishes its tested source SHA, even while newer main commits queue for their own release. GitHub may coalesce intermediate pending builds when commits arrive faster than they can be verified. Tags and releases are not source-branch pushes, so they do not recursively trigger another build.
 
 **Publishing is conditional, not automatic approval.** The Windows runner first runs `build.cmd` with the complete regression manifest; it then executes `build.cmd e2e` for packaged real-TCP multiplayer round checks, loads the packaged JAR through desktop UI acceptance, and packages with jpackage + WiX 3 using the built-in Java runtime. The candidate native executable must launch and reach `PHASE ready` and `PHASE Menu available` on Windows before upload. If *any* required test, setup, packaging or startup step fails, no release is published.
 

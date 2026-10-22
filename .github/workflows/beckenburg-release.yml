@@ -224,12 +224,12 @@ jobs:
           PORTABLE: ${{ steps.artifacts.outputs.zip_name }}
         run: |
           $ErrorActionPreference='Stop'
-          # A superseded source revision must not become latest.
-          $remote=(git ls-remote origin refs/heads/main | Select-Object -First 1)
-          if($LASTEXITCODE -ne 0 -or -not $remote) { throw 'Could not confirm remote main' }
-          $tip=($remote -split '\s+')[0]
-          if($tip -ne $env:GITHUB_SHA) {
-            throw "Main advanced to $tip; refusing to publish superseded $env:GITHUB_SHA"
+          # Each serialized main-branch run publishes its own tested SHA.
+          # Do not abandon a verified build just because development continues
+          # while the Windows regression/installer tests are running.
+          $checkedOut=(git rev-parse HEAD).Trim()
+          if($LASTEXITCODE -ne 0 -or $checkedOut -ne $env:GITHUB_SHA) {
+            throw "Release source mismatch: checkout=$checkedOut expected=$env:GITHUB_SHA"
           }
           $names=@($env:EXE,$env:MSI,$env:PORTABLE,'SHA256SUMS.txt')
           $files=@($names | ForEach-Object { Join-Path $env:ARTIFACT_DIR $_ })
