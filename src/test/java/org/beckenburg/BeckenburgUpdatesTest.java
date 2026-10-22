@@ -44,6 +44,15 @@ public final class BeckenburgUpdatesTest {
             "Current Beckenburg release URL must be accepted";
         assert BeckenburgUpdates.select("["+item("0.3.10",true)+"]","0.3.9")==null:
             "Draft releases must remain unavailable";
+        // Regression: an installed 0.1.13 MUST see 0.1.14 even when marked prerelease.
+        String testRelease=item("0.1.14",false).replace("\\"prerelease\\":false","\\"prerelease\\":true");
+        var offered=BeckenburgUpdates.select("["+testRelease+"]","0.1.13");
+        assert offered!=null && offered.version().equals("0.1.14"):
+            "Development prerelease must be offered to older installed clients";
+        assert BeckenburgUpdates.select("["+testRelease+"]","0.1.14")==null:
+            "Do not repeatedly offer installed prerelease";
+        assert BeckenburgUpdates.select("["+testRelease+"]","0.1.15")==null:
+            "Do not downgrade from a newer installed version";
         assert BeckenburgUpdates.installedVersion().matches("\\d+\\.\\d+\\.\\d+");
         System.out.println("PASS independent Beckenburg updates, version sorting, exact asset path and hostile URL rejection");
     }
