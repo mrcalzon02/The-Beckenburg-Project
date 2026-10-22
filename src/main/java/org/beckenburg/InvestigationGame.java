@@ -17,6 +17,7 @@ public final class InvestigationGame {
     private BeckenburgInstallIdentity.Identity installation;
     private final JLabel account=new JLabel();
     private JComboBox<InvestigationSession.Role> rolePicker;
+    private JComboBox<CharacterVisuals.Hunter> assistantRolePicker;
     private JComboBox<SiteCatalog.Location> locationPicker;
     private JComboBox<SiteCatalog.Conditions> conditionsPicker;
     private JComboBox<MissionWeather.Mode> weatherModePicker;
@@ -228,18 +229,21 @@ public final class InvestigationGame {
         preparation.add(prepTitle,BorderLayout.NORTH);
         JPanel selectorGrid=transparentPanel(new GridLayout(0,2,10,12));
         rolePicker=new JComboBox<>(InvestigationSession.Role.values());
+        assistantRolePicker=new JComboBox<>(CharacterVisuals.Hunter.values());
+        assistantRolePicker.setSelectedItem(CharacterVisuals.Hunter.OBSERVER);
         locationPicker=new JComboBox<>(SiteCatalog.Location.values());
         conditionsPicker=new JComboBox<>(SiteCatalog.Conditions.values());
         weatherModePicker=new JComboBox<>(MissionWeather.Mode.values());
         weatherPicker=new JComboBox<>(EvidenceSignals.Weather.values());
         weatherSeverityPicker=new JComboBox<>(new Integer[]{1,2,3});
-        for(JComboBox<?> picker:new JComboBox<?>[]{rolePicker,locationPicker,conditionsPicker,
+        for(JComboBox<?> picker:new JComboBox<?>[]{rolePicker,assistantRolePicker,locationPicker,conditionsPicker,
                 weatherModePicker,weatherPicker,weatherSeverityPicker}){
             picker.setBackground(new Color(35,39,46));
             picker.setForeground(new Color(237,225,201));
             picker.setFont(new Font(Font.MONOSPACED,Font.BOLD,menuFont(13)));
         }
         selectorGrid.add(menuLabel("Discipline",13));selectorGrid.add(rolePicker);
+        selectorGrid.add(menuLabel("Companion class",13));selectorGrid.add(assistantRolePicker);
         selectorGrid.add(menuLabel("Location",13));selectorGrid.add(locationPicker);
         selectorGrid.add(menuLabel("Conditions",13));selectorGrid.add(conditionsPicker);
         selectorGrid.add(menuLabel("Weather schedule",13));selectorGrid.add(weatherModePicker);
@@ -473,7 +477,7 @@ public final class InvestigationGame {
             (MissionWeather.Mode)weatherModePicker.getSelectedItem(),
             (EvidenceSignals.Weather)weatherPicker.getSelectedItem(),
             (Integer)weatherSeverityPicker.getSelectedItem(),campaignMode,withAssistant,seed,
-            chapter);
+            chapter,(CharacterVisuals.Hunter)assistantRolePicker.getSelectedItem());
         cards.add(game,"play");((CardLayout)cards.getLayout()).show(cards,"play");
         SwingUtilities.invokeLater(game::requestFocusInWindow);
     }
@@ -534,7 +538,7 @@ public final class InvestigationGame {
                 SiteCatalog.Conditions mode,MissionWeather.Mode weatherMode,
                 EvidenceSignals.Weather selectedWeather,int severity,
                 boolean campaignMode,boolean withAssistant,long campaignSeed,
-                CampaignStory.Chapter chapter){
+                CampaignStory.Chapter chapter,CharacterVisuals.Hunter allyClass){
             SiteCatalog.requirePlayable(site);
             if(campaignMode!=(chapter!=null))
                 throw new IllegalArgumentException("Campaign assignment required only for story");
@@ -576,7 +580,7 @@ public final class InvestigationGame {
             session=new InvestigationSession(map,role,roundSeed,profile.level(role),assigned);
             session.configureWeather(weatherMode,selectedWeather,severity);
             session.configureParty(campaignMode&&withAssistant?2:1);
-            assistant=campaignMode&&withAssistant?new CampaignAlly(map,session):null;
+            assistant=campaignMode&&withAssistant?new CampaignAlly(map,session,allyClass):null;
             session.connectLighting(lights);
             scene.setWeather(session.weather());
             atmosphere.setWeather(session.weather());
@@ -905,6 +909,15 @@ public final class InvestigationGame {
                 session.placeWard(scene.x,feetY(),scene.z);
                 GameSfx.play(LanSound.Cue.WARD);
             }
+            if(key==KeyEvent.VK_5||key==KeyEvent.VK_6){
+                HunterDiscipline.Ability ability=key==KeyEvent.VK_5
+                    ?HunterDiscipline.primary(CharacterVisuals.Hunter.valueOf(session.role().name()))
+                    :HunterDiscipline.secondary(CharacterVisuals.Hunter.valueOf(session.role().name()));
+                var outcome=session.classAbility(ability,scene.x,feetY(),scene.z);
+                showVanNotice(outcome.message());
+                if(outcome.accepted())GameSfx.play(ability==HunterDiscipline.Ability.SURVEY
+                    ?LanSound.Cue.SCANNER:LanSound.Cue.WARD);
+            }
             if(key==KeyEvent.VK_Z)session.deployCounter(HunterCounters.Kind.CROSS,scene.x,feetY(),scene.z,scene.yaw);
             if(key==KeyEvent.VK_G)session.deployCounter(HunterCounters.Kind.WARD,scene.x,feetY(),scene.z,scene.yaw);
             if(key==KeyEvent.VK_H)session.deployCounter(HunterCounters.Kind.SALT,scene.x,feetY(),scene.z,scene.yaw);
@@ -1079,7 +1092,7 @@ public final class InvestigationGame {
                     g.fillRoundRect(12,157,Math.min(width-24,685),39,7,7);
                     g.setColor(new Color(169,224,193));
                     g.drawString("ALLY  "+assistant.order()+"  /  "+map.roomName(assistant.room())+
-                        "  /  U follow/hold  I thermometer  P destination",23,173);
+                        " / "+assistant.discipline()+"  /  U follow/hold  I thermometer  P destination",23,173);
                     g.setColor(new Color(210,218,202));
                     String observed=assistant.report();
                     g.drawString(observed.substring(0,Math.min(88,observed.length())),23,190);
@@ -1122,7 +1135,7 @@ public final class InvestigationGame {
                     String[] hints={
                         "WASD move / SHIFT sprint / CLICK mouse-look",
                         "E interact / F flashlight / 1-4 select gear / R use",
-                        "C ritual ward / B rite / Z cross / G ward / H salt",
+                        "C ward / B rite / 5-6 class skills / Z cross / G ward / H salt",
                         "T health medicine / Y sanity medicine",
                         "J journal / M map / Q hold team callout wheel",
                         "X extract at van / ESC pause / F1 close help"
