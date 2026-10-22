@@ -14,6 +14,7 @@ import java.util.UUID;
 public final class SpiritualWar {
     public static final int TEAM_LIMIT = 12;
     public static final int MATCH_LIMIT_SECONDS = 1800;
+    public static final int VAN_PROTECTION_SECONDS = 900;
     public static final int START_HEALTH = 100;
     public static final int SWORD_DAMAGE = 25;
     public static final int GHOST_STRIKE_DAMAGE = 20;
@@ -42,6 +43,7 @@ public final class SpiritualWar {
         private final Map<UUID, Fighter> fighters = new HashMap<>();
         private boolean started;
         private int elapsedSeconds;
+        private final java.util.EnumMap<Side,Long> damageDealt = new java.util.EnumMap<>(Side.class);
         private Result result = Result.ACTIVE;
 
         public record View(UUID id, Side side, GhostIdentity.Type ghost, int health,
@@ -84,13 +86,29 @@ public final class SpiritualWar {
         public View view(UUID id) { return require(id).view(); }
         public Result result() { return result; }
         public int remainingSeconds() { return Math.max(0, MATCH_LIMIT_SECONDS - elapsedSeconds); }
+        public boolean vanProtected() { return started && elapsedSeconds < VAN_PROTECTION_SECONDS; }
+        public int survivors(Side side) {
+            return (int) fighters.values().stream().filter(f -> f.side == Objects.requireNonNull(side) && f.health > 0).count();
+        }
+        public long damageDealt(Side side) { return damageDealt.getOrDefault(Objects.requireNonNull(side), 0L); }
+        public int remainingTeamHealth(Side side) {
+            return fighters.values().stream().filter(f -> f.side == Objects.requireNonNull(side))
+                .mapToInt(f -> f.health).sum();
+        }
+        private void resolveTimeLimit() {
+            int count = Integer.compare(survivors(Side.HUNTER), survivors(Side.GHOST));
+            int damage = Long.compare(damageDealt(Side.HUNTER), damageDealt(Side.GHOST));
+            int health = Integer.compare(remainingTeamHealth(Side.HUNTER), remainingTeamHealth(Side.GHOST));
+            int winner = count != 0 ? count : damage != 0 ? damage : health;
+            result = winner > 0 ? Result.HUNTERS_WIN : winner < 0 ? Result.GHOSTS_WIN : Result.TIME_LIMIT_DRAW;
+        }
         /** Advance host-authoritative monotonic time after match start, not lobby time. */
         public void advanceTime(int seconds) {
             if (!started) throw new IllegalStateException("Match not started");
             if (seconds < 0) throw new IllegalArgumentException("Negative elapsed time");
             if (result != Result.ACTIVE) return;
             elapsedSeconds = (int) Math.min((long) MATCH_LIMIT_SECONDS, (long) elapsedSeconds + seconds);
-            if (elapsedSeconds == MATCH_LIMIT_SECONDS) result = Result.TIME_LIMIT_DRAW;
+            if (elapsedSeconds == MATCH_LIMIT_SECONDS) resolveTimeLimit();
         }
         public boolean started() { return started; }
         private Fighter require(UUID id) {
@@ -130,7 +148,9 @@ public final class SpiritualWar {
                 target.wardActive = false;
                 return;
             }
-            target.health = Math.max(0, target.health - damage);
+            int actualDamage = Math.min(target.health, damage);
+            target.health -= actualDamage;
+            damageDealt.merge(attacker.side, (long) actualDamage, Long::sum);
             if (target.health == 0 && attacker.side == Side.GHOST)
                 attacker.health = Math.min(START_HEALTH, attacker.health + GHOST_KILL_RECOVERY);
             updateResult();
