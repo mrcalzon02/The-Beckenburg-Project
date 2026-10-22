@@ -1652,7 +1652,42 @@ public final class SceneRenderer {
             Point ab=mid(f.a,f.b),bc=mid(f.b,f.c),ca=mid(f.c,f.a);double abu=(f.au+f.bu)/2,abv=(f.av+f.bv)/2,bcu=(f.bu+f.cu)/2,bcv=(f.bv+f.cv)/2,cau=(f.cu+f.au)/2,cav=(f.cv+f.av)/2;
             drawLitFace(new Face(f.a,ab,ca,f.color,f.material,f.au,f.av,abu,abv,cau,cav),room,depth+1);drawLitFace(new Face(ab,f.b,bc,f.color,f.material,abu,abv,f.bu,f.bv,bcu,bcv),room,depth+1);drawLitFace(new Face(ca,bc,f.c,f.color,f.material,cau,cav,bcu,bcv,f.cu,f.cv),room,depth+1);drawLitFace(new Face(ab,bc,ca,f.color,f.material,abu,abv,bcu,bcv,cau,cav),room,depth+1);return;
         }
-        List<Vertex> pts=clip(litVertex(f.a,f.au,f.av,f.material,room),litVertex(f.b,f.bu,f.bv,f.material,room),litVertex(f.c,f.cu,f.cv,f.material,room));for(int i=1;i<pts.size()-1;i++)triangle(pts.get(0),pts.get(i),pts.get(i+1),f.color,f.material,1);
+        List<Vertex> pts=clip(litVertex(f.a,f.au,f.av,f.material,room),litVertex(f.b,f.bu,f.bv,f.material,room),litVertex(f.c,f.cu,f.cv,f.material,room));var weather=weatherCoating(f,room);
+        double wet=weather==null?0:weather.wet();
+        double snow=weather==null?0:Math.min(1,weather.snowMetres()/.06);
+        for(int i=1;i<pts.size()-1;i++)
+            triangle(pts.get(0),pts.get(i),pts.get(i+1),f.color,f.material,1,wet,snow);
+    }
+    /** Register only exposed walkable ground or outward roof faces. Real room
+     * topology, not ghost location, determines if a surface sees the sky. */
+    private dev.mrcalzon.weather.WeatherSurfaceGrid.Sample weatherCoating(Face f,int room){
+        if(lightingMap==null||room<0)return null;
+        double avgY=(f.a.y()+f.b.y()+f.c.y())/3;
+        double minY=Math.min(f.a.y(),Math.min(f.b.y(),f.c.y())),
+            maxY=Math.max(f.a.y(),Math.max(f.b.y(),f.c.y()));
+        double ax=f.b.x()-f.a.x(),az=f.b.z()-f.a.z(),
+            bx=f.c.x()-f.a.x(),bz=f.c.z()-f.a.z();
+        double normalY=Math.abs(ax*bz-az*bx);
+        double area=Math.sqrt(normalY*normalY+
+            Math.pow((f.b.y()-f.a.y())*bz-az*(f.c.y()-f.a.y()),2)+
+            Math.pow(ax*(f.c.y()-f.a.y())-(f.b.y()-f.a.y())*bx,2));
+        if(area<.00001||normalY/area<.60)return null;
+        boolean outside=lightingMap.outside(room);
+        boolean roof=!outside&&avgY>lightingMap.floorY(room)+2.4;
+        if(!outside&&!roof)return null;
+        if(outside&&maxY-minY>.5&&!roof)return null;
+        double mx=(f.a.x()+f.b.x()+f.c.x())/3,
+            mz=(f.a.z()+f.b.z()+f.c.z())/3;
+        int sx=(int)Math.floor(mx/3),sz=(int)Math.floor(mz/3);
+        int id=Math.floorMod(31*(31*(room+1)+sx)+sz,2147483646);
+        var grid=weatherFx.surfaces();
+        if(grid.surface(id)==null){
+            var material=f.material==LevelMaterials.WOOD
+                ?dev.mrcalzon.weather.WeatherSurfaceGrid.Material.WOOD
+                :dev.mrcalzon.weather.WeatherSurfaceGrid.Material.STONE;
+            grid.register(id,material,1);
+        }
+        return grid.shade(id,0x808080);
     }
     private HouseMap lightingMap;private FixtureLighting fixtureLighting,castleLighting;
     private Vertex litVertex(Point p,double u,double v,int material,int room){
@@ -1868,6 +1903,10 @@ public final class SceneRenderer {
         triangle(va,vb,vc,tint,material,1);
     }
     private void triangle(Vertex va,Vertex vb,Vertex vc,int tint,int material,double roomLevel){
+        triangle(va,vb,vc,tint,material,roomLevel,0,0);
+    }
+    private void triangle(Vertex va,Vertex vb,Vertex vc,int tint,int material,
+            double roomLevel,double wet,double snow){
         Point a=va.p,b=vb.p,c=vc.p;
         int color=tint;
         double x0=PsxPipeline.snap(renderWidth*.5+a.x/a.z*focal,psxPreset),y0=PsxPipeline.snap(renderHeight*.5-a.y/a.z*focal,psxPreset);
@@ -1901,6 +1940,15 @@ public final class SceneRenderer {
                 color=((tr*((tint>>16)&255)/255)<<16) |
                     ((tg*((tint>>8)&255)/255)<<8) |
                      (tb*(tint&255)/255);
+            }
+            if(wet>0||snow>0){
+                // Preserve the original scene texture. Wetness darkens it; snow
+                // whitens only exposed horizontal surfaces, not room walls.
+                double dark=1-.38*wet;
+                int red=(int)Math.min(255,((color>>16)&255)*dark*(1-snow)+224*snow);
+                int green=(int)Math.min(255,((color>>8)&255)*dark*(1-snow)+232*snow);
+                int blue=(int)Math.min(255,(color&255)*(dark+.02*wet)*(1-snow)+237*snow);
+                color=(red<<16)|(green<<8)|blue;
             }
             // Flashlight is a bounded near-field additive beam; turning room lights off
             // genuinely darkens distant geometry instead of only tinting a HUD icon.
