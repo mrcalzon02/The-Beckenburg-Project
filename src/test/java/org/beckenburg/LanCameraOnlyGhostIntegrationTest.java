@@ -81,8 +81,8 @@ public final class LanCameraOnlyGhostIntegrationTest {
                 String installed=van.await("CAMERA|PLACE|0|4|",8);
                 check(installed.endsWith("|"+heading+"|I"),
                     "Host must preserve deployed camera heading and actual tier: "+installed);
-                van.await("ACCEPT|GEARUSE|VIDEO_CAMERA|",8);
                 van.await("CAMERA|POWER|0|1",8);
+                van.await("ACCEPT|GEARUSE|VIDEO_CAMERA|",8);
                 // The actual remote camera now stays at the station. The viewing
                 // investigator returns to the van; a second Hunter stays onsite.
                 synchronized(mutex){AuthoredTestSupport.place(map,world,0,vanPosition);}
