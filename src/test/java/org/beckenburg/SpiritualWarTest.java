@@ -1,43 +1,62 @@
 package org.beckenburg;
 
-import org.junit.jupiter.api.Test;
 import java.util.UUID;
-import static org.junit.jupiter.api.Assertions.*;
 
-class SpiritualWarTest {
-    @Test void rosterAndLimits() {
-        var m = new SpiritualWar.Match();
-        for (int i = 0; i < 12; i++) m.join(UUID.randomUUID(), SpiritualWar.Side.HUNTER, null);
-        assertThrows(IllegalStateException.class, () -> m.join(UUID.randomUUID(), SpiritualWar.Side.HUNTER, null));
-        assertThrows(IllegalArgumentException.class, () -> m.join(UUID.randomUUID(), SpiritualWar.Side.GHOST,
-                GhostIdentity.Type.ELDER_NOTHIC));
+/** Standalone rules regression, consistent with the project's main-method test runner. */
+public final class SpiritualWarTest {
+    private static void check(boolean ok, String message) {
+        if (!ok) throw new AssertionError(message);
     }
-    @Test void wardPacksAndKillHealing() {
-        var m = new SpiritualWar.Match();
+    private static void reject(Runnable action) {
+        boolean rejected = false;
+        try { action.run(); } catch (IllegalArgumentException | IllegalStateException expected) {
+            rejected = true;
+        }
+        check(rejected, "Expected invalid action to be rejected");
+    }
+    private static GhostIdentity.Type standardGhost() {
+        for (var type : GhostIdentity.Type.values())
+            if (!type.elder() && !type.ancient()) return type;
+        throw new AssertionError("No standard ghost");
+    }
+    public static void main(String[] args) {
+        var unstarted = new SpiritualWar.Match();
+        reject(unstarted::start);
+        check(!SpiritualWar.unlocked(new ProfileStore(java.nio.file.Path.of("unused.properties"))),
+            "Fresh campaign cannot enter Spiritual War");
+        for (int i = 0; i < 12; i++)
+            unstarted.join(UUID.randomUUID(), SpiritualWar.Side.HUNTER, null);
+        reject(() -> unstarted.join(UUID.randomUUID(), SpiritualWar.Side.HUNTER, null));
+        reject(() -> unstarted.join(UUID.randomUUID(), SpiritualWar.Side.GHOST,
+            GhostIdentity.Type.ELDER_NOTHIC));
+        check(SpiritualWar.hunterLoadout().size() == 3, "Exactly three permitted tools");
+
+        var match = new SpiritualWar.Match();
+        UUID hunter = UUID.randomUUID(), ghost = UUID.randomUUID();
+        match.join(hunter, SpiritualWar.Side.HUNTER, null);
+        match.join(ghost, SpiritualWar.Side.GHOST, standardGhost());
+        match.start();
+        match.ward(hunter);
+        match.ghostStrike(ghost, hunter);
+        check(match.view(hunter).health() == 100 && match.view(hunter).wards() == 1,
+            "Ward absorbs one strike and costs one charge");
+        match.ghostStrike(ghost, hunter);
+        match.heal(hunter);
+        check(match.view(hunter).health() == 100 && match.view(hunter).packs() == 1,
+            "Pack heals without overheal and is consumed");
+        for (int i = 0; i < 4; i++) match.sword(hunter, ghost);
+        check(match.result() == SpiritualWar.Result.HUNTERS_WIN, "Hunter eliminated last ghost");
+        reject(() -> match.ghostStrike(ghost, hunter));
+
+        var rematch = new SpiritualWar.Match();
         UUID h = UUID.randomUUID(), g = UUID.randomUUID();
-        m.join(h, SpiritualWar.Side.HUNTER, null);
-        m.join(g, SpiritualWar.Side.GHOST, GhostIdentity.Type.values()[0]);
-        m.start();
-        m.ward(h);
-        m.ghostStrike(g, h);
-        assertEquals(100, m.view(h).health());
-        assertEquals(1, m.view(h).wards());
-        m.ghostStrike(g, h);
-        m.heal(h);
-        assertEquals(100, m.view(h).health());
-        assertEquals(1, m.view(h).packs());
-        for(int i=0;i<4;i++)m.sword(h,g);
-        assertEquals(SpiritualWar.Result.HUNTERS_WIN,m.result());
-    }
-    @Test void ghostRestoresHealthOnKill() {
-        var m = new SpiritualWar.Match();
-        UUID h=UUID.randomUUID(),g=UUID.randomUUID();
-        m.join(h, SpiritualWar.Side.HUNTER,null);
-        m.join(g, SpiritualWar.Side.GHOST,GhostIdentity.Type.values()[0]);
-        m.start();
-        m.sword(h,g);
-        for(int i=0;i<5;i++)m.ghostStrike(g,h);
-        assertEquals(100,m.view(g).health());
-        assertEquals(SpiritualWar.Result.GHOSTS_WIN,m.result());
+        rematch.join(h, SpiritualWar.Side.HUNTER, null);
+        rematch.join(g, SpiritualWar.Side.GHOST, standardGhost());
+        rematch.start();
+        rematch.sword(h, g);
+        for (int i = 0; i < 5; i++) rematch.ghostStrike(g, h);
+        check(rematch.view(g).health() == 100 && rematch.result() == SpiritualWar.Result.GHOSTS_WIN,
+            "Confirmed ghost kill heals to cap and concludes round");
+        System.out.println("PASS Spiritual War headless roster, wards, healing and elimination");
     }
 }
