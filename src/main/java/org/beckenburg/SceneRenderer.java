@@ -1828,7 +1828,17 @@ public final class SceneRenderer {
     public void setEditorSelection(double x,double y,double z){editorSelection=new double[]{x,y,z};}
     public void clearEditorSelection(){editorSelection=null;}
     private Vertex litVertex(Point p,double u,double v,int material,int room){
-        var rgb=fixtureLighting.sample(room,p.x,p.y,p.z);var glow=fixtureLighting.emission(material,p.x,p.y,p.z);double r=Math.max(rgb.r(),glow.r()),g=Math.max(rgb.g(),glow.g()),b=Math.max(rgb.b(),glow.b());
+        // Sample on the visible side of opaque surfaces. Sampling exactly
+        // on a zero-thickness wall/ceiling made a lamp on the OTHER side
+        // illuminate this face because the wall hit occurred at the ray end.
+        // This bias is shared by castle and investigation scene rendering.
+        double vx=x-p.x,vy=eyeHeight-p.y,vz=z-p.z;
+        double viewDistance=Math.sqrt(vx*vx+vy*vy+vz*vz);
+        double shift=viewDistance<.0001?0:Math.min(.075,viewDistance*.30)/viewDistance;
+        double litX=p.x+vx*shift,litY=p.y+vy*shift,litZ=p.z+vz*shift;
+        var rgb=fixtureLighting.sample(room,litX,litY,litZ);
+        var glow=fixtureLighting.emission(material,p.x,p.y,p.z);
+        double r=Math.max(rgb.r(),glow.r()),g=Math.max(rgb.g(),glow.g()),b=Math.max(rgb.b(),glow.b());
         for(var source:portablePositions.values())if(lightingMap!=null&&source.on()){
             double dx=p.x-source.x(),dy=p.y-(source.y()+.2),dz=p.z-source.z(),radius=source.tool().equals("FIRELIGHT")?4.8:3.2,d=Math.sqrt(dx*dx+dy*dy+dz*dz);
             if(d<radius&&lightingMap.clearLineOfSight(source.x(),source.y()+.25,source.z(),p.x,p.y+.04,p.z)){double add=(1-d/radius)*.65;r+=add;g+=add*(source.tool().equals("FIRELIGHT")?.65:1);b+=add*(source.tool().equals("FIRELIGHT")?.28:1);}
