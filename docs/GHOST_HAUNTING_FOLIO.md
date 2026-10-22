@@ -81,3 +81,30 @@ An accepted `GhostDomain.Resolution` chooses an event deterministically from a s
 The player-facing apparition, live camera, and two independent Twins bodies must never select character-specific texture files for ordinary manifestations. The only authorized reveal comes from a real host SIGNATURE action in its 10-tick window. The catalog is validated by `GhostHauntingFolioTest` and camera appearance by `LanCameraSightTest` in the Java 17 regression suite.
 
 **Limits:** Environmental names are authored scenario identifiers, not promises of unique prop animations. Six shared renderer filters, existing spatial audio and existing physical interactions are the current shipped primitives; dedicated bespoke 3D events, audio recordings, per-object authored choreography and animation loops are future asset passes.
+
+## Bespoke storyboarding pass — 14 executable scores
+
+Fourteen authored entries now replace their generic filter with individual keyed PSX storyboards and timed positional sound scores. This does not produce 14 bespoke art files: the procedural 320×200 screen effects and synthesized stereo motifs are new executable code, deliberately retaining the neutral apparition texture for all non-signature encounters.
+
+| Haunting | Choreographed visuals | Audio staging |
+| --- | --- | --- |
+| Lamp Convulsion | Unsteady strobing exposure, staggered dim-outs | Electrical arcs, two relapses and a low thump |
+| Radio Crawl | Horizontal scanline dropout and static displacement | Short-wave hiss, sudden interference, spectral whisper |
+| Bent Perspective | Curved, shifting scanlines and shear | Low dissonance followed by structural creaking |
+| Doorframe Figure | A slow vertical doorway interruption without a unique character reveal | Breath, creak, dying whisper |
+| Shrouded Witness | Vortexing translucent shroud | Drone followed by drawn breath |
+| Flicker Walker | Staccato figure-area occlusion | Footfalls in an accelerating rhythmic sequence |
+| Frozen Silhouette | Crystalline bloom and frost-blue interference | Glassy crackle, frozen breath, brittle second crack |
+| Blind-Spot Watcher | Peripheral darkness contracting around the frame | Approaching murmur and near-field exhalation |
+| Pressure Wave | Concentric pulse rolling across view | Weighted impact followed by sub-bass pressure |
+| Grasping Darkness | Tendrils of shadow advancing from view edges | Rising hiss then a crushing thump |
+| Paired Revelation | Two offset flickers during the Twins' brief lawful sprite reveal | Two separate paired knocks and an echo |
+| Executioner's Coming | A diagonal high-contrast slash during the Blade Demon's signature | Escalating iron scrape, then impact |
+| Plague Procession | Sickly drifting miasma during the Plague Demon's signature | Multiple bell peals and exhausted breath |
+| Unblinking Judgment | Contracting concentric iris during the Nothic's signature | Evolving dissonant tone ending in a ground-shaking thud |
+
+**Timing and spatial integrity:** Each sound beat is scheduled on the authoritative 10 Hz simulation tick, from the actual actor's location. Solo and LAN use the same score, sound timbre, image rules, direction and propagation; only sounds audible through the real room, distance and weather mix reach an investigator. The second Twin's nonlethal actions continue to originate at that Twin. The camera renderer can display relevant room-bound distortions without playing impossible audio in the van. All scores end within their parent event's lifetime. Sounds continue beyond the ghost's one-second signature art glimpse where the longer atmospheric event calls for it.
+
+**Testing:** `GhostHauntingChoreographyTest` checks all 14 score IDs, timing, six-field packet codec, deterministic stereo PCM, panning, mute, image variance and remote-room isolation. `GhostHauntingFolioTest` continues validating the other 36 entries and shared fallback, and the Windows packaged E2E test now includes both suites.
+
+Future content may upgrade individual entries to hand-painted effects, bespoke recording sessions, and actor-synchronized rigged animation; this pass supplies unique playable visual/sound behavior now, not placeholder API registrations.
