@@ -12,6 +12,20 @@ public final class MissionWeatherTest {
         var random=new MissionWeather(winter,MissionWeather.Mode.RANDOM,
             EvidenceSignals.Weather.HEATWAVE,2,13);
         ok(clear.state().weather()==EvidenceSignals.Weather.CLEAR,"fixed starts as selected");
+        var offered=java.util.List.of(MissionWeather.selectableWeather());
+        ok(offered.size()==15,"weather picker exposes all fifteen shared-module presets");
+        ok(offered.contains(EvidenceSignals.Weather.BLIZZARD)
+                &&offered.contains(EvidenceSignals.Weather.DENSE_FOG)
+                &&offered.contains(EvidenceSignals.Weather.HEAVY_RAIN)
+                &&offered.contains(EvidenceSignals.Weather.MIASMA),
+            "expanded precipitation and atmosphere families are selectable");
+        ok(!offered.contains(EvidenceSignals.Weather.WIND)
+                &&!offered.contains(EvidenceSignals.Weather.HEATWAVE),
+            "legacy pseudo-weather aliases stay hidden from new contracts");
+        ok(new MissionWeather.State(winter,EvidenceSignals.Weather.BLIZZARD,
+                MissionWeather.Mode.FIXED,3,0).moduleType()
+                ==dev.mrcalzon.weather.WeatherType.BLIZZARD,
+            "Beckenburg weather state maps directly into shared weather module");
         ok(!clear.advance(100000)&&clear.state().weather()==EvidenceSignals.Weather.CLEAR,
             "fixed never changes even over long games");
         ok(random.state().weather()!=EvidenceSignals.Weather.HEATWAVE,
@@ -34,7 +48,7 @@ public final class MissionWeatherTest {
             var thunder=EvidenceSignals.emf(17,tick,4,-1,0,false,
                 EvidenceSignals.Weather.THUNDERSTORM,3);
             var blizzard=EvidenceSignals.emf(17,tick,4,-1,0,false,
-                EvidenceSignals.Weather.SNOW,3);
+                EvidenceSignals.Weather.BLIZZARD,3);
             ok(thunder.level()>=5&&thunder.level()<=7&&!thunder.highEvent(),
                 "thunder alone cannot forge spectral high-EMF reading");
             ok(blizzard.level()>=2&&blizzard.level()<=7&&!blizzard.highEvent(),
@@ -63,6 +77,6 @@ public final class MissionWeatherTest {
         var sound=new LanSound.CueEvent(LanSound.Cue.STEP,0,60,1);
         ok(LanSound.weatherMask(sound,storms,true).volume()<60,
             "weather attenuates outdoor physical cues");
-        System.out.println("PASS fixed dynamic random weather, thunder EMF, freezing temperature and soundscape");
+        System.out.println("PASS full shared weather lineup, scheduling, climate evidence integrity and soundscape");
     }
 }

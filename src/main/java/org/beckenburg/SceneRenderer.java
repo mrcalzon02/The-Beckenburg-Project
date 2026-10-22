@@ -80,9 +80,27 @@ public final class SceneRenderer {
     public double environmentLight=1.0,fogDensity=1.0;
     private EvidenceSignals.Weather weatherKind=EvidenceSignals.Weather.CLEAR;
     private int weatherIntensity=1;
+    private final dev.mrcalzon.weather.WeatherModule weatherFx=
+        new dev.mrcalzon.weather.WeatherModule(0x4245434b454e4255L);
+    private boolean weatherInitialized;
+    private double lastWeatherClock=Double.NaN,weatherLightScale=1.0,weatherFogScale=1.0;
+    {
+        weatherFx.setTimeOfDay(.86);
+        weatherFx.pauseClock(true);
+        weatherFx.weather().setMaxFlash(.12);
+    }
     public void setWeather(MissionWeather.State state){
         if(state==null)throw new IllegalArgumentException("weather state");
         weatherKind=state.weather();weatherIntensity=state.intensity();
+        weatherFx.setWeather(state.moduleType(),weatherInitialized?6.0+state.intensity()*2.0:0);
+        double wind=switch(state.weather()){
+            case CLEAR,FOG,DENSE_FOG,MIASMA,HEATWAVE->.7+state.intensity()*.35;
+            case OVERCAST,DRIZZLE,RAIN,SNOW,ASHFALL->2.0+state.intensity()*1.4;
+            case HEAVY_RAIN,THUNDERSTORM,SLEET,HAIL->4.5+state.intensity()*2.2;
+            case BLIZZARD,DUST_STORM,WIND->8.0+state.intensity()*3.0;
+        };
+        weatherFx.weather().setWind(wind,1.8);
+        weatherInitialized=true;
     }
     public boolean environmentPowerOn=true;
     /** Authoritative book-deployment signal; all investigator views share its room. */
@@ -1630,76 +1648,30 @@ public final class SceneRenderer {
      * The sky never writes depth, and has no copyright-dependent source images.
      */
     void paintSky(double clock){
-        final int horizon=(int)Math.round(renderHeight*.51+Math.tan(pitch)*focal);
-        for(int sy=0;sy<renderHeight;sy++){
-            double t=sy/(double)renderHeight;
-            boolean upper=sy<horizon;
-            int red=upper?(int)(13+18*t):(int)(18+18*t);
-            int green=upper?(int)(23+18*t):(int)(27+19*t);
-            int blue=upper?(int)(41+31*t):(int)(32+16*t);
-            int cloud=weatherKind==EvidenceSignals.Weather.THUNDERSTORM?weatherIntensity*5:
-                      weatherKind==EvidenceSignals.Weather.FOG?weatherIntensity*3:
-                      weatherKind==EvidenceSignals.Weather.RAIN
-                          ||weatherKind==EvidenceSignals.Weather.SNOW?weatherIntensity*2:0;
-            red=Math.max(4,red-cloud);
-            green=Math.max(9,green-cloud/2);
-            blue=Math.max(16,blue-cloud/2);
-            Arrays.fill(pixels,sy*renderWidth,(sy+1)*renderWidth,(red<<16)|(green<<8)|blue);
-        }
-        // Dim cloud bands drift across world bearings, visible through castle windows.
-        for(int sx=0;sx<renderWidth;sx++){
-            double bearing=yaw-Math.atan2(sx-renderWidth*.5,focal);
-            int top=horizon-38+(int)(7*Math.sin(bearing*2.7+clock*.012)
-                +3*Math.sin(bearing*7.4-clock*.008));
-            for(int j=0;j<5;j++){
-                int sy=top+j;
-                if(sy<0||sy>=renderHeight)continue;
-                int k=sy*renderWidth+sx,c=pixels[k];
-                int r=Math.min(255,((c>>16)&255)+3),g=Math.min(255,((c>>8)&255)+4),
-                    bl=Math.min(255,(c&255)+7);
-                pixels[k]=(r<<16)|(g<<8)|bl;
-            }
-        }
-        boolean overcast=weatherKind==EvidenceSignals.Weather.THUNDERSTORM
-            ||weatherKind==EvidenceSignals.Weather.RAIN
-            ||weatherKind==EvidenceSignals.Weather.SNOW
-            ||weatherKind==EvidenceSignals.Weather.FOG;
-        for(int star=0;star<(overcast?0:110);star++){
-            double bearing=-Math.PI+(star*2.399963229728653)%(2*Math.PI);
-            double diff=Math.atan2(Math.sin(bearing-yaw),Math.cos(bearing-yaw));
-            if(Math.abs(diff)>1.1)continue;
-            int sx=(int)Math.round(renderWidth*.5-Math.tan(diff)*focal);
-            int sy=horizon-19-(star*37%54);
-            if(sx>=0&&sx<renderWidth&&sy>=0&&sy<renderHeight)pixels[sy*renderWidth+sx]=0x8096ac;
-        }
+        double delta=Double.isNaN(lastWeatherClock)?.05:Math.max(0,Math.min(1,clock-lastWeatherClock));
+        lastWeatherClock=clock;
+        weatherFx.advance(delta,dev.mrcalzon.weather.WeatherView.outdoors(x,z,eyeHeight,yaw));
+        var wx=weatherFx.weather().state();
+        weatherLightScale=Math.max(.50,1-(1-wx.visibility())*.24)+wx.flash()*2.2;
+        weatherFogScale=1+(1-wx.visibility())*3.1;
+
+        java.awt.Graphics2D g=frame.createGraphics();
+        try{
+            g.setComposite(java.awt.AlphaComposite.Src);
+            g.setColor(new java.awt.Color(18,24,32));
+            g.fillRect(0,0,renderWidth,renderHeight);
+            weatherFx.renderSky(g,renderWidth,renderHeight);
+            // Precipitation is drawn before solid geometry so real walls and roofs
+            // occlude it naturally rather than painting rain or snow through interiors.
+            weatherFx.renderOverlay(g,renderWidth,renderHeight);
+        }finally{g.dispose();}
+
+        final int horizon=(int)Math.round(renderHeight*.56+Math.tan(pitch)*focal);
         for(int sx=0;sx<renderWidth;sx++){
             double bearing=yaw-Math.atan2(sx-renderWidth*.5,focal);
             int hills=horizon+(int)(13*Math.sin(bearing*2.1)+8*Math.sin(bearing*5.7)
                     +5*Math.sin(bearing*13.2));
             for(int sy=Math.max(0,hills);sy<renderHeight;sy++)pixels[sy*renderWidth+sx]=0x18202a;
-        }
-        double diff=Math.atan2(Math.sin(-1.2-yaw),Math.cos(-1.2-yaw));
-        int mx=(int)Math.round(renderWidth*.5-Math.tan(diff)*focal),my=horizon-43;
-        if(!overcast&&Math.abs(diff)<1.1)for(int dy=-5;dy<=5;dy++)for(int dx=-5;dx<=5;dx++){
-            int px=mx+dx,py=my+dy;
-            if(px>=0&&px<renderWidth&&py>=0&&py<renderHeight&&dx*dx+dy*dy<25)pixels[py*renderWidth+px]=0xb8c8d5;
-        }
-        // Precipitation is a low-cost background layer; masonry/windows occlude it.
-        if(weatherKind==EvidenceSignals.Weather.RAIN
-                ||weatherKind==EvidenceSignals.Weather.THUNDERSTORM
-                ||weatherKind==EvidenceSignals.Weather.SNOW){
-            boolean snow=weatherKind==EvidenceSignals.Weather.SNOW;
-            int drops=weatherIntensity*(snow?90:165);
-            long phase=(long)(clock*(snow?8:25));
-            for(int i=0;i<drops;i++){
-                int sx=Math.floorMod(i*6173+(int)(phase*(snow?2:5)),renderWidth);
-                int sy=Math.floorMod(i*3781+(int)(phase*(snow?2:8)),renderHeight);
-                int count=snow?1:2+weatherIntensity;
-                for(int j=0;j<count&&sy+j<renderHeight;j++){
-                    int k=(sy+j)*renderWidth+sx;
-                    pixels[k]=snow?0x8c99a8:0x56657b;
-                }
-            }
         }
     }
     /** Billboards share the world Z-buffer, so room walls correctly hide hunter and ghost bodies.
@@ -1851,14 +1823,14 @@ public final class SceneRenderer {
                                   (py+.5-renderHeight*.5)/focal);
             double cone=flameLamp?1.0:Math.max(0,1-aim/.44);
             double beam=lamp?lampIntensity*Math.max(0,1-d/lampReach)*cone:0;
-            double light=(.075+.98*roomLevel+beam)*environmentLight*Math.max(.22,1-d/26.0);
+            double light=(.075+.98*roomLevel+beam)*environmentLight*weatherLightScale*Math.max(.22,1-d/26.0);
             double lr=light,lg=light,lb=light;
-            if(va.r>=0){lr=((u*va.r/a.z+v*vb.r/b.z+w*vc.r/c.z)/inv+beam)*environmentLight;lg=((u*va.g/a.z+v*vb.g/b.z+w*vc.g/c.z)/inv+beam)*environmentLight;lb=((u*va.b/a.z+v*vb.b/b.z+w*vc.b/c.z)/inv+beam)*environmentLight;}
+            if(va.r>=0){lr=((u*va.r/a.z+v*vb.r/b.z+w*vc.r/c.z)/inv+beam)*environmentLight*weatherLightScale;lg=((u*va.g/a.z+v*vb.g/b.z+w*vc.g/c.z)/inv+beam)*environmentLight*weatherLightScale;lb=((u*va.b/a.z+v*vb.b/b.z+w*vc.b/c.z)/inv+beam)*environmentLight*weatherLightScale;}
             double lightingDither=psxPreset==PsxPipeline.Preset.OFF?0:
                 (BAYER[(px&3)+((py&3)<<2)]-7.5)/140.0;
             light=Math.max(.1,Math.min(1.45,light+lightingDither));
             int red=(int)(((color>>16)&255)*Math.max(.025,Math.min(1.6,lr+lightingDither))),green=(int)(((color>>8)&255)*Math.max(.025,Math.min(1.6,lg+lightingDither))),blue=(int)((color&255)*Math.max(.025,Math.min(1.6,lb+lightingDither)));
-            double fog=Math.min(.92,Math.max(0,(d-5)/15)*fogDensity);
+            double fog=Math.min(.96,Math.max(0,(d-5)/15)*fogDensity*weatherFogScale);
             red=(int)(red*(1-fog)+18*fog);green=(int)(green*(1-fog)+21*fog);blue=(int)(blue*(1-fog)+30*fog);
             pixels[k]=(Math.min(255,red)<<16)|(Math.min(255,green)<<8)|Math.min(255,blue);
         }
