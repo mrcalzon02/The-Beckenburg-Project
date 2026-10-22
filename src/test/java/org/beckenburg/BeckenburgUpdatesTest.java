@@ -45,7 +45,7 @@ public final class BeckenburgUpdatesTest {
         assert BeckenburgUpdates.select("["+item("0.3.10",true)+"]","0.3.9")==null:
             "Draft releases must remain unavailable";
         // Regression: an installed 0.1.13 MUST see 0.1.14 even when marked prerelease.
-        String testRelease=item("0.1.14",false).replace("\\"prerelease\\":false","\\"prerelease\\":true");
+        String testRelease=item("0.1.14",false).replace("\"prerelease\":false","\"prerelease\":true");
         var offered=BeckenburgUpdates.select("["+testRelease+"]","0.1.13");
         assert offered!=null && offered.version().equals("0.1.14"):
             "Development prerelease must be offered to older installed clients";
