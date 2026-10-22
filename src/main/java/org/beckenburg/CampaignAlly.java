@@ -90,7 +90,14 @@ public final class CampaignAlly {
             // off the narrow van ramp and collide with the cargo door frame.
             // Approach the portal at its centre, then cross perpendicular to it.
             double beyond=atDoor<1.30?.85:0;
-            if(portal.alongX()){
+            if(portal.joins(HouseMap.EXTRACTION_ROOM,13)){
+                // The outdoor room centre is NOT necessarily outside the van:
+                // large farmhouse and school aprons may centre behind the cargo
+                // threshold. Use the actual dock orientation, not room centroids.
+                var centreline=map.van().world(0,VanStaging.FRONT+
+                    (next==HouseMap.EXTRACTION_ROOM?beyond:-beyond));
+                goalX=centreline.x();goalZ=centreline.z();
+            }else if(portal.alongX()){
                 goalX=portal.x();
                 goalZ=portal.z()+Math.signum(map.centerZ(next)-portal.z())*beyond;
             }else{
