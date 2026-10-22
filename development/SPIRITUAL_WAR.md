@@ -28,4 +28,5 @@ Hunters have a fixed offensive/defensive/healing kit: spiritual sword, defensive
 4. Damage requires real geometry, proximity and world-state validation; a ward cannot prevent an unrelated hit indefinitely.
 5. Survivorship, ghost kill-triggered healing and resource consumption remain stable under simultaneous hits/disconnects.
 6. The 30-minute timeout prevents further actions, applies survivor count, damage and health tiebreaks, and cannot be extended by clients or reconnects.
-7. A completed match returns players safely to Castle Beckenburg or lobby without modifying investigation outcomes or campaign progression.
+7. The scene shows the blue boundary only while the host reports protection active; at 15:00 it disappears with no lingering effect. Live arena synchronization and protection must use the same state.
+8. A completed match returns players safely to Castle Beckenburg or lobby without modifying investigation outcomes or campaign progression.
