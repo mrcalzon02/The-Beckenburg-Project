@@ -69,6 +69,7 @@ public final class BeckenburgDiagnostics {
         PrintStream originalErr=System.err;
         try{System.setErr(new PrintStream(new Tee(originalErr),true,StandardCharsets.UTF_8));}
         catch(Exception ignored){ }
+        BeckenburgDeveloperTrace.start();
         record("BOOT version="+version()+" java="+System.getProperty("java.version")+
             " os="+System.getProperty("os.name")+" "+System.getProperty("os.arch")+
             " memoryMax="+Runtime.getRuntime().maxMemory());
@@ -210,6 +211,7 @@ public final class BeckenburgDiagnostics {
             long stalled=System.nanoTime()-lastEdtProgress;
             if(stalled>20_000_000_000L && System.nanoTime()-lastFreezeReport>60_000_000_000L){
                 lastFreezeReport=System.nanoTime();
+                BeckenburgDeveloperTrace.snapshot("edt-unresponsive");
                 fail("EDT unresponsive >20 seconds; possible loading-screen freeze",null);
             }
         }
@@ -256,7 +258,8 @@ public final class BeckenburgDiagnostics {
             var snapshots=files.filter(p->{
                 String name=p.getFileName().toString();
                 return name.startsWith("session-")&&name.endsWith(".log") ||
-                    name.startsWith("crash-")&&name.endsWith(".txt");
+                    name.startsWith("crash-")&&name.endsWith(".txt") ||
+                    name.startsWith("snapshot-")&&name.endsWith(".txt");
             }).sorted(Comparator.comparing(Path::getFileName).reversed()).limit(6).toList();
             for(Path file:snapshots){
                 output.putNextEntry(new java.util.zip.ZipEntry(file.getFileName().toString()));
