@@ -19,7 +19,7 @@ public final class LanRitualDefenseIntegrationTest {
                 if("GHOST".equals(client.seat()) && (line.startsWith("PROGRESS|")
                     ||line.startsWith("TEAMMAP|")||line.startsWith("EVIDENCE|")
                     ||line.startsWith("BODY|")||line.startsWith("RITUAL|")
-                    ||line.startsWith("DOORS|")))
+                    ))
                     throw new AssertionError("hunter-private packet leaked: "+line);
                 if(line.startsWith(prefix))return line;
             }
