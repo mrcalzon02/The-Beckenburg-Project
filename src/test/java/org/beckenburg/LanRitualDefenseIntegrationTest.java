@@ -25,7 +25,7 @@ public final class LanRitualDefenseIntegrationTest {
             }
             throw new AssertionError("missing "+prefix+" for "+client.seat());
         }
-        void move(int room)throws Exception{client.move(room);await("ACCEPT|MOVE|"+room);}
+        void move(int room)throws Exception{LanTestRoomTravel.move(client,this::await,room);}
         @Override public void close(){client.close();}
     }
     public static void main(String[] args)throws Exception{
