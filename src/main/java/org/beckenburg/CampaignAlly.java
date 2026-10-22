@@ -85,13 +85,26 @@ public final class CampaignAlly {
             double atDoor=Math.hypot(position.x()-portal.x(),position.z()-portal.z());
             if(portal.door()&&!map.doorOpen(portal.id())&&atDoor<=1.10)
                 map.openDoorBetweenRooms(here,next);
-            double towardX=map.centerX(next)-portal.x(),towardZ=map.centerZ(next)-portal.z();
-            double len=Math.hypot(towardX,towardZ);
-            if(len>.01){towardX/=len;towardZ/=len;}
-            // First physically approach the doorway, then step onto the far side.
+            // Portal width lies ALONG its tangent, not toward the centre of an
+            // often enormous outdoor room. A diagonal centre vector would walk
+            // off the narrow van ramp and collide with the cargo door frame.
+            // Approach the portal at its centre, then cross perpendicular to it.
             double beyond=atDoor<1.30?.85:0;
-            goalX=portal.x()+towardX*beyond;
-            goalZ=portal.z()+towardZ*beyond;
+            if(portal.alongX()){
+                goalX=portal.x();
+                goalZ=portal.z()+Math.signum(map.centerZ(next)-portal.z())*beyond;
+            }else{
+                goalX=portal.x()+Math.signum(map.centerX(next)-portal.x())*beyond;
+                goalZ=portal.z();
+            }
+        }else if(here!=HouseMap.EXTRACTION_ROOM&&
+                targetRoom!=HouseMap.EXTRACTION_ROOM&&
+                position.y()>.10&&map.van().supportHeight(position.x(),position.z())!=null){
+            // After crossing the exterior room boundary, the companion is
+            // still physically on the descending cargo ramp. Finish that
+            // descent along its clear centreline before pursuing room goals.
+            var bottom=map.van().world(0,VanStaging.FRONT-VanStaging.RAMP_LENGTH-.14);
+            goalX=bottom.x();goalZ=bottom.z();
         }else if(Math.hypot(position.x()-goalX,position.z()-goalZ)
                 <(order==Order.FOLLOW?1.55:.65)){
             if(order==Order.INVESTIGATE){
