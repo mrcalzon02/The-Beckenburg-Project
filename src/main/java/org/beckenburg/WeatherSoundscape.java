@@ -1,6 +1,8 @@
 package org.beckenburg;
 
 import javax.sound.sampled.*;
+import java.util.*;
+import java.io.*;
 
 /** Low-volume procedural weather bed. Independent of ghost audio and soundtrack.
  * Every local client derives the same type/intensity from a host WEATHER frame.
@@ -12,6 +14,8 @@ public final class WeatherSoundscape implements AutoCloseable {
     private volatile boolean outside,active,closed;
     private final Thread worker;
     private volatile SourceDataLine line;
+    private volatile dev.mrcalzon.weather.WeatherModule module;
+    public void setModule(dev.mrcalzon.weather.WeatherModule module){this.module=module;}
     // Short optimized loops derived from the original CC0 NOX captures in Beckenburg Drive.
     // They are bundled in-game; no Google Drive connection is used by players.
     private static final short[] RAIN=loadLoop("ambient_rain.wav");
@@ -111,13 +115,56 @@ public final class WeatherSoundscape implements AutoCloseable {
         gain*=.055+intensity*.036;
         return (short)Math.round(Math.max(-1,Math.min(1,bed*gain))*32767);
     }
+    private static final Map<String,short[]> ORIGINAL=new HashMap<>();
+    /** The pinned module records 22.05kHz mono PCM; output mixes at 16kHz. */
+    private static synchronized short[] original(String clip){
+        short[] known=ORIGINAL.get(clip);
+        if(known!=null)return known;
+        byte[] wav=WeatherAssetLibrary.bytes(clip+".wav");
+        try(AudioInputStream audio=AudioSystem.getAudioInputStream(
+                new BufferedInputStream(new ByteArrayInputStream(wav)))){
+            AudioFormat format=audio.getFormat();
+            if(format.getEncoding()!=AudioFormat.Encoding.PCM_SIGNED
+                    ||format.getChannels()!=1||format.getSampleSizeInBits()!=16
+                    ||format.isBigEndian()||format.getSampleRate()<8000
+                    ||format.getSampleRate()>48000)
+                throw new IOException("Unexpected shared weather WAV format: "+clip);
+            byte[] raw=audio.readAllBytes();
+            if(raw.length<1024||raw.length>750000||raw.length%2!=0)
+                throw new IOException("Corrupt original weather WAV: "+clip);
+            int count=raw.length/2;
+            short[] source=new short[count];
+            for(int i=0;i<count;i++)source[i]=(short)((raw[i*2]&255)|(raw[i*2+1]<<8));
+            int length=Math.max(1,(int)Math.round(count*RATE/format.getSampleRate()));
+            short[] result=new short[length];
+            for(int i=0;i<length;i++){
+                double at=i*format.getSampleRate()/RATE;
+                int first=Math.min(count-1,(int)at),second=Math.min(count-1,first+1);
+                double blend=at-first;
+                result[i]=(short)Math.round(source[first]*(1-blend)+source[second]*blend);
+            }
+            ORIGINAL.put(clip,result);
+            return result;
+        }catch(Exception error){
+            throw new IllegalStateException("Shared PSX Weather original audio unavailable: "+clip,error);
+        }
+    }
+    private record Thunder(short[] data,double gain,int cursor){
+        Thunder advance(int next){return new Thunder(data,gain,next);}
+    }
+    /** Bundled WAV presence check also works in a headless packaged JAR. */
+    static int originalSamples(String name){return original(name).length;}
     private void run(){
         long offset=0;
+        ArrayList<Thunder> thunder=new ArrayList<>();
         try{
             while(!closed){
                 MissionWeather.State w=state;
+                var linked=module;
                 if(!active||w==null||Boolean.getBoolean("beckenburg.audio.mute")
                         ||LanAudio.effectsVolume()==0){
+                    if(linked!=null)linked.audio().drainCues();
+                    thunder.clear();
                     if(line!=null){line.stop();line.flush();}
                     Thread.sleep(100);continue;
                 }
@@ -125,18 +172,46 @@ public final class WeatherSoundscape implements AutoCloseable {
                     line=AudioSystem.getSourceDataLine(PCM);
                     line.open(PCM,4096);line.start();
                 }else if(!line.isRunning())line.start();
+                List<dev.mrcalzon.weather.WeatherAudio.Loop> gains=linked==null
+                    ?List.of():linked.audio().loops();
+                if(linked!=null)for(var cue:linked.audio().drainCues()){
+                    if(!cue.id().equals("thunder_near")&&!cue.id().equals("thunder_distant"))
+                        throw new IllegalStateException("Unknown shared weather cue "+cue.id());
+                    thunder.add(new Thunder(original(cue.id()),cue.volume(),0));
+                }
                 byte[] block=new byte[2048];
                 int volume=LanAudio.effectsVolume();
                 boolean exposed=outside;
                 for(int i=0;i<block.length;i+=2){
-                    short value=playbackSample(w.weather(),w.intensity(),exposed,offset++);
-                    value=(short)(value*volume/100);
+                    double mixed;
+                    if(linked==null) mixed=playbackSample(w.weather(),w.intensity(),exposed,offset);
+                    else {
+                        mixed=0;
+                        for(var layer:gains){
+                            if(!layer.id().startsWith("ambient_")||layer.gain()<=.001)continue;
+                            short[] bed=original(layer.id());
+                            mixed+=bed[(int)(offset%bed.length)]*layer.gain()
+                                *(exposed?.57:.13);
+                        }
+                        for(int t=0;t<thunder.size();t++){
+                            Thunder hit=thunder.get(t);
+                            if(hit.cursor()<hit.data().length){
+                                mixed+=hit.data()[hit.cursor()]*hit.gain()*(exposed?.90:.32);
+                                thunder.set(t,hit.advance(hit.cursor()+1));
+                            }
+                        }
+                        mixed=Math.max(Short.MIN_VALUE,Math.min(Short.MAX_VALUE,mixed));
+                    }
+                    int value=(int)Math.round(Math.max(Short.MIN_VALUE,
+                        Math.min(Short.MAX_VALUE,mixed*volume/100.)));
                     block[i]=(byte)value;block[i+1]=(byte)(value>>8);
+                    offset++;
                 }
+                thunder.removeIf(x->x.cursor()>=x.data().length);
                 line.write(block,0,block.length);
             }
         }catch(LineUnavailableException|IllegalArgumentException|SecurityException ex){
-            // Caption-only fallback: never interrupt investigation or spam sound device.
+            // No audio device is not a reason to abort a playable investigation.
         }catch(InterruptedException ex){Thread.currentThread().interrupt();}
         finally{SourceDataLine open=line;line=null;if(open!=null){open.stop();open.flush();open.close();}}
     }
