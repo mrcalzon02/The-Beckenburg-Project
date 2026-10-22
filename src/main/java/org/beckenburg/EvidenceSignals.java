@@ -12,7 +12,39 @@ import java.util.Objects;
 public final class EvidenceSignals {
     private EvidenceSignals() { }
     public enum Season { WINTER, SPRING, SUMMER, AUTUMN }
-    public enum Weather { CLEAR, RAIN, SNOW, HEATWAVE, THUNDERSTORM, WIND, FOG }
+    /** Network-stable Beckenburg weather names backed by the shared PSX weather module.
+     * WIND and HEATWAVE remain decode-compatible legacy aliases but are hidden from new contracts.
+     */
+    public enum Weather {
+        CLEAR(dev.mrcalzon.weather.WeatherType.CLEAR),
+        OVERCAST(dev.mrcalzon.weather.WeatherType.OVERCAST),
+        DRIZZLE(dev.mrcalzon.weather.WeatherType.DRIZZLE),
+        RAIN(dev.mrcalzon.weather.WeatherType.RAIN),
+        HEAVY_RAIN(dev.mrcalzon.weather.WeatherType.HEAVY_RAIN),
+        THUNDERSTORM(dev.mrcalzon.weather.WeatherType.THUNDERSTORM),
+        FOG(dev.mrcalzon.weather.WeatherType.FOG),
+        DENSE_FOG(dev.mrcalzon.weather.WeatherType.DENSE_FOG),
+        SNOW(dev.mrcalzon.weather.WeatherType.SNOW),
+        BLIZZARD(dev.mrcalzon.weather.WeatherType.BLIZZARD),
+        SLEET(dev.mrcalzon.weather.WeatherType.SLEET),
+        HAIL(dev.mrcalzon.weather.WeatherType.HAIL),
+        DUST_STORM(dev.mrcalzon.weather.WeatherType.DUST_STORM),
+        ASHFALL(dev.mrcalzon.weather.WeatherType.ASHFALL),
+        MIASMA(dev.mrcalzon.weather.WeatherType.MIASMA),
+        /** Legacy save/network compatibility; not offered in the weather picker. */
+        HEATWAVE(dev.mrcalzon.weather.WeatherType.CLEAR),
+        /** Legacy save/network compatibility; new contracts use OVERCAST/precipitation profiles. */
+        WIND(dev.mrcalzon.weather.WeatherType.OVERCAST);
+
+        private final dev.mrcalzon.weather.WeatherType moduleType;
+        Weather(dev.mrcalzon.weather.WeatherType moduleType){this.moduleType=moduleType;}
+        public dev.mrcalzon.weather.WeatherType moduleType(){return moduleType;}
+        public boolean selectable(){return this!=HEATWAVE&&this!=WIND;}
+        public static Weather[] selectableValues(){
+            return new Weather[]{CLEAR,OVERCAST,DRIZZLE,RAIN,HEAVY_RAIN,THUNDERSTORM,
+                FOG,DENSE_FOG,SNOW,BLIZZARD,SLEET,HAIL,DUST_STORM,ASHFALL,MIASMA};
+        }
+    }
     public enum Polarity { NONE, COLD, HOT }
     public enum Unit { CELSIUS, FAHRENHEIT }
     public record Location(Season season, Weather weather, int hour, int room,
@@ -92,9 +124,16 @@ public final class EvidenceSignals {
         if(tick<0||room<0||eventStrength<0||eventStrength>10)
             throw new IllegalArgumentException("invalid EMF context");
         int ambient=2+hash(seed,room,tick/5)%3;
-        if(weather==Weather.THUNDERSTORM)ambient= Math.min(7,ambient+1+intensity);
-        else if(weather==Weather.SNOW)ambient=Math.max(2,ambient-intensity);
-        else if(weather==Weather.RAIN)ambient=Math.min(7,ambient+intensity/2);
+        if(weather==Weather.THUNDERSTORM)ambient=Math.min(7,ambient+1+intensity);
+        else if(weather==Weather.HAIL)ambient=Math.min(7,ambient+1+intensity/2);
+        else if(weather==Weather.HEAVY_RAIN||weather==Weather.SLEET)
+            ambient=Math.min(7,ambient+Math.max(1,intensity));
+        else if(weather==Weather.RAIN||weather==Weather.DRIZZLE)
+            ambient=Math.min(7,ambient+intensity/2);
+        else if(weather==Weather.SNOW||weather==Weather.BLIZZARD)
+            ambient=Math.max(2,ambient-intensity);
+        else if(weather==Weather.DUST_STORM||weather==Weather.ASHFALL)
+            ambient=Math.min(7,ambient+1);
         else if(weather==Weather.WIND)ambient=Math.min(7,ambient+1);
         boolean local=room==eventRoom&&eventStrength>0;
         boolean strong=local&&eventStrength>=8;
@@ -118,12 +157,22 @@ public final class EvidenceSignals {
         };
         outside+=switch(place.weather()){
             case CLEAR->0.0;
+            case OVERCAST->-0.5;
+            case DRIZZLE->-1.0-.5*intensity;
             case RAIN->-2.0-intensity;
-            case SNOW->-4.0-2.0*intensity;
-            case HEATWAVE->6.0+3.0*intensity;
+            case HEAVY_RAIN->-3.0-1.5*intensity;
             case THUNDERSTORM->-2.0-1.5*intensity;
+            case FOG->-1.0-.7*intensity;
+            case DENSE_FOG->-1.5-intensity;
+            case SNOW->-4.0-2.0*intensity;
+            case BLIZZARD->-7.0-2.5*intensity;
+            case SLEET->-4.0-1.5*intensity;
+            case HAIL->-3.0-intensity;
+            case DUST_STORM->1.0+intensity;
+            case ASHFALL->-2.0-intensity;
+            case MIASMA->-1.0;
+            case HEATWAVE->6.0+3.0*intensity;
             case WIND->-1.0-intensity;
-            case FOG->-1.0-0.7*intensity;
         };
         outside+=place.hour()>=11&&place.hour()<=17?3.0:
                  place.hour()<=5||place.hour()>=21?-4.0:0.0;
