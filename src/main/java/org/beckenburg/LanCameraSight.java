@@ -73,14 +73,22 @@ public final class LanCameraSight {
     public static String frame(LanVideoCameras.Camera camera,String member,
                                LanGhostSpatial.Pose pose,boolean sees,
                                GhostIdentity.Type species,int tick) {
+        return frame(camera,member,pose,sees,species,tick,false);
+    }
+    /** A camera may see an apparition without unmasking its true species. */
+    public static String frame(LanVideoCameras.Camera camera,String member,
+                               LanGhostSpatial.Pose pose,boolean sees,
+                               GhostIdentity.Type species,int tick,boolean signatureReveal) {
         if(tick<0||!member.equals("a")&&!member.equals("b"))throw new IllegalArgumentException("camera frame");
         if(!sees)return "CAMGHOST|"+camera.owner()+"|"+member+"|HIDDEN|"+tick;
-        String identity=species.baseType()==GhostIdentity.Type.TWINS
-            ?(species.ancient()?"ancient_":"")+"twins_"+member
-            :species.name().toLowerCase(java.util.Locale.ROOT);
+        String identity=signatureReveal
+            ?(species.baseType()==GhostIdentity.Type.TWINS
+                ?(species.ancient()?"ancient_":"")+"twins_"+member
+                :species.name().toLowerCase(java.util.Locale.ROOT))
+            :GhostManifestationVisual.UNREVEALED;
         return "CAMGHOST|"+camera.owner()+"|"+member+"|VISIBLE|"
             +Math.round(pose.x()*1000)+"|"+Math.round(pose.y()*1000)+"|"
             +Math.round(pose.z()*1000)+"|"+pose.heading()+"|"
-            +(species.ancient()?"GREEN":"BASE")+"|"+identity+"|"+tick;
+            +(signatureReveal&&species.ancient()?"GREEN":"BASE")+"|"+identity+"|"+tick;
     }
 }

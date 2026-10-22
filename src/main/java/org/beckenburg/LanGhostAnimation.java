@@ -40,13 +40,20 @@ public final class LanGhostAnimation {
         if(tick<0)throw new IllegalArgumentException("negative tick");
         lastSignatureTick=tick;
     }
+    /** The exact ghost image is permitted for only a brief signature. */
+    public boolean signatureVisible(int tick) {
+        return lastSignatureTick>=0&&tick>=lastSignatureTick&&tick-lastSignatureTick<10;
+    }
     /** Null means do not transmit any phase: hidden ghosts provide no extra visibility clues. */
     public Motion project(boolean visible, boolean strikePending, int heading, int tick) {
         if (tick < 0 || heading < 0 || heading > 359) throw new IllegalArgumentException("invalid spectral pose");
         if (!visible) return null;
         Phase phase;
         int progress;
-        if (strikePending) {
+        if (signatureVisible(tick)) {
+            phase = Phase.SIGNATURE;
+            progress = tick-lastSignatureTick;
+        } else if (strikePending) {
             phase = Phase.WINDUP;
             progress = windupTick < 0 ? 0 : Math.max(0, Math.min(LanTelegraphedStrike.WINDUP_TICKS, tick - windupTick));
         } else if (impactTick >= 0 && tick >= impactTick && tick - impactTick < RECOVER_TICKS) {
@@ -55,9 +62,6 @@ public final class LanGhostAnimation {
         } else if (manifestTick >= 0 && tick >= manifestTick && tick - manifestTick < MATERIALIZE_TICKS) {
             phase = Phase.MATERIALIZE;
             progress = tick - manifestTick;
-        } else if(lastSignatureTick>=0 && tick>=lastSignatureTick && tick-lastSignatureTick<10) {
-            phase = Phase.SIGNATURE;
-            progress = tick-lastSignatureTick;
         } else if(lastStepTick>=0 && tick>=lastStepTick && tick-lastStepTick<4) {
             phase = lastStepSprint?Phase.SPRINT:Phase.WALK;
             progress = tick-lastStepTick;

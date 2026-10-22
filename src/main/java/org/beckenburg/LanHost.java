@@ -56,6 +56,8 @@ public final class LanHost implements AutoCloseable {
     private final String ownerJoinSecret;
     private LobbyGhostAvatar.Look ghostLobbyLook;
     private final LanGhostAnimation animation=new LanGhostAnimation();
+    private final GhostHauntingFolio hauntingFolio=
+        new GhostHauntingFolio(java.util.concurrent.ThreadLocalRandom.current().nextLong());
     private final HunterCounters counters=new HunterCounters();
     private final CustomContract contract;
     private final MissionWeather weather;
@@ -1768,7 +1770,17 @@ public final class LanHost implements AutoCloseable {
             lastEvidenceEventPower=eventPower;
             lastEvidenceEventAction=result.action();
         }
-        if(result.action()==GhostDomain.Action.DRIFT)broadcastGhostSound(LanSound.Cue.GHOST_DRIFT);
+        GhostHauntingFolio.Occurrence haunt=hauntingFolio.choose(
+            result.action(),ghostType,result.room(),tick);
+        if(haunt!=null)for(int i=0;i<HUNTERS;i++){
+            Peer hunter=seats[i];
+            if(hunter==null||!hunter.worldMode)continue;
+            boolean local=hunterRooms[i]==haunt.room();
+            boolean watching=insideVan(i)&&cameras.all().stream().anyMatch(camera->
+                camera.room()==haunt.room()&&equipment[camera.owner()].powered("VIDEO_CAMERA")
+                &&equipment[camera.owner()].batterySecondsLeft("VIDEO_CAMERA")>0);
+            if(local||watching)reply(hunter,haunt.frame());
+        }
         if(result.action()==GhostDomain.Action.MANIFEST)animation.manifested(tick);
         if(result.action()==GhostDomain.Action.SIGNATURE)animation.signature(tick);
         RoomLighting.Interference disruption=switch(result.action()){
@@ -1793,14 +1805,7 @@ public final class LanHost implements AutoCloseable {
             for(int i=0;i<HUNTERS;i++)if(seats[i]!=null&&mission.alive(i)
                     &&map.adjacentRooms(result.room()).contains(hunterRooms[i]))
                 reply(seats[i],"TELL|"+behavior.tell());
-        LanSound.Cue cue=switch(result.action()){
-            case WHISPER->LanSound.Cue.WHISPER;
-            case DISTURB->LanSound.Cue.DISTURB;
-            case MANIFEST->LanSound.Cue.MANIFEST;
-            case STRIKE->LanSound.Cue.STRIKE;
-            case SIGNATURE->LanSound.Cue.SIGNATURE;
-            default->null;
-        };
+        LanSound.Cue cue=haunt==null?null:haunt.entry().cue();
         if(cue!=null){
             if(soundOrigin==null)broadcastGhostSound(cue);
             else broadcastGhostSound(cue,soundOrigin);
@@ -2281,6 +2286,7 @@ public final class LanHost implements AutoCloseable {
      */
     private void broadcastApparitions(){
         LanGhostSpatial.Pose pose=ghostPose.pose();
+        boolean signatureReveal=ghost.manifested()&&animation.signatureVisible(tick);
         for(int i=0;i<HUNTERS;i++){
             Peer hunter=seats[i];
             if(hunter!=null && hunter.worldMode) {
@@ -2291,10 +2297,10 @@ public final class LanHost implements AutoCloseable {
                 String sight=LanApparition.frame(map,world.body(i),true,pose,
                     ghost.manifested()&&form!=GhostTraits.Sight.CAMERA_ONLY,tick);
                 if(sight.startsWith("APPARITION|VISIBLE|")) {
-                    // Artwork is a visible cosmetic manifestation, never an evidence verdict.
-                    // No identity/appearance packet is sent before actual line-of-sight disclosure.
-                    reply(hunter,"FORM|FIGURE|"+(ghostType.ancient()?"GREEN":"BASE")
-                            +"|"+ghostType.name());
+                    // Ordinary sight is generic. The real sprite is a temporary signature event.
+                    reply(hunter,signatureReveal
+                        ?"FORM|FIGURE|"+(ghostType.ancient()?"GREEN":"BASE")+"|"+ghostType.name()
+                        :"FORM|FIGURE");
                 }
                 reply(hunter,sight);
                 if(sight.startsWith("APPARITION|VISIBLE|")) {
@@ -2308,7 +2314,8 @@ public final class LanHost implements AutoCloseable {
                     String twinSight=LanApparition.frame(map,world.body(i),true,echo.pose(),
                             ghost.manifested(),tick);
                     boolean twinVisible=twinSight.startsWith("APPARITION|VISIBLE|");
-                    reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible,ghostType.ancient()));
+                    reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible,
+                        signatureReveal&&ghostType.ancient()));
                 }
                 // Real remote cameras observe their own field of view and LOS.
                 // A CAMERA_ONLY species is not exposed to the direct Hunter feed.
@@ -2319,13 +2326,14 @@ public final class LanHost implements AutoCloseable {
                     // not an omniscient radio broadcast to field investigators.
                     boolean seen=powered&&insideVan(i)
                         &&LanCameraSight.sees(map,camera,pose,ghost.manifested(),ghostType,"a");
-                    reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick));
+                    reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick,
+                        signatureReveal));
                     if(ghostType.baseType()==GhostIdentity.Type.TWINS){
                         var echo=new TwinGhostPair.Member("b",twinCompanion.pose());
                         boolean second=powered&&insideVan(i)
                             &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested(),ghostType,"b");
                         reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),
-                            second,ghostType,tick));
+                            second,ghostType,tick,signatureReveal));
                     }
                 }
             }
