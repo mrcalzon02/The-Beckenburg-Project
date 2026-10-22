@@ -13,6 +13,10 @@ public final class LanProtocolTest {
         rejects(()->LanProtocol.integer("10.5",0,14));
         rejects(()->LanProtocol.sequence("-1"));
         rejects(()->LanProtocol.parts("BAD|".repeat(50)));
+        String visibleCamera="CAMGHOST|0|a|VISIBLE|21000|0|19200|180|BASE|shade|86";
+        check(LanProtocol.parts(visibleCamera).size()==11,
+            "A real visible camera Ghost frame must be valid on the host and receiver");
+        rejects(()->LanProtocol.parts(visibleCamera+"|EXTRA"));
         rejects(()->LanProtocol.cleanName("|JOIN|"));
         StringBuilder oversized=new StringBuilder("ABC");oversized.append("a".repeat(550));
         try{LanProtocol.read(new StringReader(oversized+"\n"));throw new AssertionError("oversized socket frame accepted");}
