@@ -1,5 +1,6 @@
 package org.beckenburg;
 
+import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
@@ -28,7 +29,28 @@ public final class GhostPracticeHunterAi {
         }
     }
     private final java.util.ArrayDeque<FieldNote> observations=new java.util.ArrayDeque<>();
+    /** Short local utterances are emitted from real character locations.
+     * They are delivered only to nearby listeners, never as a global mind-reading feed.
+     */
+    public record Utterance(int tick,int room,double x,double y,double z,String words){
+        public Utterance{
+            if(tick<0||room<0||words==null||words.isBlank())
+                throw new IllegalArgumentException("invalid spoken observation");
+        }
+    }
+    private final ArrayDeque<Utterance> speech=new ArrayDeque<>();
+    private int lastDangerSpeech=-10000,lastSuspicionSpeech=-10000,lastVisualSpeech=-10000;
     private String intent="Surveying the room";
+    private void speak(int tick,String words){
+        if(room()<0||room()>=HouseMap.EXTRACTION_ROOM)return;
+        if(speech.size()==24)speech.removeFirst();
+        speech.addLast(new Utterance(tick,room(),position.x(),position.y(),position.z(),words));
+    }
+    public List<Utterance> drainSpeech(){
+        List<Utterance> spoken=List.copyOf(speech);
+        speech.clear();
+        return spoken;
+    }
 
     public GhostPracticeHunterAi(HouseMap map,int room,long seed) {
         this.map=Objects.requireNonNull(map);
@@ -80,6 +102,12 @@ public final class GhostPracticeHunterAi {
         int site=room();
         observations.addLast(new FieldNote(tick,site,tool,value));
         totalScans++;
+        // All field announcements are based on this particular measured value,
+        // without silently treating high EMF or cold air as confirmed evidence.
+        speak(tick,tool==EquipmentLoadout.Item.EMF?
+            value+" at "+map.roomName(site)+". Not yet confirmed.":
+            "Thermometer "+value+" at "+map.roomName(site)+".");
+        int beforeSuspicion=suspicion[site];
         // Interpret only observed numeric values. Neither Ghost type nor the
         // true anchor is available to this AI. Abnormal weather can mislead it.
         try{
@@ -101,6 +129,11 @@ public final class GhostPracticeHunterAi {
         }catch(NumberFormatException unreadable){
             // Record the imperfect instrument text; never manufacture a clue.
         }
+        if(suspicion[site]>beforeSuspicion&&
+                (lastSuspicionSpeech<0||tick-lastSuspicionSpeech>=95)){
+            lastSuspicionSpeech=tick;
+            speak(tick,"Possible activity in "+map.roomName(site)+". More checks needed.");
+        }
         intent="Recording "+tool.label.toLowerCase(java.util.Locale.ROOT)+" measurements";
     }
     /** Only after actual visual confirmation (checked by session world geometry). */
@@ -109,6 +142,10 @@ public final class GhostPracticeHunterAi {
         sightTick=tick;dangerTick=tick;
         alert=Math.min(100,alert+25);
         intent="Visible manifestation; preparing protection";
+        if(tick-lastVisualSpeech>=80){
+            lastVisualSpeech=tick;
+            speak(tick,"I saw something. Preparing protection!");
+        }
     }
     public HunterCounters.Kind counterDue(int tick,HunterCounters stock){
         if(stock==null||health<=0||tick<321||tick-lastCounter<85||room()<0
@@ -124,12 +161,17 @@ public final class GhostPracticeHunterAi {
         lastCounter=tick;
         intent=kind==HunterCounters.Kind.CROSS?
             "Cross deployed against visible apparition":"Protective ward deployed";
+        speak(tick,kind==HunterCounters.Kind.CROSS?
+            "Cross deployed! Keep back.":"Ward down. Holding my ground.");
     }
     public void frightened(int fear){
         if(fear<=0)return;
         stress=Math.min(100,stress+fear);
         if(stress>=55){alert=Math.min(100,alert+20);intent="Retreating from supernatural pressure";
-            target=-1;audibleSearchPoint=null;}
+            target=-1;audibleSearchPoint=null;
+            if(lastDangerSpeech<0){lastDangerSpeech=0;speak(lastHeard>=0?lastHeard:0,
+                "Pressure is getting bad. I need to regroup.");}
+        }
     }
     public SceneRenderer.RemoteBody sprite(){
         return new SceneRenderer.RemoteBody(position.x(),position.y(),position.z(),
@@ -147,6 +189,14 @@ public final class GhostPracticeHunterAi {
                 ||heard.cue()==LanSound.Cue.MANIFEST)dangerTick=heard.tick();
         alert=Math.min(100,alert+Math.max(3,heard.volume()/7));
         intent="Investigating an audible disturbance";
+        if(heard.tick()-lastDangerSpeech>=45){
+            if(heard.cue().tier()==LanSound.Tier.DANGEROUS||
+                    heard.cue().tier()==LanSound.Tier.SIGNATURE||
+                    heard.cue()==LanSound.Cue.MANIFEST){
+                lastDangerSpeech=heard.tick();
+                speak(heard.tick(),"Did you hear that? "+heard.cue().caption()+".");
+            }
+        }
         if(room()>=0&&room()<HouseMap.EXTRACTION_ROOM){
             // Loud event perceived *in this room*: first inspect the local
             // bearing. Pan is coarse and has NO source distance or coordinates.
@@ -175,6 +225,7 @@ public final class GhostPracticeHunterAi {
         alert=Math.min(100,alert+25);
         dangerTick=Math.max(dangerTick,lastHeard);
         intent="Injured; seeking an exit";
+        speak(Math.max(0,lastHeard),"I've been hit! Need cover!");
         // Injuries do not reveal the ghost; any retreat still uses walkable rooms.
         target=-1;audibleSearchPoint=null;
     }

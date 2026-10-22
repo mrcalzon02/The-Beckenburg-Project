@@ -91,6 +91,29 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
     @Override public void keyTyped(KeyEvent e){}
     @Override public void focusGained(FocusEvent e){last=System.nanoTime();}
     @Override public void focusLost(FocusEvent e){mouseLook.release();}
+    /** Compact speech history: only lines physically overheard when spoken. */
+    private void drawOverheard(Graphics2D g,int stageHeight){
+        List<LanChat.Entry> chat=practice.heardHunterChat();
+        if(chat.isEmpty())return;
+        int count=Math.min(3,chat.size()),line=0;
+        int x=14,y=Math.max(126,stageHeight-18-count*19);
+        int width=Math.min(525,Math.max(155,getWidth()-28));
+        g.setColor(new Color(9,15,23,217));
+        g.fillRoundRect(x,y,width,22+count*19,7,7);
+        g.setFont(new Font(Font.MONOSPACED,Font.BOLD,12));
+        g.setColor(new Color(183,218,186));
+        g.drawString("OVERHEARD / INVESTIGATOR",x+10,y+15);
+        g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
+        for(var entry:chat.subList(chat.size()-count,chat.size())){
+            String words=entry.message();
+            int limit=Math.max(12,(width-28)/8);
+            if(words.length()>limit)words=words.substring(0,limit-3)+"...";
+            g.setColor(new Color(224,231,216));
+            g.drawString(words,x+10,y+34+line*19);
+            line++;
+        }
+    }
+
     @Override protected void paintComponent(Graphics original){
         super.paintComponent(original);
         Graphics2D g=(Graphics2D)original.create();
@@ -105,11 +128,9 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
             GhostDomain.Observation obs=practice.observation();
             g.drawString("SPECTRAL ROOM "+map.roomName(obs.room())+"    ENERGY "+obs.energy()+"/100",14,46);
             g.drawString(obs.hearsHunter()?"PRESENCE: HUNTER AUDIBLE NEARBY":"PRESENCE: SILENT",14,67);
-            g.drawString("HUNTER AI: "+practice.hunter().intent()+
-                " / HEALTH "+practice.hunter().health(),14,88);
-            g.drawString("FIELD GEAR "+practice.hunter().equipped()+
-                "   /   NOTES "+practice.hunter().instrumentCount()+
-                "   /   STRESS "+practice.hunter().stress(),14,109);
+            // Never display private AI intent, health, stress, field inventory
+            // or unseen measurements to a Ghost player. Only heard speech is shown.
+            drawOverheard(g,stageH);
             g.drawString("+",getWidth()/2,stageH/2);
             g.setColor(new Color(18,19,28));g.fillRect(0,stageH,getWidth(),getHeight()-stageH);
             g.setColor(new Color(225,211,236));

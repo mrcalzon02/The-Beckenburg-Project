@@ -11,6 +11,7 @@ public final class GhostPracticeSession {
     private final GhostDomain ghost;
     private final GhostPracticeHunterAi hunter;
     private final HunterCounters counters=new HunterCounters();
+    private final FieldTeamChat overheard=new FieldTeamChat();
     private final long evidenceSeed;
     private int lastEventRoom=-1,lastEventTick=-10000,lastEventPower;
     private int tick, strikes;
@@ -39,6 +40,22 @@ public final class GhostPracticeSession {
         return visibleHunterRoom()<0?List.of():List.of(hunter.sprite());
     }
     public GhostPracticeHunterAi hunter(){return hunter;}
+    /** Only speech actually audible at the Ghost's position enters this feed.
+     * No radio transcripts or instrument notebook are silently exposed.
+     */
+    public List<LanChat.Entry> heardHunterChat(){return overheard.messages();}
+    private void collectAudibleSpeech(){
+        var voice=hunter.drainSpeech();
+        int room=ghost.room();
+        var listener=new LanWorld.Body(map.centerX(room),map.floorY(room),
+            map.centerZ(room),0,room);
+        for(var utterance:voice){
+            var origin=new LanWorld.Body(utterance.x(),utterance.y(),utterance.z(),
+                hunter.heading(),utterance.room());
+            if(LanChat.localVisible(map,origin,listener))
+                overheard.post(LanChat.Channel.LOCAL,0,tick,utterance.words());
+        }
+    }
     /** Physical counter objects, also rendered in first-person practice. */
     public List<SceneRenderer.WorldMark> counterMarks(){
         return counters.snapshot(tick).stream()
@@ -103,6 +120,7 @@ public final class GhostPracticeSession {
         counters.advance(map,ghost.type(),ghost,
             new LanGhostSpatial.Pose(ghost.room(),map.centerX(ghost.room()),
                 map.floorY(ghost.room()),map.centerZ(ghost.room()),0),tick);
+        collectAudibleSpeech();
     }
     public GhostDomain.Resolution act(GhostDomain.Action action,int targetRoom){
         if(action==null)throw new IllegalArgumentException("action");
@@ -150,6 +168,7 @@ public final class GhostPracticeSession {
                 case SIGNATURE -> "Signature haunting released. Energy "+result.energy()+".";
             };
         }
+        collectAudibleSpeech();
         return result;
     }
 }
