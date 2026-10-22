@@ -710,6 +710,7 @@ public final class InvestigationGame {
                 p.z()>=VanStaging.FRONT && p.z()<VanStaging.REAR-.2;
         }
         private void frame(){
+            long diagnosticFrameStart=System.nanoTime();
             atmosphere.setActive(isShowing());
             buildingSoundscape.setActive(isShowing());
             int outdoorRoom=currentRoom();
@@ -792,6 +793,7 @@ public final class InvestigationGame {
             if(session.outcome()==InvestigationSession.Outcome.LOST){
                 timer.stop();endCase("You were overcome. The case remains open.");
             }
+            BeckenburgDeveloperTrace.frame(System.nanoTime()-diagnosticFrameStart);
         }
         private void endCase(String details){
             if(claimSaved)return;
