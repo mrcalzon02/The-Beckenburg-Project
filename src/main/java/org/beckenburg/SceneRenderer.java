@@ -1629,6 +1629,12 @@ public final class SceneRenderer {
     public void setSpiritualWarVanSanctuary(boolean active) {
         spiritualWarVanSanctuary = active;
     }
+    /** Consume the authoritative arena clock, never a local countdown guess. */
+    public void syncSpiritualWarSanctuary(SpiritualWar.Match match) {
+        setSpiritualWarVanSanctuary(java.util.Objects.requireNonNull(match).vanProtected()
+            && match.result() == SpiritualWar.Result.ACTIVE);
+    }
+    public boolean spiritualWarVanSanctuaryVisible() { return spiritualWarVanSanctuary; }
     /**
      * Animated world-space blue motes outlining the van's protected footprint.
      * The wall has no physical collision and never replaces host-side protection.
