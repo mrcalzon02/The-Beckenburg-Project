@@ -6,6 +6,13 @@ public final class CastleLiveRepairTest {
     public static void main(String[] args){
         CastleHubMap map=new CastleHubMap();
         check(map.valid(),"Castle navigation retains all reachable stations");
+        check(CastleHubArchitecturalPlan.roofedAt(5,20),"west castle wing roofed");
+        check(CastleHubArchitecturalPlan.roofedAt(23,20),"operations wing roofed");
+        check(CastleHubArchitecturalPlan.roofedAt(14,5),"upper library roofed");
+        check(!CastleHubArchitecturalPlan.roofedAt(13.5,19.3),
+            "open castle courtyard must remain under sky");
+        check(CastleHubArchitecturalPlan.roofs().size()>=4,
+            "roof must be authored by wing rather than decorative fragments");
         check(CastleHubArchitecturalPlan.groundCeilingHeight(14.5,5.5)
                 <CastleHubArchitecturalPlan.GROUND_CEILING,
             "Upper library deck must not z-fight downstairs ceiling");

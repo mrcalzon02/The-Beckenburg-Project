@@ -25,6 +25,23 @@ public final class CastleHubArchitecturalPlan {
     }
     public record Deck(double x0,double z0,double x1,double z1,
                        double height,int material){}
+    public record Roof(double west,double east,double north,double south,
+                       double eave,double rise,int material){}
+    /** Continuous exterior wing roofs: the middle courtyard remains open sky.
+     * The library uses a higher roof above its genuinely walkable upper storey. */
+    private static final List<Roof> ROOFS=List.of(
+        new Roof(1,10,1,34,GROUND_CEILING,1.70,MaterialAtlas.STONE),
+        new Roof(10.8,19,1.2,10.7,UPPER_CEILING,2.0,MaterialAtlas.STONE),
+        new Roof(20,28,1,34,GROUND_CEILING,1.85,MaterialAtlas.STONE),
+        new Roof(29,43,4,34,GROUND_CEILING,2.20,MaterialAtlas.AGED_WOOD)
+    );
+    public static List<Roof> roofs(){return ROOFS;}
+    public static boolean roofedAt(double x,double z){
+        for(Roof roof:ROOFS)
+            if(x>=roof.west()&&x<=roof.east()&&z>=roof.north()&&z<=roof.south())
+                return true;
+        return false;
+    }
     public record Trim(String mesh,double x,double y,double z,
                        double sx,double sy,double sz,double yaw){}
     private static final List<Wall> WALLS=buildWalls();

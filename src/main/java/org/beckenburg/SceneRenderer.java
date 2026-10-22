@@ -774,8 +774,9 @@ public final class SceneRenderer {
         for(var tree:CastleSurroundings.trees())imported(out,"level_tree_conifer_worn",tree.x(),0,tree.z(),tree.scale(),tree.x()*.2);
         mountains(out,22,17);var points=CastleSurroundings.road();int asphalt=VanArrivalStreet.surfaceMaterial(false);double uv=0;
         for(int i=0;i<points.size()-1;i++){var a=points.get(i);var b=points.get(i+1);double dx=b.x()-a.x(),dz=b.z()-a.z(),length=Math.hypot(dx,dz),ox=dz/length*2.6,oz=-dx/length*2.6;texturedQuad(out,new Point(a.x()-ox,-.055,a.z()-oz),new Point(a.x()+ox,-.055,a.z()+oz),new Point(b.x()+ox,-.055,b.z()+oz),new Point(b.x()-ox,-.055,b.z()-oz),asphalt,0,uv,2.6,uv,2.6,uv+length*.48,0,uv+length*.48,0x96958a);uv+=length*.48;}
-        // A shut timber gate sits on the existing closed castle perimeter; it does not imply a traversable exit.
-        imported(out,"door_1_loose",16.75,0,34.035,1.25,2.7/2.1,1,0);imported(out,"door_1_loose",14.25,0,34.035,1.25,2.7/2.1,1,Math.PI);
+        // A single centered entrance leaf avoids two independent handles and
+        // opposing pivots intersecting the same solid perimeter.
+        castleProp(out,"door_1_loose",15.5,0,33.88,1.18,0);
         castleEnvironment=List.copyOf(out);return castleEnvironment;
     }
 
@@ -1533,6 +1534,11 @@ public final class SceneRenderer {
         // The real continuous, authored stonework and second floor replace
         // per-cell fortress blocks. Doors have full-width jambs and lintels.
         castleShell(castle);
+        for(var roof:CastleHubArchitecturalPlan.roofs())
+            if(Math.hypot((roof.west()+roof.east())*.5-x,
+                          (roof.north()+roof.south())*.5-z)<27)
+                pitchedRoof(castle,roof.west(),roof.east(),roof.north(),
+                    roof.south(),roof.eave(),roof.rise(),roof.material());
         for(CastleHubDecor.Light fixture:CastleHubDecor.LIGHTS)
             if(Math.hypot(fixture.x()-x,fixture.z()-z)<14)
                 mountedLamp(castle,fixture,lightsOn);
