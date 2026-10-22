@@ -69,16 +69,25 @@ jobs:
           "tag=$tag" >> $env:GITHUB_OUTPUT
           Write-Host "Independent Beckenburg release: $tag"
 
-      - name: Compile Java 17, run complete Beckenburg regression suite, build JAR
-        working-directory: .
+      - name: Compile and package game JAR independently of acceptance
         shell: cmd
-        run: build.cmd
+        run: build.cmd package
+
+      - name: Run complete regression suite
+        id: regression
+        continue-on-error: true
+        shell: cmd
+        run: java -Djava.awt.headless=true -ea -cp build\classes org.beckenburg.BeckenburgRegressionSuite
 
       - name: Verify packaged TCP multiplayer investigation
+        id: multiplayer
+        continue-on-error: true
         shell: cmd
         run: build.cmd e2e
 
       - name: Verify packaged JAR boots to actual desktop and multiplayer UI
+        id: desktop
+        continue-on-error: true
         shell: pwsh
         run: |
           $ErrorActionPreference='Stop'
@@ -176,6 +185,8 @@ jobs:
           "zip_name=$(Split-Path $portable -Leaf)" >> $env:GITHUB_OUTPUT
 
       - name: Launch version-stamped native Windows executable to main menu
+        id: native
+        continue-on-error: true
         shell: pwsh
         run: |
           $ErrorActionPreference='Stop'
@@ -211,7 +222,37 @@ jobs:
             }
           }
 
+      - name: Upload Windows installers regardless of acceptance status
+        if: always() && steps.artifacts.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-windows-candidate-${{ github.sha }}
+          path: |
+            build/release/*.exe
+            build/release/*.msi
+            build/release/*.zip
+            build/release/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Report acceptance result
+        if: always()
+        shell: pwsh
+        env:
+          REGRESSION: ${{ steps.regression.outcome }}
+          MULTIPLAYER: ${{ steps.multiplayer.outcome }}
+          DESKTOP: ${{ steps.desktop.outcome }}
+          NATIVE: ${{ steps.native.outcome }}
+          ARTIFACTS: ${{ steps.artifacts.outcome }}
+        run: |
+          Write-Host "Regression=$env:REGRESSION Multiplayer=$env:MULTIPLAYER Desktop=$env:DESKTOP Native=$env:NATIVE Installers=$env:ARTIFACTS"
+          if ($env:REGRESSION -ne 'success' -or $env:MULTIPLAYER -ne 'success' -or
+              $env:DESKTOP -ne 'success' -or $env:NATIVE -ne 'success') {
+            Write-Warning 'UNVERIFIED TEST BUILD: downloadable installers retained as run artifacts; publication as latest blocked.'
+          }
+
       - name: Publish draft, verify all assets, then publish independent release
+        if: steps.regression.outcome == 'success' && steps.multiplayer.outcome == 'success' && steps.desktop.outcome == 'success' && steps.native.outcome == 'success'
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
