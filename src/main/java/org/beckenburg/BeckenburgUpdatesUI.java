@@ -24,6 +24,7 @@ import javax.swing.SwingUtilities;
 public final class BeckenburgUpdatesUI {
     private static final Preferences PREFS=Preferences.userNodeForPackage(BeckenburgUpdatesUI.class);
     private static final long DAY=86400000L;
+    private static boolean developmentChannel(){return PREFS.getBoolean("development_channel",true);}
     private BeckenburgUpdatesUI() { }
     public static void checkOnStartup(JFrame parent){
         if(GraphicsEnvironment.isHeadless()||!PREFS.getBoolean("check_updates",true))return;
@@ -35,7 +36,7 @@ public final class BeckenburgUpdatesUI {
         BeckenburgDeveloperTrace.update("auto-start","installed="+BeckenburgUpdates.installedVersion());
         Thread worker=new Thread(()->{
             try{
-                var release=BeckenburgUpdates.check(BeckenburgUpdates.installedVersion());
+                var release=BeckenburgUpdates.check(BeckenburgUpdates.installedVersion(),developmentChannel());
                 BeckenburgDeveloperTrace.update("auto-result",release==null?"up-to-date":"available="+release.version());
                 if(release!=null){
                     BeckenburgDiagnostics.record("UPDATES found "+release.version()+" from "+release.tag());
@@ -72,6 +73,9 @@ public final class BeckenburgUpdatesUI {
             bottom.add(status,BorderLayout.NORTH);bottom.add(progress,BorderLayout.CENTER);
             JPanel buttons=new JPanel(new FlowLayout(FlowLayout.RIGHT,4,2));
             JCheckBox auto=new JCheckBox("Check daily",PREFS.getBoolean("check_updates",true));
+            JCheckBox development=new JCheckBox("Development releases",developmentChannel());
+            development.addActionListener(e->{PREFS.putBoolean("development_channel",development.isSelected());check();});
+            buttons.add(development);
             auto.addActionListener(e->PREFS.putBoolean("check_updates",auto.isSelected()));
             buttons.add(auto);
             check.addActionListener(e->check());buttons.add(check);
@@ -97,7 +101,7 @@ public final class BeckenburgUpdatesUI {
         }
         private void check(){
             if(busy){BeckenburgDeveloperTrace.update("manual-skip","check already running");return;}
-            BeckenburgDeveloperTrace.update("manual-start","installed="+BeckenburgUpdates.installedVersion());
+            BeckenburgDeveloperTrace.update("manual-start","installed="+BeckenburgUpdates.installedVersion()+" development="+developmentChannel());
             state(true);status.setText("Checking Beckenburg releases…");
             progress.setValue(0);
             Thread worker=new Thread(()->{
@@ -107,7 +111,7 @@ public final class BeckenburgUpdatesUI {
                     BeckenburgDeveloperTrace.update("manual-result",newest==null?"up-to-date":"available="+newest.version());
                     SwingUtilities.invokeLater(()->{
                         if(!isDisplayable())return;
-                        apply(newest);if(newest==null)status.setText("No newer stable Beckenburg release.");
+                        apply(newest);if(newest==null)status.setText(developmentChannel()?"No newer Beckenburg development release.":"No newer stable Beckenburg release.");
                         state(false);
                     });
                 }catch(Exception failure){
