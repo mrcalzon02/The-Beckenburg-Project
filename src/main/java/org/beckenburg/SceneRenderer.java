@@ -60,6 +60,10 @@ public final class SceneRenderer {
     /** Cosmetic effects follow received authority, never determine paranormal evidence. */
     public GhostIdentity.Rite activeRite;
     private List<Apparition> additionalGhostBodies=List.of();
+    private List<GhostHauntingFolio.Occurrence> hauntings=List.of();
+    public void setHauntings(List<GhostHauntingFolio.Occurrence> events){
+        hauntings=List.copyOf(events);
+    }
     /** Already per-viewer-authorized bodies only; no client-side ghost guessing. */
     public void setAdditionalGhostBodies(List<Apparition> visible){
         additionalGhostBodies=List.copyOf(visible);
@@ -1585,8 +1589,8 @@ public final class SceneRenderer {
                 secondary.heading(),0,false,signatureReveal&&type.ancient(),
                 type.ancient()?"ancient_twins_b":"twins_b")));
         }else setAdditionalGhostBodies(List.of());
-        // Solo mode has room-based manifestation authority rather than a LAN
-        // world pose. Preserve that placement, but render the actual archetype.
+        // Solo shares the same event visualization contract as the LAN client.
+        setHauntings(session.hauntings());
         render(map,room,visible,
             session.wardPrepared()?session.anchorRoom():-1,-1,clock,allies,figure,session.counterMarks());
     }
@@ -1623,6 +1627,9 @@ public final class SceneRenderer {
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
+        int localRoom=map.roomAt(x,eyeHeight-.85,z);
+        GhostHauntingFolio.paint(pixels,renderWidth,renderHeight,hauntings,
+            localRoom,(int)Math.floor(clock*10));
     }
     private static Point mid(Point a,Point b){return new Point((a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2);}
     private static double edge2(Point a,Point b){return (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y)+(a.z-b.z)*(a.z-b.z);}
