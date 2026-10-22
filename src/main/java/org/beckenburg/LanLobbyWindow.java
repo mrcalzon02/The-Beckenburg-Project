@@ -260,7 +260,7 @@ public final class LanLobbyWindow extends JFrame {
         hardEvidence.setSelectedItem(custom.evidenceLevel());
         var weatherMode=new JComboBox<>(MissionWeather.Mode.values());
         weatherMode.setSelectedItem(custom.weatherMode());
-        var weatherChoice=new JComboBox<>(EvidenceSignals.Weather.values());
+        var weatherChoice=new JComboBox<>(MissionWeather.selectableWeather());
         weatherChoice.setSelectedItem(custom.fixedWeather());
         var weatherIntensity=spin(custom.weatherIntensity(),1,3,1);
         var sprint=new JComboBox<>(CustomContract.Sprint.values());
