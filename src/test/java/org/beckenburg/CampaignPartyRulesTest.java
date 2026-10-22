@@ -38,7 +38,7 @@ public final class CampaignPartyRulesTest {
             InvestigationSession.Role.OBSERVER,88);
         live.configureParty(2);
         var at=live.map().van().spawn(0);
-        live.tick(at.x(),at.y(),at.z(),false);
+        live.tick(at.x(),live.map().floorY(HouseMap.EXTRACTION_ROOM),at.z(),false);
         rejected=false;
         try{live.configureParty(3);}
         catch(IllegalStateException expected){rejected=true;}
