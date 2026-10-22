@@ -6,6 +6,35 @@ public final class CastleLiveRepairTest {
     public static void main(String[] args){
         CastleHubMap map=new CastleHubMap();
         check(map.valid(),"Castle navigation retains all reachable stations");
+        var parked=CastleSurroundings.parkedVehicles();
+        check(parked.size()==3,"One decorative van and two PSX parked cars");
+        check(parked.stream().filter(v->v.mesh().equals("ggbot_car08_van_shell")).count()==1,
+            "Castle must display one non-operational van");
+        check(parked.stream().filter(v->v.mesh().equals("ggbot_car01")||
+                v.mesh().equals("ggbot_car07")).count()==2,
+            "Castle road must display two original PSX car models");
+        for(var v:parked){
+            check(v.z()>34.4,"Static castle vehicles stay outside gate");
+            check(!map.traversable(v.x(),v.z()),
+                "Decorative van and cars do not introduce playable stations");
+            var model=GlbProps.model(v.mesh());
+            check(model.triangles().size()>100,"Source-backed PSX model "+v.mesh());
+            check(model.triangles().stream().anyMatch(t->
+                t.material()>=GlbProps.TEXTURE_BASE),
+                "Original texture atlas required for "+v.mesh());
+        }
+        for(String psxCar:new String[]{"ggbot_car01","ggbot_car07"}){
+            var model=GlbProps.model(psxCar);
+            java.util.Set<Integer> samples=new java.util.HashSet<>();
+            for(var tri:model.triangles()){
+                if(tri.material()<GlbProps.TEXTURE_BASE)continue;
+                double u=(tri.a().u()+tri.b().u()+tri.c().u())/3;
+                double v=(tri.a().v()+tri.b().v()+tri.c().v())/3;
+                samples.add(GlbProps.sample(tri.material(),u,v));
+            }
+            check(samples.size()>12,
+                "Actual varied PSX atlas must replace dull placeholder: "+psxCar);
+        }
         check(CastleHubArchitecturalPlan.roofedAt(5,20),"west castle wing roofed");
         check(CastleHubArchitecturalPlan.roofedAt(23,20),"operations wing roofed");
         check(CastleHubArchitecturalPlan.roofedAt(14,5),"upper library roofed");

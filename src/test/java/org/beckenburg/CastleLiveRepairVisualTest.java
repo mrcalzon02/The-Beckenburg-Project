@@ -34,6 +34,10 @@ public final class CastleLiveRepairVisualTest {
         view.x=15.5;view.z=31.3;view.eyeHeight=1.62;
         view.yaw=0;view.pitch=-.07;
         capture(view,map,"castle-entrance-leaf");
+        // Source cars and noninteractive van, viewed from inside the gate.
+        view.x=15.5;view.z=32.5;view.eyeHeight=1.62;
+        view.yaw=0;view.pitch=-.12;
+        capture(view,map,"castle-static-van-and-textured-psx-cars");
         System.out.println("PASS castle source-rendered visual repair captures");
     }
 }

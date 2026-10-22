@@ -722,7 +722,9 @@ public final class SceneRenderer {
         // Original GGBot parked cars, all clear of the rear-door walking path.
         for(VanArrivalStreet.RoadObject vehicle:VanArrivalStreet.parkedVehicles()){
             VanStaging.Position p=van.world(vehicle.x(),vehicle.z());
-            imported(road,vehicle.mesh(),p.x(),.065,p.z(),vehicle.scale(),
+            // The licensed PSX bodies have nonzero source pivots. Place their
+            // actual bottom on the roadway, retaining embedded 128px atlases.
+            castleProp(road,vehicle.mesh(),p.x(),.065,p.z(),vehicle.scale(),
                 van.placement().yaw()+vehicle.yaw());
         }
     }
@@ -777,6 +779,12 @@ public final class SceneRenderer {
         // A single centered entrance leaf avoids two independent handles and
         // opposing pivots intersecting the same solid perimeter.
         castleProp(out,"door_1_loose",15.5,0,33.88,1.18,0);
+        // Static roadside PSX van and original textured cars. These are pure
+        // triangles in the cached exterior: NO VanStaging, equipment, services,
+        // extraction commands, multiplayer state or interactive cargo doors.
+        for(var parked:CastleSurroundings.parkedVehicles())
+            castleProp(out,parked.mesh(),parked.x(),0,parked.z(),
+                parked.scale(),parked.yaw());
         castleEnvironment=List.copyOf(out);return castleEnvironment;
     }
 
