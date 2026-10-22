@@ -65,6 +65,10 @@ jobs:
         working-directory: .
         run: build.cmd e2e
 
+      - name: Execute complete release regression manifest after multiplayer acceptance
+        shell: cmd
+        run: java -Djava.awt.headless=true -ea -cp build\classes org.beckenburg.BeckenburgRegressionSuite
+
       - name: Launch packaged JAR, verify splash to live menu to multiplayer UI
         shell: pwsh
         working-directory: .

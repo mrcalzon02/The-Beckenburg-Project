@@ -15,10 +15,7 @@ public final class BeckenburgUpdatesTest {
     }
     public static void main(String[] args){
         String feed="["+item("0.3.9",false)+","+item("0.3.10",false)+","+
-            item("0.4.0",true)+","+release("beckenburg-v9.0.0","9.0.0",false,
-                "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/beckenburg-v9.0.0/Beckenburg-9.0.0-Windows-x64.exe",
-                "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/beckenburg-v9.0.0/SHA256SUMS.txt")+","+
-            
+            item("0.4.0",true)+","+
             release("simple-sound-manager-v9.0.0","9.0.0",false,
             "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/simple-sound-manager-v9.0.0/Beckenburg-9.0.0-Windows-x64.exe",
             "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/simple-sound-manager-v9.0.0/SHA256SUMS.txt")+"]";
@@ -32,6 +29,13 @@ public final class BeckenburgUpdatesTest {
             "https://attacker.example/install.exe","https://attacker.example/SHA256SUMS.txt")+"]","0.3.0");}
         catch(IllegalArgumentException expected){rejected=true;}
         assert rejected:"Reject foreign download URLs";
+        rejected=false;
+        try{
+            BeckenburgUpdates.select("["+release("beckenburg-v9.0.0","9.0.0",false,
+                "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/beckenburg-v9.0.0/Beckenburg-9.0.0-Windows-x64.exe",
+                "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/beckenburg-v9.0.0/SHA256SUMS.txt")+"]","0.1.0");
+        }catch(IllegalArgumentException expected){rejected=true;}
+        assert rejected:"Reject a Beckenburg-tagged release hosted in old multi-product repository";
         rejected=false;
         try{BeckenburgUpdates.select("{\"bad\":true}","0.3.0");}
         catch(IllegalArgumentException expected){rejected=true;}
