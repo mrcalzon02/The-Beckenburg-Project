@@ -28,6 +28,10 @@ public final class CastleLiveRepairTest {
             "Raised gallery side must have player-radius collision");
         check(map.traversable(17.5,15,3.4),
             "Raised gallery center stays navigable");
+        check(map.traversable(17.5,22.0,3.4),
+            "Stair landing remains traversable when adjoining upper gallery");
+        check(map.traversable(17.5,21.9,3.4),
+            "Gallery transition retains clearance after stair ascent");
         check(CastleHubMap.Station.ARMORY_UV.label.contains("QUARTERMASTER")
                 && CastleHubMap.Station.ARMORY_SALT.label.contains("QUARTERMASTER"),
             "Castle armoury stations must advertise accessible full shop");

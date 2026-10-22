@@ -170,8 +170,12 @@ public final class CastleHubArchitecturalPlan {
     }
     /** Collision for the whole player radius, including the open gallery edges. */
     public static boolean upperClearance(double x,double z,double radius){
-        return upperWalkable(x-radius,z-radius)&&upperWalkable(x+radius,z-radius)
-            &&upperWalkable(x-radius,z+radius)&&upperWalkable(x+radius,z+radius);
+        return upperSupported(x-radius,z-radius)&&upperSupported(x+radius,z-radius)
+            &&upperSupported(x-radius,z+radius)&&upperSupported(x+radius,z+radius);
+    }
+    /** Stair treads continue directly beneath the gallery landing. */
+    private static boolean upperSupported(double x,double z){
+        return upperWalkable(x,z)||onStairs(x,z);
     }
     public static boolean upperWalkable(double x,double z){
         return x>=10.8&&x<=19&&z>=1.2&&z<=10.7 ||
