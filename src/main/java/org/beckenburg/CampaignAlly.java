@@ -13,9 +13,15 @@ public final class CampaignAlly {
     private final InvestigationSession caseSession;
     private LevelDefinition.Vec position;
     private Order order=Order.FOLLOW;
-    private int destination=-1,heading=0,lastReading=-10000;
+    private int destination=-1,heading=0,lastReading=-10000,lastAutoScan=-10000;
+    private int lastSoundReport=-10000,totalScans;
     private String report="Awaiting field orders.";
-    private final EquipmentLoadout.Item issuedTool=EquipmentLoadout.Item.THERMOMETER;
+    private final EquipmentLoadout instruments=new EquipmentLoadout();
+    public record Observation(int tick,int room,EquipmentLoadout.Item instrument,
+                              String reading,boolean unusual){}
+    private final ArrayDeque<Observation> observations=new ArrayDeque<>();
+    private final ArrayDeque<String> outboundChat=new ArrayDeque<>();
+    private final int[] roomSuspicion=new int[HouseMap.ROOM_COUNT];
     public CampaignAlly(HouseMap map,InvestigationSession session){
         this.map=Objects.requireNonNull(map);
         caseSession=Objects.requireNonNull(session);
@@ -28,6 +34,53 @@ public final class CampaignAlly {
     public int room(){return map.roomAt(position.x(),position.y(),position.z());}
     public Order order(){return order;}
     public String report(){return report;}
+    public List<Observation> observations(){return List.copyOf(observations);}
+    public int totalScans(){return totalScans;}
+    public int suspectedRoom(){
+        int room=-1,weight=0;
+        for(int i=0;i<HouseMap.EXTRACTION_ROOM;i++)if(roomSuspicion[i]>weight){
+            weight=roomSuspicion[i];room=i;
+        }
+        return weight>=3?room:-1;
+    }
+    public List<String> drainChat(){
+        var messages=List.copyOf(outboundChat);outboundChat.clear();return messages;
+    }
+    private void announce(String words){
+        if(outboundChat.size()==16)outboundChat.removeFirst();
+        outboundChat.addLast(words);
+    }
+    private boolean recordReading(EquipmentLoadout.Item item,String raw){
+        if(raw==null)return false;
+        int slot=item==EquipmentLoadout.Item.EMF?0:1;
+        if(instruments.at(slot)!=item)throw new IllegalStateException("Missing issued instrument");
+        instruments.select(slot);
+        int area=room();
+        boolean unusual=false;
+        if(item==EquipmentLoadout.Item.THERMOMETER){
+            int degrees=raw.indexOf('°');
+            if(degrees>4)try{
+                double c=Double.parseDouble(raw.substring(4,degrees));
+                unusual=c<=0||c>=33;
+            }catch(NumberFormatException ignored){}
+        }else if(item==EquipmentLoadout.Item.EMF){
+            int slash=raw.indexOf('/');
+            if(slash>4)try{
+                unusual=Integer.parseInt(raw.substring(4,slash))>=8;
+            }catch(NumberFormatException ignored){}
+        }
+        if(unusual&&area>=0&&area<HouseMap.EXTRACTION_ROOM)
+            roomSuspicion[area]=Math.min(40,roomSuspicion[area]+3);
+        if(observations.size()==48)observations.removeFirst();
+        observations.addLast(new Observation(caseSession.ticks(),area,item,raw,unusual));
+        totalScans++;
+        lastReading=caseSession.ticks();
+        String where=map.roomName(area);
+        announce(item.label+": "+raw+" / "+where+
+            (unusual?" (unusual, unverified)":""));
+        if(unusual)announce("Possible activity around "+where+". Need another reading.");
+        return true;
+    }
     /** Hearing uses only the exact SOUND cue a human ear could receive.
      * The companion never sees the Ghost controller or automatically confirms clues.
      */
@@ -45,6 +98,11 @@ public final class CampaignAlly {
         report="T"+sound.tick()+" / "+map.roomName(room())+
             " / heard "+sound.cue().caption().toLowerCase(java.util.Locale.ROOT)+
             " ("+direction+")"+(danger?" / regrouping":"");
+        if(sound.tick()-lastSoundReport>=55 || danger&&sound.tick()>lastSoundReport+8){
+            lastSoundReport=sound.tick();
+            announce("Heard "+sound.cue().caption()+" to my "+direction+
+                " near "+map.roomName(room())+(danger?". Regrouping.":"."));
+        }
     }
     public int destination(){return destination;}
     public void follow(){order=Order.FOLLOW;destination=-1;report="Following investigator."; }
@@ -55,17 +113,90 @@ public final class CampaignAlly {
         order=Order.INVESTIGATE;destination=zone;
         report="Heading to "+map.roomName(zone)+".";
     }
-    /** A real issued instrument; never automatically completes the journal. */
+    /** Independent AI measurements never mark the player's journal. */
     public String readThermometer(){
-        if(issuedTool!=EquipmentLoadout.Item.THERMOMETER)throw new IllegalStateException("No thermometer");
         if(caseSession.ticks()-lastReading<30){
             report="Thermometer is still settling.";return report;
         }
         String raw=caseSession.rawTemperatureAt(position.x(),position.y(),position.z());
         report=raw==null?"Cannot measure air from here.":
             "T"+caseSession.ticks()+" / "+map.roomName(room())+" / "+raw;
-        if(raw!=null)lastReading=caseSession.ticks();
+        if(raw!=null)recordReading(EquipmentLoadout.Item.THERMOMETER,raw);
         return report;
+    }
+    public String readEmf(){
+        if(caseSession.ticks()-lastReading<30){
+            report="EMF reader is still settling.";return report;
+        }
+        String raw=caseSession.rawEmfAt(position.x(),position.y(),position.z());
+        report=raw==null?"Cannot sample the field from here.":
+            "T"+caseSession.ticks()+" / "+map.roomName(room())+" / "+raw;
+        if(raw!=null)recordReading(EquipmentLoadout.Item.EMF,raw);
+        return report;
+    }
+    public String latestEvidence(){
+        if(observations.isEmpty())return "No field measurements yet.";
+        var last=observations.peekLast();
+        return last.instrument().label+" / "+map.roomName(last.room())+" / "+
+            last.reading()+(last.unusual()?" / unusual, unverified":"");
+    }
+    public String suspicionReport(){
+        int probable=suspectedRoom();
+        return probable<0?"No strong location hypothesis yet.":
+            "Possible activity in "+map.roomName(probable)+". Unconfirmed.";
+    }
+    /** Callouts are actual nearby speech, not remote magic orders. */
+    public String onCallout(TeamCallout.Ping ping,LanWorld.Body player){
+        if(ping==null||player==null||ping.sender()!=0||
+            !LanChat.localVisible(map,player,listener()))return null;
+        switch(ping.phrase()){
+            case FOLLOW,HERE,HELP -> {
+                follow();return "Copy. Following you.";
+            }
+            case HOLD -> {
+                hold();return "Holding here.";
+            }
+            case THERE,EVIDENCE -> {
+                investigate(ping.zone());
+                return "Checking "+map.roomName(ping.zone())+" with my instruments.";
+            }
+            case DANGER,DONT_GO -> {
+                follow();return "Understood. Regrouping.";
+            }
+        }
+        throw new AssertionError(ping.phrase());
+    }
+    /** Typed field messages use the exact LAN chat hearing/radio channels. */
+    public String onChat(String raw,LanChat.Channel channel,LanWorld.Body player){
+        String message=LanChat.clean(raw).toLowerCase(Locale.ROOT);
+        if(channel==LanChat.Channel.LOCAL&&
+            !LanChat.localVisible(map,player,listener()))return null;
+        if(message.contains("follow")||message.contains("regroup")
+                ||message.equals("help")||message.equals("come here")){
+            follow();return "Copy. Following you.";
+        }
+        if(message.equals("hold")||message.equals("stay")){
+            hold();return "Holding position.";
+        }
+        if(message.startsWith("check ")||message.startsWith("investigate ")){
+            String token=message.substring(message.indexOf(' ')+1).strip();
+            try{
+                int target=Integer.parseInt(token);
+                if(target>=0&&target<HouseMap.EXTRACTION_ROOM){
+                    investigate(target);return "Moving to "+map.roomName(target)+".";
+                }
+            }catch(NumberFormatException ignored){}
+            return "Send a valid room number, e.g. check 4.";
+        }
+        if(message.contains("emf"))return readEmf();
+        if(message.contains("temperature")||message.contains("thermometer"))return readThermometer();
+        if(message.contains("evidence")||message.contains("reading"))return latestEvidence();
+        if(message.contains("suspect")||message.contains("hypothesis")
+                ||message.contains("ghost")||message.contains("think"))return suspicionReport();
+        if(message.contains("status")||message.contains("where")||message.contains("report"))
+            return "At "+map.roomName(room())+" / "+order+" / "+
+                totalScans+" measurements. "+suspicionReport();
+        return "Copy. Try: follow, hold, check 4, emf, temperature, evidence, suspect.";
     }
     private List<Integer> route(int from,int to){
         if(from==to)return List.of(from);
@@ -85,7 +216,14 @@ public final class CampaignAlly {
     }
     /** Ten steps per second, like the solo simulation clock. */
     public void advance(double playerX,double playerY,double playerZ){
-        if(caseSession.outcome()!=InvestigationSession.Outcome.ACTIVE||order==Order.HOLD)return;
+        if(caseSession.outcome()!=InvestigationSession.Outcome.ACTIVE)return;
+        int tick=caseSession.ticks();
+        if(room()>=0&&room()<HouseMap.EXTRACTION_ROOM&&
+                tick>=lastAutoScan+90&&tick>=lastReading+30){
+            lastAutoScan=tick;
+            if(totalScans%2==0)readEmf();else readThermometer();
+        }
+        if(order==Order.HOLD)return;
         int targetRoom=order==Order.FOLLOW?map.roomAt(playerX,playerY,playerZ):destination;
         if(targetRoom<0)return;
         int here=room();

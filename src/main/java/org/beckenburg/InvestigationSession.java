@@ -336,6 +336,21 @@ public final class InvestigationSession {
             +" / "+measured.displayText(EvidenceSignals.Unit.FAHRENHEIT);
     }
 
+    /** AI instrument reading from its actual physical position. Like a player
+     * EMF scan this is ordinary weather + locally generated ghost disturbance,
+     * not evidence confirmation or access to a private ghost identity.
+     */
+    public String rawEmfAt(double x,double y,double z){
+        if(outcome!=Outcome.ACTIVE||!map.traversable(x,y,z))return null;
+        int room=map.roomAt(x,y,z);
+        if(room<0)return null;
+        int age=ticks-lastEvidenceTick;
+        int power=age>=0&&age<=40?Math.max(0,lastEvidenceStrength-age/7):0;
+        var measured=EvidenceSignals.emf(evidenceSeed,ticks,room,lastEvidenceRoom,power,
+            false,missionWeather.state().weather(),missionWeather.state().intensity());
+        return "EMF "+measured.level()+"/10";
+    }
+
     /** Environmental measurements mirror the LAN's numeric evidence model. */
     /** A valid scan ALWAYS produces a measurement and a journal entry. */
     public boolean scan(Instrument tool, double x, double z) {
@@ -351,11 +366,7 @@ public final class InvestigationSession {
             ?Math.max(0,lastEvidenceStrength-age/7):0;
         String reading;
         switch(tool){
-            case EMF -> {
-                var measured=EvidenceSignals.emf(evidenceSeed,ticks,room,lastEvidenceRoom,eventPower,false,
-                    missionWeather.state().weather(),missionWeather.state().intensity());
-                reading="EMF "+measured.level()+"/10";
-            }
+            case EMF -> reading=rawEmfAt(x,y,z);
             case THERMOMETER -> {
                 reading=rawTemperatureAt(x,y,z);
             }

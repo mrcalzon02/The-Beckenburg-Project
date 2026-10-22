@@ -495,6 +495,10 @@ public final class InvestigationGame {
         private final InvestigationSession session;
         private final boolean campaignMode;
         private final CampaignAlly assistant;
+        private final FieldTeamChat teamChat=new FieldTeamChat();
+        private final JTextField chatInput=new JTextField();
+        private LanChat.Channel chatChannel=LanChat.Channel.LOCAL;
+        private int chatVisibleUntil;
         private final javax.swing.Timer timer;
         private final EquipmentLoadout loadout=new EquipmentLoadout();
         private final SiteCatalog.Location location;
@@ -533,10 +537,24 @@ public final class InvestigationGame {
             powerOn=conditions.initiallyPowered();
             syncEnvironment();
             setFocusable(true);
+            setLayout(null);
+            chatInput.setName("campaign.chat");
+            chatInput.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
+            chatInput.setBackground(new Color(15,20,28));
+            chatInput.setForeground(new Color(224,230,215));
+            chatInput.setCaretColor(new Color(246,211,162));
+            chatInput.setVisible(false);
+            chatInput.addActionListener(e->submitTeamChat());
+            chatInput.addKeyListener(new KeyAdapter(){
+                @Override public void keyPressed(KeyEvent e){
+                    if(e.getKeyCode()==KeyEvent.VK_ESCAPE){closeTeamChat();e.consume();}
+                }
+            });
+            add(chatInput);
             mouseLook=new MouseLook(this,(dx,dy)->{
                 if(wheelOpen){wheelDelta(dx,dy);}
                 else MouseLook.rotate(scene,dx,dy);
-            },()->!mapShown&&!journalShown&&!briefingShown&&!helpVisible);
+            },()->!mapShown&&!journalShown&&!briefingShown&&!helpVisible&&!chatInput.isVisible());
             addKeyListener(this);addMouseMotionListener(mouseLook);addMouseListener(mouseLook);
             addFocusListener(mouseLook);addFocusListener(this);
             // Reproducible case seed, varies by session, no silent random site conversion.
@@ -556,6 +574,50 @@ public final class InvestigationGame {
             timer=new javax.swing.Timer(33,e->frame());timer.start();
         }
         void close(){timer.stop();down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
+        @Override public void doLayout(){
+            super.doLayout();
+            int w=Math.min(485,Math.max(150,getWidth()-24));
+            chatInput.setBounds(Math.max(12,getWidth()-w-12),
+                Math.max(35,getHeight()-39),w,27);
+        }
+        private void openTeamChat(LanChat.Channel channel){
+            if(wheelOpen||mapShown||journalShown||briefingShown||helpVisible)return;
+            chatChannel=channel;down.clear();mouseLook.release();
+            chatInput.setText("");chatInput.setVisible(true);
+            chatInput.requestFocusInWindow();repaint();
+        }
+        private void closeTeamChat(){
+            chatInput.setVisible(false);chatInput.setText("");
+            down.clear();requestFocusInWindow();repaint();
+        }
+        private LanWorld.Body playerSpeaker(){
+            return new LanWorld.Body(scene.x,feetY(),scene.z,
+                Math.floorMod((int)Math.round(Math.toDegrees(scene.yaw)),360),currentRoom());
+        }
+        private void postTeamMessage(LanChat.Channel channel,int seat,String message){
+            teamChat.post(channel,seat,session.ticks(),message);
+            chatVisibleUntil=session.ticks()+110;
+        }
+        private void collectAssistantChat(){
+            if(assistant==null)return;
+            for(String words:assistant.drainChat())
+                postTeamMessage(LanChat.Channel.RADIO,1,words);
+        }
+        private void submitTeamChat(){
+            try{
+                String clean=LanChat.clean(chatInput.getText());
+                postTeamMessage(chatChannel,0,clean);
+                if(assistant!=null){
+                    String reply=assistant.onChat(clean,chatChannel,playerSpeaker());
+                    if(reply!=null)postTeamMessage(chatChannel,1,reply);
+                }
+                collectAssistantChat();
+                closeTeamChat();
+            }catch(IllegalArgumentException rejected){
+                showVanNotice("CHAT: "+rejected.getMessage());
+                chatInput.requestFocusInWindow();
+            }
+        }
         private double feetY(){return scene.eyeHeight-HunterPosture.eye(session.crouched());}
         private int currentRoom(){return map.roomAt(scene.x,feetY(),scene.z);}
         private boolean atVanFloor(){return Math.abs(feetY()-map.floorY(HouseMap.EXTRACTION_ROOM))<.25;}
@@ -627,8 +689,10 @@ public final class InvestigationGame {
             buildingSoundscape.setContext(outdoorRoom,lights.breaker());
             atmosphere.setOutside(outdoorRoom>=0&&map.outside(outdoorRoom));
             long now=System.nanoTime();double dt=Math.max(0,Math.min(.075,(now-last)/1e9));last=now;
-            double forward=wheelOpen?0:(down.contains(KeyEvent.VK_W)?1:0)-(down.contains(KeyEvent.VK_S)?1:0);
-            double strafe=wheelOpen?0:(down.contains(KeyEvent.VK_D)?1:0)-(down.contains(KeyEvent.VK_A)?1:0);
+            double forward=wheelOpen||chatInput.isVisible()?0:
+                (down.contains(KeyEvent.VK_W)?1:0)-(down.contains(KeyEvent.VK_S)?1:0);
+            double strafe=wheelOpen||chatInput.isVisible()?0:
+                (down.contains(KeyEvent.VK_D)?1:0)-(down.contains(KeyEvent.VK_A)?1:0);
             if(!wheelOpen && down.contains(KeyEvent.VK_LEFT))scene.yaw+=dt*1.8;
             if(!wheelOpen && down.contains(KeyEvent.VK_RIGHT))scene.yaw-=dt*1.8;
             if(!wheelOpen && down.contains(KeyEvent.VK_UP))scene.pitch=Math.min(1.05,scene.pitch+dt*.9);
@@ -666,7 +730,10 @@ public final class InvestigationGame {
                             map.outside(cue.room())||map.outside(assistant.room())));
                     }
                 }
-                if(assistant!=null)assistant.advance(scene.x,feetY(),scene.z);
+                if(assistant!=null){
+                    assistant.advance(scene.x,feetY(),scene.z);
+                    collectAssistantChat();
+                }
                 if(!map.clutter().drainNoises().isEmpty())GameSfx.play(LanSound.Cue.IMPACT);
                 int activity=monitor.sample(session.ticks(),session.ghostEnergy());
                 if(session.ticks()%12==0){
@@ -714,8 +781,11 @@ public final class InvestigationGame {
             last=System.nanoTime();timer.start();requestFocusInWindow();
         }
         @Override public void keyPressed(KeyEvent e){
-            if(e.getKeyCode()==KeyEvent.VK_E){if(interactionHeld)return;interactionHeld=true;}
+            if(chatInput.isVisible())return;
             int key=e.getKeyCode();if(down.contains(key))return;
+            if(key==KeyEvent.VK_ENTER){openTeamChat(LanChat.Channel.LOCAL);return;}
+            if(key==KeyEvent.VK_F2){openTeamChat(LanChat.Channel.RADIO);return;}
+            if(key==KeyEvent.VK_E){if(interactionHeld)return;interactionHeld=true;}
             if(key==KeyEvent.VK_F1){
                 helpVisible=!helpVisible;
                 if(helpVisible){down.clear();mouseLook.release();wheelOpen=false;}
@@ -756,9 +826,11 @@ public final class InvestigationGame {
                 if(assistant.order()==CampaignAlly.Order.FOLLOW)assistant.hold();
                 else assistant.follow();
                 showVanNotice("Assistant: "+assistant.report());
+                postTeamMessage(LanChat.Channel.LOCAL,1,assistant.report());
             }
             if(key==KeyEvent.VK_I&&assistant!=null){
                 showVanNotice(assistant.readThermometer());
+                collectAssistantChat();
             }
             if(key==KeyEvent.VK_P&&assistant!=null){
                 orderAssistantZone();
@@ -869,6 +941,13 @@ public final class InvestigationGame {
                         choice==TeamCallout.Phrase.HELP || choice==TeamCallout.Phrase.HOLD ?
                         new double[]{scene.x,scene.z} : TeamCallout.aim(map,scene.x,feetY(),scene.z,scene.yaw,12);
                     lastPing=callouts.submit(new TeamCallout.Request(0,choice,scene.x,scene.z,where[0],where[1],session.ticks()),feetY(),feetY());
+                    if(lastPing!=null){
+                        postTeamMessage(LanChat.Channel.LOCAL,0,choice.spoken);
+                        if(assistant!=null){
+                            String reply=assistant.onCallout(lastPing,playerSpeaker());
+                            if(reply!=null)postTeamMessage(LanChat.Channel.LOCAL,1,reply);
+                        }
+                    }
                 }
                 repaint();
             }
@@ -919,6 +998,7 @@ public final class InvestigationGame {
                     String observed=assistant.report();
                     g.drawString(observed.substring(0,Math.min(88,observed.length())),23,190);
                 }
+                drawTeamChat(g,width,stageH);
                 if(lastPing!=null && callouts.visible(session.ticks()).contains(lastPing)){
                     g.setColor(new Color(238,196,109));
                     g.drawString("CALLOUT: "+lastPing.phrase().spoken+" ["+map.roomName(lastPing.zone())+"]",23,139);
@@ -964,6 +1044,34 @@ public final class InvestigationGame {
                     for(String hint:hints){g.drawString(hint,x+18,iy);iy+=27;}
                 }
             }finally{g.dispose();}
+        }
+        private void drawTeamChat(Graphics2D g,int width,int height){
+            if(teamChat.messages().isEmpty()&&!chatInput.isVisible())return;
+            if(!chatInput.isVisible()&&session.ticks()>chatVisibleUntil)return;
+            int viewWidth=Math.min(510,Math.max(175,width-24)),x=Math.max(12,width-viewWidth-12);
+            int rows=chatInput.isVisible()?5:3;
+            var messages=teamChat.messages();
+            int first=Math.max(0,messages.size()-rows);
+            int shown=messages.size()-first;
+            int y=Math.max(185,height-65-shown*19-(chatInput.isVisible()?36:8));
+            int boxHeight=24+shown*19+(chatInput.isVisible()?35:0);
+            g.setColor(new Color(12,18,26,226));
+            g.fillRoundRect(x,y,viewWidth,boxHeight,7,7);
+            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,12));
+            g.setColor(new Color(235,209,157));
+            g.drawString("FIELD CHAT / "+(chatInput.isVisible()?chatChannel+" / ESC CANCEL":
+                "ENTER LOCAL  F2 RADIO"),x+10,y+17);
+            g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,11));
+            for(int i=first;i<messages.size();i++){
+                LanChat.Entry entry=messages.get(i);
+                String line=(entry.channel()==LanChat.Channel.RADIO?"[R] ":"[L] ")+
+                    (entry.seat()==0?"YOU: ":"ALLY: ")+entry.message();
+                int chars=Math.max(12,(viewWidth-22)/7);
+                if(line.length()>chars)line=line.substring(0,chars-3)+"...";
+                g.setColor(entry.seat()==0?new Color(205,221,229):
+                    new Color(161,226,187));
+                g.drawString(line,x+10,y+38+(i-first)*19);
+            }
         }
         private void drawMap(Graphics2D g){SiteMapView.draw(g,getWidth(),getHeight(),map,mapFloor,scene.x,feetY(),scene.z);}
         private void drawCalloutWheel(Graphics2D g,int stageH){
