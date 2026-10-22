@@ -9,12 +9,17 @@ public final class BeckenburgUpdatesTest {
             "{\"name\":\"SHA256SUMS.txt\",\"state\":\"uploaded\",\"browser_download_url\":\""+sum+"\"}]}";
     }
     static String item(String version,boolean draft){
-        String tag="beckenburg-v"+version,link="https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/"+tag+"/";
+        String tag="beckenburg-v"+version,
+            link="https://github.com/"+BeckenburgUpdates.REPOSITORY+"/releases/download/"+tag+"/";
         return release(tag,version,draft,link+"Beckenburg-"+version+"-Windows-x64.exe",link+"SHA256SUMS.txt");
     }
     public static void main(String[] args){
         String feed="["+item("0.3.9",false)+","+item("0.3.10",false)+","+
-            item("0.4.0",true)+","+release("simple-sound-manager-v9.0.0","9.0.0",false,
+            item("0.4.0",true)+","+release("beckenburg-v9.0.0","9.0.0",false,
+                "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/beckenburg-v9.0.0/Beckenburg-9.0.0-Windows-x64.exe",
+                "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/beckenburg-v9.0.0/SHA256SUMS.txt")+","+
+            
+            release("simple-sound-manager-v9.0.0","9.0.0",false,
             "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/simple-sound-manager-v9.0.0/Beckenburg-9.0.0-Windows-x64.exe",
             "https://github.com/mrcalzon02/HB-TTRPG-tools/releases/download/simple-sound-manager-v9.0.0/SHA256SUMS.txt")+"]";
         var r=BeckenburgUpdates.select(feed,"0.3.8");
@@ -31,6 +36,10 @@ public final class BeckenburgUpdatesTest {
         try{BeckenburgUpdates.select("{\"bad\":true}","0.3.0");}
         catch(IllegalArgumentException expected){rejected=true;}
         assert rejected:"Reject invalid release response";
+        assert BeckenburgUpdates.select("["+item("0.3.10",false)+"]","0.3.9")!=null:
+            "Current Beckenburg release URL must be accepted";
+        assert BeckenburgUpdates.select("["+item("0.3.10",true)+"]","0.3.9")==null:
+            "Draft releases must remain unavailable";
         assert BeckenburgUpdates.installedVersion().matches("\\d+\\.\\d+\\.\\d+");
         System.out.println("PASS independent Beckenburg updates, version sorting, exact asset path and hostile URL rejection");
     }
