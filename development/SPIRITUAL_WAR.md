@@ -8,7 +8,11 @@ The authoritative local campaign profile must have a generated story seed and ha
 
 ## Match contract
 
-Two teams, 1–12 Hunters against 1–12 Ghosts (maximum 24 participants). Last surviving team wins; no respawns. A **hard 30-minute limit** begins at match start, not in the lobby. At 00:00, if both teams survive, the result is a draw; eliminating the opposing team before the deadline wins immediately. Host-authoritative monotonic elapsed time determines the countdown, not client clocks. Ghosts begin in permanent hunt state; signature ghost abilities remain available, with their own existing cooldowns and telegraphs. Original and Ancient ghosts are eligible; Elder ghosts are banned. Ghost selection remains a player choice.
+Two teams, 1–12 Hunters against 1–12 Ghosts (maximum 24 participants). Last surviving team wins; no respawns. A **hard 30-minute limit** begins at match start, not in the lobby. At 00:00, compare surviving player counts first, then actual damage dealt, then total remaining health. A completely tied score is a draw. Earlier team elimination still immediately wins. Host-authoritative monotonic elapsed time determines the countdown, not client clocks. Ghosts begin in permanent hunt state; signature ghost abilities remain available, with their own existing cooldowns and telegraphs. Original and Ancient ghosts are eligible; Elder ghosts are banned. Ghost selection remains a player choice.
+
+The van loses all safe-zone protection at 15:00 elapsed. The rules model exposes this transition; the physical van collision/protection system is not yet wired to it.
+
+**Narrative:** Spiritual War is the Lore Master's recollection of the Emergence days, unlocked by completing the 22-chapter campaign.
 
 Hunters have a fixed offensive/defensive/healing kit: spiritual sword, defensive wards, and a limited health-pack supply. No investigative tools, scanning, rituals, evidence, or earned equipment bonuses are brought into arena play. Ghosts heal when they kill a Hunter, capped at maximum health. All combat stats here are **starting tuning constants**, not finalized balance.
 
@@ -23,5 +27,5 @@ Hunters have a fixed offensive/defensive/healing kit: spiritual sword, defensive
 3. Four-sided actor control is not assumed: both teams must genuinely move/attack/use abilities from their distinct controllers.
 4. Damage requires real geometry, proximity and world-state validation; a ward cannot prevent an unrelated hit indefinitely.
 5. Survivorship, ghost kill-triggered healing and resource consumption remain stable under simultaneous hits/disconnects.
-6. The 30-minute timeout prevents further actions, produces a draw if both sides survive, and cannot be extended by clients or reconnects.
+6. The 30-minute timeout prevents further actions, applies survivor count, damage and health tiebreaks, and cannot be extended by clients or reconnects.
 7. A completed match returns players safely to Castle Beckenburg or lobby without modifying investigation outcomes or campaign progression.
