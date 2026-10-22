@@ -1411,7 +1411,7 @@ public final class LanHost implements AutoCloseable {
                                 ||hunterRooms[i]!=hunterRooms[peer.slot])continue;
                         var other=world.body(i);
                         near[i]=Math.hypot(actor.x()-other.x(),actor.z()-other.z())<=5.5
-                            ||!peer.worldMode&&!seats[i].worldMode;
+                            ||!peer.worldMode&&seats[i]!=null&&!seats[i].worldMode;
                     }
                     LanCase.Report outcome=mission.classAbility(peer.slot,skill,tick,near);
                     answerHunter(peer,"SKILL",outcome);

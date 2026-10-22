@@ -13,7 +13,7 @@ public final class CampaignAlly {
     private final InvestigationSession caseSession;
     private final CharacterVisuals.Hunter discipline;
     private final HunterDiscipline classSkills=new HunterDiscipline(1);
-    private int lastDanger=-10000;
+    private int lastDanger=-10000,distress;
     public CharacterVisuals.Hunter discipline(){return discipline;}
     public CampaignAlly(HouseMap map,InvestigationSession session){
         this(map,session,CharacterVisuals.Hunter.OBSERVER);
@@ -209,8 +209,8 @@ public final class CampaignAlly {
         if(message.contains("suspect")||message.contains("hypothesis")
                 ||message.contains("ghost")||message.contains("think"))return suspicionReport();
         if(message.contains("status")||message.contains("where")||message.contains("report"))
-            return "At "+map.roomName(room())+" / "+order+" / "+
-                totalScans+" measurements. "+suspicionReport();
+            return discipline+" / "+map.roomName(room())+" / "+order+" / "+
+                totalScans+" measurements / fear "+distress+". "+suspicionReport();
         return "Copy. Try: follow, hold, check 4, emf, temperature, evidence, suspect.";
     }
     /** AI and player activate through the identical cooldown and class locks. */
@@ -222,10 +222,13 @@ public final class CampaignAlly {
         if(!result.accepted())return result.message();
         boolean near=room()==map.roomAt(playerX,playerY,playerZ)
             &&Math.hypot(position.x()-playerX,position.z()-playerZ)<=5.5;
-        caseSession.companionSkill(ability,near);
+        caseSession.companionSkill(ability,near,room());
+        if(ability==HunterDiscipline.Ability.INVOKE)distress=Math.min(100,distress+16);
         if(ability==HunterDiscipline.Ability.SURVEY){
             String emf=caseSession.rawEmfAt(position.x(),position.y(),position.z());
             String temp=caseSession.rawTemperatureAt(position.x(),position.y(),position.z());
+            recordReading(EquipmentLoadout.Item.EMF,emf);
+            recordReading(EquipmentLoadout.Item.THERMOMETER,temp);
             report="Survey / "+emf+" / "+temp+" (unverified)";
             announce(report);
         }else{

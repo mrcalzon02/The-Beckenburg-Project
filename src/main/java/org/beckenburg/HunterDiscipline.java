@@ -74,6 +74,11 @@ public final class HunterDiscipline {
         actor(seat);
         hallowedUntil[seat]=Math.max(hallowedUntil[seat],tick+100);
     }
+    /** Host/solo authority may extend a sigil to an embodied companion's ally. */
+    public void shareSigil(int seat,int tick){
+        actor(seat);
+        sigilUntil[seat]=Math.max(sigilUntil[seat],tick+95);
+    }
     public boolean focused(int seat,int tick){actor(seat);return tick<=focusedUntil[seat];}
     public boolean hallowed(int seat,int tick){actor(seat);return tick<=hallowedUntil[seat];}
     public boolean sigilActive(int seat,int tick){actor(seat);return tick<=sigilUntil[seat];}

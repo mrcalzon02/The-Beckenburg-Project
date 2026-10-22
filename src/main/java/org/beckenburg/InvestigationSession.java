@@ -40,12 +40,16 @@ public final class InvestigationSession {
         return result;
     }
     /** Companion benefits use the same effect sizes as human abilities. */
-    public boolean companionSkill(HunterDiscipline.Ability ability,boolean nearPlayer){
+    public boolean companionSkill(HunterDiscipline.Ability ability,boolean nearPlayer,int allyRoom){
         if(outcome!=Outcome.ACTIVE||health<=0)return false;
         switch(ability){
             case COMFORT -> {if(nearPlayer)stress=Math.max(0,stress-20);}
             case HALLOW -> {if(nearPlayer)classSkills.shareHallow(0,ticks);}
-            case INVOKE -> { /* The companion carries the risk, not the remote player. */ }
+            case SIGIL -> {if(nearPlayer)classSkills.shareSigil(0,ticks);}
+            case INVOKE -> {
+                // Only a supernatural presence actually near the embodied ally reacts.
+                if(ghost.room()==allyRoom)ghost.reveal(12);
+            }
             default -> {}
         }
         return true;

@@ -66,6 +66,7 @@ public final class LanCase {
         if(outcome!=Outcome.ACTIVE||!alive(seat))return new Report(false,"hunter incapacitated");
         if(nearby==null||nearby.length!=6||!nearby[seat])
             return new Report(false,"invalid nearby allies");
+        advanceClassClock(tick);
         HunterDiscipline.Result result=disciplines.activate(seat,hunterClasses[seat],action,tick);
         if(!result.accepted())return new Report(false,result.message());
         if(action==HunterDiscipline.Ability.COMFORT){
