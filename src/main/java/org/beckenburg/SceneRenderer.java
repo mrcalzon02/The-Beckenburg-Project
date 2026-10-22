@@ -1579,6 +1579,11 @@ public final class SceneRenderer {
     public void drawPractice(HouseMap map,List<RemoteBody> visibleHunters,double clock){
         render(map,-1,false,-1,-1,clock,visibleHunters);
     }
+    /** Counter projectiles use the same world depth-buffer as human-gameplay gear. */
+    public void drawPractice(HouseMap map,List<RemoteBody> visibleHunters,
+            List<WorldMark> counters,double clock){
+        render(map,-1,false,-1,-1,clock,visibleHunters,null,counters);
+    }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,double clock,List<RemoteBody> others){
         render(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,clock,others,null);
     }

@@ -14,7 +14,16 @@ public final class GhostPracticeHunterAi {
     private final Random random;
     private LevelDefinition.Vec position;
     private int heading, target=-1, lastHeard=-10000, soundPan, alert, health=100;
-    private int orderTick;
+    private int orderTick, lastScan=-10000, lastCounter=-10000, dangerTick=-10000, sightTick=-10000;
+    private int stress;
+    private final EquipmentLoadout inventory=new EquipmentLoadout();
+    public record FieldNote(int tick,int room,EquipmentLoadout.Item tool,String reading){
+        public FieldNote{
+            if(tick<0||room<0||tool==null||reading==null||reading.isBlank())
+                throw new IllegalArgumentException("invalid field observation");
+        }
+    }
+    private final java.util.ArrayDeque<FieldNote> observations=new java.util.ArrayDeque<>();
     private String intent="Surveying the room";
 
     public GhostPracticeHunterAi(HouseMap map,int room,long seed) {
@@ -30,7 +39,58 @@ public final class GhostPracticeHunterAi {
     public int heading(){return heading;}
     public int health(){return health;}
     public int alert(){return alert;}
+    public int stress(){return stress;}
     public String intent(){return intent;}
+    public int instrumentCount(){return observations.size();}
+    public List<FieldNote> observations(){return List.copyOf(observations);}
+    public EquipmentLoadout.Item equipped(){return inventory.equipped();}
+    /**
+     * The field worker decides when to use an actually issued tool. The world,
+     * not this AI, must supply the resulting raw measurement.
+     */
+    public EquipmentLoadout.Item toolDue(int tick){
+        if(health<=0||tick<0||tick-lastScan<65||room()<0
+                ||room()>=HouseMap.EXTRACTION_ROOM)return null;
+        return (observations.size()%2==0)
+            ?EquipmentLoadout.Item.EMF:EquipmentLoadout.Item.THERMOMETER;
+    }
+    public void observed(int tick,EquipmentLoadout.Item tool,String value){
+        if(tool==null||value==null||toolDue(tick)!=tool)
+            throw new IllegalArgumentException("no authorized tool reading due");
+        inventory.pickup(tool);
+        lastScan=tick;
+        if(observations.size()==48)observations.removeFirst();
+        observations.addLast(new FieldNote(tick,room(),tool,value));
+        intent="Recording "+tool.label.toLowerCase(java.util.Locale.ROOT)+" measurements";
+    }
+    /** Only after actual visual confirmation (checked by session world geometry). */
+    public void spottedManifestation(int tick){
+        if(tick<0)return;
+        sightTick=tick;dangerTick=tick;
+        alert=Math.min(100,alert+25);
+        intent="Visible manifestation; preparing protection";
+    }
+    public HunterCounters.Kind counterDue(int tick,HunterCounters stock){
+        if(stock==null||health<=0||tick<321||tick-lastCounter<85||room()<0
+                ||room()>=HouseMap.EXTRACTION_ROOM)return null;
+        if(tick-sightTick<=12&&stock.charges(0,HunterCounters.Kind.CROSS)>0)
+            return HunterCounters.Kind.CROSS;
+        if((stress>=35||health<=65||tick-dangerTick<=15)
+                &&stock.charges(0,HunterCounters.Kind.WARD)>0)
+            return HunterCounters.Kind.WARD;
+        return null;
+    }
+    public void counterDeployed(HunterCounters.Kind kind,int tick){
+        lastCounter=tick;
+        intent=kind==HunterCounters.Kind.CROSS?
+            "Cross deployed against visible apparition":"Protective ward deployed";
+    }
+    public void frightened(int fear){
+        if(fear<=0)return;
+        stress=Math.min(100,stress+fear);
+        if(stress>=55){alert=Math.min(100,alert+20);intent="Retreating from supernatural pressure";
+            target=-1;}
+    }
     public SceneRenderer.RemoteBody sprite(){
         return new SceneRenderer.RemoteBody(position.x(),position.y(),position.z(),
             0,heading,"observer");
@@ -42,6 +102,9 @@ public final class GhostPracticeHunterAi {
     public void hear(LanSound.CueEvent heard){
         if(heard==null)return;
         lastHeard=heard.tick();soundPan=heard.pan();
+        if(heard.cue().tier()==LanSound.Tier.DANGEROUS
+                ||heard.cue().tier()==LanSound.Tier.SIGNATURE
+                ||heard.cue()==LanSound.Cue.MANIFEST)dangerTick=heard.tick();
         alert=Math.min(100,alert+Math.max(3,heard.volume()/7));
         intent="Investigating an audible disturbance";
         if(target<0&&room()>=0&&room()<HouseMap.EXTRACTION_ROOM){
@@ -63,6 +126,7 @@ public final class GhostPracticeHunterAi {
         if(damage<=0)return;
         health=Math.max(0,health-damage);
         alert=Math.min(100,alert+25);
+        dangerTick=Math.max(dangerTick,lastHeard);
         intent="Injured; seeking an exit";
         // Injuries do not reveal the ghost; any retreat still uses walkable rooms.
         target=-1;
