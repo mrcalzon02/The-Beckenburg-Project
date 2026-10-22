@@ -46,6 +46,12 @@ public final class InvestigationSession {
     public MissionWeather.State weather(){return missionWeather.state();}
     private int lastEvidenceTick=-10000,lastEvidenceRoom=-1,lastEvidenceStrength;
     private final GhostDomain ghost;
+    private final GhostHauntingFolio hauntingFolio;
+    private final java.util.ArrayDeque<GhostHauntingFolio.Occurrence> hauntings=
+        new java.util.ArrayDeque<>();
+    public java.util.List<GhostHauntingFolio.Occurrence> hauntings(){
+        return java.util.List.copyOf(hauntings);
+    }
     private int partySize=1;
     /** Each deployed AI or human Hunter changes actual supernatural threat
      * and raises the host's earnings; all career ownership stays with the host.
@@ -123,6 +129,7 @@ public final class InvestigationSession {
         this.anchorRoom=random.nextInt(map.interiorRoomCount());
         this.ghost=new GhostDomain(map,anchorRoom,assignedGhost);
         this.ghostAi=new GhostDomain.AiController(seed ^ 0x4245434b454eL);
+        this.hauntingFolio=new GhostHauntingFolio(seed ^ 0x4841554e54534cL);
         journal.add("Case 001 / All valid instrument measurements are recorded; interpret the evidence yourself.");
         journal.add("All classes can finish the contract; specialist actions change efficiency.");
     }
@@ -244,17 +251,17 @@ public final class InvestigationSession {
         if(command!=null) {
             GhostDomain.Resolution result=ghost.dispatch(command);
             if(result.applied()) {
+                GhostHauntingFolio.Occurrence haunt=hauntingFolio.choose(
+                    result.action(),ghost.type(),result.room(),ticks);
+                if(haunt!=null){
+                    hauntings.addLast(haunt);
+                    while(hauntings.size()>8)hauntings.removeFirst();
+                }
                 if(result.action()==GhostDomain.Action.SIGNATURE)
                     signatureAppearanceUntil=ticks+9;
                 map.fixtures().witness(result,ticks,-1);
-                LanSound.Cue sound=switch(result.action()){
-                    case DRIFT->LanSound.Cue.GHOST_DRIFT;
-                    case WHISPER->LanSound.Cue.WHISPER;
-                    case DISTURB->LanSound.Cue.DISTURB;
-                    case MANIFEST->LanSound.Cue.MANIFEST;
-                    case STRIKE->LanSound.Cue.STRIKE;
-                    case SIGNATURE->LanSound.Cue.SIGNATURE;
-                };
+                LanSound.Cue sound=haunt==null
+                    ?LanSound.Cue.GHOST_DRIFT:haunt.entry().cue();
                 if(pendingSounds.size()==24)pendingSounds.removeFirst();
                 pendingSounds.addLast(new WorldCue(result.room(),
                     map.centerX(result.room()),map.floorY(result.room()),
@@ -297,6 +304,7 @@ public final class InvestigationSession {
             }
         }
         haunted=ghost.manifested();
+        hauntings.removeIf(event->ticks>=event.untilTick());
         if(haunted && playerRoom==ghost.room() && ticks%10==0)
             stress=Math.min(100,stress+1);
     }
