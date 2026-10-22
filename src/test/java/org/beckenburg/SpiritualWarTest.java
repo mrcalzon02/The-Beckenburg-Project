@@ -57,6 +57,22 @@ public final class SpiritualWarTest {
         for (int i = 0; i < 5; i++) rematch.ghostStrike(g, h);
         check(rematch.view(g).health() == 100 && rematch.result() == SpiritualWar.Result.GHOSTS_WIN,
             "Confirmed ghost kill heals to cap and concludes round");
+        var timed = new SpiritualWar.Match();
+        UUID th = UUID.randomUUID(), tg = UUID.randomUUID();
+        timed.join(th, SpiritualWar.Side.HUNTER, null);
+        timed.join(tg, SpiritualWar.Side.GHOST, standardGhost());
+        reject(() -> timed.advanceTime(1));
+        timed.start();
+        reject(() -> timed.advanceTime(-1));
+        timed.advanceTime(1799);
+        check(timed.remainingSeconds() == 1 && timed.result() == SpiritualWar.Result.ACTIVE,
+            "Still active with one second remaining");
+        timed.advanceTime(1);
+        check(timed.remainingSeconds() == 0 && timed.result() == SpiritualWar.Result.TIME_LIMIT_DRAW,
+            "Exactly thirty minutes forces a draw with survivors");
+        reject(() -> timed.sword(th, tg));
+        timed.advanceTime(100);
+        check(timed.result() == SpiritualWar.Result.TIME_LIMIT_DRAW, "Terminal state persists");
         System.out.println("PASS Spiritual War headless roster, wards, healing and elimination");
     }
 }
