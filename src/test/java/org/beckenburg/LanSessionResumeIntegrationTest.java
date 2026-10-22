@@ -53,7 +53,7 @@ public final class LanSessionResumeIntegrationTest {
                 Peer b=new Peer(host.port(),false,"Observer");
                 Peer c=new Peer(host.port(),false,"Demonologist")){
                 begin(a,b,c);
-                b.client.move(11);b.await("ACCEPT|MOVE|11");
+                LanTestRoomTravel.move(b.client,b::await,11);
                 b.client.view3D();b.await("ACCEPT|VIEW3D");
                 // Inject a host-owned concealed state to verify recovery from a lost
                 // viewport without inventing a client-side hiding command.
