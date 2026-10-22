@@ -41,6 +41,16 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Install Blender for original GGBot UV and material export
+        shell: pwsh
+        run: |
+          if (-not (Get-Command blender -ErrorAction SilentlyContinue)) {
+            choco install blender -y --no-progress
+            if ($LASTEXITCODE -ne 0) { throw 'Blender installation failed' }
+          }
+          blender --version
+          if ($LASTEXITCODE -ne 0) { throw 'Blender is unavailable' }
+
       - name: Probe original GGBot CC0 color texture archive
         shell: pwsh
         working-directory: .

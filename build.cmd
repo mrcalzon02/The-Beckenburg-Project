@@ -75,16 +75,17 @@ rem Author all 126 tiered PSX GLBs and embedded low-resolution texture atlases.
 java -Djava.awt.headless=true -cp build\classes org.beckenburg.TierModelForge build\classes\org\beckenburg\models || exit /b 1
 rem Extract only the curated CC0 castle GLBs with embedded original texture PNGs.
 java -Djava.awt.headless=true -cp build\classes org.beckenburg.KenneyMedievalAssets assets\source\kenney_retro-medieval-kit.zip build\classes\org\beckenburg\models || exit /b 1
-rem Restore the genuine CC0 GGBot car colour atlases (128x128), not grey placeholders.
-rem Prefer a local owner's archive; otherwise retrieve the pinned original pack.
+rem Convert original GGBot Blender files and their native UV/materials as one.
+rem Never paint a replacement PNG onto a separately generated car mesh.
 if not exist build\source mkdir build\source
 if exist assets\source\psx_style_cars_by_ggbot_august2023.zip (
   copy /Y assets\source\psx_style_cars_by_ggbot_august2023.zip build\source\ggbot-original.zip >nul || exit /b 1
 )
 if not exist build\source\ggbot-original.zip (
-  curl.exe --fail --location --retry 3 --max-time 50 --output build\source\ggbot-original.zip https://opengameart.org/sites/default/files/psx_style_cars_by_ggbot_august2023.zip || (echo ERROR: CC0 GGBot source pack unavailable, put original zip in assets\source & exit /b 1)
+  curl.exe --fail --location --retry 3 --max-time 50 --output build\source\ggbot-original.zip https://opengameart.org/sites/default/files/psx_style_cars_by_ggbot_august2023.zip || (echo ERROR: original GGBot source pack unavailable & exit /b 1)
 )
-java -Djava.awt.headless=true -cp build\classes org.beckenburg.GgBotVehicleTextures build\source\ggbot-original.zip assets\runtime\models build\classes\org\beckenburg\models || exit /b 1
+where blender >nul 2>nul || (echo ERROR: Blender required to export original GGBot .blend files & exit /b 1)
+blender --background --factory-startup --python tools\ggbot_blend_export.py -- build\source\ggbot-original.zip build\classes\org\beckenburg\models || exit /b 1
 
 if /I "%~1"=="package" goto package_jar_only
 javac --release 17 -encoding UTF-8 -cp build\classes -d build\test @build\sources-tests.txt || exit /b 1

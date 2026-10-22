@@ -95,8 +95,9 @@ if [[ ! -s build/source/ggbot-original.zip ]]; then
         -o build/source/ggbot-original.zip \
         https://opengameart.org/sites/default/files/psx_style_cars_by_ggbot_august2023.zip
 fi
-java -Djava.awt.headless=true -cp build/classes org.beckenburg.GgBotVehicleTextures \
-    build/source/ggbot-original.zip assets/runtime/models build/classes/org/beckenburg/models
+command -v blender >/dev/null || { echo "Blender is required for original GGBot .blend export" >&2; exit 1; }
+blender --background --factory-startup --python tools/ggbot_blend_export.py -- \
+    build/source/ggbot-original.zip build/classes/org/beckenburg/models
 javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/*.java
 # Verify authored multi-storey levels and actual packaged scenery.
 for check in AuthoredLevelPhysicsTest AuthoredLevelReachabilityTest AuthoredLevelStateTest AuthoredLevelNetworkTest AuthoredLevelRitualCaseTest AuthoredUtilitiesTest SoloElevationTest EquipmentAssetAssignmentsTest LevelRenderAcceptanceTest WorldViewHandednessTest LevelSurfaceIntegrityTest LivedLevelDressingTest LooseClutterTest LooseClutterNetworkTest HauntedFixturesTest VanHumanScaleTest VanRackStockTest VanRackNetworkTest InteractionFocusTest InteractionNetworkTest HeldDeviceReadoutTest FixtureSoundscapeTest DomesticFitoutTest LevelEnclosureTest PhysicalLightingTest SurroundingClearanceTest; do

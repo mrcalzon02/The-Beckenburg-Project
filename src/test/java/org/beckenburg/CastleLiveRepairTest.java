@@ -11,7 +11,7 @@ public final class CastleLiveRepairTest {
         check(parked.stream().filter(v->v.mesh().equals("ggbot_car08_van_shell")).count()==1,
             "Castle must display one non-operational van");
         check(parked.stream().filter(v->v.mesh().equals("ggbot_car01")||
-                v.mesh().equals("ggbot_car07")).count()==2,
+                v.mesh().equals("ggbot_car05")).count()==2,
             "Castle road must display two original PSX car models");
         for(var v:parked){
             check(v.z()>34.4,"Static castle vehicles stay outside gate");
@@ -23,7 +23,7 @@ public final class CastleLiveRepairTest {
                 t.material()>=GlbProps.TEXTURE_BASE),
                 "Original texture atlas required for "+v.mesh());
         }
-        for(String psxCar:new String[]{"ggbot_car01","ggbot_car07"}){
+        for(String psxCar:new String[]{"ggbot_car01","ggbot_car05"}){
             var model=GlbProps.model(psxCar);
             java.util.Set<Integer> samples=new java.util.HashSet<>();
             for(var tri:model.triangles()){

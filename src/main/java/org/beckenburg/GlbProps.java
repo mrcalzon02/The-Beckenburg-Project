@@ -48,6 +48,14 @@ public final class GlbProps {
     private static final List<String> materialNames=new ArrayList<>();
     public static synchronized String materialName(int material){int i=material-TEXTURE_BASE;return i>=0&&i<materialNames.size()?materialNames.get(i):"";}
     private static final List<BufferedImage> textures=new ArrayList<>();
+    // glTF 2.0 origin is upper-left. Limit the correction to Blender-source
+    // GGBot vehicles so unrelated art retains its previous runtime mapping.
+    private static final List<Boolean> vehicleUvMaterials=new ArrayList<>();
+    static int imageRow(double v,int height,boolean gltfTopLeft){
+        if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
+        double fractional=v-Math.floor(v);
+        return Math.min(height-1,(int)((gltfTopLeft?fraction:1.0-fraction)*height));
+    }
     private static final List<double[]> diffuseFactors=new ArrayList<>();
     private static final Map<String,Integer> televisionMaterials=new HashMap<>();
     private static final Map<Integer,Integer> televisionPhases=new HashMap<>();
@@ -131,9 +139,8 @@ public final class GlbProps {
             throw new IllegalArgumentException("Invalid imported texture");
         BufferedImage image=material==vanCrtMaterial?vanCrtImage:textures.get(index);
         int x=Math.min(image.getWidth()-1,(int)((u-Math.floor(u))*image.getWidth()));
-        // glTF UV V=0 originates at the bottom of a PNG image.
-        int y=Math.min(image.getHeight()-1,
-            (int)((1.0-(v-Math.floor(v)))*image.getHeight()));
+        // GGBot's Blender source uses the actual glTF image origin at top-left.
+        int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index));
         int rgb=image.getRGB(x,y)&0xffffff;
         // GLB material baseColorFactor is part of the original material.
         // Previously ignored, washing out the 128px van shell's deliberate
@@ -152,7 +159,7 @@ public final class GlbProps {
             throw new IllegalArgumentException("Invalid imported alpha");
         BufferedImage image=textures.get(index);
         int x=Math.min(image.getWidth()-1,(int)((u-Math.floor(u))*image.getWidth()));
-        int y=Math.min(image.getHeight()-1,(int)((1.0-(v-Math.floor(v)))*image.getHeight()));
+        int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index));
         int texAlpha=(image.getRGB(x,y)>>>24)&255;
         return Math.max(0,Math.min(255,(int)Math.round(
             texAlpha*diffuseFactors.get(index)[3])));
@@ -223,6 +230,7 @@ public final class GlbProps {
                 throw new IOException("Invalid embedded PNG");
             materialIds[i]=TEXTURE_BASE+textures.size();
             textures.add(picture);
+            vehicleUvMaterials.add(resourceName!=null&&resourceName.startsWith("ggbot_car"));
             materialNames.add(String.valueOf(obj(materials.get(i)).getOrDefault("name","")));
             double[] color=vec(pbr.get("baseColorFactor"),1,1,1,1);
             diffuseFactors.add(color);

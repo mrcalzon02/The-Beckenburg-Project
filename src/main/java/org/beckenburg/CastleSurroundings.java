@@ -10,7 +10,7 @@ public final class CastleSurroundings {
   * evidence actions or playable van state: castle navigation ends at the gate. */
  public record ParkedVehicle(String mesh,double x,double z,double scale,double yaw){
    public ParkedVehicle {
-     if(!java.util.Set.of("ggbot_car08_van_shell","ggbot_car01","ggbot_car07").contains(mesh)
+     if(!java.util.Set.of("ggbot_car08_van_shell","ggbot_car01","ggbot_car05").contains(mesh)
          ||!Double.isFinite(x+z+scale+yaw)||scale<=0)
        throw new IllegalArgumentException("invalid static PSX vehicle");
    }
@@ -18,7 +18,7 @@ public final class CastleSurroundings {
  private static final List<ParkedVehicle> PARKED=List.of(
      new ParkedVehicle("ggbot_car08_van_shell",15.5,44.0,1.0,0),
      new ParkedVehicle("ggbot_car01",10.3,51.5,1.0,0),
-     new ParkedVehicle("ggbot_car07",21.2,56.5,1.0,Math.PI)
+     new ParkedVehicle("ggbot_car05",21.2,56.5,1.0,Math.PI)
  );
  public static List<ParkedVehicle> parkedVehicles(){return PARKED;}
 

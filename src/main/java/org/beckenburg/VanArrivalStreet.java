@@ -51,7 +51,7 @@ public final class VanArrivalStreet {
         // line of sight. Source car bounds are ~0.8 x 1.9 metres.
         new RoadObject("ggbot_car01",-3.10,-11.0,1.0,0,.80,1.90,
             "left curbside parking"),
-        new RoadObject("ggbot_car07",3.12,-16.0,1.0,Math.PI,.81,1.90,
+        new RoadObject("ggbot_car05",3.12,-16.0,1.0,Math.PI,.81,1.90,
             "right curbside parking")
     );
     private static List<RoadTile> createTiles(){
