@@ -1730,10 +1730,10 @@ public final class SceneRenderer {
             for(int sy=Math.max(0,hills);sy<renderHeight;sy++)pixels[sy*renderWidth+sx]=0x18202a;
         }
         // Weather particles must be in front of hills but behind opaque walls.
-        java.awt.Graphics2D g=frame.createGraphics();
-        try{g.setComposite(java.awt.AlphaComposite.SrcOver);
-            weatherFx.renderOverlay(g,renderWidth,renderHeight);
-        }finally{g.dispose();}
+        java.awt.Graphics2D precipitation=frame.createGraphics();
+        try{precipitation.setComposite(java.awt.AlphaComposite.SrcOver);
+            weatherFx.renderOverlay(precipitation,renderWidth,renderHeight);
+        }finally{precipitation.dispose();}
     }
     /** Billboards share the world Z-buffer, so room walls correctly hide hunter and ghost bodies.
      * Visibility, headings and phase remain projected from the host's simulation.
