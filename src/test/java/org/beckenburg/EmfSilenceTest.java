@@ -20,7 +20,7 @@ public final class EmfSilenceTest {
                 .message().contains("EMF 0/10"),"third observation has no special unlock");
         ok(shade.evidenceCount()==0,"taking readings does not automatically award evidence");
         var other=new LanCase(4);
-        other.configure(GhostIdentity.Type.SPIRIT,true);
+        other.configure(GhostIdentity.Type.DEMON,true);
         ok(other.scanMeasured(0,LanCase.Tool.EMF,4,4,25,4,10,false)
                 .message().matches(".*EMF (?:8|9|10)/10.*"),"strong event can yield a high EMF reading");
         System.out.println("PASS: Shade-authorized zero EMF versus ordinary high signal");

@@ -19,8 +19,9 @@ public final class LanDotsProjectorsTest {
         ok(!GhostFieldGuide.Clue.DOTS_PATTERN.exclusionSafe,
             "D.O.T.S. cannot automatically eliminate ghost species");
         for(GhostIdentity.Type type:GhostIdentity.Type.values())
-            ok(GhostEvidenceProfile.compatible(type,GhostFieldGuide.Clue.DOTS_PATTERN),
-                "no species qualification gate");
+            ok(GhostEvidenceProfile.compatible(type,GhostFieldGuide.Clue.DOTS_PATTERN)
+                ==GhostEvidenceProfile.dotsVisible(type),
+                "only species with a live D.O.T.S. passage can produce that evidence");
         boolean remote=false;
         try{dots.placeOrRemove(0,4,x+8,z+8,EquipmentTiers.Tier.I);}
         catch(IllegalArgumentException e){remote=true;}
