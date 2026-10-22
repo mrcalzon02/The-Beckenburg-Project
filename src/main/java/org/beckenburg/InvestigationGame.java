@@ -203,7 +203,8 @@ public final class InvestigationGame {
         JButton begin=button("START SOLO INVESTIGATION");
         JButton lan=button("HOST / JOIN MULTIPLAYER");
         JButton ghost=button("GHOST PRACTICE");
-        for(JButton b:new JButton[]{enterCastle,campaignButton,begin,lan,ghost}){
+        JButton editor=button("DEVELOPER LEVEL EDITOR");
+        for(JButton b:new JButton[]{enterCastle,campaignButton,begin,lan,ghost,editor}){
             b.setAlignmentX(Component.LEFT_ALIGNMENT);
             navigation.add(Box.createVerticalStrut(9));navigation.add(b);
         }
@@ -285,6 +286,7 @@ public final class InvestigationGame {
         campaignButton.addActionListener(e->showCampaign());
         begin.addActionListener(e->begin());ghost.addActionListener(e->beginGhost());
         lan.addActionListener(e->openLan());
+        editor.addActionListener(e->DeveloperLevelEditor.open(window));
         options.addActionListener(e->openOptions());
         guide.addActionListener(e->showControls());
         credits.addActionListener(e->JOptionPane.showMessageDialog(window,

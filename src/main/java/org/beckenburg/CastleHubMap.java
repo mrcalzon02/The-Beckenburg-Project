@@ -19,7 +19,7 @@ public final class CastleHubMap {
     public record Furnishing(String mesh,double x,double z,double scale,double yaw,
                              double halfWidth,double halfDepth) { }
     private static final java.util.List<Furnishing> FURNISHINGS=CastleHubDecor.furnishings();
-    public static java.util.List<Furnishing> furnishings(){return FURNISHINGS;}
+    public static java.util.List<Furnishing> furnishings(){return CastleLevelEdits.current().furnishings(false);}
     /** Articulated H-plan with real hall passages, two connected eastern service
      * wings, a covered north block and an open south courtyard.
      * Purchasing stations retain their physically reachable world coordinates.
@@ -62,14 +62,15 @@ public final class CastleHubMap {
         if(!Double.isFinite(x)||!Double.isFinite(z)||
                 solid((int)Math.floor(x),(int)Math.floor(z)))
             throw new IllegalArgumentException("floor location must be navigable");
-        if(outside(x,z))return MaterialAtlas.STONE;
-        // Ground-floor halls are flagstone, furnished salons are carpeted and
-        // records/working offices have genuine timber floors.
-        if(z<11)return x<10?MaterialAtlas.PARQUET:
-                x<19?MaterialAtlas.CARPET:MaterialAtlas.PARQUET;
-        if(x<10)return z<24?MaterialAtlas.STONE:MaterialAtlas.CARPET;
-        if(x>=29)return z<18?MaterialAtlas.PARQUET:MaterialAtlas.STONE;
-        return x>=21?MaterialAtlas.PARQUET:MaterialAtlas.STONE;
+        int nativeMaterial;
+        if(outside(x,z))nativeMaterial=MaterialAtlas.STONE;
+        else if(z<11)nativeMaterial=x<10?MaterialAtlas.PARQUET:
+            x<19?MaterialAtlas.CARPET:MaterialAtlas.PARQUET;
+        else if(x<10)nativeMaterial=z<24?MaterialAtlas.STONE:MaterialAtlas.CARPET;
+        else if(x>=29)nativeMaterial=z<18?MaterialAtlas.PARQUET:MaterialAtlas.STONE;
+        else nativeMaterial=x>=21?MaterialAtlas.PARQUET:MaterialAtlas.STONE;
+        return CastleLevelEdits.current().floorMaterial((int)Math.floor(x),
+            (int)Math.floor(z),nativeMaterial);
     }
     public LanSound.Cue footstep(double x,double z){
         return footstep(x,z,0);
@@ -113,7 +114,8 @@ public final class CastleHubMap {
             ||solid((int)Math.floor(x+r),(int)Math.floor(z-r))
             ||solid((int)Math.floor(x-r),(int)Math.floor(z+r))
             ||solid((int)Math.floor(x+r),(int)Math.floor(z+r)))return false;
-        for(Furnishing item:FURNISHINGS)
+        if(CastleLevelEdits.current().navBlocked((int)Math.floor(x),(int)Math.floor(z)))return false;
+        for(Furnishing item:CastleLevelEdits.current().furnishings(false))
             if(Math.abs(x-item.x())<item.halfWidth()+r &&
                Math.abs(z-item.z())<item.halfDepth()+r)return false;
         return true;
@@ -127,7 +129,7 @@ public final class CastleHubMap {
                 && (x<16+radius||x>19-radius))return false;
         if(elevation>2.0&&CastleHubArchitecturalPlan.upperWalkable(x,z)){
             if(!CastleHubArchitecturalPlan.upperClearance(x,z,radius))return false;
-            for(Furnishing item:CastleHubDecor.UPPER_FURNISHINGS)
+            for(Furnishing item:CastleLevelEdits.current().furnishings(true))
                 if(Math.abs(x-item.x())<item.halfWidth()+radius&&
                     Math.abs(z-item.z())<item.halfDepth()+radius)return false;
             return true;
@@ -139,7 +141,8 @@ public final class CastleHubMap {
         if(!traversable(playerX,playerZ)||!Double.isFinite(yaw))return null;
         Station nearest=null;double best=-1;
         for(Station s:Station.values()){
-            double dx=s.x-playerX,dz=s.z-playerZ,d=Math.hypot(dx,dz);
+            double[] location=CastleLevelEdits.current().station(s);
+            double dx=location[0]-playerX,dz=location[1]-playerZ,d=Math.hypot(dx,dz);
             if(d>.5&&d<=2.75){
                 double forward=(dx*Math.sin(yaw)+dz*Math.cos(yaw))/d;
                 if(forward>.77&&forward>best){best=forward;nearest=s;}

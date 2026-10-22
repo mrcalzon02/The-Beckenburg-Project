@@ -1447,7 +1447,14 @@ public final class SceneRenderer {
             0,y0,length,y0,length,y1,0,y1,0xffffff);
     }
     private void castleShell(List<Face> out){
-        for(CastleHubArchitecturalPlan.Wall wall:CastleHubArchitecturalPlan.walls()){
+        var walls=CastleHubArchitecturalPlan.walls();
+        for(int i=0;i<walls.size();i++){
+            var sourceWall=walls.get(i);
+            CastleHubArchitecturalPlan.Wall wall=new CastleHubArchitecturalPlan.Wall(
+                sourceWall.x0(),sourceWall.z0(),sourceWall.x1(),sourceWall.z1(),
+                sourceWall.bottom(),sourceWall.top(),
+                CastleLevelEdits.current().wallMaterial(i,sourceWall.material()),
+                sourceWall.portalCenter(),sourceWall.portalWidth());
             if(wall.hasDoor()){
                 // Full-height 2.7m portals, 2.5m clear spans, real jambs and
                 // stone lintels at the architecturally authored wall plane.
@@ -1519,7 +1526,12 @@ public final class SceneRenderer {
     /** Castle hub renders with the same perspective, clipping and textured depth buffer as missions. */
     public void drawCastle(CastleHubMap map,double clock){drawCastle(map,clock,true);}
     public void drawCastle(CastleHubMap map,double clock,boolean lightsOn){
-        environmentLight=1;lightingMap=null;if(castleLighting==null)castleLighting=new FixtureLighting(map);fixtureLighting=castleLighting;castleLighting.castleFrame(lightsOn,(int)(clock*10));
+        environmentLight=1;lightingMap=null;
+        var edits=CastleLevelEdits.current();
+        if(castleLighting==null||castleEditRevision!=edits.revision()){
+            castleLighting=new FixtureLighting(map);castleEditRevision=edits.revision();
+        }
+        fixtureLighting=castleLighting;castleLighting.castleFrame(lightsOn,(int)(clock*10));
         paintSky(clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         List<Face> castle=new ArrayList<>();castle.addAll(castleSurroundings());
@@ -1541,6 +1553,14 @@ public final class SceneRenderer {
                     new Point(xx+1,ceiling,zz),new Point(xx,ceiling,zz),
                     MaterialAtlas.CEILING,xx,zz+1,xx+1,zz+1,xx+1,zz,xx,zz,0xe0d8c8);
             }
+            if(editorNavigation){
+                // Authoring-only, visibly backed by the exact walkability query.
+                boolean walk=map.traversable(xx+.5,zz+.5);
+                texturedQuad(castle,new Point(xx+.12,.035,zz+.12),
+                    new Point(xx+.88,.035,zz+.12),new Point(xx+.88,.035,zz+.88),
+                    new Point(xx+.12,.035,zz+.88),MaterialAtlas.CERAMIC,
+                    0,0,1,0,1,1,0,1,walk?0x49815c:0x8f353b);
+            }
             // The solid tile modules now supply textured wall and window geometry.
             // Primitive quads would falsely close the real windows and gate openings.
         }
@@ -1552,9 +1572,9 @@ public final class SceneRenderer {
                           (roof.north()+roof.south())*.5-z)<27)
                 pitchedRoof(castle,roof.west(),roof.east(),roof.north(),
                     roof.south(),roof.eave(),roof.rise(),roof.material());
-        for(CastleHubDecor.Light fixture:CastleHubDecor.LIGHTS)
-            if(Math.hypot(fixture.x()-x,fixture.z()-z)<14)
-                mountedLamp(castle,fixture,lightsOn);
+        for(CastleLevelEdits.Lamp adjusted:edits.lamps())
+            if(Math.hypot(adjusted.x()-x,adjusted.z()-z)<14)
+                mountedLamp(castle,adjusted.fixture(),lightsOn);
         for(CastleHubDecor.Switch sw:CastleHubDecor.SWITCHES)
             if(Math.hypot(sw.x()-x,sw.z()-z)<14)
                 mountedLamp(castle,new CastleHubDecor.Light("light_switch_1",
@@ -1565,7 +1585,7 @@ public final class SceneRenderer {
         // and height offsets match the authored physical interaction sockets.
         for(CastleHubMap.Station station:CastleHubMap.Station.values()){
             if(Math.hypot(station.x-x,station.z-z)>16)continue;
-            double px=station.x,pz=station.z;
+            double[] socket=edits.station(station);double px=socket[0],pz=socket[1];
             switch(station){
                 case ARMORY_UV -> {
                     imported(castle,"display_cabinet_mp_2",px,0,pz,.72,0);
@@ -1601,14 +1621,15 @@ public final class SceneRenderer {
             }
         }
         // Purchased source-backed fixtures occupy authored locations and match hub collision.
-        for(CastleHubMap.Furnishing item:CastleHubMap.furnishings())
+        for(CastleLevelEdits.Prop item:edits.props())
             if(Math.hypot(item.x()-x,item.z()-z)<16)
-                castleProp(castle,item.mesh(),item.x(),0,item.z(),item.scale(),item.yaw());
-        for(CastleHubMap.Furnishing item:CastleHubDecor.UPPER_FURNISHINGS)
-            if(Math.hypot(item.x()-x,item.z()-z)<16)
-                castleProp(castle,item.mesh(),item.x(),
-                    CastleHubArchitecturalPlan.GROUND_CEILING,item.z(),
+                castleProp(castle,item.mesh(),item.x(),item.y(),item.z(),
                     item.scale(),item.yaw());
+        if(editorSelection!=null&&Math.hypot(editorSelection[0]-x,editorSelection[2]-z)<16){
+            // Camera-visible 3D amber selection pillar; NEVER inserted into collision.
+            box(castle,editorSelection[0]-.04,editorSelection[1]+.02,
+                editorSelection[2]-.04,.08,1.4,.08,0xffcb54);
+        }
         for(CastleHubDecor.Accent a:CastleHubDecor.ACCENTS)
             if(Math.hypot(a.x()-x,a.z()-z)<12)
                 imported(castle,a.mesh(),a.x(),a.y(),a.z(),a.scale(),a.yaw());
@@ -1799,6 +1820,13 @@ public final class SceneRenderer {
         return grid.shade(id,0x808080);
     }
     private HouseMap lightingMap;private FixtureLighting fixtureLighting,castleLighting;
+    private long castleEditRevision=-1;
+    private boolean editorNavigation;
+    private double[] editorSelection;
+    /** Authoring overlays render only inside the standalone development editor. */
+    public void setEditorNavigation(boolean enabled){editorNavigation=enabled;}
+    public void setEditorSelection(double x,double y,double z){editorSelection=new double[]{x,y,z};}
+    public void clearEditorSelection(){editorSelection=null;}
     private Vertex litVertex(Point p,double u,double v,int material,int room){
         var rgb=fixtureLighting.sample(room,p.x,p.y,p.z);var glow=fixtureLighting.emission(material,p.x,p.y,p.z);double r=Math.max(rgb.r(),glow.r()),g=Math.max(rgb.g(),glow.g()),b=Math.max(rgb.b(),glow.b());
         for(var source:portablePositions.values())if(lightingMap!=null&&source.on()){

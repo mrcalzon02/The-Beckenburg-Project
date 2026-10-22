@@ -41,6 +41,16 @@ public final class GlbProps {
         "button_12","book_mp_1","open_book_mp_1","dosimeter_4","walkie_talkie_1",
         "exploration_emf_detector","exploration_flashlight","exploration_flashlight_poquet","exploration_photo_camera","exploration_spirit_box","exploration_thermal_camera","exploration_thermometer","exploration_voice_recorder","ggbot_car08_van_shell","ggbot_car01","ggbot_car05","ggbot_car07","kenney_road_asphalt_straight","kenney_road_asphalt_side","kenney_road_asphalt_damaged","kenney_detail_light_single","kenney_detail_dumpster_closed","kenney_detail_bench","kenney_detail_barrier_type_a"
     };
+    /** Full approved runtime asset index used by the live 3D level editor. */
+    public static java.util.Set<String> availableModels(){
+        java.util.TreeSet<String> names=new java.util.TreeSet<>();
+        names.addAll(java.util.Arrays.asList(NAMES));
+        names.addAll(LevelAssets.MODELS);
+        names.addAll(LivedAssets.ORIGINAL);names.addAll(LivedAssets.SOURCED);
+        for(String name:LivedAssets.ORIGINAL)names.add(LivedAssets.worn(name));
+        names.addAll(EquipmentModelCatalog.approvedModels());
+        return java.util.Collections.unmodifiableSet(names);
+    }
     public record Vertex(double x,double y,double z,double u,double v) { }
     public record Triangle(Vertex a,Vertex b,Vertex c,int material) { }
     public record Model(List<Triangle> triangles) { }

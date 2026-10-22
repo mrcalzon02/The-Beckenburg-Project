@@ -25,9 +25,14 @@ public final class FixtureLighting {
  }
  private int controller(LevelDefinition.Socket socket){int at=socket.style().indexOf('@');if(at<0)return 0;String key=socket.style().substring(at+1);var plate=map.level().sockets().stream().filter(s->s.id().equals(key)).findFirst().orElseThrow();return map.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.LIGHT_SWITCH&&Math.hypot(f.x()-plate.x(),f.z()-plate.z())<.001).findFirst().orElseThrow().id();}
  public FixtureLighting(CastleHubMap castle){map=null;this.castle=Objects.requireNonNull(castle);
-  for(var light:CastleHubDecor.LIGHTS){var bounds=VanInteriorLayout.bounds(light.on());double y=light.y()-(light.mount()==CastleHubDecor.Mount.CEILING?(bounds.y1()-bounds.y0())*light.scale()*.55:0);
-   Kind kind=light.on().contains("ceiling_lamp_4")?Kind.CANDLE_CHANDELIER:light.mount()==CastleHubDecor.Mount.WALL?Kind.WALL_SCONCE:Kind.FROSTED_DOME;
-   add(kind,0,0,light.x(),y,light.z(),0,-1,0,kind==Kind.CANDLE_CHANDELIER?10.5:9.8,kind==Kind.CANDLE_CHANDELIER?3.2:2.5,1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
+  for(var edited:CastleLevelEdits.current().lamps()){var light=edited.fixture();
+   var bounds=VanInteriorLayout.bounds(light.on());
+   double y=light.y()-(light.mount()==CastleHubDecor.Mount.CEILING
+       ?(bounds.y1()-bounds.y0())*light.scale()*.55:0);
+   Kind kind=light.on().contains("ceiling_lamp_4")?Kind.CANDLE_CHANDELIER
+       :light.mount()==CastleHubDecor.Mount.WALL?Kind.WALL_SCONCE:Kind.FROSTED_DOME;
+   add(kind,0,0,light.x(),y,light.z(),0,-1,0,edited.radius(),edited.power(),
+       1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
   }factors=new double[sources.size()];
  }
  public void castleFrame(boolean on,int tick){String stamp=on+":"+(tick/3);if(!state.equals(stamp)){colours.clear();state=stamp;}for(var source:sources)factors[source.id]=source.kind==Kind.CANDLE_CHANDELIER?.94+.06*Math.sin(tick*.3+source.id):on?1:0;}

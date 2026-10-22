@@ -31,7 +31,8 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         this.profile=java.util.Objects.requireNonNull(profile);
         this.actions=java.util.Objects.requireNonNull(actions);
         setFocusable(true);setBackground(new Color(11,12,17));
-        renderer.x=13.5;renderer.z=19.3;renderer.yaw=Math.PI;renderer.pitch=-.07;
+        double[] spawn=CastleLevelEdits.current().spawn();
+        renderer.x=spawn[0];renderer.z=spawn[1];renderer.yaw=spawn[2];renderer.pitch=-.07;
         look=new MouseLook(this,(dx,dy)->MouseLook.rotate(renderer,dx,dy));
         addKeyListener(this);addFocusListener(this);addFocusListener(look);
         addMouseListener(look);addMouseMotionListener(look);
