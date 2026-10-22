@@ -13,6 +13,7 @@ import java.util.UUID;
  */
 public final class SpiritualWar {
     public static final int TEAM_LIMIT = 12;
+    public static final int MATCH_LIMIT_SECONDS = 1800;
     public static final int START_HEALTH = 100;
     public static final int SWORD_DAMAGE = 25;
     public static final int GHOST_STRIKE_DAMAGE = 20;
@@ -22,7 +23,7 @@ public final class SpiritualWar {
     public static final int GHOST_KILL_RECOVERY = 40;
 
     public enum Side { HUNTER, GHOST }
-    public enum Result { ACTIVE, HUNTERS_WIN, GHOSTS_WIN }
+    public enum Result { ACTIVE, HUNTERS_WIN, GHOSTS_WIN, TIME_LIMIT_DRAW }
     public enum Equipment { SPIRIT_SWORD, WARD, HEALTH_PACK }
 
     /** Campaign completion is the sole unlock: no separate, forgeable flag. */
@@ -40,6 +41,7 @@ public final class SpiritualWar {
     public static final class Match {
         private final Map<UUID, Fighter> fighters = new HashMap<>();
         private boolean started;
+        private int elapsedSeconds;
         private Result result = Result.ACTIVE;
 
         public record View(UUID id, Side side, GhostIdentity.Type ghost, int health,
@@ -81,6 +83,15 @@ public final class SpiritualWar {
         }
         public View view(UUID id) { return require(id).view(); }
         public Result result() { return result; }
+        public int remainingSeconds() { return Math.max(0, MATCH_LIMIT_SECONDS - elapsedSeconds); }
+        /** Advance host-authoritative monotonic time after match start, not lobby time. */
+        public void advanceTime(int seconds) {
+            if (!started) throw new IllegalStateException("Match not started");
+            if (seconds < 0) throw new IllegalArgumentException("Negative elapsed time");
+            if (result != Result.ACTIVE) return;
+            elapsedSeconds = (int) Math.min((long) MATCH_LIMIT_SECONDS, (long) elapsedSeconds + seconds);
+            if (elapsedSeconds == MATCH_LIMIT_SECONDS) result = Result.TIME_LIMIT_DRAW;
+        }
         public boolean started() { return started; }
         private Fighter require(UUID id) {
             Fighter f = fighters.get(id);
