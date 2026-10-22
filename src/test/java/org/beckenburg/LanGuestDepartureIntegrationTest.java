@@ -20,7 +20,7 @@ public final class LanGuestDepartureIntegrationTest {
             throw new AssertionError("missing "+prefix+" for "+client.seat());
         }
         void move(int room)throws Exception{
-            client.move(room);await("ACCEPT|MOVE|"+room);
+            LanTestRoomTravel.move(client,this::await,room);
         }
         public void close(){client.close();}
     }
