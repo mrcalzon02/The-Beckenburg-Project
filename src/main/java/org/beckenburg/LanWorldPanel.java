@@ -53,7 +53,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final Map<Integer,Map<String,SceneRenderer.Apparition>> cameraGhostBodies=new HashMap<>();
     private final Map<String,Integer> cameraGhostTicks=new HashMap<>();
     private boolean orbForm,greenGhostForm;
-    private String ghostAppearance="banshee";
+    private String ghostAppearance=GhostManifestationVisual.UNREVEALED;
+    private final java.util.ArrayDeque<GhostHauntingFolio.Occurrence> hauntings=
+        new java.util.ArrayDeque<>();
     private int apparitionWarningTick=-1;
     private int lastMotionTick=-1;
     private int threatUntilTick=-1;
@@ -229,12 +231,17 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 buildingAudio.setMap(map);audio.clearFixtures();
                 peers.clear();videoCameras.clear();renderer.videoCameras.clear();renderer.dotsPositions.clear();apparition=null;
                 pairedGhostBodies.clear();pairedGhostTicks.clear();
-                cameraGhostBodies.clear();cameraGhostTicks.clear();
+                cameraGhostBodies.clear();cameraGhostTicks.clear();hauntings.clear();
+                ghostAppearance=GhostManifestationVisual.UNREVEALED;
                 renderer.setAdditionalGhostBodies(List.of());
                 videoRenderer.setAdditionalGhostBodies(List.of());
                 renderer.x=map.van().placement().x();
                 renderer.z=map.van().placement().z();
                 feedback="INVESTIGATION: "+map.site();
+            }else if(p.get(0).equals("HAUNT")){
+                GhostHauntingFolio.Occurrence event=GhostHauntingFolio.decode(frame);
+                hauntings.addLast(event);
+                while(hauntings.size()>8)hauntings.removeFirst();
             }else if(rackSnapshot.accept(p)){
                 // Atomic host-owned remaining stock, shared by all hunter views.
             }else if(p.size()==5&&p.get(0).equals("DEVICE_SOUND")){
@@ -322,7 +329,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     ghostAppearance=visual.name().toLowerCase(java.util.Locale.ROOT);
                     if(visual.baseType()==GhostIdentity.Type.TWINS)
                         ghostAppearance=(visual.ancient()?"ancient_":"")+"twins_a";
-                }else ghostAppearance="banshee";
+                }else ghostAppearance=GhostManifestationVisual.UNREVEALED;
             }else if(p.get(0).equals("TWIN")){
                 // A paired-body packet is per-Hunter LOS-filtered by the host;
                 // it never creates an additional GhostDomain or evidence clue.
@@ -344,16 +351,21 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                         String tint=p.get(8);
                         if(!tint.equals("GREEN")&&!tint.equals("BASE"))
                             throw new IllegalArgumentException("Invalid Twin tint");
+                        boolean signature=apparition!=null
+                            &&GhostManifestationVisual.revealsIdentity(apparition.phase());
+                        String image=signature&&CharacterVisuals.isTwinActor(ghostAppearance)
+                            ?(ghostAppearance.startsWith("ancient_")?"ancient_twins_b":"twins_b")
+                            :GhostManifestationVisual.UNREVEALED;
                         pairedGhostBodies.put(member,new SceneRenderer.Apparition(
-                            tx,ty,tz,LanGhostAnimation.Phase.LURK,heading,0,false,
-                            tint.equals("GREEN"),tint.equals("GREEN")?"ancient_twins_b":"twins_b"));
+                            tx,ty,tz,signature?LanGhostAnimation.Phase.SIGNATURE:LanGhostAnimation.Phase.LURK,
+                            heading,0,false,signature&&tint.equals("GREEN"),image));
                     }
                 }
             }else if(p.get(0).equals("APPARITION")){
                 if(p.size()==3 && p.get(1).equals("HIDDEN")){
                     apparition=null;
                     lastMotionTick=-1;
-                    ghostAppearance="banshee";
+                    ghostAppearance=GhostManifestationVisual.UNREVEALED;
                     orbForm=false;
                     greenGhostForm=false;
                 }else if(p.size()==6 && p.get(1).equals("VISIBLE")){
@@ -558,15 +570,19 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                             default->throw new IllegalArgumentException("bad camera apparition tint");
                         };
                         String imageId=p.get(9);
-                        if(member.equals("b")&&!CharacterVisuals.isTwinActor(imageId))
-                            throw new IllegalArgumentException("second camera body isn't a Twin");
-                        if(member.equals("a")&&!CharacterVisuals.isTwinActor(imageId)){
-                            var type=GhostIdentity.Type.valueOf(imageId.toUpperCase(java.util.Locale.ROOT));
-                            if(type.ancient()!=green)throw new IllegalArgumentException("inconsistent camera ghost");
-                        }else if(imageId.startsWith("ancient_")!=green)
-                            throw new IllegalArgumentException("inconsistent Twin tint");
+                        boolean signature=!imageId.equals(GhostManifestationVisual.UNREVEALED);
+                        if(signature){
+                            if(member.equals("b")&&!CharacterVisuals.isTwinActor(imageId))
+                                throw new IllegalArgumentException("second camera body isn't a Twin");
+                            if(member.equals("a")&&!CharacterVisuals.isTwinActor(imageId)){
+                                var type=GhostIdentity.Type.valueOf(imageId.toUpperCase(java.util.Locale.ROOT));
+                                if(type.ancient()!=green)throw new IllegalArgumentException("inconsistent camera ghost");
+                            }else if(imageId.startsWith("ancient_")!=green)
+                                throw new IllegalArgumentException("inconsistent Twin tint");
+                        }else if(green)throw new IllegalArgumentException("generic apparition tinted");
                         cameraGhostBodies.computeIfAbsent(owner,id->new HashMap<>()).put(member,
-                            new SceneRenderer.Apparition(px,py,pz,LanGhostAnimation.Phase.LURK,
+                            new SceneRenderer.Apparition(px,py,pz,
+                                signature?LanGhostAnimation.Phase.SIGNATURE:LanGhostAnimation.Phase.LURK,
                                 heading,0,false,green,imageId));
                     }
                 }
@@ -940,6 +956,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
         renderer.rackToolTiers=java.util.Map.of();
         renderer.rackInventory=rackSnapshot.stock();
+        hauntings.removeIf(e->tick>=e.untilTick());
+        renderer.setHauntings(new ArrayList<>(hauntings));
         renderer.setAdditionalGhostBodies(new ArrayList<>(pairedGhostBodies.values()));
         renderer.drawNetwork(map,new ArrayList<>(peers.values()),apparition,tick*.1,List.copyOf(counterMarks));
         // Van receiver renders the *same live world* from the physical camera's
@@ -984,6 +1002,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 cameraGhostBodies.getOrDefault(camera.owner(),Map.of());
             SceneRenderer.Apparition seenThroughCamera=cameraBodies.get("a");
             SceneRenderer.Apparition secondThroughCamera=cameraBodies.get("b");
+            videoRenderer.setHauntings(new ArrayList<>(hauntings));
             videoRenderer.setAdditionalGhostBodies(secondThroughCamera==null
                 ?List.of():List.of(secondThroughCamera));
             videoRenderer.drawNetwork(map,new ArrayList<>(peers.values()),
