@@ -73,6 +73,26 @@ jobs:
           jpackage --type app-image --name Beckenburg --input build --main-jar beckenburg-game.jar --dest dist --java-options "-Dfile.encoding=UTF-8"
           if ($LASTEXITCODE -ne 0) { throw 'jpackage failed' }
 
+      - name: Include editor with installed project files
+        shell: pwsh
+        run: |
+          & cmd /c tools\build-editor-kit.cmd
+          if ($LASTEXITCODE -ne 0) { throw 'Standalone editor compiler failed' }
+          New-Item -ItemType Directory -Force dist\Beckenburg\tools | Out-Null
+          New-Item -ItemType Directory -Force dist\installer | Out-Null
+          Copy-Item build\editor-kit\LevelEditorKit-Java17.jar dist\Beckenburg\tools\LevelEditorKit-Java17.jar
+          Copy-Item build\editor-kit\LevelEditorKit-Java17.jar dist\installer\LevelEditorKit-Java17.jar
+          Copy-Item docs\development\MODULAR_LEVEL_EDITOR.md dist\Beckenburg\tools\MODULAR_LEVEL_EDITOR.md
+          $required = @(
+            'org/beckenburg/DeveloperLevelEditor.class',
+            'org/beckenburg/editor/EditorProject.class'
+          )
+          $contents = & jar --list --file build\beckenburg-game.jar
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect game jar' }
+          foreach ($class in $required) {
+            if ($contents -notcontains $class) { throw "Installed game missing $class" }
+          }
+
       - name: Package Windows installer
         shell: pwsh
         run: |
@@ -85,17 +105,6 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Inno Setup packaging failed' }
           $exe = "dist\installer\Beckenburg-$env:BECKENBURG_RELEASE_VERSION-Windows-x64.exe"
           if (!(Test-Path $exe)) { throw "Installer missing: $exe" }
-
-      - name: Package standalone reusable editor kit
-        shell: pwsh
-        run: |
-          & cmd /c tools\build-editor-kit.cmd
-          if ($LASTEXITCODE -ne 0) { throw 'Standalone editor compiler failed' }
-          $kit = "dist/installer/LevelEditorKit-Java17.jar"
-          Copy-Item build/editor-kit/LevelEditorKit-Java17.jar $kit
-          if (!(Test-Path $kit) -or (Get-Item $kit).Length -lt 3000) {
-            throw 'Modular editor kit unexpectedly empty'
-          }
 
       - name: Generate download checksums
         shell: pwsh

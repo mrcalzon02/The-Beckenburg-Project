@@ -286,7 +286,7 @@ public final class InvestigationGame {
         campaignButton.addActionListener(e->showCampaign());
         begin.addActionListener(e->begin());ghost.addActionListener(e->beginGhost());
         lan.addActionListener(e->openLan());
-        editor.addActionListener(e->DeveloperLevelEditor.open(window));
+        editor.addActionListener(e->openDeveloperEditor(window));
         options.addActionListener(e->openOptions());
         guide.addActionListener(e->showControls());
         credits.addActionListener(e->JOptionPane.showMessageDialog(window,
@@ -364,9 +364,12 @@ public final class InvestigationGame {
         JScrollPane scroll=new JScrollPane(grid,
             ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scroll.setPreferredSize(new Dimension(610,Math.min(540,grid.getPreferredSize().height+18)));
-        int answer=JOptionPane.showConfirmDialog(window,scroll,"Video, PSX & accessibility",
-            JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
-        if(answer!=JOptionPane.OK_OPTION)return;
+        Object[] actions={"APPLY OPTIONS","OPEN LEVEL EDITOR","CANCEL"};
+        int answer=JOptionPane.showOptionDialog(window,scroll,"Video, PSX & accessibility",
+            JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,actions,actions[0]);
+        // The options modal must close before opening the independent 3D editor.
+        if(answer==1){openDeveloperEditor(window);return;}
+        if(answer!=0)return;
         GraphicsOptions chosen=new GraphicsOptions(
             (GraphicsOptions.Mode)mode.getSelectedItem(),
             (GraphicsOptions.DisplaySize)desktop.getSelectedItem(),
@@ -1266,6 +1269,17 @@ public final class InvestigationGame {
             }
         }
     }
+    /** The packaged Windows shortcut and the in-game menus share this launcher. */
+    static boolean editorRequested(String[] args){
+        return args!=null&&java.util.Arrays.asList(args).contains("--editor");
+    }
+    private static void openDeveloperEditor(Window parent){
+        try{DeveloperLevelEditor.open(parent);}
+        catch(Throwable failure){
+            BeckenburgDiagnostics.fail("Developer level editor startup",failure);
+            BeckenburgDiagnostics.failureScreen(parent,"Level editor startup failed",failure);
+        }
+    }
     public static void main(String[] args){
         BeckenburgDiagnostics.install();
         if(GraphicsEnvironment.isHeadless()){
@@ -1275,6 +1289,10 @@ public final class InvestigationGame {
         }
         if(java.util.Arrays.asList(args).contains("--diagnostics")){
             SwingUtilities.invokeLater(()->BeckenburgDiagnostics.show(null));
+            return;
+        }
+        if(editorRequested(args)){
+            SwingUtilities.invokeLater(()->openDeveloperEditor(null));
             return;
         }
         SwingUtilities.invokeLater(()->{
