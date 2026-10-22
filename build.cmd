@@ -114,6 +114,7 @@ java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.b
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.CastleHubMaterialAuditTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.CastleAndVanVisualAcceptanceTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.BeckenburgDiagnosticsTest || exit /b 1
+java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.BeckenburgDeveloperTraceTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.BeckenburgFullRoundE2ETest || exit /b 1
 echo Verified packaged jar through independent TCP multiplayer end-to-end case
 exit /b 0
