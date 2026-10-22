@@ -1,6 +1,9 @@
 name: Beckenburg Windows Installer and Release
 
 on:
+  # Build a candidate from every authoritative main-branch update.
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       bump:
@@ -18,8 +21,8 @@ permissions:
 
 concurrency:
   group: beckenburg-windows-release
-  # Cancel superseded source builds so obsolete tests cannot block releases.
-  cancel-in-progress: true
+  # Serialize publication so version allocations never race; never cancel an upload.
+  cancel-in-progress: false
 
 jobs:
   release-windows:
@@ -70,6 +73,17 @@ jobs:
         working-directory: .
         shell: cmd
         run: build.cmd
+
+      - name: Verify packaged TCP multiplayer investigation
+        shell: cmd
+        run: build.cmd e2e
+
+      - name: Verify packaged JAR boots to actual desktop and multiplayer UI
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          & java '-Djava.awt.headless=false' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.BeckenburgDesktopE2ETest
+          if ($LASTEXITCODE -ne 0) { throw "Packaged UI acceptance failed: $LASTEXITCODE" }
 
       - name: Prepare Windows jpackage environment
         shell: pwsh
@@ -161,6 +175,42 @@ jobs:
           "msi_name=$msiName" >> $env:GITHUB_OUTPUT
           "zip_name=$(Split-Path $portable -Leaf)" >> $env:GITHUB_OUTPUT
 
+      - name: Launch version-stamped native Windows executable to main menu
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $exe=(Resolve-Path 'build\release\Beckenburg\Beckenburg.exe').Path
+          $diagnostics=Join-Path $env:USERPROFILE '.beckenburg\diagnostics'
+          $began=Get-Date
+          $proc=$null
+          $ready=$false
+          try {
+            $proc=Start-Process -FilePath $exe -PassThru
+            $deadline=(Get-Date).AddSeconds(50)
+            while((Get-Date) -lt $deadline) {
+              if($proc.HasExited) { throw "Release game exited before menu: $($proc.ExitCode)" }
+              if(Test-Path $diagnostics) {
+                $logs=@(Get-ChildItem $diagnostics -Filter 'session-*.log' -File |
+                    Where-Object { $_.LastWriteTime -ge $began.AddSeconds(-1) } |
+                    Sort-Object LastWriteTime -Descending)
+                foreach($file in $logs) {
+                  $body=Get-Content -LiteralPath $file.FullName -Raw
+                  if($body.Contains('PHASE ready') -and $body.Contains('PHASE Menu available')) {
+                    $ready=$true;break
+                  }
+                }
+              }
+              if($ready) { break }
+              Start-Sleep -Milliseconds 350
+            }
+            if(-not $ready) { throw 'Native versioned Beckenburg never reached ready main menu' }
+            Write-Host 'PASS version-stamped Windows Beckenburg.exe reached playable menu'
+          } finally {
+            if($null -ne $proc -and -not $proc.HasExited) {
+              Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+            }
+          }
+
       - name: Publish draft, verify all assets, then publish independent release
         shell: pwsh
         env:
@@ -174,6 +224,13 @@ jobs:
           PORTABLE: ${{ steps.artifacts.outputs.zip_name }}
         run: |
           $ErrorActionPreference='Stop'
+          # A superseded source revision must not become latest.
+          $remote=(git ls-remote origin refs/heads/main | Select-Object -First 1)
+          if($LASTEXITCODE -ne 0 -or -not $remote) { throw 'Could not confirm remote main' }
+          $tip=($remote -split '\s+')[0]
+          if($tip -ne $env:GITHUB_SHA) {
+            throw "Main advanced to $tip; refusing to publish superseded $env:GITHUB_SHA"
+          }
           $names=@($env:EXE,$env:MSI,$env:PORTABLE,'SHA256SUMS.txt')
           $files=@($names | ForEach-Object { Join-Path $env:ARTIFACT_DIR $_ })
           $notes="Beckenburg $env:VERSION - Java 17 asymmetric ghost-hunting development build.`n`n" +
@@ -203,8 +260,12 @@ jobs:
             if ($asset.Count -ne 1 -or $asset[0].size -le 0) { throw "Release asset readback failed: $name" }
             Write-Host "Verified remotely: $name ($($asset[0].size) bytes)"
           }
-          gh release edit $env:TAG --draft=false --latest=false
+          gh release edit $env:TAG --draft=false --latest
           if ($LASTEXITCODE -ne 0) { throw 'Release publish failed; verify draft on GitHub' }
           $verified=gh release view $env:TAG --json isDraft,tagName,assets | ConvertFrom-Json
           if ($verified.isDraft -or $verified.tagName -ne $env:TAG) { throw 'Published release readback failed' }
-          Write-Host "PUBLISHED: https://github.com/$env:GH_REPO/releases/tag/$env:TAG"
+          $latest=gh api "repos/$env:GH_REPO/releases/latest" --jq .tag_name
+          if ($LASTEXITCODE -ne 0 -or $latest.Trim() -ne $env:TAG) {
+            throw "Latest GitHub release did not match published Beckenburg build: $latest"
+          }
+          Write-Host "PUBLISHED AND VERIFIED LATEST: https://github.com/$env:GH_REPO/releases/tag/$env:TAG"
