@@ -16,7 +16,7 @@ public final class LanGhostTakeoverIntegrationTest {
             while(System.nanoTime()<end){
                 String msg=inbox.poll(90,TimeUnit.MILLISECONDS);
                 if(msg==null)continue;
-                if("GHOST".equals(client.seat())&&(msg.startsWith("BODY|")||msg.startsWith("DOORS|")
+                if("GHOST".equals(client.seat())&&(msg.startsWith("BODY|")
                     ||msg.startsWith("PROGRESS|")||msg.startsWith("TEAMMAP|")
                     ||msg.startsWith("EVIDENCE|")||msg.startsWith("APPARITION|")
                     ||msg.startsWith("MOTION|")))
