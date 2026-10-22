@@ -88,10 +88,13 @@ jobs:
       - name: Package standalone reusable editor kit
         shell: pwsh
         run: |
+          & cmd /c tools\build-editor-kit.cmd
+          if ($LASTEXITCODE -ne 0) { throw 'Standalone editor compiler failed' }
           $kit = "dist/installer/LevelEditorKit-Java17.jar"
-          jar --create --file $kit -C build/classes org/beckenburg/editor
-          if ($LASTEXITCODE -ne 0 -or !(Test-Path $kit)) { throw 'Modular editor kit packaging failed' }
-          if ((Get-Item $kit).Length -lt 3000) { throw 'Modular editor kit unexpectedly empty' }
+          Copy-Item build/editor-kit/LevelEditorKit-Java17.jar $kit
+          if (!(Test-Path $kit) -or (Get-Item $kit).Length -lt 3000) {
+            throw 'Modular editor kit unexpectedly empty'
+          }
 
       - name: Generate download checksums
         shell: pwsh

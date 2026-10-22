@@ -13,6 +13,10 @@ The Java-only `org.beckenburg.editor` package has **no Castle Beckenburg imports
 
 The first concrete adapter is `CastleEditorProject`; it maps Castle Beckenburg's saved `CastleLevelEdits` geometry, props, lamps, materials, spawn and interaction stations to the generic editor contract. Its game-specific 3D viewport remains `DeveloperLevelEditor` / `SceneRenderer`, rather than incorrectly claiming this is an OpenGL toolkit.
 
+## Standalone distributable
+
+Run `tools/build-editor-kit.cmd` on Windows or `sh tools/build-editor-kit.sh` on Unix to compile the reusable editor classes into `build/editor-kit/LevelEditorKit-Java17.jar` **without compiling Beckenburg, downloading 3D assets or installing Blender**. Each Beckenburg installer release also publishes this standalone jar and its SHA-256. The separate `standalone-editor-kit.yml` workflow checks compilation and a synthetic, unrelated project adapter against the jar alone.
+
 ## Add another project
 
 Implement `EditorProject<MySnapshot>` with its own hierarchy, asset descriptors, snapshot/restore and save; use `EditorHistory<>(project,60)` for all commands and `EditorPalettePanel(project, listener)` to browse its assets. Implement a viewport adapter for that game's rendering and hit-testing; do not import `CastleLevelEdits` or `CastleHubMap` into the portable kit. Keep project assets in their original project.
