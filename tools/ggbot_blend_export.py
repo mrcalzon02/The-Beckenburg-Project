@@ -70,7 +70,7 @@ def convert(archive,root,folder,name,outdir):
     output=outdir/(name+".glb")
     bpy.ops.export_scene.gltf(filepath=str(output),export_format="GLB",
         use_selection=True,export_texcoords=True,
-        export_materials="EXPORT",export_image_format="PNG",
+        export_materials="EXPORT",export_image_format="AUTO",
         export_apply=True,export_cameras=False,export_lights=False)
     data=output.read_bytes()
     if not (128<len(data)<4_000_000) or data[:4]!=b"glTF":

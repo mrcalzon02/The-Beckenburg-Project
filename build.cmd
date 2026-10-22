@@ -85,7 +85,7 @@ if not exist build\source\ggbot-original.zip (
   curl.exe --fail --location --retry 3 --max-time 50 --output build\source\ggbot-original.zip https://opengameart.org/sites/default/files/psx_style_cars_by_ggbot_august2023.zip || (echo ERROR: original GGBot source pack unavailable & exit /b 1)
 )
 where blender >nul 2>nul || (echo ERROR: Blender required to export original GGBot .blend files & exit /b 1)
-blender --background --factory-startup --python tools\ggbot_blend_export.py -- build\source\ggbot-original.zip build\classes\org\beckenburg\models || exit /b 1
+blender --background --factory-startup --python-exit-code 1 --python tools\ggbot_blend_export.py -- build\source\ggbot-original.zip build\classes\org\beckenburg\models || exit /b 1
 
 if /I "%~1"=="package" goto package_jar_only
 javac --release 17 -encoding UTF-8 -cp build\classes -d build\test @build\sources-tests.txt || exit /b 1

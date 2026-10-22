@@ -96,7 +96,7 @@ if [[ ! -s build/source/ggbot-original.zip ]]; then
         https://opengameart.org/sites/default/files/psx_style_cars_by_ggbot_august2023.zip
 fi
 command -v blender >/dev/null || { echo "Blender is required for original GGBot .blend export" >&2; exit 1; }
-blender --background --factory-startup --python tools/ggbot_blend_export.py -- \
+blender --background --factory-startup --python-exit-code 1 --python tools/ggbot_blend_export.py -- \
     build/source/ggbot-original.zip build/classes/org/beckenburg/models
 javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/*.java
 # Verify authored multi-storey levels and actual packaged scenery.
