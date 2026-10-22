@@ -113,8 +113,9 @@ public final class LanCameraOnlyGhostIntegrationTest {
                         "The installed camera must genuinely see the manifested actor");
                 }
                 String cameraFrame=van.await("CAMGHOST|0|a|VISIBLE|",10);
-                check(cameraFrame.contains("|"+species.name().toLowerCase(java.util.Locale.ROOT)+"|"),
-                    "Remote van receiver must show correct "+species+" figure");
+                check(cameraFrame.contains("|"+GhostManifestationVisual.UNREVEALED+"|")
+                    &&!cameraFrame.contains("|"+species.name().toLowerCase(java.util.Locale.ROOT)+"|"),
+                    "Non-signature live camera must show a neutral apparition, not "+species+" artwork");
                 check(field.await("APPARITION|HIDDEN|",8).startsWith("APPARITION|HIDDEN|"),
                     "A camera-only species must remain invisible to direct Hunter vision");
                 check(host.running(),"True remote apparition must not stop multiplayer match");
