@@ -65,14 +65,15 @@ public final class BeckenburgUpdates {
         return url.equals("https://github.com/"+REPOSITORY+"/releases/download/"+tag+"/"+filename);
     }
     /** Pure selection for offline regression tests: unrelated repo releases are ignored. */
-    public static Release select(String response,String installed){
+    public static Release select(String response,String installed){return select(response,installed,false);}
+    public static Release select(String response,String installed,boolean includePrereleases){
         Version current=parsedVersion(installed),best=current;
         Object parsed=new Json(response).parse();
         if(!(parsed instanceof List<?> list))throw new IllegalArgumentException("Invalid releases array");
         Release selected=null;
         for(Object item:list){
             Map<?,?> r=object(item);
-            if(Boolean.TRUE.equals(r.get("draft"))||Boolean.TRUE.equals(r.get("prerelease")))continue;
+            if(Boolean.TRUE.equals(r.get("draft"))||(!includePrereleases&&Boolean.TRUE.equals(r.get("prerelease"))))continue;
             String tag=string(r.get("tag_name"));
             if(!tag.startsWith(PREFIX))continue;
             Version candidate;
@@ -112,13 +113,16 @@ public final class BeckenburgUpdates {
         return selected;
     }
     public static Release check(String current)throws IOException,InterruptedException{
+        return check(current,false);
+    }
+    public static Release check(String current,boolean includePrereleases)throws IOException,InterruptedException{
         // The Foundry hosts multiple independent products; compare only our tagged stable releases.
         Release newest=null;
         for(int page=1;page<=10;page++){
             String body=new String(fetch(API+"?per_page=100&page="+page,MAX_FEED),StandardCharsets.UTF_8);
             Object json=new Json(body).parse();
             if(!(json instanceof List<?> entries))throw new IOException("GitHub release feed malformed");
-            Release candidate=select(body,newest==null?current:newest.version());
+            Release candidate=select(body,newest==null?current:newest.version(),includePrereleases);
             if(candidate!=null)newest=candidate;
             if(entries.size()<100)return newest;
         }
