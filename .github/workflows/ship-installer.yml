@@ -9,7 +9,8 @@ permissions:
 
 concurrency:
   group: beckenburg-installer
-  cancel-in-progress: false
+  # A superseded main commit must never publish an out-of-date installer.
+  cancel-in-progress: true
 
 jobs:
   package-and-release:
