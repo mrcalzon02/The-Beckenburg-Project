@@ -9,9 +9,17 @@ public final class LanCameraOnlyGhostIntegrationTest {
     private static void check(boolean ok,String why){if(!ok)throw new AssertionError(why);}
     private static final class Peer implements AutoCloseable {
         final BlockingQueue<String> inbox=new LinkedBlockingQueue<>();
+        final java.util.concurrent.ConcurrentLinkedDeque<String> cameraFrames=
+            new java.util.concurrent.ConcurrentLinkedDeque<>();
         final LanClient client;
         Peer(int port,boolean ghost,String name)throws Exception{
-            client=new LanClient("127.0.0.1",port,ghost,name,inbox::offer);
+            client=new LanClient("127.0.0.1",port,ghost,name,packet->{
+                if(packet.startsWith("CAMGHOST|")||packet.startsWith("CAMERA|")){
+                    cameraFrames.offer(packet);
+                    while(cameraFrames.size()>20)cameraFrames.poll();
+                }
+                inbox.offer(packet);
+            });
         }
         String await(String prefix,int seconds)throws Exception{
             long until=System.nanoTime()+TimeUnit.SECONDS.toNanos(seconds);
@@ -21,7 +29,8 @@ public final class LanCameraOnlyGhostIntegrationTest {
                     throw new AssertionError(client.seat()+" command rejected: "+value);
                 if(value!=null&&value.startsWith(prefix))return value;
             }
-            throw new AssertionError(client.seat()+" missing "+prefix);
+            throw new AssertionError(client.seat()+" missing "+prefix+
+                "; recent camera messages="+cameraFrames);
         }
         @Override public void close(){client.close();}
     }
@@ -46,29 +55,40 @@ public final class LanCameraOnlyGhostIntegrationTest {
                 van.await("ACCEPT|GEAREQUIP|0|VIDEO_CAMERA",8);
                 var target=map.spawn(4);
                 LevelDefinition.Vec station=null;
+                int heading=-1;
                 double[][] offsets={{0,1.2},{0,-1.2},{1.2,0},{-1.2,0},
-                                    {1.3,1.3},{-1.3,-1.3},{.8,.8},{-.8,-.8}};
+                    {1.3,1.3},{-1.3,-1.3},{.8,.8},{-.8,-.8},
+                    {0,2.4},{0,-2.4},{2.4,0},{-2.4,0}};
+                var ghostBody=new LanGhostSpatial.Pose(4,target.x(),target.y(),target.z(),0);
                 for(double[] offset:offsets){
                     double px=target.x()+offset[0],pz=target.z()+offset[1];
-                    if(map.roomAt(px,target.y(),pz)==4
-                        &&map.traversable(px,target.y(),pz)
-                        &&map.clearLineOfSight(px,target.y()+1.62,pz,
-                            target.x(),target.y()+1.0,target.z())){
+                    int aim=Math.floorMod((int)Math.round(Math.toDegrees(
+                        Math.atan2(target.x()-px,target.z()-pz))),360);
+                    if(map.roomAt(px,target.y(),pz)==4&&map.traversable(px,target.y(),pz)
+                        &&LanCameraSight.sees(map,new LanVideoCameras.Camera(
+                            0,4,px,target.y(),pz,aim,EquipmentTiers.Tier.I),
+                            ghostBody,true,species,"a")){
                         station=new LevelDefinition.Vec(px,target.y(),pz);
+                        heading=aim;
                         break;
                     }
                 }
-                check(station!=null,"House must have a real unobstructed camera placement");
-                int heading=Math.floorMod((int)Math.round(Math.toDegrees(
-                    Math.atan2(target.x()-station.x(),target.z()-station.z()))),360);
+                check(station!=null,
+                    "No camera installation has a true frustum and clear sight to the apparition");
                 synchronized(mutex){AuthoredTestSupport.place(map,world,0,station);}
                 van.client.turn(heading);
                 van.client.useHeldEquipment();
-                van.await("CAMERA|PLACE|0|4|",8);
+                String installed=van.await("CAMERA|PLACE|0|4|",8);
+                check(installed.endsWith("|"+heading+"|I"),
+                    "Host must preserve deployed camera heading and actual tier: "+installed);
                 van.await("ACCEPT|GEARUSE|VIDEO_CAMERA|",8);
+                van.await("CAMERA|POWER|0|1",8);
                 // The actual remote camera now stays at the station. The viewing
                 // investigator returns to the van; a second Hunter stays onsite.
                 synchronized(mutex){AuthoredTestSupport.place(map,world,0,vanPosition);}
+                check(map.roomAt(vanPosition.x(),vanPosition.y(),vanPosition.z())
+                    ==HouseMap.EXTRACTION_ROOM,
+                    "Van receiver must be physically inside the extraction room");
                 // Follow the current authored level graph; 14 -> 11 is NOT
                 // a legal immediate move in the house layout.
                 for(int room:AuthoredLevelNetworkTest.path(map,HouseMap.EXTRACTION_ROOM,4)){
@@ -85,6 +105,13 @@ public final class LanCameraOnlyGhostIntegrationTest {
                 field.inbox.clear();
                 ghost.client.ghost(GhostDomain.Action.MANIFEST,4);
                 ghost.await("ACCEPT|GHOST|MANIFEST",8);
+                synchronized(mutex){
+                    var mounted=(LanVideoCameras)LooseClutterNetworkTest.field(host,"cameras");
+                    var pose=(LanGhostSpatial)LooseClutterNetworkTest.field(host,"ghostPose");
+                    check(mounted.at(0)!=null
+                        &&LanCameraSight.sees(map,mounted.at(0),pose.pose(),true,species,"a"),
+                        "The installed camera must genuinely see the manifested actor");
+                }
                 String cameraFrame=van.await("CAMGHOST|0|a|VISIBLE|",10);
                 check(cameraFrame.contains("|"+species.name().toLowerCase(java.util.Locale.ROOT)+"|"),
                     "Remote van receiver must show correct "+species+" figure");
