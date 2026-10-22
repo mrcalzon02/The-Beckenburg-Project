@@ -20,6 +20,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final java.util.Map<String,Integer> batterySeconds=new HashMap<>();
     private final Map<Integer,SceneRenderer.RemoteBody> peers=new HashMap<>();
     private final Map<Integer,String> hunterVisuals=new HashMap<>();
+    private CharacterVisuals.Hunter myClass=CharacterVisuals.Hunter.OBSERVER;
     private final Map<Integer,String> hunterNames=new HashMap<>();
     private final java.util.ArrayDeque<LanChat.Entry> chatHistory=new java.util.ArrayDeque<>();
     private final JTextField chatInput=new JTextField();
@@ -285,6 +286,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 int who=LanProtocol.integer(p.get(1),0,5);
                 String look=CharacterVisuals.hunter(p.get(2));
                 hunterVisuals.put(who,look);
+                if(who==seat)myClass=CharacterVisuals.Hunter.valueOf(
+                    look.toUpperCase(java.util.Locale.ROOT));
                 SceneRenderer.RemoteBody existing=peers.get(who);
                 if(existing!=null)peers.put(who,new SceneRenderer.RemoteBody(
                     existing.x(),existing.y(),existing.z(),existing.slot(),existing.heading(),look,existing.crouched()));
@@ -1104,7 +1107,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             String mic=voice==null?"OFF":voice.muted()?"MUTED":
                 voice.transmitting()?"TRANSMITTING":voice.connected()?"READY":"LINKING";
             g.setColor(new Color(153,213,190));
-            g.drawString("VOICE "+mic+"  /  F1 CONTROLS",quickX+11,quickY+61);
+            g.drawString("VOICE "+mic+"  /  5 "+HunterDiscipline.primary(myClass).label+
+                "  6 "+HunterDiscipline.secondary(myClass).label+"  /  F1 CONTROLS",quickX+11,quickY+61);
             if(helpVisible){
                 int hw=Math.min(width-36,510),hx=(width-hw)/2,hy=Math.max(90,(h-210)/2);
                 g.setColor(new Color(13,19,27,245));g.fillRoundRect(hx,hy,hw,210,10,10);
@@ -1112,7 +1116,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 g.setColor(new Color(218,225,221));
                 String[] hints={"WASD move / Ctrl crouch  /  SHIFT sprint  /  CLICK mouse-look",
                     "1-4 equip / R use / F place light / E interact / F6 rack",
-                    "Z cross / G ward / H salt / K medicine / M large van map",
+                    "Z cross / G ward / H salt / 5-6 class abilities / K medicine",
                     "J casefile  /  TAB journal  /  I guess  /  P submit",
                     "ENTER chat  /  F2 radio  /  F3-F4 voice  /  F7 voice options",
                     "ESC exit world  /  F1 close this help"};
@@ -1503,6 +1507,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     sendAction("play recording",()->client.playRecording());
                 else sendAction("identify",()->client.identify(selectedGuess));
             }
+            case KeyEvent.VK_5 -> sendAction("class "+HunterDiscipline.primary(myClass).label,
+                ()->client.skill(HunterDiscipline.primary(myClass)));
+            case KeyEvent.VK_6 -> sendAction("class "+HunterDiscipline.secondary(myClass).label,
+                ()->client.skill(HunterDiscipline.secondary(myClass)));
             case KeyEvent.VK_C -> sendAction("ward",()->client.ward());
             case KeyEvent.VK_B -> sendAction("cleansing",()->client.cleanse());
             case KeyEvent.VK_N -> sendAction("banishment",()->client.banish());
