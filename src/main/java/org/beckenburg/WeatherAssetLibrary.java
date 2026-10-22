@@ -40,7 +40,7 @@ public final class WeatherAssetLibrary {
         if(name.startsWith("lightning_")){
             String family=name.substring("lightning_".length());
             for(String f:new String[]{"cloud_to_ground","horizontal_arc","fork","sheet"})
-                if(family.matches(f+"_frame_0[0-3]"))return f;
+                if(family.matches(f+"_frame_0[0-3]\\.glb"))return f;
             throw new IllegalArgumentException("unapproved lightning frame "+name);
         }
         return switch(name){
