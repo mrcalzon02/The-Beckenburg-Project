@@ -15,6 +15,20 @@ import java.util.Set;
 public final class ProfileStore {
     private final Path file;
     private int currency, experience;
+    private final java.util.EnumMap<InvestigationSession.Role,Integer> disciplineXp=
+        new java.util.EnumMap<>(InvestigationSession.Role.class);
+    private final ArrayList<CampaignArchive.CaseFile> archive=new ArrayList<>();
+    public int disciplineExperience(InvestigationSession.Role role){
+        return disciplineXp.getOrDefault(java.util.Objects.requireNonNull(role),0);
+    }
+    public int level(InvestigationSession.Role role){
+        return HunterProgression.level(disciplineExperience(role));
+    }
+    public java.util.List<CampaignArchive.CaseFile> archives(){return java.util.List.copyOf(archive);}
+    public static int soloXp(InvestigationSession.Outcome outcome){
+        return switch(outcome){case CLEANSED->100;case RETREATED->20;
+            case LOST->0;case ACTIVE->throw new IllegalStateException("case still active");};
+    }
     // Optional schema-v1 campaign fields preserve all existing save files.
     private boolean assistantHired;
     private long campaignSerial;
@@ -107,6 +121,13 @@ public final class ProfileStore {
             int xp=Integer.parseInt(p.getProperty("experience"));
             if(money<0||xp<0)throw new NumberFormatException("negative balance");
             currency=money;experience=xp;
+            disciplineXp.clear();
+            for(InvestigationSession.Role role:InvestigationSession.Role.values()){
+                int value=Integer.parseInt(p.getProperty("hunter.xp."+role.name(),"0"));
+                if(value<0)throw new NumberFormatException("negative Hunter experience");
+                disciplineXp.put(role,value);
+            }
+            archive.clear();archive.addAll(CampaignArchive.load(p));
             assistantHired=Boolean.parseBoolean(p.getProperty("campaign.assistant","false"));
             campaignSerial=Long.parseLong(p.getProperty("campaign.serial","0"));
             if(campaignSerial<0)throw new NumberFormatException("negative campaign serial");
@@ -140,7 +161,7 @@ public final class ProfileStore {
                 awarded.add(receipt);
             }
             blocked=false;
-        }catch(NumberFormatException ex){throw new IOException("Invalid profile values",ex);}
+        }catch(IllegalArgumentException ex){throw new IOException("Invalid profile values",ex);}
     }
     /** Network case receipt is settled by the authoritative host, saved locally once.
      * Keep the same receipt set as solo payouts, using the host's UUID.
@@ -171,18 +192,36 @@ public final class ProfileStore {
         if(blocked)throw new IOException("Profile load failed; payouts blocked until recovery.");
         if(awarded.contains(session.missionId()))return false;
         int oldMoney=currency,oldXp=experience;
+        int oldRoleXp=disciplineExperience(session.role());
+        var oldArchive=new ArrayList<>(archive);
+        int gainedXp=soloXp(session.outcome());
+        int beforeLevel=level(session.role());
         int oldVisits=campaignSite==null?0:visits(campaignSite);
         int oldClears=campaignSite==null?0:clears(campaignSite);
-        currency=Math.addExact(currency,session.payout());
-        experience=Math.addExact(experience,session.outcome()==InvestigationSession.Outcome.CLEANSED?100:20);
+        // Precompute all potentially throwing values before changing any
+        // in-memory balance. The file save then commits the whole case receipt.
+        int newCredits=Math.addExact(currency,session.payout());
+        int newGlobalXp=Math.addExact(experience,gainedXp);
+        int newRoleXp=Math.addExact(oldRoleXp,gainedXp);
+        int newVisits=campaignSite==null?0:Math.addExact(oldVisits,1);
+        int newClears=campaignSite==null?0:
+            Math.addExact(oldClears,session.outcome()==InvestigationSession.Outcome.CLEANSED?1:0);
+        CampaignArchive.CaseFile record=campaignSite==null?null:
+            CampaignArchive.from(session,campaignSite,gainedXp,beforeLevel,
+                HunterProgression.level(newRoleXp));
+        currency=newCredits;experience=newGlobalXp;
+        disciplineXp.put(session.role(),newRoleXp);
         awarded.add(session.missionId());
         if(campaignSite!=null){
-            siteVisits.put(campaignSite,Math.addExact(oldVisits,1));
-            if(session.outcome()==InvestigationSession.Outcome.CLEANSED)
-                siteClears.put(campaignSite,Math.addExact(oldClears,1));
+            if(archive.size()==CampaignArchive.LIMIT)archive.remove(0);
+            archive.add(record);
+            siteVisits.put(campaignSite,newVisits);
+            siteClears.put(campaignSite,newClears);
         }
         try{save();}catch(IOException ex){
             currency=oldMoney;experience=oldXp;awarded.remove(session.missionId());
+            disciplineXp.put(session.role(),oldRoleXp);
+            archive.clear();archive.addAll(oldArchive);
             if(campaignSite!=null){siteVisits.put(campaignSite,oldVisits);siteClears.put(campaignSite,oldClears);}
             throw ex;
         }
@@ -220,6 +259,8 @@ public final class ProfileStore {
             currency = candidate.currency;
             experience = candidate.experience;
             assistantHired = candidate.assistantHired;
+            disciplineXp.clear();disciplineXp.putAll(candidate.disciplineXp);
+            archive.clear();archive.addAll(candidate.archive);
             campaignSerial = candidate.campaignSerial;
             siteVisits.clear();siteVisits.putAll(candidate.siteVisits);
             siteClears.clear();siteClears.putAll(candidate.siteClears);
@@ -245,6 +286,9 @@ public final class ProfileStore {
                 p.setProperty("campaign.visits."+site.name(),Integer.toString(visits(site)));
                 p.setProperty("campaign.clears."+site.name(),Integer.toString(clears(site)));
             }
+            for(InvestigationSession.Role role:InvestigationSession.Role.values())
+                p.setProperty("hunter.xp."+role.name(),Integer.toString(disciplineExperience(role)));
+            CampaignArchive.save(p,archive);
             p.setProperty("currency",Integer.toString(currency));p.setProperty("experience",Integer.toString(experience));
             p.setProperty("awarded",String.join(",",new ArrayList<>(awarded)));
             for(EquipmentLoadout.Item item:EquipmentLoadout.Item.values())

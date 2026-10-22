@@ -33,6 +33,7 @@ public final class InvestigationSession {
     }
     private Outcome outcome = Outcome.ACTIVE;
     private int ticks, health = 100, stress, wards, payouts;
+    private final int hunterLevel, maxHealth;
     private final long evidenceSeed;
     private final EvidenceSignals.Polarity thermalPolarity;
     private final EvidenceSignals.Season season;
@@ -82,6 +83,12 @@ public final class InvestigationSession {
     private String message = "Inspect the haunting, record instrument measurements, prepare a ward, and attempt the rite.";
 
     public InvestigationSession(HouseMap map, Role role, long seed) {
+        this(map,role,seed,1);
+    }
+    public InvestigationSession(HouseMap map, Role role, long seed,int level) {
+        hunterLevel=level;
+        maxHealth=HunterProgression.maxHealth(level);
+        health=maxHealth;
         this.map=map; this.role=role; this.random=new Random(seed);
         evidenceSeed=seed;
         thermalPolarity=GhostEvidenceProfile.thermal(GhostIdentity.Type.SPIRIT);
@@ -95,7 +102,7 @@ public final class InvestigationSession {
         missionWeather=new MissionWeather(season,MissionWeather.Mode.FIXED,
             EvidenceSignals.Weather.CLEAR,1,seed);
         java.util.Arrays.fill(spectralTrace,-100000);
-        this.wards=role==Role.CLERIC?3:2;
+        this.wards=(role==Role.CLERIC?3:2)+HunterProgression.extraWards(level);
         this.anchorRoom=random.nextInt(map.interiorRoomCount());
         this.ghost=new GhostDomain(map,anchorRoom);
         this.ghostAi=new GhostDomain.AiController(seed ^ 0x4245434b454eL);
@@ -132,12 +139,14 @@ public final class InvestigationSession {
     }
     public int ticks() { return ticks; }
     public int health() { return health; }
+    public int maxHealth(){return maxHealth;}
+    public int hunterLevel(){return hunterLevel;}
     public int stress() { return stress; }
     public boolean useMedicine(FieldSupplies.Kind kind,int amount){
         if(outcome!=Outcome.ACTIVE||amount<1||amount>100)return false;
         if(kind==FieldSupplies.Kind.HEALTH){
-            if(health>=100)return false;
-            health=Math.min(100,health+amount);
+            if(health>=maxHealth)return false;
+            health=Math.min(maxHealth,health+amount);
             log("Medical treatment restored health. Current HP "+health);
         }else{
             if(stress==0)return false;
@@ -157,7 +166,7 @@ public final class InvestigationSession {
     public Outcome outcome() { return outcome; }
     public String message() { return message; }
     public List<String> journal() { return Collections.unmodifiableList(journal); }
-    public String statusLine() { return (hidden?"HIDDEN  ":"")+(crouched?"CROUCHED  ":"")+"INJURY " + (100-health) + "  FEAR " + stress + "  MEASURED TOOLS " + measuredTools.size() + "  WARDS " + wards; }
+    public String statusLine() { return (hidden?"HIDDEN  ":"")+(crouched?"CROUCHED  ":"")+"INJURY " + (maxHealth-health) + "  FEAR " + stress + "  MEASURED TOOLS " + measuredTools.size() + "  WARDS " + wards; }
     private void log(String text) {
         message = text;
         journal.add(String.format("%02d:%02d  %s",ticks/600,(ticks/10)%60,text));

@@ -48,6 +48,9 @@ public final class CampaignBoardPanel extends JPanel {
     private final JButton recruit=button("HIRE FIELD ASSISTANT  /  £"+ProfileStore.ASSISTANT_HIRE_COST);
     private final JCheckBox bringAssistant=new JCheckBox("Deploy assistant");
     private final JLabel account=new JLabel();
+    private final JPanel pages=new JPanel(new CardLayout());
+    private final CampaignStorePanel depot;
+    private final CampaignArchivePanel caseArchive;
     private final ProfileStore profile;
     private final Actions actions;
     private static final Color PAPER=new Color(230,219,193);
@@ -89,7 +92,11 @@ public final class CampaignBoardPanel extends JPanel {
             BorderFactory.createLineBorder(new Color(92,91,78)),"LOCATION DOSSIER"));
         JSplitPane split=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,scroll,details);
         split.setResizeWeight(.52);split.setBorder(null);
-        add(split,BorderLayout.CENTER);
+        depot=new CampaignStorePanel(profile,this::refreshLedger);
+        caseArchive=new CampaignArchivePanel(profile);
+        pages.add(split,"contracts");pages.add(depot,"depot");pages.add(caseArchive,"archive");
+        pages.setBackground(new Color(13,17,24));
+        add(pages,BorderLayout.CENTER);
         JPanel footer=new JPanel(new BorderLayout(8,6));footer.setOpaque(false);
         status.setForeground(PAPER);footer.add(status,BorderLayout.NORTH);
         JPanel controls=new JPanel(new FlowLayout(FlowLayout.LEFT,7,0));controls.setOpaque(false);
@@ -101,8 +108,22 @@ public final class CampaignBoardPanel extends JPanel {
         bringAssistant.setOpaque(false);
         bringAssistant.setForeground(PAPER);
         bringAssistant.setSelected(profile.assistantHired());
+        JButton contractsTab=button("CONTRACTS");
+        JButton shopTab=button("SUPPLY DEPOT");
+        JButton archiveTab=button("CASE ARCHIVE");
+        contractsTab.setName("campaign.view.contracts");
+        shopTab.setName("campaign.view.store");
+        archiveTab.setName("campaign.view.archive");
         controls.add(deploy);controls.add(bringAssistant);controls.add(recruit);
+        controls.add(contractsTab);controls.add(shopTab);controls.add(archiveTab);
         controls.add(tutorial);controls.add(back);
+        contractsTab.addActionListener(event->((CardLayout)pages.getLayout()).show(pages,"contracts"));
+        shopTab.addActionListener(event->{
+            depot.refresh();((CardLayout)pages.getLayout()).show(pages,"depot");
+        });
+        archiveTab.addActionListener(event->{
+            caseArchive.refresh();((CardLayout)pages.getLayout()).show(pages,"archive");
+        });
         footer.add(controls,BorderLayout.SOUTH);add(footer,BorderLayout.SOUTH);
         contracts.addListSelectionListener(event->{if(!event.getValueIsAdjusting())updateSelection();});
         deploy.addActionListener(event->{
@@ -126,8 +147,11 @@ public final class CampaignBoardPanel extends JPanel {
         contracts.setSelectedIndex(0);
     }
     public void refreshLedger(){
-        account.setText("LEDGER  £"+profile.currency()+"  /  XP "+profile.experience()+
-            "  /  "+(profile.assistantHired()?"1 field assistant retained":"No active recruits"));
+        account.setText("£"+profile.currency()+"  /  XP "+profile.experience()+
+            "  /  CLERIC "+profile.level(InvestigationSession.Role.CLERIC)+
+            "  OBSERVER "+profile.level(InvestigationSession.Role.OBSERVER)+
+            "  DEMONOLOGIST "+profile.level(InvestigationSession.Role.DEMONOLOGIST)+
+            "  /  "+(profile.assistantHired()?"1 ally":"No allies"));
         recruit.setEnabled(!profile.assistantHired()&&profile.currency()>=ProfileStore.ASSISTANT_HIRE_COST);
         if(profile.assistantHired())recruit.setText("ASSISTANT RECRUITED");
         bringAssistant.setEnabled(profile.assistantHired());

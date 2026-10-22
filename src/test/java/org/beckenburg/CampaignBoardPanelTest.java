@@ -42,8 +42,24 @@ public final class CampaignBoardPanelTest {
             JButton deploy=named(board,"campaign.deploy",JButton.class);
             JButton recruit=named(board,"campaign.recruit",JButton.class);
             JCheckBox assistant=named(board,"campaign.assistant",JCheckBox.class);
-            ok(list!=null&&deploy!=null&&recruit!=null&&assistant!=null,
-                "direct campaign and companion controls present");
+            JButton viewShop=named(board,"campaign.view.store",JButton.class);
+            JButton viewArchive=named(board,"campaign.view.archive",JButton.class);
+            JButton viewContracts=named(board,"campaign.view.contracts",JButton.class);
+            CampaignStorePanel store=named(board,"campaign.store",CampaignStorePanel.class);
+            CampaignArchivePanel records=named(board,"campaign.archive",CampaignArchivePanel.class);
+            ok(list!=null&&deploy!=null&&recruit!=null&&assistant!=null
+                &&viewShop!=null&&viewArchive!=null&&viewContracts!=null
+                &&store!=null&&records!=null,
+                "The actual campaign board can reach its store and case archives");
+            viewShop.doClick();
+            ok(store.isVisible()&&!records.isVisible(),
+                "Quartermaster is a compact center page, not an extra window");
+            viewArchive.doClick();
+            ok(records.isVisible()&&!store.isVisible(),
+                "Case archives and dossiers use the same navigation area");
+            viewContracts.doClick();
+            ok(!store.isVisible()&&!records.isVisible(),
+                "Player returns directly to playable contracts");
             ok(recruit.isEnabled()&&!assistant.isEnabled(),
                 "Owned currency funds a real recruit, not an already-deployed ally");
             recruit.doClick();

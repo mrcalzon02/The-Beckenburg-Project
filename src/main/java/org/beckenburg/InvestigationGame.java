@@ -559,7 +559,7 @@ public final class InvestigationGame {
             addFocusListener(mouseLook);addFocusListener(this);
             // Reproducible case seed, varies by session, no silent random site conversion.
             session=new InvestigationSession(map,role,
-                campaignMode?campaignSeed:20261015L+ordinal);
+                campaignMode?campaignSeed:20261015L+ordinal,profile.level(role));
             session.configureWeather(weatherMode,selectedWeather,severity);
             assistant=campaignMode&&withAssistant?new CampaignAlly(map,session):null;
             session.connectLighting(lights);
@@ -755,11 +755,39 @@ public final class InvestigationGame {
             }
         }
         private void endCase(String details){
-            if(claimSaved){return;}claimSaved=true;
-            String result=details+"\nMission: "+session.outcome()+"\nCompensation: £"+session.payout();
-            try{profile.addPayout(session,campaignMode?location:null);}catch(IOException | ArithmeticException ex){result+="\nWARNING: profile could not be saved: "+ex.getMessage();}
-            JOptionPane.showMessageDialog(window,result,"Case report",JOptionPane.INFORMATION_MESSAGE);
-            SwingUtilities.invokeLater(InvestigationGame.this::returnHome);
+            if(claimSaved)return;
+            int previousCredits=profile.currency(),previousXp=profile.disciplineExperience(session.role());
+            int previousLevel=profile.level(session.role());
+            String result=details+"\nLOCATION  "+location.label+
+                "\nMISSION  "+session.outcome()+
+                "\nEARNINGS  £"+session.payout()+
+                "\nEXPERIENCE  +"+ProfileStore.soloXp(session.outcome())+
+                "\nMEASURED INSTRUMENTS  "+session.evidenceCount()+
+                "\nCASE DURATION  "+(session.ticks()/600)+"m "+(session.ticks()/10%60)+"s";
+            try{
+                boolean recorded=profile.addPayout(session,campaignMode?location:null);
+                if(recorded){
+                    claimSaved=true;
+                    result+="\n\nCASTLE FUNDS  £"+previousCredits+" -> £"+profile.currency()+
+                        "\n"+session.role()+"  LEVEL "+previousLevel+" -> "+
+                        profile.level(session.role())+
+                        "\nCLASS XP  "+previousXp+" -> "+profile.disciplineExperience(session.role())+
+                        (campaignMode?"\nCASE FILED IN CASTLE ARCHIVES":"");
+                }else{
+                    claimSaved=true;result+="\nAlready settled (duplicate payout refused).";
+                }
+            }catch(IOException | ArithmeticException ex){
+                JOptionPane.showMessageDialog(window,
+                    "Case could not be saved: "+ex.getMessage()+
+                    "\nReturn to the extraction screen to retry. No duplicate rewards will be issued.",
+                    "Campaign save failed",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            JOptionPane.showMessageDialog(window,result,"EXPEDITION DEBRIEF",JOptionPane.INFORMATION_MESSAGE);
+            SwingUtilities.invokeLater(()->{
+                InvestigationGame.this.returnHome();
+                if(campaignMode)InvestigationGame.this.showCampaign();
+            });
         }
         private void pause(){
             timer.stop();down.clear();mouseLook.release();wheelOpen=false;briefingShown=false;
