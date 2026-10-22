@@ -86,10 +86,12 @@ if not exist build\source\ggbot-original.zip (
 )
 java -Djava.awt.headless=true -cp build\classes org.beckenburg.GgBotVehicleTextures build\source\ggbot-original.zip assets\runtime\models build\classes\org\beckenburg\models || exit /b 1
 
+if /I "%~1"=="package" goto package_jar_only
 javac --release 17 -encoding UTF-8 -cp build\classes -d build\test @build\sources-tests.txt || exit /b 1
 rem Verify authored multi-storey levels before the historical release suite.
 for %%T in (AuthoredLevelPhysicsTest AuthoredLevelReachabilityTest AuthoredLevelStateTest AuthoredLevelNetworkTest AuthoredLevelRitualCaseTest AuthoredUtilitiesTest SoloElevationTest EquipmentAssetAssignmentsTest LevelRenderAcceptanceTest WorldViewHandednessTest LevelSurfaceIntegrityTest LivedLevelDressingTest LooseClutterTest LooseClutterNetworkTest HauntedFixturesTest VanHumanScaleTest VanRackStockTest VanRackNetworkTest InteractionFocusTest InteractionNetworkTest HeldDeviceReadoutTest FixtureSoundscapeTest DomesticFitoutTest LevelEnclosureTest PhysicalLightingTest SurroundingClearanceTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
 rem Both release and E2E verify the same freshly assembled jar payload.
+:package_jar_only
 jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather || exit /b 1
 if /I "%~1"=="package" goto packaged
 if /I "%~1"=="e2e" goto e2e
