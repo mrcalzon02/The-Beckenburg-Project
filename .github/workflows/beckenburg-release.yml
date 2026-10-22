@@ -1,9 +1,7 @@
 name: Beckenburg Windows Installer and Release
 
 on:
-  # Build a candidate from every authoritative main-branch update.
-  push:
-    branches: [main]
+  # Legacy acceptance build: manually invoked only. The shipping workflow exclusively handles main pushes.
   workflow_dispatch:
     inputs:
       bump:
