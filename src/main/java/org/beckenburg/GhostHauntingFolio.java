@@ -146,6 +146,11 @@ unblinking_judgment|Unblinking Judgment|SIGNATURE|SIGNATURE|DISTORT|SIGNATURE|95
         if(room<0||events==null||events.isEmpty())return;
         for(Occurrence event:events){
             if(!event.active(tick,room))continue;
+            // Selected bespoke scores override—not stack atop—the generic filter.
+            if(GhostHauntingChoreography.forEvent(event.entry().id())!=null){
+                GhostHauntingChoreography.paint(pixels,width,height,event,tick);
+                continue;
+            }
             double life=(tick-event.startTick())/(double)event.entry().duration();
             int strength=(int)Math.round(34*Math.sin(Math.PI*life));
             if(strength<=0)continue;
