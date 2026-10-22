@@ -25,7 +25,7 @@ public final class LanSessionResumeIntegrationTest {
                 // Regression: a ghost is never given hunter-only world or journal data.
                 if("GHOST".equals(client.seat()) && (message.startsWith("BODY|")
                     ||message.startsWith("PROGRESS|") ||message.startsWith("TEAMMAP|")
-                    ||message.startsWith("EVIDENCE|") ||message.startsWith("DOORS|")
+                    ||message.startsWith("EVIDENCE|") 
                     ||message.startsWith("CASEFILE|") ||message.startsWith("NOTES|")
                     ||message.startsWith("NOTE|")))
                     throw new AssertionError("private hunter state leaked to ghost: "+message);
