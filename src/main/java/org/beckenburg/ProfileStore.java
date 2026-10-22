@@ -32,6 +32,44 @@ public final class ProfileStore {
     // Optional schema-v1 campaign fields preserve all existing save files.
     private boolean assistantHired;
     private long campaignSerial;
+    private long storySeed;
+    private int storyCheckpoint;
+    /** 0-based index of the next unbeaten story chapter; 22 means complete. */
+    public int storyCheckpoint(){return storyCheckpoint;}
+    public boolean hasCampaignStory(){return storySeed!=0;}
+    public long storySeed(){return storySeed;}
+    public boolean chapterUnlocked(int stage){
+        return stage>=0&&stage<CampaignStory.LENGTH&&stage<=storyCheckpoint;
+    }
+    /** The 22 assignments are generated ONCE, then pinned to this save forever. */
+    public CampaignStory.Chapter campaignChapter(int stage){
+        if(!hasCampaignStory()||!chapterUnlocked(stage))
+            throw new IllegalStateException("Chapter not unlocked for this campaign");
+        return CampaignStory.chapter(storySeed,stage);
+    }
+    public CampaignStory.Chapter dispatchStory(int stage)throws IOException{
+        if(blocked)throw new IOException("Cannot dispatch after failed profile load");
+        if(!chapterUnlocked(stage))throw new IllegalArgumentException("Chapter locked");
+        var entry=CampaignBoardPanel.catalog().get(stage);
+        if(!entry.playable())throw new IllegalArgumentException("Unique level geometry not yet available");
+        if(!hasCampaignStory()){
+            long seed;
+            do{seed=new java.security.SecureRandom().nextLong();}while(seed==0);
+            storySeed=seed;
+            try{save();}catch(IOException problem){storySeed=0;throw problem;}
+        }
+        return campaignChapter(stage);
+    }
+    /** Only an actual successful mission advances the host-owned story. */
+    public boolean settleStory(InvestigationSession session,int stage)throws IOException{
+        if(!hasCampaignStory()||!chapterUnlocked(stage))
+            throw new IllegalArgumentException("Chapter is not unlocked");
+        var chapter=CampaignStory.chapter(storySeed,stage);
+        if(!chapter.built()||session.map().site()!=SiteCatalog.mapFor(chapter.map())
+            ||session.ghostVisualType()!=chapter.ghost())
+            throw new IllegalArgumentException("Campaign receipt disagrees with the saved assignment");
+        return addPayout(session,chapter.map(),stage);
+    }
     private final java.util.EnumMap<SiteCatalog.Location,Integer> siteVisits=
         new java.util.EnumMap<>(SiteCatalog.Location.class);
     private final java.util.EnumMap<SiteCatalog.Location,Integer> siteClears=
@@ -134,7 +172,11 @@ public final class ProfileStore {
             archive.clear();archive.addAll(CampaignArchive.load(p));
             assistantHired=Boolean.parseBoolean(p.getProperty("campaign.assistant","false"));
             campaignSerial=Long.parseLong(p.getProperty("campaign.serial","0"));
-            if(campaignSerial<0)throw new NumberFormatException("negative campaign serial");
+            storySeed=Long.parseLong(p.getProperty("campaign.story.seed","0"));
+            storyCheckpoint=Integer.parseInt(p.getProperty("campaign.story.next","0"));
+            if(campaignSerial<0||storyCheckpoint<0||storyCheckpoint>CampaignStory.LENGTH
+                ||(storyCheckpoint>0&&storySeed==0))
+                throw new NumberFormatException("invalid campaign progress");
             siteVisits.clear();siteClears.clear();
             for(SiteCatalog.Location site:SiteCatalog.Location.values()){
                 int visits=Integer.parseInt(p.getProperty("campaign.visits."+site.name(),"0"));
@@ -191,10 +233,15 @@ public final class ProfileStore {
     }
     /** Campaign outcome and payout settle in ONE idempotent saved receipt. */
     public boolean addPayout(InvestigationSession session,SiteCatalog.Location campaignSite) throws IOException {
+        return addPayout(session,campaignSite,-1);
+    }
+    private boolean addPayout(InvestigationSession session,SiteCatalog.Location campaignSite,
+            int storyChapter) throws IOException {
         if(campaignSite!=null)SiteCatalog.requirePlayable(campaignSite);
         if(session.outcome()==InvestigationSession.Outcome.ACTIVE)throw new IllegalStateException("mission unresolved");
         if(blocked)throw new IOException("Profile load failed; payouts blocked until recovery.");
         if(awarded.contains(session.missionId()))return false;
+        int previousCheckpoint=storyCheckpoint;
         int oldMoney=currency,oldXp=experience;
         int oldRoleXp=disciplineExperience(session.role());
         var oldArchive=new ArrayList<>(archive);
@@ -215,6 +262,9 @@ public final class ProfileStore {
                 HunterProgression.level(newRoleXp));
         currency=newCredits;experience=newGlobalXp;
         disciplineXp.put(session.role(),newRoleXp);
+        if(storyChapter==storyCheckpoint&&
+            session.outcome()==InvestigationSession.Outcome.CLEANSED)
+            storyCheckpoint++;
         awarded.add(session.missionId());
         if(campaignSite!=null){
             if(archive.size()==CampaignArchive.LIMIT)archive.remove(0);
@@ -224,6 +274,7 @@ public final class ProfileStore {
         }
         try{save();}catch(IOException ex){
             currency=oldMoney;experience=oldXp;awarded.remove(session.missionId());
+            storyCheckpoint=previousCheckpoint;
             disciplineXp.put(session.role(),oldRoleXp);
             archive.clear();archive.addAll(oldArchive);
             if(campaignSite!=null){siteVisits.put(campaignSite,oldVisits);siteClears.put(campaignSite,oldClears);}
@@ -266,6 +317,8 @@ public final class ProfileStore {
             disciplineXp.clear();disciplineXp.putAll(candidate.disciplineXp);
             archive.clear();archive.addAll(candidate.archive);
             campaignSerial = candidate.campaignSerial;
+            storySeed = candidate.storySeed;
+            storyCheckpoint = candidate.storyCheckpoint;
             siteVisits.clear();siteVisits.putAll(candidate.siteVisits);
             siteClears.clear();siteClears.putAll(candidate.siteClears);
             blocked = false; // successful valid import can recover a previously corrupt profile
@@ -286,6 +339,8 @@ public final class ProfileStore {
             Properties p=new Properties();p.setProperty("schema","1");
             p.setProperty("campaign.assistant",Boolean.toString(assistantHired));
             p.setProperty("campaign.serial",Long.toString(campaignSerial));
+            p.setProperty("campaign.story.seed",Long.toString(storySeed));
+            p.setProperty("campaign.story.next",Integer.toString(storyCheckpoint));
             for(SiteCatalog.Location site:SiteCatalog.Location.values()){
                 p.setProperty("campaign.visits."+site.name(),Integer.toString(visits(site)));
                 p.setProperty("campaign.clears."+site.name(),Integer.toString(clears(site)));
