@@ -11,7 +11,7 @@ public final class WeatherAudio {
     private final Map<String,Double> gains=new LinkedHashMap<>();
     private final Deque<Cue> oneShots=new ArrayDeque<>();
     private double fadeSeconds=8,master=1,music=.42;
-    public void configure(double fadeSeconds,double masterVolume,double musicVolume){
+    public synchronized void configure(double fadeSeconds,double masterVolume,double musicVolume){
         if(!Double.isFinite(fadeSeconds)||fadeSeconds<.1||fadeSeconds>600||
            !Double.isFinite(masterVolume)||masterVolume<0||masterVolume>1||
            !Double.isFinite(musicVolume)||musicVolume<0||musicVolume>1)
@@ -21,7 +21,7 @@ public final class WeatherAudio {
     private static double approach(double current,double wanted,double amount){
         return current+Math.signum(wanted-current)*Math.min(Math.abs(wanted-current),amount);
     }
-    public void advance(double seconds,WeatherSystem.State state,double daylight){
+    public synchronized void advance(double seconds,WeatherSystem.State state,double daylight){
         if(state==null||seconds<0||seconds>2||!Double.isFinite(seconds)||
            !Double.isFinite(daylight)||daylight<0||daylight>1)
             throw new IllegalArgumentException("Invalid audio update");
@@ -38,7 +38,7 @@ public final class WeatherAudio {
         wanted.put("music_fog",state.fog()>.50?music*master*.48:0.0);
         for(String key:wanted.keySet())gains.put(key,approach(gains.getOrDefault(key,0.),wanted.get(key),seconds/fadeSeconds));
     }
-    public void accept(List<WeatherSystem.Event> events,double observerX,double observerY,double observerZ){
+    public synchronized void accept(List<WeatherSystem.Event> events,double observerX,double observerY,double observerZ){
         for(var e:events){
             if(!"SOUND".equals(e.kind()))continue;
             double distance=Math.sqrt(Math.pow(e.x()-observerX,2)+
@@ -48,6 +48,6 @@ public final class WeatherAudio {
                 Math.max(0,Math.min(1,master*attenuation)),e.x(),e.y(),e.z()));
         }
     }
-    public List<Loop> loops(){return gains.entrySet().stream().map(e->new Loop(e.getKey(),e.getValue())).toList();}
-    public List<Cue> drainCues(){var out=List.copyOf(oneShots);oneShots.clear();return out;}
+    public synchronized List<Loop> loops(){return gains.entrySet().stream().map(e->new Loop(e.getKey(),e.getValue())).toList();}
+    public synchronized List<Cue> drainCues(){var out=List.copyOf(oneShots);oneShots.clear();return out;}
 }
