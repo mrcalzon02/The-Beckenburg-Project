@@ -182,6 +182,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanTelegraphedStrikeIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanTelegraphedHudTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanApparitionTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.GhostHauntingFolioTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.GhostSpriteAtlasIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.DirectionalSpritesIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanApparitionRenderTest
