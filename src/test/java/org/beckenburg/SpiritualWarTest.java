@@ -64,7 +64,10 @@ public final class SpiritualWarTest {
         reject(() -> timed.advanceTime(1));
         timed.start();
         reject(() -> timed.advanceTime(-1));
-        timed.advanceTime(1799);
+        check(timed.vanProtected(), "Van starts protected");
+        timed.advanceTime(900);
+        check(!timed.vanProtected(), "Van unprotected at fifteen minutes");
+        timed.advanceTime(899);
         check(timed.remainingSeconds() == 1 && timed.result() == SpiritualWar.Result.ACTIVE,
             "Still active with one second remaining");
         timed.advanceTime(1);
@@ -73,6 +76,21 @@ public final class SpiritualWarTest {
         reject(() -> timed.sword(th, tg));
         timed.advanceTime(100);
         check(timed.result() == SpiritualWar.Result.TIME_LIMIT_DRAW, "Terminal state persists");
+        var scoring = new SpiritualWar.Match();
+        UUID sh=UUID.randomUUID(), sg=UUID.randomUUID();
+        scoring.join(sh,SpiritualWar.Side.HUNTER,null);
+        scoring.join(sg,SpiritualWar.Side.GHOST,standardGhost());
+        scoring.start();
+        scoring.sword(sh,sg);
+        scoring.advanceTime(1800);
+        check(scoring.result()==SpiritualWar.Result.HUNTERS_WIN, "Damage tiebreak");
+        var headcount = new SpiritualWar.Match();
+        headcount.join(UUID.randomUUID(),SpiritualWar.Side.HUNTER,null);
+        headcount.join(UUID.randomUUID(),SpiritualWar.Side.HUNTER,null);
+        headcount.join(UUID.randomUUID(),SpiritualWar.Side.GHOST,standardGhost());
+        headcount.start();
+        headcount.advanceTime(1800);
+        check(headcount.result()==SpiritualWar.Result.HUNTERS_WIN, "Survivor advantage");
         System.out.println("PASS Spiritual War headless roster, wards, healing and elimination");
     }
 }
