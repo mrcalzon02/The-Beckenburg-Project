@@ -10,6 +10,10 @@ on:
       - 'src/test/java/org/beckenburg/LightingOcclusionRepairTest.java'
       - 'src/main/java/org/beckenburg/CastleLevelEdits.java'
       - 'src/main/java/org/beckenburg/DeveloperLevelEditor.java'
+      - 'src/main/java/org/beckenburg/editor/**'
+      - 'src/main/java/org/beckenburg/CastleEditorProject.java'
+      - 'src/test/java/org/beckenburg/CastleEditorGeometryTest.java'
+      - 'src/test/java/org/beckenburg/editor/EditorCorePortabilityTest.java'
       - 'src/main/java/org/beckenburg/InvestigationGame.java'
       - 'src/main/java/org/beckenburg/CastleHubMap.java'
       - 'src/main/java/org/beckenburg/GlbProps.java'
@@ -68,6 +72,12 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\DeveloperLevelEditorDataTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.DeveloperLevelEditorDataTest
+          if errorlevel 1 exit /b 1
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleEditorGeometryTest.java src\test\java\org\beckenburg\editor\EditorCorePortabilityTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleEditorGeometryTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.editor.EditorCorePortabilityTest
           if errorlevel 1 exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\GgBotBlenderSourceUvTest.java
           if errorlevel 1 exit /b 1

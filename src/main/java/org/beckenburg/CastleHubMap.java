@@ -114,7 +114,9 @@ public final class CastleHubMap {
             ||solid((int)Math.floor(x+r),(int)Math.floor(z-r))
             ||solid((int)Math.floor(x-r),(int)Math.floor(z+r))
             ||solid((int)Math.floor(x+r),(int)Math.floor(z+r)))return false;
-        if(CastleLevelEdits.current().navBlocked((int)Math.floor(x),(int)Math.floor(z)))return false;
+        var edits=CastleLevelEdits.current();
+        if(edits.navBlocked((int)Math.floor(x),(int)Math.floor(z))
+            ||edits.wallBlocks(x,0,z,r))return false;
         for(Furnishing item:CastleLevelEdits.current().furnishings(false))
             if(Math.abs(x-item.x())<item.halfWidth()+r &&
                Math.abs(z-item.z())<item.halfDepth()+r)return false;
@@ -128,7 +130,8 @@ public final class CastleHubMap {
         if(CastleHubArchitecturalPlan.onStairs(x,z) && elevation>.1
                 && (x<16+radius||x>19-radius))return false;
         if(elevation>2.0&&CastleHubArchitecturalPlan.upperWalkable(x,z)){
-            if(!CastleHubArchitecturalPlan.upperClearance(x,z,radius))return false;
+            if(!CastleHubArchitecturalPlan.upperClearance(x,z,radius)
+               ||CastleLevelEdits.current().wallBlocks(x,elevation,z,radius))return false;
             for(Furnishing item:CastleLevelEdits.current().furnishings(true))
                 if(Math.abs(x-item.x())<item.halfWidth()+radius&&
                     Math.abs(z-item.z())<item.halfDepth()+radius)return false;

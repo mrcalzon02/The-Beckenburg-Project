@@ -1447,14 +1447,8 @@ public final class SceneRenderer {
             0,y0,length,y0,length,y1,0,y1,0xffffff);
     }
     private void castleShell(List<Face> out){
-        var walls=CastleHubArchitecturalPlan.walls();
-        for(int i=0;i<walls.size();i++){
-            var sourceWall=walls.get(i);
-            CastleHubArchitecturalPlan.Wall wall=new CastleHubArchitecturalPlan.Wall(
-                sourceWall.x0(),sourceWall.z0(),sourceWall.x1(),sourceWall.z1(),
-                sourceWall.bottom(),sourceWall.top(),
-                CastleLevelEdits.current().wallMaterial(i,sourceWall.material()),
-                sourceWall.portalCenter(),sourceWall.portalWidth());
+        var walls=CastleLevelEdits.current().walls();
+        for(var wall:walls){
             if(wall.hasDoor()){
                 // Full-height 2.7m portals, 2.5m clear spans, real jambs and
                 // stone lintels at the architecturally authored wall plane.
@@ -1472,7 +1466,7 @@ public final class SceneRenderer {
                 }
             }else architecturalWall(out,wall);
         }
-        for(var deck:CastleHubArchitecturalPlan.decks()){
+        for(var deck:CastleLevelEdits.current().decks()){
             texturedQuad(out,
                 new Point(deck.x0(),deck.height(),deck.z0()),
                 new Point(deck.x1(),deck.height(),deck.z0()),
@@ -1567,7 +1561,7 @@ public final class SceneRenderer {
         // The real continuous, authored stonework and second floor replace
         // per-cell fortress blocks. Doors have full-width jambs and lintels.
         castleShell(castle);
-        for(var roof:CastleHubArchitecturalPlan.roofs())
+        for(var roof:CastleLevelEdits.current().roofs())
             if(Math.hypot((roof.west()+roof.east())*.5-x,
                           (roof.north()+roof.south())*.5-z)<27)
                 pitchedRoof(castle,roof.west(),roof.east(),roof.north(),

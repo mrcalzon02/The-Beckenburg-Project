@@ -178,8 +178,7 @@ public final class CastleHubArchitecturalPlan {
         return upperWalkable(x,z)||onStairs(x,z);
     }
     public static boolean upperWalkable(double x,double z){
-        return x>=10.8&&x<=19&&z>=1.2&&z<=10.7 ||
-            x>=16&&x<=19&&z>10.7&&z<=22;
+        return CastleLevelEdits.current().floorSupports(x,z,GROUND_CEILING);
     }
     /** Walkable 3D height follows a physical incline and retains underpasses. */
     public static double elevation(double x,double z,double oldElevation){

@@ -1,6 +1,9 @@
 package org.beckenburg;
 
 import javax.swing.*;
+import org.beckenburg.editor.EditorTool;
+import org.beckenburg.editor.EditorHistory;
+import org.beckenburg.editor.EditorPalettePanel;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -20,6 +23,16 @@ import java.util.Set;
  * The selected object inspector writes live transforms into CastleLevelEdits.
  */
 public final class DeveloperLevelEditor extends JPanel {
+    private EditorTool tool=EditorTool.SELECT;
+    private final java.util.EnumMap<EditorTool,JToggleButton> palette=new java.util.EnumMap<>(EditorTool.class);
+    private final CastleEditorProject project=new CastleEditorProject(data);
+    private final EditorHistory<CastleLevelEdits.Snapshot> history=new EditorHistory<>(project,60);
+    private final JSpinner workPlane=new JSpinner(new SpinnerNumberModel(0.,-.5,12.,.5));
+    private final JSpinner surfaceHeight=new JSpinner(new SpinnerNumberModel(3.4,.1,12.,.1));
+    private final JCheckBox gridSnap=new JCheckBox("Snap .5m",true);
+    private Point dragOrigin;
+    private Point dragEnd;
+    private record Point(double x,double z){}
     private record Row(String kind,String id,String description){
         @Override public String toString(){return description;}
     }
@@ -43,8 +56,8 @@ public final class DeveloperLevelEditor extends JPanel {
     private final JSpinner z=new JSpinner(new SpinnerNumberModel(18.,-1000.,1000.,.1));
     private final JSpinner yaw=new JSpinner(new SpinnerNumberModel(0.,-360.,360.,5.));
     private final JSpinner scale=new JSpinner(new SpinnerNumberModel(1.,.01,10.,.05));
-    private final JSpinner width=new JSpinner(new SpinnerNumberModel(.4,0.,10.,.05));
-    private final JSpinner depth=new JSpinner(new SpinnerNumberModel(.4,0.,10.,.05));
+    private final JSpinner width=new JSpinner(new SpinnerNumberModel(.4,0.,44.,.05));
+    private final JSpinner depth=new JSpinner(new SpinnerNumberModel(.4,0.,44.,.05));
     private final JSpinner radius=new JSpinner(new SpinnerNumberModel(9.,1.,24.,.5));
     private final JSpinner power=new JSpinner(new SpinnerNumberModel(2.5,0.,10.,.1));
     private final JComboBox<String> material=new JComboBox<>(new String[]{
@@ -64,6 +77,8 @@ public final class DeveloperLevelEditor extends JPanel {
     private boolean modifying;
     private int lastMouseX,lastMouseY;
     private boolean mouseDrag;
+    private boolean drawing;
+    private int downX,downY;
     private double clock;
     private final JFrame window;
 
@@ -90,16 +105,26 @@ public final class DeveloperLevelEditor extends JPanel {
         viewport.setBackground(Color.BLACK);viewport.setFocusable(true);
         viewport.addMouseListener(new MouseAdapter(){
             @Override public void mousePressed(MouseEvent e){
-                lastMouseX=e.getX();lastMouseY=e.getY();mouseDrag=true;viewport.requestFocusInWindow();
+                lastMouseX=e.getX();lastMouseY=e.getY();
+                downX=e.getX();downY=e.getY();
+                mouseDrag=SwingUtilities.isRightMouseButton(e)||e.isShiftDown();
+                drawing=!mouseDrag&&SwingUtilities.isLeftMouseButton(e);
+                dragOrigin=drawing?worldOnPlane(e.getX(),e.getY()):null;
+                dragEnd=dragOrigin;
+                viewport.requestFocusInWindow();
             }
-            @Override public void mouseReleased(MouseEvent e){mouseDrag=false;}
-            @Override public void mouseClicked(MouseEvent e){
-                if(SwingUtilities.isLeftMouseButton(e)&&e.getClickCount()==2)
-                    pick(e.getX(),e.getY());
+            @Override public void mouseReleased(MouseEvent e){
+                if(drawing){
+                    Point target=worldOnPlane(e.getX(),e.getY());
+                    editViewport(downX,downY,dragOrigin,target);
+                }
+                drawing=false;mouseDrag=false;dragOrigin=null;dragEnd=null;
+                viewport.repaint();
             }
         });
         viewport.addMouseMotionListener(new MouseMotionAdapter(){
             @Override public void mouseDragged(MouseEvent e){
+                if(drawing){dragEnd=worldOnPlane(e.getX(),e.getY());return;}
                 if(!mouseDrag)return;
                 renderer.yaw-=(e.getX()-lastMouseX)*.006;
                 renderer.pitch=Math.max(-1.35,Math.min(1.35,
@@ -110,7 +135,15 @@ public final class DeveloperLevelEditor extends JPanel {
         viewport.addMouseWheelListener(e->advance(-e.getPreciseWheelRotation()*.85));
         viewport.addKeyListener(new KeyAdapter(){
             @Override public void keyPressed(KeyEvent e){
-                if(e.isControlDown()&&e.getKeyCode()==KeyEvent.VK_S){save();return;}
+                if(e.isControlDown()){
+                    if(e.getKeyCode()==KeyEvent.VK_S){save();return;}
+                    if(e.getKeyCode()==KeyEvent.VK_Z){undo();return;}
+                    if(e.getKeyCode()==KeyEvent.VK_Y){redo();return;}
+                }
+                if(e.getKeyCode()==KeyEvent.VK_DELETE){remove();return;}
+                if(e.getKeyCode()==KeyEvent.VK_G){chooseTool(EditorTool.MOVE);return;}
+                if(e.getKeyCode()==KeyEvent.VK_R){chooseTool(EditorTool.ROTATE);return;}
+                if(e.getKeyCode()==KeyEvent.VK_T){chooseTool(EditorTool.PAINT);return;}
                 keys.add(e.getKeyCode());
             }
             @Override public void keyReleased(KeyEvent e){keys.remove(e.getKeyCode());}
@@ -121,8 +154,53 @@ public final class DeveloperLevelEditor extends JPanel {
 
         var header=new JPanel(new BorderLayout(6,0));
         header.add(new JLabel("DEVELOPER LEVEL EDITOR   /   CASTLE BECKENBURG  /  LIVE SCENE"),BorderLayout.WEST);
+        JPanel toolStrip=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));
+        ButtonGroup tools=new ButtonGroup();
+        for(EditorTool option:EditorTool.values()){
+            JToggleButton button=new JToggleButton(option.name());
+            button.setMargin(new Insets(3,6,3,6));button.setFocusable(false);
+            button.setToolTipText(switch(option){
+                case SELECT -> "Pick geometry or objects";
+                case MOVE -> "Click object, then drag it to its new location";
+                case ROTATE -> "Rotate selected object 90 degrees";
+                case SCALE -> "Drag to change width and depth";
+                case WALL,FLOOR,ROOF -> "Drag in viewport on editing plane to create geometry";
+                case PROP -> "Place selected asset";
+                case LIGHT -> "Place a real light emitter";
+                case PAINT -> "Paint selected or clicked surface with palette material";
+                case DELETE -> "Remove clicked object or surface";
+            });
+            button.addActionListener(e->chooseTool(option));
+            palette.put(option,button);tools.add(button);toolStrip.add(button);
+        }
+        palette.get(EditorTool.SELECT).setSelected(true);
+        toolStrip.add(new JLabel("Plane Y"));toolStrip.add(workPlane);
+        toolStrip.add(gridSnap);
+        JButton overhead=button("TOP");
+        overhead.addActionListener(e->{
+            renderer.x=21;renderer.z=18;renderer.eyeHeight=11;
+            renderer.yaw=0;renderer.pitch=-1.48;viewport.requestFocusInWindow();
+        });
+        JButton ground=button("GROUND");
+        ground.addActionListener(e->{
+            double[] spawn=data.spawn();
+            renderer.x=spawn[0];renderer.z=spawn[1];renderer.eyeHeight=1.62;
+            renderer.yaw=spawn[2];renderer.pitch=-.12;
+            workPlane.setValue(0.);viewport.requestFocusInWindow();
+        });
+        JButton upper=button("UPPER");
+        upper.addActionListener(e->{
+            renderer.x=17.5;renderer.z=15;renderer.eyeHeight=5.02;
+            renderer.pitch=-.25;workPlane.setValue(3.4);
+            viewport.requestFocusInWindow();
+        });
+        toolStrip.add(overhead);toolStrip.add(ground);toolStrip.add(upper);
+        header.add(toolStrip,BorderLayout.SOUTH);
         var commands=new JPanel(new FlowLayout(FlowLayout.RIGHT,4,0));
         JButton save=button("SAVE"),export=button("EXPORT"),reset=button("RESET");
+        JButton undoButton=button("UNDO"),redoButton=button("REDO");
+        undoButton.addActionListener(e->undo());redoButton.addActionListener(e->redo());
+        commands.add(undoButton);commands.add(redoButton);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
         reset.addActionListener(e->{
@@ -150,8 +228,18 @@ public final class DeveloperLevelEditor extends JPanel {
             public void changedUpdate(DocumentEvent e){refresh();}
         });
         JTabbedPane tabs=new JTabbedPane();
-        tabs.add("3D objects",objectInspector());
-        tabs.add("Surfaces & nav",surfaceInspector());
+        tabs.add("Objects & geometry",objectInspector());
+        tabs.add("Paint & nav",surfaceInspector());
+        tabs.add("Assets",new EditorPalettePanel(project,asset->{
+            if(asset.category().equals("Models")){
+                library.setSelectedItem(asset.uri().substring("assets://models/".length()));
+                chooseTool(EditorTool.PROP);
+            }else if(asset.category().equals("Materials")){
+                material.setSelectedIndex(Integer.parseInt(
+                    asset.uri().substring("assets://materials/".length())));
+                chooseTool(EditorTool.PAINT);
+            }
+        }));
         editorSide.add(tabs,BorderLayout.SOUTH);
         JSplitPane split=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,viewport,editorSide);
         split.setResizeWeight(1);split.setContinuousLayout(true);
@@ -183,20 +271,40 @@ public final class DeveloperLevelEditor extends JPanel {
         fields.add(new JLabel("Collision Z"));fields.add(depth);
         fields.add(new JLabel("Light range"));fields.add(radius);
         fields.add(new JLabel("Light power"));fields.add(power);
-        for(JSpinner input:new JSpinner[]{x,y,z,yaw,scale,width,depth,radius,power})
+        fields.add(new JLabel("Wall height / roof rise"));fields.add(surfaceHeight);
+        for(JSpinner input:new JSpinner[]{x,y,z,yaw,scale,width,depth,radius,power,surfaceHeight})
             input.addChangeListener(e->applySelection());
         panel.add(fields,BorderLayout.CENTER);
-        JPanel actions=new JPanel(new GridLayout(1,3,4,0));
+        JPanel actions=new JPanel(new GridLayout(1,4,4,0));
         JButton here=button("PLACE AHEAD"),remove=button("REMOVE"),addLight=button("ADD LIGHT");
+        JButton duplicate=button("DUPLICATE");
+        duplicate.addActionListener(e->duplicate());
         here.addActionListener(e->placeAhead());
         remove.addActionListener(e->remove());
         addLight.addActionListener(e->addLamp());
-        actions.add(here);actions.add(remove);actions.add(addLight);
+        actions.add(here);actions.add(remove);actions.add(addLight);actions.add(duplicate);
         panel.add(actions,BorderLayout.SOUTH);
         return panel;
     }
     private JPanel surfaceInspector(){
         JPanel panel=new JPanel(new BorderLayout(3,4));
+        JPanel paintPalette=new JPanel(new GridLayout(4,4,2,2));
+        for(int i=0;i<MaterialAtlas.COUNT;i++){
+            final int index=i;
+            JButton swatch=new JButton(String.valueOf(i));
+            swatch.setOpaque(true);
+            swatch.setBackground(new Color(MaterialAtlas.sample(i,.35,.35)));
+            swatch.setToolTipText(material.getItemAt(i)+" — click then paint");
+            swatch.addActionListener(e->{
+                material.setSelectedIndex(index);chooseTool(EditorTool.PAINT);
+                if(chosen!=null)paintSelection();
+            });
+            paintPalette.add(swatch);
+        }
+        JPanel top=new JPanel(new BorderLayout(3,3));
+        top.add(new JLabel("TEXTURE PALETTE  •  click swatch, then face"),BorderLayout.NORTH);
+        top.add(paintPalette,BorderLayout.CENTER);
+        panel.add(top,BorderLayout.SOUTH);
         JPanel tools=new JPanel(new GridLayout(0,4,3,3));
         tools.add(new JLabel("Tile X"));tools.add(tileX);
         tools.add(new JLabel("Tile Z"));tools.add(tileZ);
@@ -232,7 +340,10 @@ public final class DeveloperLevelEditor extends JPanel {
     private static int integer(JSpinner s){return ((Number)s.getValue()).intValue();}
     private static double value(JSpinner s){return ((Number)s.getValue()).doubleValue();}
     private void operate(Runnable action){
-        try{action.run();updateNav();status.setText("Modified scene — SAVE to persist");}
+        try{
+            history.execute(action);
+            updateNav();status.setText("Modified scene — SAVE to persist");
+        }
         catch(RuntimeException e){JOptionPane.showMessageDialog(window,e.getMessage(),
             "Invalid level edit",JOptionPane.ERROR_MESSAGE);}
     }
@@ -262,6 +373,7 @@ public final class DeveloperLevelEditor extends JPanel {
         Row row=chosen;
         if("PROP".equals(row.kind))operate(()->data.removeProp(row.id));
         else if("LAMP".equals(row.kind))operate(()->data.removeLamp(row.id));
+        else if("SURFACE".equals(row.kind))operate(()->data.removeSurface(row.id));
         else{status.setText("Station/spawn cannot be deleted: move them instead");return;}
         chosen=null;refresh();
     }
@@ -290,6 +402,13 @@ public final class DeveloperLevelEditor extends JPanel {
                 x.setValue(l.x());y.setValue(l.y());z.setValue(l.z());
                 yaw.setValue(Math.toDegrees(l.yaw()));scale.setValue(l.scale());
                 radius.setValue(l.radius());power.setValue(l.power());
+            }else if(row.kind.equals("SURFACE")){
+                var surface=data.surfaces().stream().filter(p->p.id().equals(row.id))
+                    .findFirst().orElse(null);
+                if(surface==null)return;
+                x.setValue(surface.cx());y.setValue(surface.base());z.setValue(surface.cz());
+                width.setValue(surface.width());depth.setValue(surface.depth());
+                surfaceHeight.setValue(surface.height());material.setSelectedIndex(surface.material());
             }else if(row.kind.equals("STATION")){
                 var coords=data.station(CastleHubMap.Station.valueOf(row.id));
                 x.setValue(coords[0]);y.setValue(0.);z.setValue(coords[1]);
@@ -318,6 +437,17 @@ public final class DeveloperLevelEditor extends JPanel {
                         value(y),value(z),value(scale),Math.toRadians(value(yaw)),
                         old.mount(),value(radius),value(power)));
                 }
+                case "SURFACE" -> {
+                    var old=data.surfaces().stream().filter(v->v.id().equals(r.id))
+                        .findFirst().orElseThrow();
+                    double w=old.kind()==CastleLevelEdits.Kind.WALL?
+                        (old.width()>0?Math.max(.2,value(width)):0):Math.max(.2,value(width));
+                    double d=old.kind()==CastleLevelEdits.Kind.WALL?
+                        (old.depth()>0?Math.max(.2,value(depth)):0):Math.max(.2,value(depth));
+                    data.put(new CastleLevelEdits.Surface(r.id,old.kind(),
+                        value(x)-w/2,value(z)-d/2,value(x)+w/2,value(z)+d/2,
+                        value(y),value(surfaceHeight),material.getSelectedIndex()));
+                }
                 case "STATION" -> data.setStation(CastleHubMap.Station.valueOf(r.id),value(x),value(z));
                 case "SPAWN" -> data.setSpawn(value(x),value(z),Math.toRadians(value(yaw)));
                 default -> throw new IllegalArgumentException("Unknown editor entity");
@@ -337,6 +467,8 @@ public final class DeveloperLevelEditor extends JPanel {
         var list=new ArrayList<Row>();
         for(var p:data.props())list.add(new Row("PROP",p.id(),p.id()+"  •  "+p.mesh()));
         for(var l:data.lamps())list.add(new Row("LAMP",l.id(),l.id()+"  •  "+l.on()+"  [LIGHT]"));
+        for(var surface:data.surfaces())list.add(new Row("SURFACE",surface.id(),
+            surface.kind()+"  •  "+surface.id()+"  [material "+surface.material()+"]"));
         for(var station:CastleHubMap.Station.values())
             list.add(new Row("STATION",station.name(),"STATION  •  "+station.name()));
         list.add(new Row("SPAWN","start","PLAYER SPAWN"));
@@ -371,6 +503,11 @@ public final class DeveloperLevelEditor extends JPanel {
             }else if("LAMP".equals(r.kind)){
                 var l=data.lamps().stream().filter(t->t.id().equals(r.id)).findFirst().orElse(null);
                 if(l==null)continue;px=l.x();pz=l.z();py=l.y();
+            }else if("SURFACE".equals(r.kind)){
+                var part=data.surfaces().stream().filter(t->t.id().equals(r.id)).findFirst().orElse(null);
+                if(part==null)continue;
+                px=part.cx();pz=part.cz();
+                py=part.base()+(part.kind()==CastleLevelEdits.Kind.FLOOR?0:part.height()*.5);
             }else continue;
             double dx=px-renderer.x,dz=pz-renderer.z,dy=py-renderer.eyeHeight;
             double sy=Math.sin(renderer.yaw),cy=Math.cos(renderer.yaw);
@@ -417,8 +554,188 @@ public final class DeveloperLevelEditor extends JPanel {
         }
         viewport.repaint();
     }
+    private void chooseTool(EditorTool choice){
+        tool=choice;
+        if(palette.containsKey(choice))palette.get(choice).setSelected(true);
+        status.setText(choice+" • Left-click edit / drag walls, floors and roofs • Right-drag look"+
+            " • Ctrl+Z undo • Ctrl+Y redo");
+        viewport.requestFocusInWindow();
+    }
+    private double snap(double raw){
+        return gridSnap.isSelected()?Math.round(raw*2)/2.0:Math.round(raw*100)/100.0;
+    }
+    private static double clamp(double value,double min,double max){
+        return Math.max(min,Math.min(max,value));
+    }
+    /** Intersect a perspective camera ray with the user-selected 3D workplane.
+     * This is world-space placement, not a fixed-distance HUD marker. */
+    private Point worldOnPlane(int px,int py){
+        double h=Math.max(1,viewport.getHeight()),w=Math.max(1,viewport.getWidth());
+        double cameraX=(px-w*.5)/(h*.765),cameraY=(h*.5-py)/(h*.765);
+        double cosY=Math.cos(renderer.yaw),sinY=Math.sin(renderer.yaw);
+        double cosP=Math.cos(renderer.pitch),sinP=Math.sin(renderer.pitch);
+        double dy=cameraY*cosP+sinP,forward=-cameraY*sinP+cosP;
+        double dx=-cameraX*cosY+forward*sinY;
+        double dz=cameraX*sinY+forward*cosY;
+        double travel=(value(workPlane)-renderer.eyeHeight)/dy;
+        if(!Double.isFinite(travel)||travel<.15||travel>100){
+            // Keep placement deterministic when looking at the horizon.
+            travel=3.5/Math.max(.15,forward);
+        }
+        return new Point(snap(clamp(renderer.x+dx*travel,.5,43.5)),
+            snap(clamp(renderer.z+dz*travel,.5,35.5)));
+    }
+    private void editViewport(int fromX,int fromY,Point begin,Point end){
+        if(begin==null||end==null)return;
+        switch(tool){
+            case SELECT -> pick(fromX,fromY);
+            case WALL,FLOOR,ROOF -> drawSurface(begin,end,tool);
+            case PROP -> addAsset(end);
+            case LIGHT -> addLamp(end);
+            case PAINT -> {
+                pick(fromX,fromY);
+                if(chosen!=null&&"SURFACE".equals(chosen.kind))paintSelection();
+                else operate(()->data.paintFloor((int)Math.floor(end.x),(int)Math.floor(end.z),
+                    material.getSelectedIndex()));
+            }
+            case DELETE -> {pick(fromX,fromY);remove();}
+            case MOVE -> {
+                pick(fromX,fromY);
+                if(chosen!=null){
+                    modifying=true;
+                    try{x.setValue(end.x);z.setValue(end.z);}
+                    finally{modifying=false;}
+                    applySelection();
+                }
+            }
+            case ROTATE -> {pick(fromX,fromY);rotateSelection();}
+            case SCALE -> {
+                pick(fromX,fromY);
+                if(chosen!=null){
+                    modifying=true;
+                    try{
+                        width.setValue(clamp(value(width)+end.x-begin.x,.1,44));
+                        depth.setValue(clamp(value(depth)+end.z-begin.z,.1,44));
+                    }finally{modifying=false;}
+                    applySelection();
+                }
+            }
+        }
+        viewport.requestFocusInWindow();
+    }
+    private void drawSurface(Point begin,Point end,EditorTool shape){
+        final CastleLevelEdits.Kind kind=CastleLevelEdits.Kind.valueOf(shape.name());
+        double x0=Math.min(begin.x,end.x),x1=Math.max(begin.x,end.x);
+        double z0=Math.min(begin.z,end.z),z1=Math.max(begin.z,end.z);
+        if(kind==CastleLevelEdits.Kind.WALL){
+            if(x1-x0>=z1-z0){
+                z0=z1=begin.z;
+                if(x1-x0<.2)x1=clamp(x0+2,0,CastleHubMap.WIDTH);
+            }else{
+                x0=x1=begin.x;
+                if(z1-z0<.2)z1=clamp(z0+2,0,CastleHubMap.HEIGHT);
+            }
+        }else{
+            if(x1-x0<.2)x1=clamp(x0+2,0,CastleHubMap.WIDTH);
+            if(z1-z0<.2)z1=clamp(z0+2,0,CastleHubMap.HEIGHT);
+        }
+        String id="shape"+System.nanoTime();
+        var part=new CastleLevelEdits.Surface(id,kind,x0,z0,x1,z1,
+            value(workPlane)+(kind==CastleLevelEdits.Kind.FLOOR&&value(workPlane)==0?.025:0),
+            kind==CastleLevelEdits.Kind.FLOOR?.16:value(surfaceHeight),
+            material.getSelectedIndex());
+        operate(()->data.put(part));
+        refresh();selectId("SURFACE",id);
+    }
+    private void paintSelection(){
+        if(chosen==null||!"SURFACE".equals(chosen.kind))return;
+        String id=chosen.id;int paletteId=material.getSelectedIndex();
+        operate(()->{
+            var old=data.surfaces().stream().filter(p->p.id().equals(id)).findFirst().orElseThrow();
+            data.put(new CastleLevelEdits.Surface(id,old.kind(),old.x0(),old.z0(),
+                old.x1(),old.z1(),old.base(),old.height(),paletteId));
+        });
+    }
+    private void rotateSelection(){
+        if(chosen==null)return;
+        Row row=chosen;
+        if("PROP".equals(row.kind)){
+            operate(()->{
+                var old=data.props().stream().filter(p->p.id().equals(row.id)).findFirst().orElseThrow();
+                data.put(new CastleLevelEdits.Prop(old.id(),old.mesh(),old.x(),old.y(),
+                    old.z(),old.scale(),old.yaw()+Math.PI/2,old.halfZ(),old.halfX(),old.upper()));
+            });
+        }else if("SURFACE".equals(row.kind)){
+            operate(()->{
+                var old=data.surfaces().stream().filter(p->p.id().equals(row.id)).findFirst().orElseThrow();
+                double w=old.width(),d=old.depth();
+                data.put(new CastleLevelEdits.Surface(old.id(),old.kind(),
+                    old.cx()-d*.5,old.cz()-w*.5,old.cx()+d*.5,old.cz()+w*.5,
+                    old.base(),old.height(),old.material()));
+            });
+        }else if("LAMP".equals(row.kind)){
+            operate(()->{
+                var old=data.lamps().stream().filter(p->p.id().equals(row.id)).findFirst().orElseThrow();
+                data.put(new CastleLevelEdits.Lamp(old.id(),old.on(),old.off(),old.x(),old.y(),
+                    old.z(),old.scale(),old.yaw()+Math.PI/2,old.mount(),old.radius(),old.power()));
+            });
+        }else return;
+        refresh();selectId(row.kind,row.id);
+    }
+    private void addAsset(Point target){
+        String mesh=(String)library.getSelectedItem();if(mesh==null)return;
+        String id="asset"+System.nanoTime();
+        operate(()->data.put(new CastleLevelEdits.Prop(id,mesh,target.x,
+            value(workPlane),target.z,.8,0,.4,.4,value(workPlane)>2)));
+        refresh();selectId("PROP",id);
+    }
+    private void addLamp(Point target){
+        String id="light"+System.nanoTime();
+        operate(()->data.put(new CastleLevelEdits.Lamp(id,"ceiling_lamp_1_on",
+            "ceiling_lamp_1_off",target.x,clamp(value(workPlane)+3.38,0,9),
+            target.z,.8,0,CastleHubDecor.Mount.CEILING,
+            value(radius),value(power))));
+        refresh();selectId("LAMP",id);
+    }
+    private void duplicate(){
+        if(chosen==null)return;
+        Row selected=chosen;
+        String id="copy"+System.nanoTime();
+        switch(selected.kind){
+            case "PROP" -> {
+                var p=data.props().stream().filter(v->v.id().equals(selected.id)).findFirst().orElseThrow();
+                operate(()->data.put(new CastleLevelEdits.Prop(id,p.mesh(),
+                    clamp(p.x()+1,0,CastleHubMap.WIDTH),p.y(),p.z(),p.scale(),p.yaw(),
+                    p.halfX(),p.halfZ(),p.upper())));
+            }
+            case "LAMP" -> {
+                var l=data.lamps().stream().filter(v->v.id().equals(selected.id)).findFirst().orElseThrow();
+                operate(()->data.put(new CastleLevelEdits.Lamp(id,l.on(),l.off(),
+                    clamp(l.x()+1,0,CastleHubMap.WIDTH),l.y(),l.z(),l.scale(),
+                    l.yaw(),l.mount(),l.radius(),l.power())));
+            }
+            case "SURFACE" -> {
+                var p=data.surfaces().stream().filter(v->v.id().equals(selected.id)).findFirst().orElseThrow();
+                double shift=clamp(1,0,CastleHubMap.WIDTH-p.x1());
+                operate(()->data.put(new CastleLevelEdits.Surface(id,p.kind(),
+                    p.x0()+shift,p.z0(),p.x1()+shift,p.z1(),p.base(),p.height(),p.material())));
+            }
+            default -> {return;}
+        }
+        refresh();selectId(selected.kind,id);
+    }
+    private void undo(){
+        if(!history.undo())return;
+        chosen=null;renderer.clearEditorSelection();refresh();
+        status.setText("Undo • scene modified, SAVE to persist");
+    }
+    private void redo(){
+        if(!history.redo())return;
+        chosen=null;renderer.clearEditorSelection();refresh();
+        status.setText("Redo • scene modified, SAVE to persist");
+    }
     private void save(){
-        try{data.save();status.setText("SAVED  "+data.path());viewport.requestFocusInWindow();}
+        try{project.save();status.setText("SAVED  "+project.documentPath());viewport.requestFocusInWindow();}
         catch(IOException e){JOptionPane.showMessageDialog(window,e.getMessage(),"Save failed",JOptionPane.ERROR_MESSAGE);}
     }
     private void export(){

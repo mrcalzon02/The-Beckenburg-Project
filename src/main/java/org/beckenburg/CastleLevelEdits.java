@@ -49,6 +49,108 @@ public final class CastleLevelEdits {
             return new CastleHubDecor.Light(on,off,x,y,z,scale,yaw,mount);
         }
     }
+    /** Axis-aligned editable architectural solids. Wall is a line extrusion,
+     * floor is a horizontal slab, roof is a ridge with editable pitch. */
+    public enum Kind { WALL, FLOOR, ROOF }
+    public record Surface(String id,Kind kind,double x0,double z0,double x1,double z1,
+                          double base,double height,int material) {
+        public Surface {
+            if(id==null||!id.matches("[A-Za-z0-9_-]{1,45}")||kind==null
+               ||!Double.isFinite(x0+z0+x1+z1+base+height)
+               ||x0<0||z0<0||x1>CastleHubMap.WIDTH||z1>CastleHubMap.HEIGHT
+               ||x1<x0||z1<z0||base<-.5||base>12||height<=0||height>12
+               ||material<0||material>=MaterialAtlas.COUNT
+               ||(kind==Kind.WALL
+                   ? !((x1-x0>.15&&z1==z0)||(z1-z0>.15&&x1==x0))
+                   : x1-x0<.2||z1-z0<.2))
+                throw new IllegalArgumentException("Invalid architectural surface "+id);
+        }
+        public double cx(){return (x0+x1)*.5;}
+        public double cz(){return (z0+z1)*.5;}
+        public double width(){return x1-x0;}
+        public double depth(){return z1-z0;}
+        public CastleHubArchitecturalPlan.Wall wall(){
+            if(kind!=Kind.WALL)throw new IllegalStateException("Not a wall");
+            return new CastleHubArchitecturalPlan.Wall(x0,z0,x1,z1,base,base+height,
+                material,Double.NaN,0);
+        }
+        public CastleHubArchitecturalPlan.Deck deck(){
+            if(kind!=Kind.FLOOR)throw new IllegalStateException("Not a floor");
+            return new CastleHubArchitecturalPlan.Deck(x0,z0,x1,z1,base,material);
+        }
+        public CastleHubArchitecturalPlan.Roof roof(){
+            if(kind!=Kind.ROOF)throw new IllegalStateException("Not a roof");
+            return new CastleHubArchitecturalPlan.Roof(x0,x1,z0,z1,base,height,material);
+        }
+    }
+    private final Map<String,Surface> surfaces=new LinkedHashMap<>();
+    public synchronized List<Surface> surfaces(){return List.copyOf(surfaces.values());}
+    public synchronized List<CastleHubArchitecturalPlan.Wall> walls(){
+        List<CastleHubArchitecturalPlan.Wall> out=new ArrayList<>();
+        for(var surface:surfaces.values())if(surface.kind()==Kind.WALL)out.add(surface.wall());
+        // Existing portal markers preserve the authored doorway trim.
+        for(var wall:CastleHubArchitecturalPlan.walls())if(wall.hasDoor())out.add(wall);
+        return List.copyOf(out);
+    }
+    public synchronized List<CastleHubArchitecturalPlan.Deck> decks(){
+        return surfaces.values().stream().filter(v->v.kind()==Kind.FLOOR)
+            .map(Surface::deck).toList();
+    }
+    public synchronized List<CastleHubArchitecturalPlan.Roof> roofs(){
+        return surfaces.values().stream().filter(v->v.kind()==Kind.ROOF)
+            .map(Surface::roof).toList();
+    }
+    public synchronized void put(Surface surface){
+        Objects.requireNonNull(surface);
+        if(surfaces.size()>=512&&!surfaces.containsKey(surface.id()))
+            throw new IllegalStateException("Castle architectural surface limit");
+        surfaces.put(surface.id(),surface);revision++;
+    }
+    public synchronized void removeSurface(String id){
+        if(surfaces.remove(id)!=null)revision++;
+    }
+    /** Real wall collision shared with game navigation and light blockers. */
+    public synchronized boolean wallBlocks(double x,double y,double z,double radius){
+        for(Surface s:surfaces.values())if(s.kind()==Kind.WALL
+            &&y+1.55>s.base()&&y<s.base()+s.height()){
+            if(s.z0()==s.z1()&&x>=s.x0()-radius&&x<=s.x1()+radius
+                &&Math.abs(z-s.z0())<=radius)return true;
+            if(s.x0()==s.x1()&&z>=s.z0()-radius&&z<=s.z1()+radius
+                &&Math.abs(x-s.x0())<=radius)return true;
+        }
+        return false;
+    }
+    public synchronized boolean floorSupports(double x,double z,double height){
+        for(Surface s:surfaces.values())if(s.kind()==Kind.FLOOR
+            &&Math.abs(s.base()-height)<.18&&x>=s.x0()&&x<=s.x1()
+            &&z>=s.z0()&&z<=s.z1())return true;
+        return false;
+    }
+    /** Geometry undo is a complete in-memory scene snapshot, not a partial UI undo. */
+    public record Snapshot(List<Prop> props,List<Lamp> lamps,List<Surface> surfaces,
+        Map<String,double[]> stations,Map<Integer,Integer> floorPaint,
+        Map<Integer,Integer> wallPaint,Set<Integer> navBlocked,
+        double spawnX,double spawnZ,double spawnYaw){}
+    public synchronized Snapshot snapshot(){
+        Map<String,double[]> coords=new LinkedHashMap<>();
+        for(var item:stations.entrySet())coords.put(item.getKey().name(),item.getValue().clone());
+        return new Snapshot(List.copyOf(props.values()),List.copyOf(lamps.values()),
+            List.copyOf(surfaces.values()),coords,Map.copyOf(floorPaint),
+            Map.copyOf(wallPaint),Set.copyOf(navBlocked),spawnX,spawnZ,spawnYaw);
+    }
+    public synchronized void restore(Snapshot snapshot){
+        Objects.requireNonNull(snapshot);
+        props.clear();for(var p:snapshot.props())props.put(p.id(),p);
+        lamps.clear();for(var l:snapshot.lamps())lamps.put(l.id(),l);
+        surfaces.clear();for(var s:snapshot.surfaces())surfaces.put(s.id(),s);
+        stations.clear();for(var st:CastleHubMap.Station.values())
+            stations.put(st,snapshot.stations().get(st.name()).clone());
+        floorPaint.clear();floorPaint.putAll(snapshot.floorPaint());
+        wallPaint.clear();wallPaint.putAll(snapshot.wallPaint());
+        navBlocked.clear();navBlocked.addAll(snapshot.navBlocked());
+        spawnX=snapshot.spawnX();spawnZ=snapshot.spawnZ();spawnYaw=snapshot.spawnYaw();
+        revision++;
+    }
     private static final CastleLevelEdits DEFAULT=new CastleLevelEdits(defaultPath());
     private final Path path;
     private final Map<String,Prop> props=new LinkedHashMap<>();
@@ -75,6 +177,28 @@ public final class CastleLevelEdits {
         return mesh!=null&&GlbProps.availableModels().contains(mesh);
     }
     private void defaults(){
+        surfaces.clear();
+        int surfaceId=0;
+        for(var wall:CastleHubArchitecturalPlan.walls()){
+            int index=surfaceId++;
+            if(!wall.hasDoor())surfaces.put("wall"+index,
+                new Surface("wall"+index,Kind.WALL,
+                    Math.min(wall.x0(),wall.x1()),Math.min(wall.z0(),wall.z1()),
+                    Math.max(wall.x0(),wall.x1()),Math.max(wall.z0(),wall.z1()),
+                    wall.bottom(),wall.top()-wall.bottom(),wall.material()));
+        }
+        surfaceId=0;
+        for(var deck:CastleHubArchitecturalPlan.decks()){
+            String id="floor"+surfaceId++;
+            surfaces.put(id,new Surface(id,Kind.FLOOR,
+                deck.x0(),deck.z0(),deck.x1(),deck.z1(),deck.height(),.16,deck.material()));
+        }
+        surfaceId=0;
+        for(var roof:CastleHubArchitecturalPlan.roofs()){
+            String id="roof"+surfaceId++;
+            surfaces.put(id,new Surface(id,Kind.ROOF,roof.west(),roof.north(),
+                roof.east(),roof.south(),roof.eave(),roof.rise(),roof.material()));
+        }
         props.clear();lamps.clear();stations.clear();floorPaint.clear();
         wallPaint.clear();navBlocked.clear();
         int n=0;
@@ -150,7 +274,12 @@ public final class CastleLevelEdits {
     public synchronized void paintWall(int index,int material){
         if(index<0||index>=CastleHubArchitecturalPlan.walls().size())
             throw new IllegalArgumentException("Invalid wall");
-        checkMaterial(material);wallPaint.put(index,material);revision++;
+        checkMaterial(material);wallPaint.put(index,material);
+        String key="wall"+index;
+        Surface old=surfaces.get(key);
+        if(old!=null)surfaces.put(key,new Surface(old.id(),old.kind(),old.x0(),old.z0(),
+            old.x1(),old.z1(),old.base(),old.height(),material));
+        revision++;
     }
     public synchronized boolean navBlocked(int x,int z){
         return navBlocked.contains(tile(x,z));
@@ -231,6 +360,33 @@ public final class CastleLevelEdits {
             double sx=number(p,"spawn.x"),sz=number(p,"spawn.z"),syaw=number(p,"spawn.yaw");
             if(!Double.isFinite(sx+sz+syaw)||sx<1||sx>42||sz<1||sz>34)
                 throw new IllegalArgumentException("Bad player spawn");
+            // Version-1 user saves have no authored geometry list. Keep their
+            // original architecture and transfer the old wall-paint overrides.
+            Map<String,Surface> parsed=new LinkedHashMap<>();
+            if(p.containsKey("surfaces.count")){
+                int countSurfaces=integer(p,"surfaces.count");
+                if(countSurfaces<0||countSurfaces>512)
+                    throw new IllegalArgumentException("Too many scene surfaces");
+                for(int index=0;index<countSurfaces;index++){
+                    String k="surfaces."+index+".";
+                    var face=new Surface(p.getProperty(k+"id"),
+                        Kind.valueOf(p.getProperty(k+"kind")),
+                        number(p,k+"x0"),number(p,k+"z0"),
+                        number(p,k+"x1"),number(p,k+"z1"),
+                        number(p,k+"base"),number(p,k+"height"),integer(p,k+"material"));
+                    if(parsed.putIfAbsent(face.id(),face)!=null)
+                        throw new IllegalArgumentException("Duplicate surface "+face.id());
+                }
+            }else{
+                parsed.putAll(surfaces);
+                for(var paint:newWalls.entrySet()){
+                    String id="wall"+paint.getKey();
+                    var old=parsed.get(id);
+                    if(old!=null)parsed.put(id,new Surface(id,old.kind(),
+                        old.x0(),old.z0(),old.x1(),old.z1(),old.base(),old.height(),paint.getValue()));
+                }
+            }
+            surfaces.clear();surfaces.putAll(parsed);
             props.clear();props.putAll(incomingProps);lamps.clear();lamps.putAll(incomingLights);
             stations.clear();stations.putAll(newStations);
             floorPaint.clear();floorPaint.putAll(newFloor);wallPaint.clear();wallPaint.putAll(newWalls);
@@ -241,6 +397,16 @@ public final class CastleLevelEdits {
     /** Atomic replacement prevents partial save data if the app is interrupted. */
     public synchronized void save()throws IOException{
         Properties p=new Properties();p.setProperty("format","1");
+        p.setProperty("surfaces.count",""+surfaces.size());
+        int surfaceIndex=0;
+        for(var surface:surfaces.values()){
+            String k="surfaces."+surfaceIndex+++".";
+            p.setProperty(k+"id",surface.id());p.setProperty(k+"kind",surface.kind().name());
+            p.setProperty(k+"x0",""+surface.x0());p.setProperty(k+"z0",""+surface.z0());
+            p.setProperty(k+"x1",""+surface.x1());p.setProperty(k+"z1",""+surface.z1());
+            p.setProperty(k+"base",""+surface.base());p.setProperty(k+"height",""+surface.height());
+            p.setProperty(k+"material",""+surface.material());
+        }
         p.setProperty("props.count",String.valueOf(props.size()));
         int i=0;for(var item:props.values()){
             String k="props."+i+++".";

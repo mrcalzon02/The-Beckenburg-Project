@@ -47,7 +47,7 @@ public final class FixtureLighting {
  static boolean castleRayClear(CastleHubMap map,double ax,double ay,double az,double bx,double by,double bz){
   if(map==null||!Double.isFinite(ax+ay+az+bx+by+bz))return false;
   final double EPS=0.0001;
-  for(var wall:CastleHubArchitecturalPlan.walls()){
+  for(var wall:CastleLevelEdits.current().walls()){
    if(wall.hasDoor())continue; // markers denote OPENINGS, not solid faces
    double da=wall.horizontal()?az-wall.z0():ax-wall.x0();
    double db=wall.horizontal()?bz-wall.z0():bx-wall.x0();
@@ -62,7 +62,7 @@ public final class FixtureLighting {
     return false;
   }
   // Upper decks have solid floors. The staircase is the only designed opening.
-  for(var deck:CastleHubArchitecturalPlan.decks()){
+  for(var deck:CastleLevelEdits.current().decks()){
    double dh=deck.height();
    if((ay-dh)*(by-dh)>=0||Math.abs(by-ay)<EPS)continue;
    double t=(dh-ay)/(by-ay);
@@ -71,6 +71,25 @@ public final class FixtureLighting {
    if(x>deck.x0()+EPS&&x<deck.x1()-EPS
       &&z>deck.z0()+EPS&&z<deck.z1()-EPS
       &&!CastleHubArchitecturalPlan.onStairs(x,z))return false;
+  }
+  // Sloping roof faces cast shadows too. Trace the signed elevation
+  // against each left/right planar roof face, not a fake flat ceiling.
+  for(var roof:CastleLevelEdits.current().roofs()){
+   double dx=bx-ax,dy=by-ay,dz=bz-az;
+   double middle=(roof.west()+roof.east())*.5;
+   for(int side=0;side<2;side++){
+    double slope=(side==0?roof.rise():-roof.rise())/
+        ((roof.east()-roof.west())*.5);
+    double lower=(side==0?roof.west():middle);
+    double roofAtLower=roof.eave()+.12+(side==0?0:roof.rise());
+    double denom=dy-slope*dx;
+    if(Math.abs(denom)<EPS)continue;
+    double t=(roofAtLower+slope*(ax-lower)-ay)/denom;
+    if(t<=EPS||t>=1-EPS)continue;
+    double x=ax+dx*t,z=az+dz*t;
+    if(x>=lower+EPS&&x<=(side==0?middle:roof.east())-EPS
+       &&z>=roof.north()+EPS&&z<=roof.south()-EPS)return false;
+   }
   }
   // Downstairs ceilings and roofs are also opaque to light: the old path
   // missed these planes and illuminated downstairs surfaces from above.
