@@ -128,7 +128,10 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 case MULTIPLAYER -> {actions.network();return;}
                 case SPECTRAL -> {actions.spectral();return;}
             }
-        }catch(java.io.IOException e){notice="Purchase not saved: "+e.getMessage();}
+        }catch(RuntimeException e){
+            BeckenburgDiagnostics.fail("Castle workstation interaction",e);
+            notice="Workstation unavailable: "+e.getMessage();
+        }
         noticeTicks=110;
     }
     @Override public void keyPressed(KeyEvent e){
