@@ -31,6 +31,7 @@ public final class EditorAssets {
     public static void validateUri(String uri){
         if(uri==null||!uri.matches("[a-z][a-z0-9+.-]*://[A-Za-z0-9_./-]+")
             ||uri.contains("..")||uri.indexOf("//",uri.indexOf("://")+3)>=0
+            ||uri.substring(uri.indexOf("://")+3).startsWith("/")
             ||uri.endsWith("/"))throw new IllegalArgumentException("Unsafe asset URI: "+uri);
     }
     public static Provider filesystem(Path root){
