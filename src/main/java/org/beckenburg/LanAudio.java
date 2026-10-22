@@ -87,6 +87,13 @@ public final class LanAudio implements AutoCloseable {
     public void play(LanSound.CueEvent cue){
         if(cue!=null)enqueue(new Playback(cue,null));
     }
+    /** Each authored beat joins the normal bounded, prioritized stereo mixer. */
+    public void playHaunting(GhostHauntingChoreography.SoundFrame frame){
+        if(frame==null)return;
+        var beat=GhostHauntingChoreography.forEvent(frame.id()).beats().get(frame.beat());
+        var cue=new LanSound.CueEvent(beat.cue(),frame.pan(),frame.volume(),frame.tick());
+        enqueue(new Playback(cue,GhostHauntingChoreography.synthesize(frame,effectsVolume())));
+    }
     public void playRecording(FieldSoundRecorder.Clip clip){
         if(clip==null||closed||Boolean.getBoolean("beckenburg.audio.mute"))return;
         byte[] pcm=RecorderAudio.pcm(clip);

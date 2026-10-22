@@ -58,6 +58,9 @@ public final class LanHost implements AutoCloseable {
     private final LanGhostAnimation animation=new LanGhostAnimation();
     private final GhostHauntingFolio hauntingFolio=
         new GhostHauntingFolio(java.util.concurrent.ThreadLocalRandom.current().nextLong());
+    /** The sound source is the actual ghost or independently positioned Twin. */
+    private record HauntTrack(GhostHauntingFolio.Occurrence event,LanGhostSpatial.Pose source){}
+    private final ArrayDeque<HauntTrack> hauntTracks=new ArrayDeque<>();
     private final HunterCounters counters=new HunterCounters();
     private final CustomContract contract;
     private final MissionWeather weather;
@@ -1706,6 +1709,37 @@ public final class LanHost implements AutoCloseable {
             }
         }
     }
+    /** Multi-stage authored sound uses the existing world-space acoustic projector. */
+    private void emitHauntBeat(HauntTrack track,int index){
+        var score=GhostHauntingChoreography.forEvent(track.event().entry().id());
+        if(score==null)return;
+        var beat=score.beats().get(index);
+        var pose=track.source();
+        sensorSound(pose.room(),pose.x(),pose.z(),Math.max(1,beat.cue().baseGain/10));
+        for(int i=0;i<HUNTERS;i++){
+            if((seats[i]==null||!seats[i].worldMode)
+                    &&(reserved[i]==null||!reserved[i].worldMode))continue;
+            var listener=world.body(i);
+            var sound=LanSound.project(map,listener,pose.room(),pose.x(),pose.y(),
+                pose.z(),beat.cue(),tick);
+            sound=LanSound.weatherMask(sound,weather.state(),
+                map.outside(listener.room())||map.outside(pose.room()));
+            if(sound==null)continue;
+            int volume=Math.max(1,sound.volume()*beat.gainPercent()/100);
+            if(seats[i]!=null)reply(seats[i],new GhostHauntingChoreography.SoundFrame(
+                track.event().entry().id(),index,sound.pan(),volume,tick).frame());
+            recorders[i].capture(new LanSound.CueEvent(sound.cue(),sound.pan(),volume,tick),
+                Math.hypot(pose.x()-listener.x(),pose.z()-listener.z()));
+        }
+    }
+    private void advanceHauntTracks(){
+        for(var it=hauntTracks.iterator();it.hasNext();){
+            HauntTrack track=it.next();
+            if(tick>=track.event().untilTick()){it.remove();continue;}
+            int index=GhostHauntingChoreography.dueIndex(track.event(),tick);
+            if(index>0)emitHauntBeat(track,index);
+        }
+    }
     private void distributeEffect(GhostDomain.Resolution result){
         // All live matches maintain six fixed hunter sockets, even in a three-hunter lobby.
         // The effect mask must match hunterRooms; a three-element mask stops the host tick.
@@ -1805,16 +1839,22 @@ public final class LanHost implements AutoCloseable {
             for(int i=0;i<HUNTERS;i++)if(seats[i]!=null&&mission.alive(i)
                     &&map.adjacentRooms(result.room()).contains(hunterRooms[i]))
                 reply(seats[i],"TELL|"+behavior.tell());
-        LanSound.Cue cue=haunt==null?null:haunt.entry().cue();
-        if(cue!=null){
-            if(soundOrigin==null)broadcastGhostSound(cue);
-            else broadcastGhostSound(cue,soundOrigin);
+        var score=haunt==null?null:GhostHauntingChoreography.forEvent(haunt.entry().id());
+        if(score!=null){
+            var track=new HauntTrack(haunt,soundOrigin==null?ghostPose.pose():soundOrigin);
+            hauntTracks.addLast(track);
+            while(hauntTracks.size()>16)hauntTracks.removeFirst();
+            emitHauntBeat(track,0);
+        }else if(haunt!=null){
+            if(soundOrigin==null)broadcastGhostSound(haunt.entry().cue());
+            else broadcastGhostSound(haunt.entry().cue(),soundOrigin);
         }
         // These are explicitly sound-only variants of *real* accepted haunts:
         // no fabricated evidence packets, no fake footsteps, no guessed ghost coordinates.
         if((result.action()==GhostDomain.Action.DISTURB
                 ||result.action()==GhostDomain.Action.MANIFEST
                 ||result.action()==GhostDomain.Action.SIGNATURE)
+                &&score==null
                 &&tick-lastHorrorStingTick>=115
                 &&(result.action()==GhostDomain.Action.SIGNATURE
                     ||Math.floorMod(tick*11+result.room()*7+ghostType.ordinal(),4)==0)){
@@ -2050,6 +2090,7 @@ public final class LanHost implements AutoCloseable {
     private void tickSafely(){if(closed)return; synchronized(mutex){
         if(!running)return;
         try{tick++;
+            advanceHauntTracks();
             if(weather.advance(tick)){
                 mission.updateEvidenceWeather(weather.state().weather(),weather.state().intensity());
                 notifyAllPeers(weather.state().packet());

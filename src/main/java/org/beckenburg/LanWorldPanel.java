@@ -498,6 +498,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                         feedback="PLAY / "+clip.samples().size()+" sounds / "+path.getFileName();
                     }catch(java.io.IOException error){feedback="Recording save error: "+error.getMessage();}
                 }
+            }else if(p.get(0).equals("HAUNTAUDIO")){
+                var stage=GhostHauntingChoreography.decodeSound(frame);
+                var beat=GhostHauntingChoreography.forEvent(stage.id()).beats().get(stage.beat());
+                soundCaption=beat.cue().caption()+" / "+
+                    (stage.pan()< -25?"LEFT":stage.pan()>25?"RIGHT":"AHEAD");
+                soundUntilTick=stage.tick()+20;
+                audio.playHaunting(stage);
             }else if(p.get(0).equals("SOUND")){
                 LanSound.CueEvent cue=LanSound.decode(frame);
                 // Caption is an independent non-audio clue for deaf players/no sound device.
