@@ -15,6 +15,10 @@ public final class BeckenburgDeveloperTrace {
     private static volatile long previousGcCount=-1;
     private static volatile String caseStage="idle";
     private static volatile boolean started;
+    private static volatile long lastFrame=System.nanoTime();
+    private static volatile long lastSnapshot;
+    private static volatile boolean activeCase;
+    private static volatile long frameCount;
     private BeckenburgDeveloperTrace(){}
     public static synchronized void start(){
         if(started)return;
@@ -24,7 +28,8 @@ public final class BeckenburgDeveloperTrace {
         t.setDaemon(true);t.start();
     }
     public static void caseStart(String description){
-        CASE_START.set(System.nanoTime()); caseStage="begin";
+        CASE_START.set(System.nanoTime()); caseStage="begin"; activeCase=true;
+        lastFrame=System.nanoTime();frameCount=0;
         BeckenburgDiagnostics.record("CASE START "+description);
     }
     public static void caseStage(String description){
@@ -32,6 +37,11 @@ public final class BeckenburgDeveloperTrace {
         long elapsed=CASE_START.get()==0?-1:(System.nanoTime()-CASE_START.get())/1_000_000;
         BeckenburgDiagnostics.record("CASE STAGE "+description+" elapsed_ms="+elapsed);
     }
+    public static void frame(long durationNanos){
+        lastFrame=System.nanoTime();frameCount++;
+        if(durationNanos>100_000_000L)BeckenburgDiagnostics.record("FRAME SLOW duration_ms="+durationNanos/1_000_000+" stage="+caseStage);
+    }
+    public static void caseStop(){activeCase=false;caseStage="closed";}
     public static void update(String operation,String detail){
         BeckenburgDiagnostics.record("UPDATE TRACE "+operation+" "+detail);
     }
@@ -60,10 +70,16 @@ public final class BeckenburgDeveloperTrace {
                     " gc_count="+gcCount+" gc_ms="+gcMillis+
                     " gc_delta_count="+(previousCount<0?0:gcCount-previousCount)+
                     " gc_delta_ms="+(previousMillis<0?0:gcMillis-previousMillis)+
-                    " system_load="+os.getSystemLoadAverage());
-                if(CASE_START.get()!=0 && elapsed>15000 && !"first-frame".equals(caseStage)
-                    && !"active".equals(caseStage) && elapsed%10000<2100){
-                    snapshot("case-start-slow-"+caseStage);
+                    " system_load="+os.getSystemLoadAverage()+
+                    " frame_count="+frameCount+" frame_age_ms="+(now-lastFrame)/1_000_000);
+                long frameAge=(now-lastFrame)/1_000_000;
+                if(activeCase && elapsed>10000 && frameAge>5000 && now-lastSnapshot>15_000_000_000L){
+                    lastSnapshot=now;
+                    snapshot("case-frame-stalled-"+caseStage);
+                }
+                if(activeCase && elapsed>10000 && !"active".equals(caseStage) && now-lastSnapshot>15_000_000_000L){
+                    lastSnapshot=now;
+                    snapshot("case-initialization-stalled-"+caseStage);
                 }
                 lastSample=now;
             }catch(Throwable error){BeckenburgDiagnostics.record("PERF collector failed "+error);}
