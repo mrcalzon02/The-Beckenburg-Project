@@ -563,7 +563,7 @@ public final class LanLobbyWindow extends JFrame {
             try{
                 ContractRewards.Settlement settlement=ContractRewards.Settlement.decode(event);
                 if(connection!=null&&!"GHOST".equals(connection.seat())){
-                    ProfileStore wallet=new ProfileStore(ProfileStore.defaultPath());
+                    ProfileStore wallet=new ProfileStore(ProfileStore.multiplayerPath());
                     wallet.load();
                     boolean applied=wallet.addNetworkPayout(settlement.id(),
                         settlement.credits(),settlement.xp());

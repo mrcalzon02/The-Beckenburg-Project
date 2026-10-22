@@ -128,7 +128,8 @@ public final class CampaignBoardPanel extends JPanel {
         contracts.addListSelectionListener(event->{if(!event.getValueIsAdjusting())updateSelection();});
         deploy.addActionListener(event->{
             Entry entry=contracts.getSelectedValue();
-            if(entry!=null&&entry.playable())
+            int stage=contracts.getSelectedIndex();
+            if(entry!=null&&entry.playable()&&profile.chapterUnlocked(stage))
                 actions.deploy(entry.map(),bringAssistant.isSelected()&&profile.assistantHired());
         });
         recruit.addActionListener(event->{
@@ -159,16 +160,27 @@ public final class CampaignBoardPanel extends JPanel {
     }
     private void updateSelection(){
         Entry entry=contracts.getSelectedValue();
-        boolean ready=entry!=null&&entry.playable();
+        int stage=contracts.getSelectedIndex();
+        boolean unlocked=profile.chapterUnlocked(stage);
+        boolean built=entry!=null&&entry.playable();
+        boolean ready=unlocked&&built;
         deploy.setEnabled(ready);
-        if(entry==null){dossier.setText("");status.setText("SELECT A CONTRACT");return;}
+        if(entry==null){dossier.setText("");status.setText("SELECT A CHAPTER");return;}
         String progress=entry.map()==null?"": "\n\nVISITS   "+profile.visits(entry.map())+
             "   /   CLEARED   "+profile.clears(entry.map());
-        dossier.setText(entry.name()+"\n\nREGION   "+entry.region()+
-            progress+"\n\n"+entry.dossier()+
-            "\n\n"+(ready?"Playable investigation. Deployment uses your currently selected discipline and conditions.":
-            "Concept only. This site cannot be deployed until unique geometry, rituals, evidence and navigation pass acceptance."));
+        String gate=!unlocked?"Finish chapter "+profile.storyCheckpoint()+" first.":
+            !built?"Unique level geometry is still in production; no substitute map can launch.":
+            stage<profile.storyCheckpoint()?"Previously completed. Replay for income and equipment.": 
+            "Current story chapter. Victory unlocks the next location.";
+        dossier.setText("CHAPTER "+(stage+1)+" / "+CampaignStory.LENGTH+
+            "\n"+entry.name()+"\nREGION   "+entry.region()+
+            progress+"\n\nLORE MASTER'S BRIEFING\n"+entry.dossier()+
+            "\n\n"+gate+
+            "\n\nNormal multiplayer contracts have their own ghost and inventory.");
         dossier.setCaretPosition(0);
-        status.setText(ready?"AVAILABLE  /  SELECT DEPLOY":"IN PRODUCTION  /  DEPLOYMENT LOCKED");
+        status.setText(ready?(stage<profile.storyCheckpoint()?
+            "REPLAY AVAILABLE / HOST REWARDS":"STORY AVAILABLE / SUCCESS REQUIRED"):
+            unlocked?"LEVEL IN PRODUCTION / CANNOT DEPLOY":
+            "LOCKED / COMPLETE PREVIOUS STORY CHAPTER");
     }
 }

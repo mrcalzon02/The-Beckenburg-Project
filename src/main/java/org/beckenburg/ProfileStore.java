@@ -110,6 +110,10 @@ public final class ProfileStore {
     public int currency() { return currency; }
     public int experience() { return experience; }
     public static Path defaultPath() { return Path.of(System.getProperty("user.home"),".beckenburg","profile.properties"); }
+    /** Ordinary LAN progression is NOT the host's single-player campaign wallet. */
+    public static Path multiplayerPath(){
+        return defaultPath().resolveSibling("multiplayer.properties");
+    }
     public void load() throws IOException {
         if(!Files.exists(file))return;
         Properties p=new Properties();

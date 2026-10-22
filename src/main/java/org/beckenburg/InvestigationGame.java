@@ -450,16 +450,19 @@ public final class InvestigationGame {
         SiteCatalog.requirePlayable(location);
         if(withAssistant&&!profile.assistantHired())throw new IllegalStateException("Assistant not hired");
         try{
-            long seed=profile.nextCampaignSeed(location);
+            int stage=CampaignStory.stageFor(location);
+            CampaignStory.Chapter chapter=profile.dispatchStory(stage);
+            long seed=CampaignStory.missionSeed(profile.storySeed(),stage);
             locationPicker.setSelectedItem(location);
-            begin(true,withAssistant,seed);
+            begin(true,withAssistant,seed,chapter);
         }catch(IOException failed){
             JOptionPane.showMessageDialog(window,"Campaign dispatch could not be saved: "+failed.getMessage(),
                 "Contract unavailable",JOptionPane.ERROR_MESSAGE);
         }
     }
-    private void begin(){begin(false,false,0);}
-    private void begin(boolean campaignMode,boolean withAssistant,long seed){
+    private void begin(){begin(false,false,0,null);}
+    private void begin(boolean campaignMode,boolean withAssistant,long seed,
+            CampaignStory.Chapter chapter){
         if(game!=null){game.close();cards.remove(game);game=null;}
         if(ghostPractice!=null){ghostPractice.close();cards.remove(ghostPractice);ghostPractice=null;}
         caseNumber++;
@@ -469,7 +472,8 @@ public final class InvestigationGame {
             location,(SiteCatalog.Conditions)conditionsPicker.getSelectedItem(),
             (MissionWeather.Mode)weatherModePicker.getSelectedItem(),
             (EvidenceSignals.Weather)weatherPicker.getSelectedItem(),
-            (Integer)weatherSeverityPicker.getSelectedItem(),campaignMode,withAssistant,seed);
+            (Integer)weatherSeverityPicker.getSelectedItem(),campaignMode,withAssistant,seed,
+            chapter);
         cards.add(game,"play");((CardLayout)cards.getLayout()).show(cards,"play");
         SwingUtilities.invokeLater(game::requestFocusInWindow);
     }
@@ -494,7 +498,11 @@ public final class InvestigationGame {
         private final RoomLighting lights=new RoomLighting();
         private final InvestigationSession session;
         private final boolean campaignMode;
+        private final CampaignStory.Chapter chapter;
         private final CampaignAlly assistant;
+        private String chapterNarration="";
+        private int chapterNarrationUntil;
+        private boolean narratedArrival,narratedSurvey,narratedEscalation;
         private final FieldTeamChat teamChat=new FieldTeamChat();
         private final JTextField chatInput=new JTextField();
         private LanChat.Channel chatChannel=LanChat.Channel.LOCAL;
@@ -525,9 +533,13 @@ public final class InvestigationGame {
         GamePanel(InvestigationSession.Role role,int ordinal,SiteCatalog.Location site,
                 SiteCatalog.Conditions mode,MissionWeather.Mode weatherMode,
                 EvidenceSignals.Weather selectedWeather,int severity,
-                boolean campaignMode,boolean withAssistant,long campaignSeed){
+                boolean campaignMode,boolean withAssistant,long campaignSeed,
+                CampaignStory.Chapter chapter){
             SiteCatalog.requirePlayable(site);
+            if(campaignMode!=(chapter!=null))
+                throw new IllegalArgumentException("Campaign assignment required only for story");
             this.campaignMode=campaignMode;
+            this.chapter=chapter;
             map=new HouseMap(SiteCatalog.mapFor(site));
             buildingSoundscape=new LevelSoundscape(map);
             callouts=new TeamCallout.Board(map);
@@ -558,8 +570,10 @@ public final class InvestigationGame {
             addKeyListener(this);addMouseMotionListener(mouseLook);addMouseListener(mouseLook);
             addFocusListener(mouseLook);addFocusListener(this);
             // Reproducible case seed, varies by session, no silent random site conversion.
-            session=new InvestigationSession(map,role,
-                campaignMode?campaignSeed:20261015L+ordinal,profile.level(role));
+            long roundSeed=campaignMode?campaignSeed:20261015L+ordinal;
+            GhostIdentity.Type assigned=campaignMode?chapter.ghost():
+                CampaignStory.rollFreePlay(roundSeed);
+            session=new InvestigationSession(map,role,roundSeed,profile.level(role),assigned);
             session.configureWeather(weatherMode,selectedWeather,severity);
             assistant=campaignMode&&withAssistant?new CampaignAlly(map,session):null;
             session.connectLighting(lights);
@@ -717,6 +731,7 @@ public final class InvestigationGame {
             while(accumulator>=.1){
                 session.clutterLook(scene.yaw,scene.pitch);
                 session.tick(scene.x,feetY(),scene.z,scene.lamp);
+                if(campaignMode)advanceChapterStory();
                 var listener=new LanWorld.Body(scene.x,feetY(),scene.z,
                     Math.floorMod((int)Math.round(Math.toDegrees(scene.yaw)),360),
                     currentRoom());
@@ -765,14 +780,17 @@ public final class InvestigationGame {
                 "\nMEASURED INSTRUMENTS  "+session.evidenceCount()+
                 "\nCASE DURATION  "+(session.ticks()/600)+"m "+(session.ticks()/10%60)+"s";
             try{
-                boolean recorded=profile.addPayout(session,campaignMode?location:null);
+                boolean recorded=campaignMode?profile.settleStory(session,chapter.ordinal()):
+                    profile.addPayout(session);
                 if(recorded){
                     claimSaved=true;
                     result+="\n\nCASTLE FUNDS  £"+previousCredits+" -> £"+profile.currency()+
                         "\n"+session.role()+"  LEVEL "+previousLevel+" -> "+
                         profile.level(session.role())+
                         "\nCLASS XP  "+previousXp+" -> "+profile.disciplineExperience(session.role())+
-                        (campaignMode?"\nCASE FILED IN CASTLE ARCHIVES":"");
+                        (campaignMode?"\nCASE FILED IN CASTLE ARCHIVES"+
+                            "\nCAMPAIGN CHAPTERS COMPLETE  "+profile.storyCheckpoint()+
+                            " / "+CampaignStory.LENGTH:"");
                 }else{
                     claimSaved=true;result+="\nAlready settled (duplicate payout refused).";
                 }
@@ -944,6 +962,45 @@ public final class InvestigationGame {
             }catch(IllegalArgumentException|IOException ex){showVanNotice(ex.getMessage());}
         }
         private void showVanNotice(String text){vanNotice=text;vanNoticeExpires=session.ticks()+85;}
+        private void chapterLine(String words){
+            chapterNarration="LORE MASTER  /  "+words;
+            chapterNarrationUntil=session.ticks()+115;
+        }
+        private void advanceChapterStory(){
+            if(!narratedArrival){
+                narratedArrival=true;
+                chapterLine(chapter.arrival());
+            }else if(!narratedSurvey&&session.ticks()>115&&
+                    currentRoom()>=0&&currentRoom()<HouseMap.INDOOR_ROOMS){
+                narratedSurvey=true;
+                chapterLine(chapter.firstSurvey());
+            }else if(narratedSurvey&&!narratedEscalation&&session.ticks()>390){
+                narratedEscalation=true;
+                chapterLine(chapter.escalation());
+            }
+        }
+        private void drawChapterNarration(Graphics2D g,int width,int height){
+            if(!campaignMode||chapterNarrationUntil<=session.ticks())return;
+            int boxW=Math.min(width-26,690);
+            int x=(width-boxW)/2,y=Math.max(126,Math.min(height-135,210));
+            g.setColor(new Color(12,19,27,235));
+            g.fillRoundRect(x,y,boxW,62,8,8);
+            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,12));
+            g.setColor(new Color(227,206,159));
+            String words=chapterNarration;
+            int split=Math.min(words.length(),Math.max(24,(boxW-24)/8));
+            if(split<words.length()){
+                int space=words.lastIndexOf(' ',split);
+                if(space>16)split=space;
+            }
+            g.drawString(words.substring(0,split),x+11,y+25);
+            if(split<words.length()){
+                String tail=words.substring(split).strip();
+                int limit=Math.max(12,(boxW-36)/8);
+                if(tail.length()>limit)tail=tail.substring(0,limit-3)+"...";
+                g.drawString(tail,x+11,y+44);
+            }
+        }
         private void useVan(VanStaging.Station station){
             switch(station){
                 case BRIEFING -> {
@@ -1027,6 +1084,7 @@ public final class InvestigationGame {
                     g.drawString(observed.substring(0,Math.min(88,observed.length())),23,190);
                 }
                 drawTeamChat(g,width,stageH);
+                drawChapterNarration(g,width,stageH);
                 if(lastPing!=null && callouts.visible(session.ticks()).contains(lastPing)){
                     g.setColor(new Color(238,196,109));
                     g.drawString("CALLOUT: "+lastPing.phrase().spoken+" ["+map.roomName(lastPing.zone())+"]",23,139);

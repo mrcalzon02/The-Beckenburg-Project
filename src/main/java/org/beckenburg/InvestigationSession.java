@@ -86,12 +86,18 @@ public final class InvestigationSession {
         this(map,role,seed,1);
     }
     public InvestigationSession(HouseMap map, Role role, long seed,int level) {
+        this(map,role,seed,level,GhostIdentity.Type.SPIRIT);
+    }
+    /** Campaign injection is host-owned: never render the chosen archetype in deduction UI. */
+    public InvestigationSession(HouseMap map,Role role,long seed,int level,
+            GhostIdentity.Type assignedGhost) {
+        java.util.Objects.requireNonNull(assignedGhost);
         hunterLevel=level;
         maxHealth=HunterProgression.maxHealth(level);
         health=maxHealth;
         this.map=map; this.role=role; this.random=new Random(seed);
         evidenceSeed=seed;
-        thermalPolarity=GhostEvidenceProfile.thermal(GhostIdentity.Type.SPIRIT);
+        thermalPolarity=GhostEvidenceProfile.thermal(assignedGhost);
         int month=java.time.LocalDate.now().getMonthValue();
         season=switch(month){
             case 12,1,2->EvidenceSignals.Season.WINTER;
@@ -104,7 +110,7 @@ public final class InvestigationSession {
         java.util.Arrays.fill(spectralTrace,-100000);
         this.wards=(role==Role.CLERIC?3:2)+HunterProgression.extraWards(level);
         this.anchorRoom=random.nextInt(map.interiorRoomCount());
-        this.ghost=new GhostDomain(map,anchorRoom);
+        this.ghost=new GhostDomain(map,anchorRoom,assignedGhost);
         this.ghostAi=new GhostDomain.AiController(seed ^ 0x4245434b454eL);
         journal.add("Case 001 / All valid instrument measurements are recorded; interpret the evidence yourself.");
         journal.add("All classes can finish the contract; specialist actions change efficiency.");

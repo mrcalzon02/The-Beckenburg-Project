@@ -65,6 +65,9 @@ public final class CampaignBoardPanelTest {
             recruit.doClick();
             ok(profile.assistantHired()&&assistant.isEnabled()&&assistant.isSelected(),
                 "Recruit transaction must enable the actual AI slot");
+            list.setSelectedIndex(1);
+            ok(!deploy.isEnabled(),
+                "Built School is still locked until House has been successfully cleared");
             list.setSelectedIndex(9);ok(!deploy.isEnabled(),"Blackpine planned, no deploy");
             deploy.doClick();ok(launches.get()==0,"disabled dispatch blocked");
             list.setSelectedIndex(0);ok(deploy.isEnabled(),"house can deploy");
