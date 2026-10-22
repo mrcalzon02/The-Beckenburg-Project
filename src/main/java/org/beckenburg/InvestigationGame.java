@@ -575,6 +575,7 @@ public final class InvestigationGame {
                 CampaignStory.rollFreePlay(roundSeed);
             session=new InvestigationSession(map,role,roundSeed,profile.level(role),assigned);
             session.configureWeather(weatherMode,selectedWeather,severity);
+            session.configureParty(campaignMode&&withAssistant?2:1);
             assistant=campaignMode&&withAssistant?new CampaignAlly(map,session):null;
             session.connectLighting(lights);
             scene.setWeather(session.weather());

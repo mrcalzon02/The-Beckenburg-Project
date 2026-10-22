@@ -46,6 +46,16 @@ public final class InvestigationSession {
     public MissionWeather.State weather(){return missionWeather.state();}
     private int lastEvidenceTick=-10000,lastEvidenceRoom=-1,lastEvidenceStrength;
     private final GhostDomain ghost;
+    private int partySize=1;
+    /** Each deployed AI or human Hunter changes actual supernatural threat
+     * and raises the host's earnings; all career ownership stays with the host.
+     */
+    public void configureParty(int members){
+        if(ticks>0)throw new IllegalStateException("Party is fixed before deployment");
+        partySize=CampaignPartyRules.requireSize(members);
+        ghost.configureRecovery(CampaignPartyRules.recoveryRate(members));
+    }
+    public int partySize(){return partySize;}
     private double clutterYaw,clutterPitch;
     public void clutterLook(double yaw,double pitch){clutterYaw=yaw;clutterPitch=pitch;}
     public void clutterAction(String action,int id,double x,double y,double z){
@@ -268,7 +278,8 @@ public final class InvestigationSession {
                     };
                     if(effect!=null)roomLights.pulse(result.room(),effect,ticks);
                 }
-                if(result.fear()>0) stress=Math.min(100,stress+result.fear());
+                if(result.fear()>0)
+                    stress=Math.min(100,stress+result.fear()+partySize-1);
                 // Only present events a hunter could plausibly hear in their current room.
                 if(playerRoom==result.room() && result.action()==GhostDomain.Action.WHISPER)
                     log("An indistinct whisper moves through "+map.roomName(playerRoom)+".");
@@ -276,7 +287,9 @@ public final class InvestigationSession {
                     log("Loose objects shudder in "+map.roomName(playerRoom)+".");
                 map.clutter().haunt(ghost.type(),result,List.of(clutterObserver),ticks);
                 if(result.harm()>0&&!hidden) {
-                    int wound=prepared?Math.min(result.harm(),4):role==Role.CLERIC?Math.min(result.harm(),8):result.harm();
+                    int wound=prepared?Math.min(result.harm(),4):
+                        (role==Role.CLERIC?Math.min(result.harm(),8):result.harm())
+                        +CampaignPartyRules.additionalHarm(partySize);
                     health=Math.max(0,health-wound);
                     log("A spectral strike! -"+wound+" health. Retreat, or use protective wards.");
                     if(health==0) finish(Outcome.LOST);
@@ -443,6 +456,7 @@ public final class InvestigationSession {
     private void finish(Outcome result) {
         if(rewarded)return;
         outcome=result;rewarded=true;
-        payouts=switch(result){case CLEANSED->220 + measuredTools.size()*40 + health/2 + (apparitionPhotographed?45:0);case RETREATED->measuredTools.size()*30 + (apparitionPhotographed?25:0);case LOST->0;case ACTIVE->0;};
+        int base=switch(result){case CLEANSED->220 + measuredTools.size()*40 + health/2 + (apparitionPhotographed?45:0);case RETREATED->measuredTools.size()*30 + (apparitionPhotographed?25:0);case LOST->0;case ACTIVE->0;};
+        payouts=CampaignPartyRules.hostCredits(base,partySize);
     }
 }
