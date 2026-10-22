@@ -23,7 +23,7 @@ public final class LanRiteNetworkTest {
    }
    throw new AssertionError("timed out on "+prefix+" for "+client.seat());
   }
-  void move(int room)throws Exception{client.move(room);until("ACCEPT|MOVE|"+room);}
+  void move(int room)throws Exception{LanTestRoomTravel.move(client,this::until,room);}
   public void close(){client.close();}
  }
  public static void main(String[] args)throws Exception {
