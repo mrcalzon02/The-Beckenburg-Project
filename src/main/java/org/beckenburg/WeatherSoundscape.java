@@ -135,7 +135,7 @@ public final class WeatherSoundscape implements AutoCloseable {
             int count=raw.length/2;
             short[] source=new short[count];
             for(int i=0;i<count;i++)source[i]=(short)((raw[i*2]&255)|(raw[i*2+1]<<8));
-            int length=Math.max(1,(int)Math.round(count*RATE/format.getSampleRate()));
+            int length=Math.max(1,(int)Math.round(count*(double)RATE/format.getSampleRate()));
             short[] result=new short[length];
             for(int i=0;i<length;i++){
                 double at=i*format.getSampleRate()/RATE;
