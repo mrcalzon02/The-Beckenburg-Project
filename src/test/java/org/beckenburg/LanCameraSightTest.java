@@ -45,12 +45,21 @@ public final class LanCameraSightTest {
         String hidden=LanCameraSight.frame(camera,"a",ghost,false,
             GhostIdentity.Type.SHADE,22);
         check(visible.startsWith("CAMGHOST|0|a|VISIBLE|")
-            &&visible.endsWith("|shade|21"),"Camera-only figure has own correct identity");
+            &&visible.endsWith("|unrevealed_ghost|21"),
+            "Ordinary camera sighting must use generic ghost art");
+        String revealed=LanCameraSight.frame(camera,"a",ghost,true,
+            GhostIdentity.Type.SHADE,21,true);
+        check(revealed.endsWith("|shade|21"),"Signature reveals the real Shade artwork");
         check(hidden.equals("CAMGHOST|0|a|HIDDEN|22"),"Hidden camera feed must not reveal ghost position or identity");
         String pair=LanCameraSight.frame(camera,"b",ghost,true,
             GhostIdentity.Type.ANCIENT_TWINS,23);
-        check(pair.endsWith("|ancient_twins_b|23")&&pair.contains("|GREEN|"),
-            "Ancient Twin member B has private, correct distinct camera art");
+        check(pair.endsWith("|unrevealed_ghost|23")&&pair.contains("|BASE|"),
+            "Ancient Twin member B must remain indistinct before signature");
+        String unveiled=LanCameraSight.frame(camera,"b",ghost,true,
+            GhostIdentity.Type.ANCIENT_TWINS,23,true);
+        check(unveiled.endsWith("|ancient_twins_b|23")
+            &&unveiled.contains("|GREEN|"),
+            "Ancient Twin B appears in its distinct artwork during signature");
         System.out.println("PASS: independent camera optics, facing, concealment and species-correct Twin projection");
     }
 }
