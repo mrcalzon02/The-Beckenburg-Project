@@ -84,21 +84,38 @@ public final class CastleLevelEdits {
         }
     }
     private final Map<String,Surface> surfaces=new LinkedHashMap<>();
+    private long geometryCacheVersion=-1;
+    private List<CastleHubArchitecturalPlan.Wall> cachedWalls=List.of();
+    private List<CastleHubArchitecturalPlan.Deck> cachedDecks=List.of();
+    private List<CastleHubArchitecturalPlan.Roof> cachedRoofs=List.of();
     public synchronized List<Surface> surfaces(){return List.copyOf(surfaces.values());}
+    /** Cached immutable collision/shadow primitives: per-pixel light rays must
+     * never rebuild or allocate entire geometry lists while rendering. */
+    private void ensureGeometryCache(){
+        if(geometryCacheVersion==revision)return;
+        List<CastleHubArchitecturalPlan.Wall> wallList=new ArrayList<>();
+        List<CastleHubArchitecturalPlan.Deck> deckList=new ArrayList<>();
+        List<CastleHubArchitecturalPlan.Roof> roofList=new ArrayList<>();
+        for(var surface:surfaces.values())switch(surface.kind()){
+            case WALL -> wallList.add(surface.wall());
+            case FLOOR -> deckList.add(surface.deck());
+            case ROOF -> roofList.add(surface.roof());
+        }
+        for(var marker:CastleHubArchitecturalPlan.walls())
+            if(marker.hasDoor())wallList.add(marker);
+        cachedWalls=List.copyOf(wallList);
+        cachedDecks=List.copyOf(deckList);
+        cachedRoofs=List.copyOf(roofList);
+        geometryCacheVersion=revision;
+    }
     public synchronized List<CastleHubArchitecturalPlan.Wall> walls(){
-        List<CastleHubArchitecturalPlan.Wall> out=new ArrayList<>();
-        for(var surface:surfaces.values())if(surface.kind()==Kind.WALL)out.add(surface.wall());
-        // Existing portal markers preserve the authored doorway trim.
-        for(var wall:CastleHubArchitecturalPlan.walls())if(wall.hasDoor())out.add(wall);
-        return List.copyOf(out);
+        ensureGeometryCache();return cachedWalls;
     }
     public synchronized List<CastleHubArchitecturalPlan.Deck> decks(){
-        return surfaces.values().stream().filter(v->v.kind()==Kind.FLOOR)
-            .map(Surface::deck).toList();
+        ensureGeometryCache();return cachedDecks;
     }
     public synchronized List<CastleHubArchitecturalPlan.Roof> roofs(){
-        return surfaces.values().stream().filter(v->v.kind()==Kind.ROOF)
-            .map(Surface::roof).toList();
+        ensureGeometryCache();return cachedRoofs;
     }
     public synchronized void put(Surface surface){
         Objects.requireNonNull(surface);
