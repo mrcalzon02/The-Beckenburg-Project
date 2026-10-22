@@ -218,6 +218,9 @@ public final class LanClient implements AutoCloseable {
     public synchronized void placeBook()throws IOException {send("PLACEBOOK|"+(++sequence));}
     public synchronized void readBook()throws IOException {send("READBOOK|"+(++sequence));}
     public synchronized void takeBook()throws IOException {send("TAKEBOOK|"+(++sequence));}
+    public synchronized void skill(HunterDiscipline.Ability ability)throws IOException {
+        Objects.requireNonNull(ability);send("SKILL|"+ability+"|"+(++sequence));
+    }
     public synchronized void ward()throws IOException {send("WARD|"+(++sequence));}
     public synchronized void cleanse()throws IOException {send("CLEANSE|"+(++sequence));}
     public synchronized void extract()throws IOException {send("EXTRACT|"+(++sequence));}
