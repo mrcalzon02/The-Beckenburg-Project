@@ -36,7 +36,8 @@ public final class EquipmentStoreDescriptionsTest {
             if(FieldEquipment.functional(gear.id()))working++;
         }
         ok(ids.size()==42&&stages==126,"all forty-two devices and 126 stages documented");
-        ok(working==14,"the 28 unimplemented items remain labelled not purchasable");
+        ok(working==FieldEquipment.workingTools().size()&&working>=31,
+            "Shop availability must reflect every actually implemented field instrument");
         ok(EquipmentStoreDescriptions.describe("SOUND_RECORDER",EquipmentTiers.Tier.III)
             .effect().contains("32s clips"),"recorder shop copy uses actual recording duration");
 
@@ -74,8 +75,8 @@ public final class EquipmentStoreDescriptionsTest {
         ok(EquipmentStoreDescriptions.describe("FIRELIGHT",EquipmentTiers.Tier.III)
             .effect().contains("270 seconds"),
             "firelight copy reflects genuine tiered burn duration");
-        ok(!EquipmentStoreDescriptions.describe("RESONANCE_TUNER",EquipmentTiers.Tier.III)
-            .currentlyPlayable(),"planned sensor is explicitly not in live shop");
+        ok(EquipmentStoreDescriptions.describe("RESONANCE_TUNER",EquipmentTiers.Tier.III)
+            .currentlyPlayable(),"implemented resonance sensor is purchasable");
         System.out.println("PASS: store names, live prices, 42x3 tier facts, optics, batteries, hover copy, no invented capabilities");
     }
 }

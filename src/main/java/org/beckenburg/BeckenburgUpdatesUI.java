@@ -120,7 +120,7 @@ public final class BeckenburgUpdatesUI {
                     status.setText("Windows installer requires Windows.");return;
                 }
                 int consent=JOptionPane.showConfirmDialog(this,
-                    "Run the verified Beckenburg "+offered.version()+" installer and close the game?",
+                    "Run the verified Beckenburg "+offered.version()+" installer? The game will close before installation.",
                     "Install Beckenburg update",JOptionPane.YES_NO_OPTION);
                 if(consent!=JOptionPane.YES_OPTION)return;
                 try{
@@ -147,7 +147,7 @@ public final class BeckenburgUpdatesUI {
                         " path="+verified.getFileName());
                     SwingUtilities.invokeLater(()->{
                         if(!isDisplayable())return;
-                        staged=verified;state(false);action.setText("Install and restart");
+                        staged=verified;state(false);action.setText("Run installer and exit");
                         status.setText("SHA-256 verified. Installation requires another click.");
                     });
                 }catch(Exception failure){

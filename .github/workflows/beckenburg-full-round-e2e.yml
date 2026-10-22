@@ -25,7 +25,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: beckenburg-full-round-e2e
+  group: beckenburg-full-round-e2e-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -64,6 +64,10 @@ jobs:
         shell: cmd
         working-directory: .
         run: build.cmd e2e
+
+      - name: Execute complete release regression manifest after multiplayer acceptance
+        shell: cmd
+        run: java -Djava.awt.headless=true -ea -cp build\classes org.beckenburg.BeckenburgRegressionSuite
 
       - name: Launch packaged JAR, verify splash to live menu to multiplayer UI
         shell: pwsh
