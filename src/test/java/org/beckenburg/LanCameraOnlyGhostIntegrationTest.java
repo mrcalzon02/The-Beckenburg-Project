@@ -69,7 +69,9 @@ public final class LanCameraOnlyGhostIntegrationTest {
                 // The actual remote camera now stays at the station. The viewing
                 // investigator returns to the van; a second Hunter stays onsite.
                 synchronized(mutex){AuthoredTestSupport.place(map,world,0,vanPosition);}
-                for(int room:new int[]{11,8,5,4}){
+                // Follow the current authored level graph; 14 -> 11 is NOT
+                // a legal immediate move in the house layout.
+                for(int room:AuthoredLevelNetworkTest.path(map,HouseMap.EXTRACTION_ROOM,4)){
                     field.client.move(room);
                     field.await("ACCEPT|MOVE|"+room,8);
                 }
