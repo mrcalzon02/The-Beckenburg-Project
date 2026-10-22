@@ -23,6 +23,7 @@ import java.util.Set;
  * The selected object inspector writes live transforms into CastleLevelEdits.
  */
 public final class DeveloperLevelEditor extends JPanel {
+    private final CastleLevelEdits data=CastleLevelEdits.current();
     private EditorTool tool=EditorTool.SELECT;
     private final java.util.EnumMap<EditorTool,JToggleButton> palette=new java.util.EnumMap<>(EditorTool.class);
     private final CastleEditorProject project=new CastleEditorProject(data);
@@ -36,7 +37,6 @@ public final class DeveloperLevelEditor extends JPanel {
     private record Row(String kind,String id,String description){
         @Override public String toString(){return description;}
     }
-    private final CastleLevelEdits data=CastleLevelEdits.current();
     private final CastleHubMap map=new CastleHubMap();
     private final SceneRenderer renderer=new SceneRenderer();
     private final JPanel viewport=new JPanel(){
@@ -183,9 +183,9 @@ public final class DeveloperLevelEditor extends JPanel {
         });
         JButton ground=button("GROUND");
         ground.addActionListener(e->{
-            double[] spawn=data.spawn();
-            renderer.x=spawn[0];renderer.z=spawn[1];renderer.eyeHeight=1.62;
-            renderer.yaw=spawn[2];renderer.pitch=-.12;
+            double[] start=data.spawn();
+            renderer.x=start[0];renderer.z=start[1];renderer.eyeHeight=1.62;
+            renderer.yaw=start[2];renderer.pitch=-.12;
             workPlane.setValue(0.);viewport.requestFocusInWindow();
         });
         JButton upper=button("UPPER");

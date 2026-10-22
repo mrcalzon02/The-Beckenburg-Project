@@ -8,6 +8,7 @@ if not exist build\classes mkdir build\classes
 if not exist build\test mkdir build\test
 > build\sources-main.txt (
   for %%F in (src\main\java\org\beckenburg\*.java) do @echo "src/main/java/org/beckenburg/%%~nxF"
+  for %%F in (src\main\java\org\beckenburg\editor\*.java) do @echo "src/main/java/org/beckenburg/editor/%%~nxF"
   for %%F in (src\main\java\dev\mrcalzon\weather\*.java) do @echo "src/main/java/dev/mrcalzon/weather/%%~nxF"
 )
 > build\sources-tests.txt (
