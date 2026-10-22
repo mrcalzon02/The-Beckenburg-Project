@@ -28,11 +28,15 @@ public final class BeckenburgUpdatesUI {
     public static void checkOnStartup(JFrame parent){
         if(GraphicsEnvironment.isHeadless()||!PREFS.getBoolean("check_updates",true))return;
         long now=System.currentTimeMillis();
-        if(now-PREFS.getLong("last_update_check",0L)<DAY)return;
+        if(now-PREFS.getLong("last_update_check",0L)<DAY){
+            BeckenburgDeveloperTrace.update("auto-skip","daily throttle active");return;
+        }
         PREFS.putLong("last_update_check",now);
+        BeckenburgDeveloperTrace.update("auto-start","installed="+BeckenburgUpdates.installedVersion());
         Thread worker=new Thread(()->{
             try{
                 var release=BeckenburgUpdates.check(BeckenburgUpdates.installedVersion());
+                BeckenburgDeveloperTrace.update("auto-result",release==null?"up-to-date":"available="+release.version());
                 if(release!=null){
                     BeckenburgDiagnostics.record("UPDATES found "+release.version()+" from "+release.tag());
                     SwingUtilities.invokeLater(()->{
@@ -92,13 +96,15 @@ public final class BeckenburgUpdatesUI {
             busy=working;check.setEnabled(!working);action.setEnabled(!working&&offered!=null);
         }
         private void check(){
-            if(busy)return;
+            if(busy){BeckenburgDeveloperTrace.update("manual-skip","check already running");return;}
+            BeckenburgDeveloperTrace.update("manual-start","installed="+BeckenburgUpdates.installedVersion());
             state(true);status.setText("Checking Beckenburg releases…");
             progress.setValue(0);
             Thread worker=new Thread(()->{
                 try{
                     BeckenburgDiagnostics.record("UPDATES manual check requested");
                     var newest=BeckenburgUpdates.check(BeckenburgUpdates.installedVersion());
+                    BeckenburgDeveloperTrace.update("manual-result",newest==null?"up-to-date":"available="+newest.version());
                     SwingUtilities.invokeLater(()->{
                         if(!isDisplayable())return;
                         apply(newest);if(newest==null)status.setText("No newer stable Beckenburg release.");
@@ -126,6 +132,7 @@ public final class BeckenburgUpdatesUI {
                 try{
                     BeckenburgDiagnostics.record("UPDATES handoff to SHA-256 verified installer "+offered.tag()
                         +" file="+staged.getFileName()+" (user confirmed)");
+                    BeckenburgDeveloperTrace.update("installer-handoff-start","tag="+offered.tag());
                     new ProcessBuilder(staged.toAbsolutePath().toString()).start();
                     dispose(); // Installer runs separately after app process exits.
                     System.exit(0);
@@ -139,10 +146,12 @@ public final class BeckenburgUpdatesUI {
             state(true);status.setText("Downloading and verifying installer…");
             Thread worker=new Thread(()->{
                 try{
+                    BeckenburgDeveloperTrace.update("download-start","tag="+chosen.tag()+" size="+chosen.size());
                     BeckenburgDiagnostics.record("UPDATES downloading "+chosen.tag()+
                         " expected SHA-256 "+chosen.digest());
                     Path verified=BeckenburgUpdates.stage(chosen,BeckenburgUpdates.updateDirectory(),
                         percent->SwingUtilities.invokeLater(()->progress.setValue(percent)));
+                    BeckenburgDeveloperTrace.update("download-verified","tag="+chosen.tag()+" sha256-ok");
                     BeckenburgDiagnostics.record("UPDATES verified installer "+chosen.tag()+
                         " path="+verified.getFileName());
                     SwingUtilities.invokeLater(()->{
