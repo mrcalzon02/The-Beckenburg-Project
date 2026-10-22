@@ -91,7 +91,12 @@ rem Verify authored multi-storey levels before the historical release suite.
 for %%T in (AuthoredLevelPhysicsTest AuthoredLevelReachabilityTest AuthoredLevelStateTest AuthoredLevelNetworkTest AuthoredLevelRitualCaseTest AuthoredUtilitiesTest SoloElevationTest EquipmentAssetAssignmentsTest LevelRenderAcceptanceTest WorldViewHandednessTest LevelSurfaceIntegrityTest LivedLevelDressingTest LooseClutterTest LooseClutterNetworkTest HauntedFixturesTest VanHumanScaleTest VanRackStockTest VanRackNetworkTest InteractionFocusTest InteractionNetworkTest HeldDeviceReadoutTest FixtureSoundscapeTest DomesticFitoutTest LevelEnclosureTest PhysicalLightingTest SurroundingClearanceTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
 rem Both release and E2E verify the same freshly assembled jar payload.
 jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather || exit /b 1
+if /I "%~1"=="package" goto packaged
 if /I "%~1"=="e2e" goto e2e
+rem Package mode builds the complete jar without asserting test acceptance.
+rem Normal build mode still runs the complete regression manifest.
+:packaged
+if /I "%~1"=="package" exit /b 0
 rem Release mode never skips any tests in regression-tests.txt.
 java -Djava.awt.headless=true -ea -cp build\classes org.beckenburg.BeckenburgRegressionSuite || exit /b 1
 echo Built build\beckenburg-game.jar
