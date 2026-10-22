@@ -54,7 +54,7 @@ public final class GlbProps {
     static int imageRow(double v,int height,boolean gltfTopLeft){
         if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
         double fractional=v-Math.floor(v);
-        return Math.min(height-1,(int)((gltfTopLeft?fraction:1.0-fraction)*height));
+        return Math.min(height-1,(int)((gltfTopLeft?fractional:1.0-fractional)*height));
     }
     private static final List<double[]> diffuseFactors=new ArrayList<>();
     private static final Map<String,Integer> televisionMaterials=new HashMap<>();
