@@ -1624,6 +1624,47 @@ public final class SceneRenderer {
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,double clock,List<RemoteBody> others,Apparition apparition){
         render(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,clock,others,apparition,List.of());
     }
+    /** Arena-only sanctuary presentation; normal investigations never enable it. */
+    private boolean spiritualWarVanSanctuary;
+    public void setSpiritualWarVanSanctuary(boolean active) {
+        spiritualWarVanSanctuary = active;
+    }
+    /**
+     * Animated world-space blue motes outlining the van's protected footprint.
+     * The wall has no physical collision and never replaces host-side protection.
+     */
+    private void renderVanSanctuary(HouseMap map, double clock) {
+        if (!spiritualWarVanSanctuary) return;
+        VanStaging van = map.van();
+        double halfWidth = VanStaging.HALF_WIDTH + 0.55;
+        double front = VanStaging.FRONT - 0.65;
+        double rear = VanStaging.REAR + VanStaging.CAB_LENGTH + 0.55;
+        double perimeter = 4 * halfWidth + 2 * (rear - front);
+        for (int i = 0; i < 240; i++) {
+            double distance = i * perimeter / 240;
+            double lx, lz;
+            if (distance < 2 * halfWidth) {
+                lx = -halfWidth + distance; lz = front;
+            } else if ((distance -= 2 * halfWidth) < rear - front) {
+                lx = halfWidth; lz = front + distance;
+            } else if ((distance -= rear - front) < 2 * halfWidth) {
+                lx = halfWidth - distance; lz = rear;
+            } else {
+                distance -= 2 * halfWidth; lx = -halfWidth; lz = rear - distance;
+            }
+            double phase = clock * 1.6 + i * 0.61803398875;
+            double height = 0.14 + 2.85 * ((phase / 3.0) - Math.floor(phase / 3.0));
+            double shimmer = Math.sin(clock * 4 + i * 2.13) * 0.04;
+            var p = van.world(lx + shimmer, lz);
+            double size = 0.025 + (i % 5) * 0.005;
+            int blue = (i % 3 == 0) ? 0x37b9ff : (i % 3 == 1 ? 0x237ff0 : 0x70dcff);
+            Face mote = new Face(new Point(p.x() - size, height, p.z()),
+                new Point(p.x() + size, height, p.z()),
+                new Point(p.x(), height + size * 2.2, p.z()),
+                blue, -1, 0, 0, 1, 0, .5, 1);
+            drawLitFace(mote, HouseMap.EXTRACTION_ROOM, 0);
+        }
+    }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
         paintSky(map,clock);
@@ -1633,6 +1674,7 @@ public final class SceneRenderer {
             int room=face.room>=0?face.room:map.roomAt((face.a.x+face.b.x+face.c.x)/3,(face.a.y+face.b.y+face.c.y)/3,(face.a.z+face.b.z+face.c.z)/3);
             drawLitFace(face,room,0);
         }
+        renderVanSanctuary(map,clock);
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
         renderWeatherMeshes();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
