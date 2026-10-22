@@ -146,6 +146,16 @@ public final class CastleHubArchitecturalPlan {
         if(!onStairs(x,z))return 0;
         return Math.max(0,Math.min(GROUND_CEILING,(32-z)*GROUND_CEILING/10));
     }
+    /** An upper deck has a separate underside: never put its floor and the
+     * downstairs ceiling on exactly the same plane (z-fighting). */
+    public static double groundCeilingHeight(double x,double z){
+        return upperWalkable(x,z)?GROUND_CEILING-.16:GROUND_CEILING;
+    }
+    /** Collision for the whole player radius, including the open gallery edges. */
+    public static boolean upperClearance(double x,double z,double radius){
+        return upperWalkable(x-radius,z-radius)&&upperWalkable(x+radius,z-radius)
+            &&upperWalkable(x-radius,z+radius)&&upperWalkable(x+radius,z+radius);
+    }
     public static boolean upperWalkable(double x,double z){
         return x>=10.8&&x<=19&&z>=1.2&&z<=10.7 ||
             x>=16&&x<=19&&z>10.7&&z<=22;

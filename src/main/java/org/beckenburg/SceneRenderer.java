@@ -244,6 +244,39 @@ public final class SceneRenderer {
                 vv[2].u(),vv[2].v()));
         }
     }
+    /** Align castle prop footprints to authored sockets and rest their measured
+     * lowest vertex on the supporting surface. GLB source origins are arbitrary. */
+    private static final java.util.concurrent.ConcurrentHashMap<String,double[]> CASTLE_BOUNDS=
+        new java.util.concurrent.ConcurrentHashMap<>();
+    private static double[] castleBounds(String id){
+        return CASTLE_BOUNDS.computeIfAbsent(id,key->{
+            double loX=Double.POSITIVE_INFINITY,hiX=Double.NEGATIVE_INFINITY;
+            double loY=Double.POSITIVE_INFINITY,loZ=Double.POSITIVE_INFINITY,hiZ=Double.NEGATIVE_INFINITY;
+            for(GlbProps.Triangle t:GlbProps.model(key).triangles())
+                for(GlbProps.Vertex v:new GlbProps.Vertex[]{t.a(),t.b(),t.c()}){
+                    loX=Math.min(loX,v.x());hiX=Math.max(hiX,v.x());
+                    loY=Math.min(loY,v.y());
+                    loZ=Math.min(loZ,v.z());hiZ=Math.max(hiZ,v.z());
+                }
+            return new double[]{(loX+hiX)*.5,loY,(loZ+hiZ)*.5};
+        });
+    }
+    private static void castleProp(List<Face> out,String id,double x,double surfaceY,
+                                   double z,double scale,double yaw){
+        double[] origin=castleBounds(id);
+        double cos=Math.cos(yaw),sin=Math.sin(yaw);
+        for(GlbProps.Triangle t:GlbProps.model(id).triangles()){
+            GlbProps.Vertex[] v={t.a(),t.b(),t.c()};
+            Point[] points=new Point[3];
+            for(int n=0;n<3;n++){
+                double dx=(v[n].x()-origin[0])*scale,dz=(v[n].z()-origin[2])*scale;
+                points[n]=new Point(x+dx*cos-dz*sin,
+                    surfaceY+(v[n].y()-origin[1])*scale,z+dx*sin+dz*cos);
+            }
+            out.add(new Face(points[0],points[1],points[2],0xffffff,t.material(),
+                v[0].u(),v[0].v(),v[1].u(),v[1].v(),v[2].u(),v[2].v()));
+        }
+    }
     /** Original mesh triangles retain source UVs and material indices. Their
      * source pivots are NOT assumed to be at the wall/ceiling attachment point.
      * Anchoring to measured source bounds prevents half-embedded floating GLBs.
@@ -1445,6 +1478,11 @@ public final class SceneRenderer {
                 new Point(19.0,0,north),new Point(19.0,top,north),
                 new Point(16.0,top,north),MaterialAtlas.STONE,
                 16,0,19,0,19,top,16,top,0xddd4cb);
+            // Close both ends of every riser with solid stone side geometry.
+            for(double side:new double[]{16.0,19.0})
+                texturedQuad(out,new Point(side,0,north),new Point(side,top,north),
+                    new Point(side,top,south),new Point(side,0,south),
+                    MaterialAtlas.STONE,0,0,0,top,.5,top,.5,0,0xddd4cb);
         }
         // Railings follow both stair and balcony edges, with a real
         // continuous parapet over the courtyard underpass.
@@ -1482,10 +1520,13 @@ public final class SceneRenderer {
             texturedQuad(castle,new Point(xx,0,zz),new Point(xx+1,0,zz),
                 new Point(xx+1,0,zz+1),new Point(xx,0,zz+1),stone,
                 xx,zz,xx+1,zz,xx+1,zz+1,xx,zz+1,0xffffff);
-            if(!map.outside(xx+.5,zz+.5))texturedQuad(castle,
-                new Point(xx,3.4,zz+1),new Point(xx+1,3.4,zz+1),
-                new Point(xx+1,3.4,zz),new Point(xx,3.4,zz),
-                MaterialAtlas.CEILING,xx,zz+1,xx+1,zz+1,xx+1,zz,xx,zz,0xe0d8c8);
+            if(!map.outside(xx+.5,zz+.5)){
+                double ceiling=CastleHubArchitecturalPlan.groundCeilingHeight(xx+.5,zz+.5);
+                texturedQuad(castle,
+                    new Point(xx,ceiling,zz+1),new Point(xx+1,ceiling,zz+1),
+                    new Point(xx+1,ceiling,zz),new Point(xx,ceiling,zz),
+                    MaterialAtlas.CEILING,xx,zz+1,xx+1,zz+1,xx+1,zz,xx,zz,0xe0d8c8);
+            }
             // The solid tile modules now supply textured wall and window geometry.
             // Primitive quads would falsely close the real windows and gate openings.
         }
@@ -1525,13 +1566,14 @@ public final class SceneRenderer {
                     imported(castle,"handheld_tablet_1",px,.62,pz,.60,0);
                 }
                 case MULTIPLAYER -> {
-                    // A properly dimensioned desk supports all visible
-                    // peripherals; the computer tower rests on the floor.
-                    imported(castle,"tv_table_1_4",px,0,pz,.83,0);
-                    imported(castle,"pc_mp_1",px-.55,.02,pz-.16,.80,0);
-                    imported(castle,"monitoring_screen_mp_1",px+.14,.82,pz-.10,.70,0);
-                    imported(castle,"pc_keyboard_mp_1",px-.06,.615,pz+.18,.58,0);
-                    box(castle,px+.42,.62,pz+.23,.10,.052,.16,0x373942);
+                    // Use the actual desktop computer, not the wall-mounted
+                    // van monitoring screen. Anchor the feet of every GLB to
+                    // its surface and center its extents in the desk footprint.
+                    castleProp(castle,"tv_table_1_4",px,0,pz,.83,0);
+                    castleProp(castle,"pc_mp_1",px-.90,0,pz-.20,.65,0);
+                    castleProp(castle,"blender_computer_fixed",px+.08,.66,pz-.18,.54,0);
+                    castleProp(castle,"pc_keyboard_mp_1",px-.10,.65,pz+.21,.48,0);
+                    box(castle,px+.29,.66,pz+.13,.085,.035,.13,0x373942);
                 }
                 case SPECTRAL -> {
                     imported(castle,"display_cabinet_mp_2",px,0,pz,.78,0);
@@ -1542,10 +1584,10 @@ public final class SceneRenderer {
         // Purchased source-backed fixtures occupy authored locations and match hub collision.
         for(CastleHubMap.Furnishing item:CastleHubMap.furnishings())
             if(Math.hypot(item.x()-x,item.z()-z)<16)
-                imported(castle,item.mesh(),item.x(),0,item.z(),item.scale(),item.yaw());
+                castleProp(castle,item.mesh(),item.x(),0,item.z(),item.scale(),item.yaw());
         for(CastleHubMap.Furnishing item:CastleHubDecor.UPPER_FURNISHINGS)
             if(Math.hypot(item.x()-x,item.z()-z)<16)
-                imported(castle,item.mesh(),item.x(),
+                castleProp(castle,item.mesh(),item.x(),
                     CastleHubArchitecturalPlan.GROUND_CEILING,item.z(),
                     item.scale(),item.yaw());
         for(CastleHubDecor.Accent a:CastleHubDecor.ACCENTS)

@@ -5,8 +5,8 @@ public final class CastleHubMap {
     public static final int WIDTH=44, HEIGHT=36;
     private final char[][] grid=new char[HEIGHT][WIDTH];
     public enum Station {
-        ARMORY_UV(5.2,4.5,"UV LAMP / £150"),
-        ARMORY_SALT(5.2,8.0,"SALT KIT / £80"),
+        ARMORY_UV(5.2,4.5,"QUARTERMASTER / EQUIPMENT STORE"),
+        ARMORY_SALT(5.2,8.0,"QUARTERMASTER / SUPPLY STORE"),
         ROLE(23.0,6.0,"HUNTER WARDROBE / CHANGE ROLE"),
         CONTRACT(13.5,6.8,"CAMPAIGN CONTRACT BOARD"),
         EXPEDITION(13.5,16.6,"EXPEDITION VAN / START CASE"),
@@ -122,8 +122,11 @@ public final class CastleHubMap {
      * solid ground-wall cells only when physically above their lintels. */
     public boolean traversable(double x,double z,double elevation){
         if(!Double.isFinite(elevation)||elevation<0)return false;
+        double radius=.21;
+        if(CastleHubArchitecturalPlan.onStairs(x,z) && elevation>.1
+                && (x<16+radius||x>19-radius))return false;
         if(elevation>2.0&&CastleHubArchitecturalPlan.upperWalkable(x,z)){
-            double radius=.21;
+            if(!CastleHubArchitecturalPlan.upperClearance(x,z,radius))return false;
             for(Furnishing item:CastleHubDecor.UPPER_FURNISHINGS)
                 if(Math.abs(x-item.x())<item.halfWidth()+radius&&
                     Math.abs(z-item.z())<item.halfDepth()+radius)return false;

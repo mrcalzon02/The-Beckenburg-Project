@@ -24,7 +24,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private long last=System.nanoTime();
     private double clock;
     private double elevation;
-    private boolean castleLightsOn=true,crouched;
+    private boolean castleLightsOn=true,crouched,storeOpen;
     private String notice="Welcome to Beckenburg Castle. The equipment is real; look and press E.";
     private int noticeTicks=100;
     public CastleHubPanel(ProfileStore profile,Actions actions){
@@ -46,7 +46,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     public void close(){timer.stop();down.clear();look.close();atmosphere.close();}
     private void frame(){
         atmosphere.setActive(isShowing());
-        if(!isShowing()){last=System.nanoTime();return;}
+        if(!isShowing()||storeOpen){last=System.nanoTime();return;}
         long now=System.nanoTime();double dt=Math.min(.07,Math.max(0,(now-last)/1e9));last=now;
         if(down.contains(KeyEvent.VK_LEFT))renderer.yaw+=dt*1.65;
         if(down.contains(KeyEvent.VK_RIGHT))renderer.yaw-=dt*1.65;
@@ -84,6 +84,23 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         if(from>2.0 && to<0.5 && !CastleHubArchitecturalPlan.onStairs(x,z))return false;
         return true;
     }
+    /** One persistent account and the existing quartermaster inventory for both armoury counters. */
+    private void openQuartermaster(){
+        down.clear();look.release();storeOpen=true;
+        java.awt.Window owner=SwingUtilities.getWindowAncestor(this);
+        JDialog window=new JDialog(owner,"Castle Beckenburg — Quartermaster",Dialog.ModalityType.APPLICATION_MODAL);
+        window.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        window.setContentPane(new CampaignStorePanel(profile,()->{
+            GameSfx.play(LanSound.Cue.PICKUP);
+            notice="Quartermaster purchase saved. Equipment and supplies updated.";
+            noticeTicks=145;
+        }));
+        window.setSize(730,430);
+        window.setMinimumSize(new Dimension(570,330));
+        window.setLocationRelativeTo(this);
+        try{window.setVisible(true);}
+        finally{storeOpen=false;last=System.nanoTime();requestFocusInWindow();}
+    }
     private void use(CastleHubMap.Station station){
         if(station==null){
             if(CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null){
@@ -104,17 +121,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         }
         try{
             switch(station){
-                case ARMORY_UV,ARMORY_SALT -> {
-                    EquipmentLoadout.Item item=station==CastleHubMap.Station.ARMORY_UV?
-                        EquipmentLoadout.Item.UV_LAMP:EquipmentLoadout.Item.SALT;
-                    if(profile.ownsEquipment(item))notice=item.label+" already owned / appears in van rack.";
-                    else {
-                        boolean bought=profile.purchaseEquipment(item);
-                        if(bought)GameSfx.play(LanSound.Cue.PICKUP);
-                        notice=bought?"Purchased "+item.label+". Now stocked in your expedition van.":
-                            "Need £"+ProfileStore.equipmentPrice(item)+" to purchase "+item.label;
-                    }
-                }
+                case ARMORY_UV,ARMORY_SALT -> {openQuartermaster();return;}
                 case ROLE -> {actions.cycleRole();GameSfx.play(LanSound.Cue.SELECT);notice="Hunter discipline: "+actions.role();}
                 case CONTRACT -> {actions.campaign();return;}
                 case EXPEDITION -> {actions.begin();return;}
