@@ -35,7 +35,7 @@ public final class LanGhostTakeoverIntegrationTest {
             Peer human=new Peer(server.port(),true,"Spirit")){
             a.client.ready();b.client.ready();c.client.ready();human.client.ready();
             a.expect("LOBBY|3|HUMAN|4|WAITING");a.client.start();a.expect("INFO|mission started");
-            for(int room:new int[]{11,8,5,4}){a.client.move(room);a.expect("ACCEPT|MOVE|"+room);}
+            for(int room:new int[]{11,8,5,4}){LanTestRoomTravel.move(a.client,a::expect,room);}
             human.client.ghost(GhostDomain.Action.WHISPER,4);
             human.expect("ACCEPT|GHOST|WHISPER");
             human.client.ghost(GhostDomain.Action.DISTURB,4);
