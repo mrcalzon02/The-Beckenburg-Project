@@ -24,7 +24,7 @@ public final class LanSpatialEvidenceIntegrationTest {
             }
             throw new AssertionError("missing "+prefix+" on "+client.seat());
         }
-        void room(int r)throws Exception{client.move(r);await("ACCEPT|MOVE|"+r);}
+        void room(int r)throws Exception{LanTestRoomTravel.move(client,this::await,r);}
         void step(int dx)throws Exception{
             Thread.sleep(135);client.step(dx,0);await("ACCEPT|STEP");
         }
