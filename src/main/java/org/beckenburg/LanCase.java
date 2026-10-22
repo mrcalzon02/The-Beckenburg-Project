@@ -55,8 +55,6 @@ public final class LanCase {
     }
     public void selectDiscipline(int seat,CharacterVisuals.Hunter type){
         hunter(seat);
-        if(outcome!=Outcome.ACTIVE||ritualProgress>=0)
-            throw new IllegalStateException("cannot change class after case finishes");
         hunterClasses[seat]=java.util.Objects.requireNonNull(type);
     }
     public CharacterVisuals.Hunter discipline(int seat){hunter(seat);return hunterClasses[seat];}
