@@ -59,7 +59,7 @@ public final class GlbProps {
     private static final List<double[]> diffuseFactors=new ArrayList<>();
     private static final Map<String,Integer> televisionMaterials=new HashMap<>();
     private static final Map<Integer,Integer> televisionPhases=new HashMap<>();
-    public static synchronized int televisionMaterial(double x,double y,double z){String key=x+":"+y+":"+z;return televisionMaterials.computeIfAbsent(key,k->{int id=TEXTURE_BASE+textures.size();textures.add(new BufferedImage(128,64,BufferedImage.TYPE_INT_RGB));diffuseFactors.add(new double[]{1,1,1,1});materialNames.add("Television static surface");return id;});}
+    public static synchronized int televisionMaterial(double x,double y,double z){String key=x+":"+y+":"+z;return televisionMaterials.computeIfAbsent(key,k->{int id=TEXTURE_BASE+textures.size();textures.add(new BufferedImage(128,64,BufferedImage.TYPE_INT_RGB));vehicleUvMaterials.add(false);diffuseFactors.add(new double[]{1,1,1,1});materialNames.add("Television static surface");return id;});}
     public static synchronized void updateTelevision(int material,boolean active,int tick){int phase=active?tick:-1;if(televisionPhases.getOrDefault(material,-2)==phase)return;televisionPhases.put(material,phase);var im=textures.get(material-TEXTURE_BASE);
         for(int y=0;y<64;y++)for(int x=0;x<128;x++){int hash=(x*73856093)^(y*19349663)^(tick*83492791);hash^=hash>>>13;int grey=active?80+Math.floorMod(hash,151):8;if(active&&(y+tick)%11==0)grey/=2;im.setRGB(x,y,(grey<<16)|(grey<<8)|grey);}
     }

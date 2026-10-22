@@ -12,6 +12,12 @@ public final class GgBotBlenderSourceUvTest {
             "Blender glTF bottom-of-atlas must map to bottom pixels");
         check(GlbProps.imageRow(.125,128,false)==112,
             "Unrelated imported materials retain their previous mapping");
+        // CRT surfaces are inserted into the same material registry. They
+        // must register a UV-origin flag or all subsequent material IDs drift.
+        int crt=GlbProps.televisionMaterial(1.25,2.50,3.75);
+        GlbProps.updateTelevision(crt,true,0);
+        GlbProps.sample(crt,.3,.4);
+        GlbProps.sampleAlpha(crt,.3,.4);
         for(String id:new String[]{"ggbot_car01","ggbot_car05","ggbot_car08_van_shell"}){
             var model=GlbProps.model(id);
             check(model.triangles().size()>100,id+" real source mesh");
@@ -27,6 +33,7 @@ public final class GgBotBlenderSourceUvTest {
             check(painted>100,id+" painted triangle count");
             check(colors.size()>12,id+" original 128px textured color atlas");
         }
-        System.out.println("PASS GGBot Blender-source meshes and glTF UV mapping");
+        GlbProps.sample(crt,.8,.2);
+        System.out.println("PASS GGBot Blender-source meshes, glTF UV mapping and CRT material registry");
     }
 }

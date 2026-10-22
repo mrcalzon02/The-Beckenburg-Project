@@ -28,7 +28,12 @@ def convert(archive,root,folder,name,outdir):
         dest=root/path
         dest.parent.mkdir(parents=True,exist_ok=True)
         dest.write_bytes(archive.read(s))
-    blend=root/max(blends,key=lambda s:len(archive.read(s)))
+    # Choose the everyday civilian sedan when present. A larger police/taxi
+    # .blend is NOT a safe default just because its byte count is greater.
+    ordinary=[s for s in blends if "police" not in s.lower()
+              and "taxi" not in s.lower()]
+    preferred=ordinary if ordinary else blends
+    blend=root/min(preferred,key=lambda s:(len(Path(s).name),Path(s).name.lower()))
     bpy.ops.wm.open_mainfile(filepath=str(blend),load_ui=False)
     meshes=[obj for obj in bpy.context.scene.objects
             if obj.type=="MESH" and not obj.hide_render]
