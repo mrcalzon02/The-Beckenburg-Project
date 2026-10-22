@@ -62,11 +62,11 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             double dz=(Math.cos(renderer.yaw)*forward+Math.sin(renderer.yaw)*strafe)*speed;
             double targetX=renderer.x+dx,targetZ=renderer.z+dz;
             double nextX=CastleHubArchitecturalPlan.elevation(targetX,renderer.z,elevation);
-            if(map.traversable(targetX,renderer.z,nextX)){
+            if(safeElevationTransition(elevation,nextX,targetX,renderer.z)&&map.traversable(targetX,renderer.z,nextX)){
                 renderer.x=targetX;elevation=nextX;
             }
             double nextZ=CastleHubArchitecturalPlan.elevation(renderer.x,targetZ,elevation);
-            if(map.traversable(renderer.x,targetZ,nextZ)){
+            if(safeElevationTransition(elevation,nextZ,renderer.x,targetZ)&&map.traversable(renderer.x,targetZ,nextZ)){
                 renderer.z=targetZ;elevation=nextZ;
             }
             if(Math.hypot(renderer.x-priorX,renderer.z-priorZ)>.0001)
@@ -78,6 +78,11 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         renderer.drawCastle(map,clock,castleLightsOn);
         if(noticeTicks>0)noticeTicks--;
         repaint();
+    }
+    /** Never teleport from upper gallery to the ground by crossing an unguarded edge. */
+    static boolean safeElevationTransition(double from,double to,double x,double z){
+        if(from>2.0 && to<0.5 && !CastleHubArchitecturalPlan.onStairs(x,z))return false;
+        return true;
     }
     private void use(CastleHubMap.Station station){
         if(station==null){
