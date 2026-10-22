@@ -65,7 +65,7 @@ public final class BeckenburgUpdates {
         return url.equals("https://github.com/"+REPOSITORY+"/releases/download/"+tag+"/"+filename);
     }
     /** Pure selection for offline regression tests: unrelated repo releases are ignored. */
-    public static Release select(String response,String installed){return select(response,installed,false);}
+    public static Release select(String response,String installed){return select(response,installed,true);}
     public static Release select(String response,String installed,boolean includePrereleases){
         Version current=parsedVersion(installed),best=current;
         Object parsed=new Json(response).parse();
@@ -73,7 +73,7 @@ public final class BeckenburgUpdates {
         Release selected=null;
         for(Object item:list){
             Map<?,?> r=object(item);
-            if(Boolean.TRUE.equals(r.get("draft"))||(!includePrereleases&&Boolean.TRUE.equals(r.get("prerelease"))))continue;
+            if(Boolean.TRUE.equals(r.get("draft")))continue;
             String tag=string(r.get("tag_name"));
             if(!tag.startsWith(PREFIX))continue;
             Version candidate;
@@ -113,7 +113,7 @@ public final class BeckenburgUpdates {
         return selected;
     }
     public static Release check(String current)throws IOException,InterruptedException{
-        return check(current,false);
+        return check(current,true);
     }
     public static Release check(String current,boolean includePrereleases)throws IOException,InterruptedException{
         // The Foundry hosts multiple independent products; compare only our tagged stable releases.
