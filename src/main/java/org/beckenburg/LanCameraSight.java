@@ -24,11 +24,19 @@ public final class LanCameraSight {
     public static boolean sees(HouseMap map,LanVideoCameras.Camera camera,
                                LanGhostSpatial.Pose apparition,boolean manifested,
                                GhostIdentity.Type species,String member) {
+        return sees(map,camera,apparition,manifested,species,member,false);
+    }
+    /** Camera frustum must test the silhouette that will actually render. */
+    public static boolean sees(HouseMap map,LanVideoCameras.Camera camera,
+                               LanGhostSpatial.Pose apparition,boolean manifested,
+                               GhostIdentity.Type species,String member,boolean signatureReveal) {
         Objects.requireNonNull(species);
         if(!"a".equals(member)&&!"b".equals(member))
             throw new IllegalArgumentException("invalid camera ghost member");
-        String identity=species.baseType()==GhostIdentity.Type.TWINS
-            ?"twins_"+member:CharacterVisuals.ghost(species);
+        String identity=signatureReveal
+            ?(species.baseType()==GhostIdentity.Type.TWINS
+                ?"twins_"+member:CharacterVisuals.ghost(species))
+            :GhostManifestationVisual.UNREVEALED;
         return seesBody(map,camera,apparition,manifested,
             CharacterVisuals.shape(identity).height());
     }
