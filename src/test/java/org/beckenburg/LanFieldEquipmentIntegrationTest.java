@@ -34,6 +34,10 @@ public final class LanFieldEquipmentIntegrationTest {
             h.client.ready();b.client.ready();c.client.ready();ghost.client.ready();
             h.await("LOBBY|3|HUMAN|4|WAITING");
             h.client.start();h.await("INFO|mission started");
+            // Leave the van before exercising a real rack-distance rejection.
+            // H1 spawns within equipment-rack reach, where purchasing is legal.
+            for(int room:new int[]{11,8,5,4})
+                LanTestRoomTravel.move(h.client,h::await,room);
             h.client.view3D();h.await("ACCEPT|VIEW3D");
             String state=h.await("GEARSTATE|");
             ok(state.contains("EMF_READER:I")&&state.contains("UV_LIGHT:I"),

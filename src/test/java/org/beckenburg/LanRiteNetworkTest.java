@@ -52,7 +52,8 @@ public final class LanRiteNetworkTest {
    a.until("ACCEPT|IDENTIFY|ENTITY IDENTIFIED WRAITH");
    b.until("IDENTIFIED|WRAITH|BANISHMENT");
    a.client.ward();a.until("ACCEPT|WARD|ANCHOR WARD PREPARED");
-   for(int r:new int[]{7,10,9})a.move(r);
+   // The installation is part of the authored site, not a fixed legacy room 9.
+   a.move(RitualSites.site(new HouseMap(),GhostIdentity.Rite.BANISHMENT).room());
    a.client.cleanse();
    ok(a.until("REJECT|CLEANSE").contains("incorrect rite"),"wrong ritual rejected");
    a.client.banish();a.until("ACCEPT|BANISH|RITUAL STARTED");
