@@ -23,13 +23,14 @@ for directory in ['models','level-textures']:
 for path in (ROOT/'assets/runtime').glob('*.zip'):shutil.copyfile(path,resources/path.name)
 classpath=os.pathsep.join(map(str,[classes,ROOT/'build/dressing-source-snapshot/classes',ROOT/'build/blackpine-dressing-check',ROOT/'build/posture-classes',ROOT/'build/classes']))
 checks=[]
+runtime_models={p.stem:hashlib.sha256(p.read_bytes()).hexdigest() for p in (resources/'models').glob('level_work_*.glb')}
 tasks=[('BlackpineMillExpansionTest',[]),('ProductionAssetTest',[]),('BlackpineStoryTest',[]),('BlackpineDressingTest',[]),('TerrainAndRecoveryTest',[]),('BlackpineGrayboxTest',[]),('AuthoredLevelPhysicsTest',[]),('CrouchAndOutdoorHidingTest',[]),('LevelSurfaceIntegrityTest',[]),('InteractionFocusTest',[]),('AuthoredLevelReachabilityTest',['BLACKPINE']),('BlackpineMillExpansionCapture',[]),('LevelSceneSource',['BLACKPINE'])]
 for test,args in tasks:
     start=time.monotonic()
     result=subprocess.run([str(jdk/'java.exe'),'-Xmx3g','-Djava.awt.headless=true','-Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory','-cp',classpath,'org.beckenburg.VerificationMain',test,*args],cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=120)
     print(result.stdout,flush=True)
     checks.append(dict(test=test,status='pass' if result.returncode==0 else 'fail',seconds=round(time.monotonic()-start,2),output=result.stdout.strip()))
-    report=dict(status='pass' if all(c['status']=='pass' for c in checks) else 'fail',base_commit=tree,scoped_java_overlays=hashes,checks=checks,limitations=['Unrelated uncommitted lighting and castle edits excluded.','No native interactive hunt, LAN map acceptance or target-hardware performance certification.'])
+    report=dict(status='pass' if all(c['status']=='pass' for c in checks) else 'fail',base_commit=tree,scoped_java_overlays=hashes,runtime_models=runtime_models,checks=checks,limitations=['Unrelated uncommitted lighting and castle edits excluded.','No native interactive hunt, LAN map acceptance or target-hardware performance certification.'])
     (ROOT/'development/levels/verification/blackpine-mill-expansion.json').write_text(json.dumps(report,indent=2)+'\n')
     if result.returncode:raise SystemExit(result.returncode)
 scene_source=(BASE/'development/levels/build_scene.py').read_text()

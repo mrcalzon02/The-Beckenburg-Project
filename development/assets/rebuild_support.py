@@ -81,12 +81,18 @@ def material(name,color=(.3,.3,.3),kind='paint',roughness=.88):
     rng=random.Random(name);pixels=[]
     for y in range(64):
         for x in range(64):
+            if kind=='metal':
+                # Proportional, non-directional patina: additive sine rows turned
+                # dark iron into black/gray bandages on long UV-mapped parts.
+                factor=1+rng.uniform(-.035,.035)
+                if rng.random()<.012:factor+=rng.uniform(.035,.09)
+                pixels.extend([max(0,min(1,c*factor)) for c in color]+[1])
+                continue
             n=rng.choice([-.07,-.035,0,.025,.04])*({'paper':.15,'metal':.25,'ceramic':.18,'paint':.4}.get(kind,.6));line=0
             if kind=='wood':
                 line=.07*math.sin(x*.65+math.sin(y*.09)*1.3)+.025*math.sin(x*1.7+y*.03)
             elif kind=='cloth':line=(.035 if (x+y)%3==0 else -.02)+(-.065 if x in (3,60) or y in (3,60) else 0)
             elif kind=='paper':line=.004*math.sin(y*.7)+(-.025 if x<2 or y<2 else 0)
-            elif kind=='metal':line=.025*math.sin(y*.5)+(.10 if x in (1,62) else 0)
             elif kind=='rubber':line=-.07 if x%9 in (0,1) else .01
             elif kind=='leather':line=-.08 if (x*7+y*11)%37<2 else .018
             elif kind=='ceramic':line=.015*math.sin(y*.13)+(.06 if x<3 else 0)

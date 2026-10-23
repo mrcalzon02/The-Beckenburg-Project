@@ -3,7 +3,7 @@ import java.util.*;
 import org.beckenburg.LevelDefinition.*;
 /** New furnishings must fit the actual room and remain independent of existing solids. */
 public final class BlackpineMillExpansionTest {
-    static final Set<String> NEW=Set.of("level_work_dust_extractor","level_work_timber_rack","level_work_safety_station");
+    static final Set<String> NEW=Set.of("level_work_dust_extractor","level_work_timber_rack","level_work_safety_station","level_work_circular_headrig","level_work_bandsaw");
     static void check(boolean value,String why){if(!value)throw new AssertionError(why);}
     static boolean overlap(Prop a,Prop b){
         for(double yaw:new double[]{a.yaw(),a.yaw()+Math.PI/2,b.yaw(),b.yaw()+Math.PI/2}){
@@ -26,7 +26,11 @@ public final class BlackpineMillExpansionTest {
             for(var portal:l.portals())if(portal.door()&&(portal.a()==p.room()||portal.b()==p.room()))
                 check(Math.hypot(portal.x()-p.x(),portal.z()-p.z())>Math.max(ex,ez)+portal.width()/2+.35,"door approach clear "+p.mesh());
         }
-        check(count==3,"three independently placed expansion meshes");
-        System.out.println("PASS three mill expansion models inside finished walls, disjoint from solid furnishings and clear of door approaches");
+        check(count==5,"four new meshes and relocated workshop saw");
+        var saw=l.props().stream().filter(p->p.mesh().equals("level_work_circular_headrig")).findFirst().orElseThrow();
+        var carriage=l.props().stream().filter(p->p.mesh().equals("level_work_log_carriage")).findFirst().orElseThrow();
+        check(Math.abs(saw.x()-carriage.x())<.001&&saw.yaw()==carriage.yaw(),"blade and logway share authoritative alignment");
+        check(l.props().stream().noneMatch(p->p.mesh().equals("level_work_bandsaw")&&p.room()==0),"workshop saw is not the mill head saw");
+        System.out.println("PASS four new models and relocated workshop saw inside finished walls, disjoint from solid furnishings; circular head saw aligned to logway");
     }
 }

@@ -3,24 +3,24 @@
   "library": "working-place-details",
   "license": "CC0-1.0",
   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "sha256": "be9056d12ad5e919d5e6a42faf9af45299d833c84bc9ea62e54a1a07d9eb0ee5",
-  "bytes": 192900,
+  "sha256": "420b08544d2d22490dfecf169b42f535b549fee77351755b03bb498df9550b0d",
+  "bytes": 190848,
   "triangles": 2414,
   "bounds": [
     [
-      -0.9928935766220093,
+      -0.7148833870887756,
       0.0,
-      -0.6399999856948853
+      -0.46080002188682556
     ],
     [
-      1.4449999332427979,
-      3.2713840007781982,
-      0.7299999594688416
+      1.0404000282287598,
+      2.3553965091705322,
+      0.525600016117096
     ]
   ],
   "source": "original geometry and procedural textures",
   "editable": "development/levels/blender/level_work_bandsaw.blend",
-  "function": "Static decommissioned mill bandsaw; guarded return and supported feed table",
-  "runtime": "Ready static environment mesh; no powered cutting or animation",
-  "placement": "Blackpine sawmill, outside ritual and stair routes"
+  "function": "Small workshop bandsaw; guarded return and supported feed table",
+  "runtime": "Static workshop tool; no powered cutting or animation",
+  "placement": "Blackpine equipment repair shed; not the logway head saw"
 }

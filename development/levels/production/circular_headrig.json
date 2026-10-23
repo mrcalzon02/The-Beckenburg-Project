@@ -1,0 +1,27 @@
+{
+  "id": "level_work_circular_headrig",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "94bb324d45689d887f2b96083d6645c6d7e26bbea2ed8ff16b7e52d85c314daf",
+  "bytes": 185336,
+  "triangles": 2380,
+  "bounds": [
+    [
+      -2.490000009536743,
+      0.0,
+      -1.5
+    ],
+    [
+      0.7500001192092896,
+      2.0647153854370117,
+      1.5
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_circular_headrig.blend",
+  "function": "Circular sawmill headrig, two metre toothed blade, below-stock arbor, separate bearings, guarded idle drive and continuous carriage rails",
+  "placement": "Blackpine logway terminal, with blade plane aligned to carriage vertical sawn face",
+  "runtime": "Static decommissioned sawmill; no cutting, powered belt or moving carriage",
+  "reference": "User-supplied historical circular-sawmill photograph, 22 October 2026; original geometry, not a literal reconstruction"
+}

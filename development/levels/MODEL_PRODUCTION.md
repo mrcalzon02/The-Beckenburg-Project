@@ -1,5 +1,13 @@
 # Exploratory model production run
 
+**Current mill correction, 22 October:** the primary logway now ends at an
+original circular headrig; the small workshop bandsaw has moved to the repair
+shed. Four new models and a non-striped metal refresh of all twelve working-place
+assets are documented in [the measured refinement and next gate](MILL_REFINEMENT.md)
+and [visual review](BLACKPINE_MILL_REVIEW.html). Earlier descriptions below are
+the historical first-run checkpoints; current manifests supersede their counts
+and placements.
+
 One original model at a time: source geometry and packed diffuse → native GLB → editable Blender source → studio inspection → real level placement/collision → physical/runtime check → scoped commit. Runtime scenery is shared through the existing instance renderer. No powered machinery simulation is implied by a static environment mesh.
 
 ## 01 / mill bandsaw

@@ -50,7 +50,10 @@ def bandsaw():
     p.append(s.box('Stopped belt guard',(-.14,.47,.85),(.57,.13,.74),m['iron'],.02))
     p+=s.tube('Disconnected electrical lead',[(-.5,.34,.48),(-.86,.42,.16),(-.98,.2,.02),(-.87,-.06,.02)],.014,m['black'],6)
     p.append(s.box('Unplugged isolator plug',(-.86,-.10,.04),(.065,.10,.065),m['iron']))
-    return p,dict(function='Static decommissioned mill bandsaw; guarded return and supported feed table',runtime='Ready static environment mesh; no powered cutting or animation',placement='Blackpine sawmill, outside ritual and stair routes')
+    for obj in p:
+        obj.location*=.72
+        for v in obj.data.vertices:v.co*=.72
+    return p,dict(function='Small workshop bandsaw; guarded return and supported feed table',runtime='Static workshop tool; no powered cutting or animation',placement='Blackpine equipment repair shed; not the logway head saw')
 
 def log_carriage():
     m=work_materials();p=[]
@@ -60,30 +63,35 @@ def log_carriage():
             p.append(s.rod('Flanged carriage wheel',(x-.07,y,.28),(x+.07,y,.28),.17,m['iron'],12))
             p.append(s.rod('Outer wheel flange',(x-.08,y,.28),(x-.06,y,.28),.19,m['rust'],12))
     for y in [-1.4,0,1.4]:
-        p.append(s.box('Oak cross bearer',(0,y,.42),(1.62,.24,.20),m['oak']))
-        for x in [-.63,.63]:p.append(s.rod('Bearer fixing bolt',(x,y,.51),(x,y,.55),.025,m['iron'],6))
+        for x in [-.63,.63]:
+            p.append(s.box('Raised carriage knee',(x,y,.72),(.13,.20,.80),m['iron']))
+        p.append(s.box('Oak cross bearer',(0,y,1.07),(1.62,.24,.20),m['oak']))
+        for x in [-.63,.63]:p.append(s.rod('Bearer fixing bolt',(x,y,1.16),(x,y,1.20),.025,m['iron'],6))
     for x in [-.63,.63]:p.append(s.box('Rolling underframe',(x,0,.32),(.12,3.2,.16),m['iron']))
     # Truncate the actual log cross-section at the sawn plane; no buried flat-face prop.
-    profile=[(.31*math.cos(i*math.tau/16),min(1.055,.81+.31*math.sin(i*math.tau/16))) for i in range(16)]
+    # Cantilevered log edge clears the rolling frame. The circular head saw cuts
+    # a VERTICAL longitudinal face, with its arbor below the underside of the log.
+    profile=[(max(-.95,-.75+.31*math.cos(i*math.tau/16)),1.48+.31*math.sin(i*math.tau/16)) for i in range(16)]
     vv=[(x,y,z) for y in [-1.65,1.65] for x,z in profile]
     obj=s.mesh('Partly milled log with real flat cut',vv,[(i,(i+1)%16,(i+1)%16+16,i+16) for i in range(16)]+[tuple(range(15,-1,-1)),tuple(range(16,32))],m['oak'])
     obj.data.materials.append(m['pine'])
     for face in obj.data.polygons:
-        if all(abs(obj.data.vertices[i].co.z-1.055)<.0001 for i in face.vertices):face.material_index=1
+        if all(abs(obj.data.vertices[i].co.x+.95)<.0001 for i in face.vertices):face.material_index=1
     p.append(obj)
     for y in [-1.654,1.654]:
-        cap=[(.292*math.cos(i*math.tau/16),y,min(1.054,.81+.292*math.sin(i*math.tau/16))) for i in range(16)]
+        cap=[(max(-.948,-.75+.292*math.cos(i*math.tau/16)),y,1.48+.292*math.sin(i*math.tau/16)) for i in range(16)]
         p.append(s.mesh('Pale truncated cut end',cap,[tuple(range(16)),tuple(range(15,-1,-1))],m['pine']))
         for r in [.08,.16,.24]:
             # Growth rings lie in the X/Z end plane.
-            p+=b.ring('Visible growth ring',(0,y-.003,.81),r,.0025,m['oak'],segments=12)
+            points=[(max(-.947,-.75+r*math.cos(i*math.tau/16)),y+(-.003 if y<0 else .003),1.48+r*math.sin(i*math.tau/16)) for i in range(17)]
+            p+=s.tube('Visible clipped growth ring',points,.0025,m['oak'],5)
     for y in [-1.15,1.15]:
-        p.append(s.box('Log dog guide',(.54,y,.63),(.16,.19,.56),m['iron']))
-        p+=s.tube('Clamping dog',[(.54,y,.89),(.31,y,1.0),(.17,y,.96)],.027,m['rust'],6)
-        p.append(s.rod('Clamp screw',(.55,y,.47),(.77,y,.47),.019,m['brass'],6))
-        p.append(s.rod('Screw handle',(.78,y-.10,.47),(.78,y+.10,.47),.012,m['iron'],6))
-    for y in [-1.75,1.75]:p.append(s.box('Rail end stop',(0,y,.13),(1.48,.11,.15),m['oak']))
-    return p,dict(function='Stopped rail log carriage with growth rings, sawn face and clamping dogs',runtime='Ready static environment mesh; wheels and log are not simulated',placement='Blackpine mill feed route, aligned toward bandsaw and clear of ritual')
+        p.append(s.box('Log dog guide',(-.18,y,1.28),(.16,.19,.56),m['iron']))
+        p+=s.tube('Clamping dog',[(-.18,y,1.54),(-.45,y,1.65),(-.58,y,1.61)],.027,m['rust'],6)
+        p.append(s.rod('Clamp screw',(-.17,y,1.12),(.05,y,1.12),.019,m['brass'],6))
+        p.append(s.rod('Screw handle',(.06,y-.10,1.12),(.06,y+.10,1.12),.012,m['iron'],6))
+    p.append(s.box('Rear rail end stop',(0,1.75,.13),(1.48,.11,.15),m['oak']))
+    return p,dict(function='Raised knee log carriage with cantilevered stock, vertical sawn face and clamping dogs',runtime='Static carriage; no log feed simulation',placement='Blackpine continuous logway, aligned to circular head saw; arbor below stock and blade outside carriage bearers')
 
 def repair_bench():
     m=work_materials();p=[]
@@ -239,14 +247,15 @@ def camp_sign():
     for x in [-.26,.15]:p.append(s.rod('Arrow fixing bolt',(x,-.05,.55),(x,-.068,.55),.012,m['iron'],6))
     return p,dict(function='Original camp-name sign and later road-survey warning, readable mesh lettering',runtime='Ready static sign; surveyed road is explicitly not a cleared camp or unlock',placement='Blackpine arrival yard verge, outside baked path core')
 
-name=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'bandsaw'
-parts,notes=globals()[name]()
-b.export('level_work_'+name,parts,'working-place-details',view=(4,-6,3.5))
-entry=b.LOG[0];entry.update(notes)
-folder=ROOT/'development/levels/production';folder.mkdir(exist_ok=True)
-(folder/(name+'.json')).write_text(json.dumps(entry,indent=2)+'\n')
-bpy.ops.wm.open_mainfile(filepath=str(ROOT/entry['editable']))
-obj=bpy.data.objects[entry['id']];obj.data.calc_loop_triangles()
-assert len(obj.data.loop_triangles)==entry['triangles'] and obj.data.uv_layers
-assert all(image.packed_file for image in bpy.data.images if image.source=='FILE')
-print('PRODUCTION_ASSET_COMPLETE',name,entry['triangles'],flush=True)
+names=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else ['bandsaw']
+for name in names:
+    parts,notes=globals()[name]()
+    b.export('level_work_'+name,parts,'working-place-details',view=(4,-6,3.5))
+    entry=b.LOG[-1];entry.update(notes)
+    folder=ROOT/'development/levels/production';folder.mkdir(exist_ok=True)
+    (folder/(name+'.json')).write_text(json.dumps(entry,indent=2)+'\n')
+    bpy.ops.wm.open_mainfile(filepath=str(ROOT/entry['editable']))
+    obj=bpy.data.objects[entry['id']];obj.data.calc_loop_triangles()
+    assert len(obj.data.loop_triangles)==entry['triangles'] and obj.data.uv_layers
+    assert all(image.packed_file for image in bpy.data.images if image.source=='FILE')
+    print('PRODUCTION_ASSET_COMPLETE',name,entry['triangles'],flush=True)
