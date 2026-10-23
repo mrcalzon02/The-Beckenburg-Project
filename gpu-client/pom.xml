@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>org.beckenburg</groupId><artifactId>beckenburg-gpu</artifactId><version>0.1.0</version>
+ <properties>
+  <maven.compiler.release>17</maven.compiler.release>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <gdx.version>1.14.2</gdx.version>
+ </properties>
+ <dependencies>
+  <dependency><groupId>com.badlogicgames.gdx</groupId><artifactId>gdx</artifactId><version>${gdx.version}</version></dependency>
+  <dependency><groupId>com.badlogicgames.gdx</groupId><artifactId>gdx-backend-lwjgl3</artifactId><version>${gdx.version}</version></dependency>
+  <dependency><groupId>com.badlogicgames.gdx</groupId><artifactId>gdx-platform</artifactId><version>${gdx.version}</version>
+   <classifier>natives-desktop</classifier><scope>runtime</scope></dependency>
+ </dependencies>
+ <build>
+  <finalName>BeckenburgGPU</finalName>
+  <plugins>
+   <plugin>
+    <groupId>org.codehaus.mojo</groupId><artifactId>build-helper-maven-plugin</artifactId><version>3.6.1</version>
+    <executions><execution><id>game-engine</id><phase>generate-sources</phase>
+     <goals><goal>add-source</goal></goals>
+     <configuration><sources><source>${project.basedir}/../src/main/java</source></sources></configuration>
+    </execution></executions>
+   </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.14.0</version>
+    <configuration><release>17</release></configuration>
+   </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId><artifactId>maven-shade-plugin</artifactId><version>3.6.1</version>
+    <executions><execution><phase>package</phase><goals><goal>shade</goal></goals>
+     <configuration>
+      <createDependencyReducedPom>false</createDependencyReducedPom>
+      <filters><filter><artifact>*:*</artifact><excludes>
+       <exclude>META-INF/*.SF</exclude><exclude>META-INF/*.DSA</exclude><exclude>META-INF/*.RSA</exclude>
+      </excludes></filter></filters>
+      <transformers>
+       <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+        <mainClass>org.beckenburg.gpu.GpuDesktop</mainClass>
+       </transformer>
+      </transformers>
+     </configuration>
+    </execution></executions>
+   </plugin>
+  </plugins>
+  <!-- build.cmd package populates these verified original scene resources.
+       The GPU distribution contains the SAME models, not substitute scenery. -->
+  <resources>
+   <resource><directory>${project.basedir}/../build/classes</directory>
+    <includes><include>org/beckenburg/**</include><include>dev/mrcalzon/weather/**</include></includes>
+   </resource>
+  </resources>
+ </build>
+</project>
