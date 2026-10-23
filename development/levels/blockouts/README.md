@@ -62,3 +62,7 @@ Generation uses the original `development/levels/layouts/*/layout.json` files;
 only the separate `blockouts/` delivery is written. No engine compilation is
 required. Rough Blender files retain their actual elevations and omit review
 camera/light objects; native PNGs are neutral studio inspections.
+
+## Needed models
+
+Each pending map packet includes MODELS.md and models.json: standard furnishings and fixtures, verified local reuse candidates, unique models, clutter and finish detail by room. The ZIP also includes model-requirements/ for all 23 maps; existing maps receive documentation only.

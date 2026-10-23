@@ -1,0 +1,166 @@
+{
+  "maps": [
+    {
+      "id": "ACADEMY",
+      "title": "St. Alban Academy",
+      "folder": "academy",
+      "rooms": 17,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "ASYLUM",
+      "title": "St. Dymphna Hospital",
+      "folder": "asylum",
+      "rooms": 16,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "CASTLE",
+      "title": "Castle Beckenburg",
+      "folder": "castle",
+      "rooms": 23,
+      "map_specific_candidates": 6
+    },
+    {
+      "id": "CHURCH",
+      "title": "St. Brigid Parish",
+      "folder": "church",
+      "rooms": 15,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "COLLEGE",
+      "title": "Beckenburg College",
+      "folder": "college",
+      "rooms": 17,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "FARMHOUSE",
+      "title": "Hollowmere Farm",
+      "folder": "farmhouse",
+      "rooms": 15,
+      "map_specific_candidates": 4
+    },
+    {
+      "id": "HOUSE",
+      "title": "The Briar House",
+      "folder": "house",
+      "rooms": 15,
+      "map_specific_candidates": 4
+    },
+    {
+      "id": "MANSION",
+      "title": "Blackthorn Manor",
+      "folder": "mansion",
+      "rooms": 17,
+      "map_specific_candidates": 4
+    },
+    {
+      "id": "PRISON",
+      "title": "Beckenburg Penitentiary",
+      "folder": "prison",
+      "rooms": 16,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "SCHOOL",
+      "title": "Ravenshade School",
+      "folder": "school",
+      "rooms": 15,
+      "map_specific_candidates": 4
+    },
+    {
+      "id": "WLD-01",
+      "title": "Blackpine Logging Camp",
+      "folder": "wld-01",
+      "rooms": 14,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-02",
+      "title": "Camp Hollow Creek",
+      "folder": "wld-02",
+      "rooms": 13,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-03",
+      "title": "Red Mesa Ancestral Caves",
+      "folder": "wld-03",
+      "rooms": 14,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-04",
+      "title": "Widow's Peak Fire Lookout",
+      "folder": "wld-04",
+      "rooms": 13,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-05",
+      "title": "Dead Man's Claim",
+      "folder": "wld-05",
+      "rooms": 14,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-06",
+      "title": "Drowned Fisherman's Wharf",
+      "folder": "wld-06",
+      "rooms": 14,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-07",
+      "title": "Saint Bartholomew's Forgotten Cemetery",
+      "folder": "wld-07",
+      "rooms": 13,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-08",
+      "title": "Northwatch Research Station",
+      "folder": "wld-08",
+      "rooms": 14,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-09",
+      "title": "Blackwater Hydroelectric Dam",
+      "folder": "wld-09",
+      "rooms": 14,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-10",
+      "title": "Monastery of Ashen Bells",
+      "folder": "wld-10",
+      "rooms": 17,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-11",
+      "title": "Mourning Marsh",
+      "folder": "wld-11",
+      "rooms": 13,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-12",
+      "title": "Gallows Pass Railway",
+      "folder": "wld-12",
+      "rooms": 14,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-13",
+      "title": "Greywater Cannery",
+      "folder": "wld-13",
+      "rooms": 14,
+      "map_specific_candidates": 5
+    }
+  ],
+  "existing_map_geometry_untouched": true
+}
