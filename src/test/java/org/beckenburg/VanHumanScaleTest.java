@@ -16,6 +16,19 @@ public final class VanHumanScaleTest {
         check(VanStaging.HALF_WIDTH*2<2.1,"van cannot be truck-width");
         check(Math.abs((VanStaging.REAR+VanStaging.CAB_LENGTH)-(VanStaging.FRONT-.18)-6.704)<.001,"overall road-vehicle length");
         for(var fixture:VanInteriorLayout.FIXTURES)check(VanInteriorLayout.insideShell(fixture),"actual transformed mesh exceeds cabin: "+fixture.purpose());
+        // Mounted truck interfaces are already supplied by van fixture
+        // geometry. They remain usable, but cannot be inventoried as giant
+        // duplicate portable COMPUTER / wall-monitor boxes on the shelf.
+        for(var monitor:EquipmentRegistry.byOrigin(EquipmentRegistry.Origin.TRUCK)){
+            check(FieldEquipment.functional(monitor.id()),
+                "mounted monitoring console lost its live host handler: "+monitor.id());
+            check(VanInteriorLayout.toolSockets().stream()
+                .noneMatch(socket->socket.equipment().equals(monitor.id())),
+                "fixed monitor incorrectly consumes a portable rack bay: "+monitor.id());
+        }
+        check(VanInteriorLayout.FIXTURES.stream().anyMatch(
+                fixture->fixture.purpose().equals("command workstation")),
+            "camera console requires its native mounted workstation");
         // Rack storage now uses measured native meshes with rigid 90-degree
         // orientation (VanRackStock.place), not the obsolete 42 fixed tiny
         // preview slots. Validate each real stocked tier fits at full scale.

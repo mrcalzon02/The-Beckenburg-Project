@@ -26,7 +26,9 @@ public final class VanRackStock {
         Map<String,Entry> result=new TreeMap<>();
         for(int seat=0;seat<present.length;seat++)if(present[seat]){
             var g=gear[seat];Set<String> carried=new HashSet<>();for(int slot=0;slot<FieldEquipment.SLOTS;slot++)carried.add(g.at(slot));
-            for(String id:FieldEquipment.workingTools())if(!carried.contains(id)&&g.owned(id)!=null
+            for(String id:FieldEquipment.workingTools())if(
+                    EquipmentRegistry.get(id).origin()!=EquipmentRegistry.Origin.TRUCK
+                    &&!carried.contains(id)&&g.owned(id)!=null
                     &&!(Set.of("INCENSE","CHALK_SIGIL_KIT").contains(id)&&g.remaining(id)==0))add(result,id,g.owned(id),1);
             for(var kind:FieldSupplies.Kind.values())for(var tier:FieldSupplies.Tier.values())
                 add(result,kind==FieldSupplies.Kind.HEALTH?"HEALTH_SUPPLIES":"SANITY_MEDICATION",EquipmentTiers.Tier.values()[tier.ordinal()],medicine[seat].stock(kind,tier));

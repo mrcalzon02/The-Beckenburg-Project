@@ -27,7 +27,13 @@ public final class VanInteriorLayout {
     public record ToolSocket(String equipment,double x,double y,double z,int row,int column){}
     private static final List<ToolSocket> TOOLS=buildToolSockets();
     private static List<ToolSocket> buildToolSockets(){
-        List<String> catalog=new ArrayList<>(FieldEquipment.workingTools());
+        // Consoles and wall monitors are installed fixtures, not a second
+        // set of full-sized devices packed into the narrow van shelf.
+        // Their gameplay handlers remain available at their real stations.
+        List<String> catalog=new ArrayList<>();
+        for(String id:FieldEquipment.workingTools())
+            if(EquipmentRegistry.get(id).origin()!=EquipmentRegistry.Origin.TRUCK)
+                catalog.add(id);
         if(!catalog.contains("SALT"))catalog.add("SALT");
         catalog.sort(String::compareTo);
         if(catalog.size()>TOOL_CAPACITY)
