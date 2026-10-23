@@ -5,6 +5,8 @@ public final class CastleHubMap {
     public static final int WIDTH=44, HEIGHT=36;
     private final char[][] grid=new char[HEIGHT][WIDTH];
     private final java.util.Set<String> openDoors=new java.util.HashSet<>();
+    private long doorRevision;
+    public long doorRevision(){return doorRevision;}
     /** Gate and door state belongs to the playable map, not a freestanding mesh. */
     public boolean doorOpen(String slotId){CastleDoorSlots.require(slotId);return openDoors.contains(slotId);}
     public boolean toggleDoor(String slotId){
@@ -12,6 +14,7 @@ public final class CastleHubMap {
         if(CastleLevelEdits.current().doorType(slotId)==CastleDoorSlots.Type.EMPTY)
             throw new IllegalArgumentException("Opening has no installed door");
         if(!openDoors.add(slotId))openDoors.remove(slotId);
+        doorRevision++;
         return openDoors.contains(slotId);
     }
     public CastleDoorSlots.Slot aimedDoor(double x,double z,double yaw){

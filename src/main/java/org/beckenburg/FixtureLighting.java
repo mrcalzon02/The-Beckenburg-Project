@@ -9,6 +9,7 @@ public final class FixtureLighting {
  private record Shadow(int source,long x,long y,long z){}
  private final HouseMap map;private final CastleHubMap castle;private final List<Source> sources=new ArrayList<>();private final Map<Key,RGB> colours=new HashMap<>();private final Map<Shadow,Boolean> sight=new HashMap<>();
  private String geometry="",state="";private double[] factors=new double[0];
+ private long castleDoorRevision=-1;
  public FixtureLighting(HouseMap map){this.map=map;this.castle=null;
   for(var s:map.level().sockets())if(s.type().equals("light")){
    int control=controller(s);
@@ -35,7 +36,13 @@ public final class FixtureLighting {
        1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
   }factors=new double[sources.size()];
  }
- public void castleFrame(boolean on,int tick){String stamp=on+":"+(tick/3);if(!state.equals(stamp)){colours.clear();state=stamp;}for(var source:sources)factors[source.id]=!on?0:
+ public void castleFrame(boolean on,int tick){
+  // Dynamic gate leaves change real shadow occlusion even when the clock and
+  // circuits have not advanced. Retain expensive geometry caches otherwise.
+  if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
+   castleDoorRevision=castle.doorRevision();sight.clear();colours.clear();
+  }
+  String stamp=on+":"+(tick/3);if(!state.equals(stamp)){colours.clear();state=stamp;}for(var source:sources)factors[source.id]=!on?0:
    source.kind==Kind.CANDLE_CHANDELIER?.94+.06*Math.sin(tick*.3+source.id):1;}
  /** Unified shadow decision for all live light emitters. Investigations use
   * HouseMap's existing 3D doors, colliders and multi-storey visibility.

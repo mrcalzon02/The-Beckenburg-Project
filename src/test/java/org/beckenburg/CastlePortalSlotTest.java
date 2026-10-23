@@ -23,7 +23,9 @@ public final class CastlePortalSlotTest {
     "lowered portcullis blocks straight-through lighting");
   check(map.aimedDoor(15.5,32.5,0)!=null,
     "portcullis can be operated through actual camera facing from courtyard");
+  long before=map.doorRevision();
   check(map.toggleDoor(gate.id()),"portcullis opens");
+  check(map.doorRevision()==before+1,"shadow cache invalidation revision advances");
   check(map.traversable(15.5,34),"raised portcullis physically clears the gate aperture");
   check(FixtureLighting.castleRayClear(map,15.5,1.5,33.3,15.5,1.5,34.7),
     "raised portcullis clears light through the same aperture");
