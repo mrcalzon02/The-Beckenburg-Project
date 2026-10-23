@@ -14,11 +14,21 @@ public final class ArchitecturalPlansTest {
    for(var p:map.level().portals()){
     if(p.kind().equals("window")){windows++;AuthoredTestSupport.check(!map.adjacentRooms(p.a()).contains(p.b())||map.level().portals().stream().anyMatch(q->q.joins(p.a(),p.b())&&!q.kind().equals("window")),"glazing alone is not a walk edge");}
     if(!p.door())continue;doors++;
-    var a=AuthoredTestSupport.side(map,p,p.a(),.6);var b=AuthoredTestSupport.side(map,p,p.b(),.6);
+    // Interior partition doors connect two sides of the SAME authored room.
+    // Room-centre side lookup would return the same point twice and conceal real collisions.
+    boolean partition=p.a()==p.b();
+    var a=partition?new LevelDefinition.Vec(p.x()+(p.alongX()?0:-.55),p.y(),p.z()+(p.alongX()?-.55:0))
+        :AuthoredTestSupport.side(map,p,p.a(),.6);
+    var b=partition?new LevelDefinition.Vec(p.x()+(p.alongX()?0:.55),p.y(),p.z()+(p.alongX()?.55:0))
+        :AuthoredTestSupport.side(map,p,p.b(),.6);
     AuthoredTestSupport.check(map.resolveMove(a,b.x(),b.z())==null,"closed door collision "+p.id());
-    int closed=LanAcoustics.physicalEdgeCost(map,p.a(),p.b());map.openDoorBetweenRooms(p.a(),p.b());
+    int closed=partition?0:LanAcoustics.physicalEdgeCost(map,p.a(),p.b());
+    map.toggleDoor(p.id());AuthoredTestSupport.check(map.doorOpen(p.id()),"specific physical door opened "+p.id());
     AuthoredTestSupport.check(map.resolveMove(a,b.x(),b.z())!=null,"open door traversal "+p.id());
-    AuthoredTestSupport.check(LanAcoustics.physicalEdgeCost(map,p.a(),p.b())<=closed-2,"real door changes acoustic loss "+p.id());
+    // The acoustic graph is room-granular: same-room cubicles share one node,
+    // but their individually operated physical doors still must block passage.
+    if(!partition)AuthoredTestSupport.check(LanAcoustics.physicalEdgeCost(map,p.a(),p.b())<=closed-2,
+        "real door changes acoustic loss "+p.id());
    }
    AuthoredTestSupport.check(doors>=10&&windows>=4,"authored doors and glazed apertures");
    HouseMap peer=new HouseMap(site);peer.applyDoorSnapshot(map.doorSnapshot());AuthoredTestSupport.check(peer.doorSnapshot().equals(map.doorSnapshot()),"shared physical portal state");

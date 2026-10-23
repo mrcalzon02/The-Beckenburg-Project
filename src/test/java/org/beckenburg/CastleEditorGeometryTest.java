@@ -24,6 +24,22 @@ public final class CastleEditorGeometryTest {
             edits.put(new CastleLevelEdits.Surface("newRoof",CastleLevelEdits.Kind.ROOF,
                 12,24,16,27,3.6,1.7,MaterialAtlas.STONE));
             check(edits.wallBlocks(25,0,25,.21),"Placed wall blocks passage");
+            var horizontal=edits.surfaces().stream().filter(s->s.id().equals("newWall"))
+                .findFirst().orElseThrow();
+            var endpoint=CastleSurfaceTransforms.drag(horizontal,26,25,1,.5,true);
+            check(endpoint.x1()==27&&endpoint.z0()==25&&endpoint.z1()==25,
+                "wall vertex edit moves the endpoint without losing axial alignment");
+            var shifted=CastleSurfaceTransforms.drag(horizontal,25,25,0,1,false);
+            check(shifted.z0()==26&&shifted.z1()==26,
+                "wall edge drag moves an entire wall across the floor");
+            var deck=edits.surfaces().stream().filter(s->s.id().equals("newDeck"))
+                .findFirst().orElseThrow();
+            var corner=CastleSurfaceTransforms.drag(deck,27,27,1,.5,true);
+            check(corner.x1()==28&&corner.z1()==27.5&&corner.x0()==deck.x0(),
+                "floor vertex editing updates the actual boundary");
+            var edge=CastleSurfaceTransforms.drag(deck,23,25, -.5,0,false);
+            check(edge.x0()==22.5&&edge.x1()==deck.x1(),
+                "floor edge editing changes only the selected side");
             check(edits.floorSupports(25,25,3.4),"Placed floor supports upper navigation");
             check(edits.roofs().stream().anyMatch(r->r.west()==12&&r.rise()==1.7),
                 "Placed roof has authored dimensions");

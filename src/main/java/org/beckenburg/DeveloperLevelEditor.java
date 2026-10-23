@@ -165,6 +165,8 @@ public final class DeveloperLevelEditor extends JPanel {
                 case MOVE -> "Click object, then drag it to its new location";
                 case ROTATE -> "Rotate selected object 90 degrees";
                 case SCALE -> "Drag to change width and depth";
+                case VERTEX -> "Drag a selected surface corner or wall endpoint";
+                case EDGE -> "Drag the nearest floor/roof edge or translate a wall sideways";
                 case WALL,FLOOR,ROOF -> "Drag in viewport on editing plane to create geometry";
                 case PROP -> "Place selected asset";
                 case LIGHT -> "Place a real light emitter";
@@ -613,6 +615,7 @@ public final class DeveloperLevelEditor extends JPanel {
                 }
             }
             case ROTATE -> {pick(fromX,fromY);rotateSelection();}
+            case VERTEX,EDGE -> reshapeSurface(fromX,fromY,begin,end,tool==EditorTool.VERTEX);
             case SCALE -> {
                 pick(fromX,fromY);
                 if(chosen!=null){
@@ -626,6 +629,22 @@ public final class DeveloperLevelEditor extends JPanel {
             }
         }
         viewport.requestFocusInWindow();
+    }
+    /** Vertex and edge handles modify actual persisted architecture, sharing the same
+     * undo stack, collision volumes and renderer source as other editor tools. */
+    private void reshapeSurface(int clickX,int clickY,Point begin,Point end,boolean corner){
+        if(chosen==null||!"SURFACE".equals(chosen.kind))pick(clickX,clickY);
+        if(chosen==null||!"SURFACE".equals(chosen.kind)){
+            status.setText("Select a wall, floor or roof surface to edit its geometry");return;
+        }
+        String id=chosen.id;
+        operate(()->{
+            var surface=data.surfaces().stream().filter(p->p.id().equals(id))
+                .findFirst().orElseThrow();
+            data.put(CastleSurfaceTransforms.drag(surface,begin.x,begin.z,
+                end.x-begin.x,end.z-begin.z,corner));
+        });
+        refresh();selectId("SURFACE",id);
     }
     private void drawSurface(Point begin,Point end,EditorTool shape){
         final CastleLevelEdits.Kind kind=CastleLevelEdits.Kind.valueOf(shape.name());

@@ -25,8 +25,8 @@ public final class LanSpatialEvidenceIntegrationTest {
             throw new AssertionError("missing "+prefix+" on "+client.seat());
         }
         void room(int r)throws Exception{LanTestRoomTravel.move(client,this::await,r);}
-        void step(int dx)throws Exception{
-            Thread.sleep(135);client.step(dx,0);await("ACCEPT|STEP");
+        void step(int dx,int dz)throws Exception{
+            Thread.sleep(135);client.step(dx,dz);await("ACCEPT|STEP");
         }
         public void close(){client.close();}
     }
@@ -46,14 +46,32 @@ public final class LanSpatialEvidenceIntegrationTest {
             ghost.await("ACCEPT|GHOST|DISTURB|");
             hunter.client.scan(LanCase.Tool.EMF);
             ok(hunter.await("ACCEPT|SCAN|READING").contains("EMF"),"event-driven EMF >6");
-            for(int i=0;i<10;i++)hunter.step(100);
+            // A 3.1m blind +X line now strikes an authored wall. Choose a real,
+            // collision-validated 2.17m corridor beyond the Spirit Box's 2.1m reach.
+            HouseMap geometry=new HouseMap();
+            int travelX=0,travelZ=0;
+            for(int[] candidate:new int[][]{{-100,0},{100,0},{0,-100},{0,100}}){
+                var at=geometry.spawn(4);boolean clear=true;
+                for(int i=0;i<7;i++){
+                    var next=geometry.resolveMove(at,at.x()+candidate[0]*.0031,
+                        at.z()+candidate[1]*.0031);
+                    if(next==null){clear=false;break;}
+                    at=next;
+                }
+                if(clear&&Math.hypot(at.x()-geometry.centerX(4),at.z()-geometry.centerZ(4))
+                        >LanCase.Tool.SPIRIT_BOX.sensingRadius()){
+                    travelX=candidate[0];travelZ=candidate[1];break;
+                }
+            }
+            ok(travelX!=0||travelZ!=0,"room 4 has an accessible corridor beyond Spirit Box event range");
+            for(int i=0;i<7;i++)hunter.step(travelX,travelZ);
             hunter.client.scan(LanCase.Tool.SPIRIT_BOX);
             ok(hunter.await("ACCEPT|SCAN|READING").contains("No response"),
                 "spirit box remains operational and reads silence away from the source");
             hunter.client.scan(LanCase.Tool.THERMOMETER);
             ok(hunter.await("ACCEPT|SCAN|READING").contains("THERMOMETER"),
                 "thermometer reports within its practical range");
-            for(int i=0;i<10;i++)hunter.step(-100);
+            for(int i=0;i<7;i++)hunter.step(-travelX,-travelZ);
             hunter.client.scan(LanCase.Tool.SPIRIT_BOX);
             ok(hunter.await("ACCEPT|SCAN|READING").contains("SPIRIT_BOX"),
                 "approaching the source permits another sample");
