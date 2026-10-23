@@ -1259,6 +1259,21 @@ public final class SceneRenderer {
             if(ceiling)texturedQuad(out,new Point(x0,surface,z0),new Point(x1,surface,z0),new Point(x1,surface,z1),new Point(x0,surface,z1),mat,x0/4,z0/4,x1/4,z0/4,x1/4,z1/4,x0/4,z1/4,0xffffff);
             else texturedQuad(out,new Point(x0,surface,z1),new Point(x1,surface,z1),new Point(x1,surface,z0),new Point(x0,surface,z0),mat,x0/4,z1/4,x1/4,z1/4,x1/4,z0/4,x0/4,z0/4,0xffffff);
         }
+        if(!ceiling)for(var cell:DeckSlabs.cells(level,r)){
+            double x0=cell.x0(),x1=cell.x1(),z0=cell.z0(),z1=cell.z1(),bottom=cell.bottom(),top=cell.top();
+            int mat=LevelMaterials.floor(r);
+            // Separate downward-facing soffit; never reuse the upstairs top face.
+            texturedQuad(out,new Point(x0,bottom,z0),new Point(x1,bottom,z0),new Point(x1,bottom,z1),new Point(x0,bottom,z1),mat,x0/4,z0/4,x1/4,z0/4,x1/4,z1/4,x0/4,z1/4,0xffffff);
+            // Only exposed perimeter/aperture edges, with no internal tile seams.
+            if(!DeckSlabs.solid(level,r,x0-.001,(z0+z1)/2))texturedBoxSide(out,x0,bottom,z0,x0,top,z1,mat);
+            if(!DeckSlabs.solid(level,r,x1+.001,(z0+z1)/2))texturedBoxSide(out,x1,bottom,z0,x1,top,z1,mat);
+            if(!DeckSlabs.solid(level,r,(x0+x1)/2,z0-.001))texturedBoxSide(out,x0,bottom,z0,x1,top,z0,mat);
+            if(!DeckSlabs.solid(level,r,(x0+x1)/2,z1+.001))texturedBoxSide(out,x0,bottom,z1,x1,top,z1,mat);
+        }
+    }
+    private static void texturedBoxSide(List<Face> out,double x0,double bottom,double z0,double x1,double top,double z1,int material){
+        double width=Math.hypot(x1-x0,z1-z0)/4;
+        texturedQuad(out,new Point(x0,bottom,z0),new Point(x1,bottom,z1),new Point(x1,top,z1),new Point(x0,top,z0),material,0,bottom/4,width,bottom/4,width,top/4,0,top/4,0xffffff);
     }
     private static void terrainDeck(List<Face> out,SiteTerrain terrain,LevelDefinition.Room room){
         int material=terrain.material();

@@ -1,17 +1,27 @@
 {
-  "base_commit": "71c14d11ac889fab88facdb510d7ea15d8878479",
+  "base_commit": "4b2bb2429e7f2131d77694e27b3e7007ab5e3f27",
   "source_hashes": {
-    "src/main/java/org/beckenburg/BlackpineLighting.java": "9cecb04a0897a77a24bedea7e37bd0ae03f5b5b9d013f30897073a7a06f631f5",
+    "src/main/java/org/beckenburg/BlackpineLighting.java": "f263df4ec47f1acad1178e8b53caeadedf79fceb723d99ace0917dd1c05175d1",
     "src/main/java/org/beckenburg/BlackpineLevel.java": "b00a94c1c1647447f6829ea45e1574fab73ec37ceb8c1fe79b07b9dfe9240819",
     "src/test/java/org/beckenburg/BlackpineLightingTest.java": "d30e4be993d59fc46bc6d8e1fe23c9af77c7e5875cf4c39146fe72db24448d30",
-    "assets/runtime/models/level_mill_suspension.glb": "a4c179b9c6cfd7fd8ff0162f033526880296032cd56bb3e0098b9db3d1db612b"
+    "assets/runtime/models/level_mill_suspension.glb": "a4c179b9c6cfd7fd8ff0162f033526880296032cd56bb3e0098b9db3d1db612b",
+    "src/main/java/org/beckenburg/DeckSlabs.java": "d36ce073986f7b89f8fa5301a9a0819a60f57a8d5d2a33c62432a13baf170a4a",
+    "src/main/java/org/beckenburg/SceneRenderer.java": "bf942937f7bc4663333a19166978b84db3ca30c98e4fcce618c4e72dfbf58f6c",
+    "src/main/java/org/beckenburg/HouseMap.java": "7e7712cca2ebf83030e07168e41bfddef43a919f272e48421fadd0a3ae3ada6c",
+    "src/test/java/org/beckenburg/BlackpineDeckDepthTest.java": "fea0f110dc5e39f46a02864326fa0fbeb28c13038afa59108ba520a2d28dc4c0"
   },
   "java_17_compile": true,
   "checks": [
     {
+      "test": "BlackpineDeckDepthTest",
+      "status": "pass",
+      "seconds": 0.47,
+      "output": "PASS actual 160mm soffit/fascia, equal top/underside apertures, mounted lamp, opaque slab edge and isolated upstairs lighting"
+    },
+    {
       "test": "BlackpineLightingTest",
       "status": "pass",
-      "seconds": 0.61,
+      "seconds": 0.56,
       "output": "PASS supported ceiling pivots, below-deck emission, lit blade/aisle, exact switch target, circuit isolation, breaker blackout, loft/wall/join occlusion and fitting clearance"
     },
     {
@@ -23,7 +33,7 @@
     {
       "test": "ProductionAssetTest",
       "status": "pass",
-      "seconds": 0.64,
+      "seconds": 0.67,
       "output": "PASS 12 ready runtime production meshes, 18879 shared source triangles, matching collision/support and clear spawns/rites"
     },
     {
@@ -35,62 +45,62 @@
     {
       "test": "BlackpineGrayboxTest",
       "status": "pass",
-      "seconds": 0.38,
+      "seconds": 0.36,
       "output": "PASS: Blackpine dimensions, sparse refuge, physical doors, spawns, three rites and supported mill stairs"
     },
     {
       "test": "TerrainAndRecoveryTest",
       "status": "pass",
-      "seconds": 1.97,
+      "seconds": 2.02,
       "output": "PASS graded terrain, baked erosion paths, wholly clear shrubs/logs, rooted upright plants, 900 physical slope steps and player/ghost/loose-entity recovery"
     },
     {
       "test": "AuthoredLevelPhysicsTest",
       "status": "pass",
-      "seconds": 0.47,
+      "seconds": 0.48,
       "output": "HOUSE XYZ geometry checked\nFARMHOUSE XYZ geometry checked\nSCHOOL XYZ geometry checked"
     },
     {
       "test": "LevelSurfaceIntegrityTest",
       "status": "pass",
-      "seconds": 0.89,
+      "seconds": 0.88,
       "output": "PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS FARMHOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS SCHOOL: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards"
     },
     {
       "test": "LightingOcclusionRepairTest",
       "status": "pass",
-      "seconds": 0.52,
+      "seconds": 0.55,
       "output": "PASS shared 3D lighting occlusion, castle walls, portals, ceiling, courtyard and mission LOS"
     },
     {
       "test": "PhysicalLightingTest",
       "status": "pass",
-      "seconds": 1.25,
+      "seconds": 1.28,
       "output": "PASS native source profiles, directional and warm emission, closed-door shadows/cache invalidation, exact TV glow/sound use, independent washroom switches and castle lamp sources"
     },
     {
       "test": "MergedMaterialMetadataTest",
       "status": "pass",
-      "seconds": 0.23,
+      "seconds": 0.22,
       "output": "PASS generated terrain/foliage, subsequent GLB and TV material metadata remain aligned"
     },
     {
       "test": "AuthoredLevelReachabilityTest",
       "status": "pass",
-      "seconds": 8.81,
+      "seconds": 9.44,
       "output": "blackpine reached elevations 0.0..4.002816901408451\nPASS blackpine: swept van route reaches all15 zones and all functional sockets, 292910 positions"
     },
     {
       "test": "BlackpineLightingCapture",
       "status": "pass",
-      "seconds": 4.41,
-      "output": "2026-10-23T10:11:31.331504700Z [main] RENDER SLOW stage=idle faces=97723 visible_faces=83962 culled_faces=13761 target=1120x700 build_ms=1341 lighting_raster_ms=869\nVIEW logway-lit\nVIEW underloft-lit\nVIEW mill-aisle-lit\nVIEW logway-off\nVIEW underloft-off\nVIEW mill-aisle-off"
+      "seconds": 4.5,
+      "output": "2026-10-23T10:30:57.511128200Z [main] RENDER SLOW stage=idle faces=97723 visible_faces=83962 culled_faces=13761 target=1120x700 build_ms=1293 lighting_raster_ms=922\nVIEW logway-lit\nVIEW underloft-lit\nVIEW mill-aisle-lit\nVIEW logway-off\nVIEW underloft-off\nVIEW mill-aisle-off"
     },
     {
       "test": "LevelSceneSource",
       "status": "pass",
-      "seconds": 5.55,
-      "output": "Exact runtime source blackpine: 253307 textured triangles, 405 materials"
+      "seconds": 5.53,
+      "output": "Exact runtime source blackpine: 253341 textured triangles, 405 materials"
     }
   ],
   "limitations": [
@@ -99,11 +109,16 @@
   ],
   "status": "pass",
   "capture_hashes": {
-    "development/levels/previews/mill-lighting/logway-lit.png": "e12a2a0d97ea7766937a42e1f2998e32d15a4acb7bfdc652329416625848d7b5",
+    "development/levels/previews/mill-lighting/logway-lit.png": "de75c801a825ed810c9e2681ee08969e6c7f46e361b10081961952fa2c3782d6",
     "development/levels/previews/mill-lighting/logway-off.png": "a539f373972a2502f8da914a5d171581a7c06cb00152781be2dab059250ab79f",
-    "development/levels/previews/mill-lighting/mill-aisle-lit.png": "ea7ab30283236659d17095e6c9b7b2ee95584c667f80f9fa3134b387918e3577",
-    "development/levels/previews/mill-lighting/mill-aisle-off.png": "787630205f2c29d8fdf46ffd00a8205350b7efeadae2cc07bf5ee633e3fce195",
-    "development/levels/previews/mill-lighting/underloft-lit.png": "19308a83c87dba9d75332674dfbfcbe4ba03131460ff9337d7e931da4f745dab",
-    "development/levels/previews/mill-lighting/underloft-off.png": "a9c9bd3e1b60e9fef86284ef10443c4f7fef82ac052bba9f3c844622c218db29"
+    "development/levels/previews/mill-lighting/mill-aisle-lit.png": "520f016742a3dd6dd904f40d70034947d14b2b2cafd12b14c00db72113b583c4",
+    "development/levels/previews/mill-lighting/mill-aisle-off.png": "81e484a95668e8908c148dcb9f521f64ef66236b6cecc31d7354f939ce23a33f",
+    "development/levels/previews/mill-lighting/underloft-lit.png": "a6d1be995f46dae37b931bb0abb39616a8e0bae9db35ec779f3a8b0859162799",
+    "development/levels/previews/mill-lighting/underloft-off.png": "d9387080429dd3b883d4373a4595b5128433a0cf813c4f82f03f0a87dc66b0b8"
+  },
+  "baseline_failure": {
+    "commit": "4b2bb2429e7f2131d77694e27b3e7007ab5e3f27",
+    "test": "BlackpineDeckDepthTest",
+    "output": "AssertionError: loft needs a real 160mm underside, not one paper-thin floor face"
   }
 }

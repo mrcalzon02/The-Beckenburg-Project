@@ -2,8 +2,11 @@
 
 Latest measured refinement: [Blackpine supported worklights](BLACKPINE_WORKLIGHTS.md),
 23 October 2026, following branch unification. Four placements, one original
-support model, fourteen runtime checks and exact native scene verification.
-Continue from its recorded unfinished native-play and hunt/LAN gates.
+support model, fifteen runtime checks and exact native scene verification.
+User direction now advances construction to Camp Hollow Creek while Blackpine
+retains its unfinished native-play and hunt/LAN gates. Read the shared
+[defect ledger](../quality/DEFECT_LEDGER.md) and [fitness checklist](../quality/MAP_FITNESS_CHECKLIST.md)
+before every iteration. Every new capture belongs in the shared development gallery.
 
 The 2026-10-21 breadth-first planning pass is recorded in [the all-map layout atlas](layouts/README.md): nine original investigation families, thirteen remote proposals and Castle headquarters each have a separate rough-layout checkpoint. This fulfills the user's planning request before refinement; it does not bypass the construction and acceptance gates below. Individual layout refinement risks and the next unfinished steps are in [layouts/WORKFLOW.md](layouts/WORKFLOW.md).
 

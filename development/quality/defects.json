@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "updated": "2026-10-23",
+  "issues": [
+    {
+      "id": "DEV-001",
+      "title": "Paper-thin loft floor and apparent upstairs light bleed",
+      "status": "fixed-scoped",
+      "affected": "Blackpine inspection loft",
+      "symptom": "User observed apparent light from above on the under-loft ceiling.",
+      "cause": "The upper floor had one rendered face, no separate soffit/fascia or structural depth.",
+      "action": "Added a 160mm authored slab with physical collision, an independent underside and exposed edges; lowered the utility fitting to Y2.84 before grading.",
+      "evidence": "BlackpineDeckDepthTest fails against pre-fix compiled 4b2bb24: loft needs a real 160mm underside. It passes after correction, including actual triangle area/normals and upstairs circuit isolation. Before/after PNGs: development/levels/previews/defects/ and mill-lighting/.",
+      "older_maps": "Audit floor depth and cross-storey lighting in House, Farmhouse, School, Church and Castle; depth is opt-in and has only been applied/verified at Blackpine."
+    },
+    {
+      "id": "DEV-002",
+      "title": "Corner, floor/wall and wall/roof light bleed",
+      "status": "open-audit",
+      "affected": "Previously reported joins; broader map set unverified",
+      "symptom": "User reports light bleed through floor/wall joins and requests corner and roof intersection coverage.",
+      "cause": "Multiple possible causes: zero-depth geometry, open seams, normals, endpoint sampling or lighting occlusion; do not assume one cause for every join.",
+      "action": "Audit each surface and circuit pairing using MAP_FITNESS_CHECKLIST.md; log each reproducible location as a linked issue.",
+      "evidence": "BlackpineLightingTest covers selected wall/floor rays; LightingOcclusionRepairTest covers selected castle planes. These do not certify all corners/roofs.",
+      "older_maps": "All prior maps require a documented join/corner/roof sweep and matched light-state captures."
+    },
+    {
+      "id": "DEV-003",
+      "title": "Black and gray striped procedural metal",
+      "status": "fixed-scoped",
+      "affected": "Twelve original working-place models plus mill suspension",
+      "symptom": "Metal developed regular dark/light bandage-like stripes.",
+      "cause": "Fixed-amplitude sine rows and bright border strips in the procedural metal shader.",
+      "action": "Rebuilt the working-place family with restrained proportional non-directional patina; suspension uses the corrected material.",
+      "evidence": "development/levels/MILL_REFINEMENT.md; validate_mill_expansion.py and validate_mill_lighting.py independently inspect packed row contrast below 2.5%.",
+      "older_maps": "Other historical model families require regeneration, source/hash updates and in-room inspection before being called corrected."
+    },
+    {
+      "id": "DEV-004",
+      "title": "Workshop bandsaw used as primary sawmill machine",
+      "status": "fixed-scoped",
+      "affected": "Blackpine mill and repair shed",
+      "symptom": "Small workshop saw did not fit the logway or sawmill purpose in the supplied reference.",
+      "cause": "Wrong machine type/scale for processing full logs.",
+      "action": "Added circular headrig aligned to the log carriage; relocated the small bandsaw to the repair shed.",
+      "evidence": "BlackpineMillExpansionTest; native blade/log/arbor and bearing checks in validate_mill_expansion.py.",
+      "older_maps": "Check purpose and human/material scale whenever industrial models are reused."
+    },
+    {
+      "id": "DEV-005",
+      "title": "Timber rack intersects ledger table",
+      "status": "fixed-scoped",
+      "affected": "Blackpine timber store",
+      "symptom": "Initial rack placement overlapped an existing furnishing.",
+      "cause": "Bounds were not separated in the first candidate placement.",
+      "action": "Moved the rack to X60.4/Z20.75; retain source bounds and measured room coordinates.",
+      "evidence": "BlackpineMillExpansionTest independently checks solid furnishing separation; MILL_REFINEMENT.md records the rejected placement.",
+      "older_maps": "Run furniture/furniture and furniture/wall checks for all old room kits; tabletop items need actual support-part checks."
+    },
+    {
+      "id": "DEV-006",
+      "title": "High mill worklights lack appropriate physical supports",
+      "status": "fixed-scoped",
+      "affected": "Blackpine mill",
+      "symptom": "Worklight arrangement needed real roof attachment and a below-deck fixture.",
+      "cause": "Ceiling-origin fixtures must be supported at their authored height, not floated or floor-normalized.",
+      "action": "Added ceiling plates, suspension rods, crossbar, junction and protected electrical drop; corrected under-loft mount after slab addition.",
+      "evidence": "BlackpineLightingTest; validate_mill_lighting.py native contact/pivot checks.",
+      "older_maps": "Inspect brackets, fixture backs and circuit access at every older site."
+    },
+    {
+      "id": "DEV-007",
+      "title": "Added slab blocks final stair approach",
+      "status": "fixed-scoped",
+      "affected": "Blackpine mill stair; introduced during DEV-001 fix",
+      "symptom": "BlackpineGrayboxTest failed at ascent step 113 immediately after adding slab collision.",
+      "cause": "The swept capsule overlaps the final riser before its feet reach landing height.",
+      "action": "Allow only an authored stair-to-slab landing contact within 200mm of the top and at the actual ramp elevation; other slab edges remain opaque/solid.",
+      "evidence": "BlackpineGrayboxTest failed before transition correction and passes afterward; swept route test still reaches all 15 zones over 292910 positions.",
+      "older_maps": "Every structural-depth retrofit must recheck both stair directions and landing transitions."
+    },
+    {
+      "id": "DEV-008",
+      "title": "Castle sky variation assertion fails on existing main",
+      "status": "open",
+      "affected": "Castle headless integration check",
+      "symptom": "CastleHubIntegrationTest fails its sky color-variation assertion.",
+      "cause": "Reproduced on unchanged main db9bb0d during branch unification; not attributed to new map assets.",
+      "action": "Keep open for renderer owner; do not suppress the assertion to claim a full green release.",
+      "evidence": "development/verification/branch-unification.json and unification-main-baseline.json.",
+      "older_maps": "Recheck when the responsible renderer change lands; do not silently drop this known failure."
+    },
+    {
+      "id": "DEV-009",
+      "title": "Slow software-renderer capture frames",
+      "status": "open-measurement",
+      "affected": "Headless Blackpine capture process",
+      "symptom": "Capture logs report slow scene assembly/raster frames.",
+      "cause": "Target-hardware/native OpenGL behavior is not established by headless captures.",
+      "action": "Retain timings and profile native gameplay before claiming acceptable performance.",
+      "evidence": "development/levels/verification/blackpine-worklights.json contains actual RENDER SLOW timings.",
+      "older_maps": "Measure each site on target hardware; do not copy a performance claim from another map."
+    }
+  ],
+  "audit_categories": [
+    "Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed",
+    "Floor depth, underside normals, exposed edges and cut openings",
+    "Models in walls/roofs, furniture overlaps and blocked routes",
+    "Objects floating, sinking or incorrectly stacked on desks/shelves/counters; actual support-part bounds",
+    "Fixture attachment, pipes/cables, circuit and physical interaction access",
+    "Incorrect model purpose/scale, UV and texture defects",
+    "Any newly added/discovered development error, including regressions caused by fixes"
+  ]
+}

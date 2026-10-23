@@ -21,7 +21,7 @@ facilities and the open circulation aisle rather than the historical rough plan.
 | Logway pendant | X43.2 / Z26.7, mounting Y4.56 | Read the logway without intruding on standing circulation |
 | Headrig pendant | X43.2 / Z34, mounting Y4.56 | Illuminate the circular blade and stopped work position |
 | Approach pendant | X49 / Z24, mounting Y4.56 | Read the aisle; stay outside the stair/loft footprint |
-| Under-loft fitting | X48.5 / Z35, mounting Y3 | Emit below the actual deck, preserving upper-floor ownership |
+| Under-loft fitting | X48.5 / Z35, mounting Y2.84 | Emit below the actual deck, preserving upper-floor ownership |
 
 All four belong to the existing mill circuit. The inspection loft retains its
 separate circuit. Terrain grading moves roof attachments, fixtures, rooms and
@@ -40,7 +40,7 @@ and circuit systems.
 
 1. Measured the existing utility fitting and authored roof/deck planes before
    creating the support. The crossbar's lower face and fitting mount coincide.
-2. Compiled every current Java main/test source with JDK 17. Fourteen scoped
+2. Compiled every current Java main/test source with JDK 17. Fifteen scoped
    runtime checks passed, including the new switch/breaker, source energy,
    fitting clearance and wall/loft/join occlusion checks.
 3. Rechecked production model separation, supported spawns, ritual reservations,
@@ -51,7 +51,7 @@ and circuit systems.
    readable when powered; the mill returns to darkness when switched off.
 5. Reopened the saved support and full scene in Blender. Connected support/cable
    bounds, ceiling pivot, original UVs, packed textures, every exported triangle
-   vertex/UV and all socket transforms pass. The scene has 253,307 exact runtime
+   vertex/UV and all socket transforms pass. The scene has 253,341 exact runtime
    triangles. Actual packed metal row contrast is 1.16–1.27%, below the 2.5%
    banding guard; this checks this asset, not every historical metallic texture.
 
@@ -61,9 +61,21 @@ performance or human-play acceptance. The engine's lighting implementation was
 not changed. Join tests cover the specified Blackpine rays; they do not prove
 the absence of every possible light leak throughout the game.
 
+## Floor-depth correction after user review
+
+The single-face loft floor was inadequate. DEV-001 in the shared defect ledger
+records a reproduced failing geometry test against 4b2bb24, the 160mm slab fix,
+separate downward-facing soffit, exposed fascia, shared collision and a fitting
+relocated to the actual underside. DEV-007 records the resulting stair-landing
+regression and its correction. Stair ascent/descent and the full swept flood
+pass again. Matched corrected views replace the current review images; original
+before-fix views remain under `previews/defects/`. The correction is scoped to
+Blackpine; other maps require individual floor/roof/corner audits.
+
 ## Next unfinished gate
 
-Stay on Blackpine. Walk the lit/unlit mill and loft in the native game, then
+The user has authorized starting Camp Hollow Creek next while these acceptance
+gates remain recorded. Blackpine stays locked. Walk the lit/unlit mill and loft in the native game, then
 exercise real human/AI hunts, defended rites, evidence balance, LAN site
 selection/rejoin, controls and target-hardware performance. The site remains
 locked. Do not advance Camp Hollow Creek to a completed map on these results.

@@ -1,3 +1,5 @@
+[Development screenshot gallery](https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html) · [Shared defect ledger](development/quality/DEFECT_LEDGER.md)
+
 # The Beckenburg Project — Playable Solo Investigation Prototype (Java 17)
 
 ## Thirteen-ghost evidence matrix and manually ticked journal (2026-10-18)

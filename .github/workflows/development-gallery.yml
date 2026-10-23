@@ -1,0 +1,19 @@
+name: Development gallery index
+on:
+  push:
+    branches: [main]
+    paths: ['development/**', 'tools/build_development_gallery.py', 'beckenburg-development-gallery.html', '.github/workflows/development-gallery.yml']
+  pull_request:
+    paths: ['development/**', 'tools/build_development_gallery.py', 'beckenburg-development-gallery.html', '.github/workflows/development-gallery.yml']
+permissions:
+  contents: read
+jobs:
+  gallery:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify every committed capture is indexed with original dimensions and hash
+        run: python tools/build_development_gallery.py --check
