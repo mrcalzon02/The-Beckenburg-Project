@@ -189,7 +189,7 @@ public final class VanSiteMapScreen {
                 :new Color(124,224,176));
             String prefix=switch(s.tool()){
                 case "THERMAL_BEACON"->"T";case "MOTION_SENSOR"->"M";
-                case "SOUND_SENSOR"->"S";default->"E";
+                case "SOUND_SENSOR"->"S";case "LASER_GRID"->"L";default->"E";
             };
             g.drawString(prefix+s.id()
                 +"  "+fit(g.getFontMetrics(),map.roomName(s.room()),sidebar-70),right,yy);

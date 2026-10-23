@@ -136,6 +136,104 @@ Evidence and verification: development/levels/verification/blackpine-worklights.
 
 Older-map obligation: Measure each site on target hardware; do not copy a performance claim from another map.
 
+### DEV-010 — Purchased Tier I flashlight weaker than default
+
+**Status:** fixed-scoped · **Affected:** Shared flashlight optics
+
+Tier I was 6m / .58 while the default was 7.5m / .72.
+
+Cause / uncertainty: Hardware defaults and tier configuration diverged.
+
+Fix / next action: All paid tiers now exceed default reach, power and width: 9.5/12.83/16.63m, .98/1.18/1.40 power.
+
+Evidence and verification: OpticalEvidenceTest and TieredMediaAndPowerTest; unchanged 280/420/630s host batteries.
+
+Older-map obligation: Inspect actual handheld illumination in older sites, not just numeric stats.
+
+### DEV-011 — GPU handheld flashlight omitted from submitted light
+
+**Status:** fixed-scoped · **Affected:** Shared GPU scene submission
+
+CPU raster added the held torch per pixel but GPU vertex submission only included room/portable light.
+
+Cause / uncertainty: Different CPU/GPU lighting paths omitted the same hardware beam.
+
+Fix / next action: GPU vertices now include the shared torch profile; CPU retains one beam contribution.
+
+Evidence and verification: OpticalEvidenceCapture independently compares actual GPU RGB output for default and purchased torch.
+
+Older-map obligation: Native OpenGL hardware and per-map performance still need acceptance.
+
+### DEV-012 — UV only reports room traces; no purple light or surface splats
+
+**Status:** fixed-scoped · **Affected:** UV tool, local solo and LAN
+
+The UV action produced text from room recency without visible inspection light or positioned decals.
+
+Cause / uncertainty: No rendered UV emitter or surface-bound trace representation.
+
+Fix / next action: Added purple cone, bounded host-authored passage marks, geometric reveal, switch/battery state and textured shallow surface cubes.
+
+Evidence and verification: OpticalEvidenceTest covers genuine/absent/expired traces, direction, six mounting normals and texture; OpticalEvidenceCapture verifies real purple/green pixels; LanOpticalEvidenceNetworkTest uses real sockets and tests depletion/privacy.
+
+Older-map obligation: Current producer leaves supported floor residue. Six-axis cube support does not mean wall/ceiling contact producers or teammate UV spill have been implemented; those remain separate refinements.
+
+### DEV-013 — D.O.T.S. flat silhouette and unpowered deployment
+
+**Status:** fixed-scoped · **Affected:** D.O.T.S. projector
+
+Passages drew a small planar point shape, and deployment did not activate its battery drain.
+
+Cause / uncertainty: Approximate render geometry and incomplete power integration.
+
+Fix / next action: Project dots onto rounded standing-capsule surface, clipped to active field and LOS; activate host power on placement, stop on pickup/exhaustion; retain compatibility/quota checks.
+
+Evidence and verification: OpticalEvidenceTest capsule geometry; captured photographs contain real rendered dots; existing LanDotsProjectorsTest and power suite pass.
+
+Older-map obligation: Capsule uses current standing dimensions. Native moving-ghost and multi-PC camera acceptance remains pending.
+
+### DEV-014 — Laser evidence has text but no visible physical distortion
+
+**Status:** fixed-scoped · **Affected:** LASER_GRID
+
+Device returned generic readings without a rendered beam/ghost intersection effect.
+
+Cause / uncertainty: No spatial grid geometry or optical-contact event.
+
+Fix / next action: Added placed tiered beam fans clipped by architecture, exact horizontal beam/capsule intervals and spirals only within those intervals; host-authorized events, battery state, camera views and photographs.
+
+Evidence and verification: OpticalEvidenceTest rejects non-intersections and checks fixed endpoints; OpticalEvidenceCapture compares straight/distorted pixels and photographs.
+
+Older-map obligation: Per-site and native hardware performance still require review; species/quota/event rules remain authoritative.
+
+### DEV-015 — New laser station falls through to thermometer readout
+
+**Status:** fixed-scoped · **Affected:** Laser station integration, discovered during this pass
+
+After enabling laser station placement, the general station reader would treat it as a thermometer.
+
+Cause / uncertainty: The old reader only distinguished EMF from other pre-existing sensor types.
+
+Fix / next action: Use one laserContact calculation for both optical events and station readings; label laser stations L on the van map.
+
+Evidence and verification: LanOpticalEvidenceNetworkTest now waits for the real SENSOR READ packet and rejects unrelated thermometer output.
+
+Older-map obligation: Audit device-specific dispatch when adding a new shared station type.
+
+### DEV-016 — UTF-8 UI labels corrupted by editing script
+
+**Status:** fixed-scoped · **Affected:** Two local Java edits during this pass
+
+The regression test detected a corrupted pound sign and other non-ASCII labels before publication.
+
+Cause / uncertainty: A Windows-default cp1252 read was written as UTF-8.
+
+Fix / next action: Restored original UTF-8 text and retained only intended source changes; all future scripts use explicit encoding.
+
+Evidence and verification: EquipmentStoreDescriptionsTest reproduced the failure and passes after correction; review the scoped diff for unrelated text changes.
+
+Older-map obligation: Do not rewrite historical Unicode text via platform-default encoding.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

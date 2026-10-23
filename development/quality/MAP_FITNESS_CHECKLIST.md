@@ -34,6 +34,11 @@ Record discoveries immediately in [defects.json](defects.json); regenerate the
    native/runtime checks, affected-map status and next gate. Label studio/native
    overviews separately from runtime screenshots. Refresh and verify the shared
    GitHub gallery before moving to the next checkpoint.
+9. **Optical evidence:** verify paid torches beat default in both renderer paths;
+   UV casts purple light and reveals only real traces on outward textured cube
+   faces; D.O.T.S. is confined to the body/field intersection; laser reactions are
+   confined to real beam/body intersections. Test device power, architecture
+   occlusion, camera photographs, networking privacy and empty-scene negatives.
 
 For an older map, create a per-location audit record listing these categories,
 evidence paths and defects found. Never mark other maps corrected because a shared

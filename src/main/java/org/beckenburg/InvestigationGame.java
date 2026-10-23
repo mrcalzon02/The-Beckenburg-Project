@@ -1048,6 +1048,7 @@ public final class InvestigationGame {
                 case CLUTTER -> map.clutter().takeFocused(Integer.parseInt(target.id()),new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true,HunterPosture.eye(session.crouched())),session.ticks());
                 case FIXTURE -> {int id=Integer.parseInt(target.id());map.fixtures().toggleFocused(id,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true,HunterPosture.eye(session.crouched())),session.ticks());GameSfx.fixtureState(map.fixtures().state(id));}
                 case RACK -> {
+                    session.rechargeUvAtVan(scene.x,feetY(),scene.z);
                     String id=target.id().split(":")[0];
                     if(id.equals("HEALTH_SUPPLIES")||id.equals("SANITY_MEDICATION")){
                         var kind=id.equals("HEALTH_SUPPLIES")?FieldSupplies.Kind.HEALTH:FieldSupplies.Kind.SANITY;

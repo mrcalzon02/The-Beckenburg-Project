@@ -85,6 +85,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private int activeGearSlot;
     private int heldUseUntilTick;
     private boolean nightVision,flashlightOn,firelightOn;
+    private boolean uvLightOn;
+    private final java.util.List<UvEvidenceMarks.Mark> uvSurfaceMarks=new java.util.ArrayList<>();
     private int igniterFlashUntil;
     private java.awt.image.BufferedImage pendingPhoto;
     private java.awt.image.BufferedImage lastPhoto;
@@ -624,7 +626,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     renderer.videoCameras.put(owner,camera);
                 }else throw new IllegalArgumentException("invalid video station");
             }else if(p.get(0).equals("DOTS")){
-                if(p.size()==2&&p.get(1).equals("RESET")){
+                if(p.size()==4&&p.get(1).equals("POWER")){
+                    renderer.dotsPowered.put(LanProtocol.integer(p.get(2),0,5),LanProtocol.integer(p.get(3),0,1)==1);
+                }else if(p.size()==2&&p.get(1).equals("RESET")){
                     renderer.dotsPositions.clear();
                     renderer.dotsPassRoom=-1;
                 }else if(p.size()==3&&p.get(1).equals("CLEAR")){
@@ -771,6 +775,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     // On/off status is replicated separately as real GEARFX.
                     LanProtocol.integer(p.get(3),0,1);
                 }
+            }else if(p.size()==4&&p.get(0).equals("LASER")&&p.get(1).equals("POWER")){
+                renderer.laserPowered.put(LanProtocol.integer(p.get(2),0,5),LanProtocol.integer(p.get(3),0,1)==1);
+            }else if(p.size()==8&&p.get(0).equals("LASER")&&p.get(1).equals("HIT")){
+                var contact=new StructuredLightVolume.Contact(LanProtocol.integer(p.get(2),1,999999999),LanProtocol.integer(p.get(3),0,11),Double.parseDouble(p.get(4)),Double.parseDouble(p.get(5)),Double.parseDouble(p.get(6)),LanProtocol.integer(p.get(7),0,99999999));
+                renderer.laserContacts.put(contact.station(),contact);
+            }else if(p.size()==2&&p.get(0).equals("UVTRACE")&&p.get(1).equals("RESET")){
+                uvSurfaceMarks.clear();
+            }else if((p.size()==7||p.size()==8)&&p.get(0).equals("UVTRACE")){
+                if(uvSurfaceMarks.size()<96)uvSurfaceMarks.add(UvEvidenceMarks.Mark.decode(p));
             }else if(p.size()==4&&p.get(0).equals("GEARFX")){
                 int owner=LanProtocol.integer(p.get(1),0,5);
                 if(owner==seat){
@@ -779,6 +792,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                         case "FLASHLIGHT" -> flashlightOn=on;
                         case "HEAD_GEAR" -> nightVision=on;
                         case "FIRELIGHT" -> firelightOn=on;
+                        case "UV_LIGHT" -> uvLightOn=on;
                         case "IGNITER" -> igniterFlashUntil=tick+5;
                         default -> throw new IllegalArgumentException("unknown physical effect");
                     }
@@ -948,6 +962,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }catch(IOException e){feedback="LAN disconnected: "+e.getMessage();close();}
         GraphicsOptions.current().configure(renderer,getWidth(),getHeight(),true);
         renderer.roomLightTick=tick;
+        renderer.uvLamp=uvLightOn;
+        renderer.uvTier=equipmentTier.getOrDefault("UV_LIGHT",EquipmentTiers.Tier.I);
+        renderer.uvMarks=java.util.List.copyOf(uvSurfaceMarks);renderer.uvTick=tick;
         boolean portableFlash=renderer.portablePositions.containsKey(seat+":FLASHLIGHT");
         boolean portableFire=renderer.portablePositions.containsKey(seat+":FIRELIGHT");
         renderer.lamp=(flashlightOn&&!portableFlash)||(firelightOn&&!portableFire);
@@ -992,6 +1009,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             videoRenderer.placedWritingBookRoom=renderer.placedWritingBookRoom;
             videoRenderer.dotsPositions.clear();
             videoRenderer.dotsPositions.putAll(renderer.dotsPositions);
+            videoRenderer.dotsPowered.clear();videoRenderer.dotsPowered.putAll(renderer.dotsPowered);
+            videoRenderer.laserPowered.clear();videoRenderer.laserPowered.putAll(renderer.laserPowered);
+            videoRenderer.laserContacts.clear();videoRenderer.laserContacts.putAll(renderer.laserContacts);
             videoRenderer.tripods.clear();
             videoRenderer.tripods.putAll(renderer.tripods);
             videoRenderer.portablePositions.clear();

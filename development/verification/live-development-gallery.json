@@ -1,0 +1,2733 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-23T10:44:52.978515+00:00",
+  "published_commit": "b676d7a4d45a3cbcff055a945f1de6491a278558",
+  "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+  "image_count": 454,
+  "checks": [
+    {
+      "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/barometric_probe.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/chalk_sigil_kit.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/chalk_sigil_kit_deployed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/clipboards.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/computer.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/crucifix.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/crucifix_profile.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/dots_projector.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/dots_projector_deployed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/ectoplasm_sampler.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/ectoplasm_sampler_open.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/emf_array.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/emf_array_deployed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/emf_array_node.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/emf_array_nodes.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/emf_reader.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/firelight.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/firelight_lit.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/flashlight.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/ghost_writing_book.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/ghost_writing_book_child_drawings.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/ghost_writing_book_frantic_scrawls.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/ghost_writing_book_open.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/ghost_writing_book_ritual_circles.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/head_gear.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/health_supplies.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/health_supplies_open.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/health_supplies_profile.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/igniter.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/igniter_lit.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/incense.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/incense_burning.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/incense_profile.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/laser_grid.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/laser_grid_deployed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/motion_sensor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/object_imprint_scanner.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/objective_board.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/parabolic_microphone.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/parabolic_microphone_profile.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/photo_camera.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/photo_camera_profile.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/resonance_tuner.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/resonance_tuner_profile.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/ritual_anchor_meter.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/salt.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/salt_deployed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/sanity_medication.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/sanity_monitor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/seismic_recorder.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/site_activity_monitor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/site_map.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/sound_monitor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/sound_recorder.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/sound_sensor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/spectral_frequency_analyzer.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/spectral_prism.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/spirit_box.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/thermal_beacon.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/thermal_beacon_deployed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/thermal_beacon_node.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/thermal_beacon_nodes.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/thermometer.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/tripod.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/tripod_folded.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/uv_light.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/uv_light_profile.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/video_camera.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/video_camera_profile.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/equipment-catalog/previews/ward_stability_probe.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/previews/sound-recorder-t1.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/previews/sound-recorder-t2.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/assets/previews/sound-recorder-t3.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/academy/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/asylum/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/college/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/mansion/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/prison/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-02/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-03/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-04/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-05/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-06/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-07/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-08/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-09/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-10/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-11/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-12/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-13/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/blackpine-blender-exterior.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/blackpine-mill-expanded-blender-exterior.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/blackpine/blackpine-01-yard-and-mill.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/blackpine/blackpine-02-compact-cabin.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/blackpine/blackpine-03-mill-and-stair.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/blackpine/blackpine-04-loft-guard-and-return.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/blackpine/blackpine-05-camp-spacing.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/blackpine/blackpine-06-standing-shrub.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/blackpine/blackpine-07-crouched-shrub.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-001-before-underloft-lit.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-001-before-underloft-off.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/farmhouse-02-yard-boundary.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/farmhouse-03-elevated-overview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/farmhouse-04-name-and-address.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/farmhouse-05-family-papers.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/house-01-arrival-road.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/house-02-yard-boundary.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/house-03-elevated-overview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/house-04-name-and-address.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/house-05-family-papers.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/school-01-arrival-road.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/school-02-yard-boundary.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/school-03-elevated-overview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/school-04-name-and-address.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/enclosures/school-05-family-papers.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/farmhouse-blender-exterior.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/house-blender-exterior.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_basketball_hoop.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bath_basin.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bath_shower.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bath_shower_rail.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bath_shower_rail_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bath_shower_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bathroom_caddy.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bathroom_caddy_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bathroom_wall_set.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bathroom_wall_set_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bathtub.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bedding_double.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_bedding_single.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_blackboard.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_boiler_coal.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_boiler_coal_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_boiler_modern.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_boiler_modern_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_boiler_oil.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_boiler_oil_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_bench.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_canopy.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_chimney.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_fireplace.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_logpile.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_patio.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_rainbarrel.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_sawhorse.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_well.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_coal_bunker.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_coal_bunker_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_corn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_domestic_light.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_electrical_bank.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_electrical_bank_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_enclosure_field.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_enclosure_field_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_enclosure_garden.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_enclosure_garden_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_enclosure_urban.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_enclosure_urban_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_alarm_clock.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_alarm_clock_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_boom_box.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_boom_box_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_fire_alarm.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_fire_alarm_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_phone.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_phone_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_radio.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_radio_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_side_table.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_side_table_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_smoke_alarm.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_event_smoke_alarm_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_expansion_vessel.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_expansion_vessel_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_hay_bale.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_hiding_cupboard.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_hiding_cupboard_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_kitchen_counter.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_laundry_hamper.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_laundry_hamper_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_laundry_shelf.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_laundry_shelf_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_laundry_washer.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_laundry_washer_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_light_bare_bulb.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_light_bare_bulb_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_light_candle_chandelier.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_light_candle_chandelier_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_card_table.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_card_table_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_curio.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_curio_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_desk_clutter.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_desk_clutter_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_kitchenware.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_kitchenware_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_linen_press.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_linen_press_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_ottoman.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_ottoman_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_pantry.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_pantry_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_shelf.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_shelf_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_sideboard.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_sideboard_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_toy_basket.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_toy_basket_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_trunk.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lived_trunk_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_lockers.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_book.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_book_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_bottle.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_bottle_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_bowl.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_bowl_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_candlestick.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_candlestick_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_frame.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_frame_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_mug.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_mug_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_tin.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_tin_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_toy.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_loose_toy_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_mill_suspension.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_npc_matthis_rook_proxy.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_radiator.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_radiator_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_school_pipework.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_school_pipework_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_school_urinal.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_school_urinal_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_shrub_refuge.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_farmhouse.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_farmhouse_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_house.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_house_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_mens.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_mens_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_school.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_school_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_womens.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_sign_womens_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_stall.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_story_letters.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_story_letters_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_story_sewing_tin.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_story_sewing_tin_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_story_work_boots.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_story_work_boots_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_student_desk.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_table_lamp.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_bedroll.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_calendar.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_camp_bed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_clothes.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_coat.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_damp_wall.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_electric_branch.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_floor_wear.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_food_trash.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_generator.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_journal.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_leak_bucket.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_oil_waterheater.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_photograph.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_records.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_wall_damage.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_wash_trough.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_window_boards.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_woodstove.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_tree_broadleaf.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_tree_broadleaf_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_tree_conifer.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_tree_conifer_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_utility_light.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_wall_sconce.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_bank.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_boulder.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_deadfall.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_fern.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_floor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_flowers.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_grass.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_litter.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_scrub.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_stump.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_woodland_track.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_bandsaw.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_boot_rack.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_camp_sign.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_circular_headrig.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_crew_footlocker.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_dust_extractor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_hearth_tools.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_log_carriage.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_repair_bench.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_safety_station.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_survivor_cookbox.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_work_timber_rack.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_workbench.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_workbench_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_yard_clothesline.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_yard_clothesline_worn.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/farm-01-private-washroom.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/farm-02-shower-and-hamper.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/farm-03-shed-laundry.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/farm-04-yard-drying-line.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/house-01-complete-bathroom.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/house-02-basin-and-toiletries.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/house-03-bath-and-wall-supported-shower.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/house-04-laundry-utility-room.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/house-05-toilet-and-hamper.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/school-01-boys-handwash-and-urinal.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/school-02-boys-private-cubicles.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/school-03-girls-handwash.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/lived-location/school-04-upper-corridor-clearance.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/mill-expansion/blackpine-dust-extractor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/mill-expansion/blackpine-mill-working-floor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/mill-expansion/blackpine-safety-station.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/mill-expansion/blackpine-timber-rack.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/mill-expansion/blackpine-workshop-bandsaw.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/mill-expansion/logway-assembly-studio.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/mill-lighting/logway-lit.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/mill-lighting/logway-off.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/mill-lighting/mill-aisle-lit.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/mill-lighting/mill-aisle-off.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/mill-lighting/underloft-lit.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/mill-lighting/underloft-off.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/model-production/blackpine-level_work_bandsaw.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/model-production/blackpine-level_work_boot_rack.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/model-production/blackpine-level_work_camp_sign.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/model-production/blackpine-level_work_crew_footlocker.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/model-production/blackpine-level_work_hearth_tools.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/model-production/blackpine-level_work_log_carriage.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/model-production/blackpine-level_work_repair_bench.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/model-production/blackpine-level_work_survivor_cookbox.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-00-mudroom.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-01-farm-parlour.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-02-farm-kitchen.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-03-family-dining-room.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-04-central-stair-passage.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-05-upper-farm-landing.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-06-parents-bedroom.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-07-child-bedroom.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-08-barn-hayloft.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-09-root-cellar.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-10-barn-interior.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-11-tool-shed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-12-pantry-and-preserves.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-13-barn-workbench.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-14-root-cellar-storage.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/farmhouse-15-inherited-radio.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-01-exterior.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-02-foyer.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-03-living.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-04-kitchen.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-05-dining.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-06-upper-landing.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-07-master.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-08-bathroom.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-09-cellar.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-10-main-stair.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-11-cellar-stair.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-12-child-bedroom.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-13-inherited-curio-display.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-14-card-table-corner.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-15-cellar-stores.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-16-cupboard-available-100.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-17-cupboard-absent-0.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-18-examined-loose-mug.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-19-rotated-loose-mug.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-20-event-telephone-idle.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-21-bedside-alarm-clock.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-22-running-and-filling-sink.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/house-23-room-fire-alarm.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-00-front-office-and-foyer.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-01-main-school-corridor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-02-classroom-a.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-03-science-classroom.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-04-cafeteria.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-05-nurse-office.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-06-gymnasium.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-07-upper-locker-corridor.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-08-school-library.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-09-classroom-b.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-10-assembly-hall.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-11-boiler-and-electrical-room.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-12-heating-plant-overview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-13-retired-coal-boilers.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-14-modern-heating-plant.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-15-electrical-and-ventilation.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/runtime/school-16-cassette-boom-box.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/school-blender-exterior.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/farmhouse-case-0-1120.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/farmhouse-case-0-640.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/farmhouse-case-1-1120.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/farmhouse-case-1-640.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/farmhouse-case-2-1120.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/farmhouse-case-2-640.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/farmhouse-physical-clipboard.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/house-case-0-1120.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/house-case-0-640.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/house-case-1-1120.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/house-case-1-640.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/house-case-2-1120.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/house-case-2-640.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/house-physical-clipboard.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/school-case-0-1120.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/school-case-0-640.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/school-case-1-1120.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/school-case-1-640.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/school-case-2-1120.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/school-case-2-640.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-case-files/school-physical-clipboard.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/farmhouse-room_0.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/farmhouse-room_2.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/farmhouse-room_3.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/farmhouse-room_5.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/farmhouse-room_7.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/farmhouse-van-case-clipboard.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/house-room_0.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/house-room_2.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/house-room_3.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/house-room_4.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/house-room_5.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/house-room_7.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/house-van-case-clipboard.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/school-room_0.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/school-room_2.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/school-room_3.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/school-room_4.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/school-room_5.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/school-room_6.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/school-room_8.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/school-room_9.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/site-story-runtime/school-van-case-clipboard.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/ui/01-point-at-cup.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/ui/02-point-at-event-device.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/ui/03-point-at-stock.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/ui/04-site-map.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/ui/held-device-faces.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/van/01-street-and-van.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/van/02-cargo-and-clear-aisle.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/van/03-full-equipment-wall.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/van/04-monitors-and-boards.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/van/05-command-workstation.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/van/06-loading-ramp.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/van/07-roadside-scale.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    }
+  ]
+}

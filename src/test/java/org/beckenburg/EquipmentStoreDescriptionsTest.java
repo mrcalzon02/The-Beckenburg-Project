@@ -63,7 +63,7 @@ public final class EquipmentStoreDescriptionsTest {
             var flashlight=EquipmentStoreDescriptions.describe("FLASHLIGHT",tier);
             ok(flashlight.specificationLine().contains(new String[]{"280s","420s","630s"}[t]),
                 "battery time is actual host-owned power runtime");
-            ok(flashlight.specificationLine().contains(new String[]{"6m","9m","12m"}[t]),
+            ok(flashlight.specificationLine().contains(new String[]{"9.5m","12.83m","16.63m"}[t]),
                 "readout matches the actual 3D lighting beam");
         }
         ok(EquipmentStoreDescriptions.describe("UV_LIGHT",EquipmentTiers.Tier.III)

@@ -44,7 +44,7 @@ public final class EquipmentTiers {
     private static final List<Plan> PLANS=List.of(
         p("DOTS_PROJECTOR",Role.PROJECTOR,75,220,14,0,180,"Fixed sparse dot field","Wider fan and faster refresh","Full-room adjustable structured-light volume"),
         p("EMF_READER",Role.SENSOR,50,260,12,0,240,"Small segmented 0–10 scale","Larger numbered scale; faster polling","Backlit large digits and event-history strip"),
-        p("FLASHLIGHT",Role.UTILITY,30,800,0,0,280,"Narrow beam; charge 280 seconds","Wider brighter beam; charge 420 seconds","Broad efficient beam; charge 630 seconds"),
+        p("FLASHLIGHT",Role.UTILITY,30,950,0,0,280,"Brighter than default; charge 280 seconds","Wider brighter beam; charge 420 seconds","Broad efficient beam; charge 630 seconds"),
         p("GHOST_WRITING_BOOK",Role.DEPLOYABLE,45,120,0,1,0,"Small paper book; one writable surface","Wider pages and clearer ink visibility","Oversized high-contrast pages and angleable stand"),
         p("SPIRIT_BOX",Role.AUDIO,55,210,12,0,180,"Simple radio dial","Larger response display, quieter speaker","Broadband receiver, waveform and directional headset"),
         p("THERMOMETER",Role.SENSOR,40,340,13,0,280,"Slow handheld analog temperature","Responsive digital probe with unit switch","Large backlit readout, temperature trend history"),

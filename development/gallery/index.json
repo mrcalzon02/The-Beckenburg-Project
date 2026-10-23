@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 454,
+  "count": 464,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -3422,6 +3422,106 @@
       "height": 700,
       "bytes": 383299,
       "sha256": "2e2cb45874eb7cbc4b991edb7d3363412cc63b4ac4e4ac2806275ac0b8a704f1"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/default-flashlight-controlled-runtime.png",
+      "url": "development/levels/previews/optical-evidence/default-flashlight-controlled-runtime.png",
+      "title": "Default flashlight controlled runtime",
+      "kind": "Runtime capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 231824,
+      "sha256": "e9b6dce4c3d7c7a8b25dbfdb04b59e71aeeec9a5a5bcc231712369da683034ce"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/dots-actual-photograph.png",
+      "url": "development/levels/previews/optical-evidence/dots-actual-photograph.png",
+      "title": "Dots actual photograph",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 34209,
+      "sha256": "e87bf4c8cdc8656e15b2b14fb868ce7808808e42d084c42ec07df145b1005c98"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/dots-capsule-controlled-runtime.png",
+      "url": "development/levels/previews/optical-evidence/dots-capsule-controlled-runtime.png",
+      "title": "Dots capsule controlled runtime",
+      "kind": "Runtime capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 188114,
+      "sha256": "7b7812214b77d193b4f5b35abecdaec5ce3d5581f36c00fc7e3b0e561696f9b2"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/laser-actual-photograph.png",
+      "url": "development/levels/previews/optical-evidence/laser-actual-photograph.png",
+      "title": "Laser actual photograph",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 34321,
+      "sha256": "cd50ae4597af373052663eaa6c85f0b42c661202523097a604ee5358d8c42d20"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/laser-spiral-controlled-runtime.png",
+      "url": "development/levels/previews/optical-evidence/laser-spiral-controlled-runtime.png",
+      "title": "Laser spiral controlled runtime",
+      "kind": "Runtime capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 189645,
+      "sha256": "89a9b1f49d3a7342a4c219f5f3e807a5588a0332929303501fc7b696655b027c"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/laser-straight-controlled-runtime.png",
+      "url": "development/levels/previews/optical-evidence/laser-straight-controlled-runtime.png",
+      "title": "Laser straight controlled runtime",
+      "kind": "Runtime capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 189111,
+      "sha256": "3365c3fbc7c2cd59fb0bb5794e091d3e2a8d9792be8485ee974464914ff7a8e3"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/purchased-tier-I-controlled-runtime.png",
+      "url": "development/levels/previews/optical-evidence/purchased-tier-I-controlled-runtime.png",
+      "title": "Purchased tier i controlled runtime",
+      "kind": "Runtime capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 262169,
+      "sha256": "06318afbbdc60ee15bfee78d14757221a5296a6dcf579f3dc776240315443e0e"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/uv-actual-photograph.png",
+      "url": "development/levels/previews/optical-evidence/uv-actual-photograph.png",
+      "title": "Uv actual photograph",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 38977,
+      "sha256": "f626b7bf027e9de72ac82c1741646799dd3d92b620a0a6d0f2b92f2bdc690368"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/uv-off-controlled-runtime.png",
+      "url": "development/levels/previews/optical-evidence/uv-off-controlled-runtime.png",
+      "title": "Uv off controlled runtime",
+      "kind": "Runtime capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 186884,
+      "sha256": "2ba688bcfc374a3bacc078657724812dd0a2d1b74b39941dc08c97aec8c91b5a"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/uv-on-controlled-runtime.png",
+      "url": "development/levels/previews/optical-evidence/uv-on-controlled-runtime.png",
+      "title": "Uv on controlled runtime",
+      "kind": "Runtime capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 202407,
+      "sha256": "ef32c65aa0b5bb2b208fbc38096808db964f54e5788b66e3f173a90d1c475fa0"
     },
     {
       "path": "development/levels/previews/runtime/farmhouse-00-mudroom.png",

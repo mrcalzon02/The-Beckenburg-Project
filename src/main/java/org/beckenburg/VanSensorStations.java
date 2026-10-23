@@ -37,14 +37,14 @@ public final class VanSensorStations {
 
     public static boolean supported(String tool){
         return "EMF_ARRAY".equals(tool)||"THERMAL_BEACON".equals(tool)
-            ||"MOTION_SENSOR".equals(tool)||"SOUND_SENSOR".equals(tool);
+            ||"MOTION_SENSOR".equals(tool)||"SOUND_SENSOR".equals(tool)||"LASER_GRID".equals(tool);
     }
     public static int capacity(String tool,EquipmentTiers.Tier tier){
         if(!supported(tool)||tier==null)throw new IllegalArgumentException("unknown array");
         return switch(tool){
             case "EMF_ARRAY" -> switch(tier){case I->2;case II->3;case III->5;};
             case "THERMAL_BEACON" -> switch(tier){case I->2;case II->4;case III->6;};
-            case "MOTION_SENSOR","SOUND_SENSOR" ->
+            case "MOTION_SENSOR","SOUND_SENSOR","LASER_GRID" ->
                 switch(tier){case I->1;case II->2;case III->3;};
             default -> throw new IllegalArgumentException("unknown station");
         };

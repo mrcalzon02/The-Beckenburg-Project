@@ -117,8 +117,7 @@ public final class EquipmentStoreDescriptions {
                 specs+="; charged runtime "+stage.batterySeconds()+"s";
             }
             case "FLASHLIGHT" -> {
-                int[] reach={6,9,12};
-                specs="Illuminated beam "+reach[tier.ordinal()]+"m; battery "+
+                specs="Illuminated beam "+stage.reachCm()/100.0+"m; stronger than default; battery "+
                     stage.batterySeconds()+"s; recharge at the van";
             }
             case "UV_LIGHT" -> specs="Genuine trace visibility "+

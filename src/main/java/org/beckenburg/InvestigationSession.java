@@ -79,6 +79,16 @@ public final class InvestigationSession {
     private RoomLighting roomLights;
     public void connectLighting(RoomLighting roomLights){this.roomLights=roomLights;}
     private final HunterCounters counters=new HunterCounters();
+    private final UvEvidenceMarks uvEvidence=new UvEvidenceMarks();
+    private final FieldEquipment uvHardware=new FieldEquipment();
+    public boolean uvPowered(){return uvHardware.powered("UV_LIGHT");}
+    public java.util.List<UvEvidenceMarks.Mark> uvVisible(double x,double y,double z,double yaw){
+        return uvEvidence.visible(map,new LanWorld.Body(x,y,z,(int)Math.toDegrees(yaw),map.roomAt(x,y,z)),EquipmentTiers.Tier.I,ticks,uvPowered());
+    }
+    public void rechargeUvAtVan(double x,double y,double z){
+        if(map.roomAt(x,y,z)!=HouseMap.EXTRACTION_ROOM)throw new IllegalArgumentException("UV service requires van rack");
+        uvHardware.rechargeAtVan();
+    }
     private final AmbientSanity ambientSanity=new AmbientSanity();
     private final GhostDomain.AiController ghostAi;
     private boolean prepared, haunted, rewarded;
@@ -243,7 +253,11 @@ public final class InvestigationSession {
             if(ticks%90==0)log("Your sanity keeps draining. Something is feeding on your presence.");
         }
         if(ghost.room()>=0&&ghost.room()<spectralTrace.length){
-            spectralTrace[ghost.room()]=ticks;
+            if(haunted&&GhostTraits.of(ghost.type()).leavesUv()){
+                spectralTrace[ghost.room()]=ticks;
+                uvEvidence.leave(map,new LanGhostSpatial.Pose(ghost.room(),map.centerX(ghost.room()),standingY(map.centerX(ghost.room()),map.centerZ(ghost.room())),map.centerZ(ghost.room()),0),ticks);
+            }
+            uvHardware.advancePower(ticks);
             if(saltRoom==ghost.room()&&ticks>saltTick&&GhostTraits.saltAffects(ghost.type())){
                 ghost.reveal(30);ghost.slowFor(26);
                 log("Salt disturbed in "+map.roomName(saltRoom)+" — grounded spirit slowed and briefly revealed.");
@@ -345,7 +359,8 @@ public final class InvestigationSession {
             case SPIRIT_BOX->scan(Instrument.SPIRIT_BOX,x,y,z);
             case UV_LAMP->{
                 int room=map.roomAt(x,y,z);
-                boolean residue=room>=0&&ticks-spectralTrace[room]<=100;
+                try{uvHardware.setPower("UV_LIGHT",!uvPowered());}catch(IllegalArgumentException empty){log("UV battery empty. Service at the van rack.");yield false;}
+                boolean residue=!uvVisible(x,y,z,yaw).isEmpty();
                 log(residue?"UV: transient spectral residue detected in "+map.roomName(room)+"."
                     :"UV: no fresh traces in "+map.roomName(room)+".");
                 yield true;

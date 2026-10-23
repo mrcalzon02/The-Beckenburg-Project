@@ -1,3 +1,5 @@
+Current optical implementation: [surface UV, capsule D.O.T.S. and spatial laser effects](OPTICAL_EVIDENCE.md).
+
 # Beckenburg — complete three-tier equipment progression matrix
 
 **Status:** 42 indexed equipment types and **126 distinct tier specifications** in `EquipmentTiers.java`. **Thirteen** devices have host-controlled LAN actions, physical gear/inventory interactions and tier progression; **29 catalog devices are planned, not usable or sold**. `EquipmentStoreDescriptions.java` derives display text and prices from the same tier source as the hardware and `EquipmentRackDialog.java` presents a compact scrollable shop with all-tier comparisons, hover tooltips, upgrade/equip/recharge controls. The solo-mode store is not migrated. These are source implementations, **not a claim that the full Windows test suite currently passes**.
@@ -23,7 +25,7 @@ Photo cameras are the exception to generic capacity scaling: **1 / 6 / 12 actual
 |---|---|---|---|
 | **Pattern projector** | Live grid 2.20m radius | Live grid 2.97m radius | Live grid 3.85m radius; actual ghost-only passages |
 | **EMF reader (0–10; zero for suppression)** | 2.60m event pickup, 1.2s sampling | 3.51m pickup, 0.9s sampling | 4.55m pickup, 0.6s sampling; larger on-device display |
-| **Flashlight** | Narrow 6m beam; 280s charge | Brighter 9m beam; 420s charge | Broad 12m beam; 630s charge |
+| **Flashlight** | 9.5m beam; stronger than default; 280s charge | Brighter/wider 12.83m beam; 420s charge | Broad 16.63m beam; 630s charge |
 | **Ghost writing book** | One physical book, smaller held view | One physical book, larger held view | One physical book, largest held view; writing behavior unchanged |
 | **Spirit box** | 2.10m pickup, 1.2s response interval | 2.84m pickup, 0.9s response | 3.68m pickup, 0.6s response; larger readout |
 | **Thermometer (°C/°F)** | 3.40m event pickup, 1.3s response | 4.59m pickup, 1.0s response | 5.95m pickup, 0.7s response; larger device |

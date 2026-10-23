@@ -62,6 +62,8 @@ public final class LanHost implements AutoCloseable {
     private record HauntTrack(GhostHauntingFolio.Occurrence event,LanGhostSpatial.Pose source){}
     private final ArrayDeque<HauntTrack> hauntTracks=new ArrayDeque<>();
     private final HunterCounters counters=new HunterCounters();
+    private final UvEvidenceMarks uvEvidence=new UvEvidenceMarks();
+    private final int[] lastOpticalSeen={-10000,-10000,-10000,-10000,-10000,-10000};
     private final CustomContract contract;
     private final MissionWeather weather;
     private final ContractRewards rewards;
@@ -977,17 +979,20 @@ public final class LanHost implements AutoCloseable {
                                 world.body(peer.slot).x(),world.body(peer.slot).y(),world.body(peer.slot).z(),
                                 gear.owned(id));
                             if(placed==null){
+                                gear.setPower(id,false);notifyHunters("DOTS|POWER|"+peer.slot+"|0");
                                 reading="Projector retrieved / emission ended";
                                 notifyHunters("DOTS|CLEAR|"+peer.slot);
                             }else{
+                                gear.setPower(id,true);notifyHunters("DOTS|POWER|"+peer.slot+"|1");
                                 reading="Projector placed / projected field active";
                                 notifyHunters(placed.frame());
                             }
                         }
                         case "UV_LIGHT" -> {
+                            boolean enabled=gear.toggle(id);
+                            notifyHunters("GEARFX|"+peer.slot+"|UV_LIGHT|"+(enabled?1:0));
                             int persistence=90+gear.owned(id).ordinal()*35;
-                            reading=mission.allowsEvidence(HardEvidenceQuota.Family.UV)
-                                &&counters.recentUv(room,tick,persistence)
+                            reading=enabled&&!uvEvidence.visible(map,world.body(peer.slot),gear.owned(id),tick,true).isEmpty()
                                 ?"UV light / genuine surface trace":"UV light / no visible trace";
                         }
                         case "FLASHLIGHT","HEAD_GEAR","FIRELIGHT" -> {
@@ -1026,7 +1031,10 @@ public final class LanHost implements AutoCloseable {
                         }
                         case "PHOTO_CAMERA" -> {
                             int remaining=gear.expend(id);
-                            if(ghost.manifested()&&room==ghost.room())
+                            var photographer=world.body(peer.slot);
+                            boolean optical=tick-lastOpticalSeen[peer.slot]<=3
+                                &&CameraAim.onTarget(photographer.x(),photographer.z(),Math.toRadians(photographer.heading()),ghostPose.pose().x(),ghostPose.pose().z());
+                            if((ghost.manifested()&&room==ghost.room())||optical)
                                 taskDone(ContractRewards.Task.PHOTO_EVENT);
                             reading="Exposure captured / "+remaining+" frames remaining";
                             // The client captures its *actual rendered frame* on receipt.
@@ -1048,7 +1056,7 @@ public final class LanHost implements AutoCloseable {
                         }
                         case "ECTOPLASM_SAMPLER","RESONANCE_TUNER",
                                 "BAROMETRIC_PROBE","SEISMIC_RECORDER","SPECTRAL_PRISM",
-                                "LASER_GRID","OBJECT_IMPRINT_SCANNER",
+                                "OBJECT_IMPRINT_SCANNER",
                                 "SPECTRAL_FREQUENCY_ANALYZER" -> {
                             LanWorld.Body body=world.body(peer.slot);
                             boolean stationary=id.equals("SEISMIC_RECORDER")
@@ -1081,7 +1089,7 @@ public final class LanHost implements AutoCloseable {
                                     ||id.equals("OBJECT_IMPRINT_SCANNER")))
                                 gear.expend(id);
                         }
-                        case "EMF_ARRAY","THERMAL_BEACON","MOTION_SENSOR","SOUND_SENSOR" -> {
+                        case "EMF_ARRAY","THERMAL_BEACON","MOTION_SENSOR","SOUND_SENSOR","LASER_GRID" -> {
                             LanWorld.Body body=world.body(peer.slot);
                             if(room>=HouseMap.INDOOR_ROOMS)
                                 throw new IllegalArgumentException("deploy the probe inside");
@@ -1101,6 +1109,7 @@ public final class LanHost implements AutoCloseable {
                                     " of "+VanSensorStations.capacity(id,gear.owned(id));
                             }
                             gear.setPower(id,vanSensors.count(peer.slot,id)>0);
+                            if(id.equals("LASER_GRID"))notifyHunters("LASER|POWER|"+peer.slot+"|"+(gear.powered(id)?1:0));
                         }
                         case "ANCHOR_TRIANGULATOR" -> {
                             LanWorld.Body body=world.body(peer.slot);
@@ -1704,6 +1713,11 @@ public final class LanHost implements AutoCloseable {
                     equipment[peer.slot].batterySecondsLeft(id)+"|"+
                     (equipment[peer.slot].powered(id)?1:0));
         sendRecorderState(peer.slot);
+        reply(peer,"GEARFX|"+peer.slot+"|UV_LIGHT|"+(equipment[peer.slot].powered("UV_LIGHT")?1:0));
+        for(int i=0;i<HUNTERS;i++){
+            reply(peer,"DOTS|POWER|"+i+"|"+(equipment[i].powered("DOTS_PROJECTOR")?1:0));
+            reply(peer,"LASER|POWER|"+i+"|"+(equipment[i].powered("LASER_GRID")?1:0));
+        }
     }
     private void sendRecorderState(int seat){
         if(seats[seat]!=null)reply(seats[seat],"RECORDER|STATE|"+recorders[seat].status(tick));
@@ -1830,9 +1844,11 @@ public final class LanHost implements AutoCloseable {
     }
     /** Laser-space contact follows position, never a permission or evidence check. */
     private void illuminateDots(){
-        if(!mission.allowsEvidence(HardEvidenceQuota.Family.DOTS))return;
+        if(!mission.allowsEvidence(HardEvidenceQuota.Family.DOTS)||!GhostEvidenceProfile.dotsVisible(ghostType))return;
         for(LanDotsProjectors.Passage light:dots.illuminate(ghostPose.pose(),tick))
             for(int i=0;i<HUNTERS;i++){
+                if(!equipment[light.placement().seat()].powered("DOTS_PROJECTOR")
+                    ||!map.clearLineOfSight(light.placement().x(),light.placement().y()+.15,light.placement().z(),light.x(),ghostPose.pose().y()+1,light.z()))continue;
                 Peer hunter=seats[i];
                 if(hunter==null||!hunter.worldMode)continue;
                 LanWorld.Body body=world.body(i);
@@ -1842,8 +1858,29 @@ public final class LanHost implements AutoCloseable {
                     if(equipment[camera.owner()].powered("VIDEO_CAMERA")
                             &&map.clearLineOfSight(camera.x(),camera.y()+1.3,camera.z(),
                                 light.x(),light.placement().y()+1.0,light.z())){visible=true;break;}
-                if(visible)reply(hunter,light.frame());
+                if(visible){reply(hunter,light.frame());lastOpticalSeen[i]=tick;}
             }
+    }
+    private void illuminateLasers(){
+        if(tick%2!=0)return;
+        for(var station:activeFieldDetectors("LASER_GRID")){
+            var pose=ghostPose.pose();
+            var contact=laserContact(station);if(contact==null)continue;
+            for(int i=0;i<HUNTERS;i++)if(seats[i]!=null&&seats[i].worldMode){
+                var body=world.body(i);
+                boolean visible=map.clearLineOfSight(body.x(),body.y()+1.62,body.z(),pose.x(),pose.y()+1,pose.z());
+                if(!visible)for(var camera:cameras.all())if(equipment[camera.owner()].powered("VIDEO_CAMERA")&&map.clearLineOfSight(camera.x(),camera.y()+1.3,camera.z(),pose.x(),pose.y()+1,pose.z())){visible=true;break;}
+                if(visible){reply(seats[i],contact.frame());lastOpticalSeen[i]=tick;}
+            }
+        }
+    }
+    private StructuredLightVolume.Contact laserContact(VanSensorStations.Station station){
+        var pose=ghostPose.pose();
+        var sample=AdditionalEvidence.measure("LASER_GRID",ghostType,mission.hardEvidenceQuota(),tick,lastEvidenceEventTick,lastEvidenceEventPower,lastEvidenceEventAction,
+            station.room()==pose.room()&&station.room()==lastEvidenceEventRoom,Math.hypot(station.x()-pose.x(),station.z()-pose.z()),EquipmentTiers.stage("LASER_GRID",station.tier()));
+        if(!sample.detected())return null;
+        var contact=new StructuredLightVolume.Contact(station.id(),pose.room(),pose.x(),pose.y(),pose.z(),tick);
+        return StructuredLightVolume.beams(map,station).stream().anyMatch(b->StructuredLightVolume.intersection(b,contact)!=null)?contact:null;
     }
     /** AI and human origins both enter this exact damage/telegraph pipeline. */
     private void resolveGhostAction(GhostDomain.Resolution result){
@@ -2330,12 +2367,17 @@ public final class LanHost implements AutoCloseable {
             }
             if(animation.animating(tick)||pendingStrike!=null)broadcastApparitions();
             illuminateDots();
+            illuminateLasers();
+            if(GhostTraits.of(ghostType).leavesUv()&&mission.allowsEvidence(HardEvidenceQuota.Family.UV))
+                uvEvidence.leave(map,ghostPose.pose(),tick);
             for(int seat=0;seat<HUNTERS;seat++){
                 for(String drained:equipment[seat].advancePower(tick)){
+                    if(drained.equals("DOTS_PROJECTOR"))notifyHunters("DOTS|POWER|"+seat+"|0");
+                    if(drained.equals("LASER_GRID"))notifyHunters("LASER|POWER|"+seat+"|0");
                     if(seats[seat]!=null)
                         reply(seats[seat],"GEARPOWER|"+drained+"|0|0");
                     if(drained.equals("FLASHLIGHT")||drained.equals("HEAD_GEAR")
-                            ||drained.equals("FIRELIGHT"))
+                            ||drained.equals("FIRELIGHT")||drained.equals("UV_LIGHT"))
                         notifyHunters("GEARFX|"+seat+"|"+drained+"|0");
                     if(drained.equals("VIDEO_CAMERA"))
                         notifyHunters("CAMERA|POWER|"+seat+"|0");
@@ -2346,6 +2388,10 @@ public final class LanHost implements AutoCloseable {
                 }
                 if(recorders[seat].due(tick))stopRecording(seat);
                 if(tick%10==0&&recorders[seat].recording())sendRecorderState(seat);
+                if(tick%3==0&&seats[seat]!=null){
+                    reply(seats[seat],"UVTRACE|RESET");
+                    for(var mark:uvEvidence.visible(map,world.body(seat),equipment[seat].owned("UV_LIGHT"),tick,equipment[seat].powered("UV_LIGHT")))reply(seats[seat],mark.frame());
+                }
             }
             // Powered device gauges receive real host charge updates once per second.
             if(tick%10==0)for(int seat=0;seat<HUNTERS;seat++)if(seats[seat]!=null)
@@ -2531,6 +2577,8 @@ public final class LanHost implements AutoCloseable {
             if(equipment[station.owner()].batterySecondsLeft(station.tool())<=0
                     ||!equipment[station.owner()].powered(station.tool())){
                 reading="OFFLINE / battery empty or switched off";
+            }else if(station.tool().equals("LASER_GRID")){
+                reading=laserContact(station)!=null?"Grid displacement / visible beam spiral":"Laser beams aligned / no displacement";
             }else if(station.tool().equals("MOTION_SENSOR")
                     ||station.tool().equals("SOUND_SENSOR")){
                 FieldSensorDetection.Pulse pulse=fieldDetectors.recent(station.id(),tick,18);

@@ -20,7 +20,7 @@ for path in sorted(set(paths)):
     if '/blockouts/' in path:kind='Rough blockout'
     elif '-blender-' in path:kind='Native scene overview'
     elif 'studio' in p.stem:kind='Model inspection'
-    elif any(t in path for t in ['/runtime/','-runtime/','/blackpine/','/mill-lighting/','/mill-expansion/','/van/']):kind='Runtime capture'
+    elif any(t in path for t in ['/runtime/','-runtime/','/blackpine/','/mill-lighting/','/mill-expansion/','/van/','/optical-evidence/']):kind='Runtime capture'
     elif p.stem.startswith('level_') or '/model-production/' in path or '/equipment-catalog/' in path:kind='Model inspection'
     title=p.stem.replace('_',' ').replace('-',' ').strip().capitalize()
     items.append(dict(path=path,url=quote(path,safe='/'),title=title,kind=kind,width=w,height=h,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))

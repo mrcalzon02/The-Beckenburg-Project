@@ -100,6 +100,83 @@
       "action": "Retain timings and profile native gameplay before claiming acceptable performance.",
       "evidence": "development/levels/verification/blackpine-worklights.json contains actual RENDER SLOW timings.",
       "older_maps": "Measure each site on target hardware; do not copy a performance claim from another map."
+    },
+    {
+      "id": "DEV-010",
+      "title": "Purchased Tier I flashlight weaker than default",
+      "status": "fixed-scoped",
+      "affected": "Shared flashlight optics",
+      "symptom": "Tier I was 6m / .58 while the default was 7.5m / .72.",
+      "cause": "Hardware defaults and tier configuration diverged.",
+      "action": "All paid tiers now exceed default reach, power and width: 9.5/12.83/16.63m, .98/1.18/1.40 power.",
+      "evidence": "OpticalEvidenceTest and TieredMediaAndPowerTest; unchanged 280/420/630s host batteries.",
+      "older_maps": "Inspect actual handheld illumination in older sites, not just numeric stats."
+    },
+    {
+      "id": "DEV-011",
+      "title": "GPU handheld flashlight omitted from submitted light",
+      "status": "fixed-scoped",
+      "affected": "Shared GPU scene submission",
+      "symptom": "CPU raster added the held torch per pixel but GPU vertex submission only included room/portable light.",
+      "cause": "Different CPU/GPU lighting paths omitted the same hardware beam.",
+      "action": "GPU vertices now include the shared torch profile; CPU retains one beam contribution.",
+      "evidence": "OpticalEvidenceCapture independently compares actual GPU RGB output for default and purchased torch.",
+      "older_maps": "Native OpenGL hardware and per-map performance still need acceptance."
+    },
+    {
+      "id": "DEV-012",
+      "title": "UV only reports room traces; no purple light or surface splats",
+      "status": "fixed-scoped",
+      "affected": "UV tool, local solo and LAN",
+      "symptom": "The UV action produced text from room recency without visible inspection light or positioned decals.",
+      "cause": "No rendered UV emitter or surface-bound trace representation.",
+      "action": "Added purple cone, bounded host-authored passage marks, geometric reveal, switch/battery state and textured shallow surface cubes.",
+      "evidence": "OpticalEvidenceTest covers genuine/absent/expired traces, direction, six mounting normals and texture; OpticalEvidenceCapture verifies real purple/green pixels; LanOpticalEvidenceNetworkTest uses real sockets and tests depletion/privacy.",
+      "older_maps": "Current producer leaves supported floor residue. Six-axis cube support does not mean wall/ceiling contact producers or teammate UV spill have been implemented; those remain separate refinements."
+    },
+    {
+      "id": "DEV-013",
+      "title": "D.O.T.S. flat silhouette and unpowered deployment",
+      "status": "fixed-scoped",
+      "affected": "D.O.T.S. projector",
+      "symptom": "Passages drew a small planar point shape, and deployment did not activate its battery drain.",
+      "cause": "Approximate render geometry and incomplete power integration.",
+      "action": "Project dots onto rounded standing-capsule surface, clipped to active field and LOS; activate host power on placement, stop on pickup/exhaustion; retain compatibility/quota checks.",
+      "evidence": "OpticalEvidenceTest capsule geometry; captured photographs contain real rendered dots; existing LanDotsProjectorsTest and power suite pass.",
+      "older_maps": "Capsule uses current standing dimensions. Native moving-ghost and multi-PC camera acceptance remains pending."
+    },
+    {
+      "id": "DEV-014",
+      "title": "Laser evidence has text but no visible physical distortion",
+      "status": "fixed-scoped",
+      "affected": "LASER_GRID",
+      "symptom": "Device returned generic readings without a rendered beam/ghost intersection effect.",
+      "cause": "No spatial grid geometry or optical-contact event.",
+      "action": "Added placed tiered beam fans clipped by architecture, exact horizontal beam/capsule intervals and spirals only within those intervals; host-authorized events, battery state, camera views and photographs.",
+      "evidence": "OpticalEvidenceTest rejects non-intersections and checks fixed endpoints; OpticalEvidenceCapture compares straight/distorted pixels and photographs.",
+      "older_maps": "Per-site and native hardware performance still require review; species/quota/event rules remain authoritative."
+    },
+    {
+      "id": "DEV-015",
+      "title": "New laser station falls through to thermometer readout",
+      "status": "fixed-scoped",
+      "affected": "Laser station integration, discovered during this pass",
+      "symptom": "After enabling laser station placement, the general station reader would treat it as a thermometer.",
+      "cause": "The old reader only distinguished EMF from other pre-existing sensor types.",
+      "action": "Use one laserContact calculation for both optical events and station readings; label laser stations L on the van map.",
+      "evidence": "LanOpticalEvidenceNetworkTest now waits for the real SENSOR READ packet and rejects unrelated thermometer output.",
+      "older_maps": "Audit device-specific dispatch when adding a new shared station type."
+    },
+    {
+      "id": "DEV-016",
+      "title": "UTF-8 UI labels corrupted by editing script",
+      "status": "fixed-scoped",
+      "affected": "Two local Java edits during this pass",
+      "symptom": "The regression test detected a corrupted pound sign and other non-ASCII labels before publication.",
+      "cause": "A Windows-default cp1252 read was written as UTF-8.",
+      "action": "Restored original UTF-8 text and retained only intended source changes; all future scripts use explicit encoding.",
+      "evidence": "EquipmentStoreDescriptionsTest reproduced the failure and passes after correction; review the scoped diff for unrelated text changes.",
+      "older_maps": "Do not rewrite historical Unicode text via platform-default encoding."
     }
   ],
   "audit_categories": [

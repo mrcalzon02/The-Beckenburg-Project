@@ -56,6 +56,12 @@ public final class SceneRenderer {
     public double eyeHeight=1.62;
     public boolean lamp=true;
     public double lampReach=7.5,lampIntensity=.72;
+    public double lampWidth=.44;
+    public boolean uvLamp;
+    public EquipmentTiers.Tier uvTier=EquipmentTiers.Tier.I;
+    public List<UvEvidenceMarks.Mark> uvMarks=List.of();
+    public int uvTick;
+    private static int UV_RESIDUE=-3;
     public boolean flameLamp;
     /** Cosmetic effects follow received authority, never determine paranormal evidence. */
     public GhostIdentity.Rite activeRite;
@@ -73,13 +79,12 @@ public final class SceneRenderer {
     public void setLampHardware(EquipmentTiers.Tier tier,boolean flameOnly){
         if(tier==null)throw new IllegalArgumentException("flashlight tier required");
         flameLamp=flameOnly;
-        lampReach=flameOnly?3.5:switch(tier){
-            case I->6.0;case II->9.0;case III->12.0;
-        };
-        lampIntensity=flameOnly?.30:switch(tier){
-            case I->.58;case II->.76;case III->.94;
-        };
+        var hardware=HandheldLighting.flashlight(tier);
+        lampReach=flameOnly?3.5:hardware.reach();
+        lampIntensity=flameOnly?.30:hardware.intensity();
+        lampWidth=hardware.width();
     }
+    public double lampBeam(double depth,double aim){return lamp&&depth>0?lampIntensity*Math.max(0,1-depth/lampReach)*(flameLamp?1:Math.max(0,1-aim/lampWidth)):0;}
     /** Solo environment presets; default multipliers retain legacy LAN lighting. */
     public double environmentLight=1.0,fogDensity=1.0;
     private EvidenceSignals.Weather weatherKind=EvidenceSignals.Weather.CLEAR;
@@ -139,6 +144,10 @@ public final class SceneRenderer {
     }
     public final java.util.List<IncenseSmoke> incense=new java.util.ArrayList<>();
     public int dotsPassRoom=-1,dotsPassUntil=-1;
+    public final java.util.Map<Integer,StructuredLightVolume.Contact> laserContacts=new java.util.HashMap<>();
+    public final java.util.Map<Integer,Boolean> dotsPowered=new java.util.HashMap<>();
+    public final java.util.Map<Integer,Boolean> laserPowered=new java.util.HashMap<>();
+    private static final int OPTICAL_SIGNAL=-4;
     public double dotsPassX,dotsPassZ;
     public RoomLighting roomLights;
     public int roomLightTick;
@@ -1014,6 +1023,7 @@ public final class SceneRenderer {
         for(LanDotsProjectors.Placement placement:dotsPositions.values()){
             if(Math.hypot(placement.x()-x,placement.z()-z)>13.5)continue;
             imported(out,"vape_mp_1",placement.x(),placement.y()+.10,placement.z(),2.0,0);
+            if(!dotsPowered.getOrDefault(placement.seat(),true))continue;
             double radius=EquipmentTiers.stage(
                 "DOTS_PROJECTOR",placement.tier()).reachCm()/100.0;
             // Tier I: narrow sparse volume; Tier II: broad static array;
@@ -1039,13 +1049,17 @@ public final class SceneRenderer {
         }
         if(dotsPassRoom>=0&&dotsPassUntil>=roomLightTick
                 &&Math.hypot(dotsPassX-x,dotsPassZ-z)<13.5){
-            for(int layer=0;layer<10;layer++){
-                double y=map.groundHeight(dotsPassX,dotsPassZ,dotsPassRoom)+.19+layer*.135;
-                double span=.14+Math.sin(Math.PI*layer/10.0)*.17;
-                for(int dot=-2;dot<=2;dot++)
-                    box(out,dotsPassX+dot*span/3-.02,y,dotsPassZ-.03,
-                        .04,.028,.04,0x98edbb);
+            for(var p:StructuredLightVolume.dots(dotsPassX,map.groundHeight(dotsPassX,dotsPassZ,dotsPassRoom),dotsPassZ)){
+                if(dotsPositions.values().stream().noneMatch(projector->dotsPowered.getOrDefault(projector.seat(),true)&&projector.room()==dotsPassRoom
+                    &&Math.hypot(p.x()-projector.x(),p.z()-projector.z())<=EquipmentTiers.stage("DOTS_PROJECTOR",projector.tier()).reachCm()/100.0
+                    &&map.clearLineOfSight(projector.x(),projector.y()+.15,projector.z(),p.x(),p.y(),p.z())))continue;
+                var part=new ArrayList<Face>();box(part,p.x()-.012,p.y()-.012,p.z()-.012,.024,.024,.024,0x98edbb);
+                for(var f:part)out.add(new Face(f.a,f.b,f.c,f.color,OPTICAL_SIGNAL,f.au,f.av,f.bu,f.bv,f.cu,f.cv,dotsPassRoom));
             }
+        }
+        for(var station:sensorPositions.values())if(station.tool().equals("LASER_GRID")&&laserPowered.getOrDefault(station.owner(),true)){
+            var contact=laserContacts.get(station.id());if(contact!=null&&(roomLightTick<contact.tick()||roomLightTick-contact.tick()>3))contact=null;
+            for(var beam:StructuredLightVolume.beams(map,station))for(var segment:StructuredLightVolume.distort(beam,contact,clock*6))opticalSegment(out,segment,station.room());
         }
         if(placedWritingBookRoom>=0&&placedWritingBookRoom<HouseMap.INDOOR_ROOMS){
             double bx=writingBookHasPosition?writingBookX:map.centerX(placedWritingBookRoom)-.5;
@@ -1436,9 +1450,14 @@ public final class SceneRenderer {
             return;
         }
         var dst=batches.computeIfAbsent(face.material,key->new GpuFloats());
-        dst.vertex(litVertex(face.a,face.au,face.av,face.material,room),face.color);
-        dst.vertex(litVertex(face.b,face.bu,face.bv,face.material,room),face.color);
-        dst.vertex(litVertex(face.c,face.cu,face.cv,face.material,room),face.color);
+        dst.vertex(gpuLitVertex(face.a,face.au,face.av,face.material,room),face.color);
+        dst.vertex(gpuLitVertex(face.b,face.bu,face.bv,face.material,room),face.color);
+        dst.vertex(gpuLitVertex(face.c,face.cu,face.cv,face.material,room),face.color);
+    }
+    private Vertex gpuLitVertex(Point p,double u,double v,int material,int room){
+        var result=litVertex(p,u,v,material,room);var at=result.p;
+        double beam=at.z>NEAR?lampBeam(at.z,Math.hypot(at.x,at.y)/at.z):0;
+        return new Vertex(at,u,v,result.r+beam,result.g+beam,result.b+beam);
     }
     private final long gpuSceneId=GpuWorldRenderer.nextId();
     private long lastSubmittedGpuFrame;
@@ -2037,6 +2056,8 @@ public final class SceneRenderer {
         }else setAdditionalGhostBodies(List.of());
         // Solo shares the same event visualization contract as the LAN client.
         setHauntings(session.hauntings());
+        uvLamp=session.uvPowered();uvTier=EquipmentTiers.Tier.I;uvTick=session.ticks();
+        uvMarks=session.uvVisible(x,eyeHeight-HunterPosture.eye(session.crouched()),z,yaw);
         render(map,room,visible,
             session.wardPrepared()?session.anchorRoom():-1,-1,clock,allies,figure,session.counterMarks());
     }
@@ -2116,6 +2137,7 @@ public final class SceneRenderer {
         long geometryStart=System.nanoTime();
         List<Face> geometry=scene(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,
             clock,others,apparition,markers);
+        appendUvResidue(geometry,map);
         long geometryReady=System.nanoTime();
         int visibleFaces=0;
         if(drawGpuFaces(geometry,map)){
@@ -2223,11 +2245,42 @@ public final class SceneRenderer {
         var rgb=fixtureLighting.sample(room,litX,litY,litZ);
         var glow=fixtureLighting.emission(material,p.x,p.y,p.z);
         double r=Math.max(rgb.r(),glow.r()),g=Math.max(rgb.g(),glow.g()),b=Math.max(rgb.b(),glow.b());
+        if(material==OPTICAL_SIGNAL){r=1.2;g=1.2;b=1.2;}
+        if(uvLamp){
+            var at=camera(p);double strength=at.z>NEAR?HandheldLighting.sample(HandheldLighting.uv(uvTier),at.z,Math.hypot(at.x,at.y)/at.z):0;
+            if(strength>0&&lightingMap.clearLineOfSight(x,eyeHeight,z,litX,litY,litZ)){
+                r+=strength*.42;g+=strength*.055;b+=strength*2.4;
+                if(material==UV_RESIDUE){r=Math.max(r,.65);g=Math.max(g,1.5);b=Math.max(b,.85);}
+            }
+        }
         for(var source:portablePositions.values())if(lightingMap!=null&&source.on()){
             double dx=p.x-source.x(),dy=p.y-(source.y()+.2),dz=p.z-source.z(),radius=source.tool().equals("FIRELIGHT")?4.8:3.2,d=Math.sqrt(dx*dx+dy*dy+dz*dz);
             if(d<radius&&lightingMap.clearLineOfSight(source.x(),source.y()+.25,source.z(),p.x,p.y+.04,p.z)){double add=(1-d/radius)*.65;r+=add;g+=add*(source.tool().equals("FIRELIGHT")?.65:1);b+=add*(source.tool().equals("FIRELIGHT")?.28:1);}
         }
         return new Vertex(camera(p),u,v,r,g,b);
+    }
+    private void appendUvResidue(List<Face> out,HouseMap map){
+        if(!uvLamp)return;
+        if(UV_RESIDUE<0)UV_RESIDUE=GlbProps.surfaceMaterial("UV residue outer-face splat",UvSurfaceDecal.texture());
+        for(var m:uvMarks){
+            if(uvTick<m.born()||uvTick-m.born()>90+uvTier.ordinal()*35)continue;
+            var at=camera(new Point(m.x(),m.y(),m.z()));
+            if(at.z<=NEAR||HandheldLighting.sample(HandheldLighting.uv(uvTier),at.z,Math.hypot(at.x,at.y)/at.z)<=.015
+                ||!map.clearLineOfSight(x,eyeHeight,z,m.x(),m.y()+.06,m.z()))continue;
+            var vertices=UvSurfaceDecal.cube(m).stream().map(v->new Point(v.x(),v.y(),v.z())).toList();
+            // Closed cube: five untextured backing/edge faces, one textured outer face.
+            for(int[] f:new int[][]{{0,3,2,1},{0,1,5,4},{1,2,6,5},{2,3,7,6},{3,0,4,7}}){
+                var part=new ArrayList<Face>();quad(part,vertices.get(f[0]),vertices.get(f[1]),vertices.get(f[2]),vertices.get(f[3]),0x122019);own(out,part,m.room());
+            }
+            var part=new ArrayList<Face>();texturedQuad(part,vertices.get(4),vertices.get(5),vertices.get(6),vertices.get(7),UV_RESIDUE,0,0,1,0,1,1,0,1,0xffffff);own(out,part,m.room());
+        }
+    }
+    private static void opticalSegment(List<Face> out,StructuredLightVolume.Beam segment,int room){
+        var a=segment.a();var b=segment.b();double dx=b.x()-a.x(),dz=b.z()-a.z(),len=Math.hypot(dx,dz);if(len<.001)return;
+        double ox=-dz/len*.003,oz=dx/len*.003;
+        var part=new ArrayList<Face>();quad(part,new Point(a.x()+ox,a.y(),a.z()+oz),new Point(b.x()+ox,b.y(),b.z()+oz),new Point(b.x()-ox,b.y(),b.z()-oz),new Point(a.x()-ox,a.y(),a.z()-oz),0xff3b44);
+        quad(part,new Point(a.x(),a.y()-.003,a.z()),new Point(b.x(),b.y()-.003,b.z()),new Point(b.x(),b.y()+.003,b.z()),new Point(a.x(),a.y()+.003,a.z()),0xff3b44);
+        for(var f:part)out.add(new Face(f.a,f.b,f.c,f.color,OPTICAL_SIGNAL,f.au,f.av,f.bu,f.bv,f.cu,f.cv,room));
     }
     /** Paint the world-fixed night panorama behind all world geometry, even indoors.
      * Real window apertures and depth-tested castle stonework occlude the background.
@@ -2456,7 +2509,6 @@ public final class SceneRenderer {
             if(u<0||v<0||w<0)continue;
             double inv=u/a.z+v/b.z+w/c.z,d=1/inv;int k=py*renderWidth+px;
             if(d>=depths[k])continue;
-            depths[k]=d;
             if(material>=0) {
                 // Perspective-correct material lookup. Screen-space UV interpolation
                 // distorts strongly at PS-era FOV and is unsuitable for room walls.
@@ -2464,6 +2516,7 @@ public final class SceneRenderer {
                     u*va.u+v*vb.u+w*vc.u,psxPreset);
                 double vv=PsxPipeline.uv((u*va.v/a.z + v*vb.v/b.z + w*vc.v/c.z)/inv,
                     u*va.v+v*vb.v+w*vc.v,psxPreset);
+                if(material==UV_RESIDUE&&GlbProps.sampleAlpha(material,uu,vv)<.5)continue;
                 int texel=material>=GlbProps.TEXTURE_BASE
                     ?GlbProps.sample(material,uu,vv)
                     :material>=LevelMaterials.BASE?LevelMaterials.sample(material,uu,vv):MaterialAtlas.sample(material,uu,vv);
@@ -2472,6 +2525,7 @@ public final class SceneRenderer {
                     ((tg*((tint>>8)&255)/255)<<8) |
                      (tb*(tint&255)/255);
             }
+            depths[k]=d;
             if(wet>0||snow>0){
                 // Preserve the original scene texture. Wetness darkens it; snow
                 // whitens only exposed horizontal surfaces, not room walls.
@@ -2486,8 +2540,7 @@ public final class SceneRenderer {
             // Flashlight illuminates a forward-facing cone; flames instead spill locally.
             double aim=Math.hypot((px+.5-renderWidth*.5)/focal,
                                   (py+.5-renderHeight*.5)/focal);
-            double cone=flameLamp?1.0:Math.max(0,1-aim/.44);
-            double beam=lamp?lampIntensity*Math.max(0,1-d/lampReach)*cone:0;
+            double beam=lampBeam(d,aim);
             double light=(.075+.98*roomLevel+beam)*environmentLight*weatherLightScale*Math.max(.22,1-d/26.0);
             double lr=light,lg=light,lb=light;
             if(va.r>=0){lr=((u*va.r/a.z+v*vb.r/b.z+w*vc.r/c.z)/inv+beam)*environmentLight*weatherLightScale;lg=((u*va.g/a.z+v*vb.g/b.z+w*vc.g/c.z)/inv+beam)*environmentLight*weatherLightScale;lb=((u*va.b/a.z+v*vb.b/b.z+w*vc.b/c.z)/inv+beam)*environmentLight*weatherLightScale;}

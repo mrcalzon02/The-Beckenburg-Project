@@ -111,7 +111,7 @@ public final class FieldEquipment {
     public boolean toggle(String id){
         if(!id.equals(active())||!ENABLED.contains(id))
             throw new IllegalArgumentException("switch must be held");
-        if(!java.util.Set.of("FLASHLIGHT","VIDEO_CAMERA","HEAD_GEAR","FIRELIGHT")
+        if(!java.util.Set.of("FLASHLIGHT","VIDEO_CAMERA","HEAD_GEAR","FIRELIGHT","UV_LIGHT")
                 .contains(id))
             throw new IllegalArgumentException("item has no on/off switch");
         boolean next=!powered.getOrDefault(id,false);
