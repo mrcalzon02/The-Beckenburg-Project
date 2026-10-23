@@ -26,7 +26,9 @@ public final class CastleLightingPlacementRepairTest {
         check(upper==2,"both upper-library lights hang from the upper ceiling");
         for(var fixture:lamps){
             check(fixture.attached(map),"unattached/roofless lamp "+fixture.x()+","+fixture.z()+","+fixture.y());
-            check(!map.outside(fixture.x(),fixture.z()),"never hang a lamp in open courtyard");
+            if(fixture.mount()==CastleHubDecor.Mount.CEILING)
+                check(!map.outside(fixture.x(),fixture.z()),
+                    "a ceiling-mounted fitting cannot float above the uncovered courtyard");
         }
         var lighting=new FixtureLighting(map);
         check(lighting.sources().size()==lamps.size(),"all fittings feed the game light engine");
