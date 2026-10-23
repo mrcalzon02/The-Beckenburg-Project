@@ -13,8 +13,17 @@ public final class VanModuleIntegrationTest {
         ok(Math.abs(VanStaging.REAR-VanStaging.FRONT-4.256)<.001,"manufacturer-sized long cargo bay");
         ok(Math.abs(VanStaging.HALF_WIDTH*2-2.059)<.001,"road-vehicle body width");
         ok(VanStaging.INTERIOR_HEIGHT>=2.10,"full height workstation and overhead lights");
-        ok(VanInteriorLayout.toolSockets().size()==FieldEquipment.workingTools().size()+1,
-            "all functional LAN equipment and the solo salt kit have distinct physical hooks");
+        // Portable inventory occupies real hooks. Full-size monitoring consoles
+        // instead occupy their already-authored bulkhead fixtures; forcing
+        // duplicate COMPUTER meshes onto a 2.059m-wide van rack is impossible.
+        Set<String> portable=new HashSet<>();
+        for(String id:FieldEquipment.workingTools()){
+            if(EquipmentRegistry.get(id).origin()!=EquipmentRegistry.Origin.TRUCK)
+                portable.add(id);
+        }
+        portable.add("SALT");
+        ok(VanInteriorLayout.toolSockets().size()==portable.size(),
+            "every portable tool has exactly one physical hook, consoles stay mounted");
         ok(VanInteriorLayout.TOOL_CAPACITY>=EquipmentTiers.all().size(),
             "42 real rack spaces reserved without inventing missing or nonfunctional gear");
         ok(VanInteriorLayout.TOOL_CAPACITY>=VanInteriorLayout.toolSockets().size(),
@@ -22,6 +31,8 @@ public final class VanModuleIntegrationTest {
         Set<String> slots=new HashSet<>();
         for(var entry:VanInteriorLayout.toolSockets()){
             ok(slots.add(entry.equipment()),"no duplicate bracket: "+entry.equipment());
+            ok(portable.remove(entry.equipment()),
+                "portable hook is unknown, duplicated or belongs to fixed monitor: "+entry.equipment());
             ok(entry.x()<-.5 && entry.x()>-VanStaging.HALF_WIDTH,
                 "equipment fixed to left wall, not floating in aisle");
             ok(entry.z()>VanStaging.FRONT+.25&&entry.z()<VanStaging.REAR-.25,
@@ -32,6 +43,7 @@ public final class VanModuleIntegrationTest {
                 EquipmentTiers.Tier.I)).triangles().size()>1,
                 "approved original mesh actually exists: "+entry.equipment());
         }
+        ok(portable.isEmpty(),"missing tangible hooks for portable equipment: "+portable);
         for(var p:VanInteriorLayout.FIXTURES){
             ok(VanInteriorLayout.insideShell(p),"fitted fixture outside cargo: "+p.purpose());
             ok(GlbProps.model(p.mesh()).triangles().size()>1,
