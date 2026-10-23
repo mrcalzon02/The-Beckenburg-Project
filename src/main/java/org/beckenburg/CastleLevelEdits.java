@@ -453,6 +453,18 @@ public final class CastleLevelEdits {
                         deck.height(),.16,deck.material()));
                 }
             }
+            // Relocate one proven wall-penetrating armchair in older castle
+            // scenes. Apply only to the exact original pose so editor adjustments
+            // remain untouched.
+            if(Integer.parseInt(p.getProperty("furniture.layout","1"))<2){
+                var chair=incomingProps.get("ground22");
+                if(chair!=null&&chair.mesh().equals("armchair_1")
+                    &&chair.x()==20.4&&chair.z()==20.0&&chair.scale()==.77){
+                    incomingProps.put("ground22",new Prop(chair.id(),chair.mesh(),
+                        22.3,chair.y(),chair.z(),chair.scale(),chair.yaw(),
+                        chair.halfX(),chair.halfZ(),chair.upper()));
+                }
+            }
             // Migrate the original continuous west wall to a real, recessed
             // pair of window apertures. Only canonical unchanged geometry is
             // converted; custom walls remain under user control.
@@ -533,6 +545,7 @@ public final class CastleLevelEdits {
         p.setProperty("fortification.layout","2");
         p.setProperty("gate.layout","2");
         p.setProperty("windows.layout","2");
+        p.setProperty("furniture.layout","2");
         p.setProperty("doors.count",String.valueOf(doorAssignments.size()));
         int di=0;
         for(var assigned:doorAssignments.entrySet()){

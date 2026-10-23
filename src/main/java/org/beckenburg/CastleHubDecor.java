@@ -40,7 +40,7 @@ public final class CastleHubDecor {
         f("display_cabinet_mp_2",16.0,13.3,.75,0,.51,.25),
         f("chair_mp_5",24.1,17.7,1.12,0,.35,.39),
         f("tv_table_1_4",25.15,20.0,.82,Math.PI/2,.29,.69),
-        f("armchair_1",20.4,20.0,.77,0,.57,.42),
+        f("armchair_1",22.3,20.0,.77,0,.57,.42),
         f("wardrobe_mp_1",25.8,13.7,.75,Math.PI/2,.27,.52),
         // East archive and service wings - furniture, never free field equipment.
         f("shelf_mp_6",29.20,5.4,1.30,Math.PI/2,.27,.60),
