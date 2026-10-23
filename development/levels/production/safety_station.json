@@ -1,0 +1,26 @@
+{
+  "id": "level_work_safety_station",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "603ed44470dc1e03fa8c9de4f3c3ff6fe3e7791e812dd4176ecdb4cd74f75e75",
+  "bytes": 134808,
+  "triangles": 972,
+  "bounds": [
+    [
+      -0.7099999785423279,
+      0.0,
+      -0.3199999928474426
+    ],
+    [
+      0.7099999189376831,
+      1.8199999332427979,
+      0.3199999928474426
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_safety_station.blend",
+  "function": "Freestanding first aid cabinet, supported shelf, old blanket and closed bandage tin",
+  "placement": "Blackpine repair shed east wall; workshop circulation stays clear",
+  "runtime": "Static historical dressing; cabinet and supplies do not heal or award inventory"
+}

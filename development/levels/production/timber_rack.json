@@ -1,0 +1,26 @@
+{
+  "id": "level_work_timber_rack",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "00456654b591ab1a374925844fbf66641cf7b7a8266f275d797b687870486414",
+  "bytes": 104084,
+  "triangles": 1088,
+  "bounds": [
+    [
+      -1.274999976158142,
+      0.0,
+      -0.46000000834465027
+    ],
+    [
+      1.274999976158142,
+      1.7899999618530273,
+      0.4675000011920929
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_timber_rack.blend",
+  "function": "Braced dry-timber rack with supported crossarms, air-drying stickers and stock label",
+  "placement": "Blackpine timber tool store south wall; both east/west doors remain open",
+  "runtime": "Static sorted timber; no movable boards or rack climbing"
+}
