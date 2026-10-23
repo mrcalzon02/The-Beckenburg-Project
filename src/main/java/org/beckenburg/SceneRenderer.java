@@ -1299,6 +1299,37 @@ public final class SceneRenderer {
      * world faces, not forbidden ghost identities or hidden network state.
      * Existing CPU sprite and game HUD drawing uses GPU-derived depth.
      */
+    /** Subdivide only nearby architecture for per-vertex light probes.
+     * GPU still performs all perspective rasterization, texture interpolation
+     * and depth testing. This preserves wall shadows and close flashlight
+     * falloff without the old CPU per-pixel triangle scan. */
+    private void appendGpuFace(Face face,int room,int depth,
+            java.util.Map<Integer,GpuFloats> batches){
+        if(room>=0&&room<12
+            &&depth<lightingSubdivisionLimit(Math.max(0,
+                Math.min(camera(face.a).z,
+                    Math.min(camera(face.b).z,camera(face.c).z))))
+            &&Math.max(edge2(face.a,face.b),
+                Math.max(edge2(face.b,face.c),edge2(face.c,face.a)))>2.6){
+            Point ab=mid(face.a,face.b),bc=mid(face.b,face.c),ca=mid(face.c,face.a);
+            double abu=(face.au+face.bu)/2,abv=(face.av+face.bv)/2;
+            double bcu=(face.bu+face.cu)/2,bcv=(face.bv+face.cv)/2;
+            double cau=(face.cu+face.au)/2,cav=(face.cv+face.av)/2;
+            appendGpuFace(new Face(face.a,ab,ca,face.color,face.material,
+                face.au,face.av,abu,abv,cau,cav),room,depth+1,batches);
+            appendGpuFace(new Face(ab,face.b,bc,face.color,face.material,
+                abu,abv,face.bu,face.bv,bcu,bcv),room,depth+1,batches);
+            appendGpuFace(new Face(ca,bc,face.c,face.color,face.material,
+                cau,cav,bcu,bcv,face.cu,face.cv),room,depth+1,batches);
+            appendGpuFace(new Face(ab,bc,ca,face.color,face.material,
+                abu,abv,bcu,bcv,cau,cav),room,depth+1,batches);
+            return;
+        }
+        var dst=batches.computeIfAbsent(face.material,key->new GpuFloats());
+        dst.vertex(litVertex(face.a,face.au,face.av,face.material,room),face.color);
+        dst.vertex(litVertex(face.b,face.bu,face.bv,face.material,room),face.color);
+        dst.vertex(litVertex(face.c,face.cu,face.cv,face.material,room),face.color);
+    }
     private boolean drawGpuFaces(List<Face> faces,HouseMap map){
         GpuWorldRenderer backend=GpuWorldRenderer.active();
         if(backend==null)return false;
@@ -1312,12 +1343,7 @@ public final class SceneRenderer {
                     ||(f.a.z+f.b.z+f.c.z)/3<0||(f.a.z+f.b.z+f.c.z)/3>CastleHubMap.HEIGHT)?13:0):
                 map.roomAt((f.a.x+f.b.x+f.c.x)/3,
                     (f.a.y+f.b.y+f.c.y)/3,(f.a.z+f.b.z+f.c.z)/3);
-            var dst=batches.computeIfAbsent(f.material,key->new GpuFloats());
-            // The same physical, occlusion-aware light probes used by the
-            // software view. Texture sampling and depth rasterization are GPU.
-            dst.vertex(litVertex(f.a,f.au,f.av,f.material,room),f.color);
-            dst.vertex(litVertex(f.b,f.bu,f.bv,f.material,room),f.color);
-            dst.vertex(litVertex(f.c,f.cu,f.cv,f.material,room),f.color);
+            appendGpuFace(f,room,0,batches);
         }
         var surfaces=new java.util.ArrayList<GpuWorldRenderer.Surface>(batches.size());
         for(var entry:batches.entrySet())
