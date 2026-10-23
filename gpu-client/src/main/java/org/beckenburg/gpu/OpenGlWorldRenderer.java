@@ -110,7 +110,8 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   for(int y=0;y<128;y++)for(int x=0;x<128;x++){
    double u=(x+.5)/128.0,v=(127.5-y)/128.0;
    int rgb=material<0?0xffffff:sample(material,u,v);
-   int alpha=material>=GlbProps.TEXTURE_BASE?
+   int alpha=material>=GlbProps.TEXTURE_BASE
+     &&material!=GlbProps.VAN_MAP_MATERIAL?
      GlbProps.sampleAlpha(material,u,v):255;
    bitmap.drawPixel(x,y,((rgb&0xffffff)<<8)|alpha);
   }

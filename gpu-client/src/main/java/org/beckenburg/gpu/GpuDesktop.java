@@ -104,7 +104,14 @@ public final class GpuDesktop {
   boolean smoke=java.util.Arrays.asList(args).contains("--gpu-smoke");
   startGpu();
   if(smoke){
-   try{smoke();}finally{System.exit(0);}
+   try{
+    smoke();
+    System.exit(0);
+   }catch(Throwable failure){
+    System.err.println("GPU SMOKE FAILED: "+failure);
+    failure.printStackTrace();
+    System.exit(1);
+   }
    return;
   }
   // Simulation and all Swing menus continue on their tested engine path.
