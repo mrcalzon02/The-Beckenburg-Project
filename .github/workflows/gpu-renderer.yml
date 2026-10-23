@@ -1,0 +1,75 @@
+name: Beckenburg GPU Renderer Acceptance
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'gpu-client/**'
+      - 'src/main/java/org/beckenburg/GpuWorldRenderer.java'
+      - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - '.github/workflows/gpu-renderer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install Blender for approved GGBot asset export
+        shell: pwsh
+        run: |
+          $exe=Get-Command blender -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source -First 1
+          if (-not $exe) {
+            $exe=Get-ChildItem (Join-Path $env:ProgramFiles 'Blender Foundation') -Filter blender.exe -Recurse -File -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
+          }
+          if (-not $exe) {
+            choco install blender -y --no-progress
+            if ($LASTEXITCODE -ne 0) { throw 'Blender installation failed' }
+            $exe=Get-ChildItem (Join-Path $env:ProgramFiles 'Blender Foundation') -Filter blender.exe -Recurse -File | Select-Object -First 1 -ExpandProperty FullName
+          }
+          Split-Path $exe -Parent | Out-File -Append -Encoding utf8 $env:GITHUB_PATH
+      - name: Package canonical assets with Java 17
+        shell: cmd
+        run: call build.cmd package
+      - name: Package actual OpenGL 3.3 backend and source assets
+        shell: pwsh
+        run: |
+          mvn -B -ntp -f gpu-client/pom.xml -DskipTests package
+          if ($LASTEXITCODE -ne 0) { throw 'GPU client Maven compilation failed' }
+          if (!(Test-Path 'gpu-client/target/BeckenburgGPU.jar')) {throw 'Missing GPU client JAR'}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-gpu-windows-jar
+          path: gpu-client/target/BeckenburgGPU.jar
+          if-no-files-found: error
+  opengl-mesa-smoke:
+    needs: windows-build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: beckenburg-gpu-windows-jar
+          path: build/gpu
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Mesa OpenGL 3.3 real engine smoke
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y xvfb libgl1-mesa-dri libglu1-mesa
+          LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a java -jar build/gpu/BeckenburgGPU.jar --gpu-smoke
+          test -s build/e2e/gpu/investigation-house.png
+          test -s build/e2e/gpu/castle-headquarters.png
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: beckenburg-gpu-frame-evidence
+          path: build/e2e/gpu/*.png
+          if-no-files-found: warn
