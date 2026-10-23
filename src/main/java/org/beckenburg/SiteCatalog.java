@@ -11,11 +11,16 @@ public final class SiteCatalog {
         ACADEMY("Academy",false), COLLEGE("College",false), CHURCH("Church",false);
         public final String label;
         private final boolean playable;
+        private volatile Boolean geometryValidated;
         Location(String label,boolean playable){this.label=label;this.playable=playable;}
-        public boolean playable(){
+        /** Authoring availability is static per build. Do not rebuild a complete
+         * 15-room level every time Swing paints a combo-box label. */
+        public synchronized boolean playable(){
             if(!playable)return false;
-            try{return LevelPlans.build(HouseMap.Site.valueOf(name())).rooms().size()==15;}
-            catch(IllegalArgumentException unavailable){return false;}
+            if(geometryValidated!=null)return geometryValidated;
+            try{geometryValidated=LevelPlans.build(HouseMap.Site.valueOf(name())).rooms().size()==15;}
+            catch(IllegalArgumentException unavailable){geometryValidated=false;}
+            return geometryValidated;
         }
         @Override public String toString(){return label+(playable()?" / PLAYABLE":" / IN PRODUCTION");}
     }

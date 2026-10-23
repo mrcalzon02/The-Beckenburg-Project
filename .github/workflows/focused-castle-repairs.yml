@@ -17,6 +17,10 @@ on:
       - 'src/test/java/org/beckenburg/CastleEditorGeometryTest.java'
       - 'src/test/java/org/beckenburg/editor/EditorCorePortabilityTest.java'
       - 'src/main/java/org/beckenburg/InvestigationGame.java'
+      - 'src/main/java/org/beckenburg/GraphicsOptions.java'
+      - 'src/main/java/org/beckenburg/BeckenburgDeveloperTrace.java'
+      - 'src/main/java/org/beckenburg/SiteCatalog.java'
+      - 'src/test/java/org/beckenburg/GraphicsOptionsTest.java'
       - 'installer/beckenburg.iss'
       - '.github/workflows/ship-installer.yml'
       - 'src/test/java/org/beckenburg/DeveloperEditorLaunchTest.java'
@@ -91,6 +95,10 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastlePortalSlotTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastlePortalSlotTest
+          if errorlevel 1 exit /b 1
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\GraphicsOptionsTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GraphicsOptionsTest
           if errorlevel 1 exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\DeveloperLevelEditorDataTest.java
           if errorlevel 1 exit /b 1

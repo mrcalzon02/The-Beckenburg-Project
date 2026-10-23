@@ -469,8 +469,11 @@ public final class InvestigationGame {
      * Campaign dispatch continues to use its fixed story site and progression. */
     private void begin(){
         JComboBox<SiteCatalog.Location> site=new JComboBox<>();
-        for(int i=0;i<locationPicker.getItemCount();i++)
-            site.addItem(locationPicker.getItemAt(i));
+        for(int i=0;i<locationPicker.getItemCount();i++){
+            SiteCatalog.Location candidate=locationPicker.getItemAt(i);
+            if(candidate.playable())site.addItem(candidate);
+        }
+        if(site.getItemCount()==0)throw new IllegalStateException("No playable investigation maps");
         site.setSelectedItem(locationPicker.getSelectedItem());
         JComboBox<InvestigationSession.Role> role=
             select(InvestigationSession.Role.values(),
@@ -584,6 +587,7 @@ public final class InvestigationGame {
                     return null;
                 }
                 @Override protected void done(){
+                    if(isCancelled())return;
                     try{
                         get();
                         initialFrameReady=true;

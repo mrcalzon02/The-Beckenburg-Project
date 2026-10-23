@@ -41,6 +41,26 @@ public final class GraphicsOptionsTest {
         wide.configure(renderer,1920,1080,true);
         ok(renderer.width()==640&&renderer.height()==360,
             "quality target determines actual 3D raster dimensions");
+        ok(Math.abs(renderer.fieldOfView()-95)<.01,
+            "first scene honors saved FOV instead of retaining the 320x200 default");
+        ok(Math.abs(renderer.width()/(double)renderer.height()-16.0/9)<.001,
+            "first scene is already the requested aspect, without a stretched frame");
+        ok(SceneRenderer.lightingSubdivisionLimit(1)==3
+            &&SceneRenderer.lightingSubdivisionLimit(5)==2
+            &&SceneRenderer.lightingSubdivisionLimit(12)==1
+            &&SceneRenderer.lightingSubdivisionLimit(30)==0,
+            "lighting detail tapers with depth, rather than splitting distant walls 256 times");
+        for(GraphicsOptions.Detail selected:GraphicsOptions.Detail.values()){
+            GraphicsOptions candidate=new GraphicsOptions(
+                wide.mode(),wide.display(),selected,wide.aspect(),wide.upscale(),
+                wide.antialias(),wide.fieldOfView(),wide.brightness(),wide.contrast(),
+                wide.scanlines(),wide.vignette(),wide.grain(),wide.chromatic());
+            candidate.configure(renderer,1920,1080,true);
+            ok(renderer.height()==selected.height,
+                "all rendering quality choices change the actual frame height: "+selected);
+            ok(renderer.pixels().length==renderer.width()*renderer.height(),
+                "all quality choices allocate a matching depth/color target: "+selected);
+        }
         int[] scene=new int[8*8];
         Arrays.fill(scene,0x8899aa);
         scene[3*8+3]=0xffffff;
