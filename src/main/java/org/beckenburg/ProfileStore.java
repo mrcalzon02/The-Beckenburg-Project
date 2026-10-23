@@ -103,6 +103,26 @@ public final class ProfileStore {
     private final java.util.EnumSet<EquipmentLoadout.Item> purchasedEquipment=
         java.util.EnumSet.of(EquipmentLoadout.Item.EMF,EquipmentLoadout.Item.THERMOMETER,
             EquipmentLoadout.Item.SPIRIT_BOX,EquipmentLoadout.Item.PHOTO_CAMERA);
+
+    /** Four physically issued instruments for the next solo/campaign contract. */
+    private final EquipmentLoadout.Item[] prepared={
+        EquipmentLoadout.Item.EMF,EquipmentLoadout.Item.THERMOMETER,
+        EquipmentLoadout.Item.SPIRIT_BOX,EquipmentLoadout.Item.PHOTO_CAMERA};
+    public EquipmentLoadout.Item[] preparedLoadout(){return prepared.clone();}
+    /** Persist an owned, distinct loadout atomically before dispatch. */
+    public void prepareLoadout(EquipmentLoadout.Item[] selected)throws IOException{
+        if(blocked)throw new IOException("Profile cannot be modified after failed load");
+        if(selected==null||selected.length!=EquipmentLoadout.SLOTS)
+            throw new IllegalArgumentException("Exactly four equipment slots are required");
+        var seen=java.util.EnumSet.noneOf(EquipmentLoadout.Item.class);
+        for(var item:selected)if(item==null||!ownsEquipment(item)||!seen.add(item))
+            throw new IllegalArgumentException("All equipped instruments must be owned and distinct");
+        var previous=prepared.clone();
+        System.arraycopy(selected,0,prepared,0,prepared.length);
+        try{save();}catch(IOException error){
+            System.arraycopy(previous,0,prepared,0,prepared.length);throw error;
+        }
+    }
     public boolean ownsEquipment(EquipmentLoadout.Item item){return purchasedEquipment.contains(item);}
     public java.util.Set<EquipmentLoadout.Item> equipment(){return java.util.Set.copyOf(purchasedEquipment);}
     public static int equipmentPrice(EquipmentLoadout.Item item){
@@ -200,6 +220,14 @@ public final class ProfileStore {
                 String legacyKey="equipment."+item.toString();
                 if(Boolean.parseBoolean(p.getProperty(stableKey,p.getProperty(legacyKey,"false"))))
                     purchasedEquipment.add(item);
+            }
+            // Optional keys retain older saves. Never equip items not yet owned.
+            java.util.EnumSet<EquipmentLoadout.Item> equipped=java.util.EnumSet.noneOf(EquipmentLoadout.Item.class);
+            for(int i=0;i<EquipmentLoadout.SLOTS;i++){
+                var item=EquipmentLoadout.Item.valueOf(p.getProperty("loadout."+i,prepared[i].name()));
+                if(!ownsEquipment(item)||!equipped.add(item))
+                    throw new IllegalArgumentException("Invalid equipped instrument in slot "+i);
+                prepared[i]=item;
             }
             String receipts=p.getProperty("awarded","");
             for(String receipt:receipts.split(",")) if(!receipt.isBlank()) {
@@ -353,6 +381,8 @@ public final class ProfileStore {
             for(EquipmentLoadout.Item item:EquipmentLoadout.Item.values())
                 if(equipmentPrice(item)>0)
                     p.setProperty("equipment."+item.name(),Boolean.toString(ownsEquipment(item)));
+            for(int i=0;i<prepared.length;i++)
+                p.setProperty("loadout."+i,prepared[i].name());
             for(FieldSupplies.Kind kind:FieldSupplies.Kind.values())
                 for(FieldSupplies.Tier tier:FieldSupplies.Tier.values())
                     p.setProperty("supply."+kind+"."+tier,

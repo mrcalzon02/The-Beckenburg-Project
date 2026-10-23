@@ -597,6 +597,9 @@ public final class InvestigationGame {
             scene.roomLights=lights;
             scene.roomLightTick=0;
             scene.rackStock=profile.equipment();
+            // Real carried gear originates at the Castle quartermaster, not
+            // an unconditional new set of default instruments on each mission.
+            loadout.replaceAtRack(profile.preparedLoadout());
             scene.rackInventory=VanRackStock.solo(profile,loadout);
             BeckenburgDeveloperTrace.caseStage("rendering first scene");
             scene.draw(map,session,0,

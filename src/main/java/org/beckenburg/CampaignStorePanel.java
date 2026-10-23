@@ -34,6 +34,8 @@ public final class CampaignStorePanel extends JPanel {
     private final JTextArea details=new JTextArea();
     private final JLabel balance=new JLabel();
     private final JButton purchase=new JButton("PURCHASE SELECTED");
+    private final List<JComboBox<EquipmentLoadout.Item>> slots=new ArrayList<>();
+    private final JLabel preparedStatus=new JLabel("Next mission loadout");
     public CampaignStorePanel(ProfileStore profile,Runnable afterPurchase){
         this.profile=Objects.requireNonNull(profile);
         this.afterPurchase=Objects.requireNonNull(afterPurchase);
@@ -56,7 +58,26 @@ public final class CampaignStorePanel extends JPanel {
         JPanel footer=new JPanel(new FlowLayout(FlowLayout.LEFT,8,4));footer.setOpaque(false);
         balance.setForeground(new Color(170,222,186));
         purchase.setName("campaign.store.buy");
-        footer.add(purchase);footer.add(balance);add(footer,BorderLayout.SOUTH);
+        footer.add(purchase);footer.add(balance);
+        JPanel preparation=new JPanel(new FlowLayout(FlowLayout.LEFT,4,3));
+        preparation.setOpaque(false);
+        preparation.add(new JLabel("EQUIP"));
+        for(int i=0;i<EquipmentLoadout.SLOTS;i++){
+            JComboBox<EquipmentLoadout.Item> box=new JComboBox<>();
+            box.setName("campaign.store.slot."+i);
+            box.setToolTipText("Mission instrument slot "+(i+1));
+            box.setPreferredSize(new Dimension(122,26));
+            slots.add(box);preparation.add(box);
+        }
+        JButton commit=new JButton("SAVE LOADOUT");
+        commit.setName("campaign.store.prepare");
+        commit.addActionListener(e->prepareSelected());
+        preparation.add(commit);
+        preparedStatus.setForeground(PAPER);preparation.add(preparedStatus);
+        JPanel bottom=new JPanel(new BorderLayout());bottom.setOpaque(false);
+        bottom.add(preparation,BorderLayout.NORTH);
+        bottom.add(footer,BorderLayout.SOUTH);add(bottom,BorderLayout.SOUTH);
+        refreshPrepared();
         offers.addListSelectionListener(e->{if(!e.getValueIsAdjusting())refresh();});
         purchase.addActionListener(e->buySelected());
         offers.setSelectedIndex(0);refresh();
@@ -68,11 +89,33 @@ public final class CampaignStorePanel extends JPanel {
             boolean bought=offer.equipment()!=null?profile.purchaseEquipment(offer.equipment()):
                 profile.purchase(offer.kind(),offer.tier());
             refresh();
-            if(bought)afterPurchase.run();
+            if(bought){refreshPrepared();afterPurchase.run();}
             return bought;
         }catch(IOException error){
             details.setText("Purchase could not be saved.\n"+error.getMessage());
             return false;
+        }
+    }
+    private void refreshPrepared(){
+        EquipmentLoadout.Item[] current=profile.preparedLoadout();
+        for(int i=0;i<slots.size();i++){
+            JComboBox<EquipmentLoadout.Item> box=slots.get(i);
+            box.removeAllItems();
+            for(var item:EquipmentLoadout.Item.values())
+                if(profile.ownsEquipment(item))box.addItem(item);
+            box.setSelectedItem(current[i]);
+        }
+    }
+    public boolean prepareSelected(){
+        EquipmentLoadout.Item[] chosen=new EquipmentLoadout.Item[EquipmentLoadout.SLOTS];
+        for(int i=0;i<slots.size();i++)chosen[i]=(EquipmentLoadout.Item)slots.get(i).getSelectedItem();
+        try{
+            profile.prepareLoadout(chosen);
+            preparedStatus.setText("SAVED");
+            afterPurchase.run();
+            return true;
+        }catch(IOException|IllegalArgumentException error){
+            preparedStatus.setText("NOT SAVED: "+error.getMessage());return false;
         }
     }
     public void refresh(){
