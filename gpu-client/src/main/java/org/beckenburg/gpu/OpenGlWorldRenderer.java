@@ -35,25 +35,37 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  in vec2 a_texCoord0;
  in vec3 a_lighting;
  uniform vec2 u_projection;
+ uniform vec2 u_resolution;
+ uniform float u_vertexSnap;
  out vec2 v_uv;
+ noperspective out vec2 v_uvAffine;
  out vec3 v_light;
  void main(){
   float zz=a_position.z;
-  gl_Position=vec4(a_position.x*u_projection.x,
+  vec4 clip=vec4(a_position.x*u_projection.x,
    a_position.y*u_projection.y,
    zz*((180.0+0.065)/(180.0-0.065))-2.0*180.0*0.065/(180.0-0.065),zz);
+  if(u_vertexSnap>0.0&&zz>0.065){
+   vec2 native=(clip.xy/clip.w*0.5+0.5)*u_resolution;
+   native=floor(native/u_vertexSnap+0.5)*u_vertexSnap;
+   clip.xy=(native/u_resolution*2.0-1.0)*clip.w;
+  }
+  gl_Position=clip;
   v_uv=a_texCoord0;
+  v_uvAffine=a_texCoord0;
   v_light=a_lighting;
  }
  """;
  private static final String FRAGMENT="""
  #version 330 core
  in vec2 v_uv;
+ noperspective in vec2 v_uvAffine;
  in vec3 v_light;
  uniform sampler2D u_texture;
+ uniform float u_affineWarp;
  out vec4 fragColor;
  void main(){
-  vec4 surface=texture(u_texture,v_uv);
+  vec4 surface=texture(u_texture,mix(v_uv,v_uvAffine,u_affineWarp));
   if(surface.a<0.05)discard;
   fragColor=vec4(clamp(surface.rgb*v_light,0.0,1.0),surface.a);
  }
@@ -159,6 +171,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   float focal=frame.focal();
   shader.setUniformf("u_projection",
     2*focal/targetWidth,2*focal/targetHeight);
+  shader.setUniformf("u_resolution",(float)targetWidth,(float)targetHeight);
+  shader.setUniformf("u_vertexSnap",frame.vertexSnap());
+  shader.setUniformf("u_affineWarp",frame.affineWarp());
   shader.setUniformi("u_texture",0);
   for(Surface surface:frame.surfaces()){
    int vertexCount=surface.vertices().length/8;

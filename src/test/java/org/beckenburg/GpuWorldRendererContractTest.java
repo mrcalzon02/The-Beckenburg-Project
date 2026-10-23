@@ -9,7 +9,7 @@ public final class GpuWorldRendererContractTest {
   try{new GpuWorldRenderer.Surface(1,new float[9]);}catch(IllegalArgumentException expected){denied=true;}
   check(denied,"GPU vertices must contain complete triangle groups");
   var triangle=new GpuWorldRenderer.Surface(-1,new float[24]);
-  var f=new GpuWorldRenderer.Frame(640,360,275.4f,List.of(triangle));
+  var f=new GpuWorldRenderer.Frame(640,360,275.4f,1f,.7f,List.of(triangle));
   check(f.surfaces().size()==1&&f.width()==640,"Frame preserves real geometry and display size");
   denied=false;
   try{new GpuWorldRenderer.Result(640,360,new int[100],new float[100]);}

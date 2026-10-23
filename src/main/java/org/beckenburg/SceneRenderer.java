@@ -1323,7 +1323,8 @@ public final class SceneRenderer {
         for(var entry:batches.entrySet())
             surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),
                 entry.getValue().complete()));
-        backend.submit(new GpuWorldRenderer.Frame(renderWidth,renderHeight,(float)focal,surfaces));
+        backend.submit(new GpuWorldRenderer.Frame(renderWidth,renderHeight,(float)focal,
+            (float)psxPreset.snap,(float)psxPreset.affine,surfaces));
         GpuWorldRenderer.Result available=backend.latest();
         if(available!=null&&available.width()==renderWidth&&available.height()==renderHeight){
             int[] image=available.argb();
