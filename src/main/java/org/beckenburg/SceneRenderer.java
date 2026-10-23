@@ -753,7 +753,7 @@ public final class SceneRenderer {
         List<Face> faces=new ArrayList<>();
         double x0=level.room(13).x0()-45,x1=level.room(13).x1()+60,z0=level.room(12).z0()-50,z1=level.room(13).z1()+50;
         int ground=LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN?LevelMaterials.CONCRETE:MaterialAtlas.FOLIAGE;
-        texturedQuad(faces,new Point(x0,-.08,z0),new Point(x1,-.08,z0),new Point(x1,-.08,z1),new Point(x0,-.08,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
+        texturedQuad(faces,new Point(x0,-.65,z0),new Point(x1,-.65,z0),new Point(x1,-.65,z1),new Point(x0,-.65,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
         for(var socket:level.sockets()){
             if((socket.type().equals("enclosure")||socket.type().equals("parcel_fence"))){
                 String[] parts=socket.style().split(":");double length=Double.parseDouble(parts[1]);int count=(int)Math.ceil(length/2);double width=length/count,angle=-socket.yaw();
@@ -781,9 +781,25 @@ public final class SceneRenderer {
         }
     }
     private List<Face> castleEnvironment;
+    static final double EXTERIOR_GROUND_Y=-.65;
+    static final double CASTLE_FOUNDATION_Y=-.32;
+    private static void castleTerrain(List<Face> out,double west,double north,double east,double south){
+        texturedQuad(out,new Point(west,EXTERIOR_GROUND_Y,north),
+            new Point(east,EXTERIOR_GROUND_Y,north),
+            new Point(east,EXTERIOR_GROUND_Y,south),
+            new Point(west,EXTERIOR_GROUND_Y,south),MaterialAtlas.FOLIAGE,
+            west*.25,north*.25,east*.25,north*.25,
+            east*.25,south*.25,west*.25,south*.25,0x6e7866);
+    }
     private List<Face> castleSurroundings(){
         if(castleEnvironment!=null)return castleEnvironment;List<Face> out=new ArrayList<>();
-        texturedQuad(out,new Point(-180,-.12,-160),new Point(220,-.12,-160),new Point(220,-.12,220),new Point(-180,-.12,220),MaterialAtlas.FOLIAGE,0,0,100,0,100,95,0,95,0x6e7866);
+        // Terrain ends at the castle foundation; it is never drawn under a room.
+        // More than 0.6m vertical separation also prevents far-plane depth quantization
+        // from producing flashing earth through pavement or interior floors.
+        castleTerrain(out,-180,-160,220,1);
+        castleTerrain(out,-180,34,220,220);
+        castleTerrain(out,-180,1,1,34);
+        castleTerrain(out,43,1,220,34);
         for(var tree:CastleSurroundings.trees())imported(out,"level_tree_conifer_worn",tree.x(),0,tree.z(),tree.scale(),tree.x()*.2);
         mountains(out,22,17);var points=CastleSurroundings.road();int asphalt=VanArrivalStreet.surfaceMaterial(false);double uv=0;
         for(int i=0;i<points.size()-1;i++){var a=points.get(i);var b=points.get(i+1);double dx=b.x()-a.x(),dz=b.z()-a.z(),length=Math.hypot(dx,dz),ox=dz/length*2.6,oz=-dx/length*2.6;texturedQuad(out,new Point(a.x()-ox,-.055,a.z()-oz),new Point(a.x()+ox,-.055,a.z()+oz),new Point(b.x()+ox,-.055,b.z()+oz),new Point(b.x()-ox,-.055,b.z()-oz),asphalt,0,uv,2.6,uv,2.6,uv+length*.48,0,uv+length*.48,0x96958a);uv+=length*.48;}
@@ -1556,8 +1572,8 @@ public final class SceneRenderer {
         List<Face> castle=new ArrayList<>();castle.addAll(castleSurroundings());
         // A continuous sub-floor seals cracks at mismatched tiled-wall boundaries.
         // Fine floor finishes remain at Y=0; the backing is entirely BELOW them.
-        texturedQuad(castle,new Point(1,-.04,1),new Point(43,-.04,1),
-            new Point(43,-.04,34),new Point(1,-.04,34),MaterialAtlas.STONE,
+        texturedQuad(castle,new Point(1,CASTLE_FOUNDATION_Y,1),new Point(43,CASTLE_FOUNDATION_Y,1),
+            new Point(43,CASTLE_FOUNDATION_Y,34),new Point(1,CASTLE_FOUNDATION_Y,34),MaterialAtlas.STONE,
             1,1,43,1,43,34,1,34,0x77736e);
         for(int zz=1;zz<CastleHubMap.HEIGHT-1;zz++)for(int xx=1;xx<CastleHubMap.WIDTH-1;xx++){
             if(map.solid(xx,zz)||Math.hypot(xx+.5-x,zz+.5-z)>16)continue;
