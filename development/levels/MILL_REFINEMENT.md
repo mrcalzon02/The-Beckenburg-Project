@@ -77,6 +77,12 @@ verified; its hash and counts appear in the [package report](verification/blackp
 
 ## Next unfinished step
 
+**23 October update:** completed map history is now unified with optimized main.
+The separate [supported-worklight iteration](BLACKPINE_WORKLIGHTS.md) deliberately
+integrates only map fixture placement and the support model, retaining the
+unified engine's lighting. Its runtime/native results and remaining gates
+supersede the older lighting/integration status below.
+
 Stay on Blackpine. Inspect composition in normal play and tune the mill's
 lighting with the separately unfinished lighting work. Then exercise actual
 human/AI hunts, defended ritual outcomes, evidence balance, LAN site selection

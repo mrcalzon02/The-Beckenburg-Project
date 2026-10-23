@@ -1,0 +1,109 @@
+{
+  "base_commit": "71c14d11ac889fab88facdb510d7ea15d8878479",
+  "source_hashes": {
+    "src/main/java/org/beckenburg/BlackpineLighting.java": "9cecb04a0897a77a24bedea7e37bd0ae03f5b5b9d013f30897073a7a06f631f5",
+    "src/main/java/org/beckenburg/BlackpineLevel.java": "b00a94c1c1647447f6829ea45e1574fab73ec37ceb8c1fe79b07b9dfe9240819",
+    "src/test/java/org/beckenburg/BlackpineLightingTest.java": "d30e4be993d59fc46bc6d8e1fe23c9af77c7e5875cf4c39146fe72db24448d30",
+    "assets/runtime/models/level_mill_suspension.glb": "a4c179b9c6cfd7fd8ff0162f033526880296032cd56bb3e0098b9db3d1db612b"
+  },
+  "java_17_compile": true,
+  "checks": [
+    {
+      "test": "BlackpineLightingTest",
+      "status": "pass",
+      "seconds": 0.61,
+      "output": "PASS supported ceiling pivots, below-deck emission, lit blade/aisle, exact switch target, circuit isolation, breaker blackout, loft/wall/join occlusion and fitting clearance"
+    },
+    {
+      "test": "BlackpineMillExpansionTest",
+      "status": "pass",
+      "seconds": 0.36,
+      "output": "PASS four new models and relocated workshop saw inside finished walls, disjoint from solid furnishings; circular head saw aligned to logway"
+    },
+    {
+      "test": "ProductionAssetTest",
+      "status": "pass",
+      "seconds": 0.64,
+      "output": "PASS 12 ready runtime production meshes, 18879 shared source triangles, matching collision/support and clear spawns/rites"
+    },
+    {
+      "test": "BlackpineStoryTest",
+      "status": "pass",
+      "seconds": 0.84,
+      "output": "PASS 19 original story meshes (5757 source triangles), 12 room histories, 9 physically supported and centre-ray readable records, two boarded apertures and clear ritual floors"
+    },
+    {
+      "test": "BlackpineGrayboxTest",
+      "status": "pass",
+      "seconds": 0.38,
+      "output": "PASS: Blackpine dimensions, sparse refuge, physical doors, spawns, three rites and supported mill stairs"
+    },
+    {
+      "test": "TerrainAndRecoveryTest",
+      "status": "pass",
+      "seconds": 1.97,
+      "output": "PASS graded terrain, baked erosion paths, wholly clear shrubs/logs, rooted upright plants, 900 physical slope steps and player/ghost/loose-entity recovery"
+    },
+    {
+      "test": "AuthoredLevelPhysicsTest",
+      "status": "pass",
+      "seconds": 0.47,
+      "output": "HOUSE XYZ geometry checked\nFARMHOUSE XYZ geometry checked\nSCHOOL XYZ geometry checked"
+    },
+    {
+      "test": "LevelSurfaceIntegrityTest",
+      "status": "pass",
+      "seconds": 0.89,
+      "output": "PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS FARMHOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS SCHOOL: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards"
+    },
+    {
+      "test": "LightingOcclusionRepairTest",
+      "status": "pass",
+      "seconds": 0.52,
+      "output": "PASS shared 3D lighting occlusion, castle walls, portals, ceiling, courtyard and mission LOS"
+    },
+    {
+      "test": "PhysicalLightingTest",
+      "status": "pass",
+      "seconds": 1.25,
+      "output": "PASS native source profiles, directional and warm emission, closed-door shadows/cache invalidation, exact TV glow/sound use, independent washroom switches and castle lamp sources"
+    },
+    {
+      "test": "MergedMaterialMetadataTest",
+      "status": "pass",
+      "seconds": 0.23,
+      "output": "PASS generated terrain/foliage, subsequent GLB and TV material metadata remain aligned"
+    },
+    {
+      "test": "AuthoredLevelReachabilityTest",
+      "status": "pass",
+      "seconds": 8.81,
+      "output": "blackpine reached elevations 0.0..4.002816901408451\nPASS blackpine: swept van route reaches all15 zones and all functional sockets, 292910 positions"
+    },
+    {
+      "test": "BlackpineLightingCapture",
+      "status": "pass",
+      "seconds": 4.41,
+      "output": "2026-10-23T10:11:31.331504700Z [main] RENDER SLOW stage=idle faces=97723 visible_faces=83962 culled_faces=13761 target=1120x700 build_ms=1341 lighting_raster_ms=869\nVIEW logway-lit\nVIEW underloft-lit\nVIEW mill-aisle-lit\nVIEW logway-off\nVIEW underloft-off\nVIEW mill-aisle-off"
+    },
+    {
+      "test": "LevelSceneSource",
+      "status": "pass",
+      "seconds": 5.55,
+      "output": "Exact runtime source blackpine: 253307 textured triangles, 405 materials"
+    }
+  ],
+  "limitations": [
+    "Headless runtime captures; native-window and actual OpenGL performance acceptance remain pending.",
+    "No change to engine lighting, map unlocks, protocol IDs or other site layouts."
+  ],
+  "status": "pass",
+  "capture_hashes": {
+    "development/levels/previews/mill-lighting/logway-lit.png": "e12a2a0d97ea7766937a42e1f2998e32d15a4acb7bfdc652329416625848d7b5",
+    "development/levels/previews/mill-lighting/logway-off.png": "a539f373972a2502f8da914a5d171581a7c06cb00152781be2dab059250ab79f",
+    "development/levels/previews/mill-lighting/mill-aisle-lit.png": "ea7ab30283236659d17095e6c9b7b2ee95584c667f80f9fa3134b387918e3577",
+    "development/levels/previews/mill-lighting/mill-aisle-off.png": "787630205f2c29d8fdf46ffd00a8205350b7efeadae2cc07bf5ee633e3fce195",
+    "development/levels/previews/mill-lighting/underloft-lit.png": "19308a83c87dba9d75332674dfbfcbe4ba03131460ff9337d7e931da4f745dab",
+    "development/levels/previews/mill-lighting/underloft-off.png": "a9c9bd3e1b60e9fef86284ef10443c4f7fef82ac052bba9f3c844622c218db29"
+  }
+}

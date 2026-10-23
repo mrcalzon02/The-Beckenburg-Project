@@ -1,0 +1,29 @@
+{
+  "assets": [
+    {
+      "id": "level_mill_suspension",
+      "library": "mill-lighting",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "a4c179b9c6cfd7fd8ff0162f033526880296032cd56bb3e0098b9db3d1db612b",
+      "bytes": 41812,
+      "triangles": 272,
+      "bounds": [
+        [
+          -0.5400000214576721,
+          -1.399999976158142,
+          -0.07999999821186066
+        ],
+        [
+          0.5400000810623169,
+          0.0,
+          0.07999999821186066
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_mill_suspension.blend",
+      "mount": "Ceiling plane Y0; lower mounting face Y-1.40; never floor normalize",
+      "runtime": "Static physical supports for existing room-circuit utility fixture"
+    }
+  ]
+}

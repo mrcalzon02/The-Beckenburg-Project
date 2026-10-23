@@ -1,0 +1,27 @@
+{
+  "status": "pass",
+  "asset_sha256": "a4c179b9c6cfd7fd8ff0162f033526880296032cd56bb3e0098b9db3d1db612b",
+  "native_triangles": 272,
+  "ceiling_origin_retained": true,
+  "physical_supports_and_electrical_drop_connected": true,
+  "metal_pixel_checks": [
+    {
+      "material": "Rebuild Original iron",
+      "relative_row_contrast": 0.01193
+    },
+    {
+      "material": "Rebuild Original steel",
+      "relative_row_contrast": 0.01156
+    },
+    {
+      "material": "Rebuild Original brass",
+      "relative_row_contrast": 0.0127
+    }
+  ],
+  "level_revision": "blackpine-graded-terrain-v1-7605eb7224e5a29f",
+  "exact_runtime_triangles": 253307,
+  "all_vertices_and_uvs_match": true,
+  "all_socket_transforms_match": true,
+  "packed_images": true,
+  "scene_sha256": "4e28c1d8cf22624a18424b46573162092ef10cac73e4031d715333c6abe32af7"
+}

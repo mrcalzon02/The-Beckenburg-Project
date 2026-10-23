@@ -123,6 +123,8 @@ sys.path.insert(0,str(ROOT/'development/levels'));import scene_metadata;scene_me
 scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get('hidingDensity',100);scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
 out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
 suffix='-dressed' if name=='blackpine' else ''
-bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+('-dressed.blend' if name=='blackpine' else '-complete.blend'))),compress=True)
-scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/f'development/levels/previews/{name}{suffix}-blender-exterior.png');bpy.ops.render.render(write_still=True)
+if '--output-suffix' in sys.argv:suffix=sys.argv[sys.argv.index('--output-suffix')+1]
+bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+(suffix if name=='blackpine' else '-complete')+'.blend')),compress=True)
+if '--no-render' not in sys.argv:
+    scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/f'development/levels/previews/{name}{suffix}-blender-exterior.png');bpy.ops.render.render(write_still=True)
 print('EDITABLE_LEVEL_COMPLETE',name,len(faces),'runtime triangles')
