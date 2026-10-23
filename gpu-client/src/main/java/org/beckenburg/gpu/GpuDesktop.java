@@ -114,6 +114,8 @@ public final class GpuDesktop {
    return;
   }
   boolean smoke=options.contains("--gpu-smoke");
+  boolean uiSmoke=options.contains("--gpu-ui-smoke");
+  if(smoke&&uiSmoke)throw new IllegalArgumentException("Choose one GPU smoke mode");
   try{startGpu();}catch(Exception failure){
    BeckenburgDiagnostics.fail("Required GPU renderer initialization",failure);
    throw failure;
@@ -124,6 +126,15 @@ public final class GpuDesktop {
     System.exit(0);
    }catch(Throwable failure){
     System.err.println("GPU SMOKE FAILED: "+failure);
+    failure.printStackTrace();
+    System.exit(1);
+   }
+   return;
+  }
+  if(uiSmoke){
+   try{GpuUiSmoke.execute(ENGINE);System.exit(0);}
+   catch(Throwable failure){
+    System.err.println("GPU UI SMOKE FAILED: "+failure);
     failure.printStackTrace();
     System.exit(1);
    }
