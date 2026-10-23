@@ -47,14 +47,25 @@ public final class GpuDesktop {
   BeckenburgDiagnostics.record("ACTIVE_RENDERER GPU "+driver+
       " / scene triangles OpenGL, UI Swing");
  }
+ private static CastleHubMap placeCastleCamera(SceneRenderer renderer){
+  CastleHubMap castle=new CastleHubMap();
+  // The original smoke camera was inside the courier van's wheel.
+  // Require an actual collision-clear position looking toward masonry.
+  double[][] locations={{24,22},{24,18},{22,24},{15.5,18},{25,28},{5.5,9}};
+  for(double[] spot:locations){
+   if(!castle.traversable(spot[0],spot[1]))continue;
+   renderer.x=spot[0];renderer.z=spot[1];renderer.yaw=-Math.PI/2;
+   renderer.eyeHeight=1.62;
+   return castle;
+  }
+  throw new IllegalStateException("Castle visual proof cannot find an accessible camera");
+ }
  private static GpuWorldRenderer.Result capture(SceneRenderer renderer,boolean castle)
     throws Exception{
   int width=640,height=360;
   renderer.setRenderSize(width,height);
   if(castle){
-   renderer.x=14;renderer.z=26;renderer.yaw=-.12;
-   renderer.eyeHeight=1.62;
-   renderer.drawCastle(new CastleHubMap(),0,true);
+   renderer.drawCastle(placeCastleCamera(renderer),0,true);
   }else{
    var map=new HouseMap(HouseMap.Site.HOUSE);
    renderer.x=map.centerX(4);
@@ -92,14 +103,18 @@ public final class GpuDesktop {
   SceneRenderer second=new SceneRenderer();
   second.setRenderSize(640,360);
   var previous=ENGINE.latest();
-  second.x=14;second.z=26;second.eyeHeight=1.62;
-  second.drawCastle(new CastleHubMap(),0,true);
+  CastleHubMap castleMap=placeCastleCamera(second);
+  second.drawCastle(castleMap,0,true);
   long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(25);
   while(System.nanoTime()<deadline&&ENGINE.latest()==previous)
    Thread.sleep(40);
   var castle=ENGINE.latest();
   if(castle==previous||castle==null)
    throw new IllegalStateException("Castle geometry did not reach OpenGL");
+  int castlePixels=0;
+  for(int rgba:castle.argb())if((rgba>>>24)>127)castlePixels++;
+  if(castlePixels<8000)
+   throw new IllegalStateException("Castle frame does not show enough visible masonry: "+castlePixels);
   screenshot(castle,"castle-headquarters.png");
   System.out.println("PASS Beckenburg OpenGL 3.3 real house and real castle framebuffers");
  }
