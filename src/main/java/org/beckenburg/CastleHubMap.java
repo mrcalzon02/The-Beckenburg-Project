@@ -131,13 +131,21 @@ public final class CastleHubMap {
         double radius=.21;
         if(CastleHubArchitecturalPlan.onStairs(x,z) && elevation>.1
                 && (x<16+radius||x>19-radius))return false;
-        if(elevation>2.0&&CastleHubArchitecturalPlan.upperWalkable(x,z)){
-            if(!CastleHubArchitecturalPlan.upperClearance(x,z,radius)
-               ||CastleLevelEdits.current().wallBlocks(x,elevation,z,radius))return false;
-            for(Furnishing item:CastleLevelEdits.current().furnishings(true))
-                if(Math.abs(x-item.x())<item.halfWidth()+radius&&
-                    Math.abs(z-item.z())<item.halfDepth()+radius)return false;
-            return true;
+        if(elevation>2.0){
+            if(CastleHubArchitecturalPlan.upperWalkable(x,z)){
+                if(!CastleHubArchitecturalPlan.upperClearance(x,z,radius)
+                    ||CastleLevelEdits.current().wallBlocks(x,elevation,z,radius))
+                    return false;
+                for(Furnishing item:CastleLevelEdits.current().furnishings(true))
+                    if(Math.abs(x-item.x())<item.halfWidth()+radius&&
+                        Math.abs(z-item.z())<item.halfDepth()+radius)return false;
+                return true;
+            }
+            // Elevated space is not ground navigation. Only the authored
+            // staircase can support a body more than 2m above the floor.
+            if(!CastleHubArchitecturalPlan.onStairs(x,z)||
+                Math.abs(elevation-CastleHubArchitecturalPlan.stairHeight(x,z))>.55)
+                return false;
         }
         return traversable(x,z);
     }
