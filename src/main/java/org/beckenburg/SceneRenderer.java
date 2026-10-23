@@ -251,15 +251,26 @@ public final class SceneRenderer {
     private static double[] castleBounds(String id){
         return CASTLE_BOUNDS.computeIfAbsent(id,key->{
             double loX=Double.POSITIVE_INFINITY,hiX=Double.NEGATIVE_INFINITY;
-            double loY=Double.POSITIVE_INFINITY,loZ=Double.POSITIVE_INFINITY,hiZ=Double.NEGATIVE_INFINITY;
+            double loY=Double.POSITIVE_INFINITY,hiY=Double.NEGATIVE_INFINITY;
+            double loZ=Double.POSITIVE_INFINITY,hiZ=Double.NEGATIVE_INFINITY;
             for(GlbProps.Triangle t:GlbProps.model(key).triangles())
                 for(GlbProps.Vertex v:new GlbProps.Vertex[]{t.a(),t.b(),t.c()}){
                     loX=Math.min(loX,v.x());hiX=Math.max(hiX,v.x());
-                    loY=Math.min(loY,v.y());
+                    loY=Math.min(loY,v.y());hiY=Math.max(hiY,v.y());
                     loZ=Math.min(loZ,v.z());hiZ=Math.max(hiZ,v.z());
                 }
-            return new double[]{(loX+hiX)*.5,loY,(loZ+hiZ)*.5};
+            return new double[]{(loX+hiX)*.5,loY,(loZ+hiZ)*.5,
+                hiX-loX,hiY-loY,hiZ-loZ};
         });
+    }
+    /** Keep diverse authored equipment models inside their individual rack bays.
+     * Actual GLB geometry determines the scale; every item remains readable and
+     * none may extend beyond the shelf clearance. Calculated only when visible. */
+    static double castleExhibitScale(String mesh,double preferred){
+        double[] box=castleBounds(mesh);
+        double horizontal=Math.max(box[3],box[5]);
+        if(horizontal<=0||box[4]<=0)throw new IllegalStateException("Invalid showroom mesh "+mesh);
+        return Math.min(preferred,Math.min(.42/horizontal,.48/box[4]));
     }
     private static void castleProp(List<Face> out,String id,double x,double surfaceY,
                                    double z,double scale,double yaw){
@@ -1642,7 +1653,7 @@ public final class SceneRenderer {
         for(var exhibit:CastleWarehouse.exhibits())
             if(Math.hypot(exhibit.x()-x,exhibit.z()-z)<7.0)
                 castleProp(castle,exhibit.mesh(),exhibit.x(),exhibit.y(),exhibit.z(),
-                    exhibit.scale(),0);
+                    castleExhibitScale(exhibit.mesh(),exhibit.scale()),0);
         // Purchased source-backed fixtures occupy authored locations and match hub collision.
         for(CastleLevelEdits.Prop item:edits.props())
             if(Math.hypot(item.x()-x,item.z()-z)<16)

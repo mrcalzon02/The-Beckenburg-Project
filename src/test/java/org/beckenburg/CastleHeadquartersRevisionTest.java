@@ -16,6 +16,18 @@ public final class CastleHeadquartersRevisionTest {
   for(var exhibit:CastleWarehouse.exhibits()){
    check(ids.add(exhibit.id()),"exhibit families are not silently duplicated");
    check(GlbProps.availableModels().contains(exhibit.mesh()),"missing source-backed mesh "+exhibit.mesh());
+   double scale=SceneRenderer.castleExhibitScale(exhibit.mesh(),exhibit.scale());
+   check(scale>0&&scale<=exhibit.scale(),"model scale is bounded by physical rack bay");
+   var bounds=GlbProps.model(exhibit.mesh()).triangles();
+   double x0=Double.POSITIVE_INFINITY,x1=-x0,y0=x0,y1=-x0,z0=x0,z1=-x0;
+   for(var triangle:bounds)for(var vertex:new GlbProps.Vertex[]{
+       triangle.a(),triangle.b(),triangle.c()}){
+    x0=Math.min(x0,vertex.x());x1=Math.max(x1,vertex.x());
+    y0=Math.min(y0,vertex.y());y1=Math.max(y1,vertex.y());
+    z0=Math.min(z0,vertex.z());z1=Math.max(z1,vertex.z());
+   }
+   check((x1-x0)*scale<=.421&&(y1-y0)*scale<=.481&&(z1-z0)*scale<=.421,
+       "source GLB mesh must fit a real display bay");
    check(exhibit.x()>29&&exhibit.x()<42&&exhibit.z()>18&&exhibit.z()<33,
      "models remain in enclosed east warehouse");
   }
