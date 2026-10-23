@@ -103,9 +103,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   return id>=GlbProps.TEXTURE_BASE?GlbProps.sample(id,u,v):
    id>=LevelMaterials.BASE?LevelMaterials.sample(id,u,v):MaterialAtlas.sample(id,u,v);
  }
- private Texture texture(int material){
-  Texture found=textures.get(material);
-  if(found!=null)return found;
+ private Pixmap pixelsFor(int material){
   Pixmap bitmap=new Pixmap(128,128,Pixmap.Format.RGBA8888);
   for(int y=0;y<128;y++)for(int x=0;x<128;x++){
    double u=(x+.5)/128.0,v=(127.5-y)/128.0;
@@ -115,6 +113,18 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
      GlbProps.sampleAlpha(material,u,v):255;
    bitmap.drawPixel(x,y,((rgb&0xffffff)<<8)|alpha);
   }
+  return bitmap;
+ }
+ private Texture texture(int material){
+  Texture found=textures.get(material);
+  if(found!=null&&material==GlbProps.VAN_MAP_MATERIAL){
+   // The host-approved map CRT is a LIVE texture. Never freeze it at the
+   // first sampled frame or silently lose investigation-map updates.
+   Pixmap update=pixelsFor(material);
+   found.draw(update,0,0);update.dispose();
+  }
+  if(found!=null)return found;
+  Pixmap bitmap=pixelsFor(material);
   Texture image=new Texture(bitmap);
   bitmap.dispose();
   image.setFilter(Texture.TextureFilter.Nearest,Texture.TextureFilter.Nearest);

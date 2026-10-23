@@ -8,6 +8,7 @@ import org.beckenburg.InvestigationGame;
 import org.beckenburg.RoomLighting;
 import org.beckenburg.SceneRenderer;
 import org.beckenburg.CastleHubMap;
+import org.beckenburg.BeckenburgDiagnostics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.List;
@@ -43,6 +44,8 @@ public final class GpuDesktop {
   String driver=ENGINE.initialization().get(30,TimeUnit.SECONDS);
   System.err.println("Beckenburg GPU initialized: "+driver);
   GpuWorldRenderer.install(ENGINE);
+  BeckenburgDiagnostics.record("ACTIVE_RENDERER GPU "+driver+
+      " / scene triangles OpenGL, UI Swing");
  }
  private static GpuWorldRenderer.Result capture(SceneRenderer renderer,boolean castle)
     throws Exception{
@@ -101,8 +104,20 @@ public final class GpuDesktop {
   System.out.println("PASS Beckenburg OpenGL 3.3 real house and real castle framebuffers");
  }
  public static void main(String[] args)throws Exception{
-  boolean smoke=java.util.Arrays.asList(args).contains("--gpu-smoke");
-  startGpu();
+  BeckenburgDiagnostics.install();
+  var options=java.util.Arrays.asList(args);
+  if(options.contains("--software")||options.contains("--diagnostics")
+      ||options.contains("--editor")){
+   BeckenburgDiagnostics.record("ACTIVE_RENDERER software (explicit alternate entry)");
+   InvestigationGame.main(java.util.Arrays.stream(args)
+       .filter(a->!a.equals("--software")).toArray(String[]::new));
+   return;
+  }
+  boolean smoke=options.contains("--gpu-smoke");
+  try{startGpu();}catch(Exception failure){
+   BeckenburgDiagnostics.fail("Required GPU renderer initialization",failure);
+   throw failure;
+  }
   if(smoke){
    try{
     smoke();
