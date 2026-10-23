@@ -1,4 +1,4 @@
-# Centre-screen interaction and held-device pass — 20 October 2026
+# Centre-screen interaction and held-device pass - 20 October 2026
 
 ## Contract
 
