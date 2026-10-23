@@ -1162,6 +1162,70 @@ public final class LanHost implements AutoCloseable {
                                 notifyHunters(stand.frame());
                             }
                         }
+                        case "CRUCIFIX","SALT" -> {
+                            HunterCounters.Kind kind=id.equals("CRUCIFIX")
+                                ?HunterCounters.Kind.CROSS:HunterCounters.Kind.SALT;
+                            var marker=counters.deploy(peer.slot,kind,
+                                world.body(peer.slot),map,tick);
+                            if(stage.capacity()>0)gear.expend(id);
+                            notifyHunters(marker.frame());
+                            sendCounterAmmo(peer);
+                            reading=id.equals("CRUCIFIX")
+                                ?"Protective cross physically deployed"
+                                :"Salt placed on the floor for passing entities";
+                        }
+                        case "SANITY_MEDICATION" -> {
+                            var medicine=supplies[peer.slot].best(FieldSupplies.Kind.SANITY);
+                            if(medicine==null)throw new IllegalArgumentException(
+                                "no purchased sanity medication available");
+                            if(!mission.calm(peer.slot,medicine.restore(FieldSupplies.Kind.SANITY)))
+                                throw new IllegalArgumentException("sanity already full");
+                            supplies[peer.slot].consume(FieldSupplies.Kind.SANITY,medicine);
+                            reply(peer,supplies[peer.slot].frame());
+                            reading="Sanity medicine administered / stress "+
+                                mission.stress(peer.slot);
+                            broadcastProgress();
+                        }
+                        case "PARABOLIC_MICROPHONE" -> {
+                            var body=world.body(peer.slot);
+                            boolean audible=tick>=lastGhostSoundTick
+                                &&tick-lastGhostSoundTick<=30&&room==ghost.room()
+                                &&Math.hypot(body.x()-ghostPose.pose().x(),
+                                    body.z()-ghostPose.pose().z())
+                                    <=stage.reachCm()/100.0;
+                            reading=audible?"Directional microphone / recent audible pulse":
+                                "Directional microphone / ambient noise only";
+                        }
+                        case "CLIPBOARDS","OBJECTIVE_BOARD" -> {
+                            sendCaseFile(peer);
+                            reading=id.equals("CLIPBOARDS")
+                                ?"Case notes refreshed / open investigation journal"
+                                :"Contract board / "+mission.testedCount()+
+                                    " direct tests recorded";
+                        }
+                        case "COMPUTER","SITE_MAP","SANITY_MONITOR",
+                                "SITE_ACTIVITY_MONITOR","SOUND_MONITOR" -> {
+                            if(room!=HouseMap.EXTRACTION_ROOM)
+                                throw new IllegalArgumentException(
+                                    "fixed monitoring console is installed in the van");
+                            reading=switch(id){
+                                case "COMPUTER" -> "Camera console / "+cameras.all().size()+
+                                    " active source feeds";
+                                case "SITE_MAP" -> "Site map / "+
+                                    map.roomName(room)+" / inspect installed sensor coverage";
+                                case "SANITY_MONITOR" -> "Hunter "+peer.slot+
+                                    " / health "+mission.health(peer.slot)+
+                                    " / stress "+mission.stress(peer.slot);
+                                case "SITE_ACTIVITY_MONITOR" -> "Activity meter / "+
+                                    (tick>=lastEvidenceEventTick&&tick-lastEvidenceEventTick<=40
+                                        ?Math.max(0,lastEvidenceEventPower-
+                                            (tick-lastEvidenceEventTick)/7):0)+"/10";
+                                case "SOUND_MONITOR" -> "Audio monitor / "+
+                                    (tick>=lastGhostSoundTick&&tick-lastGhostSoundTick<=30
+                                        ?"recent audio pulse":"no recent audio pulse");
+                                default -> throw new AssertionError(id);
+                            };
+                        }
                         case "GHOST_WRITING_BOOK" -> {
                             if(room>=HouseMap.INDOOR_ROOMS)
                                 throw new IllegalArgumentException("writing book requires an interior room");

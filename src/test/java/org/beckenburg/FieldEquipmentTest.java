@@ -5,6 +5,14 @@ public final class FieldEquipmentTest {
     static void ok(boolean v,String message){if(!v)throw new AssertionError(message);}
     public static void main(String[] args){
         FieldEquipment gear=new FieldEquipment();
+        for(var catalogItem:EquipmentRegistry.all()){
+            String id=catalogItem.id();
+            ok(FieldEquipment.functional(id),"Registry item must be usable: "+id);
+            ok(gear.owned(id)==EquipmentTiers.Tier.I,"Source tier is issued: "+id);
+            ok(gear.stage(id)!=null,"Modelled tool has hardware: "+id);
+        }
+        ok(FieldEquipment.workingTools().size()==EquipmentRegistry.all().size(),
+            "Every registered item must be selectable by network hunters");
         FieldSupplies wallet=new FieldSupplies();
         ok(gear.at(0).equals("EMF_READER")&&gear.at(1).equals("THERMOMETER")
             &&gear.at(2).equals("SPIRIT_BOX")&&gear.at(3).equals("UV_LIGHT"),
