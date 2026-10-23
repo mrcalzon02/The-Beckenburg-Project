@@ -57,3 +57,16 @@ Applied authored dimensions: 2.44m table, tabletop 0.76m and seats 0.45m high;
 and reserved circulation. Original fictional-game geometry does not certify
 accessibility or a finished campground plan. USFS guidance was blocked and a
 final-guideline URL redirected to JavaScript; neither is claimed as inspected.
+
+
+## Hollow Creek open pavilion: timber-bearing and roof review
+
+- [NPS Pilot Knob State Park nomination, NRIS 90001687](https://npgallery.nps.gov/NRHP/GetAsset/NRHP/90001687_text), PDF page 8 (zero-based 7), section 7 page 3: inspected text describing concrete floor, timber posts, post bracing and exposed supports under a gable roof. Applied structural vocabulary, not a replica of that shelter's dimensions or partial masonry enclosure.
+- [NPS Telegraph Picnic Area](https://www.nps.gov/places/000/telegraph-picnic-area.htm), updated 8 April 2021: inspected text for roof-covered picnic facilities near separate comfort/service facilities. Photograph retrieval failed; no photograph inspection claimed.
+
+Hollow Creek uses original 14m-square slab/roof geometry within its existing 16m
+pavilion zone, six posts on 12m bearing lines, 120mm vertically deep closed roof,
+180mm slab and exposed trusses. Placement Y=-0.18 keeps standing surface at Y=0.
+These are fictional authoring dimensions, not certified structural engineering.
+Independent validation uses actual mesh contact, ray intersections, face normals,
+manifold edges, floor coverage and conservative planning-route clearances.

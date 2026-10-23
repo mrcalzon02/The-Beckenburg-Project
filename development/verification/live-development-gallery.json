@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-23T10:44:52.978515+00:00",
-  "published_commit": "b676d7a4d45a3cbcff055a945f1de6491a278558",
+  "verified_at": "2026-10-23T19:33:25.112995+00:00",
+  "published_commit": "962d007e5a19aa10e8fe543f037242f8c45cc0fe",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 454,
+  "image_count": 469,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -714,6 +714,18 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/hollow-creek/pavilion-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/west-campsite-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/house-blender-exterior.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -858,6 +870,12 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_fire_ring.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_fireplace.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -874,6 +892,12 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_picnic_table.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/level_camp_rainbarrel.png",
@@ -2056,6 +2080,72 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/default-flashlight-controlled-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/dots-actual-photograph.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/dots-intercepted-rays-controlled-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/dots-room-surfaces-controlled-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/laser-actual-photograph.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/laser-spiral-controlled-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/laser-straight-controlled-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/purchased-tier-I-controlled-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/uv-actual-photograph.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/uv-off-controlled-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/uv-on-controlled-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/runtime/farmhouse-00-mudroom.png",

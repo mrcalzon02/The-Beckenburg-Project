@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 469,
+  "count": 474,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1024,6 +1024,16 @@
       "sha256": "a9c9bd3e1b60e9fef86284ef10443c4f7fef82ac052bba9f3c844622c218db29"
     },
     {
+      "path": "development/levels/previews/defects/DEV-017-before-pavilion-join.png",
+      "url": "development/levels/previews/defects/DEV-017-before-pavilion-join.png",
+      "title": "Dev 017 before pavilion join",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 644995,
+      "sha256": "3b0fa1c93e2ab1bc51f72c7a9a0825f549e436147be135fb84e6456954f3a58c"
+    },
+    {
       "path": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
       "url": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
       "title": "Farmhouse 01 arrival road",
@@ -1184,6 +1194,16 @@
       "sha256": "04f1125811b05d55e0516f9006e354539cb9364ffdcb5da2d0e5c0a17f4f5dc4"
     },
     {
+      "path": "development/levels/previews/hollow-creek/pavilion-join-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/pavilion-join-native-fitout.png",
+      "title": "Pavilion join native fitout",
+      "kind": "Native scene overview",
+      "width": 1120,
+      "height": 700,
+      "bytes": 858747,
+      "sha256": "6d1108bc63b9e5f8abba31501f4e4cd1d36662e25eb8a7858f311fa84bbcc6aa"
+    },
+    {
       "path": "development/levels/previews/hollow-creek/pavilion-native-fitout.png",
       "url": "development/levels/previews/hollow-creek/pavilion-native-fitout.png",
       "title": "Pavilion native fitout",
@@ -1192,6 +1212,26 @@
       "height": 700,
       "bytes": 761639,
       "sha256": "8c9b6acefae69a1dc55683523e5f58bccaf9463f209a5a136b1eab3d8432b628"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/pavilion-structure-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/pavilion-structure-native-fitout.png",
+      "title": "Pavilion structure native fitout",
+      "kind": "Native scene overview",
+      "width": 1120,
+      "height": 700,
+      "bytes": 794792,
+      "sha256": "515ae358e0b63e4437e126ebb9ccfa93b9d2e15a8ff0a505ff3cbbc28043577d"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/pavilion-under-roof-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/pavilion-under-roof-native-fitout.png",
+      "title": "Pavilion under roof native fitout",
+      "kind": "Native scene overview",
+      "width": 1120,
+      "height": 700,
+      "bytes": 858528,
+      "sha256": "647f3662f5675b85965916a02d9c739dd4f564bdcd5897123774b829dc5ccc6b"
     },
     {
       "path": "development/levels/previews/hollow-creek/west-campsite-native-fitout.png",
@@ -1482,6 +1522,16 @@
       "height": 640,
       "bytes": 970057,
       "sha256": "bf2be207def32ae752581408ea14efe53dacf39818a432e4e8540e6e75a8d479"
+    },
+    {
+      "path": "development/levels/previews/level_camp_pavilion.png",
+      "url": "development/levels/previews/level_camp_pavilion.png",
+      "title": "Level camp pavilion",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 856536,
+      "sha256": "43577ddc4ddbc4ee7ad485de82249ae41c25590635c3ec9f18050272a8fce70a"
     },
     {
       "path": "development/levels/previews/level_camp_picnic_table.png",

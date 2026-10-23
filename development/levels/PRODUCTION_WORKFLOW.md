@@ -1,7 +1,7 @@
 # Repeatable authored-level workflow
 
 Latest additive construction: [Camp Hollow Creek facilities](hollow-creek/README.md),
-23 October 2026: two original models, four native placements, independent native
+23 October 2026: three original models, four facility placements and open timber pavilion, independent native
 support/clearance checks and runtime asset-loading proof. Existing blockouts preserved;
 playable map integration is the next unfinished gate.
 
@@ -16,6 +16,8 @@ before every iteration. Every new capture belongs in the shared development gall
 The 2026-10-21 breadth-first planning pass is recorded in [the all-map layout atlas](layouts/README.md): nine original investigation families, thirteen remote proposals and Castle headquarters each have a separate rough-layout checkpoint. This fulfills the user's planning request before refinement; it does not bypass the construction and acceptance gates below. Individual layout refinement risks and the next unfinished steps are in [layouts/WORKFLOW.md](layouts/WORKFLOW.md).
 
 The existing playable construction references are House → Farmhouse → School. The user's 2026-10-21 reuse-first direction starts new remote construction with [Blackpine](BLACKPINE_BUILD.md), then keeps refinement on that site before beginning another. Its graybox is physically checked and remains locked. Mansion, Prison, Asylum, Academy, College and Church remain in production and locked. Reusing a parameterized cross-wing layout does not complete a location.
+
+Active all-map completion scope and gates: [MAP_COMPLETION_GOAL.md](MAP_COMPLETION_GOAL.md).
 
 ## 1. Establish the building before the asset list
 

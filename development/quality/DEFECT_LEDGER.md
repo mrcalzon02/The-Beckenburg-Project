@@ -234,6 +234,34 @@ Evidence and verification: EquipmentStoreDescriptionsTest reproduced the failure
 
 Older-map obligation: Do not rewrite historical Unicode text via platform-default encoding.
 
+### DEV-017 — Pavilion native inspection was too dark to review joins
+
+**Status:** fixed-scoped · **Affected:** Camp Hollow Creek authoring captures
+
+Sun-only inspection left roof underside and timber bearing faces nearly black.
+
+Cause / uncertainty: Open shelter shadows without adequate inspection illumination.
+
+Fix / next action: Add explicitly labeled authoring-only camera area fill; recapture the same native joints. This does not add a gameplay fixture or certify runtime lighting.
+
+Evidence and verification: previews/defects/DEV-017-before-pavilion-join.png and refreshed pavilion-join-native-fitout.png; actual mesh contact and roof-depth validator.
+
+Older-map obligation: Native review images must make the inspected details readable; perform separate real circuit/portable-light runtime reviews.
+
+### DEV-018 — Blender scene reload invalidated an old material handle
+
+**Status:** fixed-scoped · **Affected:** New pavilion builder, before first scene save
+
+Builder raised StructRNA material removed while creating apron strips after opening the prior native file.
+
+Cause / uncertainty: Retained an in-memory material reference across open_mainfile.
+
+Fix / next action: Resolve/create apron material in the newly loaded scene before use; rerun builder and independent source-preservation checks.
+
+Evidence and verification: build_hollow_creek_pavilion.py completes and validate_hollow_creek_pavilion.py reopens both deliveries.
+
+Older-map obligation: Never carry Blender object/material references across a file reload; preserve originals on generation failure.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

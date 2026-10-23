@@ -1,0 +1,145 @@
+{
+  "status": "pass-native-architecture-only",
+  "triangles": 2040,
+  "actual_mesh_contacts": 158,
+  "roof_thickness_samples": [
+    [
+      -6.9,
+      -6.9,
+      0.12
+    ],
+    [
+      -6.9,
+      0,
+      0.12
+    ],
+    [
+      -6.9,
+      6.9,
+      0.12
+    ],
+    [
+      -5,
+      -6.9,
+      0.12
+    ],
+    [
+      -5,
+      0,
+      0.12
+    ],
+    [
+      -5,
+      6.9,
+      0.12
+    ],
+    [
+      -2,
+      -6.9,
+      0.12
+    ],
+    [
+      -2,
+      0,
+      0.12
+    ],
+    [
+      -2,
+      6.9,
+      0.12
+    ],
+    [
+      -0.01,
+      -6.9,
+      0.12
+    ],
+    [
+      -0.01,
+      0,
+      0.12
+    ],
+    [
+      -0.01,
+      6.9,
+      0.12
+    ],
+    [
+      0.01,
+      -6.9,
+      0.12
+    ],
+    [
+      0.01,
+      0,
+      0.12
+    ],
+    [
+      0.01,
+      6.9,
+      0.12
+    ],
+    [
+      2,
+      -6.9,
+      0.12
+    ],
+    [
+      2,
+      0,
+      0.12
+    ],
+    [
+      2,
+      6.9,
+      0.12
+    ],
+    [
+      5,
+      -6.9,
+      0.12
+    ],
+    [
+      5,
+      0,
+      0.12
+    ],
+    [
+      5,
+      6.9,
+      0.12
+    ],
+    [
+      6.9,
+      -6.9,
+      0.12
+    ],
+    [
+      6.9,
+      0,
+      0.12
+    ],
+    [
+      6.9,
+      6.9,
+      0.12
+    ]
+  ],
+  "closed_roof_and_slab": true,
+  "standing_y": 0,
+  "apron_cover_samples": 1024,
+  "minimum_conservative_planning_route_clearance": 0.0747,
+  "prior_facilities_exact_vertices_and_transforms": true,
+  "protected_sources_unchanged": true,
+  "scene_sha256": "6a21a4f52c7075abc54750b7f66e3cca574b9099a584d561ea692c14959165f9",
+  "limitations": [
+    "No runtime map/collision/AI/LAN integration or unlock.",
+    "Native structural contact and passage checks are not engineering certification.",
+    "Pavilion utilities, detail dressing and full site terrain remain next gates."
+  ],
+  "runtime_asset_loading_check": {
+    "test": "HollowCreekPavilionAssetTest",
+    "status": "pass",
+    "java17_compile": true,
+    "output": "PASS native-scale pavilion GLB, 2040 triangles, UVs, floor pivot and genuine downward roof underside"
+  }
+}

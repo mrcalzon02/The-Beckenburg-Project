@@ -177,6 +177,28 @@
       "action": "Restored original UTF-8 text and retained only intended source changes; all future scripts use explicit encoding.",
       "evidence": "EquipmentStoreDescriptionsTest reproduced the failure and passes after correction; review the scoped diff for unrelated text changes.",
       "older_maps": "Do not rewrite historical Unicode text via platform-default encoding."
+    },
+    {
+      "id": "DEV-017",
+      "title": "Pavilion native inspection was too dark to review joins",
+      "status": "fixed-scoped",
+      "affected": "Camp Hollow Creek authoring captures",
+      "symptom": "Sun-only inspection left roof underside and timber bearing faces nearly black.",
+      "cause": "Open shelter shadows without adequate inspection illumination.",
+      "action": "Add explicitly labeled authoring-only camera area fill; recapture the same native joints. This does not add a gameplay fixture or certify runtime lighting.",
+      "evidence": "previews/defects/DEV-017-before-pavilion-join.png and refreshed pavilion-join-native-fitout.png; actual mesh contact and roof-depth validator.",
+      "older_maps": "Native review images must make the inspected details readable; perform separate real circuit/portable-light runtime reviews."
+    },
+    {
+      "id": "DEV-018",
+      "title": "Blender scene reload invalidated an old material handle",
+      "status": "fixed-scoped",
+      "affected": "New pavilion builder, before first scene save",
+      "symptom": "Builder raised StructRNA material removed while creating apron strips after opening the prior native file.",
+      "cause": "Retained an in-memory material reference across open_mainfile.",
+      "action": "Resolve/create apron material in the newly loaded scene before use; rerun builder and independent source-preservation checks.",
+      "evidence": "build_hollow_creek_pavilion.py completes and validate_hollow_creek_pavilion.py reopens both deliveries.",
+      "older_maps": "Never carry Blender object/material references across a file reload; preserve originals on generation failure."
     }
   ],
   "audit_categories": [

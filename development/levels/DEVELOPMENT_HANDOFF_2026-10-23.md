@@ -1,3 +1,36 @@
+# Latest continuation — 23 October 2026
+
+The user explicitly created the larger active goal to finish all map development,
+models, review and detail. See MAP_COMPLETION_GOAL.md for the existing 23-map roster
+and completion gates. Continue from the current map; do not treat checkpoint
+publication as completion of the overall goal.
+
+GitHub recovered: 962d007 was pushed normally to main and remote readback matched.
+The 469-image gallery was read back publicly: all PNG URLs/dimensions plus 23
+full evidence hashes passed. The old connectivity block below is historical.
+
+New checkpoint: Hollow Creek pavilion architecture. Original 2040-triangle kit,
+editable asset and additive full scene. Actual BVH checks pass for 158 timber/support
+contacts; 24 roof ray samples confirm 120mm thickness and outward upper/downward
+soffit normals; closed solids; 1024 standing-surface coverage points; conservative
+post/route/table/ritual clearances; prior facility meshes/transforms and protected
+sources unchanged. Java17 compilation and both campground GLB tests pass.
+
+Visual review caught underlit joint captures (DEV-017); authoring-only fill fixed
+the review visibility, with before evidence retained. Scene-load material lifetime
+failure (DEV-018) was fixed before scene publication. Native/runtime site lighting
+and circuit acceptance remain open. New gallery count: 474 originals, local check
+passes; publish and verify this new batch before claiming public delivery.
+
+Next gate: supported pavilion utilities/detail, then tent/platform and cabin/
+bathhouse facilities from recorded requirements. Whole-site authored runtime
+collision/rooms/circuits/van and walkthrough/LAN/performance remain pending.
+Do not reuse provisional pink/cyan planning paths as finished supported routes.
+Do not unlock the map or claim all-map completion from native geometry alone.
+Exact run token counts remain unavailable.
+
+---
+
 # Development checkpoint — 23 October 2026
 
 Active checkout: The-Beckenburg-Unified, integration/unified-map-engine.
