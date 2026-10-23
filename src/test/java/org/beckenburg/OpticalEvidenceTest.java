@@ -38,11 +38,11 @@ public final class OpticalEvidenceTest {
         var bent=StructuredLightVolume.distort(beam,contact,0);check(bent.size()>10,"a real intersection produces spiral segments");
         check(bent.get(0).a().equals(beam.a())&&bent.get(bent.size()-1).b().equals(beam.b()),"beam endpoints remain fixed");
         check(StructuredLightVolume.distort(beam,new StructuredLightVolume.Contact(1,0,2,0,2,10),0).size()==1,"no reaction without geometric intersection");
-        for(var p:StructuredLightVolume.dots(0,0,0))check(Math.abs(Math.hypot(p.x(),p.z())-StructuredLightVolume.radiusAt(p.y()))<1e-8,"DOTS samples actual capsule surface");
+        DotsRayFieldTest.main(new String[0]);
         check(StructuredLightVolume.radiusAt(.02)<StructuredLightVolume.radiusAt(.8),"capsule ends are rounded");
         var stations=new VanSensorStations();var installed=stations.placeOrRetrieve(0,"LASER_GRID",0,48.5,32.3,EquipmentTiers.Tier.I).placed();
         var rays=StructuredLightVolume.beams(map,installed);check(rays.size()==3,"Tier I has three physical laser rays");
         for(var ray:rays)check(map.clearLineOfSight(ray.a().x(),ray.a().y(),ray.a().z(),ray.b().x(),ray.b().y(),ray.b().z()),"beam clips at real walls/props");
-        System.out.println("PASS paid/default beam progression, UV cube six-normal mounting and texture, authentic fading traces, capsule DOTS, exact laser intersections/spirals and wall clipping");
+        System.out.println("PASS paid/default beam progression, UV cube six-normal mounting and texture, authentic fading traces, ray-projected DOTS, exact laser intersections/spirals and wall clipping");
     }
 }

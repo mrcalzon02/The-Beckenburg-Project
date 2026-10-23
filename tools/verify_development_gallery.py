@@ -17,7 +17,7 @@ live=json.loads(get('development/gallery/index.json'))
 assert live==local,'Deployed gallery manifest is stale'
 assert get('beckenburg-development-gallery.html')==(ROOT/'beckenburg-development-gallery.html').read_bytes(),'Deployed gallery HTML differs'
 def check(item):
-    full=any(s in item['path'] for s in ['/mill-lighting/','/defects/','/hollow-creek/'])
+    full=any(s in item['path'] for s in ['/mill-lighting/','/defects/','/hollow-creek/','/optical-evidence/','level_camp_picnic_table.png','level_camp_fire_ring.png'])
     with urlopen(Request(BASE+item['url'],headers={'User-Agent':'Beckenburg-gallery-verifier/1.0'}),timeout=45) as response:
         assert response.status==200,item['path']
         data=response.read() if full else response.read(32)

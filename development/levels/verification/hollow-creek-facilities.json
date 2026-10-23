@@ -1,0 +1,75 @@
+{
+  "status": "pass-native-only",
+  "assets": [
+    {
+      "id": "level_camp_picnic_table",
+      "triangles": 1136,
+      "floor_pivot": true,
+      "support_contacts": true,
+      "metal_pixel_checks": [
+        {
+          "material": "Rebuild Original steel",
+          "row_contrast": 0.011562051878428594
+        }
+      ]
+    },
+    {
+      "id": "level_camp_fire_ring",
+      "triangles": 1760,
+      "floor_pivot": true,
+      "support_contacts": true,
+      "metal_pixel_checks": [
+        {
+          "material": "Rebuild Original rust",
+          "row_contrast": 0.015333315378672741
+        },
+        {
+          "material": "Rebuild Original steel",
+          "row_contrast": 0.011562051878428594
+        },
+        {
+          "material": "Rebuild Original iron",
+          "row_contrast": 0.011931318942589988
+        }
+      ]
+    }
+  ],
+  "placements": [
+    {
+      "id": "west-table",
+      "within_zone": true,
+      "disjoint_from_facilities_and_reservations": true,
+      "min_planning_route_extra_clearance": 0.2369
+    },
+    {
+      "id": "pavilion-table-west",
+      "within_zone": true,
+      "disjoint_from_facilities_and_reservations": true,
+      "min_planning_route_extra_clearance": 1.4297
+    },
+    {
+      "id": "pavilion-table-east",
+      "within_zone": true,
+      "disjoint_from_facilities_and_reservations": true,
+      "min_planning_route_extra_clearance": 1.4297
+    },
+    {
+      "id": "west-fire-ring",
+      "within_zone": true,
+      "disjoint_from_facilities_and_reservations": true,
+      "min_planning_route_extra_clearance": 2.4613
+    }
+  ],
+  "original_layout_and_17_blockout_glbs_unchanged": true,
+  "native_scene_sha256": "dc33e60ea52be81c2e4d5b1558de0eccec23a50926c5267ca6696d6f66919b35",
+  "limitations": [
+    "No runtime/collision/AI/LAN map integration or unlock.",
+    "Original rough geometry and connector reservations remain provisional.",
+    "Tent, bathhouse, dock, bridge and open-pavilion architectural refinement remain pending."
+  ],
+  "runtime_asset_loading_check": {
+    "test": "HollowCreekFacilitiesAssetTest",
+    "status": "pass",
+    "output": "PASS two reusable campground GLBs, approved IDs, native floor pivots, metre bounds and reviewed geometry"
+  }
+}

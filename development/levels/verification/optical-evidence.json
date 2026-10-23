@@ -1,19 +1,19 @@
 {
   "status": "pass",
-  "base_commit": "b676d7a4d45a3cbcff055a945f1de6491a278558",
+  "base_commit": "eb59c29111d13409c2294df8c21db184e37fd65f",
   "java_17_compile": true,
   "checks": [
     {
       "test": "OpticalEvidenceTest",
       "status": "pass",
-      "seconds": 0.44,
-      "output": "PASS paid/default beam progression, UV cube six-normal mounting and texture, authentic fading traces, capsule DOTS, exact laser intersections/spirals and wall clipping"
+      "seconds": 0.49,
+      "output": "PASS DOTS nearest-hit projection, transferred wall dot, occlusion, near misses, one-sided hits, static/panning patterns and heading\nPASS paid/default beam progression, UV cube six-normal mounting and texture, authentic fading traces, ray-projected DOTS, exact laser intersections/spirals and wall clipping"
     },
     {
       "test": "OpticalEvidenceCapture",
       "status": "pass",
-      "seconds": 2.78,
-      "output": "2026-10-23T11:05:42.961348700Z [main] RENDER SLOW stage=idle faces=24496 visible_faces=1761 culled_faces=22735 target=800x500 build_ms=1230 lighting_raster_ms=110\nPASS actual UV off/on pixels and purple GPU bridge, stronger paid GPU beam, capsule DOTS and photographed runtime effects; native OpenGL acceptance pending"
+      "seconds": 3.0,
+      "output": "2026-10-23T19:08:26.463327200Z [main] RENDER SLOW stage=idle faces=24496 visible_faces=1761 culled_faces=22735 target=800x500 build_ms=1243 lighting_raster_ms=103\nPASS actual UV off/on pixels and purple GPU bridge, stronger paid GPU beam, projected DOTS and photographed runtime effects; native OpenGL acceptance pending"
     },
     {
       "test": "LanOpticalEvidenceNetworkTest",
@@ -24,13 +24,13 @@
     {
       "test": "TieredMediaAndPowerTest",
       "status": "pass",
-      "seconds": 0.16,
+      "seconds": 0.14,
       "output": "PASS: Polaroid 1, cameras 6/12, photo output quality, video lens width, tiered beams, battery discharge/recharge"
     },
     {
       "test": "TieredUvAndFirelightTest",
       "status": "pass",
-      "seconds": 0.09,
+      "seconds": 0.08,
       "output": "PASS: three-tier true UV sensitivity and finite 120/180/270s firelight"
     },
     {
@@ -48,31 +48,31 @@
     {
       "test": "AdditionalEvidenceTest",
       "status": "pass",
-      "seconds": 0.11,
+      "seconds": 0.09,
       "output": "PASS seven observable detectors, no automatic verdicts, all 13 unique 3-clue signatures"
     },
     {
       "test": "LanDotsProjectorsTest",
       "status": "pass",
-      "seconds": 0.25,
+      "seconds": 0.3,
       "output": "PASS: physical D.O.T.S. without automatic evidence gating"
     },
     {
       "test": "LanFieldEquipmentIntegrationTest",
       "status": "pass",
-      "seconds": 0.62,
+      "seconds": 0.61,
       "output": "PASS: real sockets, multi-slot gear readings, team journal and ghost privacy"
     },
     {
       "test": "LanFieldSensorNetworkTest",
       "status": "pass",
-      "seconds": 1.62,
+      "seconds": 1.66,
       "output": "PASS: TCP placed sensor, motion alarm, retrieval, ghost privacy"
     },
     {
       "test": "VanSensorStationsTest",
       "status": "pass",
-      "seconds": 0.28,
+      "seconds": 0.3,
       "output": "PASS: sensor placement, pickup, tier limits, coexisting nodes and bounded frames"
     },
     {
@@ -90,20 +90,20 @@
     {
       "test": "LanCaseTest",
       "status": "pass",
-      "seconds": 0.36,
+      "seconds": 0.38,
       "output": "PASS: LAN case role boundaries, three instruments, shared evidence, ward, harm, contested cleansing and retreat"
     },
     {
       "test": "LanRitualDefenseTest",
       "status": "pass",
-      "seconds": 0.34,
+      "seconds": 0.31,
       "output": "PASS: host ritual defense, pause, finite abandonment, explicit restart and guarded cleansing"
     },
     {
       "test": "LanWorldRenderTest",
       "status": "pass",
-      "seconds": 2.84,
-      "output": "2026-10-23T11:05:51.150989800Z [main] RENDER SLOW stage=idle faces=48201 visible_faces=8933 culled_faces=39268 target=320x200 build_ms=793 lighting_raster_ms=459\nPASS: network first-person rendering includes 3D teammates, disclosed ghost and synced physical doors"
+      "seconds": 2.95,
+      "output": "2026-10-23T19:08:34.916133900Z [main] RENDER SLOW stage=idle faces=48201 visible_faces=8933 culled_faces=39268 target=320x200 build_ms=822 lighting_raster_ms=478\nPASS: network first-person rendering includes 3D teammates, disclosed ghost and synced physical doors"
     },
     {
       "test": "BlackpineDeckDepthTest",
@@ -114,13 +114,13 @@
     {
       "test": "BlackpineLightingTest",
       "status": "pass",
-      "seconds": 0.56,
+      "seconds": 0.59,
       "output": "PASS supported ceiling pivots, below-deck emission, lit blade/aisle, exact switch target, circuit isolation, breaker blackout, loft/wall/join occlusion and fitting clearance"
     },
     {
       "test": "SoloEquipmentUseTest",
       "status": "pass",
-      "seconds": 0.34,
+      "seconds": 0.3,
       "output": "PASS: in-game equipment usage affects the actual solo case and expendables"
     },
     {
@@ -138,8 +138,9 @@
   ],
   "captures": {
     "development/levels/previews/optical-evidence/default-flashlight-controlled-runtime.png": "e9b6dce4c3d7c7a8b25dbfdb04b59e71aeeec9a5a5bcc231712369da683034ce",
-    "development/levels/previews/optical-evidence/dots-actual-photograph.png": "e87bf4c8cdc8656e15b2b14fb868ce7808808e42d084c42ec07df145b1005c98",
-    "development/levels/previews/optical-evidence/dots-capsule-controlled-runtime.png": "7b7812214b77d193b4f5b35abecdaec5ce3d5581f36c00fc7e3b0e561696f9b2",
+    "development/levels/previews/optical-evidence/dots-actual-photograph.png": "9d35f77593378f917553677878fb753e009c22c9ecb38c7586e73af5240d8cbf",
+    "development/levels/previews/optical-evidence/dots-intercepted-rays-controlled-runtime.png": "726592c7ff95b0af16101eda9e60a370cb5d32d8c7d8138e0c7a626855423e4c",
+    "development/levels/previews/optical-evidence/dots-room-surfaces-controlled-runtime.png": "d5443cf3be068998b3dd00f0f43bdcc4ba79055595c8b0f2bf8fd1a27738ea4f",
     "development/levels/previews/optical-evidence/laser-actual-photograph.png": "cd50ae4597af373052663eaa6c85f0b42c661202523097a604ee5358d8c42d20",
     "development/levels/previews/optical-evidence/laser-spiral-controlled-runtime.png": "89a9b1f49d3a7342a4c219f5f3e807a5588a0332929303501fc7b696655b027c",
     "development/levels/previews/optical-evidence/laser-straight-controlled-runtime.png": "3365c3fbc7c2cd59fb0bb5794e091d3e2a8d9792be8485ee974464914ff7a8e3",
@@ -149,23 +150,17 @@
     "development/levels/previews/optical-evidence/uv-on-controlled-runtime.png": "ef32c65aa0b5bb2b208fbc38096808db964f54e5788b66e3f173a90d1c475fa0"
   },
   "source_hashes": {
-    "src/main/java/org/beckenburg/EquipmentStoreDescriptions.java": "83543b2608466cddf5afead3e7684a941b1a09983c8a213d0d92f4048befcd38",
-    "src/main/java/org/beckenburg/EquipmentTiers.java": "f1212aabc3c65a6034f48c7db87f3a6e7d7e6c234077e483f20ab0ef8b018822",
-    "src/main/java/org/beckenburg/FieldEquipment.java": "9aa74bf0b88dcf4bc81fcfa90a87d47be79c9b175a63f27a376b1e425c7aec54",
-    "src/main/java/org/beckenburg/HandheldLighting.java": "d750a315b9216d4a78552202dd4141a55abaf1637ff3731477c648c70a6df303",
-    "src/main/java/org/beckenburg/InvestigationGame.java": "49f648e2516f2457d65955186b992a39e2cea48f4e6e9a0d00b323f64f8faec5",
-    "src/main/java/org/beckenburg/InvestigationSession.java": "c239289b25d7c93d3e21329faf55cf0f86d32492006f6725a7d16f5131c388bb",
-    "src/main/java/org/beckenburg/LanHost.java": "340624479eedc77dd33ceb1c509ddee48f0b03419a5bc417a604948fb5fcb37c",
-    "src/main/java/org/beckenburg/LanWorldPanel.java": "4ce4a4164d219dce38d40a2dab7f1c7846057526ff7c9f6e1119761492c6eacd",
-    "src/main/java/org/beckenburg/SceneRenderer.java": "2df4701feea85023f3e3b8e03bdc0ee5f8d4c31c57820827e115fe7656132847",
-    "src/main/java/org/beckenburg/StructuredLightVolume.java": "3f4cec771178a8711e201caa848eca8ba9ffda17645b16c0939a4b860c63ea93",
-    "src/main/java/org/beckenburg/UvEvidenceMarks.java": "1f87bacdfc00c2e8a59e7a05234b143bcaf62a43acd0cb2bc7e3b953c8dc8ba8",
-    "src/main/java/org/beckenburg/UvSurfaceDecal.java": "7ffc31f469d5d0da4c08fba8b88d6dacd54d38799c963f64504d892cd7c2aee0",
-    "src/main/java/org/beckenburg/VanSensorStations.java": "107214c9196aaeb763e140fdb45e4c85beca62e3396de1dbd53ea2c788259ff8",
-    "src/main/java/org/beckenburg/VanSiteMapScreen.java": "343a8a94d4f6aac11b7634a763b497a53d47c8ae4fcdf210815d6b7ea54432ad",
-    "src/test/java/org/beckenburg/EquipmentStoreDescriptionsTest.java": "f57e2c3b4f26a3fd6e698a6e2d97703eabe868a7536737ff08d7391a6beed534",
-    "src/test/java/org/beckenburg/LanOpticalEvidenceNetworkTest.java": "68eb9f853e1073b50cb24c81bbd4b55ef451be05a5d48bf785e63ccf8ae17e6a",
-    "src/test/java/org/beckenburg/OpticalEvidenceCapture.java": "6268a4eb6fe46bb6c3502c4adfa7478b6ea2d5bb3e9861eeaaec6940658c185a",
-    "src/test/java/org/beckenburg/OpticalEvidenceTest.java": "94a66f5a12909cdee38c1b5603ec722b402d7d99efeb47bfaa5e90cbbe2bebf0"
+    "src/main/java/org/beckenburg/DotsRayField.java": "f5d6dbec1c11f3cc4d8e91933479ecbac4a2a7184e813c80492c36faae86f321",
+    "src/main/java/org/beckenburg/LanDotsProjectors.java": "ae799642a7b7e81be2a73ad74ba233e668463617df230eae7d0d98bdd68df6e8",
+    "src/main/java/org/beckenburg/LanHost.java": "87ff5f9c57d1efe12febc0f73bfea7e814c588d961103c29c81654c98111461f",
+    "src/main/java/org/beckenburg/LanWorldPanel.java": "cfb0a20fefbceea65e45aacce45dc232479a04e6c3acf666e5f80228fe010278",
+    "src/main/java/org/beckenburg/LevelAssets.java": "3d6ddb36fdfd06abf81cdaf47637770e87ef8dd2b889bc0b2f63cfed6b65ffd6",
+    "src/main/java/org/beckenburg/SceneRenderer.java": "94c5b4f53adf802017b153fe86d29414f8b7bb8989a4a04eb2746a8992948fee",
+    "src/main/java/org/beckenburg/StructuredLightVolume.java": "417b493309b4683aae19bae6651792ddc745127679137bb3b4ff302a7844d3f3",
+    "src/test/java/org/beckenburg/DotsRayFieldTest.java": "a47f2d990c1412116c2890afbc46814937381ecc66070e7a73f31f22548ebddd",
+    "src/test/java/org/beckenburg/HollowCreekFacilitiesAssetTest.java": "3989ce7842021a6dfe1bd27a73bf0de676ec8e894a4473c48795d6febcfc5427",
+    "src/test/java/org/beckenburg/LanDotsProjectorsTest.java": "198056bde28220cef8efead406c1ec761537c4d0eef8a01628647029703916c3",
+    "src/test/java/org/beckenburg/OpticalEvidenceCapture.java": "ddb13997093ffd09ef9fc1ccc9e2e9f7f5b07e4a44836f251710c3d6b6b21ac2",
+    "src/test/java/org/beckenburg/OpticalEvidenceTest.java": "1572cdc1cfd65b13d664eb617262a72819c18c93e3afb07c62b57a772e10542d"
   }
 }

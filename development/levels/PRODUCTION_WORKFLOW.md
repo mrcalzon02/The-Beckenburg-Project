@@ -1,6 +1,11 @@
 # Repeatable authored-level workflow
 
-Latest measured refinement: [Blackpine supported worklights](BLACKPINE_WORKLIGHTS.md),
+Latest additive construction: [Camp Hollow Creek facilities](hollow-creek/README.md),
+23 October 2026: two original models, four native placements, independent native
+support/clearance checks and runtime asset-loading proof. Existing blockouts preserved;
+playable map integration is the next unfinished gate.
+
+Previous measured refinement: [Blackpine supported worklights](BLACKPINE_WORKLIGHTS.md),
 23 October 2026, following branch unification. Four placements, one original
 support model, fifteen runtime checks and exact native scene verification.
 User direction now advances construction to Camp Hollow Creek while Blackpine

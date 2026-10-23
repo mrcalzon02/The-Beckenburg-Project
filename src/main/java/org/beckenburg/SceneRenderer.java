@@ -148,7 +148,7 @@ public final class SceneRenderer {
     public final java.util.Map<Integer,Boolean> dotsPowered=new java.util.HashMap<>();
     public final java.util.Map<Integer,Boolean> laserPowered=new java.util.HashMap<>();
     private static final int OPTICAL_SIGNAL=-4;
-    public double dotsPassX,dotsPassZ;
+    public double dotsPassX,dotsPassY,dotsPassZ;
     public RoomLighting roomLights;
     public int roomLightTick;
     public int hidingDensity=70;
@@ -1022,40 +1022,7 @@ public final class SceneRenderer {
         // Projected light is a physical effect, not an evidence qualification check.
         for(LanDotsProjectors.Placement placement:dotsPositions.values()){
             if(Math.hypot(placement.x()-x,placement.z()-z)>13.5)continue;
-            imported(out,"vape_mp_1",placement.x(),placement.y()+.10,placement.z(),2.0,0);
-            if(!dotsPowered.getOrDefault(placement.seat(),true))continue;
-            double radius=EquipmentTiers.stage(
-                "DOTS_PROJECTOR",placement.tier()).reachCm()/100.0;
-            // Tier I: narrow sparse volume; Tier II: broad static array;
-            // Tier III: wide motorized sweep. Beams alone never count as evidence.
-            int limit=placement.tier()==EquipmentTiers.Tier.I?3:5;
-            for(int gx=-limit;gx<=limit;gx+=2)for(int gz=-limit;gz<=limit;gz+=2){
-                double px=placement.x()+gx*radius/(limit+1.0),
-                    pz=placement.z()+gz*radius/(limit+1.0);
-                if(Math.hypot(px-placement.x(),pz-placement.z())>radius
-                        ||map.roomAt(px,placement.y(),pz)!=placement.room())continue;
-                if(placement.tier()==EquipmentTiers.Tier.III){
-                    double angle=Math.atan2(pz-placement.z(),px-placement.x());
-                    double center=Math.sin(clock*1.4)*1.25;
-                    if(Math.abs(Math.atan2(Math.sin(angle-center),Math.cos(angle-center)))>1.05)
-                        continue;
-                }
-                int layers=placement.tier()==EquipmentTiers.Tier.I?2:3;
-                for(int layer=0;layer<layers;layer++){
-                    double yy=placement.y()+.08+layer*.67;
-                    box(out,px-.025,yy,pz-.025,.05,.035,.05,0x73d99e);
-                }
-            }
-        }
-        if(dotsPassRoom>=0&&dotsPassUntil>=roomLightTick
-                &&Math.hypot(dotsPassX-x,dotsPassZ-z)<13.5){
-            for(var p:StructuredLightVolume.dots(dotsPassX,map.groundHeight(dotsPassX,dotsPassZ,dotsPassRoom),dotsPassZ)){
-                if(dotsPositions.values().stream().noneMatch(projector->dotsPowered.getOrDefault(projector.seat(),true)&&projector.room()==dotsPassRoom
-                    &&Math.hypot(p.x()-projector.x(),p.z()-projector.z())<=EquipmentTiers.stage("DOTS_PROJECTOR",projector.tier()).reachCm()/100.0
-                    &&map.clearLineOfSight(projector.x(),projector.y()+.15,projector.z(),p.x(),p.y(),p.z())))continue;
-                var part=new ArrayList<Face>();box(part,p.x()-.012,p.y()-.012,p.z()-.012,.024,.024,.024,0x98edbb);
-                for(var f:part)out.add(new Face(f.a,f.b,f.c,f.color,OPTICAL_SIGNAL,f.au,f.av,f.bu,f.bv,f.cu,f.cv,dotsPassRoom));
-            }
+            imported(out,"vape_mp_1",placement.x(),placement.y()+.10,placement.z(),2.0,-Math.toRadians(placement.heading()));
         }
         for(var station:sensorPositions.values())if(station.tool().equals("LASER_GRID")&&laserPowered.getOrDefault(station.owner(),true)){
             var contact=laserContacts.get(station.id());if(contact!=null&&(roomLightTick<contact.tick()||roomLightTick-contact.tick()>3))contact=null;
@@ -2137,6 +2104,7 @@ public final class SceneRenderer {
         long geometryStart=System.nanoTime();
         List<Face> geometry=scene(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,
             clock,others,apparition,markers);
+        appendDotsProjection(geometry);
         appendUvResidue(geometry,map);
         long geometryReady=System.nanoTime();
         int visibleFaces=0;
@@ -2258,6 +2226,41 @@ public final class SceneRenderer {
             if(d<radius&&lightingMap.clearLineOfSight(source.x(),source.y()+.25,source.z(),p.x,p.y+.04,p.z)){double add=(1-d/radius)*.65;r+=add;g+=add*(source.tool().equals("FIRELIGHT")?.65:1);b+=add*(source.tool().equals("FIRELIGHT")?.28:1);}
         }
         return new Vertex(camera(p),u,v,r,g,b);
+    }
+    private record DotsReceivers(List<Face> faces,DotsRayField.Mesh mesh){}
+    private final java.util.Map<Integer,DotsReceivers> dotsReceivers=new java.util.HashMap<>();
+    private static LevelDefinition.Vec dotsVec(Point p){return new LevelDefinition.Vec(p.x,p.y,p.z);}
+    private void appendDotsProjection(List<Face> out){
+        // Freeze the receiving geometry before adding any optical marks.
+        var receivers=List.copyOf(out);
+        for(var placement:dotsPositions.values()){
+            if(!dotsPowered.getOrDefault(placement.seat(),true)||Math.hypot(placement.x()-x,placement.z()-z)>13.5)continue;
+            double reach=EquipmentTiers.stage("DOTS_PROJECTOR",placement.tier()).reachCm()/100.0;
+            var selected=new ArrayList<Face>();
+            for(var f:receivers){
+                if(f.material==OPTICAL_SIGNAL)continue;
+                if(Math.min(f.a.x,Math.min(f.b.x,f.c.x))>placement.x()+reach||Math.max(f.a.x,Math.max(f.b.x,f.c.x))<placement.x()-reach
+                    ||Math.min(f.a.y,Math.min(f.b.y,f.c.y))>placement.y()+reach||Math.max(f.a.y,Math.max(f.b.y,f.c.y))<placement.y()-reach
+                    ||Math.min(f.a.z,Math.min(f.b.z,f.c.z))>placement.z()+reach||Math.max(f.a.z,Math.max(f.b.z,f.c.z))<placement.z()-reach)continue;
+                selected.add(f);
+            }
+            var cache=dotsReceivers.get(placement.seat());
+            if(cache==null||!cache.faces.equals(selected)){
+                var triangles=new ArrayList<DotsRayField.Triangle>();
+                for(var f:selected)triangles.add(new DotsRayField.Triangle(dotsVec(f.a),dotsVec(f.b),dotsVec(f.c),f.material,f.au,f.av,f.bu,f.bv,f.cu,f.cv));
+                cache=new DotsReceivers(List.copyOf(selected),new DotsRayField.Mesh(triangles));dotsReceivers.put(placement.seat(),cache);
+            }
+            var ghost=dotsPassRoom==placement.room()&&dotsPassUntil>=roomLightTick
+                ?new LanGhostSpatial.Pose(dotsPassRoom,dotsPassX,dotsPassY,dotsPassZ,0):null;
+            for(var ray:DotsRayField.rays(placement,roomLightTick)){
+                var projection=DotsRayField.project(ray,cache.mesh,ghost);
+                if(projection==null)continue;var hit=projection.hit();
+                var p=hit.position();var n=hit.normal();double size=.025;
+                var mark=new ArrayList<Face>();box(mark,p.x()+n.x()*.012-size/2,p.y()+n.y()*.012-size/2,p.z()+n.z()*.012-size/2,size,size,size,0x98edbb);
+                for(var f:mark)out.add(new Face(f.a,f.b,f.c,f.color,OPTICAL_SIGNAL,f.au,f.av,f.bu,f.bv,f.cu,f.cv,placement.room()));
+            }
+        }
+        dotsReceivers.keySet().retainAll(dotsPositions.keySet());
     }
     private void appendUvResidue(List<Face> out,HouseMap map){
         if(!uvLamp)return;

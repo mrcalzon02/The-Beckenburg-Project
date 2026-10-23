@@ -40,14 +40,17 @@ public final class OpticalEvidenceCapture {
         capture(scene,map,"purchased-tier-I-controlled-runtime");scene.lampReach=7.5;scene.lampIntensity=.72;scene.lampWidth=.44;
         capture(scene,map,"default-flashlight-controlled-runtime");scene.lamp=false;
         scene.pitch=Math.atan2(.9-1.62,1.7);scene.dotsPositions.put(0,new LanDotsProjectors.Placement(0,0,48.5,floor,32.8,EquipmentTiers.Tier.I));
-        scene.dotsPassRoom=0;scene.dotsPassX=48.5;scene.dotsPassZ=34;scene.dotsPassUntil=14;
-        var dots=capture(scene,map,"dots-capsule-controlled-runtime");check(green(dots)>20,"real capsule dots render");
+        var roomDots=capture(scene,map,"dots-room-surfaces-controlled-runtime");
+        scene.dotsPassY=floor;scene.dotsPassRoom=0;scene.dotsPassX=48.5;scene.dotsPassZ=34;scene.dotsPassUntil=14;
+        var dots=capture(scene,map,"dots-intercepted-rays-controlled-runtime");check(green(dots)>20,"actual intercepted rays render");
+        int dotChanges=0;for(int yy=0;yy<dots.getHeight();yy++)for(int xx=0;xx<dots.getWidth();xx++)if(dots.getRGB(xx,yy)!=roomDots.getRGB(xx,yy))dotChanges++;
+        check(dotChanges>30,"ghost interception transfers the same source pattern from room to nearer body");
         check(green(HunterPhotography.snapshot(dots,EquipmentTiers.Tier.II))>20,"photograph preserves visible DOTS");
         ImageIO.write(HunterPhotography.snapshot(dots,EquipmentTiers.Tier.II),"PNG",OUT.resolve("dots-actual-photograph.png").toFile());
         scene.dotsPassRoom=-1;scene.dotsPositions.clear();
         var station=new VanSensorStations.Station(1,0,"LASER_GRID",0,48.5,32.8,EquipmentTiers.Tier.II);scene.sensorPositions.put(1,station);
         var straight=capture(scene,map,"laser-straight-controlled-runtime");scene.laserContacts.put(1,new StructuredLightVolume.Contact(1,0,48.5,floor,34,11));
         var laser=capture(scene,map,"laser-spiral-controlled-runtime");int changed=0;for(int yy=0;yy<laser.getHeight();yy++)for(int xx=0;xx<laser.getWidth();xx++)if(laser.getRGB(xx,yy)!=straight.getRGB(xx,yy))changed++;check(changed>100,"real laser intersection visibly distorts the photographed field");ImageIO.write(HunterPhotography.snapshot(laser,EquipmentTiers.Tier.II),"PNG",OUT.resolve("laser-actual-photograph.png").toFile());
-        System.out.println("PASS actual UV off/on pixels and purple GPU bridge, stronger paid GPU beam, capsule DOTS and photographed runtime effects; native OpenGL acceptance pending");
+        System.out.println("PASS actual UV off/on pixels and purple GPU bridge, stronger paid GPU beam, projected DOTS and photographed runtime effects; native OpenGL acceptance pending");
     }
 }

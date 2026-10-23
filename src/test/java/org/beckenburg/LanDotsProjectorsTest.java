@@ -6,7 +6,7 @@ public final class LanDotsProjectorsTest {
         LanDotsProjectors dots=new LanDotsProjectors();
         double x=map.centerX(4),z=map.centerZ(4);
         dots.placeOrRemove(0,4,x,z,EquipmentTiers.Tier.I);
-        var ghost=new LanGhostSpatial.Pose(4,x+.4,z+.3,180);
+        var ghost=new LanGhostSpatial.Pose(4,x,z+1,180);
         ok(dots.illuminate(ghost,20).get(0).frame().startsWith("DOTS|ILLUMINATE|4|"),
             "host-projected geometry, not evidence");
         ok(dots.illuminate(ghost,21).isEmpty(),"bounded network cadence");

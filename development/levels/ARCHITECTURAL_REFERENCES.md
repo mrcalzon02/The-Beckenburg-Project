@@ -45,3 +45,15 @@ No external reference photo has been copied into game textures. Original purchas
 ## Investigation van scale reference
 
 [Ford Transit manufacturer dimensions](https://www.ford.co.uk/content/dam/guxeu/uk/documents/brochures/cars/BRO-transit_van_25.5MY.pdf) were read for the L4/H3 load-space dimensional table: 4.256m cargo length and 1.784m maximum load width. They guide the original game van's real-metre envelope and human reach/clearance. No manufacturer artwork or photographs are included in the game. See `VAN_REFIT_WORKFLOW.md` for the measured layout and validation process.
+
+
+## Camp Hollow Creek: campground facilities
+
+- [NPS Outdoor Developed Areas Design Guidelines, 2020 external review draft](https://parkplanning.nps.gov/showFile.cfm?projectID=97629&sfid=441949): inspected extracted text on PDF page 80 (printed 71) for campsite functions/tent-pad reservation and pages 140–141 for picnic-table/end-clearance guidance. This draft is a design reference, not an assertion of current legal compliance. Drawing screenshots were unavailable; no drawing inspection is claimed.
+- [NPS Wawona Campground rehabilitation project](https://parkplanning.nps.gov/projectHome.cfm?ProjectID=21975): read project description for campsite facilities and raised-pad context. Its raised-pad arrangement was not copied.
+
+Applied authored dimensions: 2.44m table, tabletop 0.76m and seats 0.45m high;
+4.88m-square tent reservation. Validation checks model contacts, end clearances
+and reserved circulation. Original fictional-game geometry does not certify
+accessibility or a finished campground plan. USFS guidance was blocked and a
+final-guideline URL redirected to JavaScript; neither is claimed as inspected.

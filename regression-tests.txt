@@ -45,6 +45,7 @@ RecorderModelsTest
 TierModelForgeTest
 VanCargoDoorTest
 LanDotsProjectorsTest
+DotsRayFieldTest
 OptionalEvidenceReadingsTest
 GhostEvidenceMatrixTest
 LanFieldEquipmentIntegrationTest
@@ -218,3 +219,4 @@ BlackpineLightingTest
 BlackpineDeckDepthTest
 OpticalEvidenceTest
 LanOpticalEvidenceNetworkTest
+HollowCreekFacilitiesAssetTest

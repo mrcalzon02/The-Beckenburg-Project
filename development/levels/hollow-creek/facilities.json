@@ -1,0 +1,133 @@
+{
+  "status": "native-facility-fitout-only",
+  "source_hashes": {
+    "development\\levels\\blockouts\\wld-02\\rough-shell.blend": "2d7115522c7bf0e6b0173f069c916ad23a46bb5e872c222f73eced06237e20dd",
+    "development\\levels\\layouts\\wld-02\\layout.json": "a60a1cd25311f701933f79af3454d67e1830ca60218a5e8733e5e13a50d9fdff",
+    "development\\levels\\blockouts\\academy\\rough-shell.glb": "84e178be286ad9f49ebe29d0273d39c24a4b8f85c601d822f7be5b7cb3ab443c",
+    "development\\levels\\blockouts\\asylum\\rough-shell.glb": "b649a2af291f43b0897e9bb9c846610ff38ee82233d090a31eb4e30a7e4ea1dd",
+    "development\\levels\\blockouts\\college\\rough-shell.glb": "4da60e9e6bae49a0950c4737686e63404121524862cf28ce0c93e271b8fc9465",
+    "development\\levels\\blockouts\\mansion\\rough-shell.glb": "0ce64ffb798021c4ee8891b15e3a318a497ac0017685b236c7b9e3c565ef2322",
+    "development\\levels\\blockouts\\prison\\rough-shell.glb": "ccba5c8671dbe58870c5610b6a5782772cac5040595c103754ff1b8920ff2085",
+    "development\\levels\\blockouts\\wld-02\\rough-shell.glb": "68258cb0851a60f6f82ed5a24233713fadd6a316dd0fdfc5e894e103a1d743b1",
+    "development\\levels\\blockouts\\wld-03\\rough-shell.glb": "ee55b508ff0f1e90aab3d4cc30c5ef911c0b5026a990f74a3d2d3a47b67a1719",
+    "development\\levels\\blockouts\\wld-04\\rough-shell.glb": "db76a58bdb589b28e3fb80f32846780af6a7283ede47a773e9175007eeeed728",
+    "development\\levels\\blockouts\\wld-05\\rough-shell.glb": "14e9ecfd815f57e60a89103a120138f0b430872bf84ba3d73d9ba27f3e8fedc2",
+    "development\\levels\\blockouts\\wld-06\\rough-shell.glb": "7bbcb9d852a5abc844f19e7af54754cf051a39700f3209e6418254e5167370c4",
+    "development\\levels\\blockouts\\wld-07\\rough-shell.glb": "f005cb36ec0debc52b832e26b4b3abf0b98ac09e52cd7e40dca64a2a45cc7528",
+    "development\\levels\\blockouts\\wld-08\\rough-shell.glb": "7e40adddaf0bd42a36b740778d1ebb825c36e2b7c08902b26cdaf3db77d9e41d",
+    "development\\levels\\blockouts\\wld-09\\rough-shell.glb": "faa319abaf63c8afb572c033e811ccc1fde07e3c188f164008a2e783e8fab183",
+    "development\\levels\\blockouts\\wld-10\\rough-shell.glb": "c830cc6debaa00d5cf52cafc2241ce99def79e6203f4ca76cc54400e4f3d2881",
+    "development\\levels\\blockouts\\wld-11\\rough-shell.glb": "0e9642e80ae5ecb725c2fdb2e0e7d4aa6477bf6404bc04ade243c393afd68d7f",
+    "development\\levels\\blockouts\\wld-12\\rough-shell.glb": "b1d0d8929cdc63cc5561a5de773fb17e7a5d9aadd4cd16003860837f8aa51f98",
+    "development\\levels\\blockouts\\wld-13\\rough-shell.glb": "d815edf727f4543d79e5f1d8ab1297d67e105a738a1e89f85d0daf0bb6a0e531"
+  },
+  "assets": [
+    {
+      "id": "level_camp_picnic_table",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "ad94ec917ddc5c140533aedabf49629919808e8c577b67b4759193cd7722fda2",
+      "bytes": 94220,
+      "triangles": 1136,
+      "bounds": [
+        [
+          -1.2200000286102295,
+          0.0,
+          -0.800000011920929
+        ],
+        [
+          1.2200000286102295,
+          0.7599999904632568,
+          0.800000011920929
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_picnic_table.blend",
+      "stage": "native facility kit; runtime placement/collision pending"
+    },
+    {
+      "id": "level_camp_fire_ring",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "1225316496f4689236771967f30860074cbb891ae9ed0722e7793534765f7a4b",
+      "bytes": 132052,
+      "triangles": 1760,
+      "bounds": [
+        [
+          -0.5450000166893005,
+          0.0,
+          -0.5450000166893005
+        ],
+        [
+          0.5450000166893005,
+          0.3903923034667969,
+          0.5450000166893005
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_fire_ring.blend",
+      "stage": "native facility kit; runtime placement/collision pending"
+    }
+  ],
+  "placements": [
+    {
+      "id": "west-table",
+      "model": "level_camp_picnic_table",
+      "zone": "camp-a",
+      "x": 16.45,
+      "z": 32.3,
+      "y": 0,
+      "native_object": "west-table"
+    },
+    {
+      "id": "pavilion-table-west",
+      "model": "level_camp_picnic_table",
+      "zone": "pavilion",
+      "x": 28,
+      "z": 37,
+      "y": 0,
+      "native_object": "pavilion-table-west"
+    },
+    {
+      "id": "pavilion-table-east",
+      "model": "level_camp_picnic_table",
+      "zone": "pavilion",
+      "x": 36,
+      "z": 37,
+      "y": 0,
+      "native_object": "pavilion-table-east"
+    },
+    {
+      "id": "west-fire-ring",
+      "model": "level_camp_fire_ring",
+      "zone": "camp-a",
+      "x": 10,
+      "z": 41.5,
+      "y": 0,
+      "native_object": "west-fire-ring"
+    }
+  ],
+  "reservations": [
+    {
+      "id": "tent-pad",
+      "x": 9.5,
+      "z": 32.5,
+      "width": 4.88,
+      "depth": 4.88
+    },
+    {
+      "id": "ritual",
+      "x": 32,
+      "z": 42,
+      "width": 2.4,
+      "depth": 2.4
+    }
+  ],
+  "limitations": [
+    "No runtime/collision/AI/LAN map integration or unlock.",
+    "Original rough geometry and connector reservations remain provisional.",
+    "Tent, bathhouse, dock, bridge and open-pavilion architectural refinement remain pending."
+  ]
+}

@@ -634,7 +634,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 }else if(p.size()==3&&p.get(1).equals("CLEAR")){
                     int owner=LanProtocol.integer(p.get(2),0,5);
                     renderer.dotsPositions.remove(owner);
-                }else if(p.size()==8&&p.get(1).equals("PLACE")){
+                }else if((p.size()==8||p.size()==9)&&p.get(1).equals("PLACE")){
                     int owner=LanProtocol.integer(p.get(2),0,5);
                     int room=LanProtocol.integer(p.get(3),0,HouseMap.INDOOR_ROOMS-1);
                     double x=LanProtocol.integer(p.get(4),0,map.width()*1000)/1000.0;
@@ -642,15 +642,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     double z=LanProtocol.integer(p.get(6),0,map.height()*1000)/1000.0;
                     EquipmentTiers.Tier gear=EquipmentTiers.Tier.valueOf(p.get(7));
                     renderer.dotsPositions.put(owner,
-                        new LanDotsProjectors.Placement(owner,room,x,y,z,gear));
+                        new LanDotsProjectors.Placement(owner,room,x,y,z,gear,p.size()==9?LanProtocol.integer(p.get(8),-360,360):0));
                     feedback="D.O.T.S. PROJECTOR ACTIVE IN "+map.roomName(room);
-                }else if(p.size()==6&&p.get(1).equals("ILLUMINATE")){
+                }else if((p.size()==6||p.size()==7)&&p.get(1).equals("ILLUMINATE")){
                     int room=LanProtocol.integer(p.get(2),0,HouseMap.INDOOR_ROOMS-1);
                     int eventTick=LanProtocol.integer(p.get(3),0,99999999);
                     double x=LanProtocol.integer(p.get(4),0,map.width()*1000)/1000.0;
                     double z=LanProtocol.integer(p.get(5),0,map.height()*1000)/1000.0;
                     renderer.dotsPassRoom=room;
-                    renderer.dotsPassX=x;renderer.dotsPassZ=z;
+                    renderer.dotsPassX=x;renderer.dotsPassZ=z;renderer.dotsPassY=p.size()==7?LanProtocol.integer(p.get(6),-50000,50000)/1000.0:map.groundHeight(x,z,room);
                     renderer.dotsPassUntil=eventTick+3; // optical persistence only
                 }else throw new IllegalArgumentException("invalid D.O.T.S. state");
             }else if(p.get(0).equals("SENSOR")){
@@ -1027,6 +1027,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             videoRenderer.dotsPassRoom=renderer.dotsPassRoom;
             videoRenderer.dotsPassX=renderer.dotsPassX;
             videoRenderer.dotsPassZ=renderer.dotsPassZ;
+            videoRenderer.dotsPassY=renderer.dotsPassY;
             videoRenderer.dotsPassUntil=renderer.dotsPassUntil;
             videoRenderer.incense.clear();
             videoRenderer.incense.addAll(renderer.incense);

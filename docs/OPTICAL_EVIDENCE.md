@@ -48,11 +48,19 @@ White light alone does not reveal the splat.
 
 ## D.O.T.S.
 
-The host still owns compatibility, evidence quota, passage location and exposure
-events. Rendering now samples the rounded standing capsule's surface, clips dots
-to the active projector field and rejects blocked source rays. This replaces the
-old planar point silhouette. Deployment now actually activates the battery;
-pickup or depletion stops the field. Camera feeds copy field and power state.
+The projector emits a deterministic array of rays in its deployed heading. Tier I
+is stationary; Tier II/III pan that actual array on the host tick. Each ray is
+intersected against receiving scene triangles (including props and alpha masks).
+Its single dot belongs to the nearest intersection. A host-authorized ghost
+crossing that ray replaces the room hit with the nearer hit on its standing
+collision capsule. Only the projector-facing hit is drawn: no whole-body dotted
+skin, far-side dots, or duplicate dot on the wall behind the ghost.
+
+Host compatibility, quota, battery, actual beam contact and architectural LOS
+still gate passage events. Placement heading and ghost floor elevation replicate
+to camera views; older placement/passage frames remain readable. The incorrect
+capsule-sampling implementation has been removed. Deployment activates battery
+drain, and pickup/depletion stops emission.
 
 Photographs contain the actual rendered dots. A recent host-approved optical
 exposure in the camera's direction can satisfy the photo-event task; merely
@@ -78,7 +86,7 @@ tests compare straight/distorted pixels and save the resulting photographs.
 
 `OpticalEvidenceCapture` saves controlled runtime fixtures under
 `development/levels/previews/optical-evidence/`: UV off/on, default/paid torch,
-capsule D.O.T.S., straight/distorted lasers and actual photograph outputs.
+projected D.O.T.S., straight/distorted lasers and actual photograph outputs.
 These are labeled controlled views, not an observed full human mission.
 
 ```powershell

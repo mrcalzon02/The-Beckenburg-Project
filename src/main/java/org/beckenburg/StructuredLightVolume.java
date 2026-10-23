@@ -15,14 +15,6 @@ public final class StructuredLightVolume {
         double cap=height<RADIUS?RADIUS-height:height>HEIGHT-RADIUS?height-(HEIGHT-RADIUS):0;
         return Math.sqrt(Math.max(0,RADIUS*RADIUS-cap*cap));
     }
-    public static List<Vec> dots(double x,double y,double z){
-        var out=new ArrayList<Vec>();
-        for(int band=0;band<14;band++){
-            double h=.025+(HEIGHT-.05)*band/13,rad=radiusAt(h);
-            for(int i=0;i<12;i++){double angle=(i+(band%2)*.5)*Math.PI*2/12;out.add(new Vec(x+rad*Math.cos(angle),y+h,z+rad*Math.sin(angle)));}
-        }
-        return List.copyOf(out);
-    }
     public static List<Beam> beams(HouseMap map,VanSensorStations.Station station){
         double floor=map.groundHeight(station.x(),station.z(),station.room()),range=EquipmentTiers.stage("LASER_GRID",station.tier()).reachCm()/100.0;
         int count=station.tier()==EquipmentTiers.Tier.I?3:station.tier()==EquipmentTiers.Tier.II?5:7;

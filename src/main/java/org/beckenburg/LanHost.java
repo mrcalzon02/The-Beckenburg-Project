@@ -977,7 +977,7 @@ public final class LanHost implements AutoCloseable {
                                 throw new IllegalArgumentException("D.O.T.S. projection requires a room");
                             LanDotsProjectors.Placement placed=dots.placeOrRemove(peer.slot,room,
                                 world.body(peer.slot).x(),world.body(peer.slot).y(),world.body(peer.slot).z(),
-                                gear.owned(id));
+                                gear.owned(id),world.body(peer.slot).heading());
                             if(placed==null){
                                 gear.setPower(id,false);notifyHunters("DOTS|POWER|"+peer.slot+"|0");
                                 reading="Projector retrieved / emission ended";
@@ -1848,7 +1848,7 @@ public final class LanHost implements AutoCloseable {
         for(LanDotsProjectors.Passage light:dots.illuminate(ghostPose.pose(),tick))
             for(int i=0;i<HUNTERS;i++){
                 if(!equipment[light.placement().seat()].powered("DOTS_PROJECTOR")
-                    ||!map.clearLineOfSight(light.placement().x(),light.placement().y()+.15,light.placement().z(),light.x(),ghostPose.pose().y()+1,light.z()))continue;
+                    ||DotsRayField.ghostHits(map,light.placement(),ghostPose.pose(),tick).isEmpty())continue;
                 Peer hunter=seats[i];
                 if(hunter==null||!hunter.worldMode)continue;
                 LanWorld.Body body=world.body(i);

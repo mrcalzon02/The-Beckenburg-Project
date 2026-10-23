@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 464,
+  "count": 469,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1184,6 +1184,26 @@
       "sha256": "04f1125811b05d55e0516f9006e354539cb9364ffdcb5da2d0e5c0a17f4f5dc4"
     },
     {
+      "path": "development/levels/previews/hollow-creek/pavilion-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/pavilion-native-fitout.png",
+      "title": "Pavilion native fitout",
+      "kind": "Native scene overview",
+      "width": 1120,
+      "height": 700,
+      "bytes": 761639,
+      "sha256": "8c9b6acefae69a1dc55683523e5f58bccaf9463f209a5a136b1eab3d8432b628"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/west-campsite-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/west-campsite-native-fitout.png",
+      "title": "West campsite native fitout",
+      "kind": "Native scene overview",
+      "width": 1120,
+      "height": 700,
+      "bytes": 646554,
+      "sha256": "2478479bc4b750d965beea5931017cb4b360c405d4a7d14c71219a8b470f14bd"
+    },
+    {
       "path": "development/levels/previews/house-blender-exterior.png",
       "url": "development/levels/previews/house-blender-exterior.png",
       "title": "House blender exterior",
@@ -1424,6 +1444,16 @@
       "sha256": "9487a88afc03b8091bdc923a2b7af3398352995ab02f67f0814828e7b4bca61d"
     },
     {
+      "path": "development/levels/previews/level_camp_fire_ring.png",
+      "url": "development/levels/previews/level_camp_fire_ring.png",
+      "title": "Level camp fire ring",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 869842,
+      "sha256": "31bc535d08a8ea0783b0666667a092c282dd4213b12af082a61e53bad4f210ab"
+    },
+    {
       "path": "development/levels/previews/level_camp_fireplace.png",
       "url": "development/levels/previews/level_camp_fireplace.png",
       "title": "Level camp fireplace",
@@ -1452,6 +1482,16 @@
       "height": 640,
       "bytes": 970057,
       "sha256": "bf2be207def32ae752581408ea14efe53dacf39818a432e4e8540e6e75a8d479"
+    },
+    {
+      "path": "development/levels/previews/level_camp_picnic_table.png",
+      "url": "development/levels/previews/level_camp_picnic_table.png",
+      "title": "Level camp picnic table",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 846316,
+      "sha256": "6daeb18b1ffe2d31338d827268fa2eab857c4593754cb5661cada5a9daa26b62"
     },
     {
       "path": "development/levels/previews/level_camp_rainbarrel.png",
@@ -3440,18 +3480,28 @@
       "kind": "Runtime capture",
       "width": 320,
       "height": 200,
-      "bytes": 34209,
-      "sha256": "e87bf4c8cdc8656e15b2b14fb868ce7808808e42d084c42ec07df145b1005c98"
+      "bytes": 33860,
+      "sha256": "9d35f77593378f917553677878fb753e009c22c9ecb38c7586e73af5240d8cbf"
     },
     {
-      "path": "development/levels/previews/optical-evidence/dots-capsule-controlled-runtime.png",
-      "url": "development/levels/previews/optical-evidence/dots-capsule-controlled-runtime.png",
-      "title": "Dots capsule controlled runtime",
+      "path": "development/levels/previews/optical-evidence/dots-intercepted-rays-controlled-runtime.png",
+      "url": "development/levels/previews/optical-evidence/dots-intercepted-rays-controlled-runtime.png",
+      "title": "Dots intercepted rays controlled runtime",
       "kind": "Runtime capture",
       "width": 800,
       "height": 500,
-      "bytes": 188114,
-      "sha256": "7b7812214b77d193b4f5b35abecdaec5ce3d5581f36c00fc7e3b0e561696f9b2"
+      "bytes": 187079,
+      "sha256": "726592c7ff95b0af16101eda9e60a370cb5d32d8c7d8138e0c7a626855423e4c"
+    },
+    {
+      "path": "development/levels/previews/optical-evidence/dots-room-surfaces-controlled-runtime.png",
+      "url": "development/levels/previews/optical-evidence/dots-room-surfaces-controlled-runtime.png",
+      "title": "Dots room surfaces controlled runtime",
+      "kind": "Runtime capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 186241,
+      "sha256": "d5443cf3be068998b3dd00f0f43bdcc4ba79055595c8b0f2bf8fd1a27738ea4f"
     },
     {
       "path": "development/levels/previews/optical-evidence/laser-actual-photograph.png",

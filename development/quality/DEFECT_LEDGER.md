@@ -178,19 +178,19 @@ Evidence and verification: OpticalEvidenceTest covers genuine/absent/expired tra
 
 Older-map obligation: Current producer leaves supported floor residue. Six-axis cube support does not mean wall/ceiling contact producers or teammate UV spill have been implemented; those remain separate refinements.
 
-### DEV-013 — D.O.T.S. flat silhouette and unpowered deployment
+### DEV-013 — D.O.T.S. generated a body-wide pattern instead of intersecting projector rays
 
 **Status:** fixed-scoped · **Affected:** D.O.T.S. projector
 
-Passages drew a small planar point shape, and deployment did not activate its battery drain.
+The first correction sampled the entire rounded capsule, producing dots unrelated to the real stationary/panning projector rays.
 
-Cause / uncertainty: Approximate render geometry and incomplete power integration.
+Cause / uncertainty: Mistook a receiving collision volume for a source of points; user caught the incorrect interpretation.
 
-Fix / next action: Project dots onto rounded standing-capsule surface, clipped to active field and LOS; activate host power on placement, stop on pickup/exhaustion; retain compatibility/quota checks.
+Fix / next action: Removed all capsule sampling and floating grid dots. Shared source rays now choose exactly one nearest room/prop or front ghost intersection; heading, panning and elevation replicate.
 
-Evidence and verification: OpticalEvidenceTest capsule geometry; captured photographs contain real rendered dots; existing LanDotsProjectorsTest and power suite pass.
+Evidence and verification: DotsRayFieldTest checks transferred wall hit, front side only, blocker priority, miss/range/heading, static Tier I and panning II/III; controlled runtime pair and photographed pixels.
 
-Older-map obligation: Capsule uses current standing dimensions. Native moving-ghost and multi-PC camera acceptance remains pending.
+Older-map obligation: Standing capsule approximates collision volume only. Actual native moving-ghost, multi-PC camera and per-site performance acceptance remain pending; do not promote based on headless captures.
 
 ### DEV-014 — Laser evidence has text but no visible physical distortion
 

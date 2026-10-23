@@ -10,21 +10,23 @@ import java.util.List;
  */
 public final class LanDotsProjectors {
     public record Placement(int seat,int room,double x,double y,double z,
-                            EquipmentTiers.Tier tier){
-        public Placement(int seat,int room,double x,double z,EquipmentTiers.Tier tier){this(seat,room,x,0,z,tier);}
+                            EquipmentTiers.Tier tier,int heading){
+        public Placement(int seat,int room,double x,double z,EquipmentTiers.Tier tier){this(seat,room,x,0,z,tier,0);}
+        public Placement(int seat,int room,double x,double y,double z,EquipmentTiers.Tier tier){this(seat,room,x,y,z,tier,0);}
         public Placement{
+            heading=Math.floorMod(heading,360);
             if(seat<0||seat>=6||room<0||room>=HouseMap.INDOOR_ROOMS
                 ||tier==null||!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))
                 throw new IllegalArgumentException("invalid D.O.T.S. placement");
         }
         public String frame(){
             return "DOTS|PLACE|"+seat+"|"+room+"|"+Math.round(x*1000)
-                +"|"+Math.round(y*1000)+"|"+Math.round(z*1000)+"|"+tier;
+                +"|"+Math.round(y*1000)+"|"+Math.round(z*1000)+"|"+tier+"|"+heading;
         }
     }
-    public record Passage(Placement placement,int tick,double x,double z){
+    public record Passage(Placement placement,int tick,double x,double y,double z){
         public String frame(){return "DOTS|ILLUMINATE|"+placement.room()+"|"+tick
-            +"|"+Math.round(x*1000)+"|"+Math.round(z*1000);}
+            +"|"+Math.round(x*1000)+"|"+Math.round(z*1000)+"|"+Math.round(y*1000);}
     }
     private final Placement[] positions=new Placement[6];
     private final int[] lastPass=new int[6];
@@ -35,7 +37,8 @@ public final class LanDotsProjectors {
     }
     public Placement placeOrRemove(int seat,int room,double x,double z,EquipmentTiers.Tier tier){return placeOrRemove(seat,room,x,0,z,tier);}
     public Placement placeOrRemove(int seat,int room,double x,double y,double z,
-                                   EquipmentTiers.Tier tier){
+                                   EquipmentTiers.Tier tier){return placeOrRemove(seat,room,x,y,z,tier,0);}
+    public Placement placeOrRemove(int seat,int room,double x,double y,double z,EquipmentTiers.Tier tier,int heading){
         if(positions[seat]!=null){
             if(room!=positions[seat].room()||Math.abs(y-positions[seat].y())>.75||Math.hypot(x-positions[seat].x(),z-positions[seat].z())>1.6)
                 throw new IllegalArgumentException("retrieve projector at its physical location");
@@ -43,7 +46,7 @@ public final class LanDotsProjectors {
             lastPass[seat]=-100000;
             return null;
         }
-        Placement placed=new Placement(seat,room,x,y,z,tier);
+        Placement placed=new Placement(seat,room,x,y,z,tier,heading);
         positions[seat]=placed;
         lastPass[seat]=-100000;
         return placed;
@@ -62,9 +65,9 @@ public final class LanDotsProjectors {
         for(Placement p:positions){
             if(p==null||Math.abs(p.y()-pose.y())>.75||p.room()!=pose.room()||tick-lastPass[p.seat()]<2)continue;
             double radius=EquipmentTiers.stage("DOTS_PROJECTOR",p.tier()).reachCm()/100.0;
-            if(Math.hypot(pose.x()-p.x(),pose.z()-p.z())>radius)continue;
+            if(Math.hypot(pose.x()-p.x(),pose.z()-p.z())>radius||DotsRayField.ghostHits(null,p,pose,tick).isEmpty())continue;
             lastPass[p.seat()]=tick;
-            hits.add(new Passage(p,tick,pose.x(),pose.z()));
+            hits.add(new Passage(p,tick,pose.x(),pose.y(),pose.z()));
         }
         return List.copyOf(hits);
     }
