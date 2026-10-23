@@ -116,7 +116,9 @@ public final class CastleHubMap {
             ||solid((int)Math.floor(x+r),(int)Math.floor(z+r)))return false;
         var edits=CastleLevelEdits.current();
         if(edits.navBlocked((int)Math.floor(x),(int)Math.floor(z))
-            ||edits.wallBlocks(x,0,z,r))return false;
+            ||edits.wallBlocks(x,0,z,r)
+            ||CastleSurroundings.courtyardVanBlocks(x,z,r)
+            ||CastleWarehouse.blocks(x,z,r))return false;
         for(Furnishing item:CastleLevelEdits.current().furnishings(false))
             if(Math.abs(x-item.x())<item.halfWidth()+r &&
                Math.abs(z-item.z())<item.halfDepth()+r)return false;

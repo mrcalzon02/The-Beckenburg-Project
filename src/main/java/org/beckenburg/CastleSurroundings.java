@@ -16,11 +16,16 @@ public final class CastleSurroundings {
    }
  }
  private static final List<ParkedVehicle> PARKED=List.of(
-     new ParkedVehicle("ggbot_car08_van_shell",15.5,44.0,1.0,0),
+     new ParkedVehicle("ggbot_car08_van_shell",13.3,27.7,.82,0),
      new ParkedVehicle("ggbot_car01",10.3,51.5,1.0,0),
      new ParkedVehicle("ggbot_car05",21.2,56.5,1.0,Math.PI)
  );
  public static List<ParkedVehicle> parkedVehicles(){return PARKED;}
+ /** Matching world-space collision for the courtyard staging van. */
+ public static boolean courtyardVanBlocks(double x,double z,double r){
+  var van=PARKED.get(0);
+  return Math.abs(x-van.x())<1.17+r&&Math.abs(z-van.z())<2.75+r;
+ }
 
  public static List<RoadPoint> road(){return List.of(new RoadPoint(15.5,34.4),new RoadPoint(16,65),new RoadPoint(26,95),new RoadPoint(5,145));}
  public static List<Tree> trees(){List<Tree> result=new ArrayList<>();for(int i=0;i<20;i++){result.add(new Tree(-8-i%3*3,2+i*2.5,.85+(i%4)*.09));result.add(new Tree(54+i%3*3,-3+i*2.7,.9+(i%3)*.1));}for(int i=0;i<19;i++){double x=-8+i*3.5;result.add(new Tree(x,-10-(i%3)*3,1.1));if(x<10||x>22)result.add(new Tree(x,45+(i%3)*3,1.0));}return List.copyOf(result);}
