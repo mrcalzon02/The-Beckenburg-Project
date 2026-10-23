@@ -51,7 +51,13 @@ public final class CastleHubArchitecturalPlan {
         // Continuous stone gallery reaches the stair landing without a teleport.
         new Deck(16.0,10.7,19.0,22.0,GROUND_CEILING,MaterialAtlas.STONE),
         // Upper library is sheltered by a genuine higher ceiling.
-        new Deck(10.8,1.2,19.0,10.7,UPPER_CEILING,MaterialAtlas.CEILING)
+        new Deck(10.8,1.2,19.0,10.7,UPPER_CEILING,MaterialAtlas.CEILING),
+        // Connected upper-level rampart circuit: east bridge from the existing
+        // gallery, eastern wall walk, southern battlements and western return.
+        new Deck(18.0,20.0,21.0,22.0,GROUND_CEILING,MaterialAtlas.STONE),
+        new Deck(19.2,12.0,21.2,33.0,GROUND_CEILING,MaterialAtlas.STONE),
+        new Deck(10.0,31.0,21.2,33.0,GROUND_CEILING,MaterialAtlas.STONE),
+        new Deck(10.0,12.0,12.0,33.0,GROUND_CEILING,MaterialAtlas.STONE)
     );
     private static final List<Trim> TRIMS=List.of(
         // Imported medieval architectural sources used as measured trim, not
@@ -200,8 +206,8 @@ public final class CastleHubArchitecturalPlan {
     }
     /** Walkable 3D height follows a physical incline and retains underpasses. */
     public static double elevation(double x,double z,double oldElevation){
-        if(onStairs(x,z))return stairHeight(x,z);
         if(oldElevation>2.0&&upperWalkable(x,z))return GROUND_CEILING;
+        if(onStairs(x,z))return stairHeight(x,z);
         return 0;
     }
 }

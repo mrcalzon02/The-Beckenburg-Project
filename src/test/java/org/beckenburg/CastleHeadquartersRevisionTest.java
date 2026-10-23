@@ -27,6 +27,14 @@ public final class CastleHeadquartersRevisionTest {
   check(van.mesh().equals("ggbot_car08_van_shell")&&van.z()<33&&van.x()>10&&van.x()<20,
     "the actual source-backed expedition van is displayed in the open courtyard");
   check(!map.traversable(van.x(),van.z()),"courtyard van uses physical collision");
+  check(map.traversable(19.9,21.0,3.4),
+    "original upper gallery joins the castle eastern battlements");
+  check(map.traversable(20.2,28.0,3.4),
+    "eastern parapet has a solid upper walking deck");
+  check(map.traversable(13.0,32.0,3.4),
+    "southern wall-walk is connected to the upper battlements");
+  check(!map.traversable(13.0,30.0,3.4),
+    "open courtyard beside ramparts has no imaginary walkable floor");
   check(CastleHubArchitecturalPlan.trims().stream().filter(
     x->x.mesh().equals("kenney_medieval_tower_top")).count()>=8,
     "castle has exterior corner towers and gatehouse towers");

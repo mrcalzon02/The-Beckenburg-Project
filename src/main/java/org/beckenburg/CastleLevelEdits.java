@@ -419,6 +419,19 @@ public final class CastleLevelEdits {
                         fixture.mount(),chandelier?10.5:9.8,chandelier?3.2:2.5));
                 }
             }
+            // Older authored castle saves receive only newly introduced
+            // battlement floors. Once saved, deleted/edited ramparts are
+            // respected rather than recreated each launch.
+            if(Integer.parseInt(p.getProperty("fortification.layout","1"))<2){
+                var decks=CastleHubArchitecturalPlan.decks();
+                for(int index=3;index<decks.size();index++){
+                    var deck=decks.get(index);
+                    String id="rampart2_"+(index-3);
+                    parsed.putIfAbsent(id,new Surface(id,Kind.FLOOR,
+                        deck.x0(),deck.z0(),deck.x1(),deck.z1(),
+                        deck.height(),.16,deck.material()));
+                }
+            }
             surfaces.clear();surfaces.putAll(parsed);
             props.clear();props.putAll(incomingProps);lamps.clear();lamps.putAll(incomingLights);
             stations.clear();stations.putAll(newStations);
@@ -431,6 +444,7 @@ public final class CastleLevelEdits {
     public synchronized void save()throws IOException{
         Properties p=new Properties();p.setProperty("format","1");
         p.setProperty("lighting.layout","2");
+        p.setProperty("fortification.layout","2");
         p.setProperty("surfaces.count",""+surfaces.size());
         int surfaceIndex=0;
         for(var surface:surfaces.values()){
