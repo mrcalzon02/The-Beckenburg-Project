@@ -1278,6 +1278,65 @@ public final class SceneRenderer {
         return forward+radius>=0
             &&Math.abs(side)<Math.max(0,forward)*hfov+radius*2.0;
     }
+
+    private static final class GpuFloats {
+        float[] values=new float[192];
+        int count;
+        void vertex(Vertex v,int tint){
+            if(count+8>values.length)values=Arrays.copyOf(values,values.length*2);
+            values[count++]=(float)v.p.x;values[count++]=(float)v.p.y;
+            values[count++]=(float)v.p.z;values[count++]=(float)v.u;
+            values[count++]=(float)v.v;
+            values[count++]=(float)(Math.max(.03,v.r)*((tint>>16)&255)/255.0);
+            values[count++]=(float)(Math.max(.03,v.g)*((tint>>8)&255)/255.0);
+            values[count++]=(float)(Math.max(.03,v.b)*(tint&255)/255.0);
+        }
+        float[] complete(){return Arrays.copyOf(values,count);}
+    }
+    /**
+     * Every authored scene uses the same GPU path: castle, campaign, solo, LAN,
+     * co-op and the network observer. The GPU receives only camera-visible
+     * world faces, not forbidden ghost identities or hidden network state.
+     * Existing CPU sprite and game HUD drawing uses GPU-derived depth.
+     */
+    private boolean drawGpuFaces(List<Face> faces,HouseMap map){
+        GpuWorldRenderer backend=GpuWorldRenderer.active();
+        if(backend==null)return false;
+        if(!backend.ready())throw new IllegalStateException(
+            "OpenGL renderer stopped before the game frame");
+        var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
+        for(Face f:faces){
+            if(!faceInFrustum(f))continue;
+            int room=f.room>=0?f.room:map==null?
+                (CastleHubMap.outsideFootprint((f.a.x+f.b.x+f.c.x)/3,
+                    (f.a.z+f.b.z+f.c.z)/3)?13:0):
+                map.roomAt((f.a.x+f.b.x+f.c.x)/3,
+                    (f.a.y+f.b.y+f.c.y)/3,(f.a.z+f.b.z+f.c.z)/3);
+            var dst=batches.computeIfAbsent(f.material,key->new GpuFloats());
+            // The same physical, occlusion-aware light probes used by the
+            // software view. Texture sampling and depth rasterization are GPU.
+            dst.vertex(litVertex(f.a,f.au,f.av,f.material,room),f.color);
+            dst.vertex(litVertex(f.b,f.bu,f.bv,f.material,room),f.color);
+            dst.vertex(litVertex(f.c,f.cu,f.cv,f.material,room),f.color);
+        }
+        var surfaces=new java.util.ArrayList<GpuWorldRenderer.Surface>(batches.size());
+        for(var entry:batches.entrySet())
+            surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),
+                entry.getValue().complete()));
+        backend.submit(new GpuWorldRenderer.Frame(renderWidth,renderHeight,surfaces));
+        GpuWorldRenderer.Result available=backend.latest();
+        if(available!=null&&available.width()==renderWidth&&available.height()==renderHeight){
+            int[] image=available.argb();
+            float[] zbuffer=available.depth();
+            for(int i=0;i<pixels.length;i++){
+                if((image[i]>>>24)>127){
+                    pixels[i]=image[i]&0xffffff;
+                    depths[i]=zbuffer[i];
+                }
+            }
+        }
+        return true;
+    }
     private void levelArchitecture(List<Face> out,HouseMap map){
         for(Face face:enclosureFaces.computeIfAbsent(map.level().revision(),
             key->enclosureScenery(map.level())))
@@ -1781,7 +1840,8 @@ public final class SceneRenderer {
         box(castle,12.75,0,11.20,.40,3.0,.38,0x625c60);
         box(castle,14.10,0,11.20,.40,3.0,.38,0x625c60);
         box(castle,12.75,2.9,11.20,1.75,.36,.38,0xa69178);
-        for(Face face:castle){double mx=(face.a.x+face.b.x+face.c.x)/3,mz=(face.a.z+face.b.z+face.c.z)/3;int room=mx<0||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;drawLitFace(face,room,0);}
+        if(!drawGpuFaces(castle,null))
+            for(Face face:castle){double mx=(face.a.x+face.b.x+face.c.x)/3,mz=(face.a.z+face.b.z+face.c.z)/3;int room=mx<0||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;drawLitFace(face,room,0);}
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
     }
@@ -1907,11 +1967,16 @@ public final class SceneRenderer {
             clock,others,apparition,markers);
         long geometryReady=System.nanoTime();
         int visibleFaces=0;
-        for(Face face:geometry){
-            if(!faceInFrustum(face))continue;
-            visibleFaces++;
-            int room=face.room>=0?face.room:map.roomAt((face.a.x+face.b.x+face.c.x)/3,(face.a.y+face.b.y+face.c.y)/3,(face.a.z+face.b.z+face.c.z)/3);
-            drawLitFace(face,room,0);
+        if(drawGpuFaces(geometry,map)){
+            // GPU performs perspective raster, source material sampling and depth.
+            visibleFaces=geometry.size();
+        }else{
+            for(Face face:geometry){
+                if(!faceInFrustum(face))continue;
+                visibleFaces++;
+                int room=face.room>=0?face.room:map.roomAt((face.a.x+face.b.x+face.c.x)/3,(face.a.y+face.b.y+face.c.y)/3,(face.a.z+face.b.z+face.c.z)/3);
+                drawLitFace(face,room,0);
+            }
         }
         long geometryRendered=System.nanoTime();
         if(geometryRendered-geometryStart>200_000_000L)
