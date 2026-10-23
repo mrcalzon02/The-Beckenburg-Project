@@ -43,12 +43,13 @@ public final class BeckenburgDeveloperTrace {
         if(durationNanos>100_000_000L)BeckenburgDiagnostics.record("FRAME SLOW duration_ms="+durationNanos/1_000_000+" stage="+caseStage);
     }
     /** Bounded stage timing survives a stalled or forcibly terminated renderer. */
-    public static void renderSlow(int faces,int width,int height,long buildNs,long drawNs){
+    public static void renderSlow(int faces,int visible,int width,int height,long buildNs,long drawNs){
         long now=System.nanoTime(),prior=lastRenderSlowReport.get();
         if(now-prior<2_000_000_000L||
             !lastRenderSlowReport.compareAndSet(prior,now))return;
         BeckenburgDiagnostics.record("RENDER SLOW stage="+caseStage+
-            " faces="+faces+" target="+width+"x"+height+
+            " faces="+faces+" visible_faces="+visible+" culled_faces="+(faces-visible)+
+            " target="+width+"x"+height+
             " build_ms="+buildNs/1_000_000+" lighting_raster_ms="+drawNs/1_000_000);
     }
     public static void caseStop(){activeCase=false;caseStage="closed";}

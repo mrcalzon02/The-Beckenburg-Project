@@ -1246,18 +1246,53 @@ public final class SceneRenderer {
             &&(alongX?((nearPlane(n.z0(),plane)||nearPlane(n.z1(),plane))&&n.x0()<r.x1()&&n.x1()>r.x0()):
                 ((nearPlane(n.x0(),plane)||nearPlane(n.x1(),plane))&&n.z0()<r.z1()&&n.z1()>r.z0())));
     }
-    private void levelArchitecture(List<Face> out,HouseMap map){
-        own(out,enclosureFaces.computeIfAbsent(map.level().revision(),key->enclosureScenery(map.level())),13);
-        if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of());}
-        for(Face f:levelShells.computeIfAbsent(map.level().revision()+":"+map.hidingDensity(),s->buildLevelShell(map))){
-            double cx=(f.a.x+f.b.x+f.c.x)/3,cz=(f.a.z+f.b.z+f.c.z)/3;
-            out.add(f); // Opaque distant architecture must still occlude the night sky.
+    /** Conservative CPU visibility gate, before room classification and lighting.
+     * Rejects only triangles wholly outside one frustum plane. It does NOT
+     * incorrectly classify hidden ghost evidence from network data.
+     * Hardware depth and eventual GPU occlusion remain independent concerns. */
+    private boolean faceInFrustum(Face f){
+        double cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+        double hx=renderWidth*.5/focal+.035,hy=renderHeight*.5/focal+.035;
+        int common=31;
+        for(Point p:new Point[]{f.a,f.b,f.c}){
+            double dx=p.x-x,dz=p.z-z,dy=p.y-eyeHeight;
+            double xx=-dx*cy+dz*sy,forward=dx*sy+dz*cy;
+            double yy=dy*cp-forward*sp,depth=dy*sp+forward*cp;
+            int code=(depth<NEAR?1:0)|(xx>depth*hx?2:0)|
+                (xx< -depth*hx?4:0)|(yy>depth*hy?8:0)|(yy< -depth*hy?16:0);
+            common&=code;
+            if(common==0)return true;
         }
-        for(var s:map.level().sockets())if(s.type().equals("hide")&&LevelClosets.available(map.level(),s.room(),map.hidingDensity())){
+        return false;
+    }
+    /** Coarse world-space object culling before decoding/importing large GLBs.
+     * Radius is generous for rotatable meshes and near-plane crossings. */
+    boolean objectInView(double centerX,double centerZ,double radius,double distance){
+        if(exportFullLevel)return true;
+        double dx=centerX-x,dz=centerZ-z;
+        double range=Math.hypot(dx,dz);
+        if(range>distance+radius)return false;
+        double forward=dx*Math.sin(yaw)+dz*Math.cos(yaw);
+        double side=-dx*Math.cos(yaw)+dz*Math.sin(yaw);
+        double hfov=renderWidth*.5/focal;
+        return forward+radius>=0
+            &&Math.abs(side)<Math.max(0,forward)*hfov+radius*2.0;
+    }
+    private void levelArchitecture(List<Face> out,HouseMap map){
+        for(Face face:enclosureFaces.computeIfAbsent(map.level().revision(),
+            key->enclosureScenery(map.level())))
+            if(exportFullLevel||faceInFrustum(face))out.add(face.owned(13));
+        if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of());}
+        for(Face face:levelShells.computeIfAbsent(
+            map.level().revision()+":"+map.hidingDensity(),key->buildLevelShell(map)))
+            if(exportFullLevel||faceInFrustum(face))out.add(face);
+        for(var s:map.level().sockets())if(s.type().equals("hide")
+            &&objectInView(s.x(),s.z(),3,26)
+            &&LevelClosets.available(map.level(),s.room(),map.hidingDensity())){
             List<Face> closet=new ArrayList<>();imported(closet,"level_hiding_cupboard_worn",s.x(),s.y(),s.z(),1,s.yaw());own(out,closet,s.room());
         }
         for(var p:map.level().portals()){
-            if(!exportFullLevel&&Math.hypot(p.x()-x,p.z()-z)>24)continue;
+            if(!objectInView(p.x(),p.z(),Math.max(2,p.width()),24))continue;
             List<Face> part=new ArrayList<>();
             if(p.door()){
                 double angle=p.alongX()?0:Math.PI/2;
@@ -1277,7 +1312,7 @@ public final class SceneRenderer {
             own(out,part,p.a());
         }
         for(var s:map.level().sockets()){
-            if(!exportFullLevel&&Math.hypot(s.x()-x,s.z()-z)>20)continue;
+            if(!objectInView(s.x(),s.z(),4,20))continue;
             List<Face> part=new ArrayList<>();
             if(s.type().equals("device")&&s.style().equals("LIGHT_SWITCH"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,s.yaw());
             if(s.type().equals("switch"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,-s.yaw());
@@ -1871,13 +1906,17 @@ public final class SceneRenderer {
         List<Face> geometry=scene(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,
             clock,others,apparition,markers);
         long geometryReady=System.nanoTime();
+        int visibleFaces=0;
         for(Face face:geometry){
+            if(!faceInFrustum(face))continue;
+            visibleFaces++;
             int room=face.room>=0?face.room:map.roomAt((face.a.x+face.b.x+face.c.x)/3,(face.a.y+face.b.y+face.c.y)/3,(face.a.z+face.b.z+face.c.z)/3);
             drawLitFace(face,room,0);
         }
         long geometryRendered=System.nanoTime();
         if(geometryRendered-geometryStart>200_000_000L)
-            BeckenburgDeveloperTrace.renderSlow(geometry.size(),renderWidth,renderHeight,
+            BeckenburgDeveloperTrace.renderSlow(
+                geometry.size(),visibleFaces,renderWidth,renderHeight,
                 geometryReady-geometryStart,geometryRendered-geometryReady);
         renderVanSanctuary(map,clock);
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
