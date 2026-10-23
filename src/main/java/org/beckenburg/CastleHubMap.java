@@ -4,6 +4,35 @@ package org.beckenburg;
 public final class CastleHubMap {
     public static final int WIDTH=44, HEIGHT=36;
     private final char[][] grid=new char[HEIGHT][WIDTH];
+    private final java.util.Set<String> openDoors=new java.util.HashSet<>();
+    /** Gate and door state belongs to the playable map, not a freestanding mesh. */
+    public boolean doorOpen(String slotId){CastleDoorSlots.require(slotId);return openDoors.contains(slotId);}
+    public boolean toggleDoor(String slotId){
+        CastleDoorSlots.require(slotId);
+        if(CastleLevelEdits.current().doorType(slotId)==CastleDoorSlots.Type.EMPTY)
+            throw new IllegalArgumentException("Opening has no installed door");
+        if(!openDoors.add(slotId))openDoors.remove(slotId);
+        return openDoors.contains(slotId);
+    }
+    public CastleDoorSlots.Slot aimedDoor(double x,double z,double yaw){
+        if(!Double.isFinite(x+z+yaw))return null;
+        CastleDoorSlots.Slot nearest=null;double best=0;
+        for(var slot:CastleDoorSlots.all()){
+            if(CastleLevelEdits.current().doorType(slot.id())==CastleDoorSlots.Type.EMPTY)continue;
+            double dx=slot.centerX()-x,dz=slot.centerZ()-z,d=Math.hypot(dx,dz);
+            if(d<.35||d>2.8)continue;
+            double facing=(Math.sin(yaw)*dx+Math.cos(yaw)*dz)/d;
+            if(facing>.72&&facing>best){best=facing;nearest=slot;}
+        }
+        return nearest;
+    }
+    private boolean closedLeafBlocks(double x,double y,double z,double r){
+        for(var slot:CastleDoorSlots.all())
+            if(CastleLevelEdits.current().doorType(slot.id())!=CastleDoorSlots.Type.EMPTY
+                &&!doorOpen(slot.id())
+                &&CastleDoorSlots.leafBlocks(slot,x,y,z,r))return true;
+        return false;
+    }
     public enum Station {
         ARMORY_UV(5.2,4.5,"QUARTERMASTER / EQUIPMENT STORE"),
         ARMORY_SALT(5.2,8.0,"QUARTERMASTER / SUPPLY STORE"),
@@ -34,6 +63,9 @@ public final class CastleHubMap {
         carve(10,12,20,33);// broad open court / departure platforms
         carve(21,12,27,33);// eastern operations and network wing
         carve(29,18,42,33);// north-east workshop and service extension
+        // The gate aperture reaches the approach road through a ground-level apron.
+        // The portcullis leaf, not a dummy solid raster cell, blocks entry.
+        carve(12,34,19,35);
         // Collision raster only. The independent architectural plan owns all
         // visible surfaces, portal widths, floors and mounting coordinates.
         for(int z=1;z<=10;z++)if(z<5||z>7){grid[z][10]='#';grid[z][19]='#';}
@@ -118,7 +150,8 @@ public final class CastleHubMap {
         if(edits.navBlocked((int)Math.floor(x),(int)Math.floor(z))
             ||edits.wallBlocks(x,0,z,r)
             ||CastleSurroundings.courtyardVanBlocks(x,z,r)
-            ||CastleWarehouse.blocks(x,z,r))return false;
+            ||CastleWarehouse.blocks(x,z,r)
+            ||closedLeafBlocks(x,0,z,r))return false;
         for(Furnishing item:CastleLevelEdits.current().furnishings(false))
             if(Math.abs(x-item.x())<item.halfWidth()+r &&
                Math.abs(z-item.z())<item.halfDepth()+r)return false;
@@ -134,7 +167,8 @@ public final class CastleHubMap {
         if(elevation>2.0){
             if(CastleHubArchitecturalPlan.upperWalkable(x,z)){
                 if(!CastleHubArchitecturalPlan.upperClearance(x,z,radius)
-                    ||CastleLevelEdits.current().wallBlocks(x,elevation,z,radius))
+                    ||CastleLevelEdits.current().wallBlocks(x,elevation,z,radius)
+                    ||closedLeafBlocks(x,elevation,z,radius))
                     return false;
                 for(Furnishing item:CastleLevelEdits.current().furnishings(true))
                     if(Math.abs(x-item.x())<item.halfWidth()+radius&&

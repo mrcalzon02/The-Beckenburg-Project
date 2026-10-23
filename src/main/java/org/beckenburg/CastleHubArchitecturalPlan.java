@@ -100,7 +100,11 @@ public final class CastleHubArchitecturalPlan {
         // Door openings are 2.5m wide and 2.7m high, with proper lintels.
         horizontal(out,1.0,1.0,28.0,0,GROUND_CEILING,MaterialAtlas.STONE);
         horizontal(out,4.0,29.0,43.0,0,GROUND_CEILING,MaterialAtlas.STONE);
-        horizontal(out,34.0,1.0,43.0,0,GROUND_CEILING,MaterialAtlas.STONE);
+        // One 4.6m courtyard gate opening; the portcullis is its only door slot.
+        horizontal(out,34.0,1.0,13.2,0,GROUND_CEILING,MaterialAtlas.STONE);
+        horizontal(out,34.0,17.8,43.0,0,GROUND_CEILING,MaterialAtlas.STONE);
+        horizontal(out,34.0,13.2,17.8,2.95,GROUND_CEILING,MaterialAtlas.STONE);
+        out.add(new Wall(13.2,34,17.8,34,0,0,MaterialAtlas.STONE,15.5,4.6));
         vertical(out,1.0,1.0,34.0,0,GROUND_CEILING,MaterialAtlas.STONE);
         vertical(out,43.0,4.0,34.0,0,GROUND_CEILING,MaterialAtlas.STONE);
         // True full-height interior separations and archways.

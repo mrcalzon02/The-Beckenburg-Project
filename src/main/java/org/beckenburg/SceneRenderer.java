@@ -803,9 +803,6 @@ public final class SceneRenderer {
         for(var tree:CastleSurroundings.trees())imported(out,"level_tree_conifer_worn",tree.x(),0,tree.z(),tree.scale(),tree.x()*.2);
         mountains(out,22,17);var points=CastleSurroundings.road();int asphalt=VanArrivalStreet.surfaceMaterial(false);double uv=0;
         for(int i=0;i<points.size()-1;i++){var a=points.get(i);var b=points.get(i+1);double dx=b.x()-a.x(),dz=b.z()-a.z(),length=Math.hypot(dx,dz),ox=dz/length*2.6,oz=-dx/length*2.6;texturedQuad(out,new Point(a.x()-ox,-.055,a.z()-oz),new Point(a.x()+ox,-.055,a.z()+oz),new Point(b.x()+ox,-.055,b.z()+oz),new Point(b.x()-ox,-.055,b.z()-oz),asphalt,0,uv,2.6,uv,2.6,uv+length*.48,0,uv+length*.48,0x96958a);uv+=length*.48;}
-        // A single centered entrance leaf avoids two independent handles and
-        // opposing pivots intersecting the same solid perimeter.
-        castleProp(out,"door_1_loose",15.5,0,33.88,1.18,0);
         // Static roadside PSX van and original textured cars. These are pure
         // triangles in the cached exterior: NO VanStaging, equipment, services,
         // extraction commands, multiplayer state or interactive cargo doors.
@@ -1465,13 +1462,44 @@ public final class SceneRenderer {
         }
     }
     private static void architecturalWall(List<Face> out,CastleHubArchitecturalPlan.Wall wall){
-        if(wall.hasDoor())return; // opening is intentional absence of geometry
-        double x0=wall.x0(),x1=wall.x1(),z0=wall.z0(),z1=wall.z1();
-        double y0=wall.bottom(),y1=wall.top();
-        double length=wall.length(),height=y1-y0;
-        texturedQuad(out,new Point(x0,y0,z0),new Point(x1,y0,z1),
-            new Point(x1,y1,z1),new Point(x0,y1,z0),wall.material(),
-            0,y0,length,y0,length,y1,0,y1,0xffffff);
+        if(wall.hasDoor())return;
+        double half=CastleDoorSlots.MASONRY_THICKNESS*.5;
+        if(wall.horizontal())
+            texturedBox(out,wall.x0(),wall.bottom(),wall.z0()-half,
+                wall.x1()-wall.x0(),wall.top()-wall.bottom(),
+                CastleDoorSlots.MASONRY_THICKNESS,wall.material());
+        else texturedBox(out,wall.x0()-half,wall.bottom(),wall.z0(),
+                CastleDoorSlots.MASONRY_THICKNESS,wall.top()-wall.bottom(),
+                wall.z1()-wall.z0(),wall.material());
+    }
+    private static void castleDoorLeaf(List<Face> out,CastleDoorSlots.Slot slot,
+                                        CastleDoorSlots.Type type,boolean open){
+        if(type==CastleDoorSlots.Type.EMPTY)return;
+        double half=CastleDoorSlots.MASONRY_THICKNESS*.38;
+        if(type==CastleDoorSlots.Type.WOOD){
+            if(open)return; // leaf swings into its wall pocket
+            if(slot.horizontal())
+                texturedBox(out,slot.x0()+.06,.035,slot.z0()-half,
+                    slot.width()-.12,slot.clearHeight()-.09,half*2,MaterialAtlas.AGED_WOOD);
+            else texturedBox(out,slot.x0()-half,.035,slot.z0()+.06,
+                    half*2,slot.clearHeight()-.09,slot.width()-.12,MaterialAtlas.AGED_WOOD);
+            return;
+        }
+        // One custom iron portcullis assembly inside the 4.6m castle aperture.
+        // When opened it rises intact into the gatehouse, clearing the passage.
+        double base=open?slot.clearHeight()+.08:.04;
+        for(double d=.17;d<slot.width()-.08;d+=.38){
+            if(slot.horizontal())box(out,slot.x0()+d,base,slot.z0()-.075,
+                .085,slot.clearHeight()-.1,.15,0x383f45);
+            else box(out,slot.x0()-.075,base,slot.z0()+d,
+                .15,slot.clearHeight()-.1,.085,0x383f45);
+        }
+        for(double height:new double[]{.5,1.45,2.45}){
+            if(slot.horizontal())box(out,slot.x0()+.06,base+height,slot.z0()-.105,
+                slot.width()-.12,.11,.21,0x66594d);
+            else box(out,slot.x0()-.105,base+height,slot.z0()+.06,
+                .21,.11,slot.width()-.12,0x66594d);
+        }
     }
     /** Architectural crenellations built as real masonry triangles. */
     private void castleRamparts(List<Face> out){
@@ -1487,12 +1515,12 @@ public final class SceneRenderer {
             if(zz>=4)box(out,42.84,y,zz,.32,.78,1.10,0x8c7c6a);
         }
     }
-    private void castleShell(List<Face> out){
+    private void castleShell(List<Face> out,CastleHubMap map){
         var walls=CastleLevelEdits.current().walls();
         for(var wall:walls){
             if(wall.hasDoor()){
-                // Full-height 2.7m portals, 2.5m clear spans, real jambs and
-                // stone lintels at the architecturally authored wall plane.
+                // Stone reveals span the depth between distinct inside and outside faces.
+                // Solid lintels are ordinary thick wall surfaces, not fake closed arches.
                 double left=wall.horizontal()?wall.x0():wall.z0();
                 double right=wall.horizontal()?wall.x1():wall.z1();
                 double y0=wall.bottom(),y1=y0+CastleHubArchitecturalPlan.DOOR_HEIGHT;
@@ -1506,6 +1534,10 @@ public final class SceneRenderer {
                     box(out,wall.x0()-.18,y1-.13,left-.12,.36,.19,right-left+.24,0x9b8970);
                 }
             }else architecturalWall(out,wall);
+        }
+        for(var slot:CastleDoorSlots.all()){
+            castleDoorLeaf(out,slot,CastleLevelEdits.current().doorType(slot.id()),
+                map.doorOpen(slot.id()));
         }
         for(var deck:CastleLevelEdits.current().decks()){
             texturedQuad(out,
@@ -1601,7 +1633,7 @@ public final class SceneRenderer {
         }
         // The real continuous, authored stonework and second floor replace
         // per-cell fortress blocks. Doors have full-width jambs and lintels.
-        castleShell(castle);
+        castleShell(castle,map);
         castleRamparts(castle);
         for(var roof:CastleLevelEdits.current().roofs())
             if(Math.hypot((roof.west()+roof.east())*.5-x,

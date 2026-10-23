@@ -48,8 +48,14 @@ public final class FixtureLighting {
  static boolean castleRayClear(CastleHubMap map,double ax,double ay,double az,double bx,double by,double bz){
   if(map==null||!Double.isFinite(ax+ay+az+bx+by+bz))return false;
   final double EPS=0.0001;
+  for(var slot:CastleDoorSlots.all()){
+   if(CastleLevelEdits.current().doorType(slot.id())!=CastleDoorSlots.Type.EMPTY
+      &&!map.doorOpen(slot.id())
+      &&CastleDoorSlots.crossesLeaf(slot,ax,ay,az,bx,by,bz))return false;
+  }
   for(var wall:CastleLevelEdits.current().walls()){
    if(wall.hasDoor())continue; // markers denote OPENINGS, not solid faces
+   if(CastleDoorSlots.crossesWall(wall,ax,ay,az,bx,by,bz))return false;
    double da=wall.horizontal()?az-wall.z0():ax-wall.x0();
    double db=wall.horizontal()?bz-wall.z0():bx-wall.x0();
    if(Math.abs(db-da)<EPS)continue;

@@ -84,6 +84,26 @@ public final class CastleLevelEdits {
         }
     }
     private final Map<String,Surface> surfaces=new LinkedHashMap<>();
+    private final Map<String,CastleDoorSlots.Type> doorAssignments=new LinkedHashMap<>();
+    public synchronized CastleDoorSlots.Type doorType(String slotId){
+        CastleDoorSlots.require(slotId);
+        return doorAssignments.getOrDefault(slotId,CastleDoorSlots.Type.EMPTY);
+    }
+    /** One and only one mounted leaf in each architectural socket. */
+    public synchronized void installDoor(String slotId,CastleDoorSlots.Type type){
+        var slot=CastleDoorSlots.require(slotId);
+        Objects.requireNonNull(type);
+        if(type==CastleDoorSlots.Type.EMPTY)throw new IllegalArgumentException("Use removeDoor to leave an arch");
+        if(slot.gate()!=(type==CastleDoorSlots.Type.PORTCULLIS))
+            throw new IllegalArgumentException("Door type incompatible with physical socket");
+        if(doorType(slotId)!=CastleDoorSlots.Type.EMPTY)
+            throw new IllegalStateException("Doorway already occupied: "+slotId);
+        doorAssignments.put(slotId,type);revision++;
+    }
+    public synchronized void removeDoor(String slotId){
+        CastleDoorSlots.require(slotId);
+        if(doorAssignments.remove(slotId)!=null)revision++;
+    }
     private long geometryCacheVersion=-1;
     private List<CastleHubArchitecturalPlan.Wall> cachedWalls=List.of();
     private List<CastleHubArchitecturalPlan.Deck> cachedDecks=List.of();
@@ -128,13 +148,8 @@ public final class CastleLevelEdits {
     }
     /** Real wall collision shared with game navigation and light blockers. */
     public synchronized boolean wallBlocks(double x,double y,double z,double radius){
-        for(Surface s:surfaces.values())if(s.kind()==Kind.WALL
-            &&y+1.55>s.base()&&y<s.base()+s.height()){
-            if(s.z0()==s.z1()&&x>=s.x0()-radius&&x<=s.x1()+radius
-                &&Math.abs(z-s.z0())<=radius)return true;
-            if(s.x0()==s.x1()&&z>=s.z0()-radius&&z<=s.z1()+radius
-                &&Math.abs(x-s.x0())<=radius)return true;
-        }
+        for(Surface s:surfaces.values())if(s.kind()==Kind.WALL &&
+            CastleDoorSlots.containsWall(s.wall(),x,y,z,radius))return true;
         return false;
     }
     public synchronized boolean floorSupports(double x,double z,double height){
@@ -194,7 +209,10 @@ public final class CastleLevelEdits {
         return mesh!=null&&GlbProps.availableModels().contains(mesh);
     }
     private void defaults(){
-        surfaces.clear();
+        surfaces.clear();doorAssignments.clear();
+        for(var slot:CastleDoorSlots.all())
+            if(CastleDoorSlots.initial(slot)!=CastleDoorSlots.Type.EMPTY)
+                doorAssignments.put(slot.id(),CastleDoorSlots.initial(slot));
         int surfaceId=0;
         for(var wall:CastleHubArchitecturalPlan.walls()){
             int index=surfaceId++;
