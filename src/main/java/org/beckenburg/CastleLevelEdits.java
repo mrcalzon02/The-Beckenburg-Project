@@ -218,6 +218,7 @@ public final class CastleLevelEdits {
         }
         props.clear();lamps.clear();stations.clear();floorPaint.clear();
         wallPaint.clear();navBlocked.clear();
+        final int LEGACY_LIGHT_COUNT=17;
         int n=0;
         for(var f:CastleHubDecor.furnishings())
             props.put("ground"+n,fromFurnishing("ground"+n++,f,false,0));
@@ -227,7 +228,8 @@ public final class CastleLevelEdits {
                 CastleHubArchitecturalPlan.GROUND_CEILING));
         n=0;
         for(var f:CastleHubDecor.LIGHTS){
-            String id="fixture"+n++;
+            String id=n<LEGACY_LIGHT_COUNT?"fixture"+n:"lighting2_"+(n-LEGACY_LIGHT_COUNT);
+            n++;
             boolean chandelier=f.on().contains("ceiling_lamp_4");
             lamps.put(id,new Lamp(id,f.on(),f.off(),f.x(),f.y(),f.z(),
                 f.scale(),f.yaw(),f.mount(),chandelier?10.5:9.8,
@@ -403,6 +405,20 @@ public final class CastleLevelEdits {
                         old.x0(),old.z0(),old.x1(),old.z1(),old.base(),old.height(),paint.getValue()));
                 }
             }
+            // Once-only additive lighting upgrade for existing player scenes. Never
+            // replace authored positions or re-add a fixture after the player
+            // removes it from a version-2 saved scene.
+            int lightingVersion=Integer.parseInt(p.getProperty("lighting.layout","1"));
+            if(lightingVersion<2){
+                for(int i=17;i<CastleHubDecor.LIGHTS.size();i++){
+                    var fixture=CastleHubDecor.LIGHTS.get(i);
+                    boolean chandelier=fixture.on().contains("ceiling_lamp_4");
+                    String id="lighting2_"+(i-17);
+                    incomingLights.putIfAbsent(id,new Lamp(id,fixture.on(),fixture.off(),
+                        fixture.x(),fixture.y(),fixture.z(),fixture.scale(),fixture.yaw(),
+                        fixture.mount(),chandelier?10.5:9.8,chandelier?3.2:2.5));
+                }
+            }
             surfaces.clear();surfaces.putAll(parsed);
             props.clear();props.putAll(incomingProps);lamps.clear();lamps.putAll(incomingLights);
             stations.clear();stations.putAll(newStations);
@@ -414,6 +430,7 @@ public final class CastleLevelEdits {
     /** Atomic replacement prevents partial save data if the app is interrupted. */
     public synchronized void save()throws IOException{
         Properties p=new Properties();p.setProperty("format","1");
+        p.setProperty("lighting.layout","2");
         p.setProperty("surfaces.count",""+surfaces.size());
         int surfaceIndex=0;
         for(var surface:surfaces.values()){

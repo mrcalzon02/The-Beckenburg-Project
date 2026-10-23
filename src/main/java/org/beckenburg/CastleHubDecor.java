@@ -1,6 +1,8 @@
 package org.beckenburg;
 
 import java.util.List;
+import java.util.ArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
 /** Authored PSX interior rooms: real purchased meshes, not placeholder furniture. */
 public final class CastleHubDecor {
@@ -82,18 +84,57 @@ public final class CastleHubDecor {
      * A fixture cannot be authored in the sky, over the courtyard, or behind
      * an imaginary wall. Placement, rendering and verification use this list.
      */
+    /** Model-derived height, shared by renderer and support-attached accents.
+     * Cached once per GLB; floor/desk placements never rely on guessed pivots. */
+    private static final ConcurrentHashMap<String,Double> MESH_HEIGHT=new ConcurrentHashMap<>();
+    public static double meshHeight(String mesh){
+        return MESH_HEIGHT.computeIfAbsent(mesh,name->{
+            double lo=Double.POSITIVE_INFINITY,hi=Double.NEGATIVE_INFINITY;
+            for(var triangle:GlbProps.model(name).triangles())
+                for(var v:new GlbProps.Vertex[]{triangle.a(),triangle.b(),triangle.c()}){
+                    lo=Math.min(lo,v.y());hi=Math.max(hi,v.y());
+                }
+            if(!Double.isFinite(lo+hi)||hi<=lo)throw new IllegalStateException("Invalid model bounds "+name);
+            return hi-lo;
+        });
+    }
+    /** A book, tablet or screen belongs to its real table or cabinet. If the
+     * editor moves/deletes the parent, the accent follows or disappears. */
+    public static List<Accent> placedAccents(CastleLevelEdits edits){
+        List<Accent> result=new ArrayList<>();
+        var props=edits.props();
+        for(var accent:ACCENTS){
+            int source=-1;
+            for(int i=0;i<FURNISHINGS.size();i++){
+                var item=FURNISHINGS.get(i);
+                if(Math.hypot(item.x()-accent.x(),item.z()-accent.z())<.03){source=i;break;}
+            }
+            if(source<0){result.add(accent);continue;}
+            String id="ground"+source;
+            var support=props.stream().filter(p->p.id().equals(id)).findFirst().orElse(null);
+            if(support!=null)result.add(new Accent(accent.mesh(),support.x(),
+                support.y()+meshHeight(support.mesh())*support.scale()+.008,
+                support.z(),accent.scale(),accent.yaw()));
+        }
+        return List.copyOf(result);
+    }
     public enum Mount { CEILING, WALL }
     public record Light(String on,String off,double x,double y,double z,
                         double scale,double yaw,Mount mount){
         public boolean attached(CastleHubMap map){
             if(mount==Mount.CEILING)
                 return !map.solid((int)Math.floor(x),(int)Math.floor(z))
-                    &&!map.outside(x,z)&&Math.abs(y-3.38)<.08;
+                    &&!map.outside(x,z)&&CastleHubArchitecturalPlan.roofedAt(x,z)
+                    &&(Math.abs(y-3.38)<.08
+                        ||Math.abs(y-6.78)<.08&&CastleHubArchitecturalPlan.upperWalkable(x,z));
             return CastleHubArchitecturalPlan.mountingWall(x,y,z,yaw);
         }
     }
     private static Light ceiling(String family,double x,double z,double scale){
         return new Light(family+"_on",family+"_off",x,3.38,z,scale,0,Mount.CEILING);
+    }
+    private static Light upperCeiling(String family,double x,double z,double scale){
+        return new Light(family+"_on",family+"_off",x,6.78,z,scale,0,Mount.CEILING);
     }
     private static Light sconce(double x,double z,double yaw){
         return new Light("lamp_3_on","lamp_3_off",x,2.24,z,.72,yaw,Mount.WALL);
@@ -117,7 +158,24 @@ public final class CastleHubDecor {
         sconce(10.30,18.3,Math.PI/2),
         sconce(20.70,18.0,-Math.PI/2),
         sconce(28.70,23.0,-Math.PI/2),
-        sconce(39.0,17.70,Math.PI));
+        sconce(39.0,17.70,Math.PI),
+        // Supplemental room-local emitters: every position is supported by an
+        // authored roof/floor, never the uncovered courtyard. Append-only so
+        // legacy fixture0..fixture16 identifiers remain stable in scene saves.
+        ceiling("ceiling_lamp_1",5.0,9.0,.83),
+        ceiling("ceiling_lamp_4",5.2,23.0,.62),
+        ceiling("ceiling_lamp_1",5.2,29.0,.82),
+        ceiling("ceiling_lamp_1",13.4,8.5,.80),
+        ceiling("ceiling_lamp_4",15.4,3.5,.61),
+        ceiling("ceiling_lamp_1",23.7,8.7,.80),
+        ceiling("ceiling_lamp_1",24.0,26.5,.85),
+        ceiling("ceiling_lamp_4",24.0,30.1,.62),
+        ceiling("ceiling_lamp_1",34.6,6.7,.82),
+        ceiling("ceiling_lamp_4",39.0,12.0,.60),
+        ceiling("ceiling_lamp_1",35.0,21.7,.85),
+        ceiling("ceiling_lamp_1",39.0,29.0,.82),
+        upperCeiling("ceiling_lamp_1",13.5,5.0,.82),
+        upperCeiling("ceiling_lamp_4",16.7,8.7,.64));
     public record Switch(double x,double y,double z,double yaw){}
     public static final List<Switch> SWITCHES=List.of(
         new Switch(10.30,1.45,8.75,Math.PI/2),

@@ -35,7 +35,8 @@ public final class FixtureLighting {
        1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
   }factors=new double[sources.size()];
  }
- public void castleFrame(boolean on,int tick){String stamp=on+":"+(tick/3);if(!state.equals(stamp)){colours.clear();state=stamp;}for(var source:sources)factors[source.id]=source.kind==Kind.CANDLE_CHANDELIER?.94+.06*Math.sin(tick*.3+source.id):on?1:0;}
+ public void castleFrame(boolean on,int tick){String stamp=on+":"+(tick/3);if(!state.equals(stamp)){colours.clear();state=stamp;}for(var source:sources)factors[source.id]=!on?0:
+   source.kind==Kind.CANDLE_CHANDELIER?.94+.06*Math.sin(tick*.3+source.id):1;}
  /** Unified shadow decision for all live light emitters. Investigations use
   * HouseMap's existing 3D doors, colliders and multi-storey visibility.
   * Castle uses its authored solid wall segments, decks and room ceilings.

@@ -1602,11 +1602,15 @@ public final class SceneRenderer {
                     // Use the actual desktop computer, not the wall-mounted
                     // van monitoring screen. Anchor the feet of every GLB to
                     // its surface and center its extents in the desk footprint.
-                    castleProp(castle,"tv_table_1_4",px,0,pz,.83,0);
-                    castleProp(castle,"pc_mp_1",px-.90,0,pz-.20,.65,0);
-                    castleProp(castle,"blender_computer_fixed",px+.08,.66,pz-.18,.54,0);
-                    castleProp(castle,"pc_keyboard_mp_1",px-.10,.65,pz+.21,.48,0);
-                    box(castle,px+.29,.66,pz+.13,.085,.035,.13,0x373942);
+                    double deskScale=.83;
+                    double desktop=CastleHubDecor.meshHeight("tv_table_1_4")*deskScale;
+                    castleProp(castle,"tv_table_1_4",px,0,pz,deskScale,0);
+                    // Position the case beside, not inside, the desk. The CRT,
+                    // keyboard and mouse share its actual measured upper plane.
+                    castleProp(castle,"pc_mp_1",px-.98,0,pz-.17,.65,0);
+                    castleProp(castle,"blender_computer_fixed",px+.08,desktop+.008,pz-.17,.49,0);
+                    castleProp(castle,"pc_keyboard_mp_1",px-.10,desktop+.008,pz+.18,.42,0);
+                    box(castle,px+.30,desktop+.008,pz+.15,.085,.035,.13,0x373942);
                 }
                 case SPECTRAL -> {
                     imported(castle,"display_cabinet_mp_2",px,0,pz,.78,0);
@@ -1624,9 +1628,9 @@ public final class SceneRenderer {
             box(castle,editorSelection[0]-.04,editorSelection[1]+.02,
                 editorSelection[2]-.04,.08,1.4,.08,0xffcb54);
         }
-        for(CastleHubDecor.Accent a:CastleHubDecor.ACCENTS)
+        for(CastleHubDecor.Accent a:CastleHubDecor.placedAccents(edits))
             if(Math.hypot(a.x()-x,a.z()-z)<12)
-                imported(castle,a.mesh(),a.x(),a.y(),a.z(),a.scale(),a.yaw());
+                castleProp(castle,a.mesh(),a.x(),a.y(),a.z(),a.scale(),a.yaw());
         // Castle entrance arch; courtyard remains open to the procedural sky.
         box(castle,12.75,0,11.20,.40,3.0,.38,0x625c60);
         box(castle,14.10,0,11.20,.40,3.0,.38,0x625c60);
