@@ -42,7 +42,7 @@ public final class HardEvidenceQuotaTest {
             "Every ghost must have its own uniquely identifying three-evidence combination");
         int dotsSpecies=0,high=0,low=0,none=0;
         for(var species:GhostIdentity.Type.values()){
-            if(species.ancient())continue; // original EMF demographics remain 5/5/3
+            if(species.ancient()||species.elder())continue; // Census covers the original 13, not the separately balanced Elder tier
             if(GhostEvidenceProfile.dotsVisible(species))dotsSpecies++;
             switch(GhostEvidenceProfile.emfBand(species)){
                 case HIGH->high++;

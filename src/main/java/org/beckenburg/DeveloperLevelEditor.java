@@ -139,6 +139,7 @@ public final class DeveloperLevelEditor extends JPanel {
                     if(e.getKeyCode()==KeyEvent.VK_S){save();return;}
                     if(e.getKeyCode()==KeyEvent.VK_Z){undo();return;}
                     if(e.getKeyCode()==KeyEvent.VK_Y){redo();return;}
+                    if(e.getKeyCode()==KeyEvent.VK_D){duplicate();return;}
                 }
                 if(e.getKeyCode()==KeyEvent.VK_DELETE){remove();return;}
                 if(e.getKeyCode()==KeyEvent.VK_G){chooseTool(EditorTool.MOVE);return;}
@@ -603,7 +604,10 @@ public final class DeveloperLevelEditor extends JPanel {
                 pick(fromX,fromY);
                 if(chosen!=null){
                     modifying=true;
-                    try{x.setValue(end.x);z.setValue(end.z);}
+                    try{
+                        x.setValue(clamp(value(x)+end.x-begin.x,0,CastleHubMap.WIDTH));
+                        z.setValue(clamp(value(z)+end.z-begin.z,0,CastleHubMap.HEIGHT));
+                    }
                     finally{modifying=false;}
                     applySelection();
                 }

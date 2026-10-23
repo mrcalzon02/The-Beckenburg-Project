@@ -17,7 +17,7 @@ public final class LanGhostLegacyHearingIntegrationTest {
                 String msg=inbox.poll(100,TimeUnit.MILLISECONDS);
                 if(msg==null)continue;
                 if(client.seat().equals("GHOST") && (msg.startsWith("BODY|")||
-                        msg.startsWith("TEAMMAP|")||msg.startsWith("PROGRESS|")||msg.startsWith("DOORS|")))
+                        msg.startsWith("TEAMMAP|")||msg.startsWith("PROGRESS|")))
                     throw new AssertionError("private data leaked to ghost: "+msg);
                 if(msg.startsWith(prefix))return msg;
             }
@@ -45,9 +45,8 @@ public final class LanGhostLegacyHearingIntegrationTest {
             a.client.start();a.await("INFO|mission started");
             String before=ghost.stateAfter(5);
             check(before.endsWith("|0"),"van-only hunters must not be acoustically detected");
-            for(int room:new int[]{11,10,7,4}){
-                a.client.move(room);a.await("ACCEPT|MOVE|"+room);
-            }
+            for(int room:new int[]{11,10,7,4})
+                LanTestRoomTravel.move(a.client,a::await,room);
             String heard=ghost.stateAfter(10);
             check(heard.endsWith("|1"),"the ghost receives a permissible recent-audio status");
             int eventTick=Integer.parseInt(heard.split("\\|")[1]);

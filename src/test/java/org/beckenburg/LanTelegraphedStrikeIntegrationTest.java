@@ -38,7 +38,7 @@ public final class LanTelegraphedStrikeIntegrationTest {
             Peer g=new Peer(server.port(),true,"Spirit")){
             a.client.ready();b.client.ready();c.client.ready();g.client.ready();
             a.expect("LOBBY|3|HUMAN|4|WAITING");a.client.start();a.expect("INFO|mission started");
-            for(int room:new int[]{11,8,5,4}){a.client.move(room);a.expect("ACCEPT|MOVE|"+room);}
+            for(int room:new int[]{11,8,5,4})LanTestRoomTravel.move(a.client,a::expect,room);
             a.client.view3D();a.expect("ACCEPT|VIEW3D");
             g.client.viewGhost3D();g.expect("ACCEPT|GVIEW3D");
             g.tickAtLeast(170);

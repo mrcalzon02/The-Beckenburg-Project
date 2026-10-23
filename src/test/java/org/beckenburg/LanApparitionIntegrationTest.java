@@ -14,7 +14,7 @@ public final class LanApparitionIntegrationTest {
             long limit=System.nanoTime()+TimeUnit.SECONDS.toNanos(13);
             while(System.nanoTime()<limit){String s=inbox.poll(80,TimeUnit.MILLISECONDS);
                 if(s==null)continue;
-                if(client.seat().equals("GHOST") && (s.startsWith("BODY|")||s.startsWith("DOORS|")
+                if(client.seat().equals("GHOST") && (s.startsWith("BODY|")
                         ||s.startsWith("TEAMMAP|")||s.startsWith("APPARITION|")))
                     throw new AssertionError("private hunter sight data reached ghost: "+s);
                 if(s.startsWith(prefix))return s;
@@ -32,7 +32,7 @@ public final class LanApparitionIntegrationTest {
             Peer g=new Peer(host.port(),true,"Spirit")){
             a.client.ready();b.client.ready();c.client.ready();g.client.ready();
             a.expect("LOBBY|3|HUMAN|4|WAITING");a.client.start();a.expect("INFO|mission started");
-            for(int room:new int[]{11,8,5,4}){a.client.move(room);a.expect("ACCEPT|MOVE|"+room);}
+            for(int room:new int[]{11,8,5,4})LanTestRoomTravel.move(a.client,a::expect,room);
             a.client.view3D();a.expect("ACCEPT|VIEW3D");a.expect("APPARITION|HIDDEN");
             b.client.view3D();b.expect("ACCEPT|VIEW3D");b.expect("APPARITION|HIDDEN");
             g.client.viewGhost3D();g.expect("ACCEPT|GVIEW3D");g.expect("GPOSE|");

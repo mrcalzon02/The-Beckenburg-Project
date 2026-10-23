@@ -13,12 +13,14 @@ public final class LanGhostPursuitTest {
         brain.heard(4,10,12.6,21.3,LanGhostPursuit.Sound.FOOTSTEP,1);
         ok(brain.memory(1)==null,"distant footsteps cannot become omniscient targets");
         // An actionable, loud equipment event one room east is audible and quantized.
-        brain.heard(4,5,20.4,9.2,LanGhostPursuit.Sound.EQUIPMENT,1);
+        double sourceX=map.centerX(5),sourceZ=map.centerZ(5);
+        double cellX=2*Math.floor(sourceX/2)+1,cellZ=2*Math.floor(sourceZ/2)+1;
+        brain.heard(4,5,sourceX,sourceZ,LanGhostPursuit.Sound.EQUIPMENT,1);
         LanGhostPursuit.Echo e=brain.memory(1);
-        ok(e!=null&&e.room()==5&&e.approximateX()==21&&e.approximateZ()==9,
+        ok(e!=null&&e.room()==5&&e.approximateX()==cellX&&e.approximateZ()==cellZ,
                 "heard signal provides coarse area, not exact body coordinates");
-        brain.heard(4,5,20.9,9.7,LanGhostPursuit.Sound.EQUIPMENT,2);
-        ok(brain.memory(2).approximateX()==21&&brain.memory(2).approximateZ()==9,
+        brain.heard(4,5,sourceX,sourceZ,LanGhostPursuit.Sound.EQUIPMENT,2);
+        ok(brain.memory(2).approximateX()==cellX&&brain.memory(2).approximateZ()==cellZ,
                 "same-cell movement cannot disclose sub-tile movement");
         GhostDomain.Observation obs=ghost.observe();
         // Tick 0 legal DRIFT; same observed conditions for either AI/human command.

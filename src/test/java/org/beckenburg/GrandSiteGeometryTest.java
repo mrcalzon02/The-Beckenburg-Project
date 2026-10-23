@@ -10,7 +10,7 @@ public final class GrandSiteGeometryTest {
     var sw=RoomLighting.location(map,room);AuthoredTestSupport.check(Math.abs(sw.y()-map.floorY(room)-1.2)<.1,"switch elevation "+room);
     var p=map.spawn(room);AuthoredTestSupport.check(map.traversable(p.x(),p.y(),p.z()),"clear circulation "+room);
    }
-   int count=0;for(var p:map.level().portals())if(p.door()){AuthoredTestSupport.check(map.openDoorBetweenRooms(p.a(),p.b()),"real door opens "+p.id());count++;}
+   int count=0;for(var p:map.level().portals())if(p.door()){map.openDoorBetweenRooms(p.a(),p.b());AuthoredTestSupport.check(map.doorOpen(p.id()),"real door opens "+p.id());count++;}
    AuthoredTestSupport.check(count>=10,"substantial authored door network");
    HouseMap peer=new HouseMap(site);peer.applyDoorSnapshot(map.doorSnapshot());
    for(var p:map.level().portals())if(p.door())AuthoredTestSupport.check(peer.doorOpen(p.id()),"stable portal ID replay "+p.id());

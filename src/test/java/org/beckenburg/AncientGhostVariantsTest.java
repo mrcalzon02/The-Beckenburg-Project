@@ -68,8 +68,8 @@ public final class AncientGhostVariantsTest {
         ok(ancient.x()==normal.x()&&ancient.z()==normal.z(),
             "Tint reuses parent's identical physical apparition geometry");
 
-        // Ancient sprite selection must return the parent's actual art, frame
-        // for frame, even with the expanded atlas installed. Only rendering tints it.
+        // The shipped expansion contains deliberately distinct Ancient PSX atlas frames.
+        // Verify every approved direction resolves and differs from its parent.
         for(GhostIdentity.Type species:roster)if(species.ancient()){
             String parent=species.baseType().name().toLowerCase(java.util.Locale.ROOT);
             String ancientName=species.name().toLowerCase(java.util.Locale.ROOT);
@@ -78,12 +78,15 @@ public final class AncientGhostVariantsTest {
                     LanGhostAnimation.Phase.LURK,0);
                 var ancientFrame=DirectionalSprites.frame(ancientName,facing,
                     LanGhostAnimation.Phase.LURK,0);
-                ok(java.util.Arrays.equals(
-                        parentFrame.getRGB(0,0,parentFrame.getWidth(),parentFrame.getHeight(),
-                            null,0,parentFrame.getWidth()),
-                        ancientFrame.getRGB(0,0,ancientFrame.getWidth(),ancientFrame.getHeight(),
-                            null,0,ancientFrame.getWidth())),
-                    "Ancient must reuse parent's actual directional art: "+species+
+                ok(GhostSpriteAtlas.supports(ancientName)
+                        &&parentFrame.getWidth()==ancientFrame.getWidth()
+                        &&parentFrame.getHeight()==ancientFrame.getHeight()
+                        &&!java.util.Arrays.equals(
+                            parentFrame.getRGB(0,0,parentFrame.getWidth(),parentFrame.getHeight(),
+                                null,0,parentFrame.getWidth()),
+                            ancientFrame.getRGB(0,0,ancientFrame.getWidth(),ancientFrame.getHeight(),
+                                null,0,ancientFrame.getWidth())),
+                    "Ancient must use its distinct shipped directional art: "+species+
                         " facing "+facing);
             }
         }
