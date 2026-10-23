@@ -35,6 +35,12 @@ public final class CastleLiveRepairVisualTest {
         view.x=13.5;view.z=26;view.eyeHeight=1.62;
         view.yaw=Math.PI;view.pitch=.18;
         capture(view,map,"castle-rooflines");
+        view.x=13.5;view.z=20.5;view.eyeHeight=1.62;
+        view.yaw=0;view.pitch=-.10;
+        capture(view,map,"courtyard-van-and-castle-towers");
+        view.x=35;view.z=24.5;view.eyeHeight=1.62;
+        view.yaw=-Math.PI/2;view.pitch=-.12;
+        capture(view,map,"castle-stocked-equipment-warehouse");
         view.x=15.5;view.z=31.3;view.eyeHeight=1.62;
         view.yaw=0;view.pitch=-.07;
         capture(view,map,"castle-entrance-leaf");

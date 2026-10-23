@@ -29,6 +29,7 @@ on:
       - 'build.cmd'
       - 'src/main/java/org/beckenburg/CampaignStorePanel.java'
       - 'src/test/java/org/beckenburg/CastleLiveRepairTest.java'
+      - 'src/test/java/org/beckenburg/CastleHeadquartersRevisionTest.java'
       - '.github/workflows/focused-castle-repairs.yml'
   workflow_dispatch:
 permissions:
@@ -81,6 +82,10 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleFurnitureWallAuditTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleFurnitureWallAuditTest
+          if errorlevel 1 exit /b 1
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleHeadquartersRevisionTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleHeadquartersRevisionTest
           if errorlevel 1 exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\DeveloperLevelEditorDataTest.java
           if errorlevel 1 exit /b 1

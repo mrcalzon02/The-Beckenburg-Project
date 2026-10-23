@@ -66,14 +66,15 @@ public final class CampaignStorePanel extends JPanel {
             JComboBox<EquipmentLoadout.Item> box=new JComboBox<>();
             box.setName("campaign.store.slot."+i);
             box.setToolTipText("Mission instrument slot "+(i+1));
-            box.setPreferredSize(new Dimension(122,26));
+            box.setPreferredSize(new Dimension(96,26));
             slots.add(box);preparation.add(box);
         }
         JButton commit=new JButton("SAVE LOADOUT");
         commit.setName("campaign.store.prepare");
         commit.addActionListener(e->prepareSelected());
         preparation.add(commit);
-        preparedStatus.setForeground(PAPER);preparation.add(preparedStatus);
+        preparedStatus.setForeground(PAPER);
+        footer.add(preparedStatus);
         JPanel bottom=new JPanel(new BorderLayout());bottom.setOpaque(false);
         bottom.add(preparation,BorderLayout.NORTH);
         bottom.add(footer,BorderLayout.SOUTH);add(bottom,BorderLayout.SOUTH);

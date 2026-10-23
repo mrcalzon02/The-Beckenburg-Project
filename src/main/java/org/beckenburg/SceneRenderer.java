@@ -1640,7 +1640,7 @@ public final class SceneRenderer {
             castleProp(castle,"display_cabinet_mp_2",CastleWarehouse.COUNTER_X,0,
                 CastleWarehouse.COUNTER_Z,.78,0);
         for(var exhibit:CastleWarehouse.exhibits())
-            if(Math.hypot(exhibit.x()-x,exhibit.z()-z)<13)
+            if(Math.hypot(exhibit.x()-x,exhibit.z()-z)<7.0)
                 castleProp(castle,exhibit.mesh(),exhibit.x(),exhibit.y(),exhibit.z(),
                     exhibit.scale(),0);
         // Purchased source-backed fixtures occupy authored locations and match hub collision.
