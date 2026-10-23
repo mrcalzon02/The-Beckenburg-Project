@@ -77,7 +77,8 @@ public final class GpuDesktop {
   long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(25);
   while(System.nanoTime()<deadline){
    var result=ENGINE.latest();
-   if(result!=null&&result.width()==width&&result.height()==height){
+   if(result!=null&&result.frameId()>=renderer.submittedGpuFrameId()
+       &&result.width()==width&&result.height()==height){
     int visible=0;
     for(int argb:result.argb())if((argb>>>24)>127)visible++;
     if(visible>400)return result;
@@ -109,8 +110,9 @@ public final class GpuDesktop {
   while(System.nanoTime()<deadline&&ENGINE.latest()==previous)
    Thread.sleep(40);
   var castle=ENGINE.latest();
-  if(castle==previous||castle==null)
-   throw new IllegalStateException("Castle geometry did not reach OpenGL");
+  if(castle==previous||castle==null||
+      castle.frameId()<second.submittedGpuFrameId())
+   throw new IllegalStateException("Fresh castle geometry did not reach OpenGL");
   int castlePixels=0;
   for(int rgba:castle.argb())if((rgba>>>24)>127)castlePixels++;
   if(castlePixels<8000)

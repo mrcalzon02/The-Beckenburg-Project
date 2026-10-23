@@ -1330,6 +1330,11 @@ public final class SceneRenderer {
         dst.vertex(litVertex(face.b,face.bu,face.bv,face.material,room),face.color);
         dst.vertex(litVertex(face.c,face.cu,face.cv,face.material,room),face.color);
     }
+    private final long gpuSceneId=GpuWorldRenderer.nextId();
+    private long lastSubmittedGpuFrame;
+    /** GPU acceptance must verify the NEW scene was rendered, not merely a
+     * previous resident framebuffer with coincidentally identical dimensions. */
+    public long submittedGpuFrameId(){return lastSubmittedGpuFrame;}
     private boolean drawGpuFaces(List<Face> faces,HouseMap map){
         GpuWorldRenderer backend=GpuWorldRenderer.active();
         if(backend==null)return false;
@@ -1349,10 +1354,13 @@ public final class SceneRenderer {
         for(var entry:batches.entrySet())
             surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),
                 entry.getValue().complete()));
-        backend.submit(new GpuWorldRenderer.Frame(renderWidth,renderHeight,(float)focal,
+        long submitted=GpuWorldRenderer.nextId();
+        lastSubmittedGpuFrame=submitted;
+        backend.submit(new GpuWorldRenderer.Frame(gpuSceneId,submitted,
+            renderWidth,renderHeight,(float)focal,
             (float)psxPreset.snap,(float)psxPreset.affine,surfaces));
         GpuWorldRenderer.Result available=backend.latest();
-        if(available!=null&&available.width()==renderWidth&&available.height()==renderHeight){
+        if(GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight)){
             int[] image=available.argb();
             float[] zbuffer=available.depth();
             for(int i=0;i<pixels.length;i++){

@@ -17,9 +17,9 @@ public interface GpuWorldRenderer {
             if(vertices.length%24!=0)throw new IllegalArgumentException("Invalid GPU triangle batch");
         }
     }
-    record Frame(int width,int height,float focal,float vertexSnap,float affineWarp,List<Surface> surfaces) {
+    record Frame(long sceneId,long frameId,int width,int height,float focal,float vertexSnap,float affineWarp,List<Surface> surfaces) {
         public Frame {
-            if(width<160||height<120||!Float.isFinite(focal)||focal<=0
+            if(sceneId<=0||frameId<=0||width<160||height<120||!Float.isFinite(focal)||focal<=0
                 ||!Float.isFinite(vertexSnap)||vertexSnap<0
                 ||!Float.isFinite(affineWarp)||affineWarp<0||affineWarp>1
                 ||surfaces==null)throw new IllegalArgumentException("Bad GPU scene frame");
@@ -27,11 +27,20 @@ public interface GpuWorldRenderer {
         }
     }
     /** ARGB with transparent clear pixels; linearized camera depth in metres. */
-    record Result(int width,int height,int[] argb,float[] depth) {
+    record Result(long sceneId,long frameId,int width,int height,int[] argb,float[] depth) {
         public Result {
-            if(argb.length!=width*height||depth.length!=argb.length)
+            if(sceneId<=0||frameId<=0||width<160||height<120
+                ||argb==null||depth==null||argb.length!=width*height||depth.length!=argb.length)
                 throw new IllegalArgumentException("Invalid GPU readback");
         }
+    }
+    /** Unique identities prevent one scene renderer from accepting another's
+     * stale color/depth readback when changing maps or returning to the castle. */
+    java.util.concurrent.atomic.AtomicLong NEXT_ID=new java.util.concurrent.atomic.AtomicLong();
+    static long nextId(){return NEXT_ID.incrementAndGet();}
+    static boolean belongsTo(Result result,long sceneId,int width,int height){
+        return result!=null&&result.sceneId()==sceneId
+            &&result.width()==width&&result.height()==height;
     }
     AtomicReference<GpuWorldRenderer> INSTALLED=new AtomicReference<>();
     static void install(GpuWorldRenderer backend) {

@@ -83,12 +83,14 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private final Map<Integer,Texture> textures=new HashMap<>();
  private final Map<Integer,Mesh> meshes=new HashMap<>();
  private final Map<Integer,Integer> capacity=new HashMap<>();
+ private long lastSlowReportNs;
  public CompletableFuture<String> initialization(){return initialized;}
  @Override public boolean ready(){return ready&&!closed;}
  @Override public Result latest(){return latest;}
  @Override public void submit(Frame frame){
   if(!ready())throw new IllegalStateException("OpenGL worker no longer active");
   pending.set(Objects.requireNonNull(frame));
+  Gdx.graphics.requestRendering();
  }
  @Override public String rendererDescription(){return description;}
  @Override public void create(){
@@ -98,7 +100,8 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    description="OpenGL "+Gdx.gl.glGetString(GL20.GL_RENDERER)+" / "+
       Gdx.gl.glGetString(GL20.GL_VERSION);
    ready=true;initialized.complete(description);
-   Gdx.graphics.setContinuousRendering(true);
+   // No idle spinning: submit() explicitly wakes the OpenGL thread.
+   Gdx.graphics.setContinuousRendering(false);
   }catch(Throwable error){
    closed=true;initialized.completeExceptionally(error);throw error;
   }
@@ -155,6 +158,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   meshes.put(material,created);capacity.put(material,size);return created;
  }
  private void draw(Frame frame){
+  long started=System.nanoTime();
   resizeTarget(frame.width(),frame.height());
   target.begin();
   Gdx.gl.glViewport(0,0,targetWidth,targetHeight);
@@ -183,7 +187,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    texture(surface.material()).bind(0);
    draw.render(shader,GL20.GL_TRIANGLES,0,vertexCount);
   }
-  Gdx.gl.glFinish();
+  // glReadPixels itself synchronizes the requested framebuffer transfers.
+  // glFinish beforehand stalls the entire graphics queue for no benefit.
+  long rasterReady=System.nanoTime();
   colorBytes.clear();depthFloats.clear();
   Gdx.gl.glReadPixels(0,0,targetWidth,targetHeight,
     GL20.GL_RGBA,GL20.GL_UNSIGNED_BYTE,colorBytes);
@@ -204,7 +210,16 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    }
   }
   target.end();
-  latest=new Result(targetWidth,targetHeight,argb,depth);
+  latest=new Result(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,argb,depth);
+  long finished=System.nanoTime();
+  if(finished-started>200_000_000L&&finished-lastSlowReportNs>5_000_000_000L){
+   lastSlowReportNs=finished;
+   System.err.println("GPU FRAME SLOW id="+frame.frameId()+
+      " surfaces="+frame.surfaces().size()+
+      " target="+targetWidth+"x"+targetHeight+
+      " submit_to_raster_ms="+(rasterReady-started)/1_000_000+
+      " readback_ms="+(finished-rasterReady)/1_000_000);
+  }
  }
  @Override public void render(){
   Frame frame=pending.getAndSet(null);
