@@ -162,13 +162,15 @@ public final class CastleLevelEdits {
     public record Snapshot(List<Prop> props,List<Lamp> lamps,List<Surface> surfaces,
         Map<String,double[]> stations,Map<Integer,Integer> floorPaint,
         Map<Integer,Integer> wallPaint,Set<Integer> navBlocked,
+        Map<String,CastleDoorSlots.Type> doors,
         double spawnX,double spawnZ,double spawnYaw){}
     public synchronized Snapshot snapshot(){
         Map<String,double[]> coords=new LinkedHashMap<>();
         for(var item:stations.entrySet())coords.put(item.getKey().name(),item.getValue().clone());
         return new Snapshot(List.copyOf(props.values()),List.copyOf(lamps.values()),
             List.copyOf(surfaces.values()),coords,Map.copyOf(floorPaint),
-            Map.copyOf(wallPaint),Set.copyOf(navBlocked),spawnX,spawnZ,spawnYaw);
+            Map.copyOf(wallPaint),Set.copyOf(navBlocked),
+            Map.copyOf(doorAssignments),spawnX,spawnZ,spawnYaw);
     }
     public synchronized void restore(Snapshot snapshot){
         Objects.requireNonNull(snapshot);
@@ -180,6 +182,7 @@ public final class CastleLevelEdits {
         floorPaint.clear();floorPaint.putAll(snapshot.floorPaint());
         wallPaint.clear();wallPaint.putAll(snapshot.wallPaint());
         navBlocked.clear();navBlocked.addAll(snapshot.navBlocked());
+        doorAssignments.clear();doorAssignments.putAll(snapshot.doors());
         spawnX=snapshot.spawnX();spawnZ=snapshot.spawnZ();spawnYaw=snapshot.spawnYaw();
         revision++;
     }
@@ -450,7 +453,46 @@ public final class CastleLevelEdits {
                         deck.height(),.16,deck.material()));
                 }
             }
+            // The old south wall was one solid line across the future gate.
+            // Re-cut only the exact unmodified legacy surface. Keep edited
+            // player walls intact instead of silently deleting custom geometry.
+            if(Integer.parseInt(p.getProperty("gate.layout","1"))<2){
+                var former=parsed.get("wall2");
+                if(former!=null&&former.kind()==Kind.WALL
+                    &&former.x0()==1.0&&former.x1()==43.0
+                    &&former.z0()==34.0&&former.z1()==34.0
+                    &&former.base()==0&&former.height()==CastleHubArchitecturalPlan.GROUND_CEILING){
+                    parsed.remove("wall2");
+                    parsed.put("gate-west-masonry",new Surface("gate-west-masonry",Kind.WALL,
+                        1,34,13.2,34,0,CastleHubArchitecturalPlan.GROUND_CEILING,former.material()));
+                    parsed.put("gate-east-masonry",new Surface("gate-east-masonry",Kind.WALL,
+                        17.8,34,43,34,0,CastleHubArchitecturalPlan.GROUND_CEILING,former.material()));
+                    parsed.put("gate-header-masonry",new Surface("gate-header-masonry",Kind.WALL,
+                        13.2,34,17.8,34,2.95,.45,former.material()));
+                }
+            }
+            Map<String,CastleDoorSlots.Type> loadedDoors=new LinkedHashMap<>();
+            if(p.containsKey("doors.count")){
+                int total=integer(p,"doors.count");
+                if(total<0||total>CastleDoorSlots.all().size())
+                    throw new IllegalArgumentException("Invalid number of mounted doors");
+                for(int i=0;i<total;i++){
+                    String prefix="doors."+i+".";
+                    String id=p.getProperty(prefix+"id");
+                    var slot=CastleDoorSlots.require(id);
+                    CastleDoorSlots.Type type=CastleDoorSlots.Type.valueOf(p.getProperty(prefix+"type"));
+                    if(type==CastleDoorSlots.Type.EMPTY
+                        ||slot.gate()!=(type==CastleDoorSlots.Type.PORTCULLIS)
+                        ||loadedDoors.putIfAbsent(id,type)!=null)
+                        throw new IllegalArgumentException("Duplicate or invalid doorway assignment "+id);
+                }
+            }else{
+                for(var slot:CastleDoorSlots.all())
+                    if(CastleDoorSlots.initial(slot)!=CastleDoorSlots.Type.EMPTY)
+                        loadedDoors.put(slot.id(),CastleDoorSlots.initial(slot));
+            }
             surfaces.clear();surfaces.putAll(parsed);
+            doorAssignments.clear();doorAssignments.putAll(loadedDoors);
             props.clear();props.putAll(incomingProps);lamps.clear();lamps.putAll(incomingLights);
             stations.clear();stations.putAll(newStations);
             floorPaint.clear();floorPaint.putAll(newFloor);wallPaint.clear();wallPaint.putAll(newWalls);
@@ -463,6 +505,14 @@ public final class CastleLevelEdits {
         Properties p=new Properties();p.setProperty("format","1");
         p.setProperty("lighting.layout","2");
         p.setProperty("fortification.layout","2");
+        p.setProperty("gate.layout","2");
+        p.setProperty("doors.count",String.valueOf(doorAssignments.size()));
+        int di=0;
+        for(var assigned:doorAssignments.entrySet()){
+            String prefix="doors."+(di++)+".";
+            p.setProperty(prefix+"id",assigned.getKey());
+            p.setProperty(prefix+"type",assigned.getValue().name());
+        }
         p.setProperty("surfaces.count",""+surfaces.size());
         int surfaceIndex=0;
         for(var surface:surfaces.values()){

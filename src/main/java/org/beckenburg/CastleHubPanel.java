@@ -144,8 +144,16 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         int key=e.getKeyCode();if(down.contains(key))return;
         if(key==KeyEvent.VK_ESCAPE){actions.menu();return;}
         if(key==KeyEvent.VK_E){
-            if(elevation>1.8){notice="Return to the ground floor to use workstations.";noticeTicks=90;}
-            else use(CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null?
+            var portal=elevation<=1.8?map.aimedDoor(renderer.x,renderer.z,renderer.yaw):null;
+            if(portal!=null){
+                boolean open=map.toggleDoor(portal.id());
+                GameSfx.play(LanSound.Cue.SWITCH);
+                notice=(portal.gate()?"Courtyard portcullis":"Castle door")+
+                    (open?" raised / passage clear.":" closed / passage secured.");
+                noticeTicks=130;
+            }else if(elevation>1.8){
+                notice="Return to the ground floor to use workstations.";noticeTicks=90;
+            }else use(CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null?
                 null:map.aimed(renderer.x,renderer.z,renderer.yaw));
         }
         if(key==KeyEvent.VK_CONTROL){crouched=!crouched;notice=crouched?"Crouched / Ctrl to stand":"Standing";noticeTicks=60;}
@@ -182,8 +190,12 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             boolean atSwitch=elevation<=1.8&&
                 CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null;
             boolean atWarehouse=elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
-            if(station!=null||atSwitch||atWarehouse){
-                String label=atSwitch?"CASTLE LIGHT SWITCH":atWarehouse?
+            var atDoor=elevation<=1.8?map.aimedDoor(renderer.x,renderer.z,renderer.yaw):null;
+            if(atDoor!=null||station!=null||atSwitch||atWarehouse){
+                String label=atDoor!=null?
+                    (map.doorOpen(atDoor.id())?"CLOSE ":"OPEN ")+
+                    (atDoor.gate()?"COURTYARD PORTCULLIS":"CASTLE DOOR"):
+                    atSwitch?"CASTLE LIGHT SWITCH":atWarehouse?
                     "WAREHOUSE COUNTER / PURCHASE AND PREPARE":station.label;
                 int labelWidth=Math.min(w-24,Math.max(250,g.getFontMetrics().stringWidth(label)+50));
                 int left=(w-labelWidth)/2;

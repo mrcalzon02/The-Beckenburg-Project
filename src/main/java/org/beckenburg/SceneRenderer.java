@@ -1523,7 +1523,8 @@ public final class SceneRenderer {
                 // Solid lintels are ordinary thick wall surfaces, not fake closed arches.
                 double left=wall.horizontal()?wall.x0():wall.z0();
                 double right=wall.horizontal()?wall.x1():wall.z1();
-                double y0=wall.bottom(),y1=y0+CastleHubArchitecturalPlan.DOOR_HEIGHT;
+                double y0=wall.bottom(),y1=y0+(Math.abs(wall.portalCenter()-15.5)<.01
+                    &&Math.abs(wall.z0()-34)<.01?2.95:CastleHubArchitecturalPlan.DOOR_HEIGHT);
                 if(wall.horizontal()){
                     box(out,left-.085,y0,wall.z0()-.16,.17,y1-y0,.32,0x786c5b);
                     box(out,right-.085,y0,wall.z0()-.16,.17,y1-y0,.32,0x786c5b);

@@ -40,6 +40,11 @@ public final class CastleDoorSlots {
   return List.copyOf(slots);
  }
  public static List<Slot> all(){return SLOTS;}
+ /** A slot is a single point of authority for occupancy, not overlapping door meshes. */
+ public static boolean canInstall(String id,Type type){
+  Slot slot=require(id);
+  return type!=null&&type!=Type.EMPTY&&(slot.gate()==(type==Type.PORTCULLIS));
+ }
  public static Slot require(String id){
   return SLOTS.stream().filter(s->s.id().equals(id)).findFirst().orElseThrow(
       ()->new IllegalArgumentException("Unknown physical castle doorway "+id));
