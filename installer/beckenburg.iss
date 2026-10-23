@@ -20,6 +20,7 @@ UninstallDisplayIcon={app}\Beckenburg.exe
 Source: "..\dist\Beckenburg\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 [Icons]
 Name: "{group}\Beckenburg"; Filename: "{app}\Beckenburg.exe"
+Name: "{group}\Beckenburg (Software Renderer)"; Filename: "{app}\Beckenburg.exe"; Parameters: "--software"; WorkingDir: "{app}"
 Name: "{group}\Beckenburg Level Editor"; Filename: "{app}\Beckenburg.exe"; Parameters: "--editor"; WorkingDir: "{app}"
 Name: "{autodesktop}\Beckenburg"; Filename: "{app}\Beckenburg.exe"; Tasks: desktopicon
 [Tasks]

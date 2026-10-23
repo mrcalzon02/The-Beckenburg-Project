@@ -66,12 +66,28 @@ jobs:
         shell: cmd
         run: call build.cmd package
 
-      - name: Bundle Java runtime with Windows application
+      - name: Bundle actual Java 17 OpenGL 3.3 backend and game assets
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          mvn -B -ntp -f gpu-client/pom.xml -DskipTests package
+          if ($LASTEXITCODE -ne 0) { throw 'GPU client dependency packaging failed' }
+          $gpu='gpu-client/target/BeckenburgGPU.jar'
+          if (!(Test-Path $gpu)) { throw 'OpenGL GPU application JAR missing' }
+          $contents=& jar --list --file $gpu
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect GPU application' }
+          foreach ($needed in @('org/beckenburg/gpu/GpuDesktop.class',
+              'org/beckenburg/gpu/OpenGlWorldRenderer.class',
+              'org/beckenburg/InvestigationGame.class')) {
+            if ($contents -notcontains $needed) { throw "Packaged GPU app missing $needed" }
+          }
+          Copy-Item $gpu build/BeckenburgGPU.jar -Force
+      - name: Bundle Java runtime with GPU-first Windows application
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force dist | Out-Null
-          jpackage --type app-image --name Beckenburg --input build --main-jar beckenburg-game.jar --dest dist --java-options "-Dfile.encoding=UTF-8"
-          if ($LASTEXITCODE -ne 0) { throw 'jpackage failed' }
+          jpackage --type app-image --name Beckenburg --input build --main-jar BeckenburgGPU.jar --dest dist --java-options "-Dfile.encoding=UTF-8"
+          if ($LASTEXITCODE -ne 0) { throw 'GPU-first jpackage failed' }
 
       - name: Include editor with installed project files
         shell: pwsh
