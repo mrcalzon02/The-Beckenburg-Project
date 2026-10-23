@@ -9,6 +9,7 @@ on:
       - 'src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java'
       - 'src/test/java/org/beckenburg/LightingOcclusionRepairTest.java'
       - 'src/test/java/org/beckenburg/CastleLightingPlacementRepairTest.java'
+      - 'src/test/java/org/beckenburg/CastleFurnitureWallAuditTest.java'
       - 'src/main/java/org/beckenburg/CastleLevelEdits.java'
       - 'src/main/java/org/beckenburg/DeveloperLevelEditor.java'
       - 'src/main/java/org/beckenburg/editor/**'
@@ -76,6 +77,10 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleLightingPlacementRepairTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleLightingPlacementRepairTest
+          if errorlevel 1 exit /b 1
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleFurnitureWallAuditTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleFurnitureWallAuditTest
           if errorlevel 1 exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\DeveloperLevelEditorDataTest.java
           if errorlevel 1 exit /b 1
