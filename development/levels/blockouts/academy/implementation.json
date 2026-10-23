@@ -1,0 +1,467 @@
+{
+  "id": "ACADEMY",
+  "title": "St. Alban Academy",
+  "source": "layouts\\academy\\layout.json",
+  "source_sha256": "46ddfa3e1e57e67c0ce51518da8dfe0b040f0d3f2b716850ec3ae0359244bdc5",
+  "zones": 17,
+  "routes": 20,
+  "shell_openings": [
+    {
+      "zone": "reception",
+      "side": "N",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "reception",
+      "side": "N",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "reception",
+      "side": "S",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "reception",
+      "side": "S",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "S",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "S",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "E",
+      "link": "L16",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "E",
+      "link": "L16",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "N",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "N",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "W",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "W",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "N",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "N",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "E",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "E",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "E",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "E",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "library",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "library",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lecture",
+      "side": "N",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lecture",
+      "side": "N",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lecture",
+      "side": "S",
+      "link": "L17",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "lecture",
+      "side": "S",
+      "link": "L17",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "lecture",
+      "side": "W",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lecture",
+      "side": "W",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lab",
+      "side": "S",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lab",
+      "side": "S",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lab",
+      "side": "W",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lab",
+      "side": "W",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "E",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "E",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dorm",
+      "side": "S",
+      "link": "L19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dorm",
+      "side": "S",
+      "link": "L19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "upper",
+      "side": "N",
+      "link": "L19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "upper",
+      "side": "N",
+      "link": "L19",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 212,
+  "issues": [
+    {
+      "zone": "west",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          14.05,
+          27.05,
+          15.95,
+          28.95
+        ]
+      ]
+    },
+    {
+      "zone": "upper",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.05,
+          12.05,
+          32.95,
+          13.95
+        ]
+      ]
+    },
+    {
+      "link": "L18",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.6,
+      "plan_run": 0.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 5.76 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L20",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 9.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Reference pass must inspect a real cloister/academic plan before shell work; current proportions are original reservations.",
+    "Engineer upper-gallery stairs, archive descent and real continuous cloister openings.",
+    "Do not conflate this compact esoteric academy with the larger multi-building college."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "22f4aacd7215d1e173f7ff12e0f47ff398344c1871f66284ef8d6308e9703d46",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

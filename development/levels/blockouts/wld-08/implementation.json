@@ -1,0 +1,340 @@
+{
+  "id": "WLD-08",
+  "title": "Northwatch Research Station",
+  "source": "layouts\\wld-08\\layout.json",
+  "source_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+  "zones": 14,
+  "routes": 20,
+  "shell_openings": [
+    {
+      "zone": "lab",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lab",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lab",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lab",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lab",
+      "side": "E",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "lab",
+      "side": "E",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "dorm",
+      "side": "N",
+      "link": "L15",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "dorm",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dorm",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dorm",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "dorm",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "radio",
+      "side": "S",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "radio",
+      "side": "S",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "radio",
+      "side": "W",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "radio",
+      "side": "W",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "radio",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "radio",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "S",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "S",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "E",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "E",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "generator",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "generator",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "generator",
+      "side": "E",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "generator",
+      "side": "E",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "tunnel",
+      "side": "N",
+      "link": "L19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tunnel-n",
+      "side": "E",
+      "link": "L19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "shelter",
+      "side": "W",
+      "link": "L16",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "shelter",
+      "side": "W",
+      "link": "L16",
+      "width": 2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 170,
+  "issues": [
+    {
+      "zone": "lab",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.05,
+          34.05,
+          11.95,
+          35.95
+        ]
+      ]
+    },
+    {
+      "zone": "dorm",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          52.05,
+          34.05,
+          53.95,
+          35.95
+        ]
+      ]
+    },
+    {
+      "zone": "generator",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.05,
+          16.05,
+          11.95,
+          17.95
+        ]
+      ]
+    },
+    {
+      "link": "L17",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 2.5,
+      "plan_run": 21.37755832643195,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L18",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 2.5,
+      "plan_run": 21.37755832643195,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L20",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 2.5,
+      "plan_run": 5.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Verify physical prefabs and tunnel fire/vent separation with primary station references before detailed construction.",
+    "Snowdrift barriers must leave two clear loops and one readable retreat route at every allowed condition.",
+    "Station expansion and radio plot remain design-only until persistence and legal events exist."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "6bb50ff62ff1b8ebb353c5ac6d525d9e966dd4fca8c2331e8366a5a337ed3eb0",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

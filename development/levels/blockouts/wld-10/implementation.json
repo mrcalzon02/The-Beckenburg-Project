@@ -1,0 +1,487 @@
+{
+  "id": "WLD-10",
+  "title": "Monastery of Ashen Bells",
+  "source": "layouts\\wld-10\\layout.json",
+  "source_sha256": "e4a430b4e197d6ec42908a347294bd2a53641ac1c8e6be50d722d5f6540b91bb",
+  "zones": 17,
+  "routes": 21,
+  "shell_openings": [
+    {
+      "zone": "gatehouse",
+      "side": "N",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gatehouse",
+      "side": "N",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gatehouse",
+      "side": "S",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "gatehouse",
+      "side": "S",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "N",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "N",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "N",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "N",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "E",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "E",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "north",
+      "side": "S",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "S",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "south",
+      "side": "S",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "archive",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "archive",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "archive",
+      "side": "E",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "archive",
+      "side": "E",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "refectory",
+      "side": "N",
+      "link": "L18",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "refectory",
+      "side": "N",
+      "link": "L18",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "refectory",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "refectory",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dorm",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dorm",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tower-base",
+      "side": "W",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tower-base",
+      "side": "W",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tower-base",
+      "side": "E",
+      "link": "L17",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "tower-base",
+      "side": "E",
+      "link": "L17",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "catacombs",
+      "side": "N",
+      "link": "L20",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "catacombs",
+      "side": "N",
+      "link": "L20",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L20",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L20",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "W",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "W",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 220,
+  "issues": [
+    {
+      "zone": "west",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.05,
+          35.05,
+          11.95,
+          36.95
+        ]
+      ]
+    },
+    {
+      "zone": "north",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          28.05,
+          18.05,
+          29.95,
+          19.95
+        ]
+      ]
+    },
+    {
+      "zone": "bell",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          54.05,
+          22.05,
+          55.95,
+          23.95
+        ]
+      ]
+    },
+    {
+      "link": "L16",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 6,
+      "plan_run": 0.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L19",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 0.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L21",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 24.758836806279895,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Inspect monastery and bell-frame structural references before detailed shell work.",
+    "Preserve the open cloister void; never cap the garden with an inferred roof.",
+    "Engineer tower flights and two catacomb entries; all core rituals remain below tower level."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "c0ec8b3cad2d72ccc2a86fcba1c268992f20574462de82a119dd322c1d2efaee",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

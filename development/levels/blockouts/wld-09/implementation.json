@@ -1,0 +1,347 @@
+{
+  "id": "WLD-09",
+  "title": "Blackwater Hydroelectric Dam",
+  "source": "layouts\\wld-09\\layout.json",
+  "source_sha256": "ac4bae32f511b941ff9a2345d8906899b8d4599eb886b3c3dd32f2b87c60f155",
+  "zones": 14,
+  "routes": 18,
+  "shell_openings": [
+    {
+      "zone": "control",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "control",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "control",
+      "side": "S",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "control",
+      "side": "S",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "E",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "E",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "W",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "W",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "turbine",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "turbine",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "turbine",
+      "side": "S",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "turbine",
+      "side": "S",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workshop",
+      "side": "N",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workshop",
+      "side": "N",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "valve",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "valve",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "valve",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "valve",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "return",
+      "side": "N",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "return",
+      "side": "N",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "return",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "return",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 152,
+  "issues": [
+    {
+      "zone": "west-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.05,
+          34.05,
+          31.95,
+          35.95
+        ]
+      ]
+    },
+    {
+      "zone": "turbine",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          49.05,
+          34.05,
+          50.95,
+          35.95
+        ]
+      ]
+    },
+    {
+      "zone": "east-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          68.8,
+          33.8,
+          71.2,
+          36.2
+        ],
+        [
+          68.8,
+          33.8,
+          71.2,
+          36.2
+        ],
+        [
+          68.8,
+          33.8,
+          71.2,
+          36.2
+        ],
+        [
+          68.8,
+          33.8,
+          71.2,
+          36.2
+        ]
+      ]
+    },
+    {
+      "link": "L07",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 6,
+      "plan_run": 19.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L09",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 6,
+      "plan_run": 32.01562118716424,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L11",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 6,
+      "plan_run": 20.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L12",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 6,
+      "plan_run": 20.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L14",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4,
+      "plan_run": 8.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L18",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 10,
+      "plan_run": 13.92838827718412,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 16 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Plan actual turbine machinery bays and guarded openings; the hall volume is not final plant geometry.",
+    "Engineer 6 m descents with switchback landings; schematic lines must not become unsupported ramps.",
+    "Study industrial electrical separation, acoustics and usable inspection paths before runtime authoring."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "f377b7d01f1dbf1da555629743a01649784abcd68af87211d679c1d218d26edd",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

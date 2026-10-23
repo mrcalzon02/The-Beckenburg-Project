@@ -1,0 +1,940 @@
+{
+  "version": 1,
+  "id": "COLLEGE",
+  "title": "Beckenburg College",
+  "region": "Beckenburg district",
+  "scale": "Large / bounded campus cluster",
+  "status": "rough-layout-only",
+  "intent": "Three distinct campus buildings share a compact green: teaching block west, library north, residence/union east. A service tunnel and upper library bridge create alternate routes.",
+  "site_bounds": [
+    0,
+    -4,
+    78,
+    92
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Campus service van apron",
+      "bounds": [
+        28,
+        76,
+        44,
+        88
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Campus green approach",
+      "bounds": [
+        28,
+        64,
+        44,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "plaza",
+      "name": "Main facade plaza",
+      "bounds": [
+        18,
+        50,
+        54,
+        64
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lobby",
+      "name": "Teaching lobby",
+      "bounds": [
+        4,
+        38,
+        18,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lecture",
+      "name": "Lecture theatre",
+      "bounds": [
+        4,
+        18,
+        18,
+        38
+      ],
+      "y": 0,
+      "height": 6,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "seminar",
+      "name": "Seminar classroom",
+      "bounds": [
+        18,
+        38,
+        32,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lab",
+      "name": "Laboratory",
+      "bounds": [
+        18,
+        18,
+        32,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "library",
+      "name": "Library reading room",
+      "bounds": [
+        18,
+        0,
+        46,
+        14
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "stacks",
+      "name": "Library stacks",
+      "bounds": [
+        18,
+        0,
+        46,
+        14
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "bridge",
+      "name": "Upper campus bridge",
+      "bounds": [
+        32,
+        14,
+        46,
+        22
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dorm",
+      "name": "Dormitory corridor / rooms",
+      "bounds": [
+        46,
+        20,
+        62,
+        38
+      ],
+      "y": 3.6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "res-lobby",
+      "name": "Residence stair lobby",
+      "bounds": [
+        46,
+        20,
+        62,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "union",
+      "name": "Union cafe",
+      "bounds": [
+        46,
+        38,
+        62,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "admin",
+      "name": "Administration office",
+      "bounds": [
+        62,
+        38,
+        74,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "rear",
+      "name": "Rear quad and parking",
+      "bounds": [
+        62,
+        14,
+        74,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "tunnel",
+      "name": "Maintenance tunnel hub",
+      "bounds": [
+        22,
+        20,
+        34,
+        38
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "tunnel-west",
+      "name": "West service tunnel",
+      "bounds": [
+        4,
+        38,
+        22,
+        44
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          82.0
+        ],
+        [
+          36.0,
+          0,
+          76.0
+        ],
+        [
+          36.0,
+          0,
+          70.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          76.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "plaza",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          70.0
+        ],
+        [
+          36.0,
+          0,
+          64.0
+        ],
+        [
+          36.0,
+          0,
+          57.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          64.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L03",
+      "a": "plaza",
+      "b": "lobby",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          57.0
+        ],
+        [
+          11.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L04",
+      "a": "lobby",
+      "b": "lecture",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          44.0
+        ],
+        [
+          11.0,
+          0,
+          38.0
+        ],
+        [
+          11.0,
+          0,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          11.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L05",
+      "a": "lecture",
+      "b": "lab",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          28.0
+        ],
+        [
+          18.0,
+          0,
+          28.0
+        ],
+        [
+          25.0,
+          0,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          18.0,
+          0,
+          28.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L06",
+      "a": "lab",
+      "b": "seminar",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          25.0,
+          0,
+          28.0
+        ],
+        [
+          25.0,
+          0,
+          38.0
+        ],
+        [
+          25.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          25.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L07",
+      "a": "seminar",
+      "b": "lobby",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          25.0,
+          0,
+          44.0
+        ],
+        [
+          18.0,
+          0,
+          44.0
+        ],
+        [
+          11.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          18.0,
+          0,
+          44.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L08",
+      "a": "lab",
+      "b": "library",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          25.0,
+          0,
+          28.0
+        ],
+        [
+          32.0,
+          0,
+          7.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L09",
+      "a": "library",
+      "b": "res-lobby",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          7.0
+        ],
+        [
+          54.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L10",
+      "a": "res-lobby",
+      "b": "union",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          54.0,
+          0,
+          29.0
+        ],
+        [
+          54.0,
+          0,
+          38.0
+        ],
+        [
+          54.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          54.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L11",
+      "a": "union",
+      "b": "plaza",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          54.0,
+          0,
+          44.0
+        ],
+        [
+          50.0,
+          0,
+          50.0
+        ],
+        [
+          36.0,
+          0,
+          57.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          50.0,
+          0,
+          50.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L12",
+      "a": "union",
+      "b": "admin",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          54.0,
+          0,
+          44.0
+        ],
+        [
+          62.0,
+          0,
+          44.0
+        ],
+        [
+          68.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          62.0,
+          0,
+          44.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L13",
+      "a": "admin",
+      "b": "rear",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          68.0,
+          0,
+          44.0
+        ],
+        [
+          68.0,
+          0,
+          38.0
+        ],
+        [
+          68.0,
+          0,
+          26.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          68.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L14",
+      "a": "rear",
+      "b": "res-lobby",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          68.0,
+          0,
+          26.0
+        ],
+        [
+          62.0,
+          0,
+          29.0
+        ],
+        [
+          54.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          62.0,
+          0,
+          29.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L15",
+      "a": "library",
+      "b": "stacks",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          7.0
+        ],
+        [
+          32.0,
+          3.6,
+          7.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.6,
+      "construction": "Reserve at least 5.76 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L16",
+      "a": "stacks",
+      "b": "bridge",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          3.6,
+          7.0
+        ],
+        [
+          39.0,
+          3.6,
+          14.0
+        ],
+        [
+          39.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          39.0,
+          3.6,
+          14.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L17",
+      "a": "bridge",
+      "b": "dorm",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          39.0,
+          3.6,
+          18.0
+        ],
+        [
+          46.0,
+          3.6,
+          21.0
+        ],
+        [
+          54.0,
+          3.6,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          46.0,
+          3.6,
+          21.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L18",
+      "a": "dorm",
+      "b": "res-lobby",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          54.0,
+          3.6,
+          29.0
+        ],
+        [
+          54.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.6,
+      "construction": "Reserve at least 5.76 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L19",
+      "a": "lab",
+      "b": "tunnel",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          25.0,
+          0,
+          28.0
+        ],
+        [
+          28.0,
+          -3,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L20",
+      "a": "tunnel",
+      "b": "tunnel-west",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          28.0,
+          -3,
+          29.0
+        ],
+        [
+          13.0,
+          -3,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L21",
+      "a": "tunnel-west",
+      "b": "lobby",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          13.0,
+          -3,
+          41.0
+        ],
+        [
+          11.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "lobby",
+      "lecture",
+      "lab",
+      "seminar",
+      "lobby"
+    ],
+    [
+      "plaza",
+      "lobby",
+      "lecture",
+      "lab",
+      "library",
+      "res-lobby",
+      "union",
+      "plaza"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      36.0,
+      0,
+      82.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        36.0,
+        0,
+        78.372
+      ],
+      [
+        36.0,
+        0,
+        70.0
+      ]
+    ],
+    "logistics": "Existing shared van on a level service apron/roadhead; no new transport mechanic."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "tunnel",
+      "point": [
+        28.0,
+        -3,
+        29.0
+      ],
+      "installation": "Breaker-fed containment seal"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "lab",
+      "point": [
+        25.0,
+        0,
+        28.0
+      ],
+      "installation": "Distilled-water purification basin"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "stacks",
+      "point": [
+        32.0,
+        3.6,
+        7.0
+      ],
+      "installation": "Memorial records display"
+    }
+  ],
+  "circulation": "Teaching block has a compact indoor circuit. Campus loop uses green/plaza, library and union. Upper bridge links library to residence with a ground-level alternative; service tunnel reconnects teaching rooms to lobby without making a mandatory underground commute.",
+  "systems": "Each building is an electrical/audio district. Cafe refrigeration, laboratory heat and tunnel ventilation are separate normal confounders. Campus boundary stops the playable cluster from implying an unlimited university.",
+  "campaign": "Administration and residence records support a single bounded campus dossier. Future faculty/residence expansions remain outside this footprint until actually authored.",
+  "refine": [
+    "Tunnel arms and bridge bearings need exact connecting corridors; link centre lines are reservations, not finished bridge meshes.",
+    "Subdivide dormitory rooms while retaining readable suite numbers and tested clear routes.",
+    "Acquire campus plan reference and compare approved college concept before detailed construction."
+  ],
+  "sources": [
+    "docs/environments/ROOM_AND_ASSET_REQUIREMENTS.md",
+    "docs/environments/THREE_RITUAL_SITES.md",
+    "development/levels/ARCHITECTURAL_REFERENCES.md"
+  ]
+}

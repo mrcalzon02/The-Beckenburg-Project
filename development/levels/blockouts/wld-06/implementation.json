@@ -1,0 +1,159 @@
+{
+  "id": "WLD-06",
+  "title": "Drowned Fisherman's Wharf",
+  "source": "layouts\\wld-06\\layout.json",
+  "source_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+  "zones": 14,
+  "routes": 18,
+  "shell_openings": [
+    {
+      "zone": "cottage-a",
+      "side": "E",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-a",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-a",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-b",
+      "side": "W",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-b",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-b",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "boathouse",
+      "side": "S",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "boathouse",
+      "side": "S",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "boathouse",
+      "side": "E",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "boathouse",
+      "side": "E",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "net",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "net",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "fish",
+      "side": "N",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "fish",
+      "side": "N",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 110,
+  "issues": [
+    {
+      "zone": "west-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.8,
+          31.8,
+          19.2,
+          34.2
+        ]
+      ]
+    },
+    {
+      "zone": "east-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          44.8,
+          31.8,
+          47.2,
+          34.2
+        ]
+      ]
+    },
+    {
+      "link": "L16",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 2.5,
+      "plan_run": 14.317821063276353,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L17",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 2.5,
+      "plan_run": 14.317821063276353,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Refine support piles, edge rails, guard openings and at least 2 m clear deck paths; diagrams show deck envelopes.",
+    "Choose and lock tide envelope before mission start; no required wading.",
+    "Research working-wharf and fish-house construction before detailed shell authoring."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "4246d229ca6d8279b574598385c61a7aeec92b6996de6869bcd25d58e8c260cc",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

@@ -1,0 +1,764 @@
+{
+  "version": 1,
+  "id": "WLD-07",
+  "title": "Saint Bartholomew's Forgotten Cemetery",
+  "region": "Northern Woodlands",
+  "scale": "Small-medium / enclosed grounds",
+  "status": "rough-layout-only",
+  "intent": "A bounded burial ground is organized by a main avenue and memorial ring. Ruined chapel and caretaker cottage face the approach; two ossuary entrances join underground.",
+  "site_bounds": [
+    2,
+    -4,
+    58,
+    88
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Cemetery-lane van apron",
+      "bounds": [
+        20,
+        72,
+        36,
+        84
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Lychgate and entry court",
+      "bounds": [
+        20,
+        60,
+        36,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "avenue",
+      "name": "Main cemetery avenue",
+      "bounds": [
+        24,
+        20,
+        32,
+        60
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "chapel",
+      "name": "Ruined chapel",
+      "bounds": [
+        6,
+        38,
+        24,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cottage",
+      "name": "Caretaker cottage",
+      "bounds": [
+        32,
+        38,
+        46,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "garden",
+      "name": "Memorial garden",
+      "bounds": [
+        6,
+        20,
+        24,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "east-graves",
+      "name": "East grave plots",
+      "bounds": [
+        32,
+        20,
+        50,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "old-graves",
+      "name": "Old numbered markers",
+      "bounds": [
+        16,
+        4,
+        40,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "tool",
+      "name": "Caretaker tool store",
+      "bounds": [
+        46,
+        42,
+        54,
+        52
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "west-stair",
+      "name": "West ossuary vestibule",
+      "bounds": [
+        6,
+        12,
+        16,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "east-stair",
+      "name": "East ossuary vestibule",
+      "bounds": [
+        40,
+        12,
+        50,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "ossuary",
+      "name": "Ossuary passage",
+      "bounds": [
+        16,
+        12,
+        40,
+        20
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "chamber",
+      "name": "Memorial record chamber",
+      "bounds": [
+        16,
+        0,
+        28,
+        12
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          78.0
+        ],
+        [
+          28.0,
+          0,
+          72.0
+        ],
+        [
+          28.0,
+          0,
+          66.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          72.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "avenue",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          28.0,
+          0,
+          60.0
+        ],
+        [
+          28.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          60.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L03",
+      "a": "entry",
+      "b": "chapel",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          15.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L04",
+      "a": "entry",
+      "b": "cottage",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          39.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L05",
+      "a": "chapel",
+      "b": "garden",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0,
+          47.0
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ],
+        [
+          15.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          15.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L06",
+      "a": "garden",
+      "b": "avenue",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0,
+          29.0
+        ],
+        [
+          24.0,
+          0,
+          29.0
+        ],
+        [
+          28.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          24.0,
+          0,
+          29.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L07",
+      "a": "avenue",
+      "b": "east-graves",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          40.0
+        ],
+        [
+          32.0,
+          0,
+          29.0
+        ],
+        [
+          41.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          29.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L08",
+      "a": "east-graves",
+      "b": "cottage",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          41.0,
+          0,
+          29.0
+        ],
+        [
+          39.0,
+          0,
+          38.0
+        ],
+        [
+          39.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          39.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L09",
+      "a": "garden",
+      "b": "old-graves",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0,
+          29.0
+        ],
+        [
+          20.0,
+          0,
+          20.0
+        ],
+        [
+          28.0,
+          0,
+          12.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          20.0,
+          0,
+          20.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L10",
+      "a": "old-graves",
+      "b": "east-graves",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          12.0
+        ],
+        [
+          36.0,
+          0,
+          20.0
+        ],
+        [
+          41.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          20.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L11",
+      "a": "cottage",
+      "b": "tool",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          39.0,
+          0,
+          47.0
+        ],
+        [
+          46.0,
+          0,
+          47.0
+        ],
+        [
+          50.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          46.0,
+          0,
+          47.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L12",
+      "a": "garden",
+      "b": "west-stair",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0,
+          29.0
+        ],
+        [
+          11.0,
+          0,
+          20.0
+        ],
+        [
+          11.0,
+          0,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          11.0,
+          0,
+          20.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L13",
+      "a": "east-graves",
+      "b": "east-stair",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          41.0,
+          0,
+          29.0
+        ],
+        [
+          45.0,
+          0,
+          20.0
+        ],
+        [
+          45.0,
+          0,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          45.0,
+          0,
+          20.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L14",
+      "a": "west-stair",
+      "b": "ossuary",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          16.0
+        ],
+        [
+          28.0,
+          -3,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L15",
+      "a": "ossuary",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          28.0,
+          -3,
+          16.0
+        ],
+        [
+          45.0,
+          0,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L16",
+      "a": "ossuary",
+      "b": "chamber",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          28.0,
+          -3,
+          16.0
+        ],
+        [
+          22.0,
+          -3,
+          12.0
+        ],
+        [
+          22.0,
+          -3,
+          6.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          -3,
+          12.0
+        ],
+        "clear_width_m": 1.5
+      }
+    }
+  ],
+  "loops": [
+    [
+      "entry",
+      "chapel",
+      "garden",
+      "avenue",
+      "entry"
+    ],
+    [
+      "avenue",
+      "garden",
+      "old-graves",
+      "east-graves",
+      "avenue"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      28.0,
+      0,
+      78.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        28.0,
+        0,
+        74.372
+      ],
+      [
+        28.0,
+        0,
+        66.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "chamber",
+      "point": [
+        22.0,
+        -3,
+        6.0
+      ],
+      "installation": "Modern removable containment seal"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "cottage",
+      "point": [
+        39.0,
+        0,
+        47.0
+      ],
+      "installation": "Caretaker wash purification"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "garden",
+      "point": [
+        15.0,
+        0,
+        29.0
+      ],
+      "installation": "Memorial reconciliation stand"
+    }
+  ],
+  "circulation": "Avenue and marker ring provide two surface search loops. Both underground vestibules have full stairs with matching openings; the record chamber is a short branch. Headstones remain fixed sightline objects across all detail settings.",
+  "systems": "Tree cover, wind, surface water and enclosed stone passages have distinct sound/temperature baselines. Memorial records offer narrative rather than a magic detector reading.",
+  "campaign": "Numbered markers, caretaker succession and missing parish entries connect provisionally to St. Brigid and Ashen Bells. Ordinary burial and remembrance are not implied sources of evil.",
+  "refine": [
+    "Research burial-ground circulation and ossuary structure before detailed construction; keep fictional history explicit.",
+    "Place no rites on graves or inaccessible marker tops; all reservation squares are on clear paths/floors.",
+    "Test underground exit visibility and tree-occlusion consistency."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ]
+}
