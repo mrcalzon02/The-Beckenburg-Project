@@ -17,6 +17,7 @@ public final class BeckenburgDeveloperTrace {
     private static volatile boolean started;
     private static volatile long lastFrame=System.nanoTime();
     private static volatile long lastSnapshot;
+    private static final AtomicLong lastRenderSlowReport=new AtomicLong();
     private static volatile boolean activeCase;
     private static volatile long frameCount;
     private BeckenburgDeveloperTrace(){}
@@ -40,6 +41,15 @@ public final class BeckenburgDeveloperTrace {
     public static void frame(long durationNanos){
         lastFrame=System.nanoTime();frameCount++;
         if(durationNanos>100_000_000L)BeckenburgDiagnostics.record("FRAME SLOW duration_ms="+durationNanos/1_000_000+" stage="+caseStage);
+    }
+    /** Bounded stage timing survives a stalled or forcibly terminated renderer. */
+    public static void renderSlow(int faces,int width,int height,long buildNs,long drawNs){
+        long now=System.nanoTime(),prior=lastRenderSlowReport.get();
+        if(now-prior<2_000_000_000L||
+            !lastRenderSlowReport.compareAndSet(prior,now))return;
+        BeckenburgDiagnostics.record("RENDER SLOW stage="+caseStage+
+            " faces="+faces+" target="+width+"x"+height+
+            " build_ms="+buildNs/1_000_000+" lighting_raster_ms="+drawNs/1_000_000);
     }
     public static void caseStop(){activeCase=false;caseStage="closed";}
     public static void update(String operation,String detail){

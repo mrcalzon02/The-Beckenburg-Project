@@ -465,7 +465,35 @@ public final class InvestigationGame {
                 "Contract unavailable",JOptionPane.ERROR_MESSAGE);
         }
     }
-    private void begin(){begin(false,false,0,null);}
+    /** Free play is never silently dispatched to the menu's previous site.
+     * Campaign dispatch continues to use its fixed story site and progression. */
+    private void begin(){
+        JComboBox<SiteCatalog.Location> site=new JComboBox<>();
+        for(int i=0;i<locationPicker.getItemCount();i++)
+            site.addItem(locationPicker.getItemAt(i));
+        site.setSelectedItem(locationPicker.getSelectedItem());
+        JComboBox<InvestigationSession.Role> role=
+            select(InvestigationSession.Role.values(),
+                (InvestigationSession.Role)rolePicker.getSelectedItem());
+        JComboBox<SiteCatalog.Conditions> conditions=
+            select(SiteCatalog.Conditions.values(),
+                (SiteCatalog.Conditions)conditionsPicker.getSelectedItem());
+        JPanel dispatch=new JPanel(new GridLayout(0,2,7,7));
+        dispatch.setBorder(BorderFactory.createEmptyBorder(12,12,12,12));
+        setting(dispatch,"Investigation location",site);
+        setting(dispatch,"Hunter discipline",role);
+        setting(dispatch,"Site conditions",conditions);
+        int selection=JOptionPane.showConfirmDialog(window,dispatch,
+            "EXPEDITION DISPATCH / SELECT LOCATION",
+            JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
+        if(selection!=JOptionPane.OK_OPTION)return;
+        SiteCatalog.Location destination=(SiteCatalog.Location)site.getSelectedItem();
+        SiteCatalog.requirePlayable(destination);
+        locationPicker.setSelectedItem(destination);
+        rolePicker.setSelectedItem(role.getSelectedItem());
+        conditionsPicker.setSelectedItem(conditions.getSelectedItem());
+        begin(false,false,0,null);
+    }
     private void begin(boolean campaignMode,boolean withAssistant,long seed,
             CampaignStory.Chapter chapter){
         BeckenburgDeveloperTrace.caseStart("campaign="+campaignMode+" assistant="+withAssistant+" seed="+seed);
@@ -485,7 +513,10 @@ public final class InvestigationGame {
         BeckenburgDeveloperTrace.caseStage("GamePanel constructor completed");
         cards.add(game,"play");((CardLayout)cards.getLayout()).show(cards,"play");
         BeckenburgDeveloperTrace.caseStage("case view displayed");
-        SwingUtilities.invokeLater(game::requestFocusInWindow);
+        SwingUtilities.invokeLater(()->{
+            game.beginRendering();
+            game.requestFocusInWindow();
+        });
     }
     private void beginGhost(){
         if(game!=null){game.close();cards.remove(game);game=null;}
@@ -538,6 +569,40 @@ public final class InvestigationGame {
         private final LevelSoundscape buildingSoundscape;
         private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
         private int frameCount;
+        private volatile boolean initialFrameReady;
+        private SwingWorker<Void,Void> firstFrameWorker;
+        void beginRendering(){
+            if(firstFrameWorker!=null)return;
+            final int width=Math.max(760,getWidth());
+            final int height=Math.max(510,getHeight());
+            BeckenburgDeveloperTrace.caseStage("building initial sized scene");
+            firstFrameWorker=new SwingWorker<>(){
+                @Override protected Void doInBackground(){
+                    GraphicsOptions.current().configure(scene,width,height,true);
+                    scene.draw(map,session,0,
+                        assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
+                    return null;
+                }
+                @Override protected void done(){
+                    try{
+                        get();
+                        initialFrameReady=true;
+                        BeckenburgDeveloperTrace.caseStage("initial scene complete");
+                        last=System.nanoTime();
+                        timer.start();
+                        BeckenburgDeveloperTrace.caseStage("active");
+                        repaint();
+                    }catch(Exception failed){
+                        Throwable cause=failed.getCause()==null?failed:failed.getCause();
+                        BeckenburgDiagnostics.fail("Initial investigation renderer",cause);
+                        BeckenburgDeveloperTrace.caseStop();
+                        BeckenburgDiagnostics.failureScreen(InvestigationGame.this.window,
+                            "Investigation scene could not render",cause);
+                    }
+                }
+            };
+            firstFrameWorker.execute();
+        }
         private long last=System.nanoTime();
         private double accumulator;
         GamePanel(InvestigationSession.Role role,int ordinal,SiteCatalog.Location site,
@@ -601,14 +666,14 @@ public final class InvestigationGame {
             // an unconditional new set of default instruments on each mission.
             loadout.replaceAtRack(profile.preparedLoadout());
             scene.rackInventory=VanRackStock.solo(profile,loadout);
-            BeckenburgDeveloperTrace.caseStage("rendering first scene");
-            scene.draw(map,session,0,
-                assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
-            BeckenburgDeveloperTrace.caseStage("first scene complete; starting simulation timer");
-            timer=new javax.swing.Timer(33,e->frame());timer.start();
-            BeckenburgDeveloperTrace.caseStage("active");
+            // No implicit 320x200 frame before the sized game viewport exists.
+            // House geometry/first-frame lighting run off the Swing event thread:
+            // a slow scene must not freeze the entire window and prevent escape.
+            timer=new javax.swing.Timer(33,e->frame());
+            BeckenburgDeveloperTrace.caseStage("GamePanel ready for sized initial render");
         }
-        void close(){timer.stop();down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
+        void close(){timer.stop();if(firstFrameWorker!=null)firstFrameWorker.cancel(true);
+            down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
         @Override public void doLayout(){
             super.doLayout();
             int w=Math.min(485,Math.max(150,getWidth()-24));
@@ -1084,6 +1149,13 @@ public final class InvestigationGame {
             try{
                 g.setColor(Color.BLACK);g.fillRect(0,0,getWidth(),getHeight());
                 int stageH=getHeight(),width=getWidth();
+                if(!initialFrameReady){
+                    g.setFont(new Font(Font.MONOSPACED,Font.BOLD,16));
+                    g.setColor(new Color(208,214,202));
+                    g.drawString("PREPARING INVESTIGATION / "+location.label,
+                        25,Math.max(45,stageH/2));
+                    return;
+                }
                 GraphicsOptions.current().draw(g,scene.image(),width,stageH);
                 if(map.clutter().held(0)<0)HeldToolView.draw(g,width,stageH,loadout.equipped().name(),session.ticks(),
                     session.ticks()<=useHeldUntilTick,scene.lamp,session.deviceReading(loadout.equipped().name()));

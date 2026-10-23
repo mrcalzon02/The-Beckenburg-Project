@@ -1687,8 +1687,17 @@ public final class SceneRenderer {
                     imported(castle,"open_book_mp_1",px,.67,pz,.48,0);
                 }
                 case EXPEDITION -> {
-                    imported(castle,"tv_table_1_4",px,0,pz,.82,0);
-                    imported(castle,"handheld_tablet_1",px,.62,pz,.60,0);
+                    // A staffed expedition dispatch desk: real map plans, case
+                    // clipboard and reference journal, not an isolated mobile phone.
+                    double deskScale=.84;
+                    double top=CastleHubDecor.meshHeight("tv_table_1_4")*deskScale;
+                    castleProp(castle,"tv_table_1_4",px,0,pz,deskScale,0);
+                    castleProp(castle,"blender_site_map_fixed",px-.25,top+.008,pz-.19,
+                        castleExhibitScale("blender_site_map_fixed",.53),0);
+                    castleProp(castle,"blender_clipboards_fixed",px+.27,top+.008,pz+.07,
+                        castleExhibitScale("blender_clipboards_fixed",.46),0);
+                    castleProp(castle,"open_book_mp_1",px-.18,top+.008,pz+.27,
+                        castleExhibitScale("open_book_mp_1",.46),0);
                 }
                 case MULTIPLAYER -> {
                     // Use the actual desktop computer, not the wall-mounted
@@ -1858,10 +1867,18 @@ public final class SceneRenderer {
         paintSky(map,clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         if(lightingMap!=map){lightingMap=map;fixtureLighting=new FixtureLighting(map);}fixtureLighting.frame(roomLights,roomLightTick);
-        for(Face face:scene(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,clock,others,apparition,markers)){
+        long geometryStart=System.nanoTime();
+        List<Face> geometry=scene(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,
+            clock,others,apparition,markers);
+        long geometryReady=System.nanoTime();
+        for(Face face:geometry){
             int room=face.room>=0?face.room:map.roomAt((face.a.x+face.b.x+face.c.x)/3,(face.a.y+face.b.y+face.c.y)/3,(face.a.z+face.b.z+face.c.z)/3);
             drawLitFace(face,room,0);
         }
+        long geometryRendered=System.nanoTime();
+        if(geometryRendered-geometryStart>200_000_000L)
+            BeckenburgDeveloperTrace.renderSlow(geometry.size(),renderWidth,renderHeight,
+                geometryReady-geometryStart,geometryRendered-geometryReady);
         renderVanSanctuary(map,clock);
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
         renderWeatherMeshes();
@@ -1871,6 +1888,15 @@ public final class SceneRenderer {
         GhostHauntingFolio.paint(pixels,renderWidth,renderHeight,hauntings,
             localRoom,(int)Math.floor(clock*10));
     }
+    /** Screen-distance lighting tessellation budget: 64 children at most,
+     * rather than 256 for every large surface regardless of viewing distance.
+     * Real geometry, collision and shadow occlusion are never discarded. */
+    static int lightingSubdivisionLimit(double nearDepth){
+        if(!Double.isFinite(nearDepth)||nearDepth>17)return 0;
+        if(nearDepth>9)return 1;
+        if(nearDepth>3)return 2;
+        return 3;
+    }
     private static Point mid(Point a,Point b){return new Point((a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2);}
     private static double edge2(Point a,Point b){return (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y)+(a.z-b.z)*(a.z-b.z);}
     /** Large walls need real intermediate light samples so narrow beams cannot become room-wide tints. */
@@ -1878,7 +1904,10 @@ public final class SceneRenderer {
         Point ca0=camera(f.a),cb0=camera(f.b),cc0=camera(f.c);double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
         if(ca0.z<NEAR&&cb0.z<NEAR&&cc0.z<NEAR||ca0.x>ca0.z*hx&&cb0.x>cb0.z*hx&&cc0.x>cc0.z*hx||ca0.x< -ca0.z*hx&&cb0.x< -cb0.z*hx&&cc0.x< -cc0.z*hx||ca0.y>ca0.z*hy&&cb0.y>cb0.z*hy&&cc0.y>cc0.z*hy||ca0.y< -ca0.z*hy&&cb0.y< -cb0.z*hy&&cc0.y< -cc0.z*hy)return;
 
-        if(room>=0&&room<12&&depth<4&&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
+        if(room>=0&&room<12
+            &&depth<lightingSubdivisionLimit(Math.max(0,
+                Math.min(ca0.z,Math.min(cb0.z,cc0.z))))
+            &&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
             Point ab=mid(f.a,f.b),bc=mid(f.b,f.c),ca=mid(f.c,f.a);double abu=(f.au+f.bu)/2,abv=(f.av+f.bv)/2,bcu=(f.bu+f.cu)/2,bcv=(f.bv+f.cv)/2,cau=(f.cu+f.au)/2,cav=(f.cv+f.av)/2;
             drawLitFace(new Face(f.a,ab,ca,f.color,f.material,f.au,f.av,abu,abv,cau,cav),room,depth+1);drawLitFace(new Face(ab,f.b,bc,f.color,f.material,abu,abv,f.bu,f.bv,bcu,bcv),room,depth+1);drawLitFace(new Face(ca,bc,f.c,f.color,f.material,cau,cav,bcu,bcv,f.cu,f.cv),room,depth+1);drawLitFace(new Face(ab,bc,ca,f.color,f.material,abu,abv,bcu,bcv,cau,cav),room,depth+1);return;
         }
