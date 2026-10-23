@@ -62,10 +62,10 @@ jobs:
         shell: pwsh
         run: |
           Copy-Item gpu-client/target/BeckenburgGPU.jar build/BeckenburgGPU.jar -Force
-          New-Item -ItemType Directory -Force build/gpu-native | Out-Null
-          jpackage --type app-image --name Beckenburg --input build --main-jar BeckenburgGPU.jar --dest build/gpu-native
+          New-Item -ItemType Directory -Force dist/gpu-native-validation | Out-Null
+          jpackage --type app-image --name Beckenburg --input build --main-jar BeckenburgGPU.jar --dest dist/gpu-native-validation
           if ($LASTEXITCODE -ne 0) { throw 'OpenGL native package failed' }
-          if (!(Test-Path 'build/gpu-native/Beckenburg/Beckenburg.exe')) {
+          if (!(Test-Path 'dist/gpu-native-validation/Beckenburg/Beckenburg.exe')) {
             throw 'GPU native Windows executable missing'
           }
       - name: Launch GPU-capable native executable in explicit software recovery mode
@@ -73,7 +73,7 @@ jobs:
         run: |
           $ErrorActionPreference='Stop'
           $begin=Get-Date
-          $process=Start-Process -FilePath (Resolve-Path 'build/gpu-native/Beckenburg/Beckenburg.exe') -ArgumentList '--software' -PassThru
+          $process=Start-Process -FilePath (Resolve-Path 'dist/gpu-native-validation/Beckenburg/Beckenburg.exe') -ArgumentList '--software' -PassThru
           try {
             $ready=$false
             $folder=Join-Path $env:USERPROFILE '.beckenburg/diagnostics'
