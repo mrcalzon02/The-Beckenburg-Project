@@ -104,6 +104,10 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     }
     private void use(CastleHubMap.Station station){
         if(station==null){
+            if(!orientation.active()&&elevation<1.8&&
+                CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw)){
+                openQuartermaster();return;
+            }
             if(CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null){
                 castleLightsOn=!castleLightsOn;
                 GameSfx.play(LanSound.Cue.SWITCH);
@@ -177,8 +181,10 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             CastleHubMap.Station station=elevation>1.8?null:map.aimed(renderer.x,renderer.z,renderer.yaw);
             boolean atSwitch=elevation<=1.8&&
                 CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null;
-            if(station!=null||atSwitch){
-                String label=atSwitch?"CASTLE LIGHT SWITCH":station.label;
+            boolean atWarehouse=elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
+            if(station!=null||atSwitch||atWarehouse){
+                String label=atSwitch?"CASTLE LIGHT SWITCH":atWarehouse?
+                    "WAREHOUSE COUNTER / PURCHASE AND PREPARE":station.label;
                 int labelWidth=Math.min(w-24,Math.max(250,g.getFontMetrics().stringWidth(label)+50));
                 int left=(w-labelWidth)/2;
                 g.setColor(new Color(11,16,21,220));g.fillRoundRect(left,h-75,labelWidth,36,8,8);

@@ -14,9 +14,14 @@ public final class CastleLiveRepairTest {
                 v.mesh().equals("ggbot_car05")).count()==2,
             "Castle road must display two original PSX car models");
         for(var v:parked){
-            check(v.z()>34.4,"Static castle vehicles stay outside gate");
-            check(!map.traversable(v.x(),v.z()),
-                "Decorative van and cars do not introduce playable stations");
+            if(v.mesh().equals("ggbot_car08_van_shell")){
+                check(v.z()>18&&v.z()<33&&v.x()>10&&v.x()<20,
+                    "Project van must visibly occupy the actual central courtyard");
+                check(!map.traversable(v.x(),v.z()),"Parked van must block walk-through");
+            }else{
+                check(v.z()>34.4,"Two PSX cars remain on exterior access road");
+                check(!map.traversable(v.x(),v.z()),"Roadside cars are not player stations");
+            }
             var model=GlbProps.model(v.mesh());
             check(model.triangles().size()>100,"Source-backed PSX model "+v.mesh());
             check(model.triangles().stream().anyMatch(t->

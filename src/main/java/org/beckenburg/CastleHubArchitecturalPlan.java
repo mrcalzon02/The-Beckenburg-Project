@@ -68,7 +68,25 @@ public final class CastleHubArchitecturalPlan {
         new Trim("kenney_medieval_tower_top",.5,3.35,11.5,1.75,1,1.75,0),
         new Trim("kenney_medieval_tower_base",43.5,0,18,1.7,1.7,1.7,0),
         new Trim("kenney_medieval_tower",43.5,1.7,18,1.7,1.65,1.7,0),
-        new Trim("kenney_medieval_tower_top",43.5,3.35,18,1.75,1,1.75,0)
+        new Trim("kenney_medieval_tower_top",43.5,3.35,18,1.75,1,1.75,0),
+        new Trim("kenney_medieval_tower_base",0.45,0,0.5,1.65,1.7,1.65,0),
+        new Trim("kenney_medieval_tower",0.45,1.7,0.5,1.65,1.65,1.65,0),
+        new Trim("kenney_medieval_tower_top",0.45,3.35,0.5,1.65,1,1.65,0),
+        new Trim("kenney_medieval_tower_base",43.55,0,4,1.65,1.7,1.65,0),
+        new Trim("kenney_medieval_tower",43.55,1.7,4,1.65,1.65,1.65,0),
+        new Trim("kenney_medieval_tower_top",43.55,3.35,4,1.65,1,1.65,0),
+        new Trim("kenney_medieval_tower_base",0.45,0,33.5,1.65,1.7,1.65,0),
+        new Trim("kenney_medieval_tower",0.45,1.7,33.5,1.65,1.65,1.65,0),
+        new Trim("kenney_medieval_tower_top",0.45,3.35,33.5,1.65,1,1.65,0),
+        new Trim("kenney_medieval_tower_base",43.55,0,33.5,1.65,1.7,1.65,0),
+        new Trim("kenney_medieval_tower",43.55,1.7,33.5,1.65,1.65,1.65,0),
+        new Trim("kenney_medieval_tower_top",43.55,3.35,33.5,1.65,1,1.65,0),
+        new Trim("kenney_medieval_tower_base",10.8,0,34.7,1.5,1.7,1.5,0),
+        new Trim("kenney_medieval_tower",10.8,1.7,34.7,1.5,1.65,1.5,0),
+        new Trim("kenney_medieval_tower_top",10.8,3.35,34.7,1.5,1,1.5,0),
+        new Trim("kenney_medieval_tower_base",18.9,0,34.7,1.5,1.7,1.5,0),
+        new Trim("kenney_medieval_tower",18.9,1.7,34.7,1.5,1.65,1.5,0),
+        new Trim("kenney_medieval_tower_top",18.9,3.35,34.7,1.5,1,1.5,0)
     );
     private static List<Wall> buildWalls(){
         List<Wall> out=new ArrayList<>();

@@ -1446,6 +1446,20 @@ public final class SceneRenderer {
             new Point(x1,y1,z1),new Point(x0,y1,z0),wall.material(),
             0,y0,length,y0,length,y1,0,y1,0xffffff);
     }
+    /** Architectural crenellations built as real masonry triangles. */
+    private void castleRamparts(List<Face> out){
+        double y=CastleHubArchitecturalPlan.GROUND_CEILING;
+        for(int xx=2;xx<43;xx+=2){
+            if(Math.abs(xx-x)>19)continue;
+            box(out,xx,y,33.80,1.10,.78,.32,0x8c7c6a);
+            if(xx<28)box(out,xx,y,.84,1.10,.78,.32,0x8c7c6a);
+        }
+        for(int zz=2;zz<34;zz+=2){
+            if(Math.abs(zz-z)>19)continue;
+            box(out,.84,y,zz,.32,.78,1.10,0x8c7c6a);
+            if(zz>=4)box(out,42.84,y,zz,.32,.78,1.10,0x8c7c6a);
+        }
+    }
     private void castleShell(List<Face> out){
         var walls=CastleLevelEdits.current().walls();
         for(var wall:walls){
@@ -1561,6 +1575,7 @@ public final class SceneRenderer {
         // The real continuous, authored stonework and second floor replace
         // per-cell fortress blocks. Doors have full-width jambs and lintels.
         castleShell(castle);
+        castleRamparts(castle);
         for(var roof:CastleLevelEdits.current().roofs())
             if(Math.hypot((roof.west()+roof.east())*.5-x,
                           (roof.north()+roof.south())*.5-z)<27)
@@ -1618,6 +1633,16 @@ public final class SceneRenderer {
                 }
             }
         }
+        // Real displayed models, with the same physical shelf collision as the map.
+        for(var rack:CastleWarehouse.racks())if(Math.hypot(rack.x()-x,rack.z()-z)<14)
+            castleProp(castle,"shelf_mp_6",rack.x(),0,rack.z(),rack.scale(),0);
+        if(Math.hypot(CastleWarehouse.COUNTER_X-x,CastleWarehouse.COUNTER_Z-z)<14)
+            castleProp(castle,"display_cabinet_mp_2",CastleWarehouse.COUNTER_X,0,
+                CastleWarehouse.COUNTER_Z,.78,0);
+        for(var exhibit:CastleWarehouse.exhibits())
+            if(Math.hypot(exhibit.x()-x,exhibit.z()-z)<13)
+                castleProp(castle,exhibit.mesh(),exhibit.x(),exhibit.y(),exhibit.z(),
+                    exhibit.scale(),0);
         // Purchased source-backed fixtures occupy authored locations and match hub collision.
         for(CastleLevelEdits.Prop item:edits.props())
             if(Math.hypot(item.x()-x,item.z()-z)<16)
