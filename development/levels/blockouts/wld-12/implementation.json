@@ -1,0 +1,208 @@
+{
+  "id": "WLD-12",
+  "title": "Gallows Pass Railway",
+  "source": "layouts\\wld-12\\layout.json",
+  "source_sha256": "a873a8669fdec20b35cdcfdb0c8b97e39b9ef18b26aa545423b61961918b155d",
+  "zones": 14,
+  "routes": 18,
+  "shell_openings": [
+    {
+      "zone": "signal",
+      "side": "N",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "signal",
+      "side": "N",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "signal",
+      "side": "E",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "signal",
+      "side": "E",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "signal",
+      "side": "E",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "coach-a",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "coach-a",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "coach-a",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "coach-b",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "coach-b",
+      "side": "E",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "coach-b",
+      "side": "E",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "S",
+      "link": "L15",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "S",
+      "link": "L15",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "tunnel",
+      "side": "S",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "tunnel",
+      "side": "S",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "tunnel",
+      "side": "E",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tunnel",
+      "side": "E",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "refuge",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "refuge",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "refuge",
+      "side": "W",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "refuge",
+      "side": "W",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 117,
+  "issues": [
+    {
+      "zone": "trestle",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          32.8,
+          30.8,
+          35.2,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "west-return",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          9.8,
+          40.8,
+          12.2,
+          43.2
+        ]
+      ]
+    },
+    {
+      "link": "L16",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 3.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L17",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 22.360679774997898,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Make coach orientation and end-door support physically believable; the rectangles are footprint reservations.",
+    "Engineer trestle deck, lower stairs, rail barriers and tunnel rock support; visible voids cannot be traversable ghost-only shortcuts.",
+    "Limit mission to the authored tunnel segment; a locked maintenance end is a visible world boundary, not an infinite railway."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "4a91504c0dcfaccd3e515599182494e7918c5c0c6b64f26affbd9b83156bc773",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

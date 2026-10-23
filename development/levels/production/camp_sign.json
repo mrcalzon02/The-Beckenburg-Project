@@ -1,0 +1,26 @@
+{
+  "id": "level_work_camp_sign",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "6ff3f3fe645429987a3405b7c1b6d01ce023d56d295f1501546fbb2ea30454b5",
+  "bytes": 161316,
+  "triangles": 2124,
+  "bounds": [
+    [
+      -1.2000000476837158,
+      0.0,
+      -0.07999999821186066
+    ],
+    [
+      1.2000000476837158,
+      2.0799999237060547,
+      0.07999999821186066
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_camp_sign.blend",
+  "function": "Original camp-name sign and later road-survey warning, readable mesh lettering",
+  "runtime": "Ready static sign; surveyed road is explicitly not a cleared camp or unlock",
+  "placement": "Blackpine arrival yard verge, outside baked path core"
+}

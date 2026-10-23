@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="3780" viewBox="0 0 1280 3780">
+<style>text{font-family:Arial,sans-serif;fill:#1c2a37}.small{font-size:12px}.label{font-size:13px;font-weight:bold}.title{font-size:26px;font-weight:bold}</style>
+<rect width="100%" height="100%" fill="#f5f4ef"/><text x="32" y="38" class="title">Widow&#x27;s Peak Fire Lookout</text>
+<text x="32" y="65" font-size="15">WLD-04 · ROUGH LAYOUT v1 · metres · planning only</text>
+<text x="32" y="90" class="small">Cyan: route reservation · amber dashed: elevation change · B/C/A: ritual clear areas · numbered spaces: key below</text>
+<text x="32" y="138.0" font-size="18">Standing elevation Y +0 m</text>
+<path d="M70.0,155.0 v610.0" stroke="#dfdfd8"/><text x="70.0" y="149.0" class="small">0</text>
+<path d="M137.8,155.0 v610.0" stroke="#dfdfd8"/><text x="137.8" y="149.0" class="small">10</text>
+<path d="M205.6,155.0 v610.0" stroke="#dfdfd8"/><text x="205.6" y="149.0" class="small">20</text>
+<path d="M273.3,155.0 v610.0" stroke="#dfdfd8"/><text x="273.3" y="149.0" class="small">30</text>
+<path d="M341.1,155.0 v610.0" stroke="#dfdfd8"/><text x="341.1" y="149.0" class="small">40</text>
+<path d="M408.9,155.0 v610.0" stroke="#dfdfd8"/><text x="408.9" y="149.0" class="small">50</text>
+<path d="M70.0,168.6 h393.1" stroke="#dfdfd8"/><text x="40.0" y="172.6" class="small">0</text>
+<path d="M70.0,236.3 h393.1" stroke="#dfdfd8"/><text x="40.0" y="240.3" class="small">10</text>
+<path d="M70.0,304.1 h393.1" stroke="#dfdfd8"/><text x="40.0" y="308.1" class="small">20</text>
+<path d="M70.0,371.9 h393.1" stroke="#dfdfd8"/><text x="40.0" y="375.9" class="small">30</text>
+<path d="M70.0,439.7 h393.1" stroke="#dfdfd8"/><text x="40.0" y="443.7" class="small">40</text>
+<path d="M70.0,507.4 h393.1" stroke="#dfdfd8"/><text x="40.0" y="511.4" class="small">50</text>
+<path d="M70.0,575.2 h393.1" stroke="#dfdfd8"/><text x="40.0" y="579.2" class="small">60</text>
+<path d="M70.0,643.0 h393.1" stroke="#dfdfd8"/><text x="40.0" y="647.0" class="small">70</text>
+<path d="M70.0,710.8 h393.1" stroke="#dfdfd8"/><text x="40.0" y="714.8" class="small">80</text>
+<rect x="205.6" y="575.2" width="108.4" height="81.3" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Lower trail gate; 16 × 12 m; Y 0</title></rect>
+<rect x="124.2" y="453.2" width="81.3" height="122.0" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Lower signed trail; 12 × 18 m; Y 0</title></rect>
+<rect x="205.6" y="656.6" width="108.4" height="81.3" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Forest-road van apron; 16 × 12 m; Y 0</title></rect>
+<path d="M259.8,697.2 L259.8,656.6 L259.8,615.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M259.8,615.9 L164.9,514.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.</title></path>
+<path d="M164.9,514.2 L259.8,412.6" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L03: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="168.9" y="509.2" class="small">↕ L03</text>
+<path d="M361.4,514.2 L259.8,615.9" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L10: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="263.8" y="610.9" class="small">↕ L10</text>
+<circle cx="259.8" cy="697.2" r="10" fill="#f8f7f1" stroke="#536477"/><text x="259.8" y="701.2" text-anchor="middle" class="small">1</text>
+<circle cx="259.8" cy="615.9" r="10" fill="#f8f7f1" stroke="#536477"/><text x="259.8" y="619.9" text-anchor="middle" class="small">2</text>
+<circle cx="164.9" cy="514.2" r="10" fill="#f8f7f1" stroke="#536477"/><text x="164.9" y="518.2" text-anchor="middle" class="small">3</text>
+<text x="259.8" y="682.2" class="label">VAN / EXTRACT</text>
+<path d="M1150,215.0 v-35 l-5,9 m5,-9 l5,9" fill="none" stroke="#283949" stroke-width="2"/><text x="1144" y="172.0" class="label">N</text>
+<path d="M1080,265.0 h67.8" stroke="#283949" stroke-width="3"/><text x="1080" y="283.0" class="small">10 metres</text>
+<text x="32" y="828.0" font-size="18">Standing elevation Y +3 m</text>
+<path d="M70.0,845.0 v610.0" stroke="#dfdfd8"/><text x="70.0" y="839.0" class="small">0</text>
+<path d="M137.8,845.0 v610.0" stroke="#dfdfd8"/><text x="137.8" y="839.0" class="small">10</text>
+<path d="M205.6,845.0 v610.0" stroke="#dfdfd8"/><text x="205.6" y="839.0" class="small">20</text>
+<path d="M273.3,845.0 v610.0" stroke="#dfdfd8"/><text x="273.3" y="839.0" class="small">30</text>
+<path d="M341.1,845.0 v610.0" stroke="#dfdfd8"/><text x="341.1" y="839.0" class="small">40</text>
+<path d="M408.9,845.0 v610.0" stroke="#dfdfd8"/><text x="408.9" y="839.0" class="small">50</text>
+<path d="M70.0,858.6 h393.1" stroke="#dfdfd8"/><text x="40.0" y="862.6" class="small">0</text>
+<path d="M70.0,926.3 h393.1" stroke="#dfdfd8"/><text x="40.0" y="930.3" class="small">10</text>
+<path d="M70.0,994.1 h393.1" stroke="#dfdfd8"/><text x="40.0" y="998.1" class="small">20</text>
+<path d="M70.0,1061.9 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1065.9" class="small">30</text>
+<path d="M70.0,1129.7 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1133.7" class="small">40</text>
+<path d="M70.0,1197.4 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1201.4" class="small">50</text>
+<path d="M70.0,1265.2 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1269.2" class="small">60</text>
+<path d="M70.0,1333.0 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1337.0" class="small">70</text>
+<path d="M70.0,1400.8 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1404.8" class="small">80</text>
+<rect x="205.6" y="1061.9" width="108.4" height="81.3" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Boulder trail bend; 16 × 12 m; Y 3</title></rect>
+<rect x="314.0" y="1143.2" width="94.9" height="122.0" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Contour return path; 14 × 18 m; Y 3</title></rect>
+<path d="M164.9,1204.2 L259.8,1102.6" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L03: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="263.8" y="1097.6" class="small">↕ L03</text>
+<path d="M259.8,1102.6 L273.3,1007.7" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L04: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="263.8" y="1097.6" class="small">↕ L04</text>
+<path d="M151.3,994.1 L259.8,1102.6" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L06: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="263.8" y="1097.6" class="small">↕ L06</text>
+<path d="M375.0,1095.8 L361.4,1204.2" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L09: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="365.4" y="1199.2" class="small">↕ L09</text>
+<path d="M361.4,1204.2 L259.8,1305.9" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L10: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="365.4" y="1199.2" class="small">↕ L10</text>
+<path d="M361.4,1204.2 L273.3,1007.7" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L11: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="365.4" y="1199.2" class="small">↕ L11</text>
+<circle cx="259.8" cy="1102.6" r="10" fill="#f8f7f1" stroke="#536477"/><text x="259.8" y="1106.6" text-anchor="middle" class="small">4</text>
+<circle cx="361.4" cy="1204.2" r="10" fill="#f8f7f1" stroke="#536477"/><text x="361.4" y="1208.2" text-anchor="middle" class="small">9</text>
+<path d="M1150,905.0 v-35 l-5,9 m5,-9 l5,9" fill="none" stroke="#283949" stroke-width="2"/><text x="1144" y="862.0" class="label">N</text>
+<path d="M1080,955.0 h67.8" stroke="#283949" stroke-width="3"/><text x="1080" y="973.0" class="small">10 metres</text>
+<text x="32" y="1518.0" font-size="18">Standing elevation Y +6 m</text>
+<path d="M70.0,1535.0 v610.0" stroke="#dfdfd8"/><text x="70.0" y="1529.0" class="small">0</text>
+<path d="M137.8,1535.0 v610.0" stroke="#dfdfd8"/><text x="137.8" y="1529.0" class="small">10</text>
+<path d="M205.6,1535.0 v610.0" stroke="#dfdfd8"/><text x="205.6" y="1529.0" class="small">20</text>
+<path d="M273.3,1535.0 v610.0" stroke="#dfdfd8"/><text x="273.3" y="1529.0" class="small">30</text>
+<path d="M341.1,1535.0 v610.0" stroke="#dfdfd8"/><text x="341.1" y="1529.0" class="small">40</text>
+<path d="M408.9,1535.0 v610.0" stroke="#dfdfd8"/><text x="408.9" y="1529.0" class="small">50</text>
+<path d="M70.0,1548.6 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1552.6" class="small">0</text>
+<path d="M70.0,1616.3 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1620.3" class="small">10</text>
+<path d="M70.0,1684.1 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1688.1" class="small">20</text>
+<path d="M70.0,1751.9 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1755.9" class="small">30</text>
+<path d="M70.0,1819.7 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1823.7" class="small">40</text>
+<path d="M70.0,1887.4 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1891.4" class="small">50</text>
+<path d="M70.0,1955.2 h393.1" stroke="#dfdfd8"/><text x="40.0" y="1959.2" class="small">60</text>
+<path d="M70.0,2023.0 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2027.0" class="small">70</text>
+<path d="M70.0,2090.8 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2094.8" class="small">80</text>
+<rect x="205.6" y="1643.4" width="135.6" height="108.4" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Hillside clearing; 20 × 16 m; Y 6</title></rect>
+<rect x="232.7" y="1562.1" width="81.3" height="81.3" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Tower footing / fenced base; 12 × 12 m; Y 6</title></rect>
+<rect x="97.1" y="1643.4" width="108.4" height="81.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Maintenance hut; 16 × 12 m; Y 6</title></rect>
+<rect x="341.1" y="1643.4" width="94.9" height="108.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ruined ranger station; 14 × 16 m; Y 6</title></rect>
+<rect x="341.1" y="1751.9" width="67.8" height="67.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ranger store; 10 × 10 m; Y 6</title></rect>
+<path d="M259.8,1792.6 L273.3,1697.7" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L04: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="277.3" y="1692.7" class="small">↕ L04</text>
+<path d="M273.3,1697.7 L205.6,1684.1 L151.3,1684.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L05: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M151.3,1684.1 L259.8,1792.6" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L06: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="155.3" y="1679.1" class="small">↕ L06</text>
+<path d="M273.3,1697.7 L341.1,1697.7 L388.6,1697.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L07: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M388.6,1697.7 L375.0,1751.9 L375.0,1785.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L08: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M375.0,1785.8 L361.4,1894.2" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L09: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="379.0" y="1780.8" class="small">↕ L09</text>
+<path d="M361.4,1894.2 L273.3,1697.7" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L11: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="277.3" y="1692.7" class="small">↕ L11</text>
+<path d="M273.3,1697.7 L273.3,1643.4 L273.3,1602.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L12: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<path d="M273.3,1602.8 L246.2,1602.8" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L13: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="277.3" y="1597.8" class="small">↕ L13</text>
+<circle cx="273.3" cy="1697.7" r="10" fill="#f8f7f1" stroke="#536477"/><text x="273.3" y="1701.7" text-anchor="middle" class="small">5</text>
+<circle cx="151.3" cy="1684.1" r="10" fill="#f8f7f1" stroke="#536477"/><text x="151.3" y="1688.1" text-anchor="middle" class="small">6</text>
+<circle cx="388.6" cy="1697.7" r="10" fill="#f8f7f1" stroke="#536477"/><text x="388.6" y="1701.7" text-anchor="middle" class="small">7</text>
+<circle cx="375.0" cy="1785.8" r="10" fill="#f8f7f1" stroke="#536477"/><text x="375.0" y="1789.8" text-anchor="middle" class="small">8</text>
+<circle cx="273.3" cy="1602.8" r="10" fill="#f8f7f1" stroke="#536477"/><text x="273.3" y="1606.8" text-anchor="middle" class="small">10</text>
+<rect x="258.4" y="1682.8" width="29.8" height="29.8" fill="none" stroke="#812c6b" stroke-width="2"/><text x="291.2" y="1697.7" class="label">B</text>
+<rect x="136.4" y="1669.2" width="29.8" height="29.8" fill="none" stroke="#812c6b" stroke-width="2"/><text x="169.2" y="1684.1" class="label">C</text>
+<rect x="373.6" y="1682.8" width="29.8" height="29.8" fill="none" stroke="#812c6b" stroke-width="2"/><text x="406.5" y="1697.7" class="label">A</text>
+<path d="M1150,1595.0 v-35 l-5,9 m5,-9 l5,9" fill="none" stroke="#283949" stroke-width="2"/><text x="1144" y="1552.0" class="label">N</text>
+<path d="M1080,1645.0 h67.8" stroke="#283949" stroke-width="3"/><text x="1080" y="1663.0" class="small">10 metres</text>
+<text x="32" y="2208.0" font-size="18">Standing elevation Y +10.5 m</text>
+<path d="M70.0,2225.0 v610.0" stroke="#dfdfd8"/><text x="70.0" y="2219.0" class="small">0</text>
+<path d="M137.8,2225.0 v610.0" stroke="#dfdfd8"/><text x="137.8" y="2219.0" class="small">10</text>
+<path d="M205.6,2225.0 v610.0" stroke="#dfdfd8"/><text x="205.6" y="2219.0" class="small">20</text>
+<path d="M273.3,2225.0 v610.0" stroke="#dfdfd8"/><text x="273.3" y="2219.0" class="small">30</text>
+<path d="M341.1,2225.0 v610.0" stroke="#dfdfd8"/><text x="341.1" y="2219.0" class="small">40</text>
+<path d="M408.9,2225.0 v610.0" stroke="#dfdfd8"/><text x="408.9" y="2219.0" class="small">50</text>
+<path d="M70.0,2238.6 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2242.6" class="small">0</text>
+<path d="M70.0,2306.3 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2310.3" class="small">10</text>
+<path d="M70.0,2374.1 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2378.1" class="small">20</text>
+<path d="M70.0,2441.9 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2445.9" class="small">30</text>
+<path d="M70.0,2509.7 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2513.7" class="small">40</text>
+<path d="M70.0,2577.4 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2581.4" class="small">50</text>
+<path d="M70.0,2645.2 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2649.2" class="small">60</text>
+<path d="M70.0,2713.0 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2717.0" class="small">70</text>
+<path d="M70.0,2780.8 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2784.8" class="small">80</text>
+<rect x="232.7" y="2252.1" width="27.1" height="81.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Tower midway landing; 4 × 12 m; Y 10.5</title></rect>
+<path d="M273.3,2292.8 L246.2,2292.8" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L13: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="250.2" y="2287.8" class="small">↕ L13</text>
+<path d="M246.2,2292.8 L253.0,2272.4" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L14: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="250.2" y="2287.8" class="small">↕ L14</text>
+<circle cx="246.2" cy="2292.8" r="10" fill="#f8f7f1" stroke="#536477"/><text x="246.2" y="2296.8" text-anchor="middle" class="small">11</text>
+<path d="M1150,2285.0 v-35 l-5,9 m5,-9 l5,9" fill="none" stroke="#283949" stroke-width="2"/><text x="1144" y="2242.0" class="label">N</text>
+<path d="M1080,2335.0 h67.8" stroke="#283949" stroke-width="3"/><text x="1080" y="2353.0" class="small">10 metres</text>
+<text x="32" y="2898.0" font-size="18">Standing elevation Y +15 m</text>
+<path d="M70.0,2915.0 v610.0" stroke="#dfdfd8"/><text x="70.0" y="2909.0" class="small">0</text>
+<path d="M137.8,2915.0 v610.0" stroke="#dfdfd8"/><text x="137.8" y="2909.0" class="small">10</text>
+<path d="M205.6,2915.0 v610.0" stroke="#dfdfd8"/><text x="205.6" y="2909.0" class="small">20</text>
+<path d="M273.3,2915.0 v610.0" stroke="#dfdfd8"/><text x="273.3" y="2909.0" class="small">30</text>
+<path d="M341.1,2915.0 v610.0" stroke="#dfdfd8"/><text x="341.1" y="2909.0" class="small">40</text>
+<path d="M408.9,2915.0 v610.0" stroke="#dfdfd8"/><text x="408.9" y="2909.0" class="small">50</text>
+<path d="M70.0,2928.6 h393.1" stroke="#dfdfd8"/><text x="40.0" y="2932.6" class="small">0</text>
+<path d="M70.0,2996.3 h393.1" stroke="#dfdfd8"/><text x="40.0" y="3000.3" class="small">10</text>
+<path d="M70.0,3064.1 h393.1" stroke="#dfdfd8"/><text x="40.0" y="3068.1" class="small">20</text>
+<path d="M70.0,3131.9 h393.1" stroke="#dfdfd8"/><text x="40.0" y="3135.9" class="small">30</text>
+<path d="M70.0,3199.7 h393.1" stroke="#dfdfd8"/><text x="40.0" y="3203.7" class="small">40</text>
+<path d="M70.0,3267.4 h393.1" stroke="#dfdfd8"/><text x="40.0" y="3271.4" class="small">50</text>
+<path d="M70.0,3335.2 h393.1" stroke="#dfdfd8"/><text x="40.0" y="3339.2" class="small">60</text>
+<path d="M70.0,3403.0 h393.1" stroke="#dfdfd8"/><text x="40.0" y="3407.0" class="small">70</text>
+<path d="M70.0,3470.8 h393.1" stroke="#dfdfd8"/><text x="40.0" y="3474.8" class="small">80</text>
+<rect x="273.3" y="2942.1" width="40.7" height="40.7" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Lookout exterior deck; 6 × 6 m; Y 15</title></rect>
+<rect x="232.7" y="2942.1" width="40.7" height="40.7" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Lookout cab; 6 × 6 m; Y 15</title></rect>
+<path d="M246.2,2982.8 L253.0,2962.4" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L14: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<text x="257.0" y="2957.4" class="small">↕ L14</text>
+<path d="M253.0,2962.4 L273.3,2962.4 L293.7,2962.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L15: Reserve a supported route and actual boundary opening; centre line is schematic.</title></path>
+<circle cx="253.0" cy="2962.4" r="10" fill="#f8f7f1" stroke="#536477"/><text x="253.0" y="2966.4" text-anchor="middle" class="small">12</text>
+<circle cx="293.7" cy="2962.4" r="10" fill="#f8f7f1" stroke="#536477"/><text x="293.7" y="2966.4" text-anchor="middle" class="small">13</text>
+<path d="M1150,2975.0 v-35 l-5,9 m5,-9 l5,9" fill="none" stroke="#283949" stroke-width="2"/><text x="1144" y="2932.0" class="label">N</text>
+<path d="M1080,3025.0 h67.8" stroke="#283949" stroke-width="3"/><text x="1080" y="3043.0" class="small">10 metres</text>
+<text x="32" y="3582.0" class="small">1. Forest-road van apron (16×12; Y+0)</text>
+<text x="446" y="3582.0" class="small">2. Lower trail gate (16×12; Y+0)</text>
+<text x="860" y="3582.0" class="small">3. Lower signed trail (12×18; Y+0)</text>
+<text x="32" y="3612.0" class="small">4. Boulder trail bend (16×12; Y+3)</text>
+<text x="446" y="3612.0" class="small">5. Hillside clearing (20×16; Y+6)</text>
+<text x="860" y="3612.0" class="small">6. Maintenance hut (16×12; Y+6)</text>
+<text x="32" y="3642.0" class="small">7. Ruined ranger station (14×16; Y+6)</text>
+<text x="446" y="3642.0" class="small">8. Ranger store (10×10; Y+6)</text>
+<text x="860" y="3642.0" class="small">9. Contour return path (14×18; Y+3)</text>
+<text x="32" y="3672.0" class="small">10. Tower footing / fenced base (12×12; Y+6)</text>
+<text x="446" y="3672.0" class="small">11. Tower midway landing (4×12; Y+10.5)</text>
+<text x="860" y="3672.0" class="small">12. Lookout cab (6×6; Y+15)</text>
+<text x="32" y="3702.0" class="small">13. Lookout exterior deck (6×6; Y+15)</text>
+</svg>

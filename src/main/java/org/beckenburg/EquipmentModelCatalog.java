@@ -156,6 +156,15 @@ final class EquipmentModelCatalog {
         new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.I, "open", "blender_ghost_writing_book_1_open"),
         new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.II, "open", "blender_ghost_writing_book_2_open"),
         new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.III, "open", "blender_ghost_writing_book_3_open"),
+        new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.I, "open_child_drawings", "blender_ghost_writing_book_1_open_child_drawings"),
+        new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.I, "open_frantic_scrawls", "blender_ghost_writing_book_1_open_frantic_scrawls"),
+        new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.I, "open_ritual_circles", "blender_ghost_writing_book_1_open_ritual_circles"),
+        new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.II, "open_child_drawings", "blender_ghost_writing_book_2_open_child_drawings"),
+        new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.II, "open_frantic_scrawls", "blender_ghost_writing_book_2_open_frantic_scrawls"),
+        new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.II, "open_ritual_circles", "blender_ghost_writing_book_2_open_ritual_circles"),
+        new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.III, "open_child_drawings", "blender_ghost_writing_book_3_open_child_drawings"),
+        new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.III, "open_frantic_scrawls", "blender_ghost_writing_book_3_open_frantic_scrawls"),
+        new Variant("GHOST_WRITING_BOOK", EquipmentTiers.Tier.III, "open_ritual_circles", "blender_ghost_writing_book_3_open_ritual_circles"),
         new Variant("FIRELIGHT", EquipmentTiers.Tier.I, "lit", "blender_firelight_1_lit"),
         new Variant("FIRELIGHT", EquipmentTiers.Tier.II, "lit", "blender_firelight_2_lit"),
         new Variant("FIRELIGHT", EquipmentTiers.Tier.III, "lit", "blender_firelight_3_lit"),
@@ -227,7 +236,7 @@ final class EquipmentModelCatalog {
         for(EquipmentTiers.Tier tier:EquipmentTiers.Tier.values())
             if(!stages.containsKey(key("HEALTH_SUPPLIES",tier)))
                 throw new ExceptionInInitializerError("Missing health supply tier "+tier);
-        if (stages.size()!=129 || variants.size()!=44 || names.size()!=153)
+        if (stages.size()!=129 || variants.size()!=53 || names.size()!=162)
             throw new ExceptionInInitializerError("Incomplete source equipment model inventory");
         STAGES = Collections.unmodifiableMap(stages);
         VARIANTS = Collections.unmodifiableMap(variants);

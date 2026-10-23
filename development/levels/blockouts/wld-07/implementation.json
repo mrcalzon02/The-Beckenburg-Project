@@ -1,0 +1,187 @@
+{
+  "id": "WLD-07",
+  "title": "Saint Bartholomew's Forgotten Cemetery",
+  "source": "layouts\\wld-07\\layout.json",
+  "source_sha256": "d22635124d4e8167df3e5057c0c155ab1759e348995ba2d34946ff0959fd85ac",
+  "zones": 13,
+  "routes": 16,
+  "shell_openings": [
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "S",
+      "link": "L04",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "E",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "E",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tool",
+      "side": "W",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tool",
+      "side": "W",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "east-stair",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "east-stair",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ossuary",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ossuary",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 115,
+  "issues": [
+    {
+      "zone": "west-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.05,
+          15.05,
+          11.95,
+          16.95
+        ]
+      ]
+    },
+    {
+      "zone": "east-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          44.05,
+          15.05,
+          45.95,
+          16.95
+        ]
+      ]
+    },
+    {
+      "link": "L14",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 17.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L15",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 17.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Research burial-ground circulation and ossuary structure before detailed construction; keep fictional history explicit.",
+    "Place no rites on graves or inaccessible marker tops; all reservation squares are on clear paths/floors.",
+    "Test underground exit visibility and tree-occlusion consistency."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "d2565a85dee123c4450760e8e085b42b5bad4a6e31dcb4656b28cc83d346659d",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

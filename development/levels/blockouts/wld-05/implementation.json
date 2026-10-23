@@ -1,0 +1,354 @@
+{
+  "id": "WLD-05",
+  "title": "Dead Man's Claim",
+  "source": "layouts\\wld-05\\layout.json",
+  "source_sha256": "5b0ca78e4e8992bd4ae01226f7c745b73fe9881a20a0f0693fd6cff1d15a4970",
+  "zones": 14,
+  "routes": 18,
+  "shell_openings": [
+    {
+      "zone": "shack",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "shack",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "shack",
+      "side": "E",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "assay",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "assay",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "assay",
+      "side": "W",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "haul",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "haul",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "haul",
+      "side": "E",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "haul",
+      "side": "E",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "S",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "S",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-east",
+      "side": "N",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-east",
+      "side": "N",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-east",
+      "side": "W",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-east",
+      "side": "W",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lift",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lift",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "vent",
+      "side": "N",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "vent",
+      "side": "N",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 169,
+  "issues": [
+    {
+      "zone": "adit",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          28.8,
+          50.8,
+          31.2,
+          53.2
+        ],
+        [
+          28.8,
+          50.8,
+          31.2,
+          53.2
+        ]
+      ]
+    },
+    {
+      "zone": "ore-west",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.05,
+          30.05,
+          11.95,
+          31.95
+        ]
+      ]
+    },
+    {
+      "zone": "vent",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.05,
+          51.05,
+          11.95,
+          52.95
+        ]
+      ]
+    },
+    {
+      "link": "L09",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 6,
+      "plan_run": 21.095023109728988,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L15",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4,
+      "plan_run": 0.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L16",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4,
+      "plan_run": 21.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L17",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 6,
+      "plan_run": 19.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Engineer the adit descent as a long graded drift rather than using the schematic direct line as a steep stair.",
+    "Refine shaft void, lower-level gradients and two-way return with headroom and rock boundary tests.",
+    "Inspect mine engineering references before detailed supports or ventilation routing."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "77212b2da77eb6c75415f39fee5eda3457c8790e79124c68324e0faf4969817f",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

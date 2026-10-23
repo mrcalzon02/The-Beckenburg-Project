@@ -1,0 +1,26 @@
+{
+  "id": "level_work_survivor_cookbox",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "8697cb5d8c196499fe8a1583801ed844dfe04879754ff0fb3670a6b79d6af1d2",
+  "bytes": 124776,
+  "triangles": 1124,
+  "bounds": [
+    [
+      -0.41999998688697815,
+      0.0,
+      -0.33000004291534424
+    ],
+    [
+      0.41999998688697815,
+      0.9168689846992493,
+      0.30250000953674316
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_survivor_cookbox.blend",
+  "function": "Salvaged cook crate, lidded soot-dark pot, wire bail, mug, ration parcel and spoon",
+  "runtime": "Ready static survivor cooking kit; cold pot and non-interactive supplies",
+  "placement": "Blackpine logging cabin recent occupation layer, beside its stove area"
+}

@@ -90,3 +90,7 @@ Logbooks at fish house and cottage, storm records in boathouse. A shipment recor
 - docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md
 - docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md
 - docs/environments/SHARED_VAN_MODULE.md
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

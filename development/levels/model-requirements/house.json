@@ -1,0 +1,588 @@
+{
+  "id": "HOUSE",
+  "title": "The Briar House",
+  "geometry_scope": "existing map: documentation only",
+  "source_layout_sha256": "1076c2f3bc2c13f785c278bb6490172458e1461510c9a2b9f6cc928276bcfa9c",
+  "finish_palette": "Domestic timber/plaster, damp cellar",
+  "standard_architecture": [
+    "distinct wall/floor/ceiling kit",
+    "door leaves, frames, hinges and handles",
+    "window frames/glazing/sills",
+    "proper stairs, landings, deck openings and guards",
+    "mounted room lights, switches, breaker and supported service runs",
+    "separate van dock contract; reuse canonical van"
+  ],
+  "map_specific_models": [
+    {
+      "model": "Family-photo frame variations",
+      "status": "needed or existing candidate: audit before authoring duplicates"
+    },
+    {
+      "model": "child toy cluster",
+      "status": "needed or existing candidate: audit before authoring duplicates"
+    },
+    {
+      "model": "fitted cellar service manifold",
+      "status": "needed or existing candidate: audit before authoring duplicates"
+    },
+    {
+      "model": "house address and mail set",
+      "status": "needed or existing candidate: audit before authoring duplicates"
+    }
+  ],
+  "zones": [
+    {
+      "id": "r00",
+      "room": "Foyer",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "storage",
+          "needed": "shelves, crates/bins, labels, pallets and restrained stored contents",
+          "existing_local_candidates": [
+            "wooden_crate_1",
+            "shelf_mp_6",
+            "level_work_timber_rack"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r01",
+      "room": "Living room",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "storage",
+          "needed": "shelves, crates/bins, labels, pallets and restrained stored contents",
+          "existing_local_candidates": [
+            "wooden_crate_1",
+            "shelf_mp_6",
+            "level_work_timber_rack"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r02",
+      "room": "Family kitchen",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "kitchen",
+          "needed": "food preparation, cold/hot appliance shells, serving and crockery",
+          "existing_local_candidates": [
+            "level_kitchen_counter",
+            "plate_mp_1",
+            "level_work_survivor_cookbox"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "seating",
+          "needed": "chairs, tables and bench variants",
+          "existing_local_candidates": [
+            "dinner_table_1",
+            "chair_mp_5",
+            "level_camp_bench"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r03",
+      "room": "Dining nook",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "kitchen",
+          "needed": "food preparation, cold/hot appliance shells, serving and crockery",
+          "existing_local_candidates": [
+            "level_kitchen_counter",
+            "plate_mp_1",
+            "level_work_survivor_cookbox"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "seating",
+          "needed": "chairs, tables and bench variants",
+          "existing_local_candidates": [
+            "dinner_table_1",
+            "chair_mp_5",
+            "level_camp_bench"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r04",
+      "room": "Main hall and stair",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "storage",
+          "needed": "shelves, crates/bins, labels, pallets and restrained stored contents",
+          "existing_local_candidates": [
+            "wooden_crate_1",
+            "shelf_mp_6",
+            "level_work_timber_rack"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r05",
+      "room": "Upper landing",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "storage",
+          "needed": "shelves, crates/bins, labels, pallets and restrained stored contents",
+          "existing_local_candidates": [
+            "wooden_crate_1",
+            "shelf_mp_6",
+            "level_work_timber_rack"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r06",
+      "room": "Master bedroom",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "sleeping",
+          "needed": "bed frames, bedding, personal storage and hanging clothing",
+          "existing_local_candidates": [
+            "level_trace_camp_bed",
+            "level_work_crew_footlocker",
+            "level_trace_bedroll"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r07",
+      "room": "Child bedroom",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "sleeping",
+          "needed": "bed frames, bedding, personal storage and hanging clothing",
+          "existing_local_candidates": [
+            "level_trace_camp_bed",
+            "level_work_crew_footlocker",
+            "level_trace_bedroll"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r08",
+      "room": "Bathroom",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "sanitary",
+          "needed": "toilet/privacy units, basin/taps, drain and washing accessories",
+          "existing_local_candidates": [
+            "level_bath_basin",
+            "level_bathtub",
+            "toilet_mp_1",
+            "level_trace_wash_trough"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r09",
+      "room": "Cellar stair landing",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "storage",
+          "needed": "shelves, crates/bins, labels, pallets and restrained stored contents",
+          "existing_local_candidates": [
+            "wooden_crate_1",
+            "shelf_mp_6",
+            "level_work_timber_rack"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r10",
+      "room": "Boiler and breaker room",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "service",
+          "needed": "plant machinery, cable/pipe supports, tools and spares",
+          "existing_local_candidates": [
+            "level_boiler_coal",
+            "level_boiler_oil",
+            "level_work_repair_bench"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "r11",
+      "room": "Cellar storage",
+      "kits": [
+        {
+          "category": "circulation",
+          "needed": "mounted signs, switches, handrails, door furniture and light fittings",
+          "existing_local_candidates": [
+            "light_switch_1",
+            "level_utility_light",
+            "level_domestic_light"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        },
+        {
+          "category": "storage",
+          "needed": "shelves, crates/bins, labels, pallets and restrained stored contents",
+          "existing_local_candidates": [
+            "wooden_crate_1",
+            "shelf_mp_6",
+            "level_work_timber_rack"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "grounds",
+      "room": "Rear grounds / exterior",
+      "kits": [
+        {
+          "category": "outdoor",
+          "needed": "terrain transitions, boundaries, route signs, local planting and supported weather debris",
+          "existing_local_candidates": [
+            "level_camp_bench",
+            "level_woodland_boulder",
+            "level_woodland_stump",
+            "level_woodland_fern"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "entry",
+      "room": "Approach / arrival",
+      "kits": [
+        {
+          "category": "outdoor",
+          "needed": "terrain transitions, boundaries, route signs, local planting and supported weather debris",
+          "existing_local_candidates": [
+            "level_camp_bench",
+            "level_woodland_boulder",
+            "level_woodland_stump",
+            "level_woodland_fern"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    },
+    {
+      "id": "stage",
+      "room": "Van service apron",
+      "kits": [
+        {
+          "category": "outdoor",
+          "needed": "terrain transitions, boundaries, route signs, local planting and supported weather debris",
+          "existing_local_candidates": [
+            "level_camp_bench",
+            "level_woodland_boulder",
+            "level_woodland_stump",
+            "level_woodland_fern"
+          ],
+          "status": "reuse candidate; dimensions, pivot, UVs and scene fit still require inspection"
+        }
+      ],
+      "clutter": [
+        "supported papers/labels appropriate to this room",
+        "small personal or work-use objects on real surfaces",
+        "waste/wear patches only where the room history supports them"
+      ],
+      "details": [
+        "threshold/trim joins and supporting brackets",
+        "local damp, dirt, fading or corrosion matching exposure",
+        "readable labels without assigning ghost identity"
+      ]
+    }
+  ],
+  "variants": [
+    "clean source plus separate aged skins where needed",
+    "damage/wear variations retaining believable supports",
+    "do not stretch a source prop into a different object"
+  ],
+  "implementation_order": [
+    "audit existing runtime and owner library",
+    "architecture and route supports",
+    "major furniture and fixtures",
+    "map-specific landmark machinery/props",
+    "supported clutter",
+    "wear, signage and story detail",
+    "collision, lighting and in-room visual review"
+  ],
+  "limitations": [
+    "Quantities and asset budgets await room dressing plans.",
+    "Existing candidates are verified filenames, not certified fit or finished availability.",
+    "This is a model worklist, not implemented gameplay."
+  ]
+}

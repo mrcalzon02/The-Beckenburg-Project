@@ -38,6 +38,10 @@ public final class GhostWriting {
         return "BOOK|DEPLOYED|"+room+"|"+Math.round(placedX*1000)+"|"
             +Math.round(placedY*1000)+"|"+Math.round(placedZ*1000)+"|"+tier;
     }
+    public String writingFrame(){
+        if(page==null)throw new IllegalStateException("no authored writing");
+        return "BOOK|WRITTEN|"+page.room()+"|"+page.style();
+    }
     public void place(int seat,int room,int tick,double x,double y,double z,
                       EquipmentTiers.Tier tier){
         if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z)

@@ -1,0 +1,107 @@
+{
+  "status": "pass",
+  "base_commit": "803577aea22b73f159b49120197cb94f4845b6a4",
+  "scoped_java_overlays": {
+    "src/main/java/org/beckenburg/BlackpineProductionAssets.java": "90847eaa0063d75d4d5035ce8075ec36172d8f82f264e33d46d1f44e1641244a",
+    "src/test/java/org/beckenburg/BlackpineMillExpansionCapture.java": "2251323bfb06784c1b534d1601218fe40f82e5c599564a6b6a312efb3947048c",
+    "src/test/java/org/beckenburg/BlackpineMillExpansionTest.java": "c6baa7f24e4379bc61b432e4aa9e41aa0c465ce28532c1a6a9f747e7bf377d4a"
+  },
+  "runtime_models": {
+    "level_work_bandsaw": "420b08544d2d22490dfecf169b42f535b549fee77351755b03bb498df9550b0d",
+    "level_work_boot_rack": "247fcb8958075b662a96e1b75bc51aaa2a8c092a4bc7dba63646a7b4bffc3dcf",
+    "level_work_camp_sign": "6ff3f3fe645429987a3405b7c1b6d01ce023d56d295f1501546fbb2ea30454b5",
+    "level_work_circular_headrig": "94bb324d45689d887f2b96083d6645c6d7e26bbea2ed8ff16b7e52d85c314daf",
+    "level_work_crew_footlocker": "ffba4584f2c145810ccfbba2c4a39571b27a1fc8ea8ed636baf78b72f27f9b82",
+    "level_work_dust_extractor": "ec49db4d121882cf876ba367c78b164ebb989a08d7752c0ab19d7417ce227177",
+    "level_work_hearth_tools": "ff2d331798f51c400539f5e8d4c649fbb52018c283548ae0eb9f3edf396bed29",
+    "level_work_log_carriage": "ae60417a2762953f06d38e45e51c47c5aaf2841fbacdefff29acc320b369c6f3",
+    "level_work_repair_bench": "b922265b6fc70ed1060b1e92eb29818595e10254d063b28e3ceb647c73a2f3ee",
+    "level_work_safety_station": "eafe0fab866715e2542d3d5670c491ada3edb017b03fe986b57f097a8015cd9c",
+    "level_work_survivor_cookbox": "8697cb5d8c196499fe8a1583801ed844dfe04879754ff0fb3670a6b79d6af1d2",
+    "level_work_timber_rack": "4d69ae9045f3abb3a9732fde6745512b6d9d8769dd49988d6a545aa2f883ccad"
+  },
+  "checks": [
+    {
+      "test": "BlackpineMillExpansionTest",
+      "status": "pass",
+      "seconds": 0.33,
+      "output": "PASS four new models and relocated workshop saw inside finished walls, disjoint from solid furnishings; circular head saw aligned to logway"
+    },
+    {
+      "test": "ProductionAssetTest",
+      "status": "pass",
+      "seconds": 0.61,
+      "output": "PASS 12 ready runtime production meshes, 18879 shared source triangles, matching collision/support and clear spawns/rites"
+    },
+    {
+      "test": "BlackpineStoryTest",
+      "status": "pass",
+      "seconds": 0.76,
+      "output": "PASS 19 original story meshes (5757 source triangles), 12 room histories, 9 physically supported and centre-ray readable records, two boarded apertures and clear ritual floors"
+    },
+    {
+      "test": "BlackpineDressingTest",
+      "status": "pass",
+      "seconds": 0.56,
+      "output": "PASS: 20 original meshes (9971 library triangles), 99 backdrop trees, supported patios, real solid bodies and only three refuges"
+    },
+    {
+      "test": "TerrainAndRecoveryTest",
+      "status": "pass",
+      "seconds": 1.84,
+      "output": "PASS graded terrain, baked erosion paths, wholly clear shrubs/logs, rooted upright plants, 900 physical slope steps and player/ghost/loose-entity recovery"
+    },
+    {
+      "test": "BlackpineGrayboxTest",
+      "status": "pass",
+      "seconds": 0.36,
+      "output": "PASS: Blackpine dimensions, sparse refuge, physical doors, spawns, three rites and supported mill stairs"
+    },
+    {
+      "test": "AuthoredLevelPhysicsTest",
+      "status": "pass",
+      "seconds": 0.5,
+      "output": "HOUSE XYZ geometry checked\nFARMHOUSE XYZ geometry checked\nSCHOOL XYZ geometry checked"
+    },
+    {
+      "test": "CrouchAndOutdoorHidingTest",
+      "status": "pass",
+      "seconds": 0.33,
+      "output": "PASS: crouch sweep, low-headroom stand rejection, sprint exclusion, shrub boundaries, search reveal and solo parity"
+    },
+    {
+      "test": "LevelSurfaceIntegrityTest",
+      "status": "pass",
+      "seconds": 0.86,
+      "output": "PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS FARMHOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS SCHOOL: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards"
+    },
+    {
+      "test": "InteractionFocusTest",
+      "status": "pass",
+      "seconds": 2.05,
+      "output": "PASS HOUSE exact door/window meshes: 15 doors, 9 windows\nPASS HOUSE exact visible meshes: 27 clutter, 17 fixtures, 12 switches\nPASS FARMHOUSE exact door/window meshes: 12 doors, 4 windows\nPASS FARMHOUSE exact visible meshes: 46 clutter, 19 fixtures, 12 switches\nPASS SCHOOL exact door/window meshes: 25 doors, 8 windows\nPASS SCHOOL exact visible meshes: 56 clutter, 21 fixtures, 12 switches\nPASS rack units individually targeted"
+    },
+    {
+      "test": "AuthoredLevelReachabilityTest",
+      "status": "pass",
+      "seconds": 9.45,
+      "output": "blackpine reached elevations 0.0..4.002816901408451\nPASS blackpine: swept van route reaches all15 zones and all functional sockets, 292910 positions"
+    },
+    {
+      "test": "BlackpineMillExpansionCapture",
+      "status": "pass",
+      "seconds": 3.75,
+      "output": "dust-extractor 2163ms\ntimber-rack 277ms\nsafety-station 207ms\nmill-working-floor 406ms\nworkshop-bandsaw 323ms"
+    },
+    {
+      "test": "LevelSceneSource",
+      "status": "pass",
+      "seconds": 5.5,
+      "output": "Exact runtime source blackpine: 251966 textured triangles, 401 materials"
+    }
+  ],
+  "limitations": [
+    "Unrelated uncommitted lighting and castle edits excluded.",
+    "No native interactive hunt, LAN map acceptance or target-hardware performance certification."
+  ]
+}

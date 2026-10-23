@@ -12,6 +12,14 @@ public final class LanWorld {
     private final double[] xs=new double[6],ys=new double[6],zs=new double[6];
     private final int[] headings={270,270,270,270,270,270};
     private final int[] lastTick={-1,-1,-1,-1,-1,-1};
+    private final int[] safeRooms={14,14,14,14,14,14};
+    public void recoverBelowGround(){
+        for(int i=0;i<6;i++){
+            var old=new LevelDefinition.Vec(xs[i],ys[i],zs[i]);var at=GroundRecovery.recover(map,old,safeRooms[i],HunterPosture.height(crouched[i]));
+            if(!at.equals(old)){xs[i]=at.x();ys[i]=at.y();zs[i]=at.z();hiding[i]=false;shrubHiding[i]=false;}
+            int r=map.roomAt(xs[i],ys[i],zs[i]);if(r>=0&&map.traversable(xs[i],ys[i],zs[i],HunterPosture.height(crouched[i])))safeRooms[i]=r;
+        }
+    }
     private final int[] lastDoorTick={-3,-3,-3,-3,-3,-3};
     private double playerSpeed=1.0,sprintSpeed=1.5;
     private int hidingDensity=70;
@@ -65,11 +73,12 @@ public final class LanWorld {
     public void setRoom(int seat,int room){
         seat(seat);
         if(room<0||room>=HouseMap.ROOM_COUNT)throw new IllegalArgumentException("invalid room");
-        var spawn=map.spawn(room);xs[seat]=spawn.x();ys[seat]=spawn.y();zs[seat]=spawn.z();hiding[seat]=false;shrubHiding[seat]=false;crouched[seat]=false;
+        var spawn=map.spawn(room);xs[seat]=spawn.x();ys[seat]=spawn.y();zs[seat]=spawn.z();safeRooms[seat]=room;hiding[seat]=false;shrubHiding[seat]=false;crouched[seat]=false;
     }
     public Body body(int seat){seat(seat);return new Body(xs[seat],ys[seat],zs[seat],headings[seat],map.roomAt(xs[seat],ys[seat],zs[seat]));}
     /** A stationary player recharges on the same host 10 Hz clock as movement. */
     public void advanceStamina(int tick){
+        recoverBelowGround();
         if(tick<0)throw new IllegalArgumentException("invalid tick");
         if(sprint!=CustomContract.Sprint.LIMITED)return;
         for(int i=0;i<6;i++)

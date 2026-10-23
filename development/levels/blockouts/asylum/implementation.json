@@ -1,0 +1,467 @@
+{
+  "id": "ASYLUM",
+  "title": "St. Dymphna Hospital",
+  "source": "layouts\\asylum\\layout.json",
+  "source_sha256": "d3a12c5153d18c7aa27f851ba2ac1c7d408d94cff29d2f6362445b11eea9d63b",
+  "zones": 16,
+  "routes": 19,
+  "shell_openings": [
+    {
+      "zone": "reception",
+      "side": "N",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "reception",
+      "side": "N",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "reception",
+      "side": "S",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "reception",
+      "side": "S",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "reception",
+      "side": "W",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "reception",
+      "side": "W",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "S",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "S",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "W",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "W",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "W",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "W",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "E",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "E",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "spine",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "E",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "E",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "day",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "day",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "day",
+      "side": "W",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "day",
+      "side": "W",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "day",
+      "side": "E",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "day",
+      "side": "E",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ward",
+      "side": "N",
+      "link": "L09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ward",
+      "side": "N",
+      "link": "L09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ward",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ward",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ward",
+      "side": "E",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ward",
+      "side": "E",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-link",
+      "side": "N",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-link",
+      "side": "N",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-link",
+      "side": "W",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-link",
+      "side": "W",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-link",
+      "side": "E",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-link",
+      "side": "E",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "treatment",
+      "side": "W",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "treatment",
+      "side": "W",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "treatment",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "treatment",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "hydro",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "hydro",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "hydro",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "hydro",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "upper",
+      "side": "W",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "upper",
+      "side": "W",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-ward",
+      "side": "E",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-ward",
+      "side": "E",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 209,
+  "issues": [
+    {
+      "zone": "dining",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          43.05,
+          41.05,
+          44.95,
+          42.95
+        ]
+      ]
+    },
+    {
+      "zone": "upper",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.05,
+          34.05,
+          31.95,
+          35.95
+        ]
+      ]
+    },
+    {
+      "link": "L17",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.4,
+      "plan_run": 0.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 5.44 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L19",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 0.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Staggered ward concept informed by primary DC planning brochure; inspect actual floor drawings before detailed construction.",
+    "Add believable sanitary/service rooms as child spaces; preserve broad corridor turn clearance.",
+    "Draw basement stairs and evacuation route; avoid an upper ward with a single untelegraphed trap."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "a87e8468dce9179630b96e1145e87be933135f79a02a9f2ac8ef688511dadf11",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

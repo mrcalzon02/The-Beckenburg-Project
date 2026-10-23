@@ -95,3 +95,7 @@ Visitor records, medical accounts and guard rotas support contradictory history 
 - docs/environments/ROOM_AND_ASSET_REQUIREMENTS.md
 - docs/environments/THREE_RITUAL_SITES.md
 - https://www.nps.gov/places/000/alcatraz-cellhouse.htm (text inspected 2026-10-21; not a measured reproduction)
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

@@ -22,7 +22,7 @@ public final class BlackpineGrayboxTest {
         }
         var stair=l.stairs().get(0);Vec at=new Vec(stair.x0(),stair.y0(),stair.z0());
         for(int i=1;i<=120;i++){double t=i/120.;at=map.resolveMove(at,stair.x0()+(stair.x1()-stair.x0())*t,stair.z0()+(stair.z1()-stair.z0())*t);check(at!=null,"mill stair continuously supports ascent "+i);}
-        check(Math.abs(at.y()-3)<.02,"actual upper deck elevation reached");
+        check(Math.abs(at.y()-l.room(11).y())<.02,"actual upper deck elevation reached");
         for(int i=119;i>=0;i--){double t=i/120.;at=map.resolveMove(at,stair.x0()+(stair.x1()-stair.x0())*t,stair.z0()+(stair.z1()-stair.z0())*t);check(at!=null,"mill stair continuously supports descent "+i);}
         System.out.println("PASS: Blackpine dimensions, sparse refuge, physical doors, spawns, three rites and supported mill stairs");
     }

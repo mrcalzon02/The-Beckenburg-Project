@@ -1,0 +1,34 @@
+{
+  "id": "level_work_boot_rack",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "247fcb8958075b662a96e1b75bc51aaa2a8c092a4bc7dba63646a7b4bffc3dcf",
+  "bytes": 142992,
+  "triangles": 1236,
+  "bounds": [
+    [
+      -0.699999988079071,
+      0.0,
+      -0.24500000476837158
+    ],
+    [
+      0.6999999284744263,
+      1.1700000762939453,
+      0.24500000476837158
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_boot_rack.blend",
+  "function": "Open boot-drying rack, old work boots, folded cloths and two draped towels",
+  "runtime": "Ready static washhouse furnishing; boots retain original source UV/materials",
+  "derived_sources": {
+    "C:\\Users\\Admin\\Documents\\ChatGPT\\Phasmaphobia alike\\The-Beckenburg-Project\\assets\\runtime\\models\\level_story_work_boots_worn.glb": {
+      "name": "level_story_work_boots_worn.glb",
+      "sha256": "b2cb0f62ddf87fa2a7a087293625f7ccc69e1fab4bd665fab1537b40ebeaf6b8",
+      "source": "C:\\Users\\Admin\\Documents\\ChatGPT\\Phasmaphobia alike\\The-Beckenburg-Project\\assets\\runtime\\models\\level_story_work_boots_worn.glb",
+      "policy": "Owner-provided original game asset; preserve source materials and UVs"
+    }
+  },
+  "placement": "Blackpine washhouse east wall, outside the clear central rite"
+}

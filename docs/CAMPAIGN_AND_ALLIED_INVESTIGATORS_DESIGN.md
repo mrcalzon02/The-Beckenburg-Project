@@ -2,6 +2,8 @@
 
 **Status:** future design concepts proposed 2026-10-20; not implemented, funded, scheduled, playtested or added to the binding release scope. Existing 3v1 asymmetric LAN, AI-ghost fallback, Castle Beckenburg hub, evidence/ritual systems and nine site families retain their production obligations. Stage and completion claims belong only in [stage-ledger.json](stage-ledger.json).
 
+Shared setting authority: [Emergence Day and the reclamation world](LORE_BIBLE.md). The three playable disciplines represent major coalition factions; identifying a threat supports removing it and restoring ordinary life.
+
 ## Product shape
 
 The expanded named-location roster creates three complementary experiences on the same simulated world and shared mechanics:

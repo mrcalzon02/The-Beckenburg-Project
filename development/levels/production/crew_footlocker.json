@@ -1,0 +1,26 @@
+{
+  "id": "level_work_crew_footlocker",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "ffba4584f2c145810ccfbba2c4a39571b27a1fc8ea8ed636baf78b72f27f9b82",
+  "bytes": 143888,
+  "triangles": 1120,
+  "bounds": [
+    [
+      -0.49799999594688416,
+      0.0,
+      -0.4425083100795746
+    ],
+    [
+      0.49799999594688416,
+      0.8807303309440613,
+      0.2849999964237213
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_crew_footlocker.blend",
+  "function": "Open crew footlocker with shirts, personal card/photo, thermos, laces and mending packet",
+  "runtime": "Ready static personal-effects kit; lid and belongings are not interactive",
+  "placement": "Blackpine bunkhouse, beside surviving beds and away from door approaches"
+}

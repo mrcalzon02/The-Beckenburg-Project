@@ -1,0 +1,139 @@
+{
+  "id": "WLD-11",
+  "title": "Mourning Marsh",
+  "source": "layouts\\wld-11\\layout.json",
+  "source_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+  "zones": 13,
+  "routes": 14,
+  "shell_openings": [
+    {
+      "zone": "house-a",
+      "side": "E",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "house-a",
+      "side": "E",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "house-b",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "house-b",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "E",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "E",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "warehouse",
+      "side": "W",
+      "link": "L10",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "warehouse",
+      "side": "W",
+      "link": "L10",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "warehouse",
+      "side": "E",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "warehouse",
+      "side": "E",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "shack",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "shack",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "W",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "W",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 96,
+  "issues": [
+    {
+      "zone": "south-deck",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          38.8,
+          57.8,
+          41.2,
+          60.2
+        ]
+      ]
+    },
+    {
+      "link": "L02",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 1.2,
+      "plan_run": 12.806248474865697,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 1.92 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Replace long boardwalk envelopes with measured supports, continuous deck meshes and invariant rails; ensure 2 m clear width.",
+    "Define flood plane and collision once per mission; no required wading, swimming or leap.",
+    "The entrance rise needs a real supported ramp and level intermediate landings."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "51bf1fec4af047a401a047260523b5c91365e04c692a7be46257f377af55b6dc",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

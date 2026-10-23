@@ -42,6 +42,8 @@ for (room,mid,color),group in groups.items():
         for i in poly.loop_indices:layer.data[i].uv=uv[mesh.loops[i].vertex_index]
     obj=bpy.data.objects.new(f'Runtime room {room} material {mid}',mesh);rooms.get(room,rooms[13]).objects.link(obj);mesh.materials.append(materials[key])
     obj['source']='Exact runtime SceneRenderer triangles, original UV and material';obj['zone']=room
+    # Paper-thin soil/litter stamps are surface detail, not shadow-casting roofs.
+    if name=='blackpine' and room==12 and verts and .005<=min(p[2] for p in verts) and max(p[2] for p in verts)<.04:obj.visible_shadow=False
 
 loose_path=SRC/'loose-objects.json'
 if loose_path.exists():
@@ -116,10 +118,11 @@ scene.render.engine='CYCLES';scene.cycles.samples=24;scene.cycles.use_denoising=
 scene.render.resolution_x=1280;scene.render.resolution_y=800;scene.render.resolution_percentage=100
 scene.view_settings.view_transform='Standard';scene.view_settings.look='None';scene.view_settings.exposure=.6
 scene['level_id']=definition['id'];scene['revision']=definition['revision'];scene['source_of_truth']=('BlackpineLevel.java' if name=='blackpine' else 'LevelPlans.java')+' / LevelDefinition.java; regenerate after layout edits'
-scene['production_status']='development graybox' if name=='blackpine' else 'authored scene; see acceptance notes'
+scene['production_status']='development dressed site; gameplay acceptance pending' if name=='blackpine' else 'authored scene; see acceptance notes'
 sys.path.insert(0,str(ROOT/'development/levels'));import scene_metadata;scene_metadata.apply(scene,definition)
 scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get('hidingDensity',100);scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
 out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
-bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+('-graybox.blend' if name=='blackpine' else '-complete.blend'))),compress=True)
-scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/f'development/levels/previews/{name}-blender-exterior.png');bpy.ops.render.render(write_still=True)
+suffix='-dressed' if name=='blackpine' else ''
+bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+('-dressed.blend' if name=='blackpine' else '-complete.blend'))),compress=True)
+scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/f'development/levels/previews/{name}{suffix}-blender-exterior.png');bpy.ops.render.render(write_still=True)
 print('EDITABLE_LEVEL_COMPLETE',name,len(faces),'runtime triangles')

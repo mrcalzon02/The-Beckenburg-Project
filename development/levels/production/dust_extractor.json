@@ -1,0 +1,26 @@
+{
+  "id": "level_work_dust_extractor",
+  "library": "working-place-details",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sha256": "ec49db4d121882cf876ba367c78b164ebb989a08d7752c0ab19d7417ce227177",
+  "bytes": 166504,
+  "triangles": 1896,
+  "bounds": [
+    [
+      -0.7400000095367432,
+      0.0,
+      -0.550000011920929
+    ],
+    [
+      0.7399999499320984,
+      2.5,
+      0.6456857323646545
+    ]
+  ],
+  "source": "original geometry and procedural textures",
+  "editable": "development/levels/blender/level_work_dust_extractor.blend",
+  "function": "Stopped dust extractor: braced stand, fan, capped inlet, filter and supported sack",
+  "placement": "Blackpine sawmill west wall, away from feed carriage and loft stair",
+  "runtime": "Static isolated machinery; no suction, dust particles or powered simulation"
+}

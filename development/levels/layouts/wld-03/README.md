@@ -89,3 +89,7 @@ Archaeological record discrepancies and a later modern expedition form separate 
 - docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md
 - docs/environments/SHARED_VAN_MODULE.md
 - https://www.nps.gov/meve/learn/nature/geology.htm (text/search record inspected 2026-10-21: alcove-forming sandstone context only; no culture, plan or dimensions copied)
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

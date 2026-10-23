@@ -1,0 +1,184 @@
+{
+  "status": "pass-rough-blockout-integrity-only",
+  "maps": 17,
+  "zones": 250,
+  "shell_openings": 594,
+  "checks": [
+    {
+      "id": "ACADEMY",
+      "zones": 17,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 28544,
+      "glb_sha256": "84e178be286ad9f49ebe29d0273d39c24a4b8f85c601d822f7be5b7cb3ab443c",
+      "rough_openings": 58,
+      "engineering_reservations": 4
+    },
+    {
+      "id": "ASYLUM",
+      "zones": 16,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 28877,
+      "glb_sha256": "b649a2af291f43b0897e9bb9c846610ff38ee82233d090a31eb4e30a7e4ea1dd",
+      "rough_openings": 58,
+      "engineering_reservations": 4
+    },
+    {
+      "id": "COLLEGE",
+      "zones": 17,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 34101,
+      "glb_sha256": "4da60e9e6bae49a0950c4737686e63404121524862cf28ce0c93e271b8fc9465",
+      "rough_openings": 45,
+      "engineering_reservations": 8
+    },
+    {
+      "id": "MANSION",
+      "zones": 17,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 29827,
+      "glb_sha256": "0ce64ffb798021c4ee8891b15e3a318a497ac0017685b236c7b9e3c565ef2322",
+      "rough_openings": 51,
+      "engineering_reservations": 8
+    },
+    {
+      "id": "PRISON",
+      "zones": 16,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 30282,
+      "glb_sha256": "ccba5c8671dbe58870c5610b6a5782772cac5040595c103754ff1b8920ff2085",
+      "rough_openings": 58,
+      "engineering_reservations": 6
+    },
+    {
+      "id": "WLD-02",
+      "zones": 13,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 23892,
+      "glb_sha256": "68258cb0851a60f6f82ed5a24233713fadd6a316dd0fdfc5e894e103a1d743b1",
+      "rough_openings": 12,
+      "engineering_reservations": 0
+    },
+    {
+      "id": "WLD-03",
+      "zones": 14,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 29598,
+      "glb_sha256": "ee55b508ff0f1e90aab3d4cc30c5ef911c0b5026a990f74a3d2d3a47b67a1719",
+      "rough_openings": 23,
+      "engineering_reservations": 6
+    },
+    {
+      "id": "WLD-04",
+      "zones": 13,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 23475,
+      "glb_sha256": "db76a58bdb589b28e3fb80f32846780af6a7283ede47a773e9175007eeeed728",
+      "rough_openings": 10,
+      "engineering_reservations": 15
+    },
+    {
+      "id": "WLD-05",
+      "zones": 14,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 24464,
+      "glb_sha256": "14e9ecfd815f57e60a89103a120138f0b430872bf84ba3d73d9ba27f3e8fedc2",
+      "rough_openings": 37,
+      "engineering_reservations": 7
+    },
+    {
+      "id": "WLD-06",
+      "zones": 14,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 25969,
+      "glb_sha256": "7bbcb9d852a5abc844f19e7af54754cf051a39700f3209e6418254e5167370c4",
+      "rough_openings": 14,
+      "engineering_reservations": 4
+    },
+    {
+      "id": "WLD-07",
+      "zones": 13,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 29705,
+      "glb_sha256": "f005cb36ec0debc52b832e26b4b3abf0b98ac09e52cd7e40dca64a2a45cc7528",
+      "rough_openings": 18,
+      "engineering_reservations": 4
+    },
+    {
+      "id": "WLD-08",
+      "zones": 14,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 26667,
+      "glb_sha256": "7e40adddaf0bd42a36b740778d1ebb825c36e2b7c08902b26cdaf3db77d9e41d",
+      "rough_openings": 37,
+      "engineering_reservations": 6
+    },
+    {
+      "id": "WLD-09",
+      "zones": 14,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 29390,
+      "glb_sha256": "faa319abaf63c8afb572c033e811ccc1fde07e3c188f164008a2e783e8fab183",
+      "rough_openings": 32,
+      "engineering_reservations": 9
+    },
+    {
+      "id": "WLD-10",
+      "zones": 17,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 31938,
+      "glb_sha256": "c830cc6debaa00d5cf52cafc2241ce99def79e6203f4ca76cc54400e4f3d2881",
+      "rough_openings": 58,
+      "engineering_reservations": 6
+    },
+    {
+      "id": "WLD-11",
+      "zones": 13,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 25374,
+      "glb_sha256": "0e9642e80ae5ecb725c2fdb2e0e7d4aa6477bf6404bc04ade243c393afd68d7f",
+      "rough_openings": 14,
+      "engineering_reservations": 2
+    },
+    {
+      "id": "WLD-12",
+      "zones": 14,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 31504,
+      "glb_sha256": "b1d0d8929cdc63cc5561a5de773fb17e7a5d9aadd4cd16003860837f8aa51f98",
+      "rough_openings": 21,
+      "engineering_reservations": 4
+    },
+    {
+      "id": "WLD-13",
+      "zones": 14,
+      "native_reopened": true,
+      "source_hash_matches": true,
+      "glb_triangles": 27522,
+      "glb_sha256": "d815edf727f4543d79e5f1d8ab1297d67e105a738a1e89f85d0daf0bb6a0e531",
+      "rough_openings": 48,
+      "engineering_reservations": 2
+    }
+  ],
+  "limitations": [
+    "Planning coordinates retained; these are not playable or collision-accepted levels.",
+    "Openings, support strips and deck voids are rough reservations.",
+    "Overlapping partitions, vertical links, headroom and connector crossings require per-map engineering.",
+    "Existing runtime maps and concurrent engine optimization are untouched."
+  ]
+}

@@ -1,0 +1,443 @@
+{
+  "license": "CC0-1.0",
+  "contract": "metres; preserve native origin, UV and material; wall modules face +Z",
+  "assets": [
+    {
+      "id": "level_trace_records",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "96bd5bdc0f6806ea89df84f194a0c4478fc58adc216dafbdeb41e7b9f4280ba7",
+      "bytes": 79756,
+      "triangles": 512,
+      "bounds": [
+        [
+          -0.24399998784065247,
+          0.0,
+          -0.15000000596046448
+        ],
+        [
+          0.39499998092651367,
+          0.03949999809265137,
+          0.15000000596046448
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_records.blend"
+    },
+    {
+      "id": "level_trace_journal",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "156d7cbc6a3273df7d2d1e305424c5c14705e8bf891d13f2a4e3320f1f3e29c5",
+      "bytes": 53172,
+      "triangles": 384,
+      "bounds": [
+        [
+          -0.22749999165534973,
+          0.0,
+          -0.15000000596046448
+        ],
+        [
+          0.22749999165534973,
+          0.03949999809265137,
+          0.15000000596046448
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_journal.blend"
+    },
+    {
+      "id": "level_trace_calendar",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "7020214de6a18970f0da42fa7e70f3cd565cf0c6470fc1e526265751a4b3f9ac",
+      "bytes": 63984,
+      "triangles": 464,
+      "bounds": [
+        [
+          -0.17000000178813934,
+          0.0,
+          -0.0
+        ],
+        [
+          0.17000000178813934,
+          0.46000000834465027,
+          0.04500000178813934
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_calendar.blend"
+    },
+    {
+      "id": "level_trace_coat",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "db0da7035f9e2f4a9d9b9f28167fff533b76fcca7788e9f340501313b8e939a7",
+      "bytes": 36504,
+      "triangles": 152,
+      "bounds": [
+        [
+          -0.5199999809265137,
+          0.550000011920929,
+          -0.02500000037252903
+        ],
+        [
+          0.4300000071525574,
+          1.534999966621399,
+          0.1574999988079071
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_coat.blend"
+    },
+    {
+      "id": "level_trace_photograph",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "34e6eada776737d5d8222f92cbfd06c50f63a7acdc1a941a92646e7492f7ff4d",
+      "bytes": 32032,
+      "triangles": 104,
+      "bounds": [
+        [
+          -0.125,
+          0.0,
+          -0.019999999552965164
+        ],
+        [
+          0.125,
+          0.2800000011920929,
+          0.03700000047683716
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_photograph.blend"
+    },
+    {
+      "id": "level_trace_clothes",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "a20d3eca886997db6b4de77aa1efde764a1654863d6b61611a4fbc02da280efe",
+      "bytes": 27752,
+      "triangles": 92,
+      "bounds": [
+        [
+          -0.33337539434432983,
+          -0.010310886427760124,
+          -0.30417102575302124
+        ],
+        [
+          0.3267497718334198,
+          0.16750000417232513,
+          0.2842366695404053
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_clothes.blend"
+    },
+    {
+      "id": "level_trace_bedroll",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "9ba0d2dcfcdf9c5309dab4b31f34d982c3665b6497621f9316ea9583ccee27d3",
+      "bytes": 107192,
+      "triangles": 986,
+      "bounds": [
+        [
+          -0.33000001311302185,
+          0.0,
+          -0.9300000071525574
+        ],
+        [
+          0.33000001311302185,
+          0.1940000057220459,
+          0.9300000071525574
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_bedroll.blend"
+    },
+    {
+      "id": "level_trace_food_trash",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "ec85cac1f5daa161c3bf556be9118d0480127a40920f1c49e4767e98d85d7d99",
+      "bytes": 66236,
+      "triangles": 626,
+      "bounds": [
+        [
+          -0.26600000262260437,
+          0.0,
+          -0.23000000417232513
+        ],
+        [
+          0.30000001192092896,
+          0.2800000011920929,
+          0.23999999463558197
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_food_trash.blend"
+    },
+    {
+      "id": "level_trace_floor_wear",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "e8422c6a4940ea993186f239a937f05d946162d65d8135390f4a479165add250",
+      "bytes": 14832,
+      "triangles": 38,
+      "bounds": [
+        [
+          -0.47354835271835327,
+          0.004000000189989805,
+          -0.597903847694397
+        ],
+        [
+          0.45249855518341064,
+          0.006000000052154064,
+          0.3700000047683716
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_floor_wear.blend"
+    },
+    {
+      "id": "level_trace_wall_damage",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b5c601c76172eeaefc379a54c87f613a40f429b8fa1047fed7e2c8b27627cb52",
+      "bytes": 26808,
+      "triangles": 136,
+      "bounds": [
+        [
+          -0.5,
+          0.03750000149011612,
+          -0.0
+        ],
+        [
+          0.4399999976158142,
+          0.8899999856948853,
+          0.026000000536441803
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_wall_damage.blend"
+    },
+    {
+      "id": "level_trace_damp_wall",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3f0e5d7151c060edd0b4d6b7685dfc1b3a89d9a031098cd0c63f45db72013c7a",
+      "bytes": 15068,
+      "triangles": 18,
+      "bounds": [
+        [
+          -0.3400000035762787,
+          0.019999999552965164,
+          -0.0
+        ],
+        [
+          0.375,
+          0.7799999713897705,
+          -0.0
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_damp_wall.blend"
+    },
+    {
+      "id": "level_trace_leak_bucket",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "034760c773aeab5077e35f92d9bd5b3e00cc0ce9292cc7c26de9ea928c4ed613",
+      "bytes": 48740,
+      "triangles": 445,
+      "bounds": [
+        [
+          -0.47454291582107544,
+          0.0,
+          -0.37422695755958557
+        ],
+        [
+          0.47999998927116394,
+          0.5267950892448425,
+          0.3798941969871521
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_leak_bucket.blend"
+    },
+    {
+      "id": "level_trace_window_boards",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "52b929b1e2636d080b9dd028142a31ab0b8e1d3be3f210554a66e8a5df5137e5",
+      "bytes": 26540,
+      "triangles": 208,
+      "bounds": [
+        [
+          -0.6588353514671326,
+          0.000636175274848938,
+          -0.005000000819563866
+        ],
+        [
+          0.6588354110717773,
+          1.182858943939209,
+          0.05700000002980232
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_window_boards.blend"
+    },
+    {
+      "id": "level_trace_woodstove",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "cf50c22f43f136d66c4f852451bd86669f7f171625566ec29ca3d3b208ca2a05",
+      "bytes": 59544,
+      "triangles": 404,
+      "bounds": [
+        [
+          -0.47999998927116394,
+          0.0,
+          -0.5149999856948853
+        ],
+        [
+          0.47999998927116394,
+          3.7200000286102295,
+          0.5149999856948853
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_woodstove.blend"
+    },
+    {
+      "id": "level_trace_electric_branch",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "94ea84fba9c165204796a17db46bb0c8124d04304031d42a44dd122aa5e2c228",
+      "bytes": 44920,
+      "triangles": 212,
+      "bounds": [
+        [
+          -0.1550000011920929,
+          0.2749999761581421,
+          -0.012000001966953278
+        ],
+        [
+          0.4300000071525574,
+          2.640000104904175,
+          0.13500000536441803
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_electric_branch.blend"
+    },
+    {
+      "id": "level_trace_generator",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "087bcfcfc946e4c75b10df2ea8d5ffc7a4d798f9035d0383633e9098f7ac5395",
+      "bytes": 46548,
+      "triangles": 296,
+      "bounds": [
+        [
+          -0.7749999761581421,
+          0.0,
+          -0.4399999976158142
+        ],
+        [
+          0.7749999761581421,
+          1.1549999713897705,
+          0.4399999976158142
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_generator.blend"
+    },
+    {
+      "id": "level_trace_oil_waterheater",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b3e2771534e28ef30b942ae4df688df9159f214022e94ba4ffa947b336ae8fb9",
+      "bytes": 44948,
+      "triangles": 204,
+      "bounds": [
+        [
+          -0.3199999928474426,
+          0.0,
+          -0.3199999928474426
+        ],
+        [
+          0.5849999785423279,
+          3.549999952316284,
+          0.49068519473075867
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_oil_waterheater.blend"
+    },
+    {
+      "id": "level_trace_wash_trough",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3e3d1a03206fd3724a17f6d258951bf0a7d0a710ed94f21813c6e1793b0865bb",
+      "bytes": 35240,
+      "triangles": 248,
+      "bounds": [
+        [
+          -0.8500000238418579,
+          0.0,
+          -0.29750001430511475
+        ],
+        [
+          0.8500000238418579,
+          1.1538563966751099,
+          0.29750001430511475
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_wash_trough.blend"
+    },
+    {
+      "id": "level_trace_camp_bed",
+      "library": "site-storytelling",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bytes": 42296,
+      "triangles": 228,
+      "bounds": [
+        [
+          -0.4625000059604645,
+          0.0,
+          -1.0225000381469727
+        ],
+        [
+          0.46250003576278687,
+          0.8199999928474426,
+          1.0225000381469727
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_camp_bed.blend"
+    }
+  ]
+}

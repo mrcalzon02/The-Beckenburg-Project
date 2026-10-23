@@ -1,0 +1,809 @@
+{
+  "version": 1,
+  "id": "WLD-05",
+  "title": "Dead Man's Claim",
+  "region": "Highland Frontier",
+  "scale": "Medium-large / mine levels",
+  "status": "rough-layout-only",
+  "intent": "Small surface shacks lead into a two-level mine with a main haul loop and ventilation return. Collapsed lift remains visible scenery, never a required traversal mechanic.",
+  "site_bounds": [
+    -2,
+    4,
+    58,
+    92
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Mine-road van apron",
+      "bounds": [
+        20,
+        76,
+        36,
+        88
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Mine gate / surface yard",
+      "bounds": [
+        20,
+        62,
+        40,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "shack",
+      "name": "Miners shack",
+      "bounds": [
+        2,
+        46,
+        20,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "assay",
+      "name": "Assay office",
+      "bounds": [
+        40,
+        46,
+        54,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "stores",
+      "name": "Surface stores",
+      "bounds": [
+        2,
+        30,
+        14,
+        46
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "adit",
+      "name": "Adit mouth",
+      "bounds": [
+        20,
+        42,
+        40,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "haul",
+      "name": "Main haul junction",
+      "bounds": [
+        20,
+        20,
+        36,
+        42
+      ],
+      "y": -6,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "ore-west",
+      "name": "West ore room",
+      "bounds": [
+        2,
+        20,
+        20,
+        42
+      ],
+      "y": -6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "ore-east",
+      "name": "East ore room",
+      "bounds": [
+        36,
+        20,
+        54,
+        42
+      ],
+      "y": -6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cross",
+      "name": "North crosscut",
+      "bounds": [
+        12,
+        8,
+        44,
+        20
+      ],
+      "y": -6,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lift",
+      "name": "Collapsed lift barrier bay",
+      "bounds": [
+        44,
+        8,
+        54,
+        20
+      ],
+      "y": -6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lower",
+      "name": "Lower working chamber",
+      "bounds": [
+        2,
+        20,
+        20,
+        42
+      ],
+      "y": -10,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "vent",
+      "name": "Ventilation return",
+      "bounds": [
+        2,
+        42,
+        20,
+        62
+      ],
+      "y": -6,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "wash",
+      "name": "Surface washhouse",
+      "bounds": [
+        40,
+        30,
+        54,
+        46
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          82.0
+        ],
+        [
+          28.0,
+          0,
+          76.0
+        ],
+        [
+          30.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          76.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "shack",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          0,
+          69.0
+        ],
+        [
+          11.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L03",
+      "a": "entry",
+      "b": "assay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          0,
+          69.0
+        ],
+        [
+          47.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L04",
+      "a": "shack",
+      "b": "stores",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          54.0
+        ],
+        [
+          8.0,
+          0,
+          46.0
+        ],
+        [
+          8.0,
+          0,
+          38.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          8.0,
+          0,
+          46.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L05",
+      "a": "stores",
+      "b": "adit",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          8.0,
+          0,
+          38.0
+        ],
+        [
+          30.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L06",
+      "a": "adit",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          0,
+          52.0
+        ],
+        [
+          30.0,
+          0,
+          62.0
+        ],
+        [
+          30.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          30.0,
+          0,
+          62.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L07",
+      "a": "assay",
+      "b": "wash",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          47.0,
+          0,
+          54.0
+        ],
+        [
+          47.0,
+          0,
+          46.0
+        ],
+        [
+          47.0,
+          0,
+          38.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          47.0,
+          0,
+          46.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L08",
+      "a": "wash",
+      "b": "adit",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          47.0,
+          0,
+          38.0
+        ],
+        [
+          40.0,
+          0,
+          44.0
+        ],
+        [
+          30.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          40.0,
+          0,
+          44.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L09",
+      "a": "adit",
+      "b": "haul",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          0,
+          52.0
+        ],
+        [
+          28.0,
+          -6,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L10",
+      "a": "haul",
+      "b": "ore-west",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          28.0,
+          -6,
+          31.0
+        ],
+        [
+          20.0,
+          -6,
+          31.0
+        ],
+        [
+          11.0,
+          -6,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          20.0,
+          -6,
+          31.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L11",
+      "a": "ore-west",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          -6,
+          31.0
+        ],
+        [
+          16.0,
+          -6,
+          20.0
+        ],
+        [
+          28.0,
+          -6,
+          14.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          16.0,
+          -6,
+          20.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L12",
+      "a": "cross",
+      "b": "ore-east",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          28.0,
+          -6,
+          14.0
+        ],
+        [
+          40.0,
+          -6,
+          20.0
+        ],
+        [
+          45.0,
+          -6,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          40.0,
+          -6,
+          20.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L13",
+      "a": "ore-east",
+      "b": "haul",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          45.0,
+          -6,
+          31.0
+        ],
+        [
+          36.0,
+          -6,
+          31.0
+        ],
+        [
+          28.0,
+          -6,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          -6,
+          31.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L14",
+      "a": "cross",
+      "b": "lift",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          28.0,
+          -6,
+          14.0
+        ],
+        [
+          44.0,
+          -6,
+          14.0
+        ],
+        [
+          49.0,
+          -6,
+          14.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          44.0,
+          -6,
+          14.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L15",
+      "a": "ore-west",
+      "b": "lower",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          -6,
+          31.0
+        ],
+        [
+          11.0,
+          -10,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4,
+      "construction": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L16",
+      "a": "lower",
+      "b": "vent",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          -10,
+          31.0
+        ],
+        [
+          11.0,
+          -6,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4,
+      "construction": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L17",
+      "a": "vent",
+      "b": "adit",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          11.0,
+          -6,
+          52.0
+        ],
+        [
+          30.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L18",
+      "a": "ore-west",
+      "b": "vent",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          -6,
+          31.0
+        ],
+        [
+          11.0,
+          -6,
+          42.0
+        ],
+        [
+          11.0,
+          -6,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          11.0,
+          -6,
+          42.0
+        ],
+        "clear_width_m": 1.5
+      }
+    }
+  ],
+  "loops": [
+    [
+      "entry",
+      "shack",
+      "stores",
+      "adit",
+      "entry"
+    ],
+    [
+      "haul",
+      "ore-west",
+      "cross",
+      "ore-east",
+      "haul"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      28.0,
+      0,
+      82.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        28.0,
+        0,
+        78.372
+      ],
+      [
+        30.0,
+        0,
+        69.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "ore-west",
+      "point": [
+        11.0,
+        -6,
+        31.0
+      ],
+      "installation": "Bolted mine containment seal"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "wash",
+      "point": [
+        47.0,
+        0,
+        38.0
+      ],
+      "installation": "Surface wash purification basin"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "assay",
+      "point": [
+        47.0,
+        0,
+        54.0
+      ],
+      "installation": "Payroll remembrance desk"
+    }
+  ],
+  "circulation": "Haul circuit gives two approaches to the ore rooms. A graded ventilation return reaches the adit without the lift. Collapsed bay is clearly blocked beyond its reachable viewing area; lower workings have two reserved connections.",
+  "systems": "Rock conduction, ventilation draft, wet walls and rails are ordinary confounders. Support-timber hazards are visible static boundaries until a host-authorized event exists; no random cave-in may seal every escape.",
+  "campaign": "Assay records and impossible payroll dates connect provisionally to Blackpine shipping documents. Mine geometry, clues and ghost identity stay separate.",
+  "refine": [
+    "Engineer the adit descent as a long graded drift rather than using the schematic direct line as a steep stair.",
+    "Refine shaft void, lower-level gradients and two-way return with headroom and rock boundary tests.",
+    "Inspect mine engineering references before detailed supports or ventilation routing."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ]
+}

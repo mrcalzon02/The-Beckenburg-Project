@@ -36,7 +36,7 @@ public final class CastleHubIntegrationTest {
         }
         for(int gate:new int[]{5,13,22})
             ok(map.traversable(gate+.5,11.5),"medieval gate passage remains physically open");
-        ok(CastleHubDecor.ACCENTS.size()>=7,"working offices with actual interior props");
+        ok(CastleHubDecor.ACCENTS.size()+CastleArchive.ACCENTS.size()>=7,"working offices and archive with actual interior props");
         ok(CastleHubDecor.LIGHTS.size()>=8,"distinct on/off GLB lamps");
         for(CastleHubDecor.Accent a:CastleHubDecor.ACCENTS)
             ok(GlbProps.model(a.mesh()).triangles().size()>2,"decor mesh "+a.mesh());
@@ -75,8 +75,14 @@ public final class CastleHubIntegrationTest {
             visited[z][x]=true;
             q.add(new int[]{x-1,z});q.add(new int[]{x+1,z});q.add(new int[]{x,z-1});q.add(new int[]{x,z+1});
         }
-        for(CastleHubMap.Station s:CastleHubMap.Station.values())
-            ok(visited[(int)s.z][(int)s.x],"reachable station "+s);
+        for(CastleHubMap.Station s:CastleHubMap.Station.values()){
+            boolean reached=false;
+            for(int zz=0;zz<CastleHubMap.HEIGHT;zz++)for(int xx=0;xx<CastleHubMap.WIDTH;xx++)if(visited[zz][xx]){
+                double bearing=Math.atan2(s.x-xx-.5,s.z-zz-.5);
+                if(map.aimed(xx+.5,zz+.5,bearing)==s)reached=true;
+            }
+            ok(reached,"physically reachable station approach "+s);
+        }
         CastleHubMap.Station dest=CastleHubMap.Station.CONTRACT;
         double px=dest.x,pz=dest.z+1.7;
         ok(map.traversable(px,pz),"contract interaction standing position accessible");

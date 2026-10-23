@@ -43,15 +43,18 @@ public final class CastleHubMap {
         CONTRACT(13.5,6.8,"CAMPAIGN CONTRACT BOARD"),
         EXPEDITION(13.5,16.6,"EXPEDITION VAN / START CASE"),
         MULTIPLAYER(22.5,16.6,"NETWORK DESK / HOST OR JOIN"),
-        SPECTRAL(5.0,16.6,"SPECTRAL PRACTICE");
+        SPECTRAL(5.0,16.6,"SPECTRAL PRACTICE"),
+        ARCHIVE(36.0,11.8,"MATTHIS ROOK / COMMON ARCHIVE");
         public final double x,z;public final String label;
         Station(double x,double z,String label){this.x=x;this.z=z;this.label=label;}
     }
     /** Small, authored real GLB furnishings with matching walkable collision footprints. */
     public record Furnishing(String mesh,double x,double z,double scale,double yaw,
                              double halfWidth,double halfDepth) { }
-    private static final java.util.List<Furnishing> FURNISHINGS=CastleHubDecor.furnishings();
-    public static java.util.List<Furnishing> furnishings(){return CastleLevelEdits.current().furnishings(false);}
+    public static java.util.List<Furnishing> furnishings(){
+        var all=new java.util.ArrayList<>(CastleLevelEdits.current().furnishings(false));
+        all.addAll(CastleArchive.furnishings());return java.util.List.copyOf(all);
+    }
     /** Articulated H-plan with real hall passages, two connected eastern service
      * wings, a covered north block and an open south courtyard.
      * Purchasing stations retain their physically reachable world coordinates.
@@ -155,7 +158,7 @@ public final class CastleHubMap {
             ||CastleSurroundings.courtyardVanBlocks(x,z,r)
             ||CastleWarehouse.blocks(x,z,r)
             ||closedLeafBlocks(x,0,z,r))return false;
-        for(Furnishing item:CastleLevelEdits.current().furnishings(false))
+        for(Furnishing item:furnishings())
             if(Math.abs(x-item.x())<item.halfWidth()+r &&
                Math.abs(z-item.z())<item.halfDepth()+r)return false;
         return true;

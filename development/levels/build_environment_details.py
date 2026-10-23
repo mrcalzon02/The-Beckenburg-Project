@@ -79,16 +79,21 @@ def sign(name,lines):
  m=b.init();p=[s.box('Shaped timber name board',(0,-.02,.18),(1.68,.04,.36),m['oak'],.025),s.box('Recessed painted plaque',(0,-.043,.18),(1.58,.008,.29),m['blue'],.012)]
  for x in [-.78,.78]:
   for z in [.055,.305]:p.append(s.rod('Recessed fixing screw',(x,-.047,z),(x,-.053,z),.008,m['steel'],8))
- verts=[];faces=[];unit=.011
+ # Fit the complete glyph block inside the inset plaque, including its lowest pixels.
+ # The previous fixed baseline placed the third line below the painted board.
+ verts=[];faces=[];gap=.024;text_top=.305;text_bottom=.055
+ unit=min(.011,1.44/max(1,max(len(t)*6-1 for t in lines)),(text_top-text_bottom-gap*(len(lines)-1))/(7*len(lines)))
  for line,text in enumerate(lines):
-  left=-len(text)*6*unit/2;top=.29-line*.105
+  left=-(len(text)*6-1)*unit/2;top=text_top-line*(7*unit+gap)
   for char_index,char in enumerate(text):
    for row,bits in enumerate(GLYPHS.get(char,[])):
     for col,bit in enumerate(bits):
      if bit=='1':
-      x=left+(char_index*6+col)*unit;z=top-row*unit;v=len(verts);verts.extend([(x,-.049,z),(x+unit*.91,-.049,z),(x+unit*.91,-.049,z-unit*.91),(x,-.049,z-unit*.91)]);faces.append((v,v+1,v+2,v+3))
+      x=left+(char_index*6+col)*unit;z=top-row*unit;v=len(verts);verts.extend([(x,-.0472,z),(x+unit*.91,-.0472,z),(x+unit*.91,-.0472,z-unit*.91),(x,-.0472,z-unit*.91)]);faces.append((v,v+1,v+2,v+3))
+ assert all(-.73<=x<=.73 and text_bottom-.001<=z<=text_top+.001 for x,y,z in verts),'Sign text outside its plaque'
  p.append(s.mesh('Original painted lettering',verts,faces,m['ivory']))
  b.export('level_sign_'+name,p,'enclosures')
+ b.LOG[-1]['lettering_bounds']=[[min(v[i] for v in verts) for i in range(3)],[max(v[i] for v in verts) for i in range(3)]]
 
 if __name__=='__main__':
  if '--signs-only' not in sys.argv:

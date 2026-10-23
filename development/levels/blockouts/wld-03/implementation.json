@@ -1,0 +1,242 @@
+{
+  "id": "WLD-03",
+  "title": "Red Mesa Ancestral Caves",
+  "source": "layouts\\wld-03\\layout.json",
+  "source_sha256": "c93985a00ace4efc8391f75d848527dea27d46325c6a029456c39f900b194374",
+  "zones": 14,
+  "routes": 16,
+  "shell_openings": [
+    {
+      "zone": "shelter",
+      "side": "E",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "shelter",
+      "side": "E",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "W",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "W",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "fork",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "fork",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "fork",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "fork",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "lower-cave",
+      "side": "N",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "lower-cave",
+      "side": "N",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "alcove",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "alcove",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 128,
+  "issues": [
+    {
+      "zone": "lower-path",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.8,
+          32.8,
+          13.2,
+          35.2
+        ]
+      ]
+    },
+    {
+      "zone": "upper-path",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          32.8,
+          14.8,
+          35.2,
+          17.2
+        ]
+      ]
+    },
+    {
+      "zone": "gallery",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          56.05,
+          30.05,
+          57.95,
+          31.95
+        ]
+      ]
+    },
+    {
+      "link": "L04",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4,
+      "plan_run": 18.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L07",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4,
+      "plan_run": 28.42534080710379,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L13",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4,
+      "plan_run": 0.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Third remote exemplar: shape actual irregular chamber polygons and switchbacks before building art.",
+    "The +4/+8 m terraces are reservations, not proven graded terrain. Engineer two-way routes, headroom and visible falls boundaries.",
+    "Modern rite installations must leave the fictional ancient fabric intact; validate all three against ghost interference."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "b807b01d85fc00fe33f79e1b6aec0ff5df570184e252d376f38500ba60f7d28c",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

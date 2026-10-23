@@ -1,0 +1,813 @@
+{
+  "version": 1,
+  "id": "WLD-09",
+  "title": "Blackwater Hydroelectric Dam",
+  "region": "Highland Frontier",
+  "scale": "Large / industrial vertical",
+  "status": "rough-layout-only",
+  "intent": "The roadhead feeds a dam crest and an offset powerhouse. A guarded external stair and internal service stair connect crest, turbine floor and lower galleries without entering the spillway.",
+  "site_bounds": [
+    4,
+    4,
+    80,
+    92
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Dam access van apron",
+      "bounds": [
+        28,
+        76,
+        44,
+        88
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Dam service forecourt",
+      "bounds": [
+        28,
+        62,
+        44,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "crest",
+      "name": "Guarded dam crest",
+      "bounds": [
+        8,
+        48,
+        72,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "control",
+      "name": "Control room",
+      "bounds": [
+        8,
+        34,
+        26,
+        48
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "office",
+      "name": "Shift records office",
+      "bounds": [
+        8,
+        22,
+        26,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "west-stair",
+      "name": "West service stair enclosure",
+      "bounds": [
+        26,
+        22,
+        36,
+        48
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "turbine",
+      "name": "Turbine hall",
+      "bounds": [
+        36,
+        22,
+        64,
+        48
+      ],
+      "y": -6,
+      "height": 8,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "workshop",
+      "name": "Maintenance workshop",
+      "bounds": [
+        36,
+        48,
+        54,
+        62
+      ],
+      "y": -6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "east-stair",
+      "name": "East external stair court",
+      "bounds": [
+        64,
+        22,
+        76,
+        48
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "gallery",
+      "name": "Lower service gallery",
+      "bounds": [
+        36,
+        22,
+        64,
+        32
+      ],
+      "y": -10,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "valve",
+      "name": "Valve inspection room",
+      "bounds": [
+        36,
+        32,
+        50,
+        48
+      ],
+      "y": -10,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "return",
+      "name": "Lower maintenance return",
+      "bounds": [
+        50,
+        32,
+        64,
+        48
+      ],
+      "y": -10,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "spillway",
+      "name": "Guarded spillway observation",
+      "bounds": [
+        64,
+        48,
+        76,
+        62
+      ],
+      "y": -6,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "plant",
+      "name": "Switchgear room",
+      "bounds": [
+        36,
+        8,
+        54,
+        22
+      ],
+      "y": -6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          82.0
+        ],
+        [
+          36.0,
+          0,
+          76.0
+        ],
+        [
+          36.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          76.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "crest",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          69.0
+        ],
+        [
+          40.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L03",
+      "a": "crest",
+      "b": "control",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          40.0,
+          0,
+          52.0
+        ],
+        [
+          17.0,
+          0,
+          48.0
+        ],
+        [
+          17.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          17.0,
+          0,
+          48.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L04",
+      "a": "control",
+      "b": "office",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          17.0,
+          0,
+          41.0
+        ],
+        [
+          17.0,
+          0,
+          34.0
+        ],
+        [
+          17.0,
+          0,
+          28.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          17.0,
+          0,
+          34.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L05",
+      "a": "office",
+      "b": "west-stair",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          17.0,
+          0,
+          28.0
+        ],
+        [
+          26.0,
+          0,
+          28.0
+        ],
+        [
+          31.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          26.0,
+          0,
+          28.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L06",
+      "a": "west-stair",
+      "b": "crest",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          31.0,
+          0,
+          35.0
+        ],
+        [
+          31.0,
+          0,
+          48.0
+        ],
+        [
+          40.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          31.0,
+          0,
+          48.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L07",
+      "a": "west-stair",
+      "b": "turbine",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          31.0,
+          0,
+          35.0
+        ],
+        [
+          50.0,
+          -6,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L08",
+      "a": "turbine",
+      "b": "workshop",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          50.0,
+          -6,
+          35.0
+        ],
+        [
+          45.0,
+          -6,
+          48.0
+        ],
+        [
+          45.0,
+          -6,
+          55.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          45.0,
+          -6,
+          48.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L09",
+      "a": "workshop",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          45.0,
+          -6,
+          55.0
+        ],
+        [
+          70.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L10",
+      "a": "east-stair",
+      "b": "crest",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          70.0,
+          0,
+          35.0
+        ],
+        [
+          68.0,
+          0,
+          48.0
+        ],
+        [
+          40.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          68.0,
+          0,
+          48.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L11",
+      "a": "turbine",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          50.0,
+          -6,
+          35.0
+        ],
+        [
+          70.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L12",
+      "a": "east-stair",
+      "b": "spillway",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          70.0,
+          0,
+          35.0
+        ],
+        [
+          70.0,
+          -6,
+          55.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L13",
+      "a": "turbine",
+      "b": "plant",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          50.0,
+          -6,
+          35.0
+        ],
+        [
+          45.0,
+          -6,
+          22.0
+        ],
+        [
+          45.0,
+          -6,
+          15.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          45.0,
+          -6,
+          22.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L14",
+      "a": "turbine",
+      "b": "gallery",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          50.0,
+          -6,
+          35.0
+        ],
+        [
+          50.0,
+          -10,
+          27.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4,
+      "construction": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L15",
+      "a": "gallery",
+      "b": "valve",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          50.0,
+          -10,
+          27.0
+        ],
+        [
+          43.0,
+          -10,
+          32.0
+        ],
+        [
+          43.0,
+          -10,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          43.0,
+          -10,
+          32.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L16",
+      "a": "valve",
+      "b": "return",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          43.0,
+          -10,
+          40.0
+        ],
+        [
+          50.0,
+          -10,
+          40.0
+        ],
+        [
+          57.0,
+          -10,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          50.0,
+          -10,
+          40.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L17",
+      "a": "return",
+      "b": "gallery",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          57.0,
+          -10,
+          40.0
+        ],
+        [
+          57.0,
+          -10,
+          32.0
+        ],
+        [
+          50.0,
+          -10,
+          27.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          57.0,
+          -10,
+          32.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L18",
+      "a": "return",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          57.0,
+          -10,
+          40.0
+        ],
+        [
+          70.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 10,
+      "construction": "Reserve at least 16 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "crest",
+      "west-stair",
+      "turbine",
+      "east-stair",
+      "crest"
+    ],
+    [
+      "gallery",
+      "valve",
+      "return",
+      "gallery"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      36.0,
+      0,
+      82.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        36.0,
+        0,
+        78.372
+      ],
+      [
+        36.0,
+        0,
+        69.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "workshop",
+      "point": [
+        45.0,
+        -6,
+        55.0
+      ],
+      "installation": "Grounded industrial containment seal"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "valve",
+      "point": [
+        43.0,
+        -10,
+        40.0
+      ],
+      "installation": "Isolated purification vessel"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "office",
+      "point": [
+        17.0,
+        0,
+        28.0
+      ],
+      "installation": "Shift memorial records stand"
+    }
+  ],
+  "circulation": "Two full-height routes reach turbine floor. Lower gallery has a ring around isolated service rooms and two ways up. Observation pad is behind permanent rails; flowing water and working penstocks are outside legal hunter/ghost navigation.",
+  "systems": "Turbine vibration, electrical fields, ventilation and cold water all have real sources. Isolation controls change machinery state visibly; ghost events cannot falsify a reading without an allowed world action.",
+  "campaign": "Shift logs and mismatched alarm times underpin an industrial case. The crest provides a distant regional landmark without implying a whole reservoir is playable.",
+  "refine": [
+    "Plan actual turbine machinery bays and guarded openings; the hall volume is not final plant geometry.",
+    "Engineer 6 m descents with switchback landings; schematic lines must not become unsupported ramps.",
+    "Study industrial electrical separation, acoustics and usable inspection paths before runtime authoring."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md",
+    "https://www.nps.gov/pagr/learn/historyculture/hydroelectric-plant.htm (text inspected 2026-10-21: turbine-hall function; not a reproduced dam plan)"
+  ]
+}

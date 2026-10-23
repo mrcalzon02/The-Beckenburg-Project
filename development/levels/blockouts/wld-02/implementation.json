@@ -1,0 +1,104 @@
+{
+  "id": "WLD-02",
+  "title": "Camp Hollow Creek",
+  "source": "layouts\\wld-02\\layout.json",
+  "source_sha256": "a60a1cd25311f701933f79af3454d67e1830ca60218a5e8733e5e13a50d9fdff",
+  "zones": 13,
+  "routes": 15,
+  "shell_openings": [
+    {
+      "zone": "ranger",
+      "side": "N",
+      "link": "L04",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ranger",
+      "side": "W",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ranger",
+      "side": "W",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ranger",
+      "side": "E",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "bath",
+      "side": "W",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "bath",
+      "side": "W",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "pavilion",
+      "side": "W",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "pavilion",
+      "side": "E",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "pavilion",
+      "side": "E",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "camper",
+      "side": "S",
+      "link": "L10",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "E",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "E",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 78,
+  "issues": [],
+  "source_refinement": [
+    "Second remote exemplar: test shelter/calibration and tent visibility without foliage changing hiding geometry.",
+    "Refine boardwalk/bridge supports, rails, lake collision and dock retreat timing.",
+    "References and campground-specific sanitary/service construction still need measured review."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "2d7115522c7bf0e6b0173f069c916ad23a46bb5e872c222f73eced06237e20dd",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

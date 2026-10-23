@@ -1,0 +1,6 @@
+{
+  "main": "db9bb0dd12419afb4173b7d7ae36d3bf296f6d21",
+  "test": "CastleHubIntegrationTest",
+  "exit_code": 1,
+  "output": "java.lang.AssertionError: sky renderer supplies a varied celestial backdrop for castle window apertures\n\tat org.beckenburg.CastleHubIntegrationTest.ok(CastleHubIntegrationTest.java:8)\n\tat org.beckenburg.CastleHubIntegrationTest.main(CastleHubIntegrationTest.java:97)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\n\tat org.beckenburg.VerificationMain.main(VerificationMain.java:6)\n"
+}

@@ -1,0 +1,17 @@
+{
+  "character": "Matthis Rook",
+  "method": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Asset type: original character portrait for The Beckenburg Project, a dark modern supernatural reclamation game with low-poly PS1-era environments. Create a single finished painted portrait of the old human central lorekeeper Matthis Rook, keeper of a reclaimed castle archive, approximately 76 years old. Thin weathered kindly but grave face, short untidy silver hair, long but neatly kept white beard, round repaired wire spectacles, faded charcoal wool coat over a moss-green waistcoat, worn scarf, ink stained fingers resting on a closed battered ledger, a plain ash walking cane nearby. An ordinary civilian archivist who survived Emergence Day in late 2022; patient, fallible, determined to record the names and survival of ordinary people. Three-quarter waist-up seated portrait, clearly readable face, restrained angular painted shapes and weathered texture appropriate to retro horror concept art, no photorealism. Dim castle archive shelves and a warm shaded desk lamp in the background; cool stone, warm paper and restrained olive cloth, no magical aura. No text, lettering, logos, watermark, UI, additional figures, weapons, crowns or fantasy wizard costume. Portrait should work as both archive dialogue illustration and character reference. Compose full head and upper torso inside generous frame, hands visible, no cropping of head.",
+  "portrait": "assets/runtime/level-textures/lorekeeper-matthis-rook.png",
+  "sha256": "663293ade22dd24e03955015deb435deefd2877028640be3dcf6fa1dd323e4e0",
+  "status": "User-approved for in-game portrait use",
+  "master_art_status": "NOT YET PROVIDED / NOT APPROVED",
+  "model_status": "Original temporary low-poly proxy, not finished master or animations",
+  "required_next": [
+    "identity-consistent full character master",
+    "turnaround",
+    "production model and textures",
+    "seated/standing/reading poses and animation plan",
+    "explicit master-art approval"
+  ]
+}

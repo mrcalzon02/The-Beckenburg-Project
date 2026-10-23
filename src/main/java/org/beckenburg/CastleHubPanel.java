@@ -14,6 +14,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     }
     private final CastleHubMap map=new CastleHubMap();
     private final CastleOrientation orientation=new CastleOrientation();
+    private final CastleArchive.Reader archive=new CastleArchive.Reader();
     private final SceneRenderer renderer=new SceneRenderer();
     private final ProfileStore profile;
     private final Actions actions;
@@ -33,9 +34,11 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         setFocusable(true);setBackground(new Color(11,12,17));
         double[] spawn=CastleLevelEdits.current().spawn();
         renderer.x=spawn[0];renderer.z=spawn[1];renderer.yaw=spawn[2];renderer.pitch=-.07;
-        look=new MouseLook(this,(dx,dy)->MouseLook.rotate(renderer,dx,dy));
+        look=new MouseLook(this,(dx,dy)->MouseLook.rotate(renderer,dx,dy),()->!archive.opened()&&!storeOpen);
         addKeyListener(this);addFocusListener(this);addFocusListener(look);
         addMouseListener(look);addMouseMotionListener(look);
+        addMouseListener(new MouseAdapter(){@Override public void mousePressed(MouseEvent e){if(archive.opened()&&e.getButton()==MouseEvent.BUTTON1){CastleArchive.click(archive,e.getX(),e.getY(),getWidth(),getHeight());repaint();}}});
+        addMouseWheelListener(e->{if(archive.opened()){archive.scroll(e.getWheelRotation()*3);repaint();}});
         renderer.drawCastle(map,0);
         timer=new javax.swing.Timer(33,e->frame());timer.start();
     }
@@ -48,6 +51,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private void frame(){
         atmosphere.setActive(isShowing());
         if(!isShowing()||storeOpen){last=System.nanoTime();return;}
+        if(archive.opened()){last=System.nanoTime();down.clear();repaint();return;}
         long now=System.nanoTime();double dt=Math.min(.07,Math.max(0,(now-last)/1e9));last=now;
         if(down.contains(KeyEvent.VK_LEFT))renderer.yaw+=dt*1.65;
         if(down.contains(KeyEvent.VK_RIGHT))renderer.yaw-=dt*1.65;
@@ -103,6 +107,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         finally{storeOpen=false;last=System.nanoTime();requestFocusInWindow();}
     }
     private void use(CastleHubMap.Station station){
+        if(station==CastleHubMap.Station.ARCHIVE){archive.open();down.clear();look.release();noticeTicks=0;repaint();return;}
         if(station==null){
             if(!orientation.active()&&elevation<1.8&&
                 CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw)){
@@ -127,7 +132,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         try{
             switch(station){
                 case ARMORY_UV,ARMORY_SALT -> {openQuartermaster();return;}
-                case ROLE -> {actions.cycleRole();GameSfx.play(LanSound.Cue.SELECT);notice="Hunter discipline: "+actions.role();}
+                case ROLE -> {actions.cycleRole();GameSfx.play(LanSound.Cue.SELECT);notice=actions.role()+" / "+WorldLore.faction(InvestigationSession.Role.valueOf(actions.role())).name();}
                 case CONTRACT -> {actions.campaign();return;}
                 case EXPEDITION -> {actions.begin();return;}
                 case MULTIPLAYER -> {actions.network();return;}
@@ -142,6 +147,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     @Override public void keyPressed(KeyEvent e){
         if(!isShowing())return;
         int key=e.getKeyCode();if(down.contains(key))return;
+        if(archive.opened()){archive.key(key);repaint();return;}
         if(key==KeyEvent.VK_ESCAPE){actions.menu();return;}
         if(key==KeyEvent.VK_E){
             var portal=elevation<=1.8?map.aimedDoor(renderer.x,renderer.z,renderer.yaw):null;
@@ -219,6 +225,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             }
             g.setColor(new Color(11,17,23,212));g.fillRoundRect(Math.max(12,w-172),12,160,30,8,8);
             g.setColor(new Color(216,220,212));g.drawString("ESC  /  MAIN MENU",Math.max(20,w-162),32);
+            if(archive.opened())CastleArchive.draw(g,w,h,archive);
         }finally{g.dispose();}
     }
 }

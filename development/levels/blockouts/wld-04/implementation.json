@@ -1,0 +1,245 @@
+{
+  "id": "WLD-04",
+  "title": "Widow's Peak Fire Lookout",
+  "source": "layouts\\wld-04\\layout.json",
+  "source_sha256": "0a477753e3b1cc8613421df2ae293c06ba034b7663b769410098596f57c426c9",
+  "zones": 13,
+  "routes": 15,
+  "shell_openings": [
+    {
+      "zone": "hut",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "hut",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ruin",
+      "side": "S",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ruin",
+      "side": "S",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ruin",
+      "side": "W",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ruin",
+      "side": "W",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "N",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "N",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cab",
+      "side": "E",
+      "link": "L15",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cab",
+      "side": "E",
+      "link": "L15",
+      "width": 2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 122,
+  "issues": [
+    {
+      "zone": "bend",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.8,
+          34.8,
+          29.2,
+          37.2
+        ]
+      ]
+    },
+    {
+      "zone": "clearing",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          28.8,
+          20.8,
+          31.2,
+          23.2
+        ],
+        [
+          28.8,
+          20.8,
+          31.2,
+          23.2
+        ]
+      ]
+    },
+    {
+      "zone": "hut",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.8,
+          18.8,
+          13.2,
+          21.2
+        ]
+      ]
+    },
+    {
+      "zone": "store",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          43.8,
+          33.8,
+          46.2,
+          36.2
+        ]
+      ]
+    },
+    {
+      "zone": "return",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          41.8,
+          49.8,
+          44.2,
+          52.2
+        ]
+      ]
+    },
+    {
+      "zone": "landing",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.8,
+          6.8,
+          27.2,
+          9.2
+        ]
+      ]
+    },
+    {
+      "zone": "cab",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.05,
+          4.05,
+          27.95,
+          5.95
+        ]
+      ]
+    },
+    {
+      "link": "L03",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 20.518284528683193,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L04",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 14.142135623730951,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L06",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 22.627416997969522,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L09",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 16.1245154965971,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L10",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 21.213203435596427,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L11",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 31.78049716414141,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L13",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4.5,
+      "plan_run": 4.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 7.2 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L14",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4.5,
+      "plan_run": 3.1622776601683795,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 7.2 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Refine tower into at least four actual stair flights with landings; the two diagram connectors are grouped reservations.",
+    "The single tower exit is a deliberate risk requiring playtest; do not promise hunt fairness from graph connectivity.",
+    "Hillside grades and contour return need terrain support and collision tests."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "d3174563d6f470f765188b86c6fa00157b09d3dbbed88bdc23fbc44478c424f9",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

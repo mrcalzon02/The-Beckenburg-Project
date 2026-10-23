@@ -1,0 +1,930 @@
+{
+  "version": 1,
+  "id": "ASYLUM",
+  "title": "St. Dymphna Hospital",
+  "region": "Beckenburg district",
+  "scale": "Large / stepped wards",
+  "status": "rough-layout-only",
+  "intent": "A stepped pavilion plan: administration faces a daylight court, with a quiet ward west and wet treatment/service spaces east. This replaces the generic cross-wing layout.",
+  "site_bounds": [
+    -4,
+    -2,
+    68,
+    88
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Front-drive van apron",
+      "bounds": [
+        28,
+        72,
+        44,
+        84
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Front drive",
+      "bounds": [
+        28,
+        62,
+        44,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "reception",
+      "name": "Admissions reception",
+      "bounds": [
+        28,
+        50,
+        44,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "spine",
+      "name": "Central ward corridor",
+      "bounds": [
+        28,
+        20,
+        34,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "records",
+      "name": "Records office",
+      "bounds": [
+        16,
+        50,
+        28,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "day",
+      "name": "Day room",
+      "bounds": [
+        10,
+        34,
+        28,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "ward",
+      "name": "Patient ward",
+      "bounds": [
+        0,
+        18,
+        22,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "west-link",
+      "name": "Garden ward passage",
+      "bounds": [
+        22,
+        18,
+        28,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "treatment",
+      "name": "Treatment theatre",
+      "bounds": [
+        34,
+        20,
+        50,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "hydro",
+      "name": "Hydrotherapy room",
+      "bounds": [
+        50,
+        20,
+        64,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dining",
+      "name": "Dining ward",
+      "bounds": [
+        34,
+        34,
+        54,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "chapel",
+      "name": "Remembrance chapel",
+      "bounds": [
+        10,
+        2,
+        28,
+        18
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "court",
+      "name": "Walled courtyard",
+      "bounds": [
+        0,
+        34,
+        10,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "upper",
+      "name": "Upper ward gallery",
+      "bounds": [
+        28,
+        20,
+        34,
+        50
+      ],
+      "y": 3.4,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "upper-ward",
+      "name": "Upper patient ward",
+      "bounds": [
+        10,
+        34,
+        28,
+        50
+      ],
+      "y": 3.4,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "plant",
+      "name": "Basement boiler",
+      "bounds": [
+        34,
+        34,
+        54,
+        50
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          78.0
+        ],
+        [
+          36.0,
+          0,
+          72.0
+        ],
+        [
+          36.0,
+          0,
+          67.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          72.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "reception",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          67.0
+        ],
+        [
+          36.0,
+          0,
+          62.0
+        ],
+        [
+          36.0,
+          0,
+          56.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          62.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L03",
+      "a": "reception",
+      "b": "records",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          56.0
+        ],
+        [
+          28.0,
+          0,
+          56.0
+        ],
+        [
+          22.0,
+          0,
+          56.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          56.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L04",
+      "a": "records",
+      "b": "day",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          22.0,
+          0,
+          56.0
+        ],
+        [
+          22.0,
+          0,
+          50.0
+        ],
+        [
+          19.0,
+          0,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          0,
+          50.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L05",
+      "a": "day",
+      "b": "spine",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          19.0,
+          0,
+          42.0
+        ],
+        [
+          28.0,
+          0,
+          42.0
+        ],
+        [
+          31.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          42.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L06",
+      "a": "spine",
+      "b": "reception",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          31.0,
+          0,
+          35.0
+        ],
+        [
+          31.0,
+          0,
+          50.0
+        ],
+        [
+          36.0,
+          0,
+          56.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          31.0,
+          0,
+          50.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L07",
+      "a": "spine",
+      "b": "west-link",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          31.0,
+          0,
+          35.0
+        ],
+        [
+          28.0,
+          0,
+          27.0
+        ],
+        [
+          25.0,
+          0,
+          26.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          27.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L08",
+      "a": "west-link",
+      "b": "ward",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          25.0,
+          0,
+          26.0
+        ],
+        [
+          22.0,
+          0,
+          26.0
+        ],
+        [
+          11.0,
+          0,
+          26.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          0,
+          26.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L09",
+      "a": "ward",
+      "b": "chapel",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          26.0
+        ],
+        [
+          16.0,
+          0,
+          18.0
+        ],
+        [
+          19.0,
+          0,
+          10.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          16.0,
+          0,
+          18.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L10",
+      "a": "chapel",
+      "b": "west-link",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          19.0,
+          0,
+          10.0
+        ],
+        [
+          25.0,
+          0,
+          18.0
+        ],
+        [
+          25.0,
+          0,
+          26.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          25.0,
+          0,
+          18.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L11",
+      "a": "day",
+      "b": "court",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          19.0,
+          0,
+          42.0
+        ],
+        [
+          10.0,
+          0,
+          42.0
+        ],
+        [
+          5.0,
+          0,
+          48.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          10.0,
+          0,
+          42.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L12",
+      "a": "court",
+      "b": "ward",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          5.0,
+          0,
+          48.0
+        ],
+        [
+          5.0,
+          0,
+          34.0
+        ],
+        [
+          11.0,
+          0,
+          26.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          5.0,
+          0,
+          34.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L13",
+      "a": "spine",
+      "b": "treatment",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          31.0,
+          0,
+          35.0
+        ],
+        [
+          34.0,
+          0,
+          27.0
+        ],
+        [
+          42.0,
+          0,
+          27.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          0,
+          27.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L14",
+      "a": "treatment",
+      "b": "hydro",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          42.0,
+          0,
+          27.0
+        ],
+        [
+          50.0,
+          0,
+          27.0
+        ],
+        [
+          57.0,
+          0,
+          27.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          50.0,
+          0,
+          27.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L15",
+      "a": "hydro",
+      "b": "dining",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          57.0,
+          0,
+          27.0
+        ],
+        [
+          52.0,
+          0,
+          34.0
+        ],
+        [
+          44.0,
+          0,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          52.0,
+          0,
+          34.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L16",
+      "a": "dining",
+      "b": "spine",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          44.0,
+          0,
+          42.0
+        ],
+        [
+          34.0,
+          0,
+          42.0
+        ],
+        [
+          31.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          0,
+          42.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L17",
+      "a": "spine",
+      "b": "upper",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          31.0,
+          0,
+          35.0
+        ],
+        [
+          31.0,
+          3.4,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3.4,
+      "construction": "Reserve at least 5.44 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L18",
+      "a": "upper",
+      "b": "upper-ward",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          31.0,
+          3.4,
+          35.0
+        ],
+        [
+          28.0,
+          3.4,
+          42.0
+        ],
+        [
+          19.0,
+          3.4,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          3.4,
+          42.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L19",
+      "a": "dining",
+      "b": "plant",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          44.0,
+          0,
+          42.0
+        ],
+        [
+          44.0,
+          -3,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "loops": [
+    [
+      "reception",
+      "records",
+      "day",
+      "spine",
+      "reception"
+    ],
+    [
+      "spine",
+      "treatment",
+      "hydro",
+      "dining",
+      "spine"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      36.0,
+      0,
+      78.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        36.0,
+        0,
+        74.372
+      ],
+      [
+        36.0,
+        0,
+        67.0
+      ]
+    ],
+    "logistics": "Existing shared van on a level service apron/roadhead; no new transport mechanic."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "treatment",
+      "point": [
+        42.0,
+        0,
+        27.0
+      ],
+      "installation": "Copper containment ring"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "hydro",
+      "point": [
+        57.0,
+        0,
+        27.0
+      ],
+      "installation": "Draining cleansing basin"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "chapel",
+      "point": [
+        19.0,
+        0,
+        10.0
+      ],
+      "installation": "Patient remembrance stand"
+    }
+  ],
+  "circulation": "Administration/day-room loop provides a short return. East wet-treatment loop has two independent doors. West passage connects ward, chapel and garden exit; patient wards remain ordinary inhabited-space histories with protected personal accounts.",
+  "systems": "Wet-room water, boiler heat and ward ventilation produce normal baselines. Separate ward and clinical circuits avoid a single inexplicable all-building switch. Court light and window sightlines orient both players and later allies.",
+  "campaign": "Case files and staff correspondence present conflicting testimony respectfully. Neither diagnoses nor treatment history prescribe ghost hostility or evidence.",
+  "refine": [
+    "Staggered ward concept informed by primary DC planning brochure; inspect actual floor drawings before detailed construction.",
+    "Add believable sanitary/service rooms as child spaces; preserve broad corridor turn clearance.",
+    "Draw basement stairs and evacuation route; avoid an upper ward with a single untelegraphed trap."
+  ],
+  "sources": [
+    "docs/environments/ROOM_AND_ASSET_REQUIREMENTS.md",
+    "https://planning.dc.gov/sites/default/files/dc/sites/op/publication/attachments/St%20Elizabeths%20Brochure.pdf (indexed text inspected 2026-10-21; wards staggered for light; dimensions authored)"
+  ]
+}

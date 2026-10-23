@@ -1,0 +1,771 @@
+{
+  "version": 1,
+  "id": "WLD-03",
+  "title": "Red Mesa Ancestral Caves",
+  "region": "Western Badlands",
+  "scale": "Medium-large / canyon and caves",
+  "status": "rough-layout-only",
+  "intent": "A bounded canyon floor rises through a switchback terrace into fictional cliff dwellings and branching caves. Modern expedition traces provide the investigation installations.",
+  "site_bounds": [
+    0,
+    0,
+    86,
+    96
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Canyon-road van apron",
+      "bounds": [
+        26,
+        80,
+        42,
+        92
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Canyon mouth",
+      "bounds": [
+        26,
+        66,
+        42,
+        80
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "floor",
+      "name": "Canyon floor",
+      "bounds": [
+        20,
+        40,
+        48,
+        66
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "shelter",
+      "name": "Modern expedition shelter",
+      "bounds": [
+        4,
+        46,
+        20,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "wash",
+      "name": "Expedition sample shelter",
+      "bounds": [
+        48,
+        46,
+        60,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lower-path",
+      "name": "Lower switchback terrace",
+      "bounds": [
+        4,
+        22,
+        20,
+        46
+      ],
+      "y": 4,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "upper-path",
+      "name": "Upper switchback terrace",
+      "bounds": [
+        20,
+        10,
+        48,
+        22
+      ],
+      "y": 8,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "dwellings",
+      "name": "Fictional cliff-dwelling terrace",
+      "bounds": [
+        20,
+        22,
+        48,
+        40
+      ],
+      "y": 8,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "gallery",
+      "name": "Cave entrance gallery",
+      "bounds": [
+        48,
+        22,
+        66,
+        40
+      ],
+      "y": 8,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "fork",
+      "name": "Branching cave junction",
+      "bounds": [
+        66,
+        22,
+        76,
+        40
+      ],
+      "y": 8,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "chamber",
+      "name": "Dry side chamber",
+      "bounds": [
+        66,
+        4,
+        82,
+        22
+      ],
+      "y": 8,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lower-cave",
+      "name": "Lower cave chamber",
+      "bounds": [
+        48,
+        22,
+        66,
+        40
+      ],
+      "y": 4,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "return",
+      "name": "Rock-arch return shelf",
+      "bounds": [
+        48,
+        4,
+        66,
+        22
+      ],
+      "y": 4,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "alcove",
+      "name": "Expedition records alcove",
+      "bounds": [
+        48,
+        40,
+        60,
+        52
+      ],
+      "y": 8,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          86.0
+        ],
+        [
+          34.0,
+          0,
+          80.0
+        ],
+        [
+          34.0,
+          0,
+          73.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          0,
+          80.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "floor",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          73.0
+        ],
+        [
+          34.0,
+          0,
+          66.0
+        ],
+        [
+          34.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          0,
+          66.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L03",
+      "a": "floor",
+      "b": "shelter",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          53.0
+        ],
+        [
+          20.0,
+          0,
+          52.0
+        ],
+        [
+          12.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          20.0,
+          0,
+          52.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L04",
+      "a": "shelter",
+      "b": "lower-path",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          12.0,
+          0,
+          52.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4,
+      "construction": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L05",
+      "a": "floor",
+      "b": "wash",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          53.0
+        ],
+        [
+          48.0,
+          0,
+          52.0
+        ],
+        [
+          54.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.0,
+          0,
+          52.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L06",
+      "a": "wash",
+      "b": "floor",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          54.0,
+          0,
+          52.0
+        ],
+        [
+          48.0,
+          0,
+          52.0
+        ],
+        [
+          34.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.0,
+          0,
+          52.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L07",
+      "a": "lower-path",
+      "b": "upper-path",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          12.0,
+          4,
+          34.0
+        ],
+        [
+          34.0,
+          8,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4,
+      "construction": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L08",
+      "a": "upper-path",
+      "b": "dwellings",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          8,
+          16.0
+        ],
+        [
+          34.0,
+          8,
+          22.0
+        ],
+        [
+          34.0,
+          8,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          8,
+          22.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L09",
+      "a": "dwellings",
+      "b": "gallery",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          8,
+          31.0
+        ],
+        [
+          48.0,
+          8,
+          31.0
+        ],
+        [
+          57.0,
+          8,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.0,
+          8,
+          31.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L10",
+      "a": "gallery",
+      "b": "fork",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          57.0,
+          8,
+          31.0
+        ],
+        [
+          66.0,
+          8,
+          31.0
+        ],
+        [
+          71.0,
+          8,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          66.0,
+          8,
+          31.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L11",
+      "a": "fork",
+      "b": "chamber",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          71.0,
+          8,
+          31.0
+        ],
+        [
+          71.0,
+          8,
+          22.0
+        ],
+        [
+          74.0,
+          8,
+          13.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          71.0,
+          8,
+          22.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L12",
+      "a": "chamber",
+      "b": "upper-path",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          74.0,
+          8,
+          13.0
+        ],
+        [
+          34.0,
+          8,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L13",
+      "a": "gallery",
+      "b": "lower-cave",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          57.0,
+          8,
+          31.0
+        ],
+        [
+          57.0,
+          4,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4,
+      "construction": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L14",
+      "a": "lower-cave",
+      "b": "return",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          57.0,
+          4,
+          31.0
+        ],
+        [
+          57.0,
+          4,
+          22.0
+        ],
+        [
+          57.0,
+          4,
+          13.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          57.0,
+          4,
+          22.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L15",
+      "a": "return",
+      "b": "lower-path",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          57.0,
+          4,
+          13.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L16",
+      "a": "gallery",
+      "b": "alcove",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          57.0,
+          8,
+          31.0
+        ],
+        [
+          54.0,
+          8,
+          40.0
+        ],
+        [
+          54.0,
+          8,
+          46.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          54.0,
+          8,
+          40.0
+        ],
+        "clear_width_m": 1.5
+      }
+    }
+  ],
+  "loops": [
+    [
+      "lower-path",
+      "upper-path",
+      "dwellings",
+      "gallery",
+      "lower-cave",
+      "return",
+      "lower-path"
+    ],
+    [
+      "upper-path",
+      "dwellings",
+      "gallery",
+      "fork",
+      "chamber",
+      "upper-path"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      34.0,
+      0,
+      86.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        34.0,
+        0,
+        82.372
+      ],
+      [
+        34.0,
+        0,
+        73.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "shelter",
+      "point": [
+        12.0,
+        0,
+        52.0
+      ],
+      "installation": "Modern expedition containment mat"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "wash",
+      "point": [
+        54.0,
+        0,
+        52.0
+      ],
+      "installation": "Modern sample purification basin"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "chamber",
+      "point": [
+        74.0,
+        8,
+        13.0
+      ],
+      "installation": "Missing expedition remembrance stand"
+    }
+  ],
+  "circulation": "Two physical cave entrances connect upper terrace and lower return shelf. Switchback reservations require generous terrain runs; no ladders, jumps or spectral-only shortcut can be mandatory for hunters. Terminal alcove stays a short branch.",
+  "systems": "Sun/shade temperature, wind at mouths and dry cave reverberation remain environmental baselines. Named elevation bands replace ambiguous cave-floor room detection; rock walls must constrain both ghost controllers.",
+  "campaign": "Archaeological record discrepancies and a later modern expedition form separate narrative layers. The culture and site are fictional; no real burial tradition is used as an evil source. Future explicit Din\u00e9/Navajo identity would require separate research/consultation.",
+  "refine": [
+    "Third remote exemplar: shape actual irregular chamber polygons and switchbacks before building art.",
+    "The +4/+8 m terraces are reservations, not proven graded terrain. Engineer two-way routes, headroom and visible falls boundaries.",
+    "Modern rite installations must leave the fictional ancient fabric intact; validate all three against ghost interference."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md",
+    "https://www.nps.gov/meve/learn/nature/geology.htm (text/search record inspected 2026-10-21: alcove-forming sandstone context only; no culture, plan or dimensions copied)"
+  ]
+}

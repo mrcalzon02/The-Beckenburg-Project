@@ -33,6 +33,9 @@ public final class BlackpineLevel {
         b.door(9,12,21,0,12,1.2,true);b.door(9,12,18,0,8,1.2,false);
         b.door(10,12,56,0,23,1.2,false);b.door(10,12,62,0,23,1.2,false);
         b.flight(0,11,50.5,26.7,50.5,31.5,0,3);
+        b.window(6,12,24,0,13.5,false);b.window(6,12,30,0,9.5,false);
+        b.window(7,12,34,0,8,false);b.window(4,12,16,0,18,false);
+        b.window(2,12,22,0,42,false);b.window(3,12,14,0,33,false);
         b.furnish();
         // Refuge is sparse outdoor foliage; this working camp does not acquire twelve cupboards.
         b.sockets.removeIf(s->s.type().equals("hide"));
@@ -45,12 +48,12 @@ public final class BlackpineLevel {
         }
         for(double[] tree:new double[][]{{6,18},{15,8},{52,7},{64,36},{22,53}}){
             b.socket("landscape_tree",12,tree[0],0,tree[1],0,"level_tree_conifer_worn");
-            b.colliders.add(new Collider(tree[0],0,tree[1],.16,.16,2.5,0));
+            b.colliders.add(new Collider(tree[0],0,tree[1],.26,.26,2.5,0));
         }
         var level=b.finish(8,0);
         var sockets=new ArrayList<>(level.sockets());sockets.removeIf(s->s.type().equals("ritual"));
         int[] rooms={0,5,2};String[] rites={"banishment","cleansing","absolution"};
         for(int i=0;i<3;i++){var r=level.room(rooms[i]);sockets.add(new Socket("blackpine-ritual-"+rites[i],"ritual",r.id(),(r.x0()+r.x1())/2,r.y(),(r.z0()+r.z1())/2,0,rites[i]));}
-        return new LevelDefinition(level.id(),"blackpine-graybox-v1",level.title(),level.rooms(),level.portals(),level.stairs(),level.voids(),level.props(),sockets,level.colliders(),level.dock(),level.ambience());
+        return SiteTerrain.gradeLevel(BlackpineProductionAssets.apply(BlackpineStoryDressing.apply(BlackpineDressing.apply(new LevelDefinition(level.id(),"blackpine-graybox-v1",level.title(),level.rooms(),level.portals(),level.stairs(),level.voids(),level.props(),sockets,level.colliders(),level.dock(),level.ambience())))));
     }
 }

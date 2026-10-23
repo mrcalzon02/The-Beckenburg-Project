@@ -523,6 +523,7 @@ public final class LanHost implements AutoCloseable {
                     for(String readingPacket:latestSensorReadings.values())reply(peer,readingPacket);
                     if(writingBook.placed())reply(peer,writingBook.physicallyPlaced()
                         ?writingBook.deploymentFrame():"BOOK|DEPLOYED|"+writingBook.room());
+                    if(writingBook.page()!=null)reply(peer,writingBook.writingFrame());
                     reply(peer,"TRIPOD|RESET");
                     for(VanTripods.Stand stand:tripods.all())reply(peer,stand.frame());
                     for(String portablePacket:portableLights.snapshot())reply(peer,portablePacket);
@@ -1861,8 +1862,8 @@ public final class LanHost implements AutoCloseable {
             case STRIKE,SIGNATURE->10;case DRIFT->0;
         };
         if(eventPower>0){
-            if(mission.allowsEvidence(HardEvidenceQuota.Family.WRITING))
-                writingBook.witness(20261018L,tick,result,ghostType);
+            if(mission.allowsEvidence(HardEvidenceQuota.Family.WRITING)&&writingBook.witness(20261018L,tick,result,ghostType))
+                notifyHunters(writingBook.writingFrame());
             lastEvidenceEventTick=tick;
             lastEvidenceEventRoom=result.room();
             lastEvidenceEventPower=eventPower;

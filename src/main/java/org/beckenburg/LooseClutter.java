@@ -151,8 +151,10 @@ public final class LooseClutter {
     }
     private double support(Item i,double before,double after){
         double best=-100;
-        for(Room r:map.level().rooms())if(i.x>=r.x0()&&i.x<=r.x1()&&i.z>=r.z0()&&i.z<=r.z1()
-                &&!map.level().floorVoid(i.x,r.y(),i.z)&&r.y()<=before+.01&&r.y()>=after-.02)best=Math.max(best,r.y());
+        for(Room r:map.level().rooms())if(i.x>=r.x0()&&i.x<=r.x1()&&i.z>=r.z0()&&i.z<=r.z1()&&!map.level().floorVoid(i.x,r.y(),i.z)){
+            double floor=map.terrain()!=null&&r.outside()&&r.id()!=14?map.terrain().height(i.x,i.z):r.y();
+            if(floor<=before+.01&&floor>=after-.02)best=Math.max(best,floor);
+        }
         for(Stair s:map.level().stairs())if(s.contains(i.x,i.z,0)){double y=s.yAt(i.x,i.z);if(y<=before+.01&&y>=after-.02)best=Math.max(best,y);}
         for(Collider c:map.level().colliders()){
             double dx=i.x-c.x(),dz=i.z-c.z(),x=dx*Math.cos(c.yaw())+dz*Math.sin(c.yaw()),z=-dx*Math.sin(c.yaw())+dz*Math.cos(c.yaw());
@@ -162,6 +164,11 @@ public final class LooseClutter {
     public synchronized List<Hit> advance(List<Observer> observers){
         List<Hit> hits=new ArrayList<>();
         for(Item i:items){
+            double ground=map.groundHeight(i.x,i.z,map.roomAt(i.x,i.y-i.extent(),i.z));
+            if(i.y-i.extent()<ground-.05){
+                var recovered=GroundRecovery.recover(map,new Vec(i.x,i.y-i.extent(),i.z),map.roomAt(i.x,i.z),HunterPosture.CROUCH_HEIGHT);
+                i.x=recovered.x();i.y=recovered.y()+i.extent()+.002;i.z=recovered.z();i.holder=-1;i.vx=i.vy=i.vz=0;i.armed=false;
+            }
             if(i.holder>=0){Observer o=observers.stream().filter(p->p.seat==i.holder&&p.exposed).findFirst().orElse(null);
                 if(o==null){i.holder=-1;i.vy=0;}else{carry(i,o);continue;}}
             if(i.immunity>0)i.immunity--;
@@ -182,7 +189,6 @@ public final class LooseClutter {
                 }
                 if(speed>.35)i.roll+=i.spin*dt;else{i.spin=0;i.roll*=.92;}
                 i.vx*=.999;i.vz*=.999;
-                if(i.y< -20){i.holder=-2;i.armed=false;i.vx=i.vy=i.vz=0;break;}
             }
         }
         // Inelastic contact between independent loose bodies.

@@ -1,0 +1,487 @@
+{
+  "id": "PRISON",
+  "title": "Beckenburg Penitentiary",
+  "source": "layouts\\prison\\layout.json",
+  "source_sha256": "ab20558ecb1820020a7dd872f81ae079291134422db7e8e59a8dbedc7954205a",
+  "zones": 16,
+  "routes": 21,
+  "shell_openings": [
+    {
+      "zone": "sally",
+      "side": "N",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "sally",
+      "side": "N",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "sally",
+      "side": "S",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "sally",
+      "side": "S",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "sally",
+      "side": "W",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "sally",
+      "side": "W",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "sally",
+      "side": "E",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "sally",
+      "side": "E",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "intake",
+      "side": "N",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "intake",
+      "side": "N",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "intake",
+      "side": "E",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "intake",
+      "side": "E",
+      "link": "L03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "guard",
+      "side": "N",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "guard",
+      "side": "N",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "guard",
+      "side": "W",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "guard",
+      "side": "W",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-a",
+      "side": "N",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-a",
+      "side": "N",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-a",
+      "side": "S",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-a",
+      "side": "S",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-a",
+      "side": "E",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "block-a",
+      "side": "E",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "block-b",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-b",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-b",
+      "side": "S",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-b",
+      "side": "S",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-b",
+      "side": "W",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "block-b",
+      "side": "W",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "block-b",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "block-b",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "E",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "E",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "medical",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "medical",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "medical",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "medical",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "isolation",
+      "side": "S",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "isolation",
+      "side": "S",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "isolation",
+      "side": "W",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "isolation",
+      "side": "W",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 219,
+  "issues": [
+    {
+      "zone": "cross",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.05,
+          18.05,
+          34.95,
+          19.95
+        ]
+      ]
+    },
+    {
+      "zone": "gallery-a",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          11.05,
+          39.05,
+          12.95,
+          40.95
+        ]
+      ]
+    },
+    {
+      "zone": "gallery-b",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          55.05,
+          39.05,
+          56.95,
+          40.95
+        ]
+      ]
+    },
+    {
+      "link": "L19",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.4,
+      "plan_run": 4.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 5.44 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L20",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.4,
+      "plan_run": 4.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 5.44 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L21",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 13.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Lay out real individual cells and upper gallery voids; block volumes alone are not complete cell geometry.",
+    "Test two-sided manual gate release during all power states before allowing hunts.",
+    "Primary reference text inspected: https://www.nps.gov/places/000/alcatraz-cellhouse.htm \u2014 separate blocks and hospital; dimensions here are fictional game proposals."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "1e39c3f2985162ee691bd258518dfb47e4e4b9844d59ff106f816ef0c874dfcb",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

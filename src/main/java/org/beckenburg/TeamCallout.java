@@ -34,7 +34,7 @@ public final class TeamCallout {
             if(request==null)return null;
             int origin=map.roomAt(request.originX(),request.originZ());
             int target=map.roomAt(request.targetX(),request.targetZ());
-            return origin<0||target<0?null:submit(request,map.floorY(origin),map.floorY(target));
+            return origin<0||target<0?null:submit(request,map.groundHeight(request.originX(),request.originZ(),origin),map.groundHeight(request.targetX(),request.targetZ(),target));
         }
         public Ping submit(Request request,double originFeetY,double targetFeetY){
             if(request==null || request.sender()<0 || request.phrase()==null || request.tick()<0) return null;
@@ -58,7 +58,7 @@ public final class TeamCallout {
     }
     public static boolean lineClear(HouseMap map,double ox,double oz,double tx,double tz) {
         int from=map.roomAt(ox,oz),to=map.roomAt(tx,tz);
-        return from>=0&&to>=0&&lineClear(map,ox,map.floorY(from),oz,tx,map.floorY(to),tz);
+        return from>=0&&to>=0&&lineClear(map,ox,map.groundHeight(ox,oz,from),oz,tx,map.groundHeight(tx,tz,to),tz);
     }
     public static boolean lineClear(HouseMap map,double ox,double oy,double oz,double tx,double ty,double tz){
         double distance=Math.hypot(tx-ox,tz-oz);
@@ -68,14 +68,15 @@ public final class TeamCallout {
     /** Ray stops before the first solid tile, so an investigator cannot tag a hidden room through walls. */
     public static double[] aim(HouseMap map,double x,double z,double yaw,double range) {
         int room=map.roomAt(x,z);
-        return room<0?new double[]{x,z}:aim(map,x,map.floorY(room),z,yaw,range);
+        return room<0?new double[]{x,z}:aim(map,x,map.groundHeight(x,z,room),z,yaw,range);
     }
     public static double[] aim(HouseMap map,double x,double feetY,double z,double yaw,double range){
         if(!Double.isFinite(yaw)||!Double.isFinite(range)||range<0||!map.traversable(x,feetY,z))return new double[]{x,z};
         double dx=Math.sin(yaw),dz=Math.cos(yaw),bestX=x,bestZ=z;
         for(double d=.12;d<=Math.min(18,range);d+=.12) {
             double nextX=x+dx*d,nextZ=z+dz*d;
-            if(!map.traversable(nextX,feetY,nextZ))break;
+            double nextY=map.terrain()==null?feetY:map.groundHeight(nextX,nextZ,map.roomAt(x,feetY,z));
+            if(!map.traversable(nextX,nextY,nextZ))break;
             bestX=nextX;bestZ=nextZ;
         }
         return new double[]{bestX,bestZ};

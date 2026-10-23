@@ -112,3 +112,7 @@ Assignment office holds regional dossiers; archive records discoveries; armory o
 - docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md
 - docs/RITUAL_PROTOCOLS_DETAILED.md
 - docs/environments/SHARED_VAN_MODULE.md
+
+## Shared world thread
+
+[Emergence Day and survival thread](LORE.md): connect this location to late 2022 and the long reclamation without prescribing its current ghost.

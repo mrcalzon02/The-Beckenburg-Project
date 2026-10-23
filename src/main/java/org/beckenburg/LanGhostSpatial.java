@@ -24,6 +24,7 @@ public final class LanGhostSpatial {
     }
     /** Burst replenishes when not being used. Host tick is authoritative. */
     public void advanceStamina(int tick){
+        recoverBelowGround();
         if(tick<0)throw new IllegalArgumentException("invalid tick");
         if(tick-lastBurstTick>5&&tick%2==0)
             burstStamina=Math.min(burstCapacity,burstStamina+1);
@@ -39,6 +40,7 @@ public final class LanGhostSpatial {
         slowedUntil=Math.max(slowedUntil,currentTick+duration);
     }
     private double x,y,z;
+    public void recoverBelowGround(){var p=GroundRecovery.recover(map,new LevelDefinition.Vec(x,y,z),room,HunterPosture.STANDING_HEIGHT);x=p.x();y=p.y();z=p.z();}
 
     public LanGhostSpatial(HouseMap map,int startingRoom){
         this.map=Objects.requireNonNull(map);
@@ -59,9 +61,10 @@ public final class LanGhostSpatial {
         double speed=(tick<slowedUntil?.105:.31)*ghostSpeed*speciesSpeed*(burst?1.50:1.0);
         double nx=x+speed*dx/length,nz=z+speed*dz/length;
         // Move around furnishings; crossing room boundaries is a paid, cooldown-gated DRIFT only.
-        if(map.roomAt(nx,y,nz)!=room||!map.traversable(nx,y,nz))
+        var destination=map.resolveMove(new LevelDefinition.Vec(x,y,z),nx,nz);
+        if(destination==null||map.roomAt(destination.x(),destination.y(),destination.z())!=room)
             throw new IllegalArgumentException("spectral room boundary; use DRIFT");
-        x=nx;z=nz;
+        x=destination.x();y=destination.y();z=destination.z();
         if(burst){burstStamina--;lastBurstTick=tick;}
         return true;
     }

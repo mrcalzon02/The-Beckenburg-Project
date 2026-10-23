@@ -356,6 +356,7 @@ public final class LevelPlans {
             for(var p:List.copyOf(props))if(p.mesh().equals("tv_table_1_4"))props.add(new Prop("tv_mp_1",p.room(),p.x(),p.y()+.592,p.z()-.08,.8,p.yaw(),0,0,.64,p.mesh()));
             LevelEnclosure.populate(this);
             SiteStories.populate(this);
+            LegacySiteStories.populate(this);
             for(int i=0;i<12;i++)installSwitch(i);
             for(int room=0;room<12;room++){final int ri=room;if(sockets.stream().anyMatch(s->s.type().equals("light")&&s.room()==ri&&s.style().equals("candle-chandelier"))){var plate=sockets.stream().filter(s->s.type().equals("switch")&&s.room()==ri).findFirst().orElseThrow();socket("light",ri,plate.x(),plate.y()+.90,plate.z(),plate.yaw(),"sconce");}}
 

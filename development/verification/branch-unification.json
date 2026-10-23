@@ -1,0 +1,186 @@
+{
+  "status": "merged-checks-pass-with-reproduced-main-failure",
+  "main": "db9bb0dd12419afb4173b7d7ae36d3bf296f6d21",
+  "map_branch": "6ac421492e5eb5a6784966848131c30f502f5fba",
+  "checks": [
+    {
+      "test": "GpuWorldRendererContractTest",
+      "status": "pass",
+      "seconds": 0.06,
+      "output": "PASS GPU generation identity, viewport isolation and frame bridge\n"
+    },
+    {
+      "test": "RendererVisibilityTest",
+      "status": "pass",
+      "seconds": 0.09,
+      "output": "PASS camera-direction culling preserves near apertures and rotation\n"
+    },
+    {
+      "test": "CastleOrientationTest",
+      "status": "pass",
+      "seconds": 0.06,
+      "output": "PASS castle orientation step progression\n"
+    },
+    {
+      "test": "WorldLoreTest",
+      "status": "pass",
+      "seconds": 1.8,
+      "output": "PASS 23 site threads, 3 class factions, portrait/proxy contracts, physical archive approach, reader controls and 3 supported ray-readable survivor notes\n"
+    },
+    {
+      "test": "ProductionAssetTest",
+      "status": "pass",
+      "seconds": 0.61,
+      "output": "PASS 12 ready runtime production meshes, 18879 shared source triangles, matching collision/support and clear spawns/rites\n"
+    },
+    {
+      "test": "BlackpineMillExpansionTest",
+      "status": "pass",
+      "seconds": 0.34,
+      "output": "PASS four new models and relocated workshop saw inside finished walls, disjoint from solid furnishings; circular head saw aligned to logway\n"
+    },
+    {
+      "test": "BlackpineStoryTest",
+      "status": "pass",
+      "seconds": 0.83,
+      "output": "PASS 19 original story meshes (5757 source triangles), 12 room histories, 9 physically supported and centre-ray readable records, two boarded apertures and clear ritual floors\n"
+    },
+    {
+      "test": "BlackpineDressingTest",
+      "status": "pass",
+      "seconds": 0.58,
+      "output": "PASS: 20 original meshes (9971 library triangles), 99 backdrop trees, supported patios, real solid bodies and only three refuges\n"
+    },
+    {
+      "test": "AuthoredLevelPhysicsTest",
+      "status": "pass",
+      "seconds": 0.48,
+      "output": "HOUSE XYZ geometry checked\nFARMHOUSE XYZ geometry checked\nSCHOOL XYZ geometry checked\n"
+    },
+    {
+      "test": "LevelSurfaceIntegrityTest",
+      "status": "pass",
+      "seconds": 0.88,
+      "output": "PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS FARMHOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS SCHOOL: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\n"
+    },
+    {
+      "test": "InteractionFocusTest",
+      "status": "pass",
+      "seconds": 2.16,
+      "output": "PASS HOUSE exact door/window meshes: 15 doors, 9 windows\nPASS HOUSE exact visible meshes: 27 clutter, 17 fixtures, 12 switches\nPASS FARMHOUSE exact door/window meshes: 12 doors, 4 windows\nPASS FARMHOUSE exact visible meshes: 46 clutter, 19 fixtures, 12 switches\nPASS SCHOOL exact door/window meshes: 25 doors, 8 windows\nPASS SCHOOL exact visible meshes: 56 clutter, 21 fixtures, 12 switches\nPASS rack units individually targeted\n"
+    },
+    {
+      "test": "VanHumanScaleTest",
+      "status": "pass",
+      "seconds": 1.44,
+      "output": "PASS HOUSE: six distinct deck pads, all station routes, outdoor ramp descent/return and cargo seal\nPASS FARMHOUSE: six distinct deck pads, all station routes, outdoor ramp descent/return and cargo seal\nPASS SCHOOL: six distinct deck pads, all station routes, outdoor ramp descent/return and cargo seal\nPASS human-scale body, actual furniture bounds and native-sized full-tier tool bays\n"
+    },
+    {
+      "test": "VanRackStockTest",
+      "status": "pass",
+      "seconds": 1.31,
+      "output": "PASS native-sized shelf packing: 76 independently visible inventory units\nPASS native-sized shelf packing: 78 independently visible inventory units\nPASS native-sized shelf packing: 372 independently visible inventory units\nPASS native-sized shelf packing: 372 independently visible inventory units\nPASS native-sized shelf packing: 372 independently visible inventory units\nPASS real stock arithmetic, equip/return, medicine consumption, atomic quantities and upright front-facing CRT geometry\n"
+    },
+    {
+      "test": "GhostManifestationVisualTest",
+      "status": "pass",
+      "seconds": 0.34,
+      "output": "PASS: generic apparition texture and signature-only identity selection\n"
+    },
+    {
+      "test": "TwinBodyVisualTest",
+      "status": "pass",
+      "seconds": 0.61,
+      "output": "PASS: two individual, distinct four-view Twins; bounded physical sibling and private per-body disclosure\n"
+    },
+    {
+      "test": "EvidenceBookPagesTest",
+      "status": "pass",
+      "seconds": 0.44,
+      "output": "PASS 3 textured book tiers, 9 written alternatives, distinct packed page art and event-only visual state\n"
+    },
+    {
+      "test": "LanCaseTest",
+      "status": "pass",
+      "seconds": 0.34,
+      "output": "PASS: LAN case role boundaries, three instruments, shared evidence, ward, harm, contested cleansing and retreat\n"
+    },
+    {
+      "test": "LanRitualDefenseTest",
+      "status": "pass",
+      "seconds": 0.31,
+      "output": "PASS: host ritual defense, pause, finite abandonment, explicit restart and guarded cleansing\n"
+    },
+    {
+      "test": "CastleEditorGeometryTest",
+      "status": "pass",
+      "seconds": 0.38,
+      "output": "PASS wall/floor/roof editing, paint, undo, migration, game collision and shadows\n"
+    },
+    {
+      "test": "CastlePortalSlotTest",
+      "status": "pass",
+      "seconds": 0.31,
+      "output": "PASS one door per socket, physical gate toggle, thick-wall occlusion and saved occupancy\n"
+    },
+    {
+      "test": "CastleHubIntegrationTest",
+      "status": "pre-existing-main-failure",
+      "seconds": 1.14,
+      "output": "java.lang.AssertionError: sky renderer supplies a varied celestial backdrop for castle window apertures\n\tat org.beckenburg.CastleHubIntegrationTest.ok(CastleHubIntegrationTest.java:8)\n\tat org.beckenburg.CastleHubIntegrationTest.main(CastleHubIntegrationTest.java:103)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\n\tat org.beckenburg.VerificationMain.main(VerificationMain.java:6)\n",
+      "baseline": "unification-main-baseline.json"
+    },
+    {
+      "test": "TerrainAndRecoveryTest",
+      "status": "pass",
+      "seconds": 1.92,
+      "output": "PASS graded terrain, baked erosion paths, wholly clear shrubs/logs, rooted upright plants, 900 physical slope steps and player/ghost/loose-entity recovery\n"
+    },
+    {
+      "test": "FoliageVariationTest",
+      "status": "pass",
+      "seconds": 0.97,
+      "output": "PASS stable foliage height, width, rotation, twist, asymmetric lean, 16 true texel variants, shared meshes and unchanged refuge pocket\n"
+    },
+    {
+      "test": "LanWorldRenderTest",
+      "status": "pass",
+      "seconds": 2.97,
+      "output": "2026-10-23T09:57:10.532362900Z [main] RENDER SLOW stage=idle faces=48201 visible_faces=8933 culled_faces=39268 target=320x200 build_ms=867 lighting_raster_ms=421\nPASS: network first-person rendering includes 3D teammates, disclosed ghost and synced physical doors\n"
+    },
+    {
+      "test": "SceneryInstancesTest",
+      "status": "pass",
+      "seconds": 5.98,
+      "output": "2026-10-23T09:57:14.280899Z [main] RENDER SLOW stage=idle faces=171321 visible_faces=63645 culled_faces=107676 target=320x200 build_ms=1296 lighting_raster_ms=624\nPASS instance/reference image parity: 0/384000 pixels differ; InstanceStats[instances=782, visible=186, culled=596, templates=58, expandedTriangles=138391, sharedTriangles=39607, submittedTriangles=40021]\nCPU median 41.97ms expanded / 39.79ms instances\n"
+    },
+    {
+      "test": "MergedMaterialMetadataTest",
+      "status": "pass",
+      "seconds": 0.25,
+      "output": "PASS generated terrain/foliage, subsequent GLB and TV material metadata remain aligned\n"
+    },
+    {
+      "test": "LightingOcclusionRepairTest",
+      "status": "pass",
+      "seconds": 0.52,
+      "output": "PASS shared 3D lighting occlusion, castle walls, portals, ceiling, courtyard and mission LOS\n"
+    },
+    {
+      "test": "PhysicalLightingTest",
+      "status": "pass",
+      "seconds": 1.25,
+      "output": "PASS native source profiles, directional and warm emission, closed-door shadows/cache invalidation, exact TV glow/sound use, independent washroom switches and castle lamp sources\n"
+    },
+    {
+      "test": "CastleFurnitureWallAuditTest",
+      "status": "pass",
+      "seconds": 0.42,
+      "output": "PASS all castle furnishing GLBs remain clear of solid wall volumes\n"
+    }
+  ],
+  "limitations": [
+    "Headless CPU and GPU bridge contract checks only; no actual OpenGL context or target-hardware acceptance claimed.",
+    "Paused local lighting and unfinished mission-board changes excluded."
+  ]
+}
