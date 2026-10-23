@@ -105,7 +105,15 @@ public final class CastleHubArchitecturalPlan {
         horizontal(out,34.0,17.8,43.0,0,GROUND_CEILING,MaterialAtlas.STONE);
         horizontal(out,34.0,13.2,17.8,2.95,GROUND_CEILING,MaterialAtlas.STONE);
         out.add(new Wall(13.2,34,17.8,34,0,0,MaterialAtlas.STONE,15.5,4.6));
-        vertical(out,1.0,1.0,34.0,0,GROUND_CEILING,MaterialAtlas.STONE);
+        // Two actual deep casement openings in the exterior west masonry.
+        // Each sill and lintel remains solid to collision and light rays.
+        vertical(out,1,1,16,0,GROUND_CEILING,MaterialAtlas.STONE);
+        vertical(out,1,16,17.8,0,1.05,MaterialAtlas.STONE);
+        vertical(out,1,16,17.8,2.45,GROUND_CEILING,MaterialAtlas.STONE);
+        vertical(out,1,17.8,26,0,GROUND_CEILING,MaterialAtlas.STONE);
+        vertical(out,1,26,27.8,0,1.05,MaterialAtlas.STONE);
+        vertical(out,1,26,27.8,2.45,GROUND_CEILING,MaterialAtlas.STONE);
+        vertical(out,1,27.8,34,0,GROUND_CEILING,MaterialAtlas.STONE);
         vertical(out,43.0,4.0,34.0,0,GROUND_CEILING,MaterialAtlas.STONE);
         // True full-height interior separations and archways.
         vertical(out,10.5,1.0,11.2,0,GROUND_CEILING,MaterialAtlas.STONE,6.5);

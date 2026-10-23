@@ -12,6 +12,12 @@ public final class CastleDoorSlots {
  private CastleDoorSlots(){}
  public static final double MASONRY_THICKNESS=.42;
  public enum Type { EMPTY, WOOD, PORTCULLIS }
+ /** Apertures are inside the wall volume, never painted on an unbroken face. */
+ public record WindowSlot(String id,double x,double z0,double z1,double sill,double head){}
+ private static final List<WindowSlot> WINDOWS=List.of(
+    new WindowSlot("west-casement-north",1,16,17.8,1.05,2.45),
+    new WindowSlot("west-casement-south",1,26,27.8,1.05,2.45));
+ public static List<WindowSlot> windows(){return WINDOWS;}
  public record Slot(String id,double x0,double z0,double x1,double z1,
                     double bottom,double clearHeight,boolean gate) {
   public boolean horizontal(){return z0==z1;}

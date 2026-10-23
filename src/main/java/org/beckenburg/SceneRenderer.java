@@ -1536,6 +1536,23 @@ public final class SceneRenderer {
                 }
             }else architecturalWall(out,wall);
         }
+        for(var window:CastleDoorSlots.windows()){
+            // The wall was cut into a solid lower sill, upper lintel and
+            // side shoulders above. Wood mullions are recessed INTO the
+            // 42cm masonry depth, not pasted against its outer texture.
+            double hw=CastleDoorSlots.MASONRY_THICKNESS*.5;
+            double breadth=window.z1()-window.z0();
+            for(double side: new double[]{window.z0()-.065,window.z1()-.025})
+                texturedBox(out,window.x()-hw-.025,window.sill(),side,
+                    CastleDoorSlots.MASONRY_THICKNESS+.05,
+                    window.head()-window.sill(),.09,MaterialAtlas.AGED_WOOD);
+            for(double y:new double[]{window.sill(),window.head()-.08})
+                texturedBox(out,window.x()-hw-.025,y,window.z0(),
+                    CastleDoorSlots.MASONRY_THICKNESS+.05,.09,breadth,
+                    MaterialAtlas.AGED_WOOD);
+            texturedBox(out,window.x()-.045,(window.sill()+window.head())*.5-.05,
+                window.z0(),.09,.10,breadth,MaterialAtlas.AGED_WOOD);
+        }
         for(var slot:CastleDoorSlots.all()){
             castleDoorLeaf(out,slot,CastleLevelEdits.current().doorType(slot.id()),
                 map.doorOpen(slot.id()));

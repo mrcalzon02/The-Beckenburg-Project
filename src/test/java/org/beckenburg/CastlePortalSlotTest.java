@@ -30,6 +30,19 @@ public final class CastlePortalSlotTest {
   check(!map.traversable(12,34),"solid gatehouse masonry remains a collision blocker");
   check(!FixtureLighting.castleRayClear(map,12,1.5,33.3,12,1.5,34.7),
     "thick gatehouse shoulder still stops lighting");
+  // The west windows transmit a ray through an actual masonry void but
+  // do not allow a hunter through their solid stone sill.
+  for(var window:CastleDoorSlots.windows()){
+   double z=(window.z0()+window.z1())*.5;
+   check(FixtureLighting.castleRayClear(map,.25,1.85,z,1.75,1.85,z),
+     "window admits light through the full wall thickness "+window.id());
+   check(!FixtureLighting.castleRayClear(map,.25,.55,z,1.75,.55,z),
+     "stone sill remains an occluding physical core "+window.id());
+   check(!FixtureLighting.castleRayClear(map,.25,2.75,z,1.75,2.75,z),
+     "stone lintel remains an occluding physical core "+window.id());
+   check(!map.traversable(1,z),
+     "casement window does not become a walk-through floor-level door");
+  }
   var folder=Files.createTempDirectory("castle-doors-");
   try{
    var path=folder.resolve("castle.properties");

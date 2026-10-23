@@ -453,6 +453,32 @@ public final class CastleLevelEdits {
                         deck.height(),.16,deck.material()));
                 }
             }
+            // Migrate the original continuous west wall to a real, recessed
+            // pair of window apertures. Only canonical unchanged geometry is
+            // converted; custom walls remain under user control.
+            if(Integer.parseInt(p.getProperty("windows.layout","1"))<2){
+                String oldId=null;
+                for(var entry:parsed.entrySet()){
+                    var wall=entry.getValue();
+                    if(wall.kind()==Kind.WALL&&wall.x0()==1.0&&wall.x1()==1.0
+                        &&wall.z0()==1.0&&wall.z1()==34.0&&wall.base()==0
+                        &&wall.height()==CastleHubArchitecturalPlan.GROUND_CEILING){
+                        oldId=entry.getKey();break;
+                    }
+                }
+                if(oldId!=null){
+                    var previous=parsed.remove(oldId);
+                    double[][] cuts={{1,16,0,3.4},{16,17.8,0,1.05},
+                        {16,17.8,2.45,3.4},{17.8,26,0,3.4},
+                        {26,27.8,0,1.05},{26,27.8,2.45,3.4},
+                        {27.8,34,0,3.4}};
+                    for(int i=0;i<cuts.length;i++){
+                        double[] c=cuts[i];String id="window2-west-"+i;
+                        parsed.put(id,new Surface(id,Kind.WALL,
+                            1,c[0],1,c[1],c[2],c[3]-c[2],previous.material()));
+                    }
+                }
+            }
             // The old south wall was one solid line across the future gate.
             // Re-cut only the exact unmodified legacy surface. Keep edited
             // player walls intact instead of silently deleting custom geometry.
@@ -506,6 +532,7 @@ public final class CastleLevelEdits {
         p.setProperty("lighting.layout","2");
         p.setProperty("fortification.layout","2");
         p.setProperty("gate.layout","2");
+        p.setProperty("windows.layout","2");
         p.setProperty("doors.count",String.valueOf(doorAssignments.size()));
         int di=0;
         for(var assigned:doorAssignments.entrySet()){
