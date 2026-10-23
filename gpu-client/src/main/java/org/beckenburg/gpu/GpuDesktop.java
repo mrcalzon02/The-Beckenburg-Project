@@ -97,6 +97,45 @@ public final class GpuDesktop {
    throw new IllegalStateException("PNG encoder missing");
   System.out.println("GPU CAPTURE "+out+" ("+out.length()+" bytes)");
  }
+ /** Deterministic movement/rotation audit: scene generation is independent
+  * from graphics thread, and every requested view must return its own frame ID.
+  * Real geometry and lighting are used, not artificial triangle test objects.
+  */
+ private static void rotationSmoke()throws Exception{
+  var house=new HouseMap(HouseMap.Site.HOUSE);
+  var renderer=new SceneRenderer();
+  renderer.roomLights=new RoomLighting();
+  renderer.setRenderSize(640,360);
+  renderer.x=house.centerX(4);renderer.z=house.centerZ(4);
+  renderer.eyeHeight=house.floorY(4)+1.62;
+  long totalNanos=0,maxNanos=0;
+  for(int direction=0;direction<6;direction++){
+   renderer.yaw=direction*Math.PI/3.0;
+   long start=System.nanoTime();
+   renderer.drawNetwork(house,List.of(),-1,direction*.5);
+   long expected=renderer.submittedGpuFrameId();
+   long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(24);
+   GpuWorldRenderer.Result completed=null;
+   while(System.nanoTime()<deadline){
+    var candidate=ENGINE.latest();
+    if(candidate!=null&&candidate.frameId()==expected){
+     completed=candidate;break;
+    }
+    Thread.sleep(25);
+   }
+   if(completed==null)throw new AssertionError(
+       "GPU request for house rotation "+direction+" never completed, frame "+expected);
+   int visible=0;
+   for(int px:completed.argb())if((px>>>24)>127)visible++;
+   if(visible<250)throw new AssertionError(
+       "House rotation "+direction+" produced empty GPU geometry");
+   long elapsed=System.nanoTime()-start;
+   totalNanos+=elapsed;maxNanos=Math.max(maxNanos,elapsed);
+  }
+  System.out.println("GPU ROTATION PASS 6 real house directions, fresh frame identity each; "+
+      "average_ms="+totalNanos/6/1_000_000+
+      " worst_ms="+maxNanos/1_000_000);
+ }
  private static void smoke()throws Exception{
   SceneRenderer first=new SceneRenderer();
   screenshot(capture(first,false),"investigation-house.png");
@@ -118,6 +157,7 @@ public final class GpuDesktop {
   if(castlePixels<8000)
    throw new IllegalStateException("Castle frame does not show enough visible masonry: "+castlePixels);
   screenshot(castle,"castle-headquarters.png");
+  rotationSmoke();
   System.out.println("PASS Beckenburg OpenGL 3.3 real house and real castle framebuffers");
  }
  public static void main(String[] args)throws Exception{

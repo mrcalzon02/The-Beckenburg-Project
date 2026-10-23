@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.BufferUtils;
 import org.beckenburg.GpuWorldRenderer;
+import org.beckenburg.BeckenburgDiagnostics;
 import org.beckenburg.GlbProps;
 import org.beckenburg.LevelMaterials;
 import org.beckenburg.MaterialAtlas;
@@ -22,6 +23,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.AtomicLong;
 
 /** Actual OpenGL 3.3 PSX scene rasterizer in the live Java 17 game.
  * Offscreen readback preserves existing Swing HUD and depth-tested ghost
@@ -71,6 +73,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  """;
  private final AtomicReference<Frame> pending=new AtomicReference<>();
+ private final AtomicLong supersededFrames=new AtomicLong();
  private volatile Result latest;
  private volatile boolean ready,closed;
  private volatile String description="OpenGL initialising";
@@ -89,7 +92,8 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  @Override public Result latest(){return latest;}
  @Override public void submit(Frame frame){
   if(!ready())throw new IllegalStateException("OpenGL worker no longer active");
-  pending.set(Objects.requireNonNull(frame));
+  Frame replaced=pending.getAndSet(Objects.requireNonNull(frame));
+  if(replaced!=null)supersededFrames.incrementAndGet();
   Gdx.graphics.requestRendering();
  }
  @Override public String rendererDescription(){return description;}
@@ -214,18 +218,20 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   long finished=System.nanoTime();
   if(finished-started>200_000_000L&&finished-lastSlowReportNs>5_000_000_000L){
    lastSlowReportNs=finished;
-   System.err.println("GPU FRAME SLOW id="+frame.frameId()+
+   BeckenburgDiagnostics.record("GPU FRAME SLOW id="+frame.frameId()+
       " surfaces="+frame.surfaces().size()+
       " target="+targetWidth+"x"+targetHeight+
-      " submit_to_raster_ms="+(rasterReady-started)/1_000_000+
-      " readback_ms="+(finished-rasterReady)/1_000_000);
+      " raster_ms="+(rasterReady-started)/1_000_000+
+      " readback_ms="+(finished-rasterReady)/1_000_000+
+      " superseded="+supersededFrames.get());
   }
  }
  @Override public void render(){
   Frame frame=pending.getAndSet(null);
   if(frame==null||closed)return;
   try{draw(frame);}catch(Throwable error){
-   closed=true;description="GPU render FAILED: "+error;error.printStackTrace();
+   closed=true;ready=false;description="GPU render FAILED: "+error;
+   BeckenburgDiagnostics.fail("GPU world framebuffer rendering",error);
   }
  }
  @Override public void dispose(){
