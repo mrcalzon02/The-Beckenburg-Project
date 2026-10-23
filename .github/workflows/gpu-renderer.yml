@@ -21,7 +21,12 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Compile GPU and complete authoritative game sources
-        run: mvn -B -ntp -f gpu-client/pom.xml -DskipTests compile
+        run: |
+          mvn -B -ntp -f gpu-client/pom.xml -DskipTests compile
+          mkdir -p build/contract-test
+          javac --release 17 -cp gpu-client/target/classes -d build/contract-test src/test/java/org/beckenburg/GpuWorldRendererContractTest.java src/test/java/org/beckenburg/RendererVisibilityTest.java
+          java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.GpuWorldRendererContractTest
+          java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.RendererVisibilityTest
   windows-build:
     runs-on: windows-latest
     timeout-minutes: 40
@@ -53,6 +58,42 @@ jobs:
           mvn -B -ntp -f gpu-client/pom.xml -DskipTests package
           if ($LASTEXITCODE -ne 0) { throw 'GPU client Maven compilation failed' }
           if (!(Test-Path 'gpu-client/target/BeckenburgGPU.jar')) {throw 'Missing GPU client JAR'}
+      - name: Assemble Windows GPU-first native launcher
+        shell: pwsh
+        run: |
+          Copy-Item gpu-client/target/BeckenburgGPU.jar build/BeckenburgGPU.jar -Force
+          New-Item -ItemType Directory -Force build/gpu-native | Out-Null
+          jpackage --type app-image --name Beckenburg --input build --main-jar BeckenburgGPU.jar --dest build/gpu-native
+          if ($LASTEXITCODE -ne 0) { throw 'OpenGL native package failed' }
+          if (!(Test-Path 'build/gpu-native/Beckenburg/Beckenburg.exe')) {
+            throw 'GPU native Windows executable missing'
+          }
+      - name: Launch GPU-capable native executable in explicit software recovery mode
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $begin=Get-Date
+          $process=Start-Process -FilePath (Resolve-Path 'build/gpu-native/Beckenburg/Beckenburg.exe') -ArgumentList '--software' -PassThru
+          try {
+            $ready=$false
+            $folder=Join-Path $env:USERPROFILE '.beckenburg/diagnostics'
+            for ($i=0;$i -lt 120;$i++) {
+              if ($process.HasExited) { throw "GPU-packaged native game exited: $($process.ExitCode)" }
+              foreach ($file in @(Get-ChildItem $folder -Filter 'session-*.log' -ErrorAction SilentlyContinue)) {
+                if ($file.LastWriteTime -lt $begin.AddSeconds(-2)) { continue }
+                $log=Get-Content $file.FullName -Raw
+                if ($log.Contains('PHASE ready') -and $log.Contains('PHASE Menu available')) {
+                  $ready=$true;break
+                }
+              }
+              if ($ready) {break}
+              Start-Sleep -Milliseconds 500
+            }
+            if (!$ready) {throw 'GPU-bundled native app did not reach its menu through recovery route'}
+            Write-Host 'PASS GPU-native Windows executable / software recovery / menu'
+          } finally {
+            if (!$process.HasExited) {Stop-Process -Id $process.Id -Force}
+          }
       - uses: actions/upload-artifact@v4
         with:
           name: beckenburg-gpu-windows-jar
