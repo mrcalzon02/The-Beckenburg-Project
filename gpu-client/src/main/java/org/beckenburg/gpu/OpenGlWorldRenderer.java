@@ -145,7 +145,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   shader.bind();
   // Beckenburg's camera-space focal lens, exactly matched to the CPU FOV.
   // SceneRenderer's native projection is 320x200 at focal=153.
-  float focal=153f*targetHeight/200f;
+  float focal=frame.focal();
   shader.setUniformf("u_projection",
     2*focal/targetWidth,2*focal/targetHeight);
   shader.setUniformi("u_texture",0);

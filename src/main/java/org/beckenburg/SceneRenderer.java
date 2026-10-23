@@ -1308,8 +1308,8 @@ public final class SceneRenderer {
         for(Face f:faces){
             if(!faceInFrustum(f))continue;
             int room=f.room>=0?f.room:map==null?
-                (CastleHubMap.outsideFootprint((f.a.x+f.b.x+f.c.x)/3,
-                    (f.a.z+f.b.z+f.c.z)/3)?13:0):
+                (((f.a.x+f.b.x+f.c.x)/3<0||(f.a.x+f.b.x+f.c.x)/3>CastleHubMap.WIDTH
+                    ||(f.a.z+f.b.z+f.c.z)/3<0||(f.a.z+f.b.z+f.c.z)/3>CastleHubMap.HEIGHT)?13:0):
                 map.roomAt((f.a.x+f.b.x+f.c.x)/3,
                     (f.a.y+f.b.y+f.c.y)/3,(f.a.z+f.b.z+f.c.z)/3);
             var dst=batches.computeIfAbsent(f.material,key->new GpuFloats());
@@ -1323,7 +1323,7 @@ public final class SceneRenderer {
         for(var entry:batches.entrySet())
             surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),
                 entry.getValue().complete()));
-        backend.submit(new GpuWorldRenderer.Frame(renderWidth,renderHeight,surfaces));
+        backend.submit(new GpuWorldRenderer.Frame(renderWidth,renderHeight,(float)focal,surfaces));
         GpuWorldRenderer.Result available=backend.latest();
         if(available!=null&&available.width()==renderWidth&&available.height()==renderHeight){
             int[] image=available.argb();

@@ -17,9 +17,9 @@ public interface GpuWorldRenderer {
             if(vertices.length%24!=0)throw new IllegalArgumentException("Invalid GPU triangle batch");
         }
     }
-    record Frame(int width,int height,List<Surface> surfaces) {
+    record Frame(int width,int height,float focal,List<Surface> surfaces) {
         public Frame {
-            if(width<160||height<120||surfaces==null)throw new IllegalArgumentException("Bad GPU scene frame");
+            if(width<160||height<120||!Float.isFinite(focal)||focal<=0||surfaces==null)throw new IllegalArgumentException("Bad GPU scene frame");
             surfaces=List.copyOf(surfaces);
         }
     }
