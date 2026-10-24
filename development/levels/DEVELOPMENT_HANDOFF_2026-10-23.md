@@ -184,3 +184,14 @@ Actual Blender reopening and GLB reimport pass finite geometry/UV checks, all au
 Next: refine terrain support and exact route ownership; engineer stairs, headroom, guards, gangways and hull sealing, then construction and model fitting. Native blocking is not gameplay/collision/light-isolation acceptance. No map is unlocked; no engine or van implementation changed. The vessel stays moored; silo and battery equipment stays inert. Water is an opaque review placeholder: runtime layering/transparency/depth remains open.
 
 The pre-addition 533-image gallery was verified live (87 full evidence hashes). Publish and verify the new captures at this checkpoint. Preserve six unrelated verification working files. Exact token usage metadata remains unavailable.
+
+
+## All-map boundary and sky framing planning checkpoint
+
+The user requested edge blocking and skybox inclusion frames for all maps, including the new locations. Authored 29 separate packets: 28 base maps plus the additive cemetery/mortuary variant. See edge-sky-plans/REVIEW.html. Each follows actual reserved space/route footprints with an irregular outward-buffered envelope, proposed grounded barrier recipes, road portal, three scenery depth layers, eight azimuth sectors, model needs and standing/crouched/photo/upper-level view reservations. No existing map meshes, navigation, runtime registry, engine sky or van code changed.
+
+Planning checks pass for 34,331 protected room/route-width/ritual/cargo samples, all source hashes, linked boundary spans, full 360-degree sector coverage and viewpoint metadata. There are 704 rough span reservations and 232 sky sectors; these are work reservations, not built or accepted models. All 73 protected original source files remain unchanged. Full-size plan diagrams and atlas are explicitly labeled planning diagrams.
+
+DEV-029 records the existing shared hill waveform that cannot be treated as an accepted coast/other per-map skyline. Runtime per-map horizon integration remains open and must coordinate with engine work. DEV-030 fixes the legacy fixed-23 model-list generator: refreshing the catalog now validates all 28 base packets plus the separate annex without overwriting curated worklists.
+
+The six new map blockout batch b09af9d was pushed and its 548-image gallery is live verified: all PNG URLs/dimensions plus 102 full hashes. This edge/sky planning batch adds 30 diagram captures; publish and verify their gallery before closeout. Next: choose a single terrain-ready map, fit actual barrier footings/closed returns and access portal, then capture real ordinary/upper-view framing and run swept containment tests before bringing in distant scenery or runtime sky sector changes. Keep the all-map completion goal active; no all-map completion claim.

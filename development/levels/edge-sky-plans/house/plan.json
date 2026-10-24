@@ -1,0 +1,1817 @@
+{
+  "version": 1,
+  "id": "HOUSE",
+  "title": "The Briar House",
+  "source_layout": "development\\levels\\layouts\\house\\layout.json",
+  "source_sha256": "1076c2f3bc2c13f785c278bb6490172458e1461510c9a2b9f6cc928276bcfa9c",
+  "refined_terrain_source": null,
+  "status": "planning-only / no runtime geometry or navigation mutation",
+  "identity": "Residential lane and overgrown rear plot",
+  "coordinates": "metres X/Z, Y up; azimuth 0 north=-Z, 90 east=+X, 180 south=+Z, 270 west=-X",
+  "protected_source_bounds": [
+    -2,
+    -2,
+    34,
+    47.4
+  ],
+  "protected_zones": [
+    {
+      "id": "r00",
+      "bounds": [
+        18.0,
+        21.0,
+        24.0,
+        24.0
+      ],
+      "y": 0.0,
+      "kind": "inside"
+    },
+    {
+      "id": "r01",
+      "bounds": [
+        12.0,
+        17.0,
+        18.0,
+        24.0
+      ],
+      "y": 0.0,
+      "kind": "inside"
+    },
+    {
+      "id": "r02",
+      "bounds": [
+        12.0,
+        10.0,
+        18.0,
+        17.0
+      ],
+      "y": 0.0,
+      "kind": "inside"
+    },
+    {
+      "id": "r03",
+      "bounds": [
+        18.0,
+        10.0,
+        24.0,
+        15.0
+      ],
+      "y": 0.0,
+      "kind": "inside"
+    },
+    {
+      "id": "r04",
+      "bounds": [
+        18.0,
+        15.0,
+        24.0,
+        21.0
+      ],
+      "y": 0.0,
+      "kind": "circulation"
+    },
+    {
+      "id": "r05",
+      "bounds": [
+        18.0,
+        15.0,
+        24.0,
+        24.0
+      ],
+      "y": 3.0,
+      "kind": "circulation"
+    },
+    {
+      "id": "r06",
+      "bounds": [
+        12.0,
+        17.0,
+        18.0,
+        24.0
+      ],
+      "y": 3.0,
+      "kind": "inside"
+    },
+    {
+      "id": "r07",
+      "bounds": [
+        12.0,
+        10.0,
+        18.0,
+        17.0
+      ],
+      "y": 3.0,
+      "kind": "inside"
+    },
+    {
+      "id": "r08",
+      "bounds": [
+        18.0,
+        10.0,
+        24.0,
+        15.0
+      ],
+      "y": 3.0,
+      "kind": "inside"
+    },
+    {
+      "id": "r09",
+      "bounds": [
+        18.0,
+        15.0,
+        24.0,
+        24.0
+      ],
+      "y": -3.0,
+      "kind": "circulation"
+    },
+    {
+      "id": "r10",
+      "bounds": [
+        18.0,
+        10.0,
+        24.0,
+        15.0
+      ],
+      "y": -3.0,
+      "kind": "inside"
+    },
+    {
+      "id": "r11",
+      "bounds": [
+        12.0,
+        10.0,
+        18.0,
+        24.0
+      ],
+      "y": -3.0,
+      "kind": "inside"
+    },
+    {
+      "id": "grounds",
+      "bounds": [
+        6,
+        2,
+        30,
+        24
+      ],
+      "y": 0,
+      "kind": "outside"
+    },
+    {
+      "id": "entry",
+      "bounds": [
+        2,
+        24,
+        30,
+        43.4
+      ],
+      "y": 0,
+      "kind": "outside"
+    },
+    {
+      "id": "stage",
+      "bounds": [
+        14,
+        30,
+        30,
+        42
+      ],
+      "y": 0,
+      "kind": "staging"
+    }
+  ],
+  "protected_links": [
+    {
+      "id": "L01",
+      "a": "r00",
+      "b": "r01",
+      "kind": "level",
+      "width": 1.15,
+      "points": [
+        [
+          21.0,
+          0.0,
+          22.5
+        ],
+        [
+          18.0,
+          0.0,
+          22.0
+        ],
+        [
+          15.0,
+          0.0,
+          20.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          18.0,
+          0.0,
+          22.0
+        ],
+        "width_m": 1.15,
+        "along_x": false
+      }
+    },
+    {
+      "id": "L02",
+      "a": "r01",
+      "b": "r02",
+      "kind": "level",
+      "width": 1.15,
+      "points": [
+        [
+          15.0,
+          0.0,
+          20.5
+        ],
+        [
+          15.0,
+          0.0,
+          17.0
+        ],
+        [
+          15.0,
+          0.0,
+          13.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          15.0,
+          0.0,
+          17.0
+        ],
+        "width_m": 1.15,
+        "along_x": true
+      }
+    },
+    {
+      "id": "L03",
+      "a": "r02",
+      "b": "r03",
+      "kind": "level",
+      "width": 1.15,
+      "points": [
+        [
+          15.0,
+          0.0,
+          13.5
+        ],
+        [
+          18.0,
+          0.0,
+          12.5
+        ],
+        [
+          21.0,
+          0.0,
+          12.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          18.0,
+          0.0,
+          12.5
+        ],
+        "width_m": 1.15,
+        "along_x": false
+      }
+    },
+    {
+      "id": "L04",
+      "a": "r03",
+      "b": "r04",
+      "kind": "level",
+      "width": 1.15,
+      "points": [
+        [
+          21.0,
+          0.0,
+          12.5
+        ],
+        [
+          21.0,
+          0.0,
+          15.0
+        ],
+        [
+          21.0,
+          0.0,
+          18.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          21.0,
+          0.0,
+          15.0
+        ],
+        "width_m": 1.15,
+        "along_x": true
+      }
+    },
+    {
+      "id": "L05",
+      "a": "r04",
+      "b": "r00",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          21.0,
+          0.0,
+          18.0
+        ],
+        [
+          21.0,
+          0.0,
+          21.0
+        ],
+        [
+          21.0,
+          0.0,
+          22.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          21.0,
+          0.0,
+          21.0
+        ],
+        "width_m": 1.4,
+        "along_x": true
+      }
+    },
+    {
+      "id": "L06",
+      "a": "r01",
+      "b": "r04",
+      "kind": "level",
+      "width": 1.1,
+      "points": [
+        [
+          15.0,
+          0.0,
+          20.5
+        ],
+        [
+          18.0,
+          0.0,
+          20.5
+        ],
+        [
+          21.0,
+          0.0,
+          18.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          18.0,
+          0.0,
+          20.5
+        ],
+        "width_m": 1.1,
+        "along_x": false
+      }
+    },
+    {
+      "id": "L07",
+      "a": "r05",
+      "b": "r06",
+      "kind": "level",
+      "width": 1.1,
+      "points": [
+        [
+          21.0,
+          3.0,
+          19.5
+        ],
+        [
+          18.0,
+          3.0,
+          21.5
+        ],
+        [
+          15.0,
+          3.0,
+          20.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          18.0,
+          3.0,
+          21.5
+        ],
+        "width_m": 1.1,
+        "along_x": false
+      }
+    },
+    {
+      "id": "L08",
+      "a": "r05",
+      "b": "r07",
+      "kind": "level",
+      "width": 1.1,
+      "points": [
+        [
+          21.0,
+          3.0,
+          19.5
+        ],
+        [
+          18.0,
+          3.0,
+          16.0
+        ],
+        [
+          15.0,
+          3.0,
+          13.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          18.0,
+          3.0,
+          16.0
+        ],
+        "width_m": 1.1,
+        "along_x": false
+      }
+    },
+    {
+      "id": "L09",
+      "a": "r05",
+      "b": "r08",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          21.0,
+          3.0,
+          19.5
+        ],
+        [
+          20.0,
+          3.0,
+          15.0
+        ],
+        [
+          21.0,
+          3.0,
+          12.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          20.0,
+          3.0,
+          15.0
+        ],
+        "width_m": 1.05,
+        "along_x": true
+      }
+    },
+    {
+      "id": "L10",
+      "a": "r06",
+      "b": "r07",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          15.0,
+          3.0,
+          20.5
+        ],
+        [
+          15.0,
+          3.0,
+          17.0
+        ],
+        [
+          15.0,
+          3.0,
+          13.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          15.0,
+          3.0,
+          17.0
+        ],
+        "width_m": 1.05,
+        "along_x": true
+      }
+    },
+    {
+      "id": "L11",
+      "a": "r09",
+      "b": "r10",
+      "kind": "level",
+      "width": 1.1,
+      "points": [
+        [
+          21.0,
+          -3.0,
+          19.5
+        ],
+        [
+          20.0,
+          -3.0,
+          15.0
+        ],
+        [
+          21.0,
+          -3.0,
+          12.5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          20.0,
+          -3.0,
+          15.0
+        ],
+        "width_m": 1.1,
+        "along_x": true
+      }
+    },
+    {
+      "id": "L12",
+      "a": "r09",
+      "b": "r11",
+      "kind": "level",
+      "width": 1.1,
+      "points": [
+        [
+          21.0,
+          -3.0,
+          19.5
+        ],
+        [
+          18.0,
+          -3.0,
+          21.0
+        ],
+        [
+          15.0,
+          -3.0,
+          17.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          18.0,
+          -3.0,
+          21.0
+        ],
+        "width_m": 1.1,
+        "along_x": false
+      }
+    },
+    {
+      "id": "L13",
+      "a": "r10",
+      "b": "r11",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          21.0,
+          -3.0,
+          12.5
+        ],
+        [
+          18.0,
+          -3.0,
+          12.5
+        ],
+        [
+          15.0,
+          -3.0,
+          17.0
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          18.0,
+          -3.0,
+          12.5
+        ],
+        "width_m": 1.05,
+        "along_x": false
+      }
+    },
+    {
+      "id": "L14",
+      "a": "r00",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.0,
+          0.0,
+          22.5
+        ],
+        [
+          21.0,
+          0.0,
+          24.0
+        ],
+        [
+          21.0,
+          0.0,
+          25.0
+        ],
+        [
+          8,
+          0.0,
+          25.0
+        ],
+        [
+          8,
+          0,
+          27
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          21.0,
+          0.0,
+          24.0
+        ],
+        "width_m": 1.2,
+        "along_x": true
+      }
+    },
+    {
+      "id": "L15",
+      "a": "r02",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.1,
+      "points": [
+        [
+          15.0,
+          0.0,
+          13.5
+        ],
+        [
+          15.0,
+          0.0,
+          10.0
+        ],
+        [
+          15.0,
+          0.0,
+          9.0
+        ],
+        [
+          8,
+          0.0,
+          9.0
+        ],
+        [
+          8,
+          0,
+          5
+        ]
+      ],
+      "note": "Existing door relation traced from LevelPlans; exact aperture stays in runtime source.",
+      "source_aperture": {
+        "center": [
+          15.0,
+          0.0,
+          10.0
+        ],
+        "width_m": 1.1,
+        "along_x": true
+      }
+    },
+    {
+      "id": "L16",
+      "a": "r04",
+      "b": "r05",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          22.5,
+          0.0,
+          15.6
+        ],
+        [
+          22.5,
+          3.0,
+          20.4
+        ]
+      ],
+      "note": "Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",
+      "rise_m": 3.0,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L17",
+      "a": "r09",
+      "b": "r04",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          19.8,
+          -3.0,
+          20.4
+        ],
+        [
+          19.8,
+          0.0,
+          15.6
+        ]
+      ],
+      "note": "Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",
+      "rise_m": 3.0,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L18",
+      "a": "grounds",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          8,
+          0,
+          5
+        ],
+        [
+          8,
+          0,
+          27
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    },
+    {
+      "id": "L19",
+      "a": "entry",
+      "b": "stage",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          8,
+          0,
+          27
+        ],
+        [
+          22.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic."
+    }
+  ],
+  "protected_rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "r11",
+      "point": [
+        15.0,
+        -3.0,
+        17.0
+      ],
+      "installation": "Cellar containment circle"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "r02",
+      "point": [
+        15.0,
+        0.0,
+        13.5
+      ],
+      "installation": "Kitchen purification basin"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "r01",
+      "point": [
+        15.0,
+        0.0,
+        20.5
+      ],
+      "installation": "Family remembrance stand"
+    }
+  ],
+  "protected_staging": {
+    "zone": "stage",
+    "point": [
+      22,
+      0,
+      36
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        22,
+        0,
+        32.372
+      ],
+      [
+        16.0,
+        0,
+        33.7
+      ]
+    ],
+    "logistics": "Existing shared van on a level service apron/roadhead; no new transport mechanic."
+  },
+  "edge_envelope": [
+    [
+      -5.9319,
+      24.0
+    ],
+    [
+      -5.7392,
+      19.5318
+    ],
+    [
+      -4.5546,
+      8.3835
+    ],
+    [
+      -1.7392,
+      -2.4682
+    ],
+    [
+      2.4659,
+      -4.1212
+    ],
+    [
+      9.9659,
+      -4.8692
+    ],
+    [
+      21.9659,
+      -7.0617
+    ],
+    [
+      33.9659,
+      -4.8692
+    ],
+    [
+      37.7392,
+      -2.4682
+    ],
+    [
+      38.8584,
+      18.2318
+    ],
+    [
+      37.7392,
+      38.9318
+    ],
+    [
+      37.0681,
+      43.4
+    ],
+    [
+      33.9659,
+      50.2692
+    ],
+    [
+      30.0,
+      52.3365
+    ],
+    [
+      16.0,
+      54.5299
+    ],
+    [
+      2.0,
+      52.3365
+    ],
+    [
+      -1.5341,
+      49.5212
+    ],
+    [
+      -5.9319,
+      43.4
+    ],
+    [
+      -6.7589,
+      33.7
+    ]
+  ],
+  "edges": [
+    {
+      "id": "edge-01",
+      "points": [
+        [
+          -5.9319,
+          24.0
+        ],
+        [
+          -5.7392,
+          19.5318
+        ]
+      ],
+      "outward_bearing_deg": 272.45,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-02",
+      "points": [
+        [
+          -5.7392,
+          19.5318
+        ],
+        [
+          -4.5546,
+          8.3835
+        ]
+      ],
+      "outward_bearing_deg": 292.46,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-03",
+      "points": [
+        [
+          -4.5546,
+          8.3835
+        ],
+        [
+          -1.7392,
+          -2.4682
+        ]
+      ],
+      "outward_bearing_deg": 315.88,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-04",
+      "points": [
+        [
+          -1.7392,
+          -2.4682
+        ],
+        [
+          2.4659,
+          -4.1212
+        ]
+      ],
+      "outward_bearing_deg": 328.97,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-05",
+      "points": [
+        [
+          2.4659,
+          -4.1212
+        ],
+        [
+          9.9659,
+          -4.8692
+        ]
+      ],
+      "outward_bearing_deg": 340.21,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-06",
+      "points": [
+        [
+          9.9659,
+          -4.8692
+        ],
+        [
+          21.9659,
+          -7.0617
+        ]
+      ],
+      "outward_bearing_deg": 359.93,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-07",
+      "points": [
+        [
+          21.9659,
+          -7.0617
+        ],
+        [
+          33.9659,
+          -4.8692
+        ]
+      ],
+      "outward_bearing_deg": 22.66,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-08",
+      "points": [
+        [
+          33.9659,
+          -4.8692
+        ],
+        [
+          37.7392,
+          -2.4682
+        ]
+      ],
+      "outward_bearing_deg": 36.98,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-09",
+      "points": [
+        [
+          37.7392,
+          -2.4682
+        ],
+        [
+          38.8584,
+          18.2318
+        ]
+      ],
+      "outward_bearing_deg": 56.39,
+      "treatment": "wall",
+      "physical_recipe": {
+        "height": 2.0,
+        "depth": 0.6,
+        "visible": "Stepped stone/brick boundary with piers and local bank support",
+        "collision": "Closed wall solid following visible faces; low decorative sections require a backed bank or railing."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Stepped stone/brick boundary with piers and local bank support",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-10",
+      "points": [
+        [
+          38.8584,
+          18.2318
+        ],
+        [
+          37.7392,
+          38.9318
+        ]
+      ],
+      "outward_bearing_deg": 104.78,
+      "treatment": "wall",
+      "physical_recipe": {
+        "height": 2.0,
+        "depth": 0.6,
+        "visible": "Stepped stone/brick boundary with piers and local bank support",
+        "collision": "Closed wall solid following visible faces; low decorative sections require a backed bank or railing."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Stepped stone/brick boundary with piers and local bank support",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-11",
+      "points": [
+        [
+          37.7392,
+          38.9318
+        ],
+        [
+          37.0681,
+          43.4
+        ]
+      ],
+      "outward_bearing_deg": 130.79,
+      "treatment": "wall",
+      "physical_recipe": {
+        "height": 2.0,
+        "depth": 0.6,
+        "visible": "Stepped stone/brick boundary with piers and local bank support",
+        "collision": "Closed wall solid following visible faces; low decorative sections require a backed bank or railing."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Stepped stone/brick boundary with piers and local bank support",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-12",
+      "points": [
+        [
+          37.0681,
+          43.4
+        ],
+        [
+          33.9659,
+          50.2692
+        ]
+      ],
+      "outward_bearing_deg": 141.04,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-13",
+      "points": [
+        [
+          33.9659,
+          50.2692
+        ],
+        [
+          30.0,
+          52.3365
+        ]
+      ],
+      "outward_bearing_deg": 150.8,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-14",
+      "points": [
+        [
+          30.0,
+          52.3365
+        ],
+        [
+          16.0,
+          54.5299
+        ]
+      ],
+      "outward_bearing_deg": 167.17,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-15",
+      "points": [
+        [
+          16.0,
+          54.5299
+        ],
+        [
+          2.0,
+          52.3365
+        ]
+      ],
+      "outward_bearing_deg": 192.83,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-16",
+      "points": [
+        [
+          2.0,
+          52.3365
+        ],
+        [
+          -1.5341,
+          49.5212
+        ]
+      ],
+      "outward_bearing_deg": 209.19,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-17",
+      "points": [
+        [
+          -1.5341,
+          49.5212
+        ],
+        [
+          -5.9319,
+          43.4
+        ]
+      ],
+      "outward_bearing_deg": 219.71,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-18",
+      "points": [
+        [
+          -5.9319,
+          43.4
+        ],
+        [
+          -6.7589,
+          33.7
+        ]
+      ],
+      "outward_bearing_deg": 234.65,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-19",
+      "points": [
+        [
+          -6.7589,
+          33.7
+        ],
+        [
+          -5.9319,
+          24.0
+        ]
+      ],
+      "outward_bearing_deg": 254.61,
+      "treatment": "hedge",
+      "physical_recipe": {
+        "height": 2.3,
+        "depth": 2.6,
+        "visible": "Dense uneven hedge with visible woody core; occasional stone base",
+        "collision": "Full visible woody/core volume, no crouch-sized holes; verify both approach directions."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Dense uneven hedge with visible woody core; occasional stone base",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    }
+  ],
+  "arrival_portal": {
+    "id": "arrival-road-reserve",
+    "center": [
+      22,
+      0,
+      53.58987142857143
+    ],
+    "clear_width_m": 8,
+    "road_stub_length_m": 18,
+    "closed_outer_gate": "Beyond canonical van staging; visually returned into both boundary sides",
+    "status": "Proposed access opening, not new navigation. Clip real boundary mesh only after final terrain/collision review.",
+    "protected_cargo_route": [
+      [
+        22,
+        0,
+        32.372
+      ],
+      [
+        16.0,
+        0,
+        33.7
+      ]
+    ]
+  },
+  "layers": {
+    "near": "0–12 m beyond accepted playable edge: grounded physical enclosure with irregular rhythm, visible support and closed returns.",
+    "middle": "World-space terrain/vegetation/buildings beyond boundary: no accessible paths or hidden evidence; parallax from player translation.",
+    "far": "Direction-fixed distant horizon/sky/weather; no collision. Per-map sector masks replace generic silhouette only in a separately reviewed renderer change."
+  },
+  "asset_worklist": [
+    {
+      "role": "physical edge kit",
+      "model": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+      "status": "Audit existing source assets for scale, UVs, contact and collision before creating variants."
+    },
+    {
+      "role": "physical edge kit",
+      "model": "Dense uneven hedge with visible woody core; occasional stone base",
+      "status": "Audit existing source assets for scale, UVs, contact and collision before creating variants."
+    },
+    {
+      "role": "physical edge kit",
+      "model": "Stepped stone/brick boundary with piers and local bank support",
+      "status": "Audit existing source assets for scale, UVs, contact and collision before creating variants."
+    },
+    {
+      "role": "middle/far scenery",
+      "model": "Rear garden trees and distant roof ridge",
+      "status": "Scenery-only frame reservation; world-space middle models need distance/height fit and upper-view review."
+    },
+    {
+      "role": "middle/far scenery",
+      "model": "Neighbor chimney and brick boundary",
+      "status": "Scenery-only frame reservation; world-space middle models need distance/height fit and upper-view review."
+    },
+    {
+      "role": "middle/far scenery",
+      "model": "Quiet lane receding between gardens",
+      "status": "Scenery-only frame reservation; world-space middle models need distance/height fit and upper-view review."
+    },
+    {
+      "role": "middle/far scenery",
+      "model": "Uneven hedgerow and house gable",
+      "status": "Scenery-only frame reservation; world-space middle models need distance/height fit and upper-view review."
+    }
+  ],
+  "sky_frames": [
+    {
+      "id": "frame-000",
+      "bearing_range_deg": [
+        0,
+        45
+      ],
+      "identity": "Rear garden trees and distant roof ridge",
+      "profile": "trees",
+      "horizon_crest_elevation_deg": [
+        4,
+        12
+      ],
+      "open_sky_above_deg": 12,
+      "mid_distance_m": [
+        60,
+        450
+      ],
+      "mid_layer": "Staggered tree clusters with trunks at near edge and opaque distant crowns",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-045",
+      "bearing_range_deg": [
+        45,
+        90
+      ],
+      "identity": "Rear garden trees and distant roof ridge transitioning to Neighbor chimney and brick boundary",
+      "profile": "trees/roofs",
+      "horizon_crest_elevation_deg": [
+        4,
+        12
+      ],
+      "open_sky_above_deg": 12,
+      "mid_distance_m": [
+        60,
+        450
+      ],
+      "mid_layer": "Staggered tree clusters with trunks at near edge and opaque distant crowns",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-090",
+      "bearing_range_deg": [
+        90,
+        135
+      ],
+      "identity": "Neighbor chimney and brick boundary",
+      "profile": "roofs",
+      "horizon_crest_elevation_deg": [
+        3,
+        9
+      ],
+      "open_sky_above_deg": 9,
+      "mid_distance_m": [
+        100,
+        800
+      ],
+      "mid_layer": "Limited district roof/chimney silhouettes behind near enclosure",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-135",
+      "bearing_range_deg": [
+        135,
+        180
+      ],
+      "identity": "Neighbor chimney and brick boundary transitioning to Quiet lane receding between gardens",
+      "profile": "roofs/roofs",
+      "horizon_crest_elevation_deg": [
+        3,
+        9
+      ],
+      "open_sky_above_deg": 9,
+      "mid_distance_m": [
+        100,
+        800
+      ],
+      "mid_layer": "Limited district roof/chimney silhouettes behind near enclosure",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-180",
+      "bearing_range_deg": [
+        180,
+        225
+      ],
+      "identity": "Quiet lane receding between gardens",
+      "profile": "roofs",
+      "horizon_crest_elevation_deg": [
+        3,
+        9
+      ],
+      "open_sky_above_deg": 9,
+      "mid_distance_m": [
+        100,
+        800
+      ],
+      "mid_layer": "Limited district roof/chimney silhouettes behind near enclosure",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-225",
+      "bearing_range_deg": [
+        225,
+        270
+      ],
+      "identity": "Quiet lane receding between gardens transitioning to Uneven hedgerow and house gable",
+      "profile": "roofs/trees",
+      "horizon_crest_elevation_deg": [
+        3,
+        9
+      ],
+      "open_sky_above_deg": 9,
+      "mid_distance_m": [
+        100,
+        800
+      ],
+      "mid_layer": "Limited district roof/chimney silhouettes behind near enclosure",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-270",
+      "bearing_range_deg": [
+        270,
+        315
+      ],
+      "identity": "Uneven hedgerow and house gable",
+      "profile": "trees",
+      "horizon_crest_elevation_deg": [
+        4,
+        12
+      ],
+      "open_sky_above_deg": 12,
+      "mid_distance_m": [
+        60,
+        450
+      ],
+      "mid_layer": "Staggered tree clusters with trunks at near edge and opaque distant crowns",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-315",
+      "bearing_range_deg": [
+        315,
+        360
+      ],
+      "identity": "Uneven hedgerow and house gable transitioning to Rear garden trees and distant roof ridge",
+      "profile": "trees/trees",
+      "horizon_crest_elevation_deg": [
+        4,
+        12
+      ],
+      "open_sky_above_deg": 12,
+      "mid_distance_m": [
+        60,
+        450
+      ],
+      "mid_layer": "Staggered tree clusters with trunks at near edge and opaque distant crowns",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    }
+  ],
+  "review_views": [
+    {
+      "id": "van-arrival",
+      "position": [
+        22,
+        1.62,
+        36
+      ],
+      "source": "Canonical staged van eye/roadhead; preserve cargo route",
+      "heading_deg": 0
+    },
+    {
+      "id": "primary-approach",
+      "position": [
+        8,
+        1.62,
+        27
+      ],
+      "source_zone": "entry",
+      "source": "Authored approach-space reservation; actual viewpoint must be stood in",
+      "heading_deg": 0
+    },
+    {
+      "id": "highest-accessible-layer",
+      "position": [
+        21.0,
+        4.62,
+        19.5
+      ],
+      "source_zone": "r05",
+      "source": "Highest authored standing zone; actual window/balcony aperture and guards still require review",
+      "heading_deg": 0
+    },
+    {
+      "id": "outdoor-grounds",
+      "position": [
+        8,
+        1.62,
+        5
+      ],
+      "source_zone": "grounds",
+      "source": "Outdoor-space viewpoint reservation",
+      "heading_deg": 0
+    },
+    {
+      "id": "outdoor-entry",
+      "position": [
+        8,
+        1.62,
+        27
+      ],
+      "source_zone": "entry",
+      "source": "Outdoor-space viewpoint reservation",
+      "heading_deg": 0
+    },
+    {
+      "id": "below-grade-seal",
+      "position": [
+        21.0,
+        -1.38,
+        19.5
+      ],
+      "source_zone": "r09",
+      "source": "Negative test: no sky through sealed floor/wall/roof; allow only actual authored entrance/shaft apertures.",
+      "heading_deg": 0
+    }
+  ],
+  "review_states": {
+    "eye_offsets_m": [
+      0.95,
+      1.45,
+      1.62
+    ],
+    "horizontal_fov_deg": [
+      60,
+      90,
+      110
+    ],
+    "vertical_scan_deg": [
+      -45,
+      60
+    ],
+    "lighting": [
+      "daylight authoring view",
+      "night normal exposure",
+      "adjoining circuits toggled",
+      "portable flashlight grazing edge"
+    ],
+    "weather": [
+      "clear visibility",
+      "fog",
+      "rain",
+      "snow where appropriate"
+    ],
+    "camera": "Standing, crouched and evidence camera views; rotate through 360 degrees at each anchor and translate to test parallax/seams."
+  },
+  "inclusion_rules": [
+    "Sky exists behind real world geometry and must not write foreground depth. Closed opaque rooms occlude sky; actual windows and open courtyards reveal it.",
+    "No backdrop may appear through a wall/floor/roof join, under an upper deck or through a light-leak seam. Apply the shared defect checklist.",
+    "Keep the water/sky horizon level and continuous; layered water transparency/depth remains a separate acceptance gate.",
+    "Do not use fog/darkness/painted horizon as a physical barrier or conceal unsupported terrain edges.",
+    "Near occluders must frame vistas without cutting routes, door swings, van/ramp, ritual squares or sparse hiding pockets.",
+    "No player-facing map detail should depend on distant scenery collision. Keep ghost/human containment rules explicit and host-authoritative.",
+    "Highest windows, towers and platforms need a larger visible terrain apron and farther horizon than ground-only cameras.",
+    "No stock sky texture has been acquired or licensed by this plan. Use existing procedural sky/weather; any new bitmap needs separate source/license intake."
+  ],
+  "special_cases": [],
+  "next_gates": [
+    "Fit proposed perimeter to actual native terrain and existing enclosure; extend off-map terrain before placing any new barrier.",
+    "Author supported barrier spans, road portal and closed returns as selected additive geometry; inspect all overlap/clearance.",
+    "Run swept human/ghost/crouch and under/over/around checks, water/fall recovery and van extraction.",
+    "Render ordinary-viewpoint frame captures and verify no sky leaks, near-card artifacts or horizon discontinuity; gallery publish.",
+    "Integrate per-map scenery/sky profile only after engine branch coordination and CPU/GPU parity/performance review."
+  ],
+  "acceptance": "No boundary continuity, collision, actual screenshot framing, runtime sky mask or gameplay acceptance is claimed."
+}

@@ -402,6 +402,34 @@ Evidence and verification: development/quality/evidence/DEV-028-native-uv-before
 
 Older-map obligation: Audit legacy route-strip UVs before applying textured finishes. Presence of UVs alone does not establish correct material scale or finish quality.
 
+### DEV-029 — Shared procedural hill silhouette conflicts with site-specific open horizons
+
+**Status:** open-runtime-integration · **Affected:** All-map background silhouette; coastal/wetland/new high-view sites require individual review
+
+SceneRenderer.paintSky unconditionally paints a trigonometric hill silhouette for all map backgrounds, including proposed open-water views.
+
+Cause / uncertainty: One common horizon composition has no map-specific sector masks or horizon profile.
+
+Fix / next action: Per-map boundary/sky plans now reserve distinct water, field, roof, woodland, mesa and mountain sectors. Coordinate a separately tested renderer integration; no engine code changed in this planning batch.
+
+Evidence and verification: src/main/java/org/beckenburg/SceneRenderer.java paintSky; development/levels/edge-sky-plans/*/plan.json and per-map planning diagrams.
+
+Older-map obligation: Audit 360-degree ground and highest-window/tower views, CPU/GPU depth behavior, sky leaks and weather parity before claiming a finished skyline.
+
+### DEV-030 — Legacy model-worklist generator assumed the original fixed roster
+
+**Status:** fixed-authoring-tool · **Affected:** Model requirements catalog maintenance after adding WLD-14 through WLD-18
+
+Source inspection found unconditional global regeneration, a SPECIAL lookup limited to the original maps and a final 23-map assertion; rerunning would overwrite curated packets or fail on new IDs.
+
+Cause / uncertainty: The legacy generator combined initial worklist creation and catalog refresh into one unguarded fixed-roster script.
+
+Fix / next action: Make the public entry point refresh/validate only the catalog from existing worklists. Preserve authored JSON/Markdown; support original and new room schemas and separate annexes. Disable legacy global regeneration.
+
+Evidence and verification: development/levels/model-requirements/refresh_catalog.py; build_requirements.py now reports 28 base maps and one additive expansion; source-hash and per-room counts checked.
+
+Older-map obligation: Do not globally regenerate curated worklists to append a map. Refresh catalogs from actual packets; retain source references and existing map geometry.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

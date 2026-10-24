@@ -17,7 +17,8 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/blockouts/' in path:kind='Rough blockout'
+    if '/edge-sky-plans/' in path:kind='Planning diagram'
+    elif '/blockouts/' in path:kind='Rough blockout'
     elif '-blender-' in path or 'native-fitout' in p.stem or 'native-circuit' in p.stem:kind='Native scene overview'
     elif 'studio' in p.stem:kind='Model inspection'
     elif any(t in path for t in ['/runtime/','-runtime/','/blackpine/','/mill-lighting/','/mill-expansion/','/van/','/optical-evidence/']):kind='Runtime capture'

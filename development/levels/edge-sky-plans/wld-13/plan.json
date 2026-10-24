@@ -1,0 +1,1977 @@
+{
+  "version": 1,
+  "id": "WLD-13",
+  "title": "Greywater Cannery",
+  "source_layout": "development\\levels\\layouts\\wld-13\\layout.json",
+  "source_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+  "refined_terrain_source": null,
+  "status": "planning-only / no runtime geometry or navigation mutation",
+  "identity": "Shore cannery yard, tidal dock and forest slope",
+  "coordinates": "metres X/Z, Y up; azimuth 0 north=-Z, 90 east=+X, 180 south=+Z, 270 west=-X",
+  "protected_source_bounds": [
+    -20,
+    -4,
+    68,
+    92
+  ],
+  "protected_zones": [
+    {
+      "id": "stage",
+      "bounds": [
+        24,
+        76,
+        40,
+        88
+      ],
+      "y": 0,
+      "kind": "staging"
+    },
+    {
+      "id": "entry",
+      "bounds": [
+        24,
+        62,
+        44,
+        76
+      ],
+      "y": 0,
+      "kind": "outside"
+    },
+    {
+      "id": "processing",
+      "bounds": [
+        24,
+        26,
+        48,
+        56
+      ],
+      "y": 0,
+      "kind": "inside"
+    },
+    {
+      "id": "cold",
+      "bounds": [
+        48,
+        26,
+        64,
+        44
+      ],
+      "y": 0,
+      "kind": "inside"
+    },
+    {
+      "id": "boiler",
+      "bounds": [
+        8,
+        26,
+        24,
+        44
+      ],
+      "y": 0,
+      "kind": "inside"
+    },
+    {
+      "id": "wash",
+      "bounds": [
+        8,
+        44,
+        24,
+        56
+      ],
+      "y": 0,
+      "kind": "inside"
+    },
+    {
+      "id": "office",
+      "bounds": [
+        24,
+        14,
+        36,
+        26
+      ],
+      "y": 0,
+      "kind": "inside"
+    },
+    {
+      "id": "stores",
+      "bounds": [
+        36,
+        14,
+        48,
+        26
+      ],
+      "y": 0,
+      "kind": "inside"
+    },
+    {
+      "id": "dock",
+      "bounds": [
+        24,
+        0,
+        48,
+        14
+      ],
+      "y": 0,
+      "kind": "outside"
+    },
+    {
+      "id": "bunk",
+      "bounds": [
+        -8,
+        44,
+        8,
+        62
+      ],
+      "y": 0,
+      "kind": "inside"
+    },
+    {
+      "id": "mess",
+      "bounds": [
+        -8,
+        26,
+        8,
+        44
+      ],
+      "y": 0,
+      "kind": "inside"
+    },
+    {
+      "id": "forest",
+      "bounds": [
+        -16,
+        26,
+        -8,
+        62
+      ],
+      "y": 0,
+      "kind": "outside"
+    },
+    {
+      "id": "side-yard",
+      "bounds": [
+        48,
+        44,
+        64,
+        62
+      ],
+      "y": 0,
+      "kind": "outside"
+    },
+    {
+      "id": "gallery",
+      "bounds": [
+        24,
+        26,
+        30,
+        56
+      ],
+      "y": 3,
+      "kind": "circulation"
+    }
+  ],
+  "protected_links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          82.0
+        ],
+        [
+          32.0,
+          0,
+          76.0
+        ],
+        [
+          34.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          76.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "processing",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          69.0
+        ],
+        [
+          36.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L03",
+      "a": "entry",
+      "b": "wash",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          69.0
+        ],
+        [
+          16.0,
+          0,
+          50.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L04",
+      "a": "wash",
+      "b": "boiler",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          16.0,
+          0,
+          50.0
+        ],
+        [
+          16.0,
+          0,
+          44.0
+        ],
+        [
+          16.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          16.0,
+          0,
+          44.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L05",
+      "a": "boiler",
+      "b": "processing",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          16.0,
+          0,
+          35.0
+        ],
+        [
+          24.0,
+          0,
+          35.0
+        ],
+        [
+          36.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          24.0,
+          0,
+          35.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L06",
+      "a": "processing",
+      "b": "cold",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          41.0
+        ],
+        [
+          48.0,
+          0,
+          35.0
+        ],
+        [
+          56.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.0,
+          0,
+          35.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L07",
+      "a": "cold",
+      "b": "side-yard",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          56.0,
+          0,
+          35.0
+        ],
+        [
+          56.0,
+          0,
+          44.0
+        ],
+        [
+          56.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          56.0,
+          0,
+          44.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L08",
+      "a": "side-yard",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          56.0,
+          0,
+          53.0
+        ],
+        [
+          34.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L09",
+      "a": "processing",
+      "b": "office",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          41.0
+        ],
+        [
+          30.0,
+          0,
+          26.0
+        ],
+        [
+          30.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          30.0,
+          0,
+          26.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L10",
+      "a": "office",
+      "b": "stores",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          30.0,
+          0,
+          20.0
+        ],
+        [
+          36.0,
+          0,
+          20.0
+        ],
+        [
+          42.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          20.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L11",
+      "a": "stores",
+      "b": "processing",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          42.0,
+          0,
+          20.0
+        ],
+        [
+          42.0,
+          0,
+          26.0
+        ],
+        [
+          36.0,
+          0,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          42.0,
+          0,
+          26.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L12",
+      "a": "stores",
+      "b": "dock",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          42.0,
+          0,
+          20.0
+        ],
+        [
+          42.0,
+          0,
+          14.0
+        ],
+        [
+          36.0,
+          0,
+          7.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          42.0,
+          0,
+          14.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L13",
+      "a": "dock",
+      "b": "office",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          7.0
+        ],
+        [
+          30.0,
+          0,
+          14.0
+        ],
+        [
+          30.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          30.0,
+          0,
+          14.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L14",
+      "a": "wash",
+      "b": "bunk",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          16.0,
+          0,
+          50.0
+        ],
+        [
+          8.0,
+          0,
+          50.0
+        ],
+        [
+          0.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          8.0,
+          0,
+          50.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L15",
+      "a": "bunk",
+      "b": "mess",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          0.0,
+          0,
+          53.0
+        ],
+        [
+          0.0,
+          0,
+          44.0
+        ],
+        [
+          0.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          0.0,
+          0,
+          44.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L16",
+      "a": "mess",
+      "b": "boiler",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          0.0,
+          0,
+          35.0
+        ],
+        [
+          8.0,
+          0,
+          35.0
+        ],
+        [
+          16.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          8.0,
+          0,
+          35.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L17",
+      "a": "bunk",
+      "b": "forest",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          0.0,
+          0,
+          53.0
+        ],
+        [
+          -8.0,
+          0,
+          53.0
+        ],
+        [
+          -12.0,
+          0,
+          44.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          -8.0,
+          0,
+          53.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L18",
+      "a": "forest",
+      "b": "mess",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          -12.0,
+          0,
+          44.0
+        ],
+        [
+          -8.0,
+          0,
+          35.0
+        ],
+        [
+          0.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          -8.0,
+          0,
+          35.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L19",
+      "a": "processing",
+      "b": "gallery",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          36.0,
+          0,
+          41.0
+        ],
+        [
+          27.0,
+          3,
+          41.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "protected_rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "processing",
+      "point": [
+        36.0,
+        0,
+        41.0
+      ],
+      "installation": "Grounded loading-floor containment seal"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "wash",
+      "point": [
+        16.0,
+        0,
+        50.0
+      ],
+      "installation": "Workers purification wash"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "mess",
+      "point": [
+        0.0,
+        0,
+        35.0
+      ],
+      "installation": "Payroll remembrance table"
+    }
+  ],
+  "protected_staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      82.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        78.372
+      ],
+      [
+        34.0,
+        0,
+        69.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "edge_envelope": [
+    [
+      -25.0,
+      26.0
+    ],
+    [
+      -22.4894,
+      22.2533
+    ],
+    [
+      -3.3608,
+      7.9128
+    ],
+    [
+      17.5106,
+      -3.7467
+    ],
+    [
+      24.0,
+      -7.5066
+    ],
+    [
+      28.5,
+      -7.7942
+    ],
+    [
+      40.5,
+      -9.0986
+    ],
+    [
+      52.5,
+      -7.7942
+    ],
+    [
+      62.1691,
+      4.1786
+    ],
+    [
+      68.5,
+      18.2058
+    ],
+    [
+      70.4894,
+      22.2533
+    ],
+    [
+      70.5009,
+      29.7533
+    ],
+    [
+      71.6201,
+      47.7533
+    ],
+    [
+      70.5009,
+      65.7533
+    ],
+    [
+      68.5,
+      69.7942
+    ],
+    [
+      57.3262,
+      83.5569
+    ],
+    [
+      44.5,
+      95.7942
+    ],
+    [
+      36.5,
+      97.5883
+    ],
+    [
+      28.5,
+      95.7942
+    ],
+    [
+      24.0,
+      95.4934
+    ],
+    [
+      17.4991,
+      91.7533
+    ],
+    [
+      -3.2086,
+      79.842
+    ],
+    [
+      -22.5009,
+      65.7533
+    ],
+    [
+      -25.0,
+      62.0
+    ],
+    [
+      -25.9743,
+      44.0
+    ]
+  ],
+  "edges": [
+    {
+      "id": "edge-01",
+      "points": [
+        [
+          -25.0,
+          26.0
+        ],
+        [
+          -22.4894,
+          22.2533
+        ]
+      ],
+      "outward_bearing_deg": 292.6,
+      "treatment": "bank",
+      "physical_recipe": {
+        "height": 2.5,
+        "depth": 5.0,
+        "visible": "Irregular retaining bank with stone/rock face and shrubs above",
+        "collision": "Ground-backed steep rise/retaining face, not a hovering wall; test slope climbing and seams."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Irregular retaining bank with stone/rock face and shrubs above",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-02",
+      "points": [
+        [
+          -22.4894,
+          22.2533
+        ],
+        [
+          -3.3608,
+          7.9128
+        ]
+      ],
+      "outward_bearing_deg": 308.07,
+      "treatment": "bank",
+      "physical_recipe": {
+        "height": 2.5,
+        "depth": 5.0,
+        "visible": "Irregular retaining bank with stone/rock face and shrubs above",
+        "collision": "Ground-backed steep rise/retaining face, not a hovering wall; test slope climbing and seams."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Irregular retaining bank with stone/rock face and shrubs above",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-03",
+      "points": [
+        [
+          -3.3608,
+          7.9128
+        ],
+        [
+          17.5106,
+          -3.7467
+        ]
+      ],
+      "outward_bearing_deg": 338.01,
+      "treatment": "shore",
+      "physical_recipe": {
+        "height": 1.8,
+        "depth": 4.0,
+        "visible": "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "collision": "Water color/alpha is never collision. Use grounded banks, guarded deck ends and tested water-entry/recovery policy; preserve approved dock/bridge access."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-04",
+      "points": [
+        [
+          17.5106,
+          -3.7467
+        ],
+        [
+          24.0,
+          -7.5066
+        ]
+      ],
+      "outward_bearing_deg": 356.26,
+      "treatment": "shore",
+      "physical_recipe": {
+        "height": 1.8,
+        "depth": 4.0,
+        "visible": "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "collision": "Water color/alpha is never collision. Use grounded banks, guarded deck ends and tested water-entry/recovery policy; preserve approved dock/bridge access."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-05",
+      "points": [
+        [
+          24.0,
+          -7.5066
+        ],
+        [
+          28.5,
+          -7.7942
+        ]
+      ],
+      "outward_bearing_deg": 2.49,
+      "treatment": "shore",
+      "physical_recipe": {
+        "height": 1.8,
+        "depth": 4.0,
+        "visible": "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "collision": "Water color/alpha is never collision. Use grounded banks, guarded deck ends and tested water-entry/recovery policy; preserve approved dock/bridge access."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-06",
+      "points": [
+        [
+          28.5,
+          -7.7942
+        ],
+        [
+          40.5,
+          -9.0986
+        ]
+      ],
+      "outward_bearing_deg": 11.32,
+      "treatment": "shore",
+      "physical_recipe": {
+        "height": 1.8,
+        "depth": 4.0,
+        "visible": "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "collision": "Water color/alpha is never collision. Use grounded banks, guarded deck ends and tested water-entry/recovery policy; preserve approved dock/bridge access."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-07",
+      "points": [
+        [
+          40.5,
+          -9.0986
+        ],
+        [
+          52.5,
+          -7.7942
+        ]
+      ],
+      "outward_bearing_deg": 23.22,
+      "treatment": "shore",
+      "physical_recipe": {
+        "height": 1.8,
+        "depth": 4.0,
+        "visible": "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "collision": "Water color/alpha is never collision. Use grounded banks, guarded deck ends and tested water-entry/recovery policy; preserve approved dock/bridge access."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-08",
+      "points": [
+        [
+          52.5,
+          -7.7942
+        ],
+        [
+          62.1691,
+          4.1786
+        ]
+      ],
+      "outward_bearing_deg": 36.04,
+      "treatment": "shore",
+      "physical_recipe": {
+        "height": 1.8,
+        "depth": 4.0,
+        "visible": "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "collision": "Water color/alpha is never collision. Use grounded banks, guarded deck ends and tested water-entry/recovery policy; preserve approved dock/bridge access."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Natural bank or guarded quay/deck edge, with water continuing beyond",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-09",
+      "points": [
+        [
+          62.1691,
+          4.1786
+        ],
+        [
+          68.5,
+          18.2058
+        ]
+      ],
+      "outward_bearing_deg": 51.56,
+      "treatment": "fence",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 0.25,
+        "visible": "Supported mesh/timber fence with grounded posts and braced corners",
+        "collision": "Match visible fence envelope; avoid triangle/crouch gaps and terminate against real ground."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Supported mesh/timber fence with grounded posts and braced corners",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-10",
+      "points": [
+        [
+          68.5,
+          18.2058
+        ],
+        [
+          70.4894,
+          22.2533
+        ]
+      ],
+      "outward_bearing_deg": 62.41,
+      "treatment": "fence",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 0.25,
+        "visible": "Supported mesh/timber fence with grounded posts and braced corners",
+        "collision": "Match visible fence envelope; avoid triangle/crouch gaps and terminate against real ground."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Supported mesh/timber fence with grounded posts and braced corners",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-11",
+      "points": [
+        [
+          70.4894,
+          22.2533
+        ],
+        [
+          70.5009,
+          29.7533
+        ]
+      ],
+      "outward_bearing_deg": 68.84,
+      "treatment": "fence",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 0.25,
+        "visible": "Supported mesh/timber fence with grounded posts and braced corners",
+        "collision": "Match visible fence envelope; avoid triangle/crouch gaps and terminate against real ground."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Supported mesh/timber fence with grounded posts and braced corners",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-12",
+      "points": [
+        [
+          70.5009,
+          29.7533
+        ],
+        [
+          71.6201,
+          47.7533
+        ]
+      ],
+      "outward_bearing_deg": 83.64,
+      "treatment": "fence",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 0.25,
+        "visible": "Supported mesh/timber fence with grounded posts and braced corners",
+        "collision": "Match visible fence envelope; avoid triangle/crouch gaps and terminate against real ground."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Supported mesh/timber fence with grounded posts and braced corners",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-13",
+      "points": [
+        [
+          71.6201,
+          47.7533
+        ],
+        [
+          70.5009,
+          65.7533
+        ]
+      ],
+      "outward_bearing_deg": 105.16,
+      "treatment": "fence",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 0.25,
+        "visible": "Supported mesh/timber fence with grounded posts and braced corners",
+        "collision": "Match visible fence envelope; avoid triangle/crouch gaps and terminate against real ground."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Supported mesh/timber fence with grounded posts and braced corners",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-14",
+      "points": [
+        [
+          70.5009,
+          65.7533
+        ],
+        [
+          68.5,
+          69.7942
+        ]
+      ],
+      "outward_bearing_deg": 117.59,
+      "treatment": "fence",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 0.25,
+        "visible": "Supported mesh/timber fence with grounded posts and braced corners",
+        "collision": "Match visible fence envelope; avoid triangle/crouch gaps and terminate against real ground."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Supported mesh/timber fence with grounded posts and braced corners",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-15",
+      "points": [
+        [
+          68.5,
+          69.7942
+        ],
+        [
+          57.3262,
+          83.5569
+        ]
+      ],
+      "outward_bearing_deg": 130.02,
+      "treatment": "fence",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 0.25,
+        "visible": "Supported mesh/timber fence with grounded posts and braced corners",
+        "collision": "Match visible fence envelope; avoid triangle/crouch gaps and terminate against real ground."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Supported mesh/timber fence with grounded posts and braced corners",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-16",
+      "points": [
+        [
+          57.3262,
+          83.5569
+        ],
+        [
+          44.5,
+          95.7942
+        ]
+      ],
+      "outward_bearing_deg": 149.49,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-17",
+      "points": [
+        [
+          44.5,
+          95.7942
+        ],
+        [
+          36.5,
+          97.5883
+        ]
+      ],
+      "outward_bearing_deg": 162.61,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-18",
+      "points": [
+        [
+          36.5,
+          97.5883
+        ],
+        [
+          28.5,
+          95.7942
+        ]
+      ],
+      "outward_bearing_deg": 170.84,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-19",
+      "points": [
+        [
+          28.5,
+          95.7942
+        ],
+        [
+          24.0,
+          95.4934
+        ]
+      ],
+      "outward_bearing_deg": 177.51,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-20",
+      "points": [
+        [
+          24.0,
+          95.4934
+        ],
+        [
+          17.4991,
+          91.7533
+        ]
+      ],
+      "outward_bearing_deg": 183.75,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-21",
+      "points": [
+        [
+          17.4991,
+          91.7533
+        ],
+        [
+          -3.2086,
+          79.842
+        ]
+      ],
+      "outward_bearing_deg": 201.96,
+      "treatment": "gate",
+      "physical_recipe": {
+        "height": 2.2,
+        "depth": 1.0,
+        "visible": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "collision": "Gate/side-return solids beyond staging. Arrival and cargo routes remain clear; no arbitrary invisible line."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-22",
+      "points": [
+        [
+          -3.2086,
+          79.842
+        ],
+        [
+          -22.5009,
+          65.7533
+        ]
+      ],
+      "outward_bearing_deg": 232.0,
+      "treatment": "bank",
+      "physical_recipe": {
+        "height": 2.5,
+        "depth": 5.0,
+        "visible": "Irregular retaining bank with stone/rock face and shrubs above",
+        "collision": "Ground-backed steep rise/retaining face, not a hovering wall; test slope climbing and seams."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Irregular retaining bank with stone/rock face and shrubs above",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-23",
+      "points": [
+        [
+          -22.5009,
+          65.7533
+        ],
+        [
+          -25.0,
+          62.0
+        ]
+      ],
+      "outward_bearing_deg": 247.4,
+      "treatment": "bank",
+      "physical_recipe": {
+        "height": 2.5,
+        "depth": 5.0,
+        "visible": "Irregular retaining bank with stone/rock face and shrubs above",
+        "collision": "Ground-backed steep rise/retaining face, not a hovering wall; test slope climbing and seams."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Irregular retaining bank with stone/rock face and shrubs above",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-24",
+      "points": [
+        [
+          -25.0,
+          62.0
+        ],
+        [
+          -25.9743,
+          44.0
+        ]
+      ],
+      "outward_bearing_deg": 259.69,
+      "treatment": "bank",
+      "physical_recipe": {
+        "height": 2.5,
+        "depth": 5.0,
+        "visible": "Irregular retaining bank with stone/rock face and shrubs above",
+        "collision": "Ground-backed steep rise/retaining face, not a hovering wall; test slope climbing and seams."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Irregular retaining bank with stone/rock face and shrubs above",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    },
+    {
+      "id": "edge-25",
+      "points": [
+        [
+          -25.9743,
+          44.0
+        ],
+        [
+          -25.0,
+          26.0
+        ]
+      ],
+      "outward_bearing_deg": 280.31,
+      "treatment": "bank",
+      "physical_recipe": {
+        "height": 2.5,
+        "depth": 5.0,
+        "visible": "Irregular retaining bank with stone/rock face and shrubs above",
+        "collision": "Ground-backed steep rise/retaining face, not a hovering wall; test slope climbing and seams."
+      },
+      "base_y": "Sample/refit to final authoritative terrain; no floating default Y0.",
+      "status": "planning reservation; no new collision or mesh",
+      "models": [
+        "Irregular retaining bank with stone/rock face and shrubs above",
+        "Ground contact/footing and closed returns",
+        "Weathered variants retaining collision silhouette"
+      ]
+    }
+  ],
+  "arrival_portal": {
+    "id": "arrival-road-reserve",
+    "center": [
+      32.0,
+      0,
+      96.57911875
+    ],
+    "clear_width_m": 8,
+    "road_stub_length_m": 18,
+    "closed_outer_gate": "Beyond canonical van staging; visually returned into both boundary sides",
+    "status": "Proposed access opening, not new navigation. Clip real boundary mesh only after final terrain/collision review.",
+    "protected_cargo_route": [
+      [
+        32.0,
+        0,
+        78.372
+      ],
+      [
+        34.0,
+        0,
+        69.0
+      ]
+    ]
+  },
+  "layers": {
+    "near": "0–12 m beyond accepted playable edge: grounded physical enclosure with irregular rhythm, visible support and closed returns.",
+    "middle": "World-space terrain/vegetation/buildings beyond boundary: no accessible paths or hidden evidence; parallax from player translation.",
+    "far": "Direction-fixed distant horizon/sky/weather; no collision. Per-map sector masks replace generic silhouette only in a separately reviewed renderer change."
+  },
+  "asset_worklist": [
+    {
+      "role": "physical edge kit",
+      "model": "Irregular retaining bank with stone/rock face and shrubs above",
+      "status": "Audit existing source assets for scale, UVs, contact and collision before creating variants."
+    },
+    {
+      "role": "physical edge kit",
+      "model": "Supported mesh/timber fence with grounded posts and braced corners",
+      "status": "Audit existing source assets for scale, UVs, contact and collision before creating variants."
+    },
+    {
+      "role": "physical edge kit",
+      "model": "Road-edge hedge/fence returns, posts and one closed out-of-area road portal",
+      "status": "Audit existing source assets for scale, UVs, contact and collision before creating variants."
+    },
+    {
+      "role": "physical edge kit",
+      "model": "Natural bank or guarded quay/deck edge, with water continuing beyond",
+      "status": "Audit existing source assets for scale, UVs, contact and collision before creating variants."
+    },
+    {
+      "role": "middle/far scenery",
+      "model": "Open working harbor and opposite shoreline",
+      "status": "Scenery-only frame reservation; world-space middle models need distance/height fit and upper-view review."
+    },
+    {
+      "role": "middle/far scenery",
+      "model": "Service fence with distant industrial roofs",
+      "status": "Scenery-only frame reservation; world-space middle models need distance/height fit and upper-view review."
+    },
+    {
+      "role": "middle/far scenery",
+      "model": "Cannery access lane and tree-framed road",
+      "status": "Scenery-only frame reservation; world-space middle models need distance/height fit and upper-view review."
+    },
+    {
+      "role": "middle/far scenery",
+      "model": "Rising forest slope behind worker housing",
+      "status": "Scenery-only frame reservation; world-space middle models need distance/height fit and upper-view review."
+    }
+  ],
+  "sky_frames": [
+    {
+      "id": "frame-000",
+      "bearing_range_deg": [
+        0,
+        45
+      ],
+      "identity": "Open working harbor and opposite shoreline",
+      "profile": "water",
+      "horizon_crest_elevation_deg": [
+        -0.5,
+        1.5
+      ],
+      "open_sky_above_deg": 1.5,
+      "mid_distance_m": [
+        500,
+        4000
+      ],
+      "mid_layer": "Low distant shore/breakwater only in authored sectors; retain broad open water horizon",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-045",
+      "bearing_range_deg": [
+        45,
+        90
+      ],
+      "identity": "Open working harbor and opposite shoreline transitioning to Service fence with distant industrial roofs",
+      "profile": "water/roofs",
+      "horizon_crest_elevation_deg": [
+        -0.5,
+        1.5
+      ],
+      "open_sky_above_deg": 1.5,
+      "mid_distance_m": [
+        500,
+        4000
+      ],
+      "mid_layer": "Low distant shore/breakwater only in authored sectors; retain broad open water horizon",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-090",
+      "bearing_range_deg": [
+        90,
+        135
+      ],
+      "identity": "Service fence with distant industrial roofs",
+      "profile": "roofs",
+      "horizon_crest_elevation_deg": [
+        3,
+        9
+      ],
+      "open_sky_above_deg": 9,
+      "mid_distance_m": [
+        100,
+        800
+      ],
+      "mid_layer": "Limited district roof/chimney silhouettes behind near enclosure",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-135",
+      "bearing_range_deg": [
+        135,
+        180
+      ],
+      "identity": "Service fence with distant industrial roofs transitioning to Cannery access lane and tree-framed road",
+      "profile": "roofs/trees",
+      "horizon_crest_elevation_deg": [
+        3,
+        9
+      ],
+      "open_sky_above_deg": 9,
+      "mid_distance_m": [
+        100,
+        800
+      ],
+      "mid_layer": "Limited district roof/chimney silhouettes behind near enclosure",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-180",
+      "bearing_range_deg": [
+        180,
+        225
+      ],
+      "identity": "Cannery access lane and tree-framed road",
+      "profile": "trees",
+      "horizon_crest_elevation_deg": [
+        4,
+        12
+      ],
+      "open_sky_above_deg": 12,
+      "mid_distance_m": [
+        60,
+        450
+      ],
+      "mid_layer": "Staggered tree clusters with trunks at near edge and opaque distant crowns",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-225",
+      "bearing_range_deg": [
+        225,
+        270
+      ],
+      "identity": "Cannery access lane and tree-framed road transitioning to Rising forest slope behind worker housing",
+      "profile": "trees/hills",
+      "horizon_crest_elevation_deg": [
+        4,
+        12
+      ],
+      "open_sky_above_deg": 12,
+      "mid_distance_m": [
+        60,
+        450
+      ],
+      "mid_layer": "Staggered tree clusters with trunks at near edge and opaque distant crowns",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-270",
+      "bearing_range_deg": [
+        270,
+        315
+      ],
+      "identity": "Rising forest slope behind worker housing",
+      "profile": "hills",
+      "horizon_crest_elevation_deg": [
+        4,
+        14
+      ],
+      "open_sky_above_deg": 14,
+      "mid_distance_m": [
+        200,
+        2000
+      ],
+      "mid_layer": "Layered rolling ridges and separated tree bands",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    },
+    {
+      "id": "frame-315",
+      "bearing_range_deg": [
+        315,
+        360
+      ],
+      "identity": "Rising forest slope behind worker housing transitioning to Open working harbor and opposite shoreline",
+      "profile": "hills/water",
+      "horizon_crest_elevation_deg": [
+        4,
+        14
+      ],
+      "open_sky_above_deg": 14,
+      "mid_distance_m": [
+        200,
+        2000
+      ],
+      "mid_layer": "Layered rolling ridges and separated tree bands",
+      "parallax": "Near/middle layers are world-space scenery; sky/weather is direction-fixed background with no gameplay collision.",
+      "night_readability": "Readable silhouettes without emissive solid-black tree cards or repeated skyline tiles; review fog and flashlight contrast."
+    }
+  ],
+  "review_views": [
+    {
+      "id": "van-arrival",
+      "position": [
+        32.0,
+        1.62,
+        82.0
+      ],
+      "source": "Canonical staged van eye/roadhead; preserve cargo route",
+      "heading_deg": 0
+    },
+    {
+      "id": "primary-approach",
+      "position": [
+        34.0,
+        1.62,
+        69.0
+      ],
+      "source_zone": "entry",
+      "source": "Authored approach-space reservation; actual viewpoint must be stood in",
+      "heading_deg": 0
+    },
+    {
+      "id": "highest-accessible-layer",
+      "position": [
+        27.0,
+        4.62,
+        41.0
+      ],
+      "source_zone": "gallery",
+      "source": "Highest authored standing zone; actual window/balcony aperture and guards still require review",
+      "heading_deg": 0
+    },
+    {
+      "id": "outdoor-entry",
+      "position": [
+        34.0,
+        1.62,
+        69.0
+      ],
+      "source_zone": "entry",
+      "source": "Outdoor-space viewpoint reservation",
+      "heading_deg": 0
+    },
+    {
+      "id": "outdoor-dock",
+      "position": [
+        36.0,
+        1.62,
+        7.0
+      ],
+      "source_zone": "dock",
+      "source": "Outdoor-space viewpoint reservation",
+      "heading_deg": 0
+    },
+    {
+      "id": "outdoor-forest",
+      "position": [
+        -12.0,
+        1.62,
+        44.0
+      ],
+      "source_zone": "forest",
+      "source": "Outdoor-space viewpoint reservation",
+      "heading_deg": 0
+    },
+    {
+      "id": "outdoor-side-yard",
+      "position": [
+        56.0,
+        1.62,
+        53.0
+      ],
+      "source_zone": "side-yard",
+      "source": "Outdoor-space viewpoint reservation",
+      "heading_deg": 0
+    }
+  ],
+  "review_states": {
+    "eye_offsets_m": [
+      0.95,
+      1.45,
+      1.62
+    ],
+    "horizontal_fov_deg": [
+      60,
+      90,
+      110
+    ],
+    "vertical_scan_deg": [
+      -45,
+      60
+    ],
+    "lighting": [
+      "daylight authoring view",
+      "night normal exposure",
+      "adjoining circuits toggled",
+      "portable flashlight grazing edge"
+    ],
+    "weather": [
+      "clear visibility",
+      "fog",
+      "rain",
+      "snow where appropriate"
+    ],
+    "camera": "Standing, crouched and evidence camera views; rotate through 360 degrees at each anchor and translate to test parallax/seams."
+  },
+  "inclusion_rules": [
+    "Sky exists behind real world geometry and must not write foreground depth. Closed opaque rooms occlude sky; actual windows and open courtyards reveal it.",
+    "No backdrop may appear through a wall/floor/roof join, under an upper deck or through a light-leak seam. Apply the shared defect checklist.",
+    "Keep the water/sky horizon level and continuous; layered water transparency/depth remains a separate acceptance gate.",
+    "Do not use fog/darkness/painted horizon as a physical barrier or conceal unsupported terrain edges.",
+    "Near occluders must frame vistas without cutting routes, door swings, van/ramp, ritual squares or sparse hiding pockets.",
+    "No player-facing map detail should depend on distant scenery collision. Keep ghost/human containment rules explicit and host-authoritative.",
+    "Highest windows, towers and platforms need a larger visible terrain apron and farther horizon than ground-only cameras.",
+    "No stock sky texture has been acquired or licensed by this plan. Use existing procedural sky/weather; any new bitmap needs separate source/license intake."
+  ],
+  "special_cases": [],
+  "next_gates": [
+    "Fit proposed perimeter to actual native terrain and existing enclosure; extend off-map terrain before placing any new barrier.",
+    "Author supported barrier spans, road portal and closed returns as selected additive geometry; inspect all overlap/clearance.",
+    "Run swept human/ghost/crouch and under/over/around checks, water/fall recovery and van extraction.",
+    "Render ordinary-viewpoint frame captures and verify no sky leaks, near-card artifacts or horizon discontinuity; gallery publish.",
+    "Integrate per-map scenery/sky profile only after engine branch coordination and CPU/GPU parity/performance review."
+  ],
+  "acceptance": "No boundary continuity, collision, actual screenshot framing, runtime sky mask or gameplay acceptance is claimed."
+}

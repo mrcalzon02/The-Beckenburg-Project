@@ -85,3 +85,8 @@ this breadth checkpoint to completed shells, navigation acceptance or mission un
 - [Existing cemetery mortuary expansion](../layout-expansions/wld-07-mortuary/README.md)
 
 These five new sites extend the catalog to 28 packets including HQ. The cemetery expansion is a separate proposal, not a 29th site. Original layouts and blockouts are preserved.
+
+
+## All-map exterior edge / sky planning
+
+[29 base/variant planning packets](../edge-sky-plans/REVIEW.html) now reserve distinct physical boundary recipes, view frames and model needs. Preserve existing geometry and consume terrain-first/edge/sky gates before detail accumulation. Review actual translated camera views and containment before claiming these plans implemented.

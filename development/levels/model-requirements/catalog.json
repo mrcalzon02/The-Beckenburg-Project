@@ -160,7 +160,52 @@
       "folder": "wld-13",
       "rooms": 14,
       "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-14",
+      "title": "Morrow Point Lightstation",
+      "folder": "wld-14",
+      "rooms": 23,
+      "map_specific_candidates": 5
+    },
+    {
+      "id": "WLD-15",
+      "title": "MV Saint Elara",
+      "folder": "wld-15",
+      "rooms": 16,
+      "map_specific_candidates": 6
+    },
+    {
+      "id": "WLD-16",
+      "title": "Eight Pines Motor Lodge",
+      "folder": "wld-16",
+      "rooms": 19,
+      "map_specific_candidates": 6
+    },
+    {
+      "id": "WLD-17",
+      "title": "Battery Brackenhead",
+      "folder": "wld-17",
+      "rooms": 15,
+      "map_specific_candidates": 6
+    },
+    {
+      "id": "WLD-18",
+      "title": "Site Cinder-6",
+      "folder": "wld-18",
+      "rooms": 16,
+      "map_specific_candidates": 6
     }
   ],
-  "existing_map_geometry_untouched": true
+  "expansions": [
+    {
+      "id": "WLD-07-MORTUARY",
+      "title": "Saint Bartholomew's Cemetery & Vale Mortuary",
+      "folder": "wld-07-mortuary",
+      "rooms": 20,
+      "map_specific_candidates": 5
+    }
+  ],
+  "existing_map_geometry_untouched": true,
+  "authored_worklists_unchanged": true
 }

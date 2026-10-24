@@ -1,0 +1,333 @@
+{
+  "status": "planning checks pass",
+  "base_maps": 28,
+  "expansions": 1,
+  "maps": [
+    {
+      "id": "ACADEMY",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1204,
+      "connected_edge_spans": 23,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 7,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "ASYLUM",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1044,
+      "connected_edge_spans": 24,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "CASTLE",
+      "source_hash_match": true,
+      "protected_reservation_samples": 2122,
+      "connected_edge_spans": 27,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "CHURCH",
+      "source_hash_match": true,
+      "protected_reservation_samples": 905,
+      "connected_edge_spans": 19,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "COLLEGE",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1141,
+      "connected_edge_spans": 25,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 7,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "FARMHOUSE",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1028,
+      "connected_edge_spans": 19,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "HOUSE",
+      "source_hash_match": true,
+      "protected_reservation_samples": 737,
+      "connected_edge_spans": 19,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "MANSION",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1096,
+      "connected_edge_spans": 21,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "PRISON",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1365,
+      "connected_edge_spans": 23,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "SCHOOL",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1211,
+      "connected_edge_spans": 19,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-01",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1177,
+      "connected_edge_spans": 24,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 7,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-02",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1033,
+      "connected_edge_spans": 28,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 11,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-03",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1177,
+      "connected_edge_spans": 27,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 9,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-04",
+      "source_hash_match": true,
+      "protected_reservation_samples": 852,
+      "connected_edge_spans": 27,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 10,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-05",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1222,
+      "connected_edge_spans": 23,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-06",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1186,
+      "connected_edge_spans": 25,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 11,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-07",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1038,
+      "connected_edge_spans": 25,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 9,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-08",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1321,
+      "connected_edge_spans": 25,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 7,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-09",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1246,
+      "connected_edge_spans": 25,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 8,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-10",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1288,
+      "connected_edge_spans": 25,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 7,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-11",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1104,
+      "connected_edge_spans": 26,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 9,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-12",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1273,
+      "connected_edge_spans": 29,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 11,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-13",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1255,
+      "connected_edge_spans": 25,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 7,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-14",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1768,
+      "connected_edge_spans": 24,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-15",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1002,
+      "connected_edge_spans": 25,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 10,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-16",
+      "source_hash_match": true,
+      "protected_reservation_samples": 963,
+      "connected_edge_spans": 24,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 9,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-17",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1001,
+      "connected_edge_spans": 24,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 6,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-18",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1110,
+      "connected_edge_spans": 26,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 8,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "source_hash_match": true,
+      "protected_reservation_samples": 1462,
+      "connected_edge_spans": 28,
+      "sky_sectors": 8,
+      "arrival_and_cargo_preserved": true,
+      "views": 9,
+      "svg_xml_and_png_pass": true,
+      "status": "planning contract checks pass; no runtime containment/framing claim"
+    }
+  ],
+  "original_sources_preserved": 73,
+  "engine_changed": false,
+  "limitations": [
+    "No new barrier geometry, collision, navigation or renderer changes.",
+    "No exact scene horizon coverage or screenshot framing accepted.",
+    "All proposed spans need authoritative ground fitting and human/ghost/crouch/upper-view tests."
+  ]
+}

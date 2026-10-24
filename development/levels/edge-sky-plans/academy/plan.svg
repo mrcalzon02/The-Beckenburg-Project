@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040">
+<style>text{font-family:Arial,sans-serif;fill:#e7ecee}.small{font-size:12px}.medium{font-size:15px}</style><rect width="1600" height="1040" fill="#20292f"/>
+<text x="32" y="38" font-size="25">St. Alban Academy — edge / sky frame plan</text>
+<text x="32" y="67" class="medium">PLANNING DIAGRAM · metres · no new geometry/collision · dashed ring is a proposed envelope, not accepted navigation</text>
+<text x="45" y="104" class="medium">NORTH / −Z ↑   •   route and room reservations retained</text>
+<polygon points="51.0,146.2 76.9,131.8 228.8,120.0 380.7,131.8 430.2,134.2 457.5,146.2 533.3,172.5 602.8,212.3 614.7,370.8 602.8,529.3 602.4,558.9 575.5,600.6 488.4,680.0 390.6,745.9 366.5,763.6 313.7,770.0 260.9,763.6 235.4,748.3 144.1,623.5 76.9,484.2 54.2,440.1 51.0,410.4 45.0,278.3" fill="#2e3a3d" stroke="#f2be67" stroke-width="3" stroke-dasharray="7,5"/>
+<rect x="260.9" y="625.0" width="105.7" height="79.2" fill="#6a9193" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>stage, Y0</title></rect>
+<rect x="260.9" y="558.9" width="105.7" height="66.0" fill="#53604a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>entry, Y0</title></rect>
+<rect x="221.3" y="281.6" width="184.9" height="158.5" fill="#53604a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>quad, Y0</title></rect>
+<rect x="445.8" y="440.1" width="105.7" height="118.9" fill="#53604a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>rear, Y0</title></rect>
+<rect x="260.9" y="479.7" width="105.7" height="79.2" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>reception, Y0</title></rect>
+<rect x="181.6" y="440.1" width="264.2" height="39.6" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>south, Y0</title></rect>
+<rect x="181.6" y="281.6" width="39.6" height="158.5" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>west, Y0</title></rect>
+<rect x="181.6" y="242.0" width="264.2" height="39.6" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>north, Y0</title></rect>
+<rect x="406.2" y="281.6" width="39.6" height="158.5" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>east, Y0</title></rect>
+<rect x="102.4" y="281.6" width="79.2" height="158.5" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>library, Y0</title></rect>
+<rect x="445.8" y="347.6" width="105.7" height="92.5" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>lecture, Y0</title></rect>
+<rect x="445.8" y="242.0" width="105.7" height="105.7" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>lab, Y0</title></rect>
+<rect x="221.3" y="175.9" width="184.9" height="66.0" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>dining, Y0</title></rect>
+<rect x="102.4" y="175.9" width="79.2" height="105.7" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>office, Y0</title></rect>
+<rect x="221.3" y="175.9" width="184.9" height="66.0" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>dorm, Y3.6</title></rect>
+<rect x="181.6" y="242.0" width="264.2" height="39.6" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>upper, Y3.6</title></rect>
+<rect x="102.4" y="281.6" width="79.2" height="158.5" fill="#52616a" stroke="#9badb5" stroke-width=".8" opacity=".75"><title>archive, Y-3</title></rect>
+<polyline points="313.7,664.6 313.7,625.0 313.7,592.0" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,592.0 313.7,558.9 313.7,519.3" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,519.3 313.7,479.7 313.7,459.9" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,459.9 201.4,440.1 201.4,360.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="201.4,360.8 201.4,281.6 313.7,261.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,261.8 426.0,281.6 426.0,360.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="426.0,360.8 426.0,440.1 313.7,459.9" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,459.9 313.7,440.1 313.7,360.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,360.8 313.7,281.6 313.7,261.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="201.4,360.8 181.6,360.8 142.0,360.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,261.8 313.7,242.0 313.7,208.9" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,261.8 181.6,261.8 142.0,228.7" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="426.0,360.8 445.8,393.8 498.6,393.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="498.6,393.8 498.6,347.6 498.6,294.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="498.6,294.8 445.8,314.6 426.0,360.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,459.9 445.8,459.9 498.6,499.5" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="498.6,499.5 498.6,440.1 498.6,393.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,261.8 313.7,261.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="313.7,261.8 313.7,242.0 313.7,208.9" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<polyline points="201.4,360.8 142.0,360.8" fill="none" stroke="#79c9d1" stroke-width="1.2"/>
+<circle cx="64.0" cy="139.0" r="10" fill="#695132"/><text x="64.0" y="143.0" text-anchor="middle" class="small">1</text>
+<circle cx="152.9" cy="125.9" r="10" fill="#695132"/><text x="152.9" y="129.9" text-anchor="middle" class="small">2</text>
+<circle cx="304.8" cy="125.9" r="10" fill="#695132"/><text x="304.8" y="129.9" text-anchor="middle" class="small">3</text>
+<circle cx="405.5" cy="133.0" r="10" fill="#695132"/><text x="405.5" y="137.0" text-anchor="middle" class="small">4</text>
+<circle cx="443.9" cy="140.2" r="10" fill="#695132"/><text x="443.9" y="144.2" text-anchor="middle" class="small">5</text>
+<circle cx="495.4" cy="159.4" r="10" fill="#695132"/><text x="495.4" y="163.4" text-anchor="middle" class="small">6</text>
+<circle cx="568.0" cy="192.4" r="10" fill="#695132"/><text x="568.0" y="196.4" text-anchor="middle" class="small">7</text>
+<circle cx="608.8" cy="291.5" r="10" fill="#695132"/><text x="608.8" y="295.5" text-anchor="middle" class="small">8</text>
+<circle cx="608.8" cy="450.0" r="10" fill="#695132"/><text x="608.8" y="454.0" text-anchor="middle" class="small">9</text>
+<circle cx="602.6" cy="544.1" r="10" fill="#695132"/><text x="602.6" y="548.1" text-anchor="middle" class="small">10</text>
+<circle cx="588.9" cy="579.8" r="10" fill="#695132"/><text x="588.9" y="583.8" text-anchor="middle" class="small">11</text>
+<circle cx="531.9" cy="640.3" r="10" fill="#695132"/><text x="531.9" y="644.3" text-anchor="middle" class="small">12</text>
+<circle cx="439.5" cy="713.0" r="10" fill="#695132"/><text x="439.5" y="717.0" text-anchor="middle" class="small">13</text>
+<circle cx="378.6" cy="754.7" r="10" fill="#695132"/><text x="378.6" y="758.7" text-anchor="middle" class="small">14</text>
+<circle cx="340.1" cy="766.8" r="10" fill="#695132"/><text x="340.1" y="770.8" text-anchor="middle" class="small">15</text>
+<circle cx="287.3" cy="766.8" r="10" fill="#695132"/><text x="287.3" y="770.8" text-anchor="middle" class="small">16</text>
+<circle cx="248.1" cy="755.9" r="10" fill="#695132"/><text x="248.1" y="759.9" text-anchor="middle" class="small">17</text>
+<circle cx="189.7" cy="685.9" r="10" fill="#695132"/><text x="189.7" y="689.9" text-anchor="middle" class="small">18</text>
+<circle cx="110.5" cy="553.8" r="10" fill="#695132"/><text x="110.5" y="557.8" text-anchor="middle" class="small">19</text>
+<circle cx="65.6" cy="462.1" r="10" fill="#695132"/><text x="65.6" y="466.1" text-anchor="middle" class="small">20</text>
+<circle cx="52.6" cy="425.2" r="10" fill="#695132"/><text x="52.6" y="429.2" text-anchor="middle" class="small">21</text>
+<circle cx="48.0" cy="344.4" r="10" fill="#695132"/><text x="48.0" y="348.4" text-anchor="middle" class="small">22</text>
+<circle cx="48.0" cy="212.3" r="10" fill="#695132"/><text x="48.0" y="216.3" text-anchor="middle" class="small">23</text>
+<rect x="287.3" y="766.0" width="52.8" height="8" fill="#a8d8b8"/><text x="313.7" y="794.0" class="small" text-anchor="middle">Arrival road reserve (8 m)</text>
+<circle cx="313.7" cy="664.6" r="4" fill="#ffd6f0"><title>van-arrival, eye Y 1.62</title></circle>
+<circle cx="313.7" cy="592.0" r="4" fill="#ffd6f0"><title>primary-approach, eye Y 1.62</title></circle>
+<circle cx="313.7" cy="208.9" r="4" fill="#ffd6f0"><title>highest-accessible-layer, eye Y 5.22</title></circle>
+<circle cx="313.7" cy="592.0" r="4" fill="#ffd6f0"><title>outdoor-entry, eye Y 1.62</title></circle>
+<circle cx="313.7" cy="360.8" r="4" fill="#ffd6f0"><title>outdoor-quad, eye Y 1.62</title></circle>
+<circle cx="498.6" cy="499.5" r="4" fill="#ffd6f0"><title>outdoor-rear, eye Y 1.62</title></circle>
+<circle cx="142.0" cy="360.8" r="4" fill="#ffd6f0"><title>below-grade-seal, eye Y -1.38</title></circle>
+<text x="845" y="105" font-size="20">360° inclusion frames / art-direction bands</text>
+<text x="845" y="130" class="small">N 0° → E 90° → S 180° → W 270° • bands are schematic, not screenshots</text>
+<rect x="845" y="155" width="710" height="62" fill="#526b80"/><path d="M845,203 L985,199 L1135,206 L1290,201 L1430,204 L1555,199 V217 H845 Z" fill="#263c40"/>
+<text x="853" y="173" class="small">0–45° • hills • crest 14° provisional</text>
+<text x="845" y="235" class="small">Low ridge behind academy roofs</text>
+<rect x="845" y="246" width="710" height="62" fill="#526b80"/><path d="M845,294 L985,290 L1135,297 L1290,292 L1430,295 L1555,290 V308 H845 Z" fill="#263c40"/>
+<text x="853" y="264" class="small">45–90° • hills/trees • crest 14° provisional</text>
+<text x="845" y="326" class="small">Low ridge behind academy roofs transitioning to Sloped garden and far woodland</text>
+<rect x="845" y="337" width="710" height="62" fill="#526b80"/><path d="M845,387 L985,383 L1135,390 L1290,385 L1430,388 L1555,383 V399 H845 Z" fill="#263c40"/>
+<text x="853" y="355" class="small">90–135° • trees • crest 12° provisional</text>
+<text x="845" y="417" class="small">Sloped garden and far woodland</text>
+<rect x="845" y="428" width="710" height="62" fill="#526b80"/><path d="M845,478 L985,474 L1135,481 L1290,476 L1430,479 L1555,474 V490 H845 Z" fill="#263c40"/>
+<text x="853" y="446" class="small">135–180° • trees/roofs • crest 12° provisional</text>
+<text x="845" y="508" class="small">Sloped garden and far woodland transitioning to Institutional drive and district roof glimpses</text>
+<rect x="845" y="519" width="710" height="62" fill="#526b80"/><path d="M845,572 L985,568 L1135,575 L1290,570 L1430,573 L1555,568 V581 H845 Z" fill="#263c40"/>
+<text x="853" y="537" class="small">180–225° • roofs • crest 9° provisional</text>
+<text x="845" y="599" class="small">Institutional drive and district roof glimpses</text>
+<rect x="845" y="610" width="710" height="62" fill="#526b80"/><path d="M845,663 L985,659 L1135,666 L1290,661 L1430,664 L1555,659 V672 H845 Z" fill="#263c40"/>
+<text x="853" y="628" class="small">225–270° • roofs/trees • crest 9° provisional</text>
+<text x="845" y="690" class="small">Institutional drive and district roof glimpses transitioning to Tree-framed cloister garden</text>
+<rect x="845" y="701" width="710" height="62" fill="#526b80"/><path d="M845,751 L985,747 L1135,754 L1290,749 L1430,752 L1555,747 V763 H845 Z" fill="#263c40"/>
+<text x="853" y="719" class="small">270–315° • trees • crest 12° provisional</text>
+<text x="845" y="781" class="small">Tree-framed cloister garden</text>
+<rect x="845" y="792" width="710" height="62" fill="#526b80"/><path d="M845,842 L985,838 L1135,845 L1290,840 L1430,843 L1555,838 V854 H845 Z" fill="#263c40"/>
+<text x="853" y="810" class="small">315–360° • trees/hills • crest 12° provisional</text>
+<text x="845" y="872" class="small">Tree-framed cloister garden transitioning to Low ridge behind academy roofs</text>
+<text x="35" y="920" class="medium">Amber: proposed physical edge · cyan: protected routes · pink dots: view anchors · green: road portal</text>
+<text x="35" y="948" class="medium">Near: grounded enclosure • Middle: world-space terrain / silhouettes • Far: procedural sky + weather, visual only</text>
+<text x="35" y="978" class="medium">Review: standing / crouched / camera; upper layers; van extraction; clear + fog; no sky through sealed joins.</text>
+<text x="35" y="1008" class="small">Do not build from this drawing alone. See JSON for exact spans, recipes, elevation fitting, all source reservations and acceptance gates.</text></svg>

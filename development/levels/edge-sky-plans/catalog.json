@@ -1,0 +1,268 @@
+{
+  "status": "planning only",
+  "maps": [
+    {
+      "id": "ACADEMY",
+      "title": "St. Alban Academy",
+      "folder": "academy",
+      "spans": 23,
+      "frames": 8,
+      "viewpoints": 7,
+      "expansion": false
+    },
+    {
+      "id": "ASYLUM",
+      "title": "St. Dymphna Hospital",
+      "folder": "asylum",
+      "spans": 24,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "CASTLE",
+      "title": "Castle Beckenburg",
+      "folder": "castle",
+      "spans": 27,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "CHURCH",
+      "title": "St. Brigid Parish",
+      "folder": "church",
+      "spans": 19,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "COLLEGE",
+      "title": "Beckenburg College",
+      "folder": "college",
+      "spans": 25,
+      "frames": 8,
+      "viewpoints": 7,
+      "expansion": false
+    },
+    {
+      "id": "FARMHOUSE",
+      "title": "Hollowmere Farm",
+      "folder": "farmhouse",
+      "spans": 19,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "HOUSE",
+      "title": "The Briar House",
+      "folder": "house",
+      "spans": 19,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "MANSION",
+      "title": "Blackthorn Manor",
+      "folder": "mansion",
+      "spans": 21,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "PRISON",
+      "title": "Beckenburg Penitentiary",
+      "folder": "prison",
+      "spans": 23,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "SCHOOL",
+      "title": "Ravenshade School",
+      "folder": "school",
+      "spans": 19,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "WLD-01",
+      "title": "Blackpine Logging Camp",
+      "folder": "wld-01",
+      "spans": 24,
+      "frames": 8,
+      "viewpoints": 7,
+      "expansion": false
+    },
+    {
+      "id": "WLD-02",
+      "title": "Camp Hollow Creek",
+      "folder": "wld-02",
+      "spans": 28,
+      "frames": 8,
+      "viewpoints": 11,
+      "expansion": false
+    },
+    {
+      "id": "WLD-03",
+      "title": "Red Mesa Ancestral Caves",
+      "folder": "wld-03",
+      "spans": 27,
+      "frames": 8,
+      "viewpoints": 9,
+      "expansion": false
+    },
+    {
+      "id": "WLD-04",
+      "title": "Widow's Peak Fire Lookout",
+      "folder": "wld-04",
+      "spans": 27,
+      "frames": 8,
+      "viewpoints": 10,
+      "expansion": false
+    },
+    {
+      "id": "WLD-05",
+      "title": "Dead Man's Claim",
+      "folder": "wld-05",
+      "spans": 23,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "WLD-06",
+      "title": "Drowned Fisherman's Wharf",
+      "folder": "wld-06",
+      "spans": 25,
+      "frames": 8,
+      "viewpoints": 11,
+      "expansion": false
+    },
+    {
+      "id": "WLD-07",
+      "title": "Saint Bartholomew's Forgotten Cemetery",
+      "folder": "wld-07",
+      "spans": 25,
+      "frames": 8,
+      "viewpoints": 9,
+      "expansion": false
+    },
+    {
+      "id": "WLD-08",
+      "title": "Northwatch Research Station",
+      "folder": "wld-08",
+      "spans": 25,
+      "frames": 8,
+      "viewpoints": 7,
+      "expansion": false
+    },
+    {
+      "id": "WLD-09",
+      "title": "Blackwater Hydroelectric Dam",
+      "folder": "wld-09",
+      "spans": 25,
+      "frames": 8,
+      "viewpoints": 8,
+      "expansion": false
+    },
+    {
+      "id": "WLD-10",
+      "title": "Monastery of Ashen Bells",
+      "folder": "wld-10",
+      "spans": 25,
+      "frames": 8,
+      "viewpoints": 7,
+      "expansion": false
+    },
+    {
+      "id": "WLD-11",
+      "title": "Mourning Marsh",
+      "folder": "wld-11",
+      "spans": 26,
+      "frames": 8,
+      "viewpoints": 9,
+      "expansion": false
+    },
+    {
+      "id": "WLD-12",
+      "title": "Gallows Pass Railway",
+      "folder": "wld-12",
+      "spans": 29,
+      "frames": 8,
+      "viewpoints": 11,
+      "expansion": false
+    },
+    {
+      "id": "WLD-13",
+      "title": "Greywater Cannery",
+      "folder": "wld-13",
+      "spans": 25,
+      "frames": 8,
+      "viewpoints": 7,
+      "expansion": false
+    },
+    {
+      "id": "WLD-14",
+      "title": "Morrow Point Lightstation",
+      "folder": "wld-14",
+      "spans": 24,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "WLD-15",
+      "title": "MV Saint Elara",
+      "folder": "wld-15",
+      "spans": 25,
+      "frames": 8,
+      "viewpoints": 10,
+      "expansion": false
+    },
+    {
+      "id": "WLD-16",
+      "title": "Eight Pines Motor Lodge",
+      "folder": "wld-16",
+      "spans": 24,
+      "frames": 8,
+      "viewpoints": 9,
+      "expansion": false
+    },
+    {
+      "id": "WLD-17",
+      "title": "Battery Brackenhead",
+      "folder": "wld-17",
+      "spans": 24,
+      "frames": 8,
+      "viewpoints": 6,
+      "expansion": false
+    },
+    {
+      "id": "WLD-18",
+      "title": "Site Cinder-6",
+      "folder": "wld-18",
+      "spans": 26,
+      "frames": 8,
+      "viewpoints": 8,
+      "expansion": false
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "title": "Saint Bartholomew's Cemetery & Vale Mortuary",
+      "folder": "wld-07-mortuary",
+      "spans": 28,
+      "frames": 8,
+      "viewpoints": 9,
+      "expansion": true
+    }
+  ],
+  "base_maps": 28,
+  "additive_expansions": 1
+}

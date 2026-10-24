@@ -41,6 +41,8 @@ Record discoveries immediately in [defects.json](defects.json); regenerate the
    confined to real beam/body intersections. Test device power, architecture
    occlusion, camera photographs, networking privacy and empty-scene negatives.
 
+10. **Edges and sky inclusion:** consume the map's edge-sky planning packet. Fit visible barriers to authoritative terrain with closed returns; retain the van/ramp, all route widths, rituals and sparse refuge pockets. Check under/over/around traversal in standing/crouched states and ghost containment. Water, a low log, fog or a painted horizon is not a physical stop. Inspect 360-degree standing/crouched/photo views and the highest windows/platforms: near/middle parallax, skyline sector continuity, open coast horizons, no sky through sealed joins, water horizon alignment, weather and CPU/GPU parity. Proposed drawings are not runtime acceptance.
+
 For an older map, create a per-location audit record listing these categories,
 evidence paths and defects found. Never mark other maps corrected because a shared
 helper or one Blackpine fixture passed. New maps must consume these checks before

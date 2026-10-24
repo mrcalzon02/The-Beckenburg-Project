@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 548,
+  "count": 578,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1202,6 +1202,306 @@
       "height": 800,
       "bytes": 619143,
       "sha256": "63a4979fdc1b272534aa5eca311cb53274f5976e762c4495af3a1dc3fba225c1"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
+      "title": "Academy edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 203632,
+      "sha256": "122885b9e9349ef696fae2523893e6ed1bb18ce94f0686447437c4767ef4105a"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/all-maps-edge-sky-atlas.png",
+      "url": "development/levels/previews/edge-sky-plans/all-maps-edge-sky-atlas.png",
+      "title": "All maps edge sky atlas",
+      "kind": "Planning diagram",
+      "width": 2400,
+      "height": 1450,
+      "bytes": 850329,
+      "sha256": "e29b23d1d2b7ce4c2b4921d31e13c849eda5b8e10046222d27a3ae7038697295"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/asylum-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/asylum-edge-sky-plan.png",
+      "title": "Asylum edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 208996,
+      "sha256": "17387229f9318f7b018ae4e57e948f15aef85b645765ea17b2e24fb677a4d2ce"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/castle-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/castle-edge-sky-plan.png",
+      "title": "Castle edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 214502,
+      "sha256": "6fe2bdde8c8f0fc4b5c354c3d808eceaaf3bb9d9373bb4157631933702c2600e"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/church-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/church-edge-sky-plan.png",
+      "title": "Church edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 200812,
+      "sha256": "b69b833f50c4c1b4d100f710690c0f51cc6093321995d3f67108499cf61f3b9e"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/college-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/college-edge-sky-plan.png",
+      "title": "College edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 207156,
+      "sha256": "9f2045e1b1616376c543110ecbbe0bda97d97ecbcbaf91d2f7fac4a213d807c0"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/farmhouse-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/farmhouse-edge-sky-plan.png",
+      "title": "Farmhouse edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 197301,
+      "sha256": "7c942025897d2936b92c5db3868b404d43eeb4677814afa39c4cd22204247233"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/house-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/house-edge-sky-plan.png",
+      "title": "House edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 195034,
+      "sha256": "70b29207d6c368c82523c1d11796d444a59005648c724d4784e8ff4eea330d84"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/mansion-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/mansion-edge-sky-plan.png",
+      "title": "Mansion edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 206074,
+      "sha256": "1c154dd966bfd0e83c910eb5c844388ac8c2dfa5dc4c92674ab4993036fa1d1b"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/prison-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/prison-edge-sky-plan.png",
+      "title": "Prison edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 204398,
+      "sha256": "aa21bccc81ba76eadb91bd98875f83d7cbbc8a650b641c4f35ef01267c3b0b2c"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/school-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/school-edge-sky-plan.png",
+      "title": "School edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 201251,
+      "sha256": "66f0b84ab5c7f5e1f052b6d6bfdf5de06b5c17bc36347f0de538bcaf5ee48e90"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-01-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-01-edge-sky-plan.png",
+      "title": "Wld 01 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 208372,
+      "sha256": "4b1d2208e68da27de6d3028f70241c8e03627b3a18e80d052be1d18df8b2c2b9"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-02-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-02-edge-sky-plan.png",
+      "title": "Wld 02 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 211711,
+      "sha256": "54db6d9e42420f5f4d0e52afcf313316cb6c086a0e98e8957b63e38fdda74eb4"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-03-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-03-edge-sky-plan.png",
+      "title": "Wld 03 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 215781,
+      "sha256": "3950e958cc09f75a6891afe559c8007ebf6b1a7102907dbbb043cac639568b07"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-04-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-04-edge-sky-plan.png",
+      "title": "Wld 04 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 211319,
+      "sha256": "4b11a2d7fed5bc296b88e77967cf2c905985db88a32a7d92287f8f3180e880a8"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-05-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-05-edge-sky-plan.png",
+      "title": "Wld 05 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 207348,
+      "sha256": "9b7cbffd2ec3eb771f29737c3675c0a8e487c92c6fcf04ed9c9e0aa751cadeca"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-06-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-06-edge-sky-plan.png",
+      "title": "Wld 06 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 213036,
+      "sha256": "26bf65c1a69393441ddc90ccda0b6a20cc5fdad3c184c3377889282d6125df03"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-07-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-07-edge-sky-plan.png",
+      "title": "Wld 07 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 213410,
+      "sha256": "ebc29fece03776c25ab35381b5723203d321c6a8e15e6457508e90bbb6ebffcf"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-07-mortuary-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-07-mortuary-edge-sky-plan.png",
+      "title": "Wld 07 mortuary edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 224192,
+      "sha256": "e8bf2d259f90e3d55be62d5ea6b6c195a40feaaabaf9860bf8c1d06971ebb957"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-08-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-08-edge-sky-plan.png",
+      "title": "Wld 08 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 214139,
+      "sha256": "b179fc3736af61967f9a64fc8df2a715486b0fccb5227671b888a0e2a4566d58"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-09-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-09-edge-sky-plan.png",
+      "title": "Wld 09 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 213476,
+      "sha256": "5c12c6a98dfbf16a8df112ea2e25c715c1965189859f8a3548e164ce74b35202"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-10-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-10-edge-sky-plan.png",
+      "title": "Wld 10 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 212773,
+      "sha256": "218d52f7ed6a057b5486608008a278649a878f0eafa2d636ae6f6977b7890ba1"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-11-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-11-edge-sky-plan.png",
+      "title": "Wld 11 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 206714,
+      "sha256": "d5c094a1cc6636bd47aae8a4e4ceb7d5514e29347168f1f3bf4ca18e93dc13fa"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-12-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-12-edge-sky-plan.png",
+      "title": "Wld 12 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 213402,
+      "sha256": "d9647389da90bd6be7348456d4b1f7f74181073899a2aaf51454971b39ead7cf"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-13-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-13-edge-sky-plan.png",
+      "title": "Wld 13 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 215008,
+      "sha256": "37593e9469e9e4fa7048641e084010b8e4ed97cc37f0e91cd7b4dbe939367061"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-14-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-14-edge-sky-plan.png",
+      "title": "Wld 14 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 207953,
+      "sha256": "7ac78e6606bf80fc331bee6832c408397c43df3c7b458ff33fe34509e38ae671"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-15-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-15-edge-sky-plan.png",
+      "title": "Wld 15 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 205068,
+      "sha256": "821aeb83844f9d02a2863f1e4c920c9e11f4b35bf41a68796ea0f8dfdb75c078"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-16-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-16-edge-sky-plan.png",
+      "title": "Wld 16 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 212500,
+      "sha256": "4555118a0165e975e2b5362136f188534bd7248c44b0103df52d6f2f96b4e2c6"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-17-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-17-edge-sky-plan.png",
+      "title": "Wld 17 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 208597,
+      "sha256": "28c2627a71af44d92ac8a6771a21c6ea88ad38c61108a68608f11c678aa9d55c"
+    },
+    {
+      "path": "development/levels/previews/edge-sky-plans/wld-18-edge-sky-plan.png",
+      "url": "development/levels/previews/edge-sky-plans/wld-18-edge-sky-plan.png",
+      "title": "Wld 18 edge sky plan",
+      "kind": "Planning diagram",
+      "width": 1600,
+      "height": 1040,
+      "bytes": 211570,
+      "sha256": "21c33b444f4fa03b3f9fee235ae52ace161833a2c91e92bdac25fa798c977afc"
     },
     {
       "path": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",

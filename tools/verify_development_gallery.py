@@ -17,7 +17,7 @@ live=json.loads(get('development/gallery/index.json'))
 assert live==local,'Deployed gallery manifest is stale'
 assert get('beckenburg-development-gallery.html')==(ROOT/'beckenburg-development-gallery.html').read_bytes(),'Deployed gallery HTML differs'
 def check(item):
-    full=any(s in item['path'] for s in ['/mill-lighting/','/defects/','/hollow-creek/','/optical-evidence/','/terrain-foundations/','/blockouts/wld-14/','/blockouts/wld-15/','/blockouts/wld-16/','/blockouts/wld-17/','/blockouts/wld-18/','/blockouts/wld-07-mortuary/','new-location-blockouts.png','new-location-layer-studies.png','level_site_','level_camp_picnic_table.png','level_camp_fire_ring.png','level_camp_pavilion.png','level_camp_terrain.png','level_camp_pavilion_services.png'])
+    full=any(s in item['path'] for s in ['/mill-lighting/','/defects/','/hollow-creek/','/optical-evidence/','/terrain-foundations/','/edge-sky-plans/','/blockouts/wld-14/','/blockouts/wld-15/','/blockouts/wld-16/','/blockouts/wld-17/','/blockouts/wld-18/','/blockouts/wld-07-mortuary/','new-location-blockouts.png','new-location-layer-studies.png','level_site_','level_camp_picnic_table.png','level_camp_fire_ring.png','level_camp_pavilion.png','level_camp_terrain.png','level_camp_pavilion_services.png'])
     with urlopen(Request(BASE+item['url'],headers={'User-Agent':'Beckenburg-gallery-verifier/1.0'}),timeout=45) as response:
         assert response.status==200,item['path']
         data=response.read() if full else response.read(32)

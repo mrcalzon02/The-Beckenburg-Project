@@ -45,32 +45,11 @@ KITS={
 'storage':(['wooden_crate_1','shelf_mp_6','level_work_timber_rack'],'shelves, crates/bins, labels, pallets and restrained stored contents'),
 'outdoor':(['level_camp_bench','level_woodland_boulder','level_woodland_stump','level_woodland_fern'],'terrain transitions, boundaries, route signs, local planting and supported weather debris')}
 RULES=[('kitchen',['kitchen','scullery','cafe','mess','dining','refectory','common room']),('sleeping',['bedroom','dorm','bunk','lodging','accommodation','patient ward']),('sanitary',['bath','wash','hydro','mudroom']),('office',['office','reception','intake','admission','guard','radio','control','briefing','records']),('library',['library','archive','study','record','research']),('service',['boiler','plant','workshop','repair','generator','turbine','maintenance','tool','assay','mill']),('medical',['nurse','infirmary','medical','treatment','hydro','hospital']),('teaching',['classroom','lecture','seminar','assembly','laboratory','lab','training']),('worship',['chapel','church','chancel','nave','vestry','choir','crypt','memorial']),('storage',['store','storage','vault','shed','attic','cellar','pantry'])]
-rows=[]
-for path in sorted((LEVELS/'layouts').glob('*/layout.json')):
-    d=json.loads(path.read_text());finish,unique=SPECIAL[d['id']];zones=[]
-    for z in d['zones']:
-        name=z['name'].lower();kits=['outdoor'] if z['kind'] in ['outside','staging'] else ['circulation']
-        for kit,words in RULES:
-            if any(w in name for w in words):kits.append(kit)
-        if any(k in kits for k in ['kitchen','office','library','teaching','worship']):kits.append('seating')
-        if len(kits)==1 and z['kind'] not in ['outside','staging']:kits.append('storage')
-        kitrows=[]
-        for k in dict.fromkeys(kits):
-            candidates=[n for n in KITS[k][0] if (PROJECT/f'assets/runtime/models/{n}.glb').exists()]
-            kitrows.append(dict(category=k,needed=KITS[k][1],existing_local_candidates=candidates,status='reuse candidate; dimensions, pivot, UVs and scene fit still require inspection'))
-        zones.append(dict(id=z['id'],room=z['name'],kits=kitrows,clutter=['supported papers/labels appropriate to this room','small personal or work-use objects on real surfaces','waste/wear patches only where the room history supports them'],details=['threshold/trim joins and supporting brackets','local damp, dirt, fading or corrosion matching exposure','readable labels without assigning ghost identity']))
-    record=dict(id=d['id'],title=d['title'],geometry_scope='existing map: documentation only' if d['id'] in EXISTING else 'new rough blockout: model planning',source_layout_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),finish_palette=finish,standard_architecture=['distinct wall/floor/ceiling kit','door leaves, frames, hinges and handles','window frames/glazing/sills','proper stairs, landings, deck openings and guards','mounted room lights, switches, breaker and supported service runs','separate van dock contract; reuse canonical van'],map_specific_models=[dict(model=x.strip(),status='needed or existing candidate: audit before authoring duplicates') for x in unique.split(';')],zones=zones,variants=['clean source plus separate aged skins where needed','damage/wear variations retaining believable supports','do not stretch a source prop into a different object'],implementation_order=['audit existing runtime and owner library','architecture and route supports','major furniture and fixtures','map-specific landmark machinery/props','supported clutter','wear, signage and story detail','collision, lighting and in-room visual review'],limitations=['Quantities and asset budgets await room dressing plans.','Existing candidates are verified filenames, not certified fit or finished availability.','This is a model worklist, not implemented gameplay.'])
-    (ROOT/(path.parent.name+'.json')).write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
-    lines=['# '+d['title']+' — model requirements','',record['geometry_scope']+'. No map rebuild is requested by this checklist.','','Finish direction: '+finish+'.','','## Standard architecture and fixtures','']+['- '+x for x in record['standard_architecture']]+['','## Map-specific models / one-off candidates','']+['- '+x['model']+' — inspect existing assets first.' for x in record['map_specific_models']]+['','## Room-by-room furniture, clutter and details','']
-    for z in zones:
-        lines+=['### '+z['room']+' (`'+z['id']+'`)','']
-        for k in z['kits']:
-            reuse=', '.join('`'+x+'`' for x in k['existing_local_candidates']) or 'no verified local candidate from the starter inventory'
-            lines+=['- '+k['needed']+'. Reuse candidates: '+reuse+'.']
-        lines+=['- Clutter: '+ '; '.join(z['clutter'])+'.','- Detail: '+ '; '.join(z['details'])+'.','']
-    lines+=['## Refinement order','']+['- '+x for x in record['implementation_order']]+['','No quantities are invented. Audit source dimensions, pivots, UVs, licensing, supports and clearance before reuse. Clean/worn variants are separate assets. Investigator equipment comes from the existing loadout system.']
-    (ROOT/(path.parent.name+'.md')).write_text('\n'.join(lines)+'\n',encoding='utf-8');rows.append(dict(id=d['id'],title=d['title'],folder=path.parent.name,rooms=len(zones),map_specific_candidates=len(record['map_specific_models'])))
-(ROOT/'catalog.json').write_text(json.dumps(dict(maps=rows,existing_map_geometry_untouched=True),indent=2)+'\n',encoding='utf-8')
-(ROOT/'README.md').write_text('# Model requirements for all planned maps\n\nPlanning checklists for all 23 maps: standard furniture/fixtures, reusable local candidates, map-specific models, room clutter and finish/detail work. Existing maps receive documentation only. Geometry is not rebuilt.\n\n'+ '\n'.join('- ['+r['title']+']('+r['folder']+'.md) · [structured JSON]('+r['folder']+'.json)' for r in rows)+'\n\nGenerated from measured layouts and actual local model filenames. Quantities, new-asset budgets and scene acceptance remain for the implementation pass.\n')
-assert len(rows)==23
-print('MODEL_REQUIREMENTS_COMPLETE',len(rows),'maps;',sum(r['rooms'] for r in rows),'room/zone checklists;',sum(r['map_specific_candidates'] for r in rows),'map-specific candidates',flush=True)
+def regenerate_legacy_worklists():
+    raise RuntimeError("Legacy full regeneration is disabled: preserve curated worklists; edit a selected packet explicitly.")
+
+def main():
+    from refresh_catalog import main as refresh
+    refresh()
+
+if __name__=='__main__':main()

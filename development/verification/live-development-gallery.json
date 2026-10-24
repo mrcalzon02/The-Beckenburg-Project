@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-24T01:33:36.934422+00:00",
-  "published_commit": "4aceebbc5bb0d83f0228902cf51f0e533e02f6c3",
+  "verified_at": "2026-10-24T01:49:43.840821+00:00",
+  "published_commit": "b09af9d924acb17dc1c911f15c7fbcbf8aa75c0c",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 533,
+  "image_count": 548,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -474,6 +474,18 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/blockouts/new-location-blockouts.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/new-location-layer-studies.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/blockouts/prison/preview.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -508,6 +520,18 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-07-mortuary/layer-study-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-07-mortuary/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/blockouts/wld-07/preview.png",
@@ -550,6 +574,66 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/blockouts/wld-14/layer-study-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-14/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-15/layer-study-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-15/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-16/layer-study-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-16/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-17/layer-study-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-17/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-18/layer-study-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/blockouts/wld-18/preview.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/blackpine-blender-exterior.png",
@@ -631,6 +715,12 @@
     },
     {
       "path": "development/levels/previews/defects/DEV-024-before-terrain-review.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-027-before-tower-storey-gaps.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
