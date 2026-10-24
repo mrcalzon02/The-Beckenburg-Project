@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 690,
+  "count": 703,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -2014,6 +2014,56 @@
       "sha256": "2f9e173789b5da23e8b7434bb40c38ac7136fc55b70f507c40cf1c3a028b0617"
     },
     {
+      "path": "development/levels/previews/hollow-creek/fitted-east-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/fitted-east-native-fitout.png",
+      "title": "Fitted east native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2092131,
+      "sha256": "a5ce8f2cfc50fe35a4d548da9aaa9923ce8e7058a281dfb22e53ae7ab8616281"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-floor-east-studio-diagnostic.png",
+      "url": "development/levels/previews/hollow-creek/fitted-floor-east-studio-diagnostic.png",
+      "title": "Fitted floor east studio diagnostic",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 854523,
+      "sha256": "470bf3a70302b0c2bb3e23457c321cbae463b26ce0c5f380c851afd059064498"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-floor-west-studio-diagnostic.png",
+      "url": "development/levels/previews/hollow-creek/fitted-floor-west-studio-diagnostic.png",
+      "title": "Fitted floor west studio diagnostic",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 817301,
+      "sha256": "7253bac04313da4d9325af68f7a12ee7e0227137cafe70c07797f293c8c0e0d8"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/fitted-site-native-fitout.png",
+      "title": "Fitted site native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2441335,
+      "sha256": "0285ceac5577a95af52122b636d314d8dfee8c9f6e6ea38e16c2b4434b4b2aa3"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-west-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/fitted-west-native-fitout.png",
+      "title": "Fitted west native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2121687,
+      "sha256": "33fb78b37fc72a5aa35b2ee32fe245ba6606a131e3a1f98ad8c2038d71075b47"
+    },
+    {
       "path": "development/levels/previews/hollow-creek/foliage-detail-berm-native-fitout.png",
       "url": "development/levels/previews/hollow-creek/foliage-detail-berm-native-fitout.png",
       "title": "Foliage detail berm native fitout",
@@ -3182,6 +3232,86 @@
       "height": 640,
       "bytes": 850428,
       "sha256": "09f3a92c35df0c8d39dcad2eb9667777f5fc51471f44cac2524e32320e3c0fce"
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_east_dome.png",
+      "url": "development/levels/previews/level_camp_tent_fitted_east_dome.png",
+      "title": "Level camp tent fitted east dome",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 844332,
+      "sha256": "29b0cec01d200aaecf5465ada861988eb8d06a9f297210346d89b38f9ad2281a"
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_01.png",
+      "url": "development/levels/previews/level_camp_tent_fitted_pitch_01.png",
+      "title": "Level camp tent fitted pitch 01",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 826834,
+      "sha256": "979e8e218b4677ebc839e224d81091539bda37181985832d41c4e3cafe43d026"
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_02.png",
+      "url": "development/levels/previews/level_camp_tent_fitted_pitch_02.png",
+      "title": "Level camp tent fitted pitch 02",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 846141,
+      "sha256": "87dcab233f29aa49d4f6e69f221c0db43f09befb74e818b17b845cecfc613124"
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_03.png",
+      "url": "development/levels/previews/level_camp_tent_fitted_pitch_03.png",
+      "title": "Level camp tent fitted pitch 03",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 836370,
+      "sha256": "29e1a8a26a69b064ea42aa1ae7939747952a508b8f95492946f02832465f8f5f"
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_04.png",
+      "url": "development/levels/previews/level_camp_tent_fitted_pitch_04.png",
+      "title": "Level camp tent fitted pitch 04",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 842869,
+      "sha256": "2836bd1ca4d2e0d7d2c070147dce6b37b0020d096b0453b83d68f4336af3b5ee"
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_05.png",
+      "url": "development/levels/previews/level_camp_tent_fitted_pitch_05.png",
+      "title": "Level camp tent fitted pitch 05",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 837475,
+      "sha256": "2a534a839b9957a2f6ac122909503e2315ddb04fc9cf51c74f12c9a82c347c01"
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_06.png",
+      "url": "development/levels/previews/level_camp_tent_fitted_pitch_06.png",
+      "title": "Level camp tent fitted pitch 06",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 839506,
+      "sha256": "1923c4774c512244725375133165fc21b20972c61368efa4460e6111b5c74d91"
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_west_ridge.png",
+      "url": "development/levels/previews/level_camp_tent_fitted_west_ridge.png",
+      "title": "Level camp tent fitted west ridge",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 826283,
+      "sha256": "645504a17dde287899a95fac23ebedd19583adb67b91f317e46986668d0b1c0a"
     },
     {
       "path": "development/levels/previews/level_camp_tent_ridge.png",

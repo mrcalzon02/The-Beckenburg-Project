@@ -1,0 +1,5638 @@
+{
+  "status": "measured-native-topology-only",
+  "scene": "development/levels/hollow-creek/hollow-creek-fitted.blend",
+  "scene_sha256": "643b63584a060c179fcd98dbd34c44d7c29dcf3bb2046f70af9cea6e36d0e7a4",
+  "mesh_objects": 803,
+  "total_native_triangles": 1040502,
+  "render_visible_native_triangles": 1037502,
+  "retained_tent_floor_triangles": 2788,
+  "objects": [
+    {
+      "name": "level_camp_terrain_amenities",
+      "triangles": 41782,
+      "vertices": 25681,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Dock boat-service shed",
+      "triangles": 25688,
+      "vertices": 13176,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 1",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 3",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 5",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 7",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 9",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 11",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 13",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 15",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 17",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 19",
+      "triangles": 18148,
+      "vertices": 13495,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 0",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 2",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 4",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 6",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 8",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 10",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 12",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 14",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 16",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Approach decorative large shrub 18",
+      "triangles": 17972,
+      "vertices": 13385,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "level_camp_pavilion",
+      "triangles": 15684,
+      "vertices": 9176,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "level_camp_boundary_logfall",
+      "triangles": 9808,
+      "vertices": 5408,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "west-rolled-bedding",
+      "triangles": 9748,
+      "vertices": 5848,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Additional camp rolled bedding 0",
+      "triangles": 9748,
+      "vertices": 5848,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Additional camp rolled bedding 1",
+      "triangles": 9748,
+      "vertices": 5848,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Additional camp rolled bedding 2",
+      "triangles": 9748,
+      "vertices": 5848,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Additional camp rolled bedding 3",
+      "triangles": 9748,
+      "vertices": 5848,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Additional camp rolled bedding 4",
+      "triangles": 9748,
+      "vertices": 5848,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Additional camp rolled bedding 5",
+      "triangles": 9748,
+      "vertices": 5848,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "level_camp_creek_engineering",
+      "triangles": 8812,
+      "vertices": 4656,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Pavilion built-in masonry hearth",
+      "triangles": 7778,
+      "vertices": 4168,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Additional pitched tent 4",
+      "triangles": 7720,
+      "vertices": 4264,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 436
+    },
+    {
+      "name": "Additional pitched tent 6",
+      "triangles": 7720,
+      "vertices": 4264,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 436
+    },
+    {
+      "name": "east-pitched-dome",
+      "triangles": 7716,
+      "vertices": 4262,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 432
+    },
+    {
+      "name": "Additional pitched tent 2",
+      "triangles": 7716,
+      "vertices": 4262,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 432
+    },
+    {
+      "name": "level_camp_boundary_banks",
+      "triangles": 6992,
+      "vertices": 3598,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "West moored rowing boat",
+      "triangles": 6828,
+      "vertices": 3826,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 001",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 002",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 003",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 004",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 005",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 006",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 007",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 008",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 009",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 011",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle west 012",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle west 013",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle west 014",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle west 015",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle west 016",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle west 020",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far west 021",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far west 022",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far west 023",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far west 024",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far west 026",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far west 028",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far west 029",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 030",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 033",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 036",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 038",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 039",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle east 041",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle east 042",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle east 044",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle east 045",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle east 046",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle east 047",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle east 048",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 051",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 055",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 056",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 057",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 059",
+      "triangles": 6812,
+      "vertices": 11328,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Beach toilet 1",
+      "triangles": 6428,
+      "vertices": 3336,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Beach toilet 2",
+      "triangles": 6428,
+      "vertices": 3336,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Additional pitched tent 5",
+      "triangles": 6428,
+      "vertices": 3650,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 280
+    },
+    {
+      "name": "Additional pitched tent 1",
+      "triangles": 6412,
+      "vertices": 3642,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 264
+    },
+    {
+      "name": "Additional pitched tent 3",
+      "triangles": 6412,
+      "vertices": 3642,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 264
+    },
+    {
+      "name": "west-pitched-ridge",
+      "triangles": 6392,
+      "vertices": 3632,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 244
+    },
+    {
+      "name": "Camp wardens heron memorial",
+      "triangles": 5892,
+      "vertices": 3026,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "west-table",
+      "triangles": 5504,
+      "vertices": 2840,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "pavilion-table-west",
+      "triangles": 5504,
+      "vertices": 2840,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "pavilion-table-east",
+      "triangles": 5504,
+      "vertices": 2840,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Dock reused generator",
+      "triangles": 5284,
+      "vertices": 2704,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Camp folding chair 0",
+      "triangles": 2648,
+      "vertices": 1360,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Camp folding chair 1",
+      "triangles": 2648,
+      "vertices": 1360,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Camp folding chair 2",
+      "triangles": 2648,
+      "vertices": 1360,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Camp folding chair 3",
+      "triangles": 2648,
+      "vertices": 1360,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Camp folding chair 4",
+      "triangles": 2648,
+      "vertices": 1360,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Camp folding chair 5",
+      "triangles": 2648,
+      "vertices": 1360,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Beach refuse bin 1",
+      "triangles": 2564,
+      "vertices": 1312,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Beach refuse bin 2",
+      "triangles": 2564,
+      "vertices": 1312,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "level_camp_dock_utilities",
+      "triangles": 2476,
+      "vertices": 1416,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 262 tint 16777215",
+      "triangles": 1968,
+      "vertices": 5904,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "west-fire-ring",
+      "triangles": 1760,
+      "vertices": 1022,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "level_camp_boundary_fence",
+      "triangles": 1720,
+      "vertices": 1136,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Camp cooler 0",
+      "triangles": 1160,
+      "vertices": 600,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Camp cooler 1",
+      "triangles": 1160,
+      "vertices": 600,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Camp cooler 2",
+      "triangles": 1160,
+      "vertices": 600,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "west-laid-bedding",
+      "triangles": 986,
+      "vertices": 617,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "east-laid-bedding",
+      "triangles": 986,
+      "vertices": 617,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "level_camp_boundary_gate",
+      "triangles": 788,
+      "vertices": 504,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Non-playable east forest terrain apron",
+      "triangles": 660,
+      "vertices": 392,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Non-playable west forest terrain apron",
+      "triangles": 612,
+      "vertices": 364,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Continuous east forest lakeshore return",
+      "triangles": 576,
+      "vertices": 343,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 0",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 1",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 2",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 3",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 4",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 5",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 6",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 8",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 9",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 11",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 12",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 14",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 15",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 18",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 20",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 23",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 24",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 25",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 26",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 27",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 28",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 29",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 30",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 34",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 35",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 36",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 37",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 39",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 40",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 41",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 42",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 43",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 45",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 46",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 47",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 48",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 49",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 50",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 51",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 52",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 53",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 54",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 55",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 56",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 57",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 58",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 59",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 61",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 62",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 63",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 64",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 65",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 66",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 67",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 69",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 71",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 72",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 73",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 76",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 77",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 78",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 79",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 80",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 81",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 85",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 87",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 88",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 89",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 90",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 92",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 93",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 94",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 95",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 96",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 99",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 100",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 101",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 104",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 105",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 106",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 107",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 108",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 109",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 111",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 112",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 113",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 114",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 115",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 117",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 119",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 120",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 121",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 122",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 123",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 124",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 125",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 126",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 127",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 128",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 129",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 131",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 133",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 134",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 135",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 136",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 137",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 141",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 142",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 143",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 144",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 145",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 146",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 148",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Interior grounded fern 149",
+      "triangles": 528,
+      "vertices": 814,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 000",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near west 010",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle west 017",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle west 018",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle west 019",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far west 025",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far west 027",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 031",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 032",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 034",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 035",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 037",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest near east 040",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle east 043",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest middle east 049",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 050",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 052",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 053",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 054",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Forest far east 058",
+      "triangles": 492,
+      "vertices": 288,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Proposed authored refuge 1",
+      "triangles": 464,
+      "vertices": 352,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Proposed authored refuge 2",
+      "triangles": 464,
+      "vertices": 352,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Proposed authored refuge 3",
+      "triangles": 464,
+      "vertices": 352,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Continuous west forest lakeshore return",
+      "triangles": 384,
+      "vertices": 245,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 276 tint 16777215",
+      "triangles": 260,
+      "vertices": 780,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 11 tint 16777215",
+      "triangles": 254,
+      "vertices": 762,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 258 tint 16777215",
+      "triangles": 176,
+      "vertices": 528,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 265 tint 16777215",
+      "triangles": 176,
+      "vertices": 528,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 269 tint 16777215",
+      "triangles": 176,
+      "vertices": 528,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 261 tint 16777215",
+      "triangles": 144,
+      "vertices": 432,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 270 tint 16777215",
+      "triangles": 132,
+      "vertices": 396,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 11 tint 13948116",
+      "triangles": 124,
+      "vertices": 372,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 11 tint 15856113",
+      "triangles": 124,
+      "vertices": 372,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 11 tint 14342874",
+      "triangles": 124,
+      "vertices": 372,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 11 tint 12500670",
+      "triangles": 124,
+      "vertices": 372,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 274 tint 16777215",
+      "triangles": 116,
+      "vertices": 348,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 256 tint 16777215",
+      "triangles": 88,
+      "vertices": 264,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 257 tint 16777215",
+      "triangles": 88,
+      "vertices": 264,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 267 tint 16777215",
+      "triangles": 80,
+      "vertices": 240,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 275 tint 16777215",
+      "triangles": 80,
+      "vertices": 240,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 259 tint 16777215",
+      "triangles": 76,
+      "vertices": 228,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 271 tint 16777215",
+      "triangles": 60,
+      "vertices": 180,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 2435115",
+      "triangles": 48,
+      "vertices": 144,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 9803925",
+      "triangles": 48,
+      "vertices": 144,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 264 tint 16777215",
+      "triangles": 44,
+      "vertices": 132,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 266 tint 16777215",
+      "triangles": 44,
+      "vertices": 132,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 268 tint 16777215",
+      "triangles": 44,
+      "vertices": 132,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 272 tint 16777215",
+      "triangles": 44,
+      "vertices": 132,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 273 tint 16777215",
+      "triangles": 44,
+      "vertices": 132,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 13 tint 16777215",
+      "triangles": 32,
+      "vertices": 96,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 260 tint 16777215",
+      "triangles": 32,
+      "vertices": 96,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.001",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.002",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.003",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.004",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.005",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.006",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.007",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.008",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.009",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.010",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.011",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.012",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.013",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.014",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.015",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.016",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.017",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.018",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.019",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.020",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.021",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.022",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.023",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.024",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.025",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.026",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.027",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.028",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.029",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.030",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.031",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.032",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.033",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.034",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.035",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.036",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.037",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.038",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.039",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.040",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.041",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.042",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.043",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.044",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.045",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.046",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.047",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.048",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.049",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.050",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.051",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.052",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.053",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.054",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.055",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.056",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.057",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.058",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.059",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.060",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.061",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.062",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.063",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.064",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.065",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental billboard solid trunk.066",
+      "triangles": 28,
+      "vertices": 16,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 14 tint 16777215",
+      "triangles": 20,
+      "vertices": 60,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 13 tint 13948116",
+      "triangles": 16,
+      "vertices": 48,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 13 tint 15856113",
+      "triangles": 16,
+      "vertices": 48,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 13 tint 14342874",
+      "triangles": 16,
+      "vertices": 48,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 13 tint 12500670",
+      "triangles": 16,
+      "vertices": 48,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 3426390",
+      "triangles": 14,
+      "vertices": 42,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake water boundary",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "dock-foundation",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "dock-foundation footing",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "dock-foundation footing.001",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "dock-foundation footing.002",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "dock-foundation footing.003",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "creek-crossing-foundation",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "creek-crossing-foundation footing",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "creek-crossing-foundation footing.001",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "creek-crossing-foundation footing.002",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "creek-crossing-foundation footing.003",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 0",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 1",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 2",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 3",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 4",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 5",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 6",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 7",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 8",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 9",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 10",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 11",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 12",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 13",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 14",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 15",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 16",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 17",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 18",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 19",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 20",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 21",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 22",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 23",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 24",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 25",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 26",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 27",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 28",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 29",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 30",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 31",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 32",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 33",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 34",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 35",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 36",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 37",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 38",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 39",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 40",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 41",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 42",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 43",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 44",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 45",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 46",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 47",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 48",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 49",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 50",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 51",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 52",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 53",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 54",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 55",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 56",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 57",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 58",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Grounded scenery root mound 59",
+      "triangles": 12,
+      "vertices": 13,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.001",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.002",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.003",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.004",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.005",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.006",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.007",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.008",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.009",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.010",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Cooler ground shim.011",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet footing support",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet footing support.001",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet footing support.002",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet footing support.003",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet supported entry ramp 0",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet footing support.004",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet footing support.005",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet footing support.006",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet footing support.007",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Toilet supported entry ramp 1",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bin fitted support support",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bin fitted support support.001",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bin fitted support support.002",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bin fitted support support.003",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bin fitted support support.004",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bin fitted support support.005",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bin fitted support support.006",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bin fitted support support.007",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Memorial foundation pier support",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Memorial foundation pier support.001",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Memorial foundation pier support.002",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Memorial foundation pier support.003",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Hearth external foundation support",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Hearth external foundation support.001",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Hearth external foundation support.002",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Hearth external foundation support.003",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 0",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 1",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 2",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 3",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 4",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 5",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 6",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 7",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 8",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 9",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 10",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 11",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 12",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 13",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 14",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 15",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 16",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 17",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 18",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 19",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 20",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 21",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 22",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 23",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 24",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 25",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 26",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 27",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 28",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 29",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 30",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 31",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 32",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 33",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 34",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 35",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 36",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 37",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 38",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 39",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 40",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 41",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 42",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 43",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 44",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 45",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 46",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 47",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 48",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 49",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 50",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 51",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 52",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 53",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 54",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 55",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 56",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 57",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 58",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 59",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 60",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 61",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 62",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker -1 63",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 0",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 1",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 2",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 3",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 4",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 5",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 6",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 7",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 8",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 9",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 10",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 11",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 12",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 13",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 14",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 15",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 16",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 17",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 18",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 19",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 20",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 21",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 22",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 23",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 24",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 25",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 26",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 27",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 28",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 29",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 30",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 31",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 32",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 33",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 34",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 35",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 36",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 37",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 38",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 39",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 40",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 41",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 42",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 43",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 44",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 45",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 46",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 47",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 48",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 49",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 50",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 51",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 52",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 53",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 54",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 55",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 56",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 57",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 58",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 59",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 60",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 61",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 62",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek bank blocker 1 63",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Culvert mouth blocker",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bridge side blocker 11.5",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Bridge side blocker 14.5",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 0",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 1",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 2",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 3",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 4",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 5",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 6",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 7",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 8",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 9",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 10",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 11",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 12",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 13",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 14",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 15",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 16",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 17",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 18",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 19",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 20",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 21",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 22",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 23",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 24",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 25",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 26",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 27",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 28",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 29",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 30",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 31",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 32",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 33",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 34",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 35",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 36",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 37",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 38",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 39",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 40",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 41",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 42",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 43",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 44",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 45",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 46",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 47",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 48",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 49",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 50",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 51",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 52",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 53",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 54",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 55",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 56",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 57",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 70",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 71",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 72",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 73",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 74",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 75",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 76",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 77",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 78",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 79",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 80",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 81",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 82",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 83",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 84",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 85",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 86",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 87",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 88",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 89",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 90",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 91",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 92",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 93",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 94",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 95",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 96",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 111",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 112",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 113",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 114",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 115",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 116",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 117",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 118",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 119",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 120",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 121",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 122",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 123",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 124",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 125",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 126",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 127",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 128",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 129",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 130",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 131",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 132",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 133",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 134",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Lake shore blocker 135",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "West berm-to-shore return",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "East berm-to-shore return",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Dock west shore join",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Dock east shore join",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek mouth west shore join",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Creek mouth east shore join",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Dock side blocker 25.5",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Dock side blocker 30.5",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Dock outer end blocker",
+      "triangles": 12,
+      "vertices": 8,
+      "hidden_in_native_render": true,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 14 tint 13948116",
+      "triangles": 10,
+      "vertices": 30,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 14 tint 15856113",
+      "triangles": 10,
+      "vertices": 30,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 14 tint 14342874",
+      "triangles": 10,
+      "vertices": 30,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 14 tint 12500670",
+      "triangles": 10,
+      "vertices": 30,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 5 tint 16777215",
+      "triangles": 8,
+      "vertices": 24,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 263 tint 16777215",
+      "triangles": 6,
+      "vertices": 18,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 9 tint 16777215",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 5859184",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 4740701",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 6385271",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 10265509",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 10195059",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 12299916",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 11313280",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 13023380",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 15851956",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 7103568",
+      "triangles": 4,
+      "vertices": 12,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 5 tint 13948116",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 5 tint 15856113",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 5 tint 14342874",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 5 tint 12500670",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 9 tint 13948116",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 9 tint 15856113",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 9 tint 14342874",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 9 tint 12500670",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material 2147483645 tint 16777215",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 7897995",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Canonical van runtime material -1 tint 7371651",
+      "triangles": 2,
+      "vertices": 6,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.001",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.002",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.003",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.004",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.005",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.006",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.007",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.008",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.009",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.010",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.011",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.012",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.013",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.014",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.015",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.016",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.017",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.018",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.019",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.020",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.021",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.022",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.023",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.024",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.025",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.026",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.027",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.028",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.029",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.030",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.031",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.032",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.033",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.034",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.035",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.036",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.037",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.038",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.039",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.040",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.041",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.042",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.043",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.044",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.045",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.046",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.047",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.048",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.049",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.050",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.051",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.052",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.053",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.054",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.055",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.056",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.057",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.058",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.059",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.060",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.061",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.062",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.063",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.064",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.065",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    },
+    {
+      "name": "Supplemental camera-facing crown.066",
+      "triangles": 2,
+      "vertices": 4,
+      "hidden_in_native_render": false,
+      "tent_floor_triangles": 0
+    }
+  ],
+  "runtime_fps_measured": false,
+  "limitations": [
+    "Native triangle counts are not runtime performance measurements.",
+    "Current groundsheet vertices are intentionally retained exactly in this silhouette milestone.",
+    "Before runtime acceptance, profile actual renderer/culling/LOD and replace excessive floor tessellation only with a separately validated terrain-conforming mesh, retaining actual support and shell depth."
+  ]
+}

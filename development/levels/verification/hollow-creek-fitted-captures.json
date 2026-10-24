@@ -1,0 +1,35 @@
+{
+  "status": "five actual saved-scene/component captures",
+  "scene": "development/levels/hollow-creek/hollow-creek-fitted.blend",
+  "scene_sha256": "643b63584a060c179fcd98dbd34c44d7c29dcf3bb2046f70af9cea6e36d0e7a4",
+  "captures": [
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-west-native-fitout.png",
+      "sha256": "33fb78b37fc72a5aa35b2ee32fe245ba6606a131e3a1f98ad8c2038d71075b47",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-east-native-fitout.png",
+      "sha256": "a5ce8f2cfc50fe35a4d548da9aaa9923ce8e7058a281dfb22e53ae7ab8616281",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-site-native-fitout.png",
+      "sha256": "0285ceac5577a95af52122b636d314d8dfee8c9f6e6ea38e16c2b4434b4b2aa3",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-floor-east-studio-diagnostic.png",
+      "sha256": "470bf3a70302b0c2bb3e23457c321cbae463b26ce0c5f380c851afd059064498",
+      "kind": "Native component diagnostic",
+      "note": "Isolated actual floor geometry with gold diagnostic edges; not its in-game material/appearance"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-floor-west-studio-diagnostic.png",
+      "sha256": "7253bac04313da4d9325af68f7a12ee7e0227137cafe70c07797f293c8c0e0d8",
+      "kind": "Native component diagnostic",
+      "note": "Isolated actual floor geometry with gold diagnostic edges; not its in-game material/appearance"
+    }
+  ],
+  "runtime_capture": false
+}

@@ -936,13 +936,13 @@ Older-map obligation: Audit the same topology, transform, actual support and pos
 
 ### DEV-067 — Retained native tent floors carry excessive authoring tessellation
 
-**Status:** open-runtime-geometry-budget · **Affected:** Hollow Creek eight terrain-conformed tent floors
+**Status:** fixed-native-floor-topology-runtime-performance-open · **Affected:** Hollow Creek eight terrain-conformed tent floors
 
 Native inventory measures465696 retained floor triangles out of1500410 render-visible native triangles, despite small tent footprints.
 
 Cause / uncertainty: Earlier floor conformance subdivided many source polygons densely instead of clipping/refitting to the actual terrain triangle boundaries.
 
-Fix / next action: Before runtime acceptance, replace excessive fitted-floor topology with separately validated terrain-conforming geometry, retaining the real ground support, depth, boundaries, entry/bedding fit and shared render/collision coordinates. Preserve current source; do not raise asset/loader caps or claim native counts prove runtime FPS.
+Fix / next action: Before runtime acceptance, replace excessive fitted-floor topology with separately validated terrain-conforming geometry, retaining the real ground support, depth, boundaries, entry/bedding fit and shared render/collision coordinates. Preserve current source; do not raise asset/loader caps or claim native counts prove runtime FPS. Current fitted-floor checkpoint replaces465696 floor triangles with2788 by clipping actual terrain triangles to the original4/64-edge source footprints. Eight fitted assemblies export under unchanged caps;50776 dense terrain probes, exact source/GLB triangle equality and native fit checks pass. Actual runtime FPS/LOD remains unmeasured.
 
 Evidence and verification: verification/hollow-creek-tailored-geometry-cost.json; profile_hollow_creek_geometry.py; final tailored handoff
 
@@ -975,6 +975,34 @@ Fix / next action: Review the nine additional authored state resources/provenanc
 Evidence and verification: quality/evidence/DEV-069-full-multiplayer-baseline.txt; verification/hollow-creek-tailored-runtime.json; dated TAILORED_FABRIC handoff
 
 Older-map obligation: Shared CI failure predates these map asset changes and affects broad release acceptance; retain it as an open prerequisite across all map acceptance audits.
+
+### DEV-070 — Tolerance-classified clipping intersections extrapolated outside short edges
+
+**Status:** fixed-terrain-floor-clipping · **Affected:** Intermediate floor retopology
+
+A clipped floor produced reversed/duplicate top triangles and an edge with four adjacent faces.
+
+Cause / uncertainty: An absolute half-plane epsilon classified slightly negative endpoints as inside, but interpolation still intersected the zero line, extrapolating outside the segment. Dense old boundary wrinkles amplified the issue.
+
+Fix / next action: Use consistent signed half-plane intersections and the original4/64-corner source footprints. Weld only new floor vertices at micrometre scale and require closed shells, correct signed area, full coverage and actual terrain contact. Preserve failing topology diagnostic.
+
+Evidence and verification: quality/evidence/DEV-070-clipped-floor-degenerates.json; verification/hollow-creek-fitted-floors.json
+
+Older-map obligation: Audit equivalent fitted floors and nonplanar source/export surfaces independently. Native triangle counts and source equality do not establish gameplay, optical, host/LAN or runtime performance acceptance.
+
+### DEV-071 — Nearest-face verification misreported thin-face export disagreement
+
+**Status:** fixed-with-exact-oriented-raw-triangle-audit · **Affected:** Fitted tent source/export verification
+
+Blender nearest-face queries reported up to1.3mm apparent source/GLB separation, including after explicit triangulation, despite matching bounds.
+
+Cause / uncertainty: Float nearest-triangle queries are unreliable on some extremely thin source canvas faces; exact raw oriented triangle buffers demonstrate agreement. Implicit quad diagonals also make future matching ambiguous.
+
+Fix / next action: Make original rendered diagonals explicit without moving nonfloor vertices or UVs, retain split normals, and compare complete oriented triangle multisets directly against actual GLB float/index buffers. All8 source/export sets match exactly. Guard source scene SHA before verification and run dependent checks only after generation completes; do not loosen geometric tolerances to silence the nearest-query result.
+
+Evidence and verification: quality/evidence/DEV-071-implicit-quad-export-drift.txt; quality/evidence/DEV-071-raw-triangle-agreement.txt; verification/hollow-creek-fitted-floors.json
+
+Older-map obligation: Audit equivalent fitted floors and nonplanar source/export surfaces independently. Native triangle counts and source equality do not establish gameplay, optical, host/LAN or runtime performance acceptance.
 
 ## Required audit categories
 

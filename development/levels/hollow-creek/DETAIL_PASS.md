@@ -63,3 +63,8 @@ Next: runtime integration milestone (including actual movement containment), sup
 ## Tailored fabric geometry,24 October
 
 [Current tent/bedding review](TAILORED_REVIEW.html) and hollow-creek-tailored.blend advance3 model families and15 placed instances. Tension folds/sag, a continuous arched dome entrance, supported seams and quilt relief are actual geometry. Exact8 fitted floors,72 positive roof-presence probes,3190 supported seam probes and32 shell-thickness rays pass; actual crouch/routes/rituals/bedding pass after final visual correction. Runtime source models pass1080 independent UV/pixel checks. DEV-062..066 and the dated TAILORED_FABRIC handoff retain discoveries and pending integration. No new map was rebuilt/unlocked.
+
+
+## Terrain-clipped fitted assemblies,24 October
+
+[Fitted-floor review](FITTED_FLOOR_REVIEW.html):8 purpose-built assemblies retain their rendered nonfloor shape/UV/pivots while reducing floor triangles465696→2788.50776 actual support/depth probes and exact source/GLB triangle identity pass. Actual renderer/physics/host/FPS gates remain open. See dated FITTED_FLOORS handoff and SITE_REFINEMENT_QUEUE_2026-10-24.md for the latest organic statue, environmental textures, tent headings, rock/shore and UV-goose encounter requirements.

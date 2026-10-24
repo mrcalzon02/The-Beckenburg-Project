@@ -39,7 +39,7 @@ These are work states, not completion percentages or release claims.
 | Beckenburg Penitentiary | [prison](layouts/prison/layout.json) | Broad native terrain foundation + runtime asset loading checked; per-site grades/crossings remain pending |
 | Ravenshade School | [school](layouts/school/layout.json) | Existing implementation: retrospective acceptance audit pending |
 | Blackpine Logging Camp | [wld-01](layouts/wld-01/layout.json) | Blackpine: built/refined; native human/multi-PC/performance gates pending |
-| Camp Hollow Creek | [wld-02](layouts/wld-02/layout.json) | Hollow Creek: facilities + open pavilion native validation; runtime site integration pending |
+| Camp Hollow Creek | [wld-02](layouts/wld-02/layout.json) | Hollow Creek: refined camp assets +8 terrain-clipped fitted assemblies checked; runtime site integration pending |
 | Red Mesa Ancestral Caves | [wld-03](layouts/wld-03/layout.json) | Broad native terrain foundation + runtime asset loading checked; per-site grades/crossings remain pending |
 | Widow's Peak Fire Lookout | [wld-04](layouts/wld-04/layout.json) | Broad native terrain foundation + runtime asset loading checked; per-site grades/crossings remain pending |
 | Dead Man's Claim | [wld-05](layouts/wld-05/layout.json) | Broad native terrain foundation + runtime asset loading checked; per-site grades/crossings remain pending |

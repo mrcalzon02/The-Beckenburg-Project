@@ -1,0 +1,32 @@
+{
+  "status": "pass-focused-fitted-asset-checks",
+  "date": "2026-10-24",
+  "main_compile": "all current Java main sources,JDK17",
+  "new_fitted_assets": 8,
+  "new_fitted_triangles": 56516,
+  "new_uv_pixel_samples": 3744,
+  "previous_tailored": {
+    "assets": 3,
+    "samples": 1080,
+    "result": "pass"
+  },
+  "previous_authored": {
+    "assets": 14,
+    "samples": 1008,
+    "result": "pass"
+  },
+  "legacy_equipment": {
+    "assets": 8,
+    "result": "pass"
+  },
+  "regression_manifest": "HollowCreekFittedTentTest added with default committed fixture path",
+  "existing_open_checks": [
+    "DEV-069 broad multiplayer equipment coverage count mismatch",
+    "DEV-060 local vehicle color-count baseline failure"
+  ],
+  "not_claimed": [
+    "Runtime Hollow Creek renderer/physics/circuits/AI/host/LAN",
+    "Runtime FPS/human/hardware/LOD",
+    "Layered water or authored goose encounter implementation"
+  ]
+}

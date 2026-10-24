@@ -31,3 +31,7 @@ Full multiplayer CI run40119993589 on8bc0eaa fails EquipmentAssetAssignmentsTest
 ## Verified final publication
 
 Final corrected model/scene checkpoint ba00543659776b9d48eed1b396a703e822e2fa9a is on remote main.14 actual immutable GitHub source/native/export/report downloads match committed bytes; deployed TAILORED_REVIEW.html matches that commit exactly. Live shared gallery and manifest match, and all690 PNG URLs/dimensions plus233 full evidence image hashes pass. See hollow-creek-tailored-delivery.json and development/verification/live-development-gallery.json. Focused source/native/asset checks are scoped; full multiplayer CI remains unaccepted under DEV-069. Exact current-run token counts/breakdown remain unavailable. Full all-map goal remains active; no map was unlocked or called complete.
+
+## Superseding terrain-clipped floors
+
+Current source is hollow-creek-fitted.blend and FITTED_FLOOR_REVIEW.html; read DEVELOPMENT_HANDOFF_2026-10-24_FITTED_FLOORS.md. The dense-floor source remains immutable. New purpose-built floor topology retains exact terrain support/depth and original material mapping; the prior232864-vertex identity gate applies to the preserved tailored checkpoint, not the intentionally retopologized derived scene. Latest user statue/texture/heading/rocks/beach/UV-goose requests are in the new site refinement queue.

@@ -1,0 +1,171 @@
+{
+  "status": "pass-native-floor-and-eight-export-only",
+  "floor_count": 8,
+  "old_floor_triangles": 465696,
+  "new_floor_triangles": 2788,
+  "dense_actual_floor_probes": 50776,
+  "max_terrain_offset_error_m": 3.067016601562833e-06,
+  "max_source_top_uv_error": 2.25192827330023e-06,
+  "unchanged_other_meshes": 795,
+  "all_nonfloor_parts_and_poses_unchanged": true,
+  "positive_roof_floor_rays": 72,
+  "bedding_floor_contact_rays": 21,
+  "floors": [
+    {
+      "name": "west-pitched-ridge",
+      "closed_floor": true,
+      "actual_grid_probes": 7524,
+      "max_support_offset_error_m": 2.983093261719333e-06,
+      "max_vertical_depth_error_m": 2.94494628906225e-06,
+      "top_uv_probes": 80,
+      "max_top_uv_error": 1.2066738987598358e-06,
+      "footprint_area_m2": 8.840005264282809,
+      "actual_top_area_m2": 8.840005261823535,
+      "new_floor_triangles": 244
+    },
+    {
+      "name": "east-pitched-dome",
+      "closed_floor": true,
+      "actual_grid_probes": 5170,
+      "max_support_offset_error_m": 3.067016601562833e-06,
+      "max_vertical_depth_error_m": 2.94494628906225e-06,
+      "top_uv_probes": 122,
+      "max_top_uv_error": 1.9732298035535223e-06,
+      "footprint_area_m2": 6.150142310914816,
+      "actual_top_area_m2": 6.150141620251816,
+      "new_floor_triangles": 432
+    },
+    {
+      "name": "Additional pitched tent 1",
+      "closed_floor": true,
+      "actual_grid_probes": 7524,
+      "max_support_offset_error_m": 3.067016601562833e-06,
+      "max_vertical_depth_error_m": 2.94494628906225e-06,
+      "top_uv_probes": 90,
+      "max_top_uv_error": 7.023889703194897e-07,
+      "footprint_area_m2": 8.840005264282809,
+      "actual_top_area_m2": 8.84000529232435,
+      "new_floor_triangles": 264
+    },
+    {
+      "name": "Additional pitched tent 2",
+      "closed_floor": true,
+      "actual_grid_probes": 5170,
+      "max_support_offset_error_m": 3.067016601562833e-06,
+      "max_vertical_depth_error_m": 3.7307739257815e-06,
+      "top_uv_probes": 122,
+      "max_top_uv_error": 9.146270819604396e-07,
+      "footprint_area_m2": 6.150144879342406,
+      "actual_top_area_m2": 6.150144806293611,
+      "new_floor_triangles": 432
+    },
+    {
+      "name": "Additional pitched tent 3",
+      "closed_floor": true,
+      "actual_grid_probes": 7524,
+      "max_support_offset_error_m": 3.067016601562833e-06,
+      "max_vertical_depth_error_m": 3.7307739257815e-06,
+      "top_uv_probes": 90,
+      "max_top_uv_error": 1.2286578868897502e-06,
+      "footprint_area_m2": 8.839998779294547,
+      "actual_top_area_m2": 8.839998782321345,
+      "new_floor_triangles": 264
+    },
+    {
+      "name": "Additional pitched tent 4",
+      "closed_floor": true,
+      "actual_grid_probes": 5170,
+      "max_support_offset_error_m": 3.067016601562833e-06,
+      "max_vertical_depth_error_m": 2.94494628906225e-06,
+      "top_uv_probes": 124,
+      "max_top_uv_error": 1.9903179836466833e-06,
+      "footprint_area_m2": 6.15014286780206,
+      "actual_top_area_m2": 6.150142774269625,
+      "new_floor_triangles": 436
+    },
+    {
+      "name": "Additional pitched tent 5",
+      "closed_floor": true,
+      "actual_grid_probes": 7524,
+      "max_support_offset_error_m": 3.067016601562833e-06,
+      "max_vertical_depth_error_m": 2.94494628906225e-06,
+      "top_uv_probes": 94,
+      "max_top_uv_error": 1.9778308789630827e-06,
+      "footprint_area_m2": 8.839998779294547,
+      "actual_top_area_m2": 8.839998836629093,
+      "new_floor_triangles": 280
+    },
+    {
+      "name": "Additional pitched tent 6",
+      "closed_floor": true,
+      "actual_grid_probes": 5170,
+      "max_support_offset_error_m": 3.067016601562833e-06,
+      "max_vertical_depth_error_m": 2.94494628906225e-06,
+      "top_uv_probes": 124,
+      "max_top_uv_error": 2.25192827330023e-06,
+      "footprint_area_m2": 6.150142310914816,
+      "actual_top_area_m2": 6.150142890888674,
+      "new_floor_triangles": 436
+    }
+  ],
+  "actual_glb_reimports": [
+    {
+      "id": "level_camp_tent_fitted_west_ridge",
+      "triangles": 6392,
+      "bytes": 838772,
+      "exact_raw_oriented_triangle_identity": true,
+      "native_pivot_preserved": true
+    },
+    {
+      "id": "level_camp_tent_fitted_east_dome",
+      "triangles": 7716,
+      "bytes": 682932,
+      "exact_raw_oriented_triangle_identity": true,
+      "native_pivot_preserved": true
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_01",
+      "triangles": 6412,
+      "bytes": 841476,
+      "exact_raw_oriented_triangle_identity": true,
+      "native_pivot_preserved": true
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_02",
+      "triangles": 7716,
+      "bytes": 684464,
+      "exact_raw_oriented_triangle_identity": true,
+      "native_pivot_preserved": true
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_03",
+      "triangles": 6412,
+      "bytes": 835776,
+      "exact_raw_oriented_triangle_identity": true,
+      "native_pivot_preserved": true
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_04",
+      "triangles": 7720,
+      "bytes": 681380,
+      "exact_raw_oriented_triangle_identity": true,
+      "native_pivot_preserved": true
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_05",
+      "triangles": 6428,
+      "bytes": 836928,
+      "exact_raw_oriented_triangle_identity": true,
+      "native_pivot_preserved": true
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_06",
+      "triangles": 7720,
+      "bytes": 683588,
+      "exact_raw_oriented_triangle_identity": true,
+      "native_pivot_preserved": true
+    }
+  ],
+  "scene_sha256": "643b63584a060c179fcd98dbd34c44d7c29dcf3bb2046f70af9cea6e36d0e7a4",
+  "runtime_fps_or_gameplay_acceptance": false
+}
