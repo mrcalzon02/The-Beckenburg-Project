@@ -1,3 +1,26 @@
+# Publication readback and water intake — 23 October 2026
+
+Terrain checkpoint 7734b39e219bdb41f94229819b59d5def2503847 is on main;
+remote SHA readback matched. Pages built that commit. Live gallery/manifest and
+all 484 PNG URL/dimension checks passed, plus 38 complete evidence-file SHA-256
+checks. See development/verification/live-development-gallery.json.
+
+Water archive acquired without execution: SHA-256
+b474d439b0f0d406eedc5f5de6f77725be98e8f3fce85dcdd93533e9817e1f7b.
+Original shader/README retained in development/assets/references/psx-water, with
+source/license intake metadata. Public author page declares MIT; archive has no
+separate license/copyright notice. Example CC Attribution texture was not imported.
+Actual shader has wave displacement and scrolling/pixelated texture blending,
+but no ALPHA, depth fade or foam implementation. It is reference source, not a
+working water integration. Next water work must implement transparency/pass order,
+submerged-depth colour, intersections/foam, cameras and both renderer paths.
+
+Terrain runtime integration and natural containment remain the current site gate;
+do not advance utility WIP or random structure detail ahead of it. Maintain source
+preservation, terrain-led irregular edges and properly supported crossings.
+
+---
+
 # Latest terrain-first checkpoint — 23 October 2026
 
 User corrected construction order: terrain/site first, meaningful height variation,

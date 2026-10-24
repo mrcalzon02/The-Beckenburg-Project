@@ -9,8 +9,16 @@ Author: Immaculate Lift Studio. Primary page inspected 23 October 2026.
 The page identifies the shader as MIT and the package as a Godot 4 project.
 It lists two moving texture layers, vertex waves, pixelation, opacity and edge foam.
 The author's page comment distinguishes the example textures as CC Attribution.
-The actual archive/license text and texture attribution have not yet been acquired
-or validated; do not relabel its contents CC0 or claim the Godot shader is installed.
+The archive has now been acquired and inspected without running its project.
+Reference shader/README bytes and archive SHA-256 are preserved under
+`development/assets/references/psx-water/`. No separate LICENSE file or copyright
+year is present in the archive. The author's public MIT declaration is recorded;
+no missing notice/year has been invented. Example textures were not imported.
+Do not relabel third-party source CC0 or claim the Godot shader is installed.
+
+Actual source inspection: it writes ALBEDO/METALLIC/ROUGHNESS, but no ALPHA,
+depth fade or shoreline foam. Those advertised/customization goals still require
+implementation in our renderer; copying this shader alone does not provide them.
 
 ## Required adaptation and acceptance
 

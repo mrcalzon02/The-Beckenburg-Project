@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-23T19:33:25.112995+00:00",
-  "published_commit": "962d007e5a19aa10e8fe543f037242f8c45cc0fe",
+  "verified_at": "2026-10-24T00:51:25.795744+00:00",
+  "published_commit": "7734b39e219bdb41f94229819b59d5def2503847",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 469,
+  "image_count": 484,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -618,6 +618,18 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/defects/DEV-017-before-pavilion-join.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-020-before-creek-mouth.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -714,7 +726,67 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/hollow-creek/pavilion-join-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/pavilion-mounted-utilities-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/pavilion-native-circuit-off.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/pavilion-native-circuit-on.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/hollow-creek/pavilion-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/pavilion-structure-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/pavilion-under-roof-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/terrain-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/terrain-van-approach-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/terrain-water-crossings-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/terrain-worn-trail-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -894,6 +966,18 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_pavilion.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_pavilion_services.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_picnic_table.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -910,6 +994,12 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_terrain.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/level_camp_well.png",

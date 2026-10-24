@@ -1,0 +1,19 @@
+{
+  "source": "https://immaculate-lift-studio.itch.io/psx-style-water-surface",
+  "author": "Immaculate Lift Studio",
+  "inspected_date": "2026-10-23",
+  "archive_name": "PSX-Ocean-Surface.zip",
+  "archive_sha256": "b474d439b0f0d406eedc5f5de6f77725be98e8f3fce85dcdd93533e9817e1f7b",
+  "license_declared_on_author_page": "MIT",
+  "separate_license_file_in_archive": false,
+  "original_source_notice": "Archive shader and README contain no additional license or copyright notice; retained exactly. Do not invent a year or claim a bundled license file.",
+  "example_texture": "Not imported. Author page separately identifies example texture as CC Attribution.",
+  "integration": "Reference intake only; Godot shader is not installed in the Java/OpenGL renderer.",
+  "source_findings": [
+    "Two independently scrolling pixelated texture samples and blend factor.",
+    "Vertex sine/noise wave displacement.",
+    "Fragment code writes ALBEDO, METALLIC and ROUGHNESS.",
+    "Downloaded shader does not write ALPHA and contains no implemented depth-fade/shore-foam calculation.",
+    "Layered transparency, ordering, depth-dependent opacity and foam require an actual renderer implementation and tests."
+  ]
+}
