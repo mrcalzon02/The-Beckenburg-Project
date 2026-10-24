@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-24T12:23:17.307833+00:00",
-  "published_commit": "b0c58f6bf762cb36c85a248004b87204f11a0e69",
+  "verified_at": "2026-10-24T16:17:37.906748+00:00",
+  "published_commit": "0e5e84dd3d497e2cb1031854ef1575af18872211",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 602,
+  "image_count": 628,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -744,6 +744,36 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/defects/DEV-042-before-incomplete-shore-return.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-043-before-open-boat-ends.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-043-before-roof-post-tips.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-046-before-culvert-skin-and-water.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-047-before-recessed-culvert.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1020,6 +1050,42 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/hollow-creek/amenities-approach-shrubs-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-beach-toilets-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-culvert-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-expanded-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-hearth-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-memorial-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1045,6 +1111,24 @@
     },
     {
       "path": "development/levels/previews/hollow-creek/boundary-van-exit-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/camp-furnished-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/dock-expanded-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/dock-service-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -1147,6 +1231,12 @@
     },
     {
       "path": "development/levels/previews/hollow-creek/pavilion-under-roof-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/shore-return-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -1350,6 +1440,18 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_cooler.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_dock_shed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
       "path": "development/levels/previews/level_camp_fire_ring.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1357,6 +1459,18 @@
     },
     {
       "path": "development/levels/previews/level_camp_fireplace.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_folding_chair.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_heron_memorial.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
@@ -1380,6 +1494,12 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_pavilion_fireplace.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
       "path": "development/levels/previews/level_camp_pavilion_services.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1392,13 +1512,49 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_portable_toilet_closed.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_portable_toilet_open.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
       "path": "development/levels/previews/level_camp_rainbarrel.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_refuse_bin.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_rowboat.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
       "path": "development/levels/previews/level_camp_sawhorse.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_shrub_decorative_a.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_shrub_decorative_b.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false

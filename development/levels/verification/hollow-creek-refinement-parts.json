@@ -1,0 +1,52 @@
+{
+  "status": "pass-native-parts-only",
+  "asset_count": 20,
+  "fine_packed_diffuse": true,
+  "protected_clean_sources_unchanged": 59,
+  "actual_part_checks": [
+    {
+      "kind": "closed actual hull",
+      "faces": 630,
+      "edges": 1278
+    },
+    {
+      "kind": "table fixing above real slat/bearing",
+      "x": -0.4999999821186066,
+      "y": -0.3499999940395355
+    },
+    {
+      "kind": "table fixing above real slat/bearing",
+      "x": -0.4999999821186066,
+      "y": 0.3499999940395355
+    },
+    {
+      "kind": "table fixing above real slat/bearing",
+      "x": 0.4999999821186066,
+      "y": -0.3499999940395355
+    },
+    {
+      "kind": "table fixing above real slat/bearing",
+      "x": 0.4999999821186066,
+      "y": 0.3499999940395355
+    },
+    {
+      "kind": "charred wood/ash support",
+      "gap_m": 0.0024137496948242188
+    },
+    {
+      "kind": "charred wood/ash support",
+      "gap_m": 0.0024137478321790695
+    },
+    {
+      "kind": "charred wood/ash support",
+      "gap_m": 0.0024137496948242188
+    }
+  ],
+  "limitations": [
+    "No runtime map unlock/collision/AI/circuit, host/LAN, photo or performance acceptance.",
+    "Invisible blocker volumes are native authoring only; wiring into player/ghost collision and movement tests remains mandatory.",
+    "Native water appearance is improved; layered transparency/depth/foam/runtime port remain open.",
+    "Masonry hearth is cold; combustion/exhaust and human fire-clearance/art review remain open.",
+    "This is a second detail/weathering iteration, not final human art acceptance."
+  ]
+}

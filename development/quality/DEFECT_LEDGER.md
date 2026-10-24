@@ -710,6 +710,62 @@ Evidence and verification: amenities.json blockers; verification/hollow-creek-am
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
+### DEV-051 — Global bevel exceeded the unchanged rowboat mesh budget
+
+**Status:** fixed-refinement-export · **Affected:** Second Hollow Creek model pass
+
+First global three-segment bevel produced77037 rowboat triangles; authoring assertion stopped export.
+
+Cause / uncertainty: Applying bevel indiscriminately to thin curved hulls and many segmented rods multiplied topology without improving the silhouette.
+
+Fix / next action: Keep real curved hull geometry, soften curve normals, and apply small radii to appropriate construction edges only. All20 final refined assets pass unchanged50k triangle/4MB caps.
+
+Evidence and verification: refine_hollow_creek_models.py assertion; HollowCreekRefinementAssetsTest; actual native GLB reimports
+
+Older-map obligation: Audit this failure category on each older model/site; refined source/geometry checks are not full runtime/human acceptance.
+
+### DEV-052 — Smoothing exposed flat-panel shading smear and overlapping boat end caps
+
+**Status:** fixed-refined-assets-only · **Affected:** Refined masonry/metal panels and rowboat ends
+
+Broad panels looked warped; boat cap faces rendered black in actual studio captures.
+
+Cause / uncertainty: Unselective smooth normals blurred planar surfaces. The earlier closed-end draft had coplanar inner/outer cap faces and redundant curved end strips.
+
+Fix / next action: Keep axis-aligned panels/caps flat while smoothing actual curves. Rebuild boat ends with50mm separation, remove redundant end strips and close top rim. Replace low-frequency sinusoidal weather marks with nondirectional interpolated noise; add recessed front flue stone courses without changing roof clearance.
+
+Evidence and verification: development/levels/previews/defects/DEV-052-before-refined-boat-end-overlap.png; DEV-052-before-panel-normal-smearing.png; final actual source/GLB captures
+
+Older-map obligation: Audit this failure category on each older model/site; refined source/geometry checks are not full runtime/human acceptance.
+
+### DEV-053 — Refined instance assignment duplicated empty support-group definitions
+
+**Status:** fixed-native-authoring-metadata · **Affected:** Second-pass scene and chair support verifier
+
+A legacy point comparison tested zero chair-foot vertices; component review then found empty duplicate group names, causing30 strict contact-check findings.
+
+Cause / uncertainty: Blender carried mesh group definitions during data replacement; the authoring loop added a second name set. The legacy test silently relied on pre-bevel vertex positions.
+
+Fix / next action: Reuse existing source group definitions, remove21626 unused duplicate definitions from the current derived scene, and verify each actual leg group instead of old vertex positions. Final960 real contact vertices cover24 chair legs. Geometry/transforms did not change during metadata cleanup.
+
+Evidence and verification: development/quality/evidence/DEV-053-empty-group-refinement-check.json; verification/hollow-creek-refinement-group-cleanup.json; hollow-creek-refined-dock.json
+
+Older-map obligation: Audit this failure category on each older model/site; refined source/geometry checks are not full runtime/human acceptance.
+
+### DEV-054 — Detail parts needed actual support rather than plausible overall bounds
+
+**Status:** fixed-refined-parts-only · **Affected:** Hollow Creek fireplace, picnic-table fixings and cold fire ring
+
+Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.
+
+Cause / uncertainty: Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.
+
+Fix / next action: Place split wood on actual grate bars, align table fixings to measured rails at X±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.
+
+Evidence and verification: development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json
+
+Older-map obligation: Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

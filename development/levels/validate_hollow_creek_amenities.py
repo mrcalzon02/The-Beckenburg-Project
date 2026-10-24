@@ -1,12 +1,15 @@
 """Reopen native expansion; check actual faces, support, routes and blockers.
 Does not substitute for actual player collision, AI, electrical or LAN tests.
 """
-import bpy,json,math,hashlib
+import bpy,json,math,hashlib,sys
 from pathlib import Path
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'development/levels/hollow-creek'
-r=json.loads((OUT/'amenities.json').read_text(encoding='utf-8'));d=json.loads((OUT/'organic-terrain.json').read_text(encoding='utf-8'));bpy.ops.wm.open_mainfile(filepath=str(OUT/'hollow-creek-amenities.blend'));scene=bpy.context.scene
+r=json.loads((OUT/'amenities.json').read_text(encoding='utf-8'));d=json.loads((OUT/'organic-terrain.json').read_text(encoding='utf-8'));refined='--refined' in sys.argv
+if refined:
+ refinement=json.loads((OUT/'refined-models.json').read_text(encoding='utf-8'));r['assets']=refinement['assets'];r['protected_sources']=refinement['protected_sources']
+bpy.ops.wm.open_mainfile(filepath=str(OUT/('hollow-creek-refined.blend' if refined else 'hollow-creek-amenities.blend')));scene=bpy.context.scene
 def tree(objects,group=None):
  vv=[];ff=[];owners=[]
  for o in objects:
@@ -37,6 +40,8 @@ for rite in d['rituals']:
   for j in range(11):ritual_samples+=1;check(obstacles.find_nearest(Vector((x-2.2+i*.44,-(z-2.2+j*.44),y+.3)),.23)[0] is None,'new detail blocks ritual',rite=rite['rite'])
 tent_floor=0;doors=0;bedding=0
 tents=[p for p in r['placements'] if p['name'].startswith('Additional pitched tent ')];check(len(tents)==6,'six additional tents required')
+if refined:
+ old=json.loads((OUT/'tents.json').read_text(encoding='utf-8'));tents += [dict(p,name=p['native_object']) for p in old['placements'][:2]]
 for index,p in enumerate(tents):
  o=bpy.data.objects[p['name']];floor=tree([o],lambda n:'groundsheet' in n.lower() or 'physical floor' in n.lower())[0];body=tree([o])[0];cs=math.cos(p['yaw']);sn=math.sin(p['yaw'])
  def world(lx,ly):return p['x']+cs*lx-sn*ly,p['z']-sn*lx-cs*ly
@@ -46,6 +51,7 @@ for index,p in enumerate(tents):
  for i in range(41):
   x,z=world(0,-2.3+i*2.5/40);g=height(x,z)+.028
   for h in [.24,.38,.52,.66,.83]:doors+=1;check(body.find_nearest(Vector((x,-z,g+h)),.22)[0] is None,'crouch tent entry blocked',name=o.name,x=x,z=z,h=h)
+ if index>=6:continue
  roll=bpy.data.objects['Additional camp rolled bedding '+str(index)];rolltree=tree([roll])[0]
  for dx in [-.20,0,.20]:
   x=p['x']+.55+dx*cs;z=p['z']-dx*sn;g=height(x,z);a=floor.ray_cast(Vector((x,-z,g+.3)),Vector((0,0,-1)),.5)[0];b=rolltree.ray_cast(Vector((x,-z,g-.1)),Vector((0,0,1)),.7)[0];bedding+=1;check(a is not None and b is not None and -.006<b.z-a.z<.014,'additional roll support',name=roll.name,x=x,z=z)
@@ -82,9 +88,15 @@ for dx in [-.4,0,.4]:
 check(bpy.data.objects.get('Creek water boundary') is None,'coplanar lake/creek water overlap remains')
 check(len(r['proposed_refuges'])==r['shared_hiding_maximum']==3,'shared native hiding reservation budget')
 check(all(p['asset'].startswith('level_camp_shrub_decorative_') for p in r['large_decorative_shrubs']),'ordinary planting reuses hiding shrub')
+firewood_contacts=0
+if refined:
+ hearth=bpy.data.objects['Pavilion built-in masonry hearth'];grate=tree([hearth],lambda n:n.startswith('Supported fire grate'))[0]
+ for group in [g for g in hearth.vertex_groups if g.name.startswith('Cold split firewood')]:
+  vertices=[v.co for v in hearth.data.vertices if any(g.group==group.index and g.weight>.5 for g in v.groups)];cy=(min(v.y for v in vertices)+max(v.y for v in vertices))/2;x=-.35;y=cy+x*.06/1.3;wood=tree([hearth],lambda n:n==group.name)[0];origin=hearth.matrix_world@Vector((x,y,.30));hit=wood.ray_cast(origin,Vector((0,0,1)),.5)[0]
+  below=grate.ray_cast(hit-Vector((0,0,.00001)),Vector((0,0,-1)),.08)[0] if hit is not None else None;firewood_contacts+=1;check(hit is not None and below is not None and -.002<hit.z-below.z<.012,'cold firewood is not supported on real grate',group=group.name)
 for p,h in r['protected_sources'].items():check(hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==h,'prior source changed',path=p)
-report=dict(status='pass-native-only' if not findings else 'refinement-required',protected_route_samples=route_samples,ritual_samples=ritual_samples,new_tent_floor_contacts=tent_floor,new_tent_crouch_samples=doors,new_roll_contacts=bedding,foundation_ramp_checks=support_checks,max_toilet_ramp_grade=max_ramp_grade,barrier_volumes=len(r['blockers']),actual_barrier_rays=barrier_rays,culvert_terrain_sight_rays=culvert_sight_rays,large_shrubs=len(r['large_decorative_shrubs']),total_pitched_tents=r['total_pitched_tents'],findings=findings,blocker_runtime_status=r['blocker_runtime_status'],limitations=r['limitations'])
-path=ROOT/'development/levels/verification/hollow-creek-amenities.json';path.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');assert not findings,('Native expansion failed',len(findings),'see',path)
+report=dict(status='pass-native-only' if not findings else 'refinement-required',protected_route_samples=route_samples,ritual_samples=ritual_samples,new_tent_floor_contacts=tent_floor,new_tent_crouch_samples=doors,new_roll_contacts=bedding,foundation_ramp_checks=support_checks,max_toilet_ramp_grade=max_ramp_grade,barrier_volumes=len(r['blockers']),actual_barrier_rays=barrier_rays,culvert_terrain_sight_rays=culvert_sight_rays,cold_firewood_grate_contacts=firewood_contacts,large_shrubs=len(r['large_decorative_shrubs']),total_pitched_tents=r['total_pitched_tents'],findings=findings,blocker_runtime_status=r['blocker_runtime_status'],limitations=r['limitations'])
+path=ROOT/('development/levels/verification/hollow-creek-refined.json' if refined else 'development/levels/verification/hollow-creek-amenities.json');path.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');assert not findings,('Native expansion failed',len(findings),'see',path)
 imports=[]
 for a in r['assets']:
  file=ROOT/f"assets/runtime/models/{a['id']}.glb";assert hashlib.sha256(file.read_bytes()).hexdigest()==a['sha256'];bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(file));n=0

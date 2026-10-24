@@ -1,0 +1,921 @@
+{
+  "status": "native detail/smoothing/weathering checks pass; runtime/human art/performance pending",
+  "assets": [
+    {
+      "id": "level_camp_dock_shed_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f3ee276c7fa88e7f406cad4fc07dcf72c538dc2871b7a9ea8ae25d4600af1008",
+      "bytes": 1357836,
+      "triangles": 25688,
+      "bounds": [
+        [
+          -1.2000000476837158,
+          -1.4901161193847656e-08,
+          -1.340000033378601
+        ],
+        [
+          1.159999966621399,
+          2.7200000286102295,
+          1.340000033378601
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_dock_shed_refined.blend",
+      "clean_source": "level_camp_dock_shed",
+      "features": [
+        "Individual boarding, open vent gaps, embedded fixing heads and roof fasteners"
+      ]
+    },
+    {
+      "id": "level_camp_dock_utilities_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "836c09d506359a678371905b0e27c2512b5877e42a92c37a6d24a0f11a355b93",
+      "bytes": 410680,
+      "triangles": 2476,
+      "bounds": [
+        [
+          23.895872116088867,
+          -3.4000003337860107,
+          -8.92500114440918
+        ],
+        [
+          30.2450008392334,
+          1.6735291481018066,
+          3.5250000953674316
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_dock_utilities_refined.blend",
+      "clean_source": "level_camp_dock_utilities",
+      "features": [
+        "Finer physical edge radii and material wear"
+      ]
+    },
+    {
+      "id": "level_camp_rowboat_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "ed13375de96c76060fada27ba864e06bcf943954d63e1e275a71fd83d6085d1d",
+      "bytes": 625972,
+      "triangles": 6828,
+      "bounds": [
+        [
+          -0.8110000491142273,
+          0.11999999731779099,
+          -1.7586473226547241
+        ],
+        [
+          0.8110000491142273,
+          0.7749999761581421,
+          1.7586473226547241
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_rowboat_refined.blend",
+      "clean_source": "level_camp_rowboat",
+      "features": [
+        "Curved rubbing strakes, proper oarlocks and thwart fasteners"
+      ]
+    },
+    {
+      "id": "level_camp_folding_chair_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "42383a0e4c518db760a8e10cec03449269531e2bfa502b5653b25bd71022236f",
+      "bytes": 231384,
+      "triangles": 2648,
+      "bounds": [
+        [
+          -0.32249999046325684,
+          -0.01065641175955534,
+          -0.33697056770324707
+        ],
+        [
+          0.32249999046325684,
+          0.9116533994674683,
+          0.3183825612068176
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_folding_chair_refined.blend",
+      "clean_source": "level_camp_folding_chair",
+      "features": [
+        "Folding pivots, frame fixings, finer woven seat/back weathering"
+      ]
+    },
+    {
+      "id": "level_camp_cooler_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "594d385e7e9207d493636a889f375a1dfd980d7ab9932d1f7463a8f41e38b70c",
+      "bytes": 284048,
+      "triangles": 1160,
+      "bounds": [
+        [
+          -0.36500000953674316,
+          0.0,
+          -0.22199998795986176
+        ],
+        [
+          0.36500000953674316,
+          0.45749998092651367,
+          0.2239999920129776
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_cooler_refined.blend",
+      "clean_source": "level_camp_cooler",
+      "features": [
+        "Drain plug, hinge pins, separate grips and lid seam wear"
+      ]
+    },
+    {
+      "id": "level_camp_portable_toilet_open_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f0690a40449627b3444f72fa340e5584216642b46920d2d26dd3a2075b62e3e0",
+      "bytes": 662012,
+      "triangles": 6428,
+      "bounds": [
+        [
+          -0.7200000286102295,
+          0.0,
+          -0.7950000166893005
+        ],
+        [
+          0.7200000286102295,
+          2.5199999809265137,
+          1.7868376970291138
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_portable_toilet_open_refined.blend",
+      "clean_source": "level_camp_portable_toilet_open",
+      "features": [
+        "Curved moulded cap, panel fixings and a real rounded pull handle"
+      ]
+    },
+    {
+      "id": "level_camp_portable_toilet_closed_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3e6a59f670049e873c12bc5912ad50625e56f1ab2998a55891c08832e2614530",
+      "bytes": 670468,
+      "triangles": 6428,
+      "bounds": [
+        [
+          -0.7200000286102295,
+          0.0,
+          -0.7950000166893005
+        ],
+        [
+          0.7200000286102295,
+          2.5199999809265137,
+          0.8849999904632568
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_portable_toilet_closed_refined.blend",
+      "clean_source": "level_camp_portable_toilet_closed",
+      "features": [
+        "Curved moulded cap, panel fixings and a real rounded pull handle"
+      ]
+    },
+    {
+      "id": "level_camp_refuse_bin_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c34f22659bd46618f35c97cdadae4b5bf03bbdeb0dfee8ed29bdfc0bd02a4372",
+      "bytes": 348040,
+      "triangles": 2564,
+      "bounds": [
+        [
+          -0.4000000059604645,
+          0.0,
+          -0.4779999852180481
+        ],
+        [
+          0.4000000059604645,
+          1.1500000953674316,
+          0.45500001311302185
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_refuse_bin_refined.blend",
+      "clean_source": "level_camp_refuse_bin",
+      "features": [
+        "Hinged lid hardware, moulded grip and axle/hub details"
+      ]
+    },
+    {
+      "id": "level_camp_heron_memorial_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "ac18e6fd5ea9c8f9a73e7377573b0f66f8501bb9bb199cb50453632cfdc24671",
+      "bytes": 422336,
+      "triangles": 5892,
+      "bounds": [
+        [
+          -1.0740978717803955,
+          0.0,
+          -0.7250000238418579
+        ],
+        [
+          1.0740978717803955,
+          2.9800000190734863,
+          0.7250000238418579
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_heron_memorial_refined.blend",
+      "clean_source": "level_camp_heron_memorial",
+      "features": [
+        "Smooth curved bronze surfaces, head/eyes and plaque fasteners"
+      ]
+    },
+    {
+      "id": "level_camp_pavilion_fireplace_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "8020bb80a78f63bbb681e3d0d16ed6d2d844199e790daa96850b66ea796421ca",
+      "bytes": 580280,
+      "triangles": 7778,
+      "bounds": [
+        [
+          -1.5,
+          0.0,
+          -2.125
+        ],
+        [
+          1.5,
+          5.875,
+          2.049999952316284
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_pavilion_fireplace_refined.blend",
+      "clean_source": "level_camp_pavilion_fireplace",
+      "features": [
+        "Real separate masonry courses, mortar gaps, flue courses and grate legs",
+        "Cold split firewood supported on actual grate bars"
+      ]
+    },
+    {
+      "id": "level_camp_shrub_decorative_a_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "657e3e832c58f66c7f06f3441e80860c0069a382d2368d0b0d5cd3e0b8082cee",
+      "bytes": 1393008,
+      "triangles": 17972,
+      "bounds": [
+        [
+          -1.3376821279525757,
+          -0.017896069213747978,
+          -1.3955334424972534
+        ],
+        [
+          1.4416042566299438,
+          1.829264760017395,
+          1.1874219179153442
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_shrub_decorative_a_refined.blend",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "features": [
+        "Attached leaf petioles, smooth woody stems and fine leaf variation"
+      ]
+    },
+    {
+      "id": "level_camp_shrub_decorative_b_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "152409f360abbc9aa60104fa1a1b4aba46f695f889bd75bef52140e863d89f89",
+      "bytes": 1406384,
+      "triangles": 18148,
+      "bounds": [
+        [
+          -1.3717035055160522,
+          -0.018312782049179077,
+          -1.2766941785812378
+        ],
+        [
+          1.3272504806518555,
+          1.8627290725708008,
+          1.3613935708999634
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_shrub_decorative_b_refined.blend",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "features": [
+        "Attached leaf petioles, smooth woody stems and fine leaf variation"
+      ]
+    },
+    {
+      "id": "level_camp_creek_engineering_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "77e5311e01cb598505e2f8e4a0c9bb8b38e6773aac67dfa925176306fffbd8b1",
+      "bytes": 475396,
+      "triangles": 8812,
+      "bounds": [
+        [
+          44.973018646240234,
+          -2.679887294769287,
+          2.43399715423584
+        ],
+        [
+          51.53904724121094,
+          0.10754090547561646,
+          28.5
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_creek_engineering_refined.blend",
+      "clean_source": "level_camp_creek_engineering",
+      "features": [
+        "Individual headwall stone courses, smoother barrel, finer exposed stone breakup"
+      ]
+    },
+    {
+      "id": "level_camp_tent_ridge_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "91a68d5c47b37d49558dea18b59689bd765b15c1cfcb90b3fc6e0059c1ad323a",
+      "bytes": 476576,
+      "triangles": 1160,
+      "bounds": [
+        [
+          -1.9668035507202148,
+          -0.10240893810987473,
+          -2.0859339237213135
+        ],
+        [
+          1.9318034648895264,
+          1.9209232330322266,
+          2.1059341430664062
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_ridge_refined.blend",
+      "clean_source": "level_camp_tent_ridge",
+      "features": [
+        "Fine woven canvas wear, seam/hem tone, smooth poles; floor/canvas thickness preserved"
+      ]
+    },
+    {
+      "id": "level_camp_tent_dome_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "08aab25bbc2ad5c91fc6daea27896dac55246305c598f52cda1a1296c4452a9d",
+      "bytes": 438540,
+      "triangles": 3832,
+      "bounds": [
+        [
+          -1.71999990940094,
+          -0.09000000357627869,
+          -1.9589999914169312
+        ],
+        [
+          1.71999990940094,
+          1.7219833135604858,
+          1.52777898311615
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_dome_refined.blend",
+      "clean_source": "level_camp_tent_dome",
+      "features": [
+        "Fine woven canvas wear, seam/hem tone, smooth poles; floor/canvas thickness preserved"
+      ]
+    },
+    {
+      "id": "level_camp_bedroll_rolled_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "9ab1bf15fcf7ce85fa6914397146d740fa1776cddce8549f77c15b458f6422e4",
+      "bytes": 477660,
+      "triangles": 3540,
+      "bounds": [
+        [
+          -0.3244999945163727,
+          -0.0010000000474974513,
+          -0.17100000381469727
+        ],
+        [
+          0.3244999945163727,
+          0.3409999907016754,
+          0.18299999833106995
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_bedroll_rolled_refined.blend",
+      "clean_source": "level_camp_bedroll_rolled",
+      "features": [
+        "Finer quilt/weave, strap grime and smoothly shaded roll"
+      ]
+    },
+    {
+      "id": "level_trace_generator_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "ccfe04347591e335c96981f981eeb27e21de4dcc4d76532a2fd8857e666481c1",
+      "bytes": 441224,
+      "triangles": 5284,
+      "bounds": [
+        [
+          -0.7749999761581421,
+          0.0,
+          -0.4399999976158142
+        ],
+        [
+          0.7749999761581421,
+          1.1549999713897705,
+          0.4399999976158142
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_generator_refined.blend",
+      "clean_source": "level_trace_generator",
+      "features": [
+        "Skid anchors, fuel filler, cooling ribs and control fasteners"
+      ]
+    },
+    {
+      "id": "level_camp_pavilion_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b188f40b1ae1db360b4d7c5b6ae08990d65d1ba967d180097483cb00b44b2d96",
+      "bytes": 971492,
+      "triangles": 15684,
+      "bounds": [
+        [
+          -7.050000190734863,
+          0.0,
+          -7.019999980926514
+        ],
+        [
+          7.050000190734863,
+          5.684999942779541,
+          7.019999980926514
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_pavilion_refined.blend",
+      "clean_source": "level_camp_pavilion",
+      "features": [
+        "Supported nameboard/lettering, roof seams and finer timber/roof aging"
+      ]
+    },
+    {
+      "id": "level_camp_picnic_table_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f165ffa7f03820c6687716d450e12f11efd0e46823bc4766ca80c5c1e8e8e9ce",
+      "bytes": 412588,
+      "triangles": 5504,
+      "bounds": [
+        [
+          -1.2200000286102295,
+          0.0,
+          -0.800000011920929
+        ],
+        [
+          1.2200000286102295,
+          0.7699999809265137,
+          0.800000011920929
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_picnic_table_refined.blend",
+      "clean_source": "level_camp_picnic_table",
+      "features": [
+        "Countersunk construction fixings and finer timber grain/weathering"
+      ]
+    },
+    {
+      "id": "level_camp_fire_ring_refined",
+      "library": "campground-refinement",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "464361b4c709d9c48f21f3d956ff5a308c52f2bd8c0147eb2517e181bece4909",
+      "bytes": 327556,
+      "triangles": 1760,
+      "bounds": [
+        [
+          -0.5450000166893005,
+          0.0,
+          -0.5450000166893005
+        ],
+        [
+          0.5450000166893005,
+          0.3903923034667969,
+          0.5450000166893005
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_fire_ring_refined.blend",
+      "clean_source": "level_camp_fire_ring",
+      "features": [
+        "Finer soot/oxidation, softened rolled metal edge and fastener normals"
+      ]
+    }
+  ],
+  "replaced_instances": [
+    {
+      "name": "Dock boat-service shed",
+      "clean_source": "level_camp_dock_shed",
+      "refined_source": "level_camp_dock_shed_refined"
+    },
+    {
+      "name": "Dock reused generator",
+      "clean_source": "level_trace_generator",
+      "refined_source": "level_trace_generator_refined"
+    },
+    {
+      "name": "West moored rowing boat",
+      "clean_source": "level_camp_rowboat",
+      "refined_source": "level_camp_rowboat_refined"
+    },
+    {
+      "name": "Camp folding chair 0",
+      "clean_source": "level_camp_folding_chair",
+      "refined_source": "level_camp_folding_chair_refined"
+    },
+    {
+      "name": "Camp folding chair 1",
+      "clean_source": "level_camp_folding_chair",
+      "refined_source": "level_camp_folding_chair_refined"
+    },
+    {
+      "name": "Camp folding chair 2",
+      "clean_source": "level_camp_folding_chair",
+      "refined_source": "level_camp_folding_chair_refined"
+    },
+    {
+      "name": "Camp folding chair 3",
+      "clean_source": "level_camp_folding_chair",
+      "refined_source": "level_camp_folding_chair_refined"
+    },
+    {
+      "name": "Camp folding chair 4",
+      "clean_source": "level_camp_folding_chair",
+      "refined_source": "level_camp_folding_chair_refined"
+    },
+    {
+      "name": "Camp folding chair 5",
+      "clean_source": "level_camp_folding_chair",
+      "refined_source": "level_camp_folding_chair_refined"
+    },
+    {
+      "name": "Camp cooler 0",
+      "clean_source": "level_camp_cooler",
+      "refined_source": "level_camp_cooler_refined"
+    },
+    {
+      "name": "Camp cooler 1",
+      "clean_source": "level_camp_cooler",
+      "refined_source": "level_camp_cooler_refined"
+    },
+    {
+      "name": "Camp cooler 2",
+      "clean_source": "level_camp_cooler",
+      "refined_source": "level_camp_cooler_refined"
+    },
+    {
+      "name": "Beach toilet 1",
+      "clean_source": "level_camp_portable_toilet_open",
+      "refined_source": "level_camp_portable_toilet_open_refined"
+    },
+    {
+      "name": "Beach toilet 2",
+      "clean_source": "level_camp_portable_toilet_closed",
+      "refined_source": "level_camp_portable_toilet_closed_refined"
+    },
+    {
+      "name": "Beach refuse bin 1",
+      "clean_source": "level_camp_refuse_bin",
+      "refined_source": "level_camp_refuse_bin_refined"
+    },
+    {
+      "name": "Beach refuse bin 2",
+      "clean_source": "level_camp_refuse_bin",
+      "refined_source": "level_camp_refuse_bin_refined"
+    },
+    {
+      "name": "Camp wardens heron memorial",
+      "clean_source": "level_camp_heron_memorial",
+      "refined_source": "level_camp_heron_memorial_refined"
+    },
+    {
+      "name": "Pavilion built-in masonry hearth",
+      "clean_source": "level_camp_pavilion_fireplace",
+      "refined_source": "level_camp_pavilion_fireplace_refined"
+    },
+    {
+      "name": "Additional pitched tent 1",
+      "clean_source": "level_camp_tent_ridge",
+      "refined_source": "level_camp_tent_ridge_refined"
+    },
+    {
+      "name": "Additional pitched tent 2",
+      "clean_source": "level_camp_tent_dome",
+      "refined_source": "level_camp_tent_dome_refined"
+    },
+    {
+      "name": "Additional pitched tent 3",
+      "clean_source": "level_camp_tent_ridge",
+      "refined_source": "level_camp_tent_ridge_refined"
+    },
+    {
+      "name": "Additional pitched tent 4",
+      "clean_source": "level_camp_tent_dome",
+      "refined_source": "level_camp_tent_dome_refined"
+    },
+    {
+      "name": "Additional pitched tent 5",
+      "clean_source": "level_camp_tent_ridge",
+      "refined_source": "level_camp_tent_ridge_refined"
+    },
+    {
+      "name": "Additional pitched tent 6",
+      "clean_source": "level_camp_tent_dome",
+      "refined_source": "level_camp_tent_dome_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 0",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 1",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 2",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 3",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 4",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 5",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 6",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 7",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 8",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 9",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 10",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 11",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 12",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 13",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 14",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 15",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 16",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 17",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 18",
+      "clean_source": "level_camp_shrub_decorative_a",
+      "refined_source": "level_camp_shrub_decorative_a_refined"
+    },
+    {
+      "name": "Approach decorative large shrub 19",
+      "clean_source": "level_camp_shrub_decorative_b",
+      "refined_source": "level_camp_shrub_decorative_b_refined"
+    },
+    {
+      "name": "Additional camp rolled bedding 0",
+      "clean_source": "level_camp_bedroll_rolled",
+      "refined_source": "level_camp_bedroll_rolled_refined"
+    },
+    {
+      "name": "Additional camp rolled bedding 1",
+      "clean_source": "level_camp_bedroll_rolled",
+      "refined_source": "level_camp_bedroll_rolled_refined"
+    },
+    {
+      "name": "Additional camp rolled bedding 2",
+      "clean_source": "level_camp_bedroll_rolled",
+      "refined_source": "level_camp_bedroll_rolled_refined"
+    },
+    {
+      "name": "Additional camp rolled bedding 3",
+      "clean_source": "level_camp_bedroll_rolled",
+      "refined_source": "level_camp_bedroll_rolled_refined"
+    },
+    {
+      "name": "Additional camp rolled bedding 4",
+      "clean_source": "level_camp_bedroll_rolled",
+      "refined_source": "level_camp_bedroll_rolled_refined"
+    },
+    {
+      "name": "Additional camp rolled bedding 5",
+      "clean_source": "level_camp_bedroll_rolled",
+      "refined_source": "level_camp_bedroll_rolled_refined"
+    },
+    {
+      "name": "west-pitched-ridge",
+      "clean_source": "level_camp_tent_ridge",
+      "refined_source": "level_camp_tent_ridge_refined"
+    },
+    {
+      "name": "east-pitched-dome",
+      "clean_source": "level_camp_tent_dome",
+      "refined_source": "level_camp_tent_dome_refined"
+    },
+    {
+      "name": "west-rolled-bedding",
+      "clean_source": "level_camp_bedroll_rolled",
+      "refined_source": "level_camp_bedroll_rolled_refined"
+    },
+    {
+      "name": "level_camp_pavilion",
+      "clean_source": "level_camp_pavilion",
+      "refined_source": "level_camp_pavilion_refined"
+    },
+    {
+      "name": "level_camp_creek_engineering",
+      "clean_source": "level_camp_creek_engineering",
+      "refined_source": "level_camp_creek_engineering_refined"
+    },
+    {
+      "name": "level_camp_dock_utilities",
+      "clean_source": "level_camp_dock_utilities",
+      "refined_source": "level_camp_dock_utilities_refined"
+    },
+    {
+      "name": "west-table",
+      "clean_source": "level_camp_picnic_table",
+      "refined_source": "level_camp_picnic_table_refined"
+    },
+    {
+      "name": "pavilion-table-west",
+      "clean_source": "level_camp_picnic_table",
+      "refined_source": "level_camp_picnic_table_refined"
+    },
+    {
+      "name": "pavilion-table-east",
+      "clean_source": "level_camp_picnic_table",
+      "refined_source": "level_camp_picnic_table_refined"
+    },
+    {
+      "name": "west-fire-ring",
+      "clean_source": "level_camp_fire_ring",
+      "refined_source": "level_camp_fire_ring_refined"
+    }
+  ],
+  "protected_sources": {
+    "assets/runtime/models/level_camp_dock_shed.glb": "c3f8e415470541d5c01c714e535fbc8b6d28399b02e90fddba918ec17d001c5b",
+    "development/levels/blender/level_camp_dock_shed.blend": "14efd76ea9be41538229d5821891c8798b40bb0d7fb9f34828de3766020a6ef9",
+    "development/levels/previews/level_camp_dock_shed.png": "fcfad84d06b92379f87b551248fd62969a39f182fdf4c4962605ee73410072c7",
+    "assets/runtime/models/level_camp_dock_utilities.glb": "3eecc7a9fe804db4a825706a0166b38d9ec1b5f6237cd6dc08568548b901c209",
+    "development/levels/blender/level_camp_dock_utilities.blend": "a69f9acab64a8ce0b1549116d70a16ba88f4f094319867b256aba83852a92406",
+    "assets/runtime/models/level_camp_rowboat.glb": "26973ea6ed051d3d69edbe8b1d7d0d17e01a532b60b53a731fbedc863efb3d2b",
+    "development/levels/blender/level_camp_rowboat.blend": "5fb2436751af3f7569348a24db4c409f1d96130737b93b75785bfe95aeefb0ea",
+    "development/levels/previews/level_camp_rowboat.png": "a0ff005d5663ed298e262503503bd406555a439696ed4dd3448f29322bf1ac68",
+    "assets/runtime/models/level_camp_folding_chair.glb": "a5102310d05f4480211a87d6b39da122fd73fdd84ec69246799223767a915657",
+    "development/levels/blender/level_camp_folding_chair.blend": "c4093e2ef59d22413b1d9652efd620936cb99341eee74cd7e03aeef686e68ddb",
+    "development/levels/previews/level_camp_folding_chair.png": "17c29c9f7cd0475a5535fc29bc01c5a8fc7fa43e51a971853204d7e40fde2d44",
+    "assets/runtime/models/level_camp_cooler.glb": "4710e951fd1953be8a808d9f829c311fdd39744fc0491825ef3db538d96a92f4",
+    "development/levels/blender/level_camp_cooler.blend": "3c78e10a25fe39ed1ea450556748c9dc07e4aeac930909df61493d0062996ed9",
+    "development/levels/previews/level_camp_cooler.png": "7e810370be1bd71732d7ac498d9559db6d247719f0c9a0fa96f2c954741f1a8c",
+    "assets/runtime/models/level_camp_portable_toilet_open.glb": "e56b28ed924ab705f7c847b53bd4cea8d71082a4978f90bf99a77dd2fdda45c4",
+    "development/levels/blender/level_camp_portable_toilet_open.blend": "9e667ca1224aca138bf75ceddf175004bb02299ab0445426c45df1a6dc890bbf",
+    "development/levels/previews/level_camp_portable_toilet_open.png": "2b013b7267e169e51c473217a81d2311578b0493aaf69c7bf2a267c0b2dfbfb4",
+    "assets/runtime/models/level_camp_portable_toilet_closed.glb": "0531123fe69ee2e9cb02a983d26e164c1864ee5fa5e1509e126966f1c00e9acc",
+    "development/levels/blender/level_camp_portable_toilet_closed.blend": "7a046bd8307c15586aac9fe4b9e738befddf350626ab5afd208d4c1c8c57ef37",
+    "development/levels/previews/level_camp_portable_toilet_closed.png": "3868097b702e3ba1bf20d103c05afbbe9d57a458e91811f4cbd946afe330e3ed",
+    "assets/runtime/models/level_camp_refuse_bin.glb": "654256e3c029a495df490aad668bd8782acb12a6321adea2ebe959298ab2e3eb",
+    "development/levels/blender/level_camp_refuse_bin.blend": "d76c7e690e9e2ae582cb3eaaae51a783e1e5c2b2b06873921dee2ebaec92d183",
+    "development/levels/previews/level_camp_refuse_bin.png": "c74045869d9836e1e562315c6df2f41d87306fb6a22494f7ab6b6077ec21c8c1",
+    "assets/runtime/models/level_camp_heron_memorial.glb": "ab2fe0253a1625d77e027565ce2fbdde049a929b0a7df0d2c4d14c7bd2af6df8",
+    "development/levels/blender/level_camp_heron_memorial.blend": "6a941edbd52b29c4cb12178add9fc63a5b01f565a5c4b46babd5c0a786dfc343",
+    "development/levels/previews/level_camp_heron_memorial.png": "f088adae18cbead6804ed7c28dd3bc69ba0b587efb0f76e810d2ccbb20a336cd",
+    "assets/runtime/models/level_camp_pavilion_fireplace.glb": "e633d5d9664eb4c7e50a38be8e9ba86ef837a19113dbd82218adc22c0e51c274",
+    "development/levels/blender/level_camp_pavilion_fireplace.blend": "e6d0bd34dc33f61c84bea17c12111eacd7ac235dd46be933dc935f01a4e8bfd9",
+    "development/levels/previews/level_camp_pavilion_fireplace.png": "d69fe835037c646350c759ed32ddc36a1f1a0314926587103d8179dbfffa1bd1",
+    "assets/runtime/models/level_camp_shrub_decorative_a.glb": "fce6a750c5324231748cd08064b8f9e82deca2803b8092e7b66e656e5da6085d",
+    "development/levels/blender/level_camp_shrub_decorative_a.blend": "693f497555663dd266a5a7b5c9a14b52291c854c2cb9c4b009fa13c4dc6f78b4",
+    "development/levels/previews/level_camp_shrub_decorative_a.png": "1346a223592704ed68a144a8866697fc699a62a008e94166335ff644df4b8230",
+    "assets/runtime/models/level_camp_shrub_decorative_b.glb": "7e4655e4054ada006232aea926ccb7a857fb6d6a2e509710a0672d765102a413",
+    "development/levels/blender/level_camp_shrub_decorative_b.blend": "6b04ab41105ed637abbb35e2971a6e8ef5634fb234ba791624edfec24e17ea47",
+    "development/levels/previews/level_camp_shrub_decorative_b.png": "7ee13a1d17b68fedc0a31fd4b772e833e2a45becfa81d5be048fa9e118b9d1f3",
+    "assets/runtime/models/level_camp_creek_engineering.glb": "d2d7d4560eaa7f98d1d221b8d910eaa476bcd6b01f2914256ccdbee7b0e86218",
+    "development/levels/blender/level_camp_creek_engineering.blend": "1007e7e69010de080c6d36c42bed90343ffbb7ae732f49f00c4421ddec88757a",
+    "assets/runtime/models/level_camp_tent_ridge.glb": "d8259affd80dd78b5030c846aad720a2e3c3ead75cb8e5962a6ae5d52ca17f10",
+    "development/levels/blender/level_camp_tent_ridge.blend": "2049161f8ba09157af1f0971e327f6819179e5aef51ebdf165fd2e5d9ded74ed",
+    "development/levels/previews/level_camp_tent_ridge.png": "ff92565c35e2a0b41ffe7567c81e17076b39a267c38210ace4eeec198fc2ceef",
+    "assets/runtime/models/level_camp_tent_dome.glb": "4009888d8fb340301da2fb204b5f7d4c5569eab4016beb4d101e5c8fa7424b76",
+    "development/levels/blender/level_camp_tent_dome.blend": "5d3dd4e439b89fcdd575b47ca8e74c61716f2d7faae25cd4bf08b289144fe2f6",
+    "development/levels/previews/level_camp_tent_dome.png": "6cee0af51b04f0516a45d2d6e1c873abede5d724e95f4960302e709ac41a0a63",
+    "assets/runtime/models/level_camp_bedroll_rolled.glb": "3023b48a94d9e49e818a705afc8080a98f8dbe1f4ef1901dde84654c7185a663",
+    "development/levels/blender/level_camp_bedroll_rolled.blend": "98170c90b08451e6d77be681d420b7a0784c91b4ede44850ac9275b20966c4d8",
+    "development/levels/previews/level_camp_bedroll_rolled.png": "84b0830ae0c388a45c6b59797de155703e72af498d34f82727872978a7ee98ba",
+    "assets/runtime/models/level_trace_generator.glb": "087bcfcfc946e4c75b10df2ea8d5ffc7a4d798f9035d0383633e9098f7ac5395",
+    "development/levels/blender/level_trace_generator.blend": "cf989d38fae7113cf2799cf1653848b43ba1c2222f64063ece20fa96bcef909c",
+    "development/levels/previews/level_trace_generator.png": "f40ff0a28548f23322ceff696f81e94a7b5e74a928aedc293003c18020250f51",
+    "assets/runtime/models/level_camp_pavilion.glb": "9aa6e1830812cab5bc156470794060b42b606f81e5e6a285cbf9065e049f2f29",
+    "development/levels/blender/level_camp_pavilion.blend": "7ed88eef9bfc9f8ecef7ab48aacb9761b60075b4cf0d19374219f46e8ffbc4b5",
+    "development/levels/previews/level_camp_pavilion.png": "43577ddc4ddbc4ee7ad485de82249ae41c25590635c3ec9f18050272a8fce70a",
+    "assets/runtime/models/level_camp_picnic_table.glb": "ad94ec917ddc5c140533aedabf49629919808e8c577b67b4759193cd7722fda2",
+    "development/levels/blender/level_camp_picnic_table.blend": "dc562d4c249b439505d3088116d87520dd65852257b68dc1fd386a999916694f",
+    "development/levels/previews/level_camp_picnic_table.png": "6daeb18b1ffe2d31338d827268fa2eab857c4593754cb5661cada5a9daa26b62",
+    "assets/runtime/models/level_camp_fire_ring.glb": "1225316496f4689236771967f30860074cbb891ae9ed0722e7793534765f7a4b",
+    "development/levels/blender/level_camp_fire_ring.blend": "0def7222ed509a763188a67b89e6eeb6d4696e5974a9a36e77c9e56522dfe8b9",
+    "development/levels/previews/level_camp_fire_ring.png": "31bc535d08a8ea0783b0666667a092c282dd4213b12af082a61e53bad4f210ab",
+    "development/levels/hollow-creek/hollow-creek-amenities.blend": "99dcfff97d10b600b5988072af4e51af654f6581c9b65c9c63a28b333a2819ac"
+  },
+  "limitations": [
+    "No runtime map unlock/collision/AI/circuit, host/LAN, photo or performance acceptance.",
+    "Invisible blocker volumes are native authoring only; wiring into player/ghost collision and movement tests remains mandatory.",
+    "Native water appearance is improved; layered transparency/depth/foam/runtime port remain open.",
+    "Masonry hearth is cold; combustion/exhaust and human fire-clearance/art review remain open.",
+    "This is a second detail/weathering iteration, not final human art acceptance."
+  ],
+  "removed_empty_group_definitions": 21626,
+  "verified_reports": [
+    "development/levels/verification/hollow-creek-refined.json",
+    "development/levels/verification/hollow-creek-refined-dock.json"
+  ]
+}

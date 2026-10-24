@@ -1,11 +1,14 @@
 """Independently reopen actual saved dock scene and six actual GLB exports."""
-import bpy,json,math,hashlib
+import bpy,json,math,hashlib,sys
 from pathlib import Path
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'development/levels/hollow-creek'
 r=json.loads((OUT/'dock-details.json').read_text(encoding='utf-8'));d=json.loads((OUT/'organic-terrain.json').read_text(encoding='utf-8'))
-bpy.ops.wm.open_mainfile(filepath=str(OUT/'hollow-creek-dock.blend'))
+refined='--refined' in sys.argv
+if refined:
+ refinement=json.loads((OUT/'refined-models.json').read_text(encoding='utf-8'));r['assets']=refinement['assets'];r['protected_sources']=refinement['protected_sources']
+bpy.ops.wm.open_mainfile(filepath=str(OUT/('hollow-creek-refined.blend' if refined else 'hollow-creek-dock.blend')))
 def tree(objects,group=None):
  vv=[];ff=[]
  for o in objects:
@@ -14,7 +17,7 @@ def tree(objects,group=None):
    ids={g.index for g in o.vertex_groups if group(g.name)};selected={v.index for v in o.data.vertices if any(g.group in ids for g in v.groups)}
   ff.extend(tuple(n+i for i in t.vertices) for t in o.data.loop_triangles if selected is None or all(i in selected for i in t.vertices))
  assert ff,'Missing actual component triangles';return BVHTree.FromPolygons(vv,ff,all_triangles=True)
-scene=bpy.context.scene;terrain=bpy.data.objects['level_camp_terrain_shore'];ground=tree([terrain]);new=[bpy.data.objects[p['name']] for p in r['placements']];obstacles=tree(new+[bpy.data.objects['level_camp_dock_utilities']]);findings=[]
+scene=bpy.context.scene;terrain=bpy.data.objects['level_camp_terrain_amenities' if refined else 'level_camp_terrain_shore'];ground=tree([terrain]);new=[bpy.data.objects[p['name']] for p in r['placements']];obstacles=tree(new+[bpy.data.objects['level_camp_dock_utilities']]);findings=[]
 def check(ok,kind,**data):
  if not ok:findings.append(dict(kind=kind,**data))
 def height(x,z):
@@ -50,10 +53,20 @@ for x in [25.75,26.65,27.55]:
  for z in [-8.8,-7.7,-6.6]:
   p=deck.ray_cast(Vector((x,-z,0)),Vector((0,0,-1)),5)[0];q=shedfloor.ray_cast(Vector((x,-z,-2)),Vector((0,0,1)),3)[0];contacts+=1;check(p is not None and q is not None and abs(p.z-q.z)<.002,'shed floor support gap',x=x,z=z)
 gen=bpy.data.objects['Dock reused generator'];lo=min((gen.matrix_world@v.co).z for v in gen.data.vertices);check(abs(lo-(-1.21))<.001,'generator floor pivot not supported')
-chair_contacts=0
+chair_contacts=0;chair_legs_supported=0
 for p in r['placements']:
  if not p['asset'].endswith('folding_chair'):continue
  o=bpy.data.objects[p['name']]
+ if refined:
+  legs=[g for g in o.vertex_groups if g.name.startswith('Crossed folding leg')];check(len(legs)==4,'four physical chair legs required',name=o.name)
+  for leg in legs:
+   leg_contacts=[]
+   for v in o.data.vertices:
+    if not any(g.group==leg.index and g.weight>.5 for g in v.groups):continue
+    w=o.matrix_world@v.co
+    if abs(w.z-height(w.x,-w.y))<.025:leg_contacts.append(w)
+   check(bool(leg_contacts),'refined chair leg has no actual terrain contact',name=o.name,leg=leg.name);chair_contacts+=len(leg_contacts);chair_legs_supported+=bool(leg_contacts)
+  continue
  for v in o.data.vertices:
   w=o.matrix_world@v.co
   if v.co.z<.12 and any(abs(w.x-f[0])<.001 and abs(-w.y-f[1])<.001 for f in p['feet']):chair_contacts+=1;check(abs(w.z-height(w.x,-w.y))<.025,'chair leg not fitted',name=o.name)
@@ -73,8 +86,8 @@ utility=bpy.data.objects['level_camp_dock_utilities'];globes=tree([utility],lamb
 verts=[utility.matrix_world@v.co for v in utility.data.vertices if any(utility.vertex_groups[g.group].name.startswith('Non-emissive review lamp globe') for g in v.groups)];headroom=min(v.z for v in verts)+1.3;check(headroom>=2.48-.000001,'dock globe too low',headroom=headroom)
 boat=bpy.data.objects['West moored rowing boat'];boatverts=[boat.matrix_world@v.co for v in boat.data.vertices];check(min(v.z for v in boatverts)<d['water_y']-.1 and max(v.z for v in boatverts)>d['water_y']+.3,'rowboat waterline fit')
 for rel,h in r['protected_sources'].items():check(hashlib.sha256((ROOT/rel).read_bytes()).hexdigest()==h,'prior source changed',path=rel)
-report=dict(status='pass-native-dock-detail-only' if not findings else 'refinement-required',shore_surface_samples=shore_samples,exact_forest_seam_vertices=seams,protected_route_body_samples=body_samples,ritual_samples=ritual_samples,shed_deck_contacts=contacts,chair_foot_vertices=chair_contacts,dock_standing_samples=dock_samples,actual_minimum_globe_headroom_m=headroom,findings=findings,limitations=r['limitations'])
-file=ROOT/'development/levels/verification/hollow-creek-dock.json';file.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+report=dict(status='pass-native-dock-detail-only' if not findings else 'refinement-required',shore_surface_samples=shore_samples,exact_forest_seam_vertices=seams,protected_route_body_samples=body_samples,ritual_samples=ritual_samples,shed_deck_contacts=contacts,chair_foot_vertices=chair_contacts,refined_chair_legs_supported=chair_legs_supported,dock_standing_samples=dock_samples,actual_minimum_globe_headroom_m=headroom,findings=findings,limitations=r['limitations'])
+file=ROOT/('development/levels/verification/hollow-creek-refined-dock.json' if refined else 'development/levels/verification/hollow-creek-dock.json');file.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 assert not findings,('Native dock/detail checks failed',len(findings),'see',file)
 imports=[]
 for a in r['assets']:

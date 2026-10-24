@@ -551,6 +551,50 @@
       "action": "Author250 hidden closed barrier volumes, bridge-side protection, shore/berm/dock/creek-mouth joins and clear crossings.1250 actual native rays pass. Integrate into the eventual level collision authority and test swept bodies, multiplayer and movement before claiming working barriers.",
       "evidence": "amenities.json blockers; verification/hollow-creek-amenities.json; expanded review explicit NOT INTEGRATED status",
       "older_maps": "Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance."
+    },
+    {
+      "id": "DEV-051",
+      "title": "Global bevel exceeded the unchanged rowboat mesh budget",
+      "status": "fixed-refinement-export",
+      "affected": "Second Hollow Creek model pass",
+      "symptom": "First global three-segment bevel produced77037 rowboat triangles; authoring assertion stopped export.",
+      "cause": "Applying bevel indiscriminately to thin curved hulls and many segmented rods multiplied topology without improving the silhouette.",
+      "action": "Keep real curved hull geometry, soften curve normals, and apply small radii to appropriate construction edges only. All20 final refined assets pass unchanged50k triangle/4MB caps.",
+      "evidence": "refine_hollow_creek_models.py assertion; HollowCreekRefinementAssetsTest; actual native GLB reimports",
+      "older_maps": "Audit this failure category on each older model/site; refined source/geometry checks are not full runtime/human acceptance."
+    },
+    {
+      "id": "DEV-052",
+      "title": "Smoothing exposed flat-panel shading smear and overlapping boat end caps",
+      "status": "fixed-refined-assets-only",
+      "affected": "Refined masonry/metal panels and rowboat ends",
+      "symptom": "Broad panels looked warped; boat cap faces rendered black in actual studio captures.",
+      "cause": "Unselective smooth normals blurred planar surfaces. The earlier closed-end draft had coplanar inner/outer cap faces and redundant curved end strips.",
+      "action": "Keep axis-aligned panels/caps flat while smoothing actual curves. Rebuild boat ends with50mm separation, remove redundant end strips and close top rim. Replace low-frequency sinusoidal weather marks with nondirectional interpolated noise; add recessed front flue stone courses without changing roof clearance.",
+      "evidence": "development/levels/previews/defects/DEV-052-before-refined-boat-end-overlap.png; DEV-052-before-panel-normal-smearing.png; final actual source/GLB captures",
+      "older_maps": "Audit this failure category on each older model/site; refined source/geometry checks are not full runtime/human acceptance."
+    },
+    {
+      "id": "DEV-053",
+      "title": "Refined instance assignment duplicated empty support-group definitions",
+      "status": "fixed-native-authoring-metadata",
+      "affected": "Second-pass scene and chair support verifier",
+      "symptom": "A legacy point comparison tested zero chair-foot vertices; component review then found empty duplicate group names, causing30 strict contact-check findings.",
+      "cause": "Blender carried mesh group definitions during data replacement; the authoring loop added a second name set. The legacy test silently relied on pre-bevel vertex positions.",
+      "action": "Reuse existing source group definitions, remove21626 unused duplicate definitions from the current derived scene, and verify each actual leg group instead of old vertex positions. Final960 real contact vertices cover24 chair legs. Geometry/transforms did not change during metadata cleanup.",
+      "evidence": "development/quality/evidence/DEV-053-empty-group-refinement-check.json; verification/hollow-creek-refinement-group-cleanup.json; hollow-creek-refined-dock.json",
+      "older_maps": "Audit this failure category on each older model/site; refined source/geometry checks are not full runtime/human acceptance."
+    },
+    {
+      "id": "DEV-054",
+      "title": "Detail parts needed actual support rather than plausible overall bounds",
+      "status": "fixed-refined-parts-only",
+      "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
+      "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
+      "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
+      "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     }
   ],
   "audit_categories": [

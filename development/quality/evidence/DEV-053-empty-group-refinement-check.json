@@ -1,0 +1,164 @@
+{
+  "status": "refinement-required",
+  "shore_surface_samples": 36309,
+  "exact_forest_seam_vertices": 12,
+  "protected_route_body_samples": 10377,
+  "ritual_samples": 363,
+  "shed_deck_contacts": [],
+  "chair_foot_vertices": 960,
+  "refined_chair_legs_supported": 24,
+  "dock_standing_samples": 1572,
+  "actual_minimum_globe_headroom_m": 2.4799999475479124,
+  "findings": [
+    {
+      "kind": "four physical chair legs required",
+      "name": "Camp folding chair 0"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 0",
+      "leg": "Crossed folding leg.004"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 0",
+      "leg": "Crossed folding leg.005"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 0",
+      "leg": "Crossed folding leg.006"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 0",
+      "leg": "Crossed folding leg.007"
+    },
+    {
+      "kind": "four physical chair legs required",
+      "name": "Camp folding chair 1"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 1",
+      "leg": "Crossed folding leg.004"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 1",
+      "leg": "Crossed folding leg.005"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 1",
+      "leg": "Crossed folding leg.006"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 1",
+      "leg": "Crossed folding leg.007"
+    },
+    {
+      "kind": "four physical chair legs required",
+      "name": "Camp folding chair 2"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 2",
+      "leg": "Crossed folding leg.004"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 2",
+      "leg": "Crossed folding leg.005"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 2",
+      "leg": "Crossed folding leg.006"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 2",
+      "leg": "Crossed folding leg.007"
+    },
+    {
+      "kind": "four physical chair legs required",
+      "name": "Camp folding chair 3"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 3",
+      "leg": "Crossed folding leg.004"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 3",
+      "leg": "Crossed folding leg.005"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 3",
+      "leg": "Crossed folding leg.006"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 3",
+      "leg": "Crossed folding leg.007"
+    },
+    {
+      "kind": "four physical chair legs required",
+      "name": "Camp folding chair 4"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 4",
+      "leg": "Crossed folding leg.004"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 4",
+      "leg": "Crossed folding leg.005"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 4",
+      "leg": "Crossed folding leg.006"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 4",
+      "leg": "Crossed folding leg.007"
+    },
+    {
+      "kind": "four physical chair legs required",
+      "name": "Camp folding chair 5"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 5",
+      "leg": "Crossed folding leg.004"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 5",
+      "leg": "Crossed folding leg.005"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 5",
+      "leg": "Crossed folding leg.006"
+    },
+    {
+      "kind": "refined chair leg has no actual terrain contact",
+      "name": "Camp folding chair 5",
+      "leg": "Crossed folding leg.007"
+    }
+  ],
+  "limitations": [
+    "No runtime map unlock, collision/AI, water alpha/sorting, circuit state, LAN or performance acceptance.",
+    "Native lamp globes are non-emissive; switching and ghost breaker behavior remain required.",
+    "Generator is reused intact; exhaust hook-up and combustion ventilation engineering remain open.",
+    "Portable toilets, more tent variants, park fixtures, oil lanterns and further camp gear remain queued."
+  ]
+}

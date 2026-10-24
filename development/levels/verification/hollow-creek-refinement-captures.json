@@ -1,0 +1,38 @@
+{
+  "status": "six actual native captures",
+  "scene": "development/levels/hollow-creek/hollow-creek-refined.blend",
+  "scene_sha256": "eebf8deba054c4c719c3cfcaa188713690c4aa562963b75a7703186002a30a04",
+  "captures": [
+    {
+      "path": "development/levels/previews/hollow-creek/refined-expanded-site-native-fitout.png",
+      "sha256": "eed96fc5188a954171a817c84375114b12a99ec6b149daf0e0bd39f32b165421",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/refined-hearth-native-fitout.png",
+      "sha256": "1109b7d7c48f91a65884bc89be9aa76db127b6d2851571322159ccb23afa921f",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/refined-culvert-native-fitout.png",
+      "sha256": "7b5f09db1816eff57bb02d7925901ee6009765b3002f8edc206ecc73ad67080f",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/refined-toilets-native-fitout.png",
+      "sha256": "016be7fb14d6f8ca5cafdf0acb3edb08dc81f9cafb29083b39918c2eef6ca741",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/refined-dock-native-fitout.png",
+      "sha256": "2278cf9f929a01f7b54f5507ae88be5e704ee2eb1472de3dd75f2c5c7c3578fe",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/refined-memorial-native-fitout.png",
+      "sha256": "6003562c67823a7d60d4176f095cde325ec0c2f19962999f3e08dfe9fe41dfcf",
+      "kind": "Native scene overview"
+    }
+  ],
+  "runtime_acceptance": false
+}

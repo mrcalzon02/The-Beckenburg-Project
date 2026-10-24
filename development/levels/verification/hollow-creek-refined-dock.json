@@ -1,0 +1,121 @@
+{
+  "status": "pass-native-dock-detail-only",
+  "shore_surface_samples": 36309,
+  "exact_forest_seam_vertices": 12,
+  "protected_route_body_samples": 10377,
+  "ritual_samples": 363,
+  "shed_deck_contacts": 9,
+  "chair_foot_vertices": 960,
+  "refined_chair_legs_supported": 24,
+  "dock_standing_samples": 1572,
+  "actual_minimum_globe_headroom_m": 2.4799999475479124,
+  "findings": [],
+  "limitations": [
+    "No runtime map unlock, collision/AI, water alpha/sorting, circuit state, LAN or performance acceptance.",
+    "Native lamp globes are non-emissive; switching and ghost breaker behavior remain required.",
+    "Generator is reused intact; exhaust hook-up and combustion ventilation engineering remain open.",
+    "Portable toilets, more tent variants, park fixtures, oil lanterns and further camp gear remain queued."
+  ],
+  "actual_glb_reimports": [
+    {
+      "id": "level_camp_dock_shed_refined",
+      "triangles": 25688,
+      "bytes": 1357836
+    },
+    {
+      "id": "level_camp_dock_utilities_refined",
+      "triangles": 2476,
+      "bytes": 410680
+    },
+    {
+      "id": "level_camp_rowboat_refined",
+      "triangles": 6828,
+      "bytes": 625972
+    },
+    {
+      "id": "level_camp_folding_chair_refined",
+      "triangles": 2648,
+      "bytes": 231384
+    },
+    {
+      "id": "level_camp_cooler_refined",
+      "triangles": 1160,
+      "bytes": 284048
+    },
+    {
+      "id": "level_camp_portable_toilet_open_refined",
+      "triangles": 6428,
+      "bytes": 662012
+    },
+    {
+      "id": "level_camp_portable_toilet_closed_refined",
+      "triangles": 6428,
+      "bytes": 670468
+    },
+    {
+      "id": "level_camp_refuse_bin_refined",
+      "triangles": 2564,
+      "bytes": 348040
+    },
+    {
+      "id": "level_camp_heron_memorial_refined",
+      "triangles": 5892,
+      "bytes": 422336
+    },
+    {
+      "id": "level_camp_pavilion_fireplace_refined",
+      "triangles": 7778,
+      "bytes": 580280
+    },
+    {
+      "id": "level_camp_shrub_decorative_a_refined",
+      "triangles": 17972,
+      "bytes": 1393008
+    },
+    {
+      "id": "level_camp_shrub_decorative_b_refined",
+      "triangles": 18148,
+      "bytes": 1406384
+    },
+    {
+      "id": "level_camp_creek_engineering_refined",
+      "triangles": 8812,
+      "bytes": 475396
+    },
+    {
+      "id": "level_camp_tent_ridge_refined",
+      "triangles": 1160,
+      "bytes": 476576
+    },
+    {
+      "id": "level_camp_tent_dome_refined",
+      "triangles": 3832,
+      "bytes": 438540
+    },
+    {
+      "id": "level_camp_bedroll_rolled_refined",
+      "triangles": 3540,
+      "bytes": 477660
+    },
+    {
+      "id": "level_trace_generator_refined",
+      "triangles": 5284,
+      "bytes": 441224
+    },
+    {
+      "id": "level_camp_pavilion_refined",
+      "triangles": 15684,
+      "bytes": 971492
+    },
+    {
+      "id": "level_camp_picnic_table_refined",
+      "triangles": 5504,
+      "bytes": 412588
+    },
+    {
+      "id": "level_camp_fire_ring_refined",
+      "triangles": 1760,
+      "bytes": 327556
+    }
+  ]
+}

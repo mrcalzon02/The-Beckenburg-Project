@@ -1,0 +1,126 @@
+{
+  "status": "pass-native-only",
+  "protected_route_samples": 10377,
+  "ritual_samples": 363,
+  "new_tent_floor_contacts": 72,
+  "new_tent_crouch_samples": 1640,
+  "new_roll_contacts": 18,
+  "foundation_ramp_checks": 126,
+  "max_toilet_ramp_grade": 0.16194903150068912,
+  "barrier_volumes": 250,
+  "actual_barrier_rays": 1250,
+  "culvert_terrain_sight_rays": 9,
+  "cold_firewood_grate_contacts": 3,
+  "large_shrubs": 20,
+  "total_pitched_tents": 8,
+  "findings": [],
+  "blocker_runtime_status": "NOT INTEGRATED: native authored contract/meshes only; no working player barrier claim",
+  "limitations": [
+    "No runtime map unlock/collision/AI/circuit, host/LAN, photo or performance acceptance.",
+    "Invisible blocker volumes are native authoring only; wiring into player/ghost collision and movement tests remains mandatory.",
+    "Native water appearance is improved; layered transparency/depth/foam/runtime port remain open.",
+    "Masonry hearth is cold; combustion/exhaust and human fire-clearance/art review remain open."
+  ],
+  "actual_glb_reimports": [
+    {
+      "id": "level_camp_dock_shed_refined",
+      "triangles": 25688,
+      "bytes": 1357836
+    },
+    {
+      "id": "level_camp_dock_utilities_refined",
+      "triangles": 2476,
+      "bytes": 410680
+    },
+    {
+      "id": "level_camp_rowboat_refined",
+      "triangles": 6828,
+      "bytes": 625972
+    },
+    {
+      "id": "level_camp_folding_chair_refined",
+      "triangles": 2648,
+      "bytes": 231384
+    },
+    {
+      "id": "level_camp_cooler_refined",
+      "triangles": 1160,
+      "bytes": 284048
+    },
+    {
+      "id": "level_camp_portable_toilet_open_refined",
+      "triangles": 6428,
+      "bytes": 662012
+    },
+    {
+      "id": "level_camp_portable_toilet_closed_refined",
+      "triangles": 6428,
+      "bytes": 670468
+    },
+    {
+      "id": "level_camp_refuse_bin_refined",
+      "triangles": 2564,
+      "bytes": 348040
+    },
+    {
+      "id": "level_camp_heron_memorial_refined",
+      "triangles": 5892,
+      "bytes": 422336
+    },
+    {
+      "id": "level_camp_pavilion_fireplace_refined",
+      "triangles": 7778,
+      "bytes": 580280
+    },
+    {
+      "id": "level_camp_shrub_decorative_a_refined",
+      "triangles": 17972,
+      "bytes": 1393008
+    },
+    {
+      "id": "level_camp_shrub_decorative_b_refined",
+      "triangles": 18148,
+      "bytes": 1406384
+    },
+    {
+      "id": "level_camp_creek_engineering_refined",
+      "triangles": 8812,
+      "bytes": 475396
+    },
+    {
+      "id": "level_camp_tent_ridge_refined",
+      "triangles": 1160,
+      "bytes": 476576
+    },
+    {
+      "id": "level_camp_tent_dome_refined",
+      "triangles": 3832,
+      "bytes": 438540
+    },
+    {
+      "id": "level_camp_bedroll_rolled_refined",
+      "triangles": 3540,
+      "bytes": 477660
+    },
+    {
+      "id": "level_trace_generator_refined",
+      "triangles": 5284,
+      "bytes": 441224
+    },
+    {
+      "id": "level_camp_pavilion_refined",
+      "triangles": 15684,
+      "bytes": 971492
+    },
+    {
+      "id": "level_camp_picnic_table_refined",
+      "triangles": 5504,
+      "bytes": 412588
+    },
+    {
+      "id": "level_camp_fire_ring_refined",
+      "triangles": 1760,
+      "bytes": 327556
+    }
+  ]
+}
