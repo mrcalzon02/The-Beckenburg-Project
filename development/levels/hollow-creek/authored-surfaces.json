@@ -1,0 +1,665 @@
+{
+  "status": "authored surfaces; independent checks pending",
+  "assets": [
+    {
+      "id": "level_camp_dock_shed_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "289e37f70d598fed94695cb418be667a8de97e00c51d2390ca53105cf518b26e",
+      "bytes": 1390816,
+      "triangles": 25688,
+      "bounds": [
+        [
+          -1.2000000476837158,
+          -1.4901161193847656e-08,
+          -1.340000033378601
+        ],
+        [
+          1.159999966621399,
+          2.7200000286102295,
+          1.340000033378601
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_dock_shed_authored.blend",
+      "previous_source": "level_camp_dock_shed_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_rowboat_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "273c328eb2fdcdf63a1c6727b54b9f918d17a627a82b90602e2deeef1ea99a6a",
+      "bytes": 914756,
+      "triangles": 6828,
+      "bounds": [
+        [
+          -0.8110000491142273,
+          0.11999999731779099,
+          -1.7586473226547241
+        ],
+        [
+          0.8110000491142273,
+          0.7749999761581421,
+          1.7586473226547241
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_rowboat_authored.blend",
+      "previous_source": "level_camp_rowboat_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_folding_chair_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "0988855b9c3f91a30f0ce50a053d64176144da0e47c0253a1e21890f3688ee22",
+      "bytes": 382876,
+      "triangles": 2648,
+      "bounds": [
+        [
+          -0.32249999046325684,
+          -0.01065641175955534,
+          -0.33697056770324707
+        ],
+        [
+          0.32249999046325684,
+          0.9116533994674683,
+          0.3183825612068176
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_folding_chair_authored.blend",
+      "previous_source": "level_camp_folding_chair_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_cooler_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "0bc9cf54407008dbe2d306f7f1c8fc77bea3e9fff21c518de70d077c0a381526",
+      "bytes": 340024,
+      "triangles": 1160,
+      "bounds": [
+        [
+          -0.36500000953674316,
+          0.0,
+          -0.22199998795986176
+        ],
+        [
+          0.36500000953674316,
+          0.45749998092651367,
+          0.2239999920129776
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_cooler_authored.blend",
+      "previous_source": "level_camp_cooler_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_portable_toilet_open_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "092d9b2a5dcd0d03c63087c0c484c0e88865758815cb66da03f9ceeacb8c633b",
+      "bytes": 784592,
+      "triangles": 6428,
+      "bounds": [
+        [
+          -0.7200000286102295,
+          0.0,
+          -0.7950000166893005
+        ],
+        [
+          0.7200000286102295,
+          2.5199999809265137,
+          1.7868376970291138
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_portable_toilet_open_authored.blend",
+      "previous_source": "level_camp_portable_toilet_open_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_portable_toilet_closed_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "df0e737343a329b2967721cec9439cb589dcaf178e6f8e976a2e6467ff6c6c42",
+      "bytes": 775508,
+      "triangles": 6428,
+      "bounds": [
+        [
+          -0.7200000286102295,
+          0.0,
+          -0.7950000166893005
+        ],
+        [
+          0.7200000286102295,
+          2.5199999809265137,
+          0.8849999904632568
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_portable_toilet_closed_authored.blend",
+      "previous_source": "level_camp_portable_toilet_closed_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_refuse_bin_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "95984b2f3d8782956aeb0b0187f155df6089437cee1e33b96ad43c8ac11e451e",
+      "bytes": 362844,
+      "triangles": 2564,
+      "bounds": [
+        [
+          -0.4000000059604645,
+          0.0,
+          -0.4779999852180481
+        ],
+        [
+          0.4000000059604645,
+          1.1500000953674316,
+          0.45500001311302185
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_refuse_bin_authored.blend",
+      "previous_source": "level_camp_refuse_bin_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_heron_memorial_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "9ae2243276dcba818143921ceeb797cad5cce0e2c858320b32462341d98ece3f",
+      "bytes": 803548,
+      "triangles": 5892,
+      "bounds": [
+        [
+          -1.0740978717803955,
+          0.0,
+          -0.7250000238418579
+        ],
+        [
+          1.0740978717803955,
+          2.9800000190734863,
+          0.7250000238418579
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_heron_memorial_authored.blend",
+      "previous_source": "level_camp_heron_memorial_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_pavilion_fireplace_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "a915ec76270dfeef11b729bf29a23b076970095849276223e6f1a53f390102f4",
+      "bytes": 868696,
+      "triangles": 7778,
+      "bounds": [
+        [
+          -1.5,
+          0.0,
+          -2.125
+        ],
+        [
+          1.5,
+          5.875,
+          2.049999952316284
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_pavilion_fireplace_authored.blend",
+      "previous_source": "level_camp_pavilion_fireplace_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_bedroll_rolled_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "432cfb6b8d9e3ce02a0e4eb315b7f6876e5a92611163148ee8bd74d5351db682",
+      "bytes": 547864,
+      "triangles": 3540,
+      "bounds": [
+        [
+          -0.3244999945163727,
+          -0.0010000000474974513,
+          -0.17100000381469727
+        ],
+        [
+          0.3244999945163727,
+          0.3409999907016754,
+          0.18299999833106995
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_bedroll_rolled_authored.blend",
+      "previous_source": "level_camp_bedroll_rolled_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_trace_generator_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "8a4088451f5642d0ec27be75df66c34e68fcf180df339d3b638953582054d438",
+      "bytes": 550272,
+      "triangles": 5284,
+      "bounds": [
+        [
+          -0.7749999761581421,
+          0.0,
+          -0.4399999976158142
+        ],
+        [
+          0.7749999761581421,
+          1.1549999713897705,
+          0.4399999976158142
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_trace_generator_authored.blend",
+      "previous_source": "level_trace_generator_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_pavilion_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3e3e9e24c19ae270683682f1eeed7138e33a4ac447143e375e2e2a212b9f0169",
+      "bytes": 1292136,
+      "triangles": 15684,
+      "bounds": [
+        [
+          -7.050000190734863,
+          0.0,
+          -7.019999980926514
+        ],
+        [
+          7.050000190734863,
+          5.684999942779541,
+          7.019999980926514
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_pavilion_authored.blend",
+      "previous_source": "level_camp_pavilion_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_picnic_table_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b7d5beaeb5b6e383eaf10a1966dc154df562d48e1f16207bff7ce90b2b073c02",
+      "bytes": 688948,
+      "triangles": 5504,
+      "bounds": [
+        [
+          -1.2200000286102295,
+          0.0,
+          -0.800000011920929
+        ],
+        [
+          1.2200000286102295,
+          0.7699999809265137,
+          0.800000011920929
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_picnic_table_authored.blend",
+      "previous_source": "level_camp_picnic_table_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    },
+    {
+      "id": "level_camp_fire_ring_authored",
+      "library": "campground-authored-surfaces",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "de58968b8ec11439658ad10134894f70872df8eb0ac8e5ed7b442c9a9a84f931",
+      "bytes": 402584,
+      "triangles": 1760,
+      "bounds": [
+        [
+          -0.5450000166893005,
+          0.0,
+          -0.5450000166893005
+        ],
+        [
+          0.5450000166893005,
+          0.3903923034667969,
+          0.5450000166893005
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_fire_ring_authored.blend",
+      "previous_source": "level_camp_fire_ring_refined",
+      "geometry_unchanged": true,
+      "source_uvs_preserved": true,
+      "atlas_size": 1024,
+      "features": [
+        "Part-aligned restrained grain",
+        "Physical lower-edge damp/dirt and upper-surface fade",
+        "Localized sparse oxidation and corner contact wear",
+        "Baked portable diffuse; original smooth/flat normals preserved"
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "name": "level_camp_pavilion",
+      "previous": "level_camp_pavilion_refined",
+      "current": "level_camp_pavilion_authored"
+    },
+    {
+      "name": "west-rolled-bedding",
+      "previous": "level_camp_bedroll_rolled_refined",
+      "current": "level_camp_bedroll_rolled_authored"
+    },
+    {
+      "name": "Dock boat-service shed",
+      "previous": "level_camp_dock_shed_refined",
+      "current": "level_camp_dock_shed_authored"
+    },
+    {
+      "name": "Dock reused generator",
+      "previous": "level_trace_generator_refined",
+      "current": "level_trace_generator_authored"
+    },
+    {
+      "name": "West moored rowing boat",
+      "previous": "level_camp_rowboat_refined",
+      "current": "level_camp_rowboat_authored"
+    },
+    {
+      "name": "Camp folding chair 0",
+      "previous": "level_camp_folding_chair_refined",
+      "current": "level_camp_folding_chair_authored"
+    },
+    {
+      "name": "Camp folding chair 1",
+      "previous": "level_camp_folding_chair_refined",
+      "current": "level_camp_folding_chair_authored"
+    },
+    {
+      "name": "Camp folding chair 2",
+      "previous": "level_camp_folding_chair_refined",
+      "current": "level_camp_folding_chair_authored"
+    },
+    {
+      "name": "Camp folding chair 3",
+      "previous": "level_camp_folding_chair_refined",
+      "current": "level_camp_folding_chair_authored"
+    },
+    {
+      "name": "Camp folding chair 4",
+      "previous": "level_camp_folding_chair_refined",
+      "current": "level_camp_folding_chair_authored"
+    },
+    {
+      "name": "Camp folding chair 5",
+      "previous": "level_camp_folding_chair_refined",
+      "current": "level_camp_folding_chair_authored"
+    },
+    {
+      "name": "Camp cooler 0",
+      "previous": "level_camp_cooler_refined",
+      "current": "level_camp_cooler_authored"
+    },
+    {
+      "name": "Camp cooler 1",
+      "previous": "level_camp_cooler_refined",
+      "current": "level_camp_cooler_authored"
+    },
+    {
+      "name": "Camp cooler 2",
+      "previous": "level_camp_cooler_refined",
+      "current": "level_camp_cooler_authored"
+    },
+    {
+      "name": "Beach toilet 1",
+      "previous": "level_camp_portable_toilet_open_refined",
+      "current": "level_camp_portable_toilet_open_authored"
+    },
+    {
+      "name": "Beach toilet 2",
+      "previous": "level_camp_portable_toilet_closed_refined",
+      "current": "level_camp_portable_toilet_closed_authored"
+    },
+    {
+      "name": "Beach refuse bin 1",
+      "previous": "level_camp_refuse_bin_refined",
+      "current": "level_camp_refuse_bin_authored"
+    },
+    {
+      "name": "Beach refuse bin 2",
+      "previous": "level_camp_refuse_bin_refined",
+      "current": "level_camp_refuse_bin_authored"
+    },
+    {
+      "name": "Camp wardens heron memorial",
+      "previous": "level_camp_heron_memorial_refined",
+      "current": "level_camp_heron_memorial_authored"
+    },
+    {
+      "name": "Pavilion built-in masonry hearth",
+      "previous": "level_camp_pavilion_fireplace_refined",
+      "current": "level_camp_pavilion_fireplace_authored"
+    },
+    {
+      "name": "Additional camp rolled bedding 0",
+      "previous": "level_camp_bedroll_rolled_refined",
+      "current": "level_camp_bedroll_rolled_authored"
+    },
+    {
+      "name": "Additional camp rolled bedding 1",
+      "previous": "level_camp_bedroll_rolled_refined",
+      "current": "level_camp_bedroll_rolled_authored"
+    },
+    {
+      "name": "Additional camp rolled bedding 2",
+      "previous": "level_camp_bedroll_rolled_refined",
+      "current": "level_camp_bedroll_rolled_authored"
+    },
+    {
+      "name": "Additional camp rolled bedding 3",
+      "previous": "level_camp_bedroll_rolled_refined",
+      "current": "level_camp_bedroll_rolled_authored"
+    },
+    {
+      "name": "Additional camp rolled bedding 4",
+      "previous": "level_camp_bedroll_rolled_refined",
+      "current": "level_camp_bedroll_rolled_authored"
+    },
+    {
+      "name": "Additional camp rolled bedding 5",
+      "previous": "level_camp_bedroll_rolled_refined",
+      "current": "level_camp_bedroll_rolled_authored"
+    },
+    {
+      "name": "west-table",
+      "previous": "level_camp_picnic_table_refined",
+      "current": "level_camp_picnic_table_authored"
+    },
+    {
+      "name": "pavilion-table-west",
+      "previous": "level_camp_picnic_table_refined",
+      "current": "level_camp_picnic_table_authored"
+    },
+    {
+      "name": "pavilion-table-east",
+      "previous": "level_camp_picnic_table_refined",
+      "current": "level_camp_picnic_table_authored"
+    },
+    {
+      "name": "west-fire-ring",
+      "previous": "level_camp_fire_ring_refined",
+      "current": "level_camp_fire_ring_authored"
+    }
+  ],
+  "protected_sources": {
+    "development/levels/blender/level_camp_dock_shed_refined.blend": "f722231bbcac1b8b7eb3b2fe4eb305cd89405573229369dea68f18d32b9e41ec",
+    "assets/runtime/models/level_camp_dock_shed_refined.glb": "f3ee276c7fa88e7f406cad4fc07dcf72c538dc2871b7a9ea8ae25d4600af1008",
+    "development/levels/blender/level_camp_dock_utilities_refined.blend": "6b6502f2e5b7f25bb35b82b2a7d2f759de937437babba6a9a761e88ce80129f7",
+    "assets/runtime/models/level_camp_dock_utilities_refined.glb": "836c09d506359a678371905b0e27c2512b5877e42a92c37a6d24a0f11a355b93",
+    "development/levels/blender/level_camp_rowboat_refined.blend": "c0e67e8e3a6ae66e3841beef8aec3f4954955e936618e8810d703270ae52f58f",
+    "assets/runtime/models/level_camp_rowboat_refined.glb": "ed13375de96c76060fada27ba864e06bcf943954d63e1e275a71fd83d6085d1d",
+    "development/levels/blender/level_camp_folding_chair_refined.blend": "15f0f450b3d116ce040a6b5bf95aca85db4e6cd8d97f38090c26ad09f1ba1ab1",
+    "assets/runtime/models/level_camp_folding_chair_refined.glb": "42383a0e4c518db760a8e10cec03449269531e2bfa502b5653b25bd71022236f",
+    "development/levels/blender/level_camp_cooler_refined.blend": "bdd370e2f2c85ef94a4bed0458ed6f1b01f1034a1782b0e8428367776ff51236",
+    "assets/runtime/models/level_camp_cooler_refined.glb": "594d385e7e9207d493636a889f375a1dfd980d7ab9932d1f7463a8f41e38b70c",
+    "development/levels/blender/level_camp_portable_toilet_open_refined.blend": "9f79ca124d3957d8ecfb24bd2063cd85f28bd4981158fdc4a6c942eee3a7b3e7",
+    "assets/runtime/models/level_camp_portable_toilet_open_refined.glb": "f0690a40449627b3444f72fa340e5584216642b46920d2d26dd3a2075b62e3e0",
+    "development/levels/blender/level_camp_portable_toilet_closed_refined.blend": "f58a78fd20993c23c487a407de18ae9e87926f393b83cb50c7fd07344b03b899",
+    "assets/runtime/models/level_camp_portable_toilet_closed_refined.glb": "3e6a59f670049e873c12bc5912ad50625e56f1ab2998a55891c08832e2614530",
+    "development/levels/blender/level_camp_refuse_bin_refined.blend": "1e6acb334487bca732a3f218439d8fc00c9375d3a3de959c133805f258b12206",
+    "assets/runtime/models/level_camp_refuse_bin_refined.glb": "c34f22659bd46618f35c97cdadae4b5bf03bbdeb0dfee8ed29bdfc0bd02a4372",
+    "development/levels/blender/level_camp_heron_memorial_refined.blend": "585d77cac9ad928db3a72c4e8e9eeb7e3b665400d068931adbc1c86c1f18574a",
+    "assets/runtime/models/level_camp_heron_memorial_refined.glb": "ac18e6fd5ea9c8f9a73e7377573b0f66f8501bb9bb199cb50453632cfdc24671",
+    "development/levels/blender/level_camp_pavilion_fireplace_refined.blend": "c53d3e813f1e6a1cd86eac809b565f9665cafbafd26344425796cb49d21b579e",
+    "assets/runtime/models/level_camp_pavilion_fireplace_refined.glb": "8020bb80a78f63bbb681e3d0d16ed6d2d844199e790daa96850b66ea796421ca",
+    "development/levels/blender/level_camp_shrub_decorative_a_refined.blend": "76f7c29b090ee73be77ab496a19e5157ccfcfeceefab197ce79c9dd826d58f9c",
+    "assets/runtime/models/level_camp_shrub_decorative_a_refined.glb": "657e3e832c58f66c7f06f3441e80860c0069a382d2368d0b0d5cd3e0b8082cee",
+    "development/levels/blender/level_camp_shrub_decorative_b_refined.blend": "8d0742217a4a47b9dda386735a3141bc83c97f507ff22d57c1fb57e61b908f3b",
+    "assets/runtime/models/level_camp_shrub_decorative_b_refined.glb": "152409f360abbc9aa60104fa1a1b4aba46f695f889bd75bef52140e863d89f89",
+    "development/levels/blender/level_camp_creek_engineering_refined.blend": "ec661aa8f397fa1871a4f91a363e86aa4aac8f79eb48b1865d57db5de3c0bb7d",
+    "assets/runtime/models/level_camp_creek_engineering_refined.glb": "77e5311e01cb598505e2f8e4a0c9bb8b38e6773aac67dfa925176306fffbd8b1",
+    "development/levels/blender/level_camp_tent_ridge_refined.blend": "9258d609ceca93ab8e6bc1ea393c5580b6c3128c105e88ade8d172c82de0c1f2",
+    "assets/runtime/models/level_camp_tent_ridge_refined.glb": "91a68d5c47b37d49558dea18b59689bd765b15c1cfcb90b3fc6e0059c1ad323a",
+    "development/levels/blender/level_camp_tent_dome_refined.blend": "61b2f4c3b5a31b850e5778cc5ea8cbabf76cf8a29a99f8a4b9535acf78db8532",
+    "assets/runtime/models/level_camp_tent_dome_refined.glb": "08aab25bbc2ad5c91fc6daea27896dac55246305c598f52cda1a1296c4452a9d",
+    "development/levels/blender/level_camp_bedroll_rolled_refined.blend": "0df1f0df0db64b9652e891ddf1679d87b1f4ddbab45b86587163a33e50132aee",
+    "assets/runtime/models/level_camp_bedroll_rolled_refined.glb": "9ab1bf15fcf7ce85fa6914397146d740fa1776cddce8549f77c15b458f6422e4",
+    "development/levels/blender/level_trace_generator_refined.blend": "9c4938c837de478b7335001b240ebac5da61fd8fe36b95b173af119abf8ed098",
+    "assets/runtime/models/level_trace_generator_refined.glb": "ccfe04347591e335c96981f981eeb27e21de4dcc4d76532a2fd8857e666481c1",
+    "development/levels/blender/level_camp_pavilion_refined.blend": "c574b718995d71b7e9fbef5c3c36d31a16bc69c187620fb82f4ab66538632eeb",
+    "assets/runtime/models/level_camp_pavilion_refined.glb": "b188f40b1ae1db360b4d7c5b6ae08990d65d1ba967d180097483cb00b44b2d96",
+    "development/levels/blender/level_camp_picnic_table_refined.blend": "17aecb90e8af7b806e751abb708737ff473d550abe547eaa81dfd2e286200c14",
+    "assets/runtime/models/level_camp_picnic_table_refined.glb": "f165ffa7f03820c6687716d450e12f11efd0e46823bc4766ca80c5c1e8e8e9ce",
+    "development/levels/blender/level_camp_fire_ring_refined.blend": "735443a5812386de49f2bc44703e68b288e272de90a23ab3454d6976f3e09a1e",
+    "assets/runtime/models/level_camp_fire_ring_refined.glb": "464361b4c709d9c48f21f3d956ff5a308c52f2bd8c0147eb2517e181bece4909",
+    "development/levels/hollow-creek/hollow-creek-refined.blend": "eebf8deba054c4c719c3cfcaa188713690c4aa562963b75a7703186002a30a04"
+  },
+  "scene": "development/levels/hollow-creek/hollow-creek-authored.blend",
+  "scene_sha256": "b8062e51417b1748af8a2ecd04223782fd6848e028e2e151584a504cf1fe18af",
+  "runtime_acceptance": false
+}

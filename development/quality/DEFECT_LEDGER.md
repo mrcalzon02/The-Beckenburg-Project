@@ -780,6 +780,90 @@ Evidence and verification: verification/hollow-creek-refined-delivery.json; fina
 
 Older-map obligation: Use committed bytes for remote delivery checks when text normalization applies. Preserve raw binary equality checks; do not waive real source/export mismatch.
 
+### DEV-056 — Uniform surface wear and oversized timber grain survive construction refinement
+
+**Status:** improved-authored-family-only · **Affected:** Hollow Creek refined model family
+
+Current model review still reads as crude: repetitive timber stripes and uniform plastic/stone/metal surfaces.
+
+Cause / uncertainty: Shared low-resolution UV-local weather marks do not describe part direction or physical exposure.
+
+Fix / next action: Create14 separate authored surface variants with part-aligned grain, physical lower-edge dirt/damp, exposure fade, sparse oxidation/corner wear and localized fireplace soot. Preserve prior geometry/smoothing. Tent, shrub, creek and cable families retain previous refinement and further human art review remains open.
+
+Evidence and verification: previews/defects/DEV-056-before-uniform-surfaces-native-fitout.png; hollow-creek/AUTHORED_REVIEW.html; verification/hollow-creek-authored-surfaces.json
+
+Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
+
+### DEV-057 — New weather atlas initially used unsupported UV channel and legacy vertical origin
+
+**Status:** fixed-new-authored-family-only · **Affected:** 14 new Hollow Creek authored runtime exports
+
+First exported shed GLB selects texCoord1 while the reader consumes TEXCOORD_0. Inspection also found that the legacy non-vehicle image-row convention would invert a spatially authored glTF atlas.
+
+Cause / uncertainty: Blender preserves original UVs as channel0; default non-vehicle sampler uses the opposite vertical origin.
+
+Fix / next action: Preserve all source UVs in editable blends; use a temporary mesh copy with atlas-only UV0 for GLB. Apply glTF top-left image origin only to the curated14 authored IDs. Check1008 triangle-centroid UV/color samples independently decoded from actual GLB/PNG data.
+
+Evidence and verification: tools/hollow_creek_authored_pixel_reference.py; HollowCreekAuthoredSurfacesTest; verification/hollow-creek-authored-pixels.tsv
+
+Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
+
+### DEV-058 — Blender RNA handles invalidated by attribute and UV-layer allocation
+
+**Status:** fixed-authoring-pipeline · **Affected:** New surface authoring script
+
+Initial authoring attempt caused EXCEPTION_ACCESS_VIOLATION; deleting UV layers through stored RNA handles later reported UV map .uv_select_vert not found.
+
+Cause / uncertainty: Allocating/removing custom-data layers can invalidate retained RNA wrappers.
+
+Fix / next action: Re-fetch attributes after both allocations; remove UV maps by saved names rather than stale wrappers. Correct Blender5 geometry node identifier. Full14-family build and independent native review now complete.
+
+Evidence and verification: author_hollow_creek_surfaces.py; review_hollow_creek_authored.py; verification/hollow-creek-authored-surfaces.json
+
+Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
+
+### DEV-059 — Pending native physics Java generator emitted extra closing parentheses
+
+**Status:** corrected-local-pending-integration · **Affected:** Uncommitted Hollow Creek physics-export work
+
+Compiling all current main sources found three semicolon-expected syntax errors at final Zone, Collider and Link entries.
+
+Cause / uncertainty: The generator closed the constructor and then emitted two additional closing parentheses for List.of.
+
+Fix / next action: Correct the pending generator and generated Java locally; full current-source JDK17 compilation passes. Physics exporter/binary/contract remain separate uncommitted integration work, preserved and not represented as working containment.
+
+Evidence and verification: development/levels/export_hollow_creek_physics.py; pending HollowCreekContract.java; dated surface handoff
+
+Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
+
+### DEV-060 — Existing GGBot vehicle color-count assertion fails on baseline loader
+
+**Status:** open-baseline-regression · **Affected:** GgBotBlenderSourceUvTest with current ggbot_car01 source
+
+Vehicle source regression test fails its original128px textured color atlas assertion.
+
+Cause / uncertainty: Cause unconfirmed. Reproduced with the pre-change committed GlbProps.java compiled separately; the same ggbot_car01 assertion fails.
+
+Fix / next action: Retain the assertion and failing baseline evidence. Audit separately; do not alter vehicle art, lower its threshold or claim this regression passed. Eight legacy equipment tests and14 new authored atlas loads pass.
+
+Evidence and verification: quality/evidence/DEV-060-baseline-vehicle-uv.txt; verification/hollow-creek-authored-runtime.json
+
+Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
+
+### DEV-061 — Diffuse bake double-applied the source palette transfer function
+
+**Status:** fixed-authored-bake-color-space · **Affected:** First third-pass surface bake
+
+Matched fireplace/pavilion native capture became pale, clean-looking and washed out despite the intended aging pass.
+
+Cause / uncertainty: Encoded source-image averages were assigned directly to linear shader-color inputs.
+
+Fix / next action: Decode source sRGB palette averages and authored tint colors into linear space before emission baking. Rebuild all14 actual exports, rerender all native/studio views and rerun1008 runtime PNG/UV comparisons. Preserve failing image.
+
+Evidence and verification: previews/defects/DEV-061-before-bake-palette-washout.png; hollow-creek/AUTHORED_REVIEW.html
+
+Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

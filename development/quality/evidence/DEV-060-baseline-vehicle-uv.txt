@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: ggbot_car01 original 128px textured color atlas
+	at org.beckenburg.GgBotBlenderSourceUvTest.check(GgBotBlenderSourceUvTest.java:6)
+	at org.beckenburg.GgBotBlenderSourceUvTest.main(GgBotBlenderSourceUvTest.java:34)

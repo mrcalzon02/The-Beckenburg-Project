@@ -53,3 +53,8 @@ Next: runtime integration milestone (including actual movement containment), sup
 ## Second model refinement, 24 October
 
 [Current refinement review](REFINEMENT_REVIEW.html) compares the clean sources with20 separate refined asset families. Sixty native instances now use real boards/fastenings, stone courses/mortar, boat strakes/oarlocks, moulded caps/pulls, furniture/generator hardware, roof/sign details, attached shrub twigs and fine weathered diffuse.149586 triangles across the20 source GLBs; all retain unchanged individual budgets. All72 tent-floor contacts,1640 crouch probes,24 chair legs, protected routes/rituals and actual culvert/dock/shore tests pass after replacement. Clean source hashes remain unchanged. This is another reviewed iteration; human art/LOD/performance, runtime map/containment/power/water, full campsite approach grading and final story/loose-physics/Easter-egg gates remain open.
+
+
+## Third authored surface pass,24 October
+
+[Current authored review](AUTHORED_REVIEW.html):14 separate surface variants/30 fitted instances. Part-aligned grain, physical damp/dirt, exposure fade, sparse oxidation/corner wear and localized soot are baked into portable1024px atlases. Previous construction/smoothing stays intact. Exact geometry/placement/source-UV invariance across803 scene meshes,14 actual GLB reimports and1008 independent game-loader UV/pixel checks pass. Full runtime/human/performance gates remain open; tent/shrub/creek/cable families retain their preceding refinement. See dated AUTHORED_SURFACES handoff and DEV-056..061; existing vehicle color-count assertion also fails on the pre-change loader.

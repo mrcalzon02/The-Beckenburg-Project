@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 657,
+  "count": 678,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1314,6 +1314,26 @@
       "sha256": "475170a0f7b0dd3e9002843f11c152e297fcacf316240ce8ddd8855763a15464"
     },
     {
+      "path": "development/levels/previews/defects/DEV-056-before-uniform-surfaces-native-fitout.png",
+      "url": "development/levels/previews/defects/DEV-056-before-uniform-surfaces-native-fitout.png",
+      "title": "Dev 056 before uniform surfaces native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 1926250,
+      "sha256": "2278cf9f929a01f7b54f5507ae88be5e704ee2eb1472de3dd75f2c5c7c3578fe"
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-061-before-bake-palette-washout.png",
+      "url": "development/levels/previews/defects/DEV-061-before-bake-palette-washout.png",
+      "title": "Dev 061 before bake palette washout",
+      "kind": "Development review",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2179874,
+      "sha256": "9209835dfd20e3433df714430bcb3798a85cf46c2b9d23828d2833333cfe2494"
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "url": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "title": "Academy edge sky plan",
@@ -1832,6 +1852,56 @@
       "height": 1066,
       "bytes": 2363578,
       "sha256": "43ee47c2b3ee2bf73a36bf6e481d4b978b276344b20114a196635248d3aa5fc6"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-dock-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/authored-dock-native-fitout.png",
+      "title": "Authored dock native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 1908348,
+      "sha256": "9357323e2951d7493a3bf5882d29a2738f979126a301d85fa0c0d2677174fb63"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-expanded-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/authored-expanded-site-native-fitout.png",
+      "title": "Authored expanded site native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2439845,
+      "sha256": "a4b05b76ff8b9810c99fb40c009c30076e5691bfedaedc8ed3dddba5f1d3214c"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-hearth-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/authored-hearth-native-fitout.png",
+      "title": "Authored hearth native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2114501,
+      "sha256": "c8cf11e5799b30c1bd508e5094f05b753cfe55d9ab524488dca4e1f15a0648c0"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-memorial-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/authored-memorial-native-fitout.png",
+      "title": "Authored memorial native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2333407,
+      "sha256": "e3d4ba3ba64754194d094d87129a493fc83983e8f140cff68754438223b27fc2"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-toilets-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/authored-toilets-native-fitout.png",
+      "title": "Authored toilets native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 1915266,
+      "sha256": "b1820191bd7a265c06912382f672b0ea1f651588d13c47b610b9d224711dccce"
     },
     {
       "path": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
@@ -2454,6 +2524,16 @@
       "sha256": "84b0830ae0c388a45c6b59797de155703e72af498d34f82727872978a7ee98ba"
     },
     {
+      "path": "development/levels/previews/level_camp_bedroll_rolled_authored.png",
+      "url": "development/levels/previews/level_camp_bedroll_rolled_authored.png",
+      "title": "Level camp bedroll rolled authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 849822,
+      "sha256": "d104093e56db3bfb25db8506c1d5e85fb83354ec9adb6fee7fc12db688d8a2e8"
+    },
+    {
       "path": "development/levels/previews/level_camp_bedroll_rolled_refined.png",
       "url": "development/levels/previews/level_camp_bedroll_rolled_refined.png",
       "title": "Level camp bedroll rolled refined",
@@ -2504,6 +2584,16 @@
       "sha256": "7e810370be1bd71732d7ac498d9559db6d247719f0c9a0fa96f2c954741f1a8c"
     },
     {
+      "path": "development/levels/previews/level_camp_cooler_authored.png",
+      "url": "development/levels/previews/level_camp_cooler_authored.png",
+      "title": "Level camp cooler authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 827201,
+      "sha256": "627950dbc67866fdc92fe2d82aadad204ad71520058faf2d5d012afe25b2cd59"
+    },
+    {
       "path": "development/levels/previews/level_camp_cooler_refined.png",
       "url": "development/levels/previews/level_camp_cooler_refined.png",
       "title": "Level camp cooler refined",
@@ -2532,6 +2622,16 @@
       "height": 640,
       "bytes": 846002,
       "sha256": "fcfad84d06b92379f87b551248fd62969a39f182fdf4c4962605ee73410072c7"
+    },
+    {
+      "path": "development/levels/previews/level_camp_dock_shed_authored.png",
+      "url": "development/levels/previews/level_camp_dock_shed_authored.png",
+      "title": "Level camp dock shed authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 848936,
+      "sha256": "87a0913d01c43a3fe86fdbb638ae078128cd39872dbf3d8a08e6dfc14f99783b"
     },
     {
       "path": "development/levels/previews/level_camp_dock_shed_refined.png",
@@ -2564,6 +2664,16 @@
       "sha256": "31bc535d08a8ea0783b0666667a092c282dd4213b12af082a61e53bad4f210ab"
     },
     {
+      "path": "development/levels/previews/level_camp_fire_ring_authored.png",
+      "url": "development/levels/previews/level_camp_fire_ring_authored.png",
+      "title": "Level camp fire ring authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 882877,
+      "sha256": "b86c2201e64a8dcbcc84e1acd0cd29e0278fd3e43abe6955cb94f556596e7558"
+    },
+    {
       "path": "development/levels/previews/level_camp_fire_ring_refined.png",
       "url": "development/levels/previews/level_camp_fire_ring_refined.png",
       "title": "Level camp fire ring refined",
@@ -2594,6 +2704,16 @@
       "sha256": "17c29c9f7cd0475a5535fc29bc01c5a8fc7fa43e51a971853204d7e40fde2d44"
     },
     {
+      "path": "development/levels/previews/level_camp_folding_chair_authored.png",
+      "url": "development/levels/previews/level_camp_folding_chair_authored.png",
+      "title": "Level camp folding chair authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 834464,
+      "sha256": "4c0ef81e5ae2ace75ee5e772f7c8ca297f46deca3a78a4a04e0beb9a49ae4f2e"
+    },
+    {
       "path": "development/levels/previews/level_camp_folding_chair_refined.png",
       "url": "development/levels/previews/level_camp_folding_chair_refined.png",
       "title": "Level camp folding chair refined",
@@ -2612,6 +2732,16 @@
       "height": 640,
       "bytes": 815660,
       "sha256": "f088adae18cbead6804ed7c28dd3bc69ba0b587efb0f76e810d2ccbb20a336cd"
+    },
+    {
+      "path": "development/levels/previews/level_camp_heron_memorial_authored.png",
+      "url": "development/levels/previews/level_camp_heron_memorial_authored.png",
+      "title": "Level camp heron memorial authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 804614,
+      "sha256": "ca67e1d16bc04ee00de42dc62c455584502bfda1f91dc9ec10cb626ff1d4e017"
     },
     {
       "path": "development/levels/previews/level_camp_heron_memorial_refined.png",
@@ -2654,6 +2784,16 @@
       "sha256": "43577ddc4ddbc4ee7ad485de82249ae41c25590635c3ec9f18050272a8fce70a"
     },
     {
+      "path": "development/levels/previews/level_camp_pavilion_authored.png",
+      "url": "development/levels/previews/level_camp_pavilion_authored.png",
+      "title": "Level camp pavilion authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 846182,
+      "sha256": "16606293e113f68fbd99ad43d492fd9fa1395fdf22688b7ebc2549405481f535"
+    },
+    {
       "path": "development/levels/previews/level_camp_pavilion_fireplace.png",
       "url": "development/levels/previews/level_camp_pavilion_fireplace.png",
       "title": "Level camp pavilion fireplace",
@@ -2662,6 +2802,16 @@
       "height": 640,
       "bytes": 819821,
       "sha256": "d69fe835037c646350c759ed32ddc36a1f1a0314926587103d8179dbfffa1bd1"
+    },
+    {
+      "path": "development/levels/previews/level_camp_pavilion_fireplace_authored.png",
+      "url": "development/levels/previews/level_camp_pavilion_fireplace_authored.png",
+      "title": "Level camp pavilion fireplace authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 826685,
+      "sha256": "beb30e7a0078e8af6b22e45975d93c5de69a5218e3ecf1edb68579e99215e1c1"
     },
     {
       "path": "development/levels/previews/level_camp_pavilion_fireplace_refined.png",
@@ -2704,6 +2854,16 @@
       "sha256": "6daeb18b1ffe2d31338d827268fa2eab857c4593754cb5661cada5a9daa26b62"
     },
     {
+      "path": "development/levels/previews/level_camp_picnic_table_authored.png",
+      "url": "development/levels/previews/level_camp_picnic_table_authored.png",
+      "title": "Level camp picnic table authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 839447,
+      "sha256": "d49946be1cef16ef2fa976247fca4b1a62555ac69318a41f8c4e15a7b27a064f"
+    },
+    {
       "path": "development/levels/previews/level_camp_picnic_table_refined.png",
       "url": "development/levels/previews/level_camp_picnic_table_refined.png",
       "title": "Level camp picnic table refined",
@@ -2724,6 +2884,16 @@
       "sha256": "3868097b702e3ba1bf20d103c05afbbe9d57a458e91811f4cbd946afe330e3ed"
     },
     {
+      "path": "development/levels/previews/level_camp_portable_toilet_closed_authored.png",
+      "url": "development/levels/previews/level_camp_portable_toilet_closed_authored.png",
+      "title": "Level camp portable toilet closed authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 828875,
+      "sha256": "986491cc0ec4573a5d3601d35c356eebf8d31bc2764697013fbc34aac7adcbe9"
+    },
+    {
       "path": "development/levels/previews/level_camp_portable_toilet_closed_refined.png",
       "url": "development/levels/previews/level_camp_portable_toilet_closed_refined.png",
       "title": "Level camp portable toilet closed refined",
@@ -2742,6 +2912,16 @@
       "height": 640,
       "bytes": 869320,
       "sha256": "2b013b7267e169e51c473217a81d2311578b0493aaf69c7bf2a267c0b2dfbfb4"
+    },
+    {
+      "path": "development/levels/previews/level_camp_portable_toilet_open_authored.png",
+      "url": "development/levels/previews/level_camp_portable_toilet_open_authored.png",
+      "title": "Level camp portable toilet open authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 828892,
+      "sha256": "a938794884d228fcf8344afdbea82bc32ab837db50d34eae3fc7f434fe92adc1"
     },
     {
       "path": "development/levels/previews/level_camp_portable_toilet_open_refined.png",
@@ -2774,6 +2954,16 @@
       "sha256": "c74045869d9836e1e562315c6df2f41d87306fb6a22494f7ab6b6077ec21c8c1"
     },
     {
+      "path": "development/levels/previews/level_camp_refuse_bin_authored.png",
+      "url": "development/levels/previews/level_camp_refuse_bin_authored.png",
+      "title": "Level camp refuse bin authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 814024,
+      "sha256": "6456d9ca92674c2fec44fdf70e33fd539cb5d2643e67a2fa95f872551885bc2a"
+    },
+    {
       "path": "development/levels/previews/level_camp_refuse_bin_refined.png",
       "url": "development/levels/previews/level_camp_refuse_bin_refined.png",
       "title": "Level camp refuse bin refined",
@@ -2792,6 +2982,16 @@
       "height": 640,
       "bytes": 899113,
       "sha256": "a0ff005d5663ed298e262503503bd406555a439696ed4dd3448f29322bf1ac68"
+    },
+    {
+      "path": "development/levels/previews/level_camp_rowboat_authored.png",
+      "url": "development/levels/previews/level_camp_rowboat_authored.png",
+      "title": "Level camp rowboat authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 881952,
+      "sha256": "cf4dffa18be92b2fa545cbb055ef8b355a2f07c850571e35f20c60747893f331"
     },
     {
       "path": "development/levels/previews/level_camp_rowboat_refined.png",
@@ -4262,6 +4462,16 @@
       "height": 640,
       "bytes": 854672,
       "sha256": "f40ff0a28548f23322ceff696f81e94a7b5e74a928aedc293003c18020250f51"
+    },
+    {
+      "path": "development/levels/previews/level_trace_generator_authored.png",
+      "url": "development/levels/previews/level_trace_generator_authored.png",
+      "title": "Level trace generator authored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 828413,
+      "sha256": "1717a5a910235504be66ce148b668a83f97ccbf3d1af7dfd745a3399d6b6a9f2"
     },
     {
       "path": "development/levels/previews/level_trace_generator_refined.png",

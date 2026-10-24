@@ -1,0 +1,196 @@
+{
+  "status": "pass-source-and-native-surface-only",
+  "families": 14,
+  "fitted_instances": 30,
+  "unchanged_native_mesh_objects": 803,
+  "assets": [
+    {
+      "id": "level_camp_dock_shed_authored",
+      "triangles": 25688,
+      "bytes": 1390816,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_rowboat_authored",
+      "triangles": 6828,
+      "bytes": 914756,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_folding_chair_authored",
+      "triangles": 2648,
+      "bytes": 382876,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_cooler_authored",
+      "triangles": 1160,
+      "bytes": 340024,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_portable_toilet_open_authored",
+      "triangles": 6428,
+      "bytes": 784592,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_portable_toilet_closed_authored",
+      "triangles": 6428,
+      "bytes": 775508,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_refuse_bin_authored",
+      "triangles": 2564,
+      "bytes": 362844,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_heron_memorial_authored",
+      "triangles": 5892,
+      "bytes": 803548,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_pavilion_fireplace_authored",
+      "triangles": 7778,
+      "bytes": 868696,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_bedroll_rolled_authored",
+      "triangles": 3540,
+      "bytes": 547864,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_trace_generator_authored",
+      "triangles": 5284,
+      "bytes": 550272,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_pavilion_authored",
+      "triangles": 15684,
+      "bytes": 1292136,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_picnic_table_authored",
+      "triangles": 5504,
+      "bytes": 688948,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    },
+    {
+      "id": "level_camp_fire_ring_authored",
+      "triangles": 1760,
+      "bytes": 402584,
+      "geometry_normals_pivots_and_source_uvs_unchanged": true,
+      "packed_atlas": [
+        1024,
+        1024
+      ],
+      "runtime_uv_channel": 0
+    }
+  ],
+  "protected_sources": 41,
+  "scene_sha256": "b8062e51417b1748af8a2ecd04223782fd6848e028e2e151584a504cf1fe18af",
+  "captures": [
+    {
+      "path": "development/levels/previews/hollow-creek/authored-expanded-site-native-fitout.png",
+      "sha256": "a4b05b76ff8b9810c99fb40c009c30076e5691bfedaedc8ed3dddba5f1d3214c",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-hearth-native-fitout.png",
+      "sha256": "c8cf11e5799b30c1bd508e5094f05b753cfe55d9ab524488dca4e1f15a0648c0",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-dock-native-fitout.png",
+      "sha256": "9357323e2951d7493a3bf5882d29a2738f979126a301d85fa0c0d2677174fb63",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-toilets-native-fitout.png",
+      "sha256": "b1820191bd7a265c06912382f672b0ea1f651588d13c47b610b9d224711dccce",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-memorial-native-fitout.png",
+      "sha256": "e3d4ba3ba64754194d094d87129a493fc83983e8f140cff68754438223b27fc2",
+      "kind": "Native scene overview"
+    }
+  ],
+  "limitations": [
+    "No runtime level unlock, movement, circuits, layered water or human/performance acceptance.",
+    "New atlas is diffuse color only; no shader-dependent fake detail.",
+    "Tent, shrub, creek-engineering and dock-cable families retain previous refined sources."
+  ]
+}

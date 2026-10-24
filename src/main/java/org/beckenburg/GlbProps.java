@@ -60,8 +60,8 @@ public final class GlbProps {
     private static final List<String> materialNames=new ArrayList<>();
     public static synchronized String materialName(int material){int i=material-TEXTURE_BASE;return i>=0&&i<materialNames.size()?materialNames.get(i):"";}
     private static final List<BufferedImage> textures=new ArrayList<>();
-    // glTF 2.0 origin is upper-left. Limit the correction to Blender-source
-    // GGBot vehicles so unrelated art retains its previous runtime mapping.
+    // glTF 2.0 origin is upper-left. Apply it to vehicles and new authored
+    // surface atlases; legacy art keeps its previously reviewed mapping.
     private static final List<Boolean> vehicleUvMaterials=new ArrayList<>();
     static int imageRow(double v,int height,boolean gltfTopLeft){
         if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
@@ -264,7 +264,7 @@ public final class GlbProps {
                 throw new IOException("Invalid embedded PNG");
             materialIds[i]=TEXTURE_BASE+textures.size();
             textures.add(picture);
-            vehicleUvMaterials.add(resourceName!=null&&resourceName.startsWith("ggbot_car"));
+            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)));
             materialNames.add(String.valueOf(obj(materials.get(i)).getOrDefault("name","")));
             double[] color=vec(pbr.get("baseColorFactor"),1,1,1,1);
             diffuseFactors.add(color);

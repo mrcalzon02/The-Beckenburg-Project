@@ -1,0 +1,26 @@
+{
+  "status": "pass-focused-authored-checks-with-existing-baseline-failure",
+  "date": "2026-10-24",
+  "main_source_compile": "JDK17 all current main sources pass",
+  "authored_loader": {
+    "families": 14,
+    "triangles": 97186,
+    "independent_uv_png_samples": 1008,
+    "result": "pass"
+  },
+  "legacy_equipment": {
+    "models": 8,
+    "result": "pass"
+  },
+  "vehicle_regression": {
+    "result": "fails on current and previous committed loader",
+    "assertion": "ggbot_car01 original128px textured color atlas",
+    "defect": "DEV-060"
+  },
+  "not_claimed": [
+    "Full suite",
+    "Full map renderer/gameplay/lighting/LAN",
+    "Runtime water barriers/circuits",
+    "Human/hardware art/performance acceptance"
+  ]
+}
