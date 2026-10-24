@@ -1,0 +1,806 @@
+{
+  "version": 1,
+  "id": "WLD-15",
+  "title": "MV Saint Elara",
+  "region": "Beckenburg coast and hinterland",
+  "scale": "Measured rough site / metres",
+  "status": "rough-layout-only",
+  "intent": "A retired catcher/processor permanently moored for investigation. Processing, cold storage, crew life and bridge occupy different decks; the ship does not sail.",
+  "site_bounds": [
+    0,
+    -14,
+    64,
+    98
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Quayside van apron",
+      "bounds": [
+        24,
+        80,
+        40,
+        92
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Quayside van apron"
+    },
+    {
+      "id": "entry",
+      "name": "Quay cargo lane",
+      "bounds": [
+        24,
+        76,
+        40,
+        80
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Quay cargo lane"
+    },
+    {
+      "id": "quay",
+      "name": "Mooring quay",
+      "bounds": [
+        24,
+        64,
+        40,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Mooring quay"
+    },
+    {
+      "id": "portpier",
+      "name": "Port service pier",
+      "bounds": [
+        16,
+        40,
+        22,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Port service pier"
+    },
+    {
+      "id": "aft",
+      "name": "Aft working deck",
+      "bounds": [
+        22,
+        40,
+        42,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Aft working deck"
+    },
+    {
+      "id": "processing",
+      "name": "Fish processing hall",
+      "bounds": [
+        24,
+        8,
+        40,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Fish processing hall"
+    },
+    {
+      "id": "galley",
+      "name": "Galley",
+      "bounds": [
+        24,
+        30,
+        32,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Galley"
+    },
+    {
+      "id": "mess",
+      "name": "Crew mess",
+      "bounds": [
+        32,
+        30,
+        40,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Crew mess"
+    },
+    {
+      "id": "side",
+      "name": "Starboard deck walkway",
+      "bounds": [
+        40,
+        8,
+        42,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Starboard deck walkway"
+    },
+    {
+      "id": "fore",
+      "name": "Foredeck",
+      "bounds": [
+        24,
+        -2,
+        40,
+        8
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Foredeck"
+    },
+    {
+      "id": "engine",
+      "name": "Engine room",
+      "bounds": [
+        24,
+        24,
+        40,
+        40
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Engine room"
+    },
+    {
+      "id": "hold",
+      "name": "Chilled fish hold",
+      "bounds": [
+        24,
+        4,
+        40,
+        24
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Chilled fish hold"
+    },
+    {
+      "id": "pump",
+      "name": "Bilge pump room",
+      "bounds": [
+        24,
+        -2,
+        40,
+        4
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Bilge pump room"
+    },
+    {
+      "id": "crew",
+      "name": "Crew bunks",
+      "bounds": [
+        24,
+        30,
+        40,
+        40
+      ],
+      "y": 3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Crew bunks"
+    },
+    {
+      "id": "bridge",
+      "name": "Wheelhouse",
+      "bounds": [
+        24,
+        18,
+        40,
+        30
+      ],
+      "y": 6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Wheelhouse"
+    },
+    {
+      "id": "net",
+      "name": "Net and gear store",
+      "bounds": [
+        24,
+        8,
+        40,
+        18
+      ],
+      "y": 3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Net and gear store"
+    }
+  ],
+  "links": [
+    {
+      "id": "route-01",
+      "a": "stage",
+      "b": "entry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          86.0
+        ],
+        [
+          32.0,
+          0,
+          78.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-02",
+      "a": "entry",
+      "b": "quay",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          78.0
+        ],
+        [
+          32.0,
+          0,
+          70.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-03",
+      "a": "quay",
+      "b": "aft",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32,
+          0,
+          68
+        ],
+        [
+          32,
+          0,
+          48
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-04",
+      "a": "quay",
+      "b": "portpier",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          28,
+          0,
+          68
+        ],
+        [
+          19,
+          0,
+          68
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-05",
+      "a": "portpier",
+      "b": "aft",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          19,
+          0,
+          46
+        ],
+        [
+          26,
+          0,
+          46
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-06",
+      "a": "aft",
+      "b": "galley",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          47.0
+        ],
+        [
+          28.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-07",
+      "a": "aft",
+      "b": "mess",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          47.0
+        ],
+        [
+          36.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-08",
+      "a": "galley",
+      "b": "processing",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          28.0,
+          0,
+          35.0
+        ],
+        [
+          32.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-09",
+      "a": "mess",
+      "b": "processing",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          36.0,
+          0,
+          35.0
+        ],
+        [
+          32.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-10",
+      "a": "processing",
+      "b": "fore",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          19.0
+        ],
+        [
+          32.0,
+          0,
+          3.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-11",
+      "a": "fore",
+      "b": "side",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32,
+          0,
+          3
+        ],
+        [
+          41,
+          0,
+          10
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-12",
+      "a": "side",
+      "b": "aft",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          41.0,
+          0,
+          24.0
+        ],
+        [
+          32.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-13",
+      "a": "processing",
+      "b": "engine",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          25,
+          0,
+          24
+        ],
+        [
+          23,
+          0,
+          24
+        ],
+        [
+          23,
+          -3,
+          34
+        ],
+        [
+          25,
+          -3,
+          34
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    },
+    {
+      "id": "route-14",
+      "a": "fore",
+      "b": "pump",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          26,
+          0,
+          3
+        ],
+        [
+          23,
+          0,
+          3
+        ],
+        [
+          23,
+          -3,
+          0
+        ],
+        [
+          26,
+          -3,
+          0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    },
+    {
+      "id": "route-15",
+      "a": "pump",
+      "b": "hold",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          -3,
+          1.0
+        ],
+        [
+          32.0,
+          -3,
+          14.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-16",
+      "a": "hold",
+      "b": "engine",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          -3,
+          14.0
+        ],
+        [
+          32.0,
+          -3,
+          32.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-17",
+      "a": "aft",
+      "b": "crew",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          26,
+          0,
+          46
+        ],
+        [
+          23,
+          0,
+          46
+        ],
+        [
+          23,
+          3,
+          36
+        ],
+        [
+          26,
+          3,
+          36
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    },
+    {
+      "id": "route-18",
+      "a": "crew",
+      "b": "net",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          3,
+          35.0
+        ],
+        [
+          32.0,
+          3,
+          13.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-19",
+      "a": "net",
+      "b": "bridge",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          30,
+          3,
+          14
+        ],
+        [
+          23,
+          3,
+          14
+        ],
+        [
+          23,
+          6,
+          24
+        ],
+        [
+          30,
+          6,
+          24
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    }
+  ],
+  "loops": [
+    [
+      "quay",
+      "aft",
+      "portpier",
+      "quay"
+    ],
+    [
+      "processing",
+      "fore",
+      "side",
+      "aft",
+      "galley",
+      "processing"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      86.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        82.372
+      ],
+      [
+        32.0,
+        0,
+        78.0
+      ]
+    ],
+    "logistics": "Reuse the canonical van on the roadhead/quay; remote travel is an expedition transition. No new driving or sailing system."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "processing",
+      "point": [
+        32.0,
+        0,
+        19.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "mess",
+      "point": [
+        36.0,
+        0,
+        35.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Absolution",
+      "zone": "hold",
+      "point": [
+        32.0,
+        -3,
+        14.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    }
+  ],
+  "circulation": "Two declared graph cycles reserve retreat options. Optional tower/bridge branches must never host mandatory evidence without separate fairness review. Actual physical routes and timing remain unaccepted.",
+  "systems": "Terrain and water boundaries first; then solid architecture with floor depth, fitted doors and circuit isolation. Separate exterior/interior acoustics, supported fixtures and surface-mounted UV evidence. All gameplay integration remains locked.",
+  "campaign": "Fictional location and records connect to the district investigation; narrative never predetermines the ghost or prevents an evidence-led outcome.",
+  "refine": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "Owner fleet reference informs processor function only; this is an original retired vessel, not a replica.",
+    "Low-deck cutaway and both independent gangway clearances need review; sea must never fill the hold."
+  ],
+  "sources": [
+    "https://www.oceanpeaceinc.com/fleet"
+  ],
+  "terrain": {
+    "profile": "quay",
+    "water_y": -1.6,
+    "hull_outline": [
+      [
+        22,
+        50
+      ],
+      [
+        22,
+        6
+      ],
+      [
+        25,
+        -4
+      ],
+      [
+        32,
+        -10
+      ],
+      [
+        39,
+        -4
+      ],
+      [
+        42,
+        6
+      ],
+      [
+        42,
+        50
+      ],
+      [
+        39,
+        56
+      ],
+      [
+        25,
+        56
+      ]
+    ],
+    "description": "Static moored cannery vessel beside retained quay; sea bed and stepped shoreline are separate from the watertight ship hull."
+  },
+  "needed_models": [
+    "Purpose-built pointed hull, watertight lower liner and deck/bulkhead kit",
+    "Fish processing benches, conveyors, chutes and freezer door modules",
+    "Ship engine, bilge pumps and supported service pipes",
+    "Mooring bollards, ropes, guarded paired gangways and deck railing",
+    "Wheelhouse consoles, glazing, berth furniture and galley fittings",
+    "Static net handling boom, nets and weathered maritime clutter"
+  ]
+}

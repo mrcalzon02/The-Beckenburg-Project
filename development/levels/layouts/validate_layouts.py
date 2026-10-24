@@ -6,7 +6,7 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parent
-EXPECTED={'house','farmhouse','school','mansion','prison','asylum','academy','college','church','castle'}|{f'wld-{i:02}' for i in range(1,14)}
+EXPECTED={'house','farmhouse','school','mansion','prison','asylum','academy','college','church','castle'}|{f'wld-{i:02}' for i in range(1,19)}
 
 def contains(zone, p, margin=0):
     a,b,c,d=zone['bounds']
@@ -82,7 +82,7 @@ def main():
     assert len(catalog['maps'])==len(results)
     assert {m['id'] for m in catalog['maps']}==map_ids
     roster=(ROOT.parents[2]/'docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md').read_text(encoding='utf-8')
-    assert all(f'WLD-{i:02}' in roster for i in range(1,14))
+    assert all(f'WLD-{i:02}' in roster for i in range(1,19))
     report={'status':'partial-pass' if missing else 'planning-checks-pass','maps':results,'missing':missing,
       'limitations':['No runtime geometry or collision loaded.','Route lines are circulation reservations; shell openings, stair geometry, terrain support and clearance require refinement.','No human/AI ghost traversal, game timings, LAN replication, campaign persistence or performance verified.']}
     (ROOT/'verification.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')

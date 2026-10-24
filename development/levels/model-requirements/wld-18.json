@@ -1,0 +1,210 @@
+{
+  "id": "WLD-18",
+  "title": "Site Cinder-6",
+  "source_layout_sha256": "d6ba46035157672b771a97aa76d9cad3d6d2608cfeca5942dd65dde2cdb5d2e7",
+  "status": "worklist only; no model completion claimed",
+  "terrain_first": {
+    "profile": "silo",
+    "shaft": {
+      "center": [
+        32,
+        28
+      ],
+      "radius": 8,
+      "bottom": -16
+    },
+    "description": "Uneven security compound and escape bank surround an open empty silo; two annular maintenance levels retain a real central void."
+  },
+  "standard_architecture": [
+    "Deep floor/roof slabs with closed edges and downward-facing undersides",
+    "Door/window frames and collision-aligned apertures",
+    "Engineered stairs/landings/guards with actual deck openings",
+    "Mounted fixtures, switches, breaker and supported cable/pipe runs",
+    "Canonical van placement; no replacement van"
+  ],
+  "map_specific_models": [
+    {
+      "model": "Empty cylindrical shaft liner, bottom and annular floor/guard kit",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Sealed headhouse and purpose-built escape stair/landing modules",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Inert consoles, equipment racks and records furniture",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Blast-door shell, ventilation ducts and cable-tray supports",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Sump pumps, grates, service lights and circuit labels",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Security fence, hillside exit, concrete pads and eroded banks",
+      "status": "needed; audit existing assets before authoring"
+    }
+  ],
+  "room_by_room": [
+    {
+      "zone": "stage",
+      "purpose": "Service road van apron",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "entry",
+      "purpose": "Security approach",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "servicehouse",
+      "purpose": "Surface service building",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "yard",
+      "purpose": "Fenced maintenance yard",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "head",
+      "purpose": "Access headhouse",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "shop",
+      "purpose": "Maintenance workshop",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "exit",
+      "purpose": "Hillside emergency exit",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "upperring",
+      "purpose": "Upper shaft gallery",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "lowring",
+      "purpose": "Lower shaft gallery",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "west",
+      "purpose": "Upper west access",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "records",
+      "purpose": "Maintenance records",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "exhibit",
+      "purpose": "Inert control equipment room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "east",
+      "purpose": "Lower east access",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "crew",
+      "purpose": "Lower crew room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "pump",
+      "purpose": "Sump and pump room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "plant",
+      "purpose": "Lower ventilation plant",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    }
+  ],
+  "review_gates": [
+    "Terrain/pad/route support",
+    "Model purpose/scale/pivot/UV audit",
+    "True surface support and full footprint clearances",
+    "Joins/light isolation and material stripe audit",
+    "Swept navigation, hunt fairness and ritual clearance",
+    "Runtime/collision/circuit/LAN/performance acceptance"
+  ],
+  "limitations": [
+    "No shipping map unlocked.",
+    "Reference links inform function, not surveyed dimensions.",
+    "Exact furniture quantities await detailed room fitting."
+  ]
+}

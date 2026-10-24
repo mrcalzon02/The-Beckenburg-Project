@@ -76,3 +76,14 @@ Further expansion to dozens of maps is a **long-range possibility, not a product
 Use **Blackpine → Hollow Creek → Red Mesa** as the first three **concept-validation** exemplars, respectively testing dispersed buildings, mixed campsites and vertical natural caves. Do not reorder or silently shrink the binding nine initial-release site families to accommodate these ideas. Any change to milestones or the [single stage ledger](../stage-ledger.json) requires a separate authorized planning decision and evidence.
 
 See [site/zone authoring](../locations-environments.md), [current site implementation](../LOCATION_EXPANSION.md), [campaign and allied investigators](../CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md), and [release plan](../RELEASE_PRODUCTION_PLAN.md).
+
+
+## 23 October additions — terrain-first rough proposals
+
+- **WLD-14 / Morrow Point Lightstation**: A lighthouse physically joined to its keeper house by a covered passage; a separate oil/generator house and cistern explain how the station worked.
+- **WLD-15 / MV Saint Elara**: A retired catcher/processor permanently moored for investigation. Processing, cold storage, crew life and bridge occupy different decks; the ship does not sail.
+- **WLD-16 / Eight Pines Motor Lodge**: An independent old eight-unit roadside motor lodge, with exterior room doors, reception/manager lodging and a believable linen/plant service route.
+- **WLD-17 / Battery Brackenhead**: An abandoned WWII coastal emplacement with empty gun positions, protected galleries, lower crew/service rooms and a separate observation post.
+- **WLD-18 / Site Cinder-6**: A decommissioned fictional missile-site maintenance complex, with an empty shaft, annular galleries and inert service equipment. No launch mechanics or working weapon.
+
+WLD-07 mortuary expansion is a separate additive study, not a duplicate cemetery map. All additions remain locked and unaccepted for play.

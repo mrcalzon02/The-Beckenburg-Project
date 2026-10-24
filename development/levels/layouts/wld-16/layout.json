@@ -1,0 +1,834 @@
+{
+  "version": 1,
+  "id": "WLD-16",
+  "title": "Eight Pines Motor Lodge",
+  "region": "Beckenburg coast and hinterland",
+  "scale": "Measured rough site / metres",
+  "status": "rough-layout-only",
+  "intent": "An independent old eight-unit roadside motor lodge, with exterior room doors, reception/manager lodging and a believable linen/plant service route.",
+  "site_bounds": [
+    0,
+    8,
+    62,
+    80
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Roadside van bay",
+      "bounds": [
+        18,
+        62,
+        34,
+        74
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Roadside van bay"
+    },
+    {
+      "id": "entry",
+      "name": "Motor court entrance",
+      "bounds": [
+        18,
+        52,
+        34,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Motor court entrance"
+    },
+    {
+      "id": "court",
+      "name": "Uneven parking court",
+      "bounds": [
+        16,
+        20,
+        36,
+        42
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Uneven parking court"
+    },
+    {
+      "id": "westwalk",
+      "name": "West exterior room walk",
+      "bounds": [
+        13,
+        20,
+        16,
+        48
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "West exterior room walk"
+    },
+    {
+      "id": "eastwalk",
+      "name": "East exterior room walk",
+      "bounds": [
+        36,
+        20,
+        39,
+        48
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "East exterior room walk"
+    },
+    {
+      "id": "northwalk",
+      "name": "North connecting walk",
+      "bounds": [
+        13,
+        17,
+        39,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "North connecting walk"
+    },
+    {
+      "id": "office",
+      "name": "Reception and key desk",
+      "bounds": [
+        13,
+        42,
+        23,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Reception and key desk"
+    },
+    {
+      "id": "manager",
+      "name": "Manager apartment",
+      "bounds": [
+        6,
+        40,
+        13,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Manager apartment"
+    },
+    {
+      "id": "laundry",
+      "name": "Linen and laundry",
+      "bounds": [
+        39,
+        40,
+        46,
+        46
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Linen and laundry"
+    },
+    {
+      "id": "plant",
+      "name": "Heating and service room",
+      "bounds": [
+        39,
+        46,
+        46,
+        52
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Heating and service room"
+    },
+    {
+      "id": "service",
+      "name": "Rear service yard",
+      "bounds": [
+        46,
+        20,
+        56,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Rear service yard"
+    },
+    {
+      "id": "room1",
+      "name": "West guest room 1",
+      "bounds": [
+        6,
+        20,
+        13,
+        25
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "West guest room 1"
+    },
+    {
+      "id": "room5",
+      "name": "East guest room 5",
+      "bounds": [
+        39,
+        20,
+        46,
+        25
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "East guest room 5"
+    },
+    {
+      "id": "room2",
+      "name": "West guest room 2",
+      "bounds": [
+        6,
+        25,
+        13,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "West guest room 2"
+    },
+    {
+      "id": "room6",
+      "name": "East guest room 6",
+      "bounds": [
+        39,
+        25,
+        46,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "East guest room 6"
+    },
+    {
+      "id": "room3",
+      "name": "West guest room 3",
+      "bounds": [
+        6,
+        30,
+        13,
+        35
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "West guest room 3"
+    },
+    {
+      "id": "room7",
+      "name": "East guest room 7",
+      "bounds": [
+        39,
+        30,
+        46,
+        35
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "East guest room 7"
+    },
+    {
+      "id": "room4",
+      "name": "West guest room 4",
+      "bounds": [
+        6,
+        35,
+        13,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "West guest room 4"
+    },
+    {
+      "id": "room8",
+      "name": "East guest room 8",
+      "bounds": [
+        39,
+        35,
+        46,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "East guest room 8"
+    }
+  ],
+  "links": [
+    {
+      "id": "route-01",
+      "a": "stage",
+      "b": "entry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          26.0,
+          0,
+          68.0
+        ],
+        [
+          26.0,
+          0,
+          57.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-02",
+      "a": "entry",
+      "b": "office",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          26.0,
+          0,
+          57.0
+        ],
+        [
+          18.0,
+          0,
+          46.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-03",
+      "a": "entry",
+      "b": "court",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          26.0,
+          0,
+          57.0
+        ],
+        [
+          26.0,
+          0,
+          31.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-04",
+      "a": "office",
+      "b": "westwalk",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          18.0,
+          0,
+          46.0
+        ],
+        [
+          14.5,
+          0,
+          34.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-05",
+      "a": "office",
+      "b": "manager",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          18.0,
+          0,
+          46.0
+        ],
+        [
+          9.5,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-06",
+      "a": "westwalk",
+      "b": "northwalk",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          14.5,
+          0,
+          34.0
+        ],
+        [
+          26.0,
+          0,
+          18.5
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-07",
+      "a": "northwalk",
+      "b": "eastwalk",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          26.0,
+          0,
+          18.5
+        ],
+        [
+          37.5,
+          0,
+          34.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-08",
+      "a": "eastwalk",
+      "b": "court",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          37.5,
+          0,
+          34.0
+        ],
+        [
+          26.0,
+          0,
+          31.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-09",
+      "a": "court",
+      "b": "westwalk",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          26.0,
+          0,
+          31.0
+        ],
+        [
+          14.5,
+          0,
+          34.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-10",
+      "a": "eastwalk",
+      "b": "laundry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          37.5,
+          0,
+          34.0
+        ],
+        [
+          42.5,
+          0,
+          43.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-11",
+      "a": "laundry",
+      "b": "plant",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          42.5,
+          0,
+          43.0
+        ],
+        [
+          42.5,
+          0,
+          49.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-12",
+      "a": "plant",
+      "b": "service",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          42.5,
+          0,
+          49.0
+        ],
+        [
+          51.0,
+          0,
+          37.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-13",
+      "a": "service",
+      "b": "entry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          50,
+          0,
+          50
+        ],
+        [
+          50,
+          0,
+          56
+        ],
+        [
+          26,
+          0,
+          56
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-14",
+      "a": "service",
+      "b": "northwalk",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          50,
+          0,
+          22
+        ],
+        [
+          50,
+          0,
+          18
+        ],
+        [
+          26,
+          0,
+          18
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-15",
+      "a": "westwalk",
+      "b": "room1",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          14.5,
+          0,
+          22.5
+        ],
+        [
+          9.5,
+          0,
+          22.5
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-16",
+      "a": "westwalk",
+      "b": "room2",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          14.5,
+          0,
+          27.5
+        ],
+        [
+          9.5,
+          0,
+          27.5
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-17",
+      "a": "westwalk",
+      "b": "room3",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          14.5,
+          0,
+          32.5
+        ],
+        [
+          9.5,
+          0,
+          32.5
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-18",
+      "a": "westwalk",
+      "b": "room4",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          14.5,
+          0,
+          37.5
+        ],
+        [
+          9.5,
+          0,
+          37.5
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-19",
+      "a": "eastwalk",
+      "b": "room5",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          37.5,
+          0,
+          22.5
+        ],
+        [
+          42.5,
+          0,
+          22.5
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-20",
+      "a": "eastwalk",
+      "b": "room6",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          37.5,
+          0,
+          27.5
+        ],
+        [
+          42.5,
+          0,
+          27.5
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-21",
+      "a": "eastwalk",
+      "b": "room7",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          37.5,
+          0,
+          32.5
+        ],
+        [
+          42.5,
+          0,
+          32.5
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-22",
+      "a": "eastwalk",
+      "b": "room8",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          37.5,
+          0,
+          37.5
+        ],
+        [
+          42.5,
+          0,
+          37.5
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    }
+  ],
+  "loops": [
+    [
+      "westwalk",
+      "northwalk",
+      "eastwalk",
+      "court",
+      "westwalk"
+    ],
+    [
+      "entry",
+      "court",
+      "eastwalk",
+      "laundry",
+      "plant",
+      "service",
+      "entry"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      26.0,
+      0,
+      68.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        26.0,
+        0,
+        64.372
+      ],
+      [
+        26.0,
+        0,
+        57.0
+      ]
+    ],
+    "logistics": "Reuse the canonical van on the roadhead/quay; remote travel is an expedition transition. No new driving or sailing system."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "court",
+      "point": [
+        26.0,
+        0,
+        31.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "laundry",
+      "point": [
+        42.5,
+        0,
+        43.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Absolution",
+      "zone": "office",
+      "point": [
+        18.0,
+        0,
+        46.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    }
+  ],
+  "circulation": "Two declared graph cycles reserve retreat options. Optional tower/bridge branches must never host mandatory evidence without separate fairness review. Actual physical routes and timing remain unaccepted.",
+  "systems": "Terrain and water boundaries first; then solid architecture with floor depth, fitted doors and circuit isolation. Separate exterior/interior acoustics, supported fixtures and surface-mounted UV evidence. All gameplay integration remains locked.",
+  "campaign": "Fictional location and records connect to the district investigation; narrative never predetermines the ghost or prevents an evidence-led outcome.",
+  "refine": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "Historic motor-court functional reference only; Eight Pines is a fictional independent brand.",
+    "Subdivide each guest bathroom without consuming door approaches; no hidden back-door shortcuts.",
+    "Court grade/drainage must not create unsupported flat exterior route strips."
+  ],
+  "sources": [
+    "https://home.nps.gov/places/blue-swallow-motel.htm"
+  ],
+  "terrain": {
+    "profile": "roadside",
+    "description": "Cambered roadside court with a shallow swale, low bank behind the rooms and a cut footpath linking service yard to arrival."
+  },
+  "needed_models": [
+    "Fictional Eight Pines roadside sign and room number set",
+    "Eight guest-room/bathroom door and fixture variants",
+    "Exterior walkway, gutter, canopy and guard/step kit",
+    "Reception key board, counter, phone and ledger",
+    "Laundry machines, linen carts and plant-room fittings",
+    "Parking markings, wheel stops, retaining bank, fence and hedge"
+  ]
+}

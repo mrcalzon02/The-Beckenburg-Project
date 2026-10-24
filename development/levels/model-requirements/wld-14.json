@@ -1,0 +1,262 @@
+{
+  "id": "WLD-14",
+  "title": "Morrow Point Lightstation",
+  "source_layout_sha256": "dad089ced65405ba4f1a79f02552cf69210c0b32b3d964694e956c67c57f0679",
+  "status": "worklist only; no model completion claimed",
+  "terrain_first": {
+    "profile": "headland",
+    "water_y": -7,
+    "description": "Tapered rock headland, exposed coastal cliff, uphill road shoulders and sheltered keeper garden; paths incised below shoulders."
+  },
+  "standard_architecture": [
+    "Deep floor/roof slabs with closed edges and downward-facing undersides",
+    "Door/window frames and collision-aligned apertures",
+    "Engineered stairs/landings/guards with actual deck openings",
+    "Mounted fixtures, switches, breaker and supported cable/pipe runs",
+    "Canonical van placement; no replacement van"
+  ],
+  "map_specific_models": [
+    {
+      "model": "Round tower shell and purpose-built spiral stair/landing kit",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Lantern glazing, optic pedestal and service platform",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Keeper house roof/porch and attached covered passage",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Cistern, rainwater pipework, oil storage and isolated generator fixtures",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Coastal rock, stone boundary walls, windswept hedge and guarded cliff edge",
+      "status": "needed; audit existing assets before authoring"
+    }
+  ],
+  "room_by_room": [
+    {
+      "zone": "stage",
+      "purpose": "Roadhead van apron",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "entry",
+      "purpose": "Worn headland approach",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "porch",
+      "purpose": "Keeper porch",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "foyer",
+      "purpose": "Keeper entrance",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "sitting",
+      "purpose": "Sitting room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "kitchen",
+      "purpose": "Keeper kitchen",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "workroom",
+      "purpose": "Maintenance workroom",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "store",
+      "purpose": "Dry store",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "stairs",
+      "purpose": "Main stair hall",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "bed",
+      "purpose": "Keeper bedroom",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "study",
+      "purpose": "Signal records study",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "upperhall",
+      "purpose": "Upper stair landing",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "service-stair",
+      "purpose": "Service stair landing",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "service-upper",
+      "purpose": "Upper service landing",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "passage",
+      "purpose": "Attached covered tower passage",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "generator",
+      "purpose": "Generator and oil house",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "yard",
+      "purpose": "Service yard and cistern reserve",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "tower0",
+      "purpose": "Tower base",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "tower1",
+      "purpose": "First tower landing",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "tower2",
+      "purpose": "Second tower landing",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "tower3",
+      "purpose": "Third tower landing",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "tower4",
+      "purpose": "Watch room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "tower5",
+      "purpose": "Lantern room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    }
+  ],
+  "review_gates": [
+    "Terrain/pad/route support",
+    "Model purpose/scale/pivot/UV audit",
+    "True surface support and full footprint clearances",
+    "Joins/light isolation and material stripe audit",
+    "Swept navigation, hunt fairness and ritual clearance",
+    "Runtime/collision/circuit/LAN/performance acceptance"
+  ],
+  "limitations": [
+    "No shipping map unlocked.",
+    "Reference links inform function, not surveyed dimensions.",
+    "Exact furniture quantities await detailed room fitting."
+  ]
+}

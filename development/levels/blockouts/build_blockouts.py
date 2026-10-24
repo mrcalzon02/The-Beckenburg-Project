@@ -7,6 +7,7 @@ from pathlib import Path
 from mathutils import Vector
 ROOT=Path(__file__).resolve().parent
 LAYOUTS=ROOT.parent/'layouts'
+sys.path.insert(0,str(ROOT))
 WALL=.16
 def material(name,color):
     m=bpy.data.materials.new(name);m.diffuse_color=(*color,1);m.use_nodes=True
@@ -51,6 +52,9 @@ def wall_crossings(zone,data):
                     if width>.3:out[side].append((max(lo+.16,min(hi-.16-width,along-width/2)),width,link['id']))
     return out
 def slab(zone,holes,c,mat):
+    if zone.get('shape'):
+        from proposal_landforms import shaped_slab
+        return shaped_slab(zone,c,mat)
     a,b,d,e=zone['bounds'];xs={a,d};zs={b,e}
     for x0,z0,x1,z1 in holes:
         xs.update([max(a,min(d,x0)),max(a,min(d,x1))]);zs.update([max(b,min(e,z0)),max(b,min(e,z1))])
@@ -71,10 +75,13 @@ def route_mesh(link,c,mat):
         o=bpy.data.objects.new(link['id']+' support '+str(i),mesh);c.objects.link(o);mesh.materials.append(mat)
         o['role']='rough route support; stair/ramp engineering unverified';o['clear_width']=width
 def build(path):
-    data=json.loads(path.read_text());folder=ROOT/path.parent.name;folder.mkdir(parents=True,exist_ok=True)
+    data=json.loads(path.read_text(encoding='utf-8'));folder=ROOT/path.parent.name;folder.mkdir(parents=True,exist_ok=True)
     bpy.ops.wm.read_factory_settings(use_empty=True);bpy.context.preferences.filepaths.save_version=0
     scene=bpy.context.scene;scene.unit_settings.system='METRIC';scene.unit_settings.scale_length=1
     wall=material('Neutral shell',(.52,.58,.61));floor=material('Interior floors',(.30,.38,.42));outside=material('Exterior terrain reservation',(.30,.40,.28));route=material('Cyan supported route reservation',(.12,.46,.55));vertical=material('Amber stair and grade reservation',(.70,.37,.10));ritual=material('Clear ritual reservation',(.52,.24,.39));van=material('Shared van envelope',(.48,.60,.57))
+    if 'terrain' in data:
+        from proposal_landforms import build_landform
+        build_landform(data)
     notes=[];openings=[];byid={z['id']:z for z in data['zones']}
     for zone in data['zones']:
         c=collection(zone['id']+' | '+zone['name']+' | Y'+str(zone['y']))
@@ -85,9 +92,13 @@ def build(path):
                 high=max([p,q],key=lambda v:v[1])
                 if abs(high[1]-zone['y'])<.01 and zone['id'] in [link['a'],link['b']]:
                     w=link['width']+.4;holes.append((high[0]-w/2,high[2]-w/2,high[0]+w/2,high[2]+w/2))
-        slab(zone,holes,c,outside if zone['kind'] in ['outside','staging'] else floor)
+        from proposal_landforms import keep_slab, shaped_wall
+        if 'terrain' not in data or keep_slab(zone,data):
+            slab(zone,holes,c,outside if zone['kind'] in ['outside','staging'] else floor)
         a,b,d,e=zone['bounds'];h=zone['height']
-        if zone['kind'] not in ['outside','staging']:
+        if zone.get('shape')=='circle':
+            shaped_wall(zone,c,wall,data)
+        if zone['kind'] not in ['outside','staging'] and not zone.get('shape'):
             cuts=wall_crossings(zone,data)
             for side,lo,hi,plane,along in [('N',a,d,b,True),('S',a,d,e,True),('W',b,e,a,False),('E',b,e,d,False)]:
                 spans=[(x,x+w) for x,w,_ in cuts[side]]
@@ -127,8 +138,20 @@ def build(path):
     (folder/'NEXT.md').write_text('# '+data['title']+' — next implementation steps\n\nRough shell blocking only. Source layout coordinates and elevations are retained.\n\n1. Review actual apertures, floor openings and connector support against the approved concept.\n2. Engineer every amber elevation link: real flights or paths, landings, headroom, guards and terrain.\n3. Resolve overlapping shell partitions and route crossings before building navigation collision.\n4. Integrate the canonical van, authored room volumes, circuits, acoustics and protocol IDs.\n5. Furnish, dress and test human/AI hunts and rituals; retain the map lock until accepted.\n\nSource-specific concerns:\n\n'+'\n'.join('- '+str(n) for n in data.get('refine',[]))+'\n\nSee implementation.json for every connector and floor-opening reservation.\n')
     print('BLOCKED',data['id'],len(data['zones']),'zones',len(openings),'openings',flush=True)
     return report
-EXISTING={'HOUSE','FARMHOUSE','SCHOOL','CHURCH','WLD-01','CASTLE'}
-reports=[build(p) for p in sorted(LAYOUTS.glob('*/layout.json')) if json.loads(p.read_text())['id'] not in EXISTING]
-(ROOT/'manifest.json').write_text(json.dumps(dict(status='rough-shell-blocking',maps=reports,limitations=['Planning coordinates retained; these are not playable or collision-accepted levels.','Openings, support strips and deck voids are rough reservations.','Overlapping partitions, vertical links, headroom and connector crossings require per-map engineering.','Existing runtime maps and concurrent engine optimization are untouched.']),indent=2)+'\n',encoding='utf-8')
-assert len(reports)==17
-print('ALL_ROSTER_BLOCKOUTS_COMPLETE',len(reports),flush=True)
+def main():
+    import argparse
+    ap=argparse.ArgumentParser(description='Build only explicitly selected new rough packets; existing files are protected.')
+    ap.add_argument('layouts',nargs='+',help='Paths to selected layout.json files')
+    ap.add_argument('--replace',action='store_true',help='Explicitly rebuild only selected outputs')
+    args=ap.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
+    paths=[Path(p).resolve() for p in args.layouts]
+    for path in paths:
+        assert path.is_relative_to(ROOT.parent) and path.name=='layout.json',path
+        if (ROOT/path.parent.name/'rough-shell.blend').exists() and not args.replace:
+            raise RuntimeError('Existing blockout protected; select a new output or explicitly use --replace: '+str(path))
+    reports=[build(p) for p in paths]
+    out=ROOT/'selected-manifest.json'
+    out.write_text(json.dumps(dict(status='selected rough proposals only',maps=reports,limitations=['Native massing only; no collision/navigation acceptance or playable unlock.','Original historic manifest and unselected maps are untouched.']),indent=2)+'\n',encoding='utf-8')
+    print('SELECTED_BLOCKOUTS_COMPLETE',len(reports),flush=True)
+
+if __name__=='__main__':main()

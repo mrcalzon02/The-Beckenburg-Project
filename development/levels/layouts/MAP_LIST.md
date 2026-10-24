@@ -33,3 +33,15 @@ Planning baseline, 21 October 2026. Every row has a rough measured layout and an
 All layouts remain rough planning. A space count is a reservation count, not implemented room or finished-content credit. Mission selection, campaign state and shipping-stage status remain governed by existing runtime code and the stage ledger.
 
 Next: review this complete roster, then refine the House construction reference. Refine remote exemplars in order Blackpine → Hollow Creek → Red Mesa. Each map brief records its own unresolved geometry, reference and fairness questions.
+
+
+## 23 October additional planning scope
+
+- [Morrow Point Lightstation](wld-14/README.md)
+- [MV Saint Elara](wld-15/README.md)
+- [Eight Pines Motor Lodge](wld-16/README.md)
+- [Battery Brackenhead](wld-17/README.md)
+- [Site Cinder-6](wld-18/README.md)
+- [Existing cemetery mortuary expansion](../layout-expansions/wld-07-mortuary/README.md)
+
+These five new sites extend the catalog to 28 packets including HQ. The cemetery expansion is a separate proposal, not a 29th site. Original layouts and blockouts are preserved.

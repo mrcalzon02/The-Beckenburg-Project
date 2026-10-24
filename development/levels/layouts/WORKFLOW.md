@@ -73,3 +73,15 @@ These add a terrain step to the existing layouts; original JSON/rough meshes,
 source floor parts, known developed maps and canonical van design are preserved.
 Per-site route diagnostics retain unresolved grades/crossings. Do not promote
 this breadth checkpoint to completed shells, navigation acceptance or mission unlock.
+
+
+## 23 October additional planning scope
+
+- [Morrow Point Lightstation](wld-14/README.md)
+- [MV Saint Elara](wld-15/README.md)
+- [Eight Pines Motor Lodge](wld-16/README.md)
+- [Battery Brackenhead](wld-17/README.md)
+- [Site Cinder-6](wld-18/README.md)
+- [Existing cemetery mortuary expansion](../layout-expansions/wld-07-mortuary/README.md)
+
+These five new sites extend the catalog to 28 packets including HQ. The cemetery expansion is a separate proposal, not a 29th site. Original layouts and blockouts are preserved.

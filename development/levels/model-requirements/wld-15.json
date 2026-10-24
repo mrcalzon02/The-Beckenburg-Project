@@ -1,0 +1,241 @@
+{
+  "id": "WLD-15",
+  "title": "MV Saint Elara",
+  "source_layout_sha256": "2a1bc652d3a9bbaf560232c230d70d8d190af306caaf3bfe842a081cf3ddf069",
+  "status": "worklist only; no model completion claimed",
+  "terrain_first": {
+    "profile": "quay",
+    "water_y": -1.6,
+    "hull_outline": [
+      [
+        22,
+        50
+      ],
+      [
+        22,
+        6
+      ],
+      [
+        25,
+        -4
+      ],
+      [
+        32,
+        -10
+      ],
+      [
+        39,
+        -4
+      ],
+      [
+        42,
+        6
+      ],
+      [
+        42,
+        50
+      ],
+      [
+        39,
+        56
+      ],
+      [
+        25,
+        56
+      ]
+    ],
+    "description": "Static moored cannery vessel beside retained quay; sea bed and stepped shoreline are separate from the watertight ship hull."
+  },
+  "standard_architecture": [
+    "Deep floor/roof slabs with closed edges and downward-facing undersides",
+    "Door/window frames and collision-aligned apertures",
+    "Engineered stairs/landings/guards with actual deck openings",
+    "Mounted fixtures, switches, breaker and supported cable/pipe runs",
+    "Canonical van placement; no replacement van"
+  ],
+  "map_specific_models": [
+    {
+      "model": "Purpose-built pointed hull, watertight lower liner and deck/bulkhead kit",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Fish processing benches, conveyors, chutes and freezer door modules",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Ship engine, bilge pumps and supported service pipes",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Mooring bollards, ropes, guarded paired gangways and deck railing",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Wheelhouse consoles, glazing, berth furniture and galley fittings",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Static net handling boom, nets and weathered maritime clutter",
+      "status": "needed; audit existing assets before authoring"
+    }
+  ],
+  "room_by_room": [
+    {
+      "zone": "stage",
+      "purpose": "Quayside van apron",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "entry",
+      "purpose": "Quay cargo lane",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "quay",
+      "purpose": "Mooring quay",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "portpier",
+      "purpose": "Port service pier",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "aft",
+      "purpose": "Aft working deck",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "processing",
+      "purpose": "Fish processing hall",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "galley",
+      "purpose": "Galley",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "mess",
+      "purpose": "Crew mess",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "side",
+      "purpose": "Starboard deck walkway",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "fore",
+      "purpose": "Foredeck",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "engine",
+      "purpose": "Engine room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "hold",
+      "purpose": "Chilled fish hold",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "pump",
+      "purpose": "Bilge pump room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "crew",
+      "purpose": "Crew bunks",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "bridge",
+      "purpose": "Wheelhouse",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "net",
+      "purpose": "Net and gear store",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    }
+  ],
+  "review_gates": [
+    "Terrain/pad/route support",
+    "Model purpose/scale/pivot/UV audit",
+    "True surface support and full footprint clearances",
+    "Joins/light isolation and material stripe audit",
+    "Swept navigation, hunt fairness and ritual clearance",
+    "Runtime/collision/circuit/LAN/performance acceptance"
+  ],
+  "limitations": [
+    "No shipping map unlocked.",
+    "Reference links inform function, not surveyed dimensions.",
+    "Exact furniture quantities await detailed room fitting."
+  ]
+}

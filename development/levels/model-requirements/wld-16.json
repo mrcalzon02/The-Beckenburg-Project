@@ -1,0 +1,229 @@
+{
+  "id": "WLD-16",
+  "title": "Eight Pines Motor Lodge",
+  "source_layout_sha256": "6a545e169efa07d7df40644245a4fedf68b6d9cc1cd965a41b195ad3193057d6",
+  "status": "worklist only; no model completion claimed",
+  "terrain_first": {
+    "profile": "roadside",
+    "description": "Cambered roadside court with a shallow swale, low bank behind the rooms and a cut footpath linking service yard to arrival."
+  },
+  "standard_architecture": [
+    "Deep floor/roof slabs with closed edges and downward-facing undersides",
+    "Door/window frames and collision-aligned apertures",
+    "Engineered stairs/landings/guards with actual deck openings",
+    "Mounted fixtures, switches, breaker and supported cable/pipe runs",
+    "Canonical van placement; no replacement van"
+  ],
+  "map_specific_models": [
+    {
+      "model": "Fictional Eight Pines roadside sign and room number set",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Eight guest-room/bathroom door and fixture variants",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Exterior walkway, gutter, canopy and guard/step kit",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Reception key board, counter, phone and ledger",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Laundry machines, linen carts and plant-room fittings",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Parking markings, wheel stops, retaining bank, fence and hedge",
+      "status": "needed; audit existing assets before authoring"
+    }
+  ],
+  "room_by_room": [
+    {
+      "zone": "stage",
+      "purpose": "Roadside van bay",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "entry",
+      "purpose": "Motor court entrance",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "court",
+      "purpose": "Uneven parking court",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "westwalk",
+      "purpose": "West exterior room walk",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "eastwalk",
+      "purpose": "East exterior room walk",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "northwalk",
+      "purpose": "North connecting walk",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "office",
+      "purpose": "Reception and key desk",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "manager",
+      "purpose": "Manager apartment",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "laundry",
+      "purpose": "Linen and laundry",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "plant",
+      "purpose": "Heating and service room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "service",
+      "purpose": "Rear service yard",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "room1",
+      "purpose": "West guest room 1",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "room5",
+      "purpose": "East guest room 5",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "room2",
+      "purpose": "West guest room 2",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "room6",
+      "purpose": "East guest room 6",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "room3",
+      "purpose": "West guest room 3",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "room7",
+      "purpose": "East guest room 7",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "room4",
+      "purpose": "West guest room 4",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "room8",
+      "purpose": "East guest room 8",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    }
+  ],
+  "review_gates": [
+    "Terrain/pad/route support",
+    "Model purpose/scale/pivot/UV audit",
+    "True surface support and full footprint clearances",
+    "Joins/light isolation and material stripe audit",
+    "Swept navigation, hunt fairness and ritual clearance",
+    "Runtime/collision/circuit/LAN/performance acceptance"
+  ],
+  "limitations": [
+    "No shipping map unlocked.",
+    "Reference links inform function, not surveyed dimensions.",
+    "Exact furniture quantities await detailed room fitting."
+  ]
+}

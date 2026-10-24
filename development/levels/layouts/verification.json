@@ -138,6 +138,36 @@
       "zones": 14,
       "checks": 207,
       "result": "pass"
+    },
+    {
+      "id": "WLD-14",
+      "zones": 23,
+      "checks": 283,
+      "result": "pass"
+    },
+    {
+      "id": "WLD-15",
+      "zones": 16,
+      "checks": 190,
+      "result": "pass"
+    },
+    {
+      "id": "WLD-16",
+      "zones": 19,
+      "checks": 276,
+      "result": "pass"
+    },
+    {
+      "id": "WLD-17",
+      "zones": 15,
+      "checks": 187,
+      "result": "pass"
+    },
+    {
+      "id": "WLD-18",
+      "zones": 16,
+      "checks": 198,
+      "result": "pass"
     }
   ],
   "missing": [],

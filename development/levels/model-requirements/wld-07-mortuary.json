@@ -1,0 +1,234 @@
+{
+  "id": "WLD-07-MORTUARY",
+  "title": "Saint Bartholomew's Cemetery & Vale Mortuary",
+  "source_layout_sha256": "d6c6c8a4c083cffc3e14d2a4c1cadb93d364eaa05d7897dcf4987573cf33b148",
+  "status": "worklist only; no model completion claimed",
+  "terrain_first": {
+    "profile": "cemetery",
+    "description": "Retain original cemetery terrain; annex foundation and east retaining bank are additive reservations, with a shallow approach swale."
+  },
+  "standard_architecture": [
+    "Deep floor/roof slabs with closed edges and downward-facing undersides",
+    "Door/window frames and collision-aligned apertures",
+    "Engineered stairs/landings/guards with actual deck openings",
+    "Mounted fixtures, switches, breaker and supported cable/pipe runs",
+    "Canonical van placement; no replacement van"
+  ],
+  "map_specific_models": [
+    {
+      "model": "Purpose-built mortuary preparation table, sink and cold-storage doors",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Viewing-room seating, curtains and discreet memorial furniture",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Reception desk, document cabinets, office furniture and supported paperwork",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Discreet service bay, trolley and screened approach",
+      "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Annex shell, roof/drainage, sealed partitions and mortuary fixtures",
+      "status": "needed; audit existing assets before authoring"
+    }
+  ],
+  "room_by_room": [
+    {
+      "zone": "stage",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "entry",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "avenue",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "chapel",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "cottage",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "garden",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "east-graves",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "old-graves",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "tool",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "west-stair",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "east-stair",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "ossuary",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "chamber",
+      "purpose": "Investigation and ordinary objects",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "mort-reception",
+      "purpose": "Vale Mortuary reception",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "mort-viewing",
+      "purpose": "Viewing room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "mort-prep",
+      "purpose": "Preparation room",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "mort-cold",
+      "purpose": "Cold storage",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "mort-office",
+      "purpose": "Mortuary office",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "mort-bay",
+      "purpose": "Discreet service bay",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    },
+    {
+      "zone": "mort-hall",
+      "purpose": "Mortuary side hall",
+      "needed": [
+        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
+        "Supported task clutter, labels and history-specific wear"
+      ],
+      "status": "quantity, reuse and placement audit pending"
+    }
+  ],
+  "review_gates": [
+    "Terrain/pad/route support",
+    "Model purpose/scale/pivot/UV audit",
+    "True surface support and full footprint clearances",
+    "Joins/light isolation and material stripe audit",
+    "Swept navigation, hunt fairness and ritual clearance",
+    "Runtime/collision/circuit/LAN/performance acceptance"
+  ],
+  "limitations": [
+    "No shipping map unlocked.",
+    "Reference links inform function, not surveyed dimensions.",
+    "Exact furniture quantities await detailed room fitting."
+  ]
+}
