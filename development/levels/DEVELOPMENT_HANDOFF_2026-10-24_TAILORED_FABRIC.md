@@ -15,3 +15,11 @@ Next substantial gate is actual terrain/collision/renderer/van/circuit integrati
 Remaining source art includes firewood silhouettes (not begun in this batch), foliage/boundary refinement, new camp approach grading/wear, oil/fire states and remaining gear. Runtime containment, host breaker/source state, water alpha/layers, evidence/AI/host/LAN, actual loose physics, human/LOD/performance, final lore/Easter-egg phases remain unfinished. Complete this map before another. The full all-map completion goal remains active. Exact current-run input/output/cached/total token metadata is unavailable; do not infer it from cumulative goal counters or account percentages.
 
 Publication proof will be appended after actual remote/gallery readback.
+
+## Measured runtime-geometry risk
+
+Read-only profile of this exact saved scene measures1503410 total native triangles,1500410 render-visible triangles and465696 retained tent-floor triangles (DEV-067, open). Native counts are not runtime FPS. Prioritize actual terrain-clipped/refitted groundsheet geometry and shared support/physics before renderer/performance acceptance; do not ship dense authoring floors by merely raising loader budgets. Current silhouette milestone intentionally retains all232864 floor vertices; a later purposeful floor topology change needs its own terrain/support/depth/entry/visual validation.
+
+## Final bedding intersection correction
+
+DEV-068: final visual inspection found the original west rolled bag protruding through the low tent side. It alone moves22cm inward (X7.9 to8.12), with its elevation refitted to the same floor. The current manifest records before/after native coordinates. All7 bags now pass40936 actual canopy-clearance vertex rays and21 floor-contact rays; minimum roof clearance0.20205098m. Parent names come from the authored packet (tent names1-based, bag names0-based), not guessed suffix equality. The new close-up looks through the doorway; the failed wall-intersection capture is retained. Final8 exact floors, protected routes/crouch/ritual checks and1080 new asset UV/pixel samples pass after this correction. The geometry cost report was refreshed for the final saved scene hash.

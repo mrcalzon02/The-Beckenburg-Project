@@ -7852,8 +7852,24 @@
       "site_roll_seams_installed": true
     }
   ],
+  "placement_corrections": [
+    {
+      "name": "west-rolled-bedding",
+      "previous_native_xyz": [
+        7.900000095367432,
+        -33.400001525878906,
+        -0.4002875089645386
+      ],
+      "current_native_xyz": [
+        8.119999885559082,
+        -33.400001525878906,
+        -0.4043034315109253
+      ],
+      "reason": "Retain floor support while clearing the actual sloping tent canopy"
+    }
+  ],
   "scene": "development/levels/hollow-creek/hollow-creek-tailored.blend",
-  "scene_sha256": "105df4036d5a34a1c3d10d1c8d0e90f122ea18aac1b09093844d12fdbb0d685e",
+  "scene_sha256": "bed26723e24f17b5c3b050d47ac536858770b0de92b9e2fc0644d31d00890eca",
   "protected_sources": {
     "development/levels/hollow-creek/hollow-creek-authored.blend": "b8062e51417b1748af8a2ecd04223782fd6848e028e2e151584a504cf1fe18af",
     "assets/runtime/models/level_camp_tent_ridge_refined.glb": "91a68d5c47b37d49558dea18b59689bd765b15c1cfcb90b3fc6e0059c1ad323a",

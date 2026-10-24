@@ -5,6 +5,7 @@ from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'development/levels/hollow-creek'
 r=json.loads((OUT/'tailored-fabric.json').read_text(encoding='utf-8'));checks=[]
+amenities=json.loads((OUT/'amenities.json').read_text(encoding='utf-8'));additional_tent_names=[p['name'] for p in amenities['placements'] if p['name'].startswith('Additional pitched tent ')]
 
 def components(o,words):
  ids={g.index for g in o.vertex_groups if any(word in g.name for word in words)}
@@ -75,22 +76,40 @@ bpy.ops.wm.open_mainfile(filepath=str(ROOT/r['scene']));new={o.name:signature(o)
 changed={a['name'] for a in r['instances']};assert old.keys()==new.keys()
 for name in old:
  if name not in changed:assert old[name]==new[name],('Unrelated model/terrain moved',name)
-roof_probes=0;roof_heights=[]
+roof_probes=0;roof_heights=[];roof_by_name={};floor_by_name={}
 for name,points in floors.items():
  o=bpy.data.objects[name];assert points==floor(o),('Fitted floor changed',name)
  selected=components(o,['Catenary canvas side','Sewn multi-panel dome canopy']);o.data.calc_loop_triangles()
  roof=BVHTree.FromPolygons([o.matrix_world@v.co for v in o.data.vertices],[tuple(t.vertices) for t in o.data.loop_triangles if all(i in selected for i in t.vertices)],all_triangles=True)
+ roof_by_name[name]=roof
  selected_floor=components(o,['groundsheet','physical floor','Groundsheet'])
  floor_tree=BVHTree.FromPolygons([o.matrix_world@v.co for v in o.data.vertices],[tuple(t.vertices) for t in o.data.loop_triangles if all(i in selected_floor for i in t.vertices)],all_triangles=True)
+ floor_by_name[name]=floor_tree
  for x in [-.30,0,.30]:
   for y in [-.45,0,.45]:
    world=o.matrix_world@Vector((x,y,5));hit=roof.ray_cast(world,Vector((0,0,-1)),10)[0];below=floor_tree.ray_cast(world,Vector((0,0,-1)),10)[0]
    assert hit is not None and below is not None and 1.25<hit.z-below.z<2.1,('Missing/buried/misplaced tent canopy',name,x,y)
    roof_probes+=1;roof_heights.append(hit.z-below.z)
+bag_clearance_probes=0;minimum_bag_roof_gap=10;bag_floor_probes=0
+for instance in r['instances']:
+ if instance['kind']!='roll':continue
+ name=instance['name'];o=bpy.data.objects[name]
+ parent='west-pitched-ridge' if name=='west-rolled-bedding' else additional_tent_names[int(name.rsplit(' ',1)[-1])]
+ roof=roof_by_name[parent]
+ o.data.calc_loop_triangles();bag=BVHTree.FromPolygons([o.matrix_world@v.co for v in o.data.vertices],[tuple(t.vertices) for t in o.data.loop_triangles],all_triangles=True)
+ for x in [-.20,0,.20]:
+  lower=o.matrix_world@Vector((x,0,-.2));upper=o.matrix_world@Vector((x,0,.6))
+  bottom=bag.ray_cast(lower,Vector((0,0,1)),1)[0];support=floor_by_name[parent].ray_cast(upper,Vector((0,0,-1)),1)[0]
+  assert bottom is not None and support is not None and -.006<bottom.z-support.z<.014,('Bedding lost floor support',name,x)
+  bag_floor_probes+=1
+ for v in o.data.vertices:
+  world=o.matrix_world@v.co;hit=roof.ray_cast(Vector((world.x,world.y,world.z+3)),Vector((0,0,-1)),4)[0]
+  assert hit is not None and hit.z-world.z>.012,('Bedding penetrates actual canopy',name,list(world))
+  bag_clearance_probes+=1;minimum_bag_roof_gap=min(minimum_bag_roof_gap,hit.z-world.z)
 for name,pos,target,lens in views:render('tailored-'+name+'-native-fitout',pos,target,lens,'hollow-creek-tailored.blend')
-render('tailored-bedding-native-fitout',(6.7,-36.2,.95),(7.9,-33.4,.25),45,'hollow-creek-tailored.blend')
+render('tailored-bedding-native-fitout',(10,-36.6,.95),(8.12,-33.4,.25),45,'hollow-creek-tailored.blend')
 render('tailored-site-native-fitout',(105,-125,100),(31,-42,1),40,'hollow-creek-tailored.blend')
 for p,h in r['protected_sources'].items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==h,p
-report=dict(status='pass-native-fabric-only',assets=checks,instances=len(changed),unmodified_scene_meshes=len(old)-len(changed),exact_fitted_floor_vertices=sum(len(p) for p in floors.values()),fitted_tent_floors=len(floors),actual_native_roof_floor_rays=roof_probes,roof_floor_height_m=[min(roof_heights),max(roof_heights)],source_sha256=r['scene_sha256'],captures=captures,runtime_map_acceptance=False)
+report=dict(status='pass-native-fabric-only',assets=checks,instances=len(changed),unmodified_scene_meshes=len(old)-len(changed),exact_fitted_floor_vertices=sum(len(p) for p in floors.values()),fitted_tent_floors=len(floors),actual_native_roof_floor_rays=roof_probes,roof_floor_height_m=[min(roof_heights),max(roof_heights)],actual_bedding_canopy_vertex_rays=bag_clearance_probes,actual_bedding_floor_contact_rays=bag_floor_probes,min_bag_roof_clearance_m=minimum_bag_roof_gap,source_sha256=r['scene_sha256'],captures=captures,runtime_map_acceptance=False)
 (ROOT/'development/levels/verification/hollow-creek-tailored-shape.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print('PASS actual closed cloth, supported seams, thickness, continuous arch, exact8 fitted floors and untouched scene meshes',flush=True)

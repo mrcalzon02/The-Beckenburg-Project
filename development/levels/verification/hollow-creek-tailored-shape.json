@@ -44,41 +44,44 @@
     1.4008877277374268,
     1.831214427947998
   ],
-  "source_sha256": "105df4036d5a34a1c3d10d1c8d0e90f122ea18aac1b09093844d12fdbb0d685e",
+  "actual_bedding_canopy_vertex_rays": 40936,
+  "actual_bedding_floor_contact_rays": 21,
+  "min_bag_roof_clearance_m": 0.20205098390579224,
+  "source_sha256": "bed26723e24f17b5c3b050d47ac536858770b0de92b9e2fc0644d31d00890eca",
   "captures": [
     {
       "path": "development/levels/previews/hollow-creek/tailored-before-west-native-fitout.png",
-      "sha256": "947024d43d2fa289258c2bb1e19e86201ca54823023725451ce0330bcbcba833",
+      "sha256": "ef128437a3b817af4b1baaa50b85d3293fc4020c099fd133aa295c86d4bf14ce",
       "scene": "hollow-creek-authored.blend",
       "kind": "Native scene overview"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-before-east-native-fitout.png",
-      "sha256": "a25cf28b9b1c248b89e7ecc68454c6336b6a41edb0b6d97c1a88dc1f13aa25a9",
+      "sha256": "a3c03478022c699efb20d01dd5f7cd86187f285000141ae05f34c46be38bd5a2",
       "scene": "hollow-creek-authored.blend",
       "kind": "Native scene overview"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-west-native-fitout.png",
-      "sha256": "cffd79b8f90feae39a7e9a67200e2d5fdff07cf7948a49262ffae1275e5b8e6a",
+      "sha256": "307311b55924260708e00de03a2e0f14d049d142d1457c46a1c8992b73435b37",
       "scene": "hollow-creek-tailored.blend",
       "kind": "Native scene overview"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-east-native-fitout.png",
-      "sha256": "061c41c40ebb532c266a37dad3705ff7e22f1d870a5d70e1d2898d27001fb036",
+      "sha256": "c95bac0272fb4ec6a0d90c7a969933b5a9dd686de7eb3d9403a1a15eab185095",
       "scene": "hollow-creek-tailored.blend",
       "kind": "Native scene overview"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-bedding-native-fitout.png",
-      "sha256": "9e388bcc4aa2741941b8ef9d63f7cd3aef69308cc791dad7dbd0a69df72ad784",
+      "sha256": "757f3d86436b4b5a29d388903298c7f9001ae119af69d9af68f66bb0ead3fc2d",
       "scene": "hollow-creek-tailored.blend",
       "kind": "Native scene overview"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-site-native-fitout.png",
-      "sha256": "a476c46336f6a0dc45dc59dcdb91d749edff2f167686a1352c94f8801acc2722",
+      "sha256": "83a7085ee638de6658afc13536dfb47f226c689795cc55cc3553d52ebee95b73",
       "scene": "hollow-creek-tailored.blend",
       "kind": "Native scene overview"
     }

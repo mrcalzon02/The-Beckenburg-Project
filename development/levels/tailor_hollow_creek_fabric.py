@@ -170,11 +170,15 @@ templates={}
 for a in records:
  with bpy.data.libraries.load(str(ROOT/a['editable']),link=False) as (src,dst):dst.objects=[a['id']]
  templates[a['kind']]=dst.objects[0]
-instances=[]
+instances=[];placement_corrections=[]
 for o in list(bpy.context.scene.objects):
  source=o.get('refinement_source','');kind='ridge' if 'tent_ridge' in source else 'dome' if 'tent_dome' in source else 'roll' if 'bedroll_rolled' in source else None
  if kind is None:continue
  t=templates[kind];old_matrix=o.matrix_world.copy();old_pose=(o.location.copy(),o.rotation_euler.copy(),o.scale.copy());old_floor=[]
+ if o.name=='west-rolled-bedding':
+  before=list(o.location);old_pose[0].x=8.12;old_pose[0].z+=height(old_pose[0].x,old_pose[0].y)-height(before[0],before[1])
+  o.location=old_pose[0];bpy.context.view_layer.update()
+  placement_corrections.append(dict(name=o.name,previous_native_xyz=before,current_native_xyz=list(o.location),reason='Retain floor support while clearing the actual sloping tent canopy'))
  if kind!='roll':
   floor_ids={g.index for g in o.vertex_groups if floor_group(g.name)}
   old_floor=[tuple(v.co) for v in o.data.vertices if any(a.group in floor_ids and a.weight>.5 for a in v.groups)]
@@ -207,5 +211,5 @@ for o in list(bpy.context.scene.objects):
 scene=bpy.context.scene;scene['production_status']='Tailored tent/bedding geometry; runtime gates remain open'
 target=OUT/'hollow-creek-tailored.blend';bpy.ops.wm.save_as_mainfile(filepath=str(target),compress=True)
 for p,h in protected.items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==h,p
-r=dict(status='cloth silhouette refinement; independent validation pending',assets=records,instances=instances,scene=target.relative_to(ROOT).as_posix(),scene_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),protected_sources=protected,limitations=['Native geometry and standalone asset milestone, no runtime map unlock/physics/circuit/AI/LAN acceptance.'])
+r=dict(status='cloth silhouette refinement; independent validation pending',assets=records,instances=instances,placement_corrections=placement_corrections,scene=target.relative_to(ROOT).as_posix(),scene_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),protected_sources=protected,limitations=['Native geometry and standalone asset milestone, no runtime map unlock/physics/circuit/AI/LAN acceptance.'])
 (OUT/'tailored-fabric.json').write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8');print('TAILORED',len(records),'families',len(instances),'fitted instances; original floors/terrain preserved',flush=True)

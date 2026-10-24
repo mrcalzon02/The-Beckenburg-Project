@@ -934,6 +934,34 @@ Evidence and verification: previews/defects/DEV-066-before-buried-canopy-native-
 
 Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
 
+### DEV-067 — Retained native tent floors carry excessive authoring tessellation
+
+**Status:** open-runtime-geometry-budget · **Affected:** Hollow Creek eight terrain-conformed tent floors
+
+Native inventory measures465696 retained floor triangles out of1500410 render-visible native triangles, despite small tent footprints.
+
+Cause / uncertainty: Earlier floor conformance subdivided many source polygons densely instead of clipping/refitting to the actual terrain triangle boundaries.
+
+Fix / next action: Before runtime acceptance, replace excessive fitted-floor topology with separately validated terrain-conforming geometry, retaining the real ground support, depth, boundaries, entry/bedding fit and shared render/collision coordinates. Preserve current source; do not raise asset/loader caps or claim native counts prove runtime FPS.
+
+Evidence and verification: verification/hollow-creek-tailored-geometry-cost.json; profile_hollow_creek_geometry.py; final tailored handoff
+
+Older-map obligation: Profile older terrain-conformed meshes independently. Count native geometry separately from actual renderer culling/LOD/FPS evidence.
+
+### DEV-068 — Original west rolled bedding intersects sloping tent canvas
+
+**Status:** fixed-native-placement-and-all-seven-bag-audit · **Affected:** West pitched ridge bedding and fabric inspection camera
+
+The close-up shows part of the rolled bag protruding through the sloping canvas; the camera outside that wall also obscures the intended inspection.
+
+Cause / uncertainty: Floor support alone did not establish clearance from the low sloping roof. The parent tent also cannot be inferred from matching numeric suffixes: authored tent names are1-based and bag names0-based.
+
+Fix / next action: Move only the west rolled bag22cm inward from X7.9 to8.12, refit its standing height to the same exact floor, and aim the camera through the doorway. Resolve parent tents from the authored placement packet. Check40936 actual bag-vertex/roof rays and21 actual floor-contact rays across all7 bags; minimum canopy clearance is0.202m. Tent floors/frame/anchors remain intact.
+
+Evidence and verification: previews/defects/DEV-068-before-bedding-through-canvas-native-fitout.png; verification/hollow-creek-tailored-shape.json; hollow-creek/tailored-fabric.json placement_corrections; final bedding native capture
+
+Older-map obligation: Audit supported props against sloping walls/roofs and full usable volume as well as their supporting floor/table. Keep inspection cameras outside opaque obstructions.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

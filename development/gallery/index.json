@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 689,
+  "count": 690,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1354,6 +1354,16 @@
       "sha256": "f3b414f247717a3fe4a80a5fbb6475e443520f7714822da6933ba3f70f8de5d1"
     },
     {
+      "path": "development/levels/previews/defects/DEV-068-before-bedding-through-canvas-native-fitout.png",
+      "url": "development/levels/previews/defects/DEV-068-before-bedding-through-canvas-native-fitout.png",
+      "title": "Dev 068 before bedding through canvas native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 1875313,
+      "sha256": "9e388bcc4aa2741941b8ef9d63f7cd3aef69308cc791dad7dbd0a69df72ad784"
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "url": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "title": "Academy edge sky plan",
@@ -2250,8 +2260,8 @@
       "kind": "Native scene overview",
       "width": 1600,
       "height": 1066,
-      "bytes": 1875313,
-      "sha256": "9e388bcc4aa2741941b8ef9d63f7cd3aef69308cc791dad7dbd0a69df72ad784"
+      "bytes": 1833851,
+      "sha256": "757f3d86436b4b5a29d388903298c7f9001ae119af69d9af68f66bb0ead3fc2d"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-before-east-native-fitout.png",
@@ -2261,7 +2271,7 @@
       "width": 1600,
       "height": 1066,
       "bytes": 2083333,
-      "sha256": "a25cf28b9b1c248b89e7ecc68454c6336b6a41edb0b6d97c1a88dc1f13aa25a9"
+      "sha256": "a3c03478022c699efb20d01dd5f7cd86187f285000141ae05f34c46be38bd5a2"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-before-west-native-fitout.png",
@@ -2271,7 +2281,7 @@
       "width": 1600,
       "height": 1066,
       "bytes": 2105551,
-      "sha256": "947024d43d2fa289258c2bb1e19e86201ca54823023725451ce0330bcbcba833"
+      "sha256": "ef128437a3b817af4b1baaa50b85d3293fc4020c099fd133aa295c86d4bf14ce"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-east-native-fitout.png",
@@ -2281,7 +2291,7 @@
       "width": 1600,
       "height": 1066,
       "bytes": 2092204,
-      "sha256": "061c41c40ebb532c266a37dad3705ff7e22f1d870a5d70e1d2898d27001fb036"
+      "sha256": "c95bac0272fb4ec6a0d90c7a969933b5a9dd686de7eb3d9403a1a15eab185095"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-site-native-fitout.png",
@@ -2290,8 +2300,8 @@
       "kind": "Native scene overview",
       "width": 1600,
       "height": 1066,
-      "bytes": 2441670,
-      "sha256": "a476c46336f6a0dc45dc59dcdb91d749edff2f167686a1352c94f8801acc2722"
+      "bytes": 2441759,
+      "sha256": "83a7085ee638de6658afc13536dfb47f226c689795cc55cc3553d52ebee95b73"
     },
     {
       "path": "development/levels/previews/hollow-creek/tailored-west-native-fitout.png",
@@ -2300,8 +2310,8 @@
       "kind": "Native scene overview",
       "width": 1600,
       "height": 1066,
-      "bytes": 2121097,
-      "sha256": "cffd79b8f90feae39a7e9a67200e2d5fdff07cf7948a49262ffae1275e5b8e6a"
+      "bytes": 2121080,
+      "sha256": "307311b55924260708e00de03a2e0f14d049d142d1457c46a1c8992b73435b37"
     },
     {
       "path": "development/levels/previews/hollow-creek/tents-east-native-fitout.png",
@@ -2631,7 +2641,7 @@
       "width": 1536,
       "height": 640,
       "bytes": 852591,
-      "sha256": "502e70b4f2a61cb7d213b0f54c4e4218cf72dc0e1179a3b0de03ebe9fe27cdc9"
+      "sha256": "d3895e6b637df243f7aaeb0e99f6521578b6357db85e6e7cfde57fb0604e6fed"
     },
     {
       "path": "development/levels/previews/level_camp_bench.png",
@@ -3171,7 +3181,7 @@
       "width": 1536,
       "height": 640,
       "bytes": 850428,
-      "sha256": "af852830871f1543a61c4498b36458fe2c9c38a8569058e25c5006ea9ee0ff3e"
+      "sha256": "09f3a92c35df0c8d39dcad2eb9667777f5fc51471f44cac2524e32320e3c0fce"
     },
     {
       "path": "development/levels/previews/level_camp_tent_ridge.png",
@@ -3201,7 +3211,7 @@
       "width": 1536,
       "height": 640,
       "bytes": 833330,
-      "sha256": "aa4ee3752bf24e952396acdeab946e9d89f75a4a1e293a0f5720d03b13e9ce9b"
+      "sha256": "304193a28085f90d64d43076bfdd8d966c22f833ec38e266d37393b05fb6d7d6"
     },
     {
       "path": "development/levels/previews/level_camp_terrain.png",
