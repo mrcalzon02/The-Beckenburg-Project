@@ -24,3 +24,10 @@ DEV-031..037 record wall-like/underlit bank draft, boundary transition clipping,
 Publish/verify this new capture checkpoint, then continue a reviewable tent/campsite model batch from DETAIL_PASS. Fit real model footprints before clutter; respect desquareification. Further improve shrub/broadleaf/rock material fitness and actual ordinary-view art. Engineer dock infrastructure/guards, powered utilities and rowboat only after source/placement review. Integrate shared runtime terrain/collision/rooms/circuits/van and water policy as a coordinated milestone; no new engine optimization algorithm was changed here.
 
 Previous 578-image gallery readback passed all PNG URLs/dimensions and 132 full hashes. New captures must be regenerated/pushed/read back before claiming their public delivery. Exact current-run input/output/cached token counts are unavailable; do not infer them from older goal counters or account percentages.
+
+
+## Published checkpoint and verified gallery
+
+Implementation 08191c91c0aa5a9387ec84d35745c1be114ea67f is pushed and remote main readback matched. The public gallery now passes all 595 PNG URLs/dimensions and 149 full evidence hashes, including the new Hollow Creek/defect captures. Actual readback report is development/verification/live-development-gallery.json. Requirement coverage validates all 18 remote maps plus the separate cemetery/mortuary variant; this is not runtime electrical behavior acceptance.
+
+Current next construction batch remains tents/camping fixtures and the dock/service detail queue, with supports, clearances and art quality reviewed at each iteration. The broadleaf/shrub/rock art pass, actual runtime billboard alpha/LOD/cameras and complete map power/collision/room/water integration remain open. No large-goal completion claim.

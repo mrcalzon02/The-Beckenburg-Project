@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-24T07:19:21.495295+00:00",
-  "published_commit": "29980c9faac01ab3d78ad52ff32fed2b6c391a4e",
+  "verified_at": "2026-10-24T08:14:51.368187+00:00",
+  "published_commit": "08191c91c0aa5a9387ec84d35745c1be114ea67f",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 578,
+  "image_count": 595,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -726,6 +726,18 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/defects/DEV-031-before-uniform-boundary.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-037-before-rounded-pine-crowns.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1000,6 +1012,96 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-roadhead-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-shore-vista-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-van-exit-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-berm-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-lake-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-near-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-trail-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-camp-trail-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-open-lake-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-organic-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-van-and-roadhead-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-west-berm-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/hollow-creek/pavilion-join-native-fitout.png",

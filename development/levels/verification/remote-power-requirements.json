@@ -1,0 +1,84 @@
+{
+  "status": "requirement coverage pass",
+  "maps": [
+    {
+      "id": "WLD-01",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-02",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-03",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-04",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-05",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-06",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-07",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-08",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-09",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-10",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-11",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-12",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-13",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-14",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-15",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-16",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-17",
+      "result": "requirements-complete; implementation unaccepted"
+    },
+    {
+      "id": "WLD-18",
+      "result": "requirements-complete; implementation unaccepted"
+    }
+  ],
+  "limitations": [
+    "This validates mandatory per-map authoring coverage, not working generators or ghost/network/circuit behavior."
+  ]
+}
