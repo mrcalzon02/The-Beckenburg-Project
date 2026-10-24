@@ -1,0 +1,298 @@
+{
+  "status": "native tent/bedding construction; acceptance pending",
+  "assets": [
+    {
+      "id": "level_camp_tent_ridge",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "d8259affd80dd78b5030c846aad720a2e3c3ead75cb8e5962a6ae5d52ca17f10",
+      "bytes": 253456,
+      "triangles": 1160,
+      "bounds": [
+        [
+          -1.9668035507202148,
+          -0.10240893810987473,
+          -2.0859339237213135
+        ],
+        [
+          1.9318034648895264,
+          1.9209232330322266,
+          2.1059341430664062
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_ridge.blend"
+    },
+    {
+      "id": "level_camp_tent_dome",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "4009888d8fb340301da2fb204b5f7d4c5569eab4016beb4d101e5c8fa7424b76",
+      "bytes": 316368,
+      "triangles": 3832,
+      "bounds": [
+        [
+          -1.71999990940094,
+          -0.09000000357627869,
+          -1.9589999914169312
+        ],
+        [
+          1.71999990940094,
+          1.7219833135604858,
+          1.52777898311615
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_dome.blend"
+    },
+    {
+      "id": "level_camp_bedroll_rolled",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3023b48a94d9e49e818a705afc8080a98f8dbe1f4ef1901dde84654c7185a663",
+      "bytes": 325636,
+      "triangles": 3540,
+      "bounds": [
+        [
+          -0.3244999945163727,
+          -0.0010000000474974513,
+          -0.17100000381469727
+        ],
+        [
+          0.3244999945163727,
+          0.3409999907016754,
+          0.18299999833106995
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_bedroll_rolled.blend"
+    }
+  ],
+  "placements": [
+    {
+      "id": "west-pitched-ridge",
+      "asset": "level_camp_tent_ridge",
+      "x": 8.8,
+      "z": 32.8,
+      "y": -0.4626197814941406,
+      "yaw": 0,
+      "lift": 0,
+      "native_object": "west-pitched-ridge",
+      "terrain_fitted": true
+    },
+    {
+      "id": "east-pitched-dome",
+      "asset": "level_camp_tent_dome",
+      "x": 51,
+      "z": 43,
+      "y": 0.42497920989990234,
+      "yaw": 0,
+      "lift": 0,
+      "native_object": "east-pitched-dome",
+      "terrain_fitted": true
+    },
+    {
+      "id": "west-rolled-bedding",
+      "asset": "level_camp_bedroll_rolled",
+      "x": 7.9,
+      "z": 33.4,
+      "y": -0.4002875061035156,
+      "yaw": 0.15,
+      "lift": 0.028,
+      "native_object": "west-rolled-bedding",
+      "terrain_fitted": true
+    },
+    {
+      "id": "west-laid-bedding",
+      "asset": "level_trace_bedroll",
+      "x": 9.5,
+      "z": 32.4,
+      "y": -0.45712077331542966,
+      "yaw": 0,
+      "lift": 0.028,
+      "native_object": "west-laid-bedding",
+      "terrain_fitted": true
+    },
+    {
+      "id": "east-laid-bedding",
+      "asset": "level_trace_bedroll",
+      "x": 51.64,
+      "z": 43.05,
+      "y": 0.4492427139282227,
+      "yaw": 0,
+      "lift": 0.028,
+      "native_object": "east-laid-bedding",
+      "terrain_fitted": true
+    }
+  ],
+  "source_geometry_cleanup": [
+    {
+      "component": "Catenary canvas side -1",
+      "unreferenced_vertices_removed": 0
+    },
+    {
+      "component": "Ground skirt -1",
+      "unreferenced_vertices_removed": 0
+    },
+    {
+      "component": "Catenary canvas side 1",
+      "unreferenced_vertices_removed": 0
+    },
+    {
+      "component": "Ground skirt 1",
+      "unreferenced_vertices_removed": 0
+    },
+    {
+      "component": "Closed rear canvas",
+      "unreferenced_vertices_removed": 0
+    },
+    {
+      "component": "Tied-open front flap -1",
+      "unreferenced_vertices_removed": 0
+    },
+    {
+      "component": "Tied-open front flap 1",
+      "unreferenced_vertices_removed": 0
+    },
+    {
+      "component": "Door canopy header",
+      "unreferenced_vertices_removed": 0
+    },
+    {
+      "component": "Sewn multi-panel dome canopy",
+      "unreferenced_vertices_removed": 21
+    },
+    {
+      "component": "Wrapped carry webbing",
+      "unreferenced_vertices_removed": 0
+    },
+    {
+      "component": "Wrapped carry webbing",
+      "unreferenced_vertices_removed": 0
+    }
+  ],
+  "removed_decorative_ferns": [
+    "Interior grounded fern 10",
+    "Interior grounded fern 13",
+    "Interior grounded fern 17",
+    "Interior grounded fern 19",
+    "Interior grounded fern 32",
+    "Interior grounded fern 38",
+    "Interior grounded fern 83",
+    "Interior grounded fern 91",
+    "Interior grounded fern 97",
+    "Interior grounded fern 102",
+    "Interior grounded fern 138"
+  ],
+  "source_hashes": {
+    "development/levels/hollow-creek/hollow-creek-foliage-detail.blend": "bba2e44527a217b1d85ad8dfc5c75ae0537349cccef5f8ed343e05cdf4d4da5c",
+    "assets/runtime/models/level_trace_bedroll.glb": "9ba0d2dcfcdf9c5309dab4b31f34d982c3665b6497621f9316ea9583ccee27d3"
+  },
+  "approaches": [
+    {
+      "id": "west-pitched-ridge",
+      "points": [
+        [
+          14.0,
+          -0.27852916717529297,
+          37.0
+        ],
+        [
+          11.0,
+          -0.4897441864013672,
+          30.2
+        ],
+        [
+          6.6,
+          -0.5009899139404297,
+          30.2
+        ],
+        [
+          6.2,
+          -0.4752511978149414,
+          30.8
+        ],
+        [
+          6.2,
+          -0.3380851745605469,
+          35.0
+        ],
+        [
+          6.6,
+          -0.33363914489746094,
+          35.4
+        ],
+        [
+          8.6,
+          -0.3824625015258789,
+          35.2
+        ],
+        [
+          8.8,
+          -0.38936901092529297,
+          35.1
+        ]
+      ],
+      "status": "Native supported walking approach, texture wear and runtime navigation integration pending"
+    },
+    {
+      "id": "east-pitched-dome",
+      "points": [
+        [
+          50,
+          0.09657764434814453,
+          37
+        ],
+        [
+          48.4,
+          0.20479774475097656,
+          39.5
+        ],
+        [
+          48.4,
+          0.5411443710327148,
+          45.5
+        ],
+        [
+          51,
+          0.5184879302978516,
+          45.1
+        ]
+      ],
+      "status": "Native supported walking approach, texture wear and runtime navigation integration pending"
+    }
+  ],
+  "door_reservations": [
+    {
+      "id": "west-pitched-ridge",
+      "center": [
+        8.8,
+        -0.38936901092529297,
+        35.1
+      ],
+      "width": 0.9,
+      "height": 1.2,
+      "posture": "crouched; not a standing doorway"
+    },
+    {
+      "id": "east-pitched-dome",
+      "center": [
+        51,
+        0.5184879302978516,
+        45.1
+      ],
+      "width": 1.0,
+      "height": 1.2,
+      "posture": "crouched"
+    }
+  ],
+  "limitations": [
+    "No runtime tent room/collision/AI/circuit or map unlock.",
+    "Canvas is an explicit thin shell; cloth transmission differs from opaque building light isolation.",
+    "Tent entry, anchors, floor and bedding support require actual native acceptance before dressing more.",
+    "Portable toilets, camp furniture, park details and dock/utilities/rowboat remain in the recorded detail queue."
+  ]
+}

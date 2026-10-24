@@ -1,0 +1,89 @@
+{
+  "status": "pass-native-campsite-only",
+  "route_body_samples": 10377,
+  "standing_approach_samples": 3912,
+  "approach_surface_samples": 510,
+  "max_approach_grade": 0.1843600198327303,
+  "tent_floor_samples": 30,
+  "crouch_approach_samples": 500,
+  "bedding_contact_samples": 21,
+  "removed_decorative_ferns": [
+    "Interior grounded fern 10",
+    "Interior grounded fern 13",
+    "Interior grounded fern 17",
+    "Interior grounded fern 19",
+    "Interior grounded fern 32",
+    "Interior grounded fern 38",
+    "Interior grounded fern 83",
+    "Interior grounded fern 91",
+    "Interior grounded fern 97",
+    "Interior grounded fern 102",
+    "Interior grounded fern 138"
+  ],
+  "findings": [],
+  "source_hashes_unchanged": true,
+  "limitations": [
+    "No runtime tent room/collision/AI/circuit or map unlock.",
+    "Canvas is an explicit thin shell; cloth transmission differs from opaque building light isolation.",
+    "Tent entry, anchors, floor and bedding support require actual native acceptance before dressing more.",
+    "Portable toilets, camp furniture, park details and dock/utilities/rowboat remain in the recorded detail queue."
+  ],
+  "actual_canvas_shell_checks": [
+    {
+      "id": "level_camp_tent_ridge",
+      "measured_canvas_thickness_m": 0.007999705306514088
+    },
+    {
+      "id": "level_camp_tent_dome",
+      "measured_canvas_thickness_m": 0.008000993514311336
+    }
+  ],
+  "actual_glb_reimports": [
+    {
+      "id": "level_camp_tent_ridge",
+      "triangles": 1160,
+      "bytes": 253456,
+      "finite_geometry_and_uvs": true
+    },
+    {
+      "id": "level_camp_tent_dome",
+      "triangles": 3832,
+      "bytes": 316368,
+      "finite_geometry_and_uvs": true
+    },
+    {
+      "id": "level_camp_bedroll_rolled",
+      "triangles": 3540,
+      "bytes": 325636,
+      "finite_geometry_and_uvs": true
+    }
+  ],
+  "java17_full_main_compile": "pass",
+  "runtime_asset_checks": [
+    {
+      "test": "HollowCreekTentAssetsTest",
+      "status": "pass",
+      "output": "PASS three original campsite GLBs: 8532 triangles, human-scale native pivots, intentional ground pegs and finite UVs"
+    },
+    {
+      "test": "HollowCreekBoundaryAssetsTest",
+      "status": "pass",
+      "output": "PASS eight actual Hollow Creek GLBs: 63782 triangles, finite UVs, native site coordinates and unchanged per-model budgets"
+    },
+    {
+      "test": "HollowCreekTerrainAssetTest",
+      "status": "pass",
+      "output": "PASS terrain within unchanged runtime triangle budget, real site scale/origin, upward normals, negative water beds and finite UVs"
+    },
+    {
+      "test": "HollowCreekPavilionAssetTest",
+      "status": "pass",
+      "output": "PASS native-scale pavilion GLB, 2040 triangles, UVs, floor pivot and genuine downward roof underside"
+    },
+    {
+      "test": "HollowCreekFacilitiesAssetTest",
+      "status": "pass",
+      "output": "PASS two reusable campground GLBs, approved IDs, native floor pivots, metre bounds and reviewed geometry"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "status": "native campsite fit refinement required",
+  "route_body_samples": 10377,
+  "standing_approach_samples": 744,
+  "approach_surface_samples": 291,
+  "max_approach_grade": 0.3116893815670143,
+  "tent_floor_samples": 30,
+  "crouch_approach_samples": 500,
+  "bedding_contact_samples": 21,
+  "removed_decorative_ferns": [
+    "Interior grounded fern 10",
+    "Interior grounded fern 13",
+    "Interior grounded fern 17",
+    "Interior grounded fern 19",
+    "Interior grounded fern 32",
+    "Interior grounded fern 38",
+    "Interior grounded fern 48",
+    "Interior grounded fern 93",
+    "Interior grounded fern 97",
+    "Interior grounded fern 102",
+    "Interior grounded fern 138"
+  ],
+  "findings": [
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.58444381798169,
+        -0.19818973541259766,
+        37.07778091009155
+      ],
+      "grade": 0.29191804359772405
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.392136125673998,
+        -0.25017833709716797,
+        37.03931937163001
+      ],
+      "grade": 0.2649427021083552
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.5,
+        -0.22421836853027344,
+        36.5
+      ],
+      "grade": 0.29300401432055934
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.607863874326002,
+        -0.19638633728027344,
+        35.96068062836999
+      ],
+      "grade": 0.3111169003540827
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.24682555954975,
+        -0.29000091552734375,
+        36.98826499229691
+      ],
+      "grade": 0.2649427021083552
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.5,
+        -0.22421836853027344,
+        36.5
+      ],
+      "grade": 0.29300401432055934
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.07807555954975,
+        -0.3371286392211914,
+        36.900764992296914
+      ],
+      "grade": 0.2649427021083552
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.33125,
+        -0.2756929397583008,
+        36.4125
+      ],
+      "grade": 0.29300401432055934
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.58442444045025,
+        -0.2039022445678711,
+        35.92423500770309
+      ],
+      "grade": 0.3111169003540827
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.1625,
+        -0.3271675109863281,
+        36.325
+      ],
+      "grade": 0.29300401432055934
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.41567444045025,
+        -0.25745677947998047,
+        35.83673500770309
+      ],
+      "grade": 0.3116893815670143
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.24692444045025,
+        -0.31168556213378906,
+        35.749235007703085
+      ],
+      "grade": 0.3116893815670143
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "west-pitched-ridge",
+      "point": [
+        11.07817444045025,
+        -0.36591434478759766,
+        35.661735007703086
+      ],
+      "grade": 0.3116893815670143
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "east-pitched-dome",
+      "point": [
+        47.45,
+        0.2895927429199219,
+        40.5
+      ],
+      "grade": 0.2050145385906618
+    },
+    {
+      "kind": "approach grade too steep",
+      "id": "east-pitched-dome",
+      "point": [
+        47.45,
+        0.3305625915527344,
+        40.7
+      ],
+      "grade": 0.2050145385906618
+    }
+  ],
+  "source_hashes_unchanged": true,
+  "limitations": [
+    "No runtime tent room/collision/AI/circuit or map unlock.",
+    "Canvas is an explicit thin shell; cloth transmission differs from opaque building light isolation.",
+    "Tent entry, anchors, floor and bedding support require actual native acceptance before dressing more.",
+    "Portable toilets, camp furniture, park details and dock/utilities/rowboat remain in the recorded detail queue."
+  ]
+}

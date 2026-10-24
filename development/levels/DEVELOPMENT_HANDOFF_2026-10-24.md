@@ -31,3 +31,8 @@ Previous 578-image gallery readback passed all PNG URLs/dimensions and 132 full 
 Implementation 08191c91c0aa5a9387ec84d35745c1be114ea67f is pushed and remote main readback matched. The public gallery now passes all 595 PNG URLs/dimensions and 149 full evidence hashes, including the new Hollow Creek/defect captures. Actual readback report is development/verification/live-development-gallery.json. Requirement coverage validates all 18 remote maps plus the separate cemetery/mortuary variant; this is not runtime electrical behavior acceptance.
 
 Current next construction batch remains tents/camping fixtures and the dock/service detail queue, with supports, clearances and art quality reviewed at each iteration. The broadleaf/shrub/rock art pass, actual runtime billboard alpha/LOD/cameras and complete map power/collision/room/water integration remain open. No large-goal completion claim.
+
+
+## Latest nightly continuation
+
+See DEVELOPMENT_HANDOFF_2026-10-24_NIGHTLY_CAMPSITES.md for the new tent/bedding construction batch, native checks, recorded fit failures and next unfinished work. The existing nightly automation is active; its original-checkout prompt was corrected to this unified checkout without changing its actual schedule/status.

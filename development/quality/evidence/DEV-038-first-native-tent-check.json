@@ -1,0 +1,32 @@
+{
+  "status": "native campsite fit refinement required",
+  "route_body_samples": 10377,
+  "tent_floor_samples": 30,
+  "crouch_approach_samples": 410,
+  "bedding_contact_samples": 21,
+  "removed_decorative_ferns": [
+    "Interior grounded fern 10",
+    "Interior grounded fern 17",
+    "Interior grounded fern 19",
+    "Interior grounded fern 32",
+    "Interior grounded fern 38",
+    "Interior grounded fern 97",
+    "Interior grounded fern 102",
+    "Interior grounded fern 138"
+  ],
+  "findings": [
+    {
+      "kind": "bedroll extends beyond actual groundsheet",
+      "id": "east-laid-bedding",
+      "x": 51.88,
+      "z": 41.78
+    }
+  ],
+  "source_hashes_unchanged": true,
+  "limitations": [
+    "No runtime tent room/collision/AI/circuit or map unlock.",
+    "Canvas is an explicit thin shell; cloth transmission differs from opaque building light isolation.",
+    "Tent entry, anchors, floor and bedding support require actual native acceptance before dressing more.",
+    "Portable toilets, camp furniture, park details and dock/utilities/rowboat remain in the recorded detail queue."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "status": "native campsite fit refinement required",
+  "route_body_samples": 10377,
+  "standing_approach_samples": 3864,
+  "approach_surface_samples": 507,
+  "max_approach_grade": 0.1843600198327303,
+  "tent_floor_samples": 30,
+  "crouch_approach_samples": 500,
+  "bedding_contact_samples": 21,
+  "removed_decorative_ferns": [
+    "Interior grounded fern 10",
+    "Interior grounded fern 13",
+    "Interior grounded fern 17",
+    "Interior grounded fern 19",
+    "Interior grounded fern 32",
+    "Interior grounded fern 38",
+    "Interior grounded fern 83",
+    "Interior grounded fern 91",
+    "Interior grounded fern 97",
+    "Interior grounded fern 102",
+    "Interior grounded fern 138"
+  ],
+  "findings": [
+    {
+      "kind": "standing tent approach blocked",
+      "id": "west-pitched-ridge",
+      "point": [
+        10.809081837583136,
+        -0.24009727478027343,
+        30.704962801098574
+      ]
+    },
+    {
+      "kind": "standing tent approach blocked",
+      "id": "west-pitched-ridge",
+      "point": [
+        6.812132034355964,
+        -0.2327072525024414,
+        30.612132034355962
+      ]
+    },
+    {
+      "kind": "standing tent approach blocked",
+      "id": "west-pitched-ridge",
+      "point": [
+        6.745465367689298,
+        -0.22948001861572265,
+        30.67879870102263
+      ]
+    },
+    {
+      "kind": "standing tent approach blocked",
+      "id": "west-pitched-ridge",
+      "point": [
+        6.745465367689297,
+        -0.09365772247314452,
+        34.921201298977365
+      ]
+    },
+    {
+      "kind": "standing tent approach blocked",
+      "id": "west-pitched-ridge",
+      "point": [
+        6.8121320343559635,
+        -0.0928614044189453,
+        34.987867965644035
+      ]
+    }
+  ],
+  "source_hashes_unchanged": true,
+  "limitations": [
+    "No runtime tent room/collision/AI/circuit or map unlock.",
+    "Canvas is an explicit thin shell; cloth transmission differs from opaque building light isolation.",
+    "Tent entry, anchors, floor and bedding support require actual native acceptance before dressing more.",
+    "Portable toilets, camp furniture, park details and dock/utilities/rowboat remain in the recorded detail queue."
+  ]
+}

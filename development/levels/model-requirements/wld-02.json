@@ -19,7 +19,7 @@
     },
     {
       "model": "pitched and collapsed tent variants",
-      "status": "needed or existing candidate: audit before authoring duplicates"
+      "status": "Two original pitched styles constructed and placed with native fit checks; collapsed/packed variants, gameplay and broader art acceptance pending."
     },
     {
       "model": "campfire rings and grate",
@@ -489,5 +489,22 @@
     "Supported electrical light string down dock",
     "Moored rowboat"
   ],
-  "remote_power_requirement": "development/levels/power-plans/wld-02.json"
+  "remote_power_requirement": "development/levels/power-plans/wld-02.json",
+  "native_campsite_models": [
+    {
+      "id": "level_camp_tent_ridge",
+      "triangles": 1160,
+      "status": "native asset and fit checks pass; runtime map integration pending"
+    },
+    {
+      "id": "level_camp_tent_dome",
+      "triangles": 3832,
+      "status": "native asset and fit checks pass; runtime map integration pending"
+    },
+    {
+      "id": "level_camp_bedroll_rolled",
+      "triangles": 3540,
+      "status": "native asset and fit checks pass; runtime map integration pending"
+    }
+  ]
 }

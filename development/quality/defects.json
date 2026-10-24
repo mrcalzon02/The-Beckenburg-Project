@@ -408,6 +408,39 @@
       "action": "Replace rounded pine masses with attached fine branch/needle sprays, increase original diffuse detail, add supplemental alpha crowns on solid trunks, and add protected close ferns. Preserve rejected rounded-canopy evidence. Continue reviewing broadleaf/shrub/rock art and runtime alpha/LOD behavior; do not call the whole art pass accepted.",
       "evidence": "development/levels/previews/defects/DEV-037-before-rounded-pine-crowns.png; hollow-creek/foliage-detail.json; current native captures",
       "older_maps": "Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance."
+    },
+    {
+      "id": "DEV-038",
+      "title": "Initial tent entries and bedding were not fit for the authored crouch body",
+      "status": "fixed-native-campsite-only",
+      "affected": "First Hollow Creek tent/bedding draft",
+      "symptom": "Initial ridge door matched the 1.05m crouch height without head margin; one dome pole crossed the entrance; a bedding corner extended past the actual inset floor.",
+      "cause": "Tent silhouette and rough floor envelope were not enough to establish a usable entry or true sleeping-mat support.",
+      "action": "Raise the ridge entry to 1.20m and ridge to 1.90m, move dome poles onto diagonal support arcs, author an oval inset floor and refit the existing bedroll entirely onto it. Validate the current body capsule, native floor faces and mat/roll underside contact.",
+      "evidence": "development/levels/previews/defects/DEV-038-before-dome-entry-pole.png; development/quality/evidence/DEV-038-before-tent-fit.json; DEV-038-first-native-tent-check.json; development/levels/verification/hollow-creek-tents.json",
+      "older_maps": "Measure real body/door and support-part clearance. Do not infer usable entrances from an open-looking model or use an overall bounding box as its floor."
+    },
+    {
+      "id": "DEV-039",
+      "title": "Unused canopy vertices overstated the native source bounds",
+      "status": "fixed-authoring-export",
+      "affected": "New dome tent source mesh and metadata",
+      "symptom": "Source bounds included unreferenced vertices in the cut doorway that were correctly absent from actual GLB triangles. An initial origin assertion also assumed symmetric guys despite intentionally omitting the doorway guy.",
+      "cause": "The cut canopy retained orphan vertices, while the metadata helper measured every vertex rather than only actual faces.",
+      "action": "Remove 21 orphan vertices, merge the canopy apex/closed seams before solidifying, and validate real GLB triangle bounds plus the actual floor component. Retain the intentional floor pivot instead of re-centering an asymmetric footprint.",
+      "evidence": "build_hollow_creek_tents.py source_geometry_cleanup; tents.json actual bounds; HollowCreekTentAssetsTest and native floor/shell checks.",
+      "older_maps": "Clean orphan geometry and verify bounds against actual exported faces. Functional floor pivots may differ from the centre of asymmetric anchors or accessories."
+    },
+    {
+      "id": "DEV-040",
+      "title": "Shortest tent approaches crossed steep shoulders and guyline clearance",
+      "status": "fixed-native-contour-approaches-only",
+      "affected": "Hollow Creek west/east campsite placement iteration",
+      "symptom": "Full-width native probes found 15 approach grade samples above 0.20 (maximum 0.31169); a later contour draft exposed five lateral body/guyline contacts.",
+      "cause": "Centre-line access and proximity to an existing path were insufficient on the actual terrain and anchored model footprints.",
+      "action": "Author a western contour approach around the pitched tent, shift the eastern approach beyond the steep edge, clear only the affected decorative ferns, and test 3912 standing body samples plus 510 tread samples. Final maximum approach grade is 0.1843600; no terrain source or grade threshold was changed.",
+      "evidence": "development/quality/evidence/DEV-040-approach-grades-before.json; DEV-040-corridor-guylines-before.json; hollow-creek/tents.json approaches and verification/hollow-creek-tents.json.",
+      "older_maps": "Check full tread width and body envelope around guy ropes, pegs, terrain transitions and entries. Actual runtime movement, AI fairness and wear/approach artwork remain separate gates."
     }
   ],
   "audit_categories": [

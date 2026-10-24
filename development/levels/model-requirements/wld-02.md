@@ -123,3 +123,12 @@ No quantities are invented. Audit source dimensions, pivots, UVs, licensing, sup
 ## Mandatory remote-site power
 
 Placed generator, distribution board/main breaker and supported service wiring are required. Ghost breaker trips must affect the authored electrical loads through the normal authoritative circuit state. Generator running and breaker states are separate; oil/fire/battery sources retain their existing independent power rules. See ../power-plans/wld-02.json.
+
+
+## 24 October nightly campsite checkpoint
+
+Two original pitched tent styles and a rolled-bedroll model are now constructed, exported and placed in a separate native scene. Two existing laid-out bedrolls are reused with original materials/UVs and terrain-fitted support. [Campsite review](../hollow-creek/CAMPSITE_REVIEW.html) in the Hollow Creek source folder links the actual native/studio captures.
+
+Actual native checks: 10377 protected-route body samples; 3912 standing approach samples; 510 approach tread samples (maximum grade 0.1843600); 500 crouch-entry samples; 30 floor contacts and 21 bedding contacts. Both actual canvas shells measure 8mm; three real GLBs reload within unchanged budgets (8532 triangles total). These are native geometry checks, not runtime human/ghost/LAN acceptance.
+
+Portable toilets, camp furniture/gear, collapsed/packed tent variants, park details, designated refuge shrubs, lanterns/fire states, dock shed/generator/light string and rowboat remain in the required queue. Runtime tent/circuit/AI integration and human art review remain open.
