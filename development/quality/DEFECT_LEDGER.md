@@ -570,6 +570,20 @@ Evidence and verification: development/quality/evidence/DEV-040-approach-grades-
 
 Older-map obligation: Check full tread width and body envelope around guy ropes, pegs, terrain transitions and entries. Actual runtime movement, AI fairness and wear/approach artwork remain separate gates.
 
+### DEV-041 — Gallery readback aborted on a transient Pages 503
+
+**Status:** fixed-verification-tool; final live rerun passed · **Affected:** Nightly public gallery verification
+
+The first 602-image live readback failed with HTTP 503 during an image request even though Pages was built and all seven published model/native source hashes matched.
+
+Cause / uncertainty: The verifier had no per-URL transient retry and the legacy failure did not identify the affected image URL.
+
+Fix / next action: Retry transient 429/5xx/network failures at most four times per URL, respect short Retry-After headers, defer long server backoff, log successful-run retry events and include the path on fatal failures. Keep all actual PNG/hash assertions. Final rerun verified 602 images and 156 full hashes.
+
+Evidence and verification: tools/verify_development_gallery.py; development/verification/live-development-gallery.json; initial recorded failure excerpt in development/quality/evidence/DEV-041-gallery-503-before.txt
+
+Older-map obligation: A transient service error does not invalidate local implementation or prove remote publication failed. Preserve checkpoints and separately verify source bytes and final public image delivery.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

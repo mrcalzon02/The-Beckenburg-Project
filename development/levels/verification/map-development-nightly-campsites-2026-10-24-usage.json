@@ -9,5 +9,10 @@
   "output_tokens": null,
   "cached_tokens": null,
   "reason": "Trustworthy current-run usage metadata unavailable; no conversion from account percentages or historic goal counters.",
-  "status": "Native/source checks passed; publication and public gallery readback pending."
+  "status": "Completed native model/fit milestone, published and source/gallery delivery verified.",
+  "model_commit": "b0c58f6bf762cb36c85a248004b87204f11a0e69",
+  "public_png_images_verified": 602,
+  "public_full_image_hashes_verified": 156,
+  "published_source_files_sha256_verified": 7,
+  "delivery_verified_at_utc": "2026-10-24T12:27:33.887559+00:00"
 }

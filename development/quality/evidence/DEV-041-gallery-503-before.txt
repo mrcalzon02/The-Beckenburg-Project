@@ -1,0 +1,5 @@
+Recorded initial live-readback failure, 24 October 2026.
+
+The first verification attempt for the 602-image checkpoint terminated in urllib.error.HTTPError: HTTP Error 503: Service Unavailable while check(item) opened an image URL. The old helper did not emit the specific path, so no affected-image path is invented here. Pages reported built for b0c58f6 and all seven model/editable source readback hashes passed.
+
+The helper now uses bounded per-URL transient backoff and logs retry events, without weakening image dimensions/signature/hash assertions. The complete rerun passed all 602 PNG URLs/dimensions and 156 full image hashes, plus exact campsite review HTML readback.

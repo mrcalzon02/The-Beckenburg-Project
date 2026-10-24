@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-24T08:14:51.368187+00:00",
-  "published_commit": "08191c91c0aa5a9387ec84d35745c1be114ea67f",
+  "verified_at": "2026-10-24T12:23:17.307833+00:00",
+  "published_commit": "b0c58f6bf762cb36c85a248004b87204f11a0e69",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 595,
+  "image_count": 602,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -738,6 +738,12 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/defects/DEV-038-before-dome-entry-pole.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1146,6 +1152,24 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/hollow-creek/tents-east-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tents-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tents-west-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/hollow-creek/terrain-site-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1302,6 +1326,12 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_bedroll_rolled.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_bench.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1372,6 +1402,18 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_dome.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_ridge.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/level_camp_terrain.png",
@@ -3575,5 +3617,6 @@
       "png_dimensions_match": true,
       "full_sha256_verified": false
     }
-  ]
+  ],
+  "request_retries": []
 }

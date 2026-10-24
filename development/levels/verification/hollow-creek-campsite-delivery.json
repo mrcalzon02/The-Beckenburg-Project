@@ -1,0 +1,43 @@
+{
+  "status": "pass-remote-repository-asset-readback",
+  "commit": "b0c58f6bf762cb36c85a248004b87204f11a0e69",
+  "verified_at_utc": "2026-10-24T12:15:26.210893+00:00",
+  "checks": [
+    {
+      "path": "assets/runtime/models/level_camp_tent_ridge.glb",
+      "bytes": 253456,
+      "sha256": "d8259affd80dd78b5030c846aad720a2e3c3ead75cb8e5962a6ae5d52ca17f10"
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_dome.glb",
+      "bytes": 316368,
+      "sha256": "4009888d8fb340301da2fb204b5f7d4c5569eab4016beb4d101e5c8fa7424b76"
+    },
+    {
+      "path": "assets/runtime/models/level_camp_bedroll_rolled.glb",
+      "bytes": 325636,
+      "sha256": "3023b48a94d9e49e818a705afc8080a98f8dbe1f4ef1901dde84654c7185a663"
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_ridge.blend",
+      "bytes": 371720,
+      "sha256": "2049161f8ba09157af1f0971e327f6819179e5aef51ebdf165fd2e5d9ded74ed"
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_dome.blend",
+      "bytes": 358977,
+      "sha256": "5d3dd4e439b89fcdd575b47ca8e74c61716f2d7faae25cd4bf08b289144fe2f6"
+    },
+    {
+      "path": "development/levels/blender/level_camp_bedroll_rolled.blend",
+      "bytes": 340837,
+      "sha256": "98170c90b08451e6d77be681d420b7a0784c91b4ede44850ac9275b20966c4d8"
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-tents.blend",
+      "bytes": 5479274,
+      "sha256": "96473bf0314aff8dfa32ea96d3a36f438fce250a995c958c6717408e93297a27"
+    }
+  ],
+  "scope": "Actual GLB/editable source bytes on the published commit; Pages/gallery verified separately."
+}

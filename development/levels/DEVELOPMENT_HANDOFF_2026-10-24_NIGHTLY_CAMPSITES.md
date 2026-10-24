@@ -46,3 +46,12 @@ Public gallery closeout for the new campsite images must be recorded after live
 readback. The prior 595-image checkpoint was already verified. Exact current-run
 input/output/cached token metadata is unavailable; never infer it from old goal
 counters or account percentages.
+
+
+## Completed delivery
+
+Model/source checkpoint b0c58f6bf762cb36c85a248004b87204f11a0e69 was pushed normally and remote readback matched. Seven actual runtime/native source files were downloaded at that immutable commit and SHA-256 matched. The public gallery subsequently passed all 602 PNG URLs/dimensions and 156 full image hashes; the deployed campsite review HTML also matched local source.
+
+The first gallery run hit a transient 503; DEV-041 records it. Added bounded per-URL retry/backoff and explicit failing paths; no image/hash check was waived. The successful run recorded 0 per-URL retry events.
+
+Exact run tokens remain unavailable (input/output/cached/total all null in the dated usage record). No older goal counters or account percentages were used. Resume with sanitary/camp-furniture fixtures or the remaining queued facility milestone, preserving this accepted native tent/bedding checkpoint and all still-open runtime/art gates.

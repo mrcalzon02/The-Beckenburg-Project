@@ -441,6 +441,17 @@
       "action": "Author a western contour approach around the pitched tent, shift the eastern approach beyond the steep edge, clear only the affected decorative ferns, and test 3912 standing body samples plus 510 tread samples. Final maximum approach grade is 0.1843600; no terrain source or grade threshold was changed.",
       "evidence": "development/quality/evidence/DEV-040-approach-grades-before.json; DEV-040-corridor-guylines-before.json; hollow-creek/tents.json approaches and verification/hollow-creek-tents.json.",
       "older_maps": "Check full tread width and body envelope around guy ropes, pegs, terrain transitions and entries. Actual runtime movement, AI fairness and wear/approach artwork remain separate gates."
+    },
+    {
+      "id": "DEV-041",
+      "title": "Gallery readback aborted on a transient Pages 503",
+      "status": "fixed-verification-tool; final live rerun passed",
+      "affected": "Nightly public gallery verification",
+      "symptom": "The first 602-image live readback failed with HTTP 503 during an image request even though Pages was built and all seven published model/native source hashes matched.",
+      "cause": "The verifier had no per-URL transient retry and the legacy failure did not identify the affected image URL.",
+      "action": "Retry transient 429/5xx/network failures at most four times per URL, respect short Retry-After headers, defer long server backoff, log successful-run retry events and include the path on fatal failures. Keep all actual PNG/hash assertions. Final rerun verified 602 images and 156 full hashes.",
+      "evidence": "tools/verify_development_gallery.py; development/verification/live-development-gallery.json; initial recorded failure excerpt in development/quality/evidence/DEV-041-gallery-503-before.txt",
+      "older_maps": "A transient service error does not invalidate local implementation or prove remote publication failed. Preserve checkpoints and separately verify source bytes and final public image delivery."
     }
   ],
   "audit_categories": [
