@@ -430,6 +430,104 @@ Evidence and verification: development/levels/model-requirements/refresh_catalog
 
 Older-map obligation: Do not globally regenerate curated worklists to append a map. Refresh catalogs from actual packets; retain source references and existing map geometry.
 
+### DEV-031 — First land boundary read as a uniform wall in an underlit review
+
+**Status:** fixed-native-geometry-art-review-open · **Affected:** Hollow Creek first boundary draft
+
+Continuous steep core, block stones and dark inspection framing hid natural edge fitness.
+
+Cause / uncertainty: Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.
+
+Fix / next action: Slope the bank profile, add embedded rocks/rooted growth and retain inspection lighting. Further fine art review remains open.
+
+Evidence and verification: development/levels/previews/defects/DEV-031-before-uniform-boundary.png
+
+Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
+
+### DEV-032 — Lowered service-bank transition left uncovered land-boundary samples
+
+**Status:** fixed-native-land-only · **Affected:** Hollow Creek boundary authoring
+
+Initial native check flagged 69 ray locations. Fence selection skipped a segment when only part of it crossed the lower-bank threshold.
+
+Cause / uncertainty: Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.
+
+Fix / next action: Clip fence spans at the actual transition and overlap the lower bank. Final checks pass 1392 land/gate rays and 385 capsule-contact crossings. Two deliberately open shoreline interfaces remain explicit, with exact coplanar end-cap rays excluded and capsule contact retained.
+
+Evidence and verification: development/quality/evidence/DEV-032-boundary-native-before.json; development/levels/verification/hollow-creek-boundaries.json
+
+Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
+
+### DEV-033 — Organic clearing/deck changes produced five steep native route samples
+
+**Status:** fixed-native-only · **Affected:** Hollow Creek desquareification iteration
+
+Ellipse plateau incision and soil above a creek deck produced five sampled grades above 0.20, peaking at 0.27609.
+
+Cause / uncertainty: Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.
+
+Fix / next action: Fade incision near the actual arrival pad, remove forced flattening in unbuilt clearings, and keep soil below the deck. All 10377 native route samples now pass; worst grade 0.1928266.
+
+Evidence and verification: development/quality/evidence/DEV-033-organic-grade-before.json; development/levels/verification/hollow-creek-organic.json
+
+Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
+
+### DEV-034 — Planning rectangles survived in landscape pads and loose perimeter
+
+**Status:** fixed-native-derived-scene-only · **Affected:** User-caught Hollow Creek terrain/blockout carryover
+
+Unbuilt building-zone pads and oversized square aprons remained visible; the boundary still broadly wrapped a rectangle.
+
+Cause / uncertainty: Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.
+
+Fix / next action: Require DESQUAREIFY_GATE for every map. Derive terrain with organic clearings and a narrowed arrival neck, remove oversized aprons, retain only the actual 14m physical slab. Validate real cropped terrain margins. Older maps remain unaudited.
+
+Evidence and verification: development/quality/DESQUAREIFY_GATE.md; hollow-creek/organic-assets.json; before/after terrain and organic site captures
+
+Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
+
+### DEV-035 — Canonical van was omitted from native campground arrival review
+
+**Status:** fixed-native-review-only · **Affected:** User-caught Hollow Creek native scene
+
+Arrival point was recorded in coordinates but the actual vehicle was absent from the scene.
+
+Cause / uncertainty: Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.
+
+Fix / next action: Export the exact 4968 runtime van triangles with their UVs/materials and place them at X32/Y1.5/Z78/yaw0. Do not substitute a placeholder envelope or rebuilt vehicle.
+
+Evidence and verification: src/test/java/org/beckenburg/HollowCreekVanSource.java; hollow-creek/organic-assets.json; forest-van-and-roadhead-native-fitout.png
+
+Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
+
+### DEV-036 — New authoring tools had failed initial smoke-check assumptions
+
+**Status:** fixed-authoring-tools · **Affected:** Boundary/organic model pipeline
+
+A missing random import, reused loop-count/normal variable, and a whole-site bound assertion incorrectly applied to a short fence interrupted initial authoring checks.
+
+Cause / uncertainty: Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.
+
+Fix / next action: Fix imports/variable naming and validate the service fence against its actual narrowed arrival extent. Run native saved-scene checks and all eight real GLB loads.
+
+Evidence and verification: build_hollow_creek_boundaries.py; validate_hollow_creek_organic.py; HollowCreekBoundaryAssetsTest.java
+
+Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
+
+### DEV-037 — Coarse tree crowns and surface breakup did not meet requested art quality
+
+**Status:** open-art-refinement · **Affected:** User-caught campground models/textures
+
+Stacked cones, rounded replacement canopy lumps and coarse material breakup were visibly unsuitable as finished foliage.
+
+Cause / uncertainty: Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.
+
+Fix / next action: Replace rounded pine masses with attached fine branch/needle sprays, increase original diffuse detail, add supplemental alpha crowns on solid trunks, and add protected close ferns. Preserve rejected rounded-canopy evidence. Continue reviewing broadleaf/shrub/rock art and runtime alpha/LOD behavior; do not call the whole art pass accepted.
+
+Evidence and verification: development/levels/previews/defects/DEV-037-before-rounded-pine-crowns.png; hollow-creek/foliage-detail.json; current native captures
+
+Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

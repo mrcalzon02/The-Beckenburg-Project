@@ -35,3 +35,7 @@ Every named space has a room-by-room record in the adjacent JSON. Audit existing
 - **pump**: Drainage pump, sump grate, valves and supported pipes
 
 Clutter and wear follow each room’s function. Quantity and source-library reuse are unaccepted until scale, pivot, UV, support and circulation are inspected.
+
+## Mandatory remote-site power
+
+Placed generator, distribution board/main breaker and supported service wiring are required. Ghost breaker trips must affect the authored electrical loads through the normal authoritative circuit state. Generator running and breaker states are separate; oil/fire/battery sources retain their existing independent power rules. See ../power-plans/wld-17.json.

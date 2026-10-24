@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "issues": [
     {
       "id": "DEV-001",
@@ -331,6 +331,83 @@
       "action": "Make the public entry point refresh/validate only the catalog from existing worklists. Preserve authored JSON/Markdown; support original and new room schemas and separate annexes. Disable legacy global regeneration.",
       "evidence": "development/levels/model-requirements/refresh_catalog.py; build_requirements.py now reports 28 base maps and one additive expansion; source-hash and per-room counts checked.",
       "older_maps": "Do not globally regenerate curated worklists to append a map. Refresh catalogs from actual packets; retain source references and existing map geometry."
+    },
+    {
+      "id": "DEV-031",
+      "title": "First land boundary read as a uniform wall in an underlit review",
+      "status": "fixed-native-geometry-art-review-open",
+      "affected": "Hollow Creek first boundary draft",
+      "symptom": "Continuous steep core, block stones and dark inspection framing hid natural edge fitness.",
+      "cause": "Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.",
+      "action": "Slope the bank profile, add embedded rocks/rooted growth and retain inspection lighting. Further fine art review remains open.",
+      "evidence": "development/levels/previews/defects/DEV-031-before-uniform-boundary.png",
+      "older_maps": "Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance."
+    },
+    {
+      "id": "DEV-032",
+      "title": "Lowered service-bank transition left uncovered land-boundary samples",
+      "status": "fixed-native-land-only",
+      "affected": "Hollow Creek boundary authoring",
+      "symptom": "Initial native check flagged 69 ray locations. Fence selection skipped a segment when only part of it crossed the lower-bank threshold.",
+      "cause": "Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.",
+      "action": "Clip fence spans at the actual transition and overlap the lower bank. Final checks pass 1392 land/gate rays and 385 capsule-contact crossings. Two deliberately open shoreline interfaces remain explicit, with exact coplanar end-cap rays excluded and capsule contact retained.",
+      "evidence": "development/quality/evidence/DEV-032-boundary-native-before.json; development/levels/verification/hollow-creek-boundaries.json",
+      "older_maps": "Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance."
+    },
+    {
+      "id": "DEV-033",
+      "title": "Organic clearing/deck changes produced five steep native route samples",
+      "status": "fixed-native-only",
+      "affected": "Hollow Creek desquareification iteration",
+      "symptom": "Ellipse plateau incision and soil above a creek deck produced five sampled grades above 0.20, peaking at 0.27609.",
+      "cause": "Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.",
+      "action": "Fade incision near the actual arrival pad, remove forced flattening in unbuilt clearings, and keep soil below the deck. All 10377 native route samples now pass; worst grade 0.1928266.",
+      "evidence": "development/quality/evidence/DEV-033-organic-grade-before.json; development/levels/verification/hollow-creek-organic.json",
+      "older_maps": "Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance."
+    },
+    {
+      "id": "DEV-034",
+      "title": "Planning rectangles survived in landscape pads and loose perimeter",
+      "status": "fixed-native-derived-scene-only",
+      "affected": "User-caught Hollow Creek terrain/blockout carryover",
+      "symptom": "Unbuilt building-zone pads and oversized square aprons remained visible; the boundary still broadly wrapped a rectangle.",
+      "cause": "Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.",
+      "action": "Require DESQUAREIFY_GATE for every map. Derive terrain with organic clearings and a narrowed arrival neck, remove oversized aprons, retain only the actual 14m physical slab. Validate real cropped terrain margins. Older maps remain unaudited.",
+      "evidence": "development/quality/DESQUAREIFY_GATE.md; hollow-creek/organic-assets.json; before/after terrain and organic site captures",
+      "older_maps": "Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance."
+    },
+    {
+      "id": "DEV-035",
+      "title": "Canonical van was omitted from native campground arrival review",
+      "status": "fixed-native-review-only",
+      "affected": "User-caught Hollow Creek native scene",
+      "symptom": "Arrival point was recorded in coordinates but the actual vehicle was absent from the scene.",
+      "cause": "Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.",
+      "action": "Export the exact 4968 runtime van triangles with their UVs/materials and place them at X32/Y1.5/Z78/yaw0. Do not substitute a placeholder envelope or rebuilt vehicle.",
+      "evidence": "src/test/java/org/beckenburg/HollowCreekVanSource.java; hollow-creek/organic-assets.json; forest-van-and-roadhead-native-fitout.png",
+      "older_maps": "Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance."
+    },
+    {
+      "id": "DEV-036",
+      "title": "New authoring tools had failed initial smoke-check assumptions",
+      "status": "fixed-authoring-tools",
+      "affected": "Boundary/organic model pipeline",
+      "symptom": "A missing random import, reused loop-count/normal variable, and a whole-site bound assertion incorrectly applied to a short fence interrupted initial authoring checks.",
+      "cause": "Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.",
+      "action": "Fix imports/variable naming and validate the service fence against its actual narrowed arrival extent. Run native saved-scene checks and all eight real GLB loads.",
+      "evidence": "build_hollow_creek_boundaries.py; validate_hollow_creek_organic.py; HollowCreekBoundaryAssetsTest.java",
+      "older_maps": "Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance."
+    },
+    {
+      "id": "DEV-037",
+      "title": "Coarse tree crowns and surface breakup did not meet requested art quality",
+      "status": "open-art-refinement",
+      "affected": "User-caught campground models/textures",
+      "symptom": "Stacked cones, rounded replacement canopy lumps and coarse material breakup were visibly unsuitable as finished foliage.",
+      "cause": "Rough authoring assumptions were not sufficient; independent geometry and ordinary-view review exposed the issue.",
+      "action": "Replace rounded pine masses with attached fine branch/needle sprays, increase original diffuse detail, add supplemental alpha crowns on solid trunks, and add protected close ferns. Preserve rejected rounded-canopy evidence. Continue reviewing broadleaf/shrub/rock art and runtime alpha/LOD behavior; do not call the whole art pass accepted.",
+      "evidence": "development/levels/previews/defects/DEV-037-before-rounded-pine-crowns.png; hollow-creek/foliage-detail.json; current native captures",
+      "older_maps": "Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance."
     }
   ],
   "audit_categories": [

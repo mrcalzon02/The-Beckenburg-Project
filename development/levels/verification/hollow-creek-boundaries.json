@@ -1,0 +1,44 @@
+{
+  "status": "pass-native-land-only",
+  "edge_ray_samples": 1392,
+  "capsule_contact_crossings": 385,
+  "protected_corridor_body_samples": 9837,
+  "grounded_footings": 790,
+  "supported_log_ends": 56,
+  "prior_meshes_unchanged": 80,
+  "protected_source_files": 33,
+  "failures": [],
+  "clearance_failures": [],
+  "limitations": [
+    "No runtime level/collision/room/circuit integration or mission unlock.",
+    "Two shoreline ends intentionally remain open; water-entry and complete containment need separate engineering and host tests.",
+    "No new distant scenery or runtime sky-sector mask; images are native construction reviews.",
+    "Fence/gate bodies are static; gate articulation and operational fixtures are unaccepted."
+  ],
+  "export_reimports": [
+    {
+      "id": "level_camp_boundary_banks",
+      "triangles": 6992,
+      "bytes": 497476,
+      "finite_positions_and_uvs": true
+    },
+    {
+      "id": "level_camp_boundary_logfall",
+      "triangles": 9808,
+      "bytes": 608976,
+      "finite_positions_and_uvs": true
+    },
+    {
+      "id": "level_camp_boundary_fence",
+      "triangles": 1720,
+      "bytes": 198184,
+      "finite_positions_and_uvs": true
+    },
+    {
+      "id": "level_camp_boundary_gate",
+      "triangles": 788,
+      "bytes": 185420,
+      "finite_positions_and_uvs": true
+    }
+  ]
+}

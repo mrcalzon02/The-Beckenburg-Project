@@ -1,0 +1,25 @@
+{
+  "id": "WLD-09",
+  "title": "Blackwater Hydroelectric Dam",
+  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "generator_required": true,
+  "generator_location_intent": "Auxiliary maintenance generator outside operating turbine hazards",
+  "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
+  "distribution": "Placed distribution board/main breaker controls named authored electrical circuits through the same host-authoritative trip/reset path as other maps.",
+  "ghost_events": "Existing electrically relevant ghost events/activities must be able to trip the site breaker; remote geography never bypasses that behavior.",
+  "loads": "List each electric fixture, switch and socket against its actual circuit; disconnected/derelict equipment stays inert.",
+  "independent_sources": [
+    "Oil lanterns",
+    "Candles",
+    "Campfires",
+    "Battery-powered equipment per existing power rules"
+  ],
+  "acceptance": [
+    "Physical source and breaker supported, reachable and clear of spawns/rituals/routes",
+    "Exact affected fixtures go dark on host ghost trip and remain off until allowed reset",
+    "Generator state does not silently restore breaker or create duplicate circuit state",
+    "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
+    "LAN authority/reconnect and human/native acceptance"
+  ],
+  "source_layout": "development/levels/layouts/wld-09/layout.json"
+}

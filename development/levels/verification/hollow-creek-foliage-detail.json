@@ -1,0 +1,37 @@
+{
+  "status": "pass-native-foliage-only",
+  "original_3d_tree_placements_retained": 60,
+  "refined_3d_conifers": 40,
+  "supplemental_solid_trunk_billboards": 67,
+  "grounded_near_ferns": 150,
+  "alpha_textures": [
+    {
+      "path": "development/levels/hollow-creek/textures/pine-crown-a.png",
+      "size": [
+        768,
+        768
+      ],
+      "transparent_pixels": 520105,
+      "opaque_pixels": 39626,
+      "corners_transparent": true
+    },
+    {
+      "path": "development/levels/hollow-creek/textures/pine-crown-b.png",
+      "size": [
+        768,
+        768
+      ],
+      "transparent_pixels": 521428,
+      "opaque_pixels": 40239,
+      "corners_transparent": true
+    }
+  ],
+  "placement_findings": [],
+  "source_scene_unchanged": true,
+  "limitations": [
+    "Native locked-track alpha crowns are supplemental, not replacements for 3D trees.",
+    "CPU/GPU cutout sorting, photographs and runtime billboard/LOD/performance acceptance remain required.",
+    "Decorative close ferns do not grant hiding; dense authored refuge pockets remain a separate requirement.",
+    "Remaining tents/sanitary/dock/utility and park-detail work follows the recorded detail pass."
+  ]
+}

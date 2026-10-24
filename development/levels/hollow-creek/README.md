@@ -87,3 +87,14 @@ Natural edge palette recorded in terrain.json: hedges, stone retaining banks,
 service fences and grounded fallen-log barriers. Their actual placement/collision
 has not yet been implemented or accepted. See WATER_REQUIREMENTS.md for the
 Godot/MIT candidate, separate example-texture attribution and transparency gates.
+
+
+## 24 October — desquareified terrain and foliage checkpoint
+
+[Current native review](ORGANIC_FOLIAGE_REVIEW.html) · [Detail accumulation requirements](DETAIL_PASS.md).
+
+Original checkpoints remain unchanged. New derived terrain removes unbuilt zone-shaped pads and oversized aprons, narrows the arrival neck, and contains the actual canonical van. Actual saved-scene tests pass 10377 full-width terrain samples (worst grade 0.1928266), 1392 land/gate rays, 385 static capsule-contact crossings, 9837 protected body samples, grounded tree supports and corridor/ritual planting checks. Eight real GLBs load within unchanged per-model budgets.
+
+Retained 60 tree placements, refined 40 conifers, added 67 supplemental camera-facing transparent crowns with solid trunks, and 150 grounded decorative ferns. Billboard textures are native renders of original branch geometry. Runtime alpha/LOD/parity/performance and overall art acceptance remain open. Decorative plants do not create hiding privileges.
+
+All remote maps now require generator/distribution/breaker plans retaining ghost trip behavior; the plans are not implemented circuits. The lake interfaces, water-entry restrictions, runtime map integration and remaining detail queue stay unfinished. No map is unlocked.

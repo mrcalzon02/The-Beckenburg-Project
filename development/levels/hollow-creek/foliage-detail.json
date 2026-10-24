@@ -1,0 +1,1777 @@
+{
+  "status": "native art refinement only; runtime alpha/LOD integration pending",
+  "assets": [
+    {
+      "id": "level_camp_pine_refined_a",
+      "triangles": 6812,
+      "editable": "development/levels/blender/level_camp_pine_refined_a.blend",
+      "sha256": "2fe925caef9c10b8190103369b5cc5cb890828e1f421b6269e9569a262c1287e"
+    },
+    {
+      "id": "level_camp_pine_refined_b",
+      "triangles": 6812,
+      "editable": "development/levels/blender/level_camp_pine_refined_b.blend",
+      "sha256": "f5224aefa1f456f2dffb3f5b92d4af1314ac7e94827bd2fcf95a72817da595f8"
+    },
+    {
+      "id": "level_camp_fern_refined",
+      "triangles": 528,
+      "editable": "development/levels/blender/level_camp_fern_refined.blend",
+      "sha256": "baf6d26cf9ed1a302ff91830aa405d831b17a5e25a8bc59c2655774c38c8be61"
+    }
+  ],
+  "original_tree_count": 60,
+  "refined_conifers": 40,
+  "billboards": [
+    {
+      "x": -17.956723565107545,
+      "z": 14.831631643924556,
+      "ground": -0.9403533935546875,
+      "trunk": "Supplemental billboard solid trunk",
+      "card": "Supplemental camera-facing crown",
+      "scale": 1.4248843997372194
+    },
+    {
+      "x": -10.511028702300125,
+      "z": 19.154710152576133,
+      "ground": -0.69378662109375,
+      "trunk": "Supplemental billboard solid trunk.001",
+      "card": "Supplemental camera-facing crown.001",
+      "scale": 1.3122382080309953
+    },
+    {
+      "x": -21.76042837334429,
+      "z": 22.656512810075746,
+      "ground": -0.36712646484375,
+      "trunk": "Supplemental billboard solid trunk.002",
+      "card": "Supplemental camera-facing crown.002",
+      "scale": 1.3188415914655516
+    },
+    {
+      "x": -13.292791158528939,
+      "z": 21.51757084368711,
+      "ground": -0.5282936096191406,
+      "trunk": "Supplemental billboard solid trunk.003",
+      "card": "Supplemental camera-facing crown.003",
+      "scale": 1.883560155712174
+    },
+    {
+      "x": -20.745188497111315,
+      "z": 35.76939574867671,
+      "ground": 0.42566680908203125,
+      "trunk": "Supplemental billboard solid trunk.004",
+      "card": "Supplemental camera-facing crown.004",
+      "scale": 1.8412123099493694
+    },
+    {
+      "x": -10.515116899066857,
+      "z": 35.08817131202046,
+      "ground": 0.26165008544921875,
+      "trunk": "Supplemental billboard solid trunk.005",
+      "card": "Supplemental camera-facing crown.005",
+      "scale": 1.5425843766420768
+    },
+    {
+      "x": -22.758252780804273,
+      "z": 40.172090185121846,
+      "ground": 0.5472145080566406,
+      "trunk": "Supplemental billboard solid trunk.006",
+      "card": "Supplemental camera-facing crown.006",
+      "scale": 1.6077590306416754
+    },
+    {
+      "x": -11.995614992458961,
+      "z": 38.76673898781363,
+      "ground": 0.4431190490722656,
+      "trunk": "Supplemental billboard solid trunk.007",
+      "card": "Supplemental camera-facing crown.007",
+      "scale": 1.7187274085941642
+    },
+    {
+      "x": -24.43772691600524,
+      "z": 57.525036006474664,
+      "ground": 1.2356986999511719,
+      "trunk": "Supplemental billboard solid trunk.008",
+      "card": "Supplemental camera-facing crown.008",
+      "scale": 1.3877982688570498
+    },
+    {
+      "x": -13.824497958217178,
+      "z": 57.79620512328178,
+      "ground": 1.040191650390625,
+      "trunk": "Supplemental billboard solid trunk.009",
+      "card": "Supplemental camera-facing crown.009",
+      "scale": 1.348637503996374
+    },
+    {
+      "x": -14.792957424499944,
+      "z": 77.26245162334378,
+      "ground": 2.0999412536621094,
+      "trunk": "Supplemental billboard solid trunk.010",
+      "card": "Supplemental camera-facing crown.010",
+      "scale": 1.5798720583954364
+    },
+    {
+      "x": -5.453917015415251,
+      "z": 73.56206408600245,
+      "ground": 1.6116752624511719,
+      "trunk": "Supplemental billboard solid trunk.011",
+      "card": "Supplemental camera-facing crown.011",
+      "scale": 1.3103599908025276
+    },
+    {
+      "x": 2.479885935049696,
+      "z": 86.58183816966913,
+      "ground": 2.6639862060546875,
+      "trunk": "Supplemental billboard solid trunk.012",
+      "card": "Supplemental camera-facing crown.012",
+      "scale": 1.6111069468368064
+    },
+    {
+      "x": 11.926860474250589,
+      "z": 85.30715010512294,
+      "ground": 2.2760391235351562,
+      "trunk": "Supplemental billboard solid trunk.013",
+      "card": "Supplemental camera-facing crown.013",
+      "scale": 1.8837868625742136
+    },
+    {
+      "x": -1.5806079922266374,
+      "z": 78.6837861764792,
+      "ground": 2.4262619018554688,
+      "trunk": "Supplemental billboard solid trunk.014",
+      "card": "Supplemental camera-facing crown.014",
+      "scale": 1.3924080479460752
+    },
+    {
+      "x": 7.657825643339535,
+      "z": 78.5292439544389,
+      "ground": 2.1421546936035156,
+      "trunk": "Supplemental billboard solid trunk.015",
+      "card": "Supplemental camera-facing crown.015",
+      "scale": 1.7785152454300488
+    },
+    {
+      "x": 5.686747399817818,
+      "z": 96.24404606838753,
+      "ground": 2.987049102783203,
+      "trunk": "Supplemental billboard solid trunk.016",
+      "card": "Supplemental camera-facing crown.016",
+      "scale": 1.801726704368809
+    },
+    {
+      "x": -53.9910851603838,
+      "z": 19.417466226480567,
+      "ground": 0.5353927612304688,
+      "trunk": "Supplemental billboard solid trunk.017",
+      "card": "Supplemental camera-facing crown.017",
+      "scale": 1.6130079931078636
+    },
+    {
+      "x": -44.854822215669415,
+      "z": 16.920991331430486,
+      "ground": 0.07408523559570312,
+      "trunk": "Supplemental billboard solid trunk.018",
+      "card": "Supplemental camera-facing crown.018",
+      "scale": 1.6701436027957908
+    },
+    {
+      "x": -55.100023315736685,
+      "z": 34.116423555590416,
+      "ground": 1.0688819885253906,
+      "trunk": "Supplemental billboard solid trunk.019",
+      "card": "Supplemental camera-facing crown.019",
+      "scale": 1.8020018167488003
+    },
+    {
+      "x": -47.2358066648276,
+      "z": 37.013890813197236,
+      "ground": 0.6158561706542969,
+      "trunk": "Supplemental billboard solid trunk.020",
+      "card": "Supplemental camera-facing crown.020",
+      "scale": 1.4109805877588169
+    },
+    {
+      "x": -53.68153208222415,
+      "z": 27.977103735497614,
+      "ground": 0.7711524963378906,
+      "trunk": "Supplemental billboard solid trunk.021",
+      "card": "Supplemental camera-facing crown.021",
+      "scale": 1.9393932999142192
+    },
+    {
+      "x": -45.18543807638232,
+      "z": 26.062960049677997,
+      "ground": 0.21139144897460938,
+      "trunk": "Supplemental billboard solid trunk.022",
+      "card": "Supplemental camera-facing crown.022",
+      "scale": 1.4918028187498884
+    },
+    {
+      "x": -61.03398702314096,
+      "z": 56.26481140560745,
+      "ground": 1.9417037963867188,
+      "trunk": "Supplemental billboard solid trunk.023",
+      "card": "Supplemental camera-facing crown.023",
+      "scale": 1.7618087345929454
+    },
+    {
+      "x": -49.85064391820972,
+      "z": 52.54806994700743,
+      "ground": 1.1934776306152344,
+      "trunk": "Supplemental billboard solid trunk.024",
+      "card": "Supplemental camera-facing crown.024",
+      "scale": 1.9231659171957203
+    },
+    {
+      "x": -39.07093124777767,
+      "z": 103.30483795937512,
+      "ground": 4.2027130126953125,
+      "trunk": "Supplemental billboard solid trunk.025",
+      "card": "Supplemental camera-facing crown.025",
+      "scale": 1.3263330998186398
+    },
+    {
+      "x": -30.064701169937837,
+      "z": 105.72015301711825,
+      "ground": 4.249950408935547,
+      "trunk": "Supplemental billboard solid trunk.026",
+      "card": "Supplemental camera-facing crown.026",
+      "scale": 1.5014513650868244
+    },
+    {
+      "x": -1.4622209973462947,
+      "z": 119.88502240977787,
+      "ground": 4.3438568115234375,
+      "trunk": "Supplemental billboard solid trunk.027",
+      "card": "Supplemental camera-facing crown.027",
+      "scale": 1.8010441754152522
+    },
+    {
+      "x": 5.601777054279715,
+      "z": 117.73679822367181,
+      "ground": 3.8860397338867188,
+      "trunk": "Supplemental billboard solid trunk.028",
+      "card": "Supplemental camera-facing crown.028",
+      "scale": 1.39280007398534
+    },
+    {
+      "x": -7.792690428173256,
+      "z": 118.18078239292052,
+      "ground": 4.538417816162109,
+      "trunk": "Supplemental billboard solid trunk.029",
+      "card": "Supplemental camera-facing crown.029",
+      "scale": 1.6396830201478663
+    },
+    {
+      "x": -37.11676015030573,
+      "z": 84.07654880609128,
+      "ground": 3.23150634765625,
+      "trunk": "Supplemental billboard solid trunk.030",
+      "card": "Supplemental camera-facing crown.030",
+      "scale": 1.403712712521504
+    },
+    {
+      "x": -25.912613750686447,
+      "z": 79.63767024797914,
+      "ground": 2.8350830078125,
+      "trunk": "Supplemental billboard solid trunk.031",
+      "card": "Supplemental camera-facing crown.031",
+      "scale": 1.856165055594523
+    },
+    {
+      "x": -23.09203560795561,
+      "z": 113.69835132700453,
+      "ground": 4.732139587402344,
+      "trunk": "Supplemental billboard solid trunk.032",
+      "card": "Supplemental camera-facing crown.032",
+      "scale": 1.493501783133067
+    },
+    {
+      "x": 50.326549049341025,
+      "z": 92.05025355805179,
+      "ground": 2.2869644165039062,
+      "trunk": "Supplemental billboard solid trunk.033",
+      "card": "Supplemental camera-facing crown.033",
+      "scale": 1.4869993207625418
+    },
+    {
+      "x": 59.579281242504315,
+      "z": 95.24376593192919,
+      "ground": 3.3275184631347656,
+      "trunk": "Supplemental billboard solid trunk.034",
+      "card": "Supplemental camera-facing crown.034",
+      "scale": 1.5194702614762279
+    },
+    {
+      "x": 63.48117178954894,
+      "z": 75.74300320004839,
+      "ground": 2.25982666015625,
+      "trunk": "Supplemental billboard solid trunk.035",
+      "card": "Supplemental camera-facing crown.035",
+      "scale": 1.3036755974223206
+    },
+    {
+      "x": 50.17684683665795,
+      "z": 81.24939911288229,
+      "ground": 1.8000907897949219,
+      "trunk": "Supplemental billboard solid trunk.036",
+      "card": "Supplemental camera-facing crown.036",
+      "scale": 1.3434717220623937
+    },
+    {
+      "x": 61.035229572629426,
+      "z": 81.31207588283395,
+      "ground": 2.7494049072265625,
+      "trunk": "Supplemental billboard solid trunk.037",
+      "card": "Supplemental camera-facing crown.037",
+      "scale": 1.5601465984548648
+    },
+    {
+      "x": 75.48106512335444,
+      "z": 65.15081783343338,
+      "ground": 1.8295402526855469,
+      "trunk": "Supplemental billboard solid trunk.038",
+      "card": "Supplemental camera-facing crown.038",
+      "scale": 1.7228508135798766
+    },
+    {
+      "x": 82.9999704685789,
+      "z": 57.851035514617166,
+      "ground": 1.6545829772949219,
+      "trunk": "Supplemental billboard solid trunk.039",
+      "card": "Supplemental camera-facing crown.039",
+      "scale": 1.3922164780414301
+    },
+    {
+      "x": 74.29809290682854,
+      "z": 50.217894554782944,
+      "ground": 0.6964263916015625,
+      "trunk": "Supplemental billboard solid trunk.040",
+      "card": "Supplemental camera-facing crown.040",
+      "scale": 1.725814680251778
+    },
+    {
+      "x": 83.60000230112514,
+      "z": 51.188820363274345,
+      "ground": 1.3258781433105469,
+      "trunk": "Supplemental billboard solid trunk.041",
+      "card": "Supplemental camera-facing crown.041",
+      "scale": 1.598738773325314
+    },
+    {
+      "x": 68.22868668317894,
+      "z": 31.755755216617487,
+      "ground": -0.511749267578125,
+      "trunk": "Supplemental billboard solid trunk.042",
+      "card": "Supplemental camera-facing crown.042",
+      "scale": 1.3938779662117988
+    },
+    {
+      "x": 71.38252518293318,
+      "z": 39.18414576127519,
+      "ground": 0.0594024658203125,
+      "trunk": "Supplemental billboard solid trunk.043",
+      "card": "Supplemental camera-facing crown.043",
+      "scale": 1.7171115889439836
+    },
+    {
+      "x": 80.01280298592087,
+      "z": 38.17399149077648,
+      "ground": 0.4729766845703125,
+      "trunk": "Supplemental billboard solid trunk.044",
+      "card": "Supplemental camera-facing crown.044",
+      "scale": 1.7625243822263412
+    },
+    {
+      "x": 80.05896826101207,
+      "z": 31.968874400913418,
+      "ground": 0.24557876586914062,
+      "trunk": "Supplemental billboard solid trunk.045",
+      "card": "Supplemental camera-facing crown.045",
+      "scale": 1.8416591154087583
+    },
+    {
+      "x": 73.05530965296153,
+      "z": 23.021157652269697,
+      "ground": -0.6423606872558594,
+      "trunk": "Supplemental billboard solid trunk.046",
+      "card": "Supplemental camera-facing crown.046",
+      "scale": 1.5104225589284226
+    },
+    {
+      "x": 83.92687328781088,
+      "z": 19.203785508122273,
+      "ground": -0.22657012939453125,
+      "trunk": "Supplemental billboard solid trunk.047",
+      "card": "Supplemental camera-facing crown.047",
+      "scale": 1.8722389399256616
+    },
+    {
+      "x": 79.21930111307834,
+      "z": 116.92195938950879,
+      "ground": 4.588703155517578,
+      "trunk": "Supplemental billboard solid trunk.048",
+      "card": "Supplemental camera-facing crown.048",
+      "scale": 1.5398323689194233
+    },
+    {
+      "x": 86.85695494739876,
+      "z": 119.8909506679047,
+      "ground": 4.777950286865234,
+      "trunk": "Supplemental billboard solid trunk.049",
+      "card": "Supplemental camera-facing crown.049",
+      "scale": 1.3384894512451542
+    },
+    {
+      "x": 90.44938838621911,
+      "z": 83.82953249828162,
+      "ground": 3.2134361267089844,
+      "trunk": "Supplemental billboard solid trunk.050",
+      "card": "Supplemental camera-facing crown.050",
+      "scale": 1.7852011701847632
+    },
+    {
+      "x": 100.92662149647002,
+      "z": 81.27877641345663,
+      "ground": 3.0928306579589844,
+      "trunk": "Supplemental billboard solid trunk.051",
+      "card": "Supplemental camera-facing crown.051",
+      "scale": 1.4332572617071042
+    },
+    {
+      "x": 83.51172536256203,
+      "z": 100.4288523305204,
+      "ground": 3.9394264221191406,
+      "trunk": "Supplemental billboard solid trunk.052",
+      "card": "Supplemental camera-facing crown.052",
+      "scale": 1.5229960579653148
+    },
+    {
+      "x": 91.0770051517002,
+      "z": 95.90470858683852,
+      "ground": 3.7723159790039062,
+      "trunk": "Supplemental billboard solid trunk.053",
+      "card": "Supplemental camera-facing crown.053",
+      "scale": 1.3999259101855008
+    },
+    {
+      "x": 57.235618087553874,
+      "z": 118.45775566382623,
+      "ground": 4.7984619140625,
+      "trunk": "Supplemental billboard solid trunk.054",
+      "card": "Supplemental camera-facing crown.054",
+      "scale": 1.6178858969510623
+    },
+    {
+      "x": 66.85347777968626,
+      "z": 113.87467327675277,
+      "ground": 4.5719757080078125,
+      "trunk": "Supplemental billboard solid trunk.055",
+      "card": "Supplemental camera-facing crown.055",
+      "scale": 1.946944829560742
+    },
+    {
+      "x": 108.87783479674455,
+      "z": 63.12099219400661,
+      "ground": 2.0970916748046875,
+      "trunk": "Supplemental billboard solid trunk.056",
+      "card": "Supplemental camera-facing crown.056",
+      "scale": 1.4677907806846635
+    },
+    {
+      "x": 116.43707271304471,
+      "z": 68.56525168630886,
+      "ground": 2.392894744873047,
+      "trunk": "Supplemental billboard solid trunk.057",
+      "card": "Supplemental camera-facing crown.057",
+      "scale": 1.3717935334517126
+    },
+    {
+      "x": 109.35663627926115,
+      "z": 51.176176458274504,
+      "ground": 1.8449172973632812,
+      "trunk": "Supplemental billboard solid trunk.058",
+      "card": "Supplemental camera-facing crown.058",
+      "scale": 1.300160619020672
+    },
+    {
+      "x": 118.71587674778972,
+      "z": 49.65672650175606,
+      "ground": 1.7268028259277344,
+      "trunk": "Supplemental billboard solid trunk.059",
+      "card": "Supplemental camera-facing crown.059",
+      "scale": 1.909520470083756
+    },
+    {
+      "x": 92.76973681070943,
+      "z": 12.946715590268496,
+      "ground": -0.18497085571289062,
+      "trunk": "Supplemental billboard solid trunk.060",
+      "card": "Supplemental camera-facing crown.060",
+      "scale": 1.6351387779543671
+    },
+    {
+      "x": 107.94247273086492,
+      "z": 48.73017812822414,
+      "ground": 1.8164100646972656,
+      "trunk": "Supplemental billboard solid trunk.061",
+      "card": "Supplemental camera-facing crown.061",
+      "scale": 1.7884590894473995
+    },
+    {
+      "x": 116.36144760639515,
+      "z": 43.49399059851668,
+      "ground": 1.5990142822265625,
+      "trunk": "Supplemental billboard solid trunk.062",
+      "card": "Supplemental camera-facing crown.062",
+      "scale": 1.3986991062460126
+    },
+    {
+      "x": 104.44283643996164,
+      "z": 41.11511790084141,
+      "ground": 1.7309036254882812,
+      "trunk": "Supplemental billboard solid trunk.063",
+      "card": "Supplemental camera-facing crown.063",
+      "scale": 1.763611800338575
+    },
+    {
+      "x": 116.13462962629644,
+      "z": 38.28364122650346,
+      "ground": 1.4606094360351562,
+      "trunk": "Supplemental billboard solid trunk.064",
+      "card": "Supplemental camera-facing crown.064",
+      "scale": 1.7368266359541824
+    },
+    {
+      "x": 110.65985201490697,
+      "z": 20.813147454139134,
+      "ground": 0.7573471069335938,
+      "trunk": "Supplemental billboard solid trunk.065",
+      "card": "Supplemental camera-facing crown.065",
+      "scale": 1.6398971491662857
+    },
+    {
+      "x": 119.91045691004665,
+      "z": 22.416325890868062,
+      "ground": 0.9340438842773438,
+      "trunk": "Supplemental billboard solid trunk.066",
+      "card": "Supplemental camera-facing crown.066",
+      "scale": 1.546757211726748
+    }
+  ],
+  "near_planting": [
+    {
+      "name": "Interior grounded fern 0",
+      "x": 15.657936350031322,
+      "z": 65.27122919584517,
+      "ground": 1.1953516006469727,
+      "scale": 0.7750944473029342,
+      "radius": 0.6200755578423474
+    },
+    {
+      "name": "Interior grounded fern 1",
+      "x": 5.9066112280384395,
+      "z": 41.289794977446036,
+      "ground": -0.08741950988769531,
+      "scale": 0.8957390028347911,
+      "radius": 0.7165912022678329
+    },
+    {
+      "name": "Interior grounded fern 2",
+      "x": 32.74185660076577,
+      "z": 57.20324370103028,
+      "ground": 0.7465057373046875,
+      "scale": 0.8179084847129674,
+      "radius": 0.654326787770374
+    },
+    {
+      "name": "Interior grounded fern 3",
+      "x": 10.280848243645767,
+      "z": 49.78522213590883,
+      "ground": 0.30635643005371094,
+      "scale": 0.8597769893817697,
+      "radius": 0.6878215915054158
+    },
+    {
+      "name": "Interior grounded fern 4",
+      "x": 3.1402115940410367,
+      "z": 41.91079647852024,
+      "ground": 0.0172271728515625,
+      "scale": 0.5643530186945627,
+      "radius": 0.45148241495565017
+    },
+    {
+      "name": "Interior grounded fern 5",
+      "x": 57.922423250993155,
+      "z": 62.66107271854051,
+      "ground": 1.5681381225585938,
+      "scale": 0.9865470988957115,
+      "radius": 0.7892376791165692
+    },
+    {
+      "name": "Interior grounded fern 6",
+      "x": 56.41342764888998,
+      "z": 52.722997643683414,
+      "ground": 0.9518613815307617,
+      "scale": 0.5517219058294763,
+      "radius": 0.4413775246635811
+    },
+    {
+      "name": "Interior grounded fern 7",
+      "x": 19.51635128982649,
+      "z": 19.323236842569386,
+      "ground": -0.780695915222168,
+      "scale": 0.8544327025395657,
+      "radius": 0.6835461620316526
+    },
+    {
+      "name": "Interior grounded fern 8",
+      "x": 10.014850422772797,
+      "z": 62.87452642408173,
+      "ground": 1.038522720336914,
+      "scale": 0.6438575683411524,
+      "radius": 0.5150860546729219
+    },
+    {
+      "name": "Interior grounded fern 9",
+      "x": 39.265749346876845,
+      "z": 24.856915165102397,
+      "ground": -0.4531688690185547,
+      "scale": 0.6488472663764794,
+      "radius": 0.5190778131011835
+    },
+    {
+      "name": "Interior grounded fern 10",
+      "x": 48.60966048041463,
+      "z": 43.407378324371074,
+      "ground": 0.46012210845947266,
+      "scale": 0.6752530717258326,
+      "radius": 0.5402024573806661
+    },
+    {
+      "name": "Interior grounded fern 11",
+      "x": 9.212880476641171,
+      "z": 50.197910810217046,
+      "ground": 0.30263805389404297,
+      "scale": 0.9453189150478916,
+      "radius": 0.7562551320383133
+    },
+    {
+      "name": "Interior grounded fern 12",
+      "x": 45.732701662417995,
+      "z": 41.767471755365634,
+      "ground": 0.4118814468383789,
+      "scale": 0.5725636707377589,
+      "radius": 0.4580509365902072
+    },
+    {
+      "name": "Interior grounded fern 13",
+      "x": 47.248568176220225,
+      "z": 43.528042262812924,
+      "ground": 0.47161293029785156,
+      "scale": 0.902791471898805,
+      "radius": 0.722233177519044
+    },
+    {
+      "name": "Interior grounded fern 14",
+      "x": 31.94581577202393,
+      "z": 31.62668310702048,
+      "ground": -0.20554542541503906,
+      "scale": 0.6184981505501745,
+      "radius": 0.49479852044013967
+    },
+    {
+      "name": "Interior grounded fern 15",
+      "x": 55.984417057490354,
+      "z": 33.27870575151411,
+      "ground": -0.15097713470458984,
+      "scale": 0.7940581750808247,
+      "radius": 0.6352465400646597
+    },
+    {
+      "name": "Interior grounded fern 16",
+      "x": 38.622318256982695,
+      "z": 67.65290144994842,
+      "ground": 0.980015754699707,
+      "scale": 0.8985230210013597,
+      "radius": 0.7188184168010878
+    },
+    {
+      "name": "Interior grounded fern 17",
+      "x": 49.067369219820485,
+      "z": 42.25979685901776,
+      "ground": 0.41005802154541016,
+      "scale": 0.804323048221816,
+      "radius": 0.6434584385774529
+    },
+    {
+      "name": "Interior grounded fern 18",
+      "x": 57.35902335154899,
+      "z": 56.58685213692312,
+      "ground": 1.2097864151000977,
+      "scale": 0.8024074554167003,
+      "radius": 0.6419259643333604
+    },
+    {
+      "name": "Interior grounded fern 19",
+      "x": 9.148363032270655,
+      "z": 34.45829952843378,
+      "ground": -0.4165058135986328,
+      "scale": 0.8301660764738337,
+      "radius": 0.664132861179067
+    },
+    {
+      "name": "Interior grounded fern 20",
+      "x": 18.929543073524577,
+      "z": 11.144530161546484,
+      "ground": -0.9499578475952148,
+      "scale": 0.7572031022629527,
+      "radius": 0.6057624818103622
+    },
+    {
+      "name": "Interior grounded fern 21",
+      "x": 20.483994461419325,
+      "z": 63.73250859979783,
+      "ground": 1.0768938064575195,
+      "scale": 0.9325596599446294,
+      "radius": 0.7460477279557036
+    },
+    {
+      "name": "Interior grounded fern 22",
+      "x": 22.15062425648691,
+      "z": 47.88074542090374,
+      "ground": 0.20520973205566406,
+      "scale": 0.6187863104855416,
+      "radius": 0.49502904838843326
+    },
+    {
+      "name": "Interior grounded fern 23",
+      "x": 26.90937853054764,
+      "z": 59.06444760648252,
+      "ground": 0.7979278564453125,
+      "scale": 0.9960642537619594,
+      "radius": 0.7968514030095676
+    },
+    {
+      "name": "Interior grounded fern 24",
+      "x": 24.323237205755234,
+      "z": 68.35056160857255,
+      "ground": 1.2664098739624023,
+      "scale": 0.7990224853059404,
+      "radius": 0.6392179882447524
+    },
+    {
+      "name": "Interior grounded fern 25",
+      "x": 52.77124162935511,
+      "z": 48.21292086038457,
+      "ground": 0.6634454727172852,
+      "scale": 0.7399933654240324,
+      "radius": 0.591994692339226
+    },
+    {
+      "name": "Interior grounded fern 26",
+      "x": 21.353121687592953,
+      "z": 23.315313065223823,
+      "ground": -0.6893177032470703,
+      "scale": 0.6617172647842215,
+      "radius": 0.5293738118273773
+    },
+    {
+      "name": "Interior grounded fern 27",
+      "x": 54.47202545716253,
+      "z": 36.735045336130284,
+      "ground": 0.05874919891357422,
+      "scale": 0.615888850362249,
+      "radius": 0.49271108028979926
+    },
+    {
+      "name": "Interior grounded fern 28",
+      "x": 18.33624449365769,
+      "z": 42.12552461298762,
+      "ground": -0.13845539093017578,
+      "scale": 0.8149131306034063,
+      "radius": 0.651930504482725
+    },
+    {
+      "name": "Interior grounded fern 29",
+      "x": 15.39434042894314,
+      "z": 61.02885215357606,
+      "ground": 0.9314842224121094,
+      "scale": 0.7240345720806727,
+      "radius": 0.5792276576645382
+    },
+    {
+      "name": "Interior grounded fern 30",
+      "x": 54.03219579539588,
+      "z": 51.206269310039836,
+      "ground": 0.6654119491577148,
+      "scale": 0.8674832592083923,
+      "radius": 0.6939866073667139
+    },
+    {
+      "name": "Interior grounded fern 31",
+      "x": 31.236977204661578,
+      "z": 50.259076053813956,
+      "ground": 0.5059576034545898,
+      "scale": 0.5645823286834125,
+      "radius": 0.45166586294673006
+    },
+    {
+      "name": "Interior grounded fern 32",
+      "x": 6.28252786574226,
+      "z": 33.88243853817981,
+      "ground": -0.37831974029541016,
+      "scale": 0.7810032294702872,
+      "radius": 0.6248025835762299
+    },
+    {
+      "name": "Interior grounded fern 33",
+      "x": 45.93070238890558,
+      "z": 31.37400738375097,
+      "ground": -0.06624412536621094,
+      "scale": 0.609158307165552,
+      "radius": 0.4873266457324416
+    },
+    {
+      "name": "Interior grounded fern 34",
+      "x": 41.438763357867586,
+      "z": 36.78440007355745,
+      "ground": 0.16279220581054688,
+      "scale": 0.5731191098305212,
+      "radius": 0.45849528786441696
+    },
+    {
+      "name": "Interior grounded fern 35",
+      "x": 5.526125636899916,
+      "z": 24.875082254711394,
+      "ground": -0.634796142578125,
+      "scale": 0.7836481462908615,
+      "radius": 0.6269185170326893
+    },
+    {
+      "name": "Interior grounded fern 36",
+      "x": 14.1970459481384,
+      "z": 13.350176079386575,
+      "ground": -0.8814802169799805,
+      "scale": 0.7878360594594555,
+      "radius": 0.6302688475675644
+    },
+    {
+      "name": "Interior grounded fern 37",
+      "x": 46.10603583258533,
+      "z": 22.22730159589107,
+      "ground": -0.7874765396118164,
+      "scale": 0.5804305054177423,
+      "radius": 0.4643444043341939
+    },
+    {
+      "name": "Interior grounded fern 38",
+      "x": 11.27503349475795,
+      "z": 31.425987273916643,
+      "ground": -0.43012332916259766,
+      "scale": 0.963005655274425,
+      "radius": 0.7704045242195401
+    },
+    {
+      "name": "Interior grounded fern 39",
+      "x": 53.70342846773772,
+      "z": 56.487324512146365,
+      "ground": 0.6810512542724609,
+      "scale": 0.9907388781592734,
+      "radius": 0.7925911025274188
+    },
+    {
+      "name": "Interior grounded fern 40",
+      "x": 43.717191818061195,
+      "z": 64.45765251505654,
+      "ground": 0.9360876083374023,
+      "scale": 0.5559901988301816,
+      "radius": 0.4447921590641453
+    },
+    {
+      "name": "Interior grounded fern 41",
+      "x": 28.190349655543386,
+      "z": 32.34846277548526,
+      "ground": -0.27632713317871094,
+      "scale": 0.5864634046130027,
+      "radius": 0.4691707236904022
+    },
+    {
+      "name": "Interior grounded fern 42",
+      "x": 40.868273470478876,
+      "z": 25.271419229380285,
+      "ground": -0.42119693756103516,
+      "scale": 0.8459548784520307,
+      "radius": 0.6767639027616246
+    },
+    {
+      "name": "Interior grounded fern 43",
+      "x": 51.3476304920809,
+      "z": 60.377367597508695,
+      "ground": 1.125875473022461,
+      "scale": 0.9197307289828422,
+      "radius": 0.7357845831862738
+    },
+    {
+      "name": "Interior grounded fern 44",
+      "x": 22.137350406810057,
+      "z": 51.84336557830692,
+      "ground": 0.4125356674194336,
+      "scale": 0.6404098196319349,
+      "radius": 0.512327855705548
+    },
+    {
+      "name": "Interior grounded fern 45",
+      "x": 7.27524325024104,
+      "z": 40.49903006898445,
+      "ground": -0.1541757583618164,
+      "scale": 0.6064114289794452,
+      "radius": 0.4851291431835562
+    },
+    {
+      "name": "Interior grounded fern 46",
+      "x": 13.195914225031546,
+      "z": 10.393091783399209,
+      "ground": -0.9437427520751953,
+      "scale": 0.6170625328718585,
+      "radius": 0.49365002629748683
+    },
+    {
+      "name": "Interior grounded fern 47",
+      "x": 46.85958317418249,
+      "z": 27.480214555049784,
+      "ground": -0.4336996078491211,
+      "scale": 0.6974764579934607,
+      "radius": 0.5579811663947686
+    },
+    {
+      "name": "Interior grounded fern 48",
+      "x": 46.9751450604839,
+      "z": 44.36056041627808,
+      "ground": 0.5029850006103516,
+      "scale": 0.6950622938631883,
+      "radius": 0.5560498350905506
+    },
+    {
+      "name": "Interior grounded fern 49",
+      "x": 20.660674721463906,
+      "z": 61.348567409418436,
+      "ground": 0.8679122924804688,
+      "scale": 0.6235455683127616,
+      "radius": 0.4988364546502093
+    },
+    {
+      "name": "Interior grounded fern 50",
+      "x": 3.8970621669778467,
+      "z": 31.507091962976624,
+      "ground": -0.4010791778564453,
+      "scale": 0.8164016630273394,
+      "radius": 0.6531213304218716
+    },
+    {
+      "name": "Interior grounded fern 51",
+      "x": 19.387666816532025,
+      "z": 23.636697676473858,
+      "ground": -0.6942310333251953,
+      "scale": 0.8599800283324902,
+      "radius": 0.6879840226659922
+    },
+    {
+      "name": "Interior grounded fern 52",
+      "x": 7.047521109028587,
+      "z": 15.947282405530814,
+      "ground": -0.8611268997192383,
+      "scale": 0.5624413970633517,
+      "radius": 0.4499531176506814
+    },
+    {
+      "name": "Interior grounded fern 53",
+      "x": 56.94505153882043,
+      "z": 46.30246681095644,
+      "ground": 0.5440587997436523,
+      "scale": 0.8390443469552186,
+      "radius": 0.6712354775641749
+    },
+    {
+      "name": "Interior grounded fern 54",
+      "x": 10.576397671348925,
+      "z": 46.38666844286248,
+      "ground": 0.0636453628540039,
+      "scale": 0.6845043458733173,
+      "radius": 0.5476034766986538
+    },
+    {
+      "name": "Interior grounded fern 55",
+      "x": 13.490937343502171,
+      "z": 14.409964145778343,
+      "ground": -0.862299919128418,
+      "scale": 0.7383122458860356,
+      "radius": 0.5906497967088286
+    },
+    {
+      "name": "Interior grounded fern 56",
+      "x": 9.205701694180647,
+      "z": 12.25366692928089,
+      "ground": -0.9282817840576172,
+      "scale": 0.981198309677642,
+      "radius": 0.7849586477421137
+    },
+    {
+      "name": "Interior grounded fern 57",
+      "x": 17.323683577128328,
+      "z": 16.21629828683026,
+      "ground": -0.8348426818847656,
+      "scale": 0.9802587217927667,
+      "radius": 0.7842069774342134
+    },
+    {
+      "name": "Interior grounded fern 58",
+      "x": 45.81182596069576,
+      "z": 45.43810109920885,
+      "ground": 0.5410423278808594,
+      "scale": 0.7677384867938554,
+      "radius": 0.6141907894350843
+    },
+    {
+      "name": "Interior grounded fern 59",
+      "x": 25.495076477423854,
+      "z": 24.046823400340983,
+      "ground": -0.6324262619018555,
+      "scale": 0.9111218930521694,
+      "radius": 0.7288975144417356
+    },
+    {
+      "name": "Interior grounded fern 60",
+      "x": 16.546317675700916,
+      "z": 20.08084847865983,
+      "ground": -0.7671089172363281,
+      "scale": 0.8525645210910023,
+      "radius": 0.6820516168728019
+    },
+    {
+      "name": "Interior grounded fern 61",
+      "x": 9.427422435134432,
+      "z": 61.484464835585364,
+      "ground": 0.9522733688354492,
+      "scale": 0.953537042728182,
+      "radius": 0.7628296341825456
+    },
+    {
+      "name": "Interior grounded fern 62",
+      "x": 5.843944908175308,
+      "z": 15.974001352311053,
+      "ground": -0.8691816329956055,
+      "scale": 0.9313855456690238,
+      "radius": 0.7451084365352191
+    },
+    {
+      "name": "Interior grounded fern 63",
+      "x": 6.43834597782596,
+      "z": 11.706264497090526,
+      "ground": -0.97625732421875,
+      "scale": 0.5768582520563273,
+      "radius": 0.4614866016450619
+    },
+    {
+      "name": "Interior grounded fern 64",
+      "x": 6.105037922739191,
+      "z": 47.24786485136491,
+      "ground": 0.1801433563232422,
+      "scale": 0.9788096903287775,
+      "radius": 0.783047752263022
+    },
+    {
+      "name": "Interior grounded fern 65",
+      "x": 56.69562241324237,
+      "z": 49.05845558244902,
+      "ground": 0.7209997177124023,
+      "scale": 0.9192285479163673,
+      "radius": 0.7353828383330939
+    },
+    {
+      "name": "Interior grounded fern 66",
+      "x": 25.252369403495575,
+      "z": 17.997408123195733,
+      "ground": -0.8260908126831055,
+      "scale": 0.745623654553381,
+      "radius": 0.5964989236427048
+    },
+    {
+      "name": "Interior grounded fern 67",
+      "x": 52.71337913710486,
+      "z": 38.00738029364267,
+      "ground": 0.17580223083496094,
+      "scale": 0.7970266036478213,
+      "radius": 0.637621282918257
+    },
+    {
+      "name": "Interior grounded fern 68",
+      "x": 18.536001826044078,
+      "z": 47.90333875380558,
+      "ground": 0.15268516540527344,
+      "scale": 0.9041225906290515,
+      "radius": 0.7232980725032413
+    },
+    {
+      "name": "Interior grounded fern 69",
+      "x": 51.368786141491164,
+      "z": 49.40760253838388,
+      "ground": 0.5247678756713867,
+      "scale": 0.5914124360985066,
+      "radius": 0.4731299488788053
+    },
+    {
+      "name": "Interior grounded fern 70",
+      "x": 10.615729197470584,
+      "z": 23.15288794742839,
+      "ground": -0.7087574005126953,
+      "scale": 0.8956053680730576,
+      "radius": 0.7164842944584461
+    },
+    {
+      "name": "Interior grounded fern 71",
+      "x": 42.7635179267313,
+      "z": 26.988219304416145,
+      "ground": -0.3131856918334961,
+      "scale": 0.5887664046008003,
+      "radius": 0.4710131236806403
+    },
+    {
+      "name": "Interior grounded fern 72",
+      "x": 40.99345129023003,
+      "z": 56.76478738362902,
+      "ground": 0.5454864501953125,
+      "scale": 0.9684459489733808,
+      "radius": 0.7747567591787047
+    },
+    {
+      "name": "Interior grounded fern 73",
+      "x": 30.545209739587214,
+      "z": 56.360987547181594,
+      "ground": 0.7076473236083984,
+      "scale": 0.8062862842123565,
+      "radius": 0.6450290273698852
+    },
+    {
+      "name": "Interior grounded fern 74",
+      "x": 33.3033714725757,
+      "z": 58.81254474630044,
+      "ground": 0.7939004898071289,
+      "scale": 0.9736765884266072,
+      "radius": 0.7789412707412858
+    },
+    {
+      "name": "Interior grounded fern 75",
+      "x": 41.12514942070933,
+      "z": 64.192882864046,
+      "ground": 0.9052734375,
+      "scale": 0.9208734752171357,
+      "radius": 0.7366987801737086
+    },
+    {
+      "name": "Interior grounded fern 76",
+      "x": 55.91724910637125,
+      "z": 30.217151537841996,
+      "ground": -0.18363571166992188,
+      "scale": 0.7447653953244162,
+      "radius": 0.595812316259533
+    },
+    {
+      "name": "Interior grounded fern 77",
+      "x": 29.4516913090368,
+      "z": 51.745022665876725,
+      "ground": 0.5255870819091797,
+      "scale": 0.5796810625621647,
+      "radius": 0.46374485004973176
+    },
+    {
+      "name": "Interior grounded fern 78",
+      "x": 25.368359475983716,
+      "z": 11.292567203279338,
+      "ground": -1.044454574584961,
+      "scale": 0.9219733018497998,
+      "radius": 0.7375786414798399
+    },
+    {
+      "name": "Interior grounded fern 79",
+      "x": 17.737210914003995,
+      "z": 18.161054354711958,
+      "ground": -0.8007564544677734,
+      "scale": 0.595701544158787,
+      "radius": 0.4765612353270296
+    },
+    {
+      "name": "Interior grounded fern 80",
+      "x": 14.497106043393892,
+      "z": 61.663759191603056,
+      "ground": 0.9721536636352539,
+      "scale": 0.599517670110877,
+      "radius": 0.4796141360887016
+    },
+    {
+      "name": "Interior grounded fern 81",
+      "x": 53.190248166243734,
+      "z": 36.02869665948986,
+      "ground": 0.13092517852783203,
+      "scale": 0.7701839233882892,
+      "radius": 0.6161471387106314
+    },
+    {
+      "name": "Interior grounded fern 82",
+      "x": 36.83364384524269,
+      "z": 55.59663962212354,
+      "ground": 0.7281427383422852,
+      "scale": 0.9481509552854062,
+      "radius": 0.7585207642283249
+    },
+    {
+      "name": "Interior grounded fern 83",
+      "x": 6.3458115463525395,
+      "z": 36.24873508554026,
+      "ground": -0.2971382141113281,
+      "scale": 0.5714695266048002,
+      "radius": 0.4571756212838402
+    },
+    {
+      "name": "Interior grounded fern 84",
+      "x": 24.33544257099911,
+      "z": 54.05753093310517,
+      "ground": 0.5514430999755859,
+      "scale": 0.6709410597701293,
+      "radius": 0.5367528478161034
+    },
+    {
+      "name": "Interior grounded fern 85",
+      "x": 11.167941182863222,
+      "z": 10.188298672521539,
+      "ground": -0.9587774276733398,
+      "scale": 0.8896846787297029,
+      "radius": 0.7117477429837624
+    },
+    {
+      "name": "Interior grounded fern 86",
+      "x": 8.723410028926452,
+      "z": 23.337999218996895,
+      "ground": -0.6981697082519531,
+      "scale": 0.6680778401210835,
+      "radius": 0.5344622720968668
+    },
+    {
+      "name": "Interior grounded fern 87",
+      "x": 5.081546290214386,
+      "z": 19.723684483379365,
+      "ground": -0.7722444534301758,
+      "scale": 0.6261100662135097,
+      "radius": 0.5008880529708079
+    },
+    {
+      "name": "Interior grounded fern 88",
+      "x": 22.12745144566371,
+      "z": 49.30602592291367,
+      "ground": 0.27682971954345703,
+      "scale": 0.8562319272261643,
+      "radius": 0.6849855417809314
+    },
+    {
+      "name": "Interior grounded fern 89",
+      "x": 7.88369505218209,
+      "z": 48.50471314472524,
+      "ground": 0.21111583709716797,
+      "scale": 0.830673254852109,
+      "radius": 0.6645386038816872
+    },
+    {
+      "name": "Interior grounded fern 90",
+      "x": 15.263331356053985,
+      "z": 17.01107044531831,
+      "ground": -0.8174314498901367,
+      "scale": 0.6442643591479805,
+      "radius": 0.5154114873183845
+    },
+    {
+      "name": "Interior grounded fern 91",
+      "x": 6.500034623531243,
+      "z": 28.952216074444717,
+      "ground": -0.5352888107299805,
+      "scale": 0.7180707472460492,
+      "radius": 0.5744565977968394
+    },
+    {
+      "name": "Interior grounded fern 92",
+      "x": 7.811600021174743,
+      "z": 11.138045935773608,
+      "ground": -0.9717502593994141,
+      "scale": 0.6375799240195906,
+      "radius": 0.5100639392156725
+    },
+    {
+      "name": "Interior grounded fern 93",
+      "x": 9.091421619857861,
+      "z": 36.66450590158436,
+      "ground": -0.3403186798095703,
+      "scale": 0.9472892161764286,
+      "radius": 0.7578313729411429
+    },
+    {
+      "name": "Interior grounded fern 94",
+      "x": 11.27831921540458,
+      "z": 13.014109757767645,
+      "ground": -0.8962440490722656,
+      "scale": 0.8199813821365456,
+      "radius": 0.6559851057092365
+    },
+    {
+      "name": "Interior grounded fern 95",
+      "x": 39.3210814583537,
+      "z": 26.979042557243805,
+      "ground": -0.3266925811767578,
+      "scale": 0.8824670993672508,
+      "radius": 0.7059736794938006
+    },
+    {
+      "name": "Interior grounded fern 96",
+      "x": 18.804496446622494,
+      "z": 25.816485623560098,
+      "ground": -0.65234375,
+      "scale": 0.8753469495677464,
+      "radius": 0.7002775596541971
+    },
+    {
+      "name": "Interior grounded fern 97",
+      "x": 53.22151238365773,
+      "z": 40.156800317551,
+      "ground": 0.2584352493286133,
+      "scale": 0.6023429134127531,
+      "radius": 0.4818743307302025
+    },
+    {
+      "name": "Interior grounded fern 98",
+      "x": 21.979212073104335,
+      "z": 46.95116535436732,
+      "ground": 0.15577220916748047,
+      "scale": 0.5742828183869848,
+      "radius": 0.45942625470958787
+    },
+    {
+      "name": "Interior grounded fern 99",
+      "x": 26.07521625277711,
+      "z": 22.801861935279398,
+      "ground": -0.6681451797485352,
+      "scale": 0.8896442673803976,
+      "radius": 0.7117154139043181
+    },
+    {
+      "name": "Interior grounded fern 100",
+      "x": 37.44258818275127,
+      "z": 58.40654613792746,
+      "ground": 0.7793054580688477,
+      "scale": 0.6106503939608342,
+      "radius": 0.4885203151686674
+    },
+    {
+      "name": "Interior grounded fern 101",
+      "x": 26.6862141101517,
+      "z": 25.343663340372828,
+      "ground": -0.5476045608520508,
+      "scale": 0.7512168540927803,
+      "radius": 0.6009734832742243
+    },
+    {
+      "name": "Interior grounded fern 102",
+      "x": 9.067426229942907,
+      "z": 31.878241718041174,
+      "ground": -0.49401378631591797,
+      "scale": 0.7091830374611758,
+      "radius": 0.5673464299689407
+    },
+    {
+      "name": "Interior grounded fern 103",
+      "x": 28.3900928480909,
+      "z": 55.62437034071107,
+      "ground": 0.6634416580200195,
+      "scale": 0.9178190445559717,
+      "radius": 0.7342552356447775
+    },
+    {
+      "name": "Interior grounded fern 104",
+      "x": 56.664228687641256,
+      "z": 62.98733121808115,
+      "ground": 1.5301704406738281,
+      "scale": 0.9162853297124491,
+      "radius": 0.7330282637699593
+    },
+    {
+      "name": "Interior grounded fern 105",
+      "x": 9.539457456204666,
+      "z": 56.13104323011462,
+      "ground": 0.5622034072875977,
+      "scale": 0.6506793171856681,
+      "radius": 0.5205434537485345
+    },
+    {
+      "name": "Interior grounded fern 106",
+      "x": 54.26352100478046,
+      "z": 59.04613071168522,
+      "ground": 1.22882080078125,
+      "scale": 0.8832867922648786,
+      "radius": 0.7066294338119029
+    },
+    {
+      "name": "Interior grounded fern 107",
+      "x": 39.08438247190848,
+      "z": 17.98112234363298,
+      "ground": -0.876948356628418,
+      "scale": 0.8554247860241406,
+      "radius": 0.6843398288193125
+    },
+    {
+      "name": "Interior grounded fern 108",
+      "x": 4.083665892721567,
+      "z": 46.32248674853725,
+      "ground": 0.18288326263427734,
+      "scale": 0.8028858735456382,
+      "radius": 0.6423086988365106
+    },
+    {
+      "name": "Interior grounded fern 109",
+      "x": 18.009432456867394,
+      "z": 63.18290704164747,
+      "ground": 1.059556007385254,
+      "scale": 0.9734396484197909,
+      "radius": 0.7787517187358328
+    },
+    {
+      "name": "Interior grounded fern 110",
+      "x": 25.169461387842965,
+      "z": 51.22051005085533,
+      "ground": 0.42571544647216797,
+      "scale": 0.8093092405492792,
+      "radius": 0.6474473924394234
+    },
+    {
+      "name": "Interior grounded fern 111",
+      "x": 42.579141058655246,
+      "z": 17.43257958532626,
+      "ground": -0.9150934219360352,
+      "scale": 0.8613985578748655,
+      "radius": 0.6891188462998925
+    },
+    {
+      "name": "Interior grounded fern 112",
+      "x": 36.96784711143534,
+      "z": 24.92394995188891,
+      "ground": -0.4645814895629883,
+      "scale": 0.6436388936196679,
+      "radius": 0.5149111148957343
+    },
+    {
+      "name": "Interior grounded fern 113",
+      "x": 34.51309071426081,
+      "z": 22.973113789303852,
+      "ground": -0.6475696563720703,
+      "scale": 0.9243166962086107,
+      "radius": 0.7394533569668886
+    },
+    {
+      "name": "Interior grounded fern 114",
+      "x": 27.491629178746557,
+      "z": 56.334953495912515,
+      "ground": 0.6861362457275391,
+      "scale": 0.6820490279005275,
+      "radius": 0.545639222320422
+    },
+    {
+      "name": "Interior grounded fern 115",
+      "x": 52.535547420623544,
+      "z": 62.441117294255015,
+      "ground": 1.263718605041504,
+      "scale": 0.8416310261438189,
+      "radius": 0.6733048209150552
+    },
+    {
+      "name": "Interior grounded fern 116",
+      "x": 26.61281860665105,
+      "z": 50.71972184046592,
+      "ground": 0.4299612045288086,
+      "scale": 0.6658971044808359,
+      "radius": 0.5327176835846688
+    },
+    {
+      "name": "Interior grounded fern 117",
+      "x": 19.11800964600773,
+      "z": 24.888525553712565,
+      "ground": -0.6698999404907227,
+      "scale": 0.9791594899281597,
+      "radius": 0.7833275919425278
+    },
+    {
+      "name": "Interior grounded fern 118",
+      "x": 44.91559024780764,
+      "z": 62.30106732781669,
+      "ground": 0.9194974899291992,
+      "scale": 0.8795241713667409,
+      "radius": 0.7036193370933927
+    },
+    {
+      "name": "Interior grounded fern 119",
+      "x": 4.489379086635496,
+      "z": 59.85887143896274,
+      "ground": 0.8453302383422852,
+      "scale": 0.9804467155218847,
+      "radius": 0.7843573724175078
+    },
+    {
+      "name": "Interior grounded fern 120",
+      "x": 16.428416130605253,
+      "z": 63.45892876884959,
+      "ground": 1.0822038650512695,
+      "scale": 0.9174812601410383,
+      "radius": 0.7339850081128306
+    },
+    {
+      "name": "Interior grounded fern 121",
+      "x": 54.600983356956405,
+      "z": 54.549212160159236,
+      "ground": 0.7131071090698242,
+      "scale": 0.9322002419121922,
+      "radius": 0.7457601935297538
+    },
+    {
+      "name": "Interior grounded fern 122",
+      "x": 27.19353467903658,
+      "z": 16.617873853065596,
+      "ground": -0.8845348358154297,
+      "scale": 0.9969359926676755,
+      "radius": 0.7975487941341405
+    },
+    {
+      "name": "Interior grounded fern 123",
+      "x": 16.193301381478896,
+      "z": 21.90816220404139,
+      "ground": -0.7369403839111328,
+      "scale": 0.6320258648113986,
+      "radius": 0.5056206918491188
+    },
+    {
+      "name": "Interior grounded fern 124",
+      "x": 10.27390778655452,
+      "z": 61.2428872749947,
+      "ground": 0.940185546875,
+      "scale": 0.6558851360594449,
+      "radius": 0.5247081088475559
+    },
+    {
+      "name": "Interior grounded fern 125",
+      "x": 53.65278418550285,
+      "z": 10.640426412780313,
+      "ground": -0.9744110107421875,
+      "scale": 0.6854248511853845,
+      "radius": 0.5483398809483077
+    },
+    {
+      "name": "Interior grounded fern 126",
+      "x": 9.846330538206356,
+      "z": 59.28693615932399,
+      "ground": 0.8194894790649414,
+      "scale": 0.9262081623976288,
+      "radius": 0.7409665299181031
+    },
+    {
+      "name": "Interior grounded fern 127",
+      "x": 54.62019035892971,
+      "z": 43.27093378090748,
+      "ground": 0.39770984649658203,
+      "scale": 0.8069606342256609,
+      "radius": 0.6455685073805287
+    },
+    {
+      "name": "Interior grounded fern 128",
+      "x": 10.084264543128192,
+      "z": 38.26429915867225,
+      "ground": -0.2969703674316406,
+      "scale": 0.7958873452079938,
+      "radius": 0.6367098761663951
+    },
+    {
+      "name": "Interior grounded fern 129",
+      "x": 51.06827407128539,
+      "z": 27.893052211104557,
+      "ground": -0.2735881805419922,
+      "scale": 0.8306282803855385,
+      "radius": 0.6645026243084309
+    },
+    {
+      "name": "Interior grounded fern 130",
+      "x": 18.258773710009677,
+      "z": 19.067056570343997,
+      "ground": -0.784968376159668,
+      "scale": 0.7834616930545107,
+      "radius": 0.6267693544436086
+    },
+    {
+      "name": "Interior grounded fern 131",
+      "x": 37.64171769548401,
+      "z": 21.826727930542596,
+      "ground": -0.6428089141845703,
+      "scale": 0.6131575612333191,
+      "radius": 0.4905260489866553
+    },
+    {
+      "name": "Interior grounded fern 132",
+      "x": 13.474244474457912,
+      "z": 17.053087504611305,
+      "ground": -0.8168563842773438,
+      "scale": 0.6836353904627046,
+      "radius": 0.5469083123701637
+    },
+    {
+      "name": "Interior grounded fern 133",
+      "x": 41.03317936787339,
+      "z": 65.41740618089511,
+      "ground": 0.9281768798828125,
+      "scale": 0.6522919727546179,
+      "radius": 0.5218335782036944
+    },
+    {
+      "name": "Interior grounded fern 134",
+      "x": 36.034671720656064,
+      "z": 57.21977767471203,
+      "ground": 0.7600870132446289,
+      "scale": 0.761041451980582,
+      "radius": 0.6088331615844657
+    },
+    {
+      "name": "Interior grounded fern 135",
+      "x": 44.82063380364037,
+      "z": 17.35183993628295,
+      "ground": -0.9188947677612305,
+      "scale": 0.6993446593229499,
+      "radius": 0.5594757274583599
+    },
+    {
+      "name": "Interior grounded fern 136",
+      "x": 36.608491492362184,
+      "z": 15.556826153791452,
+      "ground": -1.0176410675048828,
+      "scale": 0.6776201095982249,
+      "radius": 0.54209608767858
+    },
+    {
+      "name": "Interior grounded fern 137",
+      "x": 55.041205426391286,
+      "z": 62.73866049451978,
+      "ground": 1.4306249618530273,
+      "scale": 0.9074083931167019,
+      "radius": 0.7259267144933615
+    },
+    {
+      "name": "Interior grounded fern 138",
+      "x": 49.912900328964334,
+      "z": 42.98061396832436,
+      "ground": 0.4335489273071289,
+      "scale": 0.9317521659460009,
+      "radius": 0.7454017327568008
+    },
+    {
+      "name": "Interior grounded fern 139",
+      "x": 46.80719021500084,
+      "z": 60.95170160741073,
+      "ground": 0.9434947967529297,
+      "scale": 0.5584882712304783,
+      "radius": 0.44679061698438266
+    },
+    {
+      "name": "Interior grounded fern 140",
+      "x": 19.06192603067493,
+      "z": 22.699467589677816,
+      "ground": -0.7149372100830078,
+      "scale": 0.7739442642817853,
+      "radius": 0.6191554114254283
+    },
+    {
+      "name": "Interior grounded fern 141",
+      "x": 51.94601111691317,
+      "z": 59.29437882443595,
+      "ground": 1.0285234451293945,
+      "scale": 0.7513522458026225,
+      "radius": 0.601081796642098
+    },
+    {
+      "name": "Interior grounded fern 142",
+      "x": 34.05391947826233,
+      "z": 55.10799272292656,
+      "ground": 0.6958208084106445,
+      "scale": 0.6366030436257877,
+      "radius": 0.5092824349006302
+    },
+    {
+      "name": "Interior grounded fern 143",
+      "x": 57.23912879094406,
+      "z": 55.50368460008676,
+      "ground": 1.1397390365600586,
+      "scale": 0.9471533517639248,
+      "radius": 0.7577226814111399
+    },
+    {
+      "name": "Interior grounded fern 144",
+      "x": 45.373888253689636,
+      "z": 26.372272658871612,
+      "ground": -0.35526466369628906,
+      "scale": 0.5605971660282275,
+      "radius": 0.448477732822582
+    },
+    {
+      "name": "Interior grounded fern 145",
+      "x": 11.937525323041116,
+      "z": 61.16673237621571,
+      "ground": 0.9388895034790039,
+      "scale": 0.6496824531577677,
+      "radius": 0.5197459625262142
+    },
+    {
+      "name": "Interior grounded fern 146",
+      "x": 6.130198772386218,
+      "z": 45.68460414585832,
+      "ground": 0.10433387756347656,
+      "scale": 0.7071692690437116,
+      "radius": 0.5657354152349693
+    },
+    {
+      "name": "Interior grounded fern 147",
+      "x": 48.130423000559965,
+      "z": 63.2182975335447,
+      "ground": 1.0419530868530273,
+      "scale": 0.7867187835828435,
+      "radius": 0.6293750268662749
+    },
+    {
+      "name": "Interior grounded fern 148",
+      "x": 8.569280669214258,
+      "z": 14.856704848729589,
+      "ground": -0.875274658203125,
+      "scale": 0.573951996719842,
+      "radius": 0.4591615973758736
+    },
+    {
+      "name": "Interior grounded fern 149",
+      "x": 32.992347330223375,
+      "z": 55.361651720148174,
+      "ground": 0.6939792633056641,
+      "scale": 0.7570696936527629,
+      "radius": 0.6056557549222104
+    }
+  ],
+  "texture_sources": [
+    "development/levels/hollow-creek/textures/pine-crown-a.png",
+    "development/levels/hollow-creek/textures/pine-crown-b.png"
+  ],
+  "source_scene_sha256": "db4cc3c75d3faa38647a71be9975718777d1fbdbea8f832a48f0a436ba5b104b",
+  "source_scene": "development/levels/hollow-creek/hollow-creek-forest.blend",
+  "limitations": [
+    "Native locked-track alpha crowns are supplemental, not replacements for 3D trees.",
+    "CPU/GPU cutout sorting, photographs and runtime billboard/LOD/performance acceptance remain required.",
+    "Decorative close ferns do not grant hiding; dense authored refuge pockets remain a separate requirement.",
+    "Remaining tents/sanitary/dock/utility and park-detail work follows the recorded detail pass."
+  ]
+}

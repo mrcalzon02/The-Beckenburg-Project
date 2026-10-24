@@ -48,3 +48,7 @@ evidence paths and defects found. Never mark other maps corrected because a shar
 helper or one Blackpine fixture passed. New maps must consume these checks before
 an iteration is described as accepted; rough native assembly alone is not runtime
 or multiplayer acceptance.
+
+11. **Desquareify:** apply [DESQUAREIFY_GATE.md](DESQUAREIFY_GATE.md) between rough blocking and accepted terrain. Check actual terrain shape/grades/materials, useful play-area boundaries and visible canonical van, not just a diagram. Retain rectangles only for real measured constructed objects.
+
+12. **Remote power:** apply REMOTE_SITE_POWER.md; verify placed source/board/wiring, authored loads, host ghost trip and permitted reset, blackout access and LAN/reconnect. Do not infer working circuits from a generator prop.

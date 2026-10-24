@@ -90,3 +90,8 @@ These five new sites extend the catalog to 28 packets including HQ. The cemetery
 ## All-map exterior edge / sky planning
 
 [29 base/variant planning packets](../edge-sky-plans/REVIEW.html) now reserve distinct physical boundary recipes, view frames and model needs. Preserve existing geometry and consume terrain-first/edge/sky gates before detail accumulation. Review actual translated camera views and containment before claiming these plans implemented.
+
+
+## Mandatory desquareify gate
+
+After rough spatial blocking, apply [DESQUAREIFY_GATE.md](../../quality/DESQUAREIFY_GATE.md) to actual terrain, surface treatments, playable edges and arrival/van composition before terrain acceptance. Zone rectangles are planning reservations, not landscape pads. Inspect and revalidate each older map individually.

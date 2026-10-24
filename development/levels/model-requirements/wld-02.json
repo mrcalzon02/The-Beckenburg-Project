@@ -32,6 +32,10 @@
     {
       "model": "bathhouse privacy and wash fixtures",
       "status": "needed or existing candidate: audit before authoring duplicates"
+    },
+    {
+      "model": "Site-appropriate generator, distribution board/main breaker, supported service cabling and circuit labels",
+      "status": "Mandatory remote-site source: audit existing generator assets before creating another; placement/circuit integration pending"
     }
   ],
   "zones": [
@@ -471,5 +475,19 @@
     "Quantities and asset budgets await room dressing plans.",
     "Existing candidates are verified filenames, not certified fit or finished availability.",
     "This is a model worklist, not implemented gameplay."
-  ]
+  ],
+  "active_detail_pass": "development/levels/hollow-creek/DETAIL_PASS.md",
+  "user_requested_expansion_2026_10_23": [
+    "Tent and camping gear variants",
+    "Rolled and laid-out bedrolls",
+    "Complete outdoor portable toilet cubicles",
+    "Explicit shrub hiding pockets plus general shrubs/hedges",
+    "Park statue and birdbath",
+    "Supported hanging oil camp lanterns",
+    "Campfire cold/burning variants",
+    "Small dock service shed and generator",
+    "Supported electrical light string down dock",
+    "Moored rowboat"
+  ],
+  "remote_power_requirement": "development/levels/power-plans/wld-02.json"
 }

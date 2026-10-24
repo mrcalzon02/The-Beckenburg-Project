@@ -1,0 +1,57 @@
+{
+  "status": "pass-native-organic-and-scenery",
+  "terrain_triangles": 30322,
+  "supported_route_samples": 10377,
+  "max_route_error": 0.12325895173209056,
+  "max_route_grade": 0.19282662522173147,
+  "terrain_findings": [],
+  "old_rectangular_margins_removed": [
+    [
+      5,
+      77
+    ],
+    [
+      57,
+      76
+    ],
+    [
+      12,
+      74
+    ],
+    [
+      55,
+      72
+    ]
+  ],
+  "rectangular_landscape_pads": 0,
+  "physical_pavilion_slab_retained": true,
+  "canonical_van_triangles": 4968,
+  "grounded_off_map_trees": 60,
+  "scenery_aprons": 2,
+  "source_hashes_unchanged": true,
+  "limitations": [
+    "Native static geometry checks only; runtime map/collision/evidence/LAN/performance remain pending.",
+    "The lake shoreline interfaces and water entry/containment remain open.",
+    "Scene still contains placeholder dock/bridge and unbuilt facilities; no completed-map claim."
+  ],
+  "java17_full_main_compile": "pass",
+  "runtime_glb_checks": [
+    {
+      "test": "HollowCreekBoundaryAssetsTest",
+      "status": "pass"
+    },
+    {
+      "test": "HollowCreekTerrainAssetTest",
+      "status": "pass"
+    },
+    {
+      "test": "HollowCreekPavilionAssetTest",
+      "status": "pass"
+    },
+    {
+      "test": "HollowCreekFacilitiesAssetTest",
+      "status": "pass"
+    }
+  ],
+  "runtime_glb_triangle_total_eight_assets": 63782
+}

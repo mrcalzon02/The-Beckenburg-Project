@@ -1,0 +1,29 @@
+{
+  "status": "desquareified terrain native construction",
+  "protected_sources": {
+    "development/levels/hollow-creek/hollow-creek-terrain.blend": "0088ed9ea00aacfae8c158bcd36f037849e00afc870ee7d9bdcf80f396e4773a",
+    "development/levels/hollow-creek/terrain.json": "6812df329fa2e120ee892f1e692c950fbd51e9a64ae00dd34221473a0a51be80",
+    "assets/runtime/models/level_camp_terrain.glb": "9b315fe8b7a7ffc8fcbecbe3953e27cb4043f1a9e57a98f73aa0e586e5367584",
+    "development/levels/layouts/wld-02/layout.json": "a60a1cd25311f701933f79af3454d67e1830ca60218a5e8733e5e13a50d9fdff"
+  },
+  "removed_in_derived_scene": [
+    "Pavilion apron West",
+    "Pavilion apron East",
+    "Pavilion apron North",
+    "Pavilion apron South",
+    "level_camp_terrain"
+  ],
+  "terrain_triangles": 30322,
+  "terrain_sha256": "2b0dab57f5eefbd0d3ce7b0747c4273e0f12e7d88a109e9a0e70d049a1cbf10f",
+  "canonical_van_triangles": 4968,
+  "canonical_van_source_sha256": "f67a3a07a78ad05ce2e882e8171b26bdcf61e2a993fb60aa9a94db5554e57f97",
+  "rectangular_landscape_pads": 0,
+  "retained_physical_rectangular_foundation": "14m pavilion slab only",
+  "limitations": [
+    "Native surface/crossing foundation only; not yet wired into runtime collision, water restrictions or map ownership.",
+    "Crossing decks are infrastructure blockouts; guards, footing detail and final dock/bridge models remain pending.",
+    "Refined site elevations supersede rough Y0 reservations only in this derived contract; runtime integration remains pending.",
+    "Only the physical 14m pavilion slab remains rectangular. Unbuilt building-zone rectangles are no longer baked ground pads.",
+    "Organic terrain footprint and construction boundaries supersede the loose rectangular draft only in this derived scene; full-width grade validation and runtime integration remain required."
+  ]
+}

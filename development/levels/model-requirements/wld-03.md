@@ -127,3 +127,7 @@ Finish direction: Fictional dry canyon geology and modern expedition supplies.
 - collision, lighting and in-room visual review
 
 No quantities are invented. Audit source dimensions, pivots, UVs, licensing, supports and clearance before reuse. Clean/worn variants are separate assets. Investigator equipment comes from the existing loadout system.
+
+## Mandatory remote-site power
+
+Placed generator, distribution board/main breaker and supported service wiring are required. Ghost breaker trips must affect the authored electrical loads through the normal authoritative circuit state. Generator running and breaker states are separate; oil/fire/battery sources retain their existing independent power rules. See ../power-plans/wld-03.json.

@@ -38,6 +38,10 @@
     {
       "model": "Parking markings, wheel stops, retaining bank, fence and hedge",
       "status": "needed; audit existing assets before authoring"
+    },
+    {
+      "model": "Site-appropriate generator, distribution board/main breaker, supported service cabling and circuit labels",
+      "status": "Mandatory remote-site source: audit existing generator assets before creating another; placement/circuit integration pending"
     }
   ],
   "room_by_room": [
@@ -297,5 +301,6 @@
     "No shipping map unlocked.",
     "Reference links inform function, not surveyed dimensions.",
     "Exact furniture quantities await detailed room fitting."
-  ]
+  ],
+  "remote_power_requirement": "development/levels/power-plans/wld-16.json"
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 578,
+  "count": 595,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1204,6 +1204,26 @@
       "sha256": "63a4979fdc1b272534aa5eca311cb53274f5976e762c4495af3a1dc3fba225c1"
     },
     {
+      "path": "development/levels/previews/defects/DEV-031-before-uniform-boundary.png",
+      "url": "development/levels/previews/defects/DEV-031-before-uniform-boundary.png",
+      "title": "Dev 031 before uniform boundary",
+      "kind": "Development review",
+      "width": 1200,
+      "height": 800,
+      "bytes": 847476,
+      "sha256": "0bddd4b04086e03119b72b699bfad94cfafb3a30c6708a8e70b424c6adb30c5b"
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-037-before-rounded-pine-crowns.png",
+      "url": "development/levels/previews/defects/DEV-037-before-rounded-pine-crowns.png",
+      "title": "Dev 037 before rounded pine crowns",
+      "kind": "Development review",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1186343,
+      "sha256": "d015f7daac3a2bd60d4c55f643f5dfe26db36ebba7bcbd81078a1a224cdae9f9"
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "url": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "title": "Academy edge sky plan",
@@ -1662,6 +1682,156 @@
       "height": 800,
       "bytes": 1107506,
       "sha256": "04f1125811b05d55e0516f9006e354539cb9364ffdcb5da2d0e5c0a17f4f5dc4"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
+      "title": "Boundary logfall native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 979761,
+      "sha256": "cf22e18d9b7ee7a1c7ae8637a891428db4cac502bcbd875076200f7b1fb4c833"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-roadhead-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/boundary-roadhead-native-fitout.png",
+      "title": "Boundary roadhead native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1136611,
+      "sha256": "db613c592b38f5885d3186877e43097bbd70b71adae5c5232c6eb5e3f83b53b7"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-shore-vista-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/boundary-shore-vista-native-fitout.png",
+      "title": "Boundary shore vista native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 970473,
+      "sha256": "5079d48f5bd43d3f47f06953698b8cf778f56f0c11fa3b6f671ffbf65b4fd606"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/boundary-site-native-fitout.png",
+      "title": "Boundary site native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1123569,
+      "sha256": "cb3b48ca6809d3614a27825677e7c99a253c6a666dc8fe181e23c41cb0eb9618"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/boundary-van-exit-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/boundary-van-exit-native-fitout.png",
+      "title": "Boundary van exit native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1006492,
+      "sha256": "048a28f863dfaff710863537a2c457508e4af7add501f225387fcd5961d32541"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-berm-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/foliage-detail-berm-native-fitout.png",
+      "title": "Foliage detail berm native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1415515,
+      "sha256": "a5f8be90f178c2b1ec33a3b970b03f90e0280c67fe9916903e37312e207f4fe3"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-lake-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/foliage-detail-lake-native-fitout.png",
+      "title": "Foliage detail lake native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 971747,
+      "sha256": "f7f6ca5e98dc12be774b7c6922717ed14d76dbc564982eecbc8322ed84f83e14"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-near-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/foliage-detail-near-native-fitout.png",
+      "title": "Foliage detail near native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1174664,
+      "sha256": "cbd9b8f89c6e89de841bb78dfaba41a57be0101d8b70aad1260d01697ff0ba93"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/foliage-detail-site-native-fitout.png",
+      "title": "Foliage detail site native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1415670,
+      "sha256": "c880f859abbbe14adedc93c278259c982e8076c208f33bbaa210415bf2ae5624"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/foliage-detail-trail-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/foliage-detail-trail-native-fitout.png",
+      "title": "Foliage detail trail native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1190583,
+      "sha256": "743f6c30b7ab1d190f6d2edb2b749f5c5dbf3ae530ff4e3524e5e2fe561a2247"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-camp-trail-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/forest-camp-trail-native-fitout.png",
+      "title": "Forest camp trail native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1053368,
+      "sha256": "b56acfc16ba9b96428dcaae0ddaf23cf19a74c7a6ca3fab6523428e37da65a1c"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-open-lake-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/forest-open-lake-native-fitout.png",
+      "title": "Forest open lake native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 971006,
+      "sha256": "d57ef6b9864e2913eb5880a7f786bdceba1e55f740f76d68381efbd2a943bf69"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-organic-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/forest-organic-site-native-fitout.png",
+      "title": "Forest organic site native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1226855,
+      "sha256": "e3ee7a34bacb9484f529a3c808b0470e523c2c595286bb8147ca696579ac5b09"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-van-and-roadhead-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/forest-van-and-roadhead-native-fitout.png",
+      "title": "Forest van and roadhead native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1151027,
+      "sha256": "9d52567c285cbfec7c06779f65135f41e1addde09b5818ca15d019fefc2825d0"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/forest-west-berm-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/forest-west-berm-native-fitout.png",
+      "title": "Forest west berm native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1099734,
+      "sha256": "e647284bc916f60c910695ca42b1d989875c7ae4438a87a1ea7d646b6910f7a4"
     },
     {
       "path": "development/levels/previews/hollow-creek/pavilion-join-native-fitout.png",

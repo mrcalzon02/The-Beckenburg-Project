@@ -32,6 +32,10 @@
     {
       "model": "catacomb niche and stair kit",
       "status": "needed or existing candidate: audit before authoring duplicates"
+    },
+    {
+      "model": "Site-appropriate generator, distribution board/main breaker, supported service cabling and circuit labels",
+      "status": "Mandatory remote-site source: audit existing generator assets before creating another; placement/circuit integration pending"
     }
   ],
   "zones": [
@@ -670,5 +674,6 @@
     "Quantities and asset budgets await room dressing plans.",
     "Existing candidates are verified filenames, not certified fit or finished availability.",
     "This is a model worklist, not implemented gameplay."
-  ]
+  ],
+  "remote_power_requirement": "development/levels/power-plans/wld-10.json"
 }
