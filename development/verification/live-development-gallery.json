@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-24T18:36:24.091770+00:00",
-  "published_commit": "ba00543659776b9d48eed1b396a703e822e2fa9a",
+  "verified_at": "2026-10-24T23:55:41.258549+00:00",
+  "published_commit": "837c0ec67f7eca987b20934a8edde22ae95cd7a6",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 690,
+  "image_count": 703,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1212,6 +1212,36 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/hollow-creek/fitted-east-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-floor-east-studio-diagnostic.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-floor-west-studio-diagnostic.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/fitted-west-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/hollow-creek/foliage-detail-berm-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1909,6 +1939,54 @@
     },
     {
       "path": "development/levels/previews/level_camp_tent_dome_tailored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_east_dome.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_01.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_02.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_03.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_04.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_05.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_06.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_west_ridge.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true

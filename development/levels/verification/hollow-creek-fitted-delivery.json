@@ -1,0 +1,171 @@
+{
+  "status": "pass",
+  "published_commit": "837c0ec67f7eca987b20934a8edde22ae95cd7a6",
+  "files": 27,
+  "checks": [
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_west_ridge.glb",
+      "bytes": 838772,
+      "sha256": "c29985344a2b37e38fa2b913ffb5676666c764a4036c22ee6ed979c30ad0f73e",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_west_ridge.blend",
+      "bytes": 828399,
+      "sha256": "365033b7a6f50b65846473d8f8cbbcb86176886f22b89ec06effa68f297b432b",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_east_dome.glb",
+      "bytes": 682932,
+      "sha256": "4922c7c2f1c46ed3e48c7d4956350945bf0e528a0c5c189c12d23eb501becabe",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_east_dome.blend",
+      "bytes": 630490,
+      "sha256": "7289966e78ea40292addb52b6e5a14c20dcd3c40faded81a31ac63557ec54393",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_01.glb",
+      "bytes": 841476,
+      "sha256": "096928598a0f7974372183d55407a35bc2e80649026663ec0e003c2e365edf60",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_01.blend",
+      "bytes": 828906,
+      "sha256": "59ab4a83f7c96fa372984deb4c94149b35d1ae1f6389c85d52eec9eb0a1c62e2",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_02.glb",
+      "bytes": 684464,
+      "sha256": "fcc79c0d1a12876540bdb188da3fd8f6bd6aa001a59d1a761eb918fa2372fbff",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_02.blend",
+      "bytes": 630704,
+      "sha256": "8d11871b307eef4178c2b1a9a43005d884af21dd0213404951329a51e340670a",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_03.glb",
+      "bytes": 835776,
+      "sha256": "33fb9ddbf966497db8a16feec7f5b1fe5b3b7aa58dcafc6072f6a26bdaef4ae9",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_03.blend",
+      "bytes": 827686,
+      "sha256": "8b35239f9b25845a5e5c71cca4e883ad3680bab15455e0c079102e1e6afe0913",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_04.glb",
+      "bytes": 681380,
+      "sha256": "e5a87499810c8fa5a24d4f537a67f4d4d120b91c60d937e57f43dd354fbb1780",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_04.blend",
+      "bytes": 630799,
+      "sha256": "a30ce587888ab44c480663b209df05e526bc827e75e3c7e12ac08717e22d501d",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_05.glb",
+      "bytes": 836928,
+      "sha256": "c7d9c4cdc297471659bb82da3099556bbabfd3a445c858fd8dbc3a72957685e9",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_05.blend",
+      "bytes": 829622,
+      "sha256": "9a9ea394462394b213dd3d19f53c5f929155d1c32e8fa27cf1fa32b914aeeeca",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_06.glb",
+      "bytes": 683588,
+      "sha256": "af0cb3fecfe6f2082f255f056d3013df10ac411b8af9dea8bfdc14610d980090",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_06.blend",
+      "bytes": 631751,
+      "sha256": "e16498cba501d77ee3989ecd0138357e1b650009e58a3eeb841245889c5951eb",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-fitted.blend",
+      "bytes": 29948724,
+      "sha256": "643b63584a060c179fcd98dbd34c44d7c29dcf3bb2046f70af9cea6e36d0e7a4",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/FITTED_FLOOR_REVIEW.html",
+      "bytes": 9031,
+      "sha256": "25f43e3957bc59546340ba1a90e2e9c0b92ff82b4af28dd35058e6eb60a31f03",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/fitted-floors.json",
+      "bytes": 33421,
+      "sha256": "5e66bd4bfedfb2b43fbe1374a504460d0804c0cfab32014d8e425a5256fd6b34",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/fit_hollow_creek_floors.py",
+      "bytes": 12673,
+      "sha256": "a1abc4cff8e4160ad465475a2556465ff7fb066ee0cec21ce5e80a3df0422eca",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/validate_hollow_creek_floors.py",
+      "bytes": 11497,
+      "sha256": "81e02c00cd330dce59a20f3d71744c21c9fd2d387b1444494691c9e5a9aa7fad",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/render_hollow_creek_floors.py",
+      "bytes": 3543,
+      "sha256": "f6e591707b2f5b3d5562e555085c0b622c07d587155bc954a9be7a47fd6c8415",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-fitted-floors.json",
+      "bytes": 5686,
+      "sha256": "8bf3fb11d5de96a8adbf37d4add1ecc6b1b244d3f2c5a465bbf9743835f6954a",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-fitted-fit.json",
+      "bytes": 1928,
+      "sha256": "b72387e29913d7e421bc930e8423aba9963a0b5734e9775f22f7bbe354159075",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-fitted-captures.json",
+      "bytes": 1638,
+      "sha256": "e88d7c3f4b3a2e5141181cffa359d987b05fc875327dedacd3df68e8eccf42a6",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-fitted-pixels.tsv",
+      "bytes": 314459,
+      "sha256": "837960d0847725101337cb5028e942c2c7747bead0657ff90d4f40b0e47b2b12",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-fitted-geometry-cost.json",
+      "bytes": 142430,
+      "sha256": "cdf75d56b583c3ac9cfb0ffb7931b21d5024414c780b29224c8545a4a62500ff",
+      "actual_download_matches": true
+    }
+  ],
+  "deployed_review_matches": true,
+  "runtime_gameplay_acceptance": false
+}
