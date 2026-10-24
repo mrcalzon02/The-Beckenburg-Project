@@ -1,0 +1,54 @@
+{
+  "status": "pass-native-site-foundation-only",
+  "terrain_triangles": 38282,
+  "supported_full_width_route_samples": 10377,
+  "pad_samples": 72,
+  "largest_route_y_error": 0.12325895173209056,
+  "steepest_full_width_native_grade": 0.19282609942446044,
+  "steepest_location": [
+    "L08",
+    45.93763610588978,
+    36.13876103349478
+  ],
+  "water_beds_below_surface": true,
+  "continuous_creek_to_lake_bed_samples": 113,
+  "canonical_van_xz_and_yaw_retained": true,
+  "van_pad_elevation": 1.5,
+  "shore_elevation": -1.3,
+  "trail_incision_m": 0.12,
+  "measured_worn_trail_shoulder_rises": [
+    0.11049103736877441,
+    0.11475586891174316
+  ],
+  "protected_sources_unchanged": true,
+  "scene_sha256": "0088ed9ea00aacfae8c158bcd36f037849e00afc870ee7d9bdcf80f396e4773a",
+  "limitations": [
+    "Native surface/crossing foundation only; not yet wired into runtime collision, water restrictions or map ownership.",
+    "Crossing decks are infrastructure blockouts; guards, footing detail and final dock/bridge models remain pending.",
+    "Refined site elevations supersede rough Y0 reservations only in this derived contract; runtime integration remains pending."
+  ],
+  "runtime_asset_loading_check": {
+    "test": "HollowCreekTerrainAssetTest",
+    "status": "pass",
+    "java17_compile": true,
+    "engine_limits_unchanged": true
+  },
+  "runtime_checks": [
+    {
+      "test": "HollowCreekTerrainAssetTest",
+      "status": "pass",
+      "output": "PASS terrain within unchanged runtime triangle budget, real site scale/origin, upward normals, negative water beds and finite UVs"
+    },
+    {
+      "test": "HollowCreekPavilionAssetTest",
+      "status": "pass",
+      "output": "PASS native-scale pavilion GLB, 2040 triangles, UVs, floor pivot and genuine downward roof underside"
+    },
+    {
+      "test": "HollowCreekFacilitiesAssetTest",
+      "status": "pass",
+      "output": "PASS two reusable campground GLBs, approved IDs, native floor pivots, metre bounds and reviewed geometry"
+    }
+  ],
+  "runtime_glb_sha256": "9b315fe8b7a7ffc8fcbecbe3953e27cb4043f1a9e57a98f73aa0e586e5367584"
+}

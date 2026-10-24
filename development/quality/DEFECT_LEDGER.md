@@ -262,6 +262,76 @@ Evidence and verification: build_hollow_creek_pavilion.py completes and validate
 
 Older-map obligation: Never carry Blender object/material references across a file reload; preserve originals on generation failure.
 
+### DEV-019 — Hollow Creek structures advanced before continuous site terrain
+
+**Status:** fixed-native-only · **Affected:** Camp Hollow Creek authoring order and all future map gates
+
+Tables and pavilion were refined on isolated rough pads and schematic paths before the terrain, shoreline, creek and approach were validated.
+
+Cause / uncertainty: Promoted facility and architecture refinement before the site-foundation gate.
+
+Fix / next action: Preserve authored structures; put terrain, water, drainage, foundation pads, van access and supported circulation first. Add a dedicated site terrain contract and independent surface checks before more facilities.
+
+Evidence and verification: hollow-creek-terrain.json: 10,377 full-width native route samples, 72 foundation samples, actual drainage/bed checks and exact runtime GLB loading; runtime map integration remains pending.
+
+Older-map obligation: Audit terrain/site support first at every older location; never infer route support from graph connectivity or a planning line.
+
+### DEV-020 — First terrain pass left a dry sill across the creek mouth
+
+**Status:** fixed-native-only · **Affected:** Hollow Creek new terrain draft
+
+Review of the water-crossings view exposed an isolated creek strip instead of a connected lake outlet.
+
+Cause / uncertainty: Both creek ends faded to dry ground, including its lake mouth.
+
+Fix / next action: Continue the carved creek bed into the lake; retain the inland headwater transition. Independently sample the actual native mesh along the full wet channel.
+
+Evidence and verification: DEV-020-before-creek-mouth.png, corrected terrain-water-crossings-native-fitout.png and 113 native bed ray checks below water.
+
+Older-map obligation: Check drainage continuity at every channel-to-waterbody junction; a blue surface is not proof of a connected carved bed.
+
+### DEV-021 — Terrain draft exceeded the runtime GLB primitive budget
+
+**Status:** fixed-export-scoped · **Affected:** New Hollow Creek terrain export
+
+Actual game loader rejected the first terrain GLB with Triangle buffer budget, despite native mesh checks passing.
+
+Cause / uncertainty: A whole-site flat-normal/cube-UV primitive exceeded existing per-primitive vertex/index limits.
+
+Fix / next action: Use shared site UVs, spatial primitives and a bounded grid with exact foundation/crossing axes. Respect both per-primitive and 50,000-total-triangle limits; no engine limits changed.
+
+Evidence and verification: HollowCreekTerrainAssetTest now passes on the final exported GLB, with source UVs, upward normals, actual metre bounds and negative bed elevations.
+
+Older-map obligation: Always load new terrain exports through the actual runtime loader; native Blender validity does not prove runtime compatibility.
+
+### DEV-022 — First terrain draft flattened all outdoor pads and trails to Y0
+
+**Status:** fixed-native-only · **Affected:** Hollow Creek terrain draft, user-caught
+
+Initial terrain left the usable site too flat and showed square outdoor reservations as if they were finished areas.
+
+Cause / uncertainty: Preserved every provisional standing Y rather than designing terrain-led grades and fitting facilities.
+
+Fix / next action: Create descending road-to-lake grades, incised narrow treads, irregular shoreline/creek and an irregular boundary contract. Keep only needed foundations level; hide reservation boxes in default review views and refit the existing table/fire ring vertically.
+
+Evidence and verification: Native site/close-trail captures; measured bed range, two shoulder rises, 1.5m van pad and -1.3m lakeshore anchors in terrain report.
+
+Older-map obligation: Audit terrain-led foundation heights and organic outdoor edges before further buildings or detail. Boundary barriers and runtime integration remain separate unfinished gates.
+
+### DEV-023 — New trail grading introduced steep junction and crossing-edge transitions
+
+**Status:** fixed-native-only · **Affected:** Hollow Creek variable-grade terrain iterations
+
+Actual native triangle normals found steep full-width path edges near a foundation corner and crossing abutments.
+
+Cause / uncertainty: Nearest-branch height discontinuities, incision against rigid foundations and soil interpolation at deck ends.
+
+Fix / next action: Blend trail junction profiles, reroute approaches onto dry banks, taper incision into hardscape and align terrain axes/abutments with the decks. Checker gives the deck its exact standing face at coincident boundary hits.
+
+Evidence and verification: Independent native ray checks now pass all 10,377 full-width samples; measured worst local grade 0.192827, below the stated 0.20 authoring threshold. This is not human/runtime traversal acceptance.
+
+Older-map obligation: Check full-width terrain normals and transitions, not graph connectivity or centre lines alone. Preserve failures when adding erosion or changing foundation heights.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

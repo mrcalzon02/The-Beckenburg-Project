@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 474,
+  "count": 484,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1034,6 +1034,16 @@
       "sha256": "3b0fa1c93e2ab1bc51f72c7a9a0825f549e436147be135fb84e6456954f3a58c"
     },
     {
+      "path": "development/levels/previews/defects/DEV-020-before-creek-mouth.png",
+      "url": "development/levels/previews/defects/DEV-020-before-creek-mouth.png",
+      "title": "Dev 020 before creek mouth",
+      "kind": "Development review",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1092769,
+      "sha256": "bef8eab9ca5d6294105fa08dc9e6f206ad2bd30d1ad9248e19c00a80330a9fd6"
+    },
+    {
       "path": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
       "url": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
       "title": "Farmhouse 01 arrival road",
@@ -1204,6 +1214,36 @@
       "sha256": "6d1108bc63b9e5f8abba31501f4e4cd1d36662e25eb8a7858f311fa84bbcc6aa"
     },
     {
+      "path": "development/levels/previews/hollow-creek/pavilion-mounted-utilities-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/pavilion-mounted-utilities-native-fitout.png",
+      "title": "Pavilion mounted utilities native fitout",
+      "kind": "Native scene overview",
+      "width": 1120,
+      "height": 700,
+      "bytes": 818052,
+      "sha256": "5bbe307cbfe6bb9b493f267c7bbfa1a67fe9256fc1369f0861f3002bd86ecb91"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/pavilion-native-circuit-off.png",
+      "url": "development/levels/previews/hollow-creek/pavilion-native-circuit-off.png",
+      "title": "Pavilion native circuit off",
+      "kind": "Native scene overview",
+      "width": 1120,
+      "height": 700,
+      "bytes": 243091,
+      "sha256": "ade671a2614735b6ff21a6fd7e84cb86f1399556d681105680d29b10b115c372"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/pavilion-native-circuit-on.png",
+      "url": "development/levels/previews/hollow-creek/pavilion-native-circuit-on.png",
+      "title": "Pavilion native circuit on",
+      "kind": "Native scene overview",
+      "width": 1120,
+      "height": 700,
+      "bytes": 696048,
+      "sha256": "b40e02483404e7e02ab8c62611269f7f4cd40044422ca0b56cd3f75ed452e83c"
+    },
+    {
       "path": "development/levels/previews/hollow-creek/pavilion-native-fitout.png",
       "url": "development/levels/previews/hollow-creek/pavilion-native-fitout.png",
       "title": "Pavilion native fitout",
@@ -1232,6 +1272,46 @@
       "height": 700,
       "bytes": 858528,
       "sha256": "647f3662f5675b85965916a02d9c739dd4f564bdcd5897123774b829dc5ccc6b"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/terrain-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/terrain-site-native-fitout.png",
+      "title": "Terrain site native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 927513,
+      "sha256": "29448795e4811c3c6abb7e6db2ac50e57614a57105067e4925e26d497a8e4769"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/terrain-van-approach-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/terrain-van-approach-native-fitout.png",
+      "title": "Terrain van approach native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1175183,
+      "sha256": "0c007695dd37bc387105592cc2b07c7ed5f6259c4f33c5bed64c80ec2384a860"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/terrain-water-crossings-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/terrain-water-crossings-native-fitout.png",
+      "title": "Terrain water crossings native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 1175161,
+      "sha256": "68864956a4e6c1659738db7a96e4c3b1f808a3a00a950052d4f4aa2484596d26"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/terrain-worn-trail-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/terrain-worn-trail-native-fitout.png",
+      "title": "Terrain worn trail native fitout",
+      "kind": "Native scene overview",
+      "width": 1200,
+      "height": 800,
+      "bytes": 860279,
+      "sha256": "869023c048f8784c1496dc20571091da1dfeeaf307defba871b9291444b8d3c4"
     },
     {
       "path": "development/levels/previews/hollow-creek/west-campsite-native-fitout.png",
@@ -1534,6 +1614,16 @@
       "sha256": "43577ddc4ddbc4ee7ad485de82249ae41c25590635c3ec9f18050272a8fce70a"
     },
     {
+      "path": "development/levels/previews/level_camp_pavilion_services.png",
+      "url": "development/levels/previews/level_camp_pavilion_services.png",
+      "title": "Level camp pavilion services",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 763399,
+      "sha256": "efcfb9247e6f77300c8cb6a5b5d14d93ab2c96b7625dccf22740bfab502b9295"
+    },
+    {
       "path": "development/levels/previews/level_camp_picnic_table.png",
       "url": "development/levels/previews/level_camp_picnic_table.png",
       "title": "Level camp picnic table",
@@ -1562,6 +1652,16 @@
       "height": 640,
       "bytes": 824549,
       "sha256": "559f99347a6dfe18ca2dab02a69c22a3b03d91350f2b1c1dde62a4980286a58d"
+    },
+    {
+      "path": "development/levels/previews/level_camp_terrain.png",
+      "url": "development/levels/previews/level_camp_terrain.png",
+      "title": "Level camp terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 789516,
+      "sha256": "fd1e4dcb588fa8355ad38cd0cbfeef12dc632592806457e2197e498bb52d4e98"
     },
     {
       "path": "development/levels/previews/level_camp_well.png",

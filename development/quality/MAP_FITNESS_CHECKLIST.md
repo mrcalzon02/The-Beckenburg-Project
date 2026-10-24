@@ -4,6 +4,7 @@ Use on every detail iteration, every reused asset, and retrospective map upgrade
 Record discoveries immediately in [defects.json](defects.json); regenerate the
 [shared ledger](DEFECT_LEDGER.md). An unchecked item is unverified, not passed.
 
+0. **Terrain first:** verify continuous ground, water/boundaries, drainage, slopes, foundation pads and supported van-to-site/loop routes before promoting structures or dressing. Preserve existing buildings while retrofitting a missing site foundation.
 1. **Architectural joins:** inspect floor/wall, wall/wall corners, wall/roof,
    roof slopes, fascia, thresholds and stair openings at standing/crouched height.
    Floors above occupiable space need explicit depth, a downward-facing underside

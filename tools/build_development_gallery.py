@@ -18,7 +18,7 @@ for path in sorted(set(paths)):
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
     if '/blockouts/' in path:kind='Rough blockout'
-    elif '-blender-' in path or 'native-fitout' in p.stem:kind='Native scene overview'
+    elif '-blender-' in path or 'native-fitout' in p.stem or 'native-circuit' in p.stem:kind='Native scene overview'
     elif 'studio' in p.stem:kind='Model inspection'
     elif any(t in path for t in ['/runtime/','-runtime/','/blackpine/','/mill-lighting/','/mill-expansion/','/van/','/optical-evidence/']):kind='Runtime capture'
     elif p.stem.startswith('level_') or '/model-production/' in path or '/equipment-catalog/' in path:kind='Model inspection'

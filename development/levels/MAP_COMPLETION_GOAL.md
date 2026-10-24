@@ -52,6 +52,8 @@ These are work states, not completion percentages or release claims.
 | Gallows Pass Railway | [wld-12](layouts/wld-12/layout.json) | Recorded blockout/model requirements: refinement pending |
 | Greywater Cannery | [wld-13](layouts/wld-13/layout.json) | Recorded blockout/model requirements: refinement pending |
 
-Current next milestone: Camp Hollow Creek pavilion utilities and supported detail,
-then tent/platform and cabin/bathhouse refinement. Read the current Hollow Creek
-README and dated handoff. Existing accepted work is reused; defects drive retrofits.
+Current next milestone: Camp Hollow Creek terrain-first runtime integration and
+natural boundaries (hedges, retaining banks/stone walls, fences and fallen logs),
+then water layering/transparency. Resume buildings, utilities and dressing after
+those site gates. Preserve previously authored meshes; fit them to the site.
+Read the current Hollow Creek README and dated handoff.

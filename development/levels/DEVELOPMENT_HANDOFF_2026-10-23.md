@@ -1,3 +1,39 @@
+# Latest terrain-first checkpoint — 23 October 2026
+
+User corrected construction order: terrain/site first, meaningful height variation,
+footpaths worn into surrounding ground, irregular outdoor areas and natural edge
+barriers. Preserve the existing pavilion/models; fit them to the terrain. Do not
+resume random structure/detail additions before runtime site gates pass.
+
+New native terrain source/GLB and full scene are built and visually reviewed.
+Road Y1.5, shore Y-1.3, lake bed Y-3.1; actual narrow incised treads, rolling land,
+meandering creek/shoreline, graded pads and deck landings. Original layout and all
+17 rough GLBs/source checkpoints retain their hashes. West table/fire ring have
+explicit vertical refits in the new scene; earlier native sources stay intact.
+
+Native checks: 10,377 full-width route samples; 72 pad samples; 113 connected
+wet-channel samples; two actual shoulder/depth checks; worst local walking grade
+0.192827 under 0.20 authoring limit. Actual GLB loading passes within unchanged
+engine budgets. These are native/asset gates, not complete runtime/human acceptance.
+
+New user water candidate: Immaculate Lift Studio's PSX Style Water Surface. Primary
+page verified: Godot4 shader MIT; example textures separately CC Attribution.
+Archive/license contents are not yet acquired or ported. See WATER_REQUIREMENTS.md.
+Required layered transparency, depth colour/foam, sorting and submerged-object review
+remain pending. Current native water is explicitly an opaque foundation preview.
+
+Next: integrate terrain/water/crossing ownership and swept movement in the runtime;
+place terrain-following hedges, stone/retaining banks, fences and fallen-log barriers
+from the recorded irregular site envelope. Keep approach/drainage open and avoid
+invisible walls. Validate the site before more facility/detail production.
+Pavilion-services files are preserved paused WIP, not accepted circuit implementation.
+
+GitHub access probe passed with escalation; previous d2fe095 is verified on main.
+Publish this terrain checkpoint, then verify the refreshed gallery and save readback.
+Do not treat the previous 469-image live report as verification of later batches.
+
+---
+
 # Latest continuation — 23 October 2026
 
 The user explicitly created the larger active goal to finish all map development,

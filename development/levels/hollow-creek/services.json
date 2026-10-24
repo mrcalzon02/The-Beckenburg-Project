@@ -1,0 +1,100 @@
+{
+  "status": "native-mounted-utilities-only",
+  "asset": {
+    "id": "level_camp_pavilion_services",
+    "library": "campground",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha256": "cc63a70c3136eb0ae892a9987412f01b029bb2596eec42571219a22b9ed42a72",
+    "bytes": 57432,
+    "triangles": 452,
+    "bounds": [
+      [
+        -5.850000381469727,
+        1.190000057220459,
+        -6.050000190734863
+      ],
+      [
+        -0.5500001907348633,
+        3.190000057220459,
+        6.050000190734863
+      ]
+    ],
+    "source": "original geometry and procedural textures",
+    "editable": "development/levels/blender/level_camp_pavilion_services.blend",
+    "mount": "Pavilion floor-centre origin; switch back local X=-5.85, Y1.35; fixture mounts local X0, Y3.10, Z -6/0/6. Do not floor-normalize."
+  },
+  "fixtures": [
+    {
+      "id": "Pavilion utility fixture 36",
+      "model": "level_utility_light",
+      "x": 32,
+      "y": 3.1,
+      "z": 36,
+      "support": "Tie beam 6"
+    },
+    {
+      "id": "Pavilion utility fixture 42",
+      "model": "level_utility_light",
+      "x": 32,
+      "y": 3.1,
+      "z": 42,
+      "support": "Tie beam 0"
+    },
+    {
+      "id": "Pavilion utility fixture 48",
+      "model": "level_utility_light",
+      "x": 32,
+      "y": 3.1,
+      "z": 48,
+      "support": "Tie beam -6"
+    }
+  ],
+  "contacts": [
+    [
+      "Post conduit",
+      "Post conduit saddle 1.65"
+    ],
+    [
+      "Post conduit",
+      "Post conduit saddle 2.25"
+    ],
+    [
+      "Post conduit",
+      "Post conduit saddle 2.85"
+    ],
+    [
+      "Post conduit",
+      "Top cable gland"
+    ],
+    [
+      "Post conduit",
+      "Tie conduit"
+    ],
+    [
+      "Tie conduit",
+      "Longitudinal trunk"
+    ],
+    [
+      "Longitudinal trunk",
+      "Conduit timber bearer"
+    ]
+  ],
+  "placement": {
+    "x": 32,
+    "y": 0,
+    "z": 42
+  },
+  "protected_sources": {
+    "development/levels/hollow-creek/hollow-creek-pavilion.blend": "6a21a4f52c7075abc54750b7f66e3cca574b9099a584d561ea692c14959165f9",
+    "development/levels/hollow-creek/pavilion.json": "006eb85b7333a2a653c8b0f866a9a09671ad578d756dbf03d1fa371fe88f140f",
+    "development/levels/blender/level_utility_light.blend": "d14cdd9b76c68a2f75217f1eb5effff4865e5a80086d413dced2a38b1de1488e",
+    "assets/runtime/models/level_utility_light.glb": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+  },
+  "preview_only": true,
+  "limitations": [
+    "No runtime circuit/interaction or multiplayer integration yet.",
+    "Native Cycles emitter previews do not certify game renderer light separation.",
+    "Circuit feed/breaker ownership will connect to authored ranger services during full-map integration."
+  ]
+}

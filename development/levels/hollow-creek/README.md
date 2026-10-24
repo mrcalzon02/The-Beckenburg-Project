@@ -35,9 +35,34 @@ for the authoritative contact count. Runtime GLB loading independently checks 20
 triangles, metres/UVs, pivot and downward roof faces. Native captures use an explicitly
 labeled inspection-only fill light; this is not a gameplay fixture/circuit test.
 
+## Terrain-first correction and current site authority
+
+User-directed priority: site terrain precedes further buildings/models/dressing.
+`hollow_creek_ground.py` and `terrain.json` now define graded site elevations,
+carved water beds and supported routes. `hollow-creek-terrain.blend` preserves
+reviewed structure meshes in a new terrain-derived scene; earlier source files and
+all original rough blockouts remain unchanged. The existing west table and fire ring
+are fitted vertically to their local footings; the pavilion remains at Y0.
+
+The road apron is Y1.5, lakeshore Y-1.3, and the bed reaches Y-3.1. Outdoor zones
+retain rolling terrain rather than full rectangular flattening. Narrow worn treads
+sit in graded shoulders with nominal 120mm incision, fading into building/crossing
+landings. The shoreline and creek meander; outdoor reservation boxes are hidden
+in default review images. The ground canvas is not a finished gameplay boundary.
+
+`validate_hollow_creek_terrain.py` reopens actual meshes: 10,377 full-width route
+samples, 72 pad samples, 113 connected wet-bed samples, worn-tread shoulder depth,
+water beds, grade limit, unchanged source hashes and corrected crossing support.
+`HollowCreekTerrainAssetTest` loads the real export within unchanged engine limits.
+See the report for actual triangle count, surface values and limitations.
+
+The existing 452-triangle pavilion-services files are **paused authoring WIP**;
+their circuit previews are not accepted runtime wiring/lighting. Preserve them,
+but do not advance utility/detail work ahead of the site gates.
+
 ## Next unfinished gate
 
-Add mounted pavilion utilities and supported detail, then continue the existing
+Complete site/runtime terrain ownership, water restrictions, swept walking and natural edge barriers first. Then continue the existing
 map model inventory with tent/platform, bathhouse, ranger facilities, dock and
 bridge. Check joints, supports, tabletop placement and circulation at each iteration
 against the shared defect ledger. Integrate geometry, collision, room ownership,
@@ -55,3 +80,10 @@ Refresh/check the shared gallery before publishing captures.
 
 For the pavilion pass, run `build_hollow_creek_pavilion.py`, then
 `validate_hollow_creek_pavilion.py` and `HollowCreekPavilionAssetTest`.
+
+Terrain reproduction: run `build_hollow_creek_terrain.py`,
+`validate_hollow_creek_terrain.py`, then `HollowCreekTerrainAssetTest`.
+Natural edge palette recorded in terrain.json: hedges, stone retaining banks,
+service fences and grounded fallen-log barriers. Their actual placement/collision
+has not yet been implemented or accepted. See WATER_REQUIREMENTS.md for the
+Godot/MIT candidate, separate example-texture attribution and transparency gates.

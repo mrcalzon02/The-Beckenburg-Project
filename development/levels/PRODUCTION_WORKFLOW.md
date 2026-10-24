@@ -19,6 +19,21 @@ The existing playable construction references are House → Farmhouse → School
 
 Active all-map completion scope and gates: [MAP_COMPLETION_GOAL.md](MAP_COMPLETION_GOAL.md).
 
+## 0. Establish terrain and site access before structures
+
+Terrain/site validation is the first construction gate for every map, including
+interior-heavy sites. Establish metre scale, origin, elevations, boundaries, water,
+drainage, ground slopes, buildable foundation pads and supported circulation from
+the canonical van. Route geometry and ground support must exist before structures
+or dressing are promoted. Building footprints are reservations until checked against
+this surface. Refine structures against the accepted site; detail comes later.
+
+For existing maps, audit their site foundation first and preserve accepted content.
+A flat planning rectangle or floating colored route is not a terrain implementation.
+Changes to site elevations must propagate to foundations, collision, rooms, stairs,
+sockets and van access together. Do not flatten or relocate water to conceal an
+unsupported path; author a real crossing or reroute it.
+
 ## 1. Establish the building before the asset list
 
 Read the original board and record the actual architectural identity. Consult a primary architectural reference and record the URL, drawing/photo identity, inspected material and inspection limitations in `ARCHITECTURAL_REFERENCES.md`. Draw an original measured room plan with uses, storeys, external access and structural intent. Never treat image-generated plan numbering as geometry.
