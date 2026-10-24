@@ -195,3 +195,10 @@ Planning checks pass for 34,331 protected room/route-width/ritual/cargo samples,
 DEV-029 records the existing shared hill waveform that cannot be treated as an accepted coast/other per-map skyline. Runtime per-map horizon integration remains open and must coordinate with engine work. DEV-030 fixes the legacy fixed-23 model-list generator: refreshing the catalog now validates all 28 base packets plus the separate annex without overwriting curated worklists.
 
 The six new map blockout batch b09af9d was pushed and its 548-image gallery is live verified: all PNG URLs/dimensions plus 102 full hashes. This edge/sky planning batch adds 30 diagram captures; publish and verify their gallery before closeout. Next: choose a single terrain-ready map, fit actual barrier footings/closed returns and access portal, then capture real ordinary/upper-view framing and run swept containment tests before bringing in distant scenery or runtime sky sector changes. Keep the all-map completion goal active; no all-map completion claim.
+
+
+## Explicit user hold — saved checkpoint
+
+User requested: Hold and commit here; resume later. Stop development at commit 5488ae152f9b19d22327bdefae99398e00654915, confirmed on remote main. All-map edge/sky planning and its 30 diagram images are committed/pushed; local 578-image gallery index is current. The last completed live gallery verification is the previous 548-image checkpoint with 102 full hashes. Public Pages deployment/readback for 578 images remains the first closeout check on resume; do not claim it already passed.
+
+Nightly map-development heartbeat is paused for this hold. Do not resume development or reactivate it until the user requests resumption. The larger goal remains incomplete (tool reports usageLimited). Six unrelated verification changes remain deliberately unstaged and untouched. No map/engine/model work follows this hold.
