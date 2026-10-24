@@ -1,7 +1,7 @@
 {
   "id": "WLD-14",
   "title": "Morrow Point Lightstation",
-  "source_layout_sha256": "dad089ced65405ba4f1a79f02552cf69210c0b32b3d964694e956c67c57f0679",
+  "source_layout_sha256": "80b8697bf08768bba5d40d92ca25e8dbbd1d965f0c413412e29192d07934dcdc",
   "status": "worklist only; no model completion claimed",
   "terrain_first": {
     "profile": "headland",
@@ -45,7 +45,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "entry",
@@ -54,7 +58,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "porch",
@@ -63,7 +71,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "foyer",
@@ -72,43 +84,59 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "sitting",
       "purpose": "Sitting room",
       "needed": [
-        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
-        "Supported task clutter, labels and history-specific wear"
+        "Period sofa/chairs, low table, stove and guarded hearth"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "kitchen",
       "purpose": "Keeper kitchen",
       "needed": [
-        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
-        "Supported task clutter, labels and history-specific wear"
+        "Sink, range, fitted counters, pantry shelves and crockery"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "workroom",
       "purpose": "Maintenance workroom",
       "needed": [
-        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
-        "Supported task clutter, labels and history-specific wear"
+        "Small tool bench, vise, lantern-maintenance tools and supported shelving"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "store",
       "purpose": "Dry store",
       "needed": [
-        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
-        "Supported task clutter, labels and history-specific wear"
+        "Oil-safe cupboards, dry crates and service labels"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "stairs",
@@ -117,25 +145,35 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "bed",
       "purpose": "Keeper bedroom",
       "needed": [
-        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
-        "Supported task clutter, labels and history-specific wear"
+        "Bed, wardrobe, bedside cabinet and reading light"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "study",
       "purpose": "Signal records study",
       "needed": [
-        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
-        "Supported task clutter, labels and history-specific wear"
+        "Records desk, chair, chart cabinet and supported documents"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "upperhall",
@@ -144,7 +182,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "service-stair",
@@ -153,7 +195,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "service-upper",
@@ -162,7 +208,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "passage",
@@ -171,25 +221,35 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "generator",
       "purpose": "Generator and oil house",
       "needed": [
-        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
-        "Supported task clutter, labels and history-specific wear"
+        "Isolated generator, oil drums on containment trays, ventilation and breaker"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "yard",
       "purpose": "Service yard and cistern reserve",
       "needed": [
-        "Room-appropriate furniture and fixtures leaving routes and rituals clear",
-        "Supported task clutter, labels and history-specific wear"
+        "Cistern, downpipes, hose and grounded service rack"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "tower0",
@@ -198,7 +258,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "tower1",
@@ -207,7 +271,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "tower2",
@@ -216,7 +284,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "tower3",
@@ -225,7 +297,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "tower4",
@@ -234,7 +310,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     },
     {
       "zone": "tower5",
@@ -243,7 +323,11 @@
         "Room-appropriate furniture and fixtures leaving routes and rituals clear",
         "Supported task clutter, labels and history-specific wear"
       ],
-      "status": "quantity, reuse and placement audit pending"
+      "status": "quantity, reuse and placement audit pending",
+      "clutter_and_detail": [
+        "Supported use-specific small objects, readable local labels and restrained wear; choose after furniture placement",
+        "No floating/stacked items, wall intersections, blocked door arcs, stripe artifacts or ritual/route encroachment"
+      ]
     }
   ],
   "review_gates": [

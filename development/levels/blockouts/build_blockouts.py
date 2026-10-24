@@ -122,6 +122,14 @@ def build(path):
     staging=data['staging'];x,y,z=staging['point'];v=box('VAN ENVELOPE / use canonical module during integration',x,y+.5,z,1.784,2.125,4.256,van,marks,role='placeholder envelope; not replacement van');v.rotation_euler.z=-staging['yaw']
     scene['layout_id']=data['id'];scene['status']='ROUGH SHELL BLOCKING ONLY / no gameplay or collision acceptance';scene['source_sha256']=hashlib.sha256(path.read_bytes()).hexdigest();scene['units']='metres; source X/Z plan and Y elevation converted to Blender Z up'
     scene['next_step']='Review openings and connectors against concepts, resolve stairs and terrain, then native collision/navigation integration.'
+    if 'terrain' in data:
+        for obj in scene.objects:
+            if obj.type!='MESH' or obj.data.uv_layers:continue
+            uv=obj.data.uv_layers.new(name='Metre plan UV')
+            for poly in obj.data.polygons:
+                for li in poly.loop_indices:
+                    v=obj.data.vertices[obj.data.loops[li].vertex_index].co
+                    uv.data[li].uv=(v.x/8,v.y/8)
     # Native scenes retain all measured elevations. Floors and named shells are separately editable.
     blend=folder/'rough-shell.blend';bpy.ops.wm.save_as_mainfile(filepath=str(blend),compress=True)
     bpy.ops.export_scene.gltf(filepath=str(folder/'rough-shell.glb'),export_format='GLB',export_extras=True)

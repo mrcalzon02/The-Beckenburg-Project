@@ -15,3 +15,24 @@ Terrain and supported routes precede architecture and dressing. This is a workli
 - Security fence, hillside exit, concrete pads and eroded banks
 
 Every named space has a room-by-room record in the adjacent JSON. Audit existing assets first; never substitute a wrongly scaled or wrong-purpose workshop model.
+
+## Room furniture and fixtures
+
+- **stage**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **entry**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **servicehouse**: Maintenance desk, lockers, sink and document storage
+- **yard**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **head**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **shop**: Repair bench, vise, tool boards and parts shelving
+- **exit**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **upperring**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **lowring**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **west**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **records**: Filing cabinets, desk/chair and supported maintenance logs
+- **exhibit**: Inert console shells, disconnected racks and blank/damaged displays
+- **east**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **crew**: Bunks, lockers, mess bench and personal storage
+- **pump**: Sump pump, grates, drain runs and service isolation
+- **plant**: Inert air-handling units, ducts, cable trays and breaker panels
+
+Clutter and wear follow each room’s function. Quantity and source-library reuse are unaccepted until scale, pivot, UV, support and circulation are inspected.

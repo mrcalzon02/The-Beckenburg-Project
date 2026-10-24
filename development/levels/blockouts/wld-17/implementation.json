@@ -1,0 +1,271 @@
+{
+  "id": "WLD-17",
+  "title": "Battery Brackenhead",
+  "source": "layouts\\wld-17\\layout.json",
+  "source_sha256": "c8b7ee372a00703088e125ff980d81b8ceadece4f4aa99c5b78254d1d580675d",
+  "zones": 15,
+  "routes": 17,
+  "shell_openings": [
+    {
+      "zone": "west",
+      "side": "N",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "E",
+      "link": "route-04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "E",
+      "link": "route-06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "N",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "W",
+      "link": "route-05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "W",
+      "link": "route-07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "N",
+      "link": "route-10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "W",
+      "link": "route-06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "E",
+      "link": "route-07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "magazine",
+      "side": "S",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "service",
+      "side": "S",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "barracks",
+      "side": "E",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lowgallery",
+      "side": "N",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lowgallery",
+      "side": "N",
+      "link": "route-14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lowgallery",
+      "side": "N",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "W",
+      "link": "route-14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "W",
+      "link": "route-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "S",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "E",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "W",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "E",
+      "link": "route-17",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 148,
+  "issues": [
+    {
+      "zone": "approach",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.05,
+          57.05,
+          32.95,
+          58.95
+        ]
+      ]
+    },
+    {
+      "zone": "yard",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          39.05,
+          47.05,
+          40.95,
+          48.95
+        ]
+      ]
+    },
+    {
+      "zone": "magazine",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          11.05,
+          15.05,
+          12.95,
+          16.95
+        ]
+      ]
+    },
+    {
+      "zone": "service",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          47.05,
+          15.05,
+          48.95,
+          16.95
+        ]
+      ]
+    },
+    {
+      "zone": "director",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          37.05,
+          21.05,
+          38.95,
+          22.95
+        ]
+      ]
+    },
+    {
+      "link": "route-02",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 2,
+      "plan_run": 14.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-03",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 2,
+      "plan_run": 16.246211251235323,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-10",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 16.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-11",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4,
+      "plan_run": 20.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-12",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4,
+      "plan_run": 20.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    }
+  ],
+  "source_refinement": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "Historic coastal-site functional reference only; original fictional battery with removed/inert equipment.",
+    "Roof cover over lower rooms requires full sealed slabs and stair voids; grade reservations are not accepted routes."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "ce7c0090f94cccb2222316ad3f3aeede73290ed20c8b47f821c975f5e3947988",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

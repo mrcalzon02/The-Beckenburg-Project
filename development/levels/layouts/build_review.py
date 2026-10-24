@@ -47,7 +47,13 @@ def render_svg(data):
         for zone in sorted(zones,key=lambda z: {'outside':0,'staging':1,'inside':2,'hazard':2,'circulation':3}[z['kind']]):
             if zone['y'] != y: continue
             a,b,c,d = zone['bounds']; px,pz = point(a,b)
-            out.append(f'<rect x="{px:.1f}" y="{pz:.1f}" width="{(c-a)*scale:.1f}" height="{(d-b)*scale:.1f}" fill="{COLORS[zone["kind"]]}" stroke="#536477" stroke-width="1.4"><title>{esc(zone["name"])}; {c-a:g} × {d-b:g} m; Y {y:g}</title></rect>')
+            if zone.get('shape'):
+                cx,cz=point((a+c)/2,(b+d)/2);rr=zone['radius']*scale
+                inner=zone.get('inner_radius',0)*scale
+                out.append(f'<circle cx="{cx:.1f}" cy="{cz:.1f}" r="{rr:.1f}" fill="{COLORS[zone["kind"]]}" stroke="#536477" stroke-width="1.4"/>')
+                if inner:out.append(f'<circle cx="{cx:.1f}" cy="{cz:.1f}" r="{inner:.1f}" fill="#f5f4ef" stroke="#812c6b" stroke-width="1.4"><title>Empty shaft — no route or ritual</title></circle>')
+            else:
+                out.append(f'<rect x="{px:.1f}" y="{pz:.1f}" width="{(c-a)*scale:.1f}" height="{(d-b)*scale:.1f}" fill="{COLORS[zone["kind"]]}" stroke="#536477" stroke-width="1.4"><title>{esc(zone["name"])}; {c-a:g} × {d-b:g} m; Y {y:g}</title></rect>')
         for link in data['links']:
             pts = link['points']
             if not any(p[1] == y for p in pts): continue

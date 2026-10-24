@@ -1,0 +1,237 @@
+{
+  "id": "WLD-15",
+  "title": "MV Saint Elara",
+  "source": "layouts\\wld-15\\layout.json",
+  "source_sha256": "2a1bc652d3a9bbaf560232c230d70d8d190af306caaf3bfe842a081cf3ddf069",
+  "zones": 16,
+  "routes": 19,
+  "shell_openings": [
+    {
+      "zone": "processing",
+      "side": "N",
+      "link": "route-10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "S",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "S",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "W",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "galley",
+      "side": "N",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "galley",
+      "side": "S",
+      "link": "route-06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "N",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "S",
+      "link": "route-07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "engine",
+      "side": "N",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "engine",
+      "side": "W",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "hold",
+      "side": "N",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "hold",
+      "side": "S",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "S",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "W",
+      "link": "route-14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "crew",
+      "side": "N",
+      "link": "route-18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "crew",
+      "side": "W",
+      "link": "route-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "bridge",
+      "side": "W",
+      "link": "route-19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "net",
+      "side": "S",
+      "link": "route-18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "net",
+      "side": "W",
+      "link": "route-19",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 131,
+  "issues": [
+    {
+      "zone": "processing",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          22.05,
+          23.05,
+          23.95,
+          24.95
+        ]
+      ]
+    },
+    {
+      "zone": "fore",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          22.05,
+          2.05,
+          23.95,
+          3.95
+        ]
+      ]
+    },
+    {
+      "zone": "crew",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          22.05,
+          35.05,
+          23.95,
+          36.95
+        ]
+      ]
+    },
+    {
+      "zone": "bridge",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          22.05,
+          23.05,
+          23.95,
+          24.95
+        ]
+      ]
+    },
+    {
+      "link": "route-13",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 14.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-14",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 9.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-17",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 16.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-19",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 24.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    }
+  ],
+  "source_refinement": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "Owner fleet reference informs processor function only; this is an original retired vessel, not a replica.",
+    "Low-deck cutaway and both independent gangway clearances need review; sea must never fill the hold."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "87b775383b64882aff41699b1638649951f69f4e75f97909b31e2815a6266f24",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

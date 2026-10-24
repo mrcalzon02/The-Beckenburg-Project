@@ -29,12 +29,12 @@ Planning only. Bounds and links are reservations; walkability, shell constructio
 | passage | Attached covered tower passage | [28, 14.5, 36, 30] | 0 / 3 m | Attached covered tower passage |
 | generator | Generator and oil house | [48, 34, 58, 46] | 0 / 3 m | Generator and oil house |
 | yard | Service yard and cistern reserve | [48, 46, 62, 60] | 0 / 3 m | Service yard and cistern reserve |
-| tower0 | Tower base | [27.5, 5.5, 36.5, 14.5] | 0 / 3 m | Tower base |
-| tower1 | First tower landing | [27.5, 5.5, 36.5, 14.5] | 3.6 / 3 m | First tower landing |
-| tower2 | Second tower landing | [27.5, 5.5, 36.5, 14.5] | 7.2 / 3 m | Second tower landing |
-| tower3 | Third tower landing | [27.5, 5.5, 36.5, 14.5] | 10.8 / 3 m | Third tower landing |
-| tower4 | Watch room | [27.5, 5.5, 36.5, 14.5] | 14.4 / 3 m | Watch room |
-| tower5 | Lantern room | [27.5, 5.5, 36.5, 14.5] | 18 / 3 m | Lantern room |
+| tower0 | Tower base | [27.5, 5.5, 36.5, 14.5] | 0 / 3.6 m | Tower base |
+| tower1 | First tower landing | [27.5, 5.5, 36.5, 14.5] | 3.6 / 3.6 m | First tower landing |
+| tower2 | Second tower landing | [27.5, 5.5, 36.5, 14.5] | 7.2 / 3.6 m | Second tower landing |
+| tower3 | Third tower landing | [27.5, 5.5, 36.5, 14.5] | 10.8 / 3.6 m | Third tower landing |
+| tower4 | Watch room | [27.5, 5.5, 36.5, 14.5] | 14.4 / 3.6 m | Watch room |
+| tower5 | Lantern room | [27.5, 5.5, 36.5, 14.5] | 18 / 3.6 m | Lantern room |
 
 ## Routes and retreat
 
@@ -106,3 +106,9 @@ Fictional location and records connect to the district investigation; narrative 
 ## Source basis
 
 - https://www.nps.gov/caha/learn/historyculture/thelightstationfaqs.htm
+
+## Native rough blockout
+
+[Editable scene](../../blockouts/wld-14/rough-shell.blend) · [GLB export](../../blockouts/wld-14/rough-shell.glb) · [Native overview](../../blockouts/wld-14/preview.png)
+
+The OBJ is a bounding-volume study. Native scenes retain curved tower/ring/hull shapes. Cyan/amber geometry is a route reservation, not finished construction.

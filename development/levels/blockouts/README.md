@@ -66,3 +66,8 @@ camera/light objects; native PNGs are neutral studio inspections.
 ## Needed models
 
 Each pending map packet includes MODELS.md and models.json: standard furnishings and fixtures, verified local reuse candidates, unique models, clutter and finish detail by room. The ZIP also includes model-requirements/ for all 23 maps; existing maps receive documentation only.
+
+
+## User-requested additional scope — 23 October
+
+Five new lore-named sites and an additive cemetery/mortuary study are now planned. See [new location native reviews](NEW_LOCATIONS_REVIEW.html). These are rough reservations and native blockouts; model lists do not count as model completion. Detailed terrain support, stairs/guards, architecture, fixtures/dressing, runtime and human review remain pending. The original 23 maps and 17 rough source blockouts are preserved.

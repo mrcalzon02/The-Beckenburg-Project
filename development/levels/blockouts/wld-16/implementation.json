@@ -1,0 +1,136 @@
+{
+  "id": "WLD-16",
+  "title": "Eight Pines Motor Lodge",
+  "source": "layouts\\wld-16\\layout.json",
+  "source_sha256": "6a545e169efa07d7df40644245a4fedf68b6d9cc1cd965a41b195ad3193057d6",
+  "zones": 19,
+  "routes": 22,
+  "shell_openings": [
+    {
+      "zone": "office",
+      "side": "N",
+      "link": "route-04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "S",
+      "link": "route-02",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "W",
+      "link": "route-05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "manager",
+      "side": "E",
+      "link": "route-05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "laundry",
+      "side": "N",
+      "link": "route-10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "laundry",
+      "side": "S",
+      "link": "route-11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "N",
+      "link": "route-11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "N",
+      "link": "route-12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "room1",
+      "side": "E",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "room5",
+      "side": "W",
+      "link": "route-19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "room2",
+      "side": "E",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "room6",
+      "side": "W",
+      "link": "route-20",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "room3",
+      "side": "E",
+      "link": "route-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "room7",
+      "side": "W",
+      "link": "route-21",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "room4",
+      "side": "E",
+      "link": "route-18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "room8",
+      "side": "W",
+      "link": "route-22",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 125,
+  "issues": [],
+  "source_refinement": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "Historic motor-court functional reference only; Eight Pines is a fictional independent brand.",
+    "Subdivide each guest bathroom without consuming door approaches; no hidden back-door shortcuts.",
+    "Court grade/drainage must not create unsupported flat exterior route strips."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "3fcc5b6c4344e6bf3fd57d5aac16c8da862fc076de2ef63c544a92754dba4ccf",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 533,
+  "count": 548,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -784,6 +784,26 @@
       "sha256": "f546695e916e4a79ebf3f53f0b3a1ac36ef8cfc011020cd5c0476d6ce463736d"
     },
     {
+      "path": "development/levels/blockouts/new-location-blockouts.png",
+      "url": "development/levels/blockouts/new-location-blockouts.png",
+      "title": "New location blockouts",
+      "kind": "Rough blockout",
+      "width": 1440,
+      "height": 800,
+      "bytes": 617872,
+      "sha256": "eb66fd5b348fc651ee7cb3a21c2d313cff61b9f5e45590469465a46577e3da0d"
+    },
+    {
+      "path": "development/levels/blockouts/new-location-layer-studies.png",
+      "url": "development/levels/blockouts/new-location-layer-studies.png",
+      "title": "New location layer studies",
+      "kind": "Rough blockout",
+      "width": 1440,
+      "height": 800,
+      "bytes": 397332,
+      "sha256": "6c49e66933b1267b9b190eec4f8d1df2020ea6b9e898771ac377b6c2aad1e570"
+    },
+    {
       "path": "development/levels/blockouts/prison/preview.png",
       "url": "development/levels/blockouts/prison/preview.png",
       "title": "Preview",
@@ -842,6 +862,26 @@
       "height": 720,
       "bytes": 629117,
       "sha256": "09856139aeb3ca284c151a89140041a54544103eb2420bb4288f7cabeb2d6495"
+    },
+    {
+      "path": "development/levels/blockouts/wld-07-mortuary/layer-study-native-fitout.png",
+      "url": "development/levels/blockouts/wld-07-mortuary/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 524471,
+      "sha256": "4f512a14d3bb2f6136634f8e25aa22cd10ca13309dfc58f7b6a3765f74a3f26b"
+    },
+    {
+      "path": "development/levels/blockouts/wld-07-mortuary/preview.png",
+      "url": "development/levels/blockouts/wld-07-mortuary/preview.png",
+      "title": "Preview",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 702972,
+      "sha256": "eefcdda2c343c7323561d974f0980fadb28d9a49d699111fcc1458a39adce000"
     },
     {
       "path": "development/levels/blockouts/wld-07/preview.png",
@@ -912,6 +952,106 @@
       "height": 720,
       "bytes": 635552,
       "sha256": "b8d54f90f01ee4b3e30c2ebd31c586fd31faa7fc393ed2bb02424b04c394dd92"
+    },
+    {
+      "path": "development/levels/blockouts/wld-14/layer-study-native-fitout.png",
+      "url": "development/levels/blockouts/wld-14/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 575016,
+      "sha256": "ef267657438c094293f95fcc0a1a3bfa856007c17ae048b97dfd5afad1605eff"
+    },
+    {
+      "path": "development/levels/blockouts/wld-14/preview.png",
+      "url": "development/levels/blockouts/wld-14/preview.png",
+      "title": "Preview",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 691358,
+      "sha256": "3d5b7c6af0c6fd7845c660fd67f8f661b15139a6d4f2966e35ad9d88c6d17082"
+    },
+    {
+      "path": "development/levels/blockouts/wld-15/layer-study-native-fitout.png",
+      "url": "development/levels/blockouts/wld-15/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 526391,
+      "sha256": "4aa2d0bc45cef477dfe829719437a99cfc7e07d0796b2990f4f866f61daec530"
+    },
+    {
+      "path": "development/levels/blockouts/wld-15/preview.png",
+      "url": "development/levels/blockouts/wld-15/preview.png",
+      "title": "Preview",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 622051,
+      "sha256": "4e673faf43c0d235aca70d1325d42dec8014ccac49efaac2a2f067456c6328f4"
+    },
+    {
+      "path": "development/levels/blockouts/wld-16/layer-study-native-fitout.png",
+      "url": "development/levels/blockouts/wld-16/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 600464,
+      "sha256": "349cfdfa214959e0d14062d241924dd0f6020b1af3ca63277eea84108fa95615"
+    },
+    {
+      "path": "development/levels/blockouts/wld-16/preview.png",
+      "url": "development/levels/blockouts/wld-16/preview.png",
+      "title": "Preview",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 674457,
+      "sha256": "924f7e5ba595f2cabcf9bef9bb7025e36b8286f8c2501e70d2de563d90a5514c"
+    },
+    {
+      "path": "development/levels/blockouts/wld-17/layer-study-native-fitout.png",
+      "url": "development/levels/blockouts/wld-17/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 569054,
+      "sha256": "986bbeb51e19b329cf8d2f2a65ad834de32ac824d438047cbfca322113031f05"
+    },
+    {
+      "path": "development/levels/blockouts/wld-17/preview.png",
+      "url": "development/levels/blockouts/wld-17/preview.png",
+      "title": "Preview",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 634295,
+      "sha256": "e39a09574275c67c6bb7532266a1b52a062d83da74ae0171aaa0bb4caa306750"
+    },
+    {
+      "path": "development/levels/blockouts/wld-18/layer-study-native-fitout.png",
+      "url": "development/levels/blockouts/wld-18/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 544272,
+      "sha256": "ef3749f58deed72b03e002a0e83f69e8c4ebacbb96d0e08431ebfcadfbe8f31d"
+    },
+    {
+      "path": "development/levels/blockouts/wld-18/preview.png",
+      "url": "development/levels/blockouts/wld-18/preview.png",
+      "title": "Preview",
+      "kind": "Rough blockout",
+      "width": 960,
+      "height": 720,
+      "bytes": 613973,
+      "sha256": "12c2a5b617739c3595e6df6b910a103b8068f45a4e91668bc45552b3119359bc"
     },
     {
       "path": "development/levels/previews/blackpine-blender-exterior.png",
@@ -1052,6 +1192,16 @@
       "height": 700,
       "bytes": 661281,
       "sha256": "84e3276389d5760e076de55c20ccd92047ac48f2edb1343f6e48387ae593a559"
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-027-before-tower-storey-gaps.png",
+      "url": "development/levels/previews/defects/DEV-027-before-tower-storey-gaps.png",
+      "title": "Dev 027 before tower storey gaps",
+      "kind": "Development review",
+      "width": 1440,
+      "height": 800,
+      "bytes": 619143,
+      "sha256": "63a4979fdc1b272534aa5eca311cb53274f5976e762c4495af3a1dc3fba225c1"
     },
     {
       "path": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",

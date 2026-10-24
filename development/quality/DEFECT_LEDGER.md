@@ -362,7 +362,7 @@ Older-map obligation: Floor openings often split a slab into several objects. Ow
 
 ### DEV-026 — Broad terrain pass exposes unresolved grade and crossing support locations
 
-**Status:** open-terrain-refinement · **Affected:** Sixteen remaining rough development sites
+**Status:** open-terrain-refinement · **Affected:** Sixteen remaining rough development sites; six new-location proposal diagnostics tracked separately
 
 Actual native level-link probes flagged 937 sampled support/grade locations; canyon and railway account for the largest groups.
 
@@ -370,9 +370,37 @@ Cause / uncertainty: Existing coarse connector reservations and new first-pass t
 
 Fix / next action: Keep each location and unengineered transition in the per-site verification reports. Prioritize canyon/rail terrain refinement; do not promote broad foundation checks to navigation acceptance or unlock missions.
 
-Evidence and verification: development/levels/verification/terrain-foundations.json and terrain-foundations/<key>/verification.json contain every diagnostic position and scope.
+Evidence and verification: development/levels/verification/terrain-foundations.json and terrain-foundations/<key>/verification.json contain every diagnostic position and scope. Additional new-location-native.json retains 127 terrain-only sampled findings out of 399 probes. These include deck/walkway points and are not unique defects or a swept route acceptance.
 
 Older-map obligation: Apply actual full-width/swept traversal review before detail work; graph connectivity and native floor plates are not proof of a usable route.
+
+### DEV-027 — New lighthouse wall rings stopped short of the next storey
+
+**Status:** fixed-native-rough-only · **Affected:** Morrow Point first rough blockout
+
+Visible horizontal gaps remained between circular wall rings.
+
+Cause / uncertainty: Standing levels were spaced 3.6 m apart while the initial wall height was 3.0 m.
+
+Fix / next action: Extend each authored tower wall ring to the next standing level; regenerate and reopen only the new lighthouse packet.
+
+Evidence and verification: development/levels/previews/defects/DEV-027-before-tower-storey-gaps.png; new-location-native.json measures five continuous wall-level joins; corrected native overview.
+
+Older-map obligation: Audit storey spacing against actual wall top/roof/underside coordinates. A continuous rough ring is not a passed runtime lighting test.
+
+### DEV-028 — New rough connector meshes had no UV layer
+
+**Status:** fixed-native-export-only · **Affected:** Six new-location rough proposal exports
+
+Independent GLB reload failed the all-mesh UV presence check.
+
+Cause / uncertainty: The old rough route-strip generator authored position faces without texture coordinates.
+
+Fix / next action: Before saving/exporting new terrain-tagged proposals, add finite metre-plan UVs to meshes lacking a UV layer; retain existing UVs and old maps.
+
+Evidence and verification: development/quality/evidence/DEV-028-native-uv-before.txt records the initial failure; independent rerun development/levels/verification/new-location-native.json passes all six actual GLB UV/finite geometry checks.
+
+Older-map obligation: Audit legacy route-strip UVs before applying textured finishes. Presence of UVs alone does not establish correct material scale or finish quality.
 
 ## Required audit categories
 

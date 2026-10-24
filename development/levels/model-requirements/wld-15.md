@@ -15,3 +15,24 @@ Terrain and supported routes precede architecture and dressing. This is a workli
 - Static net handling boom, nets and weathered maritime clutter
 
 Every named space has a room-by-room record in the adjacent JSON. Audit existing assets first; never substitute a wrongly scaled or wrong-purpose workshop model.
+
+## Room furniture and fixtures
+
+- **stage**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **entry**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **quay**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **portpier**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **aft**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **processing**: Fish sorting bench, conveyor, wash fittings, drains and scale
+- **galley**: Marine range, sink, secured cupboards and galley utensils
+- **mess**: Bolted dining tables/benches and crockery storage
+- **side**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **fore**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **engine**: Static diesel engine, guards, gauges and supported pipes
+- **hold**: Insulated bulkheads, freezer doors, shelving/crates and drains
+- **pump**: Bilge pumps, isolation valves, grates and service lamps
+- **crew**: Bunks, lockers, secured shelf and compact personal effects
+- **bridge**: Wheel/console, chart table, radio housing and secured seat
+- **net**: Net racks, floats, rope coils and secured storage
+
+Clutter and wear follow each room’s function. Quantity and source-library reuse are unaccepted until scale, pivot, UV, support and circulation are inspected.

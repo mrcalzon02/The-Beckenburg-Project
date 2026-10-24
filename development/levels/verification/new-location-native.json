@@ -1,0 +1,1584 @@
+{
+  "status": "native rough proposal checks pass; runtime unaccepted",
+  "date": "2026-10-23",
+  "maps": [
+    {
+      "id": "WLD-14",
+      "planning_checks": 283,
+      "native_meshes": 313,
+      "floor_parts_160mm": 35,
+      "terrain_range": [
+        -19.62688636779785,
+        3.0999999046325684
+      ],
+      "terrain_upward_faces": true,
+      "shaped_floor_voids": [
+        "tower0",
+        "tower1",
+        "tower2",
+        "tower3",
+        "tower4",
+        "tower5"
+      ],
+      "tower_wall_joins": [
+        [
+          "tower0",
+          "tower1"
+        ],
+        [
+          "tower1",
+          "tower2"
+        ],
+        [
+          "tower2",
+          "tower3"
+        ],
+        [
+          "tower3",
+          "tower4"
+        ],
+        [
+          "tower4",
+          "tower5"
+        ]
+      ],
+      "glb_meshes": 336,
+      "glb_triangles": 61125,
+      "glb_uvs_finite_positions": true,
+      "outdoor_terrain_diagnostic_samples": 13,
+      "outdoor_terrain_findings": [
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            72.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.968542754650116,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            71.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.968542754650116,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            70.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9652518630027771,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            69.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9652518630027771,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            68.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9636899828910828,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            67.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9636899828910828,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            66.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9639902114868164,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            65.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9639902114868164,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            64.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9661270976066589,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            63.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9661270976066589,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            62.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9699174165725708,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            61.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9699174165725708,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-02",
+          "point": [
+            32.0,
+            0,
+            60.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9750223755836487,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        }
+      ],
+      "limitations": [
+        "Native coarse terrain and shell only; no gameplay/collision unlock.",
+        "Colored supports are diagram reservations, not engineered stairs/gangways.",
+        "Terrain diagnostics do not account for route strips/deck surfaces or establish walkability.",
+        "Lighting joins, watertight hull, guards, furnishings and runtime acceptance pending."
+      ]
+    },
+    {
+      "id": "WLD-15",
+      "planning_checks": 190,
+      "native_meshes": 131,
+      "floor_parts_160mm": 23,
+      "terrain_range": [
+        -5.2490410804748535,
+        0.0
+      ],
+      "terrain_upward_faces": true,
+      "shaped_floor_voids": [],
+      "tower_wall_joins": [],
+      "glb_meshes": 147,
+      "glb_triangles": 31641,
+      "glb_uvs_finite_positions": true,
+      "outdoor_terrain_diagnostic_samples": 87,
+      "outdoor_terrain_findings": [
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            64.0
+          ],
+          "terrain_y": 0.0,
+          "normal_z": 0.8944271802902222,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            63.0
+          ],
+          "terrain_y": -0.5,
+          "normal_z": 0.8944271802902222,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            62.0
+          ],
+          "terrain_y": -1.0,
+          "normal_z": 0.8944271802902222,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            61.0
+          ],
+          "terrain_y": -1.5,
+          "normal_z": 0.8944271802902222,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            60.0
+          ],
+          "terrain_y": -2.0,
+          "normal_z": 0.5584495663642883,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            59.0
+          ],
+          "terrain_y": -3.485431671142578,
+          "normal_z": 0.5584495663642883,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            58.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            57.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            56.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            55.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            54.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            53.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            52.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            51.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            50.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            49.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            32.0,
+            0,
+            48.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-05",
+          "point": [
+            19.0,
+            0,
+            46.0
+          ],
+          "terrain_y": -5.14991569519043,
+          "normal_z": 0.9992291927337646,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-05",
+          "point": [
+            20.0,
+            0,
+            46.0
+          ],
+          "terrain_y": -5.189201354980469,
+          "normal_z": 0.999703586101532,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-05",
+          "point": [
+            21.0,
+            0,
+            46.0
+          ],
+          "terrain_y": -5.213550567626953,
+          "normal_z": 0.999703586101532,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-05",
+          "point": [
+            22.0,
+            0,
+            46.0
+          ],
+          "terrain_y": -5.2378997802734375,
+          "normal_z": 0.9999845027923584,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-05",
+          "point": [
+            23.0,
+            0,
+            46.0
+          ],
+          "terrain_y": -5.24346923828125,
+          "normal_z": 0.9999845027923584,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-05",
+          "point": [
+            24.0,
+            0,
+            46.0
+          ],
+          "terrain_y": -5.249040603637695,
+          "normal_z": 0.9999008178710938,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-05",
+          "point": [
+            25.0,
+            0,
+            46.0
+          ],
+          "terrain_y": -5.234951019287109,
+          "normal_z": 0.9999008178710938,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-05",
+          "point": [
+            26.0,
+            0,
+            46.0
+          ],
+          "terrain_y": -5.220863342285156,
+          "normal_z": 0.999503493309021,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            32.0,
+            0,
+            3.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            32.75,
+            0,
+            3.583333333333333
+          ],
+          "terrain_y": -4.935466766357422,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            33.5,
+            0,
+            4.166666666666666
+          ],
+          "terrain_y": -4.9000701904296875,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            34.25,
+            0,
+            4.75
+          ],
+          "terrain_y": -4.8671112060546875,
+          "normal_z": 0.9992997646331787,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            35.0,
+            0,
+            5.333333333333333
+          ],
+          "terrain_y": -4.839027404785156,
+          "normal_z": 0.9992997646331787,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            35.75,
+            0,
+            5.916666666666667
+          ],
+          "terrain_y": -4.810943603515625,
+          "normal_z": 0.9992997646331787,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            36.5,
+            0,
+            6.5
+          ],
+          "terrain_y": -4.790691375732422,
+          "normal_z": 0.9997628331184387,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            37.25,
+            0,
+            7.083333333333334
+          ],
+          "terrain_y": -4.774354934692383,
+          "normal_z": 0.9997628331184387,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            38.0,
+            0,
+            7.666666666666666
+          ],
+          "terrain_y": -4.758020401000977,
+          "normal_z": 0.9999964237213135,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            38.75,
+            0,
+            8.25
+          ],
+          "terrain_y": -4.756010055541992,
+          "normal_z": 0.9999964237213135,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            39.5,
+            0,
+            8.833333333333334
+          ],
+          "terrain_y": -4.753999710083008,
+          "normal_z": 0.9999964237213135,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            40.25,
+            0,
+            9.416666666666666
+          ],
+          "terrain_y": -4.756872177124023,
+          "normal_z": 0.9998581409454346,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-11",
+          "point": [
+            41.0,
+            0,
+            10.0
+          ],
+          "terrain_y": -4.769504547119141,
+          "normal_z": 0.9998581409454346,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            41.0,
+            0,
+            24.0
+          ],
+          "terrain_y": -4.769504547119141,
+          "normal_z": 0.9998581409454346,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            40.64,
+            0,
+            24.92
+          ],
+          "terrain_y": -4.7634429931640625,
+          "normal_z": 0.9998581409454346,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            40.28,
+            0,
+            25.84
+          ],
+          "terrain_y": -4.757377624511719,
+          "normal_z": 0.9998581409454346,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            39.92,
+            0,
+            26.759999999999998
+          ],
+          "terrain_y": -4.752874374389648,
+          "normal_z": 0.9999964237213135,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            39.56,
+            0,
+            27.68
+          ],
+          "terrain_y": -4.753841400146484,
+          "normal_z": 0.9999964237213135,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            39.2,
+            0,
+            28.6
+          ],
+          "terrain_y": -4.7548065185546875,
+          "normal_z": 0.9999964237213135,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            38.84,
+            0,
+            29.52
+          ],
+          "terrain_y": -4.755767822265625,
+          "normal_z": 0.9999964237213135,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            38.48,
+            0,
+            30.44
+          ],
+          "terrain_y": -4.756732940673828,
+          "normal_z": 0.9999964237213135,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            38.12,
+            0,
+            31.36
+          ],
+          "terrain_y": -4.757698059082031,
+          "normal_z": 0.9999964237213135,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            37.76,
+            0,
+            32.28
+          ],
+          "terrain_y": -4.763246536254883,
+          "normal_z": 0.9997628331184387,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            37.4,
+            0,
+            33.2
+          ],
+          "terrain_y": -4.771089553833008,
+          "normal_z": 0.9997628331184387,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            37.04,
+            0,
+            34.12
+          ],
+          "terrain_y": -4.7789306640625,
+          "normal_z": 0.9997628331184387,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            36.68,
+            0,
+            35.04
+          ],
+          "terrain_y": -4.786771774291992,
+          "normal_z": 0.9997628331184387,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            36.32,
+            0,
+            35.96
+          ],
+          "terrain_y": -4.794610977172852,
+          "normal_z": 0.9997628331184387,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            35.96,
+            0,
+            36.88
+          ],
+          "terrain_y": -4.803079605102539,
+          "normal_z": 0.9992997646331787,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            35.6,
+            0,
+            37.8
+          ],
+          "terrain_y": -4.816560745239258,
+          "normal_z": 0.9992997646331787,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            35.24,
+            0,
+            38.72
+          ],
+          "terrain_y": -4.830039978027344,
+          "normal_z": 0.9992997646331787,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            34.88,
+            0,
+            39.64
+          ],
+          "terrain_y": -4.8435211181640625,
+          "normal_z": 0.9992997646331787,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            34.52,
+            0,
+            40.56
+          ],
+          "terrain_y": -4.857002258300781,
+          "normal_z": 0.9992997646331787,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            34.16,
+            0,
+            41.480000000000004
+          ],
+          "terrain_y": -4.870481491088867,
+          "normal_z": 0.9992997646331787,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            33.8,
+            0,
+            42.400000000000006
+          ],
+          "terrain_y": -4.8859100341796875,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            33.44,
+            0,
+            43.32
+          ],
+          "terrain_y": -4.902902603149414,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            33.08,
+            0,
+            44.239999999999995
+          ],
+          "terrain_y": -4.919891357421875,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            32.72,
+            0,
+            45.16
+          ],
+          "terrain_y": -4.936882019042969,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            32.36,
+            0,
+            46.08
+          ],
+          "terrain_y": -4.9538726806640625,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-12",
+          "point": [
+            32.0,
+            0,
+            47.0
+          ],
+          "terrain_y": -4.970863342285156,
+          "normal_z": 0.9988881945610046,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        }
+      ],
+      "limitations": [
+        "Native coarse terrain and shell only; no gameplay/collision unlock.",
+        "Colored supports are diagram reservations, not engineered stairs/gangways.",
+        "Terrain diagnostics do not account for route strips/deck surfaces or establish walkability.",
+        "Lighting joins, watertight hull, guards, furnishings and runtime acceptance pending."
+      ]
+    },
+    {
+      "id": "WLD-16",
+      "planning_checks": 276,
+      "native_meshes": 125,
+      "floor_parts_160mm": 16,
+      "terrain_range": [
+        -0.7613649368286133,
+        1.1990084648132324
+      ],
+      "terrain_upward_faces": true,
+      "shaped_floor_voids": [],
+      "tower_wall_joins": [],
+      "glb_meshes": 144,
+      "glb_triangles": 39284,
+      "glb_uvs_finite_positions": true,
+      "outdoor_terrain_diagnostic_samples": 157,
+      "outdoor_terrain_findings": [
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            46.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9747872948646545,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            45.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9747872948646545,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            44.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9670937657356262,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            43.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9670937657356262,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            42.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9599049091339111,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            41.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9599049091339111,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            40.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9541164636611938,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            39.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9541164636611938,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            38.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9504699110984802,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            37.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9504699110984802,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            36.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9494355916976929,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            35.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9494355916976929,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            34.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9511469006538391,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-03",
+          "point": [
+            26.0,
+            0,
+            33.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9511469006538391,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-06",
+          "point": [
+            18.525,
+            0,
+            28.575
+          ],
+          "terrain_y": -0.2087879180908203,
+          "normal_z": 0.9792172908782959,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-09",
+          "point": [
+            23.125,
+            0,
+            31.75
+          ],
+          "terrain_y": -0.16228866577148438,
+          "normal_z": 0.9703347682952881,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-09",
+          "point": [
+            22.166666666666668,
+            0,
+            32.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9703347682952881,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-09",
+          "point": [
+            21.208333333333332,
+            0,
+            32.25
+          ],
+          "terrain_y": -0.1684722900390625,
+          "normal_z": 0.9644789695739746,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            50.0,
+            0,
+            50.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.8837371468544006,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            50.0,
+            0,
+            51.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.939643383026123,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            50.0,
+            0,
+            52.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.939643383026123,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            50.0,
+            0,
+            53.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9300530552864075,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            50.0,
+            0,
+            54.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9300530552864075,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            50.0,
+            0,
+            55.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9221711158752441,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            50.0,
+            0,
+            56.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9221711158752441,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            50.0,
+            0,
+            56.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9221711158752441,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            49.0,
+            0,
+            56.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9242896437644958,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            48.0,
+            0,
+            56.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9242896437644958,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            47.0,
+            0,
+            56.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9757508635520935,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-13",
+          "point": [
+            46.0,
+            0,
+            56.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9757508635520935,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            50.0,
+            0,
+            22.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9473941922187805,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            50.0,
+            0,
+            21.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9473941922187805,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            50.0,
+            0,
+            20.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9371448755264282,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            50.0,
+            0,
+            19.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9371448755264282,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            50.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.82704097032547,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            50.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.82704097032547,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            49.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.8724495768547058,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            48.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.8724495768547058,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            47.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.8884562253952026,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            46.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.8884562253952026,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            45.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.910508930683136,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            44.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.910508930683136,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            43.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9344708323478699,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            42.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9344708323478699,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            41.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9573956727981567,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            40.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9573956727981567,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            39.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9765308499336243,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "route-14",
+          "point": [
+            38.0,
+            0,
+            18.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9765308499336243,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        }
+      ],
+      "limitations": [
+        "Native coarse terrain and shell only; no gameplay/collision unlock.",
+        "Colored supports are diagram reservations, not engineered stairs/gangways.",
+        "Terrain diagnostics do not account for route strips/deck surfaces or establish walkability.",
+        "Lighting joins, watertight hull, guards, furnishings and runtime acceptance pending."
+      ]
+    },
+    {
+      "id": "WLD-17",
+      "planning_checks": 187,
+      "native_meshes": 148,
+      "floor_parts_160mm": 33,
+      "terrain_range": [
+        -0.6986137628555298,
+        6.900000095367432
+      ],
+      "terrain_upward_faces": true,
+      "shaped_floor_voids": [],
+      "tower_wall_joins": [],
+      "glb_meshes": 163,
+      "glb_triangles": 34731,
+      "glb_uvs_finite_positions": true,
+      "outdoor_terrain_diagnostic_samples": 0,
+      "outdoor_terrain_findings": [],
+      "limitations": [
+        "Native coarse terrain and shell only; no gameplay/collision unlock.",
+        "Colored supports are diagram reservations, not engineered stairs/gangways.",
+        "Terrain diagnostics do not account for route strips/deck surfaces or establish walkability.",
+        "Lighting joins, watertight hull, guards, furnishings and runtime acceptance pending."
+      ]
+    },
+    {
+      "id": "WLD-18",
+      "planning_checks": 198,
+      "native_meshes": 155,
+      "floor_parts_160mm": 37,
+      "terrain_range": [
+        -0.34761717915534973,
+        1.5497441291809082
+      ],
+      "terrain_upward_faces": true,
+      "shaped_floor_voids": [
+        "upperring",
+        "lowring"
+      ],
+      "tower_wall_joins": [],
+      "glb_meshes": 171,
+      "glb_triangles": 36860,
+      "glb_uvs_finite_positions": true,
+      "outdoor_terrain_diagnostic_samples": 18,
+      "outdoor_terrain_findings": [],
+      "limitations": [
+        "Native coarse terrain and shell only; no gameplay/collision unlock.",
+        "Colored supports are diagram reservations, not engineered stairs/gangways.",
+        "Terrain diagnostics do not account for route strips/deck surfaces or establish walkability.",
+        "Lighting joins, watertight hull, guards, furnishings and runtime acceptance pending."
+      ]
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "planning_checks": 302,
+      "native_meshes": 190,
+      "floor_parts_160mm": 29,
+      "terrain_range": [
+        -0.19808229804039001,
+        0.7997868061065674
+      ],
+      "terrain_upward_faces": true,
+      "shaped_floor_voids": [],
+      "tower_wall_joins": [],
+      "glb_meshes": 210,
+      "glb_triangles": 47852,
+      "glb_uvs_finite_positions": true,
+      "outdoor_terrain_diagnostic_samples": 124,
+      "outdoor_terrain_findings": [
+        {
+          "link": "L09",
+          "point": [
+            28.0,
+            0,
+            12.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9792047142982483,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        },
+        {
+          "link": "L10",
+          "point": [
+            28.0,
+            0,
+            12.0
+          ],
+          "terrain_y": -0.10000038146972656,
+          "normal_z": 0.9792047142982483,
+          "note": "Diagnostic only; decks/route strips may support this point. Actual surface ownership and swept path remain open."
+        }
+      ],
+      "limitations": [
+        "Native coarse terrain and shell only; no gameplay/collision unlock.",
+        "Colored supports are diagram reservations, not engineered stairs/gangways.",
+        "Terrain diagnostics do not account for route strips/deck surfaces or establish walkability.",
+        "Lighting joins, watertight hull, guards, furnishings and runtime acceptance pending."
+      ]
+    }
+  ],
+  "protected_original_count": 73,
+  "original_cemetery_spaces_links_rites_unchanged": true
+}

@@ -107,3 +107,9 @@ Numbered markers, caretaker succession and missing parish entries connect provis
 - docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md
 - docs/environments/SHARED_VAN_MODULE.md
 - User-requested mortuary extension, 23 October 2026; specialist architectural reference and detailed fixture dimensions still pending.
+
+## Native rough blockout
+
+[Editable scene](../../blockouts/wld-07-mortuary/rough-shell.blend) · [GLB export](../../blockouts/wld-07-mortuary/rough-shell.glb) · [Native overview](../../blockouts/wld-07-mortuary/preview.png)
+
+The OBJ is a bounding-volume study. Native scenes retain curved tower/ring/hull shapes. Cyan/amber geometry is a route reservation, not finished construction.

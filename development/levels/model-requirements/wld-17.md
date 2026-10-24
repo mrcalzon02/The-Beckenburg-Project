@@ -15,3 +15,23 @@ Terrain and supported routes precede architecture and dressing. This is a workli
 - Coastal rock berms, boundary fence and overgrown concrete apron
 
 Every named space has a room-by-room record in the adjacent JSON. Audit existing assets first; never substitute a wrongly scaled or wrong-purpose workshop model.
+
+## Room furniture and fixtures
+
+- **stage**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **entry**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **approach**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **yard**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **west**: Empty mount ring, drain, service hatch and protected passage fittings
+- **east**: Second empty mount ring and exposed concrete wear variants
+- **gallery**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **magazine**: Empty reinforced storage bays, inert rack remains and heavy door
+- **service**: Repair bench, storage lockers and ventilation grille
+- **director**: Static observation instrument, plotting table and guarded access
+- **barracks**: Bunks, lockers, stove and duty storage
+- **lowgallery**: Room-appropriate furniture and fixtures leaving routes and rituals clear; Supported task clutter, labels and history-specific wear
+- **plant**: Inert ventilation plant, isolated power fittings and cable trays
+- **records**: Duty desk/chair, records cabinet, noticeboard and phone housing
+- **pump**: Drainage pump, sump grate, valves and supported pipes
+
+Clutter and wear follow each room’s function. Quantity and source-library reuse are unaccepted until scale, pivot, UV, support and circulation are inspected.

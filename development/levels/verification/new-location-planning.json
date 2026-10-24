@@ -6,42 +6,48 @@
       "checks": 283,
       "zones": 23,
       "routes": 24,
-      "status": "planning checks pass; no physical navigation acceptance"
+      "status": "planning checks pass; no physical navigation acceptance",
+      "source_sha256": "80b8697bf08768bba5d40d92ca25e8dbbd1d965f0c413412e29192d07934dcdc"
     },
     {
       "id": "WLD-15",
       "checks": 190,
       "zones": 16,
       "routes": 19,
-      "status": "planning checks pass; no physical navigation acceptance"
+      "status": "planning checks pass; no physical navigation acceptance",
+      "source_sha256": "2a1bc652d3a9bbaf560232c230d70d8d190af306caaf3bfe842a081cf3ddf069"
     },
     {
       "id": "WLD-16",
       "checks": 276,
       "zones": 19,
       "routes": 22,
-      "status": "planning checks pass; no physical navigation acceptance"
+      "status": "planning checks pass; no physical navigation acceptance",
+      "source_sha256": "6a545e169efa07d7df40644245a4fedf68b6d9cc1cd965a41b195ad3193057d6"
     },
     {
       "id": "WLD-17",
       "checks": 187,
       "zones": 15,
       "routes": 17,
-      "status": "planning checks pass; no physical navigation acceptance"
+      "status": "planning checks pass; no physical navigation acceptance",
+      "source_sha256": "c8b7ee372a00703088e125ff980d81b8ceadece4f4aa99c5b78254d1d580675d"
     },
     {
       "id": "WLD-18",
       "checks": 198,
       "zones": 16,
       "routes": 19,
-      "status": "planning checks pass; no physical navigation acceptance"
+      "status": "planning checks pass; no physical navigation acceptance",
+      "source_sha256": "d6ba46035157672b771a97aa76d9cad3d6d2608cfeca5942dd65dde2cdb5d2e7"
     },
     {
       "id": "WLD-07-MORTUARY",
       "checks": 302,
       "zones": 20,
       "routes": 25,
-      "status": "planning checks pass; no physical navigation acceptance"
+      "status": "planning checks pass; no physical navigation acceptance",
+      "source_sha256": "d6c6c8a4c083cffc3e14d2a4c1cadb93d364eaa05d7897dcf4987573cf33b148"
     }
   ],
   "protected_originals": {

@@ -1,0 +1,346 @@
+{
+  "id": "WLD-14",
+  "title": "Morrow Point Lightstation",
+  "source": "layouts\\wld-14\\layout.json",
+  "source_sha256": "80b8697bf08768bba5d40d92ca25e8dbbd1d965f0c413412e29192d07934dcdc",
+  "zones": 23,
+  "routes": 24,
+  "shell_openings": [
+    {
+      "zone": "foyer",
+      "side": "S",
+      "link": "route-03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "W",
+      "link": "route-04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "E",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "sitting",
+      "side": "N",
+      "link": "route-05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "sitting",
+      "side": "E",
+      "link": "route-04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "N",
+      "link": "route-07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "W",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "E",
+      "link": "route-18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workroom",
+      "side": "S",
+      "link": "route-05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workroom",
+      "side": "W",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workroom",
+      "side": "E",
+      "link": "route-06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "N",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "S",
+      "link": "route-07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "W",
+      "link": "route-06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "E",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stairs",
+      "side": "W",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "bed",
+      "side": "W",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "bed",
+      "side": "E",
+      "link": "route-12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "study",
+      "side": "W",
+      "link": "route-12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "study",
+      "side": "E",
+      "link": "route-11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "upperhall",
+      "side": "W",
+      "link": "route-11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "service-stair",
+      "side": "E",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "service-upper",
+      "side": "E",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "passage",
+      "side": "N",
+      "link": "route-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "passage",
+      "side": "S",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "generator",
+      "side": "S",
+      "link": "route-19",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 313,
+  "issues": [
+    {
+      "zone": "upperhall",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          44.05,
+          43.05,
+          45.95,
+          44.95
+        ]
+      ]
+    },
+    {
+      "zone": "service-upper",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          13.05,
+          33.05,
+          14.95,
+          34.95
+        ]
+      ]
+    },
+    {
+      "zone": "tower1",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.849999999999994,
+          9.05,
+          35.75,
+          10.95
+        ]
+      ]
+    },
+    {
+      "zone": "tower2",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.849999999999994,
+          9.05,
+          35.75,
+          10.95
+        ]
+      ]
+    },
+    {
+      "zone": "tower3",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.849999999999994,
+          9.05,
+          35.75,
+          10.95
+        ]
+      ]
+    },
+    {
+      "zone": "tower4",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.849999999999994,
+          9.05,
+          35.75,
+          10.95
+        ]
+      ]
+    },
+    {
+      "zone": "tower5",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.849999999999994,
+          9.05,
+          35.75,
+          10.95
+        ]
+      ]
+    },
+    {
+      "link": "route-10",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.2,
+      "plan_run": 20.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-14",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.2,
+      "plan_run": 20.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-20",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.6,
+      "plan_run": 17.556029852998677,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-21",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.6,
+      "plan_run": 17.556029852998677,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-22",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.6000000000000005,
+      "plan_run": 17.556029852998677,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-23",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.5999999999999996,
+      "plan_run": 17.556029852998677,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    },
+    {
+      "link": "route-24",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3.5999999999999996,
+      "plan_run": 17.556029852998677,
+      "requires_switchbacks": false,
+      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+    }
+  ],
+  "source_refinement": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "NPS station component reference only; all dimensions and story are original, not a measured historic replica.",
+    "Tower spiral currently has sloped route mass only; treads, central void, headroom, door apertures and fall guards need engineering."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "6b8d0496c954c075010f6fe6c53264cf6880168668c432b43b72dc886284a27b",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

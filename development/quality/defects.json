@@ -281,12 +281,34 @@
       "id": "DEV-026",
       "title": "Broad terrain pass exposes unresolved grade and crossing support locations",
       "status": "open-terrain-refinement",
-      "affected": "Sixteen remaining rough development sites",
+      "affected": "Sixteen remaining rough development sites; six new-location proposal diagnostics tracked separately",
       "symptom": "Actual native level-link probes flagged 937 sampled support/grade locations; canyon and railway account for the largest groups.",
       "cause": "Existing coarse connector reservations and new first-pass terrain heights still need fine grading, engineered crossings, stair/rock-volume work and exact surface ownership.",
       "action": "Keep each location and unengineered transition in the per-site verification reports. Prioritize canyon/rail terrain refinement; do not promote broad foundation checks to navigation acceptance or unlock missions.",
-      "evidence": "development/levels/verification/terrain-foundations.json and terrain-foundations/<key>/verification.json contain every diagnostic position and scope.",
+      "evidence": "development/levels/verification/terrain-foundations.json and terrain-foundations/<key>/verification.json contain every diagnostic position and scope. Additional new-location-native.json retains 127 terrain-only sampled findings out of 399 probes. These include deck/walkway points and are not unique defects or a swept route acceptance.",
       "older_maps": "Apply actual full-width/swept traversal review before detail work; graph connectivity and native floor plates are not proof of a usable route."
+    },
+    {
+      "id": "DEV-027",
+      "title": "New lighthouse wall rings stopped short of the next storey",
+      "status": "fixed-native-rough-only",
+      "affected": "Morrow Point first rough blockout",
+      "symptom": "Visible horizontal gaps remained between circular wall rings.",
+      "cause": "Standing levels were spaced 3.6 m apart while the initial wall height was 3.0 m.",
+      "action": "Extend each authored tower wall ring to the next standing level; regenerate and reopen only the new lighthouse packet.",
+      "evidence": "development/levels/previews/defects/DEV-027-before-tower-storey-gaps.png; new-location-native.json measures five continuous wall-level joins; corrected native overview.",
+      "older_maps": "Audit storey spacing against actual wall top/roof/underside coordinates. A continuous rough ring is not a passed runtime lighting test."
+    },
+    {
+      "id": "DEV-028",
+      "title": "New rough connector meshes had no UV layer",
+      "status": "fixed-native-export-only",
+      "affected": "Six new-location rough proposal exports",
+      "symptom": "Independent GLB reload failed the all-mesh UV presence check.",
+      "cause": "The old rough route-strip generator authored position faces without texture coordinates.",
+      "action": "Before saving/exporting new terrain-tagged proposals, add finite metre-plan UVs to meshes lacking a UV layer; retain existing UVs and old maps.",
+      "evidence": "development/quality/evidence/DEV-028-native-uv-before.txt records the initial failure; independent rerun development/levels/verification/new-location-native.json passes all six actual GLB UV/finite geometry checks.",
+      "older_maps": "Audit legacy route-strip UVs before applying textured finishes. Presence of UVs alone does not establish correct material scale or finish quality."
     }
   ],
   "audit_categories": [

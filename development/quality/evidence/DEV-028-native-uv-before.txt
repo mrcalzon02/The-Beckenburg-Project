@@ -1,0 +1,7 @@
+Recorded excerpt from the initial Blender native GLB reload, 23 October 2026.
+
+verify_new_site_blockouts.py, initial line 82:
+    assert loaded and triangles>0 and all(len(o.data.uv_layers)>0 for o in loaded)
+AssertionError
+
+Inspection found rough route-strip meshes had no UV layer. New proposal export preparation now adds metre-plan UVs only where absent. All six GLBs then passed the same UV presence check; see new-location-native.json. This does not certify final UV scale or textured material appearance.

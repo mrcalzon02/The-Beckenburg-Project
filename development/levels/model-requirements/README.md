@@ -27,3 +27,15 @@ Planning checklists for all 23 maps: standard furniture/fixtures, reusable local
 - [Greywater Cannery](wld-13.md) · [structured JSON](wld-13.json)
 
 Generated from measured layouts and actual local model filenames. Quantities, new-asset budgets and scene acceptance remain for the implementation pass.
+
+
+## New locations and mortuary expansion — 23 October
+
+The base roster is now 28 packets including HQ, with one separately tracked cemetery expansion.
+
+- [Morrow Point Lightstation](wld-14.md)
+- [MV Saint Elara](wld-15.md)
+- [Eight Pines Motor Lodge](wld-16.md)
+- [Battery Brackenhead](wld-17.md)
+- [Site Cinder-6](wld-18.md)
+- [Saint Bartholomew's Cemetery & Vale Mortuary](wld-07-mortuary.md)

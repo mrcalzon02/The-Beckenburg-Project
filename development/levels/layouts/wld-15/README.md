@@ -94,3 +94,9 @@ Fictional location and records connect to the district investigation; narrative 
 ## Source basis
 
 - https://www.oceanpeaceinc.com/fleet
+
+## Native rough blockout
+
+[Editable scene](../../blockouts/wld-15/rough-shell.blend) · [GLB export](../../blockouts/wld-15/rough-shell.glb) · [Native overview](../../blockouts/wld-15/preview.png)
+
+The OBJ is a bounding-volume study. Native scenes retain curved tower/ring/hull shapes. Cyan/amber geometry is a route reservation, not finished construction.

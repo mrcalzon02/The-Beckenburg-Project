@@ -91,3 +91,9 @@ Fictional location and records connect to the district investigation; narrative 
 ## Source basis
 
 - https://www.nps.gov/places/000/battery-townsley.htm
+
+## Native rough blockout
+
+[Editable scene](../../blockouts/wld-17/rough-shell.blend) · [GLB export](../../blockouts/wld-17/rough-shell.glb) · [Native overview](../../blockouts/wld-17/preview.png)
+
+The OBJ is a bounding-volume study. Native scenes retain curved tower/ring/hull shapes. Cyan/amber geometry is a route reservation, not finished construction.

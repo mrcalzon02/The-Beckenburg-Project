@@ -1,0 +1,308 @@
+{
+  "id": "WLD-07-MORTUARY",
+  "title": "Saint Bartholomew's Cemetery & Vale Mortuary",
+  "source": "layout-expansions\\wld-07-mortuary\\layout.json",
+  "source_sha256": "d6c6c8a4c083cffc3e14d2a4c1cadb93d364eaa05d7897dcf4987573cf33b148",
+  "zones": 20,
+  "routes": 25,
+  "shell_openings": [
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "S",
+      "link": "L04",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "E",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "E",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tool",
+      "side": "W",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tool",
+      "side": "W",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "east-stair",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "east-stair",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ossuary",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ossuary",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "N",
+      "link": "mort-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "S",
+      "link": "mort-22",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "W",
+      "link": "mort-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "W",
+      "link": "mort-23",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "E",
+      "link": "mort-21",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-viewing",
+      "side": "S",
+      "link": "mort-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-viewing",
+      "side": "W",
+      "link": "mort-24",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-viewing",
+      "side": "E",
+      "link": "mort-18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-prep",
+      "side": "S",
+      "link": "mort-19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-prep",
+      "side": "W",
+      "link": "mort-18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-cold",
+      "side": "N",
+      "link": "mort-19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-cold",
+      "side": "S",
+      "link": "mort-20",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-office",
+      "side": "N",
+      "link": "mort-20",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-office",
+      "side": "W",
+      "link": "mort-21",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-bay",
+      "side": "N",
+      "link": "mort-22",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-hall",
+      "side": "E",
+      "link": "mort-23",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-hall",
+      "side": "E",
+      "link": "mort-24",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 190,
+  "issues": [
+    {
+      "zone": "west-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.05,
+          15.05,
+          11.95,
+          16.95
+        ]
+      ]
+    },
+    {
+      "zone": "east-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          44.05,
+          15.05,
+          45.95,
+          16.95
+        ]
+      ]
+    },
+    {
+      "link": "L14",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 17.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L15",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 3,
+      "plan_run": 17.0,
+      "requires_switchbacks": false,
+      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  ],
+  "source_refinement": [
+    "Research burial-ground circulation and ossuary structure before detailed construction; keep fictional history explicit.",
+    "Place no rites on graves or inaccessible marker tops; all reservation squares are on clear paths/floors.",
+    "Test underground exit visibility and tree-occlusion consistency.",
+    "Original cemetery geometry and ritual reservations are retained byte-for-byte in its separate source packet.",
+    "Review mortuary room hygiene/service separation before detailed dressing; use appropriate purpose-built fixtures."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "014e0a8a06c078acbe305af9f6994a5c73698ff3abb52b9667fb01a8198fd13f",
+  "status": "rough-shell-blocked; runtime integration pending"
+}

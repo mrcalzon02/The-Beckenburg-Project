@@ -171,3 +171,16 @@ The baseline CastleHubIntegrationTest sky assertion remains recorded, not fixed.
 
 Exact input/output/cached token counts for this resumed run are unavailable.
 No token counts have been inferred from account percentages.
+
+
+## Five new locations and additive mortuary — 23 October checkpoint
+
+User expanded scope: lighthouse + keeper house, static retired cannery vessel, old roadside motor lodge, cemetery/mortuary, WWII coastal emplacement, and decommissioned silo. The existing cemetery is expanded in a separate packet; its original source and routes/rites are intact.
+
+Five new lore-named standard packets WLD-14 through WLD-18 plus WLD-07-MORTUARY contain 109 space reservations. All 28 base catalog packets pass planning validation. Per-map worklists include standard architecture, room furniture/fixtures, unique landmark models and supported clutter/detail requirements. Native terrain-first rough scenes, GLB exports, plan images, ground overviews and layer studies are in blockouts/NEW_LOCATIONS_REVIEW.html.
+
+Actual Blender reopening and GLB reimport pass finite geometry/UV checks, all authored floor parts retain 160 mm depth, shaped landing/ring voids and the empty -16 m shaft are checked. 73 original layout/blockout/terrain files retain hashes; original cemetery space/link/rite records match. DEV-027 tower wall-ring gap and DEV-028 connector UV omissions are corrected and recorded. Terrain-only diagnostics retain 127 flagged samples out of 399; these include deck points and are not unique bugs or navigation passes.
+
+Next: refine terrain support and exact route ownership; engineer stairs, headroom, guards, gangways and hull sealing, then construction and model fitting. Native blocking is not gameplay/collision/light-isolation acceptance. No map is unlocked; no engine or van implementation changed. The vessel stays moored; silo and battery equipment stays inert. Water is an opaque review placeholder: runtime layering/transparency/depth remains open.
+
+The pre-addition 533-image gallery was verified live (87 full evidence hashes). Publish and verify the new captures at this checkpoint. Preserve six unrelated verification working files. Exact token usage metadata remains unavailable.

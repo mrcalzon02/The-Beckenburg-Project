@@ -94,3 +94,9 @@ Fictional location and records connect to the district investigation; narrative 
 ## Source basis
 
 - https://www.nps.gov/places/delta-09.htm
+
+## Native rough blockout
+
+[Editable scene](../../blockouts/wld-18/rough-shell.blend) · [GLB export](../../blockouts/wld-18/rough-shell.glb) · [Native overview](../../blockouts/wld-18/preview.png)
+
+The OBJ is a bounding-volume study. Native scenes retain curved tower/ring/hull shapes. Cyan/amber geometry is a route reservation, not finished construction.
