@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 678,
+  "count": 689,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1334,6 +1334,26 @@
       "sha256": "9209835dfd20e3433df714430bcb3798a85cf46c2b9d23828d2833333cfe2494"
     },
     {
+      "path": "development/levels/previews/defects/DEV-062-before-stepped-dome-aperture.png",
+      "url": "development/levels/previews/defects/DEV-062-before-stepped-dome-aperture.png",
+      "title": "Dev 062 before stepped dome aperture",
+      "kind": "Development review",
+      "width": 1536,
+      "height": 640,
+      "bytes": 846163,
+      "sha256": "0d537752180d5e53ddba0daf169841774d2ca39ad22571d35086a6d2229e76aa"
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-066-before-buried-canopy-native-fitout.png",
+      "url": "development/levels/previews/defects/DEV-066-before-buried-canopy-native-fitout.png",
+      "title": "Dev 066 before buried canopy native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2059944,
+      "sha256": "f3b414f247717a3fe4a80a5fbb6475e443520f7714822da6933ba3f70f8de5d1"
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "url": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "title": "Academy edge sky plan",
@@ -2224,6 +2244,66 @@
       "sha256": "0e6978a55958c09a1baea455cf8bb6413d0f564b723f187a7d1794a69d4e57e9"
     },
     {
+      "path": "development/levels/previews/hollow-creek/tailored-bedding-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/tailored-bedding-native-fitout.png",
+      "title": "Tailored bedding native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 1875313,
+      "sha256": "9e388bcc4aa2741941b8ef9d63f7cd3aef69308cc791dad7dbd0a69df72ad784"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-before-east-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/tailored-before-east-native-fitout.png",
+      "title": "Tailored before east native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2083333,
+      "sha256": "a25cf28b9b1c248b89e7ecc68454c6336b6a41edb0b6d97c1a88dc1f13aa25a9"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-before-west-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/tailored-before-west-native-fitout.png",
+      "title": "Tailored before west native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2105551,
+      "sha256": "947024d43d2fa289258c2bb1e19e86201ca54823023725451ce0330bcbcba833"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-east-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/tailored-east-native-fitout.png",
+      "title": "Tailored east native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2092204,
+      "sha256": "061c41c40ebb532c266a37dad3705ff7e22f1d870a5d70e1d2898d27001fb036"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/tailored-site-native-fitout.png",
+      "title": "Tailored site native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2441670,
+      "sha256": "a476c46336f6a0dc45dc59dcdb91d749edff2f167686a1352c94f8801acc2722"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-west-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/tailored-west-native-fitout.png",
+      "title": "Tailored west native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2121097,
+      "sha256": "cffd79b8f90feae39a7e9a67200e2d5fdff07cf7948a49262ffae1275e5b8e6a"
+    },
+    {
       "path": "development/levels/previews/hollow-creek/tents-east-native-fitout.png",
       "url": "development/levels/previews/hollow-creek/tents-east-native-fitout.png",
       "title": "Tents east native fitout",
@@ -2542,6 +2622,16 @@
       "height": 640,
       "bytes": 859064,
       "sha256": "e582cc65dda1d5f17e6ad9fbdb78c75ef22a2c3d277b25afe90bfcb098c4048f"
+    },
+    {
+      "path": "development/levels/previews/level_camp_bedroll_rolled_tailored.png",
+      "url": "development/levels/previews/level_camp_bedroll_rolled_tailored.png",
+      "title": "Level camp bedroll rolled tailored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 852591,
+      "sha256": "502e70b4f2a61cb7d213b0f54c4e4218cf72dc0e1179a3b0de03ebe9fe27cdc9"
     },
     {
       "path": "development/levels/previews/level_camp_bench.png",
@@ -3074,6 +3164,16 @@
       "sha256": "611b5b938148ce8391e4db5600fb229d395c1bae6877acd1b56d4c925573b0a1"
     },
     {
+      "path": "development/levels/previews/level_camp_tent_dome_tailored.png",
+      "url": "development/levels/previews/level_camp_tent_dome_tailored.png",
+      "title": "Level camp tent dome tailored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 850428,
+      "sha256": "af852830871f1543a61c4498b36458fe2c9c38a8569058e25c5006ea9ee0ff3e"
+    },
+    {
       "path": "development/levels/previews/level_camp_tent_ridge.png",
       "url": "development/levels/previews/level_camp_tent_ridge.png",
       "title": "Level camp tent ridge",
@@ -3092,6 +3192,16 @@
       "height": 640,
       "bytes": 826603,
       "sha256": "ce15a3aaf44abf3b9b5661a2c4aa2cb071d736994d9e160e3655ba6f286c2717"
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_ridge_tailored.png",
+      "url": "development/levels/previews/level_camp_tent_ridge_tailored.png",
+      "title": "Level camp tent ridge tailored",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 833330,
+      "sha256": "aa4ee3752bf24e952396acdeab946e9d89f75a4a1e293a0f5720d03b13e9ce9b"
     },
     {
       "path": "development/levels/previews/level_camp_terrain.png",

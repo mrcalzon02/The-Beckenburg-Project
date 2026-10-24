@@ -1,0 +1,87 @@
+{
+  "status": "pass-native-fabric-only",
+  "assets": [
+    {
+      "id": "level_camp_tent_ridge_tailored",
+      "closed_shell": true,
+      "sewn_support_probes": 960,
+      "max_seam_center_gap_m": 0.004928854294121265,
+      "thickness_probes": 18,
+      "canvas_thickness_m": [
+        0.0076986387175947135,
+        0.008449381087393912
+      ],
+      "rear_aperture_rays": 0
+    },
+    {
+      "id": "level_camp_tent_dome_tailored",
+      "closed_shell": true,
+      "sewn_support_probes": 610,
+      "max_seam_center_gap_m": 0.004696246702224016,
+      "thickness_probes": 14,
+      "canvas_thickness_m": [
+        0.007889260571521067,
+        0.008920418586885259
+      ],
+      "rear_aperture_rays": 18
+    },
+    {
+      "id": "level_camp_bedroll_rolled_tailored",
+      "closed_shell": true,
+      "sewn_support_probes": 1620,
+      "max_seam_center_gap_m": 0.002323551569133997,
+      "thickness_probes": 0,
+      "canvas_thickness_m": null,
+      "rear_aperture_rays": 0
+    }
+  ],
+  "instances": 15,
+  "unmodified_scene_meshes": 788,
+  "exact_fitted_floor_vertices": 232864,
+  "fitted_tent_floors": 8,
+  "actual_native_roof_floor_rays": 72,
+  "roof_floor_height_m": [
+    1.4008877277374268,
+    1.831214427947998
+  ],
+  "source_sha256": "105df4036d5a34a1c3d10d1c8d0e90f122ea18aac1b09093844d12fdbb0d685e",
+  "captures": [
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-before-west-native-fitout.png",
+      "sha256": "947024d43d2fa289258c2bb1e19e86201ca54823023725451ce0330bcbcba833",
+      "scene": "hollow-creek-authored.blend",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-before-east-native-fitout.png",
+      "sha256": "a25cf28b9b1c248b89e7ecc68454c6336b6a41edb0b6d97c1a88dc1f13aa25a9",
+      "scene": "hollow-creek-authored.blend",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-west-native-fitout.png",
+      "sha256": "cffd79b8f90feae39a7e9a67200e2d5fdff07cf7948a49262ffae1275e5b8e6a",
+      "scene": "hollow-creek-tailored.blend",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-east-native-fitout.png",
+      "sha256": "061c41c40ebb532c266a37dad3705ff7e22f1d870a5d70e1d2898d27001fb036",
+      "scene": "hollow-creek-tailored.blend",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-bedding-native-fitout.png",
+      "sha256": "9e388bcc4aa2741941b8ef9d63f7cd3aef69308cc791dad7dbd0a69df72ad784",
+      "scene": "hollow-creek-tailored.blend",
+      "kind": "Native scene overview"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-site-native-fitout.png",
+      "sha256": "a476c46336f6a0dc45dc59dcdb91d749edff2f167686a1352c94f8801acc2722",
+      "scene": "hollow-creek-tailored.blend",
+      "kind": "Native scene overview"
+    }
+  ],
+  "runtime_map_acceptance": false
+}

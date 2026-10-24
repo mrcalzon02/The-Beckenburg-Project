@@ -864,6 +864,76 @@ Evidence and verification: previews/defects/DEV-061-before-bake-palette-washout.
 
 Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
 
+### DEV-062 — Dome canopy opening retains whole-cell staircase
+
+**Status:** fixed-tailored-source-and-eight-tent-native-pass · **Affected:** Hollow Creek dome tent
+
+Close-up shows a stepped/angular cutout instead of a continuous sewn entrance.
+
+Cause / uncertainty: Original canopy removed complete latitude/longitude grid faces for the opening.
+
+Fix / next action: Author a continuous arched boundary, constrained interior triangulation, joined front/rear curved shell and surface-fitted binding. Retain floors/frame/anchors and rerun actual crouch entry.
+
+Evidence and verification: previews/defects/DEV-062-before-stepped-dome-aperture.png; verification/hollow-creek-tailored-shape.json; hollow-creek/TAILORED_REVIEW.html
+
+Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
+
+### DEV-063 — Projected hemisphere seam produced overlapping shell rim faces
+
+**Status:** fixed-tailored-dome-topology · **Affected:** Intermediate tailored dome canopy
+
+Actual shell audit found16 edges with four adjacent faces at the joined hemisphere seam.
+
+Cause / uncertainty: Floating-point ellipse projection left tiny nonzero Y values at the shared boundary, preventing a clean weld before solidification.
+
+Fix / next action: Set the mathematical shared boundary to Y0, weld before solidification and check all actual shell edges have exactly two adjacent faces. Final canopy has no open/three/four-face edges. Constrained interior sampling replaces the stretched triangle fan.
+
+Evidence and verification: verification/hollow-creek-tailored-shape.json; review_hollow_creek_fabric.py; tailored native/studio captures
+
+Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
+
+### DEV-064 — Independent floor verifier rebuilt the same vertex set inside its loop
+
+**Status:** fixed-verifier-complexity · **Affected:** Fabric scene review script
+
+Initial floor comparison spent unbounded useful time recalculating membership per vertex instead of reaching visual review.
+
+Cause / uncertainty: A set-producing component query was nested inside the floor-vertex iteration.
+
+Fix / next action: Precompute selected vertices once per mesh, then compare exact saved positions. Stop only the confirmed task-specific Blender process and restart corrected review. Final review reaches six native captures and exact232864-vertex check.
+
+Evidence and verification: review_hollow_creek_fabric.py; verification/hollow-creek-tailored-shape.json
+
+Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
+
+### DEV-065 — Matrix decomposition perturbed an exact fitted tent rotation
+
+**Status:** fixed-preserving-original-transform-components · **Affected:** Additional pitched tent3 and equivalent pi rotations
+
+Independent world-space floor comparison failed even though all2648 local floor vertices matched exactly.
+
+Cause / uncertainty: Reassigning matrix_world decomposed +pi into a slightly different -pi float rotation.
+
+Fix / next action: Copy original location/rotation/scale components directly to inserted geometry; retain those exact components on the existing object. Do not widen the equality check. All232864 floor vertices across8 tents now match exact world positions.
+
+Evidence and verification: quality/evidence/DEV-065-before-transform-decomposition.txt; verification/hollow-creek-tailored-shape.json
+
+Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
+
+### DEV-066 — Replacement canopies buried by a stale dependency transform
+
+**Status:** fixed-with-positive-native-roof-presence-gate · **Affected:** Initial tailored native assembly
+
+Native capture shows a groundsheet and bedding with the whole canopy below ground; floor/route/door clearance negatives had passed.
+
+Cause / uncertainty: New object transform components were assigned but matrix_world was read for terrain conformance before dependency evaluation updated it.
+
+Fix / next action: Update the view layer before fitting. Add72 positive roof/floor rays over all8 tents, retaining exact floor positions. Rerun actual crouch, routes, bedding and visuals after the correction. Require positive model presence as well as negative overlap/clearance tests on future placements.
+
+Evidence and verification: previews/defects/DEV-066-before-buried-canopy-native-fitout.png; verification/hollow-creek-tailored-shape.json; verification/hollow-creek-tailored-fit.json
+
+Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -58,3 +58,8 @@ Next: runtime integration milestone (including actual movement containment), sup
 ## Third authored surface pass,24 October
 
 [Current authored review](AUTHORED_REVIEW.html):14 separate surface variants/30 fitted instances. Part-aligned grain, physical damp/dirt, exposure fade, sparse oxidation/corner wear and localized soot are baked into portable1024px atlases. Previous construction/smoothing stays intact. Exact geometry/placement/source-UV invariance across803 scene meshes,14 actual GLB reimports and1008 independent game-loader UV/pixel checks pass. Full runtime/human/performance gates remain open; tent/shrub/creek/cable families retain their preceding refinement. See dated AUTHORED_SURFACES handoff and DEV-056..061; existing vehicle color-count assertion also fails on the pre-change loader.
+
+
+## Tailored fabric geometry,24 October
+
+[Current tent/bedding review](TAILORED_REVIEW.html) and hollow-creek-tailored.blend advance3 model families and15 placed instances. Tension folds/sag, a continuous arched dome entrance, supported seams and quilt relief are actual geometry. Exact8 fitted floors,72 positive roof-presence probes,3190 supported seam probes and32 shell-thickness rays pass; actual crouch/routes/rituals/bedding pass after final visual correction. Runtime source models pass1080 independent UV/pixel checks. DEV-062..066 and the dated TAILORED_FABRIC handoff retain discoveries and pending integration. No new map was rebuilt/unlocked.

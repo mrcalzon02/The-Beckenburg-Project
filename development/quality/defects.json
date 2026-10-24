@@ -672,6 +672,61 @@
       "action": "Decode source sRGB palette averages and authored tint colors into linear space before emission baking. Rebuild all14 actual exports, rerender all native/studio views and rerun1008 runtime PNG/UV comparisons. Preserve failing image.",
       "evidence": "previews/defects/DEV-061-before-bake-palette-washout.png; hollow-creek/AUTHORED_REVIEW.html",
       "older_maps": "Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay."
+    },
+    {
+      "id": "DEV-062",
+      "title": "Dome canopy opening retains whole-cell staircase",
+      "status": "fixed-tailored-source-and-eight-tent-native-pass",
+      "affected": "Hollow Creek dome tent",
+      "symptom": "Close-up shows a stepped/angular cutout instead of a continuous sewn entrance.",
+      "cause": "Original canopy removed complete latitude/longitude grid faces for the opening.",
+      "action": "Author a continuous arched boundary, constrained interior triangulation, joined front/rear curved shell and surface-fitted binding. Retain floors/frame/anchors and rerun actual crouch entry.",
+      "evidence": "previews/defects/DEV-062-before-stepped-dome-aperture.png; verification/hollow-creek-tailored-shape.json; hollow-creek/TAILORED_REVIEW.html",
+      "older_maps": "Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-063",
+      "title": "Projected hemisphere seam produced overlapping shell rim faces",
+      "status": "fixed-tailored-dome-topology",
+      "affected": "Intermediate tailored dome canopy",
+      "symptom": "Actual shell audit found16 edges with four adjacent faces at the joined hemisphere seam.",
+      "cause": "Floating-point ellipse projection left tiny nonzero Y values at the shared boundary, preventing a clean weld before solidification.",
+      "action": "Set the mathematical shared boundary to Y0, weld before solidification and check all actual shell edges have exactly two adjacent faces. Final canopy has no open/three/four-face edges. Constrained interior sampling replaces the stretched triangle fan.",
+      "evidence": "verification/hollow-creek-tailored-shape.json; review_hollow_creek_fabric.py; tailored native/studio captures",
+      "older_maps": "Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-064",
+      "title": "Independent floor verifier rebuilt the same vertex set inside its loop",
+      "status": "fixed-verifier-complexity",
+      "affected": "Fabric scene review script",
+      "symptom": "Initial floor comparison spent unbounded useful time recalculating membership per vertex instead of reaching visual review.",
+      "cause": "A set-producing component query was nested inside the floor-vertex iteration.",
+      "action": "Precompute selected vertices once per mesh, then compare exact saved positions. Stop only the confirmed task-specific Blender process and restart corrected review. Final review reaches six native captures and exact232864-vertex check.",
+      "evidence": "review_hollow_creek_fabric.py; verification/hollow-creek-tailored-shape.json",
+      "older_maps": "Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-065",
+      "title": "Matrix decomposition perturbed an exact fitted tent rotation",
+      "status": "fixed-preserving-original-transform-components",
+      "affected": "Additional pitched tent3 and equivalent pi rotations",
+      "symptom": "Independent world-space floor comparison failed even though all2648 local floor vertices matched exactly.",
+      "cause": "Reassigning matrix_world decomposed +pi into a slightly different -pi float rotation.",
+      "action": "Copy original location/rotation/scale components directly to inserted geometry; retain those exact components on the existing object. Do not widen the equality check. All232864 floor vertices across8 tents now match exact world positions.",
+      "evidence": "quality/evidence/DEV-065-before-transform-decomposition.txt; verification/hollow-creek-tailored-shape.json",
+      "older_maps": "Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-066",
+      "title": "Replacement canopies buried by a stale dependency transform",
+      "status": "fixed-with-positive-native-roof-presence-gate",
+      "affected": "Initial tailored native assembly",
+      "symptom": "Native capture shows a groundsheet and bedding with the whole canopy below ground; floor/route/door clearance negatives had passed.",
+      "cause": "New object transform components were assigned but matrix_world was read for terrain conformance before dependency evaluation updated it.",
+      "action": "Update the view layer before fitting. Add72 positive roof/floor rays over all8 tents, retaining exact floor positions. Rerun actual crouch, routes, bedding and visuals after the correction. Require positive model presence as well as negative overlap/clearance tests on future placements.",
+      "evidence": "previews/defects/DEV-066-before-buried-canopy-native-fitout.png; verification/hollow-creek-tailored-shape.json; verification/hollow-creek-tailored-fit.json",
+      "older_maps": "Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance."
     }
   ],
   "audit_categories": [

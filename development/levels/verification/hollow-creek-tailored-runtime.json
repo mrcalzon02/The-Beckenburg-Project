@@ -1,0 +1,24 @@
+{
+  "status": "pass-focused-tailored-assets-only",
+  "date": "2026-10-24",
+  "main_compile": "all current main Java sources, JDK17",
+  "new_assets": 3,
+  "new_asset_triangles": 23444,
+  "new_independent_uv_pixel_samples": 1080,
+  "previous_authored_assets_regression": {
+    "families": 14,
+    "samples": 1008,
+    "result": "pass"
+  },
+  "legacy_equipment_models": {
+    "count": 8,
+    "result": "pass"
+  },
+  "existing_open_test": "DEV-060 vehicle color-count assertion fails on previous committed loader too",
+  "not_claimed": [
+    "Full suite",
+    "Runtime Hollow Creek world renderer/collision/circuits/AI/LAN",
+    "Human/hardware/LOD/performance",
+    "Water alpha and final story/physics/Easter-eggs"
+  ]
+}
