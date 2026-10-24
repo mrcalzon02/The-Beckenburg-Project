@@ -1,0 +1,285 @@
+{
+  "status": "pass",
+  "published_commit": "ad4cf22980800fa05b3f786b1abb5059d244448e",
+  "files": 46,
+  "checks": [
+    {
+      "path": "assets/runtime/models/level_camp_dock_shed_refined.glb",
+      "bytes": 1357836,
+      "sha256": "f3ee276c7fa88e7f406cad4fc07dcf72c538dc2871b7a9ea8ae25d4600af1008",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_dock_shed_refined.blend",
+      "bytes": 1041299,
+      "sha256": "f722231bbcac1b8b7eb3b2fe4eb305cd89405573229369dea68f18d32b9e41ec",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_dock_utilities_refined.glb",
+      "bytes": 410680,
+      "sha256": "836c09d506359a678371905b0e27c2512b5877e42a92c37a6d24a0f11a355b93",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_dock_utilities_refined.blend",
+      "bytes": 451510,
+      "sha256": "6b6502f2e5b7f25bb35b82b2a7d2f759de937437babba6a9a761e88ce80129f7",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_rowboat_refined.glb",
+      "bytes": 625972,
+      "sha256": "ed13375de96c76060fada27ba864e06bcf943954d63e1e275a71fd83d6085d1d",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_rowboat_refined.blend",
+      "bytes": 536878,
+      "sha256": "c0e67e8e3a6ae66e3841beef8aec3f4954955e936618e8810d703270ae52f58f",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_folding_chair_refined.glb",
+      "bytes": 231384,
+      "sha256": "42383a0e4c518db760a8e10cec03449269531e2bfa502b5653b25bd71022236f",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_folding_chair_refined.blend",
+      "bytes": 311460,
+      "sha256": "15f0f450b3d116ce040a6b5bf95aca85db4e6cd8d97f38090c26ad09f1ba1ab1",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_cooler_refined.glb",
+      "bytes": 284048,
+      "sha256": "594d385e7e9207d493636a889f375a1dfd980d7ab9932d1f7463a8f41e38b70c",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_cooler_refined.blend",
+      "bytes": 379958,
+      "sha256": "bdd370e2f2c85ef94a4bed0458ed6f1b01f1034a1782b0e8428367776ff51236",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_portable_toilet_open_refined.glb",
+      "bytes": 662012,
+      "sha256": "f0690a40449627b3444f72fa340e5584216642b46920d2d26dd3a2075b62e3e0",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_portable_toilet_open_refined.blend",
+      "bytes": 683452,
+      "sha256": "9f79ca124d3957d8ecfb24bd2063cd85f28bd4981158fdc4a6c942eee3a7b3e7",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_portable_toilet_closed_refined.glb",
+      "bytes": 670468,
+      "sha256": "3e6a59f670049e873c12bc5912ad50625e56f1ab2998a55891c08832e2614530",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_portable_toilet_closed_refined.blend",
+      "bytes": 679262,
+      "sha256": "f58a78fd20993c23c487a407de18ae9e87926f393b83cb50c7fd07344b03b899",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_refuse_bin_refined.glb",
+      "bytes": 348040,
+      "sha256": "c34f22659bd46618f35c97cdadae4b5bf03bbdeb0dfee8ed29bdfc0bd02a4372",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_refuse_bin_refined.blend",
+      "bytes": 432244,
+      "sha256": "1e6acb334487bca732a3f218439d8fc00c9375d3a3de959c133805f258b12206",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_heron_memorial_refined.glb",
+      "bytes": 422336,
+      "sha256": "ac18e6fd5ea9c8f9a73e7377573b0f66f8501bb9bb199cb50453632cfdc24671",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_heron_memorial_refined.blend",
+      "bytes": 475540,
+      "sha256": "585d77cac9ad928db3a72c4e8e9eeb7e3b665400d068931adbc1c86c1f18574a",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_pavilion_fireplace_refined.glb",
+      "bytes": 580280,
+      "sha256": "8020bb80a78f63bbb681e3d0d16ed6d2d844199e790daa96850b66ea796421ca",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_pavilion_fireplace_refined.blend",
+      "bytes": 451465,
+      "sha256": "c53d3e813f1e6a1cd86eac809b565f9665cafbafd26344425796cb49d21b579e",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_shrub_decorative_a_refined.glb",
+      "bytes": 1393008,
+      "sha256": "657e3e832c58f66c7f06f3441e80860c0069a382d2368d0b0d5cd3e0b8082cee",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_shrub_decorative_a_refined.blend",
+      "bytes": 941054,
+      "sha256": "76f7c29b090ee73be77ab496a19e5157ccfcfeceefab197ce79c9dd826d58f9c",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_shrub_decorative_b_refined.glb",
+      "bytes": 1406384,
+      "sha256": "152409f360abbc9aa60104fa1a1b4aba46f695f889bd75bef52140e863d89f89",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_shrub_decorative_b_refined.blend",
+      "bytes": 945917,
+      "sha256": "8d0742217a4a47b9dda386735a3141bc83c97f507ff22d57c1fb57e61b908f3b",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_creek_engineering_refined.glb",
+      "bytes": 475396,
+      "sha256": "77e5311e01cb598505e2f8e4a0c9bb8b38e6773aac67dfa925176306fffbd8b1",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_creek_engineering_refined.blend",
+      "bytes": 421894,
+      "sha256": "ec661aa8f397fa1871a4f91a363e86aa4aac8f79eb48b1865d57db5de3c0bb7d",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_ridge_refined.glb",
+      "bytes": 476576,
+      "sha256": "91a68d5c47b37d49558dea18b59689bd765b15c1cfcb90b3fc6e0059c1ad323a",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_ridge_refined.blend",
+      "bytes": 763742,
+      "sha256": "9258d609ceca93ab8e6bc1ea393c5580b6c3128c105e88ade8d172c82de0c1f2",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_dome_refined.glb",
+      "bytes": 438540,
+      "sha256": "08aab25bbc2ad5c91fc6daea27896dac55246305c598f52cda1a1296c4452a9d",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_dome_refined.blend",
+      "bytes": 591207,
+      "sha256": "61b2f4c3b5a31b850e5778cc5ea8cbabf76cf8a29a99f8a4b9535acf78db8532",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_bedroll_rolled_refined.glb",
+      "bytes": 477660,
+      "sha256": "9ab1bf15fcf7ce85fa6914397146d740fa1776cddce8549f77c15b458f6422e4",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_bedroll_rolled_refined.blend",
+      "bytes": 564701,
+      "sha256": "0df1f0df0db64b9652e891ddf1679d87b1f4ddbab45b86587163a33e50132aee",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_trace_generator_refined.glb",
+      "bytes": 441224,
+      "sha256": "ccfe04347591e335c96981f981eeb27e21de4dcc4d76532a2fd8857e666481c1",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_trace_generator_refined.blend",
+      "bytes": 494736,
+      "sha256": "9c4938c837de478b7335001b240ebac5da61fd8fe36b95b173af119abf8ed098",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_pavilion_refined.glb",
+      "bytes": 971492,
+      "sha256": "b188f40b1ae1db360b4d7c5b6ae08990d65d1ba967d180097483cb00b44b2d96",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_pavilion_refined.blend",
+      "bytes": 831868,
+      "sha256": "c574b718995d71b7e9fbef5c3c36d31a16bc69c187620fb82f4ab66538632eeb",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_picnic_table_refined.glb",
+      "bytes": 412588,
+      "sha256": "f165ffa7f03820c6687716d450e12f11efd0e46823bc4766ca80c5c1e8e8e9ce",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_picnic_table_refined.blend",
+      "bytes": 417473,
+      "sha256": "17aecb90e8af7b806e751abb708737ff473d550abe547eaa81dfd2e286200c14",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_fire_ring_refined.glb",
+      "bytes": 327556,
+      "sha256": "464361b4c709d9c48f21f3d956ff5a308c52f2bd8c0147eb2517e181bece4909",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_fire_ring_refined.blend",
+      "bytes": 358741,
+      "sha256": "735443a5812386de49f2bc44703e68b288e272de90a23ab3454d6976f3e09a1e",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-refined.blend",
+      "bytes": 32649508,
+      "sha256": "eebf8deba054c4c719c3cfcaa188713690c4aa562963b75a7703186002a30a04",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/REFINEMENT_REVIEW.html",
+      "bytes": 16089,
+      "sha256": "84bdb96c4c101a351fe960140bd0e447512ca49d92ce21d3367c33ddbebec01a",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/EXPANDED_REVIEW.html",
+      "bytes": 7944,
+      "sha256": "885fa0c78391a62a8873f9167d8831399b04e6befd6695b6b57eddbc6c28ddda",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/refined-models.json",
+      "bytes": 36284,
+      "sha256": "4c37e74ad8e4b97543dd38d10183e94acb81fac6b25aaa2d782b58d259a0e178",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-refinement-captures.json",
+      "bytes": 1620,
+      "sha256": "b7096481af305e384c636bc82bccd10d6f9c7d5a06a65422cb96bd98cdcb6f44",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/refine_hollow_creek_models.py",
+      "bytes": 22148,
+      "sha256": "a780b56c6d5ef6213bec3f9ee671e7b9a3ab15876c916e7e68681b873c09553c",
+      "actual_download_matches": true
+    }
+  ],
+  "source_and_runtime_exports_verified": true,
+  "runtime_gameplay_acceptance": false
+}

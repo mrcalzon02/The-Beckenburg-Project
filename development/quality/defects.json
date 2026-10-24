@@ -595,6 +595,17 @@
       "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
+    },
+    {
+      "id": "DEV-055",
+      "title": "Delivery verifier compared Git-normalized text to Windows worktree bytes",
+      "status": "fixed-verification-comparison",
+      "affected": "Refined source publication verification",
+      "symptom": "Binary source/model downloads passed, but refined-models.json failed an exact raw hash comparison.",
+      "cause": "Git stores normalized LF text while the Windows worktree contains translated CRLF; the verifier incorrectly treated worktree byte identity as commit identity.",
+      "action": "Compare every actual download to the immutable committed Git blob with git show commit:path. Keep exact length/hash assertions for every file. Final46 actual source/export/review downloads match the committed bytes.",
+      "evidence": "verification/hollow-creek-refined-delivery.json; final immutable GitHub download verification",
+      "older_maps": "Use committed bytes for remote delivery checks when text normalization applies. Preserve raw binary equality checks; do not waive real source/export mismatch."
     }
   ],
   "audit_categories": [

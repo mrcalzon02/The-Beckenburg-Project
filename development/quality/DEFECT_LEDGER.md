@@ -766,6 +766,20 @@ Evidence and verification: development/levels/previews/defects/DEV-054-before-fi
 
 Older-map obligation: Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance.
 
+### DEV-055 — Delivery verifier compared Git-normalized text to Windows worktree bytes
+
+**Status:** fixed-verification-comparison · **Affected:** Refined source publication verification
+
+Binary source/model downloads passed, but refined-models.json failed an exact raw hash comparison.
+
+Cause / uncertainty: Git stores normalized LF text while the Windows worktree contains translated CRLF; the verifier incorrectly treated worktree byte identity as commit identity.
+
+Fix / next action: Compare every actual download to the immutable committed Git blob with git show commit:path. Keep exact length/hash assertions for every file. Final46 actual source/export/review downloads match the committed bytes.
+
+Evidence and verification: verification/hollow-creek-refined-delivery.json; final immutable GitHub download verification
+
+Older-map obligation: Use committed bytes for remote delivery checks when text normalization applies. Preserve raw binary equality checks; do not waive real source/export mismatch.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
