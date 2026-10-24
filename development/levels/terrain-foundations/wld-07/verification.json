@@ -1,0 +1,235 @@
+{
+  "key": "wld-07",
+  "title": "Saint Bartholomew's Forgotten Cemetery",
+  "status": "pass-native-foundation-properties-only",
+  "triangles": 8288,
+  "ground_triangle_samples": 478,
+  "height_range": [
+    -0.637818,
+    2.041116
+  ],
+  "preserved_floor_layers": [
+    {
+      "id": "chamber",
+      "y": -3
+    },
+    {
+      "id": "chapel",
+      "y": 0
+    },
+    {
+      "id": "cottage",
+      "y": 0
+    },
+    {
+      "id": "east-stair",
+      "y": 0
+    },
+    {
+      "id": "east-stair",
+      "y": 0
+    },
+    {
+      "id": "east-stair",
+      "y": 0
+    },
+    {
+      "id": "east-stair",
+      "y": 0
+    },
+    {
+      "id": "east-stair",
+      "y": 0
+    },
+    {
+      "id": "east-stair",
+      "y": 0
+    },
+    {
+      "id": "east-stair",
+      "y": 0
+    },
+    {
+      "id": "east-stair",
+      "y": 0
+    },
+    {
+      "id": "ossuary",
+      "y": -3
+    },
+    {
+      "id": "stage",
+      "y": 0
+    },
+    {
+      "id": "tool",
+      "y": 0
+    },
+    {
+      "id": "west-stair",
+      "y": 0
+    },
+    {
+      "id": "west-stair",
+      "y": 0
+    },
+    {
+      "id": "west-stair",
+      "y": 0
+    },
+    {
+      "id": "west-stair",
+      "y": 0
+    },
+    {
+      "id": "west-stair",
+      "y": 0
+    },
+    {
+      "id": "west-stair",
+      "y": 0
+    },
+    {
+      "id": "west-stair",
+      "y": 0
+    },
+    {
+      "id": "west-stair",
+      "y": 0
+    }
+  ],
+  "pile_footings_checked": 0,
+  "source_files_unchanged": true,
+  "original_floor_parts_unchanged": 27,
+  "diagnostic_route_samples": 864,
+  "route_refinement_findings": 7,
+  "route_finding_examples": [
+    {
+      "link": "L09",
+      "x": 22.626,
+      "z": 15.96,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.576,
+      "planned_y": 0.528
+    },
+    {
+      "link": "L12",
+      "x": 11.0,
+      "z": 16.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L13",
+      "x": 41.686,
+      "z": 24.994,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.6,
+      "planned_y": 0.517
+    },
+    {
+      "link": "L13",
+      "x": 44.314,
+      "z": 24.006,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.39,
+      "planned_y": 0.344
+    },
+    {
+      "link": "L13",
+      "x": 42.886,
+      "z": 22.294,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.313,
+      "planned_y": 0.258
+    },
+    {
+      "link": "L13",
+      "x": 45.114,
+      "z": 22.206,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.234,
+      "planned_y": 0.172
+    },
+    {
+      "link": "L13",
+      "x": 45.0,
+      "z": 16.0,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "route_findings": [
+    {
+      "link": "L09",
+      "x": 22.626,
+      "z": 15.96,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.576,
+      "planned_y": 0.528
+    },
+    {
+      "link": "L12",
+      "x": 11.0,
+      "z": 16.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L13",
+      "x": 41.686,
+      "z": 24.994,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.6,
+      "planned_y": 0.517
+    },
+    {
+      "link": "L13",
+      "x": 44.314,
+      "z": 24.006,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.39,
+      "planned_y": 0.344
+    },
+    {
+      "link": "L13",
+      "x": 42.886,
+      "z": 22.294,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.313,
+      "planned_y": 0.258
+    },
+    {
+      "link": "L13",
+      "x": 45.114,
+      "z": 22.206,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.234,
+      "planned_y": 0.172
+    },
+    {
+      "link": "L13",
+      "x": 45.0,
+      "z": 16.0,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "remaining_transitions": [
+    {
+      "id": "L14",
+      "run": 17.0,
+      "rise": 3,
+      "status": "engineering/headroom/guard acceptance pending"
+    },
+    {
+      "id": "L15",
+      "run": 17.0,
+      "rise": 3,
+      "status": "engineering/headroom/guard acceptance pending"
+    }
+  ],
+  "scene_sha256": "8f1945989c060e969371ff57153fba207c5b8aa4fe071fc1c4a6bd1d1b2588bd",
+  "limitations": [
+    "Rough terrain foundation, not completed architecture, collision, navigation or mission unlock.",
+    "Original elevated/underground layers and transition reservations preserved; stairs/headroom/retaining/guard design still needs per-site engineering.",
+    "Opaque water previews are not the layered/translucent runtime water implementation.",
+    "Native floor/pile support does not certify full-width gameplay traversal, LAN, circuit lighting or performance."
+  ]
+}

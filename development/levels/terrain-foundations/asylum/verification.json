@@ -1,0 +1,255 @@
+{
+  "key": "asylum",
+  "title": "St. Dymphna Hospital",
+  "status": "pass-native-foundation-properties-only",
+  "triangles": 8016,
+  "ground_triangle_samples": 451,
+  "height_range": [
+    -1.320966,
+    1.298388
+  ],
+  "preserved_floor_layers": [
+    {
+      "id": "chapel",
+      "y": 0
+    },
+    {
+      "id": "day",
+      "y": 0
+    },
+    {
+      "id": "dining",
+      "y": 0
+    },
+    {
+      "id": "dining",
+      "y": 0
+    },
+    {
+      "id": "dining",
+      "y": 0
+    },
+    {
+      "id": "dining",
+      "y": 0
+    },
+    {
+      "id": "dining",
+      "y": 0
+    },
+    {
+      "id": "dining",
+      "y": 0
+    },
+    {
+      "id": "dining",
+      "y": 0
+    },
+    {
+      "id": "dining",
+      "y": 0
+    },
+    {
+      "id": "hydro",
+      "y": 0
+    },
+    {
+      "id": "plant",
+      "y": -3
+    },
+    {
+      "id": "reception",
+      "y": 0
+    },
+    {
+      "id": "records",
+      "y": 0
+    },
+    {
+      "id": "spine",
+      "y": 0
+    },
+    {
+      "id": "stage",
+      "y": 0
+    },
+    {
+      "id": "treatment",
+      "y": 0
+    },
+    {
+      "id": "upper",
+      "y": 3.4
+    },
+    {
+      "id": "upper-ward",
+      "y": 3.4
+    },
+    {
+      "id": "upper",
+      "y": 3.4
+    },
+    {
+      "id": "upper",
+      "y": 3.4
+    },
+    {
+      "id": "upper",
+      "y": 3.4
+    },
+    {
+      "id": "upper",
+      "y": 3.4
+    },
+    {
+      "id": "upper",
+      "y": 3.4
+    },
+    {
+      "id": "upper",
+      "y": 3.4
+    },
+    {
+      "id": "upper",
+      "y": 3.4
+    },
+    {
+      "id": "ward",
+      "y": 0
+    },
+    {
+      "id": "west-link",
+      "y": 0
+    }
+  ],
+  "pile_footings_checked": 0,
+  "source_files_unchanged": true,
+  "original_floor_parts_unchanged": 30,
+  "diagnostic_route_samples": 954,
+  "route_refinement_findings": 8,
+  "route_finding_examples": [
+    {
+      "link": "L11",
+      "x": 7.982,
+      "z": 42.86,
+      "issue": "grade/height needs refinement",
+      "actual_y": -0.135,
+      "planned_y": -0.184
+    },
+    {
+      "link": "L15",
+      "x": 44.667,
+      "z": 41.333,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L15",
+      "x": 44.53,
+      "z": 42.53,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L15",
+      "x": 44.0,
+      "z": 42.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L15",
+      "x": 43.47,
+      "z": 41.47,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L16",
+      "x": 44.0,
+      "z": 42.75,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L16",
+      "x": 44.0,
+      "z": 42.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L16",
+      "x": 44.0,
+      "z": 41.25,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "route_findings": [
+    {
+      "link": "L11",
+      "x": 7.982,
+      "z": 42.86,
+      "issue": "grade/height needs refinement",
+      "actual_y": -0.135,
+      "planned_y": -0.184
+    },
+    {
+      "link": "L15",
+      "x": 44.667,
+      "z": 41.333,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L15",
+      "x": 44.53,
+      "z": 42.53,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L15",
+      "x": 44.0,
+      "z": 42.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L15",
+      "x": 43.47,
+      "z": 41.47,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L16",
+      "x": 44.0,
+      "z": 42.75,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L16",
+      "x": 44.0,
+      "z": 42.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L16",
+      "x": 44.0,
+      "z": 41.25,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "remaining_transitions": [
+    {
+      "id": "L17",
+      "run": 0.0,
+      "rise": 0,
+      "status": "engineering/headroom/guard acceptance pending"
+    },
+    {
+      "id": "L19",
+      "run": 0.0,
+      "rise": 3,
+      "status": "engineering/headroom/guard acceptance pending"
+    }
+  ],
+  "scene_sha256": "16e192b714c99f9211b5894dacfae4ab24698f6a8896cce19a44f8d1e2a5f93d",
+  "limitations": [
+    "Rough terrain foundation, not completed architecture, collision, navigation or mission unlock.",
+    "Original elevated/underground layers and transition reservations preserved; stairs/headroom/retaining/guard design still needs per-site engineering.",
+    "Opaque water previews are not the layered/translucent runtime water implementation.",
+    "Native floor/pile support does not certify full-width gameplay traversal, LAN, circuit lighting or performance."
+  ]
+}

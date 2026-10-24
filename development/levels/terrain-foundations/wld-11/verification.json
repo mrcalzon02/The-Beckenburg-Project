@@ -1,0 +1,257 @@
+{
+  "key": "wld-11",
+  "title": "Mourning Marsh",
+  "status": "pass-native-foundation-properties-only",
+  "triangles": 12264,
+  "ground_triangle_samples": 694,
+  "height_range": [
+    -1.1,
+    0.259799
+  ],
+  "preserved_floor_layers": [
+    {
+      "id": "chapel",
+      "y": 1.2
+    },
+    {
+      "id": "ferry",
+      "y": 1.2
+    },
+    {
+      "id": "house-a",
+      "y": 1.2
+    },
+    {
+      "id": "house-b",
+      "y": 1.2
+    },
+    {
+      "id": "main",
+      "y": 1.2
+    },
+    {
+      "id": "north-deck",
+      "y": 1.2
+    },
+    {
+      "id": "pump",
+      "y": 1.2
+    },
+    {
+      "id": "service",
+      "y": 1.2
+    },
+    {
+      "id": "shack",
+      "y": 1.2
+    },
+    {
+      "id": "south-deck",
+      "y": 1.2
+    },
+    {
+      "id": "south-deck",
+      "y": 1.2
+    },
+    {
+      "id": "south-deck",
+      "y": 1.2
+    },
+    {
+      "id": "south-deck",
+      "y": 1.2
+    },
+    {
+      "id": "south-deck",
+      "y": 1.2
+    },
+    {
+      "id": "south-deck",
+      "y": 1.2
+    },
+    {
+      "id": "south-deck",
+      "y": 1.2
+    },
+    {
+      "id": "south-deck",
+      "y": 1.2
+    },
+    {
+      "id": "stage",
+      "y": 0
+    },
+    {
+      "id": "warehouse",
+      "y": 1.2
+    }
+  ],
+  "pile_footings_checked": 44,
+  "source_files_unchanged": true,
+  "original_floor_parts_unchanged": 20,
+  "diagnostic_route_samples": 996,
+  "route_refinement_findings": 12,
+  "route_finding_examples": [
+    {
+      "link": "L03",
+      "x": 40.0,
+      "z": 60.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 40.0,
+      "z": 59.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 40.0,
+      "z": 58.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 39.0,
+      "z": 60.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 39.0,
+      "z": 59.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 39.0,
+      "z": 58.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 40.0,
+      "z": 58.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 40.0,
+      "z": 59.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 40.0,
+      "z": 60.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 41.0,
+      "z": 58.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 41.0,
+      "z": 59.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 41.0,
+      "z": 60.0,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "route_findings": [
+    {
+      "link": "L03",
+      "x": 40.0,
+      "z": 60.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 40.0,
+      "z": 59.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 40.0,
+      "z": 58.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 39.0,
+      "z": 60.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 39.0,
+      "z": 59.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 39.0,
+      "z": 58.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 40.0,
+      "z": 58.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 40.0,
+      "z": 59.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 40.0,
+      "z": 60.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 41.0,
+      "z": 58.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 41.0,
+      "z": 59.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 41.0,
+      "z": 60.0,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "remaining_transitions": [
+    {
+      "id": "L02",
+      "run": 12.806,
+      "rise": 1.2,
+      "status": "engineering/headroom/guard acceptance pending"
+    }
+  ],
+  "scene_sha256": "2130439b985cb4edc66dea818383c14a0ab9c6cce84a5773ca112ace19a8318a",
+  "limitations": [
+    "Rough terrain foundation, not completed architecture, collision, navigation or mission unlock.",
+    "Original elevated/underground layers and transition reservations preserved; stairs/headroom/retaining/guard design still needs per-site engineering.",
+    "Opaque water previews are not the layered/translucent runtime water implementation.",
+    "Native floor/pile support does not certify full-width gameplay traversal, LAN, circuit lighting or performance."
+  ]
+}

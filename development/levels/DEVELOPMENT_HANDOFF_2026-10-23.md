@@ -1,3 +1,41 @@
+# Latest breadth-first terrain checkpoint — 23 October 2026
+
+User asked for a broad terrain pass across all remaining crude layouts rather
+than more isolated Hollow Creek structure work. Scope: academy/asylum/college/
+mansion/prison and WLD-03…WLD-13 (16). Existing built maps, Hollow Creek and
+all original layout/blockout files are preserved.
+
+Built 16 distinct original terrain GLBs/editable assets and separate full native
+site-foundation scenes, with 48 studio/overview/layer-or-approach PNGs. Profiles
+follow each recorded location, including canyon terraces, lookout hill, mine
+cover/layers, tidal shores, snow drifts, dam cut, marsh basin and rail ravine.
+Gray plates are source foundation reservations, not newly completed buildings.
+
+Actual checks: Java17 compilation + TerrainFoundationAssetsTest loads all 16 GLBs
+(157440 total triangles) within unchanged per-asset limits. Native validator ray
+checks 9107 ground samples, all 552 original floor-part meshes/transforms, 87
+buried prototype footings, original source hashes, UVs and upward faces.
+
+Diagnostic route probes: 15552 sample locations; 937 sample flags (not unique
+defect counts). Every flagged position is retained in the per-map reports.
+All unengineered stair/bridge/headroom/guard transitions remain explicit. Canyon
+and railway are the next fine-grading/crossing priorities. These sites are still
+locked/unintegrated; broad foundation properties do not certify full gameplay.
+
+DEV-024: hid inherited rough markers/upper layers in ground overviews.
+DEV-025: fixed ownership of numbered split floor parts via authored zone metadata.
+DEV-026: open route-refinement record links every native support/grade finding.
+
+Read terrain-foundations/README.md and REVIEW.html, then per-site contract.json
+and verification.json. Source scripts build/refresh/validate_terrain_foundations.py
+reproduce this pass; profiles live in terrain_foundation_profiles.py.
+Publish this checkpoint and verify the 533-image gallery before claiming delivery.
+The all-map completion goal remains unfinished; water layering/native runtime
+integration and natural boundary models are still open. Preserve unrelated dirty
+verification files. No subagents or new tasks were created.
+
+---
+
 # Publication readback and water intake — 23 October 2026
 
 Terrain checkpoint 7734b39e219bdb41f94229819b59d5def2503847 is on main;

@@ -1,0 +1,263 @@
+{
+  "key": "academy",
+  "title": "St. Alban Academy",
+  "status": "pass-native-foundation-properties-only",
+  "triangles": 8592,
+  "ground_triangle_samples": 527,
+  "height_range": [
+    -0.624212,
+    2.221822
+  ],
+  "preserved_floor_layers": [
+    {
+      "id": "archive",
+      "y": -3
+    },
+    {
+      "id": "dining",
+      "y": 0
+    },
+    {
+      "id": "dorm",
+      "y": 3.6
+    },
+    {
+      "id": "east",
+      "y": 0
+    },
+    {
+      "id": "lab",
+      "y": 0
+    },
+    {
+      "id": "lecture",
+      "y": 0
+    },
+    {
+      "id": "library",
+      "y": 0
+    },
+    {
+      "id": "north",
+      "y": 0
+    },
+    {
+      "id": "office",
+      "y": 0
+    },
+    {
+      "id": "reception",
+      "y": 0
+    },
+    {
+      "id": "south",
+      "y": 0
+    },
+    {
+      "id": "stage",
+      "y": 0
+    },
+    {
+      "id": "upper",
+      "y": 3.6
+    },
+    {
+      "id": "upper",
+      "y": 3.6
+    },
+    {
+      "id": "upper",
+      "y": 3.6
+    },
+    {
+      "id": "upper",
+      "y": 3.6
+    },
+    {
+      "id": "upper",
+      "y": 3.6
+    },
+    {
+      "id": "upper",
+      "y": 3.6
+    },
+    {
+      "id": "upper",
+      "y": 3.6
+    },
+    {
+      "id": "upper",
+      "y": 3.6
+    },
+    {
+      "id": "west",
+      "y": 0
+    },
+    {
+      "id": "west",
+      "y": 0
+    },
+    {
+      "id": "west",
+      "y": 0
+    },
+    {
+      "id": "west",
+      "y": 0
+    },
+    {
+      "id": "west",
+      "y": 0
+    },
+    {
+      "id": "west",
+      "y": 0
+    },
+    {
+      "id": "west",
+      "y": 0
+    },
+    {
+      "id": "west",
+      "y": 0
+    }
+  ],
+  "pile_footings_checked": 0,
+  "source_files_unchanged": true,
+  "original_floor_parts_unchanged": 31,
+  "diagnostic_route_samples": 1086,
+  "route_refinement_findings": 9,
+  "route_finding_examples": [
+    {
+      "link": "L04",
+      "x": 14.25,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 15.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 15.75,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 14.25,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 15.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 15.75,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L10",
+      "x": 15.0,
+      "z": 28.75,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L10",
+      "x": 15.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L10",
+      "x": 15.0,
+      "z": 27.25,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "route_findings": [
+    {
+      "link": "L04",
+      "x": 14.25,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 15.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 15.75,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 14.25,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 15.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 15.75,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L10",
+      "x": 15.0,
+      "z": 28.75,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L10",
+      "x": 15.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L10",
+      "x": 15.0,
+      "z": 27.25,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "remaining_transitions": [
+    {
+      "id": "L18",
+      "run": 0.0,
+      "rise": 0,
+      "status": "engineering/headroom/guard acceptance pending"
+    },
+    {
+      "id": "L20",
+      "run": 9.0,
+      "rise": 3,
+      "status": "engineering/headroom/guard acceptance pending"
+    }
+  ],
+  "scene_sha256": "14da85c06f5ddb1b47a40287e930fb235769c597845650f0f525529794afe97d",
+  "limitations": [
+    "Rough terrain foundation, not completed architecture, collision, navigation or mission unlock.",
+    "Original elevated/underground layers and transition reservations preserved; stairs/headroom/retaining/guard design still needs per-site engineering.",
+    "Opaque water previews are not the layered/translucent runtime water implementation.",
+    "Native floor/pile support does not certify full-width gameplay traversal, LAN, circuit lighting or performance."
+  ]
+}

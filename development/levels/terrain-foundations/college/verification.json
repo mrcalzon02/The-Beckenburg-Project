@@ -1,0 +1,765 @@
+{
+  "key": "college",
+  "title": "Beckenburg College",
+  "status": "pass-native-foundation-properties-only",
+  "triangles": 10768,
+  "ground_triangle_samples": 616,
+  "height_range": [
+    -0.556386,
+    2.345313
+  ],
+  "preserved_floor_layers": [
+    {
+      "id": "admin",
+      "y": 0
+    },
+    {
+      "id": "bridge",
+      "y": 3.6
+    },
+    {
+      "id": "dorm",
+      "y": 3.6
+    },
+    {
+      "id": "dorm",
+      "y": 3.6
+    },
+    {
+      "id": "dorm",
+      "y": 3.6
+    },
+    {
+      "id": "dorm",
+      "y": 3.6
+    },
+    {
+      "id": "dorm",
+      "y": 3.6
+    },
+    {
+      "id": "dorm",
+      "y": 3.6
+    },
+    {
+      "id": "dorm",
+      "y": 3.6
+    },
+    {
+      "id": "dorm",
+      "y": 3.6
+    },
+    {
+      "id": "lab",
+      "y": 0
+    },
+    {
+      "id": "lab",
+      "y": 0
+    },
+    {
+      "id": "lab",
+      "y": 0
+    },
+    {
+      "id": "lab",
+      "y": 0
+    },
+    {
+      "id": "lab",
+      "y": 0
+    },
+    {
+      "id": "lab",
+      "y": 0
+    },
+    {
+      "id": "lab",
+      "y": 0
+    },
+    {
+      "id": "lab",
+      "y": 0
+    },
+    {
+      "id": "lecture",
+      "y": 0
+    },
+    {
+      "id": "library",
+      "y": 0
+    },
+    {
+      "id": "lobby",
+      "y": 0
+    },
+    {
+      "id": "lobby",
+      "y": 0
+    },
+    {
+      "id": "lobby",
+      "y": 0
+    },
+    {
+      "id": "lobby",
+      "y": 0
+    },
+    {
+      "id": "lobby",
+      "y": 0
+    },
+    {
+      "id": "lobby",
+      "y": 0
+    },
+    {
+      "id": "lobby",
+      "y": 0
+    },
+    {
+      "id": "lobby",
+      "y": 0
+    },
+    {
+      "id": "res-lobby",
+      "y": 0
+    },
+    {
+      "id": "seminar",
+      "y": 0
+    },
+    {
+      "id": "stacks",
+      "y": 3.6
+    },
+    {
+      "id": "stacks",
+      "y": 3.6
+    },
+    {
+      "id": "stacks",
+      "y": 3.6
+    },
+    {
+      "id": "stacks",
+      "y": 3.6
+    },
+    {
+      "id": "stacks",
+      "y": 3.6
+    },
+    {
+      "id": "stacks",
+      "y": 3.6
+    },
+    {
+      "id": "stacks",
+      "y": 3.6
+    },
+    {
+      "id": "stacks",
+      "y": 3.6
+    },
+    {
+      "id": "stage",
+      "y": 0
+    },
+    {
+      "id": "tunnel",
+      "y": -3
+    },
+    {
+      "id": "tunnel-west",
+      "y": -3
+    },
+    {
+      "id": "union",
+      "y": 0
+    }
+  ],
+  "pile_footings_checked": 0,
+  "source_files_unchanged": true,
+  "original_floor_parts_unchanged": 45,
+  "diagnostic_route_samples": 1017,
+  "route_refinement_findings": 65,
+  "route_finding_examples": [
+    {
+      "link": "L03",
+      "x": 11.862,
+      "z": 44.448,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 10.539,
+      "z": 44.887,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 11.0,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 11.461,
+      "z": 43.113,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 10.25,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 11.0,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 11.75,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 25.0,
+      "z": 27.25,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 25.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 25.0,
+      "z": 28.75,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L06",
+      "x": 25.75,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L06",
+      "x": 25.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L06",
+      "x": 24.25,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L07",
+      "x": 11.0,
+      "z": 44.75,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L07",
+      "x": 11.0,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L07",
+      "x": 11.0,
+      "z": 43.25,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L08",
+      "x": 24.288,
+      "z": 27.763,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L08",
+      "x": 25.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L08",
+      "x": 25.712,
+      "z": 28.237,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L08",
+      "x": 25.304,
+      "z": 27.087,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "route_findings": [
+    {
+      "link": "L03",
+      "x": 11.862,
+      "z": 44.448,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 10.539,
+      "z": 44.887,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 11.0,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L03",
+      "x": 11.461,
+      "z": 43.113,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 10.25,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 11.0,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L04",
+      "x": 11.75,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 25.0,
+      "z": 27.25,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 25.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L05",
+      "x": 25.0,
+      "z": 28.75,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L06",
+      "x": 25.75,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L06",
+      "x": 25.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L06",
+      "x": 24.25,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L07",
+      "x": 11.0,
+      "z": 44.75,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L07",
+      "x": 11.0,
+      "z": 44.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L07",
+      "x": 11.0,
+      "z": 43.25,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L08",
+      "x": 24.288,
+      "z": 27.763,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L08",
+      "x": 25.0,
+      "z": 28.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L08",
+      "x": 25.712,
+      "z": 28.237,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L08",
+      "x": 25.304,
+      "z": 27.087,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L08",
+      "x": 27.941,
+      "z": 16.806,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.049,
+      "planned_y": 0.0
+    },
+    {
+      "link": "L11",
+      "x": 46.072,
+      "z": 53.082,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.115,
+      "planned_y": 0.053
+    },
+    {
+      "link": "L13",
+      "x": 69.0,
+      "z": 36.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.19,
+      "planned_y": 0.165
+    },
+    {
+      "link": "L13",
+      "x": 69.0,
+      "z": 35.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.288,
+      "planned_y": 0.247
+    },
+    {
+      "link": "L13",
+      "x": 67.0,
+      "z": 34.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.37,
+      "planned_y": 0.329
+    },
+    {
+      "link": "L13",
+      "x": 69.0,
+      "z": 34.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.37,
+      "planned_y": 0.329
+    },
+    {
+      "link": "L13",
+      "x": 69.0,
+      "z": 33.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.453,
+      "planned_y": 0.412
+    },
+    {
+      "link": "L13",
+      "x": 69.0,
+      "z": 32.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.535,
+      "planned_y": 0.494
+    },
+    {
+      "link": "L13",
+      "x": 69.0,
+      "z": 31.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.617,
+      "planned_y": 0.576
+    },
+    {
+      "link": "L13",
+      "x": 69.0,
+      "z": 30.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.7,
+      "planned_y": 0.659
+    },
+    {
+      "link": "L13",
+      "x": 69.0,
+      "z": 29.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.782,
+      "planned_y": 0.741
+    },
+    {
+      "link": "L13",
+      "x": 69.0,
+      "z": 28.0,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.88,
+      "planned_y": 0.823
+    },
+    {
+      "link": "L14",
+      "x": 65.839,
+      "z": 25.963,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.79,
+      "planned_y": 0.706
+    },
+    {
+      "link": "L14",
+      "x": 65.019,
+      "z": 28.609,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.475,
+      "planned_y": 0.423
+    },
+    {
+      "link": "L14",
+      "x": 64.161,
+      "z": 29.037,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.31,
+      "planned_y": 0.282
+    },
+    {
+      "link": "L14",
+      "x": 63.304,
+      "z": 29.466,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.161,
+      "planned_y": 0.141
+    },
+    {
+      "link": "L16",
+      "x": 32.53,
+      "z": 6.47,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L16",
+      "x": 32.0,
+      "z": 7.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L16",
+      "x": 31.47,
+      "z": 7.53,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L16",
+      "x": 32.7,
+      "z": 7.7,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L17",
+      "x": 53.333,
+      "z": 28.333,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L17",
+      "x": 54.53,
+      "z": 28.47,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L17",
+      "x": 54.0,
+      "z": 29.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L17",
+      "x": 53.47,
+      "z": 29.53,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 21.531,
+      "z": 33.214,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 21.719,
+      "z": 34.986,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 21.25,
+      "z": 34.4,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 20.781,
+      "z": 33.814,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 20.969,
+      "z": 35.586,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 20.5,
+      "z": 35.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 20.031,
+      "z": 34.414,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 20.219,
+      "z": 36.186,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 19.75,
+      "z": 35.6,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 19.281,
+      "z": 35.014,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 19.469,
+      "z": 36.786,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 19.0,
+      "z": 36.2,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 18.531,
+      "z": 35.614,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 18.719,
+      "z": 37.386,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 18.25,
+      "z": 36.8,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 17.781,
+      "z": 36.214,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 17.969,
+      "z": 37.986,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 17.5,
+      "z": 37.4,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 17.031,
+      "z": 36.814,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 16.75,
+      "z": 38.0,
+      "issue": "no native standing support near planned height"
+    },
+    {
+      "link": "L20",
+      "x": 16.281,
+      "z": 37.414,
+      "issue": "no native standing support near planned height"
+    }
+  ],
+  "remaining_transitions": [
+    {
+      "id": "L15",
+      "run": 0.0,
+      "rise": 0,
+      "status": "engineering/headroom/guard acceptance pending"
+    },
+    {
+      "id": "L18",
+      "run": 0.0,
+      "rise": 0,
+      "status": "engineering/headroom/guard acceptance pending"
+    },
+    {
+      "id": "L19",
+      "run": 3.162,
+      "rise": 3,
+      "status": "engineering/headroom/guard acceptance pending"
+    },
+    {
+      "id": "L21",
+      "run": 3.606,
+      "rise": 3,
+      "status": "engineering/headroom/guard acceptance pending"
+    }
+  ],
+  "scene_sha256": "214782a91c5bc560a37f136d31c575696812cd4d87ff6d8ebc3460e300734d78",
+  "limitations": [
+    "Rough terrain foundation, not completed architecture, collision, navigation or mission unlock.",
+    "Original elevated/underground layers and transition reservations preserved; stairs/headroom/retaining/guard design still needs per-site engineering.",
+    "Opaque water previews are not the layered/translucent runtime water implementation.",
+    "Native floor/pile support does not certify full-width gameplay traversal, LAN, circuit lighting or performance."
+  ]
+}

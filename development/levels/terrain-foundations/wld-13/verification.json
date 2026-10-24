@@ -1,0 +1,189 @@
+{
+  "key": "wld-13",
+  "title": "Greywater Cannery",
+  "status": "pass-native-foundation-properties-only",
+  "triangles": 11808,
+  "ground_triangle_samples": 676,
+  "height_range": [
+    -2.0,
+    1.366559
+  ],
+  "preserved_floor_layers": [
+    {
+      "id": "boiler",
+      "y": 0
+    },
+    {
+      "id": "bunk",
+      "y": 0
+    },
+    {
+      "id": "cold",
+      "y": 0
+    },
+    {
+      "id": "dock",
+      "y": 0
+    },
+    {
+      "id": "gallery",
+      "y": 3
+    },
+    {
+      "id": "gallery",
+      "y": 3
+    },
+    {
+      "id": "gallery",
+      "y": 3
+    },
+    {
+      "id": "gallery",
+      "y": 3
+    },
+    {
+      "id": "gallery",
+      "y": 3
+    },
+    {
+      "id": "gallery",
+      "y": 3
+    },
+    {
+      "id": "gallery",
+      "y": 3
+    },
+    {
+      "id": "gallery",
+      "y": 3
+    },
+    {
+      "id": "mess",
+      "y": 0
+    },
+    {
+      "id": "office",
+      "y": 0
+    },
+    {
+      "id": "processing",
+      "y": 0
+    },
+    {
+      "id": "stage",
+      "y": 0
+    },
+    {
+      "id": "stores",
+      "y": 0
+    },
+    {
+      "id": "wash",
+      "y": 0
+    }
+  ],
+  "pile_footings_checked": 4,
+  "source_files_unchanged": true,
+  "original_floor_parts_unchanged": 21,
+  "diagnostic_route_samples": 1155,
+  "route_refinement_findings": 5,
+  "route_finding_examples": [
+    {
+      "link": "L17",
+      "x": -8.286,
+      "z": 49.894,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.078,
+      "planned_y": 0.229
+    },
+    {
+      "link": "L17",
+      "x": -8.686,
+      "z": 48.994,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.22,
+      "planned_y": 0.305
+    },
+    {
+      "link": "L18",
+      "x": -12.114,
+      "z": 41.794,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.688,
+      "planned_y": 0.61
+    },
+    {
+      "link": "L18",
+      "x": -8.686,
+      "z": 39.006,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.22,
+      "planned_y": 0.305
+    },
+    {
+      "link": "L18",
+      "x": -10.114,
+      "z": 37.294,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.29,
+      "planned_y": 0.229
+    }
+  ],
+  "route_findings": [
+    {
+      "link": "L17",
+      "x": -8.286,
+      "z": 49.894,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.078,
+      "planned_y": 0.229
+    },
+    {
+      "link": "L17",
+      "x": -8.686,
+      "z": 48.994,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.22,
+      "planned_y": 0.305
+    },
+    {
+      "link": "L18",
+      "x": -12.114,
+      "z": 41.794,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.688,
+      "planned_y": 0.61
+    },
+    {
+      "link": "L18",
+      "x": -8.686,
+      "z": 39.006,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.22,
+      "planned_y": 0.305
+    },
+    {
+      "link": "L18",
+      "x": -10.114,
+      "z": 37.294,
+      "issue": "grade/height needs refinement",
+      "actual_y": 0.29,
+      "planned_y": 0.229
+    }
+  ],
+  "remaining_transitions": [
+    {
+      "id": "L19",
+      "run": 9.0,
+      "rise": 0,
+      "status": "engineering/headroom/guard acceptance pending"
+    }
+  ],
+  "scene_sha256": "a9b1d369c5fc8761fcd715d6ffc5433808cdc2c5326151ea9715005535e41d7a",
+  "limitations": [
+    "Rough terrain foundation, not completed architecture, collision, navigation or mission unlock.",
+    "Original elevated/underground layers and transition reservations preserved; stairs/headroom/retaining/guard design still needs per-site engineering.",
+    "Opaque water previews are not the layered/translucent runtime water implementation.",
+    "Native floor/pile support does not certify full-width gameplay traversal, LAN, circuit lighting or performance."
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 484,
+  "count": 533,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1042,6 +1042,16 @@
       "height": 800,
       "bytes": 1092769,
       "sha256": "bef8eab9ca5d6294105fa08dc9e6f206ad2bd30d1ad9248e19c00a80330a9fd6"
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-024-before-terrain-review.png",
+      "url": "development/levels/previews/defects/DEV-024-before-terrain-review.png",
+      "title": "Dev 024 before terrain review",
+      "kind": "Development review",
+      "width": 1000,
+      "height": 700,
+      "bytes": 661281,
+      "sha256": "84e3276389d5760e076de55c20ccd92047ac48f2edb1343f6e48387ae593a559"
     },
     {
       "path": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
@@ -2672,6 +2682,166 @@
       "height": 640,
       "bytes": 856104,
       "sha256": "422163f587588fab5b5ba7a58e9f310c7a38cef1860dff046bbf4e2aba9659f9"
+    },
+    {
+      "path": "development/levels/previews/level_site_academy_terrain.png",
+      "url": "development/levels/previews/level_site_academy_terrain.png",
+      "title": "Level site academy terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 777467,
+      "sha256": "9cd6e22d2f06bf4d2c54e0ae5ee393d25fbd2210cd781fba30571fb923761c8c"
+    },
+    {
+      "path": "development/levels/previews/level_site_asylum_terrain.png",
+      "url": "development/levels/previews/level_site_asylum_terrain.png",
+      "title": "Level site asylum terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 770611,
+      "sha256": "2cb803854102838e94fe74fd623aac4afc1b31ac8def5ffb190e64e2718023d4"
+    },
+    {
+      "path": "development/levels/previews/level_site_college_terrain.png",
+      "url": "development/levels/previews/level_site_college_terrain.png",
+      "title": "Level site college terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 790679,
+      "sha256": "bec26babf6a69bf3bd93582acbb6ebc2736c8e0b51abd7a67ad9058e1af56340"
+    },
+    {
+      "path": "development/levels/previews/level_site_mansion_terrain.png",
+      "url": "development/levels/previews/level_site_mansion_terrain.png",
+      "title": "Level site mansion terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 776422,
+      "sha256": "985c3fd70c7c3c1d890661f1bcdd9f64bbc4109bc82e595cf307294fee3f5825"
+    },
+    {
+      "path": "development/levels/previews/level_site_prison_terrain.png",
+      "url": "development/levels/previews/level_site_prison_terrain.png",
+      "title": "Level site prison terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 768989,
+      "sha256": "1abea5323d19866dc2e2efa85dc862b6d5efc867d79ed82cffc2e59df0174593"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_03_terrain.png",
+      "url": "development/levels/previews/level_site_wld_03_terrain.png",
+      "title": "Level site wld 03 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 804682,
+      "sha256": "f91d27f23b08bce932748501e22ed69dc0aad4b26e21ae251522c497af6e6b5f"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_04_terrain.png",
+      "url": "development/levels/previews/level_site_wld_04_terrain.png",
+      "title": "Level site wld 04 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 805105,
+      "sha256": "3a02753bd721117b2c953ae2c3afce9bcb325bb2be107c9cfab039dc21ea1585"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_05_terrain.png",
+      "url": "development/levels/previews/level_site_wld_05_terrain.png",
+      "title": "Level site wld 05 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 799161,
+      "sha256": "6da15fe23148a7acd3f2870c9c18ffd826b1c14a4f5c4535fb1223fa41bb24c2"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_06_terrain.png",
+      "url": "development/levels/previews/level_site_wld_06_terrain.png",
+      "title": "Level site wld 06 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 787062,
+      "sha256": "0da33ce74306e2ba5cc060aa8429b792193201f5272ef87ca0ab95d9e733b9ec"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_07_terrain.png",
+      "url": "development/levels/previews/level_site_wld_07_terrain.png",
+      "title": "Level site wld 07 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 770988,
+      "sha256": "eac5a5df847e81c8af81c9b907427cf26cbc41bfc9d16c950e910e77f9ba1321"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_08_terrain.png",
+      "url": "development/levels/previews/level_site_wld_08_terrain.png",
+      "title": "Level site wld 08 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 821885,
+      "sha256": "a0e3e05d0548fb93251f43a008565ee2dccd893b87c89ffbc17418c380000953"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_09_terrain.png",
+      "url": "development/levels/previews/level_site_wld_09_terrain.png",
+      "title": "Level site wld 09 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 759321,
+      "sha256": "7b7d3a6628c4217257d29dff9c98a5d78ded93fec6ada16305cb35efd1de0848"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_10_terrain.png",
+      "url": "development/levels/previews/level_site_wld_10_terrain.png",
+      "title": "Level site wld 10 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 790662,
+      "sha256": "c647cea51e3858536321f8a637f7653e59881f01c40b376d27721713efb317aa"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_11_terrain.png",
+      "url": "development/levels/previews/level_site_wld_11_terrain.png",
+      "title": "Level site wld 11 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 786288,
+      "sha256": "c18e64163bc63d81408ee4ccb646dc0ebc15b023829eff21b9c492d2ce89bea9"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_12_terrain.png",
+      "url": "development/levels/previews/level_site_wld_12_terrain.png",
+      "title": "Level site wld 12 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 790682,
+      "sha256": "8fea1e9da0e31b128822dd78f9e4dd528258c39169d15ce14c46c3d23dc5125d"
+    },
+    {
+      "path": "development/levels/previews/level_site_wld_13_terrain.png",
+      "url": "development/levels/previews/level_site_wld_13_terrain.png",
+      "title": "Level site wld 13 terrain",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 778118,
+      "sha256": "f54266fbbb7d89cf058e8f2e11ffa60988a48bedbd5b8c5a1bd2b1b0cb629979"
     },
     {
       "path": "development/levels/previews/level_stall.png",
@@ -4722,6 +4892,326 @@
       "height": 700,
       "bytes": 324019,
       "sha256": "a1698785dd7fd43f83ef107dc433929daebd89ef80b52c6065048de8f595ae18"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/academy/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/academy/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 436511,
+      "sha256": "79b0108f84067053e4fb6988b8bd808ecb9f433715f0d46e017f22cbe374f21b"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/academy/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/academy/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 622027,
+      "sha256": "6fce6a4298f3f08cb7ab299f8ef31b8d122b722e8592e5fb366e0e038068ca66"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/asylum/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/asylum/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 443950,
+      "sha256": "06dd9857cd7b4ff9e156b25b2023659c0d60ff78df737547fa46dd09fa1d87e7"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/asylum/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/asylum/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 587520,
+      "sha256": "743d1912f562b8fff5716e01295e169f91c3e4ccd274f7ebfd189f7d0587f32f"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/college/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/college/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 443821,
+      "sha256": "29a7b86036b2199c2d0ff31e2bf988a53238a086b6f006857dca38c877a144a4"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/college/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/college/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 605406,
+      "sha256": "8004a4091acdf8d2904582e7ed632299f478af23682c24ec249b8e483514bf90"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/mansion/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/mansion/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 441809,
+      "sha256": "a5102a3c1f16a7160466446fe9cd7fc9d9b1bc2d4d750efbfea3d50b1594f1be"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/mansion/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/mansion/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 591493,
+      "sha256": "acbbf3791df30304a06a47d2e9b5ba0062a1efe8b41d28cf1509d5468e5dec60"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/prison/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/prison/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 438654,
+      "sha256": "1eed5dafd47f6f1c08b758c6c379decdcded9934dd0e417383a6132f5265f18b"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/prison/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/prison/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 614456,
+      "sha256": "b5b3863c5f70656c26ac4e34e7222f7af7fc380f71b5790d08b35c3bc0e26547"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-03/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-03/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 442826,
+      "sha256": "a28df74a1bead476a24ff08c54e51eeb357561f6121ba29028b3bce011cd8ae2"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-03/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-03/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 725221,
+      "sha256": "326cfaa9e266764a6b4225a2d19238ff03d2ee2612ac9e1d82fe819218643c9e"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-04/approach-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-04/approach-native-fitout.png",
+      "title": "Approach native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 716281,
+      "sha256": "30db50cbb29372b69469b1426700fb4acfb0d3f3063ea9e8ce8b9db45523fbff"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-04/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-04/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 605979,
+      "sha256": "3f479942315cbdeb2e0894d8bb66badd42699f61604552c31f6c3f0c29149396"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-05/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-05/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 511965,
+      "sha256": "54d45c39953bbc5e5f9b1cad0fbe67afe8417d52cd2a6c0136a404ecdca0bad6"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-05/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-05/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 634981,
+      "sha256": "49584e91246be9a0a95c58e26222fbd74b789948f48d2572dfcfe8c8e622f906"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-06/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-06/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 586457,
+      "sha256": "4ec5c2523b007322509bbe60d84b6095c8c245e360a5c3df4eeab982bb90b941"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-06/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-06/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 621877,
+      "sha256": "2ff9ae236035eb54f739de65f5e0633d0810e383ce1b5f21cc1de8a696abd158"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-07/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-07/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 437854,
+      "sha256": "b25c4c2a3804fe95f7024aeaa56af31d43fbd62d860a5e98cb55af86f29df63a"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-07/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-07/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 586026,
+      "sha256": "a6b7b715932bf9c71ac100ef02ac4b8bb136bd54d1346e3fd763405db955cbf7"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-08/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-08/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 435551,
+      "sha256": "2a8704081e7ef979e172edb388856cfcfa5cf5a48ee194595ffe911a3c9eb126"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-08/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-08/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 661350,
+      "sha256": "0be80dfb9ff008adf7ed5d6032c22256862f0d8104658934564fc60a9fd1abf1"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-09/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-09/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 500900,
+      "sha256": "734db5cf7cba0feb2fec9c4f68a9fb297ec3483e8981683fd0691c2bdf756a47"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-09/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-09/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 632418,
+      "sha256": "db4a8c722243bc9c6a1d555a3959b3a6aa2a811bd583a74fab733132a3623cb5"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-10/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-10/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 434984,
+      "sha256": "a60664207a9b18fb122d824b78fc019b83dd66a637da22ab3489c32218ce7809"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-10/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-10/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 654783,
+      "sha256": "5c941d360f06f6ccd0cbaa85631e683d7690ca647352fa93804f896d129898c8"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-11/approach-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-11/approach-native-fitout.png",
+      "title": "Approach native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 617079,
+      "sha256": "d72cc6dc800d829b8b454f9d13bce1e97af1f47c6e51eb1a1e22d161ee3f6e59"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-11/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-11/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 600390,
+      "sha256": "e5840a06c1eaaa7d5686e1f6c0e092dc671bd708f2eaa072ee21368b50f07c59"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-12/layer-study-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-12/layer-study-native-fitout.png",
+      "title": "Layer study native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 442760,
+      "sha256": "025d0a21db3e7c065e0e6f8cf02778c50b7ea14d80c5d3eb3ea7fad2927feb77"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-12/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-12/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 590294,
+      "sha256": "b996db52bb4ac635e0496b0c1e62afeee04d5f6d2abdd9979607a32dd69d4786"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-13/approach-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-13/approach-native-fitout.png",
+      "title": "Approach native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 643055,
+      "sha256": "d68cc7e69fc5ca0b61ab80ddcaced7ece477e01c183a94abde8c4290bddb98b7"
+    },
+    {
+      "path": "development/levels/previews/terrain-foundations/wld-13/site-native-fitout.png",
+      "url": "development/levels/previews/terrain-foundations/wld-13/site-native-fitout.png",
+      "title": "Site native fitout",
+      "kind": "Native scene overview",
+      "width": 1000,
+      "height": 700,
+      "bytes": 626429,
+      "sha256": "680edb7eb4323d55f0143bd41c3f20fc3e588ebac8ea97d7751ed86c2fee32db"
     },
     {
       "path": "development/levels/previews/ui/01-point-at-cup.png",

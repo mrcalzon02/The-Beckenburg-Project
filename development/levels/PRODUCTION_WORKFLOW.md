@@ -1,6 +1,12 @@
 # Repeatable authored-level workflow
 
-Latest additive construction: [Camp Hollow Creek facilities](hollow-creek/README.md),
+Latest user-directed breadth pass: [sixteen terrain foundations](terrain-foundations/README.md),
+23 October 2026. This advances every remaining crude blockout one terrain step
+before more buildings/detail. Independent ground/export/source-layer checks are
+complete; per-site route and engineering flags remain recorded. Existing maps
+and original blockouts were not rebuilt. Review the terrain contracts first.
+
+Previous additive construction: [Camp Hollow Creek facilities](hollow-creek/README.md),
 23 October 2026: three original models, four facility placements and open timber pavilion, independent native
 support/clearance checks and runtime asset-loading proof. Existing blockouts preserved;
 playable map integration is the next unfinished gate.

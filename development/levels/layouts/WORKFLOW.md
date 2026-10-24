@@ -62,3 +62,14 @@ Local milestones are committed. Publication of this new dressing/terrain/foliage
 Revised all eight last-run production models plus the bedroll for attached parts, native support and readable construction. Added 36 authored room histories across Briar House, Hollowmere Farm and Ravenshade School, nineteen supported ray-readable records and curated story-kit traces. Rebuilt ten clean/worn signs with lettering contained in their inset. Added the actual site-specific van clipboard sheet plus paged/scrollable solo/LAN dossiers. Three open book tiers now have blank parchment and all three drawn writing alternatives, selected only by an authoritative writing event and restored on reconnect. See LEGACY_SITE_STORIES.md and model-construction-audit.json for exact acceptance and limitations.
 
 Current local compilation and focused XYZ, surfaces, interaction, lore, source-mesh, writing-state and artwork checks pass. Runtime captures and final merged-source/network verification must use this new checkpoint; older full-scene and Blackpine review reports predate these revisions. No approval has been granted to publish this expanded payload after automatic review rejected the prior upload. Next: reconcile concurrent remote Twins work, verify the merged source and network visuals, update full native-scene review, and obtain explicit upload authorization before shared-main publication.
+
+
+## 23 October: terrain foundation breadth pass
+
+At the user's request, all 16 remaining rough sites now have separate terrain
+contracts, original ground GLBs/editable sources and native site/layer reviews.
+See [terrain-foundations](../terrain-foundations/README.md) and its actual checks.
+These add a terrain step to the existing layouts; original JSON/rough meshes,
+source floor parts, known developed maps and canonical van design are preserved.
+Per-site route diagnostics retain unresolved grades/crossings. Do not promote
+this breadth checkpoint to completed shells, navigation acceptance or mission unlock.

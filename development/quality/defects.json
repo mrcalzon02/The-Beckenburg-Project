@@ -254,6 +254,39 @@
       "action": "Blend trail junction profiles, reroute approaches onto dry banks, taper incision into hardscape and align terrain axes/abutments with the decks. Checker gives the deck its exact standing face at coincident boundary hits.",
       "evidence": "Independent native ray checks now pass all 10,377 full-width samples; measured worst local grade 0.192827, below the stated 0.20 authoring threshold. This is not human/runtime traversal acceptance.",
       "older_maps": "Check full-width terrain normals and transitions, not graph connectivity or centre lines alone. Preserve failures when adding erosion or changing foundation heights."
+    },
+    {
+      "id": "DEV-024",
+      "title": "Rough diagram connectors obscured new terrain review views",
+      "status": "fixed-native-review-only",
+      "affected": "Breadth-first terrain previews",
+      "symptom": "Inherited colored route/ritual markers and floating upper floor plates made the terrain overview look like unfinished structure geometry.",
+      "cause": "Retained source blockout visualization objects were rendered as if they were terrain infrastructure.",
+      "action": "Preserve all original source objects/files; hide schematic markers and upper layers in default ground overview. Provide separately labeled layer-study captures and engineering-pending metadata.",
+      "evidence": "DEV-024-before-terrain-review.png and corrected per-site native terrain overviews; actual retained floor transforms remain tested.",
+      "older_maps": "Keep terrain reviews readable and distinguish planning markers, foundation plates and actual completed structures."
+    },
+    {
+      "id": "DEV-025",
+      "title": "Terrain review missed split floor pieces with numbered names",
+      "status": "fixed-native-review-only",
+      "affected": "New terrain-foundation scene filtering",
+      "symptom": "A refresh failed on Floor west.001; inherited floor chunks around openings were not all assigned to their source zone by filename.",
+      "cause": "Display/verification filters treated a numbered object name as the authoritative zone ID.",
+      "action": "Use the authored zone property, with a conservative name fallback, for every floor part. Recompute retained-part lists and verify all source floor geometry/placements remain intact.",
+      "evidence": "refresh_terrain_foundation_views.py and the per-site native layer checks; original blockouts retain hashes.",
+      "older_maps": "Floor openings often split a slab into several objects. Ownership must follow authored metadata, never an assumed unique mesh name."
+    },
+    {
+      "id": "DEV-026",
+      "title": "Broad terrain pass exposes unresolved grade and crossing support locations",
+      "status": "open-terrain-refinement",
+      "affected": "Sixteen remaining rough development sites",
+      "symptom": "Actual native level-link probes flagged 937 sampled support/grade locations; canyon and railway account for the largest groups.",
+      "cause": "Existing coarse connector reservations and new first-pass terrain heights still need fine grading, engineered crossings, stair/rock-volume work and exact surface ownership.",
+      "action": "Keep each location and unengineered transition in the per-site verification reports. Prioritize canyon/rail terrain refinement; do not promote broad foundation checks to navigation acceptance or unlock missions.",
+      "evidence": "development/levels/verification/terrain-foundations.json and terrain-foundations/<key>/verification.json contain every diagnostic position and scope.",
+      "older_maps": "Apply actual full-width/swept traversal review before detail work; graph connectivity and native floor plates are not proof of a usable route."
     }
   ],
   "audit_categories": [

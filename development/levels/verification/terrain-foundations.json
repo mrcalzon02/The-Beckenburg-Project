@@ -1,0 +1,258 @@
+{
+  "status": "pass-broad-native-foundation-properties-only",
+  "sites": 16,
+  "total_runtime_triangles": 157440,
+  "native_ground_samples": 9107,
+  "original_floor_parts_preserved": 552,
+  "buried_pile_footings": 87,
+  "diagnostic_route_samples": 15552,
+  "route_refinement_sample_flags": 937,
+  "runtime_test": {
+    "test": "TerrainFoundationAssetsTest",
+    "status": "pass",
+    "java17_compile": true,
+    "output": "PASS 16 terrain GLBs, 157440 total triangles, native metres/origins, UVs, upward normals and unchanged per-asset budgets; map unlocks unchanged"
+  },
+  "unchanged_existing_maps": [
+    "House",
+    "Farmhouse",
+    "School",
+    "Church",
+    "Castle Beckenburg",
+    "Blackpine",
+    "Camp Hollow Creek"
+  ],
+  "locations": [
+    {
+      "key": "academy",
+      "title": "St. Alban Academy",
+      "profile": "Cloister ridge and drained quadrangle",
+      "height_range": [
+        -0.624212,
+        2.221822
+      ],
+      "triangles": 8592,
+      "native_scene_sha256": "14da85c06f5ddb1b47a40287e930fb235769c597845650f0f525529794afe97d",
+      "native_report": "development/levels/terrain-foundations/academy/verification.json",
+      "remaining_route_sample_flags": 9,
+      "remaining_transitions": 2
+    },
+    {
+      "key": "asylum",
+      "title": "St. Dymphna Hospital",
+      "profile": "Stepped hospital garden slopes",
+      "height_range": [
+        -1.320966,
+        1.298388
+      ],
+      "triangles": 8016,
+      "native_scene_sha256": "16e192b714c99f9211b5894dacfae4ab24698f6a8896cce19a44f8d1e2a5f93d",
+      "native_report": "development/levels/terrain-foundations/asylum/verification.json",
+      "remaining_route_sample_flags": 8,
+      "remaining_transitions": 2
+    },
+    {
+      "key": "college",
+      "title": "Beckenburg College",
+      "profile": "Campus green and service-tunnel cover",
+      "height_range": [
+        -0.556386,
+        2.345313
+      ],
+      "triangles": 10768,
+      "native_scene_sha256": "214782a91c5bc560a37f136d31c575696812cd4d87ff6d8ebc3460e300734d78",
+      "native_report": "development/levels/terrain-foundations/college/verification.json",
+      "remaining_route_sample_flags": 65,
+      "remaining_transitions": 4
+    },
+    {
+      "key": "mansion",
+      "title": "Blackthorn Manor",
+      "profile": "Manor terrace and descending service garden",
+      "height_range": [
+        -0.57,
+        2.688131
+      ],
+      "triangles": 4712,
+      "native_scene_sha256": "97e92c3219ca323dbd44d97251e8d643f58c8be50660d23ce80561e93b02ad14",
+      "native_report": "development/levels/terrain-foundations/mansion/verification.json",
+      "remaining_route_sample_flags": 31,
+      "remaining_transitions": 4
+    },
+    {
+      "key": "prison",
+      "title": "Beckenburg Penitentiary",
+      "profile": "Excavated yard and perimeter earthwork",
+      "height_range": [
+        0,
+        4.243027
+      ],
+      "triangles": 7488,
+      "native_scene_sha256": "efeca91c22c09c23eb65e563566366778f413b6cb3cdb6d29a1c894af7413bb2",
+      "native_report": "development/levels/terrain-foundations/prison/verification.json",
+      "remaining_route_sample_flags": 49,
+      "remaining_transitions": 3
+    },
+    {
+      "key": "wld-03",
+      "title": "Red Mesa Ancestral Caves",
+      "profile": "Red Mesa canyon and 4/8m cliff terraces",
+      "height_range": [
+        0,
+        13.576121
+      ],
+      "triangles": 13728,
+      "native_scene_sha256": "68a6d5c7c4296eff88c296bd5e3910f093a5b64760662a106437af4189eb58af",
+      "native_report": "development/levels/terrain-foundations/wld-03/verification.json",
+      "remaining_route_sample_flags": 287,
+      "remaining_transitions": 3
+    },
+    {
+      "key": "wld-04",
+      "title": "Widow's Peak Fire Lookout",
+      "profile": "Lookout hillside and contour return",
+      "height_range": [
+        -0.437849,
+        7.799966
+      ],
+      "triangles": 9024,
+      "native_scene_sha256": "478e0d23b964d0ba19bba5d8fafcaa9d593af96681535471b805c032a050e312",
+      "native_report": "development/levels/terrain-foundations/wld-04/verification.json",
+      "remaining_route_sample_flags": 24,
+      "remaining_transitions": 8
+    },
+    {
+      "key": "wld-05",
+      "title": "Dead Man's Claim",
+      "profile": "Mine ridge with layered adit/drift levels",
+      "height_range": [
+        -1.643877,
+        8.079863
+      ],
+      "triangles": 8320,
+      "native_scene_sha256": "62b5183a07e113e2089b0c2ca18bcd7fd243d95c2d76732493fc29744693a904",
+      "native_report": "development/levels/terrain-foundations/wld-05/verification.json",
+      "remaining_route_sample_flags": 58,
+      "remaining_transitions": 4
+    },
+    {
+      "key": "wld-06",
+      "title": "Drowned Fisherman's Wharf",
+      "profile": "Tidal shore and piled wharf foundations",
+      "height_range": [
+        -4.1,
+        0.716905
+      ],
+      "triangles": 9344,
+      "native_scene_sha256": "1301f0af082d3419d903e36cb19383b323806a780e38aa0193fb422ed0b60da6",
+      "native_report": "development/levels/terrain-foundations/wld-06/verification.json",
+      "remaining_route_sample_flags": 62,
+      "remaining_transitions": 2
+    },
+    {
+      "key": "wld-07",
+      "title": "Saint Bartholomew's Forgotten Cemetery",
+      "profile": "Rolling burial ground and ossuary cover",
+      "height_range": [
+        -0.637818,
+        2.041116
+      ],
+      "triangles": 8288,
+      "native_scene_sha256": "8f1945989c060e969371ff57153fba207c5b8aa4fe071fc1c4a6bd1d1b2588bd",
+      "native_report": "development/levels/terrain-foundations/wld-07/verification.json",
+      "remaining_route_sample_flags": 7,
+      "remaining_transitions": 2
+    },
+    {
+      "key": "wld-08",
+      "title": "Northwatch Research Station",
+      "profile": "Snow shelf, wind drifts and tunnel cover",
+      "height_range": [
+        0,
+        1.929376
+      ],
+      "triangles": 9624,
+      "native_scene_sha256": "ebbf57686638eb5f299390c09fa20e4c8c26b585d336e4141efe46d81c1bacf9",
+      "native_report": "development/levels/terrain-foundations/wld-08/verification.json",
+      "remaining_route_sample_flags": 45,
+      "remaining_transitions": 3
+    },
+    {
+      "key": "wld-09",
+      "title": "Blackwater Hydroelectric Dam",
+      "profile": "Dam abutment, six-metre cut and tailrace",
+      "height_range": [
+        -9.2,
+        1.2
+      ],
+      "triangles": 11536,
+      "native_scene_sha256": "d360c60a232524255690e98c93b5ba27dc83924798271c58c963fb26386fc32f",
+      "native_report": "development/levels/terrain-foundations/wld-09/verification.json",
+      "remaining_route_sample_flags": 20,
+      "remaining_transitions": 6
+    },
+    {
+      "key": "wld-10",
+      "title": "Monastery of Ashen Bells",
+      "profile": "Monastery high garden and service banks",
+      "height_range": [
+        -0.577062,
+        3.266108
+      ],
+      "triangles": 10296,
+      "native_scene_sha256": "5e639628631fc8ac1418d99c2a07191e22f47ae160f91b93eaf9afec7e1144cd",
+      "native_report": "development/levels/terrain-foundations/wld-10/verification.json",
+      "remaining_route_sample_flags": 52,
+      "remaining_transitions": 3
+    },
+    {
+      "key": "wld-11",
+      "title": "Mourning Marsh",
+      "profile": "Marsh basin and raised boardwalk foundations",
+      "height_range": [
+        -1.1,
+        0.259799
+      ],
+      "triangles": 12264,
+      "native_scene_sha256": "2130439b985cb4edc66dea818383c14a0ab9c6cce84a5773ca112ace19a8318a",
+      "native_report": "development/levels/terrain-foundations/wld-11/verification.json",
+      "remaining_route_sample_flags": 12,
+      "remaining_transitions": 1
+    },
+    {
+      "key": "wld-12",
+      "title": "Gallows Pass Railway",
+      "profile": "Rail cutting, trestle ravine and tunnel cover",
+      "height_range": [
+        -5.248638,
+        3.446529
+      ],
+      "triangles": 13632,
+      "native_scene_sha256": "717489bb7622f032623d2377f7e8736818619d5a3f939bdd44b77e54cc5d7556",
+      "native_report": "development/levels/terrain-foundations/wld-12/verification.json",
+      "remaining_route_sample_flags": 203,
+      "remaining_transitions": 2
+    },
+    {
+      "key": "wld-13",
+      "title": "Greywater Cannery",
+      "profile": "Cannery tidal bank and forest-side slope",
+      "height_range": [
+        -2.0,
+        1.366559
+      ],
+      "triangles": 11808,
+      "native_scene_sha256": "a9b1d369c5fc8761fcd715d6ffc5433808cdc2c5326151ea9715005535e41d7a",
+      "native_report": "development/levels/terrain-foundations/wld-13/verification.json",
+      "remaining_route_sample_flags": 5,
+      "remaining_transitions": 1
+    }
+  ],
+  "limitations": [
+    "A broad terrain-foundation pass is not a completed playable map.",
+    "Source layouts/blockouts and every original floor-part mesh/transform remain unchanged; new scenes are separate copies.",
+    "Fine grading, crossings, retaining faces, excavation/headroom, guards, natural edge barriers, runtime ownership/collision and actual gameplay/network/lighting/performance acceptance remain per-site work.",
+    "Diagnostic flags count sampled locations, not unique defects; full locations are retained in each report.",
+    "Water is a native opaque flood/shore placeholder; layered runtime transparency/foam remains pending."
+  ]
+}

@@ -332,6 +332,48 @@ Evidence and verification: Independent native ray checks now pass all 10,377 ful
 
 Older-map obligation: Check full-width terrain normals and transitions, not graph connectivity or centre lines alone. Preserve failures when adding erosion or changing foundation heights.
 
+### DEV-024 — Rough diagram connectors obscured new terrain review views
+
+**Status:** fixed-native-review-only · **Affected:** Breadth-first terrain previews
+
+Inherited colored route/ritual markers and floating upper floor plates made the terrain overview look like unfinished structure geometry.
+
+Cause / uncertainty: Retained source blockout visualization objects were rendered as if they were terrain infrastructure.
+
+Fix / next action: Preserve all original source objects/files; hide schematic markers and upper layers in default ground overview. Provide separately labeled layer-study captures and engineering-pending metadata.
+
+Evidence and verification: DEV-024-before-terrain-review.png and corrected per-site native terrain overviews; actual retained floor transforms remain tested.
+
+Older-map obligation: Keep terrain reviews readable and distinguish planning markers, foundation plates and actual completed structures.
+
+### DEV-025 — Terrain review missed split floor pieces with numbered names
+
+**Status:** fixed-native-review-only · **Affected:** New terrain-foundation scene filtering
+
+A refresh failed on Floor west.001; inherited floor chunks around openings were not all assigned to their source zone by filename.
+
+Cause / uncertainty: Display/verification filters treated a numbered object name as the authoritative zone ID.
+
+Fix / next action: Use the authored zone property, with a conservative name fallback, for every floor part. Recompute retained-part lists and verify all source floor geometry/placements remain intact.
+
+Evidence and verification: refresh_terrain_foundation_views.py and the per-site native layer checks; original blockouts retain hashes.
+
+Older-map obligation: Floor openings often split a slab into several objects. Ownership must follow authored metadata, never an assumed unique mesh name.
+
+### DEV-026 — Broad terrain pass exposes unresolved grade and crossing support locations
+
+**Status:** open-terrain-refinement · **Affected:** Sixteen remaining rough development sites
+
+Actual native level-link probes flagged 937 sampled support/grade locations; canyon and railway account for the largest groups.
+
+Cause / uncertainty: Existing coarse connector reservations and new first-pass terrain heights still need fine grading, engineered crossings, stair/rock-volume work and exact surface ownership.
+
+Fix / next action: Keep each location and unengineered transition in the per-site verification reports. Prioritize canyon/rail terrain refinement; do not promote broad foundation checks to navigation acceptance or unlock missions.
+
+Evidence and verification: development/levels/verification/terrain-foundations.json and terrain-foundations/<key>/verification.json contain every diagnostic position and scope.
+
+Older-map obligation: Apply actual full-width/swept traversal review before detail work; graph connectivity and native floor plates are not proof of a usable route.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

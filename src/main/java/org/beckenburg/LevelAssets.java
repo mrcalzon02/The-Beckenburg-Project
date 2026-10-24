@@ -13,5 +13,5 @@ public final class LevelAssets {
         "level_kitchen_counter","level_bath_basin","level_bathtub","level_domestic_light",
         "level_wall_sconce","level_utility_light","level_fireplace","level_bedding_double","level_bedding_single","level_table_lamp",
         "level_camp_terrain","level_camp_pavilion","level_camp_picnic_table","level_camp_fire_ring","level_mill_suspension","level_shrub_refuge","level_hay_bale","level_stall","level_corn","level_blackboard","level_student_desk","level_lockers","level_basketball_hoop");
-    public static boolean approved(String id){return id.equals("level_npc_matthis_rook_proxy")||MODELS.contains(id)||BlackpineDressing.ASSETS.contains(id)||BlackpineStoryDressing.ASSETS.contains(id)||BlackpineProductionAssets.ASSETS.contains(id)||LivedAssets.approved(id);}
+    public static boolean approved(String id){return id.equals("level_npc_matthis_rook_proxy")||MODELS.contains(id)||TerrainFoundationAssets.approved(id)||BlackpineDressing.ASSETS.contains(id)||BlackpineStoryDressing.ASSETS.contains(id)||BlackpineProductionAssets.ASSETS.contains(id)||LivedAssets.approved(id);}
 }
