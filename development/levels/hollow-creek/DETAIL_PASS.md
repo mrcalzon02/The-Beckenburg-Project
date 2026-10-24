@@ -41,3 +41,11 @@ Two original pitched tent styles and a rolled-bedroll model are now constructed,
 Actual native checks: 10377 protected-route body samples; 3912 standing approach samples; 510 approach tread samples (maximum grade 0.1843600); 500 crouch-entry samples; 30 floor contacts and 21 bedding contacts. Both actual canvas shells measure 8mm; three real GLBs reload within unchanged budgets (8532 triangles total). These are native geometry checks, not runtime human/ghost/LAN acceptance.
 
 Portable toilets, camp furniture/gear, collapsed/packed tent variants, park details, designated refuge shrubs, lanterns/fire states, dock shed/generator/light string and rowboat remain in the required queue. Runtime tent/circuit/AI integration and human art review remain open.
+
+## 24 October expanded native checkpoint
+
+[Expanded review](EXPANDED_REVIEW.html) supersedes the earlier two-tent/foliage view for current construction. Eight tents, twenty new ordinary shrubs (two original models), three distinct proposed refuge sites, paired beach toilets/refuse bins and a front-left heron memorial now give path termini destinations. New cold masonry pavilion fireplace, native culvert with actual terrain bore/revetment, dock shed/reused generator/string hardware/rowboat, six chairs and three coolers are placed. The original site/checkpoints remain intact.
+
+Native support, entry, protected-route/ritual and blocker-ray checks pass. Full new tent approach grading, runtime water/physics/AI/circuits/host/LAN, true movable clutter and human art/performance review remain open. The250 native invisible blockers are NOT runtime integrated. All ordinary shrubs use a distinct decorative family; only three separate candidate refuge sockets may consume the common hiding budget.
+
+Next: runtime integration milestone (including actual movement containment), supported oil lights/fire states and remaining camp gear, explicit approach-wear/grade review, finer art/weathering, then FINAL_STORY_AND_EASTER_EGGS.md. The dock-mask encounter is a design packet only.

@@ -1,7 +1,7 @@
 {
   "id": "WLD-02",
   "title": "Camp Hollow Creek",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "native source/board/loads placed; host circuit and acceptance pending",
   "generator_required": true,
   "generator_location_intent": "New small dock generator/service shed; distribute to dock and supported camp facilities",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
@@ -21,5 +21,31 @@
     "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
     "LAN authority/reconnect and human/native acceptance"
   ],
-  "source_layout": "development/levels/layouts/wld-02/layout.json"
+  "source_layout": "development/levels/layouts/wld-02/layout.json",
+  "native_placement_contract": "development/levels/hollow-creek/dock-details.json",
+  "placed_source": {
+    "asset": "level_trace_generator",
+    "point": [
+      26.65,
+      -1.21,
+      -8.13
+    ],
+    "state_integration": "pending"
+  },
+  "placed_board": {
+    "point": [
+      27.7,
+      -0.02,
+      -7.4
+    ],
+    "access": "Exterior east shed wall; native standing approach checked"
+  },
+  "named_loads": [
+    {
+      "circuit": "HC-DOCK-01",
+      "fixture_count": 10,
+      "kind": "supported dock string globes",
+      "status": "native non-emissive hardware; runtime switching pending"
+    }
+  ]
 }

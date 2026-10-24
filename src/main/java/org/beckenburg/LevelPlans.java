@@ -338,6 +338,7 @@ public final class LevelPlans {
             DomesticFitout.populate(this);
             OutdoorHiding.populate(this);
             if(id.equals("house")||id.equals("farmhouse")||id.equals("school"))LevelDressing.populate(this);
+            else if(!id.equals("blackpine"))LevelDressing.populateHidingOnly(this);
             List<Prop> furnishingOverlays=new ArrayList<>();
             for(Prop p:props){
                 if(p.mesh().equals("bed_4")||p.mesh().equals("bed_5"))

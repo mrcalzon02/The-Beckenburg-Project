@@ -1,0 +1,28 @@
+{
+  "status": "pass-focused-checks",
+  "date": "2026-10-24",
+  "java": "JDK17 full main-source compilation",
+  "tests": {
+    "HidingBudgetTest": "10 built definitions; all101 density settings; equal maximum3, exact allowance, monotonic selection; physical cupboard pockets/approaches",
+    "VanHidingTest": "host concealment,0/100%, moving exposure and strike exclusion",
+    "CrouchAndOutdoorHidingTest": "host posture/low cover, shrub reveal and solo parity",
+    "HollowCreekDockAssetsTest": "15 actual GLBs;97862 triangles combined; finite UV/geometry; unchanged individual caps",
+    "AuthoredLevelPhysicsTest": "HOUSE/FARMHOUSE/SCHOOL XYZ geometry checked",
+    "AuthoredLevelReachabilityTest": "all15 zones and functional sockets reached from van on house/farmhouse/school",
+    "AuthoredUtilitiesTest": "36 wall switches,52 door links,7 stair links",
+    "LevelSurfaceIntegrityTest": "three core maps disjoint wall finishes, decks, apertures and guards"
+  },
+  "native_reports": [
+    "development/levels/verification/hollow-creek-dock.json",
+    "development/levels/verification/hollow-creek-amenities.json"
+  ],
+  "not_run_or_not_accepted": [
+    "Full regression suite",
+    "Actual Hollow Creek gameplay/containment",
+    "Electrical source/ghost circuit/LAN integration",
+    "All six new campsite approach tread grading",
+    "Water transparency/layer sorting runtime acceptance",
+    "Human/hardware art/performance acceptance",
+    "Working dock-mask encounter"
+  ]
+}

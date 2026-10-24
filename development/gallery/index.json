@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 602,
+  "count": 628,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1234,6 +1234,56 @@
       "sha256": "814684cd00fdcaec75e67f2473b5b46ad0f67bfa1a610260bc55f576f011f3c3"
     },
     {
+      "path": "development/levels/previews/defects/DEV-042-before-incomplete-shore-return.png",
+      "url": "development/levels/previews/defects/DEV-042-before-incomplete-shore-return.png",
+      "title": "Dev 042 before incomplete shore return",
+      "kind": "Development review",
+      "width": 1440,
+      "height": 960,
+      "bytes": 1528127,
+      "sha256": "bb613f7ae14f758b108a63d6f1c988977328809bc3d7b1dc5847abfbf5ba8646"
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-043-before-open-boat-ends.png",
+      "url": "development/levels/previews/defects/DEV-043-before-open-boat-ends.png",
+      "title": "Dev 043 before open boat ends",
+      "kind": "Development review",
+      "width": 1536,
+      "height": 640,
+      "bytes": 904718,
+      "sha256": "733ea3d5131a22c53b0350940717a1f774779b8a733a70ad5faa1d62c970af34"
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-043-before-roof-post-tips.png",
+      "url": "development/levels/previews/defects/DEV-043-before-roof-post-tips.png",
+      "title": "Dev 043 before roof post tips",
+      "kind": "Development review",
+      "width": 1536,
+      "height": 640,
+      "bytes": 833222,
+      "sha256": "c32f8d170c1c3cc6f57aafaf28ad3060d76d54acfedd6380f4ae3f8dccb888ef"
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-046-before-culvert-skin-and-water.png",
+      "url": "development/levels/previews/defects/DEV-046-before-culvert-skin-and-water.png",
+      "title": "Dev 046 before culvert skin and water",
+      "kind": "Development review",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2177216,
+      "sha256": "142fbb71a7aa863fd2c7bf01d9760fa18e455806ce82d1b75b1ee3647d77ad9f"
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-047-before-recessed-culvert.png",
+      "url": "development/levels/previews/defects/DEV-047-before-recessed-culvert.png",
+      "title": "Dev 047 before recessed culvert",
+      "kind": "Development review",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2245608,
+      "sha256": "dd6236779ba98e6f6db87827eddc43139caba7507c6ceb8aaed94eec4498cb84"
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "url": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "title": "Academy edge sky plan",
@@ -1694,6 +1744,66 @@
       "sha256": "04f1125811b05d55e0516f9006e354539cb9364ffdcb5da2d0e5c0a17f4f5dc4"
     },
     {
+      "path": "development/levels/previews/hollow-creek/amenities-approach-shrubs-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/amenities-approach-shrubs-native-fitout.png",
+      "title": "Amenities approach shrubs native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2056848,
+      "sha256": "1f5e536c941122c5da6937465d58aacbebc95b3f4e555ec9085b4c7eba01feba"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-beach-toilets-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/amenities-beach-toilets-native-fitout.png",
+      "title": "Amenities beach toilets native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 1991095,
+      "sha256": "e8ed835cdc2b10d08e41ba0403f47c4a2806ad3ba55209fe2f22d23e02d485ae"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-culvert-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/amenities-culvert-native-fitout.png",
+      "title": "Amenities culvert native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2271611,
+      "sha256": "db709b166354277fa7721153fcec9be91a6e00a0af6143e6feaaf394df525584"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-expanded-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/amenities-expanded-site-native-fitout.png",
+      "title": "Amenities expanded site native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2447595,
+      "sha256": "e06c72b790b7506e8fa48bb971ef29b933a412b9347f51c96aa457d2fca9b39b"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-hearth-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/amenities-hearth-native-fitout.png",
+      "title": "Amenities hearth native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2204269,
+      "sha256": "143d6cdbd6cdff31cb4bf402ff31365d4dd7dd4efee406caa6b86211e0083020"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/amenities-memorial-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/amenities-memorial-native-fitout.png",
+      "title": "Amenities memorial native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2363578,
+      "sha256": "43ee47c2b3ee2bf73a36bf6e481d4b978b276344b20114a196635248d3aa5fc6"
+    },
+    {
       "path": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
       "url": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
       "title": "Boundary logfall native fitout",
@@ -1742,6 +1852,36 @@
       "height": 800,
       "bytes": 1006492,
       "sha256": "048a28f863dfaff710863537a2c457508e4af7add501f225387fcd5961d32541"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/camp-furnished-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/camp-furnished-native-fitout.png",
+      "title": "Camp furnished native fitout",
+      "kind": "Native scene overview",
+      "width": 1440,
+      "height": 960,
+      "bytes": 1781329,
+      "sha256": "8cf1deeacf2277d6d404e2dd5afdc5243249acaabbb399c9bfef9f649bc057fb"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/dock-expanded-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/dock-expanded-site-native-fitout.png",
+      "title": "Dock expanded site native fitout",
+      "kind": "Native scene overview",
+      "width": 1440,
+      "height": 960,
+      "bytes": 2060833,
+      "sha256": "7e7f01dfd757e8ca9ff1533c6c69c31c35a20bc652b76f43ea82d95dc666d9ac"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/dock-service-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/dock-service-native-fitout.png",
+      "title": "Dock service native fitout",
+      "kind": "Native scene overview",
+      "width": 1440,
+      "height": 960,
+      "bytes": 1590521,
+      "sha256": "2f9e173789b5da23e8b7434bb40c38ac7136fc55b70f507c40cf1c3a028b0617"
     },
     {
       "path": "development/levels/previews/hollow-creek/foliage-detail-berm-native-fitout.png",
@@ -1912,6 +2052,16 @@
       "height": 700,
       "bytes": 858528,
       "sha256": "647f3662f5675b85965916a02d9c739dd4f564bdcd5897123774b829dc5ccc6b"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/shore-return-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/shore-return-native-fitout.png",
+      "title": "Shore return native fitout",
+      "kind": "Native scene overview",
+      "width": 1440,
+      "height": 960,
+      "bytes": 1533633,
+      "sha256": "0e6978a55958c09a1baea455cf8bb6413d0f564b723f187a7d1794a69d4e57e9"
     },
     {
       "path": "development/levels/previews/hollow-creek/tents-east-native-fitout.png",
@@ -2244,6 +2394,26 @@
       "sha256": "9487a88afc03b8091bdc923a2b7af3398352995ab02f67f0814828e7b4bca61d"
     },
     {
+      "path": "development/levels/previews/level_camp_cooler.png",
+      "url": "development/levels/previews/level_camp_cooler.png",
+      "title": "Level camp cooler",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 878931,
+      "sha256": "7e810370be1bd71732d7ac498d9559db6d247719f0c9a0fa96f2c954741f1a8c"
+    },
+    {
+      "path": "development/levels/previews/level_camp_dock_shed.png",
+      "url": "development/levels/previews/level_camp_dock_shed.png",
+      "title": "Level camp dock shed",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 846002,
+      "sha256": "fcfad84d06b92379f87b551248fd62969a39f182fdf4c4962605ee73410072c7"
+    },
+    {
       "path": "development/levels/previews/level_camp_fire_ring.png",
       "url": "development/levels/previews/level_camp_fire_ring.png",
       "title": "Level camp fire ring",
@@ -2262,6 +2432,26 @@
       "height": 640,
       "bytes": 887205,
       "sha256": "24af90f132bce67514d8a7a6f945f57b8ff5dcf4c6cde8df07a081f41f28ee37"
+    },
+    {
+      "path": "development/levels/previews/level_camp_folding_chair.png",
+      "url": "development/levels/previews/level_camp_folding_chair.png",
+      "title": "Level camp folding chair",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 845516,
+      "sha256": "17c29c9f7cd0475a5535fc29bc01c5a8fc7fa43e51a971853204d7e40fde2d44"
+    },
+    {
+      "path": "development/levels/previews/level_camp_heron_memorial.png",
+      "url": "development/levels/previews/level_camp_heron_memorial.png",
+      "title": "Level camp heron memorial",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 815660,
+      "sha256": "f088adae18cbead6804ed7c28dd3bc69ba0b587efb0f76e810d2ccbb20a336cd"
     },
     {
       "path": "development/levels/previews/level_camp_logpile.png",
@@ -2294,6 +2484,16 @@
       "sha256": "43577ddc4ddbc4ee7ad485de82249ae41c25590635c3ec9f18050272a8fce70a"
     },
     {
+      "path": "development/levels/previews/level_camp_pavilion_fireplace.png",
+      "url": "development/levels/previews/level_camp_pavilion_fireplace.png",
+      "title": "Level camp pavilion fireplace",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 819821,
+      "sha256": "d69fe835037c646350c759ed32ddc36a1f1a0314926587103d8179dbfffa1bd1"
+    },
+    {
       "path": "development/levels/previews/level_camp_pavilion_services.png",
       "url": "development/levels/previews/level_camp_pavilion_services.png",
       "title": "Level camp pavilion services",
@@ -2314,6 +2514,26 @@
       "sha256": "6daeb18b1ffe2d31338d827268fa2eab857c4593754cb5661cada5a9daa26b62"
     },
     {
+      "path": "development/levels/previews/level_camp_portable_toilet_closed.png",
+      "url": "development/levels/previews/level_camp_portable_toilet_closed.png",
+      "title": "Level camp portable toilet closed",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 877388,
+      "sha256": "3868097b702e3ba1bf20d103c05afbbe9d57a458e91811f4cbd946afe330e3ed"
+    },
+    {
+      "path": "development/levels/previews/level_camp_portable_toilet_open.png",
+      "url": "development/levels/previews/level_camp_portable_toilet_open.png",
+      "title": "Level camp portable toilet open",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 869320,
+      "sha256": "2b013b7267e169e51c473217a81d2311578b0493aaf69c7bf2a267c0b2dfbfb4"
+    },
+    {
       "path": "development/levels/previews/level_camp_rainbarrel.png",
       "url": "development/levels/previews/level_camp_rainbarrel.png",
       "title": "Level camp rainbarrel",
@@ -2324,6 +2544,26 @@
       "sha256": "595768f65456f49bb949de3d9835d2b2ff4eda04096d5a6596789e0589b99008"
     },
     {
+      "path": "development/levels/previews/level_camp_refuse_bin.png",
+      "url": "development/levels/previews/level_camp_refuse_bin.png",
+      "title": "Level camp refuse bin",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 879650,
+      "sha256": "c74045869d9836e1e562315c6df2f41d87306fb6a22494f7ab6b6077ec21c8c1"
+    },
+    {
+      "path": "development/levels/previews/level_camp_rowboat.png",
+      "url": "development/levels/previews/level_camp_rowboat.png",
+      "title": "Level camp rowboat",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 899113,
+      "sha256": "a0ff005d5663ed298e262503503bd406555a439696ed4dd3448f29322bf1ac68"
+    },
+    {
       "path": "development/levels/previews/level_camp_sawhorse.png",
       "url": "development/levels/previews/level_camp_sawhorse.png",
       "title": "Level camp sawhorse",
@@ -2332,6 +2572,26 @@
       "height": 640,
       "bytes": 824549,
       "sha256": "559f99347a6dfe18ca2dab02a69c22a3b03d91350f2b1c1dde62a4980286a58d"
+    },
+    {
+      "path": "development/levels/previews/level_camp_shrub_decorative_a.png",
+      "url": "development/levels/previews/level_camp_shrub_decorative_a.png",
+      "title": "Level camp shrub decorative a",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 914935,
+      "sha256": "1346a223592704ed68a144a8866697fc699a62a008e94166335ff644df4b8230"
+    },
+    {
+      "path": "development/levels/previews/level_camp_shrub_decorative_b.png",
+      "url": "development/levels/previews/level_camp_shrub_decorative_b.png",
+      "title": "Level camp shrub decorative b",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 931021,
+      "sha256": "7ee13a1d17b68fedc0a31fd4b772e833e2a45becfa81d5be048fa9e118b9d1f3"
     },
     {
       "path": "development/levels/previews/level_camp_tent_dome.png",

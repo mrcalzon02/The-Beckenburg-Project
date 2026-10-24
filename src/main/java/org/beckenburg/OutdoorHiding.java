@@ -4,12 +4,12 @@ import org.beckenburg.LevelDefinition.*;
 /** Sparse, authored shrub pockets. Foliage detail settings never change availability. */
 public final class OutdoorHiding {
     private OutdoorHiding(){}
-    public static boolean available(Socket s,int density){
+    public static boolean available(LevelDefinition level,Socket s,int density){
         if(density<0||density>100)throw new IllegalArgumentException("hiding density");
-        return s!=null&&s.type().equals("outdoor-hide")&&Math.floorMod(s.id().hashCode(),100)<density;
+        return s!=null&&s.type().equals("outdoor-hide")&&HidingBudget.available(level,s,density);
     }
     public static Socket containing(LevelDefinition level,double x,double y,double z,int density){
-        for(Socket s:level.sockets())if(available(s,density)&&level.room(s.room()).outside()
+        for(Socket s:level.sockets())if(available(level,s,density)&&level.room(s.room()).outside()
                 &&Math.abs(y-s.y())<.12&&Math.hypot(x-s.x(),z-s.z())<.36)return s;
         return null;
     }

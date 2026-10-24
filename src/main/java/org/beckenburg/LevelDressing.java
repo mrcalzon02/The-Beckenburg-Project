@@ -8,6 +8,16 @@ final class LevelDressing {
     private final List<Prop> reserved=new ArrayList<>();
     private LevelDressing(LevelPlans.B builder){b=builder;}
     static void populate(LevelPlans.B b){new LevelDressing(b).build();}
+    static void populateHidingOnly(LevelPlans.B b){
+        var dressing=new LevelDressing(b);b.sockets.removeIf(s->s.type().equals("hide"));
+        int placed=0;
+        for(int room:new int[]{1,3,6,0,2,4,5,7,8,9,10,11}){
+            var r=b.rooms.get(room);
+            if(dressing.wallPosition("level_hiding_cupboard",room,r.x1()-1,r.z1()-1,.85,.70,2.3,0)==null)continue;
+            dressing.closet(room);if(++placed==HidingBudget.MAXIMUM)return;
+        }
+        throw new IllegalStateException("Insufficient measured hiding bays: "+b.id+" "+placed);
+    }
     private Prop prop(String mesh,int room,double x,double y,double z,double yaw,double hx,double hz,double height,String support){
         return new Prop(mesh,room,x,y,z,1,yaw,hx,hz,height,support);
     }

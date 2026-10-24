@@ -1,0 +1,5078 @@
+{
+  "status": "native expansion; independent fitness checks pending",
+  "assets": [
+    {
+      "id": "level_camp_portable_toilet_open",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "e56b28ed924ab705f7c847b53bd4cea8d71082a4978f90bf99a77dd2fdda45c4",
+      "bytes": 139420,
+      "triangles": 1532,
+      "bounds": [
+        [
+          -0.7200000286102295,
+          0.0,
+          -0.7950000166893005
+        ],
+        [
+          0.7200000286102295,
+          2.5199999809265137,
+          1.7868376970291138
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_portable_toilet_open.blend"
+    },
+    {
+      "id": "level_camp_portable_toilet_closed",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "0531123fe69ee2e9cb02a983d26e164c1864ee5fa5e1509e126966f1c00e9acc",
+      "bytes": 139420,
+      "triangles": 1532,
+      "bounds": [
+        [
+          -0.7200000286102295,
+          0.0,
+          -0.7950000166893005
+        ],
+        [
+          0.7200000286102295,
+          2.5199999809265137,
+          0.8474999666213989
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_portable_toilet_closed.blend"
+    },
+    {
+      "id": "level_camp_refuse_bin",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "654256e3c029a495df490aad668bd8782acb12a6321adea2ebe959298ab2e3eb",
+      "bytes": 43516,
+      "triangles": 264,
+      "bounds": [
+        [
+          -0.4000000059604645,
+          0.0,
+          -0.4779999852180481
+        ],
+        [
+          0.4000000059604645,
+          1.1500000953674316,
+          0.4300000071525574
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_refuse_bin.blend"
+    },
+    {
+      "id": "level_camp_heron_memorial",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "ab2fe0253a1625d77e027565ce2fbdde049a929b0a7df0d2c4d14c7bd2af6df8",
+      "bytes": 94600,
+      "triangles": 1188,
+      "bounds": [
+        [
+          -1.074957251548767,
+          0.0,
+          -0.7250000238418579
+        ],
+        [
+          1.074957251548767,
+          2.942117214202881,
+          0.7250000238418579
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_heron_memorial.blend"
+    },
+    {
+      "id": "level_camp_pavilion_fireplace",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "e633d5d9664eb4c7e50a38be8e9ba86ef837a19113dbd82218adc22c0e51c274",
+      "bytes": 65304,
+      "triangles": 628,
+      "bounds": [
+        [
+          -1.5,
+          0.0,
+          -2.125
+        ],
+        [
+          1.5,
+          5.875,
+          2.049999952316284
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_pavilion_fireplace.blend"
+    },
+    {
+      "id": "level_camp_shrub_decorative_a",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "fce6a750c5324231748cd08064b8f9e82deca2803b8092e7b66e656e5da6085d",
+      "bytes": 435104,
+      "triangles": 4340,
+      "bounds": [
+        [
+          -1.3376821279525757,
+          -0.017896069213747978,
+          -1.3949793577194214
+        ],
+        [
+          1.4416042566299438,
+          1.829264760017395,
+          1.1857492923736572
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_shrub_decorative_a.blend"
+    },
+    {
+      "id": "level_camp_shrub_decorative_b",
+      "library": "campground",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "7e4655e4054ada006232aea926ccb7a857fb6d6a2e509710a0672d765102a413",
+      "bytes": 435104,
+      "triangles": 4340,
+      "bounds": [
+        [
+          -1.3717035055160522,
+          -0.018312782049179077,
+          -1.2766941785812378
+        ],
+        [
+          1.3272504806518555,
+          1.8627290725708008,
+          1.3613935708999634
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_shrub_decorative_b.blend"
+    },
+    {
+      "id": "level_camp_terrain_amenities",
+      "triangles": 41782,
+      "editable": "development/levels/blender/level_camp_terrain_amenities.blend",
+      "bytes": 3167004,
+      "sha256": "3f3dbd79a7175b90303340400ce9e873b6548fc0520f7557a823236ac7d7a833"
+    },
+    {
+      "id": "level_camp_creek_engineering",
+      "triangles": 4644,
+      "editable": "development/levels/blender/level_camp_creek_engineering.blend",
+      "bytes": 354748,
+      "sha256": "d2d7d4560eaa7f98d1d221b8d910eaa476bcd6b01f2914256ccdbee7b0e86218"
+    }
+  ],
+  "placements": [
+    {
+      "asset": "level_camp_portable_toilet_open",
+      "name": "Beach toilet 1",
+      "x": 11.65,
+      "z": 17.4,
+      "y": -0.7840028762817383,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": false
+    },
+    {
+      "asset": "level_camp_portable_toilet_closed",
+      "name": "Beach toilet 2",
+      "x": 13.35,
+      "z": 17.4,
+      "y": -0.7981048583984375,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": false
+    },
+    {
+      "asset": "level_camp_refuse_bin",
+      "name": "Beach refuse bin 1",
+      "x": 15.7,
+      "z": 19.0,
+      "y": -0.7629712677001953,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": false
+    },
+    {
+      "asset": "level_camp_refuse_bin",
+      "name": "Beach refuse bin 2",
+      "x": 16.7,
+      "z": 19.0,
+      "y": -0.7629712677001953,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": false
+    },
+    {
+      "asset": "level_camp_heron_memorial",
+      "name": "Camp wardens heron memorial",
+      "x": 5,
+      "z": 50.7,
+      "y": 0.597641487121582,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": false
+    },
+    {
+      "asset": "level_camp_pavilion_fireplace",
+      "name": "Pavilion built-in masonry hearth",
+      "x": 25.9,
+      "z": 46.1,
+      "y": 0,
+      "yaw": 1.5707963267948966,
+      "scale": 1,
+      "terrain_fitted": false
+    },
+    {
+      "asset": "level_camp_tent_ridge",
+      "name": "Additional pitched tent 1",
+      "x": 8.5,
+      "z": 22,
+      "y": -0.7253894805908203,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_tent_dome",
+      "name": "Additional pitched tent 2",
+      "x": 20.2,
+      "z": 20.5,
+      "y": -0.7564182281494141,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_tent_ridge",
+      "name": "Additional pitched tent 3",
+      "x": 20.4,
+      "z": 46,
+      "y": 0.07868099212646484,
+      "yaw": 3.141592653589793,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_tent_dome",
+      "name": "Additional pitched tent 4",
+      "x": 45.3,
+      "z": 30.3,
+      "y": -0.1265869140625,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_tent_ridge",
+      "name": "Additional pitched tent 5",
+      "x": 23,
+      "z": 52,
+      "y": 0.4296388626098633,
+      "yaw": 3.141592653589793,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_tent_dome",
+      "name": "Additional pitched tent 6",
+      "x": 46.3,
+      "z": 61.2,
+      "y": 0.9335241317749023,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 0",
+      "x": 28.929025649137884,
+      "z": 54.900920602530356,
+      "y": 0.639765739440918,
+      "yaw": 2.455396570961128,
+      "scale": 1.05539066869994,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 1",
+      "x": 30.85999903332693,
+      "z": 50.62465810942893,
+      "y": 0.5111179351806641,
+      "yaw": 5.45570483097254,
+      "scale": 0.9745925369470806,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 2",
+      "x": 30.37316733687113,
+      "z": 58.800980568600615,
+      "y": 0.7926225662231445,
+      "yaw": 1.1927768585050302,
+      "scale": 1.0473723410327922,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 3",
+      "x": 27.93838091333752,
+      "z": 68.22017653885474,
+      "y": 1.1827030181884766,
+      "yaw": 3.573519467007611,
+      "scale": 0.9585363700764071,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 4",
+      "x": 42.515624001517665,
+      "z": 53.863374462181945,
+      "y": 0.6867055892944336,
+      "yaw": 2.8472454491591264,
+      "scale": 1.1618347844815635,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 5",
+      "x": 34.9758193538147,
+      "z": 52.29364592236317,
+      "y": 0.6305723190307617,
+      "yaw": 0.8720929170048579,
+      "scale": 0.991613019330594,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 6",
+      "x": 35.814695945245376,
+      "z": 55.95182425331858,
+      "y": 0.7298288345336914,
+      "yaw": 6.228470361214676,
+      "scale": 1.1321054117233844,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 7",
+      "x": 39.80540656199193,
+      "z": 67.55069911146126,
+      "y": 0.9721336364746094,
+      "yaw": 6.079673965282301,
+      "scale": 0.955117118576998,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 8",
+      "x": 19.179269385545815,
+      "z": 63.60750443536613,
+      "y": 1.0788230895996094,
+      "yaw": 2.8462226315255963,
+      "scale": 1.0003330362627194,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 9",
+      "x": 37.03645949331643,
+      "z": 69.80593310887937,
+      "y": 1.0510492324829102,
+      "yaw": 2.6802423950345378,
+      "scale": 1.0218983586373402,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 10",
+      "x": 24.22459126510344,
+      "z": 56.67862496978911,
+      "y": 0.6808357238769531,
+      "yaw": 0.4610435624701283,
+      "scale": 0.8871675166459589,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 11",
+      "x": 23.249965258525823,
+      "z": 66.10192591406283,
+      "y": 1.173971176147461,
+      "yaw": 4.658556346087518,
+      "scale": 0.9305415948095344,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 12",
+      "x": 33.7602576118357,
+      "z": 59.06755083531369,
+      "y": 0.801152229309082,
+      "yaw": 0.9538904258750186,
+      "scale": 0.9357658837297667,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 13",
+      "x": 38.798900465779724,
+      "z": 50.605363940982706,
+      "y": 0.6352987289428711,
+      "yaw": 1.2894756493472714,
+      "scale": 1.0689553640146388,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 14",
+      "x": 38.95343749467703,
+      "z": 53.77497172955916,
+      "y": 0.7055177688598633,
+      "yaw": 5.638525098990401,
+      "scale": 0.854125866808936,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 15",
+      "x": 40.38625419217874,
+      "z": 64.01259389217594,
+      "y": 0.8994674682617188,
+      "yaw": 2.6789998809811864,
+      "scale": 0.8678385269001571,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 16",
+      "x": 27.587783258494426,
+      "z": 50.62246612173368,
+      "y": 0.4450550079345703,
+      "yaw": 5.92710142514558,
+      "scale": 0.9767401890990469,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 17",
+      "x": 24.856653449407467,
+      "z": 69.53361091094156,
+      "y": 1.3106269836425781,
+      "yaw": 1.385515095973394,
+      "scale": 1.0444466315633263,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 18",
+      "x": 31.99173678130063,
+      "z": 53.460303389727976,
+      "y": 0.6251707077026367,
+      "yaw": 4.867777799022114,
+      "scale": 0.8908500010103266,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 19",
+      "x": 27.370107581741266,
+      "z": 57.929501647476705,
+      "y": 0.7540044784545898,
+      "yaw": 2.8916251267777167,
+      "scale": 0.9666281493364679,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_shrub_refuge",
+      "name": "Proposed authored refuge 1",
+      "x": 21,
+      "z": 63,
+      "y": 1.0313186645507812,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_shrub_refuge",
+      "name": "Proposed authored refuge 2",
+      "x": 42,
+      "z": 54,
+      "y": 0.7247495651245117,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_shrub_refuge",
+      "name": "Proposed authored refuge 3",
+      "x": 37,
+      "z": 19.5,
+      "y": -0.7824974060058594,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_bedroll_rolled",
+      "name": "Additional camp rolled bedding 0",
+      "x": 9.05,
+      "z": 22,
+      "y": -0.6993750305175781,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_bedroll_rolled",
+      "name": "Additional camp rolled bedding 1",
+      "x": 20.75,
+      "z": 20.5,
+      "y": -0.7275885314941406,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_bedroll_rolled",
+      "name": "Additional camp rolled bedding 2",
+      "x": 20.95,
+      "z": 46,
+      "y": 0.11677849578857422,
+      "yaw": 3.141592653589793,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_bedroll_rolled",
+      "name": "Additional camp rolled bedding 3",
+      "x": 45.849999999999994,
+      "z": 30.3,
+      "y": -0.10203826141357422,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_bedroll_rolled",
+      "name": "Additional camp rolled bedding 4",
+      "x": 23.55,
+      "z": 52,
+      "y": 0.4655905990600586,
+      "yaw": 3.141592653589793,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_bedroll_rolled",
+      "name": "Additional camp rolled bedding 5",
+      "x": 46.849999999999994,
+      "z": 61.2,
+      "y": 0.9780827789306641,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    }
+  ],
+  "supports": [
+    {
+      "name": "Toilet footing support",
+      "x": 11.120000000000001,
+      "z": 16.799999999999997,
+      "ground": -0.8246517181396484,
+      "top": -0.7840028762817383
+    },
+    {
+      "name": "Toilet footing support.001",
+      "x": 11.120000000000001,
+      "z": 18.0,
+      "ground": -0.8121557235717773,
+      "top": -0.7840028762817383
+    },
+    {
+      "name": "Toilet footing support.002",
+      "x": 12.18,
+      "z": 16.799999999999997,
+      "ground": -0.8224000930786133,
+      "top": -0.7840028762817383
+    },
+    {
+      "name": "Toilet footing support.003",
+      "x": 12.18,
+      "z": 18.0,
+      "ground": -0.8245391845703125,
+      "top": -0.7840028762817383
+    },
+    {
+      "name": "Toilet supported entry ramp 0",
+      "kind": "ramp",
+      "x": 11.65,
+      "front": 18.15,
+      "back": 19.799999999999997,
+      "top": -0.6740028762817383
+    },
+    {
+      "name": "Toilet footing support.004",
+      "x": 12.82,
+      "z": 16.799999999999997,
+      "ground": -0.8217306137084961,
+      "top": -0.7981048583984375
+    },
+    {
+      "name": "Toilet footing support.005",
+      "x": 12.82,
+      "z": 18.0,
+      "ground": -0.8277683258056641,
+      "top": -0.7981048583984375
+    },
+    {
+      "name": "Toilet footing support.006",
+      "x": 13.879999999999999,
+      "z": 16.799999999999997,
+      "ground": -0.8206758499145508,
+      "top": -0.7981048583984375
+    },
+    {
+      "name": "Toilet footing support.007",
+      "x": 13.879999999999999,
+      "z": 18.0,
+      "ground": -0.8251018524169922,
+      "top": -0.7981048583984375
+    },
+    {
+      "name": "Toilet supported entry ramp 1",
+      "kind": "ramp",
+      "x": 13.35,
+      "front": 18.15,
+      "back": 19.799999999999997,
+      "top": -0.6881048583984375
+    },
+    {
+      "name": "Bin fitted support support",
+      "x": 15.45,
+      "z": 18.74,
+      "ground": -0.7977914810180664,
+      "top": -0.7629712677001953
+    },
+    {
+      "name": "Bin fitted support support.001",
+      "x": 15.45,
+      "z": 19.26,
+      "ground": -0.8013191223144531,
+      "top": -0.7629712677001953
+    },
+    {
+      "name": "Bin fitted support support.002",
+      "x": 15.95,
+      "z": 18.74,
+      "ground": -0.7894191741943359,
+      "top": -0.7629712677001953
+    },
+    {
+      "name": "Bin fitted support support.003",
+      "x": 15.95,
+      "z": 19.26,
+      "ground": -0.7821435928344727,
+      "top": -0.7629712677001953
+    },
+    {
+      "name": "Bin fitted support support.004",
+      "x": 16.45,
+      "z": 18.74,
+      "ground": -0.7895269393920898,
+      "top": -0.7629712677001953
+    },
+    {
+      "name": "Bin fitted support support.005",
+      "x": 16.45,
+      "z": 19.26,
+      "ground": -0.7808370590209961,
+      "top": -0.7629712677001953
+    },
+    {
+      "name": "Bin fitted support support.006",
+      "x": 16.95,
+      "z": 18.74,
+      "ground": -0.7898120880126953,
+      "top": -0.7629712677001953
+    },
+    {
+      "name": "Bin fitted support support.007",
+      "x": 16.95,
+      "z": 19.26,
+      "ground": -0.7809362411499023,
+      "top": -0.7629712677001953
+    },
+    {
+      "name": "Memorial foundation pier support",
+      "x": 4.48,
+      "z": 50.18,
+      "ground": 0.4224529266357422,
+      "top": 0.597641487121582
+    },
+    {
+      "name": "Memorial foundation pier support.001",
+      "x": 4.48,
+      "z": 51.220000000000006,
+      "ground": 0.5474691390991211,
+      "top": 0.597641487121582
+    },
+    {
+      "name": "Memorial foundation pier support.002",
+      "x": 5.52,
+      "z": 50.18,
+      "ground": 0.4174022674560547,
+      "top": 0.597641487121582
+    },
+    {
+      "name": "Memorial foundation pier support.003",
+      "x": 5.52,
+      "z": 51.220000000000006,
+      "ground": 0.5709705352783203,
+      "top": 0.597641487121582
+    },
+    {
+      "name": "Hearth external foundation support",
+      "x": 24.25,
+      "z": 45.0,
+      "ground": 0.11723041534423828,
+      "top": 0
+    },
+    {
+      "name": "Hearth external foundation support.001",
+      "x": 24.25,
+      "z": 47.2,
+      "ground": 0.21769142150878906,
+      "top": 0
+    },
+    {
+      "name": "Hearth external foundation support.002",
+      "x": 24.950000000000003,
+      "z": 45.0,
+      "ground": 0.022789955139160156,
+      "top": 0
+    },
+    {
+      "name": "Hearth external foundation support.003",
+      "x": 24.950000000000003,
+      "z": 47.2,
+      "ground": 0.04524707794189453,
+      "top": 0
+    }
+  ],
+  "large_decorative_shrubs": [
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 0",
+      "x": 28.929025649137884,
+      "z": 54.900920602530356,
+      "y": 0.639765739440918,
+      "yaw": 2.455396570961128,
+      "scale": 1.05539066869994,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 1",
+      "x": 30.85999903332693,
+      "z": 50.62465810942893,
+      "y": 0.5111179351806641,
+      "yaw": 5.45570483097254,
+      "scale": 0.9745925369470806,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 2",
+      "x": 30.37316733687113,
+      "z": 58.800980568600615,
+      "y": 0.7926225662231445,
+      "yaw": 1.1927768585050302,
+      "scale": 1.0473723410327922,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 3",
+      "x": 27.93838091333752,
+      "z": 68.22017653885474,
+      "y": 1.1827030181884766,
+      "yaw": 3.573519467007611,
+      "scale": 0.9585363700764071,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 4",
+      "x": 42.515624001517665,
+      "z": 53.863374462181945,
+      "y": 0.6867055892944336,
+      "yaw": 2.8472454491591264,
+      "scale": 1.1618347844815635,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 5",
+      "x": 34.9758193538147,
+      "z": 52.29364592236317,
+      "y": 0.6305723190307617,
+      "yaw": 0.8720929170048579,
+      "scale": 0.991613019330594,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 6",
+      "x": 35.814695945245376,
+      "z": 55.95182425331858,
+      "y": 0.7298288345336914,
+      "yaw": 6.228470361214676,
+      "scale": 1.1321054117233844,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 7",
+      "x": 39.80540656199193,
+      "z": 67.55069911146126,
+      "y": 0.9721336364746094,
+      "yaw": 6.079673965282301,
+      "scale": 0.955117118576998,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 8",
+      "x": 19.179269385545815,
+      "z": 63.60750443536613,
+      "y": 1.0788230895996094,
+      "yaw": 2.8462226315255963,
+      "scale": 1.0003330362627194,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 9",
+      "x": 37.03645949331643,
+      "z": 69.80593310887937,
+      "y": 1.0510492324829102,
+      "yaw": 2.6802423950345378,
+      "scale": 1.0218983586373402,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 10",
+      "x": 24.22459126510344,
+      "z": 56.67862496978911,
+      "y": 0.6808357238769531,
+      "yaw": 0.4610435624701283,
+      "scale": 0.8871675166459589,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 11",
+      "x": 23.249965258525823,
+      "z": 66.10192591406283,
+      "y": 1.173971176147461,
+      "yaw": 4.658556346087518,
+      "scale": 0.9305415948095344,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 12",
+      "x": 33.7602576118357,
+      "z": 59.06755083531369,
+      "y": 0.801152229309082,
+      "yaw": 0.9538904258750186,
+      "scale": 0.9357658837297667,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 13",
+      "x": 38.798900465779724,
+      "z": 50.605363940982706,
+      "y": 0.6352987289428711,
+      "yaw": 1.2894756493472714,
+      "scale": 1.0689553640146388,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 14",
+      "x": 38.95343749467703,
+      "z": 53.77497172955916,
+      "y": 0.7055177688598633,
+      "yaw": 5.638525098990401,
+      "scale": 0.854125866808936,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 15",
+      "x": 40.38625419217874,
+      "z": 64.01259389217594,
+      "y": 0.8994674682617188,
+      "yaw": 2.6789998809811864,
+      "scale": 0.8678385269001571,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 16",
+      "x": 27.587783258494426,
+      "z": 50.62246612173368,
+      "y": 0.4450550079345703,
+      "yaw": 5.92710142514558,
+      "scale": 0.9767401890990469,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 17",
+      "x": 24.856653449407467,
+      "z": 69.53361091094156,
+      "y": 1.3106269836425781,
+      "yaw": 1.385515095973394,
+      "scale": 1.0444466315633263,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_a",
+      "name": "Approach decorative large shrub 18",
+      "x": 31.99173678130063,
+      "z": 53.460303389727976,
+      "y": 0.6251707077026367,
+      "yaw": 4.867777799022114,
+      "scale": 0.8908500010103266,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_camp_shrub_decorative_b",
+      "name": "Approach decorative large shrub 19",
+      "x": 27.370107581741266,
+      "z": 57.929501647476705,
+      "y": 0.7540044784545898,
+      "yaw": 2.8916251267777167,
+      "scale": 0.9666281493364679,
+      "terrain_fitted": true
+    }
+  ],
+  "additional_tents": 6,
+  "total_pitched_tents": 8,
+  "creek": {
+    "culvert_center": [
+      48.649045371350894,
+      -1.3,
+      25.5
+    ],
+    "barrel_radius": 0.82,
+    "barrel_length": 3,
+    "terrain_faces_cut": 2384,
+    "revetment": [
+      {
+        "name": "Terrain-embedded creek revetment stone",
+        "x": 45.51937864040165,
+        "z": 2.8,
+        "ground": -2.1680908203125
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.001",
+        "x": 49.21937864040165,
+        "z": 2.8,
+        "ground": -2.28200626373291
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.002",
+        "x": 45.411685941717536,
+        "z": 3.29,
+        "ground": -1.8811311721801758
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.003",
+        "x": 49.34968549622613,
+        "z": 3.29,
+        "ground": -2.1323471069335938
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.004",
+        "x": 45.57516986552218,
+        "z": 3.78,
+        "ground": -2.13753604888916
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.005",
+        "x": 49.21384000103574,
+        "z": 3.78,
+        "ground": -2.3158130645751953
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.006",
+        "x": 45.671877990073035,
+        "z": 4.27,
+        "ground": -2.287691116333008
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.007",
+        "x": 49.14968246631438,
+        "z": 4.27,
+        "ground": -2.4248790740966797
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.008",
+        "x": 45.520151983805846,
+        "z": 4.76,
+        "ground": -1.951416015625
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.009",
+        "x": 49.33873918807912,
+        "z": 4.76,
+        "ground": -2.165555953979492
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.010",
+        "x": 45.50460684038171,
+        "z": 5.25,
+        "ground": -1.8701868057250977
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.011",
+        "x": 49.39624374741135,
+        "z": 5.25,
+        "ground": -2.099184036254883
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.012",
+        "x": 45.70761921419765,
+        "z": 5.74,
+        "ground": -2.241469383239746
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.013",
+        "x": 49.239649289175205,
+        "z": 5.74,
+        "ground": -2.3643722534179688
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.014",
+        "x": 45.72315476986471,
+        "z": 6.2299999999999995,
+        "ground": -2.236172676086426
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.015",
+        "x": 49.27480186292782,
+        "z": 6.2299999999999995,
+        "ground": -2.3233814239501953
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.016",
+        "x": 45.573255266654485,
+        "z": 6.72,
+        "ground": -1.9127845764160156
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.017",
+        "x": 49.479454102220046,
+        "z": 6.72,
+        "ground": -1.964700698852539
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.018",
+        "x": 45.65804343977613,
+        "z": 7.21,
+        "ground": -2.0422163009643555
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.019",
+        "x": 49.453261177327484,
+        "z": 7.21,
+        "ground": -2.0250091552734375
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.020",
+        "x": 45.85212004728203,
+        "z": 7.7,
+        "ground": -2.3595027923583984
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.021",
+        "x": 49.321384649230936,
+        "z": 7.7,
+        "ground": -2.3015966415405273
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.022",
+        "x": 45.78740853499457,
+        "z": 8.19,
+        "ground": -2.184906005859375
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.023",
+        "x": 49.45164876879916,
+        "z": 8.19,
+        "ground": -2.06866455078125
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.024",
+        "x": 45.68387312034163,
+        "z": 8.68,
+        "ground": -1.9499340057373047
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.025",
+        "x": 49.62382341637587,
+        "z": 8.68,
+        "ground": -1.7797508239746094
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.026",
+        "x": 45.85260837781108,
+        "z": 9.17,
+        "ground": -2.1869029998779297
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.027",
+        "x": 49.526535594909305,
+        "z": 9.17,
+        "ground": -2.038619041442871
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.028",
+        "x": 45.993170712626,
+        "z": 9.66,
+        "ground": -2.3447790145874023
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.029",
+        "x": 49.45993908564746,
+        "z": 9.66,
+        "ground": -2.217142105102539
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.030",
+        "x": 45.87155998974667,
+        "z": 10.149999999999999,
+        "ground": -2.068190574645996
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.031",
+        "x": 49.65773399471199,
+        "z": 10.149999999999999,
+        "ground": -1.9442682266235352
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.032",
+        "x": 45.84818098459266,
+        "z": 10.64,
+        "ground": -1.932805061340332
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.033",
+        "x": 49.759206519388826,
+        "z": 10.64,
+        "ground": -1.8484363555908203
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.034",
+        "x": 46.44071217798592,
+        "z": 15.05,
+        "ground": -2.200253486633301
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.035",
+        "x": 49.901651417237225,
+        "z": 15.05,
+        "ground": -2.2075910568237305
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.036",
+        "x": 46.334832477805364,
+        "z": 15.54,
+        "ground": -1.900954246520996
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.037",
+        "x": 50.08666942169053,
+        "z": 15.54,
+        "ground": -1.8950891494750977
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.038",
+        "x": 46.28661375343548,
+        "z": 16.03,
+        "ground": -1.7126703262329102
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.039",
+        "x": 50.212316704542765,
+        "z": 16.03,
+        "ground": -1.7052650451660156
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.040",
+        "x": 46.49216665244193,
+        "z": 16.52,
+        "ground": -2.078793525695801
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.041",
+        "x": 50.08216854336391,
+        "z": 16.52,
+        "ground": -2.0190181732177734
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.042",
+        "x": 46.57238394850335,
+        "z": 17.009999999999998,
+        "ground": -2.183098793029785
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.043",
+        "x": 50.075026298871315,
+        "z": 17.009999999999998,
+        "ground": -2.092073440551758
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.044",
+        "x": 46.42850209741344,
+        "z": 17.5,
+        "ground": -1.8018836975097656
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.045",
+        "x": 50.289357099615856,
+        "z": 17.5,
+        "ground": -1.7750091552734375
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.046",
+        "x": 46.464744597307195,
+        "z": 17.99,
+        "ground": -1.8222322463989258
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.047",
+        "x": 50.32065168411189,
+        "z": 17.99,
+        "ground": -1.7850093841552734
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.048",
+        "x": 46.675389045180225,
+        "z": 18.48,
+        "ground": -2.14089298248291
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.049",
+        "x": 50.174358503464944,
+        "z": 18.48,
+        "ground": -2.0696678161621094
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.050",
+        "x": 46.657377849665394,
+        "z": 18.97,
+        "ground": -2.0518808364868164
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.051",
+        "x": 50.25327411983123,
+        "z": 18.97,
+        "ground": -1.9995765686035156
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.052",
+        "x": 46.52000278485151,
+        "z": 19.46,
+        "ground": -1.7487878799438477
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.053",
+        "x": 50.44785971141633,
+        "z": 19.46,
+        "ground": -1.7489986419677734
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.054",
+        "x": 46.63787977798925,
+        "z": 19.95,
+        "ground": -1.9047374725341797
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.055",
+        "x": 50.38326728687347,
+        "z": 19.95,
+        "ground": -1.9142475128173828
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.056",
+        "x": 46.80492116197214,
+        "z": 20.44,
+        "ground": -2.0851316452026367
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.057",
+        "x": 50.26536837414829,
+        "z": 20.44,
+        "ground": -2.1033449172973633
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.058",
+        "x": 46.69937398291016,
+        "z": 20.93,
+        "ground": -1.8833742141723633
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.059",
+        "x": 50.41571658963444,
+        "z": 20.93,
+        "ground": -1.9258689880371094
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.060",
+        "x": 46.61001348442674,
+        "z": 21.42,
+        "ground": -1.697737693786621
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.061",
+        "x": 50.54535496245287,
+        "z": 21.42,
+        "ground": -1.6754560470581055
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.062",
+        "x": 46.78397364671226,
+        "z": 21.91,
+        "ground": -1.925868034362793
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.063",
+        "x": 50.40698613254191,
+        "z": 21.91,
+        "ground": -2.0059003829956055
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.064",
+        "x": 46.868611421633744,
+        "z": 22.400000000000002,
+        "ground": -2.0276947021484375
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.065",
+        "x": 50.35310877826831,
+        "z": 22.400000000000002,
+        "ground": -2.1176977157592773
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.066",
+        "x": 46.70750238119692,
+        "z": 22.89,
+        "ground": -1.7393360137939453
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.067",
+        "x": 50.540022553574815,
+        "z": 22.89,
+        "ground": -1.760690689086914
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.068",
+        "x": 46.69345782873613,
+        "z": 23.38,
+        "ground": -1.6875782012939453
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.069",
+        "x": 50.57481148291359,
+        "z": 23.38,
+        "ground": -1.699110984802246
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.070",
+        "x": 46.88156109842224,
+        "z": 23.87,
+        "ground": -1.9747142791748047
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.071",
+        "x": 50.402308086322066,
+        "z": 23.87,
+        "ground": -2.075942039489746
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.072",
+        "x": 46.86471170139757,
+        "z": 24.36,
+        "ground": -1.9322128295898438
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.073",
+        "x": 50.42954957461009,
+        "z": 24.36,
+        "ground": -2.0203046798706055
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.074",
+        "x": 46.69266031398195,
+        "z": 24.85,
+        "ground": -1.638376235961914
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.075",
+        "x": 50.6067431178298,
+        "z": 24.85,
+        "ground": -1.6440925598144531
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.076",
+        "x": 46.75963972417382,
+        "z": 25.34,
+        "ground": -1.7411890029907227
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.077",
+        "x": 50.53963506976301,
+        "z": 25.34,
+        "ground": -1.7795896530151367
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.078",
+        "x": 46.91428630386188,
+        "z": 25.830000000000002,
+        "ground": -1.9919710159301758
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.079",
+        "x": 50.379589580317166,
+        "z": 25.830000000000002,
+        "ground": -2.1050806045532227
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.080",
+        "x": 46.80137259325358,
+        "z": 26.32,
+        "ground": -1.5967903137207031
+      },
+      {
+        "name": "Terrain-embedded creek revetment stone.081",
+        "x": 50.481856008980266,
+        "z": 26.32,
+        "ground": -1.6758251190185547
+      }
+    ]
+  },
+  "blockers": [
+    {
+      "id": "Creek bank blocker -1 0",
+      "a": [
+        45.706432035780836,
+        2.0
+      ],
+      "b": [
+        45.71253358154884,
+        2.43
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 1",
+      "a": [
+        45.71253358154884,
+        2.43
+      ],
+      "b": [
+        45.72062657010149,
+        2.86
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 2",
+      "a": [
+        45.72062657010149,
+        2.86
+      ],
+      "b": [
+        45.730685718971834,
+        3.29
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 3",
+      "a": [
+        45.730685718971834,
+        3.29
+      ],
+      "b": [
+        45.7426796034152,
+        3.7199999999999998
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 4",
+      "a": [
+        45.7426796034152,
+        3.7199999999999998
+      ],
+      "b": [
+        45.756570754579975,
+        4.15
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 5",
+      "a": [
+        45.756570754579975,
+        4.15
+      ],
+      "b": [
+        45.7723157765602,
+        4.58
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 6",
+      "a": [
+        45.7723157765602,
+        4.58
+      ],
+      "b": [
+        45.78986548196416,
+        5.01
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 7",
+      "a": [
+        45.78986548196416,
+        5.01
+      ],
+      "b": [
+        45.809165045575696,
+        5.4399999999999995
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 8",
+      "a": [
+        45.809165045575696,
+        5.4399999999999995
+      ],
+      "b": [
+        45.830154175627904,
+        5.87
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 9",
+      "a": [
+        45.830154175627904,
+        5.87
+      ],
+      "b": [
+        45.852767302154454,
+        6.3
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 10",
+      "a": [
+        45.852767302154454,
+        6.3
+      ],
+      "b": [
+        45.8769337818299,
+        6.7299999999999995
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 11",
+      "a": [
+        45.8769337818299,
+        6.7299999999999995
+      ],
+      "b": [
+        45.90257811865918,
+        7.16
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 12",
+      "a": [
+        45.90257811865918,
+        7.16
+      ],
+      "b": [
+        45.92962019982682,
+        7.59
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 13",
+      "a": [
+        45.92962019982682,
+        7.59
+      ],
+      "b": [
+        45.95797554596911,
+        8.02
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 14",
+      "a": [
+        45.95797554596911,
+        8.02
+      ],
+      "b": [
+        45.987555575087306,
+        8.45
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 15",
+      "a": [
+        45.987555575087306,
+        8.45
+      ],
+      "b": [
+        46.01826787927746,
+        8.879999999999999
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 16",
+      "a": [
+        46.01826787927746,
+        8.879999999999999
+      ],
+      "b": [
+        46.05001651341242,
+        9.309999999999999
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 17",
+      "a": [
+        46.05001651341242,
+        9.309999999999999
+      ],
+      "b": [
+        46.08270229487404,
+        9.74
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 18",
+      "a": [
+        46.08270229487404,
+        9.74
+      ],
+      "b": [
+        46.11622311339927,
+        10.17
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 19",
+      "a": [
+        46.11622311339927,
+        10.17
+      ],
+      "b": [
+        46.150474250072364,
+        10.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 20",
+      "a": [
+        46.150474250072364,
+        10.6
+      ],
+      "b": [
+        46.185348704466264,
+        11.03
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 21",
+      "a": [
+        46.185348704466264,
+        11.03
+      ],
+      "b": [
+        46.22073752891164,
+        11.459999999999999
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 22",
+      "a": [
+        46.22073752891164,
+        11.459999999999999
+      ],
+      "b": [
+        46.25653016884898,
+        11.89
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 23",
+      "a": [
+        46.25653016884898,
+        11.89
+      ],
+      "b": [
+        46.292614808200625,
+        12.32
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 24",
+      "a": [
+        46.292614808200625,
+        12.32
+      ],
+      "b": [
+        46.32887871868381,
+        12.75
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 25",
+      "a": [
+        46.32887871868381,
+        12.75
+      ],
+      "b": [
+        46.3652086119734,
+        13.18
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 26",
+      "a": [
+        46.3652086119734,
+        13.18
+      ],
+      "b": [
+        46.40149099361422,
+        13.61
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 27",
+      "a": [
+        46.40149099361422,
+        13.61
+      ],
+      "b": [
+        46.4376125175773,
+        14.04
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 28",
+      "a": [
+        46.4376125175773,
+        14.04
+      ],
+      "b": [
+        46.47346034035249,
+        14.47
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 29",
+      "a": [
+        46.47346034035249,
+        14.47
+      ],
+      "b": [
+        46.50892247347114,
+        14.9
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 30",
+      "a": [
+        46.50892247347114,
+        14.9
+      ],
+      "b": [
+        46.543888133357704,
+        15.33
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 31",
+      "a": [
+        46.543888133357704,
+        15.33
+      ],
+      "b": [
+        46.57824808741722,
+        15.76
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 32",
+      "a": [
+        46.57824808741722,
+        15.76
+      ],
+      "b": [
+        46.61189499527753,
+        16.189999999999998
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 33",
+      "a": [
+        46.61189499527753,
+        16.189999999999998
+      ],
+      "b": [
+        46.644723744120235,
+        16.619999999999997
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 34",
+      "a": [
+        46.644723744120235,
+        16.619999999999997
+      ],
+      "b": [
+        46.67663177705273,
+        17.049999999999997
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 35",
+      "a": [
+        46.67663177705273,
+        17.049999999999997
+      ],
+      "b": [
+        46.70751941349558,
+        17.48
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 36",
+      "a": [
+        46.70751941349558,
+        17.48
+      ],
+      "b": [
+        46.73729016058432,
+        17.91
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 37",
+      "a": [
+        46.73729016058432,
+        17.91
+      ],
+      "b": [
+        46.76585101461275,
+        18.34
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 38",
+      "a": [
+        46.76585101461275,
+        18.34
+      ],
+      "b": [
+        46.79311275157624,
+        18.77
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 39",
+      "a": [
+        46.79311275157624,
+        18.77
+      ],
+      "b": [
+        46.818990205907156,
+        19.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 40",
+      "a": [
+        46.818990205907156,
+        19.2
+      ],
+      "b": [
+        46.8434025365318,
+        19.63
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 41",
+      "a": [
+        46.8434025365318,
+        19.63
+      ],
+      "b": [
+        46.86627347941763,
+        20.06
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 42",
+      "a": [
+        46.86627347941763,
+        20.06
+      ],
+      "b": [
+        46.88753158582183,
+        20.49
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 43",
+      "a": [
+        46.88753158582183,
+        20.49
+      ],
+      "b": [
+        46.907110445496926,
+        20.919999999999998
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 44",
+      "a": [
+        46.907110445496926,
+        20.919999999999998
+      ],
+      "b": [
+        46.92494889415612,
+        21.35
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 45",
+      "a": [
+        46.92494889415612,
+        21.35
+      ],
+      "b": [
+        46.94099120455035,
+        21.78
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 46",
+      "a": [
+        46.94099120455035,
+        21.78
+      ],
+      "b": [
+        46.955187260559995,
+        22.21
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 47",
+      "a": [
+        46.955187260559995,
+        22.21
+      ],
+      "b": [
+        46.967492713757444,
+        22.64
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 48",
+      "a": [
+        46.967492713757444,
+        22.64
+      ],
+      "b": [
+        46.97786912195144,
+        23.07
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 49",
+      "a": [
+        46.97786912195144,
+        23.07
+      ],
+      "b": [
+        46.98628406928032,
+        23.5
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 50",
+      "a": [
+        46.98628406928032,
+        23.5
+      ],
+      "b": [
+        46.992711267479095,
+        23.93
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 51",
+      "a": [
+        46.992711267479095,
+        23.93
+      ],
+      "b": [
+        46.99713063800383,
+        24.36
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 52",
+      "a": [
+        46.99713063800383,
+        24.36
+      ],
+      "b": [
+        46.999528374757006,
+        24.79
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 53",
+      "a": [
+        46.999528374757006,
+        24.79
+      ],
+      "b": [
+        46.99989698721768,
+        25.22
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 54",
+      "a": [
+        46.99989698721768,
+        25.22
+      ],
+      "b": [
+        46.99823532384186,
+        25.65
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 55",
+      "a": [
+        46.99823532384186,
+        25.65
+      ],
+      "b": [
+        46.99454857565991,
+        26.08
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 56",
+      "a": [
+        46.99454857565991,
+        26.08
+      ],
+      "b": [
+        46.988848260059825,
+        26.509999999999998
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 57",
+      "a": [
+        46.988848260059825,
+        26.509999999999998
+      ],
+      "b": [
+        46.98115218480691,
+        26.94
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 58",
+      "a": [
+        46.98115218480691,
+        26.94
+      ],
+      "b": [
+        46.9714843924124,
+        27.37
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 59",
+      "a": [
+        46.9714843924124,
+        27.37
+      ],
+      "b": [
+        46.959875085024755,
+        27.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 60",
+      "a": [
+        46.959875085024755,
+        27.8
+      ],
+      "b": [
+        46.94636053007826,
+        28.23
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 61",
+      "a": [
+        46.94636053007826,
+        28.23
+      ],
+      "b": [
+        46.93098294699365,
+        28.66
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 62",
+      "a": [
+        46.93098294699365,
+        28.66
+      ],
+      "b": [
+        46.91379037528485,
+        29.09
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker -1 63",
+      "a": [
+        46.91379037528485,
+        29.09
+      ],
+      "b": [
+        46.894836524483665,
+        29.52
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 0",
+      "a": [
+        49.00643203578083,
+        2.0
+      ],
+      "b": [
+        49.01253358154884,
+        2.43
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 1",
+      "a": [
+        49.01253358154884,
+        2.43
+      ],
+      "b": [
+        49.020626570101484,
+        2.86
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 2",
+      "a": [
+        49.020626570101484,
+        2.86
+      ],
+      "b": [
+        49.03068571897183,
+        3.29
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 3",
+      "a": [
+        49.03068571897183,
+        3.29
+      ],
+      "b": [
+        49.042679603415195,
+        3.7199999999999998
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 4",
+      "a": [
+        49.042679603415195,
+        3.7199999999999998
+      ],
+      "b": [
+        49.05657075457997,
+        4.15
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 5",
+      "a": [
+        49.05657075457997,
+        4.15
+      ],
+      "b": [
+        49.072315776560195,
+        4.58
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 6",
+      "a": [
+        49.072315776560195,
+        4.58
+      ],
+      "b": [
+        49.08986548196416,
+        5.01
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 7",
+      "a": [
+        49.08986548196416,
+        5.01
+      ],
+      "b": [
+        49.10916504557569,
+        5.4399999999999995
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 8",
+      "a": [
+        49.10916504557569,
+        5.4399999999999995
+      ],
+      "b": [
+        49.1301541756279,
+        5.87
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 9",
+      "a": [
+        49.1301541756279,
+        5.87
+      ],
+      "b": [
+        49.15276730215445,
+        6.3
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 10",
+      "a": [
+        49.15276730215445,
+        6.3
+      ],
+      "b": [
+        49.176933781829895,
+        6.7299999999999995
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 11",
+      "a": [
+        49.176933781829895,
+        6.7299999999999995
+      ],
+      "b": [
+        49.202578118659176,
+        7.16
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 12",
+      "a": [
+        49.202578118659176,
+        7.16
+      ],
+      "b": [
+        49.22962019982682,
+        7.59
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 13",
+      "a": [
+        49.22962019982682,
+        7.59
+      ],
+      "b": [
+        49.25797554596911,
+        8.02
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 14",
+      "a": [
+        49.25797554596911,
+        8.02
+      ],
+      "b": [
+        49.2875555750873,
+        8.45
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 15",
+      "a": [
+        49.2875555750873,
+        8.45
+      ],
+      "b": [
+        49.31826787927746,
+        8.879999999999999
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 16",
+      "a": [
+        49.31826787927746,
+        8.879999999999999
+      ],
+      "b": [
+        49.35001651341242,
+        9.309999999999999
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 17",
+      "a": [
+        49.35001651341242,
+        9.309999999999999
+      ],
+      "b": [
+        49.382702294874036,
+        9.74
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 18",
+      "a": [
+        49.382702294874036,
+        9.74
+      ],
+      "b": [
+        49.41622311339927,
+        10.17
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 19",
+      "a": [
+        49.41622311339927,
+        10.17
+      ],
+      "b": [
+        49.45047425007236,
+        10.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 20",
+      "a": [
+        49.45047425007236,
+        10.6
+      ],
+      "b": [
+        49.48534870446626,
+        11.03
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 21",
+      "a": [
+        49.48534870446626,
+        11.03
+      ],
+      "b": [
+        49.52073752891164,
+        11.459999999999999
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 22",
+      "a": [
+        49.52073752891164,
+        11.459999999999999
+      ],
+      "b": [
+        49.55653016884898,
+        11.89
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 23",
+      "a": [
+        49.55653016884898,
+        11.89
+      ],
+      "b": [
+        49.59261480820062,
+        12.32
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 24",
+      "a": [
+        49.59261480820062,
+        12.32
+      ],
+      "b": [
+        49.62887871868381,
+        12.75
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 25",
+      "a": [
+        49.62887871868381,
+        12.75
+      ],
+      "b": [
+        49.6652086119734,
+        13.18
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 26",
+      "a": [
+        49.6652086119734,
+        13.18
+      ],
+      "b": [
+        49.701490993614215,
+        13.61
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 27",
+      "a": [
+        49.701490993614215,
+        13.61
+      ],
+      "b": [
+        49.7376125175773,
+        14.04
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 28",
+      "a": [
+        49.7376125175773,
+        14.04
+      ],
+      "b": [
+        49.773460340352486,
+        14.47
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 29",
+      "a": [
+        49.773460340352486,
+        14.47
+      ],
+      "b": [
+        49.808922473471135,
+        14.9
+      ],
+      "bottom": -4,
+      "top": -1.2,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 30",
+      "a": [
+        49.808922473471135,
+        14.9
+      ],
+      "b": [
+        49.8438881333577,
+        15.33
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 31",
+      "a": [
+        49.8438881333577,
+        15.33
+      ],
+      "b": [
+        49.87824808741722,
+        15.76
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 32",
+      "a": [
+        49.87824808741722,
+        15.76
+      ],
+      "b": [
+        49.91189499527753,
+        16.189999999999998
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 33",
+      "a": [
+        49.91189499527753,
+        16.189999999999998
+      ],
+      "b": [
+        49.94472374412023,
+        16.619999999999997
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 34",
+      "a": [
+        49.94472374412023,
+        16.619999999999997
+      ],
+      "b": [
+        49.976631777052724,
+        17.049999999999997
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 35",
+      "a": [
+        49.976631777052724,
+        17.049999999999997
+      ],
+      "b": [
+        50.00751941349558,
+        17.48
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 36",
+      "a": [
+        50.00751941349558,
+        17.48
+      ],
+      "b": [
+        50.03729016058432,
+        17.91
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 37",
+      "a": [
+        50.03729016058432,
+        17.91
+      ],
+      "b": [
+        50.06585101461275,
+        18.34
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 38",
+      "a": [
+        50.06585101461275,
+        18.34
+      ],
+      "b": [
+        50.093112751576236,
+        18.77
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 39",
+      "a": [
+        50.093112751576236,
+        18.77
+      ],
+      "b": [
+        50.11899020590715,
+        19.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 40",
+      "a": [
+        50.11899020590715,
+        19.2
+      ],
+      "b": [
+        50.143402536531795,
+        19.63
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 41",
+      "a": [
+        50.143402536531795,
+        19.63
+      ],
+      "b": [
+        50.166273479417626,
+        20.06
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 42",
+      "a": [
+        50.166273479417626,
+        20.06
+      ],
+      "b": [
+        50.18753158582183,
+        20.49
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 43",
+      "a": [
+        50.18753158582183,
+        20.49
+      ],
+      "b": [
+        50.20711044549692,
+        20.919999999999998
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 44",
+      "a": [
+        50.20711044549692,
+        20.919999999999998
+      ],
+      "b": [
+        50.224948894156114,
+        21.35
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 45",
+      "a": [
+        50.224948894156114,
+        21.35
+      ],
+      "b": [
+        50.24099120455035,
+        21.78
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 46",
+      "a": [
+        50.24099120455035,
+        21.78
+      ],
+      "b": [
+        50.25518726055999,
+        22.21
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 47",
+      "a": [
+        50.25518726055999,
+        22.21
+      ],
+      "b": [
+        50.26749271375744,
+        22.64
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 48",
+      "a": [
+        50.26749271375744,
+        22.64
+      ],
+      "b": [
+        50.27786912195144,
+        23.07
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 49",
+      "a": [
+        50.27786912195144,
+        23.07
+      ],
+      "b": [
+        50.28628406928032,
+        23.5
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 50",
+      "a": [
+        50.28628406928032,
+        23.5
+      ],
+      "b": [
+        50.29271126747909,
+        23.93
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 51",
+      "a": [
+        50.29271126747909,
+        23.93
+      ],
+      "b": [
+        50.29713063800383,
+        24.36
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 52",
+      "a": [
+        50.29713063800383,
+        24.36
+      ],
+      "b": [
+        50.299528374757,
+        24.79
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 53",
+      "a": [
+        50.299528374757,
+        24.79
+      ],
+      "b": [
+        50.29989698721768,
+        25.22
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 54",
+      "a": [
+        50.29989698721768,
+        25.22
+      ],
+      "b": [
+        50.29823532384186,
+        25.65
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 55",
+      "a": [
+        50.29823532384186,
+        25.65
+      ],
+      "b": [
+        50.29454857565991,
+        26.08
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 56",
+      "a": [
+        50.29454857565991,
+        26.08
+      ],
+      "b": [
+        50.28884826005982,
+        26.509999999999998
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 57",
+      "a": [
+        50.28884826005982,
+        26.509999999999998
+      ],
+      "b": [
+        50.281152184806906,
+        26.94
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 58",
+      "a": [
+        50.281152184806906,
+        26.94
+      ],
+      "b": [
+        50.2714843924124,
+        27.37
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 59",
+      "a": [
+        50.2714843924124,
+        27.37
+      ],
+      "b": [
+        50.25987508502475,
+        27.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 60",
+      "a": [
+        50.25987508502475,
+        27.8
+      ],
+      "b": [
+        50.246360530078256,
+        28.23
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 61",
+      "a": [
+        50.246360530078256,
+        28.23
+      ],
+      "b": [
+        50.23098294699365,
+        28.66
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 62",
+      "a": [
+        50.23098294699365,
+        28.66
+      ],
+      "b": [
+        50.213790375284844,
+        29.09
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek bank blocker 1 63",
+      "a": [
+        50.213790375284844,
+        29.09
+      ],
+      "b": [
+        50.19483652448366,
+        29.52
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Culvert mouth blocker",
+      "a": [
+        47.5990453713509,
+        27.2
+      ],
+      "b": [
+        49.69904537135089,
+        27.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Bridge side blocker 11.5",
+      "a": [
+        43,
+        11.5
+      ],
+      "b": [
+        53,
+        11.5
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Bridge side blocker 14.5",
+      "a": [
+        43,
+        14.5
+      ],
+      "b": [
+        53,
+        14.5
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 0",
+      "a": [
+        -4.0,
+        2.8000000000000003
+      ],
+      "b": [
+        -3.5,
+        2.8000000000000003
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 1",
+      "a": [
+        -3.5,
+        2.8000000000000003
+      ],
+      "b": [
+        -3.0,
+        2.8000000000000003
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 2",
+      "a": [
+        -3.0,
+        2.8000000000000003
+      ],
+      "b": [
+        -2.5,
+        3.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 3",
+      "a": [
+        -2.5,
+        3.0
+      ],
+      "b": [
+        -2.0,
+        3.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 4",
+      "a": [
+        -2.0,
+        3.0
+      ],
+      "b": [
+        -1.5,
+        3.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 5",
+      "a": [
+        -1.5,
+        3.0
+      ],
+      "b": [
+        -1.0,
+        3.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 6",
+      "a": [
+        -1.0,
+        3.0
+      ],
+      "b": [
+        -0.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 7",
+      "a": [
+        -0.5,
+        3.2
+      ],
+      "b": [
+        0.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 8",
+      "a": [
+        0.0,
+        3.2
+      ],
+      "b": [
+        0.5,
+        3.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 9",
+      "a": [
+        0.5,
+        3.4000000000000004
+      ],
+      "b": [
+        1.0,
+        3.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 10",
+      "a": [
+        1.0,
+        3.4000000000000004
+      ],
+      "b": [
+        1.5,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 11",
+      "a": [
+        1.5,
+        3.6
+      ],
+      "b": [
+        2.0,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 12",
+      "a": [
+        2.0,
+        3.6
+      ],
+      "b": [
+        2.5,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 13",
+      "a": [
+        2.5,
+        3.6
+      ],
+      "b": [
+        3.0,
+        3.8000000000000003
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 14",
+      "a": [
+        3.0,
+        3.8000000000000003
+      ],
+      "b": [
+        3.5,
+        3.8000000000000003
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 15",
+      "a": [
+        3.5,
+        3.8000000000000003
+      ],
+      "b": [
+        4.0,
+        3.8000000000000003
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 16",
+      "a": [
+        4.0,
+        3.8000000000000003
+      ],
+      "b": [
+        4.5,
+        3.8000000000000003
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 17",
+      "a": [
+        4.5,
+        3.8000000000000003
+      ],
+      "b": [
+        5.0,
+        3.8000000000000003
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 18",
+      "a": [
+        5.0,
+        3.8000000000000003
+      ],
+      "b": [
+        5.5,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 19",
+      "a": [
+        5.5,
+        3.6
+      ],
+      "b": [
+        6.0,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 20",
+      "a": [
+        6.0,
+        3.6
+      ],
+      "b": [
+        6.5,
+        3.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 21",
+      "a": [
+        6.5,
+        3.4000000000000004
+      ],
+      "b": [
+        7.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 22",
+      "a": [
+        7.0,
+        3.2
+      ],
+      "b": [
+        7.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 23",
+      "a": [
+        7.5,
+        3.2
+      ],
+      "b": [
+        8.0,
+        3.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 24",
+      "a": [
+        8.0,
+        3.0
+      ],
+      "b": [
+        8.5,
+        2.8000000000000003
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 25",
+      "a": [
+        8.5,
+        2.8000000000000003
+      ],
+      "b": [
+        9.0,
+        2.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 26",
+      "a": [
+        9.0,
+        2.6
+      ],
+      "b": [
+        9.5,
+        2.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 27",
+      "a": [
+        9.5,
+        2.6
+      ],
+      "b": [
+        10.0,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 28",
+      "a": [
+        10.0,
+        2.4000000000000004
+      ],
+      "b": [
+        10.5,
+        2.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 29",
+      "a": [
+        10.5,
+        2.2
+      ],
+      "b": [
+        11.0,
+        2.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 30",
+      "a": [
+        11.0,
+        2.2
+      ],
+      "b": [
+        11.5,
+        2.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 31",
+      "a": [
+        11.5,
+        2.2
+      ],
+      "b": [
+        12.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 32",
+      "a": [
+        12.0,
+        2.0
+      ],
+      "b": [
+        12.5,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 33",
+      "a": [
+        12.5,
+        2.0
+      ],
+      "b": [
+        13.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 34",
+      "a": [
+        13.0,
+        2.0
+      ],
+      "b": [
+        13.5,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 35",
+      "a": [
+        13.5,
+        2.0
+      ],
+      "b": [
+        14.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 36",
+      "a": [
+        14.0,
+        2.0
+      ],
+      "b": [
+        14.5,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 37",
+      "a": [
+        14.5,
+        2.0
+      ],
+      "b": [
+        15.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 38",
+      "a": [
+        15.0,
+        2.0
+      ],
+      "b": [
+        15.5,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 39",
+      "a": [
+        15.5,
+        2.0
+      ],
+      "b": [
+        16.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 40",
+      "a": [
+        16.0,
+        2.0
+      ],
+      "b": [
+        16.5,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 41",
+      "a": [
+        16.5,
+        2.0
+      ],
+      "b": [
+        17.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 42",
+      "a": [
+        17.0,
+        2.0
+      ],
+      "b": [
+        17.5,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 43",
+      "a": [
+        17.5,
+        2.0
+      ],
+      "b": [
+        18.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 44",
+      "a": [
+        18.0,
+        2.0
+      ],
+      "b": [
+        18.5,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 45",
+      "a": [
+        18.5,
+        2.0
+      ],
+      "b": [
+        19.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 46",
+      "a": [
+        19.0,
+        2.0
+      ],
+      "b": [
+        19.5,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 47",
+      "a": [
+        19.5,
+        2.0
+      ],
+      "b": [
+        20.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 48",
+      "a": [
+        20.0,
+        2.0
+      ],
+      "b": [
+        20.5,
+        1.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 49",
+      "a": [
+        20.5,
+        1.8
+      ],
+      "b": [
+        21.0,
+        1.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 50",
+      "a": [
+        21.0,
+        1.8
+      ],
+      "b": [
+        21.5,
+        1.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 51",
+      "a": [
+        21.5,
+        1.8
+      ],
+      "b": [
+        22.0,
+        1.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 52",
+      "a": [
+        22.0,
+        1.8
+      ],
+      "b": [
+        22.5,
+        1.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 53",
+      "a": [
+        22.5,
+        1.6
+      ],
+      "b": [
+        23.0,
+        1.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 54",
+      "a": [
+        23.0,
+        1.6
+      ],
+      "b": [
+        23.5,
+        1.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 55",
+      "a": [
+        23.5,
+        1.6
+      ],
+      "b": [
+        24.0,
+        1.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 56",
+      "a": [
+        24.0,
+        1.6
+      ],
+      "b": [
+        24.5,
+        1.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 57",
+      "a": [
+        24.5,
+        1.8
+      ],
+      "b": [
+        25.0,
+        1.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 70",
+      "a": [
+        31.0,
+        3.4000000000000004
+      ],
+      "b": [
+        31.5,
+        3.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 71",
+      "a": [
+        31.5,
+        3.4000000000000004
+      ],
+      "b": [
+        32.0,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 72",
+      "a": [
+        32.0,
+        3.6
+      ],
+      "b": [
+        32.5,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 73",
+      "a": [
+        32.5,
+        3.6
+      ],
+      "b": [
+        33.0,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 74",
+      "a": [
+        33.0,
+        3.6
+      ],
+      "b": [
+        33.5,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 75",
+      "a": [
+        33.5,
+        3.6
+      ],
+      "b": [
+        34.0,
+        3.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 76",
+      "a": [
+        34.0,
+        3.6
+      ],
+      "b": [
+        34.5,
+        3.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 77",
+      "a": [
+        34.5,
+        3.4000000000000004
+      ],
+      "b": [
+        35.0,
+        3.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 78",
+      "a": [
+        35.0,
+        3.4000000000000004
+      ],
+      "b": [
+        35.5,
+        3.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 79",
+      "a": [
+        35.5,
+        3.4000000000000004
+      ],
+      "b": [
+        36.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 80",
+      "a": [
+        36.0,
+        3.2
+      ],
+      "b": [
+        36.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 81",
+      "a": [
+        36.5,
+        3.2
+      ],
+      "b": [
+        37.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 82",
+      "a": [
+        37.0,
+        3.2
+      ],
+      "b": [
+        37.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 83",
+      "a": [
+        37.5,
+        3.2
+      ],
+      "b": [
+        38.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 84",
+      "a": [
+        38.0,
+        3.2
+      ],
+      "b": [
+        38.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 85",
+      "a": [
+        38.5,
+        3.2
+      ],
+      "b": [
+        39.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 86",
+      "a": [
+        39.0,
+        3.2
+      ],
+      "b": [
+        39.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 87",
+      "a": [
+        39.5,
+        3.2
+      ],
+      "b": [
+        40.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 88",
+      "a": [
+        40.0,
+        3.2
+      ],
+      "b": [
+        40.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 89",
+      "a": [
+        40.5,
+        3.2
+      ],
+      "b": [
+        41.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 90",
+      "a": [
+        41.0,
+        3.2
+      ],
+      "b": [
+        41.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 91",
+      "a": [
+        41.5,
+        3.2
+      ],
+      "b": [
+        42.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 92",
+      "a": [
+        42.0,
+        3.2
+      ],
+      "b": [
+        42.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 93",
+      "a": [
+        42.5,
+        3.2
+      ],
+      "b": [
+        43.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 94",
+      "a": [
+        43.0,
+        3.2
+      ],
+      "b": [
+        43.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 95",
+      "a": [
+        43.5,
+        3.2
+      ],
+      "b": [
+        44.0,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 96",
+      "a": [
+        44.0,
+        3.2
+      ],
+      "b": [
+        44.5,
+        3.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 111",
+      "a": [
+        51.5,
+        1.4000000000000001
+      ],
+      "b": [
+        52.0,
+        1.4000000000000001
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 112",
+      "a": [
+        52.0,
+        1.4000000000000001
+      ],
+      "b": [
+        52.5,
+        1.4000000000000001
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 113",
+      "a": [
+        52.5,
+        1.4000000000000001
+      ],
+      "b": [
+        53.0,
+        1.4000000000000001
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 114",
+      "a": [
+        53.0,
+        1.4000000000000001
+      ],
+      "b": [
+        53.5,
+        1.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 115",
+      "a": [
+        53.5,
+        1.6
+      ],
+      "b": [
+        54.0,
+        1.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 116",
+      "a": [
+        54.0,
+        1.6
+      ],
+      "b": [
+        54.5,
+        1.6
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 117",
+      "a": [
+        54.5,
+        1.6
+      ],
+      "b": [
+        55.0,
+        1.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 118",
+      "a": [
+        55.0,
+        1.8
+      ],
+      "b": [
+        55.5,
+        1.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 119",
+      "a": [
+        55.5,
+        1.8
+      ],
+      "b": [
+        56.0,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 120",
+      "a": [
+        56.0,
+        2.0
+      ],
+      "b": [
+        56.5,
+        2.0
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 121",
+      "a": [
+        56.5,
+        2.0
+      ],
+      "b": [
+        57.0,
+        2.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 122",
+      "a": [
+        57.0,
+        2.2
+      ],
+      "b": [
+        57.5,
+        2.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 123",
+      "a": [
+        57.5,
+        2.2
+      ],
+      "b": [
+        58.0,
+        2.2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 124",
+      "a": [
+        58.0,
+        2.2
+      ],
+      "b": [
+        58.5,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 125",
+      "a": [
+        58.5,
+        2.4000000000000004
+      ],
+      "b": [
+        59.0,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 126",
+      "a": [
+        59.0,
+        2.4000000000000004
+      ],
+      "b": [
+        59.5,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 127",
+      "a": [
+        59.5,
+        2.4000000000000004
+      ],
+      "b": [
+        60.0,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 128",
+      "a": [
+        60.0,
+        2.4000000000000004
+      ],
+      "b": [
+        60.5,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 129",
+      "a": [
+        60.5,
+        2.4000000000000004
+      ],
+      "b": [
+        61.0,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 130",
+      "a": [
+        61.0,
+        2.4000000000000004
+      ],
+      "b": [
+        61.5,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 131",
+      "a": [
+        61.5,
+        2.4000000000000004
+      ],
+      "b": [
+        62.0,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 132",
+      "a": [
+        62.0,
+        2.4000000000000004
+      ],
+      "b": [
+        62.5,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 133",
+      "a": [
+        62.5,
+        2.4000000000000004
+      ],
+      "b": [
+        63.0,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 134",
+      "a": [
+        63.0,
+        2.4000000000000004
+      ],
+      "b": [
+        63.5,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Lake shore blocker 135",
+      "a": [
+        63.5,
+        2.4000000000000004
+      ],
+      "b": [
+        64.0,
+        2.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "West berm-to-shore return",
+      "a": [
+        5,
+        12
+      ],
+      "b": [
+        5,
+        3.8000000000000003
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "East berm-to-shore return",
+      "a": [
+        54.8,
+        6
+      ],
+      "b": [
+        54.8,
+        1.8
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Dock west shore join",
+      "a": [
+        25,
+        1.8
+      ],
+      "b": [
+        25.5,
+        3.9
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Dock east shore join",
+      "a": [
+        30.5,
+        3.9
+      ],
+      "b": [
+        31,
+        3.4000000000000004
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek mouth west shore join",
+      "a": [
+        44.5,
+        3.2
+      ],
+      "b": [
+        45.706432035780836,
+        2
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Creek mouth east shore join",
+      "a": [
+        49.00643203578083,
+        2
+      ],
+      "b": [
+        51.5,
+        1.4000000000000001
+      ],
+      "bottom": -4,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Dock side blocker 25.5",
+      "a": [
+        25.5,
+        -10
+      ],
+      "b": [
+        25.5,
+        3.9
+      ],
+      "bottom": -3,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Dock side blocker 30.5",
+      "a": [
+        30.5,
+        -10
+      ],
+      "b": [
+        30.5,
+        3.9
+      ],
+      "bottom": -3,
+      "top": 4,
+      "width": 0.25
+    },
+    {
+      "id": "Dock outer end blocker",
+      "a": [
+        25.5,
+        -10
+      ],
+      "b": [
+        30.5,
+        -10
+      ],
+      "bottom": -3,
+      "top": 4,
+      "width": 0.25
+    }
+  ],
+  "blocker_runtime_status": "NOT INTEGRATED: native authored contract/meshes only; no working player barrier claim",
+  "destination_amendments": [
+    {
+      "old_reservation": "store",
+      "use": "Camp wardens heron memorial and approach",
+      "point": [
+        5,
+        0.597641487121582,
+        50.7
+      ]
+    },
+    {
+      "old_reservation": "camper",
+      "use": "Paired portable toilets and large refuse bins",
+      "point": [
+        12.5,
+        0,
+        17.4
+      ]
+    }
+  ],
+  "protected_sources": {
+    "development/levels/hollow-creek/hollow-creek-dock.blend": "9e77581341f075b3f37b6284cff455838a7d47c8aa234b40a4d10c13e61514a9"
+  },
+  "removed_decorative_ferns": [
+    "Interior grounded fern 7",
+    "Interior grounded fern 16",
+    "Interior grounded fern 21",
+    "Interior grounded fern 22",
+    "Interior grounded fern 31",
+    "Interior grounded fern 33",
+    "Interior grounded fern 44",
+    "Interior grounded fern 60",
+    "Interior grounded fern 68",
+    "Interior grounded fern 70",
+    "Interior grounded fern 74",
+    "Interior grounded fern 75",
+    "Interior grounded fern 82",
+    "Interior grounded fern 84",
+    "Interior grounded fern 86",
+    "Interior grounded fern 98",
+    "Interior grounded fern 103",
+    "Interior grounded fern 110",
+    "Interior grounded fern 116",
+    "Interior grounded fern 118",
+    "Interior grounded fern 130",
+    "Interior grounded fern 132",
+    "Interior grounded fern 139",
+    "Interior grounded fern 140",
+    "Interior grounded fern 147"
+  ],
+  "limitations": [
+    "No runtime map unlock/collision/AI/circuit, host/LAN, photo or performance acceptance.",
+    "Invisible blocker volumes are native authoring only; wiring into player/ghost collision and movement tests remains mandatory.",
+    "Native water appearance is improved; layered transparency/depth/foam/runtime port remain open.",
+    "Masonry hearth is cold; combustion/exhaust and human fire-clearance/art review remain open."
+  ],
+  "proposed_refuges": [
+    {
+      "asset": "level_shrub_refuge",
+      "name": "Proposed authored refuge 1",
+      "x": 21,
+      "z": 63,
+      "y": 1.0313186645507812,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_shrub_refuge",
+      "name": "Proposed authored refuge 2",
+      "x": 42,
+      "z": 54,
+      "y": 0.7247495651245117,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    },
+    {
+      "asset": "level_shrub_refuge",
+      "name": "Proposed authored refuge 3",
+      "x": 37,
+      "z": 19.5,
+      "y": -0.7824974060058594,
+      "yaw": 0,
+      "scale": 1,
+      "terrain_fitted": true
+    }
+  ],
+  "shared_hiding_maximum": 3
+}

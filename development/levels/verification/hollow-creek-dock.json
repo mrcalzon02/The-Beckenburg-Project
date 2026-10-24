@@ -1,0 +1,50 @@
+{
+  "status": "pass-native-dock-detail-only",
+  "shore_surface_samples": 36309,
+  "exact_forest_seam_vertices": 12,
+  "protected_route_body_samples": 10377,
+  "ritual_samples": 363,
+  "shed_deck_contacts": 9,
+  "chair_foot_vertices": 240,
+  "dock_standing_samples": 1572,
+  "actual_minimum_globe_headroom_m": 2.4799999475479124,
+  "findings": [],
+  "limitations": [
+    "No runtime map unlock, collision/AI, water alpha/sorting, circuit state, LAN or performance acceptance.",
+    "Native lamp globes are non-emissive; switching and ghost breaker behavior remain required.",
+    "Generator is reused intact; exhaust hook-up and combustion ventilation engineering remain open.",
+    "Portable toilets, more tent variants, park fixtures, oil lanterns and further camp gear remain queued."
+  ],
+  "actual_glb_reimports": [
+    {
+      "id": "level_camp_dock_shed",
+      "triangles": 528,
+      "bytes": 77864
+    },
+    {
+      "id": "level_camp_rowboat",
+      "triangles": 2088,
+      "bytes": 163548
+    },
+    {
+      "id": "level_camp_folding_chair",
+      "triangles": 384,
+      "bytes": 39176
+    },
+    {
+      "id": "level_camp_cooler",
+      "triangles": 220,
+      "bytes": 35600
+    },
+    {
+      "id": "level_camp_terrain_shore",
+      "triangles": 31916,
+      "bytes": 2792984
+    },
+    {
+      "id": "level_camp_dock_utilities",
+      "triangles": 2476,
+      "bytes": 181288
+    }
+  ]
+}

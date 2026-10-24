@@ -8,7 +8,7 @@ public final class LevelClosets {
     public static boolean available(LevelDefinition level,int room,int density){
         if(density<0||density>100)throw new IllegalArgumentException("hiding density");
         Socket socket=level.socket("hide",room);
-        return room>=0&&room<12&&Math.floorMod(room*37+17,100)<density&&socket!=null&&socket.style().equals("walk-in-cupboard");
+        return room>=0&&room<12&&socket!=null&&socket.style().equals("walk-in-cupboard")&&HidingBudget.available(level,socket,density);
     }
     public static Vec world(Socket s,double x,double y,double z){
         double c=Math.cos(s.yaw()),sn=Math.sin(s.yaw());return new Vec(s.x()+x*c-z*sn,s.y()+y,s.z()+x*sn+z*c);

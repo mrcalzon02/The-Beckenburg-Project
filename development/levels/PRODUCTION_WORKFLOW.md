@@ -1,5 +1,10 @@
 # Repeatable authored-level workflow
 
+24 October additions: every investigation map consumes the shared
+[equal hiding allowance](../quality/HIDING_SPOT_BUDGET.md), then finishes with
+the [story-detail and authored Easter-egg phases](FINAL_STORY_AND_EASTER_EGGS.md).
+Ordinary decorative shrubs and loose clutter never count as hiding sockets.
+
 Latest user-directed breadth pass: [sixteen terrain foundations](terrain-foundations/README.md),
 23 October 2026. This advances every remaining crude blockout one terrain step
 before more buildings/detail. Independent ground/export/source-layer checks are
@@ -115,3 +120,11 @@ After every final scene export, run Blender with `validate_level_scenes.py`. It 
 Van size, layout, source-screen alignment and actual inventory quantities follow [the van refit workflow](VAN_REFIT_WORKFLOW.md). Native-size physical stock replaces catalog decorations; the deck, loading ramp, six local spawn pads and every station require swept movement checks.
 
 World targeting, physical device displays and interface controls follow [the interaction UI workflow](INTERACTION_UI_WORKFLOW.md). Use the exact same visible target for both the prompt and the authoritative action; proximity-only fallback is not the E interaction contract.
+
+## 7. Final story detail
+
+After the functional map/refinement gates pass, complete the space-by-space minor lore, knickknacks, supported personal clutter and actual loose-physics pass in FINAL_STORY_AND_EASTER_EGGS.md. Capture and check the result before claiming the map complete.
+
+## 8. Authored cultural-reference encounters
+
+Finish a separate map-specific horror-reference/Easter-egg pass with deliberate time, round or observation triggers. Record authoring and host state/reset behavior, actual source audio/models, rendering/physics/privacy and evidence-negative acceptance. The Hollow Creek dock-mask example is recorded as a design packet, not working behavior.

@@ -584,6 +584,132 @@ Evidence and verification: tools/verify_development_gallery.py; development/veri
 
 Older-map obligation: A transient service error does not invalidate local implementation or prove remote publication failed. Preserve checkpoints and separately verify source bytes and final public image delivery.
 
+### DEV-042 — Shore crop and scenery returns left a jagged lake-facing seam
+
+**Status:** fixed-native-only · **Affected:** Hollow Creek coast and forest apron
+
+User-caught jagged shoreline; an intermediate linear shore return created a triangular projecting ledge.
+
+Cause / uncertainty: Terrain cell culling and scenery-apron termination were authored independently.
+
+Fix / next action: Restore 1594 missing coast triangles, match the retained apron edge, clip the west return at the terrain grid and fit its inner edge to actual terrain. Preserve old terrain checkpoints.
+
+Evidence and verification: development/levels/previews/defects/DEV-042-before-incomplete-shore-return.png; verification/hollow-creek-dock.json
+
+Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
+
+### DEV-043 — Boat ends were open and corner posts pierced shed roof
+
+**Status:** fixed-native-assets-only · **Affected:** Original dock shed and rowboat first draft
+
+Uncapped bow/stern and visible timber post tips on roof top.
+
+Cause / uncertainty: Silhouette authoring omitted end-wall closure and post-to-roof elevation check.
+
+Fix / next action: Close both double-skin hull ends and shorten corner posts below roof top; adjust actual rowboat draft and mooring endpoints.
+
+Evidence and verification: development/levels/previews/defects/DEV-043-before-open-boat-ends.png; DEV-043-before-roof-post-tips.png; current actual GLB reimports
+
+Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
+
+### DEV-044 — Camp furnishings encroached on protected walking routes
+
+**Status:** fixed-native-placement-only · **Affected:** First folding-chair/cooler arrangement
+
+Nineteen body samples touched furniture on L09/L10.
+
+Cause / uncertainty: Visual placement near a table was insufficient to prove lateral route width.
+
+Fix / next action: Move two chairs and a cooler; retain full route/body threshold. Reopen saved scene and rerun all 10377 protected route samples.
+
+Evidence and verification: development/quality/evidence/DEV-044-first-dock-detail-check.json; verification/hollow-creek-dock.json
+
+Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
+
+### DEV-045 — Additional campsite floors and entries needed actual terrain fit
+
+**Status:** fixed-native-tests; complete approach grading pending · **Affected:** Expanded Hollow Creek tents/toilet ramps
+
+First expansion exposed path/guy collisions, nonplanar dome-floor gaps, bedding support errors and one steep entry.
+
+Cause / uncertainty: An ngon floor cannot conform internally by moving its boundary alone. Terrain crop edges and exact floating-point ramp boundaries also needed explicit authoring/check handling.
+
+Fix / next action: Move tents clear of paths, triangulate/subdivide real floors before fitting, preserve bedding lift and relocate the final dome onto usable ground. Reject shrub footprints outside terrain. Check ramp tread just inside its physical boundary without relaxing grade limit.
+
+Evidence and verification: development/quality/evidence/DEV-045-first-amenities-check.json; verification/hollow-creek-amenities.json
+
+Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
+
+### DEV-046 — Creek rendered as a black slot despite material changes
+
+**Status:** fixed-native-water-overlap-only · **Affected:** Hollow Creek lake/creek preview water
+
+Changing color left an almost black rectangular water strip with narrow colored edges.
+
+Cause / uncertainty: The expanded lake and separate creek surface were coplanar and overlapping.
+
+Fix / next action: Remove the duplicate creek surface in the derived scene and retain one continuous native water surface. Layered/translucent runtime water remains unimplemented.
+
+Evidence and verification: development/levels/previews/defects/DEV-046-before-culvert-skin-and-water.png; current culvert capture; duplicate-surface native assertion
+
+Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
+
+### DEV-047 — Culvert outlet was recessed and obscured by terrain
+
+**Status:** fixed-native-bore-only · **Affected:** First culvert headwall and excavated terrain
+
+User correctly observed the outlet too far uphill and a green terrain plug obstructing its bore.
+
+Cause / uncertainty: Circular mesh presence and a face-count cut did not prove a visible flow path through the actual terrain.
+
+Fix / next action: Move outlet two metres toward creek, refine the local terrain mesh, excavate the approach bed and cut the complete bore footprint. Reopen and pass nine terrain sight rays through the bore; retain the recessed debris grate.
+
+Evidence and verification: development/levels/previews/defects/DEV-047-before-recessed-culvert.png; current culvert capture; verification/hollow-creek-amenities.json
+
+Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
+
+### DEV-048 — Hiding availability differed by map and combined indoor/outdoor pools
+
+**Status:** fixed-runtime-built-definitions; remaining authoring audits open · **Affected:** Ten built investigation definitions and future maps
+
+House/farm/school cupboard pools and three Blackpine refuges had independent density hashes; other built templates retained inert recess placeholders.
+
+Cause / uncertainty: No shared combined maximum or cross-map exact-count check existed.
+
+Fix / next action: Use HidingBudget maximum3, floor percentage count and one monotonic indoor/outdoor candidate pool. Add measured cupboard bays on previously inert templates through existing clearance placement. Verify all ten built definitions at all101 settings, body fit, solo and host hiding tests. Future maps must author three suitable candidates.
+
+Evidence and verification: HidingBudgetTest.java; VanHidingTest; CrouchAndOutdoorHidingTest; development/quality/HIDING_SPOT_BUDGET.md
+
+Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
+
+### DEV-049 — Ordinary planting reused the special refuge shrub model
+
+**Status:** fixed-native-decorative-separation · **Affected:** First approach shrub expansion
+
+User rejected many visual refuge shrubs even where a decorative flag disabled hiding.
+
+Cause / uncertainty: Semantic flags alone did not provide a distinct ordinary shrub asset family.
+
+Fix / next action: Create two original leafy decorative shrubs, replace all20 ordinary placements, and reserve only three separately named proposed refuge sites. Remove duplicate reverse leaf faces that generated an export warning; actual clean GLB reimports pass.
+
+Evidence and verification: level_camp_shrub_decorative_a/b sources and studio captures; amenities.json proposed_refuges; native separation assertion
+
+Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
+
+### DEV-050 — Waterfront and dock blockers are not yet runtime movement constraints
+
+**Status:** open-runtime-integration · **Affected:** Hollow Creek lake, creek, culvert, bridge and dock
+
+User asked whether players are actually prevented from entering water or stepping off dock; current native scene cannot guarantee this.
+
+Cause / uncertainty: Hollow Creek map geometry is not yet connected to runtime player/ghost collision.
+
+Fix / next action: Author250 hidden closed barrier volumes, bridge-side protection, shore/berm/dock/creek-mouth joins and clear crossings.1250 actual native rays pass. Integrate into the eventual level collision authority and test swept bodies, multiplayer and movement before claiming working barriers.
+
+Evidence and verification: amenities.json blockers; verification/hollow-creek-amenities.json; expanded review explicit NOT INTEGRATED status
+
+Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -1,0 +1,194 @@
+{
+  "status": "refinement-required",
+  "shore_surface_samples": 36309,
+  "exact_forest_seam_vertices": 14,
+  "protected_route_body_samples": 10377,
+  "ritual_samples": 363,
+  "shed_deck_contacts": 9,
+  "chair_foot_vertices": 240,
+  "dock_standing_samples": 1572,
+  "actual_minimum_globe_headroom_m": 2.4799999475479124,
+  "findings": [
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.699680198260154,
+        -0.12829959183673467,
+        31.190201447532463
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.699680198260154,
+        0.24170040816326532,
+        31.190201447532463
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.516006728872398,
+        -0.12402293877551018,
+        31.35346675365491
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.516006728872398,
+        0.2459770612244898,
+        31.35346675365491
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.332333259484642,
+        -0.1197462857142857,
+        31.516732059777365
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.332333259484642,
+        0.2502537142857143,
+        31.516732059777365
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.148659790096886,
+        -0.1154696326530612,
+        31.679997365899812
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.148659790096886,
+        0.2545303673469388,
+        31.679997365899812
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.775510204081634,
+        0.2588070204081633,
+        32.755102040816325
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.591836734693878,
+        -0.10691632653061223,
+        32.91836734693877
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.591836734693878,
+        0.26308367346938777,
+        32.91836734693877
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.408163265306122,
+        -0.10263967346938774,
+        33.08163265306123
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.408163265306122,
+        0.26736032653061226,
+        33.08163265306123
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.224489795918366,
+        -0.09836302040816325,
+        33.244897959183675
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.224489795918366,
+        0.27163697959183675,
+        33.244897959183675
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L09",
+      "point": [
+        18.040816326530614,
+        0.27591363265306124,
+        33.40816326530612
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L10",
+      "point": [
+        14.89905415556335,
+        -0.21362318840579708,
+        31.508069278146746
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L10",
+      "point": [
+        14.89905415556335,
+        0.1563768115942029,
+        31.508069278146746
+      ]
+    },
+    {
+      "kind": "new furniture blocks protected route",
+      "link": "L10",
+      "point": [
+        14.88456140194016,
+        0.14666666666666672,
+        31.261692466552542
+      ]
+    },
+    {
+      "kind": "dock globe too low",
+      "headroom": 2.4799999475479124
+    }
+  ],
+  "limitations": [
+    "No runtime map unlock, collision/AI, water alpha/sorting, circuit state, LAN or performance acceptance.",
+    "Native lamp globes are non-emissive; switching and ghost breaker behavior remain required.",
+    "Generator is reused intact; exhaust hook-up and combustion ventilation engineering remain open.",
+    "Portable toilets, more tent variants, park fixtures, oil lanterns and further camp gear remain queued."
+  ]
+}

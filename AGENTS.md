@@ -13,3 +13,6 @@
 - After rough map blocking and before terrain acceptance, apply development/quality/DESQUAREIFY_GATE.md. Remove zone-shaped ground pads/material stamps, shape the terrain mesh and physical edges around actual play, and show the canonical van in arrival reviews. A loose rectangle with perturbed corners is not accepted. Audit older maps individually.
 
 - Every remote map requires a placed generator and authored distribution/breaker/circuit plan under development/quality/REMOTE_SITE_POWER.md. Ghost electrical events must retain normal host-authoritative breaker trip behavior. Source-running and breaker states are separate; independent oil/fire/battery lighting stays independent.
+
+- Every investigation location shares HidingBudget.MAXIMUM across indoor/outdoor sockets; highest-difficulty zero-cover setting yields zero. Decorative foliage never creates hiding sockets. Consume development/quality/HIDING_SPOT_BUDGET.md and audit authored candidates individually.
+- Final map refinement includes development/levels/FINAL_STORY_AND_EASTER_EGGS.md: supported minor lore/knickknacks, actual loose-physics integration and individually authored horror/location encounters. Plans alone do not count as runtime completion.

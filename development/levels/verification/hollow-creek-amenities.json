@@ -1,0 +1,70 @@
+{
+  "status": "pass-native-only",
+  "protected_route_samples": 10377,
+  "ritual_samples": 363,
+  "new_tent_floor_contacts": 54,
+  "new_tent_crouch_samples": 1230,
+  "new_roll_contacts": 18,
+  "foundation_ramp_checks": 126,
+  "max_toilet_ramp_grade": 0.16194903150068912,
+  "barrier_volumes": 250,
+  "actual_barrier_rays": 1250,
+  "culvert_terrain_sight_rays": 9,
+  "large_shrubs": 20,
+  "total_pitched_tents": 8,
+  "findings": [],
+  "blocker_runtime_status": "NOT INTEGRATED: native authored contract/meshes only; no working player barrier claim",
+  "limitations": [
+    "No runtime map unlock/collision/AI/circuit, host/LAN, photo or performance acceptance.",
+    "Invisible blocker volumes are native authoring only; wiring into player/ghost collision and movement tests remains mandatory.",
+    "Native water appearance is improved; layered transparency/depth/foam/runtime port remain open.",
+    "Masonry hearth is cold; combustion/exhaust and human fire-clearance/art review remain open."
+  ],
+  "actual_glb_reimports": [
+    {
+      "id": "level_camp_portable_toilet_open",
+      "triangles": 1532,
+      "bytes": 139420
+    },
+    {
+      "id": "level_camp_portable_toilet_closed",
+      "triangles": 1532,
+      "bytes": 139420
+    },
+    {
+      "id": "level_camp_refuse_bin",
+      "triangles": 264,
+      "bytes": 43516
+    },
+    {
+      "id": "level_camp_heron_memorial",
+      "triangles": 1188,
+      "bytes": 94600
+    },
+    {
+      "id": "level_camp_pavilion_fireplace",
+      "triangles": 628,
+      "bytes": 65304
+    },
+    {
+      "id": "level_camp_shrub_decorative_a",
+      "triangles": 4340,
+      "bytes": 435104
+    },
+    {
+      "id": "level_camp_shrub_decorative_b",
+      "triangles": 4340,
+      "bytes": 435104
+    },
+    {
+      "id": "level_camp_terrain_amenities",
+      "triangles": 41782,
+      "bytes": 3167004
+    },
+    {
+      "id": "level_camp_creek_engineering",
+      "triangles": 4644,
+      "bytes": 354748
+    }
+  ]
+}

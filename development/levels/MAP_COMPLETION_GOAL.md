@@ -69,3 +69,7 @@ Five new lore-named sites and an additive cemetery/mortuary study are now planne
 ## Boundary and sky framing gate
 
 All 28 base maps plus the cemetery/mortuary annex now have [edge/sky planning packets](edge-sky-plans/README.md). Consume these before further exterior detail: grounded visible enclosure, closed returns, van/cargo clearance, actual terrain grades, standing/crouch/ghost containment, near/middle/far scenery composition and highest accessible views. The packets are plans; no barrier mesh, collision or runtime per-map horizon has passed acceptance.
+
+## 24 October additional completion gates
+
+Every investigation location must share the same combined indoor/outdoor hiding maximum; consume ../quality/HIDING_SPOT_BUDGET.md. Final completion also includes the separate story/lore/knickknack/loose-physics pass and authored cultural-reference Easter-egg pass in FINAL_STORY_AND_EASTER_EGGS.md. Design packets and native static props do not count as working encounters or loose physics.
