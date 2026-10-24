@@ -1,0 +1,93 @@
+{
+  "status": "pass",
+  "published_commit": "ba00543659776b9d48eed1b396a703e822e2fa9a",
+  "files": 14,
+  "checks": [
+    {
+      "path": "assets/runtime/models/level_camp_tent_ridge_tailored.glb",
+      "bytes": 734216,
+      "sha256": "d010837e1702c6f9e9273097d0554b2653be430fc88ec3dd5c86fd6e9f244eca",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_ridge_tailored.blend",
+      "bytes": 657799,
+      "sha256": "4d7e971c5ed9b60b7e43397ace25f2281665c996b29e644adfd0959cc474fb99",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_dome_tailored.glb",
+      "bytes": 616124,
+      "sha256": "01a86f1f11d5a7cbfe637056fa1d38e57ff08befb97d299f82175c2f2d1da629",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_dome_tailored.blend",
+      "bytes": 555634,
+      "sha256": "e3d50cc512fc4f488309408a7979e0ce8d2b331b63c60251c7f96c0347790ada",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_bedroll_rolled_tailored.glb",
+      "bytes": 923504,
+      "sha256": "718a58600392b5f4d31e331c7886b12e6129d48e0558f2c9b8610e32db9b34d4",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_bedroll_rolled_tailored.blend",
+      "bytes": 721017,
+      "sha256": "2179b5a2fcf85f9ede0f5e03060cfbea7c15862809d41356ca22a9e1e280f64c",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-tailored.blend",
+      "bytes": 42477557,
+      "sha256": "bed26723e24f17b5c3b050d47ac536858770b0de92b9e2fc0644d31d00890eca",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/TAILORED_REVIEW.html",
+      "bytes": 5979,
+      "sha256": "7b44de9d14d802344cdd20a908519e726841478fbb2fbbec4dd7c40d2567b313",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/tailored-fabric.json",
+      "bytes": 176317,
+      "sha256": "9d50c23b3e88f37e6a76b25550feccd0594f4067cd84b544f4181cf2aec41d0d",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/tailor_hollow_creek_fabric.py",
+      "bytes": 15376,
+      "sha256": "a5e145e10d29cbe0defb1b71ce81aa3af09114874ec036b8b71492ad4086be89",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/review_hollow_creek_fabric.py",
+      "bytes": 9443,
+      "sha256": "7f8bd30f9720fd53303c250ceebfe244e1f37de7e8efc579fc9e057776d09390",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-tailored-shape.json",
+      "bytes": 3160,
+      "sha256": "13d631b3166ae3535da63075b186640c10ac69925ae5ef1c4ac89bfa8177f4aa",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-tailored-fit.json",
+      "bytes": 1390,
+      "sha256": "bd2ebd355181c8f20d2287d7f2ef228fdaf4022ac146931ee6402383c9d592b7",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-tailored-pixels.tsv",
+      "bytes": 86693,
+      "sha256": "e266b3678357e1d2f6bb2c92fa6e1ff4437b088e81378f9bd2daffe658cbe840",
+      "actual_download_matches": true
+    }
+  ],
+  "deployed_review_matches": true,
+  "runtime_gameplay_acceptance": false
+}

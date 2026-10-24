@@ -23,3 +23,11 @@ Read-only profile of this exact saved scene measures1503410 total native triangl
 ## Final bedding intersection correction
 
 DEV-068: final visual inspection found the original west rolled bag protruding through the low tent side. It alone moves22cm inward (X7.9 to8.12), with its elevation refitted to the same floor. The current manifest records before/after native coordinates. All7 bags now pass40936 actual canopy-clearance vertex rays and21 floor-contact rays; minimum roof clearance0.20205098m. Parent names come from the authored packet (tent names1-based, bag names0-based), not guessed suffix equality. The new close-up looks through the doorway; the failed wall-intersection capture is retained. Final8 exact floors, protected routes/crouch/ritual checks and1080 new asset UV/pixel samples pass after this correction. The geometry cost report was refreshed for the final saved scene hash.
+
+## Existing broad CI prerequisite
+
+Full multiplayer CI run40119993589 on8bc0eaa fails EquipmentAssetAssignmentsTest coverage totals (DEV-069). Local replay reproduces it. Actual manifest43 families/129 stages/53 aliases,113 canonical+49 state resources=162 unique; test expects44 aliases/40 state resources/153 total. Manifest, runtime catalog and test are byte-identical to pre-art f3c7b77. Do not claim full-suite/multiplayer release acceptance; reconcile the nine authored variants after a provenance/mapping audit and rerun full pipeline. Passing focused Hollow Creek tests remain scoped. No unrelated equipment source or threshold was changed in this batch.
+
+## Verified final publication
+
+Final corrected model/scene checkpoint ba00543659776b9d48eed1b396a703e822e2fa9a is on remote main.14 actual immutable GitHub source/native/export/report downloads match committed bytes; deployed TAILORED_REVIEW.html matches that commit exactly. Live shared gallery and manifest match, and all690 PNG URLs/dimensions plus233 full evidence image hashes pass. See hollow-creek-tailored-delivery.json and development/verification/live-development-gallery.json. Focused source/native/asset checks are scoped; full multiplayer CI remains unaccepted under DEV-069. Exact current-run token counts/breakdown remain unavailable. Full all-map goal remains active; no map was unlocked or called complete.

@@ -749,6 +749,17 @@
       "action": "Move only the west rolled bag22cm inward from X7.9 to8.12, refit its standing height to the same exact floor, and aim the camera through the doorway. Resolve parent tents from the authored placement packet. Check40936 actual bag-vertex/roof rays and21 actual floor-contact rays across all7 bags; minimum canopy clearance is0.202m. Tent floors/frame/anchors remain intact.",
       "evidence": "previews/defects/DEV-068-before-bedding-through-canvas-native-fitout.png; verification/hollow-creek-tailored-shape.json; hollow-creek/tailored-fabric.json placement_corrections; final bedding native capture",
       "older_maps": "Audit supported props against sloping walls/roofs and full usable volume as well as their supporting floor/table. Keep inspection cameras outside opaque obstructions."
+    },
+    {
+      "id": "DEV-069",
+      "title": "Full multiplayer CI stops at stale equipment manifest coverage totals",
+      "status": "open-existing-baseline-test-mismatch",
+      "affected": "EquipmentAssetAssignmentsTest and full multiplayer CI run40119993589",
+      "symptom": "CI and local replay fail manifest family/alias coverage changed before completing full multiplayer/regression acceptance. Manifest has43 families,129 stages,53 state aliases and162 unique resources; the assertion expects44 state aliases and153 resources.",
+      "cause": "Equipment manifest, runtime EquipmentModelCatalog and EquipmentAssetAssignmentsTest are byte-identical to pre-art commit f3c7b777d8cb202b2854e7f09714a69931790259. Existing state totals and the test coverage snapshot disagree; actual unique state resources are49 rather than40.",
+      "action": "Review the nine additional authored state resources/provenance against the current delivered manifest and catalog, then reconcile explicit coverage totals without removing per-slot/state/provenance/allowlist checks. Rerun actual full multiplayer/regression pipeline. Do not claim that local map-asset checks establish a full suite pass.",
+      "evidence": "quality/evidence/DEV-069-full-multiplayer-baseline.txt; verification/hollow-creek-tailored-runtime.json; dated TAILORED_FABRIC handoff",
+      "older_maps": "Shared CI failure predates these map asset changes and affects broad release acceptance; retain it as an open prerequisite across all map acceptance audits."
     }
   ],
   "audit_categories": [

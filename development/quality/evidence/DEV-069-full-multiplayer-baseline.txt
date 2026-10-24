@@ -1,0 +1,81 @@
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	﻿2026-10-24T18:21:05.9749193Z ##[group]Run build.cmd e2e
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:05.9749523Z ^[[36;1mbuild.cmd e2e^[[0m
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:05.9777022Z shell: C:\Windows\system32\cmd.EXE /D /E:ON /V:OFF /S /C "CALL "{0}""
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:05.9777358Z env:
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:05.9777651Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:05.9778120Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:05.9778477Z ##[endgroup]
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:18.9449380Z PASS: authored 126 textured PSX GLBs, 788556 bytes (42 equipment categories x 3 physical tiers)
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:19.0531334Z Prepared 15 CC0 medieval castle meshes
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:20.9906829Z 00:01.828  blend            | Read blend: "C:\Users\RUNNER~1\AppData\Local\Temp\ggbot-original-blend-76p1_swx\Car 01\Car.blend"
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:20.9989000Z D:\a\The-Beckenburg-Project\The-Beckenburg-Project\tools\ggbot_blend_export.py:50: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:20.9989596Z   if not mat or not mat.use_nodes:
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6219298Z INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6220414Z INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6221105Z 18:21:21 | INFO: Starting glTF 2.0 export
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6225460Z 18:21:21 | INFO: Extracting primitive: Car
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6685919Z 18:21:21 | INFO: Primitives created: 1
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6704680Z 18:21:21 | INFO: Finished glTF 2.0 export in 0.04853320121765137 s
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6863531Z 00:02.531  blend            | Read blend: "C:\Users\RUNNER~1\AppData\Local\Temp\ggbot-original-blend-76p1_swx\Car 05\Car5.blend"
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6962631Z D:\a\The-Beckenburg-Project\The-Beckenburg-Project\tools\ggbot_blend_export.py:50: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6963349Z   if not mat or not mat.use_nodes:
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6985367Z
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6985750Z GGBOT BLEND VERIFIED Car.blend -> ggbot_car01.glb mesh_objects 1 image_nodes 1 size 53808
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6986182Z 18:21:21 | INFO: Starting glTF 2.0 export
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.6989875Z 18:21:21 | INFO: Extracting primitive: Car5
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7016450Z 18:21:21 | INFO: Primitives created: 1
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7063726Z 18:21:21 | INFO: Finished glTF 2.0 export in 0.007731914520263672 s
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7239376Z 00:02.563  blend            | Read blend: "C:\Users\RUNNER~1\AppData\Local\Temp\ggbot-original-blend-76p1_swx\Car 08\Car8.blend"
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7319391Z
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7319954Z GGBOT BLEND VERIFIED Car5.blend -> ggbot_car05.glb mesh_objects 1 image_nodes 1 size 51508
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7320399Z 18:21:21 | INFO: Starting glTF 2.0 export
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7322766Z 18:21:21 | INFO: Extracting primitive: Car8
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7347873Z 18:21:21 | INFO: Primitives created: 1
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7362745Z 18:21:21 | INFO: Finished glTF 2.0 export in 0.004247188568115234 s
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7402454Z
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.7402769Z GGBOT BLEND VERIFIED Car8.blend -> ggbot_car08_van_shell.glb mesh_objects 1 image_nodes 1 size 37296
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.8171760Z Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.8758762Z
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:21.8759298Z Blender quit
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:25.6506989Z PASS generated terrain/foliage, subsequent GLB and TV material metadata remain aligned
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:25.8655290Z PASS two reusable campground GLBs, approved IDs, native floor pivots, metre bounds and reviewed geometry
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:26.0764156Z PASS native-scale pavilion GLB, 2040 triangles, UVs, floor pivot and genuine downward roof underside
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:27.0276056Z PASS20 second-pass GLBs: 149586 triangles, finite geometry/UVs, unchanged parser and per-asset budgets
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:27.8918586Z PASS combined indoor/outdoor maximum 3 on 10 built locations, all 101 density settings, zero-cover and monotonic selection
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:28.3823056Z PASS fifteen dock/shore/camp exports: 97862 triangles, finite native geometry/UVs and unchanged parser budgets
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:28.6725044Z PASS three original campsite GLBs: 8532 triangles, human-scale native pivots, intentional ground pegs and finite UVs
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:29.0946950Z PASS eight actual Hollow Creek GLBs: 63782 triangles, finite UVs, native site coordinates and unchanged per-model budgets
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:29.3465981Z PASS terrain within unchanged runtime triangle budget, real site scale/origin, upward normals, negative water beds and finite UVs
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:29.7401255Z PASS 16 terrain GLBs, 157440 total triangles, native metres/origins, UVs, upward normals and unchanged per-asset budgets; map unlocks unchanged
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:29.8346769Z PASS DOTS nearest-hit projection, transferred wall dot, occlusion, near misses, one-sided hits, static/panning patterns and heading
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:30.2856665Z PASS DOTS nearest-hit projection, transferred wall dot, occlusion, near misses, one-sided hits, static/panning patterns and heading
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:30.2899041Z PASS paid/default beam progression, UV cube six-normal mounting and texture, authentic fading traces, ray-projected DOTS, exact laser intersections/spirals and wall clipping
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:32.3658766Z PASS TCP UV power, genuine positioned trace, exhaustion blackout, ghost privacy and physical powered laser installation
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:33.0194908Z PASS supported ceiling pivots, below-deck emission, lit blade/aisle, exact switch target, circuit isolation, breaker blackout, loft/wall/join occlusion and fitting clearance
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:33.4535496Z PASS actual 160mm soffit/fascia, equal top/underside apertures, mounted lamp, opaque slab edge and isolated upstairs lighting
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:33.7860830Z HOUSE XYZ geometry checked
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:33.8882483Z FARMHOUSE XYZ geometry checked
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:34.0457065Z SCHOOL XYZ geometry checked
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:35.9381471Z house reached elevations -3.0..3.0
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:35.9911309Z PASS house: swept van route reaches all15 zones and all functional sockets, 65437 positions
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:38.6207493Z farmhouse reached elevations -3.0..3.0
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:38.6872551Z PASS farmhouse: swept van route reaches all15 zones and all functional sockets, 137069 positions
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:43.4911918Z school reached elevations -3.0..3.6
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:43.5755871Z PASS school: swept van route reaches all15 zones and all functional sockets, 202146 positions
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:43.9236503Z PASS HOUSE: door/window state, XYZ reach, intact sills, slab occlusion and synchronized reconstruction
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:44.0395672Z PASS FARMHOUSE: door/window state, XYZ reach, intact sills, slab occlusion and synchronized reconstruction
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:44.2189737Z PASS SCHOOL: door/window state, XYZ reach, intact sills, slab occlusion and synchronized reconstruction
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:45.8325722Z PASS HOUSE: real host/client XYZ, map revision, door/window resync and ghost privacy
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:47.6188405Z PASS FARMHOUSE: real host/client XYZ, map revision, door/window resync and ghost privacy
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:48.3516091Z PASS SCHOOL: real host/client XYZ, map revision, door/window resync and ghost privacy
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:48.6459101Z PASS HOUSE: selected-site rituals accept correct sockets and reject wrong room/storey/proximity
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:48.7066040Z PASS FARMHOUSE: selected-site rituals accept correct sockets and reject wrong room/storey/proximity
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:48.8180583Z PASS SCHOOL: selected-site rituals accept correct sockets and reject wrong room/storey/proximity
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:50.2769694Z PASS authored utilities: 36 reachable wall switches, 52 door acoustic links, 7 vertical stair links, source elevation and ambience
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:50.8296302Z PASS solo elevation: 36 room measurements/callouts/deployments; upstairs rites and extraction
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:50.9680476Z ##[error]Exception in thread "main" java.lang.AssertionError: manifest family/alias coverage changed
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:50.9681747Z 	at org.beckenburg.EquipmentAssetAssignmentsTest.check(EquipmentAssetAssignmentsTest.java:10)
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:50.9682181Z 	at org.beckenburg.EquipmentAssetAssignmentsTest.main(EquipmentAssetAssignmentsTest.java:42)
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-24T18:21:51.0039684Z ##[error]Process completed with exit code 1.
+
+Local replay: identical assertion failure. Actual manifest43/129/53; unique canonical113, state49, total162. Manifest/catalog/test each byte-identical to f3c7b777d8cb202b2854e7f09714a69931790259. No broad suite pass claimed.

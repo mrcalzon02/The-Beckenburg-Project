@@ -20,5 +20,18 @@
     "Runtime Hollow Creek world renderer/collision/circuits/AI/LAN",
     "Human/hardware/LOD/performance",
     "Water alpha and final story/physics/Easter-eggs"
-  ]
+  ],
+  "full_multiplayer_ci": {
+    "result": "failure predating map asset delta",
+    "run_id": 40119993589,
+    "defect": "DEV-069",
+    "assertion": "EquipmentAssetAssignmentsTest manifest family/alias coverage changed",
+    "actual_family_stage_state_counts": [
+      43,
+      129,
+      53
+    ],
+    "expected_state_count": 44,
+    "manifest_catalog_test_unchanged_since": "f3c7b777d8cb202b2854e7f09714a69931790259"
+  }
 }

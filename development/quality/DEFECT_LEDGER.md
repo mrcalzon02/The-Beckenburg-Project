@@ -962,6 +962,20 @@ Evidence and verification: previews/defects/DEV-068-before-bedding-through-canva
 
 Older-map obligation: Audit supported props against sloping walls/roofs and full usable volume as well as their supporting floor/table. Keep inspection cameras outside opaque obstructions.
 
+### DEV-069 — Full multiplayer CI stops at stale equipment manifest coverage totals
+
+**Status:** open-existing-baseline-test-mismatch · **Affected:** EquipmentAssetAssignmentsTest and full multiplayer CI run40119993589
+
+CI and local replay fail manifest family/alias coverage changed before completing full multiplayer/regression acceptance. Manifest has43 families,129 stages,53 state aliases and162 unique resources; the assertion expects44 state aliases and153 resources.
+
+Cause / uncertainty: Equipment manifest, runtime EquipmentModelCatalog and EquipmentAssetAssignmentsTest are byte-identical to pre-art commit f3c7b777d8cb202b2854e7f09714a69931790259. Existing state totals and the test coverage snapshot disagree; actual unique state resources are49 rather than40.
+
+Fix / next action: Review the nine additional authored state resources/provenance against the current delivered manifest and catalog, then reconcile explicit coverage totals without removing per-slot/state/provenance/allowlist checks. Rerun actual full multiplayer/regression pipeline. Do not claim that local map-asset checks establish a full suite pass.
+
+Evidence and verification: quality/evidence/DEV-069-full-multiplayer-baseline.txt; verification/hollow-creek-tailored-runtime.json; dated TAILORED_FABRIC handoff
+
+Older-map obligation: Shared CI failure predates these map asset changes and affects broad release acceptance; retain it as an open prerequisite across all map acceptance audits.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

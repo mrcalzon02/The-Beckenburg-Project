@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-24T17:47:02.601971+00:00",
-  "published_commit": "07dbbfee94d334b0aeb194853fba9a7b8a202e28",
+  "verified_at": "2026-10-24T18:36:24.091770+00:00",
+  "published_commit": "ba00543659776b9d48eed1b396a703e822e2fa9a",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 678,
+  "image_count": 690,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -804,6 +804,24 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/defects/DEV-062-before-stepped-dome-aperture.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-066-before-buried-canopy-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-068-before-bedding-through-canvas-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1338,6 +1356,42 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/hollow-creek/tailored-bedding-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-before-east-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-before-west-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-east-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/tailored-west-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/hollow-creek/tents-east-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1525,6 +1579,12 @@
     },
     {
       "path": "development/levels/previews/level_camp_bedroll_rolled_refined.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_bedroll_rolled_tailored.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -1848,6 +1908,12 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_tent_dome_tailored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_tent_ridge.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1855,6 +1921,12 @@
     },
     {
       "path": "development/levels/previews/level_camp_tent_ridge_refined.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_ridge_tailored.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
