@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-24T16:56:18.616406+00:00",
-  "published_commit": "ad4cf22980800fa05b3f786b1abb5059d244448e",
+  "verified_at": "2026-10-24T17:47:02.601971+00:00",
+  "published_commit": "07dbbfee94d334b0aeb194853fba9a7b8a202e28",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 657,
+  "image_count": 678,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -792,6 +792,18 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/defects/DEV-056-before-uniform-surfaces-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-061-before-bake-palette-washout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1099,6 +1111,36 @@
     },
     {
       "path": "development/levels/previews/hollow-creek/amenities-memorial-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-dock-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-expanded-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-hearth-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-memorial-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/authored-toilets-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -1476,6 +1518,12 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_bedroll_rolled_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_bedroll_rolled_refined.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1506,6 +1554,12 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_cooler_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_cooler_refined.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1524,6 +1578,12 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_dock_shed_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_dock_shed_refined.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1537,6 +1597,12 @@
     },
     {
       "path": "development/levels/previews/level_camp_fire_ring.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_fire_ring_authored.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -1560,6 +1626,12 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_folding_chair_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_folding_chair_refined.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1570,6 +1642,12 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_heron_memorial_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/level_camp_heron_memorial_refined.png",
@@ -1596,10 +1674,22 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_pavilion_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_pavilion_fireplace.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_pavilion_fireplace_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/level_camp_pavilion_fireplace_refined.png",
@@ -1626,6 +1716,12 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_picnic_table_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_picnic_table_refined.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1638,6 +1734,12 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_portable_toilet_closed_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_portable_toilet_closed_refined.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1648,6 +1750,12 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_portable_toilet_open_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/level_camp_portable_toilet_open_refined.png",
@@ -1668,6 +1776,12 @@
       "full_sha256_verified": false
     },
     {
+      "path": "development/levels/previews/level_camp_refuse_bin_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_refuse_bin_refined.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1678,6 +1792,12 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_camp_rowboat_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/level_camp_rowboat_refined.png",
@@ -2560,6 +2680,12 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/level_trace_generator_authored.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/level_trace_generator_refined.png",

@@ -43,3 +43,7 @@ Refined source checkpoint ad4cf22980800fa05b3f786b1abb5059d244448e was pushed no
 Use hollow-creek/REFINEMENT_REVIEW.html for the current before/after review. Current source is hollow-creek-refined.blend; source/capture hashes are in verification/hollow-creek-refinement-captures.json. General and dock native reports, actual support-part report,20 refined parser loads and protected clean-source checks pass. Exact current-run input/output/cached/total tokens remain unavailable; no historic goal/account percentage values are used. The dated usage record is explicitly unmeasured.
 
 Next substantial gate is actual Hollow Creek runtime map/terrain/containment/circuit integration, including host breaker behavior and player/ghost swept movement, with all native work preserved. Do not mistake250 authored hidden volumes for working player barriers. Also finish campsite approach grading/wear, remaining oil/fire/gear and loose-physics work, human art/LOD/performance acceptance, then final story/Easter-egg phases. Larger all-map completion remains unfinished.
+
+## Superseding authored surface checkpoint
+
+The later DEVELOPMENT_HANDOFF_2026-10-24_AUTHORED_SURFACES.md and hollow-creek/AUTHORED_REVIEW.html now describe the current visual source: hollow-creek-authored.blend. Fourteen new surface families/30 instances retain previous geometry/smoothing/placement; original refined source remains intact. Follow the later handoff for exact checks, publication and pending runtime integration.

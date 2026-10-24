@@ -13,3 +13,8 @@ Separate unfinished physics export from the previous continuation is preserved U
 Continue this map before another: native terrain/collision/render/circuits and actual host/LAN containment; new tent approach grading/wear; finer campsite/tent/foliage art; oil/fire states and remaining gear; layered water; actual loose physics; human/LOD/performance; final story/Easter-egg gates. General all-map goal remains active and unfinished. Preserve six unrelated verification leftovers. Exact current-run input/output/cached/total usage is unavailable; no percentages/historic counters converted to tokens.
 
 Publication/readback appended only after delivery verification.
+
+## Verified publication
+
+Source checkpoint07dbbfee94d334b0aeb194853fba9a7b8a202e28 is on remote main. GitHub Pages build/deploy succeeded. All35 actual immutable source/native/GLB/review downloads match committed bytes; the deployed AUTHORED_REVIEW.html also matches the commit. Independent reports are hollow-creek-authored-delivery.json, hollow-creek-authored-surfaces.json and hollow-creek-authored-runtime.json.
+Final public gallery readback passes all678 PNG URLs/dimensions and221 complete evidence hashes, including all new authored studio/native/defect captures. The deployed gallery manifest and HTML match. Exact current-run token breakdown remains unavailable.
