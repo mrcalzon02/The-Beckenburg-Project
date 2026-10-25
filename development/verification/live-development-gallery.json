@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-25T14:31:02.012657+00:00",
-  "published_commit": "63949e6ca07cc46b1c77bbbef063ddc8c68a1adb",
+  "verified_at": "2026-10-25T15:48:51.732464+00:00",
+  "published_commit": "79fd013c8c04038ffb9e5d0118fae37fb1af4eab",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 730,
+  "image_count": 735,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1345,6 +1345,36 @@
     },
     {
       "path": "development/levels/previews/hollow-creek/forest-west-berm-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-green-after-camp-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-green-after-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-green-before-camp-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-woodland-after-camp-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-woodland-after-site-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true

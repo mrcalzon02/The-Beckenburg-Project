@@ -1,0 +1,153 @@
+{
+  "status": "pass",
+  "published_commit": "79fd013c8c04038ffb9e5d0118fae37fb1af4eab",
+  "files": 24,
+  "checks": [
+    {
+      "path": "assets/runtime/models/level_camp_ground_green.glb",
+      "bytes": 3254764,
+      "sha256": "a3e85974ad88654aa1f08e2e381e89eeddf7aec5029cf58ed6d1ed0f26b211e8",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_ground_green.blend",
+      "bytes": 3267310,
+      "sha256": "5fe222e82822e2fe9f487b3f9203372fe49f09ef9039e0f4ab1381273d330499",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_banks_green.glb",
+      "bytes": 2618164,
+      "sha256": "484c8c6b4f5ef659f4ccf2d17e8b04592180b035e00a9f750bfd38a1eed39816",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_banks_green.blend",
+      "bytes": 3220731,
+      "sha256": "ebcff1de6e73d0f753854fa14ff351e159aa73d084c2c9f29719897ac14f4db1",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_west_green.glb",
+      "bytes": 1213616,
+      "sha256": "7788f74d09b7b583d9207052a3e246045d8ba4388d8e27d7aa2dae0507416e9e",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_west_green.blend",
+      "bytes": 2293741,
+      "sha256": "197d9baa5669657ac242173e4dd47636e707220e4cd5ea82d7d81c97771325f1",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_east_green.glb",
+      "bytes": 1230096,
+      "sha256": "27d770d3e31bb939147c8acb29fa850f72b8be45f59d50bf4b15064bd58a84d0",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_east_green.blend",
+      "bytes": 2299450,
+      "sha256": "5d4d36efd4ff0ac0c97fb6bc69a4912937244f4768ea97518263b385c00778ae",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-green-grass.blend",
+      "bytes": 33898427,
+      "sha256": "e7d53ad52972b5963132876aa40540fa197c8f92db131d8360c90c378ee7740f",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/green-grass.json",
+      "bytes": 97538,
+      "sha256": "2ba1292736536fddaedd42bab03810142b277579e45c1c96aadbbdc855516581",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/GREEN_GRASS_REVIEW.html",
+      "bytes": 2221,
+      "sha256": "206ed05e0a7b5a93c252d66adf73cf9b65f771d872c0b3f8b4573cf52f1a3829",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/EARTHEN_BANK_REVIEW.html",
+      "bytes": 6711,
+      "sha256": "04d1a139ee7ab9bc5e8d918823beada809fbf30945b0aefc8d0f9a426f89610f",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/green_hollow_creek_grass.py",
+      "bytes": 4560,
+      "sha256": "5cad3a1ab1d956ef2daa843132d80180894034921bb621fd51b7955e59a34805",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/review_hollow_creek_green.py",
+      "bytes": 1531,
+      "sha256": "76a14262d305ffdb17c043408c505ed6a2ca934ee43e437660e4cb414ddcb631",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/validate_hollow_creek_green.py",
+      "bytes": 2342,
+      "sha256": "281a3ba3bb7f6505062a32dcf933d4f5677bb025d2ef8ec10b2260f1ce306b91",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/DEVELOPMENT_HANDOFF_2026-10-25_GREEN_GRASS.md",
+      "bytes": 2429,
+      "sha256": "5d53d93d479d07e3dfce113bd5c4b9a2cdabe8a8f810f29cc9a260163630536b",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/textures/hollow-creek/grass-woodland-v4.png",
+      "bytes": 4069982,
+      "sha256": "e03eb071345188bdf0fecea3ba477589900361a93eac3e65eb89f9436e2189e7",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/textures/hollow-creek/grass-woodland-v4-prompt.json",
+      "bytes": 1638,
+      "sha256": "b698c48a381cf790fc4684afbf213ab584eb4233b537df772dd7aefe9502fab8",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-green.json",
+      "bytes": 650,
+      "sha256": "b1ef9c8b131144939236d52527ae900234a153cfdf51973600e0b9a88b3dfbb4",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-green-pixels.tsv",
+      "bytes": 82311,
+      "sha256": "f64914784ab2ea79783095f7808297f9d80f7816d277c7e88c40e168945375ca",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-green-captures.json",
+      "bytes": 848,
+      "sha256": "2147c0a5c2f8e5ba8fea5c61e27fc247d43db00fafc9fcafe009802c2cd2c8a0",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/GlbProps.java",
+      "bytes": 29440,
+      "sha256": "28fac9df9a62a8d5457d3de8446d37ff22c58915e47d5fc7d49e10b0c47be0e7",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/LevelAssets.java",
+      "bytes": 5172,
+      "sha256": "b521101711c0f75e20b59f9b3f60205254bca2c97e1f37cdc50e5f2096484a37",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/test/java/org/beckenburg/HollowCreekGreenGroundTest.java",
+      "bytes": 1733,
+      "sha256": "a109899f521327cfc2f2378290de643fc1da43dee2efffa6606fb90593a70bd3",
+      "actual_download_matches": true
+    }
+  ],
+  "deployed_review_matches": true,
+  "runtime_gameplay_acceptance": false
+}
