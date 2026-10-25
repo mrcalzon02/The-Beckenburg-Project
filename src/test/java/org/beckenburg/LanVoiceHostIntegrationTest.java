@@ -20,7 +20,7 @@ public final class LanVoiceHostIntegrationTest {
             tcp.setSoTimeout(3500);
             in=LanProtocol.reader(tcp.getInputStream());
             out=LanProtocol.writer(tcp.getOutputStream());
-            LanProtocol.write(out,"JOIN|1|"+(ghost?"GHOST":"HUNTER")+"|"+nick);
+            LanProtocol.write(out,"JOIN|"+LanProtocol.VERSION+"|"+(ghost?"GHOST":"HUNTER")+"|"+nick);
             String welcome=LanProtocol.read(in);
             if(!welcome.startsWith("WELCOME|"))throw new IOException(welcome);
             seat=LanProtocol.parts(welcome).get(1);
