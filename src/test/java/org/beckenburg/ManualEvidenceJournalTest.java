@@ -16,7 +16,7 @@ public final class ManualEvidenceJournalTest {
         ok(GhostFieldGuide.remainsPossible(GhostIdentity.Type.SPIRIT,journal),
            "high EMF leaves other matching ghosts visible");
         journal.set(emf,FieldJournal.Status.UNKNOWN,0,2);
-        ok(GhostFieldGuide.shortlist(journal).size()==13,
+        ok(GhostFieldGuide.shortlist(journal).size()==GhostIdentity.Type.values().length,
            "unticking restores ghosts without rerunning a scan");
         journal.set(zero,FieldJournal.Status.SEEN,1,3);
         var suppressed=GhostFieldGuide.shortlist(journal);
@@ -60,7 +60,7 @@ public final class ManualEvidenceJournalTest {
         }
         journal.set(GhostFieldGuide.Clue.TEMPERATURE_NORMAL,FieldJournal.Status.SEEN,0,20);
         journal.set(GhostFieldGuide.Clue.EMF_NORMAL,FieldJournal.Status.SEEN,0,21);
-        ok(GhostFieldGuide.shortlist(journal).size()==13,
+        ok(GhostFieldGuide.shortlist(journal).size()==GhostIdentity.Type.values().length,
             "ordinary EMF and temperature cannot grey any ghost");
         journal.clear();
         ok(Arrays.stream(GhostFieldGuide.activeClues()).noneMatch(c->c.name().startsWith("COLD_ANCHOR")),
