@@ -33,9 +33,13 @@ public final class WeatherSky {
             double d=sky.daylight(),cloud=sky.cloudCover();
             for(int row=0;row<horizon;row+=2){
                 double pos=row/(double)horizon;
-                int r=(int)clamp((11+d*(42+40*pos))*(1-cloud*.55),0,255);
-                int gr=(int)clamp((17+d*(70+44*pos))*(1-cloud*.53),0,255);
-                int b=(int)clamp((36+d*(111+25*pos))*(1-cloud*.48),0,255);
+                // Night skies also need real vertical color variation: the
+                // former daylight-only gradient collapsed to one flat color
+                // whenever daylight==0, leaving Castle windows featureless.
+                // Retain a subdued PSX quantized blue-black night atmosphere.
+                int r=(int)clamp((11+7*pos+d*(42+33*pos))*(1-cloud*.55),0,255);
+                int gr=(int)clamp((17+9*pos+d*(70+35*pos))*(1-cloud*.53),0,255);
+                int b=(int)clamp((36+14*pos+d*(111+11*pos))*(1-cloud*.48),0,255);
                 g.setColor(new Color(r,gr,b));g.fillRect(0,row,width,2);
             }
             long frame=(long)(elapsedSeconds*2);
