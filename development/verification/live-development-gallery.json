@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-25T09:55:13.883237+00:00",
-  "published_commit": "e9012d3ba28de463793a49883095a571862a76dd",
+  "verified_at": "2026-10-25T14:31:02.012657+00:00",
+  "published_commit": "63949e6ca07cc46b1c77bbbef063ddc8c68a1adb",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 729,
+  "image_count": 730,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1345,6 +1345,12 @@
     },
     {
       "path": "development/levels/previews/hollow-creek/forest-west-berm-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/native-physics-query-diagnostic.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true

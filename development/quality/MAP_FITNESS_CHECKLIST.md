@@ -30,11 +30,15 @@ Record discoveries immediately in [defects.json](defects.json); regenerate the
    normals. Keep source textures/UVs; audit each regenerated family independently.
 7. **Physical routes:** swept ascent/descent, landings, body/head clearance, door
    approaches and van access. Re-run after any added structural depth or furniture.
-   Preserve shared collision/render coordinates and floor openings.
+   Preserve shared collision/render coordinates and floor openings. Check the actual
+   body radius and continuous sweeps, not just route-center support; verify standing
+   zone/spawn anchors against real supports and solid occupancy (DEV-089/090).
 8. **Reproduction and publication:** save failing evidence and the corrected view,
    native/runtime checks, affected-map status and next gate. Label studio/native
    overviews separately from runtime screenshots. Refresh and verify the shared
-   GitHub gallery before moving to the next checkpoint.
+   GitHub gallery before moving to the next checkpoint. Text producers must specify
+   UTF-8 explicitly; strictly decode new review/handoff files and verify actual Pages
+   deployment before claiming publication (DEV-091).
 9. **Optical evidence:** verify paid torches beat default in both renderer paths;
    UV casts purple light and reveals only real traces on outward textured cube
    faces; D.O.T.S. is confined to the body/field intersection; laser reactions are

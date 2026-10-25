@@ -1,0 +1,255 @@
+{
+  "status": "pass",
+  "published_commit": "63949e6ca07cc46b1c77bbbef063ddc8c68a1adb",
+  "files": 41,
+  "checks": [
+    {
+      "path": "assets/runtime/sites/hollow-creek-physics.bin",
+      "bytes": 13253347,
+      "sha256": "0f961b9d63f826381e860837f37f21448f74d2728015c3578b6ca9b048b4c4e4",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/site-geometry.txt",
+      "bytes": 25,
+      "sha256": "6c516e981c84071f34cd4dc93ad5c9a21fb7a9b55815c2662b52a9e69a339841",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_terrain_route_graded.glb",
+      "bytes": 3279020,
+      "sha256": "525ca84b5f0c97217c4268458efb9d6f914f76b3aae57192c96262b8a9264691",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_terrain_route_graded.blend",
+      "bytes": 3485140,
+      "sha256": "f8d73d4605f363126351e7ef2b0973217d7fdb6b2e6b33c780775c49592a5f7c",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-route-grade.blend",
+      "bytes": 34061239,
+      "sha256": "96d6f8dc295739fbe48d3d1b9e07f764f4a7efcd196fcfff589aa9006373a506",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/route-grade.json",
+      "bytes": 1661,
+      "sha256": "a114d08be9f5fc117104ce4f678aac5531e1df4dbf3510c5c4751aded0913503",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/NATIVE_PHYSICS_REVIEW.html",
+      "bytes": 1528,
+      "sha256": "48023f6036e345ce0cd10e59fb4868cf3190d851a74af17b04d434349ec221a8",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/DEVELOPMENT_HANDOFF_2026-10-25_NATIVE_PHYSICS.md",
+      "bytes": 5356,
+      "sha256": "52258da3db3b811b679fbc4a2a379c751fe6527a93c044c7ff665cdf518d5ecc",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/export_hollow_creek_physics.py",
+      "bytes": 9633,
+      "sha256": "434621f3ac6f65ef0dff50b2c51c16f08953902bfb4e52bc88d595f59faf0cad",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/fair_hollow_creek_bridge_route.py",
+      "bytes": 4979,
+      "sha256": "de6b32b6fd23e1c5142d369466e781d79825a261dfc28dddf9daae199b20bbdb",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/validate_hollow_creek_route_grade.py",
+      "bytes": 5586,
+      "sha256": "8d2ff8b13582ce5d66c52a5da9a2bc6ecf9ec517e3d345433445caac6fb84c03",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verify_hollow_creek_native_geometry.py",
+      "bytes": 7119,
+      "sha256": "684c1a349fa93cc37aa106b5a67819823a9f9dd780a927cce01bb190c8a3ecbb",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/record_hollow_creek_physics_checkpoint.py",
+      "bytes": 11625,
+      "sha256": "61ec6d0d0b2e07c6ede0c9cc82ce9ec37bbbf237d36fe18d6eff5b683ea8b29e",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/validate_hollow_creek_amenities.py",
+      "bytes": 11628,
+      "sha256": "ef2fdbad599e5bf3c494fe1b60662a72e6ef8b61b63d3b74e14353b9915a1b53",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/native-physics-query-diagnostic.png",
+      "bytes": 211042,
+      "sha256": "8a857a3228ec1cd138604838cddb126489a9c5bf22e3f4735d71cecfe46c3a91",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/MAP_COMPLETION_GOAL.md",
+      "bytes": 8085,
+      "sha256": "1c2e4b446746cf996b6b63782960195f6adcfd70a729d5db9eb5f088fde79ad6",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-native-checkpoint.json",
+      "bytes": 607,
+      "sha256": "622fbba9c71c30e28214dd99b07fa65c4a5a8b560fb82cf18f1d1075262b4f03",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-native-queries.tsv",
+      "bytes": 75916,
+      "sha256": "bf2dda87f3f401b3d26a3edf92cdbb1b4834ebfd8b5164327087157fec92e755",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-native-runtime.json",
+      "bytes": 591,
+      "sha256": "97e6281f1f695ac2b17c2d3178267301f9c02cea5cfb43808210cbbf318bdcd4",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-native-source.json",
+      "bytes": 1091,
+      "sha256": "4777e8a23bd88ffdadff36246ad2c0a8daf4d6dd2283f5b6c1eea78baa9cb53b",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-physics-export.json",
+      "bytes": 16448,
+      "sha256": "69f44e70111ca6c28a7b6636f20fc47cc62f03403443f63491525da8a17213e9",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-route-fit.json",
+      "bytes": 1992,
+      "sha256": "0cc96b91cc2502bb03240cbe749255dbd8f1f337145b53db9b114b1a5ca9fc89",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-route-grade.json",
+      "bytes": 562,
+      "sha256": "f6c52436ecb2f14dd01dfb765867d3335dced1632d4c71ef27310c4f330c09c8",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-route-pixels.tsv",
+      "bytes": 35583,
+      "sha256": "3c22babda340337393c196a3f917f1e5195c033e7fafbfbc62cbeeb3a86783ac",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/map-development-usage-2026-10-25-native-physics.json",
+      "bytes": 330,
+      "sha256": "309b6bae5eea2d0b520dd65effdd73f1c87e708e43cd1d14a2232e1d67413060",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/AuthoredSitePhysics.java",
+      "bytes": 15933,
+      "sha256": "588d45a14aec2a229758b8930d59b54411ba19ec9fbc853654cf90faf26613eb",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/HollowCreekContract.java",
+      "bytes": 23613,
+      "sha256": "d6323f27c9e076b1da028f0eb516499fac3b5bf35ebdc1fbf3183d6afee78234",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/LevelAssets.java",
+      "bytes": 4988,
+      "sha256": "5f475f955a143c2168d2d1fe70d8cc8152502dd570b77f90fb392f018d5b01a0",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/GlbProps.java",
+      "bytes": 29391,
+      "sha256": "6ab19590de1f9793bc33153b31fd3a575b97a5dc828fb937ce67957042de1397",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/test/java/org/beckenburg/AuthoredSitePhysicsTest.java",
+      "bytes": 6205,
+      "sha256": "41bf311e96ab8531b3d3282cca2cd8220a7dea2eccf6e7288f8266d39234e172",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/test/java/org/beckenburg/HollowCreekNativePhysicsTest.java",
+      "bytes": 4888,
+      "sha256": "fb7ed3bf42c7c62de19ac70288aafe5103b18c542cd5742214fdf236453bdcfd",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/test/java/org/beckenburg/HollowCreekPhysicsDiagnostic.java",
+      "bytes": 3480,
+      "sha256": "9a163e9acabe192774ac873d0b99a8244f28c7e3145432b66134abb108ef492c",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/test/java/org/beckenburg/HollowCreekRouteTerrainTest.java",
+      "bytes": 1746,
+      "sha256": "798380c2c8c4fc43ed3378e237e3b3edc2efb5450c4d2aed18b29307432202c9",
+      "actual_download_matches": true
+    },
+    {
+      "path": "build.cmd",
+      "bytes": 13939,
+      "sha256": "81598acaa5605d1022c94904d50d0ed0b6a5f55f01bbed757c93110cf6f8334b",
+      "actual_download_matches": true
+    },
+    {
+      "path": "build.sh",
+      "bytes": 25142,
+      "sha256": "4b86cf8e243989345398007db1172bc268c872fc6c8718b82255def50e2cc2ee",
+      "actual_download_matches": true
+    },
+    {
+      "path": "regression-tests.txt",
+      "bytes": 5348,
+      "sha256": "559ab34ed324274d14a1bc09035793229c08d80c1dcd48f20cb8406a68408b57",
+      "actual_download_matches": true
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "bytes": 2722,
+      "sha256": "2f29268ba1a7d56d578a10931f4857595c2d17dc31941b9a28596b8fc4ce941d",
+      "actual_download_matches": true
+    },
+    {
+      "path": "tools/verify_hollow_creek_authored_delivery.py",
+      "bytes": 9070,
+      "sha256": "392e995d66db2411939cf6d4953cf25d7cea35e233af7b5a1b3e313a7681bc5e",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/quality/defects.json",
+      "bytes": 95690,
+      "sha256": "1b1f4fae4b295f2fa100a43369aa655e4647b4c39b33fb6986426169489e5040",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "bytes": 92148,
+      "sha256": "829fce281a75a3c8921a1e279329e90944a5f1a86a4dc63407f0965c119b54c9",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/quality/evidence/DEV-089-L14-steep-foot-radius-strip.txt",
+      "bytes": 476,
+      "sha256": "c6598bd841e1fa3b7ed50172dcb439bbf397b13711d9e569d0ef3a127fb4f539",
+      "actual_download_matches": true
+    }
+  ],
+  "deployed_review_matches": true,
+  "runtime_gameplay_acceptance": false
+}
