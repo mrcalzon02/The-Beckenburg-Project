@@ -26,22 +26,33 @@ public final class MaterialAtlasTest {
         SceneRenderer renderer=new SceneRenderer();
         int[][] frames=new int[4][];
         for(int i=0;i<4;i++){
-            renderer.x=4.5+8*(i%2);renderer.z=3.5+6*(i/2);
-            renderer.yaw= i*Math.PI/2;renderer.pitch=-.12;
+            // The house now occupies real metre-based rooms at x=12..24,
+            // z=10..24. Old 4.5/3.5 coordinates tested only empty grounds.
+            var spawn=map.spawn(i);
+            check(map.traversable(spawn.x(),spawn.y(),spawn.z()),
+                "texture inspection camera stands in authored room "+i);
+            renderer.x=spawn.x();renderer.z=spawn.z();
+            renderer.eyeHeight=spawn.y()+1.62;
+            renderer.yaw=i*Math.PI/2;renderer.pitch=-.12;
             renderer.draw(map,session,0.5);
             check(Arrays.stream(renderer.depths()).anyMatch(Double::isFinite),"depth in view "+i);
             check(Arrays.stream(renderer.pixels()).distinct().count()>65,"real texture detail in view "+i);
             frames[i]=renderer.pixels().clone();
         }
         check(!Arrays.equals(frames[0],frames[1]),"different rooms create different rendered imagery");
-        renderer.x=4.5;renderer.z=3.5;renderer.yaw=0;renderer.pitch=0;
+        var interior=map.spawn(1);
+        renderer.x=interior.x();renderer.z=interior.z();
+        renderer.eyeHeight=interior.y()+1.62;renderer.yaw=0;renderer.pitch=0;
         renderer.draw(map,session,0.5);
         int[] lit=renderer.pixels().clone();
         renderer.lamp=false;renderer.draw(map,session,0.5);
         check(!Arrays.equals(lit,renderer.pixels()),"flashlight affects textured world");
         // Deliberately move close to a wall: triangulated faces cross NEAR and must
         // clip position AND UV coordinates without generating invalid colors/depth.
-        renderer.x=7.91;renderer.z=3.5;renderer.yaw=Math.PI/2;
+        // Approach the living-room's authored east wall (x=18), not
+        // the old grid's x=8 wall, and verify actual physical support.
+        renderer.x=17.91;renderer.z=19.0;renderer.yaw=Math.PI/2;
+        renderer.eyeHeight=map.floorY(1)+1.62;
         renderer.lamp=true;renderer.draw(map,session,0.5);
         check(Arrays.stream(renderer.depths()).anyMatch(Double::isFinite),"near-plane textured scene visible");
         check(Arrays.stream(renderer.pixels()).allMatch(c->c>=0 && c<=0xffffff),"all near-plane pixels finite and bounded");
