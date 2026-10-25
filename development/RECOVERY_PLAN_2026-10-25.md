@@ -1,0 +1,48 @@
+# Beckenburg recovery program — authoritative active development contract
+
+**Started:** 2026-10-25. **Repository:** `mrcalzon02/The-Beckenburg-Project`, branch `main`. **Baseline inspected:** `6574a8c0780c3817c5f9197a92733b01cc12945c`.
+
+> This is a living recovery contract, not a declaration that outstanding work is complete. Continue it on future work sessions. Preserve existing game content, art masters, approved behavior, and concurrent commits. Update the status and source-SHA evidence at each verified checkpoint. The old `docs/stage-ledger.json` still names the former HB-TTRPG repository and is historical until reconciled; do not use its stale counts as current completion proof.
+
+## Mission
+
+Restore and continuously prove the end-to-end player journey: installed Windows app -> stable GPU-first launch -> Castle/menu -> deliberate map and class selection -> responsive case load -> physical equipment and manual evidence -> haunting/hunts -> spatial rituals -> result -> Castle -> persistent currency/XP/unlocks -> subsequent launch. Validate solo and real host/guest multiplayer separately. No completion credit for docs, binaries, feature-shaped stubs, or a menu that boots without a full playable round.
+
+## Mandatory priority / work order
+
+| Gate | Priority | State at baseline | Required exit evidence |
+| --- | --- | --- | --- |
+| REC-01 Full-round regression | P0 | **BLOCKED**. Latest full multiplayer CI run `40232705357` failed `LevelEnclosureTest`: `readable object has no exact visible approach HOUSE ROOM_0`. Previous run `40231213642` failed a House hiding/geometry assertion. | Repair underlying geometry/targeting or erroneous test assumptions without weakening true behavior, rerun focused and complete Windows packaged TCP multiplayer acceptance, capture exact run and SHA. |
+| REC-02 Release integrity | P0 | **BLOCKED**. `.github/workflows/ship-installer.yml` publishes release builds using `build.cmd package` with tests intentionally skipped; release `beckenburg-v0.1.69` was published from a SHA whose full-round acceptance failed. | Publishing of a validated downloadable installer requires the same exact checkout to pass `build.cmd e2e`, full `BeckenburgRegressionSuite`, desktop/menu check, GPU verification as appropriate, and package startup. Fail closed on any failure; preserve clearly identified developer test artifacts without calling them verified releases. Ensure updater can still discover authorized development builds through an intentional tested channel. |
+| REC-03 Case-start hang | P0 | **OPEN**, GitHub issue #6 / BECK-LIVE-012. Stage-trace and deferred first-frame code exist; clean installed playable transition is not yet proven. | On actual Windows hardware, repeat Castle/menu -> House/School/Farmhouse case start and back with persisted forced-kill diagnostics and frame/load timings. Close only with live responsive result. |
+| REC-04 GPU performance & culling | P1 | **IN PROGRESS**. OpenGL 3.3 backend and CI renderer acceptance exist; live path still uses OpenGL color+depth CPU readback, extensive CPU geometry/light processing, and coarse frustum culling without definitive occlusion rejection. | GPU-first default proven on installed game; measure p50/p95/p99 frame time, mesh processing, culling, render submit and readback, memory/GC, resize/fullscreen; optimize measured causes and prove actual presets work. |
+| REC-05 Initial playable map quality | P1 | **IN PROGRESS**. House, Farmhouse, School are selectable, but live structural/visual/hiding/readable issues persist. | Each map passes layout, physics, collision, door/window, accessible story, case progression, rituals, source props, ghost AI/human visibility, GPU and performance plus physical user review. Older Castle and map join/light audits remain explicit. |
+| REC-06 Complete core gameplay & equipment | P1 | **PARTIAL**. 26 ghost identities / 42 equipment entries and tier assets exist; equipment ledger records zero items fully accepted. | Each equipment tier actually presents, deploys, measures and replicates correct signals without auto-solving journal; unique ghost behaviors, evidence and AI/human control are end-to-end verified. |
+| REC-07 Campaign readiness | P1 | **PARTIAL**. 22-chapter authored story controller, progression and fixed elder sequence exist; only three free-play site geometries unlock. | Successful fixed-seed chapter, replay, economy and ally flows across real completed maps; no substitute geometry. Test all chapters when maps become available. |
+| REC-08 Content/art completion | P2 | **IN PROGRESS**. Original/Elder concepts, Ancient variants, two-body Twins runtime, substantial GLBs and native map art exist. | Actual in-game directional/crop acceptance, a finished generic unrevealed apparition, animations/effects, UI icons, source-approved alternate appearance art where required; do not mark concept/master/source packs as final animated art. |
+| REC-09 Map production and older-map renewal | P2 | **IN PROGRESS**. 28 base location packets (including Castle) and an annex, but most remain concept/blockout or native-authoring work; Hollow Creek runtime/water integration still needs full mission gates. | Per-map exact geometry, story, power, hiding budget, roads, circuits, collision, renderer, performance and visual captures. Apply progressively improved quality requirements to older maps. |
+| REC-10 Source-of-truth audit | P0/ongoing | **BLOCKED**. `docs/stage-ledger.json` last updated 2026-10-18 and names old repo; `RELEASES.md` describes a different active workflow. | Reconcile stage and equipment ledgers, defects, test workflow, release contract and user-visible progress. Record verified SHA and evidence for every claim. |
+
+## Execution discipline — applies to every future session
+
+1. Begin with `main` remote HEAD, latest full-round acceptance, GPU acceptance, installer publication, issue #6, defects ledger and this document. Never assume last session's status still applies.
+2. Work **REC-01 and REC-02 before expanding feature scope**. Change the smallest correct implementation/test surface. Do not delete failing tests, inflate success assertions, bypass scene geometry, force-push, or disguise failure as expected.
+3. Compile and test the modified behavior. Retain exact failing test name, reproducer, pre/post expected result, run ID, artifact links and source SHA. CI green for packaging is not gameplay green. A renderer screenshot is not hardware performance acceptance.
+4. Preserve game features and original/approved art, 26-identity ghost roster, manual player observation (no automatic hard-clue confirmation), two-body Twins, Ancient rituals, 22-chapter order and three final Elders, Castle Beckenburg as HQ, baseline alternate appearance fallback, and local player-owned progression.
+5. Reconcile concurrent main-branch edits before each upload. Make small checkpoint commits and remotely read back the touched files. If a workflow is running, report it as *running* and do not presume a pass.
+6. After each verified checkpoint, append a concise entry under **Checkpoint log**: date, SHA, changes, exact passing/failing workflow, remaining blocker, next action. Update gate status only with independently visible proof.
+7. Maintain `development/quality/defects.json` and `DEFECT_LEDGER.md` for all newly discovered/reproduced visual and gameplay defects. Preserve older-map audit obligations and evidence.
+8. Treat rapid test builds separately from release-accepted builds; do not remove the user's ability to get a development build by accident. Never falsely mark an untested release as verified.
+
+## Baseline links
+
+- Full multiplayer (current failure): https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40232705357
+- Earlier hiding geometry failure: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40231213642
+- GPU acceptance: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40232705250
+- Critical live hang: https://github.com/mrcalzon02/The-Beckenburg-Project/issues/6
+- Latest baseline release (packaging only): https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.69
+- Current map completion gate: `development/levels/MAP_COMPLETION_GOAL.md`
+
+## Checkpoint log
+
+- **2026-10-25 / baseline `6574a8c0780c`:** recovery initiated after direct GitHub inspection. Full multiplayer failed at `LevelEnclosureTest` for `HOUSE ROOM_0`; GPU acceptance passed; installer publishing succeeded independently of gameplay acceptance. No recovery gate marked complete at initialization.
