@@ -14,8 +14,8 @@
   },
   "depth_rule": "min(4.5m, 0.05m + 0.22 * distance to actual bank line)",
   "bed_sha256": "4ee6cb602e891ab2831d304a219a1418bbc33f2c746d4b4cf5ab1dc7c02d2dfc",
-  "texture": "development/levels/textures/hollow-creek/shore-grit-v2.png",
-  "texture_sha256": "864ba5a5aadca95a86c4fd5abd2ff19a46253848206837017992d9e533531fbf",
+  "texture": "development/levels/textures/hollow-creek/creek-bed-silt-stone-v1.png",
+  "texture_sha256": "f027d5b9c1a5500765fb218410f15b9a516cf9de159c3851b54176e169691b06",
   "limitations": [
     "Initial basin is authored, not measured. Fine shoals and creek flow tuning remain visual review items.",
     "No swimming or underwater camera handling in this milestone."

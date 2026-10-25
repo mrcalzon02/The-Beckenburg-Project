@@ -1178,6 +1178,50 @@
       "action": "Request application exit and join the owning worker, allowing its resource disposal/window teardown before main returns.",
       "evidence": "Same real dock render writes fresh world/depth/water evidence and now exits with native code0. Previous frame files remain actual capture evidence, not a clean launcher test.",
       "older_maps": "Audit other GPU smoke/shutdown entry points separately; only the new review lifecycle was corrected."
+    },
+    {
+      "id": "DEV-108",
+      "title": "Visible regular modulation in the water review",
+      "status": "open-art-quality-review",
+      "affected": "Hollow Creek lit water",
+      "symptom": "Increasing opacity exposed repeating surface/bed lighting bands in the beach beam.",
+      "cause": "Sine-product ripple texture and coarse lit bed interpolation are possible contributors; not yet isolated.",
+      "action": "Replace the strong product pattern with two independent softly warped directional ripple layers; retain the remaining banding for follow-up art/lighting review.",
+      "evidence": "DEV-108-before-regular-water-ripple-grid.png and latest murkier beach clip; no full banding acceptance claimed.",
+      "older_maps": "Audit water repetition and bed-light tessellation under the actual beam, not only flat texture inspection."
+    },
+    {
+      "id": "DEV-109",
+      "title": "Local review video showed a poster without reliable playback",
+      "status": "mitigated-published-HTTPS-verified-local-preview-unverified",
+      "affected": "Water review HTML and archived animations",
+      "symptom": "User could see stills but could not play the local review video.",
+      "cause": "Local preview delivery/decoder cause is not proven. Published HTTPS MP4 was directly observed playing at4.1856 of6 seconds, readyState4.",
+      "action": "Add VP9 WebM before MP4 fallback, explicit Play/Pause controls, visible ready/time/error status and direct media links; use the tested published HTTPS review as the primary artifact.",
+      "evidence": "Browser DOM and screenshot confirmed actual playing state; final new controls and WebM require deployed follow-up verification.",
+      "older_maps": "Verify browser playback rather than inferring it from ffprobe frame counts."
+    },
+    {
+      "id": "DEV-110",
+      "title": "Reused shore-grit bed read poorly through overly clear water",
+      "status": "revised-runtime-art-human-review-pending",
+      "affected": "Hollow Creek underwater bed and water style",
+      "symptom": "User requested a different creek-bed texture and less transparent water.",
+      "cause": "Shore grit was reused for the optical basin, while low absorption/minimum opacity exposed excessive ground detail.",
+      "action": "New original image-generated silt/rounded-stone albedo; minimum opacity48%, absorption1.8/m, maximum97%; approximately89% opacity at1m. Keep shallow edges visibly translucent.",
+      "evidence": "creek-bed-silt-stone-v1-prompt.json; new water-murkier game views; transmission regression retains shallow visibility and strongly suppresses the deeper bed.",
+      "older_maps": "Author and review dedicated optical beds and turbidity for each map rather than copying ground materials."
+    },
+    {
+      "id": "DEV-111",
+      "title": "Equipment assignment CI retained pre-existing stale variant counts",
+      "status": "fixed-scoped",
+      "affected": "EquipmentAssetAssignmentsTest / full multiplayer build preflight",
+      "symptom": "Published water checkpoint full multiplayer workflow stopped before the round at manifest family/alias coverage changed.",
+      "cause": "The unchanged pre-water manifest/catalog already contain53 state aliases,49 unique state meshes and162 total resources; the test still expected44/40/153. All explicit mappings passed before the stale count check.",
+      "action": "Update the delivered coverage contract to53/49/162 while retaining every independently checked mapping, provenance and allowlist-equality assertion. No equipment models or catalog mappings changed.",
+      "evidence": "Verified no diff in manifest/catalog/test against15b964c before the correction. Local test now passes43 families/129 stage aliases/53 states/162 resources. Re-run full workflow after publication.",
+      "older_maps": "Keep source catalog, independent manifest and explicit coverage assertions synchronized when adding equipment states; do not weaken mapping checks."
     }
   ],
   "audit_categories": [

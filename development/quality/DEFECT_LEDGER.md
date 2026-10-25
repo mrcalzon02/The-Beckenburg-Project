@@ -1482,6 +1482,62 @@ Evidence: Same real dock render writes fresh world/depth/water evidence and now 
 
 Older-map obligation: Audit other GPU smoke/shutdown entry points separately; only the new review lifecycle was corrected.
 
+## DEV-108 — Visible regular modulation in the water review
+
+**Status:** open-art-quality-review · **Affected:** Hollow Creek lit water
+
+Increasing opacity exposed repeating surface/bed lighting bands in the beach beam.
+
+Cause / uncertainty: Sine-product ripple texture and coarse lit bed interpolation are possible contributors; not yet isolated.
+
+Action: Replace the strong product pattern with two independent softly warped directional ripple layers; retain the remaining banding for follow-up art/lighting review.
+
+Evidence: DEV-108-before-regular-water-ripple-grid.png and latest murkier beach clip; no full banding acceptance claimed.
+
+Older-map obligation: Audit water repetition and bed-light tessellation under the actual beam, not only flat texture inspection.
+
+## DEV-109 — Local review video showed a poster without reliable playback
+
+**Status:** mitigated-published-HTTPS-verified-local-preview-unverified · **Affected:** Water review HTML and archived animations
+
+User could see stills but could not play the local review video.
+
+Cause / uncertainty: Local preview delivery/decoder cause is not proven. Published HTTPS MP4 was directly observed playing at4.1856 of6 seconds, readyState4.
+
+Action: Add VP9 WebM before MP4 fallback, explicit Play/Pause controls, visible ready/time/error status and direct media links; use the tested published HTTPS review as the primary artifact.
+
+Evidence: Browser DOM and screenshot confirmed actual playing state; final new controls and WebM require deployed follow-up verification.
+
+Older-map obligation: Verify browser playback rather than inferring it from ffprobe frame counts.
+
+## DEV-110 — Reused shore-grit bed read poorly through overly clear water
+
+**Status:** revised-runtime-art-human-review-pending · **Affected:** Hollow Creek underwater bed and water style
+
+User requested a different creek-bed texture and less transparent water.
+
+Cause / uncertainty: Shore grit was reused for the optical basin, while low absorption/minimum opacity exposed excessive ground detail.
+
+Action: New original image-generated silt/rounded-stone albedo; minimum opacity48%, absorption1.8/m, maximum97%; approximately89% opacity at1m. Keep shallow edges visibly translucent.
+
+Evidence: creek-bed-silt-stone-v1-prompt.json; new water-murkier game views; transmission regression retains shallow visibility and strongly suppresses the deeper bed.
+
+Older-map obligation: Author and review dedicated optical beds and turbidity for each map rather than copying ground materials.
+
+## DEV-111 — Equipment assignment CI retained pre-existing stale variant counts
+
+**Status:** fixed-scoped · **Affected:** EquipmentAssetAssignmentsTest / full multiplayer build preflight
+
+Published water checkpoint full multiplayer workflow stopped before the round at manifest family/alias coverage changed.
+
+Cause: The unchanged pre-water manifest/catalog already contain53 state aliases,49 unique state meshes and162 total resources; the test still expected44/40/153. All explicit mappings passed before the stale count check.
+
+Action: Update the delivered coverage contract to53/49/162 while retaining every independently checked mapping, provenance and allowlist-equality assertion. No equipment models or catalog mappings changed.
+
+Evidence: Verified no diff in manifest/catalog/test against15b964c before the correction. Local test now passes43 families/129 stage aliases/53 states/162 resources. Re-run full workflow after publication.
+
+Older-map obligation: Keep source catalog, independent manifest and explicit coverage assertions synchronized when adding equipment states; do not weaken mapping checks.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

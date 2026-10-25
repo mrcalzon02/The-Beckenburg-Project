@@ -39,14 +39,14 @@ public final class EquipmentAssetAssignmentsTest {
                 }
             }
         }
-        check(families==43&&slots==129&&stateSlots==44,"manifest family/alias coverage changed");
-        check(canonical.size()==113&&states.size()==40&&all.size()==153,"unique delivered GLB coverage changed");
+        check(families==43&&slots==129&&stateSlots==53,"manifest family/alias coverage changed");
+        check(canonical.size()==113&&states.size()==49&&all.size()==162,"unique delivered GLB coverage changed");
         check(EquipmentModelCatalog.stageCount()==slots&&EquipmentModelCatalog.variantCount()==stateSlots,"extra or missing runtime slots");
         check(EquipmentModelCatalog.approvedModels().equals(all),"runtime allowlist differs from delivered resources");
         for(FieldSupplies.Tier tier:FieldSupplies.Tier.values()){
             check(EquipmentModelCatalog.supplyModel(FieldSupplies.Kind.HEALTH,tier)
                 .equals(EquipmentModelCatalog.model("HEALTH_SUPPLIES",EquipmentTiers.Tier.values()[tier.ordinal()])),"medical progression mapping "+tier);
         }
-        System.out.println("PASS runtime assignments match manifest: 43 families, 129 stage aliases, 44 states, 153 unique resources");
+        System.out.println("PASS runtime assignments match manifest: 43 families, 129 stage aliases, 53 states, 162 unique resources");
     }
 }

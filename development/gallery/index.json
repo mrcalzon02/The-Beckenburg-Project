@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 756,
+  "count": 762,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1364,6 +1364,16 @@
       "sha256": "9e388bcc4aa2741941b8ef9d63f7cd3aef69308cc791dad7dbd0a69df72ad784"
     },
     {
+      "path": "development/levels/previews/defects/DEV-108-before-regular-water-ripple-grid.png",
+      "url": "development/levels/previews/defects/DEV-108-before-regular-water-ripple-grid.png",
+      "title": "Dev 108 before regular water ripple grid",
+      "kind": "Development review",
+      "width": 640,
+      "height": 360,
+      "bytes": 118940,
+      "sha256": "2792437daae8948c9a024ca987078c8866b4eef661b0072ae58b9c4d619c0b8d"
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "url": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "title": "Academy edge sky plan",
@@ -1923,9 +1933,16 @@
       "bytes": 154740,
       "sha256": "a949fe0a6cddba0284901efbabe0f68f859af54f2e0415368c7520bfe083804f",
       "animation": {
-        "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-beach-runtime.mp4",
-        "bytes": 164727,
-        "sha256": "6a7d509c0575ea0766b145fecad49b8f21ec96ee416d71c3c296a88fbf8dddf0"
+        "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-beach-runtime.webm",
+        "bytes": 51937,
+        "sha256": "d22f28e0b78bd3665545d323eb1626a41f9f3778376819f232ad2ef01f9f66f8",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-beach-runtime.mp4",
+            "bytes": 164727,
+            "sha256": "6a7d509c0575ea0766b145fecad49b8f21ec96ee416d71c3c296a88fbf8dddf0"
+          }
+        ]
       }
     },
     {
@@ -1938,9 +1955,16 @@
       "bytes": 174373,
       "sha256": "f39ca09cf9a1a1dafe29a0bafe9f70978dc3dea0917d53b1b1984daceda489b1",
       "animation": {
-        "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-dock-boat-runtime.mp4",
-        "bytes": 189261,
-        "sha256": "c5500eeb076076375c426b76d214dab3b17c89d274ecf31adee85544503b7998"
+        "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-dock-boat-runtime.webm",
+        "bytes": 46223,
+        "sha256": "562a1600bc785c072a84ceb87e051e3d6d6a47b96cedea9aa836c61143b19f53",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-dock-boat-runtime.mp4",
+            "bytes": 189261,
+            "sha256": "c5500eeb076076375c426b76d214dab3b17c89d274ecf31adee85544503b7998"
+          }
+        ]
       }
     },
     {
@@ -1953,9 +1977,16 @@
       "bytes": 217237,
       "sha256": "6891675a716a449d9d603a57a5f03c58a96d4a3ef0f6cd2338c4ab167ea1b3b0",
       "animation": {
-        "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-riverside-east-runtime.mp4",
-        "bytes": 122501,
-        "sha256": "9627a33326509c735217df65d510b32e593e425a8c21f113a93f0b8c844c7d94"
+        "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-riverside-east-runtime.webm",
+        "bytes": 64880,
+        "sha256": "c96c1d8fe5df478f1931623b95164b118f8ed7178ec5b71d0866eff740cbcbb9",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-riverside-east-runtime.mp4",
+            "bytes": 122501,
+            "sha256": "9627a33326509c735217df65d510b32e593e425a8c21f113a93f0b8c844c7d94"
+          }
+        ]
       }
     },
     {
@@ -1968,9 +1999,16 @@
       "bytes": 203591,
       "sha256": "7789d1f624df774f8bafcde405296bfc7480169fccaa183af16b42624e09ff4a",
       "animation": {
-        "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-riverside-west-runtime.mp4",
-        "bytes": 116227,
-        "sha256": "a1a7854d5a813df8534066a70d87851eec252c69b343be72c7aa68bec216fc61"
+        "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-riverside-west-runtime.webm",
+        "bytes": 61056,
+        "sha256": "069a4b7bdb7cf05bba833d8f7e2c1e4f77a5c3b59ceb57b680124a19fd3c4059",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-riverside-west-runtime.mp4",
+            "bytes": 116227,
+            "sha256": "a1a7854d5a813df8534066a70d87851eec252c69b343be72c7aa68bec216fc61"
+          }
+        ]
       }
     },
     {
@@ -1983,9 +2021,16 @@
       "bytes": 154522,
       "sha256": "3fdf2058e02d0d665efa6c40b9e64835968dbfaf55ef93b0a0e00b285f461a9c",
       "animation": {
-        "url": "development/levels/previews/hollow-creek-runtime/water-final/water-beach-runtime.mp4",
-        "bytes": 164028,
-        "sha256": "11570a8aeaa9bff58047a08f6f13c37b07fea0d3b4e63b6073d8b8e65bf8ddf0"
+        "url": "development/levels/previews/hollow-creek-runtime/water-final/water-beach-runtime.webm",
+        "bytes": 51289,
+        "sha256": "65d6c7724c8842d9a78e4cc6f677ec3fb04b33f1deab8b613f79a627cfbcc553",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-final/water-beach-runtime.mp4",
+            "bytes": 164028,
+            "sha256": "11570a8aeaa9bff58047a08f6f13c37b07fea0d3b4e63b6073d8b8e65bf8ddf0"
+          }
+        ]
       }
     },
     {
@@ -1998,9 +2043,16 @@
       "bytes": 174373,
       "sha256": "f39ca09cf9a1a1dafe29a0bafe9f70978dc3dea0917d53b1b1984daceda489b1",
       "animation": {
-        "url": "development/levels/previews/hollow-creek-runtime/water-final/water-dock-boat-runtime.mp4",
-        "bytes": 189261,
-        "sha256": "c5500eeb076076375c426b76d214dab3b17c89d274ecf31adee85544503b7998"
+        "url": "development/levels/previews/hollow-creek-runtime/water-final/water-dock-boat-runtime.webm",
+        "bytes": 46223,
+        "sha256": "ccc6aff4f6045608627ae06da9cc144e75c036bbac9afd27a0168af92fa5e1cb",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-final/water-dock-boat-runtime.mp4",
+            "bytes": 189261,
+            "sha256": "c5500eeb076076375c426b76d214dab3b17c89d274ecf31adee85544503b7998"
+          }
+        ]
       }
     },
     {
@@ -2013,9 +2065,16 @@
       "bytes": 208592,
       "sha256": "86c153f9d65fb9af5c9f6d58079c43cdf876532228897a204be1ca21f8cd0897",
       "animation": {
-        "url": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-east-runtime.mp4",
-        "bytes": 147068,
-        "sha256": "88c82d87de69696304998682a7443d964ad9fb54f1a36864dccbeb199351b5ca"
+        "url": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-east-runtime.webm",
+        "bytes": 61266,
+        "sha256": "0a70ff83de7a2b1b228c7df9724e83d00a0190713b9dad9e915ce9102576de2a",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-east-runtime.mp4",
+            "bytes": 147068,
+            "sha256": "88c82d87de69696304998682a7443d964ad9fb54f1a36864dccbeb199351b5ca"
+          }
+        ]
       }
     },
     {
@@ -2028,9 +2087,104 @@
       "bytes": 213955,
       "sha256": "8466f5921a29afed9fc51b1e5ae762acb838e204ebfeace968ab8292189d7432",
       "animation": {
-        "url": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-west-runtime.mp4",
-        "bytes": 144246,
-        "sha256": "c1d326ed9763e38c2828dedb724e87c1e7798aa216848da677af1c548e030ecb"
+        "url": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-west-runtime.webm",
+        "bytes": 63906,
+        "sha256": "87e90d7d54d65ddb1262314be6f98c9072b53bc1797cdef5ba07fdd59c2f08c2",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-west-runtime.mp4",
+            "bytes": 144246,
+            "sha256": "c1d326ed9763e38c2828dedb724e87c1e7798aa216848da677af1c548e030ecb"
+          }
+        ]
+      }
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-beach-runtime.png",
+      "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-beach-runtime.png",
+      "title": "Water beach runtime",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 360,
+      "bytes": 115773,
+      "sha256": "fe77f034a6597131e91b159662fb74ec5b84020c2aec2cd8990d9ceaebb1b863",
+      "animation": {
+        "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-beach-runtime.webm",
+        "bytes": 34511,
+        "sha256": "a6baf7fb5fe54419cee81153aa81b0fdaa2788e8d8b44c46059a1ee714786ffa",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-beach-runtime.mp4",
+            "bytes": 145482,
+            "sha256": "f1bfa5491fbabbb96bbf8300b66a92938cc8e15a211bb08f42b0f98a0eb176c3"
+          }
+        ]
+      }
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-dock-boat-runtime.png",
+      "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-dock-boat-runtime.png",
+      "title": "Water dock boat runtime",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 360,
+      "bytes": 97588,
+      "sha256": "25f958517719a92d79f5c25cb06733b9e830dd7b46f6bc38482f3d5cd72b08c9",
+      "animation": {
+        "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-dock-boat-runtime.webm",
+        "bytes": 18720,
+        "sha256": "284fe9193fd698168f2e0253b94d453885cbf4f8b666e1b991459dc9a9d65702",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-dock-boat-runtime.mp4",
+            "bytes": 142738,
+            "sha256": "5b0862203bf8c39d7f2eec6728fa8f6a5d49d77ec4b165c12aaa0b1571305428"
+          }
+        ]
+      }
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-east-runtime.png",
+      "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-east-runtime.png",
+      "title": "Water riverside east runtime",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 360,
+      "bytes": 191620,
+      "sha256": "0675a0cf5169cbf24107962f0e65482dc76409fab981a4143c2e10f9f9acaadd",
+      "animation": {
+        "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-east-runtime.webm",
+        "bytes": 52988,
+        "sha256": "88b2413a49d01087f775c8881152d85a6aa545c971826d556b7755dae6760da3",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-east-runtime.mp4",
+            "bytes": 152780,
+            "sha256": "f994a43f4368a2105dfcfcae9c32429fa7de3883f5e2abc1fe38d2b3dcf7ab42"
+          }
+        ]
+      }
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-west-runtime.png",
+      "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-west-runtime.png",
+      "title": "Water riverside west runtime",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 360,
+      "bytes": 198692,
+      "sha256": "cb518a6c43c73dc6d55cc4d4ec819e6e3f36ce9b7a2ccace118858935416f730",
+      "animation": {
+        "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-west-runtime.webm",
+        "bytes": 56999,
+        "sha256": "e37250c6b9e6fc56e7e32b93f1a3602c6f8d114c6dd0e595252619699511bc2b",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-west-runtime.mp4",
+            "bytes": 154047,
+            "sha256": "f3246918b931ae3db98dbdc42bb06c4e7eaff56a7a09f0a992a7305e373cf7cb"
+          }
+        ]
       }
     },
     {
@@ -2882,6 +3036,16 @@
       "height": 1254,
       "bytes": 4144563,
       "sha256": "576b3efe6da8807ae7bd118baf2088b8cdb91c4b3505502a7fc200d757fb89b6"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/textures/creek-bed-silt-stone-v1-studio-source.png",
+      "url": "development/levels/previews/hollow-creek/textures/creek-bed-silt-stone-v1-studio-source.png",
+      "title": "Creek bed silt stone v1 studio source",
+      "kind": "Model inspection",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3686558,
+      "sha256": "f027d5b9c1a5500765fb218410f15b9a516cf9de159c3851b54176e169691b06"
     },
     {
       "path": "development/levels/previews/hollow-creek/textures/grass-dirty-v2-studio-source.png",

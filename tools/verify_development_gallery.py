@@ -47,7 +47,8 @@ def check(item):
     data=read_url(item['url'],full)
     assert data[:8]==b'\x89PNG\r\n\x1a\n' and struct.unpack('>II',data[16:24])==(item['width'],item['height']),item['path']
     if full:assert hashlib.sha256(data).hexdigest()==item['sha256'],item['path']
-    if item.get('animation'):assert hashlib.sha256(read_url(item['animation']['url'])).hexdigest()==item['animation']['sha256'],item['animation']['url']
+    if item.get('animation'):
+        for clip in [item['animation']]+item['animation'].get('fallbacks',[]):assert hashlib.sha256(read_url(clip['url'])).hexdigest()==clip['sha256'],clip['url']
     return dict(path=item['path'],http=200,png_dimensions_match=True,full_sha256_verified=full)
 with ThreadPoolExecutor(max_workers=4) as pool:checks=list(pool.map(check,live['images']))
 report=dict(status='pass',verified_at=datetime.now(timezone.utc).isoformat(),published_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),gallery=BASE+'beckenburg-development-gallery.html',image_count=len(checks),checks=checks,request_retries=request_retries)

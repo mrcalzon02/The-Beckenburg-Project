@@ -11,6 +11,61 @@
   "source_audit": "384 exact local geometry/UV exports, 598 source poses, explicit boat override",
   "animations": [
     {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-beach-runtime.webm",
+      "sha256": "a6baf7fb5fe54419cee81153aa81b0fdaa2788e8d8b44c46059a1ee714786ffa",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-beach-runtime.mp4",
+      "sha256": "f1bfa5491fbabbb96bbf8300b66a92938cc8e15a211bb08f42b0f98a0eb176c3",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-east-runtime.webm",
+      "sha256": "88b2413a49d01087f775c8881152d85a6aa545c971826d556b7755dae6760da3",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-east-runtime.mp4",
+      "sha256": "f994a43f4368a2105dfcfcae9c32429fa7de3883f5e2abc1fe38d2b3dcf7ab42",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-west-runtime.webm",
+      "sha256": "e37250c6b9e6fc56e7e32b93f1a3602c6f8d114c6dd0e595252619699511bc2b",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-west-runtime.mp4",
+      "sha256": "f3246918b931ae3db98dbdc42bb06c4e7eaff56a7a09f0a992a7305e373cf7cb",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-dock-boat-runtime.webm",
+      "sha256": "284fe9193fd698168f2e0253b94d453885cbf4f8b666e1b991459dc9a9d65702",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-dock-boat-runtime.mp4",
+      "sha256": "5b0862203bf8c39d7f2eec6728fa8f6a5d49d77ec4b165c12aaa0b1571305428",
+      "frames": 72,
+      "duration_seconds": 6
+    }
+  ],
+  "full_gameplay_host_LAN_human_acceptance": false,
+  "publication": "Implementation f2d19fa verified at GitHub main and Pages run40230007988 succeeded; latest bed/turbidity/player revision awaiting upload.",
+  "camera_refinement": "Final riverside views (52,23) / (45,23) verified visually; 3.36\u20133.96 million water samples across72 frames, approximately ten times the superseded views.",
+  "capture_launcher_native_exit_code_after_shutdown_fix": 0,
+  "previous_capture_exit_limitation": "Frames/reports completed; prior abrupt GLFW teardown exited0xC0000409. Fixed lifecycle independently re-captured actual dock successfully.",
+  "previous_animations": [
+    {
       "path": "development/levels/previews/hollow-creek-runtime/water-final/water-beach-runtime.mp4",
       "sha256": "11570a8aeaa9bff58047a08f6f13c37b07fea0d3b4e63b6073d8b8e65bf8ddf0",
       "frames": 72,
@@ -35,9 +90,9 @@
       "duration_seconds": 6
     }
   ],
-  "full_gameplay_host_LAN_human_acceptance": false,
-  "publication": "Network recovered on fourth fetch; source checkpoint and gallery ready for safe push/readback.",
-  "camera_refinement": "Final riverside views (52,23) / (45,23) verified visually; 3.36\u20133.96 million water samples across72 frames, approximately ten times the superseded views.",
-  "capture_launcher_native_exit_code_after_shutdown_fix": 0,
-  "previous_capture_exit_limitation": "Frames/reports completed; prior abrupt GLFW teardown exited0xC0000409. Fixed lifecycle independently re-captured actual dock successfully."
+  "additional_tests_passed": [
+    "EquipmentAssetAssignmentsTest: full independent mapping and corrected pre-existing coverage contract",
+    "WaterReviewRegressionTest: reduced actual bed transmission while retaining shallow visibility"
+  ],
+  "latest_material": "Dedicated original creek-bed-silt-stone-v1.png;48% minimum opacity,97% max,1.8/m absorption"
 }
