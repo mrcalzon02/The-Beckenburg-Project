@@ -46,7 +46,12 @@ public final class LanApparitionIntegrationTest {
             g.client.ghost(GhostDomain.Action.MANIFEST,4);
             ok(g.expect("ACCEPT|GHOST|MANIFEST").contains("MANIFEST"),"valid human ghost manifestation accepted");
             String seen=a.expect("APPARITION|VISIBLE|");
-            ok(seen.split("\\|").length==5,"visible hunter receives bounded coordinates");
+            String[] coordinates=seen.split("\\|");
+            ok(coordinates.length==6
+                &&Math.abs(LanProtocol.integer(coordinates[2],-100000,100000))<=100000
+                &&Math.abs(LanProtocol.integer(coordinates[3],-100000,100000))<=100000
+                &&Math.abs(LanProtocol.integer(coordinates[4],-100000,100000))<=100000,
+                "visible hunter receives bounded XYZ coordinates and tick");
             String hidden=b.expect("APPARITION|HIDDEN|");
             ok(!hidden.contains("VISIBLE"),"distant investigator has no ghost coordinates");
             g.expect("STATE|"); // no APPARITION frame may ever be sent to ghost
