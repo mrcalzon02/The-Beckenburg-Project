@@ -50,11 +50,9 @@ public final class LanLobbyTest {
             h2.client.send("GHOST|STRIKE|4|1");check(h2.waitPrefix("REJECT|",2).contains("ghost seat"),"hunter cannot submit ghost action");
             g.client.send("MOVE|4|1");check(g.waitPrefix("REJECT|",2).contains("hunter command"),"ghost cannot move hunter");
             h1.client.move(4);check(h1.waitPrefix("REJECT|",2).contains("not adjacent"),"no hunter teleport");
-            h1.client.move(11);check(h1.waitPrefix("ACCEPT|MOVE|11",2).startsWith("ACCEPT"),"legal first move");
-            h1.client.move(8);h1.waitPrefix("ACCEPT|MOVE|8",2);
-            h1.client.move(5);h1.waitPrefix("ACCEPT|MOVE|5",2);
-            h1.client.move(4);h1.waitPrefix("ACCEPT|MOVE|4",2);
-            h1.client.send("MOVE|5|4");check(h1.waitPrefix("REJECT|",2).contains("stale"),"sequence replay blocked");
+            LanTestRoomTravel.move(h1.client,prefix->h1.waitPrefix(prefix,2),4);
+            h1.client.send("MOVE|5|0");check(h1.waitPrefix("REJECT|",2).contains("stale"),
+                "sequence replay blocked after real room travel");
             g.client.ghost(GhostDomain.Action.STRIKE,4);check(g.waitPrefix("REJECT|",2).contains("insufficient"),"ghost cannot open with strike");
             g.waitTick(170);
             g.client.ghost(GhostDomain.Action.MANIFEST,4);
