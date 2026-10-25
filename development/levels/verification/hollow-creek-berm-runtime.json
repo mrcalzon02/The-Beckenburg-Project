@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-25",
+  "status": "pass-focused-source-assets-only",
+  "jdk": 17,
+  "current_main_sources_compiled": true,
+  "new_assets": 2,
+  "new_triangles": 24882,
+  "independent_uv_png_pixels": 576,
+  "previous_site_art_assets": 14,
+  "previous_site_art_pixels": 4824,
+  "original_loader_limits_unchanged": true,
+  "actual_map_collision_or_host_lan_acceptance": false,
+  "broad_ci_baselines_open": [
+    "DEV-060",
+    "DEV-069"
+  ]
+}

@@ -1,0 +1,345 @@
+{
+  "source": "development/levels/hollow-creek/hollow-creek-siteart-fitted.blend",
+  "source_sha256": "54e0a30ece4343d0a5d29895fc40c4fe6262143945437b0f9a9bbeb2a6555b30",
+  "new_soil_scene": "development/levels/hollow-creek/hollow-creek-grounded-berm.blend",
+  "new_soil_scene_sha256": "78b4bb1f60ec32a2c575aaca83cea049ac9ac3fc2d322cbbb6bbc4fb910f96af",
+  "before_refit_actual_body_contacts": [
+    {
+      "name": "west-woodland crest log 15",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06186169385910034,
+      "actual_original_body_min_gap_over_new_soil_m": -0.03672283887863159
+    },
+    {
+      "name": "west-woodland crest log 15",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06162065267562866,
+      "actual_original_body_min_gap_over_new_soil_m": -0.04719346761703491
+    },
+    {
+      "name": "west-woodland crest log 26",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06199479103088379,
+      "actual_original_body_min_gap_over_new_soil_m": -0.03715348243713379
+    },
+    {
+      "name": "west-woodland crest log 26",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06206107139587402,
+      "actual_original_body_min_gap_over_new_soil_m": -0.03997015953063965
+    },
+    {
+      "name": "west-woodland crest log 37",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06199836730957031,
+      "actual_original_body_min_gap_over_new_soil_m": -0.04011344909667969
+    },
+    {
+      "name": "west-woodland crest log 37",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061753034591674805,
+      "actual_original_body_min_gap_over_new_soil_m": -0.032486677169799805
+    },
+    {
+      "name": "west-woodland crest log 48",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06145942211151123,
+      "actual_original_body_min_gap_over_new_soil_m": -0.05688178539276123
+    },
+    {
+      "name": "west-woodland crest log 48",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061161160469055176,
+      "actual_original_body_min_gap_over_new_soil_m": -0.054943203926086426
+    },
+    {
+      "name": "west-woodland crest log 59",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06142020225524902,
+      "actual_original_body_min_gap_over_new_soil_m": -0.04786276817321777
+    },
+    {
+      "name": "west-woodland crest log 59",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06141185760498047,
+      "actual_original_body_min_gap_over_new_soil_m": -0.054656028747558594
+    },
+    {
+      "name": "west-woodland crest log 70",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06146037578582764,
+      "actual_original_body_min_gap_over_new_soil_m": -0.04445064067840576
+    },
+    {
+      "name": "west-woodland crest log 70",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06146705150604248,
+      "actual_original_body_min_gap_over_new_soil_m": -0.013230204582214355
+    },
+    {
+      "name": "west-woodland crest log 81",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.0614323616027832,
+      "actual_original_body_min_gap_over_new_soil_m": -0.04147005081176758
+    },
+    {
+      "name": "west-woodland crest log 81",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.0615537166595459,
+      "actual_original_body_min_gap_over_new_soil_m": -0.0391843318939209
+    },
+    {
+      "name": "west-woodland crest log 92",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06198740005493164,
+      "actual_original_body_min_gap_over_new_soil_m": -0.04388284683227539
+    },
+    {
+      "name": "west-woodland crest log 92",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06220269203186035,
+      "actual_original_body_min_gap_over_new_soil_m": -0.0397341251373291
+    },
+    {
+      "name": "west-woodland crest log 103",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06234145164489746,
+      "actual_original_body_min_gap_over_new_soil_m": 0.1733839511871338
+    },
+    {
+      "name": "west-woodland crest log 103",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06198430061340332,
+      "actual_original_body_min_gap_over_new_soil_m": 0.48238444328308105
+    },
+    {
+      "name": "west-woodland crest log 114",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06044936180114746,
+      "actual_original_body_min_gap_over_new_soil_m": 0.014730691909790039
+    },
+    {
+      "name": "west-woodland crest log 114",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.060590505599975586,
+      "actual_original_body_min_gap_over_new_soil_m": -0.007581472396850586
+    },
+    {
+      "name": "west-woodland crest log 125",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061515092849731445,
+      "actual_original_body_min_gap_over_new_soil_m": -0.00738072395324707
+    },
+    {
+      "name": "west-woodland crest log 125",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061516761779785156,
+      "actual_original_body_min_gap_over_new_soil_m": -0.031220436096191406
+    },
+    {
+      "name": "west-woodland crest log 136",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06124162673950195,
+      "actual_original_body_min_gap_over_new_soil_m": -0.05478334426879883
+    },
+    {
+      "name": "west-woodland crest log 136",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.060311317443847656,
+      "actual_original_body_min_gap_over_new_soil_m": -0.056763648986816406
+    },
+    {
+      "name": "west-woodland crest log 147",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06195354461669922,
+      "actual_original_body_min_gap_over_new_soil_m": 0.5542268753051758
+    },
+    {
+      "name": "west-woodland crest log 147",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06204652786254883,
+      "actual_original_body_min_gap_over_new_soil_m": 0.6552271842956543
+    },
+    {
+      "name": "west-woodland crest log 158",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.062098026275634766,
+      "actual_original_body_min_gap_over_new_soil_m": -0.02463388442993164
+    },
+    {
+      "name": "west-woodland crest log 158",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.0584561824798584,
+      "actual_original_body_min_gap_over_new_soil_m": 0.5474779605865479
+    },
+    {
+      "name": "east-service crest log 26",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061368703842163086,
+      "actual_original_body_min_gap_over_new_soil_m": -0.053373098373413086
+    },
+    {
+      "name": "east-service crest log 26",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06103777885437012,
+      "actual_original_body_min_gap_over_new_soil_m": -0.04855608940124512
+    },
+    {
+      "name": "east-service crest log 37",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061394691467285156,
+      "actual_original_body_min_gap_over_new_soil_m": 0.2353200912475586
+    },
+    {
+      "name": "east-service crest log 37",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06140422821044922,
+      "actual_original_body_min_gap_over_new_soil_m": 0.6285104751586914
+    },
+    {
+      "name": "east-service crest log 48",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061394691467285156,
+      "actual_original_body_min_gap_over_new_soil_m": -0.04124164581298828
+    },
+    {
+      "name": "east-service crest log 48",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061402082443237305,
+      "actual_original_body_min_gap_over_new_soil_m": -0.054238080978393555
+    },
+    {
+      "name": "east-service crest log 59",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061551570892333984,
+      "actual_original_body_min_gap_over_new_soil_m": -0.009870052337646484
+    },
+    {
+      "name": "east-service crest log 59",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06162261962890625,
+      "actual_original_body_min_gap_over_new_soil_m": 0.055522918701171875
+    },
+    {
+      "name": "east-service crest log 70",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06047368049621582,
+      "actual_original_body_min_gap_over_new_soil_m": 0.026665449142456055
+    },
+    {
+      "name": "east-service crest log 70",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.05351614952087402,
+      "actual_original_body_min_gap_over_new_soil_m": 0.011612176895141602
+    },
+    {
+      "name": "east-service crest log 81",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06153607368469238,
+      "actual_original_body_min_gap_over_new_soil_m": 0.07943987846374512
+    },
+    {
+      "name": "east-service crest log 81",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06149768829345703,
+      "actual_original_body_min_gap_over_new_soil_m": 0.02668285369873047
+    },
+    {
+      "name": "east-service crest log 92",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.061456918716430664,
+      "actual_original_body_min_gap_over_new_soil_m": -0.041177988052368164
+    },
+    {
+      "name": "east-service crest log 92",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06148171424865723,
+      "actual_original_body_min_gap_over_new_soil_m": -0.03689217567443848
+    },
+    {
+      "name": "east-service crest log 103",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06143999099731445,
+      "actual_original_body_min_gap_over_new_soil_m": -0.0416417121887207
+    },
+    {
+      "name": "east-service crest log 103",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06106114387512207,
+      "actual_original_body_min_gap_over_new_soil_m": -0.01558232307434082
+    },
+    {
+      "name": "east-service crest log 114",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.05354022979736328,
+      "actual_original_body_min_gap_over_new_soil_m": -0.029267311096191406
+    },
+    {
+      "name": "east-service crest log 114",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06324553489685059,
+      "actual_original_body_min_gap_over_new_soil_m": -0.054158926010131836
+    },
+    {
+      "name": "east-service crest log 125",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06245863437652588,
+      "actual_original_body_min_gap_over_new_soil_m": 0.04660356044769287
+    },
+    {
+      "name": "east-service crest log 125",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06223165988922119,
+      "actual_original_body_min_gap_over_new_soil_m": -0.05795156955718994
+    },
+    {
+      "name": "east-service crest log 136",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06176877021789551,
+      "actual_original_body_min_gap_over_new_soil_m": -0.04570126533508301
+    },
+    {
+      "name": "east-service crest log 136",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06158900260925293,
+      "actual_original_body_min_gap_over_new_soil_m": -0.05574488639831543
+    },
+    {
+      "name": "east-service crest log 147",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06127214431762695,
+      "actual_original_body_min_gap_over_new_soil_m": -0.05376482009887695
+    },
+    {
+      "name": "east-service crest log 147",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.062445878982543945,
+      "actual_original_body_min_gap_over_new_soil_m": -0.054122209548950195
+    },
+    {
+      "name": "east-service crest log 158",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06103229522705078,
+      "actual_original_body_min_gap_over_new_soil_m": -0.037446022033691406
+    },
+    {
+      "name": "east-service crest log 158",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06140434741973877,
+      "actual_original_body_min_gap_over_new_soil_m": -0.03759300708770752
+    },
+    {
+      "name": "east-service crest log 169",
+      "end": 0,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06140422821044922,
+      "actual_original_body_min_gap_over_new_soil_m": -0.017508506774902344
+    },
+    {
+      "name": "east-service crest log 169",
+      "end": 1,
+      "actual_original_body_min_gap_over_original_soil_m": -0.06114804744720459,
+      "actual_original_body_min_gap_over_new_soil_m": -0.03192746639251709
+    }
+  ],
+  "note": "Diagnostic uses actual original end-region geometry, not metadata bottoms or a cap/axis ray; passing refitted contacts are in the current bank verification report."
+}

@@ -1,0 +1,12 @@
+00:01.313  blend            | Read blend: "C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Unified\development\levels\hollow-creek\hollow-creek-siteart-fitted.blend"
+00:02.532  blend            | Read blend: "C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Unified\development\levels\hollow-creek\hollow-creek-grounded-berm.blend"
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Unified\development\levels\validate_hollow_creek_berm.py", line 42, in <module>
+    assert min(values)>.65 and max(values)<1.4,('Slope texture stretches/folds',t.index,list(values))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('Slope texture stretches/folds', 777, [1.117517337671588, 0.6283244779926364])
+
+Error: script failed, file: 'development/levels/validate_hollow_creek_berm.py', exiting.
+
+Blender quit

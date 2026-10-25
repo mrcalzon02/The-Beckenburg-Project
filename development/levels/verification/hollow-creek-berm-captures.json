@@ -1,0 +1,143 @@
+{
+  "scene": "development/levels/hollow-creek/hollow-creek-grounded-berm.blend",
+  "scene_sha256": "78b4bb1f60ec32a2c575aaca83cea049ac9ac3fc2d322cbbb6bbc4fb910f96af",
+  "captures": [
+    {
+      "path": "development/levels/previews/hollow-creek/berm-before-toe-native-fitout.png",
+      "sha256": "1e45bf0feb0e025365e7cb683ecb44f023126360a529ff7975560fd88ccd9e03",
+      "kind": "Native scene comparison",
+      "phase": "before",
+      "camera": [
+        9,
+        -28,
+        1.05447998046875
+      ],
+      "target": [
+        3.7,
+        -29,
+        0.6
+      ],
+      "lens": 38
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-before-toe-crouch-native-fitout.png",
+      "sha256": "eab21acd3e1500504d9c18de4123a86ecf6da5942830074cfc7939edb17666b4",
+      "kind": "Native scene comparison",
+      "phase": "before",
+      "camera": [
+        9,
+        -28,
+        0.35447998046874996
+      ],
+      "target": [
+        3.7,
+        -29,
+        0.6
+      ],
+      "lens": 38
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-before-camp-native-fitout.png",
+      "sha256": "31ec61cfcfce5ae2fa6e00ff59adaf67d3e8410b095cb48a23e1b24132096778",
+      "kind": "Native scene comparison",
+      "phase": "before",
+      "camera": [
+        18,
+        -42,
+        2.1
+      ],
+      "target": [
+        13,
+        -34,
+        -0.2
+      ],
+      "lens": 30
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-toe-native-fitout.png",
+      "sha256": "59581b2c806ec89becbd5463fbde0906e58636d65e9e0951de6cadfdf1a07717",
+      "kind": "Native scene comparison",
+      "phase": "after",
+      "camera": [
+        9,
+        -28,
+        1.05447998046875
+      ],
+      "target": [
+        3.7,
+        -29,
+        0.6
+      ],
+      "lens": 38
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-toe-crouch-native-fitout.png",
+      "sha256": "d0f73952b70b676f9b7fccac81e28c1ce01a962c96bad5ce0cee120eda79bbb9",
+      "kind": "Native scene comparison",
+      "phase": "after",
+      "camera": [
+        9,
+        -28,
+        0.35447998046874996
+      ],
+      "target": [
+        3.7,
+        -29,
+        0.6
+      ],
+      "lens": 38
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-camp-native-fitout.png",
+      "sha256": "f3ae4cacc4f3a90fc7c97052af7454ff9f7b4132d3b578cb1bb65e0105eea701",
+      "kind": "Native scene comparison",
+      "phase": "after",
+      "camera": [
+        18,
+        -42,
+        2.1
+      ],
+      "target": [
+        13,
+        -34,
+        -0.2
+      ],
+      "lens": 30
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-site-native-fitout.png",
+      "sha256": "de9c5c58e43ce944e75281ebf0ceacd70c61ddc400b76ae883561a4353e837bc",
+      "kind": "Native scene comparison",
+      "phase": "after",
+      "camera": [
+        105,
+        -125,
+        100
+      ],
+      "target": [
+        31,
+        -42,
+        1
+      ],
+      "lens": 40
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-bedrock-native-fitout.png",
+      "sha256": "f445fbe7f8f2af947b60e8560e052af96d4d30722f72e5032cb472001565c05e",
+      "kind": "Native scene comparison",
+      "phase": "after",
+      "camera": [
+        9.325543403625488,
+        -26.122541427612305,
+        1.0076698303222655
+      ],
+      "target": [
+        4.825543403625488,
+        -23.622541427612305,
+        0.7743709911476842
+      ],
+      "lens": 40
+    }
+  ],
+  "runtime_capture": false
+}

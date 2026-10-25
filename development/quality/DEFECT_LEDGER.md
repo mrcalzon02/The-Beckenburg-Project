@@ -1102,6 +1102,118 @@ Evidence and verification: verification/hollow-creek-siteart-runtime.json
 
 Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
 
+### DEV-079 — Boundary berm retained an obsolete material palette
+
+**Status:** fixed-native-earth-bank-material-family · **Affected:** Camp Hollow Creek bank/crest refinement
+
+The berm visibly differed from the revised grass/dirt ground.
+
+Cause / uncertainty: The site-art ground pass did not include the boundary mesh.
+
+Fix / next action: Use the same packed ground material family on the newly authored bank, with worn-soil transitions and an appropriate separate solid-bedrock material. Actual game source PNG pixels are checked; other environmental families remain DEV-076.
+
+Evidence and verification: hollow-creek/EARTHEN_BANK_REVIEW.html; verification/hollow-creek-berm-runtime.json
+
+Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
+
+### DEV-080 — Height-displaced UVs compressed texture at bank bends
+
+**Status:** superseded-unpublished-prototype-not-shipped · **Affected:** Camp Hollow Creek bank/crest refinement
+
+An independent slope-density test found a0.628 singular value at triangle777 in the material-only candidate.
+
+Cause / uncertainty: Per-vertex terrain height gradients and skewed quads distorted a normal/height UV shortcut.
+
+Fix / next action: Preserve the failure; do not relax the test to accept the prototype. Latest user direction replaces the old physical bank with rounded authored cross sections using surface-distance UVs. Do not claim the abandoned prototype passed its strict source-preservation/density tests.
+
+Evidence and verification: quality/evidence/DEV-080-berm-slope-uv-stretch.txt
+
+Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
+
+### DEV-081 — Copying source normals across quad splits changed their smooth fans
+
+**Status:** superseded-unpublished-prototype-normal-audit-required · **Affected:** Camp Hollow Creek bank/crest refinement
+
+An unpublished material-only prototype changed source corner-normal vectors by up to0.01453 while exposing rendered diagonals.
+
+Cause / uncertainty: Blender custom-normal fan behavior differed after quad splitting. Copying values/face labels alone did not prove normal identity.
+
+Fix / next action: Preserve diagnostic; do not reuse that prototype or loosen its failed normal gate. Current user-authorized new bank has new authored geometry/normals and exact source/export triangles. Audit normal preservation separately before applying a quad-retopology helper to older finished assets.
+
+Evidence and verification: quality/evidence/DEV-081-berm-normal-fan-drift.txt
+
+Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
+
+### DEV-082 — Uniform flat-topped berm read as a dirt-coloured wall
+
+**Status:** fixed-native-authored-earth-profile · **Affected:** Camp Hollow Creek bank/crest refinement
+
+User identified repetitive straight sides and flat crest despite the texture update.
+
+Cause / uncertainty: Original narrow2.6m four-point profile repeated along the boundary.
+
+Fix / next action: Replace it with curved, terrain-supported15-point closed sections; vary widths/relief, round shoulders, add small irregular drainage wear and constrain the inner toe around actual facilities/routes. Preserve ground, van and existing camp placements.
+
+Evidence and verification: verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json
+
+Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
+
+### DEV-083 — Embedded stones read as gravel dollops and then cut blocks
+
+**Status:** fixed-native-fractured-bedrock-outcrops · **Affected:** Camp Hollow Creek bank/crest refinement
+
+User rejected pebbly rounded blobs; close review also rejected a rectangular wedge candidate.
+
+Cause / uncertainty: Rounded repeated boulder forms used an aggregate shore texture; the first solid-stone candidate retained a rectangular front/lid.
+
+Fix / next action: Remove original blobs; author12 irregular staggered fractured wedges with buried backs/bases, expose angular faces, add a separate solid-rock source texture and validate actual buried/exposed vertices. Inspect actual standing camera close-up.
+
+Evidence and verification: hollow-creek/EARTHEN_BANK_REVIEW.html; textures/hollow-creek/bedrock-v1-prompt.json; verification/hollow-creek-berm.json
+
+Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
+
+### DEV-084 — Reshaped bank left old crest dressing unsupported
+
+**Status:** fixed-native-rigid-crest-refit · **Affected:** Camp Hollow Creek bank/crest refinement
+
+Actual original log bearings sit53–63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.
+
+Cause / uncertainty: Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.
+
+Fix / next action: Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.
+
+Evidence and verification: quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json
+
+Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
+
+### DEV-085 — Cylinder-axis end ray misclassified log bearing support
+
+**Status:** fixed-with-actual-bearing-geometry · **Affected:** Camp Hollow Creek bank/crest refinement
+
+An axis ray near a slanted log end reported a gap while sampling its cap rather than its lowest support rim.
+
+Cause / uncertainty: Finite tilted cylinders have different cap/axis/rim intersections; an ideal radius at an axis point is not the actual bearing surface.
+
+Fix / next action: Solve rigid placement against actual end-ring vertex/terrain clearances and independently check both actual bearing regions. Do not silence a failed gap by widening tolerance or treating an axis formula as geometry evidence.
+
+Evidence and verification: verification/hollow-creek-berm.json
+
+Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
+
+### DEV-086 — Editable asset was saved only as a dependency library
+
+**Status:** fixed-isolated-packed-model-scenes · **Affected:** Camp Hollow Creek bank/crest refinement
+
+Dependency-only blend snapshots contained the model but no directly openable model scene.
+
+Cause / uncertainty: Library snapshots are appropriate export intermediates, not finished authoring scenes. Saving back over a currently used library also failed.
+
+Fix / next action: Copy snapshots into ignored staging, append into a clean scene and save the actual editable blend. Independently open both files, require exactly the intended model, packed images, no linked-library dependency and exact native/export triangle identity.
+
+Evidence and verification: verification/hollow-creek-berm.json; finalize_earthen_bank_sources.py
+
+Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

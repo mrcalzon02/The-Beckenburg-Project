@@ -1,0 +1,465 @@
+{
+  "status": "pass-native-earth-bank-only",
+  "scene": "development/levels/hollow-creek/hollow-creek-grounded-berm.blend",
+  "scene_sha256": "78b4bb1f60ec32a2c575aaca83cea049ac9ac3fc2d322cbbb6bbc4fb910f96af",
+  "user_authorized_reshaping": true,
+  "unchanged_other_mesh_geometry_uv_materials": 907,
+  "closed_bank_and_outcrop_shells": true,
+  "actual_toe_terrain_probes": 954,
+  "bank_width_range_m": [
+    3.3669314711502,
+    8.299942441462454
+  ],
+  "crest_relief_range_m": [
+    0.3602855548667838,
+    2.352179109114658
+  ],
+  "actual_crest_log_contacts": [
+    {
+      "name": "west-woodland crest log 15",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 15",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 26",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 26",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 37",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 37",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 48",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.040000081062316895
+    },
+    {
+      "name": "west-woodland crest log 48",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.040000081062316895
+    },
+    {
+      "name": "west-woodland crest log 59",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 59",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 70",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.03999984264373779
+    },
+    {
+      "name": "west-woodland crest log 70",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.03999984264373779
+    },
+    {
+      "name": "west-woodland crest log 81",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 81",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 92",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.040000200271606445
+    },
+    {
+      "name": "west-woodland crest log 92",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.040000200271606445
+    },
+    {
+      "name": "west-woodland crest log 103",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 103",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 114",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 114",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 125",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 125",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 136",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 136",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 147",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 147",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 158",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "west-woodland crest log 158",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 26",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 26",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 37",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 37",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 48",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 48",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 59",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 59",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 70",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039998531341552734
+    },
+    {
+      "name": "east-service crest log 70",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.04000139236450195
+    },
+    {
+      "name": "east-service crest log 81",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.03999948501586914
+    },
+    {
+      "name": "east-service crest log 81",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.04000067710876465
+    },
+    {
+      "name": "east-service crest log 92",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 92",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 103",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 103",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.040000200271606445
+    },
+    {
+      "name": "east-service crest log 114",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 114",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 125",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 125",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 136",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 136",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 147",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.04000115394592285
+    },
+    {
+      "name": "east-service crest log 147",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.03999888896942139
+    },
+    {
+      "name": "east-service crest log 158",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 158",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 169",
+      "end": 0,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    },
+    {
+      "name": "east-service crest log 169",
+      "end": 1,
+      "actual_bearing_vertex_probes": 10,
+      "bottom_minus_soil_m": -0.039999961853027344
+    }
+  ],
+  "rigid_crest_assemblies": 52,
+  "max_rigid_refit_error_m": 1.1920928955078125e-07,
+  "rooted_scrub_supports": 24,
+  "embedded_solid_bedrock_outcrops": [
+    {
+      "name": "Bedrock outcrop west-woodland 29",
+      "buried_vertex_probes": 20,
+      "exposed_vertex_probes": 16,
+      "deepest_burial_m": -1.0648494139313698
+    },
+    {
+      "name": "Bedrock outcrop west-woodland 58",
+      "buried_vertex_probes": 19,
+      "exposed_vertex_probes": 10,
+      "deepest_burial_m": -1.065714180469513
+    },
+    {
+      "name": "Bedrock outcrop west-woodland 87",
+      "buried_vertex_probes": 18,
+      "exposed_vertex_probes": 12,
+      "deepest_burial_m": -0.9300782680511475
+    },
+    {
+      "name": "Bedrock outcrop west-woodland 116",
+      "buried_vertex_probes": 23,
+      "exposed_vertex_probes": 9,
+      "deepest_burial_m": -0.8225038051605225
+    },
+    {
+      "name": "Bedrock outcrop west-woodland 145",
+      "buried_vertex_probes": 17,
+      "exposed_vertex_probes": 11,
+      "deepest_burial_m": -1.0288383960723877
+    },
+    {
+      "name": "Bedrock outcrop west-woodland 174",
+      "buried_vertex_probes": 17,
+      "exposed_vertex_probes": 13,
+      "deepest_burial_m": -0.9245882034301758
+    },
+    {
+      "name": "Bedrock outcrop east-service 58",
+      "buried_vertex_probes": 11,
+      "exposed_vertex_probes": 22,
+      "deepest_burial_m": -1.043028712272644
+    },
+    {
+      "name": "Bedrock outcrop east-service 87",
+      "buried_vertex_probes": 21,
+      "exposed_vertex_probes": 11,
+      "deepest_burial_m": -0.9372091293334961
+    },
+    {
+      "name": "Bedrock outcrop east-service 116",
+      "buried_vertex_probes": 18,
+      "exposed_vertex_probes": 13,
+      "deepest_burial_m": -1.0903675556182861
+    },
+    {
+      "name": "Bedrock outcrop east-service 145",
+      "buried_vertex_probes": 21,
+      "exposed_vertex_probes": 13,
+      "deepest_burial_m": -1.1385786533355713
+    },
+    {
+      "name": "Bedrock outcrop east-service 174",
+      "buried_vertex_probes": 19,
+      "exposed_vertex_probes": 11,
+      "deepest_burial_m": -0.9656472504138947
+    },
+    {
+      "name": "Bedrock outcrop east-service 203",
+      "buried_vertex_probes": 21,
+      "exposed_vertex_probes": 13,
+      "deepest_burial_m": -0.992570236325264
+    }
+  ],
+  "facility_vertex_clearance_probes": 389932,
+  "exact_raw_source_export_triangles": true,
+  "triangles": 15074,
+  "bytes": 2642428,
+  "exports": [
+    {
+      "id": "level_camp_boundary_banks_grounded",
+      "triangles": 15074,
+      "bytes": 2642428,
+      "exact_raw_oriented_triangles": true
+    },
+    {
+      "id": "level_camp_boundary_logfall_grounded",
+      "triangles": 9808,
+      "bytes": 609072,
+      "exact_raw_oriented_triangles": true
+    }
+  ],
+  "editable_scene_checks": [
+    {
+      "id": "level_camp_boundary_banks_grounded",
+      "directly_openable_isolated_scene": true,
+      "actual_native_triangle_identity": true,
+      "packed_texture_images": 7
+    },
+    {
+      "id": "level_camp_boundary_logfall_grounded",
+      "directly_openable_isolated_scene": true,
+      "actual_native_triangle_identity": true,
+      "packed_texture_images": 2
+    }
+  ],
+  "runtime_movement_or_map_acceptance": false
+}

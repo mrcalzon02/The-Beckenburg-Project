@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 720,
+  "count": 729,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1934,6 +1934,86 @@
       "sha256": "b1820191bd7a265c06912382f672b0ea1f651588d13c47b610b9d224711dccce"
     },
     {
+      "path": "development/levels/previews/hollow-creek/berm-after-bedrock-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/berm-after-bedrock-native-fitout.png",
+      "title": "Berm after bedrock native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 3038684,
+      "sha256": "f445fbe7f8f2af947b60e8560e052af96d4d30722f72e5032cb472001565c05e"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-camp-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/berm-after-camp-native-fitout.png",
+      "title": "Berm after camp native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 3081365,
+      "sha256": "f3ae4cacc4f3a90fc7c97052af7454ff9f7b4132d3b578cb1bb65e0105eea701"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/berm-after-site-native-fitout.png",
+      "title": "Berm after site native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2640616,
+      "sha256": "de9c5c58e43ce944e75281ebf0ceacd70c61ddc400b76ae883561a4353e837bc"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-toe-crouch-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/berm-after-toe-crouch-native-fitout.png",
+      "title": "Berm after toe crouch native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 3076175,
+      "sha256": "d0f73952b70b676f9b7fccac81e28c1ce01a962c96bad5ce0cee120eda79bbb9"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-toe-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/berm-after-toe-native-fitout.png",
+      "title": "Berm after toe native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 3164776,
+      "sha256": "59581b2c806ec89becbd5463fbde0906e58636d65e9e0951de6cadfdf1a07717"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-before-camp-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/berm-before-camp-native-fitout.png",
+      "title": "Berm before camp native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2992106,
+      "sha256": "31ec61cfcfce5ae2fa6e00ff59adaf67d3e8410b095cb48a23e1b24132096778"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-before-toe-crouch-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/berm-before-toe-crouch-native-fitout.png",
+      "title": "Berm before toe crouch native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2090296,
+      "sha256": "eab21acd3e1500504d9c18de4123a86ecf6da5942830074cfc7939edb17666b4"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-before-toe-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/berm-before-toe-native-fitout.png",
+      "title": "Berm before toe native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2191866,
+      "sha256": "1e45bf0feb0e025365e7cb683ecb44f023126360a529ff7975560fd88ccd9e03"
+    },
+    {
       "path": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
       "url": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
       "title": "Boundary logfall native fitout",
@@ -2482,6 +2562,16 @@
       "height": 800,
       "bytes": 860279,
       "sha256": "869023c048f8784c1496dc20571091da1dfeeaf307defba871b9291444b8d3c4"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/textures/bedrock-v1-studio-source.png",
+      "url": "development/levels/previews/hollow-creek/textures/bedrock-v1-studio-source.png",
+      "title": "Bedrock v1 studio source",
+      "kind": "Model inspection",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4144563,
+      "sha256": "576b3efe6da8807ae7bd118baf2088b8cdb91c4b3505502a7fc200d757fb89b6"
     },
     {
       "path": "development/levels/previews/hollow-creek/textures/grass-dirty-v2-studio-source.png",
