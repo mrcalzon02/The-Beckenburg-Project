@@ -1,0 +1,321 @@
+{
+  "status": "pass",
+  "published_commit": "03a10b056786f2636d4edee9c8c197581e0f6e28",
+  "files": 52,
+  "checks": [
+    {
+      "path": "assets/runtime/models/level_camp_siteart_ground.glb",
+      "bytes": 3278936,
+      "sha256": "f016904df0e97dd0e6b3e5efcc80796d09fbf50dbc10ecf51108779e7eb618c3",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_siteart_ground.blend",
+      "bytes": 3463243,
+      "sha256": "4ed7b60e2186fd67006fb72742fc0a8fd53077becd27cc25855dd2e28e352bbf",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_siteart_west_shore.glb",
+      "bytes": 1236164,
+      "sha256": "497c0e31fda69822d8f1cdef9840058e685042635fcf608fe1d59c09e858de53",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_siteart_west_shore.blend",
+      "bytes": 2297736,
+      "sha256": "c1e3d229abb489bacac9cd3d9295dabf10ec74c4faa5ab25a14f63c07cd90261",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_siteart_east_shore.glb",
+      "bytes": 1252644,
+      "sha256": "24f93211c97077a1e522ecda3819dd77085b74b0f57dc9b3b4a473f681011bb7",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_siteart_east_shore.blend",
+      "bytes": 2304905,
+      "sha256": "08a4e7dcb89a94053bd4df164d2b6fa40661a3a4e387107913ebe21bf4a355a3",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_siteart_rocks.glb",
+      "bytes": 952496,
+      "sha256": "90465cd6483995fcdfcdeda64ddc030789b4b96c65689b577d229cb58299768f",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_siteart_rocks.blend",
+      "bytes": 925420,
+      "sha256": "76d83aaccb4616f2c248e101c9cf27f1d946ec4f9d4d8253678829077f19ed65",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_heron_memorial_organic.glb",
+      "bytes": 1745480,
+      "sha256": "70f842a1192dc2afe6c1cb9d83cd26e47853eb44c29eeeed765ec41bae3ab286",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_heron_memorial_organic.blend",
+      "bytes": 1773968,
+      "sha256": "414b410fdadbf041c5e5e66376a219d07c6f6d63352182e0b8cc35c667c77763",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_west_ridge_siteart.glb",
+      "bytes": 863864,
+      "sha256": "2e38ab66f34d4431c6934c2deacdb8f3c39a5bbf2c5cbd03bf4d66202ff4a063",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_west_ridge_siteart.blend",
+      "bytes": 824912,
+      "sha256": "0595a8be3a0532c1aff6c9278869c20ceb9d1c0234143243571080658c1b1668",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_east_dome_siteart.glb",
+      "bytes": 704936,
+      "sha256": "50cb4e92eb790cf693b7048ed550f089e842f4c850ad5569da3bf48e0d8a60a6",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_east_dome_siteart.blend",
+      "bytes": 626528,
+      "sha256": "3a5724e48cb675093c6a78767c4cb7d1b85923833bc58e40c3299a4c0b37ce98",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_01_siteart.glb",
+      "bytes": 860888,
+      "sha256": "e891ef98ec24c102887368f9b01e6d7950c3ee5f1aaa8976f0fab51b8003674b",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_01_siteart.blend",
+      "bytes": 825429,
+      "sha256": "3698d95577e9deba2f686a0908596d1a3e35c76d2bbb2c8c144d55b6e423deac",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_02_siteart.glb",
+      "bytes": 703196,
+      "sha256": "001315290f09d0b9e6f20bf223beff2532be24b616e09a259a65ca1e33b43da3",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_02_siteart.blend",
+      "bytes": 628717,
+      "sha256": "cde0d9810b38d18333bcfcb691ebcd63cd98e65f801e41ab2e76fa2d414a3937",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_03_siteart.glb",
+      "bytes": 862844,
+      "sha256": "22595e63d80ede5f31ae6120e226356fae401e7286d49b36ed91701a0a36edfc",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_03_siteart.blend",
+      "bytes": 820539,
+      "sha256": "7e5e02bc6fa6bd09572a4ec086891cd8841facbd712a02dbeb806bdb68be4c8c",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_04_siteart.glb",
+      "bytes": 705136,
+      "sha256": "2998a349048986e472f1293c6447374d4654b365cfc8cb50098d9c97f9535020",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_04_siteart.blend",
+      "bytes": 628471,
+      "sha256": "f6fcb63d5b7f9a4609e73cc1f75ec524ba2f1a57ac99b8485ba7ebb1c4a20404",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_05_siteart.glb",
+      "bytes": 869024,
+      "sha256": "b890379b6db1df2a3d07a256b50189c817f3aeec16301c8bd94e80a91b0b72a4",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_05_siteart.blend",
+      "bytes": 824625,
+      "sha256": "9506718fc7046a02ed474d46c44715cd008312c8299503b49a63c014eb4977ef",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_tent_fitted_pitch_06_siteart.glb",
+      "bytes": 705704,
+      "sha256": "3e476fdea35ddb69ec3144814ce3cbac01f1fe5437750bf25c0b1a5c20af0dbd",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_tent_fitted_pitch_06_siteart.blend",
+      "bytes": 627939,
+      "sha256": "65659a99164e8991f588c05f4c7f861726d6a69b537ce98d16e1d524088f833d",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_memorial_uv_tracks.glb",
+      "bytes": 9068,
+      "sha256": "cf1c79dd356397d51fcac5b2d30edd08c3aa87de660df65331fe860afdcf82b8",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_memorial_uv_tracks.blend",
+      "bytes": 68110,
+      "sha256": "4208529eafe322c35b8c097b553ec7d603c49eddb09ab5abc1ec53f420294d76",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-siteart.blend",
+      "bytes": 33501245,
+      "sha256": "a901b7f8d5c73d842d004ffca417002772565f65e48b06153af9ec696a13e4a8",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-siteart-oriented.blend",
+      "bytes": 33632998,
+      "sha256": "9c8bb90627e2b106dff7e1155064ba376915f3e28da5025104642b01453d7ba0",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-siteart-fitted.blend",
+      "bytes": 33306279,
+      "sha256": "54e0a30ece4343d0a5d29895fc40c4fe6262143945437b0f9a9bbeb2a6555b30",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/SITE_ART_REVIEW.html",
+      "bytes": 4968,
+      "sha256": "d9d62d875c06f475ccffc55c7a4a62533facedc6a5ee4c2346dc4aa68e36a59a",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/site-art.json",
+      "bytes": 5025,
+      "sha256": "f1aaec84b7cfc832b664607cc6e7d1a52fae78953505aef3f0c4384f63f3e87b",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/siteart-headings.json",
+      "bytes": 3059,
+      "sha256": "99e4b86412ceb02e9e66bab1779a4be4f72abb839b1e4676d33d17168e58f885",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/siteart-fitted-floors.json",
+      "bytes": 33932,
+      "sha256": "1d3e3369a3c2d908b4b94f181e854ca17cd6ac288ef1e3cd84e64650c143dedf",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/siteart-portable-assets.json",
+      "bytes": 8927,
+      "sha256": "18e2583a41020d630c34d07cc36b969750a1fde1fdff6b12adce05c153fc9fe0",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/organic-memorial-model.json",
+      "bytes": 1179,
+      "sha256": "9781198286c706d2696d524aa236e44c9ff7a22274af437b5e8d164741fe3c8d",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/textures/hollow-creek/grass-dirty-v2.png",
+      "bytes": 4342020,
+      "sha256": "cb5345e70903229415846824db6c7d69684fe50a0a343ca016d8e80a70b33568",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/textures/hollow-creek/trail-dirt-v2.png",
+      "bytes": 4560419,
+      "sha256": "d72f0139e904287a0444a7685b7130c4920e3b09268d92f332e8a6491b5aa1c2",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/textures/hollow-creek/shore-grit-v2.png",
+      "bytes": 4578817,
+      "sha256": "864ba5a5aadca95a86c4fd5abd2ff19a46253848206837017992d9e533531fbf",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/textures/hollow-creek/GENERATION_PROMPTS.json",
+      "bytes": 3376,
+      "sha256": "b9de6e9db5ec55221e12e301f64d0b7891969680ba81693d76ca489ca1293fa2",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/audio/hollow-creek/goose-trumpet-source-hq.mp3",
+      "bytes": 15550,
+      "sha256": "a7f8e23d6e24627c8bf2991ee61ee02951913648b710713cdad185adf6e7d9b2",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/audio/hollow-creek/goose-colossal-omen-v1.wav",
+      "bytes": 281850,
+      "sha256": "05d3354b7e195b043f7ed050b1fb884f20cf179816ebcee052acea17a5d40367",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/audio/hollow-creek/PROVENANCE.json",
+      "bytes": 1245,
+      "sha256": "0cb8838495126e2719c982f8c543fee59fca03346afea78d2913463e6aa43c8b",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/audio/hollow-creek/build_goose_omen.py",
+      "bytes": 2278,
+      "sha256": "b3acb7c8d7e48381d57eadced8166e3d0b1e8bf311ae32258971d33e7d659551",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/sfx/camp_hollow_creek_goose_omen.wav",
+      "bytes": 281850,
+      "sha256": "05d3354b7e195b043f7ed050b1fb884f20cf179816ebcee052acea17a5d40367",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-siteart.json",
+      "bytes": 1615,
+      "sha256": "4b2c82d4d04c8d8e5f075fcd9244fb3383a996412ebb518fe801cc16d98dda35",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-siteart-floors.json",
+      "bytes": 5752,
+      "sha256": "1ace5af9bd4c503754b1be4d0e43832338e3bab5f3451b304ede39413f4fb4fa",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-siteart-fit.json",
+      "bytes": 1992,
+      "sha256": "0cc96b91cc2502bb03240cbe749255dbd8f1f337145b53db9b114b1a5ca9fc89",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-siteart-captures.json",
+      "bytes": 1393,
+      "sha256": "2deea82306710b2646b48f7a9afcdd8f61c79043fffeea1cdbd8577466982dc8",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-siteart-runtime.json",
+      "bytes": 475,
+      "sha256": "dbc0506b636e93a3b855311d4e696d043cb799c67077d94205eff2b5a6be16f1",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-siteart-pixels.tsv",
+      "bytes": 428278,
+      "sha256": "6c3b0a264b03646512f148341e1ccc37529c6ad4ba4a369e02f359f47758f43f",
+      "actual_download_matches": true
+    }
+  ],
+  "deployed_review_matches": true,
+  "runtime_gameplay_acceptance": false
+}

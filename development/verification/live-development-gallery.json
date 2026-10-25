@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-24T23:55:41.258549+00:00",
-  "published_commit": "837c0ec67f7eca987b20934a8edde22ae95cd7a6",
+  "verified_at": "2026-10-25T00:52:10.289274+00:00",
+  "published_commit": "03a10b056786f2636d4edee9c8c197581e0f6e28",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 703,
+  "image_count": 720,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1386,6 +1386,36 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/hollow-creek/siteart-ground-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/siteart-memorial-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/siteart-shore-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/siteart-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/siteart-uv-memorial-native-diagnostic.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/hollow-creek/tailored-bedding-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1459,6 +1489,24 @@
     },
     {
       "path": "development/levels/previews/hollow-creek/terrain-worn-trail-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/textures/grass-dirty-v2-studio-source.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/textures/shore-grit-v2-studio-source.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/textures/trail-dirt-v2-studio-source.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -1740,6 +1788,12 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_heron_memorial_organic.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_heron_memorial_refined.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1950,7 +2004,19 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_tent_fitted_east_dome_siteart.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_tent_fitted_pitch_01.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_01_siteart.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -1962,7 +2028,19 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_02_siteart.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_tent_fitted_pitch_03.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_03_siteart.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -1974,7 +2052,19 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_04_siteart.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_tent_fitted_pitch_05.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_05_siteart.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
@@ -1986,7 +2076,19 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/level_camp_tent_fitted_pitch_06_siteart.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/level_camp_tent_fitted_west_ridge.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/level_camp_tent_fitted_west_ridge_siteart.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
