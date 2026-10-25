@@ -1,0 +1,220 @@
+{
+  "status": "native site art; independent visual/geometry checks pending",
+  "scene": "development/levels/hollow-creek/hollow-creek-siteart.blend",
+  "scene_sha256": "a901b7f8d5c73d842d004ffca417002772565f65e48b06153af9ec696a13e4a8",
+  "parent": "development/levels/hollow-creek/hollow-creek-fitted.blend",
+  "parent_sha256": "643b63584a060c179fcd98dbd34c44d7c29dcf3bb2046f70af9cea6e36d0e7a4",
+  "terrain_geometry_sha256": "480c02fc0b8f8ecd264400c8474fd05f73550d4d252776f14207b50ef5df3221",
+  "terrain_unchanged": true,
+  "world_tile_m": 2,
+  "water_height": -1.95,
+  "grass_exclusion_below": -1.6,
+  "material_faces": {
+    "2": 14768,
+    "0": 24663,
+    "3": 659,
+    "4": 604,
+    "5": 635,
+    "1": 1123
+  },
+  "rocks": 105,
+  "assets": [
+    {
+      "id": "level_camp_siteart_ground",
+      "model": "assets/runtime/models/level_camp_siteart_ground.glb",
+      "editable": "development/levels/blender/level_camp_siteart_ground.blend",
+      "bytes": 3278936,
+      "sha256": "f016904df0e97dd0e6b3e5efcc80796d09fbf50dbc10ecf51108779e7eb618c3",
+      "native_pose": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "id": "level_camp_siteart_west_shore",
+      "model": "assets/runtime/models/level_camp_siteart_west_shore.glb",
+      "editable": "development/levels/blender/level_camp_siteart_west_shore.blend",
+      "bytes": 1236164,
+      "sha256": "497c0e31fda69822d8f1cdef9840058e685042635fcf608fe1d59c09e858de53",
+      "native_pose": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "id": "level_camp_siteart_east_shore",
+      "model": "assets/runtime/models/level_camp_siteart_east_shore.glb",
+      "editable": "development/levels/blender/level_camp_siteart_east_shore.blend",
+      "bytes": 1252644,
+      "sha256": "24f93211c97077a1e522ecda3819dd77085b74b0f57dc9b3b4a473f681011bb7",
+      "native_pose": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "id": "level_camp_siteart_rocks",
+      "model": "assets/runtime/models/level_camp_siteart_rocks.glb",
+      "editable": "development/levels/blender/level_camp_siteart_rocks.blend",
+      "bytes": 952496,
+      "sha256": "90465cd6483995fcdfcdeda64ddc030789b4b96c65689b577d229cb58299768f",
+      "native_pose": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "id": "level_camp_memorial_uv_tracks",
+      "model": "assets/runtime/models/level_camp_memorial_uv_tracks.glb",
+      "editable": "development/levels/blender/level_camp_memorial_uv_tracks.blend",
+      "bytes": 9068,
+      "sha256": "cf1c79dd356397d51fcac5b2d30edd08c3aa87de660df65331fe860afdcf82b8",
+      "native_pose": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "uv_cosmetic_attachments": [
+    {
+      "center": [
+        -0.18000000715255737,
+        -0.4300000071525574,
+        1.0800000429153442
+      ],
+      "outward_normal": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "inner_offset_m": 0.0005,
+      "outer_offset_m": 0.0025
+    },
+    {
+      "center": [
+        0.1599999964237213,
+        -0.4300000071525574,
+        0.5
+      ],
+      "outward_normal": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "inner_offset_m": 0.0005,
+      "outer_offset_m": 0.0025
+    },
+    {
+      "center": [
+        0.4300000071525574,
+        -0.18000000715255737,
+        0.699999988079071
+      ],
+      "outward_normal": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "inner_offset_m": 0.0005,
+      "outer_offset_m": 0.0025
+    },
+    {
+      "center": [
+        0.4300000071525574,
+        0.18000000715255737,
+        0.949999988079071
+      ],
+      "outward_normal": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "inner_offset_m": 0.0005,
+      "outer_offset_m": 0.0025
+    },
+    {
+      "center": [
+        0.33000001311302185,
+        -0.25999999046325684,
+        1.2699999809265137
+      ],
+      "outward_normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inner_offset_m": 0.0005,
+      "outer_offset_m": 0.0025
+    }
+  ],
+  "remaining": [
+    "Tent headings and full renewed placement validation",
+    "Actual UV/range/occlusion/host/LAN encounter trigger; marks hidden in ordinary native scene",
+    "Independent runtime/source checks; no map unlock"
+  ]
+}

@@ -6,14 +6,14 @@ from pathlib import Path
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'development/levels/hollow-creek'
-r=json.loads((OUT/'amenities.json').read_text(encoding='utf-8'));d=json.loads((OUT/'organic-terrain.json').read_text(encoding='utf-8'));fitted='--fitted' in sys.argv;tailored='--tailored' in sys.argv or fitted;refined='--refined' in sys.argv or tailored
+r=json.loads((OUT/'amenities.json').read_text(encoding='utf-8'));d=json.loads((OUT/'organic-terrain.json').read_text(encoding='utf-8'));siteart='--siteart' in sys.argv;fitted='--fitted' in sys.argv or siteart;tailored='--tailored' in sys.argv or fitted;refined='--refined' in sys.argv or tailored
 if refined:
  refinement=json.loads((OUT/'refined-models.json').read_text(encoding='utf-8'));r['assets']=refinement['assets'];r['protected_sources']=refinement['protected_sources']
 if tailored:
  refinement=json.loads((OUT/'tailored-fabric.json').read_text(encoding='utf-8'));r['assets']=refinement['assets'];r['protected_sources']=refinement['protected_sources']
 if fitted:
- refinement=json.loads((OUT/'fitted-floors.json').read_text(encoding='utf-8'));r['assets']=refinement['assets'];r['protected_sources']=refinement['protected_sources']
-bpy.ops.wm.open_mainfile(filepath=str(OUT/('hollow-creek-fitted.blend' if fitted else 'hollow-creek-tailored.blend' if tailored else 'hollow-creek-refined.blend' if refined else 'hollow-creek-amenities.blend')));scene=bpy.context.scene
+ refinement=json.loads((OUT/('siteart-fitted-floors.json' if siteart else 'fitted-floors.json')).read_text(encoding='utf-8'));r['assets']=refinement['assets'];r['protected_sources']=refinement['protected_sources']
+bpy.ops.wm.open_mainfile(filepath=str(OUT/('hollow-creek-siteart-fitted.blend' if siteart else 'hollow-creek-fitted.blend' if fitted else 'hollow-creek-tailored.blend' if tailored else 'hollow-creek-refined.blend' if refined else 'hollow-creek-amenities.blend')));scene=bpy.context.scene
 def tree(objects,group=None):
  vv=[];ff=[];owners=[]
  for o in objects:
@@ -23,7 +23,7 @@ def tree(objects,group=None):
   for t in o.data.loop_triangles:
    if selected is None or all(i in selected for i in t.vertices):ff.append(tuple(off+i for i in t.vertices));owners.append(o.name)
  assert ff,'Missing actual component faces';return BVHTree.FromPolygons(vv,ff,all_triangles=True),owners
-terrain=tree([bpy.data.objects['level_camp_terrain_amenities']])[0];objects=[bpy.data.objects[p['name']] for p in r['placements']];obstacles,owners=tree(objects+[bpy.data.objects['level_camp_creek_engineering']]);findings=[]
+terrain=tree([bpy.data.objects['level_camp_terrain_amenities']])[0];objects=[bpy.data.objects[p['name']] for p in r['placements']];objects += [o for o in scene.objects if siteart and o.type=='MESH' and o.name.startswith(('Grounded lake stone ','Distant bank boulder '))];obstacles,owners=tree(objects+[bpy.data.objects['level_camp_creek_engineering']]);findings=[]
 def check(ok,kind,**data):
  if not ok:findings.append(dict(kind=kind,**data))
 def height(x,z):
@@ -48,7 +48,10 @@ if refined:
  old=json.loads((OUT/'tents.json').read_text(encoding='utf-8'));tents += [dict(p,name=p['native_object']) for p in old['placements'][:2]]
 for index,p in enumerate(tents):
  o=bpy.data.objects[p['name']];floor=tree([o],lambda n:'groundsheet' in n.lower() or 'physical floor' in n.lower())[0];body=tree([o])[0];cs=math.cos(p['yaw']);sn=math.sin(p['yaw'])
- def world(lx,ly):return p['x']+cs*lx-sn*ly,p['z']-sn*lx-cs*ly
+ def world(lx,ly):
+  if siteart:
+   v=o.matrix_world@Vector((lx,ly,0));return v.x,-v.y
+  return p['x']+cs*lx-sn*ly,p['z']-sn*lx-cs*ly
  for dx in [-.7,0,.7]:
   for dy in [-.7,0,.7]:
    x,z=world(dx,dy);g=height(x,z);hit=floor.ray_cast(Vector((x,-z,g+.2)),Vector((0,0,-1)),.4)[0];tent_floor+=1;check(hit is not None and abs(hit.z-g-.028)<.006,'tent floor contact',name=o.name,x=x,z=z)
@@ -58,7 +61,9 @@ for index,p in enumerate(tents):
  if index>=6:continue
  roll=bpy.data.objects['Additional camp rolled bedding '+str(index)];rolltree=tree([roll])[0]
  for dx in [-.20,0,.20]:
-  x=p['x']+.55+dx*cs;z=p['z']-dx*sn;g=height(x,z);a=floor.ray_cast(Vector((x,-z,g+.3)),Vector((0,0,-1)),.5)[0];b=rolltree.ray_cast(Vector((x,-z,g-.1)),Vector((0,0,1)),.7)[0];bedding+=1;check(a is not None and b is not None and -.006<b.z-a.z<.014,'additional roll support',name=roll.name,x=x,z=z)
+  if siteart:q=roll.matrix_world@Vector((dx,0,0));x=q.x;z=-q.y
+  else:x=p['x']+.55+dx*cs;z=p['z']-dx*sn
+  g=height(x,z);a=floor.ray_cast(Vector((x,-z,g+.3)),Vector((0,0,-1)),.5)[0];b=rolltree.ray_cast(Vector((x,-z,g-.1)),Vector((0,0,1)),.7)[0];bedding+=1;check(a is not None and b is not None and -.006<b.z-a.z<.014,'additional roll support',name=roll.name,x=x,z=z)
 support_checks=0;max_ramp_grade=0
 for p in r['supports']:
  o=bpy.data.objects[p['name']];bt=tree([o])[0]
@@ -100,7 +105,7 @@ if refined:
   below=grate.ray_cast(hit-Vector((0,0,.00001)),Vector((0,0,-1)),.08)[0] if hit is not None else None;firewood_contacts+=1;check(hit is not None and below is not None and -.002<hit.z-below.z<.012,'cold firewood is not supported on real grate',group=group.name)
 for p,h in r['protected_sources'].items():check(hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==h,'prior source changed',path=p)
 report=dict(status='pass-native-only' if not findings else 'refinement-required',protected_route_samples=route_samples,ritual_samples=ritual_samples,new_tent_floor_contacts=tent_floor,new_tent_crouch_samples=doors,new_roll_contacts=bedding,foundation_ramp_checks=support_checks,max_toilet_ramp_grade=max_ramp_grade,barrier_volumes=len(r['blockers']),actual_barrier_rays=barrier_rays,culvert_terrain_sight_rays=culvert_sight_rays,cold_firewood_grate_contacts=firewood_contacts,large_shrubs=len(r['large_decorative_shrubs']),total_pitched_tents=r['total_pitched_tents'],findings=findings,blocker_runtime_status=r['blocker_runtime_status'],limitations=r['limitations'])
-path=ROOT/('development/levels/verification/hollow-creek-fitted-fit.json' if fitted else 'development/levels/verification/hollow-creek-tailored-fit.json' if tailored else 'development/levels/verification/hollow-creek-refined.json' if refined else 'development/levels/verification/hollow-creek-amenities.json');path.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');assert not findings,('Native expansion failed',len(findings),'see',path)
+path=ROOT/('development/levels/verification/hollow-creek-siteart-fit.json' if siteart else 'development/levels/verification/hollow-creek-fitted-fit.json' if fitted else 'development/levels/verification/hollow-creek-tailored-fit.json' if tailored else 'development/levels/verification/hollow-creek-refined.json' if refined else 'development/levels/verification/hollow-creek-amenities.json');path.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');assert not findings,('Native expansion failed',len(findings),'see',path)
 imports=[]
 for a in r['assets']:
  file=ROOT/f"assets/runtime/models/{a['id']}.glb";assert hashlib.sha256(file.read_bytes()).hexdigest()==a['sha256'];bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(file));n=0

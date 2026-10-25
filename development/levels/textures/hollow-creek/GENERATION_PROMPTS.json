@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-24",
+  "mode": "built-in image_gen",
+  "purpose": "User-requested second environmental ground texture pass",
+  "sources": [
+    {
+      "file": "grass-dirty-v2.png",
+      "prompt": "Create one square seamless tileable diffuse/albedo texture for Camp Hollow Creek, a grounded PSX-inspired horror campground. Subject: trampled dirty temperate grass ground seen perfectly straight down, no perspective, no horizon, no objects. Muted mossy olive and gray-green grass mixed with exposed dark brown soil, small irregular dead straw patches, damp dark specks and occasional tiny gritty pebbles. Natural irregular clumped blades and worn patches, convincingly dirty and closely inspectable, not a uniform green mat. Hand-painted naturalistic game texture with a restrained approximately 48-color earthy palette and crisp small brush marks; no photographic directional shadows, no baked highlights or vignette, no blur, no grid, no repeating stripes. Seamless opposite edges on both axes. Entire image is usable material, with no border, labels, logos or text. This texture represents roughly a 2.5-metre square of ground. Opaque background."
+    },
+    {
+      "file": "trail-dirt-v2.png",
+      "prompt": "Use the reference only for the earthy palette and naturalistic hand-painted game-material style. Create one new square seamless tileable diffuse/albedo texture of bare trampled campground trail dirt, perfectly straight down. Compact dark gray-brown and umber earth with worn smooth patches, small embedded gritty pebbles, scattered broken dead grass stems and a few tiny old leaf fragments. Mostly exposed soil, no growing grass carpet. Irregular foot-worn variation, no recognizable footprints, no tire tracks, no stripes, no grid. Flat neutral lighting, no baked shadows/highlights or vignette. Crisp closely inspectable PSX-inspired environmental texture with restrained colors, not a blurry color swatch. Opposite edges must meet seamlessly on both axes. Entire image usable, no border/text/logos/props. Roughly2.5 metres of ground, opaque.",
+      "reference": "grass-dirty-v2.png"
+    },
+    {
+      "file": "shore-grit-v2.png",
+      "prompt": "Use the reference only for compatible muted earthy palette and detailed ground-material style. Create one new square seamless tileable diffuse/albedo texture of a campground lake's wet sand-and-pebble shore, perfectly straight down. Gray-tan coarse sand mixed with dark damp fine grit, worn rounded small gray stones and a little brown silt; small irregular natural variation. Absolutely no grass, growing plants, water surface, waves, foam, shells, rubbish or large objects. No obvious patch borders or regular repeated stones. Flat neutral diffuse lighting without baked directional shadows, shine or vignette. Crisp hand-painted naturalistic PSX-inspired game material, closely inspectable rather than chunky flat shapes. Opposite edges meet seamlessly in both axes. Entire image usable, no borders/text/logos. Roughly2.5 metres of shore ground, opaque.",
+      "reference": "grass-dirty-v2.png"
+    }
+  ],
+  "notes": [
+    "Original generated sources copied into this workspace unchanged.",
+    "Runtime material packing/resampling and in-map tiling/scale checks are separate source-preserving 3D asset-export work.",
+    "No map texture acceptance is claimed from these source images alone."
+  ]
+}

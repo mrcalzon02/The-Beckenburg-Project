@@ -1,0 +1,32 @@
+{
+  "scene": "development/levels/hollow-creek/hollow-creek-siteart-fitted.blend",
+  "scene_sha256": "54e0a30ece4343d0a5d29895fc40c4fe6262143945437b0f9a9bbeb2a6555b30",
+  "captures": [
+    {
+      "path": "development/levels/previews/hollow-creek/siteart-site-native-fitout.png",
+      "sha256": "0bb1d442ac0d23800c538ff28fcb1d54a3513022e2c697255ea96cbe3d83b596",
+      "kind": "Native scene review"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/siteart-ground-native-fitout.png",
+      "sha256": "048b1c8e55163c7e1f6a7823d013bc2a8b3c3f94508fb1e88a9ca61e9e1d519e",
+      "kind": "Native scene review"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/siteart-shore-native-fitout.png",
+      "sha256": "13f737dd7c0a829696642113caf9e8fa7ff806c56213c88a49ec4bb1df1f96d4",
+      "kind": "Native scene review"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/siteart-memorial-native-fitout.png",
+      "sha256": "b73cc115ffdc46beb76c81935bf3b783dad723d419fe783692b9611dfbb9bced",
+      "kind": "Native scene review"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/siteart-uv-memorial-native-diagnostic.png",
+      "sha256": "1bfc8c50105e3ddea42cb2b9fac4f78535771ac214b2e5947e3c9175c2e5477f",
+      "kind": "Native UV layer diagnostic; manually revealed, not gameplay trigger"
+    }
+  ],
+  "runtime_capture": false
+}

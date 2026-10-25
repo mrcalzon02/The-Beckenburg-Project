@@ -1,0 +1,36 @@
+{
+  "status": "source construction; independent checks pending",
+  "asset": {
+    "id": "level_camp_heron_memorial_organic",
+    "library": "campground-organic-memorial",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha256": "70f842a1192dc2afe6c1cb9d83cd26e47853eb44c29eeeed765ec41bae3ab286",
+    "bytes": 1745480,
+    "triangles": 32520,
+    "bounds": [
+      [
+        -1.049001932144165,
+        0.0,
+        -0.7250000238418579
+      ],
+      [
+        1.0490691661834717,
+        2.9477791786193848,
+        0.7250000238418579
+      ]
+    ],
+    "source": "original geometry and procedural textures",
+    "editable": "development/levels/blender/level_camp_heron_memorial_organic.blend"
+  },
+  "parent": "development/levels/blender/level_camp_heron_memorial_authored.blend",
+  "parent_sha256": "5b70fde4803174d83d2621edd95d605908f0f5b57c7ff0f09d84dd9b9edcd66f",
+  "inscription": [
+    "CAMP HOLLOW CREEK",
+    "THE WATCHER",
+    "KEEP THE WATER CLEAN",
+    "LEAVE NO ONE BEHIND"
+  ],
+  "cast_before_reduction_triangles": 103160,
+  "uv_goose_encounter_status": "requested; not implemented by this sculpture export"
+}

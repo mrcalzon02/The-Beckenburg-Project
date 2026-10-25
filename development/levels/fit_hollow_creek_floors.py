@@ -11,7 +11,7 @@ from mathutils.geometry import convex_hull_2d
 ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'development/levels'),str(ROOT/'development/assets')]
 import rebuild_support as s
 import build_lived_assets as b
-OUT=ROOT/'development/levels/hollow-creek';source=OUT/'hollow-creek-tailored.blend'
+OUT=ROOT/'development/levels/hollow-creek';siteart='--siteart' in sys.argv;source=OUT/('hollow-creek-siteart-oriented.blend' if siteart else 'hollow-creek-tailored.blend')
 protected={source.relative_to(ROOT).as_posix():hashlib.sha256(source.read_bytes()).hexdigest()}
 TOP=.028;BOTTOM=.016
 
@@ -56,6 +56,7 @@ for t in terrain.data.loop_triangles:
  triangles.append((points,xy,(min(p.x for p in points),min(p.y for p in points),max(p.x for p in points),max(p.y for p in points))))
 names=['west-pitched-ridge','east-pitched-dome']+['Additional pitched tent '+str(i) for i in range(1,7)]
 ids=['level_camp_tent_fitted_west_ridge','level_camp_tent_fitted_east_dome']+['level_camp_tent_fitted_pitch_'+str(i).zfill(2) for i in range(1,7)]
+if siteart:ids=[id+'_siteart' for id in ids]
 rows=[];snapshots=[];temp=ROOT/'build/fitted-tent-snapshots';temp.mkdir(exist_ok=True)
 template_hulls={}
 for name,id in zip(names,ids):
@@ -165,7 +166,7 @@ for name,id in zip(names,ids):
  asset=o.copy();asset.data=o.data.copy();asset.parent=None;asset.location=(0,0,0);asset.rotation_euler=(0,0,0);asset.scale=(1,1,1);asset.name=id
  file=temp/(id+'.blend');bpy.data.libraries.write(str(file),{asset},compress=True);snapshots.append((id,file));bpy.data.objects.remove(asset,do_unlink=True)
  print('FLOOR',name,old_floor_triangles,'->',new_floor_triangles,flush=True)
-target=OUT/'hollow-creek-fitted.blend';bpy.context.scene['production_status']='Terrain-clipped tent assemblies; runtime integration/acceptance pending';bpy.ops.wm.save_as_mainfile(filepath=str(target),compress=True)
+target=OUT/('hollow-creek-siteart-fitted.blend' if siteart else 'hollow-creek-fitted.blend');bpy.context.scene['production_status']='Terrain-clipped tent assemblies; runtime integration/acceptance pending';bpy.ops.wm.save_as_mainfile(filepath=str(target),compress=True)
 assets=[]
 for id,file in snapshots:
  s.reset()
@@ -174,4 +175,4 @@ for id,file in snapshots:
  b.export(id,[o],'campground-terrain-fitted',view=(5,-7,3.8));assets.append(b.LOG[-1])
 for p,h in protected.items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==h,p
 r=dict(status='terrain-clipped source and eight fitted assets; independent validation pending',source=source.relative_to(ROOT).as_posix(),scene=target.relative_to(ROOT).as_posix(),scene_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),instances=rows,assets=assets,protected_sources=protected,old_floor_triangles=sum(p['old_floor_triangles'] for p in rows),new_floor_triangles=sum(p['new_floor_triangles'] for p in rows),runtime_gameplay_acceptance=False)
-(OUT/'fitted-floors.json').write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8');print('FITTED',len(rows),'actual assemblies; floors',r['old_floor_triangles'],'->',r['new_floor_triangles'],flush=True)
+(OUT/('siteart-fitted-floors.json' if siteart else 'fitted-floors.json')).write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8');print('FITTED',len(rows),'actual assemblies; floors',r['old_floor_triangles'],'->',r['new_floor_triangles'],flush=True)

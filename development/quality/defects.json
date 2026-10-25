@@ -592,7 +592,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -782,6 +782,83 @@
       "action": "Make original rendered diagonals explicit without moving nonfloor vertices or UVs, retain split normals, and compare complete oriented triangle multisets directly against actual GLB float/index buffers. All8 source/export sets match exactly. Guard source scene SHA before verification and run dependent checks only after generation completes; do not loosen geometric tolerances to silence the nearest-query result.",
       "evidence": "quality/evidence/DEV-071-implicit-quad-export-drift.txt; quality/evidence/DEV-071-raw-triangle-agreement.txt; verification/hollow-creek-fitted-floors.json",
       "older_maps": "Audit equivalent fitted floors and nonplanar source/export surfaces independently. Native triangle counts and source equality do not establish gameplay, optical, host/LAN or runtime performance acceptance."
+    },
+    {
+      "id": "DEV-072",
+      "title": "Primitive memorial silhouette and blank plaque",
+      "status": "fixed-native-sculpture-and-inscription",
+      "affected": "Camp Hollow Creek memorial",
+      "symptom": "User observed disconnected primitive body/neck/wings and an empty plaque.",
+      "cause": "Initial component construction remained visible in the silhouette.",
+      "action": "Replace the casting with one closed connected12002-vertex surface, seated feet and actual supported plaque letters; verify native and exact source/GLB geometry. Stone/metal weathering and gameplay remain separate open work.",
+      "evidence": "verification/hollow-creek-siteart.json; hollow-creek/SITE_ART_REVIEW.html",
+      "older_maps": "Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-073",
+      "title": "Native ground renderer retained the old stretched UV layer",
+      "status": "fixed-native-and-portable-UV-selection",
+      "affected": "New Hollow Creek grass/dirt/shore pass",
+      "symptom": "First native close-up stretched one tile across the entire site while the temporary export used new UVs.",
+      "cause": "Selecting the active editing UV layer does not select active_render in Blender.",
+      "action": "Explicitly select SiteArtWorldTile2m for native rendering and temporary exportUV0; independently inspect127646 UV loops and actual game reader pixels. Preserve original UV layer/source bitmap.",
+      "evidence": "verification/hollow-creek-siteart.json; verification/hollow-creek-siteart-runtime.json",
+      "older_maps": "Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-074",
+      "title": "Scattered boulder intersected a sanitary cubicle",
+      "status": "fixed-native-scatter-facility-clearance",
+      "affected": "Initial Hollow Creek rock-scatter candidate",
+      "symptom": "Native close-up showed a rock intruding into the open toilet.",
+      "cause": "Path and tent-centre exclusions did not reserve actual facility/model bounds.",
+      "action": "Reserve actual transformed facility bounds with rock clearance, seat each rock against actual terrain vertices, and independently reject three-axis facility bounds overlap.105 final rocks pass4410 terrain-vertex probes and facility checks.",
+      "evidence": "verification/hollow-creek-siteart.json",
+      "older_maps": "Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-075",
+      "title": "Clearing instance groups erased newly assigned mesh weights",
+      "status": "fixed-memorial-instance-transfer",
+      "affected": "Organic memorial source-to-site installation",
+      "symptom": "Independent native casting audit found zero vertices in the expected group although the source sculpture was connected.",
+      "cause": "Object.vertex_groups.clear was called after assigning the copied source mesh; Blender erased its deform membership.",
+      "action": "Clear old groups before assigning new source data. Copy group definitions in source order; require the native casting to have exactly one nonempty connected closed component and both seated feet.",
+      "evidence": "verification/hollow-creek-siteart.json",
+      "older_maps": "Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-076",
+      "title": "Environmental surface second-pass audit remains incomplete",
+      "status": "open-environmental-material-refinement",
+      "affected": "Hollow Creek and older map audits",
+      "symptom": "User identified poor grass/dirt and generally crude environmental materials.",
+      "cause": "Old site atlas had inadequate texel density; boundary banks, foliage, timber, metal and stone still need individual close inspection.",
+      "action": "New dirty grass, soil and bare shore sources and portable derivatives are installed. Continue smoother face-transition blending, steep-slope UV density, stone/bronze patina, bank/bark/foliage/timber/weathering and close player-height runtime checks. Do not claim all environmental textures accepted.",
+      "evidence": "hollow-creek/SITE_ART_REVIEW.html; textures/hollow-creek/GENERATION_PROMPTS.json",
+      "older_maps": "Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-077",
+      "title": "All campground tents shared north-south headings",
+      "status": "fixed-native-refitted-varied-headings",
+      "affected": "Eight Hollow Creek tents and associated bedding",
+      "symptom": "User noticed identical N-S tent orientation.",
+      "cause": "Placement pass reused unvaried headings.",
+      "action": "Apply eight distinct heading deltas, undo/reapply terrain deformation for every actual part and attached bedding, reclip closed12mm floors and export complete new fitted assemblies. Require dense support, positive canopy, crouch entry, route, ritual and actual reader checks.",
+      "evidence": "hollow-creek/siteart-headings.json; verification/hollow-creek-siteart-floors.json; verification/hollow-creek-siteart-fit.json",
+      "older_maps": "Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-078",
+      "title": "Invisible UV carrier material failed strict game asset loading",
+      "status": "fixed-portable-alpha-carrier-export",
+      "affected": "Five cosmetic memorial UV footprint cubes",
+      "symptom": "Actual game reader rejected the carrier with Material has no original texture.",
+      "cause": "Native transparent shader lacked the embedded original PNG required by the unchanged bounded loader.",
+      "action": "Embed a2x2 transparent RGBA PNG on carrier edges/inner faces and a distinct webbed outer-face mask. Keep loader rules unchanged; actual reader must verify all60 triangles and both transparent/footprint alpha cases. This does not implement the runtime reveal or encounter.",
+      "evidence": "verification/hollow-creek-siteart-runtime.json",
+      "older_maps": "Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance."
     }
   ],
   "audit_categories": [

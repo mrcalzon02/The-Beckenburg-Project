@@ -1,10 +1,11 @@
 """Independent dense actual-surface, closed-depth, UV and exported mesh audit."""
-import bpy,bmesh,json,math,hashlib,array,struct,collections
+import bpy,bmesh,json,math,hashlib,array,struct,collections,sys
 from pathlib import Path
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'development/levels/hollow-creek'
-r=json.loads((OUT/'fitted-floors.json').read_text(encoding='utf-8'))
+siteart='--siteart' in sys.argv
+r=json.loads((OUT/('siteart-fitted-floors.json' if siteart else 'fitted-floors.json')).read_text(encoding='utf-8'))
 assert hashlib.sha256((ROOT/r['scene']).read_bytes()).hexdigest()==r['scene_sha256'],'Stale scene manifest; finish generation before verification'
 
 def selected(o):
@@ -139,5 +140,5 @@ for a in r['assets']:
  imports.append(dict(id=a['id'],triangles=len(faces),bytes=file.stat().st_size,exact_raw_oriented_triangle_identity=True,native_pivot_preserved=True))
 for p,h in r['protected_sources'].items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==h,p
 report=dict(status='pass-native-floor-and-eight-export-only',floor_count=len(checks),old_floor_triangles=r['old_floor_triangles'],new_floor_triangles=r['new_floor_triangles'],dense_actual_floor_probes=total_probes,max_terrain_offset_error_m=max_error,max_source_top_uv_error=uv_error,unchanged_other_meshes=len(old)-len(changed),all_nonfloor_parts_and_poses_unchanged=True,positive_roof_floor_rays=roof_floor_probes,bedding_floor_contact_rays=bag_contacts,floors=checks,actual_glb_reimports=imports,scene_sha256=r['scene_sha256'],runtime_fps_or_gameplay_acceptance=False)
-(ROOT/'development/levels/verification/hollow-creek-fitted-floors.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+(ROOT/('development/levels/verification/hollow-creek-siteart-floors.json' if siteart else 'development/levels/verification/hollow-creek-fitted-floors.json')).write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print('PASS8 closed terrain-clipped floors;',total_probes,'actual dense probes;8 exact raw source/GLB oriented triangle sets; no nonfloor rendered-triangle/pose changes',flush=True)

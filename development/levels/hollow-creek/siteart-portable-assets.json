@@ -1,0 +1,307 @@
+{
+  "assets": [
+    {
+      "id": "level_camp_siteart_ground",
+      "model": "assets/runtime/models/level_camp_siteart_ground.glb",
+      "editable": "development/levels/blender/level_camp_siteart_ground.blend",
+      "bytes": 3278936,
+      "sha256": "f016904df0e97dd0e6b3e5efcc80796d09fbf50dbc10ecf51108779e7eb618c3",
+      "native_pose": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "id": "level_camp_siteart_west_shore",
+      "model": "assets/runtime/models/level_camp_siteart_west_shore.glb",
+      "editable": "development/levels/blender/level_camp_siteart_west_shore.blend",
+      "bytes": 1236164,
+      "sha256": "497c0e31fda69822d8f1cdef9840058e685042635fcf608fe1d59c09e858de53",
+      "native_pose": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "id": "level_camp_siteart_east_shore",
+      "model": "assets/runtime/models/level_camp_siteart_east_shore.glb",
+      "editable": "development/levels/blender/level_camp_siteart_east_shore.blend",
+      "bytes": 1252644,
+      "sha256": "24f93211c97077a1e522ecda3819dd77085b74b0f57dc9b3b4a473f681011bb7",
+      "native_pose": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "id": "level_camp_siteart_rocks",
+      "model": "assets/runtime/models/level_camp_siteart_rocks.glb",
+      "editable": "development/levels/blender/level_camp_siteart_rocks.blend",
+      "bytes": 952496,
+      "sha256": "90465cd6483995fcdfcdeda64ddc030789b4b96c65689b577d229cb58299768f",
+      "native_pose": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "id": "level_camp_heron_memorial_organic",
+      "library": "campground-organic-memorial",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "70f842a1192dc2afe6c1cb9d83cd26e47853eb44c29eeeed765ec41bae3ab286",
+      "bytes": 1745480,
+      "triangles": 32520,
+      "bounds": [
+        [
+          -1.049001932144165,
+          0.0,
+          -0.7250000238418579
+        ],
+        [
+          1.0490691661834717,
+          2.9477791786193848,
+          0.7250000238418579
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_heron_memorial_organic.blend"
+    },
+    {
+      "id": "level_camp_tent_fitted_west_ridge_siteart",
+      "library": "campground-terrain-fitted",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "2e38ab66f34d4431c6934c2deacdb8f3c39a5bbf2c5cbd03bf4d66202ff4a063",
+      "bytes": 863864,
+      "triangles": 6432,
+      "bounds": [
+        [
+          -1.966804027557373,
+          -0.163603276014328,
+          -2.0859341621398926
+        ],
+        [
+          1.9318037033081055,
+          1.9820556640625,
+          2.1059346199035645
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_fitted_west_ridge_siteart.blend"
+    },
+    {
+      "id": "level_camp_tent_fitted_east_dome_siteart",
+      "library": "campground-terrain-fitted",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "50cb4e92eb790cf693b7048ed550f089e842f4c850ad5569da3bf48e0d8a60a6",
+      "bytes": 704936,
+      "triangles": 7716,
+      "bounds": [
+        [
+          -1.7200031280517578,
+          -0.17686355113983154,
+          -1.9589996337890625
+        ],
+        [
+          1.7199974060058594,
+          1.7220110893249512,
+          1.5340900421142578
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_fitted_east_dome_siteart.blend"
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_01_siteart",
+      "library": "campground-terrain-fitted",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "e891ef98ec24c102887368f9b01e6d7950c3ee5f1aaa8976f0fab51b8003674b",
+      "bytes": 860888,
+      "triangles": 6412,
+      "bounds": [
+        [
+          -1.966804027557373,
+          -0.15614646673202515,
+          -2.08593487739563
+        ],
+        [
+          1.9318032264709473,
+          1.9536876678466797,
+          2.1059341430664062
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_fitted_pitch_01_siteart.blend"
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_02_siteart",
+      "library": "campground-terrain-fitted",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "001315290f09d0b9e6f20bf223beff2532be24b616e09a259a65ca1e33b43da3",
+      "bytes": 703196,
+      "triangles": 7716,
+      "bounds": [
+        [
+          -1.720001220703125,
+          -0.12832432985305786,
+          -1.959000825881958
+        ],
+        [
+          1.7199993133544922,
+          1.721996784210205,
+          1.5340898036956787
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_fitted_pitch_02_siteart.blend"
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_03_siteart",
+      "library": "campground-terrain-fitted",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "22595e63d80ede5f31ae6120e226356fae401e7286d49b36ed91701a0a36edfc",
+      "bytes": 862844,
+      "triangles": 6408,
+      "bounds": [
+        [
+          -1.9668035507202148,
+          -0.23698478937149048,
+          -2.085934638977051
+        ],
+        [
+          1.9318056106567383,
+          2.004979133605957,
+          2.1059350967407227
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_fitted_pitch_03_siteart.blend"
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_04_siteart",
+      "library": "campground-terrain-fitted",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "2998a349048986e472f1293c6447374d4654b365cfc8cb50098d9c97f9535020",
+      "bytes": 705136,
+      "triangles": 7724,
+      "bounds": [
+        [
+          -1.7200002670288086,
+          -0.19957812130451202,
+          -1.959000587463379
+        ],
+        [
+          1.720001220703125,
+          1.7220138311386108,
+          1.534088134765625
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_fitted_pitch_04_siteart.blend"
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_05_siteart",
+      "library": "campground-terrain-fitted",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b890379b6db1df2a3d07a256b50189c817f3aeec16301c8bd94e80a91b0b72a4",
+      "bytes": 869024,
+      "triangles": 6472,
+      "bounds": [
+        [
+          -1.9668059349060059,
+          -0.22950410842895508,
+          -2.085939407348633
+        ],
+        [
+          1.9318032264709473,
+          2.0081348419189453,
+          2.105931282043457
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_fitted_pitch_05_siteart.blend"
+    },
+    {
+      "id": "level_camp_tent_fitted_pitch_06_siteart",
+      "library": "campground-terrain-fitted",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3e476fdea35ddb69ec3144814ce3cbac01f1fe5437750bf25c0b1a5c20af0dbd",
+      "bytes": 705704,
+      "triangles": 7712,
+      "bounds": [
+        [
+          -1.7199935913085938,
+          -0.29352760314941406,
+          -1.9589996337890625
+        ],
+        [
+          1.7200050354003906,
+          1.7219995260238647,
+          1.5340919494628906
+        ]
+      ],
+      "source": "original geometry and procedural textures",
+      "editable": "development/levels/blender/level_camp_tent_fitted_pitch_06_siteart.blend"
+    }
+  ]
+}

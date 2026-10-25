@@ -1,0 +1,57 @@
+{
+  "status": "pass-native-material-support-and-source-only",
+  "scene": "development/levels/hollow-creek/hollow-creek-siteart-fitted.blend",
+  "scene_sha256": "54e0a30ece4343d0a5d29895fc40c4fe6262143945437b0f9a9bbeb2a6555b30",
+  "world_scale_uv_loops": 127646,
+  "bare_shore_faces": 14768,
+  "rocks": 105,
+  "actual_rock_vertex_support_probes": 4410,
+  "max_rock_seating_error_m": 5.745887756349044e-06,
+  "facility_bounds_clear": true,
+  "continuous_cast_components": [
+    12002
+  ],
+  "closed_cast": true,
+  "both_feet_seated": true,
+  "cosmetic_uv_cubes": 5,
+  "hidden_without_native_uv_diagnostic": true,
+  "assets": [
+    {
+      "id": "level_camp_siteart_ground",
+      "triangles": 41782,
+      "bytes": 3278936,
+      "exact_raw_oriented_triangle_identity": true
+    },
+    {
+      "id": "level_camp_siteart_west_shore",
+      "triangles": 384,
+      "bytes": 1236164,
+      "exact_raw_oriented_triangle_identity": true
+    },
+    {
+      "id": "level_camp_siteart_east_shore",
+      "triangles": 576,
+      "bytes": 1252644,
+      "exact_raw_oriented_triangle_identity": true
+    },
+    {
+      "id": "level_camp_siteart_rocks",
+      "triangles": 8400,
+      "bytes": 952496,
+      "exact_raw_oriented_triangle_identity": true
+    },
+    {
+      "id": "level_camp_memorial_uv_tracks",
+      "triangles": 60,
+      "bytes": 9068,
+      "exact_raw_oriented_triangle_identity": true
+    },
+    {
+      "id": "level_camp_heron_memorial_organic",
+      "triangles": 32520,
+      "bytes": 1745480,
+      "exact_raw_oriented_triangle_identity": true
+    }
+  ],
+  "runtime_encounter_or_map_acceptance": false
+}

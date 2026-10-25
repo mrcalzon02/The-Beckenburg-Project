@@ -1004,6 +1004,104 @@ Evidence and verification: quality/evidence/DEV-071-implicit-quad-export-drift.t
 
 Older-map obligation: Audit equivalent fitted floors and nonplanar source/export surfaces independently. Native triangle counts and source equality do not establish gameplay, optical, host/LAN or runtime performance acceptance.
 
+### DEV-072 — Primitive memorial silhouette and blank plaque
+
+**Status:** fixed-native-sculpture-and-inscription · **Affected:** Camp Hollow Creek memorial
+
+User observed disconnected primitive body/neck/wings and an empty plaque.
+
+Cause / uncertainty: Initial component construction remained visible in the silhouette.
+
+Fix / next action: Replace the casting with one closed connected12002-vertex surface, seated feet and actual supported plaque letters; verify native and exact source/GLB geometry. Stone/metal weathering and gameplay remain separate open work.
+
+Evidence and verification: verification/hollow-creek-siteart.json; hollow-creek/SITE_ART_REVIEW.html
+
+Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
+
+### DEV-073 — Native ground renderer retained the old stretched UV layer
+
+**Status:** fixed-native-and-portable-UV-selection · **Affected:** New Hollow Creek grass/dirt/shore pass
+
+First native close-up stretched one tile across the entire site while the temporary export used new UVs.
+
+Cause / uncertainty: Selecting the active editing UV layer does not select active_render in Blender.
+
+Fix / next action: Explicitly select SiteArtWorldTile2m for native rendering and temporary exportUV0; independently inspect127646 UV loops and actual game reader pixels. Preserve original UV layer/source bitmap.
+
+Evidence and verification: verification/hollow-creek-siteart.json; verification/hollow-creek-siteart-runtime.json
+
+Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
+
+### DEV-074 — Scattered boulder intersected a sanitary cubicle
+
+**Status:** fixed-native-scatter-facility-clearance · **Affected:** Initial Hollow Creek rock-scatter candidate
+
+Native close-up showed a rock intruding into the open toilet.
+
+Cause / uncertainty: Path and tent-centre exclusions did not reserve actual facility/model bounds.
+
+Fix / next action: Reserve actual transformed facility bounds with rock clearance, seat each rock against actual terrain vertices, and independently reject three-axis facility bounds overlap.105 final rocks pass4410 terrain-vertex probes and facility checks.
+
+Evidence and verification: verification/hollow-creek-siteart.json
+
+Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
+
+### DEV-075 — Clearing instance groups erased newly assigned mesh weights
+
+**Status:** fixed-memorial-instance-transfer · **Affected:** Organic memorial source-to-site installation
+
+Independent native casting audit found zero vertices in the expected group although the source sculpture was connected.
+
+Cause / uncertainty: Object.vertex_groups.clear was called after assigning the copied source mesh; Blender erased its deform membership.
+
+Fix / next action: Clear old groups before assigning new source data. Copy group definitions in source order; require the native casting to have exactly one nonempty connected closed component and both seated feet.
+
+Evidence and verification: verification/hollow-creek-siteart.json
+
+Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
+
+### DEV-076 — Environmental surface second-pass audit remains incomplete
+
+**Status:** open-environmental-material-refinement · **Affected:** Hollow Creek and older map audits
+
+User identified poor grass/dirt and generally crude environmental materials.
+
+Cause / uncertainty: Old site atlas had inadequate texel density; boundary banks, foliage, timber, metal and stone still need individual close inspection.
+
+Fix / next action: New dirty grass, soil and bare shore sources and portable derivatives are installed. Continue smoother face-transition blending, steep-slope UV density, stone/bronze patina, bank/bark/foliage/timber/weathering and close player-height runtime checks. Do not claim all environmental textures accepted.
+
+Evidence and verification: hollow-creek/SITE_ART_REVIEW.html; textures/hollow-creek/GENERATION_PROMPTS.json
+
+Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
+
+### DEV-077 — All campground tents shared north-south headings
+
+**Status:** fixed-native-refitted-varied-headings · **Affected:** Eight Hollow Creek tents and associated bedding
+
+User noticed identical N-S tent orientation.
+
+Cause / uncertainty: Placement pass reused unvaried headings.
+
+Fix / next action: Apply eight distinct heading deltas, undo/reapply terrain deformation for every actual part and attached bedding, reclip closed12mm floors and export complete new fitted assemblies. Require dense support, positive canopy, crouch entry, route, ritual and actual reader checks.
+
+Evidence and verification: hollow-creek/siteart-headings.json; verification/hollow-creek-siteart-floors.json; verification/hollow-creek-siteart-fit.json
+
+Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
+
+### DEV-078 — Invisible UV carrier material failed strict game asset loading
+
+**Status:** fixed-portable-alpha-carrier-export · **Affected:** Five cosmetic memorial UV footprint cubes
+
+Actual game reader rejected the carrier with Material has no original texture.
+
+Cause / uncertainty: Native transparent shader lacked the embedded original PNG required by the unchanged bounded loader.
+
+Fix / next action: Embed a2x2 transparent RGBA PNG on carrier edges/inner faces and a distinct webbed outer-face mask. Keep loader rules unchanged; actual reader must verify all60 triangles and both transparent/footprint alpha cases. This does not implement the runtime reveal or encounter.
+
+Evidence and verification: verification/hollow-creek-siteart-runtime.json
+
+Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

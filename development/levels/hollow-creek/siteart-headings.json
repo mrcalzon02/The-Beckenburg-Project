@@ -1,0 +1,146 @@
+{
+  "status": "reoriented and refitted; clipping and independent clearance checks required",
+  "source": "development/levels/hollow-creek/hollow-creek-siteart.blend",
+  "source_sha256": "a901b7f8d5c73d842d004ffca417002772565f65e48b06153af9ec696a13e4a8",
+  "scene": "development/levels/hollow-creek/hollow-creek-siteart-oriented.blend",
+  "scene_sha256": "9c8bb90627e2b106dff7e1155064ba376915f3e28da5025104642b01453d7ba0",
+  "instances": [
+    {
+      "name": "west-pitched-ridge",
+      "heading_delta_degrees": -23,
+      "previous_rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "new_rotation": [
+        0.0,
+        0.0,
+        -0.40142562985420227
+      ],
+      "bedding": [
+        "west-rolled-bedding",
+        "west-laid-bedding"
+      ]
+    },
+    {
+      "name": "east-pitched-dome",
+      "heading_delta_degrees": 31,
+      "previous_rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "new_rotation": [
+        0.0,
+        -0.0,
+        0.5410521626472473
+      ],
+      "bedding": [
+        "east-laid-bedding"
+      ]
+    },
+    {
+      "name": "Additional pitched tent 1",
+      "heading_delta_degrees": 14,
+      "previous_rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "new_rotation": [
+        0.0,
+        -0.0,
+        0.24434614181518555
+      ],
+      "bedding": [
+        "Additional camp rolled bedding 0"
+      ]
+    },
+    {
+      "name": "Additional pitched tent 2",
+      "heading_delta_degrees": -38,
+      "previous_rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "new_rotation": [
+        0.0,
+        0.0,
+        -0.6632252335548401
+      ],
+      "bedding": [
+        "Additional camp rolled bedding 1"
+      ]
+    },
+    {
+      "name": "Additional pitched tent 3",
+      "heading_delta_degrees": 42,
+      "previous_rotation": [
+        0.0,
+        0.0,
+        3.1415927410125732
+      ],
+      "new_rotation": [
+        0.0,
+        0.0,
+        -2.4085543155670166
+      ],
+      "bedding": [
+        "Additional camp rolled bedding 2"
+      ]
+    },
+    {
+      "name": "Additional pitched tent 4",
+      "heading_delta_degrees": -18,
+      "previous_rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "new_rotation": [
+        0.0,
+        0.0,
+        -0.31415918469429016
+      ],
+      "bedding": [
+        "Additional camp rolled bedding 3"
+      ]
+    },
+    {
+      "name": "Additional pitched tent 5",
+      "heading_delta_degrees": 29,
+      "previous_rotation": [
+        0.0,
+        0.0,
+        3.1415927410125732
+      ],
+      "new_rotation": [
+        0.0,
+        0.0,
+        -2.6354470252990723
+      ],
+      "bedding": [
+        "Additional camp rolled bedding 4"
+      ]
+    },
+    {
+      "name": "Additional pitched tent 6",
+      "heading_delta_degrees": -33,
+      "previous_rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "new_rotation": [
+        0.0,
+        0.0,
+        -0.5759587287902832
+      ],
+      "bedding": [
+        "Additional camp rolled bedding 5"
+      ]
+    }
+  ]
+}

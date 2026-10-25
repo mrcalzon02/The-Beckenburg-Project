@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-24",
+  "status": "pass-focused-asset-loader-only",
+  "jdk": 17,
+  "all_current_main_sources_compiled": true,
+  "new_assets": 14,
+  "independent_material_uv_pixels": 4824,
+  "cosmetic_cube_triangles": 60,
+  "carrier_alpha_and_footprint_mask": true,
+  "unchanged_parent_fitted_assets": 8,
+  "unchanged_parent_pixels": 3744,
+  "gameplay_uv_trigger": false,
+  "full_multiplayer_ci_acceptance": false,
+  "open_baselines": [
+    "DEV-060",
+    "DEV-069"
+  ]
+}

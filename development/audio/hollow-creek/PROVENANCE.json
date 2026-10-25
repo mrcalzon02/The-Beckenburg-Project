@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-24",
+  "title": "Goose Trumpet (loud honk) - Best Capture",
+  "author": "el_boss",
+  "source_page": "https://freesound.org/people/el_boss/sounds/740197/",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "public_preview_url": "https://cdn.freesound.org/previews/740/740197_9129912-hq.mp3",
+  "source_kind": "Public HQ preview; original WAV download requires login and was not used",
+  "source_sha256": "a7f8e23d6e24627c8bf2991ee61ee02951913648b710713cdad185adf6e7d9b2",
+  "filter": "asetrate=44100*0.42,aresample=44100,atempo=0.55,vibrato=f=0.85:d=0.7,tremolo=f=0.68:d=0.2,lowpass=f=3200,equalizer=f=180:t=q:w=0.9:g=3,aecho=0.65:0.55:240|480|900:0.12|0.08|0.04,volume=0.24,afade=t=in:d=0.025,afade=t=out:st=2.7:d=0.55",
+  "output_sha256": "05d3354b7e195b043f7ed050b1fb884f20cf179816ebcee052acea17a5d40367",
+  "runtime": "assets/runtime/sfx/camp_hollow_creek_goose_omen.wav",
+  "duration_seconds": 3.1946938775510203,
+  "peak_dbfs": -25.875498757778985,
+  "rms_dbfs": -41.010392007562764,
+  "runtime_event_status": "NOT CONNECTED: requires actual active UV beam, range, occlusion, cooldown/reset, host/LAN and mix verification; cosmetic location lore, not ghost-ID evidence"
+}
