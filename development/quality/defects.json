@@ -592,7 +592,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00c2\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -920,7 +920,7 @@
       "title": "Reshaped bank left old crest dressing unsupported",
       "status": "fixed-native-rigid-crest-refit",
       "affected": "Camp Hollow Creek bank/crest refinement",
-      "symptom": "Actual original log bearings sit53–63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
+      "symptom": "Actual original log bearings sit53\u00e2\u20ac\u201c63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
       "cause": "Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.",
       "action": "Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.",
       "evidence": "quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json",
@@ -947,6 +947,50 @@
       "action": "Copy snapshots into ignored staging, append into a clean scene and save the actual editable blend. Independently open both files, require exactly the intended model, packed images, no linked-library dependency and exact native/export triangle identity.",
       "evidence": "verification/hollow-creek-berm.json; finalize_earthen_bank_sources.py",
       "older_maps": "Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance."
+    },
+    {
+      "id": "DEV-087",
+      "title": "Pending physics export referenced an obsolete native scene",
+      "status": "fixed-current-source-hash-guard",
+      "affected": "Camp Hollow Creek native-to-runtime geometry component",
+      "symptom": "A pending HCS1 export predated fitted art and rounded earth banks.",
+      "cause": "Geometry export and source authority had diverged.",
+      "action": "Export HCS2 from the hash-verified current scene, guard local grading against its parent, and independently compare every raw oriented triangle. The mission remains locked.",
+      "evidence": "verification/hollow-creek-native-source.json",
+      "older_maps": "Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance."
+    },
+    {
+      "id": "DEV-088",
+      "title": "Native sight query overran a mixed-direction grid endpoint",
+      "status": "fixed-bounded-grid-endpoint",
+      "affected": "Camp Hollow Creek native-to-runtime geometry component",
+      "symptom": "Independent Blender rays exposed a nonterminating cell traversal when a ray ended on a grid plane.",
+      "cause": "Simultaneous X/Z crossings could move beyond t=1; negative zero also needed a direction of zero.",
+      "action": "Stop at the segment endpoint and explicitly handle zero direction; analytic regression covers both mixed-direction rays and negative zero. Verify all 346 actual native optical rays.",
+      "evidence": "src/test/java/org/beckenburg/AuthoredSitePhysicsTest.java; verification/hollow-creek-native-runtime.json",
+      "older_maps": "Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance."
+    },
+    {
+      "id": "DEV-089",
+      "title": "L14 centerline passed while the standing foot radius hit steep terrain",
+      "status": "fixed-local-native-grading",
+      "affected": "Camp Hollow Creek native-to-runtime geometry component",
+      "symptom": "Four capsule/sweep findings occurred at the east footbridge approach despite valid route-center support.",
+      "cause": "A narrow actual terrain strip reached about28.4% grade under the back rim of a standing footprint; earlier sparse point checks missed it.",
+      "action": "Adjust only three local terrain heights by at most12.54mm. Eighteen protected faces now meet19% grade without changing the20% runtime cap. All969 standing route points and939 nonzero sweeps pass; preserve and recheck actual model supports.",
+      "evidence": "quality/evidence/DEV-089-L14-steep-foot-radius-strip.txt; verification/hollow-creek-route-grade.json; verification/hollow-creek-native-runtime.json",
+      "older_maps": "Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance."
+    },
+    {
+      "id": "DEV-090",
+      "title": "Draft native zone anchor targeted the memorial plinth",
+      "status": "fixed-native-anchor-contract",
+      "affected": "Camp Hollow Creek native-to-runtime geometry component",
+      "symptom": "The draft memorial anchor used the center of the statue rather than its approach. Other draft elevations were rough layout hints.",
+      "cause": "Planning centers are not safe actor spawn positions.",
+      "action": "Use the authored memorial route endpoint X5,Z53 and derive all12 anchor elevations from actual intended walking surfaces. Require standing body and footprint clearance at every anchor. Future mission wiring must use this contract.",
+      "evidence": "src/test/java/org/beckenburg/HollowCreekNativePhysicsTest.java; verification/hollow-creek-physics-export.json",
+      "older_maps": "Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance."
     }
   ],
   "audit_categories": [

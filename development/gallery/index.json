@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 729,
+  "count": 730,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -2242,6 +2242,16 @@
       "height": 800,
       "bytes": 1099734,
       "sha256": "e647284bc916f60c910695ca42b1d989875c7ae4438a87a1ea7d646b6910f7a4"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/native-physics-query-diagnostic.png",
+      "url": "development/levels/previews/hollow-creek/native-physics-query-diagnostic.png",
+      "title": "Native physics query diagnostic",
+      "kind": "Runtime geometry diagnostic",
+      "width": 1370,
+      "height": 1120,
+      "bytes": 211042,
+      "sha256": "8a857a3228ec1cd138604838cddb126489a9c5bf22e3f4735d71cecfe46c3a91"
     },
     {
       "path": "development/levels/previews/hollow-creek/pavilion-join-native-fitout.png",

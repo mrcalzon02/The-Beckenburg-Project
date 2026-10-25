@@ -1,0 +1,751 @@
+{
+  "status": "actual native HCS2 export; runtime checks pending",
+  "source": "development/levels/hollow-creek/hollow-creek-route-grade.blend",
+  "source_sha256": "96d6f8dc295739fbe48d3d1b9e07f764f4a7efcd196fcfff589aa9006373a506",
+  "binary": "assets/runtime/sites/hollow-creek-physics.bin",
+  "binary_sha256": "0f961b9d63f826381e860837f37f21448f74d2728015c3578b6ca9b048b4c4e4",
+  "triangles": 351179,
+  "components": 7070,
+  "closed_body_components": 6725,
+  "bytes": 13253347,
+  "objects": [
+    {
+      "object": "Additional camp rolled bedding 0",
+      "triangles": 9748,
+      "support_triangles": 0
+    },
+    {
+      "object": "Additional camp rolled bedding 1",
+      "triangles": 9748,
+      "support_triangles": 0
+    },
+    {
+      "object": "Additional camp rolled bedding 2",
+      "triangles": 9748,
+      "support_triangles": 0
+    },
+    {
+      "object": "Additional camp rolled bedding 3",
+      "triangles": 9748,
+      "support_triangles": 0
+    },
+    {
+      "object": "Additional camp rolled bedding 4",
+      "triangles": 9748,
+      "support_triangles": 0
+    },
+    {
+      "object": "Additional camp rolled bedding 5",
+      "triangles": 9748,
+      "support_triangles": 0
+    },
+    {
+      "object": "Additional pitched tent 1",
+      "triangles": 6412,
+      "support_triangles": 88
+    },
+    {
+      "object": "Additional pitched tent 2",
+      "triangles": 7716,
+      "support_triangles": 122
+    },
+    {
+      "object": "Additional pitched tent 3",
+      "triangles": 6408,
+      "support_triangles": 86
+    },
+    {
+      "object": "Additional pitched tent 4",
+      "triangles": 7724,
+      "support_triangles": 124
+    },
+    {
+      "object": "Additional pitched tent 5",
+      "triangles": 6472,
+      "support_triangles": 108
+    },
+    {
+      "object": "Additional pitched tent 6",
+      "triangles": 7712,
+      "support_triangles": 120
+    },
+    {
+      "object": "Beach refuse bin 1",
+      "triangles": 2468,
+      "support_triangles": 0
+    },
+    {
+      "object": "Beach refuse bin 2",
+      "triangles": 2468,
+      "support_triangles": 0
+    },
+    {
+      "object": "Beach toilet 1",
+      "triangles": 6348,
+      "support_triangles": 14
+    },
+    {
+      "object": "Beach toilet 2",
+      "triangles": 6348,
+      "support_triangles": 14
+    },
+    {
+      "object": "Camp cooler 0",
+      "triangles": 1160,
+      "support_triangles": 0
+    },
+    {
+      "object": "Camp cooler 1",
+      "triangles": 1160,
+      "support_triangles": 0
+    },
+    {
+      "object": "Camp cooler 2",
+      "triangles": 1160,
+      "support_triangles": 0
+    },
+    {
+      "object": "Camp folding chair 0",
+      "triangles": 2648,
+      "support_triangles": 0
+    },
+    {
+      "object": "Camp folding chair 1",
+      "triangles": 2648,
+      "support_triangles": 0
+    },
+    {
+      "object": "Camp folding chair 2",
+      "triangles": 2648,
+      "support_triangles": 0
+    },
+    {
+      "object": "Camp folding chair 3",
+      "triangles": 2648,
+      "support_triangles": 0
+    },
+    {
+      "object": "Camp folding chair 4",
+      "triangles": 2648,
+      "support_triangles": 0
+    },
+    {
+      "object": "Camp folding chair 5",
+      "triangles": 2648,
+      "support_triangles": 0
+    },
+    {
+      "object": "Camp wardens heron memorial",
+      "triangles": 32424,
+      "support_triangles": 0
+    },
+    {
+      "object": "Dock boat-service shed",
+      "triangles": 24472,
+      "support_triangles": 78
+    },
+    {
+      "object": "Dock reused generator",
+      "triangles": 5284,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 01",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 02",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 03",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 04",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 05",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 06",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 07",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 08",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 09",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 10",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 11",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 12",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 13",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 14",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 15",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 16",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 17",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 18",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 19",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 20",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 21",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 22",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 23",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 24",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 25",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 26",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 27",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 28",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 29",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 30",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 31",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 32",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 33",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 34",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 35",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 36",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 37",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 38",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 39",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 40",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 41",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 42",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 43",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 44",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 45",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 46",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 47",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 48",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 49",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 50",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 51",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 52",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 53",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 54",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 55",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 56",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 57",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 58",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 59",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 60",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 61",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 62",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 63",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 64",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 65",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 66",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 67",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 68",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 69",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 70",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 71",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 72",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 73",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 74",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 75",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 76",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 77",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Grounded lake stone 78",
+      "triangles": 80,
+      "support_triangles": 0
+    },
+    {
+      "object": "Pavilion built-in masonry hearth",
+      "triangles": 7778,
+      "support_triangles": 0
+    },
+    {
+      "object": "Toilet supported entry ramp 0",
+      "triangles": 12,
+      "support_triangles": 2
+    },
+    {
+      "object": "Toilet supported entry ramp 1",
+      "triangles": 12,
+      "support_triangles": 2
+    },
+    {
+      "object": "West moored rowing boat",
+      "triangles": 6796,
+      "support_triangles": 0
+    },
+    {
+      "object": "creek-crossing-foundation",
+      "triangles": 12,
+      "support_triangles": 2
+    },
+    {
+      "object": "dock-foundation",
+      "triangles": 12,
+      "support_triangles": 2
+    },
+    {
+      "object": "east-laid-bedding",
+      "triangles": 986,
+      "support_triangles": 376
+    },
+    {
+      "object": "east-pitched-dome",
+      "triangles": 7716,
+      "support_triangles": 122
+    },
+    {
+      "object": "level_camp_boundary_banks",
+      "triangles": 15074,
+      "support_triangles": 0
+    },
+    {
+      "object": "level_camp_boundary_fence",
+      "triangles": 1720,
+      "support_triangles": 0
+    },
+    {
+      "object": "level_camp_boundary_gate",
+      "triangles": 788,
+      "support_triangles": 0
+    },
+    {
+      "object": "level_camp_creek_engineering",
+      "triangles": 8812,
+      "support_triangles": 0
+    },
+    {
+      "object": "level_camp_dock_utilities",
+      "triangles": 2476,
+      "support_triangles": 0
+    },
+    {
+      "object": "level_camp_pavilion",
+      "triangles": 15682,
+      "support_triangles": 78
+    },
+    {
+      "object": "level_camp_terrain_amenities",
+      "triangles": 41753,
+      "support_triangles": 41711
+    },
+    {
+      "object": "pavilion-table-east",
+      "triangles": 5424,
+      "support_triangles": 0
+    },
+    {
+      "object": "pavilion-table-west",
+      "triangles": 5424,
+      "support_triangles": 0
+    },
+    {
+      "object": "west-fire-ring",
+      "triangles": 1760,
+      "support_triangles": 0
+    },
+    {
+      "object": "west-laid-bedding",
+      "triangles": 986,
+      "support_triangles": 376
+    },
+    {
+      "object": "west-pitched-ridge",
+      "triangles": 6432,
+      "support_triangles": 92
+    },
+    {
+      "object": "west-rolled-bedding",
+      "triangles": 9748,
+      "support_triangles": 0
+    },
+    {
+      "object": "west-table",
+      "triangles": 5424,
+      "support_triangles": 0
+    }
+  ],
+  "zone_spawns": [
+    {
+      "key": "entry",
+      "name": "Ranger gate / noticeboard",
+      "x": 32.0,
+      "y": 0.99871826171875,
+      "z": 66.0
+    },
+    {
+      "key": "ranger",
+      "name": "Ranger clearing",
+      "x": 15.0,
+      "y": 0.5,
+      "z": 54.0
+    },
+    {
+      "key": "bath",
+      "name": "Washhouse clearing",
+      "x": 49.0,
+      "y": 0.3000001907348633,
+      "z": 54.0
+    },
+    {
+      "key": "pavilion",
+      "name": "Hollow Creek pavilion",
+      "x": 32.0,
+      "y": -9.5367431640625e-07,
+      "z": 42.0
+    },
+    {
+      "key": "camp-a",
+      "name": "West tent pitches",
+      "x": 14.0,
+      "y": -0.27852916717529297,
+      "z": 37.0
+    },
+    {
+      "key": "camp-b",
+      "name": "East tent pitches",
+      "x": 50.0,
+      "y": 0.09657764434814453,
+      "z": 37.0
+    },
+    {
+      "key": "junction",
+      "name": "Trail-marker junction",
+      "x": 32.0,
+      "y": -0.6486301422119141,
+      "z": 27.0
+    },
+    {
+      "key": "camper",
+      "name": "Beach sanitary clearing",
+      "x": 13,
+      "y": -0.943939208984375,
+      "z": 20
+    },
+    {
+      "key": "shore",
+      "name": "Lakeside clearing",
+      "x": 32.0,
+      "y": -1.2975378036499023,
+      "z": 12.0
+    },
+    {
+      "key": "dock",
+      "name": "Lake dock",
+      "x": 28.0,
+      "y": -1.3000001907348633,
+      "z": -3.0
+    },
+    {
+      "key": "creek",
+      "name": "Creek footbridge",
+      "x": 48.0,
+      "y": -1.0000009536743164,
+      "z": 13.0
+    },
+    {
+      "key": "store",
+      "name": "Camp wardens memorial clearing",
+      "x": 5,
+      "y": 0.4525003433227539,
+      "z": 53
+    }
+  ],
+  "player_only_blockers": 250,
+  "invisible_barriers_occlude_light": false,
+  "flags": {
+    "walking_support": 1,
+    "optical_solid": 2,
+    "body_solid": 4
+  },
+  "limitations": [
+    "No mission unlock or renderer/circuit/AI/host acceptance from this export alone.",
+    "Canonical van support/interactions stay owned by VanStaging; raised placement integration remains open.",
+    "Soft foliage alpha and distant scenery optics remain renderer integration gates."
+  ]
+}

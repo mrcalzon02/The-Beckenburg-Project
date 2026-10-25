@@ -760,7 +760,7 @@ Detailed review found split firewood below rather than resting on fireplace grat
 
 Cause / uncertainty: Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.
 
-Fix / next action: Place split wood on actual grate bars, align table fixings to measured rails at X±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.
+Fix / next action: Place split wood on actual grate bars, align table fixings to measured rails at XÂ±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.
 
 Evidence and verification: development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json
 
@@ -1176,7 +1176,7 @@ Older-map obligation: Audit corresponding old-map boundary profiles, palette con
 
 **Status:** fixed-native-rigid-crest-refit · **Affected:** Camp Hollow Creek bank/crest refinement
 
-Actual original log bearings sit53–63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.
+Actual original log bearings sit53â€“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.
 
 Cause / uncertainty: Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.
 
@@ -1213,6 +1213,62 @@ Fix / next action: Copy snapshots into ignored staging, append into a clean scen
 Evidence and verification: verification/hollow-creek-berm.json; finalize_earthen_bank_sources.py
 
 Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
+
+### DEV-087 — Pending physics export referenced an obsolete native scene
+
+**Status:** fixed-current-source-hash-guard · **Affected:** Camp Hollow Creek native-to-runtime geometry component
+
+A pending HCS1 export predated fitted art and rounded earth banks.
+
+Cause / uncertainty: Geometry export and source authority had diverged.
+
+Fix / next action: Export HCS2 from the hash-verified current scene, guard local grading against its parent, and independently compare every raw oriented triangle. The mission remains locked.
+
+Evidence and verification: verification/hollow-creek-native-source.json
+
+Older-map obligation: Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance.
+
+### DEV-088 — Native sight query overran a mixed-direction grid endpoint
+
+**Status:** fixed-bounded-grid-endpoint · **Affected:** Camp Hollow Creek native-to-runtime geometry component
+
+Independent Blender rays exposed a nonterminating cell traversal when a ray ended on a grid plane.
+
+Cause / uncertainty: Simultaneous X/Z crossings could move beyond t=1; negative zero also needed a direction of zero.
+
+Fix / next action: Stop at the segment endpoint and explicitly handle zero direction; analytic regression covers both mixed-direction rays and negative zero. Verify all 346 actual native optical rays.
+
+Evidence and verification: src/test/java/org/beckenburg/AuthoredSitePhysicsTest.java; verification/hollow-creek-native-runtime.json
+
+Older-map obligation: Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance.
+
+### DEV-089 — L14 centerline passed while the standing foot radius hit steep terrain
+
+**Status:** fixed-local-native-grading · **Affected:** Camp Hollow Creek native-to-runtime geometry component
+
+Four capsule/sweep findings occurred at the east footbridge approach despite valid route-center support.
+
+Cause / uncertainty: A narrow actual terrain strip reached about28.4% grade under the back rim of a standing footprint; earlier sparse point checks missed it.
+
+Fix / next action: Adjust only three local terrain heights by at most12.54mm. Eighteen protected faces now meet19% grade without changing the20% runtime cap. All969 standing route points and939 nonzero sweeps pass; preserve and recheck actual model supports.
+
+Evidence and verification: quality/evidence/DEV-089-L14-steep-foot-radius-strip.txt; verification/hollow-creek-route-grade.json; verification/hollow-creek-native-runtime.json
+
+Older-map obligation: Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance.
+
+### DEV-090 — Draft native zone anchor targeted the memorial plinth
+
+**Status:** fixed-native-anchor-contract · **Affected:** Camp Hollow Creek native-to-runtime geometry component
+
+The draft memorial anchor used the center of the statue rather than its approach. Other draft elevations were rough layout hints.
+
+Cause / uncertainty: Planning centers are not safe actor spawn positions.
+
+Fix / next action: Use the authored memorial route endpoint X5,Z53 and derive all12 anchor elevations from actual intended walking surfaces. Require standing body and footprint clearance at every anchor. Future mission wiring must use this contract.
+
+Evidence and verification: src/test/java/org/beckenburg/HollowCreekNativePhysicsTest.java; verification/hollow-creek-physics-export.json
+
+Older-map obligation: Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance.
 
 ## Required audit categories
 

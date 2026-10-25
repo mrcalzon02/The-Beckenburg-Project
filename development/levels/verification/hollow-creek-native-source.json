@@ -1,0 +1,33 @@
+{
+  "status": "pass-current-native-triangle-and-closure-audit",
+  "source": "development/levels/hollow-creek/hollow-creek-route-grade.blend",
+  "source_sha256": "96d6f8dc295739fbe48d3d1b9e07f764f4a7efcd196fcfff589aa9006373a506",
+  "binary_sha256": "0f961b9d63f826381e860837f37f21448f74d2728015c3578b6ca9b048b4c4e4",
+  "exact_raw_native_triangles": 351179,
+  "balanced_closed_components": 6725,
+  "required_native_objects": [
+    "Additional pitched tent 1",
+    "Additional pitched tent 2",
+    "Additional pitched tent 3",
+    "Additional pitched tent 4",
+    "Additional pitched tent 5",
+    "Additional pitched tent 6",
+    "creek-crossing-foundation",
+    "dock-foundation",
+    "east-pitched-dome",
+    "level_camp_boundary_banks",
+    "level_camp_boundary_fence",
+    "level_camp_boundary_gate",
+    "level_camp_pavilion",
+    "level_camp_terrain_amenities",
+    "west-pitched-ridge"
+  ],
+  "oracle_counts": {
+    "S": 1041,
+    "N": 8,
+    "L": 346,
+    "B": 14
+  },
+  "oracle": "development/levels/verification/hollow-creek-native-queries.tsv",
+  "gameplay_or_level_unlock": false
+}

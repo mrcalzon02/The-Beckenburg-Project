@@ -1,0 +1,18 @@
+{
+  "status": "pass-local-native-route-grade",
+  "source_sha256": "96d6f8dc295739fbe48d3d1b9e07f764f4a7efcd196fcfff589aa9006373a506",
+  "unchanged_other_meshes": 908,
+  "changed_vertices": [
+    6002,
+    6120,
+    6121
+  ],
+  "max_height_change_m": 0.012537896633148193,
+  "protected_triangles": 18,
+  "max_protected_grade": 0.19000001650277204,
+  "bank_toe_terrain_probes": 954,
+  "terrain_xy_topology_uv_materials_preserved": true,
+  "exact_raw_native_export_triangles": 41782,
+  "isolated_packed_editable_scene": true,
+  "world_gameplay_acceptance": false
+}

@@ -1,0 +1,65 @@
+{
+  "status": "local protected-route grading; independent checks required",
+  "parent": "development/levels/hollow-creek/hollow-creek-grounded-berm.blend",
+  "parent_sha256": "78b4bb1f60ec32a2c575aaca83cea049ac9ac3fc2d322cbbb6bbc4fb910f96af",
+  "scene": "development/levels/hollow-creek/hollow-creek-route-grade.blend",
+  "scene_sha256": "96d6f8dc295739fbe48d3d1b9e07f764f4a7efcd196fcfff589aa9006373a506",
+  "route": "L14",
+  "source_pre_fix_max_grade": 0.28566941200635354,
+  "target_grade": 0.19,
+  "protected_triangles": 18,
+  "projection_iterations": 27,
+  "changed_vertices": [
+    {
+      "index": 6002,
+      "before": [
+        54.75,
+        -14.5,
+        -0.9552677273750305
+      ],
+      "after": [
+        54.75,
+        -14.5,
+        -0.9427298392837811
+      ]
+    },
+    {
+      "index": 6120,
+      "before": [
+        54.75,
+        -14.625,
+        -0.9197190999984741
+      ],
+      "after": [
+        54.75,
+        -14.625,
+        -0.9197204215348812
+      ]
+    },
+    {
+      "index": 6121,
+      "before": [
+        55.375,
+        -14.625,
+        -0.9211087226867676
+      ],
+      "after": [
+        55.375,
+        -14.625,
+        -0.9211029268046057
+      ]
+    }
+  ],
+  "max_height_change_m": 0.01253788809124945,
+  "assets": [
+    {
+      "id": "level_camp_terrain_route_graded",
+      "editable": "development/levels/blender/level_camp_terrain_route_graded.blend",
+      "model": "assets/runtime/models/level_camp_terrain_route_graded.glb",
+      "triangles": 41782,
+      "bytes": 3279020,
+      "sha256": "525ca84b5f0c97217c4268458efb9d6f914f76b3aae57192c96262b8a9264691"
+    }
+  ],
+  "runtime_grade_cap_unchanged": 0.2
+}

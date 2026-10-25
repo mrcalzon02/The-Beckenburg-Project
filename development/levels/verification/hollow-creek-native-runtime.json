@@ -1,0 +1,18 @@
+{
+  "status":"pass-native-query-and-route-component",
+  "binary_sha256":"0f961b9d63f826381e860837f37f21448f74d2728015c3578b6ca9b048b4c4e4",
+  "source_sha256":"96d6f8dc295739fbe48d3d1b9e07f764f4a7efcd196fcfff589aa9006373a506",
+  "triangles":351179,
+  "components":7070,
+  "support_probes":1041,
+  "max_support_error_m":2.065571173992531E-6,
+  "nonwalkable_roofs":8,
+  "optical_rays":346,
+  "clear_rays":281,
+  "blocked_rays":65,
+  "actual_bank_interiors":14,
+  "standing_route_samples":969,
+  "successful_route_sweeps":939,
+  "route_findings":[],
+  "world_renderer_or_mission_unlock":false
+}

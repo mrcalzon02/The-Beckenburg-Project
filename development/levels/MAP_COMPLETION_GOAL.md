@@ -73,3 +73,8 @@ All 28 base maps plus the cemetery/mortuary annex now have [edge/sky planning pa
 ## 24 October additional completion gates
 
 Every investigation location must share the same combined indoor/outdoor hiding maximum; consume ../quality/HIDING_SPOT_BUDGET.md. Final completion also includes the separate story/lore/knickknack/loose-physics pass and authored cultural-reference Easter-egg pass in FINAL_STORY_AND_EASTER_EGGS.md. Design packets and native static props do not count as working encounters or loose physics.
+
+
+## 25 October native physics milestone
+
+Hollow Creek current authority is [route-graded native scene](hollow-creek/hollow-creek-route-grade.blend), following the rounded earthen-bank art checkpoint. [Native physics review](hollow-creek/NATIVE_PHYSICS_REVIEW.html) and [latest handoff](DEVELOPMENT_HANDOFF_2026-10-25_NATIVE_PHYSICS.md) record the hash-pinned HCS2 geometry component, independently checked supports/sight/standing movement routes and a three-vertex local grade correction. This supersedes the stale pending physics draft, preserves earlier art sources and adds no clutter. The actual game mission remains locked. Van elevation, world/player/AI/circuits, UV encounter, host/LAN, water and real game review gates remain open. Full all-map objective remains active.

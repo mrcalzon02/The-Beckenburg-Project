@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-25",
+  "status": "verified-native-and-packaged-query-component",
+  "source_sha256": "96d6f8dc295739fbe48d3d1b9e07f764f4a7efcd196fcfff589aa9006373a506",
+  "binary_sha256": "0f961b9d63f826381e860837f37f21448f74d2728015c3578b6ca9b048b4c4e4",
+  "main_sources_compiled": 213,
+  "analytic_checks": 34,
+  "standing_zone_anchors": 12,
+  "terrain_atlas_pixel_checks": 432,
+  "packaged_jar_sha256": "1830799e42734f5743c154721409ca5497f75baf8562a93f2b1b214e8054f0ff",
+  "packaged_actual_resource_tests_passed": true,
+  "full_world_gameplay_or_LAN_acceptance": false,
+  "mission_unlocked": false
+}
