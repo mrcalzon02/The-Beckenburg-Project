@@ -62,10 +62,7 @@ public final class LanSixHunterVanTest {
                 // physically in the van and exercise the other five in room mode.
                 for(int i=1;i<players.size();i++){
                     Peer player=players.get(i);
-                    for(int room:new int[]{11,8,5,4}){
-                        player.client.move(room);
-                        player.expect("ACCEPT|MOVE|"+room);
-                    }
+                    LanTestRoomTravel.move(player.client,player::expect,4);
                 }
                 Thread.sleep(350);
                 check(host.running(),"van monitoring and five distant hunters coexist");
@@ -88,10 +85,7 @@ public final class LanSixHunterVanTest {
                 hunters.get(0).client.start();
                 hunters.get(0).expect("INFO|mission started");
                 for(Peer peer:hunters){
-                    for(int room:new int[]{11,8,5,4}){
-                        peer.client.move(room);
-                        peer.expect("ACCEPT|MOVE|"+room);
-                    }
+                    LanTestRoomTravel.move(peer.client,peer::expect,4);
                 }
                 Thread.sleep(350);
                 check(host.running(),"six actual room-mode occupants share the ghost room");
