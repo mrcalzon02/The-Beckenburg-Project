@@ -991,6 +991,17 @@
       "action": "Use the authored memorial route endpoint X5,Z53 and derive all12 anchor elevations from actual intended walking surfaces. Require standing body and footprint clearance at every anchor. Future mission wiring must use this contract.",
       "evidence": "src/test/java/org/beckenburg/HollowCreekNativePhysicsTest.java; verification/hollow-creek-physics-export.json",
       "older_maps": "Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance."
+    },
+    {
+      "id": "DEV-091",
+      "title": "Windows default text encoding broke the deployed handoff",
+      "status": "fixed-explicit-utf8-writers",
+      "affected": "Hollow Creek native physics publication",
+      "symptom": "Pages run40201935399 rejected the new dated handoff as invalid UTF-8; the generated review also used the wrong declared encoding.",
+      "cause": "New checkpoint writer omitted encoding on Path.write_text and inherited Windows CP1252.",
+      "action": "Emit explicit UTF-8 from every new checkpoint writer, regenerate the handoff and review and strictly decode all staged publication text. Rebuild and read back the real deployed review and PNG before claiming gallery delivery.",
+      "evidence": "quality/evidence/DEV-091-pages-encoding.txt",
+      "older_maps": "Check text-writing producers and strictly decode future authored publication text; do not infer that successful local file opening proves Jekyll-compatible encoding."
     }
   ],
   "audit_categories": [

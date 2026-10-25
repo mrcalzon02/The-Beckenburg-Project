@@ -4,7 +4,7 @@ from pathlib import Path
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'development/levels/hollow-creek'
-r=json.loads((OUT/'route-grade.json').read_text());name='level_camp_terrain_amenities'
+r=json.loads((OUT/'route-grade.json').read_text(encoding="utf-8"));name='level_camp_terrain_amenities'
 def digest(o,positions=True):
  h=hashlib.sha256();h.update(struct.pack('>16d',*(v for row in o.matrix_world for v in row)))
  for data,field,code,n in ([(o.data.vertices,'co','f',3)] if positions else [])+[(o.data.loops,'vertex_index','i',1),(o.data.polygons,'material_index','i',1)]:
@@ -30,7 +30,7 @@ for ids in tri:
  if any(54.3<v[0]<55.8 and -15.8<v[1]<-13.5 for v in p) and min(v[0] for v in p)<=55.30 and max(v[0] for v in p)>=54.70 and min(v[1] for v in p)<=-14 and max(v[1] for v in p)>=-15.3 and g<=.35:
   protected+=1;maxgrade=max(maxgrade,now);assert now<=.190002
 o.data.calc_loop_triangles();ground=BVHTree.FromPolygons([o.matrix_world@v.co for v in o.data.vertices],[tuple(t.vertices) for t in o.data.loop_triangles],all_triangles=True)
-bank=json.loads((OUT/'grounded-berm.json').read_text());toe=0
+bank=json.loads((OUT/'grounded-berm.json').read_text(encoding="utf-8"));toe=0
 for section in bank['stations']:
  for row in section['rows']:
   for j in [0,11]:
@@ -52,4 +52,4 @@ for mesh in g['meshes']:
 assert actual==expected and sum(actual.values())==41782,'Raw oriented GLB/native mismatch'
 bpy.ops.wm.open_mainfile(filepath=str(ROOT/a['editable']));models=[o for o in bpy.context.scene.objects if o.type=='MESH'];assert len(models)==1 and not bpy.data.libraries and all(im.packed_file for im in bpy.data.images if im.source=='FILE');editable=models[0];editable.data.calc_loop_triangles();assert collections.Counter(canonical([(editable.data.vertices[i].co.x,editable.data.vertices[i].co.z,-editable.data.vertices[i].co.y) for i in t.vertices]) for t in editable.data.loop_triangles)==expected
 report=dict(status='pass-local-native-route-grade',source_sha256=r['scene_sha256'],unchanged_other_meshes=len(before),changed_vertices=changed,max_height_change_m=maximum,protected_triangles=protected,max_protected_grade=maxgrade,bank_toe_terrain_probes=toe,terrain_xy_topology_uv_materials_preserved=True,exact_raw_native_export_triangles=41782,isolated_packed_editable_scene=True,world_gameplay_acceptance=False)
-(ROOT/'development/levels/verification/hollow-creek-route-grade.json').write_text(json.dumps(report,indent=2)+'\n');print('PASS',json.dumps(report),flush=True)
+(ROOT/'development/levels/verification/hollow-creek-route-grade.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print('PASS',json.dumps(report),flush=True)

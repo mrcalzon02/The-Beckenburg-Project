@@ -1,0 +1,4 @@
+Pages run40201935399 at eb70f2921fa52dbe0d4c53226142bc6996ed2ebd failed:
+Conversion error: Jekyll::Converters::Markdown encountered an error while converting development/levels/DEVELOPMENT_HANDOFF_2026-10-25_NATIVE_PHYSICS.md
+The source text contains invalid characters for the used encoding UTF-8
+Cause: Windows default CP1252 writer; explicit UTF-8 regeneration corrects it.

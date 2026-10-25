@@ -1270,6 +1270,20 @@ Evidence and verification: src/test/java/org/beckenburg/HollowCreekNativePhysics
 
 Older-map obligation: Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance.
 
+### DEV-091 — Windows default text encoding broke the deployed handoff
+
+**Status:** fixed-explicit-utf8-writers · **Affected:** Hollow Creek native physics publication
+
+Pages run40201935399 rejected the new dated handoff as invalid UTF-8; the generated review also used the wrong declared encoding.
+
+Cause / uncertainty: New checkpoint writer omitted encoding on Path.write_text and inherited Windows CP1252.
+
+Fix / next action: Emit explicit UTF-8 from every new checkpoint writer, regenerate the handoff and review and strictly decode all staged publication text. Rebuild and read back the real deployed review and PNG before claiming gallery delivery.
+
+Evidence and verification: quality/evidence/DEV-091-pages-encoding.txt
+
+Older-map obligation: Check text-writing producers and strictly decode future authored publication text; do not infer that successful local file opening proves Jekyll-compatible encoding.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

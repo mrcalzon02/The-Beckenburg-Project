@@ -1,4 +1,4 @@
-# Hollow Creek native physics/query milestone — 25 October 2026
+# Hollow Creek native physics/query milestone â€” 25 October 2026
 
 Continue the full all-map completion objective. This is a substantial native-to-runtime component milestone, not current-map or full-goal completion. Branch integration/unified-map-engine; active checkout The-Beckenburg-Unified. Preserve original/mission-board checkouts and unrelated verification leftovers.
 
@@ -17,3 +17,5 @@ Next required milestone: wire this verified component into the actual Hollow Cre
 The runtime source comparison and all current-route tests passed. Windows jar initially failed moving a sandbox temporary file; using a workspace java.io.tmpdir succeeded. Normal sandbox Git fetch failed DNS; the authorized escalated fetch succeeded without credential changes. Keep source proof versus deployed proof distinct. Publication/readback will be appended after verified delivery.
 
 Exact current-run input/output/cached/total token counts are unavailable; the dated usage JSON records null fields. Do not convert account percentages or historical goal counters into tokens. Broader map completion remains active.
+
+Publication follow-up: DEV-091 records the Windows default text encoding error found by actual Pages deployment. Checkpoint writers now emit UTF-8 explicitly; the handoff and review were regenerated and all43 checkpoint paths passed strict text decoding. Build.sh syntax also passed outside the Windows sandbox, where Git Bash can initialize. eb70f29 source/asset raw downloads matched before the Pages failure. Replacement deployment and final readback are required.
