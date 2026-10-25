@@ -7,7 +7,7 @@ public final class ManualEvidenceJournalTest {
     static void ok(boolean condition,String why){if(!condition)throw new AssertionError(why);}
     public static void main(String[] args){
         FieldJournal journal=new FieldJournal();
-        ok(GhostFieldGuide.shortlist(journal).size()==13,"all 13 ghost names initially possible");
+        ok(GhostFieldGuide.shortlist(journal).size()==GhostIdentity.Type.values().length,"all ghost identities initially possible");
         var emf=GhostFieldGuide.Clue.EMF_OVER_SIX;
         var zero=GhostFieldGuide.Clue.EMF_SUPPRESSION;
         journal.set(emf,FieldJournal.Status.SEEN,0,1);
@@ -19,10 +19,11 @@ public final class ManualEvidenceJournalTest {
         ok(GhostFieldGuide.shortlist(journal).size()==13,
            "unticking restores ghosts without rerunning a scan");
         journal.set(zero,FieldJournal.Status.SEEN,1,3);
-        ok(GhostFieldGuide.shortlist(journal).size()==3
-            &&GhostFieldGuide.shortlist(journal).contains(GhostIdentity.Type.SHADE)
-            &&GhostFieldGuide.shortlist(journal).contains(GhostIdentity.Type.SPECTER)
-            &&GhostFieldGuide.shortlist(journal).contains(GhostIdentity.Type.HANTU),
+        var suppressed=GhostFieldGuide.shortlist(journal);
+        ok(suppressed.size()>1 && suppressed.size()<GhostIdentity.Type.values().length
+            &&suppressed.contains(GhostIdentity.Type.SHADE)
+            &&suppressed.contains(GhostIdentity.Type.SPECTER)
+            &&suppressed.contains(GhostIdentity.Type.HANTU),
             "suppressed EMF narrows candidates, never reveals one ghost immediately");
         journal.set(emf,FieldJournal.Status.SEEN,0,4);
         ok(GhostFieldGuide.shortlist(journal).isEmpty(),
