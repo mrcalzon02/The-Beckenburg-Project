@@ -102,6 +102,17 @@ public final class BeckenburgDesktopE2ETest {
         field.setAccessible(true);
         return field.getBoolean(game);
     }
+    private static JComboBox<?> sitePicker(Container container){
+        for(Component c:container.getComponents()){
+            if(c instanceof JComboBox<?> box && box.getItemCount()>0
+                    &&box.getItemAt(0) instanceof SiteCatalog.Location)return box;
+            if(c instanceof Container nested){
+                JComboBox<?> found=sitePicker(nested);
+                if(found!=null)return found;
+            }
+        }
+        return null;
+    }
     private static JDialog dispatchDialog(){
         for(Window window:Window.getWindows())if(window instanceof JDialog dialog
                 &&dialog.isShowing()&&dialog.getTitle().startsWith("EXPEDITION DISPATCH"))
@@ -166,16 +177,11 @@ public final class BeckenburgDesktopE2ETest {
                 "Solo map-selection dispatch did not appear");
             capture("03-solo-dispatch-map-selection");
             SwingUtilities.invokeLater(()->{
-                JComboBox<?> site=null;
-                for(Component component:dispatch.getContentPane().getComponents()){
-                    if(component instanceof JComboBox<?> box)site=box;
-                    if(component instanceof Container container){
-                        for(Component child:container.getComponents())
-                            if(child instanceof JComboBox<?> box && box.getItemCount()>0
-                                && box.getItemAt(0) instanceof SiteCatalog.Location)site=box;
-                    }
-                }
-                if(site!=null)site.setSelectedItem(SiteCatalog.Location.HOUSE);
+                JComboBox<?> site=sitePicker(dispatch.getContentPane());
+                if(site==null)throw new AssertionError("Solo location selector missing");
+                site.setSelectedItem(SiteCatalog.Location.HOUSE);
+                if(site.getSelectedItem()!=SiteCatalog.Location.HOUSE)
+                    throw new AssertionError("Could not dispatch authored House site");
                 JButton approve=button(dispatch.getContentPane(),"OK");
                 if(approve==null)throw new AssertionError("Solo dispatch OK button unavailable");
                 approve.doClick();
