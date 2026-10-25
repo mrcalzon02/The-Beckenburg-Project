@@ -5,7 +5,7 @@ public final class FieldJournalTest {
     private static void check(boolean good,String msg){if(!good)throw new AssertionError(msg);}
     public static void main(String[] args){
         FieldJournal book=new FieldJournal();
-        check(GhostFieldGuide.shortlist(book).size()==13,"all types initially possible");
+        check(GhostFieldGuide.shortlist(book).size()==GhostIdentity.Type.values().length,"all types initially possible");
         book.set(GhostFieldGuide.Clue.FLOATING,FieldJournal.Status.SEEN,0,9);
         book.set(GhostFieldGuide.Clue.DOOR_TO_TRAVEL,FieldJournal.Status.SEEN,1,12);
         var candidates=GhostFieldGuide.shortlist(book);
@@ -24,6 +24,6 @@ public final class FieldJournalTest {
         FieldJournal.Note n=new FieldJournal.Note(GhostFieldGuide.Clue.PHASE_WALL,FieldJournal.Status.SEEN,2,77);
         check(FieldJournal.Note.decode(n.frame()).equals(n),"bounded shared note roundtrip");
         for(GhostIdentity.Type t:GhostIdentity.Type.values())check(!GhostFieldGuide.reference(t).isBlank(),"reference entry "+t);
-        System.out.println("PASS: 13 casebook profiles, hard exclusions, behavioral ranking and shared note frames");
+        System.out.println("PASS: complete casebook roster, hard exclusions, behavioral ranking and shared note frames");
     }
 }
