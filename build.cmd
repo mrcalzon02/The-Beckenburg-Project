@@ -18,6 +18,8 @@ if not exist build\test mkdir build\test
   for %%F in (src\test\java\org\beckenburg\*.java) do @echo "src/test/java/org/beckenburg/%%~nxF"
 )
 javac --release 17 -encoding UTF-8 -d build\classes @build\sources-main.txt || exit /b 1
+if not exist build\classes\META-INF mkdir build\classes\META-INF
+copy /Y water-module\src\main\resources\META-INF\*.txt build\classes\META-INF\ >nul || exit /b 1
 if not exist assets\runtime\directional-sprites.zip (echo ERROR: required in-game sprite assets missing & exit /b 1)
 if not exist build\classes\org\beckenburg mkdir build\classes\org\beckenburg
 copy /Y assets\runtime\directional-sprites.zip build\classes\org\beckenburg\directional-sprites.zip >nul || exit /b 1

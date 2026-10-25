@@ -21,6 +21,7 @@ import javax.imageio.ImageIO;
  */
 public final class GpuDesktop {
  private GpuDesktop(){}
+ private static Thread gpuWorker;
  private static final OpenGlWorldRenderer ENGINE=new OpenGlWorldRenderer();
  private static void startGpu() throws Exception {
   var config=new Lwjgl3ApplicationConfiguration();
@@ -39,6 +40,7 @@ public final class GpuDesktop {
     failed.printStackTrace();
    }
   },"beckenburg-opengl");
+  gpuWorker=worker;
   worker.setDaemon(false);
   worker.start();
   String driver=ENGINE.initialization().get(30,TimeUnit.SECONDS);
@@ -46,6 +48,12 @@ public final class GpuDesktop {
   GpuWorldRenderer.install(ENGINE);
   BeckenburgDiagnostics.record("ACTIVE_RENDERER GPU "+driver+
       " / scene triangles OpenGL, UI Swing");
+ }
+ private static void stopReviewGpu() throws InterruptedException {
+  // Dispose resources and destroy GLFW on its owning worker before JVM exit.
+  // Abrupt System.exit while that native worker is live crashes this driver.
+  if(com.badlogic.gdx.Gdx.app!=null)com.badlogic.gdx.Gdx.app.exit();
+  if(gpuWorker!=null){gpuWorker.join(15000);if(gpuWorker.isAlive())throw new IllegalStateException("Review GPU worker did not stop");}
  }
  private static CastleHubMap placeCastleCamera(SceneRenderer renderer){
   CastleHubMap castle=new CastleHubMap();
@@ -177,7 +185,7 @@ public final class GpuDesktop {
    BeckenburgDiagnostics.fail("Required GPU renderer initialization",failure);
    throw failure;
   }
-  if(options.contains("--hollow-creek-review")){try{HollowCreekRuntimeReview.execute(ENGINE);System.exit(0);}catch(Throwable failure){failure.printStackTrace();System.exit(1);}return;}
+  if(options.contains("--hollow-creek-review")){try{HollowCreekRuntimeReview.execute(ENGINE);}finally{stopReviewGpu();}return;}
   if(smoke){
    try{
     smoke();

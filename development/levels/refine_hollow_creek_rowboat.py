@@ -6,7 +6,7 @@ import bpy,math,json,hashlib,sys
 from pathlib import Path
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
-ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'development/levels/hollow-creek';r=json.loads((OUT/'green-grass.json').read_text());parent=ROOT/r['scene'];assert hashlib.sha256(parent.read_bytes()).hexdigest()==r['scene_sha256']
+ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'development/levels/hollow-creek';r=json.loads((OUT/'green-grass.json').read_text(encoding='utf-8'));parent=ROOT/r['scene'];assert hashlib.sha256(parent.read_bytes()).hexdigest()==r['scene_sha256']
 bpy.ops.wm.open_mainfile(filepath=str(parent));o=bpy.data.objects['West moored rowing boat'];o.data=o.data.copy();o.data.calc_loop_triangles();old=[tuple(v.co) for v in o.data.vertices];groups={g.index:g.name for g in o.vertex_groups}
 def group(v,prefix):return any(groups[a.group].startswith(prefix) and a.weight>.5 for a in v.groups)
 hull=[t for t in o.data.loop_triangles if all(group(o.data.vertices[i],'Continuous double-skin hull') for i in t.vertices)];bvh=BVHTree.FromPolygons([v.co for v in o.data.vertices],[tuple(t.vertices) for t in hull],all_triangles=True)
@@ -69,11 +69,11 @@ for p in o.data.polygons:
 o.data.update();source=OUT/'hollow-creek-rowboat-refined.blend';bpy.ops.wm.save_as_mainfile(filepath=str(source));bpy.ops.object.select_all(action='DESELECT');o.select_set(True);bpy.context.view_layer.objects.active=o
 # Export exact local coordinates with the unchanged instance transform supplied separately.
 pose=o.matrix_world.copy();o.matrix_world.identity();file=ROOT/'assets/runtime/models/level_hc_native_361_0.glb';bpy.ops.export_scene.gltf(filepath=str(file),export_format='GLB',use_selection=True,export_yup=True);o.matrix_world=pose
-sha=hashlib.sha256(file.read_bytes()).hexdigest();j=json.loads((OUT/'runtime-scene.json').read_text());before_sha=next(a['sha256'] for a in j['assets'] if a['id']=='level_hc_native_361_0')
+sha=hashlib.sha256(file.read_bytes()).hexdigest();j=json.loads((OUT/'runtime-scene.json').read_text(encoding='utf-8'));before_sha=next(a['sha256'] for a in j['assets'] if a['id']=='level_hc_native_361_0')
 for a in j['assets']:
  if a['id']=='level_hc_native_361_0':a.update(sha256=sha,bytes=file.stat().st_size,override_scene=source.relative_to(ROOT).as_posix())
 for i in j['instances']:
  if i['id']=='level_hc_native_361_0':i['sha256']=sha
-manifest=ROOT/'assets/runtime/sites/hollow-creek-scene.tsv';s=manifest.read_text().replace(before_sha,sha);manifest.write_text(s,encoding='utf-8');j['manifest_sha256']=hashlib.sha256(manifest.read_bytes()).hexdigest();j['boat_override']=dict(scene=source.relative_to(ROOT).as_posix(),sha256=hashlib.sha256(source.read_bytes()).hexdigest(),reason='Seat penetration correction and original directional weathered albedos; hull/pivot/pose unchanged');(OUT/'runtime-scene.json').write_text(json.dumps(j,indent=2)+'\n',encoding='utf-8')
+manifest=ROOT/'assets/runtime/sites/hollow-creek-scene.tsv';s=manifest.read_text(encoding='utf-8').replace(before_sha,sha);manifest.write_text(s,encoding='utf-8');j['manifest_sha256']=hashlib.sha256(manifest.read_bytes()).hexdigest();j['boat_override']=dict(scene=source.relative_to(ROOT).as_posix(),sha256=hashlib.sha256(source.read_bytes()).hexdigest(),reason='Seat penetration correction and original directional weathered albedos; hull/pivot/pose unchanged');(OUT/'runtime-scene.json').write_text(json.dumps(j,indent=2)+'\n',encoding='utf-8')
 report=dict(parent=r['scene'],parent_sha256=r['scene_sha256'],scene=source.relative_to(ROOT).as_posix(),scene_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),model_sha256=sha,seat_checks=checks,oar_checks=oar_checks,hull_vertices_unchanged=all(tuple(v.co)==old[v.index] for v in o.data.vertices if group(v,'Continuous double-skin hull')),changed_vertices=sum(tuple(v.co)!=old[v.index] for v in o.data.vertices),textures=['rowboat-'+kind+'-v2.png' for kind in ['paint','wood','metal']],limitations=['Seat fit and native hull shape retained; final human model acceptance pending.'])
 assert report['hull_vertices_unchanged'];assert hashlib.sha256(parent.read_bytes()).hexdigest()==r['scene_sha256'];(OUT/'rowboat-refinement.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print('PASS boat seat fit, unchanged hull, original weathered construction textures')

@@ -1,7 +1,7 @@
 import bpy,json,hashlib,collections
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
-r=json.loads((ROOT/'development/levels/hollow-creek/green-grass.json').read_text())
+r=json.loads((ROOT/'development/levels/hollow-creek/green-grass.json').read_text(encoding='utf-8'))
 source=ROOT/r['scene'];assert hashlib.sha256(source.read_bytes()).hexdigest()==r['scene_sha256']
 bpy.ops.wm.open_mainfile(filepath=str(source))
 rows=['WATER_HULL_SECTIONS_1'];sections=[]

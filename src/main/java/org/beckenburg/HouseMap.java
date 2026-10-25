@@ -208,6 +208,7 @@ public final class HouseMap {
         if(!finite(x,y,z,bodyHeight)||bodyHeight<.9||bodyHeight>2.0)return false;double radius=.22;
         if(nativeSite!=null){Double sy=van.supportHeight(x,z);boolean blocked=van.collides(x,z,radius)&&y+bodyHeight>van.placement().y()&&y<van.placement().y()+VanStaging.ROOF_Y;
             if(sy!=null)return Math.abs(y-sy)<.08&&!blocked&&!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius);
+            if(y<HollowCreekWater.LEVEL-.01&&HollowCreekWater.module().bodies().get(0).wet(x,z))return false;
             return !blocked&&nativeSite.traversable(new Vec(x,y,z),bodyHeight);}
         if(!supported(x,y,z,radius)||wallBlocked(x,y,z,radius,false,-1,bodyHeight))return false;
         for(double[] d:new double[][]{{-radius,0},{radius,0},{0,-radius},{0,radius}})

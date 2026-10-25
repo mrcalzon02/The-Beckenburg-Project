@@ -592,7 +592,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÂ±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -1156,6 +1156,28 @@
       "action": "Removed draft generic trip. Preserve separate source/breaker controls; audit and wire only actually eligible ghost electrical rules before host/LAN acceptance.",
       "evidence": "HollowCreekPowerTest proves supported controls and source isolation only, explicitly not ghost-trip or host/LAN acceptance.",
       "older_maps": "Audit eligible ghost rules and authority on all generator maps before unlock."
+    },
+    {
+      "id": "DEV-106",
+      "title": "Submerged creek bed remained an eligible native standing surface",
+      "status": "fixed-scoped",
+      "affected": "Hollow Creek physical terrain below water",
+      "symptom": "A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.",
+      "cause": "The edge blockers constrain crossings, but terrain support alone still allowed a direct underwater spawn query.",
+      "action": "Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.",
+      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.",
+      "older_maps": "Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map."
+    },
+    {
+      "id": "DEV-107",
+      "title": "Review launcher crashed during abrupt native GPU shutdown",
+      "status": "fixed-scoped",
+      "affected": "Hollow Creek GPU review command",
+      "symptom": "All frames and reports were written, then the process exited with Windows native status -1073740791 (0xC0000409).",
+      "cause": "The review command called System.exit while the GLFW/OpenGL worker was still active.",
+      "action": "Request application exit and join the owning worker, allowing its resource disposal/window teardown before main returns.",
+      "evidence": "Same real dock render writes fresh world/depth/water evidence and now exits with native code0. Previous frame files remain actual capture evidence, not a clean launcher test.",
+      "older_maps": "Audit other GPU smoke/shutdown entry points separately; only the new review lifecycle was corrected."
     }
   ],
   "audit_categories": [

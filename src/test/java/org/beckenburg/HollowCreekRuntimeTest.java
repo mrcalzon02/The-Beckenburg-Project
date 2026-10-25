@@ -17,6 +17,7 @@ public final class HollowCreekRuntimeTest {
   }
   var water=HollowCreekWater.module().bodies().get(0);check(!water.wet(23.9,-5),"Actual native inner hull must be dry");check(water.wet(22,-5),"Lake next to boat must remain wet");
   check(!map.traversable(23.9,-1.95,-5),"Water beside dock is not a walking floor");
+  check(!map.traversable(49,map.groundHeight(49,23,0),23),"Submerged native creek bed cannot be an eligible walking/spawn surface");
   System.out.println("PASS actual Hollow Creek game map:15 zone/graph anchors,3 rituals,6 elevated LAN spawn pads,"+points+" standing route points,"+sweeps+" game movement sweeps, actual dry boat waterline and no water walking");
  }
 }

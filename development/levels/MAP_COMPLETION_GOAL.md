@@ -61,7 +61,7 @@ layered/translucent water remain open, with its authored work preserved.
 The 16-site breadth pass is a terrain-foundation milestone, not all-map completion.
 
 
-## User-requested additional scope â€” 23 October
+## User-requested additional scope — 23 October
 
 Five new lore-named sites and an additive cemetery/mortuary study are now planned. See [new location native reviews](blockouts/NEW_LOCATIONS_REVIEW.html). These are rough reservations and native blockouts; model lists do not count as model completion. Detailed terrain support, stairs/guards, architecture, fixtures/dressing, runtime and human review remain pending. The original 23 maps and 17 rough source blockouts are preserved.
 

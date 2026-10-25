@@ -5,6 +5,12 @@
   "unique_asset_triangles": 729644,
   "instances": 598,
   "exact_source_world_matrices": true,
+  "exact_source_uvs": true,
+  "boat_override": {
+    "scene": "development/levels/hollow-creek/hollow-creek-rowboat-refined.blend",
+    "sha256": "c12208b1c465a5fa9ab1ddf5339746736ee10e65c0aae0d47a21196b1d89fc08",
+    "reason": "Seat penetration correction and original directional weathered albedos; hull/pivot/pose unchanged"
+  },
   "asset_checks": [
     {
       "id": "level_hc_native_000_0",

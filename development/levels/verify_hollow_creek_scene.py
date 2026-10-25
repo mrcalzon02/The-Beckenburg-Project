@@ -37,5 +37,5 @@ for asset in r['assets']:
 for instance in r['instances']:
  o=bpy.data.objects[instance['object']];matrix=C@o.evaluated_get(deps).matrix_world@Ci;assert instance['matrix']==[v for row in matrix for v in row],('Native world pose changed',o.name)
  assert not o.hide_render and not any(m and m.name.startswith('Canonical van material') for m in o.data.materials) and o.name!='Lake water boundary'
-report=dict(status='pass-exact-native-scene-export',source_sha256=r['source_sha256'],unique_assets=len(checks),unique_asset_triangles=total,instances=len(r['instances']),exact_source_world_matrices=True,asset_checks=checks,water_and_van_owned_by_separate_modules=True,full_game_acceptance=False)
+report=dict(status='pass-exact-native-scene-export',source_sha256=r['source_sha256'],unique_assets=len(checks),unique_asset_triangles=total,instances=len(r['instances']),exact_source_world_matrices=True,exact_source_uvs=True,boat_override=r.get("boat_override"),asset_checks=checks,water_and_van_owned_by_separate_modules=True,full_game_acceptance=False)
 (ROOT/'development/levels/verification/hollow-creek-runtime-scene.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print('PASS',len(checks),'exact native local geometry exports;',len(r['instances']),'exact source poses;',total,'unique source triangles',flush=True)

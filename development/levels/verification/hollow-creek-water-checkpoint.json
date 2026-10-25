@@ -18,13 +18,13 @@
     },
     {
       "path": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-east-runtime.mp4",
-      "sha256": "d4dca887731a6011378cafb8dd9a6be523d6dd4e6c73113bfbc30c3b57d1e89f",
+      "sha256": "88c82d87de69696304998682a7443d964ad9fb54f1a36864dccbeb199351b5ca",
       "frames": 72,
       "duration_seconds": 6
     },
     {
       "path": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-west-runtime.mp4",
-      "sha256": "86f2c701e67f71fe88e08983811efd8fa81206a6a8a89b5e627038b9a66f02a4",
+      "sha256": "c1d326ed9763e38c2828dedb724e87c1e7798aa216848da677af1c548e030ecb",
       "frames": 72,
       "duration_seconds": 6
     },
@@ -36,5 +36,8 @@
     }
   ],
   "full_gameplay_host_LAN_human_acceptance": false,
-  "publication": "pending: GitHub DNS failure on two authorized fetch attempts; no credentials or network settings changed"
+  "publication": "Network recovered on fourth fetch; source checkpoint and gallery ready for safe push/readback.",
+  "camera_refinement": "Final riverside views (52,23) / (45,23) verified visually; 3.36\u20133.96 million water samples across72 frames, approximately ten times the superseded views.",
+  "capture_launcher_native_exit_code_after_shutdown_fix": 0,
+  "previous_capture_exit_limitation": "Frames/reports completed; prior abrupt GLFW teardown exited0xC0000409. Fixed lifecycle independently re-captured actual dock successfully."
 }

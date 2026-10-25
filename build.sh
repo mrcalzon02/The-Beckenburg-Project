@@ -5,6 +5,8 @@ mkdir -p build
 rm -rf build/classes build/test
 mkdir -p build/classes build/test
 javac --release 17 -encoding UTF-8 -d build/classes water-module/src/main/java/dev/mrcalzon/water/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/*.java
+mkdir -p build/classes/META-INF
+cp water-module/src/main/resources/META-INF/*.txt build/classes/META-INF/
 # The shipped JAR and the test classpath must include the actual in-game sprite resource.
 test -s assets/runtime/directional-sprites.zip
 mkdir -p build/classes/org/beckenburg

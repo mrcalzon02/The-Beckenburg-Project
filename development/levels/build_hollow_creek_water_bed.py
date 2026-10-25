@@ -3,7 +3,7 @@ Explicit new authored bathymetry, not a survey or player-support replacement.
 """
 from pathlib import Path
 import math,json,struct,hashlib,shutil
-ROOT=Path(__file__).resolve().parents[2];src=ROOT/'development/levels/hollow-creek/amenities.json';j=json.loads(src.read_text());banks=[b for b in j['blockers'] if b['id'].startswith(('Creek bank','Lake shore'))]
+ROOT=Path(__file__).resolve().parents[2];src=ROOT/'development/levels/hollow-creek/amenities.json';j=json.loads(src.read_text(encoding='utf-8'));banks=[b for b in j['blockers'] if b['id'].startswith(('Creek bank','Lake shore'))]
 def distance(x,z,b):
  a,c=b['a'],b['b'];dx,dz=c[0]-a[0],c[1]-a[1];t=max(0,min(1,((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz)));return math.hypot(x-a[0]-t*dx,z-a[1]-t*dz)
 x0,z0,step,w,h=-105.,-120.,2.5,101,61
