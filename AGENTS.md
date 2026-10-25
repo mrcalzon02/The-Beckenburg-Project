@@ -1,5 +1,7 @@
 # Beckenburg production rules
 
+- Recovery program is active until evidence closes all gates. At the start of each development session read `development/RECOVERY_PLAN_2026-10-25.md`, inspect `main` HEAD plus full-round/renderer/release workflow results, and prioritize the recovery gates before new feature or map expansion. Update its checkpoint log with exact SHA, passing/failing runs and the next action; do not infer successful gameplay from packaging or docs.
+
 - Closeout means finalize the requested implementation, commit it, push it to the authorized remote branch, and verify that the remote contains the commit. A plan or local-only change is not a completed delivery. Never force-push over concurrent work.
 - Preserve workflow continuity with regular, scoped commits at completed implementation, asset-generation and review milestones. Push recoverable checkpoints after reconciling concurrent work; do not defer every commit until the final closeout. Record completed checks and the next unfinished step in the level workflow notes.
 - Environment work must follow the approved location concepts and measured architectural references. Complete and inspect the house before expanding the approach to the other locations.
