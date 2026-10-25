@@ -13,8 +13,9 @@ public final class ManualEvidenceJournalTest {
         journal.set(emf,FieldJournal.Status.SEEN,0,1);
         ok(!GhostFieldGuide.remainsPossible(GhostIdentity.Type.SHADE,journal),
            "high EMF manually greys Shade");
-        ok(GhostFieldGuide.remainsPossible(GhostIdentity.Type.SPIRIT,journal),
-           "high EMF leaves other matching ghosts visible");
+        ok(!GhostFieldGuide.remainsPossible(GhostIdentity.Type.SPIRIT,journal)
+            &&GhostFieldGuide.remainsPossible(GhostIdentity.Type.DEMON,journal),
+            "high EMF excludes low-band Spirit and retains high-band Demon");
         journal.set(emf,FieldJournal.Status.UNKNOWN,0,2);
         ok(GhostFieldGuide.shortlist(journal).size()==GhostIdentity.Type.values().length,
            "unticking restores ghosts without rerunning a scan");
