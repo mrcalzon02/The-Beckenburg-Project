@@ -28,7 +28,7 @@ public record LevelDefinition(String id, String revision, String title,
     public record Vec(double x,double y,double z) { }
     public record Room(int id,String name,double x0,double z0,double x1,double z1,
             double y,double height,String finish,String acoustic,Vec spawn) {
-        public boolean outside(){return id>=12;}
+        public boolean outside(){return id>=12||finish.equals("native-outdoor");}
         public boolean contains(double x,double y,double z){return x>=x0&&x<=x1&&z>=z0&&z<=z1&&y>=this.y-.22&&y<this.y+height-.15;}
         public double cx(){return spawn.x();}
         public double cz(){return spawn.z();}

@@ -537,6 +537,7 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,frenzyFrame());
                     reply(peer,"HIDECONFIG|"+contract.hidingSpots());
                     reply(peer,"LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));
+                    if(map.nativeSite())reply(peer,"SOURCE|"+(lights.sourceRunning()?1:0));
                     // Recover only this investigator's current hiding and imminent threat.
                     // Never reset the pending strike's original authoritative impact tick.
                     reply(peer,"HIDING|"+(world.hidden(peer.slot)?1:0));
@@ -558,6 +559,7 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     reply(peer,"HIDECONFIG|"+contract.hidingSpots());
                     reply(peer,"LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));
+                    if(map.nativeSite())reply(peer,"SOURCE|"+(lights.sourceRunning()?1:0));
                     reply(peer,"DOORS|"+map.doorSnapshot());
                     reply(peer,"WINDOWS|"+map.windowSnapshot());
                     reply(peer,ghostPose.staminaFrame(tick));
@@ -645,7 +647,8 @@ public final class LanHost implements AutoCloseable {
                         }
                         case INTERFACE -> reply(peer,"INTERACTED|INTERFACE|"+target.id());
                         case SWITCH -> {lights.toggle(Integer.parseInt(target.id()));notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));}
-                        case BREAKER -> {lights.setBreaker(!lights.breaker());map.fixtures().power(lights.breaker());notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));}
+                        case GENERATOR -> {if(!map.nativeSite())throw new IllegalArgumentException("No remote generator");lights.setSourceRunning(!lights.sourceRunning());map.fixtures().power(lights.supplied());notifyAllPeers("SOURCE|"+(lights.sourceRunning()?1:0));}
+                        case BREAKER -> {lights.setBreaker(!lights.breaker());map.fixtures().power(lights.supplied());notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));}
                         case WINDOW -> map.toggleWindow(Integer.parseInt(target.id()));
                         case DOOR -> {
                             int id=Integer.parseInt(target.id());map.toggleDoor(id);
@@ -687,7 +690,7 @@ public final class LanHost implements AutoCloseable {
                     LanWorld.Body body=world.body(peer.slot);
                     var breaker=RoomLighting.breaker(map);
                     if(breaker==null||body.room()!=breaker.room()||Math.abs(body.y()+1.3-breaker.y())>1.5||Math.hypot(body.x()-breaker.x(),body.z()-breaker.z())>1.5)throw new IllegalArgumentException("breaker out of reach");
-                    lights.setBreaker(!lights.breaker());map.fixtures().power(lights.breaker());
+                    lights.setBreaker(!lights.breaker());map.fixtures().power(lights.supplied());
                     notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));
                     reply(peer,"ACCEPT|POWER|"+(lights.breaker()?"ON":"OFF"));
                     recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,LanSound.Cue.BREAKER);
@@ -938,7 +941,7 @@ public final class LanHost implements AutoCloseable {
                             boolean inReach=distance<=stage.reachCm()/100.0;
                             int origin=inReach?lastEvidenceEventRoom:-1;
                             boolean thermal=id.equals("THERMOMETER");
-                            mission.setEvidenceHeating(lights.breaker());
+                            mission.setEvidenceHeating(lights.supplied());
                             LanCase.Report measure=mission.scanMeasured(peer.slot,
                                 thermal?LanCase.Tool.THERMOMETER:LanCase.Tool.EMF,
                                 room,ghost.room(),tick,origin,inReach?eventPower:0,
@@ -946,7 +949,7 @@ public final class LanHost implements AutoCloseable {
                             if(!measure.accepted())throw new IllegalArgumentException("instrument unavailable");
                             taskDone(thermal?ContractRewards.Task.THERMAL_SAMPLE:ContractRewards.Task.EMF_SAMPLE);
                             reading=measure.message().substring(measure.message().indexOf(" - ")+3)
-                                .replace("°","deg ");
+                                .replace("Â°","deg ");
                             // Never append a supernatural validity assessment.
                         }
                         case "SPIRIT_BOX" -> {
@@ -1397,7 +1400,7 @@ public final class LanHost implements AutoCloseable {
                         ?-1:lastEvidenceEventRoom;
                     int scanEventPower=tool==LanCase.Tool.SPIRIT_BOX&&!actualVoice
                         ?0:eventPower;
-                    mission.setEvidenceHeating(lights.breaker());
+                    mission.setEvidenceHeating(lights.supplied());
                     LanCase.Report result=peer.worldMode
                         ?mission.scanSpatialMeasured(peer.slot,tool,world.body(peer.slot),
                             ghost.room(),map,tick,scanEventRoom,scanEventPower,
@@ -2571,7 +2574,7 @@ public final class LanHost implements AutoCloseable {
             }
     }
     private void broadcastSensorReadings(){
-        mission.setEvidenceHeating(lights.breaker());
+        mission.setEvidenceHeating(lights.supplied());
         for(VanSensorStations.Station station:vanSensors.all()){
             String reading;
             if(equipment[station.owner()].batterySecondsLeft(station.tool())<=0
@@ -2605,7 +2608,7 @@ public final class LanHost implements AutoCloseable {
                     :"No environmental sample";
             }
             String packet="SENSOR|READ|"+station.id()+"|"+tick+"|"+
-                reading.replace("°","deg ");
+                reading.replace("Â°","deg ");
             latestSensorReadings.put(station.id(),packet);
             notifyHunters(packet);
         }

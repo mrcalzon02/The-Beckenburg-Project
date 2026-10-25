@@ -37,10 +37,10 @@ public final class SceneRenderer {
     private static final int[] BAYER={0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5};
     private record Point(double x,double y,double z) { }
     private record Vertex(Point p,double u,double v,double r,double g,double b) { Vertex(Point p,double u,double v){this(p,u,v,-1,-1,-1);} }
-    private record Face(Point a,Point b,Point c,int color,int material,
-                        double au,double av,double bu,double bv,double cu,double cv,int room) {
-        Face(Point a,Point b,Point c,int color,int material,double au,double av,double bu,double bv,double cu,double cv){this(a,b,c,color,material,au,av,bu,bv,cu,cv,-1);}
-        Face owned(int id){return new Face(a,b,c,color,material,au,av,bu,bv,cu,cv,id);}
+    private record Face(Point a,Point b,Point c,int color,int material,double au,double av,double bu,double bv,double cu,double cv,int room,Point na,Point nb,Point nc) {
+        Face(Point a,Point b,Point c,int color,int material,double au,double av,double bu,double bv,double cu,double cv){this(a,b,c,color,material,au,av,bu,bv,cu,cv,-1,null,null,null);}
+        Face(Point a,Point b,Point c,int color,int material,double au,double av,double bu,double bv,double cu,double cv,int room){this(a,b,c,color,material,au,av,bu,bv,cu,cv,room,null,null,null);}
+        Face owned(int id){return new Face(a,b,c,color,material,au,av,bu,bv,cu,cv,id,na,nb,nc);}
     }
     private BufferedImage frame = new BufferedImage(W,H,BufferedImage.TYPE_INT_RGB);
     private int[] pixels=((DataBufferInt)frame.getRaster().getDataBuffer()).getData();
@@ -480,6 +480,8 @@ public final class SceneRenderer {
         }
         List<Face> constructed=new ArrayList<>();
         buildVanModel(constructed,van,stock,map);
+        double baseY=van.placement().y();
+        if(baseY!=0)constructed.replaceAll(f->new Face(new Point(f.a.x,f.a.y+baseY,f.a.z),new Point(f.b.x,f.b.y+baseY,f.b.z),new Point(f.c.x,f.c.y+baseY,f.c.z),f.color,f.material,f.au,f.av,f.bu,f.bv,f.cu,f.cv,f.room));
         cachedVan=van;
         cachedVanDoors=van.cargoDoorClosed();
         cachedVanStock=java.util.Set.copyOf(stock);
@@ -973,7 +975,7 @@ public final class SceneRenderer {
             vanModel(out,map.van(),rackStock,map);
         // Road and traffic props are exterior-only. Nearby rooms never instantiate
         // a second duplicate set of these global world objects.
-        if(Math.hypot(x-map.van().placement().x(),z-map.van().placement().z())<20)
+        if(!map.nativeSite()&&Math.hypot(x-map.van().placement().x(),z-map.van().placement().z())<20)
             roadsideModels(out,map);
         // Portable lights exist only when host-owned inventory was physically
         // deployed; lit housings and stationary illumination follow their position.
@@ -1276,6 +1278,7 @@ public final class SceneRenderer {
         }
     }
     private static List<Face> buildLevelShell(HouseMap map){
+        if(map.nativeSite())return List.of();
         LevelDefinition level=map.level();List<Face> out=new ArrayList<>();
         for(var r:level.rooms()){
             List<Face> part=new ArrayList<>();
@@ -1396,7 +1399,7 @@ public final class SceneRenderer {
      * falloff without the old CPU per-pixel triangle scan. */
     private void appendGpuFace(Face face,int room,int depth,
             java.util.Map<Integer,GpuFloats> batches){
-        if(room>=0&&room<12
+        if(room>=0&&room<12&&(lightingMap==null||!lightingMap.nativeSite())
             &&depth<lightingSubdivisionLimit(Math.max(0,
                 Math.min(camera(face.a).z,
                     Math.min(camera(face.b).z,camera(face.c).z))))
@@ -1417,13 +1420,15 @@ public final class SceneRenderer {
             return;
         }
         var dst=batches.computeIfAbsent(face.material,key->new GpuFloats());
-        dst.vertex(gpuLitVertex(face.a,face.au,face.av,face.material,room),face.color);
-        dst.vertex(gpuLitVertex(face.b,face.bu,face.bv,face.material,room),face.color);
-        dst.vertex(gpuLitVertex(face.c,face.cu,face.cv,face.material,room),face.color);
+        dst.vertex(gpuLitVertex(face.a,face.au,face.av,face.material,room,face.na),face.color);
+        dst.vertex(gpuLitVertex(face.b,face.bu,face.bv,face.material,room,face.nb),face.color);
+        dst.vertex(gpuLitVertex(face.c,face.cu,face.cv,face.material,room,face.nc),face.color);
     }
-    private Vertex gpuLitVertex(Point p,double u,double v,int material,int room){
+    private Vertex gpuLitVertex(Point p,double u,double v,int material,int room,Point normal){
         var result=litVertex(p,u,v,material,room);var at=result.p;
+        if(normal!=null){var n=fixtureLighting.sampleNormal(room,p.x,p.y,p.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,p.x,p.y,p.z);result=new Vertex(at,u,v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));}
         double beam=at.z>NEAR?lampBeam(at.z,Math.hypot(at.x,at.y)/at.z):0;
+        if(normal!=null){double dx=x-p.x,dy=eyeHeight-p.y,dz=z-p.z,d=Math.sqrt(dx*dx+dy*dy+dz*dz);beam*=.12+.88*Math.max(0,(normal.x*dx+normal.y*dy+normal.z*dz)/Math.max(.001,d));}
         return new Vertex(at,u,v,result.r+beam,result.g+beam,result.b+beam);
     }
     private final long gpuSceneId=GpuWorldRenderer.nextId();
@@ -1451,12 +1456,15 @@ public final class SceneRenderer {
             surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),
                 entry.getValue().complete()));
         long submitted=GpuWorldRenderer.nextId();
+        if(map!=null&&map.nativeSite())waterViews.put(submitted,waterView(waterClock));
+        consumedWaterView=null;
         lastSubmittedGpuFrame=submitted;
         backend.submit(new GpuWorldRenderer.Frame(gpuSceneId,submitted,
             renderWidth,renderHeight,(float)focal,
             (float)psxPreset.snap,(float)psxPreset.affine,surfaces));
         GpuWorldRenderer.Result available=backend.latest();
         if(GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight)){
+            consumedWaterView=waterViews.get(available.frameId());
             int[] image=available.argb();
             float[] zbuffer=available.depth();
             for(int i=0;i<pixels.length;i++){
@@ -1469,6 +1477,7 @@ public final class SceneRenderer {
         return true;
     }
     private void levelArchitecture(List<Face> out,HouseMap map){
+        if(map.nativeSite()){nativeArchitecture(out,map);return;}
         scenery(map);
         for(Face face:enclosureFaces.computeIfAbsent(map.level().revision(),
             key->enclosureScenery(map.level())))
@@ -1529,6 +1538,46 @@ public final class SceneRenderer {
             }
             own(out,part,s.room());
         }
+    }
+    private final java.util.Map<HollowCreekScene.Instance,List<Face>> nativeCache=new java.util.LinkedHashMap<>(64,.75f,true){protected boolean removeEldestEntry(java.util.Map.Entry<HollowCreekScene.Instance,List<Face>> e){return size()>96;}};
+    private List<Face> nativeBed;
+    private void nativeWaterBed(List<Face> out){
+        if(nativeBed==null){
+            java.awt.image.BufferedImage image;try(var in=HollowCreekWater.class.getResourceAsStream("/org/beckenburg/sites/hollow-creek-water-bed.png")){image=javax.imageio.ImageIO.read(in);}catch(java.io.IOException e){throw new IllegalStateException(e);}
+            int material=GlbProps.surfaceMaterial("Hollow Creek authored submerged shore grit",image);var faces=new ArrayList<Face>();
+            for(var t:HollowCreekWater.bed().triangles()){var a=t.a();var b=t.b();var c=t.c();faces.add(new Face(new Point(a.x(),a.y(),a.z()),new Point(b.x(),b.y(),b.z()),new Point(c.x(),c.y(),c.z()),0x9caaa1,material,a.x()/2,a.z()/2,b.x()/2,b.z()/2,c.x()/2,c.z()/2,HollowCreekLevel.owner((a.x()+b.x()+c.x())/3,(a.z()+b.z()+c.z())/3)));}nativeBed=List.copyOf(faces);
+        }
+        for(var face:nativeBed)if(faceInFrustum(face))out.add(face);
+    }
+    private void nativeArchitecture(List<Face> out,HouseMap map){
+        nativeWaterBed(out);
+        for(var socket:map.level().sockets())if(socket.type().equals("generator")){List<Face> control=new ArrayList<>();imported(control,"button_12",socket.x(),socket.y(),socket.z(),.30,socket.yaw());own(out,control,socket.room());}
+        for(var instance:HollowCreekScene.instances()){
+            if(!objectInView(instance.x(),instance.z(),instance.radius(),100))continue;
+            List<Face> faces=instance.billboard()?null:nativeCache.get(instance);
+            if(faces==null){var model=HollowCreekScene.model(instance);faces=new ArrayList<>(model.triangles().size());
+                for(var t:model.triangles()){var a=instance.transform(t.a(),x,z);var b=instance.transform(t.b(),x,z);var c=instance.transform(t.c(),x,z);int owner=HollowCreekLevel.owner((a.x()+b.x()+c.x())/3,(a.z()+b.z()+c.z())/3);
+                    boolean boat=instance.id().equals("level_hc_native_361_0");
+                    faces.add(new Face(new Point(a.x(),a.y(),a.z()),new Point(b.x(),b.y(),b.z()),new Point(c.x(),c.y(),c.z()),0xffffff,t.material(),t.a().u(),t.a().v(),t.b().u(),t.b().v(),t.c().u(),t.c().v(),owner,boat?new Point(t.a().nx(),t.a().ny(),t.a().nz()):null,boat?new Point(t.b().nx(),t.b().ny(),t.b().nz()):null,boat?new Point(t.c().nx(),t.c().ny(),t.c().nz()):null));}
+                if(!instance.billboard())nativeCache.put(instance,faces);
+            }
+            for(var face:faces)if(exportFullLevel||faceInFrustum(face))out.add(face);
+        }
+    }
+    private record WaterView(dev.mrcalzon.water.WaterModule.Camera camera,double clock,boolean lamp,double reach,double intensity,double width,boolean flame){}
+    private WaterView waterView(double clock){return new WaterView(new dev.mrcalzon.water.WaterModule.Camera(x,eyeHeight,z,yaw,pitch,focal,renderWidth,renderHeight),clock,lamp,lampReach,lampIntensity,lampWidth,flameLamp);}
+    private final java.util.Map<Long,WaterView> waterViews=new java.util.LinkedHashMap<>(){protected boolean removeEldestEntry(java.util.Map.Entry<Long,WaterView> e){return size()>32;}};
+    private WaterView consumedWaterView;private double waterClock;
+    public dev.mrcalzon.water.WaterModule.Statistics waterStatistics;
+    private void nativeWater(HouseMap map,boolean gpu,double clock){
+        if(!map.nativeSite())return;
+        var view=gpu?consumedWaterView:waterView(clock);
+        if(view==null)return;
+        waterStatistics=HollowCreekWater.module().composite(view.camera(),pixels,depths,view.clock(),(rgb,wx,wy,wz)->{
+            double qx=Math.rint(wx*2)/2,qz=Math.rint(wz*2)/2;var light=fixtureLighting.sample(HollowCreekLevel.owner(qx,qz),qx,wy+.03,qz);var c=view.camera();double dx=wx-c.x(),dy=wy-c.y(),dz=wz-c.z(),forward=dx*Math.sin(c.yaw())+dz*Math.cos(c.yaw()),pz=dy*Math.sin(c.pitch())+forward*Math.cos(c.pitch()),px=-dx*Math.cos(c.yaw())+dz*Math.sin(c.yaw()),py=dy*Math.cos(c.pitch())-forward*Math.sin(c.pitch());double beam=view.lamp()&&pz>NEAR?view.intensity()*Math.max(0,1-pz/view.reach())*(view.flame()?1:Math.max(0,1-Math.hypot(px,py)/pz/view.width())):0;
+            int result=0;double[] energy={light.r(),light.g(),light.b()};int i=0;
+            for(int shift:new int[]{16,8,0})result|=(int)Math.min(255,((rgb>>shift)&255)*(energy[i++]+beam)*environmentLight*weatherLightScale)<<shift;return result;
+        });
     }
     private static Point mountPoint(Point p,LevelDefinition.Socket s){
         double c=Math.cos(-s.yaw()),sn=Math.sin(-s.yaw());
@@ -2099,6 +2148,7 @@ public final class SceneRenderer {
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
         paintSky(map,clock);
+        int[] hazeBackground=map.nativeSite()?pixels.clone():null;
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         if(lightingMap!=map){lightingMap=map;fixtureLighting=new FixtureLighting(map);}fixtureLighting.frame(roomLights,roomLightTick);
         long geometryStart=System.nanoTime();
@@ -2107,8 +2157,9 @@ public final class SceneRenderer {
         appendDotsProjection(geometry);
         appendUvResidue(geometry,map);
         long geometryReady=System.nanoTime();
-        int visibleFaces=0;
-        if(drawGpuFaces(geometry,map)){
+        int visibleFaces=0;waterClock=clock;
+        boolean gpuFrame=drawGpuFaces(geometry,map);
+        if(gpuFrame){
             // GPU performs perspective raster, source material sampling and depth.
             visibleFaces=geometry.size();
         }else{
@@ -2119,6 +2170,7 @@ public final class SceneRenderer {
                 drawLitFace(face,room,0);
             }
         }
+        nativeWater(map,gpuFrame,clock);
         long geometryRendered=System.nanoTime();
         if(geometryRendered-geometryStart>200_000_000L)
             BeckenburgDeveloperTrace.renderSlow(
@@ -2126,6 +2178,7 @@ public final class SceneRenderer {
                 geometryReady-geometryStart,geometryRendered-geometryReady);
         renderVanSanctuary(map,clock);
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
+        if(map.nativeSite())DistanceDetail.apply(pixels,depths,renderWidth,renderHeight,hazeBackground);
         renderWeatherMeshes();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
@@ -2149,7 +2202,7 @@ public final class SceneRenderer {
         Point ca0=camera(f.a),cb0=camera(f.b),cc0=camera(f.c);double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
         if(ca0.z<NEAR&&cb0.z<NEAR&&cc0.z<NEAR||ca0.x>ca0.z*hx&&cb0.x>cb0.z*hx&&cc0.x>cc0.z*hx||ca0.x< -ca0.z*hx&&cb0.x< -cb0.z*hx&&cc0.x< -cc0.z*hx||ca0.y>ca0.z*hy&&cb0.y>cb0.z*hy&&cc0.y>cc0.z*hy||ca0.y< -ca0.z*hy&&cb0.y< -cb0.z*hy&&cc0.y< -cc0.z*hy)return;
 
-        if(room>=0&&room<12
+        if(room>=0&&room<12&&(lightingMap==null||!lightingMap.nativeSite())
             &&depth<lightingSubdivisionLimit(Math.max(0,
                 Math.min(ca0.z,Math.min(cb0.z,cc0.z))))
             &&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
@@ -2294,7 +2347,7 @@ public final class SceneRenderer {
         double delta=Double.isNaN(lastWeatherClock)?.05:Math.max(0,Math.min(1,clock-lastWeatherClock));
         lastWeatherClock=clock;
         int room=map==null?-1:map.roomAt(x,eyeHeight-.85,z);
-        boolean outdoors=map==null||room>=0&&map.outside(room);
+        boolean outdoors=map==null||map.nativeSite()?! (map!=null&&map.sheltered(x,eyeHeight,z)):room>=0&&map.outside(room);
         weatherFx.advance(delta,new dev.mrcalzon.weather.WeatherView(
             x,eyeHeight,z,yaw,outdoors?1:0));
         var wx=weatherFx.weather().state();

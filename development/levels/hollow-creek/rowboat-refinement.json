@@ -1,0 +1,59 @@
+{
+  "parent": "development/levels/hollow-creek/hollow-creek-green-grass.blend",
+  "parent_sha256": "e7d53ad52972b5963132876aa40540fa197c8f92db131d8360c90c378ee7740f",
+  "scene": "development/levels/hollow-creek/hollow-creek-rowboat-refined.blend",
+  "scene_sha256": "c12208b1c465a5fa9ab1ddf5339746736ee10e65c0aae0d47a21196b1d89fc08",
+  "model_sha256": "cad3b00ce28c7ef5e15e0aff4dd2192649ee279ca7c45ae039468159a0d22071",
+  "seat_checks": [
+    {
+      "group": "Supported rowing thwart",
+      "old_half_width": 0.5981183052062988,
+      "new_half_width": 0.47839912223815917,
+      "minimum_shell_clearance": 0.012
+    },
+    {
+      "group": "Supported rowing thwart.001",
+      "old_half_width": 0.7680000066757202,
+      "new_half_width": 0.6907875781059265,
+      "minimum_shell_clearance": 0.012
+    },
+    {
+      "group": "Supported rowing thwart.002",
+      "old_half_width": 0.5981183052062988,
+      "new_half_width": 0.47839912223815917,
+      "minimum_shell_clearance": 0.012
+    }
+  ],
+  "oar_checks": [
+    {
+      "group": "Stowed oar shaft",
+      "minimum_inner_hull_clearance": 0.3691859468817711,
+      "shaft_bears_on_thwarts": true
+    },
+    {
+      "group": "Stowed oar blade",
+      "minimum_inner_hull_clearance": 0.11454573273658752,
+      "shaft_bears_on_thwarts": true
+    },
+    {
+      "group": "Stowed oar shaft.001",
+      "minimum_inner_hull_clearance": 0.3691859468817711,
+      "shaft_bears_on_thwarts": true
+    },
+    {
+      "group": "Stowed oar blade.001",
+      "minimum_inner_hull_clearance": 0.11454573273658752,
+      "shaft_bears_on_thwarts": true
+    }
+  ],
+  "hull_vertices_unchanged": true,
+  "changed_vertices": 228,
+  "textures": [
+    "rowboat-paint-v2.png",
+    "rowboat-wood-v2.png",
+    "rowboat-metal-v2.png"
+  ],
+  "limitations": [
+    "Seat fit and native hull shape retained; final human model acceptance pending."
+  ]
+}

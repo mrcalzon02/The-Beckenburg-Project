@@ -53,7 +53,7 @@ public final class GlbProps {
         names.addAll(EquipmentModelCatalog.approvedModels());
         return java.util.Collections.unmodifiableSet(names);
     }
-    public record Vertex(double x,double y,double z,double u,double v) { }
+    public record Vertex(double x,double y,double z,double u,double v,double nx,double ny,double nz) {public Vertex(double x,double y,double z,double u,double v){this(x,y,z,u,v,0,0,0);}}
     public record Triangle(Vertex a,Vertex b,Vertex c,int material) { }
     public record Model(List<Triangle> triangles) { }
     private static final Map<String,Model> cache=new HashMap<>();
@@ -157,6 +157,10 @@ public final class GlbProps {
             return m;
         }catch(IOException failure){throw new IllegalStateException("Model unavailable: "+name,failure);}
     }
+    /** Preserve authored atlas resolution during GPU upload; tightly packed UV
+     * islands cannot survive an unconditional 128px nearest downsample. */
+    public static synchronized int textureWidth(int material){int i=material-TEXTURE_BASE;return i>=0&&i<textures.size()?textures.get(i).getWidth():128;}
+    public static synchronized int textureHeight(int material){int i=material-TEXTURE_BASE;return i>=0&&i<textures.size()?textures.get(i).getHeight():128;}
     /** Model triangle list is immutable and cannot mutate runtime source geometry. */
     public static synchronized int sample(int material,double u,double v){
         if(material==VAN_MAP_MATERIAL){
@@ -264,7 +268,7 @@ public final class GlbProps {
                 throw new IOException("Invalid embedded PNG");
             materialIds[i]=TEXTURE_BASE+textures.size();
             textures.add(picture);
-            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)));
+            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)));
             materialNames.add(String.valueOf(obj(materials.get(i)).getOrDefault("name","")));
             double[] color=vec(pbr.get("baseColorFactor"),1,1,1,1);
             diffuseFactors.add(color);
@@ -311,7 +315,17 @@ public final class GlbProps {
                     double u=component(bb,binStart,binLength,views,uv,i,0,2),
                            v=component(bb,binStart,binLength,views,uv,i,1,2);
                     if(!Double.isFinite(rx+ry+rz+u+v))throw new IOException("Nonfinite mesh");
-                    vertices[i]=new Vertex(rx,ry,rz,u,v);
+                    double nx=0,ny=0,nz=0;
+                    if(attrib.containsKey("NORMAL")){
+                        var normal=obj(accessors.get(integer(attrib.get("NORMAL"))));if(get(normal,"count",-1)!=count||get(normal,"componentType",-1)!=5126||!"VEC3".equals(normal.get("type")))throw new IOException("Invalid vertex normal");
+                        double ax=component(bb,binStart,binLength,views,normal,i,0,3),ay=component(bb,binStart,binLength,views,normal,i,1,3),az=component(bb,binStart,binLength,views,normal,i,2,3);
+                        // Cofactor matrix = determinant * inverse transpose.
+                        double a=world[0],b=world[1],c=world[2],d=world[4],e=world[5],f=world[6],g=world[8],h=world[9],j=world[10],det=a*(e*j-f*h)-b*(d*j-f*g)+c*(d*h-e*g);
+                        if(Math.abs(det)<1e-12)throw new IOException("Singular normal transform");
+                        nx=((e*j-f*h)*ax+(f*g-d*j)*ay+(d*h-e*g)*az)/det;ny=((c*h-b*j)*ax+(a*j-c*g)*ay+(b*g-a*h)*az)/det;nz=((b*f-c*e)*ax+(c*d-a*f)*ay+(a*e-b*d)*az)/det;
+                        double length=Math.sqrt(nx*nx+ny*ny+nz*nz);if(!Double.isFinite(length)||length<1e-8)throw new IOException("Invalid normal length");nx/=length;ny/=length;nz/=length;
+                    }
+                    vertices[i]=new Vertex(rx,ry,rz,u,v,nx,ny,nz);
                 }
                 int componentType=get(indices,"componentType",-1);
                 if(componentType!=5121&&componentType!=5123&&componentType!=5125)

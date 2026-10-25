@@ -10,6 +10,7 @@ public final class LevelPlans {
     public static LevelDefinition build(HouseMap.Site site) {
         return switch(site.name()) {
             case "HOUSE" -> house();
+            case "HOLLOW_CREEK" -> HollowCreekLevel.build();
             case "MANSION" -> wing("mansion","Blackthorn Manor",10,20,26,38,3.6,
                 new String[]{"Grand staircase hall","Library","Dining hall","Scullery","Ballroom","Drawing room","Morning room","Upper gallery","Master suite","Servants corridor","Attic archive","Wine cellar"},"parquet","estate");
             case "PRISON" -> wing("prison","Beckenburg Penitentiary",8,20,27,39,3.4,

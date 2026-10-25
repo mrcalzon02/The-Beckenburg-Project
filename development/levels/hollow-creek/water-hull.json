@@ -1,0 +1,148 @@
+{
+  "source": "development/levels/hollow-creek/hollow-creek-green-grass.blend",
+  "source_sha256": "e7d53ad52972b5963132876aa40540fa197c8f92db131d8360c90c378ee7740f",
+  "hull_object": "West moored rowing boat",
+  "section_step_m": 0.01,
+  "conservative_mask": "Union adjacent actual inner sections; <=10mm vertical bracket; retained inside actual double-skin shell.",
+  "profile_sha256": "91a9d52dd2b3ecaf3d6f060dd5ca6d66a8bff3843a5297b8c7078d91c7f3b9e1",
+  "sections": [
+    {
+      "y": -2.06,
+      "vertices": 58,
+      "inner_area_m2": 0.6937829699999796,
+      "outer_area_m2": 1.6850536900000321
+    },
+    {
+      "y": -2.05,
+      "vertices": 66,
+      "inner_area_m2": 0.9029703900000143,
+      "outer_area_m2": 1.84579176000004
+    },
+    {
+      "y": -2.04,
+      "vertices": 74,
+      "inner_area_m2": 1.1053887999999574,
+      "outer_area_m2": 1.9963938699999844
+    },
+    {
+      "y": -2.03,
+      "vertices": 74,
+      "inner_area_m2": 1.3056514899999954,
+      "outer_area_m2": 2.141143244999988
+    },
+    {
+      "y": -2.02,
+      "vertices": 86,
+      "inner_area_m2": 1.502064599999997,
+      "outer_area_m2": 2.28112210000004
+    },
+    {
+      "y": -2.01,
+      "vertices": 86,
+      "inner_area_m2": 1.6610390900000027,
+      "outer_area_m2": 2.4175273599999727
+    },
+    {
+      "y": -2.0,
+      "vertices": 94,
+      "inner_area_m2": 1.806649919999991,
+      "outer_area_m2": 2.5508974800000317
+    },
+    {
+      "y": -1.99,
+      "vertices": 94,
+      "inner_area_m2": 1.9451894649999133,
+      "outer_area_m2": 2.6776698700000594
+    },
+    {
+      "y": -1.98,
+      "vertices": 98,
+      "inner_area_m2": 2.079014080000036,
+      "outer_area_m2": 2.780530859999942
+    },
+    {
+      "y": -1.97,
+      "vertices": 102,
+      "inner_area_m2": 2.2080934400000416,
+      "outer_area_m2": 2.872533080000011
+    },
+    {
+      "y": -1.96,
+      "vertices": 106,
+      "inner_area_m2": 2.331969325000081,
+      "outer_area_m2": 2.957560919999935
+    },
+    {
+      "y": -1.95,
+      "vertices": 106,
+      "inner_area_m2": 2.4520558799999534,
+      "outer_area_m2": 3.0377819250000186
+    },
+    {
+      "y": -1.94,
+      "vertices": 112,
+      "inner_area_m2": 2.556626730000076,
+      "outer_area_m2": 3.115223510000085
+    },
+    {
+      "y": -1.93,
+      "vertices": 112,
+      "inner_area_m2": 2.644920329999934,
+      "outer_area_m2": 3.1903589399998467
+    },
+    {
+      "y": -1.92,
+      "vertices": 112,
+      "inner_area_m2": 2.725742830000037,
+      "outer_area_m2": 3.263740840000011
+    },
+    {
+      "y": -1.91,
+      "vertices": 112,
+      "inner_area_m2": 2.8014534899999504,
+      "outer_area_m2": 3.3356235100001044
+    },
+    {
+      "y": -1.9,
+      "vertices": 112,
+      "inner_area_m2": 2.8739928500000502,
+      "outer_area_m2": 3.4062559599999815
+    },
+    {
+      "y": -1.89,
+      "vertices": 112,
+      "inner_area_m2": 2.94436405000004,
+      "outer_area_m2": 3.4710404099999437
+    },
+    {
+      "y": -1.88,
+      "vertices": 108,
+      "inner_area_m2": 3.0128734099999335,
+      "outer_area_m2": 3.5236210200000073
+    },
+    {
+      "y": -1.87,
+      "vertices": 110,
+      "inner_area_m2": 3.0799456149999855,
+      "outer_area_m2": 3.571884960000041
+    },
+    {
+      "y": -1.86,
+      "vertices": 110,
+      "inner_area_m2": 3.145900649999902,
+      "outer_area_m2": 3.617336649999949
+    },
+    {
+      "y": -1.85,
+      "vertices": 104,
+      "inner_area_m2": 3.2108571649999575,
+      "outer_area_m2": 3.660814385000002
+    },
+    {
+      "y": -1.84,
+      "vertices": 110,
+      "inner_area_m2": 3.2632856000000388,
+      "outer_area_m2": 3.7028259700000206
+    }
+  ]
+}

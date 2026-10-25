@@ -1,0 +1,2316 @@
+{
+  "status": "pass-exact-native-scene-export",
+  "source_sha256": "e7d53ad52972b5963132876aa40540fa197c8f92db131d8360c90c378ee7740f",
+  "unique_assets": 384,
+  "unique_asset_triangles": 729644,
+  "instances": 598,
+  "exact_source_world_matrices": true,
+  "asset_checks": [
+    {
+      "id": "level_hc_native_000_0",
+      "triangles": 9748,
+      "sha256": "9cd98423e550996dd7b73048c316b6e89ddf4d26e22aa6a3c2eb17f4ce6a1d15",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_001_0",
+      "triangles": 9748,
+      "sha256": "c209b4e31c4501e195dc1fc4bd4361c63dbea1ba09854bd65a9056fcf5f8258b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_002_0",
+      "triangles": 9748,
+      "sha256": "8b475445f760a64eedcb0cd5bca451568840cce96db11d043fd772ae719d1f63",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_003_0",
+      "triangles": 9748,
+      "sha256": "856ceeeac66f0e081f317dba4ddc35c269f24de0ab19348ea50e3d0fd2def643",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_004_0",
+      "triangles": 9748,
+      "sha256": "6fef04a217a630c0f7f5fd6f4fbaff400bf6ae27921bce2a864fbd7e3c757952",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_005_0",
+      "triangles": 9748,
+      "sha256": "92a228a2768d9fe7a7cd27391265f37d83fc0cc052e581abe144128ad2959615",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_006_0",
+      "triangles": 6412,
+      "sha256": "b7139b5c8cce82c7112f1921d4a4d117609caa5762b2def5165d0878a7db936d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_007_0",
+      "triangles": 7716,
+      "sha256": "54a18976f93bdf89f95b8f74476b009881ef1dfa70b11cc6cae37a5c080c3a91",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_008_0",
+      "triangles": 6408,
+      "sha256": "6f98c7993709da4da5b33408e7ff6953b425be51ca2c28085e326a0fcd288634",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_009_0",
+      "triangles": 7724,
+      "sha256": "2831d33820488bf253cf125294f3a809f7b430a1b9fbaf075266bb3fbaba677d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_010_0",
+      "triangles": 6472,
+      "sha256": "f70cddb6c8b075a7edc2a7d0332c1d64bb70ac5ed3ef2aba913aaa2586254e23",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_011_0",
+      "triangles": 7712,
+      "sha256": "1248682c6be4b1eec8634765a1899981bdb85f30bd95842b86b1050c03f28ea1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_012_0",
+      "triangles": 17972,
+      "sha256": "ed72576212f7dc469b7ece69ecc94f1c2cbe1154c4bd8c33e82a3c2fc383f786",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_013_0",
+      "triangles": 18148,
+      "sha256": "a40176cc87dbb3336754119b5d748eb7bc76414af5bbc8633aae0731f383dadf",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_014_0",
+      "triangles": 17972,
+      "sha256": "1bce8e85439ddc785cea28310769e51cf0eca882fef0f38f1e779d6942f3374e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_015_0",
+      "triangles": 18148,
+      "sha256": "898f6edd1518672174996f29ca3f34d44197deb0cacd9fce79b8c2a6fd528a08",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_016_0",
+      "triangles": 17972,
+      "sha256": "38aa424ebc552f46d118cf2579f184e3dff83e3f6fd8e375d3dd62dcba89fe62",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_017_0",
+      "triangles": 18148,
+      "sha256": "ad429a4b2ce438fde953a52a7e645aff83e6e79c5e9c7e2101925702e8ea56c2",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_018_0",
+      "triangles": 17972,
+      "sha256": "d3060ba96daacf66e9e49fe82fe453d44c9a9e9848c2d24edd50dd9e8b7e9b82",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_019_0",
+      "triangles": 18148,
+      "sha256": "74dc14dbc7b7aad2706e73559d3c47b397ce55017d77cf893a27b94c4c80ce5c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_020_0",
+      "triangles": 17972,
+      "sha256": "d4a3025853ff8d8c10eab4f1bc60ce6dde7ebe1392768db9744386afa9772042",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_021_0",
+      "triangles": 18148,
+      "sha256": "9099037fc55f0102a93667a2f502c981d9be6402d9603fbae1fff7229b803d0b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_022_0",
+      "triangles": 17972,
+      "sha256": "88a741ccf4b0901fc5554c0fe99b8d188dbde04e7cfe75632ccdf8c08c4b31b1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_023_0",
+      "triangles": 18148,
+      "sha256": "43b7a16b7a9441ec1bf4662e189e3f606ba232a0895eba10bcf44eca49ce433c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_024_0",
+      "triangles": 17972,
+      "sha256": "2711ecc007b95431188da15e9b99a57f4545b2e313e17fb023106ef65665d56f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_025_0",
+      "triangles": 18148,
+      "sha256": "cd1839499bac846d84d22edcbf4767ae0faffad6cbd4d4ca6ba789737a9be28a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_026_0",
+      "triangles": 17972,
+      "sha256": "d3da4febd8e6f14080e92bc5fd5e53b9d9f51d50e1743dd53e0b79fc83f8eb3e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_027_0",
+      "triangles": 18148,
+      "sha256": "786db08e0ca72d6a913f047bbc2253e3db2dfc217235f2940a186e167cf4e66e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_028_0",
+      "triangles": 17972,
+      "sha256": "5b8ef3fdda4a8c63254c60d22e5ae78f940b1b24ae5e1ddc827c309350657bff",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_029_0",
+      "triangles": 18148,
+      "sha256": "887501990fec4d156fc1cd1679ad9857c2456583cf0c1060baa6e7af86d72e7d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_030_0",
+      "triangles": 17972,
+      "sha256": "8836bf49715868f6eb8de3bc572f2d63275e2ecc113e3dfa20e39c124410a92c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_031_0",
+      "triangles": 18148,
+      "sha256": "2e470a171826a6ce1dfaf42d738b1fdd0865fbaa87d32b5a397e216d1aa5a2ba",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_032_0",
+      "triangles": 2564,
+      "sha256": "47d4145ab93bd996dc3fd765c70669a22e11e29f27ca7d26967da6236283902b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_033_0",
+      "triangles": 6428,
+      "sha256": "7bc858dd9a3fe473a65f36761f50d9de58fd724b0f7b6446c34c544d9b3db55e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_034_0",
+      "triangles": 6428,
+      "sha256": "545c2418d1bfe296baf1607256e91f40a02c4d6f7a1ec91b9511c988c17c2dad",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_035_0",
+      "triangles": 12,
+      "sha256": "8ac882b7c926ca350988628cb3c9b232f4d67c51e5dcffc8527e43f9f87fe9df",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_036_0",
+      "triangles": 12,
+      "sha256": "de6ba8e3a8134415dec71a2094c6787f98e057973dbfdb3b2c1274281a10cff0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_037_0",
+      "triangles": 12,
+      "sha256": "af874881aa50c2fc60d90fa4913c8955a56c404e0fc601bbb08aa4d9fa79ff1c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_038_0",
+      "triangles": 12,
+      "sha256": "64657c31655c714de4988d6588b27062be504a79d24ae7db8365661c1304d9eb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_039_0",
+      "triangles": 12,
+      "sha256": "557077baffa4e6bf78cb0c0cb5ea8019ae8a335aadbc03b959a76aed1b9a0dcd",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_040_0",
+      "triangles": 12,
+      "sha256": "7a3c47a20cec5fa0d9d80b1f80cf8a923669f95d7b25e6cf5acc2633e998db34",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_041_0",
+      "triangles": 1160,
+      "sha256": "d905f436af319944aa5dcaeeeb3f4704f7038aa7276464e71de2266914969d7f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_042_0",
+      "triangles": 2648,
+      "sha256": "c5023f42fdc0b41a1bc131a8a02836fccc4e6fc23aea086f6384f5573c69f18b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_043_0",
+      "triangles": 2648,
+      "sha256": "1c6117ad29d49705650962f9c379f1a2b68622b574c0a93090fe8877ee26652d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_044_0",
+      "triangles": 2648,
+      "sha256": "4f5aac1166824bb8e6a2f5da40ce0f3cbbb5495c7303b612c4a24086e72ce80c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_045_0",
+      "triangles": 2648,
+      "sha256": "9391f9d016b01be0bb9ede40f5a50798b44ae831493bef08bd9af5fc07eac196",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_046_0",
+      "triangles": 2648,
+      "sha256": "d376cba04ab78be0bb84947bba3247916de9c009eb24d9de5ef349dea06142fb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_047_0",
+      "triangles": 2648,
+      "sha256": "418a2ba14eac8e769d6058e478f89a91b252b3daa0988ba196785e9bc6a829bc",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_048_0",
+      "triangles": 24000,
+      "sha256": "998fca15dcd67385ba3df7466b1ba617a2908ddd452db6e4c25d2f83cac384ed",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_048_1",
+      "triangles": 8520,
+      "sha256": "50220a2d790147972bd6064515ae2818a9e00397caa77feb969d47ee9e046be3",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_049_0",
+      "triangles": 576,
+      "sha256": "86ea7d4632be9a33e66066f7c699404a4c9f009f6c27ed9f5d917aeb1d22565c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_050_0",
+      "triangles": 384,
+      "sha256": "ac0969c82cd3c8dbd9e7e324797642d41dcf7ecc6e3933862f201c691a6c58d9",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_051_0",
+      "triangles": 12,
+      "sha256": "afc8144a2c9b886aed56e90b19f0f388f56adf822da027aa6bfe2dcefaa92d84",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_052_0",
+      "triangles": 12,
+      "sha256": "dfcd31f11957f92311198157ec9242172b7e5622b6a2b39485a4f09865692aeb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_053_0",
+      "triangles": 12,
+      "sha256": "f5a75e217463eb892e031fd02b2dbed4650ad97973f6ce2177cd197df47983fa",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_054_0",
+      "triangles": 12,
+      "sha256": "e206cfcf3ad2ff583ccabaaecd52f3781177875466b5a36f51dd4a182e3b7ab2",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_055_0",
+      "triangles": 12,
+      "sha256": "53a14ceafce48a122b8d4e19d6644533f70e6de6cc5f02ba2bd6967dc9f71f5e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_056_0",
+      "triangles": 12,
+      "sha256": "94f6701391ceedc93dfc517349ebe90704318d812916fa08e95e8665530c1d1e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_057_0",
+      "triangles": 12,
+      "sha256": "03a55d4aa49cb94ad20de92cde13ec0aae207a8cf4b0b47c50dda8e39a930fc1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_058_0",
+      "triangles": 12,
+      "sha256": "461647927c532798be1ab3ebc4162d5caaa116ee4b980167ea47227c26ae0765",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_059_0",
+      "triangles": 12,
+      "sha256": "60a44b65a28f2a5e3098d07698784df461e278a29a01265ce43934d8af23721b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_060_0",
+      "triangles": 12,
+      "sha256": "47777281312d4f02f31738705c9299372db2164675f63854dc7b3740f1dd107f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_061_0",
+      "triangles": 12,
+      "sha256": "c0cf69e0e481abd9c3bcd588df07536e846b3993670f09b05cb8ea9ead59d32c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_062_0",
+      "triangles": 12,
+      "sha256": "8c6dae3e14d763023910009d53d59658475f187e822c282afea1fdaffd2f7d82",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_063_0",
+      "triangles": 80,
+      "sha256": "858ef6f4120e572c217829172f266fa3ffe48b4044a587e127a16558a275fc3d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_064_0",
+      "triangles": 80,
+      "sha256": "ffac6de4ee36967931d025926825df951eaef076019493a09fdc318cb3c2bb37",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_065_0",
+      "triangles": 80,
+      "sha256": "6a8ecfa6e4ba4c9c3e22f436bd3bfcb4460da207b47ff3b5bb87c081a574a4da",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_066_0",
+      "triangles": 80,
+      "sha256": "2e1d522eb5a6da572c805d0b33b2c3170b03733fc51a96b32c5d4730b5965fa4",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_067_0",
+      "triangles": 80,
+      "sha256": "bf57f867c9f5bc277fde8aa52cc758ed467e3776ed02dce1b7335736800108e7",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_068_0",
+      "triangles": 80,
+      "sha256": "ce6f773e5309a2c7e86d357acaab4eb99207cdedfbcc3e21cbeec898f3290656",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_069_0",
+      "triangles": 80,
+      "sha256": "41bb5c5764b6d787e05d526e680a94656a0c4d4a62454a9764584c5731d96817",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_070_0",
+      "triangles": 80,
+      "sha256": "7743ec65896bff942256be847f08eb4860146578c8fe80c9976fa6dc52d78cc8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_071_0",
+      "triangles": 80,
+      "sha256": "927740cb9cfb2e9df525c3289ae37b9dc4989d1c056b84109dd3e0aaf7744fae",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_072_0",
+      "triangles": 80,
+      "sha256": "423f6e1a34889d0c998055895b892eba53f7654e9c49259d29a34b85c2523906",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_073_0",
+      "triangles": 80,
+      "sha256": "72a311f5073bbe35936436c9e65e005105371041be0ae84cfc803d7caca68d64",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_074_0",
+      "triangles": 80,
+      "sha256": "b98f53ff160c2f5a45167d4e885239945beb4fad1d679f9e90abae6c75463a10",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_075_0",
+      "triangles": 80,
+      "sha256": "3910799f34d88823ea2bf99e27ac09630591f368b79e04f5008726bbd1c1a8d0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_076_0",
+      "triangles": 80,
+      "sha256": "cc906b5fa5db8dcf42477b424b58f5ebd3367aa41a383c2a26529bd797771d50",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_077_0",
+      "triangles": 80,
+      "sha256": "f84c24aa5233934bd3dec47da530598243eccdbdfe1d177fcbdc104721a1674e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_078_0",
+      "triangles": 80,
+      "sha256": "43b875059bc41952d37a4d19ea3acd6e9ace2691c57768202b40ad83af6415b5",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_079_0",
+      "triangles": 80,
+      "sha256": "7917c9f4244d737dd7eb20f924d3f87866cae25c0ae8c4be0042862b73b22bfe",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_080_0",
+      "triangles": 80,
+      "sha256": "3ec9340e50b9dde520a6aea42c63f215b45130ac76cb7ad6bcda42a964340cdc",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_081_0",
+      "triangles": 80,
+      "sha256": "8dc0123793db446d43a8d5bb6afc8f4a593d20cbd1bf3df327a3e67261d10dfb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_082_0",
+      "triangles": 80,
+      "sha256": "686bf2ccf62578b6797310e3fb51dd6b14292b6095488aa96db8ffa6b27431c1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_083_0",
+      "triangles": 24000,
+      "sha256": "dd33a6c23047a701c2986422605ae3d536a2a1856c93ff5a861c6051bd63354d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_083_1",
+      "triangles": 1688,
+      "sha256": "6014e28a86a00c8c9913d85d1f502245ecc52fbe40d040058e21c5ae7fc9af36",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_084_0",
+      "triangles": 5284,
+      "sha256": "05c452ba6d934eab10705151b1a4f5e337091723dcd6c8c7bc5452d57b052f0f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_085_0",
+      "triangles": 492,
+      "sha256": "34e07d43d3d3de4f85f29daef8455c6ea91620ac04da0de471a8528decea1736",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_086_0",
+      "triangles": 6812,
+      "sha256": "824fbff668bf5e3e8896ac7b29130dae7b65b92e7876982380a0fa07ccbb1e14",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_087_0",
+      "triangles": 6812,
+      "sha256": "9ce72cbfa4c1f7cedd6817bdf21a62cf560683d7d4efd986b5f02cde258e3488",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_088_0",
+      "triangles": 80,
+      "sha256": "d60fb4e7d93529d2095dfe4d930065edadcdbdcebd0fc202b19b2a09c76cbfe5",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_089_0",
+      "triangles": 80,
+      "sha256": "f855ca446fa4b3ca5d8f3863d61a574ddf9487f0d4a492a2fbacecd292cf7f55",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_090_0",
+      "triangles": 80,
+      "sha256": "0ff6e29b6011dc410fddbcf43e806617a1770278ef0fe34b733bfc634d7e5386",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_091_0",
+      "triangles": 80,
+      "sha256": "68ce1cf1e9293d0cc12daeec23af0776d48c478d34daac836c730b9932d34bde",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_092_0",
+      "triangles": 80,
+      "sha256": "172210e36e973823270bc4cff9b7e0a108fdd3c61bfc8d76c054c20eb081f254",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_093_0",
+      "triangles": 80,
+      "sha256": "0ba51dd69a7e60d54b26397d639196a9987b14e4fb8e5011907f66533030a150",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_094_0",
+      "triangles": 80,
+      "sha256": "9c9e211c3862aceea2f12ef9699086285c1995e806b15f1871644ea5af8f1f3e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_095_0",
+      "triangles": 80,
+      "sha256": "18eae65ebeda8582a4e995473bba394b4a62388917b797a354cc27fe7e7a861a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_096_0",
+      "triangles": 80,
+      "sha256": "67963a0725475c518d9d3d66fe72917812812eea208993631bb43e3d434f5b10",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_097_0",
+      "triangles": 80,
+      "sha256": "197b7931c4f4d8d9f69d054d887c6b186f9f418865b391102bfbcc89b5452a4e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_098_0",
+      "triangles": 80,
+      "sha256": "efb1af377c535240350fc90f20b2bc3e029ce6918850ac9f2bc6522dfe442ca8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_099_0",
+      "triangles": 80,
+      "sha256": "22edbfa84a55654e68882e11085aac889ed7e9e8c11948c295a561cc112ab6a4",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_100_0",
+      "triangles": 80,
+      "sha256": "7a675e6c72ad674e6c5cff4fd1c3107ba2da305343d9b5a2293a1ebb74dd95ed",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_101_0",
+      "triangles": 80,
+      "sha256": "3f0e04463fc432969871abe4b2855f23702a5ef8601abc37c20bc1b052bf07d8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_102_0",
+      "triangles": 80,
+      "sha256": "d1e99b4f73ff0451432ad068d907f29d247443731ce23db1dd9c046c490a08b5",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_103_0",
+      "triangles": 80,
+      "sha256": "38f4dbac3b96d9d07723a289b30b8ba299256a09fa4a29b879230507d889dfaa",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_104_0",
+      "triangles": 80,
+      "sha256": "38255d92dd38fdafae48fd15a122ff7faa74b6c250c169b7735da47683887476",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_105_0",
+      "triangles": 80,
+      "sha256": "fdb4dc1d34895e2aa457d169a76abd0db20bbcf2ae8df2dee00f3f22bf178c6d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_106_0",
+      "triangles": 80,
+      "sha256": "19d44da1c9a687a4aae449b71a952a65da7151f2343a400c90c3d99a7f861c90",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_107_0",
+      "triangles": 80,
+      "sha256": "95b47adbbefaeaa0eaf0474ff668e5d706a0edb21fcfb5e0beea9abff60fd8c6",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_108_0",
+      "triangles": 80,
+      "sha256": "6cfa3c28fa49b8cd59b9c66eb9a1322aed8ccb79615f8f4eb07d12be256f52b0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_109_0",
+      "triangles": 80,
+      "sha256": "e312cade575d0185170e1e207cb890b5dc4172d5a173827be619973ff4c0f348",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_110_0",
+      "triangles": 80,
+      "sha256": "c2d581cb3f0da65e6976bfaeec66e6432ba6b883dc75763828564146e3cfb0ad",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_111_0",
+      "triangles": 80,
+      "sha256": "9cdc43fc6e85dff53077093180307776463d50d9fdcca1b1643d499bdeb38b1b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_112_0",
+      "triangles": 80,
+      "sha256": "1bcca804696283fd80a0ea74edfc898585dcc2a69d8b5de6a06745be72eac149",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_113_0",
+      "triangles": 80,
+      "sha256": "a8a05b87e9de25b12368b39ba42cdb574671fe46a5e19be6cf55ff5b3e8c34b1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_114_0",
+      "triangles": 80,
+      "sha256": "810b427586ec1e9e2b18f31deb00503d26038c26ce7ab1c25e36b63ad88b60ee",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_115_0",
+      "triangles": 80,
+      "sha256": "869fff7dba5693d81f1ff4804710a6f52c00743b79d997493766cdf89351d9ff",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_116_0",
+      "triangles": 80,
+      "sha256": "029728c1911de32712b396b301b3502e8657989cb0559dc11d968d36a9724101",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_117_0",
+      "triangles": 80,
+      "sha256": "5b85fa2186d471c4b9491c167ae9aa7b4daca6f96dd5d4e2c774c7e723a49a42",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_118_0",
+      "triangles": 80,
+      "sha256": "531bb53d65160aa83991808479fdc81c72b296e2cbbd2b773839b491ff7e6a23",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_119_0",
+      "triangles": 80,
+      "sha256": "ebc4e5a92a64cad196fac09ac0bed0afd527803b08e6cfb414c41f4f30f7cebe",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_120_0",
+      "triangles": 80,
+      "sha256": "78a314eaf6d90c1eabbf341bd3fbb1c871d745ae7490964bd3ce93e75c76245a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_121_0",
+      "triangles": 80,
+      "sha256": "6877900c59d03b49dd76c9d0357ca52cb58f11e2f1735a27f600cf07565ec9b3",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_122_0",
+      "triangles": 80,
+      "sha256": "d8795abcf6adbbf6111c0892d16a979af1d87737cb7b6cd45d34f50a367064da",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_123_0",
+      "triangles": 80,
+      "sha256": "95585604eab18da193d04e3ec0e1860254dc2797a5d3a0fc1caf064f7836d489",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_124_0",
+      "triangles": 80,
+      "sha256": "502b6d7fff46c270c55ee8e31b34b756414e657f6785084866f8c7b71965ebdb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_125_0",
+      "triangles": 80,
+      "sha256": "043e7241751aed522497e340e9021bd1c62a675fdcb7c5f747024ec3fd35cabe",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_126_0",
+      "triangles": 80,
+      "sha256": "5966297293aa7952516ff1c12b6ade256a56b528b0dc7682c43c31267efe145d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_127_0",
+      "triangles": 80,
+      "sha256": "925274594da6d2393c62072ad404e5f058373723effb3a13f1e527e9260830e6",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_128_0",
+      "triangles": 80,
+      "sha256": "d8b5d34233fb977746c3250abb8c2d7a0db577cc1013eb6905c281f82237462f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_129_0",
+      "triangles": 80,
+      "sha256": "3ce330eb6bb847dd4544e25f0270d0226833d1923e1a5612c131f90e3a84107d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_130_0",
+      "triangles": 80,
+      "sha256": "97db301681e7440b50c0c653bc88066c0d9da124a5ec089647b71e59d508233a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_131_0",
+      "triangles": 80,
+      "sha256": "8fdb8005d9cc6103ed937fd16be2da05b68d798405a589e7ae45fccb6a200b72",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_132_0",
+      "triangles": 80,
+      "sha256": "c07eb0ac9d6c98e4e3ef8f5db5b12009d8256349eaa57349cc3e982426887585",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_133_0",
+      "triangles": 80,
+      "sha256": "a4430c72c15f8488780442d83188d9648dcca471bb725b81c480029e75f96a61",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_134_0",
+      "triangles": 80,
+      "sha256": "5759e1532efd926b3298232437401112054ea3aff606440e340dda61190ca6fe",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_135_0",
+      "triangles": 80,
+      "sha256": "31c9b2025b6773c7fad635eab4985a2cd2b3ca17cfacef6be951863879438940",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_136_0",
+      "triangles": 80,
+      "sha256": "c5e773c43b4c99838ff417aa20dc3270119ebb6ab83fe8006cf634c84e5ddd8a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_137_0",
+      "triangles": 80,
+      "sha256": "40eee4dcf7acdf20244f80fd8ba9531faa4b138d678b1458bd68ff1816b51539",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_138_0",
+      "triangles": 80,
+      "sha256": "f54f5bd04b397ee7e2200875c5948e35ef26eb24727eec0d5e8ffe36f970cc10",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_139_0",
+      "triangles": 80,
+      "sha256": "c257df11bb4415b4063c91bac11098dbf4aa07e695a3e54a8943f6ba438c66ff",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_140_0",
+      "triangles": 80,
+      "sha256": "a6bb41f364e44151f8c93188f45c03fa6822113246ce20279b400377d5ae83db",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_141_0",
+      "triangles": 80,
+      "sha256": "a800b362a93d5dc5f941549546b71e16026d659587b248e51a68feec1d01734a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_142_0",
+      "triangles": 80,
+      "sha256": "d216331fab63632a58a6d614e8118e967453495cba73fde09f9436c2e961ed1a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_143_0",
+      "triangles": 80,
+      "sha256": "df442d8f15987b72c418048df3d5600930f682b14a6559e378e5dc752ad61ff1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_144_0",
+      "triangles": 80,
+      "sha256": "909801333236ca3c06bd1804611b8e957eaf39a0e6b8a2be873d5510c35a151b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_145_0",
+      "triangles": 80,
+      "sha256": "4e2aec17c0b6cde9b28f424d24ea10cf7f4a69e9fbcad88672fd42ea0e9dd622",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_146_0",
+      "triangles": 12,
+      "sha256": "43584be899da730234c74194040572dbef23d26c24be56492c0d3d084772864c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_147_0",
+      "triangles": 12,
+      "sha256": "c6652f2a8f3c6b448373e4ccd47a5c0ae2bfacfeaf39e3a68032e61dcbacedcb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_148_0",
+      "triangles": 12,
+      "sha256": "ac9713f07be379480db1460ca991024bb127ee29930205e3baffa94ae5aba70f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_149_0",
+      "triangles": 12,
+      "sha256": "3b8eea129e88b38461695d0cd7bb8f1bb723d1a498c42738cfef2f8b9ad264ca",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_150_0",
+      "triangles": 12,
+      "sha256": "3fe1f7111ee45efe52726caedaa47641c609467c2ad8bfbe6153beb86f446bb8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_151_0",
+      "triangles": 12,
+      "sha256": "690a7e874c73a350c72fbe45f8538dc75e0917c07beb2a727767bb847cf153cd",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_152_0",
+      "triangles": 12,
+      "sha256": "77c2352a6f51b68114b0e6f101a94a9b7503769e6509377125de69d301e1165e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_153_0",
+      "triangles": 12,
+      "sha256": "6f7521390077502a07a48f6a6a283998da72d062270803551477c6b2fa710c4c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_154_0",
+      "triangles": 12,
+      "sha256": "2e5c7fc4ad0ddb4400166bbb0b3503649eac647469f5e0a927171ea55f0fdc1d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_155_0",
+      "triangles": 12,
+      "sha256": "bc6bdee9e574411134f966a4578d44cda071374cb71fc2bdbd92a16fd6957434",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_156_0",
+      "triangles": 12,
+      "sha256": "a8abfee38b5044295d19e98b681adb0b3a4ce259132e5f30b79e1429cf22271a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_157_0",
+      "triangles": 12,
+      "sha256": "cea81e6135a756818df553d09315a3dd23f27647bdc8524cfc3026acf5849869",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_158_0",
+      "triangles": 12,
+      "sha256": "27ffd5414020e7550150b5237ce7341e1a790b69410a0214dcc307ab9c41b170",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_159_0",
+      "triangles": 12,
+      "sha256": "a4dc09a00e4e3e1ac93a394f26c659d7fe53a19a29fe08fd06fc200eef1fe504",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_160_0",
+      "triangles": 12,
+      "sha256": "f6050cd29937754ace1d38d050cfa644e881bd4a21f2aa631a156ce2dec972c8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_161_0",
+      "triangles": 12,
+      "sha256": "9bc8fd66b1e05de6c6e150a704663df1a042a142cc2ae51de706048d6b5e49d6",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_162_0",
+      "triangles": 12,
+      "sha256": "17a18e53812507d5b326f409ab000d98411df0ee8a35e6d8a95c548340322bb1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_163_0",
+      "triangles": 12,
+      "sha256": "92366aaf21a331c5bf201d3ff54232c26125db03ce61e5dfe0a2ccf17c32ef99",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_164_0",
+      "triangles": 12,
+      "sha256": "f22a2110dbc907d18127366e889808bf8830f3a170a8dd864b7097595b603dda",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_165_0",
+      "triangles": 12,
+      "sha256": "aeb7d4e770cc954d17e794af1d20b484d62328a3349a8e0b5501285246350a56",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_166_0",
+      "triangles": 12,
+      "sha256": "682bfd700d1b86b926b3fbce80ed82396566126662e6965cf9935b8cb1addf32",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_167_0",
+      "triangles": 12,
+      "sha256": "67701397ac03e98520931f5e1f36bfc37e644a5a2f75de8206418ef881280137",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_168_0",
+      "triangles": 12,
+      "sha256": "4d32a854ebae43b71fd82bd035d29e59360abe8bf90a368a99074559a0dcb727",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_169_0",
+      "triangles": 12,
+      "sha256": "9230d0312f11136528a3150c543ccfb949b56cf0a4269c64dfb5c3fd25743277",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_170_0",
+      "triangles": 12,
+      "sha256": "7de9094141b6478184486f0ab8669706bae51272deab47e6aff57ec0dc307994",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_171_0",
+      "triangles": 12,
+      "sha256": "939a045bc40709350e829656789205a8dd63a3ed0b1f4b633f462a025e372d26",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_172_0",
+      "triangles": 12,
+      "sha256": "f7f7e84134d42c06fc28e4c30149ba60852407faaf3a38c7b789b1e14a30dff3",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_173_0",
+      "triangles": 12,
+      "sha256": "383f509ab61e3ece01f652a59437fad97e5beb843331768724c47e14596041f5",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_174_0",
+      "triangles": 12,
+      "sha256": "753ca51bc6a6b54a6660540b4ab4211ea91912d01eb95e4a7e7bf20d887f901b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_175_0",
+      "triangles": 12,
+      "sha256": "1bf5961cd232430a15d6e4162219f620347c1533caceaa1e98ef01f9b86d34c7",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_176_0",
+      "triangles": 12,
+      "sha256": "2a6d37bb67bc0c195ad569f98f2d374692f2013aa7c3ff6b67ed6b7baceb8bdd",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_177_0",
+      "triangles": 12,
+      "sha256": "236a34e10c123cdd945fe9461d37489f9375b4d22b13e9cf241d83b834104d99",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_178_0",
+      "triangles": 12,
+      "sha256": "b4828cad32a705b32d23fa4e5fcd8d0f7f021becbe897bba8d32e98c51ea44f8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_179_0",
+      "triangles": 12,
+      "sha256": "5b32a854adc2aef57d3cbcc346ca1ddf0ddf21602bf3469c6851fda4beb4ebc3",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_180_0",
+      "triangles": 12,
+      "sha256": "c33776777bcb83e2e9d77647504e7f3c4ad04699381beb71b6d5442fa515a657",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_181_0",
+      "triangles": 12,
+      "sha256": "0a94aac7e2970856830842c232218adff779e2a343f1104c800d89c57d36540f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_182_0",
+      "triangles": 12,
+      "sha256": "917c73812e8f38eb34b4ab81434e59d22548c658997590358fb445091a1b8ffe",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_183_0",
+      "triangles": 12,
+      "sha256": "b22eabcaf97c4f11cf5ec55776df93a8e671404cf8fa6b754c94bcec471fa3c0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_184_0",
+      "triangles": 12,
+      "sha256": "184a93d8b703fafa29d51639dbecabd13116b1441eb786231b765c1f17ed4032",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_185_0",
+      "triangles": 12,
+      "sha256": "7e7ffd216f2bfab40ed95008819a22b675147b5300bb04b349a5fac1eb16ed21",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_186_0",
+      "triangles": 12,
+      "sha256": "16b31a20d812596dee9c034e1052702c6e28e46b79f3ebdc32439fea9885f813",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_187_0",
+      "triangles": 12,
+      "sha256": "0901cd0ea6c3027b8564552d3c57ea47cbb9c34e8f238119c1b4083c4cf81ef7",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_188_0",
+      "triangles": 12,
+      "sha256": "21b513bf7154636da1a3de210d4ada2b060b276810dc6892294114ff494a6eef",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_189_0",
+      "triangles": 12,
+      "sha256": "a8a8fa93a710f770d1e2a97cfa320d074645b46317df9f3e184ccf30002cfb10",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_190_0",
+      "triangles": 12,
+      "sha256": "3f264454dff07fd066b0e216244cd5517b7672dec36ee8657723e6e48909cc90",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_191_0",
+      "triangles": 12,
+      "sha256": "60034968f589d60f48cbb5a23298689f026791d2c82721c5cffd570854aa806c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_192_0",
+      "triangles": 12,
+      "sha256": "9c37fa702c82d981eaf4651cc63847d832394a8167fa63f6b7f5eea245a1b45a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_193_0",
+      "triangles": 12,
+      "sha256": "afb9858f54c53eec243ca981d7f7d4cc774159e3d0afcd5c90f2800e3a248d64",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_194_0",
+      "triangles": 12,
+      "sha256": "faab3f0242f302580127cdc2e434b4732bc998b3bf2f0964a0879a2c315ccbe8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_195_0",
+      "triangles": 12,
+      "sha256": "659c8262fb74265f4b6f0de73e5a7f04a7e44c1250f364e2605047f31ec18467",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_196_0",
+      "triangles": 12,
+      "sha256": "8f36f675108b0fc61bb1db32ba56a6b5ceab818300d90888b05fad9bdabdd910",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_197_0",
+      "triangles": 12,
+      "sha256": "645fa9e7614cc764b72b4765a5092db8384a5edace49a38dea340757be1df64c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_198_0",
+      "triangles": 12,
+      "sha256": "5dbcde7d30ebcfde458d960bc4e2aecbc1b7759505703d56682898df3f7f8a30",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_199_0",
+      "triangles": 12,
+      "sha256": "4c478a78eb1bb7ab63534d72ce090ab6b05895c29706758c22b0829c6a995622",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_200_0",
+      "triangles": 12,
+      "sha256": "15e1f28f6751dceed77fb7c12fe4b5229ad7e8044d28a1ff272ffb8bfbc36c35",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_201_0",
+      "triangles": 12,
+      "sha256": "2048c65fff249b4fafec012de6fce3318331e9e6ed4e12208159d6a6ba1214cc",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_202_0",
+      "triangles": 12,
+      "sha256": "9356976c48da0b1f1e1b362b3ac9e8a872392ba067f6058db983004b96684172",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_203_0",
+      "triangles": 12,
+      "sha256": "ec6069e01bdcea77242426eb2ba09eb674e13f47733e8fb5e97bf45531111e63",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_204_0",
+      "triangles": 12,
+      "sha256": "5ce499e2dd0245585dd1b39aa0c0c097da9be42e8a4b2e9bec8a4046235d56c0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_205_0",
+      "triangles": 12,
+      "sha256": "cd0a81baa1bea718feb77a7967d9819fd62108ddacb1d5cdb75496c54edcf983",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_206_0",
+      "triangles": 528,
+      "sha256": "0660c4a58cd524f8e3624f912b4bd0c13ada22c34dda7ed631711a1ae18be184",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_207_0",
+      "triangles": 12,
+      "sha256": "fc75287f31512b1fbe5ab48cdbab7a75fb37d4935ba84dc369c2beca2e6d429d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_208_0",
+      "triangles": 12,
+      "sha256": "b7eaf4edf61dbbe342407b260f0ecd4087a8ed536d1238a33dc3bb001ac9d54c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_209_0",
+      "triangles": 12,
+      "sha256": "7c74ab90a163af299cf3bcdd25b494c1dd6de718d67ed1b3170931c9fefe4764",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_210_0",
+      "triangles": 12,
+      "sha256": "7e7fd9e72b925cdeb25f9b35b665d8a8c8fc7a500db41c1ba00217b0756912ea",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_211_0",
+      "triangles": 660,
+      "sha256": "f59323927145ae12d3374c6810c669275c9ab40ee0e056a2548a1a02ddf8d57e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_212_0",
+      "triangles": 612,
+      "sha256": "2c2e010a60300d374689870005bfc38355ab4a10c6d5e2c184902b6585c484c3",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_213_0",
+      "triangles": 7778,
+      "sha256": "5bf2477ba4022f33e461fd5b726702d22a37a7a1e7f097384ec239bb5420d504",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_214_0",
+      "triangles": 464,
+      "sha256": "db59e6e15217f5635c1ba8b60082594134a42a61ba4134ddc6e875d445a3a170",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_215_0",
+      "triangles": 464,
+      "sha256": "90718c85d5a671cf5225f98d96478ab0c703756bd4d8b486cf8ede54d08b621a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_216_0",
+      "triangles": 464,
+      "sha256": "014e71e2ef0bfe821007f4a3739d3fa975a531d181bc2b8dd563354ff341fc07",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_217_0",
+      "triangles": 28,
+      "sha256": "8578b112c97f105642f5258a39ec7d4ab053f2c215ec63b1d0e8db37502aa333",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_218_0",
+      "triangles": 28,
+      "sha256": "9acd314afd0bb7428311b19225c975669ed0243f96bf9efa38cdda105f101e6d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_219_0",
+      "triangles": 28,
+      "sha256": "5da8af4af8be401ebd32944e2fa2ff767f0847bd2f9eb3124e6771d899d8daa7",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_220_0",
+      "triangles": 28,
+      "sha256": "5f7edcd8aa0d09ceadfac47e8d1c08623d0fbcc57db3bf9dd3bca6f60541dc12",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_221_0",
+      "triangles": 28,
+      "sha256": "e4936ddfa0e0771bf67060bedb3cb1af01fefa91b881d753f69c24ee204babf7",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_222_0",
+      "triangles": 28,
+      "sha256": "478429c9974571b2b12a5e2a09ee3b96fd53007a26f45f82c5006f663968c763",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_223_0",
+      "triangles": 28,
+      "sha256": "00bd934f77e505aee1097d72f511d34f7ffef9a5ce07f063f3727195de407b0d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_224_0",
+      "triangles": 28,
+      "sha256": "1dfed4a9a666c51ac2de0309180c59fd9fc55b57f009e4c5487c7e985a75fb9e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_225_0",
+      "triangles": 28,
+      "sha256": "ab9fbad43b70b38c7c17850a9f014645d52927fd494858389ef78f042898b2f0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_226_0",
+      "triangles": 28,
+      "sha256": "5ed2f2ad3ee36e361a1d9b2853a0a8d66fc71908b959e56b2f7c2aaf4bce2407",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_227_0",
+      "triangles": 28,
+      "sha256": "4d87669efd16344ad152e9063d0d18e34b160d427e2f038c97fc985e2f204e81",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_228_0",
+      "triangles": 28,
+      "sha256": "46eb7b4dc9533e9afc3c01208cb43553bdf57ace430f4c89ed13540e3ee18e3b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_229_0",
+      "triangles": 28,
+      "sha256": "69f82b417e96c021f8778c77181af20e12755a35451ab5082d686ef4212b37c0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_230_0",
+      "triangles": 28,
+      "sha256": "2046d22d4416da0839c70626ea74c2babf5d2eb5d48169a50673864ec07c82a6",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_231_0",
+      "triangles": 28,
+      "sha256": "95369708b26f7653bb780890fab8e831cf0f20348df79b436633f0e659d8753f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_232_0",
+      "triangles": 28,
+      "sha256": "4a98c78f4d730bf9a499843a3b269a6dd07a079d4b41aac9f9776437dd0bafc9",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_233_0",
+      "triangles": 28,
+      "sha256": "810b8575a412065bd1184abb1c9d54b0c75d794d3271e6bc5d91470379ce965a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_234_0",
+      "triangles": 28,
+      "sha256": "fb0487d52f615a326a8f371a0892ab3eea2a9f458bb0d8ff652f6a48895623f9",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_235_0",
+      "triangles": 28,
+      "sha256": "14cf4d487969f7aa14522e97a3a48d3a423711a5b8dd6819b2074b796765886b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_236_0",
+      "triangles": 28,
+      "sha256": "309175b7f4c649fce4b48f0e8917d5948cbdc1b5bb283867844fcc4de7240eec",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_237_0",
+      "triangles": 28,
+      "sha256": "10b79bf6c7dc85b4a2e52d678554a7266a7f26754f835ce4a955699b4569444a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_238_0",
+      "triangles": 28,
+      "sha256": "b16999c0e60f4fe184fcca3d2688e8185018c82be741c0118cc8be285fe43caa",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_239_0",
+      "triangles": 28,
+      "sha256": "3224929a130bcf2e37a69636c0ae155c0e4f7a281dbafbfe72f05ca9c1cf0a2c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_240_0",
+      "triangles": 28,
+      "sha256": "ae2e3f599a98ab2421f0cf256adcf7ca80454c43ce2bd6e01b29b1f4b0b3f45a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_241_0",
+      "triangles": 28,
+      "sha256": "77c54a599c903102644fdff21a84ea7709c362af9f55cdedc41af386280d1da1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_242_0",
+      "triangles": 28,
+      "sha256": "d91ce2fad521c8563d475896f864429066b6d474bba2d24b153bd3845c605183",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_243_0",
+      "triangles": 28,
+      "sha256": "e0f6bf39d83d85bb6ddbaaede75a7af346d621eea39c68f5124d3092b00b24d1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_244_0",
+      "triangles": 28,
+      "sha256": "8ece578d75f817eee4c52e601beb4b14ca52c459990123784f6c0b0be6991a8b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_245_0",
+      "triangles": 28,
+      "sha256": "643a1b4a41bcba99f7d8ef0e20352c89b3bcfc7b182d2d5e20d2766429aa4468",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_246_0",
+      "triangles": 28,
+      "sha256": "cb3c2338e9a0c81a3e644a1e4a4449cadf1b582fec1628c8c585e26e54cc114e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_247_0",
+      "triangles": 28,
+      "sha256": "2e5da1ce922736834f0ca4b059fee37931233a0234db8fd82315586a11ab94a1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_248_0",
+      "triangles": 28,
+      "sha256": "fcd012a11370b7780117047740d5e5b57b0fc59e9a7586cfbc65c458d3d50af9",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_249_0",
+      "triangles": 28,
+      "sha256": "d421914db1416eb80467f7225d1fa3fe366e2475d93440e74817e48c02899646",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_250_0",
+      "triangles": 28,
+      "sha256": "ec646356e0ae5bbfb0502493453c0259fff438fb140caf5e5d90d8730318be68",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_251_0",
+      "triangles": 28,
+      "sha256": "4e40cca3f189bb287155d5e19dd6f9e62214c18c3c20288910db16284c3e801f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_252_0",
+      "triangles": 28,
+      "sha256": "cb55803f3c0a314eb746d7c2d92c78bb0b6d3511a2a7851010ee6970435c252b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_253_0",
+      "triangles": 28,
+      "sha256": "58c108b4bfe56ad2404fe2d31935abdc21db2adbea9ff29efd0159767bd961d1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_254_0",
+      "triangles": 28,
+      "sha256": "951768264bb029b2b4aa3de2fc2efd0b129d38d99e11c26c5b4cabaa3e6ec5d4",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_255_0",
+      "triangles": 28,
+      "sha256": "0dfcb362ee590e88b15bcfddd83d076f3baad06c0246cc4f0b08f301769bf8fb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_256_0",
+      "triangles": 28,
+      "sha256": "1bab8bb1e6fe73dd35e8a9ad5ddd4258883c8f95c2a957fac9d97dc3c8d09ffc",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_257_0",
+      "triangles": 28,
+      "sha256": "2c3064f4c4fcf804d5e69b581c7a8dbc81f51723c1e55da19f473b9260c74234",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_258_0",
+      "triangles": 28,
+      "sha256": "63c21653957c0f1be8eb4681d26f92c4c281615e7c440800d0852afc0e964c73",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_259_0",
+      "triangles": 28,
+      "sha256": "65aac900f7cbf8549d1bfe9fcb308c91b3b13919078b374cd11d90de9ca8b38b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_260_0",
+      "triangles": 28,
+      "sha256": "7e20c37f989e91c2561a51be83f62894610246d53845921d3178c17bc9d73fd7",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_261_0",
+      "triangles": 28,
+      "sha256": "7447414ddb91da52badd6bd153f78a6367d56423fb1cfd5a4c3b1be8e9204fcb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_262_0",
+      "triangles": 28,
+      "sha256": "4e7de1e1adf6641c93b4388f449b852085edef02fd31e30a4e801996110a4f86",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_263_0",
+      "triangles": 28,
+      "sha256": "1bdec18e8cef795dab248d210afe46bf58ae9df433cf2ceaf2583a16242e7b78",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_264_0",
+      "triangles": 28,
+      "sha256": "d6e779d0c310c1dafe8fd76e405f0de9848ad8385e7fcdeac47821e5e5057319",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_265_0",
+      "triangles": 28,
+      "sha256": "9e60b29eecb73018528a3dd5e1ce849745bffb3059caa06c0bfd7ef019a98930",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_266_0",
+      "triangles": 28,
+      "sha256": "103287c18eb75d41b81566ede44e2b9144a22fd29ffeb6474d4ba72f74eb2e58",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_267_0",
+      "triangles": 28,
+      "sha256": "bcbf1d0732a774124963b3615b14783a5e9a0405f49254b4a87c32c95e669e4f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_268_0",
+      "triangles": 28,
+      "sha256": "c89ae6921254914b7e705149298e8e9e97060b3e6a2a73e8033c6f6fac9e5e50",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_269_0",
+      "triangles": 28,
+      "sha256": "366718ebab71434a63b6c932d13975822c66308f8d16ad6e027c4458641436a8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_270_0",
+      "triangles": 28,
+      "sha256": "67aef2cf8c44b5e7a196ec10309b149cf1e352ea70a361a8dcd0b34c2c7bd27a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_271_0",
+      "triangles": 28,
+      "sha256": "5f650e848f200b574722075879d32ebf843f3e7a63c6402580140e4b3e41f21a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_272_0",
+      "triangles": 28,
+      "sha256": "24b36bb177a507801afe32b41e8e4bb86f9c6d0b4829590979be93aa50330f6a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_273_0",
+      "triangles": 28,
+      "sha256": "635e389f03fa39d389dd24120f8458abeba934e856791cef23bda3896b7dd433",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_274_0",
+      "triangles": 28,
+      "sha256": "133eb3537b9b62b30a5d48b951b451b6950c7cf2ef6df9a768c9eedb6d5b1048",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_275_0",
+      "triangles": 28,
+      "sha256": "fd43eb202cd9526012a43052d9a5e97fa09b1b0fcce33e199042a4b6563d48ca",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_276_0",
+      "triangles": 28,
+      "sha256": "ec8f178f4f67c29065e3b5f8b249b05661fb04caf5912de32feb035a550bb9b3",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_277_0",
+      "triangles": 28,
+      "sha256": "333dfedf20fb2ff7abfeba09d074f961d709e783e4c4941ceddac4697eefd1d1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_278_0",
+      "triangles": 28,
+      "sha256": "22ad97f164cc7fa9d433a85a94c2ba1755d62d0a5cf2f375932b1c612b250556",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_279_0",
+      "triangles": 28,
+      "sha256": "cbfd0101a2fa1f80c9ba0fb3541055e626f9e0e4e08838a90e8acb4d7229a95b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_280_0",
+      "triangles": 28,
+      "sha256": "39026432ac439eea8ece6da1ebc915be31fbf9ed078b802507784eab6a00e598",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_281_0",
+      "triangles": 28,
+      "sha256": "432ed28d7483dd37541c5cb826104010bdffe8fc8435e3833c61b2372cf502ab",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_282_0",
+      "triangles": 28,
+      "sha256": "c5bc4ce6a2946d8fcd9a2068b5d6058a0c569c3c33264e03e7383c70920a144b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_283_0",
+      "triangles": 28,
+      "sha256": "1256427d473f0b24931c9e9201f8e340314a478cc76aaf72541e5580f6d4dbc9",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_284_0",
+      "triangles": 2,
+      "sha256": "6f859c769516d10b5c155dcf618c67db6a2f23137920b2a25c23c3c194145bbd",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_285_0",
+      "triangles": 2,
+      "sha256": "b5d2dc962fbbdc1aaa63abdfaee146861b00248e5fb4ff73e31a96d9ea110126",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_286_0",
+      "triangles": 2,
+      "sha256": "6e3c170a5ef2c89265fe21deca34fda16d44fc7b476a1c68bf49b8e9b891fd75",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_287_0",
+      "triangles": 2,
+      "sha256": "2e6be7acf1281abdf1192b127d6eff740b3c970cec42a1d27c08f843c5eb145a",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_288_0",
+      "triangles": 2,
+      "sha256": "8f4256507f71b26d17055486dd3e96789e64128ef619167df4b7d148793782d7",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_289_0",
+      "triangles": 2,
+      "sha256": "04db88c5fbc63df9153606ed6a070c985d379d94f1e3237a4bd3ef81aa3a5bc7",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_290_0",
+      "triangles": 2,
+      "sha256": "30f64af11571b0865ff778b79e2cd919ced2385a8cca5659f08a26ced27f1465",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_291_0",
+      "triangles": 2,
+      "sha256": "511e736c14418d76493bab4927f4037b9ecd5acef224b741598621f3aab3e35e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_292_0",
+      "triangles": 2,
+      "sha256": "17d4162cfd74e69ab0be570aebb3a769eac2a73bc64a7ce5fd6c0f5c860fdd98",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_293_0",
+      "triangles": 2,
+      "sha256": "06d2946cc7c2d6e5ec0dbefe300085717fa335358b01e26b647457ad5aeaaef0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_294_0",
+      "triangles": 2,
+      "sha256": "5d75f80b839d239606bfcecbff56cabaa856ae2ae7c999f0cfbf858d205672ce",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_295_0",
+      "triangles": 2,
+      "sha256": "37f53b91d7696867ee6fbd377b36c68baa079c68158d30db68b4caf6697b37c7",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_296_0",
+      "triangles": 2,
+      "sha256": "a26155c4bc90fd3b42663b23869a35f3fec6276c9f9eb55693b102d9863ae339",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_297_0",
+      "triangles": 2,
+      "sha256": "55cec773e0083f2f04c9dcd7023c7f3f4fff37c5fc042b79dfcb7890b04bd6ce",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_298_0",
+      "triangles": 2,
+      "sha256": "4721344a7a3e9ce3df59ce192926a87f8edd6d533470007834c630c72b18489b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_299_0",
+      "triangles": 2,
+      "sha256": "6afe5c388ef37c8233314a969afc294bf9325a8983650765a59ab87466d4ab50",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_300_0",
+      "triangles": 2,
+      "sha256": "92591fc0b655dc46db37784254e51d79748f69a7e5ee78dbb1aa579fdc893407",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_301_0",
+      "triangles": 2,
+      "sha256": "80408a59a3f515710666dbe8443763cb7d8c52e856be735fa543d7b35757c66e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_302_0",
+      "triangles": 2,
+      "sha256": "9bdb92d2fae524d619dfba961e6f6ab0dae866636149a1c60e228b97f0610632",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_303_0",
+      "triangles": 2,
+      "sha256": "f065f24f502bae34c5778bacccbabedd4c2738470fcc1f796e661628ce9b9599",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_304_0",
+      "triangles": 2,
+      "sha256": "b71cd62d03617ba2a294d37860668d1db1379dc700542267ba61ebb4768af1cf",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_305_0",
+      "triangles": 2,
+      "sha256": "79f8abcbc0825762b310f8510b353be4e168b3687e2e13adb63056549f1ebba2",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_306_0",
+      "triangles": 2,
+      "sha256": "38a3ee62c7ea2060f708cab8dc97015e6aa07aa193813b8a3b1a1522ef2fcd0f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_307_0",
+      "triangles": 2,
+      "sha256": "cd1d85b4df45f37d04eeb995a622269d8ba77a88d6ea4a5e94010297d026b077",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_308_0",
+      "triangles": 2,
+      "sha256": "9ed72b2e550aff17f225a5565e13687f7e06ca2e78f33269e0a2de31aeaa589f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_309_0",
+      "triangles": 2,
+      "sha256": "51f1d2abe517d32632c98f12fefb1613015ea3337621db09a299c65fbe809c7e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_310_0",
+      "triangles": 2,
+      "sha256": "c087043b268ed854cb1520ef37a4223564a620e88eaefb458b29519172492364",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_311_0",
+      "triangles": 2,
+      "sha256": "95cfe16aeab7b21b7035728eda2ae8a7bbf424bd352fc2d46aa2790da81ce042",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_312_0",
+      "triangles": 2,
+      "sha256": "0470343d8e50fdf759992fa14003403dd30e1abfc36fd4882310685e20b3a75f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_313_0",
+      "triangles": 2,
+      "sha256": "7ac39fadf03264c6f28d084ffb976f33f0812408fa557ac9cf114c642d72cfa5",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_314_0",
+      "triangles": 2,
+      "sha256": "da2dedeffe8557fd8d9c43ee18ea28ed90c34ea55fc48c79f858e30f1ccc9890",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_315_0",
+      "triangles": 2,
+      "sha256": "1e67d0d26b628d08e5d0ded69c2510fd18e8c5794fdcd9b53095adf7c38e0c8e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_316_0",
+      "triangles": 2,
+      "sha256": "d0b362d0954e932111c72661a7e8ad888bc41d0bb34859ef423d9588a69cd803",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_317_0",
+      "triangles": 2,
+      "sha256": "58bf518d623408c58e9b4b2c1feaa499913c64b14327f302c10913038c94784c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_318_0",
+      "triangles": 2,
+      "sha256": "7d70e9737b2f6ad134c5653ade861611d7108cc13501fa951215ba998e22ee84",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_319_0",
+      "triangles": 2,
+      "sha256": "a74ed2eee23020d47193881c23c892db6f0fa0ce3ca93cff8071e6d8807ccb5e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_320_0",
+      "triangles": 2,
+      "sha256": "88747a5b6836b2ab617ec0238ba3dfbebdf077fc05a95cc18e6be3c0a99dcd3f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_321_0",
+      "triangles": 2,
+      "sha256": "60fa877168df9aada6a1d760a11d6ecc28ce14ae3984688e5f9ec6f7fd26afc8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_322_0",
+      "triangles": 2,
+      "sha256": "ebe4a2ac911b24000020052a8d7433970949e7c148a257a3c29a4269c866f751",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_323_0",
+      "triangles": 2,
+      "sha256": "203332196dc17444bc6ac8247dc1273d2dff007d1a0dcf27af46d9ade14b8a60",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_324_0",
+      "triangles": 2,
+      "sha256": "40c016888282070083c51a3329ceabafc6410e9528c6b9f22d36ad63e7c6fed5",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_325_0",
+      "triangles": 2,
+      "sha256": "ab05973a8dd65ec0c0ab5fe102b2ce93c7c1161bed1da730743fba4efdf300f8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_326_0",
+      "triangles": 2,
+      "sha256": "f76d838010a927f8268dbcb40083dee3b753fb597c8526c89d68df39db098a80",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_327_0",
+      "triangles": 2,
+      "sha256": "dc41d753210431e5f618cf5035c0db746bdaca1bba7198974a08c2c45d6045c5",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_328_0",
+      "triangles": 2,
+      "sha256": "7a4254d250b4759db9b1defa55a752a707ad1d46995af912a2ffdfbe047bc47c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_329_0",
+      "triangles": 2,
+      "sha256": "4c0de33c5975cbfc19f29bba8ffe7f11914e2e2f41f2faf0a00612eab790a1b4",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_330_0",
+      "triangles": 2,
+      "sha256": "8e628e67caef5019cf960fb07d66182d4b62ea68ac59edb240001cb38925d57f",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_331_0",
+      "triangles": 2,
+      "sha256": "18c9c79fa458dd8e9bcd96bdce7332691a1189b80895bbc93c2af00323853d86",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_332_0",
+      "triangles": 2,
+      "sha256": "b68a6be95e40d49583d6c16d5581b3fe18b237f15d974a59e51e55e629cdb422",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_333_0",
+      "triangles": 2,
+      "sha256": "3d6d106367c33d43e9804bed258d8549af33625009f53290caea4cfe2670454d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_334_0",
+      "triangles": 2,
+      "sha256": "345a110a4002883cd85583565624207b4c6df3a7ef3a995ffd41a1b5b614a3dd",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_335_0",
+      "triangles": 2,
+      "sha256": "7bf2af9e5ef5575457c6f512e38b4438c413e3342be8c287d10f39b4eef55bda",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_336_0",
+      "triangles": 2,
+      "sha256": "78237e6cc45dc88340b2e49581933834faca08f967d948c553ec063809f9207b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_337_0",
+      "triangles": 2,
+      "sha256": "bee7e4bf835356b0ae85122276e01ec0901103d481b8f7c00a7de0f54268d202",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_338_0",
+      "triangles": 2,
+      "sha256": "95ca85e8813b5b1adc7d08b72e8932a0d5c819510615655e959a01d910218f19",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_339_0",
+      "triangles": 2,
+      "sha256": "ff8fb1d816646e0c4b27277e8e19671a668e45dc26367af400ead78f6fa331d6",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_340_0",
+      "triangles": 2,
+      "sha256": "bde77d2d6229835387355d71bbfbb0f41e1c85db9b6b2aef09b6b7b694656d30",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_341_0",
+      "triangles": 2,
+      "sha256": "1c8bed738581b98cb2fa0922fff60758ab990ff8e210ab5fc6d314b1c3ba6312",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_342_0",
+      "triangles": 2,
+      "sha256": "f2ac5a3e2bc8570b43c8daae1e0a900e75f014089a5995362088e4ba5f4d9f74",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_343_0",
+      "triangles": 2,
+      "sha256": "861403036c799281c383d13145ca65f8b5e8133a05521bcce62de71c89fd5ea2",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_344_0",
+      "triangles": 2,
+      "sha256": "687b530f1e4aadd9fa33ae272e8aea64c478ae276b1c9b1bb8ba6fe5cb384c8d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_345_0",
+      "triangles": 2,
+      "sha256": "db7ecd4625744afa6f2b4dca6e0aa61a466fbf315bd579750779fb15ed5aaffb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_346_0",
+      "triangles": 2,
+      "sha256": "c0e19c88a0a0d00ed06b433683031fffbf72eb18fc01f4c0498b075d0601cb8e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_347_0",
+      "triangles": 2,
+      "sha256": "71aeef29dcfc952147010a6e340c1bab8060d0ccea98596d9fbad44f3c9e51ec",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_348_0",
+      "triangles": 2,
+      "sha256": "bf62a4f007d89735d87ead72cdec17a93a20a5d9e7988f96262e55b8486cc5d1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_349_0",
+      "triangles": 2,
+      "sha256": "58641d4285c44ea5cdd7621c592af369d4a30cbca9f7673e02c3fe88fd7b03d0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_350_0",
+      "triangles": 2,
+      "sha256": "ee3dae91e1be9ed7a1da67d51aae2bd54b8b274fa835d9cdbd100194c5d4297c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_351_0",
+      "triangles": 12,
+      "sha256": "e6db333a74cd30a2ca958984c40076dc64aaa4cdbcec06dc3e437406abcd6c8e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_352_0",
+      "triangles": 12,
+      "sha256": "2ef98fb1bfe9d41b2f972d18ad255fd4c87b68a7665e00fd5690e3ac5894b69c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_353_0",
+      "triangles": 12,
+      "sha256": "e5d3fbe0e55b273c4e82a8ed0d9431e3b066f4497f047eec19bddf55dd396360",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_354_0",
+      "triangles": 12,
+      "sha256": "b3dc61112038be4908c391522af1a0e35f997efd8821e693f8aa07f555115abc",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_355_0",
+      "triangles": 12,
+      "sha256": "55c55e5577880d3c3e7f49c0be9ac78e903e790e6743131f447b8c0fe231a18b",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_356_0",
+      "triangles": 12,
+      "sha256": "552fa6ef093c3249f3adb92791fa29209006af3ca1f25ce5fb99129444866e9c",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_357_0",
+      "triangles": 12,
+      "sha256": "52e5640234f134f367753679705bd7ca68f08a3d6eaeb8ab0faed87648adec67",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_358_0",
+      "triangles": 12,
+      "sha256": "cc796c07c64c78fe43f92b9671fcccbe3caf56b79f41321fd219304f6e2c5c9e",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_359_0",
+      "triangles": 12,
+      "sha256": "1991ec62879cf4af14ede9728f158ce03db578dfd11023d3d8aaa1395b47f697",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_360_0",
+      "triangles": 12,
+      "sha256": "f7d6e19e48262c4ac6fa9101c0427b1394e839ec729d9180d20518146eefc8c1",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_361_0",
+      "triangles": 6828,
+      "sha256": "cad3b00ce28c7ef5e15e0aff4dd2192649ee279ca7c45ae039468159a0d22071",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_362_0",
+      "triangles": 12,
+      "sha256": "4c2cc108bcfd1fa761b78e67acb935e6ce52cf72b632b156fb200f43b0cae798",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_363_0",
+      "triangles": 12,
+      "sha256": "41e829282e568d8c4b94eb4cdb05bcde430c1a6fb60337d54d00aadb36527bf0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_364_0",
+      "triangles": 12,
+      "sha256": "429caa108a701741f570249f3fe925cae3714866e5230ba9a58346f100583bf3",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_365_0",
+      "triangles": 12,
+      "sha256": "1c656e47732f23eceab397284b8b340d6d68beb91a9ca851b6ac2efed4e02714",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_366_0",
+      "triangles": 986,
+      "sha256": "aab565b2f2eae2116d77937f575b004d1f57efb8ac986ff1223b3056833cf733",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_367_0",
+      "triangles": 7716,
+      "sha256": "f1c24407d867304972c4ab97899e1f07a516bf008015d24ab8e834788c148539",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_368_0",
+      "triangles": 15074,
+      "sha256": "998c3a5b857af145e806d5b177f81adda88c339efda7a4f222bfe0c57f19d39d",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_369_0",
+      "triangles": 1720,
+      "sha256": "23d80e6b2bb132086c1d38104dcb19a318dc524dd3a110fddcf6e3199f306050",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_370_0",
+      "triangles": 788,
+      "sha256": "aac936fc6292aef999582cd6d1fe6b6e55c290f54eb86874621582a72040b4bb",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_371_0",
+      "triangles": 9808,
+      "sha256": "d91ac7d6caaad32620e8eb5fc5a7d8f12f383ef398a8335c0410164e6f4eb4b8",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_372_0",
+      "triangles": 8812,
+      "sha256": "f24b707c0e2a6a038f40e91d1a0325f87171ab43e1ee93b27a2926edf512cdb0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_373_0",
+      "triangles": 2476,
+      "sha256": "ba8bbd1cb4cea2e9cc7f68de1b3e47eb0e13745adc1f9a4afda701a9a2ab63df",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_374_0",
+      "triangles": 15684,
+      "sha256": "b0664da5e2ccf64b1630b9c0ed96e41bb633f2d92cc1fbfc2ddde26765196e72",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_375_0",
+      "triangles": 24000,
+      "sha256": "38d5f07f86775cad1608013d866f0d2a72d0458c3e634b7c7932d88f8efc5a82",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_375_1",
+      "triangles": 17782,
+      "sha256": "f4e6cd1132ec755ade64b86c99bff631cf4b3fc6acd8b43f1ed1916bf33f82a3",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_376_0",
+      "triangles": 5504,
+      "sha256": "402dcc649e7163b2782f23963f6763919e606e091b6b5fa845704f445e9656f6",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_377_0",
+      "triangles": 1760,
+      "sha256": "f148b6703486be87e14196dcb17c276d7bd416176557d6d8857b8ac30a690efc",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_378_0",
+      "triangles": 986,
+      "sha256": "994710515cff689ca2e4bc2e9e1748b6dd1a2824c5abeaf002b7f81ed87d8eae",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_379_0",
+      "triangles": 6432,
+      "sha256": "0934d4b69b3d269f4ca1fc9dcac38e44eff19f24f3976bb28f52aeea14ab53f0",
+      "exact_raw_local_geometry": true
+    },
+    {
+      "id": "level_hc_native_380_0",
+      "triangles": 9748,
+      "sha256": "c289192d92bc547d31c41b9ea0356c32f0471cf1e0328c06dd6d47b4e6a819fe",
+      "exact_raw_local_geometry": true
+    }
+  ],
+  "water_and_van_owned_by_separate_modules": true,
+  "full_game_acceptance": false
+}

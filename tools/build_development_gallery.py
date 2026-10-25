@@ -26,6 +26,9 @@ for path in sorted(set(paths)):
     elif p.stem.startswith('level_') or '/model-production/' in path or '/equipment-catalog/' in path:kind='Model inspection'
     title=p.stem.replace('_',' ').replace('-',' ').strip().capitalize()
     items.append(dict(path=path,url=quote(path,safe='/'),title=title,kind=kind,width=w,height=h,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))
+    clip=p.with_suffix('.mp4')
+    if clip.exists():
+        video=clip.read_bytes();items[-1]['animation']=dict(url=quote(clip.relative_to(ROOT).as_posix(),safe='/'),bytes=len(video),sha256=hashlib.sha256(video).hexdigest())
 manifest=dict(version=1,title='Beckenburg development gallery',count=len(items),images=items)
 encoded=json.dumps(manifest,indent=2,ensure_ascii=False)+'\n'
 template=(ROOT/'development/gallery/template.html').read_text(encoding='utf-8')

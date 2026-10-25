@@ -226,7 +226,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         try{
             List<String> p=LanProtocol.parts(frame);
             if(p.size()==3&&p.get(0).equals("SITE")){
-                map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));
+                map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));lights.setSourceRunning(true);
                 map.configureHiding(renderer.hidingDensity);
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
                 renderer.eyeHeight=map.floorY(HouseMap.EXTRACTION_ROOM)+1.62;
@@ -393,6 +393,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.size()==3&&p.get(0).equals("INTERACTED")&&p.get(1).equals("INTERFACE")){
                 if(p.get(2).equals("COMPUTER")){casefileOpen=true;journalPage=0;}else {interfaceOpen=p.get(2);assignmentReader.reset();storyReader.reset();}keys.clear();mouseLook.release();
                 feedback="Opened "+p.get(2).toLowerCase(java.util.Locale.ROOT);
+            }else if(p.size()==2&&p.get(0).equals("SOURCE")){
+                lights.setSourceRunning(LanProtocol.integer(p.get(1),0,1)==1);map.fixtures().power(lights.supplied());feedback=lights.sourceRunning()?"Generator running":"Generator stopped";
             }else if(p.size()==3&&p.get(0).equals("LIGHTS")){
                 lights.acceptSnapshot(p.get(1));
                 lights.setBreaker(LanProtocol.integer(p.get(2),0,1)==1);

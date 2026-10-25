@@ -12,7 +12,10 @@ public final class RoomLighting {
     private final boolean[] on=new boolean[HouseMap.INDOOR_ROOMS];
     private final int[] start=new int[HouseMap.INDOOR_ROOMS],until=new int[HouseMap.INDOOR_ROOMS];
     private final Interference[] disruption=new Interference[HouseMap.INDOOR_ROOMS];
-    private boolean breaker=true;
+    private boolean breaker=true,sourceRunning=true;
+    public boolean sourceRunning(){return sourceRunning;}
+    public void setSourceRunning(boolean running){sourceRunning=running;}
+    public boolean supplied(){return breaker&&sourceRunning;}
     public RoomLighting(){Arrays.fill(on,true);}
     public boolean breaker(){return breaker;}
     public void setBreaker(boolean value){breaker=value;}
@@ -51,6 +54,7 @@ public final class RoomLighting {
                 ||!Double.isFinite(z)||!Double.isFinite(yaw))return -1;
         int room=map.roomAt(x,feetY,z);
         if(room<0||room>=HouseMap.INDOOR_ROOMS)return -1;
+        if(map.level().socket("switch",room)==null)return -1;
         Switch sw=location(map,room);
         return reachable(map,x,feetY,z,yaw,sw.x(),sw.y(),sw.z())?room:-1;
     }
@@ -99,9 +103,9 @@ public final class RoomLighting {
     /** Factor 0..1; deterministic per simulation tick for both peers and headless tests. */
     public double brightness(int room,int tick){
         if(room<0||room>=HouseMap.INDOOR_ROOMS)return 1;
-        double base=breaker&&on[room]?.95:.085;
+        double base=supplied()&&on[room]?.95:.085;
         Interference mode=interference(room,tick);
-        if(mode==null||!breaker||!on[room])return base;
+        if(mode==null||!supplied()||!on[room])return base;
         // Irregular but synchronized flicker: no client RNG or per-frame random flash.
         int noise=Math.floorMod((tick/2*1103515245)^((room+13)*761),17);
         return switch(mode){

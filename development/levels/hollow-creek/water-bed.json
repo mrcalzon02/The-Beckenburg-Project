@@ -1,0 +1,23 @@
+{
+  "kind": "new authored optical basin; no player collision or terrain edits",
+  "source_bank_controls": "development/levels/hollow-creek/amenities.json",
+  "bank_control_sha256": "b19098c01a938eb298de6d5d01c9f0eaa1f663c65700c7823286701869a7846f",
+  "excluded": "All dock movement blockers; no artificial shoal around the boat",
+  "segments": 238,
+  "grid": {
+    "x": -105.0,
+    "z": -120.0,
+    "step": 2.5,
+    "width": 101,
+    "height": 61,
+    "triangles": 12000
+  },
+  "depth_rule": "min(4.5m, 0.05m + 0.22 * distance to actual bank line)",
+  "bed_sha256": "4ee6cb602e891ab2831d304a219a1418bbc33f2c746d4b4cf5ab1dc7c02d2dfc",
+  "texture": "development/levels/textures/hollow-creek/shore-grit-v2.png",
+  "texture_sha256": "864ba5a5aadca95a86c4fd5abd2ff19a46253848206837017992d9e533531fbf",
+  "limitations": [
+    "Initial basin is authored, not measured. Fine shoals and creek flow tuning remain visual review items.",
+    "No swimming or underwater camera handling in this milestone."
+  ]
+}

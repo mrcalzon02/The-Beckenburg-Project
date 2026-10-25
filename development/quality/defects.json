@@ -592,7 +592,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00c2\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÂ±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -920,7 +920,7 @@
       "title": "Reshaped bank left old crest dressing unsupported",
       "status": "fixed-native-rigid-crest-refit",
       "affected": "Camp Hollow Creek bank/crest refinement",
-      "symptom": "Actual original log bearings sit53\u00e2\u20ac\u201c63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
+      "symptom": "Actual original log bearings sit53â€“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
       "cause": "Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.",
       "action": "Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.",
       "evidence": "quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json",
@@ -1035,6 +1035,127 @@
       "action": "Use the actual overview as a colour reference and remove the yellow cast in a new grey-green v4 source. Recompose all three dirt blends, export the four affected models and show same-camera before/after overviews. Keep lighting and geometry unchanged. Human art acceptance remains pending.",
       "evidence": "hollow-creek/GREEN_GRASS_REVIEW.html; textures/hollow-creek/grass-woodland-v4-prompt.json; verification/hollow-creek-woodland-palette.json",
       "older_maps": "Compare near/far material colours together under the same scene lighting; a generic request for greener grass does not establish palette continuity."
+    },
+    {
+      "id": "DEV-095",
+      "title": "Native runtime discarded authored site geometry",
+      "status": "fixed-scoped",
+      "affected": "Hollow Creek",
+      "symptom": "Earlier game level construction did not consume the native mesh/pose/physics contract.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Native HCS2 bridge, 384 bounded original GLBs and 598 exact authored poses; no replacement room slabs.",
+      "evidence": "HollowCreekRuntimeTest: 969 route points / 939 sweeps; independent exact geometry/UV/pose audit.",
+      "older_maps": "Audit every older map runtime against its actual source, independently."
+    },
+    {
+      "id": "DEV-096",
+      "title": "Van vertical placement lost across runtime systems",
+      "status": "fixed-scoped",
+      "affected": "Elevated canonical van",
+      "symptom": "Dock Y was ignored by support, rendering, fixture lights and interaction targets.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Propagate dock elevation through reusable van contracts, support/ramp geometry, mounting/focus and optics.",
+      "evidence": "ElevatedVanTest: three heights and rotated placements, cargo/ramp and real side/roof occlusion.",
+      "older_maps": "Audit any map with nonzero van elevation; legacy placements remain compatible."
+    },
+    {
+      "id": "DEV-097",
+      "title": "Native exterior zones treated as indoor by numeric room ID",
+      "status": "fixed-scoped",
+      "affected": "Hollow Creek outdoor zones 0–11",
+      "symptom": "Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.",
+      "evidence": "Runtime pavilion/van shelter and route tests; actual native-game captures.",
+      "older_maps": "Audit room ownership separately from indoor/outdoor classification."
+    },
+    {
+      "id": "DEV-098",
+      "title": "GPU texture upload flipped V twice and destroyed packed atlas resolution",
+      "status": "fixed-scoped",
+      "affected": "GPU material upload; exposed by Hollow Creek boat",
+      "symptom": "Boat looked intact in native reviews but acquired black bands and unrelated plank colours in actual GPU capture.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Retain authored texture width/height; upload CPU sampler coordinates without a second V inversion.",
+      "evidence": "flat-baseline vs atlas-corrected dock PNGs; final runtime boat video; native atlas resolution checks.",
+      "older_maps": "All GPU-rendered older assets require individual visual review after this shared sampler correction."
+    },
+    {
+      "id": "DEV-099",
+      "title": "Boat seats and oar blades penetrated the narrowing hull",
+      "status": "fixed-scoped",
+      "affected": "Hollow Creek west moored rowing boat",
+      "symptom": "Seat ends protruded through curved sides; stowed blades crossed the bow.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Boat-only editable variant: fit three thwarts to actual hull with 12mm clearance; move brackets/fastenings; stow oars on seats with full-vertex hull checks. Hull/pivot/pose unchanged.",
+      "evidence": "rowboat-refinement.json: 228 moved detail vertices; minimum oar-blade clearance 114.5mm; unchanged hull vertices; final dock runtime view.",
+      "older_maps": "Check complete accessory extents against curved support geometry, not centerline width."
+    },
+    {
+      "id": "DEV-100",
+      "title": "Boat painted atlas and lighting read as flat artificial surfaces",
+      "status": "revised-runtime-art-human-review-pending",
+      "affected": "Hollow Creek rowing boat",
+      "symptom": "Restored upload still exposed crude flat paint, repetitive grain and missing surface-normal response.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Three original weathered directional albedos; retain source normals and add audited boat directional fixture/torch shading in GPU path.",
+      "evidence": "20,484 loaded boat normal samples are unit length; real fixture direction check; final dock capture.",
+      "older_maps": "Other assets and software-path directional shading remain unaudited; do not infer all-map shading acceptance."
+    },
+    {
+      "id": "DEV-101",
+      "title": "Water rendered through boat cockpit",
+      "status": "fixed-scoped",
+      "affected": "Hollow Creek water and rowboat",
+      "symptom": "Flat surface occupied the boat interior; a single waterline cut would leak after adding waves.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "23 actual inner-hull sections at 10mm intervals, adjacent-section union within thick shell, full 95mm wave envelope. Ignore mooring-ring cuts.",
+      "evidence": "WaterEffectsTest full-wave center/exterior exclusion and final 72-frame dry-hull sample counts.",
+      "older_maps": "Every future boat requires its own actual hull profile; rectangular cutouts are not acceptable."
+    },
+    {
+      "id": "DEV-102",
+      "title": "Underwater surface had no optical basin depth",
+      "status": "fixed-scoped",
+      "affected": "Hollow Creek water",
+      "symptom": "Nominal constant depth could not reveal shallows or refract a visible bed.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Author 12,000 non-walkable optical bed triangles from actual bank controls with shared exact triangle depth sampler and existing shore grit. Exclude dock blockers.",
+      "evidence": "GridBed diagonal/footprint tests; water-bed.json and beach/river runtime captures.",
+      "older_maps": "Per-map authored bathymetry required; current basin is an initial authored profile, not a survey."
+    },
+    {
+      "id": "DEV-103",
+      "title": "Distant water exposed a harsh clipping horizon",
+      "status": "revised-runtime-review-pending",
+      "affected": "Hollow Creek water and scenery",
+      "symptom": "User observed a hard distance line and excessive distant texture sharpness in live views.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Depth-aware distant blur with foreground rejection, plus exponential convergence to actual camera sky pixels before far clipping.",
+      "evidence": "WaterReviewRegressionTest near sharpness, foreground isolation and horizon convergence; final beach clip.",
+      "older_maps": "Audit each map horizon and sky frame; no blanket completion inferred."
+    },
+    {
+      "id": "DEV-104",
+      "title": "Shoreline lacked slow advancing and receding waves",
+      "status": "revised-runtime-review-pending",
+      "affected": "Hollow Creek beach and creek margins",
+      "symptom": "Scrolling flat texture did not provide visible shore wave action or animated edge foam.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Depth-driven 5.5-second shoreline wave train, coherent 65mm background waves, 30mm shore run-up, moving broken crest foam and two independent pixelated layers.",
+      "evidence": "Independent nearest-wave rays and hull envelope tests; fixed-camera six-second runtime clips.",
+      "older_maps": "Tune wave scale, shore textures and currents individually; creek-specific flow and interaction ripples remain open."
+    },
+    {
+      "id": "DEV-105",
+      "title": "Generic signature breaker rule would ignore ghost-specific restrictions",
+      "status": "open-host-rule-audit",
+      "affected": "Host/solo remote-site electrical events",
+      "symptom": "Integration review found no verified existing ghost-specific trip path; a draft generic SIGNATURE trip would force every ghost to trip a breaker.",
+      "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
+      "action": "Removed draft generic trip. Preserve separate source/breaker controls; audit and wire only actually eligible ghost electrical rules before host/LAN acceptance.",
+      "evidence": "HollowCreekPowerTest proves supported controls and source isolation only, explicitly not ghost-trip or host/LAN acceptance.",
+      "older_maps": "Audit eligible ghost rules and authority on all generator maps before unlock."
     }
   ],
   "audit_categories": [

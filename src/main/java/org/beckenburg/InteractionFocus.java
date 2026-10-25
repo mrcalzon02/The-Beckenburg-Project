@@ -6,7 +6,7 @@ import java.util.List;
 /** One centre-ray target shared by the prompt and authoritative interaction. */
 public final class InteractionFocus {
     private InteractionFocus(){}
-    public enum Kind { CLUTTER,FIXTURE,RACK,INTERFACE,SWITCH,BREAKER,DOOR,WINDOW,VAN_DOOR }
+    public enum Kind { CLUTTER,FIXTURE,RACK,INTERFACE,SWITCH,BREAKER,GENERATOR,DOOR,WINDOW,VAN_DOOR }
     public record Target(Kind kind,String id,String name,double distance){}
     private record Mesh(List<GlbProps.Triangle> triangles,VanInteriorLayout.Bounds bounds){}
     private static final Map<String,Mesh> meshes=new HashMap<>();
@@ -63,7 +63,8 @@ public final class InteractionFocus {
         }
         for(var socket:map.level().sockets()){
             if(socket.type().equals("switch"))candidate(targets,Kind.SWITCH,""+socket.room(),map.roomName(socket.room())+" light switch",hit("light_switch_1",r,socket.x(),socket.y(),socket.z(),-socket.yaw(),1));
-            if(socket.type().equals("breaker")){double[] q=local(r,socket.x(),socket.y(),socket.z(),-socket.yaw(),1,1,1,0,0);candidate(targets,Kind.BREAKER,socket.id(),"Electrical breaker",box(q,new VanInteriorLayout.Bounds(-.24,-.38,0,.24,.38,.19)));}
+            if(socket.type().equals("breaker")){double[] q=local(r,socket.x(),socket.y(),socket.z(),-socket.yaw(),1,1,1,0,0);candidate(targets,Kind.BREAKER,socket.id(),"Electrical breaker",box(q,new VanInteriorLayout.Bounds(-.24,-.38,map.nativeSite()?-.19:0,.24,.38,map.nativeSite()?.01:.19)));}
+            if(socket.type().equals("generator"))candidate(targets,Kind.GENERATOR,socket.id(),"Start / stop diesel generator",hit("button_12",r,socket.x(),socket.y(),socket.z(),socket.yaw(),.30));
             if(socket.type().equals("hide")&&LevelClosets.available(map.level(),socket.room(),map.hidingDensity()))blocker=Math.min(blocker,hit("level_hiding_cupboard_worn",r,socket.x(),socket.y(),socket.z(),socket.yaw(),1));
         }
         for(var p:map.level().portals())if(p.door()){
@@ -78,14 +79,14 @@ public final class InteractionFocus {
             for(double bar:new double[]{0,.655,1.31})t=Math.min(t,box(q,new VanInteriorLayout.Bounds(0,bar-.018,-.018,p.width(),bar+.018,.018)));
             candidate(targets,Kind.WINDOW,""+p.id(),map.windowOpen(p.id())?"Close window":"Open window",t);
         }
-        var van=map.van();var button=van.doorButton();candidate(targets,Kind.VAN_DOOR,"cargo",van.cargoDoorClosed()?"Open van doors":"Close van doors",hit("button_12",r,button.x(),VanStaging.FLOOR_Y+1.2,button.z(),van.placement().yaw()+Math.PI/2,.30));
-        for(var f:VanInteriorLayout.FIXTURES){var p=van.world(f.localX(),f.localZ());double t=hit(f.mesh(),r,p.x(),f.y(),p.z(),van.placement().yaw()+f.yaw(),f.scale());
+        var van=map.van();var button=van.doorButton();candidate(targets,Kind.VAN_DOOR,"cargo",van.cargoDoorClosed()?"Open van doors":"Close van doors",hit("button_12",r,button.x(),van.floorY()+1.2,button.z(),van.placement().yaw()+Math.PI/2,.30));
+        for(var f:VanInteriorLayout.FIXTURES){var p=van.world(f.localX(),f.localZ());double t=hit(f.mesh(),r,p.x(),van.placement().y()+f.y(),p.z(),van.placement().yaw()+f.yaw(),f.scale());
             if(f.mount()==VanInteriorLayout.Mount.WALL||f.mount()==VanInteriorLayout.Mount.BULKHEAD||f.purpose().equals("desk keyboard")){
                 String id=f.purpose().contains("board")?"BRIEFING":f.purpose().equals("site map")?"MAP":f.purpose().contains("command")||f.purpose().equals("desk keyboard")?"COMPUTER":"RELAY";
                 candidate(targets,Kind.INTERFACE,id,label(f.purpose()),t);
             }else blocker=Math.min(blocker,t);
         }
-        double[] vr=local(r,van.placement().x(),0,van.placement().z(),van.placement().yaw(),1,1,1,0,0);
+        double[] vr=local(r,van.placement().x(),van.placement().y(),van.placement().z(),van.placement().yaw(),1,1,1,0,0);
         for(var item:placements(stock)){
             var b=item.bounds();double t=Double.POSITIVE_INFINITY;
             // Test the actual rotated model; the bounds only reject unrelated shelf units.

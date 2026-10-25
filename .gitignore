@@ -5,3 +5,6 @@ build/
 Thumbs.db
 __pycache__/
 *.pyc
+
+/gpu-client/target/
+/water-module/target/

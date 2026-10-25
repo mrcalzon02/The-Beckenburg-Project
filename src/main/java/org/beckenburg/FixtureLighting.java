@@ -13,7 +13,8 @@ public final class FixtureLighting {
  public FixtureLighting(HouseMap map){this.map=map;this.castle=null;
   for(var s:map.level().sockets())if(s.type().equals("light")){
    int control=controller(s);
-   if(s.style().equals("bare-bulb"))add(Kind.BARE_BULB,s.room(),0,s.x(),s.y()-.565,s.z(),0,-1,0,8,4.5,1,.86,.65);
+   if(s.style().equals("native-string"))add(Kind.FROSTED_DOME,s.room(),control,s.x(),s.y(),s.z(),0,-1,0,6,1.45,1,.76,.42);
+   else if(s.style().equals("bare-bulb"))add(Kind.BARE_BULB,s.room(),0,s.x(),s.y()-.565,s.z(),0,-1,0,8,4.5,1,.86,.65);
    else if(s.style().equals("candle-chandelier")){for(int i=0;i<6;i++){double a=i*Math.PI/3;add(Kind.CANDLE_CHANDELIER,s.room(),0,s.x()+.4*Math.cos(a),s.y()-.515,s.z()+.4*Math.sin(a),0,-1,0,5.8,.55,1,.66,.31);}}
    else if(s.style().contains("utility")||s.style().contains("industrial")){for(double dx:new double[]{-.34,.34})add(Kind.FLUORESCENT,s.room(),control,s.x()+dx,s.y()-.145,s.z(),0,-1,0,9,2.8,.84,.94,1);}
    else if(s.style().contains("sconce")||s.style().contains("porch")){double yaw=-s.yaw();add(Kind.WALL_SCONCE,s.room(),0,s.x()-Math.sin(yaw)*.24,s.y()+.16,s.z()+Math.cos(yaw)*.24,0,-1,0,5,2.4,1,.78,.48);}
@@ -21,7 +22,7 @@ public final class FixtureLighting {
   }
   for(var f:map.fixtures().states())if(f.kind()==HauntedFixtures.Kind.TABLE_LAMP)add(Kind.TABLE_LAMP,f.room(),f.id(),f.x(),f.y()+.345,f.z(),0,-1,0,3.6,2.0,1,.72,.40);
   for(var f:map.fixtures().states())if(f.kind().name().equals("TELEVISION")){double front=.345*f.scale();add(Kind.TELEVISION,f.room(),f.id(),f.x()-Math.sin(f.yaw())*front,f.y()+.32*f.scale(),f.z()+Math.cos(f.yaw())*front,-Math.sin(f.yaw()),0,Math.cos(f.yaw()),4.4,3.4,.91,.96,1);}
-  for(double zz:new double[]{-1.1,.9}){var pos=map.van().world(0,zz);add(Kind.FLUORESCENT,14,0,pos.x(),VanInteriorLayout.ROOF_Y-.10,pos.z(),0,-1,0,3.6,2.2,.9,.95,1);}
+  for(double zz:new double[]{-1.1,.9}){var pos=map.van().world(0,zz);add(Kind.FLUORESCENT,14,0,pos.x(),map.van().placement().y()+VanInteriorLayout.ROOF_Y-.10,pos.z(),0,-1,0,3.6,2.2,.9,.95,1);}
   factors=new double[sources.size()];
  }
  private int controller(LevelDefinition.Socket socket){int at=socket.style().indexOf('@');if(at<0)return 0;String key=socket.style().substring(at+1);var plate=map.level().sockets().stream().filter(s->s.id().equals(key)).findFirst().orElseThrow();return map.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.LIGHT_SWITCH&&Math.hypot(f.x()-plate.x(),f.z()-plate.z())<.001).findFirst().orElseThrow().id();}
@@ -131,8 +132,8 @@ public final class FixtureLighting {
   StringBuilder stamp=new StringBuilder();for(var source:sources){double f;
    if(source.room==14)f=1;
    else if(source.kind==Kind.CANDLE_CHANDELIER)f=.94+.06*Math.sin(tick*.37+source.id*2.1);
-   else if(source.kind==Kind.TABLE_LAMP)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.breaker())?1:0;
-   else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.breaker())?(.94+.06*Math.sin(tick*1.7)):0;
+   else if(source.kind==Kind.TABLE_LAMP)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?1:0;
+   else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?(.94+.06*Math.sin(tick*1.7)):0;
    else f=circuits==null?1:Math.max(0,Math.min(1,(circuits.brightness(source.room,tick)-.085)/.865));
    if(source.fixture>0&&source.kind!=Kind.TELEVISION&&source.kind!=Kind.TABLE_LAMP&&!map.fixtures().state(source.fixture).active())f=0;
    factors[source.id]=f;stamp.append(Math.round(f*1000)).append(',');
@@ -148,7 +149,8 @@ public final class FixtureLighting {
   case FROSTED_DOME->.18+.82*smooth(-.08,.42,dot);default->1;};}
  public RGB sample(int room,double x,double y,double z){
   Key key=new Key(room,Math.round(x*16),Math.round(y*16),Math.round(z*16));RGB cached=colours.get(key);if(cached!=null)return cached;
-  double r=(room<0||room>=12)?.27:(castle!=null?.125:.055),g=(room<0||room>=12)?.29:(castle!=null?.129:.059),b=(room<0||room>=12)?.34:(castle!=null?.14:.073);
+  boolean exterior=room<0||room>=12||map!=null&&map.outside(room);
+  double r=exterior?.27:(castle!=null?.125:.055),g=exterior?.29:(castle!=null?.129:.059),b=exterior?.34:(castle!=null?.14:.073);
   for(var source:sources){double factor=factors[source.id];if(factor<.001)continue;
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
@@ -159,8 +161,17 @@ public final class FixtureLighting {
   }
   RGB result=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));colours.put(key,result);return result;
  }
+ /** Directional diffuse for audited source normals. Existing un-audited
+  * assets retain the legacy sampler until their normal orientation is reviewed. */
+ public RGB sampleNormal(int room,double x,double y,double z,double nx,double ny,double nz){
+  double hemi=.65+.35*Math.max(0,ny),r=.27*hemi,g=.29*hemi,b=.34*hemi;
+  for(var source:sources){double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
+   double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
+   if(weight>.001&&clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025)){r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
+  }return new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
+ }
  public RGB emission(int material,double x,double y,double z){
-  String name=GlbProps.materialName(material).toLowerCase(Locale.ROOT);if(!(name.contains("glass")||name.contains("flame")||name.startsWith("television")))return RGB.ZERO;
+  String name=GlbProps.materialName(material).toLowerCase(Locale.ROOT);if(!(name.contains("glass")||name.contains("bulb")||name.contains("flame")||name.startsWith("television")))return RGB.ZERO;
   for(var s:sources)if(factors[s.id]>.01&&Math.abs(x-s.x)<.4&&Math.abs(y-s.y)<.28&&Math.abs(z-s.z)<.4)return new RGB(s.red*1.35,s.green*1.35,s.blue*1.35);
   return RGB.ZERO;
  }

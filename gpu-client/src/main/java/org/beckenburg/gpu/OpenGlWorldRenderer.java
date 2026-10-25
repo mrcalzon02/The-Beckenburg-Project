@@ -123,9 +123,12 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    id>=LevelMaterials.BASE?LevelMaterials.sample(id,u,v):MaterialAtlas.sample(id,u,v);
  }
  private Pixmap pixelsFor(int material){
-  Pixmap bitmap=new Pixmap(128,128,Pixmap.Format.RGBA8888);
-  for(int y=0;y<128;y++)for(int x=0;x<128;x++){
-   double u=(x+.5)/128.0,v=(127.5-y)/128.0;
+  int width=GlbProps.textureWidth(material),height=GlbProps.textureHeight(material);
+  Pixmap bitmap=new Pixmap(width,height,Pixmap.Format.RGBA8888);
+  for(int y=0;y<height;y++)for(int x=0;x<width;x++){
+   // Pixmap row zero is uploaded at GL v=0. The CPU sampler already owns
+   // each material family's V convention: do not invert that convention twice.
+   double u=(x+.5)/width,v=(y+.5)/height;
    int rgb=material<0?0xffffff:sample(material,u,v);
    int alpha=material>=GlbProps.TEXTURE_BASE
      &&material!=GlbProps.VAN_MAP_MATERIAL?

@@ -61,7 +61,7 @@ layered/translucent water remain open, with its authored work preserved.
 The 16-site breadth pass is a terrain-foundation milestone, not all-map completion.
 
 
-## User-requested additional scope — 23 October
+## User-requested additional scope â€” 23 October
 
 Five new lore-named sites and an additive cemetery/mortuary study are now planned. See [new location native reviews](blockouts/NEW_LOCATIONS_REVIEW.html). These are rough reservations and native blockouts; model lists do not count as model completion. Detailed terrain support, stairs/guards, architecture, fixtures/dressing, runtime and human review remain pending. The original 23 maps and 17 rough source blockouts are preserved.
 
@@ -80,3 +80,8 @@ Every investigation location must share the same combined indoor/outdoor hiding 
 Hollow Creek current authority is [route-graded native scene](hollow-creek/hollow-creek-route-grade.blend), following the rounded earthen-bank art checkpoint. [Native physics review](hollow-creek/NATIVE_PHYSICS_REVIEW.html) and [latest handoff](DEVELOPMENT_HANDOFF_2026-10-25_NATIVE_PHYSICS.md) record the hash-pinned HCS2 geometry component, independently checked supports/sight/standing movement routes and a three-vertex local grade correction. This supersedes the stale pending physics draft, preserves earlier art sources and adds no clutter. The actual game mission remains locked. Van elevation, world/player/AI/circuits, UV encounter, host/LAN, water and real game review gates remain open. Full all-map objective remains active.
 
 Current Hollow Creek visual material variant: [woodland-matched grass review](hollow-creek/GREEN_GRASS_REVIEW.html), green-grass.json and hollow-creek-green-grass.blend. Consume [green-grass handoff](DEVELOPMENT_HANDOFF_2026-10-25_GREEN_GRASS.md) alongside native physics handoff. User rejected v3 yellow-green against the distant wood; v4 uses the actual woodland overview reference. Physical geometry remains identical to the verified route-grade authority; human palette acceptance remains pending.
+
+
+## 25 October actual native-runtime / water focus
+
+The current user priority is the independent water module and shoreline-facing actual game review before general map expansion. Consume [water runtime handoff](DEVELOPMENT_HANDOFF_2026-10-25_WATER_RUNTIME.md) and [latest review](hollow-creek/WATER_RUNTIME_REVIEW.html). Actual source geometry, native physics, elevated canonical van and generator/source controls are now bridged into a directly instantiated game map. The mission remains catalog-locked pending real gameplay/host/LAN/performance and ghost-specific power acceptance. Editable boat override refines only seats, brackets, oars and directional materials; the physical hull and site terrain remain unchanged. The all-map goal remains active; no next map has been started.

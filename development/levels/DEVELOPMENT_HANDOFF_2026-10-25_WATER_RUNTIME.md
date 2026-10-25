@@ -1,0 +1,30 @@
+# Hollow Creek actual native-runtime and water checkpoint — 25 October 2026
+
+Active checkout: `C:/Users/Admin/Documents/ChatGPT/Phasmaphobia alike/The-Beckenburg-Unified`, branch `integration/unified-map-engine`, authorized delivery `origin HEAD:main` after fetch/ancestor check. Preserve original and mission-board checkouts and unrelated verification changes.
+
+## Current scope / authority
+
+User reprioritized independent water effects, shoreline-facing actual game animations, distant detail softening, slow shore waves, and boat texture/lighting/seat/oar corrections. Continue water review before another map or general clutter. Parent visual authority remains green-grass.blend / green-grass.json; physical HCS2 and route-grade authority remain unchanged. Boat-only override: hollow-creek-rowboat-refined.blend / rowboat-refinement.json. Its hull, pivot, pose and waterline are unchanged; 228 accessory vertices move. runtime-scene.json explicitly records the override and new model hash. Re-running the full scene exporter resets the boat override: re-run refine_hollow_creek_rowboat.py afterward and rerun its audits.
+
+## Implemented
+
+- Native runtime bridge consumes 384 bounded original mesh exports, 598 exact source poses and HCS2 support/optics/capsule sweeps. Canonical van elevation propagates to support/render/focus/lights; actual roof/side occlusion is present. No rectangle room slabs replace native geometry.
+- Outdoor ownership uses explicit source flags, not numeric indoor IDs. Native generator and actual east-wall breaker controls/ten dock lamps have separate source-running/breaker states. A draft generic ghost-signature breaker rule was removed because it would violate ghost-specific restrictions.
+- Independent Java17 MIT water library: two scrolling quantized layers, coherent noisy triangular waves, 5.5-second depth-guided shore waves, broken moving crest foam, depth absorption/alpha, refracted bed with foreground rejection, dark tinted Fresnel, sorted body transparency and actual hull exclusion. Original shader/reference/provenance preserved; demo photo excluded. Separate Maven package succeeds without game dependencies.
+- New optical-only basin: 6,161 vertices / 12,000 triangles, authored from actual bank lines, dock blockers excluded. Shared exact triangle sampler prevents bed/render depth disagreement. Existing original shore grit reused. This is authored initial bathymetry, not measured terrain or new player support.
+- Twenty-three actual inner hull sections, 10mm spacing, cover the complete 95mm combined wave envelope. Adjacent section union stays inside the thick hull; rings are excluded from section extraction.
+- GPU upload restores CPU sampler V convention and actual source atlas resolution instead of mirroring/downsampling every atlas to128. Actual dock before/after exposes and fixes the severe boat black-band regression. Reused older GPU assets still require visual audits.
+- Boat thwarts clear curved inner hull by12mm. Brackets and fastenings refitted. Oars rest on thwarts; full geometry blade clearance exceeds114mm. New original directional wood/paint/metal albedos reduce flat atlas colours/repetitive grain. Source normals retained and used for audited boat GPU directional lighting. Other maps and software directional shading remain unaudited.
+- World-only distance blur rejects foreground discontinuities; exponential haze converges to the actual camera sky before the far clip, leaving nearby detail and later weather/HUD sharp.
+
+## Checks and evidence
+
+Six focused Java suites pass: WaterModuleTest, WaterEffectsTest, WaterReviewRegressionTest, ElevatedVanTest, HollowCreekRuntimeTest, HollowCreekPowerTest. They cover 200 independent nearest-wave rays, zero-wave analytic equivalence, full-wave dry-hull exclusion, exact bed diagonal, source normal/resolution retention, directional fixture response, near/far blur isolation, actual15 zones/3 rituals/6 elevated spawn pads,969 route points/939 movement sweeps and supported electrical controls. Source-only Blender audit passes384 exact local geometry and original UV exports/598 exact matrices, including the explicit refined boat override. Boat source generator asserts hull immutability and real accessory clearance.
+
+Latest actual hardware review: WATER_RUNTIME_REVIEW.html, previews/hollow-creek-runtime/water-final/, verification/hollow-creek-game-captures-water-final.json. Four accessible fixed cameras: beach(34,5), east riverbank(55,15), west riverbank(42,13), dock(26.2,-4), actual floor heights recorded. Each clip72 fresh OpenGL frames /6 simulation seconds,12fps encoded playback, NVIDIA RTX5070. This is offline scripted actual renderer evidence, not a frame-rate benchmark, mission UI proof, LAN test or human acceptance. Earlier flat-baseline/atlas-corrected/water-refined/shore-waves evidence retained and explicitly superseded. Gallery links latest MP4s and hashes them alongside PNGs.
+
+## Remaining / next
+
+Review shoreline foam scale, boat paint/wood/light response and horizon in latest actual clips. Implement creek-specific current, interaction ripples, weather/wind variants, underwater transitions and true reflected scene geometry only as separate tested iterations; present Fresnel is a tint. Complete software-path normal-light parity and older GPU atlas/normal audits individually. The normal mission selector is still locked; actual gameplay/camera/evidence/object integration, eligible ghost-specific breaker authority, host/LAN and runtime performance must pass before unlock or moving to another map. Native captures and these scripted game clips do not establish those gates.
+
+All newly discovered defects are recorded in the shared ledger, including the open ghost-rule audit. The broad all-map goal remains active. Exact per-run input/output/cached/total token metadata is unavailable; usage JSON records nulls without estimates. Publication proof is recorded separately after successful GitHub delivery; if DNS is unavailable, preserve this complete local checkpoint and retry without changing credentials or forcing remote history.

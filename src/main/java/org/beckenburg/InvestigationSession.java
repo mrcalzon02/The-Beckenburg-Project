@@ -260,7 +260,7 @@ public final class InvestigationSession {
             uvHardware.advancePower(ticks);
             if(saltRoom==ghost.room()&&ticks>saltTick&&GhostTraits.saltAffects(ghost.type())){
                 ghost.reveal(30);ghost.slowFor(26);
-                log("Salt disturbed in "+map.roomName(saltRoom)+" — grounded spirit slowed and briefly revealed.");
+                log("Salt disturbed in "+map.roomName(saltRoom)+" â€” grounded spirit slowed and briefly revealed.");
                 saltRoom=-1;saltTick=-1;
             }
         }
@@ -402,7 +402,7 @@ public final class InvestigationSession {
         int power=age>=0&&age<=40&&lastEvidenceRoom==room
             ?Math.max(0,lastEvidenceStrength-age/7):0;
         boolean indoor=room<HouseMap.INDOOR_ROOMS;
-        boolean heated=roomLights==null||roomLights.breaker();
+        boolean heated=roomLights==null||roomLights.supplied();
         var location=new EvidenceSignals.Location(season,missionWeather.state().weather(),
             14,room,indoor,heated);
         var measured=EvidenceSignals.temperature(evidenceSeed,ticks,location,

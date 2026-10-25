@@ -7,10 +7,12 @@ import org.beckenburg.LevelDefinition.*;
 public final class HouseMap {
     public static final int COLS=3,ROWS=5,INDOOR_ROOMS=12,ROOM_COUNT=15;
     public static final int WIDTH=128,HEIGHT=128,GRAND_WIDTH=128,GRAND_HEIGHT=128,EXTRACTION_ROOM=14;
-    public enum Site { HOUSE,FARMHOUSE,SCHOOL,MANSION,PRISON,ASYLUM,ACADEMY,COLLEGE,CHURCH }
+    public enum Site { HOUSE,FARMHOUSE,SCHOOL,MANSION,PRISON,ASYLUM,ACADEMY,COLLEGE,CHURCH,HOLLOW_CREEK }
     private final Site site;
     private final LevelDefinition level;
     private final SiteTerrain terrain;
+    private final AuthoredSitePhysics nativeSite;
+    public boolean nativeSite(){return nativeSite!=null;}
     public SiteTerrain terrain(){return terrain;}
     private LooseClutter clutter;
     private HauntedFixtures fixtures;
@@ -33,7 +35,8 @@ public final class HouseMap {
     HouseMap(Site site,LevelDefinition definition){
         this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
         terrain=SiteTerrain.of(level);
-        Dock d=level.dock();van=new VanStaging(new VanStaging.Placement(d.x(),d.z(),d.yaw()));
+        nativeSite=HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
+        Dock d=level.dock();van=new VanStaging(new VanStaging.Placement(d.x(),d.y(),d.z(),d.yaw()));
         // Fixture anchors must be fixed before door state or difficulty can change.
         // Author access against every potential cupboard, then restore the default.
         configureHiding(100);fixtures=new HauntedFixtures(this);configureHiding(70);
@@ -42,6 +45,7 @@ public final class HouseMap {
     public LevelDefinition level(){return level;}
     public boolean authoredArchitecture(){return true;}
     public VanStaging van(){return van;}
+    public boolean sheltered(double x,double eyeY,double z){if(nativeSite!=null)return !nativeSite.clearSight(new Vec(x,eyeY+.03,z),new Vec(x,eyeY+10,z))||!van.clearSight(x,eyeY+.03,z,x,eyeY+10,z);int room=roomAt(x,eyeY-1.3,z);return room>=0&&!outside(room);}
     public int width(){return (int)Math.ceil(level.rooms().stream().mapToDouble(Room::x1).max().orElse(100))+3;}
     public int height(){return (int)Math.ceil(level.rooms().stream().mapToDouble(Room::z1).max().orElse(100))+3;}
     public int cellWidth(){return 8;}
@@ -49,7 +53,7 @@ public final class HouseMap {
     public double ceilingHeight(){return level.room(0).height();}
     public int roomCount(){return ROOM_COUNT;}
     public int interiorRoomCount(){return INDOOR_ROOMS;}
-    public boolean outside(int room){return room>=12&&room<15;}
+    public boolean outside(int room){return room>=0&&room<15&&level.room(room).outside();}
     public double floorY(int room){checkRoom(room);return level.floorY(room);}
     public Vec spawn(int room){checkRoom(room);return level.room(room).spawn();}
     public double centerX(int room){return spawn(room).x();}
@@ -58,6 +62,7 @@ public final class HouseMap {
     public String roomName(double x,double z){return roomName(roomAt(x,z));}
     public int roomAt(double x,double y,double z){
         if(!finite(x,y,z))return -1;
+        if(nativeSite!=null){var local=van.local(x,z);if(Math.abs(local.x())<VanStaging.INTERIOR_HALF_WIDTH&&local.z()>=VanStaging.FRONT&&local.z()<VanStaging.REAR&&y>=van.floorY()-.22&&y<van.placement().y()+VanStaging.ROOF_Y)return 14;var support=nativeSite.support(x,z,y,4);return support==null?-1:HollowCreekLevel.owner(x,z);}
         for(Stair s:level.stairs())if(s.contains(x,z,0)&&Math.abs(y-s.yAt(x,z))<.25)
             return s.t(x,z)<.5?s.a():s.b();
         Room owner=null;
@@ -69,6 +74,7 @@ public final class HouseMap {
     /** Legacy ground-plane adapter; authoritative callers must supply feet Y. */
     public int roomAt(double x,double z){
         var cargo=van.local(x,z);if(Math.abs(cargo.x())<VanStaging.INTERIOR_HALF_WIDTH&&cargo.z()>=VanStaging.FRONT&&cargo.z()<VanStaging.REAR)return 14;
+        if(nativeSite!=null){var support=nativeSite.support(x,z,0,4);return support==null?-1:HollowCreekLevel.owner(x,z);}
         if(terrain!=null){int graded=roomAt(x,groundHeight(x,z,12),z);if(graded>=0)return graded;}
         int room=roomAt(x,0,z);if(room>=0)return room;
         for(Room r:level.rooms())if(r.contains(x,r.y(),z))return r.id();return -1;
@@ -200,6 +206,9 @@ public final class HouseMap {
     public boolean traversable(double x,double y,double z){return traversable(x,y,z,HunterPosture.STANDING_HEIGHT);}
     public boolean traversable(double x,double y,double z,double bodyHeight){
         if(!finite(x,y,z,bodyHeight)||bodyHeight<.9||bodyHeight>2.0)return false;double radius=.22;
+        if(nativeSite!=null){Double sy=van.supportHeight(x,z);boolean blocked=van.collides(x,z,radius)&&y+bodyHeight>van.placement().y()&&y<van.placement().y()+VanStaging.ROOF_Y;
+            if(sy!=null)return Math.abs(y-sy)<.08&&!blocked&&!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius);
+            return !blocked&&nativeSite.traversable(new Vec(x,y,z),bodyHeight);}
         if(!supported(x,y,z,radius)||wallBlocked(x,y,z,radius,false,-1,bodyHeight))return false;
         for(double[] d:new double[][]{{-radius,0},{radius,0},{0,-radius},{0,radius}})
             if(!supported(x+d[0],y,z+d[1],0)&&!(terrain!=null&&terrain.playable(x+d[0],z+d[1])&&!terrain.indoors(x+d[0],z+d[1])&&Math.abs(y-terrain.height(x+d[0],z+d[1]))<.20))return false;
@@ -214,10 +223,11 @@ public final class HouseMap {
         for(Room r:level.rooms())if(!r.outside()&&x>r.x0()&&x<r.x1()&&z>r.z0()&&z<r.z1()&&y>=r.y()-.05&&r.y()+r.height()>y+.12&&y+bodyHeight>r.y()+r.height()-.03&&!level.floorVoid(x,r.y()+r.height(),z))return false;
         return true;
     }
-    public boolean traversable(double x,double z){Double deck=van.supportHeight(x,z);int r=roomAt(x,z);return r>=0&&traversable(x,deck==null?surface(level.room(r),x,z):deck,z);}
+    public boolean traversable(double x,double z){if(nativeSite!=null){double y=groundHeight(x,z,roomAt(x,z));return traversable(x,y,z);}Double deck=van.supportHeight(x,z);int r=roomAt(x,z);return r>=0&&traversable(x,deck==null?surface(level.room(r),x,z):deck,z);}
     private double surface(Room r,double x,double z){return terrain!=null&&r.outside()&&r.id()!=14?terrain.height(x,z):r.y();}
     /** Physical support for entities: preserve a room's lower storey underneath an overlapping loft. */
     public double groundHeight(double x,double z,int roomHint){
+        if(nativeSite!=null){Double deck=van.supportHeight(x,z);if(deck!=null)return deck;var support=nativeSite.support(x,z,roomHint>=0&&roomHint<15?level.floorY(roomHint):0,4);return support==null?Double.NaN:support.y();}
         if(terrain==null&&roomHint>=0&&roomHint<15)return level.room(roomHint).y();
         Double vanY=van.supportHeight(x,z);if(vanY!=null)return vanY;
         for(var stair:level.stairs())if((stair.a()==roomHint||stair.b()==roomHint)&&stair.contains(x,z,0))return stair.yAt(x,z);
@@ -231,6 +241,7 @@ public final class HouseMap {
     }
     private Double supportNear(double x,double z,double previousY){
         Double vanY=van.supportHeight(x,z);if(vanY!=null)return Math.abs(vanY-previousY)<.251?vanY:null;
+        if(nativeSite!=null){var s=nativeSite.support(x,z,previousY,.251);return s==null?null:s.y();}
         Double best=null;double delta=.251;
         for(Stair s:level.stairs())if(s.contains(x,z,.22)){double sy=s.yAt(x,z),d=Math.abs(sy-previousY);if(d<delta){best=sy;delta=d;}}
         // A ramp owns its deck opening; prefer it over the overlapping lower room.
@@ -254,6 +265,7 @@ public final class HouseMap {
     /** Small-body sweep, including its radius, ceiling and furnishing contact. */
     public boolean clearObjectPath(double ax,double ay,double az,double bx,double by,double bz,double radius,double half){
         if(!finite(ax,ay,az,bx,by,bz,radius,half)||radius<0||radius>.3||half<0||half>.4)return false;
+        if(nativeSite!=null){for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})if(!nativeSite.clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;return true;}
         int steps=Math.max(1,(int)Math.ceil(Math.sqrt((bx-ax)*(bx-ax)+(by-ay)*(by-ay)+(bz-az)*(bz-az))/.025));
         for(int n=1;n<=steps;n++){
             double t=n/(double)steps,x=ax+(bx-ax)*t,y=ay+(by-ay)*t,z=az+(bz-az)*t;
@@ -276,6 +288,7 @@ public final class HouseMap {
      * All other doors, walls, storeys and furnishing still occlude the interaction ray. */
     public boolean clearInteractionSight(double ax,double ay,double az,double bx,double by,double bz,int selectedPortal){
         if(!finite(ax,ay,az,bx,by,bz))return false;
+        if(nativeSite!=null)return nativeSite.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz))&&van.clearSight(ax,ay,az,bx,by,bz);
         double distance=Math.sqrt((bx-ax)*(bx-ax)+(by-ay)*(by-ay)+(bz-az)*(bz-az));if(distance>40)return false;if(distance<.01)return true;
         int steps=(int)Math.ceil(distance/.075);
         for(int i=1;i<steps;i++){

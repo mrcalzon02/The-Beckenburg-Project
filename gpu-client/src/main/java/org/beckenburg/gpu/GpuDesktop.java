@@ -177,6 +177,7 @@ public final class GpuDesktop {
    BeckenburgDiagnostics.fail("Required GPU renderer initialization",failure);
    throw failure;
   }
+  if(options.contains("--hollow-creek-review")){try{HollowCreekRuntimeReview.execute(ENGINE);System.exit(0);}catch(Throwable failure){failure.printStackTrace();System.exit(1);}return;}
   if(smoke){
    try{
     smoke();

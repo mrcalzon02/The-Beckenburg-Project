@@ -1,0 +1,40 @@
+{
+  "status": "pass-scoped-implementation-and-scripted-runtime-review",
+  "tests_passed": [
+    "WaterModuleTest",
+    "WaterEffectsTest",
+    "WaterReviewRegressionTest",
+    "ElevatedVanTest",
+    "HollowCreekRuntimeTest",
+    "HollowCreekPowerTest"
+  ],
+  "source_audit": "384 exact local geometry/UV exports, 598 source poses, explicit boat override",
+  "animations": [
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-final/water-beach-runtime.mp4",
+      "sha256": "11570a8aeaa9bff58047a08f6f13c37b07fea0d3b4e63b6073d8b8e65bf8ddf0",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-east-runtime.mp4",
+      "sha256": "d4dca887731a6011378cafb8dd9a6be523d6dd4e6c73113bfbc30c3b57d1e89f",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-west-runtime.mp4",
+      "sha256": "86f2c701e67f71fe88e08983811efd8fa81206a6a8a89b5e627038b9a66f02a4",
+      "frames": 72,
+      "duration_seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-final/water-dock-boat-runtime.mp4",
+      "sha256": "c5500eeb076076375c426b76d214dab3b17c89d274ecf31adee85544503b7998",
+      "frames": 72,
+      "duration_seconds": 6
+    }
+  ],
+  "full_gameplay_host_LAN_human_acceptance": false,
+  "publication": "pending: GitHub DNS failure on two authorized fetch attempts; no credentials or network settings changed"
+}

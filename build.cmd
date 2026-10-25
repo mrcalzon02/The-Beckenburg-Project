@@ -11,6 +11,9 @@ if not exist build\test mkdir build\test
   for %%F in (src\main\java\org\beckenburg\editor\*.java) do @echo "src/main/java/org/beckenburg/editor/%%~nxF"
   for %%F in (src\main\java\dev\mrcalzon\weather\*.java) do @echo "src/main/java/dev/mrcalzon/weather/%%~nxF"
 )
+>> build\sources-main.txt (
+  for %%F in (water-module\src\main\java\dev\mrcalzon\water\*.java) do @echo "water-module/src/main/java/dev/mrcalzon/water/%%~nxF"
+)
 > build\sources-tests.txt (
   for %%F in (src\test\java\org\beckenburg\*.java) do @echo "src/test/java/org/beckenburg/%%~nxF"
 )

@@ -9,9 +9,10 @@ import java.util.Objects;
  * In this alpha it is locally authoritative; LAN command validation is future work.
  */
 public final class VanStaging {
-    public record Placement(double x, double z, double yaw) {
+    public record Placement(double x, double y, double z, double yaw) {
+        public Placement(double x,double z,double yaw){this(x,0,z,yaw);}
         public Placement {
-            if (!Double.isFinite(x) || !Double.isFinite(z) || !Double.isFinite(yaw))
+            if (!Double.isFinite(x) || !Double.isFinite(y) || !Double.isFinite(z) || !Double.isFinite(yaw))
                 throw new IllegalArgumentException("Nonfinite van placement");
         }
     }
@@ -52,9 +53,9 @@ public final class VanStaging {
     /** Continuous, ground-supported fold-out ramp and raised cargo deck. */
     public Double supportHeight(double x,double z){
         Position p=local(x,z);
-        if(Math.abs(p.x())<=INTERIOR_HALF_WIDTH&&p.z()>=FRONT&&p.z()<=REAR)return FLOOR_Y;
+        if(Math.abs(p.x())<=INTERIOR_HALF_WIDTH&&p.z()>=FRONT&&p.z()<=REAR)return placement.y()+FLOOR_Y;
         if(Math.abs(p.x())<=RAMP_HALF_WIDTH&&p.z()>=FRONT-RAMP_LENGTH-.25&&p.z()<FRONT)
-            return FLOOR_Y*Math.max(0,p.z()-(FRONT-RAMP_LENGTH))/RAMP_LENGTH;
+            return placement.y()+FLOOR_Y*Math.max(0,p.z()-(FRONT-RAMP_LENGTH))/RAMP_LENGTH;
         return null;
     }
     public boolean nearDoorButton(double x,double z){
@@ -69,6 +70,7 @@ public final class VanStaging {
     private final Placement placement;
     public VanStaging(Placement placement) { this.placement=Objects.requireNonNull(placement); }
     public Placement placement() { return placement; }
+    public double floorY(){return placement.y()+FLOOR_Y;}
     public Position world(double dx,double dz) {
         double c=Math.cos(placement.yaw()),s=Math.sin(placement.yaw());
         return new Position(placement.x()+c*dx-s*dz,placement.z()+s*dx+c*dz);
@@ -103,6 +105,30 @@ public final class VanStaging {
         return Math.hypot(x-nearestX,z-nearestZ)<=radius;
     }
     public boolean solid(double x,double z) {return collides(x,z,0);}
+    /** Optical panels use the same local dimensions and raised placement as the mesh.
+     * Invisible site barriers never enter this query. Cargo opening stays clear.
+     */
+    public boolean clearSight(double ax,double ay,double az,double bx,double by,double bz){
+        var aa=local(ax,az);var bb=local(bx,bz);double[] a={aa.x(),ay-placement.y(),aa.z()},b={bb.x(),by-placement.y(),bb.z()};
+        double w=HALF_WIDTH,iw=INTERIOR_HALF_WIDTH,f=FRONT,r=REAR,h=ROOF_Y,shoulder=ROOF_SHOULDER_Y,ir=INTERIOR_ROOF_HALF_WIDTH;
+        double[][] panels={{-w,FLOOR_Y,f,-iw,shoulder,r},{iw,FLOOR_Y,f,w,shoulder,r},{-w,FLOOR_Y-.13,f,w,FLOOR_Y,r},{-ir-.1,h-.095,f,ir+.1,h+.07,r},{-w,FLOOR_Y,r-.08,w,h,r+CAB_LENGTH}};
+        for(var p:panels)if(rayBox(a,b,p))return false;
+        if(cargoDoorClosed&&rayBox(a,b,new double[]{-w,FLOOR_Y,f,w,h,f+.08}))return false;
+        for(double side:new double[]{-1,1}){
+            double[] p={side*w,shoulder,f},q={side*(ir+.1),h,f},s={side*(ir+.1),h,r},t={side*w,shoulder,r};
+            if(rayTriangle(a,b,p,q,s)||rayTriangle(a,b,p,s,t))return false;
+        }return true;
+    }
+    private static boolean rayBox(double[] a,double[] b,double[] box){
+        double lo=0,hi=1;
+        for(int axis=0;axis<3;axis++){double d=b[axis]-a[axis];if(Math.abs(d)<1e-12){if(a[axis]<box[axis]||a[axis]>box[axis+3])return false;}else{double p=(box[axis]-a[axis])/d,q=(box[axis+3]-a[axis])/d;if(p>q){double swap=p;p=q;q=swap;}lo=Math.max(lo,p);hi=Math.min(hi,q);if(lo>hi)return false;}}
+        return hi>1e-5&&lo<1-1e-5;
+    }
+    private static boolean rayTriangle(double[] a,double[] b,double[] p,double[] q,double[] r){
+        double[] d={b[0]-a[0],b[1]-a[1],b[2]-a[2]},e={q[0]-p[0],q[1]-p[1],q[2]-p[2]},f={r[0]-p[0],r[1]-p[1],r[2]-p[2]},h={d[1]*f[2]-d[2]*f[1],d[2]*f[0]-d[0]*f[2],d[0]*f[1]-d[1]*f[0]},s={a[0]-p[0],a[1]-p[1],a[2]-p[2]};
+        double det=e[0]*h[0]+e[1]*h[1]+e[2]*h[2];if(Math.abs(det)<1e-12)return false;double u=(s[0]*h[0]+s[1]*h[1]+s[2]*h[2])/det;if(u<0||u>1)return false;
+        double[] cross={s[1]*e[2]-s[2]*e[1],s[2]*e[0]-s[0]*e[2],s[0]*e[1]-s[1]*e[0]};double v=(d[0]*cross[0]+d[1]*cross[1]+d[2]*cross[2])/det,t=(f[0]*cross[0]+f[1]*cross[1]+f[2]*cross[2])/det;return v>=0&&u+v<=1&&t>1e-5&&t<1-1e-5;
+    }
     public Station stationAt(double x,double z) {
         if(!Double.isFinite(x)||!Double.isFinite(z))return null;
         // Prevent remote activation and access from outside the cargo bay.

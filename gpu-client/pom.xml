@@ -22,7 +22,7 @@
     <groupId>org.codehaus.mojo</groupId><artifactId>build-helper-maven-plugin</artifactId><version>3.6.1</version>
     <executions><execution><id>game-engine</id><phase>generate-sources</phase>
      <goals><goal>add-source</goal></goals>
-     <configuration><sources><source>${project.basedir}/../src/main/java</source></sources></configuration>
+     <configuration><sources><source>${project.basedir}/../src/main/java</source><source>${project.basedir}/../water-module/src/main/java</source></sources></configuration>
     </execution></executions>
    </plugin>
    <plugin>
@@ -49,6 +49,7 @@
   <!-- build.cmd package populates these verified original scene resources.
        The GPU distribution contains the SAME models, not substitute scenery. -->
   <resources>
+   <resource><directory>${project.basedir}/../water-module/src/main/resources</directory></resource>
    <resource><directory>${project.basedir}/../build/classes</directory>
     <includes><include>org/beckenburg/**</include><include>dev/mrcalzon/weather/**</include></includes>
    </resource>

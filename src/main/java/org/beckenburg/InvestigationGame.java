@@ -731,10 +731,10 @@ public final class InvestigationGame {
             ?VanEquipmentRack.aimed(map.van(),scene.x,scene.z,scene.yaw,profile.equipment()):null;}
         private VanStaging.Station aimedStation(){return atVanFloor()?map.van().stationAt(scene.x,scene.z):null;}
         private void syncEnvironment(){
-            scene.environmentLight=conditions.lightMultiplier()*(powerOn?1.0:.48);
+            scene.environmentLight=conditions.lightMultiplier()*(map.nativeSite()?1.0:powerOn?1.0:.48);
             scene.fogDensity=conditions.fogMultiplier();
             scene.environmentPowerOn=powerOn;
-            lights.setBreaker(powerOn);map.fixtures().power(powerOn);
+            lights.setBreaker(powerOn);map.fixtures().power(lights.supplied());
         }
         private boolean nearBreaker(){
             return RoomLighting.breakerAimed(map,scene.x,feetY(),scene.z,scene.yaw);
@@ -828,6 +828,7 @@ public final class InvestigationGame {
             while(accumulator>=.1){
                 session.clutterLook(scene.yaw,scene.pitch);
                 session.tick(scene.x,feetY(),scene.z,scene.lamp);
+                if(powerOn!=lights.breaker()){powerOn=lights.breaker();syncEnvironment();showVanNotice(powerOn?"Breaker restored":"Main breaker tripped");}
                 if(campaignMode)advanceChapterStory();
                 var listener=new LanWorld.Body(scene.x,feetY(),scene.z,
                     Math.floorMod((int)Math.round(Math.toDegrees(scene.yaw)),360),
@@ -1062,13 +1063,14 @@ public final class InvestigationGame {
                 }
                 case INTERFACE -> {assignmentReader.reset();storyReader.reset();storyReading=target.id().startsWith("STORY_")?target.id().substring(6):"";if(target.id().equals("MAP"))mapShown=true;else if(target.id().equals("COMPUTER"))journalShown=true;else briefingShown=true;down.clear();mouseLook.release();}
                 case SWITCH -> lights.toggle(Integer.parseInt(target.id()));
-                case BREAKER -> {powerOn=!powerOn;map.fixtures().power(powerOn);syncEnvironment();}
+                case GENERATOR -> {lights.setSourceRunning(!lights.sourceRunning());map.fixtures().power(lights.supplied());syncEnvironment();}
+                case BREAKER -> {powerOn=!powerOn;map.fixtures().power(lights.supplied());syncEnvironment();}
                 case DOOR -> {int id=Integer.parseInt(target.id());map.toggleDoor(id);if(!map.traversable(scene.x,feetY(),scene.z)){map.toggleDoor(id);throw new IllegalArgumentException("Doorway occupied.");}}
                 case WINDOW -> map.toggleWindow(Integer.parseInt(target.id()));
                 case VAN_DOOR -> {if(map.van().toggleCargoDoor()&&!map.traversable(scene.x,feetY(),scene.z)){map.van().toggleCargoDoor();throw new IllegalArgumentException("Van doorway occupied.");}}
             }
             GameSfx.play(target.kind()==InteractionFocus.Kind.CLUTTER||target.kind()==InteractionFocus.Kind.RACK?LanSound.Cue.PICKUP:LanSound.Cue.SWITCH);
-            showVanNotice(target.name());
+            showVanNotice(target.kind()==InteractionFocus.Kind.GENERATOR?(lights.sourceRunning()?"Generator running":"Generator stopped"):target.name());
             }catch(IllegalArgumentException|IOException ex){showVanNotice(ex.getMessage());}
         }
         private void showVanNotice(String text){vanNotice=text;vanNoticeExpires=session.ticks()+85;}
