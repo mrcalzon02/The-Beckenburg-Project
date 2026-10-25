@@ -3,13 +3,16 @@ package org.beckenburg;
 import java.awt.image.BufferedImage;
 
 /**
- * Shared PSX-resolution neutral apparition. Its shape and colors are independent
- * of the real ghost type, variant, Twin member, and Ancient/Elder status.
- * Replace this centrally with approved generic art when it is available.
+ * Every visible but not yet signature-revealed ghost uses the already shipped
+ * Mimic cutouts. This is a PRESENTATION binding, not a change to the ghost's
+ * identity, evidence, abilities, host authority, or signature-specific art.
+ *
+ * Keep UNREVEALED distinct from "mimic": clients must not infer the real ghost
+ * species from a non-signature manifestation. No procedural placeholder sprite.
  */
 public final class GhostManifestationVisual {
     public static final String UNREVEALED = "unrevealed_ghost";
-    private static final BufferedImage TEXTURE = create();
+    public static final String DEFAULT_SPRITE = "mimic";
     private GhostManifestationVisual() {}
 
     public static boolean revealsIdentity(LanGhostAnimation.Phase phase) {
@@ -18,28 +21,26 @@ public final class GhostManifestationVisual {
     public static String appearance(String actual, LanGhostAnimation.Phase phase) {
         return revealsIdentity(phase) ? actual : UNREVEALED;
     }
-    public static BufferedImage frame() { return TEXTURE; }
 
-    private static double ell(double dx,double dy,double rx,double ry) {
-        double norm=dx*dx/(rx*rx)+dy*dy/(ry*ry);
-        return Math.exp(-2.1*norm);
+    /** All original-direction cutouts are taken from the Mimic's shipped atlas.
+     * The present atlas is not authored frame-by-frame animation, so retain the
+     * genuine four source angles and idle cutout for all unrevealed phases.
+     */
+    static int sourceFacing(int facing) {
+        if(facing<0||facing>=8)throw new IllegalArgumentException("facing must be 0..7");
+        return switch(facing) {
+            case 0,1,7 -> 0; // front
+            case 2,6 -> 2;   // side
+            case 3,5 -> 3;   // three-quarter
+            default -> 4;   // back
+        };
     }
-    private static BufferedImage create() {
-        BufferedImage img=new BufferedImage(128,224,BufferedImage.TYPE_INT_ARGB);
-        for(int y=0;y<224;y++)for(int x=0;x<128;x++){
-            double xx=x-64.0;
-            double shape=Math.max(
-                Math.max(ell(xx,y-57,19,24),ell(xx,y-103,34,21)),
-                Math.max(ell(xx,y-144,29,65),
-                    Math.max(ell(xx+32,y-147,12,55),ell(xx-32,y-147,12,55))));
-            double haze=.16*ell(xx,y-174,44,43);
-            double dissolve=Math.max(.12,Math.min(1.0,(222.0-y)/32.0));
-            double grain=.82+.13*Math.sin(x*1.77+y*2.51)*Math.sin(x*.77-y*1.97);
-            int alpha=(int)(210*Math.min(1.0,shape+haze)*dissolve*grain);
-            if(alpha<12)continue;
-            int tone=Math.max(0,Math.min(220,(int)(42+17*Math.sin(x*.09+y*.045))));
-            img.setRGB(x,y,(Math.min(255,alpha)<<24)|(tone<<16)|((tone+6)<<8)|(tone+15));
-        }
-        return img;
+    public static BufferedImage frame() { return frame(0); }
+    public static BufferedImage frame(int facing) {
+        BufferedImage sprite=GhostSpriteAtlas.frame(DEFAULT_SPRITE,sourceFacing(facing),"idle",0);
+        if(sprite==null)
+            throw new IllegalStateException(
+                "Required Mimic directional atlas missing; unrevealed ghosts cannot use a placeholder");
+        return sprite;
     }
 }
