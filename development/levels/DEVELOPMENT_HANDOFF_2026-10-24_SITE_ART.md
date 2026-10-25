@@ -17,3 +17,5 @@ DEV-072..078 record user findings plus UV render-layer selection, facility scatt
 Exact current-run input/output/cached/total token metadata is unavailable. Historic goal counters and account percentages are not current-run counts. See dated usage record; no estimated token totals.
 
 User stop checkpoint:03a10b056786f2636d4edee9c8c197581e0f6e28 is pushed to main. New user finding: the boundary berm retains an obvious old flat material difference against the revised ground. Correction has NOT been implemented. Next priority is to carry the dirty grass/soil family and matching world scale onto the berm, preserving geometry/collision and reviewing slope UV stretch and foot continuity. User requested immediate stop/commit at2% remaining; do not claim the berm fixed.
+
+Superseded by DEVELOPMENT_HANDOFF_2026-10-25_EARTHEN_BANK.md: the bank shape/material mismatch and gravel blobs have now received a published, independently checked native correction. Use hollow-creek-grounded-berm.blend as current authority; actual gameplay integration remains open.

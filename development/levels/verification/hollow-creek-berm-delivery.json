@@ -1,0 +1,189 @@
+{
+  "status": "pass",
+  "published_commit": "e9012d3ba28de463793a49883095a571862a76dd",
+  "files": 30,
+  "checks": [
+    {
+      "path": "assets/runtime/models/level_camp_boundary_banks_grounded.glb",
+      "bytes": 2642428,
+      "sha256": "531af0c730c0ec7ee56672fdd21b84cc234c16bf334ec313c4cd4f53342f51e1",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_boundary_banks_grounded.blend",
+      "bytes": 3244262,
+      "sha256": "2896802911580802e04f180fcd8cdef09786e111e24334a8c95e94878c251ae1",
+      "actual_download_matches": true
+    },
+    {
+      "path": "assets/runtime/models/level_camp_boundary_logfall_grounded.glb",
+      "bytes": 609072,
+      "sha256": "aaa35391948bd676a9d97d984ac01872c7b85dba1247ef5844e0f698c5536d19",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/blender/level_camp_boundary_logfall_grounded.blend",
+      "bytes": 424925,
+      "sha256": "311cf7e0b8a542ec605e684875e479bd9df3d90b1220301453f29f4679801071",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/hollow-creek-grounded-berm.blend",
+      "bytes": 34139864,
+      "sha256": "78b4bb1f60ec32a2c575aaca83cea049ac9ac3fc2d322cbbb6bbc4fb910f96af",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/grounded-berm.json",
+      "bytes": 1186211,
+      "sha256": "39c3d0c236e3395aae04671340ead2554f5175ee9fb3361a206bc757c8f559df",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/hollow-creek/EARTHEN_BANK_REVIEW.html",
+      "bytes": 6565,
+      "sha256": "4d9f06b04667f5ad4768339d1f67b8d51559ce12b247297292bcf4d367ddbd5c",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/build_hollow_creek_earthen_banks.py",
+      "bytes": 16798,
+      "sha256": "24fc8b5f0ce98a92ca2daf8ba9b37dfa481f64765267443a17826e1f8ba96e93",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/validate_hollow_creek_earthen_banks.py",
+      "bytes": 13543,
+      "sha256": "36b4e8ebc7134ef1f264f402c255b691776ffaa1768756f0523e0a3cb8a08282",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/render_hollow_creek_berm.py",
+      "bytes": 2452,
+      "sha256": "93cbca9816003885084e1b6e93fc2ffb8de0eb3e4501062c88dd9bcea79fbe47",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/build_hollow_creek_berm_review.py",
+      "bytes": 6071,
+      "sha256": "390788cdb49e8c95bee0423cbe16599dbde7508cc7de191837313f0b04f75f11",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/record_hollow_creek_berm_checkpoint.py",
+      "bytes": 12269,
+      "sha256": "a851f99fd6c0cce0b5775681554bb15dc062e17bf5e2b3e761e633a8843890ab",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/finalize_earthen_bank_sources.py",
+      "bytes": 969,
+      "sha256": "69243e7cc7542802b4148acdefea42b6fd30697fe308ad1b1ccdaa43cfe6fc31",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/DEVELOPMENT_HANDOFF_2026-10-25_EARTHEN_BANK.md",
+      "bytes": 4589,
+      "sha256": "aa7eecc9003ae904a2017e8c88371161ef88ba1cc7f354928d6b20719500c0a2",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/textures/hollow-creek/bedrock-v1.png",
+      "bytes": 4144563,
+      "sha256": "576b3efe6da8807ae7bd118baf2088b8cdb91c4b3505502a7fc200d757fb89b6",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/textures/hollow-creek/bedrock-v1-prompt.json",
+      "bytes": 1239,
+      "sha256": "960e45040ffbceeb7296f574ce3320e8d45846be7df947bb86e2c44f7828b8ba",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-berm.json",
+      "bytes": 13076,
+      "sha256": "4934122c83c6912cedb627ce603aac2759b2cfc06ac0772eeb7ef5089b9fb21f",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-berm-fit.json",
+      "bytes": 1992,
+      "sha256": "0cc96b91cc2502bb03240cbe749255dbd8f1f337145b53db9b114b1a5ca9fc89",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-berm-runtime.json",
+      "bytes": 444,
+      "sha256": "06b163ecb39f0e52104b33742c1c735f9138fe02f638492a129326de1219d547",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-berm-captures.json",
+      "bytes": 3579,
+      "sha256": "b7bf639c632a212cc7d14b45cd98b142f2e0400cd09c2cf6efcd13c9347a85f4",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/levels/verification/hollow-creek-berm-pixels.tsv",
+      "bytes": 49922,
+      "sha256": "956497363a48a65dda72c3b9b57aae80502a23a458b6b82cc70ef1da01cecb25",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/GlbProps.java",
+      "bytes": 29335,
+      "sha256": "2022f3888d9e33b4c6acbaa619823f711a0c8fbf7c8b1d3a52751d77e0667557",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/LevelAssets.java",
+      "bytes": 4855,
+      "sha256": "e8fe22da162fcfe712ff7923d35ec0d520c0d18575c86f5d18ea4ddfd3ae2f0b",
+      "actual_download_matches": true
+    },
+    {
+      "path": "src/test/java/org/beckenburg/HollowCreekEarthenBankTest.java",
+      "bytes": 1736,
+      "sha256": "5c21819da18ff811380e541cf87e9822622d01efb64ccfac608812dad78d49a3",
+      "actual_download_matches": true
+    },
+    {
+      "path": "regression-tests.txt",
+      "bytes": 5267,
+      "sha256": "bc5441609ec180a0ec5dfe1788ba0167d66b39fcea2a747396c9ad2ff0ea88cf",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/quality/defects.json",
+      "bytes": 90227,
+      "sha256": "a746422c2a4779146286e45cc1bf27189a8fa4e8c10af37cfa05755347826d5f",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "bytes": 86968,
+      "sha256": "2914ea01eed44ba31d20f140dd66e9a4de18fbc7f9190b0201dbe13513b74c7e",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/quality/evidence/DEV-080-berm-slope-uv-stretch.txt",
+      "bytes": 968,
+      "sha256": "a4d61a924a75d9f8c8d55f1096a8c8c002f261c0e9a4ee9b64ebaa56ee4f5bfc",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/quality/evidence/DEV-081-berm-normal-fan-drift.txt",
+      "bytes": 3205,
+      "sha256": "1fcdab70e8817327b7a8639a5317de948593050625dd03a06d6aeebc686d9c45",
+      "actual_download_matches": true
+    },
+    {
+      "path": "development/quality/evidence/DEV-084-actual-crest-bearing-before-after.json",
+      "bytes": 13406,
+      "sha256": "f0bbf67ab540aa62b21d97760d05f4fecf0c00af2ca15aa5faa1b2059102edd4",
+      "actual_download_matches": true
+    }
+  ],
+  "deployed_review_matches": true,
+  "runtime_gameplay_acceptance": false
+}

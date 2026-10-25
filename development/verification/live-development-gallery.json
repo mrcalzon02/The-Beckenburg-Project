@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-25T00:52:10.289274+00:00",
-  "published_commit": "03a10b056786f2636d4edee9c8c197581e0f6e28",
+  "verified_at": "2026-10-25T09:55:13.883237+00:00",
+  "published_commit": "e9012d3ba28de463793a49883095a571862a76dd",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 720,
+  "image_count": 729,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1164,6 +1164,54 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/hollow-creek/berm-after-bedrock-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-camp-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-site-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-toe-crouch-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-after-toe-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-before-camp-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-before-toe-crouch-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/berm-before-toe-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/hollow-creek/boundary-logfall-native-fitout.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1489,6 +1537,12 @@
     },
     {
       "path": "development/levels/previews/hollow-creek/terrain-worn-trail-native-fitout.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/textures/bedrock-v1-studio-source.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true
