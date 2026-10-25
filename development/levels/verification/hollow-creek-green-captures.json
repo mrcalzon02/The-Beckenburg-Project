@@ -1,0 +1,53 @@
+{
+  "captures": [
+    {
+      "path": "development/levels/previews/hollow-creek/grass-green-before-camp-native-fitout.png",
+      "sha256": "16f104191e5dc98bf786125937e9c4aa6162888502adde97037c5aa7e0aa7d8e",
+      "phase": "before",
+      "kind": "Native Blender material review",
+      "camera": [
+        18,
+        -42,
+        2.1
+      ],
+      "target": [
+        13,
+        -34,
+        -0.2
+      ]
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-green-after-camp-native-fitout.png",
+      "sha256": "ec5a9b875c8d47fa968d7d79a388d5a1ab16e65e9254184a2a9897e2bda02e9c",
+      "phase": "after",
+      "kind": "Native Blender material review",
+      "camera": [
+        18,
+        -42,
+        2.1
+      ],
+      "target": [
+        13,
+        -34,
+        -0.2
+      ]
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-green-after-site-native-fitout.png",
+      "sha256": "05eab2cc08e977c2e84a3ece21a676a54c2d24ed6ee710968201222520536747",
+      "phase": "after",
+      "kind": "Native Blender material review",
+      "camera": [
+        105,
+        -125,
+        100
+      ],
+      "target": [
+        31,
+        -42,
+        1
+      ]
+    }
+  ],
+  "runtime_capture": false
+}

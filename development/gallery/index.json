@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 730,
+  "count": 733,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -2242,6 +2242,36 @@
       "height": 800,
       "bytes": 1099734,
       "sha256": "e647284bc916f60c910695ca42b1d989875c7ae4438a87a1ea7d646b6910f7a4"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-green-after-camp-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/grass-green-after-camp-native-fitout.png",
+      "title": "Grass green after camp native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 3131011,
+      "sha256": "ec5a9b875c8d47fa968d7d79a388d5a1ab16e65e9254184a2a9897e2bda02e9c"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-green-after-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/grass-green-after-site-native-fitout.png",
+      "title": "Grass green after site native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2590609,
+      "sha256": "05eab2cc08e977c2e84a3ece21a676a54c2d24ed6ee710968201222520536747"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-green-before-camp-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/grass-green-before-camp-native-fitout.png",
+      "title": "Grass green before camp native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 3081466,
+      "sha256": "16f104191e5dc98bf786125937e9c4aa6162888502adde97037c5aa7e0aa7d8e"
     },
     {
       "path": "development/levels/previews/hollow-creek/native-physics-query-diagnostic.png",

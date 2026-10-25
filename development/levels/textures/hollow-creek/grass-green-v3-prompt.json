@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-25",
+  "provider": "built-in image_gen",
+  "mode": "edit",
+  "reference": "grass-dirty-v2.png",
+  "reference_sha256": "cb5345e70903229415846824db6c7d69684fe50a0a343ca016d8e80a70b33568",
+  "prompt": "Edit target: attached existing tileable ground grass texture for Hollow Creek, a low-poly PSX-style horror game campground. Replace the overly brown sparse dry thatch appearance with a predominantly living muted forest-green grass surface that matches dark natural green camp foliage. Grass blades should form a dense fine short irregular sward with varied lengths and clover, in rich subdued moss/fern greens, not neon, not yellow olive straw. Aim roughly 80 percent green living short grass and 20 percent subtly visible dark earthy brown worn gaps, occasional tiny leaves and minute pebbles. Keep natural dirt weathering and variation, but remove most pale dried dead tangled strands and large gravel/dirt patches. Orthographic straight overhead material diffuse/albedo ONLY, perfectly even neutral lighting, no cast shadows, no perspective, no horizon, no scenery or objects, no baked specular, no text, no framing. Square seamless repeat texture across all edges with no obvious large motifs; close-scale fine natural texture that downsamples cleanly to 512px and reads grassy rather than gravel. Preserve grounded restrained horror-game palette, but clearly greener and more densely vegetated than edit target. Output one opaque square bitmap texture only.",
+  "source_sha256": "9999fd4db5415b84f47ea176751fde3cf0c32407aa7e92de6d38c6a10d91fd75",
+  "runtime_derivative": "Blender packed512px;256px grass/dirt blends",
+  "source_preserved": true
+}

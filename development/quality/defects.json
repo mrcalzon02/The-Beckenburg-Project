@@ -1002,6 +1002,28 @@
       "action": "Emit explicit UTF-8 from every new checkpoint writer, regenerate the handoff and review and strictly decode all staged publication text. Rebuild and read back the real deployed review and PNG before claiming gallery delivery.",
       "evidence": "quality/evidence/DEV-091-pages-encoding.txt",
       "older_maps": "Check text-writing producers and strictly decode future authored publication text; do not infer that successful local file opening proves Jekyll-compatible encoding."
+    },
+    {
+      "id": "DEV-092",
+      "title": "New grass export family initially used the wrong texture V convention",
+      "status": "fixed-runtime-atlas-orientation",
+      "affected": "Hollow Creek green grass material variant",
+      "symptom": "Caught during local export/actual loader validation; failing candidate was not published.",
+      "cause": "New asset IDs were curated before being added to the original-top-left texture family in GlbProps.",
+      "action": "Add GREEN_GROUND to the original atlas orientation path. All1152 independent PNG/UV samples pass across four exports.",
+      "evidence": "verification/hollow-creek-green.json; verification/hollow-creek-green-pixels.tsv; green_hollow_creek_grass.py; HollowCreekGreenGroundTest",
+      "older_maps": "Apply actual UV/pixel checks to each new export family and avoid live Blender collection references during deletion; older material families are not automatically accepted."
+    },
+    {
+      "id": "DEV-093",
+      "title": "Removing Blender UV layers via live RNA wrappers invalidated later names",
+      "status": "fixed-exporter-uv-name-snapshot",
+      "affected": "Hollow Creek green grass material variant",
+      "symptom": "Caught during local export/actual loader validation; failing candidate was not published.",
+      "cause": "Removing a UV layer reindexes Blender collection wrappers; a saved list of layer references became stale during mutation.",
+      "action": "Snapshot UV layer names before removal and resolve each by name. All four exports and directly editable scenes now validate.",
+      "evidence": "verification/hollow-creek-green.json; verification/hollow-creek-green-pixels.tsv; green_hollow_creek_grass.py; HollowCreekGreenGroundTest",
+      "older_maps": "Apply actual UV/pixel checks to each new export family and avoid live Blender collection references during deletion; older material families are not automatically accepted."
     }
   ],
   "audit_categories": [

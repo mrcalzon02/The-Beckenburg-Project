@@ -43,6 +43,13 @@ if physics:
     paths+=['src/test/java/org/beckenburg/'+p+'.java' for p in ['AuthoredSitePhysicsTest','HollowCreekNativePhysicsTest','HollowCreekPhysicsDiagnostic','HollowCreekRouteTerrainTest']]
     paths+=['build.cmd','build.sh','regression-tests.txt','tools/build_development_gallery.py','tools/verify_hollow_creek_authored_delivery.py','development/quality/defects.json','development/quality/DEFECT_LEDGER.md','development/quality/evidence/DEV-089-L14-steep-foot-radius-strip.txt']
 
+green='--green' in sys.argv
+if green:
+    packet=json.loads((ROOT/'development/levels/hollow-creek/green-grass.json').read_text(encoding='utf-8'))
+    paths=[p for a in packet['assets'] for p in [a['model'],a['editable']]]
+    paths+=['development/levels/'+p for p in ['hollow-creek/hollow-creek-green-grass.blend','hollow-creek/green-grass.json','hollow-creek/GREEN_GRASS_REVIEW.html','hollow-creek/EARTHEN_BANK_REVIEW.html','green_hollow_creek_grass.py','review_hollow_creek_green.py','validate_hollow_creek_green.py','DEVELOPMENT_HANDOFF_2026-10-25_GREEN_GRASS.md','textures/hollow-creek/grass-green-v3.png','textures/hollow-creek/grass-green-v3-prompt.json','verification/hollow-creek-green.json','verification/hollow-creek-green-pixels.tsv','verification/hollow-creek-green-captures.json']]
+    paths+=['src/main/java/org/beckenburg/GlbProps.java','src/main/java/org/beckenburg/LevelAssets.java','src/test/java/org/beckenburg/HollowCreekGreenGroundTest.java']
+
 def download(url):
     for attempt in range(4):
         try:
@@ -57,9 +64,9 @@ def check(path):
     assert data==expected,path
     return dict(path=path,bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),actual_download_matches=True)
 with ThreadPoolExecutor(max_workers=4) as pool:checks=list(pool.map(check,paths))
-review='development/levels/hollow-creek/'+('NATIVE_PHYSICS_REVIEW.html' if physics else 'EARTHEN_BANK_REVIEW.html' if berm else 'SITE_ART_REVIEW.html' if siteart else 'FITTED_FLOOR_REVIEW.html' if fitted else 'TAILORED_REVIEW.html' if tailored else 'AUTHORED_REVIEW.html')
+review='development/levels/hollow-creek/'+('GREEN_GRASS_REVIEW.html' if green else 'NATIVE_PHYSICS_REVIEW.html' if physics else 'EARTHEN_BANK_REVIEW.html' if berm else 'SITE_ART_REVIEW.html' if siteart else 'FITTED_FLOOR_REVIEW.html' if fitted else 'TAILORED_REVIEW.html' if tailored else 'AUTHORED_REVIEW.html')
 live=download('https://mrcalzon02.github.io/The-Beckenburg-Project/'+review)
 assert live==subprocess.check_output(['git','show',commit+':'+review],cwd=ROOT),'Deployed review differs'
 report=dict(status='pass',published_commit=commit,files=len(checks),checks=checks,deployed_review_matches=True,runtime_gameplay_acceptance=False)
-(ROOT/('development/levels/verification/hollow-creek-native-delivery.json' if physics else 'development/levels/verification/hollow-creek-berm-delivery.json' if berm else 'development/levels/verification/hollow-creek-siteart-delivery.json' if siteart else 'development/levels/verification/hollow-creek-fitted-delivery.json' if fitted else 'development/levels/verification/hollow-creek-tailored-delivery.json' if tailored else 'development/levels/verification/hollow-creek-authored-delivery.json')).write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+(ROOT/('development/levels/verification/hollow-creek-green-delivery.json' if green else 'development/levels/verification/hollow-creek-native-delivery.json' if physics else 'development/levels/verification/hollow-creek-berm-delivery.json' if berm else 'development/levels/verification/hollow-creek-siteart-delivery.json' if siteart else 'development/levels/verification/hollow-creek-fitted-delivery.json' if fitted else 'development/levels/verification/hollow-creek-tailored-delivery.json' if tailored else 'development/levels/verification/hollow-creek-authored-delivery.json')).write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print('PASS',len(checks),'actual immutable downloads and deployed authored review;',commit)

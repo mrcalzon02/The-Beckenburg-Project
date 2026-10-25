@@ -1,0 +1,32 @@
+{
+  "status": "pass-material-only-native-and-export-checks",
+  "unchanged_native_mesh_geometry_uv_poses": 909,
+  "packed_runtime_grass_size": [
+    512,
+    512
+  ],
+  "models": [
+    {
+      "id": "level_camp_ground_green",
+      "triangles": 41782,
+      "bytes": 3332620
+    },
+    {
+      "id": "level_camp_banks_green",
+      "triangles": 15074,
+      "bytes": 2696020
+    },
+    {
+      "id": "level_camp_west_green",
+      "triangles": 384,
+      "bytes": 1273884
+    },
+    {
+      "id": "level_camp_east_green",
+      "triangles": 576,
+      "bytes": 1290368
+    }
+  ],
+  "runtime_atlas_pixel_checks": 1152,
+  "gameplay_acceptance": false
+}

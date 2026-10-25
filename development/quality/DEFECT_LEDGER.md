@@ -1284,6 +1284,34 @@ Evidence and verification: quality/evidence/DEV-091-pages-encoding.txt
 
 Older-map obligation: Check text-writing producers and strictly decode future authored publication text; do not infer that successful local file opening proves Jekyll-compatible encoding.
 
+### DEV-092 — New grass export family initially used the wrong texture V convention
+
+**Status:** fixed-runtime-atlas-orientation · **Affected:** Hollow Creek green grass material variant
+
+Caught during local export/actual loader validation; failing candidate was not published.
+
+Cause / uncertainty: New asset IDs were curated before being added to the original-top-left texture family in GlbProps.
+
+Fix / next action: Add GREEN_GROUND to the original atlas orientation path. All1152 independent PNG/UV samples pass across four exports.
+
+Evidence and verification: verification/hollow-creek-green.json; verification/hollow-creek-green-pixels.tsv; green_hollow_creek_grass.py; HollowCreekGreenGroundTest
+
+Older-map obligation: Apply actual UV/pixel checks to each new export family and avoid live Blender collection references during deletion; older material families are not automatically accepted.
+
+### DEV-093 — Removing Blender UV layers via live RNA wrappers invalidated later names
+
+**Status:** fixed-exporter-uv-name-snapshot · **Affected:** Hollow Creek green grass material variant
+
+Caught during local export/actual loader validation; failing candidate was not published.
+
+Cause / uncertainty: Removing a UV layer reindexes Blender collection wrappers; a saved list of layer references became stale during mutation.
+
+Fix / next action: Snapshot UV layer names before removal and resolve each by name. All four exports and directly editable scenes now validate.
+
+Evidence and verification: verification/hollow-creek-green.json; verification/hollow-creek-green-pixels.tsv; green_hollow_creek_grass.py; HollowCreekGreenGroundTest
+
+Older-map obligation: Apply actual UV/pixel checks to each new export family and avoid live Blender collection references during deletion; older material families are not automatically accepted.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
