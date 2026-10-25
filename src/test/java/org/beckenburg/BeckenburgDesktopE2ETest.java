@@ -15,7 +15,12 @@ import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JDialog;
+import javax.swing.JComboBox;
 import javax.swing.SwingUtilities;
+import java.lang.reflect.Field;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Loads the actual packaged Swing launcher, waits for the real menu and
@@ -55,6 +60,53 @@ public final class BeckenburgDesktopE2ETest {
                 ImageIO.write(screenshot,"png",OUTPUT.resolve(label+".png").toFile());
             }
         }catch(Exception failed){System.err.println("Screenshot unavailable: "+failed);}
+    }
+    /** A bounded EDT probe. Unlike invokeAndWait, a frozen render/UI cannot
+     * make the acceptance driver itself hang forever without diagnostic failure.
+     * Keep at most one pending EDT callback during the wait.
+     */
+    private static <T> T waitForResponsive(java.util.concurrent.Callable<T> check,long seconds)throws Exception{
+        long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(seconds);
+        FutureTask<T> pending=null;
+        while(System.nanoTime()<deadline){
+            if(pending==null){
+                pending=new FutureTask<>(check);
+                SwingUtilities.invokeLater(pending);
+            }
+            try {
+                T value=pending.get(250,TimeUnit.MILLISECONDS);
+                pending=null;
+                if(value!=null)return value;
+            }catch(TimeoutException stillRendering){ /* preserve the single queued probe */ }
+            Thread.sleep(80);
+        }
+        return null;
+    }
+    private static Component visibleSoloCase(Container surface){
+        for(Component c:surface.getComponents()){
+            if(c.getClass().getSimpleName().equals("GamePanel") && c.isShowing())return c;
+            if(c instanceof Container nested){
+                Component found=visibleSoloCase(nested);
+                if(found!=null)return found;
+            }
+        }
+        return null;
+    }
+    private static int soloFrameCount(Component game)throws Exception{
+        Field field=game.getClass().getDeclaredField("frameCount");
+        field.setAccessible(true);
+        return field.getInt(game);
+    }
+    private static boolean soloInitialFrameReady(Component game)throws Exception{
+        Field field=game.getClass().getDeclaredField("initialFrameReady");
+        field.setAccessible(true);
+        return field.getBoolean(game);
+    }
+    private static JDialog dispatchDialog(){
+        for(Window window:Window.getWindows())if(window instanceof JDialog dialog
+                &&dialog.isShowing()&&dialog.getTitle().startsWith("EXPEDITION DISPATCH"))
+            return dialog;
+        return null;
     }
     private static <T> T waitFor(java.util.concurrent.Callable<T> check,long seconds)throws Exception{
         long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(seconds);
@@ -100,13 +152,53 @@ public final class BeckenburgDesktopE2ETest {
             if(lobby==null)throw new AssertionError("Multiplayer lobby not interactable");
             capture("02-multiplayer-lobby");
             System.out.println("E2E PASS main-menu multiplayer handoff and actionable join/host lobby");
-            SwingUtilities.invokeAndWait(()->{
-                lobby.dispose();
-                frame.dispose();
+            SwingUtilities.invokeAndWait(lobby::dispose);
+            // The previous smoke stopped at the menu and could never detect
+            // BECK-LIVE-012 (case start locked the user's process). Open the
+            // actual dispatch dialog, explicitly choose HOUSE, and demand an
+            // advancing, first-frame-complete case on the live Swing UI.
+            JButton start=button(frame.getContentPane(),"START SOLO INVESTIGATION");
+            if(start==null||!start.isEnabled())throw new AssertionError(
+                "Solo dispatch control missing or House unavailable");
+            SwingUtilities.invokeLater(start::doClick);
+            JDialog dispatch=waitForResponsive(BeckenburgDesktopE2ETest::dispatchDialog,20);
+            if(dispatch==null)throw new AssertionError(
+                "Solo map-selection dispatch did not appear");
+            capture("03-solo-dispatch-map-selection");
+            SwingUtilities.invokeLater(()->{
+                JComboBox<?> site=null;
+                for(Component component:dispatch.getContentPane().getComponents()){
+                    if(component instanceof JComboBox<?> box)site=box;
+                    if(component instanceof Container container){
+                        for(Component child:container.getComponents())
+                            if(child instanceof JComboBox<?> box && box.getItemCount()>0
+                                && box.getItemAt(0) instanceof SiteCatalog.Location)site=box;
+                    }
+                }
+                if(site!=null)site.setSelectedItem(SiteCatalog.Location.HOUSE);
+                JButton approve=button(dispatch.getContentPane(),"OK");
+                if(approve==null)throw new AssertionError("Solo dispatch OK button unavailable");
+                approve.doClick();
             });
+            Component solo=waitForResponsive(()->visibleSoloCase(frame.getContentPane()),25);
+            if(solo==null)throw new AssertionError(
+                "Case dispatch never displayed an actual GamePanel");
+            Component rendered=waitForResponsive(
+                ()->soloInitialFrameReady(solo)?solo:null,65);
+            if(rendered==null)throw new AssertionError(
+                "Solo case first actual sized scene never completed; inspect diagnostics");
+            Integer advancing=waitForResponsive(
+                ()->soloFrameCount(solo)>=3?soloFrameCount(solo):null,20);
+            if(advancing==null)throw new AssertionError(
+                "Solo case first frame completed but gameplay frames stopped advancing");
+            capture("04-house-solo-first-frames");
+            System.out.println("E2E PASS real House dispatch, first sized scene and "+
+                advancing+" advancing gameplay frames");
+            SwingUtilities.invokeAndWait(frame::dispose);
             Files.writeString(OUTPUT.resolve("desktop-load.txt"),
-                Instant.now()+" PASS actual packaged launcher, loading screen, main menu and multiplayer lobby\n");
-            System.out.println("PASS Beckenburg packaged desktop startup and multiplayer UI");
+                Instant.now()+" PASS actual packaged launcher, menu, multiplayer lobby, "+
+                "solo map selection and responsive House case first frames\n");
+            System.out.println("PASS Beckenburg packaged desktop, multiplayer UI and solo case startup");
             System.exit(0);
         }catch(Throwable error){
             capture("FAILED-desktop-startup");
