@@ -13,7 +13,7 @@ def digest(o):
   a=array.array('f',[0])*(len(uv.data)*2);uv.data.foreach_get('uv',a);h.update(uv.name.encode());h.update(a.tobytes())
  h.update(bytes(p.use_smooth for p in o.data.polygons));return h.hexdigest()
 before={o.name:digest(o) for o in scene.objects if o.type=='MESH'}
-grass=bpy.data.images.load(str(ROOT/'development/levels/textures/hollow-creek/grass-green-v3.png'));grass.name='Forest green grass v3 runtime512 derivative';grass.scale(512,512);grass.pack()
+grass=bpy.data.images.load(str(ROOT/'development/levels/textures/hollow-creek/grass-woodland-v4.png'));grass.name='Woodland grey green grass v4 runtime512 derivative';grass.scale(512,512);grass.pack()
 old=bpy.data.images['grass-dirty runtime512 derivative'];changed=[]
 for mat in bpy.data.materials:
  if mat.use_nodes:
@@ -39,5 +39,5 @@ for name,id in objects:
 from finalize_earthen_bank_sources import materialize
 materialize(assets)
 assert hashlib.sha256(parent.read_bytes()).hexdigest()==r['scene_sha256']
-report=dict(status='material-only green grass variant',parent=r['scene'],parent_sha256=r['scene_sha256'],scene=target.relative_to(ROOT).as_posix(),scene_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),unchanged_mesh_geometry_uvs_poses=len(before),mesh_digests=before,changed_materials=changed,recomposed_transition_weights=[.25,.5,.75],source_texture='development/levels/textures/hollow-creek/grass-green-v3.png',assets=assets,physics_authority=r['scene'],runtime_mission_unlocked=False)
+report=dict(status='material-only green grass variant',parent=r['scene'],parent_sha256=r['scene_sha256'],scene=target.relative_to(ROOT).as_posix(),scene_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),unchanged_mesh_geometry_uvs_poses=len(before),mesh_digests=before,changed_materials=changed,recomposed_transition_weights=[.25,.5,.75],source_texture='development/levels/textures/hollow-creek/grass-woodland-v4.png',assets=assets,physics_authority=r['scene'],runtime_mission_unlocked=False)
 (OUT/'green-grass.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print('GREEN GRASS',len(before),'unchanged meshes;',len(assets),'exports',flush=True)

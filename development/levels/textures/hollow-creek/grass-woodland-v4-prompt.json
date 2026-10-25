@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-25",
+  "provider": "built-in image_gen",
+  "mode": "edit",
+  "reference": "grass-green-v3.png",
+  "supporting_reference": "grass-green-after-site-native-fitout.png",
+  "prompt": "Edit target: first reference is the current grass texture grass-green-v3.png. Second reference is a supporting in-game native site overview, NOT the edit target. Color-match the grass diffuse specifically to the COOL DESATURATED GREY FOREST GREEN of the distant woodland GROUND beyond the campsite berm, visible in the left/top-left background of the supporting overview. The current grass is too yellow/olive and visibly different. Remove that yellow/olive cast, substantially reduce saturation, shift toward muted grey blue-green, resembling sRGB #405348 or #3b5045 under neutral diffuse lighting. Preserve recognizable fine short grass and clover with dark grey-brown dirt gaps and tiny natural wear. The result should be a restrained grey woodland-green grass albedo that harmonizes with the distant forest ground, not vivid lawn green, no yellow-green highlights or golden straw. Keep fine texture legibility for a 512px runtime derivative and even value distribution, no large repetitive motifs. One opaque square seamless tileable orthographic overhead diffuse texture, flat neutral lighting, no baked cast shadows/specular, no horizon, no scenery, no objects/text/frame. Preserve the existing grass structure and sparse weathering while changing its palette to the distant woodland green. Output only the corrected grass texture.",
+  "intent": "Match cool desaturated distant woodland ground; v3 yellow-green rejected by user."
+}

@@ -47,7 +47,7 @@ green='--green' in sys.argv
 if green:
     packet=json.loads((ROOT/'development/levels/hollow-creek/green-grass.json').read_text(encoding='utf-8'))
     paths=[p for a in packet['assets'] for p in [a['model'],a['editable']]]
-    paths+=['development/levels/'+p for p in ['hollow-creek/hollow-creek-green-grass.blend','hollow-creek/green-grass.json','hollow-creek/GREEN_GRASS_REVIEW.html','hollow-creek/EARTHEN_BANK_REVIEW.html','green_hollow_creek_grass.py','review_hollow_creek_green.py','validate_hollow_creek_green.py','DEVELOPMENT_HANDOFF_2026-10-25_GREEN_GRASS.md','textures/hollow-creek/grass-green-v3.png','textures/hollow-creek/grass-green-v3-prompt.json','verification/hollow-creek-green.json','verification/hollow-creek-green-pixels.tsv','verification/hollow-creek-green-captures.json']]
+    paths+=['development/levels/'+p for p in ['hollow-creek/hollow-creek-green-grass.blend','hollow-creek/green-grass.json','hollow-creek/GREEN_GRASS_REVIEW.html','hollow-creek/EARTHEN_BANK_REVIEW.html','green_hollow_creek_grass.py','review_hollow_creek_green.py','validate_hollow_creek_green.py','DEVELOPMENT_HANDOFF_2026-10-25_GREEN_GRASS.md','textures/hollow-creek/grass-woodland-v4.png','textures/hollow-creek/grass-woodland-v4-prompt.json','verification/hollow-creek-green.json','verification/hollow-creek-green-pixels.tsv','verification/hollow-creek-green-captures.json']]
     paths+=['src/main/java/org/beckenburg/GlbProps.java','src/main/java/org/beckenburg/LevelAssets.java','src/test/java/org/beckenburg/HollowCreekGreenGroundTest.java']
 
 def download(url):

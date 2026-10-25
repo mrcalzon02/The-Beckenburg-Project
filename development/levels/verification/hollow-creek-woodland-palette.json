@@ -1,0 +1,34 @@
+{
+  "kind": "native-render colour sample diagnostic; not human acceptance",
+  "far_sample_box": [
+    100,
+    270,
+    145,
+    300
+  ],
+  "camp_sample_box": [
+    850,
+    395,
+    870,
+    415
+  ],
+  "far_median_rgb": [
+    57,
+    65,
+    53
+  ],
+  "previous_camp_median_rgb": [
+    67,
+    73,
+    45
+  ],
+  "revised_camp_median_rgb": [
+    66,
+    75,
+    64
+  ],
+  "far_red_green_ratio": 0.8769230769230769,
+  "revised_red_green_ratio": 0.88,
+  "lighting_exposure_unchanged": true,
+  "brightness_and_blue_ratio_not_identical": true
+}

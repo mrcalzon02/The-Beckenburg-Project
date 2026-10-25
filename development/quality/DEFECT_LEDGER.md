@@ -1312,6 +1312,20 @@ Evidence and verification: verification/hollow-creek-green.json; verification/ho
 
 Older-map obligation: Apply actual UV/pixel checks to each new export family and avoid live Blender collection references during deletion; older material families are not automatically accepted.
 
+### DEV-094 — Grass green failed to match the distant woodland palette
+
+**Status:** revised-native-palette-user-review-pending · **Affected:** Hollow Creek ground, bank and shore-return material
+
+User rejected the first greener v3 texture because its yellow-green hue still differed from the distant wood.
+
+Cause / uncertainty: The first prompt targeted general camp greens instead of the actual distant woodland ground in the same view.
+
+Fix / next action: Use the actual overview as a colour reference and remove the yellow cast in a new grey-green v4 source. Recompose all three dirt blends, export the four affected models and show same-camera before/after overviews. Keep lighting and geometry unchanged. Human art acceptance remains pending.
+
+Evidence and verification: hollow-creek/GREEN_GRASS_REVIEW.html; textures/hollow-creek/grass-woodland-v4-prompt.json; verification/hollow-creek-woodland-palette.json
+
+Older-map obligation: Compare near/far material colours together under the same scene lighting; a generic request for greener grass does not establish palette continuity.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

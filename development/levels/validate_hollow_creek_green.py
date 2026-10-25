@@ -10,7 +10,7 @@ def digest(o):
  h.update(bytes(p.use_smooth for p in o.data.polygons));return h.hexdigest()
 bpy.ops.wm.open_mainfile(filepath=str(ROOT/r['parent']));before={o.name:digest(o) for o in bpy.context.scene.objects if o.type=='MESH'}
 bpy.ops.wm.open_mainfile(filepath=str(ROOT/r['scene']));assert before=={o.name:digest(o) for o in bpy.context.scene.objects if o.type=='MESH'};assert len(before)==909
-im=bpy.data.images['Forest green grass v3 runtime512 derivative'];assert tuple(im.size)==(512,512) and im.packed_file
+im=bpy.data.images['Woodland grey green grass v4 runtime512 derivative'];assert tuple(im.size)==(512,512) and im.packed_file
 models=[]
 for a in r['assets']:
  file=ROOT/a['model'];assert hashlib.sha256(file.read_bytes()).hexdigest()==a['sha256'];bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(file));count=0

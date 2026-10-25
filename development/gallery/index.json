@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 733,
+  "count": 735,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -2272,6 +2272,26 @@
       "height": 1066,
       "bytes": 3081466,
       "sha256": "16f104191e5dc98bf786125937e9c4aa6162888502adde97037c5aa7e0aa7d8e"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-woodland-after-camp-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/grass-woodland-after-camp-native-fitout.png",
+      "title": "Grass woodland after camp native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 3061693,
+      "sha256": "94e928b79ad950504c45aedb621687534dba60833c0083afc530f1c2e71f9cbc"
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/grass-woodland-after-site-native-fitout.png",
+      "url": "development/levels/previews/hollow-creek/grass-woodland-after-site-native-fitout.png",
+      "title": "Grass woodland after site native fitout",
+      "kind": "Native scene overview",
+      "width": 1600,
+      "height": 1066,
+      "bytes": 2565428,
+      "sha256": "c81cf8bf4cc999a20d29d64e6f63b951ee40dc1ea0cc8d51ec37da2b6d4eb6eb"
     },
     {
       "path": "development/levels/previews/hollow-creek/native-physics-query-diagnostic.png",

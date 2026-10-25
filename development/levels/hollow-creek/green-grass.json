@@ -3,7 +3,7 @@
   "parent": "development/levels/hollow-creek/hollow-creek-route-grade.blend",
   "parent_sha256": "96d6f8dc295739fbe48d3d1b9e07f764f4a7efcd196fcfff589aa9006373a506",
   "scene": "development/levels/hollow-creek/hollow-creek-green-grass.blend",
-  "scene_sha256": "ec59f4eec935000da110beefeda64fc876ffe1e72f06de629707aae04d7da451",
+  "scene_sha256": "e7d53ad52972b5963132876aa40540fa197c8f92db131d8360c90c378ee7740f",
   "unchanged_mesh_geometry_uvs_poses": 909,
   "mesh_digests": {
     "level_camp_pavilion": "d40dc48b3e60a11213e10ebb2c37625131a76a02ffb88ab1f7074c6ab84ca91c",
@@ -924,7 +924,7 @@
     0.5,
     0.75
   ],
-  "source_texture": "development/levels/textures/hollow-creek/grass-green-v3.png",
+  "source_texture": "development/levels/textures/hollow-creek/grass-woodland-v4.png",
   "assets": [
     {
       "id": "level_camp_ground_green",
@@ -932,8 +932,8 @@
       "model": "assets/runtime/models/level_camp_ground_green.glb",
       "editable": "development/levels/blender/level_camp_ground_green.blend",
       "triangles": 41782,
-      "bytes": 3332620,
-      "sha256": "71c172141a94a05186267b9a8459128b93d1e52cbc588e519059e51a28160160"
+      "bytes": 3254764,
+      "sha256": "a3e85974ad88654aa1f08e2e381e89eeddf7aec5029cf58ed6d1ed0f26b211e8"
     },
     {
       "id": "level_camp_banks_green",
@@ -941,8 +941,8 @@
       "model": "assets/runtime/models/level_camp_banks_green.glb",
       "editable": "development/levels/blender/level_camp_banks_green.blend",
       "triangles": 15074,
-      "bytes": 2696020,
-      "sha256": "90f4df1e11928f82b95d309b2ee6e10655467c8ef62827f083b320177270b710"
+      "bytes": 2618164,
+      "sha256": "484c8c6b4f5ef659f4ccf2d17e8b04592180b035e00a9f750bfd38a1eed39816"
     },
     {
       "id": "level_camp_west_green",
@@ -950,8 +950,8 @@
       "model": "assets/runtime/models/level_camp_west_green.glb",
       "editable": "development/levels/blender/level_camp_west_green.blend",
       "triangles": 384,
-      "bytes": 1273884,
-      "sha256": "53f844c6f6fa76cb73372525d96d7f46b4dac9e6b45a7d8eacd6aa1d0468cdc8"
+      "bytes": 1213616,
+      "sha256": "7788f74d09b7b583d9207052a3e246045d8ba4388d8e27d7aa2dae0507416e9e"
     },
     {
       "id": "level_camp_east_green",
@@ -959,8 +959,8 @@
       "model": "assets/runtime/models/level_camp_east_green.glb",
       "editable": "development/levels/blender/level_camp_east_green.blend",
       "triangles": 576,
-      "bytes": 1290368,
-      "sha256": "159d05bcc8e44d73a3f1ab2d976c4bf870a5b20a59adf3bebabc10d1ed506d55"
+      "bytes": 1230096,
+      "sha256": "27d770d3e31bb939147c8acb29fa850f72b8be45f59d50bf4b15064bd58a84d0"
     }
   ],
   "physics_authority": "development/levels/hollow-creek/hollow-creek-route-grade.blend",
