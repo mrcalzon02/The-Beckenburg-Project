@@ -50,7 +50,7 @@ public final class WaterModule {
   public Camera{if(!Double.isFinite(x+y+z+yaw+pitch+focal)||focal<=0||width<1||height<1||(long)width*height>2073600)throw new IllegalArgumentException("Bad water camera");}
  }
  public interface Lighting {int shade(int rgb,double x,double y,double z);}
- public record Statistics(int pixels,int excludedHullSamples,int opaqueOccludedSamples){}
+ public record Statistics(int pixels,int excludedHullSamples,int opaqueOccludedSamples,int contactFoamPixels,int sprayPixels){public Statistics(int pixels,int excludedHullSamples,int opaqueOccludedSamples){this(pixels,excludedHullSamples,opaqueOccludedSamples,0,0);}}
  private record Hit(Body body,double depth,double x,double y,double z){}
  private final List<Body> bodies;
  public WaterModule(List<Body> bodies){this.bodies=List.copyOf(bodies);if(bodies.size()>64)throw new IllegalArgumentException("Too many water bodies");}
@@ -64,7 +64,8 @@ public final class WaterModule {
   if(opaque.length!=c.width*c.height||depth.length!=opaque.length||!Double.isFinite(seconds))throw new IllegalArgumentException("Bad water frame");
   double cy=Math.cos(c.yaw),sy=Math.sin(c.yaw),cp=Math.cos(c.pitch),sp=Math.sin(c.pitch);int drawn=0,excluded=0,occluded=0;
   var hits=new ArrayList<Hit>(bodies.size());
-  boolean optical=bodies.stream().anyMatch(b->b.effects!=null&&b.effects.refractionPixels()>0);int[] original=optical?opaque.clone():opaque;double[] originalDepth=optical?depth.clone():depth;
+  boolean optical=bodies.stream().anyMatch(b->b.effects!=null);int[] original=optical?opaque.clone():opaque;double[] originalDepth=optical?depth.clone():depth;
+  var contacts=optical?new WaterContact(c,originalDepth):null;var spray=new LinkedHashMap<Long,WaterSpray.Emitter>();int contactPixels=0;
   for(int py=0;py<c.height;py++)for(int px=0;px<c.width;px++){
    int index=py*c.width+px;double screenX=(px+.5-c.width*.5)/c.focal,screenY=(c.height*.5-py-.5)/c.focal;
    double dy=screenY*cp+sp,forward=cp-screenY*sp,dx=-screenX*cy+forward*sy,dz=screenX*sy+forward*cy;
@@ -93,7 +94,13 @@ public final class WaterModule {
      double cosine=Math.min(1,Math.abs((normal.slopeX()*dx-dy+normal.slopeZ()*dz)/(nl*vl))),reflection=e.fresnel()*(.02+.98*Math.pow(1-cosine,5));
      tint=mix(tint,e.reflection(),reflection);alpha=alpha+(1-alpha)*reflection;
      // Broken, moving shallow/contact foam. Never an emissive white outline.
-     double foam=Math.max(0,1-waterDepth/e.foamDepth());foam*=e.foamPattern(hit.x,hit.z,seconds,waterDepth)*e.foamOpacity();tint=mix(tint,0x9caeaa,foam);
+     double foam=Math.max(0,1-waterDepth/e.foamDepth());foam*=e.foamPattern(hit.x,hit.z,seconds,waterDepth)*e.foamOpacity();
+     var contact=contacts.near(px,py,hit.x,hit.y,hit.z,hit.depth,normal.slopeX(),normal.slopeZ());
+     if(contact!=null){
+      double breakup=.55+.45*WaterEffects.noise(hit.x*8+seconds*.23,hit.z*8-seconds*.17),edge=contact.foam()*breakup*e.foamOpacity();foam=Math.max(foam,edge);if(edge>.1)contactPixels++;
+      if(edge>.25&&spray.size()<256){long key=WaterSpray.cell(contact.x(),contact.z())^body.id.hashCode();double crest=Math.max(0,normal.offset()/Math.max(.001,e.envelope()));spray.putIfAbsent(key,new WaterSpray.Emitter(contact.x(),hit.y,contact.z(),contact.outwardX(),contact.outwardZ(),edge*(.35+.65*crest),key));}
+     }
+     tint=mix(tint,0xb9c8c4,foam);alpha=alpha+(1-alpha)*foam*.8;
      if(e.refractionPixels()>0&&hits.size()==1){
       int rx=(int)Math.round(px+normal.slopeX()*e.refractionPixels()*Math.min(1,waterDepth)),ry=(int)Math.round(py+normal.slopeZ()*e.refractionPixels()*Math.min(1,waterDepth));
       if(rx>=0&&rx<c.width&&ry>=0&&ry<c.height){int ri=ry*c.width+rx;if(originalDepth[ri]>hit.depth+.01)underneath=original[ri];}
@@ -103,6 +110,6 @@ public final class WaterModule {
    }
    // Surface depth is retained for later above-water effects; RGB already contains the bed.
    if(!hits.isEmpty())depth[index]=hits.get(hits.size()-1).depth;
-  }return new Statistics(drawn,excluded,occluded);
+  }int sprayPixels=optical?WaterSpray.draw(c,opaque,depth,seconds,spray.values(),lighting):0;return new Statistics(drawn,excluded,occluded,contactPixels,sprayPixels);
  }
 }

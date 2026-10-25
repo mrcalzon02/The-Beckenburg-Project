@@ -1,0 +1,33 @@
+{
+  "verified_revision": "6ef84b51dd6eabeae9ea7e7c78871405910f4c4c",
+  "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/hollow-creek/WATER_RUNTIME_REVIEW.html",
+  "method": "Actual browser clicks on all4 Play animation buttons, DOM media state and visible Playing status, screenshot captured before pausing.",
+  "sources": "Primary VP9 WebM for all4 water-murkier views",
+  "current_times_seconds": [
+    0.3575,
+    0.0916,
+    0.8125,
+    0.574
+  ],
+  "paused": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "readyState": [
+    4,
+    4,
+    4,
+    4
+  ],
+  "duration_seconds": [
+    6,
+    6,
+    6,
+    6
+  ],
+  "screenshot": "development/levels/previews/hollow-creek-runtime/player-webm-playback-proof.png",
+  "screenshot_original": "development/levels/previews/hollow-creek-runtime/player-webm-playback-proof.jpg",
+  "local_file_preview_verified": false
+}

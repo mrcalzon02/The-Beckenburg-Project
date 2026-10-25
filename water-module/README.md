@@ -13,3 +13,9 @@ Hollow Creek adapter: 65mm wave amplitude, 1m grid, original 64px ripple texture
 Budgets: 64 bodies, 2MP target, 2048-point polygons, 2048 wave-cell steps per ray, 200k bed vertices, 1MB hull resource. Nearest-wave reference tests include grazing rays and negative coordinates. Water and boats must be reviewed together from beach, riverbanks and dock before another map is advanced.
 
 Current Hollow Creek turbidity: minimum48%, max97%, absorption1.8/m; near-shore albedo detail remains visible while the deeper basin is obscured. Actual new clips use VP9 WebM with H264 MP4 fallback, explicit playback/time/error controls, and direct media links. The published HTTPS player must be tested through real browser interaction, not merely file metadata.
+
+## Contact/3D-wave refinement
+
+Texture scroll speeds stay unchanged. Hollow Creek now uses160mm base geometric waves with broad swell and shorter chop, a0.75m triangle grid, plus60mm shore run-up. Thirty-eight actual hull sections begin near the physical inner floor atY−2.0849 and end at−1.72; troughs below the cavity floor are occluded by the real hull. A full-cycle cockpit regression found and removed a1.6mm lower-profile gap.
+
+`WaterContact` reconstructs world-space opaque points from the completed scene depth and the same camera. It detects wet solid contacts within0.28m, rejects lifted/distant objects, and uses depth-derived surface normals to reject shallow flat bed surfaces. Separate wave/shore foam handles shallow run-up. This pass covers visible solid geometry; it is not an offscreen world-collider bake. `WaterSpray` adds at most256 stable world-cell emitters and three small ballistic droplets each, with world lighting and real depth rejection. Both report sample counts through `Statistics`. Existing constructors and pure flat-layer behaviour remain compatible.

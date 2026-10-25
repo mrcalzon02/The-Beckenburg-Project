@@ -16,8 +16,10 @@ public final class LivedLevelDressingTest {
             long kits=level.props().stream().filter(p->LivedAssets.ORIGINAL.contains(LivedAssets.base(p.mesh()))).count();
             check(level.props().stream().noneMatch(p->LivedAssets.ORIGINAL.contains(p.mesh())),"game must use the worn texture variants");
             check(kits>=25,site+" insufficient authored furnishing groups: "+kits);
-            List<Socket> closets=level.sockets().stream().filter(s->s.type().equals("hide")).toList();
-            check(closets.size()>=5,site+" cupboards must be scattered across the site");
+            List<Socket> authoredClosets=level.sockets().stream().filter(s->s.type().equals("hide")).toList();
+            check(authoredClosets.size()>=5,site+" cupboard candidates must be scattered across the site");
+            List<Socket> closets=authoredClosets.stream().filter(s->LevelClosets.available(level,s.room(),100)).toList();
+            check(closets.size()<authoredClosets.size(),site+" shared hiding budget must not enable every authored candidate");
             map.configureHiding(0);int absent=triangles(map);map.configureHiding(100);int present=triangles(map);
             int expectedClosetTriangles=closets.size()*GlbProps.model("level_hiding_cupboard_worn").triangles().size();
             // Difficulty also enables authored outdoor shrub cover, which the

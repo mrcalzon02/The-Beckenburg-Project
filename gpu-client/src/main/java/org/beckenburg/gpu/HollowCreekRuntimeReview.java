@@ -19,7 +19,7 @@ public final class HollowCreekRuntimeReview {
    if(!only.isEmpty()&&!view.name.startsWith(only))continue;
    double feet=map.groundHeight(view.x,view.z,map.roomAt(view.x,view.z));if(!map.traversable(view.x,feet,view.z))throw new AssertionError("Inaccessible review camera "+view.name+" Y"+feet);
    renderer.x=view.x;renderer.z=view.z;renderer.eyeHeight=feet+HunterPosture.STANDING_EYE;double yaw=Math.atan2(view.tx-view.x,view.tz-view.z);renderer.pitch=Math.atan2(view.ty-renderer.eyeHeight,Math.hypot(view.tx-view.x,view.tz-view.z));
-   Path dir=Path.of("build/hollow-creek-runtime-frames",stage,view.name);Files.createDirectories(dir);long start=System.nanoTime();int hullSamples=0,waterSamples=0;
+   Path dir=Path.of("build/hollow-creek-runtime-frames",stage,view.name);Files.createDirectories(dir);long start=System.nanoTime();int hullSamples=0,waterSamples=0,contactSamples=0,spraySamples=0;
    for(int frame=0;frame<frames;frame++){
     double clock=frame/12.0;renderer.yaw=yaw;
     renderer.drawNetwork(map,List.of(),-1,clock);long submitted=renderer.submittedGpuFrameId();long deadline=System.nanoTime()+60_000_000_000L;
@@ -27,11 +27,11 @@ public final class HollowCreekRuntimeReview {
     var gpuFrame=gpu.latest();if(gpuFrame==null||gpuFrame.frameId()<submitted)throw new AssertionError("No fresh actual GPU view "+view.name);
     // Same camera/clock consumes that exact completed world/depth readback and water layer.
     renderer.drawNetwork(map,List.of(),-1,clock);
-    if(renderer.waterStatistics!=null){hullSamples+=renderer.waterStatistics.excludedHullSamples();waterSamples+=renderer.waterStatistics.pixels();}
+    if(renderer.waterStatistics!=null){hullSamples+=renderer.waterStatistics.excludedHullSamples();waterSamples+=renderer.waterStatistics.pixels();contactSamples+=renderer.waterStatistics.contactFoamPixels();spraySamples+=renderer.waterStatistics.sprayPixels();}
     ImageIO.write(renderer.image(),"PNG",dir.resolve(String.format("frame-%03d.png",frame)).toFile());
     if(frame==0)ImageIO.write(renderer.image(),"PNG",stills.resolve(view.name+"-runtime.png").toFile());
    }
-   if(comma)report.append(',');comma=true;report.append("{\"name\":\"").append(view.name).append("\",\"x\":").append(view.x).append(",\"feet_y\":").append(feet).append(",\"z\":").append(view.z).append(",\"frames\":").append(frames).append(",\"capture_wall_ms\":").append((System.nanoTime()-start)/1_000_000).append(",\"water_samples\":").append(waterSamples).append(",\"dry_hull_samples\":").append(hullSamples).append('}');
+   if(comma)report.append(',');comma=true;report.append("{\"name\":\"").append(view.name).append("\",\"x\":").append(view.x).append(",\"feet_y\":").append(feet).append(",\"z\":").append(view.z).append(",\"frames\":").append(frames).append(",\"capture_wall_ms\":").append((System.nanoTime()-start)/1_000_000).append(",\"water_samples\":").append(waterSamples).append(",\"dry_hull_samples\":").append(hullSamples).append(",\"contact_foam_samples\":").append(contactSamples).append(",\"spray_samples\":").append(spraySamples).append('}');
    System.out.println("RUNTIME VIEW "+view.name+" "+frames+" fresh GPU frames; water samples="+waterSamples+" dry hull="+hullSamples);
   }
   report.append("]\n}\n");Files.writeString(Path.of("development/levels/verification/hollow-creek-game-captures-"+stage+".json"),report);System.out.println("PASS actual native-site game renderer captures; no full gameplay/LAN/human acceptance inferred");

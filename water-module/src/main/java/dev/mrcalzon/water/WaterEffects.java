@@ -31,7 +31,7 @@ public record WaterEffects(Layer first,Layer second,double blend,double detail,
  public static double noise(double x,double z){int ix=(int)Math.floor(x),iz=(int)Math.floor(z);double u=x-ix,v=z-iz;u=u*u*(3-2*u);v=v*v*(3-2*v);return lerp(lerp(hash(ix,iz),hash(ix+1,iz),u),lerp(hash(ix,iz+1),hash(ix+1,iz+1),u),v);}
  private static double hash(int x,int z){int h=x*374761393+z*668265263+1274126177;h=(h^(h>>>13))*1274126177;return ((h^(h>>>16))&0xffffff)/16777215.0;}
  private static double lerp(double a,double b,double t){return a+(b-a)*t;}
- public double vertex(double x,double z,double time){return Math.sin(x*.2+z*.2+time*speed+noise(x*noiseScale,z*noiseScale)*10)*amplitude+(shoreline==null?0:shoreline.height(x,z,time));}
+ public double vertex(double x,double z,double time){return (.72*Math.sin(x*.2+z*.2+time*speed+noise(x*noiseScale,z*noiseScale)*10)+.28*Math.sin(x*1.1+z*.75-time*speed*1.3+noise(x*.14,z*.14)*3))*amplitude+(shoreline==null?0:shoreline.height(x,z,time));}
  public record Surface(double offset,double slopeX,double slopeZ){}
  public Surface surface(double x,double z,double time){
   double x0=Math.floor(x/grid)*grid,z0=Math.floor(z/grid)*grid,u=(x-x0)/grid,v=(z-z0)/grid;

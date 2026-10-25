@@ -92,7 +92,64 @@
   ],
   "additional_tests_passed": [
     "EquipmentAssetAssignmentsTest: full independent mapping and corrected pre-existing coverage contract",
-    "WaterReviewRegressionTest: reduced actual bed transmission while retaining shallow visibility"
+    "WaterReviewRegressionTest: reduced actual bed transmission while retaining shallow visibility",
+    "WaterContactTest",
+    "LivedLevelDressingTest: all three authored maps, actual selected cupboard geometry/entry/collision"
   ],
-  "latest_material": "Dedicated original creek-bed-silt-stone-v1.png;48% minimum opacity,97% max,1.8/m absorption"
+  "latest_material": "Dedicated original creek-bed-silt-stone-v1.png;48% minimum opacity,97% max,1.8/m absorption",
+  "latest_contact_animations": [
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-beach-runtime.webm",
+      "sha256": "83d4a5f23ee1d0f621492c8d2745a22d3c4953af76045b6de304497e87774831",
+      "frames": 72,
+      "seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-beach-runtime.mp4",
+      "sha256": "8b452f53ddf9f47a64b3b1e7eb814a7f5c19d58450d1aaea117409823adde844",
+      "frames": 72,
+      "seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-east-runtime.webm",
+      "sha256": "b6be2691b3e53f5a31c20a2abfefdff5c0f865d99026d7dadb53ed337128af99",
+      "frames": 72,
+      "seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-east-runtime.mp4",
+      "sha256": "64de9a13890a95a10a147d707aef38814f544146853dc58669c492eb0c6dfbd7",
+      "frames": 72,
+      "seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-west-runtime.webm",
+      "sha256": "5f0d437d9235b6c7893a757d995ceb22d1aef19b65b924828a03127b56be7f89",
+      "frames": 72,
+      "seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-west-runtime.mp4",
+      "sha256": "3eb00a49456fb5e1d9cef27fa4eb4f016f4e709602e038eaf628ed3cb49a3161",
+      "frames": 72,
+      "seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-dock-boat-runtime.webm",
+      "sha256": "35824e6a4714f58c6cf3764d47c876ac7cab5c0c5f520aaba03691946f7c7dcb",
+      "frames": 72,
+      "seconds": 6
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-dock-boat-runtime.mp4",
+      "sha256": "6abbe042d24608bf03fe8467ad0e1aab9ab55010c1f8169e924d4d1d575a19ff",
+      "frames": 72,
+      "seconds": 6
+    }
+  ],
+  "contact_pass": "Actual visible opaque-geometry points / normals,0.28m foam reach; no lifted/deep/distant/flat-bed false contacts; up to256 world-cell spray emitters with3 ballistic droplets each. Not offscreen physics.",
+  "latest_wave_amplitude_m": 0.16,
+  "shore_amplitude_m": 0.06,
+  "hull_sections": 38,
+  "latest_capture_native_exit": 0
 }

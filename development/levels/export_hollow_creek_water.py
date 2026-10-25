@@ -5,8 +5,7 @@ r=json.loads((ROOT/'development/levels/hollow-creek/green-grass.json').read_text
 source=ROOT/r['scene'];assert hashlib.sha256(source.read_bytes()).hexdigest()==r['scene_sha256']
 bpy.ops.wm.open_mainfile(filepath=str(source))
 rows=['WATER_HULL_SECTIONS_1'];sections=[]
-for step in range(23):
- LEVEL=round(-2.06+step*.01,5)
+for LEVEL in [-2.0849]+[round(-2.08+step*.01,5) for step in range(37)]:
  boat=bpy.data.objects['West moored rowing boat'];boat.data.calc_loop_triangles();segments=[];level=LEVEL
  hull_groups={g.index for g in boat.vertex_groups if g.name.startswith('Continuous double-skin hull')}
  hull_ids={v.index for v in boat.data.vertices if any(a.group in hull_groups and a.weight>.5 for a in v.groups)}

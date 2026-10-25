@@ -4,8 +4,26 @@
   "hull_object": "West moored rowing boat",
   "section_step_m": 0.01,
   "conservative_mask": "Union adjacent actual inner sections; <=10mm vertical bracket; retained inside actual double-skin shell.",
-  "profile_sha256": "91a9d52dd2b3ecaf3d6f060dd5ca6d66a8bff3843a5297b8c7078d91c7f3b9e1",
+  "profile_sha256": "531d751f9c10c7fe2b06b23aca99b637a98e77f56430437d89a6c7dce8f358ea",
   "sections": [
+    {
+      "y": -2.0849,
+      "vertices": 10,
+      "inner_area_m2": 0.00041115999999874475,
+      "outer_area_m2": 1.1780162299999901
+    },
+    {
+      "y": -2.08,
+      "vertices": 30,
+      "inner_area_m2": 0.10084784000001434,
+      "outer_area_m2": 1.282207409999927
+    },
+    {
+      "y": -2.07,
+      "vertices": 46,
+      "inner_area_m2": 0.43266798999998457,
+      "outer_area_m2": 1.4959430199999915
+    },
     {
       "y": -2.06,
       "vertices": 58,
@@ -143,6 +161,78 @@
       "vertices": 110,
       "inner_area_m2": 3.2632856000000388,
       "outer_area_m2": 3.7028259700000206
+    },
+    {
+      "y": -1.83,
+      "vertices": 114,
+      "inner_area_m2": 3.309515150000003,
+      "outer_area_m2": 3.7435447899999232
+    },
+    {
+      "y": -1.82,
+      "vertices": 114,
+      "inner_area_m2": 3.35266402500001,
+      "outer_area_m2": 3.7833524500000237
+    },
+    {
+      "y": -1.81,
+      "vertices": 112,
+      "inner_area_m2": 3.393677019999963,
+      "outer_area_m2": 3.822294109999909
+    },
+    {
+      "y": -1.8,
+      "vertices": 110,
+      "inner_area_m2": 3.4330653799999666,
+      "outer_area_m2": 3.8606632899999695
+    },
+    {
+      "y": -1.79,
+      "vertices": 110,
+      "inner_area_m2": 3.4712770900000365,
+      "outer_area_m2": 3.898422299999986
+    },
+    {
+      "y": -1.78,
+      "vertices": 110,
+      "inner_area_m2": 3.5084684600000173,
+      "outer_area_m2": 3.9347941099999275
+    },
+    {
+      "y": -1.77,
+      "vertices": 110,
+      "inner_area_m2": 3.544896174999984,
+      "outer_area_m2": 3.9605726200000575
+    },
+    {
+      "y": -1.76,
+      "vertices": 110,
+      "inner_area_m2": 3.5806024399999927,
+      "outer_area_m2": 3.982007110000005
+    },
+    {
+      "y": -1.75,
+      "vertices": 110,
+      "inner_area_m2": 3.615849360000027,
+      "outer_area_m2": 4.001024039999997
+    },
+    {
+      "y": -1.74,
+      "vertices": 110,
+      "inner_area_m2": 3.6504863099999483,
+      "outer_area_m2": 4.01842897999996
+    },
+    {
+      "y": -1.73,
+      "vertices": 114,
+      "inner_area_m2": 3.6794797700000217,
+      "outer_area_m2": 4.034683469999919
+    },
+    {
+      "y": -1.72,
+      "vertices": 114,
+      "inner_area_m2": 3.700891129999988,
+      "outer_area_m2": 4.049786020000077
     }
   ]
 }

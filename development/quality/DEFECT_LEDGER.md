@@ -1538,6 +1538,48 @@ Evidence: Verified no diff in manifest/catalog/test against15b964c before the co
 
 Older-map obligation: Keep source catalog, independent manifest and explicit coverage assertions synchronized when adding equipment states; do not weaken mapping checks.
 
+## DEV-112 — 3D water motion too subtle; wet objects lacked contact foam and spray
+
+**Status:** revised-runtime-human-review-pending · **Affected:** Hollow Creek water / recorded development checks
+
+User approved texture motion but requested stronger geometric waves and foamy collision edges/spray at banks and water objects.
+
+Cause: Earlier65mm waves and shallow-depth foam did not expose actual solid-water intersections.
+
+Action: Keep scrolling rates; use160mm broad swell/shorter chop plus60mm shore run-up, visible opaque-geometry contact foam and bounded light/depth-tested ballistic spray. Expand actual hull sections to38, including near-floor cap.
+
+Evidence: WaterContactTest: >200mm actual vertical travel, no floating/distant halos, spray visibility/occlusion and complete dry cockpit cycle. Latest actual water-contacts clips record foam/spray sample counts.
+
+Older-map obligation: Per-map wet solid contacts and hull/freeboard must be reviewed in actual animated game views; visible-depth pass does not imply offscreen physics coverage.
+
+## DEV-113 — Prototype contact foam mistook shallow bed for impact edges
+
+**Status:** fixed-scoped · **Affected:** Hollow Creek water / recorded development checks
+
+Initial contact pass frosted most of the shallow creek, rather than just its collision edges.
+
+Cause: World proximity alone accepted the flat underwater bed as a solid impact surface.
+
+Action: Use opaque-depth surface normals to reject gently sloping beds except at the actual waterline; retain separate shoreline run-up foam. Add a direct flat-bed regression.
+
+Evidence: DEV-113-before-shallow-bed-contact-foam.png; WaterContactTest; final east-bank contact samples drop from2452515 to626355 over72 frames with bank/object edges retained.
+
+Older-map obligation: Test open shallow beds and lifted props as negative foam cases, not only successful wet-contact examples.
+
+## DEV-114 — Dressing CI expected every hiding candidate to appear at maximum density
+
+**Status:** fixed-scoped · **Affected:** Hollow Creek water / recorded development checks
+
+Full multiplayer preflight passed equipment mapping, then failed HOUSE geometry delta10824 vs actual4608.
+
+Cause: Pre-existing dressing test counted all five cupboard candidates even though the shared combined hiding cap selects only two plus one outdoor refuge.
+
+Action: Retain scattered candidate checks, compute expected geometry from the actual shared-budget selected sockets, and test physical concealment/collision only for enabled cupboards. No gameplay hiding budget changed.
+
+Evidence: LivedLevelDressingTest passes HOUSE/FARMHOUSE/SCHOOL: two actual physically enterable cupboards and supported small objects each. Full CI rerun remains required.
+
+Older-map obligation: Test candidate supply separately from the equal shared active hiding budget; never restore unlimited hiding to satisfy a stale assertion.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

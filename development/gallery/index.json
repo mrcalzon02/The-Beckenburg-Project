@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 762,
+  "count": 768,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1374,6 +1374,16 @@
       "sha256": "2792437daae8948c9a024ca987078c8866b4eef661b0072ae58b9c4d619c0b8d"
     },
     {
+      "path": "development/levels/previews/defects/DEV-113-before-shallow-bed-contact-foam.png",
+      "url": "development/levels/previews/defects/DEV-113-before-shallow-bed-contact-foam.png",
+      "title": "Dev 113 before shallow bed contact foam",
+      "kind": "Development review",
+      "width": 640,
+      "height": 360,
+      "bytes": 189747,
+      "sha256": "81d4ffdf176a17f6c08c3bf94ab375b705ac57a7ba68e04ed27dbd3d8a9d566e"
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "url": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "title": "Academy edge sky plan",
@@ -1904,6 +1914,16 @@
       "sha256": "9167078f4aaffe3ada14f738869148ad1a557cff674376b8be7783fec6d1bff0"
     },
     {
+      "path": "development/levels/previews/hollow-creek-runtime/player-webm-playback-proof.png",
+      "url": "development/levels/previews/hollow-creek-runtime/player-webm-playback-proof.png",
+      "title": "Player webm playback proof",
+      "kind": "Browser playback verification",
+      "width": 1265,
+      "height": 1774,
+      "bytes": 1305987,
+      "sha256": "b3e140a1d285308f4428f825bf51450cc8595a9bc988e1f966064731444ed022"
+    },
+    {
       "path": "development/levels/previews/hollow-creek-runtime/river-camera-fit/water-riverside-east-runtime.png",
       "url": "development/levels/previews/hollow-creek-runtime/river-camera-fit/water-riverside-east-runtime.png",
       "title": "Water riverside east runtime",
@@ -2007,6 +2027,94 @@
             "url": "development/levels/previews/hollow-creek-runtime/shore-waves/water-riverside-west-runtime.mp4",
             "bytes": 116227,
             "sha256": "a1a7854d5a813df8534066a70d87851eec252c69b343be72c7aa68bec216fc61"
+          }
+        ]
+      }
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-beach-runtime.png",
+      "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-beach-runtime.png",
+      "title": "Water beach runtime",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 360,
+      "bytes": 115657,
+      "sha256": "99ad201c3f80a0c9679b36e7d8484ae052d9d78dc470dd3d95cd63dd0b2b6158",
+      "animation": {
+        "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-beach-runtime.webm",
+        "bytes": 43819,
+        "sha256": "83d4a5f23ee1d0f621492c8d2745a22d3c4953af76045b6de304497e87774831",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-beach-runtime.mp4",
+            "bytes": 170792,
+            "sha256": "8b452f53ddf9f47a64b3b1e7eb814a7f5c19d58450d1aaea117409823adde844"
+          }
+        ]
+      }
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-dock-boat-runtime.png",
+      "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-dock-boat-runtime.png",
+      "title": "Water dock boat runtime",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 360,
+      "bytes": 99402,
+      "sha256": "abe24e1477a5eec81bf44da347d15b4cc3f1775faa425aa70249319ecf2057f3",
+      "animation": {
+        "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-dock-boat-runtime.webm",
+        "bytes": 29883,
+        "sha256": "35824e6a4714f58c6cf3764d47c876ac7cab5c0c5f520aaba03691946f7c7dcb",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-dock-boat-runtime.mp4",
+            "bytes": 171475,
+            "sha256": "6abbe042d24608bf03fe8467ad0e1aab9ab55010c1f8169e924d4d1d575a19ff"
+          }
+        ]
+      }
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-east-runtime.png",
+      "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-east-runtime.png",
+      "title": "Water riverside east runtime",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 360,
+      "bytes": 191477,
+      "sha256": "c309f075e67ee05da40c288f16fad4810eb2866fb8a3611a730d1b9069ef506e",
+      "animation": {
+        "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-east-runtime.webm",
+        "bytes": 89658,
+        "sha256": "b6be2691b3e53f5a31c20a2abfefdff5c0f865d99026d7dadb53ed337128af99",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-east-runtime.mp4",
+            "bytes": 239541,
+            "sha256": "64de9a13890a95a10a147d707aef38814f544146853dc58669c492eb0c6dfbd7"
+          }
+        ]
+      }
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-west-runtime.png",
+      "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-west-runtime.png",
+      "title": "Water riverside west runtime",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 360,
+      "bytes": 198543,
+      "sha256": "378a6e8ab7e7d85117417514ca456422d993628a623bdc1ca6264279d099e5a5",
+      "animation": {
+        "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-west-runtime.webm",
+        "bytes": 92188,
+        "sha256": "5f0d437d9235b6c7893a757d995ceb22d1aef19b65b924828a03127b56be7f89",
+        "fallbacks": [
+          {
+            "url": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-west-runtime.mp4",
+            "bytes": 224768,
+            "sha256": "3eb00a49456fb5e1d9cef27fa4eb4f016f4e709602e038eaf628ed3cb49a3161"
           }
         ]
       }

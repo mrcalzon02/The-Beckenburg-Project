@@ -7,7 +7,7 @@ public final class WaterReviewRegressionTest {
  public static void main(String[] args)throws Exception{
   int[] rgb={0xff0000,0xff0000,0xff0000,0x00ff00,0x00ff00,0x00ff00,0x0000ff,0x0000ff,0x0000ff};double[] depth={2,2,2,100,100,100,100,100,100};DistanceDetail.apply(rgb,depth,3,3,0x18202a);check(rgb[0]==0xff0000&&rgb[1]==0xff0000,"Near detail must remain unchanged");check(((rgb[4]>>16)&255)<=24,"Distance filter must reject foreground red samples");check(rgb[4]!=0x00ff00,"Distant detail is filtered and hazed");
   int[] far={0xffffff};DistanceDetail.apply(far,new double[]{180},1,1,0x18202a);check(Math.abs(((far[0]>>16)&255)-24)<=1,"Far water must converge to actual horizon colour before clipping");
-  var body=HollowCreekWater.module().bodies().get(0);var effect=body.effects();check(effect.shoreline()!=null&&effect.envelope()<.11,"Shore waves fit the complete authored dry hull profile");var shore=effect.shoreline();double maximum=0;
+  var body=HollowCreekWater.module().bodies().get(0);var effect=body.effects();check(effect.shoreline()!=null&&effect.envelope()<.23,"Visible 3D waves stay below the authored boat gunwale");var shore=effect.shoreline();double maximum=0;
   for(double t=0;t<5.5;t+=.1)maximum=Math.max(maximum,Math.abs(shore.height(34,1,t)));check(maximum>.001,"Shore run-up actually displaces water");
   int near=transmission(body.style(),.1),deep=transmission(body.style(),1),old=transmission(new WaterModule.Style(0,0,.65,.22,.92,3.2,.018),.1);
   check(near<old-40&&near>50,"Revised water must obscure more bed detail while retaining shallow transparency");check(deep<near*.4,"Bed visibility must fall strongly with depth");

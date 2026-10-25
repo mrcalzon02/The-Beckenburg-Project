@@ -22,7 +22,7 @@ public final class HollowCreekWater {
    pixels[z*64+x]=(a<<16)|(a<<8)|a;second[z*64+x]=(b<<16)|(b<<8)|b;
   }
   var texture=new Texture(64,64,pixels);var texture2=new Texture(64,64,second);
-  var effects=new WaterEffects(new WaterEffects.Layer(texture,.28,.28,.015,.001,128),new WaterEffects.Layer(texture2,.19,.23,-.015,-.02,192),.27,.35,.065,1.0,.8,.045,.28,.65,5,.5,0x303b4c,new WaterEffects.ShoreWave(bed(),LEVEL,.03,5.5,2.8,.22));
+  var effects=new WaterEffects(new WaterEffects.Layer(texture,.28,.28,.015,.001,128),new WaterEffects.Layer(texture2,.19,.23,-.015,-.02,192),.27,.35,.16,.75,.8,.045,.28,.65,5,.5,0x303b4c,new WaterEffects.ShoreWave(bed(),LEVEL,.06,5.5,2.8,.22));
   var body=new Body("Hollow Creek lake and creek",new Polygon(List.of(new Point(-105,-120),new Point(145,-120),new Point(145,30),new Point(-105,30))),LEVEL,bed(),new Texture(64,64,pixels),new Style(0x365859,0x132e39,1.8,.48,.97,3.2,.018),List.of(dry),Boolean.getBoolean("beckenburg.water.flat")?null:effects);
   return module=new WaterModule(List.of(body));
  }
