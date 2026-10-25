@@ -18,7 +18,7 @@ public final class FieldJournalTest {
         book.clear();
         book.set(GhostFieldGuide.Clue.SOLO_ATTACK,FieldJournal.Status.SEEN,1,29);
         book.set(GhostFieldGuide.Clue.PASSIVE_DRAIN,FieldJournal.Status.SEEN,1,32);
-        check(GhostFieldGuide.shortlist(book).size()==13,"circumstantial patterns never hard eliminate");
+        check(GhostFieldGuide.shortlist(book).size()==GhostIdentity.Type.values().length,"circumstantial patterns never hard eliminate");
         check(GhostFieldGuide.ordered(book).get(0)==GhostIdentity.Type.DEVIL,
               "isolated attack plus feeding favors Devil in live species profiles");
         FieldJournal.Note n=new FieldJournal.Note(GhostFieldGuide.Clue.PHASE_WALL,FieldJournal.Status.SEEN,2,77);
