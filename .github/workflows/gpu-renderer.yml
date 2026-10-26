@@ -6,6 +6,9 @@ on:
       - 'gpu-client/**'
       - 'src/main/java/org/beckenburg/GpuWorldRenderer.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/main/java/org/beckenburg/DebugPerformanceHud.java'
+      - 'src/main/java/org/beckenburg/FixtureLighting.java'
+      - 'src/test/java/org/beckenburg/VanHouseViewportProfileTest.java'
       - '.github/workflows/gpu-renderer.yml'
   workflow_dispatch:
 permissions:
