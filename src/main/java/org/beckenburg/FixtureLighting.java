@@ -19,6 +19,9 @@ public final class FixtureLighting {
  private final Map<Cell,List<Source>> influence=new HashMap<>();
  private final Map<Cell,Long> changedCells=new HashMap<>();
  private long generation,invalidatedCells,consideredSources;
+ /** Monotonic scene-owned revision of fixture/occluder lighting inputs.
+  * New maps own new FixtureLighting instances; revision alone is not a scene ID. */
+ public long stateRevision(){return generation;}
  private static <K,V> Map<K,V> bounded(int limit){
   return new LinkedHashMap<K,V>(2048,.75f,true){
    @Override protected boolean removeEldestEntry(Map.Entry<K,V> eldest){
@@ -107,7 +110,8 @@ public final class FixtureLighting {
   // Dynamic gate leaves change real shadow occlusion even when the clock and
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
-   castleDoorRevision=castle.doorRevision();sight.clear();colours.clear();normalColours.clear();distant.clear();
+   castleDoorRevision=castle.doorRevision();++generation;
+   sight.clear();colours.clear();normalColours.clear();distant.clear();
   }
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){
@@ -205,7 +209,11 @@ public final class FixtureLighting {
  public List<Source> sources(){return List.copyOf(sources);}
  public void frame(RoomLighting circuits,int tick){
   resetStatistics();
-  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;sight.clear();colours.clear();normalColours.clear();distant.clear();}
+  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();
+  if(!geometry.equals(nextGeometry)){
+   geometry=nextGeometry;++generation;
+   sight.clear();colours.clear();normalColours.clear();distant.clear();
+  }
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){double f;
    if(source.room==14)f=1;
