@@ -46,6 +46,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  out vec2 v_uv;
  noperspective out vec2 v_uvAffine;
  out vec3 v_light;
+ out vec3 v_cameraPoint;
  void main(){
   vec3 cameraPoint=a_position;
   if(u_worldSpace!=0){
@@ -70,6 +71,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   v_uv=a_texCoord0;
   v_uvAffine=a_texCoord0;
   v_light=a_lighting;
+  v_cameraPoint=cameraPoint;
  }
  """;
  private static final String FRAGMENT="""
@@ -77,13 +79,29 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  in vec2 v_uv;
  noperspective in vec2 v_uvAffine;
  in vec3 v_light;
+ in vec3 v_cameraPoint;
  uniform sampler2D u_texture;
  uniform float u_affineWarp;
+ uniform int u_lampOn;
+ uniform int u_flameLamp;
+ uniform float u_lampIntensity;
+ uniform float u_lampReach;
+ uniform float u_lampWidth;
  out vec4 fragColor;
  void main(){
   vec4 surface=texture(u_texture,mix(v_uv,v_uvAffine,u_affineWarp));
   if(surface.a<0.05)discard;
-  fragColor=vec4(clamp(surface.rgb*v_light,0.0,1.0),surface.a);
+  // Eye-mounted flashlight: the depth-tested *visible* surface is the
+  // first obstacle along each camera ray. No unoccluded wall-to-wall source
+  // light is invented here; fixture and portable occlusion remain CPU-owned.
+  float beam=0.0;
+  if(u_lampOn!=0 && v_cameraPoint.z>0.065){
+   float depthFalloff=max(0.0,1.0-v_cameraPoint.z/u_lampReach);
+   float aim=length(v_cameraPoint.xy)/max(0.065,v_cameraPoint.z);
+   float cone=u_flameLamp!=0?1.0:max(0.0,1.0-aim/u_lampWidth);
+   beam=u_lampIntensity*depthFalloff*cone;
+  }
+  fragColor=vec4(clamp(surface.rgb*(v_light+vec3(beam)),0.0,1.0),surface.a);
  }
  """;
  private final AtomicReference<Frame> pending=new AtomicReference<>();
@@ -215,6 +233,11 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   shader.setUniformf("u_vertexSnap",frame.vertexSnap());
   shader.setUniformf("u_affineWarp",frame.affineWarp());
   shader.setUniformi("u_texture",0);
+  shader.setUniformi("u_lampOn",frame.lampOn()?1:0);
+  shader.setUniformi("u_flameLamp",frame.flameLamp()?1:0);
+  shader.setUniformf("u_lampIntensity",frame.lampIntensity());
+  shader.setUniformf("u_lampReach",frame.lampReach());
+  shader.setUniformf("u_lampWidth",frame.lampWidth());
   for(Surface surface:frame.surfaces()){
    int vertexCount=surface.vertices().length/8;
    if(vertexCount==0)continue;
