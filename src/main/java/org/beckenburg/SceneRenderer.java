@@ -1429,7 +1429,10 @@ public final class SceneRenderer {
         if(normal!=null){var n=fixtureLighting.sampleNormal(room,p.x,p.y,p.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,p.x,p.y,p.z);result=new Vertex(at,u,v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));}
         double beam=at.z>NEAR?lampBeam(at.z,Math.hypot(at.x,at.y)/at.z):0;
         if(normal!=null){double dx=x-p.x,dy=eyeHeight-p.y,dz=z-p.z,d=Math.sqrt(dx*dx+dy*dy+dz*dz);beam*=.12+.88*Math.max(0,(normal.x*dx+normal.y*dy+normal.z*dz)/Math.max(.001,d));}
-        return new Vertex(at,u,v,result.r+beam,result.g+beam,result.b+beam);
+        // The GPU vertex shader transforms world coordinates. Retain the
+        // existing CPU lighting/beam semantics but stop transforming and
+        // retransmitting camera-relative geometry as the camera moves.
+        return new Vertex(p,u,v,result.r+beam,result.g+beam,result.b+beam);
     }
     /** Timings are CPU-side costs, not GPU execution timestamps. */
     public record FrameDiagnostics(long totalNs,long sceneBuildNs,long geometryNs,long effectsNs,
@@ -1480,7 +1483,9 @@ public final class SceneRenderer {
         lastSubmittedGpuFrame=submitted;
         backend.submit(new GpuWorldRenderer.Frame(gpuSceneId,submitted,
             renderWidth,renderHeight,(float)focal,
-            (float)psxPreset.snap,(float)psxPreset.affine,surfaces));
+            (float)psxPreset.snap,(float)psxPreset.affine,surfaces,
+            true,(float)this.x,(float)eyeHeight,(float)this.z,
+            (float)yaw,(float)pitch));
         GpuWorldRenderer.Result available=pinnedGpuFrame==null?backend.latest():pinnedGpuFrame;pinnedGpuFrame=null;
         lastGpuReadbackAvailable=GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight);
         lastGpuReadbackFresh=lastGpuReadbackAvailable&&available.frameId()==submitted;
