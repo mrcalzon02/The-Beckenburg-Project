@@ -64,7 +64,7 @@ public final class DebugPerformanceHud {
             lastLog=now;
             var m=metrics;
             BeckenburgDiagnostics.record(String.format(Locale.ROOT,
-                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d",
+                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d depth_rejected=%d",
                 view,room,x,y,z,yaw,actors,loopNs/1e6,measured,
                 m==null?"not-rendered":m.gpu()?"GPU":"CPU-fallback",
                 m==null?0:m.sceneBuildNs()/1e6,m==null?0:m.geometryNs()/1e6,
@@ -73,7 +73,8 @@ public final class DebugPerformanceHud {
                 m==null?"n/a":m.gpuReadbackFresh()?"fresh":m.gpuReadbackAvailable()?"stale":"pending",
                 m==null?0:m.lighting().cacheHits(),
                 m==null?0:m.lighting().shadowRays(),
-                m==null?0:m.lighting().normalRays()));
+                m==null?0:m.lighting().normalRays(),
+                m==null?0:m.depthRejectedFaces()));
         }
     }
     static int graphBarHeight(double ms,int maxHeight){
@@ -116,8 +117,8 @@ public final class DebugPerformanceHud {
                     "GEOMETRY CPU %.1fms  POST/EFFECTS %.1fms",
                     m.geometryNs()/1e6,m.effectsNs()/1e6),0xe1e8e2);yLine+=17;
                 text(out,left+10,yLine,String.format(Locale.ROOT,
-                    "FACES BUILT %,d  IN FRUSTUM %,d  SUBMITTED TRI %,d",
-                    m.faces(),m.frustumFaces(),m.submittedTriangles()),0xe1e8e2);yLine+=17;
+                    "FACES %,d  FRUSTUM %,d  EARLY REJECT %,d",
+                    m.faces(),m.frustumFaces(),m.depthRejectedFaces()),0xe1e8e2);yLine+=17;
                 text(out,left+10,yLine,String.format(Locale.ROOT,
                     "SCENERY INSTANCES %,d  VISIBLE %,d  CULLED %,d",
                     m.sceneryTotal(),m.sceneryVisible(),
