@@ -21,7 +21,7 @@ public final class LanLobbyWindow extends JFrame {
     private final JSpinner partySize=new JSpinner(new SpinnerNumberModel(3,1,6,1));
     private final JComboBox<HouseMap.Site> siteChoice=
         new JComboBox<>(java.util.Arrays.stream(HouseMap.Site.values())
-            .filter(s->SiteCatalog.Location.valueOf(s.name()).playable()).toArray(HouseMap.Site[]::new));
+            .filter(SiteCatalog::playable).toArray(HouseMap.Site[]::new));
     private HouseMap.Site selectedSite=HouseMap.Site.HOUSE;
     private final JButton tuneContract=new JButton("Contract options");
     private CustomContract custom=CustomContract.standard(3);
