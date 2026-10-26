@@ -5,9 +5,9 @@ package org.beckenburg;
  */
 public final class EquipmentModelCatalogTest {
     public static void main(String[] args) {
-        if(EquipmentModelCatalog.stageCount()!=129 ||EquipmentModelCatalog.variantCount()!=44
-                ||EquipmentModelCatalog.canonicalModelCount()!=113||EquipmentModelCatalog.variantModelCount()!=40
-                ||EquipmentModelCatalog.approvedModels().size()!=153)
+        if(EquipmentModelCatalog.stageCount()!=129 ||EquipmentModelCatalog.variantCount()!=53
+                ||EquipmentModelCatalog.canonicalModelCount()!=113||EquipmentModelCatalog.variantModelCount()!=49
+                ||EquipmentModelCatalog.approvedModels().size()!=162)
             throw new AssertionError("Catalog stages/states incomplete");
         int count=0;
         for(EquipmentTiers.Plan plan:EquipmentTiers.all()) {
@@ -48,6 +48,6 @@ public final class EquipmentModelCatalogTest {
             catch(IllegalArgumentException expected) { /* strict rejection */ }
         }
         if(count!=126)throw new AssertionError("Wrong model count "+count);
-        System.out.println("PASS: 126 equipment slots +3 health slots, 44 state aliases /40 meshes, 7 fixed fixtures, 153-file allowlist");
+        System.out.println("PASS: 126 equipment slots +3 health slots, 53 state aliases /49 meshes, 7 fixed fixtures, 162-file allowlist");
     }
 }

@@ -13,10 +13,14 @@ public final class GhostDomainTest {
         return ai;
     }
     public static void main(String[] args) {
-        GhostDomain a=new GhostDomain(4), b=new GhostDomain(4);
+        HouseMap map=new HouseMap();
+        GhostDomain a=new GhostDomain(map,4), b=new GhostDomain(map,4);
         ok(a.observe().legalActions().contains(GhostDomain.Action.DRIFT),"initial exits available");
         ok(!submit(a,b,GhostDomain.Action.STRIKE,4,1).applied(),"first-contact strike blocked");
-        ok(!submit(a,b,GhostDomain.Action.DRIFT,0,2).applied(),"no diagonal teleport");
+        int unreachable=java.util.stream.IntStream.range(0,map.interiorRoomCount())
+            .filter(room->room!=4&&!map.ghostExits(4).contains(room)).findFirst().orElseThrow();
+        ok(!submit(a,b,GhostDomain.Action.DRIFT,unreachable,2).applied(),
+            "no nonadjacent ghost teleport across authored portal graph");
         ok(!submit(a,b,GhostDomain.Action.DRIFT,4,3).applied(),"cannot drift in place");
         ok(submit(a,b,GhostDomain.Action.DRIFT,5,4).applied(),"valid adjacent travel");
         ok(a.room()==5,"changed room");
@@ -26,7 +30,8 @@ public final class GhostDomainTest {
         ok(!submit(a,b,GhostDomain.Action.WHISPER,5,7).applied(),"duplicate sequence rejected");
         GhostDomain.Observation o = a.observe();
         ok(!o.hearsHunter(),"sensing does not reveal remote hunter");
-        ok(o.exits().equals(List.of(2,8,4)),"adjacency as authored");
+        ok(o.exits().equals(map.ghostExits(5)) && !o.exits().isEmpty(),
+            "observed adjacency equals the real authored ghost portal graph");
         try{o.exits().add(1);throw new AssertionError("mutable observation");}
         catch(UnsupportedOperationException expected){}
         ok(!a.observe().legalActions().contains(GhostDomain.Action.STRIKE),"no premature strike affordance");

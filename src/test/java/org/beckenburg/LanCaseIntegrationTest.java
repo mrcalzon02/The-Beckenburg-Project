@@ -40,7 +40,7 @@ public final class LanCaseIntegrationTest {
             a.c.scan(LanCase.Tool.EMF);
             check(a.waitFor("ACCEPT|SCAN").contains("READING"),"ordinary scan always returns a measured value");
             // Walk through the host room topology to the anchor, without client-supplied world positions.
-            for(int room:new int[]{11,8,5,4}){a.c.move(room);a.waitFor("ACCEPT|MOVE|"+room);}
+            LanTestRoomTravel.move(a.c,a::waitFor,4);
             a.c.cleanse();check(a.waitFor("REJECT|CLEANSE").contains("ward"),"rite requires actual preparation, not a scan quota");
             for(LanCase.Tool t:LanCase.Tool.values()) {
                 a.c.scan(t);check(a.waitFor("ACCEPT|SCAN").contains("READING"),"real environmental reading "+t);

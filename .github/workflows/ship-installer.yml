@@ -15,6 +15,7 @@ concurrency:
 jobs:
   package-and-release:
     runs-on: windows-latest
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
@@ -62,9 +63,24 @@ jobs:
           "BECKENBURG_SOURCE_SHA=$env:GITHUB_SHA" >> $env:GITHUB_ENV
           "BECKENBURG_TAG=beckenburg-v$next" >> $env:GITHUB_ENV
 
-      - name: Package game without running any tests
+      # A successful standalone installer is NOT an acceptance test.
+      # Rebuild and exercise the packaged multiplayer game at this exact SHA
+      # before allowing the shipping steps (and the release tag) to execute.
+      - name: Verify authored levels and packaged TCP multiplayer round
         shell: cmd
-        run: call build.cmd package
+        run: call build.cmd e2e
+
+      - name: Run complete Java regression manifest
+        shell: cmd
+        run: java -Djava.awt.headless=true -ea -cp build\classes org.beckenburg.BeckenburgRegressionSuite
+
+      - name: Verify packaged desktop game and multiplayer UI
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          & java '-Djava.awt.headless=false' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.BeckenburgDesktopE2ETest
+          if ($LASTEXITCODE -ne 0) { throw "Packaged desktop acceptance failed: $LASTEXITCODE" }
+
 
       - name: Bundle actual Java 17 OpenGL 3.3 backend and game assets
         shell: pwsh
@@ -141,5 +157,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           $exe = "dist/installer/Beckenburg-$env:BECKENBURG_RELEASE_VERSION-Windows-x64.exe"
-          gh release create $env:BECKENBURG_TAG $exe dist/installer/LevelEditorKit-Java17.jar dist/installer/SHA256SUMS.txt --target $env:GITHUB_SHA --title "Beckenburg $env:BECKENBURG_RELEASE_VERSION" --notes "Development build from $env:GITHUB_SHA. Developer diagnostics enabled by default. Packaging only; tests intentionally not run. Published without the GitHub prerelease flag for compatibility with older installed updaters."
+          gh release create $env:BECKENBURG_TAG $exe dist/installer/LevelEditorKit-Java17.jar dist/installer/SHA256SUMS.txt --target $env:GITHUB_SHA --title "Beckenburg $env:BECKENBURG_RELEASE_VERSION" --notes "Development build from $env:GITHUB_SHA. Packaged TCP multiplayer, full regression manifest and desktop UI smoke passed on this exact revision before publication; hardware GPU frame rate and physical user acceptance remain separate gates. Published as a development-channel-compatible release for existing installed updaters."
           if ($LASTEXITCODE -ne 0) { throw 'GitHub release publication failed' }

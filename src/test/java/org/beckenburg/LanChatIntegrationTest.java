@@ -42,9 +42,7 @@ public final class LanChatIntegrationTest {
             a.await("LOBBY|2|HUMAN|3|WAITING"); // Host has processed all independent READY packets.
             a.client.start();a.await("INFO|mission started");
             // Move Martha through existing authored adjacent rooms without teleporting in 3D.
-            for(int room:new int[]{11,8,5,4}){
-                b.client.move(room);b.await("ACCEPT|MOVE|"+room);
-            }
+            LanTestRoomTravel.move(b.client,b::await,4);
             a.client.view3D();a.await("ACCEPT|VIEW3D");
             b.client.view3D();b.await("ACCEPT|VIEW3D");
             ghost.client.viewGhost3D();ghost.await("ACCEPT|GVIEW3D");

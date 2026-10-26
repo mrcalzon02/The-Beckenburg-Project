@@ -20,7 +20,7 @@ public final class LanVoiceHostIntegrationTest {
             tcp.setSoTimeout(3500);
             in=LanProtocol.reader(tcp.getInputStream());
             out=LanProtocol.writer(tcp.getOutputStream());
-            LanProtocol.write(out,"JOIN|1|"+(ghost?"GHOST":"HUNTER")+"|"+nick);
+            LanProtocol.write(out,"JOIN|"+LanProtocol.VERSION+"|"+(ghost?"GHOST":"HUNTER")+"|"+nick);
             String welcome=LanProtocol.read(in);
             if(!welcome.startsWith("WELCOME|"))throw new IOException(welcome);
             seat=LanProtocol.parts(welcome).get(1);
@@ -84,7 +84,25 @@ public final class LanVoiceHostIntegrationTest {
             van.send("READY");house.send("READY");ghost.send("READY");
             van.await("LOBBY|2|HUMAN|3|WAITING");
             van.send("START");van.await("INFO|mission started");
-            for(int room:new int[]{11,8,5,4}){
+            // Raw TCP peers exercise the same legal authored adjacency
+            // traversal as LanClient. Do not ask the host to teleport to an
+            // obsolete room number: it must continue rejecting illegal moves.
+            HouseMap map=new HouseMap();
+            int start=HouseMap.EXTRACTION_ROOM,target=4;
+            int[] parent=new int[HouseMap.ROOM_COUNT];
+            java.util.Arrays.fill(parent,-1);
+            java.util.ArrayDeque<Integer> search=new java.util.ArrayDeque<>();
+            search.add(start);parent[start]=start;
+            while(!search.isEmpty()&&parent[target]<0){
+                int from=search.removeFirst();
+                for(int next:map.adjacentRooms(from))if(parent[next]<0){
+                    parent[next]=from;search.add(next);
+                }
+            }
+            ok(parent[target]>=0,"real portal route reaches the ghost room");
+            java.util.ArrayDeque<Integer> path=new java.util.ArrayDeque<>();
+            for(int at=target;at!=start;at=parent[at])path.addFirst(at);
+            for(int room:path){
                 house.send("MOVE|"+room+"|"+(++house.sequence));
                 house.await("ACCEPT|MOVE|"+room);
             }

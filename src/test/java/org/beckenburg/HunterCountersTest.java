@@ -3,10 +3,11 @@ public final class HunterCountersTest {
  private static void ok(boolean b,String why){if(!b)throw new AssertionError(why);}
  public static void main(String[] args){
   HouseMap map=new HouseMap();HunterCounters traps=new HunterCounters();
-  LanWorld.Body hunter=new LanWorld.Body(12.5,9.5,0,4);
+  var spawn=map.spawn(4);
+  LanWorld.Body hunter=new LanWorld.Body(spawn.x(),spawn.z(),0,4);
   GhostDomain spirit=new GhostDomain(map,4,GhostIdentity.Type.SPIRIT);
   spirit.advance(1,4);
-  LanGhostSpatial.Pose pose=new LanGhostSpatial.Pose(4,12.5,9.5,0);
+  LanGhostSpatial.Pose pose=new LanGhostSpatial.Pose(4,spawn.x(),spawn.z(),0);
   traps.launch(0,HunterCounters.Kind.SALT,hunter,map,12);
   ok(traps.charges(0,HunterCounters.Kind.SALT)==2,"finite salt");
   ok(traps.advance(map,GhostIdentity.Type.SPIRIT,spirit,pose,13).saltTrack(),"walker triggered salt");
