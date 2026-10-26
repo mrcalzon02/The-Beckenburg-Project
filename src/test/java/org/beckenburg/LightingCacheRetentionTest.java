@@ -19,8 +19,21 @@ public final class LightingCacheRetentionTest {
             var sample=map.spawn(0);
             light.frame(circuits,0);
             var baseline=light.sample(0,sample.x(),sample.y()+1.1,sample.z());
+            // The GPU renderer also requests directional probes for real
+            // geometry normals. Those expensive physical rays must be retained.
+            var authored=light.sources().stream()
+                .filter(source->source.room()==0).findFirst().orElseThrow();
+            double nx=authored.x(),ny=authored.y()-.4,nz=authored.z();
+            var firstNormal=light.sampleNormal(0,nx,ny,nz,0,1,0);
+            ok(light.frameStats().normalRays()>0,
+                "Authored upward-facing surface must exercise real shadow rays: "+site);
             light.frame(circuits,1);
             var unchanged=light.sample(0,sample.x(),sample.y()+1.1,sample.z());
+            var unchangedNormal=light.sampleNormal(0,nx,ny,nz,0,1,0);
+            ok(firstNormal.equals(unchangedNormal)
+                &&light.frameStats().normalCacheHits()==1
+                &&light.frameStats().normalRays()==0,
+                "Stable surface normals must reuse physical directional lighting: "+site);
             ok(baseline.equals(unchanged),"Stationary lighting changed without a light event: "+site);
             ok(light.frameStats().cacheHits()==1&&light.frameStats().shadowRays()==0,
                 "Unchanged camera/light state must reuse warm samples without shadow rays: "+site);
@@ -39,6 +52,9 @@ public final class LightingCacheRetentionTest {
                 &&light.frameStats().cacheHits()==1,
                 "A room switch must not invalidate unrelated cached exterior lighting: "+site);
             var switched=light.sample(0,sample.x(),sample.y()+1.1,sample.z());
+            light.sampleNormal(0,nx,ny,nz,0,1,0);
+            ok(light.frameStats().normalCacheHits()==0,
+                "A switched light must invalidate its directional normal probes: "+site);
             ok(light.frameStats().cacheHits()==1,
                 "Changed room-light sample must recalculate instead of returning stale colour: "+site);
             circuits.toggle(0);
@@ -68,9 +84,13 @@ public final class LightingCacheRetentionTest {
         doorCircuits.toggle(4);
         doorLighting.frame(doorCircuits,4);
         double closed=doorLighting.sample(1,17.5,1.3,20.5).energy();
+        doorLighting.sampleNormal(1,17.5,1.3,20.5,0,1,0);
         doorMap.toggleDoor(door.id());
         doorLighting.frame(doorCircuits,4);
         double opened=doorLighting.sample(1,17.5,1.3,20.5).energy();
+        doorLighting.sampleNormal(1,17.5,1.3,20.5,0,1,0);
+        ok(doorLighting.frameStats().normalCacheHits()==0,
+            "Closing or opening a door must invalidate directional visibility probes");
         ok(opened>closed+.02,
             "Door opening must immediately reveal real fixture light without a stale shadow");
 

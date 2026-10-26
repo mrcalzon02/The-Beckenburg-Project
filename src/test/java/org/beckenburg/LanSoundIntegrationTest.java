@@ -46,7 +46,13 @@ public final class LanSoundIntegrationTest {
             c.client.view3D();c.await("ACCEPT|VIEW3D");
             ghost.client.ghost(GhostDomain.Action.WHISPER,4);
             ghost.await("ACCEPT|GHOST|WHISPER");
-            String packet=a.await("SOUND|WHISPER|");
+            // One valid authored WHISPER event (doorway_sigh) intentionally
+            // uses a HORROR_STING_A sound. Require the exact selected event
+            // cue, rather than falsely assuming all whispers use WHISPER PCM.
+            var selected=GhostHauntingFolio.decode(a.await("HAUNT|"));
+            ok(selected.entry().action()==GhostDomain.Action.WHISPER
+                &&selected.room()==4,"real ghost whisper must author the local haunt");
+            String packet=a.await("SOUND|"+selected.entry().cue()+"|");
             LanSound.CueEvent heard=LanSound.decode(packet);
             ok(heard.volume()>10 && packet.split("\\|").length==5,"coarse pan and gain only, no ghost XYZ");
             ok(!b.unexpectedSound(300)&&!c.unexpectedSound(300),"van occupants hear no spatial ghost cue");

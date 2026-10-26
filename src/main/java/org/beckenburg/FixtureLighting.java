@@ -6,6 +6,9 @@ public final class FixtureLighting {
  public record RGB(double r,double g,double b){static final RGB ZERO=new RGB(0,0,0);public double energy(){return r+g+b;}}
  public record Source(int id,Kind kind,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double red,double green,double blue){}
  private record Key(int room,long x,long y,long z){}
+ // Exact geometry and orientation bits avoid reusing a normal probe across
+ // opposite sides of a thin wall or across differently facing surfaces.
+ private record NormalKey(int room,long x,long y,long z,long nx,long ny,long nz){}
  private record Shadow(int source,long x,long y,long z){}
  private record DistantCell(int room,long x,long y,long z){}
 
@@ -53,18 +56,19 @@ public final class FixtureLighting {
  private final HouseMap map;private final CastleHubMap castle;
  private final List<Source> sources=new ArrayList<>();
  private final Map<Key,Lit> colours=bounded(150000);
+ private final Map<NormalKey,Lit> normalColours=bounded(100000);
  private final Map<Shadow,Boolean> sight=bounded(200000);
  private String geometry="",state="";private double[] factors=new double[0];
  /** Per-render CPU work counters; shadow tests are expensive architectural rays. */
  public record FrameStats(long samples,long cacheHits,long shadowRays,
                           long normalSamples,long normalRays,int lights,int cachedColours,
                           long lodQueries,long lodHits,long lodVisibilityChecks,
-                          long consideredSources,long invalidatedCells){}
- private long samples,cacheHits,shadowRays,normalSamples,normalRays;
+                          long consideredSources,long invalidatedCells,long normalCacheHits){}
+ private long samples,cacheHits,shadowRays,normalSamples,normalRays,normalCacheHits;
  public FrameStats frameStats(){return new FrameStats(samples,cacheHits,shadowRays,
      normalSamples,normalRays,sources.size(),colours.size(),
-     lodQueries,lodHits,lodVisibilityChecks,consideredSources,invalidatedCells);}
- private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=0;
+     lodQueries,lodHits,lodVisibilityChecks,consideredSources,invalidatedCells,normalCacheHits);}
+ private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=normalCacheHits=0;
   lodQueries=lodHits=lodVisibilityChecks=0;
   consideredSources=invalidatedCells=0;}
  private long castleDoorRevision=-1;
@@ -100,7 +104,7 @@ public final class FixtureLighting {
   // Dynamic gate leaves change real shadow occlusion even when the clock and
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
-   castleDoorRevision=castle.doorRevision();sight.clear();colours.clear();distant.clear();
+   castleDoorRevision=castle.doorRevision();sight.clear();colours.clear();normalColours.clear();distant.clear();
   }
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){
@@ -198,7 +202,7 @@ public final class FixtureLighting {
  public List<Source> sources(){return List.copyOf(sources);}
  public void frame(RoomLighting circuits,int tick){
   resetStatistics();
-  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;sight.clear();colours.clear();distant.clear();}
+  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;sight.clear();colours.clear();normalColours.clear();distant.clear();}
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){double f;
    if(source.room==14)f=1;
@@ -268,6 +272,15 @@ public final class FixtureLighting {
   * assets retain the legacy sampler until their normal orientation is reviewed. */
  public RGB sampleNormal(int room,double x,double y,double z,double nx,double ny,double nz){
   normalSamples++;
+  NormalKey key=new NormalKey(room,Double.doubleToLongBits(x),
+      Double.doubleToLongBits(y),Double.doubleToLongBits(z),
+      Double.doubleToLongBits(nx),Double.doubleToLongBits(ny),
+      Double.doubleToLongBits(nz));
+  long version=revision(x,y,z);
+  Lit cached=normalColours.get(key);
+  if(cached!=null&&cached.revision()==version){
+   normalCacheHits++;return cached.rgb();
+  }
   double hemi=.65+.35*Math.max(0,ny),r=.27*hemi,g=.29*hemi,b=.34*hemi;
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
    double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
@@ -277,7 +290,10 @@ public final class FixtureLighting {
      r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;
     }
    }
-  }return new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
+  }
+  RGB result=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
+  normalColours.put(key,new Lit(result,version));
+  return result;
  }
  public RGB emission(int material,double x,double y,double z){
   String name=GlbProps.materialName(material).toLowerCase(Locale.ROOT);if(!(name.contains("glass")||name.contains("bulb")||name.contains("flame")||name.startsWith("television")))return RGB.ZERO;

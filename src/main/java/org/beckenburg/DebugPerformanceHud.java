@@ -135,8 +135,9 @@ public final class DebugPerformanceHud {
                     m.lighting().lodHits(),m.lighting().lodQueries()),
                     0xffddad);yLine+=17;
                 text(out,left+10,yLine,String.format(Locale.ROOT,
-                    "VOLUME SOURCE TESTS %,d   DIRTY CELLS %,d",
-                    m.lighting().consideredSources(),m.lighting().invalidatedCells()),
+                    "VOLUME %,d  DIRTY %,d  NORMAL CACHE %,d/%,d",
+                    m.lighting().consideredSources(),m.lighting().invalidatedCells(),
+                    m.lighting().normalCacheHits(),m.lighting().normalSamples()),
                     0xb8e1cd);yLine+=17;
             }
             var rt=Runtime.getRuntime();
