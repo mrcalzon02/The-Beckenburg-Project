@@ -72,7 +72,8 @@ public final class VanHouseViewportProfileTest {
         for(int i=0;i<ROUTE.size();i++){
             Stop stop=ROUTE.get(i);
             SceneRenderer scene=new SceneRenderer();
-            var eye=map.spawn(stop.room()),target=map.spawn(stop.lookAt());
+            var eye=map.spawn(stop.room());
+            var target=map.spawn(stop.lookAt());
             scene.x=eye.x();scene.z=eye.z();scene.eyeHeight=eye.y()+1.62;
             scene.yaw=Math.atan2(target.x()-eye.x(),target.z()-eye.z());
             scene.pitch=-.075;
