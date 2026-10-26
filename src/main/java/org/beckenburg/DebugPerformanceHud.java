@@ -64,7 +64,7 @@ public final class DebugPerformanceHud {
             lastLog=now;
             var m=metrics;
             BeckenburgDiagnostics.record(String.format(Locale.ROOT,
-                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d depth_rejected=%d",
+                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d depth_rejected=%d lod_hits=%d lod_queries=%d",
                 view,room,x,y,z,yaw,actors,loopNs/1e6,measured,
                 m==null?"not-rendered":m.gpu()?"GPU":"CPU-fallback",
                 m==null?0:m.sceneBuildNs()/1e6,m==null?0:m.geometryNs()/1e6,
@@ -74,7 +74,9 @@ public final class DebugPerformanceHud {
                 m==null?0:m.lighting().cacheHits(),
                 m==null?0:m.lighting().shadowRays(),
                 m==null?0:m.lighting().normalRays(),
-                m==null?0:m.depthRejectedFaces()));
+                m==null?0:m.depthRejectedFaces(),
+                m==null?0:m.lighting().lodHits(),
+                m==null?0:m.lighting().lodQueries()));
         }
     }
     static int graphBarHeight(double ms,int maxHeight){
@@ -124,10 +126,11 @@ public final class DebugPerformanceHud {
                     m.sceneryTotal(),m.sceneryVisible(),
                     m.sceneryTotal()-m.sceneryVisible()),0xe1e8e2);yLine+=17;
                 text(out,left+10,yLine,String.format(Locale.ROOT,
-                    "LIGHTS %d  CACHE HIT %,d/%,d  SHADOW RAYS %,d + %,d",
+                    "LIGHTS %d  CACHE %,d/%,d  SHADOW %,d+%,d  LOD %,d/%,d",
                     m.lighting().lights(),m.lighting().cacheHits(),
                     m.lighting().samples(),m.lighting().shadowRays(),
-                    m.lighting().normalRays()),
+                    m.lighting().normalRays(),
+                    m.lighting().lodHits(),m.lighting().lodQueries()),
                     0xffddad);yLine+=17;
             }
             var rt=Runtime.getRuntime();
