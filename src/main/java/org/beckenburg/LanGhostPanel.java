@@ -14,6 +14,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private final LanClient client;
     private HouseMap map=new HouseMap();
     private final SceneRenderer camera=new SceneRenderer();
+    private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
     private final RoomLighting lights=new RoomLighting();
     private final MouseLook mouseLook;
     private final Set<Integer> keys=new HashSet<>();
@@ -199,6 +200,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         repaint();
     }
     private void frame(){
+        long diagnosticStart=System.nanoTime();
         atmosphere.setActive(isShowing()&&!finished);
         buildingAudio.setActive(isShowing()&&!finished);
         buildingAudio.setContext(room,lights.breaker());camera.roomLightTick=tick;
@@ -221,6 +223,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         // when the sibling independently patrols another accessible room.
         camera.setAdditionalGhostBodies(companion==null?List.of():List.of(companion));
         if(room>=0)camera.drawNetwork(map,List.of(),-1,tick*.1);
+        perfHud.sample(System.nanoTime()-diagnosticStart,camera,map,companion==null?0:1,"LAN GHOST");
         repaint();
     }
     private List<Integer> exits(){return room<0?List.of():map.ghostExits(room);}
@@ -257,6 +260,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         return !finished&&hearing!=null&&tick<=hearing.tick()+18?hearing.caption():"";
     }
     @Override public void keyPressed(KeyEvent e){
+        if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         switch(e.getKeyCode()){
             case KeyEvent.VK_F5 -> {
                 var device=map.fixtures().aimed(camera.x,camera.eyeHeight-1.62,camera.z,camera.yaw,camera.pitch);
@@ -346,6 +350,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 String note=feedback.length()>76?feedback.substring(0,73)+"...":feedback;
                 g.setColor(new Color(190,235,206));g.drawString(note,24,panelY-10);
             }
+            perfHud.draw(g,getWidth(),getHeight());
         }finally{g.dispose();}
     }
 }
