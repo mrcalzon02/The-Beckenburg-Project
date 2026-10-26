@@ -9,3 +9,9 @@ The test emits a ten-state CSV in build/e2e/viewport-profile/portal-candidate-au
 Next C milestones: audit window/void/stair/portal sightlines against the counts; build portal-plane clipping with verified authored bounds; test representative play eye paths and dynamic door/window transitions on real installed GPU; only then allow production room/portal rejection. Never use portal culling for gameplay state, ghost identity inference or equipment logic.
 
 Portable adoption: see development/performance/portable/MILESTONES_A-G.md at main. For 2D board games, use actual viewport/tile visibility instead of copying this 3D graph.
+
+## C3 — Bounded physical-occluder ray diagnostic (candidate)
+
+On actual House cameras, classify up to 32 frustum-accepted but graph-excluded triangle centroids **per omitted room** using HouseMap.clearLineOfSight, which examines authored wall, door, deck/floor, and collision state. Extend the original 10-view CSV with ray_sampled, ray_clear, ray_blocked and ray_by_room; annotate open/closed door state and camera room. Never use these samples for draw rejection or game state. A clear centroid ray is possible line-of-sight evidence, not a pixel-visibility measurement. A blocked centroid ray does not establish the whole triangle or ghost sprite is hidden. Further C3 acceptance needs per-pixel depth/reference rasterization, physical movement routes, and window/stair openings.
+
+This diagnostic intentionally uses the real authored collision system with bounded samples to avoid multi-minute raycasting on a CI runner. Beckenburg #20 tracks the unresolved actual GPU screen-visibility proof.

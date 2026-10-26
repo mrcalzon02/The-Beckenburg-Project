@@ -1682,6 +1682,55 @@ public final class SceneRenderer {
             visible,accepted,missing,unowned,missingRooms,candidate.revision());
     }
 
+
+    /** C3 bounded PHYSICS ray diagnostic for rooms omitted by portal graph.
+     * Frustum inclusion says NOTHING about depth-tested screen pixels, and a
+     * blocked centroid ray does not prove the entire triangle is hidden.
+     * This method only collects evidence; it must never cull gameplay. */
+    public record PortalRayRoom(int samples,int clearCentroids,int blockedCentroids){}
+    public record PortalRayAudit(int cameraRoom,int missingFrustumFaces,
+        int sampledFaces,int clearCentroids,int blockedCentroids,
+        java.util.Map<Integer,PortalRayRoom> rooms){
+        public PortalRayAudit{rooms=java.util.Map.copyOf(rooms);}
+    }
+    public PortalRayAudit auditPortalOccluderRays(HouseMap map){
+        if(map==null||map.nativeSite())
+            throw new IllegalArgumentException("Authored HouseMap needed for ray audit");
+        if(portalAuditMap!=map){
+            portalAuditMap=map;portalAuditGraph=new RoomPortalCandidates(map);
+        }
+        int cameraRoom=map.roomAt(x,eyeHeight-1.62,z);
+        var candidates=portalAuditGraph.evaluate(cameraRoom);
+        staticShellChunks(map);
+        var byRoom=new java.util.TreeMap<Integer,int[]>();
+        int missed=0;
+        for(Face face:preparedShellFaces){
+            if(face.room<0||candidates.includes(face.room)||!faceInFrustum(face))
+                continue;
+            missed++;
+            int[] counts=byRoom.computeIfAbsent(face.room,ignored->new int[2]);
+            // Bound expensive collision rays in actual release diagnostics,
+            // stratified so distant room owners cannot consume the budget.
+            if(counts[0]>=32)continue;
+            Point centre=new Point((face.a.x+face.b.x+face.c.x)/3,
+                (face.a.y+face.b.y+face.c.y)/3,
+                (face.a.z+face.b.z+face.c.z)/3);
+            if(map.clearLineOfSight(x,eyeHeight,z,
+                    centre.x,centre.y,centre.z))counts[1]++;
+            counts[0]++;
+        }
+        var report=new java.util.TreeMap<Integer,PortalRayRoom>();
+        int tested=0,cleared=0;
+        for(var entry:byRoom.entrySet()){
+            var counts=entry.getValue();
+            tested+=counts[0];cleared+=counts[1];
+            report.put(entry.getKey(),
+                new PortalRayRoom(counts[0],counts[1],counts[0]-counts[1]));
+        }
+        return new PortalRayAudit(cameraRoom,missed,tested,cleared,
+            tested-cleared,report);
+    }
+
     private void levelArchitecture(List<Face> out,HouseMap map){
         if(map.nativeSite()){nativeArchitecture(out,map);return;}
         scenery(map);

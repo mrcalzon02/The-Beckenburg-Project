@@ -21,7 +21,7 @@ public final class PortalVisibilityAuditTest {
         var map=new HouseMap(HouseMap.Site.HOUSE);
         var renderer=new SceneRenderer();
         renderer.setRenderSize(160,120);
-        StringBuilder csv=new StringBuilder("room,target,door_state,camera_room,visible_faces,listed_visible,unlisted_visible,unowned_visible,candidate_rooms,unlisted_rooms\n");
+        StringBuilder csv=new StringBuilder("room,target,door_state,camera_room,visible_faces,listed_visible,unlisted_visible,unowned_visible,candidate_rooms,unlisted_rooms,ray_sampled,ray_clear,ray_blocked,ray_by_room\n");
         int[][] views={{14,0},{13,4},{0,4},{4,8},{8,4}};
         int sampled=0;
         for(int state=0;state<2;state++){
@@ -33,6 +33,16 @@ public final class PortalVisibilityAuditTest {
             for(int[] view:views){
                 pose(renderer,map,view[0],view[1]);
                 var audit=renderer.auditPortalVisibility(map);
+                var rays=renderer.auditPortalOccluderRays(map);
+                check(rays.cameraRoom()==audit.cameraRoom()
+                    &&rays.missingFrustumFaces()==audit.nonCandidateVisibleFaces(),
+                    "Physical ray audit must sample precisely the omitted portal faces");
+                check(rays.sampledFaces()==rays.clearCentroids()+rays.blockedCentroids(),
+                    "Every physical ray must be classified");
+                check(rays.sampledFaces()<=rays.missingFrustumFaces(),
+                    "Bounded rays must not invent missing geometry");
+                if(rays.missingFrustumFaces()>0)
+                    check(rays.sampledFaces()>0,"Missing portal room must receive a ray sample");
                 check(audit.frustumVisibleFaces()>0,
                     "Real House benchmark must contain visible authored architecture");
                 check(audit.frustumVisibleFaces()==audit.candidateVisibleFaces()
@@ -51,7 +61,11 @@ public final class PortalVisibilityAuditTest {
                     .append(audit.nonCandidateVisibleFaces()).append(',')
                     .append(audit.unownedVisibleFaces()).append(',')
                     .append(audit.candidateRooms()).append(',')
-                    .append('"').append(audit.nonCandidateRooms()).append('"').append('\n');
+                    .append('"').append(audit.nonCandidateRooms()).append('"').append(',')
+                    .append(rays.sampledFaces()).append(',')
+                    .append(rays.clearCentroids()).append(',')
+                    .append(rays.blockedCentroids()).append(',')
+                    .append('"').append(rays.rooms()).append('"').append('\n');
                 sampled++;
             }
         }
@@ -61,6 +75,6 @@ public final class PortalVisibilityAuditTest {
         check(sampled==10&&Files.size(artifact)>150,
             "Ten real House reference viewpoints must be recorded");
         System.out.println("PASS diagnostic portal/face visibility cross-check: "+sampled+
-            " real House camera states; no production occlusion enabled. CSV="+artifact);
+            " real House camera states plus stratified actual collision rays; no portal culling. CSV="+artifact);
     }
 }
