@@ -2253,7 +2253,13 @@ public final class SceneRenderer {
      * would be slower than simply drawing it. Near-plane crossings are
      * deliberately left to the existing clipper.
      */
+    private boolean depthEarlyReject=true;
+    /** A reference route for visual parity and performance regression tests. */
+    void setDepthEarlyReject(boolean enabled){depthEarlyReject=enabled;}
     private boolean fullyDepthOccluded(Point a,Point b,Point c){
+        // GPU frames may be asynchronous: never compare current geometry to
+        // the previous completed GPU color/depth readback.
+        if(!depthEarlyReject||GpuWorldRenderer.active()!=null)return false;
         double near=Math.min(a.z,Math.min(b.z,c.z));
         if(near<=NEAR || !Double.isFinite(near))return false;
         double ax=PsxPipeline.snap(renderWidth*.5+a.x/a.z*focal,psxPreset);
