@@ -355,7 +355,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
       " color_glread_ms="+(colorReadEnd-colorReadStart)/1_000_000+
       " depth_glread_ms="+(depthReadEnd-colorReadEnd)/1_000_000+
       " cpu_convert_ms="+(conversionEnd-depthReadEnd)/1_000_000+
-      " readback_bytes="+readbackDetail.colorBytes()+readbackDetail.depthBytes()+
+      " readback_bytes="+(readbackDetail.colorBytes()+readbackDetail.depthBytes())+
       " uploaded_batches="+frameUploadedBatches+
       " reused_batches="+frameReusedBatches+
       " uploaded_bytes="+frameUploadBytes+
