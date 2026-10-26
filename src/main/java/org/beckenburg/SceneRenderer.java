@@ -1070,7 +1070,21 @@ public final class SceneRenderer {
         }
         return out;
     }
-    private final java.util.Map<String,List<Face>> levelShells=new java.util.HashMap<>();
+    /** Immutable contiguous authored shell ranges, preserving original ordering. */
+    private record ShellChunk(int start,int end,double minX,double minY,double minZ,
+        double maxX,double maxY,double maxZ){}
+    private static final int SHELL_CHUNK_SIZE=256;
+    private HouseMap shellSourceMap;
+    private String shellSourceRevision="";
+    private List<Face> preparedShellFaces=List.of();
+    private List<ShellChunk> preparedShellChunks=List.of();
+    private boolean shellChunkCulling=true;
+    /** Functional reference only; no player-facing option is introduced. */
+    public void setShellChunkCulling(boolean enabled){shellChunkCulling=enabled;}
+    public record ShellChunkStats(int totalChunks,int rejectedChunks,
+        int candidateFaces,int rejectedFaces,int totalFaces){}
+    private ShellChunkStats shellChunkStats=new ShellChunkStats(0,0,0,0,0);
+    public ShellChunkStats shellChunkStats(){return shellChunkStats;}
     private boolean exportFullLevel;
 
     private static void own(List<Face> out,List<Face> faces,int room){for(Face f:faces)out.add(f.owned(room));}
@@ -1566,6 +1580,56 @@ public final class SceneRenderer {
         }
         return true;
     }
+
+    /** Preserve authored source order and vertex/UV identity; build once
+     * per map/revision, not each camera frame. Chunks own contiguous ranges. */
+    private List<ShellChunk> staticShellChunks(HouseMap map){
+        String revision=map.level().revision()+":"+map.hidingDensity();
+        if(map==shellSourceMap&&revision.equals(shellSourceRevision))
+            return preparedShellChunks;
+        shellSourceMap=map;shellSourceRevision=revision;
+        preparedShellFaces=buildLevelShell(map);
+        var chunks=new ArrayList<ShellChunk>();
+        for(int from=0;from<preparedShellFaces.size();from+=SHELL_CHUNK_SIZE){
+            int end=Math.min(from+SHELL_CHUNK_SIZE,preparedShellFaces.size());
+            double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX;
+            double maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
+            for(int i=from;i<end;i++){
+                var face=preparedShellFaces.get(i);
+                for(Point point:new Point[]{face.a,face.b,face.c}){
+                    minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);
+                    minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);
+                    minZ=Math.min(minZ,point.z);maxZ=Math.max(maxZ,point.z);
+                }
+            }
+            chunks.add(new ShellChunk(from,end,minX,minY,minZ,maxX,maxY,maxZ));
+        }
+        preparedShellChunks=List.copyOf(chunks);
+        return preparedShellChunks;
+    }
+    /** Convex-box rejection: only a shared outside plane for every corner
+     * can reject a whole chunk. Extra margin avoids false negatives. */
+    private boolean shellChunkInFrustum(ShellChunk chunk){
+        double cy=Math.cos(yaw),sy=Math.sin(yaw);
+        double cp=Math.cos(pitch),sp=Math.sin(pitch);
+        double hx=renderWidth*.5/focal+.055,hy=renderHeight*.5/focal+.055;
+        int common=31;
+        for(int bits=0;bits<8;bits++){
+            double px=(bits&1)==0?chunk.minX:chunk.maxX;
+            double py=(bits&2)==0?chunk.minY:chunk.maxY;
+            double pz=(bits&4)==0?chunk.minZ:chunk.maxZ;
+            double dx=px-x,dz=pz-z,dy=py-eyeHeight;
+            double xx=-dx*cy+dz*sy,forward=dx*sy+dz*cy;
+            double yy=dy*cp-forward*sp,depth=dy*sp+forward*cp;
+            int code=(depth<NEAR-.015?1:0)|(xx>depth*hx+.015?2:0)
+                    |(xx< -depth*hx-.015?4:0)
+                    |(yy>depth*hy+.015?8:0)|(yy< -depth*hy-.015?16:0);
+            common&=code;
+            if(common==0)return true;
+        }
+        return false;
+    }
+
     private void levelArchitecture(List<Face> out,HouseMap map){
         if(map.nativeSite()){nativeArchitecture(out,map);return;}
         scenery(map);
@@ -1573,9 +1637,19 @@ public final class SceneRenderer {
             key->enclosureScenery(map.level())))
             if(exportFullLevel||faceInFrustum(face))out.add(face.owned(13));
         if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of(),map);}
-        for(Face face:levelShells.computeIfAbsent(
-            map.level().revision()+":"+map.hidingDensity(),key->buildLevelShell(map)))
-            if(exportFullLevel||faceInFrustum(face))out.add(face);
+        int rejected=0,skippedFaces=0,candidateFaces=0;
+        for(ShellChunk chunk:staticShellChunks(map)){
+            if(!exportFullLevel&&shellChunkCulling&&!shellChunkInFrustum(chunk)){
+                rejected++;skippedFaces+=chunk.end-chunk.start;continue;
+            }
+            candidateFaces+=chunk.end-chunk.start;
+            for(int i=chunk.start;i<chunk.end;i++){
+                Face face=preparedShellFaces.get(i);
+                if(exportFullLevel||faceInFrustum(face))out.add(face);
+            }
+        }
+        shellChunkStats=new ShellChunkStats(preparedShellChunks.size(),rejected,
+            candidateFaces,skippedFaces,preparedShellFaces.size());
         appendSceneryInstances(out,map);
         for(var s:map.level().sockets())if(s.type().equals("hide")
             &&objectInView(s.x(),s.z(),3,26)
