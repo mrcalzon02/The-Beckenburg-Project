@@ -43,6 +43,8 @@ public final class DeveloperLevelEditor extends JPanel {
         @Override protected void paintComponent(Graphics g){
             super.paintComponent(g);
             GraphicsOptions.current().draw((Graphics2D)g,renderer.image(),getWidth(),getHeight());
+            if(lightVolumeOverlay.isSelected())
+                LightVolumePreview.draw((Graphics2D)g,renderer,lightVolume,getWidth(),getHeight());
             g.setColor(new Color(244,226,177));g.drawLine(getWidth()/2-5,getHeight()/2,getWidth()/2+5,getHeight()/2);
             g.drawLine(getWidth()/2,getHeight()/2-5,getWidth()/2,getHeight()/2+5);
         }
@@ -68,6 +70,15 @@ public final class DeveloperLevelEditor extends JPanel {
     private final JSpinner tileZ=new JSpinner(new SpinnerNumberModel(19,0,CastleHubMap.HEIGHT-1,1));
     private final JSpinner wallIndex=new JSpinner(new SpinnerNumberModel(0,0,CastleHubArchitecturalPlan.walls().size()-1,1));
     private final JCheckBox navOverlay=new JCheckBox("3D navigation overlay",false);
+    private final JCheckBox lightVolumeOverlay=new JCheckBox("LIGHT REACH",false);
+    private final java.util.concurrent.ExecutorService lightPreviewWorker=
+        java.util.concurrent.Executors.newSingleThreadExecutor(task->{
+            Thread thread=new Thread(task,"Beckenburg-Editor-Light-Gizmo");
+            thread.setDaemon(true);return thread;
+        });
+    private volatile LightVolumePreview.Volume lightVolume;
+    private String lightVolumeKey="";
+    private volatile boolean editorClosed;
     private final JCheckBox navBlocked=new JCheckBox("Block player navigation here");
     private final JLabel status=new JLabel("WASD fly  •  Q/E altitude  •  Mouse drag look  •  Wheel forward/back  •  Ctrl+S save");
     private final JTextArea navInfo=new JTextArea(6,25);
@@ -90,7 +101,11 @@ public final class DeveloperLevelEditor extends JPanel {
         frame.setSize(1300,790);frame.setMinimumSize(new Dimension(900,570));
         frame.setLocationRelativeTo(parent);
         frame.addWindowListener(new WindowAdapter(){
-            @Override public void windowClosed(WindowEvent e){editor.timer.stop();}
+            @Override public void windowClosed(WindowEvent e){
+                editor.editorClosed=true;
+                editor.timer.stop();
+                editor.lightPreviewWorker.shutdownNow();
+            }
         });
         frame.setVisible(true);
         SwingUtilities.invokeLater(editor.viewport::requestFocusInWindow);
@@ -198,6 +213,12 @@ public final class DeveloperLevelEditor extends JPanel {
             viewport.requestFocusInWindow();
         });
         toolStrip.add(overhead);toolStrip.add(ground);toolStrip.add(upper);
+        lightVolumeOverlay.setToolTipText("Draw selected fixture's real radius and occlusion-clipped rays; green=open, orange=blocked");
+        lightVolumeOverlay.setFocusable(false);
+        lightVolumeOverlay.addActionListener(e->{
+            lightVolumeKey="";lightVolume=null;viewport.repaint();
+        });
+        toolStrip.add(lightVolumeOverlay);
         header.add(toolStrip,BorderLayout.SOUTH);
         var commands=new JPanel(new FlowLayout(FlowLayout.RIGHT,4,0));
         JButton save=button("SAVE"),export=button("EXPORT"),reset=button("RESET");
@@ -552,12 +573,46 @@ public final class DeveloperLevelEditor extends JPanel {
         if(keys.contains(KeyEvent.VK_DOWN))renderer.pitch=Math.max(-1.35,renderer.pitch-.045);
         renderer.eyeHeight=Math.max(.25,Math.min(11,renderer.eyeHeight));
         renderer.setEditorNavigation(navOverlay.isSelected());
-        try{renderer.drawCastle(map,clock+=.05,true);}
+        try{renderer.drawCastle(map,clock+=.05,true);
+            requestLightVolumePreview();
+        }
         catch(RuntimeException problem){
             timer.stop();BeckenburgDiagnostics.fail("Developer editor viewport",problem);
             status.setText("Renderer failure: "+problem.getMessage());return;
         }
         viewport.repaint();
+    }
+    /**
+     * The editor uses exactly the same authored light radius and solid
+     * Castle ray intersections as the runtime, but the gizmo is editor-only.
+     * Recompute off the EDT only when the selected lamp, map geometry or
+     * door revision actually changes; retain the last valid preview.
+     */
+    private void requestLightVolumePreview(){
+        if(!lightVolumeOverlay.isSelected()||chosen==null
+            ||!"LAMP".equals(chosen.kind)){
+            lightVolumeKey="";lightVolume=null;return;
+        }
+        var lamp=data.lamps().stream().filter(v->v.id().equals(chosen.id))
+            .findFirst().orElse(null);
+        if(lamp==null){lightVolumeKey="";lightVolume=null;return;}
+        String version=lamp+" / geometry="+data.revision()+
+            " / doors="+map.doorRevision();
+        if(version.equals(lightVolumeKey))return;
+        lightVolumeKey=version;
+        lightVolume=null; // never display stale light volumes on a changed fixture
+        lightPreviewWorker.execute(()->{
+            try{
+                var calculated=LightVolumePreview.trace(map,lamp);
+                SwingUtilities.invokeLater(()->{
+                    if(!editorClosed&&version.equals(lightVolumeKey)){
+                        lightVolume=calculated;viewport.repaint();
+                    }
+                });
+            }catch(RuntimeException error){
+                BeckenburgDiagnostics.fail("Editor light influence preview",error);
+            }
+        });
     }
     private void chooseTool(EditorTool choice){
         tool=choice;
