@@ -37,12 +37,13 @@ public final class PreparedShellChunkTest {
                 &&optimized.frustumFaces()==ref.frustumFaces()
                 &&optimized.submittedTriangles()==ref.submittedTriangles(),
                 "Chunk culling changed gameplay geometry at room "+view[0]);
-            ok(chunks.totalChunks()>1&&chunks.totalFaces()==baseline.totalFaces()
+            ok(chunks.totalChunks()>1&&chunks.distinctRooms()>1
+                &&chunks.totalFaces()==baseline.totalFaces()
                 &&chunks.candidateFaces()+chunks.rejectedFaces()==chunks.totalFaces(),
                 "Prepared chunks must partition the exact static shell");
             excluded+=chunks.rejectedFaces();
         }
         ok(excluded>0,"The House camera route must reject some out-of-frustum shell chunks");
-        System.out.println("PASS static-shell visible geometry parity across van, yard, entrance, upstairs; rejected_faces="+excluded);
+        System.out.println("PASS room-owned static shell chunks, original geometry parity across van, yard, entrance and upstairs; rejected_faces="+excluded);
     }
 }
