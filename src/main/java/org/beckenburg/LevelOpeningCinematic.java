@@ -24,11 +24,16 @@ final class LevelOpeningCinematic implements AutoCloseable {
     private final SceneRenderer preview;
     private final AtomicBoolean busy=new AtomicBoolean();
     private final AtomicBoolean firstPreviewLogged=new AtomicBoolean();
+    private final AtomicBoolean readinessFallbackLogged=new AtomicBoolean();
     private volatile long firstPreviewRequestNs,firstPreviewFrameNs;
     private volatile int previewRequests,previewFailures;
     private volatile BufferedImage completed;
     private final boolean gpuFlight;
+    private static final long MAX_GPU_PREVIEW_WAIT_NS=
+        java.util.concurrent.TimeUnit.SECONDS.toNanos(3);
     private final long started=System.nanoTime();
+    private final OpeningPlaybackClock playback=
+        new OpeningPlaybackClock(started,MAX_GPU_PREVIEW_WAIT_NS);
     private long lastRequest;
     private volatile boolean closed;
     private final double centerX,centerZ,span;
@@ -70,7 +75,15 @@ final class LevelOpeningCinematic implements AutoCloseable {
     }
     boolean gpuFlight(){return gpuFlight;}
     double progress(){
-        return Math.min(1,(System.nanoTime()-started)/1e9/LevelOpeningFlyover.DURATION_SECONDS);
+        double t=playback.progress(System.nanoTime(),LevelOpeningFlyover.DURATION_SECONDS,gpuFlight);
+        if(gpuFlight&&playback.readinessTimedOut()
+                &&readinessFallbackLogged.compareAndSet(false,true)){
+            BeckenburgDiagnostics.record("OPENING GPU PREVIEW READINESS TIMEOUT site="+map.site()
+                +" max_wait_ms="+java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
+                    MAX_GPU_PREVIEW_WAIT_NS)
+                +" fallback=existing-tactical-overview no-case-block=true");
+        }
+        return t;
     }
     boolean complete(){return closed||progress()>=1;}
     void update(int width,int height){
@@ -103,6 +116,7 @@ final class LevelOpeningCinematic implements AutoCloseable {
                 completed=copy;
                 if(firstPreviewLogged.compareAndSet(false,true)){
                     firstPreviewFrameNs=System.nanoTime();
+                    playback.previewPrepared(firstPreviewFrameNs);
                     long elapsedMs=java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
                         firstPreviewFrameNs-started);
                     long requestMs=java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
