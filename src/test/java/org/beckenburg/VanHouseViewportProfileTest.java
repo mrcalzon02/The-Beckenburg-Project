@@ -43,14 +43,15 @@ public final class VanHouseViewportProfileTest {
     private static String csv(String name,int actors,long elapsed,
                               SceneRenderer.FrameDiagnostics m){
         return String.format(Locale.ROOT,
-            "%s,%d,%s,%.3f,%.3f,%.3f,%.3f,%d,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%d%n",
+            "%s,%d,%s,%.3f,%.3f,%.3f,%.3f,%d,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%d,%d,%d%n",
             name,actors,m.gpu()?"GPU":"CPU-fallback",elapsed/1e6,
             m.sceneBuildNs()/1e6,m.geometryNs()/1e6,m.effectsNs()/1e6,
             m.faces(),m.frustumFaces(),m.sceneryTotal(),m.sceneryVisible(),
             m.submittedTriangles(),m.gpuReadbackAvailable(),m.gpuReadbackFresh(),
             m.lighting().samples(),m.lighting().cacheHits(),
             m.lighting().shadowRays(),m.lighting().normalRays(),
-            m.depthRejectedFaces());
+            m.depthRejectedFaces(),m.lighting().lodQueries(),
+            m.lighting().lodHits());
     }
     private static void screenshot(Path dest,SceneRenderer renderer,
                                    DebugPerformanceHud hud)throws Exception{
@@ -68,7 +69,7 @@ public final class VanHouseViewportProfileTest {
             throw new AssertionError("Profile requires -Dbeckenburg.debug.overlay=true");
         Path output=Path.of("build","e2e","viewport-profile");
         Files.createDirectories(output);
-        StringBuilder csv=new StringBuilder("view,actors,backend,total_ms,scene_build_ms,geometry_ms,effects_ms,faces_built,faces_frustum,scenery_instances,scenery_visible,submitted_triangles,readback_available,readback_fresh,light_samples,light_cache_hits,shadow_rays,normal_rays,depth_rejected_faces\n");
+        StringBuilder csv=new StringBuilder("view,actors,backend,total_ms,scene_build_ms,geometry_ms,effects_ms,faces_built,faces_frustum,scenery_instances,scenery_visible,submitted_triangles,readback_available,readback_fresh,light_samples,light_cache_hits,shadow_rays,normal_rays,depth_rejected_faces,lod_queries,lod_hits\n");
         HouseMap map=new HouseMap(HouseMap.Site.HOUSE);
         for(int i=0;i<ROUTE.size();i++){
             Stop stop=ROUTE.get(i);
@@ -92,13 +93,14 @@ public final class VanHouseViewportProfileTest {
                 hud.sample(elapsed,scene,map,population,"HOUSE "+stop.id());
                 csv.append(csv(stop.id(),population,elapsed,metric));
                 System.out.printf(Locale.ROOT,
-                    "VIEWPORT_PROFILE %s actors=%d backend=%s total_ms=%.2f build_ms=%.2f geometry_ms=%.2f effects_ms=%.2f faces=%d visible=%d scenery=%d/%d shadow_rays=%d normal_rays=%d depth_rejected=%d%n",
+                    "VIEWPORT_PROFILE %s actors=%d backend=%s total_ms=%.2f build_ms=%.2f geometry_ms=%.2f effects_ms=%.2f faces=%d visible=%d scenery=%d/%d shadow_rays=%d normal_rays=%d depth_rejected=%d lod=%d/%d%n",
                     stop.id(),population,metric.gpu()?"GPU":"CPU-fallback",
                     elapsed/1e6,metric.sceneBuildNs()/1e6,metric.geometryNs()/1e6,
                     metric.effectsNs()/1e6,metric.faces(),metric.frustumFaces(),
                     metric.sceneryVisible(),metric.sceneryTotal(),
                     metric.lighting().shadowRays(),metric.lighting().normalRays(),
-                    metric.depthRejectedFaces());
+                    metric.depthRejectedFaces(),metric.lighting().lodHits(),
+                    metric.lighting().lodQueries());
                 if(population==4)screenshot(output.resolve(stop.id()+".png"),scene,hud);
             }
         }
