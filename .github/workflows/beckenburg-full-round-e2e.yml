@@ -91,7 +91,7 @@ jobs:
         working-directory: .
         run: |
           $ErrorActionPreference='Stop'
-          & java '-Djava.awt.headless=false' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.BeckenburgDesktopE2ETest
+          & java '-Djava.awt.headless=false' '-Dbeckenburg.debug.overlay=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.BeckenburgDesktopE2ETest
           if ($LASTEXITCODE -ne 0) { throw "Packaged desktop/UI acceptance failed: exit $LASTEXITCODE" }
 
       - name: Build Windows portable app-image from the verified JAR
