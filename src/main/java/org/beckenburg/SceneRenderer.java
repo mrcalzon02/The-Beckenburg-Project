@@ -1080,10 +1080,17 @@ public final class SceneRenderer {
     private HouseMap scenerySourceMap;
     private List<Face> expandedScenery;
     private static final long PREPARED_SCENERY_TRIANGLE_LIMIT=120_000;
-    /** Transitional immutable prepared faces, bounded separately from GPU VBOs. */
-    private final java.util.LinkedHashMap<SceneryInstances.Instance,List<Face>>
+    /** Transitional immutable prepared faces, bounded separately from GPU VBOs.
+     * Reuse a working-set for at least two frames before permitting eviction:
+     * otherwise a scene larger than this budget can cause 100% LRU thrash. */
+    private static final class PreparedFaces {
+        final List<Face> faces;
+        long lastSeenFrame;
+        PreparedFaces(List<Face> faces,long frame){this.faces=faces;lastSeenFrame=frame;}
+    }
+    private final java.util.LinkedHashMap<SceneryInstances.Instance,PreparedFaces>
         preparedScenery=new java.util.LinkedHashMap<>(128,.75f,true);
-    private long preparedSceneryTriangles,preparedSceneryBuilds,
+    private long preparedSceneryFrame,preparedSceneryTriangles,preparedSceneryBuilds,
         preparedSceneryHits,preparedSceneryEvictions;
     public record PreparedSceneryStats(long builtInstances,long reusedInstances,
         long evictedInstances,int cachedInstances,long cachedTriangles,long triangleLimit){}
@@ -1128,7 +1135,11 @@ public final class SceneRenderer {
      * GPU per-material vertex batches still use the legacy bridge for now. */
     private List<Face> preparedSceneryFaces(SceneryInstances.Instance instance){
         var cached=preparedScenery.get(instance);
-        if(cached!=null){preparedSceneryHits++;return cached;}
+        if(cached!=null){
+            cached.lastSeenFrame=preparedSceneryFrame;
+            preparedSceneryHits++;
+            return cached.faces;
+        }
         int count=instance.template.triangleCount();
         var vertices=transformed(instance,new Point[0]);
         var faces=new ArrayList<Face>(count);
@@ -1137,13 +1148,22 @@ public final class SceneRenderer {
         if(count==0||count>PREPARED_SCENERY_TRIANGLE_LIMIT)return faces;
         while(preparedSceneryTriangles+count>PREPARED_SCENERY_TRIANGLE_LIMIT
                 &&!preparedScenery.isEmpty()){
+            // Never evict faces used in this or the preceding frame: when
+            // the authored scene exceeds the budget, skip admission instead
+            // of evicting the entire warm working-set every frame.
             var iterator=preparedScenery.entrySet().iterator();
-            var oldest=iterator.next();
-            preparedSceneryTriangles-=oldest.getValue().size();
-            iterator.remove();preparedSceneryEvictions++;
+            boolean evicted=false;
+            while(iterator.hasNext()){
+                var entry=iterator.next();
+                if(entry.getValue().lastSeenFrame>=preparedSceneryFrame-1)continue;
+                preparedSceneryTriangles-=entry.getValue().faces.size();
+                iterator.remove();preparedSceneryEvictions++;evicted=true;
+                break;
+            }
+            if(!evicted)return faces;
         }
         var retained=List.copyOf(faces);
-        preparedScenery.put(instance,retained);
+        preparedScenery.put(instance,new PreparedFaces(retained,preparedSceneryFrame));
         preparedSceneryTriangles+=count;
         return retained;
     }
@@ -1156,6 +1176,7 @@ public final class SceneRenderer {
             if(expandedScenery==null){var all=new ArrayList<Face>();flattenInstances(all,scene);expandedScenery=List.copyOf(all);}
             out.addAll(expandedScenery);return;
         }
+        preparedSceneryFrame++;
         double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
         for(var instance:scene.instances()){
             if(!instance.visible(x,eyeHeight,z,yaw,pitch,hx,hy,NEAR))continue;

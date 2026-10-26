@@ -29,9 +29,10 @@ public final class PreparedSceneryRetentionTest {
         int[] expected=renderer.pixels().clone();
         renderer.drawPractice(house,List.of(),0);
         var warmed=renderer.preparedSceneryStats();
-        check(warmed.builtInstances()==first.builtInstances() &&
-                warmed.reusedInstances()>first.reusedInstances(),
-            "Warm frame must reuse exactly the already prepared scenery");
+        check(warmed.reusedInstances()-first.reusedInstances()>=first.cachedInstances(),
+            "Warm frame must reuse every cached scenery instance without LRU thrash");
+        check(warmed.cachedTriangles()<=warmed.triangleLimit(),
+            "Warm frame must retain the cache's bounded triangle budget");
         check(java.util.Arrays.equals(expected,renderer.pixels()),
             "Prepared scenery must render identical pixels on unchanged frame");
         renderer.yaw+=.25;
