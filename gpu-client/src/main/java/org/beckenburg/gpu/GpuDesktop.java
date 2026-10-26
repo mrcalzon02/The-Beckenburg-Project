@@ -225,6 +225,56 @@ public final class GpuDesktop {
   }
   System.out.println("PASS five real GPU viewport lighting audits; remaining CPU cost explicitly reported");
  }
+ /**
+  * Real world scene, two frames with identical geometry and CPU fixture
+  * lighting. Only the GPU flashlight uniform changes. This must update the
+  * framebuffer without retransmitting unchanged world VBOs.
+  */
+ private static void flashlightAndResidentMeshSmoke()throws Exception{
+  var map=new HouseMap(HouseMap.Site.HOUSE);
+  var eye=map.spawn(0);
+  var target=map.spawn(4);
+  var camera=new SceneRenderer();
+  camera.setRenderSize(640,360);
+  camera.roomLights=new RoomLighting();
+  camera.x=eye.x();camera.z=eye.z();
+  camera.eyeHeight=eye.y()+1.62;
+  camera.yaw=Math.atan2(target.x()-eye.x(),target.z()-eye.z());
+  camera.pitch=-.07;
+  camera.lamp=false;
+  camera.drawNetwork(map,List.of(),-1,0);
+  var off=awaitGpu(camera,"House with GPU flashlight disabled");
+  var firstUpload=ENGINE.uploadStats();
+  screenshot(off,"house-torch-off.png");
+  camera.lamp=true;
+  camera.drawNetwork(map,List.of(),-1,0);
+  var on=awaitGpu(camera,"House with GPU flashlight enabled");
+  var secondUpload=ENGINE.uploadStats();
+  screenshot(on,"house-torch-on.png");
+  int changed=0,brighter=0;
+  for(int i=0;i<on.argb().length;i++){
+   int dark=off.argb()[i],bright=on.argb()[i];
+   if((dark>>>24)<128||(bright>>>24)<128)continue;
+   if((dark&0xffffff)!=(bright&0xffffff))changed++;
+   int dv=((bright>>16)&255)-((dark>>16)&255)
+       +((bright>>8)&255)-((dark>>8)&255)
+       +(bright&255)-(dark&255);
+   if(dv>8)brighter++;
+  }
+  System.out.println("GPU FLASHLIGHT image_changed_pixels="+changed+
+      " brighter_pixels="+brighter+
+      " initial_uploaded_bytes="+firstUpload.uploadedBytes()+
+      " repeat_uploaded_bytes="+secondUpload.uploadedBytes()+
+      " repeat_reused_bytes="+secondUpload.reusedBytes()+
+      " repeated_batches="+secondUpload.reusedBatches());
+  if(changed<80||brighter<60)throw new AssertionError(
+      "GPU flashlight did not visibly illuminate the real House scene");
+  if(secondUpload.sceneId()!=firstUpload.sceneId()||
+      secondUpload.reusedBatches()==0||secondUpload.reusedBytes()<=0)
+   throw new AssertionError(
+       "Identical authored House VBOs were unexpectedly reuploaded when only GPU torch changed");
+  System.out.println("PASS OpenGL per-fragment flashlight and retained unchanged House VBO uploads");
+ }
  private static void smoke()throws Exception{
   SceneRenderer first=new SceneRenderer();
   screenshot(capture(first,false),"investigation-house.png");
@@ -249,7 +299,8 @@ public final class GpuDesktop {
   rotationSmoke();
   flyoverSmoke();
   lightingAudit();
-  System.out.println("PASS Beckenburg OpenGL 3.3 real house, castle and four authentic opening flyover frames");
+  flashlightAndResidentMeshSmoke();
+  System.out.println("PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse");
  }
  public static void main(String[] args)throws Exception{
   BeckenburgDiagnostics.install();
