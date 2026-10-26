@@ -3,7 +3,7 @@
 Authoritative engine: Java 17 / LibGDX OpenGL 3.3.
 Baseline SHA: 5909f66a6314666fd5f5a6cf4e86847eb11a7314.
 Scope: incremental renderer/resource architecture; no unrelated gameplay or artwork revision.
-Status: A profiling candidate implemented. B–G are not yet implemented.
+Status: A GPU profiling source accepted on Mesa run 40389641265, but still lacks a physical traversal/hardware timing; B1 prepared-scenery candidate under validation, B2–G not implemented.
 
 ## Execution environments
 
@@ -69,3 +69,7 @@ House first; then Farmhouse, School, Castle and remaining maps after per-map vis
 ## Acceptance rules
 
 Each milestone has its own source diff, tests, screenshot evidence and measured before/after numbers. Preserve true functional tests and packaging gates; do not add cosmetic blockers. Read back remote SHA. No phase is marked complete solely from a plan, a synthetic test or a successful build. Local hardware tests remain separate from Mesa software evidence.
+
+## B1 incremental implementation — bounded CPU world-face preparation
+
+SceneRenderer now retains immutable world-space Face records for visible SceneryInstances.Instance objects in a 120,000-triangle LRU. Repeated frames and camera turns reuse the same world-space records rather than transforming vertices and reconstructing triangles. Distinct HouseMap instances or changes in level revision/hiding density invalidate them. An actual Windows CPU rendering check verifies exact unchanged-frame pixels, warm reuse, camera rotation, new-map invalidation and memory budget. This is *not* a persistent OpenGL VBO scheme, and still repacks lit GPU triangles each frame. B2 must deliver stable chunk IDs, resident VBO ownership, static/dynamic updates and measured performance against milestone A.
