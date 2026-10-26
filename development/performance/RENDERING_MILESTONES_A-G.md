@@ -3,7 +3,7 @@
 Authoritative engine: Java 17 / LibGDX OpenGL 3.3.
 Baseline SHA: 5909f66a6314666fd5f5a6cf4e86847eb11a7314.
 Scope: incremental renderer/resource architecture; no unrelated gameplay or artwork revision.
-Status: A GPU profiling source accepted on Mesa run 40389641265, but still lacks a physical traversal/hardware timing; B1 prepared-scenery candidate under validation, B2–G not implemented.
+Status (verified 2026-10-26): A benchmark accepted; B1 completed on main; B2a promoted to main after GPU/full-round passing gates; B2b/B2c/B2d are branch-tested, D0/D1 and C1 branch-tested. None of B/C/D is complete as an end-to-end production renderer, and E–G remain unfinished. See the portable ledger for exact SHA/run status.
 
 ## Execution environments
 
@@ -81,3 +81,7 @@ GPU acceptance run 40393357870 failed the newly added Windows test: it demanded 
 ## B2a candidate: versioned resident GPU surface handles (branch)
 
 A scene-owned positive Surface.resourceId with revision and vertexCount distinguishes retained GPU chunks from legacy id=0 per-material submissions. Surface.drawResident contains no vertex array. On the GL worker, the (material,resourceId) key maps to a dedicated mesh, uploaded revision and vertex count. Correct repeated revision draw does not compare or upload arrays; changed revision explicitly updates lighting/geometry; unknown or stale handle fails rather than silently drawing old content; sceneId transition disposes all former VBOs. Existing SceneRenderer continues using the legacy constructor and must retain byte-exact validity. This is **API and GL residency support only**, not yet the runtime House conversion or stable FPS improvement. Next: per-room prepared static chunk producer and independent static/dynamic lighting revisions.
+
+## Portable A–G reuse
+
+The cross-engine engineering process and adoption template are preserved in [portable/README.md](portable/README.md), [portable/MILESTONES_A-G.md](portable/MILESTONES_A-G.md) and [portable/CHECKPOINT_TEMPLATE.md](portable/CHECKPOINT_TEMPLATE.md). Those files are method guidance, not authorization or proof of improvements in other repositories. The [Beckenburg evidence ledger](portable/BECKENBURG_LEDGER.md) keeps source-specific statuses separate.

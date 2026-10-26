@@ -18,3 +18,5 @@
 
 - Every investigation location shares HidingBudget.MAXIMUM across indoor/outdoor sockets; highest-difficulty zero-cover setting yields zero. Decorative foliage never creates hiding sockets. Consume development/quality/HIDING_SPOT_BUDGET.md and audit authored candidates individually.
 - Final map refinement includes development/levels/FINAL_STORY_AND_EASTER_EGGS.md: supported minor lore/knickknacks, actual loose-physics integration and individually authored horror/location encounters. Plans alone do not count as runtime completion.
+
+- Renderer/performance work: follow the Beckenburg [A–G plan](development/performance/RENDERING_MILESTONES_A-G.md) and the portable, cross-project [playbook](development/performance/portable/README.md). Keep target-specific evidence separate from generic methodology; a good CI build cannot by itself prove FPS or operability on physical hardware. Do not autonomously modify another game repository merely because it is listed as an adoption candidate.
