@@ -25,3 +25,13 @@ This file tracks the **source-specific Beckenburg implementation**, separated fr
 **Master tracking:** https://github.com/mrcalzon02/The-Beckenburg-Project/issues/7
 
 **Reminder:** Mesa software OpenGL p95 metrics vary with runner load. Never convert one run into asserted speedup or target-device FPS.
+
+## 2026-10-26 checkpoint: CI resilience and opening readiness
+
+- **B2c promoted to main** (cbe22780beaf61c14b82cb1d9399d23b465f2e3b). Java 17 and Castle functional checks succeeded. Exact-main GPU run 40413196375 first attempt failed BEFORE any rendering test because Chocolatey Blender feed returned HTTP 504, followed by unscoped Program Files discovery access-denied. Failed Windows job rerun requested; do not misclassify as renderer defect or mark exact-SHA GPU accepted until rerun passes. Main multiplayer 40413196299 and installer 40413196183 still in progress at this checkpoint. Previous verified installer is 0.1.79 from 53b5940.
+- **CI resilience**: draft PR #23 (e2ad831f9ba3dd63de79017e2e1d0766d8201678) centralizes real Blender setup into scripts/ci/ensure-blender.ps1 with bounded official Chocolatey retries, scoped executable path discovery and fail-closed asset export. GPU CI 40415371185 pending. No tests weakened.
+- **F0 first-frame readiness**: draft PR #24 (19bab1e1b54c3d05345e9431d52a11223dae5cfa) records durable initial GPU flyover preview request, actual first-frame completion timing and cancellation/fallback outcome. Existing all-site flyover test ensures the player spawn/camera is unmodified; GPU acceptance file filter now includes cinematic and flyover changes. GPU run 40415807639 pending. F0 is not preloading, shader warmup or a proven case-start hang fix.
+- **C3**: 40412860035 GPU acceptance passed on 36f1dab4b668b5218af7bc57bb72ab8a2ca9f684. Bounded collision centroid ray diagnostics do not prove final pixel/depth visibility and cannot yet authorize portal culling.
+- **B2e/D2**: 40411146705 and 40412014565 GPU suites passed on their exact branch revisions; preparation and local fixture probe cache are diagnostic/data-only, not production shader or resident House scene integration.
+
+**Outstanding A–G:** connect camera-independent static geometry with region-invalidation lighting in actual play, with wall-normal/occlusion parity; validate depth-aware room culling without hidden geometry; reduce GPU readbacks; prepare shader/level readiness before flyover; benchmark and verify installation on actual Windows hardware across authored maps.
