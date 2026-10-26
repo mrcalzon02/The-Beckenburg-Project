@@ -1512,6 +1512,49 @@ public final class SceneRenderer {
         return new Vertex(p,u,v,result.r,result.g,result.b);
     }
 
+
+    /** B2e diagnostic-only stable world-space fixture and UV preparation.
+     * This omits camera-distance lighting LOD and camera-only equipment.
+     * Normal/wall-side parity must be audited before gameplay integration. */
+    private Vertex stableResidentVertex(Point p,double u,double v,int material,
+            int room,Point normal){
+        var sample=normal==null?fixtureLighting.sample(room,p.x,p.y,p.z)
+            :fixtureLighting.sampleNormal(room,p.x,p.y,p.z,
+                normal.x,normal.y,normal.z);
+        var glow=fixtureLighting.emission(material,p.x,p.y,p.z);
+        return new Vertex(p,u,v,Math.max(sample.r(),glow.r()),
+            Math.max(sample.g(),glow.g()),Math.max(sample.b(),glow.b()));
+    }
+    private void appendStableResidentFace(Face face,int room,int depth,
+            java.util.Map<Integer,GpuFloats> batches){
+        // Deterministic world-edge tessellation, never camera depth.
+        if(room>=0&&room<12&&depth<1&&
+            Math.max(edge2(face.a,face.b),Math.max(edge2(face.b,face.c),
+            edge2(face.c,face.a)))>2.6){
+            Point ab=mid(face.a,face.b),bc=mid(face.b,face.c),
+                ca=mid(face.c,face.a);
+            double abu=(face.au+face.bu)*.5,abv=(face.av+face.bv)*.5;
+            double bcu=(face.bu+face.cu)*.5,bcv=(face.bv+face.cv)*.5;
+            double cau=(face.cu+face.au)*.5,cav=(face.cv+face.av)*.5;
+            appendStableResidentFace(new Face(face.a,ab,ca,face.color,
+                face.material,face.au,face.av,abu,abv,cau,cav),room,depth+1,batches);
+            appendStableResidentFace(new Face(ab,face.b,bc,face.color,
+                face.material,abu,abv,face.bu,face.bv,bcu,bcv),room,depth+1,batches);
+            appendStableResidentFace(new Face(ca,bc,face.c,face.color,
+                face.material,cau,cav,bcu,bcv,face.cu,face.cv),room,depth+1,batches);
+            appendStableResidentFace(new Face(ab,bc,ca,face.color,
+                face.material,abu,abv,bcu,bcv,cau,cav),room,depth+1,batches);
+            return;
+        }
+        var dst=batches.computeIfAbsent(face.material,key->new GpuFloats());
+        dst.vertex(stableResidentVertex(face.a,face.au,face.av,face.material,room,face.na),face.color);
+        dst.vertex(stableResidentVertex(face.b,face.bu,face.bv,face.material,room,face.nb),face.color);
+        dst.vertex(stableResidentVertex(face.c,face.cu,face.cv,face.material,room,face.nc),face.color);
+    }
+    private HouseMap residentProofMap;
+    private String residentProofRevision;
+    private List<Face> residentProofSelection=List.of();
+
     /** B2d experimental real-House resident VBO proof.
      * Captures fixture lighting once for a bounded number of actual authored
      * shell triangles, then yields upload and draw-only GPU descriptors. This
@@ -1526,19 +1569,27 @@ public final class SceneRenderer {
         if(lightingMap!=map){lightingMap=map;fixtureLighting=new FixtureLighting(map);}
         fixtureLighting.frame(roomLights,roomLightTick);
         var buckets=new java.util.LinkedHashMap<Integer,GpuFloats>();
-        int sourceFaces=0;
-        for(ShellChunk chunk:staticShellChunks(map)){
-            if(!shellChunkInFrustum(chunk))continue;
-            for(int i=chunk.start;i<chunk.end&&sourceFaces<350;i++){
-                var face=preparedShellFaces.get(i);
-                if(!faceInFrustum(face))continue;
-                appendGpuFace(face,face.room,0,buckets);
-                sourceFaces++;
+        String revision=map.level().revision()+":"+map.hidingDensity();
+        if(map!=residentProofMap||!revision.equals(residentProofRevision)){
+            residentProofMap=map;residentProofRevision=revision;
+            var selected=new ArrayList<Face>();
+            for(ShellChunk chunk:staticShellChunks(map)){
+                if(!shellChunkInFrustum(chunk))continue;
+                for(int i=chunk.start;i<chunk.end&&selected.size()<350;i++){
+                    var face=preparedShellFaces.get(i);
+                    if(faceInFrustum(face))selected.add(face);
+                }
+                if(selected.size()>=350)break;
             }
-            if(sourceFaces>=350)break;
+            if(selected.size()<30)
+                throw new IllegalStateException("No authored House faces for VBO proof");
+            residentProofSelection=List.copyOf(selected);
         }
-        if(sourceFaces<30||buckets.isEmpty())
-            throw new IllegalStateException("No real authored House shell visible for resident GPU proof");
+        for(Face face:residentProofSelection)
+            appendStableResidentFace(face,face.room,0,buckets);
+        int sourceFaces=residentProofSelection.size();
+        if(buckets.isEmpty())
+            throw new IllegalStateException("Empty resident House fixture/geometry batch");
         var uploaded=new java.util.ArrayList<GpuWorldRenderer.Surface>();
         var draws=new java.util.ArrayList<GpuWorldRenderer.Surface>();
         int triangles=0;

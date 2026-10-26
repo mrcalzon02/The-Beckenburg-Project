@@ -514,6 +514,21 @@ public final class GpuDesktop {
   if(reused.uploadedBytes()!=0||reused.reusedBatches()!=shell.drawOnly().size())
    throw new AssertionError("Camera rotation resent static House shell vertex data");
   screenshot(turned,"resident-house-shell-rotated.png");
+  camera.yaw+=.22;
+  var movedProbe=camera.prepareResidentHouseShellSample(house);
+  camera.yaw-=.22;
+  if(movedProbe.sourceFaces()!=shell.sourceFaces()||
+      movedProbe.triangles()!=shell.triangles()||
+      movedProbe.upload().size()!=shell.upload().size())
+   throw new AssertionError("Camera moved immutable authored House selection");
+  for(int i=0;i<shell.upload().size();i++){
+   var before=shell.upload().get(i);
+   var after=movedProbe.upload().get(i);
+   if(before.material()!=after.material()||
+       before.vertexCount()!=after.vertexCount()||
+       !java.util.Arrays.equals(before.vertices(),after.vertices()))
+    throw new AssertionError("Camera moved world geometry, UV or static light probes");
+  }
   long returnedId=GpuWorldRenderer.nextId();
   ENGINE.submit(new GpuWorldRenderer.Frame(sceneId,returnedId,640,360,
       275.4f,0,.65f,shell.drawOnly(),true,
@@ -532,7 +547,8 @@ public final class GpuDesktop {
       " uploads="+firstUploads.uploadedBytes()+
       " rotated_uploads="+reused.uploadedBytes()+
       " returned_uploads="+again.uploadedBytes()+
-      " changed_pixels="+changed);
+      " changed_pixels="+changed+
+      " camera_independent_source=true");
  }
 
  private static void smoke()throws Exception{
