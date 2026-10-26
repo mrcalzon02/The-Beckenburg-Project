@@ -211,6 +211,7 @@ DomesticFitoutTest
 LevelEnclosureTest
 PhysicalLightingTest
 FixtureLightingLodTest
+LightingCacheRetentionTest
 RendererDepthOcclusionTest
 SurroundingClearanceTest
 
