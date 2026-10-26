@@ -222,8 +222,32 @@ public final class GpuDesktop {
        frame.lighting().shadowRays(),frame.lighting().samples(),
        frame.lighting().normalRays(),frame.submittedTriangles(),
        elapsed/1e6,delivered.frameId());
+   // This explicitly measures a second draw with no lighting, portal,
+   // fixture or camera change. Camera movement alone must never require
+   // recomputation of static wall-shadow rays.
+   if(room==14||room==0){
+    long warmStart=System.nanoTime();
+    camera.drawNetwork(map,List.of(),-1,0);
+    var reused=camera.frameDiagnostics();
+    var warmResult=awaitGpu(camera,"stable House lightmap room "+room);
+    long warmElapsed=System.nanoTime()-warmStart;
+    System.out.printf(java.util.Locale.ROOT,
+        "GPU LIGHTMAP REUSE room=%d warm_cpu_geometry_ms=%.2f "+
+        "warm_shadow_rays=%d warm_samples=%d warm_cache_hits=%d "+
+        "invalidated_cells=%d light_candidates=%d end_to_end_ms=%.2f frame_id=%d%n",
+        room,reused.geometryNs()/1e6,reused.lighting().shadowRays(),
+        reused.lighting().samples(),reused.lighting().cacheHits(),
+        reused.lighting().invalidatedCells(),
+        reused.lighting().consideredSources(),warmElapsed/1e6,
+        warmResult.frameId());
+    if(reused.lighting().cacheHits()<=0||
+        reused.lighting().shadowRays()>=frame.lighting().shadowRays()){
+     throw new AssertionError(
+         "Unchanged House lighting still recomputes more shadow rays than the cold frame at "+room);
+    }
+   }
   }
-  System.out.println("PASS five real GPU viewport lighting audits; remaining CPU cost explicitly reported");
+  System.out.println("PASS five real GPU viewport lighting audits plus warm unchanged-frame reuse at van and house entry");
  }
  /**
   * Real world scene, two frames with identical geometry and CPU fixture
