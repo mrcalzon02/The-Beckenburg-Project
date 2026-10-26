@@ -519,16 +519,31 @@ public final class GpuDesktop {
   camera.yaw-=.22;
   if(movedProbe.sourceFaces()!=shell.sourceFaces()||
       movedProbe.triangles()!=shell.triangles()||
-      movedProbe.upload().size()!=shell.upload().size())
-   throw new AssertionError("Camera moved immutable authored House selection");
+      movedProbe.upload().size()!=shell.upload().size()||
+      movedProbe.recomputedProbes()!=0||
+      movedProbe.retainedProbes()!=movedProbe.triangles()*3)
+   throw new AssertionError("Camera moved or re-lit immutable authored House geometry");
   for(int i=0;i<shell.upload().size();i++){
    var before=shell.upload().get(i);
    var after=movedProbe.upload().get(i);
    if(before.material()!=after.material()||
+       before.resourceId()!=after.resourceId()||
+       before.revision()!=after.revision()||
        before.vertexCount()!=after.vertexCount()||
        !java.util.Arrays.equals(before.vertices(),after.vertices()))
-    throw new AssertionError("Camera moved world geometry, UV or static light probes");
+    throw new AssertionError("Camera rebuilt resident handle, world geometry, UV or static RGB");
   }
+  // Same stable handles AND versions let a full authored source array
+  // be resubmitted without causing an actual GL buffer transfer.
+  long warmId=GpuWorldRenderer.nextId();
+  ENGINE.submit(new GpuWorldRenderer.Frame(sceneId,warmId,640,360,
+      275.4f,0,.65f,movedProbe.upload(),true,
+      (float)camera.x,(float)camera.eyeHeight,(float)camera.z,
+      (float)(camera.yaw+.22),(float)camera.pitch));
+  directGpu(sceneId,warmId,"real House unchanged fixture probe revisions");
+  var warmStats=ENGINE.uploadStats();
+  if(warmStats.uploadedBytes()!=0||warmStats.reusedBatches()!=movedProbe.upload().size())
+   throw new AssertionError("Unchanged room-owned static fixture data retransmitted VBOs");
   long returnedId=GpuWorldRenderer.nextId();
   ENGINE.submit(new GpuWorldRenderer.Frame(sceneId,returnedId,640,360,
       275.4f,0,.65f,shell.drawOnly(),true,
@@ -542,13 +557,41 @@ public final class GpuDesktop {
   for(int i=0;i<first.argb().length;i++)
    if(first.argb()[i]!=turned.argb()[i])changed++;
   if(changed<250)throw new AssertionError("Static House GPU camera rotation did not change the image");
+  // Actual authored door occluder revision must update the retained GPU
+  // buffers, independently of camera/geometry changes.
+  var portal=house.level().portals().stream().filter(p->p.door()).findFirst().orElseThrow();
+  house.toggleDoor(portal.id());
+  var relit=camera.prepareResidentHouseShellSample(house);
+  if(relit.recomputedProbes()!=relit.triangles()*3||
+       relit.triangles()!=shell.triangles()||
+       relit.upload().size()!=shell.upload().size())
+   throw new AssertionError("Door occluder failed to refresh world fixture probes");
+  for(int i=0;i<shell.upload().size();i++){
+   var old= shell.upload().get(i);
+   var next=relit.upload().get(i);
+   if(old.resourceId()!=next.resourceId()||next.revision()<=old.revision())
+    throw new AssertionError("Door occlusion must revise existing VBO handles, not geometry");
+  }
+  long relitId=GpuWorldRenderer.nextId();
+  ENGINE.submit(new GpuWorldRenderer.Frame(sceneId,relitId,640,360,
+      275.4f,0,.65f,relit.upload(),true,
+      (float)camera.x,(float)camera.eyeHeight,(float)camera.z,
+      (float)camera.yaw,(float)camera.pitch));
+  directGpu(sceneId,relitId,"real House changed door fixture revision");
+  var relitStats=ENGINE.uploadStats();
+  if(relitStats.uploadedBytes()<=0||
+       relitStats.uploadedBatches()!=relit.upload().size())
+   throw new AssertionError("Changed door light revision left stale VBO contents");
   System.out.println("GPU REAL HOUSE RESIDENT PASS source_faces="+shell.sourceFaces()+
       " gpu_triangles="+shell.triangles()+
       " uploads="+firstUploads.uploadedBytes()+
       " rotated_uploads="+reused.uploadedBytes()+
       " returned_uploads="+again.uploadedBytes()+
       " changed_pixels="+changed+
-      " camera_independent_source=true");
+      " camera_independent_source=true"+
+      " stable_probe_reuse="+movedProbe.retainedProbes()+
+      " door_probe_recomputed="+relit.recomputedProbes()+
+      " relit_upload_bytes="+relitStats.uploadedBytes());
  }
 
  private static void smoke()throws Exception{
