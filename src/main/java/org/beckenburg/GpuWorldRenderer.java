@@ -17,12 +17,28 @@ public interface GpuWorldRenderer {
             if(vertices.length%24!=0)throw new IllegalArgumentException("Invalid GPU triangle batch");
         }
     }
-    record Frame(long sceneId,long frameId,int width,int height,float focal,float vertexSnap,float affineWarp,List<Surface> surfaces) {
+    /**
+     * World-space sources carry a camera transform for vertex-shader execution.
+     * Keeping camera uniforms separate from vertex data is the first step
+     * toward persistent per-level VBOs; legacy camera-space callers retain
+     * their existing eight-argument constructor.
+     */
+    record Frame(long sceneId,long frameId,int width,int height,float focal,float vertexSnap,
+                 float affineWarp,List<Surface> surfaces,boolean worldSpace,
+                 float cameraX,float cameraY,float cameraZ,float yaw,float pitch) {
+        public Frame(long sceneId,long frameId,int width,int height,float focal,
+                     float vertexSnap,float affineWarp,List<Surface> surfaces) {
+            this(sceneId,frameId,width,height,focal,vertexSnap,affineWarp,
+                surfaces,false,0,0,0,0,0);
+        }
         public Frame {
             if(sceneId<=0||frameId<=0||width<160||height<120||!Float.isFinite(focal)||focal<=0
                 ||!Float.isFinite(vertexSnap)||vertexSnap<0
                 ||!Float.isFinite(affineWarp)||affineWarp<0||affineWarp>1
-                ||surfaces==null)throw new IllegalArgumentException("Bad GPU scene frame");
+                ||surfaces==null||!Float.isFinite(cameraX)||!Float.isFinite(cameraY)
+                ||!Float.isFinite(cameraZ)||!Float.isFinite(yaw)||!Float.isFinite(pitch)
+                ||Math.abs(pitch)>Math.PI/2+0.01)
+                throw new IllegalArgumentException("Bad GPU scene frame");
             surfaces=List.copyOf(surfaces);
         }
     }
