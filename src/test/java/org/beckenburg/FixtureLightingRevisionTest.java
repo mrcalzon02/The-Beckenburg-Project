@@ -31,6 +31,28 @@ public final class FixtureLightingRevisionTest {
         check(moved>restored,"Opened door must revise occlusion-dependent lighting");
         lights.frame(circuits,0);
         check(lights.stateRevision()==moved,"Unchanged doorway cannot revise light state");
-        System.out.println("PASS lighting state revisions: warm stable, breaker off/on, door occluder");
+        check(lights.regionRevision(10000,10000,10000)==moved,
+            "Occluder changes must invalidate even areas outside fixture spheres");
+        boolean rejected=false;
+        try{lights.regionRevision(Double.NaN,0,0);}
+        catch(IllegalArgumentException expected){rejected=true;}
+        check(rejected,"Nonfinite region coordinates must be rejected");
+        var source=lights.sources().stream()
+            .filter(p->p.room()>=0&&p.room()<12
+                &&p.kind()==FixtureLighting.Kind.FROSTED_DOME)
+            .findFirst().orElseThrow();
+        long nearBefore=lights.regionRevision(source.x(),source.y(),source.z());
+        long farBefore=lights.regionRevision(10000,10000,10000);
+        circuits.toggle(source.room());
+        lights.frame(circuits,0);
+        long nearAfter=lights.regionRevision(source.x(),source.y(),source.z());
+        check(nearAfter>nearBefore,
+            "Changing a room fixture must invalidate nearby prepared lighting");
+        check(lights.regionRevision(10000,10000,10000)==farBefore,
+            "Local fixture toggles must not invalidate unrelated remote regions");
+        lights.frame(circuits,0);
+        check(lights.regionRevision(source.x(),source.y(),source.z())==nearAfter,
+            "Identical light state must preserve regional cached lighting");
+        System.out.println("PASS lighting revisions: source-local, unchanged far cells, breaker, door occluder and stable frames");
     }
 }
