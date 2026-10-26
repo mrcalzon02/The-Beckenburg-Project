@@ -1431,6 +1431,16 @@ public final class SceneRenderer {
         if(normal!=null){double dx=x-p.x,dy=eyeHeight-p.y,dz=z-p.z,d=Math.sqrt(dx*dx+dy*dy+dz*dz);beam*=.12+.88*Math.max(0,(normal.x*dx+normal.y*dy+normal.z*dz)/Math.max(.001,d));}
         return new Vertex(at,u,v,result.r+beam,result.g+beam,result.b+beam);
     }
+    /** Timings are CPU-side costs, not GPU execution timestamps. */
+    public record FrameDiagnostics(long totalNs,long sceneBuildNs,long geometryNs,long effectsNs,
+        int faces,int frustumFaces,int sceneryTotal,int sceneryVisible,
+        long submittedTriangles,boolean gpu,boolean gpuReadbackFresh,
+        boolean gpuReadbackAvailable,int room,int width,int height) {}
+    private volatile FrameDiagnostics lastFrameDiagnostics;
+    public FrameDiagnostics frameDiagnostics(){return lastFrameDiagnostics;}
+    private int lastGpuFrustumFaces;
+    private long lastGpuSubmittedTriangles;
+    private boolean lastGpuReadbackFresh,lastGpuReadbackAvailable;
     private final long gpuSceneId=GpuWorldRenderer.nextId();
     private long lastSubmittedGpuFrame;
     private GpuWorldRenderer.Result pinnedGpuFrame;
@@ -1444,8 +1454,10 @@ public final class SceneRenderer {
         if(!backend.ready())throw new IllegalStateException(
             "OpenGL renderer stopped before the game frame");
         var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
+        lastGpuFrustumFaces=0;
         for(Face f:faces){
             if(!faceInFrustum(f))continue;
+            lastGpuFrustumFaces++;
             int room=f.room>=0?f.room:map==null?
                 (((f.a.x+f.b.x+f.c.x)/3<0||(f.a.x+f.b.x+f.c.x)/3>CastleHubMap.WIDTH
                     ||(f.a.z+f.b.z+f.c.z)/3<0||(f.a.z+f.b.z+f.c.z)/3>CastleHubMap.HEIGHT)?13:0):
@@ -1454,9 +1466,12 @@ public final class SceneRenderer {
             appendGpuFace(f,room,0,batches);
         }
         var surfaces=new java.util.ArrayList<GpuWorldRenderer.Surface>(batches.size());
-        for(var entry:batches.entrySet())
-            surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),
-                entry.getValue().complete()));
+        lastGpuSubmittedTriangles=0;
+        for(var entry:batches.entrySet()){
+            float[] vertices=entry.getValue().complete();
+            lastGpuSubmittedTriangles+=vertices.length/24;
+            surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),vertices));
+        }
         long submitted=GpuWorldRenderer.nextId();
         if(activeWater!=null&&!activeWater.bodies().isEmpty())waterViews.put(submitted,waterView(waterClock));
         consumedWaterView=null;
@@ -1465,7 +1480,9 @@ public final class SceneRenderer {
             renderWidth,renderHeight,(float)focal,
             (float)psxPreset.snap,(float)psxPreset.affine,surfaces));
         GpuWorldRenderer.Result available=pinnedGpuFrame==null?backend.latest():pinnedGpuFrame;pinnedGpuFrame=null;
-        if(GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight)){
+        lastGpuReadbackAvailable=GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight);
+        lastGpuReadbackFresh=lastGpuReadbackAvailable&&available.frameId()==submitted;
+        if(lastGpuReadbackAvailable){
             consumedWaterView=waterViews.get(available.frameId());
             int[] image=available.argb();
             float[] zbuffer=available.depth();
@@ -2156,6 +2173,7 @@ public final class SceneRenderer {
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
+        long frameBegin=System.nanoTime();
         waterCastle=null;activeWater=waterOverride==null?WorldWater.module(map.level().water()):waterOverride;
         paintSky(map,clock);
         int[] hazeBackground=map.nativeSite()?pixels.clone():null;
@@ -2170,8 +2188,8 @@ public final class SceneRenderer {
         int visibleFaces=0;waterClock=clock;
         boolean gpuFrame=drawGpuFaces(geometry,map);
         if(gpuFrame){
-            // GPU performs perspective raster, source material sampling and depth.
-            visibleFaces=geometry.size();
+            // Count actual frustum-submitted geometry, not every built face.
+            visibleFaces=lastGpuFrustumFaces;
         }else{
             for(Face face:geometry){
                 if(!faceInFrustum(face))continue;
@@ -2195,6 +2213,15 @@ public final class SceneRenderer {
         int localRoom=map.roomAt(x,eyeHeight-.85,z);
         GhostHauntingFolio.paint(pixels,renderWidth,renderHeight,hauntings,
             localRoom,(int)Math.floor(clock*10));
+        long finished=System.nanoTime();
+        lastFrameDiagnostics=new FrameDiagnostics(finished-frameBegin,
+            geometryReady-geometryStart,geometryRendered-geometryReady,
+            finished-geometryRendered,geometry.size(),visibleFaces,
+            instanceStats.instances(),instanceStats.visible(),
+            gpuFrame?lastGpuSubmittedTriangles:visibleFaces,
+            gpuFrame,gpuFrame&&lastGpuReadbackFresh,
+            gpuFrame&&lastGpuReadbackAvailable,
+            localRoom,renderWidth,renderHeight);
     }
     /** Screen-distance lighting tessellation budget: 64 children at most,
      * rather than 256 for every large surface regardless of viewing distance.
