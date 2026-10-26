@@ -1435,7 +1435,8 @@ public final class SceneRenderer {
     public record FrameDiagnostics(long totalNs,long sceneBuildNs,long geometryNs,long effectsNs,
         int faces,int frustumFaces,int sceneryTotal,int sceneryVisible,
         long submittedTriangles,boolean gpu,boolean gpuReadbackFresh,
-        boolean gpuReadbackAvailable,int room,int width,int height) {}
+        boolean gpuReadbackAvailable,int room,int width,int height,
+        FixtureLighting.FrameStats lighting) {}
     private volatile FrameDiagnostics lastFrameDiagnostics;
     public FrameDiagnostics frameDiagnostics(){return lastFrameDiagnostics;}
     private int lastGpuFrustumFaces;
@@ -2221,7 +2222,7 @@ public final class SceneRenderer {
             gpuFrame?lastGpuSubmittedTriangles:visibleFaces,
             gpuFrame,gpuFrame&&lastGpuReadbackFresh,
             gpuFrame&&lastGpuReadbackAvailable,
-            localRoom,renderWidth,renderHeight);
+            localRoom,renderWidth,renderHeight,fixtureLighting.frameStats());
     }
     /** Screen-distance lighting tessellation budget: 64 children at most,
      * rather than 256 for every large surface regardless of viewing distance.
