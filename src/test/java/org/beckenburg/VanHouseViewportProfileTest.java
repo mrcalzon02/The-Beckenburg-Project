@@ -107,7 +107,7 @@ public final class VanHouseViewportProfileTest {
         var session=new InvestigationSession(map,InvestigationSession.Role.OBSERVER,20261025L);
         var actualAlly=new CampaignAlly(map,session);
         var destination=map.spawn(0);
-        StringBuilder route=new StringBuilder("step,room,x,y,z,advance_ms,travel_m,report\\n");
+        StringBuilder route=new StringBuilder("step,room,x,y,z,advance_ms,travel_m,report\n");
         double travelled=0;
         var previous=actualAlly.position();
         for(int step=0;step<700;step++){
@@ -121,7 +121,7 @@ public final class VanHouseViewportProfileTest {
                 route.append(String.format(Locale.ROOT,
                     "%d,%d,%.3f,%.3f,%.3f,%.4f,%.3f,%s%n",
                     step,actualAlly.room(),at.x(),at.y(),at.z(),advanceNs/1e6,
-                    travelled,actualAlly.report().replace(',', ';').replace('\\n',' ')));
+                    travelled,actualAlly.report().replace(',', ';').replace('\n',' ')));
             }
             previous=at;
             if(actualAlly.room()==0)break;
