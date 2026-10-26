@@ -38,14 +38,27 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  in vec3 a_lighting;
  uniform vec2 u_projection;
  uniform vec2 u_resolution;
+ uniform int u_worldSpace;
+ uniform vec3 u_cameraPosition;
+ uniform vec2 u_cameraAngles;
  uniform float u_vertexSnap;
  out vec2 v_uv;
  noperspective out vec2 v_uvAffine;
  out vec3 v_light;
  void main(){
-  float zz=a_position.z;
-  vec4 clip=vec4(a_position.x*u_projection.x,
-   a_position.y*u_projection.y,
+  vec3 cameraPoint=a_position;
+  if(u_worldSpace!=0){
+   vec3 offset=a_position-u_cameraPosition;
+   float cy=cos(u_cameraAngles.x),sy=sin(u_cameraAngles.x);
+   float cp=cos(u_cameraAngles.y),sp=sin(u_cameraAngles.y);
+   float right=-offset.x*cy+offset.z*sy;
+   float forward=offset.x*sy+offset.z*cy;
+   cameraPoint=vec3(right,offset.y*cp-forward*sp,
+                    offset.y*sp+forward*cp);
+  }
+  float zz=cameraPoint.z;
+  vec4 clip=vec4(cameraPoint.x*u_projection.x,
+   cameraPoint.y*u_projection.y,
    zz*((180.0+0.065)/(180.0-0.065))-2.0*180.0*0.065/(180.0-0.065),zz);
   if(u_vertexSnap>0.0&&zz>0.065){
    vec2 native=(clip.xy/clip.w*0.5+0.5)*u_resolution;
@@ -183,6 +196,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   shader.setUniformf("u_projection",
     2*focal/targetWidth,2*focal/targetHeight);
   shader.setUniformf("u_resolution",(float)targetWidth,(float)targetHeight);
+  shader.setUniformi("u_worldSpace",frame.worldSpace()?1:0);
+  shader.setUniformf("u_cameraPosition",frame.cameraX(),frame.cameraY(),frame.cameraZ());
+  shader.setUniformf("u_cameraAngles",frame.yaw(),frame.pitch());
   shader.setUniformf("u_vertexSnap",frame.vertexSnap());
   shader.setUniformf("u_affineWarp",frame.affineWarp());
   shader.setUniformi("u_texture",0);
