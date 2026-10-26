@@ -573,6 +573,7 @@ public final class InvestigationGame {
         private final LevelSoundscape buildingSoundscape;
         private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
         private int frameCount;
+        private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
         private volatile boolean initialFrameReady;
         private SwingWorker<Void,Void> firstFrameWorker;
         void beginRendering(){
@@ -873,6 +874,7 @@ public final class InvestigationGame {
             scene.rackInventory=VanRackStock.solo(profile,loadout);
             scene.draw(map,session,frameCount++/30.0,
                 assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
+            perfHud.sample(System.nanoTime()-diagnosticFrameStart,scene,map,assistant==null?0:1,"SOLO");
             repaint();
             if(session.outcome()==InvestigationSession.Outcome.LOST){
                 timer.stop();endCase("You were overcome. The case remains open.");
@@ -938,7 +940,9 @@ public final class InvestigationGame {
         }
         @Override public void keyPressed(KeyEvent e){
             if(chatInput.isVisible())return;
-            int key=e.getKeyCode();if(down.contains(key))return;
+            int key=e.getKeyCode();
+            if(DebugPerformanceHud.hotkey(e)){repaint();return;}
+            if(down.contains(key))return;
             if(key==KeyEvent.VK_ENTER){openTeamChat(LanChat.Channel.LOCAL);return;}
             if(key==KeyEvent.VK_F2){openTeamChat(LanChat.Channel.RADIO);return;}
             if(key==KeyEvent.VK_E){if(interactionHeld)return;interactionHeld=true;}
@@ -1248,6 +1252,7 @@ public final class InvestigationGame {
                     int iy=y+60;g.setColor(new Color(225,228,221));
                     for(String hint:hints){g.drawString(hint,x+18,iy);iy+=27;}
                 }
+                perfHud.draw(g,getWidth(),getHeight());
             }finally{g.dispose();}
         }
         private void drawTeamChat(Graphics2D g,int width,int height){
