@@ -7,6 +7,7 @@ import org.beckenburg.HouseMap;
 import org.beckenburg.InvestigationGame;
 import org.beckenburg.RoomLighting;
 import org.beckenburg.SceneRenderer;
+import org.beckenburg.LevelOpeningFlyover;
 import org.beckenburg.CastleHubMap;
 import org.beckenburg.BeckenburgDiagnostics;
 import java.awt.image.BufferedImage;
@@ -144,6 +145,42 @@ public final class GpuDesktop {
       "average_ms="+totalNanos/6/1_000_000+
       " worst_ms="+maxNanos/1_000_000);
  }
+ private static void flyoverSmoke()throws Exception{
+  var house=new HouseMap(HouseMap.Site.HOUSE);
+  var spawn=house.van().spawn(0);
+  var end=new LevelOpeningFlyover.Pose(spawn.x(),house.van().floorY()+1.62,
+      spawn.z(),-.5f,-.09f);
+  var flight=new LevelOpeningFlyover(house,end);
+  SceneRenderer camera=new SceneRenderer();
+  camera.setRenderSize(640,360);
+  camera.roomLights=new RoomLighting();
+  double[] checkpoints={0,.39,.78,.94};
+  for(int index=0;index<checkpoints.length;index++){
+   var pose=flight.pose(checkpoints[index]);
+   pose.apply(camera);
+   camera.drawPractice(house,List.of(),checkpoints[index]*7.5);
+   long expected=camera.submittedGpuFrameId();
+   long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(28);
+   GpuWorldRenderer.Result found=null;
+   while(System.nanoTime()<deadline){
+    var delivered=ENGINE.latest();
+    if(delivered!=null&&delivered.frameId()==expected){
+     found=delivered;break;
+    }
+    Thread.sleep(30);
+   }
+   if(found==null)throw new AssertionError(
+       "Actual GPU aerial camera did not finish checkpoint "+index);
+   int drawn=0;
+   for(int pixel:found.argb())if((pixel>>>24)>127)drawn++;
+   if(drawn<250)throw new AssertionError(
+       "Aerial GPU checkpoint "+index+" has no world geometry");
+   screenshot(found,String.format(java.util.Locale.ROOT,
+       "level-opening-%02d.png",index));
+   System.out.println("GPU OPENING PASS "+index+
+       " t="+checkpoints[index]+" visible="+drawn);
+  }
+ }
  private static void smoke()throws Exception{
   SceneRenderer first=new SceneRenderer();
   screenshot(capture(first,false),"investigation-house.png");
@@ -166,7 +203,8 @@ public final class GpuDesktop {
    throw new IllegalStateException("Castle frame does not show enough visible masonry: "+castlePixels);
   screenshot(castle,"castle-headquarters.png");
   rotationSmoke();
-  System.out.println("PASS Beckenburg OpenGL 3.3 real house and real castle framebuffers");
+  flyoverSmoke();
+  System.out.println("PASS Beckenburg OpenGL 3.3 real house, castle and four authentic opening flyover frames");
  }
  public static void main(String[] args)throws Exception{
   BeckenburgDiagnostics.install();
