@@ -1511,6 +1511,51 @@ public final class SceneRenderer {
         // depth-tested foreground, and this removes per-vertex cone updates.
         return new Vertex(p,u,v,result.r,result.g,result.b);
     }
+
+    /** B2d experimental real-House resident VBO proof.
+     * Captures fixture lighting once for a bounded number of actual authored
+     * shell triangles, then yields upload and draw-only GPU descriptors. This
+     * is intentionally NOT the gameplay renderer: current fixture lighting
+     * includes camera-distance sampling, so lighting revision ownership must
+     * migrate before the same buffers can be used for real investigations. */
+    public record ResidentShellSample(List<GpuWorldRenderer.Surface> upload,
+        List<GpuWorldRenderer.Surface> drawOnly,int sourceFaces,int triangles){}
+    public ResidentShellSample prepareResidentHouseShellSample(HouseMap map){
+        if(map==null||map.site()!=HouseMap.Site.HOUSE)
+            throw new IllegalArgumentException("House benchmark map required");
+        if(lightingMap!=map){lightingMap=map;fixtureLighting=new FixtureLighting(map);}
+        fixtureLighting.frame(roomLights,roomLightTick);
+        var buckets=new java.util.LinkedHashMap<Integer,GpuFloats>();
+        int sourceFaces=0;
+        for(ShellChunk chunk:staticShellChunks(map)){
+            if(!shellChunkInFrustum(chunk))continue;
+            for(int i=chunk.start;i<chunk.end&&sourceFaces<350;i++){
+                var face=preparedShellFaces.get(i);
+                if(!faceInFrustum(face))continue;
+                appendGpuFace(face,face.room,0,buckets);
+                sourceFaces++;
+            }
+            if(sourceFaces>=350)break;
+        }
+        if(sourceFaces<30||buckets.isEmpty())
+            throw new IllegalStateException("No real authored House shell visible for resident GPU proof");
+        var uploaded=new java.util.ArrayList<GpuWorldRenderer.Surface>();
+        var draws=new java.util.ArrayList<GpuWorldRenderer.Surface>();
+        int triangles=0;
+        for(var e:buckets.entrySet()){
+            float[] packed=e.getValue().complete();
+            if(packed.length==0)continue;
+            long resourceId=GpuWorldRenderer.nextId();
+            var surface=new GpuWorldRenderer.Surface(e.getKey(),packed,resourceId,1);
+            uploaded.add(surface);
+            draws.add(GpuWorldRenderer.Surface.drawResident(
+                e.getKey(),resourceId,1,surface.vertexCount()));
+            triangles+=packed.length/24;
+        }
+        return new ResidentShellSample(List.copyOf(uploaded),List.copyOf(draws),
+            sourceFaces,triangles);
+    }
+
     /** Timings are CPU-side costs, not GPU execution timestamps. */
     public record FrameDiagnostics(long totalNs,long sceneBuildNs,long geometryNs,long effectsNs,
         int faces,int frustumFaces,int sceneryTotal,int sceneryVisible,

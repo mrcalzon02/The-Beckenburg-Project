@@ -474,6 +474,66 @@ public final class GpuDesktop {
       " new_scene_upload="+newSceneUpload.uploadedBytes());
  }
 
+
+ /** B2d proves real authored House geometry (not a synthetic triangle) is
+  * retained in independent OpenGL VBOs across camera movement. The sample
+  * captures a single lighting revision; it is not the production lighting
+  * invalidation solution and is never used for game/case submissions. */
+ private static void realHouseResidentShellSmoke()throws Exception{
+  var house=new HouseMap(HouseMap.Site.HOUSE);
+  var camera=new SceneRenderer();
+  camera.setRenderSize(640,360);
+  camera.roomLights=new RoomLighting();
+  var eye=house.spawn(4),target=house.spawn(0);
+  camera.x=eye.x();camera.z=eye.z();
+  camera.eyeHeight=eye.y()+1.62;
+  camera.yaw=Math.atan2(target.x()-eye.x(),target.z()-eye.z());
+  camera.pitch=-.075;
+  var shell=camera.prepareResidentHouseShellSample(house);
+  if(shell.sourceFaces()<30||shell.triangles()<30)
+   throw new AssertionError("Missing meaningful authored House architecture in resident test");
+  long sceneId=GpuWorldRenderer.nextId();
+  long firstId=GpuWorldRenderer.nextId();
+  ENGINE.submit(new GpuWorldRenderer.Frame(sceneId,firstId,640,360,
+      275.4f,0,.65f,shell.upload(),true,
+      (float)camera.x,(float)camera.eyeHeight,(float)camera.z,
+      (float)camera.yaw,(float)camera.pitch));
+  var first=directGpu(sceneId,firstId,"real House first resident shell");
+  var firstUploads=ENGINE.uploadStats();
+  if(firstUploads.uploadedBatches()!=shell.upload().size()||firstUploads.uploadedBytes()<=0)
+   throw new AssertionError("House geometry was not physically uploaded to the GPU");
+  screenshot(first,"resident-house-shell-initial.png");
+  long rotatedId=GpuWorldRenderer.nextId();
+  ENGINE.submit(new GpuWorldRenderer.Frame(sceneId,rotatedId,640,360,
+      275.4f,0,.65f,shell.drawOnly(),true,
+      (float)camera.x,(float)camera.eyeHeight,(float)camera.z,
+      (float)(camera.yaw+.22),(float)camera.pitch));
+  var turned=directGpu(sceneId,rotatedId,"real House camera movement with resident VBOs");
+  var reused=ENGINE.uploadStats();
+  if(reused.uploadedBytes()!=0||reused.reusedBatches()!=shell.drawOnly().size())
+   throw new AssertionError("Camera rotation resent static House shell vertex data");
+  screenshot(turned,"resident-house-shell-rotated.png");
+  long returnedId=GpuWorldRenderer.nextId();
+  ENGINE.submit(new GpuWorldRenderer.Frame(sceneId,returnedId,640,360,
+      275.4f,0,.65f,shell.drawOnly(),true,
+      (float)camera.x,(float)camera.eyeHeight,(float)camera.z,
+      (float)camera.yaw,(float)camera.pitch));
+  var returned=directGpu(sceneId,returnedId,"real House return without vertex upload");
+  var again=ENGINE.uploadStats();
+  if(again.uploadedBytes()!=0||!java.util.Arrays.equals(first.argb(),returned.argb()))
+   throw new AssertionError("Returning to original view changed real resident House geometry");
+  int changed=0;
+  for(int i=0;i<first.argb().length;i++)
+   if(first.argb()[i]!=turned.argb()[i])changed++;
+  if(changed<250)throw new AssertionError("Static House GPU camera rotation did not change the image");
+  System.out.println("GPU REAL HOUSE RESIDENT PASS source_faces="+shell.sourceFaces()+
+      " gpu_triangles="+shell.triangles()+
+      " uploads="+firstUploads.uploadedBytes()+
+      " rotated_uploads="+reused.uploadedBytes()+
+      " returned_uploads="+again.uploadedBytes()+
+      " changed_pixels="+changed);
+ }
+
  private static void smoke()throws Exception{
   SceneRenderer first=new SceneRenderer();
   screenshot(capture(first,false),"investigation-house.png");
@@ -500,6 +560,7 @@ public final class GpuDesktop {
   lightingAudit();
   flashlightAndResidentMeshSmoke();
   residentBufferSmoke();
+  realHouseResidentShellSmoke();
   continuousRouteAudit();
   System.out.println("PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse");
  }
