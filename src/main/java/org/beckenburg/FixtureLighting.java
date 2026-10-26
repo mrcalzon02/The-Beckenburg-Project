@@ -9,6 +9,13 @@ public final class FixtureLighting {
  private record Shadow(int source,long x,long y,long z){}
  private final HouseMap map;private final CastleHubMap castle;private final List<Source> sources=new ArrayList<>();private final Map<Key,RGB> colours=new HashMap<>();private final Map<Shadow,Boolean> sight=new HashMap<>();
  private String geometry="",state="";private double[] factors=new double[0];
+ /** Per-render CPU work counters; shadow tests are expensive architectural rays. */
+ public record FrameStats(long samples,long cacheHits,long shadowRays,
+                          long normalSamples,long normalRays,int lights,int cachedColours){}
+ private long samples,cacheHits,shadowRays,normalSamples,normalRays;
+ public FrameStats frameStats(){return new FrameStats(samples,cacheHits,shadowRays,
+     normalSamples,normalRays,sources.size(),colours.size());}
+ private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=0;}
  private long castleDoorRevision=-1;
  public FixtureLighting(HouseMap map){this.map=map;this.castle=null;
   for(var s:map.level().sockets())if(s.type().equals("light")){
@@ -38,6 +45,7 @@ public final class FixtureLighting {
   }factors=new double[sources.size()];
  }
  public void castleFrame(boolean on,int tick){
+  resetStatistics();
   // Dynamic gate leaves change real shadow occlusion even when the clock and
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
@@ -128,6 +136,7 @@ public final class FixtureLighting {
  private void add(Kind k,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double r,double g,double b){sources.add(new Source(sources.size(),k,room,fixture,x,y,z,dx,dy,dz,radius,power,r,g,b));}
  public List<Source> sources(){return List.copyOf(sources);}
  public void frame(RoomLighting circuits,int tick){
+  resetStatistics();
   String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;sight.clear();colours.clear();}
   StringBuilder stamp=new StringBuilder();for(var source:sources){double f;
    if(source.room==14)f=1;
@@ -148,7 +157,8 @@ public final class FixtureLighting {
   case TABLE_LAMP->.07+.86*smooth(.32,.76,dot)+.24*smooth(.70,.96,-dot);
   case FROSTED_DOME->.18+.82*smooth(-.08,.42,dot);default->1;};}
  public RGB sample(int room,double x,double y,double z){
-  Key key=new Key(room,Math.round(x*16),Math.round(y*16),Math.round(z*16));RGB cached=colours.get(key);if(cached!=null)return cached;
+  samples++;
+  Key key=new Key(room,Math.round(x*16),Math.round(y*16),Math.round(z*16));RGB cached=colours.get(key);if(cached!=null){cacheHits++;return cached;}
   boolean exterior=room<0||room>=12||map!=null&&map.outside(room);
   double r=exterior?.27:(castle!=null?.125:.055),g=exterior?.29:(castle!=null?.129:.059),b=exterior?.34:(castle!=null?.14:.073);
   for(var source:sources){double factor=factors[source.id];if(factor<.001)continue;
@@ -156,7 +166,7 @@ public final class FixtureLighting {
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
    double fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2);if(weight<.002)continue;
    Shadow shadow=new Shadow(source.id,key.x,key.y,key.z);Boolean visible=sight.get(shadow);
-   if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);visible=clear(source.x,source.y,source.z,x-dx*back,y-dy*back,z-dz*back);sight.put(shadow,visible);}
+   if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);shadowRays++;visible=clear(source.x,source.y,source.z,x-dx*back,y-dy*back,z-dz*back);sight.put(shadow,visible);}
    if(visible){r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
   }
   RGB result=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));colours.put(key,result);return result;
@@ -164,10 +174,16 @@ public final class FixtureLighting {
  /** Directional diffuse for audited source normals. Existing un-audited
   * assets retain the legacy sampler until their normal orientation is reviewed. */
  public RGB sampleNormal(int room,double x,double y,double z,double nx,double ny,double nz){
+  normalSamples++;
   double hemi=.65+.35*Math.max(0,ny),r=.27*hemi,g=.29*hemi,b=.34*hemi;
   for(var source:sources){double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
    double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
-   if(weight>.001&&clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025)){r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
+   if(weight>.001){
+    normalRays++;
+    if(clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025)){
+     r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;
+    }
+   }
   }return new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
  }
  public RGB emission(int material,double x,double y,double z){
