@@ -7,15 +7,22 @@ public final class FixtureLighting {
  public record Source(int id,Kind kind,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double red,double green,double blue){}
  private record Key(int room,long x,long y,long z){}
  private record Shadow(int source,long x,long y,long z){}
+ private record DistantCell(int room,long x,long y,long z){}
+ private record DistantProbe(double x,double y,double z,RGB light){}
+ private final Map<DistantCell,DistantProbe> distant=new HashMap<>();
+ private long lodQueries,lodHits,lodVisibilityChecks;
  private final HouseMap map;private final CastleHubMap castle;private final List<Source> sources=new ArrayList<>();private final Map<Key,RGB> colours=new HashMap<>();private final Map<Shadow,Boolean> sight=new HashMap<>();
  private String geometry="",state="";private double[] factors=new double[0];
  /** Per-render CPU work counters; shadow tests are expensive architectural rays. */
  public record FrameStats(long samples,long cacheHits,long shadowRays,
-                          long normalSamples,long normalRays,int lights,int cachedColours){}
+                          long normalSamples,long normalRays,int lights,int cachedColours,
+                          long lodQueries,long lodHits,long lodVisibilityChecks){}
  private long samples,cacheHits,shadowRays,normalSamples,normalRays;
  public FrameStats frameStats(){return new FrameStats(samples,cacheHits,shadowRays,
-     normalSamples,normalRays,sources.size(),colours.size());}
- private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=0;}
+     normalSamples,normalRays,sources.size(),colours.size(),
+     lodQueries,lodHits,lodVisibilityChecks);}
+ private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=0;
+  lodQueries=lodHits=lodVisibilityChecks=0;}
  private long castleDoorRevision=-1;
  public FixtureLighting(HouseMap map){this.map=map;this.castle=null;
   for(var s:map.level().sockets())if(s.type().equals("light")){
@@ -49,9 +56,9 @@ public final class FixtureLighting {
   // Dynamic gate leaves change real shadow occlusion even when the clock and
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
-   castleDoorRevision=castle.doorRevision();sight.clear();colours.clear();
+   castleDoorRevision=castle.doorRevision();sight.clear();colours.clear();distant.clear();
   }
-  String stamp=on+":"+(tick/3);if(!state.equals(stamp)){colours.clear();state=stamp;}for(var source:sources)factors[source.id]=!on?0:
+  String stamp=on+":"+(tick/3);if(!state.equals(stamp)){colours.clear();distant.clear();state=stamp;}for(var source:sources)factors[source.id]=!on?0:
    source.kind==Kind.CANDLE_CHANDELIER?.94+.06*Math.sin(tick*.3+source.id):1;}
  /** Unified shadow decision for all live light emitters. Investigations use
   * HouseMap's existing 3D doors, colliders and multi-storey visibility.
@@ -137,7 +144,7 @@ public final class FixtureLighting {
  public List<Source> sources(){return List.copyOf(sources);}
  public void frame(RoomLighting circuits,int tick){
   resetStatistics();
-  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;sight.clear();colours.clear();}
+  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;sight.clear();colours.clear();distant.clear();}
   StringBuilder stamp=new StringBuilder();for(var source:sources){double f;
    if(source.room==14)f=1;
    else if(source.kind==Kind.CANDLE_CHANDELIER)f=.94+.06*Math.sin(tick*.37+source.id*2.1);
@@ -147,8 +154,9 @@ public final class FixtureLighting {
    if(source.fixture>0&&source.kind!=Kind.TELEVISION&&source.kind!=Kind.TABLE_LAMP&&!map.fixtures().state(source.fixture).active())f=0;
    factors[source.id]=f;stamp.append(Math.round(f*1000)).append(',');
   }
-  if(!state.contentEquals(stamp)){state=stamp.toString();colours.clear();}
+  if(!state.contentEquals(stamp)){state=stamp.toString();colours.clear();distant.clear();}
   if(sight.size()>200000)sight.clear();if(colours.size()>150000)colours.clear();
+   if(distant.size()>15000)distant.clear();
  }
  private static double smooth(double lo,double hi,double value){double t=Math.max(0,Math.min(1,(value-lo)/(hi-lo)));return t*t*(3-2*t);}
  /** Source-to-surface cone, not a screen-space flashlight-shaped tint. */
@@ -156,6 +164,29 @@ public final class FixtureLighting {
   case FLUORESCENT->smooth(.48,.72,dot);case TELEVISION->Math.pow(Math.max(0,dot),2.2);
   case TABLE_LAMP->.07+.86*smooth(.32,.76,dot)+.24*smooth(.70,.96,-dot);
   case FROSTED_DOME->.18+.82*smooth(-.08,.42,dot);default->1;};}
+ /**
+  * Far-away EXTERIOR probe LOD only. Near/on-building surfaces preserve the
+  * full 1/16m cached shadow tests. A coarse cell is reused only if the
+  * authoritative 3D collision/visibility query confirms the SAME visible
+  * side of geometry; this prevents lights crossing door and wall boundaries.
+  * The one short probe visibility check replaces many source-to-point rays.
+  */
+ public RGB sampleDistanceLod(int room,double x,double y,double z,double viewDistance){
+  if(map==null||room<0||!map.outside(room)||viewDistance<18
+      ||!Double.isFinite(viewDistance))return sample(room,x,y,z);
+  lodQueries++;
+  var key=new DistantCell(room,Math.round(x*2),Math.round(y*2),Math.round(z*2));
+  var cached=distant.get(key);
+  if(cached!=null){
+   lodVisibilityChecks++;
+   if(map.clearLineOfSight(cached.x,cached.y,cached.z,x,y,z)){
+    lodHits++;return cached.light;
+   }
+  }
+  RGB result=sample(room,x,y,z);
+  distant.put(key,new DistantProbe(x,y,z,result));
+  return result;
+ }
  public RGB sample(int room,double x,double y,double z){
   samples++;
   Key key=new Key(room,Math.round(x*16),Math.round(y*16),Math.round(z*16));RGB cached=colours.get(key);if(cached!=null){cacheHits++;return cached;}
