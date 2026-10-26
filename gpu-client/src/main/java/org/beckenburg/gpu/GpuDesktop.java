@@ -424,6 +424,28 @@ public final class GpuDesktop {
   ENGINE.submit(new GpuWorldRenderer.Frame(scene,id1,640,360,275.4f,0,0,
       List.of(initial),true,0,0,0,0,0));
   var first=directGpu(scene,id1,"first resident upload");
+  var transfers=ENGINE.readbackDetail();
+  var totalTiming=ENGINE.frameTiming();
+  long expectedPixels=640L*360;
+  if(transfers==null||totalTiming==null||
+       transfers.sceneId()!=scene||transfers.frameId()!=id1||
+       transfers.width()!=640||transfers.height()!=360||
+       transfers.colorBytes()!=expectedPixels*4||
+       transfers.depthBytes()!=expectedPixels*Float.BYTES||
+       transfers.colorSyncNs()<0||transfers.depthSyncNs()<0||
+       transfers.cpuConversionNs()<0||
+       transfers.colorSyncNs()+transfers.depthSyncNs()+transfers.cpuConversionNs()
+           >totalTiming.readbackAndCopyNs())
+   throw new AssertionError("Incorrect real GPU color/depth readback accounting");
+  int validDepth=0;
+  for(float d:first.depth())if(Float.isFinite(d))validDepth++;
+  if(validDepth<50)throw new AssertionError("GPU depth needed by ghost overlays was lost");
+  System.out.println("GPU E0 READBACK PASS dimensions="+transfers.width()+"x"+transfers.height()+
+      " color_bytes="+transfers.colorBytes()+" depth_bytes="+transfers.depthBytes()+
+      " color_glread_ms="+transfers.colorSyncNs()/1e6+
+      " depth_glread_ms="+transfers.depthSyncNs()/1e6+
+      " conversion_ms="+transfers.cpuConversionNs()/1e6+
+      " finite_depth_pixels="+validDepth);
   var firstUpload=ENGINE.uploadStats();
   if(firstUpload.uploadedBytes()!=vertices.length*Float.BYTES
        ||firstUpload.reusedBatches()!=0)

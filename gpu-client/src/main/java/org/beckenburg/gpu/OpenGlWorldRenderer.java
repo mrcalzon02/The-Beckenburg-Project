@@ -135,6 +135,13 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
      long readbackAndCopyNs,long totalNs){}
  private volatile FrameTiming frameTiming;
  public FrameTiming frameTiming(){return frameTiming;}
+ /** Actual GL worker call-wall times. glReadPixels duration may include
+  * GPU synchronization; it is NOT a dedicated GPU timestamp query. */
+ public record ReadbackDetail(long sceneId,long frameId,int width,int height,
+      long colorBytes,long depthBytes,long colorSyncNs,long depthSyncNs,
+      long cpuConversionNs){}
+ private volatile ReadbackDetail readbackDetail;
+ public ReadbackDetail readbackDetail(){return readbackDetail;}
  private long lastSlowReportNs;
  public CompletableFuture<String> initialization(){return initialized;}
  @Override public boolean ready(){return ready&&!closed;}
@@ -302,10 +309,13 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   // glFinish beforehand stalls the entire graphics queue for no benefit.
   long rasterReady=System.nanoTime();
   colorBytes.clear();depthFloats.clear();
+  long colorReadStart=System.nanoTime();
   Gdx.gl.glReadPixels(0,0,targetWidth,targetHeight,
     GL20.GL_RGBA,GL20.GL_UNSIGNED_BYTE,colorBytes);
+  long colorReadEnd=System.nanoTime();
   Gdx.gl.glReadPixels(0,0,targetWidth,targetHeight,
     GL20.GL_DEPTH_COMPONENT,GL20.GL_FLOAT,depthFloats);
+  long depthReadEnd=System.nanoTime();
   int[] argb=new int[targetWidth*targetHeight];
   float[] depth=new float[argb.length];
   for(int row=0;row<targetHeight;row++){
@@ -320,6 +330,13 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
         (float)(2*NEAR*FAR/(FAR+NEAR-(2*d-1)*(FAR-NEAR)));
    }
   }
+  long conversionEnd=System.nanoTime();
+  readbackDetail=new ReadbackDetail(frame.sceneId(),frame.frameId(),
+      targetWidth,targetHeight,
+      (long)targetWidth*targetHeight*4,
+      (long)targetWidth*targetHeight*Float.BYTES,
+      colorReadEnd-colorReadStart,depthReadEnd-colorReadEnd,
+      conversionEnd-depthReadEnd);
   target.end();
   uploadStats=new UploadStats(frame.sceneId(),frame.frameId(),
       frameUploadedBatches,frameReusedBatches,
@@ -335,6 +352,10 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
       " target="+targetWidth+"x"+targetHeight+
       " raster_ms="+(rasterReady-started)/1_000_000+
       " readback_ms="+(finished-rasterReady)/1_000_000+
+      " color_glread_ms="+(colorReadEnd-colorReadStart)/1_000_000+
+      " depth_glread_ms="+(depthReadEnd-colorReadEnd)/1_000_000+
+      " cpu_convert_ms="+(conversionEnd-depthReadEnd)/1_000_000+
+      " readback_bytes="+(readbackDetail.colorBytes()+readbackDetail.depthBytes())+
       " uploaded_batches="+frameUploadedBatches+
       " reused_batches="+frameReusedBatches+
       " uploaded_bytes="+frameUploadBytes+
