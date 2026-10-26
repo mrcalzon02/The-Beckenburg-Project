@@ -21,6 +21,7 @@ import java.nio.FloatBuffer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicLong;
@@ -99,6 +100,10 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private final Map<Integer,Texture> textures=new HashMap<>();
  private final Map<Integer,Mesh> meshes=new HashMap<>();
  private final Map<Integer,Integer> capacity=new HashMap<>();
+ // Exact content equality rather than a hash-only key ensures a mesh is
+ // uploaded whenever dynamic geometry or authored lighting actually changes.
+ private final Map<Integer,float[]> uploadedVertices=new HashMap<>();
+ private long uploadedSceneId=-1;
  private long lastSlowReportNs;
  public CompletableFuture<String> initialization(){return initialized;}
  @Override public boolean ready(){return ready&&!closed;}
@@ -170,6 +175,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   Mesh existing=meshes.get(material);
   if(existing!=null&&capacity.get(material)>=vertices)return existing;
   if(existing!=null)existing.dispose();
+  uploadedVertices.remove(material);
   int size=1;while(size<vertices)size*=2;
   Mesh created=new Mesh(false,size,0,
    new VertexAttribute(VertexAttributes.Usage.Position,3,"a_position"),
@@ -179,6 +185,13 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  private void draw(Frame frame){
   long started=System.nanoTime();
+  if(uploadedSceneId!=frame.sceneId()){
+   // A camera/mission change must invalidate the last scene's batches.
+   uploadedSceneId=frame.sceneId();
+   uploadedVertices.clear();
+  }
+  long frameUploadBytes=0,frameReusedBytes=0;
+  int frameUploadedBatches=0,frameReusedBatches=0;
   resizeTarget(frame.width(),frame.height());
   target.begin();
   Gdx.gl.glViewport(0,0,targetWidth,targetHeight);
@@ -206,7 +219,18 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    int vertexCount=surface.vertices().length/8;
    if(vertexCount==0)continue;
    Mesh draw=mesh(surface.material(),vertexCount);
-   draw.setVertices(surface.vertices());
+   float[] incoming=surface.vertices();
+   long bytes=(long)incoming.length*Float.BYTES;
+   float[] retained=uploadedVertices.get(surface.material());
+   if(retained!=null&&Arrays.equals(retained,incoming)){
+    frameReusedBytes+=bytes;
+    frameReusedBatches++;
+   }else{
+    draw.setVertices(incoming);
+    uploadedVertices.put(surface.material(),incoming);
+    frameUploadBytes+=bytes;
+    frameUploadedBatches++;
+   }
    texture(surface.material()).bind(0);
    draw.render(shader,GL20.GL_TRIANGLES,0,vertexCount);
   }
@@ -242,6 +266,10 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
       " target="+targetWidth+"x"+targetHeight+
       " raster_ms="+(rasterReady-started)/1_000_000+
       " readback_ms="+(finished-rasterReady)/1_000_000+
+      " uploaded_batches="+frameUploadedBatches+
+      " reused_batches="+frameReusedBatches+
+      " uploaded_bytes="+frameUploadBytes+
+      " reuse_saved_bytes="+frameReusedBytes+
       " superseded="+supersededFrames.get());
   }
  }
@@ -255,6 +283,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  @Override public void dispose(){
   closed=true;ready=false;
+  uploadedVertices.clear();
   for(Mesh mesh:meshes.values())mesh.dispose();
   for(Texture texture:textures.values())texture.dispose();
   if(target!=null)target.dispose();
