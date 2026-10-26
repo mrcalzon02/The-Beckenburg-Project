@@ -255,7 +255,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
     frameReusedBatches++;
    }else{
     draw.setVertices(incoming);
-    uploadedVertices.put(surface.material(),incoming);
+    // Snapshot the data actually copied into the GL VBO. If a caller later
+    // reuses/mutates its float array, an alias must not produce a false hit.
+    uploadedVertices.put(surface.material(),Arrays.copyOf(incoming,incoming.length));
     frameUploadBytes+=bytes;
     frameUploadedBatches++;
    }
