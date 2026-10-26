@@ -10,11 +10,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * is installed at startup by the separately packaged GPU entry point.
  */
 public interface GpuWorldRenderer {
-    /** Interleaved camera-space x,y,z, UV u,v and lit RGB components. */
-    record Surface(int material,float[] vertices) {
+    /** Interleaved world/camera-space x,y,z, UV and RGB.
+     * resourceId=0 preserves the legacy per-frame batch contract.
+     * A positive ID identifies a scene-owned resident VBO; revision changes
+     * are the caller's explicit guarantee that changed vertex/light data
+     * must be uploaded. A draw-only resident descriptor carries no array.
+     * Never use an unchanged revision after editing geometry or lighting. */
+    record Surface(int material,float[] vertices,long resourceId,long revision,int vertexCount) {
+        public Surface(int material,float[] vertices){
+            this(material,Objects.requireNonNull(vertices),0,0,vertices.length/8);
+        }
+        public Surface(int material,float[] vertices,long resourceId,long revision){
+            this(material,Objects.requireNonNull(vertices),resourceId,revision,vertices.length/8);
+        }
+        public static Surface drawResident(int material,long resourceId,long revision,int vertexCount){
+            return new Surface(material,new float[0],resourceId,revision,vertexCount);
+        }
         public Surface {
             Objects.requireNonNull(vertices);
-            if(vertices.length%24!=0)throw new IllegalArgumentException("Invalid GPU triangle batch");
+            if(vertices.length%24!=0||resourceId<0||revision<0
+                ||vertexCount<0||vertexCount%3!=0
+                ||(resourceId==0&&(revision!=0||vertexCount!=vertices.length/8))
+                ||(resourceId>0&&(revision==0||vertexCount==0
+                    ||(vertices.length>0&&vertexCount!=vertices.length/8))))
+                throw new IllegalArgumentException("Invalid GPU triangle batch or residency descriptor");
         }
     }
     /**
