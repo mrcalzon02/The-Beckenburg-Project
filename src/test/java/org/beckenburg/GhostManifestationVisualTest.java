@@ -30,7 +30,9 @@ public final class GhostManifestationVisualTest {
         check(front.getColorModel().hasAlpha(),"generic sprite keeps Mimic alpha");
         int transparent=0,visible=0;
         for(int p:pixels(front)){
-            if((p>>>24)==0)transparent++;
+            // Original atlas contract treats alpha below the renderer's 24 cutoff
+            // as transparent; source cutouts need not contain literal alpha=0.
+            if((p>>>24)<24)transparent++;
             if((p>>>24)>=24)visible++;
         }
         check(transparent>75&&visible>=50,"Mimic's real silhouette and transparent matte");
