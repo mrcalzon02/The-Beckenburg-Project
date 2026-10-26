@@ -11,6 +11,25 @@ public final class GpuWorldRendererContractTest {
   var triangle=new GpuWorldRenderer.Surface(-1,new float[24]);
   var f=new GpuWorldRenderer.Frame(9,10,640,360,275.4f,1f,.7f,List.of(triangle));
   check(f.surfaces().size()==1&&f.width()==640,"Frame preserves real geometry and display size");
+  check(!f.worldSpace(),"Legacy callers still receive camera-space geometry");
+  var world=new GpuWorldRenderer.Frame(9,11,640,360,275.4f,1f,.7f,
+      List.of(triangle),true,13f,2.5f,44f,-.4f,-.15f);
+  check(world.worldSpace()&&world.cameraX()==13f&&world.cameraY()==2.5f
+          &&world.cameraZ()==44f&&world.yaw()==-.4f&&world.pitch()==-.15f,
+      "World-space vertices and explicit GPU camera uniforms must survive submit contract");
+  var lit=new GpuWorldRenderer.Frame(9,12,640,360,275.4f,1f,.7f,
+      List.of(triangle),true,13f,2.5f,44f,-.4f,-.15f,
+      true,.72f,7.5f,.44f,false);
+  check(lit.lampOn()&&lit.lampIntensity()==.72f&&lit.lampReach()==7.5f
+      &&lit.lampWidth()==.44f&&!lit.flameLamp(),
+      "GPU flashlight settings survive the world-space scene bridge");
+  check(!world.lampOn()&&!f.lampOn(),
+      "Legacy GPU calls must not invent flashlight illumination");
+  denied=false;
+  try{new GpuWorldRenderer.Frame(9,11,640,360,275.4f,1f,.7f,
+      List.of(triangle),true,Float.NaN,0,0,0,0);}
+  catch(IllegalArgumentException expected){denied=true;}
+  check(denied,"GPU world camera may not carry non-finite positions");
   denied=false;
   try{new GpuWorldRenderer.Result(9,10,640,360,new int[100],new float[100]);}
   catch(IllegalArgumentException expected){denied=true;}

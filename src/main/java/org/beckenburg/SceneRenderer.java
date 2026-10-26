@@ -1425,12 +1425,27 @@ public final class SceneRenderer {
         dst.vertex(gpuLitVertex(face.c,face.cu,face.cv,face.material,room,face.nc),face.color);
     }
     private Vertex gpuLitVertex(Point p,double u,double v,int material,int room,Point normal){
-        var result=litVertex(p,u,v,material,room);var at=result.p;
-        if(normal!=null){var n=fixtureLighting.sampleNormal(room,p.x,p.y,p.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,p.x,p.y,p.z);result=new Vertex(at,u,v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));}
-        double beam=at.z>NEAR?lampBeam(at.z,Math.hypot(at.x,at.y)/at.z):0;
-        if(normal!=null){double dx=x-p.x,dy=eyeHeight-p.y,dz=z-p.z,d=Math.sqrt(dx*dx+dy*dy+dz*dz);beam*=.12+.88*Math.max(0,(normal.x*dx+normal.y*dy+normal.z*dz)/Math.max(.001,d));}
-        return new Vertex(at,u,v,result.r+beam,result.g+beam,result.b+beam);
+        var result=litVertex(p,u,v,material,room,true);
+        if(normal!=null){var n=fixtureLighting.sampleNormal(room,p.x,p.y,p.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,p.x,p.y,p.z);result=new Vertex(p,u,v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));}
+        // Static fixture/emissive and occlusion-approved local lights retain
+        // their CPU probes. The handheld camera lamp is now evaluated for
+        // every visible fragment by OpenGL, rather than baked per vertex.
+        // Camera-origin light cannot illuminate walls hidden behind the
+        // depth-tested foreground, and this removes per-vertex cone updates.
+        return new Vertex(p,u,v,result.r,result.g,result.b);
     }
+    /** Timings are CPU-side costs, not GPU execution timestamps. */
+    public record FrameDiagnostics(long totalNs,long sceneBuildNs,long geometryNs,long effectsNs,
+        int faces,int frustumFaces,int sceneryTotal,int sceneryVisible,
+        long submittedTriangles,boolean gpu,boolean gpuReadbackFresh,
+        boolean gpuReadbackAvailable,int room,int width,int height,
+        FixtureLighting.FrameStats lighting,long depthRejectedFaces) {}
+    private volatile FrameDiagnostics lastFrameDiagnostics;
+    public FrameDiagnostics frameDiagnostics(){return lastFrameDiagnostics;}
+    private long depthRejectedFaces;
+    private int lastGpuFrustumFaces;
+    private long lastGpuSubmittedTriangles;
+    private boolean lastGpuReadbackFresh,lastGpuReadbackAvailable;
     private final long gpuSceneId=GpuWorldRenderer.nextId();
     private long lastSubmittedGpuFrame;
     private GpuWorldRenderer.Result pinnedGpuFrame;
@@ -1444,8 +1459,10 @@ public final class SceneRenderer {
         if(!backend.ready())throw new IllegalStateException(
             "OpenGL renderer stopped before the game frame");
         var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
+        lastGpuFrustumFaces=0;
         for(Face f:faces){
             if(!faceInFrustum(f))continue;
+            lastGpuFrustumFaces++;
             int room=f.room>=0?f.room:map==null?
                 (((f.a.x+f.b.x+f.c.x)/3<0||(f.a.x+f.b.x+f.c.x)/3>CastleHubMap.WIDTH
                     ||(f.a.z+f.b.z+f.c.z)/3<0||(f.a.z+f.b.z+f.c.z)/3>CastleHubMap.HEIGHT)?13:0):
@@ -1454,18 +1471,27 @@ public final class SceneRenderer {
             appendGpuFace(f,room,0,batches);
         }
         var surfaces=new java.util.ArrayList<GpuWorldRenderer.Surface>(batches.size());
-        for(var entry:batches.entrySet())
-            surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),
-                entry.getValue().complete()));
+        lastGpuSubmittedTriangles=0;
+        for(var entry:batches.entrySet()){
+            float[] vertices=entry.getValue().complete();
+            lastGpuSubmittedTriangles+=vertices.length/24;
+            surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),vertices));
+        }
         long submitted=GpuWorldRenderer.nextId();
         if(activeWater!=null&&!activeWater.bodies().isEmpty())waterViews.put(submitted,waterView(waterClock));
         consumedWaterView=null;
         lastSubmittedGpuFrame=submitted;
         backend.submit(new GpuWorldRenderer.Frame(gpuSceneId,submitted,
             renderWidth,renderHeight,(float)focal,
-            (float)psxPreset.snap,(float)psxPreset.affine,surfaces));
+            (float)psxPreset.snap,(float)psxPreset.affine,surfaces,
+            true,(float)this.x,(float)eyeHeight,(float)this.z,
+            (float)yaw,(float)pitch,
+            lamp,(float)lampIntensity,(float)lampReach,
+            (float)lampWidth,flameLamp));
         GpuWorldRenderer.Result available=pinnedGpuFrame==null?backend.latest():pinnedGpuFrame;pinnedGpuFrame=null;
-        if(GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight)){
+        lastGpuReadbackAvailable=GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight);
+        lastGpuReadbackFresh=lastGpuReadbackAvailable&&available.frameId()==submitted;
+        if(lastGpuReadbackAvailable){
             consumedWaterView=waterViews.get(available.frameId());
             int[] image=available.argb();
             float[] zbuffer=available.depth();
@@ -2157,6 +2183,8 @@ public final class SceneRenderer {
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
+        long frameBegin=System.nanoTime();
+        depthRejectedFaces=0;
         waterCastle=null;activeWater=waterOverride==null?WorldWater.module(map.level().water()):waterOverride;
         paintSky(map,clock);
         int[] hazeBackground=map.nativeSite()?pixels.clone():null;
@@ -2171,8 +2199,8 @@ public final class SceneRenderer {
         int visibleFaces=0;waterClock=clock;
         boolean gpuFrame=drawGpuFaces(geometry,map);
         if(gpuFrame){
-            // GPU performs perspective raster, source material sampling and depth.
-            visibleFaces=geometry.size();
+            // Count actual frustum-submitted geometry, not every built face.
+            visibleFaces=lastGpuFrustumFaces;
         }else{
             for(Face face:geometry){
                 if(!faceInFrustum(face))continue;
@@ -2196,6 +2224,16 @@ public final class SceneRenderer {
         int localRoom=map.roomAt(x,eyeHeight-.85,z);
         GhostHauntingFolio.paint(pixels,renderWidth,renderHeight,hauntings,
             localRoom,(int)Math.floor(clock*10));
+        long finished=System.nanoTime();
+        lastFrameDiagnostics=new FrameDiagnostics(finished-frameBegin,
+            geometryReady-geometryStart,geometryRendered-geometryReady,
+            finished-geometryRendered,geometry.size(),visibleFaces,
+            instanceStats.instances(),instanceStats.visible(),
+            gpuFrame?lastGpuSubmittedTriangles:visibleFaces,
+            gpuFrame,gpuFrame&&lastGpuReadbackFresh,
+            gpuFrame&&lastGpuReadbackAvailable,
+            localRoom,renderWidth,renderHeight,fixtureLighting.frameStats(),
+            depthRejectedFaces);
     }
     /** Screen-distance lighting tessellation budget: 64 children at most,
      * rather than 256 for every large surface regardless of viewing distance.
@@ -2208,10 +2246,56 @@ public final class SceneRenderer {
     }
     private static Point mid(Point a,Point b){return new Point((a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2);}
     private static double edge2(Point a,Point b){return (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y)+(a.z-b.z)*(a.z-b.z);}
+    /** 
+     * CPU fallback only: exact conservative screen-bounds rejection against
+     * ALREADY DRAWN depth. If even the triangle's NEAREST point is behind
+     * every pixel in its snapped raster bounding box, none of its pixels
+     * could win the depth test. No occlusion guess, no portal assumptions,
+     * no GPU stale readback, no visual or evidence state leak.
+     *
+     * Bound the query to small projected triangles: scanning a whole wall
+     * would be slower than simply drawing it. Near-plane crossings are
+     * deliberately left to the existing clipper.
+     */
+    private boolean depthEarlyReject=true;
+    /** A reference route for visual parity and performance regression tests. */
+    void setDepthEarlyReject(boolean enabled){depthEarlyReject=enabled;}
+    private boolean fullyDepthOccluded(Point a,Point b,Point c){
+        // GPU frames may be asynchronous: never compare current geometry to
+        // the previous completed GPU color/depth readback.
+        if(!depthEarlyReject||GpuWorldRenderer.active()!=null)return false;
+        double near=Math.min(a.z,Math.min(b.z,c.z));
+        if(near<=NEAR || !Double.isFinite(near))return false;
+        double ax=PsxPipeline.snap(renderWidth*.5+a.x/a.z*focal,psxPreset);
+        double bx=PsxPipeline.snap(renderWidth*.5+b.x/b.z*focal,psxPreset);
+        double cx=PsxPipeline.snap(renderWidth*.5+c.x/c.z*focal,psxPreset);
+        double ay=PsxPipeline.snap(renderHeight*.5-a.y/a.z*focal,psxPreset);
+        double by=PsxPipeline.snap(renderHeight*.5-b.y/b.z*focal,psxPreset);
+        double cy=PsxPipeline.snap(renderHeight*.5-c.y/c.z*focal,psxPreset);
+        if(!Double.isFinite(ax+bx+cx+ay+by+cy))return false;
+        int x0=Math.max(0,(int)Math.floor(Math.min(ax,Math.min(bx,cx))));
+        int x1=Math.min(renderWidth-1,(int)Math.ceil(Math.max(ax,Math.max(bx,cx))));
+        int y0=Math.max(0,(int)Math.floor(Math.min(ay,Math.min(by,cy))));
+        int y1=Math.min(renderHeight-1,(int)Math.ceil(Math.max(ay,Math.max(by,cy))));
+        if(x0>x1||y0>y1)return true;
+        // Retain exact source shading on large surfaces.
+        if((long)(x1-x0+1)*(y1-y0+1)>144)return false;
+        double nearest=near-1e-5;
+        for(int py=y0;py<=y1;py++)
+            for(int px=x0;px<=x1;px++)
+                if(depths[py*renderWidth+px]>=nearest)return false;
+        return true;
+    }
     /** Large walls need real intermediate light samples so narrow beams cannot become room-wide tints. */
     private void drawLitFace(Face f,int room,int depth){
         Point ca0=camera(f.a),cb0=camera(f.b),cc0=camera(f.c);double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
         if(ca0.z<NEAR&&cb0.z<NEAR&&cc0.z<NEAR||ca0.x>ca0.z*hx&&cb0.x>cb0.z*hx&&cc0.x>cc0.z*hx||ca0.x< -ca0.z*hx&&cb0.x< -cb0.z*hx&&cc0.x< -cc0.z*hx||ca0.y>ca0.z*hy&&cb0.y>cb0.z*hy&&cc0.y>cc0.z*hy||ca0.y< -ca0.z*hy&&cb0.y< -cb0.z*hy&&cc0.y< -cc0.z*hy)return;
+        // Software depth is authoritative for this *current* frame only.
+        // Do not attempt this early-depth test in async GPU submission.
+        if(fullyDepthOccluded(ca0,cb0,cc0)){
+            depthRejectedFaces++;
+            return;
+        }
 
         if(room>=0&&room<12&&(lightingMap==null||!lightingMap.nativeSite())
             &&depth<lightingSubdivisionLimit(Math.max(0,
@@ -2266,6 +2350,10 @@ public final class SceneRenderer {
     public void setEditorSelection(double x,double y,double z){editorSelection=new double[]{x,y,z};}
     public void clearEditorSelection(){editorSelection=null;}
     private Vertex litVertex(Point p,double u,double v,int material,int room){
+        return litVertex(p,u,v,material,room,false);
+    }
+    private Vertex litVertex(Point p,double u,double v,int material,int room,
+                             boolean gpuWorldSpace){
         // Sample on the visible side of opaque surfaces. Sampling exactly
         // on a zero-thickness wall/ceiling made a lamp on the OTHER side
         // illuminate this face because the wall hit occurred at the ray end.
@@ -2274,7 +2362,7 @@ public final class SceneRenderer {
         double viewDistance=Math.sqrt(vx*vx+vy*vy+vz*vz);
         double shift=viewDistance<.0001?0:Math.min(.075,viewDistance*.30)/viewDistance;
         double litX=p.x+vx*shift,litY=p.y+vy*shift,litZ=p.z+vz*shift;
-        var rgb=fixtureLighting.sample(room,litX,litY,litZ);
+        var rgb=fixtureLighting.sampleDistanceLod(room,litX,litY,litZ,viewDistance);
         var glow=fixtureLighting.emission(material,p.x,p.y,p.z);
         double r=Math.max(rgb.r(),glow.r()),g=Math.max(rgb.g(),glow.g()),b=Math.max(rgb.b(),glow.b());
         if(material==OPTICAL_SIGNAL){r=1.2;g=1.2;b=1.2;}
@@ -2289,7 +2377,9 @@ public final class SceneRenderer {
             double dx=p.x-source.x(),dy=p.y-(source.y()+.2),dz=p.z-source.z(),radius=source.tool().equals("FIRELIGHT")?4.8:3.2,d=Math.sqrt(dx*dx+dy*dy+dz*dz);
             if(d<radius&&lightingMap.clearLineOfSight(source.x(),source.y()+.25,source.z(),p.x,p.y+.04,p.z)){double add=(1-d/radius)*.65;r+=add;g+=add*(source.tool().equals("FIRELIGHT")?.65:1);b+=add*(source.tool().equals("FIRELIGHT")?.28:1);}
         }
-        return new Vertex(camera(p),u,v,r,g,b);
+        // World-space shader owns camera transforms. Avoid the otherwise
+        // discarded CPU world-to-view conversion on every GPU vertex.
+        return new Vertex(gpuWorldSpace?p:camera(p),u,v,r,g,b);
     }
     private record DotsReceivers(List<Face> faces,DotsRayField.Mesh mesh){}
     private final java.util.Map<Integer,DotsReceivers> dotsReceivers=new java.util.HashMap<>();

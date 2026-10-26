@@ -1,5 +1,6 @@
 # Mandatory Java 17 Beckenburg regression suite; order is preserved from build.cmd.
 BeckenburgDiagnosticsTest
+BeckenburgForcedTerminationTest
 GraphicsOptionsTest
 PsxPipelineTest
 PsxHorrorUiTest
@@ -13,6 +14,7 @@ CampaignCareerTest
 CampaignProgressionAndStoreTest
 CampaignStoryProgressionTest
 CampaignPartyRulesTest
+LevelOpeningFlyoverTest
 CampaignAllyTest
 CampaignAllyChatTest
 CastleOrientationTest
@@ -208,6 +210,10 @@ FixtureSoundscapeTest
 DomesticFitoutTest
 LevelEnclosureTest
 PhysicalLightingTest
+FixtureLightingLodTest
+LightingCacheRetentionTest
+LightVolumePreviewTest
+RendererDepthOcclusionTest
 SurroundingClearanceTest
 
 CrouchAndOutdoorHidingTest

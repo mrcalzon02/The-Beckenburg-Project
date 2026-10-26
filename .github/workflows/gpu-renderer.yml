@@ -6,6 +6,9 @@ on:
       - 'gpu-client/**'
       - 'src/main/java/org/beckenburg/GpuWorldRenderer.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/main/java/org/beckenburg/DebugPerformanceHud.java'
+      - 'src/main/java/org/beckenburg/FixtureLighting.java'
+      - 'src/test/java/org/beckenburg/VanHouseViewportProfileTest.java'
       - '.github/workflows/gpu-renderer.yml'
   workflow_dispatch:
 permissions:
@@ -52,6 +55,20 @@ jobs:
       - name: Package canonical assets with Java 17
         shell: cmd
         run: call build.cmd package
+      - name: Measure actual House viewports from van to interior (CPU baseline + screenshot HUD)
+        shell: cmd
+        run: |
+          if not exist build\\test mkdir build\\test
+          javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\VanHouseViewportProfileTest.java || exit /b 1
+          java -Djava.awt.headless=true -Dbeckenburg.debug.overlay=true -ea -cp build\\classes;build\\test org.beckenburg.VanHouseViewportProfileTest || exit /b 1
+      - name: Preserve viewport profile frames, stage CSV and HUD even if another GPU check fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-van-house-viewport-profile
+          path: build/e2e/viewport-profile/**
+          if-no-files-found: warn
+          retention-days: 14
       - name: Package actual OpenGL 3.3 backend and source assets
         shell: pwsh
         run: |

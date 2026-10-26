@@ -7,6 +7,7 @@ import org.beckenburg.HouseMap;
 import org.beckenburg.InvestigationGame;
 import org.beckenburg.RoomLighting;
 import org.beckenburg.SceneRenderer;
+import org.beckenburg.LevelOpeningFlyover;
 import org.beckenburg.CastleHubMap;
 import org.beckenburg.BeckenburgDiagnostics;
 import java.awt.image.BufferedImage;
@@ -144,6 +145,160 @@ public final class GpuDesktop {
       "average_ms="+totalNanos/6/1_000_000+
       " worst_ms="+maxNanos/1_000_000);
  }
+ private static GpuWorldRenderer.Result awaitGpu(SceneRenderer renderer,
+      String stage)throws Exception{
+  long expected=renderer.submittedGpuFrameId();
+  if(expected<=0)throw new AssertionError("No GPU submission: "+stage);
+  long until=System.nanoTime()+TimeUnit.SECONDS.toNanos(30);
+  while(System.nanoTime()<until){
+   var found=ENGINE.latest();
+   if(found!=null&&found.frameId()==expected){
+    int visible=0;
+    for(int rgba:found.argb())if((rgba>>>24)>127)visible++;
+    if(visible<250)throw new AssertionError("Empty GPU frame: "+stage+
+        " visible="+visible);
+    return found;
+   }
+   Thread.sleep(35);
+  }
+  throw new AssertionError("Timed out waiting for real GPU frame "+stage);
+ }
+ /** Actual GPU aerial flight must render on every currently playable site. */
+ private static void flyoverSmoke()throws Exception{
+  for(var site:new HouseMap.Site[]{
+      HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
+   var map=new HouseMap(site);
+   var spawn=map.van().spawn(0);
+   var end=new LevelOpeningFlyover.Pose(spawn.x(),map.van().floorY()+1.62,
+       spawn.z(),-.5f,-.09f);
+   var flight=new LevelOpeningFlyover(map,end);
+   SceneRenderer camera=new SceneRenderer();
+   camera.setRenderSize(640,360);
+   camera.roomLights=new RoomLighting();
+   double[] times=site==HouseMap.Site.HOUSE
+       ?new double[]{0,.39,.78,.94}:new double[]{0,.75,.94};
+   for(int index=0;index<times.length;index++){
+    flight.pose(times[index]).apply(camera);
+    camera.drawPractice(map,List.of(),times[index]*7.5);
+    var result=awaitGpu(camera,site+" opening "+index);
+    screenshot(result,String.format(java.util.Locale.ROOT,
+        "level-opening-%s-%02d.png",
+        site.name().toLowerCase(java.util.Locale.ROOT),index));
+    System.out.println("GPU OPENING PASS "+site+" frame="+index+
+        " t="+times[index]+" submitted="+result.frameId());
+   }
+   if(!flight.pose(1).equals(end))throw new AssertionError(
+       "Final aerial frame fails exact Hunter van handoff "+site);
+  }
+ }
+ /**
+  * Measure outstanding CPU lighting while a real GPU context is active.
+  * Observe and report cost; do NOT claim GPU lighting because raster passes.
+  */
+ private static void lightingAudit()throws Exception{
+  var map=new HouseMap(HouseMap.Site.HOUSE);
+  for(int room:new int[]{14,13,12,0,4}){
+   var camera=new SceneRenderer();
+   camera.setRenderSize(640,360);
+   camera.roomLights=new RoomLighting();
+   var eye=map.spawn(room);
+   var target=map.spawn(room==4?0:room==0?4:0);
+   camera.x=eye.x();camera.z=eye.z();
+   camera.eyeHeight=eye.y()+1.62;
+   camera.yaw=Math.atan2(target.x()-eye.x(),target.z()-eye.z());
+   camera.pitch=-.075;
+   long started=System.nanoTime();
+   camera.drawNetwork(map,List.of(),-1,0);
+   var frame=camera.frameDiagnostics();
+   if(frame==null||!frame.gpu())throw new AssertionError(
+       "GPU not active in lighting benchmark at room "+room);
+   var delivered=awaitGpu(camera,"lighting audit room "+room);
+   long elapsed=System.nanoTime()-started;
+   System.out.printf(java.util.Locale.ROOT,
+       "GPU LIGHTING AUDIT room=%d cpu_build_ms=%.2f cpu_gpu_geometry_ms=%.2f "+
+       "cpu_shadow_rays=%d cpu_light_samples=%d cpu_normal_rays=%d "+
+       "submitted_gpu_triangles=%d end_to_end_ms=%.2f frame_id=%d%n",
+       room,frame.sceneBuildNs()/1e6,frame.geometryNs()/1e6,
+       frame.lighting().shadowRays(),frame.lighting().samples(),
+       frame.lighting().normalRays(),frame.submittedTriangles(),
+       elapsed/1e6,delivered.frameId());
+   // This explicitly measures a second draw with no lighting, portal,
+   // fixture or camera change. Camera movement alone must never require
+   // recomputation of static wall-shadow rays.
+   if(room==14||room==0){
+    long warmStart=System.nanoTime();
+    camera.drawNetwork(map,List.of(),-1,0);
+    var reused=camera.frameDiagnostics();
+    var warmResult=awaitGpu(camera,"stable House lightmap room "+room);
+    long warmElapsed=System.nanoTime()-warmStart;
+    System.out.printf(java.util.Locale.ROOT,
+        "GPU LIGHTMAP REUSE room=%d warm_cpu_geometry_ms=%.2f "+
+        "warm_shadow_rays=%d warm_samples=%d warm_cache_hits=%d "+
+        "invalidated_cells=%d light_candidates=%d end_to_end_ms=%.2f frame_id=%d%n",
+        room,reused.geometryNs()/1e6,reused.lighting().shadowRays(),
+        reused.lighting().samples(),reused.lighting().cacheHits(),
+        reused.lighting().invalidatedCells(),
+        reused.lighting().consideredSources(),warmElapsed/1e6,
+        warmResult.frameId());
+    if(reused.lighting().cacheHits()<=0||
+        reused.lighting().shadowRays()>=frame.lighting().shadowRays()){
+     throw new AssertionError(
+         "Unchanged House lighting still recomputes more shadow rays than the cold frame at "+room);
+    }
+   }
+  }
+  System.out.println("PASS five real GPU viewport lighting audits plus warm unchanged-frame reuse at van and house entry");
+ }
+ /**
+  * Real world scene, two frames with identical geometry and CPU fixture
+  * lighting. Only the GPU flashlight uniform changes. This must update the
+  * framebuffer without retransmitting unchanged world VBOs.
+  */
+ private static void flashlightAndResidentMeshSmoke()throws Exception{
+  var map=new HouseMap(HouseMap.Site.HOUSE);
+  var eye=map.spawn(0);
+  var target=map.spawn(4);
+  var camera=new SceneRenderer();
+  camera.setRenderSize(640,360);
+  camera.roomLights=new RoomLighting();
+  camera.x=eye.x();camera.z=eye.z();
+  camera.eyeHeight=eye.y()+1.62;
+  camera.yaw=Math.atan2(target.x()-eye.x(),target.z()-eye.z());
+  camera.pitch=-.07;
+  camera.lamp=false;
+  camera.drawNetwork(map,List.of(),-1,0);
+  var off=awaitGpu(camera,"House with GPU flashlight disabled");
+  var firstUpload=ENGINE.uploadStats();
+  screenshot(off,"house-torch-off.png");
+  camera.lamp=true;
+  camera.drawNetwork(map,List.of(),-1,0);
+  var on=awaitGpu(camera,"House with GPU flashlight enabled");
+  var secondUpload=ENGINE.uploadStats();
+  screenshot(on,"house-torch-on.png");
+  int changed=0,brighter=0;
+  for(int i=0;i<on.argb().length;i++){
+   int dark=off.argb()[i],bright=on.argb()[i];
+   if((dark>>>24)<128||(bright>>>24)<128)continue;
+   if((dark&0xffffff)!=(bright&0xffffff))changed++;
+   int dv=((bright>>16)&255)-((dark>>16)&255)
+       +((bright>>8)&255)-((dark>>8)&255)
+       +(bright&255)-(dark&255);
+   if(dv>8)brighter++;
+  }
+  System.out.println("GPU FLASHLIGHT image_changed_pixels="+changed+
+      " brighter_pixels="+brighter+
+      " initial_uploaded_bytes="+firstUpload.uploadedBytes()+
+      " repeat_uploaded_bytes="+secondUpload.uploadedBytes()+
+      " repeat_reused_bytes="+secondUpload.reusedBytes()+
+      " repeated_batches="+secondUpload.reusedBatches());
+  if(changed<80||brighter<60)throw new AssertionError(
+      "GPU flashlight did not visibly illuminate the real House scene");
+  if(secondUpload.sceneId()!=firstUpload.sceneId()||
+      secondUpload.reusedBatches()==0||secondUpload.reusedBytes()<=0)
+   throw new AssertionError(
+       "Identical authored House VBOs were unexpectedly reuploaded when only GPU torch changed");
+  System.out.println("PASS OpenGL per-fragment flashlight and retained unchanged House VBO uploads");
+ }
  private static void smoke()throws Exception{
   SceneRenderer first=new SceneRenderer();
   screenshot(capture(first,false),"investigation-house.png");
@@ -166,7 +321,10 @@ public final class GpuDesktop {
    throw new IllegalStateException("Castle frame does not show enough visible masonry: "+castlePixels);
   screenshot(castle,"castle-headquarters.png");
   rotationSmoke();
-  System.out.println("PASS Beckenburg OpenGL 3.3 real house and real castle framebuffers");
+  flyoverSmoke();
+  lightingAudit();
+  flashlightAndResidentMeshSmoke();
+  System.out.println("PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse");
  }
  public static void main(String[] args)throws Exception{
   BeckenburgDiagnostics.install();

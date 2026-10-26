@@ -14,6 +14,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private HouseMap map=new HouseMap();
     private final RoomLighting lights=new RoomLighting();
     private final SceneRenderer renderer=new SceneRenderer();
+    private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
+    private LevelOpeningCinematic opening;
     private final SceneRenderer videoRenderer=new SceneRenderer();
     private final java.util.Map<Integer,LanVideoCameras.Camera> videoCameras=new HashMap<>();
     private final java.util.Map<Integer,Boolean> videoPowered=new HashMap<>();
@@ -128,7 +130,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         renderer.roomLights=lights;
         renderer.lamp=false; // a real torch begins OFF until the player switches it on
         mouseLook=new MouseLook(this,(dx,dy)->MouseLook.rotate(renderer,dx,dy),
-            ()->!casefileOpen&&interfaceOpen.isEmpty());
+            ()->opening==null&&!casefileOpen&&interfaceOpen.isEmpty());
         addKeyListener(this);addMouseListener(mouseLook);addMouseMotionListener(mouseLook);
         addMouseListener(new MouseAdapter(){
             @Override public void mousePressed(MouseEvent e){
@@ -172,6 +174,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
     }
     public void close(){
+        if(opening!=null){opening.close();opening=null;}
         releaseVoice();timer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
     }
     private void beginVoice(LanChat.Channel channel){
@@ -240,6 +243,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 videoRenderer.setAdditionalGhostBodies(List.of());
                 renderer.x=map.van().placement().x();
                 renderer.z=map.van().placement().z();
+                if(opening!=null)opening.close();
+                opening=new LevelOpeningCinematic(map,renderer,getWidth(),getHeight());
                 feedback="INVESTIGATION: "+map.site();
             }else if(p.get(0).equals("HAUNT")){
                 GhostHauntingFolio.Occurrence event=GhostHauntingFolio.decode(frame);
@@ -929,6 +934,16 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         selectedCameraOwner=available.get((index+1)%available.size()).owner();
     }
     private void frame(){
+        long diagnosticsStart=System.nanoTime();
+        if(opening!=null){
+            if(opening.complete()||!caseResult.isEmpty()){
+                opening.close();opening=null;
+            }else{
+                opening.update(getWidth(),getHeight());
+                repaint();
+                return; // do not steer the network Hunter during local cinematic
+            }
+        }
         atmosphere.setActive(isShowing());
         int outdoorRoom=map.roomAt(renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z);
         buildingAudio.setContext(outdoorRoom,lights.breaker());buildingAudio.listener(renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,lights.breaker());
@@ -1047,12 +1062,18 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             videoRenderer.drawNetwork(map,new ArrayList<>(peers.values()),
                 seenThroughCamera,tick*.1,List.copyOf(counterMarks));
         }
+        perfHud.sample(System.nanoTime()-diagnosticsStart,renderer,map,peers.size(),"LAN HUNTER");
         repaint();
     }
     @Override protected void paintComponent(Graphics original){
         super.paintComponent(original);Graphics2D g=(Graphics2D)original.create();
         try{
             int h=getHeight();
+            if(opening!=null){
+                opening.draw(g,getWidth(),h);
+                perfHud.draw(g,getWidth(),h);
+                return;
+            }
             GraphicsOptions.current().draw(g,
                 nightVision?NightVisionFilter.apply(renderer.image()):renderer.image(),getWidth(),h);
             if(vanDisplay&&!videoCameras.isEmpty()&&!casefileOpen
@@ -1224,6 +1245,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     g.drawString(raw.length()>max?raw.substring(0,max-3)+"...":raw,33,y+16);
                 }
             }
+            perfHud.draw(g,getWidth(),getHeight());
         }finally{g.dispose();}
     }
     /** Three compact chat rows by default; editing reveals six. No extra menu hierarchy. */
@@ -1431,6 +1453,24 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         return true;
     }
     @Override public void keyPressed(KeyEvent e){
+        if(DebugPerformanceHud.hotkey(e)){repaint();return;}
+        if(opening!=null){
+            if(e.getKeyCode()==KeyEvent.VK_SPACE
+                ||e.getKeyCode()==KeyEvent.VK_ENTER
+                ||e.getKeyCode()==KeyEvent.VK_ESCAPE
+                ||e.getKeyCode()==KeyEvent.VK_W
+                ||e.getKeyCode()==KeyEvent.VK_A
+                ||e.getKeyCode()==KeyEvent.VK_S
+                ||e.getKeyCode()==KeyEvent.VK_D){
+                opening.close();opening=null;
+                keys.clear();mouseLook.release();
+                repaint();
+                if(e.getKeyCode()!=KeyEvent.VK_W
+                    &&e.getKeyCode()!=KeyEvent.VK_A
+                    &&e.getKeyCode()!=KeyEvent.VK_S
+                    &&e.getKeyCode()!=KeyEvent.VK_D)return;
+            }else return;
+        }
         if(chatInput.isVisible())return;
         if(e.getKeyCode()==KeyEvent.VK_M&&insideVan()&&!casefileOpen){
             if(interfaceOpen.equals("MAP"))interfaceOpen="";

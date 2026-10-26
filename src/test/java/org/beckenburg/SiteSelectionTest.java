@@ -24,6 +24,21 @@ public final class SiteSelectionTest {
             }
         }
         ok(ready==3,"house, farmhouse and Ravenshade school are now selectable");
+        // The multiplayer map roster includes authoring-only prototypes that
+        // are not yet entries in the nine-site public mission catalogue.
+        // Iterating it must NEVER break lobby construction or expose a
+        // prototype merely because its HouseMap enum value exists.
+        int multiplayerReady=0;
+        for(HouseMap.Site candidate:HouseMap.Site.values()){
+            boolean selectable=SiteCatalog.playable(candidate);
+            if(selectable)multiplayerReady++;
+            ok(selectable==(candidate==HouseMap.Site.HOUSE
+                ||candidate==HouseMap.Site.FARMHOUSE
+                ||candidate==HouseMap.Site.SCHOOL),
+                "multiplayer availability must match playable authored catalogue: "+candidate);
+        }
+        ok(multiplayerReady==ready && !SiteCatalog.playable(HouseMap.Site.HOLLOW_CREEK),
+            "Hollow Creek prototype cannot crash the lobby or be dispatched as complete");
         ok(!SiteCatalog.Conditions.BLACKOUT.initiallyPowered(),"blackout starts powerless");
         ok(SiteCatalog.Conditions.FOGBOUND.fogMultiplier()>SiteCatalog.Conditions.STANDARD.fogMultiplier(),
             "weather modifies 3D environment");

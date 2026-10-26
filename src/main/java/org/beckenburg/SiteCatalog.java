@@ -43,6 +43,17 @@ public final class SiteCatalog {
         if(!Objects.requireNonNull(chosen).playable())
             throw new IllegalArgumentException(chosen.label+" has no shipped level geometry");
     }
+    /**
+     * Multiplayer lists the entire HouseMap.Site authoring roster, which can
+     * contain native prototypes before they receive a public contract entry.
+     * Never throw during lobby construction or silently advertise an
+     * unfinished prototype (for example HOLLOW_CREEK) as an active mission.
+     */
+    public static boolean playable(HouseMap.Site site){
+        Objects.requireNonNull(site,"site");
+        try{return Location.valueOf(site.name()).playable();}
+        catch(IllegalArgumentException notYetCatalogued){return false;}
+    }
     public static HouseMap.Site mapFor(Location chosen){
         requirePlayable(chosen);
         return HouseMap.Site.valueOf(chosen.name());

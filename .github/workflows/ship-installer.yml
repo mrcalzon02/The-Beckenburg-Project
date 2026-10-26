@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: beckenburg-installer
@@ -78,7 +79,7 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference='Stop'
-          & java '-Djava.awt.headless=false' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.BeckenburgDesktopE2ETest
+          & java '-Djava.awt.headless=false' '-Dbeckenburg.debug.overlay=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.BeckenburgDesktopE2ETest
           if ($LASTEXITCODE -ne 0) { throw "Packaged desktop acceptance failed: $LASTEXITCODE" }
 
 
@@ -98,6 +99,46 @@ jobs:
             if ($contents -notcontains $needed) { throw "Packaged GPU app missing $needed" }
           }
           Copy-Item $gpu build/BeckenburgGPU.jar -Force
+      - name: Require same-commit real OpenGL and flyover GPU acceptance before publishing
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference='Stop'
+          $revision=$env:GITHUB_SHA
+          $current=(& gh api "repos/$env:GITHUB_REPOSITORY/commits/main" --jq '.sha').Trim()
+          if ($current -ne $revision) {
+            throw "Refusing to ship outdated source $revision while main is $current"
+          }
+          $dispatched=$false
+          $deadline=(Get-Date).AddMinutes(33)
+          while ((Get-Date) -lt $deadline) {
+            $runs=@(& gh run list --workflow gpu-renderer.yml --commit $revision --limit 20 --json databaseId,status,conclusion,headSha | ConvertFrom-Json |
+              Where-Object { $_.headSha -eq $revision } | Sort-Object databaseId -Descending)
+            if ($runs.Count -eq 0) {
+              if (-not $dispatched) {
+                Write-Host "No GPU acceptance for $revision; dispatching the required real engine test"
+                & gh workflow run gpu-renderer.yml --ref main
+                if ($LASTEXITCODE -ne 0) { throw "Could not dispatch GPU acceptance" }
+                $dispatched=$true
+              }
+              Start-Sleep -Seconds 15
+              continue
+            }
+            $candidate=$runs[0]
+            if ($candidate.status -eq 'completed') {
+              if ($candidate.conclusion -ne 'success') {
+                throw "Exact-revision GPU acceptance run $($candidate.databaseId) finished $($candidate.conclusion). Installer BLOCKED."
+              }
+              Write-Host "PASS exact source $revision / real Mesa OpenGL House, castle, rotation, opening flyover and GUI: run $($candidate.databaseId)"
+              break
+            }
+            Write-Host "Waiting on exact-revision GPU acceptance $($candidate.databaseId): $($candidate.status)"
+            Start-Sleep -Seconds 20
+          }
+          if (-not $candidate -or $candidate.status -ne 'completed' -or $candidate.conclusion -ne 'success') {
+            throw "GPU acceptance for exact revision $revision did not complete successfully within the bounded gate"
+          }
       - name: Bundle Java runtime with GPU-first Windows application
         shell: pwsh
         run: |

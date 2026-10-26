@@ -21,6 +21,7 @@ import java.nio.FloatBuffer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicLong;
@@ -38,14 +39,28 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  in vec3 a_lighting;
  uniform vec2 u_projection;
  uniform vec2 u_resolution;
+ uniform int u_worldSpace;
+ uniform vec3 u_cameraPosition;
+ uniform vec2 u_cameraAngles;
  uniform float u_vertexSnap;
  out vec2 v_uv;
  noperspective out vec2 v_uvAffine;
  out vec3 v_light;
+ out vec3 v_cameraPoint;
  void main(){
-  float zz=a_position.z;
-  vec4 clip=vec4(a_position.x*u_projection.x,
-   a_position.y*u_projection.y,
+  vec3 cameraPoint=a_position;
+  if(u_worldSpace!=0){
+   vec3 offset=a_position-u_cameraPosition;
+   float cy=cos(u_cameraAngles.x),sy=sin(u_cameraAngles.x);
+   float cp=cos(u_cameraAngles.y),sp=sin(u_cameraAngles.y);
+   float right=-offset.x*cy+offset.z*sy;
+   float forward=offset.x*sy+offset.z*cy;
+   cameraPoint=vec3(right,offset.y*cp-forward*sp,
+                    offset.y*sp+forward*cp);
+  }
+  float zz=cameraPoint.z;
+  vec4 clip=vec4(cameraPoint.x*u_projection.x,
+   cameraPoint.y*u_projection.y,
    zz*((180.0+0.065)/(180.0-0.065))-2.0*180.0*0.065/(180.0-0.065),zz);
   if(u_vertexSnap>0.0&&zz>0.065){
    vec2 native=(clip.xy/clip.w*0.5+0.5)*u_resolution;
@@ -56,6 +71,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   v_uv=a_texCoord0;
   v_uvAffine=a_texCoord0;
   v_light=a_lighting;
+  v_cameraPoint=cameraPoint;
  }
  """;
  private static final String FRAGMENT="""
@@ -63,13 +79,29 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  in vec2 v_uv;
  noperspective in vec2 v_uvAffine;
  in vec3 v_light;
+ in vec3 v_cameraPoint;
  uniform sampler2D u_texture;
  uniform float u_affineWarp;
+ uniform int u_lampOn;
+ uniform int u_flameLamp;
+ uniform float u_lampIntensity;
+ uniform float u_lampReach;
+ uniform float u_lampWidth;
  out vec4 fragColor;
  void main(){
   vec4 surface=texture(u_texture,mix(v_uv,v_uvAffine,u_affineWarp));
   if(surface.a<0.05)discard;
-  fragColor=vec4(clamp(surface.rgb*v_light,0.0,1.0),surface.a);
+  // Eye-mounted flashlight: the depth-tested *visible* surface is the
+  // first obstacle along each camera ray. No unoccluded wall-to-wall source
+  // light is invented here; fixture and portable occlusion remain CPU-owned.
+  float beam=0.0;
+  if(u_lampOn!=0 && v_cameraPoint.z>0.065){
+   float depthFalloff=max(0.0,1.0-v_cameraPoint.z/u_lampReach);
+   float aim=length(v_cameraPoint.xy)/max(0.065,v_cameraPoint.z);
+   float cone=u_flameLamp!=0?1.0:max(0.0,1.0-aim/u_lampWidth);
+   beam=u_lampIntensity*depthFalloff*cone;
+  }
+  fragColor=vec4(clamp(surface.rgb*(v_light+vec3(beam)),0.0,1.0),surface.a);
  }
  """;
  private final AtomicReference<Frame> pending=new AtomicReference<>();
@@ -86,6 +118,15 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private final Map<Integer,Texture> textures=new HashMap<>();
  private final Map<Integer,Mesh> meshes=new HashMap<>();
  private final Map<Integer,Integer> capacity=new HashMap<>();
+ // Exact content equality rather than a hash-only key ensures a mesh is
+ // uploaded whenever dynamic geometry or authored lighting actually changes.
+ private final Map<Integer,float[]> uploadedVertices=new HashMap<>();
+ private long uploadedSceneId=-1;
+ /** Observed on GL worker after an actual completed frame, including copied bytes. */
+ public record UploadStats(long sceneId,long frameId,int uploadedBatches,
+     int reusedBatches,long uploadedBytes,long reusedBytes){}
+ private volatile UploadStats uploadStats;
+ public UploadStats uploadStats(){return uploadStats;}
  private long lastSlowReportNs;
  public CompletableFuture<String> initialization(){return initialized;}
  @Override public boolean ready(){return ready&&!closed;}
@@ -157,6 +198,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   Mesh existing=meshes.get(material);
   if(existing!=null&&capacity.get(material)>=vertices)return existing;
   if(existing!=null)existing.dispose();
+  uploadedVertices.remove(material);
   int size=1;while(size<vertices)size*=2;
   Mesh created=new Mesh(false,size,0,
    new VertexAttribute(VertexAttributes.Usage.Position,3,"a_position"),
@@ -166,6 +208,13 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  private void draw(Frame frame){
   long started=System.nanoTime();
+  if(uploadedSceneId!=frame.sceneId()){
+   // A camera/mission change must invalidate the last scene's batches.
+   uploadedSceneId=frame.sceneId();
+   uploadedVertices.clear();
+  }
+  long frameUploadBytes=0,frameReusedBytes=0;
+  int frameUploadedBatches=0,frameReusedBatches=0;
   resizeTarget(frame.width(),frame.height());
   target.begin();
   Gdx.gl.glViewport(0,0,targetWidth,targetHeight);
@@ -183,14 +232,35 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   shader.setUniformf("u_projection",
     2*focal/targetWidth,2*focal/targetHeight);
   shader.setUniformf("u_resolution",(float)targetWidth,(float)targetHeight);
+  shader.setUniformi("u_worldSpace",frame.worldSpace()?1:0);
+  shader.setUniformf("u_cameraPosition",frame.cameraX(),frame.cameraY(),frame.cameraZ());
+  shader.setUniformf("u_cameraAngles",frame.yaw(),frame.pitch());
   shader.setUniformf("u_vertexSnap",frame.vertexSnap());
   shader.setUniformf("u_affineWarp",frame.affineWarp());
   shader.setUniformi("u_texture",0);
+  shader.setUniformi("u_lampOn",frame.lampOn()?1:0);
+  shader.setUniformi("u_flameLamp",frame.flameLamp()?1:0);
+  shader.setUniformf("u_lampIntensity",frame.lampIntensity());
+  shader.setUniformf("u_lampReach",frame.lampReach());
+  shader.setUniformf("u_lampWidth",frame.lampWidth());
   for(Surface surface:frame.surfaces()){
    int vertexCount=surface.vertices().length/8;
    if(vertexCount==0)continue;
    Mesh draw=mesh(surface.material(),vertexCount);
-   draw.setVertices(surface.vertices());
+   float[] incoming=surface.vertices();
+   long bytes=(long)incoming.length*Float.BYTES;
+   float[] retained=uploadedVertices.get(surface.material());
+   if(retained!=null&&Arrays.equals(retained,incoming)){
+    frameReusedBytes+=bytes;
+    frameReusedBatches++;
+   }else{
+    draw.setVertices(incoming);
+    // Snapshot the data actually copied into the GL VBO. If a caller later
+    // reuses/mutates its float array, an alias must not produce a false hit.
+    uploadedVertices.put(surface.material(),Arrays.copyOf(incoming,incoming.length));
+    frameUploadBytes+=bytes;
+    frameUploadedBatches++;
+   }
    texture(surface.material()).bind(0);
    draw.render(shader,GL20.GL_TRIANGLES,0,vertexCount);
   }
@@ -217,6 +287,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    }
   }
   target.end();
+  uploadStats=new UploadStats(frame.sceneId(),frame.frameId(),
+      frameUploadedBatches,frameReusedBatches,
+      frameUploadBytes,frameReusedBytes);
   latest=new Result(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,argb,depth);
   long finished=System.nanoTime();
   if(finished-started>200_000_000L&&finished-lastSlowReportNs>5_000_000_000L){
@@ -226,6 +299,10 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
       " target="+targetWidth+"x"+targetHeight+
       " raster_ms="+(rasterReady-started)/1_000_000+
       " readback_ms="+(finished-rasterReady)/1_000_000+
+      " uploaded_batches="+frameUploadedBatches+
+      " reused_batches="+frameReusedBatches+
+      " uploaded_bytes="+frameUploadBytes+
+      " reuse_saved_bytes="+frameReusedBytes+
       " superseded="+supersededFrames.get());
   }
  }
@@ -239,6 +316,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  @Override public void dispose(){
   closed=true;ready=false;
+  uploadedVertices.clear();
   for(Mesh mesh:meshes.values())mesh.dispose();
   for(Texture texture:textures.values())texture.dispose();
   if(target!=null)target.dispose();

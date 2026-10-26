@@ -8,6 +8,8 @@ import java.awt.Toolkit;
 import java.awt.Window;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Instant;
@@ -91,6 +93,11 @@ public final class BeckenburgDesktopE2ETest {
             }
         }
         return null;
+    }
+    private static boolean soloOpeningActive(Component game)throws Exception{
+        Field field=game.getClass().getDeclaredField("opening");
+        field.setAccessible(true);
+        return field.get(game)!=null;
     }
     private static int soloFrameCount(Component game)throws Exception{
         Field field=game.getClass().getDeclaredField("frameCount");
@@ -193,12 +200,26 @@ public final class BeckenburgDesktopE2ETest {
                 ()->soloInitialFrameReady(solo)?solo:null,65);
             if(rendered==null)throw new AssertionError(
                 "Solo case first actual sized scene never completed; inspect diagnostics");
+            Boolean opening=waitForResponsive(
+                ()->soloOpeningActive(solo)?Boolean.TRUE:null,3);
+            if(opening==null)throw new AssertionError(
+                "House first frame completed without initiating the authored flyover");
+            capture("04-house-opening-overflight");
+            SwingUtilities.invokeAndWait(()->{
+                KeyEvent skip=new KeyEvent(solo,KeyEvent.KEY_PRESSED,
+                    System.currentTimeMillis(),0,KeyEvent.VK_SPACE,' ');
+                for(KeyListener listener:solo.getKeyListeners())listener.keyPressed(skip);
+            });
+            Boolean skipped=waitForResponsive(
+                ()->!soloOpeningActive(solo)?Boolean.TRUE:null,5);
+            if(skipped==null)throw new AssertionError(
+                "Skip did not hand off the cinematic camera to the playable Hunter");
             Integer advancing=waitForResponsive(
                 ()->soloFrameCount(solo)>=3?soloFrameCount(solo):null,20);
             if(advancing==null)throw new AssertionError(
                 "Solo case first frame completed but gameplay frames stopped advancing");
-            capture("04-house-solo-first-frames");
-            System.out.println("E2E PASS real House dispatch, first sized scene and "+
+            capture("05-house-solo-hunter-handoff");
+            System.out.println("E2E PASS real House dispatch, skippable flyover and "+
                 advancing+" advancing gameplay frames");
             SwingUtilities.invokeAndWait(frame::dispose);
             Files.writeString(OUTPUT.resolve("desktop-load.txt"),

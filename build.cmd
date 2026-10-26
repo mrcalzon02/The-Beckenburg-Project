@@ -122,7 +122,13 @@ if defined BECKENBURG_RELEASE_VERSION (
   > build\classes\org\beckenburg\release.properties echo version=%BECKENBURG_RELEASE_VERSION%
   >> build\classes\org\beckenburg\release.properties echo source_sha=%BECKENBURG_SOURCE_SHA%
 )
-jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather || exit /b 1
+rem Ship the independently compiled WATER module as well as the weather/game classes.
+rem Without this directory, building an authored House from the packaged JAR
+rem fails with NoClassDefFoundError: dev/mrcalzon/water/WaterDocument.
+jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather -C build\classes dev\mrcalzon\water || exit /b 1
+rem Fail before any packaged game smoke if runtime module classes are missing.
+jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/water/WaterDocument.class" >nul || (echo ERROR: packaged water document missing from game JAR & exit /b 1)
+jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/water/WaterModule.class" >nul || (echo ERROR: packaged water simulation missing from game JAR & exit /b 1)
 if /I "%~1"=="package" goto packaged
 if /I "%~1"=="e2e" goto e2e
 rem Package mode builds the complete jar without asserting test acceptance.

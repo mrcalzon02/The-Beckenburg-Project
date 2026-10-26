@@ -573,6 +573,8 @@ public final class InvestigationGame {
         private final LevelSoundscape buildingSoundscape;
         private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
         private int frameCount;
+        private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
+        private LevelOpeningCinematic opening;
         private volatile boolean initialFrameReady;
         private SwingWorker<Void,Void> firstFrameWorker;
         void beginRendering(){
@@ -593,6 +595,8 @@ public final class InvestigationGame {
                         get();
                         initialFrameReady=true;
                         BeckenburgDeveloperTrace.caseStage("initial scene complete");
+                        opening=new LevelOpeningCinematic(map,scene,getWidth(),getHeight());
+                        BeckenburgDeveloperTrace.caseStage("opening aerial approach");
                         last=System.nanoTime();
                         timer.start();
                         BeckenburgDeveloperTrace.caseStage("active");
@@ -649,7 +653,8 @@ public final class InvestigationGame {
             mouseLook=new MouseLook(this,(dx,dy)->{
                 if(wheelOpen){wheelDelta(dx,dy);}
                 else MouseLook.rotate(scene,dx,dy);
-            },()->!mapShown&&!journalShown&&!briefingShown&&!helpVisible&&!chatInput.isVisible());
+            },()->opening==null&&!mapShown&&!journalShown&&!briefingShown
+                &&!helpVisible&&!chatInput.isVisible());
             addKeyListener(this);addMouseMotionListener(mouseLook);addMouseListener(mouseLook);
             addFocusListener(mouseLook);addFocusListener(this);
             // Reproducible case seed, varies by session, no silent random site conversion.
@@ -679,6 +684,7 @@ public final class InvestigationGame {
             BeckenburgDeveloperTrace.caseStage("GamePanel ready for sized initial render");
         }
         void close(){timer.stop();if(firstFrameWorker!=null)firstFrameWorker.cancel(true);
+            if(opening!=null){opening.close();opening=null;}
             down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
         @Override public void doLayout(){
             super.doLayout();
@@ -790,6 +796,17 @@ public final class InvestigationGame {
         }
         private void frame(){
             long diagnosticFrameStart=System.nanoTime();
+            if(opening!=null){
+                if(opening.complete()){
+                    opening.close();opening=null;
+                    last=System.nanoTime();
+                    BeckenburgDeveloperTrace.caseStage("opening handoff to hunter");
+                }else{
+                    opening.update(getWidth(),getHeight());
+                    repaint();
+                    return; // intro never advances AI/evidence or moves player
+                }
+            }
             var prior=new LevelDefinition.Vec(scene.x,feetY(),scene.z);
             var supported=GroundRecovery.recover(map,prior,lastSupportedRoom,HunterPosture.height(session.crouched()));
             if(!supported.equals(prior)){scene.x=supported.x();scene.z=supported.z();scene.eyeHeight=supported.y()+HunterPosture.eye(session.crouched());}
@@ -873,6 +890,7 @@ public final class InvestigationGame {
             scene.rackInventory=VanRackStock.solo(profile,loadout);
             scene.draw(map,session,frameCount++/30.0,
                 assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
+            perfHud.sample(System.nanoTime()-diagnosticFrameStart,scene,map,assistant==null?0:1,"SOLO");
             repaint();
             if(session.outcome()==InvestigationSession.Outcome.LOST){
                 timer.stop();endCase("You were overcome. The case remains open.");
@@ -938,7 +956,18 @@ public final class InvestigationGame {
         }
         @Override public void keyPressed(KeyEvent e){
             if(chatInput.isVisible())return;
-            int key=e.getKeyCode();if(down.contains(key))return;
+            int key=e.getKeyCode();
+            if(DebugPerformanceHud.hotkey(e)){repaint();return;}
+            if(opening!=null){
+                if(key==KeyEvent.VK_SPACE||key==KeyEvent.VK_ENTER
+                    ||key==KeyEvent.VK_ESCAPE){
+                    opening.close();opening=null;last=System.nanoTime();
+                    BeckenburgDeveloperTrace.caseStage("opening skipped to hunter");
+                    down.clear();
+                }
+                repaint();return;
+            }
+            if(down.contains(key))return;
             if(key==KeyEvent.VK_ENTER){openTeamChat(LanChat.Channel.LOCAL);return;}
             if(key==KeyEvent.VK_F2){openTeamChat(LanChat.Channel.RADIO);return;}
             if(key==KeyEvent.VK_E){if(interactionHeld)return;interactionHeld=true;}
@@ -1169,6 +1198,11 @@ public final class InvestigationGame {
                         25,Math.max(45,stageH/2));
                     return;
                 }
+                if(opening!=null){
+                    opening.draw(g,width,stageH);
+                    perfHud.draw(g,width,stageH);
+                    return;
+                }
                 GraphicsOptions.current().draw(g,scene.image(),width,stageH);
                 if(map.clutter().held(0)<0)HeldToolView.draw(g,width,stageH,loadout.equipped().name(),session.ticks(),
                     session.ticks()<=useHeldUntilTick,scene.lamp,session.deviceReading(loadout.equipped().name()));
@@ -1248,6 +1282,7 @@ public final class InvestigationGame {
                     int iy=y+60;g.setColor(new Color(225,228,221));
                     for(String hint:hints){g.drawString(hint,x+18,iy);iy+=27;}
                 }
+                perfHud.draw(g,getWidth(),getHeight());
             }finally{g.dispose();}
         }
         private void drawTeamChat(Graphics2D g,int width,int height){
