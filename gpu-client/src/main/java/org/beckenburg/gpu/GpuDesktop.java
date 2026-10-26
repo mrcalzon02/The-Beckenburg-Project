@@ -484,7 +484,8 @@ public final class GpuDesktop {
   var camera=new SceneRenderer();
   camera.setRenderSize(640,360);
   camera.roomLights=new RoomLighting();
-  var eye=house.spawn(4),target=house.spawn(0);
+  var eye=house.spawn(4);
+  var target=house.spawn(0);
   camera.x=eye.x();camera.z=eye.z();
   camera.eyeHeight=eye.y()+1.62;
   camera.yaw=Math.atan2(target.x()-eye.x(),target.z()-eye.z());
