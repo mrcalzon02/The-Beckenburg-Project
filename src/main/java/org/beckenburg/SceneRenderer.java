@@ -1641,6 +1641,47 @@ public final class SceneRenderer {
         return false;
     }
 
+
+    /** C2 diagnostic only. Reports authored House faces that are accepted by
+     * the existing per-face frustum rule but absent from the portal candidate
+     * graph. An absent candidate is not a safe culling decision: this method
+     * never changes rendered geometry, evidence, entities or network data.
+     * Compare these counts before proposing any hard room occlusion. */
+    public record PortalVisibilityAudit(int cameraRoom,int candidateRooms,
+        int frustumVisibleFaces,int candidateVisibleFaces,
+        int nonCandidateVisibleFaces,int unownedVisibleFaces,
+        java.util.Set<Integer> nonCandidateRooms,String topologyRevision) {
+        public PortalVisibilityAudit{
+            nonCandidateRooms=java.util.Set.copyOf(nonCandidateRooms);
+        }
+    }
+    private HouseMap portalAuditMap;
+    private RoomPortalCandidates portalAuditGraph;
+    public PortalVisibilityAudit auditPortalVisibility(HouseMap map){
+        if(map==null)throw new IllegalArgumentException("A real HouseMap is required");
+        if(map.nativeSite())
+            throw new IllegalArgumentException("Only authored HouseMap portals are audited");
+        if(portalAuditMap!=map){
+            portalAuditMap=map;portalAuditGraph=new RoomPortalCandidates(map);
+        }
+        // HouseMap room ownership expects a feet-level coordinate; use the
+        // camera's own standing plane without guessing a room from x/z alone.
+        int currentRoom=map.roomAt(x,eyeHeight-1.62,z);
+        var candidate=portalAuditGraph.evaluate(currentRoom);
+        staticShellChunks(map);
+        int visible=0,accepted=0,missing=0,unowned=0;
+        var missingRooms=new java.util.TreeSet<Integer>();
+        for(Face face:preparedShellFaces){
+            if(!faceInFrustum(face))continue;
+            visible++;
+            if(face.room<0){unowned++;continue;}
+            if(candidate.includes(face.room))accepted++;
+            else{missing++;missingRooms.add(face.room);}
+        }
+        return new PortalVisibilityAudit(currentRoom,candidate.candidates().size(),
+            visible,accepted,missing,unowned,missingRooms,candidate.revision());
+    }
+
     private void levelArchitecture(List<Face> out,HouseMap map){
         if(map.nativeSite()){nativeArchitecture(out,map);return;}
         scenery(map);

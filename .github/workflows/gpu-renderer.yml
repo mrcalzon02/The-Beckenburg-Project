@@ -79,6 +79,13 @@ jobs:
           if not exist build\test mkdir build\test
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\RoomPortalCandidatesTest.java || exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.RoomPortalCandidatesTest || exit /b 1
+      - name: Compare portal room candidates with real authored visible faces
+        shell: cmd
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\PortalVisibilityAuditTest.java || exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.PortalVisibilityAuditTest || exit /b 1
+          if not exist build\e2e\viewport-profile\portal-candidate-audit.csv exit /b 1
       - name: Preserve viewport profile frames, stage CSV and HUD even if another GPU check fails
         if: always()
         uses: actions/upload-artifact@v4
