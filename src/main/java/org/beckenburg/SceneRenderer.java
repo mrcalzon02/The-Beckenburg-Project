@@ -1077,7 +1077,21 @@ public final class SceneRenderer {
     private boolean instancedScenery=true;
     private SceneryInstances sceneryInstances;
     private String sceneryRevision;
+    private HouseMap scenerySourceMap;
     private List<Face> expandedScenery;
+    private static final long PREPARED_SCENERY_TRIANGLE_LIMIT=120_000;
+    /** Transitional immutable prepared faces, bounded separately from GPU VBOs. */
+    private final java.util.LinkedHashMap<SceneryInstances.Instance,List<Face>>
+        preparedScenery=new java.util.LinkedHashMap<>(128,.75f,true);
+    private long preparedSceneryTriangles,preparedSceneryBuilds,
+        preparedSceneryHits,preparedSceneryEvictions;
+    public record PreparedSceneryStats(long builtInstances,long reusedInstances,
+        long evictedInstances,int cachedInstances,long cachedTriangles,long triangleLimit){}
+    public PreparedSceneryStats preparedSceneryStats(){
+        return new PreparedSceneryStats(preparedSceneryBuilds,preparedSceneryHits,
+            preparedSceneryEvictions,preparedScenery.size(),
+            preparedSceneryTriangles,PREPARED_SCENERY_TRIANGLE_LIMIT);
+    }
     private Point[] instancePoints=new Point[0];
     public record InstanceStats(int instances,int visible,int culled,int templates,long expandedTriangles,long sharedTriangles,long submittedTriangles){}
     private InstanceStats instanceStats=new InstanceStats(0,0,0,0,0,0,0);
@@ -1086,8 +1100,10 @@ public final class SceneRenderer {
     public void setInstancedScenery(boolean enabled){instancedScenery=enabled;if(enabled)expandedScenery=null;}
     private SceneryInstances scenery(HouseMap map){
         String key=map.level().revision()+":"+map.hidingDensity();
-        if(!key.equals(sceneryRevision)){
-            sceneryInstances=new SceneryInstances(map.level(),map.hidingDensity());sceneryRevision=key;expandedScenery=null;
+        if(map!=scenerySourceMap||!key.equals(sceneryRevision)){
+            sceneryInstances=new SceneryInstances(map.level(),map.hidingDensity());
+            scenerySourceMap=map;sceneryRevision=key;expandedScenery=null;
+            preparedScenery.clear();preparedSceneryTriangles=0;
         }
         return sceneryInstances;
     }
@@ -1106,6 +1122,31 @@ public final class SceneRenderer {
             for(int i=0;i<instance.template.triangleCount();i++)out.add(instanceFace(instance,i,scratch));
         }
     }
+    /** Immutable world-space scenery faces are prepared once per visible
+     * instance and retained across frame/camera movement until scene revision.
+     * Bounded LRU avoids expanding an entire outdoor map indefinitely.
+     * GPU per-material vertex batches still use the legacy bridge for now. */
+    private List<Face> preparedSceneryFaces(SceneryInstances.Instance instance){
+        var cached=preparedScenery.get(instance);
+        if(cached!=null){preparedSceneryHits++;return cached;}
+        int count=instance.template.triangleCount();
+        var vertices=transformed(instance,new Point[0]);
+        var faces=new ArrayList<Face>(count);
+        for(int i=0;i<count;i++)faces.add(instanceFace(instance,i,vertices));
+        preparedSceneryBuilds++;
+        if(count==0||count>PREPARED_SCENERY_TRIANGLE_LIMIT)return faces;
+        while(preparedSceneryTriangles+count>PREPARED_SCENERY_TRIANGLE_LIMIT
+                &&!preparedScenery.isEmpty()){
+            var iterator=preparedScenery.entrySet().iterator();
+            var oldest=iterator.next();
+            preparedSceneryTriangles-=oldest.getValue().size();
+            iterator.remove();preparedSceneryEvictions++;
+        }
+        var retained=List.copyOf(faces);
+        preparedScenery.put(instance,retained);
+        preparedSceneryTriangles+=count;
+        return retained;
+    }
     /** Shared map meshes join the current GPU batch or its CPU fallback once.
      * Never draw CPU instances over an asynchronous OpenGL framebuffer. */
     private void appendSceneryInstances(List<Face> out,HouseMap map){
@@ -1118,8 +1159,8 @@ public final class SceneRenderer {
         double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
         for(var instance:scene.instances()){
             if(!instance.visible(x,eyeHeight,z,yaw,pitch,hx,hy,NEAR))continue;
-            visible++;instancePoints=transformed(instance,instancePoints);
-            for(int i=0;i<instance.template.triangleCount();i++)out.add(instanceFace(instance,i,instancePoints));
+            visible++;
+            out.addAll(preparedSceneryFaces(instance));
             triangles+=instance.template.triangleCount();
         }
         instanceStats=new InstanceStats(scene.instances().size(),visible,scene.instances().size()-visible,scene.templates().size(),scene.expandedTriangles(),scene.sharedTriangles(),triangles);
