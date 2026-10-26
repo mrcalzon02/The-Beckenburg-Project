@@ -14,6 +14,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private HouseMap map=new HouseMap();
     private final RoomLighting lights=new RoomLighting();
     private final SceneRenderer renderer=new SceneRenderer();
+    private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
     private final SceneRenderer videoRenderer=new SceneRenderer();
     private final java.util.Map<Integer,LanVideoCameras.Camera> videoCameras=new HashMap<>();
     private final java.util.Map<Integer,Boolean> videoPowered=new HashMap<>();
@@ -929,6 +930,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         selectedCameraOwner=available.get((index+1)%available.size()).owner();
     }
     private void frame(){
+        long diagnosticsStart=System.nanoTime();
         atmosphere.setActive(isShowing());
         int outdoorRoom=map.roomAt(renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z);
         buildingAudio.setContext(outdoorRoom,lights.breaker());
@@ -1047,6 +1049,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             videoRenderer.drawNetwork(map,new ArrayList<>(peers.values()),
                 seenThroughCamera,tick*.1,List.copyOf(counterMarks));
         }
+        perfHud.sample(System.nanoTime()-diagnosticsStart,renderer,map,peers.size(),"LAN HUNTER");
         repaint();
     }
     @Override protected void paintComponent(Graphics original){
@@ -1224,6 +1227,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     g.drawString(raw.length()>max?raw.substring(0,max-3)+"...":raw,33,y+16);
                 }
             }
+            perfHud.draw(g,getWidth(),getHeight());
         }finally{g.dispose();}
     }
     /** Three compact chat rows by default; editing reveals six. No extra menu hierarchy. */
@@ -1431,6 +1435,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         return true;
     }
     @Override public void keyPressed(KeyEvent e){
+        if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         if(chatInput.isVisible())return;
         if(e.getKeyCode()==KeyEvent.VK_M&&insideVan()&&!casefileOpen){
             if(interfaceOpen.equals("MAP"))interfaceOpen="";
