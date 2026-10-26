@@ -145,41 +145,85 @@ public final class GpuDesktop {
       "average_ms="+totalNanos/6/1_000_000+
       " worst_ms="+maxNanos/1_000_000);
  }
- private static void flyoverSmoke()throws Exception{
-  var house=new HouseMap(HouseMap.Site.HOUSE);
-  var spawn=house.van().spawn(0);
-  var end=new LevelOpeningFlyover.Pose(spawn.x(),house.van().floorY()+1.62,
-      spawn.z(),-.5f,-.09f);
-  var flight=new LevelOpeningFlyover(house,end);
-  SceneRenderer camera=new SceneRenderer();
-  camera.setRenderSize(640,360);
-  camera.roomLights=new RoomLighting();
-  double[] checkpoints={0,.39,.78,.94};
-  for(int index=0;index<checkpoints.length;index++){
-   var pose=flight.pose(checkpoints[index]);
-   pose.apply(camera);
-   camera.drawPractice(house,List.of(),checkpoints[index]*7.5);
-   long expected=camera.submittedGpuFrameId();
-   long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(28);
-   GpuWorldRenderer.Result found=null;
-   while(System.nanoTime()<deadline){
-    var delivered=ENGINE.latest();
-    if(delivered!=null&&delivered.frameId()==expected){
-     found=delivered;break;
-    }
-    Thread.sleep(30);
+ private static GpuWorldRenderer.Result awaitGpu(SceneRenderer renderer,
+      String stage)throws Exception{
+  long expected=renderer.submittedGpuFrameId();
+  if(expected<=0)throw new AssertionError("No GPU submission: "+stage);
+  long until=System.nanoTime()+TimeUnit.SECONDS.toNanos(30);
+  while(System.nanoTime()<until){
+   var found=ENGINE.latest();
+   if(found!=null&&found.frameId()==expected){
+    int visible=0;
+    for(int rgba:found.argb())if((rgba>>>24)>127)visible++;
+    if(visible<250)throw new AssertionError("Empty GPU frame: "+stage+
+        " visible="+visible);
+    return found;
    }
-   if(found==null)throw new AssertionError(
-       "Actual GPU aerial camera did not finish checkpoint "+index);
-   int drawn=0;
-   for(int pixel:found.argb())if((pixel>>>24)>127)drawn++;
-   if(drawn<250)throw new AssertionError(
-       "Aerial GPU checkpoint "+index+" has no world geometry");
-   screenshot(found,String.format(java.util.Locale.ROOT,
-       "level-opening-%02d.png",index));
-   System.out.println("GPU OPENING PASS "+index+
-       " t="+checkpoints[index]+" visible="+drawn);
+   Thread.sleep(35);
   }
+  throw new AssertionError("Timed out waiting for real GPU frame "+stage);
+ }
+ /** Actual GPU aerial flight must render on every currently playable site. */
+ private static void flyoverSmoke()throws Exception{
+  for(var site:new HouseMap.Site[]{
+      HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
+   var map=new HouseMap(site);
+   var spawn=map.van().spawn(0);
+   var end=new LevelOpeningFlyover.Pose(spawn.x(),map.van().floorY()+1.62,
+       spawn.z(),-.5f,-.09f);
+   var flight=new LevelOpeningFlyover(map,end);
+   SceneRenderer camera=new SceneRenderer();
+   camera.setRenderSize(640,360);
+   camera.roomLights=new RoomLighting();
+   double[] times=site==HouseMap.Site.HOUSE
+       ?new double[]{0,.39,.78,.94}:new double[]{0,.75,.94};
+   for(int index=0;index<times.length;index++){
+    flight.pose(times[index]).apply(camera);
+    camera.drawPractice(map,List.of(),times[index]*7.5);
+    var result=awaitGpu(camera,site+" opening "+index);
+    screenshot(result,String.format(java.util.Locale.ROOT,
+        "level-opening-%s-%02d.png",
+        site.name().toLowerCase(java.util.Locale.ROOT),index));
+    System.out.println("GPU OPENING PASS "+site+" frame="+index+
+        " t="+times[index]+" submitted="+result.frameId());
+   }
+   if(!flight.pose(1).equals(end))throw new AssertionError(
+       "Final aerial frame fails exact Hunter van handoff "+site);
+  }
+ }
+ /**
+  * Measure outstanding CPU lighting while a real GPU context is active.
+  * Observe and report cost; do NOT claim GPU lighting because raster passes.
+  */
+ private static void lightingAudit()throws Exception{
+  var map=new HouseMap(HouseMap.Site.HOUSE);
+  for(int room:new int[]{14,13,12,0,4}){
+   var camera=new SceneRenderer();
+   camera.setRenderSize(640,360);
+   camera.roomLights=new RoomLighting();
+   var eye=map.spawn(room);
+   var target=map.spawn(room==4?0:room==0?4:0);
+   camera.x=eye.x();camera.z=eye.z();
+   camera.eyeHeight=eye.y()+1.62;
+   camera.yaw=Math.atan2(target.x()-eye.x(),target.z()-eye.z());
+   camera.pitch=-.075;
+   long started=System.nanoTime();
+   camera.drawNetwork(map,List.of(),-1,0);
+   var frame=camera.frameDiagnostics();
+   if(frame==null||!frame.gpu())throw new AssertionError(
+       "GPU not active in lighting benchmark at room "+room);
+   var delivered=awaitGpu(camera,"lighting audit room "+room);
+   long elapsed=System.nanoTime()-started;
+   System.out.printf(java.util.Locale.ROOT,
+       "GPU LIGHTING AUDIT room=%d cpu_build_ms=%.2f cpu_gpu_geometry_ms=%.2f "+
+       "cpu_shadow_rays=%d cpu_light_samples=%d cpu_normal_rays=%d "+
+       "submitted_gpu_triangles=%d end_to_end_ms=%.2f frame_id=%d%n",
+       room,frame.sceneBuildNs()/1e6,frame.geometryNs()/1e6,
+       frame.lighting().shadowRays(),frame.lighting().samples(),
+       frame.lighting().normalRays(),frame.submittedTriangles(),
+       elapsed/1e6,delivered.frameId());
+  }
+  System.out.println("PASS five real GPU viewport lighting audits; remaining CPU cost explicitly reported");
  }
  private static void smoke()throws Exception{
   SceneRenderer first=new SceneRenderer();
@@ -204,6 +248,7 @@ public final class GpuDesktop {
   screenshot(castle,"castle-headquarters.png");
   rotationSmoke();
   flyoverSmoke();
+  lightingAudit();
   System.out.println("PASS Beckenburg OpenGL 3.3 real house, castle and four authentic opening flyover frames");
  }
  public static void main(String[] args)throws Exception{
