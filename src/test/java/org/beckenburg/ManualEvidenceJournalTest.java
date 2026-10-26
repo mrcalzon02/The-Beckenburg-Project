@@ -48,17 +48,21 @@ public final class ManualEvidenceJournalTest {
         journal.clear();
         journal.set(GhostFieldGuide.Clue.GHOST_WRITING,FieldJournal.Status.SEEN,0,15);
         ok(GhostFieldGuide.remainsPossible(GhostIdentity.Type.SHADE,journal)
-            &&!GhostFieldGuide.remainsPossible(GhostIdentity.Type.YOKAI,journal),
-            "generic ghost-writing tick actually greys non-writer species");
-        journal.clear();
+            &&GhostFieldGuide.remainsPossible(GhostIdentity.Type.YOKAI,journal)
+            &&!GhostFieldGuide.remainsPossible(GhostIdentity.Type.HANTU,journal),
+            "generic writing admits real Yokai ritual circles and excludes non-writing Hantu");
+        // A generic physical writing mark is one family: evaluate actual
+        // production and manual shortlisting for every one of 26 identities.
         for(GhostIdentity.Type type:GhostIdentity.Type.values()){
             boolean writer=GhostEvidenceProfile.availableWriting(type).length>0;
-            ok(GhostEvidenceProfile.compatible(type,GhostFieldGuide.Clue.GHOST_WRITING)==writer,
-                "manual checklist and physical writing producer agree for "+type);
+            ok(GhostEvidenceProfile.compatible(type,GhostFieldGuide.Clue.GHOST_WRITING)==writer
+                &&GhostFieldGuide.remainsPossible(type,journal)==writer,
+                "manual journal filtering agrees with writing producer for "+type);
             boolean cold=GhostEvidenceProfile.compatible(type,GhostFieldGuide.Clue.EXTREME_COLD);
             boolean hot=GhostEvidenceProfile.compatible(type,GhostFieldGuide.Clue.EXTREME_HEAT);
             ok(!(cold&&hot),"no ghost can be inherently freezing and very hot at once: "+type);
         }
+        journal.clear();
         journal.set(GhostFieldGuide.Clue.TEMPERATURE_NORMAL,FieldJournal.Status.SEEN,0,20);
         journal.set(GhostFieldGuide.Clue.EMF_NORMAL,FieldJournal.Status.SEEN,0,21);
         ok(GhostFieldGuide.shortlist(journal).size()==GhostIdentity.Type.values().length,
