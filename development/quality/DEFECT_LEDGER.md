@@ -1693,3 +1693,11 @@ Evidence: van-castle-repair.json. Older-map obligation: inspect all placements a
 Review metal UV/albedo under new lights; do not reduce useful illumination to hide defects.
 
 Evidence: van-castle-repair.json. Older-map obligation: inspect all placements and doors.
+
+## DEV-125 — Recorder CI assumed every WHISPER action uses the WHISPER audio cue
+
+**Status:** fixed-scoped-full-CI-pending
+
+Use the actual host-authored HAUNT entry cue for received sound and recorded clip assertions. doorway_sigh legitimately uses HORROR_STING_A. Preserve real recorder transactions, playback, reconnect and privacy checks; no runtime evidence/audio changes.
+
+Evidence: focused real socket recorder test passes; baseline full run40296444087 failed246/247. Full CI pending.

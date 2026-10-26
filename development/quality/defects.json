@@ -1365,6 +1365,17 @@
       "action": "Review metal UV/albedo under new lights; do not reduce useful illumination to hide defects.",
       "evidence": "VanLightingAndCastleDoorTest,8actualGPUframes: van-castle-repair.json",
       "older_maps": "Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open."
+    },
+    {
+      "id": "DEV-125",
+      "title": "Recorder CI assumed every WHISPER action uses the WHISPER audio cue",
+      "status": "fixed-scoped-full-CI-pending",
+      "affected": "LanSoundRecorderIntegrationTest / recovery gate",
+      "symptom": "a635d0c8 full multiplayer run40296444087 failed246/247 with missing SOUND|WHISPER, although same-SHA installer passed.",
+      "cause": "Random authored haunting selection can legitimately choose a different cue for the WHISPER action.",
+      "action": "Use the actual host-authored HAUNT entry cue for received sound and recorded clip assertions. doorway_sigh legitimately uses HORROR_STING_A. Preserve real recorder transactions, playback, reconnect and privacy checks; no runtime evidence/audio changes.",
+      "evidence": "Focused four-socket rack/paid tiers/capture/private playback/reconnect test passes.",
+      "older_maps": "Keep test expectations bound to real authored actions and cue identities on all maps. Full exact-SHA acceptance remains required."
     }
   ],
   "audit_categories": [

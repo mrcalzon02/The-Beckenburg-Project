@@ -68,14 +68,20 @@ public final class LanSoundRecorderIntegrationTest {
             placeInRoom(host,0,4);
             h.client.useHeldEquipment();h.await("ACCEPT|GEARUSE|SOUND_RECORDER|REC ");
             ghost.client.ghost(GhostDomain.Action.WHISPER,4);ghost.await("ACCEPT|GHOST|WHISPER");
-            h.await("SOUND|WHISPER|");h.settle();
+            var authored=GhostHauntingFolio.decode(h.await("HAUNT|"));
+            check(authored.entry().action()==GhostDomain.Action.WHISPER&&authored.room()==4,
+                "record the actual local ghost-authored whisper event");
+            // doorway_sigh is a valid WHISPER action with HORROR_STING_A audio.
+            // Recording must preserve the selected event, not assume its PCM cue.
+            var expectedCue=authored.entry().cue();
+            h.await("SOUND|"+expectedCue+"|");h.settle();
             h.client.useHeldEquipment();h.await("ACCEPT|GEARUSE|SOUND_RECORDER|STOP");
             h.settle();h.client.playRecording();
             try(var decoder=new RecorderAudio()){
                 decoder.accept(h.await("RECAUDIO|BEGIN|III|"));
                 FieldSoundRecorder.Clip clip=null;
                 while(clip==null)clip=decoder.accept(h.await("RECAUDIO|"));
-                check(clip.samples().stream().anyMatch(s->s.cue()==LanSound.Cue.WHISPER),
+                check(clip.samples().stream().anyMatch(s->s.cue()==expectedCue),
                     "actual ghost-authored audible whisper is present in recording");
                 check(clip.tier()==EquipmentTiers.Tier.III,"purchased real recorder hardware used");
             }
