@@ -20,6 +20,10 @@ if not exist build\test mkdir build\test
 javac --release 17 -encoding UTF-8 -d build\classes @build\sources-main.txt || exit /b 1
 if not exist build\classes\META-INF mkdir build\classes\META-INF
 copy /Y water-module\src\main\resources\META-INF\*.txt build\classes\META-INF\ >nul || exit /b 1
+if exist assets\runtime\sounds (
+  if not exist build\classes\org\beckenburg\sounds mkdir build\classes\org\beckenburg\sounds
+  copy /Y assets\runtime\sounds\*.sounds build\classes\org\beckenburg\sounds\ >nul
+)
 if exist assets\runtime\water (
   if not exist build\classes\org\beckenburg\water mkdir build\classes\org\beckenburg\water
   copy /Y assets\runtime\water\*.water build\classes\org\beckenburg\water\ >nul

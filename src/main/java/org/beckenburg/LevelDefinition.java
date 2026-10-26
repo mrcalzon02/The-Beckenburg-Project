@@ -9,10 +9,12 @@ import java.util.List;
 public record LevelDefinition(String id, String revision, String title,
         List<Room> rooms, List<Portal> portals, List<Stair> stairs,
         List<Void> voids, List<Prop> props, List<Socket> sockets,
-        List<Collider> colliders, Dock dock, String ambience,dev.mrcalzon.water.WaterDocument water) {
+        List<Collider> colliders, Dock dock, String ambience,dev.mrcalzon.water.WaterDocument water,SoundDocument sounds) {
+    public LevelDefinition(String id,String revision,String title,List<Room> rooms,List<Portal> portals,List<Stair> stairs,List<Void> voids,List<Prop> props,List<Socket> sockets,List<Collider> colliders,Dock dock,String ambience,dev.mrcalzon.water.WaterDocument water){this(id,revision,title,rooms,portals,stairs,voids,props,sockets,colliders,dock,ambience,water,SoundDocument.load(id));}
     public LevelDefinition(String id,String revision,String title,List<Room> rooms,List<Portal> portals,List<Stair> stairs,List<Void> voids,List<Prop> props,List<Socket> sockets,List<Collider> colliders,Dock dock,String ambience){this(id,revision,title,rooms,portals,stairs,voids,props,sockets,colliders,dock,ambience,WorldWater.load(id));}
     public static final double WALL_HALF_THICKNESS=.08;
     public LevelDefinition {
+        if(sounds==null||!sounds.level().equals(id))throw new IllegalArgumentException("Sound document belongs to another map");
         if(water==null||!water.level().equals(id))throw new IllegalArgumentException("Water document belongs to another map");
         rooms=List.copyOf(rooms);portals=List.copyOf(portals);stairs=List.copyOf(stairs);
         voids=List.copyOf(voids);props=List.copyOf(props);sockets=List.copyOf(sockets);
@@ -22,7 +24,7 @@ public record LevelDefinition(String id, String revision, String title,
         // The handshake follows actual authored data, so two binaries with
         // different stair/prop/socket coordinates cannot silently share a map.
         try{
-            String data="wall-shell-v2"+id+rooms+portals+stairs+voids+props+sockets+colliders+dock+ambience+guardSegments(stairs,voids)+water.revision();
+            String data="wall-shell-v2"+id+rooms+portals+stairs+voids+props+sockets+colliders+dock+ambience+guardSegments(stairs,voids)+water.revision()+sounds.revision();
             byte[] hash=java.security.MessageDigest.getInstance("SHA-256").digest(data.getBytes(java.nio.charset.StandardCharsets.UTF_8));
             revision=revision+"-"+java.util.HexFormat.of().formatHex(hash,0,8);
         }catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}

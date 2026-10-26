@@ -13,6 +13,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         void cycleRole();void cycleWeather();String role();String weather();
     }
     private final CastleHubMap map=new CastleHubMap();
+    private final SoundVolumeAudio authoredAudio=new SoundVolumeAudio(map.sounds());
     private final CastleOrientation orientation=new CastleOrientation();
     private final CastleArchive.Reader archive=new CastleArchive.Reader();
     private final SceneRenderer renderer=new SceneRenderer();
@@ -47,9 +48,9 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         notice=orientation.objective();noticeTicks=260;
         requestFocusInWindow();
     }
-    public void close(){timer.stop();down.clear();look.close();atmosphere.close();}
+    public void close(){timer.stop();down.clear();look.close();atmosphere.close();authoredAudio.close();}
     private void frame(){
-        atmosphere.setActive(isShowing());
+        atmosphere.setActive(isShowing());authoredAudio.active(isShowing()&&!storeOpen);authoredAudio.listener(renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,castleLightsOn);
         if(!isShowing()||storeOpen){last=System.nanoTime();return;}
         if(archive.opened()){last=System.nanoTime();down.clear();repaint();return;}
         long now=System.nanoTime();double dt=Math.min(.07,Math.max(0,(now-last)/1e9));last=now;

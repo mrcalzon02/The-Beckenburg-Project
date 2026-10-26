@@ -797,7 +797,7 @@ public final class InvestigationGame {
             atmosphere.setActive(isShowing());
             buildingSoundscape.setActive(isShowing());
             int outdoorRoom=currentRoom();
-            buildingSoundscape.setContext(outdoorRoom,lights.breaker());
+            buildingSoundscape.setContext(outdoorRoom,lights.breaker());buildingSoundscape.listener(scene.x,scene.eyeHeight,scene.z,scene.yaw,lights.breaker());
             atmosphere.setOutside(outdoorRoom>=0&&map.outside(outdoorRoom));
             long now=System.nanoTime();double dt=Math.max(0,Math.min(.075,(now-last)/1e9));last=now;
             double forward=wheelOpen||chatInput.isVisible()?0:

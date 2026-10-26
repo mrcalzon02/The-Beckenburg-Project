@@ -14,15 +14,18 @@ public final class LevelSoundscape implements AutoCloseable {
     private volatile int room=HouseMap.EXTRACTION_ROOM;
     private volatile boolean powered=true,active,closed;
     private final Thread worker;
+    private final SoundVolumeAudio authored;
     private volatile SourceDataLine line;
     public LevelSoundscape(HouseMap map){
         this.map=java.util.Objects.requireNonNull(map);
+        authored=new SoundVolumeAudio(map.level().sounds());
         worker=new Thread(this::run,"beckenburg-building-ambience");
         worker.setDaemon(true);worker.start();
     }
-    public void setMap(HouseMap value){map=java.util.Objects.requireNonNull(value);}
+    public void setMap(HouseMap value){map=java.util.Objects.requireNonNull(value);authored.document(value.level().sounds());}
     public void setContext(int room,boolean powered){this.room=room;this.powered=powered;}
-    public void setActive(boolean value){active=value&&!closed;}
+    public void setActive(boolean value){active=value&&!closed;authored.active(active);}
+    public void listener(double x,double y,double z,double yaw,boolean power){authored.listener(x,y,z,yaw,power);}
     private static double noise(long n){
         long h=n*0x9e3779b97f4a7c15L;h^=h>>>29;h*=0xbf58476d1ce4e5b9L;
         return ((h>>>40)&0xffffff)/8388607.5-1;
@@ -94,7 +97,7 @@ public final class LevelSoundscape implements AutoCloseable {
         finally{SourceDataLine open=line;line=null;if(open!=null){open.stop();open.flush();open.close();}}
     }
     @Override public void close(){
-        closed=true;active=false;worker.interrupt();
+        closed=true;active=false;authored.close();worker.interrupt();
         SourceDataLine open=line;if(open!=null){open.stop();open.flush();}
     }
 }

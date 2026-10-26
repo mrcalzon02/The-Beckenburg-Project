@@ -1649,6 +1649,7 @@ public final class SceneRenderer {
     }
 
     private double cachedViewYaw=Double.NaN,cachedViewPitch=Double.NaN,viewCosYaw,viewSinYaw,viewCosPitch,viewSinPitch;
+    public double[] editorProjection(double x,double y,double z){var p=camera(new Point(x,y,z));return p.z<.065?null:new double[]{renderWidth*.5+p.x/p.z*focal,renderHeight*.5-p.y/p.z*focal};}
     private Point camera(Point p){
         if(cachedViewYaw!=yaw||cachedViewPitch!=pitch){
             cachedViewYaw=yaw;cachedViewPitch=pitch;viewCosYaw=Math.cos(yaw);viewSinYaw=Math.sin(yaw);

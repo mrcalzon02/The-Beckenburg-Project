@@ -931,7 +931,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private void frame(){
         atmosphere.setActive(isShowing());
         int outdoorRoom=map.roomAt(renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z);
-        buildingAudio.setContext(outdoorRoom,lights.breaker());
+        buildingAudio.setContext(outdoorRoom,lights.breaker());buildingAudio.listener(renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,lights.breaker());
         buildingAudio.setActive(isShowing()&&caseResult.isEmpty());
         atmosphere.setModule(renderer.weatherModule());
         atmosphere.setOutside(outdoorRoom>=0&&map.outside(outdoorRoom));

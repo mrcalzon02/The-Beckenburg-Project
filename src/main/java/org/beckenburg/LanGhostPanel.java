@@ -201,7 +201,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private void frame(){
         atmosphere.setActive(isShowing()&&!finished);
         buildingAudio.setActive(isShowing()&&!finished);
-        buildingAudio.setContext(room,lights.breaker());camera.roomLightTick=tick;
+        buildingAudio.setContext(room,lights.breaker());buildingAudio.listener(camera.x,camera.eyeHeight,camera.z,camera.yaw,lights.breaker());camera.roomLightTick=tick;
         atmosphere.setOutside(room>=0&&map.outside(room));
         if(!isDisplayable()||finished){repaint();return;}
         try{
