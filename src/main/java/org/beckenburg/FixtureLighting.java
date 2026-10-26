@@ -8,21 +8,65 @@ public final class FixtureLighting {
  private record Key(int room,long x,long y,long z){}
  private record Shadow(int source,long x,long y,long z){}
  private record DistantCell(int room,long x,long y,long z){}
- private record DistantProbe(double x,double y,double z,RGB light){}
- private final Map<DistantCell,DistantProbe> distant=new HashMap<>();
+
+ private record DistantProbe(double x,double y,double z,RGB light,long revision){}
+ private record Cell(int x,int y,int z){}
+ private record Lit(RGB rgb,long revision){}
+ private static final double CELL_SIZE=4.0;
+ private final Map<Cell,List<Source>> influence=new HashMap<>();
+ private final Map<Cell,Long> changedCells=new HashMap<>();
+ private long generation,invalidatedCells,consideredSources;
+ private static <K,V> Map<K,V> bounded(int limit){
+  return new LinkedHashMap<K,V>(2048,.75f,true){
+   @Override protected boolean removeEldestEntry(Map.Entry<K,V> eldest){
+    return size()>limit;
+   }
+  };
+ }
+ private static Cell cell(double x,double y,double z){
+  return new Cell((int)Math.floor(x/CELL_SIZE),
+                  (int)Math.floor(y/CELL_SIZE),(int)Math.floor(z/CELL_SIZE));
+ }
+ private long revision(double x,double y,double z){
+  return changedCells.getOrDefault(cell(x,y,z),0L);
+ }
+ /** Sphere-of-influence preselection only. Actual wall raycasts stay mandatory. */
+ private static void eachInfluenceCell(Source source,java.util.function.Consumer<Cell> use){
+  int xa=(int)Math.floor((source.x-source.radius)/CELL_SIZE);
+  int xb=(int)Math.floor((source.x+source.radius)/CELL_SIZE);
+  int ya=(int)Math.floor((source.y-source.radius)/CELL_SIZE);
+  int yb=(int)Math.floor((source.y+source.radius)/CELL_SIZE);
+  int za=(int)Math.floor((source.z-source.radius)/CELL_SIZE);
+  int zb=(int)Math.floor((source.z+source.radius)/CELL_SIZE);
+  for(int xx=xa;xx<=xb;xx++)for(int yy=ya;yy<=yb;yy++)
+   for(int zz=za;zz<=zb;zz++)use.accept(new Cell(xx,yy,zz));
+ }
+ private void invalidate(Source source){
+  long version=++generation;
+  eachInfluenceCell(source,key->{changedCells.put(key,version);invalidatedCells++;});
+ }
+ private List<Source> candidates(double x,double y,double z){
+  return influence.getOrDefault(cell(x,y,z),List.of());
+ }
+ private final Map<DistantCell,DistantProbe> distant=bounded(15000);
  private long lodQueries,lodHits,lodVisibilityChecks;
- private final HouseMap map;private final CastleHubMap castle;private final List<Source> sources=new ArrayList<>();private final Map<Key,RGB> colours=new HashMap<>();private final Map<Shadow,Boolean> sight=new HashMap<>();
+ private final HouseMap map;private final CastleHubMap castle;
+ private final List<Source> sources=new ArrayList<>();
+ private final Map<Key,Lit> colours=bounded(150000);
+ private final Map<Shadow,Boolean> sight=bounded(200000);
  private String geometry="",state="";private double[] factors=new double[0];
  /** Per-render CPU work counters; shadow tests are expensive architectural rays. */
  public record FrameStats(long samples,long cacheHits,long shadowRays,
                           long normalSamples,long normalRays,int lights,int cachedColours,
-                          long lodQueries,long lodHits,long lodVisibilityChecks){}
+                          long lodQueries,long lodHits,long lodVisibilityChecks,
+                          long consideredSources,long invalidatedCells){}
  private long samples,cacheHits,shadowRays,normalSamples,normalRays;
  public FrameStats frameStats(){return new FrameStats(samples,cacheHits,shadowRays,
      normalSamples,normalRays,sources.size(),colours.size(),
-     lodQueries,lodHits,lodVisibilityChecks);}
+     lodQueries,lodHits,lodVisibilityChecks,consideredSources,invalidatedCells);
  private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=0;
-  lodQueries=lodHits=lodVisibilityChecks=0;}
+  lodQueries=lodHits=lodVisibilityChecks=0;
+  consideredSources=invalidatedCells=0;}
  private long castleDoorRevision=-1;
  public FixtureLighting(HouseMap map){this.map=map;this.castle=null;
   for(var s:map.level().sockets())if(s.type().equals("light")){
@@ -58,8 +102,14 @@ public final class FixtureLighting {
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
    castleDoorRevision=castle.doorRevision();sight.clear();colours.clear();distant.clear();
   }
-  String stamp=on+":"+(tick/3);if(!state.equals(stamp)){colours.clear();distant.clear();state=stamp;}for(var source:sources)factors[source.id]=!on?0:
-   source.kind==Kind.CANDLE_CHANDELIER?.94+.06*Math.sin(tick*.3+source.id):1;}
+  int cosmeticTick=(tick/6)*6;
+  for(var source:sources){
+   double next=!on?0:source.kind==Kind.CANDLE_CHANDELIER
+       ?.94+.06*Math.sin(cosmeticTick*.3+source.id):1;
+   if(Math.round(next*1000)!=Math.round(factors[source.id]*1000))invalidate(source);
+   factors[source.id]=next;
+  }
+ }
  /** Unified shadow decision for all live light emitters. Investigations use
   * HouseMap's existing 3D doors, colliders and multi-storey visibility.
   * Castle uses its authored solid wall segments, decks and room ceilings.
@@ -140,23 +190,30 @@ public final class FixtureLighting {
   }
   return true;
  }
- private void add(Kind k,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double r,double g,double b){sources.add(new Source(sources.size(),k,room,fixture,x,y,z,dx,dy,dz,radius,power,r,g,b));}
+ private void add(Kind k,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double r,double g,double b){
+  var source=new Source(sources.size(),k,room,fixture,x,y,z,dx,dy,dz,radius,power,r,g,b);
+  sources.add(source);
+  eachInfluenceCell(source,key->influence.computeIfAbsent(key,ignored->new ArrayList<>()).add(source));
+ }
  public List<Source> sources(){return List.copyOf(sources);}
  public void frame(RoomLighting circuits,int tick){
   resetStatistics();
   String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;sight.clear();colours.clear();distant.clear();}
-  StringBuilder stamp=new StringBuilder();for(var source:sources){double f;
+  int cosmeticTick=(tick/6)*6;
+  for(var source:sources){double f;
    if(source.room==14)f=1;
-   else if(source.kind==Kind.CANDLE_CHANDELIER)f=.94+.06*Math.sin(tick*.37+source.id*2.1);
+   else if(source.kind==Kind.CANDLE_CHANDELIER)f=.94+.06*Math.sin(cosmeticTick*.37+source.id*2.1);
    else if(source.kind==Kind.TABLE_LAMP)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?1:0;
-   else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?(.94+.06*Math.sin(tick*1.7)):0;
+   else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?(.94+.06*Math.sin(cosmeticTick*1.7)):0;
    else f=circuits==null?1:Math.max(0,Math.min(1,(circuits.brightness(source.room,tick)-.085)/.865));
    if(source.fixture>0&&source.kind!=Kind.TELEVISION&&source.kind!=Kind.TABLE_LAMP&&!map.fixtures().state(source.fixture).active())f=0;
-   factors[source.id]=f;stamp.append(Math.round(f*1000)).append(',');
+   // True circuit, fixture and blackout changes are immediate. Subtle TV
+   // and candle intensity variation updates every six simulation ticks.
+   if(Math.round(f*1000)!=Math.round(factors[source.id]*1000))invalidate(source);
+   factors[source.id]=f;
   }
-  if(!state.contentEquals(stamp)){state=stamp.toString();colours.clear();distant.clear();}
-  if(sight.size()>200000)sight.clear();if(colours.size()>150000)colours.clear();
-   if(distant.size()>15000)distant.clear();
+  // Keep previous lighting outside changed light volumes; bounded LRU
+  // eviction is incremental instead of emptying every cache on one frame.
  }
  private static double smooth(double lo,double hi,double value){double t=Math.max(0,Math.min(1,(value-lo)/(hi-lo)));return t*t*(3-2*t);}
  /** Source-to-surface cone, not a screen-space flashlight-shaped tint. */
@@ -179,20 +236,24 @@ public final class FixtureLighting {
   var cached=distant.get(key);
   if(cached!=null){
    lodVisibilityChecks++;
-   if(map.clearLineOfSight(cached.x,cached.y,cached.z,x,y,z)){
+   if(cached.revision()==revision(x,y,z)
+      &&map.clearLineOfSight(cached.x,cached.y,cached.z,x,y,z)){
     lodHits++;return cached.light;
    }
   }
   RGB result=sample(room,x,y,z);
-  distant.put(key,new DistantProbe(x,y,z,result));
+  distant.put(key,new DistantProbe(x,y,z,result,revision(x,y,z)));
   return result;
  }
  public RGB sample(int room,double x,double y,double z){
   samples++;
-  Key key=new Key(room,Math.round(x*16),Math.round(y*16),Math.round(z*16));RGB cached=colours.get(key);if(cached!=null){cacheHits++;return cached;}
+  Key key=new Key(room,Math.round(x*16),Math.round(y*16),Math.round(z*16));
+  long version=revision(x,y,z);
+  Lit cached=colours.get(key);
+  if(cached!=null&&cached.revision()==version){cacheHits++;return cached.rgb();}
   boolean exterior=room<0||room>=12||map!=null&&map.outside(room);
   double r=exterior?.27:(castle!=null?.125:.055),g=exterior?.29:(castle!=null?.129:.059),b=exterior?.34:(castle!=null?.14:.073);
-  for(var source:sources){double factor=factors[source.id];if(factor<.001)continue;
+  for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
    double fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2);if(weight<.002)continue;
@@ -200,14 +261,15 @@ public final class FixtureLighting {
    if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);shadowRays++;visible=clear(source.x,source.y,source.z,x-dx*back,y-dy*back,z-dz*back);sight.put(shadow,visible);}
    if(visible){r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
   }
-  RGB result=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));colours.put(key,result);return result;
+  RGB result=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
+  colours.put(key,new Lit(result,version));return result;
  }
  /** Directional diffuse for audited source normals. Existing un-audited
   * assets retain the legacy sampler until their normal orientation is reviewed. */
  public RGB sampleNormal(int room,double x,double y,double z,double nx,double ny,double nz){
   normalSamples++;
   double hemi=.65+.35*Math.max(0,ny),r=.27*hemi,g=.29*hemi,b=.34*hemi;
-  for(var source:sources){double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
+  for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
    double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
    if(weight>.001){
     normalRays++;
@@ -219,7 +281,7 @@ public final class FixtureLighting {
  }
  public RGB emission(int material,double x,double y,double z){
   String name=GlbProps.materialName(material).toLowerCase(Locale.ROOT);if(!(name.contains("glass")||name.contains("bulb")||name.contains("flame")||name.startsWith("television")))return RGB.ZERO;
-  for(var s:sources)if(factors[s.id]>.01&&Math.abs(x-s.x)<.4&&Math.abs(y-s.y)<.28&&Math.abs(z-s.z)<.4)return new RGB(s.red*1.35,s.green*1.35,s.blue*1.35);
+  for(var s:candidates(x,y,z))if(factors[s.id]>.01&&Math.abs(x-s.x)<.4&&Math.abs(y-s.y)<.28&&Math.abs(z-s.z)<.4)return new RGB(s.red*1.35,s.green*1.35,s.blue*1.35);
   return RGB.ZERO;
  }
 }
