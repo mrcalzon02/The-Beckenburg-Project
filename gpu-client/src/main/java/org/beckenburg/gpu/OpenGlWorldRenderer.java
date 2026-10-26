@@ -122,6 +122,11 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  // uploaded whenever dynamic geometry or authored lighting actually changes.
  private final Map<Integer,float[]> uploadedVertices=new HashMap<>();
  private long uploadedSceneId=-1;
+ /** Observed on GL worker after an actual completed frame, including copied bytes. */
+ public record UploadStats(long sceneId,long frameId,int uploadedBatches,
+     int reusedBatches,long uploadedBytes,long reusedBytes){}
+ private volatile UploadStats uploadStats;
+ public UploadStats uploadStats(){return uploadStats;}
  private long lastSlowReportNs;
  public CompletableFuture<String> initialization(){return initialized;}
  @Override public boolean ready(){return ready&&!closed;}
@@ -280,6 +285,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    }
   }
   target.end();
+  uploadStats=new UploadStats(frame.sceneId(),frame.frameId(),
+      frameUploadedBatches,frameReusedBatches,
+      frameUploadBytes,frameReusedBytes);
   latest=new Result(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,argb,depth);
   long finished=System.nanoTime();
   if(finished-started>200_000_000L&&finished-lastSlowReportNs>5_000_000_000L){
