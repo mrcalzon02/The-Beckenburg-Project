@@ -100,8 +100,41 @@ public final class VanHouseViewportProfileTest {
             }
         }
         Files.writeString(output.resolve("viewport-profile.csv"),csv.toString(),StandardCharsets.UTF_8);
+        // In addition to the moving peer sprite snapshots above, execute the
+        // real solo CampaignAlly pathfinder and swept collision from the van
+        // toward room zero. Preserve both navigation timing and route status:
+        // a stalled ally must be diagnosed, not silently teleported indoors.
+        var session=new InvestigationSession(map,InvestigationSession.Role.OBSERVER,20261025L);
+        var actualAlly=new CampaignAlly(map,session);
+        var destination=map.spawn(0);
+        StringBuilder route=new StringBuilder("step,room,x,y,z,advance_ms,travel_m,report\\n");
+        double travelled=0;
+        var previous=actualAlly.position();
+        for(int step=0;step<700;step++){
+            long began=System.nanoTime();
+            actualAlly.advance(destination.x(),destination.y(),destination.z());
+            long advanceNs=System.nanoTime()-began;
+            var at=actualAlly.position();
+            double moved=Math.hypot(at.x()-previous.x(),at.z()-previous.z());
+            travelled+=moved;
+            if(step%10==0||step==699||actualAlly.room()==0){
+                route.append(String.format(Locale.ROOT,
+                    "%d,%d,%.3f,%.3f,%.3f,%.4f,%.3f,%s%n",
+                    step,actualAlly.room(),at.x(),at.y(),at.z(),advanceNs/1e6,
+                    travelled,actualAlly.report().replace(',', ';').replace('\\n',' ')));
+            }
+            previous=at;
+            if(actualAlly.room()==0)break;
+        }
+        Files.writeString(output.resolve("actual-ally-navigation.csv"),
+            route.toString(),StandardCharsets.UTF_8);
+        System.out.printf(Locale.ROOT,
+            "NPC_ROUTE actual CampaignAlly from van toward House room 0: end_room=%d travel_m=%.3f source=real_stepped_collisions%n",
+            actualAlly.room(),travelled);
+        if(!(travelled>.4))throw new AssertionError(
+            "Actual NPC failed to leave its van starting position; inspect actual-ally-navigation.csv");
         Files.writeString(output.resolve("README.txt"),
-            "Controlled Java 17 renderer benchmark on Windows CI. No OpenGL backend is installed in this process: CPU fallback measures CPU geometry, raster and effects only. GPU submission/readback requires separately instrumented OpenGL runner. Scene positions: House van room 14, yard 13/12, entrance 0, interior 4, upstairs 8. Four peer sprites advance into the house. Initial empty render is cold per viewport; full team render is warm on that viewport. Results are not a proof of real-time performance or actual AI navigation. PNGs include real HUD and scene.\n",
+            "Controlled Java 17 renderer benchmark on Windows CI. No OpenGL backend is installed in this process: CPU fallback measures CPU geometry, raster and effects only. GPU submission/readback requires separately instrumented OpenGL runner. Scene positions: House van room 14, yard 13/12, entrance 0, interior 4, upstairs 8. Four peer sprites occupy scripted successive physical spawns; actual solo CampaignAlly route and navigation timings are stored separately in actual-ally-navigation.csv. Initial empty render is cold per viewport; full team render is warm on that viewport. Results are not a proof of real-time performance or actual AI navigation. PNGs include real HUD and scene.\n",
             StandardCharsets.UTF_8);
         System.out.println("PASS six authored van-to-house viewport captures, real scene metrics, peer sprites and PNG HUD");
     }
