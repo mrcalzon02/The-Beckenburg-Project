@@ -18,10 +18,18 @@ public final class FixtureLighting {
  private static final double CELL_SIZE=4.0;
  private final Map<Cell,List<Source>> influence=new HashMap<>();
  private final Map<Cell,Long> changedCells=new HashMap<>();
- private long generation,invalidatedCells,consideredSources;
- /** Monotonic scene-owned revision of fixture/occluder lighting inputs.
-  * New maps own new FixtureLighting instances; revision alone is not a scene ID. */
+ private long generation,occluderGeneration,invalidatedCells,consideredSources;
+ /** Overall scene-owned lighting version, including localized sources. */
  public long stateRevision(){return generation;}
+ /** Local lighting version: fixture changes advance only influence cells,
+  * while door/window/collision occluder revisions conservatively invalidate
+  * the entire scene. Valid only within the owning FixtureLighting/map.
+  * Must never be used for a camera-dependent sample/LOD cache. */
+ public long regionRevision(double x,double y,double z){
+  if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))
+   throw new IllegalArgumentException("Finite light probe coordinates required");
+  return Math.max(occluderGeneration,revision(x,y,z));
+ }
  private static <K,V> Map<K,V> bounded(int limit){
   return new LinkedHashMap<K,V>(2048,.75f,true){
    @Override protected boolean removeEldestEntry(Map.Entry<K,V> eldest){
@@ -110,7 +118,7 @@ public final class FixtureLighting {
   // Dynamic gate leaves change real shadow occlusion even when the clock and
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
-   castleDoorRevision=castle.doorRevision();++generation;
+   castleDoorRevision=castle.doorRevision();occluderGeneration=++generation;
    sight.clear();colours.clear();normalColours.clear();distant.clear();
   }
   int cosmeticTick=(tick/6)*6;
@@ -211,7 +219,7 @@ public final class FixtureLighting {
   resetStatistics();
   String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();
   if(!geometry.equals(nextGeometry)){
-   geometry=nextGeometry;++generation;
+   geometry=nextGeometry;occluderGeneration=++generation;
    sight.clear();colours.clear();normalColours.clear();distant.clear();
   }
   int cosmeticTick=(tick/6)*6;
