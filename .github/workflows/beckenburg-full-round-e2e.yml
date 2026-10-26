@@ -167,6 +167,19 @@ jobs:
                 }
               }
           }
+          # HotSpot can crash below Java exception handling. Preserve the
+          # JVM fatal error report along with the existing release diagnostics.
+          # Skip native minidumps (potentially multi-GB).
+          Get-ChildItem -Path . -Filter 'hs_err_pid*.log' -File -ErrorAction SilentlyContinue |
+            Sort-Object LastWriteTime -Descending |
+            Select-Object -First 5 |
+            ForEach-Object {
+              $body=Get-Content -LiteralPath $_.FullName -Raw -ErrorAction SilentlyContinue
+              if ($null -ne $body) {
+                $body=$body.Replace($env:USERPROFILE,'<USER_HOME>')
+                Set-Content -LiteralPath (Join-Path 'build\e2e\diagnostics' $_.Name) -Value $body -Encoding utf8
+              }
+            }
           "revision=$env:GITHUB_SHA" | Set-Content 'build\e2e\revision.txt' -Encoding ascii
 
       - name: Attach round transcript, menu screenshots and startup logs
