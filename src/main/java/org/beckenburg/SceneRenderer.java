@@ -1399,6 +1399,10 @@ public final class SceneRenderer {
      * falloff without the old CPU per-pixel triangle scan. */
     private void appendGpuFace(Face face,int room,int depth,
             java.util.Map<Integer,GpuFloats> batches){
+        if(fullyDepthOccluded(ca0,cb0,cc0)){
+            depthRejectedFaces++;
+            return;
+        }
         if(room>=0&&room<12&&(lightingMap==null||!lightingMap.nativeSite())
             &&depth<lightingSubdivisionLimit(Math.max(0,
                 Math.min(camera(face.a).z,
@@ -1436,9 +1440,10 @@ public final class SceneRenderer {
         int faces,int frustumFaces,int sceneryTotal,int sceneryVisible,
         long submittedTriangles,boolean gpu,boolean gpuReadbackFresh,
         boolean gpuReadbackAvailable,int room,int width,int height,
-        FixtureLighting.FrameStats lighting) {}
+        FixtureLighting.FrameStats lighting,long depthRejectedFaces) {}
     private volatile FrameDiagnostics lastFrameDiagnostics;
     public FrameDiagnostics frameDiagnostics(){return lastFrameDiagnostics;}
+    private long depthRejectedFaces;
     private int lastGpuFrustumFaces;
     private long lastGpuSubmittedTriangles;
     private boolean lastGpuReadbackFresh,lastGpuReadbackAvailable;
@@ -2175,6 +2180,7 @@ public final class SceneRenderer {
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
         long frameBegin=System.nanoTime();
+        depthRejectedFaces=0;
         waterCastle=null;activeWater=waterOverride==null?WorldWater.module(map.level().water()):waterOverride;
         paintSky(map,clock);
         int[] hazeBackground=map.nativeSite()?pixels.clone():null;
@@ -2222,7 +2228,8 @@ public final class SceneRenderer {
             gpuFrame?lastGpuSubmittedTriangles:visibleFaces,
             gpuFrame,gpuFrame&&lastGpuReadbackFresh,
             gpuFrame&&lastGpuReadbackAvailable,
-            localRoom,renderWidth,renderHeight,fixtureLighting.frameStats());
+            localRoom,renderWidth,renderHeight,fixtureLighting.frameStats(),
+            depthRejectedFaces);
     }
     /** Screen-distance lighting tessellation budget: 64 children at most,
      * rather than 256 for every large surface regardless of viewing distance.
@@ -2235,6 +2242,40 @@ public final class SceneRenderer {
     }
     private static Point mid(Point a,Point b){return new Point((a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2);}
     private static double edge2(Point a,Point b){return (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y)+(a.z-b.z)*(a.z-b.z);}
+    /** 
+     * CPU fallback only: exact conservative screen-bounds rejection against
+     * ALREADY DRAWN depth. If even the triangle's NEAREST point is behind
+     * every pixel in its snapped raster bounding box, none of its pixels
+     * could win the depth test. No occlusion guess, no portal assumptions,
+     * no GPU stale readback, no visual or evidence state leak.
+     *
+     * Bound the query to small projected triangles: scanning a whole wall
+     * would be slower than simply drawing it. Near-plane crossings are
+     * deliberately left to the existing clipper.
+     */
+    private boolean fullyDepthOccluded(Point a,Point b,Point c){
+        double near=Math.min(a.z,Math.min(b.z,c.z));
+        if(near<=NEAR || !Double.isFinite(near))return false;
+        double ax=PsxPipeline.snap(renderWidth*.5+a.x/a.z*focal,psxPreset);
+        double bx=PsxPipeline.snap(renderWidth*.5+b.x/b.z*focal,psxPreset);
+        double cx=PsxPipeline.snap(renderWidth*.5+c.x/c.z*focal,psxPreset);
+        double ay=PsxPipeline.snap(renderHeight*.5-a.y/a.z*focal,psxPreset);
+        double by=PsxPipeline.snap(renderHeight*.5-b.y/b.z*focal,psxPreset);
+        double cy=PsxPipeline.snap(renderHeight*.5-c.y/c.z*focal,psxPreset);
+        if(!Double.isFinite(ax+bx+cx+ay+by+cy))return false;
+        int x0=Math.max(0,(int)Math.floor(Math.min(ax,Math.min(bx,cx))));
+        int x1=Math.min(renderWidth-1,(int)Math.ceil(Math.max(ax,Math.max(bx,cx))));
+        int y0=Math.max(0,(int)Math.floor(Math.min(ay,Math.min(by,cy))));
+        int y1=Math.min(renderHeight-1,(int)Math.ceil(Math.max(ay,Math.max(by,cy))));
+        if(x0>x1||y0>y1)return true;
+        // Retain exact source shading on large surfaces.
+        if((long)(x1-x0+1)*(y1-y0+1)>144)return false;
+        double nearest=near-1e-5;
+        for(int py=y0;py<=y1;py++)
+            for(int px=x0;px<=x1;px++)
+                if(depths[py*renderWidth+px]>=nearest)return false;
+        return true;
+    }
     /** Large walls need real intermediate light samples so narrow beams cannot become room-wide tints. */
     private void drawLitFace(Face f,int room,int depth){
         Point ca0=camera(f.a),cb0=camera(f.b),cc0=camera(f.c);double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
