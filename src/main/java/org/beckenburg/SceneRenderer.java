@@ -1071,7 +1071,7 @@ public final class SceneRenderer {
         return out;
     }
     /** Immutable contiguous authored shell ranges, preserving original ordering. */
-    private record ShellChunk(int start,int end,double minX,double minY,double minZ,
+    private record ShellChunk(int room,int start,int end,double minX,double minY,double minZ,
         double maxX,double maxY,double maxZ){}
     private static final int SHELL_CHUNK_SIZE=256;
     private HouseMap shellSourceMap;
@@ -1082,8 +1082,9 @@ public final class SceneRenderer {
     /** Functional reference only; no player-facing option is introduced. */
     public void setShellChunkCulling(boolean enabled){shellChunkCulling=enabled;}
     public record ShellChunkStats(int totalChunks,int rejectedChunks,
-        int candidateFaces,int rejectedFaces,int totalFaces){}
-    private ShellChunkStats shellChunkStats=new ShellChunkStats(0,0,0,0,0);
+        int candidateFaces,int rejectedFaces,int totalFaces,int distinctRooms){}
+    private ShellChunkStats shellChunkStats=new ShellChunkStats(0,0,0,0,0,0);
+    private int shellPreparedRoomCount;
     public ShellChunkStats shellChunkStats(){return shellChunkStats;}
     private boolean exportFullLevel;
 
@@ -1590,8 +1591,16 @@ public final class SceneRenderer {
         shellSourceMap=map;shellSourceRevision=revision;
         preparedShellFaces=buildLevelShell(map);
         var chunks=new ArrayList<ShellChunk>();
-        for(int from=0;from<preparedShellFaces.size();from+=SHELL_CHUNK_SIZE){
+        var roomIds=new java.util.HashSet<Integer>();
+        for(int from=0;from<preparedShellFaces.size();){
+            int room=preparedShellFaces.get(from).room;
+            roomIds.add(room);
             int end=Math.min(from+SHELL_CHUNK_SIZE,preparedShellFaces.size());
+            // Preserve authored face ordering while preventing one chunk AABB
+            // from spanning an exterior room and a distant indoor floor.
+            for(int i=from+1;i<end;i++)if(preparedShellFaces.get(i).room!=room){
+                end=i;break;
+            }
             double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX;
             double maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
             for(int i=from;i<end;i++){
@@ -1602,8 +1611,10 @@ public final class SceneRenderer {
                     minZ=Math.min(minZ,point.z);maxZ=Math.max(maxZ,point.z);
                 }
             }
-            chunks.add(new ShellChunk(from,end,minX,minY,minZ,maxX,maxY,maxZ));
+            chunks.add(new ShellChunk(room,from,end,minX,minY,minZ,maxX,maxY,maxZ));
+            from=end;
         }
+        shellPreparedRoomCount=roomIds.size();
         preparedShellChunks=List.copyOf(chunks);
         return preparedShellChunks;
     }
@@ -1649,7 +1660,7 @@ public final class SceneRenderer {
             }
         }
         shellChunkStats=new ShellChunkStats(preparedShellChunks.size(),rejected,
-            candidateFaces,skippedFaces,preparedShellFaces.size());
+            candidateFaces,skippedFaces,preparedShellFaces.size(),shellPreparedRoomCount);
         appendSceneryInstances(out,map);
         for(var s:map.level().sockets())if(s.type().equals("hide")
             &&objectInView(s.x(),s.z(),3,26)
