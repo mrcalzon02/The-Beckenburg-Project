@@ -64,7 +64,7 @@ public final class DebugPerformanceHud {
             lastLog=now;
             var m=metrics;
             BeckenburgDiagnostics.record(String.format(Locale.ROOT,
-                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d depth_rejected=%d lod_hits=%d lod_queries=%d",
+                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d depth_rejected=%d lod_hits=%d lod_queries=%d light_candidates=%d lighting_cells_invalidated=%d",
                 view,room,x,y,z,yaw,actors,loopNs/1e6,measured,
                 m==null?"not-rendered":m.gpu()?"GPU":"CPU-fallback",
                 m==null?0:m.sceneBuildNs()/1e6,m==null?0:m.geometryNs()/1e6,
@@ -76,7 +76,9 @@ public final class DebugPerformanceHud {
                 m==null?0:m.lighting().normalRays(),
                 m==null?0:m.depthRejectedFaces(),
                 m==null?0:m.lighting().lodHits(),
-                m==null?0:m.lighting().lodQueries()));
+                m==null?0:m.lighting().lodQueries(),
+                m==null?0:m.lighting().consideredSources(),
+                m==null?0:m.lighting().invalidatedCells()));
         }
     }
     static int graphBarHeight(double ms,int maxHeight){
@@ -84,8 +86,8 @@ public final class DebugPerformanceHud {
         return Math.min(maxHeight,(int)Math.round(ms*maxHeight/100.0));
     }
     public void draw(Graphics2D g,int canvasWidth,int canvasHeight){
-        if(!enabled||count==0||canvasWidth<340||canvasHeight<320)return;
-        int w=Math.min(476,canvasWidth-16),h=313,left=canvasWidth-w-8,top=8;
+        if(!enabled||count==0||canvasWidth<340||canvasHeight<350)return;
+        int w=Math.min(476,canvasWidth-16),h=331,left=canvasWidth-w-8,top=8;
         double[] sorted=Arrays.copyOf(history,count);Arrays.sort(sorted);
         double p50=sorted[(count-1)/2],p95=sorted[(int)Math.ceil(count*.95)-1],
             p99=sorted[(int)Math.ceil(count*.99)-1];
@@ -132,13 +134,17 @@ public final class DebugPerformanceHud {
                     m.lighting().normalRays(),
                     m.lighting().lodHits(),m.lighting().lodQueries()),
                     0xffddad);yLine+=17;
+                text(out,left+10,yLine,String.format(Locale.ROOT,
+                    "VOLUME SOURCE TESTS %,d   DIRTY CELLS %,d",
+                    m.lighting().consideredSources(),m.lighting().invalidatedCells()),
+                    0xb8e1cd);yLine+=17;
             }
             var rt=Runtime.getRuntime();
             text(out,left+10,yLine,String.format(Locale.ROOT,
                 "HEAP %dMB / %dMB  JVM MAX %dMB",
                 (rt.totalMemory()-rt.freeMemory())>>20,
                 rt.totalMemory()>>20,rt.maxMemory()>>20),0xbbcdd2);
-            int graphTop=top+219,graphHeight=71;
+            int graphTop=top+236,graphHeight=71;
             out.setColor(new Color(28,44,53));out.fillRect(left+10,graphTop,w-20,graphHeight);
             out.setColor(new Color(68,98,110));
             for(int t:new int[]{16,33,50,100}){
@@ -154,7 +160,7 @@ public final class DebugPerformanceHud {
                     ms>100?94:ms>33?196:225,ms>100?106:ms>33?97:172));
                 out.fillRect(bx,graphTop+graphHeight-bh,bw,bh);
             }
-            text(out,left+12,top+304,"120 FRAME HISTORY  /  16 33 50 100ms GRID",0xb9cbd0);
+            text(out,left+12,top+321,"120 FRAME HISTORY  /  16 33 50 100ms GRID",0xb9cbd0);
         }finally{out.dispose();}
     }
     private static void text(Graphics2D g,int x,int y,String s,int rgb){
