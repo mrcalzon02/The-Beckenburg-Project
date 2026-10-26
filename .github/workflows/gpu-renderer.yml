@@ -1,7 +1,7 @@
 name: Beckenburg GPU Renderer Acceptance
 on:
   push:
-    branches: [main]
+    branches: [main, 'performance/**']
     paths:
       - 'gpu-client/**'
       - 'src/main/java/org/beckenburg/GpuWorldRenderer.java'
@@ -67,6 +67,12 @@ jobs:
           if not exist build\\test mkdir build\\test
           javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\PreparedSceneryRetentionTest.java || exit /b 1
           java -Djava.awt.headless=true -ea -cp build\\classes;build\\test org.beckenburg.PreparedSceneryRetentionTest || exit /b 1
+      - name: Verify fixture and occluder state revisions
+        shell: cmd
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\FixtureLightingRevisionTest.java || exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.FixtureLightingRevisionTest || exit /b 1
       - name: Preserve viewport profile frames, stage CSV and HUD even if another GPU check fails
         if: always()
         uses: actions/upload-artifact@v4
