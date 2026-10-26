@@ -1399,10 +1399,6 @@ public final class SceneRenderer {
      * falloff without the old CPU per-pixel triangle scan. */
     private void appendGpuFace(Face face,int room,int depth,
             java.util.Map<Integer,GpuFloats> batches){
-        if(fullyDepthOccluded(ca0,cb0,cc0)){
-            depthRejectedFaces++;
-            return;
-        }
         if(room>=0&&room<12&&(lightingMap==null||!lightingMap.nativeSite())
             &&depth<lightingSubdivisionLimit(Math.max(0,
                 Math.min(camera(face.a).z,
@@ -2286,6 +2282,12 @@ public final class SceneRenderer {
     private void drawLitFace(Face f,int room,int depth){
         Point ca0=camera(f.a),cb0=camera(f.b),cc0=camera(f.c);double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
         if(ca0.z<NEAR&&cb0.z<NEAR&&cc0.z<NEAR||ca0.x>ca0.z*hx&&cb0.x>cb0.z*hx&&cc0.x>cc0.z*hx||ca0.x< -ca0.z*hx&&cb0.x< -cb0.z*hx&&cc0.x< -cc0.z*hx||ca0.y>ca0.z*hy&&cb0.y>cb0.z*hy&&cc0.y>cc0.z*hy||ca0.y< -ca0.z*hy&&cb0.y< -cb0.z*hy&&cc0.y< -cc0.z*hy)return;
+        // Software depth is authoritative for this *current* frame only.
+        // Do not attempt this early-depth test in async GPU submission.
+        if(fullyDepthOccluded(ca0,cb0,cc0)){
+            depthRejectedFaces++;
+            return;
+        }
 
         if(room>=0&&room<12&&(lightingMap==null||!lightingMap.nativeSite())
             &&depth<lightingSubdivisionLimit(Math.max(0,
