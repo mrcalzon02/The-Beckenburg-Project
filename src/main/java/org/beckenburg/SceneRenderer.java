@@ -553,7 +553,7 @@ public final class SceneRenderer {
         }
         for(double z:new double[]{-1.2,-.2,.8})
             vanBox(faces,van,.85,floor+1.36,z-.10,.04,.14,.20,MaterialAtlas.IRON);
-        for(double zz:new double[]{-1.1,.9}){var pos=van.world(0,zz);imported(faces,"level_utility_light",pos.x(),VanInteriorLayout.ROOF_Y-.025,pos.z(),.5,van.placement().yaw());}
+        for(var light:VanInteriorLayout.CEILING_LIGHTS){var pos=van.world(0,light.z());imported(faces,"level_utility_light",pos.x(),light.mountY(),pos.z(),light.scale(),van.placement().yaw());}
         for(VanInteriorLayout.Fixture fixture:VanInteriorLayout.FIXTURES){
             if(!VanInteriorLayout.insideShell(fixture))throw new IllegalStateException("VAN furniture outside cabin: "+fixture.purpose());
             var p=van.world(fixture.localX(),fixture.localZ());
@@ -1786,17 +1786,20 @@ public final class SceneRenderer {
         if(type==CastleDoorSlots.Type.EMPTY)return;
         double half=CastleDoorSlots.MASONRY_THICKNESS*.38;
         if(type==CastleDoorSlots.Type.WOOD){
-            if(open)return; // leaf swings into its wall pocket
-            if(slot.horizontal())
-                texturedBox(out,slot.x0()+.06,.035,slot.z0()-half,
-                    slot.width()-.12,slot.clearHeight()-.09,half*2,MaterialAtlas.AGED_WOOD);
-            else texturedBox(out,slot.x0()-half,.035,slot.z0()+.06,
-                    half*2,slot.clearHeight()-.09,slot.width()-.12,MaterialAtlas.AGED_WOOD);
+            for(var leaf:CastleTimberDoors.leaves(slot,open)){
+                var local=new ArrayList<Face>();
+                texturedBox(local,0,0,-.04,leaf.width(),leaf.height(),.08,MaterialAtlas.AGED_WOOD);
+                for(double band:new double[]{.30,leaf.height()-.38})
+                    texturedBox(local,.03,band,-.055,leaf.width()-.06,.085,.11,MaterialAtlas.IRON);
+                for(double side:new double[]{-.075,.055})
+                    texturedBox(local,leaf.width()-.20,leaf.height()*.48,side,.055,.18,.02,MaterialAtlas.IRON);
+                for(var f:local){var av=leaf.point(f.a.x,f.a.y,f.a.z);var bv=leaf.point(f.b.x,f.b.y,f.b.z);var cv=leaf.point(f.c.x,f.c.y,f.c.z);out.add(new Face(new Point(av[0],av[1],av[2]),new Point(bv[0],bv[1],bv[2]),new Point(cv[0],cv[1],cv[2]),f.color,f.material,f.au,f.av,f.bu,f.bv,f.cu,f.cv,f.room));}
+            }
             return;
         }
         // One custom iron portcullis assembly inside the 4.6m castle aperture.
         // When opened it rises intact into the gatehouse, clearing the passage.
-        double base=open?slot.clearHeight()+.08:.04;
+        double base=slot.bottom()+(open?slot.clearHeight()+.08:.04);
         for(double d=.17;d<slot.width()-.08;d+=.38){
             if(slot.horizontal())box(out,slot.x0()+d,base,slot.z0()-.075,
                 .085,slot.clearHeight()-.1,.15,0x383f45);

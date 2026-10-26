@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 845,
+  "count": 853,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -8564,6 +8564,86 @@
       "height": 1800,
       "bytes": 366902,
       "sha256": "37d8b9e4240226505de62a70264d153233c02f6881f09fedd09563c954f3e2a1"
+    },
+    {
+      "path": "development/levels/previews/van-castle-repair/castle-door-closed.png",
+      "url": "development/levels/previews/van-castle-repair/castle-door-closed.png",
+      "title": "Castle door closed",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 74186,
+      "sha256": "87dcec7bd9cf3d15fd047a717950c9161f3389f1a806f0fe264967c39b5cd028"
+    },
+    {
+      "path": "development/levels/previews/van-castle-repair/castle-door-open.png",
+      "url": "development/levels/previews/van-castle-repair/castle-door-open.png",
+      "title": "Castle door open",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 81224,
+      "sha256": "662607ce4cb10d024a79aebee49322dddfe025e9e7c548432ffb8c8ba093c670"
+    },
+    {
+      "path": "development/levels/previews/van-castle-repair/van-hollow-creek-equipment.png",
+      "url": "development/levels/previews/van-castle-repair/van-hollow-creek-equipment.png",
+      "title": "Van hollow creek equipment",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 77596,
+      "sha256": "f37174aa9d14eac900753db526c187349ed91f5b2db2f943ed825b58f992a9a3"
+    },
+    {
+      "path": "development/levels/previews/van-castle-repair/van-hollow-creek-roof.png",
+      "url": "development/levels/previews/van-castle-repair/van-hollow-creek-roof.png",
+      "title": "Van hollow creek roof",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 64340,
+      "sha256": "7c5c27338c13ac9f9a55118a78bbcb7f696134e9dc69b24736fb2fbf16447fc8"
+    },
+    {
+      "path": "development/levels/previews/van-castle-repair/van-hollow-creek-workstation.png",
+      "url": "development/levels/previews/van-castle-repair/van-hollow-creek-workstation.png",
+      "title": "Van hollow creek workstation",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 73266,
+      "sha256": "042cbae1677247a243960900bc76797fadcd283050ff60bb9840ee6611e3b4ab"
+    },
+    {
+      "path": "development/levels/previews/van-castle-repair/van-house-equipment.png",
+      "url": "development/levels/previews/van-castle-repair/van-house-equipment.png",
+      "title": "Van house equipment",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 81115,
+      "sha256": "f1e79b79cea7ef5ae7f12731495baf3bde23db45a9b1cb005e0bf7b75b063dc3"
+    },
+    {
+      "path": "development/levels/previews/van-castle-repair/van-house-roof.png",
+      "url": "development/levels/previews/van-castle-repair/van-house-roof.png",
+      "title": "Van house roof",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 66377,
+      "sha256": "39a023dd909c7400da7b9418f7a480a7b4df7723ca385dae0ba58d40b7a60d01"
+    },
+    {
+      "path": "development/levels/previews/van-castle-repair/van-house-workstation.png",
+      "url": "development/levels/previews/van-castle-repair/van-house-workstation.png",
+      "title": "Van house workstation",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 75363,
+      "sha256": "a755f7da40135d4531988457c304fba48609c35569d513d53125715832b56ecf"
     },
     {
       "path": "development/levels/previews/van/01-street-and-van.png",

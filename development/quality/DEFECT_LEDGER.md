@@ -1669,3 +1669,27 @@ Action: Run subsequent captures from immutable copied JARs. Castle rerun complet
 Evidence: build/map-audit-captures.log retains failure; map-audit-castle.log clean; native rerun recorded separately.
 
 Older-map audit: Never overwrite a running validation executable; record process completion separately from valid captured frame hashes.
+
+## DEV-122 — Van upper racks dark under narrow ceiling beams
+
+**Status:** fixed-scoped
+
+Three physically mounted broad diffusers on vehicle supply; all10map placements tested.
+
+Evidence: van-castle-repair.json. Older-map obligation: inspect all placements and doors.
+
+## DEV-123 — Castle leaves vanish when open and ignore floor elevation
+
+**Status:** fixed-scoped-human-review-pending
+
+Paired fitted leaves remain on hinges at actual storey height; collision and shadows follow them. Portcullis also uses slot bottom.
+
+Evidence: van-castle-repair.json. Older-map obligation: inspect all placements and doors.
+
+## DEV-124 — Van metal textures show banding
+
+**Status:** open-art-refinement
+
+Review metal UV/albedo under new lights; do not reduce useful illumination to hide defects.
+
+Evidence: van-castle-repair.json. Older-map obligation: inspect all placements and doors.

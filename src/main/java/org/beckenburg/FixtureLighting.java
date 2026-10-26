@@ -2,7 +2,7 @@ package org.beckenburg;
 import java.util.*;
 /** Metre-space coloured emission and architectural occlusion, independent of the camera. */
 public final class FixtureLighting {
- public enum Kind { FROSTED_DOME,BARE_BULB,CANDLE_CHANDELIER,TABLE_LAMP,FLUORESCENT,WALL_SCONCE,TELEVISION,FIRELIGHT }
+ public enum Kind { FROSTED_DOME,BARE_BULB,CANDLE_CHANDELIER,TABLE_LAMP,FLUORESCENT,VAN_DIFFUSER,WALL_SCONCE,TELEVISION,FIRELIGHT }
  public record RGB(double r,double g,double b){static final RGB ZERO=new RGB(0,0,0);public double energy(){return r+g+b;}}
  public record Source(int id,Kind kind,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double red,double green,double blue){}
  private record Key(int room,long x,long y,long z){}
@@ -84,7 +84,10 @@ public final class FixtureLighting {
   }
   for(var f:map.fixtures().states())if(f.kind()==HauntedFixtures.Kind.TABLE_LAMP)add(Kind.TABLE_LAMP,f.room(),f.id(),f.x(),f.y()+.345,f.z(),0,-1,0,3.6,2.0,1,.72,.40);
   for(var f:map.fixtures().states())if(f.kind().name().equals("TELEVISION")){double front=.345*f.scale();add(Kind.TELEVISION,f.room(),f.id(),f.x()-Math.sin(f.yaw())*front,f.y()+.32*f.scale(),f.z()+Math.cos(f.yaw())*front,-Math.sin(f.yaw()),0,Math.cos(f.yaw()),4.4,3.4,.91,.96,1);}
-  for(double zz:new double[]{-1.1,.9}){var pos=map.van().world(0,zz);add(Kind.FLUORESCENT,14,0,pos.x(),map.van().placement().y()+VanInteriorLayout.ROOF_Y-.10,pos.z(),0,-1,0,3.6,2.2,.9,.95,1);}
+  for(var light:VanInteriorLayout.CEILING_LIGHTS)for(double xx:new double[]{-.18,.18}){
+   var pos=map.van().world(xx,light.z());
+   add(Kind.VAN_DIFFUSER,14,0,pos.x(),map.van().placement().y()+light.mountY()-.065,pos.z(),0,-1,0,3.8,.95,.92,.97,1);
+  }
   factors=new double[sources.size()];
  }
  private int controller(LevelDefinition.Socket socket){int at=socket.style().indexOf('@');if(at<0)return 0;String key=socket.style().substring(at+1);var plate=map.level().sockets().stream().filter(s->s.id().equals(key)).findFirst().orElseThrow();return map.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.LIGHT_SWITCH&&Math.hypot(f.x()-plate.x(),f.z()-plate.z())<.001).findFirst().orElseThrow().id();}
@@ -126,9 +129,9 @@ public final class FixtureLighting {
   if(map==null||!Double.isFinite(ax+ay+az+bx+by+bz))return false;
   final double EPS=0.0001;
   for(var slot:CastleDoorSlots.all()){
-   if(CastleLevelEdits.current().doorType(slot.id())!=CastleDoorSlots.Type.EMPTY
-      &&!map.doorOpen(slot.id())
-      &&CastleDoorSlots.crossesLeaf(slot,ax,ay,az,bx,by,bz))return false;
+   var type=CastleLevelEdits.current().doorType(slot.id());
+   if(type==CastleDoorSlots.Type.WOOD){if(CastleTimberDoors.crosses(slot,map.doorOpen(slot.id()),ax,ay,az,bx,by,bz))return false;}
+   else if(type!=CastleDoorSlots.Type.EMPTY&&!map.doorOpen(slot.id())&&CastleDoorSlots.crossesLeaf(slot,ax,ay,az,bx,by,bz))return false;
   }
   for(var wall:CastleLevelEdits.current().walls()){
    if(wall.hasDoor())continue; // markers denote OPENINGS, not solid faces
@@ -222,7 +225,7 @@ public final class FixtureLighting {
  private static double smooth(double lo,double hi,double value){double t=Math.max(0,Math.min(1,(value-lo)/(hi-lo)));return t*t*(3-2*t);}
  /** Source-to-surface cone, not a screen-space flashlight-shaped tint. */
  public static double angular(Kind kind,double dot){return switch(kind){
-  case FLUORESCENT->smooth(.48,.72,dot);case TELEVISION->Math.pow(Math.max(0,dot),2.2);
+  case FLUORESCENT->smooth(.48,.72,dot);case VAN_DIFFUSER->.35+.65*smooth(-.12,.45,dot);case TELEVISION->Math.pow(Math.max(0,dot),2.2);
   case TABLE_LAMP->.07+.86*smooth(.32,.76,dot)+.24*smooth(.70,.96,-dot);
   case FROSTED_DOME->.18+.82*smooth(-.08,.42,dot);default->1;};}
  /**

@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-26",
+  "process_exit": 0,
+  "captures": [
+    {
+      "map": "van-house",
+      "view": "workstation",
+      "frame": "2",
+      "width": "480",
+      "height": "300",
+      "mean_luma": "69.5744",
+      "bright_pixels": "127597",
+      "sha256": "a755f7da40135d4531988457c304fba48609c35569d513d53125715832b56ecf",
+      "path": "development/levels/previews/van-castle-repair/van-house-workstation.png"
+    },
+    {
+      "map": "van-house",
+      "view": "equipment",
+      "frame": "5",
+      "width": "480",
+      "height": "300",
+      "mean_luma": "73.4799",
+      "bright_pixels": "135919",
+      "sha256": "f1e79b79cea7ef5ae7f12731495baf3bde23db45a9b1cb005e0bf7b75b063dc3",
+      "path": "development/levels/previews/van-castle-repair/van-house-equipment.png"
+    },
+    {
+      "map": "van-house",
+      "view": "roof",
+      "frame": "8",
+      "width": "480",
+      "height": "300",
+      "mean_luma": "45.0565",
+      "bright_pixels": "109311",
+      "sha256": "39a023dd909c7400da7b9418f7a480a7b4df7723ca385dae0ba58d40b7a60d01",
+      "path": "development/levels/previews/van-castle-repair/van-house-roof.png"
+    },
+    {
+      "map": "van-hollow-creek",
+      "view": "workstation",
+      "frame": "11",
+      "width": "480",
+      "height": "300",
+      "mean_luma": "67.0878",
+      "bright_pixels": "117333",
+      "sha256": "042cbae1677247a243960900bc76797fadcd283050ff60bb9840ee6611e3b4ab",
+      "path": "development/levels/previews/van-castle-repair/van-hollow-creek-workstation.png"
+    },
+    {
+      "map": "van-hollow-creek",
+      "view": "equipment",
+      "frame": "14",
+      "width": "480",
+      "height": "300",
+      "mean_luma": "67.9079",
+      "bright_pixels": "107878",
+      "sha256": "f37174aa9d14eac900753db526c187349ed91f5b2db2f943ed825b58f992a9a3",
+      "path": "development/levels/previews/van-castle-repair/van-hollow-creek-equipment.png"
+    },
+    {
+      "map": "van-hollow-creek",
+      "view": "roof",
+      "frame": "17",
+      "width": "480",
+      "height": "300",
+      "mean_luma": "41.8498",
+      "bright_pixels": "93582",
+      "sha256": "7c5c27338c13ac9f9a55118a78bbcb7f696134e9dc69b24736fb2fbf16447fc8",
+      "path": "development/levels/previews/van-castle-repair/van-hollow-creek-roof.png"
+    },
+    {
+      "map": "castle-door",
+      "view": "closed",
+      "frame": "20",
+      "width": "480",
+      "height": "300",
+      "mean_luma": "25.6067",
+      "bright_pixels": "34570",
+      "sha256": "87dcec7bd9cf3d15fd047a717950c9161f3389f1a806f0fe264967c39b5cd028",
+      "path": "development/levels/previews/van-castle-repair/castle-door-closed.png"
+    },
+    {
+      "map": "castle-door",
+      "view": "open",
+      "frame": "22",
+      "width": "480",
+      "height": "300",
+      "mean_luma": "20.3776",
+      "bright_pixels": "12357",
+      "sha256": "662607ce4cb10d024a79aebee49322dddfe025e9e7c548432ffb8c8ba093c670",
+      "path": "development/levels/previews/van-castle-repair/castle-door-open.png"
+    }
+  ]
+}

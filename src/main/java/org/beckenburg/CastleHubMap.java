@@ -34,10 +34,11 @@ public final class CastleHubMap {
         return nearest;
     }
     private boolean closedLeafBlocks(double x,double y,double z,double r){
-        for(var slot:CastleDoorSlots.all())
-            if(CastleLevelEdits.current().doorType(slot.id())!=CastleDoorSlots.Type.EMPTY
-                &&!doorOpen(slot.id())
-                &&CastleDoorSlots.leafBlocks(slot,x,y,z,r))return true;
+        for(var slot:CastleDoorSlots.all()){
+            var type=CastleLevelEdits.current().doorType(slot.id());
+            if(type==CastleDoorSlots.Type.WOOD){if(CastleTimberDoors.blocks(slot,doorOpen(slot.id()),x,y,z,r))return true;}
+            else if(type!=CastleDoorSlots.Type.EMPTY&&!doorOpen(slot.id())&&CastleDoorSlots.leafBlocks(slot,x,y,z,r))return true;
+        }
         return false;
     }
     public enum Station {

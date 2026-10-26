@@ -1332,6 +1332,39 @@
       "action": "Run subsequent captures from immutable copied JARs. Castle rerun completed exit0; repeat native capture from a separate immutable copy.",
       "evidence": "build/map-audit-captures.log retains failure; map-audit-castle.log clean; native rerun recorded separately.",
       "older_maps": "Never overwrite a running validation executable; record process completion separately from valid captured frame hashes."
+    },
+    {
+      "id": "DEV-122",
+      "title": "Van upper racks dark under narrow ceiling beams",
+      "status": "fixed-scoped",
+      "affected": "Shared van / Castle",
+      "symptom": "Van upper racks dark under narrow ceiling beams",
+      "cause": "Source distribution / placement / material quality",
+      "action": "Three physically mounted broad diffusers on vehicle supply; all10map placements tested.",
+      "evidence": "VanLightingAndCastleDoorTest,8actualGPUframes: van-castle-repair.json",
+      "older_maps": "Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open."
+    },
+    {
+      "id": "DEV-123",
+      "title": "Castle leaves vanish when open and ignore floor elevation",
+      "status": "fixed-scoped-human-review-pending",
+      "affected": "Shared van / Castle",
+      "symptom": "Castle leaves vanish when open and ignore floor elevation",
+      "cause": "Source distribution / placement / material quality",
+      "action": "Paired fitted leaves remain on hinges at actual storey height; collision and shadows follow them. Portcullis also uses slot bottom.",
+      "evidence": "VanLightingAndCastleDoorTest,8actualGPUframes: van-castle-repair.json",
+      "older_maps": "Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open."
+    },
+    {
+      "id": "DEV-124",
+      "title": "Van metal textures show banding",
+      "status": "open-art-refinement",
+      "affected": "Shared van / Castle",
+      "symptom": "Van metal textures show banding",
+      "cause": "Source distribution / placement / material quality",
+      "action": "Review metal UV/albedo under new lights; do not reduce useful illumination to hide defects.",
+      "evidence": "VanLightingAndCastleDoorTest,8actualGPUframes: van-castle-repair.json",
+      "older_maps": "Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open."
     }
   ],
   "audit_categories": [

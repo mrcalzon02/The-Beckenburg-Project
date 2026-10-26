@@ -20,6 +20,12 @@ public final class VanInteriorLayout {
     }
     public static final double FLOOR_Y=VanStaging.FLOOR_Y, ROOF_Y=FLOOR_Y+VanStaging.INTERIOR_HEIGHT;
     public static final double INNER_WALL=VanStaging.INTERIOR_HALF_WIDTH-.03;
+    /** Shared physical fittings and emitters on the vehicle's own supply. */
+    public record CeilingLight(double z,double mountY,double scale){}
+    public static final List<CeilingLight> CEILING_LIGHTS=List.of(
+        new CeilingLight(-1.55,ROOF_Y-.025,.5),
+        new CeilingLight(0,ROOF_Y-.025,.5),
+        new CeilingLight(1.40,ROOF_Y-.025,.5));
     public static final double AISLE_HALF_WIDTH=.48;
     public static final int TOOL_COLUMNS=7,TOOL_ROWS=6,TOOL_CAPACITY=TOOL_COLUMNS*TOOL_ROWS;
     public static final double TOOL_COLUMN_PITCH=.50;

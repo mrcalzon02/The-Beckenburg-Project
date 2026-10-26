@@ -5,11 +5,12 @@ import javax.imageio.ImageIO;
 
 /** Actual completed OpenGL frames; no mission unlock or gameplay acceptance implied. */
 public final class MapCompatibilityReview {
-    private record Shot(String label,LevelOpeningFlyover.Pose pose,boolean breaker,boolean torch){}
-    private static final Path ROOT=Path.of("development/levels/previews/lighting-camera-audit");
+    record Shot(String label,LevelOpeningFlyover.Pose pose,boolean breaker,boolean torch){}
+    private static final Path ROOT=Path.of(System.getProperty("beckenburg.map.review.folder","development/levels/previews/lighting-camera-audit"));
     private static final StringBuilder REPORT=new StringBuilder("map\tview\tframe\twidth\theight\tmean_luma\tbright_pixels\tsha256\n");
     private static String hash(byte[] b)throws Exception{return HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(b));}
-    private static void capture(String id,Shot shot,SceneRenderer renderer,HouseMap map,CastleHubMap castle)throws Exception{
+    static void capture(String id,Shot shot,SceneRenderer renderer,HouseMap map,CastleHubMap castle)throws Exception{
+        Files.createDirectories(ROOT);
         shot.pose.apply(renderer);renderer.roomLights.setBreaker(shot.breaker);renderer.lamp=shot.torch;
         double time=2.5;
         if(map==null)renderer.drawCastle(castle,time,shot.breaker);else renderer.drawNetwork(map,List.of(),-1,time);
