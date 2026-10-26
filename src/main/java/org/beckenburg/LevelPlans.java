@@ -293,8 +293,16 @@ public final class LevelPlans {
             for(int i=0;i<12;i++){
                 Room r=rooms.get(i);String n=r.name().toLowerCase(); double y=r.y(),x=r.x0()+1.2,z=r.z0()+1.2;
                 socket("spawn",i,r.cx(),y,r.cz(),0,"standing");
-                socket("light",i,(r.x0()+r.x1())/2,y+r.height()-.025,(r.z0()+r.z1())/2,0,
-                    n.contains("barn")||n.contains("shed")||n.contains("boiler")||n.contains("cellar")||n.contains("maintenance")?"utility":ambience.equals("residential")||ambience.equals("farm")||ambience.equals("church")||ambience.equals("academy")||ambience.equals("estate")?"domestic":"utility");
+                String lightStyle=n.contains("barn")||n.contains("shed")||n.contains("boiler")||n.contains("cellar")||n.contains("maintenance")?"utility":ambience.equals("residential")||ambience.equals("farm")||ambience.equals("church")||ambience.equals("academy")||ambience.equals("estate")?"domestic":"utility";
+                // Long prototype halls need physical repeated fittings. A single
+                // central source left their entrances outside its actual radius.
+                // Keep the already refined three playable sites unchanged.
+                boolean repeat=!id.equals("house")&&!id.equals("farmhouse")&&!id.equals("school");
+                int nx=repeat?(int)Math.ceil((r.x1()-r.x0())/7):1;
+                int nz=repeat?(int)Math.ceil((r.z1()-r.z0())/7):1;
+                for(int lx=0;lx<nx;lx++)for(int lz=0;lz<nz;lz++)socket("light",i,
+                    r.x0()+(lx+.5)*(r.x1()-r.x0())/nx,y+r.height()-.025,
+                    r.z0()+(lz+.5)*(r.z1()-r.z0())/nz,0,lightStyle);
                 socket("evidence",i,r.cx(),y+.025,r.cz(),0,"floor-inspection");
                 socket("hide",i,r.x0()+.65,y,r.z1()-.65,Math.PI/2,"recess");
                 if(n.contains("living")||n.contains("parlour")||n.contains("drawing")||n.contains("day room")){

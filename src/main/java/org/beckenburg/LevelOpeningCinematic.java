@@ -46,14 +46,8 @@ final class LevelOpeningCinematic implements AutoCloseable {
         }else{
             preview=null;worker=null;
         }
-        double minX=Double.POSITIVE_INFINITY,minZ=minX,maxX=-minX,maxZ=-minX;
-        for(var room:map.level().rooms()){
-            if(room.outside())continue;
-            minX=Math.min(minX,room.x0());maxX=Math.max(maxX,room.x1());
-            minZ=Math.min(minZ,room.z0());maxZ=Math.max(maxZ,room.z1());
-        }
-        centerX=(minX+maxX)/2;centerZ=(minZ+maxZ)/2;
-        span=Math.max(15,Math.max(maxX-minX,maxZ-minZ));
+        var framing=LevelOpeningFlyover.framing(map);
+        centerX=framing.cx();centerZ=framing.cz();span=framing.span();
         BeckenburgDiagnostics.record("OPENING FLIGHT "+map.site()
             +" backend="+(gpuFlight?"GPU world-space":"software tactical overview"));
     }
@@ -138,6 +132,12 @@ final class LevelOpeningCinematic implements AutoCloseable {
             // Rooms are *authored* outlines; the overview never guesses
             // secret entities or makes undiscovered evidence visible.
             for(var room:map.level().rooms()){
+                if(map.nativeSite()){
+                    if(room.id()>=HouseMap.INDOOR_ROOMS)continue;
+                    g.setColor(new Color(164,172,166));
+                    g.fill(new java.awt.geom.Ellipse2D.Double(room.cx()-.5,room.cz()-.5,1,1));
+                    continue; // native outdoor zones are anchors, not rectangular buildings
+                }
                 if(room.outside())continue;
                 int x=(int)Math.round(room.x0()),z=(int)Math.round(room.z0());
                 int rw=Math.max(1,(int)Math.round(room.x1()-room.x0())),

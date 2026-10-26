@@ -1,0 +1,13 @@
+# Active map compatibility and development goal —26October2026
+
+User explicitly requested a new ongoing goal: renew all existing maps for new lighting, opening camera pans and textures, then continue recorded refinement/model/detail work through completion. Goal tool is active, unbounded; do not mark complete at this checkpoint. Prioritize compatibility before expanding maps. Preserve original and mission-board checkouts and unrelated verification edits.
+
+Shared engine baseline5b4761a8 merged at813839d1. Existing pending sound-volume work safely checkpointedb36daffd; its final Sound tab/audition/listening review remains open after user stopped Computer Use. Sound tests pass but no human audio acceptance inferred.
+
+Completed initial fixes: outdoor LevelOpeningFlyover and software fallback share finite native-site framing; all10runtime maps now pass the flyover regression and exact physical van handoff. Six unfinished indoor prototype maps now have repeated actual ceiling fittings instead of an out-of-range central hall fitting. House/Farmhouse/School refined fixtures unchanged. All nine indoor entry samples respond to actual breaker blackout. Camera/lighting cache, source LOD, physical fixture, clipped light-volume, depth occlusion, water editor and sound mixer tests pass. No native geometry rebuilt, no mission unlocked.
+
+Actual GPU review uses64completed frames across10runtime maps plus Castle, with six prototype before/after pairs. Native images320x200; others480x300. Capture metadata includes per-frame IDs, luminance, dimensions and PNG SHA256. This is an initial static compatibility sample, not a whole-map, LAN, frame-time or human pass. Native aerial water cost and fog remain openDEV-120. Immutable copied capture JARs required after DEV-121 rebuilding-a-running-JAR error. Capture return code must be checked independently of frames.
+
+Next: finish native clean rerun and verify gallery delivery; inspect per-room/route camera pans, wall/floor/roof/corner light separation and all-map texture/UV/normal/metal-stripe quality. Review every added fixture against real ceiling parts and stair cutouts. All remaining catalogue layouts stay existing planned/native authoring packets; do not claim runtime compatibility or rebuild them merely to increase map count. Continue terrain/desquareify, models, power, equal hiding budget, storytelling and detail gates per production workflow.
+
+Recovery: latest installer244/245 failed LanSoundIntegrationTest; local rerun passed, keep intermittent open. Issue#6 still open. New full exact-SHA acceptance needed after this checkpoint. Exact run/session tokens unavailable; do not invent counts.

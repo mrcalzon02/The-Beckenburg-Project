@@ -1621,3 +1621,51 @@ Older-map obligation: Do not infer GPU weather parity from software checks.
 Existing room and weather soundscapes have no selectable visible volume inspector. Add placement, playback, source gain/range/falloff and save/runtime integration per user request.
 
 Older-map obligation: Audit existing beds to avoid duplicate loops; authored ambience must remain separate from ghost/evidence events.
+
+## DEV-118 — Opening pan rejected fully outdoor native maps
+
+**Status:** fixed-scoped · 26October2026
+
+LevelOpeningFlyover required indoor bounds; Hollow Creek has outdoor ownership zones only. Expanded all-ten-map regression reproduced IllegalStateException before repair.
+
+Action: Share finite indoor/outdoor framing with the software fallback; exclude van/approach zones and avoid presenting outdoor zones as rectangular buildings.
+
+Evidence: LevelOpeningFlyoverTest now covers all10maps, finite fallback rendering and exact player handoff.
+
+Older-map audit: Audit each future map camera path, framing, support and final view; no full path collision or human acceptance inferred.
+
+## DEV-119 — Long prototype halls had no effective entrance lighting
+
+**Status:** fixed-scoped · 26October2026
+
+Actual GPU lit and blackout images were identical in Mansion, Prison, Asylum, Academy and College; Church entry was nearly black. A single central fixture was beyond range of the actual entry.
+
+Action: Place repeated physical fittings at up to7m spacing in unfinished indoor prototypes, preserving refined House/Farmhouse/School fixture layouts.
+
+Evidence: AllMapLightingCoverageTest passes nine indoor entries and blackout; actual GPU before/after captured for six prototypes.
+
+Older-map audit: Review every room, ceiling attachment, stairs/openings, switch circuit and all joins. Entry samples are not whole-map leak acceptance.
+
+## DEV-120 — Native outdoor aerial review has excessive water cost and obscuring fog
+
+**Status:** open-profile-and-art-review · 26October2026
+
+Hollow Creek aerial/water captures take minutes; aerial site detail is heavily obscured by fog.
+
+Action: Record actual scripted captures and keep real-time performance and aerial composition open. Do not change global fog or hide the native map to force a pass.
+
+Evidence: 480x300 first capture and320x200 isolated rerun; no hardware frame-time benchmark or acceptance claimed.
+
+Older-map audit: Profile water, lighting, geometry and camera effects separately for every future outdoor/water map before mission unlock.
+
+## DEV-121 — Capture JAR was rebuilt while an earlier worker still used it
+
+**Status:** fixed-tooling-workflow · 26October2026
+
+An overlapping Maven build replaced a running capture JAR, causing a lazy LWJGL class load error at shutdown. Captured frames alone did not prove a clean run.
+
+Action: Run subsequent captures from immutable copied JARs. Castle rerun completed exit0; repeat native capture from a separate immutable copy.
+
+Evidence: build/map-audit-captures.log retains failure; map-audit-castle.log clean; native rerun recorded separately.
+
+Older-map audit: Never overwrite a running validation executable; record process completion separately from valid captured frame hashes.

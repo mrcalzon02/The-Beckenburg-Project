@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "issues": [
     {
       "id": "DEV-001",
@@ -1288,6 +1288,50 @@
       "action": "Existing room and weather soundscapes have no selectable visible volume inspector. Add placement, playback, source gain/range/falloff and save/runtime integration per user request.",
       "evidence": "Source audit25October2026; water editor live-handles.png; water/editor/weather regression suites",
       "older_maps": "Audit existing beds to avoid duplicate loops; authored ambience must remain separate from ghost/evidence events."
+    },
+    {
+      "id": "DEV-118",
+      "title": "Opening pan rejected fully outdoor native maps",
+      "status": "fixed-scoped",
+      "affected": "Existing-map lighting/camera compatibility",
+      "symptom": "LevelOpeningFlyover required indoor bounds; Hollow Creek has outdoor ownership zones only. Expanded all-ten-map regression reproduced IllegalStateException before repair.",
+      "cause": "LevelOpeningFlyover required indoor bounds; Hollow Creek has outdoor ownership zones only. Expanded all-ten-map regression reproduced IllegalStateException before repair.",
+      "action": "Share finite indoor/outdoor framing with the software fallback; exclude van/approach zones and avoid presenting outdoor zones as rectangular buildings.",
+      "evidence": "LevelOpeningFlyoverTest now covers all10maps, finite fallback rendering and exact player handoff.",
+      "older_maps": "Audit each future map camera path, framing, support and final view; no full path collision or human acceptance inferred."
+    },
+    {
+      "id": "DEV-119",
+      "title": "Long prototype halls had no effective entrance lighting",
+      "status": "fixed-scoped",
+      "affected": "Existing-map lighting/camera compatibility",
+      "symptom": "Actual GPU lit and blackout images were identical in Mansion, Prison, Asylum, Academy and College; Church entry was nearly black. A single central fixture was beyond range of the actual entry.",
+      "cause": "Actual GPU lit and blackout images were identical in Mansion, Prison, Asylum, Academy and College; Church entry was nearly black. A single central fixture was beyond range of the actual entry.",
+      "action": "Place repeated physical fittings at up to7m spacing in unfinished indoor prototypes, preserving refined House/Farmhouse/School fixture layouts.",
+      "evidence": "AllMapLightingCoverageTest passes nine indoor entries and blackout; actual GPU before/after captured for six prototypes.",
+      "older_maps": "Review every room, ceiling attachment, stairs/openings, switch circuit and all joins. Entry samples are not whole-map leak acceptance."
+    },
+    {
+      "id": "DEV-120",
+      "title": "Native outdoor aerial review has excessive water cost and obscuring fog",
+      "status": "open-profile-and-art-review",
+      "affected": "Existing-map lighting/camera compatibility",
+      "symptom": "Hollow Creek aerial/water captures take minutes; aerial site detail is heavily obscured by fog.",
+      "cause": "Hollow Creek aerial/water captures take minutes; aerial site detail is heavily obscured by fog.",
+      "action": "Record actual scripted captures and keep real-time performance and aerial composition open. Do not change global fog or hide the native map to force a pass.",
+      "evidence": "480x300 first capture and320x200 isolated rerun; no hardware frame-time benchmark or acceptance claimed.",
+      "older_maps": "Profile water, lighting, geometry and camera effects separately for every future outdoor/water map before mission unlock."
+    },
+    {
+      "id": "DEV-121",
+      "title": "Capture JAR was rebuilt while an earlier worker still used it",
+      "status": "fixed-tooling-workflow",
+      "affected": "Existing-map lighting/camera compatibility",
+      "symptom": "An overlapping Maven build replaced a running capture JAR, causing a lazy LWJGL class load error at shutdown. Captured frames alone did not prove a clean run.",
+      "cause": "An overlapping Maven build replaced a running capture JAR, causing a lazy LWJGL class load error at shutdown. Captured frames alone did not prove a clean run.",
+      "action": "Run subsequent captures from immutable copied JARs. Castle rerun completed exit0; repeat native capture from a separate immutable copy.",
+      "evidence": "build/map-audit-captures.log retains failure; map-audit-castle.log clean; native rerun recorded separately.",
+      "older_maps": "Never overwrite a running validation executable; record process completion separately from valid captured frame hashes."
     }
   ],
   "audit_categories": [

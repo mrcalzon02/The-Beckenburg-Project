@@ -4,8 +4,7 @@ package org.beckenburg;
 public final class LevelOpeningFlyoverTest {
     private static void ok(boolean yes,String why){if(!yes)throw new AssertionError(why);}
     public static void main(String[] args){
-        for(var site:new HouseMap.Site[]{
-            HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
+        for(var site:HouseMap.Site.values()){
             HouseMap map=new HouseMap(site);
             var spawn=map.van().spawn(0);
             var player=new LevelOpeningFlyover.Pose(spawn.x(),
@@ -32,6 +31,14 @@ public final class LevelOpeningFlyoverTest {
             // The opening may be skipped at any point; player spawn remains unchanged.
             ok(map.van().spawn(0).equals(spawn),
                 "Cinematic camera sampling must never change the physical van or spawn");
+            var framing=LevelOpeningFlyover.framing(map);
+            ok(Double.isFinite(framing.cx()+framing.cz()+framing.span()+framing.top()),
+                "Indoor and outdoor fallback framing must remain finite");
+            var renderer=new SceneRenderer();player.apply(renderer);
+            try(var cinematic=new LevelOpeningCinematic(map,renderer,480,300)){
+                var image=new java.awt.image.BufferedImage(480,300,java.awt.image.BufferedImage.TYPE_INT_RGB);
+                var graphics=image.createGraphics();try{cinematic.draw(graphics,480,300);}finally{graphics.dispose();}
+            }
             System.out.println("PASS "+site+": high-altitude flyover, descending approach and exact van view handoff");
         }
     }

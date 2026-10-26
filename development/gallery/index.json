@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 769,
+  "count": 845,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -5994,6 +5994,766 @@
       "height": 640,
       "bytes": 811995,
       "sha256": "8137f67ebc293f1e3453757eed155684c45c9f8cb2565d7aea67f20f4678bce4"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/academy-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/academy-approach.png",
+      "title": "Academy approach",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 67615,
+      "sha256": "a76716d53c0cebe2d997498f544d0ac28a6b08dda3933277041410fe908db0d7"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/academy-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/academy-blackout.png",
+      "title": "Academy blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19583,
+      "sha256": "820b735c5ccdfbcbb1ff48586dee8477bbeeec41d1ebe5bc0e581c053c0c0c30"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/academy-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/academy-lit.png",
+      "title": "Academy lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 69932,
+      "sha256": "f72ee8d440fabf58427f34a21588c6d864b4466abd621854195ceaf04a7ef0ad"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/academy-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/academy-opening.png",
+      "title": "Academy opening",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 49476,
+      "sha256": "2d382593ec73bea04f1b2917e12c8f772f04018c06b63360f38ce54c783e9aff"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/academy-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/academy-pan.png",
+      "title": "Academy pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 89549,
+      "sha256": "6679aae8573d0692826508737aa37a79e1f49b7c333b4491290e53dcfbd6c886"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/academy-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/academy-torch.png",
+      "title": "Academy torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 39072,
+      "sha256": "7e4aac842939f2835c65a5c785ff19c6b7ae0d8c5607d7cb36f01b214b114993"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/asylum-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/asylum-approach.png",
+      "title": "Asylum approach",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 65653,
+      "sha256": "1b84b7ad813fd2a5185adab4dd5b0f395744c4ef8d79a1f43c889a7599347375"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/asylum-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/asylum-blackout.png",
+      "title": "Asylum blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 18153,
+      "sha256": "ffe04f3f1008177710ddf9d3e2dd9a8c672217d20a1a48473ae4be4520a844ee"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/asylum-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/asylum-lit.png",
+      "title": "Asylum lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 44959,
+      "sha256": "cdc3c900d90e7778e4061c5dbfd93d05cfc626f1a14f869a01d01718ebed27f4"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/asylum-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/asylum-opening.png",
+      "title": "Asylum opening",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 45902,
+      "sha256": "18d88c38f7b3977be944306bde1f97be4848e3d8ca7c6750f8506d420c5acc1c"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/asylum-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/asylum-pan.png",
+      "title": "Asylum pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 92470,
+      "sha256": "eed0531912797c1ccbfcf2dde7ed4dbf4f27f005d13c7a230398f621150f3139"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/asylum-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/asylum-torch.png",
+      "title": "Asylum torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 38200,
+      "sha256": "d953c42043e23b672942cfbd50508a751ada0921cf43bc978f3284445268732a"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/academy-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/academy-blackout.png",
+      "title": "Academy blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19583,
+      "sha256": "820b735c5ccdfbcbb1ff48586dee8477bbeeec41d1ebe5bc0e581c053c0c0c30"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/academy-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/academy-lit.png",
+      "title": "Academy lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19583,
+      "sha256": "820b735c5ccdfbcbb1ff48586dee8477bbeeec41d1ebe5bc0e581c053c0c0c30"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/asylum-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/asylum-blackout.png",
+      "title": "Asylum blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 18153,
+      "sha256": "ffe04f3f1008177710ddf9d3e2dd9a8c672217d20a1a48473ae4be4520a844ee"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/asylum-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/asylum-lit.png",
+      "title": "Asylum lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 18153,
+      "sha256": "ffe04f3f1008177710ddf9d3e2dd9a8c672217d20a1a48473ae4be4520a844ee"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/church-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/church-blackout.png",
+      "title": "Church blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 18780,
+      "sha256": "38b0eb3b8ebf6604a4187be6a5c62447075ad4b541890f40a3f00ada98370293"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/church-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/church-lit.png",
+      "title": "Church lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 23133,
+      "sha256": "65fea14cfdd633f7285c4217ddb50805f8492b4482625885d1c8bb8bf9cdc9ac"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/college-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/college-blackout.png",
+      "title": "College blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 25256,
+      "sha256": "d1cf25414ef2d8276ee7591464d671309f139fd85a214077a3104109e9d1f3d1"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/college-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/college-lit.png",
+      "title": "College lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 25256,
+      "sha256": "d1cf25414ef2d8276ee7591464d671309f139fd85a214077a3104109e9d1f3d1"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/mansion-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/mansion-blackout.png",
+      "title": "Mansion blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19937,
+      "sha256": "bba78d65f753f9f54d88ba3f45c2100366716a3073c1d627f3bc9a34233245c4"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/mansion-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/mansion-lit.png",
+      "title": "Mansion lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19937,
+      "sha256": "bba78d65f753f9f54d88ba3f45c2100366716a3073c1d627f3bc9a34233245c4"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/prison-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/prison-blackout.png",
+      "title": "Prison blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19713,
+      "sha256": "ac43f0d39d8441c05467ffcfb1d4de321c94616a264cd611e9879e05a2c1afda"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/before-coverage/prison-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/before-coverage/prison-lit.png",
+      "title": "Prison lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19713,
+      "sha256": "ac43f0d39d8441c05467ffcfb1d4de321c94616a264cd611e9879e05a2c1afda"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/castle-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/castle-blackout.png",
+      "title": "Castle blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 48266,
+      "sha256": "bbf40d1e6cb454b1053183a74143cce3f0792113a1a6a1f0cbf2243932078b54"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/castle-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/castle-lit.png",
+      "title": "Castle lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 65242,
+      "sha256": "17197f1a9863076c4e7c5bf44a831195493d7df3340713206da681a34785f57a"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/castle-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/castle-pan.png",
+      "title": "Castle pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 76670,
+      "sha256": "1611ca927cc3feec3e55b68daf155c920d146a5e1f78fec49aa9b889ea669957"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/castle-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/castle-torch.png",
+      "title": "Castle torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 63180,
+      "sha256": "631c51231f36436f6b8d5892f802659c93f43894f02f8dcc3908ab43ccad2886"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/church-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/church-approach.png",
+      "title": "Church approach",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 70455,
+      "sha256": "60310f37aa04f5b4b418cc7b0dd5ba5ad2fcc9d749d7a623af190a8f6cd506d3"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/church-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/church-blackout.png",
+      "title": "Church blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 18780,
+      "sha256": "38b0eb3b8ebf6604a4187be6a5c62447075ad4b541890f40a3f00ada98370293"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/church-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/church-lit.png",
+      "title": "Church lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 94000,
+      "sha256": "29b61e92744d70539b48ad78009070ff0166944ffde77c6061627aaaa2e797c1"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/church-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/church-opening.png",
+      "title": "Church opening",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 50210,
+      "sha256": "54a3271492159a008c684c54b92350eb94514485311f1fde98d7a524a58a867d"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/church-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/church-pan.png",
+      "title": "Church pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 84009,
+      "sha256": "32e3a8eac745c99a8bc33bed519ead45600db0eff86ea7f56f0c685bcbd59dfe"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/church-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/church-torch.png",
+      "title": "Church torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 37867,
+      "sha256": "7d8bedac3f2c2ff63f7331d9035f6811a5596006bcd0248d9d3cd0dd51b5e51f"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/college-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/college-approach.png",
+      "title": "College approach",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 66879,
+      "sha256": "5f5d923d6e0bf013eabc5747694ffb1b03f1536311372d47c71fd27a468ee975"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/college-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/college-blackout.png",
+      "title": "College blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 25256,
+      "sha256": "d1cf25414ef2d8276ee7591464d671309f139fd85a214077a3104109e9d1f3d1"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/college-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/college-lit.png",
+      "title": "College lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 51628,
+      "sha256": "e7afb4b80134d314c8c08b14bfd39d716a15dd754385d6bd179d9b4136c9cdff"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/college-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/college-opening.png",
+      "title": "College opening",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 44667,
+      "sha256": "5fe5e2252075caac1dd486278be7b2386ff9e7e0de1a15ad88a9782a3a7744f5"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/college-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/college-pan.png",
+      "title": "College pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 91193,
+      "sha256": "04951fe09a13614385a53ea91c71994b212e26ffb7ea1c25b052565ec2a1505b"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/college-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/college-torch.png",
+      "title": "College torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 44831,
+      "sha256": "9f496aea134de0dddbeb5e6046e3eb5ad1f5ef296151edd505e6ad23b007e356"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/farmhouse-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/farmhouse-approach.png",
+      "title": "Farmhouse approach",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 71016,
+      "sha256": "efb3f4bab533bf4e33c8bd2c15640d79bb6919f10853202f707457185eec5b1b"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/farmhouse-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/farmhouse-blackout.png",
+      "title": "Farmhouse blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19980,
+      "sha256": "52fc9967c392a9267a3a11fc80775b82d3d500bf206c3e219d850d0e51c43a56"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/farmhouse-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/farmhouse-lit.png",
+      "title": "Farmhouse lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 78918,
+      "sha256": "57b3f12d0aee21bd726ebd1755ad884b2f824bf6406185b63c67df559274bbed"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/farmhouse-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/farmhouse-opening.png",
+      "title": "Farmhouse opening",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 63392,
+      "sha256": "fc3591b7db1c912fa88f0e3d61011754446f66d0f0b6221258330af042092bc8"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/farmhouse-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/farmhouse-pan.png",
+      "title": "Farmhouse pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 93663,
+      "sha256": "397221f452db681dc3fedb1606e4cba82586c2b516cd0455d6995abfc70d860b"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/farmhouse-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/farmhouse-torch.png",
+      "title": "Farmhouse torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 39617,
+      "sha256": "ff4692003a7ecaa6d4c762a1af0e1a74a8152d9f656e1918facfe524feef5bc7"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/hollow-creek-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/hollow-creek-approach.png",
+      "title": "Hollow creek approach",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 38069,
+      "sha256": "dc2f66a46d03940de8cc0e103dd54004ef8bf33dcf6e0eb63296c494dbcb5bd0"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/hollow-creek-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/hollow-creek-blackout.png",
+      "title": "Hollow creek blackout",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 39410,
+      "sha256": "989dce8fb5fbaf0c57893d9865f650c50cb8cd705a8964f3edca5086feb08ff6"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/hollow-creek-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/hollow-creek-lit.png",
+      "title": "Hollow creek lit",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 39410,
+      "sha256": "989dce8fb5fbaf0c57893d9865f650c50cb8cd705a8964f3edca5086feb08ff6"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/hollow-creek-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/hollow-creek-opening.png",
+      "title": "Hollow creek opening",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 10710,
+      "sha256": "0806a7fa4d9347757cb0f566fb369f5dd145a2c15660ec7274e56cb6783ce207"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/hollow-creek-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/hollow-creek-pan.png",
+      "title": "Hollow creek pan",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 36895,
+      "sha256": "34aa490355601711e2e4f33f5456b1684d7b226a26c6f52c990d7e23a6613d55"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/hollow-creek-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/hollow-creek-torch.png",
+      "title": "Hollow creek torch",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 43786,
+      "sha256": "f79520ae4ce0053cb476f00c10b257dade79e5b0ef936ff2fec44fd5c727561f"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/house-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/house-approach.png",
+      "title": "House approach",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 79615,
+      "sha256": "d1603bf64b31bd1833bb2ad862729b4688a18342077a0e8aa65e15935cbeb353"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/house-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/house-blackout.png",
+      "title": "House blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 23901,
+      "sha256": "dcfbb3239c60a263dc396828f26b793d461dac772f1e4ecb56958eb8a8f5f76c"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/house-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/house-lit.png",
+      "title": "House lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 96785,
+      "sha256": "92fe8ad73055aaa7e1d846b74823e89df463086a70bd7660e8f060378364eb54"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/house-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/house-opening.png",
+      "title": "House opening",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 78251,
+      "sha256": "7c4878222e4f4371210b45eca411bcabb8209cfe96242e0b7115df11dd658519"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/house-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/house-pan.png",
+      "title": "House pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 97739,
+      "sha256": "913752b73f436e761b69b92ad4f2b1db244898ccea2a359eaf397be22d0c1aea"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/house-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/house-torch.png",
+      "title": "House torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 42207,
+      "sha256": "583beeb30427fa4d7cbb8a00d71d259a6c3da44af5d83047a698f8c36e010561"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/mansion-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/mansion-approach.png",
+      "title": "Mansion approach",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 67398,
+      "sha256": "70ffb31cb9f30517a3342cd03ad07b1e018f107730f230a50e120fe4cd06aca5"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/mansion-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/mansion-blackout.png",
+      "title": "Mansion blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19937,
+      "sha256": "bba78d65f753f9f54d88ba3f45c2100366716a3073c1d627f3bc9a34233245c4"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/mansion-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/mansion-lit.png",
+      "title": "Mansion lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 73546,
+      "sha256": "3c95c3ec7b4ddde962a355b8efe8d220b18d8f02599b99a1678a97df4a44d5fa"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/mansion-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/mansion-opening.png",
+      "title": "Mansion opening",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 63649,
+      "sha256": "8bf432beda26f9f9a7188ba66aef1c82dea37b8af3ee1fb42dd2ee125743fd0a"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/mansion-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/mansion-pan.png",
+      "title": "Mansion pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 91495,
+      "sha256": "8e0ea899c9618c5a65449856c5342d8a884bc69c90feaa6a0e88be63a240e520"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/mansion-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/mansion-torch.png",
+      "title": "Mansion torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 39450,
+      "sha256": "4137e4cebbbb6db8eb12e306370e0c125bef744d832c9da6adc1f685a8461085"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/prison-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/prison-approach.png",
+      "title": "Prison approach",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 65744,
+      "sha256": "c49924fefdd5d82665705c170841f8151a4aaeef532fbd89cb66942d9bcc9d66"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/prison-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/prison-blackout.png",
+      "title": "Prison blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 19713,
+      "sha256": "ac43f0d39d8441c05467ffcfb1d4de321c94616a264cd611e9879e05a2c1afda"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/prison-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/prison-lit.png",
+      "title": "Prison lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 50259,
+      "sha256": "69b50e38a7c26cc4a44ddcf67ecc2c70cfe1a11f962e77168606ae2a5459398e"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/prison-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/prison-opening.png",
+      "title": "Prison opening",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 46990,
+      "sha256": "6116b7497f70bf5cbed3bbad61c33044fd75b9a7c2bdfebf7aa3502e38cd2f5c"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/prison-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/prison-pan.png",
+      "title": "Prison pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 90153,
+      "sha256": "d032ae9ac427977f97b6c324ca7786f1d57d5e03037e40b7c5097a7bb9897406"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/prison-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/prison-torch.png",
+      "title": "Prison torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 39128,
+      "sha256": "35f882cfd796d753a9859c171ea90b20cac98c3fda4385c76b3d80e0b71f28b6"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/school-approach.png",
+      "url": "development/levels/previews/lighting-camera-audit/school-approach.png",
+      "title": "School approach",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 66473,
+      "sha256": "e9ea0f453cf021b2432992bdb7b262d1644654704dd48c542d68c73a336a5f31"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/school-blackout.png",
+      "url": "development/levels/previews/lighting-camera-audit/school-blackout.png",
+      "title": "School blackout",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 26830,
+      "sha256": "575abe251c1227169c4111691164988163d3c0f66357dd636f96e31a3366125a"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/school-lit.png",
+      "url": "development/levels/previews/lighting-camera-audit/school-lit.png",
+      "title": "School lit",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 56166,
+      "sha256": "a8cfb75e1c1d274d87325cf1744ee8c6d720be7f85c6f6a54c7eaa2d95c35fbd"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/school-opening.png",
+      "url": "development/levels/previews/lighting-camera-audit/school-opening.png",
+      "title": "School opening",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 43916,
+      "sha256": "32e660b70a539c31ce7b574686707a94784d2b4cf847353a050f6dfefa39704e"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/school-pan.png",
+      "url": "development/levels/previews/lighting-camera-audit/school-pan.png",
+      "title": "School pan",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 65083,
+      "sha256": "da38b2fca28c369faa7f6226321f81004e1f4ca97c496c53ef44a82ed1444298"
+    },
+    {
+      "path": "development/levels/previews/lighting-camera-audit/school-torch.png",
+      "url": "development/levels/previews/lighting-camera-audit/school-torch.png",
+      "title": "School torch",
+      "kind": "Runtime capture",
+      "width": 480,
+      "height": 300,
+      "bytes": 45256,
+      "sha256": "1c37c6c86ebf0a60ccdc82cfcfb555bfbfdd8e80a356784f51f1867c89c2333a"
     },
     {
       "path": "development/levels/previews/lived-location/farm-01-private-washroom.png",

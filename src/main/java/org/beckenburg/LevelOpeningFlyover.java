@@ -20,6 +20,20 @@ public final class LevelOpeningFlyover {
         }
     }
     private final Pose aerial,orbit,approach,van,firstPerson;
+    record Framing(double cx,double cz,double span,double top){}
+    /** Outdoor ownership volumes are valid survey anchors, never building walls.
+     * Exclude arrival/van zones so their long approach cannot dominate the shot. */
+    static Framing framing(HouseMap map){
+        double x0=Double.POSITIVE_INFINITY,z0=x0,x1=-x0,z1=-x0,top=-x0;
+        for(var room:map.level().rooms()){
+            if(map.nativeSite()?room.id()>=HouseMap.INDOOR_ROOMS:room.outside())continue;
+            x0=Math.min(x0,room.x0());x1=Math.max(x1,room.x1());
+            z0=Math.min(z0,room.z0());z1=Math.max(z1,room.z1());
+            top=Math.max(top,room.y()+(map.nativeSite()?0:room.height()));
+        }
+        if(!Double.isFinite(x0+z0+x1+z1+top))throw new IllegalStateException("No authored survey anchors");
+        return new Framing((x0+x1)/2,(z0+z1)/2,Math.max(15,Math.max(x1-x0,z1-z0)),top);
+    }
     private static double ease(double t){
         t=Math.max(0,Math.min(1,t));
         return t*t*(3-2*t);
@@ -39,18 +53,8 @@ public final class LevelOpeningFlyover {
     public LevelOpeningFlyover(HouseMap map,Pose firstPerson){
         Objects.requireNonNull(map);
         this.firstPerson=Objects.requireNonNull(firstPerson);
-        var rooms=map.level().rooms();
-        double x0=Double.POSITIVE_INFINITY,z0=x0,x1=-x0,z1=-x0,top=-x0;
-        for(var room:rooms){
-            if(room.outside())continue;
-            x0=Math.min(x0,room.x0());x1=Math.max(x1,room.x1());
-            z0=Math.min(z0,room.z0());z1=Math.max(z1,room.z1());
-            top=Math.max(top,room.y()+room.height());
-        }
-        if(!Double.isFinite(x0+z0+x1+z1+top))
-            throw new IllegalStateException("No authored indoor location for an overflight");
-        double cx=(x0+x1)/2,cz=(z0+z1)/2;
-        double span=Math.max(15,Math.max(x1-x0,z1-z0));
+        var framing=framing(map);
+        double cx=framing.cx(),cz=framing.cz(),span=framing.span(),top=framing.top();
         var dock=map.van().placement();
         double elevation=top+Math.max(15,span*.55);
         aerial=lookAt(cx-span*.58,elevation,cz-span*.79,cx,top*.35,cz);
