@@ -1,5 +1,6 @@
 # Mandatory Java 17 Beckenburg regression suite; order is preserved from build.cmd.
 BeckenburgDiagnosticsTest
+BeckenburgForcedTerminationTest
 GraphicsOptionsTest
 PsxPipelineTest
 PsxHorrorUiTest
