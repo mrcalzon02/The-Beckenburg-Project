@@ -53,22 +53,26 @@ public final class LightingCacheRetentionTest {
             ok(light.frameStats().consideredSources()==0,
                 "Remote sample should not loop through every distant building lamp: "+site);
 
-            // The physical LOS is authoritative even when caches are warm.
-            // Door changes are not a cosmetic light event: all occlusion
-            // decisions must be refreshed immediately.
-            var door=AuthoredTestSupport.door(map,1,4);
-            var nearDoor=new FixtureLighting(map);
-            circuits.toggle(4);
-            nearDoor.frame(circuits,4);
-            double closed=nearDoor.sample(1,17.5,1.3,20.5).energy();
-            map.toggleDoor(door.id());
-            nearDoor.frame(circuits,4);
-            double opened=nearDoor.sample(1,17.5,1.3,20.5).energy();
-            ok(opened>closed+.02,
-                "Door opening must immediately reveal light without a retained shadow leak: "+site);
             System.out.println("PASS lighting retention "+site+
-                ": identical-frame reuse, local invalidation, ambient retention and door occlusion");
+                ": identical-frame reuse, local invalidation and ambient retention");
         }
+
+        // The physical LOS is authoritative even when caches are warm.
+        // The House reference doorway has independently measured illumination;
+        // other authored sites differ in coordinates, so don't use House XYZ
+        // as an invented test location for Farmhouse or School.
+        var doorMap=new HouseMap(HouseMap.Site.HOUSE);
+        var doorCircuits=new RoomLighting();
+        var door=AuthoredTestSupport.door(doorMap,1,4);
+        var doorLighting=new FixtureLighting(doorMap);
+        doorCircuits.toggle(4);
+        doorLighting.frame(doorCircuits,4);
+        double closed=doorLighting.sample(1,17.5,1.3,20.5).energy();
+        doorMap.toggleDoor(door.id());
+        doorLighting.frame(doorCircuits,4);
+        double opened=doorLighting.sample(1,17.5,1.3,20.5).energy();
+        ok(opened>closed+.02,
+            "Door opening must immediately reveal real fixture light without a stale shadow");
 
         // Deliberate ghost/light interference must still be visible on its
         // authoritative tick rather than being throttled as cosmetic noise.
