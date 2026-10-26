@@ -1425,8 +1425,8 @@ public final class SceneRenderer {
         dst.vertex(gpuLitVertex(face.c,face.cu,face.cv,face.material,room,face.nc),face.color);
     }
     private Vertex gpuLitVertex(Point p,double u,double v,int material,int room,Point normal){
-        var result=litVertex(p,u,v,material,room);var at=result.p;
-        if(normal!=null){var n=fixtureLighting.sampleNormal(room,p.x,p.y,p.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,p.x,p.y,p.z);result=new Vertex(at,u,v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));}
+        var result=litVertex(p,u,v,material,room,true);
+        if(normal!=null){var n=fixtureLighting.sampleNormal(room,p.x,p.y,p.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,p.x,p.y,p.z);result=new Vertex(p,u,v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));}
         // Static fixture/emissive and occlusion-approved local lights retain
         // their CPU probes. The handheld camera lamp is now evaluated for
         // every visible fragment by OpenGL, rather than baked per vertex.
@@ -2349,6 +2349,10 @@ public final class SceneRenderer {
     public void setEditorSelection(double x,double y,double z){editorSelection=new double[]{x,y,z};}
     public void clearEditorSelection(){editorSelection=null;}
     private Vertex litVertex(Point p,double u,double v,int material,int room){
+        return litVertex(p,u,v,material,room,false);
+    }
+    private Vertex litVertex(Point p,double u,double v,int material,int room,
+                             boolean gpuWorldSpace){
         // Sample on the visible side of opaque surfaces. Sampling exactly
         // on a zero-thickness wall/ceiling made a lamp on the OTHER side
         // illuminate this face because the wall hit occurred at the ray end.
@@ -2372,7 +2376,9 @@ public final class SceneRenderer {
             double dx=p.x-source.x(),dy=p.y-(source.y()+.2),dz=p.z-source.z(),radius=source.tool().equals("FIRELIGHT")?4.8:3.2,d=Math.sqrt(dx*dx+dy*dy+dz*dz);
             if(d<radius&&lightingMap.clearLineOfSight(source.x(),source.y()+.25,source.z(),p.x,p.y+.04,p.z)){double add=(1-d/radius)*.65;r+=add;g+=add*(source.tool().equals("FIRELIGHT")?.65:1);b+=add*(source.tool().equals("FIRELIGHT")?.28:1);}
         }
-        return new Vertex(camera(p),u,v,r,g,b);
+        // World-space shader owns camera transforms. Avoid the otherwise
+        // discarded CPU world-to-view conversion on every GPU vertex.
+        return new Vertex(gpuWorldSpace?p:camera(p),u,v,r,g,b);
     }
     private record DotsReceivers(List<Face> faces,DotsRayField.Mesh mesh){}
     private final java.util.Map<Integer,DotsReceivers> dotsReceivers=new java.util.HashMap<>();
