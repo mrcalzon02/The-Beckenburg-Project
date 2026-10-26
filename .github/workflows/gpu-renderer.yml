@@ -1,7 +1,7 @@
 name: Beckenburg GPU Renderer Acceptance
 on:
   push:
-    branches: [main]
+    branches: [main, 'performance/**']
     paths:
       - 'gpu-client/**'
       - 'src/main/java/org/beckenburg/GpuWorldRenderer.java'
