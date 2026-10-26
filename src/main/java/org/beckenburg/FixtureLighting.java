@@ -63,7 +63,7 @@ public final class FixtureLighting {
  private long samples,cacheHits,shadowRays,normalSamples,normalRays;
  public FrameStats frameStats(){return new FrameStats(samples,cacheHits,shadowRays,
      normalSamples,normalRays,sources.size(),colours.size(),
-     lodQueries,lodHits,lodVisibilityChecks,consideredSources,invalidatedCells);
+     lodQueries,lodHits,lodVisibilityChecks,consideredSources,invalidatedCells);}
  private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=0;
   lodQueries=lodHits=lodVisibilityChecks=0;
   consideredSources=invalidatedCells=0;}
