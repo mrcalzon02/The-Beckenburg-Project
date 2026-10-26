@@ -68,6 +68,8 @@ public final class LevelOpeningFlyover {
     /** 0..1 cinematic progress, independent of frame rate or simulation tick. */
     public Pose pose(double progress){
         double t=Math.max(0,Math.min(1,progress));
+        if(t<=0)return aerial;
+        if(t>=1)return firstPerson; // bit-exact player camera handoff
         if(t<.39)return interpolate(aerial,orbit,t/.39);
         if(t<.78)return interpolate(orbit,approach,(t-.39)/.39);
         if(t<.93)return interpolate(approach,van,(t-.78)/.15);
