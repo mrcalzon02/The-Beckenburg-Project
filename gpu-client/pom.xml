@@ -49,6 +49,8 @@
   <!-- build.cmd package populates these verified original scene resources.
        The GPU distribution contains the SAME models, not substitute scenery. -->
   <resources>
+   <resource><directory>${project.basedir}/../assets/runtime/water</directory><targetPath>org/beckenburg/water</targetPath></resource>
+   <resource><directory>${project.basedir}/../assets/runtime/water-imports</directory><targetPath>org/beckenburg/water-imports</targetPath></resource>
    <resource><directory>${project.basedir}/../water-module/src/main/resources</directory></resource>
    <resource><directory>${project.basedir}/../build/classes</directory>
     <includes><include>org/beckenburg/**</include><include>dev/mrcalzon/weather/**</include></includes>

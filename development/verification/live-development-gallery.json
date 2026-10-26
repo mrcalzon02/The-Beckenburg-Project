@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "verified_at": "2026-10-25T15:48:51.732464+00:00",
-  "published_commit": "79fd013c8c04038ffb9e5d0118fae37fb1af4eab",
+  "verified_at": "2026-10-25T21:11:01.080100+00:00",
+  "published_commit": "6574a8c0780c3817c5f9197a92733b01cc12945c",
   "gallery": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
-  "image_count": 735,
+  "image_count": 768,
   "checks": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -822,6 +822,18 @@
       "full_sha256_verified": true
     },
     {
+      "path": "development/levels/previews/defects/DEV-108-before-regular-water-ripple-grid.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/defects/DEV-113-before-shallow-bed-contact-foam.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
       "path": "development/levels/previews/edge-sky-plans/academy-edge-sky-plan.png",
       "http": 200,
       "png_dimensions_match": true,
@@ -1096,6 +1108,186 @@
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": false
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/arrival-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/atlas-corrected/water-dock-boat-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/exit-check/water-dock-boat-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/flat-baseline/water-beach-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/flat-baseline/water-dock-boat-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/flat-baseline/water-riverside-east-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/flat-baseline/water-riverside-west-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/player-webm-playback-proof.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/river-camera-fit/water-riverside-east-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/river-camera-fit/water-riverside-west-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/shore-waves/water-beach-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/shore-waves/water-dock-boat-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/shore-waves/water-riverside-east-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/shore-waves/water-riverside-west-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-beach-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-dock-boat-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-east-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-contacts/water-riverside-west-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-final/water-beach-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-final/water-dock-boat-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-east-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-final/water-riverside-west-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-beach-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-dock-boat-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-east-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-murkier/water-riverside-west-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-refined/water-beach-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-refined/water-dock-boat-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-refined/water-riverside-east-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek-runtime/water-refined/water-riverside-west-runtime.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
     },
     {
       "path": "development/levels/previews/hollow-creek/amenities-approach-shrubs-native-fitout.png",
@@ -1579,6 +1771,12 @@
     },
     {
       "path": "development/levels/previews/hollow-creek/textures/bedrock-v1-studio-source.png",
+      "http": 200,
+      "png_dimensions_match": true,
+      "full_sha256_verified": true
+    },
+    {
+      "path": "development/levels/previews/hollow-creek/textures/creek-bed-silt-stone-v1-studio-source.png",
       "http": 200,
       "png_dimensions_match": true,
       "full_sha256_verified": true

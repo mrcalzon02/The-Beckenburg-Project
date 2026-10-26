@@ -19,6 +19,7 @@ public final class CastleEditorProject implements EditorProject<CastleLevelEdits
     public void save()throws IOException{castle.save();}
     public List<Asset> assets(){
         ArrayList<Asset> list=new ArrayList<>();
+        list.add(new Asset("water://surface","Modules","Water surface module"));
         for(String mesh:GlbProps.availableModels())
             list.add(new Asset("assets://models/"+mesh,"Models",mesh));
         for(int material=0;material<MaterialAtlas.COUNT;material++)

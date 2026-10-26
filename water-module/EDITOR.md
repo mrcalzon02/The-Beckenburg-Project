@@ -1,0 +1,15 @@
+# Water authoring
+
+Java 17 Swing editor components are included in the independent MIT library. `WaterEditorModel` owns immutable `WaterDocument` snapshots; `WaterEditorPanel` supplies the inspector and placement icon; `WaterCanvas` supplies the plan, real polygon outlines, move/resize/rotation handles and green snap guides. They have no Beckenburg dependency. Supply texture and bed providers when constructing actual runtime bodies.
+
+The game toolbar's Water button opens the editor. The GPU launcher also accepts `--water-module-editor`. Select a map by its lore name. The upper view is an explicitly labelled water plan; the lower view uses the actual game renderer. Right-drag to look, WASD/QE to fly, wheel to move. Preview selected water focuses its surface.
+
+Click Place water and drag its extent, or click the inspector's Water plane icon for an automatic surface. Choose square/rectangle, circle, oblong, octagon or pill. Ctrl/Shift selects multiple modules. Drag the centre, boundary handles or orange rotation handle. Edge snap detects real facing polygon edges or curved rims within0.4m and height within0.03m; optional angle alignment is limited to12 degrees. Disable either snap toggle as needed. Escape cancels a gesture; one undo reverses a complete drag and snap. Copy and Match selected settings support compatible seamless tiles. Overlapping compatible surfaces composite once; different elevations retain alpha layering.
+
+The inspector controls geometric wave height/grid/speed/noise, shore run-up, foam, transparency/absorption, bed depth, refraction/Fresnel, both texture sheets, quantization, world travel headings and speeds. PNG import validates size and format and creates a content-addressed asset. Approved Hollow Creek scroll speeds are preserved by default. Shared world coordinates preserve texture and wave phase across compatible modules.
+
+Ctrl+S saves an atomic UTF-8 per-map `.water` document. Default local overrides live in `~/.beckenburg/editor/water`; `beckenburg.water.documents` overrides that directory. The renderer previews changes immediately; an existing playable map retains its immutable layout until reload. Its revision includes the water document for host/client mismatch detection. Export runtime bundle writes `water/<map>.water` plus referenced sheets in `water-imports/`; place these under `assets/runtime` before packaging. `beckenburg.water.assets` overrides the texture root.
+
+Water shapes describe rendered surfaces and optical depth. Per-map player blockers, safe routes, boat exclusions and authored basin fitness still require review. This is not a fluid simulation. Weather controls are preview-only; mission authority remains unchanged. Rain/snow meshes, wind, sky and lightning exist; GPU ground wetness/snow coatings remain an open integration defect.
+
+Verification: independent document/real-pixel/seam tests, all five shapes, straight and curved snapping, gesture history, actual OpenGL editor capture and isolated save. The editor capture is UI evidence, not gameplay/LAN acceptance. Test saves use workspace-local overrides and do not replace the approved runtime site.

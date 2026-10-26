@@ -1433,6 +1433,8 @@ public final class SceneRenderer {
     }
     private final long gpuSceneId=GpuWorldRenderer.nextId();
     private long lastSubmittedGpuFrame;
+    private GpuWorldRenderer.Result pinnedGpuFrame;
+    public void pinCompletedGpuFrame(GpuWorldRenderer.Result result){if(!GpuWorldRenderer.belongsTo(result,gpuSceneId,renderWidth,renderHeight))throw new IllegalArgumentException("GPU result belongs to a different preview scene");pinnedGpuFrame=result;}
     /** GPU acceptance must verify the NEW scene was rendered, not merely a
      * previous resident framebuffer with coincidentally identical dimensions. */
     public long submittedGpuFrameId(){return lastSubmittedGpuFrame;}
@@ -1456,13 +1458,13 @@ public final class SceneRenderer {
             surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),
                 entry.getValue().complete()));
         long submitted=GpuWorldRenderer.nextId();
-        if(map!=null&&map.nativeSite())waterViews.put(submitted,waterView(waterClock));
+        if(activeWater!=null&&!activeWater.bodies().isEmpty())waterViews.put(submitted,waterView(waterClock));
         consumedWaterView=null;
         lastSubmittedGpuFrame=submitted;
         backend.submit(new GpuWorldRenderer.Frame(gpuSceneId,submitted,
             renderWidth,renderHeight,(float)focal,
             (float)psxPreset.snap,(float)psxPreset.affine,surfaces));
-        GpuWorldRenderer.Result available=backend.latest();
+        GpuWorldRenderer.Result available=pinnedGpuFrame==null?backend.latest():pinnedGpuFrame;pinnedGpuFrame=null;
         if(GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight)){
             consumedWaterView=waterViews.get(available.frameId());
             int[] image=available.argb();
@@ -1564,17 +1566,21 @@ public final class SceneRenderer {
             for(var face:faces)if(exportFullLevel||faceInFrustum(face))out.add(face);
         }
     }
-    private record WaterView(dev.mrcalzon.water.WaterModule.Camera camera,double clock,boolean lamp,double reach,double intensity,double width,boolean flame){}
-    private WaterView waterView(double clock){return new WaterView(new dev.mrcalzon.water.WaterModule.Camera(x,eyeHeight,z,yaw,pitch,focal,renderWidth,renderHeight),clock,lamp,lampReach,lampIntensity,lampWidth,flameLamp);}
+    private record WaterView(dev.mrcalzon.water.WaterModule.Camera camera,double clock,boolean lamp,double reach,double intensity,double width,boolean flame,dev.mrcalzon.water.WaterModule module){}
+    private WaterView waterView(double clock){return new WaterView(new dev.mrcalzon.water.WaterModule.Camera(x,eyeHeight,z,yaw,pitch,focal,renderWidth,renderHeight),clock,lamp,lampReach,lampIntensity,lampWidth,flameLamp,activeWater);}
     private final java.util.Map<Long,WaterView> waterViews=new java.util.LinkedHashMap<>(){protected boolean removeEldestEntry(java.util.Map.Entry<Long,WaterView> e){return size()>32;}};
     private WaterView consumedWaterView;private double waterClock;
     public dev.mrcalzon.water.WaterModule.Statistics waterStatistics;
-    private void nativeWater(HouseMap map,boolean gpu,double clock){
-        if(!map.nativeSite())return;
+    private dev.mrcalzon.water.WaterModule waterOverride,activeWater;
+    private CastleHubMap waterCastle;
+    public void setWaterPreview(dev.mrcalzon.water.WaterModule module){waterOverride=module;}
+    public void clearWaterPreview(){waterOverride=null;}
+    private void sceneWater(HouseMap map,boolean gpu,double clock){
+        waterStatistics=null;
         var view=gpu?consumedWaterView:waterView(clock);
-        if(view==null)return;
-        waterStatistics=HollowCreekWater.module().composite(view.camera(),pixels,depths,view.clock(),(rgb,wx,wy,wz)->{
-            double qx=Math.rint(wx*2)/2,qz=Math.rint(wz*2)/2;var light=fixtureLighting.sample(HollowCreekLevel.owner(qx,qz),qx,wy+.03,qz);var c=view.camera();double dx=wx-c.x(),dy=wy-c.y(),dz=wz-c.z(),forward=dx*Math.sin(c.yaw())+dz*Math.cos(c.yaw()),pz=dy*Math.sin(c.pitch())+forward*Math.cos(c.pitch()),px=-dx*Math.cos(c.yaw())+dz*Math.sin(c.yaw()),py=dy*Math.cos(c.pitch())-forward*Math.sin(c.pitch());double beam=view.lamp()&&pz>NEAR?view.intensity()*Math.max(0,1-pz/view.reach())*(view.flame()?1:Math.max(0,1-Math.hypot(px,py)/pz/view.width())):0;
+        if(view==null||view.module()==null||view.module().bodies().isEmpty())return;
+        waterStatistics=view.module().composite(view.camera(),pixels,depths,view.clock(),(rgb,wx,wy,wz)->{
+            double qx=Math.rint(wx*2)/2,qz=Math.rint(wz*2)/2;var light=fixtureLighting.sample(map==null?(waterCastle!=null&&waterCastle.outside(qx,qz)?13:0):map.nativeSite()?HollowCreekLevel.owner(qx,qz):map.roomAt(qx,wy,qz),qx,wy+.03,qz);var c=view.camera();double dx=wx-c.x(),dy=wy-c.y(),dz=wz-c.z(),forward=dx*Math.sin(c.yaw())+dz*Math.cos(c.yaw()),pz=dy*Math.sin(c.pitch())+forward*Math.cos(c.pitch()),px=-dx*Math.cos(c.yaw())+dz*Math.sin(c.yaw()),py=dy*Math.cos(c.pitch())-forward*Math.sin(c.pitch());double beam=view.lamp()&&pz>NEAR?view.intensity()*Math.max(0,1-pz/view.reach())*(view.flame()?1:Math.max(0,1-Math.hypot(px,py)/pz/view.width())):0;
             int result=0;double[] energy={light.r(),light.g(),light.b()};int i=0;
             for(int shift:new int[]{16,8,0})result|=(int)Math.min(255,((rgb>>shift)&255)*(energy[i++]+beam)*environmentLight*weatherLightScale)<<shift;return result;
         });
@@ -1887,7 +1893,7 @@ public final class SceneRenderer {
     /** Castle hub renders with the same perspective, clipping and textured depth buffer as missions. */
     public void drawCastle(CastleHubMap map,double clock){drawCastle(map,clock,true);}
     public void drawCastle(CastleHubMap map,double clock,boolean lightsOn){
-        environmentLight=1;lightingMap=null;
+        environmentLight=1;lightingMap=null;waterCastle=map;waterClock=clock;activeWater=waterOverride==null?WorldWater.module(map.water()):waterOverride;
         var edits=CastleLevelEdits.current();
         if(castleLighting==null||castleEditRevision!=edits.revision()){
             castleLighting=new FixtureLighting(map);castleEditRevision=edits.revision();
@@ -2026,8 +2032,11 @@ public final class SceneRenderer {
         box(castle,12.75,0,11.20,.40,3.0,.38,0x625c60);
         box(castle,14.10,0,11.20,.40,3.0,.38,0x625c60);
         box(castle,12.75,2.9,11.20,1.75,.36,.38,0xa69178);
-        if(!drawGpuFaces(castle,null))
+        boolean gpuFrame=drawGpuFaces(castle,null);
+        if(!gpuFrame)
             for(Face face:castle){double mx=(face.a.x+face.b.x+face.c.x)/3,mz=(face.a.z+face.b.z+face.c.z)/3;int room=mx<0||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;drawLitFace(face,room,0);}
+        sceneWater(null,gpuFrame,clock);
+        renderWeatherMeshes();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
     }
@@ -2147,6 +2156,7 @@ public final class SceneRenderer {
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
+        waterCastle=null;activeWater=waterOverride==null?WorldWater.module(map.level().water()):waterOverride;
         paintSky(map,clock);
         int[] hazeBackground=map.nativeSite()?pixels.clone():null;
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
@@ -2170,7 +2180,7 @@ public final class SceneRenderer {
                 drawLitFace(face,room,0);
             }
         }
-        nativeWater(map,gpuFrame,clock);
+        sceneWater(map,gpuFrame,clock);
         long geometryRendered=System.nanoTime();
         if(geometryRendered-geometryStart>200_000_000L)
             BeckenburgDeveloperTrace.renderSlow(

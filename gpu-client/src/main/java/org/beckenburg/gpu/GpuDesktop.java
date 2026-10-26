@@ -185,6 +185,9 @@ public final class GpuDesktop {
    BeckenburgDiagnostics.fail("Required GPU renderer initialization",failure);
    throw failure;
   }
+  if(options.contains("--water-module-editor")){
+   javax.swing.SwingUtilities.invokeLater(()->{var window=org.beckenburg.EnvironmentModuleEditor.open(null,System.getProperty("beckenburg.water.editor.map","hollow-creek"));window.addWindowListener(new java.awt.event.WindowAdapter(){public void windowClosed(java.awt.event.WindowEvent e){if(com.badlogic.gdx.Gdx.app!=null)com.badlogic.gdx.Gdx.app.exit();}});});return;
+  }
   if(options.contains("--hollow-creek-review")){try{HollowCreekRuntimeReview.execute(ENGINE);}finally{stopReviewGpu();}return;}
   if(smoke){
    try{

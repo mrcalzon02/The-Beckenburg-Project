@@ -40,7 +40,8 @@ public final class WaterModule {
  public record Style(int shallow,int deep,double absorption,double minimumOpacity,double maximumOpacity,double tileMetres,double drift){
   public Style{if(!Double.isFinite(absorption+minimumOpacity+maximumOpacity+tileMetres+drift)||absorption<=0||minimumOpacity<0||maximumOpacity>1||minimumOpacity>maximumOpacity||tileMetres<=0)throw new IllegalArgumentException("Bad water style");}
  }
- public record Body(String id,Polygon surface,double y,Bathymetry bed,Texture texture,Style style,List<? extends Exclusion> dry,WaterEffects effects){
+ public record Body(String id,Polygon surface,double y,Bathymetry bed,Texture texture,Style style,List<? extends Exclusion> dry,WaterEffects effects,String seamKey){
+  public Body(String id,Polygon surface,double y,Bathymetry bed,Texture texture,Style style,List<? extends Exclusion> dry,WaterEffects effects){this(id,surface,y,bed,texture,style,dry,effects,null);}
   public Body(String id,Polygon surface,double y,Bathymetry bed,Texture texture,Style style,List<? extends Exclusion> dry){this(id,surface,y,bed,texture,style,dry,null);}
   public Body{Objects.requireNonNull(id);Objects.requireNonNull(surface);Objects.requireNonNull(bed);Objects.requireNonNull(texture);Objects.requireNonNull(style);dry=List.copyOf(dry);if(!Double.isFinite(y))throw new IllegalArgumentException("Bad water elevation");}
   public boolean wet(double x,double z){if(!surface.contains(x,z))return false;double bottom=bed.bottomY(x,z);if(!Double.isFinite(bottom)||bottom>=y)return false;for(var d:dry)if(d.excludes(x,y,z))return false;return true;}
@@ -78,6 +79,9 @@ public final class WaterModule {
     if(dry){excluded++;continue;}double bed=body.bed.bottomY(x,z);if(!Double.isFinite(bed)||bed>=y)continue;hits.add(new Hit(body,t,x,y,z));
    }
    hits.sort(Comparator.comparingDouble(Hit::depth).reversed());
+   // Compatible editor tiles form one surface even where footprints overlap.
+   // Other bodies preserve the existing independent transparent-layer contract.
+   for(int i=hits.size()-1;i>0;i--){var h=hits.get(i);if(h.body.seamKey==null)continue;for(int j=0;j<i;j++){var q=hits.get(j);if(h.body.seamKey.equals(q.body.seamKey)&&Math.abs(h.depth-q.depth)<1e-6){hits.remove(i);break;}}}
    for(var hit:hits){
     var body=hit.body;var style=body.style;double waterDepth=Math.max(0,hit.y-body.bed.bottomY(hit.x,hit.z));
     // Prefer actual submerged opaque geometry when it provides a nearer bed.
@@ -95,10 +99,10 @@ public final class WaterModule {
      tint=mix(tint,e.reflection(),reflection);alpha=alpha+(1-alpha)*reflection;
      // Broken, moving shallow/contact foam. Never an emissive white outline.
      double foam=Math.max(0,1-waterDepth/e.foamDepth());foam*=e.foamPattern(hit.x,hit.z,seconds,waterDepth)*e.foamOpacity();
-     var contact=contacts.near(px,py,hit.x,hit.y,hit.z,hit.depth,normal.slopeX(),normal.slopeZ());
+     var contact=e.contactFoamEnabled()?contacts.near(px,py,hit.x,hit.y,hit.z,hit.depth,normal.slopeX(),normal.slopeZ()):null;
      if(contact!=null){
       double breakup=.55+.45*WaterEffects.noise(hit.x*8+seconds*.23,hit.z*8-seconds*.17),edge=contact.foam()*breakup*e.foamOpacity();foam=Math.max(foam,edge);if(edge>.1)contactPixels++;
-      if(edge>.25&&spray.size()<256){long key=WaterSpray.cell(contact.x(),contact.z())^body.id.hashCode();double crest=Math.max(0,normal.offset()/Math.max(.001,e.envelope()));spray.putIfAbsent(key,new WaterSpray.Emitter(contact.x(),hit.y,contact.z(),contact.outwardX(),contact.outwardZ(),edge*(.35+.65*crest),key));}
+      if(e.sprayEnabled()&&edge>.25&&spray.size()<256){long key=WaterSpray.cell(contact.x(),contact.z())^body.id.hashCode();double crest=Math.max(0,normal.offset()/Math.max(.001,e.envelope()));spray.putIfAbsent(key,new WaterSpray.Emitter(contact.x(),hit.y,contact.z(),contact.outwardX(),contact.outwardZ(),edge*(.35+.65*crest),key));}
      }
      tint=mix(tint,0xb9c8c4,foam);alpha=alpha+(1-alpha)*foam*.8;
      if(e.refractionPixels()>0&&hits.size()==1){

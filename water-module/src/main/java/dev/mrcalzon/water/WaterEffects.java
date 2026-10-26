@@ -8,7 +8,8 @@ import static dev.mrcalzon.water.WaterModule.*;
 public record WaterEffects(Layer first,Layer second,double blend,double detail,
                            double amplitude,double grid,double speed,double noiseScale,
                            double foamDepth,double foamOpacity,double refractionPixels,
-                           double fresnel,int reflection,ShoreWave shoreline) {
+                           double fresnel,int reflection,ShoreWave shoreline,boolean contactFoamEnabled,boolean sprayEnabled) {
+ public WaterEffects(Layer first,Layer second,double blend,double detail,double amplitude,double grid,double speed,double noiseScale,double foamDepth,double foamOpacity,double refractionPixels,double fresnel,int reflection,ShoreWave shoreline){this(first,second,blend,detail,amplitude,grid,speed,noiseScale,foamDepth,foamOpacity,refractionPixels,fresnel,reflection,shoreline,true,true);}
  public WaterEffects(Layer first,Layer second,double blend,double detail,double amplitude,double grid,double speed,double noiseScale,double foamDepth,double foamOpacity,double refractionPixels,double fresnel,int reflection){this(first,second,blend,detail,amplitude,grid,speed,noiseScale,foamDepth,foamOpacity,refractionPixels,fresnel,reflection,null);}
  public record ShoreWave(Bathymetry bed,double level,double amplitude,double period,double wavelength,double slope){
   public ShoreWave{if(bed==null||!Double.isFinite(level+amplitude+period+wavelength+slope)||amplitude<0||amplitude>.08||period<2||wavelength<.5||slope<=0)throw new IllegalArgumentException("Shore waves");}

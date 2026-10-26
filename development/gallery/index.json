@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 768,
+  "count": 769,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -7874,6 +7874,16 @@
       "height": 600,
       "bytes": 163376,
       "sha256": "41996675d9ffd8e9354f350f826691918cf27cf8c93c7bd98aaac4c4282c9fef"
+    },
+    {
+      "path": "development/levels/previews/water-editor/live-handles.png",
+      "url": "development/levels/previews/water-editor/live-handles.png",
+      "title": "Live handles",
+      "kind": "Editor UI verification",
+      "width": 1426,
+      "height": 933,
+      "bytes": 695401,
+      "sha256": "f9f55b46a957e4ab59055859cbee35a1ed0c46a2445cadfc384de5ef9bd879e6"
     }
   ]
 }

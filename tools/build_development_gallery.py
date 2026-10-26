@@ -17,7 +17,8 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if 'player-webm-playback-proof' in path:kind='Browser playback verification'
+    if '/water-editor/' in path:kind='Editor UI verification'
+    elif 'player-webm-playback-proof' in path:kind='Browser playback verification'
     elif 'physics-query-diagnostic' in path:kind='Runtime geometry diagnostic'
     elif '/edge-sky-plans/' in path:kind='Planning diagram'
     elif '/blockouts/' in path:kind='Rough blockout'

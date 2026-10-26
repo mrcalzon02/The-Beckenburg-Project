@@ -1597,3 +1597,27 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
+
+## DEV-115 — Water lacked visible editor handles and saved map ownership
+
+**Status:** fixed-scoped
+
+Five actual footprints, placement icon, live settings, multi-edit, handles, edge/rim snapping, atomic save/export and immutable map revisions added. Portable tests and actual OpenGL UI copy/pill/resize/rotate/undo/save passed.
+
+Older-map obligation: Review basin, boat exclusions and player blockers separately on every map.
+
+## DEV-116 — GPU weather ground coatings and inspector incomplete
+
+**Status:** partially-fixed-audit-open
+
+Actual weather preview inspector and castle precipitation pass added. Core rain/snow/wind/sky/lightning tests pass. Source audit confirms GPU faces bypass software ground wet/snow coating; roof-exposure audit remains open.
+
+Older-map obligation: Do not infer GPU weather parity from software checks.
+
+## DEV-117 — No visible ambient/environmental sound editor volumes
+
+**Status:** implementation-in-progress
+
+Existing room and weather soundscapes have no selectable visible volume inspector. Add placement, playback, source gain/range/falloff and save/runtime integration per user request.
+
+Older-map obligation: Audit existing beds to avoid duplicate loops; authored ambience must remain separate from ghost/evidence events.

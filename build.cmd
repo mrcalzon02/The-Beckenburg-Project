@@ -20,6 +20,14 @@ if not exist build\test mkdir build\test
 javac --release 17 -encoding UTF-8 -d build\classes @build\sources-main.txt || exit /b 1
 if not exist build\classes\META-INF mkdir build\classes\META-INF
 copy /Y water-module\src\main\resources\META-INF\*.txt build\classes\META-INF\ >nul || exit /b 1
+if exist assets\runtime\water (
+  if not exist build\classes\org\beckenburg\water mkdir build\classes\org\beckenburg\water
+  copy /Y assets\runtime\water\*.water build\classes\org\beckenburg\water\ >nul
+)
+if exist assets\runtime\water-imports (
+  if not exist build\classes\org\beckenburg\water-imports mkdir build\classes\org\beckenburg\water-imports
+  copy /Y assets\runtime\water-imports\*.png build\classes\org\beckenburg\water-imports\ >nul
+)
 if not exist assets\runtime\directional-sprites.zip (echo ERROR: required in-game sprite assets missing & exit /b 1)
 if not exist build\classes\org\beckenburg mkdir build\classes\org\beckenburg
 copy /Y assets\runtime\directional-sprites.zip build\classes\org\beckenburg\directional-sprites.zip >nul || exit /b 1

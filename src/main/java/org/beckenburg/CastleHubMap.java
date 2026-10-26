@@ -3,6 +3,8 @@ package org.beckenburg;
 /** Authored Beckenburg castle ground floor. All workstations have physical positions. */
 public final class CastleHubMap {
     public static final int WIDTH=44, HEIGHT=36;
+    private final dev.mrcalzon.water.WaterDocument water=WorldWater.load("castle");
+    public dev.mrcalzon.water.WaterDocument water(){return water;}
     private final char[][] grid=new char[HEIGHT][WIDTH];
     private final java.util.Set<String> openDoors=new java.util.HashSet<>();
     private long doorRevision;

@@ -1255,6 +1255,39 @@
       "action": "Retain scattered candidate checks, compute expected geometry from the actual shared-budget selected sockets, and test physical concealment/collision only for enabled cupboards. No gameplay hiding budget changed.",
       "evidence": "LivedLevelDressingTest passes HOUSE/FARMHOUSE/SCHOOL: two actual physically enterable cupboards and supported small objects each. Full CI rerun remains required.",
       "older_maps": "Test candidate supply separately from the equal shared active hiding budget; never restore unlimited hiding to satisfy a stale assertion."
+    },
+    {
+      "id": "DEV-115",
+      "title": "Water lacked visible editor handles and saved map ownership",
+      "status": "fixed-scoped",
+      "affected": "Map environment authoring",
+      "symptom": "Water lacked visible editor handles and saved map ownership",
+      "cause": "Runtime and editor integration gap",
+      "action": "Five actual footprints, placement icon, live settings, multi-edit, handles, edge/rim snapping, atomic save/export and immutable map revisions added. Portable tests and actual OpenGL UI copy/pill/resize/rotate/undo/save passed.",
+      "evidence": "Source audit25October2026; water editor live-handles.png; water/editor/weather regression suites",
+      "older_maps": "Review basin, boat exclusions and player blockers separately on every map."
+    },
+    {
+      "id": "DEV-116",
+      "title": "GPU weather ground coatings and inspector incomplete",
+      "status": "partially-fixed-audit-open",
+      "affected": "Map environment authoring",
+      "symptom": "GPU weather ground coatings and inspector incomplete",
+      "cause": "Runtime and editor integration gap",
+      "action": "Actual weather preview inspector and castle precipitation pass added. Core rain/snow/wind/sky/lightning tests pass. Source audit confirms GPU faces bypass software ground wet/snow coating; roof-exposure audit remains open.",
+      "evidence": "Source audit25October2026; water editor live-handles.png; water/editor/weather regression suites",
+      "older_maps": "Do not infer GPU weather parity from software checks."
+    },
+    {
+      "id": "DEV-117",
+      "title": "No visible ambient/environmental sound editor volumes",
+      "status": "implementation-in-progress",
+      "affected": "Map environment authoring",
+      "symptom": "No visible ambient/environmental sound editor volumes",
+      "cause": "Runtime and editor integration gap",
+      "action": "Existing room and weather soundscapes have no selectable visible volume inspector. Add placement, playback, source gain/range/falloff and save/runtime integration per user request.",
+      "evidence": "Source audit25October2026; water editor live-handles.png; water/editor/weather regression suites",
+      "older_maps": "Audit existing beds to avoid duplicate loops; authored ambience must remain separate from ghost/evidence events."
     }
   ],
   "audit_categories": [
