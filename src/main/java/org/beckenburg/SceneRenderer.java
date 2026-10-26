@@ -2355,7 +2355,7 @@ public final class SceneRenderer {
         double viewDistance=Math.sqrt(vx*vx+vy*vy+vz*vz);
         double shift=viewDistance<.0001?0:Math.min(.075,viewDistance*.30)/viewDistance;
         double litX=p.x+vx*shift,litY=p.y+vy*shift,litZ=p.z+vz*shift;
-        var rgb=fixtureLighting.sample(room,litX,litY,litZ);
+        var rgb=fixtureLighting.sampleDistanceLod(room,litX,litY,litZ,viewDistance);
         var glow=fixtureLighting.emission(material,p.x,p.y,p.z);
         double r=Math.max(rgb.r(),glow.r()),g=Math.max(rgb.g(),glow.g()),b=Math.max(rgb.b(),glow.b());
         if(material==OPTICAL_SIGNAL){r=1.2;g=1.2;b=1.2;}
