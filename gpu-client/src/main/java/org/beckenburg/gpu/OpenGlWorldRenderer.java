@@ -127,6 +127,11 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
      int reusedBatches,long uploadedBytes,long reusedBytes){}
  private volatile UploadStats uploadStats;
  public UploadStats uploadStats(){return uploadStats;}
+ /** GL-worker wall time, not GPU hardware timestamp queries. */
+ public record FrameTiming(long sceneId,long frameId,long drawIssueNs,
+     long readbackAndCopyNs,long totalNs){}
+ private volatile FrameTiming frameTiming;
+ public FrameTiming frameTiming(){return frameTiming;}
  private long lastSlowReportNs;
  public CompletableFuture<String> initialization(){return initialized;}
  @Override public boolean ready(){return ready&&!closed;}
@@ -290,8 +295,10 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   uploadStats=new UploadStats(frame.sceneId(),frame.frameId(),
       frameUploadedBatches,frameReusedBatches,
       frameUploadBytes,frameReusedBytes);
-  latest=new Result(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,argb,depth);
   long finished=System.nanoTime();
+  frameTiming=new FrameTiming(frame.sceneId(),frame.frameId(),
+      rasterReady-started,finished-rasterReady,finished-started);
+  latest=new Result(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,argb,depth);
   if(finished-started>200_000_000L&&finished-lastSlowReportNs>5_000_000_000L){
    lastSlowReportNs=finished;
    BeckenburgDiagnostics.record("GPU FRAME SLOW id="+frame.frameId()+

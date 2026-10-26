@@ -137,9 +137,14 @@ jobs:
           LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a java -jar build/gpu/BeckenburgGPU.jar --gpu-ui-smoke
           test -s build/e2e/gpu/investigation-house.png
           test -s build/e2e/gpu/castle-headquarters.png
+          test -s build/e2e/gpu/continuous-route.csv
+          test -s build/e2e/gpu/continuous-route-summary.txt
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: beckenburg-gpu-frame-evidence
-          path: build/e2e/gpu/*.png
+          path: |
+            build/e2e/gpu/*.png
+            build/e2e/gpu/*.csv
+            build/e2e/gpu/*.txt
           if-no-files-found: warn
