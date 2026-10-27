@@ -22,22 +22,57 @@ public final class FixtureLighting {
  /** Overall scene-owned lighting version, including localized sources. */
  public long stateRevision(){return generation;}
  public long occluderRevision(){return occluderGeneration;}
- private record Contribution(int source,double weight){}
+ private long stationaryGeometryRevision;
+ private int stationaryHiding=-1;
+ private long[] sourceVersions;
+ private final List<OccluderStamp> stationaryOccluders=new ArrayList<>();
+ private static final class OccluderStamp {
+  final double[] box;final java.util.function.BooleanSupplier state;
+  boolean previous;long revision;
+  OccluderStamp(double[] box,java.util.function.BooleanSupplier state){this.box=box;this.state=state;previous=state.getAsBoolean();}
+  boolean update(long version){boolean next=state.getAsBoolean();if(next==previous)return false;previous=next;revision=version;return true;}
+  boolean intersects(double ax,double ay,double az,double bx,double by,double bz){
+   double lo=0,hi=1;double[] a={ax,ay,az},b={bx,by,bz};
+   for(int i=0;i<3;i++){double d=b[i]-a[i];if(Math.abs(d)<1e-12){if(a[i]<box[i]||a[i]>box[i+3])return false;}
+    else{double p=(box[i]-a[i])/d,q=(box[i+3]-a[i])/d;if(p>q){double swap=p;p=q;q=swap;}lo=Math.max(lo,p);hi=Math.min(hi,q);if(lo>hi)return false;}}
+   return true;
+  }
+  boolean affects(Source source){double distance=0;double[] p={source.x,source.y,source.z};
+   for(int i=0;i<3;i++){double d=Math.max(box[i]-p[i],Math.max(0,p[i]-box[i+3]));distance+=d*d;}
+   return distance<=source.radius*source.radius;
+  }
+ }
+ private final class StationaryRay {
+  final Source source;final double weight,bx,by,bz;
+  final List<OccluderStamp> dependencies;
+  long revision=Long.MIN_VALUE;boolean visible;
+  StationaryRay(Source source,double weight,double bx,double by,double bz){
+   this.source=source;this.weight=weight;this.bx=bx;this.by=by;this.bz=bz;
+   dependencies=stationaryOccluders.stream().filter(o->o.intersects(source.x,source.y,source.z,bx,by,bz)).toList();
+  }
+  long revision(){long next=stationaryGeometryRevision;for(var door:dependencies)next=Math.max(next,door.revision);return next;}
+ }
  /** World-space stationary sample. Visibility/attenuation survives switches;
   * only an occluder change retraces rays. No camera or portable light state. */
  public final class StaticProbe {
   private final int room;private final double x,y,z,nx,ny,nz;
-  private final boolean directional;private long geometryVersion=Long.MIN_VALUE;
-  private List<Contribution> parts=List.of();
+  private final boolean directional;
+  private List<StationaryRay> parts;
   private StaticProbe(int room,double x,double y,double z,double nx,double ny,double nz){
    if(!Double.isFinite(x+y+z+nx+ny+nz))throw new IllegalArgumentException("finite stationary probe");
    this.room=room;this.x=x;this.y=y;this.z=z;this.nx=nx;this.ny=ny;this.nz=nz;
    directional=nx!=0||ny!=0||nz!=0;
   }
+  public long revision(){
+   if(parts==null)return generation;
+   long next=stationaryGeometryRevision;
+   for(var ray:parts)next=Math.max(next,Math.max(sourceVersions[ray.source.id],ray.revision()));
+   return next;
+  }
   public RGB sample(){
-   samples++;
-   if(geometryVersion!=occluderGeneration){
-    var found=new ArrayList<Contribution>();
+   if(directional)normalSamples++;else samples++;
+   if(parts==null){
+    var found=new ArrayList<StationaryRay>();
     for(var source:candidates(x,y,z)){
      consideredSources++;
      double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;
@@ -48,22 +83,24 @@ public final class FixtureLighting {
      double fade=1-d/source.radius;
      double weight=source.power*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
      if(weight<.001)continue;
-     shadowRays++;
-     boolean visible=directional
-         ?clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025)
-         :map!=null&&!map.nativeSite()
-             ?ArchitecturalLightOcclusion.visible(map,room,source.x,source.y,source.z,x,y,z)
-             :clear(source.x,source.y,source.z,x,y,z);
-     if(visible)found.add(new Contribution(source.id,weight));
+     found.add(new StationaryRay(source,weight,x+nx*.025,y+ny*.025,z+nz*.025));
     }
-    parts=List.copyOf(found);geometryVersion=occluderGeneration;
-   }else cacheHits++;
+    parts=List.copyOf(found);
+   }
    boolean exterior=room<0||room>=12||map!=null&&map.outside(room);
    double hemi=.65+.35*Math.max(0,ny);
    double r=directional?.27*hemi:exterior?.27:castle!=null?.125:.055;
    double g=directional?.29*hemi:exterior?.29:castle!=null?.129:.059;
    double b=directional?.34*hemi:exterior?.34:castle!=null?.14:.073;
-   for(var part:parts){var source=sources.get(part.source);double weight=part.weight*factors[part.source];
+   for(var part:parts){var source=part.source;long next=part.revision();
+    if(part.revision!=next){
+     if(directional)normalRays++;else shadowRays++;
+     part.visible=directional?clear(source.x,source.y,source.z,part.bx,part.by,part.bz)
+         :map!=null&&!map.nativeSite()?ArchitecturalLightOcclusion.visible(map,room,source.x,source.y,source.z,x,y,z)
+         :clear(source.x,source.y,source.z,x,y,z);
+     part.revision=next;
+    }else if(directional)normalCacheHits++;else cacheHits++;
+    if(!part.visible)continue;double weight=part.weight*factors[source.id];
     if(weight<.001)continue;r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
    return new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
   }
@@ -79,6 +116,11 @@ public final class FixtureLighting {
   if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))
    throw new IllegalArgumentException("Finite light probe coordinates required");
   return Math.max(occluderGeneration,revision(x,y,z));
+ }
+ /** Conservative chunk dirtiness; individual stationary rays then check their
+  * own source and intersected door revisions before doing any expensive work. */
+ public long stationaryRegionRevision(double x,double y,double z){
+  return Math.max(stationaryGeometryRevision,revision(x,y,z));
  }
  private static <K,V> Map<K,V> bounded(int limit){
   return new LinkedHashMap<K,V>(2048,.75f,true){
@@ -107,6 +149,7 @@ public final class FixtureLighting {
  }
  private void invalidate(Source source){
   long version=++generation;
+  sourceVersions[source.id]=version;
   eachInfluenceCell(source,key->{changedCells.put(key,version);invalidatedCells++;});
  }
  private List<Source> candidates(double x,double y,double z){
@@ -150,7 +193,13 @@ public final class FixtureLighting {
    var pos=map.van().world(xx,light.z());
    add(Kind.VAN_DIFFUSER,14,0,pos.x(),map.van().placement().y()+light.mountY()-.065,pos.z(),0,-1,0,3.8,.95,.92,.97,1);
   }
-  factors=new double[sources.size()];
+  factors=new double[sources.size()];sourceVersions=new long[sources.size()];
+  for(var portal:map.level().portals())if(portal.door()||portal.kind().equals("window")){
+   double radius=portal.width()+.3;
+   stationaryOccluders.add(new OccluderStamp(new double[]{portal.x()-radius,portal.y()-.3,portal.z()-radius,
+       portal.x()+radius,portal.y()+2.7,portal.z()+radius},
+       ()->portal.door()?map.doorOpen(portal.id()):map.windowOpen(portal.id())));
+  }
  }
  private int controller(LevelDefinition.Socket socket){int at=socket.style().indexOf('@');if(at<0)return 0;String key=socket.style().substring(at+1);var plate=map.level().sockets().stream().filter(s->s.id().equals(key)).findFirst().orElseThrow();return map.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.LIGHT_SWITCH&&Math.hypot(f.x()-plate.x(),f.z()-plate.z())<.001).findFirst().orElseThrow().id();}
  public FixtureLighting(CastleHubMap castle){map=null;this.castle=Objects.requireNonNull(castle);
@@ -162,7 +211,7 @@ public final class FixtureLighting {
        :light.mount()==CastleHubDecor.Mount.WALL?Kind.WALL_SCONCE:Kind.FROSTED_DOME;
    add(kind,0,0,light.x(),y,light.z(),0,-1,0,edited.radius(),edited.power(),
        1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
-  }factors=new double[sources.size()];
+  }factors=new double[sources.size()];sourceVersions=new long[sources.size()];
  }
  public void castleFrame(boolean on,int tick){
   resetStatistics();
@@ -170,6 +219,7 @@ public final class FixtureLighting {
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
    castleDoorRevision=castle.doorRevision();occluderGeneration=++generation;
+   stationaryGeometryRevision=occluderGeneration;
    sight.clear();colours.clear();normalColours.clear();distant.clear();
   }
   int cosmeticTick=(tick/6)*6;
@@ -271,6 +321,12 @@ public final class FixtureLighting {
   String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();
   if(!geometry.equals(nextGeometry)){
    geometry=nextGeometry;occluderGeneration=++generation;
+   if(stationaryGeometryRevision==0||stationaryHiding!=map.hidingDensity()){
+    stationaryGeometryRevision=occluderGeneration;stationaryHiding=map.hidingDensity();
+   }
+   for(var door:stationaryOccluders)if(door.update(occluderGeneration)){
+    for(var source:sources)if(door.affects(source))eachInfluenceCell(source,key->{changedCells.put(key,occluderGeneration);invalidatedCells++;});
+   }
    sight.clear();colours.clear();normalColours.clear();distant.clear();
   }
   int cosmeticTick=(tick/6)*6;

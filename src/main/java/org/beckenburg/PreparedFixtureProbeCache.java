@@ -49,13 +49,13 @@ public final class PreparedFixtureProbeCache {
         int recomputed=0;
         for(int i=0;i<probes.size();i++){
             Probe p=probes.get(i);
-            long revision=lighting.regionRevision(p.x(),p.y(),p.z());
+            long revision=stationary==null?lighting.regionRevision(p.x(),p.y(),p.z()):stationary[i].revision();
             if(values[i]!=null&&versions[i]==revision)continue;
             var previous=values[i];
             values[i]=stationary!=null?stationary[i].sample():p.normal()
                 ?lighting.sampleNormal(p.room(),p.x(),p.y(),p.z(),p.nx(),p.ny(),p.nz())
                 :lighting.sample(p.room(),p.x(),p.y(),p.z());
-            versions[i]=revision;
+            versions[i]=stationary==null?revision:stationary[i].revision();
             recomputed++;
             if(stationary==null||!Objects.equals(previous,values[i]))changed.add(i);
         }

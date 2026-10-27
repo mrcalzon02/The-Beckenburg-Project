@@ -1771,10 +1771,9 @@ public final class SceneRenderer {
         }
         void prepare(){
             long next=0;
-            for(var p:revisionCells)next=Math.max(next,fixtureLighting.regionRevision(p.x,p.y,p.z));
+            for(var p:revisionCells)next=Math.max(next,fixtureLighting.stationaryRegionRevision(p.x,p.y,p.z));
             if(packed!=null&&next==lightRevision)return;
             var refresh=probes.refresh();liveRecomputedProbes+=refresh.recomputed();lightRevision=next;
-            if(packed!=null&&refresh.indices().isEmpty())return;
             var values=new GpuFloats();
             for(int i=0;i<corners.size();i++){
                 var c=corners.get(i);var rgb=refresh.colours().get(sampleIndices[i]);
@@ -1782,7 +1781,9 @@ public final class SceneRenderer {
                 values.vertex(new Vertex(c.p,c.u,c.v,Math.max(rgb.r(),glow.r()),
                     Math.max(rgb.g(),glow.g()),Math.max(rgb.b(),glow.b())),c.tint);
             }
-            packed=values.complete();revision++;livePackedChunks++;
+            float[] replacement=values.complete();
+            if(Arrays.equals(packed,replacement))return;
+            packed=replacement;revision++;livePackedChunks++;
         }
     }
 
