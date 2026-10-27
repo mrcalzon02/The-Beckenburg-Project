@@ -64,6 +64,16 @@ for name in ['dust_extractor','timber_rack','safety_station','circular_headrig',
         assert contrast<.025,(name,mat.name,'striped metal',contrast)
         metal_checks.append(dict(material=mat.name,relative_row_contrast=round(contrast,5)))
     checks.append(dict(id=asset['id'],triangles=asset['triangles'],hash=asset['sha256'],native_floor_pivot=True,uv_and_packed_images=True,metal_pixel_checks=metal_checks))
+asset=json.loads((ROOT/'development/levels/mill-lighting-assets.json').read_text())['assets'][0]
+glb=ROOT/'assets/runtime/models/level_mill_suspension.glb'
+assert runtime['runtime_models'][asset['id']]==asset['sha256']==hashlib.sha256(glb.read_bytes()).hexdigest()
+bpy.ops.wm.open_mainfile(filepath=str(ROOT/asset['editable']))
+obj=bpy.data.objects[asset['id']];obj.data.calc_loop_triangles()
+assert len(obj.data.loop_triangles)==asset['triangles']
+assert abs(min(v.co.z for v in obj.data.vertices)+1.4)<.0001 and abs(max(v.co.z for v in obj.data.vertices))<.0001
+assert gap(part(obj,'Fixture bearing crossbar'),part(obj,'Threaded suspension drop'))<.001
+assert all(im.packed_file for im in bpy.data.images if im.source=='FILE')
+checks.append(dict(id=asset['id'],triangles=asset['triangles'],hash=asset['sha256'],ceiling_origin_preserved=True,fixture_mount_below_ceiling=1.4))
 source=ROOT/'build/level-verification/scenes/blackpine'
 definition=json.loads((source/'definition.json').read_text())
 path=ROOT/'development/levels/blender/blackpine-mill-expanded.blend'
@@ -90,4 +100,4 @@ for socket in definition['sockets']:
 assert all(im.packed_file for im in bpy.data.images if im.source=='FILE')
 result=dict(status='pass',assets=checks,level_revision=definition['revision'],exact_runtime_triangles=triangles,all_triangle_vertices_and_uvs_match=True,all_socket_transforms_match=True,packed_scene_images=True,scene_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
 (ROOT/'development/levels/verification/blackpine-mill-native.json').write_text(json.dumps(result,indent=2)+'\n')
-print('PASS twelve source meshes, non-striped metal pixels, circular blade/log/arbor alignment and supports; exact expanded scene',flush=True)
+print('PASS twelve working-place meshes plus ceiling suspension, non-striped metal pixels, native mounting and exact expanded scene',flush=True)

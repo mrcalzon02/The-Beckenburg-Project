@@ -1,0 +1,44 @@
+[
+  {
+    "test": "CastleOrientationTest",
+    "exit_code": 0,
+    "seconds": 0.079,
+    "output": "PASS castle orientation step progression\n"
+  },
+  {
+    "test": "CastleHubMaterialAuditTest",
+    "exit_code": 0,
+    "seconds": 0.281,
+    "output": "VAN SHELL source bounds x=-2.069999933242798..2.069999933242798 y=0.0..2.319999933242798 z=-2.0999999046325684..2.0399999618530273 triangles=372 distinctMaterials=1\nPASS Castle materials, physical lights, full network workstation and van mesh audit\n"
+  },
+  {
+    "test": "CastleAndVanVisualAcceptanceTest",
+    "exit_code": 0,
+    "seconds": 6.312,
+    "output": "E2E VISUAL castle-ground-courtyard uniqueColors=17491\nE2E VISUAL castle-real-staircase uniqueColors=5362\nE2E VISUAL castle-upper-library uniqueColors=27697\nE2E VISUAL van-complete-cargo-bay uniqueColors=9523\nE2E VISUAL van-fitted-monitor-wall uniqueColors=5452\nE2E VISUAL van-equipment-pegboard uniqueColors=5876\nE2E VISUAL van-rear-doors-to-street uniqueColors=4676\nE2E VISUAL van-street-facing-van uniqueColors=3369\nE2E VISUAL van-approach-road-and-parked-cars uniqueColors=3254\nE2E VISUAL van-exterior-west-three-quarter uniqueColors=3277\nE2E VISUAL van-exterior-east-three-quarter uniqueColors=2990\nE2E VISUAL van-street-kenney-residential-block uniqueColors=4961\nPASS architectural geometry and van inspection screenshots\n"
+  },
+  {
+    "test": "CastleHubIntegrationTest",
+    "exit_code": 0,
+    "seconds": 0.938,
+    "output": "PASS collision-aware GLB castle furniture, usable stations, live scene and purchases\n"
+  },
+  {
+    "test": "VanStreetAndCabinProportionsTest",
+    "exit_code": 0,
+    "seconds": 0.515,
+    "output": "PASS human-scale VAN body and tapered liner, 42 rack brackets, unobstructed stations and six architecturally fitted Kenney roadside fa\u00e7ades\n"
+  },
+  {
+    "test": "VanArrivalStreetTest",
+    "exit_code": 0,
+    "seconds": 0.563,
+    "output": "PASS actual Kenney street surfaces, unobstructed VAN access, original GGBot materials and site rotation\n"
+  },
+  {
+    "test": "RoomLightingTest",
+    "exit_code": 0,
+    "seconds": 1.671,
+    "output": "PASS 12 physical switches, breaker, ghost flicker, host snapshot and rendered dimming\n"
+  }
+]

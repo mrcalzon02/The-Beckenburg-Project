@@ -6,7 +6,9 @@ public final class PhysicalLightCapture {
  public static void main(String[]args)throws Exception{
   Files.createDirectories(out);LevelVisualCapture.inspection();var s=new SceneRenderer();s.setRenderSize(960,600);s.setPsxPreset(PsxPipeline.Preset.OFF);s.environmentLight=1;s.fogDensity=.12;s.lamp=false;s.roomLights=new RoomLighting();s.roomLights.acceptSnapshot("000000000000");
   var house=new HouseMap();var lamp=house.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.TABLE_LAMP&&f.room()==6).findFirst().orElseThrow();
-  var o=HauntedFixturesTest.operator(house,lamp);view(s,house,"house-01-bedside-warm-cone",o.x(),o.y()+1.62,o.z(),lamp.x(),lamp.y()+.28,lamp.z());
+  var o=HauntedFixturesTest.operator(house,lamp);
+  for(double scale:new double[]{2.7,2.1}){double px=lamp.x()+(o.x()-lamp.x())*scale,pz=lamp.z()+(o.z()-lamp.z())*scale;if(!house.traversable(px,o.y(),pz))continue;var candidate=InteractionFocusTest.aim(px,o.y(),pz,lamp.x(),lamp.y()+.22,lamp.z());var target=InteractionFocus.pick(house,candidate,List.of());if(target!=null&&target.kind()==InteractionFocus.Kind.FIXTURE&&target.id().equals(""+lamp.id())){o=candidate;break;}}
+  view(s,house,"house-01-bedside-warm-cone",o.x(),o.y()+1.62,o.z(),lamp.x(),lamp.y()+.28,lamp.z());
   house.fixtures().toggleFocused(lamp.id(),o,1);
   view(s,house,"house-02-bedside-switched-off",o.x(),o.y()+1.62,o.z(),lamp.x(),lamp.y()+.28,lamp.z());
   view(s,house,"house-03-candle-chandelier",19.2,1.62,14.0,21,2,12.2);

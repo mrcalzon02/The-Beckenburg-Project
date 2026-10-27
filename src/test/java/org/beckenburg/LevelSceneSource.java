@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 /** Exports the exact runtime triangles, UVs, textures and authored sockets for Blender. */
 public final class LevelSceneSource {
     record Module(String id,String revision,String title,List<LevelDefinition.Room> rooms,List<LevelDefinition.Socket> sockets,List<LevelDefinition.Portal> portals,List<LevelDefinition.Collider> colliders,LevelDefinition.Dock dock){}
+    record MaterialInfo(int id,String name){}
     record LooseSource(LooseClutter.State state,double half,double radius,double mass){}
     static Object read(Object value,String field)throws Exception{
         Method m=value.getClass().getDeclaredMethod(field);m.setAccessible(true);return m.invoke(value);
@@ -45,6 +46,7 @@ public final class LevelSceneSource {
     static void writeFaces(Path out,List<Object> faces)throws Exception{
         Files.createDirectories(out.resolve("textures"));Files.writeString(out.resolve("geometry.json"),json(faces));
         Set<Integer> mats=new TreeSet<>();for(Object f:faces)mats.add((Integer)read(f,"material"));
+        Files.writeString(out.resolve("material-metadata.json"),json(mats.stream().map(id->new MaterialInfo(id,id>=256?GlbProps.materialName(id):id==LevelMaterials.ROCK?"Original CC0 rock":"Environment surface")).toList()));
         Field tex=GlbProps.class.getDeclaredField("textures");tex.setAccessible(true);
         Field factors=GlbProps.class.getDeclaredField("diffuseFactors");factors.setAccessible(true);
         List<BufferedImage> images=(List<BufferedImage>)tex.get(null);List<double[]> colors=(List<double[]>)factors.get(null);
@@ -83,7 +85,9 @@ public final class LevelSceneSource {
             var d=template.dock();var van=new VanStaging(new VanStaging.Placement(d.x(),d.z(),d.yaw()));invoke(scene,"arrivalRoadGeometry",VanStaging.class,van,faces);
             method=SceneRenderer.class.getDeclaredMethod("arrivalSurroundings",List.class,VanStaging.class,LevelEnclosure.Setting.class);method.setAccessible(true);method.invoke(scene,faces,van,setting);
         }
-        Path out=Path.of("build/level-verification/scenes",name);Files.createDirectories(out);Files.writeString(out.resolve("definition.json"),json(definition));Files.writeString(out.resolve("scene-settings.json"),"{\"hidingDensity\":0}");writeFaces(out,faces);
+        Path out=Path.of("build/level-verification/scenes",name);Files.createDirectories(out);Files.writeString(out.resolve("definition.json"),json(definition));Files.writeString(out.resolve("scene-settings.json"),"{\"hidingDensity\":0}");
+        if(mode.equals("ARRIVAL")){var base=new HouseMap();var emitters=new ArrayList<FixtureLighting.Source>();for(var source:new FixtureLighting(base).sources())if(source.room()==14){var p=base.van().local(source.x(),source.z());emitters.add(new FixtureLighting.Source(source.id(),source.kind(),14,0,p.x(),source.y(),p.z(),0,-1,0,source.radius(),source.power(),source.red(),source.green(),source.blue()));}Files.writeString(out.resolve("lighting-sources.json"),json(emitters));}
+        writeFaces(out,faces);
     }
 
 }

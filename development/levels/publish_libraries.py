@@ -40,6 +40,9 @@ for library,title in titles.items():
         entries.append(dict(row,files=paths));label=row.get('family',name).removeprefix('level_').replace('_',' ').title()+' — '+row.get('variant','clean').title()
         cards.append(f'''<article class="asset" data-name="{html.escape(label.lower())}"><a href="{paths['previews']}"><img loading="lazy" src="{paths['previews']}" alt="Actual Blender preview of {html.escape(label)}" width="1536" height="640"></a><div><span class="license">CC0 1.0</span><h3>{html.escape(label)}</h3><p>{row['triangles']:,} triangles · Metres · Embedded textures</p><a download href="{paths['models']}">Download GLB</a> · <a download href="{paths['source']}">Editable Blender source</a></div></article>''')
     extras=[]
+    if library=='enclosures':
+        for path,relative in [(ROOT/'assets/runtime/level-textures/beckenburg_rock.png','textures/beckenburg_rock.png'),(ROOT/'assets/runtime/level-textures/beckenburg_rock_worn.png','textures/beckenburg_rock_worn.png'),(ROOT/'development/levels/rock-textures.json','textures/manifest.json')]:
+            dest=folder/relative;dest.parent.mkdir(exist_ok=True);shutil.copyfile(path,dest);extras.append(dict(path=dest.relative_to(SITE).as_posix(),archive_path=relative,license='CC0-1.0',sha256=hashlib.sha256(dest.read_bytes()).hexdigest()))
     if library=='events':
         extra_sources=[(p,'audio/'+p.name) for p in sorted((ROOT/'development/levels/event-audio').glob('*.wav'))]
         extra_sources += [(ROOT/'development/levels/EVENT_LIBRARY.md','INTERACTION.md'),(ROOT/'development/levels/event-activation-examples.json','activation-examples.json'),(ROOT/'development/levels/event-audio/original-sound-manifest.json','audio/original-sound-manifest.json'),(ROOT/'development/levels/event-audio/LICENSE.txt','audio/LICENSE.txt')]

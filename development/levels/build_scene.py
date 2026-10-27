@@ -19,6 +19,8 @@ def collection(name):
 rooms={r['id']:collection(f'{r["id"]:02d} {r["name"]} Y{r["y"]:+g}m') for r in definition['rooms']}
 groups=collections.defaultdict(list)
 for f in faces:groups[(f['room'],f['material'],f['color'])].append(f)
+material_names={r["id"]:r["name"] for r in json.loads((SRC/"material-metadata.json").read_text())} if (SRC/"material-metadata.json").exists() else {}
+physical_sources=json.loads((SRC/"lighting-sources.json").read_text()) if (SRC/"lighting-sources.json").exists() else []
 materials={}
 for (room,mid,color),group in groups.items():
     key=(mid,color)
@@ -32,6 +34,11 @@ for (room,mid,color),group in groups.items():
             mul=mat.node_tree.nodes.new('ShaderNodeMixRGB');mul.blend_type='MULTIPLY';mul.inputs[0].default_value=1;mul.inputs[2].default_value=tint
             mat.node_tree.links.new(tex.outputs['Color'],mul.inputs[1]);mat.node_tree.links.new(mul.outputs[0],shader.inputs['Base Color'])
         else:shader.inputs['Base Color'].default_value=tint
+        luminous=any(word in material_names.get(mid,'').lower() for word in ['glass','flame','television','crt']) and any(sum((face['a'][axis]-source[axis])**2 for axis in ['x','y','z'])<.45**2 for face in group for source in physical_sources)
+        mat['light_transmitting_surface']=luminous
+        if luminous and mid>=0:
+            mat.node_tree.links.new(mul.outputs[0],shader.inputs['Emission Color']);shader.inputs['Emission Strength'].default_value=1.5
+
         materials[key]=mat
     verts=[];uv=[];triangles=[]
     for f in group:
@@ -41,6 +48,7 @@ for (room,mid,color),group in groups.items():
     for poly in mesh.polygons:
         for i in poly.loop_indices:layer.data[i].uv=uv[mesh.loops[i].vertex_index]
     obj=bpy.data.objects.new(f'Runtime room {room} material {mid}',mesh);rooms.get(room,rooms[13]).objects.link(obj);mesh.materials.append(materials[key])
+    if materials[key].get('light_transmitting_surface',False):obj.visible_shadow=False
     obj['source']='Exact runtime SceneRenderer triangles, original UV and material';obj['zone']=room
     # Paper-thin soil/litter stamps are surface detail, not shadow-casting roofs.
     if name=='blackpine' and room==12 and verts and .005<=min(p[2] for p in verts) and max(p[2] for p in verts)<.04:obj.visible_shadow=False

@@ -12,7 +12,7 @@ public final class HauntedFixtures {
     private static final class Fixture {int id,room,water,until,revision;Kind kind;double x,y,z,yaw,scale=1;boolean active;
         State state(){return new State(id,kind,room,x,y,z,yaw,scale,active,water,until,revision);}}
     private boolean powered=true;
-    public synchronized void power(boolean on){powered=on;if(!on)for(var f:fixtures)if((f.kind==Kind.TELEVISION||f.kind==Kind.TABLE_LAMP)&&f.active){f.active=false;f.revision++;}}
+    public synchronized void power(boolean on){powered=on;if(!on)for(var f:fixtures)if(f.kind==Kind.TELEVISION&&f.active){f.active=false;f.revision++;}}
     private final HouseMap map;private final List<Fixture> fixtures=new ArrayList<>();
     private void add(Kind kind,int room,double x,double y,double z,double yaw){add(kind,room,x,y,z,yaw,1);}
     private void add(Kind kind,int room,double x,double y,double z,double yaw,double scale){var f=new Fixture();f.id=fixtures.size()+1;f.kind=kind;f.room=room;f.x=x;f.y=y;f.z=z;f.yaw=yaw;f.scale=scale;fixtures.add(f);}
@@ -62,12 +62,12 @@ public final class HauntedFixtures {
     public synchronized void toggleFocused(int id,LooseClutter.Observer o,int tick){
         var target=InteractionFocus.pick(map,o,List.of());
         if(!o.exposed()||target==null||target.kind()!=InteractionFocus.Kind.FIXTURE||!target.id().equals(""+id))throw new IllegalArgumentException("look directly at the fixture");
-        Fixture f=get(id);if((f.kind==Kind.TELEVISION||f.kind==Kind.TABLE_LAMP)&&!powered)throw new IllegalArgumentException("Television has no mains power");f.active=!f.active;f.until=0;f.revision++;
+        Fixture f=get(id);if(f.kind==Kind.TELEVISION&&!powered)throw new IllegalArgumentException("Television has no mains power");f.active=!f.active;f.until=0;f.revision++;
     }
     public synchronized void toggle(int id,LooseClutter.Observer o,int tick){
         toggleFocused(id,o,tick);
     }
-    public synchronized void activate(int id,int room,int tick){Fixture f=get(id);if((f.kind==Kind.TELEVISION||f.kind==Kind.TABLE_LAMP)&&!powered)return;if(f.room!=room)throw new IllegalArgumentException("fixture is in another room");f.active=true;f.until=tick+200;f.revision++;}
+    public synchronized void activate(int id,int room,int tick){Fixture f=get(id);if(f.kind==Kind.TELEVISION&&!powered)return;if(f.room!=room)throw new IllegalArgumentException("fixture is in another room");f.active=true;f.until=tick+200;f.revision++;}
     public synchronized void witness(GhostDomain.Resolution event,int tick,int requested){
         if(!event.applied()||!(event.action()==GhostDomain.Action.DISTURB||event.action()==GhostDomain.Action.MANIFEST||event.action()==GhostDomain.Action.SIGNATURE))return;
         if(requested>0){activate(requested,event.room(),tick);return;}

@@ -22,12 +22,14 @@ public final class RoomLightingTest {
         check(master.snapshot().equals("111111111111"),"all room circuits start in a known state");
         for(int room=0;room<HouseMap.INDOOR_ROOMS;room++){
             var plate=RoomLighting.location(map,room);
-            check(map.roomAt(plate.x(),plate.z())==room,"switch positioned in its own room "+room);
-            double playerX=plate.x()+.73, playerZ=plate.z();
-            check(map.traversable(playerX,playerZ),"player can stand near switch "+room);
-            check(master.aimed(map,playerX,playerZ,-Math.PI/2)==room,"face switch and use E "+room);
-            check(master.aimed(map,playerX,playerZ,Math.PI/2)==-1,"turn away to avoid accidental use");
-            check(master.aimed(map,map.centerX(room),map.centerZ(room),0)==-1,"no remote activation");
+            check(map.roomAt(plate.x(),plate.y(),plate.z())==room,"switch positioned in its own storey "+room);
+            var observer=InteractionFocusTest.find(map,plate.x(),plate.y(),plate.z(),InteractionFocus.Kind.SWITCH,""+room,List.of());
+            check(observer!=null,"player can stand and point at the actual visible switch "+room);
+            check(master.aimed(map,observer.x(),observer.y(),observer.z(),observer.yaw())==room,"face switch and use E "+room);
+            check(master.aimed(map,observer.x(),observer.y(),observer.z(),observer.yaw()+Math.PI)==-1,"turn away to avoid accidental use");
+            var r=map.level().room(room);double farX=r.x0()+.35,farZ=r.z0()+.35,d=0;
+            for(double x:new double[]{r.x0()+.35,r.x1()-.35})for(double z:new double[]{r.z0()+.35,r.z1()-.35})if(Math.hypot(x-plate.x(),z-plate.z())>d){d=Math.hypot(x-plate.x(),z-plate.z());farX=x;farZ=z;}
+            check(d>2.1&&master.aimed(map,farX,r.y(),farZ,Math.atan2(plate.x()-farX,plate.z()-farZ))==-1,"no activation beyond physical reach");
         }
         master.toggle(4);
         check(!master.on(4)&&master.on(5),"switch affects just its own circuit");

@@ -713,7 +713,7 @@ public final class SceneRenderer {
                 texturedBox(faces,xx-.06,h,zz-.06,7.12,.18,5.12,LevelMaterials.CONCRETE);
             }
         }
-        return List.copyOf(faces);
+        return faces.stream().map(face->face.owned(13)).toList();
     }
 
     private static void mountains(List<Face> faces,double cx,double cz){
@@ -1229,7 +1229,7 @@ public final class SceneRenderer {
     }
     private void levelArchitecture(List<Face> out,HouseMap map){
         scenery(map); // Invalidate the reference expansion as well when level/density changes.
-        own(out,enclosureFaces.computeIfAbsent(map.level().revision(),key->enclosureScenery(map.level())),13);
+        out.addAll(enclosureFaces.computeIfAbsent(map.level().revision(),key->enclosureScenery(map.level())));
         if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of(),map);}
         for(Face f:levelShells.computeIfAbsent(map.level().revision()+":"+map.hidingDensity(),s->buildLevelShell(map))){
             double cx=(f.a.x+f.b.x+f.c.x)/3,cz=(f.a.z+f.b.z+f.c.z)/3;
@@ -1527,14 +1527,14 @@ public final class SceneRenderer {
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         List<Face> castle=new ArrayList<>();castle.addAll(castleSurroundings());
         for(int zz=1;zz<CastleHubMap.HEIGHT-1;zz++)for(int xx=1;xx<CastleHubMap.WIDTH-1;xx++){
-            if(map.solid(xx,zz)||Math.hypot(xx+.5-x,zz+.5-z)>16)continue;
+            if(map.solid(xx,zz))continue;
             int stone=map.floorMaterial(xx+.5,zz+.5);
             texturedQuad(castle,new Point(xx,0,zz),new Point(xx+1,0,zz),
                 new Point(xx+1,0,zz+1),new Point(xx,0,zz+1),stone,
                 xx,zz,xx+1,zz,xx+1,zz+1,xx,zz+1,0xffffff);
             if(!map.outside(xx+.5,zz+.5))texturedQuad(castle,
-                new Point(xx,3.4,zz+1),new Point(xx+1,3.4,zz+1),
-                new Point(xx+1,3.4,zz),new Point(xx,3.4,zz),
+                new Point(xx,3.375,zz+1),new Point(xx+1,3.375,zz+1),
+                new Point(xx+1,3.375,zz),new Point(xx,3.375,zz),
                 MaterialAtlas.CEILING,xx,zz+1,xx+1,zz+1,xx+1,zz,xx,zz,0xe0d8c8);
             // The solid tile modules now supply textured wall and window geometry.
             // Primitive quads would falsely close the real windows and gate openings.
@@ -1544,7 +1544,7 @@ public final class SceneRenderer {
         castleShell(castle);
         for(CastleHubDecor.Light fixture:CastleHubDecor.LIGHTS)
             if(Math.hypot(fixture.x()-x,fixture.z()-z)<14)
-                mountedLamp(castle,fixture,lightsOn);
+                mountedLamp(castle,fixture,lightsOn||fixture.on().contains("ceiling_lamp_4"));
         for(CastleHubDecor.Switch sw:CastleHubDecor.SWITCHES)
             if(Math.hypot(sw.x()-x,sw.z()-z)<14)
                 mountedLamp(castle,new CastleHubDecor.Light("light_switch_1",
