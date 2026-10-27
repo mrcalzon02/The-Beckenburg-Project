@@ -197,7 +197,23 @@ public final class InvestigationGame {
         menu.removeAll();
         menu.setBackground(new Color(13,17,24));
         menu.setBorder(BorderFactory.createEmptyBorder(25,30,19,30));
-        JPanel header=transparentPanel(new BorderLayout(8,4));
+        JPanel header=new JPanel(new BorderLayout(8,4)){
+            @Override protected void paintComponent(Graphics g){
+                super.paintComponent(g);
+                var castleImage=UiBranding.splash();
+                if(castleImage!=null){
+                    int left=getWidth()/2;
+                    g.drawImage(castleImage,left,0,getWidth()-left,getHeight(),null);
+                    Graphics2D brush=(Graphics2D)g.create();
+                    brush.setPaint(new GradientPaint(left-70,0,new Color(13,17,24,255),
+                        getWidth(),0,new Color(13,17,24,48)));
+                    brush.fillRect(left-70,0,getWidth()-left+70,getHeight());
+                    brush.dispose();
+                }
+            }
+        };
+        header.setOpaque(false);
+        header.setPreferredSize(new Dimension(1,96));
         JLabel title=new JLabel("THE BECKENBURG PROJECT");
         title.setFont(new Font(Font.SERIF,Font.BOLD,menuFont(35)));
         title.setForeground(ink());header.add(title,BorderLayout.NORTH);
