@@ -15,3 +15,7 @@ Functional evidence: `LiveHouseResidencyTest` exercises actual gameplay scene as
 `--live-house-profile` runs the actual normal renderer from a valid van position through 120 House-facing turns, after 12 warm frames. It records CPU/end-to-end p50/p95/p99, actual GL-worker resident upload/reuse/capacity bytes, source build/probe counters and raw captures. Optional `-Dbeckenburg.profile.liveClock=true` advances real fixture time; optional `-Dbeckenburg.profile.depthParity=true` compares original visible GPU depth against the resident path at van/interior/upstairs views, with vertex snap disabled for geometry diagnosis. It imposes no Mesa FPS threshold and is not an installed investigation/ritual/return acceptance test.
 
 Status: source and functional checks passed; matched Windows GPU profile, depth parity, exact-SHA CI, native installed gameplay, actual GPU exit/restore and context-loss lifecycle, dynamic legacy-cache door work, dynamic-light GPU migration and 30 FPS acceptance remain pending. A–G is not complete.
+
+## Continuation status
+
+Default-off candidate preserved after the time window. Verified source fe0df50a passed exact GPU/full acceptance and actual RTX exit/depth checks; final bounded dynamic-geometry visibility cache has targeted tests and compilation, with its own exact-source hardware/CI still pending. Context recreation, installed full case, dynamic optical-tool performance and stable 30 FPS remain open. No scheduling/composition/portal/warmup migration was added after the House checkpoint.
