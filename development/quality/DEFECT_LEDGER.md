@@ -1688,11 +1688,13 @@ Evidence: van-castle-repair.json. Older-map obligation: inspect all placements a
 
 ## DEV-124 — Van metal textures show banding
 
-**Status:** open-art-refinement
+**Status:** partial-runtime-refinement-human-review-pending ·27October2026
 
-Review metal UV/albedo under new lights; do not reduce useful illumination to hide defects.
+The procedural IRON tile explicitly darkened every eighth X pixel by17levels. Repeated UVs produced bands on large van panels. Replace this painted-in groove with restrained periodic two-dimensional wear and sparse pits. Preserve all15other atlas tiles, material IDs, UVs and source geometry. Renderer, fixture and van class bytes are identical in the matched builds.
 
-Evidence: van-castle-repair.json. Older-map obligation: inspect all placements and doors.
+Evidence: groove phase contrast16.652→0.057; MetalMaterialRefinementTest and MaterialAtlasTest pass;12actual GPU before/after van views, immutable binaries and hashed capture metadata in metal-refinement-2026-10-27.json.
+
+Older-map audit: native GLB metal textures, remaining roof/interpolation bands and every in-room application still require review. This is not whole-map or hardware-performance acceptance.
 
 ## DEV-125 — Recorder CI assumed every WHISPER action uses the WHISPER audio cue
 

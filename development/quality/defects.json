@@ -1358,13 +1358,13 @@
     {
       "id": "DEV-124",
       "title": "Van metal textures show banding",
-      "status": "open-art-refinement",
+      "status": "partial-runtime-refinement-human-review-pending",
       "affected": "Shared van / Castle",
       "symptom": "Van metal textures show banding",
-      "cause": "Source distribution / placement / material quality",
-      "action": "Review metal UV/albedo under new lights; do not reduce useful illumination to hide defects.",
-      "evidence": "VanLightingAndCastleDoorTest,8actualGPUframes: van-castle-repair.json",
-      "older_maps": "Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open."
+      "cause": "Generated IRON tile darkened every eighth X pixel by17levels; repeated UVs stamp grooves across broad painted panels.",
+      "action": "Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.",
+      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652→0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
+      "older_maps": "Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted."
     },
     {
       "id": "DEV-125",

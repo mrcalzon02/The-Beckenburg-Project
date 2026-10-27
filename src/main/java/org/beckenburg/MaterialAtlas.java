@@ -27,6 +27,16 @@ public final class MaterialAtlas {
         return (clamp(r+variance)<<16) | (clamp(g+variance)<<8) | clamp(b+variance);
     }
     private static int clamp(int x) { return Math.max(0,Math.min(255,x)); }
+    /** Periodic two-dimensional wear, without a regularly repeated seam stripe.
+     * Real ribs and panel joints belong to geometry, not every painted surface. */
+    private static double metalWear(int x,int y) {
+        int cell=8,n=TILE/cell,ix=x/cell,iy=y/cell;
+        double u=(x%cell)/(double)cell,v=(y%cell)/(double)cell;
+        u=u*u*(3-2*u);v=v*v*(3-2*v);
+        double a=(hash(ix,iy,311)&255)/255d,b=(hash((ix+1)%n,iy,311)&255)/255d;
+        double c=(hash(ix,(iy+1)%n,311)&255)/255d,d=(hash((ix+1)%n,(iy+1)%n,311)&255)/255d;
+        return (a+(b-a)*u)*(1-v)+(c+(d-c)*u)*v;
+    }
     private static void build() {
         for(int material=0;material<COUNT;material++) {
             int col=material%GRID,row=material/GRID;
@@ -51,7 +61,8 @@ public final class MaterialAtlas {
                         yield color(89,91,93,noise+grain); }
                     case CONCRETE -> color(87,87,88,noise*2+((x+y*3)%17==0?-12:0));
                     case SOIL -> color(69,61,49,noise*3);
-                    case IRON -> color(68,72,79,noise+(x%8==0?-17:0));
+                    case IRON -> color(68,72,79,(int)Math.round((metalWear(x,y)-.5)*10)+noise/3
+                        +((hash(x,y,919)&255)==0?-8:0));
                     case FOLIAGE -> color(55,87,61,noise*2+((x*3+y)%9==0?10:0));
                     case AGED_WOOD -> color(80,66,57,noise+(x%8==0?-23:0));
                     case WINDOW -> color(56,78,93,noise+(x%16==0 || y%16==0?20:0));
