@@ -52,6 +52,28 @@ public final class CampaignProgressionAndStoreTest {
             check(profile.currency()==6000-ProfileStore.equipmentPrice(
                 EquipmentLoadout.Item.UV_LAMP)-FieldSupplies.Tier.BASIC.price,
                 "All purchases debit one shared Castle currency account");
+            // One unit of real persisted Castle medicine stock can be sold back.
+            SwingUtilities.invokeAndWait(()->{
+                CampaignStorePanel store=new CampaignStorePanel(profile,changes::incrementAndGet);
+                JList<?> goods=named(store,"campaign.store.items",JList.class);
+                JButton sell=named(store,"campaign.store.sell",JButton.class);
+                check(sell!=null&&!sell.isEnabled(),
+                    "Never resell permanent equipment or starter gear");
+                goods.setSelectedIndex(2);
+                check(sell.isEnabled(),"Only actual positive medicine stock can be sold");
+                sell.doClick();
+                check(profile.supplyCount(FieldSupplies.Kind.HEALTH,FieldSupplies.Tier.BASIC)==0,
+                    "One resale actually removes one stock unit");
+                check(!sell.isEnabled()&&!store.sellSelected(),
+                    "An empty stock row cannot be sold again for free credits");
+            });
+            check(profile.currency()==6000-ProfileStore.equipmentPrice(
+                    EquipmentLoadout.Item.UV_LAMP)-FieldSupplies.Tier.BASIC.price/2,
+                "Resale refunds only half the price and never duplicates funds");
+            ProfileStore stockReload=new ProfileStore(file);stockReload.load();
+            check(stockReload.currency()==profile.currency()&&
+                    stockReload.supplyCount(FieldSupplies.Kind.HEALTH,FieldSupplies.Tier.BASIC)==0,
+                "Stock resale and its exact refund survive a profile reload");
             var map=new HouseMap(HouseMap.Site.HOUSE);
             for(int i=0;i<7;i++){
                 var caseSession=new InvestigationSession(map,InvestigationSession.Role.OBSERVER,911+i,
