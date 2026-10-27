@@ -28,6 +28,10 @@ if exist assets\runtime\water (
   if not exist build\classes\org\beckenburg\water mkdir build\classes\org\beckenburg\water
   copy /Y assets\runtime\water\*.water build\classes\org\beckenburg\water\ >nul
 )
+if exist assets\runtime\mission-board (
+  if not exist build\classes\org\beckenburg\mission-board mkdir build\classes\org\beckenburg\mission-board
+  copy /Y assets\runtime\mission-board\*.png build\classes\org\beckenburg\mission-board\ >nul || exit /b 1
+)
 if exist assets\runtime\water-imports (
   if not exist build\classes\org\beckenburg\water-imports mkdir build\classes\org\beckenburg\water-imports
   copy /Y assets\runtime\water-imports\*.png build\classes\org\beckenburg\water-imports\ >nul

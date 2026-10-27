@@ -7,7 +7,7 @@ mkdir -p build/classes build/test
 javac --release 17 -encoding UTF-8 -d build/classes water-module/src/main/java/dev/mrcalzon/water/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/*.java
 mkdir -p build/classes/META-INF
 cp water-module/src/main/resources/META-INF/*.txt build/classes/META-INF/
-for family in water water-imports sounds; do
+for family in water water-imports sounds mission-board; do
   if [ -d "assets/runtime/$family" ]; then
     mkdir -p "build/classes/org/beckenburg/$family"
     for water_file in assets/runtime/"$family"/*; do

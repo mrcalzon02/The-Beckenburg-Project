@@ -1,0 +1,234 @@
+{
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "title": "St. Alban Academy",
+      "folder": "academy",
+      "region": "Beckenburg district",
+      "image": "assets/runtime/mission-board/academy.png",
+      "image_sha256": "c4846edc934c0590e59e048f90b9c3e05ae6ee5f8f74e1d72a2f626d1382baac",
+      "source_image": "development/levels/blockouts/academy/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "ASYLUM",
+      "title": "St. Dymphna Hospital",
+      "folder": "asylum",
+      "region": "Beckenburg district",
+      "image": "assets/runtime/mission-board/asylum.png",
+      "image_sha256": "9f0d66c0433c5718f60023a3f5750771fc70af3f3c50327a2ce3015126ba7bf0",
+      "source_image": "development/levels/blockouts/asylum/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "CASTLE",
+      "title": "Castle Beckenburg",
+      "folder": "castle",
+      "region": "Headquarters",
+      "image": "assets/runtime/mission-board/castle.png",
+      "image_sha256": "f30a49b5bfd7feef6b78a08712bf9b5a4414a2d7c30c3b49f6fc4042d295eb72",
+      "source_image": "development/levels/previews/castle-surroundings-blender-exterior.png",
+      "caption": "STATIC SITE VIEW"
+    },
+    {
+      "id": "CHURCH",
+      "title": "St. Brigid Parish",
+      "folder": "church",
+      "region": "Beckenburg district",
+      "image": "assets/runtime/mission-board/church.png",
+      "image_sha256": "1510251edb0c98b3f80a2ca3c066ec23bb1575879b798a5d9b4e9eba0a10d241",
+      "source_image": "development/levels/layouts/church/plan.png",
+      "caption": "STATIC LAYOUT PLACEHOLDER"
+    },
+    {
+      "id": "COLLEGE",
+      "title": "Beckenburg College",
+      "folder": "college",
+      "region": "Beckenburg district",
+      "image": "assets/runtime/mission-board/college.png",
+      "image_sha256": "e2d866b81d1cabcbc5197a8b5004673a77c57cb5cff8b4571d6cee9e9424a4c7",
+      "source_image": "development/levels/blockouts/college/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "FARMHOUSE",
+      "title": "Hollowmere Farm",
+      "folder": "farmhouse",
+      "region": "Beckenburg district",
+      "image": "assets/runtime/mission-board/farmhouse.png",
+      "image_sha256": "37bd86e3a622a42447ebe9ca9335b1484e47228180d0807d511caf65d67c11de",
+      "source_image": "development/levels/previews/farmhouse-blender-exterior.png",
+      "caption": "STATIC SITE VIEW"
+    },
+    {
+      "id": "HOUSE",
+      "title": "The Briar House",
+      "folder": "house",
+      "region": "Beckenburg district",
+      "image": "assets/runtime/mission-board/house.png",
+      "image_sha256": "9b2d55e68d19844ccc33c57dd6862e18ffde9b151a8e0a32e6e39e356ca5a97a",
+      "source_image": "development/levels/previews/house-blender-exterior.png",
+      "caption": "STATIC SITE VIEW"
+    },
+    {
+      "id": "MANSION",
+      "title": "Blackthorn Manor",
+      "folder": "mansion",
+      "region": "Beckenburg district",
+      "image": "assets/runtime/mission-board/mansion.png",
+      "image_sha256": "f546695e916e4a79ebf3f53f0b3a1ac36ef8cfc011020cd5c0476d6ce463736d",
+      "source_image": "development/levels/blockouts/mansion/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "PRISON",
+      "title": "Beckenburg Penitentiary",
+      "folder": "prison",
+      "region": "Beckenburg district",
+      "image": "assets/runtime/mission-board/prison.png",
+      "image_sha256": "ad7e42c0a7de02c05f4442d55aedf4791d3bb00c97481934fafce28accb6b869",
+      "source_image": "development/levels/blockouts/prison/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "SCHOOL",
+      "title": "Ravenshade School",
+      "folder": "school",
+      "region": "Beckenburg district",
+      "image": "assets/runtime/mission-board/school.png",
+      "image_sha256": "2189d71b12023af00f25438841921252475fb73c6ae4b698322769b780f30fbd",
+      "source_image": "development/levels/previews/school-blender-exterior.png",
+      "caption": "STATIC SITE VIEW"
+    },
+    {
+      "id": "WLD-01",
+      "title": "Blackpine Logging Camp",
+      "folder": "wld-01",
+      "region": "Northern Woodlands",
+      "image": "assets/runtime/mission-board/wld-01.png",
+      "image_sha256": "99c8b97ebf3877004a738759be8604d3870cfa734ccf2ca762a1aefb3554fa7b",
+      "source_image": "development/levels/previews/blackpine-mill-expanded-blender-exterior.png",
+      "caption": "STATIC SITE VIEW"
+    },
+    {
+      "id": "WLD-02",
+      "title": "Camp Hollow Creek",
+      "folder": "wld-02",
+      "region": "Northern Woodlands",
+      "image": "assets/runtime/mission-board/wld-02.png",
+      "image_sha256": "733f8b17a5a70c7da86206d6623faf6680e3e0891dec7aa8643c5ce0c3a25c92",
+      "source_image": "development/levels/blockouts/wld-02/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-03",
+      "title": "Red Mesa Ancestral Caves",
+      "folder": "wld-03",
+      "region": "Western Badlands",
+      "image": "assets/runtime/mission-board/wld-03.png",
+      "image_sha256": "c70a02ac817e7fda889c89226e80740719d0df50eadcdd91e8d38cdcb00e747b",
+      "source_image": "development/levels/blockouts/wld-03/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-04",
+      "title": "Widow's Peak Fire Lookout",
+      "folder": "wld-04",
+      "region": "Northern Woodlands",
+      "image": "assets/runtime/mission-board/wld-04.png",
+      "image_sha256": "6c0a4655340e533c47709501e93a6e170cc3b42a39f9d98cb027faded82e4ac7",
+      "source_image": "development/levels/blockouts/wld-04/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-05",
+      "title": "Dead Man's Claim",
+      "folder": "wld-05",
+      "region": "Highland Frontier",
+      "image": "assets/runtime/mission-board/wld-05.png",
+      "image_sha256": "329bc06dcbe10fdf82c2716a79b49a789f0d2936139d3d411e8793cc1f0c9adb",
+      "source_image": "development/levels/blockouts/wld-05/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-06",
+      "title": "Drowned Fisherman's Wharf",
+      "folder": "wld-06",
+      "region": "Coastal Territories",
+      "image": "assets/runtime/mission-board/wld-06.png",
+      "image_sha256": "09856139aeb3ca284c151a89140041a54544103eb2420bb4288f7cabeb2d6495",
+      "source_image": "development/levels/blockouts/wld-06/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-07",
+      "title": "Saint Bartholomew's Forgotten Cemetery",
+      "folder": "wld-07",
+      "region": "Northern Woodlands",
+      "image": "assets/runtime/mission-board/wld-07.png",
+      "image_sha256": "e3c441e40dd2db4246285fd868a6bc51aa8d073658e030fe92284acbd997ffe2",
+      "source_image": "development/levels/blockouts/wld-07/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-08",
+      "title": "Northwatch Research Station",
+      "folder": "wld-08",
+      "region": "Northern Expanse",
+      "image": "assets/runtime/mission-board/wld-08.png",
+      "image_sha256": "95cc28f8cdc3802d60e6d26de3dee1e8f36c0257f03d8b090ddbab33123c330b",
+      "source_image": "development/levels/blockouts/wld-08/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-09",
+      "title": "Blackwater Hydroelectric Dam",
+      "folder": "wld-09",
+      "region": "Highland Frontier",
+      "image": "assets/runtime/mission-board/wld-09.png",
+      "image_sha256": "740fd8abb16b0d149da1f2425f18a9c5e73f69e6fa03f11469e59e08ffe8fc10",
+      "source_image": "development/levels/blockouts/wld-09/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-10",
+      "title": "Monastery of Ashen Bells",
+      "folder": "wld-10",
+      "region": "Highland Frontier",
+      "image": "assets/runtime/mission-board/wld-10.png",
+      "image_sha256": "3238203f7fbc5170c85fa3ee47bdc6920b574768f968361176518f437b7bea92",
+      "source_image": "development/levels/blockouts/wld-10/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-11",
+      "title": "Mourning Marsh",
+      "folder": "wld-11",
+      "region": "Coastal Territories",
+      "image": "assets/runtime/mission-board/wld-11.png",
+      "image_sha256": "4f5defdd92d8760828c59ec2e6f4a22908d6c1d2e4007df3054cc91d54b2503f",
+      "source_image": "development/levels/blockouts/wld-11/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-12",
+      "title": "Gallows Pass Railway",
+      "folder": "wld-12",
+      "region": "Highland Frontier",
+      "image": "assets/runtime/mission-board/wld-12.png",
+      "image_sha256": "582b97d4a5dd3afa9d29abca5b2a5160431ff601deecc884d53981995972b7e7",
+      "source_image": "development/levels/blockouts/wld-12/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    },
+    {
+      "id": "WLD-13",
+      "title": "Greywater Cannery",
+      "folder": "wld-13",
+      "region": "Coastal Territories",
+      "image": "assets/runtime/mission-board/wld-13.png",
+      "image_sha256": "b8d54f90f01ee4b3e30c2ebd31c586fd31faa7fc393ed2bb02424b04c394dd92",
+      "source_image": "development/levels/blockouts/wld-13/preview.png",
+      "caption": "STATIC BLOCKOUT VIEW"
+    }
+  ]
+}
