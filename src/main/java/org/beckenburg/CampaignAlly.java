@@ -11,6 +11,13 @@ public final class CampaignAlly {
     public enum Order { FOLLOW, HOLD, INVESTIGATE }
     private final HouseMap map;
     private final InvestigationSession caseSession;
+    private final CharacterVisuals.Hunter discipline;
+    private final HunterDiscipline classSkills=new HunterDiscipline(1);
+    private int lastDanger=-10000,distress;
+    public CharacterVisuals.Hunter discipline(){return discipline;}
+    public CampaignAlly(HouseMap map,InvestigationSession session){
+        this(map,session,CharacterVisuals.Hunter.OBSERVER);
+    }
     private LevelDefinition.Vec position;
     private Order order=Order.FOLLOW;
     private int destination=-1,heading=0,lastReading=-10000,lastAutoScan=-10000;
@@ -22,7 +29,8 @@ public final class CampaignAlly {
     private final ArrayDeque<Observation> observations=new ArrayDeque<>();
     private final ArrayDeque<String> outboundChat=new ArrayDeque<>();
     private final int[] roomSuspicion=new int[HouseMap.ROOM_COUNT];
-    public CampaignAlly(HouseMap map,InvestigationSession session){
+    public CampaignAlly(HouseMap map,InvestigationSession session,CharacterVisuals.Hunter discipline){
+        this.discipline=Objects.requireNonNull(discipline);
         this.map=Objects.requireNonNull(map);
         caseSession=Objects.requireNonNull(session);
         var spawn=map.van().spawn(1);
@@ -92,6 +100,7 @@ public final class CampaignAlly {
         String direction=sound.pan()>25?"right":sound.pan()<-25?"left":"ahead";
         boolean danger=sound.cue().tier()==LanSound.Tier.DANGEROUS
             ||sound.cue().tier()==LanSound.Tier.SIGNATURE;
+        if(danger)lastDanger=caseSession.ticks();
         if(danger&&order==Order.INVESTIGATE){
             order=Order.FOLLOW;destination=-1;
         }
@@ -188,15 +197,45 @@ public final class CampaignAlly {
             }catch(NumberFormatException ignored){}
             return "Send a valid room number, e.g. check 4.";
         }
+        if(message.equals("skill 1")||message.equals("ability 1"))
+            return useClassAbility(HunterDiscipline.primary(discipline),
+                player.x(),player.y(),player.z());
+        if(message.equals("skill 2")||message.equals("ability 2"))
+            return useClassAbility(HunterDiscipline.secondary(discipline),
+                player.x(),player.y(),player.z());
         if(message.contains("emf"))return readEmf();
         if(message.contains("temperature")||message.contains("thermometer"))return readThermometer();
         if(message.contains("evidence")||message.contains("reading"))return latestEvidence();
         if(message.contains("suspect")||message.contains("hypothesis")
                 ||message.contains("ghost")||message.contains("think"))return suspicionReport();
         if(message.contains("status")||message.contains("where")||message.contains("report"))
-            return "At "+map.roomName(room())+" / "+order+" / "+
-                totalScans+" measurements. "+suspicionReport();
+            return discipline+" / "+map.roomName(room())+" / "+order+" / "+
+                totalScans+" measurements / fear "+distress+". "+suspicionReport();
         return "Copy. Try: follow, hold, check 4, emf, temperature, evidence, suspect.";
+    }
+    /** AI and player activate through the identical cooldown and class locks. */
+    public String useClassAbility(HunterDiscipline.Ability ability,
+            double playerX,double playerY,double playerZ){
+        if(caseSession.outcome()!=InvestigationSession.Outcome.ACTIVE)
+            return "Case is no longer active.";
+        HunterDiscipline.Result result=classSkills.activate(0,discipline,ability,caseSession.ticks());
+        if(!result.accepted())return result.message();
+        boolean near=room()==map.roomAt(playerX,playerY,playerZ)
+            &&Math.hypot(position.x()-playerX,position.z()-playerZ)<=5.5;
+        caseSession.companionSkill(ability,near,room());
+        if(ability==HunterDiscipline.Ability.INVOKE)distress=Math.min(100,distress+16);
+        if(ability==HunterDiscipline.Ability.SURVEY){
+            String emf=caseSession.rawEmfAt(position.x(),position.y(),position.z());
+            String temp=caseSession.rawTemperatureAt(position.x(),position.y(),position.z());
+            recordReading(EquipmentLoadout.Item.EMF,emf);
+            recordReading(EquipmentLoadout.Item.THERMOMETER,temp);
+            report="Survey / "+emf+" / "+temp+" (unverified)";
+            announce(report);
+        }else{
+            report=ability.label+" / "+(near?"team in range":"out of team range");
+            announce(report);
+        }
+        return report;
     }
     private List<Integer> route(int from,int to){
         if(from==to)return List.of(from);
@@ -221,8 +260,20 @@ public final class CampaignAlly {
         if(room()>=0&&room()<HouseMap.EXTRACTION_ROOM&&
                 tick>=lastAutoScan+90&&tick>=lastReading+30){
             lastAutoScan=tick;
+            if(discipline==CharacterVisuals.Hunter.OBSERVER
+                    &&classSkills.remaining(0,HunterDiscipline.Ability.SURVEY,tick)==0)
+                useClassAbility(HunterDiscipline.Ability.SURVEY,playerX,playerY,playerZ);
             if(totalScans%2==0)readEmf();else readThermometer();
         }
+        if(discipline==CharacterVisuals.Hunter.CLERIC&&caseSession.stress()>=30
+                &&classSkills.remaining(0,HunterDiscipline.Ability.COMFORT,tick)==0)
+            useClassAbility(HunterDiscipline.Ability.COMFORT,playerX,playerY,playerZ);
+        if(discipline==CharacterVisuals.Hunter.CLERIC&&lastDanger>=tick-30
+                &&classSkills.remaining(0,HunterDiscipline.Ability.HALLOW,tick)==0)
+            useClassAbility(HunterDiscipline.Ability.HALLOW,playerX,playerY,playerZ);
+        if(discipline==CharacterVisuals.Hunter.DEMONOLOGIST&&lastDanger>=tick-25
+                &&classSkills.remaining(0,HunterDiscipline.Ability.SIGIL,tick)==0)
+            useClassAbility(HunterDiscipline.Ability.SIGIL,playerX,playerY,playerZ);
         if(order==Order.HOLD)return;
         int targetRoom=order==Order.FOLLOW?map.roomAt(playerX,playerY,playerZ):destination;
         if(targetRoom<0)return;
@@ -294,6 +345,6 @@ public final class CampaignAlly {
     }
     public SceneRenderer.RemoteBody sprite(){
         return new SceneRenderer.RemoteBody(position.x(),position.y(),position.z(),
-            1,heading,"observer");
+            1,heading,discipline.name().toLowerCase(java.util.Locale.ROOT));
     }
 }
