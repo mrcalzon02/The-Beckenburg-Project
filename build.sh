@@ -5,6 +5,8 @@ mkdir -p build
 rm -rf build/classes build/test
 mkdir -p build/classes build/test
 javac --release 17 -encoding UTF-8 -d build/classes water-module/src/main/java/dev/mrcalzon/water/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/*.java
+# Bake approved model-review thumbnails and Castle screenshot into the actual game JAR.
+java -Djava.awt.headless=true -cp build/classes org.beckenburg.UiAssetBake . build/classes/org/beckenburg build/Beckenburg.ico
 mkdir -p build/classes/META-INF
 cp water-module/src/main/resources/META-INF/*.txt build/classes/META-INF/
 for family in water water-imports sounds; do
