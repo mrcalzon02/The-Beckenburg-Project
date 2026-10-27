@@ -34,22 +34,28 @@ final class LiveHouseGpuProfile {
         for(int i=0;i<12;i++){renderer.drawNetwork(map,List.of(),-1,0);await(engine,renderer);}
         long initialBuilds=renderer.liveHouseStats().builds(),initialPacked=renderer.liveHouseStats().packedChunks();
         var cpu=new ArrayList<Double>();var elapsed=new ArrayList<Double>();long staticBytes=0;
-        var csv=new StringBuilder("sample,phase,yaw,cpu_ms,end_to_end_ms,resident_uploaded_bytes,total_uploaded_bytes,resident_reused_bytes,resident_capacity_bytes,static_builds,packed_chunks,recomputed_probes\n");
+        var csv=new StringBuilder("sample,room,phase,yaw,cpu_ms,end_to_end_ms,resident_uploaded_bytes,total_uploaded_bytes,resident_reused_bytes,resident_capacity_bytes,static_builds,packed_chunks,recomputed_probes\n");
         boolean liveClock=Boolean.getBoolean("beckenburg.profile.liveClock");long clockStart=System.nanoTime();
         for(int i=0;i<120;i++){
-            renderer.yaw=heading+.60*Math.sin(i*.09);
+            // The cargo spawn can face a monitor wall even when pointing at
+            // the House. Use authored yard, entrance and upstairs positions
+            // so the timed samples actually expose the expensive building.
+            int room=i<40?13:i<80?0:8;var position=map.spawn(room);
+            var target=map.spawn(room==0||room==8?4:0);
+            renderer.x=position.x();renderer.z=position.z();renderer.eyeHeight=position.y()+1.62;
+            renderer.pitch=-.075;renderer.yaw=Math.atan2(target.x()-position.x(),target.z()-position.z())+.60*Math.sin(i*.09);
             renderer.roomLightTick=liveClock?(int)((System.nanoTime()-clockStart)/100000000L):0;
             long start=System.nanoTime();renderer.drawNetwork(map,List.of(),-1,0);var frame=await(engine,renderer);
             double duration=(System.nanoTime()-start)/1e6;var timing=renderer.frameDiagnostics();var resident=engine.residentUploadStats();var upload=engine.uploadStats();var source=renderer.liveHouseStats();
             if(resident==null||resident.frameId()!=frame.frameId()||upload.frameId()!=frame.frameId())throw new AssertionError("GPU upload counters mismatch actual frame");
             cpu.add(timing.totalNs()/1e6);elapsed.add(duration);staticBytes+=resident.uploadedBytes();
             if(enabled&&(source.builds()!=initialBuilds||!liveClock&&(source.packedChunks()!=initialPacked||resident.uploadedBytes()!=0)))throw new AssertionError("Camera-only turn rebuilt or uploaded stationary House data");
-            csv.append(String.format(Locale.ROOT,"%d,house_turn,%.6f,%.3f,%.3f,%d,%d,%d,%d,%d,%d,%d%n",i,renderer.yaw,cpu.get(i),duration,resident.uploadedBytes(),upload.uploadedBytes(),resident.reusedBytes(),resident.allocatedVertexBytes(),source.builds(),source.packedChunks(),source.recomputedProbes()));
-            if(i==0||i==60||i==119){var image=new BufferedImage(frame.width(),frame.height(),BufferedImage.TYPE_INT_ARGB);image.setRGB(0,0,frame.width(),frame.height(),frame.argb(),0,frame.width());ImageIO.write(image,"png",output.resolve("house-turn-"+i+".png").toFile());}
+            csv.append(String.format(Locale.ROOT,"%d,%d,house_turn,%.6f,%.3f,%.3f,%d,%d,%d,%d,%d,%d,%d%n",i,room,renderer.yaw,cpu.get(i),duration,resident.uploadedBytes(),upload.uploadedBytes(),resident.reusedBytes(),resident.allocatedVertexBytes(),source.builds(),source.packedChunks(),source.recomputedProbes()));
+            if(i==0||i==40||i==80||i==119){var image=new BufferedImage(frame.width(),frame.height(),BufferedImage.TYPE_INT_ARGB);image.setRGB(0,0,frame.width(),frame.height(),frame.argb(),0,frame.width());ImageIO.write(image,"png",output.resolve("house-turn-"+i+".png").toFile());}
         }
         Files.writeString(output.resolve("frames.csv"),csv.toString());
         String summary=String.format(Locale.ROOT,"resident=%s cold_ms=%.3f samples=%d cpu_p50_ms=%.3f cpu_p95_ms=%.3f cpu_p99_ms=%.3f frame_p50_ms=%.3f frame_p95_ms=%.3f frame_p99_ms=%.3f static_uploaded_bytes=%d%n",enabled,cold/1e6,cpu.size(),percentile(cpu,.5),percentile(cpu,.95),percentile(cpu,.99),percentile(elapsed,.5),percentile(elapsed,.95),percentile(elapsed,.99),staticBytes);
-        Files.writeString(output.resolve("summary.txt"),"Source: "+System.getenv().getOrDefault("GITHUB_SHA","local-unversioned")+"\n"+engine.rendererDescription()+"\nViewport: "+renderer.width()+"x"+renderer.height()+" FOV=93 preset="+renderer.psxPreset()+"\n12 warmup frames, 120 actual House-facing camera turns; live circuit clock="+liveClock+". Not physical traversal or installed FPS acceptance.\n"+summary);
+        Files.writeString(output.resolve("summary.txt"),"Source: "+System.getenv().getOrDefault("GITHUB_SHA","local-unversioned")+"\n"+engine.rendererDescription()+"\nViewport: "+renderer.width()+"x"+renderer.height()+" FOV=93 preset="+renderer.psxPreset()+"\n12 van warmup frames; 40 yard, 40 entrance, 40 upstairs camera turns; live circuit clock="+liveClock+". Not physical traversal or installed FPS acceptance.\n"+summary);
         System.out.print(summary);
         if(Boolean.getBoolean("beckenburg.profile.depthParity"))depthParity(engine,map,output);
     }

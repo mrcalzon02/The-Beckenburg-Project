@@ -170,6 +170,7 @@ jobs:
           sudo apt-get install -y xvfb libgl1-mesa-dri libglu1-mesa
           LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a java -jar build/gpu/BeckenburgGPU.jar --gpu-smoke
           LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a java -jar build/gpu/BeckenburgGPU.jar --gpu-ui-smoke
+          LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a java -Xmx3g -Dbeckenburg.gpu.residentHouse=true -Dbeckenburg.profile.depthParity=true -jar build/gpu/BeckenburgGPU.jar --live-house-profile
           test -s build/e2e/gpu/investigation-house.png
           test -s build/e2e/gpu/castle-headquarters.png
           test -s build/e2e/gpu/continuous-route.csv
@@ -182,4 +183,5 @@ jobs:
             build/e2e/gpu/*.png
             build/e2e/gpu/*.csv
             build/e2e/gpu/*.txt
+            build/e2e/gpu/live-house/**
           if-no-files-found: warn
