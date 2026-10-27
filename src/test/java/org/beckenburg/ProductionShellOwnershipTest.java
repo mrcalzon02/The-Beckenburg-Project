@@ -17,6 +17,8 @@ public final class ProductionShellOwnershipTest{
         renderer.pitch=-.075;
     }
     public static void main(String[] args){
+        check(SceneRenderer.testResidentSubdivisionNormals(),
+            "Real resident tessellation must preserve face normals and null fallback");
         var first=new HouseMap(HouseMap.Site.HOUSE);
         var renderer=new SceneRenderer();
         renderer.roomLights=new RoomLighting();
