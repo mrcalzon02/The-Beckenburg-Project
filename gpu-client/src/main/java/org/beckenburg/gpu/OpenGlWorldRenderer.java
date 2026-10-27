@@ -130,6 +130,10 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
      int reusedBatches,long uploadedBytes,long reusedBytes){}
  private volatile UploadStats uploadStats;
  public UploadStats uploadStats(){return uploadStats;}
+ public record ResidentUploadStats(long sceneId,long frameId,long uploadedBytes,
+     long reusedBytes,long allocatedVertexBytes){}
+ private volatile ResidentUploadStats residentUploadStats;
+ public ResidentUploadStats residentUploadStats(){return residentUploadStats;}
  /** GL-worker wall time, not GPU hardware timestamp queries. */
  public record FrameTiming(long sceneId,long frameId,long drawIssueNs,
      long readbackAndCopyNs,long totalNs){}
@@ -227,6 +231,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    uploadedRevisions.clear();uploadedCounts.clear();
   }
   long frameUploadBytes=0,frameReusedBytes=0;
+  long residentBytes=0,residentReused=0;
   int frameUploadedBatches=0,frameReusedBatches=0;
   resizeTarget(frame.width(),frame.height());
   target.begin();
@@ -295,6 +300,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
      frameUploadBytes+=bytes;frameUploadedBatches++;
     }
    }
+   if(resident){if(sameRevision)residentReused+=bytes;else residentBytes+=bytes;}
    texture(surface.material()).bind(0);
    draw.render(shader,GL20.GL_TRIANGLES,0,vertexCount);
   }
@@ -324,6 +330,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   uploadStats=new UploadStats(frame.sceneId(),frame.frameId(),
       frameUploadedBatches,frameReusedBatches,
       frameUploadBytes,frameReusedBytes);
+  long residentCapacity=0;
+  for(var entry:capacity.entrySet())if(entry.getKey().resourceId()>0)residentCapacity+=entry.getValue()*8L*Float.BYTES;
+  residentUploadStats=new ResidentUploadStats(frame.sceneId(),frame.frameId(),residentBytes,residentReused,residentCapacity);
   long finished=System.nanoTime();
   frameTiming=new FrameTiming(frame.sceneId(),frame.frameId(),
       rasterReady-started,finished-rasterReady,finished-started);

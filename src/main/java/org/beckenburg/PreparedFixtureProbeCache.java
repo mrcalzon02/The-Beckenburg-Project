@@ -26,27 +26,40 @@ public final class PreparedFixtureProbeCache {
     private final List<Probe> probes;
     private final long[] versions;
     private final FixtureLighting.RGB[] values;
+    private final FixtureLighting.StaticProbe[] stationary;
     public PreparedFixtureProbeCache(FixtureLighting owner,List<Probe> probes){
+        this(owner,probes,false);
+    }
+    /** Live residency retains visibility independently of source intensity.
+     * In this mode indices identify changed RGB, not merely revised inputs. */
+    public PreparedFixtureProbeCache(FixtureLighting owner,List<Probe> probes,boolean retainVisibility){
         lighting=Objects.requireNonNull(owner,"scene fixture lighting");
         this.probes=List.copyOf(Objects.requireNonNull(probes,"authored probes"));
         versions=new long[this.probes.size()];
         values=new FixtureLighting.RGB[this.probes.size()];
+        stationary=retainVisibility?new FixtureLighting.StaticProbe[this.probes.size()]:null;
+        if(stationary!=null)for(int i=0;i<this.probes.size();i++){
+            var p=this.probes.get(i);stationary[i]=lighting.staticProbe(p.room(),p.x(),p.y(),p.z(),p.nx(),p.ny(),p.nz());
+        }
     }
     /** Only changed influence cells or occluder revisions generate rays.
      * Never expose the mutable backing cache to the GPU or callers. */
     public Refresh refresh(){
         var changed=new ArrayList<Integer>();
+        int recomputed=0;
         for(int i=0;i<probes.size();i++){
             Probe p=probes.get(i);
             long revision=lighting.regionRevision(p.x(),p.y(),p.z());
             if(values[i]!=null&&versions[i]==revision)continue;
-            values[i]=p.normal()
+            var previous=values[i];
+            values[i]=stationary!=null?stationary[i].sample():p.normal()
                 ?lighting.sampleNormal(p.room(),p.x(),p.y(),p.z(),p.nx(),p.ny(),p.nz())
                 :lighting.sample(p.room(),p.x(),p.y(),p.z());
             versions[i]=revision;
-            changed.add(i);
+            recomputed++;
+            if(stationary==null||!Objects.equals(previous,values[i]))changed.add(i);
         }
-        return new Refresh(changed.size(),probes.size()-changed.size(),
+        return new Refresh(recomputed,probes.size()-recomputed,
             changed,Arrays.asList(values.clone()));
     }
     public int size(){return probes.size();}

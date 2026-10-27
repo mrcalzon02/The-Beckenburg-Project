@@ -21,6 +21,56 @@ public final class FixtureLighting {
  private long generation,occluderGeneration,invalidatedCells,consideredSources;
  /** Overall scene-owned lighting version, including localized sources. */
  public long stateRevision(){return generation;}
+ public long occluderRevision(){return occluderGeneration;}
+ private record Contribution(int source,double weight){}
+ /** World-space stationary sample. Visibility/attenuation survives switches;
+  * only an occluder change retraces rays. No camera or portable light state. */
+ public final class StaticProbe {
+  private final int room;private final double x,y,z,nx,ny,nz;
+  private final boolean directional;private long geometryVersion=Long.MIN_VALUE;
+  private List<Contribution> parts=List.of();
+  private StaticProbe(int room,double x,double y,double z,double nx,double ny,double nz){
+   if(!Double.isFinite(x+y+z+nx+ny+nz))throw new IllegalArgumentException("finite stationary probe");
+   this.room=room;this.x=x;this.y=y;this.z=z;this.nx=nx;this.ny=ny;this.nz=nz;
+   directional=nx!=0||ny!=0||nz!=0;
+  }
+  public RGB sample(){
+   samples++;
+   if(geometryVersion!=occluderGeneration){
+    var found=new ArrayList<Contribution>();
+    for(var source:candidates(x,y,z)){
+     consideredSources++;
+     double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;
+     if(d2>source.radius*source.radius)continue;
+     double d=Math.sqrt(d2),diffuse=directional?(d<1e-4?0:Math.max(0,(nx*dx+ny*dy+nz*dz)/d)):1;
+     if(diffuse<.001)continue;
+     double angle=d<.03?1:angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d);
+     double fade=1-d/source.radius;
+     double weight=source.power*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
+     if(weight<.001)continue;
+     shadowRays++;
+     boolean visible=directional
+         ?clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025)
+         :map!=null&&!map.nativeSite()
+             ?ArchitecturalLightOcclusion.visible(map,room,source.x,source.y,source.z,x,y,z)
+             :clear(source.x,source.y,source.z,x,y,z);
+     if(visible)found.add(new Contribution(source.id,weight));
+    }
+    parts=List.copyOf(found);geometryVersion=occluderGeneration;
+   }else cacheHits++;
+   boolean exterior=room<0||room>=12||map!=null&&map.outside(room);
+   double hemi=.65+.35*Math.max(0,ny);
+   double r=directional?.27*hemi:exterior?.27:castle!=null?.125:.055;
+   double g=directional?.29*hemi:exterior?.29:castle!=null?.129:.059;
+   double b=directional?.34*hemi:exterior?.34:castle!=null?.14:.073;
+   for(var part:parts){var source=sources.get(part.source);double weight=part.weight*factors[part.source];
+    if(weight<.001)continue;r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
+   return new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
+  }
+ }
+ public StaticProbe staticProbe(int room,double x,double y,double z,double nx,double ny,double nz){
+  return new StaticProbe(room,x,y,z,nx,ny,nz);
+ }
  /** Local lighting version: fixture changes advance only influence cells,
   * while door/window/collision occluder revisions conservatively invalidate
   * the entire scene. Valid only within the owning FixtureLighting/map.
@@ -69,6 +119,7 @@ public final class FixtureLighting {
  private final Map<Key,Lit> colours=bounded(150000);
  private final Map<NormalKey,Lit> normalColours=bounded(100000);
  private final Map<Shadow,Boolean> sight=bounded(200000);
+ private final Map<Integer,Boolean> luminousMaterials=bounded(4096);
  private String geometry="",state="";private double[] factors=new double[0];
  /** Per-render CPU work counters; shadow tests are expensive architectural rays. */
  public record FrameStats(long samples,long cacheHits,long shadowRays,
@@ -315,7 +366,7 @@ public final class FixtureLighting {
   return result;
  }
  public RGB emission(int material,double x,double y,double z){
-  String name=GlbProps.materialName(material).toLowerCase(Locale.ROOT);if(!(name.contains("glass")||name.contains("bulb")||name.contains("flame")||name.startsWith("television")))return RGB.ZERO;
+  if(!luminousMaterials.computeIfAbsent(material,id->{String name=GlbProps.materialName(id).toLowerCase(Locale.ROOT);return name.contains("glass")||name.contains("bulb")||name.contains("flame")||name.startsWith("television");}))return RGB.ZERO;
   for(var s:candidates(x,y,z))if(factors[s.id]>.01&&Math.abs(x-s.x)<.4&&Math.abs(y-s.y)<.28&&Math.abs(z-s.z)<.4)return new RGB(s.red*1.35,s.green*1.35,s.blue*1.35);
   return RGB.ZERO;
  }

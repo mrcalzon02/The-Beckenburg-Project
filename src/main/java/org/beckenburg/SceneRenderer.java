@@ -1515,14 +1515,15 @@ public final class SceneRenderer {
             double abu=(face.au+face.bu)/2,abv=(face.av+face.bv)/2;
             double bcu=(face.bu+face.cu)/2,bcv=(face.bv+face.cv)/2;
             double cau=(face.cu+face.au)/2,cav=(face.cv+face.av)/2;
+            Point nab=interpolateResidentNormal(face.na,face.nb),nbc=interpolateResidentNormal(face.nb,face.nc),nca=interpolateResidentNormal(face.nc,face.na);
             appendGpuFace(new Face(face.a,ab,ca,face.color,face.material,
-                face.au,face.av,abu,abv,cau,cav),room,depth+1,batches);
+                face.au,face.av,abu,abv,cau,cav,room,face.na,nab,nca),room,depth+1,batches);
             appendGpuFace(new Face(ab,face.b,bc,face.color,face.material,
-                abu,abv,face.bu,face.bv,bcu,bcv),room,depth+1,batches);
+                abu,abv,face.bu,face.bv,bcu,bcv,room,nab,face.nb,nbc),room,depth+1,batches);
             appendGpuFace(new Face(ca,bc,face.c,face.color,face.material,
-                cau,cav,bcu,bcv,face.cu,face.cv),room,depth+1,batches);
+                cau,cav,bcu,bcv,face.cu,face.cv,room,nca,nbc,face.nc),room,depth+1,batches);
             appendGpuFace(new Face(ab,bc,ca,face.color,face.material,
-                abu,abv,bcu,bcv,cau,cav),room,depth+1,batches);
+                abu,abv,bcu,bcv,cau,cav,room,nab,nbc,nca),room,depth+1,batches);
             return;
         }
         var dst=batches.computeIfAbsent(face.material,key->new GpuFloats());
@@ -1717,6 +1718,116 @@ public final class SceneRenderer {
             sourceFaces,triangles,refresh.recomputed(),refresh.retained());
     }
 
+    private boolean residentHouseEnabled=Boolean.getBoolean("beckenburg.gpu.residentHouse");
+    public void setResidentHouse(boolean enabled){residentHouseEnabled=enabled;}
+    private static final int LIVE_HOUSE_TRIANGLE_LIMIT=600_000;
+    private record LiveBucket(int room,int material,int x,int y,int z){}
+    private record LiveUpload(LiveChunk chunk,long revision){}
+    private final java.util.LinkedHashMap<Long,List<LiveUpload>> liveUploads=new java.util.LinkedHashMap<>();
+    private long liveBuilds,livePreparedVertices,livePackedChunks,liveRecomputedProbes;
+    private LiveHouse liveHouse;
+    public record LiveHouseStats(boolean active,long builds,int chunks,int sourceFaces,
+        long preparedVertices,long packedChunks,long recomputedProbes,long descriptorBytes,
+        long drawnTriangles){}
+    private LiveHouseStats liveHouseStats=new LiveHouseStats(false,0,0,0,0,0,0,0,0);
+    public LiveHouseStats liveHouseStats(){return liveHouseStats;}
+    private boolean liveHouseRequested(HouseMap map){
+        return residentHouseEnabled&&map!=null&&map.site()==HouseMap.Site.HOUSE&&!map.nativeSite()
+            &&!exportFullLevel&&instancedScenery&&GpuWorldRenderer.active()!=null
+            &&!uvLamp&&dotsPositions.isEmpty()
+            &&portablePositions.values().stream().noneMatch(LanPortableLights.Light::on);
+    }
+    private static boolean residentScenery(SceneryInstances.Instance instance){
+        String id=instance.mesh;
+        return !id.startsWith("tv_")&&!id.contains("lamp")&&!id.contains("light");
+    }
+
+    private final class LiveChunk {
+        final long id=GpuWorldRenderer.nextId();final int material;
+        final List<ResidentCorner> corners;final int[] sampleIndices;
+        final List<Point> revisionCells;final PreparedFixtureProbeCache probes;
+        final ShellChunk bounds;
+        long revision,acknowledged,lightRevision=Long.MIN_VALUE;
+        float[] packed;
+        LiveChunk(int material,List<ResidentCorner> source){
+            this.material=material;corners=List.copyOf(source);
+            var unique=new java.util.LinkedHashMap<PreparedFixtureProbeCache.Probe,Integer>();
+            var cells=new java.util.LinkedHashMap<String,Point>();
+            sampleIndices=new int[corners.size()];
+            double ax=Double.POSITIVE_INFINITY,ay=ax,az=ax,bx=-ax,by=-ax,bz=-ax;
+            for(int i=0;i<corners.size();i++){
+                var c=corners.get(i);var p=c.p;var n=c.normal;
+                var probe=new PreparedFixtureProbeCache.Probe(c.room,p.x,p.y,p.z,
+                    n==null?0:n.x,n==null?0:n.y,n==null?0:n.z);
+                sampleIndices[i]=unique.computeIfAbsent(probe,key->unique.size());
+                int xx=(int)Math.floor(p.x/4),yy=(int)Math.floor(p.y/4),zz=(int)Math.floor(p.z/4);
+                cells.putIfAbsent(xx+":"+yy+":"+zz,new Point(xx*4+2,yy*4+2,zz*4+2));
+                ax=Math.min(ax,p.x);ay=Math.min(ay,p.y);az=Math.min(az,p.z);
+                bx=Math.max(bx,p.x);by=Math.max(by,p.y);bz=Math.max(bz,p.z);
+            }
+            probes=new PreparedFixtureProbeCache(fixtureLighting,List.copyOf(unique.keySet()),true);
+            revisionCells=List.copyOf(cells.values());
+            bounds=new ShellChunk(corners.get(0).room,0,corners.size()/3,ax,ay,az,bx,by,bz);
+        }
+        void prepare(){
+            long next=0;
+            for(var p:revisionCells)next=Math.max(next,fixtureLighting.regionRevision(p.x,p.y,p.z));
+            if(packed!=null&&next==lightRevision)return;
+            var refresh=probes.refresh();liveRecomputedProbes+=refresh.recomputed();lightRevision=next;
+            if(packed!=null&&refresh.indices().isEmpty())return;
+            var values=new GpuFloats();
+            for(int i=0;i<corners.size();i++){
+                var c=corners.get(i);var rgb=refresh.colours().get(sampleIndices[i]);
+                var glow=fixtureLighting.emission(c.material,c.p.x,c.p.y,c.p.z);
+                values.vertex(new Vertex(c.p,c.u,c.v,Math.max(rgb.r(),glow.r()),
+                    Math.max(rgb.g(),glow.g()),Math.max(rgb.b(),glow.b())),c.tint);
+            }
+            packed=values.complete();revision++;livePackedChunks++;
+        }
+    }
+
+    private final class LiveHouse {
+        final HouseMap owner;final String generation;final FixtureLighting lighting;
+        final List<LiveChunk> chunks;final int faces;final boolean supported;
+        LiveHouse(HouseMap map){
+            owner=map;generation=map.level().revision()+":"+map.hidingDensity();lighting=fixtureLighting;
+            staticShellChunks(map);var scenery=scenery(map);
+            var source=new ArrayList<Face>(preparedShellFaces);
+            for(var face:enclosureFaces.computeIfAbsent(map.level().revision(),key->enclosureScenery(map.level())))source.add(face.owned(13));
+            for(var instance:scenery.instances())if(residentScenery(instance))source.addAll(preparedSceneryFaces(instance));
+            faces=source.size();var buckets=new java.util.LinkedHashMap<LiveBucket,List<ResidentCorner>>();
+            long vertices=0;
+            for(var face:source){
+                var key=new LiveBucket(face.room,face.material,
+                    (int)Math.floor((face.a.x+face.b.x+face.c.x)/24),
+                    (int)Math.floor((face.a.y+face.b.y+face.c.y)/24),
+                    (int)Math.floor((face.a.z+face.b.z+face.c.z)/24));
+                var corners=buckets.computeIfAbsent(key,k->new ArrayList<>());int before=corners.size();
+                collectResidentCorners(face,face.room,0,corners);vertices+=corners.size()-before;
+                if(vertices>LIVE_HOUSE_TRIANGLE_LIMIT*3L){chunks=List.of();supported=false;return;}
+            }
+            var built=new ArrayList<LiveChunk>();
+            for(var entry:buckets.entrySet())built.add(new LiveChunk(entry.getKey().material,entry.getValue()));
+            chunks=List.copyOf(built);supported=true;liveBuilds++;livePreparedVertices+=vertices;
+            // Prepare every stationary chunk before control handoff, so the
+            // first House-facing camera turn does not discover cold light rays.
+            for(var chunk:chunks)chunk.prepare();
+        }
+    }
+    private boolean prepareLiveHouse(HouseMap map){
+        if(!liveHouseRequested(map))return false;
+        String revision=map.level().revision()+":"+map.hidingDensity();
+        if(liveHouse==null||liveHouse.owner!=map||!liveHouse.generation.equals(revision)
+            ||liveHouse.lighting!=fixtureLighting){liveHouse=new LiveHouse(map);liveUploads.clear();}
+        return liveHouse.supported;
+    }
+    private void acknowledgeLiveUploads(GpuWorldRenderer.Result result){
+        if(result==null||result.sceneId()!=gpuSceneId)return;
+        var sent=liveUploads.get(result.frameId());
+        if(sent!=null)for(var upload:sent)upload.chunk.acknowledged=Math.max(upload.chunk.acknowledged,upload.revision);
+        liveUploads.entrySet().removeIf(entry->entry.getKey()<=result.frameId());
+    }
+
     /** Timings are CPU-side costs, not GPU execution timestamps. */
     public record FrameDiagnostics(long totalNs,long sceneBuildNs,long geometryNs,long effectsNs,
         int faces,int frustumFaces,int sceneryTotal,int sceneryVisible,
@@ -1729,7 +1840,9 @@ public final class SceneRenderer {
     private int lastGpuFrustumFaces;
     private long lastGpuSubmittedTriangles;
     private boolean lastGpuReadbackFresh,lastGpuReadbackAvailable;
-    private final long gpuSceneId=GpuWorldRenderer.nextId();
+    private long gpuSceneId=GpuWorldRenderer.nextId();
+    private HouseMap gpuResourceMap;
+    private String gpuResourceRevision;
     private long lastSubmittedGpuFrame;
     private GpuWorldRenderer.Result pinnedGpuFrame;
     public void pinCompletedGpuFrame(GpuWorldRenderer.Result result){if(!GpuWorldRenderer.belongsTo(result,gpuSceneId,renderWidth,renderHeight))throw new IllegalArgumentException("GPU result belongs to a different preview scene");pinnedGpuFrame=result;}
@@ -1741,6 +1854,19 @@ public final class SceneRenderer {
         if(backend==null)return false;
         if(!backend.ready())throw new IllegalStateException(
             "OpenGL renderer stopped before the game frame");
+        String resourceRevision=map==null?null:map.level().revision()+":"+map.hidingDensity();
+        if(gpuResourceMap!=map||!Objects.equals(gpuResourceRevision,resourceRevision)){
+            gpuResourceMap=map;gpuResourceRevision=resourceRevision;gpuSceneId=GpuWorldRenderer.nextId();
+            liveUploads.clear();
+            if(liveHouse!=null)for(var chunk:liveHouse.chunks)chunk.acknowledged=0;
+        }
+        var completed=backend.latest();
+        if(completed!=null&&completed.sceneId()!=gpuSceneId&&liveHouse!=null){
+            // Another preview/van camera can own the shared backend between
+            // gameplay frames. Its scene transition disposed our old handles.
+            for(var chunk:liveHouse.chunks)chunk.acknowledged=0;
+        }
+        acknowledgeLiveUploads(completed);
         var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
         lastGpuFrustumFaces=0;
         for(Face f:faces){
@@ -1755,12 +1881,31 @@ public final class SceneRenderer {
         }
         var surfaces=new java.util.ArrayList<GpuWorldRenderer.Surface>(batches.size());
         lastGpuSubmittedTriangles=0;
+        var uploaded=new ArrayList<LiveUpload>();long descriptorBytes=0,staticTriangles=0;
+        boolean retained=liveHouseRequested(map)&&liveHouse!=null&&liveHouse.supported&&liveHouse.owner==map;
+        if(retained)for(var chunk:liveHouse.chunks){
+            // Upload every initial static chunk before control handoff. Newly
+            // visible chunks then need only camera uniforms, not cold uploads.
+            if(chunk.acknowledged>=chunk.revision&&!shellChunkInFrustum(chunk.bounds))continue;
+            chunk.prepare();staticTriangles+=chunk.corners.size()/3;
+            if(chunk.acknowledged<chunk.revision){
+                surfaces.add(new GpuWorldRenderer.Surface(chunk.material,chunk.packed,chunk.id,chunk.revision));
+                uploaded.add(new LiveUpload(chunk,chunk.revision));descriptorBytes+=chunk.packed.length*4L;
+            }else surfaces.add(GpuWorldRenderer.Surface.drawResident(chunk.material,chunk.id,chunk.revision,chunk.packed.length/8));
+        }
+        lastGpuSubmittedTriangles+=staticTriangles;
+        liveHouseStats=new LiveHouseStats(retained,liveBuilds,liveHouse==null?0:liveHouse.chunks.size(),
+            liveHouse==null?0:liveHouse.faces,livePreparedVertices,livePackedChunks,liveRecomputedProbes,descriptorBytes,staticTriangles);
         for(var entry:batches.entrySet()){
             float[] vertices=entry.getValue().complete();
             lastGpuSubmittedTriangles+=vertices.length/24;
             surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),vertices));
         }
         long submitted=GpuWorldRenderer.nextId();
+        if(!uploaded.isEmpty()){
+            liveUploads.put(submitted,List.copyOf(uploaded));
+            while(liveUploads.size()>32)liveUploads.remove(liveUploads.keySet().iterator().next());
+        }
         if(activeWater!=null&&!activeWater.bodies().isEmpty())waterViews.put(submitted,waterView(waterClock));
         consumedWaterView=null;
         lastSubmittedGpuFrame=submitted;
@@ -1852,6 +1997,8 @@ public final class SceneRenderer {
     private void levelArchitecture(List<Face> out,HouseMap map){
         if(map.nativeSite()){nativeArchitecture(out,map);return;}
         scenery(map);
+        boolean retained=prepareLiveHouse(map);
+        if(!retained){
         for(Face face:enclosureFaces.computeIfAbsent(map.level().revision(),
             key->enclosureScenery(map.level())))
             if(exportFullLevel||faceInFrustum(face))out.add(face.owned(13));
@@ -1870,6 +2017,17 @@ public final class SceneRenderer {
         shellChunkStats=new ShellChunkStats(preparedShellChunks.size(),rejected,
             candidateFaces,skippedFaces,preparedShellFaces.size(),shellPreparedRoomCount);
         appendSceneryInstances(out,map);
+        }else{
+            var source=scenery(map);int visible=0;long triangles=0;
+            double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
+            for(var instance:source.instances()){
+                if(!instance.visible(x,eyeHeight,z,yaw,pitch,hx,hy,NEAR))continue;
+                visible++;triangles+=instance.template.triangleCount();
+                if(!residentScenery(instance))out.addAll(preparedSceneryFaces(instance));
+            }
+            instanceStats=new InstanceStats(source.instances().size(),visible,source.instances().size()-visible,
+                source.templates().size(),source.expandedTriangles(),source.sharedTriangles(),triangles);
+        }
         for(var s:map.level().sockets())if(s.type().equals("hide")
             &&objectInView(s.x(),s.z(),3,26)
             &&LevelClosets.available(map.level(),s.room(),map.hidingDensity())){

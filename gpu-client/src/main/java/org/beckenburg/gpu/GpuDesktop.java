@@ -636,6 +636,8 @@ public final class GpuDesktop {
   }
   boolean smoke=options.contains("--gpu-smoke");
   boolean uiSmoke=options.contains("--gpu-ui-smoke");
+  boolean liveProfile=options.contains("--live-house-profile");
+  if((smoke?1:0)+(uiSmoke?1:0)+(liveProfile?1:0)>1)throw new IllegalArgumentException("Choose one GPU acceptance mode");
   if(smoke&&uiSmoke)throw new IllegalArgumentException("Choose one GPU smoke mode");
   try{startGpu();}catch(Exception failure){
    BeckenburgDiagnostics.fail("Required GPU renderer initialization",failure);
@@ -647,10 +649,10 @@ public final class GpuDesktop {
   if(options.contains("--van-castle-repair-review")){try{org.beckenburg.VanCastleRepairReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--map-compatibility-review")){try{org.beckenburg.MapCompatibilityReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--hollow-creek-review")){try{HollowCreekRuntimeReview.execute(ENGINE);}finally{stopReviewGpu();}return;}
-  if(smoke||uiSmoke){
+  if(smoke||uiSmoke||liveProfile){
    int status=0;
    try{
-    if(smoke)smoke();else GpuUiSmoke.execute(ENGINE);
+    if(liveProfile)LiveHouseGpuProfile.execute(ENGINE);else if(smoke)smoke();else GpuUiSmoke.execute(ENGINE);
    }catch(Throwable failure){
     System.err.println((smoke?"GPU SMOKE FAILED: ":"GPU UI SMOKE FAILED: ")+failure);
     failure.printStackTrace();status=1;
