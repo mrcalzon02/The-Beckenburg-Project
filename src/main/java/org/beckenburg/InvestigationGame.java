@@ -720,6 +720,7 @@ public final class InvestigationGame {
             BeckenburgDeveloperTrace.caseStage("GamePanel ready for sized initial render");
         }
         void close(){timer.stop();if(firstFrameWorker!=null)firstFrameWorker.cancel(true);
+            scene.close();
             if(opening!=null){opening.close();opening=null;}
             down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
         @Override public void doLayout(){

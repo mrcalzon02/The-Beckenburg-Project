@@ -219,5 +219,6 @@ final class LevelOpeningCinematic implements AutoCloseable {
                     status.workerBusy()?"cancelled-while-preparing":"fallback-without-gpu-frame"));
         }
         if(worker!=null)worker.shutdownNow();
+        if(preview!=null)preview.close();
     }
 }

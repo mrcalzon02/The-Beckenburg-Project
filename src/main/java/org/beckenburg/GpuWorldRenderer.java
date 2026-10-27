@@ -98,6 +98,11 @@ public interface GpuWorldRenderer {
     boolean ready();
     /** Nonblocking: newest authoritative scene supersedes an unrendered scene. */
     void submit(Frame frame);
+    /** Release one closed viewport on the GL owner. Never delete another
+     * viewport's resources or wait for graphics work on the Swing thread. */
+    default void releaseScene(long sceneId){}
+    /** Changes when resident handles are disposed, including a closed preview. */
+    default long residencyEpoch(){return 0;}
     /** Last completed hardware framebuffer; can be null during initial startup. */
     Result latest();
     String rendererDescription();

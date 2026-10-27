@@ -125,6 +125,20 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private final Map<MeshKey,Long> uploadedRevisions=new HashMap<>();
  private final Map<MeshKey,Integer> uploadedCounts=new HashMap<>();
  private long uploadedSceneId=-1;
+ private final java.util.concurrent.ConcurrentLinkedQueue<Long> releases=new java.util.concurrent.ConcurrentLinkedQueue<>();
+ private volatile long residencyEpoch,residentAllocatedBytes;
+ @Override public long residencyEpoch(){return residencyEpoch;}
+ public long residentAllocatedBytes(){return residentAllocatedBytes;}
+ @Override public void releaseScene(long sceneId){
+  if(sceneId<=0||closed)return;
+  pending.updateAndGet(frame->frame!=null&&frame.sceneId()==sceneId?null:frame);
+  releases.add(sceneId);if(ready())Gdx.graphics.requestRendering();
+ }
+ private void clearSceneMeshes(){
+  for(Mesh resident:meshes.values())resident.dispose();
+  meshes.clear();capacity.clear();uploadedVertices.clear();uploadedRevisions.clear();uploadedCounts.clear();
+  residentAllocatedBytes=0;residencyEpoch++;
+ }
  /** Observed on GL worker after an actual completed frame, including copied bytes. */
  public record UploadStats(long sceneId,long frameId,int uploadedBatches,
      int reusedBatches,long uploadedBytes,long reusedBytes){}
@@ -226,9 +240,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    // A new scene must never reuse prior scene IDs or retain orphaned VBOs.
    // All OpenGL deletion occurs on the owning render worker.
    uploadedSceneId=frame.sceneId();
-   for(Mesh resident:meshes.values())resident.dispose();
-   meshes.clear();capacity.clear();uploadedVertices.clear();
-   uploadedRevisions.clear();uploadedCounts.clear();
+   clearSceneMeshes();
   }
   long frameUploadBytes=0,frameReusedBytes=0;
   long residentBytes=0,residentReused=0;
@@ -333,6 +345,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   long residentCapacity=0;
   for(var entry:capacity.entrySet())if(entry.getKey().resourceId()>0)residentCapacity+=entry.getValue()*8L*Float.BYTES;
   residentUploadStats=new ResidentUploadStats(frame.sceneId(),frame.frameId(),residentBytes,residentReused,residentCapacity);
+  residentAllocatedBytes=residentCapacity;
   long finished=System.nanoTime();
   frameTiming=new FrameTiming(frame.sceneId(),frame.frameId(),
       rasterReady-started,finished-rasterReady,finished-started);
@@ -352,6 +365,11 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   }
  }
  @Override public void render(){
+  Long released;
+  while((released=releases.poll())!=null)if(uploadedSceneId==released){
+   clearSceneMeshes();uploadedSceneId=-1;
+   if(latest!=null&&latest.sceneId()==released)latest=null;
+  }
   Frame frame=pending.getAndSet(null);
   if(frame==null||closed)return;
   try{draw(frame);}catch(Throwable error){
@@ -361,8 +379,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  @Override public void dispose(){
   closed=true;ready=false;
-  uploadedVertices.clear();uploadedRevisions.clear();uploadedCounts.clear();
-  for(Mesh mesh:meshes.values())mesh.dispose();
+  clearSceneMeshes();
   for(Texture texture:textures.values())texture.dispose();
   if(target!=null)target.dispose();
   if(shader!=null)shader.dispose();

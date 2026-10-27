@@ -93,5 +93,11 @@ final class LiveHouseGpuProfile {
             if(pixels<250||missing>0||nearer>0)throw new AssertionError("Live House depth disagrees with original geometry: room="+room+" missing="+missing+" nearer="+nearer);
         }
         System.out.println("PASS actual OpenGL depth coverage: van, House interior and upstairs; no original surface lost beyond 5cm depth tolerance");
+        reference.close();candidate.drawNetwork(map,List.of(),-1,0);await(engine,candidate);
+        if(engine.residentAllocatedBytes()==0)throw new AssertionError("Closing inactive viewport deleted active House buffers");
+        long epoch=engine.residencyEpoch();candidate.close();long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(10);
+        while(engine.residencyEpoch()==epoch&&System.nanoTime()<deadline)LockSupport.parkNanos(200000);
+        if(engine.residencyEpoch()==epoch||engine.residentAllocatedBytes()!=0||!engine.ready())throw new AssertionError("Case/preview exit did not release resident buffers on live GL owner");
+        System.out.println("PASS actual OpenGL viewport lifetime: inactive close preserves House; active exit releases all resident vertex capacity without stopping backend");
     }
 }

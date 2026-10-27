@@ -6,14 +6,19 @@ import java.util.*;
 public final class LiveHouseResidencyTest {
     static void check(boolean value,String why){if(!value)throw new AssertionError(why);}
     static final class Backend implements GpuWorldRenderer {
-        Frame submitted;Result completed;long scene;
+        Frame submitted;Result completed;long scene,epoch;
         final Map<Long,Long> handles=new HashMap<>();
         public boolean ready(){return true;}
         public void submit(Frame frame){submitted=frame;}
         public Result latest(){return completed;}
+        public long residencyEpoch(){return epoch;}
+        public void releaseScene(long id){
+            if(submitted!=null&&submitted.sceneId()==id)submitted=null;
+            if(scene==id){handles.clear();completed=null;scene=0;epoch++;}
+        }
         public String rendererDescription(){return "functional contract backend; not GPU evidence";}
         void complete(){
-            var f=submitted;if(scene!=f.sceneId()){handles.clear();scene=f.sceneId();}
+            var f=submitted;if(scene!=f.sceneId()){handles.clear();scene=f.sceneId();epoch++;}
             for(var s:f.surfaces())if(s.resourceId()>0){
                 if(s.vertices().length>0)handles.put(s.resourceId(),s.revision());
                 else check(Objects.equals(handles.get(s.resourceId()),s.revision()),"draw-only handle was not delivered");
@@ -60,6 +65,17 @@ public final class LiveHouseResidencyTest {
             var second=new HouseMap();pose(renderer,second,0,4);frame(renderer,second);gpu.complete();
             check(renderer.liveHouseStats().builds()==builds+1,"new map owns a new resource generation");
             check(renderer.liveHouseStats().preparedVertices()<=2L*600000*3,"two generations respect static vertex budget");
+            var preview=new SceneRenderer();preview.setResidentHouse(true);preview.setRenderSize(160,120);pose(preview,second,14,0);
+            frame(preview,second);gpu.complete();preview.close();
+            check(gpu.completed==null&&gpu.handles.isEmpty(),"closed active preview releases its resources immediately");
+            frame(renderer,second);gpu.complete();
+            check(renderer.liveHouseStats().descriptorBytes()>0,"restore handles after closed preview leaves no latest framebuffer");
+            frame(renderer,second);gpu.complete();check(renderer.liveHouseStats().descriptorBytes()==0,"restored resources resume draw-only reuse");
+            var newer=new SceneRenderer();newer.setResidentHouse(true);newer.setRenderSize(160,120);pose(newer,second,14,0);
+            frame(newer,second);gpu.complete();var newerFrame=gpu.completed;
+            renderer.close();check(gpu.completed==newerFrame&&!gpu.handles.isEmpty(),"closing an inactive scene cannot release another viewport");
+            newer.close();check(gpu.handles.isEmpty()&&gpu.completed==null,"case exit releases final resident generation");
+            frame(newer,second);check(gpu.submitted==null,"closed renderer cannot resurrect a GPU submission");
             System.out.println("PASS actual House drawNetwork residency, dropped upload delivery, all-room camera reuse, resize, fixtures, doors, UV fallback and scene/map ownership");
         }finally{GpuWorldRenderer.INSTALLED.set(null);}
     }

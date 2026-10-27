@@ -8,7 +8,17 @@ import java.util.List;
 import java.util.Objects;
 
 /** True perspective-triangle software rasterizer, depth tested at a period-appropriate 320x200. */
-public final class SceneRenderer {
+public final class SceneRenderer implements AutoCloseable {
+    private final Object gpuSubmissionLock=new Object();
+    private volatile boolean closed;
+    private long lastSubmittedSceneId,gpuResourceEpoch=Long.MIN_VALUE;
+    @Override public void close(){
+        synchronized(gpuSubmissionLock){
+            if(closed)return;closed=true;
+            var backend=GpuWorldRenderer.active();
+            if(backend!=null&&lastSubmittedSceneId>0)backend.releaseScene(lastSubmittedSceneId);
+        }
+    }
     public static final int W=320,H=200;
     private static final double NEAR=.065;
     private int renderWidth=W,renderHeight=H;
@@ -1862,6 +1872,11 @@ public final class SceneRenderer {
             if(liveHouse!=null)for(var chunk:liveHouse.chunks)chunk.acknowledged=0;
         }
         var completed=backend.latest();
+        long epoch=backend.residencyEpoch();
+        if(epoch!=gpuResourceEpoch){
+            gpuResourceEpoch=epoch;
+            if(liveHouse!=null)for(var chunk:liveHouse.chunks)chunk.acknowledged=0;
+        }
         if(completed!=null&&completed.sceneId()!=gpuSceneId&&liveHouse!=null){
             // Another preview/van camera can own the shared backend between
             // gameplay frames. Its scene transition disposed our old handles.
@@ -1910,6 +1925,9 @@ public final class SceneRenderer {
         if(activeWater!=null&&!activeWater.bodies().isEmpty())waterViews.put(submitted,waterView(waterClock));
         consumedWaterView=null;
         lastSubmittedGpuFrame=submitted;
+        synchronized(gpuSubmissionLock){
+        if(closed)return true;
+        lastSubmittedSceneId=gpuSceneId;
         backend.submit(new GpuWorldRenderer.Frame(gpuSceneId,submitted,
             renderWidth,renderHeight,(float)focal,
             (float)psxPreset.snap,(float)psxPreset.affine,surfaces,
@@ -1917,6 +1935,7 @@ public final class SceneRenderer {
             (float)yaw,(float)pitch,
             lamp,(float)lampIntensity,(float)lampReach,
             (float)lampWidth,flameLamp));
+        }
         GpuWorldRenderer.Result available=pinnedGpuFrame==null?backend.latest():pinnedGpuFrame;pinnedGpuFrame=null;
         lastGpuReadbackAvailable=GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight);
         lastGpuReadbackFresh=lastGpuReadbackAvailable&&available.frameId()==submitted;
@@ -2437,6 +2456,7 @@ public final class SceneRenderer {
     /** Castle hub renders with the same perspective, clipping and textured depth buffer as missions. */
     public void drawCastle(CastleHubMap map,double clock){drawCastle(map,clock,true);}
     public void drawCastle(CastleHubMap map,double clock,boolean lightsOn){
+        if(closed)return;
         environmentLight=1;lightingMap=null;waterCastle=map;waterClock=clock;activeWater=waterOverride==null?WorldWater.module(map.water()):waterOverride;
         var edits=CastleLevelEdits.current();
         if(castleLighting==null||castleEditRevision!=edits.revision()){
@@ -2700,6 +2720,7 @@ public final class SceneRenderer {
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
+        if(closed)return;
         long frameBegin=System.nanoTime();
         depthRejectedFaces=0;
         waterCastle=null;activeWater=waterOverride==null?WorldWater.module(map.level().water()):waterOverride;
@@ -2713,6 +2734,7 @@ public final class SceneRenderer {
         appendDotsProjection(geometry);
         appendUvResidue(geometry,map);
         long geometryReady=System.nanoTime();
+        if(closed)return;
         int visibleFaces=0;waterClock=clock;
         boolean gpuFrame=drawGpuFaces(geometry,map);
         if(gpuFrame){
