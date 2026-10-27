@@ -85,3 +85,7 @@ A scene-owned positive Surface.resourceId with revision and vertexCount distingu
 ## Portable A–G reuse
 
 The cross-engine engineering process and adoption template are preserved in [portable/README.md](portable/README.md), [portable/MILESTONES_A-G.md](portable/MILESTONES_A-G.md) and [portable/CHECKPOINT_TEMPLATE.md](portable/CHECKPOINT_TEMPLATE.md). Those files are method guidance, not authorization or proof of improvements in other repositories. The [Beckenburg evidence ledger](portable/BECKENBURG_LEDGER.md) keeps source-specific statuses separate.
+
+## F1 candidate — bounded GPU preview readiness before intro playback
+
+The existing 7.5-second opening flyover no longer has to consume its animation clock while cold first-frame preparation runs. A monotonic, nonblocking `OpeningPlaybackClock` holds at aerial pose until an actual completed preview copy is prepared, then starts the camera flight. If no preview becomes ready within 3 seconds, it starts the existing tactical-map fallback and progresses to the player handoff; a late frame never rewinds progress and player skip remains available. Local diagnostics record the timed-out fallback and prior F0 first-preview timing. `OpeningPlaybackClockTest` deterministically tests cold hold, on-time readiness, GPU timeout, late-image non-rewind, software-mode immediate playback, and eventual completion without sleeps. This is a timing/readiness safety improvement only: actual GPU shader warmup, asset streaming, image quality and case-hang repair remain open F milestones.
