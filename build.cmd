@@ -18,6 +18,8 @@ if not exist build\test mkdir build\test
   for %%F in (src\test\java\org\beckenburg\*.java) do @echo "src/test/java/org/beckenburg/%%~nxF"
 )
 javac --release 17 -encoding UTF-8 -d build\classes @build\sources-main.txt || exit /b 1
+rem Asset thumbnails are baked from reviewed 3D model captures and shipped inside JAR.
+java -Djava.awt.headless=true -cp build\classes org.beckenburg.UiAssetBake . build\classes\org\beckenburg build\Beckenburg.ico || exit /b 1
 if not exist build\classes\META-INF mkdir build\classes\META-INF
 copy /Y water-module\src\main\resources\META-INF\*.txt build\classes\META-INF\ >nul || exit /b 1
 if exist assets\runtime\sounds (
