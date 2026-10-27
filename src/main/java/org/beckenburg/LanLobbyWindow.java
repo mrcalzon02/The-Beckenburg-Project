@@ -86,6 +86,12 @@ public final class LanLobbyWindow extends JFrame {
                 action(()->connection.selectVisual(
                     (CharacterVisuals.Hunter)hunterAppearance.getSelectedItem()));
         });
+        siteChoice.setRenderer(new DefaultListCellRenderer(){
+            @Override public Component getListCellRendererComponent(JList<?> list,Object value,int index,boolean selected,boolean focus){
+                super.getListCellRendererComponent(list,value,index,selected,focus);
+                if(value instanceof HouseMap.Site site)setText(MissionSites.title(site.name()));return this;
+            }
+        });
         siteChoice.setToolTipText("The LAN host chooses the actual shared investigation map");
         lobbyLock.setEnabled(false);hostInfo.setEnabled(false);
         JPanel info=new JPanel(new GridLayout(3,1,0,4));
@@ -390,7 +396,7 @@ public final class LanLobbyWindow extends JFrame {
                     siteChoice.setEnabled(false);
                     lobbyLock.setEnabled(hosted!=null);hostInfo.setEnabled(hosted!=null);
                     role.setEnabled(false);
-                    status.setText("Seat "+client.seat()+" / "+selectedSite);
+                    status.setText("Seat "+client.seat()+" / "+MissionSites.title(selectedSite.name()));
                     if("GHOST".equals(client.seat()))avatar.showGhost(
                         remoteLook!=null?remoteLook:localLook,remoteLook!=null);
                     else if(ghostJoined&&remoteLook!=null)avatar.showGhost(remoteLook,true);
@@ -483,7 +489,7 @@ public final class LanLobbyWindow extends JFrame {
         JComponent active;
         if(ghost){ghostView=new LanGhostPanel(connection);active=ghostView;}
         else {worldView=new LanWorldPanel(connection);active=worldView;}
-        worldFrame=new JFrame("Beckenburg — "+selectedSite+
+        worldFrame=new JFrame("Beckenburg — "+MissionSites.title(selectedSite.name())+
             (ghost?" / Spectral Ghost":" / Investigation"));
         worldFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         worldFrame.setContentPane(active);
@@ -552,7 +558,7 @@ public final class LanLobbyWindow extends JFrame {
                     selectedSite=HouseMap.Site.valueOf(parts.get(1));
                     if(!new HouseMap(selectedSite).level().revision().equals(parts.get(2)))throw new IllegalArgumentException("incompatible level revision");
                     siteChoice.setSelectedItem(selectedSite);
-                    if(worldFrame!=null)worldFrame.setTitle("Beckenburg / "+selectedSite);
+                    if(worldFrame!=null)worldFrame.setTitle("Beckenburg / "+MissionSites.title(selectedSite.name()));
                 }catch(IllegalArgumentException rejected){
                     log.append("Unsupported location version received.\n");
                 }
