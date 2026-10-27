@@ -1,7 +1,6 @@
 package org.beckenburg;
 
 import java.awt.*;
-import java.awt.geom.Path2D;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -49,7 +48,13 @@ public final class UiAssetBake {
         Path brand=output.resolve("ui/branding");
         Files.createDirectories(brand);
         ImageIO.write(splash(actualCastle),"png",brand.resolve("castle-splash.png").toFile());
-        BufferedImage mark=mark(256);
+        // Preserve the actual approved Beckenburg desktop crest, not a procedural stand-in.
+        Path desktopSource=root.resolve("assets/runtime/ui/branding/beckenburg.png");
+        if(!Files.isRegularFile(desktopSource))
+            throw new IOException("Required Beckenburg desktop icon source missing: "+desktopSource);
+        BufferedImage mark=ImageIO.read(desktopSource.toFile());
+        if(mark==null || mark.getWidth()!=512 || mark.getHeight()!=512)
+            throw new IOException("Invalid 512x512 Beckenburg desktop icon: "+desktopSource);
         ImageIO.write(mark,"png",brand.resolve("beckenburg.png").toFile());
         Path installer=Path.of(args.length<3?"build/Beckenburg.ico":args[2]);
         Files.createDirectories(installer.toAbsolutePath().getParent());
@@ -86,39 +91,44 @@ public final class UiAssetBake {
         return out;
     }
 
-    /** Beckenburg B over a restrained iron shield, suitable for small Windows shortcut sizes. */
-    private static BufferedImage mark(int size){
-        BufferedImage image=new BufferedImage(size,size,BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g=image.createGraphics();
-        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-        g.setColor(new Color(15,20,27));
-        g.fillRoundRect(3,3,size-6,size-6,size/7,size/7);
-        Path2D shield=new Path2D.Double();
-        shield.moveTo(size*.19,size*.13);shield.lineTo(size*.81,size*.13);
-        shield.lineTo(size*.79,size*.69);shield.quadTo(size*.67,size*.87,size*.50,size*.94);
-        shield.quadTo(size*.33,size*.87,size*.21,size*.69);shield.closePath();
-        g.setColor(new Color(37,46,55));g.fill(shield);
-        g.setStroke(new BasicStroke(size*.023f));
-        g.setColor(new Color(166,143,106));g.draw(shield);
-        g.setFont(new Font(Font.SERIF,Font.BOLD,(int)(size*.64)));
-        g.setColor(new Color(219,207,177));
-        FontMetrics m=g.getFontMetrics();String label="B";
-        g.drawString(label,(size-m.stringWidth(label))/2,(int)(size*.72));
-        g.dispose();return image;
-    }
-    /** Modern Windows ICO: embed a lossless 256px PNG without third-party dependencies. */
+    /** Windows ICO with genuine PNG frames at normal desktop/taskbar resolutions. */
     private static void writeIco(Path file,BufferedImage source) throws IOException {
-        ByteArrayOutputStream bytes=new ByteArrayOutputStream();
-        ImageIO.write(source,"png",bytes);
-        byte[] png=bytes.toByteArray();
-        try(var output=Files.newOutputStream(file)){
-            output.write(new byte[]{0,0,1,0,1,0,0,0,0,0,1,0,32,0});
-            le32(output,png.length);
-            le32(output,22);
-            output.write(png);
+        int[] sizes={16,24,32,48,64,128,256};
+        byte[][] frames=new byte[sizes.length][];
+        for(int i=0;i<sizes.length;i++){
+            int size=sizes[i];
+            BufferedImage scaled=new BufferedImage(size,size,BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g=scaled.createGraphics();
+            g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+            g.drawImage(source,0,0,size,size,null);
+            g.dispose();
+            ByteArrayOutputStream buffer=new ByteArrayOutputStream();
+            if(!ImageIO.write(scaled,"png",buffer))throw new IOException("PNG encoder unavailable");
+            frames[i]=buffer.toByteArray();
         }
+        try(var out=Files.newOutputStream(file)){
+            le16(out,0); // reserved
+            le16(out,1); // icon
+            le16(out,frames.length);
+            int offset=6+16*frames.length;
+            for(int i=0;i<frames.length;i++){
+                int size=sizes[i];
+                out.write(size==256?0:size);
+                out.write(size==256?0:size);
+                out.write(0);out.write(0); // palette and reserved
+                le16(out,1);le16(out,32);
+                le32(out,frames[i].length);
+                le32(out,offset);
+                offset+=frames[i].length;
+            }
+            for(byte[] frame:frames)out.write(frame);
+        }
+    }
+    private static void le16(java.io.OutputStream out,int value)throws IOException{
+        out.write(value&255);out.write((value>>>8)&255);
     }
     private static void le32(java.io.OutputStream out,int value)throws IOException{
         for(int shift=0;shift<32;shift+=8)out.write((value>>>shift)&255);
     }
+
 }
