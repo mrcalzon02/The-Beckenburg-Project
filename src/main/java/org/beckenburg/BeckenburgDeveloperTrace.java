@@ -30,7 +30,7 @@ public final class BeckenburgDeveloperTrace {
     }
     public static void caseStart(String description){
         CASE_START.set(System.nanoTime()); caseStage="begin"; activeCase=true;
-        lastFrame=System.nanoTime();frameCount=0;
+        lastFrame=System.nanoTime();frameCount=0;lastSnapshot=0;
         BeckenburgDiagnostics.record("CASE START "+description);
     }
     public static void caseStage(String description){
@@ -52,7 +52,13 @@ public final class BeckenburgDeveloperTrace {
             " target="+width+"x"+height+
             " build_ms="+buildNs/1_000_000+" lighting_raster_ms="+drawNs/1_000_000);
     }
-    public static void caseStop(){activeCase=false;caseStage="closed";}
+    public static void caseStop(){
+        if(!activeCase)return;
+        activeCase=false;caseStage="closed";
+        long started=CASE_START.getAndSet(0);
+        long elapsed=started==0?-1:(System.nanoTime()-started)/1_000_000;
+        BeckenburgDiagnostics.record("CASE STOP elapsed_ms="+elapsed);
+    }
     public static void update(String operation,String detail){
         BeckenburgDiagnostics.record("UPDATE TRACE "+operation+" "+detail);
     }
@@ -84,11 +90,13 @@ public final class BeckenburgDeveloperTrace {
                     " system_load="+os.getSystemLoadAverage()+
                     " frame_count="+frameCount+" frame_age_ms="+(now-lastFrame)/1_000_000);
                 long frameAge=(now-lastFrame)/1_000_000;
-                if(activeCase && elapsed>10000 && frameAge>5000 && now-lastSnapshot>15_000_000_000L){
+                if(activeCase && !"paused".equals(caseStage) && elapsed>10000 &&
+                        frameAge>5000 && now-lastSnapshot>15_000_000_000L){
                     lastSnapshot=now;
                     snapshot("case-frame-stalled-"+caseStage);
                 }
-                if(activeCase && elapsed>10000 && !"active".equals(caseStage) && now-lastSnapshot>15_000_000_000L){
+                if(activeCase && elapsed>10000 && !"active".equals(caseStage) &&
+                        !"paused".equals(caseStage) && now-lastSnapshot>15_000_000_000L){
                     lastSnapshot=now;
                     snapshot("case-initialization-stalled-"+caseStage);
                 }

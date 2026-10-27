@@ -535,10 +535,13 @@ public final class InvestigationGame {
     }
     private void begin(boolean campaignMode,boolean withAssistant,long seed,
             CampaignStory.Chapter chapter){
-        BeckenburgDeveloperTrace.caseStart("campaign="+campaignMode+" assistant="+withAssistant+" seed="+seed);
-        BeckenburgDeveloperTrace.caseStage("closing previous panels");
+        BeckenburgDiagnostics.record("CASE REQUEST campaign="+campaignMode+" assistant="+withAssistant+" seed="+seed);
+        // Close the old case before starting the next trace: close() disarms
+        // its watchdog, and must never disarm the newly requested case.
         if(game!=null){game.close();cards.remove(game);game=null;}
         if(ghostPractice!=null){ghostPractice.close();cards.remove(ghostPractice);ghostPractice=null;}
+        BeckenburgDeveloperTrace.caseStart("campaign="+campaignMode+" assistant="+withAssistant+" seed="+seed);
+        BeckenburgDeveloperTrace.caseStage("previous panels closed");
         caseNumber++;
         SiteCatalog.Location location=(SiteCatalog.Location)locationPicker.getSelectedItem();
         SiteCatalog.requirePlayable(location);
@@ -635,7 +638,8 @@ public final class InvestigationGame {
                         BeckenburgDeveloperTrace.caseStage("opening aerial approach");
                         last=System.nanoTime();
                         timer.start();
-                        BeckenburgDeveloperTrace.caseStage("active");
+                        // A running intro is not yet a responsive gameplay frame.
+                        // The first successful hunter render marks the active stage.
                         repaint();
                     }catch(Exception failed){
                         Throwable cause=failed.getCause()==null?failed:failed.getCause();
@@ -720,6 +724,7 @@ public final class InvestigationGame {
             BeckenburgDeveloperTrace.caseStage("GamePanel ready for sized initial render");
         }
         void close(){timer.stop();if(firstFrameWorker!=null)firstFrameWorker.cancel(true);
+            BeckenburgDeveloperTrace.caseStop();
             if(opening!=null){opening.close();opening=null;}
             down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
         @Override public void doLayout(){
@@ -840,6 +845,7 @@ public final class InvestigationGame {
                 }else{
                     opening.update(getWidth(),getHeight());
                     repaint();
+                    BeckenburgDeveloperTrace.frame(System.nanoTime()-diagnosticFrameStart);
                     return; // intro never advances AI/evidence or moves player
                 }
             }
@@ -926,6 +932,7 @@ public final class InvestigationGame {
             scene.rackInventory=VanRackStock.solo(profile,loadout);
             scene.draw(map,session,frameCount++/30.0,
                 assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
+            if(frameCount==1)BeckenburgDeveloperTrace.caseStage("active");
             perfHud.sample(System.nanoTime()-diagnosticFrameStart,scene,map,assistant==null?0:1,"SOLO");
             repaint();
             if(session.outcome()==InvestigationSession.Outcome.LOST){
@@ -973,6 +980,7 @@ public final class InvestigationGame {
         }
         private void pause(){
             timer.stop();down.clear();mouseLook.release();wheelOpen=false;briefingShown=false;
+            BeckenburgDeveloperTrace.caseStage("paused");
             Object[] choices={"Resume", "Retreat & return", "Controls", "Exit Game"};
             int choice=JOptionPane.showOptionDialog(window,"Expedition paused", "Field Pause",
                 JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,choices,choices[0]);
@@ -988,7 +996,9 @@ public final class InvestigationGame {
                 System.exit(0);
                 return;
             }
-            last=System.nanoTime();timer.start();requestFocusInWindow();
+            last=System.nanoTime();timer.start();
+            BeckenburgDeveloperTrace.caseStage("active");
+            requestFocusInWindow();
         }
         @Override public void keyPressed(KeyEvent e){
             if(chatInput.isVisible())return;
