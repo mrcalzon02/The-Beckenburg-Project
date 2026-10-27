@@ -1,5 +1,7 @@
 # Beckenburg rendering migration — milestones A through G
 
+**Goal-oriented completion contract and future Codex entry point:** [CODEX_PERFORMANCE_FINISH_PLAN.md](CODEX_PERFORMANCE_FINISH_PLAN.md), [CODEX_HANDOFF.md](CODEX_HANDOFF.md), and [CODEX_PROGRESS_LOG.md](CODEX_PROGRESS_LOG.md). These supersede any implied completion claim in older checkpoint prose; source and acceptance states must be checked fresh.
+
 Authoritative engine: Java 17 / LibGDX OpenGL 3.3.
 Baseline SHA: 5909f66a6314666fd5f5a6cf4e86847eb11a7314.
 Scope: incremental renderer/resource architecture; no unrelated gameplay or artwork revision.

@@ -19,3 +19,7 @@ Documents:
 6. Propose documented cross-project learning here once there is a concrete source-specific example. Never copy assets, secrets, keys, binaries or licensed content from one repository merely to reuse the process.
 
 The playbook itself never authorizes changes to another repository. Functional defects may block releases; unsolicited cosmetic screenshot comparisons may not. Never force push or claim completion after a failed build, CI job or remote update.
+
+## Beckenburg goal-oriented Codex handoff
+
+The actual Beckenburg finish plan is saved at [../CODEX_PERFORMANCE_FINISH_PLAN.md](../CODEX_PERFORMANCE_FINISH_PLAN.md) with a standalone [../CODEX_HANDOFF.md](../CODEX_HANDOFF.md) and [../CODEX_PROGRESS_LOG.md](../CODEX_PROGRESS_LOG.md). They are **Beckenburg-specific**; other projects can reuse their acceptance and evidence method, but must create their own goal and tests. No other project is authorized or changed by this reference.
