@@ -1724,7 +1724,7 @@ Older-map obligation: Preserve every saved chapter ordinal and prototype availab
 
 ## DEV-128 — GPU diagnostics crashed after successful captures during abrupt JVM shutdown
 
-**Status:** fixed-local-exact-CI-pending
+**Status:** fixed-source-CI-passed-installed-hardware-pending
 
 Stop and join the owning GPU worker before exiting; teardown failures must fail acceptance.
 
@@ -1734,7 +1734,7 @@ Older-map obligation: Verify native shutdown and same-seat/privacy behavior on e
 
 ## DEV-129 — Hunter unit fixture mixed active Hallow into independent Focus-expiry comparison
 
-**Status:** fixed-local-exact-CI-pending
+**Status:** fixed-source-CI-passed-installed-hardware-pending
 
 Retain every original assertion, isolate the Focus fixture, and additionally verify shared Hallow protection and expiry.
 
@@ -1744,7 +1744,7 @@ Older-map obligation: Verify native shutdown and same-seat/privacy behavior on e
 
 ## DEV-130 — Hunter feature branch rejected ghost reconnect by assigning a hunter discipline
 
-**Status:** fixed-local-exact-CI-pending
+**Status:** fixed-source-CI-passed-installed-hardware-pending
 
 Guard class restoration to hunter seats, preserve ghost resume and host ownership, and reset fresh lobby occupant class authority to its own visual choice.
 
@@ -1761,3 +1761,5 @@ Native case trace: 2357 ms House-facing frame, 2340 ms lighting/raster. Controll
 ## DEV-132 - Dynamic probe experiment rejected
 
 Default-off bcdb6ab9: p95 71.474 ms, initial scalar rays 157362 versus prior 53.545-55.270 ms /44434 rays. Restore verified fe0df50a runtime; retain source/history and evidence. No other-map rollout or release.
+
+Queued closeout: DEV126-130 source fixes passed exact e783fdf7 full40464099189/GPU40464010267 (257/257); installed and older-map hardware obligations remain open.
