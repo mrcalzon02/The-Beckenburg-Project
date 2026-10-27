@@ -1077,6 +1077,35 @@ public final class SceneRenderer {
     private HouseMap shellSourceMap;
     private String shellSourceRevision="";
     private List<Face> preparedShellFaces=List.of();
+    /** Identity, not structural equivalence: authored immutable shell faces
+     * must never be confused with similarly-shaped live doors, held gear or
+     * ghost/event geometry. Rebuilt only when shell topology changes. */
+    private final java.util.Set<Face> authoredShellIdentity=
+        java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
+    public record ProductionShellOwnership(int totalFaces,int authoredShell,
+        int dynamicAndDerived,int unknownRoomFaces,int distinctShellRooms,
+        long authoredShellTriangles){}
+    /**
+     * D4 diagnostic for the REAL gameplay scene assembly. Nothing in this
+     * method replaces or reorders draw calls; never cull by owner identity.
+     * Dynamic props, ritual/event objects, van equipment and NPCs stay in
+     * the conventional batches pending depth/lighting parity.
+     */
+    public ProductionShellOwnership auditGameplayShellOwnership(HouseMap map,double clock){
+        if(map==null)throw new IllegalArgumentException("Game map required");
+        List<Face> built=scene(map,-1,false,-1,-1,clock,List.of(),null,List.of());
+        if(map.nativeSite())
+            return new ProductionShellOwnership(built.size(),0,built.size(),0,0,0);
+        int prepared=0,unowned=0;
+        var rooms=new java.util.HashSet<Integer>();
+        for(Face face:built){
+            if(authoredShellIdentity.contains(face)){
+                prepared++;rooms.add(face.room);
+            }else if(face.room<0)unowned++;
+        }
+        return new ProductionShellOwnership(built.size(),prepared,
+            built.size()-prepared,unowned,rooms.size(),prepared);
+    }
     private List<ShellChunk> preparedShellChunks=List.of();
     private boolean shellChunkCulling=true;
     /** Functional reference only; no player-facing option is introduced. */
@@ -1511,6 +1540,183 @@ public final class SceneRenderer {
         // depth-tested foreground, and this removes per-vertex cone updates.
         return new Vertex(p,u,v,result.r,result.g,result.b);
     }
+
+
+    /** B2e diagnostic-only stable world-space fixture and UV preparation.
+     * This omits camera-distance lighting LOD and camera-only equipment.
+     * Normal/wall-side parity must be audited before gameplay integration. */
+    /** D3 diagnostic: immutable authored triangle corners and explicit source
+     * light/probe ownership. Geometry never changes because the camera turns. */
+    private record ResidentCorner(Point p,double u,double v,int material,int tint,
+                                  int room,Point normal){}
+    private record ResidentBucketKey(int room,int material){}
+    private static final class ResidentHandle {
+        final long id;
+        long revision=1;
+        ResidentHandle(long id){this.id=id;}
+    }
+    /** Keep original authored wall-side normal direction when tessellating.
+     * Missing normals remain missing (legacy fixture sampling fallback),
+     * rather than inventing cross-wall normals. */
+    private static Point interpolateResidentNormal(Point left,Point right){
+        if(left==null)return right;
+        if(right==null)return left;
+        double nx=left.x+right.x,ny=left.y+right.y,nz=left.z+right.z;
+        double len=Math.sqrt(nx*nx+ny*ny+nz*nz);
+        if(len<1e-9)return left;
+        return new Point(nx/len,ny/len,nz/len);
+    }
+    /** Functional wall-side normal proof independent of screenshot style. */
+    static boolean testResidentSubdivisionNormals(){
+        var n=new Point(0,1,0);
+        var original=new Face(new Point(0,0,0),new Point(4,0,0),
+            new Point(0,0,4),0xffffff,-1,0,0,1,0,0,1,0,n,n,n);
+        var corners=new ArrayList<ResidentCorner>();
+        new SceneRenderer().collectResidentCorners(original,0,0,corners);
+        if(corners.size()!=12)return false;
+        for(var c:corners)if(c.normal==null||Math.abs(c.normal.y-1)>1e-7||
+           Math.abs(c.normal.x)>1e-7||Math.abs(c.normal.z)>1e-7)return false;
+        var fallback=new Face(original.a,original.b,original.c,original.color,
+            original.material,original.au,original.av,original.bu,original.bv,
+            original.cu,original.cv,0,null,null,null);
+        corners.clear();
+        new SceneRenderer().collectResidentCorners(fallback,0,0,corners);
+        if(corners.size()!=12)return false;
+        for(var c:corners)if(c.normal!=null)return false;
+        return true;
+    }
+    private void collectResidentCorners(Face face,int room,int depth,
+                                        List<ResidentCorner> result){
+        if(room>=0&&room<12&&depth<1&&
+            Math.max(edge2(face.a,face.b),Math.max(edge2(face.b,face.c),
+                edge2(face.c,face.a)))>2.6){
+            Point ab=mid(face.a,face.b),bc=mid(face.b,face.c),ca=mid(face.c,face.a);
+            double abu=(face.au+face.bu)*.5,abv=(face.av+face.bv)*.5;
+            double bcu=(face.bu+face.cu)*.5,bcv=(face.bv+face.cv)*.5;
+            double cau=(face.cu+face.au)*.5,cav=(face.cv+face.av)*.5;
+            Point nab=interpolateResidentNormal(face.na,face.nb);
+            Point nbc=interpolateResidentNormal(face.nb,face.nc);
+            Point nca=interpolateResidentNormal(face.nc,face.na);
+            collectResidentCorners(new Face(face.a,ab,ca,face.color,face.material,
+                face.au,face.av,abu,abv,cau,cav,room,face.na,nab,nca),room,depth+1,result);
+            collectResidentCorners(new Face(ab,face.b,bc,face.color,face.material,
+                abu,abv,face.bu,face.bv,bcu,bcv,room,nab,face.nb,nbc),room,depth+1,result);
+            collectResidentCorners(new Face(ca,bc,face.c,face.color,face.material,
+                cau,cav,bcu,bcv,face.cu,face.cv,room,nca,nbc,face.nc),room,depth+1,result);
+            collectResidentCorners(new Face(ab,bc,ca,face.color,face.material,
+                abu,abv,bcu,bcv,cau,cav,room,nab,nbc,nca),room,depth+1,result);
+            return;
+        }
+        result.add(new ResidentCorner(face.a,face.au,face.av,face.material,face.color,room,face.na));
+        result.add(new ResidentCorner(face.b,face.bu,face.bv,face.material,face.color,room,face.nb));
+        result.add(new ResidentCorner(face.c,face.cu,face.cv,face.material,face.color,room,face.nc));
+    }
+    private HouseMap residentProofMap;
+    private FixtureLighting residentProofLighting;
+    private String residentProofRevision;
+    private List<Face> residentProofSelection=List.of();
+    private List<ResidentCorner> residentProofCorners=List.of();
+    private PreparedFixtureProbeCache residentProofProbes;
+    private final java.util.LinkedHashMap<ResidentBucketKey,ResidentHandle>
+        residentProofHandles=new java.util.LinkedHashMap<>();
+
+    /** B2d experimental real-House resident VBO proof.
+     * Captures fixture lighting once for a bounded number of actual authored
+     * shell triangles, then yields upload and draw-only GPU descriptors. This
+     * is intentionally NOT the gameplay renderer: current fixture lighting
+     * includes camera-distance sampling, so lighting revision ownership must
+     * migrate before the same buffers can be used for real investigations. */
+    public record ResidentShellSample(List<GpuWorldRenderer.Surface> upload,
+        List<GpuWorldRenderer.Surface> drawOnly,int sourceFaces,int triangles,
+        int recomputedProbes,int retainedProbes){}
+    public ResidentShellSample prepareResidentHouseShellSample(HouseMap map){
+        if(map==null||map.site()!=HouseMap.Site.HOUSE)
+            throw new IllegalArgumentException("House benchmark map required");
+        if(lightingMap!=map){lightingMap=map;fixtureLighting=new FixtureLighting(map);}
+        fixtureLighting.frame(roomLights,roomLightTick);
+        var buckets=new java.util.LinkedHashMap<ResidentBucketKey,GpuFloats>();
+        String revision=map.level().revision()+":"+map.hidingDensity();
+        if(map!=residentProofMap||!revision.equals(residentProofRevision)
+                ||fixtureLighting!=residentProofLighting){
+            residentProofLighting=fixtureLighting;
+            residentProofHandles.clear();
+            residentProofMap=map;residentProofRevision=revision;
+            var selected=new ArrayList<Face>();
+            for(ShellChunk chunk:staticShellChunks(map)){
+                if(!shellChunkInFrustum(chunk))continue;
+                for(int i=chunk.start;i<chunk.end&&selected.size()<350;i++){
+                    var face=preparedShellFaces.get(i);
+                    if(faceInFrustum(face))selected.add(face);
+                }
+                if(selected.size()>=350)break;
+            }
+            if(selected.size()<30)
+                throw new IllegalStateException("No authored House faces for VBO proof");
+            residentProofSelection=List.copyOf(selected);
+            var corners=new ArrayList<ResidentCorner>();
+            for(Face face:residentProofSelection)
+                collectResidentCorners(face,face.room,0,corners);
+            residentProofCorners=List.copyOf(corners);
+            var probes=new ArrayList<PreparedFixtureProbeCache.Probe>(corners.size());
+            for(ResidentCorner corner:residentProofCorners){
+                var p=corner.p;
+                var normal=corner.normal;
+                probes.add(new PreparedFixtureProbeCache.Probe(
+                    corner.room,p.x,p.y,p.z,
+                    normal==null?0:normal.x,
+                    normal==null?0:normal.y,
+                    normal==null?0:normal.z));
+            }
+            residentProofProbes=new PreparedFixtureProbeCache(fixtureLighting,probes);
+        }
+        var refresh=residentProofProbes.refresh();
+        var invalidatedBuckets=new java.util.HashSet<ResidentBucketKey>();
+        for(int i:refresh.indices()){
+            var vertex=residentProofCorners.get(i);
+            invalidatedBuckets.add(new ResidentBucketKey(vertex.room,vertex.material));
+        }
+        for(int i=0;i<residentProofCorners.size();i++){
+            var corner=residentProofCorners.get(i);
+            var light=refresh.colours().get(i);
+            var p=corner.p;
+            var glow=fixtureLighting.emission(corner.material,p.x,p.y,p.z);
+            var vertex=new Vertex(p,corner.u,corner.v,
+                Math.max(light.r(),glow.r()),
+                Math.max(light.g(),glow.g()),
+                Math.max(light.b(),glow.b()));
+            var key=new ResidentBucketKey(corner.room,corner.material);
+            buckets.computeIfAbsent(key,ignored->new GpuFloats()).vertex(vertex,corner.tint);
+        }
+        int sourceFaces=residentProofSelection.size();
+        if(buckets.isEmpty())
+            throw new IllegalStateException("Empty resident House fixture/geometry batch");
+        var uploaded=new java.util.ArrayList<GpuWorldRenderer.Surface>();
+        var draws=new java.util.ArrayList<GpuWorldRenderer.Surface>();
+        int triangles=0;
+        for(var e:buckets.entrySet()){
+            float[] packed=e.getValue().complete();
+            if(packed.length==0)continue;
+            var key=e.getKey();
+            var handle=residentProofHandles.get(key);
+            if(handle==null){
+                handle=new ResidentHandle(GpuWorldRenderer.nextId());
+                residentProofHandles.put(key,handle);
+            }else if(invalidatedBuckets.contains(key)){
+                // Explicitly refresh only the retained room/material mesh
+                // influenced by a changed stationary fixture/occluder probe.
+                handle.revision++;
+            }
+            var surface=new GpuWorldRenderer.Surface(
+                key.material,packed,handle.id,handle.revision);
+            uploaded.add(surface);
+            draws.add(GpuWorldRenderer.Surface.drawResident(
+                key.material,handle.id,handle.revision,surface.vertexCount()));
+            triangles+=packed.length/24;
+        }
+        return new ResidentShellSample(List.copyOf(uploaded),List.copyOf(draws),
+            sourceFaces,triangles,refresh.recomputed(),refresh.retained());
+    }
+
     /** Timings are CPU-side costs, not GPU execution timestamps. */
     public record FrameDiagnostics(long totalNs,long sceneBuildNs,long geometryNs,long effectsNs,
         int faces,int frustumFaces,int sceneryTotal,int sceneryVisible,
@@ -1590,6 +1796,8 @@ public final class SceneRenderer {
             return preparedShellChunks;
         shellSourceMap=map;shellSourceRevision=revision;
         preparedShellFaces=buildLevelShell(map);
+        authoredShellIdentity.clear();
+        authoredShellIdentity.addAll(preparedShellFaces);
         var chunks=new ArrayList<ShellChunk>();
         var roomIds=new java.util.HashSet<Integer>();
         for(int from=0;from<preparedShellFaces.size();){

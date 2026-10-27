@@ -1,0 +1,9 @@
+# D3 — Locally revisioned fixture lighting in the resident House VBO proof
+
+**Status: candidate only.** Based on the B2e real authored House diagnostic and D0–D2 world-space fixture revision/probe-cache work. The existing live investigation renderer and GPU/software fallbacks remain unchanged.
+
+The prepared House diagnostic now builds its authored vertex and normal probe list once for a map/revision. Subsequent camera turns retain every fixture RGB probe, the same room/material GPU resource IDs, and the same revisions; the GL worker demonstrably skips uploads even when a complete source array is submitted. Fixture/occluder changes run local revision-aware probes, increment only affected retained room/material VBO revision handles, and physically re-upload changed resources. Changing a House door must conservatively revise all stationary probe regions in this candidate. All original material UVs and tint factors are preserved.
+
+The Windows functional CI runs D1 and D2 authored fixture dependency tests. The Mesa GPU test verifies cold real-world uploads, zero vertex transfers for camera-only turns, byte-for-byte source parity, and new VBO uploads on an actual authored door change. Measure exact bytes and record source SHA. Do not infer hardware FPS gains from Mesa.
+
+**Remaining before the production switch:** dynamic player lights, UV and ghost effects; normal-side and cross-wall light-leak parity; resource lifetime/eviction across all 22 maps; static/dynamic composition and GPU depth fidelity; case-start warmup; Windows 30 FPS and p95/p99 hardware acceptance. The source plan for cross-engine reuse remains at development/performance/portable/MILESTONES_A-G.md on main.
