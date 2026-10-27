@@ -10,6 +10,7 @@ OutputDir=..\dist\installer
 OutputBaseFilename=Beckenburg-{#AppVersion}-Windows-x64
 Compression=lzma
 SolidCompression=yes
+SetupIconFile=..\build\Beckenburg.ico
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 PrivilegesRequired=lowest
