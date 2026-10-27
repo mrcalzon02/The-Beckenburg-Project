@@ -1464,6 +1464,28 @@
       "action": "Exclude **/*.class from copied assets, compile authoritative Java sources, and add an obsolete-class sentinel to the Linux GPU CI compilation gate. Clean-build the current source before using local GPU metrics.",
       "evidence": "Local reproduced obsolete .class copy; clean Java17 GPU package after exclusion contains neither sentinel nor rejected dynamic-probe API. Fresh isolated source tests pass; combined exact-SHA CI next. CI fresh build.cmd source results remain separate from stale local artifacts.",
       "older_maps": "Applies to every GPU package; does not establish gameplay, installed hardware or map acceptance."
+    },
+    {
+      "id": "DEV-134",
+      "title": "Viewport disposal could acknowledge stale uploads and disable GPU rendering",
+      "status": "fixed-functional-contract-and-GL-recovery-verified-exact-CI-pending",
+      "affected": "Live House resident GPU resources and concurrent preview/CRT ownership",
+      "symptom": "A foreign scene can dispose handles while latest() still holds the old own-scene framebuffer, or after the producer reads the epoch. A resulting draw-only descriptor had no recoverable data and stopped the backend.",
+      "cause": "Resource epoch reset was followed by ACK of an old frame; independent producer/worker timing can evict even a freshly checked handle.",
+      "action": "Discard old upload ACK records on epoch invalidation and retain immutable recovery payload references in draw-only descriptors. Restore evicted resources on the GL owner; warm valid handles still upload zero bytes.",
+      "evidence": "ResidentEpochRecoveryTest covers both interleavings, missing/stale revisions, resumed zero uploads and old-array immutability. Actual GL synthetic recovery and existing House depth/lifetime checks pass.",
+      "older_maps": "This fixes opted-in resident House ownership; full native multi-camera investigation and context recreation still require acceptance."
+    },
+    {
+      "id": "DEV-135",
+      "title": "GPU geometry ignored environment and weather brightness scales",
+      "status": "fixed-functional-and-GL-pixel-verified-exact-CI-pending",
+      "affected": "GPU dynamic/resident geometry versus software lighting and water",
+      "symptom": "Solo difficulty/power darkness and weather flash scale affected software/water but were absent from GPU geometry lighting.",
+      "cause": "Frame and fragment shader omitted environmentLight*weatherLightScale for combined fixture/emission and flashlight energy.",
+      "action": "Add backward-compatible frame lightScale default1, submit the existing global multiplier and scale the complete shader lighting sum without repacking static buffers.",
+      "evidence": "GpuGlobalLightScaleTest verifies real House environment/weather propagation, darkness/brightening and unchanged static data. Actual GL pixel test checks fixture/precomputed-emission attributes and flashlight scaling with unchanged depth and zero static transfers.",
+      "older_maps": "The uniform follows existing software rules on all GPU maps; installed/all-map visual and performance acceptance remains separate."
     }
   ],
   "audit_categories": [

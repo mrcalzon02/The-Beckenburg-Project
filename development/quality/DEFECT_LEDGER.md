@@ -1771,3 +1771,23 @@ Queued closeout: DEV126-130 source fixes passed exact e783fdf7 full40464099189/G
 **Status:** fixed in source; clean local build passed; combined CI pending.
 
 A prior compiled class could overwrite current Maven output during resource copying, causing source recompilation to be skipped. Reproduced with an obsolete .class sentinel and the rejected dynamic-probe API remaining in restored-source output. Exclude compiled classes from asset resources and check the sentinel in GPU CI. Clean Java17 package excludes both sentinel and rejected API; isolated current-source tests pass. All-map packaging provenance is improved; no installed hardware/gameplay acceptance is inferred.
+
+## DEV-134 - Viewport disposal could acknowledge stale uploads and disable GPU rendering
+
+**Status:** fixed-functional-contract-and-GL-recovery-verified-exact-CI-pending
+
+Discard old upload ACK records on epoch invalidation and retain immutable recovery payload references in draw-only descriptors. Restore evicted resources on the GL owner; warm valid handles still upload zero bytes.
+
+Evidence: ResidentEpochRecoveryTest covers both interleavings, missing/stale revisions, resumed zero uploads and old-array immutability. Actual GL synthetic recovery and existing House depth/lifetime checks pass.
+
+Older-map obligation: This fixes opted-in resident House ownership; full native multi-camera investigation and context recreation still require acceptance.
+
+## DEV-135 - GPU geometry ignored environment and weather brightness scales
+
+**Status:** fixed-functional-and-GL-pixel-verified-exact-CI-pending
+
+Add backward-compatible frame lightScale default1, submit the existing global multiplier and scale the complete shader lighting sum without repacking static buffers.
+
+Evidence: GpuGlobalLightScaleTest verifies real House environment/weather propagation, darkness/brightening and unchanged static data. Actual GL pixel test checks fixture/precomputed-emission attributes and flashlight scaling with unchanged depth and zero static transfers.
+
+Older-map obligation: The uniform follows existing software rules on all GPU maps; installed/all-map visual and performance acceptance remains separate.

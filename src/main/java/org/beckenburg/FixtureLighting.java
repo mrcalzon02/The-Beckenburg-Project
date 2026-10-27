@@ -10,6 +10,8 @@ public final class FixtureLighting {
  // opposite sides of a thin wall or across differently facing surfaces.
  private record NormalKey(int room,long x,long y,long z,long nx,long ny,long nz){}
  private record Shadow(int source,long x,long y,long z){}
+ private record NormalShadow(int source,NormalKey receiver){}
+ private record ScalarSight(StationaryRay ray,long geometryEpoch){}
  private record DistantCell(int room,long x,long y,long z){}
 
  private record DistantProbe(double x,double y,double z,RGB light,long revision){}
@@ -32,9 +34,9 @@ public final class FixtureLighting {
   OccluderStamp(double[] box,java.util.function.BooleanSupplier state){this.box=box;this.state=state;previous=state.getAsBoolean();}
   boolean update(long version){boolean next=state.getAsBoolean();if(next==previous)return false;previous=next;revision=version;return true;}
   boolean intersects(double ax,double ay,double az,double bx,double by,double bz){
-   double lo=0,hi=1;double[] a={ax,ay,az},b={bx,by,bz};
-   for(int i=0;i<3;i++){double d=b[i]-a[i];if(Math.abs(d)<1e-12){if(a[i]<box[i]||a[i]>box[i+3])return false;}
-    else{double p=(box[i]-a[i])/d,q=(box[i+3]-a[i])/d;if(p>q){double swap=p;p=q;q=swap;}lo=Math.max(lo,p);hi=Math.min(hi,q);if(lo>hi)return false;}}
+   double lo=0,hi=1;
+   for(int i=0;i<3;i++){double a=i==0?ax:i==1?ay:az,b=i==0?bx:i==1?by:bz,d=b-a;if(Math.abs(d)<1e-12){if(a<box[i]||a>box[i+3])return false;}
+    else{double p=(box[i]-a)/d,q=(box[i+3]-a)/d;if(p>q){double swap=p;p=q;q=swap;}lo=Math.max(lo,p);hi=Math.min(hi,q);if(lo>hi)return false;}}
    return true;
   }
   boolean affects(Source source){double distance=0;double[] p={source.x,source.y,source.z};
@@ -162,6 +164,12 @@ public final class FixtureLighting {
  private final Map<Key,Lit> colours=bounded(150000);
  private final Map<NormalKey,Lit> normalColours=bounded(100000);
  private final Map<Shadow,Boolean> sight=bounded(200000);
+ // Opt-in LOS retention for the legacy samplers. Keep their existing scalar
+ // quantization, exact normals, source thresholds and distance LOD; only the
+ // visibility result is independent of fixture intensity.
+ private final boolean retainVisibility=Boolean.getBoolean("beckenburg.fixture.retainVisibility");
+ private final Map<Shadow,ScalarSight> retainedSight=bounded(200000);
+ private final Map<NormalShadow,StationaryRay> retainedNormalSight=bounded(200000);
  private final Map<Integer,Boolean> luminousMaterials=bounded(4096);
  private String geometry="",state="";private double[] factors=new double[0];
  /** Per-render CPU work counters; shadow tests are expensive architectural rays. */
@@ -387,8 +395,10 @@ public final class FixtureLighting {
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
    double fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2);if(weight<.002)continue;
-   Shadow shadow=new Shadow(source.id,key.x,key.y,key.z);Boolean visible=sight.get(shadow);
-   if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);shadowRays++;visible=clear(source.x,source.y,source.z,x-dx*back,y-dy*back,z-dz*back);sight.put(shadow,visible);}
+   Shadow shadow=new Shadow(source.id,key.x,key.y,key.z);Boolean visible;
+   if(retainVisibility)visible=retainedScalarVisible(shadow,source,x,y,z,dx,dy,dz,d);
+   else{visible=sight.get(shadow);
+    if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);shadowRays++;visible=clear(source.x,source.y,source.z,x-dx*back,y-dy*back,z-dz*back);sight.put(shadow,visible);}}
    if(visible){r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
   }
   RGB result=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
@@ -411,8 +421,10 @@ public final class FixtureLighting {
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
    double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
    if(weight>.001){
-    normalRays++;
-    if(clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025)){
+    boolean visible;
+    if(retainVisibility)visible=retainedNormalVisible(key,source,x+nx*.025,y+ny*.025,z+nz*.025);
+    else{normalRays++;visible=clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025);}
+    if(visible){
      r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;
     }
    }
@@ -420,6 +432,36 @@ public final class FixtureLighting {
   RGB result=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
   normalColours.put(key,new Lit(result,version));
   return result;
+ }
+ private boolean retainedScalarVisible(Shadow key,Source source,double x,double y,double z,double dx,double dy,double dz,double d){
+  var cached=retainedSight.get(key);var ray=cached==null?null:cached.ray;
+  long next=ray==null?Long.MIN_VALUE:ray.revision();
+  if(cached==null||cached.geometryEpoch!=occluderGeneration||ray.revision!=next){
+   // A quantized cell keeps its first representative, exactly as sight did.
+   // A new geometry epoch chooses its current representative again. Reuse
+   // its LOS only if that endpoint and its intersected occluders are unchanged.
+   double back=Math.min(.12,d*.20)/Math.max(.001,d);
+   double bx=x-dx*back,by=y-dy*back,bz=z-dz*back;
+   if(ray==null||ray.bx!=bx||ray.by!=by||ray.bz!=bz){
+    ray=new StationaryRay(source,0,bx,by,bz);next=ray.revision();
+   }
+   if(ray.revision!=next){
+    shadowRays++;ray.visible=clear(source.x,source.y,source.z,ray.bx,ray.by,ray.bz);
+    ray.revision=next;
+   }
+   retainedSight.put(key,new ScalarSight(ray,occluderGeneration));
+  }
+  return ray.visible;
+ }
+ private boolean retainedNormalVisible(NormalKey receiver,Source source,double x,double y,double z){
+  var key=new NormalShadow(source.id,receiver);var ray=retainedNormalSight.get(key);
+  if(ray==null){ray=new StationaryRay(source,0,x,y,z);retainedNormalSight.put(key,ray);}
+  long next=ray.revision();
+  if(ray.revision!=next){
+   normalRays++;ray.visible=clear(source.x,source.y,source.z,x,y,z);
+   ray.revision=next;
+  }
+  return ray.visible;
  }
  public RGB emission(int material,double x,double y,double z){
   if(!luminousMaterials.computeIfAbsent(material,id->{String name=GlbProps.materialName(id).toLowerCase(Locale.ROOT);return name.contains("glass")||name.contains("bulb")||name.contains("flame")||name.startsWith("television");}))return RGB.ZERO;

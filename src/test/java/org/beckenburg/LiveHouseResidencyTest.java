@@ -40,6 +40,9 @@ public final class LiveHouseResidencyTest {
             check(first.active()&&first.chunks()>0&&first.sourceFaces()>350,"real House architecture/scenery, not the 350-face proof");
             check(gpu.submitted.surfaces().stream().anyMatch(s->s.resourceId()>0),"normal gameplay must submit resident surfaces");
             frame(renderer,map);gpu.complete(); // Deliberately discard the first submitted frame.
+            // Initial GL scene activation advances the resource epoch. The
+            // next frame conservatively delivers its arrays in that lifetime.
+            frame(renderer,map);gpu.complete();
             frame(renderer,map);gpu.complete();
             check(renderer.liveHouseStats().descriptorBytes()==0,"acknowledged stationary chunks do not resend arrays");
             long builds=first.builds(),packed=renderer.liveHouseStats().packedChunks(),probes=renderer.liveHouseStats().recomputedProbes();
@@ -70,6 +73,7 @@ public final class LiveHouseResidencyTest {
             check(gpu.completed==null&&gpu.handles.isEmpty(),"closed active preview releases its resources immediately");
             frame(renderer,second);gpu.complete();
             check(renderer.liveHouseStats().descriptorBytes()>0,"restore handles after closed preview leaves no latest framebuffer");
+            frame(renderer,second);gpu.complete(); // Settle the restored scene's new resource epoch.
             frame(renderer,second);gpu.complete();check(renderer.liveHouseStats().descriptorBytes()==0,"restored resources resume draw-only reuse");
             var newer=new SceneRenderer();newer.setResidentHouse(true);newer.setRenderSize(160,120);pose(newer,second,14,0);
             frame(newer,second);gpu.complete();var newerFrame=gpu.completed;

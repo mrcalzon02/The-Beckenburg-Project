@@ -1875,6 +1875,10 @@ public final class SceneRenderer implements AutoCloseable {
         long epoch=backend.residencyEpoch();
         if(epoch!=gpuResourceEpoch){
             gpuResourceEpoch=epoch;
+            // latest() may still expose our framebuffer while another scene
+            // has already disposed its resources. Old completions cannot ACK
+            // uploads from the previous resource lifetime.
+            liveUploads.clear();
             if(liveHouse!=null)for(var chunk:liveHouse.chunks)chunk.acknowledged=0;
         }
         if(completed!=null&&completed.sceneId()!=gpuSceneId&&liveHouse!=null){
@@ -1907,7 +1911,7 @@ public final class SceneRenderer implements AutoCloseable {
             if(chunk.acknowledged<chunk.revision){
                 surfaces.add(new GpuWorldRenderer.Surface(chunk.material,chunk.packed,chunk.id,chunk.revision));
                 uploaded.add(new LiveUpload(chunk,chunk.revision));descriptorBytes+=chunk.packed.length*4L;
-            }else surfaces.add(GpuWorldRenderer.Surface.drawResident(chunk.material,chunk.id,chunk.revision,chunk.packed.length/8));
+            }else surfaces.add(GpuWorldRenderer.Surface.drawResident(chunk.material,chunk.id,chunk.revision,chunk.packed));
         }
         lastGpuSubmittedTriangles+=staticTriangles;
         liveHouseStats=new LiveHouseStats(retained,liveBuilds,liveHouse==null?0:liveHouse.chunks.size(),
@@ -1934,7 +1938,7 @@ public final class SceneRenderer implements AutoCloseable {
             true,(float)this.x,(float)eyeHeight,(float)this.z,
             (float)yaw,(float)pitch,
             lamp,(float)lampIntensity,(float)lampReach,
-            (float)lampWidth,flameLamp));
+            (float)lampWidth,flameLamp,(float)(environmentLight*weatherLightScale)));
         }
         GpuWorldRenderer.Result available=pinnedGpuFrame==null?backend.latest():pinnedGpuFrame;pinnedGpuFrame=null;
         lastGpuReadbackAvailable=GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight);

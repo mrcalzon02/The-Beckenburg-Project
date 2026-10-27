@@ -87,6 +87,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  uniform float u_lampIntensity;
  uniform float u_lampReach;
  uniform float u_lampWidth;
+ uniform float u_lightScale;
  out vec4 fragColor;
  void main(){
   vec4 surface=texture(u_texture,mix(v_uv,v_uvAffine,u_affineWarp));
@@ -101,11 +102,13 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    float cone=u_flameLamp!=0?1.0:max(0.0,1.0-aim/u_lampWidth);
    beam=u_lampIntensity*depthFalloff*cone;
   }
-  fragColor=vec4(clamp(surface.rgb*(v_light+vec3(beam)),0.0,1.0),surface.a);
+  fragColor=vec4(clamp(surface.rgb*(v_light+vec3(beam))*u_lightScale,0.0,1.0),surface.a);
  }
  """;
  private final AtomicReference<Frame> pending=new AtomicReference<>();
  private final AtomicLong supersededFrames=new AtomicLong();
+ private final boolean lowLatency=Boolean.getBoolean("beckenburg.gpu.lowLatency");
+ private volatile Thread renderThread;
  private volatile Result latest;
  private volatile boolean ready,closed;
  private volatile String description="OpenGL initialising";
@@ -132,7 +135,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  @Override public void releaseScene(long sceneId){
   if(sceneId<=0||closed)return;
   pending.updateAndGet(frame->frame!=null&&frame.sceneId()==sceneId?null:frame);
-  releases.add(sceneId);if(ready())Gdx.graphics.requestRendering();
+  releases.add(sceneId);if(ready())requestRendering();
  }
  private void clearSceneMeshes(){
   for(Mesh resident:meshes.values())resident.dispose();
@@ -161,10 +164,17 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   if(!ready())throw new IllegalStateException("OpenGL worker no longer active");
   Frame replaced=pending.getAndSet(Objects.requireNonNull(frame));
   if(replaced!=null)supersededFrames.incrementAndGet();
+  requestRendering();
+ }
+ private void requestRendering(){
   Gdx.graphics.requestRendering();
+  Thread worker=renderThread;
+  // libGDX's idle loop consumes InterruptedException; never interrupt callers.
+  if(lowLatency&&worker!=null&&worker!=Thread.currentThread())worker.interrupt();
  }
  @Override public String rendererDescription(){return description;}
  @Override public void create(){
+  renderThread=Thread.currentThread();
   try{
    shader=new ShaderProgram(VERTEX,FRAGMENT);
    if(!shader.isCompiled())throw new IllegalStateException("OpenGL shader compile: "+shader.getLog());
@@ -273,17 +283,26 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   shader.setUniformf("u_lampIntensity",frame.lampIntensity());
   shader.setUniformf("u_lampReach",frame.lampReach());
   shader.setUniformf("u_lampWidth",frame.lampWidth());
+  shader.setUniformf("u_lightScale",frame.lightScale());
   for(Surface surface:frame.surfaces()){
    int vertexCount=surface.vertexCount();
    if(vertexCount==0)continue;
    MeshKey key=new MeshKey(surface.material(),surface.resourceId());
    boolean resident=surface.resourceId()>0;
    boolean drawOnly=resident&&surface.vertices().length==0;
+   float[] incoming=surface.vertices();
    Mesh draw=drawOnly?meshes.get(key):mesh(key,vertexCount);
    long bytes=(long)vertexCount*8*Float.BYTES;
    boolean sameRevision=resident
        &&Objects.equals(uploadedRevisions.get(key),surface.revision())
        &&Objects.equals(uploadedCounts.get(key),vertexCount);
+   if(drawOnly&&(draw==null||!sameRevision)){
+    // A foreign view can evict the handle after the producer inspected its
+    // epoch. Restore the retained immutable payload on this owning GL thread.
+    incoming=surface.recoveryVertices();
+    if(incoming.length==0)throw new IllegalStateException("Unknown/stale resident GPU mesh without recovery payload "+surface.resourceId());
+    draw=mesh(key,vertexCount);drawOnly=false;sameRevision=false;
+   }
    if(drawOnly){
     if(draw==null||!sameRevision)
      throw new IllegalStateException("Unknown/stale resident GPU mesh "+
@@ -295,7 +314,6 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
     // upload when this exact mesh/revision has already been prepared.
     frameReusedBytes+=bytes;frameReusedBatches++;
    }else{
-    float[] incoming=surface.vertices();
     float[] retained=resident?null:uploadedVertices.get(key);
     if(!resident&&retained!=null&&Arrays.equals(retained,incoming)){
      frameReusedBytes+=bytes;frameReusedBatches++;

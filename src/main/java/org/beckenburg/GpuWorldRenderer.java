@@ -14,9 +14,13 @@ public interface GpuWorldRenderer {
      * resourceId=0 preserves the legacy per-frame batch contract.
      * A positive ID identifies a scene-owned resident VBO; revision changes
      * are the caller's explicit guarantee that changed vertex/light data
-     * must be uploaded. A draw-only resident descriptor carries no array.
+     * must be uploaded. A draw-only descriptor has an empty primary payload;
+     * an optional immutable recovery reference survives asynchronous eviction.
      * Never use an unchanged revision after editing geometry or lighting. */
-    record Surface(int material,float[] vertices,long resourceId,long revision,int vertexCount) {
+    record Surface(int material,float[] vertices,long resourceId,long revision,int vertexCount,float[] recoveryVertices) {
+        public Surface(int material,float[] vertices,long resourceId,long revision,int vertexCount){
+            this(material,vertices,resourceId,revision,vertexCount,new float[0]);
+        }
         public Surface(int material,float[] vertices){
             this(material,Objects.requireNonNull(vertices),0,0,vertices.length/8);
         }
@@ -26,13 +30,21 @@ public interface GpuWorldRenderer {
         public static Surface drawResident(int material,long resourceId,long revision,int vertexCount){
             return new Surface(material,new float[0],resourceId,revision,vertexCount);
         }
+        /** Retain one immutable CPU reference for recovery if another viewport
+         * disposes this handle after submission. Warm draws still upload zero. */
+        public static Surface drawResident(int material,long resourceId,long revision,float[] recovery){
+            Objects.requireNonNull(recovery);
+            return new Surface(material,new float[0],resourceId,revision,recovery.length/8,recovery);
+        }
         public Surface {
-            Objects.requireNonNull(vertices);
+            Objects.requireNonNull(vertices);Objects.requireNonNull(recoveryVertices);
             if(vertices.length%24!=0||resourceId<0||revision<0
                 ||vertexCount<0||vertexCount%3!=0
                 ||(resourceId==0&&(revision!=0||vertexCount!=vertices.length/8))
                 ||(resourceId>0&&(revision==0||vertexCount==0
-                    ||(vertices.length>0&&vertexCount!=vertices.length/8))))
+                    ||(vertices.length>0&&vertexCount!=vertices.length/8)))
+                ||recoveryVertices.length%24!=0
+                ||(recoveryVertices.length>0&&(resourceId==0||vertexCount!=recoveryVertices.length/8)))
                 throw new IllegalArgumentException("Invalid GPU triangle batch or residency descriptor");
         }
     }
@@ -45,7 +57,14 @@ public interface GpuWorldRenderer {
     record Frame(long sceneId,long frameId,int width,int height,float focal,float vertexSnap,
                  float affineWarp,List<Surface> surfaces,boolean worldSpace,
                  float cameraX,float cameraY,float cameraZ,float yaw,float pitch,
-                 boolean lampOn,float lampIntensity,float lampReach,float lampWidth,boolean flameLamp) {
+                 boolean lampOn,float lampIntensity,float lampReach,float lampWidth,boolean flameLamp,float lightScale) {
+        public Frame(long sceneId,long frameId,int width,int height,float focal,float vertexSnap,
+                     float affineWarp,List<Surface> surfaces,boolean worldSpace,
+                     float cameraX,float cameraY,float cameraZ,float yaw,float pitch,
+                     boolean lampOn,float lampIntensity,float lampReach,float lampWidth,boolean flameLamp){
+            this(sceneId,frameId,width,height,focal,vertexSnap,affineWarp,surfaces,worldSpace,
+                cameraX,cameraY,cameraZ,yaw,pitch,lampOn,lampIntensity,lampReach,lampWidth,flameLamp,1);
+        }
         public Frame(long sceneId,long frameId,int width,int height,float focal,
                      float vertexSnap,float affineWarp,List<Surface> surfaces) {
             this(sceneId,frameId,width,height,focal,vertexSnap,affineWarp,
@@ -68,7 +87,8 @@ public interface GpuWorldRenderer {
                 ||Math.abs(pitch)>Math.PI/2+0.01
                 ||!Float.isFinite(lampIntensity)||lampIntensity<0
                 ||!Float.isFinite(lampReach)||lampReach<=0
-                ||!Float.isFinite(lampWidth)||lampWidth<=0)
+                ||!Float.isFinite(lampWidth)||lampWidth<=0
+                ||!Float.isFinite(lightScale)||lightScale<0)
                 throw new IllegalArgumentException("Bad GPU scene frame");
             surfaces=List.copyOf(surfaces);
         }

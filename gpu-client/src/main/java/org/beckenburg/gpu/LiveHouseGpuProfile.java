@@ -35,7 +35,8 @@ final class LiveHouseGpuProfile {
         long initialBuilds=renderer.liveHouseStats().builds(),initialPacked=renderer.liveHouseStats().packedChunks();
         var cpu=new ArrayList<Double>();var elapsed=new ArrayList<Double>();long staticBytes=0;
         var csv=new StringBuilder("sample,room,phase,yaw,cpu_ms,end_to_end_ms,resident_uploaded_bytes,total_uploaded_bytes,resident_reused_bytes,resident_capacity_bytes,static_builds,packed_chunks,recomputed_probes,scene_build_ms,geometry_ms,effects_ms,gl_issue_ms,readback_ms,shadow_rays,normal_rays\n");
-        boolean liveClock=Boolean.getBoolean("beckenburg.profile.liveClock"),events=Boolean.getBoolean("beckenburg.profile.events");long clockStart=System.nanoTime();
+        boolean scriptClock=Boolean.getBoolean("beckenburg.profile.scriptClock");
+        boolean liveClock=Boolean.getBoolean("beckenburg.profile.liveClock")||scriptClock,events=Boolean.getBoolean("beckenburg.profile.events");long clockStart=System.nanoTime();
         for(int i=0;i<120;i++){
             // The cargo spawn can face a monitor wall even when pointing at
             // the House. Use authored yard, entrance and upstairs positions
@@ -50,7 +51,7 @@ final class LiveHouseGpuProfile {
                 map.toggleDoor(door.id());phase="door_"+door.id();
             }
             if(events&&i==60){renderer.roomLights.toggle(0);phase="circuit_0";}
-            renderer.roomLightTick=liveClock?(int)((System.nanoTime()-clockStart)/100000000L):0;
+            renderer.roomLightTick=scriptClock?i/3:liveClock?(int)((System.nanoTime()-clockStart)/100000000L):0;
             long start=System.nanoTime();renderer.drawNetwork(map,List.of(),-1,0);var frame=await(engine,renderer);
             double duration=(System.nanoTime()-start)/1e6;var timing=renderer.frameDiagnostics();var resident=engine.residentUploadStats();var upload=engine.uploadStats();var source=renderer.liveHouseStats();
             if(resident==null||resident.frameId()!=frame.frameId()||upload.frameId()!=frame.frameId())throw new AssertionError("GPU upload counters mismatch actual frame");
@@ -62,7 +63,7 @@ final class LiveHouseGpuProfile {
         }
         Files.writeString(output.resolve("frames.csv"),csv.toString());
         String summary=String.format(Locale.ROOT,"resident=%s cold_ms=%.3f samples=%d cpu_p50_ms=%.3f cpu_p95_ms=%.3f cpu_p99_ms=%.3f frame_p50_ms=%.3f frame_p95_ms=%.3f frame_p99_ms=%.3f static_uploaded_bytes=%d%n",enabled,cold/1e6,cpu.size(),percentile(cpu,.5),percentile(cpu,.95),percentile(cpu,.99),percentile(elapsed,.5),percentile(elapsed,.95),percentile(elapsed,.99),staticBytes);
-        Files.writeString(output.resolve("summary.txt"),"Source: "+System.getenv().getOrDefault("GITHUB_SHA","local-unversioned")+"\n"+engine.rendererDescription()+"\nViewport: "+renderer.width()+"x"+renderer.height()+" FOV=93 preset="+renderer.psxPreset()+"\n12 van warmup frames; 40 yard, 40 entrance, 40 upstairs camera turns; live circuit clock="+liveClock+". Not physical traversal or installed FPS acceptance.\n"+summary);
+        Files.writeString(output.resolve("summary.txt"),"Source: "+System.getenv().getOrDefault("GITHUB_SHA","local-unversioned")+"\n"+engine.rendererDescription()+"\nViewport: "+renderer.width()+"x"+renderer.height()+" FOV=93 preset="+renderer.psxPreset()+"\n12 van warmup frames; 40 yard, 40 entrance, 40 upstairs camera turns; live circuit clock="+liveClock+"; scripted30Hz="+scriptClock+". Not physical traversal or installed FPS acceptance.\n"+summary);
         System.out.print(summary);
         if(Boolean.getBoolean("beckenburg.profile.depthParity"))depthParity(engine,map,output);
     }
@@ -99,5 +100,6 @@ final class LiveHouseGpuProfile {
         while(engine.residencyEpoch()==epoch&&System.nanoTime()<deadline)LockSupport.parkNanos(200000);
         if(engine.residencyEpoch()==epoch||engine.residentAllocatedBytes()!=0||!engine.ready())throw new AssertionError("Case/preview exit did not release resident buffers on live GL owner");
         System.out.println("PASS actual OpenGL viewport lifetime: inactive close preserves House; active exit releases all resident vertex capacity without stopping backend");
+        GpuLightingAcceptance.verify(engine,output);
     }
 }

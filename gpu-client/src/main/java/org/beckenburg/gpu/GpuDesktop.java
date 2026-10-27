@@ -33,6 +33,11 @@ public final class GpuDesktop {
   config.setResizable(false);
   config.useVsync(false);
   config.setForegroundFPS(60);
+  if(Boolean.getBoolean("beckenburg.gpu.lowLatency")){
+   // Submissions wake the request-driven worker without a foreground cap.
+   config.setForegroundFPS(0);
+   config.setIdleFPS(60);
+  }
   Thread worker=new Thread(()->{
    try{new Lwjgl3Application(ENGINE,config);}
    catch(Throwable failed){
