@@ -10,7 +10,7 @@ public final class LevelMaterials {
     private LevelMaterials(){}
     public static final int BASE=32,PLASTER=32,WOOD=33,FLOOR=34,TILE=35,CONCRETE=36,STONE=37,RUG=38,CLADDING=39,WALL_TILE=40,CEILING=41,ROCK=42;
     private static final String[] FILES={"floor_ceiling_2_1.png","wall_1_1.png","floor_ceiling_1_0.png",
-        "floor_ceiling_2_0.png","floor_ceiling_1_1.png","wall_1_plain_0.png","carpet_mp_1_0.png","wall_1_1.png","floor_ceiling_2_1.png","floor_ceiling_2_1.png"};
+        "floor_ceiling_2_0.png","floor_ceiling_1_1.png","wall_1_plain_0.png","carpet_mp_1_0.png","wall_1_1.png","floor_ceiling_2_1.png","floor_ceiling_2_1.png","beckenburg_rock_worn.png"};
     private static final BufferedImage[] IMAGES=new BufferedImage[FILES.length];
     private static synchronized BufferedImage image(int id){
         int i=id-BASE;if(i<0||i>=FILES.length)throw new IllegalArgumentException("level material");
@@ -21,7 +21,6 @@ public final class LevelMaterials {
         return IMAGES[i];
     }
     public static int sample(int id,double u,double v){
-        if(id==ROCK){int xx=(int)Math.floor(u*64),yy=(int)Math.floor(v*64);int hash=(xx*73856093)^(yy*19349663);hash^=hash>>>13;int grain=Math.floorMod(hash,23)-11;int ridge=(int)(8*Math.sin(u*7.3+Math.sin(v*4.1)*1.8)+5*Math.sin(v*15.7+u*2.3));int c=102+grain+ridge;return (c<<16)|((c+3)<<8)|(c+2);}
         BufferedImage im=image(id);
         int x=Math.min(im.getWidth()-1,(int)((u-Math.floor(u))*im.getWidth()));
         int y=Math.min(im.getHeight()-1,(int)((1-(v-Math.floor(v)))*im.getHeight()));

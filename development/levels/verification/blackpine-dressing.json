@@ -1,0 +1,62 @@
+{
+  "source": "current workspace Java source; isolated classes and current runtime meshes",
+  "checks": [
+    {
+      "test": "AuthoredLevelPhysicsTest",
+      "status": "pass",
+      "seconds": 0.47,
+      "output": "HOUSE XYZ geometry checked\nFARMHOUSE XYZ geometry checked\nSCHOOL XYZ geometry checked"
+    },
+    {
+      "test": "LevelSurfaceIntegrityTest",
+      "status": "pass",
+      "seconds": 0.8,
+      "output": "PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS FARMHOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS SCHOOL: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards"
+    },
+    {
+      "test": "InteractionFocusTest",
+      "status": "pass",
+      "seconds": 1.92,
+      "output": "PASS HOUSE exact door/window meshes: 15 doors, 9 windows\nPASS HOUSE exact visible meshes: 27 clutter, 17 fixtures, 12 switches\nPASS FARMHOUSE exact door/window meshes: 12 doors, 4 windows\nPASS FARMHOUSE exact visible meshes: 46 clutter, 19 fixtures, 12 switches\nPASS SCHOOL exact door/window meshes: 25 doors, 8 windows\nPASS SCHOOL exact visible meshes: 56 clutter, 21 fixtures, 12 switches\nPASS rack units individually targeted"
+    },
+    {
+      "test": "LegacySiteStoryTest",
+      "status": "pass",
+      "seconds": 5.56,
+      "output": "PASS 36 room histories, 19 new ray-readable supported records, 3 distinct physical clipboard sheets, 18 responsive case previews"
+    },
+    {
+      "test": "EvidenceBookPagesTest",
+      "status": "pass",
+      "seconds": 0.42,
+      "output": "PASS 3 textured book tiers, 9 written alternatives, distinct packed page art and event-only visual state"
+    },
+    {
+      "test": "GhostWritingTest",
+      "status": "pass",
+      "seconds": 0.08,
+      "output": "PASS: genuine room-authored writing and all three readable variants"
+    },
+    {
+      "test": "GhostWritingSpatialTest",
+      "status": "pass",
+      "seconds": 0.06,
+      "output": "PASS: book world pose, proximity, pickup, snapshot"
+    },
+    {
+      "test": "WorldLoreTest",
+      "status": "pass",
+      "seconds": 0.98,
+      "output": "PASS 23 site threads, 3 class factions, portrait/proxy contracts, physical archive approach, reader controls and 3 supported ray-readable survivor notes"
+    },
+    {
+      "test": "ProductionAssetTest",
+      "status": "pass",
+      "seconds": 0.55,
+      "output": "PASS 8 ready runtime production meshes, 12387 shared source triangles, matching collision/support and clear spawns/rites"
+    }
+  ],
+  "limitations": [
+    "No native interactive walkthrough, hunt balance or target-hardware performance acceptance."
+  ]
+}

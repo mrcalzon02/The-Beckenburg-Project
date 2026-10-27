@@ -1,10 +1,19 @@
 {
   "status": "pass",
-  "base_commit": "803577aea22b73f159b49120197cb94f4845b6a4",
+  "base_commit": "b2ce1cba83d468e1f6d2bc8f4f75eefa00220ebe",
   "scoped_java_overlays": {
     "src/main/java/org/beckenburg/BlackpineProductionAssets.java": "90847eaa0063d75d4d5035ce8075ec36172d8f82f264e33d46d1f44e1641244a",
     "src/test/java/org/beckenburg/BlackpineMillExpansionCapture.java": "2251323bfb06784c1b534d1601218fe40f82e5c599564a6b6a312efb3947048c",
-    "src/test/java/org/beckenburg/BlackpineMillExpansionTest.java": "c6baa7f24e4379bc61b432e4aa9e41aa0c465ce28532c1a6a9f747e7bf377d4a"
+    "src/test/java/org/beckenburg/BlackpineMillExpansionTest.java": "c6baa7f24e4379bc61b432e4aa9e41aa0c465ce28532c1a6a9f747e7bf377d4a",
+    "src/main/java/org/beckenburg/BlackpineLighting.java": "9cecb04a0897a77a24bedea7e37bd0ae03f5b5b9d013f30897073a7a06f631f5",
+    "src/main/java/org/beckenburg/BlackpineLevel.java": "5a5b95c075a617af3b88f53caefa14e1c1f045c9983dcee9334450301e422522",
+    "src/main/java/org/beckenburg/LevelAssets.java": "d2773b2331e3082c612e289d4990e905901d355f448842fbeb4e7f247907faa2",
+    "src/main/java/org/beckenburg/ArchitecturalLightOcclusion.java": "e3326bc875c79ce1491791f5ebe2adafdacd38262423a2d9d3b3ae9dac7b5c63",
+    "src/test/java/org/beckenburg/BlackpineLightingTest.java": "9007da5d331a128d8427be37aefb7ca23e5197484e4bcd964035b356c8d8b547",
+    "src/test/java/org/beckenburg/BlackpineLightingCapture.java": "99fefc5b720418004dd5a9a43cab4e8893445de365e5d1746f37fa36284d2759",
+    "src/test/java/org/beckenburg/BlackpineRitualAcceptanceTest.java": "7880dcfcd76587d96248b14dec2c3a8f33d0b3d145a75d9086bd3839b0c74bc8",
+    "src/test/java/org/beckenburg/LightJoinOcclusionTest.java": "d69d82b12abebae7a137b979e01f22cd2ca94b8ed1f3d8a971c9c27de337f923",
+    "src/main/java/org/beckenburg/FixtureLighting.java": "7b8316cc6c9cd9e8b9252c1db2226f5460680a5cf5cddb05dfa01e16fb5f9c82"
   },
   "runtime_models": {
     "level_work_bandsaw": "420b08544d2d22490dfecf169b42f535b549fee77351755b03bb498df9550b0d",
@@ -18,9 +27,28 @@
     "level_work_repair_bench": "b922265b6fc70ed1060b1e92eb29818595e10254d063b28e3ceb647c73a2f3ee",
     "level_work_safety_station": "eafe0fab866715e2542d3d5670c491ada3edb017b03fe986b57f097a8015cd9c",
     "level_work_survivor_cookbox": "8697cb5d8c196499fe8a1583801ed844dfe04879754ff0fb3670a6b79d6af1d2",
-    "level_work_timber_rack": "4d69ae9045f3abb3a9732fde6745512b6d9d8769dd49988d6a545aa2f883ccad"
+    "level_work_timber_rack": "4d69ae9045f3abb3a9732fde6745512b6d9d8769dd49988d6a545aa2f883ccad",
+    "level_mill_suspension": "d4047e63c29ff4c171bd086711ee82e5e1dad5af887ce5b43a852ae079780022"
   },
   "checks": [
+    {
+      "test": "LightJoinOcclusionTest",
+      "status": "pass",
+      "seconds": 0.34,
+      "output": "PASS reproduced old wall/floor endpoint leaks; sealed receiving-side wall, floor and ceiling joins; genuine door and stair apertures retained"
+    },
+    {
+      "test": "BlackpineLightingTest",
+      "status": "pass",
+      "seconds": 0.51,
+      "output": "PASS supported ceiling pivots, below-deck emission, lit blade/aisle, exact switch target, circuit isolation and breaker blackout"
+    },
+    {
+      "test": "BlackpineRitualAcceptanceTest",
+      "status": "pass",
+      "seconds": 0.36,
+      "output": "PASS 3 Blackpine rite simulations: graded locations, role/remote rejection, disturbance, abandonment, restart, distinct outcomes and van extraction"
+    },
     {
       "test": "BlackpineMillExpansionTest",
       "status": "pass",
@@ -36,31 +64,31 @@
     {
       "test": "BlackpineStoryTest",
       "status": "pass",
-      "seconds": 0.76,
+      "seconds": 0.78,
       "output": "PASS 19 original story meshes (5757 source triangles), 12 room histories, 9 physically supported and centre-ray readable records, two boarded apertures and clear ritual floors"
     },
     {
       "test": "BlackpineDressingTest",
       "status": "pass",
-      "seconds": 0.56,
+      "seconds": 0.58,
       "output": "PASS: 20 original meshes (9971 library triangles), 99 backdrop trees, supported patios, real solid bodies and only three refuges"
     },
     {
       "test": "TerrainAndRecoveryTest",
       "status": "pass",
-      "seconds": 1.84,
+      "seconds": 1.81,
       "output": "PASS graded terrain, baked erosion paths, wholly clear shrubs/logs, rooted upright plants, 900 physical slope steps and player/ghost/loose-entity recovery"
     },
     {
       "test": "BlackpineGrayboxTest",
       "status": "pass",
-      "seconds": 0.36,
+      "seconds": 0.34,
       "output": "PASS: Blackpine dimensions, sparse refuge, physical doors, spawns, three rites and supported mill stairs"
     },
     {
       "test": "AuthoredLevelPhysicsTest",
       "status": "pass",
-      "seconds": 0.5,
+      "seconds": 0.48,
       "output": "HOUSE XYZ geometry checked\nFARMHOUSE XYZ geometry checked\nSCHOOL XYZ geometry checked"
     },
     {
@@ -72,32 +100,38 @@
     {
       "test": "LevelSurfaceIntegrityTest",
       "status": "pass",
-      "seconds": 0.86,
+      "seconds": 0.91,
       "output": "PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS FARMHOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards\nPASS SCHOOL: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards"
     },
     {
       "test": "InteractionFocusTest",
       "status": "pass",
-      "seconds": 2.05,
+      "seconds": 2.08,
       "output": "PASS HOUSE exact door/window meshes: 15 doors, 9 windows\nPASS HOUSE exact visible meshes: 27 clutter, 17 fixtures, 12 switches\nPASS FARMHOUSE exact door/window meshes: 12 doors, 4 windows\nPASS FARMHOUSE exact visible meshes: 46 clutter, 19 fixtures, 12 switches\nPASS SCHOOL exact door/window meshes: 25 doors, 8 windows\nPASS SCHOOL exact visible meshes: 56 clutter, 21 fixtures, 12 switches\nPASS rack units individually targeted"
     },
     {
       "test": "AuthoredLevelReachabilityTest",
       "status": "pass",
-      "seconds": 9.45,
+      "seconds": 9.17,
       "output": "blackpine reached elevations 0.0..4.002816901408451\nPASS blackpine: swept van route reaches all15 zones and all functional sockets, 292910 positions"
     },
     {
       "test": "BlackpineMillExpansionCapture",
       "status": "pass",
-      "seconds": 3.75,
-      "output": "dust-extractor 2163ms\ntimber-rack 277ms\nsafety-station 207ms\nmill-working-floor 406ms\nworkshop-bandsaw 323ms"
+      "seconds": 4.56,
+      "output": "dust-extractor 2606ms\ntimber-rack 298ms\nsafety-station 238ms\nmill-working-floor 644ms\nworkshop-bandsaw 380ms"
+    },
+    {
+      "test": "BlackpineLightingCapture",
+      "status": "pass",
+      "seconds": 4.42,
+      "output": "VIEW logway-lit\nVIEW underloft-lit\nVIEW logway-off\nVIEW underloft-off"
     },
     {
       "test": "LevelSceneSource",
       "status": "pass",
-      "seconds": 5.5,
-      "output": "Exact runtime source blackpine: 251966 textured triangles, 401 materials"
+      "seconds": 5.51,
+      "output": "Exact runtime source blackpine: 253130 textured triangles, 404 materials"
     }
   ],
   "limitations": [

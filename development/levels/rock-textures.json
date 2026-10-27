@@ -1,0 +1,20 @@
+{
+  "license": "CC0-1.0",
+  "provenance": "Original deterministic periodic strata and grain; no source images",
+  "size": [
+    64,
+    64
+  ],
+  "files": [
+    {
+      "file": "beckenburg_rock.png",
+      "variant": "clean",
+      "sha256": "488f8e89c8a710b5210b7fa1ae27e12c6e85380ff79c74482f0d8b26cb23b951"
+    },
+    {
+      "file": "beckenburg_rock_worn.png",
+      "variant": "worn",
+      "sha256": "8abb11ad69dc9ba5ae7a31e61139640fd61c0fd1e9d0704db9c06774fae53fe8"
+    }
+  ]
+}

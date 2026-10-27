@@ -1,0 +1,17 @@
+{
+  "note": "Exact main/test source from before the dressing/terrain/renderer implementation, using the same complete model resources.",
+  "checks": [
+    {
+      "test": "LanGhostPursuitTest",
+      "baseline_commit": "7992aae",
+      "exit_code": 1,
+      "output": "java.lang.AssertionError: heard signal provides coarse area, not exact body coordinates\n\tat org.beckenburg.LanGhostPursuitTest.ok(LanGhostPursuitTest.java:5)\n\tat org.beckenburg.LanGhostPursuitTest.main(LanGhostPursuitTest.java:18)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\n\tat org.beckenburg.VerificationMain.main(VerificationMain.java:6)\n"
+    },
+    {
+      "test": "RoomLightingTest",
+      "baseline_commit": "7992aae",
+      "exit_code": 1,
+      "output": "java.lang.AssertionError: player can stand near switch 0\n\tat org.beckenburg.RoomLightingTest.check(RoomLightingTest.java:7)\n\tat org.beckenburg.RoomLightingTest.main(RoomLightingTest.java:27)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\n\tat org.beckenburg.VerificationMain.main(VerificationMain.java:6)\n"
+    }
+  ]
+}

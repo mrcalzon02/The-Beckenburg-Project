@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "source": "isolated scoped-source snapshot classes; no unfinished local lighting changes",
+  "checks": [
+    {
+      "test": "CrouchNetworkTest",
+      "status": "pass",
+      "seconds": 2.06,
+      "output": "Beckenburg soundtrack unavailable: sleep interrupted\nPASS real TCP crouch/stand snapshots, unchanged authoritative feet and ghost-role rejection"
+    },
+    {
+      "test": "InteractionNetworkTest",
+      "status": "pass",
+      "seconds": 8.51,
+      "output": "PASS real-socket centre-ray clutter and shelf pickups, exact stock decrement, forged/stale target rejection and hunter-only interaction"
+    },
+    {
+      "test": "LanCaseFileHudTest",
+      "status": "pass",
+      "seconds": 5.81,
+      "output": "Beckenburg soundtrack unavailable: sleep interrupted\nPASS: shared casefile HUD renders and toggles, authenticated replay clears stale notes"
+    },
+    {
+      "test": "LanGhostHearingHudTest",
+      "status": "pass",
+      "seconds": 1.53,
+      "output": "Beckenburg soundtrack unavailable: sleep interrupted\nPASS: mute-safe spectral sound overlay, EDT and stale-event expiry"
+    },
+    {
+      "test": "LanIncapacitationHudTest",
+      "status": "pass",
+      "seconds": 2.33,
+      "output": "Beckenburg soundtrack unavailable: sleep interrupted\nPASS: downed first-person view refuses doors, scanner and movement inputs"
+    },
+    {
+      "test": "LanTelegraphedHudTest",
+      "status": "pass",
+      "seconds": 1.8,
+      "output": "Beckenburg soundtrack unavailable: sleep interrupted\nPASS: on-screen red strike wind-up and evasion feedback render in the LAN HUD"
+    },
+    {
+      "test": "LanSoundHudTest",
+      "status": "pass",
+      "seconds": 2.28,
+      "output": "Beckenburg soundtrack unavailable: sleep interrupted\nPASS: silent-device accessibility audio caption, directional label and expiry"
+    },
+    {
+      "test": "ManualEvidenceHudTest",
+      "status": "pass",
+      "seconds": 2.14,
+      "output": "Beckenburg soundtrack unavailable: sleep interrupted\nPASS: notebook checkboxes, greying/undo, ghost choice and actual HUD paint"
+    }
+  ]
+}

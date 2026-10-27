@@ -1,0 +1,215 @@
+{
+  "source_tree": "1af9bfc93e4b6248f0092bf569de338a73c5aeaf",
+  "status": "new-work-checks-pass-with-baseline-failures",
+  "isolated_committed_sources": true,
+  "checks": [
+    {
+      "test": "TwinBodyVisualTest",
+      "status": "pass",
+      "seconds": 0.62,
+      "note": ""
+    },
+    {
+      "test": "LanCameraSightTest",
+      "status": "pass",
+      "seconds": 0.27,
+      "note": ""
+    },
+    {
+      "test": "ProductionAssetTest",
+      "status": "pass",
+      "seconds": 0.56,
+      "note": ""
+    },
+    {
+      "test": "WorldLoreTest",
+      "status": "pass",
+      "seconds": 0.97,
+      "note": ""
+    },
+    {
+      "test": "CastleHubIntegrationTest",
+      "status": "pass",
+      "seconds": 0.91,
+      "note": ""
+    },
+    {
+      "test": "CastleOrientationTest",
+      "status": "pass",
+      "seconds": 0.06,
+      "note": ""
+    },
+    {
+      "test": "BlackpineStoryTest",
+      "status": "pass",
+      "seconds": 0.83,
+      "note": ""
+    },
+    {
+      "test": "TerrainAndRecoveryTest",
+      "status": "pass",
+      "seconds": 1.75,
+      "note": ""
+    },
+    {
+      "test": "BlackpineDressingTest",
+      "status": "pass",
+      "seconds": 0.56,
+      "note": ""
+    },
+    {
+      "test": "FoliageVariationTest",
+      "status": "pass",
+      "seconds": 0.83,
+      "note": ""
+    },
+    {
+      "test": "SceneryInstancesTest",
+      "status": "pass",
+      "seconds": 5.47,
+      "note": ""
+    },
+    {
+      "test": "BlackpineGrayboxTest",
+      "status": "pass",
+      "seconds": 0.34,
+      "note": ""
+    },
+    {
+      "test": "AuthoredLevelPhysicsTest",
+      "status": "pass",
+      "seconds": 0.48,
+      "note": ""
+    },
+    {
+      "test": "CrouchAndOutdoorHidingTest",
+      "status": "pass",
+      "seconds": 0.3,
+      "note": ""
+    },
+    {
+      "test": "LevelSurfaceIntegrityTest",
+      "status": "pass",
+      "seconds": 0.86,
+      "note": ""
+    },
+    {
+      "test": "InteractionFocusTest",
+      "status": "pass",
+      "seconds": 1.89,
+      "note": ""
+    },
+    {
+      "test": "WorldViewHandednessTest",
+      "status": "pass",
+      "seconds": 0.27,
+      "note": ""
+    },
+    {
+      "test": "HeldDeviceReadoutTest",
+      "status": "pass",
+      "seconds": 0.62,
+      "note": ""
+    },
+    {
+      "test": "LooseClutterTest",
+      "status": "pass",
+      "seconds": 1.22,
+      "note": ""
+    },
+    {
+      "test": "SoloElevationTest",
+      "status": "pass",
+      "seconds": 0.45,
+      "note": ""
+    },
+    {
+      "test": "LanGhostHearingTest",
+      "status": "pass",
+      "seconds": 0.25,
+      "note": ""
+    },
+    {
+      "test": "LanGhostPursuitTest",
+      "status": "pre-existing-test-failure",
+      "seconds": 0.23,
+      "note": "Same assertion reproduced from exact pre-change source 7992aae; see pre-existing-dressing-checks.json."
+    },
+    {
+      "test": "LanSoundTest",
+      "status": "pass",
+      "seconds": 0.25,
+      "note": ""
+    },
+    {
+      "test": "TeamCalloutTest",
+      "status": "pass",
+      "seconds": 0.24,
+      "note": ""
+    },
+    {
+      "test": "RoomLightingTest",
+      "status": "pre-existing-test-failure",
+      "seconds": 0.25,
+      "note": "Same assertion reproduced from exact pre-change source 7992aae; see pre-existing-dressing-checks.json."
+    },
+    {
+      "test": "VanHidingTest",
+      "status": "pass",
+      "seconds": 0.25,
+      "note": ""
+    },
+    {
+      "test": "AuthoredLevelStateTest",
+      "status": "pass",
+      "seconds": 0.45,
+      "note": ""
+    },
+    {
+      "test": "SprintStaminaTest",
+      "status": "pass",
+      "seconds": 0.26,
+      "note": ""
+    },
+    {
+      "test": "LevelSceneSource",
+      "status": "pass",
+      "output": "Exact runtime source blackpine: 243105 textured triangles, 362 materials"
+    },
+    {
+      "test": "BlackpineDressingCapture",
+      "status": "pass",
+      "output": "01-well-and-worn-paths 2216ms\n02-foreman-patio-and-chimney 214ms\n03-cold-cabin-hearth 199ms\n04-mess-stoop-and-flowers 198ms\n05-mill-timber-and-work 843ms\n06-layered-eastern-woodland 108ms\n07-low-planting-and-cabins 156ms\n08-open-yard-retained 146ms"
+    },
+    {
+      "test": "ProductionAssetCapture",
+      "status": "pass",
+      "output": "level_work_bandsaw 2310ms\nlevel_work_log_carriage 212ms\nlevel_work_repair_bench 691ms\nlevel_work_crew_footlocker 211ms\nlevel_work_crew_footlocker 282ms\nlevel_work_hearth_tools 227ms\nlevel_work_hearth_tools 210ms\nlevel_work_boot_rack 463ms\nlevel_work_survivor_cookbox 270ms\nlevel_work_camp_sign 235ms"
+    },
+    {
+      "test": "BlackpineStoryCapture",
+      "status": "pass",
+      "output": "01-crew-beds-stove-and-boards 2038ms\n02-payroll-pencils-and-papers 187ms\n03-foreman-photo-and-journal 237ms\n04-recent-shelter 553ms\n05-washhouse-oil-and-water 309ms\n06-repair-shed-power-service 719ms\n07-kitchen-heat-and-dry-stores 206ms"
+    },
+    {
+      "test": "WorldLoreCapture",
+      "status": "pass",
+      "output": "PASS Castle archive/lorekeeper and small/large reader captures"
+    },
+    {
+      "test": "LoreSourceExport",
+      "status": "pass",
+      "output": "PASS exported 23 site lore packets, three class factions and 14 shared archive pages"
+    },
+    {
+      "test": "FoliageVariationCapture",
+      "status": "pass",
+      "output": "Exact runtime source foliage-variation: 2272 textured triangles, 8 materials"
+    },
+    {
+      "test": "AuthoredLevelReachabilityTest",
+      "status": "pass",
+      "output": "blackpine reached elevations 0.0..4.002816901408451\nPASS blackpine: swept van route reaches all15 zones and all functional sockets, 294347 positions"
+    }
+  ]
+}

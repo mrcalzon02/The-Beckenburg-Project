@@ -1,29 +1,77 @@
 [
   {
     "site": "house",
-    "sha256": "37c993c06277cce5ab3eeeeff1574f312ffd7f06353f871814cecbe42dfc913f",
-    "revision": "production-2026-10-20-physical-events-v2-403475a8ed0b4609",
-    "runtime_architecture_triangles": 161306,
+    "sha256": "20a56e33b9dd02a3b1f322592668e7799bfdbe654acbb448d34705a097e6c347",
+    "revision": "production-2026-10-20-lived-location-v1-264f6b4396c4bd77",
+    "runtime_architecture_triangles": 246675,
     "editable_loose_objects": 27,
-    "editable_event_fixtures": 19,
+    "editable_event_fixtures": 23,
     "all_diffuse_images_packed": true
   },
   {
     "site": "farmhouse",
-    "sha256": "c574a2e7189d2a5881efbe40cfbff9fe9ce9171cc58a2a46180a57554f8120b4",
-    "revision": "production-2026-10-20-physical-events-v2-8ccb7328dedbe495",
-    "runtime_architecture_triangles": 162608,
+    "sha256": "5c548893eb80f7fbd2390b9c92715adc72cbfa3fcd488e51b5d2c1b3bb3ba74a",
+    "revision": "production-2026-10-20-lived-location-v1-a0b825889766753a",
+    "runtime_architecture_triangles": 226558,
     "editable_loose_objects": 46,
-    "editable_event_fixtures": 19,
+    "editable_event_fixtures": 25,
     "all_diffuse_images_packed": true
   },
   {
     "site": "school",
-    "sha256": "1213a95123596134c8ac1f88d16e04500e258fd147bac2cb25dff5342b99a143",
-    "revision": "production-2026-10-20-physical-events-v2-d575d161c03705eb",
-    "runtime_architecture_triangles": 202580,
+    "sha256": "f45a7b859ea4c94c246099b209d2d5eade73c46a01d4ad3d61c4cd319897090b",
+    "revision": "production-2026-10-20-lived-location-v1-127239467928ee26",
+    "runtime_architecture_triangles": 373636,
     "editable_loose_objects": 56,
-    "editable_event_fixtures": 17,
+    "editable_event_fixtures": 26,
     "all_diffuse_images_packed": true
+  },
+  {
+    "site": "arrival-road",
+    "sha256": "d4a931295409d00217c43575686d52c5820060a7d4754a0861864574b6be0886",
+    "revision": "arrival-road-v1",
+    "runtime_architecture_triangles": 6215,
+    "all_diffuse_images_packed": true,
+    "role": "Canonical reusable van and arrival road module; apply destination dock once"
+  },
+  {
+    "site": "enclosure-suburban",
+    "sha256": "b4b55e7419b09c440e0e2d31207a1590fb994a8f43426dcd460159d4a1314518",
+    "revision": "template-v1-f708daf36f7cb7dd",
+    "runtime_architecture_triangles": 63817,
+    "all_diffuse_images_packed": true,
+    "role": "Reusable surroundings template; investigation building is not included"
+  },
+  {
+    "site": "enclosure-woodland",
+    "sha256": "e9989d6fbe9fce208029438f3748fff73baa746c326ba6495f1025733a6b868d",
+    "revision": "template-v1-5e4c13c2b034b5a7",
+    "runtime_architecture_triangles": 39475,
+    "all_diffuse_images_packed": true,
+    "role": "Reusable surroundings template; investigation building is not included"
+  },
+  {
+    "site": "enclosure-urban",
+    "sha256": "1455e52c8eac1a4e432b9b6813e1a36625cbf2e5bd0cc53b20f9eb7a5f179d9d",
+    "revision": "template-v1-16ac5cb5d416f0dc",
+    "runtime_architecture_triangles": 147461,
+    "all_diffuse_images_packed": true,
+    "role": "Reusable surroundings template; investigation building is not included"
+  },
+  {
+    "site": "enclosure-mountain",
+    "sha256": "1b7e04d2d6f550c00e7867c64f205ad5d42590909b45bbd211f8ec90ec79942b",
+    "revision": "template-v1-035ec7fdbba68cc6",
+    "runtime_architecture_triangles": 39619,
+    "all_diffuse_images_packed": true,
+    "role": "Reusable surroundings template; investigation building is not included"
+  },
+  {
+    "site": "castle-surroundings",
+    "sha256": "e4266e2885fcc177b1bb5e8eec623a529da4d44a4835b87617b3e9d2d90078c8",
+    "revision": "castle-mountain-v1",
+    "runtime_architecture_triangles": 22876,
+    "all_diffuse_images_packed": true,
+    "role": "Surroundings only; castle architecture remains in the game hub"
   }
 ]
