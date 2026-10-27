@@ -1077,6 +1077,35 @@ public final class SceneRenderer {
     private HouseMap shellSourceMap;
     private String shellSourceRevision="";
     private List<Face> preparedShellFaces=List.of();
+    /** Identity, not structural equivalence: authored immutable shell faces
+     * must never be confused with similarly-shaped live doors, held gear or
+     * ghost/event geometry. Rebuilt only when shell topology changes. */
+    private final java.util.Set<Face> authoredShellIdentity=
+        java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
+    public record ProductionShellOwnership(int totalFaces,int authoredShell,
+        int dynamicAndDerived,int unknownRoomFaces,int distinctShellRooms,
+        long authoredShellTriangles){}
+    /**
+     * D4 diagnostic for the REAL gameplay scene assembly. Nothing in this
+     * method replaces or reorders draw calls; never cull by owner identity.
+     * Dynamic props, ritual/event objects, van equipment and NPCs stay in
+     * the conventional batches pending depth/lighting parity.
+     */
+    public ProductionShellOwnership auditGameplayShellOwnership(HouseMap map,double clock){
+        if(map==null)throw new IllegalArgumentException("Game map required");
+        List<Face> built=scene(map,-1,false,-1,-1,clock,List.of(),null,List.of());
+        if(map.nativeSite())
+            return new ProductionShellOwnership(built.size(),0,built.size(),0,0,0);
+        int prepared=0,unowned=0;
+        var rooms=new java.util.HashSet<Integer>();
+        for(Face face:built){
+            if(authoredShellIdentity.contains(face)){
+                prepared++;rooms.add(face.room);
+            }else if(face.room<0)unowned++;
+        }
+        return new ProductionShellOwnership(built.size(),prepared,
+            built.size()-prepared,unowned,rooms.size(),prepared);
+    }
     private List<ShellChunk> preparedShellChunks=List.of();
     private boolean shellChunkCulling=true;
     /** Functional reference only; no player-facing option is introduced. */
@@ -1734,6 +1763,8 @@ public final class SceneRenderer {
             return preparedShellChunks;
         shellSourceMap=map;shellSourceRevision=revision;
         preparedShellFaces=buildLevelShell(map);
+        authoredShellIdentity.clear();
+        authoredShellIdentity.addAll(preparedShellFaces);
         var chunks=new ArrayList<ShellChunk>();
         var roomIds=new java.util.HashSet<Integer>();
         for(int from=0;from<preparedShellFaces.size();){
