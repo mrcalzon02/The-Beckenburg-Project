@@ -39,20 +39,33 @@ public final class PsxPipeline {
         Objects.requireNonNull(preset);
         return perspective+(affine-perspective)*preset.affine;
     }
+    // The ordered bias has only 16 phases and each input component has 256
+    // values. Retain the exact old rounding result instead of repeating three
+    // floating-point quantizations for every pixel of every gameplay frame.
+    private static final int[][] CHANNELS=new int[Preset.values().length][];
+    static {
+        for(var preset:Preset.values()){
+            int[] table=new int[16*256];int levels=(1<<preset.bits)-1;
+            for(int phase=0;phase<16;phase++){
+                double bias=(BAYER[phase]-7.5)/16.0*(255.0/levels)*preset.dither;
+                for(int value=0;value<256;value++)table[phase*256+value]=channel(value,bias,levels);
+            }
+            CHANNELS[preset.ordinal()]=table;
+        }
+    }
     /** Ordered RGB quantization after world sprites, before the sharp Swing HUD. */
     public static void finishFrame(int[] rgb,int width,int height,Preset preset){
         Objects.requireNonNull(rgb);Objects.requireNonNull(preset);
         if(width<=0||height<=0||rgb.length!=width*height)
             throw new IllegalArgumentException("invalid PSX framebuffer");
         if(preset==Preset.OFF)return;
-        int levels=(1<<preset.bits)-1;
-        double interval=255.0/levels;
+        int[] table=CHANNELS[preset.ordinal()];
         for(int y=0;y<height;y++)for(int x=0;x<width;x++){
             int i=y*width+x,c=rgb[i];
-            double bias=(BAYER[(x&3)+((y&3)<<2)]-7.5)/16.0*interval*preset.dither;
-            int red=channel((c>>>16)&255,bias,levels);
-            int green=channel((c>>>8)&255,bias,levels);
-            int blue=channel(c&255,bias,levels);
+            int phase=((x&3)+((y&3)<<2))*256;
+            int red=table[phase+((c>>>16)&255)];
+            int green=table[phase+((c>>>8)&255)];
+            int blue=table[phase+(c&255)];
             rgb[i]=(red<<16)|(green<<8)|blue;
         }
     }

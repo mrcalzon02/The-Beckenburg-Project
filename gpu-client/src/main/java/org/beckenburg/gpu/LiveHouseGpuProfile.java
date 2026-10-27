@@ -34,8 +34,8 @@ final class LiveHouseGpuProfile {
         for(int i=0;i<12;i++){renderer.drawNetwork(map,List.of(),-1,0);await(engine,renderer);}
         long initialBuilds=renderer.liveHouseStats().builds(),initialPacked=renderer.liveHouseStats().packedChunks();
         var cpu=new ArrayList<Double>();var elapsed=new ArrayList<Double>();long staticBytes=0;
-        var csv=new StringBuilder("sample,room,phase,yaw,cpu_ms,end_to_end_ms,resident_uploaded_bytes,total_uploaded_bytes,resident_reused_bytes,resident_capacity_bytes,static_builds,packed_chunks,recomputed_probes\n");
-        boolean liveClock=Boolean.getBoolean("beckenburg.profile.liveClock");long clockStart=System.nanoTime();
+        var csv=new StringBuilder("sample,room,phase,yaw,cpu_ms,end_to_end_ms,resident_uploaded_bytes,total_uploaded_bytes,resident_reused_bytes,resident_capacity_bytes,static_builds,packed_chunks,recomputed_probes,scene_build_ms,geometry_ms,effects_ms,gl_issue_ms,readback_ms,shadow_rays,normal_rays\n");
+        boolean liveClock=Boolean.getBoolean("beckenburg.profile.liveClock"),events=Boolean.getBoolean("beckenburg.profile.events");long clockStart=System.nanoTime();
         for(int i=0;i<120;i++){
             // The cargo spawn can face a monitor wall even when pointing at
             // the House. Use authored yard, entrance and upstairs positions
@@ -44,13 +44,20 @@ final class LiveHouseGpuProfile {
             var target=map.spawn(room==0||room==8?4:0);
             renderer.x=position.x();renderer.z=position.z();renderer.eyeHeight=position.y()+1.62;
             renderer.pitch=-.075;renderer.yaw=Math.atan2(target.x()-position.x(),target.z()-position.z())+.60*Math.sin(i*.09);
+            String phase="camera";
+            if(events&&(i==20||i==100)){
+                var door=map.level().portals().stream().filter(p->p.door()).min(Comparator.comparingDouble(p->Math.hypot(p.x()-renderer.x,p.z()-renderer.z))).orElseThrow();
+                map.toggleDoor(door.id());phase="door_"+door.id();
+            }
+            if(events&&i==60){renderer.roomLights.toggle(0);phase="circuit_0";}
             renderer.roomLightTick=liveClock?(int)((System.nanoTime()-clockStart)/100000000L):0;
             long start=System.nanoTime();renderer.drawNetwork(map,List.of(),-1,0);var frame=await(engine,renderer);
             double duration=(System.nanoTime()-start)/1e6;var timing=renderer.frameDiagnostics();var resident=engine.residentUploadStats();var upload=engine.uploadStats();var source=renderer.liveHouseStats();
             if(resident==null||resident.frameId()!=frame.frameId()||upload.frameId()!=frame.frameId())throw new AssertionError("GPU upload counters mismatch actual frame");
             cpu.add(timing.totalNs()/1e6);elapsed.add(duration);staticBytes+=resident.uploadedBytes();
-            if(enabled&&(source.builds()!=initialBuilds||!liveClock&&(source.packedChunks()!=initialPacked||resident.uploadedBytes()!=0)))throw new AssertionError("Camera-only turn rebuilt or uploaded stationary House data");
-            csv.append(String.format(Locale.ROOT,"%d,%d,house_turn,%.6f,%.3f,%.3f,%d,%d,%d,%d,%d,%d,%d%n",i,room,renderer.yaw,cpu.get(i),duration,resident.uploadedBytes(),upload.uploadedBytes(),resident.reusedBytes(),resident.allocatedVertexBytes(),source.builds(),source.packedChunks(),source.recomputedProbes()));
+            if(enabled&&(source.builds()!=initialBuilds||!liveClock&&!events&&(source.packedChunks()!=initialPacked||resident.uploadedBytes()!=0)))throw new AssertionError("Camera-only turn rebuilt or uploaded stationary House data");
+            var gl=engine.frameTiming();
+            csv.append(String.format(Locale.ROOT,"%d,%d,%s,%.6f,%.3f,%.3f,%d,%d,%d,%d,%d,%d,%d,%.3f,%.3f,%.3f,%.3f,%.3f,%d,%d%n",i,room,phase,renderer.yaw,cpu.get(i),duration,resident.uploadedBytes(),upload.uploadedBytes(),resident.reusedBytes(),resident.allocatedVertexBytes(),source.builds(),source.packedChunks(),source.recomputedProbes(),timing.sceneBuildNs()/1e6,timing.geometryNs()/1e6,timing.effectsNs()/1e6,gl.drawIssueNs()/1e6,gl.readbackAndCopyNs()/1e6,timing.lighting().shadowRays(),timing.lighting().normalRays()));
             if(i==0||i==40||i==80||i==119){var image=new BufferedImage(frame.width(),frame.height(),BufferedImage.TYPE_INT_ARGB);image.setRGB(0,0,frame.width(),frame.height(),frame.argb(),0,frame.width());ImageIO.write(image,"png",output.resolve("house-turn-"+i+".png").toFile());}
         }
         Files.writeString(output.resolve("frames.csv"),csv.toString());
@@ -66,7 +73,7 @@ final class LiveHouseGpuProfile {
             renderer.roomLights=new RoomLighting();renderer.setRenderSize(320,200);
             renderer.setPsxPreset(PsxPipeline.Preset.OFF);renderer.lamp=false;
         }
-        var csv=new StringBuilder("room,reference_surface_pixels,missing_or_farther_pixels,max_farther_metres\n");
+        var csv=new StringBuilder("room,reference_surface_pixels,missing_or_farther_pixels,extra_or_nearer_pixels,max_farther_metres\n");
         for(int room:new int[]{14,0,8}){
             var eye=map.spawn(room);var target=map.spawn(room==0?4:0);
             for(var renderer:List.of(reference,candidate)){
@@ -75,14 +82,15 @@ final class LiveHouseGpuProfile {
             }
             reference.drawNetwork(map,List.of(),-1,0);var before=await(engine,reference);
             candidate.drawNetwork(map,List.of(),-1,0);var after=await(engine,candidate);
-            int pixels=0,missing=0;double farthest=0;
-            for(int i=0;i<before.depth().length;i++)if(Float.isFinite(before.depth()[i])){
-                pixels++;double delta=after.depth()[i]-before.depth()[i];
-                if(delta>.05){missing++;farthest=Math.max(farthest,delta);}
+            int pixels=0,missing=0,nearer=0;double farthest=0;
+            for(int i=0;i<before.depth().length;i++){
+                if(Float.isFinite(before.depth()[i]))pixels++;
+                double delta=after.depth()[i]-before.depth()[i];
+                if(delta>.05){missing++;farthest=Math.max(farthest,delta);}else if(delta<-.05)nearer++;
             }
-            csv.append(room).append(',').append(pixels).append(',').append(missing).append(',').append(farthest).append('\n');
+            csv.append(room).append(',').append(pixels).append(',').append(missing).append(',').append(nearer).append(',').append(farthest).append('\n');
             Files.writeString(output.resolve("depth-parity.csv"),csv.toString());
-            if(pixels<250||missing>0)throw new AssertionError("Live House depth lost original visible geometry: room="+room+" missing="+missing);
+            if(pixels<250||missing>0||nearer>0)throw new AssertionError("Live House depth disagrees with original geometry: room="+room+" missing="+missing+" nearer="+nearer);
         }
         System.out.println("PASS actual OpenGL depth coverage: van, House interior and upstairs; no original surface lost beyond 5cm depth tolerance");
     }
