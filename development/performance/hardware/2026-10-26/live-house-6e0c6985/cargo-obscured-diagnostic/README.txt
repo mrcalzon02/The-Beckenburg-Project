@@ -1,0 +1,1 @@
+Source 9c729dbc: cargo spawn points toward House but van monitor wall obscures it. Preserved diagnostic only; do not use to claim visible-House performance. Corrected visible route is source 6e0c6985.

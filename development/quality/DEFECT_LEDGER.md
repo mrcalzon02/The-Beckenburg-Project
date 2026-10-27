@@ -1751,3 +1751,9 @@ Guard class restoration to hunter seats, preserve ghost resume and host ownershi
 Evidence: LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy.
 
 Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
+
+## DEV-131 — Live House camera turn stalls
+
+**Status:** partially improved behind default-off feature gate; hardware acceptance pending.
+
+Native case trace: 2357 ms House-facing frame, 2340 ms lighting/raster. Controlled source `6e0c6985`: exposed-yard first frame 3880-3970 ->600-624 ms; frame p95 108.5-109.8 ->35.9-36.1 ms. Camera-only static uploads zero; actual RTX depth coverage passed at three views. Global door rays, first-view stalls, lifecycle and installed loop remain open. Raw evidence: `development/performance/hardware/2026-10-26/live-house-6e0c6985/`. Audit older maps individually; no all-map FPS claim.

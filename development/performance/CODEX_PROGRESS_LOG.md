@@ -56,3 +56,9 @@ User requested saving/unifying existing work before beginning performance implem
 - Gate status: NOT STARTED / IMPLEMENTED / CODE PASSED / CI PASSED / HARDWARE ACCEPTED / RELEASED.
 
 Do not delete previous checkpoints or convert planned statuses into successes. Link new regressions to the authoritative defect ledger and issue #7.
+
+## Live House measured checkpoint (2026-10-27 03:11 UTC)
+
+Source `performance/live-house-residency`, pushed/read back `6e0c698599e66553adf54f2de4d26750e6c81d9d`; draft [PR #33](https://github.com/mrcalzon02/The-Beckenburg-Project/pull/33). Concurrent main PSX art docs/tool retained. RTX 5070 / 616.64 / 712x200 / Retro 200p measured twice each: legacy frame p95 108.523-109.803 ms; resident fixed 35.858-36.077 ms; live fixture clock 36.075-36.729 ms. First exposed yard 3880-3970 ->600-624 ms. **Improved, not accepted 30 FPS.** Zero camera-only static uploads; retained GL vertex capacity 32,044,800 bytes. Depth parity: zero original pixels missing/farther beyond 5 cm at van/interior/upstairs. Cold prewarm about five seconds. Raw evidence under hardware/2026-10-26/live-house-6e0c6985; cargo-obscured first route excluded and labeled separately.
+
+Exact-head GPU [40442270881](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40442270881) and full [40442306416](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40442306416) pending; full local regression running. DEV-131 tracks remaining stalls. Next task: stationary door-ray dependencies, then lifecycle and installed full case. Desktop input remains stopped after user Escape. No new release or A–G completion claim.

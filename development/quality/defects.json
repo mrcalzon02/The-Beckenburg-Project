@@ -592,7 +592,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÂ±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -920,7 +920,7 @@
       "title": "Reshaped bank left old crest dressing unsupported",
       "status": "fixed-native-rigid-crest-refit",
       "affected": "Camp Hollow Creek bank/crest refinement",
-      "symptom": "Actual original log bearings sit53â€“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
+      "symptom": "Actual original log bearings sit53–63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
       "cause": "Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.",
       "action": "Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.",
       "evidence": "quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json",
@@ -1062,7 +1062,7 @@
       "id": "DEV-097",
       "title": "Native exterior zones treated as indoor by numeric room ID",
       "status": "fixed-scoped",
-      "affected": "Hollow Creek outdoor zones 0–11",
+      "affected": "Hollow Creek outdoor zones 0�11",
       "symptom": "Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.",
       "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
       "action": "Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.",
@@ -1165,7 +1165,7 @@
       "symptom": "A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.",
       "cause": "The edge blockers constrain crossings, but terrain support alone still allowed a direct underwater spawn query.",
       "action": "Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.",
-      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.",
+      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47�55k water pixels per frame instead of3�6k.",
       "older_maps": "Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map."
     },
     {
@@ -1431,6 +1431,17 @@
       "action": "Guard class restoration to hunter seats, preserve ghost resume and host ownership, and reset fresh lobby occupant class authority to its own visual choice.",
       "evidence": "LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy.",
       "older_maps": "Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred."
+    },
+    {
+      "id": "DEV-131",
+      "title": "Live House camera turn stalls despite diagnostic GPU passes",
+      "status": "partially-improved-feature-gated-hardware-acceptance-pending",
+      "affected": "House investigation GPU gameplay; older maps unaudited",
+      "symptom": "Native trace 2357 ms House-facing frame, lighting_raster_ms 2340. Controlled exposed-yard legacy 3880-3970 ms.",
+      "cause": "Normal investigation rebuilt and lit camera-visible geometry; earlier residency tests were diagnostic only. Dynamic first-view and global door invalidation remain.",
+      "action": "Default-off normal-path House residency and stationary visibility. Next: localized door rays, lifecycle and installed investigation-to-Castle validation.",
+      "evidence": "6e0c6985: frame p95 108.5-109.8 ->35.9-36.1 ms; first yard 3880-3970 ->600-624 ms; zero camera-only static upload; actual RTX depth parity passed. Raw evidence under performance/hardware/2026-10-26/live-house-6e0c6985.",
+      "older_maps": "Audit each map after House acceptance; no G or installed 30 FPS gate closed."
     }
   ],
   "audit_categories": [
