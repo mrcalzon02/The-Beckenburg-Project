@@ -526,24 +526,23 @@ public final class GpuDesktop {
   if(options.contains("--van-castle-repair-review")){try{org.beckenburg.VanCastleRepairReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--map-compatibility-review")){try{org.beckenburg.MapCompatibilityReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--hollow-creek-review")){try{HollowCreekRuntimeReview.execute(ENGINE);}finally{stopReviewGpu();}return;}
-  if(smoke){
+  if(smoke||uiSmoke){
+   int status=0;
    try{
-    smoke();
-    System.exit(0);
+    if(smoke)smoke();else GpuUiSmoke.execute(ENGINE);
    }catch(Throwable failure){
-    System.err.println("GPU SMOKE FAILED: "+failure);
-    failure.printStackTrace();
-    System.exit(1);
+    System.err.println((smoke?"GPU SMOKE FAILED: ":"GPU UI SMOKE FAILED: ")+failure);
+    failure.printStackTrace();status=1;
+   }finally{
+    // Native NVIDIA shutdown must complete on the owning GLFW/GL worker.
+    // A successful capture followed by an abrupt JVM exit is not a pass.
+    try{stopReviewGpu();}
+    catch(Throwable failure){
+     System.err.println("GPU SMOKE TEARDOWN FAILED: "+failure);
+     failure.printStackTrace();status=1;
+    }
    }
-   return;
-  }
-  if(uiSmoke){
-   try{GpuUiSmoke.execute(ENGINE);System.exit(0);}
-   catch(Throwable failure){
-    System.err.println("GPU UI SMOKE FAILED: "+failure);
-    failure.printStackTrace();
-    System.exit(1);
-   }
+   System.exit(status);
    return;
   }
   // Simulation and all Swing menus continue on their tested engine path.
