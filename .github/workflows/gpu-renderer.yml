@@ -33,7 +33,11 @@ jobs:
           java-version: '17'
       - name: Compile GPU and complete authoritative game sources
         run: |
+          mkdir -p build/classes/org/beckenburg
+          printf 'stale compiled resource' > build/classes/org/beckenburg/ObsoleteResourceProbe.class
           mvn -B -ntp -f gpu-client/pom.xml -DskipTests compile
+          test ! -e gpu-client/target/classes/org/beckenburg/ObsoleteResourceProbe.class
+          rm build/classes/org/beckenburg/ObsoleteResourceProbe.class
           mkdir -p build/contract-test
           javac --release 17 -cp gpu-client/target/classes -d build/contract-test src/test/java/org/beckenburg/GpuWorldRendererContractTest.java src/test/java/org/beckenburg/RendererVisibilityTest.java
           java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.GpuWorldRendererContractTest

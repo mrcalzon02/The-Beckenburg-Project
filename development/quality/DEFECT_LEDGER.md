@@ -1688,11 +1688,13 @@ Evidence: van-castle-repair.json. Older-map obligation: inspect all placements a
 
 ## DEV-124 — Van metal textures show banding
 
-**Status:** open-art-refinement
+**Status:** partial-runtime-refinement-human-review-pending ·27October2026
 
-Review metal UV/albedo under new lights; do not reduce useful illumination to hide defects.
+The procedural IRON tile explicitly darkened every eighth X pixel by17levels. Repeated UVs produced bands on large van panels. Replace this painted-in groove with restrained periodic two-dimensional wear and sparse pits. Preserve all15other atlas tiles, material IDs, UVs and source geometry. Renderer, fixture and van class bytes are identical in the matched builds.
 
-Evidence: van-castle-repair.json. Older-map obligation: inspect all placements and doors.
+Evidence: groove phase contrast16.652→0.057; MetalMaterialRefinementTest and MaterialAtlasTest pass;12actual GPU before/after van views, immutable binaries and hashed capture metadata in metal-refinement-2026-10-27.json.
+
+Older-map audit: native GLB metal textures, remaining roof/interpolation bands and every in-room application still require review. This is not whole-map or hardware-performance acceptance.
 
 ## DEV-125 — Recorder CI assumed every WHISPER action uses the WHISPER audio cue
 
@@ -1763,3 +1765,9 @@ Native case trace: 2357 ms House-facing frame, 2340 ms lighting/raster. Controll
 Default-off bcdb6ab9: p95 71.474 ms, initial scalar rays 157362 versus prior 53.545-55.270 ms /44434 rays. Restore verified fe0df50a runtime; retain source/history and evidence. No other-map rollout or release.
 
 Queued closeout: DEV126-130 source fixes passed exact e783fdf7 full40464099189/GPU40464010267 (257/257); installed and older-map hardware obligations remain open.
+
+## DEV-133 - Stale Java classes copied as GPU runtime resources
+
+**Status:** fixed in source; clean local build passed; combined CI pending.
+
+A prior compiled class could overwrite current Maven output during resource copying, causing source recompilation to be skipped. Reproduced with an obsolete .class sentinel and the rejected dynamic-probe API remaining in restored-source output. Exclude compiled classes from asset resources and check the sentinel in GPU CI. Clean Java17 package excludes both sentinel and rejected API; isolated current-source tests pass. All-map packaging provenance is improved; no installed hardware/gameplay acceptance is inferred.

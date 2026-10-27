@@ -12,6 +12,7 @@ public final class VanCastleRepairReview {
                 MapCompatibilityReview.capture("van-"+map.level().id(),new MapCompatibilityReview.Shot(view,pose,false,false),renderer,map,null);
             }
         }
+        if(Boolean.getBoolean("beckenburg.review.vanOnly"))return;
         var edits=CastleLevelEdits.current();var saved=edits.snapshot();try{
             var slot=CastleDoorSlots.all().stream().filter(s->!s.gate()&&s.bottom()==0).findFirst().orElseThrow();if(edits.doorType(slot.id())==CastleDoorSlots.Type.EMPTY)edits.installDoor(slot.id(),CastleDoorSlots.Type.WOOD);
             var castle=new CastleHubMap();var renderer=new SceneRenderer();renderer.setRenderSize(480,300);renderer.roomLights=new RoomLighting();renderer.setLampHardware(EquipmentTiers.Tier.II,false);

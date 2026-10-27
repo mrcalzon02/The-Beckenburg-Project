@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "issues": [
     {
       "id": "DEV-001",
@@ -1358,13 +1358,13 @@
     {
       "id": "DEV-124",
       "title": "Van metal textures show banding",
-      "status": "open-art-refinement",
+      "status": "partial-runtime-refinement-human-review-pending",
       "affected": "Shared van / Castle",
       "symptom": "Van metal textures show banding",
-      "cause": "Source distribution / placement / material quality",
-      "action": "Review metal UV/albedo under new lights; do not reduce useful illumination to hide defects.",
-      "evidence": "VanLightingAndCastleDoorTest,8actualGPUframes: van-castle-repair.json",
-      "older_maps": "Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open."
+      "cause": "Generated IRON tile darkened every eighth X pixel by17levels; repeated UVs stamp grooves across broad painted panels.",
+      "action": "Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.",
+      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652→0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
+      "older_maps": "Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted."
     },
     {
       "id": "DEV-125",
@@ -1453,6 +1453,17 @@
       "action": "Restore runtime/test files exactly to verified fe0df50a. Preserve rejected commit and raw GPU/depth/lifetime evidence; do not resume the experiment blindly.",
       "evidence": "performance/hardware/2026-10-26/live-house-bcdb6ab9: depth/lifetime passed but performance failed.",
       "older_maps": "Experiment was not enabled for other maps; no all-map optimization or acceptance claim."
+    },
+    {
+      "id": "DEV-133",
+      "title": "GPU Maven resources could overwrite current bytecode with stale compiled classes",
+      "status": "fixed-local-clean-build-CI-pending",
+      "affected": "GPU artifact source provenance on incremental local builds; all-map packaging",
+      "symptom": "Restored source had no dynamic-probe API, but Maven reported nothing to compile and target bytecode still contained retainVisibility. A deliberately obsolete .class was copied into runtime output.",
+      "cause": "The build/classes resource included org/beckenburg/** and weather/** without excluding compiled Java classes; the resources phase could overwrite output and update timestamps before incremental compilation.",
+      "action": "Exclude **/*.class from copied assets, compile authoritative Java sources, and add an obsolete-class sentinel to the Linux GPU CI compilation gate. Clean-build the current source before using local GPU metrics.",
+      "evidence": "Local reproduced obsolete .class copy; clean Java17 GPU package after exclusion contains neither sentinel nor rejected dynamic-probe API. Fresh isolated source tests pass; combined exact-SHA CI next. CI fresh build.cmd source results remain separate from stale local artifacts.",
+      "older_maps": "Applies to every GPU package; does not establish gameplay, installed hardware or map acceptance."
     }
   ],
   "audit_categories": [
