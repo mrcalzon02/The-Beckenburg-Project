@@ -33,7 +33,10 @@ public final class CampaignStorePanel extends JPanel {
     private final JList<Offer> offers=new JList<>(catalog().toArray(new Offer[0]));
     private final JTextArea details=new JTextArea();
     private final JLabel balance=new JLabel();
-    private final JButton purchase=new JButton("PURCHASE SELECTED");
+    private final JButton purchase=new JButton("BUY SELECTED");
+    private final JButton sell=new JButton("SELL ONE / 50%");
+    private final JLabel preview=new JLabel("",SwingConstants.CENTER);
+    private final JLabel libraryDetails=new JLabel("Approved source models / reference only");
     private final List<JComboBox<EquipmentLoadout.Item>> slots=new ArrayList<>();
     private final JLabel preparedStatus=new JLabel("Next mission loadout");
     public CampaignStorePanel(ProfileStore profile,Runnable afterPurchase){
@@ -51,14 +54,78 @@ public final class CampaignStorePanel extends JPanel {
         details.setEditable(false);details.setFocusable(false);details.setLineWrap(true);
         details.setWrapStyleWord(true);details.setBackground(new Color(28,34,42));
         details.setForeground(PAPER);details.setMargin(new Insets(12,12,12,12));
+        offers.setFixedCellHeight(62);
+        offers.setCellRenderer(new DefaultListCellRenderer(){
+            @Override public Component getListCellRendererComponent(JList<?> list,Object value,
+                    int index,boolean selected,boolean focused){
+                JLabel cell=(JLabel)super.getListCellRendererComponent(list,value,index,selected,focused);
+                if(value instanceof Offer offer){
+                    cell.setIcon(iconFor(offer,48));
+                    cell.setIconTextGap(10);
+                    String status=offer.equipment()!=null?
+                        (profile.ownsEquipment(offer.equipment())?"OWNED":"NOT OWNED"):
+                        "STOCK "+profile.supplyCount(offer.kind(),offer.tier())+"/4";
+                    cell.setText("<html>"+offer.title()+"<br><small>£"+offer.cost()+
+                        "  /  "+status+"</small></html>");
+                }
+                return cell;
+            }
+        });
+        preview.setName("campaign.store.preview");
+        preview.setPreferredSize(new Dimension(118,112));
+        preview.setForeground(PAPER);
+        JPanel description=new JPanel(new BorderLayout());
+        description.setBackground(new Color(28,34,42));
+        description.add(preview,BorderLayout.NORTH);
+        description.add(new JScrollPane(details),BorderLayout.CENTER);
+
+        JList<EquipmentRegistry.Tool> reference=new JList<>(
+            EquipmentRegistry.all().toArray(new EquipmentRegistry.Tool[0]));
+        reference.setName("campaign.store.reference");
+        reference.setBackground(new Color(28,34,42));reference.setForeground(PAPER);
+        reference.setFixedCellHeight(56);
+        reference.setCellRenderer(new DefaultListCellRenderer(){
+            @Override public Component getListCellRendererComponent(JList<?> list,Object value,
+                    int index,boolean selected,boolean focused){
+                JLabel cell=(JLabel)super.getListCellRendererComponent(list,value,index,selected,focused);
+                if(value instanceof EquipmentRegistry.Tool tool){
+                    cell.setText(tool.name());
+                    cell.setIcon(ItemIconAtlas.get(ItemIconAtlas.key(tool),44));
+                    cell.setIconTextGap(10);
+                }
+                return cell;
+            }
+        });
+        reference.addListSelectionListener(e->{
+            if(!e.getValueIsAdjusting()){
+                EquipmentRegistry.Tool tool=reference.getSelectedValue();
+                libraryDetails.setText(tool==null?"Equipment model library":
+                    "<html><b>"+tool.name()+"</b><br>Approved preview / physical model reference."+
+                    "<br>Not a purchasable campaign offer.</html>");
+            }
+        });
+        JPanel library=new JPanel(new BorderLayout());
+        library.add(new JScrollPane(reference),BorderLayout.CENTER);
+        library.add(libraryDetails,BorderLayout.SOUTH);
+        JTabbedPane pages=new JTabbedPane();
+        pages.setName("campaign.store.pages");
+        pages.addTab("QUARTERMASTER",new JScrollPane(offers));
+        pages.addTab("MODEL LIBRARY",library);
+        pages.addChangeListener(e->{if(pages.getSelectedIndex()==0)refresh();
+            else {purchase.setEnabled(false);sell.setEnabled(false);
+                details.setText("MODEL LIBRARY\n\nApproved 3D equipment preview reference.\n"+
+                    "Only equipment listed under QUARTERMASTER is currently purchasable.");
+                preview.setIcon(null);}
+        });
         JSplitPane split=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
-            new JScrollPane(offers),new JScrollPane(details));
+            pages,description);
         split.setBorder(null);split.setResizeWeight(.48);
         add(split,BorderLayout.CENTER);
         JPanel footer=new JPanel(new FlowLayout(FlowLayout.LEFT,8,4));footer.setOpaque(false);
         balance.setForeground(new Color(170,222,186));
         purchase.setName("campaign.store.buy");
-        footer.add(purchase);footer.add(balance);
+        sell.setName("campaign.store.sell");
+        footer.add(purchase);footer.add(sell);footer.add(balance);
         JPanel preparation=new JPanel(new FlowLayout(FlowLayout.LEFT,4,3));
         preparation.setOpaque(false);
         preparation.add(new JLabel("EQUIP"));
@@ -81,7 +148,13 @@ public final class CampaignStorePanel extends JPanel {
         refreshPrepared();
         offers.addListSelectionListener(e->{if(!e.getValueIsAdjusting())refresh();});
         purchase.addActionListener(e->buySelected());
+        sell.addActionListener(e->sellSelected());
         offers.setSelectedIndex(0);refresh();
+    }
+    private static Icon iconFor(Offer offer,int pixels){
+        String key=offer.equipment()==null?ItemIconAtlas.key(offer.kind()):
+            ItemIconAtlas.key(offer.equipment());
+        return ItemIconAtlas.get(key,pixels);
     }
     public boolean buySelected(){
         Offer offer=offers.getSelectedValue();
@@ -94,6 +167,20 @@ public final class CampaignStorePanel extends JPanel {
             return bought;
         }catch(IOException error){
             details.setText("Purchase could not be saved.\n"+error.getMessage());
+            return false;
+        }
+    }
+    /** Refuses permanent gear resale so active mission loadouts cannot become invalid. */
+    public boolean sellSelected(){
+        Offer offer=offers.getSelectedValue();
+        if(offer==null||offer.kind()==null)return false;
+        try{
+            boolean sold=profile.sellSupply(offer.kind(),offer.tier());
+            refresh();
+            if(sold)afterPurchase.run();
+            return sold;
+        }catch(IOException error){
+            details.setText("Sale could not be saved.\n"+error.getMessage());
             return false;
         }
     }
@@ -122,19 +209,27 @@ public final class CampaignStorePanel extends JPanel {
     public void refresh(){
         Offer offer=offers.getSelectedValue();
         balance.setText("CASTLE FUNDS  £"+profile.currency());
-        if(offer==null){purchase.setEnabled(false);details.setText("Select supplies.");return;}
+        offers.repaint();
+        if(offer==null){
+            purchase.setEnabled(false);sell.setEnabled(false);
+            preview.setIcon(null);details.setText("Select supplies.");return;
+        }
+        preview.setIcon(iconFor(offer,96));
         boolean owned=offer.equipment()!=null&&profile.ownsEquipment(offer.equipment());
         int stock=offer.kind()==null?0:profile.supplyCount(offer.kind(),offer.tier());
         boolean full=offer.kind()!=null&&stock>=4;
         purchase.setEnabled(!owned&&!full&&profile.currency()>=offer.cost());
+        sell.setEnabled(offer.kind()!=null&&stock>0);
         details.setText(offer.title()+"\n\nCOST  £"+offer.cost()+
             "\n"+(offer.equipment()!=null?
                 (owned?"OWNED  /  available for loadout":"New permanent gear  /  "+offer.equipment().description):
                 "IN STOCK  "+stock+" / 4  /  "+offer.tier().restore(offer.kind())+
                 (offer.kind()==FieldSupplies.Kind.HEALTH?" health restored":" sanity restored"))+
             "\n\n"+
-            (owned?"Already owned.":full?"Stock limit reached.":
+            (owned?"Already owned. Permanent gear cannot be resold.":full?"Stock limit reached.":
                 profile.currency()<offer.cost()?"Insufficient funds.":
-                "Purchase is charged to the persistent Castle account."));
+                "Purchase is charged to the persistent Castle account.")+
+            (offer.kind()!=null?"\n\nSELL ONE: £"+(offer.cost()/2)+
+                " refunded, immediately persisted.":""));
     }
 }
