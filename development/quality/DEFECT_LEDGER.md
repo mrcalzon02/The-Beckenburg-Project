@@ -1701,3 +1701,23 @@ Evidence: van-castle-repair.json. Older-map obligation: inspect all placements a
 Use the actual host-authored HAUNT entry cue for received sound and recorded clip assertions. doorway_sigh legitimately uses HORROR_STING_A. Preserve real recorder transactions, playback, reconnect and privacy checks; no runtime evidence/audio changes.
 
 Evidence: focused real socket recorder test passes; baseline full run40296444087 failed246/247. Full CI pending.
+
+## DEV-126 — Saved mission-board browser would reorder persistent campaign chapters
+
+**Status:** fixed-local-full-CI-pending
+
+Keep the original 22 chapter IDs in explicit campaign order; use alphabetic order only for browsing.
+
+Evidence: MissionBoardIntegrationTest and CampaignStoryProgressionTest pass locally; exact-SHA full CI pending.
+
+Older-map obligation: Preserve every saved chapter ordinal and prototype availability when adding or renaming locations.
+
+## DEV-127 — Saved mission-board labels omitted the newer Hollow Creek authoring enum
+
+**Status:** fixed-local-full-CI-pending
+
+Resolve the authoring enum to its existing WLD-02 lore record without making prototype geometry playable.
+
+Evidence: MissionBoardIntegrationTest iterates every authoring enum and verifies Hollow Creek remains locked; SiteSelectionTest passes locally.
+
+Older-map obligation: Preserve every saved chapter ordinal and prototype availability when adding or renaming locations.

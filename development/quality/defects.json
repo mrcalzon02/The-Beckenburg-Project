@@ -1376,6 +1376,28 @@
       "action": "Use the actual host-authored HAUNT entry cue for received sound and recorded clip assertions. doorway_sigh legitimately uses HORROR_STING_A. Preserve real recorder transactions, playback, reconnect and privacy checks; no runtime evidence/audio changes.",
       "evidence": "Focused four-socket rack/paid tiers/capture/private playback/reconnect test passes.",
       "older_maps": "Keep test expectations bound to real authored actions and cue identities on all maps. Full exact-SHA acceptance remains required."
+    },
+    {
+      "id": "DEV-126",
+      "title": "Saved mission-board browser would reorder persistent campaign chapters",
+      "status": "fixed-local-full-CI-pending",
+      "affected": "Mission board / campaign / LAN lobby integration",
+      "symptom": "Saved mission-board browser would reorder persistent campaign chapters",
+      "cause": "Old local catalog used alphabetic image-browser order for ordinal-based saved story progression.",
+      "action": "Keep the original 22 chapter IDs in explicit campaign order; use alphabetic order only for browsing.",
+      "evidence": "MissionBoardIntegrationTest and CampaignStoryProgressionTest pass locally; exact-SHA full CI pending.",
+      "older_maps": "Preserve every saved chapter ordinal and prototype availability when adding or renaming locations."
+    },
+    {
+      "id": "DEV-127",
+      "title": "Saved mission-board labels omitted the newer Hollow Creek authoring enum",
+      "status": "fixed-local-full-CI-pending",
+      "affected": "Mission board / campaign / LAN lobby integration",
+      "symptom": "Saved mission-board labels omitted the newer Hollow Creek authoring enum",
+      "cause": "Newer main added HOLLOW_CREEK, while local MissionSites.title only accepted original lore IDs.",
+      "action": "Resolve the authoring enum to its existing WLD-02 lore record without making prototype geometry playable.",
+      "evidence": "MissionBoardIntegrationTest iterates every authoring enum and verifies Hollow Creek remains locked; SiteSelectionTest passes locally.",
+      "older_maps": "Preserve every saved chapter ordinal and prototype availability when adding or renaming locations."
     }
   ],
   "audit_categories": [
