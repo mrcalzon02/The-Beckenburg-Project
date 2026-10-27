@@ -1070,14 +1070,50 @@ public final class SceneRenderer {
         }
         return out;
     }
-    private final java.util.Map<String,List<Face>> levelShells=new java.util.HashMap<>();
+    /** Immutable contiguous authored shell ranges, preserving original ordering. */
+    private record ShellChunk(int room,int start,int end,double minX,double minY,double minZ,
+        double maxX,double maxY,double maxZ){}
+    private static final int SHELL_CHUNK_SIZE=256;
+    private HouseMap shellSourceMap;
+    private String shellSourceRevision="";
+    private List<Face> preparedShellFaces=List.of();
+    private List<ShellChunk> preparedShellChunks=List.of();
+    private boolean shellChunkCulling=true;
+    /** Functional reference only; no player-facing option is introduced. */
+    public void setShellChunkCulling(boolean enabled){shellChunkCulling=enabled;}
+    public record ShellChunkStats(int totalChunks,int rejectedChunks,
+        int candidateFaces,int rejectedFaces,int totalFaces,int distinctRooms){}
+    private ShellChunkStats shellChunkStats=new ShellChunkStats(0,0,0,0,0,0);
+    private int shellPreparedRoomCount;
+    public ShellChunkStats shellChunkStats(){return shellChunkStats;}
     private boolean exportFullLevel;
 
     private static void own(List<Face> out,List<Face> faces,int room){for(Face f:faces)out.add(f.owned(room));}
     private boolean instancedScenery=true;
     private SceneryInstances sceneryInstances;
     private String sceneryRevision;
+    private HouseMap scenerySourceMap;
     private List<Face> expandedScenery;
+    private static final long PREPARED_SCENERY_TRIANGLE_LIMIT=120_000;
+    /** Transitional immutable prepared faces, bounded separately from GPU VBOs.
+     * Reuse a working-set for at least two frames before permitting eviction:
+     * otherwise a scene larger than this budget can cause 100% LRU thrash. */
+    private static final class PreparedFaces {
+        final List<Face> faces;
+        long lastSeenFrame;
+        PreparedFaces(List<Face> faces,long frame){this.faces=faces;lastSeenFrame=frame;}
+    }
+    private final java.util.LinkedHashMap<SceneryInstances.Instance,PreparedFaces>
+        preparedScenery=new java.util.LinkedHashMap<>(128,.75f,true);
+    private long preparedSceneryFrame,preparedSceneryTriangles,preparedSceneryBuilds,
+        preparedSceneryHits,preparedSceneryEvictions;
+    public record PreparedSceneryStats(long builtInstances,long reusedInstances,
+        long evictedInstances,int cachedInstances,long cachedTriangles,long triangleLimit){}
+    public PreparedSceneryStats preparedSceneryStats(){
+        return new PreparedSceneryStats(preparedSceneryBuilds,preparedSceneryHits,
+            preparedSceneryEvictions,preparedScenery.size(),
+            preparedSceneryTriangles,PREPARED_SCENERY_TRIANGLE_LIMIT);
+    }
     private Point[] instancePoints=new Point[0];
     public record InstanceStats(int instances,int visible,int culled,int templates,long expandedTriangles,long sharedTriangles,long submittedTriangles){}
     private InstanceStats instanceStats=new InstanceStats(0,0,0,0,0,0,0);
@@ -1086,8 +1122,10 @@ public final class SceneRenderer {
     public void setInstancedScenery(boolean enabled){instancedScenery=enabled;if(enabled)expandedScenery=null;}
     private SceneryInstances scenery(HouseMap map){
         String key=map.level().revision()+":"+map.hidingDensity();
-        if(!key.equals(sceneryRevision)){
-            sceneryInstances=new SceneryInstances(map.level(),map.hidingDensity());sceneryRevision=key;expandedScenery=null;
+        if(map!=scenerySourceMap||!key.equals(sceneryRevision)){
+            sceneryInstances=new SceneryInstances(map.level(),map.hidingDensity());
+            scenerySourceMap=map;sceneryRevision=key;expandedScenery=null;
+            preparedScenery.clear();preparedSceneryTriangles=0;
         }
         return sceneryInstances;
     }
@@ -1106,6 +1144,44 @@ public final class SceneRenderer {
             for(int i=0;i<instance.template.triangleCount();i++)out.add(instanceFace(instance,i,scratch));
         }
     }
+    /** Immutable world-space scenery faces are prepared once per visible
+     * instance and retained across frame/camera movement until scene revision.
+     * Bounded LRU avoids expanding an entire outdoor map indefinitely.
+     * GPU per-material vertex batches still use the legacy bridge for now. */
+    private List<Face> preparedSceneryFaces(SceneryInstances.Instance instance){
+        var cached=preparedScenery.get(instance);
+        if(cached!=null){
+            cached.lastSeenFrame=preparedSceneryFrame;
+            preparedSceneryHits++;
+            return cached.faces;
+        }
+        int count=instance.template.triangleCount();
+        var vertices=transformed(instance,new Point[0]);
+        var faces=new ArrayList<Face>(count);
+        for(int i=0;i<count;i++)faces.add(instanceFace(instance,i,vertices));
+        preparedSceneryBuilds++;
+        if(count==0||count>PREPARED_SCENERY_TRIANGLE_LIMIT)return faces;
+        while(preparedSceneryTriangles+count>PREPARED_SCENERY_TRIANGLE_LIMIT
+                &&!preparedScenery.isEmpty()){
+            // Never evict faces used in this or the preceding frame: when
+            // the authored scene exceeds the budget, skip admission instead
+            // of evicting the entire warm working-set every frame.
+            var iterator=preparedScenery.entrySet().iterator();
+            boolean evicted=false;
+            while(iterator.hasNext()){
+                var entry=iterator.next();
+                if(entry.getValue().lastSeenFrame>=preparedSceneryFrame-1)continue;
+                preparedSceneryTriangles-=entry.getValue().faces.size();
+                iterator.remove();preparedSceneryEvictions++;evicted=true;
+                break;
+            }
+            if(!evicted)return faces;
+        }
+        var retained=List.copyOf(faces);
+        preparedScenery.put(instance,new PreparedFaces(retained,preparedSceneryFrame));
+        preparedSceneryTriangles+=count;
+        return retained;
+    }
     /** Shared map meshes join the current GPU batch or its CPU fallback once.
      * Never draw CPU instances over an asynchronous OpenGL framebuffer. */
     private void appendSceneryInstances(List<Face> out,HouseMap map){
@@ -1115,11 +1191,12 @@ public final class SceneRenderer {
             if(expandedScenery==null){var all=new ArrayList<Face>();flattenInstances(all,scene);expandedScenery=List.copyOf(all);}
             out.addAll(expandedScenery);return;
         }
+        preparedSceneryFrame++;
         double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
         for(var instance:scene.instances()){
             if(!instance.visible(x,eyeHeight,z,yaw,pitch,hx,hy,NEAR))continue;
-            visible++;instancePoints=transformed(instance,instancePoints);
-            for(int i=0;i<instance.template.triangleCount();i++)out.add(instanceFace(instance,i,instancePoints));
+            visible++;
+            out.addAll(preparedSceneryFaces(instance));
             triangles+=instance.template.triangleCount();
         }
         instanceStats=new InstanceStats(scene.instances().size(),visible,scene.instances().size()-visible,scene.templates().size(),scene.expandedTriangles(),scene.sharedTriangles(),triangles);
@@ -1504,6 +1581,66 @@ public final class SceneRenderer {
         }
         return true;
     }
+
+    /** Preserve authored source order and vertex/UV identity; build once
+     * per map/revision, not each camera frame. Chunks own contiguous ranges. */
+    private List<ShellChunk> staticShellChunks(HouseMap map){
+        String revision=map.level().revision()+":"+map.hidingDensity();
+        if(map==shellSourceMap&&revision.equals(shellSourceRevision))
+            return preparedShellChunks;
+        shellSourceMap=map;shellSourceRevision=revision;
+        preparedShellFaces=buildLevelShell(map);
+        var chunks=new ArrayList<ShellChunk>();
+        var roomIds=new java.util.HashSet<Integer>();
+        for(int from=0;from<preparedShellFaces.size();){
+            int room=preparedShellFaces.get(from).room;
+            roomIds.add(room);
+            int end=Math.min(from+SHELL_CHUNK_SIZE,preparedShellFaces.size());
+            // Preserve authored face ordering while preventing one chunk AABB
+            // from spanning an exterior room and a distant indoor floor.
+            for(int i=from+1;i<end;i++)if(preparedShellFaces.get(i).room!=room){
+                end=i;break;
+            }
+            double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX;
+            double maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
+            for(int i=from;i<end;i++){
+                var face=preparedShellFaces.get(i);
+                for(Point point:new Point[]{face.a,face.b,face.c}){
+                    minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);
+                    minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);
+                    minZ=Math.min(minZ,point.z);maxZ=Math.max(maxZ,point.z);
+                }
+            }
+            chunks.add(new ShellChunk(room,from,end,minX,minY,minZ,maxX,maxY,maxZ));
+            from=end;
+        }
+        shellPreparedRoomCount=roomIds.size();
+        preparedShellChunks=List.copyOf(chunks);
+        return preparedShellChunks;
+    }
+    /** Convex-box rejection: only a shared outside plane for every corner
+     * can reject a whole chunk. Extra margin avoids false negatives. */
+    private boolean shellChunkInFrustum(ShellChunk chunk){
+        double cy=Math.cos(yaw),sy=Math.sin(yaw);
+        double cp=Math.cos(pitch),sp=Math.sin(pitch);
+        double hx=renderWidth*.5/focal+.055,hy=renderHeight*.5/focal+.055;
+        int common=31;
+        for(int bits=0;bits<8;bits++){
+            double px=(bits&1)==0?chunk.minX:chunk.maxX;
+            double py=(bits&2)==0?chunk.minY:chunk.maxY;
+            double pz=(bits&4)==0?chunk.minZ:chunk.maxZ;
+            double dx=px-x,dz=pz-z,dy=py-eyeHeight;
+            double xx=-dx*cy+dz*sy,forward=dx*sy+dz*cy;
+            double yy=dy*cp-forward*sp,depth=dy*sp+forward*cp;
+            int code=(depth<NEAR-.015?1:0)|(xx>depth*hx+.015?2:0)
+                    |(xx< -depth*hx-.015?4:0)
+                    |(yy>depth*hy+.015?8:0)|(yy< -depth*hy-.015?16:0);
+            common&=code;
+            if(common==0)return true;
+        }
+        return false;
+    }
+
     private void levelArchitecture(List<Face> out,HouseMap map){
         if(map.nativeSite()){nativeArchitecture(out,map);return;}
         scenery(map);
@@ -1511,9 +1648,19 @@ public final class SceneRenderer {
             key->enclosureScenery(map.level())))
             if(exportFullLevel||faceInFrustum(face))out.add(face.owned(13));
         if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of(),map);}
-        for(Face face:levelShells.computeIfAbsent(
-            map.level().revision()+":"+map.hidingDensity(),key->buildLevelShell(map)))
-            if(exportFullLevel||faceInFrustum(face))out.add(face);
+        int rejected=0,skippedFaces=0,candidateFaces=0;
+        for(ShellChunk chunk:staticShellChunks(map)){
+            if(!exportFullLevel&&shellChunkCulling&&!shellChunkInFrustum(chunk)){
+                rejected++;skippedFaces+=chunk.end-chunk.start;continue;
+            }
+            candidateFaces+=chunk.end-chunk.start;
+            for(int i=chunk.start;i<chunk.end;i++){
+                Face face=preparedShellFaces.get(i);
+                if(exportFullLevel||faceInFrustum(face))out.add(face);
+            }
+        }
+        shellChunkStats=new ShellChunkStats(preparedShellChunks.size(),rejected,
+            candidateFaces,skippedFaces,preparedShellFaces.size(),shellPreparedRoomCount);
         appendSceneryInstances(out,map);
         for(var s:map.level().sockets())if(s.type().equals("hide")
             &&objectInView(s.x(),s.z(),3,26)

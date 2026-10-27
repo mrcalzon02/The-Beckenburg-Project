@@ -116,17 +116,25 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private ByteBuffer colorBytes;
  private FloatBuffer depthFloats;
  private final Map<Integer,Texture> textures=new HashMap<>();
- private final Map<Integer,Mesh> meshes=new HashMap<>();
- private final Map<Integer,Integer> capacity=new HashMap<>();
- // Exact content equality rather than a hash-only key ensures a mesh is
- // uploaded whenever dynamic geometry or authored lighting actually changes.
- private final Map<Integer,float[]> uploadedVertices=new HashMap<>();
+ /** Positive resource IDs name independent persistent VBOs. Zero preserves
+  * the historical per-material dynamic batch and byte-exact comparison. */
+ private record MeshKey(int material,long resourceId){}
+ private final Map<MeshKey,Mesh> meshes=new HashMap<>();
+ private final Map<MeshKey,Integer> capacity=new HashMap<>();
+ private final Map<MeshKey,float[]> uploadedVertices=new HashMap<>();
+ private final Map<MeshKey,Long> uploadedRevisions=new HashMap<>();
+ private final Map<MeshKey,Integer> uploadedCounts=new HashMap<>();
  private long uploadedSceneId=-1;
  /** Observed on GL worker after an actual completed frame, including copied bytes. */
  public record UploadStats(long sceneId,long frameId,int uploadedBatches,
      int reusedBatches,long uploadedBytes,long reusedBytes){}
  private volatile UploadStats uploadStats;
  public UploadStats uploadStats(){return uploadStats;}
+ /** GL-worker wall time, not GPU hardware timestamp queries. */
+ public record FrameTiming(long sceneId,long frameId,long drawIssueNs,
+     long readbackAndCopyNs,long totalNs){}
+ private volatile FrameTiming frameTiming;
+ public FrameTiming frameTiming(){return frameTiming;}
  private long lastSlowReportNs;
  public CompletableFuture<String> initialization(){return initialized;}
  @Override public boolean ready(){return ready&&!closed;}
@@ -194,24 +202,29 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   image.setWrap(Texture.TextureWrap.Repeat,Texture.TextureWrap.Repeat);
   textures.put(material,image);return image;
  }
- private Mesh mesh(int material,int vertices){
-  Mesh existing=meshes.get(material);
-  if(existing!=null&&capacity.get(material)>=vertices)return existing;
+ private Mesh mesh(MeshKey key,int vertices){
+  Mesh existing=meshes.get(key);
+  if(existing!=null&&capacity.get(key)>=vertices)return existing;
   if(existing!=null)existing.dispose();
-  uploadedVertices.remove(material);
+  uploadedVertices.remove(key);
+  uploadedRevisions.remove(key);
+  uploadedCounts.remove(key);
   int size=1;while(size<vertices)size*=2;
   Mesh created=new Mesh(false,size,0,
    new VertexAttribute(VertexAttributes.Usage.Position,3,"a_position"),
    new VertexAttribute(VertexAttributes.Usage.TextureCoordinates,2,"a_texCoord0"),
    new VertexAttribute(VertexAttributes.Usage.Generic,3,"a_lighting"));
-  meshes.put(material,created);capacity.put(material,size);return created;
+  meshes.put(key,created);capacity.put(key,size);return created;
  }
  private void draw(Frame frame){
   long started=System.nanoTime();
   if(uploadedSceneId!=frame.sceneId()){
-   // A camera/mission change must invalidate the last scene's batches.
+   // A new scene must never reuse prior scene IDs or retain orphaned VBOs.
+   // All OpenGL deletion occurs on the owning render worker.
    uploadedSceneId=frame.sceneId();
-   uploadedVertices.clear();
+   for(Mesh resident:meshes.values())resident.dispose();
+   meshes.clear();capacity.clear();uploadedVertices.clear();
+   uploadedRevisions.clear();uploadedCounts.clear();
   }
   long frameUploadBytes=0,frameReusedBytes=0;
   int frameUploadedBatches=0,frameReusedBatches=0;
@@ -244,22 +257,43 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   shader.setUniformf("u_lampReach",frame.lampReach());
   shader.setUniformf("u_lampWidth",frame.lampWidth());
   for(Surface surface:frame.surfaces()){
-   int vertexCount=surface.vertices().length/8;
+   int vertexCount=surface.vertexCount();
    if(vertexCount==0)continue;
-   Mesh draw=mesh(surface.material(),vertexCount);
-   float[] incoming=surface.vertices();
-   long bytes=(long)incoming.length*Float.BYTES;
-   float[] retained=uploadedVertices.get(surface.material());
-   if(retained!=null&&Arrays.equals(retained,incoming)){
-    frameReusedBytes+=bytes;
-    frameReusedBatches++;
+   MeshKey key=new MeshKey(surface.material(),surface.resourceId());
+   boolean resident=surface.resourceId()>0;
+   boolean drawOnly=resident&&surface.vertices().length==0;
+   Mesh draw=drawOnly?meshes.get(key):mesh(key,vertexCount);
+   long bytes=(long)vertexCount*8*Float.BYTES;
+   boolean sameRevision=resident
+       &&Objects.equals(uploadedRevisions.get(key),surface.revision())
+       &&Objects.equals(uploadedCounts.get(key),vertexCount);
+   if(drawOnly){
+    if(draw==null||!sameRevision)
+     throw new IllegalStateException("Unknown/stale resident GPU mesh "+
+         surface.resourceId()+" revision="+surface.revision()+
+         " scene="+frame.sceneId());
+    frameReusedBytes+=bytes;frameReusedBatches++;
+   }else if(resident&&sameRevision){
+    // Caller owns an immutable resource revision: no Arrays.equals walk or GL
+    // upload when this exact mesh/revision has already been prepared.
+    frameReusedBytes+=bytes;frameReusedBatches++;
    }else{
-    draw.setVertices(incoming);
-    // Snapshot the data actually copied into the GL VBO. If a caller later
-    // reuses/mutates its float array, an alias must not produce a false hit.
-    uploadedVertices.put(surface.material(),Arrays.copyOf(incoming,incoming.length));
-    frameUploadBytes+=bytes;
-    frameUploadedBatches++;
+    float[] incoming=surface.vertices();
+    float[] retained=resident?null:uploadedVertices.get(key);
+    if(!resident&&retained!=null&&Arrays.equals(retained,incoming)){
+     frameReusedBytes+=bytes;frameReusedBatches++;
+    }else{
+     draw.setVertices(incoming);
+     if(resident){
+      uploadedRevisions.put(key,surface.revision());
+      uploadedCounts.put(key,vertexCount);
+     }else{
+      // Dynamic legacy batches must retain exact content equality:
+      // flashlight uniforms are independent, authored lighting is not.
+      uploadedVertices.put(key,Arrays.copyOf(incoming,incoming.length));
+     }
+     frameUploadBytes+=bytes;frameUploadedBatches++;
+    }
    }
    texture(surface.material()).bind(0);
    draw.render(shader,GL20.GL_TRIANGLES,0,vertexCount);
@@ -290,8 +324,10 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   uploadStats=new UploadStats(frame.sceneId(),frame.frameId(),
       frameUploadedBatches,frameReusedBatches,
       frameUploadBytes,frameReusedBytes);
-  latest=new Result(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,argb,depth);
   long finished=System.nanoTime();
+  frameTiming=new FrameTiming(frame.sceneId(),frame.frameId(),
+      rasterReady-started,finished-rasterReady,finished-started);
+  latest=new Result(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,argb,depth);
   if(finished-started>200_000_000L&&finished-lastSlowReportNs>5_000_000_000L){
    lastSlowReportNs=finished;
    BeckenburgDiagnostics.record("GPU FRAME SLOW id="+frame.frameId()+
@@ -316,7 +352,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  @Override public void dispose(){
   closed=true;ready=false;
-  uploadedVertices.clear();
+  uploadedVertices.clear();uploadedRevisions.clear();uploadedCounts.clear();
   for(Mesh mesh:meshes.values())mesh.dispose();
   for(Texture texture:textures.values())texture.dispose();
   if(target!=null)target.dispose();

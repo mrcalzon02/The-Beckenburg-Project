@@ -299,6 +299,181 @@ public final class GpuDesktop {
        "Identical authored House VBOs were unexpectedly reuploaded when only GPU torch changed");
   System.out.println("PASS OpenGL per-fragment flashlight and retained unchanged House VBO uploads");
  }
+
+ /** Real single-renderer GPU profile: 11 authored House waypoints, three
+  * frames each. Waypoint jumps are NOT physical Hunter navigation. */
+ private static void continuousRouteAudit()throws Exception{
+  var map=new HouseMap(HouseMap.Site.HOUSE);
+  var camera=new SceneRenderer();
+  camera.setRenderSize(640,360);
+  camera.roomLights=new RoomLighting();
+  int[] route={14,13,12,0,4,8,4,0,12,13,14};
+  java.util.List<Long> cpuTimes=new java.util.ArrayList<>();
+  java.util.List<Long> glTimes=new java.util.ArrayList<>();
+  java.util.List<Long> readTimes=new java.util.ArrayList<>();
+  java.util.List<Long> elapsedTimes=new java.util.ArrayList<>();
+  var csv=new StringBuilder("sample,waypoint,phase,room,camera_x,camera_y,camera_z,yaw,torch,cpu_total_ms,cpu_build_ms,cpu_geometry_ms,cpu_effects_ms,lighting_samples,lighting_cache_hits,shadow_rays,normal_rays,submitted_triangles,gl_draw_issue_ms,gl_readback_copy_ms,gl_total_ms,gpu_uploaded_bytes,gpu_reused_bytes,end_to_end_ms\n");
+  var output=java.nio.file.Path.of("build","e2e","gpu");
+  java.nio.file.Files.createDirectories(output);
+  for(int waypoint=0;waypoint<route.length;waypoint++){
+   int room=route[waypoint];
+   var eye=map.spawn(room);
+   var look=map.spawn(waypoint+1<route.length?route[waypoint+1]:0);
+   double heading=Math.atan2(look.x()-eye.x(),look.z()-eye.z());
+   for(int phase=0;phase<3;phase++){
+    camera.x=eye.x();camera.z=eye.z();
+    camera.eyeHeight=eye.y()+1.62;
+    camera.yaw=heading+(phase==2?.31:0);
+    camera.pitch=-.075;
+    camera.lamp=phase==2&&waypoint%2==0;
+    long start=System.nanoTime();
+    camera.drawNetwork(map,List.of(),-1,0);
+    var frame=camera.frameDiagnostics();
+    if(frame==null||!frame.gpu())
+     throw new AssertionError("Expected real GPU backend at "+waypoint+"/"+phase);
+    var result=awaitGpu(camera,"continuous route "+waypoint+"/"+phase);
+    long elapsed=System.nanoTime()-start;
+    var gl=ENGINE.frameTiming();
+    var upload=ENGINE.uploadStats();
+    if(gl==null||upload==null||gl.frameId()!=result.frameId()
+        ||gl.sceneId()!=result.sceneId()||upload.frameId()!=result.frameId()
+        ||upload.sceneId()!=result.sceneId()||gl.totalNs()<=0)
+     throw new AssertionError("GPU measurements do not match completed scene frame");
+    cpuTimes.add(frame.totalNs());glTimes.add(gl.drawIssueNs());
+    readTimes.add(gl.readbackAndCopyNs());elapsedTimes.add(elapsed);
+    String phaseName=phase==0?"approach":phase==1?"repeat":"rotate";
+    csv.append(cpuTimes.size()).append(',').append(waypoint).append(',')
+       .append(phaseName).append(',').append(room).append(',')
+       .append(camera.x).append(',').append(camera.eyeHeight).append(',')
+       .append(camera.z).append(',').append(camera.yaw).append(',')
+       .append(camera.lamp).append(',')
+       .append(ms(frame.totalNs())).append(',')
+       .append(ms(frame.sceneBuildNs())).append(',')
+       .append(ms(frame.geometryNs())).append(',')
+       .append(ms(frame.effectsNs())).append(',')
+       .append(frame.lighting().samples()).append(',')
+       .append(frame.lighting().cacheHits()).append(',')
+       .append(frame.lighting().shadowRays()).append(',')
+       .append(frame.lighting().normalRays()).append(',')
+       .append(frame.submittedTriangles()).append(',')
+       .append(ms(gl.drawIssueNs())).append(',')
+       .append(ms(gl.readbackAndCopyNs())).append(',')
+       .append(ms(gl.totalNs())).append(',')
+       .append(upload.uploadedBytes()).append(',')
+       .append(upload.reusedBytes()).append(',')
+       .append(ms(elapsed)).append('\n');
+    if(phase==2&&(waypoint==0||waypoint==3||waypoint==5))
+     screenshot(result,"continuous-house-"+waypoint+".png");
+   }
+  }
+  java.nio.file.Files.writeString(output.resolve("continuous-route.csv"),
+      csv.toString(),java.nio.charset.StandardCharsets.UTF_8);
+  String summary=String.format(java.util.Locale.ROOT,
+      "GPU CONTINUOUS ROUTE samples=%d cpu_p50_ms=%.3f cpu_p95_ms=%.3f "+
+      "gl_issue_p95_ms=%.3f gl_readback_p95_ms=%.3f end_to_end_p95_ms=%.3f%n",
+      cpuTimes.size(),percentile(cpuTimes,.50),percentile(cpuTimes,.95),
+      percentile(glTimes,.95),percentile(readTimes,.95),percentile(elapsedTimes,.95));
+  java.nio.file.Files.writeString(output.resolve("continuous-route-summary.txt"),
+      "Renderer: "+ENGINE.rendererDescription()+"\n"+
+      "Source SHA: "+System.getenv().getOrDefault("GITHUB_SHA","local-unversioned")+"\n"+
+      "One renderer and HouseMap. Authored camera waypoint jumps, NOT verified physical traversal.\n"+
+      "OpenGL wall times are on GL worker, NOT GPU hardware execution timer queries.\n"+
+      "End-to-end timings include wait/poll overhead, NOT interactive game FPS.\n"+
+      "Timing regression thresholds intentionally absent on shared CI.\n"+
+      summary,java.nio.charset.StandardCharsets.UTF_8);
+  System.out.print(summary);
+  if(cpuTimes.size()!=route.length*3)
+   throw new AssertionError("Incomplete House GPU profile");
+ }
+ private static String ms(long ns){
+  return String.format(java.util.Locale.ROOT,"%.3f",ns/1e6);
+ }
+ private static double percentile(java.util.List<Long> series,double p){
+  var ordered=new java.util.ArrayList<>(series);
+  ordered.sort(Long::compareTo);
+  return ordered.get(Math.max(0,(int)Math.ceil(ordered.size()*p)-1))/1e6;
+ }
+
+
+ /** Milestone B2a: real OpenGL scene-owned VBO reuse and version invalidation.
+  * Exercises GL-driver resident geometry without touching gameplay renderer
+  * output or pretending that House static chunks have migrated yet. */
+ private static GpuWorldRenderer.Result directGpu(long sceneId,long frameId,String stage)
+      throws Exception{
+  long until=System.nanoTime()+TimeUnit.SECONDS.toNanos(25);
+  while(System.nanoTime()<until){
+   var result=ENGINE.latest();
+   if(result!=null&&result.sceneId()==sceneId&&result.frameId()==frameId){
+    int visible=0;for(int px:result.argb())if((px>>>24)>127)visible++;
+    if(visible<250)throw new AssertionError(stage+" has no real visible triangle: "+visible);
+    return result;
+   }
+   Thread.sleep(25);
+  }
+  throw new AssertionError("Timeout: real OpenGL resident scene "+stage);
+ }
+ private static void residentBufferSmoke()throws Exception{
+  long scene=GpuWorldRenderer.nextId(),meshId=721;
+  float[] vertices={
+      -2f,-1.5f,5f,0f,0f,.83f,.83f,.83f,
+       2f,-1.5f,5f,1f,0f,.83f,.83f,.83f,
+       0f, 1.7f,5f,.5f,1f,.83f,.83f,.83f
+  };
+  var initial=new GpuWorldRenderer.Surface(-1,vertices,meshId,1);
+  long id1=GpuWorldRenderer.nextId();
+  ENGINE.submit(new GpuWorldRenderer.Frame(scene,id1,640,360,275.4f,0,0,
+      List.of(initial),true,0,0,0,0,0));
+  var first=directGpu(scene,id1,"first resident upload");
+  var firstUpload=ENGINE.uploadStats();
+  if(firstUpload.uploadedBytes()!=vertices.length*Float.BYTES
+       ||firstUpload.reusedBatches()!=0)
+   throw new AssertionError("Initial resident mesh was not physically uploaded");
+
+  long id2=GpuWorldRenderer.nextId();
+  ENGINE.submit(new GpuWorldRenderer.Frame(scene,id2,640,360,275.4f,0,0,
+      List.of(GpuWorldRenderer.Surface.drawResident(-1,meshId,1,3)),
+      true,0,0,0,0,0));
+  var repeated=directGpu(scene,id2,"resident draw with zero source vertices");
+  var reused=ENGINE.uploadStats();
+  if(reused.uploadedBytes()!=0||reused.reusedBytes()!=vertices.length*Float.BYTES
+      ||!java.util.Arrays.equals(first.argb(),repeated.argb()))
+   throw new AssertionError("Resident GPU draw unexpectedly retransmitted, changed or dropped geometry");
+
+  float[] dimmed=vertices.clone();
+  for(int i=5;i<dimmed.length;i+=8){
+   dimmed[i]=.18f;dimmed[i+1]=.18f;dimmed[i+2]=.18f;
+  }
+  long id3=GpuWorldRenderer.nextId();
+  ENGINE.submit(new GpuWorldRenderer.Frame(scene,id3,640,360,275.4f,0,0,
+      List.of(new GpuWorldRenderer.Surface(-1,dimmed,meshId,2)),
+      true,0,0,0,0,0));
+  var changed=directGpu(scene,id3,"versioned lighting refresh");
+  var refreshed=ENGINE.uploadStats();
+  int altered=0;
+  for(int i=0;i<changed.argb().length;i++)
+   if(changed.argb()[i]!=repeated.argb()[i])altered++;
+  if(refreshed.uploadedBytes()!=dimmed.length*Float.BYTES||altered<250)
+   throw new AssertionError("Resident mesh revision did not update actual visible lighting");
+
+  long newScene=GpuWorldRenderer.nextId(),id4=GpuWorldRenderer.nextId();
+  ENGINE.submit(new GpuWorldRenderer.Frame(newScene,id4,640,360,275.4f,0,0,
+      List.of(new GpuWorldRenderer.Surface(-1,vertices,meshId,1)),
+      true,0,0,0,0,0));
+  var reset=directGpu(newScene,id4,"fresh scene-owned resource upload");
+  var newSceneUpload=ENGINE.uploadStats();
+  if(newSceneUpload.uploadedBytes()!=vertices.length*Float.BYTES
+      ||!java.util.Arrays.equals(first.argb(),reset.argb()))
+   throw new AssertionError("Resident VBO leaked across scenes or failed reload");
+  screenshot(first,"resident-vbo-original.png");
+  screenshot(changed,"resident-vbo-revision.png");
+  System.out.println("GPU RESIDENT VBO PASS first_upload="+firstUpload.uploadedBytes()+
+      " repeat_upload="+reused.uploadedBytes()+
+      " repeat_reused="+reused.reusedBytes()+
+      " revised_upload="+refreshed.uploadedBytes()+
+      " revised_pixels="+altered+
+      " new_scene_upload="+newSceneUpload.uploadedBytes());
+ }
+
  private static void smoke()throws Exception{
   SceneRenderer first=new SceneRenderer();
   screenshot(capture(first,false),"investigation-house.png");
@@ -324,6 +499,8 @@ public final class GpuDesktop {
   flyoverSmoke();
   lightingAudit();
   flashlightAndResidentMeshSmoke();
+  residentBufferSmoke();
+  continuousRouteAudit();
   System.out.println("PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse");
  }
  public static void main(String[] args)throws Exception{

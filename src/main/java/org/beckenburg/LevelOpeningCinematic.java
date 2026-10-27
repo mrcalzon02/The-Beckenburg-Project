@@ -23,12 +23,32 @@ final class LevelOpeningCinematic implements AutoCloseable {
     private final ExecutorService worker;
     private final SceneRenderer preview;
     private final AtomicBoolean busy=new AtomicBoolean();
+    private final AtomicBoolean firstPreviewLogged=new AtomicBoolean();
+    private final AtomicBoolean readinessFallbackLogged=new AtomicBoolean();
+    private volatile long firstPreviewRequestNs,firstPreviewFrameNs;
+    private volatile int previewRequests,previewFailures;
     private volatile BufferedImage completed;
     private final boolean gpuFlight;
+    private static final long MAX_GPU_PREVIEW_WAIT_NS=
+        java.util.concurrent.TimeUnit.SECONDS.toNanos(3);
     private final long started=System.nanoTime();
+    private final OpeningPlaybackClock playback=
+        new OpeningPlaybackClock(started,MAX_GPU_PREVIEW_WAIT_NS);
     private long lastRequest;
     private volatile boolean closed;
     private final double centerX,centerZ,span;
+    /** Non-rendering case-start readiness evidence; elapsed time starts at
+     * cinematic construction. No actor ticks, cameras or case state change. */
+    record PreviewStatus(boolean gpuRequested,boolean workerBusy,
+        boolean firstFrameReady,int requests,int failures,
+        long firstFrameElapsedMs){}
+    PreviewStatus previewStatus(){
+        long elapsed=firstPreviewFrameNs>0
+            ?java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(firstPreviewFrameNs-started)
+            :-1;
+        return new PreviewStatus(gpuFlight,busy.get(),completed!=null,
+            previewRequests,previewFailures,elapsed);
+    }
     LevelOpeningCinematic(HouseMap map,SceneRenderer player,int width,int height){
         this.map=map;
         flight=new LevelOpeningFlyover(map,new LevelOpeningFlyover.Pose(
@@ -49,11 +69,21 @@ final class LevelOpeningCinematic implements AutoCloseable {
         var framing=LevelOpeningFlyover.framing(map);
         centerX=framing.cx();centerZ=framing.cz();span=framing.span();
         BeckenburgDiagnostics.record("OPENING FLIGHT "+map.site()
-            +" backend="+(gpuFlight?"GPU world-space":"software tactical overview"));
+            +" backend="+(gpuFlight?"GPU world-space":"software tactical overview")
+            +" output="+width+"x"+height+" first_frame_state="+
+            (gpuFlight?"not-yet-ready":"software-fallback-ready"));
     }
     boolean gpuFlight(){return gpuFlight;}
     double progress(){
-        return Math.min(1,(System.nanoTime()-started)/1e9/LevelOpeningFlyover.DURATION_SECONDS);
+        double t=playback.progress(System.nanoTime(),LevelOpeningFlyover.DURATION_SECONDS,gpuFlight);
+        if(gpuFlight&&playback.readinessTimedOut()
+                &&readinessFallbackLogged.compareAndSet(false,true)){
+            BeckenburgDiagnostics.record("OPENING GPU PREVIEW READINESS TIMEOUT site="+map.site()
+                +" max_wait_ms="+java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
+                    MAX_GPU_PREVIEW_WAIT_NS)
+                +" fallback=existing-tactical-overview no-case-block=true");
+        }
+        return t;
     }
     boolean complete(){return closed||progress()>=1;}
     void update(int width,int height){
@@ -61,6 +91,13 @@ final class LevelOpeningCinematic implements AutoCloseable {
         long now=System.nanoTime();
         if(now-lastRequest<160_000_000L||!busy.compareAndSet(false,true))return;
         lastRequest=now;
+        previewRequests++;
+        boolean firstAttempt=firstPreviewRequestNs==0;
+        if(firstAttempt){
+            firstPreviewRequestNs=now;
+            BeckenburgDiagnostics.record("OPENING GPU FIRST FRAME REQUEST site="+map.site()
+                +" width="+width+" height="+height);
+        }
         var pose=flight.pose(progress());
         worker.execute(()->{
             try{
@@ -77,7 +114,19 @@ final class LevelOpeningCinematic implements AutoCloseable {
                 try{graphics.drawImage(source,0,0,null);}
                 finally{graphics.dispose();}
                 completed=copy;
+                if(firstPreviewLogged.compareAndSet(false,true)){
+                    firstPreviewFrameNs=System.nanoTime();
+                    playback.previewPrepared(firstPreviewFrameNs);
+                    long elapsedMs=java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
+                        firstPreviewFrameNs-started);
+                    long requestMs=java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
+                        firstPreviewFrameNs-firstPreviewRequestNs);
+                    BeckenburgDiagnostics.record("OPENING GPU FIRST FRAME READY site="+map.site()
+                        +" startup_elapsed_ms="+elapsedMs+" render_request_ms="+requestMs
+                        +" image="+source.getWidth()+"x"+source.getHeight());
+                }
             }catch(Throwable problem){
+                previewFailures++;
                 // Keep the game responsive and preserve stage evidence; a
                 // cinematic failure must never prevent entering the mission.
                 BeckenburgDiagnostics.fail("Opening aerial renderer",problem);
@@ -157,7 +206,18 @@ final class LevelOpeningCinematic implements AutoCloseable {
         }finally{g.dispose();}
     }
     @Override public void close(){
+        if(closed)return;
         closed=true;
+        if(gpuFlight){
+            var status=previewStatus();
+            BeckenburgDiagnostics.record("OPENING FLIGHT CLOSE site="+map.site()
+                +" first_frame_ready="+status.firstFrameReady()
+                +" worker_busy="+status.workerBusy()
+                +" requests="+status.requests()+" failures="+status.failures()
+                +" first_frame_ms="+status.firstFrameElapsedMs()
+                +" outcome="+(status.firstFrameReady()?"ready":
+                    status.workerBusy()?"cancelled-while-preparing":"fallback-without-gpu-frame"));
+        }
         if(worker!=null)worker.shutdownNow();
     }
 }

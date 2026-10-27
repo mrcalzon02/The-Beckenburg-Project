@@ -9,6 +9,26 @@ public final class GpuWorldRendererContractTest {
   try{new GpuWorldRenderer.Surface(1,new float[9]);}catch(IllegalArgumentException expected){denied=true;}
   check(denied,"GPU vertices must contain complete triangle groups");
   var triangle=new GpuWorldRenderer.Surface(-1,new float[24]);
+  check(triangle.resourceId()==0&&triangle.revision()==0&&triangle.vertexCount()==3,
+      "Legacy material triangle batch remains fully supported");
+  var resident=new GpuWorldRenderer.Surface(-1,new float[24],7,1);
+  check(resident.resourceId()==7&&resident.revision()==1&&resident.vertexCount()==3,
+      "Versioned persistent world mesh must retain its stable identity");
+  var drawOnly=GpuWorldRenderer.Surface.drawResident(-1,7,1,3);
+  check(drawOnly.vertices().length==0&&drawOnly.vertexCount()==3,
+      "Resident draw command must not retransmit any vertex array");
+  boolean badResident=false;
+  try{GpuWorldRenderer.Surface.drawResident(-1,0,1,3);}
+  catch(IllegalArgumentException expected){badResident=true;}
+  check(badResident,"Draw-only surface cannot use the unversioned legacy path");
+  badResident=false;
+  try{GpuWorldRenderer.Surface.drawResident(-1,7,0,3);}
+  catch(IllegalArgumentException expected){badResident=true;}
+  check(badResident,"Resident geometry must supply an explicit revision");
+  badResident=false;
+  try{GpuWorldRenderer.Surface.drawResident(-1,7,1,4);}
+  catch(IllegalArgumentException expected){badResident=true;}
+  check(badResident,"Resident draw counts must preserve complete triangles");
   var f=new GpuWorldRenderer.Frame(9,10,640,360,275.4f,1f,.7f,List.of(triangle));
   check(f.surfaces().size()==1&&f.width()==640,"Frame preserves real geometry and display size");
   check(!f.worldSpace(),"Legacy callers still receive camera-space geometry");
