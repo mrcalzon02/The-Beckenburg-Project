@@ -18,10 +18,10 @@ Finish the native Java 17 / LibGDX OpenGL 3.3 Beckenburg renderer so the install
 ## Snapshot to reconcile at session start
 
 Last verified inspection on **2026-10-26**:
-- Main at df221653471eda5364cf8653fa83cb2aba5d35e9, containing B1/B2a/B2b/B2c and F0/F1 foundations. Exact-main GPU run 40424723169 passed; full multiplayer 40424723227 and installer 40424723354 were still running at inspection. These statuses are NOT promises about a future run.
-- Last verified public release: beckenburg-v0.1.81, source e2ad831f9ba3dd63de79017e2e1d0766d8201678.
+- **Production/release source:** df221653471eda5364cf8653fa83cb2aba5d35e9, containing B1/B2a/B2b/B2c and F0/F1 foundations. Exact-SHA GPU 40424723169, full multiplayer 40424723227 and installer 40424723354 all PASSED. Repository main later advanced by documentation-only merge to a3073cde777b87eeb1362e2ad93db9dea6139036, with no renderer behavior change. Always fetch current main before acting.
+- Last verified public release: **beckenburg-v0.1.82**, source df221653471eda5364cf8653fa83cb2aba5d35e9, with Windows x64 installer, Java 17 editor kit and SHA256SUMS. Publication confirmed from GitHub release record and exact-SHA complete installer workflow.
 - D3 House GPU-light revision diagnostic: PR #26, f4a1b3c271d26dd10956de7e2886d2ad0b1f122a, GPU 40417305528 PASSED. It uploaded 71,616 bytes for 350 authored faces / 746 triangles, retained 2,238 fixture probes across camera movement with zero reupload and revised/reuploaded on a door transition. **Not live case rendering.**
-- D4 real-scene immutable-face ownership: PR #28, 2fe3400ae597d7765f1d6883eaea99fa2f67a91c; latest GPU run 40425466364 was RUNNING. This branch includes a fix to preserve authored normals during triangle subdivision. Do not mark it done without its actual acceptance result and a production usage test.
+- D4 real-scene immutable-face ownership: PR #28, 2fe3400ae597d7765f1d6883eaea99fa2f67a91c, exact-SHA GPU run 40425466364 PASSED all available jobs. The branch includes a functional fix preserving authored normals in triangle subdivision. **Branch tests passed, but normal-gameplay static buffer ownership has NOT been promoted or hardware-accepted.**
 - E0 readback profiling: PR #27, bff0f48708346ea031916dd4e27acc599c0656a0, GPU 40418245781 PASSED. In one 640 x 360 Mesa smoke frame, RGBA and depth were each 921,600 bytes; reported glReadPixels call-wall times were 1.713 ms and 0.191 ms, plus 1.105 ms Java conversion. NOT dedicated hardware GPU time.
 - C1–C3 authored portal candidate/ray diagnostics: PRs #15/#17/#22. C2 CSV found 425, 306 and 134 **frustum** faces from basement rooms 10/11 excluded by candidates from respective indoor views. These faces are NOT necessarily depth-visible pixels; depth evidence needed; issue #20. Hard portal culling must remain OFF.
 - D0–D2 source lighting revisions, local-region invalidation and RGB probe cache: PRs #13/#14/#19, branch-level acceptance passed. B2d/B2e real House diagnostics are on PRs #12/#18, branch-level acceptance passed. They are not automatically in main.
@@ -35,8 +35,8 @@ Each package produces: a minimal source diff, focused functional evidence, exact
 
 ### 0. Stabilize the baseline and CI/release [must precede production switching]
 
-1. Fetch main and all PRs #11–#28; record which are open, merged or abandoned; check new installer and multiplayer runs for df221653.
-2. Verify native installed 0.1.81 and current main recovery option; capture one clean House start and known first-case hang reproduction or lack thereof. Keep BECK-LIVE-012 open until exercised on local hardware.
+1. Fetch actual main and all relevant PRs (including #11–#30 and any newer); record open/merged/abandoned statuses; verify release v0.1.82 is still the most recent verified release or update the record based on current GitHub data.
+2. Verify native installed v0.1.82 or a newer fully published and accepted release plus the main recovery option; capture one clean House start and known first-case hang reproduction or lack thereof. Keep BECK-LIVE-012 open until exercised on local hardware.
 3. Confirm Java 17, actual Blender exporter, approved assets, real GPU client/driver, diagnostics flush, functional regressions and publisher; investigate failures, do not mute them. A past HotSpot/JIT native access violation in HouseMap.wallBlocked must remain in incident notes if it recurs; preserve hs_err_pid report.
 4. Write a benchmark baseline with exact SHA, Windows version, CPU/GPU/driver, RAM, preset, resolution, warmup, camera/player path, CPU p50/p95/p99, GPU timer results if available, memory, GC and case-start latency. Use existing 33-view House route as supplementary CI evidence; it is not physical player navigation.
 

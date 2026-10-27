@@ -22,7 +22,7 @@ Stop only when an actual installed game can complete the full investigation-to-C
 ## First command/action checklist in that session
 
 - Inspect git status and identify the actual authenticated repository/branch, original material and local Windows/JDK/GPU capability.
-- Fetch main and PRs #12, #13, #14, #15, #17, #18, #19, #21, #22, #26, #27, #28 (plus any newer ones); never assume they are still open.
+- Fetch main and PRs #12, #13, #14, #15, #17, #18, #19, #21, #22, #26, #27, #28, #30 (plus any newer ones); never assume they are still open. Historical v0.1.82 and D4 GPU passes are recorded, but actual installed/hardware validation is still required.
 - Read CI: renderer acceptance, full multiplayer, focused Castle, installer, and exact release SHA. Confirm the first-case hang defect status.
 - Capture a baseline installed House case on target hardware if available; else use repeatable CI and flag hardware proof missing.
 - Select the smallest unresolved work-package task. Commit code plus a *functional* test, verify the exact remote SHA and CI, update the progress log and issue, then choose the next task.
