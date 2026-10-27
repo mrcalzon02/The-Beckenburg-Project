@@ -160,6 +160,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: beckenburg-e2e-${{ github.run_id }}
-          path: build/e2e/**
+          path: |
+            build/e2e/**
+            build/classes/org/beckenburg/ui/item-icons/*.png
+            build/classes/org/beckenburg/ui/branding/*.png
+            build/Beckenburg.ico
           if-no-files-found: warn
           retention-days: 14
