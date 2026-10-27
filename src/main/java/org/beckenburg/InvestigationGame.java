@@ -46,6 +46,7 @@ public final class InvestigationGame {
     private InvestigationGame(){
         bootPhase("Opening game window");
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        if(UiBranding.desktopIcon()!=null)window.setIconImage(UiBranding.desktopIcon());
         window.setSize(1060,725);
         window.setMinimumSize(new Dimension(760,510));
         window.setLocationRelativeTo(null);
@@ -97,7 +98,16 @@ public final class InvestigationGame {
     private JPanel loadingScreen(){
         // Deliberately plain Swing: diagnostics must work even if the PSX UI
         // archive, its decoding, or its custom paint components are broken.
-        JPanel surface=new JPanel(new BorderLayout());
+        JPanel surface=new JPanel(new BorderLayout()){
+            @Override protected void paintComponent(Graphics g){
+                super.paintComponent(g);
+                var castleCapture=UiBranding.splash();
+                if(castleCapture!=null){
+                    g.drawImage(castleCapture,0,0,getWidth(),getHeight(),null);
+                    g.setColor(new Color(7,11,16,135));g.fillRect(0,0,getWidth(),getHeight());
+                }
+            }
+        };
         surface.setBackground(new Color(9,13,18));
         JPanel center=new JPanel(new GridBagLayout());
         center.setOpaque(false);
@@ -187,10 +197,32 @@ public final class InvestigationGame {
         menu.removeAll();
         menu.setBackground(new Color(13,17,24));
         menu.setBorder(BorderFactory.createEmptyBorder(25,30,19,30));
-        JPanel header=transparentPanel(new BorderLayout(8,4));
+        JPanel header=new JPanel(new BorderLayout(8,4)){
+            @Override protected void paintComponent(Graphics g){
+                super.paintComponent(g);
+                var castleImage=UiBranding.splash();
+                if(castleImage!=null){
+                    int left=getWidth()/2;
+                    g.drawImage(castleImage,left,0,getWidth()-left,getHeight(),null);
+                    Graphics2D brush=(Graphics2D)g.create();
+                    brush.setPaint(new GradientPaint(left-70,0,new Color(13,17,24,255),
+                        getWidth(),0,new Color(13,17,24,48)));
+                    brush.fillRect(left-70,0,getWidth()-left+70,getHeight());
+                    brush.dispose();
+                }
+            }
+        };
+        header.setOpaque(false);
+        header.setPreferredSize(new Dimension(1,96));
         JLabel title=new JLabel("THE BECKENBURG PROJECT");
         title.setFont(new Font(Font.SERIF,Font.BOLD,menuFont(35)));
         title.setForeground(ink());header.add(title,BorderLayout.NORTH);
+        var gameMark=UiBranding.desktopIcon();
+        if(gameMark!=null){
+            JLabel emblem=new JLabel(new ImageIcon(gameMark.getScaledInstance(66,66,Image.SCALE_SMOOTH)));
+            emblem.setBorder(BorderFactory.createEmptyBorder(0,0,0,12));
+            header.add(emblem,BorderLayout.WEST);
+        }
         JLabel subtitle=menuLabel("CASTLE OPERATIONS  /  EXPEDITION DESK",12);
         subtitle.setForeground(new Color(167,182,185));header.add(subtitle,BorderLayout.SOUTH);
         menu.add(header,BorderLayout.NORTH);

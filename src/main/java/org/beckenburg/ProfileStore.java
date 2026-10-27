@@ -157,6 +157,22 @@ public final class ProfileStore {
         }
         return true;
     }
+    /** Sell one owned consumable back to the Quartermaster at half purchase price.
+     * Permanent mission instruments and free starter gear are never silently discarded.
+     */
+    public boolean sellSupply(FieldSupplies.Kind kind,FieldSupplies.Tier tier)throws IOException{
+        if(blocked)throw new IOException("Profile cannot be modified after failed load");
+        if(kind==null||tier==null||supplyCount(kind,tier)==0)return false;
+        int refund=tier.price/2;
+        int previous=currency;
+        currency=Math.addExact(currency,refund);
+        medicines[kind.ordinal()][tier.ordinal()]--;
+        try{save();}catch(IOException|RuntimeException failure){
+            currency=previous;medicines[kind.ordinal()][tier.ordinal()]++;
+            throw failure;
+        }
+        return true;
+    }
     public boolean consume(FieldSupplies.Kind kind,FieldSupplies.Tier tier)throws IOException{
         if(blocked)throw new IOException("Profile cannot be modified after failed load");
         if(supplyCount(kind,tier)==0)return false;

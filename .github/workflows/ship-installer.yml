@@ -129,7 +129,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force dist | Out-Null
-          jpackage --type app-image --name Beckenburg --input build --main-jar BeckenburgGPU.jar --dest dist --java-options "-Dfile.encoding=UTF-8"
+          jpackage --type app-image --name Beckenburg --input build --main-jar BeckenburgGPU.jar --dest dist --icon build/Beckenburg.ico --java-options "-Dfile.encoding=UTF-8"
           if ($LASTEXITCODE -ne 0) { throw 'GPU-first jpackage failed' }
 
       - name: Include editor with installed project files

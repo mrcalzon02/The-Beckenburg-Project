@@ -148,6 +148,7 @@ jobs:
                   '--input',$payload,
                   '--main-jar','beckenburg-game.jar',
                   '--main-class','org.beckenburg.InvestigationGame',
+                  '--icon','build/Beckenburg.ico',
                   '--dest',$dest,'--vendor','Beckenburg Project')
           & jpackage @args --type app-image
           if ($LASTEXITCODE -ne 0) { throw 'Native portable image failed' }
