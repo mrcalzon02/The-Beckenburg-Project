@@ -1,0 +1,105 @@
+{
+  "version": "0.1-reference",
+  "project": "The Beckenburg Project",
+  "approval": "UNAPPROVED",
+  "provenance_document": "docs/art/PSX_UI_CONCEPT_LIBRARY_2026_10_26.md",
+  "art_archive_url": "https://drive.google.com/file/d/12poAs28WE1tEZ7qf4TTcxJmHKoshY09G/view",
+  "scope": "Visual language only; not runtime settings, game data, or approved assets",
+  "colors": {
+    "canvas": "#090C15",
+    "surface": "#0E1523",
+    "border": "#66758C",
+    "text": "#C7D5E5",
+    "textMuted": "#909BAD",
+    "accent": "#EF213A",
+    "hover": "#A24651",
+    "pressed": "#FF6D70",
+    "disabled": "#334051",
+    "candle": "#D58B48",
+    "parchment": "#A9977F",
+    "evidence": "#4C9C91"
+  },
+  "geometry": {
+    "pixelUnit": 1,
+    "borderPx": 2,
+    "cornerRadiusPx": 0,
+    "nineSliceButtonInsets": [
+      12,
+      12,
+      12,
+      12
+    ],
+    "nineSliceSlotInsets": [
+      9,
+      9,
+      9,
+      9
+    ],
+    "candidateIconSizes": [
+      32,
+      48,
+      64,
+      96,
+      128,
+      256
+    ]
+  },
+  "components": {
+    "menu_button": {
+      "states": [
+        "idle",
+        "hover",
+        "focus",
+        "pressed",
+        "selected",
+        "disabled"
+      ],
+      "text_source": "runtime only",
+      "icon_source": "approved references only"
+    },
+    "inventory_slot": {
+      "states": [
+        "idle",
+        "focus",
+        "selected",
+        "disabled"
+      ],
+      "image_source": "actual GLB model render, not concept art"
+    },
+    "panel": {
+      "nine_slice": true,
+      "stretchInterior": true,
+      "scaling": "keep border pixel density"
+    },
+    "dialog": {
+      "states": [
+        "default",
+        "warning",
+        "critical"
+      ],
+      "content_source": "runtime"
+    },
+    "tab": {
+      "states": [
+        "inactive",
+        "hover",
+        "active",
+        "disabled"
+      ],
+      "content_source": "runtime"
+    }
+  },
+  "qa": [
+    "No baked gameplay facts or pricing",
+    "Hover and focused controls distinct",
+    "Readability at 720p",
+    "Keyboard and gamepad parity",
+    "Game options really change behavior",
+    "No additional heavy texture uploads each frame"
+  ],
+  "asset_counts": {
+    "original_sheets": 11,
+    "reference_crops": 55,
+    "procedural_skin_png_candidates": 21
+  }
+}
