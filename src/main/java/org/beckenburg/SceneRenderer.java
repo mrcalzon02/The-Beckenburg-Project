@@ -1077,6 +1077,35 @@ public final class SceneRenderer {
     private HouseMap shellSourceMap;
     private String shellSourceRevision="";
     private List<Face> preparedShellFaces=List.of();
+    /** Identity, not structural equivalence: authored immutable shell faces
+     * must never be confused with similarly-shaped live doors, held gear or
+     * ghost/event geometry. Rebuilt only when shell topology changes. */
+    private final java.util.Set<Face> authoredShellIdentity=
+        java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
+    public record ProductionShellOwnership(int totalFaces,int authoredShell,
+        int dynamicAndDerived,int unknownRoomFaces,int distinctShellRooms,
+        long authoredShellTriangles){}
+    /**
+     * D4 diagnostic for the REAL gameplay scene assembly. Nothing in this
+     * method replaces or reorders draw calls; never cull by owner identity.
+     * Dynamic props, ritual/event objects, van equipment and NPCs stay in
+     * the conventional batches pending depth/lighting parity.
+     */
+    public ProductionShellOwnership auditGameplayShellOwnership(HouseMap map,double clock){
+        if(map==null)throw new IllegalArgumentException("Game map required");
+        List<Face> built=scene(map,-1,false,-1,-1,clock,List.of(),null,List.of());
+        if(map.nativeSite())
+            return new ProductionShellOwnership(built.size(),0,built.size(),0,0,0);
+        int prepared=0,unowned=0;
+        var rooms=new java.util.HashSet<Integer>();
+        for(Face face:built){
+            if(authoredShellIdentity.contains(face)){
+                prepared++;rooms.add(face.room);
+            }else if(face.room<0)unowned++;
+        }
+        return new ProductionShellOwnership(built.size(),prepared,
+            built.size()-prepared,unowned,rooms.size(),prepared);
+    }
     private List<ShellChunk> preparedShellChunks=List.of();
     private boolean shellChunkCulling=true;
     /** Functional reference only; no player-facing option is introduced. */
@@ -1526,6 +1555,36 @@ public final class SceneRenderer {
         long revision=1;
         ResidentHandle(long id){this.id=id;}
     }
+    /** Keep original authored wall-side normal direction when tessellating.
+     * Missing normals remain missing (legacy fixture sampling fallback),
+     * rather than inventing cross-wall normals. */
+    private static Point interpolateResidentNormal(Point left,Point right){
+        if(left==null)return right;
+        if(right==null)return left;
+        double nx=left.x+right.x,ny=left.y+right.y,nz=left.z+right.z;
+        double len=Math.sqrt(nx*nx+ny*ny+nz*nz);
+        if(len<1e-9)return left;
+        return new Point(nx/len,ny/len,nz/len);
+    }
+    /** Functional wall-side normal proof independent of screenshot style. */
+    static boolean testResidentSubdivisionNormals(){
+        var n=new Point(0,1,0);
+        var original=new Face(new Point(0,0,0),new Point(4,0,0),
+            new Point(0,0,4),0xffffff,-1,0,0,1,0,0,1,0,n,n,n);
+        var corners=new ArrayList<ResidentCorner>();
+        new SceneRenderer().collectResidentCorners(original,0,0,corners);
+        if(corners.size()!=12)return false;
+        for(var c:corners)if(c.normal==null||Math.abs(c.normal.y-1)>1e-7||
+           Math.abs(c.normal.x)>1e-7||Math.abs(c.normal.z)>1e-7)return false;
+        var fallback=new Face(original.a,original.b,original.c,original.color,
+            original.material,original.au,original.av,original.bu,original.bv,
+            original.cu,original.cv,0,null,null,null);
+        corners.clear();
+        new SceneRenderer().collectResidentCorners(fallback,0,0,corners);
+        if(corners.size()!=12)return false;
+        for(var c:corners)if(c.normal!=null)return false;
+        return true;
+    }
     private void collectResidentCorners(Face face,int room,int depth,
                                         List<ResidentCorner> result){
         if(room>=0&&room<12&&depth<1&&
@@ -1535,14 +1594,17 @@ public final class SceneRenderer {
             double abu=(face.au+face.bu)*.5,abv=(face.av+face.bv)*.5;
             double bcu=(face.bu+face.cu)*.5,bcv=(face.bv+face.cv)*.5;
             double cau=(face.cu+face.au)*.5,cav=(face.cv+face.av)*.5;
+            Point nab=interpolateResidentNormal(face.na,face.nb);
+            Point nbc=interpolateResidentNormal(face.nb,face.nc);
+            Point nca=interpolateResidentNormal(face.nc,face.na);
             collectResidentCorners(new Face(face.a,ab,ca,face.color,face.material,
-                face.au,face.av,abu,abv,cau,cav),room,depth+1,result);
+                face.au,face.av,abu,abv,cau,cav,room,face.na,nab,nca),room,depth+1,result);
             collectResidentCorners(new Face(ab,face.b,bc,face.color,face.material,
-                abu,abv,face.bu,face.bv,bcu,bcv),room,depth+1,result);
+                abu,abv,face.bu,face.bv,bcu,bcv,room,nab,face.nb,nbc),room,depth+1,result);
             collectResidentCorners(new Face(ca,bc,face.c,face.color,face.material,
-                cau,cav,bcu,bcv,face.cu,face.cv),room,depth+1,result);
+                cau,cav,bcu,bcv,face.cu,face.cv,room,nca,nbc,face.nc),room,depth+1,result);
             collectResidentCorners(new Face(ab,bc,ca,face.color,face.material,
-                abu,abv,bcu,bcv,cau,cav),room,depth+1,result);
+                abu,abv,bcu,bcv,cau,cav,room,nab,nbc,nca),room,depth+1,result);
             return;
         }
         result.add(new ResidentCorner(face.a,face.au,face.av,face.material,face.color,room,face.na));
@@ -1734,6 +1796,8 @@ public final class SceneRenderer {
             return preparedShellChunks;
         shellSourceMap=map;shellSourceRevision=revision;
         preparedShellFaces=buildLevelShell(map);
+        authoredShellIdentity.clear();
+        authoredShellIdentity.addAll(preparedShellFaces);
         var chunks=new ArrayList<ShellChunk>();
         var roomIds=new java.util.HashSet<Integer>();
         for(int from=0;from<preparedShellFaces.size();){
