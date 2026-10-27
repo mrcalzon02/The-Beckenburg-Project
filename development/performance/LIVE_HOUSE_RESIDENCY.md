@@ -19,3 +19,5 @@ Status: source and functional checks passed; matched Windows GPU profile, depth 
 ## Continuation status
 
 Default-off candidate preserved after the time window. Verified source fe0df50a passed exact GPU/full acceptance and actual RTX exit/depth checks; final bounded dynamic-geometry visibility cache has targeted tests and compilation, with its own exact-source hardware/CI still pending. Context recreation, installed full case, dynamic optical-tool performance and stable 30 FPS remain open. No scheduling/composition/portal/warmup migration was added after the House checkpoint.
+
+The subsequent bcdb6ab9 dynamic-probe experiment was rejected by real GPU timing (DEV-132). Runtime/test/workflow sources restored exactly to verified fe0df50a; history and evidence preserved. Resume from the verified static path.

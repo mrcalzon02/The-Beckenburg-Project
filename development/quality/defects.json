@@ -1062,7 +1062,7 @@
       "id": "DEV-097",
       "title": "Native exterior zones treated as indoor by numeric room ID",
       "status": "fixed-scoped",
-      "affected": "Hollow Creek outdoor zones 0–11",
+      "affected": "Hollow Creek outdoor zones 0â€“11",
       "symptom": "Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.",
       "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
       "action": "Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.",
@@ -1165,7 +1165,7 @@
       "symptom": "A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.",
       "cause": "The edge blockers constrain crossings, but terrain support alone still allowed a direct underwater spawn query.",
       "action": "Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.",
-      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.",
+      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47â€“55k water pixels per frame instead of3â€“6k.",
       "older_maps": "Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map."
     },
     {
@@ -1442,6 +1442,17 @@
       "action": "Default-off normal-path House residency and stationary visibility. Next: localized door rays, lifecycle and installed investigation-to-Castle validation.",
       "evidence": "6e0c6985: frame p95 108.5-109.8 ->35.9-36.1 ms; first yard 3880-3970 ->600-624 ms; zero camera-only static upload; actual RTX depth parity passed. Raw evidence under performance/hardware/2026-10-26/live-house-6e0c6985.",
       "older_maps": "Audit each map after House acceptance; no G or installed 30 FPS gate closed."
+    },
+    {
+      "id": "DEV-132",
+      "title": "Dynamic probe experiment increased live House ray work",
+      "status": "experiment-reverted-evidence-preserved",
+      "affected": "Default-off House candidate; never merged or released",
+      "symptom": "bcdb6ab9 event-route p95 71.474 ms versus prior 53.545-55.270 ms; first-frame scalar rays 157362 versus 44434.",
+      "cause": "Exact-key dynamic probes replaced quantized/distance-LOD sampling on view-biased dynamic points, increasing first-view ray work and cache cost.",
+      "action": "Restore runtime/test files exactly to verified fe0df50a. Preserve rejected commit and raw GPU/depth/lifetime evidence; do not resume the experiment blindly.",
+      "evidence": "performance/hardware/2026-10-26/live-house-bcdb6ab9: depth/lifetime passed but performance failed.",
+      "older_maps": "Experiment was not enabled for other maps; no all-map optimization or acceptance claim."
     }
   ],
   "audit_categories": [
