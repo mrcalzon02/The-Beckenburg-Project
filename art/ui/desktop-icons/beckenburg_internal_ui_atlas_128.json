@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "project": "The Beckenburg Project",
+  "state": "candidate_visual_atlas_not_runtime",
+  "source": "Approved master + optional identity marks preserved in Drive Desktop Icons — 2026-10-27",
+  "source_url": "https://drive.google.com/drive/folders/1LZNCynBx7Gd_fRGz-8uG5fFnvaAoeKFk",
+  "image": "beckenburg_internal_ui_atlas_128.png",
+  "tile_size": 128,
+  "canvas": {
+    "width": 384,
+    "height": 256
+  },
+  "tiles": [
+    {
+      "id": "beckenburg",
+      "label": "Game / desktop",
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "approval": "approved_primary"
+    },
+    {
+      "id": "beckenburg-b",
+      "label": "Monogram",
+      "region": {
+        "x": 128,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "approval": "review_only"
+    },
+    {
+      "id": "beckenburg-stone",
+      "label": "Stone castle",
+      "region": {
+        "x": 256,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "approval": "review_only"
+    },
+    {
+      "id": "beckenburg-lantern",
+      "label": "Lantern",
+      "region": {
+        "x": 0,
+        "y": 128,
+        "w": 128,
+        "h": 128
+      },
+      "approval": "review_only"
+    },
+    {
+      "id": "beckenburg-van",
+      "label": "Investigation van",
+      "region": {
+        "x": 128,
+        "y": 128,
+        "w": 128,
+        "h": 128
+      },
+      "approval": "review_only"
+    },
+    {
+      "id": "beckenburg-ritual",
+      "label": "Ritual cross",
+      "region": {
+        "x": 256,
+        "y": 128,
+        "w": 128,
+        "h": 128
+      },
+      "approval": "review_only"
+    }
+  ],
+  "constraints": [
+    "Primary Beckenburg app icon is assets/runtime/ui/branding/beckenburg.png",
+    "Do not remap purchased/real equipment art",
+    "Do not bake text into runtime labels",
+    "Review optional marks before functional assignment"
+  ]
+}
