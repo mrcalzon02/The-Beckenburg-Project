@@ -9,7 +9,8 @@ import java.util.Set;
  *
  * A render appearance is distinct from a ghost's hidden gameplay identity. The
  * host broadcasts a ghost ID only on an already authorized visible apparition.
- * Hunter selections are cosmetic until their respective gameplay classes exist.
+ * Hunter directional art is distinct from hidden ghost identity; lobby Hunter
+ * selection also fixes the host-owned gameplay discipline for that seat.
  */
 public final class CharacterVisuals {
     private CharacterVisuals() { }

@@ -10,9 +10,15 @@ def git(*args):return subprocess.check_output(['git',*args],cwd=ROOT)
 tree=git('rev-parse','HEAD').decode().strip()
 with zipfile.ZipFile(io.BytesIO(git('archive','--format=zip',tree,'src/main/java','src/test/java','development/levels/build_scene.py'))) as archive:archive.extractall(BASE)
 overlays=['src/main/java/org/beckenburg/BlackpineProductionAssets.java','src/test/java/org/beckenburg/BlackpineMillExpansionCapture.java','src/test/java/org/beckenburg/BlackpineMillExpansionTest.java']
+overlays += ['src/main/java/org/beckenburg/'+n+'.java' for n in ['BlackpineLighting','BlackpineLevel','LevelAssets','ArchitecturalLightOcclusion']]
+overlays += ['src/test/java/org/beckenburg/'+n+'.java' for n in ['BlackpineLightingTest','BlackpineLightingCapture','BlackpineRitualAcceptanceTest','LightJoinOcclusionTest']]
 hashes={}
 for name in overlays:
     shutil.copyfile(ROOT/name,BASE/name);hashes[name]=hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
+scoped=ROOT/'build/fixture-lighting-scoped.java'
+if scoped.exists():
+    target='src/main/java/org/beckenburg/FixtureLighting.java'
+    shutil.copyfile(scoped,BASE/target);hashes[target]=hashlib.sha256(scoped.read_bytes()).hexdigest()
 classes=BASE/'classes';classes.mkdir(exist_ok=True)
 sources=BASE/'sources.txt';sources.write_text('\n'.join('"'+str(p).replace('\\','/')+'"' for p in (BASE/'src').rglob('*.java')))
 jdk=Path('C:/Program Files/Java/jdk-17/bin')
@@ -24,7 +30,9 @@ for path in (ROOT/'assets/runtime').glob('*.zip'):shutil.copyfile(path,resources
 classpath=os.pathsep.join(map(str,[classes,ROOT/'build/dressing-source-snapshot/classes',ROOT/'build/blackpine-dressing-check',ROOT/'build/posture-classes',ROOT/'build/classes']))
 checks=[]
 runtime_models={p.stem:hashlib.sha256(p.read_bytes()).hexdigest() for p in (resources/'models').glob('level_work_*.glb')}
+runtime_models['level_mill_suspension']=hashlib.sha256((resources/'models/level_mill_suspension.glb').read_bytes()).hexdigest()
 tasks=[('BlackpineMillExpansionTest',[]),('ProductionAssetTest',[]),('BlackpineStoryTest',[]),('BlackpineDressingTest',[]),('TerrainAndRecoveryTest',[]),('BlackpineGrayboxTest',[]),('AuthoredLevelPhysicsTest',[]),('CrouchAndOutdoorHidingTest',[]),('LevelSurfaceIntegrityTest',[]),('InteractionFocusTest',[]),('AuthoredLevelReachabilityTest',['BLACKPINE']),('BlackpineMillExpansionCapture',[]),('LevelSceneSource',['BLACKPINE'])]
+tasks=[('LightJoinOcclusionTest',[]),('BlackpineLightingTest',[]),('BlackpineRitualAcceptanceTest',[])]+tasks[:-1]+[('BlackpineLightingCapture',[]),tasks[-1]]
 for test,args in tasks:
     start=time.monotonic()
     result=subprocess.run([str(jdk/'java.exe'),'-Xmx3g','-Djava.awt.headless=true','-Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory','-cp',classpath,'org.beckenburg.VerificationMain',test,*args],cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=120)

@@ -59,6 +59,8 @@ public final class EquipmentRackDialog {
                 EquipmentTiers.Tier tier=tiers.getOrDefault(id,EquipmentTiers.Tier.I);
                 row.setText(EquipmentRegistry.get(id).name()+
                     "  T"+(tier.ordinal()+1));
+                row.setIcon(ItemIconAtlas.get(id.toLowerCase(java.util.Locale.ROOT),44));
+                row.setIconTextGap(10);
                 return row;
             }
         });

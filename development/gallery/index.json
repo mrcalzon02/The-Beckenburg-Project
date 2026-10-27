@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 853,
+  "count": 925,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1054,6 +1054,16 @@
       "sha256": "12c2a5b617739c3595e6df6b910a103b8068f45a4e91668bc45552b3119359bc"
     },
     {
+      "path": "development/levels/previews/arrival-road-blender-exterior.png",
+      "url": "development/levels/previews/arrival-road-blender-exterior.png",
+      "title": "Arrival road blender exterior",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1002293,
+      "sha256": "25dc3ffc6931c610c2686db0aa22ac5ab37f1e8612b939d50323252e83b939da"
+    },
+    {
       "path": "development/levels/previews/blackpine-blender-exterior.png",
       "url": "development/levels/previews/blackpine-blender-exterior.png",
       "title": "Blackpine blender exterior",
@@ -1064,6 +1074,126 @@
       "sha256": "7ac02806552e93787881e471198b793ec8e0c0bdcb392c7a752d7f4d0f928281"
     },
     {
+      "path": "development/levels/previews/blackpine-dressed-blender-exterior.png",
+      "url": "development/levels/previews/blackpine-dressed-blender-exterior.png",
+      "title": "Blackpine dressed blender exterior",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1257962,
+      "sha256": "9a878693ed3abbb0e3f80af4489db743e864ac859a2a31478eefd89f29b4d558"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressed-daylight-overview.png",
+      "url": "development/levels/previews/blackpine-dressed-daylight-overview.png",
+      "title": "Blackpine dressed daylight overview",
+      "kind": "Development review",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1823668,
+      "sha256": "a94ce149275722b90030d180a2b8481b4550817834a7e56dd70e81e15c3b2eac"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressed-forest-edge.png",
+      "url": "development/levels/previews/blackpine-dressed-forest-edge.png",
+      "title": "Blackpine dressed forest edge",
+      "kind": "Development review",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1478164,
+      "sha256": "cfa87eb389eb73c404a4f9755fbd95b6762e07ea763f4fb5747cb39c2da287eb"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressed-well-and-patio.png",
+      "url": "development/levels/previews/blackpine-dressed-well-and-patio.png",
+      "title": "Blackpine dressed well and patio",
+      "kind": "Development review",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1582968,
+      "sha256": "4f842ab488661092cfa24ece6a334e18841cca906b42a88945baf65401516bbf"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressing/blackpine-01-well-and-worn-paths.png",
+      "url": "development/levels/previews/blackpine-dressing/blackpine-01-well-and-worn-paths.png",
+      "title": "Blackpine 01 well and worn paths",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 229471,
+      "sha256": "213be7094479e808e2b4a829d8e0278591ecb29b736876b9ef4be4de6eb2e051"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressing/blackpine-02-foreman-patio-and-chimney.png",
+      "url": "development/levels/previews/blackpine-dressing/blackpine-02-foreman-patio-and-chimney.png",
+      "title": "Blackpine 02 foreman patio and chimney",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 267890,
+      "sha256": "466dad3177d7eeabc6ced23215590279c6edd2f19c898ca33d47eea321866673"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressing/blackpine-03-cold-cabin-hearth.png",
+      "url": "development/levels/previews/blackpine-dressing/blackpine-03-cold-cabin-hearth.png",
+      "title": "Blackpine 03 cold cabin hearth",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 684158,
+      "sha256": "4bc0f55cab8e82434dc8790b73a67f2b21c4634b79a69962a90d58934d695c58"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressing/blackpine-04-mess-stoop-and-flowers.png",
+      "url": "development/levels/previews/blackpine-dressing/blackpine-04-mess-stoop-and-flowers.png",
+      "title": "Blackpine 04 mess stoop and flowers",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 275325,
+      "sha256": "34c9fb2b3175195b5a890f4b1acaa6e6c36ac97414d462dbef14bf56bbbefdc8"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressing/blackpine-05-mill-timber-and-work.png",
+      "url": "development/levels/previews/blackpine-dressing/blackpine-05-mill-timber-and-work.png",
+      "title": "Blackpine 05 mill timber and work",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 283515,
+      "sha256": "889ef582a3f57b17270c823748ad2762a05a424d852820bde6f462b6d3f3497b"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressing/blackpine-06-layered-eastern-woodland.png",
+      "url": "development/levels/previews/blackpine-dressing/blackpine-06-layered-eastern-woodland.png",
+      "title": "Blackpine 06 layered eastern woodland",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 227156,
+      "sha256": "c759a11b5b387e357a4aef0eac7bf5bf470bd8071ac12b261b35f6992856aea3"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressing/blackpine-07-low-planting-and-cabins.png",
+      "url": "development/levels/previews/blackpine-dressing/blackpine-07-low-planting-and-cabins.png",
+      "title": "Blackpine 07 low planting and cabins",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 266271,
+      "sha256": "f067d6d46aa355b8c791b9c05797fc70c4d3fd5e04be046aa60f77fbade1e3bc"
+    },
+    {
+      "path": "development/levels/previews/blackpine-dressing/blackpine-08-open-yard-retained.png",
+      "url": "development/levels/previews/blackpine-dressing/blackpine-08-open-yard-retained.png",
+      "title": "Blackpine 08 open yard retained",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 198747,
+      "sha256": "bcd2f20001dae20d4fa113395e82edd7d563aea97be837c14cae2fc331cf2af8"
+    },
+    {
       "path": "development/levels/previews/blackpine-mill-expanded-blender-exterior.png",
       "url": "development/levels/previews/blackpine-mill-expanded-blender-exterior.png",
       "title": "Blackpine mill expanded blender exterior",
@@ -1072,6 +1202,176 @@
       "height": 800,
       "bytes": 1258641,
       "sha256": "99c8b97ebf3877004a738759be8604d3870cfa734ccf2ca762a1aefb3554fa7b"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story-native/01-crew-life.png",
+      "url": "development/levels/previews/blackpine-story-native/01-crew-life.png",
+      "title": "01 crew life",
+      "kind": "Development review",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1301555,
+      "sha256": "4403b26b920453b59bbe5ce63dbb32d2c064da2c031773bd890dce429759898c"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story-native/02-final-payroll.png",
+      "url": "development/levels/previews/blackpine-story-native/02-final-payroll.png",
+      "title": "02 final payroll",
+      "kind": "Development review",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1383741,
+      "sha256": "866bfb6a2e8b15d278055292b18bd2441305fccd91ccc91933070041e59f5dbf"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story-native/03-foreman-belongings.png",
+      "url": "development/levels/previews/blackpine-story-native/03-foreman-belongings.png",
+      "title": "03 foreman belongings",
+      "kind": "Development review",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1473770,
+      "sha256": "6f794ad68be3e567389550dbf58843a7bf3464bebe6acfc3b2c9a6c1c4bd164a"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story-native/04-recent-occupation.png",
+      "url": "development/levels/previews/blackpine-story-native/04-recent-occupation.png",
+      "title": "04 recent occupation",
+      "kind": "Development review",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1474517,
+      "sha256": "e37fa474f652efcc5f2ae1edac038f00d4e0c44f5e712ae3025aca6681f336cf"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story-native/05-washing-and-retired-heat.png",
+      "url": "development/levels/previews/blackpine-story-native/05-washing-and-retired-heat.png",
+      "title": "05 washing and retired heat",
+      "kind": "Development review",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1342932,
+      "sha256": "dd124d74cef1b9ce28b55a534423a23675c524dcaf80f3f4d007a7d567cf7a74"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story-native/06-repair-and-maintenance-power.png",
+      "url": "development/levels/previews/blackpine-story-native/06-repair-and-maintenance-power.png",
+      "title": "06 repair and maintenance power",
+      "kind": "Development review",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1401107,
+      "sha256": "051c5a53832c093a2b93c430593f79953d607ef9c1550b60571b7c039c3ebe28"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story-native/07-kitchen-services.png",
+      "url": "development/levels/previews/blackpine-story-native/07-kitchen-services.png",
+      "title": "07 kitchen services",
+      "kind": "Development review",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1319269,
+      "sha256": "fdfddbd295007c83abe9af58d132a5041935f32448cc412fc02279b2e27ed221"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/blackpine-01-crew-beds-stove-and-boards.png",
+      "url": "development/levels/previews/blackpine-story/blackpine-01-crew-beds-stove-and-boards.png",
+      "title": "Blackpine 01 crew beds stove and boards",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 627973,
+      "sha256": "431ea49b77dff03eed6d54fee91c514dddddcf623150e4907897460516920485"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/blackpine-02-payroll-pencils-and-papers.png",
+      "url": "development/levels/previews/blackpine-story/blackpine-02-payroll-pencils-and-papers.png",
+      "title": "Blackpine 02 payroll pencils and papers",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 616347,
+      "sha256": "416d8a867baf0e3e98fc8d780352d3da95396d1cb64ca771682e1514d815ea08"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/blackpine-03-foreman-photo-and-journal.png",
+      "url": "development/levels/previews/blackpine-story/blackpine-03-foreman-photo-and-journal.png",
+      "title": "Blackpine 03 foreman photo and journal",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 743107,
+      "sha256": "6f91c79a65882aae7f66896a49ffd634fe1aa1d65746fd654f7e91191e91df0e"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/blackpine-04-recent-shelter.png",
+      "url": "development/levels/previews/blackpine-story/blackpine-04-recent-shelter.png",
+      "title": "Blackpine 04 recent shelter",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 709449,
+      "sha256": "41279a6bcdb111e5b7b222d17fe4776703338fa62a9db7a167f71fb1cd43a83c"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/blackpine-05-washhouse-oil-and-water.png",
+      "url": "development/levels/previews/blackpine-story/blackpine-05-washhouse-oil-and-water.png",
+      "title": "Blackpine 05 washhouse oil and water",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 533916,
+      "sha256": "95017230f2c695705241c192b6f54b537a8619d5963d1d81476c2b1678542e26"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/blackpine-06-repair-shed-power-service.png",
+      "url": "development/levels/previews/blackpine-story/blackpine-06-repair-shed-power-service.png",
+      "title": "Blackpine 06 repair shed power service",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 718357,
+      "sha256": "699f173bb50d399af7eeb1722c4eae08949ae62f4a6eb63e68599c3685dfd2e7"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/blackpine-07-kitchen-heat-and-dry-stores.png",
+      "url": "development/levels/previews/blackpine-story/blackpine-07-kitchen-heat-and-dry-stores.png",
+      "title": "Blackpine 07 kitchen heat and dry stores",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 524170,
+      "sha256": "381ea81a4c735c42dc698835dfad8b72cf45c71e932e4636f19b9057dba9f99d"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/read-payroll.png",
+      "url": "development/levels/previews/blackpine-story/read-payroll.png",
+      "title": "Read payroll",
+      "kind": "Development review",
+      "width": 900,
+      "height": 600,
+      "bytes": 8371,
+      "sha256": "25c9b6a2b1824b55c0b3292f3787806d5a780675a28051da6ae29d8d162897af"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/read-service.png",
+      "url": "development/levels/previews/blackpine-story/read-service.png",
+      "title": "Read service",
+      "kind": "Development review",
+      "width": 900,
+      "height": 600,
+      "bytes": 10806,
+      "sha256": "4856cf65bf25ca2de4105d34b25440b38f7c6d8c8dfb515966e33cc48c0d84c7"
+    },
+    {
+      "path": "development/levels/previews/blackpine-story/read-shelter.png",
+      "url": "development/levels/previews/blackpine-story/read-shelter.png",
+      "title": "Read shelter",
+      "kind": "Development review",
+      "width": 900,
+      "height": 600,
+      "bytes": 9673,
+      "sha256": "cc538fbbb693e127982459c6df173b4cae5d8c12aff9e53b0867a6bb0ffce395"
     },
     {
       "path": "development/levels/previews/blackpine/blackpine-01-yard-and-mill.png",
@@ -1142,6 +1442,156 @@
       "height": 600,
       "bytes": 59916,
       "sha256": "478c14c0dd00a70d35b5ca947006ce3ac4955584356df4f71473776ff4337f17"
+    },
+    {
+      "path": "development/levels/previews/castle-surroundings-blender-exterior.png",
+      "url": "development/levels/previews/castle-surroundings-blender-exterior.png",
+      "title": "Castle surroundings blender exterior",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1197138,
+      "sha256": "f30a49b5bfd7feef6b78a08712bf9b5a4414a2d7c30c3b49f6fc4042d295eb72"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-1120-page-0.png",
+      "url": "development/levels/previews/common-archive/archive-1120-page-0.png",
+      "title": "Archive 1120 page 0",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 230521,
+      "sha256": "b2d6b0002d4b98669f50f3aced0b6e2b727cb28cfbaec89c72d6d498d19a355f"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-1120-page-1.png",
+      "url": "development/levels/previews/common-archive/archive-1120-page-1.png",
+      "title": "Archive 1120 page 1",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 231448,
+      "sha256": "e1a4a65fd0efe6b062a8eb7fc621dc48539f0d2a6f395edb73f0caa7c7e8ac1f"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-1120-page-13.png",
+      "url": "development/levels/previews/common-archive/archive-1120-page-13.png",
+      "title": "Archive 1120 page 13",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 230773,
+      "sha256": "e242070319f309567ba4dfdca65c4f8be58372446c8ed0cf1c71728fecf417b1"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-1120-page-4.png",
+      "url": "development/levels/previews/common-archive/archive-1120-page-4.png",
+      "title": "Archive 1120 page 4",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 229191,
+      "sha256": "74173516a2d0646934f9feb0fd86f87a0946d23ac4961f8bc9ac92d42dcd6340"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-1120-page-8.png",
+      "url": "development/levels/previews/common-archive/archive-1120-page-8.png",
+      "title": "Archive 1120 page 8",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 231573,
+      "sha256": "6f68a8e36fdb9433cfc6fd5f5b687142f3d2fc9bf48a6e81507a0373d347f5ed"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-640-page-0.png",
+      "url": "development/levels/previews/common-archive/archive-640-page-0.png",
+      "title": "Archive 640 page 0",
+      "kind": "Development review",
+      "width": 640,
+      "height": 360,
+      "bytes": 21929,
+      "sha256": "62a47d51574f8f772bc5dc20289ce56a88cfd75e021339c4e66a89b21a6fb148"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-640-page-1.png",
+      "url": "development/levels/previews/common-archive/archive-640-page-1.png",
+      "title": "Archive 640 page 1",
+      "kind": "Development review",
+      "width": 640,
+      "height": 360,
+      "bytes": 21541,
+      "sha256": "cba1a4deadc3c1a22c5b5a6816d73ed7eca14abd581ec4066c02ceeb90935a01"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-640-page-13.png",
+      "url": "development/levels/previews/common-archive/archive-640-page-13.png",
+      "title": "Archive 640 page 13",
+      "kind": "Development review",
+      "width": 640,
+      "height": 360,
+      "bytes": 21580,
+      "sha256": "93bb9ed673c0cf89b3721ddc5543f1a72a83cf53a8bfe6c5e9c3a3eca4afc148"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-640-page-4.png",
+      "url": "development/levels/previews/common-archive/archive-640-page-4.png",
+      "title": "Archive 640 page 4",
+      "kind": "Development review",
+      "width": 640,
+      "height": 360,
+      "bytes": 21087,
+      "sha256": "b148b6a102507aca872ecffde70072cc5afc24b786a5c23637fc5e996b9b7903"
+    },
+    {
+      "path": "development/levels/previews/common-archive/archive-640-page-8.png",
+      "url": "development/levels/previews/common-archive/archive-640-page-8.png",
+      "title": "Archive 640 page 8",
+      "kind": "Development review",
+      "width": 640,
+      "height": 360,
+      "bytes": 20763,
+      "sha256": "ad28c733694df220848ef25c9ffc7162c6d30a7215cc9b4ebace9b72cff39740"
+    },
+    {
+      "path": "development/levels/previews/common-archive/castle-records-desk-and-lorekeeper.png",
+      "url": "development/levels/previews/common-archive/castle-records-desk-and-lorekeeper.png",
+      "title": "Castle records desk and lorekeeper",
+      "kind": "Development review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 430393,
+      "sha256": "3444d101f28bc6dc69460b6b74da7a5eb025a608d9fe92e10e30ba2324d3fc28"
+    },
+    {
+      "path": "development/levels/previews/common-archive/survivor-record-farmhouse.png",
+      "url": "development/levels/previews/common-archive/survivor-record-farmhouse.png",
+      "title": "Survivor record farmhouse",
+      "kind": "Development review",
+      "width": 900,
+      "height": 600,
+      "bytes": 9498,
+      "sha256": "1b4b2704291c1e120547bf41cb52f0c5abff54c9070700cc3525d790aa1cd5ac"
+    },
+    {
+      "path": "development/levels/previews/common-archive/survivor-record-house.png",
+      "url": "development/levels/previews/common-archive/survivor-record-house.png",
+      "title": "Survivor record house",
+      "kind": "Development review",
+      "width": 900,
+      "height": 600,
+      "bytes": 9464,
+      "sha256": "9ccfe497ee67951eb4bda612f35729ecd940b299d9928e20a67975629819e800"
+    },
+    {
+      "path": "development/levels/previews/common-archive/survivor-record-school.png",
+      "url": "development/levels/previews/common-archive/survivor-record-school.png",
+      "title": "Survivor record school",
+      "kind": "Development review",
+      "width": 900,
+      "height": 600,
+      "bytes": 9594,
+      "sha256": "861f97d15818b9e5ec9e768e80d547e0a39844d1792d1070cfb0e5310cb8c224"
     },
     {
       "path": "development/levels/previews/defects/DEV-001-before-underloft-lit.png",
@@ -1684,14 +2134,54 @@
       "sha256": "21c33b444f4fa03b3f9fee235ae52ace161833a2c91e92bdac25fa798c977afc"
     },
     {
+      "path": "development/levels/previews/enclosure-mountain-blender-exterior.png",
+      "url": "development/levels/previews/enclosure-mountain-blender-exterior.png",
+      "title": "Enclosure mountain blender exterior",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1269567,
+      "sha256": "16f49c81a697621a33d13b85533b053aa4794294a9d2f6a8b1f06953d0ed84c1"
+    },
+    {
+      "path": "development/levels/previews/enclosure-suburban-blender-exterior.png",
+      "url": "development/levels/previews/enclosure-suburban-blender-exterior.png",
+      "title": "Enclosure suburban blender exterior",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1283842,
+      "sha256": "dd5448858a16951b8da421f6160d4f2e7ddf2f2629dd5206fc841d05b2a709bd"
+    },
+    {
+      "path": "development/levels/previews/enclosure-urban-blender-exterior.png",
+      "url": "development/levels/previews/enclosure-urban-blender-exterior.png",
+      "title": "Enclosure urban blender exterior",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1111754,
+      "sha256": "c9d57ac6a518ece18635ce8b440825efdf4da14d50a7e1ebd9a091aa5c910946"
+    },
+    {
+      "path": "development/levels/previews/enclosure-woodland-blender-exterior.png",
+      "url": "development/levels/previews/enclosure-woodland-blender-exterior.png",
+      "title": "Enclosure woodland blender exterior",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1302020,
+      "sha256": "9d7a9d602b5a52aa50925b409ebf2517712b86aff9f7126a5df852304854ce56"
+    },
+    {
       "path": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
       "url": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
       "title": "Farmhouse 01 arrival road",
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 212561,
-      "sha256": "2c8ae4ba875df1a9ddca230e28df81782963d903fa2d990a9a804e17403ffc3e"
+      "bytes": 212132,
+      "sha256": "0e410daec34d634f9670b6abb060ef043c3d227c69a093498690dd549a13289c"
     },
     {
       "path": "development/levels/previews/enclosures/farmhouse-02-yard-boundary.png",
@@ -1700,8 +2190,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 304291,
-      "sha256": "86273df57f2617149b114e682287d8b3a68641ebede212ff61de0d99f0298fa2"
+      "bytes": 248950,
+      "sha256": "b88b9524cf0d7d33018d3a3cf3c5c5a5f3ec93555668b9df67d7e9f325dc29d8"
     },
     {
       "path": "development/levels/previews/enclosures/farmhouse-03-elevated-overview.png",
@@ -1710,8 +2200,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 307276,
-      "sha256": "23a0f4ef1942d3b0f4d148ce80dca08c93f5ebc81327a524a2255ddad58cc858"
+      "bytes": 311233,
+      "sha256": "b2606a927c882a9b35f4059bc0c286440370e2620e196fef937d082d95570350"
     },
     {
       "path": "development/levels/previews/enclosures/farmhouse-04-name-and-address.png",
@@ -1720,8 +2210,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 837691,
-      "sha256": "b2fec117911fbb215f2934ce779a0eb3ab95f1c31a68d51549ad796936407223"
+      "bytes": 533283,
+      "sha256": "683721ca4489676461609b80388101ab54bdd4ec49a3a44585f8f8d606cb8814"
     },
     {
       "path": "development/levels/previews/enclosures/farmhouse-05-family-papers.png",
@@ -1730,8 +2220,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 638988,
-      "sha256": "80969141302cefec8161cfe4704b93c03df3c0456917d4a8b90aea44b175fc0c"
+      "bytes": 407888,
+      "sha256": "bdaa8eb0e3c16fc45a741ec08df30f24461438173eff40c8e51bd4c498124119"
     },
     {
       "path": "development/levels/previews/enclosures/house-01-arrival-road.png",
@@ -1740,8 +2230,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 230617,
-      "sha256": "c5d5ba2eb1832819435a6ba3d587f0d586d1a32724a8cc9b482ae654a471b3cb"
+      "bytes": 204248,
+      "sha256": "e4dac5b20ad75d41235becc67250a002d7ad340d6bde9fdb629bf049e6915d8b"
     },
     {
       "path": "development/levels/previews/enclosures/house-02-yard-boundary.png",
@@ -1750,8 +2240,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 358228,
-      "sha256": "11e9d42d3b746245784bf4cda3a1415d84ed4110b00e788a760f07f8bd7cb9d9"
+      "bytes": 301595,
+      "sha256": "a384664c566e29f42201ad9064214e9e79f2e717a0751b1e2d7b4add297823e5"
     },
     {
       "path": "development/levels/previews/enclosures/house-03-elevated-overview.png",
@@ -1760,8 +2250,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 267672,
-      "sha256": "41875facb57b8159adf6e9b9aa5db42cf13470b2960316d68265b950858a56d2"
+      "bytes": 282714,
+      "sha256": "d895d6d53eb1772e64c221c2cae560062def637c8c6cfad43009fb325d14783e"
     },
     {
       "path": "development/levels/previews/enclosures/house-04-name-and-address.png",
@@ -1770,8 +2260,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 511322,
-      "sha256": "2ef82fa8db4a220be7df9672d7a3fc6a0157c0e67f0c26b7a4ef663cde45ca99"
+      "bytes": 404441,
+      "sha256": "61fb8bc66444c7a83345a8ca537e1b8ae3befcbd5db6088062697429927924bc"
     },
     {
       "path": "development/levels/previews/enclosures/house-05-family-papers.png",
@@ -1780,8 +2270,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 717097,
-      "sha256": "790a3423b440904d42056bbdc815c3aa9a2dcdc6b4937f9b0ed673f8570de98f"
+      "bytes": 585423,
+      "sha256": "02e6156d9d1bbe79dfedea29bbe94c56001772a2c8b680f293f2d57a5712d15a"
     },
     {
       "path": "development/levels/previews/enclosures/school-01-arrival-road.png",
@@ -1790,8 +2280,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 230664,
-      "sha256": "2ec7453db9cbc7be5602ae6842cce5893a3d83ec43a2bb0b6ecc097009ff0c7f"
+      "bytes": 179604,
+      "sha256": "ad2c5308044856366bd9230314ebae7d09df41a48a43fa84108b3eaee01b6014"
     },
     {
       "path": "development/levels/previews/enclosures/school-02-yard-boundary.png",
@@ -1800,8 +2290,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 409248,
-      "sha256": "e814d41b19689cf04964026cd589d73bf1600e661149b040ea17644ed22a92c9"
+      "bytes": 282626,
+      "sha256": "bb2473972f95d04945595c3b18609825da05cfe37d565f83621bd9c6c040a34a"
     },
     {
       "path": "development/levels/previews/enclosures/school-03-elevated-overview.png",
@@ -1810,8 +2300,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 313670,
-      "sha256": "be44689c800bf38e71b9ddaa5ddd96a24435c2f2085a3b1127f1885de5381287"
+      "bytes": 332161,
+      "sha256": "df60308d85942c71328ae1298fac666e2955249545d566b997da664f2c29e079"
     },
     {
       "path": "development/levels/previews/enclosures/school-04-name-and-address.png",
@@ -1820,8 +2310,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 627230,
-      "sha256": "44e3a779efc02bb2e2a5c1dcdd3e49137302f09e35b4e9eba0988f649dfb749a"
+      "bytes": 76727,
+      "sha256": "858e1e9f52eb740967551bdbe90624b3f47a0fa4b34cac821bc413d9d938f0e5"
     },
     {
       "path": "development/levels/previews/enclosures/school-05-family-papers.png",
@@ -1830,8 +2320,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 456592,
-      "sha256": "8349b4cde7ec7f8c9c85020e1188d64b45287c3375912eda7cd2df1083be9056"
+      "bytes": 276346,
+      "sha256": "d8c37e57a2145e2022833b7348ec5a54394ef38b724f55c15c6e7a7b0280f01b"
     },
     {
       "path": "development/levels/previews/farmhouse-blender-exterior.png",
@@ -1840,8 +2330,18 @@
       "kind": "Native scene overview",
       "width": 1280,
       "height": 800,
-      "bytes": 1107506,
-      "sha256": "04f1125811b05d55e0516f9006e354539cb9364ffdcb5da2d0e5c0a17f4f5dc4"
+      "bytes": 1194220,
+      "sha256": "37bd86e3a622a42447ebe9ca9335b1484e47228180d0807d511caf65d67c11de"
+    },
+    {
+      "path": "development/levels/previews/foliage-one-source-eight-instances.png",
+      "url": "development/levels/previews/foliage-one-source-eight-instances.png",
+      "title": "Foliage one source eight instances",
+      "kind": "Development review",
+      "width": 1440,
+      "height": 600,
+      "bytes": 818610,
+      "sha256": "bb15ebd2ff7dda6819a3281ff6242d0ce2d58198129f5d79de52f0d3d4ce863a"
     },
     {
       "path": "development/levels/previews/hollow-creek-runtime/arrival-runtime.png",
@@ -3202,8 +3702,8 @@
       "kind": "Native scene overview",
       "width": 1280,
       "height": 800,
-      "bytes": 1073268,
-      "sha256": "0aff4e62faa0d9cbd9ecd3d875066e11835c03e57ea73f8b32b205e1240396d6"
+      "bytes": 1130241,
+      "sha256": "9b2d55e68d19844ccc33c57dd6862e18ffde9b151a8e0a32e6e39e356ca5a97a"
     },
     {
       "path": "development/levels/previews/level_basketball_hoop.png",
@@ -6762,8 +7262,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 651015,
-      "sha256": "cc65be9993145cf9ca26015a654f174bbf77ea236d309882136461ca21ded0c5"
+      "bytes": 718101,
+      "sha256": "2a4ea6f3319bc9a236d4bb0ff6ef9eb0d20323de06f5a6ac8c3e047b5cac349f"
     },
     {
       "path": "development/levels/previews/lived-location/farm-02-shower-and-hamper.png",
@@ -6772,8 +7272,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 842435,
-      "sha256": "4acb04535514660cea9e4938d4cccb2a9b7a7af189becf9845f2ae298f65cb56"
+      "bytes": 899262,
+      "sha256": "cab23bc6e568d4bf15e6109fd8a3896319d6ea8498e36f2ccf44f41cab63e132"
     },
     {
       "path": "development/levels/previews/lived-location/farm-03-shed-laundry.png",
@@ -6782,8 +7282,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 816917,
-      "sha256": "54ddfbe2ca0082634f7883daccd796e53de8fbb57793de0e039944822a1ba980"
+      "bytes": 614478,
+      "sha256": "a2919835dc936e58c8f04d325329b3199d784c85ac3a423db77bfb1cb5283218"
     },
     {
       "path": "development/levels/previews/lived-location/farm-04-yard-drying-line.png",
@@ -6792,8 +7292,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 114866,
-      "sha256": "b2e5e5f1b0c601d42754194b54048c54ef0950964cd90bf122da9edf6b9493f2"
+      "bytes": 186131,
+      "sha256": "8285ed5a0bbfe7ff259fe906367dbf2a85688ad1a257a63f3302dea5b037230d"
     },
     {
       "path": "development/levels/previews/lived-location/house-01-complete-bathroom.png",
@@ -6802,8 +7302,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 627854,
-      "sha256": "201221baff681443ceec8dffd7de47c7eee2ae4ffb8b065e018f7102a9107e53"
+      "bytes": 608892,
+      "sha256": "78934bb8898f71559cab1b3e96785d31c2c9105e4f8423ac1210719a42b0d6d9"
     },
     {
       "path": "development/levels/previews/lived-location/house-02-basin-and-toiletries.png",
@@ -6812,8 +7312,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 587381,
-      "sha256": "337556ce131cbdeca86672d15bf408b187eca1b55eaf7c0d772b01e3031e3e7f"
+      "bytes": 477680,
+      "sha256": "d49724896d7f9aa2b2d1ef1c411f8858f55e2eddc71663d62fa34e7496cb6b70"
     },
     {
       "path": "development/levels/previews/lived-location/house-03-bath-and-wall-supported-shower.png",
@@ -6822,8 +7322,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 591453,
-      "sha256": "3e46dec0dbec4bb164041ade46f45b0894562b5e4fb8075446ce0f8384331c7c"
+      "bytes": 580606,
+      "sha256": "80651d667c668e35a72bd69265897b5c278febcacb8cd51dc8bac2712b4b9204"
     },
     {
       "path": "development/levels/previews/lived-location/house-04-laundry-utility-room.png",
@@ -6832,8 +7332,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 982093,
-      "sha256": "cbc98cca2c53681ef2853b1d0edbd9c1417bb10ff4a52b86082413f5aa9e375b"
+      "bytes": 579234,
+      "sha256": "4ef98342e264b63d60c6bb0bc33dcb4dd20a1094add2d25affa598ced6099b07"
     },
     {
       "path": "development/levels/previews/lived-location/house-05-toilet-and-hamper.png",
@@ -6842,8 +7342,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 630169,
-      "sha256": "f236e797d265815f3e253854a9df608b68055ac3da2fb5ba0cbd61b49de16aa9"
+      "bytes": 575895,
+      "sha256": "bd6ea08ed995b632a8391e8403a3b0871a5f2252f9c5fa756a547e7de4b6b1a8"
     },
     {
       "path": "development/levels/previews/lived-location/school-01-boys-handwash-and-urinal.png",
@@ -6852,8 +7352,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 537294,
-      "sha256": "d9271d1a6f9cc784e6776662dc3d226745d2292ce9d9a0a2d80350a2640170ff"
+      "bytes": 823597,
+      "sha256": "1cfc3ebd6a7bdf1d68679e354abeff7eff00be6237e0ba25d42d5bb7beda8a9e"
     },
     {
       "path": "development/levels/previews/lived-location/school-02-boys-private-cubicles.png",
@@ -6862,8 +7362,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 596530,
-      "sha256": "f0741aa402d8f39fde865b4f5a0bccd8c771051f1cf4942f7e2b0aee1a521c5f"
+      "bytes": 630012,
+      "sha256": "907a1cabcd4ff4201aee716b41d4789a2f06ea2020bd0c1777f9c560b454e556"
     },
     {
       "path": "development/levels/previews/lived-location/school-03-girls-handwash.png",
@@ -6872,8 +7372,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 435631,
-      "sha256": "9fe25233a259f2a4722d6144797247d9a3432a976af9a9202b5f291a07c3e3a8"
+      "bytes": 800168,
+      "sha256": "22708775b3cf2f70d63703dddedfdb924476e2f3ea59f86563b1190f7134c2b9"
     },
     {
       "path": "development/levels/previews/lived-location/school-04-upper-corridor-clearance.png",
@@ -6882,8 +7382,8 @@
       "kind": "Development review",
       "width": 960,
       "height": 600,
-      "bytes": 780765,
-      "sha256": "0d528199a5874a7333ec9a0861d73a6612444018dab7cf1555a374f54527bc73"
+      "bytes": 538586,
+      "sha256": "3fb48c045f524abfa1fab38c859ba659481f3784a675da5aa6179e7f42a25822"
     },
     {
       "path": "development/levels/previews/mill-expansion/blackpine-dust-extractor.png",
@@ -6892,8 +7392,8 @@
       "kind": "Runtime capture",
       "width": 1120,
       "height": 700,
-      "bytes": 390808,
-      "sha256": "260789cfabb40695524ac4abbcbf028c3db6ca237b40410a431fb8276ee08e2a"
+      "bytes": 493075,
+      "sha256": "fe1a7e99cb53e17d133f150747ba88b512c202e956069766ac3be3eb730517a6"
     },
     {
       "path": "development/levels/previews/mill-expansion/blackpine-mill-working-floor.png",
@@ -6902,8 +7402,8 @@
       "kind": "Runtime capture",
       "width": 1120,
       "height": 700,
-      "bytes": 386574,
-      "sha256": "54cbe4ca60f25b5a447a81410c150a4b5071774e83a077109e437248e9b78770"
+      "bytes": 470678,
+      "sha256": "677684bb5bdfdc3fb4ac88fe5d7035dc2e9ededc78e3bee1f1a89f7960729d70"
     },
     {
       "path": "development/levels/previews/mill-expansion/blackpine-safety-station.png",
@@ -6912,8 +7412,8 @@
       "kind": "Runtime capture",
       "width": 1120,
       "height": 700,
-      "bytes": 427864,
-      "sha256": "b04e64be005d03c44088ce1e44297337078c818d36d1875b86db2da604d8fe37"
+      "bytes": 427724,
+      "sha256": "e7d03e15efaa4028ee43e0849d08b610cadab7469b0f159c5dca0ceeae42c936"
     },
     {
       "path": "development/levels/previews/mill-expansion/blackpine-timber-rack.png",
@@ -6922,8 +7422,8 @@
       "kind": "Runtime capture",
       "width": 1120,
       "height": 700,
-      "bytes": 510882,
-      "sha256": "e40681fd9a9cee7f67343a1b22b9de94b552767f1ca157b1fdab52764fec6204"
+      "bytes": 512049,
+      "sha256": "15a0611088cf2d36d5655efadfc701489a19bfac221f75d803e4b1d2419f2052"
     },
     {
       "path": "development/levels/previews/mill-expansion/blackpine-workshop-bandsaw.png",
@@ -6932,8 +7432,8 @@
       "kind": "Runtime capture",
       "width": 1120,
       "height": 700,
-      "bytes": 556166,
-      "sha256": "9062768190df72b449771240ab832f42f7da2de834b253ba1634958f25a1f248"
+      "bytes": 555765,
+      "sha256": "ba4185fd98345aa4185a4f0a91f0fb1e4dbff978ac013d493967a749440aaca3"
     },
     {
       "path": "development/levels/previews/mill-expansion/logway-assembly-studio.png",
@@ -7012,8 +7512,8 @@
       "kind": "Model inspection",
       "width": 1120,
       "height": 700,
-      "bytes": 405320,
-      "sha256": "9a9a8a323cab374072a7988a8efb75d516b5d14656af719636cfbf6126e9f6ca"
+      "bytes": 403049,
+      "sha256": "e0614a0e09132c3c6e797d9b886f7fbb33ce64cb63fdf7b19027f1764049bb1e"
     },
     {
       "path": "development/levels/previews/model-production/blackpine-level_work_boot_rack.png",
@@ -7042,8 +7542,8 @@
       "kind": "Model inspection",
       "width": 1120,
       "height": 700,
-      "bytes": 371923,
-      "sha256": "dfcaf69fd7d479b855a44bd178cc94c47d65a6d15a3e66c27f393ed3c1be4799"
+      "bytes": 247439,
+      "sha256": "ce2c1d3db4555b4c1debc2cccf34ff0a849dfe6d785766d8cca003f5a3006b85"
     },
     {
       "path": "development/levels/previews/model-production/blackpine-level_work_hearth_tools.png",
@@ -7052,8 +7552,8 @@
       "kind": "Model inspection",
       "width": 1120,
       "height": 700,
-      "bytes": 530259,
-      "sha256": "f14bda302c3dea635e714538f3e76eb21fe0cce7a0bc2802dfc32da1b2173c33"
+      "bytes": 439837,
+      "sha256": "7d3fbd6938c387b5a0e33ddca4b0b7cbe65ae4565c5641ceccf4f71b80545454"
     },
     {
       "path": "development/levels/previews/model-production/blackpine-level_work_log_carriage.png",
@@ -7072,8 +7572,8 @@
       "kind": "Model inspection",
       "width": 1120,
       "height": 700,
-      "bytes": 440908,
-      "sha256": "e42b8f11f8e76872a079164ece22ae5467ecd4ced29597ccd509c8c5f045de47"
+      "bytes": 540336,
+      "sha256": "e0f28d36e2cca1a0ecf712d39b5b3eabad4c23f546b490c8611c3af9997c5651"
     },
     {
       "path": "development/levels/previews/model-production/blackpine-level_work_survivor_cookbox.png",
@@ -7194,6 +7694,106 @@
       "height": 500,
       "bytes": 202407,
       "sha256": "ef32c65aa0b5bb2b208fbc38096808db964f54e5788b66e3f173a90d1c475fa0"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/castle-01-mountain-courtyard.png",
+      "url": "development/levels/previews/physical-lighting/castle-01-mountain-courtyard.png",
+      "title": "Castle 01 mountain courtyard",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 170963,
+      "sha256": "8b6393f52683491a00b3fe2f5f9871a7948438f6fcba391f5431eecb39a52a76"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/castle-02-surroundings-overview.png",
+      "url": "development/levels/previews/physical-lighting/castle-02-surroundings-overview.png",
+      "title": "Castle 02 surroundings overview",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 298383,
+      "sha256": "2314f593ae761fa92105d808337a782f0edf4eb202d5ec02359ed7bf36f7e7f7"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/farm-01-bare-bulb-laundry.png",
+      "url": "development/levels/previews/physical-lighting/farm-01-bare-bulb-laundry.png",
+      "title": "Farm 01 bare bulb laundry",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 689599,
+      "sha256": "01e3aa2a7926f9ec5a2c95bde66e66148de897b661f3a992dec4f62f6876731d"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/house-01-bedside-warm-cone.png",
+      "url": "development/levels/previews/physical-lighting/house-01-bedside-warm-cone.png",
+      "title": "House 01 bedside warm cone",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 293669,
+      "sha256": "3f0316ea5a6b2c8e5136e99813bfd6b7338cdd009c26dd84454fe44eb80c847c"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/house-02-bedside-switched-off.png",
+      "url": "development/levels/previews/physical-lighting/house-02-bedside-switched-off.png",
+      "title": "House 02 bedside switched off",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 217180,
+      "sha256": "1ad738560cac159f4539af0c8015a1d0c489e466950dbeeecc83356be46f1811"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/house-03-candle-chandelier.png",
+      "url": "development/levels/previews/physical-lighting/house-03-candle-chandelier.png",
+      "title": "House 03 candle chandelier",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 664335,
+      "sha256": "d66e13465b1482512776ef6b6005d9c5aa5f63aec8a6c1eb7f120ecef24a99f3"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/house-04-tv-static-glow.png",
+      "url": "development/levels/previews/physical-lighting/house-04-tv-static-glow.png",
+      "title": "House 04 tv static glow",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 333413,
+      "sha256": "8176fef1c8892f74d207a00e97380874465f2376cad39b2b3b36f4367bbd463b"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/house-05-tv-switched-off.png",
+      "url": "development/levels/previews/physical-lighting/house-05-tv-switched-off.png",
+      "title": "House 05 tv switched off",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 276812,
+      "sha256": "98110fde19bb3868392d21996643c3c0344c737943d92650771329f82d8dec5e"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/school-01-washroom-fluorescents.png",
+      "url": "development/levels/previews/physical-lighting/school-01-washroom-fluorescents.png",
+      "title": "School 01 washroom fluorescents",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 787309,
+      "sha256": "1d18002f425758a4a9edb76f106ba19953d06abeb4287f11a3b7072be746b44a"
+    },
+    {
+      "path": "development/levels/previews/physical-lighting/school-02-boiler-fluorescents.png",
+      "url": "development/levels/previews/physical-lighting/school-02-boiler-fluorescents.png",
+      "title": "School 02 boiler fluorescents",
+      "kind": "Development review",
+      "width": 960,
+      "height": 600,
+      "bytes": 510298,
+      "sha256": "fdab83282d54839655658d0f17254cc35db8a3dcbe22cbb794247f37567d7f11"
     },
     {
       "path": "development/levels/previews/runtime/farmhouse-00-mudroom.png",
@@ -7762,8 +8362,8 @@
       "kind": "Native scene overview",
       "width": 1280,
       "height": 800,
-      "bytes": 1127996,
-      "sha256": "63031cfe623c98a14d17a2be9ca600b3fdab14daa2b3888fb02c5f3b61802c02"
+      "bytes": 1177460,
+      "sha256": "2189d71b12023af00f25438841921252475fb73c6ae4b698322769b780f30fbd"
     },
     {
       "path": "development/levels/previews/site-case-files/farmhouse-case-0-1120.png",
@@ -8724,6 +9324,126 @@
       "height": 933,
       "bytes": 695401,
       "sha256": "f9f55b46a957e4ab59055859cbee35a1ed0c46a2445cadfc384de5ef9bd879e6"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-0.png",
+      "url": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-0.png",
+      "title": "Baseline main f6793bda run 1 continuous house 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 150577,
+      "sha256": "5e8da266b39be4021fc43a711d6b069525928d49a5606595afadc74e3c568c03"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-3.png",
+      "url": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-3.png",
+      "title": "Baseline main f6793bda run 1 continuous house 3",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 348577,
+      "sha256": "1b3f1cbc33b5ef3b542e24418f5802831d848559d9d8a94e6ba004543e3450b7"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-5.png",
+      "url": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-5.png",
+      "title": "Baseline main f6793bda run 1 continuous house 5",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 268294,
+      "sha256": "4b96fd8958c59a00b31e8a1b026d72abceea12dcee75cf3530ee9cd8f7d59317"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-0.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-0.png",
+      "title": "Unified 417980e6 run 1 continuous house 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 150577,
+      "sha256": "5e8da266b39be4021fc43a711d6b069525928d49a5606595afadc74e3c568c03"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-3.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-3.png",
+      "title": "Unified 417980e6 run 1 continuous house 3",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 348577,
+      "sha256": "1b3f1cbc33b5ef3b542e24418f5802831d848559d9d8a94e6ba004543e3450b7"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-5.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-5.png",
+      "title": "Unified 417980e6 run 1 continuous house 5",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 268294,
+      "sha256": "4b96fd8958c59a00b31e8a1b026d72abceea12dcee75cf3530ee9cd8f7d59317"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-0.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-0.png",
+      "title": "Unified 417980e6 run 2 continuous house 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 150577,
+      "sha256": "5e8da266b39be4021fc43a711d6b069525928d49a5606595afadc74e3c568c03"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-3.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-3.png",
+      "title": "Unified 417980e6 run 2 continuous house 3",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 348577,
+      "sha256": "1b3f1cbc33b5ef3b542e24418f5802831d848559d9d8a94e6ba004543e3450b7"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-5.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-5.png",
+      "title": "Unified 417980e6 run 2 continuous house 5",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 268294,
+      "sha256": "4b96fd8958c59a00b31e8a1b026d72abceea12dcee75cf3530ee9cd8f7d59317"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-0.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-0.png",
+      "title": "Unified 417980e6 run 3 continuous house 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 150577,
+      "sha256": "5e8da266b39be4021fc43a711d6b069525928d49a5606595afadc74e3c568c03"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-3.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-3.png",
+      "title": "Unified 417980e6 run 3 continuous house 3",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 348577,
+      "sha256": "1b3f1cbc33b5ef3b542e24418f5802831d848559d9d8a94e6ba004543e3450b7"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-5.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-5.png",
+      "title": "Unified 417980e6 run 3 continuous house 5",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 268294,
+      "sha256": "4b96fd8958c59a00b31e8a1b026d72abceea12dcee75cf3530ee9cd8f7d59317"
     }
   ]
 }

@@ -1,0 +1,703 @@
+{
+  "checkout": "C:\\Users\\Admin\\Documents\\ChatGPT\\Phasmaphobia alike\\The-Beckenburg-Project",
+  "head": "6ac421492e5eb5a6784966848131c30f502f5fba",
+  "branch": "map/remaining-level-rough-blockouts",
+  "files": [
+    {
+      "status": " M",
+      "path": "development/levels/BLACKPINE_BUILD.md",
+      "size": 6514,
+      "sha256": "5ce2dbfe9c88a24fa66057600a159ef6f3bf9404eb3af5be118f9f1a3626ceed"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/WOODLAND_DETAILS.md",
+      "size": 2251,
+      "sha256": "cbc6e7f0538f8c510e526d4fa362ad4e8e0ac3775fe1c420eb79940aaf6fb238"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/blender/farmhouse-complete.blend",
+      "size": 16566617,
+      "sha256": "5c548893eb80f7fbd2390b9c92715adc72cbfa3fcd488e51b5d2c1b3bb3ba74a"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/blender/house-complete.blend",
+      "size": 19090463,
+      "sha256": "20a56e33b9dd02a3b1f322592668e7799bfdbe654acbb448d34705a097e6c347"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/blender/school-complete.blend",
+      "size": 18222350,
+      "sha256": "f45a7b859ea4c94c246099b209d2d5eade73c46a01d4ad3d61c4cd319897090b"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/build_scene.py",
+      "size": 11426,
+      "sha256": "35ae632b3bdf25a21c51581d90ae1ff5cb26eb39e10a3212ac6bd17302e727cd"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/farmhouse-01-arrival-road.png",
+      "size": 212132,
+      "sha256": "0e410daec34d634f9670b6abb060ef043c3d227c69a093498690dd549a13289c"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/farmhouse-02-yard-boundary.png",
+      "size": 248950,
+      "sha256": "b88b9524cf0d7d33018d3a3cf3c5c5a5f3ec93555668b9df67d7e9f325dc29d8"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/farmhouse-03-elevated-overview.png",
+      "size": 311233,
+      "sha256": "b2606a927c882a9b35f4059bc0c286440370e2620e196fef937d082d95570350"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/farmhouse-04-name-and-address.png",
+      "size": 533283,
+      "sha256": "683721ca4489676461609b80388101ab54bdd4ec49a3a44585f8f8d606cb8814"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/farmhouse-05-family-papers.png",
+      "size": 407888,
+      "sha256": "bdaa8eb0e3c16fc45a741ec08df30f24461438173eff40c8e51bd4c498124119"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/house-01-arrival-road.png",
+      "size": 204248,
+      "sha256": "e4dac5b20ad75d41235becc67250a002d7ad340d6bde9fdb629bf049e6915d8b"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/house-02-yard-boundary.png",
+      "size": 301595,
+      "sha256": "a384664c566e29f42201ad9064214e9e79f2e717a0751b1e2d7b4add297823e5"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/house-03-elevated-overview.png",
+      "size": 282714,
+      "sha256": "d895d6d53eb1772e64c221c2cae560062def637c8c6cfad43009fb325d14783e"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/house-04-name-and-address.png",
+      "size": 404441,
+      "sha256": "61fb8bc66444c7a83345a8ca537e1b8ae3befcbd5db6088062697429927924bc"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/house-05-family-papers.png",
+      "size": 585423,
+      "sha256": "02e6156d9d1bbe79dfedea29bbe94c56001772a2c8b680f293f2d57a5712d15a"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/school-01-arrival-road.png",
+      "size": 179604,
+      "sha256": "ad2c5308044856366bd9230314ebae7d09df41a48a43fa84108b3eaee01b6014"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/school-02-yard-boundary.png",
+      "size": 282626,
+      "sha256": "bb2473972f95d04945595c3b18609825da05cfe37d565f83621bd9c6c040a34a"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/school-03-elevated-overview.png",
+      "size": 332161,
+      "sha256": "df60308d85942c71328ae1298fac666e2955249545d566b997da664f2c29e079"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/school-04-name-and-address.png",
+      "size": 76727,
+      "sha256": "858e1e9f52eb740967551bdbe90624b3f47a0fa4b34cac821bc413d9d938f0e5"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/enclosures/school-05-family-papers.png",
+      "size": 276346,
+      "sha256": "d8c37e57a2145e2022833b7348ec5a54394ef38b724f55c15c6e7a7b0280f01b"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/farmhouse-blender-exterior.png",
+      "size": 1194220,
+      "sha256": "37bd86e3a622a42447ebe9ca9335b1484e47228180d0807d511caf65d67c11de"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/house-blender-exterior.png",
+      "size": 1130241,
+      "sha256": "9b2d55e68d19844ccc33c57dd6862e18ffde9b151a8e0a32e6e39e356ca5a97a"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/farm-01-private-washroom.png",
+      "size": 718101,
+      "sha256": "2a4ea6f3319bc9a236d4bb0ff6ef9eb0d20323de06f5a6ac8c3e047b5cac349f"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/farm-02-shower-and-hamper.png",
+      "size": 899262,
+      "sha256": "cab23bc6e568d4bf15e6109fd8a3896319d6ea8498e36f2ccf44f41cab63e132"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/farm-03-shed-laundry.png",
+      "size": 614478,
+      "sha256": "a2919835dc936e58c8f04d325329b3199d784c85ac3a423db77bfb1cb5283218"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/farm-04-yard-drying-line.png",
+      "size": 186131,
+      "sha256": "8285ed5a0bbfe7ff259fe906367dbf2a85688ad1a257a63f3302dea5b037230d"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/house-01-complete-bathroom.png",
+      "size": 608892,
+      "sha256": "78934bb8898f71559cab1b3e96785d31c2c9105e4f8423ac1210719a42b0d6d9"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/house-02-basin-and-toiletries.png",
+      "size": 477680,
+      "sha256": "d49724896d7f9aa2b2d1ef1c411f8858f55e2eddc71663d62fa34e7496cb6b70"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/house-03-bath-and-wall-supported-shower.png",
+      "size": 580606,
+      "sha256": "80651d667c668e35a72bd69265897b5c278febcacb8cd51dc8bac2712b4b9204"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/house-04-laundry-utility-room.png",
+      "size": 579234,
+      "sha256": "4ef98342e264b63d60c6bb0bc33dcb4dd20a1094add2d25affa598ced6099b07"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/house-05-toilet-and-hamper.png",
+      "size": 575895,
+      "sha256": "bd6ea08ed995b632a8391e8403a3b0871a5f2252f9c5fa756a547e7de4b6b1a8"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/school-01-boys-handwash-and-urinal.png",
+      "size": 823597,
+      "sha256": "1cfc3ebd6a7bdf1d68679e354abeff7eff00be6237e0ba25d42d5bb7beda8a9e"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/school-02-boys-private-cubicles.png",
+      "size": 630012,
+      "sha256": "907a1cabcd4ff4201aee716b41d4789a2f06ea2020bd0c1777f9c560b454e556"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/school-03-girls-handwash.png",
+      "size": 800168,
+      "sha256": "22708775b3cf2f70d63703dddedfdb924476e2f3ea59f86563b1190f7134c2b9"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/lived-location/school-04-upper-corridor-clearance.png",
+      "size": 538586,
+      "sha256": "3fb48c045f524abfa1fab38c859ba659481f3784a675da5aa6179e7f42a25822"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/mill-expansion/blackpine-dust-extractor.png",
+      "size": 493075,
+      "sha256": "fe1a7e99cb53e17d133f150747ba88b512c202e956069766ac3be3eb730517a6"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/mill-expansion/blackpine-mill-working-floor.png",
+      "size": 470678,
+      "sha256": "677684bb5bdfdc3fb4ac88fe5d7035dc2e9ededc78e3bee1f1a89f7960729d70"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/mill-expansion/blackpine-safety-station.png",
+      "size": 427724,
+      "sha256": "e7d03e15efaa4028ee43e0849d08b610cadab7469b0f159c5dca0ceeae42c936"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/mill-expansion/blackpine-timber-rack.png",
+      "size": 512049,
+      "sha256": "15a0611088cf2d36d5655efadfc701489a19bfac221f75d803e4b1d2419f2052"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/mill-expansion/blackpine-workshop-bandsaw.png",
+      "size": 555765,
+      "sha256": "ba4185fd98345aa4185a4f0a91f0fb1e4dbff978ac013d493967a749440aaca3"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/model-production/blackpine-level_work_bandsaw.png",
+      "size": 403049,
+      "sha256": "e0614a0e09132c3c6e797d9b886f7fbb33ce64cb63fdf7b19027f1764049bb1e"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/model-production/blackpine-level_work_crew_footlocker.png",
+      "size": 247439,
+      "sha256": "ce2c1d3db4555b4c1debc2cccf34ff0a849dfe6d785766d8cca003f5a3006b85"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/model-production/blackpine-level_work_hearth_tools.png",
+      "size": 439837,
+      "sha256": "7d3fbd6938c387b5a0e33ddca4b0b7cbe65ae4565c5641ceccf4f71b80545454"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/model-production/blackpine-level_work_repair_bench.png",
+      "size": 540336,
+      "sha256": "e0f28d36e2cca1a0ecf712d39b5b3eabad4c23f546b490c8611c3af9997c5651"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/previews/school-blender-exterior.png",
+      "size": 1177460,
+      "sha256": "2189d71b12023af00f25438841921252475fb73c6ae4b698322769b780f30fbd"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/publish_libraries.py",
+      "size": 11408,
+      "sha256": "aef67d13150d6cdfab5c70b76407e8f51991a6739d9d768beace768307e7e572"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/validate_level_scenes.py",
+      "size": 4727,
+      "sha256": "77cbcad3909d3d936c8217262362703c75601053b378dc74212bc36cfe5f87f4"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/validate_mill_expansion.py",
+      "size": 7556,
+      "sha256": "6ad0ee786007601bd83159301390cc03c0dbc591fcfd62955b5d2c804e533a00"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/verification/blackpine-mill-expansion.json",
+      "size": 8017,
+      "sha256": "2b9b732966fe90f82707444c424de6e6f48523b5d2edbf766edaf4201a2a8b20"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/verification/blender-level-scenes-results.json",
+      "size": 3126,
+      "sha256": "365bb88ba904a5905c88aa46ba9ea90b930ac17b34f0881e16c8330e9e3c3bf9"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/verify_mill_expansion.py",
+      "size": 4995,
+      "sha256": "3d1e53aee34cbd86e1a6d0e27263b31a7710c7dde0e3c265940b464c0bef4210"
+    },
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/BlackpineLevel.java",
+      "size": 4049,
+      "sha256": "5a5b95c075a617af3b88f53caefa14e1c1f045c9983dcee9334450301e422522"
+    },
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/CastleHubDecor.java",
+      "size": 7142,
+      "sha256": "5a9a7e660553bd19e334595c2d285a0b5191bf78a5b407e5cdbf4b02ac6f71ba"
+    },
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/FixtureLighting.java",
+      "size": 9252,
+      "sha256": "fa71996757ac3e47db7c416876bbc8f180de849bc662a801831bfa4cbc3e056e"
+    },
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/HauntedFixtures.java",
+      "size": 8597,
+      "sha256": "e160ba1797cf88449acc844b209759b8bb5ec696a82625d69d2f855667968049"
+    },
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/LevelAssets.java",
+      "size": 1310,
+      "sha256": "d2773b2331e3082c612e289d4990e905901d355f448842fbeb4e7f247907faa2"
+    },
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/LevelMaterials.java",
+      "size": 3493,
+      "sha256": "02604525ce00e53f77b693af629d31c34122e3c65c9a74a0f639ebcb64a8c8c4"
+    },
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/SceneRenderer.java",
+      "size": 130413,
+      "sha256": "5ee474519bb1a0b51cef271aec99787a55df1bef847ce737dff69108984c76e2"
+    },
+    {
+      "status": " M",
+      "path": "src/test/java/org/beckenburg/LevelSceneSource.java",
+      "size": 8965,
+      "sha256": "35cf479c667c60ab86acd06e27599174f89f13ed3e58bbfeba37346c6288f0d2"
+    },
+    {
+      "status": " M",
+      "path": "src/test/java/org/beckenburg/PhysicalLightCapture.java",
+      "size": 3261,
+      "sha256": "bd50689da6ca676e2cc75a5c3fb73bd211bde0fa54fa8d6d7e009f589665dc92"
+    },
+    {
+      "status": " M",
+      "path": "src/test/java/org/beckenburg/RoomLightingTest.java",
+      "size": 4691,
+      "sha256": "1fae7064c7c67a92436e8acc47855a3b8c14d94ed84ac033048c89c1b28e5063"
+    },
+    {
+      "status": "??",
+      "path": ".nojekyll",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "status": "??",
+      "path": "assets/runtime/level-textures/beckenburg_rock.png",
+      "size": 4029,
+      "sha256": "488f8e89c8a710b5210b7fa1ae27e12c6e85380ff79c74482f0d8b26cb23b951"
+    },
+    {
+      "status": "??",
+      "path": "assets/runtime/level-textures/beckenburg_rock_worn.png",
+      "size": 4016,
+      "sha256": "8abb11ad69dc9ba5ae7a31e61139640fd61c0fd1e9d0704db9c06774fae53fe8"
+    },
+    {
+      "status": "??",
+      "path": "assets/runtime/models/level_mill_suspension.glb",
+      "size": 32144,
+      "sha256": "d4047e63c29ff4c171bd086711ee82e5e1dad5af887ce5b43a852ae079780022"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/_blackpine_committed_scene.py",
+      "size": 10595,
+      "sha256": "20926aab5d3f9f89d3dfdb9acd628670bb3805499864d4bee521e42a587dd6b4"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/_mill_scene.py",
+      "size": 10607,
+      "sha256": "b7995e88730069f5b8f7eb09b5c2ba4e4130d747588434596d9552bb919be6b9"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/arrival-road-complete.blend",
+      "size": 1129682,
+      "sha256": "d4a931295409d00217c43575686d52c5820060a7d4754a0861864574b6be0886"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/blackpine-dressed.blend",
+      "size": 12036528,
+      "sha256": "9664d126f1a42b1705cf29b49722e2549192beb03621feb1d2a9803f1752cd2f"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/blackpine-dressed.blend1",
+      "size": 12054423,
+      "sha256": "e716ba2d648045b4dff30db765859c6bf80cb8b32e082467cad45c01e63f6124"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/castle-surroundings-complete.blend",
+      "size": 1081143,
+      "sha256": "e4266e2885fcc177b1bb5e8eec623a529da4d44a4835b87617b3e9d2d90078c8"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/enclosure-mountain-complete.blend",
+      "size": 1472754,
+      "sha256": "1b7e04d2d6f550c00e7867c64f205ad5d42590909b45bbd211f8ec90ec79942b"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/enclosure-suburban-complete.blend",
+      "size": 2472152,
+      "sha256": "b4b55e7419b09c440e0e2d31207a1590fb994a8f43426dcd460159d4a1314518"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/enclosure-urban-complete.blend",
+      "size": 6435132,
+      "sha256": "1455e52c8eac1a4e432b9b6813e1a36625cbf2e5bd0cc53b20f9eb7a5f179d9d"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/enclosure-woodland-complete.blend",
+      "size": 1410332,
+      "sha256": "e9989d6fbe9fce208029438f3748fff73baa746c326ba6495f1025733a6b868d"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/foliage-variation-review.blend",
+      "size": 192043,
+      "sha256": "7adfedfbb93327f6e9711ca6bf51af1994f5bae1192d85fd2b2cb4b8e62dbe27"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/blender/level_mill_suspension.blend",
+      "size": 169098,
+      "sha256": "1101f8515a7390403fbe46c13ea768b1ddb93a0deee2403f5be02f6039a5a793"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/build_mill_lighting.py",
+      "size": 1179,
+      "sha256": "8be406fc3759c5b6bbc68230ec0cd902a0e19ddfde16a8d84e009342247cc6ec"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/build_rock_texture.py",
+      "size": 1479,
+      "sha256": "0cd1b2b341ba344ac1c28fe7fcc591f576567fbc261a7fd187f080d89f89e2c2"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/mill-lighting-assets.json",
+      "size": 911,
+      "sha256": "d6cc5766bf6202cb741156cbd4ce522abd1629ea926d28aa5bee74501913ee3e"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/arrival-road-blender-exterior.png",
+      "size": 1002293,
+      "sha256": "25dc3ffc6931c610c2686db0aa22ac5ab37f1e8612b939d50323252e83b939da"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/blackpine-dressed-blender-exterior.png",
+      "size": 1257962,
+      "sha256": "9a878693ed3abbb0e3f80af4489db743e864ac859a2a31478eefd89f29b4d558"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/blackpine-dressed-daylight-overview.png",
+      "size": 1823668,
+      "sha256": "a94ce149275722b90030d180a2b8481b4550817834a7e56dd70e81e15c3b2eac"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/blackpine-dressed-forest-edge.png",
+      "size": 1478164,
+      "sha256": "cfa87eb389eb73c404a4f9755fbd95b6762e07ea763f4fb5747cb39c2da287eb"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/blackpine-dressed-well-and-patio.png",
+      "size": 1582968,
+      "sha256": "4f842ab488661092cfa24ece6a334e18841cca906b42a88945baf65401516bbf"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/blackpine-dressing/",
+      "size": null,
+      "sha256": null
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/blackpine-story-native/",
+      "size": null,
+      "sha256": null
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/blackpine-story/",
+      "size": null,
+      "sha256": null
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/castle-surroundings-blender-exterior.png",
+      "size": 1197138,
+      "sha256": "f30a49b5bfd7feef6b78a08712bf9b5a4414a2d7c30c3b49f6fc4042d295eb72"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/common-archive/",
+      "size": null,
+      "sha256": null
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/enclosure-mountain-blender-exterior.png",
+      "size": 1269567,
+      "sha256": "16f49c81a697621a33d13b85533b053aa4794294a9d2f6a8b1f06953d0ed84c1"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/enclosure-suburban-blender-exterior.png",
+      "size": 1283842,
+      "sha256": "dd5448858a16951b8da421f6160d4f2e7ddf2f2629dd5206fc841d05b2a709bd"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/enclosure-urban-blender-exterior.png",
+      "size": 1111754,
+      "sha256": "c9d57ac6a518ece18635ce8b440825efdf4da14d50a7e1ebd9a091aa5c910946"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/enclosure-woodland-blender-exterior.png",
+      "size": 1302020,
+      "sha256": "9d7a9d602b5a52aa50925b409ebf2517712b86aff9f7126a5df852304854ce56"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/foliage-one-source-eight-instances.png",
+      "size": 818610,
+      "sha256": "bb15ebd2ff7dda6819a3281ff6242d0ce2d58198129f5d79de52f0d3d4ce863a"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/level_mill_suspension.png",
+      "size": 769075,
+      "sha256": "259c09f5c4238d1329d889e055a78279d56cd23936b713f149b40044a46da8d9"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/mill-lighting/",
+      "size": null,
+      "sha256": null
+    },
+    {
+      "status": "??",
+      "path": "development/levels/previews/physical-lighting/",
+      "size": null,
+      "sha256": null
+    },
+    {
+      "status": "??",
+      "path": "development/levels/rock-textures.json",
+      "size": 504,
+      "sha256": "a9534b8bb9deba1d3fc9dd94377f75feb6ea0aabd4cd38b095e3f757e0a5d039"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/blackpine-committed-source.json",
+      "size": 5845,
+      "sha256": "20128648d2627f7f3d7a7f62d893c54a36bc91b4507ffe9bbd17cbf0a6606c4c"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/blackpine-dressed-scene.json",
+      "size": 1832,
+      "sha256": "127f711cf64a3458ef9dd2d8d88f2bb8c96aabec4f9d00fa6181dcdfddddd824"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/blackpine-dressing.json",
+      "size": 2830,
+      "sha256": "0dc6df636e4583d8a41db5ed5a5dc96d8042eda18fbc8795c19c3140691ed68c"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/blackpine-network-ui.json",
+      "size": 2180,
+      "sha256": "6809f4e0f260aa5ae8ae2c75516974333411888fd67bb81ee7f558e85e8de952"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/blackpine-story.json",
+      "size": 196,
+      "sha256": "a77aae9e154956d983b20ee9da15fb38313e336a7473473af48470b845a26bdd"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/blackpine-terrain.json",
+      "size": 435,
+      "sha256": "ec53a6970748494d4144194e3ffc03951fdb1b8d232c24b879151a813f837068"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/castle-van-compatibility.json",
+      "size": 2263,
+      "sha256": "adcf76d5a32989f21f2effce200b763cf22de34703f0a931172bc3d25cc1a6e2"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/foliage-variation.json",
+      "size": 199,
+      "sha256": "78d26f690737e9325b5f70fe86fccf252f7c090b940ffbd0996b1eb112b6e47b"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/pre-existing-dressing-checks.json",
+      "size": 1720,
+      "sha256": "41ad2fc003535ea95e645c05bb286dc7b27a71435ade04586ae4abcfed5d8e24"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/scenery-instancing.json",
+      "size": 732,
+      "sha256": "89610f7bafeb460038de637982325bc472dc92ee49cf7fd491d85189e0de4671"
+    },
+    {
+      "status": "??",
+      "path": "src/main/java/org/beckenburg/ArchitecturalLightOcclusion.java",
+      "size": 3925,
+      "sha256": "e3326bc875c79ce1491791f5ebe2adafdacd38262423a2d9d3b3ae9dac7b5c63"
+    },
+    {
+      "status": "??",
+      "path": "src/main/java/org/beckenburg/BlackpineLighting.java",
+      "size": 1312,
+      "sha256": "9cecb04a0897a77a24bedea7e37bd0ae03f5b5b9d013f30897073a7a06f631f5"
+    },
+    {
+      "status": "??",
+      "path": "src/test/java/org/beckenburg/BlackpineLightingCapture.java",
+      "size": 1631,
+      "sha256": "99fefc5b720418004dd5a9a43cab4e8893445de365e5d1746f37fa36284d2759"
+    },
+    {
+      "status": "??",
+      "path": "src/test/java/org/beckenburg/BlackpineLightingTest.java",
+      "size": 2602,
+      "sha256": "9007da5d331a128d8427be37aefb7ca23e5197484e4bcd964035b356c8d8b547"
+    },
+    {
+      "status": "??",
+      "path": "src/test/java/org/beckenburg/BlackpineRitualAcceptanceTest.java",
+      "size": 2750,
+      "sha256": "7880dcfcd76587d96248b14dec2c3a8f33d0b3d145a75d9086bd3839b0c74bc8"
+    },
+    {
+      "status": "??",
+      "path": "src/test/java/org/beckenburg/LightJoinOcclusionTest.java",
+      "size": 2082,
+      "sha256": "d69d82b12abebae7a137b979e01f22cd2ca94b8ed1f3d8a971c9c27de337f923"
+    }
+  ]
+}

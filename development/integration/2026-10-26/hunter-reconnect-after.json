@@ -1,0 +1,38 @@
+[
+  {
+    "test": "LanSessionResumeIntegrationTest",
+    "exit_code": 0,
+    "seconds": 1.625,
+    "output": "PASS: unexpected loss, real rejoin/token rotation, expiry, ghost AI continuity and role privacy\n"
+  },
+  {
+    "test": "LanHostOwnerRecoveryTest",
+    "exit_code": 0,
+    "seconds": 0.531,
+    "output": "PASS: ghost-host guest H1 continuity, recovering owner sockets and explicit owner-exit semantics\n"
+  },
+  {
+    "test": "LanHunterAbilitiesNetworkTest",
+    "exit_code": 0,
+    "seconds": 0.5,
+    "output": "PASS: multiplayer class ownership, live sensor survey, cooldowns, ghost isolation\n"
+  },
+  {
+    "test": "HunterDisciplineTest",
+    "exit_code": 0,
+    "seconds": 0.079,
+    "output": "HunterDisciplineTest passed\n"
+  },
+  {
+    "test": "HunterClassIntegrationTest",
+    "exit_code": 0,
+    "seconds": 0.281,
+    "output": "HunterClassIntegrationTest passed\n"
+  },
+  {
+    "test": "SoloClassAbilityTest",
+    "exit_code": 0,
+    "seconds": 0.328,
+    "output": "SoloClassAbilityTest passed\n"
+  }
+]

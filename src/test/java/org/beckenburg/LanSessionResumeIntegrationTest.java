@@ -52,6 +52,8 @@ public final class LanSessionResumeIntegrationTest {
             try(Peer a=new Peer(host.port(),false,"Cleric");
                 Peer b=new Peer(host.port(),false,"Observer");
                 Peer c=new Peer(host.port(),false,"Demonologist")){
+                b.client.selectVisual(CharacterVisuals.Hunter.CLERIC);
+                b.await("VISUAL|1|cleric");
                 begin(a,b,c);
                 LanTestRoomTravel.move(b.client,b::await,11);
                 b.client.view3D();b.await("ACCEPT|VIEW3D");
@@ -82,6 +84,8 @@ public final class LanSessionResumeIntegrationTest {
                 try(Peer restored=new Peer(host.port(),stale)){
                     check("H2".equals(restored.client.seat()),"old seat restored, no new hunter");
                     restored.await("INFO|mission resumed");
+                    restored.client.skill(HunterDiscipline.Ability.HALLOW);
+                    restored.await("ACCEPT|SKILL|Hallow activated");
                     restored.client.view3D();restored.await("ACCEPT|VIEW3D");
                     check("HIDING|1".equals(restored.await("HIDING|")),
                         "rejoined hunter recovers host-owned concealed state");

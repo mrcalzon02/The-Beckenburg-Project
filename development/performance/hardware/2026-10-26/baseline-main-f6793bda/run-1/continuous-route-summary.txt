@@ -1,0 +1,7 @@
+Renderer: OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+Source SHA: f6793bda4f1c6c821fe66e49050b076b01cce6c0
+One renderer and HouseMap. Authored camera waypoint jumps, NOT verified physical traversal.
+OpenGL wall times are on GL worker, NOT GPU hardware execution timer queries.
+End-to-end timings include wait/poll overhead, NOT interactive game FPS.
+Timing regression thresholds intentionally absent on shared CI.
+GPU CONTINUOUS ROUTE samples=33 cpu_p50_ms=109.152 cpu_p95_ms=2895.992 gl_issue_p95_ms=10.794 gl_readback_p95_ms=8.318 end_to_end_p95_ms=2931.982

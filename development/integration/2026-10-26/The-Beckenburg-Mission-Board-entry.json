@@ -1,0 +1,49 @@
+{
+  "checkout": "C:\\Users\\Admin\\Documents\\ChatGPT\\Phasmaphobia alike\\The-Beckenburg-Mission-Board",
+  "head": "db9bb0dd12419afb4173b7d7ae36d3bf296f6d21",
+  "branch": "ui/lore-mission-board",
+  "files": [
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/CampaignBoardPanel.java",
+      "size": 9411,
+      "sha256": "f3e7dbdb2fea18cdc0cc5e69f57423904fa3a3d442d62b2ee11ac34782d49114"
+    },
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/LanLobbyWindow.java",
+      "size": 40931,
+      "sha256": "d97f480ac816698af04e677a082878963bc23bce132c8aab4235645b7f296b15"
+    },
+    {
+      "status": " M",
+      "path": "src/main/java/org/beckenburg/SiteCatalog.java",
+      "size": 2621,
+      "sha256": "cda54a1220324bbfe14261546d8d63b6ca7f8f6880907bf63f9411941e2652fd"
+    },
+    {
+      "status": "??",
+      "path": "assets/runtime/mission-board/",
+      "size": null,
+      "sha256": null
+    },
+    {
+      "status": "??",
+      "path": "development/mission-board/",
+      "size": null,
+      "sha256": null
+    },
+    {
+      "status": "??",
+      "path": "src/main/java/org/beckenburg/MissionBoardPanel.java",
+      "size": 6886,
+      "sha256": "49137e66b9c92f57652b394b9d1025212d03f480eb99b00daf073ca741fa6552"
+    },
+    {
+      "status": "??",
+      "path": "src/main/java/org/beckenburg/MissionSites.java",
+      "size": 8282,
+      "sha256": "e209523bdb952b3e67a0335eb7d78b34acc9e0a747580671d3d1c5aee4b16257"
+    }
+  ]
+}

@@ -48,6 +48,34 @@ public final class LanCase {
     private boolean identificationRequired;
     private int lastGuessTick=-1000;
     private final int[] health={100,100,100,100,100,100},stress=new int[6],wards={2,2,2,2,2,2};
+    private final HunterDiscipline disciplines=new HunterDiscipline(6);
+    private final CharacterVisuals.Hunter[] hunterClasses=new CharacterVisuals.Hunter[6];
+    {
+        java.util.Arrays.fill(hunterClasses,CharacterVisuals.Hunter.OBSERVER);
+    }
+    public void selectDiscipline(int seat,CharacterVisuals.Hunter type){
+        hunter(seat);
+        hunterClasses[seat]=java.util.Objects.requireNonNull(type);
+    }
+    public CharacterVisuals.Hunter discipline(int seat){hunter(seat);return hunterClasses[seat];}
+    /** Same action contract for player seats and AI controllers. Nearby is host-derived. */
+    public Report classAbility(int seat,HunterDiscipline.Ability action,int tick,boolean[] nearby){
+        hunter(seat);
+        if(outcome!=Outcome.ACTIVE||!alive(seat))return new Report(false,"hunter incapacitated");
+        if(nearby==null||nearby.length!=6||!nearby[seat])
+            return new Report(false,"invalid nearby allies");
+        advanceClassClock(tick);
+        HunterDiscipline.Result result=disciplines.activate(seat,hunterClasses[seat],action,tick);
+        if(!result.accepted())return new Report(false,result.message());
+        if(action==HunterDiscipline.Ability.COMFORT){
+            for(int i=0;i<6;i++)if(nearby[i]&&alive(i))calm(i,20);
+        }else if(action==HunterDiscipline.Ability.HALLOW){
+            for(int i=0;i<6;i++)if(nearby[i]&&alive(i))disciplines.shareHallow(i,tick);
+        }else if(action==HunterDiscipline.Ability.INVOKE){
+            stress[seat]=Math.min(100,stress[seat]+16);
+        }
+        return new Report(true,result.message());
+    }
     private final boolean[] active={true,true,true,false,false,false};
     private int sanityDrainRate=100,partyThreat;
     public void configurePartyThreat(int bonus){
@@ -55,6 +83,8 @@ public final class LanCase {
         partyThreat=bonus;
     }
     private final int[] drainRemainder=new int[6];
+    private int abilityTick;
+    public void advanceClassClock(int tick){if(tick<abilityTick)throw new IllegalArgumentException("clock regression");abilityTick=tick;}
     public void configureSanityDrain(int percentage){
         if(percentage<0||percentage>200)throw new IllegalArgumentException("invalid sanity loss");
         sanityDrainRate=percentage;
@@ -136,7 +166,8 @@ public final class LanCase {
         hunter(seat);
         if(amount<0||amount>3)throw new IllegalArgumentException("invalid sanity drain");
         if(outcome!=Outcome.ACTIVE||!alive(seat)||amount==0)return false;
-        drainRemainder[seat]+=amount*sanityDrainRate*(100+partyThreat*10);
+        drainRemainder[seat]+=disciplines.fear(seat,hunterClasses[seat],abilityTick,amount)
+            *sanityDrainRate*(100+partyThreat*10);
         int actual=drainRemainder[seat]/10000;
         drainRemainder[seat]%=10000;
         if(actual==0)return false;
@@ -347,10 +378,12 @@ public final class LanCase {
             throw new IllegalArgumentException("matched 3 or 6 hunter positions required");
         if(outcome!=Outcome.ACTIVE||!effect.applied())return;
         for(int i=0;i<hunterRooms.length;i++)if(active[i]&&affected[i]&&hunterRooms[i]==room && health[i]>0){
-            drainRemainder[i]+=effect.fear()*sanityDrainRate*(100+partyThreat*10);
+            drainRemainder[i]+=disciplines.fear(i,hunterClasses[i],abilityTick,effect.fear())
+                *sanityDrainRate*(100+partyThreat*10);
             stress[i]=Math.min(100,stress[i]+drainRemainder[i]/10000);
             drainRemainder[i]%=10000;
-            int physical=effect.harm()*(100+partyThreat*10)/100;
+            int physical=disciplines.harm(i,hunterClasses[i],abilityTick,
+                effect.harm()*(100+partyThreat*10)/100);
             if(physical>0)health[i]=Math.max(0,health[i]-
                 Math.max(1,wardRoom==room?Math.min(4,physical):physical));
         }

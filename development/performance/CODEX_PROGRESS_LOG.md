@@ -2,6 +2,12 @@
 
 This record is the per-project progress ledger for the FINISH plan. Update **after each verified commit**; never backfill "passed" from an unrelated SHA.
 
+## Local preservation/unification entry (2026-10-26)
+
+Expanded by explicit user direction to include feature PRs #3/#29. Earlier unified source `d2c644a0` passed exact-head full acceptance [40434726259](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40434726259) and GPU [40434626216](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40434626216); newer feature integration requires its own checks. Reconciled Quartermaster `e988eb01`, hunter/companion `f3c86035`, fatal JVM log retention `84cac58a`, native teardown `417980e6`. The latter passed three real RTX 5070 diagnostics with process exit zero, versus baseline `f6793bda` exit 0xC0000409. Their cold-route CPU p50/p95 remain 108–123 / 2796–2852 ms, **not accepted interactive FPS**. Fixed a reproduced hunter-branch ghost-resume failure without weakening recovery tests. Detailed code/evidence/status: `development/integration/2026-10-26/` and `hardware/2026-10-26/`. Remaining: expanded exact-SHA full acceptance, native case/hardware baseline, then work packages 0/1. No A–G milestone marked complete.
+
+User requested saving/unifying existing work before beginning performance implementation. Inspected current main `f6793bda4f1c6c821fe66e49050b076b01cce6c0`, required recovery plans and issues #6/#7/#20. Three local worktrees were dirty. Pushed and read back unverified preservation checkpoints `d07d7450`, `b7b193f4`, `06341f84`; retained exact details and original hashes under `development/integration/2026-10-26/`. Unified current main at `5956e173`, then preserved native map sources at `4f92b65d`; mission-board reconciliation and full CI are next. Local Java 17/OpenGL compilation and focused functional checks passed as documented there. Hardware detected: RTX 5070 / 616.64; **installed hardware acceptance PENDING**. No A–G gate closed and no release published by this session.
+
 ## Initial handoff checkpoint (2026-10-26)
 
 - Mission status: PLAN COMMITTED; **A–G NOT COMPLETE**. Implementation not yet handed to an executing local Codex agent.

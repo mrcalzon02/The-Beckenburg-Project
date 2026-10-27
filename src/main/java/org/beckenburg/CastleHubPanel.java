@@ -98,7 +98,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         window.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         window.setContentPane(new CampaignStorePanel(profile,()->{
             GameSfx.play(LanSound.Cue.PICKUP);
-            notice="Quartermaster purchase saved. Equipment and supplies updated.";
+            notice="Quartermaster transaction saved. Equipment and stock updated.";
             noticeTicks=145;
         }));
         window.setSize(730,430);

@@ -1,0 +1,92 @@
+[
+  {
+    "path": "assets/runtime/models/level_mill_suspension.glb",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "development/levels/blender/level_mill_suspension.blend",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "development/levels/build_mill_lighting.py",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "development/levels/mill-lighting-assets.json",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "development/levels/previews/level_mill_suspension.png",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "development/levels/previews/mill-lighting/logway-lit.png",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "development/levels/previews/mill-lighting/logway-off.png",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "development/levels/previews/mill-lighting/underloft-lit.png",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "development/levels/previews/mill-lighting/underloft-off.png",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "development/levels/verification/scenery-instancing.json",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "src/main/java/org/beckenburg/BlackpineLighting.java",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "src/main/java/org/beckenburg/CastleHubDecor.java",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "src/main/java/org/beckenburg/FixtureLighting.java",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "src/main/java/org/beckenburg/LevelAssets.java",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "src/main/java/org/beckenburg/SceneRenderer.java",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "src/test/java/org/beckenburg/BlackpineLightingCapture.java",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "src/test/java/org/beckenburg/BlackpineLightingTest.java",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  },
+  {
+    "path": "src/main/java/org/beckenburg/HauntedFixtures.java",
+    "resolution": "retain current main; local version preserved in remote checkpoint d07d7450",
+    "reason": "Preserve newer structural depth, editor/frustum/normal-lighting implementation and mains-power rules instead of reverting to old local code."
+  }
+]

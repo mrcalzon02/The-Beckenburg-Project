@@ -1,0 +1,42 @@
+[
+  {
+    "test": "MissionBoardIntegrationTest",
+    "exit_code": 0,
+    "output": "PASS packaged pictures, async UI load, saved chapter order, prototype privacy and actual locked/unlocked dispatch\n"
+  },
+  {
+    "test": "CampaignBoardPanelTest",
+    "exit_code": 0,
+    "output": "PASS campaign board has playable contracts, persistent recruit and actual companion dispatch\n"
+  },
+  {
+    "test": "CampaignStoryProgressionTest",
+    "exit_code": 0,
+    "output": "PASS 22-chapter seeded campaign, three playable victory gates, replay rewards and separate LAN wallet\n"
+  },
+  {
+    "test": "CampaignCareerTest",
+    "exit_code": 0,
+    "output": "PASS career: paid hire, reload, durable unique dispatch, idempotent visit/outcome and payout\n"
+  },
+  {
+    "test": "SiteSelectionTest",
+    "exit_code": 0,
+    "output": "PASS: three playable investigations with headless rendering\n2026-10-27T01:44:37.982526300Z [main] RENDER SLOW stage=idle faces=85494 visible_faces=51561 culled_faces=33933 target=320x200 build_ms=887 lighting_raster_ms=458\n"
+  },
+  {
+    "test": "LightJoinOcclusionTest",
+    "exit_code": 0,
+    "output": "PASS reproduced old wall/floor endpoint leaks; sealed receiving-side wall, floor and ceiling joins; genuine door and stair apertures retained\n"
+  },
+  {
+    "test": "RoomLightingTest",
+    "exit_code": 0,
+    "output": "PASS 12 physical switches, breaker, ghost flicker, host snapshot and rendered dimming\n2026-10-27T01:44:41.166075800Z [main] RENDER SLOW stage=idle faces=58391 visible_faces=29130 culled_faces=29261 target=320x200 build_ms=235 lighting_raster_ms=466\n"
+  },
+  {
+    "test": "BlackpineRitualAcceptanceTest",
+    "exit_code": 0,
+    "output": "PASS 3 Blackpine rite simulations: graded locations, role/remote rejection, disturbance, abandonment, restart, distinct outcomes and van extraction\n"
+  }
+]

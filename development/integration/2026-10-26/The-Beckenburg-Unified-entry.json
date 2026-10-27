@@ -1,0 +1,49 @@
+{
+  "checkout": "C:\\Users\\Admin\\Documents\\ChatGPT\\Phasmaphobia alike\\The-Beckenburg-Unified",
+  "head": "5909f66a6314666fd5f5a6cf4e86847eb11a7314",
+  "branch": "integration/unified-map-engine",
+  "files": [
+    {
+      "status": " M",
+      "path": "development/levels/verification/evidence-book-pages.json",
+      "size": 106,
+      "sha256": "274673f10bd73c7b2dd0a50fff0a69a5587839d68b11eb43269d96dd80c33635"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/verification/hollow-creek-fitted-fit.json",
+      "size": 1928,
+      "sha256": "b72387e29913d7e421bc930e8423aba9963a0b5734e9775f22f7bbe354159075"
+    },
+    {
+      "status": " M",
+      "path": "development/levels/verification/world-lore.json",
+      "size": 187,
+      "sha256": "b796f2f746048b6013570fb3bae392fc5095353de4610bb2dc80cb16db4b3eb6"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/blackpine-story.json",
+      "size": 196,
+      "sha256": "a77aae9e154956d983b20ee9da15fb38313e336a7473473af48470b845a26bdd"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/blackpine-terrain.json",
+      "size": 435,
+      "sha256": "ec53a6970748494d4144194e3ffc03951fdb1b8d232c24b879151a813f837068"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/foliage-variation.json",
+      "size": 199,
+      "sha256": "78d26f690737e9325b5f70fe86fccf252f7c090b940ffbd0996b1eb112b6e47b"
+    },
+    {
+      "status": "??",
+      "path": "development/levels/verification/scenery-instancing.json",
+      "size": 733,
+      "sha256": "0a5d94d4cb01a51c796e275c0b17962b6c08ea57366600b0d02b01f8543b5ab2"
+    }
+  ]
+}

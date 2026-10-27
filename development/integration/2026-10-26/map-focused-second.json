@@ -1,0 +1,42 @@
+[
+  {
+    "test": "RoomLightingTest",
+    "exit_code": 0,
+    "output": "PASS 12 physical switches, breaker, ghost flicker, host snapshot and rendered dimming\n2026-10-27T01:40:40.317908400Z [main] RENDER SLOW stage=idle faces=58391 visible_faces=29130 culled_faces=29261 target=320x200 build_ms=242 lighting_raster_ms=486\n"
+  },
+  {
+    "test": "BlackpineLightingTest",
+    "exit_code": 0,
+    "output": "PASS supported ceiling pivots, below-deck emission, lit blade/aisle, exact switch target, circuit isolation, breaker blackout, loft/wall/join occlusion and fitting clearance\n"
+  },
+  {
+    "test": "BlackpineRitualAcceptanceTest",
+    "exit_code": 0,
+    "output": "PASS 3 Blackpine rite simulations: graded locations, role/remote rejection, disturbance, abandonment, restart, distinct outcomes and van extraction\n"
+  },
+  {
+    "test": "LightJoinOcclusionTest",
+    "exit_code": 1,
+    "output": "Exception in thread \"main\" java.lang.AssertionError: baseline floor leak reproduced\n\tat org.beckenburg.LightJoinOcclusionTest.check(LightJoinOcclusionTest.java:4)\n\tat org.beckenburg.LightJoinOcclusionTest.main(LightJoinOcclusionTest.java:30)\n"
+  },
+  {
+    "test": "PhysicalLightingTest",
+    "exit_code": 0,
+    "output": "PASS native source profiles, directional and warm emission, closed-door shadows/cache invalidation, exact TV glow/sound use, independent washroom switches and castle lamp sources\n"
+  },
+  {
+    "test": "BlackpineDeckDepthTest",
+    "exit_code": 0,
+    "output": "PASS actual 160mm soffit/fascia, equal top/underside apertures, mounted lamp, opaque slab edge and isolated upstairs lighting\n"
+  },
+  {
+    "test": "CastleFurnitureWallAuditTest",
+    "exit_code": 0,
+    "output": "PASS all castle furnishing GLBs remain clear of solid wall volumes\n"
+  },
+  {
+    "test": "CastleHubIntegrationTest",
+    "exit_code": 0,
+    "output": "PASS collision-aware GLB castle furniture, usable stations, live scene and purchases\n"
+  }
+]

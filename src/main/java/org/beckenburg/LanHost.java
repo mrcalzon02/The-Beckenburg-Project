@@ -269,6 +269,8 @@ public final class LanHost implements AutoCloseable {
                     }
                     peer=new Peer(socket,in,out,slot,waiting.name);
                     peer.hunterVisual=waiting.hunterVisual;
+                    if(slot!=GHOST_SEAT)mission.selectDiscipline(slot,CharacterVisuals.Hunter.valueOf(
+                        peer.hunterVisual.toUpperCase(java.util.Locale.ROOT)));
                     peer.lastPongTick=tick;
                     peer.lastGhostActionSequence=waiting.lastActionSequence;
                     peer.lastGhostPoseSequence=waiting.lastPoseSequence;
@@ -330,6 +332,10 @@ public final class LanHost implements AutoCloseable {
                     peer.outbound.start(workers);
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     if(slot!=GHOST_SEAT){
+                        // A new lobby occupant must not inherit the departed
+                        // hunter's class merely because it reuses that seat.
+                        mission.selectDiscipline(slot,CharacterVisuals.Hunter.valueOf(
+                            peer.hunterVisual.toUpperCase(java.util.Locale.ROOT)));
                         for(int i=0;i<HUNTERS;i++)if(i!=slot&&seats[i]!=null)
                             reply(peer,"PLAYERNAME|"+i+"|"+seats[i].name);
                         notifyHunters("PLAYERNAME|"+slot+"|"+nickname);
@@ -467,6 +473,8 @@ public final class LanHost implements AutoCloseable {
                     if(p.size()!=2||peer.slot>=HUNTERS||running)
                         throw new IllegalArgumentException("hunter appearance can be chosen only in lobby");
                     peer.hunterVisual=CharacterVisuals.hunter(p.get(1));
+                    mission.selectDiscipline(peer.slot,
+                        CharacterVisuals.Hunter.valueOf(peer.hunterVisual.toUpperCase(java.util.Locale.ROOT)));
                     notifyHunters("VISUAL|"+peer.slot+"|"+peer.hunterVisual);
                 }
                 case "READY" -> {
@@ -1475,6 +1483,47 @@ public final class LanHost implements AutoCloseable {
                     if(result.accepted())notifyHunters("IDENTIFIED|"+guess+"|"+guess.rite());
                     broadcastProgress();
                 }
+                case "SKILL" -> {
+                    if(!running||peer.slot==GHOST_SEAT||p.size()!=3)
+                        throw new IllegalArgumentException("hunter ability unavailable");
+                    HunterDiscipline.Ability skill=HunterDiscipline.Ability.valueOf(p.get(1));
+                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(2)));
+                    ensureActiveHunter(peer);
+                    boolean[] near=new boolean[HUNTERS];
+                    var actor=world.body(peer.slot);
+                    for(int i=0;i<HUNTERS;i++){
+                        if(i==peer.slot){near[i]=true;continue;}
+                        if((seats[i]==null&&reserved[i]==null)||!mission.alive(i)
+                                ||hunterRooms[i]!=hunterRooms[peer.slot])continue;
+                        var other=world.body(i);
+                        near[i]=Math.hypot(actor.x()-other.x(),actor.z()-other.z())<=5.5
+                            ||!peer.worldMode&&seats[i]!=null&&!seats[i].worldMode;
+                    }
+                    LanCase.Report outcome=mission.classAbility(peer.slot,skill,tick,near);
+                    answerHunter(peer,"SKILL",outcome);
+                    if(outcome.accepted()){
+                        if(skill==HunterDiscipline.Ability.SURVEY){
+                            mission.setEvidenceHeating(lights.breaker());
+                            int room=hunterRooms[peer.slot];
+                            int age=tick-lastEvidenceEventTick;
+                            int event=age>=0&&age<=40
+                                ?Math.max(0,lastEvidenceEventPower-age/7):0;
+                            for(LanCase.Tool tool:new LanCase.Tool[]{
+                                    LanCase.Tool.EMF,LanCase.Tool.THERMOMETER}){
+                                LanCase.Report sample=mission.stationMeasured(tool,room,
+                                    ghost.room(),tick,lastEvidenceEventRoom,event);
+                                if(sample.accepted())reply(peer,"INFO|SURVEY "+sample.message());
+                            }
+                        }
+                        if(skill==HunterDiscipline.Ability.INVOKE)
+                            frenzy.provoke(24);
+                        recordSound(peer.slot,LanGhostPursuit.Sound.RITUAL,
+                            skill==HunterDiscipline.Ability.SURVEY
+                                ?LanSound.Cue.SCANNER:LanSound.Cue.WARD);
+                        notifyHunters("CLASSFX|"+peer.slot+"|"+skill+"|"+tick);
+                    }
+                    broadcastProgress();
+                }
                 case "WARD", "CLEANSE", "BANISH", "ABSOLVE", "EXTRACT" -> {
                     if(!running||peer.slot==GHOST_SEAT||p.size()!=2)throw new IllegalArgumentException("hunter action unavailable");
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(1)));
@@ -2195,6 +2244,7 @@ public final class LanHost implements AutoCloseable {
     private void tickSafely(){if(closed)return; synchronized(mutex){
         if(!running)return;
         try{tick++;
+            mission.advanceClassClock(tick);
             advanceHauntTracks();
             if(weather.advance(tick)){
                 mission.updateEvidenceWeather(weather.state().weather(),weather.state().intensity());

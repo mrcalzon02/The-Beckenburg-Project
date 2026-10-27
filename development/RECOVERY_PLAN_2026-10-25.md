@@ -45,6 +45,8 @@ Restore and continuously prove the end-to-end player journey: installed Windows 
 
 ## Checkpoint log
 
+- **2026-10-26 / local preservation before performance:** by user direction, saved all three dirty Beckenburg worktrees to pushed, SHA-readback preservation branches (`d07d7450`, `b7b193f4`, `06341f84`), then reconciled current main `f6793bda` into the unified checkout. Map reconciliation `4f92b65d` preserves newer structural/editor/lighting work and original native assets. Focused campaign, lighting, deck, ritual and Castle checks passed locally with fresh Java 17 classes; fresh packaged CI and installed RTX 5070 acceptance remain pending. See `development/integration/2026-10-26/README.md`. No recovery gate or hardware FPS target is claimed complete.
+
 - **2026-10-25 / baseline `6574a8c0780c`:** recovery initiated after direct GitHub inspection. Full multiplayer failed at `LevelEnclosureTest` for `HOUSE ROOM_0`; GPU acceptance passed; installer publishing succeeded independently of gameplay acceptance. No recovery gate marked complete at initialization.
 
 - **2026-10-25 / commits `6ad7071` and `22bfa45`:** wrote this durable recovery contract and made it mandatory in root `AGENTS.md`. Remote readback confirms both commits are on `main`.

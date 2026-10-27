@@ -1,0 +1,21 @@
+{
+  "source_sha": "f6793bda4f1c6c821fe66e49050b076b01cce6c0",
+  "artifact_run": 40433356721,
+  "jar_sha256": "9d3ae1e283b15959501b5404318a37c685661343dad5e5ec97d61d7c45558c89",
+  "java": "17.0.12",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "driver": "616.64",
+  "cpu": "Intel Core i7-14700K",
+  "resolution": [
+    640,
+    360
+  ],
+  "evidence_tier": "real hardware GPU diagnostic; scripted viewpoints, not installed interactive FPS acceptance",
+  "runs": [
+    {
+      "run": 1,
+      "exit_code": 3221226505,
+      "elapsed_seconds": 66.218
+    }
+  ]
+}
