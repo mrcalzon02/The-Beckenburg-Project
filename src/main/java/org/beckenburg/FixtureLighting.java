@@ -58,7 +58,6 @@ public final class FixtureLighting {
   private final int room;private final double x,y,z,nx,ny,nz;
   private final boolean directional;
   private List<StationaryRay> parts;
-  private RGB retained;private long retainedVersion=Long.MIN_VALUE;
   private StaticProbe(int room,double x,double y,double z,double nx,double ny,double nz){
    if(!Double.isFinite(x+y+z+nx+ny+nz))throw new IllegalArgumentException("finite stationary probe");
    this.room=room;this.x=x;this.y=y;this.z=z;this.nx=nx;this.ny=ny;this.nz=nz;
@@ -72,9 +71,6 @@ public final class FixtureLighting {
   }
   public RGB sample(){
    if(directional)normalSamples++;else samples++;
-   if(retained!=null&&retainedVersion==revision()){
-    if(directional)normalCacheHits++;else cacheHits++;return retained;
-   }
    if(parts==null){
     var found=new ArrayList<StationaryRay>();
     for(var source:candidates(x,y,z)){
@@ -106,21 +102,11 @@ public final class FixtureLighting {
     }else if(directional)normalCacheHits++;else cacheHits++;
     if(!part.visible)continue;double weight=part.weight*factors[source.id];
     if(weight<.001)continue;r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
-   retained=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));retainedVersion=revision();return retained;
+   return new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
   }
  }
  public StaticProbe staticProbe(int room,double x,double y,double z,double nx,double ny,double nz){
   return new StaticProbe(room,x,y,z,nx,ny,nz);
- }
- private boolean retainDynamicVisibility;
- private final Map<NormalKey,StaticProbe> dynamicProbes=bounded(100000);
- void retainVisibility(boolean enabled){retainDynamicVisibility=enabled;}
- private RGB retained(int room,double x,double y,double z,double nx,double ny,double nz){
-  var key=new NormalKey(room,Double.doubleToLongBits(x),Double.doubleToLongBits(y),Double.doubleToLongBits(z),
-      Double.doubleToLongBits(nx),Double.doubleToLongBits(ny),Double.doubleToLongBits(nz));
-  var probe=dynamicProbes.get(key);
-  if(probe==null){probe=staticProbe(room,x,y,z,nx,ny,nz);dynamicProbes.put(key,probe);}
-  return probe.sample();
  }
  /** Local lighting version: fixture changes advance only influence cells,
   * while door/window/collision occluder revisions conservatively invalidate
@@ -373,7 +359,6 @@ public final class FixtureLighting {
   * The one short probe visibility check replaces many source-to-point rays.
   */
  public RGB sampleDistanceLod(int room,double x,double y,double z,double viewDistance){
-  if(retainDynamicVisibility)return retained(room,x,y,z,0,0,0);
   if(map==null||room<0||!map.outside(room)||viewDistance<18
       ||!Double.isFinite(viewDistance))return sample(room,x,y,z);
   lodQueries++;
@@ -391,7 +376,6 @@ public final class FixtureLighting {
   return result;
  }
  public RGB sample(int room,double x,double y,double z){
-  if(retainDynamicVisibility)return retained(room,x,y,z,0,0,0);
   samples++;
   Key key=new Key(room,Math.round(x*16),Math.round(y*16),Math.round(z*16));
   long version=revision(x,y,z);
@@ -413,7 +397,6 @@ public final class FixtureLighting {
  /** Directional diffuse for audited source normals. Existing un-audited
   * assets retain the legacy sampler until their normal orientation is reviewed. */
  public RGB sampleNormal(int room,double x,double y,double z,double nx,double ny,double nz){
-  if(retainDynamicVisibility)return retained(room,x,y,z,nx,ny,nz);
   normalSamples++;
   NormalKey key=new NormalKey(room,Double.doubleToLongBits(x),
       Double.doubleToLongBits(y),Double.doubleToLongBits(z),

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 981,
+  "count": 989,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -10004,6 +10004,86 @@
       "height": 200,
       "bytes": 169519,
       "sha256": "2119ace6c7e235114bb1ba2da4a77f4461385767c64a588ab49a54543f5561f0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/live-house-8b93e93b/resident-depth-lifecycle/house-turn-0.png",
+      "url": "development/performance/hardware/2026-10-26/live-house-8b93e93b/resident-depth-lifecycle/house-turn-0.png",
+      "title": "House turn 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 712,
+      "height": 200,
+      "bytes": 145123,
+      "sha256": "473aecefd8a25ba308cbfbfa5232b59945ab3f600d73ff2b683fba78e31d67ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/live-house-8b93e93b/resident-depth-lifecycle/house-turn-119.png",
+      "url": "development/performance/hardware/2026-10-26/live-house-8b93e93b/resident-depth-lifecycle/house-turn-119.png",
+      "title": "House turn 119",
+      "kind": "Runtime GPU diagnostic",
+      "width": 712,
+      "height": 200,
+      "bytes": 143459,
+      "sha256": "8f11cf97f7271025e7f353f6ebf63e00b0a757f4aba9aa9ef43057a9b9d4b747"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/live-house-8b93e93b/resident-depth-lifecycle/house-turn-40.png",
+      "url": "development/performance/hardware/2026-10-26/live-house-8b93e93b/resident-depth-lifecycle/house-turn-40.png",
+      "title": "House turn 40",
+      "kind": "Runtime GPU diagnostic",
+      "width": 712,
+      "height": 200,
+      "bytes": 214285,
+      "sha256": "b6d120034235aa7730e2d0d8ed2256f046808cce57938dc03d5e1c9f48acb251"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/live-house-8b93e93b/resident-depth-lifecycle/house-turn-80.png",
+      "url": "development/performance/hardware/2026-10-26/live-house-8b93e93b/resident-depth-lifecycle/house-turn-80.png",
+      "title": "House turn 80",
+      "kind": "Runtime GPU diagnostic",
+      "width": 712,
+      "height": 200,
+      "bytes": 169519,
+      "sha256": "2119ace6c7e235114bb1ba2da4a77f4461385767c64a588ab49a54543f5561f0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/live-house-bcdb6ab9/resident-events-depth-lifecycle/house-turn-0.png",
+      "url": "development/performance/hardware/2026-10-26/live-house-bcdb6ab9/resident-events-depth-lifecycle/house-turn-0.png",
+      "title": "House turn 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 712,
+      "height": 200,
+      "bytes": 145150,
+      "sha256": "424562d7338ee14d71bdc17c1b953b6baa16e04e6b76d58f229de5e8b0b67095"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/live-house-bcdb6ab9/resident-events-depth-lifecycle/house-turn-119.png",
+      "url": "development/performance/hardware/2026-10-26/live-house-bcdb6ab9/resident-events-depth-lifecycle/house-turn-119.png",
+      "title": "House turn 119",
+      "kind": "Runtime GPU diagnostic",
+      "width": 712,
+      "height": 200,
+      "bytes": 136113,
+      "sha256": "b4a936333ffd04420ac2ebf3e4e3caed98515644af17ae14d1a6a8b2ab3c0ccb"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/live-house-bcdb6ab9/resident-events-depth-lifecycle/house-turn-40.png",
+      "url": "development/performance/hardware/2026-10-26/live-house-bcdb6ab9/resident-events-depth-lifecycle/house-turn-40.png",
+      "title": "House turn 40",
+      "kind": "Runtime GPU diagnostic",
+      "width": 712,
+      "height": 200,
+      "bytes": 214631,
+      "sha256": "19aefe1f0a7d916bd8641cf8647cd628aead1c8c85f4adbe8364edbb021e0c15"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/live-house-bcdb6ab9/resident-events-depth-lifecycle/house-turn-80.png",
+      "url": "development/performance/hardware/2026-10-26/live-house-bcdb6ab9/resident-events-depth-lifecycle/house-turn-80.png",
+      "title": "House turn 80",
+      "kind": "Runtime GPU diagnostic",
+      "width": 712,
+      "height": 200,
+      "bytes": 149660,
+      "sha256": "7f51f4baa6667bba5bed8662c049a65a0615253dfbfed2e5c6065f4b59a7f73f"
     }
   ]
 }

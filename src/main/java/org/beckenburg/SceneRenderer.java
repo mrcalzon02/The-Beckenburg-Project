@@ -2462,7 +2462,7 @@ public final class SceneRenderer implements AutoCloseable {
         if(castleLighting==null||castleEditRevision!=edits.revision()){
             castleLighting=new FixtureLighting(map);castleEditRevision=edits.revision();
         }
-        fixtureLighting=castleLighting;castleLighting.retainVisibility(false);castleLighting.castleFrame(lightsOn,(int)(clock*10));
+        fixtureLighting=castleLighting;castleLighting.castleFrame(lightsOn,(int)(clock*10));
         paintSky(clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         List<Face> castle=new ArrayList<>();castle.addAll(castleSurroundings());
@@ -2728,7 +2728,6 @@ public final class SceneRenderer implements AutoCloseable {
         int[] hazeBackground=map.nativeSite()?pixels.clone():null;
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         if(lightingMap!=map){lightingMap=map;fixtureLighting=new FixtureLighting(map);}fixtureLighting.frame(roomLights,roomLightTick);
-        fixtureLighting.retainVisibility(liveHouseRequested(map));
         long geometryStart=System.nanoTime();
         List<Face> geometry=scene(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,
             clock,others,apparition,markers);
