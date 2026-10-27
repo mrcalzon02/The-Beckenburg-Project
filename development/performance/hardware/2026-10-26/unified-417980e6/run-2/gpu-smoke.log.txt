@@ -1,0 +1,44 @@
+GPU CAPTURE build\e2e\gpu\investigation-house.png (337202 bytes)
+GPU CAPTURE build\e2e\gpu\castle-headquarters.png (198609 bytes)
+GPU ROTATION PASS 6 real house directions, fresh frame identity each; average_ms=650 worst_ms=1421
+GPU CAPTURE build\e2e\gpu\level-opening-house-00.png (243475 bytes)
+GPU OPENING PASS HOUSE frame=0 t=0.0 submitted=13
+GPU CAPTURE build\e2e\gpu\level-opening-house-01.png (232155 bytes)
+GPU OPENING PASS HOUSE frame=1 t=0.39 submitted=14
+GPU CAPTURE build\e2e\gpu\level-opening-house-02.png (243927 bytes)
+GPU OPENING PASS HOUSE frame=2 t=0.78 submitted=15
+GPU CAPTURE build\e2e\gpu\level-opening-house-03.png (228856 bytes)
+GPU OPENING PASS HOUSE frame=3 t=0.94 submitted=16
+GPU CAPTURE build\e2e\gpu\level-opening-farmhouse-00.png (194833 bytes)
+GPU OPENING PASS FARMHOUSE frame=0 t=0.0 submitted=18
+GPU CAPTURE build\e2e\gpu\level-opening-farmhouse-01.png (167711 bytes)
+GPU OPENING PASS FARMHOUSE frame=1 t=0.75 submitted=19
+GPU CAPTURE build\e2e\gpu\level-opening-farmhouse-02.png (204881 bytes)
+GPU OPENING PASS FARMHOUSE frame=2 t=0.94 submitted=20
+GPU CAPTURE build\e2e\gpu\level-opening-school-00.png (176845 bytes)
+GPU OPENING PASS SCHOOL frame=0 t=0.0 submitted=22
+GPU CAPTURE build\e2e\gpu\level-opening-school-01.png (195018 bytes)
+GPU OPENING PASS SCHOOL frame=1 t=0.75 submitted=23
+GPU CAPTURE build\e2e\gpu\level-opening-school-02.png (192607 bytes)
+GPU OPENING PASS SCHOOL frame=2 t=0.94 submitted=24
+GPU LIGHTING AUDIT room=14 cpu_build_ms=31.39 cpu_gpu_geometry_ms=3240.23 cpu_shadow_rays=221887 cpu_light_samples=627336 cpu_normal_rays=0 submitted_gpu_triangles=224432 end_to_end_ms=3320.36 frame_id=26
+GPU LIGHTMAP REUSE room=14 warm_cpu_geometry_ms=74.80 warm_shadow_rays=152 warm_samples=626319 warm_cache_hits=624412 invalidated_cells=0 light_candidates=21874 end_to_end_ms=130.09 frame_id=27
+GPU LIGHTING AUDIT room=13 cpu_build_ms=31.72 cpu_gpu_geometry_ms=3043.41 cpu_shadow_rays=203880 cpu_light_samples=460168 cpu_normal_rays=0 submitted_gpu_triangles=160077 end_to_end_ms=3119.23 frame_id=29
+GPU LIGHTING AUDIT room=12 cpu_build_ms=27.48 cpu_gpu_geometry_ms=3334.85 cpu_shadow_rays=234557 cpu_light_samples=631993 cpu_normal_rays=0 submitted_gpu_triangles=236151 end_to_end_ms=3407.67 frame_id=31
+GPU LIGHTING AUDIT room=0 cpu_build_ms=35.03 cpu_gpu_geometry_ms=2725.93 cpu_shadow_rays=185826 cpu_light_samples=445769 cpu_normal_rays=0 submitted_gpu_triangles=156127 end_to_end_ms=2805.30 frame_id=33
+GPU LIGHTMAP REUSE room=0 warm_cpu_geometry_ms=47.04 warm_shadow_rays=0 warm_samples=445253 warm_cache_hits=444409 invalidated_cells=0 light_candidates=10161 end_to_end_ms=97.47 frame_id=34
+GPU LIGHTING AUDIT room=4 cpu_build_ms=16.43 cpu_gpu_geometry_ms=597.32 cpu_shadow_rays=40929 cpu_light_samples=148745 cpu_normal_rays=0 submitted_gpu_triangles=61852 end_to_end_ms=657.27 frame_id=36
+PASS five real GPU viewport lighting audits plus warm unchanged-frame reuse at van and house entry
+GPU CAPTURE build\e2e\gpu\house-torch-off.png (294873 bytes)
+GPU CAPTURE build\e2e\gpu\house-torch-on.png (306378 bytes)
+GPU FLASHLIGHT image_changed_pixels=45352 brighter_pixels=37188 initial_uploaded_bytes=14976000 repeat_uploaded_bytes=1836288 repeat_reused_bytes=13139712 repeated_batches=244
+PASS OpenGL per-fragment flashlight and retained unchanged House VBO uploads
+GPU CAPTURE build\e2e\gpu\resident-vbo-original.png (2184 bytes)
+GPU CAPTURE build\e2e\gpu\resident-vbo-revision.png (2184 bytes)
+GPU RESIDENT VBO PASS first_upload=96 repeat_upload=0 repeat_reused=96 revised_upload=96 revised_pixels=19492 new_scene_upload=96
+GPU CAPTURE build\e2e\gpu\continuous-house-0.png (150577 bytes)
+GPU CAPTURE build\e2e\gpu\continuous-house-3.png (348577 bytes)
+GPU CAPTURE build\e2e\gpu\continuous-house-5.png (268294 bytes)
+GPU CONTINUOUS ROUTE samples=33 cpu_p50_ms=108.420 cpu_p95_ms=2852.125 gl_issue_p95_ms=8.454 gl_readback_p95_ms=6.594 end_to_end_p95_ms=2888.018
+PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse
+Beckenburg GPU initialized: OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64

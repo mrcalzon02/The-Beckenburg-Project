@@ -1398,6 +1398,39 @@
       "action": "Resolve the authoring enum to its existing WLD-02 lore record without making prototype geometry playable.",
       "evidence": "MissionBoardIntegrationTest iterates every authoring enum and verifies Hollow Creek remains locked; SiteSelectionTest passes locally.",
       "older_maps": "Preserve every saved chapter ordinal and prototype availability when adding or renaming locations."
+    },
+    {
+      "id": "DEV-128",
+      "title": "GPU diagnostics crashed after successful captures during abrupt JVM shutdown",
+      "status": "fixed-local-exact-CI-pending",
+      "affected": "Unified recovery / native GPU diagnostics / hunter feature integration",
+      "symptom": "Native RTX run from main f6793bda completed all assertions but exited 0xC0000409.",
+      "cause": "Smoke entry points called System.exit while the owning GLFW/GL worker remained alive, despite the existing review teardown contract.",
+      "action": "Stop and join the owning GPU worker before exiting; teardown failures must fail acceptance.",
+      "evidence": "Source 417980e6: three RTX 5070 diagnostic runs exited 0, 56.109/56.125/55.359 seconds; raw baseline failure and repeat-run logs retained under performance/hardware/2026-10-26.",
+      "older_maps": "Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred."
+    },
+    {
+      "id": "DEV-129",
+      "title": "Hunter unit fixture mixed active Hallow into independent Focus-expiry comparison",
+      "status": "fixed-local-exact-CI-pending",
+      "affected": "Unified recovery / native GPU diagnostics / hunter feature integration",
+      "symptom": "HunterDisciplineTest failed at its Focus-expiry assertion during integration.",
+      "cause": "The prior Cleric scenario shared Hallow with the Observer; both Hallow and Focus deliberately apply 55% fear.",
+      "action": "Retain every original assertion, isolate the Focus fixture, and additionally verify shared Hallow protection and expiry.",
+      "evidence": "HunterDisciplineTest, HunterClassIntegrationTest and SoloClassAbilityTest pass locally.",
+      "older_maps": "Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred."
+    },
+    {
+      "id": "DEV-130",
+      "title": "Hunter feature branch rejected ghost reconnect by assigning a hunter discipline",
+      "status": "fixed-local-exact-CI-pending",
+      "affected": "Unified recovery / native GPU diagnostics / hunter feature integration",
+      "symptom": "Unchanged LanSessionResumeIntegrationTest failed in ghostRejoin with invalid join response at source 417980e6.",
+      "cause": "Resume handshake passed the ghost seat to LanCase.selectDiscipline, which correctly rejects non-hunter seats.",
+      "action": "Guard class restoration to hunter seats, preserve ghost resume and host ownership, and reset fresh lobby occupant class authority to its own visual choice.",
+      "evidence": "LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy.",
+      "older_maps": "Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred."
     }
   ],
   "audit_categories": [

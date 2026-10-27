@@ -1,0 +1,56 @@
+[
+  {
+    "test": "HunterDisciplineTest",
+    "exit_code": 1,
+    "seconds": 0.063,
+    "output": "Exception in thread \"main\" java.lang.AssertionError\n\tat org.beckenburg.HunterDisciplineTest.main(HunterDisciplineTest.java:21)\n"
+  },
+  {
+    "test": "HunterClassIntegrationTest",
+    "exit_code": 0,
+    "seconds": 0.312,
+    "output": "HunterClassIntegrationTest passed\n"
+  },
+  {
+    "test": "SoloClassAbilityTest",
+    "exit_code": 0,
+    "seconds": 0.36,
+    "output": "SoloClassAbilityTest passed\n"
+  },
+  {
+    "test": "LanHunterAbilitiesNetworkTest",
+    "exit_code": 0,
+    "seconds": 0.469,
+    "output": "PASS: multiplayer class ownership, live sensor survey, cooldowns, ghost isolation\n"
+  },
+  {
+    "test": "CampaignPartyRulesTest",
+    "exit_code": 0,
+    "seconds": 0.484,
+    "output": "PASS party: AI Hunter counts toward threat and host rewards without extra class XP\n"
+  },
+  {
+    "test": "CampaignAllyTest",
+    "exit_code": 0,
+    "seconds": 0.484,
+    "output": "PASS HOUSE: real swept ally movement, orders, issued thermometer and manual journal\nPASS FARMHOUSE: real swept ally movement, orders, issued thermometer and manual journal\nPASS SCHOOL: real swept ally movement, orders, issued thermometer and manual journal\n"
+  },
+  {
+    "test": "CampaignAllyChatTest",
+    "exit_code": 0,
+    "seconds": 0.891,
+    "output": "PASS HOUSE: physically audible emotes, local/radio chat, witnessed instruments and manual evidence\nPASS FARMHOUSE: physically audible emotes, local/radio chat, witnessed instruments and manual evidence\nPASS SCHOOL: physically audible emotes, local/radio chat, witnessed instruments and manual evidence\nPASS team chat: bounded transcript and LAN-compatible frames\n"
+  },
+  {
+    "test": "CampaignStoryProgressionTest",
+    "exit_code": 0,
+    "seconds": 0.578,
+    "output": "PASS 22-chapter seeded campaign, three playable victory gates, replay rewards and separate LAN wallet\n"
+  },
+  {
+    "test": "CampaignProgressionAndStoreTest",
+    "exit_code": 0,
+    "seconds": 1.922,
+    "output": "PASS campaign: unified quartermaster, role levels, field perks, real payout and 32 persisted reports\n"
+  }
+]

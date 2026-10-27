@@ -1721,3 +1721,33 @@ Resolve the authoring enum to its existing WLD-02 lore record without making pro
 Evidence: MissionBoardIntegrationTest iterates every authoring enum and verifies Hollow Creek remains locked; SiteSelectionTest passes locally.
 
 Older-map obligation: Preserve every saved chapter ordinal and prototype availability when adding or renaming locations.
+
+## DEV-128 — GPU diagnostics crashed after successful captures during abrupt JVM shutdown
+
+**Status:** fixed-local-exact-CI-pending
+
+Stop and join the owning GPU worker before exiting; teardown failures must fail acceptance.
+
+Evidence: Source 417980e6: three RTX 5070 diagnostic runs exited 0, 56.109/56.125/55.359 seconds; raw baseline failure and repeat-run logs retained under performance/hardware/2026-10-26.
+
+Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
+
+## DEV-129 — Hunter unit fixture mixed active Hallow into independent Focus-expiry comparison
+
+**Status:** fixed-local-exact-CI-pending
+
+Retain every original assertion, isolate the Focus fixture, and additionally verify shared Hallow protection and expiry.
+
+Evidence: HunterDisciplineTest, HunterClassIntegrationTest and SoloClassAbilityTest pass locally.
+
+Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
+
+## DEV-130 — Hunter feature branch rejected ghost reconnect by assigning a hunter discipline
+
+**Status:** fixed-local-exact-CI-pending
+
+Guard class restoration to hunter seats, preserve ghost resume and host ownership, and reset fresh lobby occupant class authority to its own visual choice.
+
+Evidence: LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy.
+
+Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 913,
+  "count": 925,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -9324,6 +9324,126 @@
       "height": 933,
       "bytes": 695401,
       "sha256": "f9f55b46a957e4ab59055859cbee35a1ed0c46a2445cadfc384de5ef9bd879e6"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-0.png",
+      "url": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-0.png",
+      "title": "Baseline main f6793bda run 1 continuous house 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 150577,
+      "sha256": "5e8da266b39be4021fc43a711d6b069525928d49a5606595afadc74e3c568c03"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-3.png",
+      "url": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-3.png",
+      "title": "Baseline main f6793bda run 1 continuous house 3",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 348577,
+      "sha256": "1b3f1cbc33b5ef3b542e24418f5802831d848559d9d8a94e6ba004543e3450b7"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-5.png",
+      "url": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-5.png",
+      "title": "Baseline main f6793bda run 1 continuous house 5",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 268294,
+      "sha256": "4b96fd8958c59a00b31e8a1b026d72abceea12dcee75cf3530ee9cd8f7d59317"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-0.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-0.png",
+      "title": "Unified 417980e6 run 1 continuous house 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 150577,
+      "sha256": "5e8da266b39be4021fc43a711d6b069525928d49a5606595afadc74e3c568c03"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-3.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-3.png",
+      "title": "Unified 417980e6 run 1 continuous house 3",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 348577,
+      "sha256": "1b3f1cbc33b5ef3b542e24418f5802831d848559d9d8a94e6ba004543e3450b7"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-5.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-1-continuous-house-5.png",
+      "title": "Unified 417980e6 run 1 continuous house 5",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 268294,
+      "sha256": "4b96fd8958c59a00b31e8a1b026d72abceea12dcee75cf3530ee9cd8f7d59317"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-0.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-0.png",
+      "title": "Unified 417980e6 run 2 continuous house 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 150577,
+      "sha256": "5e8da266b39be4021fc43a711d6b069525928d49a5606595afadc74e3c568c03"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-3.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-3.png",
+      "title": "Unified 417980e6 run 2 continuous house 3",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 348577,
+      "sha256": "1b3f1cbc33b5ef3b542e24418f5802831d848559d9d8a94e6ba004543e3450b7"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-5.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-2-continuous-house-5.png",
+      "title": "Unified 417980e6 run 2 continuous house 5",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 268294,
+      "sha256": "4b96fd8958c59a00b31e8a1b026d72abceea12dcee75cf3530ee9cd8f7d59317"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-0.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-0.png",
+      "title": "Unified 417980e6 run 3 continuous house 0",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 150577,
+      "sha256": "5e8da266b39be4021fc43a711d6b069525928d49a5606595afadc74e3c568c03"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-3.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-3.png",
+      "title": "Unified 417980e6 run 3 continuous house 3",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 348577,
+      "sha256": "1b3f1cbc33b5ef3b542e24418f5802831d848559d9d8a94e6ba004543e3450b7"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-5.png",
+      "url": "development/performance/hardware/2026-10-26/captures/unified-417980e6-run-3-continuous-house-5.png",
+      "title": "Unified 417980e6 run 3 continuous house 5",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 360,
+      "bytes": 268294,
+      "sha256": "4b96fd8958c59a00b31e8a1b026d72abceea12dcee75cf3530ee9cd8f7d59317"
     }
   ]
 }

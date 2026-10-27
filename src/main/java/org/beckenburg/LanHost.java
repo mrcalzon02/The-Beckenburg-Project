@@ -269,7 +269,7 @@ public final class LanHost implements AutoCloseable {
                     }
                     peer=new Peer(socket,in,out,slot,waiting.name);
                     peer.hunterVisual=waiting.hunterVisual;
-                    mission.selectDiscipline(slot,CharacterVisuals.Hunter.valueOf(
+                    if(slot!=GHOST_SEAT)mission.selectDiscipline(slot,CharacterVisuals.Hunter.valueOf(
                         peer.hunterVisual.toUpperCase(java.util.Locale.ROOT)));
                     peer.lastPongTick=tick;
                     peer.lastGhostActionSequence=waiting.lastActionSequence;
@@ -332,6 +332,10 @@ public final class LanHost implements AutoCloseable {
                     peer.outbound.start(workers);
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     if(slot!=GHOST_SEAT){
+                        // A new lobby occupant must not inherit the departed
+                        // hunter's class merely because it reuses that seat.
+                        mission.selectDiscipline(slot,CharacterVisuals.Hunter.valueOf(
+                            peer.hunterVisual.toUpperCase(java.util.Locale.ROOT)));
                         for(int i=0;i<HUNTERS;i++)if(i!=slot&&seats[i]!=null)
                             reply(peer,"PLAYERNAME|"+i+"|"+seats[i].name);
                         notifyHunters("PLAYERNAME|"+slot+"|"+nickname);

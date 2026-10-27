@@ -1,0 +1,7 @@
+{
+  "source_sha": "417980e65de7e306999556873afe2977dea02457",
+  "test": "LanSessionResumeIntegrationTest",
+  "exit_code": 1,
+  "seconds": 1.64,
+  "output": "Exception in thread \"main\" java.io.IOException: invalid join response\n\tat org.beckenburg.LanClient.<init>(LanClient.java:97)\n\tat org.beckenburg.LanClient.<init>(LanClient.java:57)\n\tat org.beckenburg.LanSessionResumeIntegrationTest$Peer.<init>(LanSessionResumeIntegrationTest.java:18)\n\tat org.beckenburg.LanSessionResumeIntegrationTest.ghostRejoin(LanSessionResumeIntegrationTest.java:137)\n\tat org.beckenburg.LanSessionResumeIntegrationTest.main(LanSessionResumeIntegrationTest.java:215)\nCaused by: java.lang.IllegalArgumentException: invalid frame\n\tat org.beckenburg.LanProtocol.parts(LanProtocol.java:14)\n\tat org.beckenburg.LanClient.<init>(LanClient.java:83)\n\t... 4 more\n"
+}

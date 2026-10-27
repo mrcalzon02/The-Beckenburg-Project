@@ -29,6 +29,7 @@ public final class LanHunterAbilitiesNetworkTest {
         @Override public void close(){client.close();}
     }
     public static void main(String[] args)throws Exception{
+        freshSeatDoesNotInheritClass();
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3));
             var cleric=new Peer(host.port(),false,"Chaplain");
             var observer=new Peer(host.port(),false,"Archivist");
@@ -76,6 +77,25 @@ public final class LanHunterAbilitiesNetworkTest {
                     &&line.contains("SURVEY")),"Survey must never forge evidence");
             check(host.running(),"Class actions must not corrupt the running match");
             System.out.println("PASS: multiplayer class ownership, live sensor survey, cooldowns, ghost isolation");
+        }
+    }
+    private static void freshSeatDoesNotInheritClass()throws Exception{
+        try(var host=new LanHost("127.0.0.1",0);
+            var owner=new Peer(host.port(),false,"Owner")){
+            try(var departing=new Peer(host.port(),false,"Departing")){
+                departing.client.selectVisual(CharacterVisuals.Hunter.CLERIC);
+                departing.await("VISUAL|1|cleric");
+            }
+            long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(5);
+            while(host.connected()!=1&&System.nanoTime()<deadline)Thread.sleep(10);
+            check(host.connected()==1,"departed lobby seat released before replacement");
+            try(var replacement=new Peer(host.port(),false,"Replacement")){
+                check(replacement.client.seat().equals("H2"),"new occupant reuses actual vacant seat");
+                replacement.await("VISUAL|1|observer");
+                var field=LanHost.class.getDeclaredField("mission");field.setAccessible(true);
+                check(((LanCase)field.get(host)).discipline(1)==CharacterVisuals.Hunter.OBSERVER,
+                    "fresh Observer seat cannot inherit departed Cleric authority");
+            }
         }
     }
 }

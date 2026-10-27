@@ -1,0 +1,30 @@
+{
+  "source_sha": "417980e65de7e306999556873afe2977dea02457",
+  "resources_artifact_run": 40433356721,
+  "java": "17.0.12",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "driver": "616.64",
+  "cpu": "Intel Core i7-14700K",
+  "resolution": [
+    640,
+    360
+  ],
+  "evidence_tier": "real hardware diagnostic using freshly compiled unified source and approved main asset overlay; not installed interactive acceptance",
+  "runs": [
+    {
+      "run": 1,
+      "exit_code": 0,
+      "seconds": 56.109
+    },
+    {
+      "run": 2,
+      "exit_code": 0,
+      "seconds": 56.125
+    },
+    {
+      "run": 3,
+      "exit_code": 0,
+      "seconds": 55.359
+    }
+  ]
+}
