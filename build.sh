@@ -118,6 +118,8 @@ command -v blender >/dev/null || { echo "Blender is required for original GGBot 
 blender --background --factory-startup --python-exit-code 1 --python tools/ggbot_blend_export.py -- \
     build/source/ggbot-original.zip build/classes/org/beckenburg/models
 javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/*.java
+# Preserve case-start trace lifecycle parity with the mandatory Windows manifest.
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.BeckenburgDeveloperTraceTest
 # Verify authored multi-storey levels and actual packaged scenery.
 for check in MergedMaterialMetadataTest HollowCreekFacilitiesAssetTest HollowCreekPavilionAssetTest HollowCreekRefinementAssetsTest HidingBudgetTest HollowCreekDockAssetsTest HollowCreekTentAssetsTest HollowCreekBoundaryAssetsTest HollowCreekTerrainAssetTest TerrainFoundationAssetsTest DotsRayFieldTest OpticalEvidenceTest LanOpticalEvidenceNetworkTest BlackpineLightingTest BlackpineDeckDepthTest AuthoredLevelPhysicsTest AuthoredLevelReachabilityTest AuthoredLevelStateTest AuthoredLevelNetworkTest AuthoredLevelRitualCaseTest AuthoredUtilitiesTest SoloElevationTest EquipmentAssetAssignmentsTest LevelRenderAcceptanceTest WorldViewHandednessTest LevelSurfaceIntegrityTest LivedLevelDressingTest LooseClutterTest LooseClutterNetworkTest HauntedFixturesTest VanHumanScaleTest VanRackStockTest VanRackNetworkTest InteractionFocusTest InteractionNetworkTest HeldDeviceReadoutTest FixtureSoundscapeTest DomesticFitoutTest LevelEnclosureTest PhysicalLightingTest SurroundingClearanceTest; do
     java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg."$check"
