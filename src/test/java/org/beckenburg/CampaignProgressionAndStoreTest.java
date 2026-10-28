@@ -22,6 +22,10 @@ public final class CampaignProgressionAndStoreTest {
         Path folder=Files.createTempDirectory("beckenburg-depot-archive");
         Path file=folder.resolve("campaign.properties");
         try{
+            check(CampaignStorePanel.representedEquipmentIds().equals(
+                    EquipmentRegistry.all().stream().map(EquipmentRegistry.Tool::id)
+                        .collect(java.util.stream.Collectors.toSet())),
+                "The Castle shop indexes every authored equipment family, without hiding a model-only catalog");
             var profile=new ProfileStore(file);
             check(profile.level(InvestigationSession.Role.OBSERVER)==1,
                 "New Hunter begins at level one");
