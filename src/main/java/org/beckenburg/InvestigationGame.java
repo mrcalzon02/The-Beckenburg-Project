@@ -561,7 +561,9 @@ public final class InvestigationGame {
     }
     /** Free play is never silently dispatched to the menu's previous site.
      * Campaign dispatch continues to use its fixed story site and progression. */
+    /** Free play map selection remains deliberate, but is no longer a popup. */
     private void begin(){
+        boolean fromCastle=castle!=null&&castle.isShowing();
         JComboBox<SiteCatalog.Location> site=new JComboBox<>();
         for(int i=0;i<locationPicker.getItemCount();i++){
             SiteCatalog.Location candidate=locationPicker.getItemAt(i);
@@ -575,21 +577,43 @@ public final class InvestigationGame {
         JComboBox<SiteCatalog.Conditions> conditions=
             select(SiteCatalog.Conditions.values(),
                 (SiteCatalog.Conditions)conditionsPicker.getSelectedItem());
-        JPanel dispatch=new JPanel(new GridLayout(0,2,7,7));
-        dispatch.setBorder(BorderFactory.createEmptyBorder(12,12,12,12));
-        setting(dispatch,"Investigation location",site);
-        setting(dispatch,"Hunter discipline",role);
-        setting(dispatch,"Site conditions",conditions);
-        int selection=JOptionPane.showConfirmDialog(window,dispatch,
-            "EXPEDITION DISPATCH / SELECT LOCATION",
-            JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
-        if(selection!=JOptionPane.OK_OPTION)return;
-        SiteCatalog.Location destination=(SiteCatalog.Location)site.getSelectedItem();
-        SiteCatalog.requirePlayable(destination);
-        locationPicker.setSelectedItem(destination);
-        rolePicker.setSelectedItem(role.getSelectedItem());
-        conditionsPicker.setSelectedItem(conditions.getSelectedItem());
-        begin(false,false,0,null);
+        JPanel form=new JPanel(new GridLayout(0,2,10,14));
+        form.setOpaque(false);
+        form.setBorder(BorderFactory.createEmptyBorder(20,30,20,30));
+        for(JComboBox<?> choice:new JComboBox<?>[]{site,role,conditions}){
+            choice.setBackground(new Color(32,38,47));
+            choice.setForeground(new Color(240,222,183));
+        }
+        setting(form,"Investigation location",site);
+        setting(form,"Hunter discipline",role);
+        setting(form,"Site conditions",conditions);
+        JPanel body=new JPanel(new BorderLayout());body.setOpaque(false);
+        body.add(form,BorderLayout.NORTH);
+        JLabel instruction=PsxMenuScreen.label(
+            "SELECT THE MAP BEFORE DISPATCH. NO CASE STARTS UNTIL YOU CONFIRM.");
+        instruction.setHorizontalAlignment(SwingConstants.CENTER);
+        body.add(instruction,BorderLayout.CENTER);
+        JButton cancel=PsxHorrorUi.button("RETURN");
+        Runnable goBack=()->{if(fromCastle)showCastle();else showMenu();};
+        cancel.addActionListener(e->goBack.run());
+        JButton start=PsxHorrorUi.button("BEGIN SELECTED CASE");
+        start.setName("dispatch.confirm");
+        start.addActionListener(e->{
+            SiteCatalog.Location destination=(SiteCatalog.Location)site.getSelectedItem();
+            SiteCatalog.requirePlayable(destination);
+            locationPicker.setSelectedItem(destination);
+            rolePicker.setSelectedItem(role.getSelectedItem());
+            conditionsPicker.setSelectedItem(conditions.getSelectedItem());
+            begin(false,false,0,null);
+        });
+        JPanel page=PsxMenuScreen.screen("dispatch","EXPEDITION DISPATCH",
+            "CHOOSE INVESTIGATION SITE / HUNTER / CONDITIONS",body,cancel,start);
+        page.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
+            .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"cancelDispatch");
+        page.getActionMap().put("cancelDispatch",new AbstractAction(){
+            @Override public void actionPerformed(ActionEvent e){goBack.run();}
+        });
+        showPage("dispatch",page);
     }
     private void begin(boolean campaignMode,boolean withAssistant,long seed,
             CampaignStory.Chapter chapter){
