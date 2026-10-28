@@ -2118,13 +2118,17 @@ public final class SceneRenderer {
         paintSky(clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         List<Face> castle=new ArrayList<>();castle.addAll(castleSurroundings());
-        // A continuous sub-floor seals cracks at mismatched tiled-wall boundaries.
-        // Fine floor finishes remain at Y=0; the backing is entirely BELOW them.
+        // Every navigable tile is physical ground, including the approach through
+        // Z=35. The old 16m radial visibility test clipped floors in plain sight
+        // at long angles and the HEIGHT-1 loop excluded the open gate apron.
+        // The authored, immutable floor footprint avoids re-scanning the raster.
+        // This stone substrate lies below the selectable finish material and
+        // covers edge cracks without sealing intentional elevated-floor voids.
         texturedQuad(castle,new Point(1,CASTLE_FOUNDATION_Y,1),new Point(43,CASTLE_FOUNDATION_Y,1),
-            new Point(43,CASTLE_FOUNDATION_Y,34),new Point(1,CASTLE_FOUNDATION_Y,34),MaterialAtlas.STONE,
-            1,1,43,1,43,34,1,34,0x77736e);
-        for(int zz=1;zz<CastleHubMap.HEIGHT-1;zz++)for(int xx=1;xx<CastleHubMap.WIDTH-1;xx++){
-            if(map.solid(xx,zz)||Math.hypot(xx+.5-x,zz+.5-z)>16)continue;
+            new Point(43,CASTLE_FOUNDATION_Y,36),new Point(1,CASTLE_FOUNDATION_Y,36),MaterialAtlas.STONE,
+            1,1,43,1,43,36,1,36,0x77736e);
+        for(CastleHubMap.GroundCell cell:map.groundCells()){
+            int xx=cell.x(),zz=cell.z();
             int stone=map.floorMaterial(xx+.5,zz+.5);
             texturedQuad(castle,new Point(xx,0,zz),new Point(xx+1,0,zz),
                 new Point(xx+1,0,zz+1),new Point(xx,0,zz+1),stone,
