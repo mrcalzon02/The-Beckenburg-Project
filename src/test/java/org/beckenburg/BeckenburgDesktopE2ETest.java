@@ -120,10 +120,16 @@ public final class BeckenburgDesktopE2ETest {
         }
         return null;
     }
-    private static JDialog dispatchDialog(){
-        for(Window window:Window.getWindows())if(window instanceof JDialog dialog
-                &&dialog.isShowing()&&dialog.getTitle().startsWith("EXPEDITION DISPATCH"))
-            return dialog;
+    /** Map selection is a PSX game card, never a separate JDialog. */
+    private static Container dispatchPage(Container root){
+        for(Component part:root.getComponents()){
+            if(part instanceof javax.swing.JPanel panel && "dispatch".equals(panel.getName())
+                    &&panel.isShowing())return panel;
+            if(part instanceof Container nested){
+                Container found=dispatchPage(nested);
+                if(found!=null)return found;
+            }
+        }
         return null;
     }
     private static <T> T waitFor(java.util.concurrent.Callable<T> check,long seconds)throws Exception{
@@ -171,26 +177,24 @@ public final class BeckenburgDesktopE2ETest {
             capture("02-multiplayer-lobby");
             System.out.println("E2E PASS main-menu multiplayer handoff and actionable join/host lobby");
             SwingUtilities.invokeAndWait(lobby::dispose);
-            // The previous smoke stopped at the menu and could never detect
-            // BECK-LIVE-012 (case start locked the user's process). Open the
-            // actual dispatch dialog, explicitly choose HOUSE, and demand an
-            // advancing, first-frame-complete case on the live Swing UI.
+            // Use the real in-game dispatch card, select House and demand an
+            // advancing case. No modal window or appearance assertion is required.
             JButton start=button(frame.getContentPane(),"START SOLO INVESTIGATION");
             if(start==null||!start.isEnabled())throw new AssertionError(
                 "Solo dispatch control missing or House unavailable");
             SwingUtilities.invokeLater(start::doClick);
-            JDialog dispatch=waitForResponsive(BeckenburgDesktopE2ETest::dispatchDialog,20);
+            Container dispatch=waitForResponsive(()->dispatchPage(frame.getContentPane()),20);
             if(dispatch==null)throw new AssertionError(
-                "Solo map-selection dispatch did not appear");
+                "In-game solo map-selection menu did not appear");
             capture("03-solo-dispatch-map-selection");
             SwingUtilities.invokeLater(()->{
-                JComboBox<?> site=sitePicker(dispatch.getContentPane());
+                JComboBox<?> site=sitePicker(dispatch);
                 if(site==null)throw new AssertionError("Solo location selector missing");
                 site.setSelectedItem(SiteCatalog.Location.HOUSE);
                 if(site.getSelectedItem()!=SiteCatalog.Location.HOUSE)
                     throw new AssertionError("Could not dispatch authored House site");
-                JButton approve=button(dispatch.getContentPane(),"OK");
-                if(approve==null)throw new AssertionError("Solo dispatch OK button unavailable");
+                JButton approve=button(dispatch,"BEGIN SELECTED CASE");
+                if(approve==null)throw new AssertionError("Solo dispatch confirm control unavailable");
                 approve.doClick();
             });
             Component solo=waitForResponsive(()->visibleSoloCase(frame.getContentPane()),25);
