@@ -1436,6 +1436,45 @@ public final class SceneRenderer {
         }
         return false;
     }
+    /**
+     * C3 DIAGNOSTIC ONLY. Feed the real authored House shell, door leaves,
+     * stairs, floor voids and window rails through a separate depth owner
+     * reference. Do not change the production draw path or enable portal
+     * rejection based on a sampled CPU result.
+     */
+    HousePortalDepthReference.Result auditHousePortalDepth(HouseMap map) {
+        if(map.site()!=HouseMap.Site.HOUSE)
+            throw new IllegalArgumentException("House-only C3 depth reference");
+        var geometry=new ArrayList<Face>();
+        boolean previous=shellChunkCulling;
+        try {
+            shellChunkCulling=false; // full authored no-portal-cull baseline
+            levelArchitecture(geometry,map);
+        } finally {
+            shellChunkCulling=previous;
+        }
+        var triangles=new ArrayList<HousePortalDepthReference.Triangle>();
+        for(Face face:geometry) {
+            if(!faceInFrustum(face))continue;
+            var polygon=clip(new Vertex(camera(face.a),face.au,face.av),
+                new Vertex(camera(face.b),face.bu,face.bv),
+                new Vertex(camera(face.c),face.cu,face.cv));
+            for(int i=1;i+1<polygon.size();i++)
+                triangles.add(new HousePortalDepthReference.Triangle(
+                    depthReferenceVertex(polygon.get(0)),
+                    depthReferenceVertex(polygon.get(i)),
+                    depthReferenceVertex(polygon.get(i+1)),
+                    face.room,face.material));
+        }
+        int cameraRoom=map.roomAt(x,eyeHeight-.85,z);
+        return HousePortalDepthReference.audit(map,cameraRoom,
+            renderWidth,renderHeight,focal,triangles);
+    }
+    private static HousePortalDepthReference.Vertex depthReferenceVertex(Vertex v) {
+        return new HousePortalDepthReference.Vertex(
+            v.p.x,v.p.y,v.p.z,v.u,v.v);
+    }
+
     /** Coarse world-space object culling before decoding/importing large GLBs.
      * Radius is generous for rotatable meshes and near-plane crossings. */
     boolean objectInView(double centerX,double centerZ,double radius,double distance){
