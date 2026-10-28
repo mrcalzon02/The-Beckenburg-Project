@@ -84,6 +84,26 @@ public final class BeckenburgDesktopE2ETest {
         }
         return null;
     }
+    private static CastleHubPanel visibleCastle(Container surface){
+        for(Component component:surface.getComponents()){
+            if(component instanceof CastleHubPanel castle&&castle.isShowing())return castle;
+            if(component instanceof Container nested){
+                CastleHubPanel candidate=visibleCastle(nested);
+                if(candidate!=null)return candidate;
+            }
+        }
+        return null;
+    }
+    private static boolean visibleUnifiedStore(Container surface){
+        for(Component component:surface.getComponents()){
+            if(component instanceof javax.swing.JList<?> items
+                    &&"campaign.store.items".equals(items.getName())&&items.isShowing())
+                return true;
+            if(component instanceof Container nested&&visibleUnifiedStore(nested))
+                return true;
+        }
+        return false;
+    }
     private static Component visibleSoloCase(Container surface){
         for(Component c:surface.getComponents()){
             if(c.getClass().getSimpleName().equals("GamePanel") && c.isShowing())return c;
@@ -164,6 +184,36 @@ public final class BeckenburgDesktopE2ETest {
                 throw new AssertionError("Diagnostics control missing from playable launcher");
             capture("01-loaded-menu");
             System.out.println("E2E PASS packaged startup and usable PSX-themed main menu");
+            // Functional: selecting the normal Castle's store must show the
+            // entire catalog inside the original desktop window, without a
+            // second modal dialog. The screenshot is review evidence only.
+            SwingUtilities.invokeLater(()->button(frame.getContentPane(),"ENTER CASTLE").doClick());
+            CastleHubPanel castle=waitForResponsive(
+                ()->visibleCastle(frame.getContentPane()),40);
+            if(castle==null)throw new AssertionError("Playable Castle could not be entered");
+            SwingUtilities.invokeLater(castle::openQuartermaster);
+            Boolean embedded=waitForResponsive(
+                ()->visibleUnifiedStore(frame.getContentPane())?Boolean.TRUE:null,15);
+            if(embedded==null)throw new AssertionError(
+                "The quartermaster was not mounted inside the original game window");
+            for(Window popup:Window.getWindows())if(popup instanceof JDialog
+                    &&popup.isShowing())
+                throw new AssertionError("Store must never create a top-level dialog");
+            capture("02-castle-store-all-equipment");
+            SwingUtilities.invokeLater(()->{
+                JButton close=button(frame.getContentPane(),"RETURN TO CASTLE  [ESC]");
+                if(close==null)throw new AssertionError("Missing store close control");
+                close.doClick();
+                KeyEvent menuKey=new KeyEvent(castle,KeyEvent.KEY_PRESSED,
+                    System.currentTimeMillis(),0,KeyEvent.VK_ESCAPE,(char)27);
+                for(KeyListener listener:castle.getKeyListeners())listener.keyPressed(menuKey);
+            });
+            Boolean returned=waitForResponsive(
+                ()->button(frame.getContentPane(),"HOST / JOIN MULTIPLAYER")!=null
+                    &&button(frame.getContentPane(),"HOST / JOIN MULTIPLAYER").isShowing()
+                    ?Boolean.TRUE:null,15);
+            if(returned==null)throw new AssertionError(
+                "Castle store could not return to the original main menu");
             SwingUtilities.invokeAndWait(()->button(frame.getContentPane(),
                 "HOST / JOIN MULTIPLAYER").doClick());
             JFrame lobby=waitFor(()->{
