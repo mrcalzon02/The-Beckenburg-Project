@@ -2189,17 +2189,15 @@ public final class SceneRenderer {
                     imported(castle,"open_book_mp_1",px,.67,pz,.48,0);
                 }
                 case EXPEDITION -> {
-                    // A staffed expedition dispatch desk: real map plans, case
-                    // clipboard and reference journal, not an isolated mobile phone.
+                    // An actual dispatch desk, not three upright showroom
+                    // cards that read as floating paintings above the counter.
+                    // The open journal is a flat authored table prop. Case
+                    // selection is handled by the existing in-game interaction.
                     double deskScale=.84;
                     double top=CastleHubDecor.meshHeight("tv_table_1_4")*deskScale;
                     castleProp(castle,"tv_table_1_4",px,0,pz,deskScale,0);
-                    castleProp(castle,"blender_site_map_fixed",px-.25,top+.008,pz-.19,
-                        castleExhibitScale("blender_site_map_fixed",.53),0);
-                    castleProp(castle,"blender_clipboards_fixed",px+.27,top+.008,pz+.07,
-                        castleExhibitScale("blender_clipboards_fixed",.46),0);
-                    castleProp(castle,"open_book_mp_1",px-.18,top+.008,pz+.27,
-                        castleExhibitScale("open_book_mp_1",.46),0);
+                    castleProp(castle,"open_book_mp_1",px,top+.008,pz,
+                        .48,0);
                 }
                 case MULTIPLAYER -> {
                     // Use the actual desktop computer, not the wall-mounted
@@ -2248,10 +2246,9 @@ public final class SceneRenderer {
         for(CastleHubDecor.Accent a:CastleHubDecor.placedAccents(edits))
             if(Math.hypot(a.x()-x,a.z()-z)<12)
                 castleProp(castle,a.mesh(),a.x(),a.y(),a.z(),a.scale(),a.yaw());
-        // Castle entrance arch; courtyard remains open to the procedural sky.
-        box(castle,12.75,0,11.20,.40,3.0,.38,0x625c60);
-        box(castle,14.10,0,11.20,.40,3.0,.38,0x625c60);
-        box(castle,12.75,2.9,11.20,1.75,.36,.38,0xa69178);
+        // Only CastleHubArchitecturalPlan owns masonry portal geometry.
+        // A second hand-built entrance frame at Z=11.20 previously
+        // overlapped the actual authored arch at Z=11.50.
         boolean gpuFrame=drawGpuFaces(castle,null);
         if(!gpuFrame)
             for(Face face:castle){double mx=(face.a.x+face.b.x+face.c.x)/3,mz=(face.a.z+face.b.z+face.c.z)/3;int room=mx<0||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;drawLitFace(face,room,0);}
