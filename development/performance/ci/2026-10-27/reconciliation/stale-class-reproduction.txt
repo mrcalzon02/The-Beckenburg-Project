@@ -1,0 +1,21 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.beckenburg:beckenburg-gpu >--------------------
+[INFO] Building beckenburg-gpu 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-cli) @ beckenburg-gpu ---
+[INFO] Copying 23 resources from ..\assets\runtime\mission-board to target\classes\org\beckenburg\mission-board
+[INFO] Copying 1 resource from ..\assets\runtime\sounds to target\classes\org\beckenburg\sounds
+[INFO] skip non existing resourceDirectory C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Unified\gpu-client\..\assets\runtime\water
+[INFO] skip non existing resourceDirectory C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Unified\gpu-client\..\assets\runtime\water-imports
+[INFO] Copying 2 resources from ..\water-module\src\main\resources to target\classes
+[INFO] Copying 2006 resources from ..\build\classes to target\classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.834 s
+[INFO] Finished at: 2026-10-27T09:28:58-08:00
+[INFO] ------------------------------------------------------------------------
+REPRODUCED: obsolete compiled class copied as a runtime resource

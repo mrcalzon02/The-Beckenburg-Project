@@ -25,8 +25,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: beckenburg-full-round-e2e-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  group: beckenburg-full-round-e2e-${{ github.event_name }}-${{ github.sha }}
+  cancel-in-progress: false
 
 jobs:
   packaged-multiplayer-round:

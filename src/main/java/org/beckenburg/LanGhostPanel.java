@@ -49,7 +49,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         addFocusListener(this);addFocusListener(mouseLook);
         timer=new javax.swing.Timer(110,e->frame());timer.start();
     }
-    public void close(){timer.stop();keys.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
+    public void close(){timer.stop();camera.close();keys.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
     /** Accept only frames addressed to ghost; never interpret BODY/TEAMMAP/PROGRESS. */
     public void onEvent(String packet){
         if(!SwingUtilities.isEventDispatchThread())throw new IllegalStateException("ghost UI update must be on EDT");

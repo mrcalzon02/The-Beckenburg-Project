@@ -1,0 +1,12 @@
+compile-gpu-java17	UNKNOWN STEP	2026-10-27T18:40:49.2840223Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2e85049f54a4a0a8900169c551909f68eee55a1d:refs/remotes/origin/performance/live-house-residency
+compile-gpu-java17	UNKNOWN STEP	2026-10-27T18:43:07.6311754Z  * [new ref]         2e85049f54a4a0a8900169c551909f68eee55a1d -> origin/performance/live-house-residency
+compile-gpu-java17	UNKNOWN STEP	2026-10-27T18:43:13.2940073Z 2e85049f54a4a0a8900169c551909f68eee55a1d
+windows-build	UNKNOWN STEP	2026-10-27T18:40:54.1730117Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2e85049f54a4a0a8900169c551909f68eee55a1d:refs/remotes/origin/performance/live-house-residency
+windows-build	UNKNOWN STEP	2026-10-27T18:42:59.7769447Z  * [new ref]         2e85049f54a4a0a8900169c551909f68eee55a1d -> origin/performance/live-house-residency
+windows-build	UNKNOWN STEP	2026-10-27T18:43:21.1696281Z 2e85049f54a4a0a8900169c551909f68eee55a1d
+windows-build	UNKNOWN STEP	2026-10-27T18:46:54.2569321Z PASS actual House drawNetwork residency, dropped upload delivery, all-room camera reuse, resize, fixtures, doors, UV fallback and scene/map ownership
+windows-build	UNKNOWN STEP	2026-10-27T18:47:22.1951683Z PASS legacy visibility RGB/quantization/normals/LOD parity; saved scalar=7216 normal=6988 door rays=1126 changed colours=72
+opengl-mesa-smoke	UNKNOWN STEP	2026-10-27T18:52:22.0194400Z GPU UI PASS actual map selection / live solo frame / interactive Swing HUD
+opengl-mesa-smoke	UNKNOWN STEP	2026-10-27T18:53:02.5687690Z PASS actual OpenGL depth coverage: van, House interior and upstairs; no original surface lost beyond 5cm depth tolerance
+opengl-mesa-smoke	UNKNOWN STEP	2026-10-27T18:53:02.6258302Z PASS actual OpenGL viewport lifetime: inactive close preserves House; active exit releases all resident vertex capacity without stopping backend
+opengl-mesa-smoke	UNKNOWN STEP	2026-10-27T18:53:02.6332630Z PASS actual GL global fixture/flashlight/emission scaling and evicted resident handle recovery

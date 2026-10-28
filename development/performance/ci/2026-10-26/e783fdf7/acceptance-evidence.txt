@@ -1,0 +1,16 @@
+Exact-head run 40464099189; source e783fdf73f9fcd95d014fd8e6e3955404cefefde
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-27T07:03:15.0479139Z E2E PASS Host listening; hunter owner, remote hunter and human ghost joined
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-27T07:03:15.1524851Z E2E PASS Ready and started; all clients received shared mission launch
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-27T07:03:15.1798131Z E2E PASS Guest entered authoritative 3D scene; spectral privacy enforced
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-27T07:03:15.2806018Z E2E PASS Host hunter reached haunting anchor through real room topology
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-27T07:03:15.3827062Z E2E PASS All evidence tools measured and shared; no auto-confirmation or ghost leak
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-27T07:03:18.6320266Z E2E PASS Human submitted SPIRIT hypothesis; host confirmed identification to team
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-27T07:03:18.9875066Z E2E PASS Ward placed at anchor; correct rite initiated at authored circle
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-27T07:03:24.9244230Z E2E PASS Host, second hunter and ghost all received ABSOLVED round result and payout
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-10-27T07:03:24.9458900Z E2E PASS Post-round commands rejected; match cannot continue after result
+packaged-multiplayer-round	Execute complete release regression manifest after multiplayer acceptance	2026-10-27T07:13:55.4583451Z REGRESSION SUMMARY passed=257 failed=0 skipped=0 manifest=257
+packaged-multiplayer-round	Launch packaged JAR, verify splash to live menu to multiplayer UI	2026-10-27T07:13:57.5643824Z E2E PASS packaged startup and usable PSX-themed main menu
+packaged-multiplayer-round	Launch packaged JAR, verify splash to live menu to multiplayer UI	2026-10-27T07:13:58.5615920Z E2E PASS main-menu multiplayer handoff and actionable join/host lobby
+packaged-multiplayer-round	Launch packaged JAR, verify splash to live menu to multiplayer UI	2026-10-27T07:14:02.5585077Z E2E PASS real House dispatch, skippable flyover and 3 advancing gameplay frames
+packaged-multiplayer-round	Launch the actual Windows executable and require menu-ready diagnostics	2026-10-27T07:14:27.0411268Z ^[[36;1m  Write-Host 'PASS Native Windows executable loaded to the menu; not just a running splash'^[[0m
+packaged-multiplayer-round	Launch the actual Windows executable and require menu-ready diagnostics	2026-10-27T07:14:29.3330993Z PASS Native Windows executable loaded to the menu; not just a running splash

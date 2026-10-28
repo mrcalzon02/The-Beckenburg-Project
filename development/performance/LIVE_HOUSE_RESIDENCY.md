@@ -1,0 +1,23 @@
+# Live House residency candidate
+
+This changes the normal `SceneRenderer.drawNetwork` / investigation GPU path, not just the old 350-face diagnostic. Internal switch: `-Dbeckenburg.gpu.residentHouse=true`; default remains off until acceptance.
+
+Immutable authored House architecture, enclosure and ordinary scenery are prepared in world coordinates and grouped by room, material and spatial cell. Source map identity, authored revision and hiding configuration own a generation. The current House has 209,244 source faces, 789 chunks and 665,532 prepared vertices (21,297,024 packed bytes). A hard 600,000-triangle limit bounds residency; oversized generations retain the existing renderer. The original UVs, audited normal tags and source geometry are retained. Both resident and legacy triangle subdivision now preserve existing normal tags.
+
+All stationary chunks are prepared and submitted initially, before the first House-facing player turn. Camera changes reuse their source geometry, stationary probes and draw-only GPU handles. Initial uploads remain attached until an actual matching completed frame acknowledges them; superseded frames cannot lose the only upload. Resize retains resources. Map/revision changes get a new GPU scene generation. Returning from another viewport/preview restores handles if that backend scene transition disposed them.
+
+Stationary source attenuation and visibility are retained separately from changing fixture intensity. Region revisions refresh affected RGB; unchanged chunks do not repack arrays. Door/window changes revise only stationary rays intersecting conservative swept portal volumes; every actual House door matches fresh uncached visibility and RGB (585 localized versus 7860 fresh rays in the functional route). Conservative chunk influence regions are checked first, and only changed packed RGB/emission uploads. Existing dynamic lighting still uses its legacy caches and remains a measured cold-spike source. The interim VBO still combines geometry and RGB, so a real lighting change can upload that chunk again without rebuilding topology.
+
+Doors/windows, switchable fixtures, live CRT models, ghosts, held/deployed equipment, rituals and network state keep their current paths. UV, D.O.T.S. and enabled portable lights select the full existing optical/lighting path for correctness, while preserving retained resources for resumption. CPU/software rendering is unchanged. No hard portal culling is enabled.
+
+Functional evidence: `LiveHouseResidencyTest` exercises actual gameplay scene assembly with a contract backend: full geometry, deliberately dropped first upload, zero camera-only builds/probe refreshes/uploads after warmup, resize, circuit/door transitions, UV fallback, another GPU viewport and a second map. `StationaryFixtureProbeTest` verifies real switched RGB with zero unchanged shadow rays, opposite normals and occluder revision. Existing D3/D4, physical lighting, wall/floor join and optical-evidence checks pass. This is not hardware FPS proof.
+
+`--live-house-profile` runs the actual normal renderer from a valid van position through 120 House-facing turns, after 12 warm frames. It records CPU/end-to-end p50/p95/p99, actual GL-worker resident upload/reuse/capacity bytes, source build/probe counters and raw captures. Optional `-Dbeckenburg.profile.liveClock=true` advances real fixture time; optional `-Dbeckenburg.profile.depthParity=true` compares original visible GPU depth against the resident path at van/interior/upstairs views, with vertex snap disabled for geometry diagnosis. It imposes no Mesa FPS threshold and is not an installed investigation/ritual/return acceptance test.
+
+Status: source and functional checks passed; matched Windows GPU profile, depth parity, exact-SHA CI, native installed gameplay, actual GPU exit/restore and context-loss lifecycle, dynamic legacy-cache door work, dynamic-light GPU migration and 30 FPS acceptance remain pending. A–G is not complete.
+
+## Continuation status
+
+Default-off candidate preserved after the time window. Verified source fe0df50a passed exact GPU/full acceptance and actual RTX exit/depth checks; final bounded dynamic-geometry visibility cache has targeted tests and compilation, with its own exact-source hardware/CI still pending. Context recreation, installed full case, dynamic optical-tool performance and stable 30 FPS remain open. No scheduling/composition/portal/warmup migration was added after the House checkpoint.
+
+The subsequent bcdb6ab9 dynamic-probe experiment was rejected by real GPU timing (DEV-132). Runtime/test/workflow sources restored exactly to verified fe0df50a; history and evidence preserved. Resume from the verified static path.

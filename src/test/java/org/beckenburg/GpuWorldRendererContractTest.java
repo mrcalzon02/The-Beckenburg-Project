@@ -17,6 +17,10 @@ public final class GpuWorldRendererContractTest {
   var drawOnly=GpuWorldRenderer.Surface.drawResident(-1,7,1,3);
   check(drawOnly.vertices().length==0&&drawOnly.vertexCount()==3,
       "Resident draw command must not retransmit any vertex array");
+  var retainedVertices=new float[24];
+  var recoverable=GpuWorldRenderer.Surface.drawResident(-1,7,1,retainedVertices);
+  check(recoverable.vertices().length==0&&recoverable.recoveryVertices()==retainedVertices,
+      "Recovery retains an immutable reference without copying camera-turn vertex data");
   boolean badResident=false;
   try{GpuWorldRenderer.Surface.drawResident(-1,0,1,3);}
   catch(IllegalArgumentException expected){badResident=true;}
@@ -45,6 +49,8 @@ public final class GpuWorldRendererContractTest {
       "GPU flashlight settings survive the world-space scene bridge");
   check(!world.lampOn()&&!f.lampOn(),
       "Legacy GPU calls must not invent flashlight illumination");
+  check(world.lightScale()==1&&lit.lightScale()==1&&f.lightScale()==1,
+      "Existing GPU constructors preserve neutral global light scale");
   denied=false;
   try{new GpuWorldRenderer.Frame(9,11,640,360,275.4f,1f,.7f,
       List.of(triangle),true,Float.NaN,0,0,0,0);}

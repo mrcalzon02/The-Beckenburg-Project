@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "issues": [
     {
       "id": "DEV-001",
@@ -592,7 +592,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÂ±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -920,7 +920,7 @@
       "title": "Reshaped bank left old crest dressing unsupported",
       "status": "fixed-native-rigid-crest-refit",
       "affected": "Camp Hollow Creek bank/crest refinement",
-      "symptom": "Actual original log bearings sit53â€“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
+      "symptom": "Actual original log bearings sit53–63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
       "cause": "Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.",
       "action": "Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.",
       "evidence": "quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json",
@@ -1380,57 +1380,112 @@
     {
       "id": "DEV-126",
       "title": "Saved mission-board browser would reorder persistent campaign chapters",
-      "status": "fixed-local-full-CI-pending",
+      "status": "fixed-source-CI-passed-installed-hardware-pending",
       "affected": "Mission board / campaign / LAN lobby integration",
       "symptom": "Saved mission-board browser would reorder persistent campaign chapters",
       "cause": "Old local catalog used alphabetic image-browser order for ordinal-based saved story progression.",
       "action": "Keep the original 22 chapter IDs in explicit campaign order; use alphabetic order only for browsing.",
-      "evidence": "MissionBoardIntegrationTest and CampaignStoryProgressionTest pass locally; exact-SHA full CI pending.",
+      "evidence": "MissionBoardIntegrationTest and CampaignStoryProgressionTest pass locally; exact-SHA full CI pending. Exact-source e783fdf7 full40464099189/GPU40464010267 SUCCESS; complete257/257 regression manifest. Installed acceptance remains separate.",
       "older_maps": "Preserve every saved chapter ordinal and prototype availability when adding or renaming locations."
     },
     {
       "id": "DEV-127",
       "title": "Saved mission-board labels omitted the newer Hollow Creek authoring enum",
-      "status": "fixed-local-full-CI-pending",
+      "status": "fixed-source-CI-passed-installed-hardware-pending",
       "affected": "Mission board / campaign / LAN lobby integration",
       "symptom": "Saved mission-board labels omitted the newer Hollow Creek authoring enum",
       "cause": "Newer main added HOLLOW_CREEK, while local MissionSites.title only accepted original lore IDs.",
       "action": "Resolve the authoring enum to its existing WLD-02 lore record without making prototype geometry playable.",
-      "evidence": "MissionBoardIntegrationTest iterates every authoring enum and verifies Hollow Creek remains locked; SiteSelectionTest passes locally.",
+      "evidence": "MissionBoardIntegrationTest iterates every authoring enum and verifies Hollow Creek remains locked; SiteSelectionTest passes locally. Exact-source e783fdf7 full40464099189/GPU40464010267 SUCCESS; complete257/257 regression manifest. Installed acceptance remains separate.",
       "older_maps": "Preserve every saved chapter ordinal and prototype availability when adding or renaming locations."
     },
     {
       "id": "DEV-128",
       "title": "GPU diagnostics crashed after successful captures during abrupt JVM shutdown",
-      "status": "fixed-local-exact-CI-pending",
+      "status": "fixed-source-CI-passed-installed-hardware-pending",
       "affected": "Unified recovery / native GPU diagnostics / hunter feature integration",
       "symptom": "Native RTX run from main f6793bda completed all assertions but exited 0xC0000409.",
       "cause": "Smoke entry points called System.exit while the owning GLFW/GL worker remained alive, despite the existing review teardown contract.",
       "action": "Stop and join the owning GPU worker before exiting; teardown failures must fail acceptance.",
-      "evidence": "Source 417980e6: three RTX 5070 diagnostic runs exited 0, 56.109/56.125/55.359 seconds; raw baseline failure and repeat-run logs retained under performance/hardware/2026-10-26.",
+      "evidence": "Source 417980e6: three RTX 5070 diagnostic runs exited 0, 56.109/56.125/55.359 seconds; raw baseline failure and repeat-run logs retained under performance/hardware/2026-10-26. Exact-source e783fdf7 full40464099189/GPU40464010267 SUCCESS; complete257/257 regression manifest. Installed acceptance remains separate.",
       "older_maps": "Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred."
     },
     {
       "id": "DEV-129",
       "title": "Hunter unit fixture mixed active Hallow into independent Focus-expiry comparison",
-      "status": "fixed-local-exact-CI-pending",
+      "status": "fixed-source-CI-passed-installed-hardware-pending",
       "affected": "Unified recovery / native GPU diagnostics / hunter feature integration",
       "symptom": "HunterDisciplineTest failed at its Focus-expiry assertion during integration.",
       "cause": "The prior Cleric scenario shared Hallow with the Observer; both Hallow and Focus deliberately apply 55% fear.",
       "action": "Retain every original assertion, isolate the Focus fixture, and additionally verify shared Hallow protection and expiry.",
-      "evidence": "HunterDisciplineTest, HunterClassIntegrationTest and SoloClassAbilityTest pass locally.",
+      "evidence": "HunterDisciplineTest, HunterClassIntegrationTest and SoloClassAbilityTest pass locally. Exact-source e783fdf7 full40464099189/GPU40464010267 SUCCESS; complete257/257 regression manifest. Installed acceptance remains separate.",
       "older_maps": "Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred."
     },
     {
       "id": "DEV-130",
       "title": "Hunter feature branch rejected ghost reconnect by assigning a hunter discipline",
-      "status": "fixed-local-exact-CI-pending",
+      "status": "fixed-source-CI-passed-installed-hardware-pending",
       "affected": "Unified recovery / native GPU diagnostics / hunter feature integration",
       "symptom": "Unchanged LanSessionResumeIntegrationTest failed in ghostRejoin with invalid join response at source 417980e6.",
       "cause": "Resume handshake passed the ghost seat to LanCase.selectDiscipline, which correctly rejects non-hunter seats.",
       "action": "Guard class restoration to hunter seats, preserve ghost resume and host ownership, and reset fresh lobby occupant class authority to its own visual choice.",
-      "evidence": "LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy.",
+      "evidence": "LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy. Exact-source e783fdf7 full40464099189/GPU40464010267 SUCCESS; complete257/257 regression manifest. Installed acceptance remains separate.",
       "older_maps": "Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred."
+    },
+    {
+      "id": "DEV-131",
+      "title": "Live House camera turn stalls despite diagnostic GPU passes",
+      "status": "partially-improved-feature-gated-hardware-acceptance-pending",
+      "affected": "House investigation GPU gameplay; older maps unaudited",
+      "symptom": "Native trace 2357 ms House-facing frame, lighting_raster_ms 2340. Controlled exposed-yard legacy 3880-3970 ms.",
+      "cause": "Normal investigation rebuilt and lit camera-visible geometry; earlier residency tests were diagnostic only. Dynamic first-view and global door invalidation remain.",
+      "action": "Default-off normal-path House residency and stationary visibility. Next: localized door rays, lifecycle and installed investigation-to-Castle validation.",
+      "evidence": "6e0c6985: frame p95 108.5-109.8 ->35.9-36.1 ms; first yard 3880-3970 ->600-624 ms; zero camera-only static upload; actual RTX depth parity passed. Raw evidence under performance/hardware/2026-10-26/live-house-6e0c6985. Continuation2e85049f same-JAR RTX: old worker p95 35.799-35.968ms -> opt-in wake31.732-32.329ms; retained legacy visibility door15 rays67432->23617, door frame671-766->201-215ms, event p99 about616-656->234-240ms; event p95 mixed and first-view640ms persists. Both flags default-off; not accepted30FPS.",
+      "older_maps": "Audit each map after House acceptance; no G or installed 30 FPS gate closed."
+    },
+    {
+      "id": "DEV-132",
+      "title": "Dynamic probe experiment increased live House ray work",
+      "status": "experiment-reverted-evidence-preserved",
+      "affected": "Default-off House candidate; never merged or released",
+      "symptom": "bcdb6ab9 event-route p95 71.474 ms versus prior 53.545-55.270 ms; first-frame scalar rays 157362 versus 44434.",
+      "cause": "Exact-key dynamic probes replaced quantized/distance-LOD sampling on view-biased dynamic points, increasing first-view ray work and cache cost.",
+      "action": "Restore runtime/test files exactly to verified fe0df50a. Preserve rejected commit and raw GPU/depth/lifetime evidence; do not resume the experiment blindly.",
+      "evidence": "performance/hardware/2026-10-26/live-house-bcdb6ab9: depth/lifetime passed but performance failed.",
+      "older_maps": "Experiment was not enabled for other maps; no all-map optimization or acceptance claim."
+    },
+    {
+      "id": "DEV-133",
+      "title": "GPU Maven resources could overwrite current bytecode with stale compiled classes",
+      "status": "fixed-local-clean-build-CI-pending",
+      "affected": "GPU artifact source provenance on incremental local builds; all-map packaging",
+      "symptom": "Restored source had no dynamic-probe API, but Maven reported nothing to compile and target bytecode still contained retainVisibility. A deliberately obsolete .class was copied into runtime output.",
+      "cause": "The build/classes resource included org/beckenburg/** and weather/** without excluding compiled Java classes; the resources phase could overwrite output and update timestamps before incremental compilation.",
+      "action": "Exclude **/*.class from copied assets, compile authoritative Java sources, and add an obsolete-class sentinel to the Linux GPU CI compilation gate. Clean-build the current source before using local GPU metrics.",
+      "evidence": "Local reproduced obsolete .class copy; clean Java17 GPU package after exclusion contains neither sentinel nor rejected dynamic-probe API. Fresh isolated source tests pass; combined exact-SHA CI next. CI fresh build.cmd source results remain separate from stale local artifacts.",
+      "older_maps": "Applies to every GPU package; does not establish gameplay, installed hardware or map acceptance."
+    },
+    {
+      "id": "DEV-134",
+      "title": "Viewport disposal could acknowledge stale uploads and disable GPU rendering",
+      "status": "fixed-functional-exact-tree-CI-and-RTX-verified-installed-acceptance-pending",
+      "affected": "Live House resident GPU resources and concurrent preview/CRT ownership",
+      "symptom": "A foreign scene can dispose handles while latest() still holds the old own-scene framebuffer, or after the producer reads the epoch. A resulting draw-only descriptor had no recoverable data and stopped the backend.",
+      "cause": "Resource epoch reset was followed by ACK of an old frame; independent producer/worker timing can evict even a freshly checked handle.",
+      "action": "Discard old upload ACK records on epoch invalidation and retain immutable recovery payload references in draw-only descriptors. Restore evicted resources on the GL owner; warm valid handles still upload zero bytes.",
+      "evidence": "ResidentEpochRecoveryTest covers both interleavings, missing/stale revisions, resumed zero uploads and old-array immutability. Actual GL synthetic recovery and existing House depth/lifetime checks pass. Source2e85049f GPU40562195922 SUCCESS; full40562204969 tested merge2f44c8e with identical source tree,262 passed/0failed/0skipped. Two final RTX GL depth/lifetime/scaling/recovery runs PASS; raw files hardware/2026-10-27/house-continuation-2e85049f.",
+      "older_maps": "This fixes opted-in resident House ownership; full native multi-camera investigation and context recreation still require acceptance."
+    },
+    {
+      "id": "DEV-135",
+      "title": "GPU geometry ignored environment and weather brightness scales",
+      "status": "fixed-functional-exact-tree-CI-and-RTX-verified-installed-acceptance-pending",
+      "affected": "GPU dynamic/resident geometry versus software lighting and water",
+      "symptom": "Solo difficulty/power darkness and weather flash scale affected software/water but were absent from GPU geometry lighting.",
+      "cause": "Frame and fragment shader omitted environmentLight*weatherLightScale for combined fixture/emission and flashlight energy.",
+      "action": "Add backward-compatible frame lightScale default1, submit the existing global multiplier and scale the complete shader lighting sum without repacking static buffers.",
+      "evidence": "GpuGlobalLightScaleTest verifies real House environment/weather propagation, darkness/brightening and unchanged static data. Actual GL pixel test checks fixture/precomputed-emission attributes and flashlight scaling with unchanged depth and zero static transfers. Source2e85049f GPU40562195922 SUCCESS; full40562204969 tested merge2f44c8e with identical source tree,262 passed/0failed/0skipped. Two final RTX GL depth/lifetime/scaling/recovery runs PASS; raw files hardware/2026-10-27/house-continuation-2e85049f.",
+      "older_maps": "The uniform follows existing software rules on all GPU maps; installed/all-map visual and performance acceptance remains separate."
     }
   ],
   "audit_categories": [

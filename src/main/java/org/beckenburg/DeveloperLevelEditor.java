@@ -104,6 +104,7 @@ public final class DeveloperLevelEditor extends JPanel {
             @Override public void windowClosed(WindowEvent e){
                 editor.editorClosed=true;
                 editor.timer.stop();
+                editor.renderer.close();
                 editor.lightPreviewWorker.shutdownNow();
             }
         });

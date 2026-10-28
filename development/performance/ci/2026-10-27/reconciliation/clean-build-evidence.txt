@@ -1,0 +1,12 @@
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See https://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.830 s
+[INFO] Finished at: 2026-10-27T09:30:20-08:00
+[INFO] ------------------------------------------------------------------------
+PASS stale .class sentinel excluded; rejected dynamic-probe API absent; current Java17 source rebuilt

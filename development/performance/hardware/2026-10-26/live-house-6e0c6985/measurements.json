@@ -1,0 +1,182 @@
+{
+  "source_sha": "6e0c698599e66553adf54f2de4d26750e6c81d9d",
+  "jar_sha256": "1cd8db18eb42a09cbcb25ee2d1d6cfccc45e96b9fdbaede9fd39123b54784e83",
+  "os": "Windows 11 Pro 10.0.26200",
+  "cpu": "Intel Core i7-14700K",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "driver": "616.64",
+  "viewport": "712x200",
+  "fov": 93,
+  "preset": "RETRO_200P (current player preferences)",
+  "acceptance": "Controlled renderer diagnostic only; installed investigation-to-Castle, gameplay and all-map hardware acceptance PENDING",
+  "runs": [
+    {
+      "mode": "legacy-fixed",
+      "run": "run-1",
+      "samples": 120,
+      "summary": "Source: 6e0c698599e66553adf54f2de4d26750e6c81d9d\nOpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64\nViewport: 712x200 FOV=93 preset=Classic (PS1)\n12 van warmup frames; 40 yard, 40 entrance, 40 upstairs camera turns; live circuit clock=false. Not physical traversal or installed FPS acceptance.\nresident=false cold_ms=1162.177 samples=120 cpu_p50_ms=70.329 cpu_p95_ms=106.390 cpu_p99_ms=883.675 frame_p50_ms=73.054 frame_p95_ms=109.803 frame_p99_ms=886.152 static_uploaded_bytes=0\n",
+      "resident_uploaded_bytes": 0,
+      "max_resident_capacity_bytes": 0,
+      "first_yard_ms": 3880.005,
+      "first_entrance_ms": 886.152,
+      "first_upstairs_ms": 883.415,
+      "rooms": {
+        "13": {
+          "p50_ms": 73.125,
+          "p95_ms": 120.861,
+          "p99_ms": 3880.005
+        },
+        "0": {
+          "p50_ms": 59.044,
+          "p95_ms": 105.67,
+          "p99_ms": 886.152
+        },
+        "8": {
+          "p50_ms": 76.981,
+          "p95_ms": 106.953,
+          "p99_ms": 883.415
+        }
+      }
+    },
+    {
+      "mode": "legacy-fixed",
+      "run": "run-2",
+      "samples": 120,
+      "summary": "Source: 6e0c698599e66553adf54f2de4d26750e6c81d9d\nOpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64\nViewport: 712x200 FOV=93 preset=Classic (PS1)\n12 van warmup frames; 40 yard, 40 entrance, 40 upstairs camera turns; live circuit clock=false. Not physical traversal or installed FPS acceptance.\nresident=false cold_ms=1159.143 samples=120 cpu_p50_ms=65.702 cpu_p95_ms=100.079 cpu_p99_ms=866.540 frame_p50_ms=72.408 frame_p95_ms=108.523 frame_p99_ms=871.887 static_uploaded_bytes=0\n",
+      "resident_uploaded_bytes": 0,
+      "max_resident_capacity_bytes": 0,
+      "first_yard_ms": 3970.426,
+      "first_entrance_ms": 856.088,
+      "first_upstairs_ms": 871.887,
+      "rooms": {
+        "13": {
+          "p50_ms": 73.179,
+          "p95_ms": 118.436,
+          "p99_ms": 3970.426
+        },
+        "0": {
+          "p50_ms": 58.085,
+          "p95_ms": 95.309,
+          "p99_ms": 856.088
+        },
+        "8": {
+          "p50_ms": 71.534,
+          "p95_ms": 104.055,
+          "p99_ms": 871.887
+        }
+      }
+    },
+    {
+      "mode": "resident-fixed",
+      "run": "run-1",
+      "samples": 120,
+      "summary": "Source: 6e0c698599e66553adf54f2de4d26750e6c81d9d\nOpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64\nViewport: 712x200 FOV=93 preset=Classic (PS1)\n12 van warmup frames; 40 yard, 40 entrance, 40 upstairs camera turns; live circuit clock=false. Not physical traversal or installed FPS acceptance.\nresident=true cold_ms=5164.839 samples=120 cpu_p50_ms=19.214 cpu_p95_ms=26.580 cpu_p99_ms=196.932 frame_p50_ms=19.930 frame_p95_ms=35.858 frame_p99_ms=202.138 static_uploaded_bytes=0\n",
+      "resident_uploaded_bytes": 0,
+      "max_resident_capacity_bytes": 32044800,
+      "first_yard_ms": 624.257,
+      "first_entrance_ms": 122.709,
+      "first_upstairs_ms": 202.138,
+      "rooms": {
+        "13": {
+          "p50_ms": 19.809,
+          "p95_ms": 35.093,
+          "p99_ms": 624.257
+        },
+        "0": {
+          "p50_ms": 19.981,
+          "p95_ms": 36.95,
+          "p99_ms": 122.709
+        },
+        "8": {
+          "p50_ms": 19.914,
+          "p95_ms": 34.974,
+          "p99_ms": 202.138
+        }
+      }
+    },
+    {
+      "mode": "resident-fixed",
+      "run": "run-2",
+      "samples": 120,
+      "summary": "Source: 6e0c698599e66553adf54f2de4d26750e6c81d9d\nOpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64\nViewport: 712x200 FOV=93 preset=Classic (PS1)\n12 van warmup frames; 40 yard, 40 entrance, 40 upstairs camera turns; live circuit clock=false. Not physical traversal or installed FPS acceptance.\nresident=true cold_ms=4988.185 samples=120 cpu_p50_ms=19.440 cpu_p95_ms=26.467 cpu_p99_ms=198.336 frame_p50_ms=20.413 frame_p95_ms=36.077 frame_p99_ms=206.475 static_uploaded_bytes=0\n",
+      "resident_uploaded_bytes": 0,
+      "max_resident_capacity_bytes": 32044800,
+      "first_yard_ms": 600.264,
+      "first_entrance_ms": 122.208,
+      "first_upstairs_ms": 206.475,
+      "rooms": {
+        "13": {
+          "p50_ms": 20.403,
+          "p95_ms": 33.276,
+          "p99_ms": 600.264
+        },
+        "0": {
+          "p50_ms": 20.397,
+          "p95_ms": 36.528,
+          "p99_ms": 122.208
+        },
+        "8": {
+          "p50_ms": 20.413,
+          "p95_ms": 34.75,
+          "p99_ms": 206.475
+        }
+      }
+    },
+    {
+      "mode": "resident-live-clock",
+      "run": "run-1",
+      "samples": 120,
+      "summary": "Source: 6e0c698599e66553adf54f2de4d26750e6c81d9d\nOpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64\nViewport: 712x200 FOV=93 preset=Classic (PS1)\n12 van warmup frames; 40 yard, 40 entrance, 40 upstairs camera turns; live circuit clock=true. Not physical traversal or installed FPS acceptance.\nresident=true cold_ms=5037.060 samples=120 cpu_p50_ms=19.365 cpu_p95_ms=30.305 cpu_p99_ms=196.035 frame_p50_ms=20.122 frame_p95_ms=36.075 frame_p99_ms=204.824 static_uploaded_bytes=4593216\n",
+      "resident_uploaded_bytes": 4593216,
+      "max_resident_capacity_bytes": 32044800,
+      "first_yard_ms": 601.436,
+      "first_entrance_ms": 121.392,
+      "first_upstairs_ms": 204.824,
+      "rooms": {
+        "13": {
+          "p50_ms": 20.058,
+          "p95_ms": 35.874,
+          "p99_ms": 601.436
+        },
+        "0": {
+          "p50_ms": 19.907,
+          "p95_ms": 36.075,
+          "p99_ms": 121.392
+        },
+        "8": {
+          "p50_ms": 20.362,
+          "p95_ms": 35.786,
+          "p99_ms": 204.824
+        }
+      }
+    },
+    {
+      "mode": "resident-live-clock",
+      "run": "run-2",
+      "samples": 120,
+      "summary": "Source: 6e0c698599e66553adf54f2de4d26750e6c81d9d\nOpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64\nViewport: 712x200 FOV=93 preset=Classic (PS1)\n12 van warmup frames; 40 yard, 40 entrance, 40 upstairs camera turns; live circuit clock=true. Not physical traversal or installed FPS acceptance.\nresident=true cold_ms=5059.825 samples=120 cpu_p50_ms=19.812 cpu_p95_ms=32.386 cpu_p99_ms=200.252 frame_p50_ms=20.621 frame_p95_ms=36.729 frame_p99_ms=202.985 static_uploaded_bytes=4782336\n",
+      "resident_uploaded_bytes": 4782336,
+      "max_resident_capacity_bytes": 32044800,
+      "first_yard_ms": 621.343,
+      "first_entrance_ms": 136.498,
+      "first_upstairs_ms": 202.985,
+      "rooms": {
+        "13": {
+          "p50_ms": 20.933,
+          "p95_ms": 34.824,
+          "p99_ms": 621.343
+        },
+        "0": {
+          "p50_ms": 20.71,
+          "p95_ms": 36.729,
+          "p99_ms": 136.498
+        },
+        "8": {
+          "p50_ms": 20.023,
+          "p95_ms": 35.015,
+          "p99_ms": 202.985
+        }
+      }
+    }
+  ]
+}

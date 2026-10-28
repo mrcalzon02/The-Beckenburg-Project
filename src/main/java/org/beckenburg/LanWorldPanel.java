@@ -175,6 +175,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
     }
     public void close(){
+        renderer.close();videoRenderer.close();
         if(opening!=null){opening.close();opening=null;}
         releaseVoice();timer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
     }

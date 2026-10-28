@@ -1,0 +1,4 @@
+Beckenburg GPU initialized: OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+resident=true cold_ms=5391.170 samples=120 cpu_p50_ms=12.096 cpu_p95_ms=19.479 cpu_p99_ms=184.654 frame_p50_ms=19.839 frame_p95_ms=36.411 frame_p99_ms=203.643 static_uploaded_bytes=0
+PASS actual OpenGL depth coverage: van, House interior and upstairs; no original surface lost beyond 5cm depth tolerance
+PASS actual OpenGL viewport lifetime: inactive close preserves House; active exit releases all resident vertex capacity without stopping backend

@@ -725,6 +725,7 @@ public final class InvestigationGame {
         }
         void close(){timer.stop();if(firstFrameWorker!=null)firstFrameWorker.cancel(true);
             BeckenburgDeveloperTrace.caseStop();
+            scene.close();
             if(opening!=null){opening.close();opening=null;}
             down.clear();wheelOpen=false;mouseLook.close();atmosphere.close();buildingSoundscape.close();GameSfx.clearFixtures();}
         @Override public void doLayout(){

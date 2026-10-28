@@ -29,7 +29,7 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
         renderer.drawPractice(map,practice.visibleHunterBodies(),practice.counterMarks(),0);
         timer=new javax.swing.Timer(33,e->frame());timer.start();
     }
-    public void close(){timer.stop();mouseLook.close();}
+    public void close(){timer.stop();renderer.close();mouseLook.close();}
     public GhostPracticeSession session(){return practice;}
     private void syncCamera(){
         renderer.x=map.centerX(practice.ghostRoom());

@@ -1,0 +1,37 @@
+{
+  "source_sha": "2e85049f54a4a0a8900169c551909f68eee55a1d",
+  "source_tree": "dd3d2a33dbdc6f4984d024a19fd26c0ad99f1b2a",
+  "jar_sha256": "71b581b19e3f43d0db186641b2a3b330e6dc11d3ec2b2f2d2374ef52c9f9770b",
+  "baseline_runtime_source": "fe217a091e8bd31a4ba19ff5eb8db66fcf47ce19",
+  "baseline_saved_head": "75868f791c4c628e4b3f1ca72b7e3de01cfe53bc",
+  "baseline_jar_sha256": "40dbbbd90d51f2e82506da350cf600d2975c77c5aef6c56991aa8dbb39c132bd",
+  "gpu": "NVIDIA GeForce RTX5070",
+  "driver": "616.64",
+  "viewport": "712x200",
+  "fov": 93,
+  "preset": "Classic PS1",
+  "warmup_frames": 12,
+  "samples_per_run": 120,
+  "runs_per_configuration": 2,
+  "gpu_before_runs": "2 percent;1246MiB allocated; no local competing builds/tests",
+  "resident_vertex_capacity_bytes": 32044800,
+  "capture_pixel_parity": "8 of 8 saved scripted-event cache-off/on pairs: zero changed RGB pixels",
+  "clock": "scriptClock=true gives i/3 simulation light ticks; fixed clock uses zero; historical baseline events use wall clock and are not same-state A/B",
+  "acceptance": "Real Windows GPU diagnostic; NOT installed investigation-to-Castle, stable30FPS, all-map/editor/multiplayer installed acceptance or release",
+  "known_limits": [
+    "Exposed first House frame remains about640ms",
+    "Scripted-event p95 is variable and not consistently improved by retained visibility",
+    "Backend single-scene eviction still causes reuploads across CRT/preview swaps",
+    "No native desktop input after prior user Escape",
+    "True GPU timer, process memory/GC full-case acceptance pending"
+  ],
+  "machine": {
+    "cpu": "Intel(R) Core(TM) i7-14700K",
+    "captured": "2026-10-27T17:52:00.5552037-08:00",
+    "os": {
+      "Caption": "Microsoft Windows 11 Pro",
+      "Version": "10.0.26200",
+      "TotalVisibleMemorySize": 33306936
+    }
+  }
+}

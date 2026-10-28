@@ -1,0 +1,6 @@
+PASS GPU generation identity, viewport isolation and frame bridge
+2026-10-27T18:26:54.275323100Z [main] RENDER SLOW stage=idle faces=48766 visible_faces=18250 culled_faces=30516 target=160x120 build_ms=4573 lighting_raster_ms=345
+PASS normal House global/weather light scale, darkness, brightening and zero static rebuild/repack
+2026-10-27T18:26:59.738520600Z [main] RENDER SLOW stage=idle faces=48766 visible_faces=18250 culled_faces=30516 target=160x120 build_ms=4587 lighting_raster_ms=358
+PASS old-result ACK invalidation, both disposal interleavings, immutable recovery and resumed reuse
+PASS legacy visibility RGB/quantization/normals/LOD parity; saved scalar=7216 normal=6988 door rays=1126 changed colours=72

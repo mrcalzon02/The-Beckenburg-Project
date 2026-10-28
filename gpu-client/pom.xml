@@ -56,6 +56,9 @@
    <resource><directory>${project.basedir}/../water-module/src/main/resources</directory></resource>
    <resource><directory>${project.basedir}/../build/classes</directory>
     <includes><include>org/beckenburg/**</include><include>dev/mrcalzon/weather/**</include></includes>
+    <!-- Only assets belong here. Old compiled classes can otherwise overwrite
+         current output and make Maven skip authoritative source compilation. -->
+    <excludes><exclude>**/*.class</exclude></excludes>
    </resource>
   </resources>
  </build>

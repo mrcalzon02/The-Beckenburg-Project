@@ -48,7 +48,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         notice=orientation.objective();noticeTicks=260;
         requestFocusInWindow();
     }
-    public void close(){timer.stop();down.clear();look.close();atmosphere.close();authoredAudio.close();}
+    public void close(){timer.stop();renderer.close();down.clear();look.close();atmosphere.close();authoredAudio.close();}
     private void frame(){
         atmosphere.setActive(isShowing());authoredAudio.active(isShowing()&&!storeOpen);authoredAudio.listener(renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,castleLightsOn);
         if(!isShowing()||storeOpen){last=System.nanoTime();return;}

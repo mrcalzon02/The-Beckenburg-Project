@@ -1,0 +1,80 @@
+{
+  "source_sha": "e783fdf73f9fcd95d014fd8e6e3955404cefefde",
+  "gpu_run": 40464010267,
+  "exact_head_full_run": 40464099189,
+  "pr_full_run": 40464015857,
+  "gallery_run": 40464015834,
+  "artifacts": [
+    {
+      "name": "depth-parity.csv",
+      "bytes": 147,
+      "sha256": "d77f929ece30e330af8802f977df99d4a4cec737e2873a41c022fff0b1c26a3a"
+    },
+    {
+      "name": "frames.csv",
+      "bytes": 13779,
+      "sha256": "bc962b807d1f2fc8418b2a4b559c5dc50af0c214f301072ace243053e550c9a2"
+    },
+    {
+      "name": "house-turn-0.png",
+      "bytes": 140813,
+      "sha256": "bc47c1976523d1767034024b62c300dd28ab4e5dd95d36b2affdc49f7f9425ec"
+    },
+    {
+      "name": "house-turn-119.png",
+      "bytes": 137483,
+      "sha256": "c63acf31d332b9305db0091260a16b7fd4330005f7eb55a7509a191c9f76262b"
+    },
+    {
+      "name": "house-turn-40.png",
+      "bytes": 212353,
+      "sha256": "3dee8cd2e411a044e79b47a035100f1ffe73540a1f56abdd227ce8b6211486d7"
+    },
+    {
+      "name": "house-turn-80.png",
+      "bytes": 167174,
+      "sha256": "b5e923621db2b94a8786fcd5da58a276c628d326540c3bee382722050a76228d"
+    },
+    {
+      "name": "summary.txt",
+      "bytes": 516,
+      "sha256": "7a1a5b99eb43d4277357086a9cbe4f3c70f4ef35e08cf96c5c7c0181dcdbcc4e"
+    }
+  ],
+  "gpu_status": {
+    "conclusion": "success",
+    "headSha": "e783fdf73f9fcd95d014fd8e6e3955404cefefde",
+    "status": "completed"
+  },
+  "observed_contract": {
+    "samples": 120,
+    "static_builds": [
+      1
+    ],
+    "packed_chunks": [
+      789
+    ],
+    "recomputed_probes": [
+      134714
+    ],
+    "resident_uploaded_bytes": 0,
+    "max_resident_capacity_bytes": 32044800,
+    "software_renderer_timing_is_not_hardware_fps_acceptance": true
+  },
+  "exact_head_full_status": {
+    "conclusion": "success",
+    "headSha": "e783fdf73f9fcd95d014fd8e6e3955404cefefde",
+    "status": "completed"
+  },
+  "pr_full_status": {
+    "conclusion": "success",
+    "headSha": "e783fdf73f9fcd95d014fd8e6e3955404cefefde",
+    "status": "completed"
+  },
+  "gallery_status": {
+    "conclusion": "success",
+    "headSha": "e783fdf73f9fcd95d014fd8e6e3955404cefefde",
+    "status": "completed"
+  },
+  "scope": "Source e783fdf7 CI acceptance. Mesa timings are not hardware FPS. Native launch is app-image/menu and packaged House startup, not installed full investigation-to-Castle acceptance."
+}

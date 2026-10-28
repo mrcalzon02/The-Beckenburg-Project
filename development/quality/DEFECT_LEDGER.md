@@ -1726,7 +1726,7 @@ Older-map obligation: Preserve every saved chapter ordinal and prototype availab
 
 ## DEV-128 — GPU diagnostics crashed after successful captures during abrupt JVM shutdown
 
-**Status:** fixed-local-exact-CI-pending
+**Status:** fixed-source-CI-passed-installed-hardware-pending
 
 Stop and join the owning GPU worker before exiting; teardown failures must fail acceptance.
 
@@ -1736,7 +1736,7 @@ Older-map obligation: Verify native shutdown and same-seat/privacy behavior on e
 
 ## DEV-129 — Hunter unit fixture mixed active Hallow into independent Focus-expiry comparison
 
-**Status:** fixed-local-exact-CI-pending
+**Status:** fixed-source-CI-passed-installed-hardware-pending
 
 Retain every original assertion, isolate the Focus fixture, and additionally verify shared Hallow protection and expiry.
 
@@ -1746,10 +1746,52 @@ Older-map obligation: Verify native shutdown and same-seat/privacy behavior on e
 
 ## DEV-130 — Hunter feature branch rejected ghost reconnect by assigning a hunter discipline
 
-**Status:** fixed-local-exact-CI-pending
+**Status:** fixed-source-CI-passed-installed-hardware-pending
 
 Guard class restoration to hunter seats, preserve ghost resume and host ownership, and reset fresh lobby occupant class authority to its own visual choice.
 
 Evidence: LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy.
 
 Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
+
+## DEV-131 — Live House camera turn stalls
+
+**Status:** partially improved behind default-off feature gate; hardware acceptance pending.
+
+Native case trace: 2357 ms House-facing frame, 2340 ms lighting/raster. Controlled source `6e0c6985`: exposed-yard first frame 3880-3970 ->600-624 ms; frame p95 108.5-109.8 ->35.9-36.1 ms. Camera-only static uploads zero; actual RTX depth coverage passed at three views. Global door rays, first-view stalls, lifecycle and installed loop remain open. Raw evidence: `development/performance/hardware/2026-10-26/live-house-6e0c6985/`. Audit older maps individually; no all-map FPS claim.
+
+## DEV-132 - Dynamic probe experiment rejected
+
+Default-off bcdb6ab9: p95 71.474 ms, initial scalar rays 157362 versus prior 53.545-55.270 ms /44434 rays. Restore verified fe0df50a runtime; retain source/history and evidence. No other-map rollout or release.
+
+Queued closeout: DEV126-130 source fixes passed exact e783fdf7 full40464099189/GPU40464010267 (257/257); installed and older-map hardware obligations remain open.
+
+## DEV-133 - Stale Java classes copied as GPU runtime resources
+
+**Status:** fixed in source; clean local build passed; combined CI pending.
+
+A prior compiled class could overwrite current Maven output during resource copying, causing source recompilation to be skipped. Reproduced with an obsolete .class sentinel and the rejected dynamic-probe API remaining in restored-source output. Exclude compiled classes from asset resources and check the sentinel in GPU CI. Clean Java17 package excludes both sentinel and rejected API; isolated current-source tests pass. All-map packaging provenance is improved; no installed hardware/gameplay acceptance is inferred.
+
+## DEV-134 - Viewport disposal could acknowledge stale uploads and disable GPU rendering
+
+**Status:** fixed-functional-contract-and-GL-recovery-verified-exact-CI-pending
+
+Discard old upload ACK records on epoch invalidation and retain immutable recovery payload references in draw-only descriptors. Restore evicted resources on the GL owner; warm valid handles still upload zero bytes.
+
+Evidence: ResidentEpochRecoveryTest covers both interleavings, missing/stale revisions, resumed zero uploads and old-array immutability. Actual GL synthetic recovery and existing House depth/lifetime checks pass.
+
+Older-map obligation: This fixes opted-in resident House ownership; full native multi-camera investigation and context recreation still require acceptance.
+
+## DEV-135 - GPU geometry ignored environment and weather brightness scales
+
+**Status:** fixed-functional-and-GL-pixel-verified-exact-CI-pending
+
+Add backward-compatible frame lightScale default1, submit the existing global multiplier and scale the complete shader lighting sum without repacking static buffers.
+
+Evidence: GpuGlobalLightScaleTest verifies real House environment/weather propagation, darkness/brightening and unchanged static data. Actual GL pixel test checks fixture/precomputed-emission attributes and flashlight scaling with unchanged depth and zero static transfers.
+
+Older-map obligation: The uniform follows existing software rules on all GPU maps; installed/all-map visual and performance acceptance remains separate.
+
+### DEV134/DEV135 continuation acceptance update
+
+Source2e85049f: functional tests, exact-source GPU40562195922 and identical-tree full40562204969 PASS (262/0/0). Two final RTX GL depth/lifetime/global scale/evicted-handle recovery runs PASS. DEV131 remains partially improved: wake fixed p95 about36->32ms; retained visibility door15 about671-766->201-215ms with identical saved RGB; first House view about640ms and event p95 variability persist. All optional gates default-off; installed/full-case/all-map acceptance pending. Raw performance/hardware/2026-10-27/house-continuation-2e85049f.

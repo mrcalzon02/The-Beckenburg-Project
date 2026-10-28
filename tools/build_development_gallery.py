@@ -10,7 +10,7 @@ paths=subprocess.check_output(['git','ls-files','--cached','--others','--exclude
 items=[]
 for path in sorted(set(paths)):
     if not path.lower().endswith('.png'):continue
-    if not any(t in path for t in ['/previews/','/captures/','/screenshots/','/blockouts/']):continue
+    if not any(t in path for t in ['/previews/','/captures/','/screenshots/','/blockouts/','/performance/hardware/']):continue
     p=ROOT/path
     if not p.exists():continue
     data=p.read_bytes()

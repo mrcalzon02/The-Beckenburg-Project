@@ -1,0 +1,23 @@
+{
+  "source_sha": "fe217a091e8bd31a4ba19ff5eb8db66fcf47ce19",
+  "jar_sha256": "40dbbbd90d51f2e82506da350cf600d2975c77c5aef6c56991aa8dbb39c132bd",
+  "build": "clean Maven Java17 package, obsolete .class sentinel excluded and rejected dynamic-probe API absent",
+  "gpu": "RTX5070",
+  "driver": "616.64",
+  "gpu_utilization_before": "0 percent",
+  "preset": "Classic PS1",
+  "viewport": "712x200",
+  "fov": 93,
+  "samples": 120,
+  "runs": 1,
+  "static_builds": [
+    1
+  ],
+  "packed_chunks": [
+    789
+  ],
+  "resident_uploaded_bytes": 0,
+  "resident_vertex_capacity_bytes": 32044800,
+  "first_exposed_yard_ms": 654.809,
+  "acceptance": "Actual GPU diagnostic only. Not installed full case/return or accepted30FPS. New combined main + prior default-off residency; no fresh matched legacy baseline in this run."
+}

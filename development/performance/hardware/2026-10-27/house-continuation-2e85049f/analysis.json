@@ -1,0 +1,386 @@
+{
+  "runs": {
+    "events-cache-run-1": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "650.300",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "door_15",
+          "end_to_end_ms": "215.208",
+          "shadow_rays": "23617",
+          "resident_uploaded_bytes": "251232"
+        },
+        {
+          "sample": "60",
+          "phase": "circuit_0",
+          "end_to_end_ms": "30.934",
+          "shadow_rays": "2",
+          "resident_uploaded_bytes": "490752"
+        },
+        {
+          "sample": "100",
+          "phase": "door_5",
+          "end_to_end_ms": "233.612",
+          "shadow_rays": "30600",
+          "resident_uploaded_bytes": "714432"
+        }
+      ],
+      "summary": "resident=true cold_ms=5328.013 samples=120 cpu_p50_ms=12.331 cpu_p95_ms=41.326 cpu_p99_ms=220.686 frame_p50_ms=15.729 frame_p95_ms=50.709 frame_p99_ms=233.612 static_uploaded_bytes=7083648",
+      "capacity": 32044800
+    },
+    "events-cache-run-2": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "640.942",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "door_15",
+          "end_to_end_ms": "201.274",
+          "shadow_rays": "23617",
+          "resident_uploaded_bytes": "251232"
+        },
+        {
+          "sample": "60",
+          "phase": "circuit_0",
+          "end_to_end_ms": "38.339",
+          "shadow_rays": "2",
+          "resident_uploaded_bytes": "490752"
+        },
+        {
+          "sample": "100",
+          "phase": "door_5",
+          "end_to_end_ms": "239.767",
+          "shadow_rays": "30600",
+          "resident_uploaded_bytes": "714432"
+        }
+      ],
+      "summary": "resident=true cold_ms=5317.021 samples=120 cpu_p50_ms=12.387 cpu_p95_ms=44.579 cpu_p99_ms=225.535 frame_p50_ms=26.257 frame_p95_ms=59.065 frame_p99_ms=239.767 static_uploaded_bytes=7083648",
+      "capacity": 32044800
+    },
+    "events-old-run-1": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "642.074",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "door_15",
+          "end_to_end_ms": "675.418",
+          "shadow_rays": "67432",
+          "resident_uploaded_bytes": "251232"
+        },
+        {
+          "sample": "60",
+          "phase": "circuit_0",
+          "end_to_end_ms": "36.209",
+          "shadow_rays": "2",
+          "resident_uploaded_bytes": "490752"
+        },
+        {
+          "sample": "100",
+          "phase": "door_5",
+          "end_to_end_ms": "397.791",
+          "shadow_rays": "47385",
+          "resident_uploaded_bytes": "714432"
+        }
+      ],
+      "summary": "resident=true cold_ms=5302.239 samples=120 cpu_p50_ms=12.415 cpu_p95_ms=41.169 cpu_p99_ms=590.229 frame_p50_ms=19.792 frame_p95_ms=53.625 frame_p99_ms=642.074 static_uploaded_bytes=7083648",
+      "capacity": 32044800
+    },
+    "events-old-run-2": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "626.030",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "door_15",
+          "end_to_end_ms": "702.712",
+          "shadow_rays": "67432",
+          "resident_uploaded_bytes": "251232"
+        },
+        {
+          "sample": "60",
+          "phase": "circuit_0",
+          "end_to_end_ms": "36.309",
+          "shadow_rays": "2",
+          "resident_uploaded_bytes": "490752"
+        },
+        {
+          "sample": "100",
+          "phase": "door_5",
+          "end_to_end_ms": "390.780",
+          "shadow_rays": "47385",
+          "resident_uploaded_bytes": "714432"
+        }
+      ],
+      "summary": "resident=true cold_ms=5301.533 samples=120 cpu_p50_ms=12.520 cpu_p95_ms=40.132 cpu_p99_ms=563.319 frame_p50_ms=19.894 frame_p95_ms=55.087 frame_p99_ms=626.030 static_uploaded_bytes=7083648",
+      "capacity": 32044800
+    },
+    "events-wake-run-1": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "656.342",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "door_15",
+          "end_to_end_ms": "671.295",
+          "shadow_rays": "67432",
+          "resident_uploaded_bytes": "251232"
+        },
+        {
+          "sample": "60",
+          "phase": "circuit_0",
+          "end_to_end_ms": "30.686",
+          "shadow_rays": "2",
+          "resident_uploaded_bytes": "490752"
+        },
+        {
+          "sample": "100",
+          "phase": "door_5",
+          "end_to_end_ms": "388.831",
+          "shadow_rays": "47385",
+          "resident_uploaded_bytes": "714432"
+        }
+      ],
+      "summary": "resident=true cold_ms=5304.894 samples=120 cpu_p50_ms=12.370 cpu_p95_ms=40.273 cpu_p99_ms=596.423 frame_p50_ms=15.815 frame_p95_ms=50.291 frame_p99_ms=656.342 static_uploaded_bytes=7083648",
+      "capacity": 32044800
+    },
+    "events-wake-run-2": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "615.647",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "door_15",
+          "end_to_end_ms": "765.579",
+          "shadow_rays": "67432",
+          "resident_uploaded_bytes": "251232"
+        },
+        {
+          "sample": "60",
+          "phase": "circuit_0",
+          "end_to_end_ms": "39.117",
+          "shadow_rays": "2",
+          "resident_uploaded_bytes": "490752"
+        },
+        {
+          "sample": "100",
+          "phase": "door_5",
+          "end_to_end_ms": "398.675",
+          "shadow_rays": "47385",
+          "resident_uploaded_bytes": "714432"
+        }
+      ],
+      "summary": "resident=true cold_ms=5411.989 samples=120 cpu_p50_ms=12.498 cpu_p95_ms=39.714 cpu_p99_ms=569.755 frame_p50_ms=24.903 frame_p95_ms=53.222 frame_p99_ms=615.647 static_uploaded_bytes=7083648",
+      "capacity": 32044800
+    },
+    "fixed-old-run-1": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "640.262",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "camera",
+          "end_to_end_ms": "21.375",
+          "shadow_rays": "0",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "60",
+          "phase": "camera",
+          "end_to_end_ms": "20.496",
+          "shadow_rays": "0",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "100",
+          "phase": "camera",
+          "end_to_end_ms": "37.354",
+          "shadow_rays": "900",
+          "resident_uploaded_bytes": "0"
+        }
+      ],
+      "summary": "resident=true cold_ms=5396.560 samples=120 cpu_p50_ms=12.055 cpu_p95_ms=21.824 cpu_p99_ms=180.360 frame_p50_ms=19.872 frame_p95_ms=35.968 frame_p99_ms=184.800 static_uploaded_bytes=0",
+      "capacity": 32044800
+    },
+    "fixed-old-run-2": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "629.099",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "camera",
+          "end_to_end_ms": "20.538",
+          "shadow_rays": "0",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "60",
+          "phase": "camera",
+          "end_to_end_ms": "19.504",
+          "shadow_rays": "0",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "100",
+          "phase": "camera",
+          "end_to_end_ms": "35.319",
+          "shadow_rays": "900",
+          "resident_uploaded_bytes": "0"
+        }
+      ],
+      "summary": "resident=true cold_ms=5321.664 samples=120 cpu_p50_ms=11.744 cpu_p95_ms=20.157 cpu_p99_ms=191.036 frame_p50_ms=19.888 frame_p95_ms=35.799 frame_p99_ms=203.187 static_uploaded_bytes=0",
+      "capacity": 32044800
+    },
+    "fixed-wake-run-1": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "648.667",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "camera",
+          "end_to_end_ms": "14.799",
+          "shadow_rays": "0",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "60",
+          "phase": "camera",
+          "end_to_end_ms": "14.911",
+          "shadow_rays": "0",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "100",
+          "phase": "camera",
+          "end_to_end_ms": "30.608",
+          "shadow_rays": "900",
+          "resident_uploaded_bytes": "0"
+        }
+      ],
+      "summary": "resident=true cold_ms=5334.061 samples=120 cpu_p50_ms=12.047 cpu_p95_ms=19.790 cpu_p99_ms=186.536 frame_p50_ms=15.808 frame_p95_ms=31.732 frame_p99_ms=201.890 static_uploaded_bytes=0",
+      "capacity": 32044800
+    },
+    "fixed-wake-run-2": {
+      "events": [
+        {
+          "sample": "0",
+          "phase": "camera",
+          "end_to_end_ms": "643.534",
+          "shadow_rays": "44434",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "20",
+          "phase": "camera",
+          "end_to_end_ms": "14.824",
+          "shadow_rays": "0",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "60",
+          "phase": "camera",
+          "end_to_end_ms": "15.826",
+          "shadow_rays": "0",
+          "resident_uploaded_bytes": "0"
+        },
+        {
+          "sample": "100",
+          "phase": "camera",
+          "end_to_end_ms": "31.067",
+          "shadow_rays": "900",
+          "resident_uploaded_bytes": "0"
+        }
+      ],
+      "summary": "resident=true cold_ms=5378.817 samples=120 cpu_p50_ms=12.190 cpu_p95_ms=19.055 cpu_p99_ms=192.731 frame_p50_ms=15.534 frame_p95_ms=32.329 frame_p99_ms=203.555 static_uploaded_bytes=0",
+      "capacity": 32044800
+    }
+  },
+  "capture_parity": [
+    {
+      "repeat": 1,
+      "sample": 0,
+      "changed_pixels": 0
+    },
+    {
+      "repeat": 1,
+      "sample": 40,
+      "changed_pixels": 0
+    },
+    {
+      "repeat": 1,
+      "sample": 80,
+      "changed_pixels": 0
+    },
+    {
+      "repeat": 1,
+      "sample": 119,
+      "changed_pixels": 0
+    },
+    {
+      "repeat": 2,
+      "sample": 0,
+      "changed_pixels": 0
+    },
+    {
+      "repeat": 2,
+      "sample": 40,
+      "changed_pixels": 0
+    },
+    {
+      "repeat": 2,
+      "sample": 80,
+      "changed_pixels": 0
+    },
+    {
+      "repeat": 2,
+      "sample": 119,
+      "changed_pixels": 0
+    }
+  ]
+}

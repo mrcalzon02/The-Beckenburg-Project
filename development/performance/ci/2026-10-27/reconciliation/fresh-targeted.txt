@@ -1,0 +1,14 @@
+PASS BeckenburgDeveloperTraceTest
+PASS periodic metal groove contrast16.652 -> 0.0569196428571388; original15other tiles exact, signed UV repeat and bounded wear preserved
+2026-10-27T17:27:17.910722100Z [main] RENDER SLOW stage=idle faces=55613 visible_faces=25788 culled_faces=29825 target=320x200 build_ms=867 lighting_raster_ms=364
+PASS: 16 reproducible tiles, 128px atlas, world UV wrapping, room materials, view variants, lamp and near-plane clipping
+2026-10-27T17:27:25.127152Z [main] RENDER SLOW stage=idle faces=48686 visible_faces=36559 culled_faces=12127 target=160x120 build_ms=4584 lighting_raster_ms=536
+COLD LiveHouseStats[active=true, builds=1, chunks=789, sourceFaces=209244, preparedVertices=665532, packedChunks=789, recomputedProbes=134714, descriptorBytes=21297024, drawnTriangles=221844]
+2026-10-27T17:27:29.035663600Z [main] RENDER SLOW stage=idle faces=229666 visible_faces=216903 culled_faces=12763 target=320x200 build_ms=14 lighting_raster_ms=2607
+2026-10-27T17:27:31.663573600Z [main] RENDER SLOW stage=idle faces=174362 visible_faces=124375 culled_faces=49987 target=160x120 build_ms=44 lighting_raster_ms=2568
+2026-10-27T17:27:35.386750100Z [main] RENDER SLOW stage=idle faces=48766 visible_faces=20949 culled_faces=27817 target=320x200 build_ms=3336 lighting_raster_ms=354
+2026-10-27T17:27:39.379721Z [main] RENDER SLOW stage=idle faces=48686 visible_faces=36559 culled_faces=12127 target=160x120 build_ms=3475 lighting_raster_ms=515
+2026-10-27T17:27:43.323404Z [main] RENDER SLOW stage=idle faces=48686 visible_faces=36559 culled_faces=12127 target=160x120 build_ms=3400 lighting_raster_ms=524
+PASS actual House drawNetwork residency, dropped upload delivery, all-room camera reuse, resize, fixtures, doors, UV fallback and scene/map ownership
+PASS all House doors match fresh occlusion; changed colours=36 localized rays=585 fresh rays=7860 maximum refreshed probes=35/59
+PASS exhaustive original PSX quantization parity: all 256 components, 16 phases and four presets
