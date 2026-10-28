@@ -35,6 +35,7 @@ public final class CampaignStorePanel extends JPanel {
      * debit the local Castle account until the solo dispatch handles them. */
     private record Row(Offer offer,EquipmentRegistry.Tool tool){
         String title(){return offer!=null?offer.title():tool.name();}
+        @Override public String toString(){return title();}
         String iconKey(){
             if(offer!=null&&offer.equipment()!=null)return ItemIconAtlas.key(offer.equipment());
             if(offer!=null)return ItemIconAtlas.key(offer.kind());
@@ -287,7 +288,11 @@ public final class CampaignStorePanel extends JPanel {
             var tier=EquipmentStoreDescriptions.describe(tool.id(),EquipmentTiers.Tier.I);
             details.setText(tool.name()+"\n\n"+availability(row)+
                 "\n\n"+tier.effect()+"\n"+tier.specificationLine()+
-                "\n\nTIER I  £"+tier.price()+"    /    TIERS II AND III AVAILABLE IN LAN FIELD RACK"+
+                (tool.origin()==EquipmentRegistry.Origin.TRUCK?
+                    "\n\nFIXED VAN EQUIPMENT / NOT A PORTABLE PURCHASE":
+                    "\n\nTIER I  £"+tier.price()+" / TIER II £"+
+                    EquipmentTiers.stage(tool.id(),EquipmentTiers.Tier.II).creditCost()+
+                    " / TIER III £"+EquipmentTiers.stage(tool.id(),EquipmentTiers.Tier.III).creditCost())+
                 "\n\n"+(soloStarter(tool)?
                     "Issued as standard Castle equipment and available in the "+
                     "solo loadout. Starter gear does not require repurchase.":
