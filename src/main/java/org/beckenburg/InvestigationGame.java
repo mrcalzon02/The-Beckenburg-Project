@@ -1055,11 +1055,24 @@ public final class InvestigationGame {
                     "Campaign save failed",JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            JOptionPane.showMessageDialog(window,result,"EXPEDITION DEBRIEF",JOptionPane.INFORMATION_MESSAGE);
-            SwingUtilities.invokeLater(()->{
+            JTextArea receipt=new JTextArea(result);
+            receipt.setEditable(false);
+            receipt.setFocusable(false);
+            receipt.setOpaque(false);
+            receipt.setLineWrap(true);
+            receipt.setWrapStyleWord(true);
+            receipt.setFont(new Font(Font.MONOSPACED,Font.BOLD,14));
+            receipt.setForeground(new Color(230,219,196));
+            receipt.setMargin(new Insets(14,16,14,16));
+            JButton finish=PsxHorrorUi.button(campaignMode?
+                "RETURN TO CAMPAIGN BOARD":"RETURN TO CASTLE MENU");
+            finish.addActionListener(e->{
                 InvestigationGame.this.returnHome();
                 if(campaignMode)InvestigationGame.this.showCampaign();
             });
+            showPage("case-debrief",PsxMenuScreen.screen("case-debrief",
+                "EXPEDITION DEBRIEF","PERSISTED ACCOUNT / CLASS EXPERIENCE / CASE OUTCOME",
+                PsxMenuScreen.scroll(receipt),finish));
         }
         /** Pause the real 3D session without opening another desktop window. */
         private void resumeFromPause(){
