@@ -166,10 +166,10 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw)){
                 openQuartermaster();return;
             }
-            if(CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null){
-                castleLightsOn=!castleLightsOn;
+            if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null){
+                boolean circuitOn=map.toggleCircuit(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw));
                 GameSfx.play(LanSound.Cue.SWITCH);
-                notice="Castle lights "+(castleLightsOn?"on.":"off.");
+                notice="Room lights "+(circuitOn?"on.":"off.");
                 if(orientation.lights())notice="Orientation complete. Contract board is ready.";
                 noticeTicks=160;return;
             }
@@ -207,23 +207,25 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         if(archive.opened()){archive.key(key);repaint();return;}
         if(key==KeyEvent.VK_ESCAPE){actions.menu();return;}
         if(key==KeyEvent.VK_E){
-            var portal=elevation<=1.8?map.aimedDoor(renderer.x,renderer.z,renderer.yaw):null;
+            var portal=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
             if(portal!=null){
                 boolean open=map.toggleDoor(portal.id());
                 GameSfx.play(LanSound.Cue.SWITCH);
                 notice=(portal.gate()?"Courtyard portcullis":"Castle door")+
                     (open?" raised / passage clear.":" closed / passage secured.");
                 noticeTicks=130;
+            }else if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null){
+                use(null);
             }else if(elevation>1.8){
                 notice="Return to the ground floor to use workstations.";noticeTicks=90;
-            }else use(CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null?
+            }else use(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null?
                 null:map.aimed(renderer.x,renderer.z,renderer.yaw));
         }
         if(key==KeyEvent.VK_CONTROL){crouched=!crouched;notice=crouched?"Crouched / Ctrl to stand":"Standing";noticeTicks=60;}
         if(key==KeyEvent.VK_F)renderer.lamp=!renderer.lamp;
         if(key==KeyEvent.VK_L){
-            castleLightsOn=!castleLightsOn;GameSfx.play(LanSound.Cue.SWITCH);
-            if(orientation.lights()){notice="Orientation complete. Use the contract board to select a case.";noticeTicks=220;}
+            if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null)use(null);
+            else {notice="Face a mounted wall switch to operate this room's lights.";noticeTicks=120;}
         }
         down.add(key);
     }
@@ -249,15 +251,15 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             g.drawString("BECKENBURG CASTLE",25,29);
             g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
             g.setColor(new Color(186,215,202));
-            g.drawString("£"+profile.currency()+"   /   "+actions.role()+
+            g.drawString("Ãƒâ€šÃ‚Â£"+profile.currency()+"   /   "+actions.role()+
                 (elevation>2.0?"   /   UPPER GALLERY":""),25,44);
             g.setColor(new Color(230,215,174));
             g.drawString("+",w/2-4,h/2+4);
             CastleHubMap.Station station=elevation>1.8?null:map.aimed(renderer.x,renderer.z,renderer.yaw);
             boolean atSwitch=elevation<=1.8&&
-                CastleHubDecor.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null;
+                CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null;
             boolean atWarehouse=elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
-            var atDoor=elevation<=1.8?map.aimedDoor(renderer.x,renderer.z,renderer.yaw):null;
+            var atDoor=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
             if(atDoor!=null||station!=null||atSwitch||atWarehouse){
                 String label=atDoor!=null?
                     (map.doorOpen(atDoor.id())?"CLOSE ":"OPEN ")+

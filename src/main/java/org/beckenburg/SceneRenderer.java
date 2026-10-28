@@ -262,7 +262,7 @@ public final class SceneRenderer {
      * lowest vertex on the supporting surface. GLB source origins are arbitrary. */
     private static final java.util.concurrent.ConcurrentHashMap<String,double[]> CASTLE_BOUNDS=
         new java.util.concurrent.ConcurrentHashMap<>();
-    private static double[] castleBounds(String id){
+    static double[] castleBounds(String id){
         return CASTLE_BOUNDS.computeIfAbsent(id,key->{
             double loX=Double.POSITIVE_INFINITY,hiX=Double.NEGATIVE_INFINITY;
             double loY=Double.POSITIVE_INFINITY,hiY=Double.NEGATIVE_INFINITY;
@@ -821,6 +821,7 @@ public final class SceneRenderer {
         }
     }
     private List<Face> castleEnvironment;
+    private List<Face> castleExportGeometry=List.of();
     static final double EXTERIOR_GROUND_Y=-.65;
     static final double CASTLE_FOUNDATION_Y=-.32;
     private static void castleTerrain(List<Face> out,double west,double north,double east,double south){
@@ -836,10 +837,7 @@ public final class SceneRenderer {
         // Terrain ends at the castle foundation; it is never drawn under a room.
         // More than 0.6m vertical separation also prevents far-plane depth quantization
         // from producing flashing earth through pavement or interior floors.
-        castleTerrain(out,-180,-160,220,1);
-        castleTerrain(out,-180,34,220,220);
-        castleTerrain(out,-180,1,1,34);
-        castleTerrain(out,43,1,220,34);
+        castleTerrain(out,-180,-160,220,220);
         for(var tree:CastleSurroundings.trees())imported(out,"level_tree_conifer_worn",tree.x(),0,tree.z(),tree.scale(),tree.x()*.2);
         mountains(out,22,17);var points=CastleSurroundings.road();int asphalt=VanArrivalStreet.surfaceMaterial(false);double uv=0;
         for(int i=0;i<points.size()-1;i++){var a=points.get(i);var b=points.get(i+1);double dx=b.x()-a.x(),dz=b.z()-a.z(),length=Math.hypot(dx,dz),ox=dz/length*2.6,oz=-dx/length*2.6;texturedQuad(out,new Point(a.x()-ox,-.055,a.z()-oz),new Point(a.x()+ox,-.055,a.z()+oz),new Point(b.x()+ox,-.055,b.z()+oz),new Point(b.x()-ox,-.055,b.z()-oz),asphalt,0,uv,2.6,uv,2.6,uv+length*.48,0,uv+length*.48,0x96958a);uv+=length*.48;}
@@ -2003,12 +2001,12 @@ public final class SceneRenderer {
     private void castleRamparts(List<Face> out){
         double y=CastleHubArchitecturalPlan.GROUND_CEILING;
         for(int xx=2;xx<43;xx+=2){
-            if(Math.abs(xx-x)>19)continue;
+            
             box(out,xx,y,33.80,1.10,.78,.32,0x8c7c6a);
             if(xx<28)box(out,xx,y,.84,1.10,.78,.32,0x8c7c6a);
         }
         for(int zz=2;zz<34;zz+=2){
-            if(Math.abs(zz-z)>19)continue;
+            
             box(out,.84,y,zz,.32,.78,1.10,0x8c7c6a);
             if(zz>=4)box(out,42.84,y,zz,.32,.78,1.10,0x8c7c6a);
         }
@@ -2055,58 +2053,77 @@ public final class SceneRenderer {
             castleDoorLeaf(out,slot,CastleLevelEdits.current().doorType(slot.id()),
                 map.doorOpen(slot.id()));
         }
-        for(var deck:CastleLevelEdits.current().decks()){
-            texturedQuad(out,
-                new Point(deck.x0(),deck.height(),deck.z0()),
-                new Point(deck.x1(),deck.height(),deck.z0()),
-                new Point(deck.x1(),deck.height(),deck.z1()),
-                new Point(deck.x0(),deck.height(),deck.z1()),
-                deck.material(),deck.x0(),deck.z0(),deck.x1(),deck.z0(),
-                deck.x1(),deck.z1(),deck.x0(),deck.z1(),0xffffff);
-        }
-        // Real 10m stair ascent to a 3.4m upper landing; never an
-        // interaction-only teleport or a staircase prop with no floor.
+        castleSlabs(out,map);
+        // Closed stone stair mass: the riser is on each tread's SOUTH edge.
         for(int step=0;step<20;step++){
             double south=32-step*.5,north=south-.5;
             double top=(step+1)*CastleHubArchitecturalPlan.GROUND_CEILING/20.0;
-            texturedQuad(out,new Point(16.0,top,north),
-                new Point(19.0,top,north),new Point(19.0,top,south),
-                new Point(16.0,top,south),MaterialAtlas.STONE,
-                16,north,19,north,19,south,16,south,0xffffff);
-            texturedQuad(out,new Point(16.0,0,north),
-                new Point(19.0,0,north),new Point(19.0,top,north),
-                new Point(16.0,top,north),MaterialAtlas.STONE,
-                16,0,19,0,19,top,16,top,0xddd4cb);
-            // Close both ends of every riser with solid stone side geometry.
-            for(double side:new double[]{16.0,19.0})
-                texturedQuad(out,new Point(side,0,north),new Point(side,top,north),
-                    new Point(side,top,south),new Point(side,0,south),
-                    MaterialAtlas.STONE,0,0,0,top,.5,top,.5,0,0xddd4cb);
+            texturedBox(out,16,0,north,3,top,.5,MaterialAtlas.STONE);
         }
-        // Railings follow both stair and balcony edges, with a real
-        // continuous parapet over the courtyard underpass.
-        for(int side=0;side<2;side++){
-            double edge=side==0?16.0:19.0;
-            for(int step=0;step<10;step++){
-                double za=32-step,zb=za-1;
-                double ha=step*.34+.14,hb=(step+1)*.34+.14;
-                texturedQuad(out,new Point(edge,ha,za),
-                    new Point(edge,hb,zb),new Point(edge,hb+.83,zb),
-                    new Point(edge,ha+.83,za),MaterialAtlas.AGED_WOOD,
+        for(double side:new double[]{16,19})for(int step=0;step<10;step++){
+            double za=32-step,zb=za-1,ha=step*.34+.1,hb=(step+1)*.34+.1;
+            for(double xx:new double[]{side-.05,side+.05})
+                texturedQuad(out,new Point(xx,ha,za),new Point(xx,hb,zb),
+                    new Point(xx,hb+1.02,zb),new Point(xx,ha+1.02,za),MaterialAtlas.AGED_WOOD,
                     0,0,1,0,1,1,0,1,0xffffff);
-            }
-            texturedQuad(out,new Point(edge,3.42,10.8),
-                new Point(edge,3.42,22.0),new Point(edge,4.39,22.0),
-                new Point(edge,4.39,10.8),MaterialAtlas.AGED_WOOD,
-                0,0,11.2,0,11.2,.97,0,.97,0xffffff);
+            texturedQuad(out,new Point(side-.05,ha+1.02,za),new Point(side-.05,hb+1.02,zb),
+                new Point(side+.05,hb+1.02,zb),new Point(side+.05,ha+1.02,za),MaterialAtlas.AGED_WOOD,
+                0,0,1,0,1,1,0,1,0xffffff);
         }
-        for(var trim:CastleHubArchitecturalPlan.trims()){
-            if(Math.hypot(trim.x()-x,trim.z()-z)>18.0)continue;
-            imported(out,trim.mesh(),trim.x(),trim.y(),trim.z(),
-                trim.sx(),trim.sy(),trim.sz(),trim.yaw());
+        for(var edge:CastleRooms.guards()){
+            double w=edge.x1()-edge.x0(),d=edge.z1()-edge.z0(),y=edge.top();
+            texturedBox(out,edge.x0()-.05,y,edge.z0()-.05,w+.10,.28,d+.10,MaterialAtlas.STONE);
+            texturedBox(out,edge.x0()-.05,y+.96,edge.z0()-.05,w+.10,.10,d+.10,MaterialAtlas.AGED_WOOD);
+            int posts=Math.max(1,(int)Math.ceil(Math.max(w,d)));
+            for(int i=0;i<=posts;i++)texturedBox(out,edge.x0()+w*i/posts-.05,y+.28,
+                edge.z0()+d*i/posts-.05,.10,.68,.10,MaterialAtlas.AGED_WOOD);
         }
     }
-    /** Castle hub renders with the same perspective, clipping and textured depth buffer as missions. */
+    private static final java.util.Map<String,Integer> CASTLE_LABELS=new java.util.HashMap<>();
+    private static void castleShelfLabel(List<Face> out,CastleWarehouse.Exhibit exhibit){
+        String title=exhibit.id().replace('_',' '),key="Castle retail "+exhibit.id()+" "+exhibit.tier();
+        int mat=CASTLE_LABELS.computeIfAbsent(key,ignored->{
+        var image=new java.awt.image.BufferedImage(256,64,java.awt.image.BufferedImage.TYPE_INT_RGB);
+        var g=image.createGraphics();g.setColor(new java.awt.Color(30,35,37));g.fillRect(0,0,256,64);
+        g.setColor(new java.awt.Color(222,207,173));g.setFont(new java.awt.Font("Monospaced",java.awt.Font.BOLD,17));
+        if(title.length()>22){int space=title.lastIndexOf(' ',22);if(space<0)space=22;
+            g.drawString(title.substring(0,space),6,19);g.drawString(title.substring(space).strip(),6,38);
+        }else g.drawString(title,6,27);
+        g.setColor(exhibit.tier()==EquipmentTiers.Tier.III?new java.awt.Color(156,205,227):new java.awt.Color(222,195,126));
+        g.drawString("TIER "+exhibit.tier(),6,58);g.dispose();
+        return GlbProps.surfaceMaterial(key,image);});var rack=CastleWarehouse.racks().get(exhibit.rack());
+        double cx=(exhibit.column()-1)*.66,y=exhibit.y()-.125;
+        var left=rack.world(cx-.30,.326);var right=rack.world(cx+.30,.326);
+        texturedQuad(out,new Point(left[0],y,left[1]),new Point(right[0],y,right[1]),
+            new Point(right[0],y+.105,right[1]),new Point(left[0],y+.105,left[1]),mat,
+            0,0,1,0,1,1,0,1,0xffffff);
+    }
+    private static void castleSlabs(List<Face> out,CastleHubMap map){
+        var cells=CastleRooms.slabCells(CastleRooms.structuralDecks());
+        for(var c:cells){
+            double x0=c.x0(),x1=c.x1(),z0=c.z0(),z1=c.z1(),y=c.top(),bottom=y-CastleRooms.SLAB;
+            int mat=c.material();
+            if(y==0)mat=map.floorMaterial((x0+x1)*.5,(z0+z1)*.5);
+            texturedQuad(out,new Point(x0,y,z0),new Point(x1,y,z0),new Point(x1,y,z1),new Point(x0,y,z1),mat,
+                x0,z0,x1,z0,x1,z1,x0,z1,0xffffff);
+            texturedQuad(out,new Point(x0,bottom,z1),new Point(x1,bottom,z1),new Point(x1,bottom,z0),new Point(x0,bottom,z0),MaterialAtlas.CEILING,
+                x0,z1,x1,z1,x1,z0,x0,z0,0xffffff);
+        }
+        for(var e:CastleRooms.edges(cells))texturedQuad(out,new Point(e.x0(),e.top(),e.z0()),new Point(e.x1(),e.top(),e.z1()),
+            new Point(e.x1(),e.top()==0?EXTERIOR_GROUND_Y:e.top()-CastleRooms.SLAB,e.z1()),new Point(e.x0(),e.top()==0?EXTERIOR_GROUND_Y:e.top()-CastleRooms.SLAB,e.z0()),MaterialAtlas.STONE,
+            0,1,Math.hypot(e.x1()-e.x0(),e.z1()-e.z0()),1,Math.hypot(e.x1()-e.x0(),e.z1()-e.z0()),0,0,0,0xffffff);
+    }
+    private static void castleRoof(List<Face> out,CastleHubArchitecturalPlan.Roof roof){
+        double x0=roof.west(),x1=roof.east(),z0=roof.north(),z1=roof.south(),mid=(x0+x1)*.5;
+        double y=roof.eave(),peak=y+roof.rise();int mat=roof.material();
+        for(int side=0;side<2;side++){
+            double a=side==0?x0:mid,b=side==0?mid:x1,ya=side==0?y:peak,yb=side==0?peak:y;
+            texturedQuad(out,new Point(a,ya,z0),new Point(b,yb,z0),new Point(b,yb,z1),new Point(a,ya,z1),mat,0,0,b-a,0,b-a,z1-z0,0,z1-z0,0xffffff);
+            texturedQuad(out,new Point(a,ya-.18,z1),new Point(b,yb-.18,z1),new Point(b,yb-.18,z0),new Point(a,ya-.18,z0),MaterialAtlas.AGED_WOOD,0,0,b-a,0,b-a,z1-z0,0,z1-z0,0xffffff);
+        }
+        for(double z:new double[]{z0,z1})out.add(new Face(new Point(x0,y-.18,z),new Point(mid,peak,z),new Point(x1,y-.18,z),0xffffff,mat,0,0,1,1,2,0));
+        for(double edge:new double[]{x0,x1})texturedBox(out,edge-.025,y-.18,z0,.05,.18,z1-z0,mat);
+    }
     public void drawCastle(CastleHubMap map,double clock){drawCastle(map,clock,true);}
     public void drawCastle(CastleHubMap map,double clock,boolean lightsOn){
         environmentLight=1;lightingMap=null;waterCastle=map;waterClock=clock;activeWater=waterOverride==null?WorldWater.module(map.water()):waterOverride;
@@ -2118,137 +2135,53 @@ public final class SceneRenderer {
         paintSky(clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         List<Face> castle=new ArrayList<>();castle.addAll(castleSurroundings());
-        // Every navigable tile is physical ground, including the approach through
-        // Z=35. The old 16m radial visibility test clipped floors in plain sight
-        // at long angles and the HEIGHT-1 loop excluded the open gate apron.
-        // The authored, immutable floor footprint avoids re-scanning the raster.
-        // This stone substrate lies below the selectable finish material and
-        // covers edge cracks without sealing intentional elevated-floor voids.
-        texturedQuad(castle,new Point(1,CASTLE_FOUNDATION_Y,1),new Point(43,CASTLE_FOUNDATION_Y,1),
-            new Point(43,CASTLE_FOUNDATION_Y,36),new Point(1,CASTLE_FOUNDATION_Y,36),MaterialAtlas.STONE,
-            1,1,43,1,43,36,1,36,0x77736e);
-        for(CastleHubMap.GroundCell cell:map.groundCells()){
-            int xx=cell.x(),zz=cell.z();
-            int stone=map.floorMaterial(xx+.5,zz+.5);
-            texturedQuad(castle,new Point(xx,0,zz),new Point(xx+1,0,zz),
-                new Point(xx+1,0,zz+1),new Point(xx,0,zz+1),stone,
-                xx,zz,xx+1,zz,xx+1,zz+1,xx,zz+1,0xffffff);
-            if(!map.outside(xx+.5,zz+.5)){
-                double ceiling=CastleHubArchitecturalPlan.groundCeilingHeight(xx+.5,zz+.5);
-                texturedQuad(castle,
-                    new Point(xx,ceiling,zz+1),new Point(xx+1,ceiling,zz+1),
-                    new Point(xx+1,ceiling,zz),new Point(xx,ceiling,zz),
-                    MaterialAtlas.CEILING,xx,zz+1,xx+1,zz+1,xx+1,zz,xx,zz,0xe0d8c8);
-            }
-            if(editorNavigation){
-                // Authoring-only, visibly backed by the exact walkability query.
-                boolean walk=map.traversable(xx+.5,zz+.5);
-                texturedQuad(castle,new Point(xx+.12,.035,zz+.12),
-                    new Point(xx+.88,.035,zz+.12),new Point(xx+.88,.035,zz+.88),
-                    new Point(xx+.12,.035,zz+.88),MaterialAtlas.CERAMIC,
-                    0,0,1,0,1,1,0,1,walk?0x49815c:0x8f353b);
-            }
-            // The solid tile modules now supply textured wall and window geometry.
-            // Primitive quads would falsely close the real windows and gate openings.
-        }
+        // Authoritative room/slab surfaces cover fractional wall shoulders and thresholds.
         // The real continuous, authored stonework and second floor replace
         // per-cell fortress blocks. Doors have full-width jambs and lintels.
         castleShell(castle,map);
         castleRamparts(castle);
-        for(var roof:CastleLevelEdits.current().roofs())
-            if(Math.hypot((roof.west()+roof.east())*.5-x,
-                          (roof.north()+roof.south())*.5-z)<27)
-                pitchedRoof(castle,roof.west(),roof.east(),roof.north(),
-                    roof.south(),roof.eave(),roof.rise(),roof.material());
+        for(var trim:CastleHubArchitecturalPlan.trims())if(trim.mesh().contains("tower"))
+            imported(castle,trim.mesh(),trim.x(),trim.y(),trim.z(),trim.sx(),trim.sy(),trim.sz(),trim.yaw());
+        for(var roof:CastleLevelEdits.current().roofs())castleRoof(castle,roof);
         for(CastleLevelEdits.Lamp adjusted:edits.lamps())
-            if(Math.hypot(adjusted.x()-x,adjusted.z()-z)<14)
-                mountedLamp(castle,adjusted.fixture(),lightsOn);
+            if(Math.hypot(adjusted.x()-x,adjusted.z()-z)<100)
+                mountedLamp(castle,adjusted.fixture(),lightsOn&&map.lightOn(adjusted.x(),adjusted.y(),adjusted.z()));
         for(CastleHubDecor.Switch sw:CastleHubDecor.SWITCHES)
-            if(Math.hypot(sw.x()-x,sw.z()-z)<14)
+            if(Math.hypot(sw.x()-x,sw.z()-z)<100)
                 mountedLamp(castle,new CastleHubDecor.Light("light_switch_1",
                     "light_switch_1",sw.x(),sw.y(),sw.z(),.85,sw.yaw(),
                     CastleHubDecor.Mount.WALL),true);
-        // Each station is a distinct source-backed room fixture, NOT a
-        // uniformly duplicated, untextured beige box. Their source mesh sizes
-        // and height offsets match the authored physical interaction sockets.
-        for(CastleHubMap.Station station:CastleHubMap.Station.values()){
-            if(Math.hypot(station.x-x,station.z-z)>16)continue;
-            double[] socket=edits.station(station);double px=socket[0],pz=socket[1];
-            switch(station){
-                case ARMORY_UV -> {
-                    imported(castle,"display_cabinet_mp_2",px,0,pz,.72,0);
-                    imported(castle,"blender_uv_light_1",px,1.03,pz,.53,0);
-                }
-                case ARMORY_SALT -> {
-                    imported(castle,"display_cabinet_mp_2",px,0,pz,.72,0);
-                    imported(castle,"blender_salt_1",px,1.03,pz,.53,0);
-                }
-                case ROLE -> imported(castle,"wardrobe_mp_1",px,0,pz,.9,Math.PI);
-                case CONTRACT -> {
-                    imported(castle,"dinner_table_1",px,0,pz,.74,0);
-                    imported(castle,"open_book_mp_1",px,.67,pz,.48,0);
-                }
-                case EXPEDITION -> {
-                    // An actual dispatch desk, not three upright showroom
-                    // cards that read as floating paintings above the counter.
-                    // The open journal is a flat authored table prop. Case
-                    // selection is handled by the existing in-game interaction.
-                    double deskScale=.84;
-                    double top=CastleHubDecor.meshHeight("tv_table_1_4")*deskScale;
-                    castleProp(castle,"tv_table_1_4",px,0,pz,deskScale,0);
-                    castleProp(castle,"open_book_mp_1",px,top+.008,pz,
-                        .48,0);
-                }
-                case MULTIPLAYER -> {
-                    // Use the actual desktop computer, not the wall-mounted
-                    // van monitoring screen. Anchor the feet of every GLB to
-                    // its surface and center its extents in the desk footprint.
-                    double deskScale=.83;
-                    double desktop=CastleHubDecor.meshHeight("tv_table_1_4")*deskScale;
-                    castleProp(castle,"tv_table_1_4",px,0,pz,deskScale,0);
-                    // Position the case beside, not inside, the desk. The CRT,
-                    // keyboard and mouse share its actual measured upper plane.
-                    castleProp(castle,"pc_mp_1",px-.98,0,pz-.17,.65,0);
-                    castleProp(castle,"blender_computer_fixed",px+.08,desktop+.008,pz-.17,.49,0);
-                    castleProp(castle,"pc_keyboard_mp_1",px-.10,desktop+.008,pz+.18,.42,0);
-                    box(castle,px+.30,desktop+.008,pz+.15,.085,.035,.13,0x373942);
-                }
-                case SPECTRAL -> {
-                    imported(castle,"display_cabinet_mp_2",px,0,pz,.78,0);
-                    imported(castle,"cross_mp_2",px,1.06,pz,.65,0);
-                }
-                case ARCHIVE -> {for(var a:CastleArchive.ACCENTS)imported(castle,a.mesh(),a.x(),a.y(),a.z(),a.scale(),a.yaw());}
-            }
+        for(var piece:CastleServiceFixtures.all())
+            castleProp(castle,piece.mesh(),piece.x(),piece.y(),piece.z(),piece.scale(),piece.yaw());
+        for(var accent:CastleArchive.ACCENTS)
+            castleProp(castle,accent.mesh(),accent.x(),accent.y(),accent.z(),accent.scale(),accent.yaw());
+        for(var rack:CastleWarehouse.racks())
+            castleProp(castle,CastleWarehouse.SHELF,rack.x(),0,rack.z(),rack.scale(),rack.yaw());
+        castleProp(castle,"tv_table_1_4",CastleWarehouse.COUNTER_X,0,CastleWarehouse.COUNTER_Z,1,0);
+        for(var exhibit:CastleWarehouse.exhibits()){
+            castleProp(castle,exhibit.mesh(),exhibit.x(),exhibit.y(),exhibit.z(),exhibit.scale(),exhibit.yaw());
+            castleShelfLabel(castle,exhibit);
         }
-        // Real displayed models, with the same physical shelf collision as the map.
-        for(var rack:CastleWarehouse.racks())if(Math.hypot(rack.x()-x,rack.z()-z)<14)
-            castleProp(castle,"shelf_mp_6",rack.x(),0,rack.z(),rack.scale(),0);
-        if(Math.hypot(CastleWarehouse.COUNTER_X-x,CastleWarehouse.COUNTER_Z-z)<14)
-            castleProp(castle,"display_cabinet_mp_2",CastleWarehouse.COUNTER_X,0,
-                CastleWarehouse.COUNTER_Z,.78,0);
-        for(var exhibit:CastleWarehouse.exhibits())
-            if(Math.hypot(exhibit.x()-x,exhibit.z()-z)<7.0)
-                castleProp(castle,exhibit.mesh(),exhibit.x(),exhibit.y(),exhibit.z(),
-                    castleExhibitScale(exhibit.mesh(),exhibit.scale()),0);
         for(var resident:CastleArchive.furnishings())
-            if(Math.hypot(resident.x()-x,resident.z()-z)<16)
+            if(Math.hypot(resident.x()-x,resident.z()-z)<100)
                 castleProp(castle,resident.mesh(),resident.x(),0,resident.z(),resident.scale(),resident.yaw());
         // Purchased source-backed fixtures occupy authored locations and match hub collision.
         for(CastleLevelEdits.Prop item:edits.props())
-            if(Math.hypot(item.x()-x,item.z()-z)<16)
+            if(Math.hypot(item.x()-x,item.z()-z)<100)
                 castleProp(castle,item.mesh(),item.x(),item.y(),item.z(),
                     item.scale(),item.yaw());
-        if(editorSelection!=null&&Math.hypot(editorSelection[0]-x,editorSelection[2]-z)<16){
+        if(editorSelection!=null&&Math.hypot(editorSelection[0]-x,editorSelection[2]-z)<100){
             // Camera-visible 3D amber selection pillar; NEVER inserted into collision.
             box(castle,editorSelection[0]-.04,editorSelection[1]+.02,
                 editorSelection[2]-.04,.08,1.4,.08,0xffcb54);
         }
         for(CastleHubDecor.Accent a:CastleHubDecor.placedAccents(edits))
-            if(Math.hypot(a.x()-x,a.z()-z)<12)
+            if(Math.hypot(a.x()-x,a.z()-z)<100)
                 castleProp(castle,a.mesh(),a.x(),a.y(),a.z(),a.scale(),a.yaw());
         // Only CastleHubArchitecturalPlan owns masonry portal geometry.
         // A second hand-built entrance frame at Z=11.20 previously
         // overlapped the actual authored arch at Z=11.50.
+        if(exportFullLevel)castleExportGeometry=List.copyOf(castle);
         boolean gpuFrame=drawGpuFaces(castle,null);
         if(!gpuFrame)
             for(Face face:castle){double mx=(face.a.x+face.b.x+face.c.x)/3,mz=(face.a.z+face.b.z+face.c.z)/3;int room=mx<0||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;drawLitFace(face,room,0);}

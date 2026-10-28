@@ -1442,6 +1442,61 @@
       "action": "Use full receiving-side architectural check before prop bias for non-native investigation geometry; scope scalar shadow cache by receiver. Preserve Castle visibility and native triangle paths.",
       "evidence": "FixtureJoinIntegrationTest fails on7f1515d0 at4.8vs0.187ambient and passes after repair, including real door open/close invalidation and same-side light control. AllMapArchitecturalJoinTest6789closed-boundary rays across9indoor maps.18matched actualGPUdiagnostic images: corrected exterior-source frames exactly equal source-off frames; same-side interior source remains lit.",
       "older_maps": "All generated-map joins still need moving-camera/human review. Native physical meshes, roof joins and every portal state require independent evidence. No full map, LAN or30FPS acceptance inferred."
+    },
+    {
+      "id": "DEV-137",
+      "title": "Castle construction disagrees with its collision raster",
+      "status": "repair-in-progress",
+      "affected": "Castle floor, doorway shoulders and upper circulation",
+      "symptom": "Current main uses separately maintained raster collision, a large rectangular foundation and single-face overlapping decks. Overflight also omits entire roofs at a 27m center distance.",
+      "cause": "Independently authored legacy geometry, rendering and display coordinates.",
+      "action": "Replace with measured room volumes, unioned 220mm slabs, closed roof geometry and actual thick-wall collision. Preserve functional station positions.",
+      "evidence": "development/levels/previews/castle-survey/before; 21 actual RTX5070 OpenGL frames, source68d1142d plus survey-only entry point. Rebuild checks pending.",
+      "older_maps": "Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations."
+    },
+    {
+      "id": "DEV-138",
+      "title": "Castle warehouse omits tiers and suspends items above shallow shelves",
+      "status": "repair-in-progress",
+      "affected": "Castle quartermaster",
+      "symptom": "Eight .22m-deep bookshelves face one direction. Only 43 tier-I displays are authored at .40/1.00/1.60m despite source shelf tops .09/.39/.69/.99/1.29m at scale1.05. Top displays float; higher tiers are absent.",
+      "cause": "Independently authored legacy geometry, rendering and display coordinates.",
+      "action": "Replace with original open retail shelves, aisle-facing placements,129 catalog/tier displays, exact support planes and shelf labels; retain menu purchase authority.",
+      "evidence": "development/levels/previews/castle-survey/before; 21 actual RTX5070 OpenGL frames, source68d1142d plus survey-only entry point. Rebuild checks pending.",
+      "older_maps": "Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations."
+    },
+    {
+      "id": "DEV-139",
+      "title": "Castle courtyard and circulation lack usable local lighting",
+      "status": "repair-in-progress",
+      "affected": "Castle rooms, courtyard, stairs and store",
+      "symptom": "Twenty-one actual RTX frames show very dark exterior circulation and uneven interior coverage. All three existing switches toggle every lamp; new slab soffits require refitted ceiling mounts.",
+      "cause": "Independently authored legacy geometry, rendering and display coordinates.",
+      "action": "Provide supported coverage in every room, courtyard sconces, room circuits and an upper-library switch. Verify lit/off/torch controls and per-room light separation.",
+      "evidence": "development/levels/previews/castle-survey/before; 21 actual RTX5070 OpenGL frames, source68d1142d plus survey-only entry point. Rebuild checks pending.",
+      "older_maps": "Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations."
+    },
+    {
+      "id": "DEV-140",
+      "title": "Castle service fixtures are visible but lack collision and supported props",
+      "status": "repair-in-progress",
+      "affected": "Castle stations and wall bookshelves",
+      "symptom": "Service desks/cabinets are rendered independently of collision. Some source library shelves face walls; several display items use guessed heights.",
+      "cause": "Independently authored legacy geometry, rendering and display coordinates.",
+      "action": "Share measured service placements between collision and rendering; correct shelf orientation; remove obsolete store dressing; refit supported accents.",
+      "evidence": "development/levels/previews/castle-survey/before; 21 actual RTX5070 OpenGL frames, source68d1142d plus survey-only entry point. Rebuild checks pending.",
+      "older_maps": "Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations."
+    },
+    {
+      "id": "DEV-141",
+      "title": "GPU packaging can overwrite fresh code with stale resource bytecode",
+      "status": "fixed-local-exact-CI-pending",
+      "affected": "gpu-client packaged builds from a previously compiled build/classes directory",
+      "symptom": "A second incremental GPU build restored old CastleHubMap collision while retaining newer store code; the solid-service-fixture regression failed despite the source repair.",
+      "cause": "gpu-client/pom.xml copied **/*.class from build/classes as resources into target/classes. Some unchanged sources were not then recompiled.",
+      "action": "Exclude bytecode from GPU resources. Keep actual model/texture resources, compile all Java from source, clean-rebuild and repeat physical Castle checks.",
+      "evidence": "build/castle-rebuild-compile.log and CastleRebuildTest before/after the clean source build. Source-level remedy matches the independent performance branch; no optimization flags are enabled.",
+      "older_maps": "Any GPU build using mixed resource bytecode needs a fresh source rebuild; this does not certify installed gameplay or performance."
     }
   ],
   "audit_categories": [

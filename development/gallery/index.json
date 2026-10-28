@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 955,
+  "count": 997,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1452,6 +1452,426 @@
       "height": 800,
       "bytes": 1197138,
       "sha256": "f30a49b5bfd7feef6b78a08712bf9b5a4414a2d7c30c3b49f6fc4042d295eb72"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-01-overflight-south.png",
+      "url": "development/levels/previews/castle-survey/before/castle-01-overflight-south.png",
+      "title": "Castle 01 overflight south",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 151736,
+      "sha256": "5300dfaacbb0b855ccf7fdb8f7aafcf174b9f9063f1a91c8e814b79b6512ec21"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-02-overflight-north.png",
+      "url": "development/levels/previews/castle-survey/before/castle-02-overflight-north.png",
+      "title": "Castle 02 overflight north",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 147588,
+      "sha256": "040bd37e83374809db9466814bd47acb988598a9c121edd3600e775f320c47ae"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-03-overflight-east.png",
+      "url": "development/levels/previews/castle-survey/before/castle-03-overflight-east.png",
+      "title": "Castle 03 overflight east",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 154947,
+      "sha256": "eaba32be59482e2f2f8222bbbe54b406677674ae72a2f9b69af0532c254f1f66"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-04-overflight-west.png",
+      "url": "development/levels/previews/castle-survey/before/castle-04-overflight-west.png",
+      "title": "Castle 04 overflight west",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 157823,
+      "sha256": "1b5735a39b85ed2591b2df152206f5b0bf135225382fcd39ecbf2c8db1f4f092"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-05-courtyard.png",
+      "url": "development/levels/previews/castle-survey/before/castle-05-courtyard.png",
+      "title": "Castle 05 courtyard",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 168285,
+      "sha256": "b60422de0a14060306965c9242bfda68ae6783203c11a8b06cb128d8b3c881da"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-06-stair-up.png",
+      "url": "development/levels/previews/castle-survey/before/castle-06-stair-up.png",
+      "title": "Castle 06 stair up",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 88376,
+      "sha256": "022fb52b90fa81ba14bc7a3b569cb5dae8a6b49b50c4172766be6c169e109756"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-07-stair-down.png",
+      "url": "development/levels/previews/castle-survey/before/castle-07-stair-down.png",
+      "title": "Castle 07 stair down",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 135854,
+      "sha256": "0b73369c809c453bd010fe16331a57d0cd7b3801151e04a8ef4ae2a388733931"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-08-gallery-under.png",
+      "url": "development/levels/previews/castle-survey/before/castle-08-gallery-under.png",
+      "title": "Castle 08 gallery under",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 129719,
+      "sha256": "a2ba6d47039defb8777a9295fcd589af0016687cf62d1e214f5a588789b6c1b5"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-09-upper-library.png",
+      "url": "development/levels/previews/castle-survey/before/castle-09-upper-library.png",
+      "title": "Castle 09 upper library",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 253767,
+      "sha256": "ee150cb1d21f486424a40c8d08dff25d596b8d7bb23d1777c086d3fbe69d58c9"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-10-ramparts.png",
+      "url": "development/levels/previews/castle-survey/before/castle-10-ramparts.png",
+      "title": "Castle 10 ramparts",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 120986,
+      "sha256": "4ee224d96c6a27e60cdac4cfab955adfb8ec90361e513b5be9122cc6de43fe7b"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-11-armory.png",
+      "url": "development/levels/previews/castle-survey/before/castle-11-armory.png",
+      "title": "Castle 11 armory",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 233755,
+      "sha256": "cb67c39f60f63ca1850ed8bf25b06bdfd6a583ed73a96ba6db979239de717887"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-12-contract.png",
+      "url": "development/levels/previews/castle-survey/before/castle-12-contract.png",
+      "title": "Castle 12 contract",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 165651,
+      "sha256": "1c0a15a4ed631b86f90da8fe5e29a1e154af13994fd4220faa7735dc8aea4af9"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-13-lounge.png",
+      "url": "development/levels/previews/castle-survey/before/castle-13-lounge.png",
+      "title": "Castle 13 lounge",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 223126,
+      "sha256": "0cfa457e73350c3132219757063823ae25ea64cb4bdc631502f505eb374f95aa"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-14-practice.png",
+      "url": "development/levels/previews/castle-survey/before/castle-14-practice.png",
+      "title": "Castle 14 practice",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 268914,
+      "sha256": "18dae8005938cd7620ff480ece762943a5ba67f519acd301414ecd8ff8ac45b7"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-15-operations.png",
+      "url": "development/levels/previews/castle-survey/before/castle-15-operations.png",
+      "title": "Castle 15 operations",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 220701,
+      "sha256": "c7b4c74c742d9bed145286097a7ccf2cbb8226a52b566798d088823c86ac0c47"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-16-archive.png",
+      "url": "development/levels/previews/castle-survey/before/castle-16-archive.png",
+      "title": "Castle 16 archive",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 274272,
+      "sha256": "a3e88454b7273704bf9c1895f2a828f5ee1083c76ff27646b7b7b07baf0af3ff"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-17-warehouse.png",
+      "url": "development/levels/previews/castle-survey/before/castle-17-warehouse.png",
+      "title": "Castle 17 warehouse",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 207504,
+      "sha256": "160ecd2545d9e305684eb92c37f6a6ac7014d921076f0817c8464757653b5d09"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-18-arrival.png",
+      "url": "development/levels/previews/castle-survey/before/castle-18-arrival.png",
+      "title": "Castle 18 arrival",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 124853,
+      "sha256": "47d7f942162b8471cdb187fa295fc0b74bf40341840227fa6b321c7129929c97"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-19-courtyard-blackout.png",
+      "url": "development/levels/previews/castle-survey/before/castle-19-courtyard-blackout.png",
+      "title": "Castle 19 courtyard blackout",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 128110,
+      "sha256": "76864fb4ec9f20e2af23f6e436517a25298680f7d2704f886c9d2efb23a4ac5d"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-20-library-blackout.png",
+      "url": "development/levels/previews/castle-survey/before/castle-20-library-blackout.png",
+      "title": "Castle 20 library blackout",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 126481,
+      "sha256": "18e812f7125a2e49ab45a1a6eca4ba4c591bf0b217e527eb852f559c8aeb5ab0"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/before/castle-21-library-torch.png",
+      "url": "development/levels/previews/castle-survey/before/castle-21-library-torch.png",
+      "title": "Castle 21 library torch",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 162059,
+      "sha256": "299807bbb112631e5fbc07acf5221d634447d91c9c66ac30d2c45b7a4b08378a"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-01-overflight-south.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-01-overflight-south.png",
+      "title": "Castle 01 overflight south",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 173536,
+      "sha256": "f8ddad90cd3861aead1765856efd0764505a8156e141bf008496cfaa9b536e33"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-02-overflight-north.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-02-overflight-north.png",
+      "title": "Castle 02 overflight north",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 163762,
+      "sha256": "f4a499ef4ee05392f7c56439b5397eb7ef137209e91a03c1609607c45315c357"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-03-overflight-east.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-03-overflight-east.png",
+      "title": "Castle 03 overflight east",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 165251,
+      "sha256": "dbde39d8025b3583544d7bd71b2e2cd6af108661d99e8eae00b5dababffc16b3"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-04-overflight-west.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-04-overflight-west.png",
+      "title": "Castle 04 overflight west",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 178069,
+      "sha256": "661042f49896527d47874df6b7f7b3d988be29b27ae2c641e2fb2ba76aa57e1d"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-05-courtyard.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-05-courtyard.png",
+      "title": "Castle 05 courtyard",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 332959,
+      "sha256": "b4adb00a11c12bf89a6b8ce013bf5c2ee832fa47b8a25cfff6bfefda4291d8eb"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-06-stair-up.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-06-stair-up.png",
+      "title": "Castle 06 stair up",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 235779,
+      "sha256": "3c62deb0bf4b71b32b0ab0de990ab19b4d93fee15c636134507cdd5ea978e48a"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-07-stair-down.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-07-stair-down.png",
+      "title": "Castle 07 stair down",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 262604,
+      "sha256": "80fca4d05445abd0d82c9b3c84435f00f7ab3ff74bfbaeb788d42d2d52a322c5"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-08-gallery-under.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-08-gallery-under.png",
+      "title": "Castle 08 gallery under",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 264624,
+      "sha256": "92fe7a1cae30135be805d1ade5e5e40997a88dc3498572547585ea805996f592"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-09-upper-library.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-09-upper-library.png",
+      "title": "Castle 09 upper library",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 315638,
+      "sha256": "29ae4d34c6944b9cb6edbaa9414461defd6da9ed385b4c9fd6d47a66283c792e"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-10-ramparts.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-10-ramparts.png",
+      "title": "Castle 10 ramparts",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 200040,
+      "sha256": "924dd3df98a0c227d66b7124be6e1969f223f7ee40182c557c408a83b9294a75"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-11-armory.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-11-armory.png",
+      "title": "Castle 11 armory",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 317556,
+      "sha256": "280ccc6f1adc928a6488698a13f4c1304b74d61f8be4a041c8e18db52796c2d8"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-12-contract.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-12-contract.png",
+      "title": "Castle 12 contract",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 345174,
+      "sha256": "121100167243b121426df3d999c54d5c887c0bfe156b10855c05c01f37115d42"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-13-lounge.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-13-lounge.png",
+      "title": "Castle 13 lounge",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 234708,
+      "sha256": "ebf7663c95765c9b6d54e030ed14ff5454f9dadb32f2241dbd202f7814bfab5b"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-14-practice.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-14-practice.png",
+      "title": "Castle 14 practice",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 346325,
+      "sha256": "11702e2b2898dd8de9a5cd89101ce20a09fcfe44744474853b3255f0d2339a7f"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-15-operations.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-15-operations.png",
+      "title": "Castle 15 operations",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 346266,
+      "sha256": "2e3677d4b723e98db9461c2d200ea24d85e6d39fb1e4307a07af083d336e4e86"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-16-archive.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-16-archive.png",
+      "title": "Castle 16 archive",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 360296,
+      "sha256": "7471365bb65e87e7e6e17798aa5dc8261b02d350ce2ec4625ec8626fde3bf728"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-17-warehouse.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-17-warehouse.png",
+      "title": "Castle 17 warehouse",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 287540,
+      "sha256": "86ba2c4d72b7f13acd31cd9b968653289db964f0dcfb21293a413ae42305f805"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-18-arrival.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-18-arrival.png",
+      "title": "Castle 18 arrival",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 299885,
+      "sha256": "7c14ff802fc96d37344f4a8fed84155a9024da1af1988565904c0972c394e52b"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-19-courtyard-blackout.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-19-courtyard-blackout.png",
+      "title": "Castle 19 courtyard blackout",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 127580,
+      "sha256": "9bfbe6fc5e347d6dc6742f14532f66fb2bbb991144f8e7e6f514dc8ed7c4871c"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-20-library-blackout.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-20-library-blackout.png",
+      "title": "Castle 20 library blackout",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 124567,
+      "sha256": "ca059d6523408a9af9efc7463cea59d5ce6a95d1e92a752768bab912ff24eb52"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-21-library-torch.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-21-library-torch.png",
+      "title": "Castle 21 library torch",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 159925,
+      "sha256": "f3d7ab0c7d7db44c46b3a362530818837c2b7e486da6e0b2211b40156a40546c"
     },
     {
       "path": "development/levels/previews/common-archive/archive-1120-page-0.png",
