@@ -695,6 +695,7 @@ public final class InvestigationGame {
         private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
         private int frameCount;
         private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
+        private JPanel pausePage;
         private LevelOpeningCinematic opening;
         private volatile boolean initialFrameReady;
         private SwingWorker<Void,Void> firstFrameWorker;
@@ -1060,27 +1061,66 @@ public final class InvestigationGame {
                 if(campaignMode)InvestigationGame.this.showCampaign();
             });
         }
+        /** Pause the real 3D session without opening another desktop window. */
+        private void resumeFromPause(){
+            ((CardLayout)cards.getLayout()).show(cards,"play");
+            last=System.nanoTime();
+            timer.start();
+            BeckenburgDeveloperTrace.caseStage("active");
+            SwingUtilities.invokeLater(this::requestFocusInWindow);
+        }
         private void pause(){
             timer.stop();down.clear();mouseLook.release();wheelOpen=false;briefingShown=false;
             BeckenburgDeveloperTrace.caseStage("paused");
-            Object[] choices={"Resume", "Retreat & return", "Controls", "Exit Game"};
-            int choice=JOptionPane.showOptionDialog(window,"Expedition paused", "Field Pause",
-                JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,choices,choices[0]);
-            if(choice==1){session.extract(scene.x,feetY(),scene.z); // extraction location still validated
-                if(session.outcome()==InvestigationSession.Outcome.ACTIVE){
-                    // Leaving a running mission from elsewhere is a failed withdrawal, not a free payout.
-                    JOptionPane.showMessageDialog(window,"Return to the entry marker to extract safely.","Not at extraction",JOptionPane.INFORMATION_MESSAGE);
-                }else{endCase("Expedition ended.");return;}
-            }
-            if(choice==2) JOptionPane.showMessageDialog(window,"WASD / click to mouse-look • 1/2/3 gear • R scan • C ward • B ritual • E door • Q hold communication wheel • M map • J journal • X extract","Controls",JOptionPane.INFORMATION_MESSAGE);
-            if(choice==3&&InGamePauseMenu.confirmExit(window)){
-                close(); // never reward an abandoned investigation
-                System.exit(0);
-                return;
-            }
-            last=System.nanoTime();timer.start();
-            BeckenburgDeveloperTrace.caseStage("active");
-            requestFocusInWindow();
+            JLabel feedback=PsxMenuScreen.label(
+                "INVESTIGATION PAUSED / YOUR CASE REMAINS IN MEMORY.");
+            feedback.setHorizontalAlignment(SwingConstants.CENTER);
+            JButton resume=PsxHorrorUi.button("RESUME CASE");
+            JButton retreat=PsxHorrorUi.button("EXTRACT / RETURN");
+            JButton controls=PsxHorrorUi.button("CONTROLS");
+            JButton exit=PsxHorrorUi.button("EXIT GAME");
+            resume.addActionListener(e->resumeFromPause());
+            retreat.addActionListener(e->{
+                // The extraction rule is unchanged; pause does not grant teleport.
+                session.extract(scene.x,feetY(),scene.z);
+                if(session.outcome()==InvestigationSession.Outcome.ACTIVE)
+                    feedback.setText("RETURN TO THE ENTRY MARKER TO EXTRACT SAFELY.");
+                else endCase("Expedition ended.");
+            });
+            controls.addActionListener(e->{
+                JPanel words=new JPanel(new BorderLayout());words.setOpaque(false);
+                JTextArea text=new JTextArea("WASD move / Mouse look / 1-4 equipment / R scan / "+
+                    "C ward / B ritual / E interact / Q hold callout / M map / J journal / X extract");
+                text.setLineWrap(true);text.setWrapStyleWord(true);text.setEditable(false);
+                text.setOpaque(false);text.setForeground(new Color(233,218,192));
+                text.setFont(new Font(Font.MONOSPACED,Font.PLAIN,14));
+                words.add(text,BorderLayout.CENTER);
+                JButton back=PsxHorrorUi.button("BACK TO PAUSE");
+                back.addActionListener(event->showPage("field-pause",pausePage));
+                showPage("field-controls",PsxMenuScreen.screen("field-controls",
+                    "FIELD CONTROLS","THE CASE REMAINS PAUSED",words,back));
+            });
+            exit.addActionListener(e->{
+                JLabel warning=PsxMenuScreen.label(
+                    "EXIT WITHOUT PAYOUT? THE ACTIVE CASE WILL BE ABANDONED.");
+                warning.setHorizontalAlignment(SwingConstants.CENTER);
+                JButton no=PsxHorrorUi.button("KEEP PLAYING");
+                no.addActionListener(event->showPage("field-pause",pausePage));
+                JButton yes=PsxHorrorUi.button("CONFIRM EXIT GAME");
+                yes.addActionListener(event->{close();System.exit(0);});
+                showPage("field-exit",PsxMenuScreen.screen("field-exit",
+                    "CONFIRM EXIT","UNSAVED EXPEDITION REWARDS WILL NOT BE GRANTED",
+                    warning,no,yes));
+            });
+            pausePage=PsxMenuScreen.screen("field-pause","INVESTIGATION PAUSED",
+                "RETURN TO FIELD / SAFE EXTRACTION / GAME CONTROLS",
+                feedback,resume,retreat,controls,exit);
+            pausePage.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
+                .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"resume");
+            pausePage.getActionMap().put("resume",new AbstractAction(){
+                @Override public void actionPerformed(ActionEvent event){resumeFromPause();}
+            });
+            showPage("field-pause",pausePage);
         }
         @Override public void keyPressed(KeyEvent e){
             if(chatInput.isVisible())return;
