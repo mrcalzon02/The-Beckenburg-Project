@@ -1,0 +1,16 @@
+{
+  "entries": 258,
+  "passed_after_environment_retry": 258,
+  "failed": 0,
+  "initial_sandbox_passed": 203,
+  "loopback_retry_passed": 55,
+  "gpu_frames": 26,
+  "native_triangles": 220671,
+  "source_checkpoint": "61cb1336",
+  "concurrent_main": "75a27615",
+  "gpu_jar_sha256": "2416cb3a11641b22dde1308fa6e0635374864b560a4046befc8cae6e4218bbc2",
+  "limitations": [
+    "New-SHA CI and installed full investigation acceptance remain separate",
+    "30FPS acceptance not claimed"
+  ]
+}
