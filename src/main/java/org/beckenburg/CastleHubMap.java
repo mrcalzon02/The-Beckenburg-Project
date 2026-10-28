@@ -8,6 +8,11 @@ public final class CastleHubMap {
     private final dev.mrcalzon.water.WaterDocument water=WorldWater.load("castle");
     public dev.mrcalzon.water.WaterDocument water(){return water;}
     private final char[][] grid=new char[HEIGHT][WIDTH];
+    /** All navigable ground cells, including the entrance apron. Immutable so
+     * the renderer never needs to rediscover the map or drop distant tiles. */
+    public record GroundCell(int x,int z){}
+    private final java.util.List<GroundCell> groundCells;
+    public java.util.List<GroundCell> groundCells(){return groundCells;}
     private final java.util.Set<String> openDoors=new java.util.HashSet<>();
     private long doorRevision;
     public long doorRevision(){return doorRevision;}
@@ -92,6 +97,10 @@ public final class CastleHubMap {
         for(int z=23;z<=25;z++)grid[z][28]='.';
         for(int x=29;x<=42;x++)grid[17][x]='#';
         for(int x=34;x<=36;x++)grid[17][x]='.';
+        var floors=new java.util.ArrayList<GroundCell>();
+        for(int z=0;z<HEIGHT;z++)for(int x=0;x<WIDTH;x++)
+            if(!solid(x,z))floors.add(new GroundCell(x,z));
+        groundCells=java.util.List.copyOf(floors);
     }
     private void carve(int x0,int z0,int x1,int z1){
         for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++)grid[z][x]='.';
