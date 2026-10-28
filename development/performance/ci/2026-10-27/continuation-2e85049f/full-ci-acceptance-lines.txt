@@ -1,0 +1,45 @@
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:40:58.5303658Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2f44c8e35b7d29be66e6cec22b9b55bcca5709dc:refs/remotes/pull/33/merge
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:43:24.4770851Z  * [new ref]         2f44c8e35b7d29be66e6cec22b9b55bcca5709dc -> pull/33/merge
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:43:39.6571794Z HEAD is now at 2f44c8e Merge 2e85049f54a4a0a8900169c551909f68eee55a1d into b6f6d697a29175e197a7958a0f89804f9514d2d3
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:43:39.8748010Z 2f44c8e35b7d29be66e6cec22b9b55bcca5709dc
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:46:07.4079458Z PASS native-scale pavilion GLB, 2040 triangles, UVs, floor pivot and genuine downward roof underside
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:46:17.9656005Z PASS actual 160mm soffit/fascia, equal top/underside apertures, mounted lamp, opaque slab edge and isolated upstairs lighting
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:47:31.9309493Z PASS native-sized shelf packing: 76 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:47:31.9659889Z PASS native-sized shelf packing: 78 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:47:32.0738778Z PASS native-sized shelf packing: 372 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:48:08.7624382Z PASS native-sized shelf packing: 372 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:48:40.6563688Z PASS native-sized shelf packing: 372 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:49:07.4577510Z PASS native source profiles, directional and warm emission, closed-door shadows/cache invalidation, exact TV glow/sound use, independent washroom switches and castle lamp sources
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:18.7519838Z PASS actual Kenney street surfaces, unobstructed VAN access, original GGBot materials and site rotation
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:32.0961497Z E2E PASS Host listening; hunter owner, remote hunter and human ghost joined
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:32.1992573Z E2E PASS Ready and started; all clients received shared mission launch
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:32.2438285Z E2E PASS Guest entered authoritative 3D scene; spectral privacy enforced
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:32.3504509Z E2E PASS Host hunter reached haunting anchor through real room topology
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:32.4295800Z E2E PASS All evidence tools measured and shared; no auto-confirmation or ghost leak
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:35.6174431Z E2E PASS Human submitted SPIRIT hypothesis; host confirmed identification to team
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:35.9649232Z E2E PASS Ward placed at anchor; correct rite initiated at authored circle
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:41.8753393Z E2E PASS Host, second hunter and ghost all received ABSOLVED round result and payout
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:50:41.9069760Z E2E PASS Post-round commands rejected; match cannot continue after result
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:51:42.7383639Z PASS actual House drawNetwork residency, dropped upload delivery, all-room camera reuse, resize, fixtures, doors, UV fallback and scene/map ownership
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:51:53.3200713Z TEST PASS ResidentEpochRecoveryTest elapsed=10508ms
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:52:05.2916505Z PASS legacy visibility RGB/quantization/normals/LOD parity; saved scalar=7216 normal=6988 door rays=1126 changed colours=72
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:59:39.4760804Z PASS native-sized shelf packing: 76 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:59:39.5067346Z PASS native-sized shelf packing: 78 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:59:39.6150358Z PASS native-sized shelf packing: 372 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:59:40.6295144Z PASS native-sized shelf packing: 372 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T18:59:41.7970977Z PASS native-sized shelf packing: 372 independently visible inventory units
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:03.1637239Z PASS native source profiles, directional and warm emission, closed-door shadows/cache invalidation, exact TV glow/sound use, independent washroom switches and castle lamp sources
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:10.7774863Z PASS actual 160mm soffit/fascia, equal top/underside apertures, mounted lamp, opaque slab edge and isolated upstairs lighting
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:13.5585979Z PASS native-scale pavilion GLB, 2040 triangles, UVs, floor pivot and genuine downward roof underside
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:25.3716590Z PASS native query fidelity: 1041 support points, 8 no-roof-support cases, 346 optical rays (281 clear/65 blocked), 14 actual bank interiors; max support error 2.065571173992531E-6m
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:25.8067037Z PASS actual locally graded native terrain GLB; 41782 triangles; 432 independent UV/PNG pixel checks
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:26.5116260Z PASS actual green grass ground/bank/shore GLB; 57816 triangles; 1152 independent UV/PNG pixel checks
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:29.9554164Z PASS actual Hollow Creek game map:15 zone/graph anchors,3 rituals,6 elevated LAN spawn pads,969 standing route points,939 game movement sweeps, actual dry boat waterline and no water walking
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:30.8408627Z PASS actual supported generator/panel aim,10 shared-circuit emitters,independent source/breaker states (ghost-specific host trip audit remains open)
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:34.8639036Z REGRESSION SUMMARY passed=262 failed=0 skipped=0 manifest=262
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:36.7861956Z E2E PASS packaged startup and usable PSX-themed main menu
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:37.9390456Z E2E PASS main-menu multiplayer handoff and actionable join/host lobby
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:43.5000961Z E2E PASS real House dispatch, skippable flyover and 3 advancing gameplay frames
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:00:43.6166925Z PASS Beckenburg packaged desktop, multiplayer UI and solo case startup
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:01:05.5460534Z ^[[36;1m  Write-Host 'PASS Native Windows executable loaded to the menu; not just a running splash'^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-10-27T19:01:07.4134119Z PASS Native Windows executable loaded to the menu; not just a running splash

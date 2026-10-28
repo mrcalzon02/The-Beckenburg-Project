@@ -1440,7 +1440,7 @@
       "symptom": "Native trace 2357 ms House-facing frame, lighting_raster_ms 2340. Controlled exposed-yard legacy 3880-3970 ms.",
       "cause": "Normal investigation rebuilt and lit camera-visible geometry; earlier residency tests were diagnostic only. Dynamic first-view and global door invalidation remain.",
       "action": "Default-off normal-path House residency and stationary visibility. Next: localized door rays, lifecycle and installed investigation-to-Castle validation.",
-      "evidence": "6e0c6985: frame p95 108.5-109.8 ->35.9-36.1 ms; first yard 3880-3970 ->600-624 ms; zero camera-only static upload; actual RTX depth parity passed. Raw evidence under performance/hardware/2026-10-26/live-house-6e0c6985.",
+      "evidence": "6e0c6985: frame p95 108.5-109.8 ->35.9-36.1 ms; first yard 3880-3970 ->600-624 ms; zero camera-only static upload; actual RTX depth parity passed. Raw evidence under performance/hardware/2026-10-26/live-house-6e0c6985. Continuation2e85049f same-JAR RTX: old worker p95 35.799-35.968ms -> opt-in wake31.732-32.329ms; retained legacy visibility door15 rays67432->23617, door frame671-766->201-215ms, event p99 about616-656->234-240ms; event p95 mixed and first-view640ms persists. Both flags default-off; not accepted30FPS.",
       "older_maps": "Audit each map after House acceptance; no G or installed 30 FPS gate closed."
     },
     {
@@ -1468,23 +1468,23 @@
     {
       "id": "DEV-134",
       "title": "Viewport disposal could acknowledge stale uploads and disable GPU rendering",
-      "status": "fixed-functional-contract-and-GL-recovery-verified-exact-CI-pending",
+      "status": "fixed-functional-exact-tree-CI-and-RTX-verified-installed-acceptance-pending",
       "affected": "Live House resident GPU resources and concurrent preview/CRT ownership",
       "symptom": "A foreign scene can dispose handles while latest() still holds the old own-scene framebuffer, or after the producer reads the epoch. A resulting draw-only descriptor had no recoverable data and stopped the backend.",
       "cause": "Resource epoch reset was followed by ACK of an old frame; independent producer/worker timing can evict even a freshly checked handle.",
       "action": "Discard old upload ACK records on epoch invalidation and retain immutable recovery payload references in draw-only descriptors. Restore evicted resources on the GL owner; warm valid handles still upload zero bytes.",
-      "evidence": "ResidentEpochRecoveryTest covers both interleavings, missing/stale revisions, resumed zero uploads and old-array immutability. Actual GL synthetic recovery and existing House depth/lifetime checks pass.",
+      "evidence": "ResidentEpochRecoveryTest covers both interleavings, missing/stale revisions, resumed zero uploads and old-array immutability. Actual GL synthetic recovery and existing House depth/lifetime checks pass. Source2e85049f GPU40562195922 SUCCESS; full40562204969 tested merge2f44c8e with identical source tree,262 passed/0failed/0skipped. Two final RTX GL depth/lifetime/scaling/recovery runs PASS; raw files hardware/2026-10-27/house-continuation-2e85049f.",
       "older_maps": "This fixes opted-in resident House ownership; full native multi-camera investigation and context recreation still require acceptance."
     },
     {
       "id": "DEV-135",
       "title": "GPU geometry ignored environment and weather brightness scales",
-      "status": "fixed-functional-and-GL-pixel-verified-exact-CI-pending",
+      "status": "fixed-functional-exact-tree-CI-and-RTX-verified-installed-acceptance-pending",
       "affected": "GPU dynamic/resident geometry versus software lighting and water",
       "symptom": "Solo difficulty/power darkness and weather flash scale affected software/water but were absent from GPU geometry lighting.",
       "cause": "Frame and fragment shader omitted environmentLight*weatherLightScale for combined fixture/emission and flashlight energy.",
       "action": "Add backward-compatible frame lightScale default1, submit the existing global multiplier and scale the complete shader lighting sum without repacking static buffers.",
-      "evidence": "GpuGlobalLightScaleTest verifies real House environment/weather propagation, darkness/brightening and unchanged static data. Actual GL pixel test checks fixture/precomputed-emission attributes and flashlight scaling with unchanged depth and zero static transfers.",
+      "evidence": "GpuGlobalLightScaleTest verifies real House environment/weather propagation, darkness/brightening and unchanged static data. Actual GL pixel test checks fixture/precomputed-emission attributes and flashlight scaling with unchanged depth and zero static transfers. Source2e85049f GPU40562195922 SUCCESS; full40562204969 tested merge2f44c8e with identical source tree,262 passed/0failed/0skipped. Two final RTX GL depth/lifetime/scaling/recovery runs PASS; raw files hardware/2026-10-27/house-continuation-2e85049f.",
       "older_maps": "The uniform follows existing software rules on all GPU maps; installed/all-map visual and performance acceptance remains separate."
     }
   ],

@@ -1791,3 +1791,7 @@ Add backward-compatible frame lightScale default1, submit the existing global mu
 Evidence: GpuGlobalLightScaleTest verifies real House environment/weather propagation, darkness/brightening and unchanged static data. Actual GL pixel test checks fixture/precomputed-emission attributes and flashlight scaling with unchanged depth and zero static transfers.
 
 Older-map obligation: The uniform follows existing software rules on all GPU maps; installed/all-map visual and performance acceptance remains separate.
+
+### DEV134/DEV135 continuation acceptance update
+
+Source2e85049f: functional tests, exact-source GPU40562195922 and identical-tree full40562204969 PASS (262/0/0). Two final RTX GL depth/lifetime/global scale/evicted-handle recovery runs PASS. DEV131 remains partially improved: wake fixed p95 about36->32ms; retained visibility door15 about671-766->201-215ms with identical saved RGB; first House view about640ms and event p95 variability persist. All optional gates default-off; installed/full-case/all-map acceptance pending. Raw performance/hardware/2026-10-27/house-continuation-2e85049f.
