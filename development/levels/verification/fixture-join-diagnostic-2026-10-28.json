@@ -14,7 +14,7 @@
     "before": 0,
     "after": 0
   },
-  "coverage": "6789 closed wall/floor/corner probes across9indoor maps; actual FixtureLighting negative and positive controls; open door/stair helper regression; cache/physical light/entry coverage; Hollow Creek969route points939sweeps, power and raised van regressions.",
+  "coverage": "6789 closed wall/floor/corner probes and1784real clear stair rays across9indoor maps; actual FixtureLighting negative and positive controls; open door/stair helper regression; cache/physical light/entry coverage; Hollow Creek969route points939sweeps, power and raised van regressions.",
   "limitations": "Static scripted diagnostic views; synthetic source is not a new authored lamp. Native triangle joins, every portal state, animated room/route pans, installed FPS and human acceptance remain open.",
   "captures": [
     {
