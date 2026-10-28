@@ -15,6 +15,10 @@ public final class LanHost implements AutoCloseable {
     private final java.util.List<CampaignGuestBot> campaignBots=new ArrayList<>();
     private ContractRewards.Settlement pendingCampaignSettlement;
     private final ServerSocket listener;
+    private final hbnet.Hbnet.Server secureTransport;
+    private final boolean consoleAuthorityOnly;
+    private final Semaphore transportSlots=new Semaphore(16);
+    private final Set<Socket> transports=ConcurrentHashMap.newKeySet();
     public void configureCampaign(ProfileStore profile,CampaignStory.Chapter chapter){
         synchronized(mutex){
             if(everStarted||connected()>0||ownerJoinSecret==null||ownerSeat!=0)
@@ -212,6 +216,27 @@ public final class LanHost implements AutoCloseable {
     private LanHost(String ip,int port,GhostIdentity.Type type,boolean identityMode,
             CustomContract config,boolean hostAsGhost,boolean secureLocalOwner,
             HouseMap.Site site)throws IOException {
+        this(ip,port,type,identityMode,config,hostAsGhost,secureLocalOwner,site,null);
+    }
+    /** TLS uses the same case/role validator. UDP voice is disabled, never downgraded. */
+    public LanHost(String ip,int port,GhostIdentity.Type type,CustomContract config,
+            boolean hostAsGhost,HouseMap.Site site,hbnet.Hbnet.Server transport)throws IOException{
+        this(ip,port,type,true,config,hostAsGhost,true,site,Objects.requireNonNull(transport));
+    }
+    private LanHost(String ip,int port,GhostIdentity.Type type,boolean identityMode,
+            CustomContract config,boolean hostAsGhost,boolean secureLocalOwner,
+            HouseMap.Site site,hbnet.Hbnet.Server transport)throws IOException {
+        this(ip,port,type,identityMode,config,hostAsGhost,secureLocalOwner,site,transport,false);
+    }
+    public static LanHost dedicated(String ip,int port,GhostIdentity.Type type,CustomContract config,
+            HouseMap.Site site,hbnet.Hbnet.Server transport)throws IOException{
+        return new LanHost(ip,port,type,true,config,false,false,site,Objects.requireNonNull(transport),true);
+    }
+    private LanHost(String ip,int port,GhostIdentity.Type type,boolean identityMode,
+            CustomContract config,boolean hostAsGhost,boolean secureLocalOwner,
+            HouseMap.Site site,hbnet.Hbnet.Server transport,boolean consoleOnly)throws IOException {
+        consoleAuthorityOnly=consoleOnly;
+        secureTransport=transport;
         if(port<0||port>65535)throw new IllegalArgumentException("invalid port");
         map=new HouseMap(Objects.requireNonNull(site));
         world=new LanWorld(map);
@@ -271,12 +296,12 @@ public final class LanHost implements AutoCloseable {
         ai=new LanGhostPursuit(map,20261016L,type);
         ai.configureFrequency(contract.eventFrequency());
         bindAddress=Objects.requireNonNull(ip);
-        listener=new ServerSocket();listener.setReuseAddress(true);
-        listener.bind(new InetSocketAddress(InetAddress.getByName(ip),port),8);
+        listener=transport==null?new ServerSocket():transport.listen(ip,port);
+        if(transport==null){listener.setReuseAddress(true);listener.bind(new InetSocketAddress(InetAddress.getByName(ip),port),8);}
         // TCP and UDP use distinct transport namespaces. Binding voice to the TCP
         // ephemeral port can collide with an unrelated occupied Windows UDP port.
         // Bind UDP port zero and advertise its real allocation in VOICEKEY.
-        try{voice=new LanVoiceRelay(listener.getInetAddress(),0,this::routeVoice);}
+        try{voice=transport==null?new LanVoiceRelay(listener.getInetAddress(),0,this::routeVoice):null;}
         catch(SocketException failure){listener.close();throw failure;}
         workers.execute(this::acceptLoop);
         clock.scheduleAtFixedRate(this::tickSafely,100,100,TimeUnit.MILLISECONDS);
@@ -288,7 +313,7 @@ public final class LanHost implements AutoCloseable {
     }
     private int partyMembers(){return campaignProfile!=null&&deployedMembers>0?deployedMembers:contract.hunters();}
     public int port(){return listener.getLocalPort();}
-    public int voicePort(){return voice.port();}
+    public int voicePort(){return voice==null?0:voice.port();}
     public String bindAddress(){return bindAddress;}
     public boolean running(){synchronized(mutex){return running;}}
     public int connected(){synchronized(mutex){int count=0;for(Peer peer:seats)if(peer!=null)count++;return count;}}
@@ -333,14 +358,46 @@ public final class LanHost implements AutoCloseable {
             ?Math.max(0,Math.max(peer.lastGhostActionSequence,peer.lastGhostPoseSequence))
             :Math.max(0,hunterSequences[peer.slot]);
     }
+    /** Local STDIN administration only; uses the exact same start validator as listen hosts. */
+    public void startDedicated()throws IOException{synchronized(mutex){if(!consoleAuthorityOnly)throw new IllegalStateException("Dedicated console required");beginMatch();}}
+    private void beginMatch()throws IOException{
+                    if(running||everStarted)throw new IllegalArgumentException("fresh host required for another match");
+                    for(int i=0;i<contract.hunters();i++)
+                        if((campaignProfile==null&&seats[i]==null)||(seats[i]!=null&&!seats[i].ready))
+                            throw new IllegalArgumentException("configured hunter party must be ready");
+                    if(seats[GHOST_SEAT]!=null&&!seats[GHOST_SEAT].ready)throw new IllegalArgumentException("ghost must be ready");
+                    if(campaignProfile!=null){
+                        deployedMembers=0;boolean[] present=new boolean[HUNTERS];
+                        for(int i=0;i<HUNTERS;i++)if(seats[i]!=null){deployedMembers++;present[i]=true;}
+                        campaignProfile.consumeMissionHunters(campaignBots.size());
+                        mission.configureHunterSeats(present);
+                        mission.configureCampaignCareer(0,campaignProfile.level(InvestigationSession.Role.valueOf(mission.discipline(0).name())));
+                        mission.configurePartyThreat(deployedMembers);
+                        ghost.configureRecovery(CampaignPartyRules.recoveryRate(deployedMembers));
+                    }
+                    running=true;everStarted=true;tick=0;
+                    notifyAllPeers("SITE|"+map.site().name()+"|"+map.level().revision());
+                    notifyAllPeers("INFO|mission started with "+(seats[GHOST_SEAT]==null?"AI":"human")+" ghost");
+                    notifyAllPeers(weather.state().packet());
+                    notifyHunters(rewards.objectivesPacket());
+                    notifyHunters("EVIDENCELEVEL|"+contract.evidenceLevel().name()+
+                        "|"+mission.guaranteedEvidenceCount());
+                    if(seats[GHOST_SEAT]!=null)sendGhostPrompt();
+                    if(mission.identificationRequired())notifyHunters(ritualSitesFrame());
+                    broadcastState();broadcastProgress();broadcastWorld();
+                    notifyHunters("PARTY|"+partyMembers()+"|"+partyMembers());
+    }
     private void acceptLoop(){
         while(!closed){try{Socket socket=listener.accept();socket.setTcpNoDelay(true);
-            workers.execute(()->serve(socket));
-        }catch(IOException e){if(!closed)System.err.println("LAN accept failed: "+e.getMessage());}}
+            if(!transportSlots.tryAcquire()){socket.close();continue;}transports.add(socket);
+            workers.execute(()->{try{serve(socket);}finally{transports.remove(socket);transportSlots.release();}});
+        }catch(IOException e){if(!closed)System.err.println("LAN accept unavailable (NET-04)");}}
     }
     private void serve(Socket socket){
         Peer peer=null;
         try(socket){socket.setSoTimeout(5000);
+            if(secureTransport==null&&!hbnet.Hbnet.trustedLan(socket.getInetAddress()))return;
+            String signer=secureTransport==null?null:secureTransport.admit(socket,"beckenburg");
             Reader in=LanProtocol.reader(socket.getInputStream());
             Writer out=LanProtocol.writer(socket.getOutputStream());
             String initial=LanProtocol.read(in);
@@ -353,12 +410,14 @@ public final class LanHost implements AutoCloseable {
                     int slot=parseSeat(hello.get(2));
                     Reservation waiting=slot>=0?reserved[slot]:null;
                     if(!running||waiting==null||seats[slot]!=null
+                            ||!Objects.equals(signer,waiting.signer)
                             ||System.nanoTime()-waiting.expiresNanos>=0
                             ||!resumeTokenMatches(waiting.token,hello.get(3))
                                 &&!resumeTokenMatches(waiting.previousToken,hello.get(3))){
                         LanProtocol.write(out,"REJECT|reconnect seat expired or unavailable");return;
                     }
                     peer=new Peer(socket,in,out,slot,waiting.name);
+                    peer.signer=signer;
                     peer.hunterVisual=waiting.hunterVisual;
                     if(slot!=GHOST_SEAT)mission.selectDiscipline(slot,CharacterVisuals.Hunter.valueOf(
                         peer.hunterVisual.toUpperCase(java.util.Locale.ROOT)));
@@ -419,7 +478,8 @@ public final class LanHost implements AutoCloseable {
                     if(running||everStarted){LanProtocol.write(out,"REJECT|match already running or finished - reconnect needed");return;}
                     int slot=wantsGhost?GHOST_SEAT:firstVacantHunter(ownerClaim);
                     if(slot<0||seats[slot]!=null){LanProtocol.write(out,"REJECT|seat unavailable");return;}
-                    peer=new Peer(socket,in,out,slot,nickname);peer.lastPongTick=tick;seats[slot]=peer;
+                    if(signer!=null){for(Peer active:seats)if(active!=null&&signer.equals(active.signer)){LanProtocol.write(out,"REJECT|identity already connected");return;}}
+                    peer=new Peer(socket,in,out,slot,nickname);peer.signer=signer;peer.lastPongTick=tick;seats[slot]=peer;
                     if(wantsGhost)ghostLobbyLook=LobbyGhostAvatar.random(
                         java.util.concurrent.ThreadLocalRandom.current());
                     LanProtocol.write(out,"WELCOME|"+seatName(slot)+"|"+LanProtocol.VERSION+"|"+peer.resumeToken+"|"+seatSequenceHighWater(peer));
@@ -451,7 +511,7 @@ public final class LanHost implements AutoCloseable {
             if(peer!=null) synchronized(mutex){
                 if(seats[peer.slot]==peer){
                     seats[peer.slot]=null;
-                    voice.unregister(peer.slot);
+                    if(voice!=null)voice.unregister(peer.slot);
                     if(peer.slot==GHOST_SEAT&&(peer.intentionalLeave||!running))ghostLobbyLook=null;
                     if(running){
                         if(!peer.intentionalLeave){
@@ -578,35 +638,11 @@ public final class LanHost implements AutoCloseable {
                     peer.ready=!peer.ready;broadcastLobby();
                 }
                 case "START" -> {
-                    if(p.size()!=1||(ownerJoinSecret!=null
+                    if(consoleAuthorityOnly||p.size()!=1||(ownerJoinSecret!=null
                             ?peer.slot!=ownerSeat
                             :(peer.slot!=0&&!(ghostMayStart&&peer.slot==GHOST_SEAT))))
                         throw new IllegalArgumentException("only verified hosting player may start");
-                    if(running||everStarted)throw new IllegalArgumentException("fresh host required for another match");
-                    for(int i=0;i<contract.hunters();i++)
-                        if((campaignProfile==null&&seats[i]==null)||(seats[i]!=null&&!seats[i].ready))
-                            throw new IllegalArgumentException("configured hunter party must be ready");
-                    if(seats[GHOST_SEAT]!=null&&!seats[GHOST_SEAT].ready)throw new IllegalArgumentException("ghost must be ready");
-                    if(campaignProfile!=null){
-                        deployedMembers=0;boolean[] present=new boolean[HUNTERS];
-                        for(int i=0;i<HUNTERS;i++)if(seats[i]!=null){deployedMembers++;present[i]=true;}
-                        campaignProfile.consumeMissionHunters(campaignBots.size());
-                        mission.configureHunterSeats(present);
-                        mission.configureCampaignCareer(0,campaignProfile.level(InvestigationSession.Role.valueOf(mission.discipline(0).name())));
-                        mission.configurePartyThreat(deployedMembers);
-                        ghost.configureRecovery(CampaignPartyRules.recoveryRate(deployedMembers));
-                    }
-                    running=true;everStarted=true;tick=0;
-                    notifyAllPeers("SITE|"+map.site().name()+"|"+map.level().revision());
-                    notifyAllPeers("INFO|mission started with "+(seats[GHOST_SEAT]==null?"AI":"human")+" ghost");
-                    notifyAllPeers(weather.state().packet());
-                    notifyHunters(rewards.objectivesPacket());
-                    notifyHunters("EVIDENCELEVEL|"+contract.evidenceLevel().name()+
-                        "|"+mission.guaranteedEvidenceCount());
-                    if(seats[GHOST_SEAT]!=null)sendGhostPrompt();
-                    if(mission.identificationRequired())notifyHunters(ritualSitesFrame());
-                    broadcastState();broadcastProgress();broadcastWorld();
-                    notifyHunters("PARTY|"+partyMembers()+"|"+partyMembers());
+                    beginMatch();
                 }
                 case "VIEW3D" -> {
                     if(!running||peer.slot==GHOST_SEAT||p.size()!=1)throw new IllegalArgumentException("3D view requires active hunter");
@@ -663,7 +699,7 @@ public final class LanHost implements AutoCloseable {
                     if(mission.identificationRequired())reply(peer,ritualSitesFrame());
                     reply(peer,mission.privateState(peer.slot));
                     sendCaseFile(peer);
-                    reply(peer,"VOICEKEY|"+voice.port()+"|"+voice.register(peer.slot,peer.socket.getInetAddress()));
+                    if(voice!=null)reply(peer,"VOICEKEY|"+voice.port()+"|"+voice.register(peer.slot,peer.socket.getInetAddress()));else reply(peer,"INFO|Voice disabled on secure transport (NET-VOICE)");
                     for(LanChat.Entry line:radioHistory)reply(peer,line.frame());
                 }
                 case "GVIEW3D" -> {
@@ -679,7 +715,7 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,"WINDOWS|"+map.windowSnapshot());
                     reply(peer,ghostPose.staminaFrame(tick));
                     reply(peer,weather.state().packet());
-                    reply(peer,"VOICEKEY|"+voice.port()+"|"+voice.register(peer.slot,peer.socket.getInetAddress()));
+                    if(voice!=null)reply(peer,"VOICEKEY|"+voice.port()+"|"+voice.register(peer.slot,peer.socket.getInetAddress()));else reply(peer,"INFO|Voice disabled on secure transport (NET-VOICE)");
                     reply(peer,"GTYPE|"+ghostType+"|"+ghostType.behavior());
                     reply(peer,ghostPose.frame(tick));reply(peer,frenzyFrame());
                     if(twinCompanion!=null)reply(peer,twinCompanion.playerFrame(ghostType.ancient(),tick));
@@ -2826,15 +2862,18 @@ public final class LanHost implements AutoCloseable {
     }
     private void notifyAllPeers(String event){for(Peer peer:seats)if(peer!=null)reply(peer,event);}
     private static void reply(Peer peer,String event){peer.outbound.offer(event);}
-    @Override public void close(){for(var bot:campaignBots)bot.close();campaignBots.clear();closed=true;voice.close();try{listener.close();}catch(IOException ignored){}
+    @Override public void close(){for(var bot:campaignBots)bot.close();campaignBots.clear();closed=true;if(voice!=null)voice.close();try{listener.close();}catch(IOException ignored){}
+        for(Socket s:transports)try{s.close();}catch(IOException ignored){}
         synchronized(mutex){for(Peer peer:seats)if(peer!=null){try{peer.socket.close();}catch(IOException ignored){}}}
         clock.shutdownNow();workers.shutdownNow();
     }
     private static final class Reservation {
+        final String signer;
         final String name,token,previousToken,hunterVisual;
         final long expiresNanos,lastActionSequence,lastPoseSequence;
         final boolean worldMode;
         Reservation(Peer p,long expires){
+            signer=p.signer;
             name=p.name;token=p.resumeToken;previousToken=p.previousResumeToken;
             hunterVisual=p.hunterVisual;
             expiresNanos=expires;
@@ -2844,6 +2883,7 @@ public final class LanHost implements AutoCloseable {
         }
     }
     private static final class Peer{
+        String signer;
         final Socket socket;final Reader input;final Writer output;final int slot;final String name;
         final LanOutboundQueue outbound;
         final String resumeToken=newResumeToken();

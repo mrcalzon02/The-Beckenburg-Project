@@ -6,7 +6,11 @@ import java.io.IOException;
 
 /** Compact LAN lobby and mode launcher; both hunter and ghost inhabit host-owned 3D views. */
 public final class LanLobbyPanel extends JPanel implements AutoCloseable {
-    private final JTextField ip=new JTextField("127.0.0.1",13),port=new JTextField("27717",5),name=new JTextField("Investigator",11);
+    private final JPasswordField ip=hbnet.NetworkPanel.masked("127.0.0.1",13),port=hbnet.NetworkPanel.masked("27717",5),name=hbnet.NetworkPanel.masked("Investigator",11);
+    private final JPasswordField serverPin=hbnet.NetworkPanel.masked("",20);
+    private final JCheckBox secure=new JCheckBox("TLS (verified fingerprint)");
+    private hbnet.LocalProfile localNetwork;
+    private hbnet.Hbnet.Client activeSecure;
     private final JComboBox<String> role=new JComboBox<>(new String[]{"Hunter","Ghost"});
     private final JComboBox<CharacterVisuals.Hunter> hunterAppearance=
         new JComboBox<>(CharacterVisuals.Hunter.values());
@@ -110,6 +114,11 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         connectionTop.add(connectActions,BorderLayout.CENTER);
         connectionTop.add(info,BorderLayout.SOUTH);
 
+        log.setDocument(new javax.swing.text.PlainDocument(){
+            @Override public void insertString(int offset,String value,javax.swing.text.AttributeSet attrs)throws javax.swing.text.BadLocationException{
+                super.insertString(offset,hbnet.Privacy.enabled?"Private session update (Stream Safe)\n":value,attrs);
+            }
+        });
         log.setEditable(false);log.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
         log.setLineWrap(true);log.setWrapStyleWord(true);
         log.setMargin(new Insets(12,12,12,12));
@@ -161,6 +170,13 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         fieldPage.add(new JScrollPane(toolColumns),BorderLayout.CENTER);
         JTabbedPane pages=new JTabbedPane(JTabbedPane.TOP);
         pages.addTab("Lobby & connection",PsxMenuScreen.scroll(lobbyPage));
+        try{
+            localNetwork=new hbnet.LocalProfile(java.nio.file.Path.of(System.getProperty("hbnet.profile",System.getProperty("user.home")+"/.beckenburg/network")));
+            hbnet.NetworkPanel network=new hbnet.NetworkPanel(localNetwork,s->{ip.setText(s.host());port.setText(Integer.toString(s.port()));serverPin.setText(s.pin());secure.setSelected(true);connect(false);});
+            network.onPrivacyChange(()->{log.setText("");repaint();});
+            pages.addTab("Saved Servers & Friends",network);
+        }catch(Exception unavailable){pages.addTab("Network profile",new JLabel("Local profile needs recovery (NET-20)"));}
+        connectionFields.add(secure);connectionFields.add(serverPin);
         pages.addTab("Field controls (alpha)",fieldPage);
         PsxHorrorUi.styleTabs(pages);
         equipmentPage=new NetworkEquipmentPanel(choice->action(()->{
@@ -204,7 +220,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         host.addActionListener(e->connect(true));join.addActionListener(e->connect(false));
         hostInfo.addActionListener(e->{
             if(hosted==null)return;
-            JTextArea diagnostic=new JTextArea(LanNetworkDiagnostics.hostInfo(hosted),11,60);
+            JTextArea diagnostic=new JTextArea("Private host diagnostics: "+hosted.connected()+" connected; "+hosted.reservedSeats()+" reserved. Endpoints hidden. Inspect operator configuration privately.",11,60);
             diagnostic.setEditable(false);diagnostic.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
             diagnostic.setCaretPosition(0);
             GameDialogs.showMessageDialog(this,new JScrollPane(diagnostic),
@@ -226,7 +242,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 start.setEnabled(false);
                 new SwingWorker<Void,Void>(){
                     protected Void doInBackground()throws Exception{hosted.prepareCampaignBots(campaignLaunch.bots());return null;}
-                    protected void done(){try{get();send("START");}catch(Exception ex){log.append("Team preparation failed: "+ex.getMessage()+"\n");}
+                    protected void done(){try{get();send("START");}catch(Exception ex){log.append("Team preparation failed: "+"Operation unavailable (NET-04)"+"\n");}
                         setCommandEnabled(connection!=null);}
                 }.execute();
             }else send("START");
@@ -282,11 +298,11 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             status.setText("Previous LAN seat may be recoverable — Reconnect");
             log.append("Saved recovery ticket found. The original host must still be running and keeping your seat.\n");
         }catch(IOException ex){
-            log.append("Stored reconnect ticket could not be read; original file was preserved: "+ex.getMessage()+"\n");
+            log.append("Stored reconnect ticket could not be read; original file was preserved: "+"Operation unavailable (NET-04)"+"\n");
         }
     }
     private boolean saveResume(LanClient client){
-        if(hosted!=null)return false; // A listen host dies with this process; no disk ticket.
+        if(hosted!=null||activeSecure!=null)return false; // Secure runtime recovery retains the verified transport; never persist an insecure downgrade.
         LanClient.ResumeTicket ticket=client.resumeTicket();
         if(ticket==null)return false;
         try {
@@ -294,13 +310,13 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     ticket.seat(),ticket.token(),ticket.nextSequence());
             return true;
         }catch(IOException ex){
-            log.append("Session recovery file unavailable: "+ex.getMessage()+"\n");
+            log.append("Session recovery file unavailable: "+"Operation unavailable (NET-04)"+"\n");
             return false;
         }
     }
     private void clearSavedResume(){
         try { LanResumeStore.clear(LanResumeStore.defaultPath()); }
-        catch(IOException ex){ log.append("Cannot clear stale recovery ticket: "+ex.getMessage()+"\n"); }
+        catch(IOException ex){ log.append("Cannot clear stale recovery ticket: "+"Operation unavailable (NET-04)"+"\n"); }
     }
     private static JSpinner spin(int value,int low,int high,int step){
         return new JSpinner(new SpinnerNumberModel(value,low,high,step));
@@ -388,12 +404,12 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             connection.lobbyChat(lobbyChat.getText());
             lobbyChat.setText("");
         }catch(IOException|IllegalArgumentException ex){
-            log.append("Lobby chat: "+ex.getMessage()+"\n");
+            log.append("Lobby chat: "+"Operation unavailable (NET-04)"+"\n");
         }
     }
     @FunctionalInterface private interface Command {void send()throws IOException;}
     private void action(Command command){try{if(connection==null)throw new IOException("not connected");command.send();}
-        catch(Exception ex){log.append("Send failed: "+ex.getMessage()+"\n");}}
+        catch(Exception ex){log.append("Send failed: "+"Operation unavailable (NET-04)"+"\n");}}
     private void connect(boolean localHost){
         if(busy||connection!=null)return;
         if(hosted!=null){
@@ -403,7 +419,8 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         busy=true;
         long generation=++connectionGeneration;
         status.setText("Connecting...");
-        String hostname=ip.getText().trim(),nickname=name.getText();String p=port.getText().trim();
+        String hostname=ip.getText(),nickname=name.getText();String p=port.getText();
+        boolean encrypted=secure.isSelected();String expectedPin=new String(serverPin.getPassword());
         String requestedPassword=new String(roomPassword.getPassword());
         boolean ghost=campaignLaunch==null&&role.getSelectedIndex()==1;
         HouseMap.Site requestedSite=(HouseMap.Site)siteChoice.getSelectedItem();
@@ -420,21 +437,25 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             LanHost newHost=null;
             try{
                 int portNumber=LanProtocol.integer(p,localHost?0:1,65535);
+                hbnet.Hbnet.Client tls=null;
+                hbnet.Hbnet.Server tlsHost=null;
+                if(encrypted){
+                    if(localNetwork==null)throw hbnet.Hbnet.failure();
+                    if(localHost)tlsHost=hbnet.Hbnet.Server.load(java.nio.file.Path.of(System.getProperty("hbnet.server","server-network")));
+                    tls=new hbnet.Hbnet.Client(localHost?tlsHost.fingerprint:expectedPin,"beckenburg",localNetwork.identity,requestedPassword.toCharArray());
+                }
                 if(localHost){
                     var types=GhostIdentity.Type.values();
                     var chosen=campaignLaunch==null?types[java.util.concurrent.ThreadLocalRandom.current().nextInt(types.length)]:campaignLaunch.chapter().ghost();
-                    newHost=new LanHost(campaignLaunch!=null&&!campaignLaunch.coop()?"127.0.0.1":"0.0.0.0",portNumber,chosen,request,ghost,true,
-                        requestedSite);
+                    newHost=encrypted?new LanHost("0.0.0.0",portNumber,chosen,request,ghost,requestedSite,tlsHost):new LanHost(campaignLaunch!=null&&!campaignLaunch.coop()?"127.0.0.1":"0.0.0.0",portNumber,chosen,request,ghost,true,requestedSite);
                     if(campaignLaunch!=null)newHost.configureCampaign(campaignLaunch.profile(),campaignLaunch.chapter());
-                    newHost.setLobbyPassword(requestedPassword);portNumber=newHost.port();
+                    if(!encrypted)newHost.setLobbyPassword(requestedPassword);portNumber=newHost.port();
                 }
                 // A remote guest cannot race the local player to H1 or ghost-owner seat.
                 String localProof=newHost==null?"":newHost.localOwnerCredential();
-                LanClient client=new LanClient(localHost?"127.0.0.1":hostname,portNumber,
-                    ghost,nickname,requestedPassword,localProof,
-                    frame->SwingUtilities.invokeLater(()->{
-                        if(generation==connectionGeneration)receive(frame);
-                    }));
+                java.util.function.Consumer<String> events=frame->SwingUtilities.invokeLater(()->{if(generation==connectionGeneration)receive(frame);});
+                LanClient client=encrypted?new LanClient(localHost?"127.0.0.1":hostname,portNumber,ghost,nickname,localProof,events,tls):new LanClient(localHost?"127.0.0.1":hostname,portNumber,ghost,nickname,requestedPassword,localProof,events);
+                activeSecure=tls;
                 final LanHost own=newHost;
                 SwingUtilities.invokeLater(()->{
                     if(generation!=connectionGeneration){
@@ -463,7 +484,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 });
             }catch(Exception ex){
                 if(newHost!=null)newHost.close();
-                String msg=ex.getMessage();
+                String msg="Connection unavailable (NET-04)";
                 SwingUtilities.invokeLater(()->{
                     if(generation!=connectionGeneration)return;
                     busy=false;status.setText("Connection failed");
@@ -480,10 +501,11 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         long generation=++connectionGeneration;
         Thread task=new Thread(()->{
             try{
-                LanClient restored=new LanClient(address,reconnectPort,ticket,
+                java.util.function.Consumer<String> restoreEvents=
                     frame->SwingUtilities.invokeLater(()->{
                         if(generation==connectionGeneration)receive(frame);
-                    }));
+                    });
+                LanClient restored=activeSecure==null?new LanClient(address,reconnectPort,ticket,restoreEvents):new LanClient(address,reconnectPort,ticket,restoreEvents,activeSecure);
                 SwingUtilities.invokeLater(()->{
                     if(generation!=connectionGeneration){restored.close();return;}
                     connection=restored;resumeTicket=null;busy=false;
@@ -493,14 +515,14 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                         // No stale on-disk guest ticket is written for a listen host.
                         try{restored.acknowledgeStoredResume();}
                         catch(IOException ex){
-                            log.append("Local host reconnect acknowledgement unavailable: "+ex.getMessage()+"\n");
+                            log.append("Local host reconnect acknowledgement unavailable: "+"Operation unavailable (NET-04)"+"\n");
                         }
                     }else if(saveResume(restored)){
                         // Only retire the old host capability AFTER the replacement
                         // has been durably persisted for process-restart recovery.
                         try{restored.acknowledgeStoredResume();}
                         catch(IOException ex){
-                            log.append("Recovery acknowledgement unavailable: "+ex.getMessage()+"\n");
+                            log.append("Recovery acknowledgement unavailable: "+"Operation unavailable (NET-04)"+"\n");
                         }
                     }else{
                         log.append("Old recovery token remains valid during this match if the connection drops again.\n");
@@ -522,11 +544,11 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 SwingUtilities.invokeLater(()->{
                     if(generation!=connectionGeneration)return;
                     busy=false;reconnect.setEnabled(true);
-                    if(ex.getMessage()!=null&&ex.getMessage().contains("reconnect seat expired")){
+                    if("Operation unavailable (NET-04)"!=null&&"Operation unavailable (NET-04)".contains("reconnect seat expired")){
                         resumeTicket=null;reconnect.setEnabled(false);clearSavedResume();
                     }
                     status.setText("Reconnect unavailable");
-                    log.append("Reconnect failed: "+ex.getMessage()+"\n");
+                    log.append("Reconnect failed: "+"Operation unavailable (NET-04)"+"\n");
                 });
             }
         },"beckenburg-resume");
@@ -538,7 +560,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             JComponent active=worldView!=null?worldView:ghostView;if(active!=null)active.requestFocusInWindow();return;}
         boolean ghost="GHOST".equals(connection.seat());
         try{if(ghost)connection.viewGhost3D();else connection.view3D();}
-        catch(IOException ex){log.append("3D start failed: "+ex.getMessage()+"\n");return;}
+        catch(IOException ex){log.append("3D start failed: "+"Operation unavailable (NET-04)"+"\n");return;}
         worldMode=true;setCommandEnabled(true);
         JComponent active;
         if(ghost){ghostView=new LanGhostPanel(connection);active=ghostView;}
@@ -635,7 +657,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                         " / DAILY "+settlement.dailyDone()+"\n");
                 }
             }catch(IOException|IllegalArgumentException|ArithmeticException ex){
-                log.append("Payout could not be saved locally: "+ex.getMessage()+"\n");
+                log.append("Payout could not be saved locally: "+"Operation unavailable (NET-04)"+"\n");
             }
             log.setCaretPosition(log.getDocument().getLength());
             return;
@@ -711,5 +733,5 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         enter3D.setEnabled(available&&missionRunning&&connection!=null);
     }
     private void send(String frame){try{if(connection==null)throw new IOException("not connected");connection.send(frame);}
-        catch(Exception e){log.append("Send failed: "+e.getMessage()+"\n");}}
+        catch(Exception e){log.append("Send failed: "+"Operation unavailable (NET-04)"+"\n");}}
 }

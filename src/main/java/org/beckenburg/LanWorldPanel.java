@@ -25,7 +25,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private CharacterVisuals.Hunter myClass=CharacterVisuals.Hunter.OBSERVER;
     private final Map<Integer,String> hunterNames=new HashMap<>();
     private final java.util.ArrayDeque<LanChat.Entry> chatHistory=new java.util.ArrayDeque<>();
-    private final JTextField chatInput=new JTextField();
+    private final JTextField chatInput=hbnet.NetworkPanel.masked("",30);
     private LanChat.Channel chatChannel=LanChat.Channel.LOCAL;
     private LanChat.Channel heldVoice;
     private int chatVisibleUntil;
@@ -1289,7 +1289,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             if(msg.length()>max)msg=msg.substring(0,max-3)+"...";
             g.setColor(line.channel()==LanChat.Channel.RADIO?
                 new Color(155,216,207):new Color(222,211,183));
-            g.drawString(msg,x+9,y+12+(index-start-1)*20);
+            g.drawString(hbnet.Privacy.message(msg),x+9,y+12+(index-start-1)*20);
         }
     }
     /** In-van board: actual individual sanity, deliberately approximate activity history. */
@@ -1298,7 +1298,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         g.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));
         FontMetrics metrics=g.getFontMetrics();
         for(var entry:peers.entrySet()){
-            String label=hunterNames.get(entry.getKey());
+            String label=hbnet.Privacy.friend(entry.getKey(),hunterNames.get(entry.getKey()));
             if(label==null||label.isBlank())continue;
             SceneRenderer.Nameplate anchor=renderer.teammateNameplate(map,entry.getValue());
             if(anchor==null)continue;

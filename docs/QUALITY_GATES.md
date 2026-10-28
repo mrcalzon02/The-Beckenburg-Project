@@ -93,3 +93,8 @@ For each Pxx microstep keep: requirement ID, implementation commit, observed pla
 
 ## Definition of milestone promotion
 M0 requires original images and game source on main plus actual web gallery proof; M1 requires solo gameplay and Windows graphical proof; M2 requires **networked** full session proof; M3 requires **implemented** roster/maps not merely art; M4 requires no P0/P1 plus complete regression and measurement; M5 requires the published downloadable artifact plus independent clean installation and LAN play. A successful code commit alone can never fulfill Gold.
+
+
+## Local-first multiplayer implementation gate (2026-10-28)
+
+The existing authority is integrated with hbnet TLS admission and identity-bound secure resume, a no-UDP headless case, local server/friend management and initial Stream Safe coverage. [Implementation boundaries](network/LOCAL_FIRST_MULTIPLAYER.md) and [test receipts](network/TEST_RECEIPTS.md) are authoritative for this slice. Strict TLS socket tests fail certificate-pin verification in this environment; full Stream Safe, cross-machine and WAN gates remain open. This is not Internet-ready or a completed multiplayer stage.

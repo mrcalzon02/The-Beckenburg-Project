@@ -8,3 +8,15 @@ __pycache__/
 
 /gpu-client/target/
 /water-module/target/
+
+# Local-first multiplayer private runtime state
+/network-profile/
+/server-network/
+keystore.pass
+room.secret
+server.p12
+room.verifier*
+invitation.secret
+
+/gpu-client/target/
+/logs/

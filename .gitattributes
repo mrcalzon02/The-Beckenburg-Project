@@ -1,2 +1,5 @@
 
 water-module/reference/ocean_surface.gdshader -text
+
+# Preserve exact multiplayer evidence bytes across operating systems.
+docs/network/receipts/* -text -whitespace

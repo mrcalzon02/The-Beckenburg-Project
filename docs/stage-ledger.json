@@ -102,7 +102,7 @@
       "verification_evidence": [
         "https://github.com/mrcalzon02/HB-TTRPG-tools/commit/0a1f8a0dd3ae56f233d50f70a0d6a0fccd237f0f",
         "Headless GameplaySmokeTest passed with javac --release 17 on OpenJDK 21 / Linux",
-        "Swing GUI menu→first-person panel passed under Linux virtual-display / xvfb; not Windows acceptance"
+        "Swing GUI menu\u2192first-person panel passed under Linux virtual-display / xvfb; not Windows acceptance"
       ],
       "blockers": [
         "Original full-resolution concept PNGs are not remotely verified as GitHub blobs and webpage displays placeholder SVGs",
@@ -1343,7 +1343,7 @@
         {
           "id": "P12.04",
           "status": "not_started",
-          "description": "Implement Demonologist provocation, lore inference, séance interaction and pact risk."
+          "description": "Implement Demonologist provocation, lore inference, s\u00e9ance interaction and pact risk."
         },
         {
           "id": "P12.05",
@@ -1631,7 +1631,7 @@
     },
     {
       "id": "P16",
-      "title": "Spatial rituals, séances and site cleansing",
+      "title": "Spatial rituals, s\u00e9ances and site cleansing",
       "deps": [
         "P12",
         "P14",
@@ -1658,7 +1658,7 @@
         {
           "id": "P16.03",
           "status": "not_started",
-          "description": "Implement séance with provocation, response, evidence and the ability to end safely."
+          "description": "Implement s\u00e9ance with provocation, response, evidence and the ability to end safely."
         },
         {
           "id": "P16.04",
@@ -1722,7 +1722,7 @@
         {
           "id": "P17.04",
           "status": "not_started",
-          "description": "Allow correct séance or ward/banishment attempt within active ghost counterplay."
+          "description": "Allow correct s\u00e9ance or ward/banishment attempt within active ghost counterplay."
         },
         {
           "id": "P17.05",
@@ -2379,7 +2379,7 @@
         {
           "id": "P27.05",
           "status": "not_started",
-          "description": "Inject 0–150ms latency, 2% loss, message duplication and reconnect races."
+          "description": "Inject 0\u2013150ms latency, 2% loss, message duplication and reconnect races."
         },
         {
           "id": "P27.06",
@@ -2626,5 +2626,13 @@
       ]
     }
   ],
-  "current_source_integration_sha": "4bf5773f5412424f21ff1d13b9895043ff5d5225"
+  "current_source_integration_sha": "4bf5773f5412424f21ff1d13b9895043ff5d5225",
+  "local_first_multiplayer_2026_10_28": {
+    "status": "verification",
+    "base_sha": "74a2691ef16b1b0e04d998c058a1dcd5b723891e",
+    "evidence": "network/TEST_RECEIPTS.md",
+    "scope": "existing LanHost/LanClient authority, secure admission, headless lifecycle, local directory/contacts, initial privacy",
+    "blocking_gate": "strict TLS pin acceptance fails under locally changed certificate; full WAN, physical machines and privacy matrix unverified",
+    "next": "run unchanged encrypted gameplay/auth tests on an endpoint presenting the configured certificate; complete native capture and policy gates"
+  }
 }

@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 
 /** Client connection for the bounded LAN lobby/room-simulation protocol. */
 public final class LanClient implements AutoCloseable {
-    private final Socket socket=new Socket();
+    private final Socket socket;
     private final Reader in;
     private final Writer out;
     private final Consumer<String> observer;
@@ -57,6 +57,16 @@ public final class LanClient implements AutoCloseable {
         this(address,port,"GHOST".equals(Objects.requireNonNull(ticket).seat()),"",ticket,"","",observer);
     }
     private LanClient(String address,int port,boolean ghost,String nickname,ResumeTicket ticket,String password,String ownerCredential,Consumer<String> observer)throws IOException {
+        this(address,port,ghost,nickname,ticket,password,ownerCredential,observer,null);
+    }
+    public LanClient(String address,int port,boolean ghost,String nickname,String ownerCredential,
+            Consumer<String> observer,hbnet.Hbnet.Client transport)throws IOException{
+        this(address,port,ghost,nickname,null,"",ownerCredential,observer,Objects.requireNonNull(transport));
+    }
+    public LanClient(String address,int port,ResumeTicket ticket,Consumer<String> observer,hbnet.Hbnet.Client transport)throws IOException{
+        this(address,port,"GHOST".equals(ticket.seat()),"",ticket,"","",observer,Objects.requireNonNull(transport));
+    }
+    private LanClient(String address,int port,boolean ghost,String nickname,ResumeTicket ticket,String password,String ownerCredential,Consumer<String> observer,hbnet.Hbnet.Client transport)throws IOException {
         this.observer=Objects.requireNonNull(observer);
         this.connectAddress=Objects.requireNonNull(address);
         this.connectPort=port;
@@ -72,8 +82,9 @@ public final class LanClient implements AutoCloseable {
                 && !ownerCredential.matches("[0-9a-f]{48}")))
             throw new IllegalArgumentException("invalid local host credential");
         Reader input=null;Writer output=null;String assigned=null;long hostSequence=0;
+        socket=transport==null?new Socket():transport.connect(address,port);
         try{
-            socket.connect(new InetSocketAddress(address,port),3000);
+            if(transport==null)socket.connect(new InetSocketAddress(hbnet.Hbnet.lanAddress(address),port),3000);
             socket.setTcpNoDelay(true);socket.setSoTimeout(5000);
             input=LanProtocol.reader(socket.getInputStream());output=LanProtocol.writer(socket.getOutputStream());
             LanProtocol.write(output,ticket==null
@@ -81,8 +92,12 @@ public final class LanClient implements AutoCloseable {
                     :"RESUME|"+LanProtocol.VERSION+"|"+ticket.seat()+"|"+ticket.token());
             String response=LanProtocol.read(input);
             var parts=LanProtocol.parts(response);
-            if((parts.size()!=3&&parts.size()!=4&&parts.size()!=5)||!parts.get(0).equals("WELCOME"))
-                throw new IOException("join failed: "+response);
+            if((parts.size()!=3&&parts.size()!=4&&parts.size()!=5)||!parts.get(0).equals("WELCOME")){
+                // Preserve actionable fixed rejection categories without reflecting attacker text.
+                String reason=parts.size()==2&&parts.get(0).equals("REJECT")?parts.get(1):"";
+                var safe=java.util.Set.of("unauthorized owner claim","incorrect room password","reconnect seat expired or unavailable","host ghost seat reserved","lobby locked","match already running or finished - reconnect needed","seat unavailable");
+                throw new IOException(safe.contains(reason)?"join failed: "+reason:"Join unavailable (NET-04)");
+            }
             if(parts.size()>=4){
                 if(!parts.get(3).matches("[0-9a-f]{48}"))throw new IOException("invalid session credential");
                 resumeKey=parts.get(3); // Never send this secret to the UI event log.

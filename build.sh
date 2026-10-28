@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 mkdir -p build
 rm -rf build/classes build/test
 mkdir -p build/classes build/test
-javac --release 17 -encoding UTF-8 -d build/classes water-module/src/main/java/dev/mrcalzon/water/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/*.java
+javac --release 17 -encoding UTF-8 -d build/classes src/main/java/hbnet/*.java water-module/src/main/java/dev/mrcalzon/water/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/*.java
 # Bake approved model-review thumbnails and Castle screenshot into the actual game JAR.
 java -Djava.awt.headless=true -cp build/classes org.beckenburg.UiAssetBake . build/classes/org/beckenburg build/Beckenburg.ico
 mkdir -p build/classes/META-INF
@@ -117,7 +117,7 @@ fi
 command -v blender >/dev/null || { echo "Blender is required for original GGBot .blend export" >&2; exit 1; }
 blender --background --factory-startup --python-exit-code 1 --python tools/ggbot_blend_export.py -- \
     build/source/ggbot-original.zip build/classes/org/beckenburg/models
-javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/*.java
+javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/hbnet/*.java src/test/java/org/beckenburg/*.java
 # Preserve case-start trace lifecycle parity with the mandatory Windows manifest.
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.BeckenburgDeveloperTraceTest
 # Verify authored multi-storey levels and actual packaged scenery.
@@ -286,6 +286,6 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldRenderTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanLobbyTest
 if [ -f src/test/java/org/beckenburg/SmokeTest.java ]; then java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SmokeTest; fi
-jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes org/beckenburg -C build/classes dev/mrcalzon/weather
+jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes hbnet -C build/classes org/beckenburg -C build/classes dev/mrcalzon/weather
 printf '%s\n' 'Built build/beckenburg-game.jar'
 if [ "${1:-}" = run ]; then java -jar build/beckenburg-game.jar; fi

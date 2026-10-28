@@ -7,6 +7,7 @@ if exist build\test rmdir /s /q build\test
 if not exist build\classes mkdir build\classes
 if not exist build\test mkdir build\test
 > build\sources-main.txt (
+  for %%F in (src\main\java\hbnet\*.java) do @echo "src/main/java/hbnet/%%~nxF"
   for %%F in (src\main\java\org\beckenburg\*.java) do @echo "src/main/java/org/beckenburg/%%~nxF"
   for %%F in (src\main\java\org\beckenburg\editor\*.java) do @echo "src/main/java/org/beckenburg/editor/%%~nxF"
   for %%F in (src\main\java\dev\mrcalzon\weather\*.java) do @echo "src/main/java/dev/mrcalzon/weather/%%~nxF"
@@ -15,6 +16,7 @@ if not exist build\test mkdir build\test
   for %%F in (water-module\src\main\java\dev\mrcalzon\water\*.java) do @echo "water-module/src/main/java/dev/mrcalzon/water/%%~nxF"
 )
 > build\sources-tests.txt (
+  for %%F in (src\test\java\hbnet\*.java) do @echo "src/test/java/hbnet/%%~nxF"
   for %%F in (src\test\java\org\beckenburg\*.java) do @echo "src/test/java/org/beckenburg/%%~nxF"
 )
 javac --release 17 -encoding UTF-8 -d build\classes @build\sources-main.txt || exit /b 1
@@ -131,7 +133,7 @@ if defined BECKENBURG_RELEASE_VERSION (
 rem Ship the independently compiled WATER module as well as the weather/game classes.
 rem Without this directory, building an authored House from the packaged JAR
 rem fails with NoClassDefFoundError: dev/mrcalzon/water/WaterDocument.
-jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather -C build\classes dev\mrcalzon\water || exit /b 1
+jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build\classes hbnet -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather -C build\classes dev\mrcalzon\water || exit /b 1
 rem Fail before any packaged game smoke if runtime module classes are missing.
 jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/water/WaterDocument.class" >nul || (echo ERROR: packaged water document missing from game JAR & exit /b 1)
 jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/water/WaterModule.class" >nul || (echo ERROR: packaged water simulation missing from game JAR & exit /b 1)

@@ -269,3 +269,9 @@ CampaignMenuWorkflowTest
 CampaignCoopLobbyTest
 EquipmentTierIconTest
 CastleContainedMenuTest
+
+# Local-first secure admission and dedicated lifecycle (strict gates)
+CommonNetworkTest
+StreamSafePresentationTest
+DedicatedLifecycleTest
+SecureLanIntegrationTest

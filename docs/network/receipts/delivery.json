@@ -1,0 +1,3238 @@
+{
+  "base": "74a2691ef16b1b0e04d998c058a1dcd5b723891e",
+  "platform": "nt",
+  "results": [
+    {
+      "command": [
+        "cmd",
+        "/c",
+        "build.cmd",
+        "package"
+      ],
+      "exit": 0,
+      "seconds": 22.844
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\javac.exe",
+        "--release",
+        "17",
+        "-encoding",
+        "UTF-8",
+        "-cp",
+        "build/classes",
+        "-d",
+        "build/test",
+        "@build/sources-tests.txt"
+      ],
+      "exit": 0,
+      "seconds": 3.5
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.BeckenburgDiagnosticsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.719
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.BeckenburgDeveloperTraceTest"
+      ],
+      "exit": 0,
+      "seconds": 0.734
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.BeckenburgForcedTerminationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.86
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GraphicsOptionsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.PsxPipelineTest"
+      ],
+      "exit": 0,
+      "seconds": 0.062
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.PsxHorrorUiTest"
+      ],
+      "exit": 0,
+      "seconds": 1.594
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SoundtrackAudioTest"
+      ],
+      "exit": 0,
+      "seconds": 0.328
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SoundCoverageTest"
+      ],
+      "exit": 0,
+      "seconds": 1.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HorrorAudioRoutingTest"
+      ],
+      "exit": 0,
+      "seconds": 0.312
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HorrorAudioRoutingTest"
+      ],
+      "exit": 0,
+      "seconds": 0.282
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CastleHubIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 2.187
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CampaignBoardPanelTest"
+      ],
+      "exit": 0,
+      "seconds": 3.235
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.MissionBoardIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 3.5
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CampaignCareerTest"
+      ],
+      "exit": 0,
+      "seconds": 0.39
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CampaignProgressionAndStoreTest"
+      ],
+      "exit": 0,
+      "seconds": 3.063
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CampaignStoryProgressionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.672
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CampaignPartyRulesTest"
+      ],
+      "exit": 0,
+      "seconds": 0.64
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LevelOpeningFlyoverTest"
+      ],
+      "exit": 0,
+      "seconds": 1.11
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CampaignAllyTest"
+      ],
+      "exit": 0,
+      "seconds": 0.546
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HunterDisciplineTest"
+      ],
+      "exit": 0,
+      "seconds": 0.063
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HunterClassIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.359
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanHunterAbilitiesNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 0.61
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SoloClassAbilityTest"
+      ],
+      "exit": 0,
+      "seconds": 0.422
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CampaignAllyChatTest"
+      ],
+      "exit": 0,
+      "seconds": 0.984
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CastleOrientationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.094
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.BeckenburgUpdatesTest"
+      ],
+      "exit": 0,
+      "seconds": 0.75
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HeldMeshViewTest"
+      ],
+      "exit": 0,
+      "seconds": 0.25
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GlbPropsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.312
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EvidenceSignalsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.MissionWeatherTest"
+      ],
+      "exit": 0,
+      "seconds": 0.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.WeatherAssetsIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 2.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.RecordedWeatherTest"
+      ],
+      "exit": 0,
+      "seconds": 0.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HardEvidenceQuotaTest"
+      ],
+      "exit": 0,
+      "seconds": 0.313
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AncientGhostVariantsTest"
+      ],
+      "exit": 0,
+      "seconds": 1.172
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AdditionalEvidenceTest"
+      ],
+      "exit": 0,
+      "seconds": 0.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.ContractRewardsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.187
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EmfSilenceTest"
+      ],
+      "exit": 0,
+      "seconds": 0.329
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostWritingTest"
+      ],
+      "exit": 0,
+      "seconds": 0.062
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EquipmentRegistryTest"
+      ],
+      "exit": 0,
+      "seconds": 0.063
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EquipmentTiersTest"
+      ],
+      "exit": 0,
+      "seconds": 0.062
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EquipmentStoreDescriptionsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.172
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.FieldEquipmentTest"
+      ],
+      "exit": 0,
+      "seconds": 0.062
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.InstrumentActivationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.TieredMediaAndPowerTest"
+      ],
+      "exit": 0,
+      "seconds": 0.11
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.TieredUvAndFirelightTest"
+      ],
+      "exit": 0,
+      "seconds": 0.094
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.ImportedEquipmentModelsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.39
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.PackagedSourceModelsTest"
+      ],
+      "exit": 0,
+      "seconds": 5.266
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EquipmentModelCatalogTest"
+      ],
+      "exit": 0,
+      "seconds": 1.484
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.FieldSoundRecorderTest"
+      ],
+      "exit": 0,
+      "seconds": 0.219
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSoundRecorderIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 6.391
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.RecorderModelsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.39
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.TierModelForgeTest"
+      ],
+      "exit": 0,
+      "seconds": 1.453
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanCargoDoorTest"
+      ],
+      "exit": 0,
+      "seconds": 1.703
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanDotsProjectorsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.297
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.DotsRayFieldTest"
+      ],
+      "exit": 0,
+      "seconds": 0.11
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.OptionalEvidenceReadingsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.109
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostEvidenceMatrixTest"
+      ],
+      "exit": 0,
+      "seconds": 0.063
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanFieldEquipmentIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.641
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanMeasuredEvidenceTest"
+      ],
+      "exit": 0,
+      "seconds": 0.328
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HandheldSpiritBoxEvidenceTest"
+      ],
+      "exit": 0,
+      "seconds": 0.297
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SoloEnvironmentalEvidenceTest"
+      ],
+      "exit": 0,
+      "seconds": 0.484
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostBehaviorTest"
+      ],
+      "exit": 0,
+      "seconds": 0.797
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostIdentityTest"
+      ],
+      "exit": 0,
+      "seconds": 0.797
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanRiteNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 6.094
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostPursuitTest"
+      ],
+      "exit": 0,
+      "seconds": 0.281
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostHearingTest"
+      ],
+      "exit": 0,
+      "seconds": 0.281
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostHearingIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.563
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostTakeoverIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 3.297
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanCaseDepartureTest"
+      ],
+      "exit": 0,
+      "seconds": 0.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanIncapacitationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.328
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanEvidenceJournalTest"
+      ],
+      "exit": 0,
+      "seconds": 0.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanCaseFileIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.625
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSpatialEvidenceTest"
+      ],
+      "exit": 0,
+      "seconds": 0.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSpatialEvidenceIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 7.0
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanIncapacitationHudTest"
+      ],
+      "exit": 0,
+      "seconds": 1.765
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGuestDepartureIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 6.328
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanResumeStoreTest"
+      ],
+      "exit": 0,
+      "seconds": 0.157
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanClientWelcomeTest"
+      ],
+      "exit": 0,
+      "seconds": 0.093
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanHostOwnerRecoveryTest"
+      ],
+      "exit": 0,
+      "seconds": 0.532
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSecureOwnerAdmissionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.531
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanHostAuthorizationRegressionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.422
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSessionResumeIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 1.656
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanOutboundQueueTest"
+      ],
+      "exit": 0,
+      "seconds": 0.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanNetworkLatencyTest"
+      ],
+      "exit": 0,
+      "seconds": 25.406
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanHostAccessIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.438
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanNetworkDiagnosticsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.547
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanRitualDefenseTest"
+      ],
+      "exit": 0,
+      "seconds": 0.344
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanRitualDefenseIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 7.093
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostHearingHudTest"
+      ],
+      "exit": 0,
+      "seconds": 1.782
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostAnimationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.062
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostHauntingFolioTest"
+      ],
+      "exit": 0,
+      "seconds": 0.109
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostHauntingChoreographyTest"
+      ],
+      "exit": 0,
+      "seconds": 0.282
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostAnimationIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 18.156
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSoundTest"
+      ],
+      "exit": 0,
+      "seconds": 0.297
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSoundIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 1.265
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanCaseFileHudTest"
+      ],
+      "exit": 0,
+      "seconds": 1.766
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSoundHudTest"
+      ],
+      "exit": 0,
+      "seconds": 1.859
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanAcousticsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.282
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostSearchTest"
+      ],
+      "exit": 0,
+      "seconds": 0.265
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostLegacyHearingIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 2.891
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostSpatialTest"
+      ],
+      "exit": 0,
+      "seconds": 0.281
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSpatialCombatTest"
+      ],
+      "exit": 0,
+      "seconds": 0.344
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanTelegraphedStrikeTest"
+      ],
+      "exit": 0,
+      "seconds": 0.281
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanTelegraphedStrikeIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 18.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanTelegraphedHudTest"
+      ],
+      "exit": 0,
+      "seconds": 2.0
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanApparitionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.313
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostSpriteAtlasIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.984
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostManifestationVisualTest"
+      ],
+      "exit": 0,
+      "seconds": 0.5
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.DirectionalSpritesIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 2.953
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CharacterDirectionalVisualTest"
+      ],
+      "exit": 0,
+      "seconds": 0.735
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CharacterSpriteWorldMotionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.515
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.TwinBodyVisualTest"
+      ],
+      "exit": 0,
+      "seconds": 0.86
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.TwinCompanionAiTest"
+      ],
+      "exit": 0,
+      "seconds": 0.468
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.TwinCompanionSharedActionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.328
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanCameraSightTest"
+      ],
+      "exit": 0,
+      "seconds": 0.344
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanCameraOnlyGhostIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 17.5
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanTwinPlayerCompanionTest"
+      ],
+      "exit": 0,
+      "seconds": 9.922
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanApparitionRenderTest"
+      ],
+      "exit": 0,
+      "seconds": 2.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanApparitionIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 8.891
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.89
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.MouseLookTest"
+      ],
+      "exit": 0,
+      "seconds": 1.235
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanWorldControlsTest"
+      ],
+      "exit": 0,
+      "seconds": 1.75
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EquipmentSelectionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.062
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SiteSelectionTest"
+      ],
+      "exit": 0,
+      "seconds": 2.36
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.InvestigationSitesTest"
+      ],
+      "exit": 0,
+      "seconds": 1.218
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GrandSiteGeometryTest"
+      ],
+      "exit": 0,
+      "seconds": 0.532
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.ArchitecturalPlansTest"
+      ],
+      "exit": 0,
+      "seconds": 0.547
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VictorianHouseArchitectureTest"
+      ],
+      "exit": 0,
+      "seconds": 1.718
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSiteSelectionIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.813
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SoloEquipmentUseTest"
+      ],
+      "exit": 0,
+      "seconds": 0.328
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CameraAimTest"
+      ],
+      "exit": 0,
+      "seconds": 0.047
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EquipmentSightTest"
+      ],
+      "exit": 0,
+      "seconds": 0.281
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.BeckenburgInstallIdentityTest"
+      ],
+      "exit": 0,
+      "seconds": 0.156
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.BeckenburgProfileImportTest"
+      ],
+      "exit": 0,
+      "seconds": 0.188
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GameplaySmokeTest"
+      ],
+      "exit": 0,
+      "seconds": 6.734
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanFieldJournalIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.485
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanHidingTest"
+      ],
+      "exit": 0,
+      "seconds": 0.265
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanTelemetryTest"
+      ],
+      "exit": 0,
+      "seconds": 0.047
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanSensorStationsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.313
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanSiteMapScreenTest"
+      ],
+      "exit": 0,
+      "seconds": 0.312
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanTripodsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostWritingSpatialTest"
+      ],
+      "exit": 0,
+      "seconds": 0.063
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanPortableLightsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.FieldSensorDetectionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.265
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanSensorMapVisualTest"
+      ],
+      "exit": 0,
+      "seconds": 0.438
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.RoomAcousticPresetsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.984
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanFieldSensorNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 1.625
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.FieldSuppliesTest"
+      ],
+      "exit": 0,
+      "seconds": 0.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CustomContractTest"
+      ],
+      "exit": 0,
+      "seconds": 0.063
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LobbyGhostAvatarTest"
+      ],
+      "exit": 0,
+      "seconds": 0.39
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanHunterNameplateTest"
+      ],
+      "exit": 0,
+      "seconds": 2.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanPrivateHunterNamesTest"
+      ],
+      "exit": 0,
+      "seconds": 0.485
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanHunterVisualNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 0.468
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanChatTest"
+      ],
+      "exit": 0,
+      "seconds": 0.25
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanChatIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 1.61
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanVoiceCodecTest"
+      ],
+      "exit": 0,
+      "seconds": 0.047
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanVoiceRelayTest"
+      ],
+      "exit": 0,
+      "seconds": 0.687
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanVoiceHostIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 3.5
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanVoiceClientHandshakeTest"
+      ],
+      "exit": 0,
+      "seconds": 0.156
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGhostLobbySecrecyTest"
+      ],
+      "exit": 0,
+      "seconds": 0.61
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanSixHunterVanTest"
+      ],
+      "exit": 0,
+      "seconds": 1.578
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostActiveBehaviorTest"
+      ],
+      "exit": 0,
+      "seconds": 0.25
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.FieldJournalTest"
+      ],
+      "exit": 0,
+      "seconds": 0.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.ManualEvidenceJournalTest"
+      ],
+      "exit": 0,
+      "seconds": 0.094
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanDiegeticCrtTest"
+      ],
+      "exit": 0,
+      "seconds": 0.234
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.ManualEvidenceHudTest"
+      ],
+      "exit": 0,
+      "seconds": 1.719
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostTraitsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.047
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HunterCountersTest"
+      ],
+      "exit": 0,
+      "seconds": 0.265
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostDomainTest"
+      ],
+      "exit": 0,
+      "seconds": 0.438
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostFrenzyTest"
+      ],
+      "exit": 0,
+      "seconds": 0.359
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.MaterialAtlasTest"
+      ],
+      "exit": 0,
+      "seconds": 2.531
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.TeamCalloutTest"
+      ],
+      "exit": 0,
+      "seconds": 0.282
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanStagingTest"
+      ],
+      "exit": 0,
+      "seconds": 2.015
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanNavigationVisualTest"
+      ],
+      "exit": 0,
+      "seconds": 0.453
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostPracticeTest"
+      ],
+      "exit": 0,
+      "seconds": 0.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostPracticeHunterAiTest"
+      ],
+      "exit": 0,
+      "seconds": 0.547
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostPracticeInvestigationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.422
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.GhostPracticeCommsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.422
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanProtocolTest"
+      ],
+      "exit": 0,
+      "seconds": 0.062
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanClientDisconnectTest"
+      ],
+      "exit": 0,
+      "seconds": 0.61
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanGracefulLeaveTest"
+      ],
+      "exit": 0,
+      "seconds": 0.156
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanCaseTest"
+      ],
+      "exit": 0,
+      "seconds": 0.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanCaseIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 4.969
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanWorldTest"
+      ],
+      "exit": 0,
+      "seconds": 0.344
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanWorldIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 1.062
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanWorldRenderTest"
+      ],
+      "exit": 0,
+      "seconds": 2.281
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanLobbyTest"
+      ],
+      "exit": 0,
+      "seconds": 17.938
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SmokeTest"
+      ],
+      "exit": 0,
+      "seconds": 0.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AuthoredLevelPhysicsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.453
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AuthoredLevelReachabilityTest"
+      ],
+      "exit": 0,
+      "seconds": 7.844
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AuthoredLevelStateTest"
+      ],
+      "exit": 0,
+      "seconds": 0.468
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AuthoredLevelNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 4.016
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AuthoredLevelRitualCaseTest"
+      ],
+      "exit": 0,
+      "seconds": 0.406
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AuthoredUtilitiesTest"
+      ],
+      "exit": 0,
+      "seconds": 1.266
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SoloElevationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.484
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EquipmentAssetAssignmentsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LevelRenderAcceptanceTest"
+      ],
+      "exit": 0,
+      "seconds": 10.36
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.WorldViewHandednessTest"
+      ],
+      "exit": 0,
+      "seconds": 0.281
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LevelSurfaceIntegrityTest"
+      ],
+      "exit": 0,
+      "seconds": 0.875
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LivedLevelDressingTest"
+      ],
+      "exit": 0,
+      "seconds": 2.344
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LooseClutterTest"
+      ],
+      "exit": 0,
+      "seconds": 1.562
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LooseClutterNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 1.094
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HauntedFixturesTest"
+      ],
+      "exit": 0,
+      "seconds": 2.0
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanHumanScaleTest"
+      ],
+      "exit": 0,
+      "seconds": 1.75
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanRackStockTest"
+      ],
+      "exit": 0,
+      "seconds": 1.391
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanRackNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 1.109
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.InteractionFocusTest"
+      ],
+      "exit": 0,
+      "seconds": 2.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.InteractionNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 1.406
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HeldDeviceReadoutTest"
+      ],
+      "exit": 0,
+      "seconds": 0.625
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.FixtureSoundscapeTest"
+      ],
+      "exit": 0,
+      "seconds": 1.0
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.DomesticFitoutTest"
+      ],
+      "exit": 0,
+      "seconds": 0.969
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LevelEnclosureTest"
+      ],
+      "exit": 0,
+      "seconds": 1.469
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.PhysicalLightingTest"
+      ],
+      "exit": 0,
+      "seconds": 1.265
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.FixtureLightingLodTest"
+      ],
+      "exit": 0,
+      "seconds": 0.5
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LightingCacheRetentionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.485
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LightVolumePreviewTest"
+      ],
+      "exit": 0,
+      "seconds": 0.343
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.RendererDepthOcclusionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SurroundingClearanceTest"
+      ],
+      "exit": 0,
+      "seconds": 0.454
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CrouchAndOutdoorHidingTest"
+      ],
+      "exit": 0,
+      "seconds": 0.437
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CrouchNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 1.719
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.BlackpineGrayboxTest"
+      ],
+      "exit": 0,
+      "seconds": 0.359
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.MergedMaterialMetadataTest"
+      ],
+      "exit": 0,
+      "seconds": 0.235
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.BlackpineLightingTest"
+      ],
+      "exit": 0,
+      "seconds": 0.578
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.BlackpineDeckDepthTest"
+      ],
+      "exit": 0,
+      "seconds": 0.39
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.OpticalEvidenceTest"
+      ],
+      "exit": 0,
+      "seconds": 0.422
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.LanOpticalEvidenceNetworkTest"
+      ],
+      "exit": 0,
+      "seconds": 1.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekFacilitiesAssetTest"
+      ],
+      "exit": 0,
+      "seconds": 0.235
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekPavilionAssetTest"
+      ],
+      "exit": 0,
+      "seconds": 0.187
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekRefinementAssetsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.625
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekFittedTentTest"
+      ],
+      "exit": 0,
+      "seconds": 0.453
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekSiteArtTest"
+      ],
+      "exit": 0,
+      "seconds": 0.578
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekEarthenBankTest"
+      ],
+      "exit": 0,
+      "seconds": 0.328
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AuthoredSitePhysicsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HidingBudgetTest"
+      ],
+      "exit": 0,
+      "seconds": 1.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekDockAssetsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekTentAssetsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.235
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekBoundaryAssetsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.375
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekTerrainAssetTest"
+      ],
+      "exit": 0,
+      "seconds": 0.234
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.TerrainFoundationAssetsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.313
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekNativePhysicsTest"
+      ],
+      "exit": 0,
+      "seconds": 1.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekRouteTerrainTest"
+      ],
+      "exit": 0,
+      "seconds": 0.312
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekGreenGroundTest"
+      ],
+      "exit": 0,
+      "seconds": 0.422
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.WaterModuleTest"
+      ],
+      "exit": 0,
+      "seconds": 0.063
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.WaterEffectsTest"
+      ],
+      "exit": 0,
+      "seconds": 0.343
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.WaterReviewRegressionTest"
+      ],
+      "exit": 0,
+      "seconds": 0.735
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.ElevatedVanTest"
+      ],
+      "exit": 0,
+      "seconds": 0.062
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekRuntimeTest"
+      ],
+      "exit": 0,
+      "seconds": 1.219
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.HollowCreekPowerTest"
+      ],
+      "exit": 0,
+      "seconds": 0.75
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.WaterContactTest"
+      ],
+      "exit": 0,
+      "seconds": 0.188
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.WaterEditorModelTest"
+      ],
+      "exit": 0,
+      "seconds": 0.203
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.WaterShapesSnapTest"
+      ],
+      "exit": 0,
+      "seconds": 0.125
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SoundVolumeTest"
+      ],
+      "exit": 0,
+      "seconds": 0.343
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AllMapLightingCoverageTest"
+      ],
+      "exit": 0,
+      "seconds": 1.047
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.VanLightingAndCastleDoorTest"
+      ],
+      "exit": 0,
+      "seconds": 1.016
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.MetalMaterialRefinementTest"
+      ],
+      "exit": 0,
+      "seconds": 0.094
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.FixtureJoinIntegrationTest"
+      ],
+      "exit": 0,
+      "seconds": 0.531
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.AllMapArchitecturalJoinTest"
+      ],
+      "exit": 0,
+      "seconds": 1.078
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CastleRebuildTest"
+      ],
+      "exit": 0,
+      "seconds": 1.641
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CampaignMenuWorkflowTest"
+      ],
+      "exit": 0,
+      "seconds": 3.703
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CampaignCoopLobbyTest"
+      ],
+      "exit": 0,
+      "seconds": 0.578
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.EquipmentTierIconTest"
+      ],
+      "exit": 0,
+      "seconds": 1.906
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.CastleContainedMenuTest"
+      ],
+      "exit": 0,
+      "seconds": 4.875
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "hbnet.HbnetTest",
+        "local"
+      ],
+      "exit": 0,
+      "seconds": 2.453
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "hbnet.PrivacyUiTest"
+      ],
+      "exit": 0,
+      "seconds": 1.516
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.DedicatedLifecycleTest"
+      ],
+      "exit": 0,
+      "seconds": 1.359
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "hbnet.HbnetTest"
+      ],
+      "exit": 1,
+      "seconds": 2.828
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+        "-Djava.awt.headless=true",
+        "-ea",
+        "-cp",
+        "build/classes;build/test",
+        "org.beckenburg.SecureLanIntegrationTest"
+      ],
+      "exit": 1,
+      "seconds": 1.25
+    }
+  ],
+  "log_sha256": "653a1e20c42ba72e522add66851e5147e301dd2b7127da37d5823adbab513104"
+}
