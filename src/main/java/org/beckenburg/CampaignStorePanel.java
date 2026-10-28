@@ -178,7 +178,7 @@ public final class CampaignStorePanel extends JPanel {
         String selectedFilter=(String)filter.getSelectedItem();
         inventory.clear();
         for(Row row:fullCatalog()){
-            boolean solo=row.offer()!=null;
+            boolean solo=row.offer()!=null||soloStarter(row.tool());
             boolean lan=row.tool()!=null&&FieldEquipment.functional(row.tool().id());
             String purpose=row.purpose();
             boolean included=switch(selectedFilter==null?"ALL GEAR":selectedFilter){
@@ -198,6 +198,12 @@ public final class CampaignStorePanel extends JPanel {
         else if(inventory.size()>0)offers.setSelectedIndex(0);
         refresh();
     }
+    private static boolean soloStarter(EquipmentRegistry.Tool tool){
+        return tool!=null&&switch(tool.id()){
+            case "EMF_READER","THERMOMETER","SPIRIT_BOX","PHOTO_CAMERA" -> true;
+            default -> false;
+        };
+    }
     private String availability(Row row){
         Offer offer=row.offer();
         if(offer!=null){
@@ -207,6 +213,7 @@ public final class CampaignStorePanel extends JPanel {
                 profile.supplyCount(offer.kind(),offer.tier())+"/4";
         }
         var tool=row.tool();
+        if(soloStarter(tool))return "SOLO / ISSUED STARTER / OWNED";
         return tool.origin()==EquipmentRegistry.Origin.TRUCK?"VAN FIXTURE / NOT CARRIED":
             FieldEquipment.functional(tool.id())?"LAN FIELD READY / SOLO NOT YET WIRED":
             "NOT AVAILABLE IN CURRENT GAME MODE";
@@ -281,7 +288,10 @@ public final class CampaignStorePanel extends JPanel {
             details.setText(tool.name()+"\n\n"+availability(row)+
                 "\n\n"+tier.effect()+"\n"+tier.specificationLine()+
                 "\n\nTIER I  £"+tier.price()+"    /    TIERS II AND III AVAILABLE IN LAN FIELD RACK"+
-                "\n\n"+(lan?
+                "\n\n"+(soloStarter(tool)?
+                    "Issued as standard Castle equipment and available in the "+
+                    "solo loadout. Starter gear does not require repurchase.":
+                    lan?
                     "The multiplayer host supports this instrument. Castle solo "+
                     "missions still use a separate six-tool loadout. This shop "+
                     "does not charge your Castle account for equipment the "+
