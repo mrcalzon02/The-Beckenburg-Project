@@ -1326,163 +1326,189 @@ Evidence and verification: hollow-creek/GREEN_GRASS_REVIEW.html; textures/hollow
 
 Older-map obligation: Compare near/far material colours together under the same scene lighting; a generic request for greener grass does not establish palette continuity.
 
-## DEV-095 — Native runtime discarded authored site geometry
+### DEV-095 — Native runtime discarded authored site geometry
 
 **Status:** fixed-scoped · **Affected:** Hollow Creek
 
 Earlier game level construction did not consume the native mesh/pose/physics contract.
 
-Action: Native HCS2 bridge, 384 bounded original GLBs and 598 exact authored poses; no replacement room slabs.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: HollowCreekRuntimeTest: 969 route points / 939 sweeps; independent exact geometry/UV/pose audit.
+Fix / next action: Native HCS2 bridge, 384 bounded original GLBs and 598 exact authored poses; no replacement room slabs.
+
+Evidence and verification: HollowCreekRuntimeTest: 969 route points / 939 sweeps; independent exact geometry/UV/pose audit.
 
 Older-map obligation: Audit every older map runtime against its actual source, independently.
 
-## DEV-096 — Van vertical placement lost across runtime systems
+### DEV-096 — Van vertical placement lost across runtime systems
 
 **Status:** fixed-scoped · **Affected:** Elevated canonical van
 
 Dock Y was ignored by support, rendering, fixture lights and interaction targets.
 
-Action: Propagate dock elevation through reusable van contracts, support/ramp geometry, mounting/focus and optics.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: ElevatedVanTest: three heights and rotated placements, cargo/ramp and real side/roof occlusion.
+Fix / next action: Propagate dock elevation through reusable van contracts, support/ramp geometry, mounting/focus and optics.
+
+Evidence and verification: ElevatedVanTest: three heights and rotated placements, cargo/ramp and real side/roof occlusion.
 
 Older-map obligation: Audit any map with nonzero van elevation; legacy placements remain compatible.
 
-## DEV-097 — Native exterior zones treated as indoor by numeric room ID
+### DEV-097 — Native exterior zones treated as indoor by numeric room ID
 
 **Status:** fixed-scoped · **Affected:** Hollow Creek outdoor zones 0–11
 
 Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.
 
-Action: Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: Runtime pavilion/van shelter and route tests; actual native-game captures.
+Fix / next action: Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.
+
+Evidence and verification: Runtime pavilion/van shelter and route tests; actual native-game captures.
 
 Older-map obligation: Audit room ownership separately from indoor/outdoor classification.
 
-## DEV-098 — GPU texture upload flipped V twice and destroyed packed atlas resolution
+### DEV-098 — GPU texture upload flipped V twice and destroyed packed atlas resolution
 
 **Status:** fixed-scoped · **Affected:** GPU material upload; exposed by Hollow Creek boat
 
 Boat looked intact in native reviews but acquired black bands and unrelated plank colours in actual GPU capture.
 
-Action: Retain authored texture width/height; upload CPU sampler coordinates without a second V inversion.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: flat-baseline vs atlas-corrected dock PNGs; final runtime boat video; native atlas resolution checks.
+Fix / next action: Retain authored texture width/height; upload CPU sampler coordinates without a second V inversion.
+
+Evidence and verification: flat-baseline vs atlas-corrected dock PNGs; final runtime boat video; native atlas resolution checks.
 
 Older-map obligation: All GPU-rendered older assets require individual visual review after this shared sampler correction.
 
-## DEV-099 — Boat seats and oar blades penetrated the narrowing hull
+### DEV-099 — Boat seats and oar blades penetrated the narrowing hull
 
 **Status:** fixed-scoped · **Affected:** Hollow Creek west moored rowing boat
 
 Seat ends protruded through curved sides; stowed blades crossed the bow.
 
-Action: Boat-only editable variant: fit three thwarts to actual hull with 12mm clearance; move brackets/fastenings; stow oars on seats with full-vertex hull checks. Hull/pivot/pose unchanged.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: rowboat-refinement.json: 228 moved detail vertices; minimum oar-blade clearance 114.5mm; unchanged hull vertices; final dock runtime view.
+Fix / next action: Boat-only editable variant: fit three thwarts to actual hull with 12mm clearance; move brackets/fastenings; stow oars on seats with full-vertex hull checks. Hull/pivot/pose unchanged.
+
+Evidence and verification: rowboat-refinement.json: 228 moved detail vertices; minimum oar-blade clearance 114.5mm; unchanged hull vertices; final dock runtime view.
 
 Older-map obligation: Check complete accessory extents against curved support geometry, not centerline width.
 
-## DEV-100 — Boat painted atlas and lighting read as flat artificial surfaces
+### DEV-100 — Boat painted atlas and lighting read as flat artificial surfaces
 
 **Status:** revised-runtime-art-human-review-pending · **Affected:** Hollow Creek rowing boat
 
 Restored upload still exposed crude flat paint, repetitive grain and missing surface-normal response.
 
-Action: Three original weathered directional albedos; retain source normals and add audited boat directional fixture/torch shading in GPU path.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: 20,484 loaded boat normal samples are unit length; real fixture direction check; final dock capture.
+Fix / next action: Three original weathered directional albedos; retain source normals and add audited boat directional fixture/torch shading in GPU path.
+
+Evidence and verification: 20,484 loaded boat normal samples are unit length; real fixture direction check; final dock capture.
 
 Older-map obligation: Other assets and software-path directional shading remain unaudited; do not infer all-map shading acceptance.
 
-## DEV-101 — Water rendered through boat cockpit
+### DEV-101 — Water rendered through boat cockpit
 
 **Status:** fixed-scoped · **Affected:** Hollow Creek water and rowboat
 
 Flat surface occupied the boat interior; a single waterline cut would leak after adding waves.
 
-Action: 23 actual inner-hull sections at 10mm intervals, adjacent-section union within thick shell, full 95mm wave envelope. Ignore mooring-ring cuts.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: WaterEffectsTest full-wave center/exterior exclusion and final 72-frame dry-hull sample counts.
+Fix / next action: 23 actual inner-hull sections at 10mm intervals, adjacent-section union within thick shell, full 95mm wave envelope. Ignore mooring-ring cuts.
+
+Evidence and verification: WaterEffectsTest full-wave center/exterior exclusion and final 72-frame dry-hull sample counts.
 
 Older-map obligation: Every future boat requires its own actual hull profile; rectangular cutouts are not acceptable.
 
-## DEV-102 — Underwater surface had no optical basin depth
+### DEV-102 — Underwater surface had no optical basin depth
 
 **Status:** fixed-scoped · **Affected:** Hollow Creek water
 
 Nominal constant depth could not reveal shallows or refract a visible bed.
 
-Action: Author 12,000 non-walkable optical bed triangles from actual bank controls with shared exact triangle depth sampler and existing shore grit. Exclude dock blockers.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: GridBed diagonal/footprint tests; water-bed.json and beach/river runtime captures.
+Fix / next action: Author 12,000 non-walkable optical bed triangles from actual bank controls with shared exact triangle depth sampler and existing shore grit. Exclude dock blockers.
+
+Evidence and verification: GridBed diagonal/footprint tests; water-bed.json and beach/river runtime captures.
 
 Older-map obligation: Per-map authored bathymetry required; current basin is an initial authored profile, not a survey.
 
-## DEV-103 — Distant water exposed a harsh clipping horizon
+### DEV-103 — Distant water exposed a harsh clipping horizon
 
 **Status:** revised-runtime-review-pending · **Affected:** Hollow Creek water and scenery
 
 User observed a hard distance line and excessive distant texture sharpness in live views.
 
-Action: Depth-aware distant blur with foreground rejection, plus exponential convergence to actual camera sky pixels before far clipping.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: WaterReviewRegressionTest near sharpness, foreground isolation and horizon convergence; final beach clip.
+Fix / next action: Depth-aware distant blur with foreground rejection, plus exponential convergence to actual camera sky pixels before far clipping.
+
+Evidence and verification: WaterReviewRegressionTest near sharpness, foreground isolation and horizon convergence; final beach clip.
 
 Older-map obligation: Audit each map horizon and sky frame; no blanket completion inferred.
 
-## DEV-104 — Shoreline lacked slow advancing and receding waves
+### DEV-104 — Shoreline lacked slow advancing and receding waves
 
 **Status:** revised-runtime-review-pending · **Affected:** Hollow Creek beach and creek margins
 
 Scrolling flat texture did not provide visible shore wave action or animated edge foam.
 
-Action: Depth-driven 5.5-second shoreline wave train, coherent 65mm background waves, 30mm shore run-up, moving broken crest foam and two independent pixelated layers.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: Independent nearest-wave rays and hull envelope tests; fixed-camera six-second runtime clips.
+Fix / next action: Depth-driven 5.5-second shoreline wave train, coherent 65mm background waves, 30mm shore run-up, moving broken crest foam and two independent pixelated layers.
+
+Evidence and verification: Independent nearest-wave rays and hull envelope tests; fixed-camera six-second runtime clips.
 
 Older-map obligation: Tune wave scale, shore textures and currents individually; creek-specific flow and interaction ripples remain open.
 
-## DEV-105 — Generic signature breaker rule would ignore ghost-specific restrictions
+### DEV-105 — Generic signature breaker rule would ignore ghost-specific restrictions
 
 **Status:** open-host-rule-audit · **Affected:** Host/solo remote-site electrical events
 
 Integration review found no verified existing ghost-specific trip path; a draft generic SIGNATURE trip would force every ghost to trip a breaker.
 
-Action: Removed draft generic trip. Preserve separate source/breaker controls; audit and wire only actually eligible ghost electrical rules before host/LAN acceptance.
+Cause / uncertainty: Recorded during native-runtime/water review; see reproducible source and capture evidence.
 
-Evidence: HollowCreekPowerTest proves supported controls and source isolation only, explicitly not ghost-trip or host/LAN acceptance.
+Fix / next action: Removed draft generic trip. Preserve separate source/breaker controls; audit and wire only actually eligible ghost electrical rules before host/LAN acceptance.
+
+Evidence and verification: HollowCreekPowerTest proves supported controls and source isolation only, explicitly not ghost-trip or host/LAN acceptance.
 
 Older-map obligation: Audit eligible ghost rules and authority on all generator maps before unlock.
 
-## DEV-106 — Submerged creek bed remained an eligible native standing surface
+### DEV-106 — Submerged creek bed remained an eligible native standing surface
 
 **Status:** fixed-scoped · **Affected:** Hollow Creek physical terrain below water
 
 A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.
 
-Action: Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.
+Cause / uncertainty: The edge blockers constrain crossings, but terrain support alone still allowed a direct underwater spawn query.
 
-Evidence: HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.
+Fix / next action: Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.
+
+Evidence and verification: HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.
 
 Older-map obligation: Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map.
 
-## DEV-107 — Review launcher crashed during abrupt native GPU shutdown
+### DEV-107 — Review launcher crashed during abrupt native GPU shutdown
 
 **Status:** fixed-scoped · **Affected:** Hollow Creek GPU review command
 
 All frames and reports were written, then the process exited with Windows native status -1073740791 (0xC0000409).
 
-Action: Request application exit and join the owning worker, allowing its resource disposal/window teardown before main returns.
+Cause / uncertainty: The review command called System.exit while the GLFW/OpenGL worker was still active.
 
-Evidence: Same real dock render writes fresh world/depth/water evidence and now exits with native code0. Previous frame files remain actual capture evidence, not a clean launcher test.
+Fix / next action: Request application exit and join the owning worker, allowing its resource disposal/window teardown before main returns.
+
+Evidence and verification: Same real dock render writes fresh world/depth/water evidence and now exits with native code0. Previous frame files remain actual capture evidence, not a clean launcher test.
 
 Older-map obligation: Audit other GPU smoke/shutdown entry points separately; only the new review lifecycle was corrected.
 
-## DEV-108 — Visible regular modulation in the water review
+### DEV-108 — Visible regular modulation in the water review
 
 **Status:** open-art-quality-review · **Affected:** Hollow Creek lit water
 
@@ -1490,13 +1516,13 @@ Increasing opacity exposed repeating surface/bed lighting bands in the beach bea
 
 Cause / uncertainty: Sine-product ripple texture and coarse lit bed interpolation are possible contributors; not yet isolated.
 
-Action: Replace the strong product pattern with two independent softly warped directional ripple layers; retain the remaining banding for follow-up art/lighting review.
+Fix / next action: Replace the strong product pattern with two independent softly warped directional ripple layers; retain the remaining banding for follow-up art/lighting review.
 
-Evidence: DEV-108-before-regular-water-ripple-grid.png and latest murkier beach clip; no full banding acceptance claimed.
+Evidence and verification: DEV-108-before-regular-water-ripple-grid.png and latest murkier beach clip; no full banding acceptance claimed.
 
 Older-map obligation: Audit water repetition and bed-light tessellation under the actual beam, not only flat texture inspection.
 
-## DEV-109 — Local review video showed a poster without reliable playback
+### DEV-109 — Local review video showed a poster without reliable playback
 
 **Status:** mitigated-published-HTTPS-verified-local-preview-unverified · **Affected:** Water review HTML and archived animations
 
@@ -1504,13 +1530,13 @@ User could see stills but could not play the local review video.
 
 Cause / uncertainty: Local preview delivery/decoder cause is not proven. Published HTTPS MP4 was directly observed playing at4.1856 of6 seconds, readyState4.
 
-Action: Add VP9 WebM before MP4 fallback, explicit Play/Pause controls, visible ready/time/error status and direct media links; use the tested published HTTPS review as the primary artifact.
+Fix / next action: Add VP9 WebM before MP4 fallback, explicit Play/Pause controls, visible ready/time/error status and direct media links; use the tested published HTTPS review as the primary artifact.
 
-Evidence: Browser DOM and screenshot confirmed actual playing state; final new controls and WebM require deployed follow-up verification.
+Evidence and verification: Browser DOM and screenshot confirmed actual playing state; final new controls and WebM require deployed follow-up verification.
 
 Older-map obligation: Verify browser playback rather than inferring it from ffprobe frame counts.
 
-## DEV-110 — Reused shore-grit bed read poorly through overly clear water
+### DEV-110 — Reused shore-grit bed read poorly through overly clear water
 
 **Status:** revised-runtime-art-human-review-pending · **Affected:** Hollow Creek underwater bed and water style
 
@@ -1518,67 +1544,375 @@ User requested a different creek-bed texture and less transparent water.
 
 Cause / uncertainty: Shore grit was reused for the optical basin, while low absorption/minimum opacity exposed excessive ground detail.
 
-Action: New original image-generated silt/rounded-stone albedo; minimum opacity48%, absorption1.8/m, maximum97%; approximately89% opacity at1m. Keep shallow edges visibly translucent.
+Fix / next action: New original image-generated silt/rounded-stone albedo; minimum opacity48%, absorption1.8/m, maximum97%; approximately89% opacity at1m. Keep shallow edges visibly translucent.
 
-Evidence: creek-bed-silt-stone-v1-prompt.json; new water-murkier game views; transmission regression retains shallow visibility and strongly suppresses the deeper bed.
+Evidence and verification: creek-bed-silt-stone-v1-prompt.json; new water-murkier game views; transmission regression retains shallow visibility and strongly suppresses the deeper bed.
 
 Older-map obligation: Author and review dedicated optical beds and turbidity for each map rather than copying ground materials.
 
-## DEV-111 — Equipment assignment CI retained pre-existing stale variant counts
+### DEV-111 — Equipment assignment CI retained pre-existing stale variant counts
 
 **Status:** fixed-scoped · **Affected:** EquipmentAssetAssignmentsTest / full multiplayer build preflight
 
 Published water checkpoint full multiplayer workflow stopped before the round at manifest family/alias coverage changed.
 
-Cause: The unchanged pre-water manifest/catalog already contain53 state aliases,49 unique state meshes and162 total resources; the test still expected44/40/153. All explicit mappings passed before the stale count check.
+Cause / uncertainty: The unchanged pre-water manifest/catalog already contain53 state aliases,49 unique state meshes and162 total resources; the test still expected44/40/153. All explicit mappings passed before the stale count check.
 
-Action: Update the delivered coverage contract to53/49/162 while retaining every independently checked mapping, provenance and allowlist-equality assertion. No equipment models or catalog mappings changed.
+Fix / next action: Update the delivered coverage contract to53/49/162 while retaining every independently checked mapping, provenance and allowlist-equality assertion. No equipment models or catalog mappings changed.
 
-Evidence: Verified no diff in manifest/catalog/test against15b964c before the correction. Local test now passes43 families/129 stage aliases/53 states/162 resources. Re-run full workflow after publication.
+Evidence and verification: Verified no diff in manifest/catalog/test against15b964c before the correction. Local test now passes43 families/129 stage aliases/53 states/162 resources. Re-run full workflow after publication.
 
 Older-map obligation: Keep source catalog, independent manifest and explicit coverage assertions synchronized when adding equipment states; do not weaken mapping checks.
 
-## DEV-112 — 3D water motion too subtle; wet objects lacked contact foam and spray
+### DEV-112 — 3D water motion too subtle; wet objects lacked contact foam and spray
 
 **Status:** revised-runtime-human-review-pending · **Affected:** Hollow Creek water / recorded development checks
 
 User approved texture motion but requested stronger geometric waves and foamy collision edges/spray at banks and water objects.
 
-Cause: Earlier65mm waves and shallow-depth foam did not expose actual solid-water intersections.
+Cause / uncertainty: Earlier65mm waves and shallow-depth foam did not expose actual solid-water intersections.
 
-Action: Keep scrolling rates; use160mm broad swell/shorter chop plus60mm shore run-up, visible opaque-geometry contact foam and bounded light/depth-tested ballistic spray. Expand actual hull sections to38, including near-floor cap.
+Fix / next action: Keep scrolling rates; use160mm broad swell/shorter chop plus60mm shore run-up, visible opaque-geometry contact foam and bounded light/depth-tested ballistic spray. Expand actual hull sections to38, including near-floor cap.
 
-Evidence: WaterContactTest: >200mm actual vertical travel, no floating/distant halos, spray visibility/occlusion and complete dry cockpit cycle. Latest actual water-contacts clips record foam/spray sample counts.
+Evidence and verification: WaterContactTest: >200mm actual vertical travel, no floating/distant halos, spray visibility/occlusion and complete dry cockpit cycle. Latest actual water-contacts clips record foam/spray sample counts.
 
 Older-map obligation: Per-map wet solid contacts and hull/freeboard must be reviewed in actual animated game views; visible-depth pass does not imply offscreen physics coverage.
 
-## DEV-113 — Prototype contact foam mistook shallow bed for impact edges
+### DEV-113 — Prototype contact foam mistook shallow bed for impact edges
 
 **Status:** fixed-scoped · **Affected:** Hollow Creek water / recorded development checks
 
 Initial contact pass frosted most of the shallow creek, rather than just its collision edges.
 
-Cause: World proximity alone accepted the flat underwater bed as a solid impact surface.
+Cause / uncertainty: World proximity alone accepted the flat underwater bed as a solid impact surface.
 
-Action: Use opaque-depth surface normals to reject gently sloping beds except at the actual waterline; retain separate shoreline run-up foam. Add a direct flat-bed regression.
+Fix / next action: Use opaque-depth surface normals to reject gently sloping beds except at the actual waterline; retain separate shoreline run-up foam. Add a direct flat-bed regression.
 
-Evidence: DEV-113-before-shallow-bed-contact-foam.png; WaterContactTest; final east-bank contact samples drop from2452515 to626355 over72 frames with bank/object edges retained.
+Evidence and verification: DEV-113-before-shallow-bed-contact-foam.png; WaterContactTest; final east-bank contact samples drop from2452515 to626355 over72 frames with bank/object edges retained.
 
 Older-map obligation: Test open shallow beds and lifted props as negative foam cases, not only successful wet-contact examples.
 
-## DEV-114 — Dressing CI expected every hiding candidate to appear at maximum density
+### DEV-114 — Dressing CI expected every hiding candidate to appear at maximum density
 
 **Status:** fixed-scoped · **Affected:** Hollow Creek water / recorded development checks
 
 Full multiplayer preflight passed equipment mapping, then failed HOUSE geometry delta10824 vs actual4608.
 
-Cause: Pre-existing dressing test counted all five cupboard candidates even though the shared combined hiding cap selects only two plus one outdoor refuge.
+Cause / uncertainty: Pre-existing dressing test counted all five cupboard candidates even though the shared combined hiding cap selects only two plus one outdoor refuge.
 
-Action: Retain scattered candidate checks, compute expected geometry from the actual shared-budget selected sockets, and test physical concealment/collision only for enabled cupboards. No gameplay hiding budget changed.
+Fix / next action: Retain scattered candidate checks, compute expected geometry from the actual shared-budget selected sockets, and test physical concealment/collision only for enabled cupboards. No gameplay hiding budget changed.
 
-Evidence: LivedLevelDressingTest passes HOUSE/FARMHOUSE/SCHOOL: two actual physically enterable cupboards and supported small objects each. Full CI rerun remains required.
+Evidence and verification: LivedLevelDressingTest passes HOUSE/FARMHOUSE/SCHOOL: two actual physically enterable cupboards and supported small objects each. Full CI rerun remains required.
 
 Older-map obligation: Test candidate supply separately from the equal shared active hiding budget; never restore unlimited hiding to satisfy a stale assertion.
+
+### DEV-115 — Water lacked visible editor handles and saved map ownership
+
+**Status:** fixed-scoped · **Affected:** Map environment authoring
+
+Water lacked visible editor handles and saved map ownership
+
+Cause / uncertainty: Runtime and editor integration gap
+
+Fix / next action: Five actual footprints, placement icon, live settings, multi-edit, handles, edge/rim snapping, atomic save/export and immutable map revisions added. Portable tests and actual OpenGL UI copy/pill/resize/rotate/undo/save passed.
+
+Evidence and verification: Source audit25October2026; water editor live-handles.png; water/editor/weather regression suites
+
+Older-map obligation: Review basin, boat exclusions and player blockers separately on every map.
+
+### DEV-116 — GPU weather ground coatings and inspector incomplete
+
+**Status:** partially-fixed-audit-open · **Affected:** Map environment authoring
+
+GPU weather ground coatings and inspector incomplete
+
+Cause / uncertainty: Runtime and editor integration gap
+
+Fix / next action: Actual weather preview inspector and castle precipitation pass added. Core rain/snow/wind/sky/lightning tests pass. Source audit confirms GPU faces bypass software ground wet/snow coating; roof-exposure audit remains open.
+
+Evidence and verification: Source audit25October2026; water editor live-handles.png; water/editor/weather regression suites
+
+Older-map obligation: Do not infer GPU weather parity from software checks.
+
+### DEV-117 — No visible ambient/environmental sound editor volumes
+
+**Status:** implementation-in-progress · **Affected:** Map environment authoring
+
+No visible ambient/environmental sound editor volumes
+
+Cause / uncertainty: Runtime and editor integration gap
+
+Fix / next action: Existing room and weather soundscapes have no selectable visible volume inspector. Add placement, playback, source gain/range/falloff and save/runtime integration per user request.
+
+Evidence and verification: Source audit25October2026; water editor live-handles.png; water/editor/weather regression suites
+
+Older-map obligation: Audit existing beds to avoid duplicate loops; authored ambience must remain separate from ghost/evidence events.
+
+### DEV-118 — Opening pan rejected fully outdoor native maps
+
+**Status:** fixed-scoped · **Affected:** Existing-map lighting/camera compatibility
+
+LevelOpeningFlyover required indoor bounds; Hollow Creek has outdoor ownership zones only. Expanded all-ten-map regression reproduced IllegalStateException before repair.
+
+Cause / uncertainty: LevelOpeningFlyover required indoor bounds; Hollow Creek has outdoor ownership zones only. Expanded all-ten-map regression reproduced IllegalStateException before repair.
+
+Fix / next action: Share finite indoor/outdoor framing with the software fallback; exclude van/approach zones and avoid presenting outdoor zones as rectangular buildings.
+
+Evidence and verification: LevelOpeningFlyoverTest now covers all10maps, finite fallback rendering and exact player handoff.
+
+Older-map obligation: Audit each future map camera path, framing, support and final view; no full path collision or human acceptance inferred.
+
+### DEV-119 — Long prototype halls had no effective entrance lighting
+
+**Status:** fixed-scoped · **Affected:** Existing-map lighting/camera compatibility
+
+Actual GPU lit and blackout images were identical in Mansion, Prison, Asylum, Academy and College; Church entry was nearly black. A single central fixture was beyond range of the actual entry.
+
+Cause / uncertainty: Actual GPU lit and blackout images were identical in Mansion, Prison, Asylum, Academy and College; Church entry was nearly black. A single central fixture was beyond range of the actual entry.
+
+Fix / next action: Place repeated physical fittings at up to7m spacing in unfinished indoor prototypes, preserving refined House/Farmhouse/School fixture layouts.
+
+Evidence and verification: AllMapLightingCoverageTest passes nine indoor entries and blackout; actual GPU before/after captured for six prototypes.
+
+Older-map obligation: Review every room, ceiling attachment, stairs/openings, switch circuit and all joins. Entry samples are not whole-map leak acceptance.
+
+### DEV-120 — Native outdoor aerial review has excessive water cost and obscuring fog
+
+**Status:** open-profile-and-art-review · **Affected:** Existing-map lighting/camera compatibility
+
+Hollow Creek aerial/water captures take minutes; aerial site detail is heavily obscured by fog.
+
+Cause / uncertainty: Hollow Creek aerial/water captures take minutes; aerial site detail is heavily obscured by fog.
+
+Fix / next action: Record actual scripted captures and keep real-time performance and aerial composition open. Do not change global fog or hide the native map to force a pass.
+
+Evidence and verification: 480x300 first capture and320x200 isolated rerun; no hardware frame-time benchmark or acceptance claimed.
+
+Older-map obligation: Profile water, lighting, geometry and camera effects separately for every future outdoor/water map before mission unlock.
+
+### DEV-121 — Capture JAR was rebuilt while an earlier worker still used it
+
+**Status:** fixed-tooling-workflow · **Affected:** Existing-map lighting/camera compatibility
+
+An overlapping Maven build replaced a running capture JAR, causing a lazy LWJGL class load error at shutdown. Captured frames alone did not prove a clean run.
+
+Cause / uncertainty: An overlapping Maven build replaced a running capture JAR, causing a lazy LWJGL class load error at shutdown. Captured frames alone did not prove a clean run.
+
+Fix / next action: Run subsequent captures from immutable copied JARs. Castle rerun completed exit0; repeat native capture from a separate immutable copy.
+
+Evidence and verification: build/map-audit-captures.log retains failure; map-audit-castle.log clean; native rerun recorded separately.
+
+Older-map obligation: Never overwrite a running validation executable; record process completion separately from valid captured frame hashes.
+
+### DEV-122 — Van upper racks dark under narrow ceiling beams
+
+**Status:** fixed-scoped · **Affected:** Shared van / Castle
+
+Van upper racks dark under narrow ceiling beams
+
+Cause / uncertainty: Source distribution / placement / material quality
+
+Fix / next action: Three physically mounted broad diffusers on vehicle supply; all10map placements tested.
+
+Evidence and verification: VanLightingAndCastleDoorTest,8actualGPUframes: van-castle-repair.json
+
+Older-map obligation: Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open.
+
+### DEV-123 — Castle leaves vanish when open and ignore floor elevation
+
+**Status:** fixed-scoped-human-review-pending · **Affected:** Shared van / Castle
+
+Castle leaves vanish when open and ignore floor elevation
+
+Cause / uncertainty: Source distribution / placement / material quality
+
+Fix / next action: Paired fitted leaves remain on hinges at actual storey height; collision and shadows follow them. Portcullis also uses slot bottom.
+
+Evidence and verification: VanLightingAndCastleDoorTest,8actualGPUframes: van-castle-repair.json
+
+Older-map obligation: Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open.
+
+### DEV-124 — Van metal textures show banding
+
+**Status:** partial-runtime-refinement-human-review-pending · **Affected:** Shared van / Castle
+
+Van metal textures show banding
+
+Cause / uncertainty: Generated IRON tile darkened every eighth X pixel by17levels; repeated UVs stamp grooves across broad painted panels.
+
+Fix / next action: Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.
+
+Evidence and verification: MetalMaterialRefinementTest: groove phase contrast16.652→0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.
+
+Older-map obligation: Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted.
+
+### DEV-125 — Recorder CI assumed every WHISPER action uses the WHISPER audio cue
+
+**Status:** fixed-scoped-full-CI-pending · **Affected:** LanSoundRecorderIntegrationTest / recovery gate
+
+a635d0c8 full multiplayer run40296444087 failed246/247 with missing SOUND|WHISPER, although same-SHA installer passed.
+
+Cause / uncertainty: Random authored haunting selection can legitimately choose a different cue for the WHISPER action.
+
+Fix / next action: Use the actual host-authored HAUNT entry cue for received sound and recorded clip assertions. doorway_sigh legitimately uses HORROR_STING_A. Preserve real recorder transactions, playback, reconnect and privacy checks; no runtime evidence/audio changes.
+
+Evidence and verification: Focused four-socket rack/paid tiers/capture/private playback/reconnect test passes.
+
+Older-map obligation: Keep test expectations bound to real authored actions and cue identities on all maps. Full exact-SHA acceptance remains required.
+
+### DEV-126 — Saved mission-board browser would reorder persistent campaign chapters
+
+**Status:** fixed-local-full-CI-pending · **Affected:** Mission board / campaign / LAN lobby integration
+
+Saved mission-board browser would reorder persistent campaign chapters
+
+Cause / uncertainty: Old local catalog used alphabetic image-browser order for ordinal-based saved story progression.
+
+Fix / next action: Keep the original 22 chapter IDs in explicit campaign order; use alphabetic order only for browsing.
+
+Evidence and verification: MissionBoardIntegrationTest and CampaignStoryProgressionTest pass locally; exact-SHA full CI pending.
+
+Older-map obligation: Preserve every saved chapter ordinal and prototype availability when adding or renaming locations.
+
+### DEV-127 — Saved mission-board labels omitted the newer Hollow Creek authoring enum
+
+**Status:** fixed-local-full-CI-pending · **Affected:** Mission board / campaign / LAN lobby integration
+
+Saved mission-board labels omitted the newer Hollow Creek authoring enum
+
+Cause / uncertainty: Newer main added HOLLOW_CREEK, while local MissionSites.title only accepted original lore IDs.
+
+Fix / next action: Resolve the authoring enum to its existing WLD-02 lore record without making prototype geometry playable.
+
+Evidence and verification: MissionBoardIntegrationTest iterates every authoring enum and verifies Hollow Creek remains locked; SiteSelectionTest passes locally.
+
+Older-map obligation: Preserve every saved chapter ordinal and prototype availability when adding or renaming locations.
+
+### DEV-128 — GPU diagnostics crashed after successful captures during abrupt JVM shutdown
+
+**Status:** fixed-local-exact-CI-pending · **Affected:** Unified recovery / native GPU diagnostics / hunter feature integration
+
+Native RTX run from main f6793bda completed all assertions but exited 0xC0000409.
+
+Cause / uncertainty: Smoke entry points called System.exit while the owning GLFW/GL worker remained alive, despite the existing review teardown contract.
+
+Fix / next action: Stop and join the owning GPU worker before exiting; teardown failures must fail acceptance.
+
+Evidence and verification: Source 417980e6: three RTX 5070 diagnostic runs exited 0, 56.109/56.125/55.359 seconds; raw baseline failure and repeat-run logs retained under performance/hardware/2026-10-26.
+
+Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
+
+### DEV-129 — Hunter unit fixture mixed active Hallow into independent Focus-expiry comparison
+
+**Status:** fixed-local-exact-CI-pending · **Affected:** Unified recovery / native GPU diagnostics / hunter feature integration
+
+HunterDisciplineTest failed at its Focus-expiry assertion during integration.
+
+Cause / uncertainty: The prior Cleric scenario shared Hallow with the Observer; both Hallow and Focus deliberately apply 55% fear.
+
+Fix / next action: Retain every original assertion, isolate the Focus fixture, and additionally verify shared Hallow protection and expiry.
+
+Evidence and verification: HunterDisciplineTest, HunterClassIntegrationTest and SoloClassAbilityTest pass locally.
+
+Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
+
+### DEV-130 — Hunter feature branch rejected ghost reconnect by assigning a hunter discipline
+
+**Status:** fixed-local-exact-CI-pending · **Affected:** Unified recovery / native GPU diagnostics / hunter feature integration
+
+Unchanged LanSessionResumeIntegrationTest failed in ghostRejoin with invalid join response at source 417980e6.
+
+Cause / uncertainty: Resume handshake passed the ghost seat to LanCase.selectDiscipline, which correctly rejects non-hunter seats.
+
+Fix / next action: Guard class restoration to hunter seats, preserve ghost resume and host ownership, and reset fresh lobby occupant class authority to its own visual choice.
+
+Evidence and verification: LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy.
+
+Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
+
+### DEV-136 — Production light sampler bypassed receiving-side architectural join guard
+
+**Status:** fixed-scoped-runtime-diagnostic-verified · **Affected:** FixtureLighting on generated indoor maps; Blackpine grazing-view reproducer
+
+Actual scalar sampler added4.613energy through a solid wall endpoint. Grazing GPU view showed2260bright pixels from an exterior diagnostic source despite closed geometry.
+
+Cause / uncertainty: ArchitecturalLightOcclusion.visible existed and its standalone tests passed, but production scalar and normal sampling never called it. Prop self-shadow endpoint bias could move the receiving endpoint across a wall. Shadow key also omitted receiving room.
+
+Fix / next action: Use full receiving-side architectural check before prop bias for non-native investigation geometry; scope scalar shadow cache by receiver. Preserve Castle visibility and native triangle paths.
+
+Evidence and verification: FixtureJoinIntegrationTest fails on7f1515d0 at4.8vs0.187ambient and passes after repair, including real door open/close invalidation and same-side light control. AllMapArchitecturalJoinTest6789closed-boundary rays across9indoor maps.18matched actualGPUdiagnostic images: corrected exterior-source frames exactly equal source-off frames; same-side interior source remains lit.
+
+Older-map obligation: All generated-map joins still need moving-camera/human review. Native physical meshes, roof joins and every portal state require independent evidence. No full map, LAN or30FPS acceptance inferred.
+
+### DEV-137 — Castle construction disagrees with its collision raster
+
+**Status:** fixed-scoped-local-native-and-GPU-verified · **Affected:** Castle floor, doorway shoulders and upper circulation
+
+Current main uses separately maintained raster collision, a large rectangular foundation and single-face overlapping decks. Overflight also omits entire roofs at a 27m center distance.
+
+Cause / uncertainty: Independently authored legacy geometry, rendering and display coordinates.
+
+Fix / next action: Replace with measured room volumes, unioned 220mm slabs, closed roof geometry and actual thick-wall collision. Preserve functional station positions.
+
+Evidence and verification: CastleRebuildTest and focused Castle regressions;26 actual RTX5070 captures in castle-survey/rebuild; native reopen verification castle-native-rebuild.json:220671 triangles,706 packed images. Full manifest and installed acceptance remain separate.
+
+Older-map obligation: Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations.
+
+### DEV-138 — Castle warehouse omits tiers and suspends items above shallow shelves
+
+**Status:** fixed-scoped-local-native-and-GPU-verified · **Affected:** Castle quartermaster
+
+Eight .22m-deep bookshelves face one direction. Only 43 tier-I displays are authored at .40/1.00/1.60m despite source shelf tops .09/.39/.69/.99/1.29m at scale1.05. Top displays float; higher tiers are absent.
+
+Cause / uncertainty: Independently authored legacy geometry, rendering and display coordinates.
+
+Fix / next action: Replace with original open retail shelves, aisle-facing placements,129 catalog/tier displays, exact support planes and shelf labels; retain menu purchase authority.
+
+Evidence and verification: CastleRebuildTest and focused Castle regressions;26 actual RTX5070 captures in castle-survey/rebuild; native reopen verification castle-native-rebuild.json:220671 triangles,706 packed images. Full manifest and installed acceptance remain separate.
+
+Older-map obligation: Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations.
+
+### DEV-139 — Castle courtyard and circulation lack usable local lighting
+
+**Status:** fixed-scoped-local-native-and-GPU-verified · **Affected:** Castle rooms, courtyard, stairs and store
+
+Twenty-one actual RTX frames show very dark exterior circulation and uneven interior coverage. All three existing switches toggle every lamp; new slab soffits require refitted ceiling mounts.
+
+Cause / uncertainty: Independently authored legacy geometry, rendering and display coordinates.
+
+Fix / next action: Provide supported coverage in every room, courtyard sconces, room circuits and an upper-library switch. Verify lit/off/torch controls and per-room light separation.
+
+Evidence and verification: CastleRebuildTest and focused Castle regressions;26 actual RTX5070 captures in castle-survey/rebuild; native reopen verification castle-native-rebuild.json:220671 triangles,706 packed images. Full manifest and installed acceptance remain separate.
+
+Older-map obligation: Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations.
+
+### DEV-140 — Castle service fixtures are visible but lack collision and supported props
+
+**Status:** fixed-scoped-local-native-and-GPU-verified · **Affected:** Castle stations and wall bookshelves
+
+Service desks/cabinets are rendered independently of collision. Some source library shelves face walls; several display items use guessed heights.
+
+Cause / uncertainty: Independently authored legacy geometry, rendering and display coordinates.
+
+Fix / next action: Share measured service placements between collision and rendering; correct shelf orientation; remove obsolete store dressing; refit supported accents.
+
+Evidence and verification: CastleRebuildTest and focused Castle regressions;26 actual RTX5070 captures in castle-survey/rebuild; native reopen verification castle-native-rebuild.json:220671 triangles,706 packed images. Full manifest and installed acceptance remain separate.
+
+Older-map obligation: Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations.
+
+### DEV-141 — GPU packaging can overwrite fresh code with stale resource bytecode
+
+**Status:** fixed-local-exact-CI-pending · **Affected:** gpu-client packaged builds from a previously compiled build/classes directory
+
+A second incremental GPU build restored old CastleHubMap collision while retaining newer store code; the solid-service-fixture regression failed despite the source repair.
+
+Cause / uncertainty: gpu-client/pom.xml copied **/*.class from build/classes as resources into target/classes. Some unchanged sources were not then recompiled.
+
+Fix / next action: Exclude bytecode from GPU resources. Keep actual model/texture resources, compile all Java from source, clean-rebuild and repeat physical Castle checks.
+
+Evidence and verification: build/castle-rebuild-compile.log and CastleRebuildTest before/after the clean source build. Source-level remedy matches the independent performance branch; no optimization flags are enabled.
+
+Older-map obligation: Any GPU build using mixed resource bytecode needs a fresh source rebuild; this does not certify installed gameplay or performance.
 
 ## Required audit categories
 
@@ -1597,173 +1931,3 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
-
-## DEV-115 — Water lacked visible editor handles and saved map ownership
-
-**Status:** fixed-scoped
-
-Five actual footprints, placement icon, live settings, multi-edit, handles, edge/rim snapping, atomic save/export and immutable map revisions added. Portable tests and actual OpenGL UI copy/pill/resize/rotate/undo/save passed.
-
-Older-map obligation: Review basin, boat exclusions and player blockers separately on every map.
-
-## DEV-116 — GPU weather ground coatings and inspector incomplete
-
-**Status:** partially-fixed-audit-open
-
-Actual weather preview inspector and castle precipitation pass added. Core rain/snow/wind/sky/lightning tests pass. Source audit confirms GPU faces bypass software ground wet/snow coating; roof-exposure audit remains open.
-
-Older-map obligation: Do not infer GPU weather parity from software checks.
-
-## DEV-117 — No visible ambient/environmental sound editor volumes
-
-**Status:** implementation-in-progress
-
-Existing room and weather soundscapes have no selectable visible volume inspector. Add placement, playback, source gain/range/falloff and save/runtime integration per user request.
-
-Older-map obligation: Audit existing beds to avoid duplicate loops; authored ambience must remain separate from ghost/evidence events.
-
-## DEV-118 — Opening pan rejected fully outdoor native maps
-
-**Status:** fixed-scoped · 26October2026
-
-LevelOpeningFlyover required indoor bounds; Hollow Creek has outdoor ownership zones only. Expanded all-ten-map regression reproduced IllegalStateException before repair.
-
-Action: Share finite indoor/outdoor framing with the software fallback; exclude van/approach zones and avoid presenting outdoor zones as rectangular buildings.
-
-Evidence: LevelOpeningFlyoverTest now covers all10maps, finite fallback rendering and exact player handoff.
-
-Older-map audit: Audit each future map camera path, framing, support and final view; no full path collision or human acceptance inferred.
-
-## DEV-119 — Long prototype halls had no effective entrance lighting
-
-**Status:** fixed-scoped · 26October2026
-
-Actual GPU lit and blackout images were identical in Mansion, Prison, Asylum, Academy and College; Church entry was nearly black. A single central fixture was beyond range of the actual entry.
-
-Action: Place repeated physical fittings at up to7m spacing in unfinished indoor prototypes, preserving refined House/Farmhouse/School fixture layouts.
-
-Evidence: AllMapLightingCoverageTest passes nine indoor entries and blackout; actual GPU before/after captured for six prototypes.
-
-Older-map audit: Review every room, ceiling attachment, stairs/openings, switch circuit and all joins. Entry samples are not whole-map leak acceptance.
-
-## DEV-120 — Native outdoor aerial review has excessive water cost and obscuring fog
-
-**Status:** open-profile-and-art-review · 26October2026
-
-Hollow Creek aerial/water captures take minutes; aerial site detail is heavily obscured by fog.
-
-Action: Record actual scripted captures and keep real-time performance and aerial composition open. Do not change global fog or hide the native map to force a pass.
-
-Evidence: 480x300 first capture and320x200 isolated rerun; no hardware frame-time benchmark or acceptance claimed.
-
-Older-map audit: Profile water, lighting, geometry and camera effects separately for every future outdoor/water map before mission unlock.
-
-## DEV-121 — Capture JAR was rebuilt while an earlier worker still used it
-
-**Status:** fixed-tooling-workflow · 26October2026
-
-An overlapping Maven build replaced a running capture JAR, causing a lazy LWJGL class load error at shutdown. Captured frames alone did not prove a clean run.
-
-Action: Run subsequent captures from immutable copied JARs. Castle rerun completed exit0; repeat native capture from a separate immutable copy.
-
-Evidence: build/map-audit-captures.log retains failure; map-audit-castle.log clean; native rerun recorded separately.
-
-Older-map audit: Never overwrite a running validation executable; record process completion separately from valid captured frame hashes.
-
-## DEV-122 — Van upper racks dark under narrow ceiling beams
-
-**Status:** fixed-scoped
-
-Three physically mounted broad diffusers on vehicle supply; all10map placements tested.
-
-Evidence: van-castle-repair.json. Older-map obligation: inspect all placements and doors.
-
-## DEV-123 — Castle leaves vanish when open and ignore floor elevation
-
-**Status:** fixed-scoped-human-review-pending
-
-Paired fitted leaves remain on hinges at actual storey height; collision and shadows follow them. Portcullis also uses slot bottom.
-
-Evidence: van-castle-repair.json. Older-map obligation: inspect all placements and doors.
-
-## DEV-124 — Van metal textures show banding
-
-**Status:** partial-runtime-refinement-human-review-pending ·27October2026
-
-The procedural IRON tile explicitly darkened every eighth X pixel by17levels. Repeated UVs produced bands on large van panels. Replace this painted-in groove with restrained periodic two-dimensional wear and sparse pits. Preserve all15other atlas tiles, material IDs, UVs and source geometry. Renderer, fixture and van class bytes are identical in the matched builds.
-
-Evidence: groove phase contrast16.652→0.057; MetalMaterialRefinementTest and MaterialAtlasTest pass;12actual GPU before/after van views, immutable binaries and hashed capture metadata in metal-refinement-2026-10-27.json.
-
-Older-map audit: native GLB metal textures, remaining roof/interpolation bands and every in-room application still require review. This is not whole-map or hardware-performance acceptance.
-
-## DEV-125 — Recorder CI assumed every WHISPER action uses the WHISPER audio cue
-
-**Status:** fixed-scoped-full-CI-pending
-
-Use the actual host-authored HAUNT entry cue for received sound and recorded clip assertions. doorway_sigh legitimately uses HORROR_STING_A. Preserve real recorder transactions, playback, reconnect and privacy checks; no runtime evidence/audio changes.
-
-Evidence: focused real socket recorder test passes; baseline full run40296444087 failed246/247. Full CI pending.
-
-## DEV-126 — Saved mission-board browser would reorder persistent campaign chapters
-
-**Status:** fixed-local-full-CI-pending
-
-Keep the original 22 chapter IDs in explicit campaign order; use alphabetic order only for browsing.
-
-Evidence: MissionBoardIntegrationTest and CampaignStoryProgressionTest pass locally; exact-SHA full CI pending.
-
-Older-map obligation: Preserve every saved chapter ordinal and prototype availability when adding or renaming locations.
-
-## DEV-127 — Saved mission-board labels omitted the newer Hollow Creek authoring enum
-
-**Status:** fixed-local-full-CI-pending
-
-Resolve the authoring enum to its existing WLD-02 lore record without making prototype geometry playable.
-
-Evidence: MissionBoardIntegrationTest iterates every authoring enum and verifies Hollow Creek remains locked; SiteSelectionTest passes locally.
-
-Older-map obligation: Preserve every saved chapter ordinal and prototype availability when adding or renaming locations.
-
-## DEV-128 — GPU diagnostics crashed after successful captures during abrupt JVM shutdown
-
-**Status:** fixed-local-exact-CI-pending
-
-Stop and join the owning GPU worker before exiting; teardown failures must fail acceptance.
-
-Evidence: Source 417980e6: three RTX 5070 diagnostic runs exited 0, 56.109/56.125/55.359 seconds; raw baseline failure and repeat-run logs retained under performance/hardware/2026-10-26.
-
-Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
-
-## DEV-129 — Hunter unit fixture mixed active Hallow into independent Focus-expiry comparison
-
-**Status:** fixed-local-exact-CI-pending
-
-Retain every original assertion, isolate the Focus fixture, and additionally verify shared Hallow protection and expiry.
-
-Evidence: HunterDisciplineTest, HunterClassIntegrationTest and SoloClassAbilityTest pass locally.
-
-Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
-
-## DEV-130 — Hunter feature branch rejected ghost reconnect by assigning a hunter discipline
-
-**Status:** fixed-local-exact-CI-pending
-
-Guard class restoration to hunter seats, preserve ghost resume and host ownership, and reset fresh lobby occupant class authority to its own visual choice.
-
-Evidence: LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy.
-
-Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
-
-## DEV-136 — Production light sampler bypassed receiving-side architectural join guard
-
-**Status:** fixed-scoped-runtime-diagnostic-verified ·28October2026
-
-Actual scalar sampler added4.613energy through a solid wall endpoint. Grazing GPU view showed2260bright pixels from an exterior diagnostic source despite closed geometry.
-
-Cause: ArchitecturalLightOcclusion.visible existed and its standalone tests passed, but production scalar and normal sampling never called it. Prop self-shadow endpoint bias could move the receiving endpoint across a wall. Shadow key also omitted receiving room.
-
-Action: Use full receiving-side architectural check before prop bias for non-native investigation geometry; scope scalar shadow cache by receiver. Preserve Castle visibility and native triangle paths.
-
-Evidence: FixtureJoinIntegrationTest fails on7f1515d0 at4.8vs0.187ambient and passes after repair, including real door open/close invalidation and same-side light control. AllMapArchitecturalJoinTest6789closed-boundary rays across9indoor maps.18matched actualGPUdiagnostic images: corrected exterior-source frames exactly equal source-off frames; same-side interior source remains lit.
-
-Older-map audit: All generated-map joins still need moving-camera/human review. Native physical meshes, roof joins and every portal state require independent evidence. No full map, LAN or30FPS acceptance inferred.

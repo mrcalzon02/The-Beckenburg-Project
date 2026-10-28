@@ -7,7 +7,7 @@ public final class CastleOrientation {
         "Find the contract board in the north great hall and press E.",
         "Find the wardrobe to the east and press E to change discipline.",
         "Inspect either equipment armory station in the west wing.",
-        "Press L to operate the castle lighting controls."
+        "Face a wall light switch and press E or L to operate its room circuit."
     };
     private int step=-1;
     public void start(){step=0;}

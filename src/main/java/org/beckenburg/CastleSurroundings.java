@@ -29,5 +29,37 @@ public final class CastleSurroundings {
 
  public static List<RoadPoint> road(){return List.of(new RoadPoint(15.5,34.4),new RoadPoint(16,65),new RoadPoint(26,95),new RoadPoint(5,145));}
  public static List<Tree> trees(){List<Tree> result=new ArrayList<>();for(int i=0;i<20;i++){result.add(new Tree(-8-i%3*3,2+i*2.5,.85+(i%4)*.09));result.add(new Tree(54+i%3*3,-3+i*2.7,.9+(i%3)*.1));}for(int i=0;i<19;i++){double x=-8+i*3.5;result.add(new Tree(x,-10-(i%3)*3,1.1));if(x<10||x>22)result.add(new Tree(x,45+(i%3)*3,1.0));}return List.copyOf(result);}
- public static List<Ridge> mountains(double cx,double cz){List<Ridge> result=new ArrayList<>();for(int ring=0;ring<2;ring++)for(int i=0;i<18;i++){double a=i*Math.PI/9,b=(i+1)*Math.PI/9,r=76+ring*29,h=30+9*Math.sin(i*2.3+ring)+ring*11;result.add(new Ridge(cx+Math.cos(a)*r,cz+Math.sin(a)*r,cx+Math.cos(b)*r,cz+Math.sin(b)*r,cx+Math.cos((a+b)/2)*(r+8),cz+Math.sin((a+b)/2)*(r+8),h,12+6*Math.sin(i*1.7+ring),12+6*Math.sin((i+1)*1.7+ring)));}return List.copyOf(result);}
+ public static final double TERRAIN_STEP=8;
+ /** Exact triangle interpolation shared by the terrain and all background roots. */
+ private static double vertexHeight(double x,double z){
+  double r=Math.hypot(x-22,z-18),blend=Math.max(0,Math.min(1,(r-34)/90));
+  double roadDistance=Double.POSITIVE_INFINITY;var path=road();
+  for(int i=0;i<path.size()-1;i++){
+   var a=path.get(i);var b=path.get(i+1);double dx=b.x()-a.x(),dz=b.z()-a.z();
+   double t=Math.max(0,Math.min(1,((x-a.x())*dx+(z-a.z())*dz)/(dx*dx+dz*dz)));
+   roadDistance=Math.min(roadDistance,Math.hypot(x-a.x()-t*dx,z-a.z()-t*dz));
+  }
+  double corridor=Math.max(0,Math.min(1,(roadDistance-12)/9));
+  return -.65+blend*corridor*(2.5+2.0*Math.sin(x*.027)+1.4*Math.cos(z*.031)+1.1*Math.sin((x+z)*.019));
+ }
+ public static double groundHeight(double x,double z){
+  double sx=Math.floor(x/TERRAIN_STEP)*TERRAIN_STEP,sz=Math.floor(z/TERRAIN_STEP)*TERRAIN_STEP;
+  double fx=(x-sx)/TERRAIN_STEP,fz=(z-sz)/TERRAIN_STEP;
+  double a=vertexHeight(sx,sz),b=vertexHeight(sx+TERRAIN_STEP,sz),c=vertexHeight(sx+TERRAIN_STEP,sz+TERRAIN_STEP),d=vertexHeight(sx,sz+TERRAIN_STEP);
+  return fx>=fz?a+(b-a)*fx+(c-b)*fz:a+(c-d)*fx+(d-a)*fz;
+ }
+ public static boolean landscapeContains(double x,double z){
+  double dx=x-22,dz=z-18,a=Math.atan2(dz,dx);
+  return Math.hypot(dx,dz)<168+19*Math.sin(a*3)+14*Math.cos(a*5);
+ }
+ public static List<Ridge> mountains(double cx,double cz){
+  List<Ridge> out=new ArrayList<>();
+  for(int ring=0;ring<2;ring++)for(int i=0;i<18;i++){
+   double a=i*Math.PI/9,b=(i+1)*Math.PI/9,r=155+ring*58;
+   double left=16+ring*9+7*Math.sin(i*.8+ring),right=16+ring*9+7*Math.sin((i+1)*.8+ring);
+   out.add(new Ridge(cx+Math.cos(a)*r,cz+Math.sin(a)*r,cx+Math.cos(b)*r,cz+Math.sin(b)*r,
+    cx+Math.cos((a+b)/2)*(r+3),cz+Math.sin((a+b)/2)*(r+3),(left+right)*.5+3,left,right));
+  }
+  return List.copyOf(out);
+ }
 }

@@ -14,9 +14,9 @@ public final class CastleHubDecor {
     public static List<CastleHubMap.Furnishing> furnishings(){return FURNISHINGS;}
     private static final List<CastleHubMap.Furnishing> FURNISHINGS=List.of(
         // Armoury: storage, display and evidence cabinets
-        f("shelf_mp_6",1.35,3.5,1.30,Math.PI/2,.27,.60),
-        f("shelf_mp_6",1.35,6.1,1.30,Math.PI/2,.27,.60),
-        f("shelf_mp_6",1.35,8.4,1.30,Math.PI/2,.27,.60),
+        f("shelf_mp_6",1.35,3.5,1.30,-Math.PI/2,.27,.60),
+        f("shelf_mp_6",1.35,6.1,1.30,-Math.PI/2,.27,.60),
+        f("shelf_mp_6",1.35,8.4,1.30,-Math.PI/2,.27,.60),
         f("display_cabinet_mp_2",7.7,1.48,.95,0,.65,.30),
         f("display_cabinet_mp_2",7.7,10.65,.95,Math.PI,.65,.30),
         // Contract and reading room
@@ -43,7 +43,7 @@ public final class CastleHubDecor {
         f("armchair_1",22.3,20.0,.77,0,.57,.42),
         f("wardrobe_mp_1",25.8,13.7,.75,Math.PI/2,.27,.52),
         // East archive and service wings - furniture, never free field equipment.
-        f("shelf_mp_6",29.20,5.4,1.30,Math.PI/2,.27,.60),
+        f("shelf_mp_6",29.20,5.4,1.30,-Math.PI/2,.27,.60),
         f("shelf_mp_6",42.35,6.0,1.30,Math.PI/2,.27,.60),
         f("display_cabinet_mp_2",32.1,13.1,.92,0,.57,.31),
         f("dinner_table_1",36.0,11.8,.87,0,.81,.53),
@@ -62,9 +62,9 @@ public final class CastleHubDecor {
      * 3.4m upper deck and share a height-aware collision registry.
      */
     public static final List<CastleHubMap.Furnishing> UPPER_FURNISHINGS=List.of(
-        f("shelf_mp_6",11.5,3.8,1.25,Math.PI/2,.28,.57),
+        f("shelf_mp_6",11.5,3.8,1.25,-Math.PI/2,.28,.57),
         f("shelf_mp_6",18.3,3.8,1.25,Math.PI/2,.28,.57),
-        f("shelf_mp_6",11.5,8.1,1.25,Math.PI/2,.28,.57),
+        f("shelf_mp_6",11.5,8.1,1.25,-Math.PI/2,.28,.57),
         f("dinner_table_1",14.6,5.6,.85,0,.73,.47),
         f("chair_mp_5",13.1,7.2,.90,0,.33,.35),
         f("chair_mp_5",16.1,7.2,.90,0,.33,.35),
@@ -124,9 +124,7 @@ public final class CastleHubDecor {
         public boolean attached(CastleHubMap map){
             if(mount==Mount.CEILING)
                 return !map.solid((int)Math.floor(x),(int)Math.floor(z))
-                    &&!map.outside(x,z)&&CastleHubArchitecturalPlan.roofedAt(x,z)
-                    &&(Math.abs(y-3.38)<.08
-                        ||Math.abs(y-6.78)<.08&&CastleHubArchitecturalPlan.upperWalkable(x,z));
+                    &&!map.outside(x,z)&&Math.abs(y-CastleRooms.mountHeight(x,z,y>4))<.025;
             return CastleHubArchitecturalPlan.mountingWall(x,y,z,yaw);
         }
     }
@@ -139,7 +137,7 @@ public final class CastleHubDecor {
     private static Light sconce(double x,double z,double yaw){
         return new Light("lamp_3_on","lamp_3_off",x,2.24,z,.72,yaw,Mount.WALL);
     }
-    public static final List<Light> LIGHTS=List.of(
+    private static final List<Light> LEGACY_LIGHTS=List.of(
         // Different historical lamp families, fitted flush to stone-vault ceilings.
         ceiling("ceiling_lamp_1",5.0,5.5,.90),
         ceiling("ceiling_lamp_4",13.5,5.2,.67),
@@ -176,20 +174,51 @@ public final class CastleHubDecor {
         ceiling("ceiling_lamp_1",39.0,29.0,.82),
         upperCeiling("ceiling_lamp_1",13.5,5.0,.82),
         upperCeiling("ceiling_lamp_4",16.7,8.7,.64));
+    /** Refit existing mounts, then fill every room and the exterior circulation. */
+    public static final List<Light> LIGHTS=buildLights();
+    private static List<Light> buildLights(){
+        var out=new ArrayList<Light>();
+        for(var l:LEGACY_LIGHTS)out.add(l.mount()==Mount.CEILING?
+            new Light(l.on(),l.off(),l.x(),CastleRooms.mountHeight(l.x(),l.z(),l.y()>4),l.z(),l.scale(),l.yaw(),l.mount()):l);
+        for(var r:CastleRooms.ALL){
+            if(r.outside())continue;
+            for(double x=r.x0()+2;x<r.x1()-1;x+=4.0)
+                for(double z=r.z0()+2;z<r.z1()-1;z+=4.0){
+                    double y=r.ceiling()-CastleRooms.SLAB,px=x,pz=z;
+                    if(out.stream().anyMatch(l->Math.abs(l.y()-y)<.1&&Math.hypot(l.x()-px,l.z()-pz)<2.8))continue;
+                    out.add(new Light("ceiling_lamp_1_on","ceiling_lamp_1_off",x,y,z,.85,0,Mount.CEILING));
+                }
+        }
+        for(double z:new double[]{14,21,28}){
+            out.add(sconce(10.73,z,-Math.PI/2));out.add(sconce(20.27,z,Math.PI/2));
+        }
+        out.add(sconce(12,33.77,0));out.add(sconce(19,33.77,0));
+        return List.copyOf(out);
+    }
     public record Switch(double x,double y,double z,double yaw){}
     public static final List<Switch> SWITCHES=List.of(
-        new Switch(10.30,1.45,8.75,Math.PI/2),
-        new Switch(10.70,1.45,8.75,-Math.PI/2),
-        new Switch(20.70,1.45,14.0,-Math.PI/2));
+        new Switch(10.27,1.20,8.75,Math.PI/2),
+        new Switch(10.73,1.20,3.0,-Math.PI/2),
+        new Switch(19.73,1.20,2.5,-Math.PI/2),
+        new Switch(10.27,1.20,14,Math.PI/2),
+        new Switch(10.73,1.20,19,-Math.PI/2),
+        new Switch(20.73,1.20,14,-Math.PI/2),
+        new Switch(28.73,1.20,9,-Math.PI/2),
+        new Switch(28.73,1.20,26.0,-Math.PI/2),
+        new Switch(10.73,4.60,6.0,-Math.PI/2));
     /** Players must stand on traversable ground and actually look at a switch. */
     public static Switch aimed(CastleHubMap map,double x,double z,double yaw){
-        if(!map.traversable(x,z)||!Double.isFinite(yaw))return null;
+        return aimed(map,x,0,z,yaw);
+    }
+    public static Switch aimed(CastleHubMap map,double x,double elevation,double z,double yaw){
+        if(!map.traversable(x,z,elevation)||!Double.isFinite(yaw))return null;
         Switch best=null;double alignment=.77;
         for(Switch s:SWITCHES){
+            if(Math.abs(s.y()-(elevation+1.2))>.7)continue;
             double dx=s.x()-x,dz=s.z()-z,d=Math.hypot(dx,dz);
             if(d<.3||d>2.1)continue;
             double forward=(dx*Math.sin(yaw)+dz*Math.cos(yaw))/d;
-            if(forward>alignment){alignment=forward;best=s;}
+            if(forward>alignment&&FixtureLighting.castleRayClear(map,x,elevation+1.62,z,s.x(),s.y(),s.z())){alignment=forward;best=s;}
         }
         return best;
     }

@@ -19,6 +19,7 @@ for path in sorted(set(paths)):
     kind='Development review'
     if '/performance/hardware/' in path:kind='Runtime GPU diagnostic'
     elif '/fixture-join-diagnostic/' in path:kind='Runtime lighting diagnostic'
+    elif '/castle-survey/' in path:kind='Runtime GPU capture'
     elif '/lighting-camera-audit/' in path or '/van-castle-repair/' in path or '/metal-refinement/' in path:kind='Runtime capture'
     elif '/water-editor/' in path:kind='Editor UI verification'
     elif 'player-webm-playback-proof' in path:kind='Browser playback verification'

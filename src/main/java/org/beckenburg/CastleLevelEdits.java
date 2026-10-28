@@ -229,7 +229,7 @@ public final class CastleLevelEdits {
         for(var deck:CastleHubArchitecturalPlan.decks()){
             String id="floor"+surfaceId++;
             surfaces.put(id,new Surface(id,Kind.FLOOR,
-                deck.x0(),deck.z0(),deck.x1(),deck.z1(),deck.height(),.16,deck.material()));
+                deck.x0(),deck.z0(),deck.x1(),deck.z1(),deck.height(),CastleRooms.SLAB,deck.material()));
         }
         surfaceId=0;
         for(var roof:CastleHubArchitecturalPlan.roofs()){
@@ -242,7 +242,7 @@ public final class CastleLevelEdits {
         final int LEGACY_LIGHT_COUNT=17;
         int n=0;
         for(var f:CastleHubDecor.furnishings())
-            props.put("ground"+n,fromFurnishing("ground"+n++,f,false,0));
+            { int id=n++;if(f.x()<28.5||f.z()<17.5)props.put("ground"+id,fromFurnishing("ground"+id,f,false,0)); }
         n=0;
         for(var f:CastleHubDecor.UPPER_FURNISHINGS)
             props.put("upper"+n,fromFurnishing("upper"+n++,f,true,
@@ -254,7 +254,7 @@ public final class CastleLevelEdits {
             boolean chandelier=f.on().contains("ceiling_lamp_4");
             lamps.put(id,new Lamp(id,f.on(),f.off(),f.x(),f.y(),f.z(),
                 f.scale(),f.yaw(),f.mount(),chandelier?10.5:9.8,
-                chandelier?3.2:2.5));
+                chandelier?4.2:4.0));
         }
         for(var station:CastleHubMap.Station.values())
             stations.put(station,new double[]{station.x,station.z});
@@ -297,7 +297,7 @@ public final class CastleLevelEdits {
     }
     public synchronized void removeProp(String id){if(props.remove(id)!=null)revision++;}
     public synchronized void put(Lamp light){
-        Objects.requireNonNull(light);if(lamps.size()>=96&&!lamps.containsKey(light.id()))
+        Objects.requireNonNull(light);if(lamps.size()>=192&&!lamps.containsKey(light.id()))
             throw new IllegalStateException("Castle light limit exceeded");
         lamps.put(light.id(),light);revision++;
     }
@@ -348,6 +348,11 @@ public final class CastleLevelEdits {
         try(InputStream in=Files.newInputStream(path)){p.load(in);}
         if(!"1".equals(p.getProperty("format")))
             throw new IOException("Unsupported castle editor document version");
+        if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){
+            Path backup=path.resolveSibling(path.getFileName()+".before-structure-v2.properties");
+            if(!Files.exists(backup))Files.copy(path,backup);
+            defaults();save();return;
+        }
         try{
             Map<String,Prop> incomingProps=new LinkedHashMap<>();
             Map<String,Lamp> incomingLights=new LinkedHashMap<>();
@@ -364,7 +369,7 @@ public final class CastleLevelEdits {
                     throw new IllegalArgumentException("Duplicate prop "+id);
             }
             count=integer(p,"lamps.count");
-            if(count<0||count>96)throw new IllegalArgumentException("Too many lights");
+            if(count<0||count>192)throw new IllegalArgumentException("Too many lights");
             for(int i=0;i<count;i++){
                 String k="lamps."+i+".",id=p.getProperty(k+"id");
                 var lamp=new Lamp(id,p.getProperty(k+"on"),p.getProperty(k+"off"),
@@ -437,7 +442,7 @@ public final class CastleLevelEdits {
                     String id="lighting2_"+(i-17);
                     incomingLights.putIfAbsent(id,new Lamp(id,fixture.on(),fixture.off(),
                         fixture.x(),fixture.y(),fixture.z(),fixture.scale(),fixture.yaw(),
-                        fixture.mount(),chandelier?10.5:9.8,chandelier?3.2:2.5));
+                        fixture.mount(),chandelier?10.5:9.8,chandelier?4.2:4.0));
                 }
             }
             // Older authored castle saves receive only newly introduced
@@ -450,7 +455,7 @@ public final class CastleLevelEdits {
                     String id="rampart2_"+(index-3);
                     parsed.putIfAbsent(id,new Surface(id,Kind.FLOOR,
                         deck.x0(),deck.z0(),deck.x1(),deck.z1(),
-                        deck.height(),.16,deck.material()));
+                        deck.height(),CastleRooms.SLAB,deck.material()));
                 }
             }
             // Relocate one proven wall-penetrating armchair in older castle
@@ -541,6 +546,7 @@ public final class CastleLevelEdits {
     /** Atomic replacement prevents partial save data if the app is interrupted. */
     public synchronized void save()throws IOException{
         Properties p=new Properties();p.setProperty("format","1");
+        p.setProperty("structure.layout","2");
         p.setProperty("lighting.layout","2");
         p.setProperty("fortification.layout","2");
         p.setProperty("gate.layout","2");

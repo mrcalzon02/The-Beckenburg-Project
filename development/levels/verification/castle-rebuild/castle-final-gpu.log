@@ -1,0 +1,390 @@
+Access is denied.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.beckenburg:beckenburg-gpu >--------------------
+[INFO] Building beckenburg-gpu 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- build-helper:3.6.1:add-source (game-engine) @ beckenburg-gpu ---
+[INFO] Source directory: C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Map-Materials\gpu-client\..\src\main\java added.
+[INFO] Source directory: C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Map-Materials\gpu-client\..\water-module\src\main\java added.
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ beckenburg-gpu ---
+[INFO] Copying 23 resources from ..\assets\runtime\mission-board to target\classes\org\beckenburg\mission-board
+[INFO] Copying 1 resource from ..\assets\runtime\sounds to target\classes\org\beckenburg\sounds
+[INFO] skip non existing resourceDirectory C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Map-Materials\gpu-client\..\assets\runtime\water
+[INFO] skip non existing resourceDirectory C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Map-Materials\gpu-client\..\assets\runtime\water-imports
+[INFO] Copying 2 resources from ..\water-module\src\main\resources to target\classes
+[INFO] Copying 1245 resources from ..\build\classes to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ beckenburg-gpu ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ beckenburg-gpu ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ beckenburg-gpu ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ beckenburg-gpu ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ beckenburg-gpu ---
+[INFO] 
+[INFO] --- shade:3.6.1:shade (default) @ beckenburg-gpu ---
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-linux-arm64.jar, lwjgl-jemalloc-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/jemalloc/libjemalloc.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-macos.jar define 1 overlapping resource: 
+[WARNING]   - macos/x64/org/lwjgl/stb/liblwjgl_stb.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-windows.jar, lwjgl-openal-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/openal/OpenAL.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-linux-arm32.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/liblwjgl.so.git
+[WARNING]   - linux/arm32/org/lwjgl/liblwjgl.so
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-windows-x86.jar, lwjgl-stb-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/stb/lwjgl_stb.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-macos.jar, lwjgl-stb-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/stb/liblwjgl_stb.dylib.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-linux.jar, lwjgl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/liblwjgl.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-windows.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/jemalloc/jemalloc.dll.git
+[WARNING]   - windows/x64/org/lwjgl/jemalloc/jemalloc.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-macos.jar, lwjgl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/liblwjgl.dylib.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3.jar define 59 overlapping class and resource: 
+[WARNING]   - META-INF/windows/arm64/org/lwjgl/stb/lwjgl_stb.dll.sha1
+[WARNING]   - org.lwjgl.stb.LibSTB
+[WARNING]   - org.lwjgl.stb.STBDXT
+[WARNING]   - org.lwjgl.stb.STBEasyFont
+[WARNING]   - org.lwjgl.stb.STBIEOFCallback
+[WARNING]   - org.lwjgl.stb.STBIEOFCallback$Container
+[WARNING]   - org.lwjgl.stb.STBIEOFCallbackI
+[WARNING]   - org.lwjgl.stb.STBIIOCallbacks
+[WARNING]   - org.lwjgl.stb.STBIIOCallbacks$Buffer
+[WARNING]   - org.lwjgl.stb.STBIReadCallback
+[WARNING]   - 49 more...
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-windows.jar, lwjgl-opengl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/opengl/lwjgl_opengl.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-macos-arm64.jar, lwjgl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/liblwjgl.dylib.sha1
+[WARNING] BeckenburgGPU.jar, gdx-jnigen-loader-2.5.2.jar define 5 overlapping classes: 
+[WARNING]   - com.badlogic.gdx.utils.Architecture
+[WARNING]   - com.badlogic.gdx.utils.Architecture$Bitness
+[WARNING]   - com.badlogic.gdx.utils.Os
+[WARNING]   - com.badlogic.gdx.utils.SharedLibraryLoadRuntimeException
+[WARNING]   - com.badlogic.gdx.utils.SharedLibraryLoader
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-macos.jar, lwjgl-opengl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/opengl/liblwjgl_opengl.dylib.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-linux-arm32.jar, lwjgl-openal-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/openal/libopenal.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-macos-arm64.jar, lwjgl-openal-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/openal/libopenal.dylib.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-linux-arm64.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/jemalloc/libjemalloc.so.git
+[WARNING]   - linux/arm64/org/lwjgl/jemalloc/libjemalloc.so
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-macos.jar, lwjgl-openal-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/openal/libopenal.dylib.sha1
+[WARNING] BeckenburgGPU.jar, gdx-backend-lwjgl3-1.14.2.jar define 75 overlapping classes: 
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.DefaultLwjgl3Input
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.DefaultLwjgl3Input$1
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.DefaultLwjgl3Input$2
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.DefaultLwjgl3Input$3
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.DefaultLwjgl3Input$4
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.DefaultLwjgl3Input$5
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application$1
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application$GLDebugMessageSeverity
+[WARNING]   - com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationBase
+[WARNING]   - 65 more...
+[WARNING] BeckenburgGPU.jar, jlayer-1.0.1-gdx.jar define 32 overlapping classes and resources: 
+[WARNING]   - META-INF/maven/com.badlogicgames.jlayer/jlayer/pom.properties
+[WARNING]   - META-INF/maven/com.badlogicgames.jlayer/jlayer/pom.xml
+[WARNING]   - javazoom.jl.decoder.BitReserve
+[WARNING]   - javazoom.jl.decoder.Bitstream
+[WARNING]   - javazoom.jl.decoder.BitstreamException
+[WARNING]   - javazoom.jl.decoder.Crc16
+[WARNING]   - javazoom.jl.decoder.DecoderException
+[WARNING]   - javazoom.jl.decoder.FrameDecoder
+[WARNING]   - javazoom.jl.decoder.Header
+[WARNING]   - javazoom.jl.decoder.JavaLayerException
+[WARNING]   - 22 more...
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-windows-x86.jar define 1 overlapping resource: 
+[WARNING]   - windows/x86/org/lwjgl/stb/lwjgl_stb.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-macos-arm64.jar, lwjgl-jemalloc-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/jemalloc/libjemalloc.dylib.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-macos-arm64.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/jemalloc/libjemalloc.dylib.git
+[WARNING]   - macos/arm64/org/lwjgl/jemalloc/libjemalloc.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-linux-arm64.jar, lwjgl-opengl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/opengl/liblwjgl_opengl.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-linux.jar define 1 overlapping resource: 
+[WARNING]   - linux/x64/org/lwjgl/stb/liblwjgl_stb.so
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-macos.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/jemalloc/libjemalloc.dylib.git
+[WARNING]   - macos/x64/org/lwjgl/jemalloc/libjemalloc.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-macos-arm64.jar, lwjgl-glfw-3.3.3.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/glfw/libglfw.dylib.sha1
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/glfw/libglfw_async.dylib.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-macos.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/liblwjgl.dylib.git
+[WARNING]   - macos/x64/org/lwjgl/liblwjgl.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-windows-x86.jar, lwjgl-jemalloc-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/jemalloc/jemalloc.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-linux.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/glfw/libglfw.so.git
+[WARNING]   - linux/x64/org/lwjgl/glfw/libglfw.so
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-macos-arm64.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/liblwjgl.dylib.git
+[WARNING]   - macos/arm64/org/lwjgl/liblwjgl.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-linux.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/liblwjgl.so.git
+[WARNING]   - linux/x64/org/lwjgl/liblwjgl.so
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3.jar define 107 overlapping class and resource: 
+[WARNING]   - META-INF/windows/arm64/org/lwjgl/glfw/glfw.dll.sha1
+[WARNING]   - org.lwjgl.glfw.Callbacks
+[WARNING]   - org.lwjgl.glfw.EventLoop
+[WARNING]   - org.lwjgl.glfw.GLFW
+[WARNING]   - org.lwjgl.glfw.GLFW$Functions
+[WARNING]   - org.lwjgl.glfw.GLFWAllocateCallback
+[WARNING]   - org.lwjgl.glfw.GLFWAllocateCallback$Container
+[WARNING]   - org.lwjgl.glfw.GLFWAllocateCallbackI
+[WARNING]   - org.lwjgl.glfw.GLFWAllocator
+[WARNING]   - org.lwjgl.glfw.GLFWAllocator$Buffer
+[WARNING]   - 97 more...
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-linux-arm32.jar, lwjgl-jemalloc-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/jemalloc/libjemalloc.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-macos-arm64.jar define 1 overlapping resource: 
+[WARNING]   - macos/arm64/org/lwjgl/opengl/liblwjgl_opengl.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-linux.jar, lwjgl-openal-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/openal/libopenal.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-linux.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/openal/libopenal.so.git
+[WARNING]   - linux/x64/org/lwjgl/openal/libopenal.so
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-linux-arm32.jar define 1 overlapping resource: 
+[WARNING]   - linux/arm32/org/lwjgl/stb/liblwjgl_stb.so
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-windows-x86.jar, lwjgl-opengl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/opengl/lwjgl_opengl.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-windows.jar, lwjgl-glfw-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/glfw/glfw.dll.sha1
+[WARNING] BeckenburgGPU.jar, jorbis-0.0.17.jar define 48 overlapping classes and resources: 
+[WARNING]   - META-INF/maven/org.jcraft/jorbis/pom.properties
+[WARNING]   - META-INF/maven/org.jcraft/jorbis/pom.xml
+[WARNING]   - com.jcraft.jogg.Buffer
+[WARNING]   - com.jcraft.jogg.Packet
+[WARNING]   - com.jcraft.jogg.Page
+[WARNING]   - com.jcraft.jogg.StreamState
+[WARNING]   - com.jcraft.jogg.SyncState
+[WARNING]   - com.jcraft.jorbis.Block
+[WARNING]   - com.jcraft.jorbis.CodeBook
+[WARNING]   - com.jcraft.jorbis.CodeBook$DecodeAux
+[WARNING]   - 38 more...
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-windows-x86.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/lwjgl.dll.git
+[WARNING]   - windows/x86/org/lwjgl/lwjgl.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-macos-arm64.jar, lwjgl-stb-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/stb/liblwjgl_stb.dylib.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-linux.jar, lwjgl-jemalloc-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/jemalloc/libjemalloc.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3.jar define 84 overlapping class and resource: 
+[WARNING]   - META-INF/windows/arm64/org/lwjgl/openal/OpenAL.dll.sha1
+[WARNING]   - org.lwjgl.openal.AL
+[WARNING]   - org.lwjgl.openal.AL$1
+[WARNING]   - org.lwjgl.openal.AL$ICD
+[WARNING]   - org.lwjgl.openal.AL$ICDStatic
+[WARNING]   - org.lwjgl.openal.AL$ICDStatic$WriteOnce
+[WARNING]   - org.lwjgl.openal.AL10
+[WARNING]   - org.lwjgl.openal.AL11
+[WARNING]   - org.lwjgl.openal.ALC
+[WARNING]   - org.lwjgl.openal.ALC$1
+[WARNING]   - 74 more...
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-linux.jar, lwjgl-opengl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/opengl/liblwjgl_opengl.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-macos-arm64.jar define 4 overlapping resources: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/glfw/libglfw.dylib.git
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/glfw/libglfw_async.dylib.git
+[WARNING]   - macos/arm64/org/lwjgl/glfw/libglfw.dylib
+[WARNING]   - macos/arm64/org/lwjgl/glfw/libglfw_async.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-linux.jar, lwjgl-glfw-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/glfw/libglfw.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-windows.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/glfw/glfw.dll.git
+[WARNING]   - windows/x64/org/lwjgl/glfw/glfw.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3.jar define 338 overlapping classes and resources: 
+[WARNING]   - META-INF.versions.10.org.lwjgl.system.MathUtil
+[WARNING]   - META-INF.versions.16.org.lwjgl.system.MultiReleaseMemCopy
+[WARNING]   - META-INF.versions.9.org.lwjgl.VersionImpl
+[WARNING]   - META-INF.versions.9.org.lwjgl.system.CheckIntrinsics
+[WARNING]   - META-INF.versions.9.org.lwjgl.system.MultiReleaseTextDecoding
+[WARNING]   - META-INF.versions.9.org.lwjgl.system.StackWalkUtil
+[WARNING]   - META-INF/native-image/org.lwjgl/lwjgl/jni-config.json
+[WARNING]   - META-INF/native-image/org.lwjgl/lwjgl/native-image.properties
+[WARNING]   - META-INF/native-image/org.lwjgl/lwjgl/reflect-config.json
+[WARNING]   - META-INF/windows/arm64/org/lwjgl/lwjgl.dll.sha1
+[WARNING]   - 328 more...
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-macos-arm64.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/openal/libopenal.dylib.git
+[WARNING]   - macos/arm64/org/lwjgl/openal/libopenal.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-windows-x86.jar, lwjgl-glfw-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/glfw/glfw.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-windows.jar, lwjgl-stb-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/stb/lwjgl_stb.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-linux-arm32.jar, lwjgl-3.3.3-natives-linux-arm64.jar, lwjgl-3.3.3-natives-linux.jar, lwjgl-3.3.3-natives-macos-arm64.jar, lwjgl-3.3.3-natives-macos.jar, lwjgl-3.3.3-natives-windows-x86.jar, lwjgl-3.3.3-natives-windows.jar, lwjgl-3.3.3.jar, lwjgl-glfw-3.3.3-natives-linux-arm32.jar, lwjgl-glfw-3.3.3-natives-linux-arm64.jar, lwjgl-glfw-3.3.3-natives-linux.jar, lwjgl-glfw-3.3.3-natives-macos-arm64.jar, lwjgl-glfw-3.3.3-natives-macos.jar, lwjgl-glfw-3.3.3-natives-windows-x86.jar, lwjgl-glfw-3.3.3-natives-windows.jar, lwjgl-glfw-3.3.3.jar, lwjgl-jemalloc-3.3.3-natives-linux-arm32.jar, lwjgl-jemalloc-3.3.3-natives-linux-arm64.jar, lwjgl-jemalloc-3.3.3-natives-linux.jar, lwjgl-jemalloc-3.3.3-natives-macos-arm64.jar, lwjgl-jemalloc-3.3.3-natives-macos.jar, lwjgl-jemalloc-3.3.3-natives-windows-x86.jar, lwjgl-jemalloc-3.3.3-natives-windows.jar, lwjgl-jemalloc-3.3.3.jar, lwjgl-openal-3.3.3-natives-linux-arm32.jar, lwjgl-openal-3.3.3-natives-linux-arm64.jar, lwjgl-openal-3.3.3-natives-linux.jar, lwjgl-openal-3.3.3-natives-macos-arm64.jar, lwjgl-openal-3.3.3-natives-macos.jar, lwjgl-openal-3.3.3-natives-windows-x86.jar, lwjgl-openal-3.3.3-natives-windows.jar, lwjgl-openal-3.3.3.jar, lwjgl-opengl-3.3.3-natives-linux-arm32.jar, lwjgl-opengl-3.3.3-natives-linux-arm64.jar, lwjgl-opengl-3.3.3-natives-linux.jar, lwjgl-opengl-3.3.3-natives-macos-arm64.jar, lwjgl-opengl-3.3.3-natives-macos.jar, lwjgl-opengl-3.3.3-natives-windows-x86.jar, lwjgl-opengl-3.3.3-natives-windows.jar, lwjgl-opengl-3.3.3.jar, lwjgl-stb-3.3.3-natives-linux-arm32.jar, lwjgl-stb-3.3.3-natives-linux-arm64.jar, lwjgl-stb-3.3.3-natives-linux.jar, lwjgl-stb-3.3.3-natives-macos-arm64.jar, lwjgl-stb-3.3.3-natives-macos.jar, lwjgl-stb-3.3.3-natives-windows-x86.jar, lwjgl-stb-3.3.3-natives-windows.jar, lwjgl-stb-3.3.3.jar define 1 overlapping classes: 
+[WARNING]   - META-INF.versions.9.module-info
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-windows-x86.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/openal/OpenAL.dll.git
+[WARNING]   - windows/x86/org/lwjgl/openal/OpenAL.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-linux-arm32.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/jemalloc/libjemalloc.so.git
+[WARNING]   - linux/arm32/org/lwjgl/jemalloc/libjemalloc.so
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-linux-arm32.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/glfw/libglfw.so.git
+[WARNING]   - linux/arm32/org/lwjgl/glfw/libglfw.so
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-linux-arm32.jar, lwjgl-opengl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/opengl/liblwjgl_opengl.so.sha1
+[WARNING] BeckenburgGPU.jar, gdx-1.14.2.jar, gdx-backend-lwjgl3-1.14.2.jar, gdx-jnigen-loader-2.5.2.jar, gdx-platform-1.14.2-natives-desktop.jar, jlayer-1.0.1-gdx.jar, jorbis-0.0.17.jar, lwjgl-3.3.3-natives-linux-arm32.jar, lwjgl-3.3.3-natives-linux-arm64.jar, lwjgl-3.3.3-natives-linux.jar, lwjgl-3.3.3-natives-macos-arm64.jar, lwjgl-3.3.3-natives-macos.jar, lwjgl-3.3.3-natives-windows-x86.jar, lwjgl-3.3.3-natives-windows.jar, lwjgl-3.3.3.jar, lwjgl-glfw-3.3.3-natives-linux-arm32.jar, lwjgl-glfw-3.3.3-natives-linux-arm64.jar, lwjgl-glfw-3.3.3-natives-linux.jar, lwjgl-glfw-3.3.3-natives-macos-arm64.jar, lwjgl-glfw-3.3.3-natives-macos.jar, lwjgl-glfw-3.3.3-natives-windows-x86.jar, lwjgl-glfw-3.3.3-natives-windows.jar, lwjgl-glfw-3.3.3.jar, lwjgl-jemalloc-3.3.3-natives-linux-arm32.jar, lwjgl-jemalloc-3.3.3-natives-linux-arm64.jar, lwjgl-jemalloc-3.3.3-natives-linux.jar, lwjgl-jemalloc-3.3.3-natives-macos-arm64.jar, lwjgl-jemalloc-3.3.3-natives-macos.jar, lwjgl-jemalloc-3.3.3-natives-windows-x86.jar, lwjgl-jemalloc-3.3.3-natives-windows.jar, lwjgl-jemalloc-3.3.3.jar, lwjgl-openal-3.3.3-natives-linux-arm32.jar, lwjgl-openal-3.3.3-natives-linux-arm64.jar, lwjgl-openal-3.3.3-natives-linux.jar, lwjgl-openal-3.3.3-natives-macos-arm64.jar, lwjgl-openal-3.3.3-natives-macos.jar, lwjgl-openal-3.3.3-natives-windows-x86.jar, lwjgl-openal-3.3.3-natives-windows.jar, lwjgl-openal-3.3.3.jar, lwjgl-opengl-3.3.3-natives-linux-arm32.jar, lwjgl-opengl-3.3.3-natives-linux-arm64.jar, lwjgl-opengl-3.3.3-natives-linux.jar, lwjgl-opengl-3.3.3-natives-macos-arm64.jar, lwjgl-opengl-3.3.3-natives-macos.jar, lwjgl-opengl-3.3.3-natives-windows-x86.jar, lwjgl-opengl-3.3.3-natives-windows.jar, lwjgl-opengl-3.3.3.jar, lwjgl-stb-3.3.3-natives-linux-arm32.jar, lwjgl-stb-3.3.3-natives-linux-arm64.jar, lwjgl-stb-3.3.3-natives-linux.jar, lwjgl-stb-3.3.3-natives-macos-arm64.jar, lwjgl-stb-3.3.3-natives-macos.jar, lwjgl-stb-3.3.3-natives-windows-x86.jar, lwjgl-stb-3.3.3-natives-windows.jar, lwjgl-stb-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/MANIFEST.MF
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-windows.jar define 1 overlapping resource: 
+[WARNING]   - windows/x64/org/lwjgl/opengl/lwjgl_opengl.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-linux-arm64.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/liblwjgl.so.git
+[WARNING]   - linux/arm64/org/lwjgl/liblwjgl.so
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-linux.jar, lwjgl-stb-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/stb/liblwjgl_stb.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-macos.jar define 4 overlapping resources: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/glfw/libglfw.dylib.git
+[WARNING]   - META-INF/macos/x64/org/lwjgl/glfw/libglfw_async.dylib.git
+[WARNING]   - macos/x64/org/lwjgl/glfw/libglfw.dylib
+[WARNING]   - macos/x64/org/lwjgl/glfw/libglfw_async.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-linux-arm32.jar, lwjgl-glfw-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/glfw/libglfw.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-windows-x86.jar, lwjgl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/lwjgl.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-macos.jar define 1 overlapping resource: 
+[WARNING]   - macos/x64/org/lwjgl/opengl/liblwjgl_opengl.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-linux-arm64.jar, lwjgl-stb-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/stb/liblwjgl_stb.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-windows.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/openal/OpenAL.dll.git
+[WARNING]   - windows/x64/org/lwjgl/openal/OpenAL.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-macos.jar, lwjgl-glfw-3.3.3.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/glfw/libglfw.dylib.sha1
+[WARNING]   - META-INF/macos/x64/org/lwjgl/glfw/libglfw_async.dylib.sha1
+[WARNING] BeckenburgGPU.jar, gdx-platform-1.14.2-natives-desktop.jar define 8 overlapping resources: 
+[WARNING]   - gdx.dll
+[WARNING]   - gdx64.dll
+[WARNING]   - libgdx64.dylib
+[WARNING]   - libgdx64.so
+[WARNING]   - libgdxarm.so
+[WARNING]   - libgdxarm64.dylib
+[WARNING]   - libgdxarm64.so
+[WARNING]   - libgdxriscv64.so
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-windows.jar, lwjgl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/lwjgl.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-windows-x86.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/glfw/glfw.dll.git
+[WARNING]   - windows/x86/org/lwjgl/glfw/glfw.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-linux-arm64.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/openal/libopenal.so.git
+[WARNING]   - linux/arm64/org/lwjgl/openal/libopenal.so
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-windows-x86.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/jemalloc/jemalloc.dll.git
+[WARNING]   - windows/x86/org/lwjgl/jemalloc/jemalloc.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-linux-arm64.jar define 1 overlapping resource: 
+[WARNING]   - linux/arm64/org/lwjgl/stb/liblwjgl_stb.so
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-linux-arm32.jar, lwjgl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/liblwjgl.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-macos.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/openal/libopenal.dylib.git
+[WARNING]   - macos/x64/org/lwjgl/openal/libopenal.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-linux-arm32.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/openal/libopenal.so.git
+[WARNING]   - linux/arm32/org/lwjgl/openal/libopenal.so
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-linux-arm64.jar define 1 overlapping resource: 
+[WARNING]   - linux/arm64/org/lwjgl/opengl/liblwjgl_opengl.so
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-macos.jar, lwjgl-jemalloc-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/x64/org/lwjgl/jemalloc/libjemalloc.dylib.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-macos-arm64.jar, lwjgl-opengl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/macos/arm64/org/lwjgl/opengl/liblwjgl_opengl.dylib.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-linux-arm64.jar, lwjgl-glfw-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/glfw/libglfw.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-linux.jar define 1 overlapping resource: 
+[WARNING]   - linux/x64/org/lwjgl/opengl/liblwjgl_opengl.so
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-windows.jar, lwjgl-jemalloc-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/jemalloc/jemalloc.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3.jar define 477 overlapping class and resource: 
+[WARNING]   - META-INF/windows/arm64/org/lwjgl/opengl/lwjgl_opengl.dll.sha1
+[WARNING]   - org.lwjgl.opengl.AMDBlendMinmaxFactor
+[WARNING]   - org.lwjgl.opengl.AMDDebugOutput
+[WARNING]   - org.lwjgl.opengl.AMDDepthClampSeparate
+[WARNING]   - org.lwjgl.opengl.AMDDrawBuffersBlend
+[WARNING]   - org.lwjgl.opengl.AMDFramebufferMultisampleAdvanced
+[WARNING]   - org.lwjgl.opengl.AMDGPUShaderHalfFloat
+[WARNING]   - org.lwjgl.opengl.AMDGPUShaderHalfFloatFetch
+[WARNING]   - org.lwjgl.opengl.AMDGPUShaderInt64
+[WARNING]   - org.lwjgl.opengl.AMDInterleavedElements
+[WARNING]   - 467 more...
+[WARNING] BeckenburgGPU.jar, gdx-1.14.2.jar define 1168 overlapping classes and resources: 
+[WARNING]   - com.badlogic.gdx.AbstractGraphics
+[WARNING]   - com.badlogic.gdx.AbstractInput
+[WARNING]   - com.badlogic.gdx.Application
+[WARNING]   - com.badlogic.gdx.Application$ApplicationType
+[WARNING]   - com.badlogic.gdx.ApplicationAdapter
+[WARNING]   - com.badlogic.gdx.ApplicationListener
+[WARNING]   - com.badlogic.gdx.ApplicationLogger
+[WARNING]   - com.badlogic.gdx.Audio
+[WARNING]   - com.badlogic.gdx.Files
+[WARNING]   - com.badlogic.gdx.Files$FileType
+[WARNING]   - 1158 more...
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-windows.jar define 1 overlapping resource: 
+[WARNING]   - windows/x64/org/lwjgl/stb/lwjgl_stb.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-linux-arm64.jar, lwjgl-openal-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/openal/libopenal.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-linux-arm32.jar, lwjgl-stb-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm32/org/lwjgl/stb/liblwjgl_stb.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-linux-arm32.jar define 1 overlapping resource: 
+[WARNING]   - linux/arm32/org/lwjgl/opengl/liblwjgl_opengl.so
+[WARNING] BeckenburgGPU.jar, lwjgl-stb-3.3.3-natives-macos-arm64.jar define 1 overlapping resource: 
+[WARNING]   - macos/arm64/org/lwjgl/stb/liblwjgl_stb.dylib
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-linux-arm64.jar, lwjgl-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/liblwjgl.so.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-opengl-3.3.3-natives-windows-x86.jar define 1 overlapping resource: 
+[WARNING]   - windows/x86/org/lwjgl/opengl/lwjgl_opengl.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-openal-3.3.3-natives-windows-x86.jar, lwjgl-openal-3.3.3.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/windows/x86/org/lwjgl/openal/OpenAL.dll.sha1
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3-natives-linux.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/x64/org/lwjgl/jemalloc/libjemalloc.so.git
+[WARNING]   - linux/x64/org/lwjgl/jemalloc/libjemalloc.so
+[WARNING] BeckenburgGPU.jar, lwjgl-jemalloc-3.3.3.jar define 33 overlapping class and resource: 
+[WARNING]   - META-INF/windows/arm64/org/lwjgl/jemalloc/jemalloc.dll.sha1
+[WARNING]   - org.lwjgl.system.jemalloc.ExtentAlloc
+[WARNING]   - org.lwjgl.system.jemalloc.ExtentAlloc$Container
+[WARNING]   - org.lwjgl.system.jemalloc.ExtentAllocI
+[WARNING]   - org.lwjgl.system.jemalloc.ExtentCommit
+[WARNING]   - org.lwjgl.system.jemalloc.ExtentCommit$Container
+[WARNING]   - org.lwjgl.system.jemalloc.ExtentCommitI
+[WARNING]   - org.lwjgl.system.jemalloc.ExtentDalloc
+[WARNING]   - org.lwjgl.system.jemalloc.ExtentDalloc$Container
+[WARNING]   - org.lwjgl.system.jemalloc.ExtentDallocI
+[WARNING]   - 23 more...
+[WARNING] BeckenburgGPU.jar, lwjgl-3.3.3-natives-windows.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/windows/x64/org/lwjgl/lwjgl.dll.git
+[WARNING]   - windows/x64/org/lwjgl/lwjgl.dll
+[WARNING] BeckenburgGPU.jar, lwjgl-glfw-3.3.3-natives-linux-arm64.jar define 2 overlapping resources: 
+[WARNING]   - META-INF/linux/arm64/org/lwjgl/glfw/libglfw.so.git
+[WARNING]   - linux/arm64/org/lwjgl/glfw/libglfw.so
+[WARNING] maven-shade-plugin has detected that some files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the file is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See https://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.202 s
+[INFO] Finished at: 2026-10-28T10:31:50-08:00
+[INFO] ------------------------------------------------------------------------
