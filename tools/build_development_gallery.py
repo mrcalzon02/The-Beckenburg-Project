@@ -21,6 +21,8 @@ for path in sorted(set(paths)):
     elif '/fixture-join-diagnostic/' in path:kind='Runtime lighting diagnostic'
     elif '/lighting-camera-audit/' in path or '/van-castle-repair/' in path or '/metal-refinement/' in path:kind='Runtime capture'
     elif '/water-editor/' in path:kind='Editor UI verification'
+    elif '/equipment-menu/' in path:kind='Model inspection'
+    elif '/menu-workflow/' in path:kind='Game UI verification'
     elif 'player-webm-playback-proof' in path:kind='Browser playback verification'
     elif 'physics-query-diagnostic' in path:kind='Runtime geometry diagnostic'
     elif '/edge-sky-plans/' in path:kind='Planning diagram'
