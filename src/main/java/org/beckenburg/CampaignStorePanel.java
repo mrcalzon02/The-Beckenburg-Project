@@ -69,6 +69,12 @@ public final class CampaignStorePanel extends JPanel {
         }
         return List.copyOf(result);
     }
+    /** Authoritative shop coverage, independent of list order and graphical layout. */
+    public static java.util.Set<String> representedEquipmentIds(){
+        java.util.Set<String> ids=new java.util.HashSet<>();
+        for(Row row:fullCatalog())if(row.tool()!=null)ids.add(row.tool().id());
+        return java.util.Set.copyOf(ids);
+    }
     private final DefaultListModel<Row> inventory=new DefaultListModel<>();
     private final JList<Row> offers=new JList<>(inventory);
     private final JComboBox<String> filter=new JComboBox<>(
