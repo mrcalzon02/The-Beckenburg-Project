@@ -57,6 +57,22 @@ public final class FieldEquipment {
     public static java.util.List<String> workingTools(){
         return ENABLED.stream().sorted().toList();
     }
+    static String campaignId(EquipmentLoadout.Item item){return switch(item){
+        case EMF->"EMF_READER";case THERMOMETER->"THERMOMETER";case SPIRIT_BOX->"SPIRIT_BOX";
+        case UV_LAMP->"UV_LIGHT";case PHOTO_CAMERA->"PHOTO_CAMERA";case SALT->"SALT";
+    };}
+    /** Campaign ownership and the four prepared slots come from the host's saved depot. */
+    void configureCampaign(ProfileStore profile){
+        owned.clear();owned.putAll(profile.catalogEquipment());
+        var selected=profile.catalogLoadout();
+        for(int i=0;i<SLOTS;i++)slots[i]=selected[i];
+        remaining.clear();batteryTicks.clear();powered.clear();
+        for(String id:owned.keySet()){
+            if(stage(id).capacity()>0)remaining.put(id,stage(id).capacity());
+            if(BATTERY_TOOLS.contains(id))batteryTicks.put(id,stage(id).batterySeconds()*10);
+        }
+        current=0;
+    }
     public int activeSlot(){return current;}
     public void selectSlot(int slot){
         if(slot<0||slot>=SLOTS)throw new IllegalArgumentException("invalid gear slot");
@@ -156,7 +172,7 @@ public final class FieldEquipment {
      */
     public void rechargeAtVan(){
         for(String id:BATTERY_TOOLS){
-            batteryTicks.put(id,stage(id).batterySeconds()*10);
+            if(owned(id)!=null)batteryTicks.put(id,stage(id).batterySeconds()*10);
         }
         remaining.put("PHOTO_CAMERA",stage("PHOTO_CAMERA").capacity());
     }
@@ -206,6 +222,7 @@ public final class FieldEquipment {
         StringBuilder frame=new StringBuilder("GEAROWNED");
         int entries=0;
         for(String id:workingTools()){
+            if(owned(id)==null)continue;
             if(entries==7){
                 frames.add(frame.toString());
                 frame=new StringBuilder("GEAROWNED");

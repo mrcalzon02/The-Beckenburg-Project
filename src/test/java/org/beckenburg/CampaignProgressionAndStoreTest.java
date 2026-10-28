@@ -18,6 +18,11 @@ public final class CampaignProgressionAndStoreTest {
         }
         return null;
     }
+    private static int index(String id,FieldSupplies.Kind kind){
+        var list=EquipmentCatalogPanel.catalog();
+        for(int i=0;i<list.size();i++)if(list.get(i).id().equals(id)&&list.get(i).tier()==EquipmentTiers.Tier.I)return i;
+        throw new AssertionError("Catalog item missing: "+id);
+    }
     public static void main(String[] args)throws Exception{
         Path folder=Files.createTempDirectory("beckenburg-depot-archive");
         Path file=folder.resolve("campaign.properties");
@@ -34,17 +39,17 @@ public final class CampaignProgressionAndStoreTest {
             AtomicInteger changes=new AtomicInteger();
             SwingUtilities.invokeAndWait(()->{
                 CampaignStorePanel store=new CampaignStorePanel(profile,changes::incrementAndGet);
-                JList<?> goods=named(store,"campaign.store.items",JList.class);
-                JButton buy=named(store,"campaign.store.buy",JButton.class);
-                check(goods!=null&&buy!=null&&CampaignStorePanel.catalog().size()==8,
+                JList<?> goods=named(store,"equipment.catalog.items",JList.class);
+                JButton buy=named(store,"equipment.catalog.buy",JButton.class);
+                check(goods!=null&&buy!=null&&CampaignStorePanel.catalog().size()==129,
                     "Single compact quartermaster has permanent and consumable purchases");
-                goods.setSelectedIndex(0);
+                goods.setSelectedIndex(index("UV_LIGHT",null));
                 check(buy.isEnabled(),"Unlocked permanent upgrade available");
                 buy.doClick();
                 check(profile.ownsEquipment(EquipmentLoadout.Item.UV_LAMP),
                     "Quartermaster grants actual persistent UV ownership");
                 check(!buy.isEnabled()&&!store.buySelected(),"Permanent gear cannot be purchased twice");
-                goods.setSelectedIndex(2);buy.doClick();
+                goods.setSelectedIndex(index("HEALTH_SUPPLIES",FieldSupplies.Kind.HEALTH));buy.doClick();
                 check(profile.supplyCount(FieldSupplies.Kind.HEALTH,FieldSupplies.Tier.BASIC)==1,
                     "Quartermaster sells real finite health supplies");
                 check(changes.get()==2,"Account UI is refreshed exactly once per successful purchase");
@@ -55,11 +60,11 @@ public final class CampaignProgressionAndStoreTest {
             // One unit of real persisted Castle medicine stock can be sold back.
             SwingUtilities.invokeAndWait(()->{
                 CampaignStorePanel store=new CampaignStorePanel(profile,changes::incrementAndGet);
-                JList<?> goods=named(store,"campaign.store.items",JList.class);
-                JButton sell=named(store,"campaign.store.sell",JButton.class);
+                JList<?> goods=named(store,"equipment.catalog.items",JList.class);
+                JButton sell=named(store,"equipment.catalog.sell",JButton.class);
                 check(sell!=null&&!sell.isEnabled(),
                     "Never resell permanent equipment or starter gear");
-                goods.setSelectedIndex(2);
+                goods.setSelectedIndex(index("HEALTH_SUPPLIES",FieldSupplies.Kind.HEALTH));
                 check(sell.isEnabled(),"Only actual positive medicine stock can be sold");
                 sell.doClick();
                 check(profile.supplyCount(FieldSupplies.Kind.HEALTH,FieldSupplies.Tier.BASIC)==0,

@@ -28,13 +28,13 @@ public final class LanLobbyReconnectGuiTest {
             LanWindowSmokeTest.collect(frame.getContentPane(),JTextField.class,all);
             all.stream().filter(x->x.getColumns()==5).findFirst().orElseThrow()
                 .setText(Integer.toString(port));
-            LanWindowSmokeTest.button(frame,"Join IP").doClick();
+            LanWindowSmokeTest.button(frame,"Join by IP").doClick();
             return null;
         });
     }
     public static void main(String[] args)throws Exception {
         if(GraphicsEnvironment.isHeadless())throw new AssertionError("graphical host required");
-        LanLobbyWindow gui=LanGhostGuiTest.edt(()->{LanLobbyWindow f=new LanLobbyWindow();f.setVisible(true);return f;});
+        LanPanelTestHarness gui=LanGhostGuiTest.edt(()->{LanPanelTestHarness f=new LanPanelTestHarness();f.setVisible(true);return f;});
         try{
             try(LanHost first=new LanHost("127.0.0.1",0)){
                 join(gui,first.port());

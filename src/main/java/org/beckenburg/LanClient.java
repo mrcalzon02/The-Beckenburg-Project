@@ -147,11 +147,11 @@ public final class LanClient implements AutoCloseable {
     public synchronized void clutter(String action,int id,double pitch)throws IOException {send("OBJECT|"+action+"|"+id+"|"+Math.round(pitch*1000)+"|"+(++sequence));}
     public synchronized void purchaseSupply(FieldSupplies.Kind kind,FieldSupplies.Tier tier)throws IOException{
         Objects.requireNonNull(kind);Objects.requireNonNull(tier);
-        send("BUY|"+kind+"|"+tier+"|"+(++sequence));
+        send("BUY|"+kind.name()+"|"+tier.name()+"|"+(++sequence));
     }
     public synchronized void useSupply(FieldSupplies.Kind kind,FieldSupplies.Tier tier)throws IOException{
         Objects.requireNonNull(kind);Objects.requireNonNull(tier);
-        send("USESUPPLY|"+kind+"|"+tier+"|"+(++sequence));
+        send("USESUPPLY|"+kind.name()+"|"+tier.name()+"|"+(++sequence));
     }
     /** A visual identity is a lobby-only cosmetic command, never a player ability. */
     public synchronized void selectVisual(CharacterVisuals.Hunter look)throws IOException {

@@ -105,7 +105,14 @@ public final class PsxHorrorUi {
     }
     private static final class TextFieldBorder implements javax.swing.border.Border {
         @Override public void paintBorder(Component c,Graphics g,int x,int y,int w,int h){
-            paintPatch((Graphics2D)g,"line_edit",x,y,w,h,2);
+            // Swing paints borders after text. Painting the opaque PNG centre here
+            // used to cover the actual address, nickname and password characters.
+            Graphics2D edge=(Graphics2D)g.create();
+            try{
+                java.awt.geom.Area outline=new java.awt.geom.Area(new Rectangle(x,y,w,h));
+                outline.subtract(new java.awt.geom.Area(new Rectangle(x+7,y+7,Math.max(0,w-14),Math.max(0,h-14))));
+                edge.clip(outline);paintPatch(edge,"line_edit",x,y,w,h,2);
+            }finally{edge.dispose();}
         }
         @Override public Insets getBorderInsets(Component c){return new Insets(7,7,7,7);}
         @Override public boolean isBorderOpaque(){return false;}

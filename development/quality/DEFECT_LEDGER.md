@@ -1767,3 +1767,59 @@ Action: Use full receiving-side architectural check before prop bias for non-nat
 Evidence: FixtureJoinIntegrationTest fails on7f1515d0 at4.8vs0.187ambient and passes after repair, including real door open/close invalidation and same-side light control. AllMapArchitecturalJoinTest6789closed-boundary rays across9indoor maps.18matched actualGPUdiagnostic images: corrected exterior-source frames exactly equal source-off frames; same-side interior source remains lit.
 
 Older-map audit: All generated-map joins still need moving-camera/human review. Native physical meshes, roof joins and every portal state require independent evidence. No full map, LAN or30FPS acceptance inferred.
+
+## DEV-137 — Campaign and multiplayer equipment were split across incompatible store and reference pages
+
+**Status:** fixed-scoped-local-verification
+
+The live shop exposed a small subset while the model library was a separate non-purchasing tab; three-tier overview pictures were reused as item icons.
+
+Cause: Two unrelated panel implementations and family contact-sheet thumbnails.
+
+Action: Replace both with EquipmentCatalogPanel and persistent full-tier campaign ownership; render 129 singular Blender item-tier icons.
+
+Evidence: EquipmentTierIconTest, CampaignMenuWorkflowTest, CampaignProgressionAndStoreTest; equipment-menu contact sheets and minimum-window UI captures.
+
+Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
+
+## DEV-138 — Campaign team booking supported one permanent assistant instead of five mission hires
+
+**Status:** fixed-scoped-local-verification
+
+Only one assistant could be purchased; guests had no campaign host flow or shared six-slot hiring rule.
+
+Cause: A permanent boolean recruit flag and separate single-player/LAN mission launchers.
+
+Action: Add per-mission reservations, refunds, six ordinary human/AI seats and host-only campaign settlement; retain migration of old saves.
+
+Evidence: CampaignCoopLobbyTest and CampaignEmbeddedDesktopTest use actual TCP/desktop workflows; retreat and guest isolation verified.
+
+Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
+
+## DEV-139 — PSX text-field artwork painted over entered connection details
+
+**Status:** fixed-scoped-local-verification
+
+The border painted its opaque centre after Swing rendered the text, concealing the real field content.
+
+Cause: TextFieldBorder painted a full nine-slice image during border paint.
+
+Action: Clip the border artwork to its outline, preserving text and caret visibility.
+
+Evidence: Minimum-window multiplayer-lobby captures and real desktop workflow.
+
+Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
+
+## DEV-140 — Medicine client sent decorated tier labels instead of protocol enum identifiers
+
+**Status:** fixed-scoped-local-verification
+
+A request encoded BASIC / price / restoration text where the host requires BASIC, rejecting legitimate purchases.
+
+Cause: LanClient concatenated Tier.toString rather than Tier.name.
+
+Action: Encode stable enum names for BUY and USESUPPLY; retain display formatting solely in the UI.
+
+Evidence: CampaignCoopLobbyTest confirms actual pre-mission medicine purchase and private host stock snapshots.
+
+Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.

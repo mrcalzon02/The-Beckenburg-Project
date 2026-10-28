@@ -60,4 +60,7 @@ final class ItemIconAtlas {
             return ready;
         }
     }
+    static ImageIcon getTier(String key,EquipmentTiers.Tier tier,int pixels){
+        return get(key+"_t"+(tier.ordinal()+1),pixels);
+    }
 }

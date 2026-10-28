@@ -49,9 +49,9 @@ public final class BeckenburgDesktopE2ETest {
         return null;
     }
     private static JFrame multiplayer(){
-        for(Window window:Window.getWindows())if(window instanceof LanLobbyWindow frame
-                &&frame.isShowing())return frame;
-        return null;
+        JFrame frame=launcher();
+        var lobby=frame==null?null:CampaignMenuWorkflowTest.named(frame.getContentPane(),"network",LanLobbyPanel.class);
+        return lobby!=null&&lobby.isShowing()?frame:null;
     }
     private static void capture(String label){
         try{
@@ -154,8 +154,24 @@ public final class BeckenburgDesktopE2ETest {
             },30);
             if(frame==null)throw new AssertionError(
                 "Startup never completed: menu's multiplayer button not available (check diagnostics log)");
-            if(button(frame.getContentPane(),"DIAGNOSTICS")==null)
-                throw new AssertionError("Diagnostics control missing from playable launcher");
+            if(button(frame.getContentPane(),"OPTIONS")==null)
+                throw new AssertionError("Options control missing from playable launcher");
+            SwingUtilities.invokeAndWait(()->button(frame.getContentPane(),"OPTIONS").doClick());
+            var options=waitFor(()->{
+                var found=CampaignMenuWorkflowTest.named(frame.getContentPane(),"options",javax.swing.JPanel.class);
+                return found!=null&&found.isShowing()?found:null;
+            },5);
+            if(options==null)throw new AssertionError("Start menu options page unavailable");
+            capture("00-options-screen");
+            SwingUtilities.invokeAndWait(()->button(options,"BACK").doClick());
+            SwingUtilities.invokeAndWait(()->{
+                int windows=Window.getWindows().length;
+                javax.swing.Timer dismiss=new javax.swing.Timer(120,e->{
+                    JButton ok=button((Container)frame.getGlassPane(),"OK");if(ok!=null)ok.doClick();
+                });dismiss.setRepeats(false);dismiss.start();
+                GameDialogs.showMessageDialog(frame,"Equipment actions use this game window.","DIALOG WORKFLOW",GameDialogs.PLAIN_MESSAGE);
+                if(Window.getWindows().length!=windows)throw new AssertionError("Game prompt opened a separate window");
+            });
             capture("01-loaded-menu");
             System.out.println("E2E PASS packaged startup and usable PSX-themed main menu");
             SwingUtilities.invokeAndWait(()->button(frame.getContentPane(),
@@ -170,7 +186,7 @@ public final class BeckenburgDesktopE2ETest {
             if(lobby==null)throw new AssertionError("Multiplayer lobby not interactable");
             capture("02-multiplayer-lobby");
             System.out.println("E2E PASS main-menu multiplayer handoff and actionable join/host lobby");
-            SwingUtilities.invokeAndWait(lobby::dispose);
+            SwingUtilities.invokeAndWait(()->button(lobby.getContentPane(),"LEAVE LOBBY").doClick());
             // The previous smoke stopped at the menu and could never detect
             // BECK-LIVE-012 (case start locked the user's process). Open the
             // actual dispatch dialog, explicitly choose HOUSE, and demand an
@@ -179,18 +195,21 @@ public final class BeckenburgDesktopE2ETest {
             if(start==null||!start.isEnabled())throw new AssertionError(
                 "Solo dispatch control missing or House unavailable");
             SwingUtilities.invokeLater(start::doClick);
-            JDialog dispatch=waitForResponsive(BeckenburgDesktopE2ETest::dispatchDialog,20);
+            Container dispatch=waitForResponsive(()->{
+                var panel=CampaignMenuWorkflowTest.named(frame.getContentPane(),"solo",javax.swing.JPanel.class);
+                return panel!=null&&panel.isShowing()?panel:null;
+            },20);
             if(dispatch==null)throw new AssertionError(
                 "Solo map-selection dispatch did not appear");
             capture("03-solo-dispatch-map-selection");
             SwingUtilities.invokeLater(()->{
-                JComboBox<?> site=sitePicker(dispatch.getContentPane());
+                JComboBox<?> site=sitePicker(dispatch);
                 if(site==null)throw new AssertionError("Solo location selector missing");
                 site.setSelectedItem(SiteCatalog.Location.HOUSE);
                 if(site.getSelectedItem()!=SiteCatalog.Location.HOUSE)
                     throw new AssertionError("Could not dispatch authored House site");
-                JButton approve=button(dispatch.getContentPane(),"OK");
-                if(approve==null)throw new AssertionError("Solo dispatch OK button unavailable");
+                JButton approve=button(dispatch,"DEPLOY");
+                if(approve==null)throw new AssertionError("Solo dispatch DEPLOY button unavailable");
                 approve.doClick();
             });
             Component solo=waitForResponsive(()->visibleSoloCase(frame.getContentPane()),25);

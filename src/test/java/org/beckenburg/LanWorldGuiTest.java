@@ -24,8 +24,8 @@ public final class LanWorldGuiTest {
     public static void main(String[] args)throws Exception {
         if(GraphicsEnvironment.isHeadless())throw new AssertionError("requires graphical display");
         int port;try(ServerSocket ep=new ServerSocket(0)){port=ep.getLocalPort();}
-        LanLobbyWindow frame=onEdt(()->{
-            LanLobbyWindow lobby=new LanLobbyWindow();
+        LanPanelTestHarness frame=onEdt(()->{
+            LanPanelTestHarness lobby=new LanPanelTestHarness();
             java.util.List<JTextField> inputs=new ArrayList<>();LanWindowSmokeTest.collect(lobby.getContentPane(),JTextField.class,inputs);
             inputs.stream().filter(t->"27717".equals(t.getText())).findFirst().orElseThrow().setText(Integer.toString(port));
             lobby.setVisible(true);LanWindowSmokeTest.button(lobby,"Host LAN").doClick();return lobby;
@@ -45,9 +45,9 @@ public final class LanWorldGuiTest {
                 onEdt(()->{LanWindowSmokeTest.button(frame,"Start Match").doClick();return null;});
                 until(()->{try{return onEdt(()->LanWindowSmokeTest.button(frame,"Enter 3D World").isEnabled());}catch(Exception e){return false;}},"mission start and 3D button");
                 onEdt(()->{LanWindowSmokeTest.button(frame,"Enter 3D World").doClick();return null;});
-                until(()->{try{return onEdt(()->Arrays.stream(Window.getWindows()).anyMatch(w->w instanceof JFrame f&&f.isVisible()&&f.getContentPane() instanceof LanWorldPanel));}catch(Exception e){return false;}},"world viewport");
-                JFrame world=onEdt(()->Arrays.stream(Window.getWindows()).filter(w->w instanceof JFrame f&&f.isVisible()&&f.getContentPane() instanceof LanWorldPanel).map(w->(JFrame)w).findFirst().orElseThrow());
-                LanWorldPanel panel=(LanWorldPanel)world.getContentPane();
+                until(()->{try{return onEdt(()->LanWindowSmokeTest.find(frame.getContentPane(),LanWorldPanel.class)!=null);}catch(Exception e){return false;}},"world viewport");
+                JFrame world=onEdt(()->frame);
+                LanWorldPanel panel=LanWindowSmokeTest.find(world.getContentPane(),LanWorldPanel.class);
                 until(()->{try{return onEdt(()->panel.visiblePeers()==2);}catch(Exception e){return false;}},"both remote avatars");
                 Thread.sleep(850);
                 BufferedImage screenshot=onEdt(()->{

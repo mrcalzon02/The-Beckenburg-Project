@@ -62,8 +62,9 @@ public final class CampaignBoardPanelTest {
                 "Player returns directly to playable contracts");
             ok(recruit.isEnabled()&&!assistant.isEnabled(),
                 "Owned currency funds a real recruit, not an already-deployed ally");
+            named(board,"campaign.hires",JSpinner.class).setValue(1);
             recruit.doClick();
-            ok(profile.assistantHired()&&assistant.isEnabled()&&assistant.isSelected(),
+            ok(profile.missionHires()==1&&assistant.isEnabled()&&assistant.isSelected(),
                 "Recruit transaction must enable the actual AI slot");
             list.setSelectedIndex(1);
             ok(!deploy.isEnabled(),

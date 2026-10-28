@@ -90,6 +90,8 @@ jobs:
         run: |
           $ErrorActionPreference='Stop'
           & java '-Djava.awt.headless=false' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.BeckenburgDesktopE2ETest
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & java '-Djava.awt.headless=false' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.CampaignEmbeddedDesktopTest
           if ($LASTEXITCODE -ne 0) { throw "Packaged UI acceptance failed: $LASTEXITCODE" }
 
       - name: Prepare Windows jpackage environment

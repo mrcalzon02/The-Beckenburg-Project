@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 963,
+  "count": 977,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -7644,6 +7644,146 @@
       "height": 600,
       "bytes": 538586,
       "sha256": "3fb48c045f524abfa1fab38c859ba659481f3784a675da5aa6179e7f42a25822"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-contracts-1060.png",
+      "url": "development/levels/previews/menu-workflow/campaign-contracts-1060.png",
+      "title": "Campaign contracts 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 30794,
+      "sha256": "7a0bbaa9b9c503401ec13fb7b09e76e9bc2eaa653aa946c013e253f49ddf9818"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-contracts-760.png",
+      "url": "development/levels/previews/menu-workflow/campaign-contracts-760.png",
+      "title": "Campaign contracts 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 24609,
+      "sha256": "9cc4443cc9edf79ad530b911f8b5e3d8c16b368e00d92b54506ed50cc8d6615d"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-store-1060.png",
+      "url": "development/levels/previews/menu-workflow/campaign-store-1060.png",
+      "title": "Campaign store 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 62514,
+      "sha256": "7ae0425beff3644ad12d1440f29f7c1368efe71332ae1d37eeddf56f7a394c07"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-store-760.png",
+      "url": "development/levels/previews/menu-workflow/campaign-store-760.png",
+      "title": "Campaign store 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 39894,
+      "sha256": "089d9c8536ce7d515bbb1f5d233c3182cfe28429a4af0c1c689a1b4d03816d0a"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-team-1060.png",
+      "url": "development/levels/previews/menu-workflow/campaign-team-1060.png",
+      "title": "Campaign team 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 22875,
+      "sha256": "ba84cdaee22d35052a51d617a9ccac0930819de241cdb40f064f180cf460c183"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-team-760.png",
+      "url": "development/levels/previews/menu-workflow/campaign-team-760.png",
+      "title": "Campaign team 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 16662,
+      "sha256": "d3566ac340274e6954e357d6ffc7c7fed420b9f1115ba4cdd667234822fcea3c"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/castle-campaign-1060.png",
+      "url": "development/levels/previews/menu-workflow/castle-campaign-1060.png",
+      "title": "Castle campaign 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 49417,
+      "sha256": "ddd5f460d6bd64c69e4429c73366c4e24b8911836b0bce4b621ba5de861daca0"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/castle-campaign-760.png",
+      "url": "development/levels/previews/menu-workflow/castle-campaign-760.png",
+      "title": "Castle campaign 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 33609,
+      "sha256": "dfab19d07c1d26daf31fe79beb914f158d33f215251e6255253831ebaecce076"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/castle-multiplayer-1060.png",
+      "url": "development/levels/previews/menu-workflow/castle-multiplayer-1060.png",
+      "title": "Castle multiplayer 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 50331,
+      "sha256": "459e52269ea3a22609aab4676da3c9084899d09cc577fc94ac0fe97c9783055f"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/castle-multiplayer-760.png",
+      "url": "development/levels/previews/menu-workflow/castle-multiplayer-760.png",
+      "title": "Castle multiplayer 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 26865,
+      "sha256": "31a45fcccf078054f9838605242025227dc224bdf07f801bd7f8ff975cd052c6"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/multiplayer-equipment-1060.png",
+      "url": "development/levels/previews/menu-workflow/multiplayer-equipment-1060.png",
+      "title": "Multiplayer equipment 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 60949,
+      "sha256": "3f4fc2005fbfd3b2fbdb420d3f90a3832c966403ddb39f89dcb7822a1acef1ca"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/multiplayer-equipment-760.png",
+      "url": "development/levels/previews/menu-workflow/multiplayer-equipment-760.png",
+      "title": "Multiplayer equipment 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 47819,
+      "sha256": "f1ba36862691b37dcf0106867ac8d2b86ebbb9cfd6e8bc9552f21ab5f2535ab9"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/multiplayer-lobby-1060.png",
+      "url": "development/levels/previews/menu-workflow/multiplayer-lobby-1060.png",
+      "title": "Multiplayer lobby 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 35252,
+      "sha256": "9113b27fb5d6c8063d9c7785cf0ca5e565b46d493d40ce8e918a5230ee336baf"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/multiplayer-lobby-760.png",
+      "url": "development/levels/previews/menu-workflow/multiplayer-lobby-760.png",
+      "title": "Multiplayer lobby 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 16034,
+      "sha256": "8b21ecac4bde6dda054e06e22d19f47714e4a4fce212ed90357901db876903f2"
     },
     {
       "path": "development/levels/previews/metal-refinement/after/van-hollow-creek-equipment.png",

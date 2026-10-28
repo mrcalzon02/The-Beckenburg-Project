@@ -48,6 +48,12 @@ public final class LanCase {
     private boolean identificationRequired;
     private int lastGuessTick=-1000;
     private final int[] health={100,100,100,100,100,100},stress=new int[6],wards={2,2,2,2,2,2};
+    private final int[] maximumHealth={100,100,100,100,100,100};
+    public int maxHealth(int seat){hunter(seat);return maximumHealth[seat];}
+    void configureCampaignCareer(int seat,int level){
+        hunter(seat);maximumHealth[seat]=HunterProgression.maxHealth(level);health[seat]=maximumHealth[seat];
+        wards[seat]=(hunterClasses[seat]==CharacterVisuals.Hunter.CLERIC?3:2)+HunterProgression.extraWards(level);
+    }
     private final HunterDiscipline disciplines=new HunterDiscipline(6);
     private final CharacterVisuals.Hunter[] hunterClasses=new CharacterVisuals.Hunter[6];
     {
@@ -99,8 +105,8 @@ public final class LanCase {
         for(int i=0;i<6;i++)stress[i]=100-value;
     }
     public boolean heal(int seat,int amount){
-        hunter(seat);if(amount<1||amount>100||!alive(seat)||health[seat]==100)return false;
-        health[seat]=Math.min(100,health[seat]+amount);return true;
+        hunter(seat);if(amount<1||amount>100||!alive(seat)||health[seat]==maximumHealth[seat])return false;
+        health[seat]=Math.min(maximumHealth[seat],health[seat]+amount);return true;
     }
     public boolean calm(int seat,int amount){
         hunter(seat);if(amount<1||amount>100||!alive(seat)||stress[seat]==0)return false;

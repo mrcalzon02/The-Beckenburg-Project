@@ -70,13 +70,13 @@ public final class CastleLiveRepairTest {
                 && CastleHubMap.Station.ARMORY_SALT.label.contains("QUARTERMASTER"),
             "Castle armoury stations must advertise accessible full shop");
         check(CampaignStorePanel.catalog().stream().anyMatch(
-                offer->offer.equipment()==EquipmentLoadout.Item.UV_LAMP),
+                offer->offer.id().equals("UV_LIGHT")),
             "Full shop includes purchasable UV equipment");
         check(CampaignStorePanel.catalog().stream().anyMatch(
-                offer->offer.equipment()==EquipmentLoadout.Item.SALT),
+                offer->offer.id().equals("SALT")),
             "Full shop includes purchasable salt");
         check(CampaignStorePanel.catalog().stream().anyMatch(
-                offer->offer.kind()!=null),
+                offer->offer.medicine()!=null),
             "Full shop includes consumable supplies");
         for(var item:CastleHubMap.furnishings())
             check(Double.isFinite(item.x())&&Double.isFinite(item.z()),
