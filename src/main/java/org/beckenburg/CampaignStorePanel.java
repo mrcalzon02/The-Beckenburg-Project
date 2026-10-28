@@ -45,6 +45,7 @@ public final class CampaignStorePanel extends JPanel {
         setName("campaign.store");
         setLayout(new BorderLayout(6,6));
         setBackground(new Color(16,22,30));
+        setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
         offers.setName("campaign.store.items");
         offers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         offers.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
@@ -109,6 +110,7 @@ public final class CampaignStorePanel extends JPanel {
         library.add(libraryDetails,BorderLayout.SOUTH);
         JTabbedPane pages=new JTabbedPane();
         pages.setName("campaign.store.pages");
+        PsxHorrorUi.styleTabs(pages);
         pages.addTab("QUARTERMASTER",new JScrollPane(offers));
         pages.addTab("MODEL LIBRARY",library);
         pages.addChangeListener(e->{if(pages.getSelectedIndex()==0)refresh();
@@ -125,6 +127,8 @@ public final class CampaignStorePanel extends JPanel {
         balance.setForeground(new Color(170,222,186));
         purchase.setName("campaign.store.buy");
         sell.setName("campaign.store.sell");
+        PsxHorrorUi.styleButton(purchase);
+        PsxHorrorUi.styleButton(sell);
         footer.add(purchase);footer.add(sell);footer.add(balance);
         JPanel preparation=new JPanel(new FlowLayout(FlowLayout.LEFT,4,3));
         preparation.setOpaque(false);
@@ -138,6 +142,7 @@ public final class CampaignStorePanel extends JPanel {
         }
         JButton commit=new JButton("SAVE LOADOUT");
         commit.setName("campaign.store.prepare");
+        PsxHorrorUi.styleButton(commit);
         commit.addActionListener(e->prepareSelected());
         preparation.add(commit);
         preparedStatus.setForeground(PAPER);
