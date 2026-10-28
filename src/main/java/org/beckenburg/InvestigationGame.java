@@ -186,6 +186,33 @@ public final class InvestigationGame {
         ((CardLayout)cards.getLayout()).show(cards,"menu");
     }
     private void openLan(){new LanLobbyWindow().setVisible(true);}
+    /** Entire menu lives in the original JFrame's CardLayout. */
+    private void showPage(String name,JPanel page){
+        for(Component previous:cards.getComponents())
+            if(name.equals(previous.getName())){cards.remove(previous);break;}
+        page.setName(name);
+        cards.add(page,name);
+        ((CardLayout)cards.getLayout()).show(cards,name);
+        cards.revalidate();
+        cards.repaint();
+        SwingUtilities.invokeLater(page::requestFocusInWindow);
+    }
+    private void showTextPage(String name,String title,String message){
+        JTextArea content=new JTextArea(message);
+        content.setEditable(false);
+        content.setFocusable(false);
+        content.setOpaque(false);
+        content.setForeground(new Color(230,220,196));
+        content.setFont(new Font(Font.MONOSPACED,Font.PLAIN,14));
+        content.setLineWrap(true);
+        content.setWrapStyleWord(true);
+        content.setMargin(new Insets(14,16,14,16));
+        JButton back=PsxHorrorUi.button("BACK TO MENU");
+        back.addActionListener(e->showMenu());
+        showPage(name,PsxMenuScreen.screen(name,title,
+            "BECKENBURG FIELD OPERATIONS / PLAYER REFERENCE",
+            PsxMenuScreen.scroll(content),back));
+    }
     private Color ink(){return displayPrefs.getBoolean("highContrast",false)?Color.WHITE:new Color(223,210,183);}
     private int menuFont(int base){return base+(displayPrefs.getBoolean("largeMenuText",false)?3:0);}
     private JLabel menuLabel(String text,int size){
@@ -325,9 +352,13 @@ public final class InvestigationGame {
         editor.addActionListener(e->openDeveloperEditor(window));
         options.addActionListener(e->openOptions());
         guide.addActionListener(e->showControls());
-        credits.addActionListener(e->JOptionPane.showMessageDialog(window,
-            "PSX Horror UI Free by heyheythere\nhttps://heyheythere.itch.io/psx-horror-ui-free\nLicensed CC BY 4.0\nOriginal texture assets adapted for Beckenburg's Java interface.",
-            "Third-party credits",JOptionPane.INFORMATION_MESSAGE));
+        credits.addActionListener(e->showTextPage("credits","CREDITS / ART SOURCES",
+            "PSX Horror UI Free by heyheythere\n"+
+            "https://heyheythere.itch.io/psx-horror-ui-free\n"+
+            "Licensed CC BY 4.0\n\n"+
+            "Original PSX artwork and pixel textures are used for the game's "+
+            "buttons, panels and menus. Equipment thumbnails are baked from "+
+            "the project's approved 3D inspection renders."));
         importSave.addActionListener(e->importLocalSave());
         diagnostics.addActionListener(e->BeckenburgDiagnostics.show(window));
         updates.addActionListener(e->BeckenburgUpdatesUI.open(window));
@@ -354,7 +385,8 @@ public final class InvestigationGame {
         JComboBox<T> combo=new JComboBox<>(items);combo.setSelectedItem(selected);return combo;
     }
     private static void setting(JPanel grid,String text,JComponent control){
-        JLabel label=new JLabel(text);label.setHorizontalAlignment(SwingConstants.RIGHT);
+        JLabel label=PsxMenuScreen.label(text);
+        label.setHorizontalAlignment(SwingConstants.RIGHT);
         grid.add(label);grid.add(control);
     }
     private void openOptions(){
@@ -379,8 +411,17 @@ public final class InvestigationGame {
         musicVolume.setMajorTickSpacing(25);musicVolume.setPaintTicks(true);
         JSlider effectsVolume=new JSlider(0,100,LanAudio.effectsVolume());
         effectsVolume.setMajorTickSpacing(25);effectsVolume.setPaintTicks(true);
-        JPanel grid=new JPanel(new GridLayout(0,2,7,7));
-        grid.setBorder(BorderFactory.createEmptyBorder(9,9,9,9));
+        JPanel grid=new JPanel(new GridLayout(0,2,8,9));
+        grid.setOpaque(false);
+        grid.setBorder(BorderFactory.createEmptyBorder(12,16,12,16));
+        for(JComboBox<?> combo:new JComboBox<?>[]{mode,desktop,detail,aspect,upscale,aa,psx}){
+            combo.setBackground(new Color(35,39,46));
+            combo.setForeground(new Color(238,225,198));
+        }
+        for(JCheckBox check:new JCheckBox[]{scanlines,vignette,grain,chromatic,large,highContrast}){
+            check.setOpaque(false);check.setForeground(new Color(233,219,192));
+        }
+        for(JSlider slider:new JSlider[]{musicVolume,effectsVolume})slider.setOpaque(false);
         setting(grid,"Display mode",mode);
         setting(grid,"Window size (fullscreen uses native)",desktop);
         setting(grid,"Real 3D rendering height",detail);
@@ -391,70 +432,87 @@ public final class InvestigationGame {
         setting(grid,"Field of view (degrees)",fov);
         setting(grid,"Brightness",brightness);
         setting(grid,"Contrast",contrast);
-        setting(grid,"Atmospheric effects",new JLabel("Optional CPU post-processing"));
+        setting(grid,"Atmospheric effects",PsxMenuScreen.label("Optional CPU post-processing"));
         grid.add(scanlines);grid.add(vignette);
         grid.add(grain);grid.add(chromatic);
         grid.add(large);grid.add(highContrast);
         setting(grid,"Music volume",musicVolume);
         setting(grid,"Effects volume (voice separate)",effectsVolume);
-        JScrollPane scroll=new JScrollPane(grid,
-            ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scroll.setPreferredSize(new Dimension(610,Math.min(540,grid.getPreferredSize().height+18)));
-        Object[] actions={"APPLY OPTIONS","OPEN LEVEL EDITOR","CANCEL"};
-        int answer=JOptionPane.showOptionDialog(window,scroll,"Video, PSX & accessibility",
-            JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,actions,actions[0]);
-        // The options modal must close before opening the independent 3D editor.
-        if(answer==1){openDeveloperEditor(window);return;}
-        if(answer!=0)return;
-        GraphicsOptions chosen=new GraphicsOptions(
-            (GraphicsOptions.Mode)mode.getSelectedItem(),
-            (GraphicsOptions.DisplaySize)desktop.getSelectedItem(),
-            (GraphicsOptions.Detail)detail.getSelectedItem(),
-            (GraphicsOptions.Aspect)aspect.getSelectedItem(),
-            (GraphicsOptions.Upscale)upscale.getSelectedItem(),
-            (GraphicsOptions.Antialias)aa.getSelectedItem(),
-            (Integer)fov.getValue(),(Integer)brightness.getValue(),(Integer)contrast.getValue(),
-            scanlines.isSelected(),vignette.isSelected(),grain.isSelected(),chromatic.isSelected());
-        boolean windowChanged=old.mode()!=chosen.mode()||old.display()!=chosen.display();
-        if(windowChanged){
+        JLabel status=PsxMenuScreen.label("Choose settings, then APPLY OPTIONS. Escape to return.");
+        JPanel body=new JPanel(new BorderLayout(0,8));body.setOpaque(false);
+        body.add(PsxMenuScreen.scroll(grid),BorderLayout.CENTER);
+        body.add(status,BorderLayout.SOUTH);
+        JButton apply=PsxHorrorUi.button("APPLY OPTIONS");
+        JButton back=PsxHorrorUi.button("CANCEL / RETURN");
+        JButton editor=PsxHorrorUi.button("LEVEL EDITOR");
+        back.addActionListener(e->showMenu());
+        editor.addActionListener(e->openDeveloperEditor(window));
+        JPanel page=PsxMenuScreen.screen("options","VIDEO / AUDIO / ACCESSIBILITY",
+            "REAL GAME DISPLAY OPTIONS / ORIGINAL PSX HORROR UI ART",body,back,editor,apply);
+        page.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
+            .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"returnMenu");
+        page.getActionMap().put("returnMenu",new AbstractAction(){
+            @Override public void actionPerformed(ActionEvent e){showMenu();}
+        });
+        apply.addActionListener(e->{
+            GraphicsOptions chosen=new GraphicsOptions(
+                (GraphicsOptions.Mode)mode.getSelectedItem(),
+                (GraphicsOptions.DisplaySize)desktop.getSelectedItem(),
+                (GraphicsOptions.Detail)detail.getSelectedItem(),
+                (GraphicsOptions.Aspect)aspect.getSelectedItem(),
+                (GraphicsOptions.Upscale)upscale.getSelectedItem(),
+                (GraphicsOptions.Antialias)aa.getSelectedItem(),
+                (Integer)fov.getValue(),(Integer)brightness.getValue(),(Integer)contrast.getValue(),
+                scanlines.isSelected(),vignette.isSelected(),grain.isSelected(),chromatic.isSelected());
+            Runnable commit=()->{
+                chosen.save();
+                PsxPipeline.choose((PsxPipeline.Preset)psx.getSelectedItem());
+                displayPrefs.putBoolean("largeMenuText",large.isSelected());
+                displayPrefs.putBoolean("highContrast",highContrast.isSelected());
+                SoundtrackAudio.volume(musicVolume.getValue());
+                LanAudio.effectsVolume(effectsVolume.getValue());
+                buildMenu();menu.revalidate();menu.repaint();
+                showMenu();
+            };
+            if(old.mode()==chosen.mode()&&old.display()==chosen.display()){
+                commit.run();return;
+            }
             try{chosen.applyWindow(window);}
             catch(RuntimeException failure){
                 try{old.applyWindow(window);}catch(RuntimeException ignored){}
-                JOptionPane.showMessageDialog(window,
-                    "Display mode could not be applied: "+failure.getMessage(),
-                    "Graphics settings",JOptionPane.ERROR_MESSAGE);
+                status.setText("DISPLAY CHANGE FAILED: "+failure.getMessage());
                 return;
             }
-            JOptionPane confirmation=new JOptionPane("Keep this display mode? Reverts after 15 seconds.",
-                JOptionPane.QUESTION_MESSAGE,JOptionPane.YES_NO_OPTION);
-            JDialog dialog=confirmation.createDialog(window,"Confirm display mode");
-            javax.swing.Timer revert=new javax.swing.Timer(15000,event->dialog.dispose());
-            revert.setRepeats(false);revert.start();dialog.setVisible(true);revert.stop();
-            if(!Integer.valueOf(JOptionPane.YES_OPTION).equals(confirmation.getValue())){
-                old.applyWindow(window);return;
-            }
-        }
-        chosen.save();
-        PsxPipeline.choose((PsxPipeline.Preset)psx.getSelectedItem());
-        displayPrefs.putBoolean("largeMenuText",large.isSelected());
-        displayPrefs.putBoolean("highContrast",highContrast.isSelected());
-        SoundtrackAudio.volume(musicVolume.getValue());
-        LanAudio.effectsVolume(effectsVolume.getValue());
-        buildMenu();menu.revalidate();menu.repaint();
+            JLabel question=PsxMenuScreen.label("KEEP THIS DISPLAY MODE?  AUTO REVERT AFTER 15 SECONDS.");
+            question.setHorizontalAlignment(SwingConstants.CENTER);
+            JButton keep=PsxHorrorUi.button("KEEP DISPLAY MODE");
+            JButton revert=PsxHorrorUi.button("REVERT");
+            javax.swing.Timer deadline=new javax.swing.Timer(15000,event->{
+                old.applyWindow(window);
+                showPage("options",page);
+                status.setText("Display reverted after the 15-second confirmation deadline.");
+            });
+            deadline.setRepeats(false);
+            keep.addActionListener(event->{deadline.stop();commit.run();});
+            revert.addActionListener(event->{
+                deadline.stop();old.applyWindow(window);showPage("options",page);
+            });
+            showPage("display-confirmation",PsxMenuScreen.screen("display-confirmation",
+                "CONFIRM DISPLAY MODE","THE PREVIOUS DISPLAY SETTINGS ARE PRESERVED UNTIL CONFIRMED",
+                question,revert,keep));
+            deadline.start();
+        });
+        showPage("options",page);
     }
     private void showControls(){
-        JTextArea help=new JTextArea(
+        showTextPage("help","FIELD CONTROLS",
             "CASTLE / SOLO\nWASD move  |  Shift sprint  |  Ctrl crouch  |  Click mouse-look  |  F light  |  E interact\n"+
-            "1–4 select gear  |  R use  |  C ward  |  B ritual  |  J journal  |  M map\n"+
-            "Q (hold) callouts  |  L hide in cupboard / emerge  |  X extract  |  Escape pause or return to menu\n\n"+
-            "LOOSE OBJECTS (solo and LAN)\nF5 pick up/drop within 2m | ] turn in hand | F12 throw along your view\nDescriptions appear while examining; poltergeist projectiles injure on contact. E toggles aimed phones, alarms, radios and taps.\n\n"+
-            "GHOST PRACTICE\n[ / ] change room  |  Space drift  |  1–4 ghost actions\n\n"+
-            "MULTIPLAYER\nHost or join by IP, ready up, then use Enter 3D World when the case starts.\n"+
-            "The Field Controls tab contains alpha simulation tools, not ordinary lobby controls.");
-        help.setEditable(false);help.setLineWrap(true);help.setWrapStyleWord(true);
-        help.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
-        help.setMargin(new Insets(12,12,12,12));
-        JOptionPane.showMessageDialog(window,new JScrollPane(help),"Field controls",JOptionPane.INFORMATION_MESSAGE);
+            "1-4 select gear  |  R use  |  C ward  |  B ritual  |  J journal  |  M map\n"+
+            "Q (hold) callouts  |  L hide / emerge  |  X extract  |  Escape pause or return to menu\n\n"+
+            "LOOSE OBJECTS\nF5 pick up/drop within 2m | ] turn in hand | F12 throw along your view\n"+
+            "Descriptions appear while examining; poltergeist projectiles injure on contact.\n\n"+
+            "GHOST PRACTICE\n[ / ] change room  |  Space drift  |  1-4 ghost actions\n\n"+
+            "MULTIPLAYER\nHost or join by IP, ready up, then enter the 3D world when the case starts.");
     }
     private JButton button(String s){
         JButton b=PsxHorrorUi.button(s);
@@ -503,7 +561,9 @@ public final class InvestigationGame {
     }
     /** Free play is never silently dispatched to the menu's previous site.
      * Campaign dispatch continues to use its fixed story site and progression. */
+    /** Free play map selection remains deliberate, but is no longer a popup. */
     private void begin(){
+        boolean fromCastle=castle!=null&&castle.isShowing();
         JComboBox<SiteCatalog.Location> site=new JComboBox<>();
         for(int i=0;i<locationPicker.getItemCount();i++){
             SiteCatalog.Location candidate=locationPicker.getItemAt(i);
@@ -517,21 +577,43 @@ public final class InvestigationGame {
         JComboBox<SiteCatalog.Conditions> conditions=
             select(SiteCatalog.Conditions.values(),
                 (SiteCatalog.Conditions)conditionsPicker.getSelectedItem());
-        JPanel dispatch=new JPanel(new GridLayout(0,2,7,7));
-        dispatch.setBorder(BorderFactory.createEmptyBorder(12,12,12,12));
-        setting(dispatch,"Investigation location",site);
-        setting(dispatch,"Hunter discipline",role);
-        setting(dispatch,"Site conditions",conditions);
-        int selection=JOptionPane.showConfirmDialog(window,dispatch,
-            "EXPEDITION DISPATCH / SELECT LOCATION",
-            JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
-        if(selection!=JOptionPane.OK_OPTION)return;
-        SiteCatalog.Location destination=(SiteCatalog.Location)site.getSelectedItem();
-        SiteCatalog.requirePlayable(destination);
-        locationPicker.setSelectedItem(destination);
-        rolePicker.setSelectedItem(role.getSelectedItem());
-        conditionsPicker.setSelectedItem(conditions.getSelectedItem());
-        begin(false,false,0,null);
+        JPanel form=new JPanel(new GridLayout(0,2,10,14));
+        form.setOpaque(false);
+        form.setBorder(BorderFactory.createEmptyBorder(20,30,20,30));
+        for(JComboBox<?> choice:new JComboBox<?>[]{site,role,conditions}){
+            choice.setBackground(new Color(32,38,47));
+            choice.setForeground(new Color(240,222,183));
+        }
+        setting(form,"Investigation location",site);
+        setting(form,"Hunter discipline",role);
+        setting(form,"Site conditions",conditions);
+        JPanel body=new JPanel(new BorderLayout());body.setOpaque(false);
+        body.add(form,BorderLayout.NORTH);
+        JLabel instruction=PsxMenuScreen.label(
+            "SELECT THE MAP BEFORE DISPATCH. NO CASE STARTS UNTIL YOU CONFIRM.");
+        instruction.setHorizontalAlignment(SwingConstants.CENTER);
+        body.add(instruction,BorderLayout.CENTER);
+        JButton cancel=PsxHorrorUi.button("RETURN");
+        Runnable goBack=()->{if(fromCastle)showCastle();else showMenu();};
+        cancel.addActionListener(e->goBack.run());
+        JButton start=PsxHorrorUi.button("BEGIN SELECTED CASE");
+        start.setName("dispatch.confirm");
+        start.addActionListener(e->{
+            SiteCatalog.Location destination=(SiteCatalog.Location)site.getSelectedItem();
+            SiteCatalog.requirePlayable(destination);
+            locationPicker.setSelectedItem(destination);
+            rolePicker.setSelectedItem(role.getSelectedItem());
+            conditionsPicker.setSelectedItem(conditions.getSelectedItem());
+            begin(false,false,0,null);
+        });
+        JPanel page=PsxMenuScreen.screen("dispatch","EXPEDITION DISPATCH",
+            "CHOOSE INVESTIGATION SITE / HUNTER / CONDITIONS",body,cancel,start);
+        page.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
+            .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"cancelDispatch");
+        page.getActionMap().put("cancelDispatch",new AbstractAction(){
+            @Override public void actionPerformed(ActionEvent e){goBack.run();}
+        });
+        showPage("dispatch",page);
     }
     private void begin(boolean campaignMode,boolean withAssistant,long seed,
             CampaignStory.Chapter chapter){
@@ -613,6 +695,7 @@ public final class InvestigationGame {
         private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
         private int frameCount;
         private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
+        private JPanel pausePage;
         private LevelOpeningCinematic opening;
         private volatile boolean initialFrameReady;
         private SwingWorker<Void,Void> firstFrameWorker;
@@ -972,33 +1055,85 @@ public final class InvestigationGame {
                     "Campaign save failed",JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            JOptionPane.showMessageDialog(window,result,"EXPEDITION DEBRIEF",JOptionPane.INFORMATION_MESSAGE);
-            SwingUtilities.invokeLater(()->{
+            JTextArea receipt=new JTextArea(result);
+            receipt.setEditable(false);
+            receipt.setFocusable(false);
+            receipt.setOpaque(false);
+            receipt.setLineWrap(true);
+            receipt.setWrapStyleWord(true);
+            receipt.setFont(new Font(Font.MONOSPACED,Font.BOLD,14));
+            receipt.setForeground(new Color(230,219,196));
+            receipt.setMargin(new Insets(14,16,14,16));
+            JButton finish=PsxHorrorUi.button(campaignMode?
+                "RETURN TO CAMPAIGN BOARD":"RETURN TO CASTLE MENU");
+            finish.addActionListener(e->{
                 InvestigationGame.this.returnHome();
                 if(campaignMode)InvestigationGame.this.showCampaign();
             });
+            showPage("case-debrief",PsxMenuScreen.screen("case-debrief",
+                "EXPEDITION DEBRIEF","PERSISTED ACCOUNT / CLASS EXPERIENCE / CASE OUTCOME",
+                PsxMenuScreen.scroll(receipt),finish));
+        }
+        /** Pause the real 3D session without opening another desktop window. */
+        private void resumeFromPause(){
+            ((CardLayout)cards.getLayout()).show(cards,"play");
+            last=System.nanoTime();
+            timer.start();
+            BeckenburgDeveloperTrace.caseStage("active");
+            SwingUtilities.invokeLater(this::requestFocusInWindow);
         }
         private void pause(){
             timer.stop();down.clear();mouseLook.release();wheelOpen=false;briefingShown=false;
             BeckenburgDeveloperTrace.caseStage("paused");
-            Object[] choices={"Resume", "Retreat & return", "Controls", "Exit Game"};
-            int choice=JOptionPane.showOptionDialog(window,"Expedition paused", "Field Pause",
-                JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,choices,choices[0]);
-            if(choice==1){session.extract(scene.x,feetY(),scene.z); // extraction location still validated
-                if(session.outcome()==InvestigationSession.Outcome.ACTIVE){
-                    // Leaving a running mission from elsewhere is a failed withdrawal, not a free payout.
-                    JOptionPane.showMessageDialog(window,"Return to the entry marker to extract safely.","Not at extraction",JOptionPane.INFORMATION_MESSAGE);
-                }else{endCase("Expedition ended.");return;}
-            }
-            if(choice==2) JOptionPane.showMessageDialog(window,"WASD / click to mouse-look • 1/2/3 gear • R scan • C ward • B ritual • E door • Q hold communication wheel • M map • J journal • X extract","Controls",JOptionPane.INFORMATION_MESSAGE);
-            if(choice==3&&InGamePauseMenu.confirmExit(window)){
-                close(); // never reward an abandoned investigation
-                System.exit(0);
-                return;
-            }
-            last=System.nanoTime();timer.start();
-            BeckenburgDeveloperTrace.caseStage("active");
-            requestFocusInWindow();
+            JLabel feedback=PsxMenuScreen.label(
+                "INVESTIGATION PAUSED / YOUR CASE REMAINS IN MEMORY.");
+            feedback.setHorizontalAlignment(SwingConstants.CENTER);
+            JButton resume=PsxHorrorUi.button("RESUME CASE");
+            JButton retreat=PsxHorrorUi.button("EXTRACT / RETURN");
+            JButton controls=PsxHorrorUi.button("CONTROLS");
+            JButton exit=PsxHorrorUi.button("EXIT GAME");
+            resume.addActionListener(e->resumeFromPause());
+            retreat.addActionListener(e->{
+                // The extraction rule is unchanged; pause does not grant teleport.
+                session.extract(scene.x,feetY(),scene.z);
+                if(session.outcome()==InvestigationSession.Outcome.ACTIVE)
+                    feedback.setText("RETURN TO THE ENTRY MARKER TO EXTRACT SAFELY.");
+                else endCase("Expedition ended.");
+            });
+            controls.addActionListener(e->{
+                JPanel words=new JPanel(new BorderLayout());words.setOpaque(false);
+                JTextArea text=new JTextArea("WASD move / Mouse look / 1-4 equipment / R scan / "+
+                    "C ward / B ritual / E interact / Q hold callout / M map / J journal / X extract");
+                text.setLineWrap(true);text.setWrapStyleWord(true);text.setEditable(false);
+                text.setOpaque(false);text.setForeground(new Color(233,218,192));
+                text.setFont(new Font(Font.MONOSPACED,Font.PLAIN,14));
+                words.add(text,BorderLayout.CENTER);
+                JButton back=PsxHorrorUi.button("BACK TO PAUSE");
+                back.addActionListener(event->showPage("field-pause",pausePage));
+                showPage("field-controls",PsxMenuScreen.screen("field-controls",
+                    "FIELD CONTROLS","THE CASE REMAINS PAUSED",words,back));
+            });
+            exit.addActionListener(e->{
+                JLabel warning=PsxMenuScreen.label(
+                    "EXIT WITHOUT PAYOUT? THE ACTIVE CASE WILL BE ABANDONED.");
+                warning.setHorizontalAlignment(SwingConstants.CENTER);
+                JButton no=PsxHorrorUi.button("KEEP PLAYING");
+                no.addActionListener(event->showPage("field-pause",pausePage));
+                JButton yes=PsxHorrorUi.button("CONFIRM EXIT GAME");
+                yes.addActionListener(event->{close();System.exit(0);});
+                showPage("field-exit",PsxMenuScreen.screen("field-exit",
+                    "CONFIRM EXIT","UNSAVED EXPEDITION REWARDS WILL NOT BE GRANTED",
+                    warning,no,yes));
+            });
+            pausePage=PsxMenuScreen.screen("field-pause","INVESTIGATION PAUSED",
+                "RETURN TO FIELD / SAFE EXTRACTION / GAME CONTROLS",
+                feedback,resume,retreat,controls,exit);
+            pausePage.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
+                .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"resume");
+            pausePage.getActionMap().put("resume",new AbstractAction(){
+                @Override public void actionPerformed(ActionEvent event){resumeFromPause();}
+            });
+            showPage("field-pause",pausePage);
         }
         @Override public void keyPressed(KeyEvent e){
             if(chatInput.isVisible())return;
