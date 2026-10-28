@@ -100,6 +100,14 @@ public final class LanCase {
         if(count<1||count>6||outcome!=Outcome.ACTIVE)throw new IllegalArgumentException("1-6 hunters required");
         for(int i=0;i<6;i++)active[i]=i<count;
     }
+    /** Campaign guests may leave holes before dispatch; empty seats are never living hunters. */
+    void configureHunterSeats(boolean[] present){
+        if(present==null||present.length!=6||outcome!=Outcome.ACTIVE)
+            throw new IllegalArgumentException("Six-seat lobby snapshot required");
+        boolean any=false;for(boolean seat:present)any|=seat;
+        if(!any)throw new IllegalArgumentException("At least one hunter required");
+        System.arraycopy(present,0,active,0,6);
+    }
     public void setStartingSanity(int value){
         if(value<0||value>100)throw new IllegalArgumentException("invalid starting sanity");
         for(int i=0;i<6;i++)stress[i]=100-value;

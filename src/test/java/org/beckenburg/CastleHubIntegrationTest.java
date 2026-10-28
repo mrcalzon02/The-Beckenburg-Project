@@ -110,7 +110,9 @@ public final class CastleHubIntegrationTest {
             ok(profile.ownsEquipment(EquipmentLoadout.Item.EMF),"starter item issued");
             ok(!profile.ownsEquipment(EquipmentLoadout.Item.UV_LAMP),"UV requires purchase");
             ok(profile.purchaseEquipment(EquipmentLoadout.Item.UV_LAMP),"castle armory buy UV");
-            ok(profile.currency()==150,"deduct exact purchase price");
+            int uvPrice=EquipmentTiers.stage("UV_LIGHT",EquipmentTiers.Tier.I).creditCost();
+            ok(ProfileStore.equipmentPrice(EquipmentLoadout.Item.UV_LAMP)==uvPrice,"one UV price in both modes");
+            ok(profile.currency()==300-uvPrice,"deduct exact shared catalog purchase price");
             ProfileStore saved=new ProfileStore(props);saved.load();
             ok(saved.ownsEquipment(EquipmentLoadout.Item.UV_LAMP),"purchase survives restart");
             ok(!saved.purchaseEquipment(EquipmentLoadout.Item.UV_LAMP),"cannot buy duplicate");

@@ -588,9 +588,10 @@ public final class LanHost implements AutoCloseable {
                             throw new IllegalArgumentException("configured hunter party must be ready");
                     if(seats[GHOST_SEAT]!=null&&!seats[GHOST_SEAT].ready)throw new IllegalArgumentException("ghost must be ready");
                     if(campaignProfile!=null){
-                        deployedMembers=0;int last=0;for(int i=0;i<HUNTERS;i++)if(seats[i]!=null){deployedMembers++;last=i+1;}
+                        deployedMembers=0;boolean[] present=new boolean[HUNTERS];
+                        for(int i=0;i<HUNTERS;i++)if(seats[i]!=null){deployedMembers++;present[i]=true;}
                         campaignProfile.consumeMissionHunters(campaignBots.size());
-                        mission.configureHunters(last);
+                        mission.configureHunterSeats(present);
                         mission.configureCampaignCareer(0,campaignProfile.level(InvestigationSession.Role.valueOf(mission.discipline(0).name())));
                         mission.configurePartyThreat(deployedMembers);
                         ghost.configureRecovery(CampaignPartyRules.recoveryRate(deployedMembers));

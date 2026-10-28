@@ -16,6 +16,10 @@ public final class CampaignPartyRulesTest {
         return session;
     }
     public static void main(String[] args)throws Exception{
+        var lobbyCase=new LanCase(4,new HouseMap(HouseMap.Site.HOUSE));
+        lobbyCase.configureHunterSeats(new boolean[]{true,false,true,false,false,false});
+        check(lobbyCase.alive(0)&&!lobbyCase.alive(1)&&lobbyCase.alive(2),
+            "A guest leaving before dispatch cannot create a phantom living hunter in the empty seat");
         check(CampaignPartyRules.recoveryRate(1)==100&&
             CampaignPartyRules.recoveryRate(2)==115&&
             CampaignPartyRules.recoveryRate(6)==175,
