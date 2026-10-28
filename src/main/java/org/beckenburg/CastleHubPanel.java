@@ -27,12 +27,25 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private double clock;
     private double elevation;
     private boolean castleLightsOn=true,crouched,storeOpen;
+    private final JPanel quartermaster;
+    private final CampaignStorePanel quartermasterStore;
+    private JButton quartermasterClose;
     private String notice="Welcome to Beckenburg Castle. The equipment is real; look and press E.";
     private int noticeTicks=100;
     public CastleHubPanel(ProfileStore profile,Actions actions){
         this.profile=java.util.Objects.requireNonNull(profile);
         this.actions=java.util.Objects.requireNonNull(actions);
         setFocusable(true);setBackground(new Color(11,12,17));
+        // The world panel itself owns the shop overlay; never create a Window.
+        setLayout(null);
+        quartermasterStore=new CampaignStorePanel(profile,()->{
+            GameSfx.play(LanSound.Cue.PICKUP);
+            notice="Quartermaster transaction saved. Equipment and stock updated.";
+            noticeTicks=145;
+        });
+        quartermaster=createQuartermasterOverlay();
+        quartermaster.setVisible(false);
+        add(quartermaster);
         double[] spawn=CastleLevelEdits.current().spawn();
         renderer.x=spawn[0];renderer.z=spawn[1];renderer.yaw=spawn[2];renderer.pitch=-.07;
         look=new MouseLook(this,(dx,dy)->MouseLook.rotate(renderer,dx,dy),()->!archive.opened()&&!storeOpen);
@@ -49,6 +62,48 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         requestFocusInWindow();
     }
     public void close(){timer.stop();down.clear();look.close();atmosphere.close();authoredAudio.close();}
+    @Override public void doLayout(){
+        super.doLayout();
+        int width=Math.max(0,Math.min(getWidth()-24,1020));
+        int height=Math.max(0,Math.min(getHeight()-24,680));
+        quartermaster.setBounds((getWidth()-width)/2,(getHeight()-height)/2,width,height);
+    }
+    /** Existing PSX panels, buttons and approved model thumbnails stay inside
+     * the same world viewport and share the live persisted Castle profile. */
+    private JPanel createQuartermasterOverlay(){
+        JPanel overlay=PsxHorrorUi.surface(new BorderLayout(8,8));
+        overlay.setName("castle.quartermaster.overlay");
+        overlay.setBorder(BorderFactory.createEmptyBorder(12,12,12,12));
+        JPanel heading=new JPanel(new BorderLayout(8,0));
+        heading.setOpaque(false);
+        JLabel title=new JLabel("CASTLE BECKENBURG   /   QUARTERMASTER");
+        title.setForeground(new Color(236,219,183));
+        title.setFont(new Font(Font.MONOSPACED,Font.BOLD,17));
+        heading.add(title,BorderLayout.CENTER);
+        JButton close=PsxHorrorUi.button("RETURN TO CASTLE  [ESC]");
+        quartermasterClose=close;
+        close.setName("castle.quartermaster.close");
+        close.addActionListener(e->closeQuartermaster());
+        heading.add(close,BorderLayout.EAST);
+        overlay.add(heading,BorderLayout.NORTH);
+        overlay.add(quartermasterStore,BorderLayout.CENTER);
+        overlay.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
+            .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"closeQuartermaster");
+        overlay.getActionMap().put("closeQuartermaster",new AbstractAction(){
+            @Override public void actionPerformed(ActionEvent e){closeQuartermaster();}
+        });
+        return overlay;
+    }
+    boolean quartermasterOpen(){return storeOpen;}
+    private void closeQuartermaster(){
+        if(!storeOpen)return;
+        storeOpen=false;
+        quartermaster.setVisible(false);
+        last=System.nanoTime();
+        down.clear();
+        requestFocusInWindow();
+        repaint();
+    }
     private void frame(){
         atmosphere.setActive(isShowing());authoredAudio.active(isShowing()&&!storeOpen);authoredAudio.listener(renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,castleLightsOn);
         if(!isShowing()||storeOpen){last=System.nanoTime();return;}
@@ -90,22 +145,19 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         if(from>2.0 && to<0.5 && !CastleHubArchitecturalPlan.onStairs(x,z))return false;
         return true;
     }
-    /** One persistent account and the existing quartermaster inventory for both armoury counters. */
-    private void openQuartermaster(){
-        down.clear();look.release();storeOpen=true;
-        java.awt.Window owner=SwingUtilities.getWindowAncestor(this);
-        JDialog window=new JDialog(owner,"Castle Beckenburg — Quartermaster",Dialog.ModalityType.APPLICATION_MODAL);
-        window.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        window.setContentPane(new CampaignStorePanel(profile,()->{
-            GameSfx.play(LanSound.Cue.PICKUP);
-            notice="Quartermaster transaction saved. Equipment and stock updated.";
-            noticeTicks=145;
-        }));
-        window.setSize(730,430);
-        window.setMinimumSize(new Dimension(570,330));
-        window.setLocationRelativeTo(this);
-        try{window.setVisible(true);}
-        finally{storeOpen=false;last=System.nanoTime();requestFocusInWindow();}
+    /** Open the existing shop as part of the Castle game panel. */
+    void openQuartermaster(){
+        if(storeOpen)return;
+        down.clear();
+        look.release();
+        storeOpen=true;
+        quartermasterStore.refresh();
+        quartermaster.setVisible(true);
+        revalidate();
+        repaint();
+        SwingUtilities.invokeLater(()->{
+            if(storeOpen)quartermasterClose.requestFocusInWindow();
+        });
     }
     private void use(CastleHubMap.Station station){
         if(station==CastleHubMap.Station.ARCHIVE){archive.open();down.clear();look.release();noticeTicks=0;repaint();return;}
@@ -148,6 +200,10 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     @Override public void keyPressed(KeyEvent e){
         if(!isShowing())return;
         int key=e.getKeyCode();if(down.contains(key))return;
+        if(storeOpen){
+            if(key==KeyEvent.VK_ESCAPE)closeQuartermaster();
+            return;
+        }
         if(archive.opened()){archive.key(key);repaint();return;}
         if(key==KeyEvent.VK_ESCAPE){actions.menu();return;}
         if(key==KeyEvent.VK_E){
@@ -181,6 +237,10 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         try{
             int w=getWidth(),h=getHeight();
             GraphicsOptions.current().draw(g,renderer.image(),w,h);
+            if(storeOpen){
+                g.setColor(new Color(5,8,12,190));g.fillRect(0,0,w,h);
+                return; // Swing paints the live PSX store child above the dimmed world.
+            }
 
             g.setFont(new Font(Font.MONOSPACED,Font.BOLD,14));
             g.setColor(new Color(11,17,23,214));
