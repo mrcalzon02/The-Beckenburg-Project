@@ -1753,3 +1753,17 @@ Guard class restoration to hunter seats, preserve ghost resume and host ownershi
 Evidence: LanSessionResumeIntegrationTest and LanHostOwnerRecoveryTest pass after fix; strengthened real-TCP tests verify resumed Cleric ability, fresh Observer authority and ghost privacy.
 
 Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
+
+## DEV-136 — Production light sampler bypassed receiving-side architectural join guard
+
+**Status:** fixed-scoped-runtime-diagnostic-verified ·28October2026
+
+Actual scalar sampler added4.613energy through a solid wall endpoint. Grazing GPU view showed2260bright pixels from an exterior diagnostic source despite closed geometry.
+
+Cause: ArchitecturalLightOcclusion.visible existed and its standalone tests passed, but production scalar and normal sampling never called it. Prop self-shadow endpoint bias could move the receiving endpoint across a wall. Shadow key also omitted receiving room.
+
+Action: Use full receiving-side architectural check before prop bias for non-native investigation geometry; scope scalar shadow cache by receiver. Preserve Castle visibility and native triangle paths.
+
+Evidence: FixtureJoinIntegrationTest fails on7f1515d0 at4.8vs0.187ambient and passes after repair, including real door open/close invalidation and same-side light control. AllMapArchitecturalJoinTest6789closed-boundary rays across9indoor maps.18matched actualGPUdiagnostic images: corrected exterior-source frames exactly equal source-off frames; same-side interior source remains lit.
+
+Older-map audit: All generated-map joins still need moving-camera/human review. Native physical meshes, roof joins and every portal state require independent evidence. No full map, LAN or30FPS acceptance inferred.

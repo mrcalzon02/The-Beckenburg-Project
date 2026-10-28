@@ -9,7 +9,7 @@ public final class FixtureLighting {
  // Exact geometry and orientation bits avoid reusing a normal probe across
  // opposite sides of a thin wall or across differently facing surfaces.
  private record NormalKey(int room,long x,long y,long z,long nx,long ny,long nz){}
- private record Shadow(int source,long x,long y,long z){}
+ private record Shadow(int source,int receiver,long x,long y,long z){}
  private record DistantCell(int room,long x,long y,long z){}
 
  private record DistantProbe(double x,double y,double z,RGB light,long revision){}
@@ -264,8 +264,14 @@ public final class FixtureLighting {
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
    double fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2);if(weight<.002)continue;
-   Shadow shadow=new Shadow(source.id,key.x,key.y,key.z);Boolean visible=sight.get(shadow);
-   if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);shadowRays++;visible=clear(source.x,source.y,source.z,x-dx*back,y-dy*back,z-dz*back);sight.put(shadow,visible);}
+   Shadow shadow=new Shadow(source.id,room,key.x,key.y,key.z);Boolean visible=sight.get(shadow);
+   if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);shadowRays++;
+    // Check architecture to the receiving face before applying prop self-shadow
+    // bias. The bias must never pull an inner-wall endpoint across its wall.
+    visible=map!=null&&!map.nativeSite()
+        ?ArchitecturalLightOcclusion.visible(map,room,source.x,source.y,source.z,x,y,z)
+        :clear(source.x,source.y,source.z,x-dx*back,y-dy*back,z-dz*back);
+    sight.put(shadow,visible);}
    if(visible){r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
   }
   RGB result=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
@@ -289,7 +295,10 @@ public final class FixtureLighting {
    double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
    if(weight>.001){
     normalRays++;
-    if(clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025)){
+    boolean visible=map!=null&&!map.nativeSite()
+        ?ArchitecturalLightOcclusion.visible(map,room,source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025)
+        :clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025);
+    if(visible){
      r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;
     }
    }
