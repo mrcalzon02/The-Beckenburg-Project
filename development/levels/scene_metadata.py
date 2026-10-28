@@ -3,7 +3,9 @@ def apply(scene,definition):
  name=definition['id'];scene.unit_settings.system='METRIC';scene.unit_settings.scale_length=1
  scene['coordinate_contract']='Metres; Blender Z up, front -Y; runtime Y up, front +Z'
  scene['license_scope']='Original standalone library files: CC0-1.0. Mixed-source game assemblies retain their separate asset licenses.'
- if name=='castle-surroundings':
+ if name=='castle-rebuild':
+  scene['source_of_truth']='CastleRooms.java / CastleHubArchitecturalPlan.java / CastleWarehouse.java / CastleLevelEdits.java';scene['assembly_role']='Exact room-based headquarters runtime export,129 supported equipment tier displays; physical full-loop acceptance separate'
+ elif name=='castle-surroundings':
   scene['source_of_truth']='CastleSurroundings.java / CastleHubArchitecturalPlan.java';scene['assembly_role']='Surroundings only; castle architecture remains in the game hub'
  elif name=='arrival-road':
   scene['source_of_truth']='VanArrivalTile.java / VanArrivalStreet.java / VanStaging.java';scene['assembly_role']='Canonical reusable van and arrival road module; apply destination dock once'

@@ -1,40 +1,49 @@
 package org.beckenburg;
 import java.util.ArrayList;
 import java.util.List;
-/** Model-backed castle equipment warehouse and physical retail counter. */
+/** Supported, aisle-facing retail displays. Each family occupies one column; tiers form rows. */
 public final class CastleWarehouse {
  private CastleWarehouse(){}
- public record Rack(double x,double z,double scale){}
- public record Exhibit(String id,String mesh,double x,double y,double z,double scale){}
- public static final double COUNTER_X=32.7, COUNTER_Z=24.5;
- private static final List<Rack> RACKS=createRacks();
- private static final List<Exhibit> EXHIBITS=createExhibits();
- private static List<Rack> createRacks(){
-  var result=new ArrayList<Rack>();
-  for(double x:new double[]{30.5,40.7})
-   for(double z:new double[]{19.5,22.7,25.9,29.1})
-    result.add(new Rack(x,z,1.05));
-  return List.copyOf(result);
+ public static final String SHELF="level_castle_retail_shelf";
+ public static final double WIDTH=2.06,DEPTH=.64,HEIGHT=2.54;
+ public static final double[] SHELVES={.35,1.10,1.85};
+ public record Rack(double x,double z,double scale,double yaw){
+  public double[] world(double x,double z){return new double[]{this.x+x*Math.cos(yaw)-z*Math.sin(yaw),this.z+x*Math.sin(yaw)+z*Math.cos(yaw)};}
  }
- private static List<Exhibit> createExhibits(){
-  var result=new ArrayList<Exhibit>();int index=0;
-  for(var tool:EquipmentRegistry.all()){
-   var rack=RACKS.get(index/6);
-   result.add(new Exhibit(tool.id(),EquipmentModelCatalog.model(tool.id(),EquipmentTiers.Tier.I),
-    rack.x()+(index%2==0?-.25:.25),.40+(index%6/2)*.60,rack.z()+.1,.34));
-   index++;
+ public record Exhibit(String id,EquipmentTiers.Tier tier,String mesh,int rack,int column,
+                       double x,double y,double z,double scale,double yaw){}
+ public static final double COUNTER_X=32.7,COUNTER_Z=24.5;
+ private static final List<Rack> RACKS=createRacks();
+ private static List<Exhibit> exhibits;
+ private static List<Rack> createRacks(){
+  var out=new ArrayList<Rack>();
+  for(double z:new double[]{19.4,21.55,27.5,29.65,31.8})out.add(new Rack(29.65,z,1,-Math.PI/2));
+  for(double z:new double[]{19.4,21.55,23.7,25.85,28,30.15})out.add(new Rack(41.95,z,1,Math.PI/2));
+  out.add(new Rack(32.2,18.1,1,0));out.add(new Rack(39.1,18.1,1,0));
+  out.add(new Rack(34.5,33.1,1,Math.PI));out.add(new Rack(37,33.1,1,Math.PI));
+  return List.copyOf(out);
+ }
+ public static synchronized List<Exhibit> exhibits(){
+  if(exhibits!=null)return exhibits;
+  var families=new ArrayList<String>();for(var tool:EquipmentRegistry.all())families.add(tool.id());
+  families.add("HEALTH_SUPPLIES");families.sort(String::compareTo);
+  var out=new ArrayList<Exhibit>();
+  for(int i=0;i<families.size();i++)for(var tier:EquipmentTiers.Tier.values()){
+   var rack=RACKS.get(i/3);var p=rack.world((i%3-1)*.66,0);
+   String id=families.get(i),mesh=EquipmentModelCatalog.model(id,tier);
+   double[] b=SceneRenderer.castleBounds(mesh);
+   double scale=Math.min(1,Math.min(.55/b[3],Math.min(.50/b[5],.62/b[4])));
+   out.add(new Exhibit(id,tier,mesh,i/3,i%3,p[0],SHELVES[tier.ordinal()],p[1],scale,rack.yaw));
   }
-  var rack=RACKS.get(index/6);
-  result.add(new Exhibit("HEALTH_SUPPLIES",EquipmentModelCatalog.model("HEALTH_SUPPLIES",EquipmentTiers.Tier.I),
-   rack.x()+(index%2==0?-.25:.25),.40+(index%6/2)*.60,rack.z()+.1,.34));
-  return List.copyOf(result);
+  return exhibits=List.copyOf(out);
  }
  public static List<Rack> racks(){return RACKS;}
- public static List<Exhibit> exhibits(){return EXHIBITS;}
  public static boolean blocks(double x,double z,double radius){
-  for(var rack:RACKS)
-   if(Math.abs(x-rack.x())<.43+radius&&Math.abs(z-rack.z())<.60+radius)return true;
-  return Math.abs(x-COUNTER_X)<.55+radius&&Math.abs(z-COUNTER_Z)<.35+radius;
+  for(var r:RACKS){double dx=x-r.x,dz=z-r.z;
+   if(Math.abs(dx*Math.cos(r.yaw)+dz*Math.sin(r.yaw))<WIDTH*.5+radius&&
+      Math.abs(-dx*Math.sin(r.yaw)+dz*Math.cos(r.yaw))<DEPTH*.5+radius)return true;
+  }
+  return Math.abs(x-COUNTER_X)<.82+radius&&Math.abs(z-COUNTER_Z)<.27+radius;
  }
  public static boolean aimed(CastleHubMap map,double x,double z,double yaw){
   if(map==null||!map.traversable(x,z)||!Double.isFinite(yaw))return false;

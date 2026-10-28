@@ -1,6 +1,6 @@
 # Individual equipment tier icons
 
-129 independent 512 x 512 RGBA Blender Cycles renders: 42 equipment families plus health supplies, each at tiers I–III. Every file imports the exact runtime GLB selected by EquipmentModelCatalog.java; the manifest records that model. Static van fixtures correctly retain their shared source model.
+129 independent 512 x 512 RGBA Blender Cycles renders: 42 equipment families plus health supplies, each at tiers Iâ€“III. Every file imports the exact runtime GLB selected by EquipmentModelCatalog.java; the manifest records that model. Static van fixtures correctly retain their shared source model.
 
 The camera uses a close three-quarter view and re-renders after checking actual alpha bounds to fill roughly 84% of the long dimension. No three-tier review sheet is used as a store icon. Original materials, textures and source geometry are preserved.
 

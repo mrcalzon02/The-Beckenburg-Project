@@ -27,6 +27,7 @@ public final class LevelSceneSource {
     }
     @SuppressWarnings("unchecked")
     public static void main(String[] args)throws Exception{
+        if(args.length>0&&args[0].equals("CASTLE_REBUILD")){castle();return;}
         if(args.length>0&&(args[0].equals("ARRIVAL")||args[0].equals("CASTLE_SURROUNDINGS")||args[0].startsWith("ENCLOSURE_"))){module(args[0]);return;}
         HouseMap map=args.length>0&&args[0].equals("BLACKPINE")?BlackpineLevel.map():new HouseMap(args.length>0?HouseMap.Site.valueOf(args[0]):HouseMap.Site.HOUSE);
         map.configureHiding(100); // Editable authoring source includes every potential cupboard.
@@ -40,6 +41,29 @@ public final class LevelSceneSource {
         Files.writeString(out.resolve("event-fixtures.json"),json(map.fixtures().states()));
         Files.writeString(out.resolve("lighting-sources.json"),json(new FixtureLighting(map).sources()));
         Files.writeString(out.resolve("scene-settings.json"),"{\"hidingDensity\":100}");
+        writeFaces(out,faces);
+    }
+    @SuppressWarnings("unchecked")
+    static void castle()throws Exception{
+        var map=new CastleHubMap();var scene=new SceneRenderer();scene.x=22;scene.z=18;
+        Field all=SceneRenderer.class.getDeclaredField("exportFullLevel");all.setAccessible(true);all.setBoolean(scene,true);
+        scene.drawCastle(map,2.5,true);
+        Field geometry=SceneRenderer.class.getDeclaredField("castleExportGeometry");geometry.setAccessible(true);
+        var faces=(List<Object>)geometry.get(scene);
+        var rooms=new ArrayList<LevelDefinition.Room>();int index=0;
+        for(var r:CastleRooms.ALL)rooms.add(new LevelDefinition.Room(index++,r.name(),r.x0(),r.z0(),r.x1(),r.z1(),r.floor(),
+            r.outside()?12:r.ceiling()-CastleRooms.SLAB-r.floor(),"stone",r.outside()?"exterior":"headquarters",
+            new LevelDefinition.Vec((r.x0()+r.x1())*.5,r.floor(),(r.z0()+r.z1())*.5)));
+        rooms.add(new LevelDefinition.Room(13,"Exterior landscape",-180,-160,220,220,-.65,80,"earth","exterior",new LevelDefinition.Vec(22,0,18)));
+        var sockets=new ArrayList<LevelDefinition.Socket>();
+        for(var station:CastleHubMap.Station.values()){var p=CastleLevelEdits.current().station(station);
+            sockets.add(new LevelDefinition.Socket(station.name(),"station",0,p[0],0,p[1],0,station.label));}
+        var definition=new Module("castle-rebuild","room-structure-v2","Castle Beckenburg rebuilt headquarters",rooms,sockets,List.of(),List.of(),new LevelDefinition.Dock(13.3,0,27.7,0));
+        Path out=Path.of("build/level-verification/scenes/castle-rebuild");Files.createDirectories(out);
+        Files.writeString(out.resolve("definition.json"),json(definition));
+        Files.writeString(out.resolve("lighting-sources.json"),json(new FixtureLighting(map).sources()));
+        Files.writeString(out.resolve("scene-settings.json"),"{\"hidingDensity\":0}");
+        Files.writeString(out.resolve("retail-displays.json"),json(CastleWarehouse.exhibits()));
         writeFaces(out,faces);
     }
     @SuppressWarnings("unchecked")

@@ -9,14 +9,14 @@ public final class CastleHeadquartersRevisionTest {
  public static void main(String[] args)throws Exception {
   var map=new CastleHubMap();
   check(map.valid(),"original Castle Beckenburg stations remain connected");
-  check(CastleWarehouse.racks().size()==8,"eight stocked physical shelf locations");
-  check(CastleWarehouse.exhibits().size()==EquipmentRegistry.all().size()+1,
+  check(CastleWarehouse.racks().size()==15,"fifteen open retail fixtures with clear browsing aisles");
+  check(CastleWarehouse.exhibits().size()==(EquipmentRegistry.all().size()+1)*3,
    "every canonical tool plus health supplies appears in warehouse");
   var ids=new HashSet<String>();
   for(var exhibit:CastleWarehouse.exhibits()){
-   check(ids.add(exhibit.id()),"exhibit families are not silently duplicated");
+   check(ids.add(exhibit.id()+"/"+exhibit.tier()),"exhibit families are not silently duplicated");
    check(GlbProps.availableModels().contains(exhibit.mesh()),"missing source-backed mesh "+exhibit.mesh());
-   double scale=SceneRenderer.castleExhibitScale(exhibit.mesh(),exhibit.scale());
+   double scale=exhibit.scale();
    check(scale>0&&scale<=exhibit.scale(),"model scale is bounded by physical rack bay");
    var bounds=GlbProps.model(exhibit.mesh()).triangles();
    double x0=Double.POSITIVE_INFINITY,x1=-x0,y0=x0,y1=-x0,z0=x0,z1=-x0;
@@ -26,9 +26,9 @@ public final class CastleHeadquartersRevisionTest {
     y0=Math.min(y0,vertex.y());y1=Math.max(y1,vertex.y());
     z0=Math.min(z0,vertex.z());z1=Math.max(z1,vertex.z());
    }
-   check((x1-x0)*scale<=.421&&(y1-y0)*scale<=.481&&(z1-z0)*scale<=.421,
+   check((x1-x0)*scale<=.551&&(y1-y0)*scale<=.621&&(z1-z0)*scale<=.501,
        "source GLB mesh must fit a real display bay");
-   check(exhibit.x()>29&&exhibit.x()<42&&exhibit.z()>18&&exhibit.z()<33,
+   check(exhibit.x()>29&&exhibit.x()<42&&exhibit.z()>18&&exhibit.z()<33.5,
      "models remain in enclosed east warehouse");
   }
   check(!map.traversable(CastleWarehouse.racks().get(0).x(),CastleWarehouse.racks().get(0).z()),

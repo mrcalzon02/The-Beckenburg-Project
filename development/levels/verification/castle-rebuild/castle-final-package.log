@@ -1,0 +1,32 @@
+Baked 71 approved model-render UI icons, Castle splash and native desktop icon
+PASS: authored 126 textured PSX GLBs, 788556 bytes (42 equipment categories x 3 physical tiers)
+Prepared 15 CC0 medieval castle meshes
+00:00.953  blend            | Read blend: "C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Map-Materials\build\castle-temp\ggbot-original-blend-ty13y60v\Car 01\Car.blend"
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Map-Materials\tools\ggbot_blend_export.py:50: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if not mat or not mat.use_nodes:
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+08:30:18 | INFO: Starting glTF 2.0 export
+08:30:18 | INFO: Extracting primitive: Car
+08:30:18 | INFO: Primitives created: 1
+08:30:18 | INFO: Finished glTF 2.0 export in 0.00458526611328125 s
+00:01.453  blend            | Read blend: "C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Map-Materials\build\castle-temp\ggbot-original-blend-ty13y60v\Car 05\Car5.blend"
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Map-Materials\tools\ggbot_blend_export.py:50: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if not mat or not mat.use_nodes:
+
+GGBOT BLEND VERIFIED Car.blend -> ggbot_car01.glb mesh_objects 1 image_nodes 1 size 53808
+08:30:18 | INFO: Starting glTF 2.0 export
+08:30:18 | INFO: Extracting primitive: Car5
+08:30:18 | INFO: Primitives created: 1
+08:30:18 | INFO: Finished glTF 2.0 export in 0.003543376922607422 s
+00:01.469  blend            | Read blend: "C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Map-Materials\build\castle-temp\ggbot-original-blend-ty13y60v\Car 08\Car8.blend"
+
+GGBOT BLEND VERIFIED Car5.blend -> ggbot_car05.glb mesh_objects 1 image_nodes 1 size 51508
+08:30:18 | INFO: Starting glTF 2.0 export
+08:30:18 | INFO: Extracting primitive: Car8
+08:30:18 | INFO: Primitives created: 1
+08:30:18 | INFO: Finished glTF 2.0 export in 0.0030050277709960938 s
+
+GGBOT BLEND VERIFIED Car8.blend -> ggbot_car08_van_shell.glb mesh_objects 1 image_nodes 1 size 37296
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit

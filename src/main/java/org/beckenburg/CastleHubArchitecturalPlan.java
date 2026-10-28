@@ -30,10 +30,10 @@ public final class CastleHubArchitecturalPlan {
     /** Continuous exterior wing roofs: the middle courtyard remains open sky.
      * The library uses a higher roof above its genuinely walkable upper storey. */
     private static final List<Roof> ROOFS=List.of(
-        new Roof(1,10,1,34,GROUND_CEILING,1.70,MaterialAtlas.STONE),
-        new Roof(10.8,19,1.2,10.7,UPPER_CEILING,2.0,MaterialAtlas.STONE),
-        new Roof(20,28.7,1,34,GROUND_CEILING,1.85,MaterialAtlas.STONE),
-        new Roof(28.6,43,4,34,GROUND_CEILING,2.20,MaterialAtlas.AGED_WOOD)
+        new Roof(1,10.5,1,34,GROUND_CEILING,1.70,MaterialAtlas.STONE),
+        new Roof(10.5,19.5,1,11.5,UPPER_CEILING,2.0,MaterialAtlas.STONE),
+        new Roof(21.2,28.5,1,34,GROUND_CEILING,1.85,MaterialAtlas.STONE),
+        new Roof(28.5,43,4,34,GROUND_CEILING,2.20,MaterialAtlas.AGED_WOOD)
     );
     public static List<Roof> roofs(){return ROOFS;}
     public static boolean roofedAt(double x,double z){
@@ -47,17 +47,17 @@ public final class CastleHubArchitecturalPlan {
     private static final List<Wall> WALLS=buildWalls();
     private static final List<Deck> DECKS=List.of(
         // Functional second storey: library above the contract hall.
-        new Deck(10.8,1.2,19.0,10.7,GROUND_CEILING,MaterialAtlas.PARQUET),
+        new Deck(10.5,1,19.5,11.5,GROUND_CEILING,MaterialAtlas.PARQUET),
         // Continuous stone gallery reaches the stair landing without a teleport.
-        new Deck(16.0,10.7,19.0,22.0,GROUND_CEILING,MaterialAtlas.STONE),
+        new Deck(16.0,11.5,19.0,22.0,GROUND_CEILING,MaterialAtlas.STONE),
         // Upper library is sheltered by a genuine higher ceiling.
-        new Deck(10.8,1.2,19.0,10.7,UPPER_CEILING,MaterialAtlas.CEILING),
+        new Deck(10.5,1,19.5,11.5,UPPER_CEILING,MaterialAtlas.CEILING),
         // Connected upper-level rampart circuit: east bridge from the existing
         // gallery, eastern wall walk, southern battlements and western return.
         new Deck(18.0,20.0,21.0,22.0,GROUND_CEILING,MaterialAtlas.STONE),
         new Deck(19.2,12.0,21.2,33.0,GROUND_CEILING,MaterialAtlas.STONE),
-        new Deck(10.0,31.0,21.2,33.0,GROUND_CEILING,MaterialAtlas.STONE),
-        new Deck(10.0,12.0,12.0,33.0,GROUND_CEILING,MaterialAtlas.STONE)
+        new Deck(10.5,31.0,21.2,33.0,GROUND_CEILING,MaterialAtlas.STONE),
+        new Deck(10.5,12.0,12.5,33.0,GROUND_CEILING,MaterialAtlas.STONE)
     );
     private static final List<Trim> TRIMS=List.of(
         // Imported medieval architectural sources used as measured trim, not
@@ -98,8 +98,8 @@ public final class CastleHubArchitecturalPlan {
         List<Wall> out=new ArrayList<>();
         // Ground plan: a sequence of measured masonry and partition walls.
         // Door openings are 2.5m wide and 2.7m high, with proper lintels.
-        horizontal(out,1.0,1.0,28.0,0,GROUND_CEILING,MaterialAtlas.STONE);
-        horizontal(out,4.0,29.0,43.0,0,GROUND_CEILING,MaterialAtlas.STONE);
+        horizontal(out,1.0,1.0,28.5,0,GROUND_CEILING,MaterialAtlas.STONE);
+        horizontal(out,4.0,28.5,43.0,0,GROUND_CEILING,MaterialAtlas.STONE);
         // One 4.6m courtyard gate opening; the portcullis is its only door slot.
         horizontal(out,34.0,1.0,13.2,0,GROUND_CEILING,MaterialAtlas.STONE);
         horizontal(out,34.0,17.8,43.0,0,GROUND_CEILING,MaterialAtlas.STONE);
@@ -125,11 +125,11 @@ public final class CastleHubArchitecturalPlan {
         vertical(out,28.5,17.5,34.0,0,GROUND_CEILING,MaterialAtlas.STONE,24.5);
         horizontal(out,17.5,28.5,43.0,0,GROUND_CEILING,MaterialAtlas.STONE,35.5);
         // Visible architectural second storey; the south-facing gallery has
-        // an actual upper opening into the library, not an unreachable façade.
-        horizontal(out,1.2,10.8,19.0,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
-        vertical(out,10.8,1.2,10.7,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
-        vertical(out,19.0,1.2,10.7,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
-        horizontal(out,10.7,10.8,19.0,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE,17.5);
+        // an actual upper opening into the library, not an unreachable faÃ§ade.
+        horizontal(out,1,10.5,19.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
+        vertical(out,10.5,1,11.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
+        vertical(out,19.5,1,11.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
+        horizontal(out,11.5,10.5,19.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE,17.5);
         return List.copyOf(out);
     }
     private static void horizontal(List<Wall> out,double z,double from,double to,
@@ -202,7 +202,8 @@ public final class CastleHubArchitecturalPlan {
     /** An upper deck has a separate underside: never put its floor and the
      * downstairs ceiling on exactly the same plane (z-fighting). */
     public static double groundCeilingHeight(double x,double z){
-        return upperWalkable(x,z)?GROUND_CEILING-.16:GROUND_CEILING;
+        var room=CastleRooms.at(x,0,z);
+        return room!=null&&!room.outside()?room.ceiling()-CastleRooms.SLAB:GROUND_CEILING;
     }
     /** Collision for the whole player radius, including the open gallery edges. */
     public static boolean upperClearance(double x,double z,double radius){

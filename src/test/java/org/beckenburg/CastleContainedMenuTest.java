@@ -20,6 +20,8 @@ public final class CastleContainedMenuTest {
                 if(!SwingUtilities.isDescendingFrom(network,castle))throw new AssertionError("Multiplayer is outside Castle");
                 if(java.awt.Window.class.isAssignableFrom(LanLobbyPanel.class)||java.awt.Window.class.isAssignableFrom(LanLobbyWindow.class))
                     throw new AssertionError("Lobby can be a separate Window");
+                for(Class<?> type:BeckenburgUpdatesUI.class.getDeclaredClasses())
+                    if(java.awt.Window.class.isAssignableFrom(type))throw new AssertionError("Updates can allocate a separate Window");
                 CampaignMenuWorkflowTest.capture(castle,"castle-multiplayer");
                 castle.closeService();
                 if(SwingUtilities.isDescendingFrom(network,castle))throw new AssertionError("Closed service not removed");

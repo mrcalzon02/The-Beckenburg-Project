@@ -1,0 +1,332 @@
+[
+  {
+    "test": "LanHunterAbilitiesNetworkTest",
+    "exit": 0,
+    "output": "PASS: multiplayer class ownership, live sensor survey, cooldowns, ghost isolation\n",
+    "seconds": 0.547
+  },
+  {
+    "test": "BeckenburgUpdatesTest",
+    "exit": 0,
+    "output": "PASS independent Beckenburg updates, version sorting, exact asset path and hostile URL rejection\n",
+    "seconds": 0.75
+  },
+  {
+    "test": "LanSoundRecorderIntegrationTest",
+    "exit": 0,
+    "output": "PASS: real rack input, paid upgrades, authored audio, private playback, service authority and reconnect continuity\n",
+    "seconds": 5.906
+  },
+  {
+    "test": "LanFieldEquipmentIntegrationTest",
+    "exit": 0,
+    "output": "PASS: real sockets, multi-slot gear readings, team journal and ghost privacy\n",
+    "seconds": 0.797
+  },
+  {
+    "test": "LanRiteNetworkTest",
+    "exit": 0,
+    "output": "PASS: 4 real sockets, raw measurements, hunter deduction, correct site/banishment, human-ghost privacy\n",
+    "seconds": 6.203
+  },
+  {
+    "test": "LanGhostHearingIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four-socket ghost sound cues, no private telemetry or forged sound authority\n",
+    "seconds": 0.578
+  },
+  {
+    "test": "LanGhostTakeoverIntegrationTest",
+    "exit": 0,
+    "output": "PASS: human to AI ghost continuity, sequence monotonicity and hunter exit\n",
+    "seconds": 3.281
+  },
+  {
+    "test": "LanCaseFileIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four-seat LAN casefile delivery, replay and ghost privacy\n",
+    "seconds": 0.672
+  },
+  {
+    "test": "LanSpatialEvidenceIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four-peer spatial tool range, in-range proof, ghost privacy and defended resolution\n",
+    "seconds": 7.016
+  },
+  {
+    "test": "LanIncapacitationHudTest",
+    "exit": 0,
+    "output": "PASS: downed first-person view refuses doors, scanner and movement inputs\nBeckenburg soundtrack unavailable: sleep interrupted\n",
+    "seconds": 0.828
+  },
+  {
+    "test": "LanGuestDepartureIntegrationTest",
+    "exit": 0,
+    "output": "PASS: guest exit preserves case and cleanse; host departure ends match\n",
+    "seconds": 6.344
+  },
+  {
+    "test": "LanClientWelcomeTest",
+    "exit": 0,
+    "output": "PASS: five-field resume, rotated secret, host replay watermark, four- and three-field compatibility\n",
+    "seconds": 0.094
+  },
+  {
+    "test": "LanHostOwnerRecoveryTest",
+    "exit": 0,
+    "output": "PASS: ghost-host guest H1 continuity, recovering owner sockets and explicit owner-exit semantics\n",
+    "seconds": 0.546
+  },
+  {
+    "test": "LanSecureOwnerAdmissionTest",
+    "exit": 0,
+    "output": "PASS: local owner role protected before join, false owner denied, ghost-owner reservation\n",
+    "seconds": 0.485
+  },
+  {
+    "test": "LanHostAuthorizationRegressionTest",
+    "exit": 0,
+    "output": "PASS: ghost-host room rejects guest H1 administrative START while owner may start\n",
+    "seconds": 0.469
+  },
+  {
+    "test": "LanSessionResumeIntegrationTest",
+    "exit": 0,
+    "output": "PASS: unexpected loss, real rejoin/token rotation, expiry, ghost AI continuity and role privacy\n",
+    "seconds": 1.765
+  },
+  {
+    "test": "LanNetworkLatencyTest",
+    "exit": 0,
+    "output": "PASS: TCP heartbeat RTT 0/50/150ms, one lost PONG, recovery and host continuity\n",
+    "seconds": 25.406
+  },
+  {
+    "test": "LanHostAccessIntegrationTest",
+    "exit": 0,
+    "output": "PASS: password admission, denied guests, locked lobby, legacy join and local-only host controls\n",
+    "seconds": 0.454
+  },
+  {
+    "test": "LanRitualDefenseIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four-socket abandoned rite fails and guarded restarted rite cleanses\n",
+    "seconds": 7.109
+  },
+  {
+    "test": "LanGhostHearingHudTest",
+    "exit": 0,
+    "output": "PASS: mute-safe spectral sound overlay, EDT and stale-event expiry\nBeckenburg soundtrack unavailable: sleep interrupted\n",
+    "seconds": 0.703
+  },
+  {
+    "test": "LanGhostAnimationIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four-seat host-only manifestation, windup, recovery and ghost privacy\n",
+    "seconds": 18.234
+  },
+  {
+    "test": "LanSoundIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four-socket host-only paranormal audio projection, van isolation, no ghost pose leak\n",
+    "seconds": 1.297
+  },
+  {
+    "test": "LanCaseFileHudTest",
+    "exit": 0,
+    "output": "PASS: shared casefile HUD renders and toggles, authenticated replay clears stale notes\nBeckenburg soundtrack unavailable: sleep interrupted\n",
+    "seconds": 0.781
+  },
+  {
+    "test": "LanSoundHudTest",
+    "exit": 0,
+    "output": "PASS: silent-device accessibility audio caption, directional label and expiry\nBeckenburg soundtrack unavailable: sleep interrupted\n",
+    "seconds": 0.906
+  },
+  {
+    "test": "LanGhostLegacyHearingIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four-socket ghost sound privacy, expiry and private hunter state exclusion\n",
+    "seconds": 2.907
+  },
+  {
+    "test": "LanTelegraphedStrikeIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four sockets, 800ms warning, host target lock, delayed damage, ghost privacy\n",
+    "seconds": 18.453
+  },
+  {
+    "test": "LanTelegraphedHudTest",
+    "exit": 0,
+    "output": "PASS: on-screen red strike wind-up and evasion feedback render in the LAN HUD\nBeckenburg soundtrack unavailable: sleep interrupted\n",
+    "seconds": 0.89
+  },
+  {
+    "test": "LanCameraOnlyGhostIntegrationTest",
+    "exit": 0,
+    "output": "PASS SHADE: deployed live camera, real van receiver, direct sight distinction\nPASS SPECTER: deployed live camera, real van receiver, direct sight distinction\n",
+    "seconds": 17.485
+  },
+  {
+    "test": "LanTwinPlayerCompanionTest",
+    "exit": 0,
+    "output": "PASS: human controls Twin A, Twin B autonomously patrols and streams live positions over TCP\n",
+    "seconds": 9.906
+  },
+  {
+    "test": "LanApparitionIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four-client manifested ghost sight projection, distant privacy and authoritative despawn\n",
+    "seconds": 8.984
+  },
+  {
+    "test": "LanGhostIntegrationTest",
+    "exit": 0,
+    "output": "PASS: 4-socket LAN ghost spatial camera, legal DRIFT, privacy and anti-replay\n",
+    "seconds": 0.922
+  },
+  {
+    "test": "LanWorldControlsTest",
+    "exit": 0,
+    "output": "PASS: LAN 3D hotkeys dispatch real host-owned scan, ward, cleanse and extraction\nBeckenburg soundtrack unavailable: sleep interrupted\n",
+    "seconds": 0.828
+  },
+  {
+    "test": "LanSiteSelectionIntegrationTest",
+    "exit": 0,
+    "output": "PASS: two authored locations transmitted over genuine LAN sockets\n",
+    "seconds": 0.797
+  },
+  {
+    "test": "LanFieldJournalIntegrationTest",
+    "exit": 0,
+    "output": "PASS: four-socket private field journal, replay, provenance and ghost isolation\n",
+    "seconds": 0.437
+  },
+  {
+    "test": "LanFieldSensorNetworkTest",
+    "exit": 0,
+    "output": "PASS: TCP placed sensor, motion alarm, retrieval, ghost privacy\n",
+    "seconds": 1.704
+  },
+  {
+    "test": "LanPrivateHunterNamesTest",
+    "exit": 0,
+    "output": "PASS: hunter-only world labels and anonymous ghost lobby appearance\n",
+    "seconds": 0.468
+  },
+  {
+    "test": "LanHunterVisualNetworkTest",
+    "exit": 0,
+    "output": "PASS: real LAN art selection, two distinct teammates, world replay, ghost privacy\n",
+    "seconds": 0.5
+  },
+  {
+    "test": "LanChatIntegrationTest",
+    "exit": 0,
+    "output": "PASS: two hunters, ghost, local distance, radio and transcript privacy\n",
+    "seconds": 1.625
+  },
+  {
+    "test": "LanVoiceRelayTest",
+    "exit": 0,
+    "output": "PASS: real UDP handshake, spoof/replay protection and ghost anonymity\n",
+    "seconds": 0.672
+  },
+  {
+    "test": "LanVoiceHostIntegrationTest",
+    "exit": 0,
+    "output": "PASS: actual game host, local/van/radio routing, anonymous ghost audio\n",
+    "seconds": 3.547
+  },
+  {
+    "test": "LanVoiceClientHandshakeTest",
+    "exit": 0,
+    "output": "PASS: real voice client UDP handshake, mute, volume and spectral TX lock\n",
+    "seconds": 0.172
+  },
+  {
+    "test": "LanGhostLobbySecrecyTest",
+    "exit": 0,
+    "output": "PASS: cosmetic lobby ghost visible to party; real species withheld until play\n",
+    "seconds": 0.719
+  },
+  {
+    "test": "LanSixHunterVanTest",
+    "exit": 0,
+    "output": "PASS: 6+1 sockets, +6 threat, private van telemetry, seventh hunter denied\nPASS: six simultaneous ghost-room occupants on authoritative room topology\n",
+    "seconds": 1.64
+  },
+  {
+    "test": "ManualEvidenceHudTest",
+    "exit": 0,
+    "output": "PASS: notebook checkboxes, greying/undo, ghost choice and actual HUD paint\nBeckenburg soundtrack unavailable: sleep interrupted\n",
+    "seconds": 0.782
+  },
+  {
+    "test": "LanClientDisconnectTest",
+    "exit": 0,
+    "output": "PASS: genuine TCP EOF emits exactly one disconnect; local close stays silent\n",
+    "seconds": 0.593
+  },
+  {
+    "test": "LanGracefulLeaveTest",
+    "exit": 0,
+    "output": "PASS: 12 TCP exits deliver LEAVE and EOF despite unread incoming updates\n",
+    "seconds": 0.141
+  },
+  {
+    "test": "LanCaseIntegrationTest",
+    "exit": 0,
+    "output": "PASS: 4-socket team evidence, anti-spoof, ritual, private projection and synchronized resolution\n",
+    "seconds": 5.016
+  },
+  {
+    "test": "LanWorldIntegrationTest",
+    "exit": 0,
+    "output": "PASS: 4-socket authoritative world stepping, snapshot privacy, door range, legacy-mode isolation\n",
+    "seconds": 1.093
+  },
+  {
+    "test": "LanLobbyTest",
+    "exit": 0,
+    "output": "PASS: four TCP clients, seats/readiness/start, host-validated moves, ghost parity, damage, authority, replay and private projection\nPASS: 3-hunter LAN sessions use AI ghost fallback without extra seat\n",
+    "seconds": 17.922
+  },
+  {
+    "test": "AuthoredLevelNetworkTest",
+    "exit": 0,
+    "output": "PASS HOUSE: real host/client XYZ, map revision, door/window resync and ghost privacy\nPASS FARMHOUSE: real host/client XYZ, map revision, door/window resync and ghost privacy\nPASS SCHOOL: real host/client XYZ, map revision, door/window resync and ghost privacy\n",
+    "seconds": 4.063
+  },
+  {
+    "test": "LooseClutterNetworkTest",
+    "exit": 0,
+    "output": "PASS real sockets: pickup/throw/ownership/privacy, ghost fixture activation/replay, rejected remote switching and reachable player deactivation\n",
+    "seconds": 0.984
+  },
+  {
+    "test": "VanRackNetworkTest",
+    "exit": 0,
+    "output": "PASS shared real-socket stock counts, equip/return synchronization, late-entry replay, bounded intents and ghost privacy\n",
+    "seconds": 1.141
+  },
+  {
+    "test": "InteractionNetworkTest",
+    "exit": 0,
+    "output": "PASS real-socket centre-ray clutter and shelf pickups, exact stock decrement, forged/stale target rejection and hunter-only interaction\n",
+    "seconds": 1.531
+  },
+  {
+    "test": "CrouchNetworkTest",
+    "exit": 0,
+    "output": "PASS real TCP crouch/stand snapshots, unchanged authoritative feet and ghost-role rejection\nBeckenburg soundtrack unavailable: sleep interrupted\n",
+    "seconds": 0.781
+  },
+  {
+    "test": "LanOpticalEvidenceNetworkTest",
+    "exit": 0,
+    "output": "PASS TCP UV power, genuine positioned trace, exhaustion blackout, ghost privacy and physical powered laser installation\n",
+    "seconds": 1.438
+  }
+]

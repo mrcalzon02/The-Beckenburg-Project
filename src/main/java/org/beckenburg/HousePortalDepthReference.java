@@ -23,13 +23,19 @@ final class HousePortalDepthReference {
     record Result(int cameraRoom, int triangles, int surfacedPixels,
                   int missingVisiblePixels, int unownedPixels,
                   int transparentSamples, int[] roomPixels,
-                  Set<Integer> candidates, Set<Integer> excludedVisibleRooms) {
+                  Set<Integer> candidates, Set<Integer> excludedVisibleRooms,
+                  int width, int height, int[] pixelOwners, float[] pixelDepthMetres) {
         Result {
             roomPixels = roomPixels.clone();
             candidates = Set.copyOf(candidates);
             excludedVisibleRooms = Set.copyOf(excludedVisibleRooms);
+            pixelOwners = pixelOwners.clone();
+            pixelDepthMetres = pixelDepthMetres.clone();
         }
         @Override public int[] roomPixels() { return roomPixels.clone(); }
+        /** Defensive copies: -1 owner means unowned or empty; +INF depth means empty. */
+        @Override public int[] pixelOwners() { return pixelOwners.clone(); }
+        @Override public float[] pixelDepthMetres() { return pixelDepthMetres.clone(); }
         boolean hasPotentialFalseNegative() { return missingVisiblePixels > 0; }
     }
 
@@ -133,7 +139,12 @@ final class HousePortalDepthReference {
             roomPixels[room]++;
             if (!candidates.contains(room)) { missing++; excluded.add(room); }
         }
+        // Preserve exact per-pixel owner/depth for later same-pose GPU readback.
+        // These are diagnostic snapshots only; no production culling uses them.
+        float[] pixelDepthMetres = new float[depth.length];
+        for (int i=0; i<depth.length; i++) pixelDepthMetres[i]=(float)depth[i];
         return new Result(cameraRoom, triangles.size(), surfaced, missing,
-            unowned, transparent, roomPixels, candidates, excluded);
+            unowned, transparent, roomPixels, candidates, excluded,
+            width, height, owner, pixelDepthMetres);
     }
 }

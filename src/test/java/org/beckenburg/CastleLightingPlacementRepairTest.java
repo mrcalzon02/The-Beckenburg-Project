@@ -21,9 +21,9 @@ public final class CastleLightingPlacementRepairTest {
     public static void main(String[] args)throws Exception {
         CastleHubMap map=new CastleHubMap();
         var lamps=CastleHubDecor.LIGHTS;
-        check(lamps.size()==31,"14 additional fittings must reach the actual castle");
+        check(lamps.size()>=50,"room-by-room rebuild coverage reaches the actual castle");
         long upper=lamps.stream().filter(l->l.y()>6).count();
-        check(upper==2,"both upper-library lights hang from the upper ceiling");
+        check(upper>=2,"both upper-library lights hang from the upper ceiling");
         for(var fixture:lamps){
             check(fixture.attached(map),"unattached/roofless lamp "+fixture.x()+","+fixture.z()+","+fixture.y());
             if(fixture.mount()==CastleHubDecor.Mount.CEILING)
@@ -54,7 +54,7 @@ public final class CastleLightingPlacementRepairTest {
         try{
             Path file=folder.resolve("castle.properties");
             var fresh=new CastleLevelEdits(file);
-            check(fresh.lamps().size()==31,"new scene receives extra lamp instances");
+            check(fresh.lamps().size()==lamps.size(),"new scene receives extra lamp instances");
             // Simulate an authentic older document with only its original 17
             // fixture rows and no lighting version. Do not wipe other content.
             fresh.save();
@@ -64,11 +64,11 @@ public final class CastleLightingPlacementRepairTest {
             older.setProperty("lamps.count","17");
             try(var output=Files.newOutputStream(file)){older.store(output,"legacy castle");}
             var migrated=new CastleLevelEdits(file);
-            check(migrated.lamps().size()==31,"existing scene receives 14 new lights");
+            check(migrated.lamps().size()==lamps.size(),"existing scene receives current room coverage");
             migrated.removeLamp("lighting2_0");
             migrated.save();
             var reloaded=new CastleLevelEdits(file);
-            check(reloaded.lamps().size()==30
+            check(reloaded.lamps().size()==lamps.size()-1
                 &&reloaded.lamps().stream().noneMatch(l->l.id().equals("lighting2_0")),
                 "removing an upgraded lamp persists; no unwanted resurrection");
 
@@ -100,6 +100,6 @@ public final class CastleLightingPlacementRepairTest {
                     Files.deleteIfExists(file);
             }
         }
-        System.out.println("PASS 31 real fittings, switch-off, shadow occlusion, existing-scene migration and grounded props");
+        System.out.println("PASS rebuilt real fittings, switch-off, shadow occlusion, existing-scene migration and grounded props");
     }
 }

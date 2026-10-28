@@ -22,6 +22,9 @@ public class EquipmentCatalogPanel extends JPanel {
         for(var tier:EquipmentTiers.Tier.values())offers.add(new Offer("HEALTH_SUPPLIES",tier,FieldSupplies.Kind.HEALTH));
         return List.copyOf(offers);
     }
+    public static java.util.Set<String> representedEquipmentIds(){
+        return EquipmentRegistry.all().stream().map(EquipmentRegistry.Tool::id).collect(java.util.stream.Collectors.toUnmodifiableSet());
+    }
     protected final JList<Offer> offers=new JList<>(catalog().toArray(Offer[]::new));
     private final JTextArea details=new JTextArea();
     private final JLabel preview=new JLabel("",SwingConstants.CENTER){

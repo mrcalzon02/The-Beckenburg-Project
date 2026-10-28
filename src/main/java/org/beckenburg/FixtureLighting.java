@@ -111,7 +111,7 @@ public final class FixtureLighting {
   }
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){
-   double next=!on?0:source.kind==Kind.CANDLE_CHANDELIER
+   double next=!on||!castle.lightOn(source.x,source.y,source.z)?0:source.kind==Kind.CANDLE_CHANDELIER
        ?.94+.06*Math.sin(cosmeticTick*.3+source.id):1;
    if(Math.round(next*1000)!=Math.round(factors[source.id]*1000))invalidate(source);
    factors[source.id]=next;
@@ -148,17 +148,10 @@ public final class FixtureLighting {
    if(along>lo-EPS&&along<hi+EPS&&y>wall.bottom()+EPS&&y<wall.top()-EPS)
     return false;
   }
-  // Upper decks have solid floors. The staircase is the only designed opening.
-  for(var deck:CastleLevelEdits.current().decks()){
-   double dh=deck.height();
-   if((ay-dh)*(by-dh)>=0||Math.abs(by-ay)<EPS)continue;
-   double t=(dh-ay)/(by-ay);
-   if(t<=EPS||t>=1-EPS)continue;
-   double x=ax+(bx-ax)*t,z=az+(bz-az)*t;
-   if(x>deck.x0()+EPS&&x<deck.x1()-EPS
-      &&z>deck.z0()+EPS&&z<deck.z1()-EPS
-      &&!CastleHubArchitecturalPlan.onStairs(x,z))return false;
-  }
+  // The same structural slabs supply visible tops, soffits, edges and occlusion.
+  for(var slab:CastleRooms.structuralDecks())
+   if(CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,slab.x0(),slab.height()-CastleRooms.SLAB,slab.z0(),
+       slab.x1(),slab.height(),slab.z1()))return false;
   // Sloping roof faces cast shadows too. Trace the signed elevation
   // against each left/right planar roof face, not a fake flat ceiling.
   for(var roof:CastleLevelEdits.current().roofs()){
@@ -168,7 +161,7 @@ public final class FixtureLighting {
     double slope=(side==0?roof.rise():-roof.rise())/
         ((roof.east()-roof.west())*.5);
     double lower=(side==0?roof.west():middle);
-    double roofAtLower=roof.eave()+.12+(side==0?0:roof.rise());
+    double roofAtLower=roof.eave()+(side==0?0:roof.rise());
     double denom=dy-slope*dx;
     if(Math.abs(denom)<EPS)continue;
     double t=(roofAtLower+slope*(ax-lower)-ay)/denom;
@@ -180,7 +173,7 @@ public final class FixtureLighting {
   }
   // Downstairs ceilings and roofs are also opaque to light: the old path
   // missed these planes and illuminated downstairs surfaces from above.
-  for(double ceiling:new double[]{CastleHubArchitecturalPlan.GROUND_CEILING-.16,
+  for(double ceiling:new double[]{CastleHubArchitecturalPlan.GROUND_CEILING-CastleRooms.SLAB,
                                   CastleHubArchitecturalPlan.GROUND_CEILING,
                                   CastleHubArchitecturalPlan.UPPER_CEILING}){
    if((ay-ceiling)*(by-ceiling)>=0||Math.abs(by-ay)<EPS)continue;

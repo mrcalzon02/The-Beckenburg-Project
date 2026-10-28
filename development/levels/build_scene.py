@@ -55,7 +55,7 @@ for (room,mid,color),group in groups.items():
 
 loose_path=SRC/'loose-objects.json'
 if loose_path.exists():
-    loose_collection=collection('INTERACTIVE loose objects — independent meshes and measured bodies')
+    loose_collection=collection('INTERACTIVE loose objects â€” independent meshes and measured bodies')
     templates={}
     for entry in json.loads(loose_path.read_text()):
         state=entry['state'];asset='level_loose_'+state['kind'].lower()+'_worn'
@@ -71,7 +71,7 @@ if loose_path.exists():
         obj['interaction']='F5 pick up/drop; ] examine rotation; F12 throw; host authoritative'
 fixture_path=SRC/'event-fixtures.json'
 if fixture_path.exists():
-    fixtures_collection=collection('EVENT fixtures — individual activation and water anchors')
+    fixtures_collection=collection('EVENT fixtures â€” individual activation and water anchors')
     for state in json.loads(fixture_path.read_text()):
         if state['kind'].startswith('SINK') or state['kind'] in ('WASHING_MACHINE','TELEVISION','TABLE_LAMP','LIGHT_SWITCH'):
             obj=bpy.data.objects.new('Event '+str(state['id'])+' '+state['kind'],None)
@@ -109,7 +109,7 @@ if lighting_path.exists():
             direction=Vector((source['dx'],-source['dz'],source['dy']));lamp.rotation_euler=direction.to_track_quat('-Z','Y').to_euler();lamp.data.spot_size=math.radians(114 if kind=='TABLE_LAMP' else 122 if kind=='FLUORESCENT' else 95);lamp.data.spot_blend=.45 if kind=='TABLE_LAMP' else .22
         lamp['source_kind']=kind;lamp['source_id']=source['id'];lamp['runtime_range_m']=source['radius'];lamp['circuit']=source['room'];lamp['fixture_controller']=source['fixture']
 bpy.ops.object.light_add(type='SUN',location=(15,-15,20));bpy.context.object.rotation_euler=(.38,-.55,-.9);bpy.context.object.data.energy=.7;bpy.context.object.data.color=(.40,.55,.85)
-camera_poses={'blackpine':((79,-85,46),(33,-30,1.5)),
+camera_poses={'castle-rebuild':((59,-65,38),(22,-18,2)),'blackpine':((79,-85,46),(33,-30,1.5)),
               'house':((28,-34,3.8),(19,-19,3.0)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
               'school':((58,-57,17),(28,-24,3.5)),

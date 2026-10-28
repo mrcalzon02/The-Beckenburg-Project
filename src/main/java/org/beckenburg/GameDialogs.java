@@ -22,6 +22,7 @@ public final class GameDialogs extends JOptionPane {
             protected void paintComponent(Graphics g){g.setColor(new Color(4,7,12,220));g.fillRect(0,0,getWidth(),getHeight());}
         };
         overlay.setOpaque(false);overlay.setName("game.dialog");
+        overlay.putClientProperty("game.dialog.dismiss",(Runnable)loop::exit);
         overlay.addMouseListener(new MouseAdapter(){});overlay.addMouseMotionListener(new MouseMotionAdapter(){});
         JButton[] buttons=new JButton[values.length];
         for(int i=0;i<values.length;i++){
@@ -49,6 +50,11 @@ public final class GameDialogs extends JOptionPane {
             if(oldFocus!=null)oldFocus.requestFocusInWindow();
         }
         return result[0];
+    }
+    public static void close(Component content){
+        JRootPane root=SwingUtilities.getRootPane(content);
+        if(root!=null&&root.getGlassPane() instanceof JComponent glass
+                &&glass.getClientProperty("game.dialog.dismiss") instanceof Runnable dismiss)dismiss.run();
     }
     public static int showConfirmDialog(Component parent,Object message,String title,int options,int type){
         Object[] choices=options==YES_NO_OPTION?new String[]{"YES","NO"}:

@@ -10,10 +10,10 @@ import java.nio.file.Path;
 import java.util.prefs.Preferences;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JDialog;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
@@ -23,6 +23,8 @@ import javax.swing.SwingUtilities;
 /** Non-blocking, opt-in install flow. Checks are read-only and never interrupt play. */
 public final class BeckenburgUpdatesUI {
     private static final Preferences PREFS=Preferences.userNodeForPackage(BeckenburgUpdatesUI.class);
+    private static volatile BeckenburgUpdates.Release pending;
+    public static String availableVersion(){return pending==null?"":pending.version();}
     private static final long DAY=86400000L;
     private BeckenburgUpdatesUI() { }
     public static void checkOnStartup(JFrame parent){
@@ -40,7 +42,7 @@ public final class BeckenburgUpdatesUI {
                 if(release!=null){
                     BeckenburgDiagnostics.record("UPDATES found "+release.version()+" from "+release.tag());
                     SwingUtilities.invokeLater(()->{
-                    if(parent.isDisplayable())new Dialog(parent,release).setVisible(true);
+                    pending=release;parent.getRootPane().putClientProperty("beckenburg.update.available",release.version());
                     });
                 }
             }catch(Exception offline){ // Offline updates must not interrupt a playable game.
@@ -48,9 +50,13 @@ public final class BeckenburgUpdatesUI {
             }
         },"Beckenburg-update-check");worker.setDaemon(true);worker.start();
     }
-    public static void open(JFrame parent){new Dialog(parent,null).setVisible(true);}
+    public static void open(JFrame parent){
+        UpdatePanel panel=new UpdatePanel(parent,pending);
+        try{GameDialogs.showMessageDialog(parent,panel,"BECKENBURG UPDATES",GameDialogs.PLAIN_MESSAGE);}
+        finally{panel.dispose();}
+    }
 
-    private static final class Dialog extends JDialog {
+    private static final class UpdatePanel extends JPanel {
         private final JLabel status=new JLabel("Checks only Beckenburg release tags on GitHub.");
         private final JTextArea notes=new JTextArea(8,48);
         private final JButton check=new JButton("Check now");
@@ -59,9 +65,9 @@ public final class BeckenburgUpdatesUI {
         private BeckenburgUpdates.Release offered;
         private Path staged;
         private boolean busy;
-        Dialog(JFrame parent,BeckenburgUpdates.Release found){
-            super(parent,"Beckenburg updates",false);
-            setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        private boolean closed;
+        UpdatePanel(JFrame parent,BeckenburgUpdates.Release found){
+            super(new BorderLayout());
             JPanel panel=new JPanel(new BorderLayout(8,8));
             panel.setBorder(javax.swing.BorderFactory.createEmptyBorder(12,12,12,12));
             panel.add(new JLabel("Installed: Beckenburg "+BeckenburgUpdates.installedVersion()),BorderLayout.NORTH);
@@ -78,11 +84,12 @@ public final class BeckenburgUpdatesUI {
             action.addActionListener(e->act());buttons.add(action);
             JButton later=new JButton("Not now");later.addActionListener(e->dispose());buttons.add(later);
             bottom.add(buttons,BorderLayout.SOUTH);panel.add(bottom,BorderLayout.SOUTH);
-            setContentPane(panel);pack();setLocationRelativeTo(parent);
+            add(panel,BorderLayout.CENTER);PsxMenuScreen.theme(this);
             apply(found);
             if(found==null)check();
-            addWindowListener(new WindowAdapter(){@Override public void windowClosed(WindowEvent e){busy=true;}});
+
         }
+        private void dispose(){closed=true;busy=true;GameDialogs.close(this);}
         private void apply(BeckenburgUpdates.Release result){
             offered=result;staged=null;
             notes.setText(result==null?"Beckenburg has its own version stream: beckenburg-vX.Y.Z.\n\n"+
@@ -106,14 +113,14 @@ public final class BeckenburgUpdatesUI {
                     var newest=BeckenburgUpdates.check(BeckenburgUpdates.installedVersion());
                     BeckenburgDeveloperTrace.update("manual-result",newest==null?"up-to-date":"available="+newest.version());
                     SwingUtilities.invokeLater(()->{
-                        if(!isDisplayable())return;
+                        if(closed)return;
                         apply(newest);if(newest==null)status.setText("No newer complete Beckenburg release.");
                         state(false);
                     });
                 }catch(Exception failure){
                     BeckenburgDiagnostics.record("UPDATES manual check failed: "+failure);
                     SwingUtilities.invokeLater(()->{
-                        if(!isDisplayable())return;
+                        if(closed)return;
                         status.setText("Update check unavailable: "+failure.getMessage());state(false);
                     });
                 }
@@ -125,10 +132,10 @@ public final class BeckenburgUpdatesUI {
                 if(!System.getProperty("os.name","").toLowerCase(java.util.Locale.ROOT).contains("win")){
                     status.setText("Windows installer requires Windows.");return;
                 }
-                int consent=JOptionPane.showConfirmDialog(this,
+                int consent=GameDialogs.showConfirmDialog(this,
                     "Run the verified Beckenburg "+offered.version()+" installer? The game will close before installation.",
-                    "Install Beckenburg update",JOptionPane.YES_NO_OPTION);
-                if(consent!=JOptionPane.YES_OPTION)return;
+                    "Install Beckenburg update",GameDialogs.YES_NO_OPTION,GameDialogs.WARNING_MESSAGE);
+                if(consent!=GameDialogs.YES_OPTION)return;
                 try{
                     BeckenburgDiagnostics.record("UPDATES handoff to SHA-256 verified installer "+offered.tag()
                         +" file="+staged.getFileName()+" (user confirmed)");
@@ -155,14 +162,14 @@ public final class BeckenburgUpdatesUI {
                     BeckenburgDiagnostics.record("UPDATES verified installer "+chosen.tag()+
                         " path="+verified.getFileName());
                     SwingUtilities.invokeLater(()->{
-                        if(!isDisplayable())return;
+                        if(closed)return;
                         staged=verified;state(false);action.setText("Run installer and exit");
                         status.setText("SHA-256 verified. Installation requires another click.");
                     });
                 }catch(Exception failure){
                     BeckenburgDiagnostics.fail("Update download / SHA-256 verification",failure);
                     SwingUtilities.invokeLater(()->{
-                        if(!isDisplayable())return;
+                        if(closed)return;
                         state(false);status.setText("Download failed, game unchanged: "+failure.getMessage());
                     });
                 }

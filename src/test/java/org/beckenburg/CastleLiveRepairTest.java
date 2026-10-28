@@ -51,8 +51,8 @@ public final class CastleLiveRepairTest {
                 <CastleHubArchitecturalPlan.GROUND_CEILING,
             "Upper library deck must not z-fight downstairs ceiling");
         check(CastleHubArchitecturalPlan.groundCeilingHeight(23,5.5)
-                ==CastleHubArchitecturalPlan.GROUND_CEILING,
-            "Rooms without an upstairs deck retain original ceiling height");
+                ==CastleHubArchitecturalPlan.GROUND_CEILING-CastleRooms.SLAB,
+            "Rooms have a real structural soffit below their roof slab");
         double stair=CastleHubArchitecturalPlan.stairHeight(17.5,27);
         check(stair>.1&&map.traversable(17.5,27,stair),
             "Stair walking surface remains traversable");
