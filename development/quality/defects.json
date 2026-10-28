@@ -1446,45 +1446,45 @@
     {
       "id": "DEV-137",
       "title": "Castle construction disagrees with its collision raster",
-      "status": "repair-in-progress",
+      "status": "fixed-scoped-local-native-and-GPU-verified",
       "affected": "Castle floor, doorway shoulders and upper circulation",
       "symptom": "Current main uses separately maintained raster collision, a large rectangular foundation and single-face overlapping decks. Overflight also omits entire roofs at a 27m center distance.",
       "cause": "Independently authored legacy geometry, rendering and display coordinates.",
       "action": "Replace with measured room volumes, unioned 220mm slabs, closed roof geometry and actual thick-wall collision. Preserve functional station positions.",
-      "evidence": "development/levels/previews/castle-survey/before; 21 actual RTX5070 OpenGL frames, source68d1142d plus survey-only entry point. Rebuild checks pending.",
+      "evidence": "CastleRebuildTest and focused Castle regressions;26 actual RTX5070 captures in castle-survey/rebuild; native reopen verification castle-native-rebuild.json:220671 triangles,706 packed images. Full manifest and installed acceptance remain separate.",
       "older_maps": "Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations."
     },
     {
       "id": "DEV-138",
       "title": "Castle warehouse omits tiers and suspends items above shallow shelves",
-      "status": "repair-in-progress",
+      "status": "fixed-scoped-local-native-and-GPU-verified",
       "affected": "Castle quartermaster",
       "symptom": "Eight .22m-deep bookshelves face one direction. Only 43 tier-I displays are authored at .40/1.00/1.60m despite source shelf tops .09/.39/.69/.99/1.29m at scale1.05. Top displays float; higher tiers are absent.",
       "cause": "Independently authored legacy geometry, rendering and display coordinates.",
       "action": "Replace with original open retail shelves, aisle-facing placements,129 catalog/tier displays, exact support planes and shelf labels; retain menu purchase authority.",
-      "evidence": "development/levels/previews/castle-survey/before; 21 actual RTX5070 OpenGL frames, source68d1142d plus survey-only entry point. Rebuild checks pending.",
+      "evidence": "CastleRebuildTest and focused Castle regressions;26 actual RTX5070 captures in castle-survey/rebuild; native reopen verification castle-native-rebuild.json:220671 triangles,706 packed images. Full manifest and installed acceptance remain separate.",
       "older_maps": "Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations."
     },
     {
       "id": "DEV-139",
       "title": "Castle courtyard and circulation lack usable local lighting",
-      "status": "repair-in-progress",
+      "status": "fixed-scoped-local-native-and-GPU-verified",
       "affected": "Castle rooms, courtyard, stairs and store",
       "symptom": "Twenty-one actual RTX frames show very dark exterior circulation and uneven interior coverage. All three existing switches toggle every lamp; new slab soffits require refitted ceiling mounts.",
       "cause": "Independently authored legacy geometry, rendering and display coordinates.",
       "action": "Provide supported coverage in every room, courtyard sconces, room circuits and an upper-library switch. Verify lit/off/torch controls and per-room light separation.",
-      "evidence": "development/levels/previews/castle-survey/before; 21 actual RTX5070 OpenGL frames, source68d1142d plus survey-only entry point. Rebuild checks pending.",
+      "evidence": "CastleRebuildTest and focused Castle regressions;26 actual RTX5070 captures in castle-survey/rebuild; native reopen verification castle-native-rebuild.json:220671 triangles,706 packed images. Full manifest and installed acceptance remain separate.",
       "older_maps": "Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations."
     },
     {
       "id": "DEV-140",
       "title": "Castle service fixtures are visible but lack collision and supported props",
-      "status": "repair-in-progress",
+      "status": "fixed-scoped-local-native-and-GPU-verified",
       "affected": "Castle stations and wall bookshelves",
       "symptom": "Service desks/cabinets are rendered independently of collision. Some source library shelves face walls; several display items use guessed heights.",
       "cause": "Independently authored legacy geometry, rendering and display coordinates.",
       "action": "Share measured service placements between collision and rendering; correct shelf orientation; remove obsolete store dressing; refit supported accents.",
-      "evidence": "development/levels/previews/castle-survey/before; 21 actual RTX5070 OpenGL frames, source68d1142d plus survey-only entry point. Rebuild checks pending.",
+      "evidence": "CastleRebuildTest and focused Castle regressions;26 actual RTX5070 captures in castle-survey/rebuild; native reopen verification castle-native-rebuild.json:220671 triangles,706 packed images. Full manifest and installed acceptance remain separate.",
       "older_maps": "Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations."
     },
     {

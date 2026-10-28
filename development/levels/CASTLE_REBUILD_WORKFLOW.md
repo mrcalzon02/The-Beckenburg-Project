@@ -28,3 +28,11 @@ CastleRebuildTest passes physical approaches to all stations and ground volumes,
 ## Reproduce
 
 Use Java17, a local java.io.tmpdir, and VerificationPreferencesFactory to isolate settings. Build actual resources with build.cmd package and GPU sources with mvn -f gpu-client/pom.xml clean package. Never infer tests passed from a packaging command; package mode intentionally skips regression execution. Export CASTLE_REBUILD through LevelSceneSource, then build_scene.py -- castle-rebuild for the exact runtime-native scene. Preserve source PNGs and run tools/build_development_gallery.py plus --check at each checkpoint.
+
+## Reconciled construction and visual checkpoint
+
+8a854a7e is the pushed construction checkpoint. e18e7e08 incorporates concurrent main cddba0df without conflicts, preserving the complete catalog/menu work. Final landscape correction replaces the rectangular background with graded, lobed terrain, closed physical outer returns, shared triangle-interpolated root heights and supported road embankments. Source-backed tower meshes are visible in actual runtime geometry.
+
+Final actual RTX5070 OpenGL survey:26 completed frames, including four store close views, overflight, room interiors, stairs and blackout/torch controls. The native file was reopened independently:220671 runtime triangles equal220671 saved Blender polygons;706 source images are packed. Native overviews and real runtime captures retain distinct gallery labels.
+
+The original local full-manifest run executed258 entries:203passed;55encountered denied loopback networking (including the HTTP client's internal loopback pipe). Those failures are retained; all55are being rerun with loopback enabled, without altering assertions. Final result is recorded separately. Installed full investigation/return, stable30FPS and new-SHA release CI remain independent acceptance gates.

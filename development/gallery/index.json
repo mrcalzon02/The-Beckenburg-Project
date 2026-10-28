@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 997,
+  "count": 1003,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -1444,6 +1444,16 @@
       "sha256": "478c14c0dd00a70d35b5ca947006ce3ac4955584356df4f71473776ff4337f17"
     },
     {
+      "path": "development/levels/previews/castle-rebuild-blender-exterior.png",
+      "url": "development/levels/previews/castle-rebuild-blender-exterior.png",
+      "title": "Castle rebuild blender exterior",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1340455,
+      "sha256": "92505f0952f4a7749dfd7484e59d204ff88f896675e52a06e00a56d29525fa98"
+    },
+    {
       "path": "development/levels/previews/castle-surroundings-blender-exterior.png",
       "url": "development/levels/previews/castle-surroundings-blender-exterior.png",
       "title": "Castle surroundings blender exterior",
@@ -1670,8 +1680,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 173536,
-      "sha256": "f8ddad90cd3861aead1765856efd0764505a8156e141bf008496cfaa9b536e33"
+      "bytes": 168276,
+      "sha256": "feab95f803dab518c1f06a24577dc5d9e05dce1a5bceb60d784582db1d1014a4"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-02-overflight-north.png",
@@ -1680,8 +1690,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 163762,
-      "sha256": "f4a499ef4ee05392f7c56439b5397eb7ef137209e91a03c1609607c45315c357"
+      "bytes": 159135,
+      "sha256": "961052099707aa741761a9dffa2175636cf98b7a90fbaf98e07cde5948d915ac"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-03-overflight-east.png",
@@ -1690,8 +1700,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 165251,
-      "sha256": "dbde39d8025b3583544d7bd71b2e2cd6af108661d99e8eae00b5dababffc16b3"
+      "bytes": 154516,
+      "sha256": "2fa9927767bb0c0c98dc879c643a4d62ea52b0325f6b0260e1e71f774fefe366"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-04-overflight-west.png",
@@ -1700,8 +1710,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 178069,
-      "sha256": "661042f49896527d47874df6b7f7b3d988be29b27ae2c641e2fb2ba76aa57e1d"
+      "bytes": 166055,
+      "sha256": "2fb56693420f6ff8d4cf725f9189ef73f95bff0c11e320b63329a6f6470a0d40"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-05-courtyard.png",
@@ -1710,8 +1720,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 332959,
-      "sha256": "b4adb00a11c12bf89a6b8ce013bf5c2ee832fa47b8a25cfff6bfefda4291d8eb"
+      "bytes": 326709,
+      "sha256": "3b640ba60a293a5e373b30bb10b0828d6db0b7a08c8ef29b512a1257f36399c6"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-06-stair-up.png",
@@ -1720,8 +1730,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 235779,
-      "sha256": "3c62deb0bf4b71b32b0ab0de990ab19b4d93fee15c636134507cdd5ea978e48a"
+      "bytes": 225425,
+      "sha256": "59637226c8afb7177480ed25bc955f819ba7a2912d206722ee933c1c445ece96"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-07-stair-down.png",
@@ -1730,8 +1740,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 262604,
-      "sha256": "80fca4d05445abd0d82c9b3c84435f00f7ab3ff74bfbaeb788d42d2d52a322c5"
+      "bytes": 231382,
+      "sha256": "22b59bacddecbe8c5a43200e0b1d159984cbb3c3dcb05ee9419e3a2711e8e0fa"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-08-gallery-under.png",
@@ -1740,8 +1750,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 264624,
-      "sha256": "92fe7a1cae30135be805d1ade5e5e40997a88dc3498572547585ea805996f592"
+      "bytes": 258422,
+      "sha256": "20e5d228230931b89efd6281c4ffcbc37e2c1f56bbc089f772c4d3d05b68f334"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-09-upper-library.png",
@@ -1750,8 +1760,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 315638,
-      "sha256": "29ae4d34c6944b9cb6edbaa9414461defd6da9ed385b4c9fd6d47a66283c792e"
+      "bytes": 314500,
+      "sha256": "0afac64cc44c2e0ac2f2bdbd380a1728139c56a521badeb8be7ae27eba55f7bd"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-10-ramparts.png",
@@ -1760,8 +1770,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 200040,
-      "sha256": "924dd3df98a0c227d66b7124be6e1969f223f7ee40182c557c408a83b9294a75"
+      "bytes": 143887,
+      "sha256": "757270ec02541104640cf29d43b29db6ec4d72da73d46193a3d49ef656e52395"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-11-armory.png",
@@ -1770,8 +1780,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 317556,
-      "sha256": "280ccc6f1adc928a6488698a13f4c1304b74d61f8be4a041c8e18db52796c2d8"
+      "bytes": 317560,
+      "sha256": "48be2987eb2b2e825fb7f704eb9a152616a0e05373347fb728ed9a040f795e33"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-12-contract.png",
@@ -1780,8 +1790,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 345174,
-      "sha256": "121100167243b121426df3d999c54d5c887c0bfe156b10855c05c01f37115d42"
+      "bytes": 345141,
+      "sha256": "bbea6f7e250d50fe41dde558f8ea73156d476a634b2e1939a30b558ede2f39e7"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-13-lounge.png",
@@ -1790,8 +1800,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 234708,
-      "sha256": "ebf7663c95765c9b6d54e030ed14ff5454f9dadb32f2241dbd202f7814bfab5b"
+      "bytes": 234693,
+      "sha256": "bc65ec6125633396f9e188ccba833c78b5c8913b0777f80077aa8a3e2c1ff83d"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-14-practice.png",
@@ -1800,8 +1810,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 346325,
-      "sha256": "11702e2b2898dd8de9a5cd89101ce20a09fcfe44744474853b3255f0d2339a7f"
+      "bytes": 346478,
+      "sha256": "86849db86833b9d9d82068dc83c00f05322f01fd7f23c5df3d4e20234c134241"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-15-operations.png",
@@ -1810,8 +1820,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 346266,
-      "sha256": "2e3677d4b723e98db9461c2d200ea24d85e6d39fb1e4307a07af083d336e4e86"
+      "bytes": 345911,
+      "sha256": "c15edc337dc6ec5af71fd54aa52720b4fbbe127822920109911a7bfcf3c547c8"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-16-archive.png",
@@ -1820,8 +1830,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 360296,
-      "sha256": "7471365bb65e87e7e6e17798aa5dc8261b02d350ce2ec4625ec8626fde3bf728"
+      "bytes": 360297,
+      "sha256": "120757b5583f772a2b40d0820073f0603d1a9e90b51d413169736085877bf2f0"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-17-warehouse.png",
@@ -1830,8 +1840,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 287540,
-      "sha256": "86ba2c4d72b7f13acd31cd9b968653289db964f0dcfb21293a413ae42305f805"
+      "bytes": 288609,
+      "sha256": "fa9c2a1497c18674fc91833b2a9034070e8635b6197f9e77dd62c6752c0b59d8"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-18-arrival.png",
@@ -1840,8 +1850,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 299885,
-      "sha256": "7c14ff802fc96d37344f4a8fed84155a9024da1af1988565904c0972c394e52b"
+      "bytes": 291841,
+      "sha256": "d377f82cf77accabf8fa3811b460d8be3b1b02ae019eefd4216e1bbb6398b81e"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-19-courtyard-blackout.png",
@@ -1860,8 +1870,8 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 124567,
-      "sha256": "ca059d6523408a9af9efc7463cea59d5ce6a95d1e92a752768bab912ff24eb52"
+      "bytes": 124452,
+      "sha256": "3c758579babf23b45fe74a9ac3e3a26428cd49938aaa207265a00dc540c2054e"
     },
     {
       "path": "development/levels/previews/castle-survey/rebuild/castle-21-library-torch.png",
@@ -1870,8 +1880,58 @@
       "kind": "Runtime GPU capture",
       "width": 800,
       "height": 500,
-      "bytes": 159925,
-      "sha256": "f3d7ab0c7d7db44c46b3a362530818837c2b7e486da6e0b2211b40156a40546c"
+      "bytes": 159817,
+      "sha256": "d2c63ced7be2a9ae173978b0fca1b8764d7a13159ed3ca204aa5fcf231957c16"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-22-store-west-tiers.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-22-store-west-tiers.png",
+      "title": "Castle 22 store west tiers",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 263588,
+      "sha256": "288a9ec146bd1d57a77135eb070baff8dcf00c312343093d53429554d4cf5ed5"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-23-store-east-tiers.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-23-store-east-tiers.png",
+      "title": "Castle 23 store east tiers",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 181291,
+      "sha256": "6e2055137bdf4243ffb1f5ef791b652ca743ab8bf0aa31c5486305e011e8ce33"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-24-store-north-tiers.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-24-store-north-tiers.png",
+      "title": "Castle 24 store north tiers",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 256703,
+      "sha256": "4e4487dbc123f7f67a14f86f0116e9cab2792b22cd2a99c471abf4dc21ac1444"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-25-store-south-tiers.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-25-store-south-tiers.png",
+      "title": "Castle 25 store south tiers",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 237072,
+      "sha256": "f921c5afe8a18ac6fff1a1a0b7af76e32e2c3842c9150670fb817a90fa7df03c"
+    },
+    {
+      "path": "development/levels/previews/castle-survey/rebuild/castle-26-lounge-clear.png",
+      "url": "development/levels/previews/castle-survey/rebuild/castle-26-lounge-clear.png",
+      "title": "Castle 26 lounge clear",
+      "kind": "Runtime GPU capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 300717,
+      "sha256": "9e9f21d45033ef6b0192d34103cf0270944c90e6034c17222abc6c482bd44844"
     },
     {
       "path": "development/levels/previews/common-archive/archive-1120-page-0.png",

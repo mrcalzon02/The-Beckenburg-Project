@@ -825,12 +825,23 @@ public final class SceneRenderer {
     static final double EXTERIOR_GROUND_Y=-.65;
     static final double CASTLE_FOUNDATION_Y=-.32;
     private static void castleTerrain(List<Face> out,double west,double north,double east,double south){
-        texturedQuad(out,new Point(west,EXTERIOR_GROUND_Y,north),
-            new Point(east,EXTERIOR_GROUND_Y,north),
-            new Point(east,EXTERIOR_GROUND_Y,south),
-            new Point(west,EXTERIOR_GROUND_Y,south),MaterialAtlas.FOLIAGE,
-            west*.25,north*.25,east*.25,north*.25,
-            east*.25,south*.25,west*.25,south*.25,0x6e7866);
+        double step=CastleSurroundings.TERRAIN_STEP;
+        for(double x=Math.floor(west/step)*step;x<east;x+=step)for(double z=Math.floor(north/step)*step;z<south;z+=step){
+            if(!CastleSurroundings.landscapeContains(x+step*.5,z+step*.5))continue;
+            texturedQuad(out,new Point(x,CastleSurroundings.groundHeight(x,z),z),
+                new Point(x+step,CastleSurroundings.groundHeight(x+step,z),z),
+                new Point(x+step,CastleSurroundings.groundHeight(x+step,z+step),z+step),
+                new Point(x,CastleSurroundings.groundHeight(x,z+step),z+step),MaterialAtlas.FOLIAGE,
+                x*.25,z*.25,(x+step)*.25,z*.25,(x+step)*.25,(z+step)*.25,x*.25,(z+step)*.25,0x6e7866);
+            for(int side=0;side<4;side++){
+                double nx=x+step*.5+(side==0?-step:side==1?step:0),nz=z+step*.5+(side==2?-step:side==3?step:0);
+                if(CastleSurroundings.landscapeContains(nx,nz))continue;
+                double ax=side<2?(side==0?x:x+step):x,bx=side<2?ax:x+step;
+                double az=side<2?z:(side==2?z:z+step),bz=side<2?z+step:az;
+                texturedQuad(out,new Point(ax,CastleSurroundings.groundHeight(ax,az),az),new Point(bx,CastleSurroundings.groundHeight(bx,bz),bz),
+                    new Point(bx,-6,bz),new Point(ax,-6,az),LevelMaterials.ROCK,0,0,step,0,step,6,0,6,0xffffff);
+            }
+        }
     }
     private List<Face> castleSurroundings(){
         if(castleEnvironment!=null)return castleEnvironment;List<Face> out=new ArrayList<>();
@@ -838,14 +849,21 @@ public final class SceneRenderer {
         // More than 0.6m vertical separation also prevents far-plane depth quantization
         // from producing flashing earth through pavement or interior floors.
         castleTerrain(out,-180,-160,220,220);
-        for(var tree:CastleSurroundings.trees())imported(out,"level_tree_conifer_worn",tree.x(),0,tree.z(),tree.scale(),tree.x()*.2);
+        for(var tree:CastleSurroundings.trees())castleProp(out,"level_tree_conifer_worn",tree.x(),CastleSurroundings.groundHeight(tree.x(),tree.z()),tree.z(),tree.scale(),tree.x()*.2);
         mountains(out,22,17);var points=CastleSurroundings.road();int asphalt=VanArrivalStreet.surfaceMaterial(false);double uv=0;
-        for(int i=0;i<points.size()-1;i++){var a=points.get(i);var b=points.get(i+1);double dx=b.x()-a.x(),dz=b.z()-a.z(),length=Math.hypot(dx,dz),ox=dz/length*2.6,oz=-dx/length*2.6;texturedQuad(out,new Point(a.x()-ox,-.055,a.z()-oz),new Point(a.x()+ox,-.055,a.z()+oz),new Point(b.x()+ox,-.055,b.z()+oz),new Point(b.x()-ox,-.055,b.z()-oz),asphalt,0,uv,2.6,uv,2.6,uv+length*.48,0,uv+length*.48,0x96958a);uv+=length*.48;}
+        for(int i=0;i<points.size()-1;i++){
+            var a=points.get(i);var b=points.get(i+1);double dx=b.x()-a.x(),dz=b.z()-a.z(),length=Math.hypot(dx,dz),ox=dz/length*2.6,oz=-dx/length*2.6;
+            Point al=new Point(a.x()-ox,-.055,a.z()-oz),ar=new Point(a.x()+ox,-.055,a.z()+oz),br=new Point(b.x()+ox,-.055,b.z()+oz),bl=new Point(b.x()-ox,-.055,b.z()-oz);
+            texturedQuad(out,al,ar,br,bl,asphalt,0,uv,2.6,uv,2.6,uv+length*.48,0,uv+length*.48,0x96958a);
+            for(var edge:List.of(new Point[]{al,bl},new Point[]{ar,br},new Point[]{al,ar},new Point[]{bl,br}))
+                texturedQuad(out,edge[0],edge[1],new Point(edge[1].x,-.65,edge[1].z),new Point(edge[0].x,-.65,edge[0].z),MaterialAtlas.STONE,0,0,length,0,length,.6,0,.6,0xffffff);
+            uv+=length*.48;
+        }
         // Static roadside PSX van and original textured cars. These are pure
         // triangles in the cached exterior: NO VanStaging, equipment, services,
         // extraction commands, multiplayer state or interactive cargo doors.
         for(var parked:CastleSurroundings.parkedVehicles())
-            castleProp(out,parked.mesh(),parked.x(),0,parked.z(),
+            castleProp(out,parked.mesh(),parked.x(),parked.z()<34?0:CastleSurroundings.groundHeight(parked.x(),parked.z()),parked.z(),
                 parked.scale(),parked.yaw());
         castleEnvironment=List.copyOf(out);return castleEnvironment;
     }
