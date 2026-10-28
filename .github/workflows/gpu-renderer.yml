@@ -6,6 +6,8 @@ on:
       - 'gpu-client/**'
       - 'src/main/java/org/beckenburg/GpuWorldRenderer.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/main/java/org/beckenburg/HousePortalDepthReference.java'
+      - 'src/test/java/org/beckenburg/HousePortalDepthReferenceTest.java'
       - 'src/main/java/org/beckenburg/LevelOpeningCinematic.java'
       - 'src/main/java/org/beckenburg/OpeningPlaybackClock.java'
       - 'src/test/java/org/beckenburg/OpeningPlaybackClockTest.java'
@@ -68,6 +70,13 @@ jobs:
           if not exist build\\test mkdir build\\test
           javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\PreparedShellChunkTest.java || exit /b 1
           java -Djava.awt.headless=true -ea -cp build\\classes;build\\test org.beckenburg.PreparedShellChunkTest || exit /b 1
+      - name: Verify C3 House basement authored depth ownership without portal culling
+        shell: cmd
+        run: |
+          if not exist build\\test mkdir build\\test
+          javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\HousePortalDepthReferenceTest.java || exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\classes;build\\test org.beckenburg.HousePortalDepthReferenceTest || exit /b 1
+          if not exist build\\e2e\\viewport-profile\\house-c3-depth-reference.csv exit /b 1
       - name: Verify flyover preview readiness and finite fallback clock
         shell: cmd
         run: |
