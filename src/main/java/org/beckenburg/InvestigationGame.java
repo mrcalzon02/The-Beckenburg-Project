@@ -27,6 +27,11 @@ public final class InvestigationGame {
     private GhostPracticePanel ghostPractice;
     private CastleHubPanel castle;
     private CampaignBoardPanel campaign;
+    private LanLobbyPanel networkLobby;
+    private String currentScreen="menu";
+    private JPanel optionsScreen;
+    private javax.swing.Timer displayRevert;
+    private int pendingHires;
     private int caseNumber;
     private JLabel startupStatus;
 
@@ -85,8 +90,8 @@ public final class InvestigationGame {
                     window.revalidate();window.repaint();
                     showMenu();
                     BeckenburgDiagnostics.ready();
-                    if(!warnings.isBlank())JOptionPane.showMessageDialog(window,
-                        warnings+"Existing files were preserved.", "Local startup warnings",JOptionPane.WARNING_MESSAGE);
+                    if(!warnings.isBlank())GameDialogs.showMessageDialog(window,
+                        warnings+"Existing files were preserved.", "Local startup warnings",GameDialogs.WARNING_MESSAGE);
                     BeckenburgDiagnostics.phase("Checking update channel");
                     BeckenburgUpdatesUI.checkOnStartup(window);
                     BeckenburgDiagnostics.phase("Menu available");
@@ -154,27 +159,38 @@ public final class InvestigationGame {
             });
                 cards.add(castle,"castle");
             }
-            ((CardLayout)cards.getLayout()).show(cards,"castle");
+            castle.closeService();showCard("castle");
             SwingUtilities.invokeLater(castle::requestFocusInWindow);
         }catch(RuntimeException ex){
             BeckenburgDiagnostics.fail("Castle construction / rendering",ex);
             // Castle art must not prevent access to settings, multiplayer or the main menu.
             showMenu();
-            JOptionPane.showMessageDialog(window,"Castle assets could not be loaded: "+ex.getMessage(),
-                "Castle unavailable",JOptionPane.WARNING_MESSAGE);
+            GameDialogs.showMessageDialog(window,"Castle assets could not be loaded: "+ex.getMessage(),
+                "Castle unavailable",GameDialogs.WARNING_MESSAGE);
         }
     }
     private void showCampaign(){
-        if(campaign!=null){cards.remove(campaign);campaign=null;}
+        showCastle();if(castle==null)return;
+        campaign=null;
         campaign=new CampaignBoardPanel(profile,new CampaignBoardPanel.Actions(){
             @Override public void deploy(SiteCatalog.Location location,boolean withAssistant){
                 beginCampaign(location,withAssistant);
             }
+            @Override public void discipline(InvestigationSession.Role selected){rolePicker.setSelectedItem(selected);}
+            @Override public InvestigationSession.Role currentDiscipline(){return (InvestigationSession.Role)rolePicker.getSelectedItem();}
+            @Override public void deployTeam(SiteCatalog.Location location,int hires,boolean coop){
+                pendingHires=hires;
+                try{
+                    var chapter=profile.dispatchStory(CampaignStory.stageFor(location));
+                    openNetwork(new LanLobbyPanel.CampaignLaunch(profile,chapter,hires,coop,
+                        CharacterVisuals.Hunter.valueOf(((InvestigationSession.Role)rolePicker.getSelectedItem()).name())));
+                }catch(IOException failed){showControlsError("Campaign dispatch",failed);}
+            }
+            @Override public void menu(){showMenu();}
             @Override public void castle(){showCastle();}
             @Override public void tutorial(){showCastleOrientation();}
         });
-        cards.add(campaign,"campaign");
-        ((CardLayout)cards.getLayout()).show(cards,"campaign");
+        castle.openService("CAMPAIGN DESK",campaign,this::showCastle);
         SwingUtilities.invokeLater(campaign::requestFocusInWindow);
     }
     private void showCastleOrientation(){
@@ -183,187 +199,79 @@ public final class InvestigationGame {
     }
     private void showMenu(){
         refreshAccount();
-        ((CardLayout)cards.getLayout()).show(cards,"menu");
+        showCard("menu");
     }
-    private void openLan(){new LanLobbyWindow().setVisible(true);}
-    /** Entire menu lives in the original JFrame's CardLayout. */
-    private void showPage(String name,JPanel page){
-        for(Component previous:cards.getComponents())
-            if(name.equals(previous.getName())){cards.remove(previous);break;}
-        page.setName(name);
-        cards.add(page,name);
-        ((CardLayout)cards.getLayout()).show(cards,name);
-        cards.revalidate();
-        cards.repaint();
-        SwingUtilities.invokeLater(page::requestFocusInWindow);
+    private void openLan(){openNetwork(null);}
+    private void showNetworkInCastle(){
+        showCastle();if(castle!=null)castle.openService("MULTIPLAYER & CAMPAIGN TEAM DESK",networkLobby,networkLobby::leaveLobby);
     }
-    private void showTextPage(String name,String title,String message){
-        JTextArea content=new JTextArea(message);
-        content.setEditable(false);
-        content.setFocusable(false);
-        content.setOpaque(false);
-        content.setForeground(new Color(230,220,196));
-        content.setFont(new Font(Font.MONOSPACED,Font.PLAIN,14));
-        content.setLineWrap(true);
-        content.setWrapStyleWord(true);
-        content.setMargin(new Insets(14,16,14,16));
-        JButton back=PsxHorrorUi.button("BACK TO MENU");
-        back.addActionListener(e->showMenu());
-        showPage(name,PsxMenuScreen.screen(name,title,
-            "BECKENBURG FIELD OPERATIONS / PLAYER REFERENCE",
-            PsxMenuScreen.scroll(content),back));
+    private void openNetwork(LanLobbyPanel.CampaignLaunch launch){
+        if(networkLobby!=null)networkLobby.close();
+        networkLobby=new LanLobbyPanel(active->{
+            if(active==networkLobby)showNetworkInCastle();
+            else if(active instanceof JPanel panel)page("network.field",panel);
+        },()->{if(launch==null)showCastle();else showCampaign();},launch);
+        networkLobby.setName("network");showNetworkInCastle();
     }
     private Color ink(){return displayPrefs.getBoolean("highContrast",false)?Color.WHITE:new Color(223,210,183);}
-    private int menuFont(int base){return base+(displayPrefs.getBoolean("largeMenuText",false)?3:0);}
+    private int menuFont(int base){return base;}
     private JLabel menuLabel(String text,int size){
         JLabel l=new JLabel(text);l.setForeground(ink());
         l.setFont(new Font(Font.SANS_SERIF,Font.PLAIN,menuFont(size)));return l;
     }
     private static JPanel transparentPanel(LayoutManager layout){JPanel p=new JPanel(layout);p.setOpaque(false);return p;}
     private static JPanel transparentPanel(){JPanel p=new JPanel();p.setOpaque(false);return p;}
+    private void showCard(String name){
+        currentScreen=name;((CardLayout)cards.getLayout()).show(cards,name);
+        cards.revalidate();cards.repaint();
+    }
+    private void page(String name,JPanel page){
+        for(Component child:cards.getComponents())if(name.equals(child.getName()))cards.remove(child);
+        page.setName(name);cards.add(page,name);showCard(name);
+    }
+    private JButton nav(String name,String label,Runnable action){
+        JButton button=button(label);button.setName(name);button.addActionListener(e->action.run());return button;
+    }
     private void buildMenu(){
-        menu.removeAll();
-        menu.setBackground(new Color(13,17,24));
-        menu.setBorder(BorderFactory.createEmptyBorder(25,30,19,30));
-        JPanel header=new JPanel(new BorderLayout(8,4)){
-            @Override protected void paintComponent(Graphics g){
-                super.paintComponent(g);
-                var castleImage=UiBranding.splash();
-                if(castleImage!=null){
-                    int left=getWidth()/2;
-                    g.drawImage(castleImage,left,0,getWidth()-left,getHeight(),null);
-                    Graphics2D brush=(Graphics2D)g.create();
-                    brush.setPaint(new GradientPaint(left-70,0,new Color(13,17,24,255),
-                        getWidth(),0,new Color(13,17,24,48)));
-                    brush.fillRect(left-70,0,getWidth()-left+70,getHeight());
-                    brush.dispose();
-                }
-            }
-        };
-        header.setOpaque(false);
-        header.setPreferredSize(new Dimension(1,96));
-        JLabel title=new JLabel("THE BECKENBURG PROJECT");
-        title.setFont(new Font(Font.SERIF,Font.BOLD,menuFont(35)));
-        title.setForeground(ink());header.add(title,BorderLayout.NORTH);
-        var gameMark=UiBranding.desktopIcon();
-        if(gameMark!=null){
-            JLabel emblem=new JLabel(new ImageIcon(gameMark.getScaledInstance(66,66,Image.SCALE_SMOOTH)));
-            emblem.setBorder(BorderFactory.createEmptyBorder(0,0,0,12));
-            header.add(emblem,BorderLayout.WEST);
+        menu.removeAll();menu.setName("menu");
+        if(rolePicker==null){
+            rolePicker=new JComboBox<>(InvestigationSession.Role.values());
+            assistantRolePicker=new JComboBox<>(CharacterVisuals.Hunter.values());
+            assistantRolePicker.setSelectedItem(CharacterVisuals.Hunter.OBSERVER);
+            locationPicker=new JComboBox<>(SiteCatalog.Location.values());
+            conditionsPicker=new JComboBox<>(SiteCatalog.Conditions.values());
+            weatherModePicker=new JComboBox<>(MissionWeather.Mode.values());
+            weatherPicker=new JComboBox<>(EvidenceSignals.Weather.values());
+            weatherSeverityPicker=new JComboBox<>(new Integer[]{1,2,3});
         }
-        JLabel subtitle=menuLabel("CASTLE OPERATIONS  /  EXPEDITION DESK",12);
-        subtitle.setForeground(new Color(167,182,185));header.add(subtitle,BorderLayout.SOUTH);
-        menu.add(header,BorderLayout.NORTH);
-
-        JPanel columns=transparentPanel(new GridBagLayout());
-        JPanel navigation=transparentPanel();
-        navigation.setLayout(new BoxLayout(navigation,BoxLayout.Y_AXIS));
-        JButton enterCastle=button("ENTER CASTLE");
-        JButton campaignButton=button("CAMPAIGN BOARD");
-        JButton begin=button("START SOLO INVESTIGATION");
-        JButton lan=button("HOST / JOIN MULTIPLAYER");
-        JButton ghost=button("GHOST PRACTICE");
-        JButton editor=button("DEVELOPER LEVEL EDITOR");
-        for(JButton b:new JButton[]{enterCastle,campaignButton,begin,lan,ghost,editor}){
-            b.setAlignmentX(Component.LEFT_ALIGNMENT);
-            navigation.add(Box.createVerticalStrut(9));navigation.add(b);
-        }
-        navigation.add(Box.createVerticalStrut(20));
-        JLabel utilities=menuLabel("SUPPORT",11);utilities.setAlignmentX(Component.LEFT_ALIGNMENT);
-        navigation.add(utilities);
-        JPanel utilityRow=transparentPanel(new GridLayout(1,4,6,0));
-        JButton options=button("OPTIONS"),guide=button("HELP"),updates=button("UPDATES"),credits=button("CREDITS");
-        utilityRow.add(options);utilityRow.add(guide);utilityRow.add(updates);utilityRow.add(credits);
-        utilityRow.setMaximumSize(new Dimension(390,37));utilityRow.setAlignmentX(Component.LEFT_ALIGNMENT);
-        navigation.add(Box.createVerticalStrut(7));navigation.add(utilityRow);
-
-        JPanel preparation=PsxHorrorUi.panel(new BorderLayout(10,16));
-        preparation.setBackground(displayPrefs.getBoolean("highContrast",false)?new Color(0,0,0):new Color(29,35,43));
-        preparation.setBorder(BorderFactory.createCompoundBorder(
-            BorderFactory.createLineBorder(new Color(100,91,71),1),
-            BorderFactory.createEmptyBorder(18,20,20,20)));
-        JLabel prepTitle=menuLabel("PREPARE AN INVESTIGATION",18);
-        prepTitle.setIcon(new ImageIcon(PsxHorrorUi.image("icons/flashlight.png")));
-        prepTitle.setIconTextGap(9);
-        prepTitle.setFont(prepTitle.getFont().deriveFont(Font.BOLD));
-        preparation.add(prepTitle,BorderLayout.NORTH);
-        JPanel selectorGrid=transparentPanel(new GridLayout(0,2,10,12));
-        rolePicker=new JComboBox<>(InvestigationSession.Role.values());
-        assistantRolePicker=new JComboBox<>(CharacterVisuals.Hunter.values());
-        assistantRolePicker.setSelectedItem(CharacterVisuals.Hunter.OBSERVER);
-        locationPicker=new JComboBox<>(SiteCatalog.Location.values());
-        conditionsPicker=new JComboBox<>(SiteCatalog.Conditions.values());
-        weatherModePicker=new JComboBox<>(MissionWeather.Mode.values());
-        weatherPicker=new JComboBox<>(EvidenceSignals.Weather.values());
-        weatherSeverityPicker=new JComboBox<>(new Integer[]{1,2,3});
-        for(JComboBox<?> picker:new JComboBox<?>[]{rolePicker,assistantRolePicker,locationPicker,conditionsPicker,
-                weatherModePicker,weatherPicker,weatherSeverityPicker}){
-            picker.setBackground(new Color(35,39,46));
-            picker.setForeground(new Color(237,225,201));
-            picker.setFont(new Font(Font.MONOSPACED,Font.BOLD,menuFont(13)));
-        }
-        selectorGrid.add(menuLabel("Discipline",13));selectorGrid.add(rolePicker);
-        selectorGrid.add(menuLabel("Companion class",13));selectorGrid.add(assistantRolePicker);
-        selectorGrid.add(menuLabel("Location",13));selectorGrid.add(locationPicker);
-        selectorGrid.add(menuLabel("Conditions",13));selectorGrid.add(conditionsPicker);
-        selectorGrid.add(menuLabel("Weather schedule",13));selectorGrid.add(weatherModePicker);
-        selectorGrid.add(menuLabel("Starting weather",13));selectorGrid.add(weatherPicker);
-        selectorGrid.add(menuLabel("Weather severity",13));selectorGrid.add(weatherSeverityPicker);
-        preparation.add(selectorGrid,BorderLayout.CENTER);
-        JLabel status=menuLabel("SELECT AN AVAILABLE LOCATION",12);
-        status.setForeground(new Color(188,202,177));
-        preparation.add(status,BorderLayout.SOUTH);
-        locationPicker.addActionListener(e->{
-            SiteCatalog.Location site=(SiteCatalog.Location)locationPicker.getSelectedItem();
-            boolean playable=site!=null&&site.playable();
-            begin.setEnabled(playable);conditionsPicker.setEnabled(playable);
-            status.setText(playable?"SOLO EXPEDITION READY":"LOCATION IN PRODUCTION");
-        });
-        locationPicker.setSelectedIndex(0);
-        SiteCatalog.Location initial=(SiteCatalog.Location)locationPicker.getSelectedItem();
-        boolean playable=initial!=null&&initial.playable();
-        begin.setEnabled(playable);conditionsPicker.setEnabled(playable);
-        status.setText(playable?"SOLO EXPEDITION READY":"LOCATION IN PRODUCTION");
-        GridBagConstraints c=new GridBagConstraints();
-        c.gridy=0;c.insets=new Insets(12,0,12,18);
-        c.weightx=.42;c.weighty=1;c.fill=GridBagConstraints.HORIZONTAL;c.anchor=GridBagConstraints.NORTHWEST;
-        columns.add(navigation,c);
-        c.gridx=1;c.weightx=.58;c.insets=new Insets(12,0,12,0);
-        columns.add(preparation,c);
-        JScrollPane scroller=new JScrollPane(columns,
-            ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scroller.setOpaque(false);scroller.getViewport().setOpaque(false);scroller.setBorder(null);
-        menu.add(scroller,BorderLayout.CENTER);
-
-        JPanel footer=transparentPanel(new BorderLayout(8,6));
-        account.setFont(new Font(Font.MONOSPACED,Font.PLAIN,menuFont(12)));
-        account.setForeground(new Color(170,211,182));account.setHorizontalAlignment(SwingConstants.LEFT);
-        footer.add(account,BorderLayout.CENTER);
-        JPanel footerActions=transparentPanel(new FlowLayout(FlowLayout.RIGHT,7,0));
-        JButton importSave=button("IMPORT SAVE"),diagnostics=button("DIAGNOSTICS"),quit=button("EXIT");
-        footerActions.add(importSave);footerActions.add(diagnostics);footerActions.add(quit);
-        footer.add(footerActions,BorderLayout.EAST);
-        menu.add(footer,BorderLayout.SOUTH);
-
-        enterCastle.addActionListener(e->showCastle());
-        campaignButton.addActionListener(e->showCampaign());
-        begin.addActionListener(e->begin());ghost.addActionListener(e->beginGhost());
-        lan.addActionListener(e->openLan());
-        editor.addActionListener(e->openDeveloperEditor(window));
-        options.addActionListener(e->openOptions());
-        guide.addActionListener(e->showControls());
-        credits.addActionListener(e->showTextPage("credits","CREDITS / ART SOURCES",
-            "PSX Horror UI Free by heyheythere\n"+
-            "https://heyheythere.itch.io/psx-horror-ui-free\n"+
-            "Licensed CC BY 4.0\n\n"+
-            "Original PSX artwork and pixel textures are used for the game's "+
-            "buttons, panels and menus. Equipment thumbnails are baked from "+
-            "the project's approved 3D inspection renders."));
-        importSave.addActionListener(e->importLocalSave());
-        diagnostics.addActionListener(e->BeckenburgDiagnostics.show(window));
-        updates.addActionListener(e->BeckenburgUpdatesUI.open(window));
-        quit.addActionListener(e->window.dispose());
+        JPanel routes=transparentPanel(new GridLayout(0,1,0,10));
+        routes.add(nav("start.campaign","CAMPAIGN",this::showCampaign));
+        routes.add(nav("start.multiplayer","HOST / JOIN MULTIPLAYER",this::openLan));
+        routes.add(nav("start.solo","START SOLO INVESTIGATION",this::begin));
+        routes.add(nav("start.castle","ENTER CASTLE",this::showCastle));
+        routes.add(nav("start.options","OPTIONS",this::openOptions));
+        routes.add(nav("start.extras","EXTRAS & SUPPORT",this::showExtras));
+        routes.add(nav("start.exit","EXIT",()->{if(networkLobby!=null)networkLobby.close();window.dispose();}));
+        JPanel centered=transparentPanel(new GridBagLayout());centered.add(routes);
+        account.setForeground(new Color(181,218,189));
+        JPanel body=transparentPanel(new BorderLayout(12,12));
+        body.add(PsxMenuScreen.scroll(centered),BorderLayout.CENTER);body.add(account,BorderLayout.SOUTH);
+        menu.add(PsxMenuScreen.screen("start.menu","THE BECKENBURG PROJECT",
+            "Choose a mode / prepare your team and equipment in its lobby",body),BorderLayout.CENTER);
         refreshAccount();
+    }
+    private void showExtras(){
+        JPanel list=transparentPanel(new GridLayout(0,1,0,9));
+        list.add(nav("extras.practice","GHOST PRACTICE",this::beginGhost));
+        list.add(nav("extras.controls","FIELD CONTROLS",this::showControls));
+        list.add(nav("extras.import","IMPORT CAMPAIGN SAVE",this::importLocalSave));
+        list.add(nav("extras.diagnostics","DIAGNOSTICS",()->BeckenburgDiagnostics.show(window)));
+        list.add(nav("extras.updates","UPDATES",()->BeckenburgUpdatesUI.open(window)));
+        list.add(nav("extras.editor","DEVELOPER LEVEL EDITOR",()->openDeveloperEditor(window)));
+        JTextArea credits=new JTextArea("PSX Horror UI Free by heyheythere / CC BY 4.0\nhttps://heyheythere.itch.io/psx-horror-ui-free");
+        credits.setEditable(false);list.add(credits);
+        page("extras",PsxMenuScreen.screen("extras","EXTRAS & SUPPORT","Game tools and credits",
+            PsxMenuScreen.scroll(list),nav("extras.back","BACK",this::showMenu)));
     }
     /** F11 / Alt+Enter: guaranteed windowed escape even after a failed fullscreen choice. */
     private void toggleFullscreen(){
@@ -377,19 +285,19 @@ public final class InvestigationGame {
         try{alternate.applyWindow(window);alternate.save();}
         catch(RuntimeException failure){
             try{old.applyWindow(window);}catch(RuntimeException ignored){}
-            JOptionPane.showMessageDialog(window,failure.getMessage(),
-                "Display change failed",JOptionPane.ERROR_MESSAGE);
+            GameDialogs.showMessageDialog(window,failure.getMessage(),
+                "Display change failed",GameDialogs.ERROR_MESSAGE);
         }
     }
     private static <T> JComboBox<T> select(T[] items,T selected){
         JComboBox<T> combo=new JComboBox<>(items);combo.setSelectedItem(selected);return combo;
     }
     private static void setting(JPanel grid,String text,JComponent control){
-        JLabel label=PsxMenuScreen.label(text);
-        label.setHorizontalAlignment(SwingConstants.RIGHT);
+        JLabel label=new JLabel(text);label.setHorizontalAlignment(SwingConstants.RIGHT);
         grid.add(label);grid.add(control);
     }
     private void openOptions(){
+        final String returnScreen=currentScreen;
         GraphicsOptions old=GraphicsOptions.current();
         JComboBox<GraphicsOptions.Mode> mode=select(GraphicsOptions.Mode.values(),old.mode());
         JComboBox<GraphicsOptions.DisplaySize> desktop=select(GraphicsOptions.DisplaySize.values(),old.display());
@@ -411,17 +319,8 @@ public final class InvestigationGame {
         musicVolume.setMajorTickSpacing(25);musicVolume.setPaintTicks(true);
         JSlider effectsVolume=new JSlider(0,100,LanAudio.effectsVolume());
         effectsVolume.setMajorTickSpacing(25);effectsVolume.setPaintTicks(true);
-        JPanel grid=new JPanel(new GridLayout(0,2,8,9));
-        grid.setOpaque(false);
-        grid.setBorder(BorderFactory.createEmptyBorder(12,16,12,16));
-        for(JComboBox<?> combo:new JComboBox<?>[]{mode,desktop,detail,aspect,upscale,aa,psx}){
-            combo.setBackground(new Color(35,39,46));
-            combo.setForeground(new Color(238,225,198));
-        }
-        for(JCheckBox check:new JCheckBox[]{scanlines,vignette,grain,chromatic,large,highContrast}){
-            check.setOpaque(false);check.setForeground(new Color(233,219,192));
-        }
-        for(JSlider slider:new JSlider[]{musicVolume,effectsVolume})slider.setOpaque(false);
+        JPanel grid=new JPanel(new GridLayout(0,2,7,7));
+        grid.setBorder(BorderFactory.createEmptyBorder(9,9,9,9));
         setting(grid,"Display mode",mode);
         setting(grid,"Window size (fullscreen uses native)",desktop);
         setting(grid,"Real 3D rendering height",detail);
@@ -432,87 +331,76 @@ public final class InvestigationGame {
         setting(grid,"Field of view (degrees)",fov);
         setting(grid,"Brightness",brightness);
         setting(grid,"Contrast",contrast);
-        setting(grid,"Atmospheric effects",PsxMenuScreen.label("Optional CPU post-processing"));
+        setting(grid,"Atmospheric effects",new JLabel("Optional CPU post-processing"));
         grid.add(scanlines);grid.add(vignette);
         grid.add(grain);grid.add(chromatic);
         grid.add(large);grid.add(highContrast);
         setting(grid,"Music volume",musicVolume);
         setting(grid,"Effects volume (voice separate)",effectsVolume);
-        JLabel status=PsxMenuScreen.label("Choose settings, then APPLY OPTIONS. Escape to return.");
-        JPanel body=new JPanel(new BorderLayout(0,8));body.setOpaque(false);
-        body.add(PsxMenuScreen.scroll(grid),BorderLayout.CENTER);
-        body.add(status,BorderLayout.SOUTH);
-        JButton apply=PsxHorrorUi.button("APPLY OPTIONS");
-        JButton back=PsxHorrorUi.button("CANCEL / RETURN");
-        JButton editor=PsxHorrorUi.button("LEVEL EDITOR");
-        back.addActionListener(e->showMenu());
-        editor.addActionListener(e->openDeveloperEditor(window));
-        JPanel page=PsxMenuScreen.screen("options","VIDEO / AUDIO / ACCESSIBILITY",
-            "REAL GAME DISPLAY OPTIONS / ORIGINAL PSX HORROR UI ART",body,back,editor,apply);
-        page.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
-            .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"returnMenu");
-        page.getActionMap().put("returnMenu",new AbstractAction(){
-            @Override public void actionPerformed(ActionEvent e){showMenu();}
+        JScrollPane scroll=new JScrollPane(grid,
+            ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scroll.setPreferredSize(new Dimension(610,Math.min(540,grid.getPreferredSize().height+18)));
+        JLabel status=PsxMenuScreen.label("Changes are applied only when you choose APPLY.");
+        JButton apply=button("APPLY OPTIONS"),back=button("BACK");
+        back.addActionListener(e->showCard(returnScreen));
+        JPanel content=transparentPanel(new BorderLayout(0,8));
+        content.add(PsxMenuScreen.scroll(grid),BorderLayout.CENTER);content.add(status,BorderLayout.SOUTH);
+        optionsScreen=PsxMenuScreen.screen("options","OPTIONS","Display / sound / accessibility",content,apply,back);
+        page("options",optionsScreen);
+        apply.addActionListener(event->{
+        GraphicsOptions previous=GraphicsOptions.current();
+        GraphicsOptions chosen=new GraphicsOptions(
+            (GraphicsOptions.Mode)mode.getSelectedItem(),
+            (GraphicsOptions.DisplaySize)desktop.getSelectedItem(),
+            (GraphicsOptions.Detail)detail.getSelectedItem(),
+            (GraphicsOptions.Aspect)aspect.getSelectedItem(),
+            (GraphicsOptions.Upscale)upscale.getSelectedItem(),
+            (GraphicsOptions.Antialias)aa.getSelectedItem(),
+            (Integer)fov.getValue(),(Integer)brightness.getValue(),(Integer)contrast.getValue(),
+            scanlines.isSelected(),vignette.isSelected(),grain.isSelected(),chromatic.isSelected());
+        Runnable save=()->{
+        chosen.save();
+        PsxPipeline.choose((PsxPipeline.Preset)psx.getSelectedItem());
+        displayPrefs.putBoolean("largeMenuText",large.isSelected());
+        displayPrefs.putBoolean("highContrast",highContrast.isSelected());
+        SoundtrackAudio.volume(musicVolume.getValue());
+        LanAudio.effectsVolume(effectsVolume.getValue());
+        buildMenu();menu.revalidate();menu.repaint();PsxMenuScreen.theme(optionsScreen);status.setText("OPTIONS SAVED");
+        };
+        boolean windowChanged=previous.mode()!=chosen.mode()||previous.display()!=chosen.display();
+        if(!windowChanged){save.run();return;}
+        try{chosen.applyWindow(window);}catch(RuntimeException failure){
+            previous.applyWindow(window);status.setText("Display change failed: "+failure.getMessage());return;
+        }
+        JButton keep=button("KEEP DISPLAY"),revert=button("REVERT");
+        Runnable restore=()->{displayRevert.stop();previous.applyWindow(window);showCard("options");};
+        displayRevert=new javax.swing.Timer(15000,e->restore.run());displayRevert.setRepeats(false);
+        keep.addActionListener(e->{displayRevert.stop();save.run();showCard("options");});
+        revert.addActionListener(e->restore.run());
+        page("display.confirm",PsxMenuScreen.screen("display.confirm","KEEP THIS DISPLAY?",
+            "Reverts automatically after 15 seconds",PsxMenuScreen.label("Choose KEEP DISPLAY to save this mode."),keep,revert));
+        displayRevert.start();
         });
-        apply.addActionListener(e->{
-            GraphicsOptions chosen=new GraphicsOptions(
-                (GraphicsOptions.Mode)mode.getSelectedItem(),
-                (GraphicsOptions.DisplaySize)desktop.getSelectedItem(),
-                (GraphicsOptions.Detail)detail.getSelectedItem(),
-                (GraphicsOptions.Aspect)aspect.getSelectedItem(),
-                (GraphicsOptions.Upscale)upscale.getSelectedItem(),
-                (GraphicsOptions.Antialias)aa.getSelectedItem(),
-                (Integer)fov.getValue(),(Integer)brightness.getValue(),(Integer)contrast.getValue(),
-                scanlines.isSelected(),vignette.isSelected(),grain.isSelected(),chromatic.isSelected());
-            Runnable commit=()->{
-                chosen.save();
-                PsxPipeline.choose((PsxPipeline.Preset)psx.getSelectedItem());
-                displayPrefs.putBoolean("largeMenuText",large.isSelected());
-                displayPrefs.putBoolean("highContrast",highContrast.isSelected());
-                SoundtrackAudio.volume(musicVolume.getValue());
-                LanAudio.effectsVolume(effectsVolume.getValue());
-                buildMenu();menu.revalidate();menu.repaint();
-                showMenu();
-            };
-            if(old.mode()==chosen.mode()&&old.display()==chosen.display()){
-                commit.run();return;
-            }
-            try{chosen.applyWindow(window);}
-            catch(RuntimeException failure){
-                try{old.applyWindow(window);}catch(RuntimeException ignored){}
-                status.setText("DISPLAY CHANGE FAILED: "+failure.getMessage());
-                return;
-            }
-            JLabel question=PsxMenuScreen.label("KEEP THIS DISPLAY MODE?  AUTO REVERT AFTER 15 SECONDS.");
-            question.setHorizontalAlignment(SwingConstants.CENTER);
-            JButton keep=PsxHorrorUi.button("KEEP DISPLAY MODE");
-            JButton revert=PsxHorrorUi.button("REVERT");
-            javax.swing.Timer deadline=new javax.swing.Timer(15000,event->{
-                old.applyWindow(window);
-                showPage("options",page);
-                status.setText("Display reverted after the 15-second confirmation deadline.");
-            });
-            deadline.setRepeats(false);
-            keep.addActionListener(event->{deadline.stop();commit.run();});
-            revert.addActionListener(event->{
-                deadline.stop();old.applyWindow(window);showPage("options",page);
-            });
-            showPage("display-confirmation",PsxMenuScreen.screen("display-confirmation",
-                "CONFIRM DISPLAY MODE","THE PREVIOUS DISPLAY SETTINGS ARE PRESERVED UNTIL CONFIRMED",
-                question,revert,keep));
-            deadline.start();
-        });
-        showPage("options",page);
+    }
+    private void showControlsError(String title,Exception error){
+        page("notice",PsxMenuScreen.screen("notice",title,error.getMessage(),
+            PsxMenuScreen.label("Your existing save was preserved."),nav("notice.back","BACK",this::showCampaign)));
     }
     private void showControls(){
-        showTextPage("help","FIELD CONTROLS",
+        JTextArea help=new JTextArea(
             "CASTLE / SOLO\nWASD move  |  Shift sprint  |  Ctrl crouch  |  Click mouse-look  |  F light  |  E interact\n"+
-            "1-4 select gear  |  R use  |  C ward  |  B ritual  |  J journal  |  M map\n"+
-            "Q (hold) callouts  |  L hide / emerge  |  X extract  |  Escape pause or return to menu\n\n"+
-            "LOOSE OBJECTS\nF5 pick up/drop within 2m | ] turn in hand | F12 throw along your view\n"+
-            "Descriptions appear while examining; poltergeist projectiles injure on contact.\n\n"+
-            "GHOST PRACTICE\n[ / ] change room  |  Space drift  |  1-4 ghost actions\n\n"+
-            "MULTIPLAYER\nHost or join by IP, ready up, then enter the 3D world when the case starts.");
+            "1–4 select gear  |  R use  |  C ward  |  B ritual  |  J journal  |  M map\n"+
+            "Q (hold) callouts  |  L hide in cupboard / emerge  |  X extract  |  Escape pause or return to menu\n\n"+
+            "LOOSE OBJECTS (solo and LAN)\nF5 pick up/drop within 2m | ] turn in hand | F12 throw along your view\nDescriptions appear while examining; poltergeist projectiles injure on contact. E toggles aimed phones, alarms, radios and taps.\n\n"+
+            "GHOST PRACTICE\n[ / ] change room  |  Space drift  |  1–4 ghost actions\n\n"+
+            "MULTIPLAYER\nHost or join by IP, ready up, then use Enter 3D World when the case starts.\n"+
+            "The Field Controls tab contains alpha simulation tools, not ordinary lobby controls.");
+        help.setEditable(false);help.setLineWrap(true);help.setWrapStyleWord(true);
+        help.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
+        help.setMargin(new Insets(12,12,12,12));
+        String previous=currentScreen;
+        page("controls",PsxMenuScreen.screen("controls","FIELD CONTROLS","Keyboard and mouse",
+            PsxMenuScreen.scroll(help),nav("controls.back","BACK",()->showCard(previous))));
     }
     private JButton button(String s){
         JButton b=PsxHorrorUi.button(s);
@@ -532,22 +420,22 @@ public final class InvestigationGame {
         chooser.setDialogTitle("Import a Beckenburg local progression save");
         chooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Beckenburg profile (*.properties)","properties"));
         if(chooser.showOpenDialog(window)!=JFileChooser.APPROVE_OPTION)return;
-        int answer=JOptionPane.showConfirmDialog(window,
+        int answer=GameDialogs.showConfirmDialog(window,
             "Import this save? Your current progress will be backed up automatically. Your installation ID will not change.",
-            "Import local save",JOptionPane.OK_CANCEL_OPTION,JOptionPane.WARNING_MESSAGE);
-        if(answer!=JOptionPane.OK_OPTION)return;
+            "Import local save",GameDialogs.OK_CANCEL_OPTION,GameDialogs.WARNING_MESSAGE);
+        if(answer!=GameDialogs.OK_OPTION)return;
         try{
             profile.importFrom(chooser.getSelectedFile().toPath());
             refreshAccount();if(castle!=null)castle.repaint();
-            JOptionPane.showMessageDialog(window,"Local progress imported. The previous save was backed up; installation identity is unchanged.",
-                "Save imported",JOptionPane.INFORMATION_MESSAGE);
-        }catch(IOException ex){JOptionPane.showMessageDialog(window,
+            GameDialogs.showMessageDialog(window,"Local progress imported. The previous save was backed up; installation identity is unchanged.",
+                "Save imported",GameDialogs.INFORMATION_MESSAGE);
+        }catch(IOException ex){GameDialogs.showMessageDialog(window,
             "Import refused; your existing progress was not intentionally overwritten: "+ex.getMessage(),
-            "Import failed",JOptionPane.ERROR_MESSAGE);}
+            "Import failed",GameDialogs.ERROR_MESSAGE);}
     }
     private void beginCampaign(SiteCatalog.Location location,boolean withAssistant){
         SiteCatalog.requirePlayable(location);
-        if(withAssistant&&!profile.assistantHired())throw new IllegalStateException("Assistant not hired");
+        if(pendingHires>profile.missionHires())throw new IllegalStateException("Hunters not reserved");
         try{
             int stage=CampaignStory.stageFor(location);
             CampaignStory.Chapter chapter=profile.dispatchStory(stage);
@@ -555,65 +443,29 @@ public final class InvestigationGame {
             locationPicker.setSelectedItem(location);
             begin(true,withAssistant,seed,chapter);
         }catch(IOException failed){
-            JOptionPane.showMessageDialog(window,"Campaign dispatch could not be saved: "+failed.getMessage(),
-                "Contract unavailable",JOptionPane.ERROR_MESSAGE);
+            GameDialogs.showMessageDialog(window,"Campaign dispatch could not be saved: "+failed.getMessage(),
+                "Contract unavailable",GameDialogs.ERROR_MESSAGE);
         }
     }
     /** Free play is never silently dispatched to the menu's previous site.
      * Campaign dispatch continues to use its fixed story site and progression. */
-    /** Free play map selection remains deliberate, but is no longer a popup. */
     private void begin(){
-        boolean fromCastle=castle!=null&&castle.isShowing();
-        JComboBox<SiteCatalog.Location> site=new JComboBox<>();
-        for(int i=0;i<locationPicker.getItemCount();i++){
-            SiteCatalog.Location candidate=locationPicker.getItemAt(i);
-            if(candidate.playable())site.addItem(candidate);
-        }
-        if(site.getItemCount()==0)throw new IllegalStateException("No playable investigation maps");
+        JPanel form=transparentPanel(new GridLayout(0,2,8,12));
+        JComboBox<SiteCatalog.Location> site=new JComboBox<>(java.util.Arrays.stream(SiteCatalog.Location.values())
+            .filter(SiteCatalog.Location::playable).toArray(SiteCatalog.Location[]::new));
         site.setSelectedItem(locationPicker.getSelectedItem());
-        JComboBox<InvestigationSession.Role> role=
-            select(InvestigationSession.Role.values(),
-                (InvestigationSession.Role)rolePicker.getSelectedItem());
-        JComboBox<SiteCatalog.Conditions> conditions=
-            select(SiteCatalog.Conditions.values(),
-                (SiteCatalog.Conditions)conditionsPicker.getSelectedItem());
-        JPanel form=new JPanel(new GridLayout(0,2,10,14));
-        form.setOpaque(false);
-        form.setBorder(BorderFactory.createEmptyBorder(20,30,20,30));
-        for(JComboBox<?> choice:new JComboBox<?>[]{site,role,conditions}){
-            choice.setBackground(new Color(32,38,47));
-            choice.setForeground(new Color(240,222,183));
-        }
-        setting(form,"Investigation location",site);
-        setting(form,"Hunter discipline",role);
-        setting(form,"Site conditions",conditions);
-        JPanel body=new JPanel(new BorderLayout());body.setOpaque(false);
-        body.add(form,BorderLayout.NORTH);
-        JLabel instruction=PsxMenuScreen.label(
-            "SELECT THE MAP BEFORE DISPATCH. NO CASE STARTS UNTIL YOU CONFIRM.");
-        instruction.setHorizontalAlignment(SwingConstants.CENTER);
-        body.add(instruction,BorderLayout.CENTER);
-        JButton cancel=PsxHorrorUi.button("RETURN");
-        Runnable goBack=()->{if(fromCastle)showCastle();else showMenu();};
-        cancel.addActionListener(e->goBack.run());
-        JButton start=PsxHorrorUi.button("BEGIN SELECTED CASE");
-        start.setName("dispatch.confirm");
-        start.addActionListener(e->{
-            SiteCatalog.Location destination=(SiteCatalog.Location)site.getSelectedItem();
-            SiteCatalog.requirePlayable(destination);
-            locationPicker.setSelectedItem(destination);
-            rolePicker.setSelectedItem(role.getSelectedItem());
-            conditionsPicker.setSelectedItem(conditions.getSelectedItem());
-            begin(false,false,0,null);
+        setting(form,"Investigation location",site);setting(form,"Hunter discipline",rolePicker);
+        setting(form,"Conditions",conditionsPicker);setting(form,"Weather schedule",weatherModePicker);
+        setting(form,"Starting weather",weatherPicker);setting(form,"Weather severity",weatherSeverityPicker);
+        JTabbedPane tabs=new JTabbedPane();PsxHorrorUi.styleTabs(tabs);
+        tabs.addTab("CONTRACT",PsxMenuScreen.scroll(form));
+        tabs.addTab("EQUIPMENT",new CampaignStorePanel(profile,this::refreshAccount));
+        JButton deploy=nav("solo.deploy","DEPLOY",()->{
+            locationPicker.setSelectedItem(site.getSelectedItem());begin(false,false,0,null);
         });
-        JPanel page=PsxMenuScreen.screen("dispatch","EXPEDITION DISPATCH",
-            "CHOOSE INVESTIGATION SITE / HUNTER / CONDITIONS",body,cancel,start);
-        page.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
-            .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"cancelDispatch");
-        page.getActionMap().put("cancelDispatch",new AbstractAction(){
-            @Override public void actionPerformed(ActionEvent e){goBack.run();}
-        });
-        showPage("dispatch",page);
+        page("solo",PsxMenuScreen.screen("solo","SOLO CONTRACT LOBBY",
+            "Castle equipment / free-play case / campaign story advances from Campaign",tabs,
+            nav("solo.back","BACK",this::showMenu),deploy));
     }
     private void begin(boolean campaignMode,boolean withAssistant,long seed,
             CampaignStory.Chapter chapter){
@@ -634,6 +486,8 @@ public final class InvestigationGame {
             (EvidenceSignals.Weather)weatherPicker.getSelectedItem(),
             (Integer)weatherSeverityPicker.getSelectedItem(),campaignMode,withAssistant,seed,
             chapter,(CharacterVisuals.Hunter)assistantRolePicker.getSelectedItem());
+        if(campaignMode){try{profile.consumeMissionHunters(withAssistant?pendingHires:0);}
+            catch(IOException failed){game.close();game=null;showControlsError("Team dispatch",failed);return;}}
         BeckenburgDeveloperTrace.caseStage("GamePanel constructor completed");
         cards.add(game,"play");((CardLayout)cards.getLayout()).show(cards,"play");
         BeckenburgDeveloperTrace.caseStage("case view displayed");
@@ -665,6 +519,7 @@ public final class InvestigationGame {
         private final boolean campaignMode;
         private final CampaignStory.Chapter chapter;
         private final CampaignAlly assistant;
+        private final java.util.List<CampaignAlly> assistants=new java.util.ArrayList<>();
         private String chapterNarration="";
         private int chapterNarrationUntil;
         private boolean narratedArrival,narratedSurvey,narratedEscalation;
@@ -695,7 +550,6 @@ public final class InvestigationGame {
         private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
         private int frameCount;
         private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
-        private JPanel pausePage;
         private LevelOpeningCinematic opening;
         private volatile boolean initialFrameReady;
         private SwingWorker<Void,Void> firstFrameWorker;
@@ -708,7 +562,7 @@ public final class InvestigationGame {
                 @Override protected Void doInBackground(){
                     GraphicsOptions.current().configure(scene,width,height,true);
                     scene.draw(map,session,0,
-                        assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
+                        assistants.stream().map(CampaignAlly::sprite).toList());
                     return null;
                 }
                 @Override protected void done(){
@@ -787,8 +641,10 @@ public final class InvestigationGame {
             BeckenburgDeveloperTrace.caseStage("initializing ghost and investigation session");
             session=new InvestigationSession(map,role,roundSeed,profile.level(role),assigned);
             session.configureWeather(weatherMode,selectedWeather,severity);
-            session.configureParty(campaignMode&&withAssistant?2:1);
-            assistant=campaignMode&&withAssistant?new CampaignAlly(map,session,allyClass):null;
+            int hires=campaignMode&&withAssistant?pendingHires:0;
+            session.configureParty(1+hires);
+            for(int i=0;i<hires;i++)assistants.add(new CampaignAlly(map,session,allyClass,i+1));
+            assistant=assistants.isEmpty()?null:assistants.get(0);
             session.connectLighting(lights);
             atmosphere.setModule(scene.weatherModule());
             scene.setWeather(session.weather());
@@ -836,14 +692,14 @@ public final class InvestigationGame {
         }
         private void collectAssistantChat(){
             if(assistant==null)return;
-            for(String words:assistant.drainChat())
-                postTeamMessage(LanChat.Channel.RADIO,1,words);
+            for(int i=0;i<assistants.size();i++)for(String words:assistants.get(i).drainChat())
+                postTeamMessage(LanChat.Channel.RADIO,i+1,words);
         }
         private void submitTeamChat(){
             try{
                 String clean=LanChat.clean(chatInput.getText());
                 postTeamMessage(chatChannel,0,clean);
-                if(assistant!=null){
+                for(var assistant:assistants){
                     String reply=assistant.onChat(clean,chatChannel,playerSpeaker());
                     if(reply!=null)postTeamMessage(chatChannel,1,reply);
                 }
@@ -875,9 +731,9 @@ public final class InvestigationGame {
             for(FieldSupplies.Kind kind:FieldSupplies.Kind.values())
                 for(FieldSupplies.Tier tier:FieldSupplies.Tier.values())
                     names[at++]=kind+" / "+tier.name()+" / £"+tier.price+" / +"+tier.restore(kind);
-            Object chosen=JOptionPane.showInputDialog(window,"ACCOUNT £"+profile.currency()+
+            Object chosen=GameDialogs.showInputDialog(window,"ACCOUNT £"+profile.currency()+
                 "  /  Purchase field medicine","VAN SUPPLY COUNTER",
-                JOptionPane.PLAIN_MESSAGE,null,names,names[0]);
+                GameDialogs.PLAIN_MESSAGE,null,names,names[0]);
             if(chosen!=null)for(int i=0;i<names.length;i++)if(names[i].equals(chosen)){
                 FieldSupplies.Kind kind=FieldSupplies.Kind.values()[i/3];
                 FieldSupplies.Tier tier=FieldSupplies.Tier.values()[i%3];
@@ -978,7 +834,7 @@ public final class InvestigationGame {
                 for(var cue:session.drainWorldSounds()){
                     GameSfx.playAt(map,listener,cue.room(),cue.x(),cue.y(),cue.z(),
                         cue.cue(),cue.tick(),session.weather());
-                    if(assistant!=null){
+                    for(var assistant:assistants){
                         var heard=LanSound.project(map,assistant.listener(),cue.room(),
                             cue.x(),cue.y(),cue.z(),cue.cue(),cue.tick());
                         assistant.hear(LanSound.weatherMask(heard,session.weather(),
@@ -987,7 +843,7 @@ public final class InvestigationGame {
                 }
                 for(var beat:session.drainHauntSounds()){
                     GameSfx.playHauntingAt(map,listener,beat,session.weather());
-                    if(assistant!=null){
+                    for(var assistant:assistants){
                         var score=GhostHauntingChoreography.forEvent(beat.id());
                         var cue=score.beats().get(beat.beat()).cue();
                         var heard=LanSound.project(map,assistant.listener(),
@@ -996,7 +852,7 @@ public final class InvestigationGame {
                             map.outside(beat.room())||map.outside(assistant.room())));
                     }
                 }
-                if(assistant!=null){
+                for(var assistant:assistants){
                     assistant.advance(scene.x,feetY(),scene.z);
                     collectAssistantChat();
                 }
@@ -1014,9 +870,9 @@ public final class InvestigationGame {
             GraphicsOptions.current().configure(scene,getWidth(),getHeight(),true);
             scene.rackInventory=VanRackStock.solo(profile,loadout);
             scene.draw(map,session,frameCount++/30.0,
-                assistant==null?java.util.List.of():java.util.List.of(assistant.sprite()));
+                assistants.stream().map(CampaignAlly::sprite).toList());
             if(frameCount==1)BeckenburgDeveloperTrace.caseStage("active");
-            perfHud.sample(System.nanoTime()-diagnosticFrameStart,scene,map,assistant==null?0:1,"SOLO");
+            perfHud.sample(System.nanoTime()-diagnosticFrameStart,scene,map,assistants.size(),"SOLO");
             repaint();
             if(session.outcome()==InvestigationSession.Outcome.LOST){
                 timer.stop();endCase("You were overcome. The case remains open.");
@@ -1049,91 +905,39 @@ public final class InvestigationGame {
                     claimSaved=true;result+="\nAlready settled (duplicate payout refused).";
                 }
             }catch(IOException | ArithmeticException ex){
-                JOptionPane.showMessageDialog(window,
+                GameDialogs.showMessageDialog(window,
                     "Case could not be saved: "+ex.getMessage()+
                     "\nReturn to the extraction screen to retry. No duplicate rewards will be issued.",
-                    "Campaign save failed",JOptionPane.ERROR_MESSAGE);
+                    "Campaign save failed",GameDialogs.ERROR_MESSAGE);
                 return;
             }
-            JTextArea receipt=new JTextArea(result);
-            receipt.setEditable(false);
-            receipt.setFocusable(false);
-            receipt.setOpaque(false);
-            receipt.setLineWrap(true);
-            receipt.setWrapStyleWord(true);
-            receipt.setFont(new Font(Font.MONOSPACED,Font.BOLD,14));
-            receipt.setForeground(new Color(230,219,196));
-            receipt.setMargin(new Insets(14,16,14,16));
-            JButton finish=PsxHorrorUi.button(campaignMode?
-                "RETURN TO CAMPAIGN BOARD":"RETURN TO CASTLE MENU");
-            finish.addActionListener(e->{
+            GameDialogs.showMessageDialog(window,result,"EXPEDITION DEBRIEF",GameDialogs.INFORMATION_MESSAGE);
+            SwingUtilities.invokeLater(()->{
                 InvestigationGame.this.returnHome();
                 if(campaignMode)InvestigationGame.this.showCampaign();
             });
-            showPage("case-debrief",PsxMenuScreen.screen("case-debrief",
-                "EXPEDITION DEBRIEF","PERSISTED ACCOUNT / CLASS EXPERIENCE / CASE OUTCOME",
-                PsxMenuScreen.scroll(receipt),finish));
-        }
-        /** Pause the real 3D session without opening another desktop window. */
-        private void resumeFromPause(){
-            ((CardLayout)cards.getLayout()).show(cards,"play");
-            last=System.nanoTime();
-            timer.start();
-            BeckenburgDeveloperTrace.caseStage("active");
-            SwingUtilities.invokeLater(this::requestFocusInWindow);
         }
         private void pause(){
             timer.stop();down.clear();mouseLook.release();wheelOpen=false;briefingShown=false;
             BeckenburgDeveloperTrace.caseStage("paused");
-            JLabel feedback=PsxMenuScreen.label(
-                "INVESTIGATION PAUSED / YOUR CASE REMAINS IN MEMORY.");
-            feedback.setHorizontalAlignment(SwingConstants.CENTER);
-            JButton resume=PsxHorrorUi.button("RESUME CASE");
-            JButton retreat=PsxHorrorUi.button("EXTRACT / RETURN");
-            JButton controls=PsxHorrorUi.button("CONTROLS");
-            JButton exit=PsxHorrorUi.button("EXIT GAME");
-            resume.addActionListener(e->resumeFromPause());
-            retreat.addActionListener(e->{
-                // The extraction rule is unchanged; pause does not grant teleport.
-                session.extract(scene.x,feetY(),scene.z);
-                if(session.outcome()==InvestigationSession.Outcome.ACTIVE)
-                    feedback.setText("RETURN TO THE ENTRY MARKER TO EXTRACT SAFELY.");
-                else endCase("Expedition ended.");
-            });
-            controls.addActionListener(e->{
-                JPanel words=new JPanel(new BorderLayout());words.setOpaque(false);
-                JTextArea text=new JTextArea("WASD move / Mouse look / 1-4 equipment / R scan / "+
-                    "C ward / B ritual / E interact / Q hold callout / M map / J journal / X extract");
-                text.setLineWrap(true);text.setWrapStyleWord(true);text.setEditable(false);
-                text.setOpaque(false);text.setForeground(new Color(233,218,192));
-                text.setFont(new Font(Font.MONOSPACED,Font.PLAIN,14));
-                words.add(text,BorderLayout.CENTER);
-                JButton back=PsxHorrorUi.button("BACK TO PAUSE");
-                back.addActionListener(event->showPage("field-pause",pausePage));
-                showPage("field-controls",PsxMenuScreen.screen("field-controls",
-                    "FIELD CONTROLS","THE CASE REMAINS PAUSED",words,back));
-            });
-            exit.addActionListener(e->{
-                JLabel warning=PsxMenuScreen.label(
-                    "EXIT WITHOUT PAYOUT? THE ACTIVE CASE WILL BE ABANDONED.");
-                warning.setHorizontalAlignment(SwingConstants.CENTER);
-                JButton no=PsxHorrorUi.button("KEEP PLAYING");
-                no.addActionListener(event->showPage("field-pause",pausePage));
-                JButton yes=PsxHorrorUi.button("CONFIRM EXIT GAME");
-                yes.addActionListener(event->{close();System.exit(0);});
-                showPage("field-exit",PsxMenuScreen.screen("field-exit",
-                    "CONFIRM EXIT","UNSAVED EXPEDITION REWARDS WILL NOT BE GRANTED",
-                    warning,no,yes));
-            });
-            pausePage=PsxMenuScreen.screen("field-pause","INVESTIGATION PAUSED",
-                "RETURN TO FIELD / SAFE EXTRACTION / GAME CONTROLS",
-                feedback,resume,retreat,controls,exit);
-            pausePage.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
-                .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"resume");
-            pausePage.getActionMap().put("resume",new AbstractAction(){
-                @Override public void actionPerformed(ActionEvent event){resumeFromPause();}
-            });
-            showPage("field-pause",pausePage);
+            Object[] choices={"Resume", "Retreat & return", "Controls", "Exit Game"};
+            int choice=GameDialogs.showOptionDialog(window,"Expedition paused", "Field Pause",
+                GameDialogs.DEFAULT_OPTION,GameDialogs.QUESTION_MESSAGE,null,choices,choices[0]);
+            if(choice==1){session.extract(scene.x,feetY(),scene.z); // extraction location still validated
+                if(session.outcome()==InvestigationSession.Outcome.ACTIVE){
+                    // Leaving a running mission from elsewhere is a failed withdrawal, not a free payout.
+                    GameDialogs.showMessageDialog(window,"Return to the entry marker to extract safely.","Not at extraction",GameDialogs.INFORMATION_MESSAGE);
+                }else{endCase("Expedition ended.");return;}
+            }
+            if(choice==2) GameDialogs.showMessageDialog(window,"WASD / click to mouse-look • 1/2/3 gear • R scan • C ward • B ritual • E door • Q hold communication wheel • M map • J journal • X extract","Controls",GameDialogs.INFORMATION_MESSAGE);
+            if(choice==3&&InGamePauseMenu.confirmExit(window)){
+                close(); // never reward an abandoned investigation
+                System.exit(0);
+                return;
+            }
+            last=System.nanoTime();timer.start();
+            BeckenburgDeveloperTrace.caseStage("active");
+            requestFocusInWindow();
         }
         @Override public void keyPressed(KeyEvent e){
             if(chatInput.isVisible())return;
@@ -1188,13 +992,13 @@ public final class InvestigationGame {
                 loadout.select(key-KeyEvent.VK_1);
                 GameSfx.play(LanSound.Cue.SELECT);
             }
-            if(key==KeyEvent.VK_U&&assistant!=null){
+            if(key==KeyEvent.VK_U&&assistant!=null)for(var assistant:assistants){
                 if(assistant.order()==CampaignAlly.Order.FOLLOW)assistant.hold();
                 else assistant.follow();
                 showVanNotice("Assistant: "+assistant.report());
                 postTeamMessage(LanChat.Channel.LOCAL,1,assistant.report());
             }
-            if(key==KeyEvent.VK_I&&assistant!=null){
+            if(key==KeyEvent.VK_I&&assistant!=null)for(var assistant:assistants){
                 showVanNotice(assistant.readThermometer());
                 collectAssistantChat();
             }
@@ -1248,12 +1052,12 @@ public final class InvestigationGame {
             timer.stop();down.clear();mouseLook.release();
             String[] zones=new String[HouseMap.ROOM_COUNT];
             for(int i=0;i<zones.length;i++)zones[i]=i+"  /  "+map.roomName(i);
-            Object selected=JOptionPane.showInputDialog(window,
-                "Assistant destination","FIELD ORDER",JOptionPane.PLAIN_MESSAGE,
+            Object selected=GameDialogs.showInputDialog(window,
+                "Assistant destination","FIELD ORDER",GameDialogs.PLAIN_MESSAGE,
                 null,zones,zones[currentRoom()<0?0:currentRoom()]);
             if(selected!=null){
                 int room=Integer.parseInt(selected.toString().split("  /  ")[0]);
-                assistant.investigate(room);
+                for(var ally:assistants)ally.investigate(room);
                 showVanNotice(assistant.report());
             }
             last=System.nanoTime();timer.start();requestFocusInWindow();
@@ -1359,7 +1163,7 @@ public final class InvestigationGame {
                     lastPing=callouts.submit(new TeamCallout.Request(0,choice,scene.x,scene.z,where[0],where[1],session.ticks()),feetY(),feetY());
                     if(lastPing!=null){
                         postTeamMessage(LanChat.Channel.LOCAL,0,choice.spoken);
-                        if(assistant!=null){
+                        for(var assistant:assistants){
                             String reply=assistant.onCallout(lastPing,playerSpeaker());
                             if(reply!=null)postTeamMessage(LanChat.Channel.LOCAL,1,reply);
                         }
@@ -1420,7 +1224,7 @@ public final class InvestigationGame {
                     g.setColor(new Color(13,20,27,224));
                     g.fillRoundRect(12,157,Math.min(width-24,685),39,7,7);
                     g.setColor(new Color(169,224,193));
-                    g.drawString("ALLY  "+assistant.order()+"  /  "+map.roomName(assistant.room())+
+                    g.drawString("ALLIES "+assistants.size()+" / "+assistant.order()+"  /  "+map.roomName(assistant.room())+
                         " / "+assistant.discipline()+"  /  U follow/hold  I thermometer  P destination",23,173);
                     g.setColor(new Color(210,218,202));
                     String observed=assistant.report();

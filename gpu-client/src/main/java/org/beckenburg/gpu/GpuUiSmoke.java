@@ -46,10 +46,11 @@ public final class GpuUiSmoke {
        &&f.getTitle().startsWith("The Beckenburg Project"))return f;
   return null;
  }
- private static JDialog dispatch(){
-  for(Window w:Window.getWindows())
-   if(w instanceof JDialog d&&d.isShowing()
-       &&d.getTitle().contains("EXPEDITION DISPATCH"))return d;
+ private static JPanel dispatch(Container root){
+  for(Component child:root.getComponents()){
+   if(child instanceof JPanel panel&&"solo".equals(panel.getName())&&panel.isShowing())return panel;
+   if(child instanceof Container nested){JPanel found=dispatch(nested);if(found!=null)return found;}
+  }
   return null;
  }
  private static JPanel game(Container root){
@@ -75,10 +76,10 @@ public final class GpuUiSmoke {
    var start=button(window.getContentPane(),"START SOLO INVESTIGATION");
    if(start!=null)start.doClick();
   });
-  JDialog chooser=waitFor(GpuUiSmoke::dispatch,15);
+  JPanel chooser=waitFor(()->dispatch(window.getContentPane()),15);
   if(chooser==null)throw new AssertionError("GPU launcher did not request location selection");
   SwingUtilities.invokeLater(()->{
-   JButton ok=button(chooser.getContentPane(),"OK");
+   JButton ok=button(chooser,"DEPLOY");
    if(ok!=null)ok.doClick();
   });
   JPanel inGame=waitFor(()->game(window.getContentPane()),55);

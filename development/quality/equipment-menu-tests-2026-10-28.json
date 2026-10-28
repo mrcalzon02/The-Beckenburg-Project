@@ -1,0 +1,183 @@
+{
+  "tests": [
+    {
+      "test": "CampaignMenuWorkflowTest",
+      "exit_code": 0,
+      "seconds": 84.3,
+      "output": "PASS mission reservations, refunds, capacity, save rollback, campaign dispatch and real panel captures"
+    },
+    {
+      "test": "CampaignCoopLobbyTest",
+      "exit_code": 0,
+      "seconds": 0.84,
+      "output": "PASS real TCP campaign co-op, six-seat cap, bot substitution/refund, guest isolation, host receipt and multiplayer lobby purchases"
+    },
+    {
+      "test": "EquipmentTierIconTest",
+      "exit_code": 0,
+      "seconds": 2.34,
+      "output": "PASS 129 distinct tier resources, actual 512px Blender images, close framing and no clipping"
+    },
+    {
+      "test": "CampaignCareerTest",
+      "exit_code": 0,
+      "seconds": 0.53,
+      "output": "PASS career: paid hire, reload, durable unique dispatch, idempotent visit/outcome and payout"
+    },
+    {
+      "test": "CampaignBoardPanelTest",
+      "exit_code": 0,
+      "seconds": 3.8,
+      "output": "PASS campaign board has playable contracts, persistent recruit and actual companion dispatch"
+    },
+    {
+      "test": "CampaignProgressionAndStoreTest",
+      "exit_code": 0,
+      "seconds": 3.53,
+      "output": "PASS campaign: unified quartermaster, role levels, field perks, real payout and 32 persisted reports"
+    },
+    {
+      "test": "CampaignStoryProgressionTest",
+      "exit_code": 0,
+      "seconds": 0.7,
+      "output": "PASS 22-chapter seeded campaign, three playable victory gates, replay rewards and separate LAN wallet"
+    },
+    {
+      "test": "CampaignPartyRulesTest",
+      "exit_code": 0,
+      "seconds": 0.56,
+      "output": "PASS party: AI Hunter counts toward threat and host rewards without extra class XP"
+    },
+    {
+      "test": "CampaignAllyTest",
+      "exit_code": 0,
+      "seconds": 0.49,
+      "output": "PASS HOUSE: real swept ally movement, orders, issued thermometer and manual journal\nPASS FARMHOUSE: real swept ally movement, orders, issued thermometer and manual journal\nPASS SCHOOL: real swept ally movement, orders, issued thermometer and manual journal"
+    },
+    {
+      "test": "CampaignAllyChatTest",
+      "exit_code": 0,
+      "seconds": 1.03,
+      "output": "PASS HOUSE: physically audible emotes, local/radio chat, witnessed instruments and manual evidence\nPASS FARMHOUSE: physically audible emotes, local/radio chat, witnessed instruments and manual evidence\nPASS SCHOOL: physically audible emotes, local/radio chat, witnessed instruments and manual evidence\nPASS team chat: bounded transcript and LAN-compatible frames"
+    },
+    {
+      "test": "FieldEquipmentTest",
+      "exit_code": 0,
+      "seconds": 0.08,
+      "output": "PASS: working tiered inventory, shared credits, range, cooldown and duplicate-slot rejection"
+    },
+    {
+      "test": "FieldSuppliesTest",
+      "exit_code": 0,
+      "seconds": 0.08,
+      "output": "PASS progressive purchased health and sanity items"
+    },
+    {
+      "test": "EquipmentStoreDescriptionsTest",
+      "exit_code": 0,
+      "seconds": 0.17,
+      "output": "PASS: store names, live prices, 42x3 tier facts, optics, batteries, hover copy, no invented capabilities"
+    },
+    {
+      "test": "EquipmentRegistryTest",
+      "exit_code": 0,
+      "seconds": 0.09,
+      "output": "PASS: 42 equipment entries, status separation, and evidence families"
+    },
+    {
+      "test": "EquipmentModelCatalogTest",
+      "exit_code": 0,
+      "seconds": 2.09,
+      "output": "PASS: 126 equipment slots +3 health slots, 53 state aliases /49 meshes, 7 fixed fixtures, 162-file allowlist"
+    },
+    {
+      "test": "EquipmentSelectionTest",
+      "exit_code": 0,
+      "seconds": 0.08,
+      "output": "PASS: four-slot selection, distinct rack swaps, consumables and resupply"
+    },
+    {
+      "test": "SoloEquipmentUseTest",
+      "exit_code": 0,
+      "seconds": 0.42,
+      "output": "PASS: in-game equipment usage affects the actual solo case and expendables"
+    },
+    {
+      "test": "LanFieldEquipmentIntegrationTest",
+      "exit_code": 0,
+      "seconds": 0.88,
+      "output": "PASS: real sockets, multi-slot gear readings, team journal and ghost privacy"
+    },
+    {
+      "test": "LanLobbyTest",
+      "exit_code": 0,
+      "seconds": 18.0,
+      "output": "PASS: four TCP clients, seats/readiness/start, host-validated moves, ghost parity, damage, authority, replay and private projection\nPASS: 3-hunter LAN sessions use AI ghost fallback without extra seat"
+    },
+    {
+      "test": "LanSixHunterVanTest",
+      "exit_code": 0,
+      "seconds": 1.77,
+      "output": "PASS: 6+1 sockets, +6 threat, private van telemetry, seventh hunter denied\nPASS: six simultaneous ghost-room occupants on authoritative room topology"
+    },
+    {
+      "test": "LanHostOwnerRecoveryTest",
+      "exit_code": 0,
+      "seconds": 0.59,
+      "output": "PASS: ghost-host guest H1 continuity, recovering owner sockets and explicit owner-exit semantics"
+    },
+    {
+      "test": "LanGhostLobbySecrecyTest",
+      "exit_code": 0,
+      "seconds": 0.91,
+      "output": "PASS: cosmetic lobby ghost visible to party; real species withheld until play"
+    },
+    {
+      "test": "LobbyGhostAvatarTest",
+      "exit_code": 0,
+      "seconds": 0.51,
+      "output": "PASS: independent cosmetic lobby ghost, valid art, no species disclosure"
+    },
+    {
+      "test": "LanSessionResumeIntegrationTest",
+      "exit_code": 0,
+      "seconds": 1.91,
+      "output": "PASS: unexpected loss, real rejoin/token rotation, expiry, ghost AI continuity and role privacy"
+    },
+    {
+      "test": "LanNetworkLatencyTest",
+      "exit_code": 0,
+      "seconds": 25.44,
+      "output": "PASS: TCP heartbeat RTT 0/50/150ms, one lost PONG, recovery and host continuity"
+    },
+    {
+      "test": "LanOutboundQueueTest",
+      "exit_code": 0,
+      "seconds": 0.08,
+      "output": "PASS: ordered nonblocking TCP delivery, bounded backlog, slow-peer isolation"
+    },
+    {
+      "test": "BeckenburgProfileImportTest",
+      "exit_code": 0,
+      "seconds": 0.19,
+      "output": "PASS: canonical and legacy equipment keys, valid imports, backups, identity and corrupt-save recovery"
+    },
+    {
+      "test": "BeckenburgDesktopE2ETest",
+      "exit_code": 0,
+      "seconds": 6.95,
+      "output": "E2E PASS packaged startup and usable PSX-themed main menu\nE2E PASS main-menu multiplayer handoff and actionable join/host lobby\nE2E PASS real House dispatch, skippable flyover and 3 advancing gameplay frames\nPASS Beckenburg packaged desktop, multiplayer UI and solo case startup"
+    },
+    {
+      "test": "CampaignEmbeddedDesktopTest",
+      "exit_code": 0,
+      "seconds": 3.78,
+      "output": "PASS real embedded solo campaign: two bots, saved catalog loadout, advancing 3D frames, host result, same-window return\n2026-10-28T19:00:44.407382400Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=1044x656 first_frame_state=software-fallback-ready"
+    }
+  ],
+  "build": "Clean build.cmd package / Java 17 / Blender 5.0",
+  "jar_sha256": "f260b980a1ff0e3cac38a89e871088353ef490b87da97bd3dcca9e66ef09d567",
+  "full_regression_manifest": "not run",
+  "gpu_hardware_acceptance": "not run",
+  "remote_workflows": "unavailable: github.com DNS resolution failed"
+}

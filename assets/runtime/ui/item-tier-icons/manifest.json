@@ -1,0 +1,1163 @@
+[
+  {
+    "id": "DOTS_PROJECTOR",
+    "tier": 1,
+    "model": "blender_dots_projector_1",
+    "file": "dots_projector_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "DOTS_PROJECTOR",
+    "tier": 2,
+    "model": "blender_dots_projector_2",
+    "file": "dots_projector_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "DOTS_PROJECTOR",
+    "tier": 3,
+    "model": "blender_dots_projector_3",
+    "file": "dots_projector_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "EMF_READER",
+    "tier": 1,
+    "model": "exploration_emf_detector",
+    "file": "emf_reader_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "EMF_READER",
+    "tier": 2,
+    "model": "blender_emf_reader_2",
+    "file": "emf_reader_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "EMF_READER",
+    "tier": 3,
+    "model": "blender_emf_reader_3",
+    "file": "emf_reader_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "FLASHLIGHT",
+    "tier": 1,
+    "model": "exploration_flashlight",
+    "file": "flashlight_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "FLASHLIGHT",
+    "tier": 2,
+    "model": "blender_flashlight_2",
+    "file": "flashlight_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "FLASHLIGHT",
+    "tier": 3,
+    "model": "blender_flashlight_3",
+    "file": "flashlight_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "GHOST_WRITING_BOOK",
+    "tier": 1,
+    "model": "book_mp_1",
+    "file": "ghost_writing_book_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "GHOST_WRITING_BOOK",
+    "tier": 2,
+    "model": "blender_ghost_writing_book_2",
+    "file": "ghost_writing_book_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "GHOST_WRITING_BOOK",
+    "tier": 3,
+    "model": "blender_ghost_writing_book_3",
+    "file": "ghost_writing_book_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SPIRIT_BOX",
+    "tier": 1,
+    "model": "blender_spirit_box_1",
+    "file": "spirit_box_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SPIRIT_BOX",
+    "tier": 2,
+    "model": "blender_spirit_box_2",
+    "file": "spirit_box_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SPIRIT_BOX",
+    "tier": 3,
+    "model": "blender_spirit_box_3",
+    "file": "spirit_box_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "THERMOMETER",
+    "tier": 1,
+    "model": "exploration_thermometer",
+    "file": "thermometer_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "THERMOMETER",
+    "tier": 2,
+    "model": "blender_thermometer_2",
+    "file": "thermometer_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "THERMOMETER",
+    "tier": 3,
+    "model": "blender_thermometer_3",
+    "file": "thermometer_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "UV_LIGHT",
+    "tier": 1,
+    "model": "blender_uv_light_1",
+    "file": "uv_light_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "UV_LIGHT",
+    "tier": 2,
+    "model": "blender_uv_light_2",
+    "file": "uv_light_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "UV_LIGHT",
+    "tier": 3,
+    "model": "blender_uv_light_3",
+    "file": "uv_light_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "VIDEO_CAMERA",
+    "tier": 1,
+    "model": "blender_video_camera_1",
+    "file": "video_camera_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "VIDEO_CAMERA",
+    "tier": 2,
+    "model": "blender_video_camera_2",
+    "file": "video_camera_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "VIDEO_CAMERA",
+    "tier": 3,
+    "model": "blender_video_camera_3",
+    "file": "video_camera_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "CRUCIFIX",
+    "tier": 1,
+    "model": "blender_crucifix_1",
+    "file": "crucifix_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "CRUCIFIX",
+    "tier": 2,
+    "model": "blender_crucifix_2",
+    "file": "crucifix_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "CRUCIFIX",
+    "tier": 3,
+    "model": "blender_crucifix_3",
+    "file": "crucifix_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "FIRELIGHT",
+    "tier": 1,
+    "model": "blender_firelight_1",
+    "file": "firelight_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "FIRELIGHT",
+    "tier": 2,
+    "model": "blender_firelight_2",
+    "file": "firelight_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "FIRELIGHT",
+    "tier": 3,
+    "model": "blender_firelight_3",
+    "file": "firelight_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "HEAD_GEAR",
+    "tier": 1,
+    "model": "blender_head_gear_1",
+    "file": "head_gear_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "HEAD_GEAR",
+    "tier": 2,
+    "model": "blender_head_gear_2",
+    "file": "head_gear_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "HEAD_GEAR",
+    "tier": 3,
+    "model": "blender_head_gear_3",
+    "file": "head_gear_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "IGNITER",
+    "tier": 1,
+    "model": "blender_igniter_1",
+    "file": "igniter_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "IGNITER",
+    "tier": 2,
+    "model": "blender_igniter_2",
+    "file": "igniter_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "IGNITER",
+    "tier": 3,
+    "model": "blender_igniter_3",
+    "file": "igniter_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "INCENSE",
+    "tier": 1,
+    "model": "blender_incense_1",
+    "file": "incense_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "INCENSE",
+    "tier": 2,
+    "model": "blender_incense_2",
+    "file": "incense_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "INCENSE",
+    "tier": 3,
+    "model": "blender_incense_3",
+    "file": "incense_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "MOTION_SENSOR",
+    "tier": 1,
+    "model": "blender_motion_sensor_1",
+    "file": "motion_sensor_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "MOTION_SENSOR",
+    "tier": 2,
+    "model": "blender_motion_sensor_2",
+    "file": "motion_sensor_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "MOTION_SENSOR",
+    "tier": 3,
+    "model": "blender_motion_sensor_3",
+    "file": "motion_sensor_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "PARABOLIC_MICROPHONE",
+    "tier": 1,
+    "model": "blender_parabolic_microphone_1",
+    "file": "parabolic_microphone_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "PARABOLIC_MICROPHONE",
+    "tier": 2,
+    "model": "blender_parabolic_microphone_2",
+    "file": "parabolic_microphone_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "PARABOLIC_MICROPHONE",
+    "tier": 3,
+    "model": "blender_parabolic_microphone_3",
+    "file": "parabolic_microphone_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "PHOTO_CAMERA",
+    "tier": 1,
+    "model": "exploration_photo_camera",
+    "file": "photo_camera_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "PHOTO_CAMERA",
+    "tier": 2,
+    "model": "blender_photo_camera_2",
+    "file": "photo_camera_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "PHOTO_CAMERA",
+    "tier": 3,
+    "model": "blender_photo_camera_3",
+    "file": "photo_camera_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SALT",
+    "tier": 1,
+    "model": "blender_salt_1",
+    "file": "salt_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SALT",
+    "tier": 2,
+    "model": "blender_salt_2",
+    "file": "salt_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SALT",
+    "tier": 3,
+    "model": "blender_salt_3",
+    "file": "salt_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SANITY_MEDICATION",
+    "tier": 1,
+    "model": "blender_sanity_medication_1",
+    "file": "sanity_medication_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SANITY_MEDICATION",
+    "tier": 2,
+    "model": "blender_sanity_medication_2",
+    "file": "sanity_medication_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SANITY_MEDICATION",
+    "tier": 3,
+    "model": "blender_sanity_medication_3",
+    "file": "sanity_medication_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SOUND_RECORDER",
+    "tier": 1,
+    "model": "blender_sound_recorder_1",
+    "file": "sound_recorder_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SOUND_RECORDER",
+    "tier": 2,
+    "model": "blender_sound_recorder_2",
+    "file": "sound_recorder_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SOUND_RECORDER",
+    "tier": 3,
+    "model": "blender_sound_recorder_3",
+    "file": "sound_recorder_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SOUND_SENSOR",
+    "tier": 1,
+    "model": "blender_sound_sensor_1",
+    "file": "sound_sensor_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SOUND_SENSOR",
+    "tier": 2,
+    "model": "blender_sound_sensor_2",
+    "file": "sound_sensor_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SOUND_SENSOR",
+    "tier": 3,
+    "model": "blender_sound_sensor_3",
+    "file": "sound_sensor_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "TRIPOD",
+    "tier": 1,
+    "model": "blender_tripod_1",
+    "file": "tripod_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "TRIPOD",
+    "tier": 2,
+    "model": "blender_tripod_2",
+    "file": "tripod_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "TRIPOD",
+    "tier": 3,
+    "model": "blender_tripod_3",
+    "file": "tripod_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "CLIPBOARDS",
+    "tier": 1,
+    "model": "blender_clipboards_fixed",
+    "file": "clipboards_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "CLIPBOARDS",
+    "tier": 2,
+    "model": "blender_clipboards_fixed",
+    "file": "clipboards_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "CLIPBOARDS",
+    "tier": 3,
+    "model": "blender_clipboards_fixed",
+    "file": "clipboards_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "COMPUTER",
+    "tier": 1,
+    "model": "blender_computer_fixed",
+    "file": "computer_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "COMPUTER",
+    "tier": 2,
+    "model": "blender_computer_fixed",
+    "file": "computer_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "COMPUTER",
+    "tier": 3,
+    "model": "blender_computer_fixed",
+    "file": "computer_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "OBJECTIVE_BOARD",
+    "tier": 1,
+    "model": "blender_objective_board_fixed",
+    "file": "objective_board_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "OBJECTIVE_BOARD",
+    "tier": 2,
+    "model": "blender_objective_board_fixed",
+    "file": "objective_board_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "OBJECTIVE_BOARD",
+    "tier": 3,
+    "model": "blender_objective_board_fixed",
+    "file": "objective_board_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SANITY_MONITOR",
+    "tier": 1,
+    "model": "monitoring_screen_mp_1",
+    "file": "sanity_monitor_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SANITY_MONITOR",
+    "tier": 2,
+    "model": "monitoring_screen_mp_1",
+    "file": "sanity_monitor_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SANITY_MONITOR",
+    "tier": 3,
+    "model": "monitoring_screen_mp_1",
+    "file": "sanity_monitor_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SITE_ACTIVITY_MONITOR",
+    "tier": 1,
+    "model": "monitoring_screen_mp_1",
+    "file": "site_activity_monitor_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SITE_ACTIVITY_MONITOR",
+    "tier": 2,
+    "model": "monitoring_screen_mp_1",
+    "file": "site_activity_monitor_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SITE_ACTIVITY_MONITOR",
+    "tier": 3,
+    "model": "monitoring_screen_mp_1",
+    "file": "site_activity_monitor_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SITE_MAP",
+    "tier": 1,
+    "model": "blender_site_map_fixed",
+    "file": "site_map_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SITE_MAP",
+    "tier": 2,
+    "model": "blender_site_map_fixed",
+    "file": "site_map_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SITE_MAP",
+    "tier": 3,
+    "model": "blender_site_map_fixed",
+    "file": "site_map_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SOUND_MONITOR",
+    "tier": 1,
+    "model": "monitoring_screen_mp_1",
+    "file": "sound_monitor_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SOUND_MONITOR",
+    "tier": 2,
+    "model": "monitoring_screen_mp_1",
+    "file": "sound_monitor_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SOUND_MONITOR",
+    "tier": 3,
+    "model": "monitoring_screen_mp_1",
+    "file": "sound_monitor_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "ANCHOR_TRIANGULATOR",
+    "tier": 1,
+    "model": "blender_anchor_triangulator_1",
+    "file": "anchor_triangulator_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "ANCHOR_TRIANGULATOR",
+    "tier": 2,
+    "model": "blender_anchor_triangulator_2",
+    "file": "anchor_triangulator_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "ANCHOR_TRIANGULATOR",
+    "tier": 3,
+    "model": "blender_anchor_triangulator_3",
+    "file": "anchor_triangulator_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "ECTOPLASM_SAMPLER",
+    "tier": 1,
+    "model": "blender_ectoplasm_sampler_1",
+    "file": "ectoplasm_sampler_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "ECTOPLASM_SAMPLER",
+    "tier": 2,
+    "model": "blender_ectoplasm_sampler_2",
+    "file": "ectoplasm_sampler_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "ECTOPLASM_SAMPLER",
+    "tier": 3,
+    "model": "blender_ectoplasm_sampler_3",
+    "file": "ectoplasm_sampler_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "RESONANCE_TUNER",
+    "tier": 1,
+    "model": "blender_resonance_tuner_1",
+    "file": "resonance_tuner_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "RESONANCE_TUNER",
+    "tier": 2,
+    "model": "blender_resonance_tuner_2",
+    "file": "resonance_tuner_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "RESONANCE_TUNER",
+    "tier": 3,
+    "model": "blender_resonance_tuner_3",
+    "file": "resonance_tuner_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "BAROMETRIC_PROBE",
+    "tier": 1,
+    "model": "blender_barometric_probe_1",
+    "file": "barometric_probe_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "BAROMETRIC_PROBE",
+    "tier": 2,
+    "model": "blender_barometric_probe_2",
+    "file": "barometric_probe_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "BAROMETRIC_PROBE",
+    "tier": 3,
+    "model": "blender_barometric_probe_3",
+    "file": "barometric_probe_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SEISMIC_RECORDER",
+    "tier": 1,
+    "model": "blender_seismic_recorder_1",
+    "file": "seismic_recorder_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SEISMIC_RECORDER",
+    "tier": 2,
+    "model": "blender_seismic_recorder_2",
+    "file": "seismic_recorder_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SEISMIC_RECORDER",
+    "tier": 3,
+    "model": "blender_seismic_recorder_3",
+    "file": "seismic_recorder_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SPECTRAL_PRISM",
+    "tier": 1,
+    "model": "blender_spectral_prism_1",
+    "file": "spectral_prism_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SPECTRAL_PRISM",
+    "tier": 2,
+    "model": "blender_spectral_prism_2",
+    "file": "spectral_prism_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SPECTRAL_PRISM",
+    "tier": 3,
+    "model": "blender_spectral_prism_3",
+    "file": "spectral_prism_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "LASER_GRID",
+    "tier": 1,
+    "model": "blender_laser_grid_1",
+    "file": "laser_grid_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "LASER_GRID",
+    "tier": 2,
+    "model": "blender_laser_grid_2",
+    "file": "laser_grid_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "LASER_GRID",
+    "tier": 3,
+    "model": "blender_laser_grid_3",
+    "file": "laser_grid_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "EMF_ARRAY",
+    "tier": 1,
+    "model": "blender_emf_array_1",
+    "file": "emf_array_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "EMF_ARRAY",
+    "tier": 2,
+    "model": "blender_emf_array_2",
+    "file": "emf_array_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "EMF_ARRAY",
+    "tier": 3,
+    "model": "blender_emf_array_3",
+    "file": "emf_array_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "THERMAL_BEACON",
+    "tier": 1,
+    "model": "blender_thermal_beacon_1",
+    "file": "thermal_beacon_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "THERMAL_BEACON",
+    "tier": 2,
+    "model": "blender_thermal_beacon_2",
+    "file": "thermal_beacon_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "THERMAL_BEACON",
+    "tier": 3,
+    "model": "blender_thermal_beacon_3",
+    "file": "thermal_beacon_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "RITUAL_ANCHOR_METER",
+    "tier": 1,
+    "model": "blender_ritual_anchor_meter_1",
+    "file": "ritual_anchor_meter_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "RITUAL_ANCHOR_METER",
+    "tier": 2,
+    "model": "blender_ritual_anchor_meter_2",
+    "file": "ritual_anchor_meter_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "RITUAL_ANCHOR_METER",
+    "tier": 3,
+    "model": "blender_ritual_anchor_meter_3",
+    "file": "ritual_anchor_meter_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "WARD_STABILITY_PROBE",
+    "tier": 1,
+    "model": "blender_ward_stability_probe_1",
+    "file": "ward_stability_probe_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "WARD_STABILITY_PROBE",
+    "tier": 2,
+    "model": "blender_ward_stability_probe_2",
+    "file": "ward_stability_probe_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "WARD_STABILITY_PROBE",
+    "tier": 3,
+    "model": "blender_ward_stability_probe_3",
+    "file": "ward_stability_probe_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "OBJECT_IMPRINT_SCANNER",
+    "tier": 1,
+    "model": "blender_object_imprint_scanner_1",
+    "file": "object_imprint_scanner_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "OBJECT_IMPRINT_SCANNER",
+    "tier": 2,
+    "model": "blender_object_imprint_scanner_2",
+    "file": "object_imprint_scanner_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "OBJECT_IMPRINT_SCANNER",
+    "tier": 3,
+    "model": "blender_object_imprint_scanner_3",
+    "file": "object_imprint_scanner_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "CHALK_SIGIL_KIT",
+    "tier": 1,
+    "model": "blender_chalk_sigil_kit_1",
+    "file": "chalk_sigil_kit_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "CHALK_SIGIL_KIT",
+    "tier": 2,
+    "model": "blender_chalk_sigil_kit_2",
+    "file": "chalk_sigil_kit_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "CHALK_SIGIL_KIT",
+    "tier": 3,
+    "model": "blender_chalk_sigil_kit_3",
+    "file": "chalk_sigil_kit_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SPECTRAL_FREQUENCY_ANALYZER",
+    "tier": 1,
+    "model": "blender_spectral_frequency_analyzer_1",
+    "file": "spectral_frequency_analyzer_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SPECTRAL_FREQUENCY_ANALYZER",
+    "tier": 2,
+    "model": "blender_spectral_frequency_analyzer_2",
+    "file": "spectral_frequency_analyzer_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "SPECTRAL_FREQUENCY_ANALYZER",
+    "tier": 3,
+    "model": "blender_spectral_frequency_analyzer_3",
+    "file": "spectral_frequency_analyzer_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "HEALTH_SUPPLIES",
+    "tier": 1,
+    "model": "blender_health_supplies_1",
+    "file": "health_supplies_t1.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "HEALTH_SUPPLIES",
+    "tier": 2,
+    "model": "blender_health_supplies_2",
+    "file": "health_supplies_t2.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  },
+  {
+    "id": "HEALTH_SUPPLIES",
+    "tier": 3,
+    "model": "blender_health_supplies_3",
+    "file": "health_supplies_t3.png",
+    "renderer": "Blender Cycles",
+    "pixels": 512,
+    "target_fill": 0.84
+  }
+]

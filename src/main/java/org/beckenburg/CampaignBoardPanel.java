@@ -11,6 +11,10 @@ public final class CampaignBoardPanel extends JPanel {
         void deploy(SiteCatalog.Location location,boolean withAssistant);
         void castle();
         void tutorial();
+        default void menu(){castle();}
+        default void deployTeam(SiteCatalog.Location location,int hires,boolean coop){deploy(location,hires>0);}
+        default void discipline(InvestigationSession.Role role){}
+        default InvestigationSession.Role currentDiscipline(){return InvestigationSession.Role.CLERIC;}
     }
     public record Entry(String name,String region,String dossier,SiteCatalog.Location map) {
         public boolean playable(){return map!=null&&map.playable();}
@@ -26,7 +30,10 @@ public final class CampaignBoardPanel extends JPanel {
     private final MissionBoardPanel sitePictures=new MissionBoardPanel();
     private final JButton deploy=button("DEPLOY SELECTED CASE");
     private final JButton recruit=button("HIRE FIELD ASSISTANT  /  £"+ProfileStore.ASSISTANT_HIRE_COST);
-    private final JCheckBox bringAssistant=new JCheckBox("Deploy assistant");
+    private final JCheckBox bringAssistant=new JCheckBox("Include booked hunters");
+    private final JSpinner hires=new JSpinner(new SpinnerNumberModel(0,0,5,1));
+    private final JComboBox<String> mode=new JComboBox<>(new String[]{"SOLO","CO-OP / HOST CAMPAIGN"});
+    private final JLabel roster=PsxMenuScreen.label(" ");
     private final JLabel account=new JLabel();
     private final JPanel pages=new JPanel(new CardLayout());
     private final CampaignStorePanel depot;
@@ -35,7 +42,7 @@ public final class CampaignBoardPanel extends JPanel {
     private final Actions actions;
     private static final Color PAPER=new Color(230,219,193);
     private static JButton button(String name){
-        JButton b=new JButton(name);
+        JButton b=PsxHorrorUi.button(name);
         b.setFont(new Font(Font.SANS_SERIF,Font.BOLD,13));
         b.setBackground(new Color(46,56,63));b.setForeground(PAPER);
         b.setFocusPainted(true);return b;
@@ -46,7 +53,8 @@ public final class CampaignBoardPanel extends JPanel {
         setLayout(new BorderLayout(8,8));
         setBackground(new Color(13,17,24));
         setBorder(BorderFactory.createEmptyBorder(14,18,14,18));
-        JLabel title=new JLabel("CASTLE BECKENBURG  /  CAMPAIGN DESK");
+        setName("campaign.lobby");
+        JLabel title=new JLabel("CAMPAIGN LOBBY");
         title.setFont(new Font(Font.SERIF,Font.BOLD,24));title.setForeground(PAPER);
         account.setForeground(new Color(160,215,184));
         JPanel header=new JPanel(new BorderLayout());header.setOpaque(false);
@@ -62,7 +70,7 @@ public final class CampaignBoardPanel extends JPanel {
         JScrollPane scroll=new JScrollPane(contracts);
         scroll.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createLineBorder(new Color(92,91,78)),"REGIONAL CONTRACTS"));
-        scroll.setPreferredSize(new Dimension(385,420));
+        scroll.setPreferredSize(new Dimension(340,420));scroll.setMinimumSize(new Dimension(180,100));
         dossier.setEditable(false);dossier.setFocusable(false);dossier.setLineWrap(true);
         dossier.setWrapStyleWord(true);dossier.setMargin(new Insets(12,12,12,12));
         dossier.setBackground(new Color(27,34,42));dossier.setForeground(PAPER);
@@ -71,6 +79,7 @@ public final class CampaignBoardPanel extends JPanel {
         details.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createLineBorder(new Color(92,91,78)),"LOCATION DOSSIER"));
         JSplitPane split=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,scroll,details);
+        details.setMinimumSize(new Dimension(180,100));
         split.setResizeWeight(.52);split.setBorder(null);
         depot=new CampaignStorePanel(profile,this::refreshLedger);
         caseArchive=new CampaignArchivePanel(profile);
@@ -93,7 +102,9 @@ public final class CampaignBoardPanel extends JPanel {
         bringAssistant.setName("campaign.assistant");
         bringAssistant.setOpaque(false);
         bringAssistant.setForeground(PAPER);
-        bringAssistant.setSelected(profile.assistantHired());
+        bringAssistant.setSelected(profile.missionHires()>0);
+        hires.setValue(profile.missionHires());
+        hires.setName("campaign.hires");mode.setName("campaign.mode");
         JButton contractsTab=button("CONTRACTS");
         JButton shopTab=button("SUPPLY DEPOT");
         JButton archiveTab=button("CASE ARCHIVE");
@@ -102,9 +113,29 @@ public final class CampaignBoardPanel extends JPanel {
         contractsTab.setName("campaign.view.contracts");
         shopTab.setName("campaign.view.store");
         archiveTab.setName("campaign.view.archive");
-        controls.add(deploy);controls.add(bringAssistant);controls.add(recruit);
-        controls.add(contractsTab);controls.add(picturesTab);controls.add(shopTab);controls.add(archiveTab);
-        controls.add(tutorial);controls.add(back);
+        JPanel team=new JPanel(new BorderLayout(8,12));team.setOpaque(false);
+        JPanel booking=new JPanel(new GridLayout(0,2,10,14));booking.setOpaque(false);
+        booking.add(PsxMenuScreen.label("Play mode"));booking.add(mode);
+        JComboBox<InvestigationSession.Role> discipline=new JComboBox<>(InvestigationSession.Role.values());
+        discipline.setSelectedItem(actions.currentDiscipline());
+        discipline.setName("campaign.discipline");
+        discipline.addActionListener(e->actions.discipline((InvestigationSession.Role)discipline.getSelectedItem()));
+        booking.add(PsxMenuScreen.label("Your discipline"));booking.add(discipline);
+        booking.add(PsxMenuScreen.label("Hire hunters / £"+ProfileStore.ASSISTANT_HIRE_COST+" each mission"));booking.add(hires);
+        recruit.setText("UPDATE MISSION HIRES");booking.add(recruit);booking.add(bringAssistant);
+        team.add(booking,BorderLayout.NORTH);
+        JTextArea rules=new JTextArea("TEAM CAPACITY: SIX HUNTERS\n\nYou occupy one slot. Up to five human guests or hired AI hunters fill the others.\n\nCo-op guests help with your saved chapter. The host owns campaign funds, equipment, rewards and story progress. Guest campaign saves stay unchanged.\n\nHires last for one mission. Update the booking to zero to refund it before deployment. Human guests take priority; displaced hires are refunded at dispatch.\n\nChoose a contract, manage campaign equipment at Supply Depot, then deploy.");
+        rules.setEditable(false);rules.setLineWrap(true);rules.setWrapStyleWord(true);
+        rules.setBackground(new Color(27,34,42));rules.setForeground(PAPER);rules.setMargin(new Insets(14,14,14,14));
+        team.add(new JScrollPane(rules),BorderLayout.CENTER);team.add(roster,BorderLayout.SOUTH);
+        pages.add(team,"team");
+        JButton teamTab=button("TEAM / SOLO & CO-OP");teamTab.setName("campaign.view.team");
+        teamTab.addActionListener(e->((CardLayout)pages.getLayout()).show(pages,"team"));
+        JPanel navigation=new JPanel(new GridLayout(2,3,6,6));navigation.setOpaque(false);
+        for(JButton b:new JButton[]{contractsTab,teamTab,shopTab,archiveTab,picturesTab,tutorial})navigation.add(b);
+        header.add(navigation,BorderLayout.CENTER);
+        JButton menu=button("MAIN MENU");menu.setName("campaign.back");menu.addActionListener(e->actions.menu());
+        controls.add(back);controls.add(menu);controls.add(deploy);
         contractsTab.addActionListener(event->((CardLayout)pages.getLayout()).show(pages,"contracts"));
         picturesTab.addActionListener(event->((CardLayout)pages.getLayout()).show(pages,"sites"));
         shopTab.addActionListener(event->{
@@ -119,14 +150,14 @@ public final class CampaignBoardPanel extends JPanel {
             Entry entry=contracts.getSelectedValue();
             int stage=contracts.getSelectedIndex();
             if(entry!=null&&entry.playable()&&profile.chapterUnlocked(stage))
-                actions.deploy(entry.map(),bringAssistant.isSelected()&&profile.assistantHired());
+                actions.deployTeam(entry.map(),bringAssistant.isSelected()?profile.missionHires():0,mode.getSelectedIndex()==1);
         });
         recruit.addActionListener(event->{
             try{
-                if(profile.hireAssistant()){
-                    bringAssistant.setSelected(true);
+                if(profile.reserveMissionHunters((int)hires.getValue())){
+                    bringAssistant.setSelected(profile.missionHires()>0);
                     refreshLedger();
-                }
+                }else status.setText("Insufficient campaign funds for this booking.");
             }catch(java.io.IOException failed){
                 status.setText("Recruitment was not saved: "+failed.getMessage());
             }
@@ -135,16 +166,17 @@ public final class CampaignBoardPanel extends JPanel {
         back.addActionListener(event->actions.castle());
         refreshLedger();
         contracts.setSelectedIndex(0);
+        PsxMenuScreen.theme(this);
     }
     public void refreshLedger(){
         account.setText("£"+profile.currency()+"  /  XP "+profile.experience()+
             "  /  CLERIC "+profile.level(InvestigationSession.Role.CLERIC)+
             "  OBSERVER "+profile.level(InvestigationSession.Role.OBSERVER)+
             "  DEMONOLOGIST "+profile.level(InvestigationSession.Role.DEMONOLOGIST)+
-            "  /  "+(profile.assistantHired()?"1 ally":"No allies"));
-        recruit.setEnabled(!profile.assistantHired()&&profile.currency()>=ProfileStore.ASSISTANT_HIRE_COST);
-        if(profile.assistantHired())recruit.setText("ASSISTANT RECRUITED");
-        bringAssistant.setEnabled(profile.assistantHired());
+            "  /  "+profile.missionHires()+" mission hires reserved");
+        recruit.setEnabled(true);
+        bringAssistant.setEnabled(profile.missionHires()>0);
+        roster.setText("1 HOST + UP TO "+profile.missionHires()+" HIRES / GUESTS REPLACE HIRES / SIX TOTAL");
         updateSelection();
     }
     private void updateSelection(){

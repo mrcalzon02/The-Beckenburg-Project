@@ -9,7 +9,97 @@ import java.util.concurrent.*;
  * A socket is bound to one seat; remote peers cannot submit a Source or authoritative damage.
  */
 public final class LanHost implements AutoCloseable {
+    private ProfileStore campaignProfile;
+    private CampaignStory.Chapter campaignChapter;
+    private int deployedMembers;
+    private final java.util.List<CampaignGuestBot> campaignBots=new ArrayList<>();
+    private ContractRewards.Settlement pendingCampaignSettlement;
     private final ServerSocket listener;
+    public void configureCampaign(ProfileStore profile,CampaignStory.Chapter chapter){
+        synchronized(mutex){
+            if(everStarted||connected()>0||ownerJoinSecret==null||ownerSeat!=0)
+                throw new IllegalStateException("Campaign requires a fresh hunter-owned host");
+            if(!profile.campaignChapter(chapter.ordinal()).equals(chapter)
+                    ||map.site()!=SiteCatalog.mapFor(chapter.map())||ghostType!=chapter.ghost())
+                throw new IllegalArgumentException("Campaign assignment mismatch");
+            campaignProfile=Objects.requireNonNull(profile);campaignChapter=chapter;
+            // The host owns the campaign supply stock. Guests do not import their saves.
+            for(int i=0;i<HUNTERS;i++){supplies[i].resetCredits(0);equipment[i].configureCampaign(profile);}
+            for(var kind:FieldSupplies.Kind.values())for(var tier:FieldSupplies.Tier.values())
+                supplies[0].setStock(kind,tier,profile.supplyCount(kind,tier));
+            mission.configureHardEvidence(contract.evidenceLevel(),CampaignStory.missionSeed(profile.storySeed(),chapter.ordinal()));
+        }
+    }
+    /** Fill remaining ordinary seats only after every human is ready. Never exceeds six. */
+    public void prepareCampaignBots(int requested)throws IOException{
+        int count;
+        synchronized(mutex){
+            if(campaignProfile==null||everStarted)throw new IllegalStateException("Campaign lobby required");
+            if(!campaignBots.isEmpty())return;
+            if(requested<0||requested>campaignProfile.missionHires())throw new IllegalArgumentException("Unreserved hires");
+            int humans=0;
+            for(int i=0;i<HUNTERS;i++)if(seats[i]!=null){
+                if(!seats[i].ready)throw new IllegalArgumentException("Ready all human hunters first");humans++;
+            }
+            if(seats[0]==null)throw new IllegalStateException("Host must join first");
+            count=Math.min(requested,6-humans);
+        }
+        // No socket handshakes while holding the simulation lock.
+        try{
+            for(int n=0;n<count;n++){
+                final int[] seat={-1};
+                CampaignGuestBot bot=new CampaignGuestBot(port(),"Hired Hunter "+(n+1),lobbyPassword,()->campaignBotInput(seat[0]));
+                seat[0]=bot.seat();
+                synchronized(mutex){if(closed){bot.close();throw new IOException("Lobby closed while preparing team");}seats[seat[0]].ready=true;campaignBots.add(bot);broadcastLobby();}
+            }
+        }catch(IOException|RuntimeException failure){
+            for(var bot:campaignBots)bot.close();campaignBots.clear();throw failure;
+        }
+    }
+    private CampaignGuestBot.Input campaignBotInput(int seat){
+        synchronized(mutex){
+            if(!running||seat<0||!mission.alive(seat))return new CampaignGuestBot.Input(false,tick,0,0,false,false);
+            var body=world.body(seat);var leader=world.body(0);
+            int here=body.room(),target=leader.room();
+            double gx=leader.x(),gz=leader.z();boolean door=false;
+            if(here!=target&&here>=0&&target>=0){
+                int[] parent=new int[HouseMap.ROOM_COUNT];Arrays.fill(parent,-1);
+                ArrayDeque<Integer> queue=new ArrayDeque<>();queue.add(here);parent[here]=here;
+                while(!queue.isEmpty()&&parent[target]<0){int at=queue.remove();
+                    for(int next:map.adjacentRooms(at))if(parent[next]<0){parent[next]=at;queue.add(next);}}
+                if(parent[target]<0)return new CampaignGuestBot.Input(true,tick,0,0,false,false);
+                int next=target;while(parent[next]!=here)next=parent[next];
+                for(var portal:map.level().portalsFrom(here))if(!portal.kind().equals("window")&&portal.joins(here,next)){
+                    double distance=Math.hypot(body.x()-portal.x(),body.z()-portal.z());
+                    door=portal.door()&&!map.doorOpen(portal.id())&&distance<1.1;
+                    double beyond=distance<1.3?.85:0;
+                    if(portal.joins(HouseMap.EXTRACTION_ROOM,13)){
+                        var goal=map.van().world(0,VanStaging.FRONT+(next==HouseMap.EXTRACTION_ROOM?beyond:-beyond));gx=goal.x();gz=goal.z();
+                    }else if(portal.alongX()){gx=portal.x();gz=portal.z()+Math.signum(map.centerZ(next)-portal.z())*beyond;}
+                    else{gx=portal.x()+Math.signum(map.centerX(next)-portal.x())*beyond;gz=portal.z();}break;
+                }
+            }
+            double distance=Math.hypot(gx-body.x(),gz-body.z());
+            if(here==target&&distance<1.8)return new CampaignGuestBot.Input(true,tick,0,0,door,here<HouseMap.EXTRACTION_ROOM);
+            double heading=Math.atan2(gx-body.x(),gz-body.z());
+            for(double adjust:new double[]{0,.4,-.4,.85,-.85,1.25,-1.25}){
+                double angle=heading+adjust,x=Math.sin(angle),z=Math.cos(angle);
+                var at=new LevelDefinition.Vec(body.x(),body.y(),body.z());
+                if(map.resolveMove(at,body.x()+x*.21,body.z()+z*.21)!=null)
+                    return new CampaignGuestBot.Input(true,tick,(int)Math.round(x*100),(int)Math.round(z*100),door,here<HouseMap.EXTRACTION_ROOM);
+            }
+            return new CampaignGuestBot.Input(true,tick,0,0,door,here<HouseMap.EXTRACTION_ROOM);
+        }
+    }
+    /** Failed disk saves remain retryable from the owning lobby until saved. */
+    public boolean retryCampaignSettlement()throws IOException{
+        synchronized(mutex){
+            if(pendingCampaignSettlement==null)return false;
+            var role=InvestigationSession.Role.valueOf(mission.discipline(0).name());
+            campaignProfile.settleCoop(campaignChapter,pendingCampaignSettlement,deployedMembers,tick,role);
+            pendingCampaignSettlement=null;return true;
+        }
+    }
     /** UDP media socket on the same numeric port as TCP. LAN-only, not encrypted. */
     private final LanVoiceRelay voice;
     private final ExecutorService workers=Executors.newCachedThreadPool(r->{Thread t=new Thread(r,"beckenburg-lan-peer");t.setDaemon(true);return t;});
@@ -196,6 +286,7 @@ public final class LanHost implements AutoCloseable {
         if(ownerJoinSecret==null)throw new IllegalStateException("local owner claim not enabled");
         return ownerJoinSecret;
     }
+    private int partyMembers(){return campaignProfile!=null&&deployedMembers>0?deployedMembers:contract.hunters();}
     public int port(){return listener.getLocalPort();}
     public int voicePort(){return voice.port();}
     public String bindAddress(){return bindAddress;}
@@ -285,15 +376,17 @@ public final class LanHost implements AutoCloseable {
                     LanProtocol.write(out,"WELCOME|"+seatName(slot)+"|"+LanProtocol.VERSION+"|"+peer.resumeToken+"|"+seatSequenceHighWater(peer));
                     peer.outbound.start(workers);
                     reserved[slot]=null;seats[slot]=peer;
+                    if(campaignProfile!=null)reply(peer,"MODE|CAMPAIGN");
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     reply(peer,"INFO|mission resumed - reopen 3D view");
                     if(slot!=GHOST_SEAT){
                         for(int i=0;i<HUNTERS;i++)if(i!=slot&&seats[i]!=null)
                             reply(peer,"PLAYERNAME|"+i+"|"+seats[i].name);
                         notifyHunters("PLAYERNAME|"+slot+"|"+peer.name);
+                        reply(peer,supplies[slot].frame());sendEquipmentState(peer);
                         sendHunterVisuals(peer);
                         notifyHunters("VISUAL|"+slot+"|"+peer.hunterVisual);
-                        reply(peer,"PARTY|"+contract.hunters()+"|"+contract.partyDifficulty());
+                        reply(peer,"PARTY|"+partyMembers()+"|"+partyMembers());
                     }else notifyHunters("INFO|human ghost reconnected - AI released control");
                     broadcastLobby();broadcastState();broadcastProgress();broadcastWorld();
                 }else{
@@ -301,6 +394,7 @@ public final class LanHost implements AutoCloseable {
                         case "GHOST" -> true;case "HUNTER" -> false;
                         default -> throw new IllegalArgumentException("invalid role");
                     };
+                    if(campaignProfile!=null&&wantsGhost){LanProtocol.write(out,"REJECT|campaign has no human ghost seat");return;}
                     String nickname=LanProtocol.cleanName(hello.get(3));
                     if(lobbyLocked){LanProtocol.write(out,"REJECT|lobby locked");return;}
                     boolean ownerClaim=hello.size()==6;
@@ -322,7 +416,7 @@ public final class LanHost implements AutoCloseable {
                             supplied.getBytes(java.nio.charset.StandardCharsets.US_ASCII))){
                         LanProtocol.write(out,"REJECT|incorrect room password");return;
                     }
-                    if(running){LanProtocol.write(out,"REJECT|match already running - reconnect needed");return;}
+                    if(running||everStarted){LanProtocol.write(out,"REJECT|match already running or finished - reconnect needed");return;}
                     int slot=wantsGhost?GHOST_SEAT:firstVacantHunter(ownerClaim);
                     if(slot<0||seats[slot]!=null){LanProtocol.write(out,"REJECT|seat unavailable");return;}
                     peer=new Peer(socket,in,out,slot,nickname);peer.lastPongTick=tick;seats[slot]=peer;
@@ -330,6 +424,7 @@ public final class LanHost implements AutoCloseable {
                         java.util.concurrent.ThreadLocalRandom.current());
                     LanProtocol.write(out,"WELCOME|"+seatName(slot)+"|"+LanProtocol.VERSION+"|"+peer.resumeToken+"|"+seatSequenceHighWater(peer));
                     peer.outbound.start(workers);
+                    if(campaignProfile!=null)reply(peer,"MODE|CAMPAIGN");
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     if(slot!=GHOST_SEAT){
                         // A new lobby occupant must not inherit the departed
@@ -339,6 +434,7 @@ public final class LanHost implements AutoCloseable {
                         for(int i=0;i<HUNTERS;i++)if(i!=slot&&seats[i]!=null)
                             reply(peer,"PLAYERNAME|"+i+"|"+seats[i].name);
                         notifyHunters("PLAYERNAME|"+slot+"|"+nickname);
+                        reply(peer,supplies[slot].frame());sendEquipmentState(peer);
                         sendHunterVisuals(peer);
                         notifyHunters("VISUAL|"+slot+"|"+peer.hunterVisual);
                     }
@@ -488,9 +584,18 @@ public final class LanHost implements AutoCloseable {
                         throw new IllegalArgumentException("only verified hosting player may start");
                     if(running||everStarted)throw new IllegalArgumentException("fresh host required for another match");
                     for(int i=0;i<contract.hunters();i++)
-                        if(seats[i]==null||!seats[i].ready)
+                        if((campaignProfile==null&&seats[i]==null)||(seats[i]!=null&&!seats[i].ready))
                             throw new IllegalArgumentException("configured hunter party must be ready");
                     if(seats[GHOST_SEAT]!=null&&!seats[GHOST_SEAT].ready)throw new IllegalArgumentException("ghost must be ready");
+                    if(campaignProfile!=null){
+                        deployedMembers=0;boolean[] present=new boolean[HUNTERS];
+                        for(int i=0;i<HUNTERS;i++)if(seats[i]!=null){deployedMembers++;present[i]=true;}
+                        campaignProfile.consumeMissionHunters(campaignBots.size());
+                        mission.configureHunterSeats(present);
+                        mission.configureCampaignCareer(0,campaignProfile.level(InvestigationSession.Role.valueOf(mission.discipline(0).name())));
+                        mission.configurePartyThreat(deployedMembers);
+                        ghost.configureRecovery(CampaignPartyRules.recoveryRate(deployedMembers));
+                    }
                     running=true;everStarted=true;tick=0;
                     notifyAllPeers("SITE|"+map.site().name()+"|"+map.level().revision());
                     notifyAllPeers("INFO|mission started with "+(seats[GHOST_SEAT]==null?"AI":"human")+" ghost");
@@ -501,13 +606,14 @@ public final class LanHost implements AutoCloseable {
                     if(seats[GHOST_SEAT]!=null)sendGhostPrompt();
                     if(mission.identificationRequired())notifyHunters(ritualSitesFrame());
                     broadcastState();broadcastProgress();broadcastWorld();
-                    notifyHunters("PARTY|"+contract.hunters()+"|"+contract.partyDifficulty());
+                    notifyHunters("PARTY|"+partyMembers()+"|"+partyMembers());
                 }
                 case "VIEW3D" -> {
                     if(!running||peer.slot==GHOST_SEAT||p.size()!=1)throw new IllegalArgumentException("3D view requires active hunter");
                     peer.worldMode=true;
                     rackSent.remove(peer);
                     reply(peer,"ACCEPT|VIEW3D");
+                    if(campaignProfile!=null)reply(peer,"MODE|CAMPAIGN");
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     reply(peer,world.staminaFrame(peer.slot,tick));
                     reply(peer,weather.state().packet());
@@ -539,7 +645,7 @@ public final class LanHost implements AutoCloseable {
                     for(String portablePacket:portableLights.snapshot())reply(peer,portablePacket);
                     reply(peer,supplies[peer.slot].frame());
                     sendEquipmentState(peer);
-                    reply(peer,"PARTY|"+contract.hunters()+"|"+contract.partyDifficulty());
+                    reply(peer,"PARTY|"+partyMembers()+"|"+partyMembers());
                     if(mission.ritualProgress()>=0&&mission.activeRite()!=null)
                         reply(peer,"RITUAL|STARTED|"+mission.activeRite());
                     reply(peer,frenzyFrame());
@@ -564,6 +670,7 @@ public final class LanHost implements AutoCloseable {
                     if(!running||peer.slot!=GHOST_SEAT||p.size()!=1)throw new IllegalArgumentException("ghost view requires active ghost seat");
                     peer.ghostWorldMode=true;
                     reply(peer,"ACCEPT|GVIEW3D");
+                    if(campaignProfile!=null)reply(peer,"MODE|CAMPAIGN");
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     reply(peer,"HIDECONFIG|"+contract.hidingSpots());
                     reply(peer,"LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));
@@ -648,9 +755,7 @@ public final class LanHost implements AutoCloseable {
                                 var kind=id.equals("HEALTH_SUPPLIES")?FieldSupplies.Kind.HEALTH:FieldSupplies.Kind.SANITY;
                                 var medicine=FieldSupplies.Tier.values()[tier.ordinal()];
                                 if(supplies[peer.slot].stock(kind,medicine)==0)throw new IllegalArgumentException("medicine belongs to another investigator");
-                                boolean used=kind==FieldSupplies.Kind.HEALTH?mission.heal(peer.slot,medicine.restore(kind)):mission.calm(peer.slot,medicine.restore(kind));
-                                if(!used)throw new IllegalArgumentException("no treatment necessary");
-                                supplies[peer.slot].consume(kind,medicine);reply(peer,supplies[peer.slot].frame());broadcastProgress();
+                                useMedicine(peer,kind,medicine);reply(peer,supplies[peer.slot].frame());broadcastProgress();
                             }else throw new IllegalArgumentException("salt is deployed with H");
                         }
                         case INTERFACE -> reply(peer,"INTERACTED|INTERFACE|"+target.id());
@@ -812,8 +917,8 @@ public final class LanHost implements AutoCloseable {
                     if(monitorActivation)actorCue(peer.slot,LanSound.Cue.MONITOR_HUM);
                 }
                 case "GEARSTATE" -> {
-                    if(!running||peer.slot==GHOST_SEAT||p.size()!=1)
-                        throw new IllegalArgumentException("hunter rack state only");
+                    if(peer.slot==GHOST_SEAT||p.size()!=1)throw new IllegalArgumentException("hunter rack state only");
+                    reply(peer,supplies[peer.slot].frame());
                     sendEquipmentState(peer);
                 }
                 case "GEARREFILL" -> {
@@ -833,17 +938,18 @@ public final class LanHost implements AutoCloseable {
                     sendEquipmentState(peer);
                 }
                 case "GEARBUY" -> {
-                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=4)
+                    if(peer.slot==GHOST_SEAT||p.size()!=4||(!running&&everStarted)||(running&&!peer.worldMode))
                         throw new IllegalArgumentException("hunter equipment purchase only");
                     String id=p.get(1);
                     EquipmentTiers.Tier tier=EquipmentTiers.Tier.valueOf(p.get(2));
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(3)));
                     ensureActiveHunter(peer);
-                    if(map.van().stationAt(world.body(peer.slot).x(),world.body(peer.slot).z())
+                    if(running&&map.van().stationAt(world.body(peer.slot).x(),world.body(peer.slot).z())
                             !=VanStaging.Station.EQUIPMENT)
                         throw new IllegalArgumentException("purchase upgrades at the equipment rack");
                     if(id.equals("SOUND_RECORDER")&&recorders[peer.slot].recording())
                         throw new IllegalArgumentException("stop recording before upgrading hardware");
+                    if(campaignProfile!=null)throw new IllegalArgumentException("Campaign gear is issued; buy supplies at the host campaign depot");
                     int cost=equipment[peer.slot].upgradePrice(id,tier);
                     if(!supplies[peer.slot].spend(cost))
                         throw new IllegalArgumentException("insufficient credits for instrument");
@@ -854,13 +960,13 @@ public final class LanHost implements AutoCloseable {
                     sendEquipmentState(peer);
                 }
                 case "GEAREQUIP" -> {
-                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=4)
+                    if(peer.slot==GHOST_SEAT||p.size()!=4||(!running&&everStarted)||(running&&!peer.worldMode))
                         throw new IllegalArgumentException("hunter loadout only");
                     int slot=LanProtocol.integer(p.get(1),0,FieldEquipment.SLOTS-1);
                     String id=p.get(2);
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(3)));
                     ensureActiveHunter(peer);
-                    if(map.van().stationAt(world.body(peer.slot).x(),world.body(peer.slot).z())
+                    if(running&&map.van().stationAt(world.body(peer.slot).x(),world.body(peer.slot).z())
                             !=VanStaging.Station.EQUIPMENT)
                         throw new IllegalArgumentException("change field equipment at the van rack");
                     equipment[peer.slot].equip(slot,id);
@@ -1199,9 +1305,7 @@ public final class LanHost implements AutoCloseable {
                             var medicine=supplies[peer.slot].best(FieldSupplies.Kind.SANITY);
                             if(medicine==null)throw new IllegalArgumentException(
                                 "no purchased sanity medication available");
-                            if(!mission.calm(peer.slot,medicine.restore(FieldSupplies.Kind.SANITY)))
-                                throw new IllegalArgumentException("sanity already full");
-                            supplies[peer.slot].consume(FieldSupplies.Kind.SANITY,medicine);
+                            useMedicine(peer,FieldSupplies.Kind.SANITY,medicine);
                             reply(peer,supplies[peer.slot].frame());
                             reading="Sanity medicine administered / stress "+
                                 mission.stress(peer.slot);
@@ -1288,15 +1392,16 @@ public final class LanHost implements AutoCloseable {
                     recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,deviceCue);
                 }
                 case "BUY" -> {
-                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=4)
+                    if(peer.slot==GHOST_SEAT||p.size()!=4||(!running&&everStarted)||(running&&!peer.worldMode))
                         throw new IllegalArgumentException("hunter store required");
                     FieldSupplies.Kind kind=FieldSupplies.Kind.valueOf(p.get(1));
                     FieldSupplies.Tier tier=FieldSupplies.Tier.valueOf(p.get(2));
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(3)));
                     ensureActiveHunter(peer);
-                    if(map.van().stationAt(world.body(peer.slot).x(),world.body(peer.slot).z())
+                    if(running&&map.van().stationAt(world.body(peer.slot).x(),world.body(peer.slot).z())
                         !=VanStaging.Station.EQUIPMENT)
                         throw new IllegalArgumentException("purchase supplies at the van equipment rack");
+                    if(campaignProfile!=null)throw new IllegalArgumentException("Buy campaign supplies at the host depot before dispatch");
                     if(!supplies[peer.slot].purchase(kind,tier))
                         throw new IllegalArgumentException("insufficient credits or full stock");
                     reply(peer,"ACCEPT|BUY|"+kind+"|"+tier);
@@ -1311,11 +1416,7 @@ public final class LanHost implements AutoCloseable {
                     ensureActiveHunter(peer);
                     if(supplies[peer.slot].stock(kind,tier)==0)
                         throw new IllegalArgumentException("medicine not purchased");
-                    int amount=tier.restore(kind);
-                    boolean used=kind==FieldSupplies.Kind.HEALTH
-                        ?mission.heal(peer.slot,amount):mission.calm(peer.slot,amount);
-                    if(!used)throw new IllegalArgumentException("already at full health or sanity");
-                    supplies[peer.slot].consume(kind,tier);
+                    useMedicine(peer,kind,tier);
                     reply(peer,"ACCEPT|USESUPPLY|"+kind+"|"+tier);
                     recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,LanSound.Cue.POTION);
                     reply(peer,supplies[peer.slot].frame());
@@ -1618,7 +1719,8 @@ public final class LanHost implements AutoCloseable {
                 }
                 default -> throw new IllegalArgumentException("unknown command");
             }
-        }catch(IllegalArgumentException ex){reply(peer,"REJECT|"+safeReason(ex.getMessage()));}
+        }catch(IOException ex){reply(peer,"REJECT|save failed - retry before leaving");}
+        catch(IllegalArgumentException ex){reply(peer,"REJECT|"+safeReason(ex.getMessage()));}
     }
     private void acceptGhostPoseSequence(Peer peer,long sequence){
         if(sequence<=peer.lastGhostPoseSequence)throw new IllegalArgumentException("stale spectral command sequence");
@@ -1627,6 +1729,18 @@ public final class LanHost implements AutoCloseable {
     /** Keep anti-replay sequences consumed before rejecting incapacitated movement.
      * Look/viewport operations remain available as inert first-person spectating.
      */
+    private void useMedicine(Peer peer,FieldSupplies.Kind kind,FieldSupplies.Tier tier)throws IOException{
+        if(supplies[peer.slot].stock(kind,tier)==0)throw new IllegalArgumentException("medicine not purchased");
+        if((kind==FieldSupplies.Kind.HEALTH&&mission.health(peer.slot)>=mission.maxHealth(peer.slot))
+                ||(kind==FieldSupplies.Kind.SANITY&&mission.stress(peer.slot)==0))
+            throw new IllegalArgumentException("no treatment necessary");
+        // Persist consumption before changing health: a disk failure cannot grant free healing.
+        if(campaignProfile!=null&&peer.slot==0&&!campaignProfile.consume(kind,tier))
+            throw new IllegalArgumentException("Campaign stock unavailable");
+        if(kind==FieldSupplies.Kind.HEALTH)mission.heal(peer.slot,tier.restore(kind));
+        else mission.calm(peer.slot,tier.restore(kind));
+        supplies[peer.slot].consume(kind,tier);
+    }
     private void ensureActiveHunter(Peer peer){
         if(peer.slot>=HUNTERS||!mission.alive(peer.slot))
             throw new IllegalArgumentException("hunter incapacitated");
@@ -2233,6 +2347,12 @@ public final class LanHost implements AutoCloseable {
         boolean correct=mission.correctlyIdentified()||!mission.identificationRequired()&&won;
         ContractRewards.Settlement payout=rewards.settle(mission.outcome(),correct,
             contract.evidenceLevel(),weather.state().challenge());
+        if(campaignProfile!=null){
+            pendingCampaignSettlement=payout;
+            try{retryCampaignSettlement();notifyHunters("FIELD|CAMPAIGN RESULT SAVED TO HOST");}
+            catch(IOException failure){notifyHunters("FIELD|CAMPAIGN SAVE FAILED - HOST MUST RETRY BEFORE LEAVING");}
+            broadcastProgress();return;
+        }
         for(int i=0;i<HUNTERS;i++)if(seats[i]!=null){
             supplies[i].reward(payout.credits());
             reply(seats[i],payout.packet());
@@ -2706,7 +2826,7 @@ public final class LanHost implements AutoCloseable {
     }
     private void notifyAllPeers(String event){for(Peer peer:seats)if(peer!=null)reply(peer,event);}
     private static void reply(Peer peer,String event){peer.outbound.offer(event);}
-    @Override public void close(){closed=true;voice.close();try{listener.close();}catch(IOException ignored){}
+    @Override public void close(){for(var bot:campaignBots)bot.close();campaignBots.clear();closed=true;voice.close();try{listener.close();}catch(IOException ignored){}
         synchronized(mutex){for(Peer peer:seats)if(peer!=null){try{peer.socket.close();}catch(IOException ignored){}}}
         clock.shutdownNow();workers.shutdownNow();
     }

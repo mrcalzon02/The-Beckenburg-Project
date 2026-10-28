@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 1003,
+  "count": 1025,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -2802,6 +2802,86 @@
       "height": 600,
       "bytes": 276346,
       "sha256": "d8c37e57a2145e2022833b7348ec5a54394ef38b724f55c15c6e7a7b0280f01b"
+    },
+    {
+      "path": "development/levels/previews/equipment-menu/tier-icons-01.png",
+      "url": "development/levels/previews/equipment-menu/tier-icons-01.png",
+      "title": "Tier icons 01",
+      "kind": "Model inspection",
+      "width": 960,
+      "height": 555,
+      "bytes": 188475,
+      "sha256": "6c066e0a0880d664f0e5a7e4f0942ec9d84f64f5989afed11c8e9fb1761b1022"
+    },
+    {
+      "path": "development/levels/previews/equipment-menu/tier-icons-02.png",
+      "url": "development/levels/previews/equipment-menu/tier-icons-02.png",
+      "title": "Tier icons 02",
+      "kind": "Model inspection",
+      "width": 960,
+      "height": 555,
+      "bytes": 191536,
+      "sha256": "3d28d9f3db663805961b12498e0c9af72fa3efdccd1e02bfa357cf6f3fd3c748"
+    },
+    {
+      "path": "development/levels/previews/equipment-menu/tier-icons-03.png",
+      "url": "development/levels/previews/equipment-menu/tier-icons-03.png",
+      "title": "Tier icons 03",
+      "kind": "Model inspection",
+      "width": 960,
+      "height": 555,
+      "bytes": 243197,
+      "sha256": "12cce0ba0f4e1776746370fd349efd2899d74290fb74060d9d061b3a155197d9"
+    },
+    {
+      "path": "development/levels/previews/equipment-menu/tier-icons-04.png",
+      "url": "development/levels/previews/equipment-menu/tier-icons-04.png",
+      "title": "Tier icons 04",
+      "kind": "Model inspection",
+      "width": 960,
+      "height": 555,
+      "bytes": 130215,
+      "sha256": "a55c07c0d738a7617bcc3b5be294ce3c09c02036d7c1354ae9f12b3805b27731"
+    },
+    {
+      "path": "development/levels/previews/equipment-menu/tier-icons-05.png",
+      "url": "development/levels/previews/equipment-menu/tier-icons-05.png",
+      "title": "Tier icons 05",
+      "kind": "Model inspection",
+      "width": 960,
+      "height": 555,
+      "bytes": 130420,
+      "sha256": "306311bf49ab46740c2063821fb205124909e20e875117eec79ae1b2b686d61b"
+    },
+    {
+      "path": "development/levels/previews/equipment-menu/tier-icons-06.png",
+      "url": "development/levels/previews/equipment-menu/tier-icons-06.png",
+      "title": "Tier icons 06",
+      "kind": "Model inspection",
+      "width": 960,
+      "height": 555,
+      "bytes": 240330,
+      "sha256": "398cf1a166ca1488c374654d5386edc53373e2397c8b5ac7ecad7ec1a64807da"
+    },
+    {
+      "path": "development/levels/previews/equipment-menu/tier-icons-07.png",
+      "url": "development/levels/previews/equipment-menu/tier-icons-07.png",
+      "title": "Tier icons 07",
+      "kind": "Model inspection",
+      "width": 960,
+      "height": 555,
+      "bytes": 204897,
+      "sha256": "ac7fb99bd16d409895bb5d89f4e324ee16def84a28b351aab22d9859fa0776a5"
+    },
+    {
+      "path": "development/levels/previews/equipment-menu/tier-icons-08.png",
+      "url": "development/levels/previews/equipment-menu/tier-icons-08.png",
+      "title": "Tier icons 08",
+      "kind": "Model inspection",
+      "width": 960,
+      "height": 555,
+      "bytes": 48481,
+      "sha256": "19a579dd6304a37e2bd0a6f9167d2b2918c7d72ae99a66862ffffff5be908df9"
     },
     {
       "path": "development/levels/previews/farmhouse-blender-exterior.png",
@@ -8044,6 +8124,146 @@
       "height": 600,
       "bytes": 538586,
       "sha256": "3fb48c045f524abfa1fab38c859ba659481f3784a675da5aa6179e7f42a25822"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-contracts-1060.png",
+      "url": "development/levels/previews/menu-workflow/campaign-contracts-1060.png",
+      "title": "Campaign contracts 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 30794,
+      "sha256": "7a0bbaa9b9c503401ec13fb7b09e76e9bc2eaa653aa946c013e253f49ddf9818"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-contracts-760.png",
+      "url": "development/levels/previews/menu-workflow/campaign-contracts-760.png",
+      "title": "Campaign contracts 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 24609,
+      "sha256": "9cc4443cc9edf79ad530b911f8b5e3d8c16b368e00d92b54506ed50cc8d6615d"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-store-1060.png",
+      "url": "development/levels/previews/menu-workflow/campaign-store-1060.png",
+      "title": "Campaign store 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 59980,
+      "sha256": "5d19dca673ac56d7e389e25466be73ad774e8829ee446c93e25c1dba766998a0"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-store-760.png",
+      "url": "development/levels/previews/menu-workflow/campaign-store-760.png",
+      "title": "Campaign store 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 29746,
+      "sha256": "a2c9bf4a376e5979efc1f641607cabdc98e353c1b6340dfcb032887536b85e7b"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-team-1060.png",
+      "url": "development/levels/previews/menu-workflow/campaign-team-1060.png",
+      "title": "Campaign team 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 22875,
+      "sha256": "ba84cdaee22d35052a51d617a9ccac0930819de241cdb40f064f180cf460c183"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/campaign-team-760.png",
+      "url": "development/levels/previews/menu-workflow/campaign-team-760.png",
+      "title": "Campaign team 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 16662,
+      "sha256": "d3566ac340274e6954e357d6ffc7c7fed420b9f1115ba4cdd667234822fcea3c"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/castle-campaign-1060.png",
+      "url": "development/levels/previews/menu-workflow/castle-campaign-1060.png",
+      "title": "Castle campaign 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 50361,
+      "sha256": "f0d760b4be981ec047d35660ae05324e42058aa0e776042245690cfb433980fa"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/castle-campaign-760.png",
+      "url": "development/levels/previews/menu-workflow/castle-campaign-760.png",
+      "title": "Castle campaign 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 36490,
+      "sha256": "cf605ab26dba6ffd8bd3e43aad8e2d697909ac20136400b8e2560b6b03359ec0"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/castle-multiplayer-1060.png",
+      "url": "development/levels/previews/menu-workflow/castle-multiplayer-1060.png",
+      "title": "Castle multiplayer 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 50977,
+      "sha256": "99a841ed36b2076a78f1ebde100307091110dbde61e761cc9391d5361871736b"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/castle-multiplayer-760.png",
+      "url": "development/levels/previews/menu-workflow/castle-multiplayer-760.png",
+      "title": "Castle multiplayer 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 29209,
+      "sha256": "df6188012a1a7ebc53e79e348af4eaa6b1fc07e89807507ba381001bf97d90bd"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/multiplayer-equipment-1060.png",
+      "url": "development/levels/previews/menu-workflow/multiplayer-equipment-1060.png",
+      "title": "Multiplayer equipment 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 62806,
+      "sha256": "2641622b901969649a9a6d8c917de73b9a0c1ea4ffb968a533b7c601d42783b5"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/multiplayer-equipment-760.png",
+      "url": "development/levels/previews/menu-workflow/multiplayer-equipment-760.png",
+      "title": "Multiplayer equipment 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 41271,
+      "sha256": "2e02b1a15aa1a8825e200863b9f37bfcb6fe0a20fe0d63064aa24f73603f591b"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/multiplayer-lobby-1060.png",
+      "url": "development/levels/previews/menu-workflow/multiplayer-lobby-1060.png",
+      "title": "Multiplayer lobby 1060",
+      "kind": "Game UI verification",
+      "width": 1060,
+      "height": 725,
+      "bytes": 35252,
+      "sha256": "9113b27fb5d6c8063d9c7785cf0ca5e565b46d493d40ce8e918a5230ee336baf"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/multiplayer-lobby-760.png",
+      "url": "development/levels/previews/menu-workflow/multiplayer-lobby-760.png",
+      "title": "Multiplayer lobby 760",
+      "kind": "Game UI verification",
+      "width": 760,
+      "height": 510,
+      "bytes": 16034,
+      "sha256": "8b21ecac4bde6dda054e06e22d19f47714e4a4fce212ed90357901db876903f2"
     },
     {
       "path": "development/levels/previews/metal-refinement/after/van-hollow-creek-equipment.png",

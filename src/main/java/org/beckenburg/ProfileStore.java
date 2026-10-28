@@ -31,6 +31,27 @@ public final class ProfileStore {
     }
     // Optional schema-v1 campaign fields preserve all existing save files.
     private boolean assistantHired;
+    private int missionHires;
+    public int missionHires(){return missionHires;}
+    /** Reserve up to five assistants for ONE deployment. Reducing the booking refunds it. */
+    public boolean reserveMissionHunters(int count)throws IOException{
+        if(blocked)throw new IOException("Profile load failed; recruitment blocked");
+        if(count<0||count>5)throw new IllegalArgumentException("At most five hired hunters");
+        int charge=(count-missionHires)*ASSISTANT_HIRE_COST;
+        if(charge>currency)return false;
+        int before=currency,previous=missionHires;
+        currency=Math.subtractExact(currency,charge);missionHires=count;
+        try{save();}catch(IOException failure){currency=before;missionHires=previous;throw failure;}
+        return true;
+    }
+    /** Human guests take normal slots. Unused reservations are refunded at dispatch. */
+    public void consumeMissionHunters(int deployed)throws IOException{
+        if(blocked)throw new IOException("Profile load failed; dispatch blocked");
+        if(deployed<0||deployed>missionHires)throw new IllegalArgumentException("Hire not reserved");
+        int previous=missionHires,before=currency;
+        currency=Math.addExact(currency,(missionHires-deployed)*ASSISTANT_HIRE_COST);missionHires=0;
+        try{save();}catch(IOException failure){currency=before;missionHires=previous;throw failure;}
+    }
     private long campaignSerial;
     private long storySeed;
     private int storyCheckpoint;
@@ -98,6 +119,33 @@ public final class ProfileStore {
     }
     private final Set<String> awarded=new HashSet<>();
     private boolean blocked;
+    private final java.util.Map<String,EquipmentTiers.Tier> catalogGear=new java.util.HashMap<>();
+    private final String[] catalogPrepared={"EMF_READER","THERMOMETER","SPIRIT_BOX","PHOTO_CAMERA"};
+    {
+        for(String id:catalogPrepared)catalogGear.put(id,EquipmentTiers.Tier.I);
+        catalogGear.put("FLASHLIGHT",EquipmentTiers.Tier.I);
+    }
+    public java.util.Map<String,EquipmentTiers.Tier> catalogEquipment(){return java.util.Map.copyOf(catalogGear);}
+    public String[] catalogLoadout(){return catalogPrepared.clone();}
+    public boolean purchaseCatalogGear(String id,EquipmentTiers.Tier tier)throws IOException{
+        if(blocked)throw new IOException("Profile load failed");
+        if(!FieldEquipment.functional(id)||tier==null)return false;
+        var previous=catalogGear.get(id);
+        if(tier.ordinal()!=(previous==null?0:previous.ordinal()+1))return false;
+        int cost=EquipmentTiers.stage(id,tier).creditCost();if(currency<cost)return false;
+        int money=currency;currency-=cost;catalogGear.put(id,tier);
+        try{save();}catch(IOException failed){currency=money;if(previous==null)catalogGear.remove(id);else catalogGear.put(id,previous);throw failed;}
+        return true;
+    }
+    public void equipCatalog(int slot,String id)throws IOException{
+        if(blocked)throw new IOException("Profile load failed");
+        if(slot<0||slot>=4||!catalogGear.containsKey(id)||!FieldEquipment.functional(id))throw new IllegalArgumentException("Owned equipment required");
+        int other=-1;for(int i=0;i<4;i++)if(id.equals(catalogPrepared[i]))other=i;
+        String[] before=catalogPrepared.clone();
+        // Selecting an already carried device swaps slots, keeping four distinct items.
+        if(other>=0)catalogPrepared[other]=catalogPrepared[slot];catalogPrepared[slot]=id;
+        try{save();}catch(IOException failed){System.arraycopy(before,0,catalogPrepared,0,4);throw failed;}
+    }
     private final int[][] medicines=new int[2][3];
     // Legacy starter instruments are issued; optional instruments must be purchased.
     private final java.util.EnumSet<EquipmentLoadout.Item> purchasedEquipment=
@@ -118,26 +166,31 @@ public final class ProfileStore {
         for(var item:selected)if(item==null||!ownsEquipment(item)||!seen.add(item))
             throw new IllegalArgumentException("All equipped instruments must be owned and distinct");
         var previous=prepared.clone();
+        var previousCatalog=catalogPrepared.clone();
         System.arraycopy(selected,0,prepared,0,prepared.length);
+        for(int i=0;i<4;i++)catalogPrepared[i]=FieldEquipment.campaignId(selected[i]);
         try{save();}catch(IOException error){
-            System.arraycopy(previous,0,prepared,0,prepared.length);throw error;
+            System.arraycopy(previous,0,prepared,0,prepared.length);System.arraycopy(previousCatalog,0,catalogPrepared,0,4);throw error;
         }
     }
-    public boolean ownsEquipment(EquipmentLoadout.Item item){return purchasedEquipment.contains(item);}
-    public java.util.Set<EquipmentLoadout.Item> equipment(){return java.util.Set.copyOf(purchasedEquipment);}
+    public boolean ownsEquipment(EquipmentLoadout.Item item){return purchasedEquipment.contains(item)||catalogGear.containsKey(FieldEquipment.campaignId(item));}
+    public java.util.Set<EquipmentLoadout.Item> equipment(){
+        var all=java.util.EnumSet.noneOf(EquipmentLoadout.Item.class);
+        for(var item:EquipmentLoadout.Item.values())if(ownsEquipment(item))all.add(item);return java.util.Set.copyOf(all);
+    }
     public static int equipmentPrice(EquipmentLoadout.Item item){
         return switch(item){
             case EMF,THERMOMETER,SPIRIT_BOX,PHOTO_CAMERA->0;
-            case UV_LAMP->150;case SALT->80;
+            case UV_LAMP,SALT->EquipmentTiers.stage(FieldEquipment.campaignId(item),EquipmentTiers.Tier.I).creditCost();
         };
     }
     public boolean purchaseEquipment(EquipmentLoadout.Item item)throws IOException{
         if(blocked)throw new IOException("Profile cannot be modified after failed load");
-        if(item==null||purchasedEquipment.contains(item))return false;
+        if(item==null||ownsEquipment(item))return false;
         int cost=equipmentPrice(item);
         if(cost<=0||currency<cost)return false;
-        currency-=cost;purchasedEquipment.add(item);
-        try{save();}catch(IOException e){currency+=cost;purchasedEquipment.remove(item);throw e;}
+        currency-=cost;purchasedEquipment.add(item);catalogGear.put(FieldEquipment.campaignId(item),EquipmentTiers.Tier.I);
+        try{save();}catch(IOException e){currency+=cost;purchasedEquipment.remove(item);catalogGear.remove(FieldEquipment.campaignId(item));throw e;}
         return true;
     }
     public int supplyCount(FieldSupplies.Kind kind,FieldSupplies.Tier tier){
@@ -207,6 +260,8 @@ public final class ProfileStore {
             }
             archive.clear();archive.addAll(CampaignArchive.load(p));
             assistantHired=Boolean.parseBoolean(p.getProperty("campaign.assistant","false"));
+            missionHires=Integer.parseInt(p.getProperty("campaign.missionHires",assistantHired?"1":"0"));
+            if(missionHires<0||missionHires>5)throw new NumberFormatException("invalid hired team");
             campaignSerial=Long.parseLong(p.getProperty("campaign.serial","0"));
             storySeed=Long.parseLong(p.getProperty("campaign.story.seed","0"));
             storyCheckpoint=Integer.parseInt(p.getProperty("campaign.story.next","0"));
@@ -250,6 +305,24 @@ public final class ProfileStore {
                 if(!receipt.matches("[0-9a-f\\-]{36}"))throw new NumberFormatException("invalid receipt");
                 awarded.add(receipt);
             }
+            catalogGear.clear();
+            if(p.containsKey("catalog.version")&&!"1".equals(p.getProperty("catalog.version")))
+                throw new IllegalArgumentException("Unsupported equipment catalog version");
+            for(var item:purchasedEquipment)catalogGear.put(FieldEquipment.campaignId(item),EquipmentTiers.Tier.I);
+            catalogGear.put("FLASHLIGHT",EquipmentTiers.Tier.I);
+            if("1".equals(p.getProperty("catalog.version"))){
+                catalogGear.clear();
+                for(String id:FieldEquipment.workingTools()){
+                    String value=p.getProperty("catalog.gear."+id);
+                    if(value!=null)catalogGear.put(id,EquipmentTiers.Tier.valueOf(value));
+                }
+            }
+            var unique=new java.util.HashSet<String>();
+            for(int i=0;i<4;i++){
+                String id=p.getProperty("catalog.slot."+i,FieldEquipment.campaignId(prepared[i]));
+                if(!catalogGear.containsKey(id)||!unique.add(id))throw new IllegalArgumentException("Invalid catalog loadout");
+                catalogPrepared[i]=id;
+            }
             blocked=false;
         }catch(IllegalArgumentException ex){throw new IOException("Invalid profile values",ex);}
     }
@@ -269,6 +342,36 @@ public final class ProfileStore {
         awarded.add(receipt);
         try{save();}catch(IOException ex){
             currency=previousCredits;experience=previousExperience;awarded.remove(receipt);throw ex;
+        }
+        return true;
+    }
+    public boolean settleCoop(CampaignStory.Chapter chapter,ContractRewards.Settlement result,
+            int members,int ticks,InvestigationSession.Role role)throws IOException{
+        if(blocked)throw new IOException("Profile load failed");
+        if(chapter==null||!hasCampaignStory()||!chapterUnlocked(chapter.ordinal())
+                ||!campaignChapter(chapter.ordinal()).equals(chapter))
+            throw new IllegalArgumentException("Chapter does not belong to this campaign");
+        String receipt=result.id().toString();if(awarded.contains(receipt))return false;
+        int oldMoney=currency,oldXp=experience,oldRole=disciplineExperience(role),oldCheckpoint=storyCheckpoint;
+        int oldVisits=visits(chapter.map()),oldClears=clears(chapter.map());
+        var previousArchive=new ArrayList<>(archive);
+        int credits=Math.min(100000,CampaignPartyRules.hostCredits(result.credits(),members));
+        int nextMoney=Math.addExact(currency,credits),nextXp=Math.addExact(experience,result.xp());
+        int roleXp=Math.addExact(oldRole,result.xp());
+        var outcome=result.victory()?InvestigationSession.Outcome.CLEANSED:
+            result.outcome()==LanCase.Outcome.RETREATED?InvestigationSession.Outcome.RETREATED:InvestigationSession.Outcome.LOST;
+        var record=new CampaignArchive.CaseFile(receipt,chapter.map(),role,outcome,credits,result.xp(),0,ticks,
+            level(role),HunterProgression.level(roleXp),java.util.List.of("Co-op host / "+members+" hunters / "+result.outcome()));
+        int nextVisits=Math.addExact(oldVisits,1),nextClears=Math.addExact(oldClears,result.victory()?1:0);
+        currency=nextMoney;experience=nextXp;disciplineXp.put(role,roleXp);awarded.add(receipt);
+        siteVisits.put(chapter.map(),nextVisits);
+        siteClears.put(chapter.map(),nextClears);
+        if(result.victory()&&storyCheckpoint==chapter.ordinal())storyCheckpoint++;
+        if(archive.size()==CampaignArchive.LIMIT)archive.remove(0);archive.add(record);
+        try{save();}catch(IOException failed){
+            currency=oldMoney;experience=oldXp;disciplineXp.put(role,oldRole);storyCheckpoint=oldCheckpoint;
+            siteVisits.put(chapter.map(),oldVisits);siteClears.put(chapter.map(),oldClears);
+            awarded.remove(receipt);archive.clear();archive.addAll(previousArchive);throw failed;
         }
         return true;
     }
@@ -357,7 +460,9 @@ public final class ProfileStore {
             // Candidate was already validated, so in-memory state can be updated without reopening.
             currency = candidate.currency;
             experience = candidate.experience;
-            assistantHired = candidate.assistantHired;
+            assistantHired = candidate.assistantHired;missionHires=candidate.missionHires;
+            catalogGear.clear();catalogGear.putAll(candidate.catalogGear);
+            System.arraycopy(candidate.catalogPrepared,0,catalogPrepared,0,4);
             disciplineXp.clear();disciplineXp.putAll(candidate.disciplineXp);
             archive.clear();archive.addAll(candidate.archive);
             campaignSerial = candidate.campaignSerial;
@@ -382,6 +487,7 @@ public final class ProfileStore {
         try{
             Properties p=new Properties();p.setProperty("schema","1");
             p.setProperty("campaign.assistant",Boolean.toString(assistantHired));
+            p.setProperty("campaign.missionHires",Integer.toString(missionHires));
             p.setProperty("campaign.serial",Long.toString(campaignSerial));
             p.setProperty("campaign.story.seed",Long.toString(storySeed));
             p.setProperty("campaign.story.next",Integer.toString(storyCheckpoint));
@@ -394,6 +500,9 @@ public final class ProfileStore {
             CampaignArchive.save(p,archive);
             p.setProperty("currency",Integer.toString(currency));p.setProperty("experience",Integer.toString(experience));
             p.setProperty("awarded",String.join(",",new ArrayList<>(awarded)));
+            p.setProperty("catalog.version","1");
+            for(var entry:catalogGear.entrySet())p.setProperty("catalog.gear."+entry.getKey(),entry.getValue().name());
+            for(int i=0;i<4;i++)p.setProperty("catalog.slot."+i,catalogPrepared[i]);
             for(EquipmentLoadout.Item item:EquipmentLoadout.Item.values())
                 if(equipmentPrice(item)>0)
                     p.setProperty("equipment."+item.name(),Boolean.toString(ownsEquipment(item)));

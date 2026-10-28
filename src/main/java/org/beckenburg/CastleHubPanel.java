@@ -30,6 +30,8 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private final JPanel quartermaster;
     private final CampaignStorePanel quartermasterStore;
     private JButton quartermasterClose;
+    private JPanel serviceOverlay;
+    private Runnable serviceBack;
     private String notice="Welcome to Beckenburg Castle. The equipment is real; look and press E.";
     private int noticeTicks=100;
     public CastleHubPanel(ProfileStore profile,Actions actions){
@@ -67,6 +69,25 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         int width=Math.max(0,Math.min(getWidth()-24,1020));
         int height=Math.max(0,Math.min(getHeight()-24,680));
         quartermaster.setBounds((getWidth()-width)/2,(getHeight()-height)/2,width,height);
+        if(serviceOverlay!=null)serviceOverlay.setBounds((getWidth()-width)/2,(getHeight()-height)/2,width,height);
+    }
+    /** Campaign and multiplayer are castle workstations inside this world panel. */
+    public void openService(String title,JComponent content,Runnable back){
+        closeService();closeQuartermaster();down.clear();look.release();storeOpen=true;serviceBack=back;
+        serviceOverlay=PsxHorrorUi.surface(new BorderLayout(0,6));
+        serviceOverlay.setName("castle.service.overlay");
+        JLabel context=PsxMenuScreen.label("CASTLE BECKENBURG / "+title);
+        context.setBorder(BorderFactory.createEmptyBorder(7,10,0,10));
+        serviceOverlay.add(context,BorderLayout.NORTH);serviceOverlay.add(content,BorderLayout.CENTER);
+        serviceOverlay.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"leaveService");
+        serviceOverlay.getActionMap().put("leaveService",new AbstractAction(){
+            public void actionPerformed(ActionEvent event){if(serviceBack!=null)serviceBack.run();}
+        });
+        add(serviceOverlay);setComponentZOrder(serviceOverlay,0);revalidate();repaint();
+    }
+    public void closeService(){
+        if(serviceOverlay!=null){remove(serviceOverlay);serviceOverlay=null;serviceBack=null;storeOpen=false;last=System.nanoTime();}
+        revalidate();repaint();
     }
     /** Existing PSX panels, buttons and approved model thumbnails stay inside
      * the same world viewport and share the live persisted Castle profile. */
@@ -200,6 +221,9 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     @Override public void keyPressed(KeyEvent e){
         if(!isShowing())return;
         int key=e.getKeyCode();if(down.contains(key))return;
+        if(serviceOverlay!=null&&serviceOverlay.isVisible()){
+            if(key==KeyEvent.VK_ESCAPE&&serviceBack!=null)serviceBack.run();return;
+        }
         if(storeOpen){
             if(key==KeyEvent.VK_ESCAPE)closeQuartermaster();
             return;
@@ -251,7 +275,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             g.drawString("BECKENBURG CASTLE",25,29);
             g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
             g.setColor(new Color(186,215,202));
-            g.drawString("Ãƒâ€šÃ‚Â£"+profile.currency()+"   /   "+actions.role()+
+            g.drawString("\u00a3"+profile.currency()+"   /   "+actions.role()+
                 (elevation>2.0?"   /   UPPER GALLERY":""),25,44);
             g.setColor(new Color(230,215,174));
             g.drawString("+",w/2-4,h/2+4);

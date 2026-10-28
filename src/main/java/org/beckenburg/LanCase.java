@@ -48,6 +48,12 @@ public final class LanCase {
     private boolean identificationRequired;
     private int lastGuessTick=-1000;
     private final int[] health={100,100,100,100,100,100},stress=new int[6],wards={2,2,2,2,2,2};
+    private final int[] maximumHealth={100,100,100,100,100,100};
+    public int maxHealth(int seat){hunter(seat);return maximumHealth[seat];}
+    void configureCampaignCareer(int seat,int level){
+        hunter(seat);maximumHealth[seat]=HunterProgression.maxHealth(level);health[seat]=maximumHealth[seat];
+        wards[seat]=(hunterClasses[seat]==CharacterVisuals.Hunter.CLERIC?3:2)+HunterProgression.extraWards(level);
+    }
     private final HunterDiscipline disciplines=new HunterDiscipline(6);
     private final CharacterVisuals.Hunter[] hunterClasses=new CharacterVisuals.Hunter[6];
     {
@@ -94,13 +100,21 @@ public final class LanCase {
         if(count<1||count>6||outcome!=Outcome.ACTIVE)throw new IllegalArgumentException("1-6 hunters required");
         for(int i=0;i<6;i++)active[i]=i<count;
     }
+    /** Campaign guests may leave holes before dispatch; empty seats are never living hunters. */
+    void configureHunterSeats(boolean[] present){
+        if(present==null||present.length!=6||outcome!=Outcome.ACTIVE)
+            throw new IllegalArgumentException("Six-seat lobby snapshot required");
+        boolean any=false;for(boolean seat:present)any|=seat;
+        if(!any)throw new IllegalArgumentException("At least one hunter required");
+        System.arraycopy(present,0,active,0,6);
+    }
     public void setStartingSanity(int value){
         if(value<0||value>100)throw new IllegalArgumentException("invalid starting sanity");
         for(int i=0;i<6;i++)stress[i]=100-value;
     }
     public boolean heal(int seat,int amount){
-        hunter(seat);if(amount<1||amount>100||!alive(seat)||health[seat]==100)return false;
-        health[seat]=Math.min(100,health[seat]+amount);return true;
+        hunter(seat);if(amount<1||amount>100||!alive(seat)||health[seat]==maximumHealth[seat])return false;
+        health[seat]=Math.min(maximumHealth[seat],health[seat]+amount);return true;
     }
     public boolean calm(int seat,int amount){
         hunter(seat);if(amount<1||amount>100||!alive(seat)||stress[seat]==0)return false;

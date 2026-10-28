@@ -12,6 +12,7 @@ public final class CampaignAlly {
     private final HouseMap map;
     private final InvestigationSession caseSession;
     private final CharacterVisuals.Hunter discipline;
+    private int teamSlot=1;
     private final HunterDiscipline classSkills=new HunterDiscipline(1);
     private int lastDanger=-10000,distress;
     public CharacterVisuals.Hunter discipline(){return discipline;}
@@ -33,10 +34,16 @@ public final class CampaignAlly {
         this.discipline=Objects.requireNonNull(discipline);
         this.map=Objects.requireNonNull(map);
         caseSession=Objects.requireNonNull(session);
-        var spawn=map.van().spawn(1);
+        var spawn=map.van().spawn(teamSlot);
         position=new LevelDefinition.Vec(spawn.x(),map.floorY(HouseMap.EXTRACTION_ROOM),spawn.z());
         if(!map.traversable(position.x(),position.y(),position.z()))
             throw new IllegalStateException("Assistant has no valid starting position");
+    }
+    public CampaignAlly(HouseMap map,InvestigationSession session,CharacterVisuals.Hunter discipline,int slot){
+        this(map,session,discipline);
+        if(slot<1||slot>5)throw new IllegalArgumentException("Assistant slot must be 1..5");
+        teamSlot=slot;var spawn=map.van().spawn(slot);
+        position=new LevelDefinition.Vec(spawn.x(),map.floorY(HouseMap.EXTRACTION_ROOM),spawn.z());
     }
     public LevelDefinition.Vec position(){return position;}
     public int room(){return map.roomAt(position.x(),position.y(),position.z());}
@@ -345,6 +352,6 @@ public final class CampaignAlly {
     }
     public SceneRenderer.RemoteBody sprite(){
         return new SceneRenderer.RemoteBody(position.x(),position.y(),position.z(),
-            1,heading,discipline.name().toLowerCase(java.util.Locale.ROOT));
+            teamSlot,heading,discipline.name().toLowerCase(java.util.Locale.ROOT));
     }
 }

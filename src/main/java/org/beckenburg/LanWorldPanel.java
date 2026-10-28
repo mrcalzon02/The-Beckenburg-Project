@@ -215,9 +215,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         panel.add(new JLabel("Microphone"));
         panel.add(input);
         panel.add(new JLabel("Incoming voice volume"));panel.add(volume);
-        int answer=JOptionPane.showConfirmDialog(this,panel,"VOICE / LOCAL LAN",
-            JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
-        if(answer==JOptionPane.OK_OPTION){
+        int answer=GameDialogs.showConfirmDialog(this,panel,"VOICE / LOCAL LAN",
+            GameDialogs.OK_CANCEL_OPTION,GameDialogs.PLAIN_MESSAGE);
+        if(answer==GameDialogs.OK_OPTION){
             voice.setMuted(mute.isSelected());
             voice.selectMicrophone(input.getSelectedIndex()==0?null:
                 devices.get(input.getSelectedIndex()-1));
@@ -225,7 +225,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
         requestFocusInWindow();
     }
+    private NetworkEquipmentPanel rackCatalog;
+    private boolean campaignInventory;
+    public void setCampaignInventory(boolean campaign){campaignInventory=campaign;}
     public void onEvent(String frame){
+        if(rackCatalog!=null)rackCatalog.receive(frame);
         if(!SwingUtilities.isEventDispatchThread())throw new IllegalStateException("network view must update on EDT");
         try{
             List<String> p=LanProtocol.parts(frame);
@@ -416,7 +420,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.size()==7&&p.get(0).equals("STATE")){
                 visibleGhost=LanProtocol.integer(p.get(3),-1,HouseMap.ROOM_COUNT-1);
             }else if(p.size()==8&&p.get(0).equals("PROGRESS")){
-                health=LanProtocol.integer(p.get(1),0,100);
+                health=LanProtocol.integer(p.get(1),0,200);
                 evidence=LanProtocol.integer(p.get(4),0,3);
                 sanity=100-LanProtocol.integer(p.get(2),0,100);
                 if(health==0){keys.clear();feedback="INCAPACITATED - YOU CAN OBSERVE BUT NOT ACT";}
@@ -882,9 +886,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         for(FieldSupplies.Kind kind:FieldSupplies.Kind.values())
             for(FieldSupplies.Tier tier:FieldSupplies.Tier.values())
                 options[i++]=kind+" / "+tier.name()+" / £"+tier.price+" / restore "+tier.restore(kind);
-        Object choice=JOptionPane.showInputDialog(this,
+        Object choice=GameDialogs.showInputDialog(this,
             "CREDITS £"+fieldCredits+"    /    PURCHASE 1 FIELD ITEM",
-            "VAN EQUIPMENT SUPPLIES",JOptionPane.PLAIN_MESSAGE,null,options,options[0]);
+            "VAN EQUIPMENT SUPPLIES",GameDialogs.PLAIN_MESSAGE,null,options,options[0]);
         if(choice!=null)for(int n=0;n<options.length;n++)if(options[n].equals(choice)){
             FieldSupplies.Kind kind=FieldSupplies.Kind.values()[n/3];
             FieldSupplies.Tier tier=FieldSupplies.Tier.values()[n%3];
@@ -899,15 +903,24 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             feedback="RETURN TO VAN EQUIPMENT RACK";return;
         }
         mouseLook.release();keys.clear();
-        var decision=EquipmentRackDialog.choose(this,fieldCredits,equippedGear,
-            activeGearSlot,equipmentTier);
-        if(decision!=null)switch(decision.action()){
-            case UPGRADE -> sendAction("upgrade "+decision.id(),
-                ()->client.buyEquipment(decision.id(),decision.next()));
-            case EQUIP -> sendAction("equip "+decision.id(),
-                ()->client.equipAt(decision.slot(),decision.id()));
-            case RECHARGE -> sendAction("recharge equipment",client::serviceEquipment);
-        }
+        rackCatalog=new NetworkEquipmentPanel(choice->{
+            if(choice.action()==EquipmentRackDialog.Action.UPGRADE)sendAction("buy "+choice.id(),()->client.buyEquipment(choice.id(),choice.next()));
+            else sendAction("equip "+choice.id(),()->client.equipAt(choice.slot(),choice.id()));
+        },(kind,tier)->sendAction("buy medicine",()->client.purchaseSupply(kind,tier)));
+        rackCatalog.setCampaign(campaignInventory);
+        StringBuilder supplies=new StringBuilder("SUPPLY|").append(fieldCredits);
+        for(int count:medicine)supplies.append('|').append(count);rackCatalog.receive(supplies.toString());
+        StringBuilder gear=new StringBuilder("GEARSTATE|").append(fieldCredits).append('|').append(activeGearSlot);
+        for(String id:equippedGear)gear.append('|').append(id).append(':').append(equipmentTier.getOrDefault(id,EquipmentTiers.Tier.I));
+        rackCatalog.receive(gear.toString());
+        for(var entry:equipmentTier.entrySet())rackCatalog.receive("GEAROWNED|"+entry.getKey()+":"+entry.getValue().name());
+        javax.swing.JPanel view=new javax.swing.JPanel(new java.awt.BorderLayout());
+        view.add(rackCatalog,java.awt.BorderLayout.CENTER);
+        javax.swing.JButton recharge=PsxHorrorUi.button("RECHARGE EQUIPMENT");
+        recharge.addActionListener(e->sendAction("recharge equipment",client::serviceEquipment));
+        view.add(recharge,java.awt.BorderLayout.SOUTH);
+        try{GameDialogs.showMessageDialog(this,view,"EQUIPMENT LIBRARY",GameDialogs.PLAIN_MESSAGE);}
+        finally{rackCatalog=null;}
         requestFocusInWindow();
     }
     private void consumeMedicine(FieldSupplies.Kind kind){

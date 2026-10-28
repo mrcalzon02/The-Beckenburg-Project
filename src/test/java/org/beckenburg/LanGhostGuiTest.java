@@ -27,13 +27,13 @@ public final class LanGhostGuiTest {
             LanClient h1=new LanClient("127.0.0.1",host.port(),false,"Cleric",s->{});
             LanClient h2=new LanClient("127.0.0.1",host.port(),false,"Observer",s->{});
             LanClient h3=new LanClient("127.0.0.1",host.port(),false,"Demonologist",s->{})){
-            LanLobbyWindow ghost=edt(()->{
-                LanLobbyWindow lobby=new LanLobbyWindow();
+            LanPanelTestHarness ghost=edt(()->{
+                LanPanelTestHarness lobby=new LanPanelTestHarness();
                 java.util.List<JTextField> txt=new ArrayList<>();LanWindowSmokeTest.collect(lobby.getContentPane(),JTextField.class,txt);
                 txt.stream().filter(x->x.getText().equals("27717")).findFirst().orElseThrow().setText(Integer.toString(host.port()));
                 java.util.List<JComboBox> combos=new ArrayList<>();LanWindowSmokeTest.collect(lobby.getContentPane(),JComboBox.class,combos);
                 combos.stream().filter(x->x.getItemCount()==2&&"Ghost".equals(x.getItemAt(1))).findFirst().orElseThrow().setSelectedIndex(1);
-                lobby.setVisible(true);LanWindowSmokeTest.button(lobby,"Join IP").doClick();return lobby;
+                lobby.setVisible(true);LanWindowSmokeTest.button(lobby,"Join by IP").doClick();return lobby;
             });
             try{
                 until(()->{try{return edt(()->LanWindowSmokeTest.button(ghost,"Ready / Unready").isEnabled());}catch(Exception e){return false;}},"ghost connected");
@@ -47,12 +47,12 @@ public final class LanGhostGuiTest {
                 h1.start();
                 until(()->{try{return edt(()->LanWindowSmokeTest.button(ghost,"Enter 3D World").isEnabled());}catch(Exception e){return false;}},"ghost 3D enable");
                 edt(()->{LanWindowSmokeTest.button(ghost,"Enter 3D World").doClick();return null;});
-                until(()->{try{return edt(()->Arrays.stream(Window.getWindows()).anyMatch(w->w instanceof JFrame f&&f.isVisible()&&f.getContentPane() instanceof LanGhostPanel));}catch(Exception e){return false;}},"ghost scene");
-                JFrame world=edt(()->Arrays.stream(Window.getWindows()).filter(w->w instanceof JFrame f&&f.isVisible()&&f.getContentPane() instanceof LanGhostPanel).map(w->(JFrame)w).findFirst().orElseThrow());
-                LanGhostPanel panel=(LanGhostPanel)world.getContentPane();
+                until(()->{try{return edt(()->LanWindowSmokeTest.find(ghost.getContentPane(),LanGhostPanel.class)!=null);}catch(Exception e){return false;}},"ghost scene");
+                JFrame world=edt(()->ghost);
+                LanGhostPanel panel=LanWindowSmokeTest.find(world.getContentPane(),LanGhostPanel.class);
                 // Repeated Enter 3D must focus the existing ghost scene, never dereference a hunter-only panel.
                 edt(()->{LanWindowSmokeTest.button(ghost,"Enter 3D World").doClick();return null;});
-                if(!world.isDisplayable()||world.getContentPane()!=panel)
+                if(!world.isDisplayable()||LanWindowSmokeTest.find(world.getContentPane(),LanGhostPanel.class)!=panel)
                     throw new AssertionError("second ghost 3D request replaced or closed the spectral viewport");
                 until(()->{try{return edt(()->panel.ghostRoom()==4);}catch(Exception e){return false;}},"spectral host position");
                 Thread.sleep(600);

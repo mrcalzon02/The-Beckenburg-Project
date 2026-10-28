@@ -11,7 +11,7 @@ import javax.swing.DefaultListCellRenderer;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -59,7 +59,7 @@ public final class EquipmentRackDialog {
                 EquipmentTiers.Tier tier=tiers.getOrDefault(id,EquipmentTiers.Tier.I);
                 row.setText(EquipmentRegistry.get(id).name()+
                     "  T"+(tier.ordinal()+1));
-                row.setIcon(ItemIconAtlas.get(id.toLowerCase(java.util.Locale.ROOT),44));
+                row.setIcon(ItemIconAtlas.getTier(id.toLowerCase(java.util.Locale.ROOT),tiers.getOrDefault(id,EquipmentTiers.Tier.I),44));
                 row.setIconTextGap(10);
                 return row;
             }
@@ -122,8 +122,8 @@ public final class EquipmentRackDialog {
         view.add(columns,BorderLayout.CENTER);
         view.add(slotBox,BorderLayout.SOUTH);
         String[] choices={"Upgrade","Equip","Recharge","Close"};
-        int action=JOptionPane.showOptionDialog(parent,view,"FIELD EQUIPMENT",
-            JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,choices,"Close");
+        int action=GameDialogs.showOptionDialog(parent,view,"FIELD EQUIPMENT",
+            GameDialogs.DEFAULT_OPTION,GameDialogs.PLAIN_MESSAGE,null,choices,"Close");
         String id=list.getSelectedValue();
         if(action==0&&id!=null){
             EquipmentTiers.Tier owned=tiers.getOrDefault(id,EquipmentTiers.Tier.I);

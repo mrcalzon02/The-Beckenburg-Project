@@ -13,15 +13,19 @@ public final class LanWindowSmokeTest {
         if(c instanceof Container parent)for(Component child:parent.getComponents())collect(child,type,into);
     }
     static JButton button(JFrame frame,String label){
-        List<JButton> all=new ArrayList<>();collect(frame.getContentPane(),JButton.class,all);
+        List<JButton> all=new ArrayList<>();collect(frame instanceof LanPanelTestHarness harness?harness.lobby:frame.getContentPane(),JButton.class,all);
         return all.stream().filter(b->label.equals(b.getText())).findFirst().orElseThrow();
+    }
+    static <T extends Component>T find(Container root,Class<T> type){
+        if(type.isInstance(root))return type.cast(root);
+        for(Component c:root.getComponents())if(c instanceof Container nested){var found=find(nested,type);if(found!=null)return found;}return null;
     }
     public static void main(String[] args)throws Exception {
         if(GraphicsEnvironment.isHeadless())throw new AssertionError("requires graphical display");
         int port;try(ServerSocket ep=new ServerSocket(0)){port=ep.getLocalPort();}
-        final LanLobbyWindow[] frame={null};
+        final LanPanelTestHarness[] frame={null};
         SwingUtilities.invokeAndWait(()->{
-            frame[0]=new LanLobbyWindow();
+            frame[0]=new LanPanelTestHarness();
             List<JTextField> inputs=new ArrayList<>();collect(frame[0].getContentPane(),JTextField.class,inputs);
             inputs.stream().filter(t->"27717".equals(t.getText())).findFirst().orElseThrow().setText(Integer.toString(port));
             frame[0].setVisible(true);

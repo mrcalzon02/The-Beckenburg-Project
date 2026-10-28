@@ -49,9 +49,9 @@ public final class BeckenburgDesktopE2ETest {
         return null;
     }
     private static JFrame multiplayer(){
-        for(Window window:Window.getWindows())if(window instanceof LanLobbyWindow frame
-                &&frame.isShowing())return frame;
-        return null;
+        JFrame frame=launcher();
+        var lobby=frame==null?null:CampaignMenuWorkflowTest.named(frame.getContentPane(),"network",LanLobbyPanel.class);
+        return lobby!=null&&lobby.isShowing()?frame:null;
     }
     private static void capture(String label){
         try{
@@ -97,7 +97,7 @@ public final class BeckenburgDesktopE2ETest {
     private static boolean visibleUnifiedStore(Container surface){
         for(Component component:surface.getComponents()){
             if(component instanceof javax.swing.JList<?> items
-                    &&"campaign.store.items".equals(items.getName())&&items.isShowing())
+                    &&"equipment.catalog.items".equals(items.getName())&&items.isShowing())
                 return true;
             if(component instanceof Container nested&&visibleUnifiedStore(nested))
                 return true;
@@ -140,16 +140,10 @@ public final class BeckenburgDesktopE2ETest {
         }
         return null;
     }
-    /** Map selection is a PSX game card, never a separate JDialog. */
-    private static Container dispatchPage(Container root){
-        for(Component part:root.getComponents()){
-            if(part instanceof javax.swing.JPanel panel && "dispatch".equals(panel.getName())
-                    &&panel.isShowing())return panel;
-            if(part instanceof Container nested){
-                Container found=dispatchPage(nested);
-                if(found!=null)return found;
-            }
-        }
+    private static JDialog dispatchDialog(){
+        for(Window window:Window.getWindows())if(window instanceof JDialog dialog
+                &&dialog.isShowing()&&dialog.getTitle().startsWith("EXPEDITION DISPATCH"))
+            return dialog;
         return null;
     }
     private static <T> T waitFor(java.util.concurrent.Callable<T> check,long seconds)throws Exception{
@@ -180,8 +174,24 @@ public final class BeckenburgDesktopE2ETest {
             },30);
             if(frame==null)throw new AssertionError(
                 "Startup never completed: menu's multiplayer button not available (check diagnostics log)");
-            if(button(frame.getContentPane(),"DIAGNOSTICS")==null)
-                throw new AssertionError("Diagnostics control missing from playable launcher");
+            if(button(frame.getContentPane(),"OPTIONS")==null)
+                throw new AssertionError("Options control missing from playable launcher");
+            SwingUtilities.invokeAndWait(()->button(frame.getContentPane(),"OPTIONS").doClick());
+            var options=waitFor(()->{
+                var found=CampaignMenuWorkflowTest.named(frame.getContentPane(),"options",javax.swing.JPanel.class);
+                return found!=null&&found.isShowing()?found:null;
+            },5);
+            if(options==null)throw new AssertionError("Start menu options page unavailable");
+            capture("00-options-screen");
+            SwingUtilities.invokeAndWait(()->button(options,"BACK").doClick());
+            SwingUtilities.invokeAndWait(()->{
+                int windows=Window.getWindows().length;
+                javax.swing.Timer dismiss=new javax.swing.Timer(120,e->{
+                    JButton ok=button((Container)frame.getGlassPane(),"OK");if(ok!=null)ok.doClick();
+                });dismiss.setRepeats(false);dismiss.start();
+                GameDialogs.showMessageDialog(frame,"Equipment actions use this game window.","DIALOG WORKFLOW",GameDialogs.PLAIN_MESSAGE);
+                if(Window.getWindows().length!=windows)throw new AssertionError("Game prompt opened a separate window");
+            });
             capture("01-loaded-menu");
             System.out.println("E2E PASS packaged startup and usable PSX-themed main menu");
             // Functional: selecting the normal Castle's store must show the
@@ -224,18 +234,26 @@ public final class BeckenburgDesktopE2ETest {
                     &&button(result.getContentPane(),"Start Match")!=null?result:null;
             },15);
             if(lobby==null)throw new AssertionError("Multiplayer lobby not interactable");
+            var networkPanel=CampaignMenuWorkflowTest.named(frame.getContentPane(),"network",LanLobbyPanel.class);
+            if(networkPanel==null||!(SwingUtilities.getAncestorOfClass(CastleHubPanel.class,networkPanel) instanceof CastleHubPanel))
+                throw new AssertionError("Multiplayer must be handled inside the actual Castle viewport");
             capture("02-multiplayer-lobby");
             System.out.println("E2E PASS main-menu multiplayer handoff and actionable join/host lobby");
-            SwingUtilities.invokeAndWait(lobby::dispose);
-            // Use the real in-game dispatch card, select House and demand an
-            // advancing case. No modal window or appearance assertion is required.
+            SwingUtilities.invokeAndWait(()->button(lobby.getContentPane(),"LEAVE LOBBY").doClick());
+            // The previous smoke stopped at the menu and could never detect
+            // BECK-LIVE-012 (case start locked the user's process). Open the
+            // actual dispatch dialog, explicitly choose HOUSE, and demand an
+            // advancing, first-frame-complete case on the live Swing UI.
             JButton start=button(frame.getContentPane(),"START SOLO INVESTIGATION");
             if(start==null||!start.isEnabled())throw new AssertionError(
                 "Solo dispatch control missing or House unavailable");
             SwingUtilities.invokeLater(start::doClick);
-            Container dispatch=waitForResponsive(()->dispatchPage(frame.getContentPane()),20);
+            Container dispatch=waitForResponsive(()->{
+                var panel=CampaignMenuWorkflowTest.named(frame.getContentPane(),"solo",javax.swing.JPanel.class);
+                return panel!=null&&panel.isShowing()?panel:null;
+            },20);
             if(dispatch==null)throw new AssertionError(
-                "In-game solo map-selection menu did not appear");
+                "Solo map-selection dispatch did not appear");
             capture("03-solo-dispatch-map-selection");
             SwingUtilities.invokeLater(()->{
                 JComboBox<?> site=sitePicker(dispatch);
@@ -243,8 +261,8 @@ public final class BeckenburgDesktopE2ETest {
                 site.setSelectedItem(SiteCatalog.Location.HOUSE);
                 if(site.getSelectedItem()!=SiteCatalog.Location.HOUSE)
                     throw new AssertionError("Could not dispatch authored House site");
-                JButton approve=button(dispatch,"BEGIN SELECTED CASE");
-                if(approve==null)throw new AssertionError("Solo dispatch confirm control unavailable");
+                JButton approve=button(dispatch,"DEPLOY");
+                if(approve==null)throw new AssertionError("Solo dispatch DEPLOY button unavailable");
                 approve.doClick();
             });
             Component solo=waitForResponsive(()->visibleSoloCase(frame.getContentPane()),25);

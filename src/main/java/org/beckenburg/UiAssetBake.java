@@ -41,6 +41,18 @@ public final class UiAssetBake {
                 count++;
             }
         }
+        // Keep the singular Blender renders at full resolution for the large item preview.
+        Path tierIcons=root.resolve("assets/runtime/ui/item-tier-icons");
+        for(var tool:EquipmentRegistry.all())for(var tier:EquipmentTiers.Tier.values()){
+            Path item=tierIcons.resolve(ItemIconAtlas.key(tool)+"_t"+(tier.ordinal()+1)+".png");
+            if(!Files.isRegularFile(item))throw new IOException("Missing individual tier icon: "+item);
+            Files.copy(item,icons.resolve(item.getFileName()),StandardCopyOption.REPLACE_EXISTING);count++;
+        }
+        for(int tier=1;tier<=3;tier++){
+            Path item=tierIcons.resolve("health_supplies_t"+tier+".png");
+            if(!Files.isRegularFile(item))throw new IOException("Missing medical tier icon: "+item);
+            Files.copy(item,icons.resolve(item.getFileName()),StandardCopyOption.REPLACE_EXISTING);count++;
+        }
         Path source=root.resolve("development/levels/previews/lighting-camera-audit/castle-lit.png");
         if(!Files.isRegularFile(source))throw new IOException("Real Castle splash source missing: "+source);
         BufferedImage actualCastle=ImageIO.read(source.toFile());

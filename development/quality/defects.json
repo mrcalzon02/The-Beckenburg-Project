@@ -1497,6 +1497,50 @@
       "action": "Exclude bytecode from GPU resources. Keep actual model/texture resources, compile all Java from source, clean-rebuild and repeat physical Castle checks.",
       "evidence": "build/castle-rebuild-compile.log and CastleRebuildTest before/after the clean source build. Source-level remedy matches the independent performance branch; no optimization flags are enabled.",
       "older_maps": "Any GPU build using mixed resource bytecode needs a fresh source rebuild; this does not certify installed gameplay or performance."
+    },
+    {
+      "id": "DEV-142",
+      "title": "Campaign and multiplayer equipment were split across incompatible store and reference pages",
+      "status": "fixed-scoped-local-verification",
+      "affected": "Campaign and multiplayer menus",
+      "symptom": "The live shop exposed a small subset while the model library was a separate non-purchasing tab; three-tier overview pictures were reused as item icons.",
+      "cause": "Two unrelated panel implementations and family contact-sheet thumbnails.",
+      "action": "Replace both with EquipmentCatalogPanel and persistent full-tier campaign ownership; render 129 singular Blender item-tier icons.",
+      "evidence": "EquipmentTierIconTest, CampaignMenuWorkflowTest, CampaignProgressionAndStoreTest; equipment-menu contact sheets and minimum-window UI captures.",
+      "older_maps": "Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied."
+    },
+    {
+      "id": "DEV-143",
+      "title": "Campaign team booking supported one permanent assistant instead of five mission hires",
+      "status": "fixed-scoped-local-verification",
+      "affected": "Campaign lobby and host dispatch",
+      "symptom": "Only one assistant could be purchased; guests had no campaign host flow or shared six-slot hiring rule.",
+      "cause": "A permanent boolean recruit flag and separate single-player/LAN mission launchers.",
+      "action": "Add per-mission reservations, refunds, six ordinary human/AI seats and host-only campaign settlement; retain migration of old saves.",
+      "evidence": "CampaignCoopLobbyTest and CampaignEmbeddedDesktopTest use actual TCP/desktop workflows; retreat and guest isolation verified.",
+      "older_maps": "Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied."
+    },
+    {
+      "id": "DEV-144",
+      "title": "PSX text-field artwork painted over entered connection details",
+      "status": "fixed-scoped-local-verification",
+      "affected": "All PSX-styled address, nickname, chat and password fields",
+      "symptom": "The border painted its opaque centre after Swing rendered the text, concealing the real field content.",
+      "cause": "TextFieldBorder painted a full nine-slice image during border paint.",
+      "action": "Clip the border artwork to its outline, preserving text and caret visibility.",
+      "evidence": "Minimum-window multiplayer-lobby captures and real desktop workflow.",
+      "older_maps": "Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied."
+    },
+    {
+      "id": "DEV-145",
+      "title": "Medicine client sent decorated tier labels instead of protocol enum identifiers",
+      "status": "fixed-scoped-local-verification",
+      "affected": "LAN purchasing and medicine use",
+      "symptom": "A request encoded BASIC / price / restoration text where the host requires BASIC, rejecting legitimate purchases.",
+      "cause": "LanClient concatenated Tier.toString rather than Tier.name.",
+      "action": "Encode stable enum names for BUY and USESUPPLY; retain display formatting solely in the UI.",
+      "evidence": "CampaignCoopLobbyTest confirms actual pre-mission medicine purchase and private host stock snapshots.",
+      "older_maps": "Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied."
     }
   ],
   "audit_categories": [
