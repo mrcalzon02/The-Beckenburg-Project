@@ -22,8 +22,8 @@ public final class CastleHomeInteractionTest {
         check(!CastleGateExit.inExitThreshold(map,15.5,0,35.2),"Closed gate cancels exit");
 
         Throwable[] failed={null};
+        var profile=new ProfileStore(Files.createTempDirectory("castle-home").resolve("profile.properties"));
         SwingUtilities.invokeAndWait(()->{
-            var profile=new ProfileStore(Files.createTempDirectory("castle-home").resolve("profile.properties"));
             CastleHubPanel castle=null;
             try{
                 castle=new CastleHubPanel(profile,new CastleHubPanel.Actions(){
