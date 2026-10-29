@@ -71,6 +71,28 @@ public final class GlbProps {
     private static final List<double[]> diffuseFactors=new ArrayList<>();
     private static final Map<Long,Integer> foliagePalettes=new HashMap<>();
     private static final Map<String,Integer> surfaceMaterials=new HashMap<>();
+    /** Independently revisioned 2D faces used by procedural flat van monitors.
+     * Textures are never recreated for a new reading: only the named material
+     * pixels change, so static monitor geometry and unrelated VBOs remain warm. */
+    private static final Map<Integer,Long> liveSurfaceRevisions=new HashMap<>();
+    public static synchronized int liveSurfaceMaterial(String name,int width,int height){
+        if(name==null||!name.startsWith("van live screen ")||
+                width<64||height<64||width>1024||height>1024)
+            throw new IllegalArgumentException("invalid live monitor surface");
+        int material=surfaceMaterial(name,new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB));
+        liveSurfaceRevisions.putIfAbsent(material,0L);
+        return material;
+    }
+    public static synchronized void updateLiveSurface(int material,BufferedImage image){
+        if(!liveSurfaceRevisions.containsKey(material)||image==null)
+            throw new IllegalArgumentException("unknown live monitor");
+        BufferedImage existing=textures.get(material-TEXTURE_BASE);
+        if(existing.getWidth()!=image.getWidth()||existing.getHeight()!=image.getHeight())
+            throw new IllegalArgumentException("live monitor dimensions changed");
+        textures.set(material-TEXTURE_BASE,image);
+        liveSurfaceRevisions.put(material,liveSurfaceRevisions.get(material)+1);
+    }
+
     public static synchronized int surfaceMaterial(String name,BufferedImage image){
         Integer cached=surfaceMaterials.get(name);if(cached!=null)return cached;
         if(image==null||image.getWidth()>2048||image.getHeight()>2048)throw new IllegalArgumentException("terrain diffuse budget");
@@ -107,6 +129,8 @@ public final class GlbProps {
      * source pixel updates, independent of geometry and draw-call count. */
     public static synchronized long dynamicTextureRevision(int material){
         if(material==VAN_MAP_MATERIAL)return vanMapRevision;
+        Long live=liveSurfaceRevisions.get(material);
+        if(live!=null)return live;
         if(material==vanCrtMaterial&&material>=TEXTURE_BASE)return vanCrtRevision;
         Integer phase=televisionPhases.get(material);
         return phase==null?(televisionMaterials.containsValue(material)?0:-1):Integer.toUnsignedLong(phase)+1;
