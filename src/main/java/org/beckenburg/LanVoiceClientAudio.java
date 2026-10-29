@@ -216,7 +216,8 @@ public final class LanVoiceClientAudio implements AutoCloseable {
                         int value=Math.max(Short.MIN_VALUE,Math.min(Short.MAX_VALUE,sums[i]));
                         mixed[i*2]=(byte)value;mixed[i*2+1]=(byte)(value>>8);
                     }
-                    output.write(mixed,0,mixed.length);
+                    if(output.write(mixed,0,mixed.length)<=0)
+                        throw new IllegalStateException("Voice speaker accepted no audio frames");
                 }
             }catch(LineUnavailableException|IllegalArgumentException
                     |IllegalStateException|SecurityException failure){
