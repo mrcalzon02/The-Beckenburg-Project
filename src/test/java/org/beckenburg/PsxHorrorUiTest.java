@@ -21,7 +21,33 @@ public final class PsxHorrorUiTest{
   b.paint(surface.getGraphics());
   if((surface.getRGB(5,5)>>>24)==0)throw new AssertionError("Button not painted");
   JTextField field=new JTextField("demo");PsxHorrorUi.styleTextField(field);
-  JTabbedPane tabs=new JTabbedPane();tabs.addTab("Lobby",new JPanel());PsxHorrorUi.styleTabs(tabs);
-  System.out.println("PASS PSX Horror UI / "+PsxHorrorUi.imageCount()+" images / 3 scales / Swing controls");
+  JComboBox<String>[] fields=new JComboBox[6];
+  for(int i=0;i<fields.length;i++)fields[i]=new JComboBox<>(new String[]{"Option A","Option B"});
+  JPanel form=InvestigationGame.soloContractForm(
+      fields[0],fields[1],fields[2],fields[3],fields[4],fields[5]);
+  form.setSize(660,380);form.doLayout();
+  for(JComboBox<String> combo:fields){
+   if(combo.getHeight()<26||combo.getHeight()>48)
+    throw new AssertionError("Solo contract dropdown stretched to "+combo.getHeight()+" pixels");
+   if(combo.getY()>310)
+    throw new AssertionError("Solo contract fields are not grouped at the top");
+  }
+  JLabel label=(JLabel)form.getComponent(0);
+  if(label.getForeground().getRed()<200)
+   throw new AssertionError("Solo field label is not light on dark");
+  JTabbedPane tabs=new JTabbedPane();
+  PsxHorrorUi.styleTabs(tabs);
+  tabs.addTab("CONTRACT",PsxMenuScreen.scroll(form));
+  tabs.setSize(720,430);tabs.doLayout();
+  BufferedImage tabImage=new BufferedImage(720,430,BufferedImage.TYPE_INT_RGB);
+  Graphics2D tabGraphics=tabImage.createGraphics();
+  tabs.paint(tabGraphics);tabGraphics.dispose();
+  int background=tabImage.getRGB(25,400);
+  int red=(background>>16)&255,green=(background>>8)&255,blue=background&255;
+  if(Math.max(red,Math.max(green,blue))>100)
+   throw new AssertionError("Solo contract tab content has a bright platform background: #"+
+       Integer.toHexString(background&0xffffff));
+  System.out.println("PASS PSX Horror UI / "+PsxHorrorUi.imageCount()+
+      " images / 3 scales / dark contract tab / compact readable dropdowns");
  }
 }
