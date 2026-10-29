@@ -51,18 +51,19 @@ public final class SoundVolumeAudio implements AutoCloseable {
                         continue;
                     }
                     if(d!=loaded){mixer=new Mixer(d);loaded=d;}
-                    if(line==null){
-                        SourceDataLine fresh=AudioSystem.getSourceDataLine(OUTPUT);
-                        line=fresh;
-                        fresh.open(OUTPUT,4096);
+                    SourceDataLine current=line;
+                    if(current==null){
+                        current=AudioSystem.getSourceDataLine(OUTPUT);
+                        line=current;
+                        current.open(OUTPUT,4096);
                     }
-                    if(!line.isRunning())line.start();
+                    if(!current.isRunning())current.start();
                     if(unavailable){
                         System.err.println("Beckenburg environment audio output restored");
                         unavailable=false;
                     }
                     byte[] block=mixer.block(listener,512,EnvironmentAudio.volume()/100d);
-                    if(line.write(block,0,block.length)<=0)
+                    if(current.write(block,0,block.length)<=0)
                         throw new IllegalStateException("Spatial ambience output accepted no audio frames");
                 }catch(LineUnavailableException|IllegalArgumentException
                         |IllegalStateException|SecurityException problem){
