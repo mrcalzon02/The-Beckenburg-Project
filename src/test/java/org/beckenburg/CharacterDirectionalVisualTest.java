@@ -18,8 +18,28 @@ public final class CharacterDirectionalVisualTest {
     public static void main(String[] args){
         check(CharacterVisuals.HUNTERS.size()==3,"Three approved hunter classes");
         check(CharacterVisuals.ELDERS.size()==3,"Three distinct approved Elder entities");
-        check(DirectionalSprites.frameCount()==41,
-            "All legacy and newly packaged master direction files must be distinct");
+        check(DirectionalSprites.frameCount()==45,
+            "All approved character and Lore Master direction files must be present");
+        long[] rookViews=new long[4];
+        int rookIndex=0;
+        for(int facing:new int[]{0,2,4,6}){
+            BufferedImage view=DirectionalSprites.frame("lore_master",facing);
+            check(view.getWidth()==128&&view.getHeight()==224
+                    &&view.getColorModel().hasAlpha(),
+                "Approved Lore Master source view has incorrect image format: "+facing);
+            int visible=0,clear=0;
+            for(int y=0;y<view.getHeight();y++)
+                for(int x=0;x<view.getWidth();x++){
+                    int alpha=view.getRGB(x,y)>>>24;
+                    if(alpha>=24)visible++;
+                    if(alpha==0)clear++;
+                }
+            check(visible>800&&clear>700,
+                "Approved Lore Master must have a full opaque silhouette and transparent matte: "+facing);
+            rookViews[rookIndex++]=signature(view);
+        }
+        check(Arrays.stream(rookViews).distinct().count()==4,
+            "The approved Lore Master front, left, back and right views must be different");
         long observer=signature(DirectionalSprites.frame("observer",0));
         long[] heads=new long[6];
         int idx=0;
