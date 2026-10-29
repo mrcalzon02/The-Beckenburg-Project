@@ -9,6 +9,8 @@ import java.util.EnumMap;
  */
 public final class GameSfx {
     private static final EnumMap<LanSound.Cue,Long> LAST=new EnumMap<>(LanSound.Cue.class);
+    private static final java.util.concurrent.atomic.AtomicInteger STEP_VARIATION=
+        new java.util.concurrent.atomic.AtomicInteger();
     private static final class Player {static final LanAudio AUDIO=new LanAudio();}
     private GameSfx(){}
     public static void play(LanSound.Cue cue){
@@ -23,8 +25,10 @@ public final class GameSfx {
             if(last!=null&&now-last<interval)return;
             LAST.put(footstep?LanSound.Cue.STEP:cue,now);
         }
-        Player.AUDIO.play(new LanSound.CueEvent(cue,0,
-            footstepVolume(cue),0));
+        boolean footstep=cue==LanSound.Cue.STEP||cue==LanSound.Cue.STEP_STONE
+            ||cue==LanSound.Cue.STEP_CARPET||cue==LanSound.Cue.STEP_WOOD;
+        int seed=footstep?Math.floorMod(STEP_VARIATION.getAndIncrement(),1000000):0;
+        Player.AUDIO.play(new LanSound.CueEvent(cue,0,footstepVolume(cue),seed));
     }
     /** Actual solo world events use the same heading/elevation/door/room
      * projector as multiplayer. UI clicks still use local non-positional audio. */
