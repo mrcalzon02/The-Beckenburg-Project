@@ -65,7 +65,7 @@ public final class VanInteriorLayout {
         new Fixture("pc_keyboard_mp_1",.02,FLOOR_Y+.742,1.53,1,0,Mount.FURNITURE,"desk keyboard"),
         // Bespoke Beckenburg LCD geometry: these have independently updated
         // world-space faces, not copies of a hidden Swing menu or imported CRT.
-        new Fixture("beckenburg_wide_monitor",0,FLOOR_Y+.88,2.015,1,Math.PI,Mount.BULKHEAD,"site map"),
+        new Fixture("beckenburg_wide_monitor",0,FLOOR_Y+.88,1.96,1,Math.PI,Mount.BULKHEAD,"site map"),
         new Fixture("beckenburg_flat_monitor",.83,FLOOR_Y+1.16,-1.2,1,Math.PI/2,Mount.WALL,"camera feed"),
         new Fixture("beckenburg_flat_monitor",.83,FLOOR_Y+1.16,-.2,1,Math.PI/2,Mount.WALL,"haunting activity"),
         new Fixture("beckenburg_flat_monitor",.83,FLOOR_Y+1.16,.8,1,Math.PI/2,Mount.WALL,"sound telemetry"),
