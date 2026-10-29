@@ -1761,6 +1761,17 @@
       "action": "Code commit 61fe14c5e34bc6206517aab99424f7384901bfb2 routes the warehouse to InvestigationGame.openMultiplayerInventory(), selecting LanLobbyPanel's real Equipment & Supplies tab, while retaining rear armory/wardrobe campaign profile purchases. Network desk still opens the connection tab. Both wrappers inherit EquipmentCatalogPanel; no new store or inventory transfer is introduced.",
       "evidence": "Source push and remote readback confirmed. New CastleInventoryWorkstationTest compares real inventory catalog entries, exercises physical workstation callback separation and checks disconnected network purchases remain disabled; added to regression-tests.txt. Java compilation, exact-SHA workflow and installed Castle player interaction are not yet accepted; focused Castle checks 40947285516 were in progress on the code commit when logged.",
       "older_maps": "Audit actual inventory/store routing in campaign preparation, multiplayer van rack, campaign co-op host/guest screens and existing menu back navigation individually. One Castle routing fix is not cross-mode persistence acceptance."
+    },
+    {
+      "id": "DEV-166",
+      "title": "Investigation doors snap between poses rather than physically swinging",
+      "status": "animation-source-pushed-CI-and-installed-review-pending",
+      "affected": "House, Farmhouse, School and shared HouseMap investigation portals (solo/LAN, including host door snapshots)",
+      "symptom": "Pressing E instantly swaps closed/open geometry; no visible motion, and the old portal-key cache path also resets the complete OpenGL scene while repainting.",
+      "cause": "Door state was stored solely as a Boolean, consumed directly by imported door geometry and interaction rays. Portal geometry caching reused the portal-only residency key, forcing GPU scene ID change when the same door switched pose.",
+      "action": "Source commits 814d7c1, ad2176c, d1c857c animate per-door eased visual opening/closing for 450ms, support mid-swing reversal and unchanged host snapshots, render moving leaves as transient meshes with settled-pose-specific retained GPU keys and maintain ray alignment. 62b0ef3 adds DoorSwingTest to full regression manifest b0afe0a4. 6def2a3 aligns solo door sound with LanSound.Cue.DOOR. Compile blocker in unrelated GPU acceptance smoke variable repaired in f8fe48e. Authoritative open/closed collision remains immediate; physical sweep collision is a separate acceptance/design concern. Broad CPU lighting-cache invalidation remains in issue #44.",
+      "evidence": "Live user report 2026-10-29 (House door snaps, hitches, flashes). Source pushes verified individually; full-round CI and real installed Windows GPU frame/motion capture pending. Do not claim measured 450ms visible animation without hardware frames and profile.",
+      "older_maps": "Audit all authored site door meshes, hinge pivots, double doors/gates, Castle doorway and van cargo doors independently; shared HouseMap source alone does not certify older maps."
     }
   ],
   "audit_categories": [
