@@ -217,7 +217,8 @@ public final class InvestigationGame {
     }
     private void showNetworkInCastle(){
         if(networkLobby==null)return;
-        if(castle!=null&&"castle".equals(currentScreen)){
+        if(castle!=null){
+            if(!"castle".equals(currentScreen))showCastle();
             castle.openService("MULTIPLAYER / HOST OR JOIN",networkLobby,this::showCastle);
             SwingUtilities.invokeLater(networkLobby::requestFocusInWindow);
         }else page("network",networkLobby);
