@@ -112,7 +112,8 @@ public final class LevelSoundscape implements AutoCloseable {
                         block[i]=(byte)value;
                         block[i+1]=(byte)(value>>8);
                     }
-                    line.write(block,0,block.length);
+                    if(line.write(block,0,block.length)<=0)
+                        throw new IllegalStateException("Room ambience output accepted no audio frames");
                 }catch(LineUnavailableException|IllegalArgumentException
                         |IllegalStateException|SecurityException failure){
                     if(!unavailable)
