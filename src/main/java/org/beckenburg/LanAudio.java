@@ -29,6 +29,7 @@ public final class LanAudio implements AutoCloseable {
     }
     private final OutputFactory outputFactory;
     private final Thread worker;
+    private volatile SourceDataLine output;
     private volatile boolean closed;
     /** A generation change cancels a source even if off/on occurs between two mixer blocks. */
     public static final class FixtureGate {
@@ -201,6 +202,7 @@ public final class LanAudio implements AutoCloseable {
                     if(voices.isEmpty())continue;
                     if(line==null){
                         line=outputFactory.create();
+                        output=line;
                         line.open(FORMAT,4096);
                         line.start();
                     }
@@ -224,13 +226,13 @@ public final class LanAudio implements AutoCloseable {
                     outputMissing=true;
                     voices.clear();
                     queue.clear(); // No delayed hunt or interaction sounds after device recovery.
-                    release(line);line=null;
+                    release(line);output=null;line=null;
                     if(!closed)Thread.sleep(350);
                 }
             }
         }catch(InterruptedException stop){
             Thread.currentThread().interrupt();
-        }finally{release(line);}
+        }finally{output=null;release(line);}
     }
     /** Pure deterministic stereo 16-bit PCM. Useful for audio quality and pan regression tests. */
     public static byte[] synthesize(LanSound.CueEvent event){
@@ -348,5 +350,10 @@ public final class LanAudio implements AutoCloseable {
         }
         return output;
     }
-    @Override public void close(){closed=true;queue.clear();worker.interrupt();}
+    @Override public void close(){
+        closed=true;
+        queue.clear();
+        worker.interrupt();
+        release(output); // Unblock a blocked device write during view/application shutdown.
+    }
 }
