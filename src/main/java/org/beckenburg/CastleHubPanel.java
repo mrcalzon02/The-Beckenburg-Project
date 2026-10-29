@@ -245,7 +245,10 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         down.clear();look.release();actions.multiplayerInventory();
     }
     private void use(CastleHubMap.Station station){
-        if(station==CastleHubMap.Station.ARCHIVE){archive.open();down.clear();look.release();noticeTicks=0;repaint();return;}
+        if(station==CastleHubMap.Station.ARCHIVE){
+            archive.open();GameSfx.play(LanSound.Cue.BOOK);
+            down.clear();look.release();noticeTicks=0;repaint();return;
+        }
         if(station==null){
             if(!orientation.active()&&elevation<1.8&&
                 CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw)){
@@ -280,6 +283,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         }catch(RuntimeException e){
             BeckenburgDiagnostics.fail("Castle workstation interaction",e);
             notice="Workstation unavailable: "+e.getMessage();
+            GameSfx.play(LanSound.Cue.UI_REJECT);
         }
         noticeTicks=110;
     }
@@ -306,7 +310,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             var portal=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
             if(portal!=null){
                 boolean open=map.toggleDoor(portal.id());
-                GameSfx.play(LanSound.Cue.SWITCH);
+                GameSfx.play(LanSound.Cue.DOOR);
                 notice=(portal.gate()?"Courtyard portcullis":"Castle door")+
                     (open?" raised / passage clear.":" closed / passage secured.");
                 noticeTicks=130;
