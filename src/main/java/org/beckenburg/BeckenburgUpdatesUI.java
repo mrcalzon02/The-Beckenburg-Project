@@ -6,7 +6,6 @@ import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.nio.file.Path;
 import java.util.prefs.Preferences;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -156,7 +155,7 @@ public final class BeckenburgUpdatesUI {
                     BeckenburgDeveloperTrace.update("download-start","tag="+chosen.tag()+" size="+chosen.size());
                     BeckenburgDiagnostics.record("UPDATES downloading "+chosen.tag()+
                         " expected SHA-256 "+chosen.digest());
-                    Path verified=BeckenburgUpdates.stageVerified(chosen,BeckenburgUpdates.updateDirectory(),
+                    BeckenburgUpdates.StagedInstaller verified=BeckenburgUpdates.stageVerified(chosen,BeckenburgUpdates.updateDirectory(),
                         percent->SwingUtilities.invokeLater(()->progress.setValue(percent)));
                     BeckenburgDeveloperTrace.update("download-verified","tag="+chosen.tag()+" sha256-ok");
                     BeckenburgDiagnostics.record("UPDATES verified installer "+chosen.tag()+
