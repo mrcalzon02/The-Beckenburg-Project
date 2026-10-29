@@ -1097,7 +1097,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             // Use only this already authorized camera view. The video has the
             // host's camera-specific disclosed bodies, not the local hunter's.
             if(videoRenderer.frameDiagnostics()!=null
-                    &&videoRenderer.frameDiagnostics().gpuReadbackAvailable())
+                    &&(!videoRenderer.frameDiagnostics().gpu()
+                        ||videoRenderer.frameDiagnostics().gpuReadbackAvailable()))
                 VanLiveScreens.camera(videoRenderer.image(),
                     "CAM H"+(camera.owner()+1)+" / "+map.roomName(camera.room()));
         }
