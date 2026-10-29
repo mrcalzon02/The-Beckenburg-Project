@@ -27,6 +27,40 @@ public final class HouseMap {
         hidingDensity=density;closetColliders=LevelClosets.colliders(level,density);
     }
     private final Set<Integer> openDoors=new HashSet<>(),openWindows=new HashSet<>();
+    /** Door poses are visual only: authoritative collision, sound and LAN snapshots
+     * continue to use openDoors. No geometry/lightmap is rebuilt for each step. */
+    static final long DOOR_SWING_NANOS=450_000_000L;
+    private record DoorMotion(double from,double target,long startedAt){}
+    private final Map<Integer,DoorMotion> doorMotions=new HashMap<>();
+    /** Continuous 0=closed, 1=open door pose; smoothstep at a constant 450ms.
+     * The clock overload is package-private for deterministic regression tests. */
+    public double doorOpenFraction(int id){return doorOpenFraction(id,System.nanoTime());}
+    double doorOpenFraction(int id,long now){
+        DoorMotion motion=doorMotions.get(id);
+        if(motion==null)return doorOpen(id)?1.0:0.0;
+        long elapsed=Math.max(0L,now-motion.startedAt());
+        if(elapsed>=DOOR_SWING_NANOS){
+            doorMotions.remove(id);
+            return motion.target();
+        }
+        double t=elapsed/(double)DOOR_SWING_NANOS;
+        double eased=t*t*(3-2*t);
+        return motion.from()+(motion.target()-motion.from())*eased;
+    }
+    /** An in-flight pose is transient; completed poses alone enter retained VBO caches. */
+    public boolean doorMoving(int id){
+        doorOpenFraction(id);
+        return doorMotions.containsKey(id);
+    }
+    private boolean setDoorTarget(int id,boolean open,long now){
+        if(doorOpen(id)==open)return false; // unchanged host snapshots never restart motion
+        double from=doorOpenFraction(id,now);
+        if(open)openDoors.add(id);else openDoors.remove(id);
+        double target=open?1.0:0.0;
+        if(Math.abs(from-target)<1e-6)doorMotions.remove(id);
+        else doorMotions.put(id,new DoorMotion(from,target,now));
+        return true;
+    }
     private final VanStaging van;
     public HouseMap(){this(Site.HOUSE);}
     public HouseMap(Site site){
@@ -100,7 +134,9 @@ public final class HouseMap {
             int id=Integer.parseInt(token);
             if(level.portals().stream().noneMatch(p->p.id()==id&&p.door())||!ids.add(id))throw new IllegalArgumentException("invalid door id");
         }
-        openDoors.clear();openDoors.addAll(ids);
+        long now=System.nanoTime();
+        for(int id:new HashSet<>(openDoors))if(!ids.contains(id))setDoorTarget(id,false,now);
+        for(int id:ids)setDoorTarget(id,true,now);
     }
     public boolean windowOpen(int id){return openWindows.contains(id);}
     public String windowSnapshot(){return openWindows.stream().sorted().map(String::valueOf).collect(java.util.stream.Collectors.joining(","));}
@@ -122,9 +158,10 @@ public final class HouseMap {
         return best;
     }
     /** Exact portal selected by the centre ray; no second nearest-object search. */
-    public void toggleDoor(int id){
+    public void toggleDoor(int id){toggleDoor(id,System.nanoTime());}
+    void toggleDoor(int id,long now){
         if(level.portals().stream().noneMatch(p->p.id()==id&&p.door()))throw new IllegalArgumentException("invalid door");
-        if(!openDoors.add(id))openDoors.remove(id);
+        setDoorTarget(id,!doorOpen(id),now);
     }
     public void toggleWindow(int id){
         if(level.portals().stream().noneMatch(p->p.id()==id&&p.kind().equals("window")))throw new IllegalArgumentException("invalid window");
@@ -137,11 +174,13 @@ public final class HouseMap {
     public boolean toggleNearestDoor(double x,double y,double z){
         Portal best=null;double distance=1.65;
         for(Portal p:level.portals())if(p.door()&&Math.abs(p.y()-y)<.65){double d=Math.hypot(x-p.x(),z-p.z());if(d<distance){best=p;distance=d;}}
-        if(best==null)return false;if(!openDoors.add(best.id()))openDoors.remove(best.id());return true;
+        if(best==null)return false;toggleDoor(best.id());return true;
     }
     public boolean toggleNearestDoor(double x,double z){int r=roomAt(x,z);return r>=0&&toggleNearestDoor(x,floorY(r),z);}
     public boolean openDoorBetweenRooms(int from,int to){
-        boolean changed=false;for(Portal p:level.portals())if(p.joins(from,to)&&p.door())changed|=openDoors.add(p.id());return changed;
+        boolean changed=false;long now=System.nanoTime();
+        for(Portal p:level.portals())if(p.joins(from,to)&&p.door())changed|=setDoorTarget(p.id(),true,now);
+        return changed;
     }
     public List<Integer> adjacentRooms(int room){checkRoom(room);return level.portalsFrom(room).stream().filter(p->!p.kind().equals("window")).map(p->p.a()==room?p.b():p.a()).filter(next->next!=room).distinct().toList();}
     public List<Integer> ghostExits(int room){return room==14?List.of():adjacentRooms(room).stream().filter(r->r!=14).toList();}
