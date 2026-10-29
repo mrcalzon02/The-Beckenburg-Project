@@ -108,21 +108,36 @@ public class EquipmentCatalogPanel extends JPanel {
         try{
             boolean bought=offer.medicine()==null?profile.purchaseCatalogGear(offer.id(),offer.tier()):
                 profile.purchase(offer.medicine(),FieldSupplies.Tier.values()[offer.tier().ordinal()]);
-            refresh();notice(bought?"PURCHASE SAVED":"Purchase unavailable / funds or stock limit");if(bought)changed.run();return bought;
-        }catch(IOException failed){notice("NOT SAVED: "+failed.getMessage());return false;}
+            refresh();notice(bought?"PURCHASE SAVED":"Purchase unavailable / funds or stock limit");
+            if(bought){changed.run();GameSfx.play(LanSound.Cue.PURCHASE);}
+            else GameSfx.play(LanSound.Cue.UI_REJECT);
+            return bought;
+        }catch(IOException failed){
+            notice("NOT SAVED: "+failed.getMessage());GameSfx.play(LanSound.Cue.UI_REJECT);return false;
+        }
     }
     public boolean sellSelected(){
         Offer offer=offers.getSelectedValue();if(profile==null||offer==null||!sell.isEnabled())return false;
         try{boolean sold=profile.sellSupply(offer.medicine(),FieldSupplies.Tier.values()[offer.tier().ordinal()]);
-            refresh();if(sold){changed.run();notice("SALE SAVED");}return sold;
-        }catch(IOException failed){notice("NOT SAVED: "+failed.getMessage());return false;}
+            refresh();
+            if(sold){changed.run();notice("SALE SAVED");GameSfx.play(LanSound.Cue.PURCHASE);}
+            else GameSfx.play(LanSound.Cue.UI_REJECT);
+            return sold;
+        }catch(IOException failed){
+            notice("NOT SAVED: "+failed.getMessage());GameSfx.play(LanSound.Cue.UI_REJECT);return false;
+        }
     }
     public boolean equipSelected(){
         Offer offer=offers.getSelectedValue();if(offer==null||!equip.isEnabled())return false;
         if(profile==null){gearRequest.accept(new EquipmentRackDialog.Choice(EquipmentRackDialog.Action.EQUIP,offer.id(),slot.getSelectedIndex(),null));
             notice("Loadout requested / awaiting host");return true;}
-        try{profile.equipCatalog(slot.getSelectedIndex(),offer.id());refresh();changed.run();notice("LOADOUT SAVED");return true;}
-        catch(IOException|IllegalArgumentException failed){notice("NOT SAVED: "+failed.getMessage());return false;}
+        try{
+            profile.equipCatalog(slot.getSelectedIndex(),offer.id());refresh();changed.run();
+            notice("LOADOUT SAVED");GameSfx.play(LanSound.Cue.SELECT);return true;
+        }
+        catch(IOException|IllegalArgumentException failed){
+            notice("NOT SAVED: "+failed.getMessage());GameSfx.play(LanSound.Cue.UI_REJECT);return false;
+        }
     }
     public void refresh(){
         if(profile!=null){credits=profile.currency();owned.clear();owned.putAll(profile.catalogEquipment());
