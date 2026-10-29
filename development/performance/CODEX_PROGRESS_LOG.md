@@ -2,6 +2,13 @@
 
 This record is the per-project progress ledger for the FINISH plan. Update **after each verified commit**; never backfill "passed" from an unrelated SHA.
 
+## Scheduled follow-up checkpoint (2026-10-29)
+
+- Source checkpoint: `012989195cca567fee3e56f0c7c0d2092914e3ca` on `codex/perf-map-followup-20261029`, based on the active all-map retained-world performance revision `f82fb0857ec7b5ba984c9d33e034cda3cd904dbf`.
+- Change: `SceneRenderer` now determines active portable illumination once per renderer phase using an allocation-free loop. The unchanged safety rule still routes all scenery, shell, and auxiliary retained-world geometry through the transient path whenever any portable light is on; otherwise high-instance outdoor/map views no longer create a stream and rescan the same light map for every visible instance.
+- Verification: `git diff --check` passed and remote branch readback matched `01298919`. The scheduler command window did not produce a complete local Java build/test result, so **no build, full-regression, CI, FPS, or hardware acceptance is claimed** for this SHA.
+- Next: run the exact-SHA renderer and full regression workflow, then compare matched per-map frame CPU allocation/submit timing with portable lights off and on before considering the optimization accepted. Gate status: **IMPLEMENTED / REMOTE CHECKPOINTED / CI PENDING**.
+
 ## Local preservation/unification entry (2026-10-26)
 
 Expanded by explicit user direction to include feature PRs #3/#29. Earlier unified source `d2c644a0` passed exact-head full acceptance [40434726259](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40434726259) and GPU [40434626216](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40434626216); newer feature integration requires its own checks. Reconciled Quartermaster `e988eb01`, hunter/companion `f3c86035`, fatal JVM log retention `84cac58a`, native teardown `417980e6`. The latter passed three real RTX 5070 diagnostics with process exit zero, versus baseline `f6793bda` exit 0xC0000409. Their cold-route CPU p50/p95 remain 108–123 / 2796–2852 ms, **not accepted interactive FPS**. Fixed a reproduced hunter-branch ghost-resume failure without weakening recovery tests. Detailed code/evidence/status: `development/integration/2026-10-26/` and `hardware/2026-10-26/`. Remaining: expanded exact-SHA full acceptance, native case/hardware baseline, then work packages 0/1. No A–G milestone marked complete.
