@@ -273,8 +273,8 @@ public final class GpuUiSmoke {
   capture(window,index+"-"+site.name().toLowerCase()+"-debrief");
   SwingUtilities.invokeLater(ok::doClick);
   require(()->{
-   var home=castle(window.getContentPane());
-   return home!=null&&home.isShowing()&&game(window.getContentPane())==null?Boolean.TRUE:null;
+   var returnedCastle=castle(window.getContentPane());
+   return returnedCastle!=null&&returnedCastle.isShowing()&&game(window.getContentPane())==null?Boolean.TRUE:null;
   },30,"Extraction did not return to Castle home");
   results.append(site.name()).append(',').append(naturalOpening?"natural":"skip").append(',')
       .append(startupMillis).append(',').append(frames).append(',').append(walked).append(',').append(outcome).append('\n');
