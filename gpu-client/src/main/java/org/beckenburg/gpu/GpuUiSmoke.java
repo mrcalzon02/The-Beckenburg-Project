@@ -1,6 +1,8 @@
 package org.beckenburg.gpu;
 
 import org.beckenburg.GpuWorldRenderer;
+import org.beckenburg.CastleHubPanel;
+import org.beckenburg.CastleHubMap;
 import org.beckenburg.InvestigationGame;
 import org.beckenburg.HouseMap;
 import org.beckenburg.HunterPosture;
@@ -27,7 +29,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 /** Live GPU + Swing acceptance: actually selects a map and enters a solo
- * investigation through the installed game's real main-menu controls.
+ * investigation through the installed game's in-world Castle dispatch workstation.
  */
 public final class GpuUiSmoke {
  private GpuUiSmoke(){}
@@ -140,6 +142,25 @@ public final class GpuUiSmoke {
        &&f.getTitle().startsWith("The Beckenburg Project"))return f;
   return null;
  }
+ private static CastleHubPanel castle(Container root){
+  for(Component child:root.getComponents()){
+   if(child instanceof CastleHubPanel home&&home.isShowing())return home;
+   if(child instanceof Container nested){
+    var found=castle(nested);if(found!=null)return found;
+   }
+  }
+  return null;
+ }
+ /** Uses the actual Castle station callback; look-to-use collision is independently tested. */
+ private static void station(CastleHubPanel home,CastleHubMap.Station target){
+  try{
+   var method=CastleHubPanel.class.getDeclaredMethod("use",CastleHubMap.Station.class);
+   method.setAccessible(true);
+   method.invoke(home,target);
+  }catch(ReflectiveOperationException failure){
+   throw new IllegalStateException("Castle workstation "+target+" unavailable",failure);
+  }
+ }
  private static JPanel dispatch(Container root){
   for(Component child:root.getComponents()){
    if(child instanceof JPanel panel&&"solo".equals(panel.getName())&&panel.isShowing())return panel;
@@ -163,11 +184,10 @@ public final class GpuUiSmoke {
   InvestigationGame.main(new String[0]);
   JFrame window=waitFor(()->{
    JFrame candidate=launcher();
-   return candidate!=null&&button(candidate.getContentPane(),
-       "START SOLO INVESTIGATION")!=null?candidate:null;
+   return candidate!=null&&castle(candidate.getContentPane())!=null?candidate:null;
   },60);
-  if(window==null)throw new AssertionError("GPU-loaded real main menu unavailable");
-  System.out.println("GPU UI PASS real main menu loaded");
+  if(window==null)throw new AssertionError("GPU-loaded Castle home unavailable");
+  System.out.println("GPU UI PASS real Castle home loaded");
   try{
    var sites=System.getProperty("beckenburg.gpu.uiSmoke.sites","HOUSE,FARMHOUSE,SCHOOL").split(",");
    if(sites.length==0)throw new IllegalArgumentException("No GPU UI sites requested");
@@ -184,11 +204,10 @@ public final class GpuUiSmoke {
  }
  private static void runCase(GpuWorldRenderer gpu,JFrame window,SiteCatalog.Location site,
      int index,boolean naturalOpening,StringBuilder results)throws Exception{
-  require(()->button(window.getContentPane(),"START SOLO INVESTIGATION"),30,"Main menu did not return");
-  SwingUtilities.invokeLater(()->{
-   var start=button(window.getContentPane(),"START SOLO INVESTIGATION");
-   if(start!=null)start.doClick();
-  });
+  CastleHubPanel home=require(()->castle(window.getContentPane()),30,
+      "Castle home did not return after investigation");
+  require(()->{station(home,CastleHubMap.Station.EXPEDITION);return Boolean.TRUE;},
+      15,"Castle expedition workstation unavailable");
   JPanel chooser=waitFor(()->dispatch(window.getContentPane()),15);
   if(chooser==null)throw new AssertionError("GPU launcher did not request location selection");
   require(()->{
@@ -254,13 +273,13 @@ public final class GpuUiSmoke {
   capture(window,index+"-"+site.name().toLowerCase()+"-debrief");
   SwingUtilities.invokeLater(ok::doClick);
   require(()->{
-   var start=button(window.getContentPane(),"START SOLO INVESTIGATION");
-   return start!=null&&start.isShowing()&&game(window.getContentPane())==null?Boolean.TRUE:null;
-  },30,"Extraction did not return to menu");
+   var home=castle(window.getContentPane());
+   return home!=null&&home.isShowing()&&game(window.getContentPane())==null?Boolean.TRUE:null;
+  },30,"Extraction did not return to Castle home");
   results.append(site.name()).append(',').append(naturalOpening?"natural":"skip").append(',')
       .append(startupMillis).append(',').append(frames).append(',').append(walked).append(',').append(outcome).append('\n');
   Files.writeString(OUTPUT.resolve("case-cycles.csv"),results);
   System.out.println("GPU UI PASS "+site.name()+" hunter ready="+startupMillis+"ms, walk="+walked+
-      "m, frames="+frames+", real extraction="+outcome+", menu restored");
+      "m, frames="+frames+", real extraction="+outcome+", Castle home restored");
  }
 }
