@@ -972,7 +972,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             releaseVoice();
         }
         vanDisplay=insideVan();
-        if(!vanDisplay){meters=null;if(interfaceOpen.equals("MAP"))interfaceOpen="";}
+        if(!vanDisplay){
+            meters=null;
+            if(interfaceOpen.equals("MAP")||interfaceOpen.equals("TEAM")
+                    ||interfaceOpen.equals("ACTIVITY")||interfaceOpen.equals("SOUND"))
+                interfaceOpen="";
+        }
         if(vanDisplay&&tick-lastVanPoll>=11){
             try{client.vanMonitor();lastVanPoll=tick;}
             catch(IOException e){feedback="Van display disconnected: "+e.getMessage();vanDisplay=false;}
@@ -1257,6 +1262,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }
             drawChat(g,h);
             if(vanDisplay&&(interfaceOpen.isEmpty()||interfaceOpen.equals("RELAY")))drawVanMeters(g,h);
+            if(interfaceOpen.equals("TEAM")||interfaceOpen.equals("ACTIVITY")
+                    ||interfaceOpen.equals("SOUND"))
+                VanLiveScreens.drawExpanded(g,VanLiveScreens.Panel.valueOf(interfaceOpen),
+                    getWidth(),h);
             if(casefileOpen && journalPage!=0)drawFieldJournal(g,h);
             if(casefileOpen && journalPage==0){
                 int rows=Math.min(casefile.size(),Math.min(8,Math.max(1,(h-135)/37)));
