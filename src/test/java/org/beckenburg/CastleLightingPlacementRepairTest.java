@@ -64,6 +64,20 @@ public final class CastleLightingPlacementRepairTest {
         }
         var lighting=new FixtureLighting(map);
         check(lighting.sources().size()==lamps.size(),"all fittings feed the game light engine");
+        // Verify the actual illumination source is no longer buried in masonry.
+        var editedLamps=CastleLevelEdits.current().lamps();
+        for(int i=0;i<editedLamps.size();i++){
+            var fixture=editedLamps.get(i).fixture();
+            if(fixture.mount()!=CastleHubDecor.Mount.WALL)continue;
+            var fitted=CastleWallLampMount.resolve(fixture,CastleLevelEdits.current().walls());
+            var emitter=lighting.sources().get(i);
+            check(Math.hypot(emitter.x()-fitted.x(),emitter.z()-fitted.z())<.00001,
+                "emitter must coincide with fitted wall-light mesh: "
+                +fixture.x()+","+fixture.z());
+            check(emitter.kind()==FixtureLighting.Kind.WALL_SCONCE,
+                "wall light must retain sconce emission semantics");
+        }
+
         brightness(lighting,map,5.2,1.5,29.0,"west practice wing");
         brightness(lighting,map,35.0,1.5,21.7,"east service wing");
         brightness(lighting,map,24.0,1.5,26.5,"multiplayer operations wing");

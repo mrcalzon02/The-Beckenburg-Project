@@ -299,7 +299,10 @@ public final class FixtureLighting {
        ?(bounds.y1()-bounds.y0())*light.scale()*.55:0);
    Kind kind=light.on().contains("ceiling_lamp_4")?Kind.CANDLE_CHANDELIER
        :light.mount()==CastleHubDecor.Mount.WALL?Kind.WALL_SCONCE:Kind.FROSTED_DOME;
-   add(kind,0,0,light.x(),y,light.z(),0,-1,0,edited.radius(),edited.power(),
+   // Use the wall-fitted position for the emitter as well as the GLB.
+   // Emission inside the 42 cm stone otherwise shadows its own room.
+   var mount=CastleWallLampMount.resolve(light,CastleLevelEdits.current().walls());
+   add(kind,0,0,mount.x(),y,mount.z(),0,-1,0,edited.radius(),edited.power(),
        1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
   }factors=new double[sources.size()];
  }
