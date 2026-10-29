@@ -45,8 +45,8 @@ public record SoundVolume(String id,Kind kind,Shape shape,Source source,
             break;
         case STONE_SETTLE:
             double beat=(t+Math.floorMod(id.hashCode(),23))%31.0;
-            double transient=beat<.9?Math.exp(-beat*7):0;
-            v=transient*(Math.sin(2*Math.PI*(56-beat*12)*t)*.21+noise(frame/17)*.11);
+            double impactEnvelope=beat<.9?Math.exp(-beat*7):0;
+            v=impactEnvelope*(Math.sin(2*Math.PI*(56-beat*12)*t)*.21+noise(frame/17)*.11);
             break;
         default:v=noise(frame/3)*.08+noise(frame/41)*.12*Math.pow(Math.max(0,Math.sin(t*21)),4);
     }return(short)Math.round(v*32767);}
