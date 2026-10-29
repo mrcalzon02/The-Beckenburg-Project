@@ -48,6 +48,18 @@ public final class CastleLiveRepairVisualTest {
         view.yaw=0;view.pitch=-.13;
         capture(view,map,"east-wing-brighter-lights");
         capture(view,map,"east-wing-brighter-lights-dark");
+        // Acceptance views framing actual wall lamps (not just the castle
+        // overall). Compare on/off to catch reintroduced clipping or jumping.
+        view.x=8.9;view.z=4.1;view.eyeHeight=1.62;
+        view.yaw=Math.atan2(10.30-view.x,5.0-view.z);
+        view.pitch=Math.atan2(2.24-view.eyeHeight,Math.hypot(10.30-view.x,5.0-view.z));
+        capture(view,map,"west-corridor-sconce-closeup");
+        capture(view,map,"west-corridor-sconce-closeup-dark");
+        view.x=22.0;view.z=19.5;view.eyeHeight=1.62;
+        view.yaw=Math.atan2(20.70-view.x,18.0-view.z);
+        view.pitch=Math.atan2(2.24-view.eyeHeight,Math.hypot(20.70-view.x,18.0-view.z));
+        capture(view,map,"east-corridor-sconce-closeup");
+        capture(view,map,"east-corridor-sconce-closeup-dark");
         // Source cars and noninteractive van, viewed from inside the gate.
         view.x=15.5;view.z=32.5;view.eyeHeight=1.62;
         view.yaw=0;view.pitch=-.12;

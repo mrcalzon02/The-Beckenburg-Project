@@ -592,7 +592,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00c3\u201a\u00c2\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -920,7 +920,7 @@
       "title": "Reshaped bank left old crest dressing unsupported",
       "status": "fixed-native-rigid-crest-refit",
       "affected": "Camp Hollow Creek bank/crest refinement",
-      "symptom": "Actual original log bearings sit53\u00e2\u20ac\u201c63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
+      "symptom": "Actual original log bearings sit53â€“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
       "cause": "Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.",
       "action": "Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.",
       "evidence": "quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json",
@@ -1062,7 +1062,7 @@
       "id": "DEV-097",
       "title": "Native exterior zones treated as indoor by numeric room ID",
       "status": "fixed-scoped",
-      "affected": "Hollow Creek outdoor zones 0\u201311",
+      "affected": "Hollow Creek outdoor zones 0–11",
       "symptom": "Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.",
       "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
       "action": "Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.",
@@ -1165,7 +1165,7 @@
       "symptom": "A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.",
       "cause": "The edge blockers constrain crossings, but terrain support alone still allowed a direct underwater spawn query.",
       "action": "Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.",
-      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47\u201355k water pixels per frame instead of3\u20136k.",
+      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.",
       "older_maps": "Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map."
     },
     {
@@ -1363,7 +1363,7 @@
       "symptom": "Van metal textures show banding",
       "cause": "Generated IRON tile darkened every eighth X pixel by17levels; repeated UVs stamp grooves across broad painted panels.",
       "action": "Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.",
-      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652\u21920.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
+      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652→0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
       "older_maps": "Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted."
     },
     {
@@ -1558,7 +1558,7 @@
       "title": "Rebuilt Castle bypassed retained GPU geometry",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "Castle headquarters",
-      "symptom": "Rebuilt Castle measured 35\u201373 ms median frames versus 18 ms before the rebuild, allocating 63\u2013201 MiB per frame at 640x400 on RTX5070.",
+      "symptom": "Rebuilt Castle measured 35–73 ms median frames versus 18 ms before the rebuild, allocating 63–201 MiB per frame at 640x400 on RTX5070.",
       "cause": "Castle calls drawGpuFaces with no investigation map, excluding it from the map-gated residency path; 220671 source triangles were reprocessed each frame.",
       "action": "Retain authored Castle topology, state-keyed fixture/door assemblies, conservative spatial chunks and explicitly revisioned GPU buffers.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1569,7 +1569,7 @@
       "title": "PSX framebuffer quantization repeated costly floating-point rounding",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "All rendered maps and Castle",
-      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6\u201313 ms per frame in the baseline.",
+      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6–13 ms per frame in the baseline.",
       "cause": "Six floating-point rounding operations per pixel repeated an invariant 256-channel/16-phase transform.",
       "action": "Use precomputed channel lookup tables with exhaustive numerical and full-image pixel parity.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1591,7 +1591,7 @@
       "title": "Cosmetic light flicker invalidated retained shadow work",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "Castle and shared stationary fixture lighting",
-      "symptom": "First residency candidate produced 300\u2013400 ms flicker stalls; retaining geometry alone was insufficient.",
+      "symptom": "First residency candidate produced 300–400 ms flicker stalls; retaining geometry alone was insufficient.",
       "cause": "Brightness revisions repeated tessellation, ray visibility and source attenuation; bounded global shadow caches thrashed.",
       "action": "Separate immutable receiver attenuation/occlusion probes from live brightness factors; retain regional revisions and invalidate on actual occluder changes.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1705,7 +1705,7 @@
       "cause": "Lighting tessellation depended on camera distance even for retained static resources; movement across bands rebuilt vertices/probes.",
       "action": "Prepare fixed full close-range lighting topology for resident interior chunks; preserve exterior/native rules, original normals and UVs, and dynamic reference paths.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Translation identity/revision contract passes. Staged 33-pose CPU p95 improved about 268ms to 40ms; completed-frame cold/waypoint p95 remains 76ms.",
-      "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A\u2013G acceptance are finished."
+      "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A–G acceptance are finished."
     },
     {
       "id": "DEV-161",
@@ -1728,6 +1728,17 @@
       "action": "Snapshot the exact union of contributing source factor bits per material. Skip only exact matches; preserve full RGB evaluation, topology/door invalidation and immutable GPU revisions. Provide factorDependencies.disabled fallback.",
       "evidence": "Source99baa799: GPU40927250498 and full40927255222 SUCCESS,282/282 with zero skipped, packaged TCP/desktop/native and all three actual GPU case cycles. Java17 GPU package, one-ULP precision/ownership, all-ten-map dense-reference vertex parity under2GiB, fallback and actual RTX controls pass.32 image pairs match exactly. Three1280x800 Castle trials reduce exterior p95 from34.50ms to20.60ms; final package confirms36.56 to20.09ms. Slightly slower medians/library p95 are disclosed. Six scene cycles remain bounded. Evidence: development/performance/hardware/2026-10-29-light-factor-dependencies/.",
       "older_maps": "Shared implementation requires all-map controls and final CI. Scripted warm camera timings do not certify physical routes, cold starts, installed full rounds or release."
+    },
+    {
+      "id": "DEV-163",
+      "title": "Castle wall sconce meshes embedded in 42 cm masonry",
+      "status": "code-fix-pushed-awaiting-visual-and-ci-verification",
+      "affected": "Castle Beckenburg wall-mounted imported GLB lamps and light-switch mounting plates",
+      "symptom": "2026-10-29 user screenshot shows illuminated wall fitting partially swallowed by the corridor stonework.",
+      "cause": "The castle renderer centred an imported sconce on its saved fixture coordinate. Several nominal wall mounts sit 0.20-0.27 m from the wall centerline while the stone is 0.42 m thick; the mesh's rear triangles and synthetic mounting plate were inside the visible masonry face. Earlier mountingWall checks validated an anchor near a wall, not transformed GLB vertex clearance.",
+      "action": "Source commit 732a0911c00c3faaa8ca80893635bfdf6289e69e computes the rear extent of the actual on/off GLB geometry, fits the rendered fixture in front of the real masonry face with 18 mm clearance, and places its plate at the wall. Preserves the editor scene coordinates, switched lighting and UV materials. Close-up on/off inspection captures added; do not treat image generation or packaging alone as visual signoff.",
+      "evidence": "User-supplied screenshot 2026-10-29; CastleLightingPlacementRepairTest now measures world-transformed vertices for each authored wall fitting in both power states against the visible masonry face. Source commit 732a0911 pushed/readback verified; GitHub focused checks 40945959372, GPU 40945959443, full-round 40945959390 and installer 40945959398 pending at time of ledger entry. Close-up frames emitted by CastleLiveRepairVisualTest in build/e2e/castle-repairs.",
+      "older_maps": "Inspect all wall-mounted model families in other investigation sites individually for physical wall thickness, mesh-pivot placement, wall-face support, and clipping. A Castle-only repair does not certify other maps."
     }
   ],
   "audit_categories": [

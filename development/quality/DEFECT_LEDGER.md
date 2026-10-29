@@ -2208,6 +2208,20 @@ Evidence and verification: Source99baa799: GPU40927250498 and full40927255222 SU
 
 Older-map obligation: Shared implementation requires all-map controls and final CI. Scripted warm camera timings do not certify physical routes, cold starts, installed full rounds or release.
 
+### DEV-163 — Castle wall sconce meshes embedded in 42 cm masonry
+
+**Status:** code-fix-pushed-awaiting-visual-and-ci-verification · **Affected:** Castle Beckenburg wall-mounted imported GLB lamps and light-switch mounting plates
+
+2026-10-29 user screenshot shows illuminated wall fitting partially swallowed by the corridor stonework.
+
+Cause / uncertainty: The castle renderer centred an imported sconce on its saved fixture coordinate. Several nominal wall mounts sit 0.20-0.27 m from the wall centerline while the stone is 0.42 m thick; the mesh's rear triangles and synthetic mounting plate were inside the visible masonry face. Earlier mountingWall checks validated an anchor near a wall, not transformed GLB vertex clearance.
+
+Fix / next action: Source commit 732a0911c00c3faaa8ca80893635bfdf6289e69e computes the rear extent of the actual on/off GLB geometry, fits the rendered fixture in front of the real masonry face with 18 mm clearance, and places its plate at the wall. Preserves the editor scene coordinates, switched lighting and UV materials. Close-up on/off inspection captures added; do not treat image generation or packaging alone as visual signoff.
+
+Evidence and verification: User-supplied screenshot 2026-10-29; CastleLightingPlacementRepairTest now measures world-transformed vertices for each authored wall fitting in both power states against the visible masonry face. Source commit 732a0911 pushed/readback verified; GitHub focused checks 40945959372, GPU 40945959443, full-round 40945959390 and installer 40945959398 pending at time of ledger entry. Close-up frames emitted by CastleLiveRepairVisualTest in build/e2e/castle-repairs.
+
+Older-map obligation: Inspect all wall-mounted model families in other investigation sites individually for physical wall thickness, mesh-pivot placement, wall-face support, and clipping. A Castle-only repair does not certify other maps.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
