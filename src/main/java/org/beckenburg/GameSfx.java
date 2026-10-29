@@ -63,6 +63,8 @@ public final class GameSfx {
             case STEP_CARPET->29;
             case STEP_WOOD->42;
             case UI_CLICK->35;
+            case UI_REJECT->38;
+            case PURCHASE->55;
             default->70;
         };
     }
