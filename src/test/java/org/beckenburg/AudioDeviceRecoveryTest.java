@@ -22,7 +22,10 @@ public final class AudioDeviceRecoveryTest {
     private static final class FakeOutput implements SourceDataLine {
         private static final AudioFormat FORMAT=new AudioFormat(16000f,16,2,true,false);
         private volatile boolean opened,running;
+        private final boolean stalled;
         private final AtomicInteger bytes=new AtomicInteger();
+        FakeOutput(){this(false);}
+        FakeOutput(boolean stalled){this.stalled=stalled;}
         @Override public void open(AudioFormat format,int size){
             check(format.getChannels()==2&&format.getSampleRate()==16000f,
                 "Mixer requested wrong device format");
@@ -34,6 +37,7 @@ public final class AudioDeviceRecoveryTest {
             if(!opened||!running)throw new IllegalStateException("Fake device not active");
             if(length<0||offset<0||offset+length>sound.length)
                 throw new IllegalArgumentException("Bad device write");
+            if(stalled)return 0; // A device that opened but stopped making progress.
             bytes.addAndGet(length);
             return length;
         }
@@ -83,6 +87,23 @@ public final class AudioDeviceRecoveryTest {
             check(attempts.get()>=2,"Device was never reopened");
         }
         await(()->!recovered.isOpen(),"Recovered audio line not closed on shutdown");
-        System.out.println("PASS simulated output failure, recovered positional PCM and clean shutdown");
+
+        final AtomicInteger openCount=new AtomicInteger();
+        final FakeOutput stuck=new FakeOutput(true);
+        final FakeOutput usable=new FakeOutput();
+        try(LanAudio audio=new LanAudio(()->openCount.getAndIncrement()==0?stuck:usable)){
+            audio.play(new LanSound.CueEvent(LanSound.Cue.DOOR,0,85,70));
+            await(()->openCount.get()>=1,"Stalled output was not opened");
+            await(()->!stuck.isOpen(),"Non-progressing output was not released");
+            for(int i=0;i<25&&usable.bytes.get()==0;i++){
+                audio.play(new LanSound.CueEvent(LanSound.Cue.UI_CLICK,0,85,80+i));
+                Thread.sleep(75);
+            }
+            await(()->usable.bytes.get()>0,
+                "Mixer failed to reopen after an output write returned zero");
+            check(openCount.get()>=2,"Stalled output did not trigger device reopening");
+        }
+        await(()->!usable.isOpen(),"Reopened output line not closed on shutdown");
+        System.out.println("PASS failed open, zero-progress device write, recovered PCM and shutdown");
     }
 }
