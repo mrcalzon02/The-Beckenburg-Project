@@ -164,36 +164,63 @@ public final class LanAudio implements AutoCloseable {
         pruneFixtures(voices,gate);return mix(voices);
     }
     private static void pruneFixtures(java.util.List<Voice> voices,FixtureGate gate){voices.removeIf(v->!gate.valid(v.source,v.generation));}
+    /** Close even a partially opened device; an unavailable output must never kill the worker. */
+    private static void release(SourceDataLine line){
+        if(line==null)return;
+        try{line.stop();}catch(RuntimeException ignored){}
+        try{line.flush();}catch(RuntimeException ignored){}
+        try{line.close();}catch(RuntimeException ignored){}
+    }
     private void run(){
         java.util.List<Voice> voices=new java.util.ArrayList<>();
         SourceDataLine line=null;
+        boolean outputMissing=false;
         try{
             while(!closed){
-                if(voices.isEmpty()){
-                    Playback first=queue.take();
-                    if(closed)break;
-                    admit(voices,render(first));
-                }
-                Playback next;
-                while((next=queue.poll())!=null)if(fixtureGate.valid(next.source(),next.generation()))admit(voices,render(next));
-                pruneFixtures(voices,fixtureGate);
-                if(voices.isEmpty())continue;
-                if(line==null){
-                    line=(SourceDataLine)AudioSystem.getLine(new DataLine.Info(SourceDataLine.class,FORMAT));
-                    line.open(FORMAT,4096);
-                    line.start();
-                }
-                byte[] block=mix(voices);
-                for(int offset=0;offset<block.length&&!closed;){
-                    int written=line.write(block,offset,block.length-offset);
-                    if(written<=0)break;
-                    offset+=written;
+                try{
+                    if(voices.isEmpty()){
+                        Playback first=queue.take();
+                        if(closed)break;
+                        admit(voices,render(first));
+                    }
+                    Playback next;
+                    while((next=queue.poll())!=null)
+                        if(fixtureGate.valid(next.source(),next.generation()))
+                            admit(voices,render(next));
+                    pruneFixtures(voices,fixtureGate);
+                    if(voices.isEmpty())continue;
+                    if(line==null){
+                        line=(SourceDataLine)AudioSystem.getLine(
+                            new DataLine.Info(SourceDataLine.class,FORMAT));
+                        line.open(FORMAT,4096);
+                        line.start();
+                    }
+                    if(outputMissing){
+                        System.err.println("Beckenburg effects audio output restored");
+                        outputMissing=false;
+                    }
+                    byte[] block=mix(voices);
+                    for(int offset=0;offset<block.length&&!closed;){
+                        int written=line.write(block,offset,block.length-offset);
+                        if(written<=0)break;
+                        offset+=written;
+                    }
+                }catch(LineUnavailableException|IllegalArgumentException
+                        |IllegalStateException|SecurityException unavailable){
+                    // Drop now-stale audio, not gameplay events or captions; keep polling
+                    // fresh cues after a missing USB/headset device becomes available.
+                    if(!outputMissing)
+                        System.err.println("Beckenburg effects audio temporarily unavailable: "
+                            +unavailable.getMessage());
+                    outputMissing=true;
+                    voices.clear();
+                    release(line);line=null;
+                    if(!closed)Thread.sleep(350);
                 }
             }
-        }catch(LineUnavailableException|IllegalArgumentException|SecurityException unavailable){
-            // UI captions remain available on a machine without audio output.
-        }catch(InterruptedException stop){Thread.currentThread().interrupt();}
-        finally{if(line!=null){line.stop();line.flush();line.close();}}
+        }catch(InterruptedException stop){
+            Thread.currentThread().interrupt();
+        }finally{release(line);}
     }
     /** Pure deterministic stereo 16-bit PCM. Useful for audio quality and pan regression tests. */
     public static byte[] synthesize(LanSound.CueEvent event){
