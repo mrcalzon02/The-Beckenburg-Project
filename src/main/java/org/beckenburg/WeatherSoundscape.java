@@ -154,11 +154,19 @@ public final class WeatherSoundscape implements AutoCloseable {
     }
     /** Bundled WAV presence check also works in a headless packaged JAR. */
     static int originalSamples(String name){return original(name).length;}
+    private static void release(SourceDataLine line){
+        if(line==null)return;
+        try{line.stop();}catch(RuntimeException ignored){}
+        try{line.flush();}catch(RuntimeException ignored){}
+        try{line.close();}catch(RuntimeException ignored){}
+    }
     private void run(){
         long offset=0;
         ArrayList<Thunder> thunder=new ArrayList<>();
+        boolean unavailable=false;
         try{
             while(!closed){
+                try{
                 MissionWeather.State w=state;
                 var linked=module;
                 if(!active||w==null||Boolean.getBoolean("beckenburg.audio.mute")
@@ -209,14 +217,26 @@ public final class WeatherSoundscape implements AutoCloseable {
                 }
                 thunder.removeIf(x->x.cursor()>=x.data().length);
                 line.write(block,0,block.length);
+                if(unavailable){
+                    System.err.println("Beckenburg weather audio output restored");
+                    unavailable=false;
+                }
+                }catch(LineUnavailableException|IllegalArgumentException
+                        |SecurityException failure){
+                    if(!unavailable)
+                        System.err.println("Beckenburg weather audio temporarily unavailable: "
+                            +failure.getMessage());
+                    unavailable=true;
+                    thunder.clear();
+                    SourceDataLine stale=line;line=null;release(stale);
+                    if(!closed)Thread.sleep(350);
+                }
             }
-        }catch(LineUnavailableException|IllegalArgumentException|SecurityException ex){
-            // No audio device is not a reason to abort a playable investigation.
         }catch(InterruptedException ex){Thread.currentThread().interrupt();}
-        finally{SourceDataLine open=line;line=null;if(open!=null){open.stop();open.flush();open.close();}}
+        finally{SourceDataLine open=line;line=null;release(open);}
     }
     @Override public void close(){
         closed=true;active=false;worker.interrupt();
-        SourceDataLine open=line;if(open!=null){open.stop();open.flush();}
+        SourceDataLine open=line;line=null;release(open);
     }
 }
