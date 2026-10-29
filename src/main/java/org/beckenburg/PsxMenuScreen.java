@@ -42,7 +42,12 @@ public final class PsxMenuScreen {
         }
         @Override protected void paintComponent(Graphics graphics){
             super.paintComponent(graphics);
-            MenuBackgrounds.paint((Graphics2D)graphics,MenuBackgrounds.sceneFor(screen),getWidth(),getHeight());
+            if(Boolean.TRUE.equals(getClientProperty("castle.overlay"))){
+                graphics.setColor(new Color(7,10,15,170));
+                graphics.fillRect(0,0,getWidth(),getHeight());
+            }else{
+                MenuBackgrounds.paint((Graphics2D)graphics,MenuBackgrounds.sceneFor(screen),getWidth(),getHeight());
+            }
         }
     }
 
