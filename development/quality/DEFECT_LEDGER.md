@@ -2224,13 +2224,31 @@ Older-map obligation: Inspect all wall-mounted model families in other investiga
 
 ### DEV-164 — Castle equipment shelf lettering unreadable at retro framebuffer resolutions
 
-**Status:** code-change-pushed-awaiting-gpu-capture-and-installed-review · **Affected:** Castle retail room, all 129 tiered plaques; desktop first-person HUD
+**Status:** code-change-pushed-awaiting-gpu-capture-and-installed-review · **Affected:** Castle Beckenburg retail room, all 129 tiered equipment plaques; desktop first-person UI
 
-The user-provided 2026-10-29 screenshot (2048×574) shows equipment signage reduced to white pixel fragments on modern display output. The desktop had a default 200p world framebuffer with nearest-only glyph sampling; native HUD fonts were fixed at 12–14 physical pixels. The window size and 3D rendering size were separate.
+2026-10-29 user screenshot shows shelf lettering degraded into scattered white pixels/strokes, despite a modern wide display, and HUD type extremely small.
 
-Source commit `a28b6c2a6760404a13942364f44d976c003254e5` adds selectable GPU 1080p rendering (720p software fallback), new-profile 540p GPU/360p software defaults, native HUD scale, aspect-preserving render-size caps and linear filtering only on Castle shelf text. Saved retro quality remains opt-in. This is a **source fix candidate**, not yet accepted visual legibility or installed gameplay.
+Cause / uncertainty: GraphicsOptions defaulted new profiles to a 200p world framebuffer, used nearest-neighbor filtering on glyph atlases, and painted native-resolution HUD lettering at fixed 12-14 physical pixels. High output window resolution did not increase the 3D raster target. Long-distance legibility of physically small plaques remains an independent constraint.
 
-Verify using exact-position Castle GPU screenshots at retro, default and Full HD presets, measuring real sign readability at aisle distance, performance and retained PSX world appearance. The focused, GPU, multiplayer and gated installer jobs for `a28b6c2` were in progress at logging. Audit other map signage and van/evidence screens individually rather than assuming universal closure.
+Fix / next action: Code commit a28b6c2a6760404a13942364f44d976c003254e5 adds an explicit GPU 1080p internal render choice with CPU 720p safety cap, raises new-profile GPU/CPU defaults to 540p/360p, preserves ultra-wide projection when render dimensions cap out, scales Castle HUD independently of world pixelation, and uses linear sampling only on the signage atlas. Retro/nearest-neighbor remain available by selection. Do not claim readable distant text without comparing exact hardware screenshots.
+
+Evidence and verification: Screenshot supplied 2026-10-29 (2048x574). GraphicsOptionsTest updated to check ultrawide projection, explicit FHD fallback and HUD scale. Source push and readback verified at a28b6c2; focused workflow 40946601310, GPU 40946601416, full-round 40946601337 and installer 40946601450 pending when logged. Need 200p/540p/720p/1080p same-camera physical GPU captures and player confirmation that labels are readable at practical shopping distance.
+
+Older-map obligation: Review readable authoring/UI text on van control consoles, map screens, evidence boards, journals and other playable sites independently. Castle font correction alone is not cross-map certification.
+
+### DEV-165 — Castle warehouse incorrectly opens campaign Quartermaster inventory
+
+**Status:** source-fix-pushed-exact-CI-pending · **Affected:** Beckenburg Castle warehouse display/counter; rear Quartermaster supply wardrobe; multiplayer lobby
+
+The warehouse stock counter previously called openQuartermaster() and exposed the campaign wallet and owned equipment instead of multiplayer contract inventory, making the Castle appear to contain two competing stores.
+
+Cause / uncertainty: CastleHubPanel.use(null) was wired to its campaign store for the physical warehouse counter. The network lobby already had a common EquipmentCatalogPanel with independent host-authoritative stock, but the warehouse had no route to that mode.
+
+Fix / next action: Code commit 61fe14c5e34bc6206517aab99424f7384901bfb2 routes the warehouse to InvestigationGame.openMultiplayerInventory(), selecting LanLobbyPanel's real Equipment & Supplies tab, while retaining rear armory/wardrobe campaign profile purchases. Network desk still opens the connection tab. Both wrappers inherit EquipmentCatalogPanel; no new store or inventory transfer is introduced.
+
+Evidence and verification: Source push and remote readback confirmed. New CastleInventoryWorkstationTest compares real inventory catalog entries, exercises physical workstation callback separation and checks disconnected network purchases remain disabled; added to regression-tests.txt. Java compilation, exact-SHA workflow and installed Castle player interaction are not yet accepted; focused Castle checks 40947285516 were in progress on the code commit when logged.
+
+Older-map obligation: Audit actual inventory/store routing in campaign preparation, multiplayer van rack, campaign co-op host/guest screens and existing menu back navigation individually. One Castle routing fix is not cross-mode persistence acceptance.
 
 ## Required audit categories
 

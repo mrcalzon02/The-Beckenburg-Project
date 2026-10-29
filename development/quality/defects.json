@@ -1750,6 +1750,17 @@
       "action": "Code commit a28b6c2a6760404a13942364f44d976c003254e5 adds an explicit GPU 1080p internal render choice with CPU 720p safety cap, raises new-profile GPU/CPU defaults to 540p/360p, preserves ultra-wide projection when render dimensions cap out, scales Castle HUD independently of world pixelation, and uses linear sampling only on the signage atlas. Retro/nearest-neighbor remain available by selection. Do not claim readable distant text without comparing exact hardware screenshots.",
       "evidence": "Screenshot supplied 2026-10-29 (2048x574). GraphicsOptionsTest updated to check ultrawide projection, explicit FHD fallback and HUD scale. Source push and readback verified at a28b6c2; focused workflow 40946601310, GPU 40946601416, full-round 40946601337 and installer 40946601450 pending when logged. Need 200p/540p/720p/1080p same-camera physical GPU captures and player confirmation that labels are readable at practical shopping distance.",
       "older_maps": "Review readable authoring/UI text on van control consoles, map screens, evidence boards, journals and other playable sites independently. Castle font correction alone is not cross-map certification."
+    },
+    {
+      "id": "DEV-165",
+      "title": "Castle warehouse incorrectly opens campaign Quartermaster inventory",
+      "status": "source-fix-pushed-exact-CI-pending",
+      "affected": "Beckenburg Castle warehouse display/counter; rear Quartermaster supply wardrobe; multiplayer lobby",
+      "symptom": "The warehouse stock counter previously called openQuartermaster() and exposed the campaign wallet and owned equipment instead of multiplayer contract inventory, making the Castle appear to contain two competing stores.",
+      "cause": "CastleHubPanel.use(null) was wired to its campaign store for the physical warehouse counter. The network lobby already had a common EquipmentCatalogPanel with independent host-authoritative stock, but the warehouse had no route to that mode.",
+      "action": "Code commit 61fe14c5e34bc6206517aab99424f7384901bfb2 routes the warehouse to InvestigationGame.openMultiplayerInventory(), selecting LanLobbyPanel's real Equipment & Supplies tab, while retaining rear armory/wardrobe campaign profile purchases. Network desk still opens the connection tab. Both wrappers inherit EquipmentCatalogPanel; no new store or inventory transfer is introduced.",
+      "evidence": "Source push and remote readback confirmed. New CastleInventoryWorkstationTest compares real inventory catalog entries, exercises physical workstation callback separation and checks disconnected network purchases remain disabled; added to regression-tests.txt. Java compilation, exact-SHA workflow and installed Castle player interaction are not yet accepted; focused Castle checks 40947285516 were in progress on the code commit when logged.",
+      "older_maps": "Audit actual inventory/store routing in campaign preparation, multiplayer van rack, campaign co-op host/guest screens and existing menu back navigation individually. One Castle routing fix is not cross-mode persistence acceptance."
     }
   ],
   "audit_categories": [
