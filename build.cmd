@@ -148,6 +148,8 @@ jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.Invest
 rem Fail before any packaged game smoke if runtime module classes are missing.
 jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/water/WaterDocument.class" >nul || (echo ERROR: packaged water document missing from game JAR & exit /b 1)
 jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/water/WaterModule.class" >nul || (echo ERROR: packaged water simulation missing from game JAR & exit /b 1)
+rem Offline verification from assembled JAR in every Windows packaging mode.
+java -Djava.awt.headless=true -cp build\beckenburg-game.jar org.beckenburg.PackagedAudioAudit || exit /b 1
 if /I "%~1"=="package" goto packaged
 if /I "%~1"=="e2e" goto e2e
 rem Package mode builds the complete jar without asserting test acceptance.
