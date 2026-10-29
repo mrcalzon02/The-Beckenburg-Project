@@ -94,14 +94,22 @@ public final class SoundtrackAudio implements AutoCloseable {
         return AudioSystem.getAudioInputStream(OUTPUT,source);
     }
     private static void idle()throws InterruptedException{Thread.sleep(70);}
+    private static void release(SourceDataLine line){
+        if(line==null)return;
+        try{line.stop();}catch(RuntimeException ignored){}
+        try{line.flush();}catch(RuntimeException ignored){}
+        try{line.close();}catch(RuntimeException ignored){}
+    }
     private void run(){
         AudioInputStream song=null;
         SourceDataLine line=null;
         String playing="";
         int fade=0;
         byte[] buf=new byte[2048];
+        boolean outputMissing=false;
         try{
             while(!closed){
+                try{
                 Layer layer=select(castle,active,ritual,hunt);
                 int gain=volume();
                 if(layer==null||gain==0||Boolean.getBoolean("beckenburg.audio.mute")){
@@ -120,6 +128,10 @@ public final class SoundtrackAudio implements AutoCloseable {
                         line.open(OUTPUT,4096);output=line;
                     }
                     line.start();playing=requested;current=requested;fade=0;
+                    if(outputMissing){
+                        System.err.println("Beckenburg soundtrack audio output restored");
+                        outputMissing=false;
+                    }
                 }
                 int read=song.read(buf,0,buf.length);
                 if(read<0){
@@ -142,15 +154,25 @@ public final class SoundtrackAudio implements AutoCloseable {
                     if(written<=0)break;
                     at+=written;
                 }
+                }catch(LineUnavailableException|IllegalArgumentException
+                        |IllegalStateException|SecurityException unavailable){
+                    if(!outputMissing)
+                        System.err.println("Beckenburg soundtrack audio temporarily unavailable: "
+                            +unavailable.getMessage());
+                    outputMissing=true;
+                    playing="";current="";fade=0;
+                    if(song!=null){try{song.close();}catch(IOException ignored){}song=null;}
+                    output=null;
+                    release(line);line=null;
+                    if(!closed)idle();
+                }
             }
-        }catch(LineUnavailableException|IllegalArgumentException|SecurityException unavailable){
-            // Gameplay, captions and sound cues keep working without a music device.
         }catch(Exception invalid){
             System.err.println("Beckenburg soundtrack unavailable: "+invalid.getMessage());
         }finally{
             current="";output=null;
             if(song!=null)try{song.close();}catch(IOException ignored){}
-            if(line!=null){line.stop();line.flush();line.close();}
+            release(line);
         }
     }
     @Override public void close(){
