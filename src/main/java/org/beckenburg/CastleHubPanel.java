@@ -172,7 +172,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         repaint();
     }
     private void frame(){
-        atmosphere.setActive(isShowing());authoredAudio.active(isShowing()&&!storeOpen);authoredAudio.listener(renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,castleLightsOn);
+        atmosphere.setActive(isShowing());authoredAudio.active(isShowing());authoredAudio.listener(renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,castleLightsOn);
         if(!isShowing()||storeOpen){last=System.nanoTime();return;}
         if(archive.opened()){last=System.nanoTime();down.clear();repaint();return;}
         long now=System.nanoTime();double dt=Math.min(.07,Math.max(0,(now-last)/1e9));last=now;
