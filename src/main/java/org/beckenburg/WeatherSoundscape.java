@@ -162,7 +162,7 @@ public final class WeatherSoundscape implements AutoCloseable {
                 MissionWeather.State w=state;
                 var linked=module;
                 if(!active||w==null||Boolean.getBoolean("beckenburg.audio.mute")
-                        ||LanAudio.effectsVolume()==0){
+                        ||EnvironmentAudio.volume()==0){
                     if(linked!=null)linked.audio().drainCues();
                     thunder.clear();
                     if(line!=null){line.stop();line.flush();}
@@ -180,7 +180,7 @@ public final class WeatherSoundscape implements AutoCloseable {
                     thunder.add(new Thunder(original(cue.id()),cue.volume(),0));
                 }
                 byte[] block=new byte[2048];
-                int volume=LanAudio.effectsVolume();
+                int volume=EnvironmentAudio.volume();
                 boolean exposed=outside;
                 for(int i=0;i<block.length;i+=2){
                     double mixed;
