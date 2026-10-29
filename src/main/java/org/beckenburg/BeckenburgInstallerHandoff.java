@@ -79,7 +79,7 @@ public final class BeckenburgInstallerHandoff {
         Path path = staged.path().toAbsolutePath().normalize();
         Path directory = BeckenburgUpdates.updateDirectory().toAbsolutePath().normalize();
         if (!directory.equals(path.getParent()) || !path.getFileName().toString()
-                .matches("Beckenburg-[0-9]+\\\\.[0-9]+\\\\.[0-9]+-Windows-x64\\\\.exe")
+                .matches("Beckenburg-[0-9]+\\.[0-9]+\\.[0-9]+-Windows-x64\\.exe")
                 || !Files.isRegularFile(path)) {
             throw new IOException("Installer is not in the dedicated Beckenburg update staging directory");
         }
