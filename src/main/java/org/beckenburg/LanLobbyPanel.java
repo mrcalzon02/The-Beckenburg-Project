@@ -48,8 +48,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
     private final JButton reconnect=new JButton("Reconnect");
     private int myRoom=HouseMap.EXTRACTION_ROOM;
     private boolean busy,missionRunning,worldMode;
-    private boolean localReady,pendingStart,startCommandSent,waitingReadyAck;
-    private int knownReadyCount,readyBeforeStart;
+    private boolean localReady,serverReady,pendingStart,startCommandSent,waitingReadyAck;
     private long connectionGeneration;
     private LanWorldPanel worldView;
     private LanGhostPanel ghostView;
@@ -247,6 +246,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         ready.addActionListener(e->{
             if(connection==null||missionRunning)return;
             localReady=!localReady;
+            serverReady=false;
             send("READY");
             ready.setText(localReady?"UNREADY":"READY");
         });
@@ -285,13 +285,14 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         pendingStart=true;
         status.setText("Preparing investigation...");
         if(!localReady){
-            readyBeforeStart=knownReadyCount;
             localReady=true;
+            serverReady=false;
             waitingReadyAck=true;
             send("READY");
             ready.setText("UNREADY");
             return;
         }
+        if(!serverReady){waitingReadyAck=true;return;}
         dispatchStartRound();
     }
     /** Only prepare the campaign's real hosted party after readiness reached its host. */
@@ -656,7 +657,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             reconnect.setEnabled(resumeTicket!=null);
             missionRunning=false;worldMode=false;busy=false;
             pendingStart=false;startCommandSent=false;waitingReadyAck=false;
-            localReady=false;knownReadyCount=0;ready.setText("READY");
+            localReady=false;serverReady=false;ready.setText("READY");
             fieldContents=null;
             if(connection!=null){connection.close();connection=null;}
             // An unexpected local TCP EOF does not imply authoritative host death.
@@ -690,15 +691,18 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             status.setText("Round not started: "+event.substring("REJECT|".length()));
             setCommandEnabled(connection!=null);
         }
-        if(event.startsWith("LOBBY|")){
+        if(event.startsWith("OWNREADY|")){
             var fields=LanProtocol.parts(event);
-            if(fields.size()==5){
-                knownReadyCount=LanProtocol.integer(fields.get(3),0,7);
-                if(waitingReadyAck&&pendingStart&&knownReadyCount>readyBeforeStart){
+            if(fields.size()==2){
+                serverReady="YES".equals(fields.get(1));
+                localReady=serverReady;
+                ready.setText(serverReady?"UNREADY":"READY");
+                if(serverReady&&waitingReadyAck&&pendingStart){
                     waitingReadyAck=false;
                     dispatchStartRound();
                 }
             }
+            return;
         }
         if(event.startsWith("SITE|")){
             var parts=LanProtocol.parts(event);
