@@ -299,5 +299,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanOwnerReadyAckTest
 if [ -f src/test/java/org/beckenburg/SmokeTest.java ]; then java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SmokeTest; fi
 jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes hbnet -C build/classes org/beckenburg -C build/classes dev/mrcalzon/weather
+# Fail packaging if the FINAL distributable loses licensed Foley, score, weather or spatial beds.
+java -Djava.awt.headless=true -cp build/beckenburg-game.jar org.beckenburg.PackagedAudioAudit
 printf '%s\n' 'Built build/beckenburg-game.jar'
 if [ "${1:-}" = run ]; then java -jar build/beckenburg-game.jar; fi
