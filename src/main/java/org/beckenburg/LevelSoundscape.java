@@ -71,33 +71,70 @@ public final class LevelSoundscape implements AutoCloseable {
         double output=(electrical+machine+movement+droplets+fabric)*preset.gain;
         return (short)Math.round(Math.max(-.06,Math.min(.06,output))*32767);
     }
+    private static void release(SourceDataLine old){
+        if(old==null)return;
+        try{old.stop();}catch(RuntimeException ignored){}
+        try{old.flush();}catch(RuntimeException ignored){}
+        try{old.close();}catch(RuntimeException ignored){}
+    }
     private void run(){
-        long frame=0;double fade=0;
+        long frame=0;
+        double fade=0;
+        boolean unavailable=false;
         try{
             while(!closed){
-                if(!active||Boolean.getBoolean("beckenburg.audio.mute")||EnvironmentAudio.volume()==0){
-                    if(line!=null){line.stop();line.flush();}
-                    Thread.sleep(100);continue;
+                try{
+                    if(!active||Boolean.getBoolean("beckenburg.audio.mute")
+                            ||EnvironmentAudio.volume()==0){
+                        if(line!=null){line.stop();line.flush();}
+                        Thread.sleep(100);
+                        continue;
+                    }
+                    if(line==null){
+                        SourceDataLine fresh=AudioSystem.getSourceDataLine(FORMAT);
+                        line=fresh;
+                        fresh.open(FORMAT,4096);
+                    }
+                    if(!line.isRunning())line.start();
+                    if(unavailable){
+                        System.err.println("Beckenburg building audio output restored");
+                        unavailable=false;
+                    }
+                    HouseMap current=map;
+                    int area=room;
+                    boolean electricity=powered;
+                    byte[] block=new byte[2048];
+                    double volume=EnvironmentAudio.volume()/100d;
+                    for(int i=0;i<block.length;i+=2){
+                        fade=Math.min(1,fade+1d/4000);
+                        short value=(short)Math.round(
+                            sample(current.level(),area,electricity,frame++)*volume*fade);
+                        block[i]=(byte)value;
+                        block[i+1]=(byte)(value>>8);
+                    }
+                    line.write(block,0,block.length);
+                }catch(LineUnavailableException|IllegalArgumentException
+                        |IllegalStateException|SecurityException failure){
+                    if(!unavailable)
+                        System.err.println("Beckenburg building audio temporarily unavailable: "
+                            +failure.getMessage());
+                    unavailable=true;
+                    SourceDataLine old=line;
+                    line=null;
+                    release(old);
+                    fade=0;
+                    if(!closed)Thread.sleep(350);
                 }
-                if(line==null){line=AudioSystem.getSourceDataLine(FORMAT);line.open(FORMAT,4096);}
-                if(!line.isRunning())line.start();
-                HouseMap current=map;int area=room;boolean electricity=powered;
-                byte[] block=new byte[2048];
-                double volume=EnvironmentAudio.volume()/100d;
-                for(int i=0;i<block.length;i+=2){
-                    fade=Math.min(1,fade+1d/4000);
-                    short value=(short)Math.round(sample(current.level(),area,electricity,frame++)*volume*fade);
-                    block[i]=(byte)value;block[i+1]=(byte)(value>>8);
-                }
-                line.write(block,0,block.length);
             }
-        }catch(LineUnavailableException|IllegalArgumentException|SecurityException unavailable){
-            // Quiet fallback preserves investigation and all captioned event audio.
         }catch(InterruptedException stopped){Thread.currentThread().interrupt();}
-        finally{SourceDataLine open=line;line=null;if(open!=null){open.stop();open.flush();open.close();}}
+        finally{
+            SourceDataLine old=line;
+            line=null;
+            release(old);
+        }
     }
     @Override public void close(){
         closed=true;active=false;authored.close();worker.interrupt();
-        SourceDataLine open=line;if(open!=null){open.stop();open.flush();}
+        SourceDataLine open=line;line=null;release(open);
     }
 }
