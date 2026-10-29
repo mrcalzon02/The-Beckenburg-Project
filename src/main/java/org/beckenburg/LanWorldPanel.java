@@ -49,6 +49,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final Map<Integer,FieldSensorDetection.Pulse> sensorAlerts=new HashMap<>();
     private int selectedCameraOwner=-1;
     private int lastVanPoll=-100000,lastMapTextureTick=-100000,lastCameraRenderTick=-100000;
+    private int capturedCameraOwner=-1;
     private final List<SceneRenderer.WorldMark> counterMarks=new ArrayList<>();
     private SceneRenderer.Apparition apparition;
     private final Map<String,SceneRenderer.Apparition> pairedGhostBodies=new HashMap<>();
@@ -177,6 +178,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     public void close(){
         if(opening!=null){opening.close();opening=null;}
         releaseVoice();timer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
+        VanLiveScreens.suspendCamera();
     }
     private void beginVoice(LanChat.Channel channel){
         if(health<=0||!caseResult.isEmpty()||chatInput.isVisible())return;
@@ -948,6 +950,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         for(int i=0;i<available.size();i++)
             if(available.get(i).owner()==selectedVanCamera().owner())index=i;
         selectedCameraOwner=available.get((index+1)%available.size()).owner();
+        capturedCameraOwner=-1;
+        lastCameraRenderTick=-100000; // A manual channel switch can sample immediately.
+        if(vanDisplay)VanLiveScreens.camera(null,"SWITCHING CAMERA");
     }
     private void frame(){
         long diagnosticsStart=System.nanoTime();
@@ -971,16 +976,34 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             keys.clear();
             releaseVoice();
         }
+        boolean previouslyInVan=vanDisplay;
         vanDisplay=insideVan();
+        if(vanDisplay&&!previouslyInVan){
+            lastVanPoll=-100000;
+            lastMapTextureTick=-100000;
+            lastCameraRenderTick=-100000;
+            capturedCameraOwner=-1;
+            VanLiveScreens.camera(null,"AWAITING CAMERA SAMPLE");
+        }else if(!vanDisplay&&previouslyInVan){
+            capturedCameraOwner=-1;
+            cameraGhostBodies.clear();
+            cameraGhostTicks.clear();
+            VanLiveScreens.suspendCamera();
+        }
         if(!vanDisplay){
             meters=null;
             if(interfaceOpen.equals("MAP")||interfaceOpen.equals("TEAM")
                     ||interfaceOpen.equals("ACTIVITY")||interfaceOpen.equals("SOUND"))
                 interfaceOpen="";
         }
-        if(vanDisplay&&tick-lastVanPoll>=11){
+        if(VanDisplayCadence.due(vanDisplay,tick,lastVanPoll,
+                VanDisplayCadence.TELEMETRY_TICKS)){
             try{client.vanMonitor();lastVanPoll=tick;}
-            catch(IOException e){feedback="Van display disconnected: "+e.getMessage();vanDisplay=false;}
+            catch(IOException e){
+                feedback="Van display disconnected: "+e.getMessage();vanDisplay=false;
+                capturedCameraOwner=-1;
+                VanLiveScreens.suspendCamera();
+            }
         }
         int right=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
         int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
@@ -1011,7 +1034,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             firelightOn&&!portableFire&&!flashlightOn);
         // The bulkhead's real CRT displays the live architectural map, not a
         // disconnected prop or a generic global activity meter.
-        if(vanDisplay&&tick-lastMapTextureTick>=10){
+        if(VanDisplayCadence.due(vanDisplay,tick,lastMapTextureTick,
+                VanDisplayCadence.TELEMETRY_TICKS)){
             java.awt.image.BufferedImage mapImage=new java.awt.image.BufferedImage(
                 768,512,java.awt.image.BufferedImage.TYPE_INT_RGB);
             Graphics2D monitor=mapImage.createGraphics();
@@ -1031,8 +1055,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             VanLiveScreens.contract(map.level().title(),hardEvidenceLevel.name(),
                 dailyTasks.stream().map(task->
                     (completedTasks.contains(task)?"[DONE] ":"[OPEN] ")+task.label).toList());
-            if(selectedVanCamera()==null)
+            if(selectedVanCamera()==null&&capturedCameraOwner!=-1){
+                capturedCameraOwner=-1;
                 VanLiveScreens.camera(null,"NO POWERED CAMERA");
+            }
             lastMapTextureTick=tick;
         }
         renderer.rackToolTiers=java.util.Map.of();
@@ -1045,9 +1071,16 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         // position. No canned image, inferred spectral object or proof overlay.
         // The existing host-approved live camera renderer is reused, not
         // duplicated by the wall screen. Five camera captures/second maximum.
-        if(vanDisplay&&tick-lastCameraRenderTick>=2&&selectedVanCamera()!=null){
+        LanVideoCameras.Camera camera=vanDisplay?selectedVanCamera():null;
+        if(camera!=null&&capturedCameraOwner!=-1
+                &&capturedCameraOwner!=camera.owner()){
+            capturedCameraOwner=-1;
+            lastCameraRenderTick=-100000;
+            VanLiveScreens.camera(null,"SWITCHING CAMERA");
+        }
+        if(VanDisplayCadence.due(vanDisplay&&camera!=null,tick,lastCameraRenderTick,
+                VanDisplayCadence.CAMERA_TICKS)){
             lastCameraRenderTick=tick;
-            LanVideoCameras.Camera camera=selectedVanCamera();
             videoRenderer.x=camera.x();videoRenderer.z=camera.z();videoRenderer.eyeHeight=camera.y()+1.62;
             videoRenderer.yaw=Math.toRadians(camera.heading());
             videoRenderer.pitch=-.035;
@@ -1099,8 +1132,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             if(videoRenderer.frameDiagnostics()!=null
                     &&(!videoRenderer.frameDiagnostics().gpu()
                         ||videoRenderer.frameDiagnostics().gpuReadbackAvailable()))
+            {
                 VanLiveScreens.camera(videoRenderer.image(),
                     "CAM H"+(camera.owner()+1)+" / "+map.roomName(camera.room()));
+                capturedCameraOwner=camera.owner();
+            }
         }
         perfHud.sample(System.nanoTime()-diagnosticsStart,renderer,map,peers.size(),"LAN HUNTER");
         repaint();
@@ -1244,7 +1280,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     new ArrayList<>(videoCameras.values()),videoPowered,
                     mapFloor,vanMapScroll,tick);
                 LanVideoCameras.Camera chosen=selectedVanCamera();
-                if(chosen!=null){
+                if(vanDisplay&&chosen!=null&&capturedCameraOwner==chosen.owner()){
                     int vw=Math.min(234,Math.max(140,getWidth()/3));
                     int vh=Math.max(82,vw*3/5);
                     int vx=getWidth()-vw-32,vy=h-vh-90;

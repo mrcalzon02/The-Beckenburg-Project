@@ -103,6 +103,7 @@ public final class LanCameraOnlyGhostIntegrationTest {
                     tick=Integer.parseInt(state[1]);
                 }
                 field.inbox.clear();
+                field.cameraFrames.removeIf(packet->packet.startsWith("CAMGHOST|"));
                 ghost.client.ghost(GhostDomain.Action.MANIFEST,4);
                 ghost.await("ACCEPT|GHOST|MANIFEST",8);
                 synchronized(mutex){
@@ -118,6 +119,9 @@ public final class LanCameraOnlyGhostIntegrationTest {
                     "Non-signature live camera must show a neutral apparition, not "+species+" artwork");
                 check(field.await("APPARITION|HIDDEN|",8).startsWith("APPARITION|HIDDEN|"),
                     "A camera-only species must remain invisible to direct Hunter vision");
+                Thread.sleep(150); // Drain any queued same-tick packets to the field seat.
+                check(field.cameraFrames.stream().noneMatch(x->x.startsWith("CAMGHOST|")),
+                    "Offsite investigators must receive no van-only camera captures");
                 check(host.running(),"True remote apparition must not stop multiplayer match");
                 System.out.println("PASS "+species+": deployed live camera, real van receiver, direct sight distinction");
             }

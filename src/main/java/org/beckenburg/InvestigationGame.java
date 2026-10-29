@@ -641,6 +641,7 @@ public final class InvestigationGame {
         private int useHeldUntilTick;
         private final VanTelemetry monitor=new VanTelemetry(20261017L);
         private int lastVanScreenTick=-100000,latestVanActivity;
+        private boolean wasInsideVan;
 
         private final AtmosphereAudio atmosphere=new AtmosphereAudio(AtmosphereAudio.Scene.FIELD);
         private final LevelSoundscape buildingSoundscape;
@@ -969,7 +970,16 @@ public final class InvestigationGame {
             scene.rackInventory=VanRackStock.solo(profile,loadout);
             // Same physical screens as LAN. Solo has no invented remote camera
             // or sensor network: unavailable data is explicitly marked offline.
-            if(insideVan()&&session.ticks()-lastVanScreenTick>=10){
+            boolean viewerInVan=insideVan();
+            if(viewerInVan&&!wasInsideVan){
+                lastVanScreenTick=-100000;
+                VanLiveScreens.camera(null,"NO DEPLOYED VIDEO CAMERA");
+            }else if(!viewerInVan&&wasInsideVan){
+                VanLiveScreens.suspendCamera();
+            }
+            wasInsideVan=viewerInVan;
+            if(VanDisplayCadence.due(viewerInVan,session.ticks(),lastVanScreenTick,
+                    VanDisplayCadence.TELEMETRY_TICKS)){
                 java.awt.image.BufferedImage image=new java.awt.image.BufferedImage(
                     768,512,java.awt.image.BufferedImage.TYPE_INT_RGB);
                 Graphics2D screen=image.createGraphics();
@@ -987,7 +997,7 @@ public final class InvestigationGame {
                     "CASE "+session.outcome(),
                     "MEASURED TOOLS "+session.evidenceCount(),
                     "WARDS AVAILABLE "+session.wards()));
-                VanLiveScreens.camera(null,"NO DEPLOYED VIDEO CAMERA");
+                // No solo remote feed is captured merely to display a standby label.
                 lastVanScreenTick=session.ticks();
             }
             scene.draw(map,session,frameCount++/30.0,

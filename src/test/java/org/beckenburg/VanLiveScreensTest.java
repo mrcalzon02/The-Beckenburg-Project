@@ -51,6 +51,11 @@ public final class VanLiveScreensTest {
         VanLiveScreens.camera(realFrame,"CAM H1 / ROOM 3");
         check(GlbProps.dynamicTextureRevision(camera)==before+1,
             "actual camera frame must upload only camera texture");
+        VanLiveScreens.suspendCamera();
+        check(VanLiveScreens.snapshot(VanLiveScreens.Panel.CAMERA)==null,
+            "An empty van must not retain an accessible camera image");
+        check(GlbProps.dynamicTextureRevision(camera)==before+1,
+            "Camera suspension must not upload a new frame or dirty GPU textures");
         int pixel=GlbProps.sample(camera,.5,.5);
         check(pixel!=0,"live camera face must sample actual non-black pixels");
         VanLiveScreens.camera(null,"NO POWERED CAMERA");
@@ -58,6 +63,21 @@ public final class VanLiveScreensTest {
             "camera disconnect must clear the last displayed feed");
         check(VanLiveScreens.material(VanLiveScreens.Panel.MAP)==GlbProps.VAN_MAP_MATERIAL,
             "map must reuse the existing host-authoritative tactical texture");
+        check(!VanDisplayCadence.due(false,300,-100000,
+                VanDisplayCadence.CAMERA_TICKS),
+            "Camera sampling without a VAN occupant is forbidden");
+        check(VanDisplayCadence.due(true,10,-100000,
+                VanDisplayCadence.CAMERA_TICKS),
+            "An entering viewer should receive the first image without waiting");
+        check(!VanDisplayCadence.due(true,29,10,
+                VanDisplayCadence.CAMERA_TICKS)
+            &&VanDisplayCadence.due(true,30,10,VanDisplayCadence.CAMERA_TICKS),
+            "Camera cadence must cap remote captures at one per two seconds");
+        check(!VanDisplayCadence.due(true,29,0,
+                VanDisplayCadence.TELEMETRY_TICKS)
+            &&VanDisplayCadence.due(true,30,0,
+                VanDisplayCadence.TELEMETRY_TICKS),
+            "Van telemetry must refresh only every three seconds");
         check(!VanInteriorLayout.collides(0,0,.18),
             "the flat screens must not block the van's central operating aisle");
         System.out.println("PASS six real van LCD faces, finite physical bounds, "+

@@ -2682,21 +2682,23 @@ public final class LanHost implements AutoCloseable {
                     reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible,
                         signatureReveal&&ghostType.ancient()));
                 }
-                // Real remote cameras observe their own field of view and LOS.
-                // A CAMERA_ONLY species is not exposed to the direct Hunter feed.
+                // No camera capture, frustum/LOS work or camera-ghost packets
+                // unless THIS hunter can physically watch the VAN receiver.
+                // Field cameras and ordinary field evidence remain unaffected.
+                if(insideVan(i)&&tick%VanDisplayCadence.CAMERA_SIGHT_TICKS==0)
                 for(LanVideoCameras.Camera camera:cameras.all()){
                     boolean powered=equipment[camera.owner()].powered("VIDEO_CAMERA")
                         &&equipment[camera.owner()].batterySecondsLeft("VIDEO_CAMERA")>0;
                     // This feed is physically accessible at the van receiver,
                     // not an omniscient radio broadcast to field investigators.
-                    boolean seen=powered&&insideVan(i)
+                    boolean seen=powered
                         &&LanCameraSight.sees(map,camera,pose,ghost.manifested(),ghostType,"a",
                             signatureReveal);
                     reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick,
                         signatureReveal));
                     if(ghostType.baseType()==GhostIdentity.Type.TWINS){
                         var echo=new TwinGhostPair.Member("b",twinCompanion.pose());
-                        boolean second=powered&&insideVan(i)
+                        boolean second=powered
                             &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested(),ghostType,"b",
                                 signatureReveal);
                         reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),
