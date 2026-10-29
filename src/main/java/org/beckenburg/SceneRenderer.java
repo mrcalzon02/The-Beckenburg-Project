@@ -1587,7 +1587,9 @@ public final class SceneRenderer {
         // Build a fixed receiver-side light probe, not a camera-biased probe:
         // moving the camera changes only the GL transform and distance LOD.
         boolean original=preparingStableGpuFace;
+        int priorLod=preparingStableGpuLod;
         preparingStableGpuFace=true;
+        preparingStableGpuLod=lod;
         GpuFloats prepared=new GpuFloats();
         try {
             var temporary=new java.util.LinkedHashMap<Integer,GpuFloats>();
@@ -1596,6 +1598,7 @@ public final class SceneRenderer {
             if(actual!=null)prepared=actual;
         } finally {
             preparingStableGpuFace=original;
+            preparingStableGpuLod=priorLod;
         }
         float[] vertices=prepared.complete();
         batches.computeIfAbsent(face.material,ignored->new GpuFloats())
@@ -1619,6 +1622,7 @@ public final class SceneRenderer {
         }
     }
     private boolean preparingStableGpuFace;
+    private int preparingStableGpuLod;
     /**
      * Every authored scene uses the same GPU path: castle, campaign, solo, LAN,
      * co-op and the network observer. The GPU receives only camera-visible
@@ -1632,9 +1636,10 @@ public final class SceneRenderer {
     private void appendGpuFace(Face face,int room,int depth,
             java.util.Map<Integer,GpuFloats> batches){
         if(room>=0&&room<12&&(lightingMap==null||!lightingMap.nativeSite())
-            &&depth<lightingSubdivisionLimit(Math.max(0,
-                Math.min(camera(face.a).z,
-                    Math.min(camera(face.b).z,camera(face.c).z))))
+            &&depth<(preparingStableGpuFace?preparingStableGpuLod:
+                lightingSubdivisionLimit(Math.max(0,
+                    Math.min(camera(face.a).z,
+                        Math.min(camera(face.b).z,camera(face.c).z)))))
             &&Math.max(edge2(face.a,face.b),
                 Math.max(edge2(face.b,face.c),edge2(face.c,face.a)))>2.6){
             Point ab=mid(face.a,face.b),bc=mid(face.b,face.c),ca=mid(face.c,face.a);
