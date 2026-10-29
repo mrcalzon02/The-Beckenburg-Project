@@ -42,3 +42,7 @@ The newly registered `StreamSafePresentationTest` was recompiled and passed afte
 Source parity uses UTF-8/LF Git-blob canonicalization so Windows checkout line endings cannot create false source drift; all three copies were compared and the checksummed verifier passed.
 
 Standalone Beckenburg dedicated JAR process also passed: no phantom seats, local status/stop, process exit 0 and released port. This had no connected game clients and is not TLS gameplay acceptance. [Receipt](receipts/dedicated-process.json), SHA-256 `8b8e6d920b6ec6033e43c055dbd57898d6e18931f6301d6e072cdafe65ec3136`.
+
+## Remote implementation read-back
+
+Verified remote `main` at `7ebdf694f54da790c71211deeeb96c4420f4c26a` with independently read remote ref and fetched source/test/evidence blobs. [Exact blob IDs and SHA-256 read-back](receipts/remote-readback.json). This verifies delivery of the recorded implementation, not a passed TLS or Internet acceptance gate.

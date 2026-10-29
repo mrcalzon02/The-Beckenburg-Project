@@ -1,0 +1,50 @@
+{
+  "repository": "mrcalzon02/The-Beckenburg-Project",
+  "branch": "main",
+  "remote_head": "7ebdf694f54da790c71211deeeb96c4420f4c26a",
+  "local_head": "7ebdf694f54da790c71211deeeb96c4420f4c26a",
+  "fetched_head": "7ebdf694f54da790c71211deeeb96c4420f4c26a",
+  "verified_by": [
+    "git fetch origin main",
+    "git ls-remote origin refs/heads/main",
+    "git show origin/main:path",
+    "compare exact Git-blob source bytes and evidence bytes"
+  ],
+  "files": [
+    {
+      "path": "src/main/java/hbnet/Hbnet.java",
+      "git_blob": "c478de7eedb108ff85622621b9dcd3fd0d3945a8",
+      "sha256": "d34f80abf7a22ede219d5bd652d731f5372a8e4f6f4ba8e68ef50ff98b2c9ca9",
+      "bytes": 22275,
+      "matches_local": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/LanHost.java",
+      "git_blob": "1844cbc3c43a976594fb84c416e2a6444c7bf760",
+      "sha256": "4427f4e3462a5a79fb72fe78d6322e8a4f69375ce3c891bd82eca2ea3203925a",
+      "bytes": 188878,
+      "matches_local": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/LanClient.java",
+      "git_blob": "bacfef5319946826f07350f5029dbf44b2d02864",
+      "sha256": "1ccad2cb628f19686e1c50cf885760e3fa4e80e2094fd1834284c1555b06b819",
+      "bytes": 19419,
+      "matches_local": true
+    },
+    {
+      "path": "src/test/java/org/beckenburg/SecureLanIntegrationTest.java",
+      "git_blob": "e526f2cf2766baef627e3f3dcb7573d6c994e1d2",
+      "sha256": "d6066714c1468a0536bdf7546d3d8a634809e6d425dff809c96d9e2bd44171db",
+      "bytes": 3997,
+      "matches_local": true
+    },
+    {
+      "path": "docs/network/receipts/delivery.json",
+      "git_blob": "d58de8ae356a3c12f07dcc83d9d388389bd34586",
+      "sha256": "79dcbd6c935f365ab9e4c503fb33f160c1259c064d381ef7e0e308bbfbc481bc",
+      "bytes": 81012,
+      "matches_local": true
+    }
+  ]
+}
