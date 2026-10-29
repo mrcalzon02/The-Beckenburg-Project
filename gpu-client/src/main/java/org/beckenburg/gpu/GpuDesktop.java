@@ -521,6 +521,7 @@ public final class GpuDesktop {
   flyoverSmoke();
   lightingAudit();
   flashlightAndResidentMeshSmoke();
+  HandheldDepthReview.execute(ENGINE);
   residentBufferSmoke();
   continuousRouteAudit();
   System.out.println("PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse");
@@ -548,6 +549,7 @@ public final class GpuDesktop {
   if(options.contains("--castle-survey-review")){try{org.beckenburg.CastleSurveyReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--performance-review")){try{org.beckenburg.CastlePerformanceReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--world-residency-review")){try{org.beckenburg.WorldResidencyGpuReview.execute();}finally{stopReviewGpu();}return;}
+  if(options.contains("--handheld-depth-review")){try{HandheldDepthReview.execute(ENGINE);}finally{stopReviewGpu();}return;}
   if(options.contains("--fixture-join-review")){try{org.beckenburg.ArchitecturalJoinReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--van-castle-repair-review")){try{org.beckenburg.VanCastleRepairReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--map-compatibility-review")){try{org.beckenburg.MapCompatibilityReview.execute();}finally{stopReviewGpu();}return;}

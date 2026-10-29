@@ -1,0 +1,15 @@
+{
+  "source": "99baa79953be63bbc5d1058f6f63266360f40596",
+  "gpu_run": 40927250498,
+  "full_run": 40927255222,
+  "gpu_conclusion": "success",
+  "full_conclusion": "success",
+  "manifest_passed": 282,
+  "manifest_failed": 0,
+  "manifest_skipped": 0,
+  "required_gpu_assertions": [
+    "production first-surface flashlight depth and finite reach",
+    "actual UV closed/open door contributions",
+    "three real dispatch/hunter/movement/extraction/menu cycles"
+  ]
+}

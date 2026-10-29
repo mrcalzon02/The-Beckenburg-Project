@@ -1,0 +1,18 @@
+{
+  "source_label": "sparse-live-probes-final",
+  "working_checkout_head": "82bd31accb17ea8fb154998de2afd7a22f019616",
+  "jar": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\gpu-client\\target\\BeckenburgGPU.jar",
+  "jar_sha256": "89DB82E28976630B60EC2933321B0D5389B1B2F574C8FFDAF7F729E588EA7B1C",
+  "overlay_classes": [],
+  "sites": [
+    "CASTLE"
+  ],
+  "runs": 3,
+  "samples": 240,
+  "warmup": 90,
+  "width": 1280,
+  "lights": true,
+  "freeze": false,
+  "timezone": "Alaskan Standard Time",
+  "note": "Scripted same-instance rendering route; not physical navigation or installed full-round acceptance"
+}

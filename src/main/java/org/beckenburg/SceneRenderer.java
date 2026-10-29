@@ -12,6 +12,8 @@ public final class SceneRenderer {
     public static final int W=320,H=200;
     private static final double NEAR=.065;
     private final boolean worldResidentEnabled=!Boolean.getBoolean("beckenburg.world.resident.disabled");
+    private final boolean changedOnlyLighting=!Boolean.getBoolean("beckenburg.lighting.changedOnly.disabled");
+    private final boolean lightDependenciesEnabled=changedOnlyLighting&&!Boolean.getBoolean("beckenburg.lighting.factorDependencies.disabled");
     private int renderWidth=W,renderHeight=H;
     private double nativeFocal=153; // fixed vertical lens; widescreen adds peripheral geometry
     private double focal=nativeFocal;
@@ -1622,12 +1624,12 @@ public final class SceneRenderer {
         }
         float[] complete(){return Arrays.copyOf(values,count);}
     }
-    private record WorldVertexLight(FixtureLighting.VertexProbe probe,int tint){
-        void apply(float[] target,int offset){
-            var rgb=probe.sample();
-            target[offset+5]=(float)(Math.max(.03,rgb.r())*((tint>>16)&255)/255.0);
-            target[offset+6]=(float)(Math.max(.03,rgb.g())*((tint>>8)&255)/255.0);
-            target[offset+7]=(float)(Math.max(.03,rgb.b())*(tint&255)/255.0);
+    private record WorldVertexLight(FixtureLighting.VertexProbe probe,int tint,int offset){
+        void apply(float[] target){
+            probe.writeTinted(target,offset,tint);
+        }
+        float[] applyIfChanged(float[] original,float[] target){
+            return probe.copyTintedIfChanged(original,target,offset,tint);
         }
     }
     private boolean preparingWorldProbes;
@@ -1636,7 +1638,10 @@ public final class SceneRenderer {
             var probe=fixtureLighting.prepareVertex(room,material,p.x,p.y,p.z,
                 normal==null?0:normal.x,normal==null?0:normal.y,normal==null?0:normal.z,normal!=null);
             var rgb=probe.sample();dst.vertex(new Vertex(p,u,v,rgb.r(),rgb.g(),rgb.b()),tint);
-            dst.lights.add(new WorldVertexLight(probe,tint));
+            // Constant ambient probes never depend on source factors. Retain
+            // only live receivers, with their actual material-buffer offsets.
+            if(!changedOnlyLighting||!probe.constant())
+                dst.lights.add(new WorldVertexLight(probe,tint,dst.count-8));
         }else dst.vertex(gpuLitVertex(p,u,v,material,room,normal),tint);
     }
 
@@ -2503,7 +2508,7 @@ public final class SceneRenderer {
     }
     private void releaseWorldChunk(ResidentWorldChunk chunk){
         for(var batch:chunk.batches.values())residentWorldBytes-=(long)batch.vertices().length*Float.BYTES;
-        chunk.batches.clear();chunk.lights.clear();chunk.checkedFrame=-1;
+        chunk.batches.clear();chunk.lights.clear();chunk.dependencies.clear();chunk.checkedFrame=-1;
         chunk.occluderVersion=-1;chunk.lightVersion=-1;chunk.lod=-1;
         if(chunk.shadows!=null){chunk.shadows.release();chunk.shadows=null;}
     }
@@ -2537,6 +2542,7 @@ public final class SceneRenderer {
         final boolean indoor;
         final java.util.Map<Integer,ResidentShell> batches=new java.util.LinkedHashMap<>();
         final java.util.Map<Integer,List<WorldVertexLight>> lights=new java.util.HashMap<>();
+        final java.util.Map<Integer,FixtureLighting.ProbeDependencies> dependencies=new java.util.HashMap<>();
         long checkedFrame=-1,lightVersion=-1;
         long occluderVersion=-1;
         FixtureLighting.StationaryShadows shadows;
@@ -2594,11 +2600,21 @@ public final class SceneRenderer {
             // Re-evaluate source intensities in retained receiver probes. No
             // geometry, visibility, UV or tessellation work is repeated.
             for(var material:new ArrayList<>(chunk.batches.keySet())){
-                var old=chunk.batches.get(material);float[] vertices=old.vertices().clone();
+                var old=chunk.batches.get(material);
+                var dependencies=chunk.dependencies.get(material);
+                if(lightDependenciesEnabled&&dependencies!=null&&dependencies.matchesCurrent()){
+                    residentWorldHits++;continue;
+                }
+                float[] vertices=changedOnlyLighting?old.vertices():old.vertices().clone();
                 var lights=chunk.lights.get(material);
-                for(int i=0;i<lights.size();i++)lights.get(i).apply(vertices,i*8);
-                chunk.batches.put(material,new ResidentShell(lod,version,old.id(),old.revision()+1,vertices));
-                residentWorldBuilds++;
+                for(int i=0;i<lights.size();i++){
+                    if(changedOnlyLighting)vertices=lights.get(i).applyIfChanged(old.vertices(),vertices);
+                    else lights.get(i).apply(vertices);
+                }
+                boolean changed=vertices!=old.vertices();
+                chunk.batches.put(material,new ResidentShell(lod,version,old.id(),old.revision()+(changed?1:0),vertices));
+                if(dependencies!=null)dependencies.capture();
+                if(changed)residentWorldBuilds++;else residentWorldHits++;
             }
             chunk.lightVersion=version;
         }else if(topology){
@@ -2628,6 +2644,8 @@ public final class SceneRenderer {
                 chunk.batches.put(built.getKey(),new ResidentShell(lod,version,
                     old==null?GpuWorldRenderer.nextId():old.id(),old==null?1:old.revision()+1,vertices));
                 chunk.lights.put(built.getKey(),List.copyOf(built.getValue().lights));
+                if(lightDependenciesEnabled)chunk.dependencies.put(built.getKey(),fixtureLighting.dependencies(
+                    built.getValue().lights.stream().map(WorldVertexLight::probe).toList()));
                 residentWorldBuilds++;
             }
             chunk.lod=lod;chunk.lightVersion=version;chunk.occluderVersion=fixtureLighting.occluderRevision();residentWorldBytes+=after-before;
