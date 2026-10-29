@@ -1,0 +1,18 @@
+{
+  "source_label": "changed-only-final",
+  "working_checkout_head": "e044d8cf03f9210d2542ac092314ed50fa20d9ce",
+  "jar": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\gpu-client\\target\\BeckenburgGPU.jar",
+  "jar_sha256": "8F1772EA667151572B2FE03BF59987ED8ED6BE1BFC220450396FE526D81EB161",
+  "overlay_classes": [],
+  "sites": [
+    "CASTLE"
+  ],
+  "runs": 3,
+  "samples": 240,
+  "warmup": 90,
+  "width": 1280,
+  "lights": true,
+  "freeze": false,
+  "timezone": "Alaskan Standard Time",
+  "note": "Scripted same-instance rendering route; not physical navigation or installed full-round acceptance"
+}

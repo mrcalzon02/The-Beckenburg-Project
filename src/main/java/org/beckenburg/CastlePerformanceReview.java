@@ -60,7 +60,7 @@ public final class CastlePerformanceReview {
             "\nresolution="+width+"x"+height+"\nlights="+on+"\nfreeze="+freeze+
             "\nsamples="+samples+"\nwarmup="+warmup+"\npreset="+renderer.psxPreset()+"\n");
         try(var csv=Files.newBufferedWriter(output.resolve("frames.csv"))){
-            csv.write("site,view,sample,total_ms,cpu_ms,build_ms,geometry_ms,effects_ms,gl_issue_ms,readback_copy_ms,gl_total_ms,faces,frustum_faces,triangles,lights,light_samples,cache_hits,shadow_rays,considered_sources,invalidated_cells,uploaded_bytes,reused_bytes,batches,allocated_bytes,gc_ms\n");
+            csv.write("site,view,sample,total_ms,cpu_ms,build_ms,geometry_ms,effects_ms,gl_issue_ms,readback_copy_ms,gl_total_ms,faces,frustum_faces,triangles,lights,light_samples,cache_hits,shadow_rays,considered_sources,invalidated_cells,uploaded_bytes,reused_bytes,batches,allocated_bytes,gc_ms,color_sync_ms,depth_sync_ms,cpu_conversion_ms\n");
             for(int p=0;p<poses.length;p++){
                 double[] pose=poses[p];renderer.x=pose[1];renderer.eyeHeight=pose[2];renderer.z=pose[3];
                 renderer.yaw=pose[4];renderer.pitch=pose[5];
@@ -81,15 +81,16 @@ public final class CastlePerformanceReview {
                     }
                     long total=System.nanoTime()-start;
                     Object d=renderer.frameDiagnostics(),l=d==null?null:property(d,"lighting");
-                    Object timing=property(backend,"frameTiming"),upload=property(backend,"uploadStats");
+                    Object timing=property(backend,"frameTiming"),upload=property(backend,"uploadStats"),readback=property(backend,"readbackDetail");
                     if(i>=0){
                         times.add(total/1e6);
-                        csv.write(String.format(Locale.ROOT,"%s,%s,%d,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d%n",
+                        csv.write(String.format(Locale.ROOT,"%s,%s,%d,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%.4f,%.4f,%.4f%n",
                             site,names[p],i,total/1e6,cpu/1e6,number(d,"sceneBuildNs")/1e6,number(d,"geometryNs")/1e6,number(d,"effectsNs")/1e6,
                             number(timing,"drawIssueNs")/1e6,number(timing,"readbackAndCopyNs")/1e6,number(timing,"totalNs")/1e6,
                             number(d,"faces"),number(d,"frustumFaces"),number(d,"submittedTriangles"),number(l,"lights"),number(l,"samples"),number(l,"cacheHits"),
                             number(l,"shadowRays"),number(l,"consideredSources"),number(l,"invalidatedCells"),number(upload,"uploadedBytes"),number(upload,"reusedBytes"),
-                            number(upload,"uploadedBatches")+number(upload,"reusedBatches"),allocated()-a,gc()-g));
+                            number(upload,"uploadedBatches")+number(upload,"reusedBatches"),allocated()-a,gc()-g,
+                            number(readback,"colorSyncNs")/1e6,number(readback,"depthSyncNs")/1e6,number(readback,"cpuConversionNs")/1e6));
                     }
                     if(i==samples-1){
                         renderer.pinCompletedGpuFrame(result);
