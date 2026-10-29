@@ -286,6 +286,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldRenderTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanLobbyTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanOwnerReadyAckTest
 if [ -f src/test/java/org/beckenburg/SmokeTest.java ]; then java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SmokeTest; fi
 jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes hbnet -C build/classes org/beckenburg -C build/classes dev/mrcalzon/weather
 printf '%s\n' 'Built build/beckenburg-game.jar'
