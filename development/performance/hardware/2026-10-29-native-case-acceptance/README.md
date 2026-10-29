@@ -12,10 +12,14 @@ UI checks have bounded waits with at most one queued EDT task. The former unboun
 
 Java 17 Maven packaging passes locally. The real UI test is reserved for the isolated CI desktop; no additional local game windows were opened. Its new exact-source CI result is pending at the implementation checkpoint. DEV-161 records this acceptance gap.
 
+Source `10e2f4e` was pushed and readback-verified in [draft PR41](https://github.com/mrcalzon02/The-Beckenburg-Project/pull/41), stacked on PR40. Exact-source [GPU40923212823](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40923212823) and [full40923217003](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40923217003) were dispatched. Results remain pending at this evidence checkpoint; workflow dispatch itself is not a passing result.
+
 ## Separate native executable verification
 
 `tools/verify_native_gpu_preview.ps1` builds a fresh self-contained diagnostic app-image from exactly one candidate JAR. It refuses existing output directories, verifies the embedded JAR hash, uses an isolated home, launches hidden OpenGL controls and records stdout, stderr and provenance. It does not replace an installed game. The verification image is explicitly headless and is not a player distribution.
 
 First local execution on Windows 11 / Java 17.0.12 / RTX 5070 / NVIDIA 616.64 passed with exit 0 and all ten map-type controls: unchanged-upload reuse, torch, candle flicker, blackout, doors, resize, return and live TV/map pixels. Twelve captures and raw `frames.csv` / `live-textures.csv` are retained locally under `build/native-acceptance-20261029/`. The compiled diagnostic candidate JAR and embedded JAR both hash to `17435AE3E96B12BC7740EDE728544367C9E72491572663A150778E2B0191B166`; its implementation files were still uncommitted during this first packaging run. A clean source checkpoint and retained evidence follow.
+
+Clean-source rerun `10e2f4e6675426de92f751b1b18adb63456bb293` also passes with exit0 and an empty worktree-status record. Candidate and embedded JAR hash: `EBDE4C0734F00891410A70DA1583676EFDA8D2BAC90767F673809EC6B8E5929C`. Its `native-gpu/` folder retains provenance, stdout/stderr, raw controls and all12 original PNGs. Every capture is byte-identical to the final `82bd31ac` prepared-light parent (`image-parity.json`). The refreshed shared gallery indexes1102 original images and passes `--check`. The headless editor action check passes after restoring the exact tracked installer file omitted by sparse checkout; no assertion or installer input was weakened.
 
 This native diagnostic is not installed full-game or physical input acceptance. The short van retreat loop is not a successful investigation or an interior route/performance benchmark. Full A-G, playable interior routes, installed solo/TCP loops and release gates remain open.
