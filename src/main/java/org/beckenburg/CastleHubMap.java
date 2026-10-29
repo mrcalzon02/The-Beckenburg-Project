@@ -61,6 +61,7 @@ public final class CastleHubMap {
         CONTRACT(13.5,6.8,"CAMPAIGN CONTRACT BOARD"),
         EXPEDITION(13.5,16.6,"EXPEDITION VAN / START CASE"),
         MULTIPLAYER(22.5,16.6,"NETWORK DESK / HOST OR JOIN"),
+        OPTIONS(24.6,23.0,"OPTIONS COUNTER / GAME SETTINGS"),
         SPECTRAL(5.0,16.6,"SPECTRAL PRACTICE"),
         ARCHIVE(36.0,11.8,"MATTHIS ROOK / COMMON ARCHIVE");
         public final double x,z;public final String label;
