@@ -211,7 +211,7 @@ public final class LanAudio implements AutoCloseable {
                     byte[] block=mix(voices);
                     for(int offset=0;offset<block.length&&!closed;){
                         int written=line.write(block,offset,block.length-offset);
-                        if(written<=0)break;
+                        if(written<=0)throw new IllegalStateException("Effects device accepted no audio frames");
                         offset+=written;
                     }
                 }catch(LineUnavailableException|IllegalArgumentException
