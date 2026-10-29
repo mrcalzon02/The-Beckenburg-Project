@@ -2,7 +2,7 @@ package org.beckenburg;
 import javax.sound.sampled.*;
 import java.util.*;
 
-/** Local cosmetic ambience only; respects ordinary effects volume and mute. */
+/** Local cosmetic ambience only; respects independent environment volume and global mute. */
 public final class SoundVolumeAudio implements AutoCloseable {
     public record Listener(double x,double y,double z,double yaw,boolean power){}
     /** Pure mixer used by both the device worker and device-free verification. */
@@ -28,6 +28,6 @@ public final class SoundVolumeAudio implements AutoCloseable {
     public void document(SoundDocument d){document=Objects.requireNonNull(d);}
     public void listener(double x,double y,double z,double yaw,boolean power){listener=new Listener(x,y,z,yaw,power);}
     public void active(boolean value){active=value&&!closed;}
-    private void run(){SoundDocument loaded=null;Mixer mixer=null;try{while(!closed){var d=document;if(!active||d.volumes().isEmpty()||Boolean.getBoolean("beckenburg.audio.mute")||LanAudio.effectsVolume()==0){if(line!=null){line.stop();line.flush();}Thread.sleep(80);continue;}if(d!=loaded){mixer=new Mixer(d);loaded=d;}if(line==null){line=AudioSystem.getSourceDataLine(new AudioFormat(16000,16,2,true,false));line.open(new AudioFormat(16000,16,2,true,false),4096);}if(!line.isRunning())line.start();byte[] block=mixer.block(listener,512,LanAudio.effectsVolume()/100d);line.write(block,0,block.length);}}catch(LineUnavailableException|IllegalArgumentException|SecurityException unavailable){/* Device-free validation remains available. */}catch(InterruptedException e){Thread.currentThread().interrupt();}finally{var open=line;line=null;if(open!=null){open.stop();open.flush();open.close();}}}
+    private void run(){SoundDocument loaded=null;Mixer mixer=null;try{while(!closed){var d=document;if(!active||d.volumes().isEmpty()||Boolean.getBoolean("beckenburg.audio.mute")||EnvironmentAudio.volume()==0){if(line!=null){line.stop();line.flush();}Thread.sleep(80);continue;}if(d!=loaded){mixer=new Mixer(d);loaded=d;}if(line==null){line=AudioSystem.getSourceDataLine(new AudioFormat(16000,16,2,true,false));line.open(new AudioFormat(16000,16,2,true,false),4096);}if(!line.isRunning())line.start();byte[] block=mixer.block(listener,512,EnvironmentAudio.volume()/100d);line.write(block,0,block.length);}}catch(LineUnavailableException|IllegalArgumentException|SecurityException unavailable){/* Device-free validation remains available. */}catch(InterruptedException e){Thread.currentThread().interrupt();}finally{var open=line;line=null;if(open!=null){open.stop();open.flush();open.close();}}}
     public void close(){closed=true;active=false;worker.interrupt();var open=line;if(open!=null){open.stop();open.flush();}}
 }
