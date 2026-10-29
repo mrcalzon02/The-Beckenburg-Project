@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 1031,
+  "count": 1037,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -10476,6 +10476,46 @@
       "sha256": "da4cb61d3e06ff5c8ed25e4ffad6ccf133bdd8e172873cbbd4022d7e7dff033e"
     },
     {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-i.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-i.png",
+      "title": "Castle readable label tier i",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 287565,
+      "sha256": "714927d411e1ff2f867e604ad572a2a59d2ed9c872f3deae7bf0958183b17371"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-ii.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-ii.png",
+      "title": "Castle readable label tier ii",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 284076,
+      "sha256": "1ef3ee829c9b37f10fa0571dead383c91fd9c8ecda9bd39fff5a689e4d7f103b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-iii.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-iii.png",
+      "title": "Castle readable label tier iii",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 289080,
+      "sha256": "0a5d32219e16cadab70aea030a69bbb58e5867f55560ce3242947a0a1c3af343"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/hollow_creek-corrected-gpu.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/hollow_creek-corrected-gpu.png",
+      "title": "Hollow creek corrected gpu",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 144703,
+      "sha256": "b1ad583363ce0743d75156913a936029bdfe5840d5443df6da2d9dcc288dcbee"
+    },
+    {
       "path": "development/performance/hardware/2026-10-28-castle-regression/captures/house-after-room.png",
       "url": "development/performance/hardware/2026-10-28-castle-regression/captures/house-after-room.png",
       "title": "House after room",
@@ -10484,6 +10524,16 @@
       "height": 400,
       "bytes": 163068,
       "sha256": "5562d99c7f611a86a0a05b8e2b26ee1d74516c7e62d4f6cbc244d88c307fa1cb"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/house-corrected-gpu.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/house-corrected-gpu.png",
+      "title": "House corrected gpu",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 160635,
+      "sha256": "badb7764289a45033260b837c3018964538585431bce75b64eaa61840b08bb91"
     },
     {
       "path": "development/performance/hardware/2026-10-28-castle-regression/captures/native-after-view.png",
@@ -10504,6 +10554,16 @@
       "height": 400,
       "bytes": 3286,
       "sha256": "028e5ea0b880d4a6f956efa6ba1e23f8a50baec8f8bb6e948054bc05bcb5c9a5"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/school-corrected-gpu.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/school-corrected-gpu.png",
+      "title": "School corrected gpu",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 86974,
+      "sha256": "b46bea06a6c2ee23b1778e18acf0f5845457fd798c9b0aa9e116620c385de47e"
     }
   ]
 }

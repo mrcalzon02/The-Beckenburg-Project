@@ -42,6 +42,43 @@ public final class WorldResidencyGpuReview {
         ImageIO.write(renderer.image(),"png",ROOT.resolve(name+".png").toFile());
     }
     private static long energy(GpuWorldRenderer.Result frame){long result=0;for(int p:frame.argb())if((p>>>24)>127)result+=(p>>16&255)+(p>>8&255)+(p&255);return result;}
+    private static GpuWorldRenderer.Result liveTextureFrame(long scene,long resource,int material,float[] vertices,StringBuilder report,String label)throws Exception{
+        var gpu=GpuWorldRenderer.active();long id=GpuWorldRenderer.nextId();
+        gpu.submit(new GpuWorldRenderer.Frame(scene,id,320,200,153,0,0,
+            List.of(new GpuWorldRenderer.Surface(material,vertices,resource,1))));
+        long deadline=System.nanoTime()+30_000_000_000L;
+        while(gpu.latest()==null||gpu.latest().frameId()!=id){if(System.nanoTime()>deadline)throw new AssertionError("Live texture GPU timeout");Thread.sleep(1);}
+        Object textures=gpu.getClass().getMethod("textureStats").invoke(gpu),meshes=gpu.getClass().getMethod("uploadStats").invoke(gpu);
+        check(number(textures,"frameId")==id,"Texture evidence must belong to this exact frame");
+        if(label.endsWith("repeat"))check(number(textures,"uploads")==0,"Unchanged live pixels must not reupload");
+        if(!label.endsWith("first"))check(number(meshes,"uploadedBytes")==0,"Live screen updates must not reupload static screen geometry");
+        report.append(label).append(',').append(id).append(',').append(number(textures,"uploads")).append(',')
+            .append(number(textures,"uploadedBytes")).append(',').append(number(meshes,"uploadedBytes")).append('\n');
+        return gpu.latest();
+    }
+    private static void liveTextures()throws Exception{
+        float[] vertices={-1,-.7f,3,0,0,1,1,1, 1,-.7f,3,1,0,1,1,1, 1,.7f,3,1,1,1,1,1,
+                          -1,-.7f,3,0,0,1,1,1, 1,.7f,3,1,1,1,1,1, -1,.7f,3,0,1,1,1,1};
+        var report=new StringBuilder("step,frame,texture_uploads,texture_bytes,mesh_bytes\n");
+        long scene=GpuWorldRenderer.nextId(),resource=GpuWorldRenderer.nextId();
+        int tv=GlbProps.televisionMaterial(1002,2,1002);GlbProps.updateTelevision(tv,true,100);
+        var first=liveTextureFrame(scene,resource,tv,vertices,report,"tv-first");
+        GlbProps.updateTelevision(tv,true,101);var second=liveTextureFrame(scene,resource,tv,vertices,report,"tv-changed");
+        int changed=0;for(int i=0;i<first.argb().length;i++)if(first.argb()[i]!=second.argb()[i])changed++;
+        check(changed>500,"Actual GPU television noise must update after its source pixels change");
+        liveTextureFrame(scene,resource,tv,vertices,report,"tv-repeat");
+        scene=GpuWorldRenderer.nextId();resource=GpuWorldRenderer.nextId();
+        var image=new java.awt.image.BufferedImage(256,256,java.awt.image.BufferedImage.TYPE_INT_RGB);
+        var graphics=image.createGraphics();graphics.setColor(new java.awt.Color(16,150,40));graphics.fillRect(0,0,256,256);graphics.dispose();
+        GlbProps.updateVanMap(image);first=liveTextureFrame(scene,resource,GlbProps.VAN_MAP_MATERIAL,vertices,report,"map-first");
+        image=new java.awt.image.BufferedImage(256,256,java.awt.image.BufferedImage.TYPE_INT_RGB);
+        graphics=image.createGraphics();graphics.setColor(new java.awt.Color(40,40,220));graphics.fillRect(0,0,256,256);graphics.dispose();
+        GlbProps.updateVanMap(image);second=liveTextureFrame(scene,resource,GlbProps.VAN_MAP_MATERIAL,vertices,report,"map-changed");
+        changed=0;for(int i=0;i<first.argb().length;i++)if(first.argb()[i]!=second.argb()[i])changed++;
+        check(changed>500,"Actual GPU map display must reflect the next host-approved image");
+        liveTextureFrame(scene,resource,GlbProps.VAN_MAP_MATERIAL,vertices,report,"map-repeat");
+        Files.writeString(ROOT.resolve("live-textures.csv"),report);
+    }
     public static void execute()throws Exception{
         check(GpuWorldRenderer.active()!=null,"Actual GPU required");Files.createDirectories(ROOT);
         var renderer=new SceneRenderer();renderer.setRenderSize(640,400);renderer.roomLights=new RoomLighting();renderer.lamp=false;
@@ -65,7 +102,7 @@ public final class WorldResidencyGpuReview {
         renderer.setRenderSize(800,500);frame("castle-resize",renderer,null,castle,4.3,true);
         frame("castle-resize-repeat",renderer,null,castle,4.3,true);
         renderer.setRenderSize(640,400);
-        for(var site:List.of(HouseMap.Site.HOUSE,HouseMap.Site.SCHOOL,HouseMap.Site.HOLLOW_CREEK)){
+        for(var site:HouseMap.Site.values()){
             var map=new HouseMap(site);var at=map.spawn(0);renderer.x=at.x();renderer.z=at.z();renderer.eyeHeight=at.y()+1.62;renderer.yaw=Math.PI/3;renderer.pitch=-.1;
             frame(site+"-first",renderer,map,null,2.5,true);
             var result=frame(site+"-repeat",renderer,map,null,2.5,true);
@@ -75,6 +112,7 @@ public final class WorldResidencyGpuReview {
         renderer.x=13.5;renderer.z=20.5;renderer.eyeHeight=1.62;renderer.yaw=.1;
         frame("castle-return",renderer,null,castle,4.3,true);
         frame("castle-return-repeat",renderer,null,castle,4.3,true);
-        System.out.println("PASS actual OpenGL Castle/House/School/native residency: zero unchanged uploads, real torch, flicker, blackout, door, resize and return");
+        liveTextures();
+        System.out.println("PASS actual OpenGL Castle and all10 map types: zero unchanged uploads, real torch, flicker, blackout, door, resize and return");
     }
 }

@@ -44,6 +44,14 @@ public final class WorldResidencyTest {
         renderer.yaw+=.04;renderer.drawCastle(castle,2.5,true);
         check(retained(first,resident(backend.frame))>first.size()/2,"Camera rotation must retain shared visible source arrays");
         check(stats.topologyBuilds()==renderer.worldResidentStats().topologyBuilds(),"Camera motion must not reconstruct Castle topology");
+        renderer.x+=2.0;renderer.z-=2.0;renderer.drawCastle(castle,2.5,true);
+        var moved=resident(backend.frame);int shared=0;
+        for(var entry:first.entrySet())if(moved.containsKey(entry.getKey())){
+            var next=moved.get(entry.getKey());
+            check(next.revision()==entry.getValue().revision()&&next.vertices()==entry.getValue().vertices(),
+                "Translation must preserve shared static topology and light arrays, not change a distance tessellation band");shared++;
+        }
+        check(shared>20,"Translation must exercise genuinely shared Castle chunks");
         renderer.drawCastle(castle,2.5,true);var beforeFlicker=resident(backend.frame);
         renderer.drawCastle(castle,4.3,true);
         var flicker=resident(backend.frame);int changed=0;
@@ -62,12 +70,14 @@ public final class WorldResidencyTest {
         CastleLevelEdits.current().paintFloor(2,2,MaterialAtlas.STONE);renderer.drawCastle(castle,4.3,true);
         check(renderer.worldResidentStats().topologyBuilds()==topology+1,"Authored geometry revision must invalidate retained topology");
         check(scene!=backend.frame.sceneId(),"Editor topology changes must dispose old GPU generation");
-        for(var site:List.of(HouseMap.Site.HOUSE,HouseMap.Site.SCHOOL,HouseMap.Site.HOLLOW_CREEK)){
+        for(var site:HouseMap.Site.values()){
             var map=new HouseMap(site);var spawn=map.spawn(0);
             renderer.x=spawn.x();renderer.z=spawn.z();renderer.eyeHeight=spawn.y()+1.62;renderer.yaw=Math.PI/3;
             renderer.drawNetwork(map,List.of(),-1,2.5);var mapFirst=resident(backend.frame);
             check(!mapFirst.isEmpty(),"Real "+site+" scenery must be resident");
-            var mapStats=renderer.worldResidentStats();renderer.drawNetwork(map,List.of(),-1,2.5);
+            var mapStats=renderer.worldResidentStats();long mapScene=backend.frame.sceneId();
+            renderer.drawNetwork(map,List.of(),-1,2.5);
+            check(mapScene==backend.frame.sceneId(),"Unchanged "+site+" must not replace its GPU scene generation");
             check(retained(mapFirst,resident(backend.frame))==mapFirst.size(),"Unchanged "+site+" must retain arrays and revisions");
             check(mapStats.builds()==renderer.worldResidentStats().builds(),"Unchanged "+site+" must not relight/repack resident scenery");
             check(renderer.worldResidentStats().bytes()>=0&&renderer.worldResidentStats().bytes()<=128L*1024*1024,"Bounded resident geometry across scene transitions");
@@ -79,6 +89,6 @@ public final class WorldResidencyTest {
         renderer.drawCastle(castle,4.3,true);
         check(!resident(backend.frame).isEmpty(),"Returning to Castle must recover the correct scene resources");
         CastleLevelEdits.current().reset();
-        System.out.println("PASS real Castle/House/School/native-map submission residency, light updates, occlusion, UV, resize, editor and scene transitions (recording backend)");
+        System.out.println("PASS real Castle and all10 map-type submission residency, light updates, occlusion, UV, resize, editor and scene transitions (recording backend)");
     }
 }

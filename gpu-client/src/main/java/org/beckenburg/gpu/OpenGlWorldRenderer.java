@@ -116,6 +116,12 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private ByteBuffer colorBytes;
  private FloatBuffer depthFloats;
  private final Map<Integer,Texture> textures=new HashMap<>();
+ private final Map<Integer,Long> textureRevisions=new HashMap<>();
+ public record TextureStats(long frameId,int uploads,long uploadedBytes){}
+ private volatile TextureStats textureStats;
+ private int frameTextureUploads;
+ private long frameTextureBytes;
+ public TextureStats textureStats(){return textureStats;}
  /** Positive resource IDs name independent persistent VBOs. Zero preserves
   * the historical per-material dynamic batch and byte-exact comparison. */
  private record MeshKey(int material,long resourceId){}
@@ -188,19 +194,22 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  private Texture texture(int material){
   Texture found=textures.get(material);
-  if(found!=null&&material==GlbProps.VAN_MAP_MATERIAL){
-   // The host-approved map CRT is a LIVE texture. Never freeze it at the
-   // first sampled frame or silently lose investigation-map updates.
+  long revision=found==null||textureRevisions.containsKey(material)?GlbProps.dynamicTextureRevision(material):-1;
+  if(found!=null&&revision>=0&&!Objects.equals(textureRevisions.get(material),revision)){
+   // Live CRT/TV pixels are separately revisioned. Repeated draws of the
+   // same pixels neither freeze the screen nor reallocate/upload a Pixmap.
    Pixmap update=pixelsFor(material);
-   found.draw(update,0,0);update.dispose();
+   found.draw(update,0,0);frameTextureUploads++;frameTextureBytes+=4L*update.getWidth()*update.getHeight();update.dispose();
+   textureRevisions.put(material,revision);
   }
   if(found!=null)return found;
   Pixmap bitmap=pixelsFor(material);
   Texture image=new Texture(bitmap);
+  frameTextureUploads++;frameTextureBytes+=4L*bitmap.getWidth()*bitmap.getHeight();
   bitmap.dispose();
   image.setFilter(Texture.TextureFilter.Nearest,Texture.TextureFilter.Nearest);
   image.setWrap(Texture.TextureWrap.Repeat,Texture.TextureWrap.Repeat);
-  textures.put(material,image);return image;
+  textures.put(material,image);if(revision>=0)textureRevisions.put(material,revision);return image;
  }
  private Mesh mesh(MeshKey key,int vertices){
   Mesh existing=meshes.get(key);
@@ -227,6 +236,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    uploadedRevisions.clear();uploadedCounts.clear();
   }
   long frameUploadBytes=0,frameReusedBytes=0;
+  frameTextureUploads=0;frameTextureBytes=0;
   int frameUploadedBatches=0,frameReusedBatches=0;
   resizeTarget(frame.width(),frame.height());
   target.begin();
@@ -324,6 +334,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   uploadStats=new UploadStats(frame.sceneId(),frame.frameId(),
       frameUploadedBatches,frameReusedBatches,
       frameUploadBytes,frameReusedBytes);
+  textureStats=new TextureStats(frame.frameId(),frameTextureUploads,frameTextureBytes);
   long finished=System.nanoTime();
   frameTiming=new FrameTiming(frame.sceneId(),frame.frameId(),
       rasterReady-started,finished-rasterReady,finished-started);
@@ -355,6 +366,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   uploadedVertices.clear();uploadedRevisions.clear();uploadedCounts.clear();
   for(Mesh mesh:meshes.values())mesh.dispose();
   for(Texture texture:textures.values())texture.dispose();
+  textureRevisions.clear();
   if(target!=null)target.dispose();
   if(shader!=null)shader.dispose();
  }

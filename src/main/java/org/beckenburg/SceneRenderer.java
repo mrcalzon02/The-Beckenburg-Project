@@ -1682,13 +1682,9 @@ public final class SceneRenderer {
         for(int chunkIndex=0;chunkIndex<preparedShellChunks.size();chunkIndex++){
             ShellChunk chunk=preparedShellChunks.get(chunkIndex);
             if(shellChunkCulling&&!shellChunkInFrustum(chunk))continue;
-            double nearestX=Math.max(chunk.minX,Math.min(x,chunk.maxX));
-            double nearestY=Math.max(chunk.minY,Math.min(eyeHeight,chunk.maxY));
-            double nearestZ=Math.max(chunk.minZ,Math.min(z,chunk.maxZ));
-            double distance=Math.sqrt((nearestX-x)*(nearestX-x)
-                +(nearestY-eyeHeight)*(nearestY-eyeHeight)
-                +(nearestZ-z)*(nearestZ-z));
-            int lod=lightingSubdivisionLimit(distance);
+            // Retained geometry keeps the full close-range probe topology.
+            // Walking across a distance threshold must not retessellate walls.
+            int lod=chunk.room>=0&&chunk.room<12?3:0;
             long lightVersion=fixtureLighting.regionVersion(
                 chunk.minX-.09,chunk.minY-.09,chunk.minZ-.09,
                 chunk.maxX+.09,chunk.maxY+.09,chunk.maxZ+.09);
@@ -2442,6 +2438,9 @@ public final class SceneRenderer {
         if(chunk.shadows!=null){chunk.shadows.release();chunk.shadows=null;}
     }
     private void appendRetainedWorld(List<Face> out,List<Face> source,Object key,HouseMap map){
+        // Non-rendering socket passes must not replace the real geometry
+        // owned by the same authored socket (for example a hiding cupboard).
+        if(source.isEmpty())return;
         if(!worldResidentEnabled||map==null||exportFullLevel||GpuWorldRenderer.active()==null||uvLamp
             ||portablePositions.values().stream().anyMatch(LanPortableLights.Light::on)){out.addAll(source);return;}
         var previous=auxiliaryWorld.get(key);
@@ -2465,13 +2464,16 @@ public final class SceneRenderer {
     private static final class ResidentWorldChunk {
         final List<Face> faces;
         final ShellChunk bounds;
+        final boolean indoor;
         final java.util.Map<Integer,ResidentShell> batches=new java.util.LinkedHashMap<>();
         final java.util.Map<Integer,List<WorldVertexLight>> lights=new java.util.HashMap<>();
         long checkedFrame=-1,lightVersion=-1;
         long occluderVersion=-1;
         FixtureLighting.StationaryShadows shadows;
         int lod=-1;
-        ResidentWorldChunk(List<Face> faces,ShellChunk bounds){this.faces=faces;this.bounds=bounds;}
+        ResidentWorldChunk(List<Face> faces,ShellChunk bounds){
+            this.faces=faces;this.bounds=bounds;this.indoor=faces.stream().anyMatch(f->f.room<12);
+        }
     }
     public record WorldResidentStats(long topologyBuilds,long builds,long hits,long bytes,int chunks){}
     public WorldResidentStats worldResidentStats(){return new WorldResidentStats(castleTopologyBuilds,
@@ -2509,10 +2511,9 @@ public final class SceneRenderer {
     private void appendResidentWorldChunk(ResidentWorldChunk chunk,List<GpuWorldRenderer.Surface> surfaces){
         if(chunk.faces.isEmpty()||!shellChunkInFrustum(chunk.bounds))return;
         var b=chunk.bounds;
-        double dx=Math.max(b.minX,Math.min(x,b.maxX))-x;
-        double dy=Math.max(b.minY,Math.min(eyeHeight,b.maxY))-eyeHeight;
-        double dz=Math.max(b.minZ,Math.min(z,b.maxZ))-z;
-        int lod=lightingSubdivisionLimit(Math.sqrt(dx*dx+dy*dy+dz*dz));
+        // Full near-field lighting detail is prepared once per source chunk;
+        // GPU residency makes per-camera lighting tessellation unnecessary.
+        int lod=(lightingMap==null||!lightingMap.nativeSite())&&chunk.indoor?3:0;
         long version=chunk.lightVersion;
         if(chunk.checkedFrame!=fixtureLighting.frameRevision()){
             version=fixtureLighting.regionVersion(b.minX-.09,b.minY-.09,b.minZ-.09,b.maxX+.09,b.maxY+.09,b.maxZ+.09);

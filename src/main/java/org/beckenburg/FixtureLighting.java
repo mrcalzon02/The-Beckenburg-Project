@@ -426,8 +426,11 @@ public final class FixtureLighting {
   return result;
  }
  private boolean emittingMaterial(int material){
-  if(material<0)return false;
+  if(material<0||material==GlbProps.VAN_MAP_MATERIAL)return false;
   if(!knownEmissionMaterials.get(material)){
+   // Reserved/sentinel IDs are not dense texture indices. In particular the
+   // map CRT uses MAX_VALUE-2 and must never size a BitSet to that value.
+   if(material>=GlbProps.TEXTURE_BASE&&!GlbProps.registeredTexture(material))return false;
    String name=GlbProps.materialName(material).toLowerCase(Locale.ROOT);
    if(name.contains("glass")||name.contains("bulb")||name.contains("flame")||name.startsWith("television"))emissionMaterials.set(material);
    knownEmissionMaterials.set(material);
