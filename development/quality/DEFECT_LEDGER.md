@@ -2222,6 +2222,16 @@ Evidence and verification: User-supplied screenshot 2026-10-29; CastleLightingPl
 
 Older-map obligation: Inspect all wall-mounted model families in other investigation sites individually for physical wall thickness, mesh-pivot placement, wall-face support, and clipping. A Castle-only repair does not certify other maps.
 
+### DEV-164 — Castle equipment shelf lettering unreadable at retro framebuffer resolutions
+
+**Status:** code-change-pushed-awaiting-gpu-capture-and-installed-review · **Affected:** Castle retail room, all 129 tiered plaques; desktop first-person HUD
+
+The user-provided 2026-10-29 screenshot (2048×574) shows equipment signage reduced to white pixel fragments on modern display output. The desktop had a default 200p world framebuffer with nearest-only glyph sampling; native HUD fonts were fixed at 12–14 physical pixels. The window size and 3D rendering size were separate.
+
+Source commit `a28b6c2a6760404a13942364f44d976c003254e5` adds selectable GPU 1080p rendering (720p software fallback), new-profile 540p GPU/360p software defaults, native HUD scale, aspect-preserving render-size caps and linear filtering only on Castle shelf text. Saved retro quality remains opt-in. This is a **source fix candidate**, not yet accepted visual legibility or installed gameplay.
+
+Verify using exact-position Castle GPU screenshots at retro, default and Full HD presets, measuring real sign readability at aisle distance, performance and retained PSX world appearance. The focused, GPU, multiplayer and gated installer jobs for `a28b6c2` were in progress at logging. Audit other map signage and van/evidence screens individually rather than assuming universal closure.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -1739,6 +1739,17 @@
       "action": "Source commit 732a0911c00c3faaa8ca80893635bfdf6289e69e computes the rear extent of the actual on/off GLB geometry, fits the rendered fixture in front of the real masonry face with 18 mm clearance, and places its plate at the wall. Preserves the editor scene coordinates, switched lighting and UV materials. Close-up on/off inspection captures added; do not treat image generation or packaging alone as visual signoff.",
       "evidence": "User-supplied screenshot 2026-10-29; CastleLightingPlacementRepairTest now measures world-transformed vertices for each authored wall fitting in both power states against the visible masonry face. Source commit 732a0911 pushed/readback verified; GitHub focused checks 40945959372, GPU 40945959443, full-round 40945959390 and installer 40945959398 pending at time of ledger entry. Close-up frames emitted by CastleLiveRepairVisualTest in build/e2e/castle-repairs.",
       "older_maps": "Inspect all wall-mounted model families in other investigation sites individually for physical wall thickness, mesh-pivot placement, wall-face support, and clipping. A Castle-only repair does not certify other maps."
+    },
+    {
+      "id": "DEV-164",
+      "title": "Castle equipment shelf lettering unreadable at retro framebuffer resolutions",
+      "status": "code-change-pushed-awaiting-gpu-capture-and-installed-review",
+      "affected": "Castle Beckenburg retail room, all 129 tiered equipment plaques; desktop first-person UI",
+      "symptom": "2026-10-29 user screenshot shows shelf lettering degraded into scattered white pixels/strokes, despite a modern wide display, and HUD type extremely small.",
+      "cause": "GraphicsOptions defaulted new profiles to a 200p world framebuffer, used nearest-neighbor filtering on glyph atlases, and painted native-resolution HUD lettering at fixed 12-14 physical pixels. High output window resolution did not increase the 3D raster target. Long-distance legibility of physically small plaques remains an independent constraint.",
+      "action": "Code commit a28b6c2a6760404a13942364f44d976c003254e5 adds an explicit GPU 1080p internal render choice with CPU 720p safety cap, raises new-profile GPU/CPU defaults to 540p/360p, preserves ultra-wide projection when render dimensions cap out, scales Castle HUD independently of world pixelation, and uses linear sampling only on the signage atlas. Retro/nearest-neighbor remain available by selection. Do not claim readable distant text without comparing exact hardware screenshots.",
+      "evidence": "Screenshot supplied 2026-10-29 (2048x574). GraphicsOptionsTest updated to check ultrawide projection, explicit FHD fallback and HUD scale. Source push and readback verified at a28b6c2; focused workflow 40946601310, GPU 40946601416, full-round 40946601337 and installer 40946601450 pending when logged. Need 200p/540p/720p/1080p same-camera physical GPU captures and player confirmation that labels are readable at practical shopping distance.",
+      "older_maps": "Review readable authoring/UI text on van control consoles, map screens, evidence boards, journals and other playable sites independently. Castle font correction alone is not cross-map certification."
     }
   ],
   "audit_categories": [
