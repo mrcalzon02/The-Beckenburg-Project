@@ -82,7 +82,7 @@ public final class AudioDeviceRecoveryTest {
                 "Positional effects worker did not resume after device restored");
             check(attempts.get()>=2,"Device was never reopened");
         }
-        check(!recovered.isOpen(),"Recovered audio line not closed on shutdown");
+        await(()->!recovered.isOpen(),"Recovered audio line not closed on shutdown");
         System.out.println("PASS simulated output failure, recovered positional PCM and clean shutdown");
     }
 }
