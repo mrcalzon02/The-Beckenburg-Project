@@ -56,12 +56,29 @@ public final class PreparedLightWriteTest {
         }
         return result;
     }
-    public static void main(String[] args){
+    public static void main(String[] args)throws Exception{
         var castle=new CastleHubMap();var light=new FixtureLighting(castle);light.castleFrame(true,25);
         var prepared=probes(light);check(!prepared.isEmpty(),"Actual authored light probes required");
+        var dependency=light.dependencies(prepared);
+        check(dependency.matchesCurrent(),"Fresh dependency captures actual source factors");
+        // Perturb the real input below spatial invalidation's 1/1000 threshold:
+        // an unrelated source can still trigger evaluation of this same batch.
+        var factorField=FixtureLighting.class.getDeclaredField("factors");factorField.setAccessible(true);
+        double[] factorValues=(double[])factorField.get(light);int source=light.sources().get(0).id();
+        double originalFactor=factorValues[source];
+        try{factorValues[source]=Math.nextUp(originalFactor);
+            check(!dependency.matchesCurrent(),"Even one-ULP contributing factor changes must prevent skipping");}
+        finally{factorValues[source]=originalFactor;}
+        check(dependency.matchesCurrent(),"Restored exact factors match the retained snapshot");
+        var constantDependency=light.dependencies(List.of(light.prepareVertex(0,MaterialAtlas.STONE,10000,10000,10000,0,1,0,true)));
         var retained=save(prepared);
         for(int tick:new int[]{25,26,31,70,120}){light.castleFrame(true,tick);compare(prepared);compareCopies(retained);}
         light.castleFrame(false,120);compare(prepared);compareCopies(retained);
+        check(!dependency.matchesCurrent(),"Blackout must invalidate an actual contributing factor snapshot");
+        check(constantDependency.matchesCurrent(),"Unrelated source changes retain ambient-only receivers");
+        dependency.capture();check(dependency.matchesCurrent(),"Capture only after evaluating new vertex colors");
+        try{new FixtureLighting(new CastleHubMap()).dependencies(prepared);throw new AssertionError("Cross-scene probes accepted");}
+        catch(IllegalArgumentException expected){}
         castle.toggleDoor(CastleDoorSlots.all().stream().filter(s->s.gate()).findFirst().orElseThrow().id());
         light.castleFrame(true,121);compare(probes(light));
         for(var site:HouseMap.Site.values()){
