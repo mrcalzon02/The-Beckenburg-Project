@@ -81,6 +81,15 @@ final class RecordedSfx {
     private static byte[] original(LanSound.CueEvent event){
         LanSound.Cue cue=event.cue();
         String stem=cue.name().toLowerCase(java.util.Locale.ROOT);
+        if(cue==LanSound.Cue.STEP_STONE){
+            // Curated owner's Drive archive: three distinct real rock footsteps.
+            // Ticks are chosen by the host in multiplayer and locally for castle steps.
+            int first=Math.floorMod(event.tick(),3);
+            for(int k=0;k<3;k++){
+                byte[] candidate=original("step_stone_"+((first+k)%3)+".wav");
+                if(candidate!=null)return candidate;
+            }
+        }
         if(isSting(cue)){
             int start=Math.floorMod(event.tick()*31+cue.ordinal()*7,STING_VARIANTS);
             for(int k=0;k<STING_VARIANTS;k++){
@@ -112,6 +121,10 @@ final class RecordedSfx {
         return out;
     }
     static boolean isPackaged(LanSound.Cue cue){
+        if(cue==LanSound.Cue.STEP_STONE){
+            for(int i=0;i<3;i++)
+                if(original("step_stone_"+i+".wav")!=null)return true;
+        }
         if(isSting(cue)){
             for(int i=0;i<STING_VARIANTS;i++)
                 if(original(variantName(cue,i))!=null)return true;
