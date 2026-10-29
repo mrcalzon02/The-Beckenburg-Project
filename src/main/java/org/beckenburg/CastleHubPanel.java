@@ -98,6 +98,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         storeOpen=true;serviceBack=back;
         serviceOverlay=PsxHorrorUi.surface(new BorderLayout());
         serviceOverlay.setName("castle.menu."+name);
+        content.putClientProperty("castle.overlay",Boolean.TRUE);
         serviceOverlay.add(content,BorderLayout.CENTER);
         serviceOverlay.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
             .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"backToCastle");
