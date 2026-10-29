@@ -30,6 +30,38 @@ public final class CastleLightingPlacementRepairTest {
                 check(!map.outside(fixture.x(),fixture.z()),
                     "a ceiling-mounted fitting cannot float above the uncovered courtyard");
         }
+        // Regression: the old 20 cm centreline offset is inside 42 cm
+        // masonry. Check every imported vertex of both on/off models against
+        // the *visible face* of its actual supporting wall.
+        for(var fixture:lamps){
+            if(fixture.mount()!=CastleHubDecor.Mount.WALL)continue;
+            var pose=CastleWallLampMount.resolve(fixture,CastleHubArchitecturalPlan.walls());
+            check(pose.supported(),"sconce lacks real masonry support at "
+                +fixture.x()+","+fixture.z());
+            for(String mesh:java.util.List.of(fixture.on(),fixture.off())){
+                var bounds=SceneRenderer.castleBounds(mesh);
+                double cx=bounds[0],cz=bounds[2],cy=Math.cos(fixture.yaw());
+                double sy=Math.sin(fixture.yaw());
+                double towardX=Math.sin(fixture.yaw()),towardZ=Math.cos(fixture.yaw());
+                double minClearance=Double.POSITIVE_INFINITY;
+                for(var t:GlbProps.model(mesh).triangles())
+                    for(var v:new GlbProps.Vertex[]{t.a(),t.b(),t.c()}){
+                        double dx=(v.x()-cx)*fixture.scale(),dz=(v.z()-cz)*fixture.scale();
+                        double x=pose.x()+dx*cy-dz*sy,z=pose.z()+dx*sy+dz*cy;
+                        double fromWall=(pose.wallX()-x)*towardX
+                                        +(pose.wallZ()-z)*towardZ;
+                        minClearance=Math.min(minClearance,
+                            fromWall-CastleDoorSlots.MASONRY_THICKNESS*.5);
+                    }
+                check(minClearance>=CastleWallLampMount.CLEARANCE-.00001,
+                    "imported "+mesh+" intersects castle masonry: "+minClearance
+                    +" at "+fixture.x()+","+fixture.z());
+            }
+            check(Math.abs((pose.wallX()-pose.plateX())*Math.sin(fixture.yaw())
+                           +(pose.wallZ()-pose.plateZ())*Math.cos(fixture.yaw())
+                           -(CastleDoorSlots.MASONRY_THICKNESS*.5+.025))<.00001,
+                "mounting plate must be fitted to the masonry face");
+        }
         var lighting=new FixtureLighting(map);
         check(lighting.sources().size()==lamps.size(),"all fittings feed the game light engine");
         brightness(lighting,map,5.2,1.5,29.0,"west practice wing");

@@ -378,15 +378,17 @@ public final class SceneRenderer {
         double ox=(minX+maxX)*.5,oz=(minZ+maxZ)*.5;
         double oy=fixture.mount()==CastleHubDecor.Mount.CEILING?maxY:(minY+maxY)*.5;
         double s=fixture.scale(),cy=Math.cos(fixture.yaw()),sy=Math.sin(fixture.yaw());
-        // Wall sconces receive a visible real mounting plate against the wall
-        // face, never a free-floating pole in the centre of the room.
-        if(fixture.mount()==CastleHubDecor.Mount.WALL){
+        var wallPose=CastleWallLampMount.resolve(fixture,CastleLevelEdits.current().walls());
+        // The real masonry is 42 cm thick. A 20 cm offset from its centreline
+        // still lies *inside* the stone, so never centre the imported sconce
+        // on that saved coordinate. Fit its furthest-back triangles instead.
+        if(fixture.mount()==CastleHubDecor.Mount.WALL&&wallPose.supported()){
             if(Math.abs(sy)>.5)
-                box(out,fixture.x()-.055,fixture.y()-.20,fixture.z()-.15,
-                    .11,.40,.30,0x635447);
+                box(out,wallPose.plateX()-.026,fixture.y()-.20,wallPose.wallZ()-.15,
+                    .052,.40,.30,0x635447);
             else
-                box(out,fixture.x()-.15,fixture.y()-.20,fixture.z()-.055,
-                    .30,.40,.11,0x635447);
+                box(out,wallPose.wallX()-.15,fixture.y()-.20,wallPose.plateZ()-.026,
+                    .30,.40,.052,0x635447);
         }
         for(GlbProps.Triangle t:model.triangles()){
             GlbProps.Vertex[] vv={t.a(),t.b(),t.c()};
@@ -394,9 +396,9 @@ public final class SceneRenderer {
             for(int i=0;i<3;i++){
                 GlbProps.Vertex v=vv[i];
                 double xx=(v.x()-ox)*s,zz=(v.z()-oz)*s;
-                pp[i]=new Point(fixture.x()+xx*cy-zz*sy,
+                pp[i]=new Point(wallPose.x()+xx*cy-zz*sy,
                     fixture.y()+(v.y()-oy)*s,
-                    fixture.z()+xx*sy+zz*cy);
+                    wallPose.z()+xx*sy+zz*cy);
             }
             out.add(new Face(pp[0],pp[1],pp[2],0xffffff,t.material(),
                 vv[0].u(),vv[0].v(),vv[1].u(),vv[1].v(),
