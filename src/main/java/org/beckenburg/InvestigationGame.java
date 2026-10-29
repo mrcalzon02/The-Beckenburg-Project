@@ -467,16 +467,50 @@ public final class InvestigationGame {
                 "Contract unavailable",GameDialogs.ERROR_MESSAGE);
         }
     }
+    /** Contract controls keep their native height even when the tab viewport is tall.
+     * GridLayout previously stretched six combo boxes to fill the whole panel,
+     * exposing the light Swing tab background behind pale labels. */
+    static JPanel soloContractForm(JComponent site,JComponent role,JComponent conditions,
+            JComponent schedule,JComponent weather,JComponent severity){
+        JPanel form=transparentPanel(new GridBagLayout());
+        form.setName("solo.contract.form");
+        form.setBorder(BorderFactory.createEmptyBorder(16,18,12,18));
+        contractSetting(form,0,"Investigation location",site);
+        contractSetting(form,1,"Hunter discipline",role);
+        contractSetting(form,2,"Conditions",conditions);
+        contractSetting(form,3,"Weather schedule",schedule);
+        contractSetting(form,4,"Starting weather",weather);
+        contractSetting(form,5,"Weather severity",severity);
+        GridBagConstraints space=new GridBagConstraints();
+        space.gridx=0;space.gridy=6;space.gridwidth=2;
+        space.weighty=1;space.fill=GridBagConstraints.VERTICAL;
+        form.add(Box.createVerticalGlue(),space);
+        return form;
+    }
+    private static void contractSetting(JPanel form,int row,String title,JComponent control){
+        JLabel label=PsxMenuScreen.label(title);
+        label.setForeground(new Color(240,230,208));
+        label.setHorizontalAlignment(SwingConstants.LEFT);
+        GridBagConstraints name=new GridBagConstraints();
+        name.gridx=0;name.gridy=row;name.anchor=GridBagConstraints.WEST;
+        name.insets=new Insets(0,0,10,16);
+        form.add(label,name);
+        Dimension natural=control.getPreferredSize();
+        control.setPreferredSize(new Dimension(Math.max(245,natural.width),Math.max(34,natural.height)));
+        GridBagConstraints value=new GridBagConstraints();
+        value.gridx=1;value.gridy=row;value.weightx=1;
+        value.fill=GridBagConstraints.HORIZONTAL;value.anchor=GridBagConstraints.NORTHWEST;
+        value.insets=new Insets(0,0,10,0);
+        form.add(control,value);
+    }
     /** Free play is never silently dispatched to the menu's previous site.
      * Campaign dispatch continues to use its fixed story site and progression. */
     private void begin(){
-        JPanel form=transparentPanel(new GridLayout(0,2,8,12));
         JComboBox<SiteCatalog.Location> site=new JComboBox<>(java.util.Arrays.stream(SiteCatalog.Location.values())
             .filter(SiteCatalog.Location::playable).toArray(SiteCatalog.Location[]::new));
         site.setSelectedItem(locationPicker.getSelectedItem());
-        setting(form,"Investigation location",site);setting(form,"Hunter discipline",rolePicker);
-        setting(form,"Conditions",conditionsPicker);setting(form,"Weather schedule",weatherModePicker);
-        setting(form,"Starting weather",weatherPicker);setting(form,"Weather severity",weatherSeverityPicker);
+        JPanel form=soloContractForm(site,rolePicker,conditionsPicker,weatherModePicker,
+            weatherPicker,weatherSeverityPicker);
         JTabbedPane tabs=new JTabbedPane();PsxHorrorUi.styleTabs(tabs);
         tabs.addTab("CONTRACT",PsxMenuScreen.scroll(form));
         tabs.addTab("EQUIPMENT",new CampaignStorePanel(profile,this::refreshAccount));
