@@ -28,6 +28,62 @@ public final class SoundVolumeAudio implements AutoCloseable {
     public void document(SoundDocument d){document=Objects.requireNonNull(d);}
     public void listener(double x,double y,double z,double yaw,boolean power){listener=new Listener(x,y,z,yaw,power);}
     public void active(boolean value){active=value&&!closed;}
-    private void run(){SoundDocument loaded=null;Mixer mixer=null;try{while(!closed){var d=document;if(!active||d.volumes().isEmpty()||Boolean.getBoolean("beckenburg.audio.mute")||EnvironmentAudio.volume()==0){if(line!=null){line.stop();line.flush();}Thread.sleep(80);continue;}if(d!=loaded){mixer=new Mixer(d);loaded=d;}if(line==null){line=AudioSystem.getSourceDataLine(new AudioFormat(16000,16,2,true,false));line.open(new AudioFormat(16000,16,2,true,false),4096);}if(!line.isRunning())line.start();byte[] block=mixer.block(listener,512,EnvironmentAudio.volume()/100d);line.write(block,0,block.length);}}catch(LineUnavailableException|IllegalArgumentException|SecurityException unavailable){/* Device-free validation remains available. */}catch(InterruptedException e){Thread.currentThread().interrupt();}finally{var open=line;line=null;if(open!=null){open.stop();open.flush();open.close();}}}
-    public void close(){closed=true;active=false;worker.interrupt();var open=line;if(open!=null){open.stop();open.flush();}}
+    private static final AudioFormat OUTPUT=new AudioFormat(16000,16,2,true,false);
+    private static void release(SourceDataLine open){
+        if(open==null)return;
+        try{open.stop();}catch(RuntimeException ignored){}
+        try{open.flush();}catch(RuntimeException ignored){}
+        try{open.close();}catch(RuntimeException ignored){}
+    }
+    private void run(){
+        SoundDocument loaded=null;
+        Mixer mixer=null;
+        boolean unavailable=false;
+        try{
+            while(!closed){
+                try{
+                    SoundDocument d=document;
+                    if(!active||d.volumes().isEmpty()
+                            ||Boolean.getBoolean("beckenburg.audio.mute")
+                            ||EnvironmentAudio.volume()==0){
+                        if(line!=null){line.stop();line.flush();}
+                        Thread.sleep(80);
+                        continue;
+                    }
+                    if(d!=loaded){mixer=new Mixer(d);loaded=d;}
+                    if(line==null){
+                        SourceDataLine fresh=AudioSystem.getSourceDataLine(OUTPUT);
+                        line=fresh;
+                        fresh.open(OUTPUT,4096);
+                    }
+                    if(!line.isRunning())line.start();
+                    if(unavailable){
+                        System.err.println("Beckenburg environment audio output restored");
+                        unavailable=false;
+                    }
+                    byte[] block=mixer.block(listener,512,EnvironmentAudio.volume()/100d);
+                    line.write(block,0,block.length);
+                }catch(LineUnavailableException|IllegalArgumentException
+                        |IllegalStateException|SecurityException problem){
+                    if(!unavailable)
+                        System.err.println("Beckenburg environment audio temporarily unavailable: "
+                            +problem.getMessage());
+                    unavailable=true;
+                    SourceDataLine stale=line;
+                    line=null;
+                    release(stale);
+                    if(!closed)Thread.sleep(350);
+                }
+            }
+        }catch(InterruptedException done){Thread.currentThread().interrupt();}
+        finally{SourceDataLine open=line;line=null;release(open);}
+    }
+    public void close(){
+        closed=true;
+        active=false;
+        worker.interrupt();
+        SourceDataLine open=line;
+        line=null;
+        release(open);
+    }
 }
