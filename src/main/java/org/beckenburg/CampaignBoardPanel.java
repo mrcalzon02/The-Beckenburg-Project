@@ -28,7 +28,7 @@ public final class CampaignBoardPanel extends JPanel {
     private final JLabel status=new JLabel();
     private final JTextArea dossier=new JTextArea();
     private final MissionBoardPanel sitePictures=new MissionBoardPanel();
-    private final JButton deploy=button("DEPLOY SELECTED CASE");
+    private final JButton deploy=button("START ROUND");
     private final JButton recruit=button("HIRE FIELD ASSISTANT  /  £"+ProfileStore.ASSISTANT_HIRE_COST);
     private final JCheckBox bringAssistant=new JCheckBox("Include booked hunters");
     private final JSpinner hires=new JSpinner(new SpinnerNumberModel(0,0,5,1));
