@@ -1220,12 +1220,16 @@ public final class SceneRenderer {
         }
         preparedSceneryFrame++;
         double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
+        // Portable-light state cannot change while this scene is assembled.
+        // Compute it once instead of allocating/scanning for every visible
+        // instance in the outdoor and Castle-adjacent maps.
+        boolean portableLightActive=hasActivePortableLight();
         for(var instance:scene.instances()){
             if(!instance.visible(x,eyeHeight,z,yaw,pitch,hx,hy,NEAR))continue;
             visible++;
             boolean resident=worldResidentEnabled&&GpuWorldRenderer.active()!=null&&!uvLamp
                 &&!instance.mesh.equals("tv_mp_1")
-                &&portablePositions.values().stream().noneMatch(LanPortableLights.Light::on);
+                &&!portableLightActive;
             var chunk=resident?residentScenery.get(instance):null;
             List<Face> immutable=chunk==null?preparedSceneryFaces(instance):chunk.faces;
             if(resident){
@@ -1239,6 +1243,13 @@ public final class SceneRenderer {
             triangles+=instance.template.triangleCount();
         }
         instanceStats=new InstanceStats(scene.instances().size(),visible,scene.instances().size()-visible,scene.templates().size(),scene.expandedTriangles(),scene.sharedTriangles(),triangles);
+    }
+    /** Dynamic portable illumination requires the existing transient path.
+     * Keep the decision allocation-free because it is consulted by each
+     * renderer phase on every frame. */
+    private boolean hasActivePortableLight(){
+        for(var light:portablePositions.values())if(light.on())return true;
+        return false;
     }
     private static boolean nearPlane(double a,double b){return Math.abs(a-b)<.12;}
     private static void levelWallPatch(List<Face> out,LevelDefinition.Room r,boolean alongX,double plane,
@@ -1823,7 +1834,7 @@ public final class SceneRenderer {
             "OpenGL renderer stopped before the game frame");
         var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
         boolean canRetainWorld=map!=null&&!uvLamp
-            &&portablePositions.values().stream().noneMatch(LanPortableLights.Light::on);
+            &&!hasActivePortableLight();
         boolean canReuseStatic=canRetainWorld&&!map.nativeSite();
         if(canReuseStatic)resetStableGpuCache(map);
         lastGpuFrustumFaces=0;
@@ -1959,7 +1970,7 @@ public final class SceneRenderer {
             }
             candidateFaces+=chunk.end-chunk.start;
             if(!exportFullLevel&&GpuWorldRenderer.active()!=null&&!uvLamp&&dotsPositions.isEmpty()
-                &&portablePositions.values().stream().noneMatch(LanPortableLights.Light::on)){
+                &&!hasActivePortableLight()){
                 residentOmittedFaces+=chunk.end-chunk.start;continue;
             }
             for(int i=chunk.start;i<chunk.end;i++){
@@ -2442,7 +2453,7 @@ public final class SceneRenderer {
         // owned by the same authored socket (for example a hiding cupboard).
         if(source.isEmpty())return;
         if(!worldResidentEnabled||map==null||exportFullLevel||GpuWorldRenderer.active()==null||uvLamp
-            ||portablePositions.values().stream().anyMatch(LanPortableLights.Light::on)){out.addAll(source);return;}
+            ||hasActivePortableLight()){out.addAll(source);return;}
         var previous=auxiliaryWorld.get(key);
         if(previous==null||previous.source()!=source){
             if(previous!=null){
