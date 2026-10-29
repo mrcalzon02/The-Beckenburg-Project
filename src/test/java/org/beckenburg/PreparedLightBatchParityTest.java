@@ -32,7 +32,8 @@ public final class PreparedLightBatchParityTest {
         try{System.clearProperty(flag);fast=new SceneRenderer();System.setProperty(flag,"true");dense=new SceneRenderer();}
         finally{if(previous==null)System.clearProperty(flag);else System.setProperty(flag,previous);}
         fast.roomLights=new RoomLighting();dense.roomLights=new RoomLighting();fast.lamp=dense.lamp=false;
-        for(var site:Arrays.asList(null,HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL)){
+        var sites=new ArrayList<HouseMap.Site>();sites.add(null);sites.addAll(Arrays.asList(HouseMap.Site.values()));
+        for(var site:sites){
             var castle=site==null?new CastleHubMap():null;var map=site==null?null:new HouseMap(site);
             if(map==null){fast.x=dense.x=22;fast.z=dense.z=57;fast.eyeHeight=dense.eyeHeight=24;fast.yaw=dense.yaw=Math.PI;fast.pitch=dense.pitch=-.5;}
             else{var p=map.spawn(0);fast.x=dense.x=p.x();fast.z=dense.z=p.z();fast.eyeHeight=dense.eyeHeight=p.y()+1.62;fast.yaw=dense.yaw=Math.PI/3;fast.pitch=dense.pitch=-.1;}
@@ -46,6 +47,6 @@ public final class PreparedLightBatchParityTest {
                 for(var entry:saved.entrySet())check(Arrays.equals(entry.getKey(),entry.getValue()),"Published arrays stay immutable across relighting and doors");
             }
         }
-        System.out.println("PASS complete sparse/dense vertex-batch parity, real flicker/blackout/doors, scene changes and immutable published arrays (recording backend)");
+        System.out.println("PASS complete dependency/sparse/dense vertex-batch parity across Castle and all map types, real flicker/blackout/doors, scene changes and immutable published arrays (recording backend)");
     }
 }

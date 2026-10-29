@@ -1710,13 +1710,24 @@
     {
       "id": "DEV-161",
       "title": "GPU UI acceptance could pass during the opening without reaching playable control",
-      "status": "candidate-compiled-ci-pending",
+      "status": "fixed-scoped-ci-verified",
       "affected": "GPU UI acceptance diagnostic; House, Farmhouse and School case lifecycle",
       "symptom": "The smoke accepted any new opaque GPU frame after GamePanel appeared, including an opening frame. It did not require hunter handoff, movement, extraction or another case, and invokeAndWait could exceed its advertised timeout indefinitely.",
       "cause": "Framebuffer availability was used as a proxy for playable case readiness; UI polling itself had an unbounded EDT wait.",
       "action": "Require sized first-frame readiness, actual opening skip or natural handoff, advancing hunter frames and GPU readback. Drive production WASD handlers over a collision-valid short van route, then the real X extraction/debrief/menu path in three successive cases. Bound EDT polling with one pending task. Preserve scoped captures and partial CSV evidence on failure.",
-      "evidence": "Enhanced GPU package compiles with Java 17. Separate self-contained Windows executable passes all-ten-map hidden OpenGL controls on RTX 5070, with exact packaged JAR hash. New lifecycle diagnostic still requires exact-source CI; the native hidden review does not exercise Swing input.",
+      "evidence": "Source10e2f4e: GPU40923212823 and full40923217003 SUCCESS. Mesa explicitly passes House3350ms, Farmhouse11360ms (natural intro), School1048ms hunter readiness, real WASD movement, RETREATED, debrief/menu and repeat dispatch. Separate clean Windows native image passes RTX all-ten-map controls with exact embedded JAR hash; that hidden review does not exercise Swing input.",
       "older_maps": "Three publicly playable contract locations only. Short van movement and retreat do not certify interior routes, a successful investigation, installed multiplayer, physical player acceptance or A-G completion."
+    },
+    {
+      "id": "DEV-162",
+      "title": "Spatial light invalidation relit batches whose actual contributors stayed unchanged",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Retained world material batches across Castle and map types",
+      "symptom": "Castle still showed recurring preparation tails despite unchanged-color upload suppression; conservative light spheres overlapped batches with unrelated or occluded contributions.",
+      "cause": "Every material in a spatially dirty chunk evaluated all prepared vertex probes even when none of its actual base, normal or emissive source factors changed.",
+      "action": "Snapshot the exact union of contributing source factor bits per material. Skip only exact matches; preserve full RGB evaluation, topology/door invalidation and immutable GPU revisions. Provide factorDependencies.disabled fallback.",
+      "evidence": "Source99baa799: GPU40927250498 and full40927255222 SUCCESS,282/282 with zero skipped, packaged TCP/desktop/native and all three actual GPU case cycles. Java17 GPU package, one-ULP precision/ownership, all-ten-map dense-reference vertex parity under2GiB, fallback and actual RTX controls pass.32 image pairs match exactly. Three1280x800 Castle trials reduce exterior p95 from34.50ms to20.60ms; final package confirms36.56 to20.09ms. Slightly slower medians/library p95 are disclosed. Six scene cycles remain bounded. Evidence: development/performance/hardware/2026-10-29-light-factor-dependencies/.",
+      "older_maps": "Shared implementation requires all-map controls and final CI. Scripted warm camera timings do not certify physical routes, cold starts, installed full rounds or release."
     }
   ],
   "audit_categories": [

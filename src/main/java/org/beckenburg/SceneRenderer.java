@@ -13,6 +13,7 @@ public final class SceneRenderer {
     private static final double NEAR=.065;
     private final boolean worldResidentEnabled=!Boolean.getBoolean("beckenburg.world.resident.disabled");
     private final boolean changedOnlyLighting=!Boolean.getBoolean("beckenburg.lighting.changedOnly.disabled");
+    private final boolean lightDependenciesEnabled=changedOnlyLighting&&!Boolean.getBoolean("beckenburg.lighting.factorDependencies.disabled");
     private int renderWidth=W,renderHeight=H;
     private double nativeFocal=153; // fixed vertical lens; widescreen adds peripheral geometry
     private double focal=nativeFocal;
@@ -2507,7 +2508,7 @@ public final class SceneRenderer {
     }
     private void releaseWorldChunk(ResidentWorldChunk chunk){
         for(var batch:chunk.batches.values())residentWorldBytes-=(long)batch.vertices().length*Float.BYTES;
-        chunk.batches.clear();chunk.lights.clear();chunk.checkedFrame=-1;
+        chunk.batches.clear();chunk.lights.clear();chunk.dependencies.clear();chunk.checkedFrame=-1;
         chunk.occluderVersion=-1;chunk.lightVersion=-1;chunk.lod=-1;
         if(chunk.shadows!=null){chunk.shadows.release();chunk.shadows=null;}
     }
@@ -2541,6 +2542,7 @@ public final class SceneRenderer {
         final boolean indoor;
         final java.util.Map<Integer,ResidentShell> batches=new java.util.LinkedHashMap<>();
         final java.util.Map<Integer,List<WorldVertexLight>> lights=new java.util.HashMap<>();
+        final java.util.Map<Integer,FixtureLighting.ProbeDependencies> dependencies=new java.util.HashMap<>();
         long checkedFrame=-1,lightVersion=-1;
         long occluderVersion=-1;
         FixtureLighting.StationaryShadows shadows;
@@ -2599,6 +2601,10 @@ public final class SceneRenderer {
             // geometry, visibility, UV or tessellation work is repeated.
             for(var material:new ArrayList<>(chunk.batches.keySet())){
                 var old=chunk.batches.get(material);
+                var dependencies=chunk.dependencies.get(material);
+                if(lightDependenciesEnabled&&dependencies!=null&&dependencies.matchesCurrent()){
+                    residentWorldHits++;continue;
+                }
                 float[] vertices=changedOnlyLighting?old.vertices():old.vertices().clone();
                 var lights=chunk.lights.get(material);
                 for(int i=0;i<lights.size();i++){
@@ -2607,6 +2613,7 @@ public final class SceneRenderer {
                 }
                 boolean changed=vertices!=old.vertices();
                 chunk.batches.put(material,new ResidentShell(lod,version,old.id(),old.revision()+(changed?1:0),vertices));
+                if(dependencies!=null)dependencies.capture();
                 if(changed)residentWorldBuilds++;else residentWorldHits++;
             }
             chunk.lightVersion=version;
@@ -2637,6 +2644,8 @@ public final class SceneRenderer {
                 chunk.batches.put(built.getKey(),new ResidentShell(lod,version,
                     old==null?GpuWorldRenderer.nextId():old.id(),old==null?1:old.revision()+1,vertices));
                 chunk.lights.put(built.getKey(),List.copyOf(built.getValue().lights));
+                if(lightDependenciesEnabled)chunk.dependencies.put(built.getKey(),fixtureLighting.dependencies(
+                    built.getValue().lights.stream().map(WorldVertexLight::probe).toList()));
                 residentWorldBuilds++;
             }
             chunk.lod=lod;chunk.lightVersion=version;chunk.occluderVersion=fixtureLighting.occluderRevision();residentWorldBytes+=after-before;
