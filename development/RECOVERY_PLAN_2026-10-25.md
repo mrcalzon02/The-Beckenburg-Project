@@ -45,6 +45,8 @@ Restore and continuously prove the end-to-end player journey: installed Windows 
 
 ## Checkpoint log
 
+- **2026-10-29 / final readback acceptance `35054b76`:** GPU `40876041513` **SUCCESS** all jobs and full gameplay `40876045372` **SUCCESS**, **279/279**, packaged multiplayer, desktop/solo and native executable. The measured readback conversion improvement retains byte-identical captures and exact depth/alpha behavior. Next measured Castle tail work targets prepared-probe allocations and unchanged RGB batches. Physical installed/release/A–G gates remain open.
+
 - **2026-10-29 / readback source `35054b76`, PR #39:** ported existing E0 transfer phase timings and implemented packed RGBA conversion with exact output/depth parity. Java/GPU package and RTX all-map controls pass; 12 diagnostic and24 matched image pairs are identical. Three-trial1280x800 CPU conversion medians improve24–31%, House/Castle frame medians5–10%, native Hollow Creek total unchanged. Recurring Castle CPU preparation/relighting tails remain disclosed. Source GPU `40876041513` and full gameplay `40876045372` are running. Evidence: `development/performance/hardware/2026-10-29-packed-readback/`. No main merge/release or final hardware acceptance claimed.
 
 - **2026-10-29 / final pose-cache acceptance `e8cec914`:** GPU `40873064007` **SUCCESS** all jobs; full gameplay `40873068301` **SUCCESS**, **278/278**, packaged multiplayer, desktop/solo case entry and native executable. Actual RTX all-map controls and six lifecycle cycles already passed; sampled route allocations improve 65.7–94.3% with identical images. Next bounded work measures color/depth synchronization and CPU readback conversion. No main merge/release or full A–G completion claimed.
