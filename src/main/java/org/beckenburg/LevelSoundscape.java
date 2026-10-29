@@ -75,7 +75,7 @@ public final class LevelSoundscape implements AutoCloseable {
         long frame=0;double fade=0;
         try{
             while(!closed){
-                if(!active||Boolean.getBoolean("beckenburg.audio.mute")||LanAudio.effectsVolume()==0){
+                if(!active||Boolean.getBoolean("beckenburg.audio.mute")||EnvironmentAudio.volume()==0){
                     if(line!=null){line.stop();line.flush();}
                     Thread.sleep(100);continue;
                 }
@@ -83,7 +83,7 @@ public final class LevelSoundscape implements AutoCloseable {
                 if(!line.isRunning())line.start();
                 HouseMap current=map;int area=room;boolean electricity=powered;
                 byte[] block=new byte[2048];
-                double volume=LanAudio.effectsVolume()/100d;
+                double volume=EnvironmentAudio.volume()/100d;
                 for(int i=0;i<block.length;i+=2){
                     fade=Math.min(1,fade+1d/4000);
                     short value=(short)Math.round(sample(current.level(),area,electricity,frame++)*volume*fade);
