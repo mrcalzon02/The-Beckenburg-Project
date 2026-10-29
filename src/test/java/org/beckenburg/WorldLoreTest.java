@@ -10,9 +10,20 @@ public final class WorldLoreTest {
         check(WorldLore.SITES.size()==23&&WorldLore.SITES.stream().map(s->s.id()).distinct().count()==23,"complete atlas coverage");
         for(var role:InvestigationSession.Role.values())check(WorldLore.faction(role).role()==role,"all playable classes have major factions");
         check(WorldLore.FACTIONS.size()==InvestigationSession.Role.values().length,"one faction mapping per class");
-        check(WorldLore.MASTER_ART_STATUS.startsWith("No approved master art"),"portrait approval is not full master approval");
+        check(WorldLore.MASTER_ART_STATUS.startsWith("Approved in-game source artwork"),"approved source art must be the castle resident");
         check(CastleArchive.portrait().getWidth()>500,"actual generated portrait packaged for game");
-        var model=GlbProps.model("level_npc_matthis_rook_proxy");check(model.triangles().size()>100,"physical original NPC proxy");
+        var model=GlbProps.model("level_npc_matthis_rook_proxy");check(model.triangles().size()>100,"physical collision proxy retained");
+        int width=320,height=200;int[] pixels=new int[width*height];double[] depths=new double[pixels.length];
+        Arrays.fill(depths,Double.POSITIVE_INFINITY);
+        java.awt.image.BufferedImage sprite=new java.awt.image.BufferedImage(8,16,java.awt.image.BufferedImage.TYPE_INT_ARGB);
+        for(int row=0;row<16;row++)for(int column=2;column<6;column++)sprite.setRGB(column,row,0xffd07244);
+        int visible=CastleArchive.paintKeeper(pixels,depths,
+            CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z-3,0,0,1.62,width,height,153,sprite);
+        check(visible>0,"Rook's camera-facing artwork appears in the castle viewport");
+        Arrays.fill(pixels,0);Arrays.fill(depths,1.0);
+        check(CastleArchive.paintKeeper(pixels,depths,
+            CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z-3,0,0,1.62,width,height,153,sprite)==0,
+            "castle wall depth occludes the approved sprite");
         var castle=new CastleHubMap();check(!castle.traversable(CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z),"cannot walk through resident");
         check(castle.traversable(36,13.3)&&castle.aimed(36,13.3,Math.PI)==CastleHubMap.Station.ARCHIVE,"reachable existing east records desk");
         var r=new CastleArchive.Reader();r.open();check(r.opened()&&r.page()==0,"keeper greeting opens first");
@@ -37,6 +48,6 @@ public final class WorldLoreTest {
         }
         check(SiteStories.document("blackpine","SHELTER").lines().toString().contains("dead returned in late 2022"),"recent cabin linked to catastrophe");
         System.out.println("PASS 23 site threads, 3 class factions, portrait/proxy contracts, physical archive approach, reader controls and 3 supported ray-readable survivor notes");
-        Files.writeString(Path.of("development/levels/verification/world-lore.json"),"{\"status\":\"pass\",\"site_threads\":23,\"class_factions\":3,\"archive_pages\":"+WorldLore.PAGES.size()+",\"in_game_portrait\":true,\"master_art\":\"pending\",\"survivor_notes_ray_readable\":3,\"blackpine_survivor_records\":true}\n");
+        Files.writeString(Path.of("development/levels/verification/world-lore.json"),"{\"status\":\"pass\",\"site_threads\":23,\"class_factions\":3,\"archive_pages\":"+WorldLore.PAGES.size()+",\"in_game_portrait\":true,\"master_art\":\"approved\",\"survivor_notes_ray_readable\":3,\"blackpine_survivor_records\":true}\n");
     }
 }

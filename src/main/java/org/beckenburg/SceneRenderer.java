@@ -2685,7 +2685,9 @@ public final class SceneRenderer {
             castleProp(castle,exhibit.mesh(),exhibit.x(),exhibit.y(),exhibit.z(),exhibit.scale(),exhibit.yaw());
             castleShelfLabel(castle,exhibit);
         }
+        // Keep the archive keeper collision body, never its generic proxy geometry.
         for(var resident:CastleArchive.furnishings())
+            if(!resident.mesh().equals("level_npc_matthis_rook_proxy"))
                 castleProp(castle,resident.mesh(),resident.x(),0,resident.z(),resident.scale(),resident.yaw());
         // Purchased source-backed fixtures occupy authored locations and match hub collision.
         for(CastleLevelEdits.Prop item:edits.props())
@@ -2752,7 +2754,9 @@ public final class SceneRenderer {
             int room=mx<0||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;
             drawLitFace(face,room,0);
         }
-        sceneWater(null,gpuFrame,clock);long geometryRendered=System.nanoTime();
+        sceneWater(null,gpuFrame,clock);
+        CastleArchive.paintKeeper(pixels,depths,x,z,yaw,pitch,eyeHeight,renderWidth,renderHeight,focal);
+        long geometryRendered=System.nanoTime();
         renderWeatherMeshes();PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
         long finished=System.nanoTime();
