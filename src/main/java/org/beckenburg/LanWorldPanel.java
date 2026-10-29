@@ -1023,7 +1023,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             VanLiveScreens.activity(meters,new ArrayList<>(activityHistory));
             VanLiveScreens.sound(sensorReadings,new ArrayList<>(sensorNodes.values()),
                 activeSoundCaption());
-            VanLiveScreens.contract(map.level().name(),hardEvidenceLevel.name(),
+            VanLiveScreens.contract(map.level().title(),hardEvidenceLevel.name(),
                 dailyTasks.stream().map(task->
                     (completedTasks.contains(task)?"[DONE] ":"[OPEN] ")+task.label).toList());
             if(selectedVanCamera()==null)
