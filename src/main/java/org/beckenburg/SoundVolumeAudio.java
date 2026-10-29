@@ -62,7 +62,8 @@ public final class SoundVolumeAudio implements AutoCloseable {
                         unavailable=false;
                     }
                     byte[] block=mixer.block(listener,512,EnvironmentAudio.volume()/100d);
-                    line.write(block,0,block.length);
+                    if(line.write(block,0,block.length)<=0)
+                        throw new IllegalStateException("Spatial ambience output accepted no audio frames");
                 }catch(LineUnavailableException|IllegalArgumentException
                         |IllegalStateException|SecurityException problem){
                     if(!unavailable)
