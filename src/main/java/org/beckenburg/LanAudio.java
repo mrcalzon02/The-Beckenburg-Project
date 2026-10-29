@@ -214,6 +214,7 @@ public final class LanAudio implements AutoCloseable {
                             +unavailable.getMessage());
                     outputMissing=true;
                     voices.clear();
+                    queue.clear(); // No delayed hunt or interaction sounds after device recovery.
                     release(line);line=null;
                     if(!closed)Thread.sleep(350);
                 }
