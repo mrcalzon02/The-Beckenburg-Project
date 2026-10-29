@@ -11,6 +11,13 @@ public final class BeckenburgInstallerHandoffTest {
         if(!yes)throw new AssertionError(why);
     }
     public static void main(String[] args)throws Exception{
+        if(args.length==2&&"--emit-script".equals(args[0])){
+            Path path=Path.of(args[1]);
+            if(path.getParent()!=null)Files.createDirectories(path.getParent());
+            Files.writeString(path,BeckenburgInstallerHandoff.scriptText(),StandardCharsets.UTF_8);
+            System.out.println("EMITTED independent Windows setup helper: "+path);
+            return;
+        }
         String script=BeckenburgInstallerHandoff.scriptText();
         ok(script.indexOf("WaitForExit(180000)") >= 0,"External helper must await game process exit");
         ok(script.indexOf("WaitForExit(180000)") < script.indexOf("Start-Process -FilePath $Installer"),

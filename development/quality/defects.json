@@ -1541,6 +1541,17 @@
       "action": "Encode stable enum names for BUY and USESUPPLY; retain display formatting solely in the UI.",
       "evidence": "CampaignCoopLobbyTest confirms actual pre-mission medicine purchase and private host stock snapshots.",
       "older_maps": "Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied."
+    },
+    {
+      "id": "DEV-146",
+      "title": "In-game updater launched installer before game released its installation files",
+      "status": "source-repaired-windows-install-acceptance-pending",
+      "affected": "Installed Windows client, UPDATES UI and EXE installer",
+      "symptom": "Update requested from an open game could not complete setup and had no independent setup log.",
+      "cause": "Game launched setup before System.exit(0) without waiting for full termination.",
+      "action": "Use separate Windows helper in LocalAppData, wait for game exit, reverify SHA-256, launch Inno Setup and log independently. Gate next release on real Windows silent install.",
+      "evidence": "User report 2026-10-28, code regression and workflow; Windows acceptance pending.",
+      "older_maps": "All Windows installations/upgrades, no map modifications; preserve saved profiles."
     }
   ],
   "audit_categories": [

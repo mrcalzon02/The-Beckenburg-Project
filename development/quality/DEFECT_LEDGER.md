@@ -1987,3 +1987,15 @@ Action: Encode stable enum names for BUY and USESUPPLY; retain display formattin
 Evidence: CampaignCoopLobbyTest confirms actual pre-mission medicine purchase and private host stock snapshots.
 
 Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
+
+## DEV-146 — Update installer started before game released its files
+
+**Status:** source-repaired-windows-install-acceptance-pending
+
+Beckenburg launched Inno Setup while the game was still running, then exited. Installation could collide with locked game files and report no independent installer log.
+
+Action: Stage verified setup in LocalAppData; use a separate PowerShell process to wait for full game exit, SHA-256 recheck, execute setup and log its result. The active shipping workflow now requires helper syntax validation and actual silent Windows installation before publishing.
+
+Evidence: User live report October 28, 2026; BeckenburgInstallerHandoffTest; release acceptance to be verified. Older clients need an independent manual setup with game closed.
+
+Older-map obligation: All Windows installs and upgrades, no map change; preserve profiles.
