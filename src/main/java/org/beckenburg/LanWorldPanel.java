@@ -615,6 +615,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     }
                 }
             }else if(p.get(0).equals("CAMERA")){
+                // A moved, powered-off or disconnected camera invalidates its
+                // previous image immediately. Only an in-VAN viewer gets a
+                // standby texture; field investigators never request a frame.
+                capturedCameraOwner=-1;
+                capturedCameraImage=null;
+                lastCameraRenderTick=-100000;
+                if(vanDisplay)VanLiveScreens.camera(null,"CAMERA SIGNAL CHANGED");
                 if(p.size()==2&&p.get(1).equals("RESET")){
                     videoCameras.clear();
                     videoPowered.clear();
@@ -1092,7 +1099,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             lastCameraRenderTick=-100000;
             VanLiveScreens.camera(null,"SWITCHING CAMERA");
         }
-        if(VanDisplayCadence.due(vanDisplay&&camera!=null,tick,lastCameraRenderTick,
+        if(VanDisplayCadence.due(vanDisplay&&camera!=null&&isShowing(),tick,lastCameraRenderTick,
                 VanDisplayCadence.CAMERA_TICKS)){
             lastCameraRenderTick=tick;
             videoRenderer.x=camera.x();videoRenderer.z=camera.z();videoRenderer.eyeHeight=camera.y()+1.62;

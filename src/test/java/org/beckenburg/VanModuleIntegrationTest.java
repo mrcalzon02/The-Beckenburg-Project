@@ -67,7 +67,7 @@ public final class VanModuleIntegrationTest {
         Set<String> purposes=new HashSet<>();
         for(var p:VanInteriorLayout.FIXTURES)purposes.add(p.purpose());
         for(String critical:new String[]{"command workstation","computer tower",
-                "desk keyboard","main command monitor","contract objective board",
+                "desk keyboard","camera feed","contract objective board",
                 "daily assignment board","sanity telemetry","haunting activity",
                 "sound telemetry","site map"})
             ok(purposes.contains(critical),"essential station missing: "+critical);
@@ -95,6 +95,6 @@ public final class VanModuleIntegrationTest {
         ok(java.util.Arrays.asList(InGamePauseMenu.options()).contains("Exit Game"),
             "Exit Game available without extraction");
         System.out.println("PASS VAN interior sizes, complete tier catalog, purchased tool mounts, "+
-            "four functional boards/screens, walkable stations at all locations and Exit Game menu");
+            "six functional live monitors/boards, walkable stations at all locations and Exit Game menu");
     }
 }
