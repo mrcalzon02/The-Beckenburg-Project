@@ -10,6 +10,10 @@ import java.util.Set;
 public final class CastleHubPanel extends JPanel implements KeyListener,FocusListener {
     public interface Actions {
         void begin();void network();void spectral();void menu();void campaign();
+        default void options(){menu();}
+        default void extras(){menu();}
+        default void exit(){menu();}
+        default void exitFromGate(){exit();}
         default void multiplayerInventory(){network();}
         void cycleRole();void cycleWeather();String role();String weather();
     }
@@ -28,6 +32,8 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private double clock;
     private double elevation;
     private boolean castleLightsOn=true,crouched,storeOpen;
+    private double gateExitSeconds=-1;
+    private boolean gateExitCancelled;
     private final JPanel quartermaster;
     private final CampaignStorePanel quartermasterStore;
     private JButton quartermasterClose;
@@ -86,9 +92,47 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         });
         add(serviceOverlay);setComponentZOrder(serviceOverlay,0);revalidate();repaint();
     }
+    /** A full-size page mounted in the existing Castle viewport; no competing title menu. */
+    public void openMenuPanel(String name,JComponent content,Runnable back){
+        closeService();closeQuartermaster();down.clear();look.release();
+        storeOpen=true;serviceBack=back;
+        serviceOverlay=PsxHorrorUi.surface(new BorderLayout());
+        serviceOverlay.setName("castle.menu."+name);
+        serviceOverlay.add(content,BorderLayout.CENTER);
+        serviceOverlay.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
+            .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"backToCastle");
+        serviceOverlay.getActionMap().put("backToCastle",new AbstractAction(){
+            @Override public void actionPerformed(ActionEvent e){if(serviceBack!=null)serviceBack.run();}
+        });
+        add(serviceOverlay);setComponentZOrder(serviceOverlay,0);revalidate();repaint();
+    }
+    public void openPauseMenu(){
+        if(storeOpen||archive.opened())return;
+        JPanel buttons=new JPanel(new GridLayout(0,1,0,10));
+        buttons.setOpaque(false);
+        JButton resume=PsxHorrorUi.button("RESUME CASTLE");
+        resume.setName("castle.pause.resume");
+        resume.addActionListener(e->closeService());
+        JButton options=PsxHorrorUi.button("OPTIONS");
+        options.setName("castle.pause.options");
+        options.addActionListener(e->actions.options());
+        JButton extras=PsxHorrorUi.button("EXTRAS / SUPPORT");
+        extras.setName("castle.pause.extras");
+        extras.addActionListener(e->actions.extras());
+        JButton quit=PsxHorrorUi.button("EXIT GAME");
+        quit.setName("castle.pause.quit");
+        quit.addActionListener(e->actions.exit());
+        buttons.add(resume);buttons.add(options);buttons.add(extras);buttons.add(quit);
+        JPanel center=new JPanel(new GridBagLayout());
+        center.setOpaque(false);center.add(buttons);
+        openMenuPanel("pause",PsxMenuScreen.screen("castle.pause","PAUSED / CASTLE BECKENBURG",
+            "The Castle remains loaded behind this menu",center),this::closeService);
+        SwingUtilities.invokeLater(resume::requestFocusInWindow);
+    }
     public void closeService(){
         if(serviceOverlay!=null){remove(serviceOverlay);serviceOverlay=null;serviceBack=null;storeOpen=false;last=System.nanoTime();}
         revalidate();repaint();
+        if(isShowing()&&!storeOpen)SwingUtilities.invokeLater(this::requestFocusInWindow);
     }
     /** Existing PSX panels, buttons and approved model thumbnails stay inside
      * the same world viewport and share the live persisted Castle profile. */
@@ -155,6 +199,14 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             if(Math.hypot(renderer.x-priorX,renderer.z-priorZ)>.0001)
                 GameSfx.play(map.footstep(renderer.x,renderer.z,elevation));
         }
+        boolean beyondGate=CastleGateExit.inExitThreshold(map,renderer.x,elevation,renderer.z);
+        if(!beyondGate){gateExitSeconds=-1;gateExitCancelled=false;}
+        else if(!gateExitCancelled){
+            if(gateExitSeconds<0)gateExitSeconds=CastleGateExit.COUNTDOWN_SECONDS;
+            else if((gateExitSeconds-=dt)<=0){
+                gateExitSeconds=-1;gateExitCancelled=true;actions.exitFromGate();return;
+            }
+        }
         clock+=dt;
         renderer.eyeHeight=HunterPosture.eye(crouched)+elevation;
         GraphicsOptions.current().configure(renderer,getWidth(),getHeight(),true);
@@ -216,6 +268,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 case CONTRACT -> {actions.campaign();return;}
                 case EXPEDITION -> {actions.begin();return;}
                 case MULTIPLAYER -> {actions.network();return;}
+                case OPTIONS -> {actions.options();return;}
                 case SPECTRAL -> {actions.spectral();return;}
             }
         }catch(RuntimeException e){
@@ -235,7 +288,14 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             return;
         }
         if(archive.opened()){archive.key(key);repaint();return;}
-        if(key==KeyEvent.VK_ESCAPE){actions.menu();return;}
+        if(key==KeyEvent.VK_ESCAPE){
+            if(gateExitSeconds>=0){
+                gateExitSeconds=-1;gateExitCancelled=true;
+                notice="Exit cancelled. Walk back into the courtyard to reset.";
+                noticeTicks=120;return;
+            }
+            openPauseMenu();return;
+        }
         if(key==KeyEvent.VK_E){
             var portal=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
             if(portal!=null){
@@ -325,6 +385,14 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 g.setColor(new Color(11,16,21,220));g.fillRoundRect(left,h-75,labelWidth,36,8,8);
                 g.setColor(new Color(247,211,153));g.drawString("[ E ]  "+label,left+12,h-52);
             }
+            if(gateExitSeconds>=0){
+                String countdown=String.format(java.util.Locale.ROOT,"LEAVING CASTLE / EXIT IN %.1f",Math.max(0,gateExitSeconds));
+                int width=Math.min(w-24,Math.max(335,g.getFontMetrics().stringWidth(countdown)+34));
+                int left=(w-width)/2;
+                g.setColor(new Color(17,14,20,239));g.fillRoundRect(left,h/2+52,width,59,10,10);
+                g.setColor(new Color(255,220,160));g.drawString(countdown,left+14,h/2+76);
+                g.setColor(new Color(213,222,220));g.drawString("WALK BACK OR ESC TO CANCEL",left+14,h/2+96);
+            }
             if(orientation.active()){
                 g.setColor(new Color(11,17,23,223));
                 g.fillRoundRect(12,103,Math.max(230,Math.min(w-24,650)),46,8,8);
@@ -341,7 +409,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 g.setColor(new Color(162,223,193));g.drawString(text,24,82);
             }
             g.setColor(new Color(11,17,23,212));g.fillRoundRect(Math.max(12,w-172),12,160,30,8,8);
-            g.setColor(new Color(216,220,212));g.drawString("ESC  /  MAIN MENU",Math.max(20,w-162),32);
+            g.setColor(new Color(216,220,212));g.drawString("ESC  /  PAUSE",Math.max(20,w-162),32);
          }finally{g.dispose();}
     }
 }
