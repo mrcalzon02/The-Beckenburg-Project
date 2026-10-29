@@ -2250,6 +2250,18 @@ Evidence and verification: Source push and remote readback confirmed. New Castle
 
 Older-map obligation: Audit actual inventory/store routing in campaign preparation, multiplayer van rack, campaign co-op host/guest screens and existing menu back navigation individually. One Castle routing fix is not cross-mode persistence acceptance.
 
+### DEV-166 — Investigation doors snap instead of swinging
+
+**Status:** animation-source-pushed-CI-and-installed-review-pending · **Affected:** House/Farmhouse/School and other HouseMap investigation portals, both solo and LAN
+
+The first House door instantly teleported to its open or closed pose, and the renderer's portal-only retained-mesh key could change the entire GPU scene identity when that door switched state. This was separately reported with an interaction hitch and full-screen flash (issue #44).
+
+Code commits `814d7c1`, `ad2176c`, and `d1c857c` add a reversible, 450ms eased leaf swing, a moving-leaf centre-ray hit target, and settled-state GPU mesh caching keyed by the door pose, without a global GPU scene ID replacement. Solo now plays the door cue (`6def2a3`). `DoorSwingTest` was committed in `62b0ef3` and added to the full regression manifest in `b0afe0a`. An unrelated pre-existing `GpuUiSmoke` duplicate-variable compilation blocker was repaired in `f8fe48e`.
+
+**Verification:** Source pushed; exact-source Java/full-round/GPU acceptance and actual Windows door-open/close captures remain pending. Physical collision still follows authoritative Boolean state immediately (not the rendered moving leaf). Broad CPU occlusion invalidation and installed hitch remain tracked separately under issue #44. Confirm pivot accuracy, first-frame continuity, LAN host/guest parity, light-through-door behavior, collision, and door sound before closing.
+
+**Older-map obligation:** Inspect each authored site's hinge/pivot and multi-leaf doors, Castle gates, and van doors independently; do not generalize House acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
