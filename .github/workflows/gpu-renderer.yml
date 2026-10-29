@@ -74,7 +74,8 @@ jobs:
         shell: cmd
         run: |
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\VerificationPreferencesFactory.java src\test\java\org\beckenburg\EmissionCacheBudgetTest.java src\test\java\org\beckenburg\DynamicTextureRevisionTest.java src\test\java\org\beckenburg\WorldResidencyTest.java src\test\java\org\beckenburg\PreparedVertexLightingTest.java src\test\java\org\beckenburg\PsxQuantizationParityTest.java src\test\java\org\beckenburg\CastleShelfLabelsTest.java || exit /b 1
-          for %%T in (EmissionCacheBudgetTest DynamicTextureRevisionTest WorldResidencyTest PreparedVertexLightingTest PsxQuantizationParityTest CastleShelfLabelsTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\DynamicGeometryRetentionTest.java || exit /b 1
+          for %%T in (EmissionCacheBudgetTest DynamicTextureRevisionTest DynamicGeometryRetentionTest WorldResidencyTest PreparedVertexLightingTest PsxQuantizationParityTest CastleShelfLabelsTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
       - name: Verify C3 House basement authored depth ownership without portal culling
         shell: cmd
         run: |
