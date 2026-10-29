@@ -12,6 +12,7 @@ public final class SceneRenderer {
     public static final int W=320,H=200;
     private static final double NEAR=.065;
     private final boolean worldResidentEnabled=!Boolean.getBoolean("beckenburg.world.resident.disabled");
+    private final boolean changedOnlyLighting=!Boolean.getBoolean("beckenburg.lighting.changedOnly.disabled");
     private int renderWidth=W,renderHeight=H;
     private double nativeFocal=153; // fixed vertical lens; widescreen adds peripheral geometry
     private double focal=nativeFocal;
@@ -1626,6 +1627,9 @@ public final class SceneRenderer {
         void apply(float[] target,int offset){
             probe.writeTinted(target,offset,tint);
         }
+        float[] applyIfChanged(float[] original,float[] target,int offset){
+            return probe.copyTintedIfChanged(original,target,offset,tint);
+        }
     }
     private boolean preparingWorldProbes;
     private void appendGpuVertex(GpuFloats dst,Point p,double u,double v,int material,int room,Point normal,int tint){
@@ -2591,11 +2595,16 @@ public final class SceneRenderer {
             // Re-evaluate source intensities in retained receiver probes. No
             // geometry, visibility, UV or tessellation work is repeated.
             for(var material:new ArrayList<>(chunk.batches.keySet())){
-                var old=chunk.batches.get(material);float[] vertices=old.vertices().clone();
+                var old=chunk.batches.get(material);
+                float[] vertices=changedOnlyLighting?old.vertices():old.vertices().clone();
                 var lights=chunk.lights.get(material);
-                for(int i=0;i<lights.size();i++)lights.get(i).apply(vertices,i*8);
-                chunk.batches.put(material,new ResidentShell(lod,version,old.id(),old.revision()+1,vertices));
-                residentWorldBuilds++;
+                for(int i=0;i<lights.size();i++){
+                    if(changedOnlyLighting)vertices=lights.get(i).applyIfChanged(old.vertices(),vertices,i*8);
+                    else lights.get(i).apply(vertices,i*8);
+                }
+                boolean changed=vertices!=old.vertices();
+                chunk.batches.put(material,new ResidentShell(lod,version,old.id(),old.revision()+(changed?1:0),vertices));
+                if(changed)residentWorldBuilds++;else residentWorldHits++;
             }
             chunk.lightVersion=version;
         }else if(topology){

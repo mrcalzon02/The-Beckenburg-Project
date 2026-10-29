@@ -150,12 +150,32 @@ public final class FixtureLighting {
   /** Same evaluation order/clamps as sample(), writing only the RGB slots
    * of an eight-float world vertex. No temporary RGBs or iterators. */
   public void writeTinted(float[] target,int offset,int tint){
+   writeTinted(target,null,offset,tint);
+  }
+  public boolean constant(){return base.contributions.length==0
+      &&(normal==null||normal.contributions.length==0)&&emissive.length==0;}
+  /** Preserve published arrays; clone only on the first actual color change. */
+  public float[] copyTintedIfChanged(float[] original,float[] target,int offset,int tint){
+   if(constant())return target;
+   return writeTinted(target,original,offset,tint);
+  }
+  private float[] store(float[] target,float[] original,int offset,int tint,double r,double g,double b){
+   float rr=(float)(Math.max(.03,r)*((tint>>16)&255)/255.0);
+   float gg=(float)(Math.max(.03,g)*((tint>>8)&255)/255.0);
+   float bb=(float)(Math.max(.03,b)*(tint&255)/255.0);
+   if(original!=null){
+    if(Float.floatToRawIntBits(target[offset+5])==Float.floatToRawIntBits(rr)
+       &&Float.floatToRawIntBits(target[offset+6])==Float.floatToRawIntBits(gg)
+       &&Float.floatToRawIntBits(target[offset+7])==Float.floatToRawIntBits(bb))return target;
+    if(target==original)target=original.clone();
+   }
+   target[offset+5]=rr;target[offset+6]=gg;target[offset+7]=bb;
+   return target;
+  }
+  private float[] writeTinted(float[] target,float[] original,int offset,int tint){
    if(!directVertexWrite){
     var rgb=sample();
-    target[offset+5]=(float)(Math.max(.03,rgb.r)*((tint>>16)&255)/255.0);
-    target[offset+6]=(float)(Math.max(.03,rgb.g)*((tint>>8)&255)/255.0);
-    target[offset+7]=(float)(Math.max(.03,rgb.b)*(tint&255)/255.0);
-    return;
+    return store(target,original,offset,tint,rgb.r,rgb.g,rgb.b);
    }
    double br=base.ambient.r,bg=base.ambient.g,bb=base.ambient.b;
    for(var part:base.contributions){
@@ -177,9 +197,7 @@ public final class FixtureLighting {
     }
     r=Math.max(0,r+Math.min(1.6,nr)-br);g=Math.max(0,g+Math.min(1.6,ng)-bg);b=Math.max(0,b+Math.min(1.6,nb)-bb);
    }
-   target[offset+5]=(float)(Math.max(.03,r)*((tint>>16)&255)/255.0);
-   target[offset+6]=(float)(Math.max(.03,g)*((tint>>8)&255)/255.0);
-   target[offset+7]=(float)(Math.max(.03,b)*(tint&255)/255.0);
+   return store(target,original,offset,tint,r,g,b);
   }
  }
  private final boolean directVertexWrite=!Boolean.getBoolean("beckenburg.lighting.directWrite.disabled");
