@@ -94,6 +94,11 @@ def audit():
     castle = (ROOT / "assets/runtime/sounds/castle.sounds").read_text(encoding="utf-8")
     if len([x for x in castle.splitlines() if x.count("|") == 17]) != 10:
         errors.append("Castle does not contain ten well-formed authored sound-volume rows")
+    castle_code = (src / "CastleHubPanel.java").read_text(encoding="utf-8")
+    if "GameSfx.play(LanSound.Cue.DOOR);" not in castle_code:
+        errors.append("Castle door has no real DOOR audio event")
+    if "archive.open();GameSfx.play(LanSound.Cue.BOOK);" not in castle_code:
+        errors.append("Castle archive lacks book-opening Foley")
     runtime = [r for r in rows if r["packaging"] == "packaged"]
     copies = [paths for paths in duplicate_objects.values() if len(paths) > 1]
     status = {
