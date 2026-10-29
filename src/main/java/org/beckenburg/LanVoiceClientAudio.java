@@ -248,9 +248,15 @@ public final class LanVoiceClientAudio implements AutoCloseable {
         synchronized(pushLock){pushLock.notifyAll();}
         udp.close();
         TargetDataLine mic=microphone;
-        if(mic!=null){mic.stop();mic.close();}
+        if(mic!=null){
+            try{mic.stop();}catch(RuntimeException ignored){}
+            try{mic.close();}catch(RuntimeException ignored){}
+        }
         SourceDataLine out=speaker;
-        if(out!=null){out.stop();out.close();}
+        if(out!=null){
+            try{out.stop();}catch(RuntimeException ignored){}
+            try{out.close();}catch(RuntimeException ignored){}
+        }
         receiver.interrupt();capture.interrupt();playback.interrupt();
         synchronized(queueLock){buffers.clear();}
     }
