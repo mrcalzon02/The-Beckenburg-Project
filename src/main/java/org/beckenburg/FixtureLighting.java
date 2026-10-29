@@ -120,7 +120,9 @@ public final class FixtureLighting {
  public long frameRevision(){return generation;}
  public long occluderRevision(){return occluderEpoch;}
  private record Weighted(Source source,double weight){}
- private record Probe(RGB ambient,List<Weighted> contributions,boolean normal){
+ private static final Weighted[] NO_WEIGHTS=new Weighted[0];
+ private static final Source[] NO_EMISSION=new Source[0];
+ private record Probe(RGB ambient,Weighted[] contributions,boolean normal){
   RGB sample(double[] factors){
    double r=ambient.r,g=ambient.g,b=ambient.b;
    for(var part:contributions){
@@ -136,8 +138,9 @@ public final class FixtureLighting {
   * tessellation. The owning chunk rebuilds this on an occluder revision. */
  public final class VertexProbe {
   private final Probe base,normal;
-  private final List<Source> emissive;
-  private VertexProbe(Probe base,Probe normal,List<Source> emissive){this.base=base;this.normal=normal;this.emissive=emissive;}
+  private final Source[] emissive;
+  private VertexProbe(Probe base,Probe normal,Source[] emissive){this.base=base;this.normal=normal;this.emissive=emissive;}
+  private FixtureLighting owner(){return FixtureLighting.this;}
   public RGB sample(){
    RGB rgb=base.sample(factors),glow=RGB.ZERO;
    for(var source:emissive)if(factors[source.id]>.01){glow=new RGB(source.red*1.35,source.green*1.35,source.blue*1.35);break;}
@@ -145,7 +148,83 @@ public final class FixtureLighting {
    if(normal!=null){var n=normal.sample(factors);r=Math.max(0,r+n.r-rgb.r);g=Math.max(0,g+n.g-rgb.g);b=Math.max(0,b+n.b-rgb.b);}
    return new RGB(r,g,b);
   }
+  /** Same evaluation order/clamps as sample(), writing only the RGB slots
+   * of an eight-float world vertex. No temporary RGBs or iterators. */
+  public void writeTinted(float[] target,int offset,int tint){
+   writeTinted(target,null,offset,tint);
+  }
+  public boolean constant(){return base.contributions.length==0
+      &&(normal==null||normal.contributions.length==0)&&emissive.length==0;}
+  /** Preserve published arrays; clone only on the first actual color change. */
+  public float[] copyTintedIfChanged(float[] original,float[] target,int offset,int tint){
+   if(constant())return target;
+   return writeTinted(target,original,offset,tint);
+  }
+  private float[] store(float[] target,float[] original,int offset,int tint,double r,double g,double b){
+   float rr=(float)(Math.max(.03,r)*((tint>>16)&255)/255.0);
+   float gg=(float)(Math.max(.03,g)*((tint>>8)&255)/255.0);
+   float bb=(float)(Math.max(.03,b)*(tint&255)/255.0);
+   if(original!=null){
+    if(Float.floatToRawIntBits(target[offset+5])==Float.floatToRawIntBits(rr)
+       &&Float.floatToRawIntBits(target[offset+6])==Float.floatToRawIntBits(gg)
+       &&Float.floatToRawIntBits(target[offset+7])==Float.floatToRawIntBits(bb))return target;
+    if(target==original)target=original.clone();
+   }
+   target[offset+5]=rr;target[offset+6]=gg;target[offset+7]=bb;
+   return target;
+  }
+  private float[] writeTinted(float[] target,float[] original,int offset,int tint){
+   if(!directVertexWrite){
+    var rgb=sample();
+    return store(target,original,offset,tint,rgb.r,rgb.g,rgb.b);
+   }
+   double br=base.ambient.r,bg=base.ambient.g,bb=base.ambient.b;
+   for(var part:base.contributions){
+    double f=factors[part.source.id],w=part.weight*f;
+    if(f<.001||w<(base.normal?.001:.002))continue;
+    br+=w*part.source.red;bg+=w*part.source.green;bb+=w*part.source.blue;
+   }
+   br=Math.min(1.6,br);bg=Math.min(1.6,bg);bb=Math.min(1.6,bb);
+   double r=br,g=bg,b=bb;
+   for(var source:emissive)if(factors[source.id]>.01){
+    r=Math.max(r,source.red*1.35);g=Math.max(g,source.green*1.35);b=Math.max(b,source.blue*1.35);break;
+   }
+   if(normal!=null){
+    double nr=normal.ambient.r,ng=normal.ambient.g,nb=normal.ambient.b;
+    for(var part:normal.contributions){
+     double f=factors[part.source.id],w=part.weight*f;
+     if(f<.001||w<(normal.normal?.001:.002))continue;
+     nr+=w*part.source.red;ng+=w*part.source.green;nb+=w*part.source.blue;
+    }
+    r=Math.max(0,r+Math.min(1.6,nr)-br);g=Math.max(0,g+Math.min(1.6,ng)-bg);b=Math.max(0,b+Math.min(1.6,nb)-bb);
+   }
+   return store(target,original,offset,tint,r,g,b);
+  }
  }
+ /** Exact factor snapshot for the sources that can affect one prepared batch.
+  * Visibility/topology invalidation remains the owning chunk's responsibility.
+  * Raw bits preserve even changes smaller than the spatial invalidation threshold. */
+ final class ProbeDependencies {
+  private final int[] ids;
+  private final long[] bits;
+  private ProbeDependencies(BitSet sources){ids=sources.stream().toArray();bits=new long[ids.length];capture();}
+  boolean matchesCurrent(){
+   for(int i=0;i<ids.length;i++)if(bits[i]!=Double.doubleToRawLongBits(factors[ids[i]]))return false;
+   return true;
+  }
+  void capture(){for(int i=0;i<ids.length;i++)bits[i]=Double.doubleToRawLongBits(factors[ids[i]]);}
+ }
+ ProbeDependencies dependencies(List<VertexProbe> probes){
+  BitSet ids=new BitSet();
+  for(var probe:probes){
+   if(probe.owner()!=this)throw new IllegalArgumentException("Probes belong to a different lighting scene");
+   for(var part:probe.base.contributions)ids.set(part.source.id);
+   if(probe.normal!=null)for(var part:probe.normal.contributions)ids.set(part.source.id);
+   for(var source:probe.emissive)ids.set(source.id);
+  }
+  return new ProbeDependencies(ids);
+ }
+ private final boolean directVertexWrite=!Boolean.getBoolean("beckenburg.lighting.directWrite.disabled");
  private Probe prepareProbe(int room,double x,double y,double z,double nx,double ny,double nz,boolean normal){
   boolean exterior=room<0||room>=12||map!=null&&map.outside(room);
   double hemi=.65+.35*Math.max(0,ny);
@@ -171,7 +250,7 @@ public final class FixtureLighting {
    }
    if(visible)parts.add(new Weighted(source,w));
   }
-  return new Probe(ambient,List.copyOf(parts),normal);
+  return new Probe(ambient,parts.isEmpty()?NO_WEIGHTS:parts.toArray(Weighted[]::new),normal);
  }
  public VertexProbe prepareVertex(int room,int material,double x,double y,double z,double nx,double ny,double nz,boolean normal){
   Probe base=prepareProbe(room,x,y,z,0,0,0,false);
@@ -179,7 +258,7 @@ public final class FixtureLighting {
   var emit=new ArrayList<Source>();
   if(emittingMaterial(material))for(var s:candidates(x,y,z))
    if(Math.abs(x-s.x)<.4&&Math.abs(y-s.y)<.28&&Math.abs(z-s.z)<.4)emit.add(s);
-  return new VertexProbe(base,directional,List.copyOf(emit));
+  return new VertexProbe(base,directional,emit.isEmpty()?NO_EMISSION:emit.toArray(Source[]::new));
  }
  /** Per-render CPU work counters; shadow tests are expensive architectural rays. */
  public record FrameStats(long samples,long cacheHits,long shadowRays,

@@ -1,0 +1,20 @@
+{
+  "source_label": "e8cec914",
+  "working_checkout_head": "e8cec914dd492135edc612d40bd452d4f04e5767",
+  "jar": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\gpu-client\\target\\BeckenburgGPU.jar",
+  "jar_sha256": "36247DC77477A3E6491B0FB6AD7010AAB1617A6B370CD08DF97AF01F1B63F92B",
+  "overlay_classes": [],
+  "sites": [
+    "HOUSE",
+    "FARMHOUSE",
+    "SCHOOL"
+  ],
+  "runs": 3,
+  "samples": 120,
+  "warmup": 90,
+  "width": 640,
+  "lights": true,
+  "freeze": false,
+  "timezone": "Alaskan Standard Time",
+  "note": "Scripted same-instance rendering route; not physical navigation or installed full-round acceptance"
+}

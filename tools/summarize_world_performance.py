@@ -48,6 +48,10 @@ def main(root):
                 "shadow_rays_p95": percentile(values("shadow_rays"), .95),
                 "gc_total_ms": sum(values("gc_ms")),
             })
+            for column in ("color_sync_ms", "depth_sync_ms", "cpu_conversion_ms"):
+                observed = values(column) if all(column in row for row in rows) else []
+                summaries[-1][column.replace("_ms", "_p50_ms")] = (
+                    percentile(observed, .50) if observed and min(observed) > 0 else None)
     if not summaries:
         raise SystemExit("No completed-frame CSV samples found")
     with (root / "summary.csv").open("w", encoding="utf-8", newline="") as target:
@@ -68,6 +72,19 @@ def main(root):
         reduction = 100 * (1 - result["total_p50_ms"] / before["total_p50_ms"])
         lines.append(f"| {result['site']} / {result['view']} | {timing(before)} | {timing(result)} | {reduction:.1f}% |")
     (root / "comparison.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    phases = ["| Site / view | Before color / depth / CPU conversion ms | After color / depth / CPU conversion ms |",
+              "|---|---:|---:|"]
+    columns = ("color_sync_p50_ms", "depth_sync_p50_ms", "cpu_conversion_p50_ms")
+    for result in summaries:
+        before = index.get(("before", result["site"], result["view"]))
+        if result["variant"] != "after" or before is None:
+            continue
+        if any(row[column] is None for row in (before, result) for column in columns):
+            continue
+        timing = lambda row: " / ".join(f"{row[column]:.3f}" for column in columns)
+        phases.append(f"| {result['site']} / {result['view']} | {timing(before)} | {timing(result)} |")
+    if len(phases) > 2:
+        (root / "readback-phases.md").write_text("\n".join(phases) + "\n", encoding="utf-8")
     print("\n".join(lines))
 
 

@@ -3,6 +3,8 @@ package org.beckenburg;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.jar.JarFile;
+import java.util.concurrent.atomic.AtomicInteger;
+import javax.swing.JButton;
 
 /** Checks packaged launchers and game-menu/Options routes to the real editor. */
 public final class DeveloperEditorLaunchTest {
@@ -25,14 +27,32 @@ public final class DeveloperEditorLaunchTest {
         check(installer.contains("Beckenburg Level Editor")
               &&installer.contains("Parameters: \"--editor\""),
               "Start Menu shortcut launches editor mode");
+        // Exercise the real named Extras editor route as a Swing action, without opening a
+        // top-level window in headless CI. A missing listener, duplicate listener, or
+        // wrong component identity must fail before any source-level contract checks.
+        AtomicInteger launches=new AtomicInteger();
+        JButton editor=InvestigationGame.editorExtrasRoute(
+            new JButton("DEVELOPER LEVEL EDITOR"),launches::incrementAndGet);
+        check("extras.editor".equals(editor.getName()),"Editor route identity");
+        check("DEVELOPER LEVEL EDITOR".equals(editor.getText()),"Editor route label");
+        check(editor.isEnabled(),"Editor route enabled");
+        editor.doClick();
+        check(launches.get()==1,"Editor route invokes exactly one launcher callback");
+        editor.doClick();
+        check(launches.get()==2,"Editor route remains usable after first click");
         String source=Files.readString(Path.of("src/main/java/org/beckenburg/InvestigationGame.java"));
-        check(source.contains("nav(\"start.extras\",\"EXTRAS & SUPPORT\",this::showExtras)"),
-              "Main menu exposes the real Extras page");
-        check(source.contains("nav(\"extras.editor\",\"DEVELOPER LEVEL EDITOR\",()->openDeveloperEditor(window))"),
-              "Extras editor entry invokes the real developer editor");
+        check(source.contains("routes.add(nav(\"start.extras\",\"EXTRAS & SUPPORT\",this::showExtras))"),
+              "Main menu opens the Extras screen");
+        check(source.contains("list.add(editorExtrasRoute(button(\"DEVELOPER LEVEL EDITOR\"),()->openDeveloperEditor(window)))"),
+              "Extras editor action uses the packaged editor launcher");
+        check(source.contains("DeveloperLevelEditor.open(parent)"),
+              "Editor launcher calls the real editor");
+        check(source.contains("routes.add(nav(\"start.options\",\"OPTIONS\",this::openOptions))")
+              &&source.contains("optionsScreen=PsxMenuScreen.screen(\"options\""),
+              "Main menu opens the real Options screen");
         String ship=Files.readString(Path.of(".github/workflows/ship-installer.yml"));
         check(ship.contains("dist\\Beckenburg\\tools\\LevelEditorKit-Java17.jar"),
               "Installer includes reusable editor files");
-        System.out.println("PASS game menu, Options, --editor, Windows shortcut, shipped JAR and kit");
+        System.out.println("PASS named Extras editor click, Options route, --editor, Windows shortcut, shipped JAR and kit");
     }
 }

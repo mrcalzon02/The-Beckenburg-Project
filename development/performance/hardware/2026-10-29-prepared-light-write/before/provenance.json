@@ -1,0 +1,251 @@
+{
+  "source_label": "35054b76-parent",
+  "working_checkout_head": "e044d8cf03f9210d2542ac092314ed50fa20d9ce",
+  "jar": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\gpu-client\\target\\BeckenburgGPU.jar",
+  "jar_sha256": "89DB82E28976630B60EC2933321B0D5389B1B2F574C8FFDAF7F729E588EA7B1C",
+  "overlay_classes": [
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting.class",
+      "sha256": "2D5D239635DC4CA9C9B7BA2270C7472364B76412A50967E22E690159C823BE9B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$1.class",
+      "sha256": "0FA6A035AA49CD49070EAA2133C90F28D1E7D5D38C13F65DB9C3EDE785F6714F"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$2.class",
+      "sha256": "58B2BF0BD83DDC48033D7AC4BBCFA48B3F54959E03AEC40C8EF247BC16D2D03C"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$Cell.class",
+      "sha256": "80410B678CFE8F7D8CD39446AC282170D2CEFCF4B75BC39A3A208E49D8FAF27A"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$DistantCell.class",
+      "sha256": "766C7CFCA61D54F563A855108987AE4A7C3B3846FF6202802BB0DF635F7B7934"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$DistantProbe.class",
+      "sha256": "D239DD6957DD715AF7269E5543CBBFFCCF920E46A62E7EC698132B078ABD3C5B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$FrameStats.class",
+      "sha256": "E71F2B9069AE05D1DA29D907AAAA7F8BFD1A14254A4FE40EE781B27204C6EC78"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$Key.class",
+      "sha256": "4978780012FDF71CBB62313588EE7F26B59FCC816C11AD8229AA199B3FF28D0F"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$Kind.class",
+      "sha256": "F4706E127B4CE55B38D8D68ED8FB3E2E29BCDE33D65122535787A0BE65C9162B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$Lit.class",
+      "sha256": "6766D1ED74461AD327B8109FCFF6F4E2AEC33800D698CDDCE9E523C0B873EB74"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$NormalKey.class",
+      "sha256": "741B0A6160442DDE841BC2EB6DD6990FE55CF675B8FE6FC4AF16CE443E1D5FC2"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$NormalShadow.class",
+      "sha256": "724E9D7AC019FAD847E40FA08FB4752F921D64F033A69952FA4564C487C4B88B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$Probe.class",
+      "sha256": "62B86DE10E1727B55C4777D0E329D10382EA1B765F499DD73596EA723F3E8E10"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$RGB.class",
+      "sha256": "1D864D93134E322972DBD645D1D8F93596B8EDB9B0215FC2AF07F0ED5BEE9490"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$Shadow.class",
+      "sha256": "49285600D70433D3BA95BC08056E8333E15F30807A1BB3AF57482BB707861548"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$Source.class",
+      "sha256": "F6BF3CD41251D89F0DC21D27A32E3BDD906FC7ED908A183318E30DA42C39AE1F"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$StationaryShadows.class",
+      "sha256": "C2FCD6CA555F381C6D57F320E3E76CC72829DDCDF0DA7118BA222CF1583AFA94"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$VertexProbe.class",
+      "sha256": "4BC27B1914D039DA55563BA4B54BB455D7868AE36EA147043D2A2F1829212E87"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\FixtureLighting$Weighted.class",
+      "sha256": "BD827BF7B9DD737F29F3BC7174239EF05481A90F7FE3AC4BC33BDE95B53EA99F"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer.class",
+      "sha256": "E63A359FBB01599CCC6DD26194138B9957B994224EC20192D0FE050599A85D78"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$1.class",
+      "sha256": "079579A1721DD02288D840F0272DA94B7F89BD04D98A7788847202ED1B566A16"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$1Cell.class",
+      "sha256": "AFDECFA55F8502B46AF23D40A3D7B8C6EEB14CC80AC1D502CFBB06E103CD79D0"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$2.class",
+      "sha256": "C9497E590411E1FCB8ED31A55F07237E4164E905AE58E1E8AEC348F22AF55E6A"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$3.class",
+      "sha256": "0D3EEB461D5B6812054F1D6C08236280BCDEDDFB3B1D6DB31BA838E02622696E"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$Apparition.class",
+      "sha256": "8C7416824A333BBAD71A22B595BB74BA644ADD41A1139EA1D2D8D8C6B871F198"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$AuxiliaryWorld.class",
+      "sha256": "AE323086DDCF314F23F2CF4DD7AF5B1B00346F536D6642DAB7FBF254982024B3"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$CastleDoorKey.class",
+      "sha256": "EA431290E094FEBFE0835595BACCC33078BAE1ED8F9F5DF812A279101B4DA947"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$CastleLampKey.class",
+      "sha256": "949033A48432256B276E888A24CF59EAD31A5BAD5D3898764E4D132596268004"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$DotsReceivers.class",
+      "sha256": "05EC4296A12C312483A591D48028C57DAA752DD488821B9FC0190FA42061B770"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$DynamicGeometryEntry.class",
+      "sha256": "D69E26C61A76C4F6C2C73AC92F8229FE592B33EA08B9D0E6F2E5BC0F92B0D28B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$DynamicGeometryKey.class",
+      "sha256": "41DF74059EFD6EB416959A49584C6901162DB00998DD45AA7A8B0B4E17CB394B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$DynamicGeometryStats.class",
+      "sha256": "8B0245E71EAF9EC2237D25629F8EAB77B4DFDFE8E61405827C6DDF9FAEDB741C"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$Face.class",
+      "sha256": "A50C63718F6075AA697002843682F185181D2DCE564C54DDA99005AB47B74241"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$FixtureMeshPose.class",
+      "sha256": "14B38B92869D0DB938B8B8AF88FFBAB33E6318F4C6142D88B9EAD2630A1AEB5D"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$FrameDiagnostics.class",
+      "sha256": "4D97A1E922D15A46BF9C2B740103D0BC5AAA80C827870D0A81D6138E7E8E7E57"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$GpuFloats.class",
+      "sha256": "3361C8EA7305201CE711FAEE52C4258BA7A08460A487C29C2A6053E7CDF36F64"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$IncenseSmoke.class",
+      "sha256": "1503FC88EB12D7178584A0711C3559EF419C70B284124328CE8755F0EF3B18A6"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$InstanceStats.class",
+      "sha256": "653C84590F52B4CB4DDDE8E888626D6D76A74AD299623D291B4FCF755EE7BB13"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$Nameplate.class",
+      "sha256": "A145F07B984C39E7AED9160A891C6099844341BD9D1B70146A8847AD812FF3A9"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$Point.class",
+      "sha256": "D017D7720BC1E99BD0C0CAB6A665EAE4B81EEDD384A7290A3829BAA59A097F4E"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$PortalGeometryKey.class",
+      "sha256": "1B7F09E959C17085985FC466A6BABE3CB37EEBDE9774A8B8F0964C195A266DFD"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$PreparedFaces.class",
+      "sha256": "9D8CA8F32F174E788DC4C6CF3D7AAC585D1CB093499D2020BB7DA0F4A7E410A4"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$PreparedSceneryStats.class",
+      "sha256": "AF0BE3AF2417CF48BB3F53164E5667ECA18ECD1A79CC5609BC53D4387D3FC7E7"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$RemoteBody.class",
+      "sha256": "CFC0E4C66E7C7808F744060E9BF8B73CF276B15E1CA9DDE209653620CEEEBD6D"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$ResidentShell.class",
+      "sha256": "7E84E08B51C0DB7A22BC8D2413E258890634E77E53891B6E2AFB83366BA79F78"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$ResidentWorldChunk.class",
+      "sha256": "4DEDE973E716F57ACF3A64A4F85F1444D0EA55AAF9FB35D34D1D745D47098A65"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$ShellChunk.class",
+      "sha256": "7C18D8DB5AD932BD66D41BB468031B0EC95AA6C5D2133A0B5287C43C5CFADB95"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$ShellChunkStats.class",
+      "sha256": "BD5539203F1129FA56EF17D9697AE78624202A1EFB9E10EE2BE3FEC703F07670"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$ShellGpuKey.class",
+      "sha256": "0F1EFA5D6214BD5069613894EE1567CEA5F15C58D56F9682EEFBF31661F48CB1"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$ShellResidentStats.class",
+      "sha256": "95B14BC4752A3348A0B6249822CED268651620470FDD6DE6F522C6F0F6300C32"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$SocketGeometryKey.class",
+      "sha256": "F3F3F4738AB5F0A0BC78CB379420AF1FBA27686D6E2150189CBE06880F22CC8E"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$StableGpuCacheStats.class",
+      "sha256": "1A8B6D2AE4CA5CC29B98D462A5A05E8C07AC87202BDF90090FC7E17A6A41C3DF"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$StableGpuEntry.class",
+      "sha256": "25434BF3FA307B7DCF6342CEEF3228BD3C88F531AAD4680C558A81C58CD303B7"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$Vertex.class",
+      "sha256": "CE0F647A397D7FE6D4AB6B48FD0814D172524ABB4AF224D26D977674E4147A25"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$WaterView.class",
+      "sha256": "7BAB59FA95C9080DC6521060BFDB1881A97AD9DA378C1E457F00BB65E734D357"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$WorldMark.class",
+      "sha256": "02FC32101196AFF27AED1995DC792730BC8E51F41ADD41B5C1F897543C095BA3"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$WorldResidentStats.class",
+      "sha256": "0C055AB37520DCDDF7C9ABDAC7283A1B2CADBAA49AED2CB4CA12BFB3DACCCECF"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\light-parent-classes\\org\\beckenburg\\SceneRenderer$WorldVertexLight.class",
+      "sha256": "4BC4483ABE341333F9F3F0BAA94D0C8D4C27258BE341CFBBD6509687939D16B9"
+    }
+  ],
+  "sites": [
+    "CASTLE"
+  ],
+  "runs": 3,
+  "samples": 240,
+  "warmup": 90,
+  "width": 1280,
+  "lights": true,
+  "freeze": false,
+  "timezone": "Alaskan Standard Time",
+  "note": "Scripted same-instance rendering route; not physical navigation or installed full-round acceptance"
+}
