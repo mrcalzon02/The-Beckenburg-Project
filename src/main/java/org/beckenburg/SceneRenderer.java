@@ -2063,27 +2063,35 @@ public final class SceneRenderer {
         }
         for(var p:map.level().portals()){
             if(!objectInView(p.x(),p.z(),Math.max(2,p.width()),24))continue;
+            // State and collision are authoritative immediately. Only the displayed
+            // door leaf eases through the swing, with no per-frame global scene reset.
+            double opening=p.door()?map.doorOpenFraction(p.id()):0;
+            boolean moving=p.door()&&map.doorMoving(p.id());
             var key=new PortalGeometryKey(p,map.doorOpen(p.id()),map.windowOpen(p.id()));
-            var geometry=authoredFixtureGeometry.computeIfAbsent(key,k->{
-            List<Face> part=new ArrayList<>();
-            if(p.door()){
-                double angle=p.alongX()?0:Math.PI/2;
-                double hx=p.x()+(p.alongX()?p.width()/2:0),hz=p.z()+(p.alongX()?0:p.width()/2);
-                double leaf=p.width()>1.5?p.width()/2:p.width();
-                imported(part,"door_1_loose",hx,p.y(),hz,leaf,2.28/2.1,1,angle+(map.doorOpen(p.id())?Math.PI/2:0));
-                if(p.width()>1.5)imported(part,"door_1_loose",p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),leaf,2.28/2.1,1,angle+Math.PI-(map.doorOpen(p.id())?Math.PI/2:0));
-                if(p.kind().equals("gate"))for(double t=-p.width()/2;t<=p.width()/2;t+=.15)
-                    box(part,p.x()+(p.alongX()?t:0)-.015,p.y(),p.z()+(p.alongX()?0:t)-.015,.03,2.3,.03,0x77797a);
-            }else if(p.kind().equals("window")){
-                double a=p.width()/2,dx=p.alongX()?a:0,dz=p.alongX()?0:a;
-                // Hinged sash opens into the room; clear aperture exposes the actual night exterior.
-                double angle=map.windowOpen(p.id())?.95:0,c=Math.cos(angle),sn=Math.sin(angle);
-                double x0=p.x()-dx,z0=p.z()-dz,x1=x0+(2*dx*c-2*dz*sn),z1=z0+(2*dx*sn+2*dz*c);
-                levelRailWindow(part,x0,z0,x1,z1,p.y()+1.02,p.y()+2.33);
+            List<Face> geometry=moving?null:authoredFixtureGeometry.get(key);
+            if(geometry==null){
+                List<Face> part=new ArrayList<>();
+                if(p.door()){
+                    double angle=p.alongX()?0:Math.PI/2;
+                    double hx=p.x()+(p.alongX()?p.width()/2:0),hz=p.z()+(p.alongX()?0:p.width()/2);
+                    double leaf=p.width()>1.5?p.width()/2:p.width();
+                    double swing=opening*Math.PI/2;
+                    imported(part,"door_1_loose",hx,p.y(),hz,leaf,2.28/2.1,1,angle+swing);
+                    if(p.width()>1.5)imported(part,"door_1_loose",p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),leaf,2.28/2.1,1,angle+Math.PI-swing);
+                    if(p.kind().equals("gate"))for(double t=-p.width()/2;t<=p.width()/2;t+=.15)
+                        box(part,p.x()+(p.alongX()?t:0)-.015,p.y(),p.z()+(p.alongX()?0:t)-.015,.03,2.3,.03,0x77797a);
+                }else if(p.kind().equals("window")){
+                    double a=p.width()/2,dx=p.alongX()?a:0,dz=p.alongX()?0:a;
+                    double angle=map.windowOpen(p.id())?.95:0,c=Math.cos(angle),sn=Math.sin(angle);
+                    double x0=p.x()-dx,z0=p.z()-dz,x1=x0+(2*dx*c-2*dz*sn),z1=z0+(2*dx*sn+2*dz*c);
+                    levelRailWindow(part,x0,z0,x1,z1,p.y()+1.02,p.y()+2.33);
+                }
+                var owned=new ArrayList<Face>();own(owned,part,p.a());geometry=List.copyOf(owned);
+                // Retain exactly the two settled poses, not 10-20 intermediate VBOs.
+                if(!moving)authoredFixtureGeometry.put(key,geometry);
             }
-            var owned=new ArrayList<Face>();own(owned,part,p.a());return List.copyOf(owned);
-            });
-            appendRetainedWorld(out,geometry,p,map);
+            if(moving)out.addAll(geometry);
+            else appendRetainedWorld(out,geometry,key,map);
         }
         for(var s:map.level().sockets()){
             if(!objectInView(s.x(),s.z(),4,20))continue;
