@@ -101,7 +101,9 @@ public final class LanHost implements AutoCloseable {
             if(pendingCampaignSettlement==null)return false;
             var role=InvestigationSession.Role.valueOf(mission.discipline(0).name());
             campaignProfile.settleCoop(campaignChapter,pendingCampaignSettlement,deployedMembers,tick,role);
-            pendingCampaignSettlement=null;return true;
+            pendingCampaignSettlement=null;
+            notifyAllPeers(CastleRelations.hostView(campaignProfile).frame());
+            return true;
         }
     }
     /** UDP media socket on the same numeric port as TCP. LAN-only, not encrypted. */
@@ -435,7 +437,10 @@ public final class LanHost implements AutoCloseable {
                     LanProtocol.write(out,"WELCOME|"+seatName(slot)+"|"+LanProtocol.VERSION+"|"+peer.resumeToken+"|"+seatSequenceHighWater(peer));
                     peer.outbound.start(workers);
                     reserved[slot]=null;seats[slot]=peer;
-                    if(campaignProfile!=null)reply(peer,"MODE|CAMPAIGN");
+                    if(campaignProfile!=null){
+                        reply(peer,"MODE|CAMPAIGN");
+                        reply(peer,CastleRelations.hostView(campaignProfile).frame());
+                    }
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     reply(peer,"INFO|mission resumed - reopen 3D view");
                     if(slot!=GHOST_SEAT){
@@ -484,7 +489,10 @@ public final class LanHost implements AutoCloseable {
                         java.util.concurrent.ThreadLocalRandom.current());
                     LanProtocol.write(out,"WELCOME|"+seatName(slot)+"|"+LanProtocol.VERSION+"|"+peer.resumeToken+"|"+seatSequenceHighWater(peer));
                     peer.outbound.start(workers);
-                    if(campaignProfile!=null)reply(peer,"MODE|CAMPAIGN");
+                    if(campaignProfile!=null){
+                        reply(peer,"MODE|CAMPAIGN");
+                        reply(peer,CastleRelations.hostView(campaignProfile).frame());
+                    }
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     if(slot!=GHOST_SEAT){
                         // A new lobby occupant must not inherit the departed
@@ -653,7 +661,10 @@ public final class LanHost implements AutoCloseable {
                     peer.worldMode=true;
                     rackSent.remove(peer);
                     reply(peer,"ACCEPT|VIEW3D");
-                    if(campaignProfile!=null)reply(peer,"MODE|CAMPAIGN");
+                    if(campaignProfile!=null){
+                        reply(peer,"MODE|CAMPAIGN");
+                        reply(peer,CastleRelations.hostView(campaignProfile).frame());
+                    }
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     reply(peer,world.staminaFrame(peer.slot,tick));
                     reply(peer,weather.state().packet());
@@ -710,7 +721,10 @@ public final class LanHost implements AutoCloseable {
                     if(!running||peer.slot!=GHOST_SEAT||p.size()!=1)throw new IllegalArgumentException("ghost view requires active ghost seat");
                     peer.ghostWorldMode=true;
                     reply(peer,"ACCEPT|GVIEW3D");
-                    if(campaignProfile!=null)reply(peer,"MODE|CAMPAIGN");
+                    if(campaignProfile!=null){
+                        reply(peer,"MODE|CAMPAIGN");
+                        reply(peer,CastleRelations.hostView(campaignProfile).frame());
+                    }
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     reply(peer,"HIDECONFIG|"+contract.hidingSpots());
                     reply(peer,"LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));

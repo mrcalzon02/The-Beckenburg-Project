@@ -63,6 +63,22 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
     private NetworkEquipmentPanel equipmentPage;
     private final JTabbedPane pages=new JTabbedPane(JTabbedPane.TOP);
     private boolean campaignGuest;
+    private CastleRelations.HostView hostSocial;
+    private final JPanel socialContent=new JPanel(new BorderLayout(7,7));
+    private final JComboBox<CastleRelations.Resident> socialPerson=
+        new JComboBox<>(CastleRelations.Resident.values());
+    private final JLabel socialInfo=new JLabel("Join a host campaign to hear its residents.");
+    private final JPanel socialBody=new JPanel(new BorderLayout());
+    private void showHostConversation(){
+        socialBody.removeAll();
+        if(hostSocial!=null){
+            var person=(CastleRelations.Resident)socialPerson.getSelectedItem();
+            if(person!=null)socialBody.add(new CastleDialoguePanel(person,
+                hostSocial.context(),hostSocial.trust(person)),BorderLayout.CENTER);
+        }
+        socialBody.revalidate();socialBody.repaint();
+    }
+    public CastleRelations.HostView hostDialogue(){return hostSocial;}
     public record CampaignLaunch(ProfileStore profile,CampaignStory.Chapter chapter,int bots,boolean coop,CharacterVisuals.Hunter hunter){
         public CampaignLaunch(ProfileStore profile,CampaignStory.Chapter chapter,int bots){this(profile,chapter,bots,true);}
         public CampaignLaunch(ProfileStore profile,CampaignStory.Chapter chapter,int bots,boolean coop){this(profile,chapter,bots,coop,CharacterVisuals.Hunter.OBSERVER);}
@@ -193,6 +209,18 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             else if(choice.action()==EquipmentRackDialog.Action.EQUIP)connection.equipAt(choice.slot(),choice.id());
         }), (kind,tier)->action(()->connection.purchaseSupply(kind,tier)));
         pages.addTab("EQUIPMENT & SUPPLIES",equipmentPage);
+        socialContent.setBackground(new Color(17,23,30));
+        socialPerson.setName("network.social.resident");
+        socialInfo.setForeground(new Color(204,215,210));
+        JPanel personLine=new JPanel(new BorderLayout(8,0));
+        personLine.setOpaque(false);
+        personLine.add(socialPerson,BorderLayout.WEST);
+        personLine.add(socialInfo,BorderLayout.CENTER);
+        socialContent.add(personLine,BorderLayout.NORTH);
+        socialContent.add(socialBody,BorderLayout.CENTER);
+        socialPerson.addActionListener(e->showHostConversation());
+        pages.addTab("CASTLE RELATIONS",socialContent);
+        pages.setEnabledAt(pages.indexOfComponent(socialContent),false);
         JButton retrySave=PsxHorrorUi.button("RETRY CAMPAIGN SAVE");
         retrySave.addActionListener(e->{try{if(hosted!=null&&hosted.retryCampaignSettlement())log.append("Campaign result saved.\n");}
             catch(IOException failed){log.append("Campaign save failed: "+failed.getMessage()+"\n");}});
@@ -667,6 +695,9 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             // Destroying the host here would disconnect every remaining investigator.
             if(hosted!=null&&!localHostSurvives){hosted.close();hosted=null;}
             myRoom=HouseMap.EXTRACTION_ROOM;
+            hostSocial=null;socialBody.removeAll();
+            pages.setEnabledAt(pages.indexOfComponent(socialContent),false);
+            socialInfo.setText("Join a host campaign to hear its residents.");
             role.setEnabled(!localHostSurvives);ghostJoined=false;remoteLook=null;
             hunterAppearance.setEnabled(!localHostSurvives&&role.getSelectedIndex()==0);
             roomPassword.setEnabled(hosted==null);
@@ -724,6 +755,19 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         if(event.startsWith("MODE|CAMPAIGN")){
             campaignGuest=true;equipmentPage.setCampaign(true);
             log.append("CAMPAIGN GUEST SESSION / story and rewards belong to the host.\n");return;
+        }
+        if(event.startsWith("STORYSOCIAL|")){
+            try{
+                hostSocial=CastleRelations.decodeHostView(event);
+                socialInfo.setText("HOST / "+hostSocial.context().completed()+
+                    " chapters cleared / Hunter level "+hostSocial.context().hunterLevel()+
+                    " / read-only dialogue");
+                pages.setEnabledAt(pages.indexOfComponent(socialContent),true);
+                showHostConversation();
+            }catch(IllegalArgumentException bad){
+                log.append("Invalid host story relations snapshot.\n");
+            }
+            return;
         }
         if(event.startsWith("SUPPLY|")||event.startsWith("GEARSTATE|")||event.startsWith("GEAROWNED|"))
             equipmentPage.receive(event);

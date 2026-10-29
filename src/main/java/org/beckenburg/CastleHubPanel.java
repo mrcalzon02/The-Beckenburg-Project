@@ -239,6 +239,20 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             if(storeOpen)quartermasterClose.requestFocusInWindow();
         });
     }
+    /** Residents are independent of their neighboring workstations: talk to
+     * the character first, choose a service only when offered in conversation.
+     */
+    void openResident(CastleRelations.Resident resident){
+        if(resident==null||storeOpen||orientation.active())return;
+        Runnable trade=resident==CastleRelations.Resident.MATTHIS_ROOK||
+            resident==CastleRelations.Resident.ELSBETH_VALE?
+            ()->{closeService();openQuartermaster();}:null;
+        Runnable read=resident==CastleRelations.Resident.MATTHIS_ROOK?
+            ()->{closeService();archive.open();GameSfx.play(LanSound.Cue.BOOK);
+                down.clear();look.release();repaint();}:null;
+        CastleDialoguePanel conversation=new CastleDialoguePanel(profile,resident,trade,read);
+        openService(resident.name+" / "+resident.profession,conversation,this::closeService);
+    }
     /** Warehouse equipment counter accesses the host-owned multiplayer inventory, never the campaign purse. */
     void openWarehouseInventory(){
         if(storeOpen||orientation.active())return;
@@ -314,9 +328,9 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 notice=(portal.gate()?"Courtyard portcullis":"Castle door")+
                     (open?" raised / passage clear.":" closed / passage secured.");
                 noticeTicks=130;
-            }else if(elevation<=1.8&&CastleArchive.aimedKeeper(map,renderer.x,renderer.z,renderer.yaw)){
-                // Same physical Rook manages the existing campaign inventory shop.
-                openQuartermaster();
+            }else if(elevation<=1.8&&
+                    CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null){
+                openResident(CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw));
             }else if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null){
                 use(null);
             }else if(elevation>1.8){
@@ -388,13 +402,12 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null;
             boolean atWarehouse=elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
             var atDoor=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
-            boolean atRook=elevation<=1.8&&
-                CastleArchive.aimedKeeper(map,renderer.x,renderer.z,renderer.yaw);
-            if(atDoor!=null||station!=null||atSwitch||atWarehouse||atRook){
+            var resident=elevation<=1.8?CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw):null;
+            if(atDoor!=null||station!=null||atSwitch||atWarehouse||resident!=null){
                 String label=atDoor!=null?
                     (map.doorOpen(atDoor.id())?"CLOSE ":"OPEN ")+
                     (atDoor.gate()?"COURTYARD PORTCULLIS":"CASTLE DOOR"):
-                    atRook?"MATTHIS ROOK / QUARTERMASTER":
+                    resident!=null?resident.name.toUpperCase(java.util.Locale.ROOT)+" / TALK":
                     atSwitch?"CASTLE LIGHT SWITCH":atWarehouse?
                     "WAREHOUSE / MULTIPLAYER INVENTORY":station.label;
                 int labelWidth=Math.min(w-24,Math.max(250,g.getFontMetrics().stringWidth(label)+50));

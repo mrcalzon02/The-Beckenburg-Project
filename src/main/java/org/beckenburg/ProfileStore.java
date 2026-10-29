@@ -18,6 +18,36 @@ public final class ProfileStore {
     private final java.util.EnumMap<InvestigationSession.Role,Integer> disciplineXp=
         new java.util.EnumMap<>(InvestigationSession.Role.class);
     private final ArrayList<CampaignArchive.CaseFile> archive=new ArrayList<>();
+    private final java.util.EnumMap<CastleRelations.Resident,Integer> relations=
+        new java.util.EnumMap<>(CastleRelations.Resident.class);
+    private final Set<String> visitedDialogues=new HashSet<>();
+    public int relationship(CastleRelations.Resident resident){
+        return relations.getOrDefault(java.util.Objects.requireNonNull(resident),0);
+    }
+    public int relationshipRank(CastleRelations.Resident resident){
+        return CastleRelations.rank(CastleRelations.context(this),relationship(resident));
+    }
+    /** A meaningful subject earns trust only once per NPC per cleared chapter.
+     * The same saved chapter can be replayed for money, never for infinite rapport.
+     */
+    public boolean recordDialogue(CastleRelations.Resident resident,CastleRelations.Topic topic)
+            throws IOException {
+        if(blocked)throw new IOException("Profile load failed; dialogue save blocked");
+        java.util.Objects.requireNonNull(resident);
+        java.util.Objects.requireNonNull(topic);
+        if(topic==CastleRelations.Topic.GREETING||topic==CastleRelations.Topic.FAREWELL)
+            return false;
+        String id=resident.name()+":"+storyCheckpoint+":"+topic.name();
+        if(!visitedDialogues.add(id))return false;
+        int previous=relationship(resident);
+        relations.put(resident,Math.min(100,previous+
+            (topic==CastleRelations.Topic.PERSONAL?2:1)));
+        try{save();}catch(IOException problem){
+            relations.put(resident,previous);visitedDialogues.remove(id);
+            throw problem;
+        }
+        return true;
+    }
     public int disciplineExperience(InvestigationSession.Role role){
         return disciplineXp.getOrDefault(java.util.Objects.requireNonNull(role),0);
     }
@@ -259,6 +289,26 @@ public final class ProfileStore {
                 disciplineXp.put(role,value);
             }
             archive.clear();archive.addAll(CampaignArchive.load(p));
+            relations.clear();visitedDialogues.clear();
+            for(var npc:CastleRelations.Resident.values()){
+                int trust=Integer.parseInt(p.getProperty("relations."+npc.name(),"0"));
+                if(trust<0||trust>100)throw new IllegalArgumentException("invalid relationship");
+                relations.put(npc,trust);
+            }
+            String dialogue=p.getProperty("relations.visits","");
+            if(dialogue.length()>50000)throw new IllegalArgumentException("oversized dialogue ledger");
+            for(String id:dialogue.split(","))if(!id.isBlank()){
+                String[] fields=id.split(":");
+                if(fields.length!=3)throw new IllegalArgumentException("invalid dialogue ledger entry");
+                CastleRelations.Resident.valueOf(fields[0]);
+                int chapter=Integer.parseInt(fields[1]);
+                if(chapter<0||chapter>CampaignStory.LENGTH)throw new IllegalArgumentException("invalid dialogue stage");
+                CastleRelations.Topic.valueOf(fields[2]);
+                if(!visitedDialogues.add(id))throw new IllegalArgumentException("duplicate dialogue entry");
+            }
+            if(visitedDialogues.size()>CastleRelations.Resident.values().length*
+                    (CampaignStory.LENGTH+1)*CastleRelations.Topic.values().length)
+                throw new IllegalArgumentException("dialogue ledger overflow");
             assistantHired=Boolean.parseBoolean(p.getProperty("campaign.assistant","false"));
             missionHires=Integer.parseInt(p.getProperty("campaign.missionHires",assistantHired?"1":"0"));
             if(missionHires<0||missionHires>5)throw new NumberFormatException("invalid hired team");
@@ -465,6 +515,8 @@ public final class ProfileStore {
             System.arraycopy(candidate.catalogPrepared,0,catalogPrepared,0,4);
             disciplineXp.clear();disciplineXp.putAll(candidate.disciplineXp);
             archive.clear();archive.addAll(candidate.archive);
+            relations.clear();relations.putAll(candidate.relations);
+            visitedDialogues.clear();visitedDialogues.addAll(candidate.visitedDialogues);
             campaignSerial = candidate.campaignSerial;
             storySeed = candidate.storySeed;
             storyCheckpoint = candidate.storyCheckpoint;
@@ -498,6 +550,12 @@ public final class ProfileStore {
             for(InvestigationSession.Role role:InvestigationSession.Role.values())
                 p.setProperty("hunter.xp."+role.name(),Integer.toString(disciplineExperience(role)));
             CampaignArchive.save(p,archive);
+            for(var npc:CastleRelations.Resident.values())
+                p.setProperty("relations."+npc.name(),Integer.toString(relationship(npc)));
+            // Sort before persistence so same data produces deterministic snapshots.
+            var dialogueEntries=new ArrayList<>(visitedDialogues);
+            java.util.Collections.sort(dialogueEntries);
+            p.setProperty("relations.visits",String.join(",",dialogueEntries));
             p.setProperty("currency",Integer.toString(currency));p.setProperty("experience",Integer.toString(experience));
             p.setProperty("awarded",String.join(",",new ArrayList<>(awarded)));
             p.setProperty("catalog.version","1");
