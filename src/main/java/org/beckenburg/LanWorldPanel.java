@@ -48,7 +48,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final Map<Integer,VanSiteMapScreen.Reading> sensorReadings=new HashMap<>();
     private final Map<Integer,FieldSensorDetection.Pulse> sensorAlerts=new HashMap<>();
     private int selectedCameraOwner=-1;
-    private int lastVanPoll=-100000,lastMapTextureTick=-100000;
+    private int lastVanPoll=-100000,lastMapTextureTick=-100000,lastCameraRenderTick=-100000;
     private final List<SceneRenderer.WorldMark> counterMarks=new ArrayList<>();
     private SceneRenderer.Apparition apparition;
     private final Map<String,SceneRenderer.Apparition> pairedGhostBodies=new HashMap<>();
@@ -1017,6 +1017,17 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     mapFloor,vanMapScroll,tick);
             }finally{monitor.dispose();}
             GlbProps.updateVanMap(mapImage);
+            // Every side display presents the same host-authorized values as
+            // its expanded station UI, without any new ghost/evidence query.
+            VanLiveScreens.team(meters);
+            VanLiveScreens.activity(meters,new ArrayList<>(activityHistory));
+            VanLiveScreens.sound(sensorReadings,new ArrayList<>(sensorNodes.values()),
+                activeSoundCaption());
+            VanLiveScreens.contract(map.level().name(),hardEvidenceLevel.name(),
+                dailyTasks.stream().map(task->
+                    (completedTasks.contains(task)?"[DONE] ":"[OPEN] ")+task.label).toList());
+            if(selectedVanCamera()==null)
+                VanLiveScreens.camera(null,"NO POWERED CAMERA");
             lastMapTextureTick=tick;
         }
         renderer.rackToolTiers=java.util.Map.of();
@@ -1027,9 +1038,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         renderer.drawNetwork(map,new ArrayList<>(peers.values()),apparition,tick*.1,List.copyOf(counterMarks));
         // Van receiver renders the *same live world* from the physical camera's
         // position. No canned image, inferred spectral object or proof overlay.
-        if(vanDisplay&&!videoCameras.isEmpty()
-                &&videoCameras.values().stream().anyMatch(c->
-                    videoPowered.getOrDefault(c.owner(),false))){
+        // The existing host-approved live camera renderer is reused, not
+        // duplicated by the wall screen. Five camera captures/second maximum.
+        if(vanDisplay&&tick-lastCameraRenderTick>=2&&selectedVanCamera()!=null){
+            lastCameraRenderTick=tick;
             LanVideoCameras.Camera camera=selectedVanCamera();
             videoRenderer.x=camera.x();videoRenderer.z=camera.z();videoRenderer.eyeHeight=camera.y()+1.62;
             videoRenderer.yaw=Math.toRadians(camera.heading());
@@ -1077,6 +1089,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 ?List.of():List.of(secondThroughCamera));
             videoRenderer.drawNetwork(map,new ArrayList<>(peers.values()),
                 seenThroughCamera,tick*.1,List.copyOf(counterMarks));
+            // Use only this already authorized camera view. The video has the
+            // host's camera-specific disclosed bodies, not the local hunter's.
+            if(videoRenderer.frameDiagnostics()!=null
+                    &&videoRenderer.frameDiagnostics().gpuReadbackAvailable())
+                VanLiveScreens.camera(videoRenderer.image(),
+                    "CAM H"+(camera.owner()+1)+" / "+map.roomName(camera.room()));
         }
         perfHud.sample(System.nanoTime()-diagnosticsStart,renderer,map,peers.size(),"LAN HUNTER");
         repaint();
