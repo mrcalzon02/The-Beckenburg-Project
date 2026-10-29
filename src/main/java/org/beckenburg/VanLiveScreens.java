@@ -21,6 +21,29 @@ public final class VanLiveScreens {
     private static final Color BACK=new Color(8,18,26), INK=new Color(208,237,226),
         GREEN=new Color(123,230,179), AMBER=new Color(240,206,137), DIM=new Color(111,157,163);
     private static final java.util.EnumMap<Panel,Integer> MATERIALS=new java.util.EnumMap<>(Panel.class);
+    private static final java.util.EnumMap<Panel,BufferedImage> LATEST=
+        new java.util.EnumMap<>(Panel.class);
+    /** Identical pixel source for the physical face and its expanded station view. */
+    public static synchronized BufferedImage snapshot(Panel panel){return LATEST.get(panel);}
+    public static void drawExpanded(Graphics2D g,Panel panel,int viewportWidth,int viewportHeight){
+        BufferedImage image=snapshot(panel);
+        int width=Math.min(viewportWidth-40,Math.max(320,viewportWidth*3/4));
+        int height=Math.min(viewportHeight-70,Math.max(180,width*HEIGHT/WIDTH));
+        width=Math.min(width,height*WIDTH/HEIGHT);
+        int x=(viewportWidth-width)/2,y=(viewportHeight-height)/2;
+        g.setColor(new Color(5,11,17,246));
+        g.fillRoundRect(x-12,y-31,width+24,height+56,10,10);
+        g.setColor(GREEN);
+        g.drawRoundRect(x-12,y-31,width+23,height+55,10,10);
+        g.setFont(new Font(Font.MONOSPACED,Font.BOLD,14));
+        g.drawString(panel.name()+" / E OR ESC TO CLOSE",x,y-11);
+        if(image!=null)g.drawImage(image,x,y,width,height,null);
+        else{
+            g.setColor(DIM);
+            g.drawString("AWAITING LIVE DISPLAY",x+18,y+40);
+        }
+    }
+
 
     public static Panel forPurpose(String purpose){
         return switch(purpose){
@@ -62,6 +85,7 @@ public final class VanLiveScreens {
     private static void publish(Panel panel,BufferedImage image){
         if(panel==Panel.MAP)throw new IllegalArgumentException("map uses existing live map");
         GlbProps.updateLiveSurface(material(panel),image);
+        synchronized(VanLiveScreens.class){LATEST.put(panel,image);}
     }
     public static void contract(String site,String difficulty,List<String> tasks){
         BufferedImage image=canvas("CONTRACT / LIVE",clip(site,34)+"  /  "+clip(difficulty,15));
