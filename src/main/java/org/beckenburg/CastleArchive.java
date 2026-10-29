@@ -40,60 +40,6 @@ public final class CastleArchive {
         }catch(IOException e){throw new IllegalStateException("Lorekeeper portrait",e);}
         return portrait;
     }
-    /** The approved source art is the castle resident, not the old proxy mesh. */
-    public static int paintKeeper(int[] pixels,double[] depth,double cameraX,double cameraZ,
-            double yaw,double pitch,double eyeHeight,int width,int height,double focal){
-        return paintKeeper(pixels,depth,cameraX,cameraZ,yaw,pitch,eyeHeight,width,height,focal,portrait());
-    }
-    /** Injected image supports occlusion tests independently of asset pixel colors. */
-    static int paintKeeper(int[] pixels,double[] depth,double cameraX,double cameraZ,
-            double yaw,double pitch,double eyeHeight,int width,int height,double focal,BufferedImage sprite){
-        if(sprite==null||pixels.length!=width*height||depth.length!=width*height
-                ||width<=0||height<=0||!Double.isFinite(focal)||focal<=0)return 0;
-        double dx=KEEPER_X-cameraX,dz=KEEPER_Z-cameraZ;
-        double right=-dx*Math.cos(yaw)+dz*Math.sin(yaw);
-        double forward=dx*Math.sin(yaw)+dz*Math.cos(yaw);
-        if(forward<=.10||forward>24)return 0;
-        double sy=Math.sin(pitch),cy=Math.cos(pitch);
-        double bottom=-eyeHeight,top=1.82-eyeHeight;
-        double zBottom=bottom*sy+forward*cy,zTop=top*sy+forward*cy;
-        if(zBottom<=.065||zTop<=.065)return 0;
-        double foot=height*.5-(bottom*cy-forward*sy)/zBottom*focal;
-        double head=height*.5-(top*cy-forward*sy)/zTop*focal;
-        if(head>=foot)return 0;
-        double distance=(zBottom+zTop)*.5;
-        double center=width*.5+right/distance*focal;
-        double worldWidth=Math.max(.65,Math.min(1.18,1.82*sprite.getWidth()/sprite.getHeight()));
-        double half=focal*worldWidth/(2*distance);
-        int left=Math.max(0,(int)Math.floor(center-half));
-        int rightEdge=Math.min(width-1,(int)Math.ceil(center+half));
-        int topEdge=Math.max(0,(int)Math.floor(head));
-        int bottomEdge=Math.min(height-1,(int)Math.ceil(foot));
-        if(left>rightEdge||topEdge>bottomEdge)return 0;
-        int drawn=0;
-        for(int py=topEdge;py<=bottomEdge;py++){
-            int v=(int)((py+.5-head)/(foot-head)*sprite.getHeight());
-            if(v<0||v>=sprite.getHeight())continue;
-            for(int px=left;px<=rightEdge;px++){
-                int u=(int)((px+.5-(center-half))/(half*2)*sprite.getWidth());
-                if(u<0||u>=sprite.getWidth())continue;
-                int argb=sprite.getRGB(u,v),alpha=argb>>>24;
-                if(alpha<24)continue;
-                int i=py*width+px;
-                if(distance>=depth[i])continue;
-                int source=argb&0xffffff;
-                if(alpha<255){
-                    int target=pixels[i],inverse=255-alpha;
-                    int r=(((source>>>16)&255)*alpha+((target>>>16)&255)*inverse)/255;
-                    int g=(((source>>>8)&255)*alpha+((target>>>8)&255)*inverse)/255;
-                    int b=((source&255)*alpha+(target&255)*inverse)/255;
-                    source=(r<<16)|(g<<8)|b;
-                }
-                pixels[i]=source;depth[i]=distance;drawn++;
-            }
-        }
-        return drawn;
-    }
     private static List<String> wrap(Graphics2D g,String text,int width){
         var lines=new ArrayList<String>();String row="";
         for(String word:text.split("\\s+")){
