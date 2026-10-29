@@ -208,11 +208,16 @@ public final class InvestigationGame {
         if(networkLobby!=null)page("network",networkLobby);
     }
     private void openNetwork(LanLobbyPanel.CampaignLaunch launch){
+        final String returnScreen=currentScreen;
         if(networkLobby!=null)networkLobby.close();
         networkLobby=new LanLobbyPanel(active->{
             if(active==networkLobby)showNetworkInCastle();
             else if(active instanceof JPanel panel)page("network.field",panel);
-        },()->{if(launch==null)showCastle();else showCampaign();},launch);
+        },()->{
+            if(launch!=null)showCampaign();
+            else if("castle".equals(returnScreen))showCastle();
+            else showMenu();
+        },launch);
         networkLobby.setName("network");showNetworkInCastle();
     }
     private Color ink(){return displayPrefs.getBoolean("highContrast",false)?Color.WHITE:new Color(223,210,183);}
