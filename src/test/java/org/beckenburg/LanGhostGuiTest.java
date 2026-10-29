@@ -36,17 +36,17 @@ public final class LanGhostGuiTest {
                 lobby.setVisible(true);LanWindowSmokeTest.button(lobby,"Join by IP").doClick();return lobby;
             });
             try{
-                until(()->{try{return edt(()->LanWindowSmokeTest.button(ghost,"Ready / Unready").isEnabled());}catch(Exception e){return false;}},"ghost connected");
+                until(()->{try{return edt(()->LanWindowSmokeTest.button(ghost,"READY").isEnabled());}catch(Exception e){return false;}},"ghost connected");
                 h1.ready();h2.ready();h3.ready();
-                edt(()->{LanWindowSmokeTest.button(ghost,"Ready / Unready").doClick();return null;});
+                edt(()->{LanWindowSmokeTest.button(ghost,"READY").doClick();return null;});
                 // Readiness runs asynchronously; only trigger start once ghost appears ready in the lobby log.
                 until(()->{try{return edt(()->{
                     java.util.List<JTextArea> logs=new ArrayList<>();LanWindowSmokeTest.collect(ghost.getContentPane(),JTextArea.class,logs);
                     return logs.stream().anyMatch(x->x.getText().contains("LOBBY|3|HUMAN|4|WAITING"));
                 });}catch(Exception e){return false;}},"lobby ready");
                 h1.start();
-                until(()->{try{return edt(()->LanWindowSmokeTest.button(ghost,"Enter 3D World").isEnabled());}catch(Exception e){return false;}},"ghost 3D enable");
-                edt(()->{LanWindowSmokeTest.button(ghost,"Enter 3D World").doClick();return null;});
+                // Mission start must automatically enter the ghost world.
+                until(()->{try{return edt(()->LanWindowSmokeTest.find(ghost.getContentPane(),LanGhostPanel.class)!=null);}catch(Exception e){return false;}},"automatic ghost 3D entry");
                 until(()->{try{return edt(()->LanWindowSmokeTest.find(ghost.getContentPane(),LanGhostPanel.class)!=null);}catch(Exception e){return false;}},"ghost scene");
                 JFrame world=edt(()->ghost);
                 LanGhostPanel panel=LanWindowSmokeTest.find(world.getContentPane(),LanGhostPanel.class);
