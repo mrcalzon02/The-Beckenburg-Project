@@ -2,9 +2,9 @@
 
 The start menu selects Campaign, Multiplayer, Solo Contract, Castle, Options or Extras. Mission configuration no longer occupies the start page. Options is a dedicated page with explicit apply/back controls and an in-window, 15-second display-reversion prompt.
 
-Campaign and multiplayer preparation panels are children of the actual CastleHubPanel service overlay. Start-menu shortcuts enter Castle before opening their workstation. No lobby or mission-view implementation allocates another Window. Returning from a mission restores the Castle workstation.
+Campaign and multiplayer preparation use separate **full-window CardLayout pages within the existing game window**; they must never stack a menu over the Castle viewport or over another complete menu. Castle stations may navigate to the same pages, but Castle is a playable hub, not an involuntary prerequisite for entering campaign or multiplayer from the main menu. Back returns to the originating menu or Castle. The physical Castle Quartermaster remains an in-world interaction, not a second equipment catalog. No new Window is allocated for game-mode navigation.
 
-Campaign preparation has Contracts, Team, Equipment, Archives and Site Pictures. Solo and Co-op use the actual shared equipment/network field implementation. Solo binds a private loopback lobby; Co-op can host guests. A saved chapter supplies the real site, fixed assigned ghost and evidence seed. Unbuilt or locked chapters cannot dispatch.
+Campaign preparation has Contracts, Team, Equipment, Archives and Site Pictures. **START ROUND actually enters the playable 3D game.** Free-play solo launches its selected mission directly. Campaign solo automatically hosts the private loopback lobby, readies the owner, prepares booked AI hunters and enters 3D on the host's mission-start event—without extra Host/Ready/Enter World clicks. Multiplayer and campaign co-op keep host/join and guest readiness controls, but the authorized host's START ROUND transitions all connected players into their proper hunter/ghost 3D views after the host confirms the start. An explicit per-player OWNREADY acknowledgement prevents bot preparation from racing readiness. A saved chapter supplies the real site, fixed assigned ghost and evidence seed. Unbuilt or locked chapters cannot dispatch.
 
 ## One equipment library
 
@@ -18,6 +18,12 @@ The host occupies one of six hunter slots. Reserve zero to five AI hunters at £
 
 Campaign guests cannot select a human ghost seat, start the host's case, earn a normal multiplayer payout from that campaign, or advance their own campaign save. A resolved campaign case creates one idempotent receipt in the host's campaign; retreat records a visit without clearing the chapter. Failed settlement saves remain retryable from the owning lobby. Returning from the 3D view stays inside the game window.
 
+## Full-body character cards and world sky
+
+Lobby Hunter previews use the **selected** approved Cleric, Observer or Demonologist directional asset, not an always-Observer placeholder. A 208×300 portrait area reserves the figure's full height; only transparent source padding is trimmed, with nearest-neighbor scaling and no cut-off visible pixels. The random Banshee disguise remains a separate ghost-seat preview and never reveals private archetype information.
+
+Weather clouds, sun and vertical sky projection use world-relative heading and camera pitch. Turning the player's head reveals a different part of the same environment rather than carrying screen-fixed cloud sprites. The sky remains behind masonry through actual depth-tested geometry.
+
 ## Images and usability repairs
 
 Blender Cycles generated 129 independent 512×512 RGBA images from `EquipmentModelCatalog`'s actual GLBs. Camera framing uses the rendered alpha bounds and re-renders to make the object fill about 84% of the long dimension. Source materials and textures are preserved. Static fixtures correctly retain their source aliases. Store cells and the large preview load `item_t1`, `item_t2` or `item_t3`; three-tier contact sheets are only review artifacts.
@@ -27,5 +33,7 @@ The licensed PSX frame, tab and button artwork remains in use. The updater no lo
 ## Verification and limits
 
 The checked-in JSON report records focused regression outcomes, with a separate final full-manifest log. Desktop results in that report predate the final Castle containment cleanup; that cleanup is checked headlessly by CastleContainedMenuTest, and no further desktop windows were opened after the user requested this. `EquipmentTierIconTest` checks every packaged tier image, resolution, close framing, clipping and accidental reuse between different source models. `CampaignCoopLobbyTest` uses actual TCP clients for host authority, six-seat bot substitution/refunds, guest isolation and pre-match purchasing. `CampaignEmbeddedDesktopTest` opens a real solo campaign lobby, deploys two bots with saved catalog equipment, receives advancing 3D frames, persists a retreat receipt and returns to the same window. `BeckenburgDesktopE2ETest` also visits Options, checks an in-window prompt, traverses multiplayer, and starts the real House scene.
+
+The 2026-10-28 follow-up fixes add `WeatherSkyWorldAnchorTest`, updated `LobbyGhostAvatarTest`, `LanOwnerReadyAckTest` and desktop acceptance assertions for single-layer navigation and automatic Start Round entry. Their sources are pushed to `main`, but the new packaged Windows run has **not been confirmed** in this note.
 
 These are scoped local checks, not full-release or GPU/performance acceptance. The full regression manifest, installed GPU path, physical two-machine co-op and remote workflow results remain independent recovery gates. Source archives excluded by the initial sparse checkout were restored locally for the clean package build. Initial GitHub operations failed DNS resolution. Connectivity later recovered and the icon checkpoint was pushed; implementation delivery is recorded in the recovery checkpoint. Remote workflow outcomes remain separate from local verification.
