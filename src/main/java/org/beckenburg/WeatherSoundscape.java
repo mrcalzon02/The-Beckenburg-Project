@@ -191,10 +191,12 @@ public final class WeatherSoundscape implements AutoCloseable {
                     if(line!=null){line.stop();line.flush();}
                     Thread.sleep(100);continue;
                 }
-                if(line==null){
-                    line=AudioSystem.getSourceDataLine(PCM);
-                    line.open(PCM,4096);line.start();
-                }else if(!line.isRunning())line.start();
+                SourceDataLine currentLine=line;
+                if(currentLine==null){
+                    currentLine=AudioSystem.getSourceDataLine(PCM);
+                    line=currentLine;
+                    currentLine.open(PCM,4096);currentLine.start();
+                }else if(!currentLine.isRunning())currentLine.start();
                 List<dev.mrcalzon.weather.WeatherAudio.Loop> gains=linked==null
                     ?List.of():linked.audio().loops();
                 // Resolve one recording per output BLOCK, not per individual PCM sample:
@@ -245,7 +247,7 @@ public final class WeatherSoundscape implements AutoCloseable {
                     offset++;
                 }
                 thunder.removeIf(x->x.cursor()>=x.data().length);
-                if(line.write(block,0,block.length)<=0)
+                if(currentLine.write(block,0,block.length)<=0)
                     throw new IllegalStateException("Weather output accepted no audio frames");
                 if(unavailable){
                     System.err.println("Beckenburg weather audio output restored");
