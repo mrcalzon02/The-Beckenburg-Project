@@ -968,6 +968,7 @@ public final class SceneRenderer {
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> marks) {
         List<Face> out=new ArrayList<>(2000);
         stableGpuFaces.clear();
+        shellGpuFaces.clear();
         // Only House-authored immutable source faces enter the GPU light cache.
         // Deployed tools, switches, portals, apparitions and event effects remain live.
         levelArchitecture(out,map);
@@ -1540,6 +1541,18 @@ public final class SceneRenderer {
     private record StableGpuEntry(int room,int lod,long lightVersion,float[] vertices){}
     private final java.util.Set<Face> stableGpuFaces=
         java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
+    private final java.util.Set<Face> shellGpuFaces=
+        java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
+    private record ShellGpuKey(int chunk,int material){}
+    private record ResidentShell(int lod,long lightVersion,long id,long revision,
+            float[] vertices){}
+    private final java.util.Map<ShellGpuKey,ResidentShell> residentShell=new java.util.HashMap<>();
+    private long shellResidentBuilds,shellResidentHits,shellResidentBytes;
+    public record ShellResidentStats(long builds,long hits,long bytes,int batches){}
+    public ShellResidentStats shellResidentStats(){
+        return new ShellResidentStats(shellResidentBuilds,shellResidentHits,
+            shellResidentBytes,residentShell.size());
+    }
     private final java.util.IdentityHashMap<Face,StableGpuEntry[]> stableGpuCache=
         new java.util.IdentityHashMap<>();
     private final java.util.ArrayDeque<Face> stableGpuCacheOrder=new java.util.ArrayDeque<>();
@@ -1560,6 +1573,8 @@ public final class SceneRenderer {
         stableGpuCache.clear();
         stableGpuCacheOrder.clear();
         stableGpuBytes=0;
+        residentShell.clear();
+        shellResidentBytes=0;
     }
     /** Keep camera-space rasterization on OpenGL while retaining the stationary
      * House vertex colours across camera motion. Lighting revisions are local
@@ -1619,6 +1634,75 @@ public final class SceneRenderer {
             for(StableGpuEntry saved:expired)if(saved!=null)
                 stableGpuBytes-=(long)saved.vertices().length*Float.BYTES;
             stableGpuEvictions++;
+        }
+    }
+    /** World-space, revisioned immutable House shell VBOs.
+     * Each contiguous spatial/room chunk is a separate resource, and
+     * OpenGL retains its VBO across camera transforms. Supplying the cached
+     * float[] is intentional: the backend can recreate a lost context or
+     * recover after another scene ID without relying on stale draw-only IDs.
+     * In the normal case matching resource revision skips BOTH upload and
+     * the legacy full-array equality scan. Dynamic objects remain transient. */
+    private void appendResidentShell(java.util.List<GpuWorldRenderer.Surface> surfaces){
+        for(int chunkIndex=0;chunkIndex<preparedShellChunks.size();chunkIndex++){
+            ShellChunk chunk=preparedShellChunks.get(chunkIndex);
+            if(shellChunkCulling&&!shellChunkInFrustum(chunk))continue;
+            double nearestX=Math.max(chunk.minX,Math.min(x,chunk.maxX));
+            double nearestY=Math.max(chunk.minY,Math.min(eyeHeight,chunk.maxY));
+            double nearestZ=Math.max(chunk.minZ,Math.min(z,chunk.maxZ));
+            double distance=Math.sqrt((nearestX-x)*(nearestX-x)
+                +(nearestY-eyeHeight)*(nearestY-eyeHeight)
+                +(nearestZ-z)*(nearestZ-z));
+            int lod=lightingSubdivisionLimit(distance);
+            long lightVersion=fixtureLighting.regionVersion(
+                chunk.minX-.09,chunk.minY-.09,chunk.minZ-.09,
+                chunk.maxX+.09,chunk.maxY+.09,chunk.maxZ+.09);
+            // One VBO per chunk/material, not thousands of draw calls per
+            // source triangle; updating the LOD replaces the same resource.
+            var materials=new java.util.HashSet<Integer>();
+            for(int i=chunk.start;i<chunk.end;i++)
+                materials.add(preparedShellFaces.get(i).material);
+            boolean rebuild=false;
+            for(int material:materials){
+                ResidentShell prev=residentShell.get(new ShellGpuKey(chunkIndex,material));
+                if(prev==null||prev.lod()!=lod||prev.lightVersion()!=lightVersion){
+                    rebuild=true;break;
+                }
+            }
+            if(rebuild){
+                var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
+                boolean previousMode=preparingStableGpuFace;
+                int previousLod=preparingStableGpuLod;
+                preparingStableGpuFace=true;preparingStableGpuLod=lod;
+                try{
+                    for(int i=chunk.start;i<chunk.end;i++)
+                        appendGpuFace(preparedShellFaces.get(i),chunk.room,0,batches);
+                }finally{
+                    preparingStableGpuFace=previousMode;
+                    preparingStableGpuLod=previousLod;
+                }
+                for(var built:batches.entrySet()){
+                    ShellGpuKey key=new ShellGpuKey(chunkIndex,built.getKey());
+                    ResidentShell old=residentShell.get(key);
+                    float[] vertices=built.getValue().complete();
+                    if(old!=null)shellResidentBytes-=(long)old.vertices().length*Float.BYTES;
+                    ResidentShell replacement=new ResidentShell(lod,lightVersion,
+                        old==null?GpuWorldRenderer.nextId():old.id(),
+                        old==null?1:old.revision()+1,vertices);
+                    residentShell.put(key,replacement);
+                    shellResidentBytes+=(long)vertices.length*Float.BYTES;
+                    shellResidentBuilds++;
+                }
+            }else shellResidentHits+=materials.size();
+            for(int material:materials){
+                ResidentShell prepared=residentShell.get(new ShellGpuKey(chunkIndex,material));
+                if(prepared==null)throw new IllegalStateException(
+                    "Missing immutable shell GPU batch "+chunkIndex+"/"+material);
+                lastGpuSubmittedTriangles+=prepared.vertices().length/24;
+                surfaces.add(new GpuWorldRenderer.Surface(material,
+                    prepared.vertices(),prepared.id(),prepared.revision(),
+                    prepared.vertices().length/8));
+            }
         }
     }
     private boolean preparingStableGpuFace;
@@ -1717,6 +1801,11 @@ public final class SceneRenderer {
                     ||(f.a.z+f.b.z+f.c.z)/3<0||(f.a.z+f.b.z+f.c.z)/3>CastleHubMap.HEIGHT)?13:0):
                 map.roomAt((f.a.x+f.b.x+f.c.x)/3,
                     (f.a.y+f.b.y+f.c.y)/3,(f.a.z+f.b.z+f.c.z)/3);
+            if(canReuseStatic&&shellGpuFaces.contains(f)){
+                // The entire authored chunk is drawn once via a real resident
+                // OpenGL resource below, never duplicated in transient batches.
+                continue;
+            }
             if(canReuseStatic&&stableGpuFaces.contains(f))
                 appendStableGpuFace(f,room,batches);
             else appendGpuFace(f,room,0,batches);
@@ -1728,6 +1817,7 @@ public final class SceneRenderer {
             lastGpuSubmittedTriangles+=vertices.length/24;
             surfaces.add(new GpuWorldRenderer.Surface(entry.getKey(),vertices));
         }
+        if(canReuseStatic)appendResidentShell(surfaces);
         long submitted=GpuWorldRenderer.nextId();
         if(activeWater!=null&&!activeWater.bodies().isEmpty())waterViews.put(submitted,waterView(waterClock));
         consumedWaterView=null;
@@ -1833,6 +1923,7 @@ public final class SceneRenderer {
                 if(exportFullLevel||faceInFrustum(face)){
                     out.add(face);
                     stableGpuFaces.add(face);
+                    shellGpuFaces.add(face);
                 }
             }
         }

@@ -156,6 +156,12 @@ public final class GpuDesktop {
   System.out.println("GPU STATIC LIGHT CACHE PASS hits="+(after.hits()-before.hits())+
       " builds="+(after.builds()-before.builds())+
       " bytes="+after.bytes()+" faces="+after.faces());
+  var shell=renderer.shellResidentStats();
+  if(shell.batches()==0||shell.hits()==0)
+   throw new AssertionError("Authored House shell did not use resident OpenGL batches");
+  System.out.println("GPU HOUSE RESIDENT SHELL PASS batches="+shell.batches()+
+      " builds="+shell.builds()+" reuse="+shell.hits()+
+      " bytes="+shell.bytes());
  }
  private static GpuWorldRenderer.Result awaitGpu(SceneRenderer renderer,
       String stage)throws Exception{
