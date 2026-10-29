@@ -967,6 +967,9 @@ public final class SceneRenderer {
     private List<Face> scene(HouseMap map,int ghostRoom,boolean ghostVisible,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> marks) {
         List<Face> out=new ArrayList<>(2000);
+        stableGpuFaces.clear();
+        // Only House-authored immutable source faces enter the GPU light cache.
+        // Deployed tools, switches, portals, apparitions and event effects remain live.
         levelArchitecture(out,map);
         looseClutter(out,map);
         eventFixtures(out,map);
@@ -1212,7 +1215,9 @@ public final class SceneRenderer {
         for(var instance:scene.instances()){
             if(!instance.visible(x,eyeHeight,z,yaw,pitch,hx,hy,NEAR))continue;
             visible++;
-            out.addAll(preparedSceneryFaces(instance));
+            List<Face> immutable=preparedSceneryFaces(instance);
+            out.addAll(immutable);
+            stableGpuFaces.addAll(immutable);
             triangles+=instance.template.triangleCount();
         }
         instanceStats=new InstanceStats(scene.instances().size(),visible,scene.instances().size()-visible,scene.templates().size(),scene.expandedTriangles(),scene.sharedTriangles(),triangles);
@@ -1517,8 +1522,103 @@ public final class SceneRenderer {
             values[count++]=(float)(Math.max(.03,v.g)*((tint>>8)&255)/255.0);
             values[count++]=(float)(Math.max(.03,v.b)*(tint&255)/255.0);
         }
+        void append(float[] prepared){
+            if(prepared.length==0)return;
+            int needed=count+prepared.length;
+            if(needed>values.length){
+                int grown=values.length;
+                while(grown<needed)grown=Math.max(grown*2,needed);
+                values=Arrays.copyOf(values,grown);
+            }
+            System.arraycopy(prepared,0,values,count,prepared.length);
+            count=needed;
+        }
         float[] complete(){return Arrays.copyOf(values,count);}
     }
+
+    private static final long GPU_STABLE_CACHE_BUDGET=72L*1024*1024;
+    private record StableGpuEntry(int room,int lod,long lightVersion,float[] vertices){}
+    private final java.util.Set<Face> stableGpuFaces=
+        java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
+    private final java.util.IdentityHashMap<Face,StableGpuEntry[]> stableGpuCache=
+        new java.util.IdentityHashMap<>();
+    private final java.util.ArrayDeque<Face> stableGpuCacheOrder=new java.util.ArrayDeque<>();
+    private HouseMap stableGpuMap;
+    private String stableGpuRevision;
+    private long stableGpuBytes,stableGpuHits,stableGpuBuilds,stableGpuEvictions;
+    public record StableGpuCacheStats(long hits,long builds,long evictions,
+            long bytes,int faces){}
+    public StableGpuCacheStats stableGpuCacheStats(){
+        return new StableGpuCacheStats(stableGpuHits,stableGpuBuilds,
+            stableGpuEvictions,stableGpuBytes,stableGpuCache.size());
+    }
+    private void resetStableGpuCache(HouseMap map){
+        String revision=map.level().revision()+":"+map.hidingDensity();
+        if(stableGpuMap==map&&revision.equals(stableGpuRevision))return;
+        stableGpuMap=map;
+        stableGpuRevision=revision;
+        stableGpuCache.clear();
+        stableGpuCacheOrder.clear();
+        stableGpuBytes=0;
+    }
+    /** Keep camera-space rasterization on OpenGL while retaining the stationary
+     * House vertex colours across camera motion. Lighting revisions are local
+     * and include occluder changes; no camera position is embedded in the VBO.
+     * Limited to authored static faces, never moving/evidence faces. */
+    private void appendStableGpuFace(Face face,int room,
+            java.util.Map<Integer,GpuFloats> batches){
+        int lod=lightingSubdivisionLimit(Math.max(0,Math.min(camera(face.a).z,
+            Math.min(camera(face.b).z,camera(face.c).z))));
+        double minX=Math.min(face.a.x,Math.min(face.b.x,face.c.x))-.09;
+        double minY=Math.min(face.a.y,Math.min(face.b.y,face.c.y))-.09;
+        double minZ=Math.min(face.a.z,Math.min(face.b.z,face.c.z))-.09;
+        double maxX=Math.max(face.a.x,Math.max(face.b.x,face.c.x))+.09;
+        double maxY=Math.max(face.a.y,Math.max(face.b.y,face.c.y))+.09;
+        double maxZ=Math.max(face.a.z,Math.max(face.b.z,face.c.z))+.09;
+        long version=fixtureLighting.regionVersion(minX,minY,minZ,maxX,maxY,maxZ);
+        StableGpuEntry[] entries=stableGpuCache.get(face);
+        StableGpuEntry entry=entries==null?null:entries[lod];
+        if(entry!=null&&entry.room()==room&&entry.lightVersion()==version){
+            stableGpuHits++;
+            batches.computeIfAbsent(face.material,ignored->new GpuFloats())
+                .append(entry.vertices());
+            return;
+        }
+        // Build a fixed receiver-side light probe, not a camera-biased probe:
+        // moving the camera changes only the GL transform and distance LOD.
+        boolean original=preparingStableGpuFace;
+        preparingStableGpuFace=true;
+        GpuFloats prepared=new GpuFloats();
+        try {
+            var temporary=new java.util.LinkedHashMap<Integer,GpuFloats>();
+            appendGpuFace(face,room,0,temporary);
+            GpuFloats actual=temporary.get(face.material);
+            if(actual!=null)prepared=actual;
+        } finally {
+            preparingStableGpuFace=original;
+        }
+        float[] vertices=prepared.complete();
+        batches.computeIfAbsent(face.material,ignored->new GpuFloats())
+            .append(vertices);
+        if(entries==null){
+            entries=new StableGpuEntry[4];
+            stableGpuCache.put(face,entries);
+            stableGpuCacheOrder.addLast(face);
+        }
+        if(entry!=null)stableGpuBytes-=entry.vertices().length*Float.BYTES;
+        entries[lod]=new StableGpuEntry(room,lod,version,vertices);
+        stableGpuBytes+=(long)vertices.length*Float.BYTES;
+        stableGpuBuilds++;
+        while(stableGpuBytes>GPU_STABLE_CACHE_BUDGET&&!stableGpuCacheOrder.isEmpty()){
+            Face oldest=stableGpuCacheOrder.removeFirst();
+            StableGpuEntry[] expired=stableGpuCache.remove(oldest);
+            if(expired==null)continue;
+            for(StableGpuEntry saved:expired)if(saved!=null)
+                stableGpuBytes-=(long)saved.vertices().length*Float.BYTES;
+            stableGpuEvictions++;
+        }
+    }
+    private boolean preparingStableGpuFace;
     /**
      * Every authored scene uses the same GPU path: castle, campaign, solo, LAN,
      * co-op and the network observer. The GPU receives only camera-visible
@@ -1557,7 +1657,16 @@ public final class SceneRenderer {
         dst.vertex(gpuLitVertex(face.c,face.cu,face.cv,face.material,room,face.nc),face.color);
     }
     private Vertex gpuLitVertex(Point p,double u,double v,int material,int room,Point normal){
-        var result=litVertex(p,u,v,material,room,true);
+        Vertex result;
+        if(preparingStableGpuFace){
+            // Authored room-side occlusion already handles shared walls. Sampling
+            // exactly at the fixed world receiver makes the result reusable
+            // across camera movement without inheriting view-direction bias.
+            var rgb=fixtureLighting.sample(room,p.x,p.y,p.z);
+            var glow=fixtureLighting.emission(material,p.x,p.y,p.z);
+            result=new Vertex(p,u,v,Math.max(rgb.r(),glow.r()),
+                Math.max(rgb.g(),glow.g()),Math.max(rgb.b(),glow.b()));
+        }else result=litVertex(p,u,v,material,room,true);
         if(normal!=null){var n=fixtureLighting.sampleNormal(room,p.x,p.y,p.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,p.x,p.y,p.z);result=new Vertex(p,u,v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));}
         // Static fixture/emissive and occlusion-approved local lights retain
         // their CPU probes. The handheld camera lamp is now evaluated for
@@ -1591,6 +1700,9 @@ public final class SceneRenderer {
         if(!backend.ready())throw new IllegalStateException(
             "OpenGL renderer stopped before the game frame");
         var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
+        boolean canReuseStatic=map!=null&&!uvLamp
+            &&portablePositions.values().stream().noneMatch(LanPortableLights.Light::on);
+        if(canReuseStatic)resetStableGpuCache(map);
         lastGpuFrustumFaces=0;
         for(Face f:faces){
             if(!faceInFrustum(f))continue;
@@ -1600,7 +1712,9 @@ public final class SceneRenderer {
                     ||(f.a.z+f.b.z+f.c.z)/3<0||(f.a.z+f.b.z+f.c.z)/3>CastleHubMap.HEIGHT)?13:0):
                 map.roomAt((f.a.x+f.b.x+f.c.x)/3,
                     (f.a.y+f.b.y+f.c.y)/3,(f.a.z+f.b.z+f.c.z)/3);
-            appendGpuFace(f,room,0,batches);
+            if(canReuseStatic&&stableGpuFaces.contains(f))
+                appendStableGpuFace(f,room,batches);
+            else appendGpuFace(f,room,0,batches);
         }
         var surfaces=new java.util.ArrayList<GpuWorldRenderer.Surface>(batches.size());
         lastGpuSubmittedTriangles=0;
@@ -1711,7 +1825,10 @@ public final class SceneRenderer {
             candidateFaces+=chunk.end-chunk.start;
             for(int i=chunk.start;i<chunk.end;i++){
                 Face face=preparedShellFaces.get(i);
-                if(exportFullLevel||faceInFrustum(face))out.add(face);
+                if(exportFullLevel||faceInFrustum(face)){
+                    out.add(face);
+                    stableGpuFaces.add(face);
+                }
             }
         }
         shellChunkStats=new ShellChunkStats(preparedShellChunks.size(),rejected,

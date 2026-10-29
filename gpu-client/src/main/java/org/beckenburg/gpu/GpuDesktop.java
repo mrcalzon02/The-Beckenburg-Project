@@ -144,6 +144,18 @@ public final class GpuDesktop {
   System.out.println("GPU ROTATION PASS 6 real house directions, fresh frame identity each; "+
       "average_ms="+totalNanos/6/1_000_000+
       " worst_ms="+maxNanos/1_000_000);
+  // Assert that a camera-only redraw reuses stationary authored light/vertex
+  // results. The existing GPU output identity checks still run independently.
+  var before=renderer.stableGpuCacheStats();
+  renderer.drawNetwork(house,List.of(),-1,3);
+  var middle=renderer.stableGpuCacheStats();
+  renderer.drawNetwork(house,List.of(),-1,3);
+  var after=renderer.stableGpuCacheStats();
+  if(after.hits()<=middle.hits()||middle.faces()==0)
+   throw new AssertionError("House GPU authored geometry did not reuse light vertices");
+  System.out.println("GPU STATIC LIGHT CACHE PASS hits="+(after.hits()-before.hits())+
+      " builds="+(after.builds()-before.builds())+
+      " bytes="+after.bytes()+" faces="+after.faces());
  }
  private static GpuWorldRenderer.Result awaitGpu(SceneRenderer renderer,
       String stage)throws Exception{

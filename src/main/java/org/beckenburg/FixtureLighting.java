@@ -59,6 +59,22 @@ public final class FixtureLighting {
  private final Map<NormalKey,Lit> normalColours=bounded(100000);
  private final Map<Shadow,Boolean> sight=bounded(200000);
  private String geometry="",state="";private double[] factors=new double[0];
+ private long occluderEpoch;
+ /** Authoritative revision of the lighting cells touched by an immutable
+  * geometry range. Unrelated room-light changes retain prepared GPU colours;
+  * changed doors/windows always invalidate their previous visibility. */
+ public long regionVersion(double ax,double ay,double az,double bx,double by,double bz){
+  int x0=(int)Math.floor(ax/CELL_SIZE),x1=(int)Math.floor(bx/CELL_SIZE);
+  int y0=(int)Math.floor(ay/CELL_SIZE),y1=(int)Math.floor(by/CELL_SIZE);
+  int z0=(int)Math.floor(az/CELL_SIZE),z1=(int)Math.floor(bz/CELL_SIZE);
+  long hash=1469598103934665603L ^ occluderEpoch;
+  for(int xx=x0;xx<=x1;xx++)for(int yy=y0;yy<=y1;yy++)
+   for(int zz=z0;zz<=z1;zz++){
+    long revision=changedCells.getOrDefault(new Cell(xx,yy,zz),0L);
+    hash=(hash^revision)*1099511628211L;
+   }
+  return hash;
+ }
  /** Per-render CPU work counters; shadow tests are expensive architectural rays. */
  public record FrameStats(long samples,long cacheHits,long shadowRays,
                           long normalSamples,long normalRays,int lights,int cachedColours,
@@ -198,7 +214,7 @@ public final class FixtureLighting {
  public List<Source> sources(){return List.copyOf(sources);}
  public void frame(RoomLighting circuits,int tick){
   resetStatistics();
-  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;sight.clear();colours.clear();normalColours.clear();distant.clear();}
+  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;occluderEpoch++;sight.clear();colours.clear();normalColours.clear();distant.clear();}
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){double f;
    if(source.room==14)f=1;
