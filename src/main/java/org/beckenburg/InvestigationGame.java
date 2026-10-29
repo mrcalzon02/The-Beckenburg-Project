@@ -639,6 +639,8 @@ public final class InvestigationGame {
         private final SiteCaseFiles.Reader assignmentReader=new SiteCaseFiles.Reader(),storyReader=new SiteCaseFiles.Reader();
         private int useHeldUntilTick;
         private final VanTelemetry monitor=new VanTelemetry(20261017L);
+        private int lastVanScreenTick=-100000,latestVanActivity;
+
         private final AtmosphereAudio atmosphere=new AtmosphereAudio(AtmosphereAudio.Scene.FIELD);
         private final LevelSoundscape buildingSoundscape;
         private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
@@ -952,6 +954,7 @@ public final class InvestigationGame {
                 }
                 if(!map.clutter().drainNoises().isEmpty())GameSfx.play(LanSound.Cue.IMPACT);
                 int activity=monitor.sample(session.ticks(),session.ghostEnergy());
+                latestVanActivity=activity;
                 if(session.ticks()%12==0){
                     activityHistory.addLast(activity);
                     if(activityHistory.size()>32)activityHistory.removeFirst();
@@ -963,6 +966,29 @@ public final class InvestigationGame {
             atmosphere.setWeather(session.weather());
             GraphicsOptions.current().configure(scene,getWidth(),getHeight(),true);
             scene.rackInventory=VanRackStock.solo(profile,loadout);
+            // Same physical screens as LAN. Solo has no invented remote camera
+            // or sensor network: unavailable data is explicitly marked offline.
+            if(insideVan()&&session.ticks()-lastVanScreenTick>=10){
+                java.awt.image.BufferedImage image=new java.awt.image.BufferedImage(
+                    768,512,java.awt.image.BufferedImage.TYPE_INT_RGB);
+                Graphics2D screen=image.createGraphics();
+                try{
+                    VanSiteMapScreen.draw(screen,768,512,map,
+                        java.util.List.of(),java.util.Map.of(),mapFloor,0,session.ticks());
+                }finally{screen.dispose();}
+                GlbProps.updateVanMap(image);
+                int[] sanities={Math.max(0,Math.min(100,100-session.stress())),-1,-1,-1,-1,-1};
+                var display=new VanTelemetry.Display(session.ticks(),latestVanActivity,sanities);
+                VanLiveScreens.team(display);
+                VanLiveScreens.activity(display,new java.util.ArrayList<>(activityHistory));
+                VanLiveScreens.sound(java.util.Map.of(),java.util.List.of(),"NO SENSOR NETWORK");
+                VanLiveScreens.contract(location.label,conditions.label,java.util.List.of(
+                    "CASE "+session.outcome(),
+                    "MEASURED TOOLS "+session.evidenceCount(),
+                    "WARDS AVAILABLE "+session.wards()));
+                VanLiveScreens.camera(null,"NO DEPLOYED VIDEO CAMERA");
+                lastVanScreenTick=session.ticks();
+            }
             scene.draw(map,session,frameCount++/30.0,
                 assistants.stream().map(CampaignAlly::sprite).toList());
             if(frameCount==1)BeckenburgDeveloperTrace.caseStage("active");
