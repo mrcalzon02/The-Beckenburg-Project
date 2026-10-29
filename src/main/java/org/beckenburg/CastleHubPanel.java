@@ -96,8 +96,12 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     public void openMenuPanel(String name,JComponent content,Runnable back){
         closeService();closeQuartermaster();down.clear();look.release();
         storeOpen=true;serviceBack=back;
-        serviceOverlay=PsxHorrorUi.surface(new BorderLayout());
+        // Unlike store and lobby windows, the pause/settings backdrop must stay
+        // transparent so the last rendered Castle frame remains visible.
+        serviceOverlay=new JPanel(new BorderLayout());
+        serviceOverlay.setOpaque(false);
         serviceOverlay.setName("castle.menu."+name);
+        content.setOpaque(false);
         content.putClientProperty("castle.overlay",Boolean.TRUE);
         serviceOverlay.add(content,BorderLayout.CENTER);
         serviceOverlay.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
@@ -133,7 +137,9 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     public void closeService(){
         if(serviceOverlay!=null){remove(serviceOverlay);serviceOverlay=null;serviceBack=null;storeOpen=false;last=System.nanoTime();}
         revalidate();repaint();
-        if(isShowing()&&!storeOpen)SwingUtilities.invokeLater(this::requestFocusInWindow);
+        if(isShowing()&&!storeOpen)SwingUtilities.invokeLater(()->{
+            if(!storeOpen)requestFocusInWindow();
+        });
     }
     /** Existing PSX panels, buttons and approved model thumbnails stay inside
      * the same world viewport and share the live persisted Castle profile. */
@@ -335,7 +341,8 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             int pixelWidth=getWidth(),pixelHeight=getHeight();
             GraphicsOptions.current().draw(g,renderer.image(),pixelWidth,pixelHeight);
             if(storeOpen){
-                g.setColor(new Color(5,8,12,190));g.fillRect(0,0,pixelWidth,pixelHeight);
+                int shade=serviceOverlay!=null&&serviceOverlay.getName().startsWith("castle.menu.")?85:190;
+                g.setColor(new Color(5,8,12,shade));g.fillRect(0,0,pixelWidth,pixelHeight);
                 return; // Swing paints the live PSX store child above the dimmed world.
             }
             // Archive input uses physical mouse coordinates: never scale its drawing.
