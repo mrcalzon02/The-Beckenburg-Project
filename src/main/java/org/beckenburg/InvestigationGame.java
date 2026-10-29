@@ -636,6 +636,7 @@ public final class InvestigationGame {
         private int vanNoticeExpires;
         private String storyReading="";
         private boolean briefingShown,interactionHeld;private int mapFloor;
+        private VanLiveScreens.Panel focusedVanPanel;
         private final SiteCaseFiles.Reader assignmentReader=new SiteCaseFiles.Reader(),storyReader=new SiteCaseFiles.Reader();
         private int useHeldUntilTick;
         private final VanTelemetry monitor=new VanTelemetry(20261017L);
@@ -727,7 +728,7 @@ public final class InvestigationGame {
                 if(wheelOpen){wheelDelta(dx,dy);}
                 else MouseLook.rotate(scene,dx,dy);
             },()->opening==null&&!mapShown&&!journalShown&&!briefingShown
-                &&!helpVisible&&!chatInput.isVisible());
+                &&focusedVanPanel==null&&!helpVisible&&!chatInput.isVisible());
             addKeyListener(this);addMouseMotionListener(mouseLook);addMouseListener(mouseLook);
             addFocusListener(mouseLook);addFocusListener(this);
             // Reproducible case seed, varies by session, no silent random site conversion.
@@ -769,7 +770,7 @@ public final class InvestigationGame {
                 Math.max(35,getHeight()-39),w,27);
         }
         private void openTeamChat(LanChat.Channel channel){
-            if(wheelOpen||mapShown||journalShown||briefingShown||helpVisible)return;
+            if(wheelOpen||mapShown||journalShown||briefingShown||focusedVanPanel!=null||helpVisible)return;
             chatChannel=channel;down.clear();mouseLook.release();
             chatInput.setText("");chatInput.setVisible(true);
             chatInput.requestFocusInWindow();repaint();
@@ -1073,6 +1074,12 @@ public final class InvestigationGame {
                 repaint();return;
             }
             if(down.contains(key))return;
+            if(focusedVanPanel!=null){
+                if(key==KeyEvent.VK_E||key==KeyEvent.VK_ESCAPE){
+                    focusedVanPanel=null;down.clear();requestFocusInWindow();repaint();
+                }
+                return;
+            }
             if(key==KeyEvent.VK_ENTER){openTeamChat(LanChat.Channel.LOCAL);return;}
             if(key==KeyEvent.VK_F2){openTeamChat(LanChat.Channel.RADIO);return;}
             if(key==KeyEvent.VK_E){if(interactionHeld)return;interactionHeld=true;}
@@ -1204,7 +1211,17 @@ public final class InvestigationGame {
                         loadout.pickup(item);
                     }
                 }
-                case INTERFACE -> {assignmentReader.reset();storyReader.reset();storyReading=target.id().startsWith("STORY_")?target.id().substring(6):"";if(target.id().equals("MAP"))mapShown=true;else if(target.id().equals("COMPUTER"))journalShown=true;else briefingShown=true;down.clear();mouseLook.release();}
+                case INTERFACE -> {
+                    assignmentReader.reset();storyReader.reset();
+                    storyReading=target.id().startsWith("STORY_")?target.id().substring(6):"";
+                    if(target.id().equals("MAP"))mapShown=true;
+                    else if(target.id().equals("COMPUTER"))journalShown=true;
+                    else if(target.id().equals("TEAM")||target.id().equals("ACTIVITY")
+                            ||target.id().equals("SOUND"))
+                        focusedVanPanel=VanLiveScreens.Panel.valueOf(target.id());
+                    else briefingShown=true;
+                    down.clear();mouseLook.release();
+                }
                 case SWITCH -> lights.toggle(Integer.parseInt(target.id()));
                 case GENERATOR -> {lights.setSourceRunning(!lights.sourceRunning());map.fixtures().power(lights.supplied());syncEnvironment();}
                 case BREAKER -> {powerOn=!powerOn;map.fixtures().power(lights.supplied());syncEnvironment();}
@@ -1372,7 +1389,7 @@ public final class InvestigationGame {
                 }
                 g.setColor(new Color(13,19,25,215));g.fillRoundRect(Math.max(12,width-126),12,114,30,8,8);
                 g.setColor(new Color(225,219,200));g.drawString("ESC PAUSE",Math.max(23,width-116),32);
-                if(!journalShown&&!mapShown&&!briefingShown&&!wheelOpen&&!helpVisible)InteractionFocus.draw(g,width,stageH,focusTarget());
+                if(!journalShown&&!mapShown&&!briefingShown&&focusedVanPanel==null&&!wheelOpen&&!helpVisible)InteractionFocus.draw(g,width,stageH,focusTarget());
                 if(vanNoticeExpires>session.ticks()){
                     g.setColor(new Color(160,218,216));
                     g.drawString(vanNotice.substring(0,Math.min(vanNotice.length(),78)),24,Math.max(146,stageH-155));
@@ -1383,6 +1400,7 @@ public final class InvestigationGame {
                 if(wheelOpen) drawCalloutWheel(g,stageH);
                 if(mapShown)drawMap(g);
                 if(journalShown)drawJournal(g);
+                if(focusedVanPanel!=null)VanLiveScreens.drawExpanded(g,focusedVanPanel,width,stageH);
                 if(helpVisible){
                     int pw=Math.min(width-36,570),ph=245,x=(width-pw)/2,y=(stageH-ph)/2;
                     g.setColor(new Color(12,17,27,248));g.fillRoundRect(x,y,pw,ph,12,12);
