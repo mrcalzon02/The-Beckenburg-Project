@@ -18,6 +18,25 @@ public final class LobbyGhostAvatarTest {
             seen.add(look.frame());
         }
         ok(seen.size()>4,"randomized ghost appearances");
+        var preview=new LobbyGhostAvatar.Preview();
+        preview.setSize(208,300);
+        ok(preview.getPreferredSize().height>=280,"full-height character preview is reserved");
+        int[] fingerprints=new int[CharacterVisuals.Hunter.values().length];
+        for(var hunter:CharacterVisuals.Hunter.values()){
+            preview.showHunter(hunter);
+            ok(preview.displayedHunter()==hunter&&!preview.showingGhost(),
+                "selected Hunter art identity is displayed");
+            var art=DirectionalSprites.frame(hunter.name().toLowerCase(java.util.Locale.ROOT),0);
+            var bounds=LobbyGhostAvatar.Preview.artBounds(art);
+            ok(bounds.height>0&&bounds.width>0&&bounds.width<=art.getWidth()&&bounds.height<=art.getHeight(),
+                "real hunter art fits without losing visible pixels");
+            var rendered=new java.awt.image.BufferedImage(208,300,java.awt.image.BufferedImage.TYPE_INT_RGB);
+            var g=rendered.createGraphics();preview.paint(g);g.dispose();
+            int[] pixels=rendered.getRGB(0,0,208,300,null,0,208);
+            fingerprints[hunter.ordinal()]=java.util.Arrays.hashCode(pixels);
+        }
+        ok(java.util.Arrays.stream(fingerprints).distinct().count()==fingerprints.length,
+            "all three approved Hunter portraits render distinctly");
         try{LobbyGhostAvatar.Look.decode("LOBBYAVATAR|4|0");
             throw new AssertionError("unsupported orientation accepted");
         }catch(IllegalArgumentException expected){}
