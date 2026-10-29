@@ -42,8 +42,8 @@ public final class LanWindowSmokeTest {
             Thread.sleep(70);
         }
         SwingUtilities.invokeAndWait(()->{
-            if(!button(frame[0],"Ready / Unready").isEnabled())throw new AssertionError("ready unavailable");
-            if(!button(frame[0],"Start Match").isEnabled())throw new AssertionError("host start unavailable");
+            if(!button(frame[0],"READY").isEnabled())throw new AssertionError("ready unavailable");
+            if(!button(frame[0],"START ROUND").isEnabled())throw new AssertionError("host start unavailable");
             if(button(frame[0],"Ghost Action").isEnabled())throw new AssertionError("hunter UI exposes ghost power");
             frame[0].dispose();
         });
