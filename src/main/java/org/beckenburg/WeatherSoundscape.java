@@ -228,6 +228,8 @@ public final class WeatherSoundscape implements AutoCloseable {
                             +failure.getMessage());
                     unavailable=true;
                     thunder.clear();
+                    var interruptedModule=module;
+                    if(interruptedModule!=null)interruptedModule.audio().drainCues();
                     SourceDataLine stale=line;line=null;release(stale);
                     if(!closed)Thread.sleep(350);
                 }
