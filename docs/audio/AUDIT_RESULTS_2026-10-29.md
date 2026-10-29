@@ -80,3 +80,13 @@ The application contains **52 captioned cue identities with a generated fallback
 No new GitHub Actions, forced branch changes, full-pack audio dumps, copied game IP, or third-party online runtime dependencies were introduced in this audio pass.
 
 **Claim contract:** Owned-first source inventory, new playable-source sound connections, and test authoring: COMMITTED. Three original NOX rock WAVs decoded in an isolated Java format test: VERIFIED. Complete game build/Windows audible acceptance: NOT YET VERIFIED.
+
+## Final-JAR audio packaging gate — 2026-10-29
+
+**New implementation:** [`PackagedAudioAudit.java`](../../src/main/java/org/beckenburg/PackagedAudioAudit.java), executed from the **assembled JAR's own classpath** immediately after packaging in both [`build.sh`](../../build.sh) and [`build.cmd`](../../build.cmd), **including Windows `package` mode**. Neither builder may report a new packaged JAR as accepted if this audit rejects its audio.
+
+The checker opens and validates exactly **19 runtime WAVs** through JavaSound's 16-kHz stereo mixer conversion, all **six logical music archives** including split ZIP parts and U-law decoding compatibility, **10 Castle + 3 Hollow Creek authored zones** in their packaged `.sounds` files, and **11 populated shared-weather ZIP bundles**. Failure is fatal and names the missing, truncated, invalid or unsupported resource. It loads nothing from Drive and requires no sound card, extra audio library or runtime network dependency.
+
+**Isolated verifier acceptance performed:** The exact Java source was compiled successfully with OpenJDK 21 `javac --release 17`. Against a purpose-built **synthetic** packaged JAR with the expected files, the command `java -Djava.awt.headless=true -cp positive.jar org.beckenburg.PackagedAudioAudit` passed (19 WAVs / 6 scores / 13 zones / 11 weather packs). The negative control deliberately omitted `sfx/book.wav` and exited nonzero with `Absent packaged audio: sfx/book.wav`. These fixture tests validate the verifier; they are **not tests of the actual Beckenburg asset bytes, full Java game build, or Windows speaker playback**.
+
+**Remaining exit evidence:** full actual checkout build and a screenshot/log of the newly required packaged check running against `build/beckenburg-game.jar`; then hands-on Windows audio mix, performance and LAN acceptance. The issue remains open until those tests pass. 
