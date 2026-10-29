@@ -520,6 +520,11 @@ public final class FixtureLighting {
   return emissionMaterials.get(material);
  }
  public RGB emission(int material,double x,double y,double z){
+  // LCD texels illuminate themselves without becoming extra room light sources.
+  if(material==GlbProps.VAN_MAP_MATERIAL)return new RGB(1.0,1.0,1.0);
+  if(material>=GlbProps.TEXTURE_BASE && GlbProps.registeredTexture(material)
+      &&GlbProps.materialName(material).startsWith("van live screen "))
+      return new RGB(1.0,1.0,1.0);
   if(!emittingMaterial(material))return RGB.ZERO;
   for(var s:candidates(x,y,z))if(factors[s.id]>.01&&Math.abs(x-s.x)<.4&&Math.abs(y-s.y)<.28&&Math.abs(z-s.z)<.4)return new RGB(s.red*1.35,s.green*1.35,s.blue*1.35);
   return RGB.ZERO;
