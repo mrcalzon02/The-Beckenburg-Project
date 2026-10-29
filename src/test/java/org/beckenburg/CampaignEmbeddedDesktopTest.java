@@ -29,13 +29,11 @@ public final class CampaignEmbeddedDesktopTest {
                 lobby[0]=new LanLobbyPanel(active->{frame[0].setContentPane(active);frame[0].revalidate();},()->left[0]=true,
                     new LanLobbyPanel.CampaignLaunch(profile,chapter,2,false));
                 frame[0].setContentPane(lobby[0]);frame[0].setSize(1060,725);frame[0].setVisible(true);
-                button(lobby[0],"PREPARE SOLO TEAM").doClick();return null;});
-            until(()->button(lobby[0],"Ready / Unready").isEnabled(),"Campaign owner connects");
-            edt(()->{button(lobby[0],"Ready / Unready").doClick();return null;});
-            Thread.sleep(150);
-            edt(()->{button(lobby[0],"Start Match").doClick();return null;});
-            until(()->button(lobby[0],"Enter 3D World").isEnabled(),"Campaign team starts");
-            edt(()->{button(lobby[0],"Enter 3D World").doClick();return null;});
+                return null;});
+            // Single-player dispatch must host, ready, launch, and show the actual
+            // 3D scene without any more button presses.
+            until(()->find(frame[0].getContentPane())!=null,
+                "Solo campaign dispatch did not automatically open 3D");
             until(()->{
                 var view=find(frame[0].getContentPane());if(view==null||!view.isShowing())return false;
                 var tick=LanWorldPanel.class.getDeclaredField("tick");tick.setAccessible(true);return tick.getInt(view)>=3;
