@@ -223,7 +223,7 @@ public final class WeatherSoundscape implements AutoCloseable {
                     unavailable=false;
                 }
                 }catch(LineUnavailableException|IllegalArgumentException
-                        |SecurityException failure){
+                        |IllegalStateException|SecurityException failure){
                     if(!unavailable)
                         System.err.println("Beckenburg weather audio temporarily unavailable: "
                             +failure.getMessage());
