@@ -370,6 +370,8 @@ public final class InvestigationGame {
         JCheckBox highContrast=new JCheckBox("High contrast menu",displayPrefs.getBoolean("highContrast",false));
         JSlider musicVolume=new JSlider(0,100,SoundtrackAudio.volume());
         musicVolume.setMajorTickSpacing(25);musicVolume.setPaintTicks(true);
+        JSlider environmentVolume=new JSlider(0,100,EnvironmentAudio.volume());
+        environmentVolume.setMajorTickSpacing(25);environmentVolume.setPaintTicks(true);
         JSlider effectsVolume=new JSlider(0,100,LanAudio.effectsVolume());
         effectsVolume.setMajorTickSpacing(25);effectsVolume.setPaintTicks(true);
         JPanel grid=new JPanel(new GridLayout(0,2,7,7));
@@ -389,6 +391,7 @@ public final class InvestigationGame {
         grid.add(grain);grid.add(chromatic);
         grid.add(large);grid.add(highContrast);
         setting(grid,"Music volume",musicVolume);
+        setting(grid,"Environment volume",environmentVolume);
         setting(grid,"Effects volume (voice separate)",effectsVolume);
         JScrollPane scroll=new JScrollPane(grid,
             ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -417,6 +420,7 @@ public final class InvestigationGame {
         displayPrefs.putBoolean("largeMenuText",large.isSelected());
         displayPrefs.putBoolean("highContrast",highContrast.isSelected());
         SoundtrackAudio.volume(musicVolume.getValue());
+        EnvironmentAudio.volume(environmentVolume.getValue());
         LanAudio.effectsVolume(effectsVolume.getValue());
         buildMenu();menu.revalidate();menu.repaint();PsxMenuScreen.theme(optionsScreen);status.setText("OPTIONS SAVED");
         };
