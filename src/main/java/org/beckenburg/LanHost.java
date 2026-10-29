@@ -635,7 +635,11 @@ public final class LanHost implements AutoCloseable {
                 }
                 case "READY" -> {
                     if(p.size()!=1||running)throw new IllegalArgumentException("invalid ready command");
-                    peer.ready=!peer.ready;broadcastLobby();
+                    peer.ready=!peer.ready;
+                    // Per-seat acknowledgement prevents GUI launch from racing the
+                    // host-owned ready state (aggregate LOBBY counts are ambiguous).
+                    reply(peer,"OWNREADY|"+(peer.ready?"YES":"NO"));
+                    broadcastLobby();
                 }
                 case "START" -> {
                     if(consoleAuthorityOnly||p.size()!=1||(ownerJoinSecret!=null
