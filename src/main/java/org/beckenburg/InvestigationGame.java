@@ -170,7 +170,7 @@ public final class InvestigationGame {
         }
     }
     private void showCampaign(){
-        showCastle();if(castle==null)return;
+        // Campaign is a separate mode, not a floating service menu in free-play Castle.
         campaign=null;
         campaign=new CampaignBoardPanel(profile,new CampaignBoardPanel.Actions(){
             @Override public void deploy(SiteCatalog.Location location,boolean withAssistant){
@@ -190,7 +190,8 @@ public final class InvestigationGame {
             @Override public void castle(){showCastle();}
             @Override public void tutorial(){showCastleOrientation();}
         });
-        castle.openService("CAMPAIGN DESK",campaign,this::showCastle);
+        // Show one full-window menu surface; do not stack a menu over Castle HUD.
+        page("campaign",campaign);
         SwingUtilities.invokeLater(campaign::requestFocusInWindow);
     }
     private void showCastleOrientation(){
@@ -203,7 +204,8 @@ public final class InvestigationGame {
     }
     private void openLan(){openNetwork(null);}
     private void showNetworkInCastle(){
-        showCastle();if(castle!=null)castle.openService("MULTIPLAYER & CAMPAIGN TEAM DESK",networkLobby,networkLobby::leaveLobby);
+        // The network lobby replaces the previous page inside the same game window.
+        if(networkLobby!=null)page("network",networkLobby);
     }
     private void openNetwork(LanLobbyPanel.CampaignLaunch launch){
         if(networkLobby!=null)networkLobby.close();
@@ -460,7 +462,7 @@ public final class InvestigationGame {
         JTabbedPane tabs=new JTabbedPane();PsxHorrorUi.styleTabs(tabs);
         tabs.addTab("CONTRACT",PsxMenuScreen.scroll(form));
         tabs.addTab("EQUIPMENT",new CampaignStorePanel(profile,this::refreshAccount));
-        JButton deploy=nav("solo.deploy","DEPLOY",()->{
+        JButton deploy=nav("solo.deploy","START ROUND",()->{
             locationPicker.setSelectedItem(site.getSelectedItem());begin(false,false,0,null);
         });
         page("solo",PsxMenuScreen.screen("solo","SOLO CONTRACT LOBBY",
