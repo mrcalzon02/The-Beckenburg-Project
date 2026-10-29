@@ -38,6 +38,24 @@ public final class CastleWarehouse {
   return exhibits=List.copyOf(out);
  }
  public static List<Rack> racks(){return RACKS;}
+ /** Read a physical plaque at the crosshair. Rear-facing, distant and
+  * architecture-occluded labels cannot produce a readable overlay. */
+ public static Exhibit aimedExhibit(CastleHubMap map,double x,double eye,double z,double yaw,double pitch){
+  Exhibit best=null;double score=Double.POSITIVE_INFINITY;
+  double cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+  for(var item:exhibits()){
+   var rack=RACKS.get(item.rack);var center=rack.world((item.column-1)*.66,.326);
+   if((x-center[0])*(-Math.sin(rack.yaw))+(z-center[1])*Math.cos(rack.yaw)<.05)continue;
+   double dx=center[0]-x,dy=item.y+.20-eye,dz=center[1]-z;
+   double d2=dx*dx+dy*dy+dz*dz;if(d2>4.5*4.5||d2<.15*.15)continue;
+   double forward=dx*sy+dz*cy,side=-dx*cy+dz*sy,up=dy*cp-forward*sp,depth=dy*sp+forward*cp;
+   if(depth<=.15||Math.abs(side)>CastleShelfLabels.WIDTH*.55||Math.abs(up)>.40)continue;
+   double error=side*side+up*up;
+   if(error>=score||!FixtureLighting.castleRayClear(map,x,eye,z,center[0],item.y+.20,center[1]))continue;
+   best=item;score=error;
+  }
+  return best;
+ }
  public static boolean blocks(double x,double z,double radius){
   for(var r:RACKS){double dx=x-r.x,dz=z-r.z;
    if(Math.abs(dx*Math.cos(r.yaw)+dz*Math.sin(r.yaw))<WIDTH*.5+radius&&

@@ -1552,6 +1552,116 @@
       "action": "Use separate Windows helper in LocalAppData, wait for game exit, reverify SHA-256, launch Inno Setup and log independently. Gate next release on real Windows silent install.",
       "evidence": "User report 2026-10-28, code regression and workflow; Windows acceptance pending.",
       "older_maps": "All Windows installations/upgrades, no map modifications; preserve saved profiles."
+    },
+    {
+      "id": "DEV-147",
+      "title": "Rebuilt Castle bypassed retained GPU geometry",
+      "status": "implementation-candidate-acceptance-in-progress",
+      "affected": "Castle headquarters",
+      "symptom": "Rebuilt Castle measured 35–73 ms median frames versus 18 ms before the rebuild, allocating 63–201 MiB per frame at 640x400 on RTX5070.",
+      "cause": "Castle calls drawGpuFaces with no investigation map, excluding it from the map-gated residency path; 220671 source triangles were reprocessed each frame.",
+      "action": "Retain authored Castle topology, state-keyed fixture/door assemblies, conservative spatial chunks and explicitly revisioned GPU buffers.",
+      "evidence": "2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-148",
+      "title": "PSX framebuffer quantization repeated costly floating-point rounding",
+      "status": "implementation-candidate-acceptance-in-progress",
+      "affected": "All rendered maps and Castle",
+      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6–13 ms per frame in the baseline.",
+      "cause": "Six floating-point rounding operations per pixel repeated an invariant 256-channel/16-phase transform.",
+      "action": "Use precomputed channel lookup tables with exhaustive numerical and full-image pixel parity.",
+      "evidence": "2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-149",
+      "title": "Per-vertex emissive classification allocated lowercase material names",
+      "status": "implementation-candidate-acceptance-in-progress",
+      "affected": "All renderer paths",
+      "symptom": "Castle JFR recorded StringLatin1.toLowerCase and material-name classification on every lit vertex.",
+      "cause": "Invariant material emission classification was recomputed for hundreds of thousands of vertices per frame.",
+      "action": "Cache emission classification by append-only material ID; retain live source factors and texture updates.",
+      "evidence": "2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-150",
+      "title": "Cosmetic light flicker invalidated retained shadow work",
+      "status": "implementation-candidate-acceptance-in-progress",
+      "affected": "Castle and shared stationary fixture lighting",
+      "symptom": "First residency candidate produced 300–400 ms flicker stalls; retaining geometry alone was insufficient.",
+      "cause": "Brightness revisions repeated tessellation, ray visibility and source attenuation; bounded global shadow caches thrashed.",
+      "action": "Separate immutable receiver attenuation/occlusion probes from live brightness factors; retain regional revisions and invalidate on actual occluder changes.",
+      "evidence": "2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-151",
+      "title": "Cached van and map fixtures were still lit and repacked every frame",
+      "status": "implementation-candidate-acceptance-in-progress",
+      "affected": "House, School and authored investigation maps",
+      "symptom": "Warm School approach cost about 52 ms CPU per baseline frame.",
+      "cause": "CPU face caching stopped at transforms; van, arrival scenery, enclosure, fixtures and portals still followed transient GPU batches.",
+      "action": "Retain actual static source arrays and GPU buffers; preserve live CRT, doors, stock, circuits, UV, portable lights and DOTS receiver geometry.",
+      "evidence": "2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-152",
+      "title": "Castle shelf labels were too small and consumed 129 materials",
+      "status": "implementation-candidate-acceptance-in-progress",
+      "affected": "Castle quartermaster store",
+      "symptom": "A 105 mm label compressed family names to a few native pixels and created one material per family/tier.",
+      "cause": "Small world plaques plus independent 256x64 textures.",
+      "action": "Use larger high-contrast plaques in one atlas and full-resolution targeted family/tier text inside the Castle viewport.",
+      "evidence": "2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-153",
+      "title": "Native Hollow Creek geometry lacked GPU residency",
+      "status": "implementation-candidate-acceptance-in-progress",
+      "affected": "Native investigation map",
+      "symptom": "Measured native interior view at about 337 ms median completed frame before the native retention fix.",
+      "cause": "A 96-entry transformed-face cache could churn, while native geometry still repeated CPU lighting and GPU repacking.",
+      "action": "Retain non-billboard native geometry and water bed; keep camera-facing billboards, actual water, live power and effects dynamic.",
+      "evidence": "2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-154",
+      "title": "Hidden GPU worker added a second frame pacing delay",
+      "status": "implementation-candidate-acceptance-in-progress",
+      "affected": "All OpenGL scenes",
+      "symptom": "Completed-frame timing included roughly a second 16 ms scheduling interval even after CPU work dropped.",
+      "cause": "Swing submission pacing and a separate 60 Hz GLFW foreground throttle/idle interval stacked.",
+      "action": "Use event-requested noncontinuous GL rendering without a second foreground cap; bounded 240 Hz idle polling still sleeps and draws only requested work.",
+      "evidence": "2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-155",
+      "title": "Focused Castle workflow asserted obsolete pre-redesign editor menu source",
+      "status": "scoped-test-repair-verification-pending",
+      "affected": "Focused Castle acceptance workflow",
+      "symptom": "Main ba3d8885 focused workflow 40826909984 failed DeveloperEditorLaunchTest at the obsolete Main menu button assertion.",
+      "cause": "The earlier menu redesign moved the unchanged real editor action to the Extras page, but the focused packaging test still required removed JButton/Options source.",
+      "action": "Verify the actual main-to-Extras navigation and editor action route while preserving --editor, installer shortcut and shipped kit checks.",
+      "evidence": "Original failed workflow log retained under build/profile/main-focused-failure.log; focused revalidation pending.",
+      "older_maps": "Acceptance-route repair only; no production menu change or map acceptance is implied."
+    },
+    {
+      "id": "DEV-156",
+      "title": "Local AVG TLS interception prevents pinned encrypted regression connections",
+      "status": "external-environment-limitation",
+      "affected": "Local CommonNetworkTest and SecureLanIntegrationTest acceptance",
+      "symptom": "Both local encrypted tests fail NET-04 / underlying NET-03 certificate substitution; 272 other manifest checks passed.",
+      "cause": "Handshake diagnostic received AVG Web/Mail Shield issuer instead of the generated Private Game Server self-signed issuer. IPv4-only profile reproduced the failure.",
+      "action": "Preserve strict pinning and system security settings. Verify encrypted tests in independent exact-source CI. No bypass or test waiver.",
+      "evidence": "Local full regression 272/274 and bounded TLS issuer/fatal diagnostic, 2026-10-28.",
+      "older_maps": "No networking production change; affects local verification, not a performance-root-cause claim."
     }
   ],
   "audit_categories": [

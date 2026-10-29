@@ -8,6 +8,18 @@ public final class PsxPipeline {
     private PsxPipeline(){}
     private static final String KEY="psxPreset";
     private static final int[] BAYER={0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5};
+    private static final int[][][] CHANNELS=buildChannels();
+    private static int[][][] buildChannels(){
+        var result=new int[Preset.values().length][16][256];
+        for(var preset:Preset.values()){
+            int levels=(1<<preset.bits)-1;
+            for(int phase=0;phase<16;phase++){
+                double bias=(BAYER[phase]-7.5)/16.0*(255.0/levels)*preset.dither;
+                for(int c=0;c<256;c++)result[preset.ordinal()][phase][c]=channel(c,bias,levels);
+            }
+        }
+        return result;
+    }
     public enum Preset {
         OFF("Off (original textures)",0,0,8,0),
         SOFT("Soft (subtle PSX)",.5,.25,6,.5),
@@ -45,14 +57,13 @@ public final class PsxPipeline {
         if(width<=0||height<=0||rgb.length!=width*height)
             throw new IllegalArgumentException("invalid PSX framebuffer");
         if(preset==Preset.OFF)return;
-        int levels=(1<<preset.bits)-1;
-        double interval=255.0/levels;
+        int[][] channels=CHANNELS[preset.ordinal()];
         for(int y=0;y<height;y++)for(int x=0;x<width;x++){
             int i=y*width+x,c=rgb[i];
-            double bias=(BAYER[(x&3)+((y&3)<<2)]-7.5)/16.0*interval*preset.dither;
-            int red=channel((c>>>16)&255,bias,levels);
-            int green=channel((c>>>8)&255,bias,levels);
-            int blue=channel(c&255,bias,levels);
+            int[] lut=channels[(x&3)+((y&3)<<2)];
+            int red=lut[(c>>>16)&255];
+            int green=lut[(c>>>8)&255];
+            int blue=lut[c&255];
             rgb[i]=(red<<16)|(green<<8)|blue;
         }
     }

@@ -26,6 +26,12 @@ public final class CastleDoorSlots {
   public double width(){return horizontal()?x1-x0:z1-z0;}
  }
  private static final List<Slot> SLOTS=discover();
+ private static final java.util.Map<String,Slot> BY_ID=indexSlots();
+ private static java.util.Map<String,Slot> indexSlots(){
+  var result=new java.util.HashMap<String,Slot>();
+  for(var slot:SLOTS)if(result.put(slot.id(),slot)!=null)throw new IllegalStateException("Duplicate Castle doorway");
+  return java.util.Map.copyOf(result);
+ }
  private static List<Slot> discover(){
   var slots=new ArrayList<Slot>();var names=new HashSet<String>();
   for(var wall:CastleHubArchitecturalPlan.walls()){
@@ -52,8 +58,9 @@ public final class CastleDoorSlots {
   return type!=null&&type!=Type.EMPTY&&(slot.gate()==(type==Type.PORTCULLIS));
  }
  public static Slot require(String id){
-  return SLOTS.stream().filter(s->s.id().equals(id)).findFirst().orElseThrow(
-      ()->new IllegalArgumentException("Unknown physical castle doorway "+id));
+  Slot slot=id==null?null:BY_ID.get(id);
+  if(slot==null)throw new IllegalArgumentException("Unknown physical castle doorway "+id);
+  return slot;
  }
  public static Type initial(Slot slot){return slot.gate()?Type.PORTCULLIS:Type.EMPTY;}
  /** Solid core geometry has identical extent for visuals, collision and shadows. */

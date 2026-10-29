@@ -279,3 +279,10 @@ CommonNetworkTest
 StreamSafePresentationTest
 DedicatedLifecycleTest
 SecureLanIntegrationTest
+
+# Stationary world residency and exact shared image treatment
+PsxQuantizationParityTest
+PreparedVertexLightingTest
+CastleShelfLabelsTest
+WorldResidencyTest
+DeveloperEditorLaunchTest

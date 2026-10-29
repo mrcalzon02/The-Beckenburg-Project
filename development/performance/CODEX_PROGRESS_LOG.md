@@ -48,3 +48,11 @@ User requested saving/unifying existing work before beginning performance implem
 - Gate status: NOT STARTED / IMPLEMENTED / CODE PASSED / CI PASSED / HARDWARE ACCEPTED / RELEASED.
 
 Do not delete previous checkpoints or convert planned statuses into successes. Link new regressions to the authoritative defect ledger and issue #7.
+
+## 2026-10-28 — Castle and investigation performance recovery checkpoint
+
+User authorized comparison and repair over a five-hour work window, including unreadable shelf text and investigation-level performance. Isolated branch performance/castle-regression began at 65643f3c and fast-forwarded to actual main ba3d8885. Main exact-SHA GPU 40828826828, full multiplayer 40826909975 and installer 40826910008 passed; focused Castle 40826909984 failed the obsolete editor route assertion. Draft performance stacks remain unmerged. Read the current renderer tracking issues and A–G contracts.
+
+Implemented actual Castle/static-world GPU retention, separate stationary light contribution probes, conservative spatial chunking, correct scene disposal/recovery, investigation van/scenery/fixture/native retention, exact PSX lookup quantization, cached material emission classification, removal of double frame pacing, and larger atlased shelf labels with readable aimed-exhibit UI. Kept lights, original models, source UVs, live optical/CRT/water/actor paths and CPU recovery. Details and preliminary matched RTX5070 results: CASTLE_REGRESSION_2026-10-28.md. Native Hollow Creek revealed and now repairs a severe repeated-preparation path as well.
+
+Clean Java17 and Maven GPU packages built; actual OpenGL residency review passed zero unchanged VBO uploads, real torch/flicker/blackout, door, resize and return. Preliminary local full suite: 272 passed / 2 failed / 0 skipped / 274 entries. Both pinned TLS tests reproduced AVG certificate substitution; strict pinning and antivirus were left intact. Latest normal-preserving subdivision and stale editor-route test refinement still require scoped/source-exact revalidation. No A–G completion, installed full-round acceptance or new release is claimed. Next: source checkpoint/remote readback; exact-source CI; three matched all-map-type timing repeats; stable memory checks and retained visual evidence; final focused/full acceptance.

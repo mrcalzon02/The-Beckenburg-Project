@@ -26,9 +26,10 @@ public final class DeveloperEditorLaunchTest {
               &&installer.contains("Parameters: \"--editor\""),
               "Start Menu shortcut launches editor mode");
         String source=Files.readString(Path.of("src/main/java/org/beckenburg/InvestigationGame.java"));
-        check(source.contains("JButton editor=button(\"DEVELOPER LEVEL EDITOR\")"),
-              "Main menu button");
-        check(source.contains("\"OPEN LEVEL EDITOR\""),"Options dialog launch action");
+        check(source.contains("nav(\"start.extras\",\"EXTRAS & SUPPORT\",this::showExtras)"),
+              "Main menu exposes the real Extras page");
+        check(source.contains("nav(\"extras.editor\",\"DEVELOPER LEVEL EDITOR\",()->openDeveloperEditor(window))"),
+              "Extras editor entry invokes the real developer editor");
         String ship=Files.readString(Path.of(".github/workflows/ship-installer.yml"));
         check(ship.contains("dist\\Beckenburg\\tools\\LevelEditorKit-Java17.jar"),
               "Installer includes reusable editor files");

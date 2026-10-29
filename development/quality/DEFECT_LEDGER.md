@@ -1914,6 +1914,216 @@ Evidence and verification: build/castle-rebuild-compile.log and CastleRebuildTes
 
 Older-map obligation: Any GPU build using mixed resource bytecode needs a fresh source rebuild; this does not certify installed gameplay or performance.
 
+### DEV-142 — Campaign and multiplayer equipment were split across incompatible store and reference pages
+
+**Status:** fixed-scoped-local-verification · **Affected:** Campaign and multiplayer menus
+
+The live shop exposed a small subset while the model library was a separate non-purchasing tab; three-tier overview pictures were reused as item icons.
+
+Cause / uncertainty: Two unrelated panel implementations and family contact-sheet thumbnails.
+
+Fix / next action: Replace both with EquipmentCatalogPanel and persistent full-tier campaign ownership; render 129 singular Blender item-tier icons.
+
+Evidence and verification: EquipmentTierIconTest, CampaignMenuWorkflowTest, CampaignProgressionAndStoreTest; equipment-menu contact sheets and minimum-window UI captures.
+
+Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
+
+### DEV-143 — Campaign team booking supported one permanent assistant instead of five mission hires
+
+**Status:** fixed-scoped-local-verification · **Affected:** Campaign lobby and host dispatch
+
+Only one assistant could be purchased; guests had no campaign host flow or shared six-slot hiring rule.
+
+Cause / uncertainty: A permanent boolean recruit flag and separate single-player/LAN mission launchers.
+
+Fix / next action: Add per-mission reservations, refunds, six ordinary human/AI seats and host-only campaign settlement; retain migration of old saves.
+
+Evidence and verification: CampaignCoopLobbyTest and CampaignEmbeddedDesktopTest use actual TCP/desktop workflows; retreat and guest isolation verified.
+
+Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
+
+### DEV-144 — PSX text-field artwork painted over entered connection details
+
+**Status:** fixed-scoped-local-verification · **Affected:** All PSX-styled address, nickname, chat and password fields
+
+The border painted its opaque centre after Swing rendered the text, concealing the real field content.
+
+Cause / uncertainty: TextFieldBorder painted a full nine-slice image during border paint.
+
+Fix / next action: Clip the border artwork to its outline, preserving text and caret visibility.
+
+Evidence and verification: Minimum-window multiplayer-lobby captures and real desktop workflow.
+
+Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
+
+### DEV-145 — Medicine client sent decorated tier labels instead of protocol enum identifiers
+
+**Status:** fixed-scoped-local-verification · **Affected:** LAN purchasing and medicine use
+
+A request encoded BASIC / price / restoration text where the host requires BASIC, rejecting legitimate purchases.
+
+Cause / uncertainty: LanClient concatenated Tier.toString rather than Tier.name.
+
+Fix / next action: Encode stable enum names for BUY and USESUPPLY; retain display formatting solely in the UI.
+
+Evidence and verification: CampaignCoopLobbyTest confirms actual pre-mission medicine purchase and private host stock snapshots.
+
+Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
+
+### DEV-146 — In-game updater launched installer before game released its installation files
+
+**Status:** source-repaired-windows-install-acceptance-pending · **Affected:** Installed Windows client, UPDATES UI and EXE installer
+
+Update requested from an open game could not complete setup and had no independent setup log.
+
+Cause / uncertainty: Game launched setup before System.exit(0) without waiting for full termination.
+
+Fix / next action: Use separate Windows helper in LocalAppData, wait for game exit, reverify SHA-256, launch Inno Setup and log independently. Gate next release on real Windows silent install.
+
+Evidence and verification: User report 2026-10-28, code regression and workflow; Windows acceptance pending.
+
+Older-map obligation: All Windows installations/upgrades, no map modifications; preserve saved profiles.
+
+### DEV-147 — Rebuilt Castle bypassed retained GPU geometry
+
+**Status:** implementation-candidate-acceptance-in-progress · **Affected:** Castle headquarters
+
+Rebuilt Castle measured 35–73 ms median frames versus 18 ms before the rebuild, allocating 63–201 MiB per frame at 640x400 on RTX5070.
+
+Cause / uncertainty: Castle calls drawGpuFaces with no investigation map, excluding it from the map-gated residency path; 220671 source triangles were reprocessed each frame.
+
+Fix / next action: Retain authored Castle topology, state-keyed fixture/door assemblies, conservative spatial chunks and explicitly revisioned GPU buffers.
+
+Evidence and verification: 2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.
+
+Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
+
+### DEV-148 — PSX framebuffer quantization repeated costly floating-point rounding
+
+**Status:** implementation-candidate-acceptance-in-progress · **Affected:** All rendered maps and Castle
+
+JFR identified PSX finishFrame as a major CPU cost, 6–13 ms per frame in the baseline.
+
+Cause / uncertainty: Six floating-point rounding operations per pixel repeated an invariant 256-channel/16-phase transform.
+
+Fix / next action: Use precomputed channel lookup tables with exhaustive numerical and full-image pixel parity.
+
+Evidence and verification: 2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.
+
+Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
+
+### DEV-149 — Per-vertex emissive classification allocated lowercase material names
+
+**Status:** implementation-candidate-acceptance-in-progress · **Affected:** All renderer paths
+
+Castle JFR recorded StringLatin1.toLowerCase and material-name classification on every lit vertex.
+
+Cause / uncertainty: Invariant material emission classification was recomputed for hundreds of thousands of vertices per frame.
+
+Fix / next action: Cache emission classification by append-only material ID; retain live source factors and texture updates.
+
+Evidence and verification: 2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.
+
+Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
+
+### DEV-150 — Cosmetic light flicker invalidated retained shadow work
+
+**Status:** implementation-candidate-acceptance-in-progress · **Affected:** Castle and shared stationary fixture lighting
+
+First residency candidate produced 300–400 ms flicker stalls; retaining geometry alone was insufficient.
+
+Cause / uncertainty: Brightness revisions repeated tessellation, ray visibility and source attenuation; bounded global shadow caches thrashed.
+
+Fix / next action: Separate immutable receiver attenuation/occlusion probes from live brightness factors; retain regional revisions and invalidate on actual occluder changes.
+
+Evidence and verification: 2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.
+
+Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
+
+### DEV-151 — Cached van and map fixtures were still lit and repacked every frame
+
+**Status:** implementation-candidate-acceptance-in-progress · **Affected:** House, School and authored investigation maps
+
+Warm School approach cost about 52 ms CPU per baseline frame.
+
+Cause / uncertainty: CPU face caching stopped at transforms; van, arrival scenery, enclosure, fixtures and portals still followed transient GPU batches.
+
+Fix / next action: Retain actual static source arrays and GPU buffers; preserve live CRT, doors, stock, circuits, UV, portable lights and DOTS receiver geometry.
+
+Evidence and verification: 2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.
+
+Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
+
+### DEV-152 — Castle shelf labels were too small and consumed 129 materials
+
+**Status:** implementation-candidate-acceptance-in-progress · **Affected:** Castle quartermaster store
+
+A 105 mm label compressed family names to a few native pixels and created one material per family/tier.
+
+Cause / uncertainty: Small world plaques plus independent 256x64 textures.
+
+Fix / next action: Use larger high-contrast plaques in one atlas and full-resolution targeted family/tier text inside the Castle viewport.
+
+Evidence and verification: 2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.
+
+Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
+
+### DEV-153 — Native Hollow Creek geometry lacked GPU residency
+
+**Status:** implementation-candidate-acceptance-in-progress · **Affected:** Native investigation map
+
+Measured native interior view at about 337 ms median completed frame before the native retention fix.
+
+Cause / uncertainty: A 96-entry transformed-face cache could churn, while native geometry still repeated CPU lighting and GPU repacking.
+
+Fix / next action: Retain non-billboard native geometry and water bed; keep camera-facing billboards, actual water, live power and effects dynamic.
+
+Evidence and verification: 2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.
+
+Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
+
+### DEV-154 — Hidden GPU worker added a second frame pacing delay
+
+**Status:** implementation-candidate-acceptance-in-progress · **Affected:** All OpenGL scenes
+
+Completed-frame timing included roughly a second 16 ms scheduling interval even after CPU work dropped.
+
+Cause / uncertainty: Swing submission pacing and a separate 60 Hz GLFW foreground throttle/idle interval stacked.
+
+Fix / next action: Use event-requested noncontinuous GL rendering without a second foreground cap; bounded 240 Hz idle polling still sleeps and draws only requested work.
+
+Evidence and verification: 2026-10-28 Castle performance audit: build/profile/ CSV, JFR and matched RTX5070 captures; durable checkpoint report and functional acceptance pending.
+
+Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
+
+### DEV-155 — Focused Castle workflow asserted obsolete pre-redesign editor menu source
+
+**Status:** scoped-test-repair-verification-pending · **Affected:** Focused Castle acceptance workflow
+
+Main ba3d8885 focused workflow 40826909984 failed DeveloperEditorLaunchTest at the obsolete Main menu button assertion.
+
+Cause / uncertainty: The earlier menu redesign moved the unchanged real editor action to the Extras page, but the focused packaging test still required removed JButton/Options source.
+
+Fix / next action: Verify the actual main-to-Extras navigation and editor action route while preserving --editor, installer shortcut and shipped kit checks.
+
+Evidence and verification: Original failed workflow log retained under build/profile/main-focused-failure.log; focused revalidation pending.
+
+Older-map obligation: Acceptance-route repair only; no production menu change or map acceptance is implied.
+
+### DEV-156 — Local AVG TLS interception prevents pinned encrypted regression connections
+
+**Status:** external-environment-limitation · **Affected:** Local CommonNetworkTest and SecureLanIntegrationTest acceptance
+
+Both local encrypted tests fail NET-04 / underlying NET-03 certificate substitution; 272 other manifest checks passed.
+
+Cause / uncertainty: Handshake diagnostic received AVG Web/Mail Shield issuer instead of the generated Private Game Server self-signed issuer. IPv4-only profile reproduced the failure.
+
+Fix / next action: Preserve strict pinning and system security settings. Verify encrypted tests in independent exact-source CI. No bypass or test waiver.
+
+Evidence and verification: Local full regression 272/274 and bounded TLS issuer/fatal diagnostic, 2026-10-28.
+
+Older-map obligation: No networking production change; affects local verification, not a performance-root-cause claim.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
@@ -1931,71 +2141,3 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
-
-## DEV-142 — Campaign and multiplayer equipment were split across incompatible store and reference pages
-
-**Status:** fixed-scoped-local-verification
-
-The live shop exposed a small subset while the model library was a separate non-purchasing tab; three-tier overview pictures were reused as item icons.
-
-Cause: Two unrelated panel implementations and family contact-sheet thumbnails.
-
-Action: Replace both with EquipmentCatalogPanel and persistent full-tier campaign ownership; render 129 singular Blender item-tier icons.
-
-Evidence: EquipmentTierIconTest, CampaignMenuWorkflowTest, CampaignProgressionAndStoreTest; equipment-menu contact sheets and minimum-window UI captures.
-
-Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
-
-## DEV-143 — Campaign team booking supported one permanent assistant instead of five mission hires
-
-**Status:** fixed-scoped-local-verification
-
-Only one assistant could be purchased; guests had no campaign host flow or shared six-slot hiring rule.
-
-Cause: A permanent boolean recruit flag and separate single-player/LAN mission launchers.
-
-Action: Add per-mission reservations, refunds, six ordinary human/AI seats and host-only campaign settlement; retain migration of old saves.
-
-Evidence: CampaignCoopLobbyTest and CampaignEmbeddedDesktopTest use actual TCP/desktop workflows; retreat and guest isolation verified.
-
-Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
-
-## DEV-144 — PSX text-field artwork painted over entered connection details
-
-**Status:** fixed-scoped-local-verification
-
-The border painted its opaque centre after Swing rendered the text, concealing the real field content.
-
-Cause: TextFieldBorder painted a full nine-slice image during border paint.
-
-Action: Clip the border artwork to its outline, preserving text and caret visibility.
-
-Evidence: Minimum-window multiplayer-lobby captures and real desktop workflow.
-
-Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
-
-## DEV-145 — Medicine client sent decorated tier labels instead of protocol enum identifiers
-
-**Status:** fixed-scoped-local-verification
-
-A request encoded BASIC / price / restoration text where the host requires BASIC, rejecting legitimate purchases.
-
-Cause: LanClient concatenated Tier.toString rather than Tier.name.
-
-Action: Encode stable enum names for BUY and USESUPPLY; retain display formatting solely in the UI.
-
-Evidence: CampaignCoopLobbyTest confirms actual pre-mission medicine purchase and private host stock snapshots.
-
-Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
-
-## DEV-146 — Update installer started before game released its files
-
-**Status:** source-repaired-windows-install-acceptance-pending
-
-Beckenburg launched Inno Setup while the game was still running, then exited. Installation could collide with locked game files and report no independent installer log.
-
-Action: Stage verified setup in LocalAppData; use a separate PowerShell process to wait for full game exit, SHA-256 recheck, execute setup and log its result. The active shipping workflow now requires helper syntax validation and actual silent Windows installation before publishing.
-
-Evidence: User live report October 28, 2026; BeckenburgInstallerHandoffTest; release acceptance to be verified. Older clients need an independent manual setup with game closed.
-
-Older-map obligation: All Windows installs and upgrades, no map change; preserve profiles.
