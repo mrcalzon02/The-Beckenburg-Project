@@ -2601,7 +2601,7 @@ public final class SceneRenderer {
             g.setComposite(java.awt.AlphaComposite.Src);
             g.setColor(new java.awt.Color(18,24,32));
             g.fillRect(0,0,renderWidth,renderHeight);
-            weatherFx.renderSky(g,renderWidth,renderHeight);
+            weatherFx.renderSky(g,renderWidth,renderHeight,pitch,focal);
         }finally{g.dispose();}
 
         final int horizon=(int)Math.round(renderHeight*.56+Math.tan(pitch)*focal);
