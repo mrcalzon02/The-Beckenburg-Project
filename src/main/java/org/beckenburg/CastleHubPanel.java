@@ -48,7 +48,6 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         // The world panel itself owns the shop overlay; never create a Window.
         setLayout(null);
         quartermasterStore=new CampaignStorePanel(profile,()->{
-            GameSfx.play(LanSound.Cue.PICKUP);
             notice="Quartermaster transaction saved. Equipment and stock updated.";
             noticeTicks=145;
         });
