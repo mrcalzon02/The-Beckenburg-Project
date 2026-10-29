@@ -37,6 +37,8 @@ jobs:
           javac --release 17 -cp gpu-client/target/classes -d build/contract-test src/test/java/org/beckenburg/GpuWorldRendererContractTest.java src/test/java/org/beckenburg/RendererVisibilityTest.java
           java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.GpuWorldRendererContractTest
           java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.RendererVisibilityTest
+          javac --release 17 -cp gpu-client/target/classes -d build/contract-test src/test/java/org/beckenburg/GpuReadbackTest.java
+          java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.GpuReadbackTest
   windows-build:
     runs-on: windows-latest
     timeout-minutes: 40

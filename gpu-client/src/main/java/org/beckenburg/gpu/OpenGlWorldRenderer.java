@@ -12,11 +12,13 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.BufferUtils;
 import org.beckenburg.GpuWorldRenderer;
+import org.beckenburg.GpuReadback;
 import org.beckenburg.BeckenburgDiagnostics;
 import org.beckenburg.GlbProps;
 import org.beckenburg.LevelMaterials;
 import org.beckenburg.MaterialAtlas;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +33,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * sprites while migration of the UI to a GPU window is completed.
  */
 public final class OpenGlWorldRenderer extends ApplicationAdapter implements GpuWorldRenderer {
- private static final float NEAR=.065f,FAR=180f;
+ private final boolean packedReadback=!Boolean.getBoolean("beckenburg.gpu.packedReadback.disabled");
  private static final String VERTEX="""
  #version 330 core
  in vec3 a_position;
@@ -141,6 +143,11 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
      long readbackAndCopyNs,long totalNs){}
  private volatile FrameTiming frameTiming;
  public FrameTiming frameTiming(){return frameTiming;}
+ /** GL call-wall time includes synchronization and is not GPU timer-query time. */
+ public record ReadbackDetail(long sceneId,long frameId,int width,int height,
+      long colorBytes,long depthBytes,long colorSyncNs,long depthSyncNs,long cpuConversionNs){}
+ private volatile ReadbackDetail readbackDetail;
+ public ReadbackDetail readbackDetail(){return readbackDetail;}
  private long lastSlowReportNs;
  public CompletableFuture<String> initialization(){return initialized;}
  @Override public boolean ready(){return ready&&!closed;}
@@ -171,6 +178,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   target=new FrameBuffer(Pixmap.Format.RGBA8888,w,h,true);
   targetWidth=w;targetHeight=h;
   colorBytes=BufferUtils.newByteBuffer(w*h*4);
+  // GL writes raw RGBA bytes; explicit byte order makes a packed load
+  // independent of the host's native endianness.
+  colorBytes.order(ByteOrder.BIG_ENDIAN);
   depthFloats=BufferUtils.newFloatBuffer(w*h);
  }
  private static int sample(int id,double u,double v){
@@ -312,24 +322,20 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   // glFinish beforehand stalls the entire graphics queue for no benefit.
   long rasterReady=System.nanoTime();
   colorBytes.clear();depthFloats.clear();
+  long colorReadStart=System.nanoTime();
   Gdx.gl.glReadPixels(0,0,targetWidth,targetHeight,
     GL20.GL_RGBA,GL20.GL_UNSIGNED_BYTE,colorBytes);
+  long colorReadEnd=System.nanoTime();
   Gdx.gl.glReadPixels(0,0,targetWidth,targetHeight,
     GL20.GL_DEPTH_COMPONENT,GL20.GL_FLOAT,depthFloats);
+  long depthReadEnd=System.nanoTime();
   int[] argb=new int[targetWidth*targetHeight];
   float[] depth=new float[argb.length];
-  for(int row=0;row<targetHeight;row++){
-   int sourceRow=targetHeight-row-1;
-   for(int col=0;col<targetWidth;col++){
-    int src=sourceRow*targetWidth+col,dst=row*targetWidth+col,i=src*4;
-    int r=colorBytes.get(i)&255,g=colorBytes.get(i+1)&255;
-    int b=colorBytes.get(i+2)&255,a=colorBytes.get(i+3)&255;
-    argb[dst]=(a<<24)|(r<<16)|(g<<8)|b;
-    float d=depthFloats.get(src);
-    depth[dst]=d>=.999999f?Float.POSITIVE_INFINITY:
-        (float)(2*NEAR*FAR/(FAR+NEAR-(2*d-1)*(FAR-NEAR)));
-   }
-  }
+  GpuReadback.copy(colorBytes,depthFloats,targetWidth,targetHeight,argb,depth,packedReadback);
+  long conversionEnd=System.nanoTime();
+  readbackDetail=new ReadbackDetail(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,
+      (long)argb.length*4,(long)argb.length*Float.BYTES,colorReadEnd-colorReadStart,
+      depthReadEnd-colorReadEnd,conversionEnd-depthReadEnd);
   target.end();
   uploadStats=new UploadStats(frame.sceneId(),frame.frameId(),
       frameUploadedBatches,frameReusedBatches,
