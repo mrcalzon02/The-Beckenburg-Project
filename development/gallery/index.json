@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 1078,
+  "count": 1090,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -10968,6 +10968,126 @@
     {
       "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/school.png",
       "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/school.png",
+      "title": "School",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158993,
+      "sha256": "8c036991c81c09366522fa1380c5725efedda9db00c01bdaa95585ddf3fd920a"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/academy.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/academy.png",
+      "title": "Academy",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 253602,
+      "sha256": "29b387430e6147b20358cf5eded1dcc9559a6a7789ee4c33a904adf6f859aae5"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/asylum.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/asylum.png",
+      "title": "Asylum",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 178114,
+      "sha256": "2176db7c6751b0b00a87f3232efa6305af5b91e355c4a71360947e08e3888c99"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/castle-blackout.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/castle-blackout.png",
+      "title": "Castle blackout",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 91919,
+      "sha256": "bb37a008be9b30718ba035c6254d64e378c924a9597c8a30174f117824a9c64b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/castle-lit.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/castle-lit.png",
+      "title": "Castle lit",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 325616,
+      "sha256": "5f818082880c0ed9be7f805e6508d634e61212f44f5045022f1952a5fd24be62"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/church.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/church.png",
+      "title": "Church",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 318002,
+      "sha256": "b7ed4cbe3331f65940a0e125e0ac0fece0e46b3bc0e482a394f9214e42a0c3a4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/college.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/college.png",
+      "title": "College",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158911,
+      "sha256": "4b49f69fd727d94b2003f74eebc39ce7098ffff0c44143f4c88a738a819efeb4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/farmhouse.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/farmhouse.png",
+      "title": "Farmhouse",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 272568,
+      "sha256": "687b5c00ae4c68e616843ec6314e3b3bd79aa84fb02bc70b175046ec7c126991"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/hollow_creek.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/hollow_creek.png",
+      "title": "Hollow creek",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 303092,
+      "sha256": "6ba1080b6a71146adea6586bd0e7d2845718141d900038ee252ea21dc7473077"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/house.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/house.png",
+      "title": "House",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 338322,
+      "sha256": "32b952491cf6782dcdc484b4d496bd608a994e89bb214d2278bae27d53c5ccef"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/mansion.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/mansion.png",
+      "title": "Mansion",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 267370,
+      "sha256": "37a5be394009a35ea7fb0f6d4723053f4457f15e72457cfd4e814b9a8fd392e1"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/prison.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/prison.png",
+      "title": "Prison",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 202285,
+      "sha256": "d33918df9db12d4db58ecbec3a2b47d4769ec9da0d080da34dd9c5cec47bee16"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/school.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/school.png",
       "title": "School",
       "kind": "Runtime GPU diagnostic",
       "width": 640,
