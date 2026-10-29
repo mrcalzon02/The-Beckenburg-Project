@@ -45,8 +45,15 @@ public final class LevelSoundscape implements AutoCloseable {
         LevelDefinition.Room space=level.room(room);
         if(space.outside())return 0; // the exterior weather bed already owns these zones
         RoomAcousticPresets.Type preset=RoomAcousticPresets.forRoom(level,room);
-        double time=frame/(double)RATE;
         int seed=level.id().hashCode()+room*197;
+        return sampleResolved(preset,seed,powered,frame);
+    }
+    /** Same sample math as sample(), with invariant room metadata resolved once
+     * per mixer block rather than 16,000 regex-based classifications per second. */
+    static short sampleResolved(RoomAcousticPresets.Type preset,int seed,
+            boolean powered,long frame){
+        if(preset==null||preset==RoomAcousticPresets.Type.OUTDOOR||frame<0)return 0;
+        double time=frame/(double)RATE;
         double electrical=powered
             ?electrical(frame+Math.floorMod(seed,13000))*preset.powerGain:0;
         // Site-wide packaged beds remain independent. Room beds only use the
@@ -101,14 +108,21 @@ public final class LevelSoundscape implements AutoCloseable {
                         unavailable=false;
                     }
                     HouseMap current=map;
+                    LevelDefinition level=current.level();
                     int area=room;
                     boolean electricity=powered;
+                    boolean indoor=area>=0&&area<level.rooms().size()
+                        &&!level.room(area).outside();
+                    RoomAcousticPresets.Type preset=indoor
+                        ?RoomAcousticPresets.forRoom(level,area)
+                        :RoomAcousticPresets.Type.OUTDOOR;
+                    int seed=level.id().hashCode()+area*197;
                     byte[] block=new byte[2048];
                     double volume=EnvironmentAudio.volume()/100d;
                     for(int i=0;i<block.length;i+=2){
                         fade=Math.min(1,fade+1d/4000);
                         short value=(short)Math.round(
-                            sample(current.level(),area,electricity,frame++)*volume*fade);
+                            sampleResolved(preset,seed,electricity,frame++)*volume*fade);
                         block[i]=(byte)value;
                         block[i+1]=(byte)(value>>8);
                     }
