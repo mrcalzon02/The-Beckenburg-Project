@@ -1,0 +1,12 @@
+sounds=1
+level=castle
+court-wind|AMBIENT|BOX|WIND|15.5|1.5|23|8|4|19|3|0.12|0.94|1.2|8|true|true|false
+gate-wind|AMBIENT|BOX|WIND|15.5|1.5|35|5|4|4|2.5|0.13|1.08|1.2|8|true|true|false
+armory-timber|ENVIRONMENTAL|BOX|WOOD_CREAK|5.5|1.5|6.2|8|3|9|3|0.09|0.92|1.2|8|true|true|false
+contracts-timber|ENVIRONMENTAL|BOX|WOOD_CREAK|14.7|1.5|6|7|3|9|2.6|0.065|0.88|1.2|8|true|true|false
+wardrobe-timber|ENVIRONMENTAL|BOX|WOOD_CREAK|24|1.5|6|8|3|10|3|0.07|0.9|1.2|8|true|true|false
+ops-electrics|ENVIRONMENTAL|BOX|ELECTRIC_HUM|24.5|1.5|23|6|3|14|3|0.075|1|1.3|8|true|true|true
+archive-timber|ENVIRONMENTAL|BOX|WOOD_CREAK|35|1.5|11|10|3|10|3|0.08|0.83|1.2|8|true|true|false
+store-stone|ENVIRONMENTAL|BOX|STONE_SETTLE|35.5|1.5|26|11|3|14|3|0.09|0.92|1.5|8|true|true|false
+practice-stone|ENVIRONMENTAL|BOX|STONE_SETTLE|5.5|1.5|23|8|3|17|3|0.09|0.95|1.5|8|true|true|false
+upper-library-timber|ENVIRONMENTAL|BOX|WOOD_CREAK|15|5|6|7|3|9|3|0.065|0.72|1.6|8|true|true|false
