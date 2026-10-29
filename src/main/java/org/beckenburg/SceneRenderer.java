@@ -1623,11 +1623,11 @@ public final class SceneRenderer {
         }
         float[] complete(){return Arrays.copyOf(values,count);}
     }
-    private record WorldVertexLight(FixtureLighting.VertexProbe probe,int tint){
-        void apply(float[] target,int offset){
+    private record WorldVertexLight(FixtureLighting.VertexProbe probe,int tint,int offset){
+        void apply(float[] target){
             probe.writeTinted(target,offset,tint);
         }
-        float[] applyIfChanged(float[] original,float[] target,int offset){
+        float[] applyIfChanged(float[] original,float[] target){
             return probe.copyTintedIfChanged(original,target,offset,tint);
         }
     }
@@ -1637,7 +1637,10 @@ public final class SceneRenderer {
             var probe=fixtureLighting.prepareVertex(room,material,p.x,p.y,p.z,
                 normal==null?0:normal.x,normal==null?0:normal.y,normal==null?0:normal.z,normal!=null);
             var rgb=probe.sample();dst.vertex(new Vertex(p,u,v,rgb.r(),rgb.g(),rgb.b()),tint);
-            dst.lights.add(new WorldVertexLight(probe,tint));
+            // Constant ambient probes never depend on source factors. Retain
+            // only live receivers, with their actual material-buffer offsets.
+            if(!changedOnlyLighting||!probe.constant())
+                dst.lights.add(new WorldVertexLight(probe,tint,dst.count-8));
         }else dst.vertex(gpuLitVertex(p,u,v,material,room,normal),tint);
     }
 
@@ -2599,8 +2602,8 @@ public final class SceneRenderer {
                 float[] vertices=changedOnlyLighting?old.vertices():old.vertices().clone();
                 var lights=chunk.lights.get(material);
                 for(int i=0;i<lights.size();i++){
-                    if(changedOnlyLighting)vertices=lights.get(i).applyIfChanged(old.vertices(),vertices,i*8);
-                    else lights.get(i).apply(vertices,i*8);
+                    if(changedOnlyLighting)vertices=lights.get(i).applyIfChanged(old.vertices(),vertices);
+                    else lights.get(i).apply(vertices);
                 }
                 boolean changed=vertices!=old.vertices();
                 chunk.batches.put(material,new ResidentShell(lod,version,old.id(),old.revision()+(changed?1:0),vertices));
