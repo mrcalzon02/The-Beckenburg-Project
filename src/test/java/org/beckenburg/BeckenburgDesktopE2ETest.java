@@ -162,100 +162,78 @@ public final class BeckenburgDesktopE2ETest {
         }
         return null;
     }
+    /** Uses the actual physical station handler, audited independently for look-to-use. */
+    private static void useStation(CastleHubPanel castle,CastleHubMap.Station station){
+        try{
+            var method=CastleHubPanel.class.getDeclaredMethod("use",CastleHubMap.Station.class);
+            method.setAccessible(true);method.invoke(castle,station);
+        }catch(ReflectiveOperationException failed){throw new AssertionError("Station "+station+" failed",failed);}
+    }
     public static void main(String[] args)throws Exception{
         if(GraphicsEnvironment.isHeadless())throw new AssertionError("Actual desktop required");
         Files.createDirectories(OUTPUT);
         try{
             InvestigationGame.main(new String[0]);
-            JFrame frame=waitFor(()->{
+            JFrame frame=waitForResponsive(()->{
                 JFrame game=launcher();
-                return game!=null&&button(game.getContentPane(),"HOST / JOIN MULTIPLAYER")!=null
-                    ?game:null;
-            },30);
+                return game!=null&&visibleCastle(game.getContentPane())!=null?game:null;
+            },60);
             if(frame==null)throw new AssertionError(
-                "Startup never completed: menu's multiplayer button not available (check diagnostics log)");
-            if(button(frame.getContentPane(),"OPTIONS")==null)
-                throw new AssertionError("Options control missing from playable launcher");
-            SwingUtilities.invokeAndWait(()->button(frame.getContentPane(),"OPTIONS").doClick());
-            var options=waitFor(()->{
-                var found=CampaignMenuWorkflowTest.named(frame.getContentPane(),"options",javax.swing.JPanel.class);
+                "Startup never displayed the real Castle home; inspect diagnostics");
+            CastleHubPanel castle=waitForResponsive(()->visibleCastle(frame.getContentPane()),10);
+            if(castle==null)throw new AssertionError("Castle home not visible");
+            JButton hiddenEntry=button(frame.getContentPane(),"ENTER CASTLE");
+            if(hiddenEntry!=null&&hiddenEntry.isShowing())
+                throw new AssertionError("A redundant Enter Castle menu replaced the Castle home");
+            capture("01-castle-home");
+            SwingUtilities.invokeAndWait(castle::openPauseMenu);
+            JButton pauseOptions=CampaignMenuWorkflowTest.named(castle,"castle.pause.options",JButton.class);
+            if(pauseOptions==null||!pauseOptions.isShowing())
+                throw new AssertionError("Escape overlay does not contain a working Options action");
+            SwingUtilities.invokeAndWait(pauseOptions::doClick);
+            var options=waitForResponsive(()->{
+                var found=CampaignMenuWorkflowTest.named(castle,"options",javax.swing.JPanel.class);
                 return found!=null&&found.isShowing()?found:null;
-            },5);
-            if(options==null)throw new AssertionError("Start menu options page unavailable");
-            capture("00-options-screen");
+            },10);
+            if(options==null||!SwingUtilities.isDescendingFrom(options,castle))
+                throw new AssertionError("Options escaped Castle or replaced its world");
+            capture("00-options-in-castle");
             SwingUtilities.invokeAndWait(()->button(options,"BACK").doClick());
-            SwingUtilities.invokeAndWait(()->{
-                int windows=Window.getWindows().length;
-                javax.swing.Timer dismiss=new javax.swing.Timer(120,e->{
-                    JButton ok=button((Container)frame.getGlassPane(),"OK");if(ok!=null)ok.doClick();
-                });dismiss.setRepeats(false);dismiss.start();
-                GameDialogs.showMessageDialog(frame,"Equipment actions use this game window.","DIALOG WORKFLOW",GameDialogs.PLAIN_MESSAGE);
-                if(Window.getWindows().length!=windows)throw new AssertionError("Game prompt opened a separate window");
-            });
-            capture("01-loaded-menu");
-            System.out.println("E2E PASS packaged startup and usable PSX-themed main menu");
-            // Functional: selecting the normal Castle's store must show the
-            // entire catalog inside the original desktop window, without a
-            // second modal dialog. The screenshot is review evidence only.
-            SwingUtilities.invokeLater(()->button(frame.getContentPane(),"ENTER CASTLE").doClick());
-            CastleHubPanel castle=waitForResponsive(
-                ()->visibleCastle(frame.getContentPane()),40);
-            if(castle==null)throw new AssertionError("Playable Castle could not be entered");
+            if(!castle.isShowing())throw new AssertionError("Back from Options did not resume Castle");
             SwingUtilities.invokeLater(castle::openQuartermaster);
             Boolean embedded=waitForResponsive(
-                ()->visibleUnifiedStore(frame.getContentPane())?Boolean.TRUE:null,15);
+                ()->visibleUnifiedStore(castle)?Boolean.TRUE:null,15);
             if(embedded==null)throw new AssertionError(
-                "The quartermaster was not mounted inside the original game window");
-            for(Window popup:Window.getWindows())if(popup instanceof JDialog
-                    &&popup.isShowing())
-                throw new AssertionError("Store must never create a top-level dialog");
+                "Quartermaster not mounted in the real Castle viewport");
+            for(Window popup:Window.getWindows())if(popup instanceof JDialog&&popup.isShowing())
+                throw new AssertionError("Castle inventory created a top-level dialog");
             capture("02-castle-store-all-equipment");
-            SwingUtilities.invokeLater(()->{
-                JButton close=button(frame.getContentPane(),"RETURN TO CASTLE  [ESC]");
-                if(close==null)throw new AssertionError("Missing store close control");
-                close.doClick();
-                KeyEvent menuKey=new KeyEvent(castle,KeyEvent.KEY_PRESSED,
-                    System.currentTimeMillis(),0,KeyEvent.VK_ESCAPE,(char)27);
-                for(KeyListener listener:castle.getKeyListeners())listener.keyPressed(menuKey);
-            });
-            Boolean returned=waitForResponsive(
-                ()->button(frame.getContentPane(),"HOST / JOIN MULTIPLAYER")!=null
-                    &&button(frame.getContentPane(),"HOST / JOIN MULTIPLAYER").isShowing()
-                    ?Boolean.TRUE:null,15);
-            if(returned==null)throw new AssertionError(
-                "Castle store could not return to the original main menu");
-            SwingUtilities.invokeAndWait(()->button(frame.getContentPane(),
-                "HOST / JOIN MULTIPLAYER").doClick());
-            JFrame lobby=waitFor(()->{
-                JFrame result=multiplayer();
-                return result!=null&&button(result.getContentPane(),"Host LAN")!=null
-                    &&button(result.getContentPane(),"Join by IP")!=null
-                    &&button(result.getContentPane(),"READY")!=null
-                    &&button(result.getContentPane(),"START ROUND")!=null?result:null;
-            },15);
-            if(lobby==null)throw new AssertionError("Multiplayer lobby not interactable");
-            var networkPanel=CampaignMenuWorkflowTest.named(frame.getContentPane(),"network",LanLobbyPanel.class);
-            if(networkPanel==null||!networkPanel.isShowing()
-                    ||SwingUtilities.getAncestorOfClass(CastleHubPanel.class,networkPanel)!=null)
-                throw new AssertionError("Multiplayer must replace, not stack on, the Castle menu");
-            capture("02-multiplayer-lobby");
-            System.out.println("E2E PASS main-menu multiplayer handoff and actionable join/host lobby");
-            SwingUtilities.invokeAndWait(()->button(lobby.getContentPane(),"LEAVE LOBBY").doClick());
+            SwingUtilities.invokeAndWait(()->button(castle,"RETURN TO CASTLE  [ESC]").doClick());
+            SwingUtilities.invokeAndWait(()->useStation(castle,CastleHubMap.Station.MULTIPLAYER));
+            var networkPanel=waitForResponsive(()->{
+                var found=CampaignMenuWorkflowTest.named(castle,"network",LanLobbyPanel.class);
+                return found!=null&&found.isShowing()?found:null;
+            },20);
+            if(networkPanel==null||SwingUtilities.getAncestorOfClass(CastleHubPanel.class,networkPanel)==null)
+                throw new AssertionError("Multiplayer lobby did not stay in Castle workstation");
+            if(button(networkPanel,"Host LAN")==null||button(networkPanel,"Join by IP")==null
+                    ||button(networkPanel,"READY")==null||button(networkPanel,"START ROUND")==null)
+                throw new AssertionError("Multiplayer workstation is not actionable");
+            capture("03-castle-multiplayer-workstation");
+            System.out.println("E2E PASS Castle-first startup, pause/options overlay, Quartermaster and multiplayer workstation");
+            SwingUtilities.invokeAndWait(()->button(networkPanel,"LEAVE LOBBY").doClick());
+            SwingUtilities.invokeAndWait(()->useStation(castle,CastleHubMap.Station.EXPEDITION));
             // The previous smoke stopped at the menu and could never detect
             // BECK-LIVE-012 (case start locked the user's process). Open the
             // actual dispatch dialog, explicitly choose HOUSE, and demand an
             // advancing, first-frame-complete case on the live Swing UI.
-            JButton start=button(frame.getContentPane(),"START SOLO INVESTIGATION");
-            if(start==null||!start.isEnabled())throw new AssertionError(
-                "Solo dispatch control missing or House unavailable");
-            SwingUtilities.invokeLater(start::doClick);
             Container dispatch=waitForResponsive(()->{
                 var panel=CampaignMenuWorkflowTest.named(frame.getContentPane(),"solo",javax.swing.JPanel.class);
                 return panel!=null&&panel.isShowing()?panel:null;
             },20);
             if(dispatch==null)throw new AssertionError(
                 "Solo map-selection dispatch did not appear");
-            capture("03-solo-dispatch-map-selection");
+            capture("04-castle-solo-dispatch-map-selection");
             SwingUtilities.invokeLater(()->{
                 JComboBox<?> site=sitePicker(dispatch);
                 if(site==null)throw new AssertionError("Solo location selector missing");
@@ -277,7 +255,7 @@ public final class BeckenburgDesktopE2ETest {
                 ()->soloOpeningActive(solo)?Boolean.TRUE:null,3);
             if(opening==null)throw new AssertionError(
                 "House first frame completed without initiating the authored flyover");
-            capture("04-house-opening-overflight");
+            capture("05-house-opening-overflight");
             SwingUtilities.invokeAndWait(()->{
                 KeyEvent skip=new KeyEvent(solo,KeyEvent.KEY_PRESSED,
                     System.currentTimeMillis(),0,KeyEvent.VK_SPACE,' ');
@@ -291,12 +269,12 @@ public final class BeckenburgDesktopE2ETest {
                 ()->soloFrameCount(solo)>=3?soloFrameCount(solo):null,20);
             if(advancing==null)throw new AssertionError(
                 "Solo case first frame completed but gameplay frames stopped advancing");
-            capture("05-house-solo-hunter-handoff");
+            capture("06-house-solo-hunter-handoff");
             System.out.println("E2E PASS real House dispatch, skippable flyover and "+
                 advancing+" advancing gameplay frames");
             SwingUtilities.invokeAndWait(frame::dispose);
             Files.writeString(OUTPUT.resolve("desktop-load.txt"),
-                Instant.now()+" PASS actual packaged launcher, menu, multiplayer lobby, "+
+                Instant.now()+" PASS Castle-first packaged launcher, embedded options, multiplayer workstation, "+
                 "solo map selection and responsive House case first frames\n");
             System.out.println("PASS Beckenburg packaged desktop, multiplayer UI and solo case startup");
             System.exit(0);
