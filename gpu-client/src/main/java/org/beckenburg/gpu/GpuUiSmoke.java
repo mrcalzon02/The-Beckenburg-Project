@@ -27,6 +27,16 @@ public final class GpuUiSmoke {
   }
   return null;
  }
+ /** Use the production action identity, not mutable presentation text. */
+ private static JButton buttonNamed(Container owner,String name){
+  for(Component c:owner.getComponents()){
+   if(c instanceof JButton b&&name.equals(b.getName()))return b;
+   if(c instanceof Container child){
+    JButton b=buttonNamed(child,name);if(b!=null)return b;
+   }
+  }
+  return null;
+ }
  private static <T> T waitFor(Supplier<T> check,long seconds)throws Exception{
   long end=System.nanoTime()+TimeUnit.SECONDS.toNanos(seconds);
   while(System.nanoTime()<end){
@@ -78,12 +88,21 @@ public final class GpuUiSmoke {
   });
   JPanel chooser=waitFor(()->dispatch(window.getContentPane()),15);
   if(chooser==null)throw new AssertionError("GPU launcher did not request location selection");
-  SwingUtilities.invokeLater(()->{
-   JButton ok=button(chooser,"DEPLOY");
-   if(ok!=null)ok.doClick();
+  // The solo contract lobby exposes the actual action as "solo.deploy"
+  // (visible text: "START ROUND"). "DEPLOY" is not a button on this screen:
+  // the previous smoke silently clicked nothing and then timed out.
+  JButton deploy=waitFor(()->buttonNamed(chooser,"solo.deploy"),5);
+  if(deploy==null)throw new AssertionError(
+      "Solo contract lobby has no solo.deploy action (START ROUND)");
+  SwingUtilities.invokeAndWait(()->{
+   if(!deploy.isShowing()||!deploy.isEnabled())throw new AssertionError(
+       "Solo contract action is not visible and enabled");
+   deploy.doClick();
   });
+  System.out.println("GPU UI PASS invoked real solo.deploy / START ROUND action");
   JPanel inGame=waitFor(()->game(window.getContentPane()),55);
-  if(inGame==null)throw new AssertionError("Selecting a mission never entered the live GamePanel");
+  if(inGame==null)throw new AssertionError(
+      "Solo deploy was invoked but no live GamePanel appeared; inspect persisted case-stage diagnostics");
   var first=gpu.latest();
   long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(60);
   boolean rendered=false;
