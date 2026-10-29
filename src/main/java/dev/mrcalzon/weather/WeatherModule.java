@@ -93,6 +93,12 @@ public final class WeatherModule {
         WeatherSky.paint(g,w,h,sky(),seed,atmosphere.state().windHeading(),
             atmosphere.state().elapsedMillis()/1000.,viewer.heading(),lightningHeading);
     }
+    /** Camera-aware sky painting; geometry stays anchored to world directions. */
+    public void renderSky(Graphics2D g,int w,int h,double pitch,double focal){
+        WeatherSky.paint(g,w,h,sky(),seed,atmosphere.state().windHeading(),
+            atmosphere.state().elapsedMillis()/1000.,viewer.heading(),lightningHeading,
+            pitch,focal);
+    }
     public void renderOverlay(Graphics2D g,int w,int h){atmosphere.renderOverlay(g,w,h,viewer);}
     public void renderOverlay(Graphics2D g,int w,int h,java.util.function.BiPredicate<Integer,Integer> outdoorPixel){
         atmosphere.renderOverlay(g,w,h,viewer,outdoorPixel);
