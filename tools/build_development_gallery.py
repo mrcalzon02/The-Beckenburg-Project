@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/performance/hardware/' in path:kind='Runtime GPU diagnostic'
+    if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    elif '/ci-ui/' in path:kind='Game UI verification'
+    elif '/performance/hardware/' in path:kind='Runtime GPU diagnostic'
     elif '/fixture-join-diagnostic/' in path:kind='Runtime lighting diagnostic'
     elif '/castle-survey/' in path:kind='Runtime GPU capture'
     elif '/lighting-camera-audit/' in path or '/van-castle-repair/' in path or '/metal-refinement/' in path:kind='Runtime capture'
