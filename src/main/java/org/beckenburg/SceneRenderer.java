@@ -552,6 +552,56 @@ public final class SceneRenderer {
         cachedVanFaces=List.copyOf(constructed);
         appendRetainedWorld(faces,cachedVanFaces,"van",map);
     }
+    /** Two procedural metal LCD chassis sizes: real geometry and separate
+     * UV-mapped emissive faces. These stay in the resident van mesh; refreshing
+     * data changes texture revisions, not the GPU scene or triangle topology. */
+    private static Point vanScreenPoint(VanStaging van,VanInteriorLayout.Fixture fixture,
+                                       double x,double y,double z){
+        double angle=fixture.yaw(),c=Math.cos(angle),s=Math.sin(angle);
+        var p=van.world(fixture.localX()+fixture.scale()*(x*c-z*s),
+                        fixture.localZ()+fixture.scale()*(x*s+z*c));
+        return new Point(p.x(),fixture.y()+fixture.scale()*y,p.z());
+    }
+    private static void vanScreenQuad(List<Face> faces,VanStaging van,
+             VanInteriorLayout.Fixture fixture,double x0,double y0,double x1,
+             double y1,double depth,int colour){
+        quad(faces,vanScreenPoint(van,fixture,x0,y0,depth),
+            vanScreenPoint(van,fixture,x1,y0,depth),
+            vanScreenPoint(van,fixture,x1,y1,depth),
+            vanScreenPoint(van,fixture,x0,y1,depth),colour);
+    }
+    private static void vanFlatDisplay(List<Face> faces,VanStaging van,
+                                       VanInteriorLayout.Fixture fixture){
+        var bounds=VanInteriorLayout.bounds(fixture.mesh());
+        double w=bounds.x1(),h=bounds.y1(),z=.018,bezel=.024;
+        // Case, inset recessed glass, independent metal bezel and rear panel.
+        vanScreenQuad(faces,van,fixture,-w,0,w,h,-.042,0x222b32);
+        vanScreenQuad(faces,van,fixture,-w,0,w,bezel,z,0x414b50);
+        vanScreenQuad(faces,van,fixture,-w,h-bezel,w,h,z,0x414b50);
+        vanScreenQuad(faces,van,fixture,-w,bezel,-w+bezel,h-bezel,z,0x414b50);
+        vanScreenQuad(faces,van,fixture,w-bezel,bezel,w,h-bezel,z,0x414b50);
+        // Sides of the real monitor housing (no invisible intersecting box).
+        for(double xx:new double[]{-w,w})
+            quad(faces,vanScreenPoint(van,fixture,xx,0,-.042),
+                vanScreenPoint(van,fixture,xx,h,-.042),
+                vanScreenPoint(van,fixture,xx,h,z),
+                vanScreenPoint(van,fixture,xx,0,z),0x29343a);
+        for(double yy:new double[]{0,h})
+            quad(faces,vanScreenPoint(van,fixture,-w,yy,-.042),
+                vanScreenPoint(van,fixture,w,yy,-.042),
+                vanScreenPoint(van,fixture,w,yy,z),
+                vanScreenPoint(van,fixture,-w,yy,z),0x29343a);
+        int material=VanLiveScreens.material(VanLiveScreens.forPurpose(fixture.purpose()));
+        Point tl=vanScreenPoint(van,fixture,-w+bezel, h-bezel,z+.001);
+        Point tr=vanScreenPoint(van,fixture, w-bezel, h-bezel,z+.001);
+        Point br=vanScreenPoint(van,fixture, w-bezel, bezel,z+.001);
+        Point bl=vanScreenPoint(van,fixture,-w+bezel, bezel,z+.001);
+        // Screen texture is sampled with proper Y-up UVs by GlbProps.
+        faces.add(new Face(tl,tr,br,0xffffff,material,0,1,1,1,1,0));
+        faces.add(new Face(tl,br,bl,0xffffff,material,0,1,1,0,0,0));
+        // Anchored bracket is visually present behind the real wall screen.
+        vanScreenQuad(faces,van,fixture,-.075,h*.43,.075,h*.60,-.044,0x687079);
+    }
     private void buildVanModel(List<Face> faces,VanStaging van,
                                java.util.Set<EquipmentLoadout.Item> stock,HouseMap map){
         double w=VanStaging.HALF_WIDTH,f=VanStaging.FRONT,r=VanStaging.REAR;
@@ -619,7 +669,10 @@ public final class SceneRenderer {
         for(VanInteriorLayout.Fixture fixture:VanInteriorLayout.FIXTURES){
             if(!VanInteriorLayout.insideShell(fixture))throw new IllegalStateException("VAN furniture outside cabin: "+fixture.purpose());
             var p=van.world(fixture.localX(),fixture.localZ());
-            if(fixture.mesh().equals("monitoring_screen_mp_1")){
+            if(fixture.mesh().equals("beckenburg_flat_monitor")
+                    ||fixture.mesh().equals("beckenburg_wide_monitor")){
+                vanFlatDisplay(faces,van,fixture);
+            }else if(fixture.mesh().equals("monitoring_screen_mp_1")){
                 double angle=van.placement().yaw()+fixture.yaw();
                 for(var t:GlbProps.model(fixture.mesh()).triangles()){
                     Point[] pp=new Point[3];var vv=new GlbProps.Vertex[]{t.a(),t.b(),t.c()};
