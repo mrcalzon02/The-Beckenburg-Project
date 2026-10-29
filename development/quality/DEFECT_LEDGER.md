@@ -2196,7 +2196,7 @@ Older-map obligation: Three publicly playable contract locations only. Short van
 
 ### DEV-162 — Spatial light invalidation relit batches whose actual contributors stayed unchanged
 
-**Status:** candidate-rtx-verified-ci-pending · **Affected:** Retained world material batches across Castle and map types
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Retained world material batches across Castle and map types
 
 Castle still showed recurring preparation tails despite unchanged-color upload suppression; conservative light spheres overlapped batches with unrelated or occluded contributions.
 
@@ -2204,7 +2204,7 @@ Cause / uncertainty: Every material in a spatially dirty chunk evaluated all pre
 
 Fix / next action: Snapshot the exact union of contributing source factor bits per material. Skip only exact matches; preserve full RGB evaluation, topology/door invalidation and immutable GPU revisions. Provide factorDependencies.disabled fallback.
 
-Evidence and verification: Java17 GPU package, one-ULP precision/ownership checks, all-ten-map complete dense-reference vertex parity under2GiB, and actual RTX all-map controls pass; all12 images match parent. Three1280x800 Castle trials reduce exterior p95 from34.50ms to20.60ms, with slightly slower medians and library p95 disclosed. Exact-source CI remains pending. Evidence: development/performance/hardware/2026-10-29-light-factor-dependencies/.
+Evidence and verification: Source99baa799: GPU40927250498 and full40927255222 SUCCESS,282/282 with zero skipped, packaged TCP/desktop/native and all three actual GPU case cycles. Java17 GPU package, one-ULP precision/ownership, all-ten-map dense-reference vertex parity under2GiB, fallback and actual RTX controls pass.32 image pairs match exactly. Three1280x800 Castle trials reduce exterior p95 from34.50ms to20.60ms; final package confirms36.56 to20.09ms. Slightly slower medians/library p95 are disclosed. Six scene cycles remain bounded. Evidence: development/performance/hardware/2026-10-29-light-factor-dependencies/.
 
 Older-map obligation: Shared implementation requires all-map controls and final CI. Scripted warm camera timings do not certify physical routes, cold starts, installed full rounds or release.
 
