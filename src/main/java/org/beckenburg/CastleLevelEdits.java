@@ -382,8 +382,11 @@ public final class CastleLevelEdits {
             }
             var newStations=new EnumMap<CastleHubMap.Station,double[]>(CastleHubMap.Station.class);
             for(var st:CastleHubMap.Station.values())
-                newStations.put(st,new double[]{number(p,"station."+st+".x"),
-                    number(p,"station."+st+".z")});
+                newStations.put(st,p.containsKey("station."+st+".x")
+                    &&p.containsKey("station."+st+".z")
+                    ?new double[]{number(p,"station."+st+".x"),
+                        number(p,"station."+st+".z")}
+                    :new double[]{st.x,st.z});
             var newFloor=new HashMap<Integer,Integer>();var newWalls=new HashMap<Integer,Integer>();
             var newNav=new java.util.HashSet<Integer>();
             for(String key:p.stringPropertyNames()){
