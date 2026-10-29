@@ -46,8 +46,23 @@ public final class VanModuleIntegrationTest {
         ok(portable.isEmpty(),"missing tangible hooks for portable equipment: "+portable);
         for(var p:VanInteriorLayout.FIXTURES){
             ok(VanInteriorLayout.insideShell(p),"fitted fixture outside cargo: "+p.purpose());
-            ok(GlbProps.model(p.mesh()).triangles().size()>1,
-                "mounted console/board uses actual model: "+p.mesh());
+            if(p.mesh().equals("beckenburg_flat_monitor")
+                    ||p.mesh().equals("beckenburg_wide_monitor")){
+                // These LCD housings are real procedural world-space geometry
+                // assembled by SceneRenderer.vanFlatDisplay, not GLB imports.
+                // Asking GlbProps.model() for a nonexistent GLB broke Windows
+                // packaging although the display is already rendered in world.
+                var bounds=VanInteriorLayout.bounds(p.mesh());
+                ok(bounds.x1()>bounds.x0()&&bounds.y1()>bounds.y0()
+                    &&bounds.z1()>bounds.z0(),
+                    "procedural van monitor has invalid physical housing: "+p.purpose());
+                ok(VanLiveScreens.material(VanLiveScreens.forPurpose(p.purpose()))
+                    >=GlbProps.TEXTURE_BASE,
+                    "procedural van monitor is missing its live screen: "+p.purpose());
+            }else{
+                ok(GlbProps.model(p.mesh()).triangles().size()>1,
+                    "mounted console/board uses actual imported model: "+p.mesh());
+            }
         }
         Set<String> purposes=new HashSet<>();
         for(var p:VanInteriorLayout.FIXTURES)purposes.add(p.purpose());
