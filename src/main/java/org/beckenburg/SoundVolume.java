@@ -7,7 +7,7 @@ public record SoundVolume(String id,Kind kind,Shape shape,Source source,
         boolean enabled,boolean loop,boolean requiresPower) {
     public enum Kind { AMBIENT, ENVIRONMENTAL }
     public enum Shape { BOX, SPHERE }
-    public enum Source { WIND, RUNNING_WATER, INSECTS, FIRE, ELECTRIC_HUM, DRIPS, TV_STATIC, WASHER }
+    public enum Source { WIND, RUNNING_WATER, INSECTS, FIRE, ELECTRIC_HUM, DRIPS, TV_STATIC, WASHER, WOOD_CREAK, STONE_SETTLE }
     public SoundVolume {
         if(id==null||!id.matches("[A-Za-z0-9_-]{1,80}")||kind==null||shape==null||source==null)
             throw new IllegalArgumentException("Sound volume identity");
@@ -38,6 +38,16 @@ public record SoundVolume(String id,Kind kind,Shape shape,Source source,
         case WIND:v=(noise(frame/17)*.13+noise(frame/67)*.10)*(0.65+.35*Math.sin(t*.7));break;
         case INSECTS:v=Math.sin(t*Math.PI*6200)*Math.pow(Math.max(0,Math.sin(t*17)),10)*.12;break;
         case DRIPS:double p=t%1.31;v=Math.sin(p*Math.PI*(1300-400*p))*Math.exp(-p*38)*.22;break;
+        case WOOD_CREAK:
+            double phase=(t+Math.floorMod(id.hashCode(),17))%19.0;
+            double swell=phase<2.0?Math.sin(Math.PI*phase/2.0):0;
+            v=swell*(Math.sin(2*Math.PI*(82+phase*17)*t)*.15+noise(frame/31)*.04);
+            break;
+        case STONE_SETTLE:
+            double beat=(t+Math.floorMod(id.hashCode(),23))%31.0;
+            double transient=beat<.9?Math.exp(-beat*7):0;
+            v=transient*(Math.sin(2*Math.PI*(56-beat*12)*t)*.21+noise(frame/17)*.11);
+            break;
         default:v=noise(frame/3)*.08+noise(frame/41)*.12*Math.pow(Math.max(0,Math.sin(t*21)),4);
     }return(short)Math.round(v*32767);}
 }
