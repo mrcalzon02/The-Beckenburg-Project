@@ -93,6 +93,8 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         role.addActionListener(e->hunterAppearance.setEnabled(role.getSelectedIndex()==0
                 &&(connection==null||!missionRunning)));
         hunterAppearance.addActionListener(e->{
+            if(role.getSelectedIndex()==0)
+                avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
             if(connection!=null&&"GHOST".equals(connection.seat())==false&&!missionRunning)
                 action(()->connection.selectVisual(
                     (CharacterVisuals.Hunter)hunterAppearance.getSelectedItem()));
@@ -125,7 +127,10 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         JPanel lobbyCenter=new JPanel(new BorderLayout(12,0));
         lobbyCenter.setBorder(BorderFactory.createEmptyBorder(0,12,0,12));
         lobbyCenter.add(new JScrollPane(log),BorderLayout.CENTER);
-        avatar.setPreferredSize(new Dimension(145,130));lobbyCenter.add(avatar,BorderLayout.EAST);
+        // Reserve full-body portrait space; scroll the lobby instead of shrinking the art.
+        avatar.setPreferredSize(new Dimension(208,300));
+        lobbyCenter.setPreferredSize(new Dimension(640,310));
+        lobbyCenter.add(avatar,BorderLayout.EAST);
         JPanel launchActions=new JPanel(new FlowLayout(FlowLayout.LEFT,8,4));
         launchActions.add(ready);launchActions.add(start);launchActions.add(enter3D);
         enter3D.setToolTipText("Available when a connected match has started");
@@ -209,13 +214,13 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 roomPassword.setText(java.util.UUID.randomUUID().toString());roomPassword.setVisible(false);
             }
         }
-        avatar.showHunter();
+        avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
         role.addActionListener(e->{
             if(connection!=null)return; // Seat/role is fixed once the handshake succeeds.
             if(role.getSelectedIndex()==1){
                 localLook=LobbyGhostAvatar.random(java.util.concurrent.ThreadLocalRandom.current());
                 avatar.showGhost(localLook,false);
-            }else avatar.showHunter();
+            }else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
         });
         host.addActionListener(e->connect(true));join.addActionListener(e->connect(false));
         hostInfo.addActionListener(e->{
@@ -478,8 +483,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     status.setText("Seat "+client.seat()+" / "+MissionSites.title(selectedSite.name()));
                     if("GHOST".equals(client.seat()))avatar.showGhost(
                         remoteLook!=null?remoteLook:localLook,remoteLook!=null);
-                    else if(ghostJoined&&remoteLook!=null)avatar.showGhost(remoteLook,true);
-                    else avatar.showHunter();
+                    else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
                     setCommandEnabled(true);log.append("Connected. Ready when your team is assembled.\n");
                 });
             }catch(Exception ex){
@@ -606,7 +610,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             lobbyLock.setSelected(localHostSurvives&&hosted.lobbyLocked());
             hostInfo.setEnabled(localHostSurvives);
             if(role.getSelectedIndex()==1)avatar.showGhost(localLook,false);
-            else avatar.showHunter();
+            else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
             status.setText(localHostSurvives
                 ?"Local host still running — reconnect your reserved seat"
                 :"Disconnected — host or server connection lost");
@@ -683,11 +687,12 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             if(parts.size()==2&&parts.get(1).equals("NONE")){
                 ghostJoined=false;remoteLook=null;
                 if(connection==null&&role.getSelectedIndex()==1)avatar.showGhost(localLook,false);
-                else avatar.showHunter();
+                else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
             }else{
                 remoteLook=LobbyGhostAvatar.Look.decode(event);
                 ghostJoined=true;
-                avatar.showGhost(remoteLook,true);
+                if(role.getSelectedIndex()==1)avatar.showGhost(remoteLook,true);
+                else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
             }
         }else if(event.startsWith("STATE|")){
             var p=LanProtocol.parts(event);if(p.size()>=4)try{myRoom=Integer.parseInt(p.get(2));}catch(NumberFormatException ignored){}
