@@ -43,6 +43,10 @@ public final class CastleServiceFixtures {
                     supported(out,"blender_computer_fixed",x+.08,z-.06,.49,"tv_table_1_4",.83);
                     supported(out,"pc_keyboard_mp_1",x-.10,z+.16,.42,"tv_table_1_4",.83);
                 }
+                case OPTIONS -> {
+                    floor(out,"tv_table_1_4",x,z,.78,0);
+                    supported(out,"open_book_mp_1",x,z,.46,"tv_table_1_4",.78);
+                }
                 case ARCHIVE -> { /* Archive table is an independently editable furnishing. */ }
             }
         }
