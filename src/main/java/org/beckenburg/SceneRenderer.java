@@ -1624,10 +1624,7 @@ public final class SceneRenderer {
     }
     private record WorldVertexLight(FixtureLighting.VertexProbe probe,int tint){
         void apply(float[] target,int offset){
-            var rgb=probe.sample();
-            target[offset+5]=(float)(Math.max(.03,rgb.r())*((tint>>16)&255)/255.0);
-            target[offset+6]=(float)(Math.max(.03,rgb.g())*((tint>>8)&255)/255.0);
-            target[offset+7]=(float)(Math.max(.03,rgb.b())*(tint&255)/255.0);
+            probe.writeTinted(target,offset,tint);
         }
     }
     private boolean preparingWorldProbes;
