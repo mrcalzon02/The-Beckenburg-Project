@@ -235,6 +235,7 @@ MergedMaterialMetadataTest
 BlackpineLightingTest
 BlackpineDeckDepthTest
 OpticalEvidenceTest
+HandheldSurfaceOcclusionTest
 LanOpticalEvidenceNetworkTest
 HollowCreekFacilitiesAssetTest
 HollowCreekPavilionAssetTest
@@ -288,3 +289,7 @@ WorldResidencyTest
 DeveloperEditorLaunchTest
 EmissionCacheBudgetTest
 DynamicTextureRevisionTest
+DynamicGeometryRetentionTest
+GpuReadbackTest
+PreparedLightWriteTest
+PreparedLightBatchParityTest

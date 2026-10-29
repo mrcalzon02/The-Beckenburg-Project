@@ -85,10 +85,26 @@ public final class WorldResidencyTest {
             check(backend.frame.surfaces().stream().noneMatch(s->s.resourceId()>0),"Live UV must use its correct dynamic light path");
             renderer.uvLamp=false;renderer.drawNetwork(map,List.of(),-1,2.5);
             check(!resident(backend.frame).isEmpty(),"Residency must recover after dynamic UV use");
+            for(String tool:List.of("FLASHLIGHT","FIRELIGHT")){
+                var light=new LanPortableLights.Light(0,tool,0,spawn.x(),spawn.y(),spawn.z(),EquipmentTiers.Tier.I,false);
+                renderer.portablePositions.put(tool,light);
+                renderer.drawNetwork(map,List.of(),-1,2.5);
+                var beforePortable=resident(backend.frame);
+                check(!beforePortable.isEmpty(),"Unpowered "+tool+" must permit static residency on "+site);
+                renderer.portablePositions.put(tool,new LanPortableLights.Light(0,tool,0,spawn.x(),spawn.y(),spawn.z(),EquipmentTiers.Tier.I,true));
+                renderer.drawNetwork(map,List.of(),-1,2.5);
+                check(backend.frame.surfaces().stream().noneMatch(s->s.resourceId()>0),
+                    "Powered "+tool+" must preserve dynamic illumination fallback on "+site);
+                renderer.portablePositions.put(tool,light);
+                renderer.drawNetwork(map,List.of(),-1,2.5);
+                check(retained(beforePortable,resident(backend.frame))==beforePortable.size(),
+                    "Switching off "+tool+" must recover original resident arrays on "+site);
+                renderer.portablePositions.clear();
+            }
         }
         renderer.drawCastle(castle,4.3,true);
         check(!resident(backend.frame).isEmpty(),"Returning to Castle must recover the correct scene resources");
         CastleLevelEdits.current().reset();
-        System.out.println("PASS real Castle and all10 map-type submission residency, light updates, occlusion, UV, resize, editor and scene transitions (recording backend)");
+        System.out.println("PASS real Castle and all10 map-type submission residency, portable flashlight/firelight transitions, light updates, occlusion, UV, resize, editor and scene transitions (recording backend)");
     }
 }

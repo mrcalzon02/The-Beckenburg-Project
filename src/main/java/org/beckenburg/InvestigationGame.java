@@ -239,6 +239,14 @@ public final class InvestigationGame {
     private JButton nav(String name,String label,Runnable action){
         JButton button=button(label);button.setName(name);button.addActionListener(e->action.run());return button;
     }
+    /** Headless-testable action binding for the same editor launcher used by --editor. */
+    static JButton editorExtrasRoute(JButton styledButton,Runnable launchEditor){
+        java.util.Objects.requireNonNull(styledButton,"styledButton");
+        java.util.Objects.requireNonNull(launchEditor,"launchEditor");
+        styledButton.setName("extras.editor");
+        styledButton.addActionListener(e->launchEditor.run());
+        return styledButton;
+    }
     private void buildMenu(){
         menu.removeAll();menu.setName("menu");
         if(rolePicker==null){
@@ -274,7 +282,7 @@ public final class InvestigationGame {
         list.add(nav("extras.import","IMPORT CAMPAIGN SAVE",this::importLocalSave));
         list.add(nav("extras.diagnostics","DIAGNOSTICS",()->BeckenburgDiagnostics.show(window)));
         list.add(nav("extras.updates","UPDATES",()->BeckenburgUpdatesUI.open(window)));
-        list.add(nav("extras.editor","DEVELOPER LEVEL EDITOR",()->openDeveloperEditor(window)));
+        list.add(editorExtrasRoute(button("DEVELOPER LEVEL EDITOR"),()->openDeveloperEditor(window)));
         JTextArea credits=new JTextArea("PSX Horror UI Free by heyheythere / CC BY 4.0\nhttps://heyheythere.itch.io/psx-horror-ui-free");
         credits.setEditable(false);list.add(credits);
         page("extras",PsxMenuScreen.screen("extras","EXTRAS & SUPPORT","Game tools and credits",

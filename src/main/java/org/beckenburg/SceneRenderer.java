@@ -12,6 +12,8 @@ public final class SceneRenderer {
     public static final int W=320,H=200;
     private static final double NEAR=.065;
     private final boolean worldResidentEnabled=!Boolean.getBoolean("beckenburg.world.resident.disabled");
+    private final boolean changedOnlyLighting=!Boolean.getBoolean("beckenburg.lighting.changedOnly.disabled");
+    private final boolean lightDependenciesEnabled=changedOnlyLighting&&!Boolean.getBoolean("beckenburg.lighting.factorDependencies.disabled");
     private int renderWidth=W,renderHeight=H;
     private double nativeFocal=153; // fixed vertical lens; widescreen adds peripheral geometry
     private double focal=nativeFocal;
@@ -196,9 +198,58 @@ public final class SceneRenderer {
 
     // Meshes supplied by the owner: true indexed 3D geometry with embedded
     // albedo PNGs. No primitive substitution or image-card stand-ins.
-    private static void looseClutter(List<Face> out,HouseMap map){
+    private final boolean dynamicGeometryEnabled=!Boolean.getBoolean("beckenburg.dynamic.geometry.cache.disabled");
+    private static final long DYNAMIC_GEOMETRY_LIMIT=120_000;
+    private record DynamicGeometryKey(boolean fixture,int id){}
+    private record FixtureMeshPose(String mesh,double x,double y,double z,double scale,double yaw){}
+    private record DynamicGeometryEntry(Object pose,List<Face> faces,long frame){}
+    private final java.util.Map<DynamicGeometryKey,DynamicGeometryEntry> dynamicGeometry=new java.util.HashMap<>();
+    private HouseMap dynamicGeometryMap;
+    private long dynamicGeometryFrame,dynamicGeometryTriangles,dynamicGeometryBuilds,dynamicGeometryHits;
+    public record DynamicGeometryStats(long builds,long hits,long triangles,long limit,int entries){}
+    public DynamicGeometryStats dynamicGeometryStats(){
+        return new DynamicGeometryStats(dynamicGeometryBuilds,dynamicGeometryHits,
+            dynamicGeometryTriangles,DYNAMIC_GEOMETRY_LIMIT,dynamicGeometry.size());
+    }
+    private void beginDynamicGeometry(HouseMap map){
+        if(dynamicGeometryMap!=map){dynamicGeometry.clear();dynamicGeometryTriangles=0;dynamicGeometryMap=map;}
+        dynamicGeometryFrame++;
+    }
+    private List<Face> dynamicGeometry(DynamicGeometryKey key,Object pose,
+            java.util.function.Supplier<List<Face>> build){
+        var old=dynamicGeometry.get(key);
+        if(old!=null&&old.pose.equals(pose)){
+            dynamicGeometryHits++;
+            dynamicGeometry.put(key,new DynamicGeometryEntry(pose,old.faces,dynamicGeometryFrame));
+            return old.faces;
+        }
+        if(old!=null){dynamicGeometry.remove(key);dynamicGeometryTriangles-=old.faces.size();}
+        var faces=build.get();dynamicGeometryBuilds++;
+        // Keep the admitted working set: bypass excess objects instead of
+        // evicting every warm object when an edited map exceeds the budget.
+        if(dynamicGeometryEnabled&&dynamicGeometryTriangles+faces.size()<=DYNAMIC_GEOMETRY_LIMIT){
+            faces=List.copyOf(faces);
+            dynamicGeometry.put(key,new DynamicGeometryEntry(pose,faces,dynamicGeometryFrame));
+            dynamicGeometryTriangles+=faces.size();
+        }
+        return faces;
+    }
+    private void finishDynamicGeometry(){
+        var entries=dynamicGeometry.values().iterator();
+        while(entries.hasNext()){
+            var entry=entries.next();
+            if(entry.frame!=dynamicGeometryFrame){dynamicGeometryTriangles-=entry.faces.size();entries.remove();}
+        }
+    }
+    private void looseClutter(List<Face> out,HouseMap map){
         for(var item:map.clutter().states()){
             if(item.holder()==-2)continue;
+            out.addAll(dynamicGeometry(new DynamicGeometryKey(false,item.id()),item,
+                ()->buildClutterGeometry(item)));
+        }
+    }
+    private static List<Face> buildClutterGeometry(LooseClutter.State item){
+            var out=new ArrayList<Face>();
             double cy=Math.cos(item.yaw()),sy=Math.sin(item.yaw()),cr=Math.cos(item.roll()),sr=Math.sin(item.roll());
             for(var t:GlbProps.model(item.kind().mesh()).triangles()){
                 var vertices=new GlbProps.Vertex[]{t.a(),t.b(),t.c()};Point[] points=new Point[3];
@@ -207,14 +258,20 @@ public final class SceneRenderer {
                     points[i]=new Point(item.x()+rx*cy-v.z()*sy,item.y()+ry,item.z()+rx*sy+v.z()*cy);}
                 out.add(new Face(points[0],points[1],points[2],0xffffff,t.material(),t.a().u(),t.a().v(),t.b().u(),t.b().v(),t.c().u(),t.c().v()));
             }
-        }
+        return out;
     }
     private static Point fixturePoint(HauntedFixtures.State f,double x,double y,double z){return new Point(f.x()+f.scale()*(x*Math.cos(f.yaw())-z*Math.sin(f.yaw())),f.y()+y*f.scale(),f.z()+f.scale()*(x*Math.sin(f.yaw())+z*Math.cos(f.yaw())));}
     private void eventFixtures(List<Face> out,HouseMap map){
         for(var f:map.fixtures().states()){
             String mesh=f.kind().mesh();
             if(f.kind()==HauntedFixtures.Kind.TELEVISION)GlbProps.updateTelevision(GlbProps.televisionMaterial(f.x(),f.y(),f.z()),f.active()&&(roomLights==null||roomLights.breaker()),roomLightTick);
-            if(mesh!=null&&f.kind()!=HauntedFixtures.Kind.LIGHT_SWITCH)imported(out,mesh,f.x(),f.y(),f.z(),f.scale(),f.yaw()+(f.active()&&f.kind()==HauntedFixtures.Kind.ALARM_CLOCK?Math.sin(roomLightTick*2)*.018:0));
+            if(mesh!=null&&f.kind()!=HauntedFixtures.Kind.LIGHT_SWITCH){
+                double yaw=f.yaw()+(f.active()&&f.kind()==HauntedFixtures.Kind.ALARM_CLOCK?Math.sin(roomLightTick*2)*.018:0);
+                var pose=new FixtureMeshPose(mesh,f.x(),f.y(),f.z(),f.scale(),yaw);
+                out.addAll(dynamicGeometry(new DynamicGeometryKey(true,f.id()),pose,()->{
+                    var faces=new ArrayList<Face>();imported(faces,mesh,f.x(),f.y(),f.z(),f.scale(),yaw);return faces;
+                }));
+            }
             if(f.active()&&(f.kind()==HauntedFixtures.Kind.FIRE_ALARM||f.kind()==HauntedFixtures.Kind.RADIO||f.kind()==HauntedFixtures.Kind.BOOM_BOX)){
                 double y=f.kind()==HauntedFixtures.Kind.FIRE_ALARM?.27:f.kind()==HauntedFixtures.Kind.RADIO?.164:.197;
                 int color=f.kind()==HauntedFixtures.Kind.FIRE_ALARM&&roomLightTick%8<4?0xffefd0:0xc29f4c;
@@ -975,8 +1032,10 @@ public final class SceneRenderer {
         // Only House-authored immutable source faces enter the GPU light cache.
         // Deployed tools, switches, portals, apparitions and event effects remain live.
         levelArchitecture(out,map);
+        beginDynamicGeometry(map);
         looseClutter(out,map);
         eventFixtures(out,map);
+        finishDynamicGeometry();
         for(RitualSites.Site site:RitualSites.all(map))
             if(Math.hypot(site.x()-x,site.z()-z)<14)
                 ritualInstallation(out,site,clock,activeRite==site.rite());
@@ -1220,12 +1279,16 @@ public final class SceneRenderer {
         }
         preparedSceneryFrame++;
         double hx=renderWidth*.5/focal+.025,hy=renderHeight*.5/focal+.025;
+        // Portable-light state cannot change while this scene is assembled.
+        // Compute it once instead of allocating/scanning for every visible
+        // instance in the outdoor and Castle-adjacent maps.
+        boolean portableLightActive=hasActivePortableLight();
         for(var instance:scene.instances()){
             if(!instance.visible(x,eyeHeight,z,yaw,pitch,hx,hy,NEAR))continue;
             visible++;
             boolean resident=worldResidentEnabled&&GpuWorldRenderer.active()!=null&&!uvLamp
                 &&!instance.mesh.equals("tv_mp_1")
-                &&portablePositions.values().stream().noneMatch(LanPortableLights.Light::on);
+                &&!portableLightActive;
             var chunk=resident?residentScenery.get(instance):null;
             List<Face> immutable=chunk==null?preparedSceneryFaces(instance):chunk.faces;
             if(resident){
@@ -1239,6 +1302,13 @@ public final class SceneRenderer {
             triangles+=instance.template.triangleCount();
         }
         instanceStats=new InstanceStats(scene.instances().size(),visible,scene.instances().size()-visible,scene.templates().size(),scene.expandedTriangles(),scene.sharedTriangles(),triangles);
+    }
+    /** Dynamic portable illumination requires the existing transient path.
+     * Keep the decision allocation-free because it is consulted by each
+     * renderer phase on every frame. */
+    private boolean hasActivePortableLight(){
+        for(var light:portablePositions.values())if(light.on())return true;
+        return false;
     }
     private static boolean nearPlane(double a,double b){return Math.abs(a-b)<.12;}
     private static void levelWallPatch(List<Face> out,LevelDefinition.Room r,boolean alongX,double plane,
@@ -1554,12 +1624,12 @@ public final class SceneRenderer {
         }
         float[] complete(){return Arrays.copyOf(values,count);}
     }
-    private record WorldVertexLight(FixtureLighting.VertexProbe probe,int tint){
-        void apply(float[] target,int offset){
-            var rgb=probe.sample();
-            target[offset+5]=(float)(Math.max(.03,rgb.r())*((tint>>16)&255)/255.0);
-            target[offset+6]=(float)(Math.max(.03,rgb.g())*((tint>>8)&255)/255.0);
-            target[offset+7]=(float)(Math.max(.03,rgb.b())*(tint&255)/255.0);
+    private record WorldVertexLight(FixtureLighting.VertexProbe probe,int tint,int offset){
+        void apply(float[] target){
+            probe.writeTinted(target,offset,tint);
+        }
+        float[] applyIfChanged(float[] original,float[] target){
+            return probe.copyTintedIfChanged(original,target,offset,tint);
         }
     }
     private boolean preparingWorldProbes;
@@ -1568,7 +1638,10 @@ public final class SceneRenderer {
             var probe=fixtureLighting.prepareVertex(room,material,p.x,p.y,p.z,
                 normal==null?0:normal.x,normal==null?0:normal.y,normal==null?0:normal.z,normal!=null);
             var rgb=probe.sample();dst.vertex(new Vertex(p,u,v,rgb.r(),rgb.g(),rgb.b()),tint);
-            dst.lights.add(new WorldVertexLight(probe,tint));
+            // Constant ambient probes never depend on source factors. Retain
+            // only live receivers, with their actual material-buffer offsets.
+            if(!changedOnlyLighting||!probe.constant())
+                dst.lights.add(new WorldVertexLight(probe,tint,dst.count-8));
         }else dst.vertex(gpuLitVertex(p,u,v,material,room,normal),tint);
     }
 
@@ -1823,7 +1896,7 @@ public final class SceneRenderer {
             "OpenGL renderer stopped before the game frame");
         var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
         boolean canRetainWorld=map!=null&&!uvLamp
-            &&portablePositions.values().stream().noneMatch(LanPortableLights.Light::on);
+            &&!hasActivePortableLight();
         boolean canReuseStatic=canRetainWorld&&!map.nativeSite();
         if(canReuseStatic)resetStableGpuCache(map);
         lastGpuFrustumFaces=0;
@@ -1953,13 +2026,14 @@ public final class SceneRenderer {
         appendRetainedWorld(out,enclosure,"enclosure",map);
         if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of(),map);}
         int rejected=0,skippedFaces=0,candidateFaces=0;
+        boolean omitResidentShell=!exportFullLevel&&GpuWorldRenderer.active()!=null
+            &&!uvLamp&&dotsPositions.isEmpty()&&!hasActivePortableLight();
         for(ShellChunk chunk:staticShellChunks(map)){
             if(!exportFullLevel&&shellChunkCulling&&!shellChunkInFrustum(chunk)){
                 rejected++;skippedFaces+=chunk.end-chunk.start;continue;
             }
             candidateFaces+=chunk.end-chunk.start;
-            if(!exportFullLevel&&GpuWorldRenderer.active()!=null&&!uvLamp&&dotsPositions.isEmpty()
-                &&portablePositions.values().stream().noneMatch(LanPortableLights.Light::on)){
+            if(omitResidentShell){
                 residentOmittedFaces+=chunk.end-chunk.start;continue;
             }
             for(int i=chunk.start;i<chunk.end;i++){
@@ -2427,13 +2501,14 @@ public final class SceneRenderer {
         residentScenery.clear();
         for(var auxiliary:auxiliaryWorld.values())for(var chunk:auxiliary.chunks())releaseWorldChunk(chunk);
         auxiliaryWorld.clear();authoredFixtureGeometry.clear();nativeCache.clear();
+        dynamicGeometry.clear();dynamicGeometryTriangles=0;dynamicGeometryMap=null;
         for(var chunk:castleStaticChunks)releaseWorldChunk(chunk);
         for(var chunk:castleAssemblies.values())releaseWorldChunk(chunk);
         residentSceneOwner=owner;gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
     }
     private void releaseWorldChunk(ResidentWorldChunk chunk){
         for(var batch:chunk.batches.values())residentWorldBytes-=(long)batch.vertices().length*Float.BYTES;
-        chunk.batches.clear();chunk.lights.clear();chunk.checkedFrame=-1;
+        chunk.batches.clear();chunk.lights.clear();chunk.dependencies.clear();chunk.checkedFrame=-1;
         chunk.occluderVersion=-1;chunk.lightVersion=-1;chunk.lod=-1;
         if(chunk.shadows!=null){chunk.shadows.release();chunk.shadows=null;}
     }
@@ -2442,7 +2517,7 @@ public final class SceneRenderer {
         // owned by the same authored socket (for example a hiding cupboard).
         if(source.isEmpty())return;
         if(!worldResidentEnabled||map==null||exportFullLevel||GpuWorldRenderer.active()==null||uvLamp
-            ||portablePositions.values().stream().anyMatch(LanPortableLights.Light::on)){out.addAll(source);return;}
+            ||hasActivePortableLight()){out.addAll(source);return;}
         var previous=auxiliaryWorld.get(key);
         if(previous==null||previous.source()!=source){
             if(previous!=null){
@@ -2467,6 +2542,7 @@ public final class SceneRenderer {
         final boolean indoor;
         final java.util.Map<Integer,ResidentShell> batches=new java.util.LinkedHashMap<>();
         final java.util.Map<Integer,List<WorldVertexLight>> lights=new java.util.HashMap<>();
+        final java.util.Map<Integer,FixtureLighting.ProbeDependencies> dependencies=new java.util.HashMap<>();
         long checkedFrame=-1,lightVersion=-1;
         long occluderVersion=-1;
         FixtureLighting.StationaryShadows shadows;
@@ -2524,11 +2600,21 @@ public final class SceneRenderer {
             // Re-evaluate source intensities in retained receiver probes. No
             // geometry, visibility, UV or tessellation work is repeated.
             for(var material:new ArrayList<>(chunk.batches.keySet())){
-                var old=chunk.batches.get(material);float[] vertices=old.vertices().clone();
+                var old=chunk.batches.get(material);
+                var dependencies=chunk.dependencies.get(material);
+                if(lightDependenciesEnabled&&dependencies!=null&&dependencies.matchesCurrent()){
+                    residentWorldHits++;continue;
+                }
+                float[] vertices=changedOnlyLighting?old.vertices():old.vertices().clone();
                 var lights=chunk.lights.get(material);
-                for(int i=0;i<lights.size();i++)lights.get(i).apply(vertices,i*8);
-                chunk.batches.put(material,new ResidentShell(lod,version,old.id(),old.revision()+1,vertices));
-                residentWorldBuilds++;
+                for(int i=0;i<lights.size();i++){
+                    if(changedOnlyLighting)vertices=lights.get(i).applyIfChanged(old.vertices(),vertices);
+                    else lights.get(i).apply(vertices);
+                }
+                boolean changed=vertices!=old.vertices();
+                chunk.batches.put(material,new ResidentShell(lod,version,old.id(),old.revision()+(changed?1:0),vertices));
+                if(dependencies!=null)dependencies.capture();
+                if(changed)residentWorldBuilds++;else residentWorldHits++;
             }
             chunk.lightVersion=version;
         }else if(topology){
@@ -2558,6 +2644,8 @@ public final class SceneRenderer {
                 chunk.batches.put(built.getKey(),new ResidentShell(lod,version,
                     old==null?GpuWorldRenderer.nextId():old.id(),old==null?1:old.revision()+1,vertices));
                 chunk.lights.put(built.getKey(),List.copyOf(built.getValue().lights));
+                if(lightDependenciesEnabled)chunk.dependencies.put(built.getKey(),fixtureLighting.dependencies(
+                    built.getValue().lights.stream().map(WorldVertexLight::probe).toList()));
                 residentWorldBuilds++;
             }
             chunk.lod=lod;chunk.lightVersion=version;chunk.occluderVersion=fixtureLighting.occluderRevision();residentWorldBytes+=after-before;
