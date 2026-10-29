@@ -41,14 +41,14 @@ public final class DeveloperEditorLaunchTest {
         editor.doClick();
         check(launches.get()==2,"Editor route remains usable after first click");
         String source=Files.readString(Path.of("src/main/java/org/beckenburg/InvestigationGame.java"));
-        check(source.contains("routes.add(nav(\\"start.extras\\",\\"EXTRAS & SUPPORT\\",this::showExtras))"),
+        check(source.contains("routes.add(nav(\"start.extras\",\"EXTRAS & SUPPORT\",this::showExtras))"),
               "Main menu opens the Extras screen");
-        check(source.contains("list.add(editorExtrasRoute(button(\\"DEVELOPER LEVEL EDITOR\\"),()->openDeveloperEditor(window)))"),
+        check(source.contains("list.add(editorExtrasRoute(button(\"DEVELOPER LEVEL EDITOR\"),()->openDeveloperEditor(window)))"),
               "Extras editor action uses the packaged editor launcher");
         check(source.contains("DeveloperLevelEditor.open(parent)"),
               "Editor launcher calls the real editor");
-        check(source.contains("routes.add(nav(\\"start.options\\",\\"OPTIONS\\",this::openOptions))")
-              &&source.contains("optionsScreen=PsxMenuScreen.screen(\\"options\\""),
+        check(source.contains("routes.add(nav(\"start.options\",\"OPTIONS\",this::openOptions))")
+              &&source.contains("optionsScreen=PsxMenuScreen.screen(\"options\""),
               "Main menu opens the real Options screen");
         String ship=Files.readString(Path.of(".github/workflows/ship-installer.yml"));
         check(ship.contains("dist\\Beckenburg\\tools\\LevelEditorKit-Java17.jar"),
