@@ -140,6 +140,7 @@ public final class FixtureLighting {
   private final Probe base,normal;
   private final Source[] emissive;
   private VertexProbe(Probe base,Probe normal,Source[] emissive){this.base=base;this.normal=normal;this.emissive=emissive;}
+  private FixtureLighting owner(){return FixtureLighting.this;}
   public RGB sample(){
    RGB rgb=base.sample(factors),glow=RGB.ZERO;
    for(var source:emissive)if(factors[source.id]>.01){glow=new RGB(source.red*1.35,source.green*1.35,source.blue*1.35);break;}
@@ -199,6 +200,29 @@ public final class FixtureLighting {
    }
    return store(target,original,offset,tint,r,g,b);
   }
+ }
+ /** Exact factor snapshot for the sources that can affect one prepared batch.
+  * Visibility/topology invalidation remains the owning chunk's responsibility.
+  * Raw bits preserve even changes smaller than the spatial invalidation threshold. */
+ final class ProbeDependencies {
+  private final int[] ids;
+  private final long[] bits;
+  private ProbeDependencies(BitSet sources){ids=sources.stream().toArray();bits=new long[ids.length];capture();}
+  boolean matchesCurrent(){
+   for(int i=0;i<ids.length;i++)if(bits[i]!=Double.doubleToRawLongBits(factors[ids[i]]))return false;
+   return true;
+  }
+  void capture(){for(int i=0;i<ids.length;i++)bits[i]=Double.doubleToRawLongBits(factors[ids[i]]);}
+ }
+ ProbeDependencies dependencies(List<VertexProbe> probes){
+  BitSet ids=new BitSet();
+  for(var probe:probes){
+   if(probe.owner()!=this)throw new IllegalArgumentException("Probes belong to a different lighting scene");
+   for(var part:probe.base.contributions)ids.set(part.source.id);
+   if(probe.normal!=null)for(var part:probe.normal.contributions)ids.set(part.source.id);
+   for(var source:probe.emissive)ids.set(source.id);
+  }
+  return new ProbeDependencies(ids);
  }
  private final boolean directVertexWrite=!Boolean.getBoolean("beckenburg.lighting.directWrite.disabled");
  private Probe prepareProbe(int room,double x,double y,double z,double nx,double ny,double nz,boolean normal){
