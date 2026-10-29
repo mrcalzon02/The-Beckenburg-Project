@@ -39,6 +39,25 @@ public final class SoundCoverageTest {
             for(byte sample:real)if(sample!=0){nonzero=true;break;}
             if(!nonzero)throw new AssertionError("Silent NOX recording "+cue);
         }
+        // Three unique source-verified NOX rock-walking takes, not three names
+        // pointing to the same sound or procedural fallback.
+        byte[][] stone=new byte[3][];
+        for(int i=0;i<stone.length;i++){
+            var event=new LanSound.CueEvent(LanSound.Cue.STEP_STONE,0,65,i);
+            stone[i]=RecordedSfx.render(event,80);
+            if(stone[i]==null||stone[i].length<1600||stone[i].length>16000*4*4
+                    ||stone[i].length%4!=0)
+                throw new AssertionError("Missing or undecodable rock footstep "+i);
+            boolean nonzero=false;
+            for(byte value:stone[i])if(value!=0){nonzero=true;break;}
+            if(!nonzero)throw new AssertionError("Silent recorded rock footstep "+i);
+        }
+        if(Arrays.equals(stone[0],stone[1])||Arrays.equals(stone[1],stone[2])
+                ||Arrays.equals(stone[0],stone[2]))
+            throw new AssertionError("Recorded rock footsteps are not distinct");
+        if(!Arrays.equals(stone[0],RecordedSfx.render(
+                new LanSound.CueEvent(LanSound.Cue.STEP_STONE,0,65,3),80)))
+            throw new AssertionError("Stone recorded variation is not deterministic");
         // Owner-exported first-party ReverieVR Foley; not NOX or external CC0.
         for(LanSound.Cue cue:new LanSound.Cue[]{
                 LanSound.Cue.UI_CLICK,LanSound.Cue.DOOR,LanSound.Cue.BOOK,LanSound.Cue.PURCHASE}){
