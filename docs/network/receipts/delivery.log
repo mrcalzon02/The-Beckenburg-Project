@@ -1,0 +1,716 @@
+COMMAND ['cmd', '/c', 'build.cmd', 'package']
+Note: src\main\java\org\beckenburg\LanLobbyPanel.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Baked 200 approved model-render UI icons, Castle splash and native desktop icon
+PASS: authored 126 textured PSX GLBs, 788556 bytes (42 equipment categories x 3 physical tiers)
+Prepared 15 CC0 medieval castle meshes
+00:00.953  blend            | Read blend: "C:\Users\Admin\AppData\Local\Temp\ggbot-original-blend-rrhjmd7i\Car 01\Car.blend"
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\multiplayer\The-Beckenburg-Project\tools\ggbot_blend_export.py:50: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if not mat or not mat.use_nodes:
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+15:45:57 | INFO: Starting glTF 2.0 export
+15:45:57 | INFO: Extracting primitive: Car
+15:45:57 | INFO: Primitives created: 1
+15:45:57 | INFO: Finished glTF 2.0 export in 0.006467580795288086 s
+00:01.453  blend            | Read blend: "C:\Users\Admin\AppData\Local\Temp\ggbot-original-blend-rrhjmd7i\Car 05\Car5.blend"
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\multiplayer\The-Beckenburg-Project\tools\ggbot_blend_export.py:50: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if not mat or not mat.use_nodes:
+
+GGBOT BLEND VERIFIED Car.blend -> ggbot_car01.glb mesh_objects 1 image_nodes 1 size 53808
+15:45:57 | INFO: Starting glTF 2.0 export
+15:45:57 | INFO: Extracting primitive: Car5
+15:45:57 | INFO: Primitives created: 1
+15:45:57 | INFO: Finished glTF 2.0 export in 0.00616908073425293 s
+00:01.468  blend            | Read blend: "C:\Users\Admin\AppData\Local\Temp\ggbot-original-blend-rrhjmd7i\Car 08\Car8.blend"
+
+GGBOT BLEND VERIFIED Car5.blend -> ggbot_car05.glb mesh_objects 1 image_nodes 1 size 51508
+15:45:57 | INFO: Starting glTF 2.0 export
+15:45:57 | INFO: Extracting primitive: Car8
+15:45:57 | INFO: Primitives created: 1
+15:45:57 | INFO: Finished glTF 2.0 export in 0.002740144729614258 s
+
+GGBOT BLEND VERIFIED Car8.blend -> ggbot_car08_van_shell.glb mesh_objects 1 image_nodes 1 size 37296
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\javac.exe', '--release', '17', '-encoding', 'UTF-8', '-cp', 'build/classes', '-d', 'build/test', '@build/sources-tests.txt']
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.BeckenburgDiagnosticsTest']
+PASS Beckenburg startup diagnostics, local redaction and thread snapshot
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.BeckenburgDeveloperTraceTest']
+PASS BeckenburgDeveloperTraceTest
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.BeckenburgForcedTerminationTest']
+PASS: forced JVM termination preserves post-menu case-start and last stage in durable local diagnostics, without shutdown hooks
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GraphicsOptionsTest']
+PASS real render resolution, widescreen, pillarbox, safe dimensions and CPU graphics effects
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.PsxPipelineTest']
+PASS PSX vertex snap, affine UVs, dithering, presets
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.PsxHorrorUiTest']
+PASS PSX Horror UI / 85 images / 3 scales / Swing controls
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SoundtrackAudioTest']
+PASS six recorded tracks, U-law decoder, and music-state precedence
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SoundCoverageTest']
+PASS SoundCoverageTest / 50 event cues, captions, stable PCM, panning, FX volume and UI idempotence
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HorrorAudioRoutingTest']
+PASS HorrorAudioRoutingTest / 18 unique generic variants + authentic sealed door state
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HorrorAudioRoutingTest']
+PASS HorrorAudioRoutingTest / 18 unique generic variants + authentic sealed door state
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CastleHubIntegrationTest']
+PASS collision-aware GLB castle furniture, usable stations, live scene and purchases
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CampaignBoardPanelTest']
+PASS campaign board has playable contracts, persistent recruit and actual companion dispatch
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.MissionBoardIntegrationTest']
+PASS packaged pictures, async UI load, saved chapter order, prototype privacy and actual locked/unlocked dispatch
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CampaignCareerTest']
+PASS career: paid hire, reload, durable unique dispatch, idempotent visit/outcome and payout
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CampaignProgressionAndStoreTest']
+PASS campaign: unified quartermaster, role levels, field perks, real payout and 32 persisted reports
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CampaignStoryProgressionTest']
+PASS 22-chapter seeded campaign, three playable victory gates, replay rewards and separate LAN wallet
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CampaignPartyRulesTest']
+PASS party: AI Hunter counts toward threat and host rewards without extra class XP
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LevelOpeningFlyoverTest']
+2026-10-28T23:46:31.843368500Z [main] OPENING FLIGHT HOUSE backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS HOUSE: high-altitude flyover, descending approach and exact van view handoff
+2026-10-28T23:46:31.946351800Z [main] OPENING FLIGHT FARMHOUSE backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS FARMHOUSE: high-altitude flyover, descending approach and exact van view handoff
+2026-10-28T23:46:32.044673600Z [main] OPENING FLIGHT SCHOOL backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS SCHOOL: high-altitude flyover, descending approach and exact van view handoff
+2026-10-28T23:46:32.053183400Z [main] OPENING FLIGHT MANSION backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS MANSION: high-altitude flyover, descending approach and exact van view handoff
+2026-10-28T23:46:32.060956900Z [main] OPENING FLIGHT PRISON backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS PRISON: high-altitude flyover, descending approach and exact van view handoff
+2026-10-28T23:46:32.073465900Z [main] OPENING FLIGHT ASYLUM backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS ASYLUM: high-altitude flyover, descending approach and exact van view handoff
+2026-10-28T23:46:32.081970Z [main] OPENING FLIGHT ACADEMY backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS ACADEMY: high-altitude flyover, descending approach and exact van view handoff
+2026-10-28T23:46:32.090479300Z [main] OPENING FLIGHT COLLEGE backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS COLLEGE: high-altitude flyover, descending approach and exact van view handoff
+2026-10-28T23:46:32.095002Z [main] OPENING FLIGHT CHURCH backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS CHURCH: high-altitude flyover, descending approach and exact van view handoff
+2026-10-28T23:46:32.619005500Z [main] OPENING FLIGHT HOLLOW_CREEK backend=software tactical overview output=480x300 first_frame_state=software-fallback-ready
+PASS HOLLOW_CREEK: high-altitude flyover, descending approach and exact van view handoff
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CampaignAllyTest']
+PASS HOUSE: real swept ally movement, orders, issued thermometer and manual journal
+PASS FARMHOUSE: real swept ally movement, orders, issued thermometer and manual journal
+PASS SCHOOL: real swept ally movement, orders, issued thermometer and manual journal
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HunterDisciplineTest']
+HunterDisciplineTest passed
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HunterClassIntegrationTest']
+HunterClassIntegrationTest passed
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanHunterAbilitiesNetworkTest']
+PASS: multiplayer class ownership, live sensor survey, cooldowns, ghost isolation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SoloClassAbilityTest']
+SoloClassAbilityTest passed
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CampaignAllyChatTest']
+PASS HOUSE: physically audible emotes, local/radio chat, witnessed instruments and manual evidence
+PASS FARMHOUSE: physically audible emotes, local/radio chat, witnessed instruments and manual evidence
+PASS SCHOOL: physically audible emotes, local/radio chat, witnessed instruments and manual evidence
+PASS team chat: bounded transcript and LAN-compatible frames
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CastleOrientationTest']
+PASS castle orientation step progression
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.BeckenburgUpdatesTest']
+PASS independent Beckenburg updates, version sorting, exact asset path and hostile URL rejection
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HeldMeshViewTest']
+Purchased flashlight foreground: 5878 mesh pixels, 492 colors
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GlbPropsTest']
+Eight real Beckenburg GLB meshes, UVs and PNG materials validated
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EvidenceSignalsTest']
+PASS: ordinary EMF 2-7, high 8-10, neutral thermal variation, extremes and F/C
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.MissionWeatherTest']
+PASS full shared weather lineup, scheduling, climate evidence integrity and soundscape
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.WeatherAssetsIntegrationTest']
+2026-10-28T23:46:39.500427900Z [main] RENDER SLOW stage=idle faces=70346 visible_faces=40614 culled_faces=29732 target=320x200 build_ms=1019 lighting_raster_ms=313
+PASS all original media, weather geometry, snow, roof coverage and thunder
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.RecordedWeatherTest']
+PASS RecordedWeatherTest / NOX rain and wind loops, thunder preservation, indoor shelter
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HardEvidenceQuotaTest']
+PASS 23 ghosts Easy>=4 Medium=3 DeathWish=1, weather integrity and hypothesis
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AncientGhostVariantsTest']
+PASS 26 ghosts, 10 inherited Ancients, 3 Elders, green sprites, unique triples and 2x rituals
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AdditionalEvidenceTest']
+PASS seven observable detectors, no automatic verdicts, all 13 unique 3-clue signatures
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.ContractRewardsTest']
+PASS ritual-only victory, partial retreat, death loss, daily bonuses and durable payout receipts
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EmfSilenceTest']
+PASS: Shade-authorized zero EMF versus ordinary high signal
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostWritingTest']
+PASS: genuine room-authored writing and all three readable variants
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EquipmentRegistryTest']
+PASS: 42 equipment entries, status separation, and evidence families
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EquipmentTiersTest']
+PASS: 42 devices, 126 tier stages, reach, response, clarity and capacity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EquipmentStoreDescriptionsTest']
+PASS: store names, live prices, 42x3 tier facts, optics, batteries, hover copy, no invented capabilities
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.FieldEquipmentTest']
+PASS: working tiered inventory, shared credits, range, cooldown and duplicate-slot rejection
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.InstrumentActivationTest']
+PASS: physical exposures, saved photos, switches, night vision, consumables and video stations
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.TieredMediaAndPowerTest']
+PASS: Polaroid 1, cameras 6/12, photo output quality, video lens width, tiered beams, battery discharge/recharge
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.TieredUvAndFirelightTest']
+PASS: three-tier true UV sensitivity and finite 120/180/270s firelight
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.ImportedEquipmentModelsTest']
+PASS: 12 imported PSX meshes, original textures and tier-dependent held models
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.PackagedSourceModelsTest']
+PASS: 576 explicitly approved packaged GLBs, real triangles and embedded textures
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EquipmentModelCatalogTest']
+PASS: 126 equipment slots +3 health slots, 53 state aliases /49 meshes, 7 fixed fixtures, 162-file allowlist
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.FieldSoundRecorderTest']
+PASS: all three recorder tiers, real timed audio, mono/stereo WAV, silence, range, storage, memory and power
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSoundRecorderIntegrationTest']
+PASS: real rack input, paid upgrades, authored audio, private playback, service authority and reconnect continuity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.RecorderModelsTest']
+PASS: three Blender recorder GLBs load/rasterize in Java, bounded triangles, live physical LCD previews
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.TierModelForgeTest']
+PASS: 126 real textured tier GLBs / 109 synthesized prefab selections / 17 preserved original source props
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanCargoDoorTest']
+2026-10-28T23:46:59.883747100Z [main] RENDER SLOW stage=idle faces=54865 visible_faces=35238 culled_faces=19627 target=320x200 build_ms=928 lighting_raster_ms=274
+PASS: switchable server-driven van door changes collision and rendered scene
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanDotsProjectorsTest']
+PASS: physical D.O.T.S. without automatic evidence gating
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.DotsRayFieldTest']
+PASS DOTS nearest-hit projection, transferred wall dot, occlusion, near misses, one-sided hits, static/panning patterns and heading
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.OptionalEvidenceReadingsTest']
+PASS: 13 original x 2, 10 Ancient x 3, and 3 Elder x 3 planned event-bound detector readouts
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostEvidenceMatrixTest']
+PASS: 26 ghost evidence rows match live producers and added sensor families
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanFieldEquipmentIntegrationTest']
+PASS: real sockets, multi-slot gear readings, team journal and ghost privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanMeasuredEvidenceTest']
+PASS: measured event EMF, dynamic winter heat, ghost presence, repeats
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HandheldSpiritBoxEvidenceTest']
+PASS: handheld voice sampling, event-linked detection, silent negatives and station separation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SoloEnvironmentalEvidenceTest']
+PASS: solo seasonal hot/cold, real ghost-event EMF gate
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostBehaviorTest']
+PASS: 16 original/Elder behavior patterns shared by 26 ghosts, host energy/cooldowns and AI-human action parity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostIdentityTest']
+PASS: 26 ghost profiles, raw measurements, no confirmation gate, ritual paths
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanRiteNetworkTest']
+PASS: 4 real sockets, raw measurements, hunter deduction, correct site/banishment, human-ghost privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostPursuitTest']
+PASS: bounded ghost hearing, coarse memory, route choice, physical pursuit, parity and expiry
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostHearingTest']
+PASS: door-sensitive human ghost hearing, direction, privacy, codec and audio
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostHearingIntegrationTest']
+PASS: four-socket ghost sound cues, no private telemetry or forged sound authority
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostTakeoverIntegrationTest']
+PASS: human to AI ghost continuity, sequence monotonicity and hunter exit
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanCaseDepartureTest']
+PASS: guest departure, disabled seat actions, solo survival, victory and defeat
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanIncapacitationTest']
+PASS: incapacitation, disallowed field actions, ghost victim filtering, last living survivor exit
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanEvidenceJournalTest']
+PASS: bounded casefile provenance and protocol
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanCaseFileIntegrationTest']
+PASS: four-seat LAN casefile delivery, replay and ghost privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSpatialEvidenceTest']
+PASS: real 3D instrument ranges, no remote evidence, body validation and room-mode compatibility
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSpatialEvidenceIntegrationTest']
+PASS: four-peer spatial tool range, in-range proof, ghost privacy and defended resolution
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanIncapacitationHudTest']
+Beckenburg soundtrack unavailable: sleep interrupted
+PASS: downed first-person view refuses doors, scanner and movement inputs
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGuestDepartureIntegrationTest']
+PASS: guest exit preserves case and cleanse; host departure ends match
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanResumeStoreTest']
+PASS: LAN resume file, rotation, expiry, corruption preservation and profile isolation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanClientWelcomeTest']
+PASS: five-field resume, rotated secret, host replay watermark, four- and three-field compatibility
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanHostOwnerRecoveryTest']
+PASS: ghost-host guest H1 continuity, recovering owner sockets and explicit owner-exit semantics
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSecureOwnerAdmissionTest']
+PASS: local owner role protected before join, false owner denied, ghost-owner reservation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanHostAuthorizationRegressionTest']
+PASS: ghost-host room rejects guest H1 administrative START while owner may start
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSessionResumeIntegrationTest']
+PASS: unexpected loss, real rejoin/token rotation, expiry, ghost AI continuity and role privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanOutboundQueueTest']
+PASS: ordered nonblocking TCP delivery, bounded backlog, slow-peer isolation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanNetworkLatencyTest']
+PASS: TCP heartbeat RTT 0/50/150ms, one lost PONG, recovery and host continuity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanHostAccessIntegrationTest']
+PASS: password admission, denied guests, locked lobby, legacy join and local-only host controls
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanNetworkDiagnosticsTest']
+PASS: LAN address reporting, error explanations, secure-boundary disclosure
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanRitualDefenseTest']
+PASS: host ritual defense, pause, finite abandonment, explicit restart and guarded cleansing
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanRitualDefenseIntegrationTest']
+PASS: four-socket abandoned rite fails and guarded restarted rite cleanses
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostHearingHudTest']
+Beckenburg soundtrack unavailable: sleep interrupted
+PASS: mute-safe spectral sound overlay, EDT and stale-event expiry
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostAnimationTest']
+PASS: bounded phase timing, hidden-source privacy, phase codec and malformed frame rejection
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostHauntingFolioTest']
+PASS: 50 real haunting entries, deterministic variety, timed room FX, signature-only art
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostHauntingChoreographyTest']
+PASS: 14 authored choreographies, staged audio, pan, timing, rendering and concealment
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostAnimationIntegrationTest']
+PASS: four-seat host-only manifestation, windup, recovery and ghost privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSoundTest']
+PASS: listener-relative host sound projection, ghost privacy, bounded frames, stereo PCM and mute amplitude
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSoundIntegrationTest']
+PASS: four-socket host-only paranormal audio projection, van isolation, no ghost pose leak
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanCaseFileHudTest']
+Beckenburg soundtrack unavailable: sleep interrupted
+PASS: shared casefile HUD renders and toggles, authenticated replay clears stale notes
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSoundHudTest']
+Beckenburg soundtrack unavailable: sleep interrupted
+PASS: silent-device accessibility audio caption, directional label and expiry
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanAcousticsTest']
+PASS: door-dependent, masonry and exterior acoustic attenuation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostSearchTest']
+PASS: bounded ghost last-sound search and no omniscient attacks
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostLegacyHearingIntegrationTest']
+PASS: four-socket ghost sound privacy, expiry and private hunter state exclusion
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostSpatialTest']
+PASS: spectral pose bounded to room, fixed tick, safe van denied, drift resets pose
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSpatialCombatTest']
+PASS: spatial ghost strike range, single-target damage, door LOS, legacy compatibility
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanTelegraphedStrikeTest']
+PASS: eight-tick host wind-up, locked target, movement evasion and disconnect/room validation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanTelegraphedStrikeIntegrationTest']
+PASS: four sockets, 800ms warning, host target lock, delayed damage, ghost privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanTelegraphedHudTest']
+Beckenburg soundtrack unavailable: sleep interrupted
+PASS: on-screen red strike wind-up and evasion feedback render in the LAN HUD
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanApparitionTest']
+PASS: exact-position LAN apparition, room privacy, occlusion, range, despawn
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostSpriteAtlasIntegrationTest']
+PASS: verified 6.9MB archived bytes, 23 ghosts, 184 facing atlases, 8 states x 4 frames, preserved alpha/legacy bodies
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostManifestationVisualTest']
+PASS: authored Mimic directional pre-reveal sprites, 26 ghost identities, both Twins bodies, and signature-only species reveal
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.DirectionalSpritesIntegrationTest']
+2026-10-28T23:49:03.521144300Z [main] RENDER SLOW stage=idle faces=90531 visible_faces=61692 culled_faces=28839 target=320x200 build_ms=1186 lighting_raster_ms=646
+PASS: 33 verified frames, 8 camera sectors, depth occlusion and real LAN ghost renderer
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CharacterDirectionalVisualTest']
+PASS: six separately authored four-view masters; 26 static ghost identities; four camera facings and alpha masks
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CharacterSpriteWorldMotionTest']
+PASS six real camera-depth sprites, four headings, motion, alpha and wall occlusion
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.TwinBodyVisualTest']
+PASS: two individual, distinct four-view Twins; bounded physical sibling and private per-body disclosure
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.TwinCompanionAiTest']
+PASS human Twin keeps an autonomous AI sister, real geometry, ghost activity and one shared energy authority; doors require physical approach
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.TwinCompanionSharedActionTest']
+PASS: AI Twin room-local haunt, shared energy/cooldown, no duplicate strikes, Ancient parity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanCameraSightTest']
+PASS: independent camera optics, facing, concealment and species-correct Twin projection
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanCameraOnlyGhostIntegrationTest']
+PASS SHADE: deployed live camera, real van receiver, direct sight distinction
+PASS SPECTER: deployed live camera, real van receiver, direct sight distinction
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanTwinPlayerCompanionTest']
+PASS: human controls Twin A, Twin B autonomously patrols and streams live positions over TCP
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanApparitionRenderTest']
+2026-10-28T23:49:36.064938600Z [main] RENDER SLOW stage=idle faces=90531 visible_faces=61692 culled_faces=28839 target=320x200 build_ms=833 lighting_raster_ms=476
+PASS: network renderer places moving specter at spatial host pose and clears hidden ghost
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanApparitionIntegrationTest']
+PASS: four-client manifested ghost sight projection, distant privacy and authoritative despawn
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostIntegrationTest']
+PASS: 4-socket LAN ghost spatial camera, legal DRIFT, privacy and anti-replay
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.MouseLookTest']
+PASS: mouse-look directions, clamps, uncaptured safety and focus release
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanWorldControlsTest']
+PASS: LAN 3D hotkeys dispatch real host-owned scan, ward, cleanse and extraction
+Beckenburg soundtrack unavailable: sleep interrupted
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EquipmentSelectionTest']
+PASS: four-slot selection, distinct rack swaps, consumables and resupply
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SiteSelectionTest']
+2026-10-28T23:49:50.938297500Z [main] RENDER SLOW stage=idle faces=85494 visible_faces=51585 culled_faces=33909 target=320x200 build_ms=844 lighting_raster_ms=337
+PASS: three playable investigations with headless rendering
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.InvestigationSitesTest']
+PASS production house/farm/school source furnishings, gear exclusion, owned spawns and ritual sockets
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GrandSiteGeometryTest']
+PASS measured multilevel volumes, floor-aware sockets, six van bodies and portal-ID replication
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.ArchitecturalPlansTest']
+PASS authored rooms, real threshold collision/acoustics, glazing exclusion and peer replay
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VictorianHouseArchitectureTest']
+house reached elevations -3.0..3.0
+PASS house: swept van route reaches all15 zones and all functional sockets, 65437 positions
+PASS compact concept house, three storeys, source furnishings, swept van routes and peer doors
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSiteSelectionIntegrationTest']
+PASS: two authored locations transmitted over genuine LAN sockets
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SoloEquipmentUseTest']
+PASS: in-game equipment usage affects the actual solo case and expendables
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CameraAimTest']
+PASS: actual photograph requires camera facing and range
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EquipmentSightTest']
+PASS: playable house geometry occludes camera evidence
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.BeckenburgInstallIdentityTest']
+PASS: stable install/profile identity, random uniqueness, save independence, corrupt-data preservation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.BeckenburgProfileImportTest']
+PASS: canonical and legacy equipment keys, valid imports, backups, identity and corrupt-save recovery
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GameplaySmokeTest']
+2026-10-28T23:49:59.115047100Z [main] RENDER SLOW stage=idle faces=85494 visible_faces=51585 culled_faces=33909 target=320x200 build_ms=863 lighting_raster_ms=346
+PASS: fifteen zones, door/collision, 3D render/depth, instruments, wards, cleansing, extraction, economy save and all role baseline safety
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanFieldJournalIntegrationTest']
+PASS: four-socket private field journal, replay, provenance and ghost isolation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanHidingTest']
+PASS: 0%-100% hiding spots, concealed ghost avoidance and movement exposure
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanTelemetryTest']
+PASS van monitor: noisy activity and true private sanity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanSensorStationsTest']
+PASS: sensor placement, pickup, tier limits, coexisting nodes and bounded frames
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanSiteMapScreenTest']
+PASS: large architectural van map and live station readouts
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanTripodsTest']
+PASS: physical tripods, tier state and mounted camera pose
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostWritingSpatialTest']
+PASS: book world pose, proximity, pickup, snapshot
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanPortableLightsTest']
+PASS: deployed lights, switching, tier housings, multiplayer pickup
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.FieldSensorDetectionTest']
+PASS: room-clipped coverage, movement, microphones and privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanSensorMapVisualTest']
+PASS: real map sensor circle and alarm pulse visualization
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.RoomAcousticPresetsTest']
+PASS: reusable per-room soundscapes and host microphone gains
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanFieldSensorNetworkTest']
+PASS: TCP placed sensor, motion alarm, retrieval, ghost privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.FieldSuppliesTest']
+PASS progressive purchased health and sanity items
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CustomContractTest']
+PASS 1-6 hunters and minimum +6 full-party rating
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LobbyGhostAvatarTest']
+PASS: independent cosmetic lobby ghost, valid art, no species disclosure
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanHunterNameplateTest']
+2026-10-28T23:50:11.387390700Z [main] RENDER SLOW stage=idle faces=90531 visible_faces=61692 culled_faces=28839 target=320x200 build_ms=853 lighting_raster_ms=439
+PASS: teammate name anchors obey camera frustum, depth and doors
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanPrivateHunterNamesTest']
+PASS: hunter-only world labels and anonymous ghost lobby appearance
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanHunterVisualNetworkTest']
+PASS: real LAN art selection, two distinct teammates, world replay, ghost privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanChatTest']
+PASS: chat validation, radio framing, local wall/distance routing
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanChatIntegrationTest']
+PASS: two hunters, ghost, local distance, radio and transcript privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanVoiceCodecTest']
+PASS: G.711 audio, bounded UDP frames, tokens and parser rejection
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanVoiceRelayTest']
+PASS: real UDP handshake, spoof/replay protection and ghost anonymity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanVoiceHostIntegrationTest']
+PASS: actual game host, local/van/radio routing, anonymous ghost audio
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanVoiceClientHandshakeTest']
+PASS: real voice client UDP handshake, mute, volume and spectral TX lock
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGhostLobbySecrecyTest']
+PASS: cosmetic lobby ghost visible to party; real species withheld until play
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanSixHunterVanTest']
+PASS: 6+1 sockets, +6 threat, private van telemetry, seventh hunter denied
+PASS: six simultaneous ghost-room occupants on authoritative room topology
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostActiveBehaviorTest']
+PASS: actual signature actions, isolated prey, sanity-only species, and suppression
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.FieldJournalTest']
+PASS: complete casebook roster, hard exclusions, behavioral ranking and shared note frames
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.ManualEvidenceJournalTest']
+PASS: manually ticked evidence greys ghost names; undo/contradiction never verifies
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanDiegeticCrtTest']
+PASS: original 3D CRT material displays live replicated activity/sanity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.ManualEvidenceHudTest']
+Beckenburg soundtrack unavailable: sleep interrupted
+PASS: notebook checkboxes, greying/undo, ghost choice and actual HUD paint
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostTraitsTest']
+PASS: 13 species profiles, energy feeding, salt mobility and damage identities
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HunterCountersTest']
+PASS: finite throws, ward persistence, salt grounding and cooldown enforcement
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostDomainTest']
+PASS: ghost AI/human command parity, reachability, action energy/cooldowns, observation filtering, escalating strike safety, replay protection
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostFrenzyTest']
+PASS species-priced Demon Frenzy, phased attacks, sanity-only entities, provocation and cooldowns
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.MaterialAtlasTest']
+2026-10-28T23:50:26.566772900Z [main] RENDER SLOW stage=idle faces=55613 visible_faces=25788 culled_faces=29825 target=320x200 build_ms=849 lighting_raster_ms=267
+PASS: 16 reproducible tiles, 128px atlas, world UV wrapping, room materials, view variants, lamp and near-plane clipping
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.TeamCalloutTest']
+PASS: callout sectors, world-space ray, LOS, finite/range/cooldown checks, expiry
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanStagingTest']
+2026-10-28T23:50:29.819633900Z [main] RENDER SLOW stage=idle faces=227852 visible_faces=214667 culled_faces=13185 target=320x200 build_ms=1032 lighting_raster_ms=524
+PASS: one reusable van, site transforms, colliding cargo shell, stations, extraction and 3D geometry
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanNavigationVisualTest']
+PASS van exit lane, 6 seats, physical aim/pickup and visible held tool
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostPracticeTest']
+PASS: local human-ghost practice, no hunter-information leak, shared action gates and two incremental strikes
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostPracticeHunterAiTest']
+PASS HOUSE: embodied AI Hunter patrol, raw acoustic reaction and collision
+PASS FARMHOUSE: embodied AI Hunter patrol, raw acoustic reaction and collision
+PASS SCHOOL: embodied AI Hunter patrol, raw acoustic reaction and collision
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostPracticeInvestigationTest']
+PASS HOUSE: AI instruments, finite actual counter, geometry and no automatic confirmation
+PASS FARMHOUSE: AI instruments, finite actual counter, geometry and no automatic confirmation
+PASS SCHOOL: AI instruments, finite actual counter, geometry and no automatic confirmation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.GhostPracticeCommsTest']
+PASS HOUSE: raw AI field chat, tentative suspicion and positional eavesdropping
+PASS FARMHOUSE: raw AI field chat, tentative suspicion and positional eavesdropping
+PASS SCHOOL: raw AI field chat, tentative suspicion and positional eavesdropping
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanProtocolTest']
+PASS: bounded LAN line protocol, input validation, error and EOF handling
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanClientDisconnectTest']
+PASS: genuine TCP EOF emits exactly one disconnect; local close stays silent
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanGracefulLeaveTest']
+PASS: 12 TCP exits deliver LEAVE and EOF despite unread incoming updates
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanCaseTest']
+PASS: LAN case role boundaries, three instruments, shared evidence, ward, harm, contested cleansing and retreat
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanCaseIntegrationTest']
+PASS: 4-socket team evidence, anti-spoof, ritual, private projection and synchronized resolution
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanWorldTest']
+PASS: host 3D world movement, collision, door snapshots, speed and invalid state gates
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanWorldIntegrationTest']
+PASS: 4-socket authoritative world stepping, snapshot privacy, door range, legacy-mode isolation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanWorldRenderTest']
+2026-10-28T23:50:41.117331Z [main] RENDER SLOW stage=idle faces=44057 visible_faces=8933 culled_faces=35124 target=320x200 build_ms=861 lighting_raster_ms=254
+PASS: network first-person rendering includes 3D teammates, disclosed ghost and synced physical doors
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanLobbyTest']
+PASS: four TCP clients, seats/readiness/start, host-validated moves, ghost parity, damage, authority, replay and private projection
+PASS: 3-hunter LAN sessions use AI ghost fallback without extra seat
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SmokeTest']
+PASS: map geometry, collision, door interaction, 3D raster, look pitch, alternate lighting
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AuthoredLevelPhysicsTest']
+HOUSE XYZ geometry checked
+FARMHOUSE XYZ geometry checked
+SCHOOL XYZ geometry checked
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AuthoredLevelReachabilityTest']
+house reached elevations -3.0..3.0
+PASS house: swept van route reaches all15 zones and all functional sockets, 65437 positions
+farmhouse reached elevations -3.0..3.0
+PASS farmhouse: swept van route reaches all15 zones and all functional sockets, 137069 positions
+school reached elevations -3.0..3.6
+PASS school: swept van route reaches all15 zones and all functional sockets, 202146 positions
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AuthoredLevelStateTest']
+PASS HOUSE: door/window state, XYZ reach, intact sills, slab occlusion and synchronized reconstruction
+PASS FARMHOUSE: door/window state, XYZ reach, intact sills, slab occlusion and synchronized reconstruction
+PASS SCHOOL: door/window state, XYZ reach, intact sills, slab occlusion and synchronized reconstruction
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AuthoredLevelNetworkTest']
+PASS HOUSE: real host/client XYZ, map revision, door/window resync and ghost privacy
+PASS FARMHOUSE: real host/client XYZ, map revision, door/window resync and ghost privacy
+PASS SCHOOL: real host/client XYZ, map revision, door/window resync and ghost privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AuthoredLevelRitualCaseTest']
+PASS HOUSE: selected-site rituals accept correct sockets and reject wrong room/storey/proximity
+PASS FARMHOUSE: selected-site rituals accept correct sockets and reject wrong room/storey/proximity
+PASS SCHOOL: selected-site rituals accept correct sockets and reject wrong room/storey/proximity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AuthoredUtilitiesTest']
+PASS authored utilities: 36 reachable wall switches, 52 door acoustic links, 7 vertical stair links, source elevation and ambience
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SoloElevationTest']
+PASS solo elevation: 36 room measurements/callouts/deployments; upstairs rites and extraction
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EquipmentAssetAssignmentsTest']
+PASS runtime assignments match manifest: 43 families, 129 stage aliases, 53 states, 162 unique resources
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LevelRenderAcceptanceTest']
+2026-10-28T23:51:16.960013200Z [main] RENDER SLOW stage=idle faces=165256 visible_faces=125332 culled_faces=39924 target=320x200 build_ms=980 lighting_raster_ms=589
+PASS HOUSE: 24 lit/unlit views; hinged window; 3894ms total at320x200
+2026-10-28T23:51:19.676679900Z [main] RENDER SLOW stage=idle faces=131583 visible_faces=104890 culled_faces=26693 target=320x200 build_ms=122 lighting_raster_ms=272
+PASS FARMHOUSE: 24 lit/unlit views; hinged window; 2398ms total at320x200
+2026-10-28T23:51:22.197741600Z [main] RENDER SLOW stage=idle faces=181955 visible_faces=133890 culled_faces=48065 target=320x200 build_ms=177 lighting_raster_ms=260
+2026-10-28T23:51:24.230365700Z [main] RENDER SLOW stage=idle faces=196615 visible_faces=174554 culled_faces=22061 target=320x200 build_ms=8 lighting_raster_ms=192
+PASS SCHOOL: 24 lit/unlit views; hinged window; 2744ms total at320x200
+PASS all curated environment meshes have textured runtime triangles
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.WorldViewHandednessTest']
+PASS original model handedness, readable front faces, mouse direction and matching spatial audio
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LevelSurfaceIntegrityTest']
+PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards
+PASS FARMHOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards
+PASS SCHOOL: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LivedLevelDressingTest']
+PASS HOUSE: 58 furnishing groups; 2 physically enterable difficulty-controlled cupboards; supported small objects
+PASS FARMHOUSE: 58 furnishing groups; 2 physically enterable difficulty-controlled cupboards; supported small objects
+PASS SCHOOL: 54 furnishing groups; 2 physically enterable difficulty-controlled cupboards; supported small objects
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LooseClutterTest']
+PASS HOUSE scattered 27 independent full-mesh objects
+PASS FARMHOUSE scattered 46 independent full-mesh objects
+PASS SCHOOL scattered 56 independent full-mesh objects
+PASS pickup/examination/ownership, throw/drop/gravity, impact sound, swept walls/ceilings, upper floors, physical poltergeist hits/misses, ghost privacy and bounded replication
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LooseClutterNetworkTest']
+PASS real sockets: pickup/throw/ownership/privacy, ghost fixture activation/replay, rejected remote switching and reachable player deactivation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HauntedFixturesTest']
+PASS HOUSE: 23 physically mounted and reachable devices, including 12 room alarms
+PASS FARMHOUSE: 25 physically mounted and reachable devices, including 12 room alarms
+PASS SCHOOL: 26 physically mounted and reachable devices, including 12 room alarms
+PASS authorized AI/human activation, manual switches, rejected events/reach, timed ringing, water filling/draining, bounded replication and five distinct soundscapes
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanHumanScaleTest']
+PASS HOUSE: six distinct deck pads, all station routes, outdoor ramp descent/return and cargo seal
+PASS FARMHOUSE: six distinct deck pads, all station routes, outdoor ramp descent/return and cargo seal
+PASS SCHOOL: six distinct deck pads, all station routes, outdoor ramp descent/return and cargo seal
+PASS human-scale body, actual furniture bounds and native-sized full-tier tool bays
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanRackStockTest']
+PASS native-sized shelf packing: 76 independently visible inventory units
+PASS native-sized shelf packing: 78 independently visible inventory units
+PASS native-sized shelf packing: 372 independently visible inventory units
+PASS native-sized shelf packing: 372 independently visible inventory units
+PASS native-sized shelf packing: 372 independently visible inventory units
+PASS real stock arithmetic, equip/return, medicine consumption, atomic quantities and upright front-facing CRT geometry
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanRackNetworkTest']
+PASS shared real-socket stock counts, equip/return synchronization, late-entry replay, bounded intents and ghost privacy
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.InteractionFocusTest']
+PASS HOUSE exact door/window meshes: 15 doors, 9 windows
+PASS HOUSE exact visible meshes: 27 clutter, 17 fixtures, 12 switches
+PASS FARMHOUSE exact door/window meshes: 12 doors, 4 windows
+PASS FARMHOUSE exact visible meshes: 46 clutter, 19 fixtures, 12 switches
+PASS SCHOOL exact door/window meshes: 25 doors, 8 windows
+PASS SCHOOL exact visible meshes: 56 clutter, 21 fixtures, 12 switches
+PASS rack units individually targeted
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.InteractionNetworkTest']
+PASS real-socket centre-ray clutter and shelf pickups, exact stock decrement, forged/stale target rejection and hunter-only interaction
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HeldDeviceReadoutTest']
+PASS EMF I actual display changes 231 pixels
+PASS EMF II actual display changes 70 pixels
+PASS EMF III actual display changes 42 pixels
+PASS THERMOMETER I actual display changes 19 pixels
+PASS THERMOMETER II actual display changes 25 pixels
+PASS THERMOMETER III actual display changes 52 pixels
+PASS SOUND_RECORDER I actual display changes 24 pixels
+PASS SOUND_RECORDER II actual display changes 31 pixels
+PASS SOUND_RECORDER III actual display changes 36 pixels
+PASS rigid forward poses and retained real solo measurement
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.FixtureSoundscapeTest']
+PASS nine distinct original quantized loops, continuous phases, source-specific PCM cancellation, stale voice rejection, independent sounds and manual/ghost lifetimes
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.DomesticFitoutTest']
+PASS complete house plumbing/laundry, room-facing basin, native shell fit and exact usable washer with its own sound
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LevelEnclosureTest']
+PASS HOUSE physical perimeter 8, full reusable road access, 10 exact-ray readables
+PASS FARMHOUSE physical perimeter 8, full reusable road access, 10 exact-ray readables
+PASS SCHOOL physical perimeter 6, full reusable road access, 11 exact-ray readables
+PASS three live enclosure settings and reusable mountain variant; castle remains outside the playable-site catalogue
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.PhysicalLightingTest']
+PASS native source profiles, directional and warm emission, closed-door shadows/cache invalidation, exact TV glow/sound use, independent washroom switches and castle lamp sources
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.FixtureLightingLodTest']
+PASS HOUSE: distant outdoor lighting LOD, indoor precision, near precision and diagnostics
+PASS FARMHOUSE: distant outdoor lighting LOD, indoor precision, near precision and diagnostics
+PASS SCHOOL: distant outdoor lighting LOD, indoor precision, near precision and diagnostics
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LightingCacheRetentionTest']
+PASS lighting retention HOUSE: identical-frame reuse, local invalidation and ambient retention
+PASS lighting retention FARMHOUSE: identical-frame reuse, local invalidation and ambient retention
+PASS lighting retention SCHOOL: identical-frame reuse, local invalidation and ambient retention
+PASS intentional ghost pulses, retained television light and six-tick cosmetic animation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LightVolumePreviewTest']
+PASS 48-ray editable light volume: solid-wall clipping, arch transmission, authored radius
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.RendererDepthOcclusionTest']
+PASS: exact conservative software-Z early rejection, no light probes for fully hidden small triangles
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SurroundingClearanceTest']
+PASS HOUSE 6 neighbouring structures clear of native building, road and enclosing fences
+PASS FARMHOUSE 0 neighbouring structures clear of native building, road and enclosing fences
+PASS SCHOOL 6 neighbouring structures clear of native building, road and enclosing fences
+PASS castle mountain/tree/road backdrop outside physical castle footprint
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CrouchAndOutdoorHidingTest']
+PASS: crouch sweep, low-headroom stand rejection, sprint exclusion, shrub boundaries, search reveal and solo parity
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CrouchNetworkTest']
+Beckenburg soundtrack unavailable: sleep interrupted
+PASS real TCP crouch/stand snapshots, unchanged authoritative feet and ghost-role rejection
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.BlackpineGrayboxTest']
+PASS: Blackpine dimensions, sparse refuge, physical doors, spawns, three rites and supported mill stairs
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.MergedMaterialMetadataTest']
+PASS generated terrain/foliage, subsequent GLB and TV material metadata remain aligned
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.BlackpineLightingTest']
+PASS supported ceiling pivots, below-deck emission, lit blade/aisle, exact switch target, circuit isolation, breaker blackout, loft/wall/join occlusion and fitting clearance
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.BlackpineDeckDepthTest']
+PASS actual 160mm soffit/fascia, equal top/underside apertures, mounted lamp, opaque slab edge and isolated upstairs lighting
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.OpticalEvidenceTest']
+PASS DOTS nearest-hit projection, transferred wall dot, occlusion, near misses, one-sided hits, static/panning patterns and heading
+PASS paid/default beam progression, UV cube six-normal mounting and texture, authentic fading traces, ray-projected DOTS, exact laser intersections/spirals and wall clipping
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.LanOpticalEvidenceNetworkTest']
+PASS TCP UV power, genuine positioned trace, exhaustion blackout, ghost privacy and physical powered laser installation
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekFacilitiesAssetTest']
+PASS two reusable campground GLBs, approved IDs, native floor pivots, metre bounds and reviewed geometry
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekPavilionAssetTest']
+PASS native-scale pavilion GLB, 2040 triangles, UVs, floor pivot and genuine downward roof underside
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekRefinementAssetsTest']
+PASS20 second-pass GLBs: 149586 triangles, finite geometry/UVs, unchanged parser and per-asset budgets
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekFittedTentTest']
+PASS8 actual fitted tent GLBs; 56516 triangles; 3744 independent material UV/pixel checks
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekSiteArtTest']
+PASS14 site assets; 4824 independent UV/material pixel checks; five separate cosmetic cube carriers
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekEarthenBankTest']
+PASS2 actual rounded-earth/refitted-crest GLBs; 24882 triangles; 576 independent UV/PNG pixel checks
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AuthoredSitePhysicsTest']
+PASS 34 analytic/parser/source-identity checks; actual native 351179 triangles and 7070 components
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HidingBudgetTest']
+PASS combined indoor/outdoor maximum 3 on 11 built locations, all 101 density settings, zero-cover and monotonic selection
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekDockAssetsTest']
+PASS fifteen dock/shore/camp exports: 97862 triangles, finite native geometry/UVs and unchanged parser budgets
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekTentAssetsTest']
+PASS three original campsite GLBs: 8532 triangles, human-scale native pivots, intentional ground pegs and finite UVs
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekBoundaryAssetsTest']
+PASS eight actual Hollow Creek GLBs: 63782 triangles, finite UVs, native site coordinates and unchanged per-model budgets
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekTerrainAssetTest']
+PASS terrain within unchanged runtime triangle budget, real site scale/origin, upward normals, negative water beds and finite UVs
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.TerrainFoundationAssetsTest']
+PASS 16 terrain GLBs, 157440 total triangles, native metres/origins, UVs, upward normals and unchanged per-asset budgets; map unlocks unchanged
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekNativePhysicsTest']
+PASS 12 actual native standing zone anchors
+PASS native query fidelity: 1041 support points, 8 no-roof-support cases, 346 optical rays (281 clear/65 blocked), 14 actual bank interiors; max support error 2.065571173992531E-6m
+ROUTE READINESS: 969 standing source-route points; 939 source-route sweeps pass; 0 unresolved capsule/sweep findings in build\hollow-creek-runtime-route-findings.txt. This is not full map acceptance.
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekRouteTerrainTest']
+PASS actual locally graded native terrain GLB; 41782 triangles; 432 independent UV/PNG pixel checks
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekGreenGroundTest']
+PASS actual green grass ground/bank/shore GLB; 57816 triangles; 1152 independent UV/PNG pixel checks
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.WaterModuleTest']
+PASS independent water module: opaque occlusion, real depth, transparent layering, shore dryness, volumetric hull exclusion, depth absorption and texture ownership
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.WaterEffectsTest']
+PASS water effects: 200 independent nearest-wave rays; zero-wave plane; animation; exact optical bed triangles; full-wave actual hull exclusion; bounded readers
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.WaterReviewRegressionTest']
+PASS distance sharpness/foreground isolation/horizon convergence; slow shore displacement and hull envelope; 20484 unit boat normals and native texture resolution; directional fixture response
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.ElevatedVanTest']
+PASS elevated van cargo/ramp support across three heights and rotations; original three-argument placements preserved
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekRuntimeTest']
+PASS actual Hollow Creek game map:15 zone/graph anchors,3 rituals,6 elevated LAN spawn pads,969 standing route points,939 game movement sweeps, actual dry boat waterline and no water walking
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.HollowCreekPowerTest']
+PASS actual supported generator/panel aim,10 shared-circuit emitters,independent source/breaker states (ghost-specific host trip audit remains open)
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.WaterContactTest']
+PASS physical-depth foam contacts; no floating/distant-object halos; visible depth-tested ballistic spray; >200mm real wave travel; highest crest profile and full-cycle dry cockpit
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.WaterEditorModelTest']
+PASS portable module documents, real automatic surface pixels, seamless adjacent/overlap joins, layered elevations, multi-edit/copy/undo, validation rollback, atomic save/load and unchanged texture travel
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.WaterShapesSnapTest']
+PASS all5 real water footprints, size/rotation, exact straight/curved edge joins, optional angle/height snapping, bounded proximity and single-gesture undo/redo/cancel
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SoundVolumeTest']
+PASS visible sound volume model: 3D bounds/falloff, power, spatial stereo, ambient centring, fades, entry one-shots, mute, atomic save, malformed input and immutable map handshake revision
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AllMapLightingCoverageTest']
+PASS HOUSE actual entry illumination, immediate blackout and ceiling mounting
+PASS FARMHOUSE actual entry illumination, immediate blackout and ceiling mounting
+PASS SCHOOL actual entry illumination, immediate blackout and ceiling mounting
+PASS MANSION actual entry illumination, immediate blackout and ceiling mounting
+PASS PRISON actual entry illumination, immediate blackout and ceiling mounting
+PASS ASYLUM actual entry illumination, immediate blackout and ceiling mounting
+PASS ACADEMY actual entry illumination, immediate blackout and ceiling mounting
+PASS COLLEGE actual entry illumination, immediate blackout and ceiling mounting
+PASS CHURCH actual entry illumination, immediate blackout and ceiling mounting
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.VanLightingAndCastleDoorTest']
+PASS all10van layouts: upper racks and work area on own supply; Castle door hinges, storey mounting, closed/open collision and shadows
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.MetalMaterialRefinementTest']
+PASS periodic metal groove contrast16.652 -> 0.0569196428571388; original15other tiles exact, signed UV repeat and bounded wear preserved
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.FixtureJoinIntegrationTest']
+PASS actual FixtureLighting wall endpoint isolation; enabled exterior source cannot light the inner face
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.AllMapArchitecturalJoinTest']
+PASS HOUSE 755 closed wall/floor/corner boundary rays and 178 actual clear stair rays
+PASS FARMHOUSE 755 closed wall/floor/corner boundary rays and 267 actual clear stair rays
+PASS SCHOOL 754 closed wall/floor/corner boundary rays and 179 actual clear stair rays
+PASS MANSION 754 closed wall/floor/corner boundary rays and 179 actual clear stair rays
+PASS PRISON 754 closed wall/floor/corner boundary rays and 178 actual clear stair rays
+PASS ASYLUM 754 closed wall/floor/corner boundary rays and 178 actual clear stair rays
+PASS ACADEMY 754 closed wall/floor/corner boundary rays and 179 actual clear stair rays
+PASS COLLEGE 754 closed wall/floor/corner boundary rays and 179 actual clear stair rays
+PASS CHURCH 755 closed wall/floor/corner boundary rays and 267 actual clear stair rays
+PASS total6789 closed and 1784 open stair probes; native maps require separate physical-mesh review
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CastleRebuildTest']
+PASS rebuilt Castle: physical room/station routes, continuous stairs, slab union,129 supported tier displays, switches and room lighting
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CampaignMenuWorkflowTest']
+PASS mission reservations, refunds, capacity, save rollback, campaign dispatch and real panel captures
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CampaignCoopLobbyTest']
+PASS real TCP campaign co-op, six-seat cap, bot substitution/refund, guest isolation, host receipt and multiplayer lobby purchases
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.EquipmentTierIconTest']
+PASS 129 distinct tier resources, actual 512px Blender images, close framing and no clipping
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.CastleContainedMenuTest']
+Beckenburg soundtrack unavailable: sleep interrupted
+PASS campaign and multiplayer are children of the actual Castle viewport; no lobby Window path exists
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'hbnet.HbnetTest', 'local']
+PASS local-only hbnet cases=39; TLS socket acceptance explicitly NOT RUN
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'hbnet.PrivacyUiTest']
+PASS PrivacyUiTest: randomized labels, endpoint, port, key, fingerprint, masked paste backing, accessibility and OFF-to-ON existing-widget checks
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.DedicatedLifecycleTest']
+PASS DedicatedLifecycleTest: three no-GUI starts/stops, same port rebind, zero phantom seats/UDP, ready validation, pending socket cutoff
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'hbnet.HbnetTest']
+Exception in thread "main" java.io.IOException: Connection unavailable (NET-04)
+	at hbnet.Hbnet.failure(Hbnet.java:27)
+	at hbnet.Hbnet$Client.connect(Hbnet.java:239)
+	at hbnet.HbnetTest.main(HbnetTest.java:50)
+COMMAND ['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-ea', '-cp', 'build/classes;build/test', 'org.beckenburg.SecureLanIntegrationTest']
+Exception in thread "main" java.io.IOException: Connection unavailable (NET-04)
+	at hbnet.Hbnet.failure(Hbnet.java:27)
+	at hbnet.Hbnet$Client.connect(Hbnet.java:239)
+	at org.beckenburg.LanClient.<init>(LanClient.java:85)
+	at org.beckenburg.LanClient.<init>(LanClient.java:64)
+	at org.beckenburg.SecureLanIntegrationTest.main(SecureLanIntegrationTest.java:22)
