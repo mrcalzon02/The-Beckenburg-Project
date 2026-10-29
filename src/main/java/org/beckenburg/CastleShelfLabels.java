@@ -12,6 +12,9 @@ public final class CastleShelfLabels {
     public record Tile(int material,double u0,double v0,double u1,double v1){}
     private record Key(String id,EquipmentTiers.Tier tier){}
     private static Map<Key,Tile> tiles;
+    private static volatile int labelMaterial=-1;
+    /** Let the GPU smooth only thin plaque lettering; scenery stays PSX-nearest. */
+    public static boolean isLabelMaterial(int material){return labelMaterial>=0&&material==labelMaterial;}
     public static String title(CastleWarehouse.Exhibit item){return item.id().replace('_',' ');}
     public static synchronized Tile tile(CastleWarehouse.Exhibit item){
         if(tiles==null)build();
@@ -46,6 +49,7 @@ public final class CastleShelfLabels {
         }
         g.dispose();
         int material=GlbProps.surfaceMaterial("Castle retail label atlas v2",image);
+        labelMaterial=material;
         var result=new HashMap<Key,Tile>();
         for(int i=0;i<exhibits.size();i++){
             int x=i%COLUMNS*TILE_WIDTH,y=i/COLUMNS*TILE_HEIGHT;

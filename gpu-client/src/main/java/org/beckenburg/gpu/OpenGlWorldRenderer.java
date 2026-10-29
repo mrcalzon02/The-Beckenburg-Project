@@ -15,6 +15,7 @@ import org.beckenburg.GpuWorldRenderer;
 import org.beckenburg.GpuReadback;
 import org.beckenburg.BeckenburgDiagnostics;
 import org.beckenburg.GlbProps;
+import org.beckenburg.CastleShelfLabels;
 import org.beckenburg.LevelMaterials;
 import org.beckenburg.MaterialAtlas;
 import java.nio.ByteBuffer;
@@ -217,7 +218,10 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   Texture image=new Texture(bitmap);
   frameTextureUploads++;frameTextureBytes+=4L*bitmap.getWidth()*bitmap.getHeight();
   bitmap.dispose();
-  image.setFilter(Texture.TextureFilter.Nearest,Texture.TextureFilter.Nearest);
+  // Signage is information, not scenery: preserve readable lettering at distance.
+  Texture.TextureFilter filter=CastleShelfLabels.isLabelMaterial(material)
+      ?Texture.TextureFilter.Linear:Texture.TextureFilter.Nearest;
+  image.setFilter(filter,filter);
   image.setWrap(Texture.TextureWrap.Repeat,Texture.TextureWrap.Repeat);
   textures.put(material,image);if(revision>=0)textureRevisions.put(material,revision);return image;
  }

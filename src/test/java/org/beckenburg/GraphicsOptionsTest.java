@@ -56,14 +56,28 @@ public final class GraphicsOptionsTest {
                 wide.antialias(),wide.fieldOfView(),wide.brightness(),wide.contrast(),
                 wide.scanlines(),wide.vignette(),wide.grain(),wide.chromatic());
             candidate.configure(renderer,1920,1080,true);
-            ok(renderer.height()==selected.height,
-                "all rendering quality choices change the actual frame height: "+selected);
+            int expectedHeight=selected==GraphicsOptions.Detail.FULL_HD&&
+                (GpuWorldRenderer.active()==null||!GpuWorldRenderer.active().ready())
+                ?720:selected.height;
+            ok(renderer.height()==expectedHeight,
+                "quality presets respect render height and safe software fallback: "+selected);
             ok(renderer.pixels().length==renderer.width()*renderer.height(),
                 "all quality choices allocate a matching depth/color target: "+selected);
         }
         int[] scene=new int[8*8];
         Arrays.fill(scene,0x8899aa);
         scene[3*8+3]=0xffffff;
+        GraphicsOptions fullHd=new GraphicsOptions(
+            wide.mode(),wide.display(),GraphicsOptions.Detail.FULL_HD,
+            GraphicsOptions.Aspect.ULTRAWIDE,wide.upscale(),wide.antialias(),
+            wide.fieldOfView(),0,0,false,false,false,false);
+        fullHd.configure(renderer,3440,1440,true);
+        ok(renderer.width()<=1920&&
+            Math.abs(renderer.width()/(double)renderer.height()-21.0/9)<.01,
+            "ultrawide quality cap preserves projection without stretching");
+        ok(Math.abs(CastleHubPanel.hudScale(2048,574)-1.6)<.01 &&
+            CastleHubPanel.hudScale(1280,720)==1.0,
+            "Castle HUD text scales at 2K width without enlarging low resolution");
         int[] raw=scene.clone();
         GraphicsEffects.apply(scene,8,8,wide,2);
         ok(!Arrays.equals(scene,raw),"edge smoothing or vignette modifies world pixels");

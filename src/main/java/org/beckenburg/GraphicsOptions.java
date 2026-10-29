@@ -31,7 +31,8 @@ public record GraphicsOptions(Mode mode, DisplaySize display, Detail detail,
     public enum Detail {
         RETRO(200,"Retro 200p"), LOW(270,"Low 270p"), BALANCED(360,"Balanced 360p"),
         SHARP(480,"Sharp 480p"), HIGH(540,"High 540p"),
-        ULTRA(720,"Ultra 720p (CPU intensive)");
+        ULTRA(720,"Ultra 720p"),
+        FULL_HD(1080,"Full HD 1080p (GPU / expensive)");
         public final int height;private final String label;
         Detail(int h,String s){height=h;label=s;}
         @Override public String toString(){return label;}
@@ -70,7 +71,9 @@ public record GraphicsOptions(Mode mode, DisplaySize display, Detail detail,
     private static GraphicsOptions read(){
         return new GraphicsOptions(get("mode",Mode.class,Mode.WINDOWED),
             get("display",DisplaySize.class,DisplaySize.NATIVE),
-            get("detail",Detail.class,Detail.RETRO),
+            get("detail",Detail.class,
+                GpuWorldRenderer.active()!=null&&GpuWorldRenderer.active().ready()
+                    ?Detail.HIGH:Detail.BALANCED),
             get("aspect",Aspect.class,Aspect.AUTO),
             get("upscale",Upscale.class,Upscale.CRISP),
             get("aa",Antialias.class,Antialias.OFF),
@@ -108,7 +111,17 @@ public record GraphicsOptions(Mode mode, DisplaySize display, Detail detail,
     }
     public Viewport configure(SceneRenderer scene,int w,int h,boolean playerCamera){
         Viewport view=viewport(w,h);
-        scene.setRenderSize(view.renderWidth(detail),detail.height);
+        // Preserve the viewport aspect ratio when hardware limits a wide render target.
+        // The software fallback deliberately caps expensive GPU-only choices at 720p.
+        boolean gpu=GpuWorldRenderer.active()!=null&&GpuWorldRenderer.active().ready();
+        int targetHeight=gpu?detail.height:Math.min(detail.height,720);
+        int targetWidth=(int)Math.round(targetHeight*view.width()/(double)view.height());
+        if(targetWidth>1920){
+            targetHeight=Math.max(120,(int)Math.floor(targetHeight*1920.0/targetWidth));
+            targetWidth=(int)Math.round(targetHeight*view.width()/(double)view.height());
+        }
+        targetWidth=Math.max(160,Math.min(1920,(targetWidth+1)&~1));
+        scene.setRenderSize(targetWidth,targetHeight);
         scene.setPsxPreset(PsxPipeline.selected());
         if(playerCamera)scene.setFieldOfView(fieldOfView);
         return view;

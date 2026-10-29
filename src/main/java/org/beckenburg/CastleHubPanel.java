@@ -257,17 +257,29 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     @Override public void keyTyped(KeyEvent e){}
     @Override public void focusGained(FocusEvent e){last=System.nanoTime();}
     @Override public void focusLost(FocusEvent e){down.clear();look.release();}
+    /** Use native-resolution text at a genuinely legible physical size on modern displays. */
+    static double hudScale(int width,int height){
+        return Math.max(1.0,Math.min(2.25,Math.max(width/1280.0,height/800.0)));
+    }
     @Override protected void paintComponent(Graphics src){
         super.paintComponent(src);
         Graphics2D g=(Graphics2D)src.create();
         try{
-            int w=getWidth(),h=getHeight();
-            GraphicsOptions.current().draw(g,renderer.image(),w,h);
+            int pixelWidth=getWidth(),pixelHeight=getHeight();
+            GraphicsOptions.current().draw(g,renderer.image(),pixelWidth,pixelHeight);
             if(storeOpen){
-                g.setColor(new Color(5,8,12,190));g.fillRect(0,0,w,h);
+                g.setColor(new Color(5,8,12,190));g.fillRect(0,0,pixelWidth,pixelHeight);
                 return; // Swing paints the live PSX store child above the dimmed world.
             }
-
+            // Archive input uses physical mouse coordinates: never scale its drawing.
+            if(archive.opened()){
+                CastleArchive.draw(g,pixelWidth,pixelHeight,archive);
+                return;
+            }
+            double scale=hudScale(pixelWidth,pixelHeight);
+            g.scale(scale,scale);
+            int w=Math.max(1,(int)Math.ceil(pixelWidth/scale));
+            int h=Math.max(1,(int)Math.ceil(pixelHeight/scale));
             g.setFont(new Font(Font.MONOSPACED,Font.BOLD,14));
             g.setColor(new Color(11,17,23,214));
             g.fillRoundRect(12,10,Math.min(w-24,450),42,8,8);
@@ -324,7 +336,6 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             }
             g.setColor(new Color(11,17,23,212));g.fillRoundRect(Math.max(12,w-172),12,160,30,8,8);
             g.setColor(new Color(216,220,212));g.drawString("ESC  /  MAIN MENU",Math.max(20,w-162),32);
-            if(archive.opened())CastleArchive.draw(g,w,h,archive);
-        }finally{g.dispose();}
+         }finally{g.dispose();}
     }
 }

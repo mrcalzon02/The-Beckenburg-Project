@@ -28,7 +28,9 @@ public final class SceneRenderer {
     public int height(){return renderHeight;}
     /** Real render-target resizing, with bounded CPU/memory cost. */
     public void setRenderSize(int width,int height){
-        if(width<160||height<120||width>1920||height>1080||(long)width*height>1500000)
+        long pixelLimit=GpuWorldRenderer.active()!=null&&GpuWorldRenderer.active().ready()
+            ?2073600L:1500000L;
+        if(width<160||height<120||width>1920||height>1080||(long)width*height>pixelLimit)
             throw new IllegalArgumentException("software render size out of range");
         if(width==renderWidth&&height==renderHeight)return;
         renderWidth=width;renderHeight=height;
