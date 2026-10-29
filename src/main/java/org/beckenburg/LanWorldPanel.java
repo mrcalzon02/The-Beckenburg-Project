@@ -50,6 +50,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private int selectedCameraOwner=-1;
     private int lastVanPoll=-100000,lastMapTextureTick=-100000,lastCameraRenderTick=-100000;
     private int capturedCameraOwner=-1;
+    private java.awt.image.BufferedImage capturedCameraImage;
     private final List<SceneRenderer.WorldMark> counterMarks=new ArrayList<>();
     private SceneRenderer.Apparition apparition;
     private final Map<String,SceneRenderer.Apparition> pairedGhostBodies=new HashMap<>();
@@ -179,6 +180,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(opening!=null){opening.close();opening=null;}
         releaseVoice();timer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
         VanLiveScreens.suspendCamera();
+        capturedCameraImage=null;
     }
     private void beginVoice(LanChat.Channel channel){
         if(health<=0||!caseResult.isEmpty()||chatInput.isVisible())return;
@@ -945,12 +947,19 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         var available=videoCameras.values().stream()
             .filter(c->videoPowered.getOrDefault(c.owner(),false))
             .sorted(java.util.Comparator.comparingInt(LanVideoCameras.Camera::owner)).toList();
-        if(available.isEmpty()){selectedCameraOwner=-1;return;}
+        if(available.isEmpty()){
+            selectedCameraOwner=-1;
+            capturedCameraOwner=-1;
+            capturedCameraImage=null;
+            if(vanDisplay)VanLiveScreens.camera(null,"NO POWERED CAMERA");
+            return;
+        }
         int index=-1;
         for(int i=0;i<available.size();i++)
             if(available.get(i).owner()==selectedVanCamera().owner())index=i;
         selectedCameraOwner=available.get((index+1)%available.size()).owner();
         capturedCameraOwner=-1;
+        capturedCameraImage=null;
         lastCameraRenderTick=-100000; // A manual channel switch can sample immediately.
         if(vanDisplay)VanLiveScreens.camera(null,"SWITCHING CAMERA");
     }
@@ -983,9 +992,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             lastMapTextureTick=-100000;
             lastCameraRenderTick=-100000;
             capturedCameraOwner=-1;
+            capturedCameraImage=null;
             VanLiveScreens.camera(null,"AWAITING CAMERA SAMPLE");
         }else if(!vanDisplay&&previouslyInVan){
             capturedCameraOwner=-1;
+            capturedCameraImage=null;
             cameraGhostBodies.clear();
             cameraGhostTicks.clear();
             VanLiveScreens.suspendCamera();
@@ -1002,6 +1013,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             catch(IOException e){
                 feedback="Van display disconnected: "+e.getMessage();vanDisplay=false;
                 capturedCameraOwner=-1;
+                capturedCameraImage=null;
                 VanLiveScreens.suspendCamera();
             }
         }
@@ -1057,6 +1069,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     (completedTasks.contains(task)?"[DONE] ":"[OPEN] ")+task.label).toList());
             if(selectedVanCamera()==null&&capturedCameraOwner!=-1){
                 capturedCameraOwner=-1;
+                capturedCameraImage=null;
                 VanLiveScreens.camera(null,"NO POWERED CAMERA");
             }
             lastMapTextureTick=tick;
@@ -1070,11 +1083,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         // Van receiver renders the *same live world* from the physical camera's
         // position. No canned image, inferred spectral object or proof overlay.
         // The existing host-approved live camera renderer is reused, not
-        // duplicated by the wall screen. Five camera captures/second maximum.
+        // duplicated by the wall screen. One capture per two seconds maximum.
         LanVideoCameras.Camera camera=vanDisplay?selectedVanCamera():null;
         if(camera!=null&&capturedCameraOwner!=-1
                 &&capturedCameraOwner!=camera.owner()){
             capturedCameraOwner=-1;
+            capturedCameraImage=null;
             lastCameraRenderTick=-100000;
             VanLiveScreens.camera(null,"SWITCHING CAMERA");
         }
@@ -1133,7 +1147,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     &&(!videoRenderer.frameDiagnostics().gpu()
                         ||videoRenderer.frameDiagnostics().gpuReadbackAvailable()))
             {
-                VanLiveScreens.camera(videoRenderer.image(),
+                // Expensive tier-III night vision post-processing is done ONCE
+                // per captured frame, not on every Swing repaint.
+                java.awt.image.BufferedImage frame=videoRenderer.image();
+                capturedCameraImage=camera.tier()==EquipmentTiers.Tier.III
+                    ?NightVisionFilter.apply(frame):frame;
+                VanLiveScreens.camera(capturedCameraImage,
                     "CAM H"+(camera.owner()+1)+" / "+map.roomName(camera.room()));
                 capturedCameraOwner=camera.owner();
             }
@@ -1152,9 +1171,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }
             GraphicsOptions.current().draw(g,
                 nightVision?NightVisionFilter.apply(renderer.image()):renderer.image(),getWidth(),h);
-            if(vanDisplay&&!videoCameras.isEmpty()&&!casefileOpen
-                    &&videoCameras.values().stream().anyMatch(c->
-                        videoPowered.getOrDefault(c.owner(),false))){
+            if(vanDisplay&&capturedCameraImage!=null&&!videoCameras.isEmpty()
+                    &&!casefileOpen&&videoCameras.values().stream().anyMatch(c->
+                        videoPowered.getOrDefault(c.owner(),false))
+                    &&selectedVanCamera()!=null
+                    &&capturedCameraOwner==selectedVanCamera().owner()){
                 LanVideoCameras.Camera camera=selectedVanCamera();
                 int vw=Math.min(EquipmentOptics.forTier(camera.tier()).monitorWidth(),
                     Math.max(100,getWidth()/3)),vh=Math.max(80,vw*3/5);
@@ -1166,9 +1187,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     camera.tier()==EquipmentTiers.Tier.III
                         ?RenderingHints.VALUE_INTERPOLATION_BILINEAR
                         :RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
-                g.drawImage(camera.tier()==EquipmentTiers.Tier.III
-                    ?NightVisionFilter.apply(videoRenderer.image()):videoRenderer.image(),
-                    vx,vy,vw,vh,null);
+                g.drawImage(capturedCameraImage,vx,vy,vw,vh,null);
                 if(oldInterpolation!=null)
                     g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,oldInterpolation);
                 g.setColor(new Color(190,229,208));
@@ -1280,12 +1299,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     new ArrayList<>(videoCameras.values()),videoPowered,
                     mapFloor,vanMapScroll,tick);
                 LanVideoCameras.Camera chosen=selectedVanCamera();
-                if(vanDisplay&&chosen!=null&&capturedCameraOwner==chosen.owner()){
+                if(vanDisplay&&chosen!=null&&capturedCameraImage!=null
+                        &&capturedCameraOwner==chosen.owner()){
                     int vw=Math.min(234,Math.max(140,getWidth()/3));
                     int vh=Math.max(82,vw*3/5);
                     int vx=getWidth()-vw-32,vy=h-vh-90;
                     g.setColor(new Color(7,17,21));g.fillRect(vx-3,vy-3,vw+6,vh+22);
-                    g.drawImage(videoRenderer.image(),vx,vy,vw,vh,null);
+                    g.drawImage(capturedCameraImage,vx,vy,vw,vh,null);
                     g.setColor(new Color(223,230,204));
                     g.setFont(new Font(Font.MONOSPACED,Font.BOLD,11));
                     g.drawString("CAM "+(chosen.owner()+1)+" LIVE / C NEXT",vx+4,vy+vh+15);
