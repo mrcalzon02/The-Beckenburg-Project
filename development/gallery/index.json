@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 1037,
+  "count": 1042,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -10476,6 +10476,26 @@
       "sha256": "da4cb61d3e06ff5c8ed25e4ffad6ccf133bdd8e172873cbbd4022d7e7dff033e"
     },
     {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-final-courtyard-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-final-courtyard-640.png",
+      "title": "Castle final courtyard 640",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 192486,
+      "sha256": "96819c1fe3be393740912407494de8bb630bc80e53451600852ecd53be062d85"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-final-store-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-final-store-640.png",
+      "title": "Castle final store 640",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 186109,
+      "sha256": "2a025c0f3792e7d1ad1670f0c1d5928b718cfa37067975730d372d6553c2f926"
+    },
+    {
       "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-i.png",
       "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-i.png",
       "title": "Castle readable label tier i",
@@ -10536,9 +10556,29 @@
       "sha256": "badb7764289a45033260b837c3018964538585431bce75b64eaa61840b08bb91"
     },
     {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/house-final-room-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/house-final-room-640.png",
+      "title": "House final room 640",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 163068,
+      "sha256": "5562d99c7f611a86a0a05b8e2b26ee1d74516c7e62d4f6cbc244d88c307fa1cb"
+    },
+    {
       "path": "development/performance/hardware/2026-10-28-castle-regression/captures/native-after-view.png",
       "url": "development/performance/hardware/2026-10-28-castle-regression/captures/native-after-view.png",
       "title": "Native after view",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 141923,
+      "sha256": "6765e49fca0818d1817f4a992b1553675cc076501c6a6b056c98b46a14c45817"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/native-hollow-creek-final-reference-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/native-hollow-creek-final-reference-640.png",
+      "title": "Native hollow creek final reference 640",
       "kind": "Runtime GPU diagnostic",
       "width": 640,
       "height": 400,
@@ -10564,6 +10604,16 @@
       "height": 400,
       "bytes": 86974,
       "sha256": "b46bea06a6c2ee23b1778e18acf0f5845457fd798c9b0aa9e116620c385de47e"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/school-final-room-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/school-final-room-640.png",
+      "title": "School final room 640",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 86632,
+      "sha256": "9bcdcd22daca4eb38d46bde43c24d1f84ef5df3f607eeab8fe623827ef4ff71b"
     }
   ]
 }

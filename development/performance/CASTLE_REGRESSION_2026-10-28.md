@@ -1,12 +1,12 @@
 # Castle and investigation-map performance regression
 
-Status: implementation and acceptance in progress. No release or complete A–G claim.
+Status: scoped Castle and shared-level repair implemented, pushed and measured on Windows hardware. Corrected renderer CI, all 277 regression checks, packaged TCP/UI acceptance and the local native GPU review passed. This is not a release or complete A–G claim.
 
 The user requested comparison with the smooth previous Castle, diagnosis and repair of the rebuilt Castle and investigation levels, and readable shelf labels. Work is isolated on `performance/castle-regression` from main `ba3d8885f07487af94b0c9aae6a6d4563e21eb58`. The previous Castle reference is `68d1142d62a6237ff2567a54868b568b9f711487`, immediately before construction commit `8a854a7e`. The pre-fix current source is main `ba3d8885` with timing instrumentation only.
 
 ## Reproduced differences and causes
 
-- At the courtyard reference, source geometry rose from 55,147 triangles to 220,671; fixtures rose from 31 light sources to 64. The rebuild added 129 tiered equipment exhibits, 15 retail racks, thick masonry/slabs, additional dressing and the revised surrounding terrain. Old distance filters also built fewer objects in distant views. Counts are view-specific where the old source culled during construction.
+- At the courtyard reference, source geometry rose from 55,147 triangles to 220,671; fixtures rose from 31 light sources to 64. The warehouse grew from 43 single-tier exhibits on 8 racks to 129 tiered exhibits on 15 racks. Thick masonry/slabs, additional dressing and revised surrounding terrain also increased geometry. Old distance filters built fewer objects in distant views. Counts are view-specific where the old source culled during construction.
 - OpenGL rasterization was active, but the Castle passed `null` to the investigation-map-gated retention path. Static Castle props and fixtures were transformed, allocated, CPU-lit and packed every frame. Current baseline allocated about 63–201 MiB per submission-thread frame at 640x400.
 - Cached investigation van, arrival road, enclosure and authored fixture faces still took transient lighting/packing paths. Native Hollow Creek had no GPU residency and could churn its 96-entry transformed-face cache.
 - Cosmetic candle/TV brightness revisions repeated source visibility work. The first retained-geometry candidate was rejected after reproducing 300–400 ms relighting stalls. Static attenuation/visibility must survive brightness changes.
@@ -32,23 +32,52 @@ Actual Windows Java 17.0.12 / NVIDIA RTX 5070 / OpenGL 3.3 driver 616.64, 640x40
 
 Reproduce a packaged candidate with `tools/profile_world_performance.ps1`. It isolates home, temporary files and preferences, captures JAR hash/source head, and defaults to three runs over all eleven Castle/map types. `--world-residency-review` independently verifies completed real GL frames, zero unchanged VBO uploads, live torch/flicker/blackout, doors, resize and scene return. Headless `WorldResidencyTest` is a submission-contract test, not GPU evidence.
 
-## Preliminary results, before final repeat runs
+## Final matched three-trial results
 
-| View | Pre-fix median ms | Candidate median ms | Candidate p95 ms |
+Corrected source: `06b76cceafd82ea82869b531ada0dac9e062ea9c`, with remote branch readback verified. Packaged GPU JAR SHA-256: `1127F32057025421ADA0B115B6D6199DCCCAD97334CA676D78E94C869E7227DD`. The final package has no overlay classes. Historical old/pre-fix runs use complete source-class overlays and the identical instrumentation harness; their class hashes and source labels are preserved in provenance JSON.
+
+Every view has **three independent JVM trials, 90 warmup frames and 120 measured frames per trial**. Percentiles pool the 360 completed-frame samples per view using nearest rank. They are not averaged trial percentiles. Hardware was Intel Core i7-14700K / RTX 5070 / driver 616.64 / Java 17.0.12, Windows 11 build 26200, Classic PSX at 640×400. No CPU-heavy builds or other GPU diagnostics ran concurrently with final samples.
+
+| View | Previous Castle p50 ms | Slow version p50 ms | Fixed p50 / p95 / p99 ms |
 |---|---:|---:|---:|
-| Castle courtyard | 35.55 | 8.76 | 13.77 |
-| Castle store | 38.91 | 9.29 | 13.21 |
-| Castle library | 35.40 | 9.20 | 14.90 |
-| Castle exterior | 73.07 | 11.90 | 24.43 |
-| House van | 36.16 | 9.51 | 15.35 |
-| House interior | 23.40 | 9.28 | 11.36 |
-| School van | 53.79 | 14.30 | 21.19 |
-| School interior | 39.16 | 12.35 | 19.40 |
-| Hollow Creek native view | 337.03 | 9.19 | 11.41 |
+| Castle courtyard | 19.36 | 35.71 | 8.80 / 19.59 / 29.36 |
+| Castle store | 22.14 | 40.40 | 9.31 / 21.85 / 29.41 |
+| Castle library | 20.84 | 36.64 | 9.22 / 13.31 / 17.91 |
+| Castle exterior | 20.71 | 73.55 | 11.44 / 16.79 / 50.45 |
+| House interior | — | 22.26 | 8.66 / 12.30 / 14.60 |
+| School van | — | 56.36 | 7.33 / 11.38 / 13.22 |
+| School interior | — | 39.48 | 8.34 / 12.39 / 13.87 |
+| Church interior | — | 31.84 | 8.44 / 11.06 / 11.61 |
+| Hollow Creek native reference | — | 319.71 | 9.91 / 17.25 / 18.41 |
 
-These preliminary runs used different sample/warmup lengths and do not replace the final matched repeated experiment. Some newly exposed views and first uploads still hitch. Cold preparation, installed solo/TCP rounds, all-map coverage, memory stability and exact-commit CI/release acceptance remain separate gates. All 64 Castle lights and all authored exhibits remain present; fewer longer-range lights are not required for these savings and can enlarge influence/relighting volumes.
+All **24 sampled Castle/map-type views** have fixed p95 below 22 ms. Median reductions range from 55.8% to 96.9%. This is a scripted rendering workload, not a claim of interactive game FPS or acceptance of every authored campaign location. The game can retain its own frame cap. [Complete 24-view comparison](hardware/2026-10-28-castle-regression/matched/comparison.md), [all metrics and trial ranges](hardware/2026-10-28-castle-regression/matched/summary.csv), and raw per-frame CSV/provenance are committed alongside this report. Recompute with `python tools/summarize_world_performance.py development/performance/hardware/2026-10-28-castle-regression/matched`.
 
-## Verification checkpoint
+Typical Castle submission-thread allocation is now **0.079–0.150 MiB/frame**, versus **60–201 MiB/frame** before; median CPU submission is about 1.1–1.3 ms versus 27–67 ms. Median static mesh upload is zero in every sampled view. Real brightness changes can update retained RGB/VBO data; the separate unchanged-frame checks verify zero uploads, rather than pretending live relighting never transfers data.
+
+All 64 Castle lights and all authored exhibits remain present. Fewer longer-range lights are not required for these savings and can enlarge influence/relighting volumes. A final asset check compared 1,354 selected original GLB/PNG/ZIP/water/sound resources against the reference package: zero missing and zero changed. Existing preliminary/rejected measurements remain under `preliminary/`; the superseded `0f886e63` Church result is not presented as the fixed result.
+
+Cold preparation and newly exposed views can still hitch. The Castle exterior p99 remains about 50 ms even after warmup. The separate cold/waypoint House route has completed-frame p95 of 76 ms on this hardware. Physical installed navigation and a complete solo/TCP investigation-to-Castle loop remain separate acceptance work; the scoped warm measurements do not close those gates.
+
+The harness calls its second pose `interior` across all Site types. In outdoor-native Hollow Creek that pose is an outdoor authored reference, not an indoor room. Existing user applications were left running; an installed-game process inspected at closeout was nearly idle. No other profiling jobs or builds ran during the final measurements.
+
+## Supplementary 1280×800 result
+
+One additional trial per view uses the same 90-frame warmup and 120 samples at 1280×800. This is supplementary evidence with less repetition than the primary experiment. Fixed medians are 18.8–22.9 ms and p95 values 22.0–27.4 ms over all ten sampled views. Examples: Castle exterior 87.73 → 22.89 ms median, House reference 63.26 → 21.39 ms, School reference 79.92 → 22.80 ms, native Hollow Creek reference 295.76 → 21.67 ms. Castle exterior p99 remains 65.52 ms. [Full comparison and raw data](hardware/2026-10-28-castle-regression/high-resolution/comparison.md).
+
+## Final acceptance and local runnable preview
+
+Runtime source `06b76cceafd82ea82869b531ada0dac9e062ea9c` is published on `performance/castle-regression` in [PR #36](https://github.com/mrcalzon02/The-Beckenburg-Project/pull/36). Main remained `ba3d8885` during acceptance. Final evidence/tool-only follow-up changes do not alter Java, assets or workflow behavior.
+
+- [Renderer acceptance 40844278212](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40844278212): **all jobs passed**, including Java 17, Windows source/contract/native build, original Mesa torch reuse, all-ten-map GPU controls, live TV/map pixels and real solo UI entry. Original House torch repeat uploaded zero bytes and reused 17,536,032 bytes. No assertions were weakened.
+- [Full acceptance 40844284430](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40844284430): **277 passed / 0 failed / 0 skipped**, packaged TCP round, desktop splash/menu/multiplayer/solo startup with progressing game frames, and Windows app-image checks passed. This independently verifies both TLS tests that AVG intercepted locally.
+- [Source-checkpoint gallery 40844284423](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/40844284423): passed. Final gallery has 1,042 original PNGs and passes local hash/dimension/index validation. Gallery and new captures are review-branch artifacts; the deployed main gallery is not claimed updated.
+- Actual RTX 5070 original GPU smoke and expanded all-ten-map review passed. Separate six-cycle lifecycle memory, sparse-ID 96 MiB child JVM, live-pixel controls, translation ownership and three tier-caption UI captures passed within their stated scope.
+
+A self-contained Windows app-image is available locally at `build/performance-preview/app/Beckenburg/Beckenburg.exe`; it contains the exact measured JAR and bundled Java 17. The native executable independently passed `--world-residency-review` across all ten map types with exit 0. Its JAR SHA-256 equals the benchmark JAR above; EXE SHA-256 is `6BD8F2A03701B865242A86C52983D0874B94D91824C31B0D6E27046805E8BCF4`. The app-image input contained only the GPU JAR, never test certificates/state. This creates a local preview rather than updating the installed application or publishing an installer.
+
+Local clean-package rerun encountered Windows access errors while replacing existing generated resources; direct source compilation/Maven GPU packaging succeeded, asset parity passed, and clean CI package/full acceptance independently passed. The native review's first attempt likewise failed to overwrite an existing diagnostic CSV; a fresh isolated diagnostic directory passed. These failed attempts remain recorded rather than being misreported as successes.
+
+## Early verification checkpoint (historical)
 
 Clean Java 17 game package and offline Maven shaded GPU package built successfully. Exact PSX quantization parity, prepared scalar/normal light factors, shelf-label atlas/focus, Castle/map recording residency and existing focused architecture/lighting/cache checks passed. The actual RTX GPU residency review passed zero unchanged uploads, torch, flicker, blackout, door, resize and return checks. Full regression and latest-source revalidation are in progress; final counts and source/remote SHA will be appended.
 

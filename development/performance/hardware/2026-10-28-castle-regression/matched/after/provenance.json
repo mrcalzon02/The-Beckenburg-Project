@@ -1,0 +1,28 @@
+{
+  "source_label": "06b76cceafd82ea82869b531ada0dac9e062ea9c",
+  "working_checkout_head": "06b76cceafd82ea82869b531ada0dac9e062ea9c",
+  "jar": "C:\\Users\\Admin\\Documents\\ChatGPT\\Phasmaphobia alike\\The-Beckenburg-Castle-Performance\\gpu-client\\target\\BeckenburgGPU.jar",
+  "jar_sha256": "1127F32057025421ADA0B115B6D6199DCCCAD97334CA676D78E94C869E7227DD",
+  "overlay_classes": [],
+  "sites": [
+    "CASTLE",
+    "HOUSE",
+    "FARMHOUSE",
+    "SCHOOL",
+    "MANSION",
+    "PRISON",
+    "ASYLUM",
+    "ACADEMY",
+    "COLLEGE",
+    "CHURCH",
+    "HOLLOW_CREEK"
+  ],
+  "runs": 3,
+  "samples": 120,
+  "warmup": 90,
+  "width": 640,
+  "lights": true,
+  "freeze": false,
+  "timezone": "Alaskan Standard Time",
+  "note": "Scripted same-instance rendering route; not physical navigation or installed full-round acceptance"
+}

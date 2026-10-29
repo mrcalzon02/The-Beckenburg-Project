@@ -1,0 +1,12 @@
+site=FARMHOUSE
+GPU=OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+java=17.0.12+8-LTS-286
+OS=Windows 11
+CPU=Intel64 Family 6 Model 183 Stepping 1, GenuineIntel
+processors=28
+resolution=640x400
+lights=true
+freeze=false
+samples=120
+warmup=90
+preset=Classic (PS1)
