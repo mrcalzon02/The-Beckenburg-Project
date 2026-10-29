@@ -63,12 +63,14 @@ public final class VanInteriorLayout {
         new Fixture("tv_table_1_4",0,FLOOR_Y,1.74,1,0,Mount.FLOOR,"command workstation"),
         new Fixture("pc_mp_1",-.66,FLOOR_Y,1.69,1,0,Mount.FLOOR,"computer tower"),
         new Fixture("pc_keyboard_mp_1",.02,FLOOR_Y+.742,1.53,1,0,Mount.FURNITURE,"desk keyboard"),
-        new Fixture("monitoring_screen_mp_1",0,FLOOR_Y+.742,2.015,1,Math.PI,Mount.BULKHEAD,"main command monitor"),
-        new Fixture("monitoring_screen_mp_1",.85,FLOOR_Y+1.25,-1.2,1,Math.PI/2,Mount.WALL,"sanity telemetry"),
-        new Fixture("monitoring_screen_mp_1",.85,FLOOR_Y+1.25,-.2,1,Math.PI/2,Mount.WALL,"haunting activity"),
-        new Fixture("monitoring_screen_mp_1",.85,FLOOR_Y+1.25,.8,1,Math.PI/2,Mount.WALL,"sound telemetry"),
-        new Fixture("blender_site_map_fixed",.83,FLOOR_Y+.75,-1.2,.78,-Math.PI/2,Mount.WALL,"site map"),
-        new Fixture("blender_objective_board_fixed",.83,FLOOR_Y+.75,-.2,.65,-Math.PI/2,Mount.WALL,"contract objective board"),
+        // Bespoke Beckenburg LCD geometry: these have independently updated
+        // world-space faces, not copies of a hidden Swing menu or imported CRT.
+        new Fixture("beckenburg_wide_monitor",0,FLOOR_Y+.88,2.015,1,Math.PI,Mount.BULKHEAD,"site map"),
+        new Fixture("beckenburg_flat_monitor",.83,FLOOR_Y+1.16,-1.2,1,Math.PI/2,Mount.WALL,"camera feed"),
+        new Fixture("beckenburg_flat_monitor",.83,FLOOR_Y+1.16,-.2,1,Math.PI/2,Mount.WALL,"haunting activity"),
+        new Fixture("beckenburg_flat_monitor",.83,FLOOR_Y+1.16,.8,1,Math.PI/2,Mount.WALL,"sound telemetry"),
+        new Fixture("beckenburg_flat_monitor",.83,FLOOR_Y+.69,-1.2,1,Math.PI/2,Mount.WALL,"sanity telemetry"),
+        new Fixture("beckenburg_flat_monitor",.83,FLOOR_Y+.69,-.2,1,Math.PI/2,Mount.WALL,"contract objective board"),
         new Fixture("blender_clipboards_fixed",.83,FLOOR_Y+.40,.8,1,Math.PI/2,Mount.WALL,"daily assignment board")
     );
     /** These are the volumes occupied by fitted real furniture and racks;
@@ -112,6 +114,12 @@ public final class VanInteriorLayout {
         return new GlbProps.Vertex(MonitorBasis.dot(v,MonitorBasis.right)-MonitorBasis.midX,MonitorBasis.dot(v,MonitorBasis.up)-MonitorBasis.minY,MonitorBasis.dot(v,MonitorBasis.front)-MonitorBasis.minZ,v.u(),v.v());
     }
     public static Bounds bounds(String mesh){
+        // Local front is +Z. Width/Y are measured from the physical mount
+        // and validated against the exact roof/aisle envelope below.
+        if(mesh.equals("beckenburg_flat_monitor"))
+            return new Bounds(-.36,0,-.045,.36,.43,.045);
+        if(mesh.equals("beckenburg_wide_monitor"))
+            return new Bounds(-.47,0,-.045,.47,.52,.045);
         double x0=1e9,y0=1e9,z0=1e9,x1=-1e9,y1=-1e9,z1=-1e9;
         for(var t:GlbProps.model(mesh).triangles())for(var original:new GlbProps.Vertex[]{t.a(),t.b(),t.c()}){
             var v=vertex(mesh,original);x0=Math.min(x0,v.x());y0=Math.min(y0,v.y());z0=Math.min(z0,v.z());
