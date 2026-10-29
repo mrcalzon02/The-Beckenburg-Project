@@ -13,6 +13,19 @@ public final class RoomAcousticPresetsTest {
             for(var room:level.rooms()){
                 var preset=RoomAcousticPresets.forRoom(level,room.id());
                 used.add(preset);
+                // The optimized mixer resolves this immutable room profile once
+                // per audio block. Its waveform must be byte-for-byte identical
+                // to the public sample function at every site and power state.
+                int seed=level.id().hashCode()+room.id()*197;
+                for(boolean power:new boolean[]{false,true})
+                    for(long frame:new long[]{0,25,1600,15999,150000,410003,900000}){
+                        short legacy=LevelSoundscape.sample(level,room.id(),power,frame);
+                        short optimized=LevelSoundscape.sampleResolved(
+                            preset,seed,power,frame);
+                        ok(legacy==optimized,
+                            "room mix changed at "+site+"/"+room.name()
+                                +" frame "+frame+" powered "+power);
+                    }
                 if(room.outside())ok(preset==RoomAcousticPresets.Type.OUTDOOR,
                     "weather alone owns exterior ambience "+site);
                 else{
