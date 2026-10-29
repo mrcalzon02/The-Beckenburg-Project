@@ -167,8 +167,10 @@ public final class SoundtrackAudio implements AutoCloseable {
                     if(!closed)idle();
                 }
             }
+        }catch(InterruptedException closedDown){
+            Thread.currentThread().interrupt();
         }catch(Exception invalid){
-            System.err.println("Beckenburg soundtrack unavailable: "+invalid.getMessage());
+            if(!closed)System.err.println("Beckenburg soundtrack unavailable: "+invalid.getMessage());
         }finally{
             current="";output=null;
             if(song!=null)try{song.close();}catch(IOException ignored){}
@@ -178,6 +180,9 @@ public final class SoundtrackAudio implements AutoCloseable {
     @Override public void close(){
         closed=true;active=false;worker.interrupt();
         SourceDataLine line=output;
-        if(line!=null){line.stop();line.flush();}
+        if(line!=null){
+            try{line.stop();}catch(RuntimeException ignored){}
+            try{line.flush();}catch(RuntimeException ignored){}
+        }
     }
 }
