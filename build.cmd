@@ -59,6 +59,15 @@ for %%N in (00 01 02 03 04 05 06 07 08) do (
 copy /b "assets\runtime\ghost-sprite-parts\ghost-sprite-expansion-v3.zip.part00"+"assets\runtime\ghost-sprite-parts\ghost-sprite-expansion-v3.zip.part01"+"assets\runtime\ghost-sprite-parts\ghost-sprite-expansion-v3.zip.part02"+"assets\runtime\ghost-sprite-parts\ghost-sprite-expansion-v3.zip.part03"+"assets\runtime\ghost-sprite-parts\ghost-sprite-expansion-v3.zip.part04"+"assets\runtime\ghost-sprite-parts\ghost-sprite-expansion-v3.zip.part05"+"assets\runtime\ghost-sprite-parts\ghost-sprite-expansion-v3.zip.part06"+"assets\runtime\ghost-sprite-parts\ghost-sprite-expansion-v3.zip.part07"+"assets\runtime\ghost-sprite-parts\ghost-sprite-expansion-v3.zip.part08" "build\classes\org\beckenburg\ghost-sprite-expansion-v3.zip" >nul || exit /b 1
 if not exist assets\runtime\ui\psx-horror-ui-free-assets.zip (echo ERROR: PSX Horror UI archive missing & exit /b 1)
 copy /Y assets\runtime\ui\psx-horror-ui-free-assets.zip build\classes\org\beckenburg\psx-horror-ui-free-assets.zip >nul || exit /b 1
+rem Ship all ten background scenes in the actual desktop JAR (not the art review folder).
+if not exist build\classes\org\beckenburg\menu-backgrounds mkdir build\classes\org\beckenburg\menu-backgrounds
+set /a BECK_MENU_BG_COUNT=0
+for %%B in (art\menu-backgrounds\batch-01\*_menu_1920x1080.jpg) do (
+  if not exist "%%~fB" (echo ERROR: Missing menu scene %%B & exit /b 1)
+  copy /Y "%%~fB" "build\classes\org\beckenburg\menu-backgrounds\%%~nxB" >nul || exit /b 1
+  set /a BECK_MENU_BG_COUNT+=1 >nul
+)
+if not "%BECK_MENU_BG_COUNT%"=="10" (echo ERROR: Expected exactly ten menu backgrounds & exit /b 1)
 if not exist build\classes\org\beckenburg\music mkdir build\classes\org\beckenburg\music
 for %%T in (ambient-cold-unresolved-drone.zip ambient-sombra-profunda.zip castle-candlelit-shadows.zip hunt-final-surge.zip ritual-final-strike.zip.0 ritual-final-strike.zip.1 ritual-of-ash.zip.0 ritual-of-ash.zip.1) do (
   if not exist "assets\runtime\music\%%T" (echo ERROR: required music archive %%T missing & exit /b 1)

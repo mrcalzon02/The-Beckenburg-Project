@@ -1,12 +1,12 @@
 # The Beckenburg Project — Menu Backgrounds Batch 01
 
-10 standalone 1920 × 1080 menu backgrounds extracted and composed from an original generated 10-scene PSX horror environment contact sheet.
+Ten original PSX-horror menu scenes are now bundled into the **playable desktop JAR** and rendered by `MenuBackgrounds` behind the real `PsxMenuScreen` controls. The controls sit in one left-aligned panel; the right side remains available for the cinematic scene. No static menu buttons are baked into the JPEGs.
 
-- `backgrounds_1920x1080/`: ten ready-to-review 16:9 JPEGs with dark negative space on the left for runtime menu labels.
-- `source_crops/`: individually preserved high-quality source crops, approximately 300 × 500 pixels each.
-- `contact_sheet.jpg`: preview of all ten 16:9 backgrounds.
-- `manifest.json`: names, sources, crop bounds, dimensions, SHA-256 hashes.
-- Do not bake menu buttons or text into this artwork; labels and actual selected hunter models should be rendered in-game.
-- Visual references are not evidence of implementing gameplay. These are generated scenic references, not screenshots of existing in-game maps.
+- Source assets: ten `*_menu_1920x1080.jpg` files directly in this directory (1920 × 1080 each).
+- The Windows and Linux build scripts copy all ten images into `org/beckenburg/menu-backgrounds/` in the distributable game JAR; packaging fails if the batch is incomplete.
+- Runtime scene choice is tied to the menu route: main Castle, extras town, options study, controls archway, solo lakeshore, display confirmation chapel and notice viaduct. The remaining forest, cloister and mill scenes are included for later mode screens.
+- Rendering covers the viewport without distortion and keeps the right-hand focal area visible at narrow aspect ratios. A two-image LRU bounds decoded image memory instead of loading every source at once.
+- `MenuBackgroundIntegrationTest` checks packaging, dimensions, layout at 1060×725 and 760×510, and live navigation behavior.
+- `contact_sheet.jpg` remains a quick visual reference and `manifest.json` records source crop provenance and SHA-256 hashes.
 
-Note: the wide versions use a dark blurred extension behind a sharply displayed source scene. They are intentionally composed for desktop menu UI, not claimed to be ten independently generated 1920 × 1080 renders.
+These are scenic menu assets, not screenshots of existing 3D game levels. Existing in-game 3D environments, character art and gameplay routing remain separate.

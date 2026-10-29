@@ -44,6 +44,15 @@ cat assets/runtime/ghost-sprite-parts/ghost-sprite-expansion-v3.zip.part0[0-8] >
 # Bundle the verified CC BY 4.0 PSX UI source ZIP with the actual runtime classes.
 test -s assets/runtime/ui/psx-horror-ui-free-assets.zip || { echo 'Missing PSX Horror UI runtime archive'; exit 1; }
 cp assets/runtime/ui/psx-horror-ui-free-assets.zip build/classes/org/beckenburg/psx-horror-ui-free-assets.zip
+# Backgrounds are runtime content, not review-only art; ship them in the actual JAR.
+mkdir -p build/classes/org/beckenburg/menu-backgrounds
+menu_background_count=0
+for scene in art/menu-backgrounds/batch-01/*_menu_1920x1080.jpg; do
+  test -s "$scene" || { echo "Required menu scene absent: $scene" >&2; exit 1; }
+  cp "$scene" build/classes/org/beckenburg/menu-backgrounds/
+  menu_background_count=$((menu_background_count+1))
+done
+test "$menu_background_count" -eq 10 || { echo "Expected ten menu JPEGs; found $menu_background_count" >&2; exit 1; }
 mkdir -p build/classes/org/beckenburg/music
 for track in "ambient-cold-unresolved-drone.zip" "ambient-sombra-profunda.zip" "castle-candlelit-shadows.zip" "hunt-final-surge.zip" "ritual-final-strike.zip.0" "ritual-final-strike.zip.1" "ritual-of-ash.zip.0" "ritual-of-ash.zip.1"; do
   test -s "assets/runtime/music/$track" || { echo "Missing authored soundtrack $track"; exit 1; }

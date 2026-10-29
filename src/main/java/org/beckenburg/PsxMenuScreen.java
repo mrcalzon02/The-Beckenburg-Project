@@ -12,11 +12,46 @@ import javax.swing.*;
 public final class PsxMenuScreen {
     private PsxMenuScreen(){}
 
+    /**
+     * Full-window background with one left-aligned navigation sheet. The scenic
+     * image is the parent, not a second menu or an overlay atop gameplay.
+     */
+    private static final class Backdrop extends JPanel {
+        private final JPanel sheet;
+        private final String screen;
+        Backdrop(String screen,JPanel sheet){
+            super(null);
+            this.screen=screen;
+            this.sheet=sheet;
+            setName(screen);
+            setBackground(new Color(8,11,16));
+            add(sheet);
+        }
+        @Override public void doLayout(){
+            int gutter=Math.max(12,Math.min(22,getWidth()/42));
+            boolean compact="start.menu".equals(screen);
+            boolean dense="options".equals(screen)||"solo".equals(screen)||"controls".equals(screen);
+            int preferred=compact
+                ?Math.min(475,Math.max(410,(int)(getWidth()*0.46)))
+                :dense
+                    ?Math.min(780,Math.max(680,(int)(getWidth()*0.73)))
+                    :Math.min(570,Math.max(450,(int)(getWidth()*0.56)));
+            int width=Math.min(Math.max(0,getWidth()-2*gutter),preferred);
+            sheet.setBounds(gutter,gutter,width,Math.max(0,getHeight()-2*gutter));
+            super.doLayout();
+        }
+        @Override protected void paintComponent(Graphics graphics){
+            super.paintComponent(graphics);
+            MenuBackgrounds.paint((Graphics2D)graphics,MenuBackgrounds.sceneFor(screen),getWidth(),getHeight());
+        }
+    }
+
     public static JPanel screen(String name,String title,String subtitle,
                                 JComponent content,JButton... actions){
-        JPanel root=PsxHorrorUi.surface(new BorderLayout(12,12));
-        root.setName(name);
-        root.setBorder(BorderFactory.createEmptyBorder(16,20,16,20));
+        JPanel sheet=PsxHorrorUi.surface(new BorderLayout(12,12));
+        sheet.setName(name+".navigation");
+        sheet.setBorder(BorderFactory.createEmptyBorder(16,20,16,20));
+        JPanel root=new Backdrop(name,sheet);
         JPanel header=new JPanel(new BorderLayout(10,4));
         header.setOpaque(false);
         JLabel heading=new JLabel(title);
@@ -33,12 +68,12 @@ public final class PsxMenuScreen {
         sub.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
         sub.setForeground(new Color(175,201,190));
         header.add(sub,BorderLayout.SOUTH);
-        root.add(header,BorderLayout.NORTH);
+        sheet.add(header,BorderLayout.NORTH);
 
         JPanel body=PsxHorrorUi.panel(new BorderLayout());
         body.setBorder(BorderFactory.createEmptyBorder(12,12,12,12));
         body.add(content,BorderLayout.CENTER);
-        root.add(body,BorderLayout.CENTER);
+        sheet.add(body,BorderLayout.CENTER);
 
         JPanel footer=new JPanel(new FlowLayout(FlowLayout.RIGHT,9,0));
         footer.setOpaque(false);
@@ -46,7 +81,7 @@ public final class PsxMenuScreen {
             PsxHorrorUi.styleButton(action);
             footer.add(action);
         }
-        root.add(footer,BorderLayout.SOUTH);
+        sheet.add(footer,BorderLayout.SOUTH);
         theme(root);
         return root;
     }
