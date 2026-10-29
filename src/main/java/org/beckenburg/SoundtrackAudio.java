@@ -151,7 +151,7 @@ public final class SoundtrackAudio implements AutoCloseable {
                 for(int at=0;at<count&&!closed;){
                     if(select(castle,active,ritual,hunt)!=layer)break;
                     int written=line.write(buf,at,count-at);
-                    if(written<=0)break;
+                    if(written<=0)throw new IllegalStateException("Score output accepted no audio frames");
                     at+=written;
                 }
                 }catch(LineUnavailableException|IllegalArgumentException
