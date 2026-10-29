@@ -97,12 +97,13 @@ public final class LevelSoundscape implements AutoCloseable {
                         Thread.sleep(100);
                         continue;
                     }
-                    if(line==null){
-                        SourceDataLine fresh=AudioSystem.getSourceDataLine(FORMAT);
-                        line=fresh;
-                        fresh.open(FORMAT,4096);
+                    SourceDataLine currentLine=line;
+                    if(currentLine==null){
+                        currentLine=AudioSystem.getSourceDataLine(FORMAT);
+                        line=currentLine;
+                        currentLine.open(FORMAT,4096);
                     }
-                    if(!line.isRunning())line.start();
+                    if(!currentLine.isRunning())currentLine.start();
                     if(unavailable){
                         System.err.println("Beckenburg building audio output restored");
                         unavailable=false;
@@ -126,7 +127,7 @@ public final class LevelSoundscape implements AutoCloseable {
                         block[i]=(byte)value;
                         block[i+1]=(byte)(value>>8);
                     }
-                    if(line.write(block,0,block.length)<=0)
+                    if(currentLine.write(block,0,block.length)<=0)
                         throw new IllegalStateException("Room ambience output accepted no audio frames");
                 }catch(LineUnavailableException|IllegalArgumentException
                         |IllegalStateException|SecurityException failure){
