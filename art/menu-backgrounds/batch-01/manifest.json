@@ -1,0 +1,200 @@
+{
+  "project": "The Beckenburg Project",
+  "asset_batch": "menu-backgrounds-01",
+  "status": "review-candidates",
+  "source_file": "a_large_composite_collage_grid_of_10_atmospheric.png",
+  "source_sha256": "c0df43477ac5cc287558d08edd23c6a272ef9ae041abc0e5c80943ec1ea8ff2d",
+  "layout": "10 vertical source concept scenes re-composed as 16:9 desktop backgrounds with left text-safe area",
+  "entries": [
+    {
+      "id": "BECK-MENU-BG-01",
+      "title": "Castle over the mist",
+      "crop_xyxy": [
+        0,
+        0,
+        302,
+        507
+      ],
+      "source_crop": "source_crops/01_castle_over_mist.png",
+      "source_sha256": "284a5ec3085cffba276450cf4a8c2bf5e9a1fa36239cd53d1dcc117ba15eb659",
+      "menu_background": "backgrounds_1920x1080/01_castle_over_mist_menu_1920x1080.jpg",
+      "menu_background_sha256": "c281bb6cfe623fbe8c769ffb1a3b7c4ffd54068b0b2120f877e8e3b37e19acc5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    },
+    {
+      "id": "BECK-MENU-BG-02",
+      "title": "Lamplit old town",
+      "crop_xyxy": [
+        312,
+        0,
+        609,
+        507
+      ],
+      "source_crop": "source_crops/02_lamplit_old_town.png",
+      "source_sha256": "a4319fd1d85927d93803a0c733acf630725917df1d87e65734f28537940823bf",
+      "menu_background": "backgrounds_1920x1080/02_lamplit_old_town_menu_1920x1080.jpg",
+      "menu_background_sha256": "68fcbfc5de0542ae393cb71db5540bcb38405d470846064679a8c5044771a239",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    },
+    {
+      "id": "BECK-MENU-BG-03",
+      "title": "Candlelit study",
+      "crop_xyxy": [
+        619,
+        0,
+        917,
+        507
+      ],
+      "source_crop": "source_crops/03_candlelit_study.png",
+      "source_sha256": "b4d6949642764ee278391e58c6d6aad0c40cf4490c3f1f86ef0cfec87650516d",
+      "menu_background": "backgrounds_1920x1080/03_candlelit_study_menu_1920x1080.jpg",
+      "menu_background_sha256": "9e73a51b06dc4759a6dece986a1b36cd0d0f62a74430fbfdf6c69b743a309477",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    },
+    {
+      "id": "BECK-MENU-BG-04",
+      "title": "Stone archway",
+      "crop_xyxy": [
+        927,
+        0,
+        1224,
+        507
+      ],
+      "source_crop": "source_crops/04_stone_archway.png",
+      "source_sha256": "b4223e3dea07fc6dfd4a79e5175f72abbf73c013bb7790a5144c7898f65ea593",
+      "menu_background": "backgrounds_1920x1080/04_stone_archway_menu_1920x1080.jpg",
+      "menu_background_sha256": "e76f1cbbd0385107bf770a88e3554b4e046b3dc55c7913d76aa80a944cfe87f4",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    },
+    {
+      "id": "BECK-MENU-BG-05",
+      "title": "Night lakeshore",
+      "crop_xyxy": [
+        1234,
+        0,
+        1536,
+        507
+      ],
+      "source_crop": "source_crops/05_night_lakeshore.png",
+      "source_sha256": "2f0eefebe18fc0f24508572324aa706aadda762a704f9b461b15402a21d9aa95",
+      "menu_background": "backgrounds_1920x1080/05_night_lakeshore_menu_1920x1080.jpg",
+      "menu_background_sha256": "68719d6d12d16748a5dd784d443b5fc1f5c068fa38f778fd662767a5cee36e4c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    },
+    {
+      "id": "BECK-MENU-BG-06",
+      "title": "Forest shrine",
+      "crop_xyxy": [
+        0,
+        517,
+        302,
+        1024
+      ],
+      "source_crop": "source_crops/06_forest_shrine.png",
+      "source_sha256": "21a3e80baba8923f776003467f43a371a01c89f1fd770e5867a123830df7be08",
+      "menu_background": "backgrounds_1920x1080/06_forest_shrine_menu_1920x1080.jpg",
+      "menu_background_sha256": "3dc79444b42141c50922f60af6049359ff09dfe7103c8baf8a72d8778779b948",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    },
+    {
+      "id": "BECK-MENU-BG-07",
+      "title": "Cloister courtyard",
+      "crop_xyxy": [
+        312,
+        517,
+        609,
+        1024
+      ],
+      "source_crop": "source_crops/07_cloister_courtyard.png",
+      "source_sha256": "74ce8e8647fa4a608a3de33e894c18b788357fa713fedd1fb044890877a1ceb5",
+      "menu_background": "backgrounds_1920x1080/07_cloister_courtyard_menu_1920x1080.jpg",
+      "menu_background_sha256": "7df3f3d62fe47cae044183b0807a1656608ee653202ce43296a89f318692f9db",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    },
+    {
+      "id": "BECK-MENU-BG-08",
+      "title": "Mill and river",
+      "crop_xyxy": [
+        619,
+        517,
+        917,
+        1024
+      ],
+      "source_crop": "source_crops/08_mill_and_river.png",
+      "source_sha256": "34e49aed30ec726a12189d81e29d9c887a439710839a062c709dba6f4bb75067",
+      "menu_background": "backgrounds_1920x1080/08_mill_and_river_menu_1920x1080.jpg",
+      "menu_background_sha256": "daf9b0acff629f9316457f6c1a1fad9935506765902dcd3c42d21d64af3b06d5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    },
+    {
+      "id": "BECK-MENU-BG-09",
+      "title": "Chapel interior",
+      "crop_xyxy": [
+        927,
+        517,
+        1224,
+        1024
+      ],
+      "source_crop": "source_crops/09_chapel_interior.png",
+      "source_sha256": "ac3346998e285064a54cbff991cf9dff232f95a9df7471d548f37e16672eb504",
+      "menu_background": "backgrounds_1920x1080/09_chapel_interior_menu_1920x1080.jpg",
+      "menu_background_sha256": "c236e66cb063894f8311f6887b33062f894b8bd00e4624a43f58008fe5964a8c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    },
+    {
+      "id": "BECK-MENU-BG-10",
+      "title": "Ruined viaduct",
+      "crop_xyxy": [
+        1234,
+        517,
+        1536,
+        1024
+      ],
+      "source_crop": "source_crops/10_ruined_viaduct.png",
+      "source_sha256": "04dfb00b5967463bcdf2b94eb4eaeb8a23cd8b0c7223bff393cc5da8f1bfdf54",
+      "menu_background": "backgrounds_1920x1080/10_ruined_viaduct_menu_1920x1080.jpg",
+      "menu_background_sha256": "1bee629a0441db42885734c4e363c0b6194d376a15af68147c099a07dc17231a",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "approval": "candidate-not-integrated"
+    }
+  ]
+}
