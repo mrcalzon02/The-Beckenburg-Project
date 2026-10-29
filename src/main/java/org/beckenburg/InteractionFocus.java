@@ -99,6 +99,9 @@ public final class InteractionFocus {
                 String id=switch(f.purpose()){
                     case "site map","camera feed" -> "MAP";
                     case "contract objective board","daily assignment board" -> "BRIEFING";
+                    case "sanity telemetry" -> "TEAM";
+                    case "haunting activity" -> "ACTIVITY";
+                    case "sound telemetry" -> "SOUND";
                     case "desk keyboard","main command monitor" -> "COMPUTER";
                     default -> "RELAY";
                 };
