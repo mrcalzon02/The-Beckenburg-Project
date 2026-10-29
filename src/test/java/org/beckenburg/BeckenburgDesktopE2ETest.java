@@ -230,13 +230,14 @@ public final class BeckenburgDesktopE2ETest {
                 JFrame result=multiplayer();
                 return result!=null&&button(result.getContentPane(),"Host LAN")!=null
                     &&button(result.getContentPane(),"Join by IP")!=null
-                    &&button(result.getContentPane(),"Ready / Unready")!=null
-                    &&button(result.getContentPane(),"Start Match")!=null?result:null;
+                    &&button(result.getContentPane(),"READY")!=null
+                    &&button(result.getContentPane(),"START ROUND")!=null?result:null;
             },15);
             if(lobby==null)throw new AssertionError("Multiplayer lobby not interactable");
             var networkPanel=CampaignMenuWorkflowTest.named(frame.getContentPane(),"network",LanLobbyPanel.class);
-            if(networkPanel==null||!(SwingUtilities.getAncestorOfClass(CastleHubPanel.class,networkPanel) instanceof CastleHubPanel))
-                throw new AssertionError("Multiplayer must be handled inside the actual Castle viewport");
+            if(networkPanel==null||!networkPanel.isShowing()
+                    ||SwingUtilities.getAncestorOfClass(CastleHubPanel.class,networkPanel)!=null)
+                throw new AssertionError("Multiplayer must replace, not stack on, the Castle menu");
             capture("02-multiplayer-lobby");
             System.out.println("E2E PASS main-menu multiplayer handoff and actionable join/host lobby");
             SwingUtilities.invokeAndWait(()->button(lobby.getContentPane(),"LEAVE LOBBY").doClick());
@@ -261,8 +262,8 @@ public final class BeckenburgDesktopE2ETest {
                 site.setSelectedItem(SiteCatalog.Location.HOUSE);
                 if(site.getSelectedItem()!=SiteCatalog.Location.HOUSE)
                     throw new AssertionError("Could not dispatch authored House site");
-                JButton approve=button(dispatch,"DEPLOY");
-                if(approve==null)throw new AssertionError("Solo dispatch DEPLOY button unavailable");
+                JButton approve=button(dispatch,"START ROUND");
+                if(approve==null)throw new AssertionError("Solo START ROUND button unavailable");
                 approve.doClick();
             });
             Component solo=waitForResponsive(()->visibleSoloCase(frame.getContentPane()),25);
