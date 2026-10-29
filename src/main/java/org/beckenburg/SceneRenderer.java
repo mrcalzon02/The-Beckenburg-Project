@@ -2761,6 +2761,12 @@ public final class SceneRenderer {
             drawLitFace(face,room,0);
         }
         sceneWater(null,gpuFrame,clock);long geometryRendered=System.nanoTime();
+        // Four real approved source-art directions, composited after castle
+        // geometry with its actual depth buffer (never through walls).
+        if(eyeHeight<2.0)DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
+            CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z,0,"lore_master",
+            1.79,.98,0,255,lightsOn&&map.lightOn(CastleArchive.KEEPER_X,1.0,
+                CastleArchive.KEEPER_Z),renderWidth,renderHeight,focal);
         renderWeatherMeshes();PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
         long finished=System.nanoTime();

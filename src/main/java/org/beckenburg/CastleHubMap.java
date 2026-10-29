@@ -152,6 +152,7 @@ public final class CastleHubMap {
             ||CastleSurroundings.courtyardVanBlocks(x,z,r)
             ||CastleWarehouse.blocks(x,z,r)
             ||CastleServiceFixtures.blocks(x,z,r)
+            ||CastleArchive.occupies(x,z,r)
             ||closedLeafBlocks(x,elevation,z,r))return false;
         for(Furnishing item:furnishings())
             if(Math.abs(x-item.x())<item.halfWidth()+r &&

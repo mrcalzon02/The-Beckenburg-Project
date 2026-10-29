@@ -7,7 +7,7 @@ public final class WorldLore {
     public static final String EMERGENCE="Late 2022";
     public static final String KEEPER="Matthis Rook";
     public static final String PORTRAIT="level-textures/lorekeeper-matthis-rook.png";
-    public static final String MASTER_ART_STATUS="No approved master art. Portrait approved for in-game archive use; full character master, turnaround and animations pending.";
+    public static final String MASTER_ART_STATUS="APPROVED four-view Matthis Rook concept art. Both in-world body and archive portrait use source-derived directional sprites; authored animation loops remain pending.";
     public record Faction(InvestigationSession.Role role,String name,String origin,String purpose){}
     public static final List<Faction> FACTIONS=List.of(
         new Faction(InvestigationSession.Role.CLERIC,"The Lantern Concord","Clergy, lay wardens and refuge keepers who protected evacuation shelters after Emergence Day.","Keep living people alive; hold thresholds, tend the harmed and lead cleansing rites."),

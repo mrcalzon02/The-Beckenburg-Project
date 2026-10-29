@@ -7,15 +7,31 @@ import java.util.*;
 import java.util.List;
 import javax.imageio.ImageIO;
 
-/** Readable Common Archive and its prototype resident; no combat/quest/AI authority. */
+/** Readable Common Archive and approved world-sprite resident; no combat/quest/AI authority. */
 public final class CastleArchive {
     private CastleArchive(){}
     public static final double KEEPER_X=36,KEEPER_Z=10.35;
     public static final List<CastleHubDecor.Accent> ACCENTS=List.of(
         new CastleHubDecor.Accent("level_trace_records",35.70,.754,11.80,1,0),
         new CastleHubDecor.Accent("level_trace_journal",36.45,.754,11.50,1,.10));
-    public static List<CastleHubMap.Furnishing> furnishings(){return List.of(
-        new CastleHubMap.Furnishing("level_npc_matthis_rook_proxy",KEEPER_X,KEEPER_Z,1,0,.42,.28));}
+    /** Remove the obsolete procedural mannequin from geometry; collision stays
+     * a physical character footprint in CastleHubMap instead of a GLB mesh.
+     */
+    public static List<CastleHubMap.Furnishing> furnishings(){return List.of();}
+    public static boolean occupies(double x,double z,double radius){
+        return Math.hypot(x-KEEPER_X,z-KEEPER_Z)<.38+radius;
+    }
+    /** Rook is the Quartermaster and Lore Master beside the Common Archive.
+     * Talking to him opens the existing quartermaster, not a duplicate shop.
+     */
+    public static boolean aimedKeeper(CastleHubMap map,double x,double z,double yaw){
+        if(map==null||!Double.isFinite(yaw)||!map.traversable(x,z))return false;
+        var here=CastleRooms.at(x,0,z);
+        var room=CastleRooms.at(KEEPER_X,0,KEEPER_Z);
+        if(here==null||room==null||!here.id().equals(room.id()))return false;
+        double dx=KEEPER_X-x,dz=KEEPER_Z-z,d=Math.hypot(dx,dz);
+        return d>.55&&d<3.1&&(dx*Math.sin(yaw)+dz*Math.cos(yaw))/d>.79;
+    }
     public static final class Reader {
         private boolean opened;private int page,scroll;
         public boolean opened(){return opened;}public int page(){return page;}public int scroll(){return scroll;}
@@ -32,14 +48,8 @@ public final class CastleArchive {
             default->{} // Movement and actions stay paused while the book is open.
         }}
     }
-    private static BufferedImage portrait;
-    public static synchronized BufferedImage portrait(){
-        if(portrait==null)try(var in=CastleArchive.class.getResourceAsStream(WorldLore.PORTRAIT)){
-            if(in==null)throw new IllegalStateException("Missing approved lorekeeper portrait");
-            portrait=ImageIO.read(in);if(portrait==null)throw new IllegalStateException("Unreadable lorekeeper portrait");
-        }catch(IOException e){throw new IllegalStateException("Lorekeeper portrait",e);}
-        return portrait;
-    }
+    /** Same approved source art as the physical castle body. */
+    public static BufferedImage portrait(){return DirectionalSprites.frame("lore_master",0);}
     private static List<String> wrap(Graphics2D g,String text,int width){
         var lines=new ArrayList<String>();String row="";
         for(String word:text.split("\\s+")){

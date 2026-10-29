@@ -27,6 +27,12 @@ public final class DirectionalSprites {
         "front","front","side","three_quarter","back","three_quarter","side","front"
     };
     private static final String[] MASTER_DIRECTIONS={"front","side","back","three_quarter"};
+    // Rook's accepted source presents front, LEFT, back and RIGHT profiles;
+    // do not invent an absent three-quarter angle.
+    private static final String[] LORE_DIRECTIONS={"front","side","back","right"};
+    private static final String[] LORE_FACINGS={
+        "front","front","side","back","back","back","right","front"
+    };
     private static final Map<String,BufferedImage> IMAGES=load();
     private DirectionalSprites() { }
 
@@ -127,6 +133,31 @@ public final class DirectionalSprites {
                     if(!frames.containsKey(actor+"/"+direction))
                         throw new IOException("Missing "+actor+"/"+direction);
         }catch(IOException ex){throw new IllegalStateException("Cannot load both canonical Twins",ex);}
+        // The approved Matthis Rook board supplies four distinct, full-body views.
+        try(var source=DirectionalSprites.class.getResourceAsStream("lore-master-directions.zip")){
+            if(source==null)throw new IllegalStateException("Missing approved Lore Master sprite resource");
+            int count=0;
+            try(var zip=new ZipInputStream(source)){
+                ZipEntry entry;
+                while((entry=zip.getNextEntry())!=null){
+                    if(entry.isDirectory()){zip.closeEntry();continue;}
+                    String name=entry.getName();
+                    if(!name.startsWith("assets/lore_master/")||!name.endsWith(".png"))
+                        throw new IOException("Unexpected Lore Master sprite "+name);
+                    String view=name.substring("assets/lore_master/".length(),name.length()-4);
+                    if(!java.util.Arrays.asList(LORE_DIRECTIONS).contains(view))
+                        throw new IOException("Unknown Lore Master view "+view);
+                    BufferedImage image=ImageIO.read(zip);
+                    if(image==null||image.getWidth()!=128||image.getHeight()!=224
+                            ||!image.getColorModel().hasAlpha())
+                        throw new IOException("Damaged Lore Master sprite "+view);
+                    if(frames.putIfAbsent("lore_master/"+view,image)!=null)
+                        throw new IOException("Duplicate Lore Master view "+view);
+                    count++;zip.closeEntry();
+                }
+            }
+            if(count!=4)throw new IOException("Expected four Lore Master views; got "+count);
+        }catch(IOException ex){throw new IllegalStateException("Cannot load approved Lore Master sprites",ex);}
         return Map.copyOf(frames);
     }
     public static int frameCount(){return IMAGES.size();}
@@ -134,7 +165,8 @@ public final class DirectionalSprites {
         if(facing<0||facing>=8)throw new IllegalArgumentException("facing must be 0..7");
         if(GhostManifestationVisual.UNREVEALED.equals(character))
             return GhostManifestationVisual.frame(facing);
-        String direction=(CharacterVisuals.isHunter(character)||CharacterVisuals.isElder(character)
+        String direction="lore_master".equals(character)?LORE_FACINGS[facing]:
+            (CharacterVisuals.isHunter(character)||CharacterVisuals.isElder(character)
                 ||CharacterVisuals.isTwinActor(character))?MASTER_FACINGS[facing]:FACINGS[facing];
         String identity=character!=null&&character.startsWith("ancient_twins_")
                 ?character.substring("ancient_".length()):character;
@@ -154,7 +186,7 @@ public final class DirectionalSprites {
         // source fallback; stripping ancient_ would incorrectly draw the base ghost.
 
         String spriteSource=character;
-        if(CharacterVisuals.isTwinActor(spriteSource))
+        if(CharacterVisuals.isTwinActor(spriteSource)||"lore_master".equals(spriteSource))
             return frame(spriteSource,facing);
         // The present 8-state atlases contain only source-derived static cutouts.
         // Do not cycle pseudo-walk/attack frames until coherent animation is approved.

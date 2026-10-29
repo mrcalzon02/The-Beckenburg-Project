@@ -18,6 +18,38 @@ public final class CastleHubIntegrationTest {
         double sx=13.5,sz=19.3;
         ok(map.traversable(sx,sz),"castle spawn on floor");
         ok(CastleHubMap.furnishings().size()>=20,"source-backed castle furniture");
+        ok(CastleArchive.furnishings().isEmpty()
+            &&CastleHubMap.furnishings().stream().noneMatch(item->
+                item.mesh().equals("level_npc_matthis_rook_proxy")),
+            "Rejected procedural Matthis Rook model no longer enters Castle geometry");
+        ok(!map.traversable(CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z),
+            "Lore Master sprite retains a physical non-walkable character footprint");
+        var front=DirectionalSprites.frame("lore_master",0);
+        ok(front.getWidth()==128&&front.getHeight()==224
+            &&front.getColorModel().hasAlpha()&&CastleArchive.portrait()==front,
+            "Lore Master archive and game share identical approved art");
+        for(int index=0;index<8;index++)
+            ok(DirectionalSprites.frame("lore_master",index)!=null,
+                "Lore Master sprite direction "+index+" is available");
+        ok(DirectionalSprites.frame("lore_master",0)!=DirectionalSprites.frame("lore_master",4),
+            "Front and back remain separate approved visual identities");
+        double rookX=37.2,rookZ=10.5;
+        double rookYaw=Math.atan2(CastleArchive.KEEPER_X-rookX,
+            CastleArchive.KEEPER_Z-rookZ);
+        ok(CastleArchive.aimedKeeper(map,rookX,rookZ,rookYaw)
+            &&!CastleArchive.aimedKeeper(map,rookX,rookZ,rookYaw+Math.PI),
+            "Quartermaster requires physically aimed interaction with Matthis Rook");
+        // Character drawing must honor the castle depth buffer: full-screen
+        // foreground masonry at .5m hides even a fully visible approved sprite.
+        int ww=SceneRenderer.W,hh=SceneRenderer.H;
+        int[] occluded=new int[ww*hh];double[] wall=new double[ww*hh];
+        Arrays.fill(wall,.5);
+        int[] beforeOccluded=occluded.clone();
+        DirectionalSprites.draw(occluded,wall,rookX,rookZ,rookYaw,0,
+            CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z,0,
+            "lore_master",1.79,.98,0,255,true,ww,hh,153.0);
+        ok(Arrays.equals(occluded,beforeOccluded),
+            "Approved in-world character must never render through foreground walls");
         var stonework=CastleHubArchitecture.create(map);
         ok(stonework.size()>=10,"source-backed stone columns and tower trim");
         ok(CastleHubArchitecturalPlan.walls().stream()

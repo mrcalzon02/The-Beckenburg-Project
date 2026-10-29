@@ -314,6 +314,9 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 notice=(portal.gate()?"Courtyard portcullis":"Castle door")+
                     (open?" raised / passage clear.":" closed / passage secured.");
                 noticeTicks=130;
+            }else if(elevation<=1.8&&CastleArchive.aimedKeeper(map,renderer.x,renderer.z,renderer.yaw)){
+                // Same physical Rook manages the existing campaign inventory shop.
+                openQuartermaster();
             }else if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null){
                 use(null);
             }else if(elevation>1.8){
@@ -385,10 +388,13 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null;
             boolean atWarehouse=elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
             var atDoor=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
-            if(atDoor!=null||station!=null||atSwitch||atWarehouse){
+            boolean atRook=elevation<=1.8&&
+                CastleArchive.aimedKeeper(map,renderer.x,renderer.z,renderer.yaw);
+            if(atDoor!=null||station!=null||atSwitch||atWarehouse||atRook){
                 String label=atDoor!=null?
                     (map.doorOpen(atDoor.id())?"CLOSE ":"OPEN ")+
                     (atDoor.gate()?"COURTYARD PORTCULLIS":"CASTLE DOOR"):
+                    atRook?"MATTHIS ROOK / QUARTERMASTER":
                     atSwitch?"CASTLE LIGHT SWITCH":atWarehouse?
                     "WAREHOUSE / MULTIPLAYER INVENTORY":station.label;
                 int labelWidth=Math.min(w-24,Math.max(250,g.getFontMetrics().stringWidth(label)+50));
