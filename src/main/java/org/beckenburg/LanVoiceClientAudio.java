@@ -171,48 +171,75 @@ public final class LanVoiceClientAudio implements AutoCloseable {
                     send(new LanVoicePacket.Frame(LanVoicePacket.AUDIO,seat,mode,
                         seq,hi,lo,100,LanVoiceCodec.encodePcm(pcm)));
                 }
-            }catch(LineUnavailableException|IllegalArgumentException|SecurityException missing){
+            }catch(LineUnavailableException|IllegalArgumentException|IllegalStateException|SecurityException missing){
                 status.accept("VOICE MICROPHONE UNAVAILABLE: "+missing.getMessage());
                 setPushToTalk(null);
             }catch(IOException io){
                 if(!closed)status.accept("VOICE CAPTURE STOPPED: "+io.getMessage());
             }finally{
                 microphone=null;
-                if(line!=null){line.stop();line.close();}
+                if(line!=null){
+                    try{line.stop();}catch(RuntimeException ignored){}
+                    try{line.close();}catch(RuntimeException ignored){}
+                }
             }
         }
     }
+    /** Keep voice playback separate from effects, and reopen after device loss. */
     private void playbackLoop(){
-        SourceDataLine output=null;
-        try{
-            output=AudioSystem.getSourceDataLine(FORMAT);
-            output.open(FORMAT,LanVoicePacket.SAMPLES*2*8);
-            speaker=output;
-            output.start();
-            byte[] mixed=new byte[LanVoicePacket.SAMPLES*2];
-            while(!closed){
-                int[] sums=new int[LanVoicePacket.SAMPLES];
-                synchronized(queueLock){
-                    for(ArrayDeque<LanVoicePacket.Frame> q:buffers.values()){
-                        LanVoicePacket.Frame packet=q.pollFirst();
-                        if(packet==null)continue;
-                        byte[] samples=packet.samples();
-                        int gain=packet.gain()*playbackVolume/100;
-                        for(int i=0;i<samples.length;i++)
-                            sums[i]+=LanVoiceCodec.decode(samples[i])*gain/100;
+        boolean missing=false;
+        while(!closed){
+            SourceDataLine output=null;
+            try{
+                output=AudioSystem.getSourceDataLine(FORMAT);
+                output.open(FORMAT,LanVoicePacket.SAMPLES*2*8);
+                speaker=output;
+                output.start();
+                if(missing){
+                    status.accept("VOICE SPEAKER RESTORED");
+                    missing=false;
+                }
+                byte[] mixed=new byte[LanVoicePacket.SAMPLES*2];
+                while(!closed){
+                    int[] sums=new int[LanVoicePacket.SAMPLES];
+                    synchronized(queueLock){
+                        for(ArrayDeque<LanVoicePacket.Frame> q:buffers.values()){
+                            LanVoicePacket.Frame packet=q.pollFirst();
+                            if(packet==null)continue;
+                            byte[] samples=packet.samples();
+                            int gain=packet.gain()*playbackVolume/100;
+                            for(int i=0;i<samples.length;i++)
+                                sums[i]+=LanVoiceCodec.decode(samples[i])*gain/100;
+                        }
+                    }
+                    for(int i=0;i<sums.length;i++){
+                        int value=Math.max(Short.MIN_VALUE,Math.min(Short.MAX_VALUE,sums[i]));
+                        mixed[i*2]=(byte)value;mixed[i*2+1]=(byte)(value>>8);
+                    }
+                    output.write(mixed,0,mixed.length);
+                }
+            }catch(LineUnavailableException|IllegalArgumentException
+                    |IllegalStateException|SecurityException failure){
+                if(!closed){
+                    if(!missing)status.accept("VOICE SPEAKER UNAVAILABLE: "+failure.getMessage());
+                    missing=true;
+                    // Never play delayed callouts captured during device loss.
+                    synchronized(queueLock){
+                        for(ArrayDeque<LanVoicePacket.Frame> q:buffers.values())q.clear();
                     }
                 }
-                for(int i=0;i<sums.length;i++){
-                    int value=Math.max(Short.MIN_VALUE,Math.min(Short.MAX_VALUE,sums[i]));
-                    mixed[i*2]=(byte)value;mixed[i*2+1]=(byte)(value>>8);
+            }finally{
+                speaker=null;
+                if(output!=null){
+                    try{output.stop();}catch(RuntimeException ignored){}
+                    try{output.flush();}catch(RuntimeException ignored){}
+                    try{output.close();}catch(RuntimeException ignored){}
                 }
-                output.write(mixed,0,mixed.length);
             }
-        }catch(LineUnavailableException|IllegalArgumentException|SecurityException missing){
-            if(!closed)status.accept("VOICE SPEAKER UNAVAILABLE: "+missing.getMessage());
-        }finally{
-            speaker=null;
-            if(output!=null){output.stop();output.close();}
+            if(!closed){
+                try{Thread.sleep(350);}
+                catch(InterruptedException interrupted){if(closed)return;}
+            }
         }
     }
     @Override public void close(){
