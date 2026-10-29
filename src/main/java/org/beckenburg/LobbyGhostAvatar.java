@@ -40,21 +40,38 @@ public final class LobbyGhostAvatar {
         return new Look(FACINGS[rng.nextInt(FACINGS.length)],rng.nextInt(TINTS.length));
     }
 
-    /** A small native Swing panel: source art is packaged inside the shipped game JAR. */
+    /** Actual approved hunter/ghost directional artwork, never a tiny HUD thumbnail. */
     public static final class Preview extends JPanel {
         private Look look=random(java.util.concurrent.ThreadLocalRandom.current());
+        private CharacterVisuals.Hunter hunter=CharacterVisuals.Hunter.OBSERVER;
         private boolean ghost,connected;
         public Preview(){
-            setPreferredSize(new Dimension(186,280));
-            setMinimumSize(new Dimension(158,230));
+            setPreferredSize(new Dimension(208,300));
+            setMinimumSize(new Dimension(175,250));
             setBackground(new Color(19,21,28));
         }
-        public void showHunter(){ghost=false;connected=false;repaint();}
+        public void showHunter(){showHunter(hunter);}
+        public void showHunter(CharacterVisuals.Hunter selected){
+            hunter=Objects.requireNonNull(selected);
+            ghost=false;connected=false;repaint();
+        }
+        public CharacterVisuals.Hunter displayedHunter(){return hunter;}
         public void showGhost(Look value,boolean isConnected){
             look=Objects.requireNonNull(value);ghost=true;connected=isConnected;repaint();
         }
         public boolean showingGhost(){return ghost;}
         public Look displayedLook(){return look;}
+        /** Crop transparent canvas only, never any visible part of the character. */
+        static Rectangle artBounds(BufferedImage art){
+            int minX=art.getWidth(),minY=art.getHeight(),maxX=-1,maxY=-1;
+            for(int y=0;y<art.getHeight();y++)for(int x=0;x<art.getWidth();x++)
+                if((art.getRGB(x,y)>>>24)>12){
+                    minX=Math.min(minX,x);minY=Math.min(minY,y);
+                    maxX=Math.max(maxX,x);maxY=Math.max(maxY,y);
+                }
+            return maxX<0?new Rectangle(0,0,art.getWidth(),art.getHeight()):
+                new Rectangle(minX,minY,maxX-minX+1,maxY-minY+1);
+        }
         @Override protected void paintComponent(Graphics graphics){
             super.paintComponent(graphics);
             Graphics2D g=(Graphics2D)graphics.create();
@@ -68,16 +85,16 @@ public final class LobbyGhostAvatar {
                 g.setColor(new Color(226,210,175));
                 g.drawString(ghost?"GHOST PLAYER":"HUNTER PLAYER",18,29);
 
-                BufferedImage sprite=DirectionalSprites.frame(ghost?"banshee":"observer",
-                    ghost?look.facing():0);
-                int availableW=Math.max(28,w-38),availableH=Math.max(45,h-99);
-                double scale=Math.min(availableW/(double)sprite.getWidth(),
-                    availableH/(double)sprite.getHeight());
-                int sw=Math.max(1,(int)(sprite.getWidth()*scale)),
-                    sh=Math.max(1,(int)(sprite.getHeight()*scale));
-                int left=(w-sw)/2,top=43+(availableH-sh)/2;
+                String identity=ghost?"banshee":hunter.name().toLowerCase(java.util.Locale.ROOT);
+                BufferedImage sprite=DirectionalSprites.frame(identity,ghost?look.facing():0);
+                Rectangle bounds=artBounds(sprite);
+                int availableW=Math.max(1,w-38),availableH=Math.max(1,h-100);
+                double scale=Math.min(availableW/(double)bounds.width,
+                    availableH/(double)bounds.height);
+                int sw=Math.max(1,(int)Math.round(bounds.width*scale));
+                int sh=Math.max(1,(int)Math.round(bounds.height*scale));
+                int left=(w-sw)/2,top=42+(availableH-sh)/2;
                 if(ghost){
-                    // Tint only opaque artwork pixels; never paint a rectangle over the lobby.
                     BufferedImage tinted=new BufferedImage(sprite.getWidth(),sprite.getHeight(),
                         BufferedImage.TYPE_INT_ARGB);
                     Graphics2D ink=tinted.createGraphics();
@@ -87,11 +104,15 @@ public final class LobbyGhostAvatar {
                         ink.setColor(TINTS[look.palette()]);
                         ink.fillRect(0,0,tinted.getWidth(),tinted.getHeight());
                     }finally{ink.dispose();}
-                    g.drawImage(tinted,left,top,sw,sh,null);
-                }else g.drawImage(sprite,left,top,sw,sh,null);
+                    sprite=tinted;
+                }
+                g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+                    RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+                g.drawImage(sprite,left,top,left+sw,top+sh,
+                    bounds.x,bounds.y,bounds.x+bounds.width,bounds.y+bounds.height,null);
                 g.setColor(new Color(176,189,206));
                 g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,10));
-                g.drawString(ghost?"IDENTITY: UNKNOWN":"INVESTIGATOR",18,h-43);
+                g.drawString(ghost?"IDENTITY: UNKNOWN":hunter.name(),18,h-43);
                 g.drawString(ghost?(connected?"LOBBY DISGUISE":"RANDOM PREVIEW"):"HUNTER ROLE",
                     18,h-25);
             }finally{g.dispose();}
