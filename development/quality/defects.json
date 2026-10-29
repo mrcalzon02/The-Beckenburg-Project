@@ -1706,6 +1706,17 @@
       "action": "Prepare fixed full close-range lighting topology for resident interior chunks; preserve exterior/native rules, original normals and UVs, and dynamic reference paths.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Translation identity/revision contract passes. Staged 33-pose CPU p95 improved about 268ms to 40ms; completed-frame cold/waypoint p95 remains 76ms.",
       "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A\u2013G acceptance are finished."
+    },
+    {
+      "id": "DEV-161",
+      "title": "GPU UI acceptance could pass during the opening without reaching playable control",
+      "status": "candidate-compiled-ci-pending",
+      "affected": "GPU UI acceptance diagnostic; House, Farmhouse and School case lifecycle",
+      "symptom": "The smoke accepted any new opaque GPU frame after GamePanel appeared, including an opening frame. It did not require hunter handoff, movement, extraction or another case, and invokeAndWait could exceed its advertised timeout indefinitely.",
+      "cause": "Framebuffer availability was used as a proxy for playable case readiness; UI polling itself had an unbounded EDT wait.",
+      "action": "Require sized first-frame readiness, actual opening skip or natural handoff, advancing hunter frames and GPU readback. Drive production WASD handlers over a collision-valid short van route, then the real X extraction/debrief/menu path in three successive cases. Bound EDT polling with one pending task. Preserve scoped captures and partial CSV evidence on failure.",
+      "evidence": "Enhanced GPU package compiles with Java 17. Separate self-contained Windows executable passes all-ten-map hidden OpenGL controls on RTX 5070, with exact packaged JAR hash. New lifecycle diagnostic still requires exact-source CI; the native hidden review does not exercise Swing input.",
+      "older_maps": "Three publicly playable contract locations only. Short van movement and retreat do not certify interior routes, a successful investigation, installed multiplayer, physical player acceptance or A-G completion."
     }
   ],
   "audit_categories": [

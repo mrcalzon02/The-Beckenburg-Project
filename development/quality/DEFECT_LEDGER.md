@@ -2180,6 +2180,20 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A–G acceptance are finished.
 
+### DEV-161 — GPU UI acceptance could pass during the opening without reaching playable control
+
+**Status:** candidate-compiled-ci-pending · **Affected:** GPU UI acceptance diagnostic; House, Farmhouse and School case lifecycle
+
+The smoke accepted any new opaque GPU frame after GamePanel appeared, including an opening frame. It did not require hunter handoff, movement, extraction or another case, and invokeAndWait could exceed its advertised timeout indefinitely.
+
+Cause / uncertainty: Framebuffer availability was used as a proxy for playable case readiness; UI polling itself had an unbounded EDT wait.
+
+Fix / next action: Require sized first-frame readiness, actual opening skip or natural handoff, advancing hunter frames and GPU readback. Drive production WASD handlers over a collision-valid short van route, then the real X extraction/debrief/menu path in three successive cases. Bound EDT polling with one pending task. Preserve scoped captures and partial CSV evidence on failure.
+
+Evidence and verification: Enhanced GPU package compiles with Java 17. Separate self-contained Windows executable passes all-ten-map hidden OpenGL controls on RTX 5070, with exact packaged JAR hash. New lifecycle diagnostic still requires exact-source CI; the native hidden review does not exercise Swing input.
+
+Older-map obligation: Three publicly playable contract locations only. Short van movement and retreat do not certify interior routes, a successful investigation, installed multiplayer, physical player acceptance or A-G completion.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -173,6 +173,7 @@ jobs:
           test -s build/e2e/gpu/castle-headquarters.png
           test -s build/e2e/gpu/continuous-route.csv
           test -s build/e2e/gpu/continuous-route-summary.txt
+          test -s build/e2e/gpu/ui/case-cycles.csv
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -181,5 +182,6 @@ jobs:
             build/e2e/gpu/*.png
             build/e2e/gpu/*.csv
             build/e2e/gpu/*.txt
+            build/e2e/gpu/ui/**
             build/world-residency-review/**
           if-no-files-found: warn
