@@ -119,12 +119,36 @@ public final class PsxHorrorUi {
     }
     public static void styleTabs(JTabbedPane tabs){
         GameSfx.tabs(tabs);
-        tabs.setForeground(new Color(227,221,209));tabs.setBackground(new Color(31,35,43));
+        // A transparent JScrollPane/contract form exposes the underlying tab
+        // content area. Paint that area explicitly rather than allowing the
+        // platform LookAndFeel's pale selection background to show through.
+        Color interior=new Color(24,30,38);
+        Color edge=new Color(100,111,116);
+        tabs.setForeground(new Color(237,230,214));
+        tabs.setBackground(interior);
+        tabs.setOpaque(true);
         tabs.setUI(new BasicTabbedPaneUI(){
             @Override protected void paintTabBackground(Graphics g,int placement,int index,int x,int y,int w,int h,boolean selected){
                 paintPatch((Graphics2D)g,selected?"tab_selected":"tab_unselected",x,y,w,h,2);
             }
             @Override protected void paintTabBorder(Graphics g,int placement,int index,int x,int y,int w,int h,boolean selected){}
+            @Override protected void paintContentBorder(Graphics g,int placement,int selectedIndex){
+                int x=0,y=0,w=tabPane.getWidth(),h=tabPane.getHeight();
+                if(placement==JTabbedPane.TOP){
+                    int extent=calculateTabAreaHeight(placement,runCount,maxTabHeight);
+                    y+=extent;h-=extent;
+                }else if(placement==JTabbedPane.BOTTOM){
+                    h-=calculateTabAreaHeight(placement,runCount,maxTabHeight);
+                }else if(placement==JTabbedPane.LEFT){
+                    int extent=calculateTabAreaWidth(placement,runCount,maxTabWidth);
+                    x+=extent;w-=extent;
+                }else if(placement==JTabbedPane.RIGHT){
+                    w-=calculateTabAreaWidth(placement,runCount,maxTabWidth);
+                }
+                if(w<=0||h<=0)return;
+                g.setColor(interior);g.fillRect(x,y,w,h);
+                g.setColor(edge);g.drawRect(x,y,w-1,h-1);
+            }
             @Override protected void paintFocusIndicator(Graphics g,int placement,Rectangle[] rects,int index,
                     Rectangle iconRect,Rectangle textRect,boolean selected){
                 if(tabs.getSelectedIndex()==index&&tabs.isFocusOwner()){
