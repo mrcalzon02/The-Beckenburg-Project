@@ -149,6 +149,7 @@ public final class InvestigationGame {
             castle=new CastleHubPanel(profile,new CastleHubPanel.Actions(){
                 @Override public void begin(){InvestigationGame.this.begin();}
                 @Override public void network(){openLan();}
+                @Override public void multiplayerInventory(){openMultiplayerInventory();}
                 @Override public void spectral(){InvestigationGame.this.beginGhost();}
                 @Override public void menu(){showMenu();}
                 @Override public void campaign(){showCampaign();}
@@ -203,6 +204,10 @@ public final class InvestigationGame {
         showCard("menu");
     }
     private void openLan(){openNetwork(null);}
+    private void openMultiplayerInventory(){
+        openNetwork(null);
+        networkLobby.focusEquipmentInventory();
+    }
     private void showNetworkInCastle(){
         // The network lobby replaces the previous page inside the same game window.
         if(networkLobby!=null)page("network",networkLobby);

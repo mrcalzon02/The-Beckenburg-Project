@@ -55,8 +55,8 @@ public final class CastleHubMap {
         return !darkCircuits.contains(id);
     }
     public enum Station {
-        ARMORY_UV(5.2,4.5,"QUARTERMASTER / EQUIPMENT STORE"),
-        ARMORY_SALT(5.2,8.0,"QUARTERMASTER / SUPPLY STORE"),
+        ARMORY_UV(5.2,4.5,"QUARTERMASTER / CAMPAIGN EQUIPMENT"),
+        ARMORY_SALT(5.2,8.0,"QUARTERMASTER / CAMPAIGN SUPPLIES"),
         ROLE(23.0,6.0,"HUNTER WARDROBE / CHANGE ROLE"),
         CONTRACT(13.5,6.8,"CAMPAIGN CONTRACT BOARD"),
         EXPEDITION(13.5,16.6,"EXPEDITION VAN / START CASE"),

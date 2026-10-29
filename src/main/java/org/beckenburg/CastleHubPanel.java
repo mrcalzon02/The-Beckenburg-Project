@@ -10,6 +10,7 @@ import java.util.Set;
 public final class CastleHubPanel extends JPanel implements KeyListener,FocusListener {
     public interface Actions {
         void begin();void network();void spectral();void menu();void campaign();
+        default void multiplayerInventory(){network();}
         void cycleRole();void cycleWeather();String role();String weather();
     }
     private final CastleHubMap map=new CastleHubMap();
@@ -97,7 +98,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         overlay.setBorder(BorderFactory.createEmptyBorder(12,12,12,12));
         JPanel heading=new JPanel(new BorderLayout(8,0));
         heading.setOpaque(false);
-        JLabel title=new JLabel("CASTLE BECKENBURG   /   QUARTERMASTER");
+        JLabel title=new JLabel("CASTLE BECKENBURG   /   QUARTERMASTER / CAMPAIGN");
         title.setForeground(new Color(236,219,183));
         title.setFont(new Font(Font.MONOSPACED,Font.BOLD,17));
         heading.add(title,BorderLayout.CENTER);
@@ -180,12 +181,17 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             if(storeOpen)quartermasterClose.requestFocusInWindow();
         });
     }
+    /** Warehouse equipment counter accesses the host-owned multiplayer inventory, never the campaign purse. */
+    void openWarehouseInventory(){
+        if(storeOpen||orientation.active())return;
+        down.clear();look.release();actions.multiplayerInventory();
+    }
     private void use(CastleHubMap.Station station){
         if(station==CastleHubMap.Station.ARCHIVE){archive.open();down.clear();look.release();noticeTicks=0;repaint();return;}
         if(station==null){
             if(!orientation.active()&&elevation<1.8&&
                 CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw)){
-                openQuartermaster();return;
+                openWarehouseInventory();return;
             }
             if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null){
                 boolean circuitOn=map.toggleCircuit(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw));
@@ -313,7 +319,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                     (map.doorOpen(atDoor.id())?"CLOSE ":"OPEN ")+
                     (atDoor.gate()?"COURTYARD PORTCULLIS":"CASTLE DOOR"):
                     atSwitch?"CASTLE LIGHT SWITCH":atWarehouse?
-                    "WAREHOUSE COUNTER / PURCHASE AND PREPARE":station.label;
+                    "WAREHOUSE / MULTIPLAYER INVENTORY":station.label;
                 int labelWidth=Math.min(w-24,Math.max(250,g.getFontMetrics().stringWidth(label)+50));
                 int left=(w-labelWidth)/2;
                 g.setColor(new Color(11,16,21,220));g.fillRoundRect(left,h-75,labelWidth,36,8,8);

@@ -61,11 +61,14 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
     private final CampaignLaunch campaignLaunch;
     private JPanel lobbyContents;
     private NetworkEquipmentPanel equipmentPage;
+    private final JTabbedPane pages=new JTabbedPane(JTabbedPane.TOP);
     private boolean campaignGuest;
     public record CampaignLaunch(ProfileStore profile,CampaignStory.Chapter chapter,int bots,boolean coop,CharacterVisuals.Hunter hunter){
         public CampaignLaunch(ProfileStore profile,CampaignStory.Chapter chapter,int bots){this(profile,chapter,bots,true);}
         public CampaignLaunch(ProfileStore profile,CampaignStory.Chapter chapter,int bots,boolean coop){this(profile,chapter,bots,coop,CharacterVisuals.Hunter.OBSERVER);}
     }
+    /** Open the exact multiplayer catalog used by the lobby; purchases still require host snapshots. */
+    void focusEquipmentInventory(){pages.setSelectedComponent(equipmentPage);}
     public LanLobbyPanel(){this(null,null,null);}
     public LanLobbyPanel(java.util.function.Consumer<JComponent> enterWorld,Runnable back,
             CampaignLaunch campaignLaunch){
@@ -174,7 +177,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         toolNote.setBorder(BorderFactory.createEmptyBorder(12,12,3,12));
         fieldPage.add(toolNote,BorderLayout.NORTH);
         fieldPage.add(new JScrollPane(toolColumns),BorderLayout.CENTER);
-        JTabbedPane pages=new JTabbedPane(JTabbedPane.TOP);
+        pages.setName("network.lobby.tabs");
         pages.addTab("Lobby & connection",PsxMenuScreen.scroll(lobbyPage));
         try{
             localNetwork=new hbnet.LocalProfile(java.nio.file.Path.of(System.getProperty("hbnet.profile",System.getProperty("user.home")+"/.beckenburg/network")));
