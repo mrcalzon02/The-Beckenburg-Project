@@ -204,6 +204,7 @@ public final class LanAudio implements AutoCloseable {
             case DOOR->3400; case EQUIPMENT->3000; case RITUAL->7300;
             case SIGNATURE->18000;
             case STEP,STEP_STONE,STEP_CARPET,STEP_WOOD->2100; case SWITCH,SELECT,UI_CLICK,UI_BACK->1250;
+            case UI_REJECT->3200;case PURCHASE->5500;
             case BREAKER,VAN_DOOR->6800; case PICKUP,BOOK->3900;
             case DEVICE_ON,DEVICE_OFF,SCANNER->4500;
             case CAMERA->2600; case WARD->9500; case POTION->5100;
@@ -249,6 +250,11 @@ public final class LanAudio implements AutoCloseable {
                 case VAN_DOOR->.38*Math.sin(2*Math.PI*(81+28*t)*t)+.23*noise*Math.sin(2*Math.PI*28*t);
                 case UI_CLICK->.30*Math.sin(2*Math.PI*890*t)*Math.exp(-t*48)+.22*noise*Math.exp(-t*95);
                 case UI_BACK->.25*Math.sin(2*Math.PI*(560-290*t)*t)*Math.exp(-t*34);
+                case UI_REJECT->.27*Math.sin(2*Math.PI*(340-220*t)*t)*Math.exp(-t*22)
+                    +.15*Math.sin(2*Math.PI*155*t)*Math.exp(-t*27);
+                case PURCHASE->.34*Math.sin(2*Math.PI*(550+260*t)*t)*Math.exp(-t*8)
+                    +.24*Math.sin(2*Math.PI*(825+180*t)*t)*Math.exp(-t*14)
+                    +.08*noise*Math.exp(-t*38);
                 case PICKUP->.3*Math.sin(2*Math.PI*(390+200*t)*t)*Math.exp(-t*20)+.2*noise*Math.exp(-t*35);
                 case SELECT->.23*Math.sin(2*Math.PI*540*t)*Math.exp(-t*44)+.17*Math.sin(2*Math.PI*730*t)*Math.exp(-t*37);
                 case DEVICE_ON->.42*Math.sin(2*Math.PI*(280+250*t)*t)*Math.exp(-t*10)+.2*noise*Math.exp(-t*22);
