@@ -24,6 +24,10 @@ public final class LanAudio implements AutoCloseable {
     private record Playback(LanSound.CueEvent cue,byte[] pcm,int source,int generation) { Playback(LanSound.CueEvent cue,byte[] pcm){this(cue,pcm,-1,0);} }
     private static final int BLOCK_FRAMES=512,MAX_VOICES=12;
     private final BlockingQueue<Playback> queue=new ArrayBlockingQueue<>(32);
+    @FunctionalInterface interface OutputFactory {
+        SourceDataLine create() throws LineUnavailableException;
+    }
+    private final OutputFactory outputFactory;
     private final Thread worker;
     private volatile boolean closed;
     /** A generation change cancels a source even if off/on occurs between two mixer blocks. */
@@ -57,6 +61,12 @@ public final class LanAudio implements AutoCloseable {
         Voice(byte[] pcm,int priority,int source,int generation){this.pcm=pcm;this.priority=priority;this.source=source;this.generation=generation;}
     }
     public LanAudio(){
+        this(()->(SourceDataLine)AudioSystem.getLine(
+            new DataLine.Info(SourceDataLine.class,FORMAT)));
+    }
+    /** Test-only line provider exercises actual worker recovery without sound hardware. */
+    LanAudio(OutputFactory provider){
+        outputFactory=java.util.Objects.requireNonNull(provider);
         worker=new Thread(this::run,"beckenburg-positional-audio");
         worker.setDaemon(true);worker.start();
     }
@@ -190,8 +200,7 @@ public final class LanAudio implements AutoCloseable {
                     pruneFixtures(voices,fixtureGate);
                     if(voices.isEmpty())continue;
                     if(line==null){
-                        line=(SourceDataLine)AudioSystem.getLine(
-                            new DataLine.Info(SourceDataLine.class,FORMAT));
+                        line=outputFactory.create();
                         line.open(FORMAT,4096);
                         line.start();
                     }
