@@ -69,8 +69,10 @@ public final class InteractionFocus {
         }
         for(var p:map.level().portals())if(p.door()){
             double angle=p.alongX()?0:Math.PI/2,hx=p.x()+(p.alongX()?p.width()/2:0),hz=p.z()+(p.alongX()?0:p.width()/2),leaf=p.width()>1.5?p.width()/2:p.width();
-            double t=hit("door_1_loose",r,hx,p.y(),hz,angle+(map.doorOpen(p.id())?Math.PI/2:0),leaf,2.28/2.1,1,0,0);
-            if(p.width()>1.5)t=Math.min(t,hit("door_1_loose",r,p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),angle+Math.PI-(map.doorOpen(p.id())?Math.PI/2:0),leaf,2.28/2.1,1,0,0));
+            // Interaction ray follows the visible moving door, not its final pose.
+            double swing=map.doorOpenFraction(p.id())*Math.PI/2;
+            double t=hit("door_1_loose",r,hx,p.y(),hz,angle+swing,leaf,2.28/2.1,1,0,0);
+            if(p.width()>1.5)t=Math.min(t,hit("door_1_loose",r,p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),angle+Math.PI-swing,leaf,2.28/2.1,1,0,0));
             candidate(targets,Kind.DOOR,""+p.id(),map.doorOpen(p.id())?"Close door":"Open door",t);
         }else if(p.kind().equals("window")){
             double angle=(p.alongX()?0:Math.PI/2)+(map.windowOpen(p.id())?.95:0),x=p.x()-(p.alongX()?p.width()/2:0),z=p.z()-(p.alongX()?0:p.width()/2);
