@@ -54,12 +54,17 @@ public final class VanLiveScreensTest {
         VanLiveScreens.suspendCamera();
         check(VanLiveScreens.snapshot(VanLiveScreens.Panel.CAMERA)==null,
             "An empty van must not retain an accessible camera image");
-        check(GlbProps.dynamicTextureRevision(camera)==before+1,
-            "Camera suspension must not upload a new frame or dirty GPU textures");
+        check(GlbProps.dynamicTextureRevision(camera)==before+2,
+            "Camera suspension must blank the stale GPU frame exactly once");
+        check(GlbProps.sample(camera,.5,.5)==0,
+            "The empty van must never expose previously captured camera pixels");
+        VanLiveScreens.suspendCamera();
+        check(GlbProps.dynamicTextureRevision(camera)==before+2,
+            "Repeated suspension must not generate any more texture uploads");
         int pixel=GlbProps.sample(camera,.5,.5);
         check(pixel!=0,"live camera face must sample actual non-black pixels");
         VanLiveScreens.camera(null,"NO POWERED CAMERA");
-        check(GlbProps.dynamicTextureRevision(camera)==before+2,
+        check(GlbProps.dynamicTextureRevision(camera)==before+3,
             "camera disconnect must clear the last displayed feed");
         check(VanLiveScreens.material(VanLiveScreens.Panel.MAP)==GlbProps.VAN_MAP_MATERIAL,
             "map must reuse the existing host-authoritative tactical texture");

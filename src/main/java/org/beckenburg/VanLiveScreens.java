@@ -25,9 +25,15 @@ public final class VanLiveScreens {
         new java.util.EnumMap<>(Panel.class);
     /** Identical pixel source for the physical face and its expanded station view. */
     public static synchronized BufferedImage snapshot(Panel panel){return LATEST.get(panel);}
-    /** A vacated receiver does not retain a viewable image or upload a new GPU
-     * texture. On re-entry the local observer publishes a standby face first. */
-    public static synchronized void suspendCamera(){LATEST.remove(Panel.CAMERA);}
+    /** On departure, invalidate the live feed and blank the last GPU texture
+     * exactly once. No scene is rendered, photographed or recorded without
+     * an in-van viewer, and the screen cannot leak a stale outside-visible frame. */
+    public static synchronized void suspendCamera(){
+        if(LATEST.remove(Panel.CAMERA)==null)return;
+        Integer material=MATERIALS.get(Panel.CAMERA);
+        if(material!=null)GlbProps.updateLiveSurface(material,
+            new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB));
+    }
     public static void drawExpanded(Graphics2D g,Panel panel,int viewportWidth,int viewportHeight){
         BufferedImage image=snapshot(panel);
         int width=Math.min(viewportWidth-40,Math.max(320,viewportWidth*3/4));
