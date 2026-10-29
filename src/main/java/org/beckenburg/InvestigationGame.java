@@ -88,13 +88,13 @@ public final class InvestigationGame {
                     cards.add(menu,"menu");
                     window.setContentPane(cards);
                     window.revalidate();window.repaint();
-                    showMenu();
+                    showCastle();
                     BeckenburgDiagnostics.ready();
                     if(!warnings.isBlank())GameDialogs.showMessageDialog(window,
                         warnings+"Existing files were preserved.", "Local startup warnings",GameDialogs.WARNING_MESSAGE);
                     BeckenburgDiagnostics.phase("Checking update channel");
                     BeckenburgUpdatesUI.checkOnStartup(window);
-                    BeckenburgDiagnostics.phase("Menu available");
+                    BeckenburgDiagnostics.phase("Castle home available");
                 }catch(Throwable ex){
                     startupFailure(ex);
                 }
@@ -151,7 +151,11 @@ public final class InvestigationGame {
                 @Override public void network(){openLan();}
                 @Override public void multiplayerInventory(){openMultiplayerInventory();}
                 @Override public void spectral(){InvestigationGame.this.beginGhost();}
-                @Override public void menu(){showMenu();}
+                @Override public void menu(){castle.openPauseMenu();}
+                @Override public void options(){openOptions();}
+                @Override public void extras(){showExtras();}
+                @Override public void exit(){confirmQuit();}
+                @Override public void exitFromGate(){shutdown();}
                 @Override public void campaign(){showCampaign();}
                 @Override public void cycleRole(){rolePicker.setSelectedIndex((rolePicker.getSelectedIndex()+1)%rolePicker.getItemCount());}
                 @Override public void cycleWeather(){conditionsPicker.setSelectedIndex((conditionsPicker.getSelectedIndex()+1)%conditionsPicker.getItemCount());}
@@ -187,12 +191,15 @@ public final class InvestigationGame {
                         CharacterVisuals.Hunter.valueOf(((InvestigationSession.Role)rolePicker.getSelectedItem()).name())));
                 }catch(IOException failed){showControlsError("Campaign dispatch",failed);}
             }
-            @Override public void menu(){showMenu();}
+            @Override public void menu(){showCastle();}
             @Override public void castle(){showCastle();}
             @Override public void tutorial(){showCastleOrientation();}
         });
-        // Show one full-window menu surface; do not stack a menu over Castle HUD.
-        page("campaign",campaign);
+        // The contract board is a workstation in the retained Castle scene.
+        if(castle!=null){
+            showCastle();
+            castle.openService("CAMPAIGN CONTRACT BOARD",campaign,this::showCastle);
+        }else page("campaign",campaign);
         SwingUtilities.invokeLater(campaign::requestFocusInWindow);
     }
     private void showCastleOrientation(){
@@ -209,8 +216,11 @@ public final class InvestigationGame {
         networkLobby.focusEquipmentInventory();
     }
     private void showNetworkInCastle(){
-        // The network lobby replaces the previous page inside the same game window.
-        if(networkLobby!=null)page("network",networkLobby);
+        if(networkLobby==null)return;
+        if(castle!=null&&"castle".equals(currentScreen)){
+            castle.openService("MULTIPLAYER / HOST OR JOIN",networkLobby,this::showCastle);
+            SwingUtilities.invokeLater(networkLobby::requestFocusInWindow);
+        }else page("network",networkLobby);
     }
     private void openNetwork(LanLobbyPanel.CampaignLaunch launch){
         final String returnScreen=currentScreen;
@@ -220,8 +230,7 @@ public final class InvestigationGame {
             else if(active instanceof JPanel panel)page("network.field",panel);
         },()->{
             if(launch!=null)showCampaign();
-            else if("castle".equals(returnScreen))showCastle();
-            else showMenu();
+            else showCastle();
         },launch);
         networkLobby.setName("network");showNetworkInCastle();
     }
@@ -238,8 +247,32 @@ public final class InvestigationGame {
         cards.revalidate();cards.repaint();
     }
     private void page(String name,JPanel page){
+        if(castle!=null)castle.closeService();
         for(Component child:cards.getComponents())if(name.equals(child.getName()))cards.remove(child);
         page.setName(name);cards.add(page,name);showCard(name);
+    }
+    /** Workstation menu pages remain inside Castle, with the Castle scene as their backdrop. */
+    private void castlePage(String name,JPanel page){
+        if(castle!=null&&"castle".equals(currentScreen)){
+            castle.openMenuPanel(name,page,this::showCastle);
+            SwingUtilities.invokeLater(page::requestFocusInWindow);
+        }else page(name,page);
+    }
+    private void returnFromMenu(String screen){
+        if("castle".equals(screen))showCastle();
+        else showCard(screen);
+    }
+    private void shutdown(){
+        if(networkLobby!=null){networkLobby.close();networkLobby=null;}
+        if(game!=null){game.close();game=null;}
+        if(ghostPractice!=null){ghostPractice.close();ghostPractice=null;}
+        if(castle!=null){castle.close();castle=null;}
+        window.dispose();
+    }
+    private void confirmQuit(){
+        if(GameDialogs.showConfirmDialog(window,"Leave Castle Beckenburg and exit the game?",
+                "Exit Game",GameDialogs.YES_NO_OPTION,GameDialogs.QUESTION_MESSAGE)
+                ==GameDialogs.YES_OPTION)shutdown();
     }
     private JButton nav(String name,String label,Runnable action){
         JButton button=button(label);button.setName(name);button.addActionListener(e->action.run());return button;
@@ -290,8 +323,8 @@ public final class InvestigationGame {
         list.add(editorExtrasRoute(button("DEVELOPER LEVEL EDITOR"),()->openDeveloperEditor(window)));
         JTextArea credits=new JTextArea("PSX Horror UI Free by heyheythere / CC BY 4.0\nhttps://heyheythere.itch.io/psx-horror-ui-free");
         credits.setEditable(false);list.add(credits);
-        page("extras",PsxMenuScreen.screen("extras","EXTRAS & SUPPORT","Game tools and credits",
-            PsxMenuScreen.scroll(list),nav("extras.back","BACK",this::showMenu)));
+        castlePage("extras",PsxMenuScreen.screen("extras","EXTRAS & SUPPORT","Game tools and credits",
+            PsxMenuScreen.scroll(list),nav("extras.back","BACK",this::showCastle)));
     }
     /** F11 / Alt+Enter: guaranteed windowed escape even after a failed fullscreen choice. */
     private void toggleFullscreen(){
@@ -362,11 +395,11 @@ public final class InvestigationGame {
         scroll.setPreferredSize(new Dimension(610,Math.min(540,grid.getPreferredSize().height+18)));
         JLabel status=PsxMenuScreen.label("Changes are applied only when you choose APPLY.");
         JButton apply=button("APPLY OPTIONS"),back=button("BACK");
-        back.addActionListener(e->showCard(returnScreen));
+        back.addActionListener(e->returnFromMenu(returnScreen));
         JPanel content=transparentPanel(new BorderLayout(0,8));
         content.add(PsxMenuScreen.scroll(grid),BorderLayout.CENTER);content.add(status,BorderLayout.SOUTH);
         optionsScreen=PsxMenuScreen.screen("options","OPTIONS","Display / sound / accessibility",content,apply,back);
-        page("options",optionsScreen);
+        castlePage("options",optionsScreen);
         apply.addActionListener(event->{
         GraphicsOptions previous=GraphicsOptions.current();
         GraphicsOptions chosen=new GraphicsOptions(
@@ -393,11 +426,11 @@ public final class InvestigationGame {
             previous.applyWindow(window);status.setText("Display change failed: "+failure.getMessage());return;
         }
         JButton keep=button("KEEP DISPLAY"),revert=button("REVERT");
-        Runnable restore=()->{displayRevert.stop();previous.applyWindow(window);showCard("options");};
+        Runnable restore=()->{displayRevert.stop();previous.applyWindow(window);castlePage("options",optionsScreen);};
         displayRevert=new javax.swing.Timer(15000,e->restore.run());displayRevert.setRepeats(false);
-        keep.addActionListener(e->{displayRevert.stop();save.run();showCard("options");});
+        keep.addActionListener(e->{displayRevert.stop();save.run();castlePage("options",optionsScreen);});
         revert.addActionListener(e->restore.run());
-        page("display.confirm",PsxMenuScreen.screen("display.confirm","KEEP THIS DISPLAY?",
+        castlePage("display.confirm",PsxMenuScreen.screen("display.confirm","KEEP THIS DISPLAY?",
             "Reverts automatically after 15 seconds",PsxMenuScreen.label("Choose KEEP DISPLAY to save this mode."),keep,revert));
         displayRevert.start();
         });
@@ -419,8 +452,9 @@ public final class InvestigationGame {
         help.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
         help.setMargin(new Insets(12,12,12,12));
         String previous=currentScreen;
-        page("controls",PsxMenuScreen.screen("controls","FIELD CONTROLS","Keyboard and mouse",
-            PsxMenuScreen.scroll(help),nav("controls.back","BACK",()->showCard(previous))));
+        castlePage("controls",PsxMenuScreen.screen("controls","FIELD CONTROLS","Keyboard and mouse",
+            PsxMenuScreen.scroll(help),nav("controls.back","BACK",()->
+                {if("castle".equals(previous))showExtras();else showCard(previous);})));
     }
     private JButton button(String s){
         JButton b=PsxHorrorUi.button(s);
@@ -517,13 +551,14 @@ public final class InvestigationGame {
         JButton deploy=nav("solo.deploy","START ROUND",()->{
             locationPicker.setSelectedItem(site.getSelectedItem());begin(false,false,0,null);
         });
-        page("solo",PsxMenuScreen.screen("solo","SOLO CONTRACT LOBBY",
+        castlePage("solo",PsxMenuScreen.screen("solo","SOLO CONTRACT LOBBY",
             "Castle equipment / free-play case / campaign story advances from Campaign",tabs,
-            nav("solo.back","BACK",this::showMenu),deploy));
+            nav("solo.back","BACK",this::showCastle),deploy));
     }
     private void begin(boolean campaignMode,boolean withAssistant,long seed,
             CampaignStory.Chapter chapter){
         BeckenburgDiagnostics.record("CASE REQUEST campaign="+campaignMode+" assistant="+withAssistant+" seed="+seed);
+        if(castle!=null)castle.closeService();
         // Close the old case before starting the next trace: close() disarms
         // its watchdog, and must never disarm the newly requested case.
         if(game!=null){game.close();cards.remove(game);game=null;}
@@ -562,7 +597,7 @@ public final class InvestigationGame {
         if(game!=null){game.close();cards.remove(game);game=null;}
         if(ghostPractice!=null){ghostPractice.close();cards.remove(ghostPractice);ghostPractice=null;}
         refreshAccount();
-        showMenu();
+        showCastle();
     }
     private final class GamePanel extends JPanel implements KeyListener,FocusListener {
         private final Set<Integer> down=new HashSet<>();
