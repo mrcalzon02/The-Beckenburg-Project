@@ -1186,7 +1186,11 @@ public final class InvestigationGame {
                 case WINDOW -> map.toggleWindow(Integer.parseInt(target.id()));
                 case VAN_DOOR -> {if(map.van().toggleCargoDoor()&&!map.traversable(scene.x,feetY(),scene.z)){map.van().toggleCargoDoor();throw new IllegalArgumentException("Van doorway occupied.");}}
             }
-            GameSfx.play(target.kind()==InteractionFocus.Kind.CLUTTER||target.kind()==InteractionFocus.Kind.RACK?LanSound.Cue.PICKUP:LanSound.Cue.SWITCH);
+            GameSfx.play(switch(target.kind()){
+                case CLUTTER,RACK -> LanSound.Cue.PICKUP;
+                case DOOR,VAN_DOOR,WINDOW -> LanSound.Cue.DOOR;
+                default -> LanSound.Cue.SWITCH;
+            });
             showVanNotice(target.kind()==InteractionFocus.Kind.GENERATOR?(lights.sourceRunning()?"Generator running":"Generator stopped"):target.name());
             }catch(IllegalArgumentException|IOException ex){showVanNotice(ex.getMessage());}
         }
