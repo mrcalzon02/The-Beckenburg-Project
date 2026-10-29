@@ -216,7 +216,8 @@ public final class WeatherSoundscape implements AutoCloseable {
                     offset++;
                 }
                 thunder.removeIf(x->x.cursor()>=x.data().length);
-                line.write(block,0,block.length);
+                if(line.write(block,0,block.length)<=0)
+                    throw new IllegalStateException("Weather output accepted no audio frames");
                 if(unavailable){
                     System.err.println("Beckenburg weather audio output restored");
                     unavailable=false;
