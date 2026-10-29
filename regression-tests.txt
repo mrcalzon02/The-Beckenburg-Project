@@ -235,6 +235,7 @@ MergedMaterialMetadataTest
 BlackpineLightingTest
 BlackpineDeckDepthTest
 OpticalEvidenceTest
+HandheldSurfaceOcclusionTest
 LanOpticalEvidenceNetworkTest
 HollowCreekFacilitiesAssetTest
 HollowCreekPavilionAssetTest
@@ -279,3 +280,16 @@ CommonNetworkTest
 StreamSafePresentationTest
 DedicatedLifecycleTest
 SecureLanIntegrationTest
+
+# Stationary world residency and exact shared image treatment
+PsxQuantizationParityTest
+PreparedVertexLightingTest
+CastleShelfLabelsTest
+WorldResidencyTest
+DeveloperEditorLaunchTest
+EmissionCacheBudgetTest
+DynamicTextureRevisionTest
+DynamicGeometryRetentionTest
+GpuReadbackTest
+PreparedLightWriteTest
+PreparedLightBatchParityTest

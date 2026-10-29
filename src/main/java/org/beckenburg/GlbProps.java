@@ -100,11 +100,22 @@ public final class GlbProps {
     private static int vanCrtMaterial=-1;
     private static BufferedImage vanCrtImage=blankCrt();
     private static BufferedImage vanMapImage=blankCrt();
+    private static long vanMapRevision,vanCrtRevision;
+    /** Dense source texture IDs exclude the special live-map sentinel. */
+    public static synchronized boolean registeredTexture(int material){return material>=TEXTURE_BASE&&material-TEXTURE_BASE<textures.size();}
+    /** Static materials return -1. Dynamic revisions change only on actual
+     * source pixel updates, independent of geometry and draw-call count. */
+    public static synchronized long dynamicTextureRevision(int material){
+        if(material==VAN_MAP_MATERIAL)return vanMapRevision;
+        if(material==vanCrtMaterial&&material>=TEXTURE_BASE)return vanCrtRevision;
+        Integer phase=televisionPhases.get(material);
+        return phase==null?(televisionMaterials.containsValue(material)?0:-1):Integer.toUnsignedLong(phase)+1;
+    }
     public static synchronized void updateVanMap(BufferedImage image){
         if(image==null||image.getWidth()<256||image.getHeight()<256
                 ||image.getWidth()>1024||image.getHeight()>1024)
             throw new IllegalArgumentException("invalid map monitor texture");
-        vanMapImage=image;
+        vanMapImage=image;vanMapRevision++;
     }
     private static BufferedImage blankCrt(){
         BufferedImage image=new BufferedImage(256,256,BufferedImage.TYPE_INT_RGB);
@@ -138,7 +149,7 @@ public final class GlbProps {
             g.setColor(new Color(83,135,122));
             g.drawString("TICK "+telemetry.tick(),15,244);
         }finally{g.dispose();}
-        vanCrtImage=image;
+        vanCrtImage=image;vanCrtRevision++;
     }
 
     public static synchronized Model model(String name){

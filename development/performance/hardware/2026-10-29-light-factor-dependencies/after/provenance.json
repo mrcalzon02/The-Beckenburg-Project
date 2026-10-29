@@ -1,0 +1,255 @@
+{
+  "source_label": "factor-dependencies-candidate",
+  "working_checkout_head": "1bffc8d94a266797bba700045f0e338c574adb8e",
+  "jar": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\gpu-client\\target\\BeckenburgGPU.jar",
+  "jar_sha256": "EBDE4C0734F00891410A70DA1583676EFDA8D2BAC90767F673809EC6B8E5929C",
+  "overlay_classes": [
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting.class",
+      "sha256": "1252969E8C1ADCC97540BC6D09350CD10B7E272758D9E6B575932893233F2F58"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$1.class",
+      "sha256": "0FA6A035AA49CD49070EAA2133C90F28D1E7D5D38C13F65DB9C3EDE785F6714F"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$2.class",
+      "sha256": "F0CDB5E889A5E466A447F692903B08274890E4EB07381A24C62AC8C241A18166"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$Cell.class",
+      "sha256": "80410B678CFE8F7D8CD39446AC282170D2CEFCF4B75BC39A3A208E49D8FAF27A"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$DistantCell.class",
+      "sha256": "766C7CFCA61D54F563A855108987AE4A7C3B3846FF6202802BB0DF635F7B7934"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$DistantProbe.class",
+      "sha256": "D239DD6957DD715AF7269E5543CBBFFCCF920E46A62E7EC698132B078ABD3C5B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$FrameStats.class",
+      "sha256": "AEF2C1F007C386FBFDA636650B8587C5456F326F377433864C24A62D89852970"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$Key.class",
+      "sha256": "4978780012FDF71CBB62313588EE7F26B59FCC816C11AD8229AA199B3FF28D0F"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$Kind.class",
+      "sha256": "F4706E127B4CE55B38D8D68ED8FB3E2E29BCDE33D65122535787A0BE65C9162B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$Lit.class",
+      "sha256": "6766D1ED74461AD327B8109FCFF6F4E2AEC33800D698CDDCE9E523C0B873EB74"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$NormalKey.class",
+      "sha256": "741B0A6160442DDE841BC2EB6DD6990FE55CF675B8FE6FC4AF16CE443E1D5FC2"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$NormalShadow.class",
+      "sha256": "724E9D7AC019FAD847E40FA08FB4752F921D64F033A69952FA4564C487C4B88B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$Probe.class",
+      "sha256": "C801E9EEA9A51369963A8B8F0B5109427F90CB72E5206629A289EE14EC85409D"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$ProbeDependencies.class",
+      "sha256": "ABCB970F1DF60259761E7FB15437EBA03071EEC811DCD514F8980954D0777424"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$RGB.class",
+      "sha256": "1D864D93134E322972DBD645D1D8F93596B8EDB9B0215FC2AF07F0ED5BEE9490"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$Shadow.class",
+      "sha256": "49285600D70433D3BA95BC08056E8333E15F30807A1BB3AF57482BB707861548"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$Source.class",
+      "sha256": "F6BF3CD41251D89F0DC21D27A32E3BDD906FC7ED908A183318E30DA42C39AE1F"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$StationaryShadows.class",
+      "sha256": "C2FCD6CA555F381C6D57F320E3E76CC72829DDCDF0DA7118BA222CF1583AFA94"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$VertexProbe.class",
+      "sha256": "07E07A4320BDDB84200E36DFE451392E84479F51B0F5891FDE65D540B58FC456"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\FixtureLighting$Weighted.class",
+      "sha256": "BD827BF7B9DD737F29F3BC7174239EF05481A90F7FE3AC4BC33BDE95B53EA99F"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer.class",
+      "sha256": "B299585F3C32E9805F30CDA6D9DD460F5F4FCD8997B8F51F4EA98C2EA111161B"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$1.class",
+      "sha256": "A1646967E9E505A0E069B844DE2182F23FB88DE7AB36C04BBF80106B4DF50BEA"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$1Cell.class",
+      "sha256": "48930114D463B148C2CF1A01CE073E9BC031D8AF8EC85DAA7FAD7DBCFFC9E822"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$2.class",
+      "sha256": "80408422A614E3200803CEC34879B138D92E548348114C0218224F88C5D7F7C4"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$3.class",
+      "sha256": "7B72256B45BD758859DE5C6368E9573F114E78BB131A00A67ABDB631E1EABACD"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$Apparition.class",
+      "sha256": "220DD123ACF4ABFF22A91C608A1FAE0659E4D6668D73E29367649026F09E2FA6"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$AuxiliaryWorld.class",
+      "sha256": "993F8DE9A3B296F5DF8B961E1CC537F5789030BA02555CA9F95309A84C05F498"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$CastleDoorKey.class",
+      "sha256": "CB587D2A326FE4D9F360E7213347826C659EBF3299F0365176402FD7BCD9B6BF"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$CastleLampKey.class",
+      "sha256": "0182422CD1EAE0308446E767177053646531D8852ED12E92CF7604BEEEEAF828"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$DotsReceivers.class",
+      "sha256": "404FB0B20CF3642BC7EEB33896E28ED35F4BEC30BBA6DB9F7291C9F392784D84"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$DynamicGeometryEntry.class",
+      "sha256": "57CD9A69EC2CEDF15028EBFDA15E9DB9F90907BC38500B0D5C5166C1154255AE"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$DynamicGeometryKey.class",
+      "sha256": "193D2EDA8B8C983DC4C38CF29A8A7EB5378544B316196363BE12342EFE971B40"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$DynamicGeometryStats.class",
+      "sha256": "36A2A8A72E85B44A883059D9766ABE22464BF5A829D798BDC6B55E9432F25C1A"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$Face.class",
+      "sha256": "5AACF14EBD9E941B6E1F0C88D8F7F53B9C3AD20488BEE297DC112FF05857A47C"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$FixtureMeshPose.class",
+      "sha256": "D866A81573D222C228562CE2AAAD32F34A43C3A9CC016489181B65A16BF22CEF"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$FrameDiagnostics.class",
+      "sha256": "F674CDCE00BB001FFE5F112F3E62C2262C3FD06B3D2CF6F0898EDCC0F28804E7"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$GpuFloats.class",
+      "sha256": "9E5344B734769CEC5C3A4369B52B9BC649FCA5D6B01D80650E6F84704473C38F"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$IncenseSmoke.class",
+      "sha256": "2C9F55DA68858821F8B4179EFCE16E43F26A95E16365DD4104171109150EBBF0"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$InstanceStats.class",
+      "sha256": "11575C5355313EFAC39E0B00AEB0184870DDB70B3C51601B8BCE5A19BCE25BBF"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$Nameplate.class",
+      "sha256": "60E82F107FA596EF8D5DAEC23B82D3FF06D6CA3F3A060822839A3BA31B31A668"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$Point.class",
+      "sha256": "004CEE160434A4FDE0C2020062C326F158B8B244F1142BA478EF4FF34E97A362"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$PortalGeometryKey.class",
+      "sha256": "E5952034B3EDE9D393FA9FDB87CA7559924C4E182E7FA8F72C7D7597463F88F3"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$PreparedFaces.class",
+      "sha256": "DB0A7902F9120971B15A26BC74A474A8A8FA56F8FDCD4D575E9CADA20406447D"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$PreparedSceneryStats.class",
+      "sha256": "DACC2693837C3A775948D0C6BCAD7C54DDB26AD1B11E289F02ED89CD60CD62D1"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$RemoteBody.class",
+      "sha256": "7A3BA1C9740651047F8C699895684AD960F4680CC062DC8647C489B6EF611B0E"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$ResidentShell.class",
+      "sha256": "C3D2368A37F7B9D140BD96BFA3FF48C288E24CE50A2D60B62B9BE113E2F4C4BA"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$ResidentWorldChunk.class",
+      "sha256": "0D7682A0709D535222081C403E5F8ECF906111A036D50D7AA3B5DCAB0B02B06D"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$ShellChunk.class",
+      "sha256": "AC9E0DB987B5C09DD37A2B217A17658ADA939D882F64232E3037845984D32843"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$ShellChunkStats.class",
+      "sha256": "A95FF44FB93AB439051A6BB310A2A6BD773A8D53EA046BE6C9D861C3647A035E"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$ShellGpuKey.class",
+      "sha256": "6E170FD5AB1770A0298815E0BA25D060F8A1F9A3D7AA185320800F0E0FA2CDB5"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$ShellResidentStats.class",
+      "sha256": "A1BC0AA26C4F2049C866A572AAAC64603A5FB060566C72BBEA6A42A4CAEFF2B0"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$SocketGeometryKey.class",
+      "sha256": "A6BAEF4F86BA4459618CCF37FF525A3B6B036209F9176399F08D3B424228E757"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$StableGpuCacheStats.class",
+      "sha256": "DFB4FC81A6CD6EED542C8B5EDA5488C1F83C88F0816922829A876F7FA6426B42"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$StableGpuEntry.class",
+      "sha256": "595F53B98F1D72534D4687F75CD9D6F833785D22ADCEE63E2D6AEB19DF71D167"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$Vertex.class",
+      "sha256": "5BDFC4B31ED7CFA33F5D889453F18B6552BD7C4AC729EC5AB46B532591F19BAE"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$WaterView.class",
+      "sha256": "303A5486B39B43A19EDCAD887D2AB3AAD24AB43CE54ADD382CD4A677B67D604C"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$WorldMark.class",
+      "sha256": "28D7DB95F058831B2E7F8041E663CC77F00B86C5F49A22019284DB59680FC161"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$WorldResidentStats.class",
+      "sha256": "DA4219B17EDA65F51DA69473A4C06D63AF4ED7D1CC0127583F813E2A9187986A"
+    },
+    {
+      "file": "C:\\Users\\Admin\\Documents\\Codex\\beckenburg-performance-followup\\build\\dependency-candidate-classes\\org\\beckenburg\\SceneRenderer$WorldVertexLight.class",
+      "sha256": "08178D748D02A375EFFEA3483A1DC805A014F4FB3B5DD6A93AEFF9298DFF410C"
+    }
+  ],
+  "sites": [
+    "CASTLE"
+  ],
+  "runs": 3,
+  "samples": 240,
+  "warmup": 90,
+  "width": 1280,
+  "lights": true,
+  "freeze": false,
+  "timezone": "Alaskan Standard Time",
+  "note": "Scripted same-instance rendering route; not physical navigation or installed full-round acceptance"
+}

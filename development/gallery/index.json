@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 1025,
+  "count": 1164,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -10444,6 +10444,1396 @@
       "height": 360,
       "bytes": 268294,
       "sha256": "4b96fd8958c59a00b31e8a1b026d72abceea12dcee75cf3530ee9cd8f7d59317"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-after-courtyard.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-after-courtyard.png",
+      "title": "Castle after courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 191937,
+      "sha256": "811d1d97660e186a82605195c19f0006b5e493a54d63b2dcd49270e7d5010f2f"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-after-store.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-after-store.png",
+      "title": "Castle after store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 178280,
+      "sha256": "a14747ecf48ea32e7d11db6e5f074dd74d41c6f1ac20f60255c09285554bce9a"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-before-courtyard.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-before-courtyard.png",
+      "title": "Castle before courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 193127,
+      "sha256": "da4cb61d3e06ff5c8ed25e4ffad6ccf133bdd8e172873cbbd4022d7e7dff033e"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-final-courtyard-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-final-courtyard-640.png",
+      "title": "Castle final courtyard 640",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 192486,
+      "sha256": "96819c1fe3be393740912407494de8bb630bc80e53451600852ecd53be062d85"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-final-store-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-final-store-640.png",
+      "title": "Castle final store 640",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 186109,
+      "sha256": "2a025c0f3792e7d1ad1670f0c1d5928b718cfa37067975730d372d6553c2f926"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-i.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-i.png",
+      "title": "Castle readable label tier i",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 287565,
+      "sha256": "714927d411e1ff2f867e604ad572a2a59d2ed9c872f3deae7bf0958183b17371"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-ii.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-ii.png",
+      "title": "Castle readable label tier ii",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 284076,
+      "sha256": "1ef3ee829c9b37f10fa0571dead383c91fd9c8ecda9bd39fff5a689e4d7f103b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-iii.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/castle-readable-label-tier-iii.png",
+      "title": "Castle readable label tier iii",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 289080,
+      "sha256": "0a5d32219e16cadab70aea030a69bbb58e5867f55560ce3242947a0a1c3af343"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/hollow_creek-corrected-gpu.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/hollow_creek-corrected-gpu.png",
+      "title": "Hollow creek corrected gpu",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 144703,
+      "sha256": "b1ad583363ce0743d75156913a936029bdfe5840d5443df6da2d9dcc288dcbee"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/house-after-room.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/house-after-room.png",
+      "title": "House after room",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 163068,
+      "sha256": "5562d99c7f611a86a0a05b8e2b26ee1d74516c7e62d4f6cbc244d88c307fa1cb"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/house-corrected-gpu.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/house-corrected-gpu.png",
+      "title": "House corrected gpu",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 160635,
+      "sha256": "badb7764289a45033260b837c3018964538585431bce75b64eaa61840b08bb91"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/house-final-room-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/house-final-room-640.png",
+      "title": "House final room 640",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 163068,
+      "sha256": "5562d99c7f611a86a0a05b8e2b26ee1d74516c7e62d4f6cbc244d88c307fa1cb"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/native-after-view.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/native-after-view.png",
+      "title": "Native after view",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 141923,
+      "sha256": "6765e49fca0818d1817f4a992b1553675cc076501c6a6b056c98b46a14c45817"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/native-hollow-creek-final-reference-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/native-hollow-creek-final-reference-640.png",
+      "title": "Native hollow creek final reference 640",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 141923,
+      "sha256": "6765e49fca0818d1817f4a992b1553675cc076501c6a6b056c98b46a14c45817"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/school-after-room.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/school-after-room.png",
+      "title": "School after room",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 3286,
+      "sha256": "028e5ea0b880d4a6f956efa6ba1e23f8a50baec8f8bb6e948054bc05bcb5c9a5"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/school-corrected-gpu.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/school-corrected-gpu.png",
+      "title": "School corrected gpu",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 86974,
+      "sha256": "b46bea06a6c2ee23b1778e18acf0f5845457fd798c9b0aa9e116620c385de47e"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-28-castle-regression/captures/school-final-room-640.png",
+      "url": "development/performance/hardware/2026-10-28-castle-regression/captures/school-final-room-640.png",
+      "title": "School final room 640",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 86632,
+      "sha256": "9bcdcd22daca4eb38d46bde43c24d1f84ef5df3f607eeab8fe623827ef4ff71b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/academy.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/academy.png",
+      "title": "Academy",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 253602,
+      "sha256": "29b387430e6147b20358cf5eded1dcc9559a6a7789ee4c33a904adf6f859aae5"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/asylum.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/asylum.png",
+      "title": "Asylum",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 178114,
+      "sha256": "2176db7c6751b0b00a87f3232efa6305af5b91e355c4a71360947e08e3888c99"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/castle-blackout.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/castle-blackout.png",
+      "title": "Castle blackout",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 91919,
+      "sha256": "bb37a008be9b30718ba035c6254d64e378c924a9597c8a30174f117824a9c64b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/castle-lit.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/castle-lit.png",
+      "title": "Castle lit",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 325616,
+      "sha256": "5f818082880c0ed9be7f805e6508d634e61212f44f5045022f1952a5fd24be62"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/church.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/church.png",
+      "title": "Church",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 318002,
+      "sha256": "b7ed4cbe3331f65940a0e125e0ac0fece0e46b3bc0e482a394f9214e42a0c3a4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/college.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/college.png",
+      "title": "College",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158911,
+      "sha256": "4b49f69fd727d94b2003f74eebc39ce7098ffff0c44143f4c88a738a819efeb4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/farmhouse.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/farmhouse.png",
+      "title": "Farmhouse",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 272568,
+      "sha256": "687b5c00ae4c68e616843ec6314e3b3bd79aa84fb02bc70b175046ec7c126991"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/hollow_creek.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/hollow_creek.png",
+      "title": "Hollow creek",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 303092,
+      "sha256": "6ba1080b6a71146adea6586bd0e7d2845718141d900038ee252ea21dc7473077"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/house.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/house.png",
+      "title": "House",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 338322,
+      "sha256": "32b952491cf6782dcdc484b4d496bd608a994e89bb214d2278bae27d53c5ccef"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/mansion.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/mansion.png",
+      "title": "Mansion",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 267370,
+      "sha256": "37a5be394009a35ea7fb0f6d4723053f4457f15e72457cfd4e814b9a8fd392e1"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/prison.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/prison.png",
+      "title": "Prison",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 202285,
+      "sha256": "d33918df9db12d4db58ecbec3a2b47d4769ec9da0d080da34dd9c5cec47bee16"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-dynamic-pose/captures/school.png",
+      "url": "development/performance/hardware/2026-10-29-dynamic-pose/captures/school.png",
+      "title": "School",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158993,
+      "sha256": "8c036991c81c09366522fa1380c5725efedda9db00c01bdaa95585ddf3fd920a"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-1/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-1/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-1/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-1/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-1/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-1/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-1/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-1/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-2/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-2/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-2/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-2/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-2/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-2/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-2/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-2/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-3/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-3/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-3/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-3/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-3/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-3/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-3/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/after/castle-3/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-1/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-1/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-1/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-1/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-1/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-1/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-1/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-1/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-2/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-2/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-2/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-2/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-2/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-2/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-2/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-2/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-3/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-3/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-3/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-3/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-3/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-3/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-3/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/before/castle-3/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/0-house-debrief.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/0-house-debrief.png",
+      "title": "0 house debrief",
+      "kind": "Game UI verification",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1014776,
+      "sha256": "34c15d40f52cd267d20e0fab3acd9f3f0d9a1fce2bc54685f920fc4bd16427c4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/0-house-hunter.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/0-house-hunter.png",
+      "title": "0 house hunter",
+      "kind": "Game UI verification",
+      "width": 1280,
+      "height": 900,
+      "bytes": 168185,
+      "sha256": "1e5014f35182486b7a4f2ef0d192627d78659fb083e6513dc8cd9991ee5f8e0b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/1-farmhouse-debrief.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/1-farmhouse-debrief.png",
+      "title": "1 farmhouse debrief",
+      "kind": "Game UI verification",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1014411,
+      "sha256": "3fbe2b708e1171800f3dc04d06213ca3c48228e681f07b1d346229933ce46c7c"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/1-farmhouse-hunter.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/1-farmhouse-hunter.png",
+      "title": "1 farmhouse hunter",
+      "kind": "Game UI verification",
+      "width": 1280,
+      "height": 900,
+      "bytes": 163053,
+      "sha256": "9114980f5040445bafc702d8918db46355ef7d0be129aea56967ac9390050195"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/2-school-debrief.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/2-school-debrief.png",
+      "title": "2 school debrief",
+      "kind": "Game UI verification",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1014683,
+      "sha256": "8690c4e86f1c701bec386febf816665e791037001fa8c75d6faa8687ac24034c"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/2-school-hunter.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/ci-ui/captures/2-school-hunter.png",
+      "title": "2 school hunter",
+      "kind": "Game UI verification",
+      "width": 1280,
+      "height": 900,
+      "bytes": 167818,
+      "sha256": "b4dabc2efc956fda859c93c2830c1540624c8bdb3d4a92ccc2a4ac44264d9c17"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/after/castle-1/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/after/castle-1/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/after/castle-1/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/after/castle-1/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/after/castle-1/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/after/castle-1/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/after/castle-1/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/after/castle-1/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/before/castle-1/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/before/castle-1/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/before/castle-1/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/before/castle-1/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/before/castle-1/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/before/castle-1/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/before/castle-1/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/historical/first-trial/before/castle-1/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/academy.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/academy.png",
+      "title": "Academy",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 253602,
+      "sha256": "29b387430e6147b20358cf5eded1dcc9559a6a7789ee4c33a904adf6f859aae5"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/asylum.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/asylum.png",
+      "title": "Asylum",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 178114,
+      "sha256": "2176db7c6751b0b00a87f3232efa6305af5b91e355c4a71360947e08e3888c99"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/castle-blackout.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/castle-blackout.png",
+      "title": "Castle blackout",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 91919,
+      "sha256": "bb37a008be9b30718ba035c6254d64e378c924a9597c8a30174f117824a9c64b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/castle-lit.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/castle-lit.png",
+      "title": "Castle lit",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 325616,
+      "sha256": "5f818082880c0ed9be7f805e6508d634e61212f44f5045022f1952a5fd24be62"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/church.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/church.png",
+      "title": "Church",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 318002,
+      "sha256": "b7ed4cbe3331f65940a0e125e0ac0fece0e46b3bc0e482a394f9214e42a0c3a4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/college.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/college.png",
+      "title": "College",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158911,
+      "sha256": "4b49f69fd727d94b2003f74eebc39ce7098ffff0c44143f4c88a738a819efeb4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/farmhouse.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/farmhouse.png",
+      "title": "Farmhouse",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 272568,
+      "sha256": "687b5c00ae4c68e616843ec6314e3b3bd79aa84fb02bc70b175046ec7c126991"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/hollow_creek.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/hollow_creek.png",
+      "title": "Hollow creek",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 303092,
+      "sha256": "6ba1080b6a71146adea6586bd0e7d2845718141d900038ee252ea21dc7473077"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/house.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/house.png",
+      "title": "House",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 338322,
+      "sha256": "32b952491cf6782dcdc484b4d496bd608a994e89bb214d2278bae27d53c5ccef"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/mansion.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/mansion.png",
+      "title": "Mansion",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 267370,
+      "sha256": "37a5be394009a35ea7fb0f6d4723053f4457f15e72457cfd4e814b9a8fd392e1"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/prison.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/prison.png",
+      "title": "Prison",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 202285,
+      "sha256": "d33918df9db12d4db58ecbec3a2b47d4769ec9da0d080da34dd9c5cec47bee16"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/school.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/native-gpu/captures/school.png",
+      "title": "School",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158993,
+      "sha256": "8c036991c81c09366522fa1380c5725efedda9db00c01bdaa95585ddf3fd920a"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/after/castle-1/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/after/castle-1/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/after/castle-1/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/after/castle-1/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/after/castle-1/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/after/castle-1/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/after/castle-1/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/after/castle-1/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/before/castle-1/captures/courtyard.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/before/castle-1/captures/courtyard.png",
+      "title": "Courtyard",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 601022,
+      "sha256": "94f2cefbd57bad9aa9b8910c6dd3533991fe62336364047d3178599d20d4fcd8"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/before/castle-1/captures/exterior.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/before/castle-1/captures/exterior.png",
+      "title": "Exterior",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 386274,
+      "sha256": "35cf8242ae6a6791e998e27036be19c5193b5e6098a50de3dca5fbafdebe14ea"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/before/castle-1/captures/library.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/before/castle-1/captures/library.png",
+      "title": "Library",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 705445,
+      "sha256": "2b8259a867bbd0d1be10c7e63fa5fb78f3bf89c0d7df6f718afec0cadda3a426"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/before/castle-1/captures/store.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/package-confirmation/before/castle-1/captures/store.png",
+      "title": "Store",
+      "kind": "Runtime GPU diagnostic",
+      "width": 1280,
+      "height": 800,
+      "bytes": 542575,
+      "sha256": "ae6f530a5a14c0ec929d8d3fe7e813c1ea2399e8761ecc1f42676181e8708ec0"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/synthetic-controls/captures/synthetic-beyond-reach.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/synthetic-controls/captures/synthetic-beyond-reach.png",
+      "title": "Synthetic beyond reach",
+      "kind": "Synthetic GPU depth control",
+      "width": 320,
+      "height": 200,
+      "bytes": 6846,
+      "sha256": "3b9a443e729751096656212bf7f0b633d888e74524d5624f3968df1065e13344"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/synthetic-controls/captures/synthetic-far-first.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/synthetic-controls/captures/synthetic-far-first.png",
+      "title": "Synthetic far first",
+      "kind": "Synthetic GPU depth control",
+      "width": 320,
+      "height": 200,
+      "bytes": 31970,
+      "sha256": "53a3862e9b17b5ebce5e20a271da6a7e49d7b4d00663e3c4475beeb8a2d0bfdb"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/synthetic-controls/captures/synthetic-near-first.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/synthetic-controls/captures/synthetic-near-first.png",
+      "title": "Synthetic near first",
+      "kind": "Synthetic GPU depth control",
+      "width": 320,
+      "height": 200,
+      "bytes": 31970,
+      "sha256": "53a3862e9b17b5ebce5e20a271da6a7e49d7b4d00663e3c4475beeb8a2d0bfdb"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-light-factor-dependencies/synthetic-controls/captures/synthetic-unblocked.png",
+      "url": "development/performance/hardware/2026-10-29-light-factor-dependencies/synthetic-controls/captures/synthetic-unblocked.png",
+      "title": "Synthetic unblocked",
+      "kind": "Synthetic GPU depth control",
+      "width": 320,
+      "height": 200,
+      "bytes": 28475,
+      "sha256": "9fe902ae83c6af74b80d8e9544560e08ff8fdc15eceb2055bba8a5a52830a2a4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/academy.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/academy.png",
+      "title": "Academy",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 253602,
+      "sha256": "29b387430e6147b20358cf5eded1dcc9559a6a7789ee4c33a904adf6f859aae5"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/asylum.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/asylum.png",
+      "title": "Asylum",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 178114,
+      "sha256": "2176db7c6751b0b00a87f3232efa6305af5b91e355c4a71360947e08e3888c99"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/castle-blackout.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/castle-blackout.png",
+      "title": "Castle blackout",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 91919,
+      "sha256": "bb37a008be9b30718ba035c6254d64e378c924a9597c8a30174f117824a9c64b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/castle-lit.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/castle-lit.png",
+      "title": "Castle lit",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 325616,
+      "sha256": "5f818082880c0ed9be7f805e6508d634e61212f44f5045022f1952a5fd24be62"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/church.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/church.png",
+      "title": "Church",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 318002,
+      "sha256": "b7ed4cbe3331f65940a0e125e0ac0fece0e46b3bc0e482a394f9214e42a0c3a4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/college.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/college.png",
+      "title": "College",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158911,
+      "sha256": "4b49f69fd727d94b2003f74eebc39ce7098ffff0c44143f4c88a738a819efeb4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/farmhouse.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/farmhouse.png",
+      "title": "Farmhouse",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 272568,
+      "sha256": "687b5c00ae4c68e616843ec6314e3b3bd79aa84fb02bc70b175046ec7c126991"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/hollow_creek.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/hollow_creek.png",
+      "title": "Hollow creek",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 303092,
+      "sha256": "6ba1080b6a71146adea6586bd0e7d2845718141d900038ee252ea21dc7473077"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/house.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/house.png",
+      "title": "House",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 338322,
+      "sha256": "32b952491cf6782dcdc484b4d496bd608a994e89bb214d2278bae27d53c5ccef"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/mansion.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/mansion.png",
+      "title": "Mansion",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 267370,
+      "sha256": "37a5be394009a35ea7fb0f6d4723053f4457f15e72457cfd4e814b9a8fd392e1"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/prison.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/prison.png",
+      "title": "Prison",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 202285,
+      "sha256": "d33918df9db12d4db58ecbec3a2b47d4769ec9da0d080da34dd9c5cec47bee16"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/school.png",
+      "url": "development/performance/hardware/2026-10-29-native-case-acceptance/native-gpu/captures/school.png",
+      "title": "School",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158993,
+      "sha256": "8c036991c81c09366522fa1380c5725efedda9db00c01bdaa95585ddf3fd920a"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/academy.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/academy.png",
+      "title": "Academy",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 253602,
+      "sha256": "29b387430e6147b20358cf5eded1dcc9559a6a7789ee4c33a904adf6f859aae5"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/asylum.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/asylum.png",
+      "title": "Asylum",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 178114,
+      "sha256": "2176db7c6751b0b00a87f3232efa6305af5b91e355c4a71360947e08e3888c99"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/castle-blackout.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/castle-blackout.png",
+      "title": "Castle blackout",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 91919,
+      "sha256": "bb37a008be9b30718ba035c6254d64e378c924a9597c8a30174f117824a9c64b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/castle-lit.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/castle-lit.png",
+      "title": "Castle lit",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 325616,
+      "sha256": "5f818082880c0ed9be7f805e6508d634e61212f44f5045022f1952a5fd24be62"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/church.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/church.png",
+      "title": "Church",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 318002,
+      "sha256": "b7ed4cbe3331f65940a0e125e0ac0fece0e46b3bc0e482a394f9214e42a0c3a4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/college.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/college.png",
+      "title": "College",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158911,
+      "sha256": "4b49f69fd727d94b2003f74eebc39ce7098ffff0c44143f4c88a738a819efeb4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/farmhouse.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/farmhouse.png",
+      "title": "Farmhouse",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 272568,
+      "sha256": "687b5c00ae4c68e616843ec6314e3b3bd79aa84fb02bc70b175046ec7c126991"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/hollow_creek.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/hollow_creek.png",
+      "title": "Hollow creek",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 303092,
+      "sha256": "6ba1080b6a71146adea6586bd0e7d2845718141d900038ee252ea21dc7473077"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/house.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/house.png",
+      "title": "House",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 338322,
+      "sha256": "32b952491cf6782dcdc484b4d496bd608a994e89bb214d2278bae27d53c5ccef"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/mansion.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/mansion.png",
+      "title": "Mansion",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 267370,
+      "sha256": "37a5be394009a35ea7fb0f6d4723053f4457f15e72457cfd4e814b9a8fd392e1"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/prison.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/prison.png",
+      "title": "Prison",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 202285,
+      "sha256": "d33918df9db12d4db58ecbec3a2b47d4769ec9da0d080da34dd9c5cec47bee16"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-packed-readback/captures/school.png",
+      "url": "development/performance/hardware/2026-10-29-packed-readback/captures/school.png",
+      "title": "School",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158993,
+      "sha256": "8c036991c81c09366522fa1380c5725efedda9db00c01bdaa95585ddf3fd920a"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/academy.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/academy.png",
+      "title": "Academy",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 253602,
+      "sha256": "29b387430e6147b20358cf5eded1dcc9559a6a7789ee4c33a904adf6f859aae5"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/asylum.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/asylum.png",
+      "title": "Asylum",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 178114,
+      "sha256": "2176db7c6751b0b00a87f3232efa6305af5b91e355c4a71360947e08e3888c99"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/castle-blackout.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/castle-blackout.png",
+      "title": "Castle blackout",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 91919,
+      "sha256": "bb37a008be9b30718ba035c6254d64e378c924a9597c8a30174f117824a9c64b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/castle-lit.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/castle-lit.png",
+      "title": "Castle lit",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 325616,
+      "sha256": "5f818082880c0ed9be7f805e6508d634e61212f44f5045022f1952a5fd24be62"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/church.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/church.png",
+      "title": "Church",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 318002,
+      "sha256": "b7ed4cbe3331f65940a0e125e0ac0fece0e46b3bc0e482a394f9214e42a0c3a4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/college.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/college.png",
+      "title": "College",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158911,
+      "sha256": "4b49f69fd727d94b2003f74eebc39ce7098ffff0c44143f4c88a738a819efeb4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/farmhouse.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/farmhouse.png",
+      "title": "Farmhouse",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 272568,
+      "sha256": "687b5c00ae4c68e616843ec6314e3b3bd79aa84fb02bc70b175046ec7c126991"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/hollow_creek.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/hollow_creek.png",
+      "title": "Hollow creek",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 303092,
+      "sha256": "6ba1080b6a71146adea6586bd0e7d2845718141d900038ee252ea21dc7473077"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/house.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/house.png",
+      "title": "House",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 338322,
+      "sha256": "32b952491cf6782dcdc484b4d496bd608a994e89bb214d2278bae27d53c5ccef"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/mansion.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/mansion.png",
+      "title": "Mansion",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 267370,
+      "sha256": "37a5be394009a35ea7fb0f6d4723053f4457f15e72457cfd4e814b9a8fd392e1"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/prison.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/prison.png",
+      "title": "Prison",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 202285,
+      "sha256": "d33918df9db12d4db58ecbec3a2b47d4769ec9da0d080da34dd9c5cec47bee16"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-portable-light-guard/captures/school.png",
+      "url": "development/performance/hardware/2026-10-29-portable-light-guard/captures/school.png",
+      "title": "School",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158993,
+      "sha256": "8c036991c81c09366522fa1380c5725efedda9db00c01bdaa95585ddf3fd920a"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/academy.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/academy.png",
+      "title": "Academy",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 253602,
+      "sha256": "29b387430e6147b20358cf5eded1dcc9559a6a7789ee4c33a904adf6f859aae5"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/asylum.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/asylum.png",
+      "title": "Asylum",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 178114,
+      "sha256": "2176db7c6751b0b00a87f3232efa6305af5b91e355c4a71360947e08e3888c99"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/castle-blackout.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/castle-blackout.png",
+      "title": "Castle blackout",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 91919,
+      "sha256": "bb37a008be9b30718ba035c6254d64e378c924a9597c8a30174f117824a9c64b"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/castle-lit.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/castle-lit.png",
+      "title": "Castle lit",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 325616,
+      "sha256": "5f818082880c0ed9be7f805e6508d634e61212f44f5045022f1952a5fd24be62"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/church.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/church.png",
+      "title": "Church",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 318002,
+      "sha256": "b7ed4cbe3331f65940a0e125e0ac0fece0e46b3bc0e482a394f9214e42a0c3a4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/college.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/college.png",
+      "title": "College",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158911,
+      "sha256": "4b49f69fd727d94b2003f74eebc39ce7098ffff0c44143f4c88a738a819efeb4"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/farmhouse.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/farmhouse.png",
+      "title": "Farmhouse",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 272568,
+      "sha256": "687b5c00ae4c68e616843ec6314e3b3bd79aa84fb02bc70b175046ec7c126991"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/hollow_creek.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/hollow_creek.png",
+      "title": "Hollow creek",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 303092,
+      "sha256": "6ba1080b6a71146adea6586bd0e7d2845718141d900038ee252ea21dc7473077"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/house.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/house.png",
+      "title": "House",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 338322,
+      "sha256": "32b952491cf6782dcdc484b4d496bd608a994e89bb214d2278bae27d53c5ccef"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/mansion.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/mansion.png",
+      "title": "Mansion",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 267370,
+      "sha256": "37a5be394009a35ea7fb0f6d4723053f4457f15e72457cfd4e814b9a8fd392e1"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/prison.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/prison.png",
+      "title": "Prison",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 202285,
+      "sha256": "d33918df9db12d4db58ecbec3a2b47d4769ec9da0d080da34dd9c5cec47bee16"
+    },
+    {
+      "path": "development/performance/hardware/2026-10-29-prepared-light-write/captures/school.png",
+      "url": "development/performance/hardware/2026-10-29-prepared-light-write/captures/school.png",
+      "title": "School",
+      "kind": "Runtime GPU diagnostic",
+      "width": 640,
+      "height": 400,
+      "bytes": 158993,
+      "sha256": "8c036991c81c09366522fa1380c5725efedda9db00c01bdaa95585ddf3fd920a"
     }
   ]
 }

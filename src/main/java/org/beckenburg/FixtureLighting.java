@@ -57,9 +57,41 @@ public final class FixtureLighting {
  private final List<Source> sources=new ArrayList<>();
  private final Map<Key,Lit> colours=bounded(150000);
  private final Map<NormalKey,Lit> normalColours=bounded(100000);
- private final Map<Shadow,Boolean> sight=bounded(200000);
+ private final Map<Object,Boolean> sight=bounded(200000);
+ /** Scene-owned immutable receiver visibility survives cosmetic intensity
+  * changes. Door/topology revisions invalidate it independently of brightness. */
+ public static final class StationaryShadows {
+  private final FixtureLighting owner;
+  private final Map<Object,Boolean> values=new HashMap<>();
+  private long epoch=-1;
+  private StationaryShadows(FixtureLighting owner){this.owner=owner;}
+  public void release(){owner.stationaryShadowEntries-=values.size();values.clear();epoch=-1;}
+ }
+ private static final long STATIONARY_SHADOW_LIMIT=1_000_000;
+ private long stationaryShadowEntries;
+ private StationaryShadows activeShadows;
+ public StationaryShadows newStationaryShadows(){return new StationaryShadows(this);}
+ public StationaryShadows useStationaryShadows(StationaryShadows next){
+  var previous=activeShadows;
+  if(next!=null){
+   if(next.owner!=this)throw new IllegalArgumentException("Shadows belong to a different lighting scene");
+   if(next.epoch!=occluderEpoch){stationaryShadowEntries-=next.values.size();next.values.clear();next.epoch=occluderEpoch;}
+  }
+  activeShadows=next;return previous;
+ }
+ private Boolean cachedShadow(Object key){
+  Boolean found=activeShadows==null?null:activeShadows.values.get(key);
+  return found==null?sight.get(key):found;
+ }
+ private void rememberShadow(Object key,boolean visible){
+  if(activeShadows!=null&&stationaryShadowEntries<STATIONARY_SHADOW_LIMIT){
+   if(activeShadows.values.put(key,visible)==null)stationaryShadowEntries++;
+  }else sight.put(key,visible);
+ }
+ private record NormalShadow(int source,NormalKey receiver){}
  private String geometry="",state="";private double[] factors=new double[0];
  private long occluderEpoch;
+ private final BitSet knownEmissionMaterials=new BitSet(),emissionMaterials=new BitSet();
  /** Authoritative revision of the lighting cells touched by an immutable
   * geometry range. Unrelated room-light changes retain prepared GPU colours;
   * changed doors/windows always invalidate their previous visibility. */
@@ -67,13 +99,166 @@ public final class FixtureLighting {
   int x0=(int)Math.floor(ax/CELL_SIZE),x1=(int)Math.floor(bx/CELL_SIZE);
   int y0=(int)Math.floor(ay/CELL_SIZE),y1=(int)Math.floor(by/CELL_SIZE);
   int z0=(int)Math.floor(az/CELL_SIZE),z1=(int)Math.floor(bz/CELL_SIZE);
-  long hash=1469598103934665603L ^ occluderEpoch;
+  long newest=0;
+  long volume=(long)(x1-x0+1)*(y1-y0+1)*(z1-z0+1);
+  if(volume>changedCells.size()){
+   for(var entry:changedCells.entrySet()){
+    var c=entry.getKey();
+    if(c.x>=x0&&c.x<=x1&&c.y>=y0&&c.y<=y1&&c.z>=z0&&c.z<=z1)
+     newest=Math.max(newest,entry.getValue());
+   }
+   return Math.max(newest,occluderEpoch);
+  }
   for(int xx=x0;xx<=x1;xx++)for(int yy=y0;yy<=y1;yy++)
    for(int zz=z0;zz<=z1;zz++){
     long revision=changedCells.getOrDefault(new Cell(xx,yy,zz),0L);
-    hash=(hash^revision)*1099511628211L;
+    newest=Math.max(newest,revision);
    }
-  return hash;
+  return Math.max(newest,occluderEpoch);
+ }
+ /** Fast unchanged-frame gate before consulting individual spatial regions. */
+ public long frameRevision(){return generation;}
+ public long occluderRevision(){return occluderEpoch;}
+ private record Weighted(Source source,double weight){}
+ private static final Weighted[] NO_WEIGHTS=new Weighted[0];
+ private static final Source[] NO_EMISSION=new Source[0];
+ private record Probe(RGB ambient,Weighted[] contributions,boolean normal){
+  RGB sample(double[] factors){
+   double r=ambient.r,g=ambient.g,b=ambient.b;
+   for(var part:contributions){
+    double f=factors[part.source.id],w=part.weight*f;
+    if(f<.001||w<(normal?.001:.002))continue;
+    r+=w*part.source.red;g+=w*part.source.green;b+=w*part.source.blue;
+   }
+   return new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
+  }
+ }
+ /** Immutable visibility and attenuation, with live source factors. Cosmetic
+  * flicker and real switches require only RGB evaluation, never new rays or
+  * tessellation. The owning chunk rebuilds this on an occluder revision. */
+ public final class VertexProbe {
+  private final Probe base,normal;
+  private final Source[] emissive;
+  private VertexProbe(Probe base,Probe normal,Source[] emissive){this.base=base;this.normal=normal;this.emissive=emissive;}
+  private FixtureLighting owner(){return FixtureLighting.this;}
+  public RGB sample(){
+   RGB rgb=base.sample(factors),glow=RGB.ZERO;
+   for(var source:emissive)if(factors[source.id]>.01){glow=new RGB(source.red*1.35,source.green*1.35,source.blue*1.35);break;}
+   double r=Math.max(rgb.r,glow.r),g=Math.max(rgb.g,glow.g),b=Math.max(rgb.b,glow.b);
+   if(normal!=null){var n=normal.sample(factors);r=Math.max(0,r+n.r-rgb.r);g=Math.max(0,g+n.g-rgb.g);b=Math.max(0,b+n.b-rgb.b);}
+   return new RGB(r,g,b);
+  }
+  /** Same evaluation order/clamps as sample(), writing only the RGB slots
+   * of an eight-float world vertex. No temporary RGBs or iterators. */
+  public void writeTinted(float[] target,int offset,int tint){
+   writeTinted(target,null,offset,tint);
+  }
+  public boolean constant(){return base.contributions.length==0
+      &&(normal==null||normal.contributions.length==0)&&emissive.length==0;}
+  /** Preserve published arrays; clone only on the first actual color change. */
+  public float[] copyTintedIfChanged(float[] original,float[] target,int offset,int tint){
+   if(constant())return target;
+   return writeTinted(target,original,offset,tint);
+  }
+  private float[] store(float[] target,float[] original,int offset,int tint,double r,double g,double b){
+   float rr=(float)(Math.max(.03,r)*((tint>>16)&255)/255.0);
+   float gg=(float)(Math.max(.03,g)*((tint>>8)&255)/255.0);
+   float bb=(float)(Math.max(.03,b)*(tint&255)/255.0);
+   if(original!=null){
+    if(Float.floatToRawIntBits(target[offset+5])==Float.floatToRawIntBits(rr)
+       &&Float.floatToRawIntBits(target[offset+6])==Float.floatToRawIntBits(gg)
+       &&Float.floatToRawIntBits(target[offset+7])==Float.floatToRawIntBits(bb))return target;
+    if(target==original)target=original.clone();
+   }
+   target[offset+5]=rr;target[offset+6]=gg;target[offset+7]=bb;
+   return target;
+  }
+  private float[] writeTinted(float[] target,float[] original,int offset,int tint){
+   if(!directVertexWrite){
+    var rgb=sample();
+    return store(target,original,offset,tint,rgb.r,rgb.g,rgb.b);
+   }
+   double br=base.ambient.r,bg=base.ambient.g,bb=base.ambient.b;
+   for(var part:base.contributions){
+    double f=factors[part.source.id],w=part.weight*f;
+    if(f<.001||w<(base.normal?.001:.002))continue;
+    br+=w*part.source.red;bg+=w*part.source.green;bb+=w*part.source.blue;
+   }
+   br=Math.min(1.6,br);bg=Math.min(1.6,bg);bb=Math.min(1.6,bb);
+   double r=br,g=bg,b=bb;
+   for(var source:emissive)if(factors[source.id]>.01){
+    r=Math.max(r,source.red*1.35);g=Math.max(g,source.green*1.35);b=Math.max(b,source.blue*1.35);break;
+   }
+   if(normal!=null){
+    double nr=normal.ambient.r,ng=normal.ambient.g,nb=normal.ambient.b;
+    for(var part:normal.contributions){
+     double f=factors[part.source.id],w=part.weight*f;
+     if(f<.001||w<(normal.normal?.001:.002))continue;
+     nr+=w*part.source.red;ng+=w*part.source.green;nb+=w*part.source.blue;
+    }
+    r=Math.max(0,r+Math.min(1.6,nr)-br);g=Math.max(0,g+Math.min(1.6,ng)-bg);b=Math.max(0,b+Math.min(1.6,nb)-bb);
+   }
+   return store(target,original,offset,tint,r,g,b);
+  }
+ }
+ /** Exact factor snapshot for the sources that can affect one prepared batch.
+  * Visibility/topology invalidation remains the owning chunk's responsibility.
+  * Raw bits preserve even changes smaller than the spatial invalidation threshold. */
+ final class ProbeDependencies {
+  private final int[] ids;
+  private final long[] bits;
+  private ProbeDependencies(BitSet sources){ids=sources.stream().toArray();bits=new long[ids.length];capture();}
+  boolean matchesCurrent(){
+   for(int i=0;i<ids.length;i++)if(bits[i]!=Double.doubleToRawLongBits(factors[ids[i]]))return false;
+   return true;
+  }
+  void capture(){for(int i=0;i<ids.length;i++)bits[i]=Double.doubleToRawLongBits(factors[ids[i]]);}
+ }
+ ProbeDependencies dependencies(List<VertexProbe> probes){
+  BitSet ids=new BitSet();
+  for(var probe:probes){
+   if(probe.owner()!=this)throw new IllegalArgumentException("Probes belong to a different lighting scene");
+   for(var part:probe.base.contributions)ids.set(part.source.id);
+   if(probe.normal!=null)for(var part:probe.normal.contributions)ids.set(part.source.id);
+   for(var source:probe.emissive)ids.set(source.id);
+  }
+  return new ProbeDependencies(ids);
+ }
+ private final boolean directVertexWrite=!Boolean.getBoolean("beckenburg.lighting.directWrite.disabled");
+ private Probe prepareProbe(int room,double x,double y,double z,double nx,double ny,double nz,boolean normal){
+  boolean exterior=room<0||room>=12||map!=null&&map.outside(room);
+  double hemi=.65+.35*Math.max(0,ny);
+  RGB ambient=normal?new RGB(.27*hemi,.29*hemi,.34*hemi):
+      new RGB(exterior?.27:castle!=null?.125:.055,exterior?.29:castle!=null?.129:.059,exterior?.34:castle!=null?.14:.073);
+  var parts=new ArrayList<Weighted>();
+  for(var source:candidates(x,y,z)){
+   double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;
+   if(d2>source.radius*source.radius||normal&&d2<1e-8)continue;
+   double d=Math.sqrt(d2),angle=!normal&&d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);
+   double diffuse=normal?Math.max(0,(-nx*dx-ny*dy-nz*dz)/Math.max(.001,d)):1;
+   double fade=1-d/source.radius,w=source.power*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
+   if(w<(normal?.001:.002)||angle<.001||diffuse<.001)continue;
+   Object key=normal?new NormalShadow(source.id,new NormalKey(room,Double.doubleToLongBits(x),Double.doubleToLongBits(y),Double.doubleToLongBits(z),Double.doubleToLongBits(nx),Double.doubleToLongBits(ny),Double.doubleToLongBits(nz))):
+       new Shadow(source.id,room,Math.round(x*16),Math.round(y*16),Math.round(z*16));
+   Boolean visible=cachedShadow(key);
+   if(visible==null){
+    double back=Math.min(.12,d*.20)/Math.max(.001,d);
+    double rx=normal?x+nx*.025:x-dx*back,ry=normal?y+ny*.025:y-dy*back,rz=normal?z+nz*.025:z-dz*back;
+    if(normal)normalRays++;else shadowRays++;
+    visible=map!=null&&!map.nativeSite()?ArchitecturalLightOcclusion.visible(map,room,source.x,source.y,source.z,normal?rx:x,normal?ry:y,normal?rz:z):clear(source.x,source.y,source.z,rx,ry,rz);
+    rememberShadow(key,visible);
+   }
+   if(visible)parts.add(new Weighted(source,w));
+  }
+  return new Probe(ambient,parts.isEmpty()?NO_WEIGHTS:parts.toArray(Weighted[]::new),normal);
+ }
+ public VertexProbe prepareVertex(int room,int material,double x,double y,double z,double nx,double ny,double nz,boolean normal){
+  Probe base=prepareProbe(room,x,y,z,0,0,0,false);
+  Probe directional=normal?prepareProbe(room,x,y,z,nx,ny,nz,true):null;
+  var emit=new ArrayList<Source>();
+  if(emittingMaterial(material))for(var s:candidates(x,y,z))
+   if(Math.abs(x-s.x)<.4&&Math.abs(y-s.y)<.28&&Math.abs(z-s.z)<.4)emit.add(s);
+  return new VertexProbe(base,directional,emit.isEmpty()?NO_EMISSION:emit.toArray(Source[]::new));
  }
  /** Per-render CPU work counters; shadow tests are expensive architectural rays. */
  public record FrameStats(long samples,long cacheHits,long shadowRays,
@@ -123,7 +308,8 @@ public final class FixtureLighting {
   // Dynamic gate leaves change real shadow occlusion even when the clock and
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
-   castleDoorRevision=castle.doorRevision();sight.clear();colours.clear();normalColours.clear();distant.clear();
+   castleDoorRevision=castle.doorRevision();occluderEpoch=++generation;
+   sight.clear();colours.clear();normalColours.clear();distant.clear();
   }
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){
@@ -214,7 +400,7 @@ public final class FixtureLighting {
  public List<Source> sources(){return List.copyOf(sources);}
  public void frame(RoomLighting circuits,int tick){
   resetStatistics();
-  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;occluderEpoch++;sight.clear();colours.clear();normalColours.clear();distant.clear();}
+  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;occluderEpoch=++generation;sight.clear();colours.clear();normalColours.clear();distant.clear();}
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){double f;
    if(source.room==14)f=1;
@@ -273,14 +459,14 @@ public final class FixtureLighting {
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
    double fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2);if(weight<.002)continue;
-   Shadow shadow=new Shadow(source.id,room,key.x,key.y,key.z);Boolean visible=sight.get(shadow);
+   Shadow shadow=new Shadow(source.id,room,key.x,key.y,key.z);Boolean visible=cachedShadow(shadow);
    if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);shadowRays++;
     // Check architecture to the receiving face before applying prop self-shadow
     // bias. The bias must never pull an inner-wall endpoint across its wall.
     visible=map!=null&&!map.nativeSite()
         ?ArchitecturalLightOcclusion.visible(map,room,source.x,source.y,source.z,x,y,z)
         :clear(source.x,source.y,source.z,x-dx*back,y-dy*back,z-dz*back);
-    sight.put(shadow,visible);}
+    rememberShadow(shadow,visible);}
    if(visible){r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;}
   }
   RGB result=new RGB(Math.min(1.6,r),Math.min(1.6,g),Math.min(1.6,b));
@@ -303,10 +489,12 @@ public final class FixtureLighting {
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
    double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
    if(weight>.001){
-    normalRays++;
-    boolean visible=map!=null&&!map.nativeSite()
+    var shadow=new NormalShadow(source.id,key);Boolean visible=cachedShadow(shadow);
+    if(visible==null){normalRays++;
+    visible=map!=null&&!map.nativeSite()
         ?ArchitecturalLightOcclusion.visible(map,room,source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025)
         :clear(source.x,source.y,source.z,x+nx*.025,y+ny*.025,z+nz*.025);
+    rememberShadow(shadow,visible);}
     if(visible){
      r+=weight*source.red;g+=weight*source.green;b+=weight*source.blue;
     }
@@ -316,8 +504,20 @@ public final class FixtureLighting {
   normalColours.put(key,new Lit(result,version));
   return result;
  }
+ private boolean emittingMaterial(int material){
+  if(material<0||material==GlbProps.VAN_MAP_MATERIAL)return false;
+  if(!knownEmissionMaterials.get(material)){
+   // Reserved/sentinel IDs are not dense texture indices. In particular the
+   // map CRT uses MAX_VALUE-2 and must never size a BitSet to that value.
+   if(material>=GlbProps.TEXTURE_BASE&&!GlbProps.registeredTexture(material))return false;
+   String name=GlbProps.materialName(material).toLowerCase(Locale.ROOT);
+   if(name.contains("glass")||name.contains("bulb")||name.contains("flame")||name.startsWith("television"))emissionMaterials.set(material);
+   knownEmissionMaterials.set(material);
+  }
+  return emissionMaterials.get(material);
+ }
  public RGB emission(int material,double x,double y,double z){
-  String name=GlbProps.materialName(material).toLowerCase(Locale.ROOT);if(!(name.contains("glass")||name.contains("bulb")||name.contains("flame")||name.startsWith("television")))return RGB.ZERO;
+  if(!emittingMaterial(material))return RGB.ZERO;
   for(var s:candidates(x,y,z))if(factors[s.id]>.01&&Math.abs(x-s.x)<.4&&Math.abs(y-s.y)<.28&&Math.abs(z-s.z)<.4)return new RGB(s.red*1.35,s.green*1.35,s.blue*1.35);
   return RGB.ZERO;
  }

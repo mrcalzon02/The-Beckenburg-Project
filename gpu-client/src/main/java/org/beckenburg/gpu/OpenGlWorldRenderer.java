@@ -12,11 +12,13 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.BufferUtils;
 import org.beckenburg.GpuWorldRenderer;
+import org.beckenburg.GpuReadback;
 import org.beckenburg.BeckenburgDiagnostics;
 import org.beckenburg.GlbProps;
 import org.beckenburg.LevelMaterials;
 import org.beckenburg.MaterialAtlas;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +33,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * sprites while migration of the UI to a GPU window is completed.
  */
 public final class OpenGlWorldRenderer extends ApplicationAdapter implements GpuWorldRenderer {
- private static final float NEAR=.065f,FAR=180f;
+ private final boolean packedReadback=!Boolean.getBoolean("beckenburg.gpu.packedReadback.disabled");
  private static final String VERTEX="""
  #version 330 core
  in vec3 a_position;
@@ -116,6 +118,12 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private ByteBuffer colorBytes;
  private FloatBuffer depthFloats;
  private final Map<Integer,Texture> textures=new HashMap<>();
+ private final Map<Integer,Long> textureRevisions=new HashMap<>();
+ public record TextureStats(long frameId,int uploads,long uploadedBytes){}
+ private volatile TextureStats textureStats;
+ private int frameTextureUploads;
+ private long frameTextureBytes;
+ public TextureStats textureStats(){return textureStats;}
  /** Positive resource IDs name independent persistent VBOs. Zero preserves
   * the historical per-material dynamic batch and byte-exact comparison. */
  private record MeshKey(int material,long resourceId){}
@@ -135,6 +143,11 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
      long readbackAndCopyNs,long totalNs){}
  private volatile FrameTiming frameTiming;
  public FrameTiming frameTiming(){return frameTiming;}
+ /** GL call-wall time includes synchronization and is not GPU timer-query time. */
+ public record ReadbackDetail(long sceneId,long frameId,int width,int height,
+      long colorBytes,long depthBytes,long colorSyncNs,long depthSyncNs,long cpuConversionNs){}
+ private volatile ReadbackDetail readbackDetail;
+ public ReadbackDetail readbackDetail(){return readbackDetail;}
  private long lastSlowReportNs;
  public CompletableFuture<String> initialization(){return initialized;}
  @Override public boolean ready(){return ready&&!closed;}
@@ -165,6 +178,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   target=new FrameBuffer(Pixmap.Format.RGBA8888,w,h,true);
   targetWidth=w;targetHeight=h;
   colorBytes=BufferUtils.newByteBuffer(w*h*4);
+  // GL writes raw RGBA bytes; explicit byte order makes a packed load
+  // independent of the host's native endianness.
+  colorBytes.order(ByteOrder.BIG_ENDIAN);
   depthFloats=BufferUtils.newFloatBuffer(w*h);
  }
  private static int sample(int id,double u,double v){
@@ -188,19 +204,22 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  private Texture texture(int material){
   Texture found=textures.get(material);
-  if(found!=null&&material==GlbProps.VAN_MAP_MATERIAL){
-   // The host-approved map CRT is a LIVE texture. Never freeze it at the
-   // first sampled frame or silently lose investigation-map updates.
+  long revision=found==null||textureRevisions.containsKey(material)?GlbProps.dynamicTextureRevision(material):-1;
+  if(found!=null&&revision>=0&&!Objects.equals(textureRevisions.get(material),revision)){
+   // Live CRT/TV pixels are separately revisioned. Repeated draws of the
+   // same pixels neither freeze the screen nor reallocate/upload a Pixmap.
    Pixmap update=pixelsFor(material);
-   found.draw(update,0,0);update.dispose();
+   found.draw(update,0,0);frameTextureUploads++;frameTextureBytes+=4L*update.getWidth()*update.getHeight();update.dispose();
+   textureRevisions.put(material,revision);
   }
   if(found!=null)return found;
   Pixmap bitmap=pixelsFor(material);
   Texture image=new Texture(bitmap);
+  frameTextureUploads++;frameTextureBytes+=4L*bitmap.getWidth()*bitmap.getHeight();
   bitmap.dispose();
   image.setFilter(Texture.TextureFilter.Nearest,Texture.TextureFilter.Nearest);
   image.setWrap(Texture.TextureWrap.Repeat,Texture.TextureWrap.Repeat);
-  textures.put(material,image);return image;
+  textures.put(material,image);if(revision>=0)textureRevisions.put(material,revision);return image;
  }
  private Mesh mesh(MeshKey key,int vertices){
   Mesh existing=meshes.get(key);
@@ -227,6 +246,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    uploadedRevisions.clear();uploadedCounts.clear();
   }
   long frameUploadBytes=0,frameReusedBytes=0;
+  frameTextureUploads=0;frameTextureBytes=0;
   int frameUploadedBatches=0,frameReusedBatches=0;
   resizeTarget(frame.width(),frame.height());
   target.begin();
@@ -302,28 +322,25 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   // glFinish beforehand stalls the entire graphics queue for no benefit.
   long rasterReady=System.nanoTime();
   colorBytes.clear();depthFloats.clear();
+  long colorReadStart=System.nanoTime();
   Gdx.gl.glReadPixels(0,0,targetWidth,targetHeight,
     GL20.GL_RGBA,GL20.GL_UNSIGNED_BYTE,colorBytes);
+  long colorReadEnd=System.nanoTime();
   Gdx.gl.glReadPixels(0,0,targetWidth,targetHeight,
     GL20.GL_DEPTH_COMPONENT,GL20.GL_FLOAT,depthFloats);
+  long depthReadEnd=System.nanoTime();
   int[] argb=new int[targetWidth*targetHeight];
   float[] depth=new float[argb.length];
-  for(int row=0;row<targetHeight;row++){
-   int sourceRow=targetHeight-row-1;
-   for(int col=0;col<targetWidth;col++){
-    int src=sourceRow*targetWidth+col,dst=row*targetWidth+col,i=src*4;
-    int r=colorBytes.get(i)&255,g=colorBytes.get(i+1)&255;
-    int b=colorBytes.get(i+2)&255,a=colorBytes.get(i+3)&255;
-    argb[dst]=(a<<24)|(r<<16)|(g<<8)|b;
-    float d=depthFloats.get(src);
-    depth[dst]=d>=.999999f?Float.POSITIVE_INFINITY:
-        (float)(2*NEAR*FAR/(FAR+NEAR-(2*d-1)*(FAR-NEAR)));
-   }
-  }
+  GpuReadback.copy(colorBytes,depthFloats,targetWidth,targetHeight,argb,depth,packedReadback);
+  long conversionEnd=System.nanoTime();
+  readbackDetail=new ReadbackDetail(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,
+      (long)argb.length*4,(long)argb.length*Float.BYTES,colorReadEnd-colorReadStart,
+      depthReadEnd-colorReadEnd,conversionEnd-depthReadEnd);
   target.end();
   uploadStats=new UploadStats(frame.sceneId(),frame.frameId(),
       frameUploadedBatches,frameReusedBatches,
       frameUploadBytes,frameReusedBytes);
+  textureStats=new TextureStats(frame.frameId(),frameTextureUploads,frameTextureBytes);
   long finished=System.nanoTime();
   frameTiming=new FrameTiming(frame.sceneId(),frame.frameId(),
       rasterReady-started,finished-rasterReady,finished-started);
@@ -355,6 +372,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   uploadedVertices.clear();uploadedRevisions.clear();uploadedCounts.clear();
   for(Mesh mesh:meshes.values())mesh.dispose();
   for(Texture texture:textures.values())texture.dispose();
+  textureRevisions.clear();
   if(target!=null)target.dispose();
   if(shader!=null)shader.dispose();
  }

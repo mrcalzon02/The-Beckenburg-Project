@@ -279,6 +279,18 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 (elevation>2.0?"   /   UPPER GALLERY":""),25,44);
             g.setColor(new Color(230,215,174));
             g.drawString("+",w/2-4,h/2+4);
+            var shelf=CastleWarehouse.aimedExhibit(map,renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,renderer.pitch);
+            if(shelf!=null&&!archive.opened()){
+                String item=CastleShelfLabels.title(shelf),tier="TIER "+shelf.tier().name();
+                g.setFont(new Font(Font.MONOSPACED,Font.BOLD,Math.max(16,Math.min(22,w/45))));
+                int labelWidth=Math.min(w-24,Math.max(280,g.getFontMetrics().stringWidth(item)+32));
+                int left=(w-labelWidth)/2;
+                g.setColor(new Color(9,15,21,238));g.fillRoundRect(left,h-154,labelWidth,66,8,8);
+                g.setColor(new Color(255,242,210));g.drawString(item,left+16,h-128);
+                g.setFont(new Font(Font.MONOSPACED,Font.BOLD,16));
+                g.setColor(new Color(164,223,242));g.drawString(tier,left+16,h-104);
+                g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
+            }
             CastleHubMap.Station station=elevation>1.8?null:map.aimed(renderer.x,renderer.z,renderer.yaw);
             boolean atSwitch=elevation<=1.8&&
                 CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null;

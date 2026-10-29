@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "issues": [
     {
       "id": "DEV-001",
@@ -592,7 +592,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00c3\u201a\u00c2\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -920,7 +920,7 @@
       "title": "Reshaped bank left old crest dressing unsupported",
       "status": "fixed-native-rigid-crest-refit",
       "affected": "Camp Hollow Creek bank/crest refinement",
-      "symptom": "Actual original log bearings sit53â€“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
+      "symptom": "Actual original log bearings sit53\u00e2\u20ac\u201c63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
       "cause": "Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.",
       "action": "Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.",
       "evidence": "quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json",
@@ -1062,7 +1062,7 @@
       "id": "DEV-097",
       "title": "Native exterior zones treated as indoor by numeric room ID",
       "status": "fixed-scoped",
-      "affected": "Hollow Creek outdoor zones 0–11",
+      "affected": "Hollow Creek outdoor zones 0\u201311",
       "symptom": "Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.",
       "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
       "action": "Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.",
@@ -1165,7 +1165,7 @@
       "symptom": "A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.",
       "cause": "The edge blockers constrain crossings, but terrain support alone still allowed a direct underwater spawn query.",
       "action": "Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.",
-      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.",
+      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47\u201355k water pixels per frame instead of3\u20136k.",
       "older_maps": "Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map."
     },
     {
@@ -1363,7 +1363,7 @@
       "symptom": "Van metal textures show banding",
       "cause": "Generated IRON tile darkened every eighth X pixel by17levels; repeated UVs stamp grooves across broad painted panels.",
       "action": "Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.",
-      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652→0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
+      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652\u21920.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
       "older_maps": "Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted."
     },
     {
@@ -1552,6 +1552,182 @@
       "action": "Use separate Windows helper in LocalAppData, wait for game exit, reverify SHA-256, launch Inno Setup and log independently. Gate next release on real Windows silent install.",
       "evidence": "User report 2026-10-28, code regression and workflow; Windows acceptance pending.",
       "older_maps": "All Windows installations/upgrades, no map modifications; preserve saved profiles."
+    },
+    {
+      "id": "DEV-147",
+      "title": "Rebuilt Castle bypassed retained GPU geometry",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Castle headquarters",
+      "symptom": "Rebuilt Castle measured 35\u201373 ms median frames versus 18 ms before the rebuild, allocating 63\u2013201 MiB per frame at 640x400 on RTX5070.",
+      "cause": "Castle calls drawGpuFaces with no investigation map, excluding it from the map-gated residency path; 220671 source triangles were reprocessed each frame.",
+      "action": "Retain authored Castle topology, state-keyed fixture/door assemblies, conservative spatial chunks and explicitly revisioned GPU buffers.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-148",
+      "title": "PSX framebuffer quantization repeated costly floating-point rounding",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "All rendered maps and Castle",
+      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6\u201313 ms per frame in the baseline.",
+      "cause": "Six floating-point rounding operations per pixel repeated an invariant 256-channel/16-phase transform.",
+      "action": "Use precomputed channel lookup tables with exhaustive numerical and full-image pixel parity.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-149",
+      "title": "Per-vertex emissive classification allocated lowercase material names",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "All renderer paths",
+      "symptom": "Castle JFR recorded StringLatin1.toLowerCase and material-name classification on every lit vertex.",
+      "cause": "Invariant material emission classification was recomputed for hundreds of thousands of vertices per frame.",
+      "action": "Cache emission classification by append-only material ID; retain live source factors and texture updates.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-150",
+      "title": "Cosmetic light flicker invalidated retained shadow work",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Castle and shared stationary fixture lighting",
+      "symptom": "First residency candidate produced 300\u2013400 ms flicker stalls; retaining geometry alone was insufficient.",
+      "cause": "Brightness revisions repeated tessellation, ray visibility and source attenuation; bounded global shadow caches thrashed.",
+      "action": "Separate immutable receiver attenuation/occlusion probes from live brightness factors; retain regional revisions and invalidate on actual occluder changes.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-151",
+      "title": "Cached van and map fixtures were still lit and repacked every frame",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "House, School and authored investigation maps",
+      "symptom": "Warm School approach cost about 52 ms CPU per baseline frame.",
+      "cause": "CPU face caching stopped at transforms; van, arrival scenery, enclosure, fixtures and portals still followed transient GPU batches.",
+      "action": "Retain actual static source arrays and GPU buffers; preserve live CRT, doors, stock, circuits, UV, portable lights and DOTS receiver geometry.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-152",
+      "title": "Castle shelf labels were too small and consumed 129 materials",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Castle quartermaster store",
+      "symptom": "A 105 mm label compressed family names to a few native pixels and created one material per family/tier.",
+      "cause": "Small world plaques plus independent 256x64 textures.",
+      "action": "Use larger high-contrast plaques in one atlas and full-resolution targeted family/tier text inside the Castle viewport.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-153",
+      "title": "Native Hollow Creek geometry lacked GPU residency",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Native investigation map",
+      "symptom": "Measured native interior view at about 337 ms median completed frame before the native retention fix.",
+      "cause": "A 96-entry transformed-face cache could churn, while native geometry still repeated CPU lighting and GPU repacking.",
+      "action": "Retain non-billboard native geometry and water bed; keep camera-facing billboards, actual water, live power and effects dynamic.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-154",
+      "title": "Hidden GPU worker added a second frame pacing delay",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "All OpenGL scenes",
+      "symptom": "Completed-frame timing included roughly a second 16 ms scheduling interval even after CPU work dropped.",
+      "cause": "Swing submission pacing and a separate 60 Hz GLFW foreground throttle/idle interval stacked.",
+      "action": "Use event-requested noncontinuous GL rendering without a second foreground cap; bounded 240 Hz idle polling still sleeps and draws only requested work.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
+      "older_maps": "Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred."
+    },
+    {
+      "id": "DEV-155",
+      "title": "Focused Castle workflow asserted obsolete pre-redesign editor menu source",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Focused Castle acceptance workflow",
+      "symptom": "Main ba3d8885 focused workflow 40826909984 failed DeveloperEditorLaunchTest at the obsolete Main menu button assertion.",
+      "cause": "The earlier menu redesign moved the unchanged real editor action to the Extras page, but the focused packaging test still required removed JButton/Options source.",
+      "action": "Verify the actual main-to-Extras navigation and editor action route while preserving --editor, installer shortcut and shipped kit checks.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. DeveloperEditorLaunchTest passes through the existing Extras route in full CI.",
+      "older_maps": "Acceptance-route repair only; no production menu change or map acceptance is implied."
+    },
+    {
+      "id": "DEV-156",
+      "title": "Local AVG TLS interception prevents pinned encrypted regression connections",
+      "status": "external-environment-limitation",
+      "affected": "Local CommonNetworkTest and SecureLanIntegrationTest acceptance",
+      "symptom": "Both local encrypted tests fail NET-04 / underlying NET-03 certificate substitution; 272 other manifest checks passed.",
+      "cause": "Handshake diagnostic received AVG Web/Mail Shield issuer instead of the generated Private Game Server self-signed issuer. IPv4-only profile reproduced the failure.",
+      "action": "Preserve strict pinning and system security settings. Verify encrypted tests in independent exact-source CI. No bypass or test waiver.",
+      "evidence": "Local full regression 272/274 and bounded TLS issuer/fatal diagnostic, 2026-10-28. Corrected-source independent full CI 40844284430 passes both tests; local interception remains unchanged.",
+      "older_maps": "No networking production change; affects local verification, not a performance-root-cause claim."
+    },
+    {
+      "id": "DEV-157",
+      "title": "Empty socket retention replaced a rendered hiding cupboard and churned GPU generations",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Retention candidate Church interior and authored sockets with overlapping rendering passes",
+      "symptom": "The all-map experiment found Church interior still at about33ms, with1630 shadow rays and about4.9MB of mesh uploads every unchanged frame.",
+      "cause": "The hiding cupboard pass and the later non-rendering socket pass shared an auxiliary owner key. Retaining the empty list replaced/released the real cupboard chunk and orphaned a current-frame chunk.",
+      "action": "Skip empty geometry before auxiliary ownership/cache admission. Extend headless identity/array checks and actual-GPU zero-repeat-upload acceptance to all10 map types.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Earlier source 0f886e63 passed full 275/275 but failed original Mesa torch reuse; the unchanged assertion now passes with zero mesh uploads.",
+      "older_maps": "This is a regression discovered during this optimization. Audit every shared socket pass; do not infer correction from only House/School/native acceptance."
+    },
+    {
+      "id": "DEV-158",
+      "title": "Emission classification used the sparse live-map sentinel as a dense BitSet index",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Retention candidate light-material classification and van views",
+      "symptom": "Memory audit found VAN_MAP_MATERIAL is Integer.MAX_VALUE-2, which could expand the new emission cache by about256MiB per lighting instance.",
+      "cause": "The initial classification optimization assumed every nonnegative material ID belonged to the dense model texture registry.",
+      "action": "Reject reserved and unregistered texture IDs before BitSet insertion. Verify public emission calls for sparse IDs in a96MiB-heap child JVM.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Sparse reserved texture IDs also pass the 96MiB child-JVM budget check.",
+      "older_maps": "Regression caused by the performance optimization. Validate van views and all map types; never claim the GPU-byte bound alone bounds Java probe/cache memory."
+    },
+    {
+      "id": "DEV-159",
+      "title": "GPU TV/telemetry pixels froze while unchanged map pixels were repeatedly uploaded",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Shared GPU TV and van CRT/map texture lifecycle",
+      "symptom": "Backend refreshed only VAN_MAP_MATERIAL, on every draw; ordinary TV and telemetry textures could remain at their first upload.",
+      "cause": "Geometry residency and texture content had no independent source revision contract.",
+      "action": "Track source pixel revisions for television, telemetry and map materials. Update only changed dynamic textures; keep geometry retained. Verify changed GPU pixels and zero unchanged texture/VBO uploads.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. GPU TV/map controls change pixels without geometry uploads; unchanged repeats upload neither.",
+      "older_maps": "Shared source fix requires real GPU controls and unchanged native model UVs. No claim of installed whole-game acceptance."
+    },
+    {
+      "id": "DEV-160",
+      "title": "Walking across lighting-detail bands retessellated resident source geometry",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "New shared world chunks and existing resident House shell",
+      "symptom": "The33-pose diagnostic still exhibited recurring source-preparation spikes after head-turn retention passed.",
+      "cause": "Lighting tessellation depended on camera distance even for retained static resources; movement across bands rebuilt vertices/probes.",
+      "action": "Prepare fixed full close-range lighting topology for resident interior chunks; preserve exterior/native rules, original normals and UVs, and dynamic reference paths.",
+      "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Translation identity/revision contract passes. Staged 33-pose CPU p95 improved about 268ms to 40ms; completed-frame cold/waypoint p95 remains 76ms.",
+      "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A\u2013G acceptance are finished."
+    },
+    {
+      "id": "DEV-161",
+      "title": "GPU UI acceptance could pass during the opening without reaching playable control",
+      "status": "fixed-scoped-ci-verified",
+      "affected": "GPU UI acceptance diagnostic; House, Farmhouse and School case lifecycle",
+      "symptom": "The smoke accepted any new opaque GPU frame after GamePanel appeared, including an opening frame. It did not require hunter handoff, movement, extraction or another case, and invokeAndWait could exceed its advertised timeout indefinitely.",
+      "cause": "Framebuffer availability was used as a proxy for playable case readiness; UI polling itself had an unbounded EDT wait.",
+      "action": "Require sized first-frame readiness, actual opening skip or natural handoff, advancing hunter frames and GPU readback. Drive production WASD handlers over a collision-valid short van route, then the real X extraction/debrief/menu path in three successive cases. Bound EDT polling with one pending task. Preserve scoped captures and partial CSV evidence on failure.",
+      "evidence": "Source10e2f4e: GPU40923212823 and full40923217003 SUCCESS. Mesa explicitly passes House3350ms, Farmhouse11360ms (natural intro), School1048ms hunter readiness, real WASD movement, RETREATED, debrief/menu and repeat dispatch. Separate clean Windows native image passes RTX all-ten-map controls with exact embedded JAR hash; that hidden review does not exercise Swing input.",
+      "older_maps": "Three publicly playable contract locations only. Short van movement and retreat do not certify interior routes, a successful investigation, installed multiplayer, physical player acceptance or A-G completion."
+    },
+    {
+      "id": "DEV-162",
+      "title": "Spatial light invalidation relit batches whose actual contributors stayed unchanged",
+      "status": "fixed-scoped-rtx-and-ci-verified",
+      "affected": "Retained world material batches across Castle and map types",
+      "symptom": "Castle still showed recurring preparation tails despite unchanged-color upload suppression; conservative light spheres overlapped batches with unrelated or occluded contributions.",
+      "cause": "Every material in a spatially dirty chunk evaluated all prepared vertex probes even when none of its actual base, normal or emissive source factors changed.",
+      "action": "Snapshot the exact union of contributing source factor bits per material. Skip only exact matches; preserve full RGB evaluation, topology/door invalidation and immutable GPU revisions. Provide factorDependencies.disabled fallback.",
+      "evidence": "Source99baa799: GPU40927250498 and full40927255222 SUCCESS,282/282 with zero skipped, packaged TCP/desktop/native and all three actual GPU case cycles. Java17 GPU package, one-ULP precision/ownership, all-ten-map dense-reference vertex parity under2GiB, fallback and actual RTX controls pass.32 image pairs match exactly. Three1280x800 Castle trials reduce exterior p95 from34.50ms to20.60ms; final package confirms36.56 to20.09ms. Slightly slower medians/library p95 are disclosed. Six scene cycles remain bounded. Evidence: development/performance/hardware/2026-10-29-light-factor-dependencies/.",
+      "older_maps": "Shared implementation requires all-map controls and final CI. Scripted warm camera timings do not certify physical routes, cold starts, installed full rounds or release."
     }
   ],
   "audit_categories": [

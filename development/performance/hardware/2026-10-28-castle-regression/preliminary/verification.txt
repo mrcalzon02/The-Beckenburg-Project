@@ -1,0 +1,5 @@
+Actual GPU functional review passed: unchanged uploads zero; torch, flicker without new rays, blackout, door, resize, return.
+Preliminary complete local manifest: 272 passed / 2 TLS failures / 0 skipped / 274 entries.
+TLS failure reason: generated issuer CN=Private Game Server; received issuer AVG Web/Mail Shield Self-signed Root. Pinning correctly rejects substitution. IPv4-only profile also fails.
+Latest focused WorldResidencyTest, PreparedVertexLightingTest, PsxQuantizationParityTest, CastleShelfLabelsTest, DeveloperEditorLaunchTest and existing focused lighting/cache tests checked separately.
+Preliminary package SHA-256: 70e262db24609a856959d10760cf70f287f1595fc55bf8ecffa1269d28ae8acb

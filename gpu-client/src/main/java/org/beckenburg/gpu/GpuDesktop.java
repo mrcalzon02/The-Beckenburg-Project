@@ -32,7 +32,11 @@ public final class GpuDesktop {
   config.setInitialVisible(false);
   config.setResizable(false);
   config.useVsync(false);
-  config.setForegroundFPS(60);
+  // Swing owns frame pacing. A second 60 Hz throttle here delayed fresh
+  // requests by an additional frame even though the GPU worker was idle.
+  // Noncontinuous rendering still draws only submitted work and sleeps idle.
+  config.setForegroundFPS(0);
+  config.setIdleFPS(240);
   Thread worker=new Thread(()->{
    try{new Lwjgl3Application(ENGINE,config);}
    catch(Throwable failed){
@@ -517,6 +521,7 @@ public final class GpuDesktop {
   flyoverSmoke();
   lightingAudit();
   flashlightAndResidentMeshSmoke();
+  HandheldDepthReview.execute(ENGINE);
   residentBufferSmoke();
   continuousRouteAudit();
   System.out.println("PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse");
@@ -542,6 +547,9 @@ public final class GpuDesktop {
    javax.swing.SwingUtilities.invokeLater(()->{var window=org.beckenburg.EnvironmentModuleEditor.open(null,System.getProperty("beckenburg.water.editor.map","hollow-creek"));window.addWindowListener(new java.awt.event.WindowAdapter(){public void windowClosed(java.awt.event.WindowEvent e){if(com.badlogic.gdx.Gdx.app!=null)com.badlogic.gdx.Gdx.app.exit();}});});return;
   }
   if(options.contains("--castle-survey-review")){try{org.beckenburg.CastleSurveyReview.execute();}finally{stopReviewGpu();}return;}
+  if(options.contains("--performance-review")){try{org.beckenburg.CastlePerformanceReview.execute();}finally{stopReviewGpu();}return;}
+  if(options.contains("--world-residency-review")){try{org.beckenburg.WorldResidencyGpuReview.execute();}finally{stopReviewGpu();}return;}
+  if(options.contains("--handheld-depth-review")){try{HandheldDepthReview.execute(ENGINE);}finally{stopReviewGpu();}return;}
   if(options.contains("--fixture-join-review")){try{org.beckenburg.ArchitecturalJoinReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--van-castle-repair-review")){try{org.beckenburg.VanCastleRepairReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--map-compatibility-review")){try{org.beckenburg.MapCompatibilityReview.execute();}finally{stopReviewGpu();}return;}
