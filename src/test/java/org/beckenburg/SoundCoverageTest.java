@@ -39,6 +39,18 @@ public final class SoundCoverageTest {
             for(byte sample:real)if(sample!=0){nonzero=true;break;}
             if(!nonzero)throw new AssertionError("Silent NOX recording "+cue);
         }
+        // Owner-exported first-party ReverieVR Foley; not NOX or external CC0.
+        for(LanSound.Cue cue:new LanSound.Cue[]{
+                LanSound.Cue.UI_CLICK,LanSound.Cue.DOOR,LanSound.Cue.BOOK}){
+            if(!RecordedSfx.isPackaged(cue))
+                throw new AssertionError("Owner-reused recording not packaged: "+cue);
+            byte[] real=RecordedSfx.render(new LanSound.CueEvent(cue,0,75,2),80);
+            if(real==null||real.length<800||real.length>16000*4||real.length%4!=0)
+                throw new AssertionError("Invalid owner-reused recording "+cue);
+            boolean audible=false;
+            for(byte sample:real)if(sample!=0){audible=true;break;}
+            if(!audible)throw new AssertionError("Silent owner-reused recording "+cue);
+        }
         byte[] activated=RecordedSfx.render(
             new LanSound.CueEvent(LanSound.Cue.DEVICE_ON,0,75,2),80);
         byte[] deactivated=RecordedSfx.render(
