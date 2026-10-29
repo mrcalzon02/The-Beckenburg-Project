@@ -24,3 +24,9 @@ The in-game **UPDATES** UI and optional background check verify that the downloa
 4. **Product release-ready:** all critical recovery gates, map/ghost/equipment acceptance, accessibility/licensing, persistence and multi-machine test coverage are closed with visible evidence.
 
 For baseline details and current blockers, read `development/RECOVERY_PLAN_2026-10-25.md` and [the release acceptance contract](docs/RELEASE_ACCEPTANCE.md); do not infer completion from an obsolete stage ledger or a previously published downloadable EXE.
+
+## Windows installer handoff and diagnostic logs
+
+The game downloads the Inno Setup EXE to `%LOCALAPPDATA%\Beckenburg\Updates` and records the verified release SHA-256. On consent, it launches a separately executing Windows PowerShell helper in that directory, exits Beckenburg, and only then allows the helper to recheck the installer SHA-256 and start setup. The helper does not run from the install folder or depend on Beckenburg's bundled runtime. If the helper cannot proceed, the downloaded EXE remains available for manual execution **after all Beckenburg processes are closed**.
+
+Game and updater session logs: `%USERPROFILE%\.beckenburg\diagnostics\session-*.log`. Detached helper logs: `update-handoff-*.log`. Inno Setup logs: `update-setup-*.log` in the same diagnostics directory. The handoff log records waiting, game shutdown, integrity verification, installer PID and final exit code or failure. Logs are local and never automatically uploaded. This is a source-level handoff repair: Windows installation acceptance must still be demonstrated on a real installed build before marking the updater gate closed.

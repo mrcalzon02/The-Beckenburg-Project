@@ -168,8 +168,16 @@ public final class BeckenburgUpdates {
             return bytes;
         }
     }
-    /** Download to user-private staging, hash-verify, then atomically expose an installer. */
+    /** A private downloaded installer and its release-published SHA-256. */
+    public record StagedInstaller(Path path,String sha256) { }
+
+    /** Compatibility entrypoint for clients that only need the verified file. */
     public static Path stage(Release release,Path directory,IntConsumer progress)throws Exception{
+        return stageVerified(release,directory,progress).path();
+    }
+
+    /** Download to private staging, verify and carry the trusted checksum into the external helper. */
+    public static StagedInstaller stageVerified(Release release,Path directory,IntConsumer progress)throws Exception{
         if(release==null||!trustedAsset(release.installerUrl(),release.tag(),release.installerName()))
             throw new IllegalArgumentException("Untrusted installer");
         if(!trustedAsset(release.sumsUrl(),release.tag(),"SHA256SUMS.txt"))
@@ -205,7 +213,7 @@ public final class BeckenburgUpdates {
                 throw new IOException("Installer size/checksum verification failed");
             BeckenburgDeveloperTrace.update("installer-verified","tag="+release.tag()+" bytes="+read);
             Files.move(tmp,dest,StandardCopyOption.REPLACE_EXISTING);
-            return dest;
+            return new StagedInstaller(dest,expected);
         }finally{Files.deleteIfExists(tmp);}
     }
     public static Path updateDirectory(){

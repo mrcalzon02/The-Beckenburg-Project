@@ -63,7 +63,7 @@ public final class BeckenburgUpdatesUI {
         private final JButton action=new JButton("Download installer");
         private final JProgressBar progress=new JProgressBar(0,100);
         private BeckenburgUpdates.Release offered;
-        private Path staged;
+        private BeckenburgUpdates.StagedInstaller staged;
         private boolean busy;
         private boolean closed;
         UpdatePanel(JFrame parent,BeckenburgUpdates.Release found){
@@ -133,19 +133,19 @@ public final class BeckenburgUpdatesUI {
                     status.setText("Windows installer requires Windows.");return;
                 }
                 int consent=GameDialogs.showConfirmDialog(this,
-                    "Run the verified Beckenburg "+offered.version()+" installer? The game will close before installation.",
+                    "Close Beckenburg and hand the verified setup to a separate Windows helper? Installation will start only after the game has exited.",
                     "Install Beckenburg update",GameDialogs.YES_NO_OPTION,GameDialogs.WARNING_MESSAGE);
                 if(consent!=GameDialogs.YES_OPTION)return;
                 try{
                     BeckenburgDiagnostics.record("UPDATES handoff to SHA-256 verified installer "+offered.tag()
-                        +" file="+staged.getFileName()+" (user confirmed)");
+                        +" file="+staged.path().getFileName()+" (user confirmed)");
                     BeckenburgDeveloperTrace.update("installer-handoff-start","tag="+offered.tag());
-                    new ProcessBuilder(staged.toAbsolutePath().toString()).start();
-                    dispose(); // Installer runs separately after app process exits.
+                    BeckenburgInstallerHandoff.start(staged);
+                    dispose(); // Independent Windows helper waits for the game to exit.
                     System.exit(0);
                 }catch(Exception failure){
                     BeckenburgDiagnostics.fail("Installer process handoff",failure);
-                    status.setText("Installer could not start: "+failure.getMessage());
+                    status.setText("Handoff failed; setup remains in "+BeckenburgUpdates.updateDirectory());
                 }
                 return;
             }
@@ -156,15 +156,15 @@ public final class BeckenburgUpdatesUI {
                     BeckenburgDeveloperTrace.update("download-start","tag="+chosen.tag()+" size="+chosen.size());
                     BeckenburgDiagnostics.record("UPDATES downloading "+chosen.tag()+
                         " expected SHA-256 "+chosen.digest());
-                    Path verified=BeckenburgUpdates.stage(chosen,BeckenburgUpdates.updateDirectory(),
+                    Path verified=BeckenburgUpdates.stageVerified(chosen,BeckenburgUpdates.updateDirectory(),
                         percent->SwingUtilities.invokeLater(()->progress.setValue(percent)));
                     BeckenburgDeveloperTrace.update("download-verified","tag="+chosen.tag()+" sha256-ok");
                     BeckenburgDiagnostics.record("UPDATES verified installer "+chosen.tag()+
-                        " path="+verified.getFileName());
+                        " path="+verified.path().getFileName());
                     SwingUtilities.invokeLater(()->{
                         if(closed)return;
-                        staged=verified;state(false);action.setText("Run installer and exit");
-                        status.setText("SHA-256 verified. Installation requires another click.");
+                        staged=verified;state(false);action.setText("Close game and install");
+                        status.setText("Verified setup stored outside game. Installation starts after exit.");
                     });
                 }catch(Exception failure){
                     BeckenburgDiagnostics.fail("Update download / SHA-256 verification",failure);
