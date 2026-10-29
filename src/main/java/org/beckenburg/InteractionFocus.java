@@ -82,9 +82,26 @@ public final class InteractionFocus {
             candidate(targets,Kind.WINDOW,""+p.id(),map.windowOpen(p.id())?"Close window":"Open window",t);
         }
         var van=map.van();var button=van.doorButton();candidate(targets,Kind.VAN_DOOR,"cargo",van.cargoDoorClosed()?"Open van doors":"Close van doors",hit("button_12",r,button.x(),van.floorY()+1.2,button.z(),van.placement().yaw()+Math.PI/2,.30));
-        for(var f:VanInteriorLayout.FIXTURES){var p=van.world(f.localX(),f.localZ());double t=hit(f.mesh(),r,p.x(),van.placement().y()+f.y(),p.z(),van.placement().yaw()+f.yaw(),f.scale());
-            if(f.mount()==VanInteriorLayout.Mount.WALL||f.mount()==VanInteriorLayout.Mount.BULKHEAD||f.purpose().equals("desk keyboard")){
-                String id=f.purpose().contains("board")?"BRIEFING":f.purpose().equals("site map")?"MAP":f.purpose().contains("command")||f.purpose().equals("desk keyboard")?"COMPUTER":"RELAY";
+        for(var f:VanInteriorLayout.FIXTURES){
+            var p=van.world(f.localX(),f.localZ());
+            double t;
+            if(f.mesh().equals("beckenburg_flat_monitor")
+                    ||f.mesh().equals("beckenburg_wide_monitor")){
+                // Hit the same bespoke panel bounds used for its real 3D model.
+                // No nonexistent GLB lookup and no invisible menu hotspot.
+                double[] local=local(r,p.x(),van.placement().y()+f.y(),p.z(),
+                    van.placement().yaw()+f.yaw(),f.scale(),f.scale(),f.scale(),0,0);
+                t=box(local,VanInteriorLayout.bounds(f.mesh()));
+            }else t=hit(f.mesh(),r,p.x(),van.placement().y()+f.y(),
+                p.z(),van.placement().yaw()+f.yaw(),f.scale());
+            if(f.mount()==VanInteriorLayout.Mount.WALL||f.mount()==VanInteriorLayout.Mount.BULKHEAD
+                    ||f.purpose().equals("desk keyboard")){
+                String id=switch(f.purpose()){
+                    case "site map","camera feed" -> "MAP";
+                    case "contract objective board","daily assignment board" -> "BRIEFING";
+                    case "desk keyboard","main command monitor" -> "COMPUTER";
+                    default -> "RELAY";
+                };
                 candidate(targets,Kind.INTERFACE,id,label(f.purpose()),t);
             }else blocker=Math.min(blocker,t);
         }
