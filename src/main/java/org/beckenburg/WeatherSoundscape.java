@@ -152,6 +152,21 @@ public final class WeatherSoundscape implements AutoCloseable {
     private record Thunder(short[] data,double gain,int cursor){
         Thunder advance(int next){return new Thunder(data,gain,next);}
     }
+    private record LoopBed(short[] frames,double gain){}
+    private static final java.util.Set<String> BAD_CLIPS=
+        java.util.concurrent.ConcurrentHashMap.newKeySet();
+    /** Gameplay degrades to procedural climate on malformed optional samples.
+     * Strict originalSamples() remains fail-closed for tests and packaging checks. */
+    private static short[] optionalOriginal(String name){
+        if(BAD_CLIPS.contains(name))return null;
+        try{return original(name);}
+        catch(IllegalStateException invalid){
+            if(BAD_CLIPS.add(name))
+                System.err.println("Beckenburg weather recording unavailable; using procedural fallback: "
+                    +name+" / "+invalid.getMessage());
+            return null;
+        }
+    }
     /** Bundled WAV presence check also works in a headless packaged JAR. */
     static int originalSamples(String name){return original(name).length;}
     private static void release(SourceDataLine line){
@@ -182,10 +197,24 @@ public final class WeatherSoundscape implements AutoCloseable {
                 }else if(!line.isRunning())line.start();
                 List<dev.mrcalzon.weather.WeatherAudio.Loop> gains=linked==null
                     ?List.of():linked.audio().loops();
+                // Resolve one recording per output BLOCK, not per individual PCM sample:
+                // removes thousands of synchronized asset lookups each second.
+                ArrayList<LoopBed> beds=new ArrayList<>();
+                boolean missingBed=false;
+                if(linked!=null)for(var layer:gains){
+                    if(!layer.id().startsWith("ambient_")||layer.gain()<=.001)continue;
+                    short[] captured=optionalOriginal(layer.id());
+                    if(captured==null)missingBed=true;
+                    else beds.add(new LoopBed(captured,layer.gain()));
+                }
                 if(linked!=null)for(var cue:linked.audio().drainCues()){
-                    if(!cue.id().equals("thunder_near")&&!cue.id().equals("thunder_distant"))
-                        throw new IllegalStateException("Unknown shared weather cue "+cue.id());
-                    thunder.add(new Thunder(original(cue.id()),cue.volume(),0));
+                    if(!cue.id().equals("thunder_near")&&!cue.id().equals("thunder_distant")){
+                        if(BAD_CLIPS.add(cue.id()))
+                            System.err.println("Beckenburg unknown shared weather cue skipped: "+cue.id());
+                        continue;
+                    }
+                    short[] captured=optionalOriginal(cue.id());
+                    if(captured!=null)thunder.add(new Thunder(captured,cue.volume(),0));
                 }
                 byte[] block=new byte[2048];
                 int volume=EnvironmentAudio.volume();
@@ -194,10 +223,10 @@ public final class WeatherSoundscape implements AutoCloseable {
                     double mixed;
                     if(linked==null) mixed=playbackSample(w.weather(),w.intensity(),exposed,offset);
                     else {
-                        mixed=0;
-                        for(var layer:gains){
-                            if(!layer.id().startsWith("ambient_")||layer.gain()<=.001)continue;
-                            short[] bed=original(layer.id());
+                        mixed=missingBed
+                            ?playbackSample(w.weather(),w.intensity(),exposed,offset):0;
+                        for(LoopBed layer:beds){
+                            short[] bed=layer.frames();
                             mixed+=bed[(int)(offset%bed.length)]*layer.gain()
                                 *(exposed?.57:.13);
                         }
