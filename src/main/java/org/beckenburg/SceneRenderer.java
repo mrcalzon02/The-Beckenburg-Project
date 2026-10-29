@@ -1964,13 +1964,14 @@ public final class SceneRenderer {
         appendRetainedWorld(out,enclosure,"enclosure",map);
         if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of(),map);}
         int rejected=0,skippedFaces=0,candidateFaces=0;
+        boolean omitResidentShell=!exportFullLevel&&GpuWorldRenderer.active()!=null
+            &&!uvLamp&&dotsPositions.isEmpty()&&!hasActivePortableLight();
         for(ShellChunk chunk:staticShellChunks(map)){
             if(!exportFullLevel&&shellChunkCulling&&!shellChunkInFrustum(chunk)){
                 rejected++;skippedFaces+=chunk.end-chunk.start;continue;
             }
             candidateFaces+=chunk.end-chunk.start;
-            if(!exportFullLevel&&GpuWorldRenderer.active()!=null&&!uvLamp&&dotsPositions.isEmpty()
-                &&!hasActivePortableLight()){
+            if(omitResidentShell){
                 residentOmittedFaces+=chunk.end-chunk.start;continue;
             }
             for(int i=chunk.start;i<chunk.end;i++){
