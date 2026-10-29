@@ -22,7 +22,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         java.util.concurrent.ThreadLocalRandom.current());
     private LobbyGhostAvatar.Look remoteLook;
     private boolean ghostJoined;
-    private final JSpinner partySize=new JSpinner(new SpinnerNumberModel(3,1,6,1));
+    private final JSpinner partySize=new JSpinner(new SpinnerNumberModel(1,1,6,1));
     private final JComboBox<HouseMap.Site> siteChoice=
         new JComboBox<>(java.util.Arrays.stream(HouseMap.Site.values())
             .filter(SiteCatalog::playable).toArray(HouseMap.Site[]::new));
@@ -48,12 +48,14 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
     private final JButton reconnect=new JButton("Reconnect");
     private int myRoom=HouseMap.EXTRACTION_ROOM;
     private boolean busy,missionRunning,worldMode;
+    private boolean localReady,pendingStart,startCommandSent,waitingReadyAck;
+    private int knownReadyCount,readyBeforeStart;
     private long connectionGeneration;
     private LanWorldPanel worldView;
     private LanGhostPanel ghostView;
     private JPanel fieldContents;
     private final JButton enter3D=new JButton("Enter 3D World");
-    private final JButton ready=new JButton("Ready / Unready"),start=new JButton("Start Match"),move=new JButton("Move Room"),use=new JButton("Ghost Action");
+    private final JButton ready=new JButton("READY"),start=new JButton("START ROUND"),move=new JButton("Move Room"),use=new JButton("Ghost Action");
 
     private final java.util.function.Consumer<JComponent> enterWorld;
     private final Runnable back;
@@ -242,16 +244,13 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         sendLobbyChat.addActionListener(e->sendLobbyMessage());
         lobbyChat.addActionListener(e->sendLobbyMessage());
         tuneContract.addActionListener(e->configureCustomContract());
-        ready.addActionListener(e->send("READY"));start.addActionListener(e->{
-            if(hosted!=null&&campaignLaunch!=null){
-                start.setEnabled(false);
-                new SwingWorker<Void,Void>(){
-                    protected Void doInBackground()throws Exception{hosted.prepareCampaignBots(campaignLaunch.bots());return null;}
-                    protected void done(){try{get();send("START");}catch(Exception ex){log.append("Team preparation failed: "+"Operation unavailable (NET-04)"+"\n");}
-                        setCommandEnabled(connection!=null);}
-                }.execute();
-            }else send("START");
+        ready.addActionListener(e->{
+            if(connection==null||missionRunning)return;
+            localReady=!localReady;
+            send("READY");
+            ready.setText(localReady?"UNREADY":"READY");
         });
+        start.addActionListener(e->requestStartRound());
         move.addActionListener(e->action(() -> connection.move((int)target.getValue())));
         use.addActionListener(e->action(() -> connection.ghost((GhostDomain.Action)action.getSelectedItem(),(int)target.getValue())));
         scan.addActionListener(e->action(() -> connection.scan((LanCase.Tool)instrument.getSelectedItem())));
@@ -264,6 +263,64 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         enter3D.addActionListener(e->open3D());
         setCommandEnabled(false);setMinimumSize(new Dimension(740,490));
         if(campaignLaunch==null)restoreLocalResumeOffer();
+        // Solo campaign is one-click dispatch: host, ready, start and enter the scene.
+        if(campaignLaunch!=null&&!campaignLaunch.coop())
+            SwingUtilities.invokeLater(this::requestStartRound);
+    }
+    private void requestStartRound(){
+        if(missionRunning){open3D();return;}
+        if(connection==null){
+            if(campaignLaunch!=null&&!campaignLaunch.coop()){
+                pendingStart=true;
+                status.setText("Creating local investigation...");
+                if(!busy)connect(true);
+            }else status.setText("Host or join a LAN room before starting.");
+            return;
+        }
+        if(hosted==null){
+            status.setText("Only the hosting player can start a round.");
+            return;
+        }
+        if(startCommandSent)return;
+        pendingStart=true;
+        status.setText("Preparing investigation...");
+        if(!localReady){
+            readyBeforeStart=knownReadyCount;
+            localReady=true;
+            waitingReadyAck=true;
+            send("READY");
+            ready.setText("UNREADY");
+            return;
+        }
+        dispatchStartRound();
+    }
+    /** Only prepare the campaign's real hosted party after readiness reached its host. */
+    private void dispatchStartRound(){
+        if(!pendingStart||startCommandSent||hosted==null||connection==null)return;
+        startCommandSent=true;
+        start.setEnabled(false);
+        if(campaignLaunch==null){send("START");return;}
+        final LanHost hostToStart=hosted;
+        new SwingWorker<Void,Void>(){
+            @Override protected Void doInBackground()throws Exception{
+                hostToStart.prepareCampaignBots(campaignLaunch.bots());
+                return null;
+            }
+            @Override protected void done(){
+                try{
+                    get();
+                    if(connection==null||hosted!=hostToStart)throw new IOException("Host disconnected");
+                    send("START");
+                }catch(Exception ex){
+                    pendingStart=false;startCommandSent=false;waitingReadyAck=false;
+                    Throwable reason=ex.getCause()==null?ex:ex.getCause();
+                    String detail=reason.getMessage()==null?reason.toString():reason.getMessage();
+                    status.setText("Round not started: "+detail);
+                    log.append("Team preparation failed: "+detail+"\n");
+                    setCommandEnabled(connection!=null);
+                }
+            }
+        }.execute();
     }
     private void showLocalPage(JComponent active){
         removeAll();add(active==this?lobbyContents:active,BorderLayout.CENTER);revalidate();repaint();
@@ -485,13 +542,15 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                         remoteLook!=null?remoteLook:localLook,remoteLook!=null);
                     else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
                     setCommandEnabled(true);log.append("Connected. Ready when your team is assembled.\n");
+                    if(pendingStart)SwingUtilities.invokeLater(this::requestStartRound);
                 });
             }catch(Exception ex){
                 if(newHost!=null)newHost.close();
                 String msg="Connection unavailable (NET-04)";
                 SwingUtilities.invokeLater(()->{
                     if(generation!=connectionGeneration)return;
-                    busy=false;status.setText("Connection failed");
+                    busy=false;pendingStart=false;waitingReadyAck=false;
+                    status.setText("Connection failed");
                     log.append(LanNetworkDiagnostics.explain(ex)+"\nDetail: "+msg+"\n");
                 });
             }
@@ -596,6 +655,8 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             if(hosted!=null&&!localHostSurvives)resumeTicket=null;
             reconnect.setEnabled(resumeTicket!=null);
             missionRunning=false;worldMode=false;busy=false;
+            pendingStart=false;startCommandSent=false;waitingReadyAck=false;
+            localReady=false;knownReadyCount=0;ready.setText("READY");
             fieldContents=null;
             if(connection!=null){connection.close();connection=null;}
             // An unexpected local TCP EOF does not imply authoritative host death.
@@ -624,6 +685,21 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         if(worldView!=null)worldView.onEvent(event);
         if(ghostView!=null)ghostView.onEvent(event);
         if(event.startsWith("REJECT|")||event.startsWith("ERROR|")||event.startsWith("ACCEPT|"))equipmentPage.notice(event);
+        if(event.startsWith("REJECT|")&&pendingStart){
+            pendingStart=false;startCommandSent=false;waitingReadyAck=false;
+            status.setText("Round not started: "+event.substring("REJECT|".length()));
+            setCommandEnabled(connection!=null);
+        }
+        if(event.startsWith("LOBBY|")){
+            var fields=LanProtocol.parts(event);
+            if(fields.size()==5){
+                knownReadyCount=LanProtocol.integer(fields.get(3),0,7);
+                if(waitingReadyAck&&pendingStart&&knownReadyCount>readyBeforeStart){
+                    waitingReadyAck=false;
+                    dispatchStartRound();
+                }
+            }
+        }
         if(event.startsWith("SITE|")){
             var parts=LanProtocol.parts(event);
             if(parts.size()==3){
@@ -680,7 +756,12 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             }
             return;
         }
-        if(event.startsWith("INFO|mission started")){missionRunning=true;setCommandEnabled(true);}
+        if(event.startsWith("INFO|mission started")){
+            missionRunning=true;pendingStart=false;startCommandSent=false;waitingReadyAck=false;
+            setCommandEnabled(true);
+            // START ROUND enters the actual game: no second Enter 3D World click.
+            SwingUtilities.invokeLater(()->{if(connection!=null&&missionRunning)open3D();});
+        }
         if(event.startsWith("RESULT|")||event.startsWith("INFO|match stopped")){missionRunning=false;setCommandEnabled(true);}
         if(event.startsWith("LOBBYAVATAR|")){
             var parts=LanProtocol.parts(event);
@@ -722,7 +803,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
     private void setCommandEnabled(boolean available){
         lobbyChat.setEnabled(available&&!missionRunning);
         sendLobbyChat.setEnabled(available&&!missionRunning);
-        ready.setEnabled(available);
+        ready.setEnabled(available&&!missionRunning);
         // Production GUI hosts explicitly claim H1 or GHOST at creation.
         // A remote guest occupying H1 in a ghost-hosted room is NOT the owner.
         start.setEnabled(available&&!missionRunning&&hosted!=null&&connection!=null&&
