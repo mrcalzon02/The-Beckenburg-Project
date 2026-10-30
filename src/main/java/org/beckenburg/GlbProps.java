@@ -60,6 +60,7 @@ public final class GlbProps {
         names.addAll(LivedAssets.ORIGINAL);names.addAll(LivedAssets.SOURCED);
         for(String name:LivedAssets.ORIGINAL)names.add(LivedAssets.worn(name));
         names.addAll(EquipmentModelCatalog.approvedModels());
+        names.addAll(ImportedAssetLibrary.available());
         return java.util.Collections.unmodifiableSet(names);
     }
     public record Vertex(double x,double y,double z,double u,double v,double nx,double ny,double nz) {public Vertex(double x,double y,double z,double u,double v){this(x,y,z,u,v,0,0,0);}}
@@ -187,11 +188,17 @@ public final class GlbProps {
 
     public static synchronized Model model(String name){
         if(!Arrays.asList(NAMES).contains(name) && !LevelAssets.approved(name) && !EquipmentModelCatalog.approved(name)
-                && !TierModelForge.generatedName(name))
+                && !TierModelForge.generatedName(name) && !ImportedAssetLibrary.approved(name))
             throw new IllegalArgumentException("Unapproved model "+name);
         Model m=cache.get(name);
         if(m!=null)return m;
         String resource="/org/beckenburg/models/"+name+".glb";
+        if(ImportedAssetLibrary.approved(name)){
+            try{
+                m=decode(ImportedAssetLibrary.read(name),name);
+                cache.put(name,m);return m;
+            }catch(IOException failure){throw new IllegalStateException("User imported model unavailable: "+name,failure);}
+        }
         try(InputStream in=GlbProps.class.getResourceAsStream(resource)){
             if(in==null)throw new IOException("Missing packaged licensed mesh "+resource);
             byte[] bytes=in.readNBytes(4_000_001);
