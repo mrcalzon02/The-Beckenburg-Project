@@ -50,6 +50,14 @@ public final class GhostAiRuleLab {
         JPanel controls=new JPanel(new FlowLayout(FlowLayout.LEFT,4,3));
         controls.add(hears);controls.add(victim);
         run.addActionListener(e->simulate());controls.add(run);
+        JButton audit=new JButton("AUDIT ROSTER");
+        audit.setToolTipText("Inspect every canonical species, variant link, and presentation safeguard");
+        audit.addActionListener(e->auditRoster());
+        controls.add(audit);
+        JButton export=new JButton("EXPORT RULES JSON");
+        export.setToolTipText("Write a deterministic, source-derived NPC rule snapshot without session data");
+        export.addActionListener(e->exportRulebook());
+        controls.add(export);
         JButton close=new JButton("CLOSE");close.addActionListener(e->dialog.dispose());
         controls.add(close);
         footer.add(controls,BorderLayout.NORTH);
@@ -77,6 +85,33 @@ public final class GhostAiRuleLab {
             "and inspect actual host legal-actions at the chosen tick.\n\n"+
             "No network client, shared world, player location or private journal is accessed.\n"+
             "A checkmark is a synthetic test precondition, not proof of an in-game victim.");
+    }
+    private void auditRoster(){
+        StringBuilder out=new StringBuilder("NPC / AI CANONICAL ROSTER AUDIT\\n");
+        out.append("Species definitions: ").append(book.all().size()).append("\\n");
+        out.append("All rules loaded from current GhostIdentity/GhostTraits/GhostBehavior/")
+            .append("GhostFrenzy/GhostEvidenceMatrix.\\n\\n");
+        var findings=book.inspect();
+        if(findings.isEmpty())out.append("No structural warnings detected.\\n");
+        else for(var finding:findings)
+            out.append(finding.code()).append(" / ").append(finding.subject())
+                .append(" / ").append(finding.detail()).append("\\n");
+        out.append("\\nNotes describe constraints; they do not imply game errors.\\n");
+        out.append("A source rulebook audit does not replace multiplayer pursuit or live collision testing.");
+        test.setText(out.toString());test.setCaretPosition(0);
+        caption.setText("Completed developer-only source rule audit; no active session accessed");
+    }
+    private void exportRulebook(){
+        javax.swing.JFileChooser files=new javax.swing.JFileChooser();
+        files.setSelectedFile(new java.io.File("beckenburg-npc-rules.json"));
+        if(files.showSaveDialog(dialog)!=javax.swing.JFileChooser.APPROVE_OPTION)return;
+        try{
+            org.beckenburg.editor.ai.NpcRuleExport.save(book,files.getSelectedFile().toPath());
+            caption.setText("Exported source-derived NPC rulebook: "+files.getSelectedFile());
+        }catch(java.io.IOException error){
+            javax.swing.JOptionPane.showMessageDialog(dialog,error.getMessage(),
+                "NPC rule export failed",javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }
     private void simulate(){
         final GhostIdentity.Type selected=(GhostIdentity.Type)species.getSelectedItem();
