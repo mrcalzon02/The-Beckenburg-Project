@@ -75,6 +75,9 @@ public final class SceneRenderer {
         frame=new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
         pixels=((DataBufferInt)frame.getRaster().getDataBuffer()).getData();
         depths=new double[width*height];
+        // A resized or disabled effects pipeline must not pin the previous
+        // full-resolution scratch buffer (up to 8 MiB at 1080p).
+        graphicsEffectsScratch=null;
         focal=nativeFocal*height/H;
     }
     private static final int[] BAYER={0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5};
