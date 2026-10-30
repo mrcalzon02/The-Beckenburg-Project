@@ -60,6 +60,10 @@ public final class GhostAiRuleLab {
         nav.setToolTipText("Inspect real room exits, van boundary and acoustic propagation on a fresh authored-site map");
         nav.addActionListener(e->auditNavigation());
         controls.add(nav);
+        JButton profile=new JButton("PROFILE RULES");
+        profile.setToolTipText("Run a seeded isolated real GhostDomain + LanGhostPursuit rule scenario; not a live playtest");
+        profile.addActionListener(e->profileScenario());
+        controls.add(profile);
         JButton export=new JButton("EXPORT RULES JSON");
         export.setToolTipText("Write a deterministic, source-derived NPC rule snapshot without session data");
         export.addActionListener(e->exportRulebook());
@@ -106,6 +110,54 @@ public final class GhostAiRuleLab {
         out.append("A source rulebook audit does not replace multiplayer pursuit or live collision testing.");
         test.setText(out.toString());test.setCaretPosition(0);
         caption.setText("Completed developer-only source rule audit; no active session accessed");
+    }
+    private void profileScenario(){
+        final GhostIdentity.Type selected=(GhostIdentity.Type)species.getSelectedItem();
+        final HouseMap.Site chosen=(HouseMap.Site)site.getSelectedItem();
+        if(selected==null||chosen==null)return;
+        final int duration=Math.max(1,((Number)tick.getValue()).intValue());
+        final boolean sound=hears.isSelected();
+        caption.setText("Profiling REAL domain rules / seeded pursuit in an isolated, limited scenario...");
+        new SwingWorker<String,Void>(){
+            @Override protected String doInBackground(){
+                var report=GhostAiScenarioRunner.run(selected,chosen,duration,20261030L,sound);
+                StringBuilder out=new StringBuilder("SEEDED HOST-RULE SCENARIO — NOT LIVE GAMEPLAY\\n");
+                out.append("Ghost: ").append(selected).append(" / site: ").append(chosen)
+                    .append(" / 10 Hz ticks: ").append(duration).append("\\n");
+                out.append("Domain-accepted events: ").append(report.accepted())
+                    .append(" / host-rejected: ").append(report.denied())
+                    .append(" / DRIFT: ").append(report.drift()).append("\\n");
+                out.append("Controlled authoring sound pulses: ").append(report.emittedSounds()).append("\\n");
+                out.append("Final rule-only room: ").append(report.finalRoom())
+                    .append(" / remaining energy: ").append(report.energy()).append("\\n\\n");
+                out.append("REAL CODE TIMINGS (rolling 256, nanoseconds; not hardware FPS)\\n");
+                for(var kind:org.beckenburg.editor.ai.NpcAiTelemetry.Metric.values()){
+                    var times=report.timings().timings().get(kind);
+                    out.append(kind).append(" n=").append(times.calls())
+                        .append(" p50=").append(times.p50Ns())
+                        .append(" p95=").append(times.p95Ns())
+                        .append(" p99=").append(times.p99Ns()).append("\\n");
+                }
+                out.append("\\nRECENT ACTUAL GHOSTDOMAIN RESOLUTIONS\\n");
+                for(var e:report.recent())
+                    out.append(e.tick()).append(" / ").append(e.action())
+                        .append(" / ").append(e.accepted()?"accepted":"denied")
+                        .append(" / ").append(e.reason()).append("\\n");
+                out.append("\\nScope: real host-rule classes, but NO physics, lighting, frenzy, hunter bodies, "+
+                    "active map, actual network host, or multiplayer collision.\\n");
+                out.append("Timing values depend on the machine and are diagnostic only.");
+                return out.toString();
+            }
+            @Override protected void done(){
+                try{test.setText(get());test.setCaretPosition(0);
+                    caption.setText("Seeded decision scenario complete — measured real rule-path calls.");
+                }catch(Exception error){
+                    Throwable cause=error;while(cause.getCause()!=null)cause=cause.getCause();
+                    test.setText("SCENARIO FAILED: "+cause.getMessage());
+                    caption.setText("Source scenario failed; no active session was modified.");
+                }
+            }
+        }.execute();
     }
     private void auditNavigation(){
         final HouseMap.Site chosen=(HouseMap.Site)site.getSelectedItem();
