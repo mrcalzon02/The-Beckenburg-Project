@@ -276,6 +276,10 @@ public final class DeveloperLevelEditor extends JPanel {
         campaignLab.setToolTipText("Portable authoring state graph; safe idempotent transitions, flag/dependency inspection; NOT live game control");
         campaignLab.addActionListener(e->org.beckenburg.editor.EditorCampaignLab.show(window));
         commands.add(campaignLab);
+        JButton npcAi=button("NPC / AI");
+        npcAi.setToolTipText("Read the actual ghost species rules and inspect host-legal actions in an isolated simulation");
+        npcAi.addActionListener(e->GhostAiRuleLab.show(window));
+        commands.add(npcAi);
         JButton billboardLab=button("BILLBOARDS");
         billboardLab.setToolTipText("Import PNG/JPEG, compare retro palette and aspect presets, estimate memory, then bake separate image; 3D binding pending");
         billboardLab.addActionListener(e->org.beckenburg.editor.EditorBillboardLab.show(window));
