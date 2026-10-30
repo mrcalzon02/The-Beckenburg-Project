@@ -92,6 +92,20 @@ public final class DeveloperLevelEditor extends JPanel {
     private int downX,downY;
     private double clock;
     private final JFrame window;
+    /** Four per-session editor camera bookmarks; each preserves orientation and elevation. */
+    private final double[][] cameraBookmarks=new double[4][];
+    private void bookmarkCamera(int index,boolean store){
+        if(store){
+            cameraBookmarks[index]=new double[]{renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,renderer.pitch};
+            status.setText("Saved camera bookmark "+(index+1));
+        }else if(cameraBookmarks[index]!=null){
+            double[] c=cameraBookmarks[index];
+            renderer.x=c[0];renderer.eyeHeight=c[1];renderer.z=c[2];
+            renderer.yaw=c[3];renderer.pitch=c[4];
+            status.setText("Camera bookmark "+(index+1));
+        }else status.setText("Camera bookmark "+(index+1)+" is empty — use Ctrl+F"+(index+1)+" to store");
+        viewport.requestFocusInWindow();
+    }
 
     public static void open(Window parent){
         var frame=new JFrame("Beckenburg — Developer Level Editor");
@@ -150,6 +164,9 @@ public final class DeveloperLevelEditor extends JPanel {
         viewport.addMouseWheelListener(e->advance(-e.getPreciseWheelRotation()*.85));
         viewport.addKeyListener(new KeyAdapter(){
             @Override public void keyPressed(KeyEvent e){
+                if(e.getKeyCode()>=KeyEvent.VK_F1&&e.getKeyCode()<=KeyEvent.VK_F4){
+                    bookmarkCamera(e.getKeyCode()-KeyEvent.VK_F1,e.isControlDown());return;
+                }
                 if(e.isControlDown()){
                     if(e.getKeyCode()==KeyEvent.VK_S){save();return;}
                     if(e.getKeyCode()==KeyEvent.VK_Z){undo();return;}
@@ -215,6 +232,13 @@ public final class DeveloperLevelEditor extends JPanel {
             viewport.requestFocusInWindow();
         });
         toolStrip.add(overhead);toolStrip.add(ground);toolStrip.add(upper);
+        for(int i=0;i<cameraBookmarks.length;i++){
+            final int slot=i;
+            JButton view=button("VIEW "+(slot+1));
+            view.setToolTipText("Click to restore view; Ctrl+click to store (Ctrl+F"+(slot+1)+" / F"+(slot+1)+")");
+            view.addActionListener(e->bookmarkCamera(slot,(e.getModifiers()&ActionEvent.CTRL_MASK)!=0));
+            toolStrip.add(view);
+        }
         lightVolumeOverlay.setToolTipText("Draw selected fixture's real radius and occlusion-clipped rays; green=open, orange=blocked");
         lightVolumeOverlay.setFocusable(false);
         lightVolumeOverlay.addActionListener(e->{
