@@ -17,10 +17,10 @@ public final class CastleWarehouse {
  private static List<Exhibit> exhibits;
  private static List<Rack> createRacks(){
   var out=new ArrayList<Rack>();
-  for(double z:new double[]{19.4,21.55,27.5,29.65,31.8})out.add(new Rack(29.65,z,1,-Math.PI/2));
-  for(double z:new double[]{19.4,21.55,23.7,25.85,28,30.15})out.add(new Rack(41.95,z,1,Math.PI/2));
+  for(double z:new double[]{19.4,21.55,27.5,29.65,31.8})out.add(new Rack(29.95,z,1,-Math.PI/2));
+  for(double z:new double[]{19.4,21.55,23.7,25.85,28,30.15})out.add(new Rack(41.65,z,1,Math.PI/2));
   out.add(new Rack(32.2,18.1,1,0));out.add(new Rack(39.1,18.1,1,0));
-  out.add(new Rack(34.5,33.1,1,Math.PI));out.add(new Rack(37,33.1,1,Math.PI));
+  out.add(new Rack(34.5,32.75,1,Math.PI));out.add(new Rack(37,32.75,1,Math.PI));
   return List.copyOf(out);
  }
  public static synchronized List<Exhibit> exhibits(){
