@@ -26,6 +26,8 @@ public final class FixtureLighting {
  private boolean portalStateInitialized;
  private int lastHidingDensity=-1;
  private long generation,invalidatedCells,consideredSources;
+ /** Visibility changes caused by a portal are source-specific. */
+ private long[] sourceOcclusionRevisions=new long[0];
  private static <K,V> Map<K,V> bounded(int limit){
   return new LinkedHashMap<K,V>(2048,.75f,true){
    @Override protected boolean removeEldestEntry(Map.Entry<K,V> eldest){
@@ -70,9 +72,12 @@ public final class FixtureLighting {
  public static final class StationaryShadows {
   private final FixtureLighting owner;
   private final Map<Object,Boolean> values=new HashMap<>();
-  private long epoch=-1;
-  private StationaryShadows(FixtureLighting owner){this.owner=owner;}
-  public void release(){owner.stationaryShadowEntries-=values.size();values.clear();epoch=-1;}
+  private long epoch=-1,globalEpoch=-1;
+  private final long[] capturedSourceRevisions;
+  private StationaryShadows(FixtureLighting owner){
+   this.owner=owner;this.capturedSourceRevisions=new long[owner.sources.size()];
+  }
+  public void release(){owner.stationaryShadowEntries-=values.size();values.clear();epoch=-1;globalEpoch=-1;}
  }
 
  private long stationaryShadowEntries;
@@ -88,7 +93,25 @@ public final class FixtureLighting {
   if(next!=null){
    if(next.owner!=this)throw new IllegalArgumentException("Shadows belong to a different lighting scene");
    if(next.epoch!=regionEpoch){
-    stationaryShadowEntries-=next.values.size();next.values.clear();next.epoch=regionEpoch;
+    int before=next.values.size();
+    if(next.globalEpoch!=occluderEpoch
+        ||next.capturedSourceRevisions.length!=sourceOcclusionRevisions.length){
+     // A real global structural change invalidates every visibility result.
+     next.values.clear();
+    }else{
+     // A single doorway only changes rays from lamps that can intersect
+     // that portal. Preserve every other source's immutable visibility.
+     next.values.entrySet().removeIf(entry->{
+      int id=shadowSourceId(entry.getKey());
+      return id<0||id>=sourceOcclusionRevisions.length
+          ||next.capturedSourceRevisions[id]!=sourceOcclusionRevisions[id];
+     });
+    }
+    stationaryShadowEntries-=before-next.values.size();
+    System.arraycopy(sourceOcclusionRevisions,0,next.capturedSourceRevisions,0,
+        sourceOcclusionRevisions.length);
+    next.globalEpoch=occluderEpoch;
+    next.epoch=regionEpoch;
    }
   }
   activeShadows=next;return previous;
@@ -105,6 +128,11 @@ public final class FixtureLighting {
   }else sight.put(key,visible);
  }
  private record NormalShadow(int source,NormalKey receiver){}
+ private static int shadowSourceId(Object key){
+  if(key instanceof Shadow result)return result.source();
+  if(key instanceof NormalShadow result)return result.source();
+  return -1;
+ }
  private String geometry="",state="";private double[] factors=new double[0];
  private long occluderEpoch;
  private final BitSet knownEmissionMaterials=new BitSet(),emissionMaterials=new BitSet();
@@ -313,7 +341,7 @@ public final class FixtureLighting {
    var pos=map.van().world(xx,light.z());
    add(Kind.VAN_DIFFUSER,14,0,pos.x(),map.van().placement().y()+light.mountY()-.065,pos.z(),0,-1,0,3.8,.95,.92,.97,1);
   }
-  factors=new double[sources.size()];
+  factors=new double[sources.size()];sourceOcclusionRevisions=new long[sources.size()];
  }
  private int controller(LevelDefinition.Socket socket){int at=socket.style().indexOf('@');if(at<0)return 0;String key=socket.style().substring(at+1);var plate=map.level().sockets().stream().filter(s->s.id().equals(key)).findFirst().orElseThrow();return map.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.LIGHT_SWITCH&&Math.hypot(f.x()-plate.x(),f.z()-plate.z())<.001).findFirst().orElseThrow().id();}
  public FixtureLighting(CastleHubMap castle){map=null;this.castle=Objects.requireNonNull(castle);
@@ -328,7 +356,7 @@ public final class FixtureLighting {
    var mount=CastleWallLampMount.resolve(light,CastleLevelEdits.current().walls());
    add(kind,0,0,mount.x(),y,mount.z(),0,-1,0,edited.radius(),edited.power(),
        1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
-  }factors=new double[sources.size()];
+  }factors=new double[sources.size()];sourceOcclusionRevisions=new long[sources.size()];
  }
  public void castleFrame(boolean on,int tick){
   resetStatistics();
@@ -336,6 +364,7 @@ public final class FixtureLighting {
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
    castleDoorRevision=castle.doorRevision();occluderEpoch=++generation;
+   Arrays.fill(sourceOcclusionRevisions,occluderEpoch);
    sight.clear();colours.clear();normalColours.clear();distant.clear();
   }
   int cosmeticTick=(tick/6)*6;
@@ -434,6 +463,7 @@ public final class FixtureLighting {
   for(var source:sources){
    if(!LightModel.portalInfluences(source.x,source.y,source.z,source.radius,
         portal.x(),portal.y(),portal.z(),portal.width(),portal.alongX()))continue;
+   sourceOcclusionRevisions[source.id]=revision;
    eachInfluenceCell(source,key->{
     changedCells.put(key,revision);occluderCells.put(key,revision);invalidatedCells++;
    });
@@ -458,6 +488,7 @@ public final class FixtureLighting {
    if(changedPortals==0)full=true;
    if(full){
     occluderEpoch=++generation;
+    Arrays.fill(sourceOcclusionRevisions,occluderEpoch);
     sight.clear();colours.clear();normalColours.clear();distant.clear();
    }else{
     // Shared short-lived ray results cannot know which doorway blocked them.
