@@ -268,6 +268,10 @@ public final class DeveloperLevelEditor extends JPanel {
         animationLab.setToolTipText("Edit rigid-part animation clips at 15/30 fps, with stepped playback and isolated root motion");
         animationLab.addActionListener(e->org.beckenburg.editor.EditorAnimationLab.show(window));
         commands.add(animationLab);
+        JButton retroSfx=button("SFX ASSETS");
+        retroSfx.setToolTipText("Inspect PCM WAV memory and export separate 11/22-kHz PSX-style mono WAVs; game mixer unchanged");
+        retroSfx.addActionListener(e->org.beckenburg.editor.EditorSoundLab.show(window));
+        commands.add(retroSfx);
         JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());waterModules.setToolTipText("Reusable water modules, shapes, snap handles and weather preview");waterModules.addActionListener(e->EnvironmentModuleEditor.open(window,"castle"));commands.add(waterModules);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
