@@ -15,6 +15,9 @@ final class RecordedSfx {
     private static final AudioFormat FORMAT=new AudioFormat(16000f,16,2,true,false);
     private static final Map<String,byte[]> CACHE=new HashMap<>();
     private static final int STING_VARIANTS=6;
+    private static final int GHOST_LINE_VARIANTS=20;
+    // Full spoken utterances can be longer than the four-second Foley safety cap.
+    private static final int MAX_GHOST_VOICE_BYTES=16000*4*12;
     // Short Foley clips must not monopolize the single effects line behind critical attack cues.
     private static final int MAX_PCM_BYTES=16000*4*4;
     private static final int SHORT_MECHANICAL_BYTES=16000*4;
@@ -29,6 +32,28 @@ final class RecordedSfx {
             throw new IllegalArgumentException("invalid horror cue variant");
         return cue.name().toLowerCase(java.util.Locale.ROOT)+"_"+index+".wav";
     }
+
+    /** Cosmetic voice choice from the authoritative event tick alone.
+     * No ghost identity, location, or client-local RNG enters selection.
+     * A missing recording falls back to the existing synthesized cue.
+     */
+    static String ghostVoiceName(LanSound.CueEvent event){
+        if(event==null)throw new IllegalArgumentException("event");
+        LanSound.Cue cue=event.cue();
+        int selector=Math.floorMod(event.tick()*31+cue.ordinal()*7,60);
+        return switch(cue){
+            case WHISPER -> selector%9==0?"ghost_idles.wav":null;
+            case IMPACT -> selector%3==0?"ghost_jump.wav":null;
+            case MANIFEST,STRIKE,TENSION_BUILD -> {
+                if(selector%5!=0)yield null;
+                int index=Math.floorMod((event.tick()/5)*7+cue.ordinal()*13,
+                    GHOST_LINE_VARIANTS)+1;
+                yield "ghost_line_"+String.format(java.util.Locale.ROOT,"%02d",index)+".wav";
+            }
+            default -> null;
+        };
+    }
+
     private static synchronized byte[] original(String filename){
         if(CACHE.containsKey(filename))return CACHE.get(filename);
         String resource="/org/beckenburg/sfx/"+filename;
@@ -43,7 +68,8 @@ final class RecordedSfx {
                         // attack/interaction effects. Keep only the first relevant
                         // second of an ordinary mechanical cue; never buffer the
                         // remainder of the source recording in a shipping build.
-                        int ceiling=filename.equals("pickup.wav")||filename.equals("device_on.wav")
+                        int ceiling=filename.startsWith("ghost_")?MAX_GHOST_VOICE_BYTES:
+                            filename.equals("pickup.wav")||filename.equals("device_on.wav")
                             ||filename.equals("drop.wav")||filename.equals("scanner.wav")
                             ||filename.equals("device_off.wav")
                             ||filename.equals("electric_hum.wav")
@@ -80,6 +106,11 @@ final class RecordedSfx {
      */
     private static byte[] original(LanSound.CueEvent event){
         LanSound.Cue cue=event.cue();
+        String vocal=ghostVoiceName(event);
+        if(vocal!=null){
+            byte[] recorded=original(vocal);
+            if(recorded!=null)return recorded;
+        }
         String stem=cue.name().toLowerCase(java.util.Locale.ROOT);
         if(cue==LanSound.Cue.STEP_STONE){
             // Curated owner's Drive archive: three distinct real rock footsteps.
@@ -121,6 +152,14 @@ final class RecordedSfx {
         return out;
     }
     static boolean isPackaged(LanSound.Cue cue){
+        if(cue==LanSound.Cue.WHISPER&&original("ghost_idles.wav")!=null)return true;
+        if(cue==LanSound.Cue.IMPACT&&original("ghost_jump.wav")!=null)return true;
+        if(cue==LanSound.Cue.MANIFEST||cue==LanSound.Cue.STRIKE
+                ||cue==LanSound.Cue.TENSION_BUILD){
+            for(int i=1;i<=GHOST_LINE_VARIANTS;i++)
+                if(original(String.format(java.util.Locale.ROOT,
+                        "ghost_line_%02d.wav",i))!=null)return true;
+        }
         if(cue==LanSound.Cue.STEP_STONE){
             for(int i=0;i<3;i++)
                 if(original("step_stone_"+i+".wav")!=null)return true;
