@@ -22,7 +22,11 @@
     <groupId>org.codehaus.mojo</groupId><artifactId>build-helper-maven-plugin</artifactId><version>3.6.1</version>
     <executions><execution><id>game-engine</id><phase>generate-sources</phase>
      <goals><goal>add-source</goal></goals>
-     <configuration><sources><source>${project.basedir}/../src/main/java</source><source>${project.basedir}/../water-module/src/main/java</source></sources></configuration>
+     <configuration><sources>
+      <source>${project.basedir}/../src/main/java</source>
+      <source>${project.basedir}/../water-module/src/main/java</source>
+      <source>${project.basedir}/../lighting-module/src/main/java</source>
+     </sources></configuration>
     </execution></executions>
    </plugin>
    <plugin>
