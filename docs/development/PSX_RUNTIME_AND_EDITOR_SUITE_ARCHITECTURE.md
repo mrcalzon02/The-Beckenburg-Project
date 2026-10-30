@@ -72,3 +72,7 @@ Avoid a hard dependency on the unfinished lighting module: the existing game and
 - No regression in Beckenburg's gameplay, multiplayer networking or release updater.
 
 No claim of a working general-purpose engine, complete editor, successful test run or shipping artifact follows from this document alone.
+
+## Curated PSX source acceptance (2026-10-30)
+
+Five owner PDFs are filtered in the [human engineering wiki](../wiki/psx-editor-engineering-guide.md) and [machine-readable adoption manifest](psx-editor-reference.json). They establish priorities for scene authoring, measured lighting, safe navigation and accessible PSX-style UI. They are guidance, not evidence of completed implementation. An offline reference viewer ships as part of the portable editor core and is available from the Beckenburg editor command strip.
