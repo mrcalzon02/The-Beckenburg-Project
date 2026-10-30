@@ -158,15 +158,36 @@ public final class WeatherSystem {
                     windHeading,1.0,currentRain*view.exposed()*.33));
             }
         }
+        // Fog is a feature of the MAP, not a billboard tied to the player.
+        // Stable, seeded world cells remain stationary while the observer moves.
+        // Only nearby cells are emitted to bound cost. Z is world height.
         if(currentFog>.12){
             String id=currentFog>.70?"weather_dense_fog_bank":"weather_ground_fog_bank";
-            sink.emit(new WeatherMeshes.Instance(id,view.x()+12,view.y()-.5,
-                view.z()+6,windHeading,2.7,currentFog*.30));
+            final double spacing=28.0;
+            long cx=(long)Math.floor(view.x()/spacing);
+            long cy=(long)Math.floor(view.y()/spacing);
+            for(long dx=-1;dx<=1;dx++)for(long dy=-1;dy<=1;dy++){
+                long gx=cx+dx,gy=cy+dy;
+                long h=hash(seed^(gx*0x9e3779b97f4a7c15L)^(gy*0xbf58476d1ce4e5b9L));
+                double x=(gx+.5)*spacing+(((h&255)/255.0)-.5)*8;
+                double y=(gy+.5)*spacing+((((h>>>8)&255)/255.0)-.5)*8;
+                double yaw=windHeading+(((h>>>16)&255)/255.0-.5)*.25;
+                sink.emit(new WeatherMeshes.Instance(id,x,y,1.0,
+                    yaw,2.5,currentFog*.24*view.exposed()));
+            }
         }
-        if(currentRain>.72||target==WeatherType.OVERCAST)
-            sink.emit(new WeatherMeshes.Instance(
-                currentRain>.72?"weather_storm_cloud_bank":"weather_cloud_bank",
-                view.x()+16,view.y()+14,view.z()+19,windHeading,2.8,.6));
+        // Cloud banks share the same stable world reference; they do not
+        // translate with the camera as the player crosses the investigation.
+        if(currentRain>.72||target==WeatherType.OVERCAST){
+            final double spacing=85.0;
+            long cx=(long)Math.floor(view.x()/spacing);
+            long cy=(long)Math.floor(view.y()/spacing);
+            for(long dx=-1;dx<=1;dx++)for(long dy=-1;dy<=1;dy++)
+                sink.emit(new WeatherMeshes.Instance(
+                    currentRain>.72?"weather_storm_cloud_bank":"weather_cloud_bank",
+                    (cx+dx+.5)*spacing,(cy+dy+.5)*spacing,24,
+                    windHeading,3.5,.45));
+        }
         for(Strike s:strikes){
             if(s.mode()==StrikeMode.THUNDER_ONLY||s.mode()==StrikeMode.FLASH_ONLY)continue;
             long age=(long)timeMillis-s.startedMillis();int frame=frameIndex(age);
