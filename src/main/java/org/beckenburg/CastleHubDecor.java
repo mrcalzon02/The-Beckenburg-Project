@@ -76,8 +76,6 @@ public final class CastleHubDecor {
         new Accent("open_book_mp_1",13.5,.88,3.4,.48,0),
         new Accent("tv_mp_1",24.35,.75,2.1,.85,Math.PI/2),
         new Accent("tv_mp_1",25.15,.62,20.0,.67,Math.PI/2),
-        new Accent("book_mp_1",11.3,1.40,13.3,.42,0),
-        new Accent("handheld_tablet_1",16.0,1.40,13.3,.43,0),
         new Accent("book_mp_1",5.65,.56,18.2,.36,0),
         new Accent("open_book_mp_1",35.5,.86,25.2,.40,.2));
     /** Licensed fixture families are explicitly assigned to real building mounts.

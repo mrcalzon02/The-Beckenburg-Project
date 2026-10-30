@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.*;
 
-/** All 129 real catalog labels share one atlas and one GPU material. */
+/** Only portable warehouse stock receives shelf plaques; one batched atlas/material. */
 public final class CastleShelfLabels {
     private CastleShelfLabels(){}
     public static final double WIDTH=.60,HEIGHT=.19;

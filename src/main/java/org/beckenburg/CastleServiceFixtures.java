@@ -24,9 +24,9 @@ public final class CastleServiceFixtures {
                 case ARMORY_UV,ARMORY_SALT,SPECTRAL -> {
                     double scale=station==CastleHubMap.Station.SPECTRAL?.78:.72;
                     floor(out,"display_cabinet_mp_2",x,z,scale,0);
-                    supported(out,station==CastleHubMap.Station.ARMORY_UV?"blender_uv_light_1":
-                        station==CastleHubMap.Station.ARMORY_SALT?"blender_salt_1":"cross_mp_2",
-                        x,z,.53,"display_cabinet_mp_2",scale);
+                    // A workstation is not a display plinth with one arbitrary
+                    // piece of equipment balanced on its roof. Portable tools
+                    // belong in the multiplayer warehouse or mission loadout.
                 }
                 case ROLE -> floor(out,"wardrobe_mp_1",x,z,.9,Math.PI);
                 case CONTRACT -> {

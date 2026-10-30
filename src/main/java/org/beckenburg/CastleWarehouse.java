@@ -25,7 +25,11 @@ public final class CastleWarehouse {
  }
  public static synchronized List<Exhibit> exhibits(){
   if(exhibits!=null)return exhibits;
-  var families=new ArrayList<String>();for(var tool:EquipmentRegistry.all())families.add(tool.id());
+  // Van-installed consoles and monitors remain in the equipment registry and van,
+  // but are not portable stock and must never appear on warehouse shelves.
+  var families=new ArrayList<String>();
+  for(var tool:EquipmentRegistry.all())
+   if(tool.origin()!=EquipmentRegistry.Origin.TRUCK)families.add(tool.id());
   families.add("HEALTH_SUPPLIES");families.sort(String::compareTo);
   var out=new ArrayList<Exhibit>();
   for(int i=0;i<families.size();i++)for(var tier:EquipmentTiers.Tier.values()){

@@ -10,8 +10,10 @@ public final class CastleHeadquartersRevisionTest {
   var map=new CastleHubMap();
   check(map.valid(),"original Castle Beckenburg stations remain connected");
   check(CastleWarehouse.racks().size()==15,"fifteen open retail fixtures with clear browsing aisles");
-  check(CastleWarehouse.exhibits().size()==(EquipmentRegistry.all().size()+1)*3,
-   "every canonical tool plus health supplies appears in warehouse");
+  long portable=EquipmentRegistry.all().stream()
+      .filter(tool->tool.origin()!=EquipmentRegistry.Origin.TRUCK).count();
+  check(CastleWarehouse.exhibits().size()==(portable+1)*3,
+   "portable ghost-hunting tools and health supplies only; van fixtures are excluded");
   var ids=new HashSet<String>();
   for(var exhibit:CastleWarehouse.exhibits()){
    check(ids.add(exhibit.id()+"/"+exhibit.tier()),"exhibit families are not silently duplicated");

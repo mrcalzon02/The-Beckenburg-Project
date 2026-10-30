@@ -47,7 +47,13 @@ public final class CastleRebuildTest {
         }
         check(CastleRooms.SLAB>=.20,"structural floor depth");
         var exhibits=CastleWarehouse.exhibits();
-        check(exhibits.size()==129,"all 43 catalog families have three visible tier rows");
+        int portableFamilies=(int)EquipmentRegistry.all().stream()
+            .filter(tool->tool.origin()!=EquipmentRegistry.Origin.TRUCK).count()+1;
+        check(exhibits.size()==portableFamilies*EquipmentTiers.Tier.values().length,
+            "only portable equipment and health supplies have three visible tiers");
+        for(var display:exhibits)check(display.id().equals("HEALTH_SUPPLIES")||
+            EquipmentRegistry.get(display.id()).origin()!=EquipmentRegistry.Origin.TRUCK,
+            "fixed van component on warehouse shelves: "+display.id());
         var ids=new HashSet<String>();
         for(var e:exhibits){
             check(ids.add(e.id()+"/"+e.tier()),"duplicate display");
@@ -78,6 +84,6 @@ public final class CastleRebuildTest {
         check(!map.lightOn(5,2,5)&&map.lightOn(35,2,25),"switch controls only its room");map.toggleCircuit(sw);
         check(!FixtureLighting.castleRayClear(map,5,1.5,3,13,1.5,3),"thick partition shadow");
         check(!FixtureLighting.castleRayClear(map,14,2,5,14,5,5),"solid upper floor shadow");
-        System.out.println("PASS rebuilt Castle: physical room/station routes, continuous stairs, slab union,129 supported tier displays, switches and room lighting");
+        System.out.println("PASS rebuilt Castle: physical room/station routes, continuous stairs, slab union,portable tier displays, switches and room lighting");
     }
 }

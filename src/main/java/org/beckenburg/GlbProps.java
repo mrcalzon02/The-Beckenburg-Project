@@ -46,6 +46,15 @@ public final class GlbProps {
         java.util.TreeSet<String> names=new java.util.TreeSet<>();
         names.addAll(java.util.Arrays.asList(NAMES));
         names.addAll(LevelAssets.MODELS);
+        // Every individually approved, packaged authored environment mesh is
+        // selectable in the editor, not just the legacy starter-model list.
+        names.addAll(LevelAssets.GREEN_GROUND);
+        names.addAll(LevelAssets.NATIVE_SITE_TERRAIN);
+        names.addAll(LevelAssets.GROUNDED_BERMS);
+        names.addAll(LevelAssets.SITE_ART);
+        names.addAll(LevelAssets.FITTED_TENTS);
+        names.addAll(LevelAssets.TAILORED_FABRIC);
+        names.addAll(LevelAssets.AUTHORED_SURFACES);
         names.addAll(BlackpineDressing.ASSETS);names.addAll(BlackpineStoryDressing.ASSETS);
         names.addAll(BlackpineProductionAssets.ASSETS);
         names.addAll(LivedAssets.ORIGINAL);names.addAll(LivedAssets.SOURCED);

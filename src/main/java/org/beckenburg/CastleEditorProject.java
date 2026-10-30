@@ -21,11 +21,30 @@ public final class CastleEditorProject implements EditorProject<CastleLevelEdits
         ArrayList<Asset> list=new ArrayList<>();
         list.add(new Asset("water://surface","Modules","Water surface module"));
         for(String mesh:GlbProps.availableModels())
-            list.add(new Asset("assets://models/"+mesh,"Models",mesh));
+            list.add(new Asset("assets://models/"+mesh,modelCategory(mesh),mesh));
         for(int material=0;material<MaterialAtlas.COUNT;material++)
             list.add(new Asset("assets://materials/"+material,"Materials","Material "+material));
         list.sort(Comparator.comparing(Asset::category).thenComparing(Asset::label));
         return List.copyOf(list);
+    }
+    /** Models are still one selectable GLB each: category names organize the
+     * real source meshes, never group them into decorative fake prefabs. */
+    private static String modelCategory(String mesh){
+        if(mesh.endsWith("_fixed")||mesh.equals("monitoring_screen_mp_1")||
+                mesh.equals("blender_site_map_fixed"))return "Models / Van fixtures";
+        if(mesh.equals("painting_1")||mesh.equals("carpet_mp_1")||
+                mesh.startsWith("photo_frame_")||mesh.startsWith("level_loose_")||
+                mesh.startsWith("level_story_"))return "Models / Decoration";
+        if(mesh.contains("wardrobe")||mesh.contains("cabinet")||
+                mesh.contains("shelf")||mesh.contains("table")||
+                mesh.contains("chair")||mesh.contains("sofa")||
+                mesh.startsWith("bed_")||mesh.startsWith("bedside_"))return "Models / Furniture";
+        if(EquipmentModelCatalog.approved(mesh)||mesh.startsWith("exploration_"))
+            return "Models / Investigation equipment";
+        if(mesh.startsWith("kenney_")||mesh.startsWith("level_castle_"))
+            return "Models / Architecture";
+        if(mesh.startsWith("level_"))return "Models / Environment";
+        return "Models / Other";
     }
     public List<Node> hierarchy(){
         ArrayList<Node> nodes=new ArrayList<>();

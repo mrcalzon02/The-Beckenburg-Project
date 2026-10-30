@@ -290,7 +290,7 @@ public final class DeveloperLevelEditor extends JPanel {
         tabs.add("Objects & geometry",objectInspector());
         tabs.add("Paint & nav",surfaceInspector());
         tabs.add("Assets",new EditorPalettePanel(project,asset->{
-            if(asset.category().equals("Models")){
+            if(asset.category().startsWith("Models / ")){
                 library.setSelectedItem(asset.uri().substring("assets://models/".length()));
                 chooseTool(EditorTool.PROP);
             }else if(asset.category().equals("Modules")){EnvironmentModuleEditor.open(window,"castle");
