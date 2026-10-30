@@ -1,6 +1,7 @@
 package org.beckenburg;
 import java.util.*;
 import dev.mrcalzon.lighting.LightingModule;
+import dev.mrcalzon.lighting.LightModel;
 /** Metre-space coloured emission and architectural occlusion, independent of the camera. */
 public final class FixtureLighting {
  public enum Kind { FROSTED_DOME,BARE_BULB,CANDLE_CHANDELIER,TABLE_LAMP,FLUORESCENT,VAN_DIFFUSER,WALL_SCONCE,TELEVISION,FIRELIGHT }
@@ -259,7 +260,7 @@ public final class FixtureLighting {
    if(d2>source.radius*source.radius||normal&&d2<1e-8)continue;
    double d=Math.sqrt(d2),angle=!normal&&d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);
    double diffuse=normal?Math.max(0,(-nx*dx-ny*dy-nz*dz)/Math.max(.001,d)):1;
-   double fade=1-d/source.radius,w=source.power*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
+   double fade=1-d/source.radius,w=LightModel.attenuation(source.power,angle,fade,d2,diffuse);
    if(w<(normal?.001:.002)||angle<.001||diffuse<.001)continue;
    Object key=normal?new NormalShadow(source.id,new NormalKey(room,Double.doubleToLongBits(x),Double.doubleToLongBits(y),Double.doubleToLongBits(z),Double.doubleToLongBits(nx),Double.doubleToLongBits(ny),Double.doubleToLongBits(nz))):
        new Shadow(source.id,room,Math.round(x*16),Math.round(y*16),Math.round(z*16));
@@ -340,7 +341,7 @@ public final class FixtureLighting {
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){
    double next=!on||!castle.lightOn(source.x,source.y,source.z)?0:source.kind==Kind.CANDLE_CHANDELIER
-       ?(1-.06*options.flickerScale()*(1-Math.sin(cosmeticTick*.3+source.id))):1;
+       ?LightModel.flicker(cosmeticTick*.3+source.id,options.flickerScale()):1;
    if(Math.round(next*1000)!=Math.round(factors[source.id]*1000))invalidate(source);
    factors[source.id]=next;
   }
@@ -430,12 +431,9 @@ public final class FixtureLighting {
   * actual door, so testing just the door cell would leak light through walls. */
  private void invalidateOccludingPortal(LevelDefinition.Portal portal){
   long revision=++generation;
-  double half=portal.width()/2+.35;
   for(var source:sources){
-   double dx=Math.max(0,Math.abs(source.x-portal.x())-(portal.alongX()?half:.35));
-   double dz=Math.max(0,Math.abs(source.z-portal.z())-(portal.alongX()?.35:half));
-   double dy=Math.max(0,Math.abs(source.y-(portal.y()+1.15))-1.15);
-   if(dx*dx+dy*dy+dz*dz>source.radius*source.radius)continue;
+   if(!LightModel.portalInfluences(source.x,source.y,source.z,source.radius,
+        portal.x(),portal.y(),portal.z(),portal.width(),portal.alongX()))continue;
    eachInfluenceCell(source,key->{
     changedCells.put(key,revision);occluderCells.put(key,revision);invalidatedCells++;
    });
@@ -471,9 +469,9 @@ public final class FixtureLighting {
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){double f;
    if(source.room==14)f=1;
-   else if(source.kind==Kind.CANDLE_CHANDELIER)f=1-.06*options.flickerScale()*(1-Math.sin(cosmeticTick*.37+source.id*2.1));
+   else if(source.kind==Kind.CANDLE_CHANDELIER)f=LightModel.flicker(cosmeticTick*.37+source.id*2.1,options.flickerScale());
    else if(source.kind==Kind.TABLE_LAMP)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?1:0;
-   else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?(1-.06*options.flickerScale()*(1-Math.sin(cosmeticTick*1.7))):0;
+   else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?LightModel.flicker(cosmeticTick*1.7,options.flickerScale()):0;
    else f=circuits==null?1:Math.max(0,Math.min(1,(circuits.brightness(source.room,tick)-.085)/.865));
    if(source.fixture>0&&source.kind!=Kind.TELEVISION&&source.kind!=Kind.TABLE_LAMP&&!map.fixtures().state(source.fixture).active())f=0;
    // True circuit, fixture and blackout changes are immediate. Subtle TV
@@ -484,12 +482,18 @@ public final class FixtureLighting {
   // Keep previous lighting outside changed light volumes; bounded LRU
   // eviction is incremental instead of emptying every cache on one frame.
  }
- private static double smooth(double lo,double hi,double value){double t=Math.max(0,Math.min(1,(value-lo)/(hi-lo)));return t*t*(3-2*t);}
- /** Source-to-surface cone, not a screen-space flashlight-shaped tint. */
- public static double angular(Kind kind,double dot){return switch(kind){
-  case FLUORESCENT->smooth(.48,.72,dot);case VAN_DIFFUSER->.35+.65*smooth(-.12,.45,dot);case TELEVISION->Math.pow(Math.max(0,dot),2.2);
-  case TABLE_LAMP->.07+.86*smooth(.32,.76,dot)+.24*smooth(.70,.96,-dot);
-  case FROSTED_DOME->.18+.82*smooth(-.08,.42,dot);default->1;};}
+ /** Source orientation response is shared by the standalone light model. */
+ public static double angular(Kind kind,double dot){
+  var beam=switch(kind){
+   case FLUORESCENT -> LightModel.Beam.FLUORESCENT;
+   case VAN_DIFFUSER -> LightModel.Beam.VAN_DIFFUSER;
+   case TELEVISION -> LightModel.Beam.TELEVISION;
+   case TABLE_LAMP -> LightModel.Beam.TABLE_LAMP;
+   case FROSTED_DOME -> LightModel.Beam.FROSTED_DOME;
+   default -> LightModel.Beam.OMNIDIRECTIONAL;
+  };
+  return LightModel.angular(beam,dot);
+ }
  /**
   * Far-away EXTERIOR probe LOD only. Near/on-building surfaces preserve the
   * full 1/16m cached shadow tests. A coarse cell is reused only if the
@@ -528,7 +532,7 @@ public final class FixtureLighting {
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
-   double fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2);if(weight<.002)continue;
+   double fade=1-d/source.radius,weight=factor*LightModel.attenuation(source.power,angle,fade,d2,1);if(weight<.002)continue;
    Shadow shadow=new Shadow(source.id,room,key.x,key.y,key.z);Boolean visible=cachedShadow(shadow);
    if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);shadowRays++;
     // Check architecture to the receiving face before applying prop self-shadow
@@ -558,7 +562,7 @@ public final class FixtureLighting {
   double hemi=.65+.35*Math.max(0,ny),ambientScale=options.ambientScale(),
       r=.27*hemi*ambientScale,g=.29*hemi*ambientScale,b=.34*hemi*ambientScale;
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
-   double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
+   double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=factor*LightModel.attenuation(source.power,angle,fade,d2,diffuse);
    if(weight>.001){
     var shadow=new NormalShadow(source.id,key);Boolean visible=cachedShadow(shadow);
     if(visible==null){normalRays++;
