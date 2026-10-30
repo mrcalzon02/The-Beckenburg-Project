@@ -1,0 +1,30 @@
+name: Diagnostic Hunter lobby portrait comparison against original Beckenburg art
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/audit_lobby_hunter_art.py'
+      - '.github/workflows/hunter-portrait-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-art-only-diagnostic:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect original source artwork and actual installed directional sprites
+        run: |
+          python -m pip install --disable-pip-version-check pillow==11.3.0
+          python tools/audit_lobby_hunter_art.py --out build/hunter-portrait-source-audit
+      - name: Diagnostic artwork only, never a Windows installer release gate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: actual-hunter-master-vs-current-segmented-lobby-previews
+          path: build/hunter-portrait-source-audit/
+          if-no-files-found: warn
+          retention-days: 10
