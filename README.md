@@ -1,3 +1,5 @@
+[PSX editor guide](docs/wiki/psx-editor-engineering-guide.md) · [Machine rules](docs/development/psx-editor-reference.json) · [Editor acceptance audit](docs/development/LEVEL_EDITOR_OVERHAUL_AUDIT.md)
+
 [Development screenshot gallery](https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html) · [Shared defect ledger](development/quality/DEFECT_LEDGER.md)
 
 # The Beckenburg Project — Playable Solo Investigation Prototype (Java 17)
