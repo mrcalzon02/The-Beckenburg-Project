@@ -42,6 +42,15 @@ public final class LightingModuleTest {
                 "A distant source must not trigger a door's full lighting reset");
             check(LightModel.flicker(1.7,0)==1,
                 "Zero cosmetic flicker should never modulate light intensity");
+            // Invalid API callers must not silently label a custom brightness
+            // value as a canonical preset.
+            boolean rejectedMislabeledPreset=false;
+            try {
+                LightingModule.apply(new LightingModule.Settings(
+                    LightingModule.Preset.PERFORMANCE,100,85,100,100,70,4,true,true,true));
+            }catch(IllegalArgumentException expected){rejectedMislabeledPreset=true;}
+            check(rejectedMislabeledPreset,
+                "A named preset accepted non-canonical illumination settings");
             check(LightingModule.preset(LightingModule.Preset.PERFORMANCE)
                 .cacheLimit(1000)<standard.cacheLimit(1000),
                 "Performance preset must actually reduce cache allocation");
