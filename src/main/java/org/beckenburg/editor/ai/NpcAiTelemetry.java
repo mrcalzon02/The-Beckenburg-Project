@@ -53,7 +53,12 @@ public final class NpcAiTelemetry {
     public long begin(){return enabled?System.nanoTime():0;}
     public void end(Metric metric,long started){
         if(!enabled||started==0)return;
-        record(metric,System.nanoTime()-started);
+        long elapsed=System.nanoTime()-started;
+        // Profiling must NEVER stop an otherwise functional host during a long
+        // process pause or monotonic-clock wrap. Direct invalid test inputs
+        // still fail fast in record(), but real timings are bounded safely.
+        if(elapsed<0)return;
+        record(metric,Math.min(MAX_NS,elapsed));
     }
     /** Direct samples exist only for deterministic unit tests and offline profilers. */
     public synchronized void record(Metric metric,long elapsedNs){
