@@ -10,6 +10,7 @@ if not exist build\test mkdir build\test
   for %%F in (src\main\java\hbnet\*.java) do @echo "src/main/java/hbnet/%%~nxF"
   for %%F in (src\main\java\org\beckenburg\*.java) do @echo "src/main/java/org/beckenburg/%%~nxF"
   for %%F in (src\main\java\org\beckenburg\editor\*.java) do @echo "src/main/java/org/beckenburg/editor/%%~nxF"
+  for %%F in (src\main\java\org\beckenburg\editor\ai\*.java) do @echo "src/main/java/org/beckenburg/editor/ai/%%~nxF"
   for %%F in (src\main\java\dev\mrcalzon\weather\*.java) do @echo "src/main/java/dev/mrcalzon/weather/%%~nxF"
 )
 >> build\sources-main.txt (
