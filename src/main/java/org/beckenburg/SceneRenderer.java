@@ -2689,12 +2689,19 @@ public final class SceneRenderer {
         // GPU residency makes per-camera lighting tessellation unnecessary.
         int lod=(lightingMap==null||!lightingMap.nativeSite())&&chunk.indoor?3:0;
         long version=chunk.lightVersion;
-        if(chunk.checkedFrame!=fixtureLighting.frameRevision()){
-            version=fixtureLighting.regionVersion(b.minX-.09,b.minY-.09,b.minZ-.09,b.maxX+.09,b.maxY+.09,b.maxZ+.09);
-            chunk.checkedFrame=fixtureLighting.frameRevision();
+        long localOccluder=chunk.occluderVersion;
+        // This check is O(1) for an unchanged frame. Spatial revision
+        // scans are only needed when a light, door or window advances the
+        // lighting generation; ordinary camera movement must not rescan
+        // every 3D receiver cell in every visible resident chunk.
+        long lightingRevision=fixtureLighting.frameRevision();
+        if(chunk.checkedFrame!=lightingRevision){
+            version=fixtureLighting.regionVersion(
+                b.minX-.09,b.minY-.09,b.minZ-.09,b.maxX+.09,b.maxY+.09,b.maxZ+.09);
+            localOccluder=fixtureLighting.regionOccluderVersion(
+                b.minX-.09,b.minY-.09,b.minZ-.09,b.maxX+.09,b.maxY+.09,b.maxZ+.09);
+            chunk.checkedFrame=lightingRevision;
         }
-        long localOccluder=fixtureLighting.regionOccluderVersion(
-            b.minX-.09,b.minY-.09,b.minZ-.09,b.maxX+.09,b.maxY+.09,b.maxZ+.09);
         boolean topology=chunk.batches.isEmpty()||chunk.lod!=lod||chunk.occluderVersion!=localOccluder;
         if(!topology&&chunk.lightVersion!=version){
             // Re-evaluate source intensities in retained receiver probes. No
