@@ -209,7 +209,7 @@ public final class CastleLevelEdits {
         }
     }
     private static boolean modelAllowed(String mesh){
-        return mesh!=null&&GlbProps.availableModels().contains(mesh);
+        return mesh!=null&&(GlbProps.availableModels().contains(mesh)||ImportedAssetLibrary.approved(mesh));
     }
     private void defaults(){
         surfaces.clear();doorAssignments.clear();
