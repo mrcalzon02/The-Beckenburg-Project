@@ -268,7 +268,9 @@ public final class HouseMap {
     /** Physical support for entities: preserve a room's lower storey underneath an overlapping loft. */
     public double groundHeight(double x,double z,int roomHint){
         if(nativeSite!=null){Double deck=van.supportHeight(x,z);if(deck!=null)return deck;var support=nativeSite.support(x,z,roomHint>=0&&roomHint<15?level.floorY(roomHint):0,4);return support==null?Double.NaN:support.y();}
-        if(terrain==null&&roomHint>=0&&roomHint<15)return level.room(roomHint).y();
+        // Stair surfaces must win over the nominal room floor even on ordinary
+        // (non-terrain) maps. The former early return flattened every stair
+        // query to its room's ground plane, including cellar approaches.
         Double vanY=van.supportHeight(x,z);if(vanY!=null)return vanY;
         for(var stair:level.stairs())if((stair.a()==roomHint||stair.b()==roomHint)&&stair.contains(x,z,0))return stair.yAt(x,z);
         if(roomHint>=0&&roomHint<12){var r=level.room(roomHint);if(x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()){
