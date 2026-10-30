@@ -30,7 +30,6 @@ public final class GhostAiScenarioRunner {
         telemetry.setEnabled(true);
         LanGhostPursuit pursuit=new LanGhostPursuit(map,seed,type,telemetry);
         GhostActionCadence cadence=new GhostActionCadence(type,new Random(seed^0x5eeda11L));
-        LevelDefinition.Vec origin=map.spawn(4);
         List<Event> recent=new ArrayList<>();
         int applied=0,rejected=0,drift=0,delivered=0;
         long sequence=0;
@@ -42,7 +41,7 @@ public final class GhostAiScenarioRunner {
             ghost.advance(tick,listener,occupants);
             if(syntheticSound&&tick%40==0){
                 // Test source is a fixed authoring marker, not an actual player feed.
-                pursuit.heard(ghost.room(),4,origin.x(),origin.z(),
+                pursuit.heard(ghost.room(),4,map.centerX(4),map.centerZ(4),
                     LanGhostPursuit.Sound.EQUIPMENT,tick);
                 delivered++;
             }
