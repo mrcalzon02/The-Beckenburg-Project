@@ -18,8 +18,10 @@ public final class CharacterDirectionalVisualTest {
     public static void main(String[] args){
         check(CharacterVisuals.HUNTERS.size()==3,"Three approved hunter classes");
         check(CharacterVisuals.ELDERS.size()==3,"Three distinct approved Elder entities");
-        check(DirectionalSprites.frameCount()==45,
-            "All approved character and Lore Master direction files must be present");
+        // Four Castle support people add four views each. The previous
+        // 45-frame assertion was written before their approved archive shipped.
+        check(DirectionalSprites.frameCount()==61,
+            "All approved Hunter, Elder, Twins, Lore Master and Castle support views must be present");
         long[] rookViews=new long[4];
         int rookIndex=0;
         for(int facing:new int[]{0,2,4,6}){
