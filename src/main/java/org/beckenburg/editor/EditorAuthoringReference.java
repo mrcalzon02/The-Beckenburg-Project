@@ -102,6 +102,20 @@ public final class EditorAuthoringReference {
             "Sources: PSX-era level editor.pdf and owner-provided menu/campaign/billboard brief. " +
             "docs/wiki/psx-era-editor-campaign-tools.md; docs/wiki/psx-editor-menu-campaign-billboards.md"
         )));
+        tabs.addTab("NPC / AI", new JScrollPane(page(
+            "CANONICAL GHOST RULE READING / AI INSPECTION\\n\\n" +
+            "The developer editor's NPC / AI button opens a read-only ghost rule lab. " +
+            "It reads the REAL GhostIdentity, GhostTraits, GhostBehavior, GhostFrenzy and " +
+            "GhostEvidenceMatrix definitions; no duplicate species table exists. " +
+            "The isolated GhostDomain sandbox shows host-legal actions at a chosen 10Hz tick. " +
+            "The PORTABLE editor.ai package provides typed rules, bounded legality reasoning, " +
+            "victim-contact safeguards, deterministic replay and JSON rule export.\\n\\n" +
+            "AUDIT ROSTER flags structural notes; EXPORT RULES JSON writes the current species " +
+            "rules without active hunter data. It does not execute actions, change a live NPC, " +
+            "create evidence, or override host-controlled hunting, hearing, navigation or multiplayer.\\n\\n" +
+            "Reference: docs/wiki/psx-npc-ai-authoring.md; " +
+            "docs/development/psx-npc-ai-authoring.json"
+        )));
         tabs.addTab("UI / Tests", new JScrollPane(page(
             "AUTHENTIC PRESENTATION / NO ARTIFICIAL FRICTION\n\n" +
             "Compact menus, readable pixel styling and D-pad navigation are useful. Keep remapping, " +
