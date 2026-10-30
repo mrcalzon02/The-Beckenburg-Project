@@ -47,6 +47,17 @@ public final class LanGhostSpatial {
         syncRoom(startingRoom);
     }
     public Pose pose(){return new Pose(room,x,y,z,heading);}
+    /**
+     * Physical authored hiding pockets are excluded from spectral movement,
+     * including when empty. The same check applies to player and AI ghost poses.
+     * The radius of an outdoor pocket matches the real concealment volume.
+     */
+    static boolean hidingPocketAt(HouseMap map,int room,double x,double y,double z){
+        if(room<0||room>=HouseMap.EXTRACTION_ROOM)return false;
+        var closet=map.level().socket("hide",room);
+        return LevelClosets.inside(closet,x,y,z)
+            ||OutdoorHiding.containing(map.level(),x,y,z,100)!=null;
+    }
     public void syncRoom(int newRoom){
         if(newRoom<0||newRoom>=HouseMap.EXTRACTION_ROOM)throw new IllegalArgumentException("ghost cannot occupy safe van");
         if(newRoom!=room||x==0&&z==0){room=newRoom;var spawn=map.spawn(room);x=spawn.x();y=spawn.y();z=spawn.z();}
@@ -64,6 +75,18 @@ public final class LanGhostSpatial {
         var destination=map.resolveMove(new LevelDefinition.Vec(x,y,z),nx,nz);
         if(destination==null||map.roomAt(destination.x(),destination.y(),destination.z())!=room)
             throw new IllegalArgumentException("spectral room boundary; use DRIFT");
+        // Sub-step the accepted movement so sprint cannot skip through a
+        // narrow authored cupboard or shrub pocket between host ticks.
+        double distance=Math.hypot(destination.x()-x,destination.z()-z);
+        int samples=Math.max(1,(int)Math.ceil(distance/.10));
+        for(int sample=1;sample<=samples;sample++){
+            double fraction=(double)sample/samples;
+            double px=x+(destination.x()-x)*fraction;
+            double py=y+(destination.y()-y)*fraction;
+            double pz=z+(destination.z()-z)*fraction;
+            if(hidingPocketAt(map,room,px,py,pz))
+                throw new IllegalArgumentException("spectral hiding pocket is inaccessible");
+        }
         x=destination.x();y=destination.y();z=destination.z();
         if(burst){burstStamina--;lastBurstTick=tick;}
         return true;

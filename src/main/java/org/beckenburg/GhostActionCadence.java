@@ -3,6 +3,7 @@ package org.beckenburg;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * Repeating, host-authoritative action deadline shared by human and AI ghosts.
@@ -10,19 +11,28 @@ import java.util.Objects;
  * can apply an actual event (sound, disturbance, manifestation or signature).
  */
 public final class GhostActionCadence {
-    /** 100ms host tick; 10-15s per event depending on spectral behavior. */
-    public static final int MIN_PERIOD=100,MAX_PERIOD=150;
+    /** Host simulation runs at 10Hz: each deadline is independently rolled between 5 and 45 seconds. */
+    public static final int MIN_PERIOD=50,MAX_PERIOD=450;
     private final GhostIdentity.Type species;
+    private final Random random;
     private int dueTick;
+    private int lastPeriod;
     private int successfulEvents;
     public GhostActionCadence(GhostIdentity.Type species){
+        this(species,new Random());
+    }
+    /** Injectable RNG permits repeatable balance tests without predictable production rolls. */
+    GhostActionCadence(GhostIdentity.Type species,Random random){
         this.species=Objects.requireNonNull(species);
-        dueTick=period();
+        this.random=Objects.requireNonNull(random);
+        dueTick=rollPeriod();
     }
-    public int period(){
-        int bias=GhostBehavior.profile(species).aiPeriod();
-        return Math.max(MIN_PERIOD,Math.min(MAX_PERIOD,70+bias*2));
+    private int rollPeriod(){
+        lastPeriod=MIN_PERIOD+random.nextInt(MAX_PERIOD-MIN_PERIOD+1);
+        return lastPeriod;
     }
+    /** The active interval; requesting it must not change the deadline. */
+    public int period(){return lastPeriod;}
     public int dueTick(){return dueTick;}
     public int successfulEvents(){return successfulEvents;}
     /** DRIFT chooses a destination but cannot substitute for a haunting event. */
@@ -30,7 +40,7 @@ public final class GhostActionCadence {
         if(tick<0||result==null)throw new IllegalArgumentException("invalid action result");
         if(result.applied()&&result.action()!=GhostDomain.Action.DRIFT){
             successfulEvents++;
-            dueTick=tick+period();
+            dueTick=tick+rollPeriod();
         }
     }
     /** Countdown does not stall on client rendering, and cannot be reset by movement. */
@@ -50,16 +60,16 @@ public final class GhostActionCadence {
         return List.copyOf(result);
     }
     /**
-     * At the deadline, pick one legal event. Do not manufacture fake world evidence
+     * At the deadline, randomly select one of the currently legal events. Do not manufacture fake world evidence
      * and do not degrade to DRIFT, which could let a player evade activity forever.
      * If warded/empty of energy, wait for an actual legal event on later host ticks.
      */
     public GhostDomain.Action fallback(GhostDomain.Observation state,boolean hasStrikeVictim){
         Objects.requireNonNull(state);
-        List<GhostDomain.Action> available=choices(state);
-        for(var action:available)
-            if(action!=GhostDomain.Action.STRIKE||hasStrikeVictim)return action;
-        return null;
+        List<GhostDomain.Action> eligible=new ArrayList<>();
+        for(var action:choices(state))
+            if(action!=GhostDomain.Action.STRIKE||hasStrikeVictim)eligible.add(action);
+        return eligible.isEmpty()?null:eligible.get(random.nextInt(eligible.size()));
     }
     public String prompt(GhostDomain.Observation state){
         Objects.requireNonNull(state);

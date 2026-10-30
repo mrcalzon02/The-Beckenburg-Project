@@ -174,6 +174,8 @@ public final class LanHost implements AutoCloseable {
     private long hostGhostActionSequence=-1;
     private int tick;
     private int lastGhostSoundTick=-10000;
+    /** Last genuinely audible source room, not a readout of silent hunter occupancy. */
+    private int lastGhostSoundRoom=-1;
     /** Recent authorized spectral events provide genuine transient EMF peaks. */
     private int lastEvidenceEventTick=-10000,lastEvidenceEventRoom=-1,lastEvidenceEventPower;
     private GhostDomain.Action lastEvidenceEventAction=GhostDomain.Action.DRIFT;
@@ -1900,6 +1902,7 @@ public final class LanHost implements AutoCloseable {
             weather.state());
         if(heard){
             lastGhostSoundTick=tick;
+            lastGhostSoundRoom=hunterRooms[seat];
             if(!frenzy.active()&&frenzy.phase()==GhostFrenzy.Phase.CALM){
                 switch(type){
                     case RITUAL -> frenzy.provoke(18);
@@ -2460,10 +2463,15 @@ public final class LanHost implements AutoCloseable {
                 onFrenzyTransition();
             }
             if(frenzy.active()&&tick%10==0)notifyAllPeers(frenzyFrame());
-            int audible=-1,occupants=0;
+            int occupants=0;
             for(int i=0;i<HUNTERS;i++)if((seats[i]!=null||reserved[i]!=null)&&mission.alive(i)
-                    &&hunterRooms[i]==ghost.room()){audible=hunterRooms[i];occupants++;}
-            ghost.advance(tick,audible,occupants);
+                    &&hunterRooms[i]==ghost.room())occupants++;
+            // Occupancy can fuel spectral energy, but does not grant supernatural
+            // target knowledge. Quiet/hiding hunters cannot be inferred from a
+            // legal-action menu merely because they share the ghost's room.
+            int heardRoom=lastGhostSoundRoom==ghost.room()
+                    &&tick-lastGhostSoundTick<12?ghost.room():-1;
+            ghost.advance(tick,heardRoom,occupants);
             if(twinCompanion!=null){
                 twinCompanion.advance(tick,ghostPose.pose());
                 if(twinCompanion.moved()&&ghost.manifested()&&tick%10==0){
