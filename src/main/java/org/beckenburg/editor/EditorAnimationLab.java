@@ -72,6 +72,10 @@ public final class EditorAnimationLab extends JPanel {
     private EditorAnimationLab(JFrame parent){
         super(new BorderLayout(5,5));
         window=new JDialog(parent,"PSX Animation / Rigid Rig Authoring Lab",false);
+        playbackTimer=new Timer(1000/30,e->{
+            if(!playing)return;
+            frame.setValue((frame.getValue()+1)%clip.frames());
+        });
         var header=new JPanel(new FlowLayout(FlowLayout.LEFT,4,3));
         header.add(new JLabel("Clip"));header.add(name);
         header.add(new JLabel("Rate"));header.add(rate);
@@ -130,10 +134,6 @@ public final class EditorAnimationLab extends JPanel {
         add(new JScrollPane(info),BorderLayout.SOUTH);
         setBorder(javax.swing.BorderFactory.createEmptyBorder(5,5,5,5));
         window.setContentPane(this);window.setSize(860,650);window.setLocationRelativeTo(parent);
-        playbackTimer=new Timer(1000/30,e->{
-            if(!playing)return;
-            frame.setValue((frame.getValue()+1)%clip.frames());
-        });
         window.addWindowListener(new java.awt.event.WindowAdapter(){
             @Override public void windowClosed(java.awt.event.WindowEvent e){playbackTimer.stop();}
         });
