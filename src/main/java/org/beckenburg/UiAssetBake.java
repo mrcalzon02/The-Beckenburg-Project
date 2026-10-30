@@ -60,6 +60,11 @@ public final class UiAssetBake {
         Path brand=output.resolve("ui/branding");
         Files.createDirectories(brand);
         ImageIO.write(splash(actualCastle),"png",brand.resolve("castle-splash.png").toFile());
+        // The multiplayer lobby needs the REAL original Hunter character art,
+        // not the 128x224 GrabCut directional sprite that cuts away dark limbs.
+        // Package intact, original-resolution source-sheet FRONT panels as UI
+        // resources. No segmentation, painting, re-lighting or upscaling.
+        bakeOriginalHunterLobbyPortraits(root,output);
         // Preserve the actual approved Beckenburg desktop crest, not a procedural stand-in.
         Path desktopSource=root.resolve("assets/runtime/ui/branding/beckenburg.png");
         if(!Files.isRegularFile(desktopSource))
@@ -72,6 +77,49 @@ public final class UiAssetBake {
         Files.createDirectories(installer.toAbsolutePath().getParent());
         writeIco(installer,mark);
         System.out.println("Baked "+count+" approved model-render UI icons, Castle splash and native desktop icon");
+    }
+
+    /**
+     * The approved 1448x1086 original concept sheets are the only source for
+     * lobby portraits. Rectangles correspond to their authored full-body
+     * FRONT view, precisely as recorded in character-directions-manifest.
+     * This keeps the original pixels and matte -- including dark fingers,
+     * hair, coat edges and boots discarded by the world sprite GrabCut.
+     * DirectionalSprites remain separate and unchanged for world rendering.
+     */
+    static void bakeOriginalHunterLobbyPortraits(Path root,Path output) throws IOException {
+        String[][] source={
+            {"cleric","24","300","218","727"},
+            {"observer","24","294","206","685"},
+            {"demonologist","23","291","208","690"}
+        };
+        Path dir=output.resolve("lobby-hunters");
+        Files.createDirectories(dir);
+        for(String[] spec:source){
+            String name=spec[0];
+            Path file=root.resolve("assets/concept-art/v001/01-hunters/"+name+"-character-profile.png");
+            if(!Files.isRegularFile(file))
+                throw new IOException("Missing actual original Hunter portrait source: "+file);
+            BufferedImage master=ImageIO.read(file.toFile());
+            if(master==null||master.getWidth()!=1448||master.getHeight()!=1086)
+                throw new IOException("Invalid original Hunter concept sheet: "+file);
+            int x0=Integer.parseInt(spec[1]),y0=Integer.parseInt(spec[2]),
+                x1=Integer.parseInt(spec[3]),y1=Integer.parseInt(spec[4]);
+            if(x0<0||y0<0||x1>master.getWidth()||y1>master.getHeight())
+                throw new IOException("Original character panel bounds outside original: "+name);
+            BufferedImage panel=master.getSubimage(x0,y0,x1-x0,y1-y0);
+            Path destination=dir.resolve(name+".png");
+            if(!ImageIO.write(panel,"png",destination.toFile()))
+                throw new IOException("Unable to encode intact approved Hunter portrait "+name);
+            // No rescale: re-read and verify exact per-pixel preservation.
+            BufferedImage actual=ImageIO.read(destination.toFile());
+            if(actual==null||actual.getWidth()!=panel.getWidth()
+                    ||actual.getHeight()!=panel.getHeight())
+                throw new IOException("Hunter source copy damaged "+name);
+            for(int y=0;y<panel.getHeight();y++)for(int x=0;x<panel.getWidth();x++)
+                if(actual.getRGB(x,y)!=panel.getRGB(x,y))
+                    throw new IOException("Hunter original source pixel altered: "+name);
+        }
     }
 
     private static BufferedImage thumbnail(BufferedImage source,int size){
