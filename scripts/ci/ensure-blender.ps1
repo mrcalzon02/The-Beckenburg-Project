@@ -30,10 +30,10 @@ function Download-OfficialBlender {
             Write-Host "Downloading original Blender Foundation portable exporter ($attempt/3)"
             Invoke-WebRequest -Uri "$base/blender-$version.sha256" -OutFile $checksums -TimeoutSec 90
             $entry = Get-Content -LiteralPath $checksums |
-                Where-Object { $_ -match "^([a-fA-F0-9]{64})\\s+\\*?$([regex]::Escape($filename))\\s*$" } |
+                Where-Object { $_ -match "^([a-fA-F0-9]{64})\s+\*?$([regex]::Escape($filename))\s*$" } |
                 Select-Object -First 1
             if (-not $entry) { throw "Official Blender checksum manifest lacks exact $filename" }
-            if ($entry -notmatch "^([a-fA-F0-9]{64})\\s+\\*?$([regex]::Escape($filename))\\s*$") {
+            if ($entry -notmatch "^([a-fA-F0-9]{64})\s+\*?$([regex]::Escape($filename))\s*$") {
                 throw "Invalid official Blender checksum entry"
             }
             $expected = $Matches[1].ToLowerInvariant()
