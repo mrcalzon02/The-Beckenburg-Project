@@ -30,9 +30,6 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Install Blender for approved canonical asset export
-        shell: pwsh
-        run: .\scripts\ci\ensure-blender.ps1
       - name: Select next installer version
         shell: pwsh
         env:

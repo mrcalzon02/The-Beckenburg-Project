@@ -113,19 +113,9 @@ java -Djava.awt.headless=true -cp build/classes org.beckenburg.TierModelForge bu
 # Keep the CC0 source in assets/source; ship only its 15 texture-embedded meshes.
 java -Djava.awt.headless=true -cp build/classes org.beckenburg.KenneyMedievalAssets assets/source/kenney_retro-medieval-kit.zip build/classes/org/beckenburg/models
 
-# Preserve offline owner archive support; pin the public CC0 source on first build.
-mkdir -p build/source
-if [[ -s assets/source/psx_style_cars_by_ggbot_august2023.zip ]]; then
-    cp assets/source/psx_style_cars_by_ggbot_august2023.zip build/source/ggbot-original.zip
-fi
-if [[ ! -s build/source/ggbot-original.zip ]]; then
-    curl --fail --location --retry 3 --max-time 50 \
-        -o build/source/ggbot-original.zip \
-        https://opengameart.org/sites/default/files/psx_style_cars_by_ggbot_august2023.zip
-fi
-command -v blender >/dev/null || { echo "Blender is required for original GGBot .blend export" >&2; exit 1; }
-blender --background --factory-startup --python-exit-code 1 --python tools/ggbot_blend_export.py -- \
-    build/source/ggbot-original.zip build/classes/org/beckenburg/models
+# Original GGBot source meshes are approved GLBs already committed.
+# Regular game builds package assets/runtime/models/ggbot_*.glb above.
+# Asset authoring is separate: no Blender or source download in game builds.
 javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/hbnet/*.java src/test/java/org/beckenburg/*.java
 # Preserve case-start trace lifecycle parity with the mandatory Windows manifest.
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.BeckenburgDeveloperTraceTest

@@ -49,23 +49,6 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Install Blender for original GGBot UV and material export
-        shell: pwsh
-        run: |
-          $exe = Get-Command blender -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source -First 1
-          if (-not $exe) {
-            $exe = Get-ChildItem (Join-Path $env:ProgramFiles 'Blender Foundation') -Filter blender.exe -Recurse -File -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
-          }
-          if (-not $exe) {
-            choco install blender -y --no-progress
-            if ($LASTEXITCODE -ne 0) { throw 'Blender installation failed' }
-            $exe = Get-ChildItem (Join-Path $env:ProgramFiles 'Blender Foundation') -Filter blender.exe -Recurse -File | Select-Object -First 1 -ExpandProperty FullName
-          }
-          if (-not $exe -or -not (Test-Path $exe)) { throw 'Cannot locate installed Blender executable' }
-          Split-Path $exe -Parent | Out-File -Append -Encoding utf8 $env:GITHUB_PATH
-          & $exe --version
-          if ($LASTEXITCODE -ne 0) { throw 'Blender is unavailable' }
-
       - name: Compile actual game and package assets without broad regression suite
         shell: cmd
         run: call build.cmd package

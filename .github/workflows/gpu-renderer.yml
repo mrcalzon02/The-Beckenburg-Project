@@ -49,9 +49,6 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Install Blender for approved canonical asset export
-        shell: pwsh
-        run: .\scripts\ci\ensure-blender.ps1
       - name: Package canonical assets with Java 17
         shell: cmd
         run: call build.cmd package

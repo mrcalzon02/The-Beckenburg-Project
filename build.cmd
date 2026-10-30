@@ -118,17 +118,9 @@ rem Author all 126 tiered PSX GLBs and embedded low-resolution texture atlases.
 java -Djava.awt.headless=true -cp build\classes org.beckenburg.TierModelForge build\classes\org\beckenburg\models || exit /b 1
 rem Extract only the curated CC0 castle GLBs with embedded original texture PNGs.
 java -Djava.awt.headless=true -cp build\classes org.beckenburg.KenneyMedievalAssets assets\source\kenney_retro-medieval-kit.zip build\classes\org\beckenburg\models || exit /b 1
-rem Convert original GGBot Blender files and their native UV/materials as one.
-rem Never paint a replacement PNG onto a separately generated car mesh.
-if not exist build\source mkdir build\source
-if exist assets\source\psx_style_cars_by_ggbot_august2023.zip (
-  copy /Y assets\source\psx_style_cars_by_ggbot_august2023.zip build\source\ggbot-original.zip >nul || exit /b 1
-)
-if not exist build\source\ggbot-original.zip (
-  curl.exe --fail --location --retry 3 --max-time 50 --output build\source\ggbot-original.zip https://opengameart.org/sites/default/files/psx_style_cars_by_ggbot_august2023.zip || (echo ERROR: original GGBot source pack unavailable & exit /b 1)
-)
-where blender >nul 2>nul || (echo ERROR: Blender required to export original GGBot .blend files & exit /b 1)
-blender --background --factory-startup --python-exit-code 1 --python tools\ggbot_blend_export.py -- build\source\ggbot-original.zip build\classes\org\beckenburg\models || exit /b 1
+rem GGBot source meshes are approved GLBs already committed in assets\runtime\models.
+rem Regular game builds package the checked-in models above; NEVER invoke
+rem Blender or download original design archives. Source re-authoring is separate.
 
 if /I "%~1"=="package" goto package_jar_only
 javac --release 17 -encoding UTF-8 -cp build\classes -d build\test @build\sources-tests.txt || exit /b 1

@@ -41,28 +41,6 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Install Blender for approved canonical asset export
-        shell: pwsh
-        run: .\scripts\ci\ensure-blender.ps1
-      - name: Probe original GGBot CC0 color texture archive
-        shell: pwsh
-        working-directory: .
-        run: |
-          New-Item -ItemType Directory -Force 'build/source' | Out-Null
-          try {
-            Invoke-WebRequest -Uri 'https://opengameart.org/sites/default/files/psx_style_cars_by_ggbot_august2023.zip' -OutFile 'build/source/ggbot-original.zip' -TimeoutSec 35
-            Write-Host "GGBOT SHA256: $((Get-FileHash 'build/source/ggbot-original.zip' -Algorithm SHA256).Hash)"
-            Add-Type -AssemblyName System.IO.Compression
-            $archive=[System.IO.Compression.ZipFile]::OpenRead((Resolve-Path 'build/source/ggbot-original.zip').Path)
-            try {
-              $archive.Entries | Select-Object -First 20 -ExpandProperty FullName | ForEach-Object { Write-Host $_ }
-            } finally {
-              $archive.Dispose()
-            }
-          } catch {
-            Write-Warning "GGBot original download unavailable: $_"
-          }
-
       - name: Assemble all game resources and run actual TCP multiplayer round
         shell: cmd
         working-directory: .
