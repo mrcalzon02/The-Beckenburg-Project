@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 mkdir -p build
 rm -rf build/classes build/test
 mkdir -p build/classes build/test
-javac --release 17 -encoding UTF-8 -d build/classes src/main/java/hbnet/*.java water-module/src/main/java/dev/mrcalzon/water/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/*.java
+javac --release 17 -encoding UTF-8 -d build/classes src/main/java/hbnet/*.java water-module/src/main/java/dev/mrcalzon/water/*.java lighting-module/src/main/java/dev/mrcalzon/lighting/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/*.java
 # Bake approved model-review thumbnails and Castle screenshot into the actual game JAR.
 java -Djava.awt.headless=true -cp build/classes org.beckenburg.UiAssetBake . build/classes/org/beckenburg build/Beckenburg.ico
 mkdir -p build/classes/META-INF
@@ -289,8 +289,9 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanLobbyTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanOwnerReadyAckTest
 if [ -f src/test/java/org/beckenburg/SmokeTest.java ]; then java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SmokeTest; fi
-jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes hbnet -C build/classes org/beckenburg -C build/classes dev/mrcalzon/weather -C build/classes dev/mrcalzon/water
+jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes hbnet -C build/classes org/beckenburg -C build/classes dev/mrcalzon/weather -C build/classes dev/mrcalzon/water -C build/classes dev/mrcalzon/lighting
 # Confirm the same compiled water module required by authored investigation maps is in the JAR.
+jar --list --file build/beckenburg-game.jar | grep -Fq 'dev/mrcalzon/lighting/LightingModule.class'
 jar --list --file build/beckenburg-game.jar | grep -Fq 'dev/mrcalzon/water/WaterDocument.class'
 jar --list --file build/beckenburg-game.jar | grep -Fq 'dev/mrcalzon/water/WaterModule.class'
 # Fail packaging if the FINAL distributable loses licensed Foley, score, weather or spatial beds.
