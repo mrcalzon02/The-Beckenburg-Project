@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import dev.mrcalzon.lighting.LightingModule;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -358,6 +359,46 @@ public final class InvestigationGame {
         JComboBox<GraphicsOptions.Upscale> upscale=select(GraphicsOptions.Upscale.values(),old.upscale());
         JComboBox<GraphicsOptions.Antialias> aa=select(GraphicsOptions.Antialias.values(),old.antialias());
         JComboBox<PsxPipeline.Preset> psx=select(PsxPipeline.Preset.values(),PsxPipeline.selected());
+        LightingModule.Settings previousLighting=LightingModule.current();
+        JComboBox<LightingModule.Preset> lightingPreset=select(
+            LightingModule.Preset.values(),previousLighting.preset());
+        JSpinner ambientLight=new JSpinner(new SpinnerNumberModel(previousLighting.ambientPercent(),50,150,5));
+        JSpinner sourceLight=new JSpinner(new SpinnerNumberModel(previousLighting.sourcePercent(),50,150,5));
+        JSpinner lightReach=new JSpinner(new SpinnerNumberModel(previousLighting.reachPercent(),65,140,5));
+        JSpinner lightFlicker=new JSpinner(new SpinnerNumberModel(previousLighting.flickerPercent(),0,200,5));
+        JSpinner lightingCache=new JSpinner(new SpinnerNumberModel(previousLighting.cacheBudgetPercent(),50,150,10));
+        JComboBox<Integer> lightingCells=select(new Integer[]{2,4,8},previousLighting.cellMetres());
+        JCheckBox distantLightLod=new JCheckBox("Use distance LOD outdoors",previousLighting.distantOutdoorLod());
+        JCheckBox changedOnlyLights=new JCheckBox("Update only changed vertex colours",previousLighting.changedOnlyVertices());
+        JCheckBox lightDependencies=new JCheckBox("Reuse unchanged source dependencies",previousLighting.dependencyReuse());
+        // Presets populate real settings; touching an individual parameter
+        // promotes it to Custom without applying until the user presses APPLY.
+        final boolean[] loadingLightPreset={false};
+        Runnable markLightingCustom=()->{
+            if(!loadingLightPreset[0])lightingPreset.setSelectedItem(LightingModule.Preset.CUSTOM);
+        };
+        for(JSpinner control:new JSpinner[]{ambientLight,sourceLight,lightReach,lightFlicker,lightingCache})
+            control.addChangeListener(e->markLightingCustom.run());
+        lightingCells.addActionListener(e->markLightingCustom.run());
+        for(JCheckBox control:new JCheckBox[]{distantLightLod,changedOnlyLights,lightDependencies})
+            control.addActionListener(e->markLightingCustom.run());
+        lightingPreset.addActionListener(e->{
+            var preset=(LightingModule.Preset)lightingPreset.getSelectedItem();
+            if(preset==null||preset==LightingModule.Preset.CUSTOM||loadingLightPreset[0])return;
+            var chosen=LightingModule.preset(preset);
+            loadingLightPreset[0]=true;
+            try{
+                ambientLight.setValue(chosen.ambientPercent());
+                sourceLight.setValue(chosen.sourcePercent());
+                lightReach.setValue(chosen.reachPercent());
+                lightFlicker.setValue(chosen.flickerPercent());
+                lightingCache.setValue(chosen.cacheBudgetPercent());
+                lightingCells.setSelectedItem(chosen.cellMetres());
+                distantLightLod.setSelected(chosen.distantOutdoorLod());
+                changedOnlyLights.setSelected(chosen.changedOnlyVertices());
+                lightDependencies.setSelected(chosen.dependencyReuse());
+            }finally{loadingLightPreset[0]=false;}
+        });
         JSpinner fov=new JSpinner(new SpinnerNumberModel(old.fieldOfView(),50,120,1));
         JSpinner brightness=new JSpinner(new SpinnerNumberModel(old.brightness(),-40,40,1));
         JSpinner contrast=new JSpinner(new SpinnerNumberModel(old.contrast(),-40,40,1));
@@ -392,6 +433,17 @@ public final class InvestigationGame {
         setting(grid,"Music volume",musicVolume);
         setting(grid,"Environment volume",environmentVolume);
         setting(grid,"Effects volume (voice separate)",effectsVolume);
+        setting(grid,"LIGHTING — Rendering only",new JLabel("Game rules and ghost perception unchanged"));
+        setting(grid,"Lighting preset",lightingPreset);
+        setting(grid,"Ambient fill (%)",ambientLight);
+        setting(grid,"Lamp and fixture strength (%)",sourceLight);
+        setting(grid,"Fixture reach (%)",lightReach);
+        setting(grid,"Cosmetic candle / TV flicker (%)",lightFlicker);
+        setting(grid,"Lighting cache budget (%)",lightingCache);
+        setting(grid,"Probe cell size (metres)",lightingCells);
+        setting(grid,"Outdoor probe detail",distantLightLod);
+        setting(grid,"Changed vertex uploads",changedOnlyLights);
+        setting(grid,"Source-dependency cache",lightDependencies);
         JScrollPane scroll=new JScrollPane(grid,
             ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scroll.setPreferredSize(new Dimension(610,Math.min(540,grid.getPreferredSize().height+18)));
@@ -413,8 +465,15 @@ public final class InvestigationGame {
             (GraphicsOptions.Antialias)aa.getSelectedItem(),
             (Integer)fov.getValue(),(Integer)brightness.getValue(),(Integer)contrast.getValue(),
             scanlines.isSelected(),vignette.isSelected(),grain.isSelected(),chromatic.isSelected());
+        LightingModule.Settings chosenLighting=new LightingModule.Settings(
+            (LightingModule.Preset)lightingPreset.getSelectedItem(),
+            (Integer)ambientLight.getValue(),(Integer)sourceLight.getValue(),
+            (Integer)lightReach.getValue(),(Integer)lightFlicker.getValue(),
+            (Integer)lightingCache.getValue(),(Integer)lightingCells.getSelectedItem(),
+            distantLightLod.isSelected(),changedOnlyLights.isSelected(),lightDependencies.isSelected());
         Runnable save=()->{
         chosen.save();
+        LightingModule.apply(chosenLighting);
         PsxPipeline.choose((PsxPipeline.Preset)psx.getSelectedItem());
         displayPrefs.putBoolean("largeMenuText",large.isSelected());
         displayPrefs.putBoolean("highContrast",highContrast.isSelected());
