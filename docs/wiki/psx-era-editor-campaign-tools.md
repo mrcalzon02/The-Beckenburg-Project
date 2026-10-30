@@ -1,6 +1,6 @@
 # PSX-Era Level Editor — Campaign, Events & Authoring Contracts
 
-**Source:** owner-supplied **PSX-era level editor.pdf**, 9 pages, SHA-256 `dc3bbd98dd74f573aeaf3b63578ebdb52def99f00adf50f37a2c835687a950a3`. **Disposition:** selectively adopt the *editor workflow and graph discipline* for a modern Java 17 game, not raw-PS1 disc tools. [Machine batch ledger](../development/psx-source-batch-2026-10-30.json).
+**Source:** owner-supplied **PSX-era level editor.pdf**, 9 pages, SHA-256 `dc3bbd98dd74f573aeaf3b63578ebdb52def99f00adf50f37a2c835687a950a3`. **Disposition:** selectively adopt the *editor workflow and graph discipline* for a modern Java 17 game, not raw-PS1 disc tools. [Machine batch ledger](../development/psx-reference-ingestion-2026-10-30.json).
 
 ## Source-to-Beckenburg reconciliation
 
