@@ -101,7 +101,7 @@ public final class EditorAnimationClip {
         for(var entry:tracks.entrySet()){
             var t=entry.getValue();
             if(t.isEmpty())continue;
-            var lo=t.floorEntry(frame),hi=t.ceilingEntry(frame);
+            var lo=t.floorEntry(frame);var hi=t.ceilingEntry(frame);
             if(lo==null)lo=t.firstEntry();
             if(hi==null)hi=t.lastEntry();
             result.put(entry.getKey(),
@@ -111,7 +111,7 @@ public final class EditorAnimationClip {
         }
         Root root=new Root(frame,0,0,0);
         if(!roots.isEmpty()){
-            var lo=roots.floorEntry(frame),hi=roots.ceilingEntry(frame);
+            var lo=roots.floorEntry(frame);var hi=roots.ceilingEntry(frame);
             if(lo==null)lo=roots.firstEntry();
             if(hi==null)hi=roots.lastEntry();
             root=playback==Playback.LINEAR&&lo.getKey()<hi.getKey()&&frame>lo.getKey()
