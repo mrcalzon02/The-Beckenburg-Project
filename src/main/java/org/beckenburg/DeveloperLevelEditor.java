@@ -27,6 +27,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private EditorTool tool=EditorTool.SELECT;
     private final java.util.EnumMap<EditorTool,JToggleButton> palette=new java.util.EnumMap<>(EditorTool.class);
     private final CastleEditorProject project=new CastleEditorProject(data);
+    private EditorPalettePanel assetPalette;
     private final EditorHistory<CastleLevelEdits.Snapshot> history=new EditorHistory<>(project,60);
     private final JSpinner workPlane=new JSpinner(new SpinnerNumberModel(0.,-.5,12.,.5));
     private final JSpinner surfaceHeight=new JSpinner(new SpinnerNumberModel(3.4,.1,12.,.1));
@@ -259,6 +260,10 @@ public final class DeveloperLevelEditor extends JPanel {
         sceneAudit.setToolTipText("Check this live castle scene for intersecting objects and duplicate IDs; non-blocking warnings");
         sceneAudit.addActionListener(e->showSceneAudit());
         commands.add(sceneAudit);
+        JButton importModel=button("IMPORT MODEL");
+        importModel.setToolTipText("OBJ, STL or GLB import with live reduction preview, size warnings and part-preserving rollback");
+        importModel.addActionListener(e->openAssetImport());
+        commands.add(importModel);
         JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());waterModules.setToolTipText("Reusable water modules, shapes, snap handles and weather preview");waterModules.addActionListener(e->EnvironmentModuleEditor.open(window,"castle"));commands.add(waterModules);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
@@ -289,8 +294,8 @@ public final class DeveloperLevelEditor extends JPanel {
         JTabbedPane tabs=new JTabbedPane();
         tabs.add("Objects & geometry",objectInspector());
         tabs.add("Paint & nav",surfaceInspector());
-        tabs.add("Assets",new EditorPalettePanel(project,asset->{
-            if(asset.category().startsWith("Models / ")){
+        assetPalette=new EditorPalettePanel(project,asset->{
+            if(asset.category().startsWith("Models / ")||asset.category().equals("Models")){
                 library.setSelectedItem(asset.uri().substring("assets://models/".length()));
                 chooseTool(EditorTool.PROP);
             }else if(asset.category().equals("Modules")){EnvironmentModuleEditor.open(window,"castle");
@@ -299,7 +304,13 @@ public final class DeveloperLevelEditor extends JPanel {
                     asset.uri().substring("assets://materials/".length())));
                 chooseTool(EditorTool.PAINT);
             }
-        }));
+        });
+        JPanel assetDock=new JPanel(new BorderLayout(3,3));
+        JButton addImported=button("IMPORT MODEL...");
+        addImported.addActionListener(e->openAssetImport());
+        assetDock.add(addImported,BorderLayout.NORTH);
+        assetDock.add(assetPalette,BorderLayout.CENTER);
+        tabs.add("Assets",assetDock);
         editorSide.add(tabs,BorderLayout.SOUTH);
         JSplitPane split=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,viewport,editorSide);
         split.setResizeWeight(1);split.setContinuousLayout(true);
@@ -366,6 +377,20 @@ public final class DeveloperLevelEditor extends JPanel {
         dialog.setLocationRelativeTo(window);
         scan.run();
         dialog.setVisible(true);
+    }
+
+    private void openAssetImport(){
+        AssetImportDialog.show(window,id->{
+            boolean listed=false;
+            for(int i=0;i<library.getItemCount();i++)
+                if(id.equals(library.getItemAt(i))){listed=true;break;}
+            if(!listed)library.addItem(id);
+            library.setSelectedItem(id);
+            if(assetPalette!=null)assetPalette.reload(project);
+            chooseTool(EditorTool.PROP);
+            status.setText("Imported "+id+" — PROP click places in the live scene; Ctrl+S saves placement");
+            viewport.requestFocusInWindow();
+        });
     }
 
     private static JButton button(String name){return new JButton(name);}
