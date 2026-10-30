@@ -47,3 +47,51 @@ G. Playtest real Castle, house and basement fixtures at runtime, record measured
 
 ## Unverified
 No claim is made here that live gameplay, one-button playtest, parenting, axis gizmos, collision-aware snapping, general-purpose scene serialization or runtime regression tests already work. These require implementation and execution.
+
+## Authoritative input: Level Editor gold standards.pdf (5 pages, supplied by project owner)
+
+This document governs editor acceptance. All features below are requirements, not claims of implementation. Keep this list distinct from current capabilities.
+
+### Ten essential standards
+1. **True WYSIWYG:** exact runtime renderer, lighting, physics and assets; edit feedback without launching another build.
+2. **Placement:** axis gizmos, grid/object/surface snapping, collision-free fly camera.
+3. **Organization:** distinct visual, terrain, collision and trigger layers; parented scene tree; full typed inspector.
+4. **Safety and speed:** reliable undo/redo, consistent shortcuts, in-editor validation for missing references, spawns, materials and unreachable spaces.
+5. **Persistence and testing:** deterministic versionable serialization, single-action playtest and return, optional player-facing import/export and workshop sharing.
+6. **Assets:** centralized browser across meshes, sprites, audio, textures and blueprints; tagging/collections; rendered thumbnails.
+7. **World controls:** global gravity, weather, time cycle, sound, fog/exposure/post-processing and player/objective baselines.
+8. **Diagnostics:** FPS, draw/triangle/memory metrics, adjustable budgets and visible navigation/collision/trigger overlays.
+9. **Customization:** docking and detachable panels, scripting/macro API with safe bounds and preset workspaces (lighting/blockout/AI).
+10. **Collaboration:** source-control conflict awareness, autosave/crash recovery, chunked/sub-level organization.
+
+### Professional quality-of-life standards
+- Scatter/paint brushes with deterministic random seeds, density, scale and rotation controls.
+- Multi-object replace-in-selection, preserving transforms and references.
+- Prefab group authoring and re-use across maps (canonical vehicle, furnishings, structures).
+- Drop to floor, surface hit-testing and nearest-collider alignment.
+- Right-click context menus appropriate to entity type.
+- Camera bookmarks and isolate/focus selection.
+- Breadcrumb paths for nested levels and hierarchy groups.
+- Favorites, drag-to-replace, reference remapping and customizable hierarchy colors.
+
+### Default four-dock layout from source
+- **Center:** maximized live viewport with small overlays and optional full-screen mode.
+- **Left:** searchable hierarchy with eye visibility toggles and edit locks.
+- **Right:** collapsible inspector with scrubbable and relative numeric fields.
+- **Bottom:** collapsible asset browser and live diagnostics/console.
+- **Top:** tool/snap/local-world controls and prominent Play Level action.
+
+Maintain compactness; no duplicated/inert panels, tabs or controls. Any UI element must operate a real editor or runtime function. F11 may control editor viewport presentation but must not be a required in-game gameplay control.
+
+### Current incremental changes
+- Selectable placement grid: Off, 0.25, 0.5, 1, 2 metres; commit `1ee8ab0`.
+- Four per-session camera bookmark slots with Ctrl+F1-F4 store / F1-F4 recall, plus toolbar buttons; commit `073ba8b`.
+- Both are source-level changes; no runtime compile or visual verification claimed.
+
+### Priority and tests
+P0: runtime parity, round-trip saving, restore-on-playtest, crash-safe save and functional editor launch.
+P1: full gizmos/surface snapping, true hierarchy/layers, typed inspector, asset thumbnails and console.
+P2: profiling, world and weather authoring, prefabs, multi-select/replacement and scattering.
+P3: dockable presets, scripting, chunk authoring, optional community sharing and collaboration locks.
+
+Test each requirement using representative Castle, house, basement and outdoor environments. Ensure environment controls respect the unified weather system: no reinstatement of the removed fog/power-outage fixed-condition selector. Nonfunctional diagnostics do not gate releases, consistent with owner release policy.
