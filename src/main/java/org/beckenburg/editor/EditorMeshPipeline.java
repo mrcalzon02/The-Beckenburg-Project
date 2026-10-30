@@ -35,7 +35,7 @@ public final class EditorMeshPipeline {
     }
     public record Mesh(String name,List<Triangle> triangles,long sourceBytes) {
         public Mesh {
-            if(name==null||name.isBlank()||triangles==null||triangles.isEmpty()
+            if(name==null||name.isBlank()||triangles==null
                 ||triangles.size()>MAX_TRIANGLES||sourceBytes<0)throw new IllegalArgumentException("Invalid mesh");
             triangles=List.copyOf(triangles);
         }
@@ -196,7 +196,7 @@ public final class EditorMeshPipeline {
         long beforeMemory=estimatedBytes(source.triangles()),afterMemory=estimatedBytes(combined);
         if(beforeMemory>16L*1024*1024)warnings.add("MEMORY: estimated source triangle data >16 MiB (not full process heap)");
         if(combined.isEmpty())warnings.add("INVALID RESULT: reduction removed all drawable triangles. Publishing is disabled.");
-        Mesh result=combined.isEmpty()?source:new Mesh(source.name(),combined,source.sourceBytes());
+        Mesh result=new Mesh(source.name(),combined,source.sourceBytes());
         // The over-regressed preview is represented by stats even when no drawable triangles survive.
         return new Result(source,result,level,stats,warnings,beforeMemory,afterMemory);
     }
