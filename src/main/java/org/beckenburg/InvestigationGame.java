@@ -436,11 +436,11 @@ public final class InvestigationGame {
         setting(grid,"LIGHTING — Rendering only",new JLabel("Game rules and ghost perception unchanged"));
         setting(grid,"Lighting preset",lightingPreset);
         setting(grid,"Ambient fill (%)",ambientLight);
-        setting(grid,"Lamp and fixture strength (%)",sourceLight);
+        setting(grid,"World fixture strength (%)",sourceLight);
         setting(grid,"Fixture reach (%)",lightReach);
         setting(grid,"Cosmetic candle / TV flicker (%)",lightFlicker);
-        setting(grid,"Lighting cache budget (%)",lightingCache);
-        setting(grid,"Probe cell size (metres)",lightingCells);
+        setting(grid,"Lighting cache allowance (%)",lightingCache);
+        setting(grid,"Lighting invalidation cell (metres)",lightingCells);
         setting(grid,"Outdoor probe detail",distantLightLod);
         setting(grid,"Changed vertex uploads",changedOnlyLights);
         setting(grid,"Source-dependency cache",lightDependencies);
