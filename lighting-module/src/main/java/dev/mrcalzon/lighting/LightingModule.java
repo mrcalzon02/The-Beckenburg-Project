@@ -45,9 +45,11 @@ public final class LightingModule {
     }
     public static Settings preset(Preset preset) {
         return switch(Objects.requireNonNull(preset,"preset")) {
-            case PERFORMANCE -> new Settings(preset,95,85,85,75,60,4,true,true,true);
+            // Presets tune GPU/CPU workload, not the visibility of evidence.
+            // Brightness, radius and cosmetic flicker remain explicit custom controls.
+            case PERFORMANCE -> new Settings(preset,100,100,100,100,70,4,true,true,true);
             case BALANCED -> new Settings(preset,100,100,100,100,100,4,true,true,true);
-            case QUALITY -> new Settings(preset,100,110,110,100,140,2,false,true,true);
+            case QUALITY -> new Settings(preset,100,100,100,100,140,2,false,true,true);
             case CUSTOM -> throw new IllegalArgumentException("Custom requires selected values");
         };
     }
