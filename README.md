@@ -1,3 +1,5 @@
+[PSX animation guide](docs/wiki/psx-animation-authoring.md) · [Campaign editor design](docs/wiki/psx-era-editor-campaign-tools.md) · [Retro SFX authoring](docs/wiki/psx-arrow-audio-design.md) · [Menu/campaign/billboard guide](docs/wiki/psx-editor-menu-campaign-billboards.md) · [Deduplicated PDF intake JSON](docs/development/psx-reference-ingestion-2026-10-30.json)
+
 [Asset importer / over-regression guide](docs/wiki/psx-asset-import-and-regression.md) · [Machine rules](docs/development/psx-asset-import-reference.json)
 [PSX editor guide](docs/wiki/psx-editor-engineering-guide.md) · [Machine rules](docs/development/psx-editor-reference.json) · [Editor acceptance audit](docs/development/LEVEL_EDITOR_OVERHAUL_AUDIT.md)
 
