@@ -106,9 +106,22 @@ public final class LanCameraOnlyGhostIntegrationTest {
                 field.cameraFrames.removeIf(packet->packet.startsWith("CAMGHOST|"));
                 // MANIFEST requires a genuinely audible nearby investigator.
                 // Silent room occupancy must NEVER grant secret ghost senses.
-                // An accepted field EMF scan produces an actual equipment cue.
-                field.client.scan(LanCase.Tool.EMF);
-                field.await("ACCEPT|SCAN|",8);
+                // The prior fixed wait (tick 82) can race simulation ticks and
+                // legal ability windows. Exercise actual field EMF interactions,
+                // then request manifestation only once the host's authoritative
+                // domain reports the ability legal, without bypassing its costs.
+                var domain=(GhostDomain)LooseClutterNetworkTest.field(host,"ghost");
+                boolean legal=false;
+                for(int attempt=0;attempt<12&&!legal;attempt++){
+                    field.client.scan(LanCase.Tool.EMF);
+                    field.await("ACCEPT|SCAN|",8);
+                    synchronized(mutex){
+                        legal=domain.observe().legalActions().contains(GhostDomain.Action.MANIFEST);
+                    }
+                    if(!legal)Thread.sleep(110);
+                }
+                check(legal,"Real, audible field scans never opened a legal "
+                    +"manifestation window: "+domain.observe());
                 ghost.client.ghost(GhostDomain.Action.MANIFEST,4);
                 ghost.await("ACCEPT|GHOST|MANIFEST",8);
                 synchronized(mutex){
