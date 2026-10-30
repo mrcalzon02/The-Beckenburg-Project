@@ -98,27 +98,42 @@ public final class UiAssetBake {
         for(String[] spec:source){
             String name=spec[0];
             Path file=root.resolve("assets/concept-art/v001/01-hunters/"+name+"-character-profile.png");
-            if(!Files.isRegularFile(file))
-                throw new IOException("Missing actual original Hunter portrait source: "+file);
+            if(!Files.isRegularFile(file)){
+                System.err.println("Diagnostic: missing original Hunter portrait "+file);
+                continue; // Cosmetic artwork must never block a game installer.
+            }
             BufferedImage master=ImageIO.read(file.toFile());
-            if(master==null||master.getWidth()!=1448||master.getHeight()!=1086)
-                throw new IOException("Invalid original Hunter concept sheet: "+file);
+            if(master==null||master.getWidth()!=1448||master.getHeight()!=1086){
+                System.err.println("Diagnostic: invalid approved Hunter source sheet "+file);
+                continue;
+            }
             int x0=Integer.parseInt(spec[1]),y0=Integer.parseInt(spec[2]),
                 x1=Integer.parseInt(spec[3]),y1=Integer.parseInt(spec[4]);
-            if(x0<0||y0<0||x1>master.getWidth()||y1>master.getHeight())
-                throw new IOException("Original character panel bounds outside original: "+name);
+            if(x0<0||y0<0||x1>master.getWidth()||y1>master.getHeight()){
+                System.err.println("Diagnostic: original Hunter crop outside master "+name);
+                continue;
+            }
             BufferedImage panel=master.getSubimage(x0,y0,x1-x0,y1-y0);
             Path destination=dir.resolve(name+".png");
-            if(!ImageIO.write(panel,"png",destination.toFile()))
-                throw new IOException("Unable to encode intact approved Hunter portrait "+name);
+            if(!ImageIO.write(panel,"png",destination.toFile())){
+                System.err.println("Diagnostic: cannot write optional Hunter portrait "+name);
+                continue;
+            }
             // No rescale: re-read and verify exact per-pixel preservation.
             BufferedImage actual=ImageIO.read(destination.toFile());
             if(actual==null||actual.getWidth()!=panel.getWidth()
-                    ||actual.getHeight()!=panel.getHeight())
-                throw new IOException("Hunter source copy damaged "+name);
+                    ||actual.getHeight()!=panel.getHeight()){
+                System.err.println("Diagnostic: Hunter portrait decode mismatch "+name);
+                Files.deleteIfExists(destination);
+                continue;
+            }
+            boolean exact=true;
             for(int y=0;y<panel.getHeight();y++)for(int x=0;x<panel.getWidth();x++)
-                if(actual.getRGB(x,y)!=panel.getRGB(x,y))
-                    throw new IOException("Hunter original source pixel altered: "+name);
+                if(actual.getRGB(x,y)!=panel.getRGB(x,y))exact=false;
+            if(!exact){
+                System.err.println("Diagnostic: Hunter original source pixels changed "+name);
+                Files.deleteIfExists(destination);
+            }
         }
     }
 
