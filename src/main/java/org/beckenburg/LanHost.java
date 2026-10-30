@@ -250,6 +250,8 @@ public final class LanHost implements AutoCloseable {
         if(!map.valid()||!RitualSites.valid(map))
             throw new IllegalArgumentException("unplayable authored investigation site");
         ghostType=Objects.requireNonNull(type);
+        // Local host opt-in; there is deliberately no LAN command to enable or read this.
+        aiDiagnostics.setEnabled(Boolean.getBoolean("beckenburg.ai.profile"));
         contract=Objects.requireNonNull(config);
         ghostMayStart=hostAsGhost;
         // Legacy host constructors preserve H1 ownership; production GUI hosts
@@ -1915,8 +1917,11 @@ public final class LanHost implements AutoCloseable {
         }
         if(twinCompanion!=null)
             twinCompanion.heard(hunterRooms[seat],body.x(),body.z(),type,tick,weather.state());
-        boolean heard=LanAcoustics.audible(map,ghost.room(),hunterRooms[seat],type,
-            weather.state());
+        long acousticStart=aiDiagnostics.begin();
+        boolean heard;
+        try{heard=LanAcoustics.audible(map,ghost.room(),hunterRooms[seat],type,
+            weather.state());}
+        finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,acousticStart);}
         if(heard){
             lastGhostSoundTick=tick;
             lastGhostSoundRoom=hunterRooms[seat];
