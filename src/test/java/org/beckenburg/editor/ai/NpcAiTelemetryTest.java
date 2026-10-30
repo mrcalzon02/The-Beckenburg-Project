@@ -24,6 +24,26 @@ public final class NpcAiTelemetryTest {
         live.end(NpcAiTelemetry.Metric.HEARING,start);
         check(live.snapshot().timings().get(NpcAiTelemetry.Metric.HEARING).calls()==1,
             "Actual measured timing recorded");
+        String export=NpcAiTelemetryReport.csv(snap);
+        check(export.startsWith("metric,enabled,total_calls")&&
+            export.contains("DECISION,true,300,256,45000,"),
+            "Aggregate report includes counts and ring metrics only");
+        check(!export.contains("hunter")&&!export.contains("room")&&!export.contains("ghost"),
+            "Report has no actor, location or player secrets");
+        try{
+            java.nio.file.Path temp=java.nio.file.Files.createTempDirectory("ai-telemetry-");
+            try{
+                java.nio.file.Path path=temp.resolve("profile.csv");
+                NpcAiTelemetryReport.save(path,snap);
+                check(java.nio.file.Files.readString(path).equals(export),
+                    "CSV export atomically persists the aggregate only");
+            }finally{
+                try(var files=java.nio.file.Files.list(temp)){
+                    files.forEach(x->{try{java.nio.file.Files.deleteIfExists(x);}catch(Exception ignored){}});
+                }
+                java.nio.file.Files.deleteIfExists(temp);
+            }
+        }catch(java.io.IOException err){throw new AssertionError("CSV persistence failed",err);}
         live.setEnabled(false);
         live.record(NpcAiTelemetry.Metric.DECISION,100);
         check(live.snapshot().timings().get(NpcAiTelemetry.Metric.DECISION).calls()==300,
