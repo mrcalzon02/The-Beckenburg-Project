@@ -1,0 +1,50 @@
+name: Beckenburg Door Opening Performance Diagnostic
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/door-opening-profiler.yml'
+      - 'src/test/java/org/beckenburg/DoorOpeningFrameProfile.java'
+      - 'src/main/java/org/beckenburg/HouseMap.java'
+      - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/main/java/org/beckenburg/FixtureLighting.java'
+      - 'src/main/java/org/beckenburg/GraphicsEffects.java'
+      - 'lighting-module/**'
+      - 'gpu-client/pom.xml'
+permissions:
+  contents: read
+jobs:
+  profile-windows-door-frames:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Build the actual packaged game, not an isolated renderer toy
+        shell: cmd
+        run: call build.cmd package
+      - name: Compile real House door profiler
+        shell: cmd
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\DoorOpeningFrameProfile.java
+      - name: Capture CPU-software House door frame profile
+        continue-on-error: true
+        shell: cmd
+        run: java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.DoorOpeningFrameProfile cpu
+      - name: Capture resident GPU-submission revision and upload profile (not real GPU timer)
+        continue-on-error: true
+        shell: cmd
+        run: java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.DoorOpeningFrameProfile submission
+      - name: Preserve profiler CSV and numerical summaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-door-opening-profiler
+          path: build/e2e/door-opening-profiler/**
+          if-no-files-found: warn
+          retention-days: 21
