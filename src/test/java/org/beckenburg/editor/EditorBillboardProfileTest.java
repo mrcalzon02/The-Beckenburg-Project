@@ -30,7 +30,7 @@ public final class EditorBillboardProfileTest {
             check(ImageIO.read(baked.toFile()).getWidth()==512,"Usable PNG derivative");
             var flat=EditorBillboardProfile.convert(source,256,256,
                 EditorBillboardProfile.Palette.INDEXED_332,false);
-            check(flat.image().getRGB(1,1)!=0,"Ditherless quantization emits pixels");
+            check((flat.image().getRGB(128,128)>>>24)!=0,"Ditherless quantization emits mapped source pixels");
             boolean refused=false;
             try{EditorBillboardProfile.convert(source,4096,4096,
                 EditorBillboardProfile.Palette.ORIGINAL,false);}
