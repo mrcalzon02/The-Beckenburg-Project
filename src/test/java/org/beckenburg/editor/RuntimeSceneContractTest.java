@@ -48,6 +48,16 @@ public final class RuntimeSceneContractTest {
             RuntimeScene.Transform.identity(),List.of());}
         catch(IllegalArgumentException expected){invalid=true;}
         check(invalid,"Reject direct parenting cycle");
+        check(RuntimeSceneDiagnostics.inspect(game).isEmpty(),"Valid parented scene has no diagnostics");
+        game.replace(new RuntimeScene.Node("broken","Bad node","missing","geometry",
+            RuntimeScene.Transform.identity(),List.of()));
+        check(RuntimeSceneDiagnostics.inspect(game).stream().anyMatch(d->
+            d.code().equals("MISSING_PARENT")&&d.nodeId().equals("broken")),
+            "Missing parent detected without blocking scene loading");
+        game.replace(new RuntimeScene.Node("room","Room","lamp","geometry",
+            RuntimeScene.Transform.identity(),List.of()));
+        check(RuntimeSceneDiagnostics.inspect(game).stream().anyMatch(d->
+            d.code().equals("PARENT_CYCLE")),"Indirect parent cycle detected");
         System.out.println("PASS portable runtime scene identity, components, hierarchy and snapshot");
     }
 }
