@@ -97,16 +97,16 @@ public final class GhostAiRuleLab {
             "A checkmark is a synthetic test precondition, not proof of an in-game victim.");
     }
     private void auditRoster(){
-        StringBuilder out=new StringBuilder("NPC / AI CANONICAL ROSTER AUDIT\\n");
-        out.append("Species definitions: ").append(book.all().size()).append("\\n");
+        StringBuilder out=new StringBuilder("NPC / AI CANONICAL ROSTER AUDIT\n");
+        out.append("Species definitions: ").append(book.all().size()).append("\n");
         out.append("All rules loaded from current GhostIdentity/GhostTraits/GhostBehavior/")
-            .append("GhostFrenzy/GhostEvidenceMatrix.\\n\\n");
+            .append("GhostFrenzy/GhostEvidenceMatrix.\n\n");
         var findings=book.inspect();
-        if(findings.isEmpty())out.append("No structural warnings detected.\\n");
+        if(findings.isEmpty())out.append("No structural warnings detected.\n");
         else for(var finding:findings)
             out.append(finding.code()).append(" / ").append(finding.subject())
-                .append(" / ").append(finding.detail()).append("\\n");
-        out.append("\\nNotes describe constraints; they do not imply game errors.\\n");
+                .append(" / ").append(finding.detail()).append("\n");
+        out.append("\nNotes describe constraints; they do not imply game errors.\n");
         out.append("A source rulebook audit does not replace multiplayer pursuit or live collision testing.");
         test.setText(out.toString());test.setCaretPosition(0);
         caption.setText("Completed developer-only source rule audit; no active session accessed");
@@ -121,30 +121,30 @@ public final class GhostAiRuleLab {
         new SwingWorker<String,Void>(){
             @Override protected String doInBackground(){
                 var report=GhostAiScenarioRunner.run(selected,chosen,duration,20261030L,sound);
-                StringBuilder out=new StringBuilder("SEEDED HOST-RULE SCENARIO — NOT LIVE GAMEPLAY\\n");
+                StringBuilder out=new StringBuilder("SEEDED HOST-RULE SCENARIO — NOT LIVE GAMEPLAY\n");
                 out.append("Ghost: ").append(selected).append(" / site: ").append(chosen)
-                    .append(" / 10 Hz ticks: ").append(duration).append("\\n");
+                    .append(" / 10 Hz ticks: ").append(duration).append("\n");
                 out.append("Domain-accepted events: ").append(report.accepted())
                     .append(" / host-rejected: ").append(report.denied())
-                    .append(" / DRIFT: ").append(report.drift()).append("\\n");
-                out.append("Controlled authoring sound pulses: ").append(report.emittedSounds()).append("\\n");
+                    .append(" / DRIFT: ").append(report.drift()).append("\n");
+                out.append("Controlled authoring sound pulses: ").append(report.emittedSounds()).append("\n");
                 out.append("Final rule-only room: ").append(report.finalRoom())
-                    .append(" / remaining energy: ").append(report.energy()).append("\\n\\n");
-                out.append("REAL CODE TIMINGS (rolling 256, nanoseconds; not hardware FPS)\\n");
+                    .append(" / remaining energy: ").append(report.energy()).append("\n\n");
+                out.append("REAL CODE TIMINGS (rolling 256, nanoseconds; not hardware FPS)\n");
                 for(var kind:org.beckenburg.editor.ai.NpcAiTelemetry.Metric.values()){
                     var times=report.timings().timings().get(kind);
                     out.append(kind).append(" n=").append(times.calls())
                         .append(" p50=").append(times.p50Ns())
                         .append(" p95=").append(times.p95Ns())
-                        .append(" p99=").append(times.p99Ns()).append("\\n");
+                        .append(" p99=").append(times.p99Ns()).append("\n");
                 }
-                out.append("\\nRECENT ACTUAL GHOSTDOMAIN RESOLUTIONS\\n");
+                out.append("\nRECENT ACTUAL GHOSTDOMAIN RESOLUTIONS\n");
                 for(var e:report.recent())
                     out.append(e.tick()).append(" / ").append(e.action())
                         .append(" / ").append(e.accepted()?"accepted":"denied")
-                        .append(" / ").append(e.reason()).append("\\n");
-                out.append("\\nScope: real host-rule classes, but NO physics, lighting, frenzy, hunter bodies, "+
-                    "active map, actual network host, or multiplayer collision.\\n");
+                        .append(" / ").append(e.reason()).append("\n");
+                out.append("\nScope: real host-rule classes, but NO physics, lighting, frenzy, hunter bodies, "+
+                    "active map, actual network host, or multiplayer collision.\n");
                 out.append("Timing values depend on the machine and are diagnostic only.");
                 return out.toString();
             }
@@ -167,27 +167,27 @@ public final class GhostAiRuleLab {
             @Override protected String doInBackground(){
                 HouseMap map=new HouseMap(chosen);
                 var report=GhostAiNavigationAudit.inspect(map,4);
-                StringBuilder out=new StringBuilder("CANONICAL AI NAVIGATION / ACOUSTIC AUDIT\\n");
+                StringBuilder out=new StringBuilder("CANONICAL AI NAVIGATION / ACOUSTIC AUDIT\n");
                 out.append("Site: ").append(report.site())
                     .append(" / origin: ").append(report.origin())
-                    .append(" / rooms: ").append(report.inspectedRooms()).append("\\n");
-                out.append("Directed ghost portal links: ").append(report.links().size()).append("\\n");
-                out.append("Unreachable rooms from 4: ").append(report.unreachable()).append("\\n\\n");
+                    .append(" / rooms: ").append(report.inspectedRooms()).append("\n");
+                out.append("Directed ghost portal links: ").append(report.links().size()).append("\n");
+                out.append("Unreachable rooms from 4: ").append(report.unreachable()).append("\n\n");
                 for(var issue:report.findings())
                     out.append("DIAGNOSTIC / ").append(issue.code()).append(" / room ")
-                        .append(issue.room()).append(" / ").append(issue.detail()).append("\\n");
-                if(report.findings().isEmpty())out.append("No topological issues found.\\n");
-                out.append("\\nGhost portal exits (door may need to be opened to physically pass):\\n");
+                        .append(issue.room()).append(" / ").append(issue.detail()).append("\n");
+                if(report.findings().isEmpty())out.append("No topological issues found.\n");
+                out.append("\nGhost portal exits (door may need to be opened to physically pass):\n");
                 for(int room=0;room<report.inspectedRooms();room++){
                     int current=room;
                     out.append(room).append(" -> ").append(map.ghostExits(room))
-                        .append(" / route to origin ").append(GhostAiNavigationAudit.path(map,current,4)).append("\\n");
+                        .append(" / route to origin ").append(GhostAiNavigationAudit.path(map,current,4)).append("\n");
                 }
-                out.append("\\nActual acoustic losses per directed portal (MAX = disconnected):\\n");
+                out.append("\nActual acoustic losses per directed portal (MAX = disconnected):\n");
                 for(var edge:report.links())
                     out.append(edge.from()).append(" -> ").append(edge.to())
-                        .append(": ").append(edge.acousticLoss()).append("\\n");
-                out.append("\\nAuthoring map audit only. No actual doors opened, live actors moved or LAN state read.");
+                        .append(": ").append(edge.acousticLoss()).append("\n");
+                out.append("\nAuthoring map audit only. No actual doors opened, live actors moved or LAN state read.");
                 return out.toString();
             }
             @Override protected void done(){
