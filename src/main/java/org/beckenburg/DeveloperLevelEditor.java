@@ -264,6 +264,10 @@ public final class DeveloperLevelEditor extends JPanel {
         importModel.setToolTipText("OBJ, STL or GLB import with live reduction preview, size warnings and part-preserving rollback");
         importModel.addActionListener(e->openAssetImport());
         commands.add(importModel);
+        JButton animationLab=button("ANIMATE");
+        animationLab.setToolTipText("Edit rigid-part animation clips at 15/30 fps, with stepped playback and isolated root motion");
+        animationLab.addActionListener(e->org.beckenburg.editor.EditorAnimationLab.show(window));
+        commands.add(animationLab);
         JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());waterModules.setToolTipText("Reusable water modules, shapes, snap handles and weather preview");waterModules.addActionListener(e->EnvironmentModuleEditor.open(window,"castle"));commands.add(waterModules);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
