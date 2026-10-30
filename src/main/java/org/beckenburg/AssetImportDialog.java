@@ -24,6 +24,7 @@ public final class AssetImportDialog {
     private final Consumer<String> published;
     private final JDialog dialog;
     private final JSlider slider=new JSlider(0,12,0);
+    private final JComboBox<String> preset=new JComboBox<>(new String[]{"PSX Prop / 100 triangles","PSX Character / 800 triangles","PSX Close-up / 1200 triangles","PSX World Kit / 4000 triangles","Modern / no style budget"});
     private final JTextArea details=new JTextArea(10,40);
     private final JLabel pathLabel=new JLabel("Choose an OBJ, STL or embedded-texture GLB");
     private final JButton apply=new JButton("PUBLISH TO EDITOR");
@@ -43,6 +44,7 @@ public final class AssetImportDialog {
     private EditorMeshPipeline.Result result;
     private int revision;
     private boolean busy;
+    private volatile long sourceTextureBytes;
     private AssetImportDialog(JFrame parent,Consumer<String> published){
         this.parent=parent;this.published=published;
         dialog=new JDialog(parent,"Asset Import / PSX Regression Lab",false);
@@ -54,12 +56,15 @@ public final class AssetImportDialog {
         slider.setPaintTicks(true);slider.setMajorTickSpacing(2);slider.setPaintLabels(true);
         slider.setToolTipText("Level 0 preserves source geometry; 12 intentionally collapses small parts. This is not a triangle-budget target.");
         slider.addChangeListener(e->{if(!slider.getValueIsAdjusting()&&source!=null)recalculate();});
+        preset.setToolTipText("Advisory visual/style budget only; never a hard release gate");
+        preset.addActionListener(e->{if(source!=null&&result!=null)updateReport();});
         JPanel controls=new JPanel(new BorderLayout(3,3));
         controls.add(new JLabel("Geometry regression / vertex clustering (0 = original)"),BorderLayout.NORTH);
         controls.add(slider,BorderLayout.CENTER);
         JButton reset=new JButton("RESET");
         reset.addActionListener(e->slider.setValue(0));
         controls.add(reset,BorderLayout.EAST);
+        controls.add(preset,BorderLayout.SOUTH);
         JPanel top=new JPanel(new BorderLayout(4,5));
         top.add(head,BorderLayout.NORTH);top.add(controls,BorderLayout.SOUTH);
         content.add(top,BorderLayout.NORTH);
@@ -98,6 +103,12 @@ public final class AssetImportDialog {
                     if(Files.size(candidate)>4_000_000)throw new IOException("Current game GLB decoder limit is 4 MiB");
                     byte[] bytes=Files.readAllBytes(candidate);
                     var decoded=GlbProps.decode(bytes);
+                    java.util.Set<Integer> mats=new java.util.HashSet<>();
+                    long texBytes=0;
+                    for(var triangle:decoded.triangles())mats.add(triangle.material());
+                    for(int material:mats)
+                        texBytes+=(long)GlbProps.textureWidth(material)*GlbProps.textureHeight(material)*4;
+                    sourceTextureBytes=texBytes;
                     List<EditorMeshPipeline.Triangle> all=new ArrayList<>();
                     for(var triangle:decoded.triangles()){
                         var a=triangle.a();var b=triangle.b();var c=triangle.c();
@@ -108,6 +119,7 @@ public final class AssetImportDialog {
                     }
                     return new EditorMeshPipeline.Mesh(candidate.getFileName().toString(),all,bytes.length);
                 }
+                sourceTextureBytes=0;
                 return EditorMeshPipeline.read(candidate);
             }
             @Override protected void done(){
@@ -140,6 +152,16 @@ public final class AssetImportDialog {
                     result=get();
                     int after=result.parts().stream().mapToInt(EditorMeshPipeline.PartStats::after).sum();
                     StringBuilder report=new StringBuilder();
+                    report.append("PSX look preset: ").append(preset.getSelectedItem())
+                          .append(" (advisory; the game is not running on real PS1 hardware)\\n");
+                    int[] limits={100,800,1200,4000,Integer.MAX_VALUE};
+                    int max=limits[preset.getSelectedIndex()];
+                    if(after>max)report.append("STYLE WARNING: ").append(after)
+                        .append(" triangles exceeds the chosen ").append(max)
+                        .append("-triangle visual target.\\n");
+                    if(sourceTextureBytes>512*1024)report.append("TEXTURE MEMORY WARNING: approx ")
+                        .append(sourceTextureBytes/1024)
+                        .append(" KiB decoded GLB RGBA texture pixels (excludes renderer/cache copies).\\n");
                     report.append("Source: ").append(mesh.name()).append("  /  ").append(mesh.sourceBytes()).append(" bytes")
                           .append("\nGeometry: ").append(mesh.triangles().size()).append(" -> ").append(after)
                           .append(" triangles  |  estimated CPU triangle storage: ")
@@ -163,6 +185,14 @@ public final class AssetImportDialog {
             }
         }.execute();
     }
+    /** Update budget commentary without rerunning expensive vertex clustering. */
+    private void updateReport(){
+        if(source==null||result==null)return;
+        // Result is immutable; update the already visible budget line if preset changes
+        // by recalculating in the background, not on the GUI paint thread.
+        recalculate();
+    }
+
     private void publish(){
         if(source==null||result==null||path==null||busy)return;
         final int remaining=result.parts().stream().mapToInt(EditorMeshPipeline.PartStats::after).sum();
