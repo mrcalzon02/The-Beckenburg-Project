@@ -80,6 +80,28 @@ public final class EditorAuthoringReference {
             "Reference: Developing assets for the PlayStation 1 (PSX) architecture, 13 pages; " +
             "docs/wiki/psx-asset-import-and-regression.md"
         )));
+        tabs.addTab("Animation / SFX", new JScrollPane(page(
+            "PSX CHARACTER ANIMATION + AUDIO AUTHORING\\n\\n" +
+            "ANIMATE offers a portable 15/30 FPS named rigid-part timeline, stepped/linear preview, " +
+            "separate root-motion keys, non-destructive redundant-key pruning, and atomically saved .anim files. " +
+            "This is AUTHORING ONLY; it does not currently animate actual ghosts or change game/host authority.\\n\\n" +
+            "SFX ASSETS inspects 8/16-bit PCM WAV and exports a separate optional mono 11.025/22.05kHz " +
+            "8/16-bit derivative. Originals stay untouched. Sound import does not register a playback event " +
+            "or install another mixer. Continue to use the game SoundVolume editor for real spatial acoustics.\\n\\n" +
+            "Sources: PSX animations gold-1.pdf; PSX Arrow Sound Design.pdf; " +
+            "docs/wiki/psx-animation-authoring.md and docs/wiki/psx-arrow-audio-design.md"
+        )));
+        tabs.addTab("Campaign / Billboard", new JScrollPane(page(
+            "CAMPAIGN GRAPH / SOURCE-PRESERVING BILLBOARD IMAGES\\n\\n" +
+            "CAMPAIGN provides an AUTHORING SIMULATION of Pending → Active ↔ Paused → Complete, " +
+            "idempotent START/STOP actions, typed flag storage, reference dependencies and text save/load. " +
+            "It is not connected to live mission, LAN or actor cleanup. Do not run untrusted scripts.\\n\\n" +
+            "BILLBOARDS loads PNG/JPEG into a SOURCE versus 2D DERIVATIVE preview; selectable 256/512 " +
+            "pixel canvas, optional palette reduction and ordered dithering, decoded-memory estimates, " +
+            "and explicit PNG bake. The current preview is NOT yet a live SceneRenderer 3D billboard.\\n\\n" +
+            "Sources: PSX-era level editor.pdf and owner-provided menu/campaign/billboard brief. " +
+            "docs/wiki/psx-era-editor-campaign-tools.md; docs/wiki/psx-editor-menu-campaign-billboards.md"
+        )));
         tabs.addTab("UI / Tests", new JScrollPane(page(
             "AUTHENTIC PRESENTATION / NO ARTIFICIAL FRICTION\n\n" +
             "Compact menus, readable pixel styling and D-pad navigation are useful. Keep remapping, " +
