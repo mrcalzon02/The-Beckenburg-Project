@@ -10,8 +10,10 @@ permissions:
 
 concurrency:
   group: beckenburg-installer
-  # A superseded main commit must never publish an out-of-date installer.
-  cancel-in-progress: true
+  # Development often pushes faster than Windows packaging can finish.
+  # Never cancel a working release indefinitely; serialize and publish its
+  # verified source SHA, even if newer commits are queued for a later update.
+  cancel-in-progress: false
 
 jobs:
   package-and-release:
@@ -216,8 +218,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           $ErrorActionPreference='Stop'
-          $current=(& gh api "repos/$env:GITHUB_REPOSITORY/commits/main" --jq '.sha').Trim()
-          if ($current -ne $env:GITHUB_SHA) { throw 'Refusing to publish an obsolete main-branch build' }
+          $checkedOut=(& git rev-parse HEAD).Trim()
+          if ($LASTEXITCODE -ne 0 -or $checkedOut -ne $env:GITHUB_SHA) {
+            throw 'Release checkout no longer matches the verified build source'
+          }
+          # New main commits do not invalidate a tested, runnable update.
+          # The next serialized run will supersede it once it also passes.
           $exe="dist/installer/Beckenburg-$env:BECKENBURG_RELEASE_VERSION-Windows-x64.exe"
           $assets=@($exe,'dist/installer/SHA256SUMS.txt')
           if(Test-Path 'dist/installer/LevelEditorKit-Java17.jar') {

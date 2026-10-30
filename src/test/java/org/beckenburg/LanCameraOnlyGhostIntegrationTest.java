@@ -104,6 +104,11 @@ public final class LanCameraOnlyGhostIntegrationTest {
                 }
                 field.inbox.clear();
                 field.cameraFrames.removeIf(packet->packet.startsWith("CAMGHOST|"));
+                // MANIFEST requires a genuinely audible nearby investigator.
+                // Silent room occupancy must NEVER grant secret ghost senses.
+                // An accepted field EMF scan produces an actual equipment cue.
+                field.client.scan(LanCase.Tool.EMF);
+                field.await("ACCEPT|SCAN|",8);
                 ghost.client.ghost(GhostDomain.Action.MANIFEST,4);
                 ghost.await("ACCEPT|GHOST|MANIFEST",8);
                 synchronized(mutex){

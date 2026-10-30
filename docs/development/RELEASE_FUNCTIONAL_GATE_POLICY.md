@@ -17,3 +17,5 @@ The automatic installer flow no longer runs `build.cmd e2e`, because that develo
 The legacy manual `beckenburg-release.yml` may still execute all diagnostics, but its publication status now depends only on game startup and native install/launch, not the extended regression/visual suite. Do not label a build functional if its core smoke fails.
 
 **Important:** no CI configuration proves user hardware performance. A failed cosmetic test is not proof of an unplayable game; conversely a successful compile is not proof that an installer starts.
+
+**Continuous development:** installer jobs serialize rather than cancel in-flight runs. A built, verified commit can publish while newer main commits are being prepared; the next successful installer supersedes it. Publication always checks the built checkout SHA and independently validates uploaded release assets, but it must not mistake a newer main commit for a failure of the working version. Ghost camera validation now generates a legitimate audible equipment event before requesting an action that requires sound, instead of relying on silent co-location.
