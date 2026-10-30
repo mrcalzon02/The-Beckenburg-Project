@@ -365,6 +365,7 @@ public final class InvestigationGame {
         JSpinner ambientLight=new JSpinner(new SpinnerNumberModel(previousLighting.ambientPercent(),50,150,5));
         JSpinner sourceLight=new JSpinner(new SpinnerNumberModel(previousLighting.sourcePercent(),50,150,5));
         JSpinner lightReach=new JSpinner(new SpinnerNumberModel(previousLighting.reachPercent(),65,140,5));
+        JSpinner diffusionEdge=new JSpinner(new SpinnerNumberModel(previousLighting.diffusionPercent(),5,100,5));
         JSpinner lightFlicker=new JSpinner(new SpinnerNumberModel(previousLighting.flickerPercent(),0,200,5));
         JSpinner lightingCache=new JSpinner(new SpinnerNumberModel(previousLighting.cacheBudgetPercent(),50,150,10));
         JComboBox<Integer> lightingCells=select(new Integer[]{2,4,8},previousLighting.cellMetres());
@@ -377,7 +378,7 @@ public final class InvestigationGame {
         Runnable markLightingCustom=()->{
             if(!loadingLightPreset[0])lightingPreset.setSelectedItem(LightingModule.Preset.CUSTOM);
         };
-        for(JSpinner control:new JSpinner[]{ambientLight,sourceLight,lightReach,lightFlicker,lightingCache})
+        for(JSpinner control:new JSpinner[]{ambientLight,sourceLight,lightReach,diffusionEdge,lightFlicker,lightingCache})
             control.addChangeListener(e->markLightingCustom.run());
         lightingCells.addActionListener(e->markLightingCustom.run());
         for(JCheckBox control:new JCheckBox[]{distantLightLod,changedOnlyLights,lightDependencies})
@@ -391,6 +392,7 @@ public final class InvestigationGame {
                 ambientLight.setValue(chosen.ambientPercent());
                 sourceLight.setValue(chosen.sourcePercent());
                 lightReach.setValue(chosen.reachPercent());
+                diffusionEdge.setValue(chosen.diffusionPercent());
                 lightFlicker.setValue(chosen.flickerPercent());
                 lightingCache.setValue(chosen.cacheBudgetPercent());
                 lightingCells.setSelectedItem(chosen.cellMetres());
@@ -438,6 +440,7 @@ public final class InvestigationGame {
         setting(grid,"Ambient fill (%)",ambientLight);
         setting(grid,"World fixture strength (%)",sourceLight);
         setting(grid,"Fixture reach (%)",lightReach);
+        setting(grid,"Light falloff edge (% of reach)",diffusionEdge);
         setting(grid,"Cosmetic candle / TV flicker (%)",lightFlicker);
         setting(grid,"Lighting cache allowance (%)",lightingCache);
         setting(grid,"Lighting invalidation cell (metres)",lightingCells);
@@ -468,7 +471,8 @@ public final class InvestigationGame {
         LightingModule.Settings chosenLighting=new LightingModule.Settings(
             (LightingModule.Preset)lightingPreset.getSelectedItem(),
             (Integer)ambientLight.getValue(),(Integer)sourceLight.getValue(),
-            (Integer)lightReach.getValue(),(Integer)lightFlicker.getValue(),
+            (Integer)lightReach.getValue(),(Integer)diffusionEdge.getValue(),
+            (Integer)lightFlicker.getValue(),
             (Integer)lightingCache.getValue(),(Integer)lightingCells.getSelectedItem(),
             distantLightLod.isSelected(),changedOnlyLights.isSelected(),lightDependencies.isSelected());
         Runnable save=()->{
