@@ -30,7 +30,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private final EditorHistory<CastleLevelEdits.Snapshot> history=new EditorHistory<>(project,60);
     private final JSpinner workPlane=new JSpinner(new SpinnerNumberModel(0.,-.5,12.,.5));
     private final JSpinner surfaceHeight=new JSpinner(new SpinnerNumberModel(3.4,.1,12.,.1));
-    private final JCheckBox gridSnap=new JCheckBox("Snap .5m",true);
+    private final JComboBox<String> gridSnap=new JComboBox<>(new String[]{"Off","0.25 m","0.5 m","1 m","2 m"});
     private Point dragOrigin;
     private Point dragEnd;
     private record Point(double x,double z){}
@@ -193,7 +193,9 @@ public final class DeveloperLevelEditor extends JPanel {
         }
         palette.get(EditorTool.SELECT).setSelected(true);
         toolStrip.add(new JLabel("Plane Y"));toolStrip.add(workPlane);
-        toolStrip.add(gridSnap);
+        gridSnap.setSelectedIndex(2);
+        gridSnap.setToolTipText("World-space placement grid; Off preserves centimetre precision");
+        toolStrip.add(new JLabel("Grid"));toolStrip.add(gridSnap);
         JButton overhead=button("TOP");
         overhead.addActionListener(e->{
             renderer.x=21;renderer.z=18;renderer.eyeHeight=11;
@@ -622,7 +624,14 @@ public final class DeveloperLevelEditor extends JPanel {
         viewport.requestFocusInWindow();
     }
     private double snap(double raw){
-        return gridSnap.isSelected()?Math.round(raw*2)/2.0:Math.round(raw*100)/100.0;
+        double step=switch(gridSnap.getSelectedIndex()){
+            case 1 -> .25;
+            case 2 -> .5;
+            case 3 -> 1.;
+            case 4 -> 2.;
+            default -> 0.;
+        };
+        return step>0?Math.round(raw/step)*step:Math.round(raw*100)/100.0;
     }
     private static double clamp(double value,double min,double max){
         return Math.max(min,Math.min(max,value));
