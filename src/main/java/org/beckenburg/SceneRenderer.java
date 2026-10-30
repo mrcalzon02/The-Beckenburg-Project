@@ -21,7 +21,9 @@ public final class SceneRenderer {
     public LightingFrameProfiler.Snapshot lightingPerformance(){return lightingProfiler.snapshot();}
     private void recordLightingFrame(long total,long build,long raster,long psx,long effects,
                                      long triangles,boolean gpu){
-        var light=fixtureLighting.frameStats();
+        // Reuse the immutable stats already captured for this completed frame;
+        // do not allocate a second FrameStats object in the hot path.
+        var light=lastFrameDiagnostics.lighting();
         lightingProfiler.record(total,build,raster,psx,effects,triangles,
             light.shadowRays()+light.normalRays(),light.invalidatedCells(),
             gpu&&!lastGpuReadbackFresh);
