@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/door-opening-profiler.yml'
       - 'src/test/java/org/beckenburg/DoorOpeningFrameProfile.java'
+      - 'src/test/java/org/beckenburg/HouseDoorShadowCacheParityTest.java'
       - 'src/main/java/org/beckenburg/HouseMap.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
       - 'src/main/java/org/beckenburg/FixtureLighting.java'
@@ -32,6 +33,13 @@ jobs:
         run: |
           if not exist build\test mkdir build\test
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\DoorOpeningFrameProfile.java
+      - name: Compare warmed and fresh House door shadow responses
+        continue-on-error: true
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\HouseDoorShadowCacheParityTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\\classes;build\\test" org.beckenburg.HouseDoorShadowCacheParityTest
       - name: Capture CPU-software House door frame profile
         continue-on-error: true
         shell: cmd
