@@ -224,7 +224,7 @@ public final class AssetImportDialog {
         g.setColor(new Color(113,168,188,120));
         for(int i=0;i<tris.size();i+=skip){
             var t=tris.get(i);
-            int[] xs=new int[3],ys=new int[3],k=0;
+            int[] xs=new int[3],ys=new int[3];int k=0;
             for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
                 double x=v.x()*.83-v.z()*.55,y=-(v.y()*.95+v.x()*.24+v.z()*.35);
                 xs[k]=left+width/2+(int)Math.round((x-(xmin+xmax)*.5)*scale);
