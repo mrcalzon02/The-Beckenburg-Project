@@ -45,6 +45,11 @@ public final class EditorMeshPipelineTest {
             check(model.triangles().stream().anyMatch(t->t.part().equals("Head")),"Head identity");
             var exact=EditorMeshPipeline.regress(model,0);
             check(exact.parts().stream().allMatch(p->p.before()==p.after()),"Level zero no loss");
+            var face=model.triangles().get(0);
+            var repeated=new EditorMeshPipeline.Mesh("two-sided-face",
+                java.util.List.of(face,face),10);
+            check(EditorMeshPipeline.regress(repeated,0).optimized().triangles().size()==2,
+                "Level 0 must not silently deduplicate UV/sidedness-sensitive geometry");
             byte[] glb=EditorGlbWriter.encode(exact.optimized());
             check(ByteBuffer.wrap(glb).order(ByteOrder.LITTLE_ENDIAN).getInt(0)==0x46546c67,
                   "Export GLB magic");
