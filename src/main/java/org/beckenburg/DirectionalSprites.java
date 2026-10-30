@@ -33,6 +33,12 @@ public final class DirectionalSprites {
     private static final String[] LORE_FACINGS={
         "front","front","side","back","back","back","right","front"
     };
+    private static final String[] SUPPORT_IDENTITIES={
+        "elsbeth_vale","rowan_pike","tomas_greaves","sister_mirelle_ash"
+    };
+    public static boolean isCastleSupport(String identity){
+        return java.util.Arrays.asList(SUPPORT_IDENTITIES).contains(identity);
+    }
     private static final Map<String,BufferedImage> IMAGES=load();
     private DirectionalSprites() { }
 
@@ -158,6 +164,39 @@ public final class DirectionalSprites {
             }
             if(count!=4)throw new IOException("Expected four Lore Master views; got "+count);
         }catch(IOException ex){throw new IllegalStateException("Cannot load approved Lore Master sprites",ex);}
+        // Four approved Castle residents have separate, full-body source views.
+        // They are not workstation geometry and must be included in the game JAR.
+        try(var source=DirectionalSprites.class.getResourceAsStream("castle-support-directions.zip")){
+            if(source==null)throw new IllegalStateException("Missing Castle support character sprites");
+            int count=0;
+            try(var zip=new ZipInputStream(source)){
+                ZipEntry entry;
+                while((entry=zip.getNextEntry())!=null){
+                    if(entry.isDirectory()){zip.closeEntry();continue;}
+                    String name=entry.getName(),prefix="assets/castle_support/";
+                    if(!name.startsWith(prefix)||!name.endsWith(".png"))
+                        throw new IOException("Unexpected Castle character entry: "+name);
+                    String[] parts=name.substring(prefix.length()).split("/",-1);
+                    if(parts.length!=2||!isCastleSupport(parts[0]))
+                        throw new IOException("Invalid Castle resident: "+name);
+                    String view=parts[1].substring(0,parts[1].length()-4);
+                    if(!java.util.Arrays.asList(LORE_DIRECTIONS).contains(view))
+                        throw new IOException("Invalid Castle resident view: "+name);
+                    BufferedImage image=ImageIO.read(zip);
+                    if(image==null||image.getWidth()!=128||image.getHeight()!=224
+                            ||!image.getColorModel().hasAlpha())
+                        throw new IOException("Invalid Castle sprite image: "+name);
+                    if(frames.putIfAbsent(parts[0]+"/"+view,image)!=null)
+                        throw new IOException("Duplicate Castle sprite: "+name);
+                    count++;zip.closeEntry();
+                }
+            }
+            if(count!=16)throw new IOException("Expected sixteen Castle sprite views; got "+count);
+            for(String identity:SUPPORT_IDENTITIES)
+                for(String direction:LORE_DIRECTIONS)
+                    if(!frames.containsKey(identity+"/"+direction))
+                        throw new IOException("Missing Castle sprite "+identity+"/"+direction);
+        }catch(IOException ex){throw new IllegalStateException("Cannot load Castle support sprites",ex);}
         return Map.copyOf(frames);
     }
     public static int frameCount(){return IMAGES.size();}
@@ -165,7 +204,7 @@ public final class DirectionalSprites {
         if(facing<0||facing>=8)throw new IllegalArgumentException("facing must be 0..7");
         if(GhostManifestationVisual.UNREVEALED.equals(character))
             return GhostManifestationVisual.frame(facing);
-        String direction="lore_master".equals(character)?LORE_FACINGS[facing]:
+        String direction=("lore_master".equals(character)||isCastleSupport(character))?LORE_FACINGS[facing]:
             (CharacterVisuals.isHunter(character)||CharacterVisuals.isElder(character)
                 ||CharacterVisuals.isTwinActor(character))?MASTER_FACINGS[facing]:FACINGS[facing];
         String identity=character!=null&&character.startsWith("ancient_twins_")
@@ -186,7 +225,7 @@ public final class DirectionalSprites {
         // source fallback; stripping ancient_ would incorrectly draw the base ghost.
 
         String spriteSource=character;
-        if(CharacterVisuals.isTwinActor(spriteSource)||"lore_master".equals(spriteSource))
+        if(CharacterVisuals.isTwinActor(spriteSource)||"lore_master".equals(spriteSource)||isCastleSupport(spriteSource))
             return frame(spriteSource,facing);
         // The present 8-state atlases contain only source-derived static cutouts.
         // Do not cycle pseudo-walk/attack frames until coherent animation is approved.

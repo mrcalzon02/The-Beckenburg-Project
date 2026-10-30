@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import dev.mrcalzon.lighting.LightingModule;
-import dev.mrcalzon.lighting.LightingFrameProfiler;
 
 /** True perspective-triangle software rasterizer, depth tested at a period-appropriate 320x200. */
 public final class SceneRenderer {
@@ -15,38 +14,6 @@ public final class SceneRenderer {
     private static final double NEAR=.065;
     private final boolean worldResidentEnabled=!Boolean.getBoolean("beckenburg.world.resident.disabled");
     private LightingModule.Settings lightingSettings=LightingModule.current();
-    private final LightingFrameProfiler lightingProfiler=new LightingFrameProfiler(120);
-    private final boolean lightingPerfLog=Boolean.getBoolean("beckenburg.lighting.profile");
-    private long lastLightingPerfLog;
-    public LightingFrameProfiler.Snapshot lightingPerformance(){return lightingProfiler.snapshot();}
-    private void recordLightingFrame(long total,long build,long raster,long psx,long effects,
-                                     long triangles,boolean gpu){
-        // Reuse the immutable stats already captured for this completed frame;
-        // do not allocate a second FrameStats object in the hot path.
-        var light=lastFrameDiagnostics.lighting();
-        lightingProfiler.record(total,build,raster,psx,effects,triangles,
-            light.shadowRays()+light.normalRays(),light.invalidatedCells(),
-            gpu&&!lastGpuReadbackFresh);
-        // Always collect bounded counters; only opt-in logging performs I/O.
-        if(lightingPerfLog){
-            long now=System.nanoTime();
-            if(now-lastLightingPerfLog>=5_000_000_000L){
-                lastLightingPerfLog=now;
-                var p=lightingProfiler.snapshot();
-                if(p.samples()>=10)BeckenburgDiagnostics.record(
-                    "LIGHTING PERF cpu_frame_ms_p50="+p.frameP50Ms()
-                    +" p95="+p.frameP95Ms()+" p99="+p.frameP99Ms()
-                    +" scene_p95="+p.sceneP95Ms()+" raster_p95="+p.rasterP95Ms()
-                    +" psx_post_p95="+p.psxPostP95Ms()
-                    +" effects_post_p95="+p.effectsPostP95Ms()
-                    +" combined_post_p95="+p.postTotalP95Ms()
-                    +" peak_triangles="+p.peakTriangles()
-                    +" peak_shadow_rays="+p.peakShadowRays()
-                    +" peak_invalidated_cells="+p.peakInvalidatedCells()
-                    +" gpu_readback_misses="+p.gpuReadbackMisses());
-            }
-        }
-    }
     private boolean changedOnlyLighting(){
         return lightingSettings.changedOnlyVertices()
             &&!Boolean.getBoolean("beckenburg.lighting.changedOnly.disabled");
@@ -2884,26 +2851,60 @@ public final class SceneRenderer {
         sceneWater(null,gpuFrame,clock);long geometryRendered=System.nanoTime();
         // Four real approved source-art directions, composited after castle
         // geometry with its actual depth buffer (never through walls).
-        if(eyeHeight<2.0)DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
-            CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z,0,"lore_master",
-            1.79,.98,0,255,lightsOn&&map.lightOn(CastleArchive.KEEPER_X,1.0,
-                CastleArchive.KEEPER_Z),renderWidth,renderHeight,focal);
-        renderWeatherMeshes();
-        long psxBegin=System.nanoTime();
-        PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
-        long psxEnd=System.nanoTime();
+        if(eyeHeight<2.0){
+            DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
+                CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z,0,"lore_master",
+                1.79,.98,0,255,lightsOn&&map.lightOn(CastleArchive.KEEPER_X,1.0,
+                    CastleArchive.KEEPER_Z),renderWidth,renderHeight,focal);
+            // Same physical coordinates as the existing independent dialogue zones.
+            for(var resident:CastleRelations.Resident.values()){
+                if(resident==CastleRelations.Resident.MATTHIS_ROOK)continue;
+                String art=switch(resident){
+                    case ELSBETH_VALE->"elsbeth_vale";
+                    case ROWAN_PIKE->"rowan_pike";
+                    case TOMAS_GREAVES->"tomas_greaves";
+                    case MIRELLE_ASH->"sister_mirelle_ash";
+                    case MATTHIS_ROOK->throw new AssertionError("Matthis already drawn");
+                };
+                DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
+                    resident.x,resident.z,0,art,1.79,.98,0,255,
+                    lightsOn&&map.lightOn(resident.x,1.0,resident.z),
+                    renderWidth,renderHeight,focal);
+            }
+        }
+        renderWeatherMeshes();PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
-        long effectsEnd=System.nanoTime();
-        long finished=effectsEnd;
+        long finished=System.nanoTime();
         int count=castleStaticGeometry.size()+dynamic.size();
         for(var assembly:castleActiveAssemblies)count+=assembly.faces.size();
         lastFrameDiagnostics=new FrameDiagnostics(finished-frameBegin,geometryReady-frameBegin,
             geometryRendered-geometryReady,finished-geometryRendered,count,lastGpuFrustumFaces,0,0,
             lastGpuSubmittedTriangles,gpuFrame,lastGpuReadbackFresh,lastGpuReadbackAvailable,0,
             renderWidth,renderHeight,fixtureLighting.frameStats(),0);
-        recordLightingFrame(finished-frameBegin,geometryReady-frameBegin,
-            geometryRendered-geometryReady,psxEnd-psxBegin,effectsEnd-psxEnd,
-            lastGpuSubmittedTriangles,gpuFrame);
+    }
+    /** World-space head position for the resident actually being looked at.
+     * Screen labels depend on visible sprite depth, not on workstation targeting.
+     */
+    public Nameplate castleResidentNameplate(CastleRelations.Resident resident){
+        if(resident==null||eyeHeight>2.0)return null;
+        double distance=Math.hypot(resident.x-x,resident.z-z);
+        if(distance<.55||distance>3.2)return null;
+        Point torso=camera(new Point(resident.x,1.25,resident.z));
+        Point head=camera(new Point(resident.x,2.02,resident.z));
+        if(torso.z<NEAR||head.z<NEAR)return null;
+        int px=(int)Math.round(renderWidth*.5+torso.x/torso.z*focal);
+        int py=(int)Math.round(renderHeight*.5-torso.y/torso.z*focal);
+        int lx=(int)Math.round(renderWidth*.5+head.x/head.z*focal);
+        int ly=(int)Math.round(renderHeight*.5-head.y/head.z*focal-5);
+        if(px<3||px>=renderWidth-3||py<3||py>=renderHeight-3
+            ||lx<8||lx>=renderWidth-8||ly<4||ly>=renderHeight-5)return null;
+        boolean visible=false;
+        for(int dy=-2;dy<=2&&!visible;dy++)
+            for(int dx=-2;dx<=2&&!visible;dx++){
+                double d=depths[(py+dy)*renderWidth+px+dx];
+                if(d>=torso.z-.45&&d<=torso.z+.55)visible=true;
+            }
+        return visible?new Nameplate(lx,ly):null;
     }
     /** Keep the legacy room-mode signature for old render regression tests. */
     public void drawNetwork(HouseMap map,List<RemoteBody> others,int visibleGhostRoom,double clock){
@@ -3059,11 +3060,8 @@ public final class SceneRenderer {
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
         if(map.nativeSite())DistanceDetail.apply(pixels,depths,renderWidth,renderHeight,hazeBackground);
         renderWeatherMeshes();
-        long psxBegin=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
-        long psxEnd=System.nanoTime();
         GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
-        long effectsEnd=System.nanoTime();
         int localRoom=map.roomAt(x,eyeHeight-.85,z);
         GhostHauntingFolio.paint(pixels,renderWidth,renderHeight,hauntings,
             localRoom,(int)Math.floor(clock*10));
@@ -3077,9 +3075,6 @@ public final class SceneRenderer {
             gpuFrame&&lastGpuReadbackAvailable,
             localRoom,renderWidth,renderHeight,fixtureLighting.frameStats(),
             depthRejectedFaces);
-        recordLightingFrame(finished-frameBegin,geometryReady-frameBegin,
-            geometryRendered-geometryReady,psxEnd-psxBegin,effectsEnd-psxEnd,
-            gpuFrame?lastGpuSubmittedTriangles:visibleFaces,gpuFrame);
     }
     /** Screen-distance lighting tessellation budget: 64 children at most,
      * rather than 256 for every large surface regardless of viewing distance.

@@ -403,6 +403,20 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             boolean atWarehouse=elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
             var atDoor=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
             var resident=elevation<=1.8?CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw):null;
+            var nameplate=renderer.castleResidentNameplate(resident);
+            if(nameplate!=null){
+                int nameX=(int)Math.round(nameplate.x()*(double)w/renderer.width());
+                int nameY=(int)Math.round(nameplate.y()*(double)h/renderer.height());
+                String name=resident.name;
+                g.setFont(new Font(Font.MONOSPACED,Font.BOLD,Math.max(12,Math.min(18,w/66))));
+                int labelW=g.getFontMetrics().stringWidth(name)+22;
+                int labelLeft=Math.max(4,Math.min(w-labelW-4,nameX-labelW/2));
+                int labelTop=Math.max(4,nameY-25);
+                g.setColor(new Color(12,18,24,229));
+                g.fillRoundRect(labelLeft,labelTop,labelW,25,6,6);
+                g.setColor(new Color(248,221,170));
+                g.drawString(name,labelLeft+11,labelTop+17);
+            }
             if(atDoor!=null||station!=null||atSwitch||atWarehouse||resident!=null){
                 String label=atDoor!=null?
                     (map.doorOpen(atDoor.id())?"CLOSE ":"OPEN ")+
