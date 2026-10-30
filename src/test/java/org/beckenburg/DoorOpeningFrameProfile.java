@@ -167,9 +167,7 @@ public final class DoorOpeningFrameProfile {
             report.toString(),StandardCharsets.UTF_8);
         System.out.print(report);
         // Structural correctness only; timing thresholds are strictly diagnostic.
-        if(frame!=78||!Files.size(root.resolve("door-"+backend+".csv")).equals(null)){
-            // No-op intentionally avoided: only report and artifact creation.
-        }
-        if(frame!=78)throw new AssertionError("Incomplete actual door profile");
+        if(frame!=78||Files.size(root.resolve("door-"+backend+".csv"))==0)
+            throw new AssertionError("Incomplete actual door profile");
     }
 }
