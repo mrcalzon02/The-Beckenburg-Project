@@ -120,7 +120,11 @@ final class LevelDressing {
                     Prop chair=prop("chair_mp_5",room,cx,r.y(),cz,table.yaw()+Math.PI,.26,.29,1.01,"fixed");
                     if(clear(chair))b.props.add(chair);
                 }
-                wall("display_cabinet_mp_2_1",room,x+.3,z+3,.68,.33,2.11);
+                // The large imported display cabinet has unreliable source bounds/UVs
+                // in Briar House's narrow living room. Do not ship it through the
+                // wall; other sites retain their authored cabinet placement.
+                if(!b.id.equals("house"))
+                    wall("display_cabinet_mp_2_1",room,x+.3,z+3,.68,.33,2.11);
             }else if(name.contains("bedroom")){
                 wall(name.contains("child")?"level_lived_toy_basket":"level_lived_linen_press",room,x+.7,r.z1()-.6,
                     name.contains("child")?.38:.57,name.contains("child")?.38:.33,name.contains("child")?.55:2.04);
