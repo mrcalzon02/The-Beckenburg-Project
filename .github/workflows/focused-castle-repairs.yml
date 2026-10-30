@@ -12,6 +12,8 @@ on:
       - 'src/test/java/org/beckenburg/CastleFurnitureWallAuditTest.java'
       - 'src/main/java/org/beckenburg/CastleLevelEdits.java'
       - 'src/main/java/org/beckenburg/DeveloperLevelEditor.java'
+      - 'src/main/java/org/beckenburg/AssetImportDialog.java'
+      - 'src/main/java/org/beckenburg/ImportedAssetLibrary.java'
       - 'src/main/java/org/beckenburg/CastleEditorAudit.java'
       - 'src/test/java/org/beckenburg/CastleEditorAuditTest.java'
       - 'src/test/java/org/beckenburg/AssetImportRuntimeTest.java'
