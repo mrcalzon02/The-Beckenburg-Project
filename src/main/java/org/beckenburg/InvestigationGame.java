@@ -855,7 +855,7 @@ public final class InvestigationGame {
                 GameSfx.play(LanSound.Cue.UI_REJECT);return;
             }
             if(session.outcome()!=InvestigationSession.Outcome.ACTIVE||
-                    (kind==FieldSupplies.Kind.HEALTH&&session.health()==100)||
+                    (kind==FieldSupplies.Kind.HEALTH&&session.health()>=session.maxHealth())||
                     (kind==FieldSupplies.Kind.SANITY&&session.stress()==0)){
                 showVanNotice("No treatment necessary or mission inactive.");
                 GameSfx.play(LanSound.Cue.UI_REJECT);return;
@@ -1257,7 +1257,11 @@ public final class InvestigationGame {
                     if(id.equals("HEALTH_SUPPLIES")||id.equals("SANITY_MEDICATION")){
                         var kind=id.equals("HEALTH_SUPPLIES")?FieldSupplies.Kind.HEALTH:FieldSupplies.Kind.SANITY;
                         var tier=FieldSupplies.Tier.values()[EquipmentTiers.Tier.valueOf(target.id().split(":")[1]).ordinal()];
-                        if((kind==FieldSupplies.Kind.HEALTH&&session.health()==100)||(kind==FieldSupplies.Kind.SANITY&&session.stress()==0))throw new IllegalArgumentException("No treatment necessary.");
+                        if(session.outcome()!=InvestigationSession.Outcome.ACTIVE
+                                ||(kind==FieldSupplies.Kind.HEALTH
+                                    &&session.health()>=session.maxHealth())
+                                ||(kind==FieldSupplies.Kind.SANITY&&session.stress()==0))
+                            throw new IllegalArgumentException("No treatment necessary.");
                         if(!profile.consume(kind,tier)
                                 ||!session.useMedicine(kind,tier.restore(kind)))
                             throw new IllegalArgumentException("Medical stock unavailable or treatment ineffective.");
