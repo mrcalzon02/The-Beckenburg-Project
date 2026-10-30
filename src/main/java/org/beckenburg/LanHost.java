@@ -831,7 +831,11 @@ public final class LanHost implements AutoCloseable {
                         }
                     }
                     peer.lastLightTick=tick;reply(peer,"ACCEPT|INTERACT|"+target.name());
-                    recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,target.kind()==InteractionFocus.Kind.CLUTTER||target.kind()==InteractionFocus.Kind.RACK?LanSound.Cue.PICKUP:LanSound.Cue.SWITCH);
+                    boolean rackMedicine=target.kind()==InteractionFocus.Kind.RACK
+                        &&(target.id().startsWith("HEALTH_SUPPLIES:")
+                            ||target.id().startsWith("SANITY_MEDICATION:"));
+                    recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,
+                        AudioActionRouting.interaction(target.kind(),rackMedicine));
                     broadcastWorld();
                 }
                 case "LIGHT" -> {
@@ -1009,7 +1013,7 @@ public final class LanHost implements AutoCloseable {
                         throw new IllegalArgumentException("insufficient credits for instrument");
                     equipment[peer.slot].upgrade(id,tier);
                     reply(peer,"ACCEPT|GEARBUY|"+id+"|"+tier);
-                    actorCue(peer.slot,LanSound.Cue.PICKUP);
+                    actorCue(peer.slot,LanSound.Cue.PURCHASE);
                     reply(peer,supplies[peer.slot].frame());
                     sendEquipmentState(peer);
                 }
@@ -1079,7 +1083,7 @@ public final class LanHost implements AutoCloseable {
                         notifyHunters(installed.frame());
                         reply(peer,"ACCEPT|GEARPLACE|PLACED");
                     }
-                    actorCue(peer.slot,LanSound.Cue.DROP);
+                    actorCue(peer.slot,AudioActionRouting.portableLight(installed!=null));
                 }
                 case "GEARUSE" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
@@ -1459,6 +1463,7 @@ public final class LanHost implements AutoCloseable {
                     if(!supplies[peer.slot].purchase(kind,tier))
                         throw new IllegalArgumentException("insufficient credits or full stock");
                     reply(peer,"ACCEPT|BUY|"+kind+"|"+tier);
+                    actorCue(peer.slot,LanSound.Cue.PURCHASE);
                     reply(peer,supplies[peer.slot].frame());
                 }
                 case "USESUPPLY" -> {
@@ -1485,7 +1490,8 @@ public final class LanHost implements AutoCloseable {
                     counters.launch(peer.slot,kind,world.body(peer.slot),map,tick);
                     reply(peer,"ACCEPT|DEPLOY|"+kind);
                     sendCounterAmmo(peer);
-                    recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,LanSound.Cue.WARD);
+                    recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,
+                        AudioActionRouting.counter(kind));
                     broadcastCounters();
                 }
                 case "PLACEBOOK" -> {

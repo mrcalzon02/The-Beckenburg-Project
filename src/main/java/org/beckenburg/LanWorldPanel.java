@@ -862,6 +862,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 feedback=frame;
             }else if(frame.startsWith("ACCEPT|")||frame.startsWith("REJECT|")||frame.startsWith("EVIDENCE|")||frame.startsWith("RITUAL|")) {
                 feedback=frame;
+                // A rejected host action is local feedback, not a world sound:
+                // no ghost stimulus, no false proof of a successful item use.
+                if(p.get(0).equals("REJECT"))GameSfx.play(LanSound.Cue.UI_REJECT);
             }
         }catch(IllegalArgumentException ignored){feedback="Invalid world update rejected";}
         repaint();

@@ -835,33 +835,56 @@ public final class InvestigationGame {
             if(chosen!=null)for(int i=0;i<names.length;i++)if(names[i].equals(chosen)){
                 FieldSupplies.Kind kind=FieldSupplies.Kind.values()[i/3];
                 FieldSupplies.Tier tier=FieldSupplies.Tier.values()[i%3];
-                try{showVanNotice(profile.purchase(kind,tier)?
-                    "Purchased "+kind+" "+tier+".":"Insufficient credits or stock capacity.");}
-                catch(IOException error){showVanNotice("PURCHASE FAILED: "+error.getMessage());}
+                try{
+                    boolean purchased=profile.purchase(kind,tier);
+                    showVanNotice(purchased?"Purchased "+kind+" "+tier+"."
+                        :"Insufficient credits or stock capacity.");
+                    GameSfx.play(purchased?LanSound.Cue.PURCHASE:LanSound.Cue.UI_REJECT);
+                }catch(IOException error){
+                    showVanNotice("PURCHASE FAILED: "+error.getMessage());
+                    GameSfx.play(LanSound.Cue.UI_REJECT);
+                }
                 break;
             }
             last=System.nanoTime();timer.start();requestFocusInWindow();
         }
         private void useMedicine(FieldSupplies.Kind kind){
             FieldSupplies.Tier tier=profile.strongest(kind);
-            if(tier==null){showVanNotice("No purchased "+kind+" medicine. Buy at the van rack.");return;}
+            if(tier==null){
+                showVanNotice("No purchased "+kind+" medicine. Buy at the van rack.");
+                GameSfx.play(LanSound.Cue.UI_REJECT);return;
+            }
             if(session.outcome()!=InvestigationSession.Outcome.ACTIVE||
                     (kind==FieldSupplies.Kind.HEALTH&&session.health()==100)||
                     (kind==FieldSupplies.Kind.SANITY&&session.stress()==0)){
-                showVanNotice("No treatment necessary or mission inactive.");return;
+                showVanNotice("No treatment necessary or mission inactive.");
+                GameSfx.play(LanSound.Cue.UI_REJECT);return;
             }
             try{
                 if(profile.consume(kind,tier)){
-                    session.useMedicine(kind,tier.restore(kind));
-                    GameSfx.play(LanSound.Cue.POTION);
-                    showVanNotice(kind+" "+tier+" used. Supplies deducted from the saved inventory.");
+                    if(session.useMedicine(kind,tier.restore(kind))){
+                        GameSfx.play(LanSound.Cue.POTION);
+                        showVanNotice(kind+" "+tier+" used. Supplies deducted from the saved inventory.");
+                    }else{
+                        GameSfx.play(LanSound.Cue.UI_REJECT);
+                        showVanNotice("TREATMENT FAILED: no restorative effect.");
+                    }
+                }else{
+                    GameSfx.play(LanSound.Cue.UI_REJECT);
+                    showVanNotice("TREATMENT FAILED: supplies unavailable.");
                 }
-            }catch(IOException error){showVanNotice("TREATMENT FAILED: "+error.getMessage());}
+            }catch(IOException error){
+                GameSfx.play(LanSound.Cue.UI_REJECT);
+                showVanNotice("TREATMENT FAILED: "+error.getMessage());
+            }
         }
         /** The E key picks up a physically visible instrument; no loadout popup. */
         private void takeRackItem(){
             EquipmentLoadout.Item aimed=aimedRack();
-            if(aimed==null){showVanNotice("Look directly at an instrument on the van rack, then press E.");return;}
+            if(aimed==null){
+                showVanNotice("Look directly at an instrument on the van rack, then press E.");
+                GameSfx.play(LanSound.Cue.UI_REJECT);return;
+            }
             loadout.pickup(aimed);
             GameSfx.play(LanSound.Cue.PICKUP);
             showVanNotice("PICKED UP: "+aimed.label+".  Current slot "+(loadout.activeSlot()+1));
@@ -1151,19 +1174,32 @@ public final class InvestigationGame {
             if(key==KeyEvent.VK_F5||key==KeyEvent.VK_F12||key==KeyEvent.VK_CLOSE_BRACKET){
                 var o=new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true,HunterPosture.eye(session.crouched()));
                 int id=map.clutter().held(0);var aimed=map.clutter().aimed(o);if(id<0&&aimed!=null)id=aimed.id();
-                if(id>0)try{session.clutterLook(scene.yaw,scene.pitch);session.clutterAction(key==KeyEvent.VK_F12?"THROW":key==KeyEvent.VK_CLOSE_BRACKET?"ROTATE":map.clutter().held(0)>=0?"DROP":"TAKE",id,scene.x,feetY(),scene.z);}
-                catch(IllegalArgumentException ex){showVanNotice(ex.getMessage());}
+                if(id>0)try{
+                    boolean alreadyHeld=map.clutter().held(0)>=0;
+                    session.clutterLook(scene.yaw,scene.pitch);
+                    session.clutterAction(key==KeyEvent.VK_F12?"THROW":
+                        key==KeyEvent.VK_CLOSE_BRACKET?"ROTATE":alreadyHeld?"DROP":"TAKE",
+                        id,scene.x,feetY(),scene.z);
+                    GameSfx.play(key==KeyEvent.VK_CLOSE_BRACKET?LanSound.Cue.SELECT:
+                        key==KeyEvent.VK_F12||alreadyHeld?LanSound.Cue.DROP:LanSound.Cue.PICKUP);
+                }catch(IllegalArgumentException ex){
+                    showVanNotice(ex.getMessage());GameSfx.play(LanSound.Cue.UI_REJECT);
+                }
             }
             if(key==KeyEvent.VK_E){if(briefingShown){briefingShown=false;repaint();return;}interactFocused();down.add(key);repaint();return;}
             if(key==KeyEvent.VK_R){
-                useHeldUntilTick=session.ticks()+4;
-                session.useEquipment(loadout,scene.x,feetY(),scene.z,scene.yaw);
-                GameSfx.play(loadout.equipped()==EquipmentLoadout.Item.PHOTO_CAMERA
-                    ?LanSound.Cue.CAMERA:LanSound.Cue.SCANNER);
+                EquipmentLoadout.Item device=loadout.equipped();
+                int usesBefore=loadout.usesLeft(device);
+                boolean accepted=session.useEquipment(loadout,scene.x,feetY(),scene.z,scene.yaw);
+                int usesAfter=loadout.usesLeft(device);
+                LanSound.Cue cue=AudioActionRouting.soloDevice(device,
+                    accepted,usesBefore,usesAfter,session.uvPowered());
+                if(cue!=LanSound.Cue.UI_REJECT)useHeldUntilTick=session.ticks()+4;
+                GameSfx.play(cue);
             }
             if(key==KeyEvent.VK_C){
-                session.placeWard(scene.x,feetY(),scene.z);
-                GameSfx.play(LanSound.Cue.WARD);
+                boolean placed=session.placeWard(scene.x,feetY(),scene.z);
+                GameSfx.play(placed?LanSound.Cue.WARD:LanSound.Cue.UI_REJECT);
             }
             if(key==KeyEvent.VK_5||key==KeyEvent.VK_6){
                 HunterDiscipline.Ability ability=key==KeyEvent.VK_5
@@ -1174,10 +1210,16 @@ public final class InvestigationGame {
                 if(outcome.accepted())GameSfx.play(ability==HunterDiscipline.Ability.SURVEY
                     ?LanSound.Cue.SCANNER:LanSound.Cue.WARD);
             }
-            if(key==KeyEvent.VK_Z)session.deployCounter(HunterCounters.Kind.CROSS,scene.x,feetY(),scene.z,scene.yaw);
-            if(key==KeyEvent.VK_G)session.deployCounter(HunterCounters.Kind.WARD,scene.x,feetY(),scene.z,scene.yaw);
-            if(key==KeyEvent.VK_H)session.deployCounter(HunterCounters.Kind.SALT,scene.x,feetY(),scene.z,scene.yaw);
-            if(key==KeyEvent.VK_B)session.cleanse(scene.x,feetY(),scene.z);
+            if(key==KeyEvent.VK_Z||key==KeyEvent.VK_G||key==KeyEvent.VK_H){
+                HunterCounters.Kind kind=key==KeyEvent.VK_Z?HunterCounters.Kind.CROSS:
+                    key==KeyEvent.VK_G?HunterCounters.Kind.WARD:HunterCounters.Kind.SALT;
+                boolean deployed=session.deployCounter(kind,scene.x,feetY(),scene.z,scene.yaw);
+                GameSfx.play(deployed?AudioActionRouting.counter(kind):LanSound.Cue.UI_REJECT);
+            }
+            if(key==KeyEvent.VK_B){
+                boolean cleansed=session.cleanse(scene.x,feetY(),scene.z);
+                GameSfx.play(cleansed?LanSound.Cue.RITUAL_END:LanSound.Cue.UI_REJECT);
+            }
             if(key==KeyEvent.VK_T)useMedicine(FieldSupplies.Kind.HEALTH);
             if(key==KeyEvent.VK_Y)useMedicine(FieldSupplies.Kind.SANITY);
             if(key==KeyEvent.VK_J){journalShown=!journalShown;down.clear();mouseLook.release();GameSfx.play(LanSound.Cue.BOOK);}
@@ -1205,6 +1247,7 @@ public final class InvestigationGame {
         private void interactFocused(){
             if(journalShown||mapShown||briefingShown||wheelOpen)return;
             var target=focusTarget();if(target==null)return;
+            boolean medicineFromRack=false;
             try{switch(target.kind()){
                 case CLUTTER -> map.clutter().takeFocused(Integer.parseInt(target.id()),new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true,HunterPosture.eye(session.crouched())),session.ticks());
                 case FIXTURE -> {int id=Integer.parseInt(target.id());map.fixtures().toggleFocused(id,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true,HunterPosture.eye(session.crouched())),session.ticks());GameSfx.fixtureState(map.fixtures().state(id));}
@@ -1215,7 +1258,10 @@ public final class InvestigationGame {
                         var kind=id.equals("HEALTH_SUPPLIES")?FieldSupplies.Kind.HEALTH:FieldSupplies.Kind.SANITY;
                         var tier=FieldSupplies.Tier.values()[EquipmentTiers.Tier.valueOf(target.id().split(":")[1]).ordinal()];
                         if((kind==FieldSupplies.Kind.HEALTH&&session.health()==100)||(kind==FieldSupplies.Kind.SANITY&&session.stress()==0))throw new IllegalArgumentException("No treatment necessary.");
-                        if(profile.consume(kind,tier))session.useMedicine(kind,tier.restore(kind));
+                        if(!profile.consume(kind,tier)
+                                ||!session.useMedicine(kind,tier.restore(kind)))
+                            throw new IllegalArgumentException("Medical stock unavailable or treatment ineffective.");
+                        medicineFromRack=true;
                     }else {
                         var item=EquipmentLoadout.Item.valueOf(id.equals("EMF_READER")?"EMF":id.equals("UV_LIGHT")?"UV_LAMP":id);
                         loadout.pickup(item);
@@ -1239,13 +1285,12 @@ public final class InvestigationGame {
                 case WINDOW -> map.toggleWindow(Integer.parseInt(target.id()));
                 case VAN_DOOR -> {if(map.van().toggleCargoDoor()&&!map.traversable(scene.x,feetY(),scene.z)){map.van().toggleCargoDoor();throw new IllegalArgumentException("Van doorway occupied.");}}
             }
-            GameSfx.play(switch(target.kind()){
-                case CLUTTER,RACK -> LanSound.Cue.PICKUP;
-                case DOOR,VAN_DOOR,WINDOW -> LanSound.Cue.DOOR;
-                default -> LanSound.Cue.SWITCH;
-            });
+            GameSfx.play(AudioActionRouting.interaction(target.kind(),medicineFromRack));
             showVanNotice(target.kind()==InteractionFocus.Kind.GENERATOR?(lights.sourceRunning()?"Generator running":"Generator stopped"):target.name());
-            }catch(IllegalArgumentException|IOException ex){showVanNotice(ex.getMessage());}
+            }catch(IllegalArgumentException|IOException ex){
+                showVanNotice(ex.getMessage());
+                GameSfx.play(LanSound.Cue.UI_REJECT);
+            }
         }
         private void showVanNotice(String text){vanNotice=text;vanNoticeExpires=session.ticks()+85;}
         private void chapterLine(String words){
@@ -1292,12 +1337,19 @@ public final class InvestigationGame {
                 case BRIEFING -> {
                     storyReading="";assignmentReader.reset();briefingShown=!briefingShown;
                     showVanNotice(briefingShown?"CASE BOARD OPEN — current role, objectives and progress":"Case board closed.");
+                    GameSfx.play(briefingShown?LanSound.Cue.BOOK:LanSound.Cue.UI_BACK);
                 }
                 case EQUIPMENT -> takeRackItem();
-                case RELAY -> showVanNotice("The monitor stays visible at the right while you are in the van.");
+                case RELAY -> {
+                    showVanNotice("The monitor stays visible at the right while you are in the van.");
+                    GameSfx.play(LanSound.Cue.MONITOR_HUM);
+                }
                 case EXTRACTION -> {
                     if(session.extract(scene.x,feetY(),scene.z)){timer.stop();endCase("Van extraction confirmed.");}
-                    else showVanNotice("Move to the extraction marker inside the van.");
+                    else{
+                        showVanNotice("Move to the extraction marker inside the van.");
+                        GameSfx.play(LanSound.Cue.UI_REJECT);
+                    }
                 }
             }
         }

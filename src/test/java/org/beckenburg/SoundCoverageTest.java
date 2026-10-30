@@ -91,6 +91,31 @@ public final class SoundCoverageTest {
         int mixed=(short)((overlapped[0]&255)|(overlapped[1]<<8));
         if(mixed!=12000||overlapped.length!=2048)
             throw new AssertionError("Mixer did not sum concurrent audio streams: "+mixed);
+        // Semantic routing is shared by solo and LAN accepted-action sites.
+        for(InteractionFocus.Kind kind:InteractionFocus.Kind.values()){
+            if(AudioActionRouting.interaction(kind,false)==null)
+                throw new AssertionError("Unrouted focused interaction "+kind);
+        }
+        if(AudioActionRouting.interaction(InteractionFocus.Kind.DOOR,false)!=LanSound.Cue.DOOR
+            ||AudioActionRouting.interaction(InteractionFocus.Kind.VAN_DOOR,false)!=LanSound.Cue.VAN_DOOR
+            ||AudioActionRouting.interaction(InteractionFocus.Kind.BREAKER,false)!=LanSound.Cue.BREAKER
+            ||AudioActionRouting.interaction(InteractionFocus.Kind.RACK,true)!=LanSound.Cue.POTION)
+            throw new AssertionError("Physical door, van motor, breaker or medicine routing lost");
+        if(AudioActionRouting.soloDevice(EquipmentLoadout.Item.PHOTO_CAMERA,
+                false,3,2,false)!=LanSound.Cue.CAMERA
+            ||AudioActionRouting.soloDevice(EquipmentLoadout.Item.PHOTO_CAMERA,
+                false,0,0,false)!=LanSound.Cue.UI_REJECT
+            ||AudioActionRouting.soloDevice(EquipmentLoadout.Item.SALT,
+                false,1,1,false)!=LanSound.Cue.UI_REJECT
+            ||AudioActionRouting.soloDevice(EquipmentLoadout.Item.UV_LAMP,
+                true,-1,-1,false)!=LanSound.Cue.DEVICE_OFF
+            ||AudioActionRouting.soloDevice(EquipmentLoadout.Item.THERMOMETER,
+                true,-1,-1,false)!=LanSound.Cue.SCANNER)
+            throw new AssertionError("Equipment success/rejection audio diverged");
+        if(AudioActionRouting.counter(HunterCounters.Kind.SALT)!=LanSound.Cue.DROP
+            ||AudioActionRouting.counter(HunterCounters.Kind.WARD)!=LanSound.Cue.WARD
+            ||AudioActionRouting.portableLight(false)!=LanSound.Cue.PICKUP)
+            throw new AssertionError("Field device deployment audio diverged");
         JButton button=new JButton("PLAY");
         GameSfx.button(button);
         GameSfx.button(button);
