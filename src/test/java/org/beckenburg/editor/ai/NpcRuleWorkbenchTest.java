@@ -16,6 +16,27 @@ public final class NpcRuleWorkbenchTest {
         NpcRuleBook book=new NpcRuleBook(List.of(sample("SHADE","SHADE","MANIFEST"),
             sample("ANCIENT_SHADE","SHADE","MANIFEST")));
         ok(book.all().size()==2,"Book holds all variants");
+        String machine=NpcRuleExport.toJson(book);
+        ok(machine.contains("\\\"schema\\\":\\\"beckenburg.npc-canonical-rule-export/v1\\\""),
+            "Machine export has stable schema");
+        ok(machine.contains("\\\"ANCIENT_SHADE\\\"")&&machine.contains("\\\"CAMERA_ONLY\\\""),
+            "Machine export reads all rule entries");
+        ok(machine.indexOf("\\\"ANCIENT_SHADE\\\"")<machine.indexOf("\\\"SHADE\\\""),
+            "JSON species order deterministic");
+        try{
+            java.nio.file.Path folder=java.nio.file.Files.createTempDirectory("npc-rule-test-");
+            try{
+                java.nio.file.Path export=folder.resolve("npc.json");
+                NpcRuleExport.save(book,export);
+                ok(java.nio.file.Files.readString(export).equals(machine),
+                    "Atomic rule export matches in-memory source snapshot");
+            }finally{
+                try(var files=java.nio.file.Files.list(folder)){
+                    files.forEach(path->{try{java.nio.file.Files.deleteIfExists(path);}catch(Exception ignored){}});
+                }
+                java.nio.file.Files.deleteIfExists(folder);
+            }
+        }catch(java.io.IOException problem){throw new AssertionError("Rulebook save failed",problem);}
         ok(book.explain("SHADE").contains("CAMERA_ONLY"),"Can explain actual visibility channel");
         ok(book.explain("ANCIENT_SHADE").contains("inherits mechanical base SHADE"),
             "Can explain inheritance");
