@@ -33,6 +33,7 @@ public final class GgBotVehicleTextures {
     public record Vehicle(String resource,String directory,String preferred){}
     public static final List<Vehicle> VEHICLES=List.of(
         new Vehicle("ggbot_car01","Car 01/","car_blue.png"),
+        new Vehicle("ggbot_car05","Car 05/","car_blue.png"),
         new Vehicle("ggbot_car07","Car 07/","car_red.png"),
         new Vehicle("ggbot_car08_van_shell","Car 08/","Car8_grey.png")
     );
@@ -134,6 +135,6 @@ public final class GgBotVehicleTextures {
         if(args.length!=3)throw new IllegalArgumentException(
             "archive original-models-directory destination-models-directory");
         convert(Path.of(args[0]),Path.of(args[1]),Path.of(args[2]));
-        System.out.println("PASS three GGBot licensed cars carry their real 128x128 PNG atlases");
+        System.out.println("PASS four GGBot licensed vehicles carry their real 128x128 PNG atlases");
     }
 }

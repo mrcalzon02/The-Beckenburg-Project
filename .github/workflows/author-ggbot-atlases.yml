@@ -1,0 +1,104 @@
+name: Author original GGBot vehicle colour atlases
+# Asset authoring ONLY. Neither build.cmd, build.sh, game, updater, nor
+# Windows release jobs require Blender, Chocolatey, or download this ZIP.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/author-ggbot-atlases.yml'
+permissions:
+  contents: write
+  actions: write
+jobs:
+  original-vehicle-textures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Fetch and authenticate original CC0 vehicle atlases
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/author/ggbot
+          curl --fail --location --retry 5 --retry-all-errors --retry-delay 3 --connect-timeout 15 --max-time 120 \
+            -o build/author/ggbot/original.zip \
+            'https://opengameart.org/sites/default/files/psx_style_cars_by_ggbot_august2023.zip'
+          echo 'DB67B0B0FBAA02454A5D000DC9EC1CC53F360E8F41AB44F3FB1C7E8F71E699E4  build/author/ggbot/original.zip' | sha256sum --check --status
+          unzip -Z -1 build/author/ggbot/original.zip | grep -E 'Car 0(1|5|7|8)/.*[.]png$' > build/author/ggbot/texture-list.txt
+          cat build/author/ggbot/texture-list.txt
+      - name: Bake original images into approved checked-in vehicle meshes without Blender
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/author/classes
+          javac --release 17 -encoding UTF-8 -d build/author/classes \
+            src/main/java/org/beckenburg/GgBotVehicleTextures.java
+          java -cp build/author/classes org.beckenburg.GgBotVehicleTextures \
+            build/author/ggbot/original.zip assets/runtime/models assets/runtime/models
+          for name in ggbot_car01 ggbot_car05 ggbot_car07 ggbot_car08_van_shell; do
+            test -s "assets/runtime/models/$name.glb"
+          done
+          git diff --stat -- assets/runtime/models/ggbot_*.glb
+          test -n "$(git diff --name-only -- assets/runtime/models/ggbot_*.glb)"
+      - name: Validate all four original atlas sizes and independent embedded images
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,struct,pathlib
+          for name in ('ggbot_car01','ggbot_car05','ggbot_car07','ggbot_car08_van_shell'):
+              data=pathlib.Path('assets/runtime/models',name+'.glb').read_bytes()
+              magic,ver,total,jlen,jkind=struct.unpack_from('<5I',data)
+              assert (magic,ver,total,jkind)==(0x46546c67,2,len(data),0x4e4f534a),name
+              gltf=json.loads(data[20:20+jlen])
+              binary=data[28+jlen:]
+              assert struct.unpack_from('<I',data,24+jlen)[0]==0x004e4942,name
+              for image in gltf['images']:
+                  view=gltf['bufferViews'][image['bufferView']]
+                  off=view.get('byteOffset',0)
+                  length=view['byteLength']
+                  png=binary[off:off+length]
+                  if png.startswith(b'\x89PNG\r\n\x1a\n'):
+                      width,height=struct.unpack_from('>II',png,16)
+                      if width==height==128 and len(png)>1000:
+                          print('PASS original',name,'128x128 colour atlas',len(png),'bytes')
+                          break
+              else:
+                  raise AssertionError(name+' lacks real 128x128 embedded PNG')
+          PY
+      - name: Push actual asset changes and read back the remote
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- assets/runtime/models/ggbot_car01.glb \
+            assets/runtime/models/ggbot_car05.glb \
+            assets/runtime/models/ggbot_car07.glb \
+            assets/runtime/models/ggbot_car08_van_shell.glb
+          git diff --cached --quiet && { echo 'No actual asset improvement'; exit 1; }
+          git commit -m 'assets: embed official CC0 GGBot colour atlases in four approved vehicles'
+          for attempt in 1 2 3 4; do
+            if git push origin HEAD:main; then break; fi
+            test "$attempt" -lt 4
+            sleep $((attempt*6))
+            git fetch origin main
+            git rebase origin/main
+          done
+          git fetch origin main
+          git merge-base --is-ancestor HEAD origin/main
+          echo "Asset commit is on remote main: $(git rev-parse HEAD)"
+          # GITHUB_TOKEN commits do not cause push workflows automatically.
+          # Start existing release and regression validations explicitly.
+          gh workflow run ship-installer.yml --ref main
+          gh workflow run focused-castle-repairs.yml --ref main
+          gh workflow run beckenburg-full-round-e2e.yml --ref main
