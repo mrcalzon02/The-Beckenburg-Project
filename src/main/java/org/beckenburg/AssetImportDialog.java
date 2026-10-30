@@ -236,31 +236,55 @@ public final class AssetImportDialog {
         while(failure.getCause()!=null)failure=failure.getCause();
         return String.valueOf(failure.getMessage());
     }
+    /** Both panels use the SOURCE bounds: shrinking topology cannot trick the eye
+     * by zooming the remaining stump to fill the frame. */
     private void draw(Graphics2D g,List<EditorMeshPipeline.Triangle> tris,int left,int width,String title){
-        if(tris.isEmpty()){g.setColor(Color.ORANGE);g.drawString(title+" (no visible triangles)",left+10,20);return;}
+        List<EditorMeshPipeline.Triangle> reference=source.triangles();
         double xmin=Double.POSITIVE_INFINITY,ymin=xmin,xmax=Double.NEGATIVE_INFINITY,ymax=xmax;
-        int skip=Math.max(1,tris.size()/12000);
-        for(int i=0;i<tris.size();i+=skip){
-            var t=tris.get(i);
-            for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
-                double x=v.x()*.83-v.z()*.55, y=-(v.y()*.95+v.x()*.24+v.z()*.35);
-                xmin=Math.min(xmin,x);xmax=Math.max(xmax,x);
-                ymin=Math.min(ymin,y);ymax=Math.max(ymax,y);
-            }
+        for(var t:reference)for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
+            double ax=v.x()*.83-v.z()*.55,ay=-(v.y()*.95+v.x()*.24+v.z()*.35);
+            xmin=Math.min(xmin,ax);xmax=Math.max(xmax,ax);
+            ymin=Math.min(ymin,ay);ymax=Math.max(ymax,ay);
         }
         double scale=Math.min((width-26)/Math.max(1e-6,xmax-xmin),
                               (getPreviewHeight()-36)/Math.max(1e-6,ymax-ymin));
-        g.setColor(new Color(181,206,213));g.drawString(title+"  /  "+tris.size()+" triangles",left+10,18);
+        double centerX=(xmin+xmax)*.5,centerY=(ymin+ymax)*.5;
+        g.setColor(new Color(181,206,213));
+        g.drawString(title+"  /  "+tris.size()+" triangles",left+10,18);
+        int skip=Math.max(1,tris.size()/12000);
         g.setColor(new Color(113,168,188,120));
         for(int i=0;i<tris.size();i+=skip){
             var t=tris.get(i);
             int[] xs=new int[3],ys=new int[3];int k=0;
             for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
-                double x=v.x()*.83-v.z()*.55,y=-(v.y()*.95+v.x()*.24+v.z()*.35);
-                xs[k]=left+width/2+(int)Math.round((x-(xmin+xmax)*.5)*scale);
-                ys[k]=getPreviewHeight()/2+(int)Math.round((y-(ymin+ymax)*.5)*scale);k++;
+                double ax=v.x()*.83-v.z()*.55,ay=-(v.y()*.95+v.x()*.24+v.z()*.35);
+                xs[k]=left+width/2+(int)Math.round((ax-centerX)*scale);
+                ys[k]=getPreviewHeight()/2+(int)Math.round((ay-centerY)*scale);k++;
             }
             g.drawPolygon(xs,ys,3);
+        }
+        if(result!=null&&title.equals("PREVIEW")){
+            java.util.Map<String,double[]> centroids=new java.util.LinkedHashMap<>();
+            for(var part:result.parts())if(part.after()==0){
+                double[] accum=new double[4];
+                for(var t:reference)if(t.part().equals(part.name()))
+                    for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
+                        accum[0]+=v.x();accum[1]+=v.y();accum[2]+=v.z();accum[3]++;
+                    }
+                if(accum[3]>0)centroids.put(part.name(),accum);
+            }
+            g.setColor(new Color(244,92,81));
+            for(var part:centroids.entrySet()){
+                double[] c=part.getValue(),a=c[0]/c[3],b=c[1]/c[3],d=c[2]/c[3];
+                double ax=a*.83-d*.55,ay=-(b*.95+a*.24+d*.35);
+                int px=left+width/2+(int)Math.round((ax-centerX)*scale);
+                int py=getPreviewHeight()/2+(int)Math.round((ay-centerY)*scale);
+                g.fillOval(px-4,py-4,8,8);
+                g.drawString(part.getKey()+" — COLLAPSED",px+7,py-5);
+            }
+            if(tris.isEmpty()){
+                g.setColor(Color.ORANGE);g.drawString("No drawable triangles remain",left+10,35);
+            }
         }
     }
     private int getPreviewHeight(){return Math.max(180,preview.getHeight());}
