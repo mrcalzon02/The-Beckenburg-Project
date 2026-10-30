@@ -275,7 +275,8 @@ public final class AssetImportDialog {
             }
             g.setColor(new Color(244,92,81));
             for(var part:centroids.entrySet()){
-                double[] c=part.getValue(),a=c[0]/c[3],b=c[1]/c[3],d=c[2]/c[3];
+                double[] c=part.getValue();
+                double a=c[0]/c[3],b=c[1]/c[3],d=c[2]/c[3];
                 double ax=a*.83-d*.55,ay=-(b*.95+a*.24+d*.35);
                 int px=left+width/2+(int)Math.round((ax-centerX)*scale);
                 int py=getPreviewHeight()/2+(int)Math.round((ay-centerY)*scale);
