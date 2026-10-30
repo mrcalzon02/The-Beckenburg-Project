@@ -6,9 +6,9 @@ import java.util.Objects;
 public final class SiteCatalog {
     private SiteCatalog(){}
     public enum Location {
-        HOUSE(MissionSites.title("HOUSE"),true), MANSION(MissionSites.title("MANSION"),false), PRISON(MissionSites.title("PRISON"),false),
-        ASYLUM(MissionSites.title("ASYLUM"),false), SCHOOL(MissionSites.title("SCHOOL"),true), FARMHOUSE(MissionSites.title("FARMHOUSE"),true),
-        ACADEMY(MissionSites.title("ACADEMY"),false), COLLEGE(MissionSites.title("COLLEGE"),false), CHURCH(MissionSites.title("CHURCH"),false);
+        HOUSE(MissionSites.title("HOUSE"),true), MANSION(MissionSites.title("MANSION"),true), PRISON(MissionSites.title("PRISON"),true),
+        ASYLUM(MissionSites.title("ASYLUM"),true), SCHOOL(MissionSites.title("SCHOOL"),true), FARMHOUSE(MissionSites.title("FARMHOUSE"),true),
+        ACADEMY(MissionSites.title("ACADEMY"),true), COLLEGE(MissionSites.title("COLLEGE"),true), CHURCH(MissionSites.title("CHURCH"),true);
         public final String label;
         private final boolean playable;
         private volatile Boolean geometryValidated;
