@@ -28,6 +28,26 @@ Owner-supplied **Level Editor gold standards.pdf**, five pages, defines WYSIWYG 
 
 These names describe contracts to design; they are **not existing classes**.
 
+## First-class environment module integration
+
+Three peer modules belong in the portable editor/runtime integration design:
+
+| Module | Current integration position | Editor responsibility |
+| --- | --- | --- |
+| Water | Existing `dev.mrcalzon.water` module and `EnvironmentModuleEditor` integration | Author and preview actual water placements/material settings with game renderer |
+| Weather | Existing `dev.mrcalzon.weather` integration through the environment editor | Configure live environment and atmospheric effects through the unified weather system |
+| Lighting | **Under production; integration pending module availability** | Discover its published runtime/editor API, then connect real fixture, light-volume, shadow, exposure and effect controls |
+
+**Integration rule:** each module retains its own runtime simulation, serialization, performance management, and asset semantics. The editor exposes adapters/inspectors and reflects the module's authoritative state; it must not implement a competing shadow system or fork a separate editor-only lighting simulation.
+
+For every environment module, use a common integration lifecycle: capability discovery, load or attach to a scene, expose relevant edit operations and inspector metadata, notify on live state changes, support atomic save/restore and playtest, register diagnostics, and detach/clean up. This is a **target contract**, not a claim that the modules already support every operation.
+
+Before integrating lighting, inspect the actual delivered module and its exports, compare its lighting/shadow APIs to `SceneRenderer`, and retire duplicated fixture behaviors only when parity is verified. Lighting and water/weather must interact coherently (reflection and refraction where supported, fog attenuation, wet-surface shading, shadowing, day/night lighting) without requiring fictional effects or duplicate authority.
+
+Weather is the authoritative source for fog banks and related atmospheric conditions. Do **not** bring back the old fixed fog/power-outage/weather mission-condition selector. Environmental power systems can affect illumination without becoming a competing weather option.
+
+Avoid a hard dependency on the unfinished lighting module: the existing game and editor must compile and remain functional until its real API is available. Shared editor contracts should remain Java 17 and game-agnostic; adapters can be independently registered when installed.
+
 ## Safety and lifecycle
 - Use one in-memory scene instance for editing; playtest snapshots dirty state and returns safely without overwriting editor changes or multiplayer authority.
 - Editor scripts run within restricted, auditable APIs; never turn imported community levels into arbitrary host-code execution.
