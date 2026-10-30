@@ -31,6 +31,13 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorCorePortabilityTest
           if errorlevel 1 exit /b 1
+      - name: Verify game-independent runtime scene contract
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\RuntimeSceneContractTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.RuntimeSceneContractTest
+          if errorlevel 1 exit /b 1
       - uses: actions/upload-artifact@v4
         with:
           name: portable-level-editor-java17
