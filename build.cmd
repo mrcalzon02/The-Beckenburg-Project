@@ -50,6 +50,8 @@ if not exist assets\runtime\twins-directions.zip (echo ERROR: independent Twins 
 copy /Y assets\runtime\twins-directions.zip build\classes\org\beckenburg\twins-directions.zip >nul || exit /b 1
 if not exist assets\runtime\lore-master-directions.zip (echo ERROR: approved Lore Master sprites missing & exit /b 1)
 copy /Y assets\runtime\lore-master-directions.zip build\classes\org\beckenburg\lore-master-directions.zip >nul || exit /b 1
+if not exist assets\runtime\castle-support-directions.zip (echo ERROR: Castle NPC approved directions missing ^& exit /b 1)
+copy /Y assets\runtime\castle-support-directions.zip build\classes\org\beckenburg\castle-support-directions.zip >nul || exit /b 1
 if not exist build\classes\org\beckenburg\elder-masters mkdir build\classes\org\beckenburg\elder-masters
 for %%G in (elder-blade-demon elder-plague-demon elder-nothic) do (
  if not exist "assets\runtime\elder-masters\%%G.png" (echo ERROR missing Elder master %%G & exit /b 1)
