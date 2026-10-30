@@ -26,6 +26,10 @@ test -s assets/runtime/character-directions.zip
 cp assets/runtime/character-directions.zip build/classes/org/beckenburg/character-directions.zip
 test -s assets/runtime/twins-directions.zip
 cp assets/runtime/twins-directions.zip build/classes/org/beckenburg/twins-directions.zip
+test -s assets/runtime/lore-master-directions.zip
+cp assets/runtime/lore-master-directions.zip build/classes/org/beckenburg/lore-master-directions.zip
+test -s assets/runtime/castle-support-directions.zip
+cp assets/runtime/castle-support-directions.zip build/classes/org/beckenburg/castle-support-directions.zip
 # Accepted Elder master art for the illustrated ghost logbook.
 mkdir -p build/classes/org/beckenburg/elder-masters
 for elder in elder-blade-demon elder-plague-demon elder-nothic; do
