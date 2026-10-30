@@ -1942,6 +1942,9 @@ public final class SceneRenderer {
     private long gpuSceneId=GpuWorldRenderer.nextId();
     private long lastSubmittedGpuFrame;
     private GpuWorldRenderer.Result pinnedGpuFrame;
+    /** Same scene and dimensions only: retain the last complete GPU image while
+     * the next async readback is pending, never reveal an empty sky frame. */
+    private GpuWorldRenderer.Result lastUsableGpuFrame;
     public void pinCompletedGpuFrame(GpuWorldRenderer.Result result){if(!GpuWorldRenderer.belongsTo(result,gpuSceneId,renderWidth,renderHeight))throw new IllegalArgumentException("GPU result belongs to a different preview scene");pinnedGpuFrame=result;}
     /** GPU acceptance must verify the NEW scene was rendered, not merely a
      * previous resident framebuffer with coincidentally identical dimensions. */
@@ -2000,6 +2003,10 @@ public final class SceneRenderer {
             lamp,(float)lampIntensity,(float)lampReach,
             (float)lampWidth,flameLamp));
         GpuWorldRenderer.Result available=pinnedGpuFrame==null?backend.latest():pinnedGpuFrame;pinnedGpuFrame=null;
+        if(GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight))
+            lastUsableGpuFrame=available;
+        else if(GpuWorldRenderer.belongsTo(lastUsableGpuFrame,gpuSceneId,renderWidth,renderHeight))
+            available=lastUsableGpuFrame;
         lastGpuReadbackAvailable=GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight);
         lastGpuReadbackFresh=lastGpuReadbackAvailable&&available.frameId()==submitted;
         if(lastGpuReadbackAvailable){
@@ -2120,8 +2127,11 @@ public final class SceneRenderer {
             // door leaf eases through the swing, with no per-frame global scene reset.
             double opening=p.door()?map.doorOpenFraction(p.id()):0;
             boolean moving=p.door()&&map.doorMoving(p.id());
-            var key=new PortalGeometryKey(p,map.doorOpen(p.id()),map.windowOpen(p.id()));
-            List<Face> geometry=moving?null:authoredFixtureGeometry.get(key);
+            int pose=moving?Math.max(0,Math.min(16,(int)Math.round(opening*16))):0;
+            if(moving)opening=pose/16.0;
+            Object key=moving?new DoorPoseGeometryKey(p,pose):
+                new PortalGeometryKey(p,map.doorOpen(p.id()),map.windowOpen(p.id()));
+            List<Face> geometry=authoredFixtureGeometry.get(key);
             if(geometry==null){
                 List<Face> part=new ArrayList<>();
                 if(p.door()){
@@ -2140,8 +2150,9 @@ public final class SceneRenderer {
                     levelRailWindow(part,x0,z0,x1,z1,p.y()+1.02,p.y()+2.33);
                 }
                 var owned=new ArrayList<Face>();own(owned,part,p.a());geometry=List.copyOf(owned);
-                // Retain exactly the two settled poses, not 10-20 intermediate VBOs.
-                if(!moving)authoredFixtureGeometry.put(key,geometry);
+                // Cache the 17 quantized animation poses on CPU; only settled
+                // poses become resident VBOs, preserving the GPU memory bound.
+                authoredFixtureGeometry.put(key,geometry);
             }
             if(moving)out.addAll(geometry);
             else appendRetainedWorld(out,geometry,key,map);
@@ -2174,7 +2185,7 @@ public final class SceneRenderer {
             }
             var owned=new ArrayList<Face>();own(owned,part,s.room());return List.copyOf(owned);
             });
-            appendRetainedWorld(out,geometry,s,map);
+            appendRetainedWorld(out,geometry,key,map);
         }
     }
     private final java.util.Map<HollowCreekScene.Instance,List<Face>> nativeCache=new java.util.LinkedHashMap<>(64,.75f,true){protected boolean removeEldestEntry(java.util.Map.Entry<HollowCreekScene.Instance,List<Face>> e){return size()>96;}};
@@ -2555,6 +2566,8 @@ public final class SceneRenderer {
     private final java.util.Map<Object,AuxiliaryWorld> auxiliaryWorld=new java.util.HashMap<>();
     private final java.util.Map<Object,List<Face>> authoredFixtureGeometry=new java.util.HashMap<>();
     private record PortalGeometryKey(LevelDefinition.Portal portal,boolean door,boolean window){}
+    /** Cache a bounded set of authored door poses, not a GLB import each frame. */
+    private record DoorPoseGeometryKey(LevelDefinition.Portal portal,int step){}
     private record SocketGeometryKey(LevelDefinition.Socket socket,boolean powered){}
     private final List<ResidentWorldChunk> visibleResidentScenery=new ArrayList<>();
     private final java.util.Set<Face> residentSceneryFaces=java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
@@ -2660,7 +2673,9 @@ public final class SceneRenderer {
             version=fixtureLighting.regionVersion(b.minX-.09,b.minY-.09,b.minZ-.09,b.maxX+.09,b.maxY+.09,b.maxZ+.09);
             chunk.checkedFrame=fixtureLighting.frameRevision();
         }
-        boolean topology=chunk.batches.isEmpty()||chunk.lod!=lod||chunk.occluderVersion!=fixtureLighting.occluderRevision();
+        long localOccluder=fixtureLighting.regionOccluderVersion(
+            b.minX-.09,b.minY-.09,b.minZ-.09,b.maxX+.09,b.maxY+.09,b.maxZ+.09);
+        boolean topology=chunk.batches.isEmpty()||chunk.lod!=lod||chunk.occluderVersion!=localOccluder;
         if(!topology&&chunk.lightVersion!=version){
             // Re-evaluate source intensities in retained receiver probes. No
             // geometry, visibility, UV or tessellation work is repeated.
@@ -2687,11 +2702,11 @@ public final class SceneRenderer {
             boolean prior=preparingStableGpuFace;int previousLod=preparingStableGpuLod;
             preparingStableGpuFace=true;preparingStableGpuLod=lod;preparingWorldProbes=true;
             if(chunk.shadows==null)chunk.shadows=fixtureLighting.newStationaryShadows();
-            var previousShadows=fixtureLighting.useStationaryShadows(chunk.shadows);
+            var previousShadows=fixtureLighting.useStationaryShadows(chunk.shadows,localOccluder);
             try{for(var face:chunk.faces){
                 int room=face.room>=0?face.room:0;
                 appendGpuFace(face,room,0,batches);
-            }}finally{fixtureLighting.useStationaryShadows(previousShadows);preparingStableGpuFace=prior;preparingStableGpuLod=previousLod;preparingWorldProbes=false;}
+            }}finally{fixtureLighting.restoreStationaryShadows(previousShadows);preparingStableGpuFace=prior;preparingStableGpuLod=previousLod;preparingWorldProbes=false;}
             long before=0,after=0;
             for(var old:chunk.batches.values())before+=(long)old.vertices().length*Float.BYTES;
             for(var built:batches.entrySet())after+=(long)built.getValue().count*Float.BYTES;
@@ -2713,7 +2728,7 @@ public final class SceneRenderer {
                     built.getValue().lights.stream().map(WorldVertexLight::probe).toList()));
                 residentWorldBuilds++;
             }
-            chunk.lod=lod;chunk.lightVersion=version;chunk.occluderVersion=fixtureLighting.occluderRevision();residentWorldBytes+=after-before;
+            chunk.lod=lod;chunk.lightVersion=version;chunk.occluderVersion=localOccluder;residentWorldBytes+=after-before;
         }else residentWorldHits+=chunk.batches.size();
         for(var batch:chunk.batches.entrySet()){
             var mesh=batch.getValue();lastGpuSubmittedTriangles+=mesh.vertices().length/24;
