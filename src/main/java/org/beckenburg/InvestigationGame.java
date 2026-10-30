@@ -19,7 +19,6 @@ public final class InvestigationGame {
     private JComboBox<InvestigationSession.Role> rolePicker;
     private JComboBox<CharacterVisuals.Hunter> assistantRolePicker;
     private JComboBox<SiteCatalog.Location> locationPicker;
-    private JComboBox<SiteCatalog.Conditions> conditionsPicker;
     private JComboBox<MissionWeather.Mode> weatherModePicker;
     private JComboBox<EvidenceSignals.Weather> weatherPicker;
     private JComboBox<Integer> weatherSeverityPicker;
@@ -158,9 +157,9 @@ public final class InvestigationGame {
                 @Override public void exitFromGate(){shutdown();}
                 @Override public void campaign(){showCampaign();}
                 @Override public void cycleRole(){rolePicker.setSelectedIndex((rolePicker.getSelectedIndex()+1)%rolePicker.getItemCount());}
-                @Override public void cycleWeather(){conditionsPicker.setSelectedIndex((conditionsPicker.getSelectedIndex()+1)%conditionsPicker.getItemCount());}
+                @Override public void cycleWeather(){weatherPicker.setSelectedIndex((weatherPicker.getSelectedIndex()+1)%weatherPicker.getItemCount());}
                 @Override public String role(){return rolePicker.getSelectedItem().toString();}
-                @Override public String weather(){return conditionsPicker.getSelectedItem().toString();}
+                @Override public String weather(){return MissionWeather.displayName((EvidenceSignals.Weather)weatherPicker.getSelectedItem());}
             });
                 cards.add(castle,"castle");
             }
@@ -293,7 +292,6 @@ public final class InvestigationGame {
             assistantRolePicker=new JComboBox<>(CharacterVisuals.Hunter.values());
             assistantRolePicker.setSelectedItem(CharacterVisuals.Hunter.OBSERVER);
             locationPicker=new JComboBox<>(SiteCatalog.Location.values());
-            conditionsPicker=new JComboBox<>(SiteCatalog.Conditions.values());
             weatherModePicker=new JComboBox<>(MissionWeather.Mode.values());
             weatherPicker=new JComboBox<>(EvidenceSignals.Weather.values());
             weatherSeverityPicker=new JComboBox<>(new Integer[]{1,2,3});
@@ -509,19 +507,18 @@ public final class InvestigationGame {
     /** Contract controls keep their native height even when the tab viewport is tall.
      * GridLayout previously stretched six combo boxes to fill the whole panel,
      * exposing the light Swing tab background behind pale labels. */
-    static JPanel soloContractForm(JComponent site,JComponent role,JComponent conditions,
+    static JPanel soloContractForm(JComponent site,JComponent role,
             JComponent schedule,JComponent weather,JComponent severity){
         JPanel form=transparentPanel(new GridBagLayout());
         form.setName("solo.contract.form");
         form.setBorder(BorderFactory.createEmptyBorder(16,18,12,18));
         contractSetting(form,0,"Investigation location",site);
         contractSetting(form,1,"Hunter discipline",role);
-        contractSetting(form,2,"Conditions",conditions);
-        contractSetting(form,3,"Weather schedule",schedule);
-        contractSetting(form,4,"Starting weather",weather);
-        contractSetting(form,5,"Weather severity",severity);
+        contractSetting(form,2,"Weather schedule",schedule);
+        contractSetting(form,3,"Starting weather",weather);
+        contractSetting(form,4,"Weather severity",severity);
         GridBagConstraints space=new GridBagConstraints();
-        space.gridx=0;space.gridy=6;space.gridwidth=2;
+        space.gridx=0;space.gridy=5;space.gridwidth=2;
         space.weighty=1;space.fill=GridBagConstraints.VERTICAL;
         form.add(Box.createVerticalGlue(),space);
         return form;
@@ -548,7 +545,7 @@ public final class InvestigationGame {
         JComboBox<SiteCatalog.Location> site=new JComboBox<>(java.util.Arrays.stream(SiteCatalog.Location.values())
             .filter(SiteCatalog.Location::playable).toArray(SiteCatalog.Location[]::new));
         site.setSelectedItem(locationPicker.getSelectedItem());
-        JPanel form=soloContractForm(site,rolePicker,conditionsPicker,weatherModePicker,
+        JPanel form=soloContractForm(site,rolePicker,weatherModePicker,
             weatherPicker,weatherSeverityPicker);
         JTabbedPane tabs=new JTabbedPane();PsxHorrorUi.styleTabs(tabs);
         tabs.addTab("CONTRACT",PsxMenuScreen.scroll(form));
@@ -575,7 +572,7 @@ public final class InvestigationGame {
         SiteCatalog.requirePlayable(location);
         BeckenburgDeveloperTrace.caseStage("constructing GamePanel "+location);
         game=new GamePanel((InvestigationSession.Role)rolePicker.getSelectedItem(),caseNumber,
-            location,(SiteCatalog.Conditions)conditionsPicker.getSelectedItem(),
+            location,SiteCatalog.Conditions.STANDARD,
             (MissionWeather.Mode)weatherModePicker.getSelectedItem(),
             (EvidenceSignals.Weather)weatherPicker.getSelectedItem(),
             (Integer)weatherSeverityPicker.getSelectedItem(),campaignMode,withAssistant,seed,
