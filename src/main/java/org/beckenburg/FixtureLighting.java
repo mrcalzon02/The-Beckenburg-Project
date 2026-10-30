@@ -164,7 +164,7 @@ public final class FixtureLighting {
   private FixtureLighting owner(){return FixtureLighting.this;}
   public RGB sample(){
    RGB rgb=base.sample(factors),glow=RGB.ZERO;
-   for(var source:emissive)if(factors[source.id]>.01){glow=new RGB(source.red*1.35,source.green*1.35,source.blue*1.35);break;}
+   for(var source:emissive)if(factors[source.id]>.01){glow=new RGB(emissiveComponent(source.red),emissiveComponent(source.green),emissiveComponent(source.blue));break;}
    double r=Math.max(rgb.r,glow.r),g=Math.max(rgb.g,glow.g),b=Math.max(rgb.b,glow.b);
    if(normal!=null){var n=normal.sample(factors);r=Math.max(0,r+n.r-rgb.r);g=Math.max(0,g+n.g-rgb.g);b=Math.max(0,b+n.b-rgb.b);}
    return new RGB(r,g,b);
@@ -208,7 +208,7 @@ public final class FixtureLighting {
    br=Math.min(1.6,br);bg=Math.min(1.6,bg);bb=Math.min(1.6,bb);
    double r=br,g=bg,b=bb;
    for(var source:emissive)if(factors[source.id]>.01){
-    r=Math.max(r,source.red*1.35);g=Math.max(g,source.green*1.35);b=Math.max(b,source.blue*1.35);break;
+    r=Math.max(r,emissiveComponent(source.red));g=Math.max(g,emissiveComponent(source.green));b=Math.max(b,emissiveComponent(source.blue));break;
    }
    if(normal!=null){
     double nr=normal.ambient.r,ng=normal.ambient.g,nb=normal.ambient.b;
@@ -591,6 +591,11 @@ public final class FixtureLighting {
   }
   return emissionMaterials.get(material);
  }
+ /** Shared CPU/GPU material glow: direct samples and prepared resident
+  * vertices must obey exactly the same fixture brightness setting. */
+ private double emissiveComponent(double channel){
+  return Math.min(1.6,channel*1.35*options.sourceScale());
+ }
  public RGB emission(int material,double x,double y,double z){
   // LCD texels illuminate themselves without becoming extra room light sources.
   if(material==GlbProps.VAN_MAP_MATERIAL)return new RGB(1.0,1.0,1.0);
@@ -599,9 +604,9 @@ public final class FixtureLighting {
       return new RGB(1.0,1.0,1.0);
   if(!emittingMaterial(material))return RGB.ZERO;
   for(var s:candidates(x,y,z))if(factors[s.id]>.01&&Math.abs(x-s.x)<.4&&Math.abs(y-s.y)<.28&&Math.abs(z-s.z)<.4)return new RGB(
-      Math.min(1.6,s.red*1.35*options.sourceScale()),
-      Math.min(1.6,s.green*1.35*options.sourceScale()),
-      Math.min(1.6,s.blue*1.35*options.sourceScale()));
+      emissiveComponent(s.red),
+      emissiveComponent(s.green),
+      emissiveComponent(s.blue));
   return RGB.ZERO;
  }
 }
