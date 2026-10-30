@@ -540,8 +540,17 @@ public final class GpuDesktop {
   boolean uiSmoke=options.contains("--gpu-ui-smoke");
   if(smoke&&uiSmoke)throw new IllegalArgumentException("Choose one GPU smoke mode");
   try{startGpu();}catch(Exception failure){
-   BeckenburgDiagnostics.fail("Required GPU renderer initialization",failure);
-   throw failure;
+   // Graphics support is a performance/quality upgrade, not a reason to
+   // deny a playable game. Explicit GPU acceptance tests remain strict.
+   boolean strict=smoke||uiSmoke||options.stream().anyMatch(a->a.endsWith("-review"));
+   if(strict){
+    BeckenburgDiagnostics.fail("GPU review initialization",failure);
+    throw failure;
+   }
+   BeckenburgDiagnostics.record("WARNING GPU unavailable; starting software Castle: "+failure);
+   System.err.println("OpenGL unavailable, using verified software game: "+failure);
+   InvestigationGame.main(args);
+   return;
   }
   if(options.contains("--water-module-editor")){
    javax.swing.SwingUtilities.invokeLater(()->{var window=org.beckenburg.EnvironmentModuleEditor.open(null,System.getProperty("beckenburg.water.editor.map","hollow-creek"));window.addWindowListener(new java.awt.event.WindowAdapter(){public void windowClosed(java.awt.event.WindowEvent e){if(com.badlogic.gdx.Gdx.app!=null)com.badlogic.gdx.Gdx.app.exit();}});});return;

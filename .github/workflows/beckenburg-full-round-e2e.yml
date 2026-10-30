@@ -116,7 +116,7 @@ jobs:
                         Sort-Object LastWriteTime -Descending)
                 foreach ($file in $logs) {
                   $body=Get-Content -LiteralPath $file.FullName -Raw
-                  if ($body.Contains('PHASE ready') -and $body.Contains('PHASE Menu available')) {
+                  if ($body.Contains('PHASE ready') -and $body.Contains('PHASE Castle home available')) {
                     $ready=$true
                     break
                   }
@@ -125,10 +125,10 @@ jobs:
               if ($ready) { break }
               Start-Sleep -Milliseconds 350
             }
-            if (-not $ready) { throw 'Native executable never reached PHASE ready / Menu available; inspect diagnostic logs' }
-            'PASS: native Windows app-image reached fully initialized menu' |
+            if (-not $ready) { throw 'Native executable never reached ready / Castle home available; inspect diagnostic logs' }
+            'PASS: native Windows app-image reached fully initialized Castle' |
                 Set-Content -LiteralPath 'build\e2e\native-executable-load.txt' -Encoding utf8
-            Write-Host 'PASS Native Windows executable loaded to the menu; not just a running splash'
+            Write-Host 'PASS Native Windows executable loaded to the Castle; not just a running splash'
           } finally {
             if ($null -ne $proc -and -not $proc.HasExited) {
               Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue

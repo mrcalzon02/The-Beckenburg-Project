@@ -133,7 +133,7 @@ jobs:
               foreach ($file in @(Get-ChildItem $folder -Filter 'session-*.log' -ErrorAction SilentlyContinue)) {
                 if ($file.LastWriteTime -lt $begin.AddSeconds(-2)) { continue }
                 $log=Get-Content $file.FullName -Raw
-                if ($log.Contains('PHASE ready') -and $log.Contains('PHASE Menu available')) {
+                if ($log.Contains('PHASE ready') -and $log.Contains('PHASE Castle home available')) {
                   $ready=$true;break
                 }
               }
