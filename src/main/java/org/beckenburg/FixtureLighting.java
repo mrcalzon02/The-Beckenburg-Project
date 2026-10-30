@@ -1,5 +1,6 @@
 package org.beckenburg;
 import java.util.*;
+import dev.mrcalzon.lighting.LightingModule;
 /** Metre-space coloured emission and architectural occlusion, independent of the camera. */
 public final class FixtureLighting {
  public enum Kind { FROSTED_DOME,BARE_BULB,CANDLE_CHANDELIER,TABLE_LAMP,FLUORESCENT,VAN_DIFFUSER,WALL_SCONCE,TELEVISION,FIRELIGHT }
@@ -15,7 +16,8 @@ public final class FixtureLighting {
  private record DistantProbe(double x,double y,double z,RGB light,long revision){}
  private record Cell(int x,int y,int z){}
  private record Lit(RGB rgb,long revision){}
- private static final double CELL_SIZE=4.0;
+ private final LightingModule.Settings options=LightingModule.current();
+ private final double cellSize=options.cellMetres();
  private final Map<Cell,List<Source>> influence=new HashMap<>();
  private final Map<Cell,Long> changedCells=new HashMap<>();
  private final Map<Cell,Long> occluderCells=new HashMap<>();
@@ -30,21 +32,21 @@ public final class FixtureLighting {
    }
   };
  }
- private static Cell cell(double x,double y,double z){
-  return new Cell((int)Math.floor(x/CELL_SIZE),
-                  (int)Math.floor(y/CELL_SIZE),(int)Math.floor(z/CELL_SIZE));
+ private Cell cell(double x,double y,double z){
+  return new Cell((int)Math.floor(x/cellSize),
+                  (int)Math.floor(y/cellSize),(int)Math.floor(z/cellSize));
  }
  private long revision(double x,double y,double z){
   return changedCells.getOrDefault(cell(x,y,z),0L);
  }
  /** Sphere-of-influence preselection only. Actual wall raycasts stay mandatory. */
- private static void eachInfluenceCell(Source source,java.util.function.Consumer<Cell> use){
-  int xa=(int)Math.floor((source.x-source.radius)/CELL_SIZE);
-  int xb=(int)Math.floor((source.x+source.radius)/CELL_SIZE);
-  int ya=(int)Math.floor((source.y-source.radius)/CELL_SIZE);
-  int yb=(int)Math.floor((source.y+source.radius)/CELL_SIZE);
-  int za=(int)Math.floor((source.z-source.radius)/CELL_SIZE);
-  int zb=(int)Math.floor((source.z+source.radius)/CELL_SIZE);
+ private void eachInfluenceCell(Source source,java.util.function.Consumer<Cell> use){
+  int xa=(int)Math.floor((source.x-source.radius)/cellSize);
+  int xb=(int)Math.floor((source.x+source.radius)/cellSize);
+  int ya=(int)Math.floor((source.y-source.radius)/cellSize);
+  int yb=(int)Math.floor((source.y+source.radius)/cellSize);
+  int za=(int)Math.floor((source.z-source.radius)/cellSize);
+  int zb=(int)Math.floor((source.z+source.radius)/cellSize);
   for(int xx=xa;xx<=xb;xx++)for(int yy=ya;yy<=yb;yy++)
    for(int zz=za;zz<=zb;zz++)use.accept(new Cell(xx,yy,zz));
  }
@@ -55,13 +57,13 @@ public final class FixtureLighting {
  private List<Source> candidates(double x,double y,double z){
   return influence.getOrDefault(cell(x,y,z),List.of());
  }
- private final Map<DistantCell,DistantProbe> distant=bounded(15000);
+ private final Map<DistantCell,DistantProbe> distant=bounded(options.cacheLimit(15000));
  private long lodQueries,lodHits,lodVisibilityChecks;
  private final HouseMap map;private final CastleHubMap castle;
  private final List<Source> sources=new ArrayList<>();
- private final Map<Key,Lit> colours=bounded(150000);
- private final Map<NormalKey,Lit> normalColours=bounded(100000);
- private final Map<Object,Boolean> sight=bounded(200000);
+ private final Map<Key,Lit> colours=bounded(options.cacheLimit(150000));
+ private final Map<NormalKey,Lit> normalColours=bounded(options.cacheLimit(100000));
+ private final Map<Object,Boolean> sight=bounded(options.cacheLimit(200000));
  /** Scene-owned immutable receiver visibility survives cosmetic intensity
   * changes. Door/topology revisions invalidate it independently of brightness. */
  public static final class StationaryShadows {
@@ -71,7 +73,7 @@ public final class FixtureLighting {
   private StationaryShadows(FixtureLighting owner){this.owner=owner;}
   public void release(){owner.stationaryShadowEntries-=values.size();values.clear();epoch=-1;}
  }
- private static final long STATIONARY_SHADOW_LIMIT=1_000_000;
+
  private long stationaryShadowEntries;
  private StationaryShadows activeShadows;
  public StationaryShadows newStationaryShadows(){return new StationaryShadows(this);}
@@ -97,7 +99,7 @@ public final class FixtureLighting {
   return found==null?sight.get(key):found;
  }
  private void rememberShadow(Object key,boolean visible){
-  if(activeShadows!=null&&stationaryShadowEntries<STATIONARY_SHADOW_LIMIT){
+  if(activeShadows!=null&&stationaryShadowEntries<options.cacheLimit(1_000_000)){
    if(activeShadows.values.put(key,visible)==null)stationaryShadowEntries++;
   }else sight.put(key,visible);
  }
@@ -110,9 +112,9 @@ public final class FixtureLighting {
   * changed doors/windows always invalidate their previous visibility. */
  private long regionRevision(Map<Cell,Long> updates,
                              double ax,double ay,double az,double bx,double by,double bz){
-  int x0=(int)Math.floor(ax/CELL_SIZE),x1=(int)Math.floor(bx/CELL_SIZE);
-  int y0=(int)Math.floor(ay/CELL_SIZE),y1=(int)Math.floor(by/CELL_SIZE);
-  int z0=(int)Math.floor(az/CELL_SIZE),z1=(int)Math.floor(bz/CELL_SIZE);
+  int x0=(int)Math.floor(ax/cellSize),x1=(int)Math.floor(bx/cellSize);
+  int y0=(int)Math.floor(ay/cellSize),y1=(int)Math.floor(by/cellSize);
+  int z0=(int)Math.floor(az/cellSize),z1=(int)Math.floor(bz/cellSize);
   long newest=0;
   long volume=(long)(x1-x0+1)*(y1-y0+1)*(z1-z0+1);
   if(volume>updates.size()){
@@ -246,8 +248,11 @@ public final class FixtureLighting {
  private Probe prepareProbe(int room,double x,double y,double z,double nx,double ny,double nz,boolean normal){
   boolean exterior=room<0||room>=12||map!=null&&map.outside(room);
   double hemi=.65+.35*Math.max(0,ny);
-  RGB ambient=normal?new RGB(.27*hemi,.29*hemi,.34*hemi):
-      new RGB(exterior?.27:castle!=null?.125:.055,exterior?.29:castle!=null?.129:.059,exterior?.34:castle!=null?.14:.073);
+  double ambientScale=options.ambientScale();
+  RGB ambient=normal?new RGB(.27*hemi*ambientScale,.29*hemi*ambientScale,.34*hemi*ambientScale):
+      new RGB((exterior?.27:castle!=null?.125:.055)*ambientScale,
+              (exterior?.29:castle!=null?.129:.059)*ambientScale,
+              (exterior?.34:castle!=null?.14:.073)*ambientScale);
   var parts=new ArrayList<Weighted>();
   for(var source:candidates(x,y,z)){
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;
@@ -335,7 +340,7 @@ public final class FixtureLighting {
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){
    double next=!on||!castle.lightOn(source.x,source.y,source.z)?0:source.kind==Kind.CANDLE_CHANDELIER
-       ?.94+.06*Math.sin(cosmeticTick*.3+source.id):1;
+       ?(1-.06*options.flickerScale()*(1-Math.sin(cosmeticTick*.3+source.id))):1;
    if(Math.round(next*1000)!=Math.round(factors[source.id]*1000))invalidate(source);
    factors[source.id]=next;
   }
@@ -414,7 +419,8 @@ public final class FixtureLighting {
   return true;
  }
  private void add(Kind k,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double r,double g,double b){
-  var source=new Source(sources.size(),k,room,fixture,x,y,z,dx,dy,dz,radius,power,r,g,b);
+  var source=new Source(sources.size(),k,room,fixture,x,y,z,dx,dy,dz,
+      radius*options.reachScale(),power*options.sourceScale(),r,g,b);
   sources.add(source);
   eachInfluenceCell(source,key->influence.computeIfAbsent(key,ignored->new ArrayList<>()).add(source));
  }
@@ -465,9 +471,9 @@ public final class FixtureLighting {
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){double f;
    if(source.room==14)f=1;
-   else if(source.kind==Kind.CANDLE_CHANDELIER)f=.94+.06*Math.sin(cosmeticTick*.37+source.id*2.1);
+   else if(source.kind==Kind.CANDLE_CHANDELIER)f=1-.06*options.flickerScale()*(1-Math.sin(cosmeticTick*.37+source.id*2.1));
    else if(source.kind==Kind.TABLE_LAMP)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?1:0;
-   else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?(.94+.06*Math.sin(cosmeticTick*1.7)):0;
+   else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?(1-.06*options.flickerScale()*(1-Math.sin(cosmeticTick*1.7))):0;
    else f=circuits==null?1:Math.max(0,Math.min(1,(circuits.brightness(source.room,tick)-.085)/.865));
    if(source.fixture>0&&source.kind!=Kind.TELEVISION&&source.kind!=Kind.TABLE_LAMP&&!map.fixtures().state(source.fixture).active())f=0;
    // True circuit, fixture and blackout changes are immediate. Subtle TV
@@ -492,7 +498,7 @@ public final class FixtureLighting {
   * The one short probe visibility check replaces many source-to-point rays.
   */
  public RGB sampleDistanceLod(int room,double x,double y,double z,double viewDistance){
-  if(map==null||room<0||!map.outside(room)||viewDistance<18
+  if(!options.distantOutdoorLod()||map==null||room<0||!map.outside(room)||viewDistance<18
       ||!Double.isFinite(viewDistance))return sample(room,x,y,z);
   lodQueries++;
   var key=new DistantCell(room,Math.round(x*2),Math.round(y*2),Math.round(z*2));
@@ -515,7 +521,10 @@ public final class FixtureLighting {
   Lit cached=colours.get(key);
   if(cached!=null&&cached.revision()==version){cacheHits++;return cached.rgb();}
   boolean exterior=room<0||room>=12||map!=null&&map.outside(room);
-  double r=exterior?.27:(castle!=null?.125:.055),g=exterior?.29:(castle!=null?.129:.059),b=exterior?.34:(castle!=null?.14:.073);
+  double ambientScale=options.ambientScale();
+  double r=(exterior?.27:(castle!=null?.125:.055))*ambientScale,
+      g=(exterior?.29:(castle!=null?.129:.059))*ambientScale,
+      b=(exterior?.34:(castle!=null?.14:.073))*ambientScale;
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
@@ -546,7 +555,8 @@ public final class FixtureLighting {
   if(cached!=null&&cached.revision()==version){
    normalCacheHits++;return cached.rgb();
   }
-  double hemi=.65+.35*Math.max(0,ny),r=.27*hemi,g=.29*hemi,b=.34*hemi;
+  double hemi=.65+.35*Math.max(0,ny),ambientScale=options.ambientScale(),
+      r=.27*hemi*ambientScale,g=.29*hemi*ambientScale,b=.34*hemi*ambientScale;
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
    double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=source.power*factor*angle*fade*(.45+.55*fade)/(1+.13*d2)*diffuse;
    if(weight>.001){
