@@ -133,6 +133,42 @@ public final class FixtureLighting {
   if(key instanceof NormalShadow result)return result.source();
   return -1;
  }
+ /** A changed door can affect a cached ray ONLY when the source-to-receiver
+  * segment could pass through the physical portal aperture. The generous
+  * tolerance covers quantized receiver keys and the thick door frame:
+  * ambiguous rays are evicted, never incorrectly retained. */
+ private boolean mayCrossChangedPortal(Object key,LevelDefinition.Portal p){
+  int id=shadowSourceId(key);
+  if(id<0||id>=sources.size())return true; // unknown key: never risk stale light
+  Source light=sources.get(id);
+  if(!LightModel.portalInfluences(light.x,light.y,light.z,light.radius,
+      p.x(),p.y(),p.z(),p.width(),p.alongX()))return false;
+  double x,y,z;
+  if(key instanceof Shadow shadow){
+   x=shadow.x()/16.0;y=shadow.y()/16.0;z=shadow.z()/16.0;
+  }else if(key instanceof NormalShadow normal){
+   var n=normal.receiver();
+   x=Double.longBitsToDouble(n.x());
+   y=Double.longBitsToDouble(n.y());
+   z=Double.longBitsToDouble(n.z());
+  }else return true;
+  boolean alongX=p.alongX();
+  double sourceNormal=alongX?light.z:light.x;
+  double destinationNormal=alongX?z:x;
+  double plane=alongX?p.z():p.x();
+  double delta=destinationNormal-sourceNormal;
+  // Parallel rays on the door plane are ambiguous; keep correctness.
+  if(Math.abs(delta)<1e-8)return Math.abs(sourceNormal-plane)<.25;
+  double t=(plane-sourceNormal)/delta;
+  if(t<-.02||t>1.02)return false;
+  double along=(alongX?light.x:light.z)+t*((alongX?x:z)-(alongX?light.x:light.z));
+  double height=light.y+t*(y-light.y);
+  double halfWidth=p.width()*.5+.25;
+  double low=p.y()+(p.kind().equals("window")?.8:-.25);
+  double high=p.y()+(p.kind().equals("window")?2.55:2.65);
+  return Math.abs(along-(alongX?p.x():p.z()))<=halfWidth
+      &&height>=low&&height<=high;
+ }
  private String geometry="",state="";private double[] factors=new double[0];
  private long occluderEpoch;
  private final BitSet knownEmissionMaterials=new BitSet(),emissionMaterials=new BitSet();
@@ -460,6 +496,10 @@ public final class FixtureLighting {
   * actual door, so testing just the door cell would leak light through walls. */
  private void invalidateOccludingPortal(LevelDefinition.Portal portal){
   long revision=++generation;
+  // House-shell probes use the shared ray cache, not the resident-chunk
+  // stationary cache. Clearing ALL entries here previously caused 80k+
+  // architectural rays and >1s geometry stalls on a single door toggle.
+  sight.keySet().removeIf(key->mayCrossChangedPortal(key,portal));
   for(var source:sources){
    if(!LightModel.portalInfluences(source.x,source.y,source.z,source.radius,
         portal.x(),portal.y(),portal.z(),portal.width(),portal.alongX()))continue;
@@ -491,9 +531,8 @@ public final class FixtureLighting {
     Arrays.fill(sourceOcclusionRevisions,occluderEpoch);
     sight.clear();colours.clear();normalColours.clear();distant.clear();
    }else{
-    // Shared short-lived ray results cannot know which doorway blocked them.
-    // Cached colours and per-chunk stationary shadows DO know their regions.
-    sight.clear();
+    // Changed aperture rays were selectively evicted above. Static rays
+    // for other rooms must survive this door state, without a second pass.
    }
    lastHidingDensity=map.hidingDensity();portalStateInitialized=true;geometry=nextGeometry;
   }
