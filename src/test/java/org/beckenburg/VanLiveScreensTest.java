@@ -61,10 +61,15 @@ public final class VanLiveScreensTest {
         VanLiveScreens.suspendCamera();
         check(GlbProps.dynamicTextureRevision(camera)==before+2,
             "Repeated suspension must not generate any more texture uploads");
+        // A fresh capture after re-entering the VAN restores real pixels;
+        // the preceding suspension intentionally cleared the older image.
+        VanLiveScreens.camera(realFrame,"CAM H1 / ROOM 3");
+        check(GlbProps.dynamicTextureRevision(camera)==before+3,
+            "A new in-VAN capture must upload one new live texture");
         int pixel=GlbProps.sample(camera,.5,.5);
         check(pixel!=0,"live camera face must sample actual non-black pixels");
         VanLiveScreens.camera(null,"NO POWERED CAMERA");
-        check(GlbProps.dynamicTextureRevision(camera)==before+3,
+        check(GlbProps.dynamicTextureRevision(camera)==before+4,
             "camera disconnect must clear the last displayed feed");
         check(VanLiveScreens.material(VanLiveScreens.Panel.MAP)==GlbProps.VAN_MAP_MATERIAL,
             "map must reuse the existing host-authoritative tactical texture");

@@ -9,10 +9,18 @@ public final class EmissionCacheBudgetTest {
     public static void main(String[] args)throws Exception{
         if(args.length>0){
             var lighting=new FixtureLighting(new CastleHubMap());
-            for(int id:new int[]{GlbProps.VAN_MAP_MATERIAL,Integer.MAX_VALUE,Integer.MAX_VALUE-1,-4}){
-                if(lighting.emission(id,0,0,0).energy()!=0)throw new AssertionError("Reserved material invented fixture emission");
+            // The VAN map is a deliberately self-illuminated LCD sentinel,
+            // NOT a fixture light and NOT a dense material-cache index.
+            var mapFace=lighting.emission(GlbProps.VAN_MAP_MATERIAL,0,0,0);
+            if(mapFace.energy()<=0)
+                throw new AssertionError("Live VAN map lost its intentionally lit screen");
+            // Other unallocated sentinel IDs must stay dark and must never
+            // allocate a multi-gigabit BitSet in the bounded-heap child.
+            for(int id:new int[]{Integer.MAX_VALUE,Integer.MAX_VALUE-1,-4}){
+                if(lighting.emission(id,0,0,0).energy()!=0)
+                    throw new AssertionError("Unallocated reserved material invented fixture emission: "+id);
             }
-            System.out.println("PASS sparse reserved material IDs within 96MiB Java heap");return;
+            System.out.println("PASS intentionally lit VAN map and sparse unallocated material IDs within 96MiB Java heap");return;
         }
         String binary=System.getProperty("os.name").toLowerCase().contains("win")?"java.exe":"java";
         var child=new ProcessBuilder(Path.of(System.getProperty("java.home"),"bin",binary).toString(),"-Xmx96m","-ea",
