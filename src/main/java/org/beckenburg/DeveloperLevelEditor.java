@@ -272,6 +272,10 @@ public final class DeveloperLevelEditor extends JPanel {
         retroSfx.setToolTipText("Inspect PCM WAV memory and export separate 11/22-kHz PSX-style mono WAVs; game mixer unchanged");
         retroSfx.addActionListener(e->org.beckenburg.editor.EditorSoundLab.show(window));
         commands.add(retroSfx);
+        JButton campaignLab=button("CAMPAIGN");
+        campaignLab.setToolTipText("Portable authoring state graph; safe idempotent transitions, flag/dependency inspection; NOT live game control");
+        campaignLab.addActionListener(e->org.beckenburg.editor.EditorCampaignLab.show(window));
+        commands.add(campaignLab);
         JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());waterModules.setToolTipText("Reusable water modules, shapes, snap handles and weather preview");waterModules.addActionListener(e->EnvironmentModuleEditor.open(window,"castle"));commands.add(waterModules);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
