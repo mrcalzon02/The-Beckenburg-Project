@@ -30,6 +30,7 @@ public final class CastleEditorProject implements EditorProject<CastleLevelEdits
     /** Models are still one selectable GLB each: category names organize the
      * real source meshes, never group them into decorative fake prefabs. */
     private static String modelCategory(String mesh){
+        if(ImportedAssetLibrary.approved(mesh))return "Models / Imported";
         if(mesh.endsWith("_fixed")||mesh.equals("monitoring_screen_mp_1")||
                 mesh.equals("blender_site_map_fixed"))return "Models / Van fixtures";
         if(mesh.equals("painting_1")||mesh.equals("carpet_mp_1")||
