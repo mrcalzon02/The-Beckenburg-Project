@@ -2,7 +2,9 @@ package org.beckenburg;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-/** Headless proof that original archive artwork decodes and paints inside Java Swing. */
+/** Headless proof that original archive artwork decodes and paints inside Java Swing.
+ * The five-field contract must match the live weather schedule UI, not a
+ * deleted six-field condition selector. */
 public final class PsxHorrorUiTest{
  public static void main(String[] args){
   if(PsxHorrorUi.imageCount()<60)throw new AssertionError("Image catalog incomplete: "+PsxHorrorUi.imageCount());
@@ -21,10 +23,10 @@ public final class PsxHorrorUiTest{
   b.paint(surface.getGraphics());
   if((surface.getRGB(5,5)>>>24)==0)throw new AssertionError("Button not painted");
   JTextField field=new JTextField("demo");PsxHorrorUi.styleTextField(field);
-  JComboBox<String>[] fields=new JComboBox[6];
+  JComboBox<String>[] fields=new JComboBox[5];
   for(int i=0;i<fields.length;i++)fields[i]=new JComboBox<>(new String[]{"Option A","Option B"});
   JPanel form=InvestigationGame.soloContractForm(
-      fields[0],fields[1],fields[2],fields[3],fields[4],fields[5]);
+      fields[0],fields[1],fields[2],fields[3],fields[4]);
   form.setSize(660,380);form.doLayout();
   for(JComboBox<String> combo:fields){
    if(combo.getHeight()<26||combo.getHeight()>48)
