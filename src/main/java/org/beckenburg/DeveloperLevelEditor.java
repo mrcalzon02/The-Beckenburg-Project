@@ -255,6 +255,10 @@ public final class DeveloperLevelEditor extends JPanel {
         authoringGuide.setToolTipText("Offline editor engineering reference and machine manifest");
         authoringGuide.addActionListener(e->org.beckenburg.editor.EditorAuthoringReference.show(window));
         commands.add(authoringGuide);
+        JButton sceneAudit=button("SCENE AUDIT");
+        sceneAudit.setToolTipText("Check this live castle scene for intersecting objects and duplicate IDs; non-blocking warnings");
+        sceneAudit.addActionListener(e->showSceneAudit());
+        commands.add(sceneAudit);
         JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());waterModules.setToolTipText("Reusable water modules, shapes, snap handles and weather preview");waterModules.addActionListener(e->EnvironmentModuleEditor.open(window,"castle"));commands.add(waterModules);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
@@ -309,6 +313,61 @@ public final class DeveloperLevelEditor extends JPanel {
         refresh();
         timer=new Timer(90,e->frame());timer.start();
     }
+    /** Manual, non-blocking QA against the real saved/unsaved castle geometry. */
+    private void showSceneAudit(){
+        JDialog dialog=new JDialog(window,"Castle Scene Audit — advisory",false);
+        DefaultListModel<CastleEditorAudit.Finding> findings=new DefaultListModel<>();
+        JList<CastleEditorAudit.Finding> report=new JList<>(findings);
+        report.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        JLabel count=new JLabel();
+        Runnable scan=()->{
+            findings.clear();
+            for(CastleEditorAudit.Finding f:CastleEditorAudit.inspect(data))
+                findings.addElement(f);
+            count.setText(findings.isEmpty()
+                ?"No centre-overlap, blocked-spawn or duplicate-ID warnings detected; visual review still required."
+                :findings.size()+" advisory findings — select one to inspect; refresh after edits.");
+        };
+        JButton update=button("REFRESH");
+        update.addActionListener(e->scan.run());
+        JButton jump=button("JUMP TO OBJECT");
+        jump.addActionListener(e->{
+            CastleEditorAudit.Finding f=report.getSelectedValue();
+            if(f==null){count.setText("Select a finding first.");return;}
+            // Clear hierarchy filtering so an affected scene object is selectable.
+            filter.setText("");
+            selectId(f.kind(),f.id());
+            renderer.x=Math.max(.5,Math.min(42.5,f.x()-1.8));
+            renderer.z=Math.max(.5,Math.min(35.5,f.z()-1.8));
+            renderer.eyeHeight=Math.max(.7,Math.min(10.5,f.y()+1.4));
+            renderer.yaw=Math.atan2(f.x()-renderer.x,f.z()-renderer.z);
+            renderer.pitch=-.12;
+            renderer.setEditorSelection(f.x(),f.y(),f.z());
+            status.setText("AUDIT: "+f.code()+" — "+f.id()+" (advisory)");
+            dialog.dispose();
+            viewport.requestFocusInWindow();
+        });
+        report.addMouseListener(new MouseAdapter(){
+            @Override public void mouseClicked(MouseEvent event){
+                if(event.getClickCount()==2)jump.doClick();
+            }
+        });
+        JButton close=button("CLOSE");
+        close.addActionListener(e->dialog.dispose());
+        JPanel actions=new JPanel(new FlowLayout(FlowLayout.RIGHT,4,3));
+        actions.add(update);actions.add(jump);actions.add(close);
+        JPanel view=new JPanel(new BorderLayout(4,4));
+        view.setBorder(BorderFactory.createEmptyBorder(6,6,6,6));
+        view.add(count,BorderLayout.NORTH);
+        view.add(new JScrollPane(report),BorderLayout.CENTER);
+        view.add(actions,BorderLayout.SOUTH);
+        dialog.setContentPane(view);
+        dialog.setSize(930,410);
+        dialog.setLocationRelativeTo(window);
+        scan.run();
+        dialog.setVisible(true);
+    }
+
     private static JButton button(String name){return new JButton(name);}
     private JPanel objectInspector(){
         JPanel panel=new JPanel(new BorderLayout(4,3));
