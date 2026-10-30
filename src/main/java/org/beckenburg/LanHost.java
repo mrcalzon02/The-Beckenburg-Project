@@ -328,6 +328,10 @@ public final class LanHost implements AutoCloseable {
     public org.beckenburg.editor.ai.NpcAiTelemetry.Snapshot aiDiagnosticsSnapshot(){
         return aiDiagnostics.snapshot();
     }
+    /** Only the local JVM can read this; it is never a GhostDomain or LAN observation. */
+    public String aiDiagnosticsCsv(){
+        return org.beckenburg.editor.ai.NpcAiTelemetryReport.csv(aiDiagnostics.snapshot());
+    }
     public boolean running(){synchronized(mutex){return running;}}
     public int connected(){synchronized(mutex){int count=0;for(Peer peer:seats)if(peer!=null)count++;return count;}}
     public int reservedSeats(){synchronized(mutex){int count=0;for(Reservation r:reserved)if(r!=null)count++;return count;}}
@@ -2930,7 +2934,11 @@ public final class LanHost implements AutoCloseable {
     }
     private void notifyAllPeers(String event){for(Peer peer:seats)if(peer!=null)reply(peer,event);}
     private static void reply(Peer peer,String event){peer.outbound.offer(event);}
-    @Override public void close(){for(var bot:campaignBots)bot.close();campaignBots.clear();closed=true;if(voice!=null)voice.close();try{listener.close();}catch(IOException ignored){}
+    @Override public void close(){
+        if(!closed&&aiDiagnostics.enabled())
+            System.err.println("BECKENBURG LOCAL HOST AI PROFILE (aggregate timings in nanoseconds)\\n"+
+                aiDiagnosticsCsv());
+        for(var bot:campaignBots)bot.close();campaignBots.clear();closed=true;if(voice!=null)voice.close();try{listener.close();}catch(IOException ignored){}
         for(Socket s:transports)try{s.close();}catch(IOException ignored){}
         synchronized(mutex){for(Peer peer:seats)if(peer!=null){try{peer.socket.close();}catch(IOException ignored){}}}
         clock.shutdownNow();workers.shutdownNow();
