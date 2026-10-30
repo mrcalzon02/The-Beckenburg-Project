@@ -64,7 +64,11 @@ public final class LightingModule {
         Preset selected;
         try {selected=Preset.valueOf(PREF.get("preset","BALANCED"));}
         catch(IllegalArgumentException ex){selected=Preset.BALANCED;}
-        Settings defaults=preset(selected==Preset.CUSTOM?Preset.BALANCED:selected);
+        // Named presets are canonical: an upgrade must not silently keep
+        // an obsolete darkness/reach value behind a "Performance" label.
+        // Only Custom restores individually persisted fields.
+        if(selected!=Preset.CUSTOM)return preset(selected);
+        Settings defaults=preset(Preset.BALANCED);
         int cells=PREF.getInt("cellMetres",defaults.cellMetres());
         if(cells!=2&&cells!=4&&cells!=8)cells=defaults.cellMetres();
         return new Settings(selected,
@@ -81,6 +85,8 @@ public final class LightingModule {
     /** Applied locally; never replicated to LAN host or serialized into a save. */
     public static synchronized void apply(Settings options){
         Objects.requireNonNull(options,"lighting options");
+        if(options.preset()!=Preset.CUSTOM&&!options.equals(preset(options.preset())))
+            throw new IllegalArgumentException("Named lighting presets require their canonical values");
         if(options.equals(active))return;
         PREF.put("preset",options.preset().name());
         PREF.putInt("ambient",options.ambientPercent());
