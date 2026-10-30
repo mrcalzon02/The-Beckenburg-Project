@@ -58,6 +58,21 @@ public final class RuntimeSceneContractTest {
             RuntimeScene.Transform.identity(),List.of()));
         check(RuntimeSceneDiagnostics.inspect(game).stream().anyMatch(d->
             d.code().equals("PARENT_CYCLE")),"Indirect parent cycle detected");
+        InMemoryRuntimeScene shared=new InMemoryRuntimeScene("portable-level");
+        shared.replace(room);
+        shared.replace(lamp);
+        RuntimeScene.Snapshot saved=shared.snapshot();
+        boolean cycleRejected=false;
+        try{
+            shared.replace(new RuntimeScene.Node("room","Room","lamp","geometry",
+                RuntimeScene.Transform.identity(),List.of()));
+        }catch(IllegalArgumentException expected){cycleRejected=true;}
+        check(cycleRejected,"Shared scene rejects reparent cycles");
+        shared.remove("room");
+        check(shared.nodes().isEmpty(),"Subtree deletion leaves no orphan nodes");
+        shared.restore(saved);
+        check(shared.nodes().size()==2&&RuntimeSceneDiagnostics.inspect(shared).isEmpty(),
+            "Shared scene restores a valid scene snapshot");
         System.out.println("PASS portable runtime scene identity, components, hierarchy and snapshot");
     }
 }
