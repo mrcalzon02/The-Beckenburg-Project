@@ -40,7 +40,11 @@ public final class SceneRenderer {
                     +" peak_triangles="+p.peakTriangles()
                     +" peak_shadow_rays="+p.peakShadowRays()
                     +" peak_invalidated_cells="+p.peakInvalidatedCells()
-                    +" gpu_readback_misses="+p.gpuReadbackMisses());
+                    +" gpu_readback_misses="+p.gpuReadbackMisses()
+                    +" resident_world_bytes="+residentWorldBytes
+                    +" house_shell_bytes="+shellResidentBytes
+                    +" stable_gpu_cache_bytes="+stableGpuBytes
+                    +" transient_budget_fallbacks="+residentWorldBudgetFallbacks);
             }
         }
     }
@@ -2614,6 +2618,7 @@ public final class SceneRenderer {
     private final java.util.Map<Object,ResidentWorldChunk> castleAssemblies=new java.util.HashMap<>();
     private static final long RESIDENT_WORLD_LIMIT=128L*1024*1024;
     private long residentWorldBytes,residentWorldBuilds,residentWorldHits;
+    private long residentWorldBudgetFallbacks;
     private final java.util.Map<SceneryInstances.Instance,ResidentWorldChunk> residentScenery=new java.util.IdentityHashMap<>();
     private record AuxiliaryWorld(List<Face> source,List<ResidentWorldChunk> chunks){}
     private final java.util.Map<Object,AuxiliaryWorld> auxiliaryWorld=new java.util.HashMap<>();
@@ -2782,6 +2787,7 @@ public final class SceneRenderer {
             for(var old:chunk.batches.values())before+=(long)old.vertices().length*Float.BYTES;
             for(var built:batches.entrySet())after+=(long)built.getValue().count*Float.BYTES;
             if(residentWorldBytes-before+after>RESIDENT_WORLD_LIMIT*lightingSettings.cacheBudgetPercent()/100L){
+                residentWorldBudgetFallbacks++;
                 // A bounded fallback retains correct geometry and lighting.
                 for(var built:batches.entrySet()){
                     float[] vertices=built.getValue().complete();
