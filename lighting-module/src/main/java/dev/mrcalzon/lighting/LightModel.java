@@ -25,6 +25,21 @@ public final class LightModel {
             case OMNIDIRECTIONAL -> 1;
         };
     }
+    /**
+     * Width of the source's fade zone, not a costly screen-space blur.
+     * 1.0 exactly matches legacy 1-distance/radius falloff; smaller values
+     * hold a constant inner core and fade only near the outer edge.
+     * Shadows remain hard until authored geometry says otherwise.
+     */
+    public static double diffusionFade(double distance,double radius,double edgeFraction){
+        if(!Double.isFinite(distance)||!Double.isFinite(radius)
+                ||!Double.isFinite(edgeFraction)||radius<=0||edgeFraction<=0
+                ||edgeFraction>1)throw new IllegalArgumentException("diffusion radius");
+        if(distance>=radius)return 0;
+        double start=radius*(1-edgeFraction);
+        if(distance<=start)return 1;
+        return (radius-distance)/(radius*edgeFraction);
+    }
     /** Physically masked source-to-receiver contribution, excluding game state factor. */
     public static double attenuation(double sourcePower,double angle,double fade,
                                      double distanceSquared,double diffuse){
