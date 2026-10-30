@@ -247,8 +247,26 @@ jobs:
             $assets += 'dist/installer/LevelEditorKit-Java17.jar'
           }
           $notes="Playable development update from $env:GITHUB_SHA. Blockers: Java game builds, packaged TCP round finishes, real Castle and solo game launch, independent Windows setup, installed EXE reaches Castle home, and updater helper is valid. Extended regressions, art/audio audits and GPU performance benchmarks are advisory; renderer packaged: $env:BECKENBURG_RENDERER_MODE."
-          & gh release create $env:BECKENBURG_TAG @assets --target $env:GITHUB_SHA --title "Beckenburg $env:BECKENBURG_RELEASE_VERSION" --notes $notes
-          if ($LASTEXITCODE -ne 0) { throw 'GitHub release publication failed' }
+          # Releases are an external permission-sensitive operation. Retry
+          # transient API failures, and handle a partially created release
+          # without claiming that its update assets have been published.
+          $uploaded=$false
+          for($attempt=1;$attempt -le 3;$attempt++){
+            $releaseFound=$false
+            & gh release view $env:BECKENBURG_TAG --json tagName *> $null
+            if($LASTEXITCODE -eq 0) { $releaseFound=$true }
+            if($releaseFound){
+              & gh release upload $env:BECKENBURG_TAG @assets --clobber
+            }else{
+              & gh release create $env:BECKENBURG_TAG @assets --target $env:GITHUB_SHA --title "Beckenburg $env:BECKENBURG_RELEASE_VERSION" --notes $notes
+            }
+            if($LASTEXITCODE -eq 0){$uploaded=$true;break}
+            Write-Warning "Release attempt $attempt failed; GitHub API may be unavailable or this token may lack permission"
+            if($attempt -lt 3){Start-Sleep -Seconds (4*$attempt)}
+          }
+          if(-not $uploaded) {
+            throw 'GitHub release publication failed after retries; preserve installer artifact for recovery'
+          }
           $published=& gh release view $env:BECKENBURG_TAG --json tagName,isDraft,assets | ConvertFrom-Json
           if($LASTEXITCODE -ne 0 -or $published.isDraft -or $published.tagName -ne $env:BECKENBURG_TAG) {
             throw 'Published update could not be confirmed on GitHub'
@@ -260,3 +278,14 @@ jobs:
             }
           }
           Write-Host "PUBLISHED and verified update $env:BECKENBURG_TAG / $env:GITHUB_SHA"
+      - name: Preserve built installer for recovery if GitHub Releases rejects publication
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-installer-build-${{ github.run_id }}
+          path: |
+            dist/installer/Beckenburg-*-Windows-x64.exe
+            dist/installer/SHA256SUMS.txt
+            dist/installer/LevelEditorKit-Java17.jar
+          if-no-files-found: warn
+          retention-days: 14
