@@ -2936,7 +2936,7 @@ public final class LanHost implements AutoCloseable {
     private static void reply(Peer peer,String event){peer.outbound.offer(event);}
     @Override public void close(){
         if(!closed&&aiDiagnostics.enabled())
-            System.err.println("BECKENBURG LOCAL HOST AI PROFILE (aggregate timings in nanoseconds)\\n"+
+            System.err.println("BECKENBURG LOCAL HOST AI PROFILE (aggregate timings in nanoseconds)\n"+
                 aiDiagnosticsCsv());
         for(var bot:campaignBots)bot.close();campaignBots.clear();closed=true;if(voice!=null)voice.close();try{listener.close();}catch(IOException ignored){}
         for(Socket s:transports)try{s.close();}catch(IOException ignored){}
