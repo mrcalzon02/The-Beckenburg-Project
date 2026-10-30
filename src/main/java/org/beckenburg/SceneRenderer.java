@@ -87,6 +87,17 @@ public final class SceneRenderer {
     }
     private BufferedImage frame = new BufferedImage(W,H,BufferedImage.TYPE_INT_RGB);
     private int[] pixels=((DataBufferInt)frame.getRaster().getDataBuffer()).getData();
+    /** Allocated once per active framebuffer resolution when AA or chromatic
+     * sampling needs an unmodified source. Never cloned on each game frame. */
+    private int[] graphicsEffectsScratch;
+    private void applyGraphicsEffects(double clock){
+        var options=GraphicsOptions.current();
+        if(options.antialias()!=GraphicsOptions.Antialias.OFF||options.chromatic()){
+            if(graphicsEffectsScratch==null||graphicsEffectsScratch.length!=pixels.length)
+                graphicsEffectsScratch=new int[pixels.length];
+        }
+        GraphicsEffects.apply(pixels,renderWidth,renderHeight,options,clock,graphicsEffectsScratch);
+    }
     private double[] depths=new double[W*H];
     private PsxPipeline.Preset psxPreset=PsxPipeline.selected();
     public PsxPipeline.Preset psxPreset(){return psxPreset;}
@@ -2913,7 +2924,7 @@ public final class SceneRenderer {
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         long psxDone=System.nanoTime();
-        GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
+        applyGraphicsEffects(clock);
         long effectsDone=System.nanoTime();
         long finished=effectsDone;
         int count=castleStaticGeometry.size()+dynamic.size();
@@ -3107,7 +3118,7 @@ public final class SceneRenderer {
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         long psxDone=System.nanoTime();
-        GraphicsEffects.apply(pixels,renderWidth,renderHeight,GraphicsOptions.current(),clock);
+        applyGraphicsEffects(clock);
         long effectsDone=System.nanoTime();
         int localRoom=map.roomAt(x,eyeHeight-.85,z);
         GhostHauntingFolio.paint(pixels,renderWidth,renderHeight,hauntings,
