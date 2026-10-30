@@ -19,6 +19,8 @@ on:
       - 'src/main/java/org/beckenburg/LanGhostPursuit.java'
       - 'src/main/java/org/beckenburg/LanHost.java'
       - 'src/test/java/org/beckenburg/GhostAiNavigationAuditTest.java'
+      - 'src/main/java/org/beckenburg/GhostAiScenarioRunner.java'
+      - 'src/test/java/org/beckenburg/GhostAiScenarioRunnerTest.java'
       - 'src/main/java/org/beckenburg/AssetImportDialog.java'
       - 'src/main/java/org/beckenburg/ImportedAssetLibrary.java'
       - 'src/main/java/org/beckenburg/CastleEditorAudit.java'
@@ -152,6 +154,14 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\GhostAiNavigationAuditTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GhostAiNavigationAuditTest
+          if errorlevel 1 exit /b 1
+      - name: Diagnostic — deterministic multi-species ghost action scenarios
+        continue-on-error: true
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\GhostAiScenarioRunnerTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GhostAiScenarioRunnerTest
           if errorlevel 1 exit /b 1
       - name: Generate repair screenshots with the actual renderer
         shell: cmd
