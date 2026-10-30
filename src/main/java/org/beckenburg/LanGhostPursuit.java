@@ -23,6 +23,7 @@ public final class LanGhostPursuit {
     private final HouseMap map;
     private final GhostIdentity.Type archetype;
     private final Random random;
+    private final org.beckenburg.editor.ai.NpcAiTelemetry diagnostics;
     private Echo memory;
     private Search search;
     private long sequence;
@@ -34,8 +35,14 @@ public final class LanGhostPursuit {
 
     public LanGhostPursuit(HouseMap map,long seed){this(map,seed,GhostIdentity.Type.SPIRIT);}
     public LanGhostPursuit(HouseMap map,long seed,GhostIdentity.Type type) {
+        this(map,seed,type,new org.beckenburg.editor.ai.NpcAiTelemetry());
+    }
+    /** The host supplies per-session opt-in telemetry; no global shared counters. */
+    public LanGhostPursuit(HouseMap map,long seed,GhostIdentity.Type type,
+            org.beckenburg.editor.ai.NpcAiTelemetry diagnostics) {
         this.map=Objects.requireNonNull(map);
         this.archetype=Objects.requireNonNull(type);
+        this.diagnostics=Objects.requireNonNull(diagnostics);
         random=new Random(seed);
     }
     /** World-authorized events only. Coarse 2m cells intentionally discard exact positions. */
@@ -45,7 +52,10 @@ public final class LanGhostPursuit {
                 ||sourceRoom<0||sourceRoom>=HouseMap.EXTRACTION_ROOM
                 ||!Double.isFinite(x)||!Double.isFinite(z)||tick<0
                 ||map.roomAt(x,map.groundHeight(x,z,sourceRoom),z)!=sourceRoom)return;
-        int attenuation = LanAcoustics.cost(map,ghostRoom,sourceRoom);
+        long hearingStart=diagnostics.begin();
+        int attenuation;
+        try{attenuation=LanAcoustics.cost(map,ghostRoom,sourceRoom);}
+        finally{diagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,hearingStart);}
         if(attenuation > kind.budget)return;
         // Doors, masonry and wind shorten each finite-lived acoustic clue.
         int lifetime=kind.lifetime-attenuation*5;
@@ -141,6 +151,11 @@ public final class LanGhostPursuit {
                 (int)Math.round(Math.max(-100,Math.min(100,dz*100))));
     }
     private int route(int from,int to){
+        long started=diagnostics.begin();
+        try{return calculateRoute(from,to);}
+        finally{diagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.ROUTE,started);}
+    }
+    private int calculateRoute(int from,int to){
         if(from==to)return from;
         boolean[] seen=new boolean[HouseMap.ROOM_COUNT];
         ArrayDeque<int[]> todo=new ArrayDeque<>();todo.add(new int[]{from,-1});seen[from]=true;
