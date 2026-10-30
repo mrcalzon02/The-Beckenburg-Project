@@ -505,6 +505,13 @@ public final class FixtureLighting {
         portal.x(),portal.y(),portal.z(),portal.width(),portal.alongX()))continue;
    sourceOcclusionRevisions[source.id]=revision;
    eachInfluenceCell(source,key->{
+    // A lamp's entire sphere is NOT a shadow dependency of this door.
+    // Only cells reachable by a ray through its aperture need new probes.
+    // Keep the lamp's own cell invalidated for existing source-local caches.
+    if(!key.equals(cell(source.x,source.y,source.z))
+        &&!PortalLightCellFilter.mayCross(source.x,source.y,source.z,
+            key.x,key.y,key.z,cellSize,portal.x(),portal.y(),portal.z(),
+            portal.width(),portal.alongX(),portal.kind().equals("window")))return;
     changedCells.put(key,revision);occluderCells.put(key,revision);invalidatedCells++;
    });
   }
