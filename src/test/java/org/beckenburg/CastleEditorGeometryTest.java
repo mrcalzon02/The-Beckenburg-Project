@@ -81,7 +81,7 @@ public final class CastleEditorGeometryTest {
                     "Live roof geometry blocks light through roof");
             }finally{live.restore(old);}
             var project=new CastleEditorProject(restored);
-            check(project.assets().stream().anyMatch(x->x.category().equals("Models")),
+            check(project.assets().stream().anyMatch(x->x.uri().startsWith("assets://models/")),
                 "Adapter offers licensed game models");
             check(project.assets().stream().anyMatch(x->x.category().equals("Materials")),
                 "Adapter offers game textures");
