@@ -67,3 +67,10 @@ Use compact rectangular panels, sharp optional pixel fonts, bounded dithered bac
 - The standalone Java 17 editor kit includes a concise offline guide viewer. The wiki and manifest are versioned sources; the viewer is an orientation aid, not the implementation authority.
 - For the two sites, publish the same policy with site-relative links. Original PDFs remain owner-supplied source material; these pages are an **adapted synthesis** rather than a verbatim republication.
 - Actual installed Windows playtest, network/camera and hardware GPU profiling remain separate verifications. Do not equate a successful documentation commit with those tests.
+
+## Current editor-facing adoption checkpoint (2026-10-30)
+
+- The **PSX GUIDE** toolbar action opens a bundled offline `EditorAuthoringReference` viewer and links to the full Markdown/JSON authorities; it is available in the portable editor JAR.
+- The **SCENE AUDIT** toolbar action is Castle-specific: real `CastleLevelEdits` wall collision checks for possibly embedded props/lights, globally duplicate authoring IDs, spawn wall/nav blockers and a jump-to-object review. It is manually invoked, not a per-frame profiler or full geometric mesh-intersection solver.
+- `CastleEditorAuditTest` is a non-blocking focused-workflow diagnostic. A successful source commit does not prove the full Windows installer and interactive window acceptance.
+- General-purpose prefab placement, PVS export, typed cross-game inspector, live one-button playtest and scene-format parity remain roadmap work, **not** delivered by these documentation and initial audit changes.
