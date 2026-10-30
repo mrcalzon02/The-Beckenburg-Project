@@ -2,6 +2,10 @@ package org.beckenburg;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.EnumMap;
+import java.util.Map;
+import javax.imageio.ImageIO;
 import java.util.Objects;
 import java.util.random.RandomGenerator;
 import javax.swing.JPanel;
@@ -14,6 +18,35 @@ import javax.swing.JPanel;
 public final class LobbyGhostAvatar {
     private LobbyGhostAvatar(){}
     private static final int[] FACINGS={0,2,6};
+    /**
+     * The lobby displays each Hunter's ORIGINAL, unsegmented concept portrait.
+     * The compressed 128x224 directional gameplay sprites are not lobby art:
+     * their GrabCut mask removes legitimate dark costume/limb pixels.
+     */
+    private static final Map<CharacterVisuals.Hunter,BufferedImage> HUNTER_PORTRAITS
+        =loadOriginalHunterPortraits();
+
+    private static Map<CharacterVisuals.Hunter,BufferedImage> loadOriginalHunterPortraits(){
+        EnumMap<CharacterVisuals.Hunter,BufferedImage> images=
+            new EnumMap<>(CharacterVisuals.Hunter.class);
+        for(var hunter:CharacterVisuals.Hunter.values()){
+            String path="lobby-hunters/"+hunter.name().toLowerCase(java.util.Locale.ROOT)+".png";
+            try(var stream=LobbyGhostAvatar.class.getResourceAsStream(path)){
+                if(stream==null)
+                    throw new IllegalStateException("Original Hunter lobby art not packaged: "+path);
+                BufferedImage original=ImageIO.read(stream);
+                if(original==null||original.getWidth()<150||original.getHeight()<350)
+                    throw new IllegalStateException("Missing intact original Hunter panel: "+path);
+                images.put(hunter,original);
+            }catch(IOException broken){
+                throw new IllegalStateException("Cannot read approved original Hunter art: "+path,broken);
+            }
+        }
+        return Map.copyOf(images);
+    }
+    static BufferedImage originalHunterPortrait(CharacterVisuals.Hunter selected){
+        return HUNTER_PORTRAITS.get(Objects.requireNonNull(selected));
+    }
     private static final Color[] TINTS={
         new Color(115,187,224,105), new Color(169,116,218,105),
         new Color(119,218,175,105), new Color(216,170,118,105),
@@ -86,8 +119,13 @@ public final class LobbyGhostAvatar {
                 g.drawString(ghost?"GHOST PLAYER":"HUNTER PLAYER",18,29);
 
                 String identity=ghost?"banshee":hunter.name().toLowerCase(java.util.Locale.ROOT);
-                BufferedImage sprite=DirectionalSprites.frame(identity,ghost?look.facing():0);
-                Rectangle bounds=artBounds(sprite);
+                BufferedImage sprite=ghost
+                    ?DirectionalSprites.frame(identity,look.facing())
+                    :originalHunterPortrait(hunter);
+                // An opaque panel is intentional: all approved source pixels
+                // remain, including limbs/background the auto-mask discarded.
+                Rectangle bounds=ghost?artBounds(sprite):
+                    new Rectangle(0,0,sprite.getWidth(),sprite.getHeight());
                 int availableW=Math.max(1,w-38),availableH=Math.max(1,h-100);
                 double scale=Math.min(availableW/(double)bounds.width,
                     availableH/(double)bounds.height);
@@ -107,7 +145,8 @@ public final class LobbyGhostAvatar {
                     sprite=tinted;
                 }
                 g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
-                    RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+                    ghost?RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR
+                         :RenderingHints.VALUE_INTERPOLATION_BILINEAR);
                 g.drawImage(sprite,left,top,left+sw,top+sh,
                     bounds.x,bounds.y,bounds.x+bounds.width,bounds.y+bounds.height,null);
                 g.setColor(new Color(176,189,206));
