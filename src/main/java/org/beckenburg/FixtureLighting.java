@@ -260,7 +260,7 @@ public final class FixtureLighting {
    if(d2>source.radius*source.radius||normal&&d2<1e-8)continue;
    double d=Math.sqrt(d2),angle=!normal&&d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);
    double diffuse=normal?Math.max(0,(-nx*dx-ny*dy-nz*dz)/Math.max(.001,d)):1;
-   double fade=1-d/source.radius,w=LightModel.attenuation(source.power,angle,fade,d2,diffuse);
+   double fade=LightModel.diffusionFade(d,source.radius,options.diffusionFraction()),w=LightModel.attenuation(source.power,angle,fade,d2,diffuse);
    if(w<(normal?.001:.002)||angle<.001||diffuse<.001)continue;
    Object key=normal?new NormalShadow(source.id,new NormalKey(room,Double.doubleToLongBits(x),Double.doubleToLongBits(y),Double.doubleToLongBits(z),Double.doubleToLongBits(nx),Double.doubleToLongBits(ny),Double.doubleToLongBits(nz))):
        new Shadow(source.id,room,Math.round(x*16),Math.round(y*16),Math.round(z*16));
@@ -532,7 +532,7 @@ public final class FixtureLighting {
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
-   double fade=1-d/source.radius,weight=factor*LightModel.attenuation(source.power,angle,fade,d2,1);if(weight<.002)continue;
+   double fade=LightModel.diffusionFade(d,source.radius,options.diffusionFraction()),weight=factor*LightModel.attenuation(source.power,angle,fade,d2,1);if(weight<.002)continue;
    Shadow shadow=new Shadow(source.id,room,key.x,key.y,key.z);Boolean visible=cachedShadow(shadow);
    if(visible==null){double back=Math.min(.12,d*.20)/Math.max(.001,d);shadowRays++;
     // Check architecture to the receiving face before applying prop self-shadow
@@ -562,7 +562,7 @@ public final class FixtureLighting {
   double hemi=.65+.35*Math.max(0,ny),ambientScale=options.ambientScale(),
       r=.27*hemi*ambientScale,g=.29*hemi*ambientScale,b=.34*hemi*ambientScale;
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
-   double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=1-d/source.radius,weight=factor*LightModel.attenuation(source.power,angle,fade,d2,diffuse);
+   double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=LightModel.diffusionFade(d,source.radius,options.diffusionFraction()),weight=factor*LightModel.attenuation(source.power,angle,fade,d2,diffuse);
    if(weight>.001){
     var shadow=new NormalShadow(source.id,key);Boolean visible=cachedShadow(shadow);
     if(visible==null){normalRays++;
