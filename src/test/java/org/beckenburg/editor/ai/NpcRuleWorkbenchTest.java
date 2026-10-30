@@ -19,9 +19,10 @@ public final class NpcRuleWorkbenchTest {
         String machine=NpcRuleExport.toJson(book);
         ok(machine.contains("\\\"schema\\\":\\\"beckenburg.npc-canonical-rule-export/v1\\\""),
             "Machine export has stable schema");
-        ok(machine.contains("\\\"ANCIENT_SHADE\\\"")&&machine.contains("\\\"CAMERA_ONLY\\\""),
+        ok(machine.contains("\\\"id\\\":\\\"ANCIENT_SHADE\\\"")&&machine.contains("\\\"CAMERA_ONLY\\\""),
             "Machine export reads all rule entries");
-        ok(machine.indexOf("\\\"ANCIENT_SHADE\\\"")<machine.indexOf("\\\"SHADE\\\""),
+        ok(machine.indexOf("\\\"id\\\":\\\"ANCIENT_SHADE\\\"") <
+            machine.indexOf("\\\"id\\\":\\\"SHADE\\\""),
             "JSON species order deterministic");
         try{
             java.nio.file.Path folder=java.nio.file.Files.createTempDirectory("npc-rule-test-");
