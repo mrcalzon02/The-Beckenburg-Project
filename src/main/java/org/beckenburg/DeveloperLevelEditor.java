@@ -276,6 +276,10 @@ public final class DeveloperLevelEditor extends JPanel {
         campaignLab.setToolTipText("Portable authoring state graph; safe idempotent transitions, flag/dependency inspection; NOT live game control");
         campaignLab.addActionListener(e->org.beckenburg.editor.EditorCampaignLab.show(window));
         commands.add(campaignLab);
+        JButton billboardLab=button("BILLBOARDS");
+        billboardLab.setToolTipText("Import PNG/JPEG, compare retro palette and aspect presets, estimate memory, then bake separate image; 3D binding pending");
+        billboardLab.addActionListener(e->org.beckenburg.editor.EditorBillboardLab.show(window));
+        commands.add(billboardLab);
         JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());waterModules.setToolTipText("Reusable water modules, shapes, snap handles and weather preview");waterModules.addActionListener(e->EnvironmentModuleEditor.open(window,"castle"));commands.add(waterModules);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
