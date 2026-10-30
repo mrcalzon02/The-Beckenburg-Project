@@ -1,3 +1,4 @@
+[Asset importer / over-regression guide](docs/wiki/psx-asset-import-and-regression.md) · [Machine rules](docs/development/psx-asset-import-reference.json)
 [PSX editor guide](docs/wiki/psx-editor-engineering-guide.md) · [Machine rules](docs/development/psx-editor-reference.json) · [Editor acceptance audit](docs/development/LEVEL_EDITOR_OVERHAUL_AUDIT.md)
 
 [Development screenshot gallery](https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html) · [Shared defect ledger](development/quality/DEFECT_LEDGER.md)
