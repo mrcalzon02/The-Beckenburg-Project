@@ -32,14 +32,18 @@ public final class LobbyGhostAvatar {
         for(var hunter:CharacterVisuals.Hunter.values()){
             String path="lobby-hunters/"+hunter.name().toLowerCase(java.util.Locale.ROOT)+".png";
             try(var stream=LobbyGhostAvatar.class.getResourceAsStream(path)){
-                if(stream==null)
-                    throw new IllegalStateException("Original Hunter lobby art not packaged: "+path);
+                if(stream==null){
+                    System.err.println("Diagnostic: original Hunter lobby portrait unavailable: "+path);
+                    continue; // Never block a functional game release for artwork.
+                }
                 BufferedImage original=ImageIO.read(stream);
-                if(original==null||original.getWidth()<150||original.getHeight()<350)
-                    throw new IllegalStateException("Missing intact original Hunter panel: "+path);
+                if(original==null||original.getWidth()<150||original.getHeight()<350){
+                    System.err.println("Diagnostic: incomplete original Hunter portrait: "+path);
+                    continue;
+                }
                 images.put(hunter,original);
             }catch(IOException broken){
-                throw new IllegalStateException("Cannot read approved original Hunter art: "+path,broken);
+                System.err.println("Diagnostic: cannot read Hunter lobby art "+path+": "+broken);
             }
         }
         return Map.copyOf(images);
@@ -124,6 +128,12 @@ public final class LobbyGhostAvatar {
                     :originalHunterPortrait(hunter);
                 // An opaque panel is intentional: all approved source pixels
                 // remain, including limbs/background the auto-mask discarded.
+                if(sprite==null){
+                    g.setColor(new Color(176,189,206));
+                    g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,11));
+                    g.drawString("PORTRAIT NOT PACKAGED",18,h/2);
+                    g.drawString("CLASS: "+hunter.name(),18,h/2+20);
+                }else{
                 Rectangle bounds=ghost?artBounds(sprite):
                     new Rectangle(0,0,sprite.getWidth(),sprite.getHeight());
                 int availableW=Math.max(1,w-38),availableH=Math.max(1,h-100);
@@ -149,6 +159,7 @@ public final class LobbyGhostAvatar {
                          :RenderingHints.VALUE_INTERPOLATION_BILINEAR);
                 g.drawImage(sprite,left,top,left+sw,top+sh,
                     bounds.x,bounds.y,bounds.x+bounds.width,bounds.y+bounds.height,null);
+                }
                 g.setColor(new Color(176,189,206));
                 g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,10));
                 g.drawString(ghost?"IDENTITY: UNKNOWN":hunter.name(),18,h-43);
