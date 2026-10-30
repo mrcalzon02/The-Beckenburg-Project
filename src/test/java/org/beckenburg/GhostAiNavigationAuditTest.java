@@ -31,15 +31,13 @@ public final class GhostAiNavigationAuditTest {
         var diagnostics=new NpcAiTelemetry();
         diagnostics.setEnabled(true);
         var ai=new LanGhostPursuit(map,19L,GhostIdentity.Type.SPIRIT,diagnostics);
-        var origin=map.spawn(4);
-        ai.heard(4,4,origin.x(),origin.z(),LanGhostPursuit.Sound.RITUAL,30);
+        ai.heard(4,4,map.centerX(4),map.centerZ(4),LanGhostPursuit.Sound.RITUAL,30);
         check(diagnostics.snapshot().timings().get(NpcAiTelemetry.Metric.HEARING).calls()==1,
             "Actual pursuit hearing uses live acoustic timings");
         var exits=map.ghostExits(4);
         if(!exits.isEmpty()){
             int neighbor=exits.get(0);
-            var sound=map.spawn(neighbor);
-            ai.heard(4,neighbor,sound.x(),sound.z(),LanGhostPursuit.Sound.RITUAL,40);
+            ai.heard(4,neighbor,map.centerX(neighbor),map.centerZ(neighbor),LanGhostPursuit.Sound.RITUAL,40);
             GhostDomain ghost=new GhostDomain(map,4,GhostIdentity.Type.SPIRIT);
             for(int tick=1;tick<=40;tick++)ghost.advance(tick,-1,0);
             ai.decide(ghost.observe(),false);
