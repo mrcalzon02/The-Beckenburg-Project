@@ -66,6 +66,20 @@ public final class EditorAuthoringReference {
             "Neither player nor AI ghost may enter the van or hiding pockets, acquire omniscient player locations, " +
             "teleport through walls or bypass cooldowns. Measure CPU/GC before throttling optional decisions.\n\n" +
             "Reference: PSX NPC-AI-1 + Beckenburg AI adoption review.")));
+        tabs.addTab("Asset Import", new JScrollPane(page(
+            "MODEL INGESTION / OVER-REGRESSION\\n\\n" +
+            "Use IMPORT MODEL inside the level editor to load OBJ, ASCII/binary STL or embedded-texture GLB. " +
+            "The source is kept beside the exported GLB. GLB is validated through the real game decoder before it can be placed.\\n\\n" +
+            "Geometry regression levels 0-12 use non-destructive vertex clustering. Inspect the SOURCE/RESULT comparison, " +
+            "per-part triangle and corner counts, memory estimates and selectable PSX style budget. " +
+            "An OVER-REGRESSION warning means part of the silhouette (for example a head or wheel) has collapsed. " +
+            "Publishing a partially collapsed model needs explicit confirmation; a wholly empty mesh cannot be published.\\n\\n" +
+            "GLB sources at level zero preserve their existing textures. Reduction of GLB currently loses material/mesh-node identity " +
+            "and creates an explicit fallback atlas. Text glTF, FBX, DAE, PLY and Blender project parsing are not yet supported. " +
+            "Material, bone, UV island and silhouette-preserving decimation are future upgrades. No Blender dependency in the game.\\n\\n" +
+            "Reference: Developing assets for the PlayStation 1 (PSX) architecture, 13 pages; " +
+            "docs/wiki/psx-asset-import-and-regression.md"
+        )));
         tabs.addTab("UI / Tests", new JScrollPane(page(
             "AUTHENTIC PRESENTATION / NO ARTIFICIAL FRICTION\n\n" +
             "Compact menus, readable pixel styling and D-pad navigation are useful. Keep remapping, " +
