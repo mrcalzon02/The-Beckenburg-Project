@@ -18,6 +18,10 @@ public final class FixtureLighting {
  private static final double CELL_SIZE=4.0;
  private final Map<Cell,List<Source>> influence=new HashMap<>();
  private final Map<Cell,Long> changedCells=new HashMap<>();
+ private final Map<Cell,Long> occluderCells=new HashMap<>();
+ private final Map<LevelDefinition.Portal,Boolean> portalStates=new HashMap<>();
+ private boolean portalStateInitialized;
+ private int lastHidingDensity=-1;
  private long generation,invalidatedCells,consideredSources;
  private static <K,V> Map<K,V> bounded(int limit){
   return new LinkedHashMap<K,V>(2048,.75f,true){
@@ -72,13 +76,22 @@ public final class FixtureLighting {
  private StationaryShadows activeShadows;
  public StationaryShadows newStationaryShadows(){return new StationaryShadows(this);}
  public StationaryShadows useStationaryShadows(StationaryShadows next){
+  return useStationaryShadows(next,occluderEpoch);
+ }
+ /** A retained chunk owns its own occluder revision; a distant door cannot
+  * discard unrelated baked shadow probes. */
+ public StationaryShadows useStationaryShadows(StationaryShadows next,long regionEpoch){
   var previous=activeShadows;
   if(next!=null){
    if(next.owner!=this)throw new IllegalArgumentException("Shadows belong to a different lighting scene");
-   if(next.epoch!=occluderEpoch){stationaryShadowEntries-=next.values.size();next.values.clear();next.epoch=occluderEpoch;}
+   if(next.epoch!=regionEpoch){
+    stationaryShadowEntries-=next.values.size();next.values.clear();next.epoch=regionEpoch;
+   }
   }
   activeShadows=next;return previous;
  }
+ /** Restoring the caller's active cache is not a new occlusion pass. */
+ void restoreStationaryShadows(StationaryShadows previous){activeShadows=previous;}
  private Boolean cachedShadow(Object key){
   Boolean found=activeShadows==null?null:activeShadows.values.get(key);
   return found==null?sight.get(key):found;
@@ -95,26 +108,31 @@ public final class FixtureLighting {
  /** Authoritative revision of the lighting cells touched by an immutable
   * geometry range. Unrelated room-light changes retain prepared GPU colours;
   * changed doors/windows always invalidate their previous visibility. */
- public long regionVersion(double ax,double ay,double az,double bx,double by,double bz){
+ private long regionRevision(Map<Cell,Long> updates,
+                             double ax,double ay,double az,double bx,double by,double bz){
   int x0=(int)Math.floor(ax/CELL_SIZE),x1=(int)Math.floor(bx/CELL_SIZE);
   int y0=(int)Math.floor(ay/CELL_SIZE),y1=(int)Math.floor(by/CELL_SIZE);
   int z0=(int)Math.floor(az/CELL_SIZE),z1=(int)Math.floor(bz/CELL_SIZE);
   long newest=0;
   long volume=(long)(x1-x0+1)*(y1-y0+1)*(z1-z0+1);
-  if(volume>changedCells.size()){
-   for(var entry:changedCells.entrySet()){
+  if(volume>updates.size()){
+   for(var entry:updates.entrySet()){
     var c=entry.getKey();
     if(c.x>=x0&&c.x<=x1&&c.y>=y0&&c.y<=y1&&c.z>=z0&&c.z<=z1)
      newest=Math.max(newest,entry.getValue());
    }
-   return Math.max(newest,occluderEpoch);
-  }
-  for(int xx=x0;xx<=x1;xx++)for(int yy=y0;yy<=y1;yy++)
-   for(int zz=z0;zz<=z1;zz++){
-    long revision=changedCells.getOrDefault(new Cell(xx,yy,zz),0L);
-    newest=Math.max(newest,revision);
-   }
+  }else for(int xx=x0;xx<=x1;xx++)for(int yy=y0;yy<=y1;yy++)
+   for(int zz=z0;zz<=z1;zz++)
+    newest=Math.max(newest,updates.getOrDefault(new Cell(xx,yy,zz),0L));
   return Math.max(newest,occluderEpoch);
+ }
+ public long regionVersion(double ax,double ay,double az,double bx,double by,double bz){
+  return regionRevision(changedCells,ax,ay,az,bx,by,bz);
+ }
+ /** Only receiver chunks touched by a changed door's contributing lights
+  * require new visibility rays and rebuilt resident vertices. */
+ public long regionOccluderVersion(double ax,double ay,double az,double bx,double by,double bz){
+  return regionRevision(occluderCells,ax,ay,az,bx,by,bz);
  }
  /** Fast unchanged-frame gate before consulting individual spatial regions. */
  public long frameRevision(){return generation;}
@@ -401,9 +419,49 @@ public final class FixtureLighting {
   eachInfluenceCell(source,key->influence.computeIfAbsent(key,ignored->new ArrayList<>()).add(source));
  }
  public List<Source> sources(){return List.copyOf(sources);}
+ /** Opening a single portal changes only lights whose radius intersects it.
+  * Mark their entire influence cells: rays can reach receivers far from the
+  * actual door, so testing just the door cell would leak light through walls. */
+ private void invalidateOccludingPortal(LevelDefinition.Portal portal){
+  long revision=++generation;
+  double half=portal.width()/2+.35;
+  for(var source:sources){
+   double dx=Math.max(0,Math.abs(source.x-portal.x())-(portal.alongX()?half:.35));
+   double dz=Math.max(0,Math.abs(source.z-portal.z())-(portal.alongX()?.35:half));
+   double dy=Math.max(0,Math.abs(source.y-(portal.y()+1.15))-1.15);
+   if(dx*dx+dy*dy+dz*dz>source.radius*source.radius)continue;
+   eachInfluenceCell(source,key->{
+    changedCells.put(key,revision);occluderCells.put(key,revision);invalidatedCells++;
+   });
+  }
+ }
  public void frame(RoomLighting circuits,int tick){
   resetStatistics();
-  String nextGeometry=map.doorSnapshot()+map.windowSnapshot()+map.hidingDensity();if(!geometry.equals(nextGeometry)){geometry=nextGeometry;occluderEpoch=++generation;sight.clear();colours.clear();normalColours.clear();distant.clear();}
+  String nextGeometry=map.doorSnapshot()+":"+map.windowSnapshot()+":"+map.hidingDensity();
+  if(!geometry.equals(nextGeometry)){
+   boolean full=!portalStateInitialized||lastHidingDensity!=map.hidingDensity();
+   int changedPortals=0;
+   for(var portal:map.level().portals()){
+    if(!portal.door()&&!portal.kind().equals("window"))continue;
+    boolean open=portal.door()?map.doorOpen(portal.id()):map.windowOpen(portal.id());
+    Boolean old=portalStates.put(portal,open);
+    if(old==null&&portalStateInitialized)full=true;
+    else if(old!=null&&old.booleanValue()!=open){
+     invalidateOccludingPortal(portal);changedPortals++;
+    }
+   }
+   // Unknown architectural changes (including hiding layouts) remain global.
+   if(changedPortals==0)full=true;
+   if(full){
+    occluderEpoch=++generation;
+    sight.clear();colours.clear();normalColours.clear();distant.clear();
+   }else{
+    // Shared short-lived ray results cannot know which doorway blocked them.
+    // Cached colours and per-chunk stationary shadows DO know their regions.
+    sight.clear();
+   }
+   lastHidingDensity=map.hidingDensity();portalStateInitialized=true;geometry=nextGeometry;
+  }
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){double f;
    if(source.room==14)f=1;
