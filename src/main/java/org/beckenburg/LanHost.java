@@ -146,6 +146,8 @@ public final class LanHost implements AutoCloseable {
     // Radio history is bounded and investigator-only. Local speech has no global replay.
     private final java.util.ArrayDeque<LanChat.Entry> radioHistory=new java.util.ArrayDeque<>();
     private final LanGhostPursuit ai;
+    /** Per-session, opt-in timings only; never sent over LAN or exposed as ghost observations. */
+    private final org.beckenburg.editor.ai.NpcAiTelemetry aiDiagnostics=new org.beckenburg.editor.ai.NpcAiTelemetry();
     private final GhostIdentity.Type ghostType;
     private final boolean ghostMayStart;
     private final int ownerSeat;
@@ -297,7 +299,7 @@ public final class LanHost implements AutoCloseable {
         mission.configureEvidenceClimate(season,weather.state().weather(),
             climateClock.getHour(),true,GhostEvidenceProfile.thermal(ghostType));
         mission.updateEvidenceWeather(weather.state().weather(),weather.state().intensity());
-        ai=new LanGhostPursuit(map,20261016L,type);
+        ai=new LanGhostPursuit(map,20261016L,type,aiDiagnostics);
         ai.configureFrequency(contract.eventFrequency());
         bindAddress=Objects.requireNonNull(ip);
         listener=transport==null?new ServerSocket():transport.listen(ip,port);
@@ -319,6 +321,11 @@ public final class LanHost implements AutoCloseable {
     public int port(){return listener.getLocalPort();}
     public int voicePort(){return voice==null?0:voice.port();}
     public String bindAddress(){return bindAddress;}
+    /** Developer-only in-process diagnostics, not a network command or player UI packet. */
+    public void enableAiDiagnostics(boolean enabled){aiDiagnostics.setEnabled(enabled);}
+    public org.beckenburg.editor.ai.NpcAiTelemetry.Snapshot aiDiagnosticsSnapshot(){
+        return aiDiagnostics.snapshot();
+    }
     public boolean running(){synchronized(mutex){return running;}}
     public int connected(){synchronized(mutex){int count=0;for(Peer peer:seats)if(peer!=null)count++;return count;}}
     public int reservedSeats(){synchronized(mutex){int count=0;for(Reservation r:reserved)if(r!=null)count++;return count;}}
@@ -2436,6 +2443,7 @@ public final class LanHost implements AutoCloseable {
     private static String safeReason(String s){return s==null?"invalid command":s.replaceAll("[^A-Za-z0-9 ._-]","").substring(0,Math.min(85,s.replaceAll("[^A-Za-z0-9 ._-]","").length()));}
     private void tickSafely(){if(closed)return; synchronized(mutex){
         if(!running)return;
+        long tickTime=aiDiagnostics.begin();
         try{tick++;
             mission.advanceClassClock(tick);
             advanceHauntTracks();
@@ -2543,9 +2551,16 @@ public final class LanHost implements AutoCloseable {
                 notifyHunters("FIELD|CROSS REPELLED THE ENTITY");
                 broadcastApparitions();
             }
-            if(seats[GHOST_SEAT]==null){GhostDomain.Observation seen=ghost.observe();
+            if(seats[GHOST_SEAT]==null){
+                long perceptionStart=aiDiagnostics.begin();
+                GhostDomain.Observation seen=ghost.observe();
+                aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.PERCEPTION,perceptionStart);
                 LanGhostPursuit.Impulse impulse=frenzy.raging()?frenzyChaseImpulse():null;
-                if(impulse==null)impulse=ai.approach(seen,ghostPose.pose());
+                if(impulse==null){
+                    long approachStart=aiDiagnostics.begin();
+                    try{impulse=ai.approach(seen,ghostPose.pose());}
+                    finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.APPROACH,approachStart);}
+                }
                 if(impulse!=null){try{
                     boolean burst=frenzy.raging()||ai.memory(tick)!=null;
                     int staminaBefore=ghostPose.stamina();
@@ -2554,7 +2569,10 @@ public final class LanHost implements AutoCloseable {
                     broadcastApparitions();
                     if(ghost.manifested()&&tick%5==0)broadcastGhostSound(LanSound.Cue.FOOTFALL);}
                     catch(IllegalArgumentException blocked){ /* Same physical rejection as a human ghost. */ }}
-                GhostDomain.Command choice=ai.decide(seen,LanSpatialCombat.any(strikeVictims()));
+                long decisionStart=aiDiagnostics.begin();
+                GhostDomain.Command choice;
+                try{choice=ai.decide(seen,LanSpatialCombat.any(strikeVictims()));}
+                finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.DECISION,decisionStart);}
                 if(frenzy.phase()!=GhostFrenzy.Phase.CALM && choice!=null
                         &&choice.action()!=GhostDomain.Action.DRIFT)choice=null;
                 if(choice!=null){
@@ -2668,6 +2686,7 @@ public final class LanHost implements AutoCloseable {
             maintainPeerHealth();
             finishIfComplete();
         }catch(RuntimeException ex){running=false;notifyAllPeers("INFO|host simulation stopped");System.err.println("LAN tick failure: "+ex.getMessage());}
+        finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HOST_TICK,tickTime);}
     }}
     /** 5-second heartbeat and 20-second stale-link cutoff; never trust player clocks.
      * A dead TCP peer enters the normal bounded seat-recovery flow when serve() exits.
