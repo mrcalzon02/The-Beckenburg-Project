@@ -55,8 +55,9 @@ public final class LanLobbyTest {
                 "sequence replay blocked after real room travel");
             g.client.ghost(GhostDomain.Action.STRIKE,4);check(g.waitPrefix("REJECT|",2).contains("insufficient"),"ghost cannot open with strike");
             g.waitTick(170);
-            g.client.ghost(GhostDomain.Action.MANIFEST,4);
-            g.waitPrefix("ACCEPT|GHOST|MANIFEST",2);
+            LanTestGhostActions.manifest(host,h1.client,
+                prefix->h1.waitPrefix(prefix,5),g.client,
+                prefix->g.waitPrefix(prefix,5));
             g.client.ghost(GhostDomain.Action.STRIKE,4);
             g.waitPrefix("ACCEPT|GHOST|STRIKE",2);
             check(h1.waitPrefix("EFFECT|STRIKE|6|12",2).startsWith("EFFECT"),"victim-only incremental damage event");

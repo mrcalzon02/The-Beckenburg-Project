@@ -40,8 +40,7 @@ public final class LanGhostAnimationIntegrationTest {
             ghost.client.viewGhost3D(); ghost.await("ACCEPT|GVIEW3D");
             // STRIKE has a later legal tick gate (>160), not MANIFEST's >80 gate.
             int at=0; while (at<170) at=Integer.parseInt(ghost.await("STATE|").split("\\|")[1]);
-            ghost.client.ghost(GhostDomain.Action.MANIFEST, 4);
-            ghost.await("ACCEPT|GHOST|MANIFEST");
+            LanTestGhostActions.manifest(host,a.client,a::await,ghost.client,ghost::await);
             a.await("APPARITION|VISIBLE|");
             LanGhostAnimation.Motion form = LanGhostAnimation.decode(a.await("MOTION|MATERIALIZE|"));
             ok(form.phase()==LanGhostAnimation.Phase.MATERIALIZE,"host starts materializing only when visible");

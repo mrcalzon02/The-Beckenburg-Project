@@ -394,7 +394,17 @@ public final class LanHost implements AutoCloseable {
     private void acceptLoop(){
         while(!closed){try{Socket socket=listener.accept();socket.setTcpNoDelay(true);
             if(!transportSlots.tryAcquire()){socket.close();continue;}transports.add(socket);
-            workers.execute(()->{try{serve(socket);}finally{transports.remove(socket);transportSlots.release();}});
+            try {
+                workers.execute(()->{try{serve(socket);}
+                    finally{transports.remove(socket);transportSlots.release();}});
+            }catch(java.util.concurrent.RejectedExecutionException shutdown){
+                // A socket may arrive between listener.accept() and close().
+                // This is an orderly shutdown race, not a new worker failure.
+                transports.remove(socket);
+                transportSlots.release();
+                try{socket.close();}catch(IOException ignored){}
+                if(!closed)System.err.println("LAN worker admission unavailable (NET-04)");
+            }
         }catch(IOException e){if(!closed)System.err.println("LAN accept unavailable (NET-04)");}}
     }
     private void serve(Socket socket){

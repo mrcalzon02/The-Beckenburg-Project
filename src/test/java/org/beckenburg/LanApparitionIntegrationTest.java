@@ -43,8 +43,8 @@ public final class LanApparitionIntegrationTest {
                 String state=g.expect("STATE|");
                 tick=Integer.parseInt(state.split("\\|")[1]);
             }
-            g.client.ghost(GhostDomain.Action.MANIFEST,4);
-            ok(g.expect("ACCEPT|GHOST|MANIFEST").contains("MANIFEST"),"valid human ghost manifestation accepted");
+            LanTestGhostActions.manifest(host,a.client,a::expect,g.client,g::expect);
+            ok(host.running(),"valid human ghost manifestation accepted");
             String seen=a.expect("APPARITION|VISIBLE|");
             String[] coordinates=seen.split("\\|");
             ok(coordinates.length==6

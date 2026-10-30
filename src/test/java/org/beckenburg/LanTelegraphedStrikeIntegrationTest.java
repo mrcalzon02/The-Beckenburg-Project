@@ -42,7 +42,7 @@ public final class LanTelegraphedStrikeIntegrationTest {
             a.client.view3D();a.expect("ACCEPT|VIEW3D");
             g.client.viewGhost3D();g.expect("ACCEPT|GVIEW3D");
             g.tickAtLeast(170);
-            g.client.ghost(GhostDomain.Action.MANIFEST,4);g.expect("ACCEPT|GHOST|MANIFEST");
+            LanTestGhostActions.manifest(server,a.client,a::expect,g.client,g::expect);
             g.client.ghost(GhostDomain.Action.STRIKE,4);g.expect("ACCEPT|GHOST|STRIKE");
             String warning=a.expect("THREAT|START|");
             ok(warning.equals("THREAT|START|8|0"),"targeted hunter receives eight-tick warning");

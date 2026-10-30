@@ -44,10 +44,33 @@ public final class LanGhostTakeoverIntegrationTest {
             a.expect("INFO|human ghost disconnected - AI has taken control");
             ok(a.expect("LOBBY|3|AI|3|RUNNING").contains("|AI|"),"controller becomes AI");
             ok(server.running()&&server.connected()==3,"no full match abort on ghost departure");
-            // AI must act at its first legal whisper tick even though the human
-            // already used two GhostDomain command numbers.
-            a.client.scan(LanCase.Tool.EMF);a.expect("ACCEPT|SCAN");
-            a.expect("EFFECT|WHISPER|2|0");
+            // AI inherits the actual energy, cooldown and sequence domain. An
+            // audible scan is a genuine stimulus; it does not guarantee that a
+            // later WHISPER inflicts fear after its one-second hearing window.
+            // Wait for a successfully DISPATCHED event, not a fabricated 2-fear
+            // packet from silent room occupancy.
+            var cadence=(GhostActionCadence)LooseClutterNetworkTest.field(server,"actionCadence");
+            var domain=(GhostDomain)LooseClutterNetworkTest.field(server,"ghost");
+            var mutex=LooseClutterNetworkTest.field(server,"mutex");
+            int before;
+            synchronized(mutex){before=cadence.successfulEvents();}
+            long until=System.nanoTime()+TimeUnit.SECONDS.toNanos(20);
+            int lastPulse=-1000;
+            boolean resumed=false;
+            while(System.nanoTime()<until&&!resumed){
+                int simulationTick;
+                synchronized(mutex){
+                    simulationTick=domain.tickCount();
+                    resumed=cadence.successfulEvents()>before;
+                }
+                if(resumed)break;
+                if(simulationTick-lastPulse>=10){
+                    a.client.scan(LanCase.Tool.EMF);a.expect("ACCEPT|SCAN");
+                    lastPulse=simulationTick;
+                }
+                Thread.sleep(100);
+            }
+            ok(resumed,"AI must complete a real legal spectral action after human takeover");
             ok(server.running(),"AI ghost's first post-takeover cast resolved through shared domain");
             b.close();
             a.expect("PEER|LEFT|1");
