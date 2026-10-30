@@ -251,6 +251,10 @@ public final class DeveloperLevelEditor extends JPanel {
         JButton undoButton=button("UNDO"),redoButton=button("REDO");
         undoButton.addActionListener(e->undo());redoButton.addActionListener(e->redo());
         commands.add(undoButton);commands.add(redoButton);
+        JButton authoringGuide=button("PSX GUIDE");
+        authoringGuide.setToolTipText("Offline editor engineering reference and machine manifest");
+        authoringGuide.addActionListener(e->org.beckenburg.editor.EditorAuthoringReference.show(window));
+        commands.add(authoringGuide);
         JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());waterModules.setToolTipText("Reusable water modules, shapes, snap handles and weather preview");waterModules.addActionListener(e->EnvironmentModuleEditor.open(window,"castle"));commands.add(waterModules);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
