@@ -154,6 +154,24 @@ public final class EditorMeshPipeline {
      * and heads must remain named parts, never merged into an anonymous mesh. */
     public static Result regress(Mesh source,int level){
         if(level<0||level>12)throw new IllegalArgumentException("Regression level 0..12");
+        if(level==0){
+            Map<String,List<Triangle>> groups=new LinkedHashMap<>();
+            for(Triangle t:source.triangles())
+                groups.computeIfAbsent(t.part(),k->new ArrayList<>()).add(t);
+            List<PartStats> exact=new ArrayList<>();
+            for(var entry:groups.entrySet()){
+                int vertices=uniqueVertices(entry.getValue());
+                exact.add(new PartStats(entry.getKey(),entry.getValue().size(),
+                    entry.getValue().size(),vertices,vertices,false));
+            }
+            long bytes=estimatedBytes(source.triangles());
+            List<String> warnings=new ArrayList<>();
+            if(source.sourceBytes()>4_000_000)
+                warnings.add("SOURCE SIZE: >4 MiB; the current GLB decoder has a 4 MiB per-model ceiling");
+            if(bytes>16L*1024*1024)
+                warnings.add("MEMORY: estimated CPU triangle data >16 MiB (not full process heap)");
+            return new Result(source,source,0,exact,warnings,bytes,bytes);
+        }
         double[] bounds={Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,
                          Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY};
         Map<String,List<Triangle>> before=new LinkedHashMap<>();
