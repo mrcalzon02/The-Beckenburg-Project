@@ -9,13 +9,29 @@ public final class GraphicsEffects {
         return (a*(256-weight)+b*weight)>>8;
     }
     public static void apply(int[] rgb,int width,int height,GraphicsOptions s,double time){
+        apply(rgb,width,height,s,time,null);
+    }
+    /**
+     * Optional reusable temporary image for neighbor-reading AA/chromatic
+     * effects. The SceneRenderer owns and reuses its backing array, avoiding
+     * an 8 MiB garbage allocation each 1080p frame. The public legacy
+     * overload remains safe for standalone/independent callers.
+     */
+    public static void apply(int[] rgb,int width,int height,GraphicsOptions s,
+                             double time,int[] scratch){
         if(width<1||height<1||rgb.length!=(long)width*height)
             throw new IllegalArgumentException("invalid framebuffer");
         if(s==null)return;
         boolean aa=s.antialias()!=GraphicsOptions.Antialias.OFF;
         if(!aa&&!s.chromatic()&&!s.vignette()&&!s.scanlines()&&!s.grain()
                 &&s.brightness()==0&&s.contrast()==0)return;
-        int[] src=aa||s.chromatic()?rgb.clone():rgb;
+        int[] src=rgb;
+        if(aa||s.chromatic()){
+            if(scratch!=null&&scratch!=rgb&&scratch.length==rgb.length){
+                System.arraycopy(rgb,0,scratch,0,rgb.length);
+                src=scratch;
+            }else src=rgb.clone();
+        }
         double contrast=1+s.contrast()/80.0;
         int[] tone=new int[256];
         for(int i=0;i<256;i++)tone[i]=clamp((int)Math.round(
