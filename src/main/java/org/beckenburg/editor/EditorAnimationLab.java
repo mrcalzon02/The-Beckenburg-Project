@@ -79,7 +79,7 @@ public final class EditorAnimationLab extends JPanel {
         JButton update=new JButton("APPLY CLIP");update.addActionListener(e->act(()->{
             clip.rename(name.getText().strip());
             clip.timing(rate.getSelectedIndex()==0?15:30,((Number)duration.getValue()).intValue());
-            frame.setMaximum(clip.frames()-1);refresh();
+            frame.setMaximum(clip.frames()-1);playbackTimer.setDelay(1000/clip.fps());refresh();
         }));
         header.add(update);
         add(header,BorderLayout.NORTH);
@@ -132,13 +132,12 @@ public final class EditorAnimationLab extends JPanel {
         window.setContentPane(this);window.setSize(860,650);window.setLocationRelativeTo(parent);
         playbackTimer=new Timer(1000/30,e->{
             if(!playing)return;
-            int stride=clip.fps()==15?2:1;
-            frame.setValue((frame.getValue()+stride)%clip.frames());
+            frame.setValue((frame.getValue()+1)%clip.frames());
         });
         window.addWindowListener(new java.awt.event.WindowAdapter(){
             @Override public void windowClosed(java.awt.event.WindowEvent e){playbackTimer.stop();}
         });
-        playbackTimer.start();
+        playbackTimer.setDelay(1000/clip.fps());playbackTimer.start();
         refresh();
     }
     public static void show(JFrame parent){new EditorAnimationLab(parent).window.setVisible(true);}
@@ -179,6 +178,7 @@ public final class EditorAnimationLab extends JPanel {
             clip=EditorAnimationClip.load(chooser.getSelectedFile().toPath());
             name.setText(clip.name());rate.setSelectedIndex(clip.fps()==15?0:1);
             duration.setValue(clip.frames());frame.setMaximum(clip.frames()-1);
+            playbackTimer.setDelay(1000/clip.fps());
             frame.setValue(0);playing=false;refresh();
         }catch(Exception e){JOptionPane.showMessageDialog(window,e.getMessage(),"Load failed",JOptionPane.ERROR_MESSAGE);}
     }
