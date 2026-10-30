@@ -27,6 +27,7 @@ public final class GhostAiRuleLab {
     private final JComboBox<GhostIdentity.Type> species=
         new JComboBox<>(GhostIdentity.Type.values());
     private final JSpinner tick=new JSpinner(new SpinnerNumberModel(180,0,1000,10));
+    private final JComboBox<HouseMap.Site> site=new JComboBox<>(HouseMap.Site.values());
     private final JCheckBox hears=new JCheckBox("Simulate a host-audible hunter in room",true);
     private final JCheckBox victim=new JCheckBox("Host-verified spatial victim (preview only)");
     private final JTextArea rules=new JTextArea(22,44),test=new JTextArea(22,44);
@@ -38,6 +39,7 @@ public final class GhostAiRuleLab {
         JPanel top=new JPanel(new FlowLayout(FlowLayout.LEFT,5,4));
         top.add(new JLabel("Species"));top.add(species);
         top.add(new JLabel("Sandbox tick (10 Hz)"));top.add(tick);
+        top.add(new JLabel("Nav site"));top.add(site);
         root.add(top,BorderLayout.NORTH);
         JPanel reports=new JPanel(new GridLayout(1,2,5,5));
         rules.setEditable(false);rules.setLineWrap(true);rules.setWrapStyleWord(true);
@@ -54,6 +56,10 @@ public final class GhostAiRuleLab {
         audit.setToolTipText("Inspect every canonical species, variant link, and presentation safeguard");
         audit.addActionListener(e->auditRoster());
         controls.add(audit);
+        JButton nav=new JButton("AUDIT NAV");
+        nav.setToolTipText("Inspect real room exits, van boundary and acoustic propagation on a fresh authored-site map");
+        nav.addActionListener(e->auditNavigation());
+        controls.add(nav);
         JButton export=new JButton("EXPORT RULES JSON");
         export.setToolTipText("Write a deterministic, source-derived NPC rule snapshot without session data");
         export.addActionListener(e->exportRulebook());
@@ -100,6 +106,48 @@ public final class GhostAiRuleLab {
         out.append("A source rulebook audit does not replace multiplayer pursuit or live collision testing.");
         test.setText(out.toString());test.setCaretPosition(0);
         caption.setText("Completed developer-only source rule audit; no active session accessed");
+    }
+    private void auditNavigation(){
+        final HouseMap.Site chosen=(HouseMap.Site)site.getSelectedItem();
+        if(chosen==null)return;
+        caption.setText("Auditing actual "+chosen+" portal/door and hearing topology on a fresh sandbox map...");
+        new SwingWorker<String,Void>(){
+            @Override protected String doInBackground(){
+                HouseMap map=new HouseMap(chosen);
+                var report=GhostAiNavigationAudit.inspect(map,4);
+                StringBuilder out=new StringBuilder("CANONICAL AI NAVIGATION / ACOUSTIC AUDIT\\n");
+                out.append("Site: ").append(report.site())
+                    .append(" / origin: ").append(report.origin())
+                    .append(" / rooms: ").append(report.inspectedRooms()).append("\\n");
+                out.append("Directed ghost portal links: ").append(report.links().size()).append("\\n");
+                out.append("Unreachable rooms from 4: ").append(report.unreachable()).append("\\n\\n");
+                for(var issue:report.findings())
+                    out.append("DIAGNOSTIC / ").append(issue.code()).append(" / room ")
+                        .append(issue.room()).append(" / ").append(issue.detail()).append("\\n");
+                if(report.findings().isEmpty())out.append("No topological issues found.\\n");
+                out.append("\\nGhost portal exits (door may need to be opened to physically pass):\\n");
+                for(int room=0;room<report.inspectedRooms();room++){
+                    int current=room;
+                    out.append(room).append(" -> ").append(map.ghostExits(room))
+                        .append(" / route to origin ").append(GhostAiNavigationAudit.path(map,current,4)).append("\\n");
+                }
+                out.append("\\nActual acoustic losses per directed portal (MAX = disconnected):\\n");
+                for(var edge:report.links())
+                    out.append(edge.from()).append(" -> ").append(edge.to())
+                        .append(": ").append(edge.acousticLoss()).append("\\n");
+                out.append("\\nAuthoring map audit only. No actual doors opened, live actors moved or LAN state read.");
+                return out.toString();
+            }
+            @Override protected void done(){
+                try{test.setText(get());test.setCaretPosition(0);
+                    caption.setText("Read-only source map audit complete; see diagnostic warnings, not release blockers.");
+                }catch(Exception ex){
+                    Throwable why=ex;while(why.getCause()!=null)why=why.getCause();
+                    test.setText("NAV AUDIT ERROR: "+why.getMessage());
+                    caption.setText("Map diagnostics failed; no live scene was touched.");
+                }
+            }
+        }.execute();
     }
     private void exportRulebook(){
         javax.swing.JFileChooser files=new javax.swing.JFileChooser();
