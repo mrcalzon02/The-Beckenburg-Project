@@ -274,13 +274,18 @@ public final class DirectionalSprites {
         for(int py=y0;py<=y1;py++){
             int v=(int)((py+.5-head)/screenHeight*sh);
             if(v<0||v>=sh)continue;
+            // A pitched camera gives the head and feet different view-space depths.
+            // Testing the entire character at its midpoint erroneously buries the
+            // feet behind the floor. Interpolate the billboard's projected depth.
+            double verticalFraction=Math.max(0,Math.min(1,(py+.5-head)/screenHeight));
+            double rowDepth=nearTop+(nearBottom-nearTop)*verticalFraction;
             for(int px=x0;px<=x1;px++){
                 int u=(int)((px+.5-(cx-halfW))/screenWidth*sw);
                 if(u<0||u>=sw)continue;
                 int argb=sprite.getRGB(u,v),alpha=(argb>>>24)*Math.min(255,opacity)/255;
                 if(alpha<24)continue;
                 int k=py*renderWidth+px;
-                if(anchorDepth>=depth[k])continue;
+                if(rowDepth>=depth[k])continue;
                 int red=(int)(((argb>>>16)&255)*illumination),
                     green=(int)(((argb>>>8)&255)*illumination),
                     blue=(int)((argb&255)*illumination);
@@ -301,7 +306,7 @@ public final class DirectionalSprites {
                     blue=(blue*alpha+(bg&255)*(255-alpha))/255;
                 }
                 pixels[k]=(red<<16)|(green<<8)|blue;
-                if(alpha>=220)depth[k]=anchorDepth;
+                if(alpha>=220)depth[k]=rowDepth;
             }
         }
     }
