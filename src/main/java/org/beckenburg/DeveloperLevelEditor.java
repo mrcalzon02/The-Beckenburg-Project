@@ -460,14 +460,29 @@ public final class DeveloperLevelEditor extends JPanel {
         billboardLab.setToolTipText("Import PNG/JPEG, compare retro palette and aspect presets, estimate memory, then bake separate image; 3D binding pending");
         billboardLab.addActionListener(e->org.beckenburg.editor.EditorBillboardLab.show(window));
         commands.add(billboardLab);
-        JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());waterModules.setToolTipText("Reusable water modules, shapes, snap handles and weather preview");waterModules.addActionListener(e->EnvironmentModuleEditor.open(window,"castle"));commands.add(waterModules);
+        JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());
+        waterModules.setToolTipText("Author the selected level's real water document");
+        waterModules.addActionListener(e->{
+            if(missionSite==HouseMap.Site.USER){
+                status.setText("Custom map water requires its own level-scoped document adapter");return;
+            }
+            EnvironmentModuleEditor.open(window,
+                missionSite==null?"castle":missionSite.name().toLowerCase(Locale.ROOT));
+        });
+        commands.add(waterModules);
 
         JButton terrainZones=button("TERRAIN / ZONES");
         terrainZones.setToolTipText("Manual terrain height-offset brushes and loading-zone authoring; machine interface later");
-        terrainZones.addActionListener(e->org.beckenburg.editor.TerrainZoneEditor.open(
-            window,"blackpine",java.util.List.of("blackpine","castle","house",
-                "farmhouse","school","mansion","prison","asylum","academy",
-                "college","church","hollow-creek")));
+        terrainZones.addActionListener(e->{
+            if(missionSite==HouseMap.Site.USER){
+                status.setText("Custom map terrain requires its own level-scoped document adapter");return;
+            }
+            org.beckenburg.editor.TerrainZoneEditor.open(window,
+                missionSite==null?"castle":missionSite.name().toLowerCase(Locale.ROOT),
+                java.util.List.of("blackpine","castle","house",
+                    "farmhouse","school","mansion","prison","asylum","academy",
+                    "college","church","hollow-creek"));
+        });
         commands.add(terrainZones);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
@@ -801,11 +816,14 @@ public final class DeveloperLevelEditor extends JPanel {
             int index=selectedProp();if(index<0)return;
             operate(()->{
                 Prop old=mission.prop(index);
+                double ratio=value(scale)/old.scale();
+                double halfX=value(width)==old.halfX()?old.halfX()*ratio:value(width);
+                double halfZ=value(depth)==old.halfZ()?old.halfZ()*ratio:value(depth);
                 mission.put(index,new Prop(old.mesh(),
                     missionRoom(value(x),value(y),value(z)),
                     value(x),value(y),value(z),value(scale),
-                    Math.toRadians(value(yaw)),value(width),value(depth),
-                    old.height()*value(scale)/old.scale(),old.support()));
+                    Math.toRadians(value(yaw)),halfX,halfZ,
+                    old.height()*ratio,old.support()));
             });return;
         }
         Row r=chosen;
