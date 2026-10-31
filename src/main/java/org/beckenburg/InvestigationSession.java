@@ -58,6 +58,10 @@ public final class InvestigationSession {
     private final int anchorRoom;
     private final int[] spectralTrace=new int[HouseMap.ROOM_COUNT];
     private int saltRoom=-1,saltTick=-1;
+    /** Actual placed solo salt model, at the accepted gameplay location and rotation. */
+    public record PlacedSalt(int room,double x,double y,double z,double headingRadians){}
+    private PlacedSalt placedSalt;
+    public PlacedSalt placedSalt(){return placedSalt;}
     private boolean apparitionPhotographed;
     private final EnumSet<Instrument> measuredTools = EnumSet.noneOf(Instrument.class);
     private final java.util.Map<Instrument,String> lastReadings=new java.util.EnumMap<>(Instrument.class);
@@ -304,7 +308,7 @@ public final class InvestigationSession {
             if(saltRoom==ghost.room()&&ticks>saltTick&&GhostTraits.saltAffects(ghost.type())){
                 ghost.reveal(30);ghost.slowFor(26);
                 log("Salt disturbed in "+map.roomName(saltRoom)+" — grounded spirit slowed and briefly revealed.");
-                saltRoom=-1;saltTick=-1;
+                saltRoom=-1;saltTick=-1;placedSalt=null;
             }
         }
         HunterCounters.Impact counter=counters.advance(map,ghost.type(),ghost,
@@ -393,6 +397,12 @@ public final class InvestigationSession {
         return useEquipment(loadout,x,standingY(x,z),z,yaw);
     }
     public boolean useEquipment(EquipmentLoadout loadout,double x,double y,double z,double yaw){
+        return useEquipment(loadout,x,y,z,yaw,0);
+    }
+    /** Relative placement angle is applied to the physical placed device, not
+     * to the player's camera or the evidence measurement simulation. */
+    public boolean useEquipment(EquipmentLoadout loadout,double x,double y,double z,double yaw,
+            int placementRotationDegrees){
         java.util.Objects.requireNonNull(loadout);
         if(outcome!=Outcome.ACTIVE||!map.traversable(x,y,z)){
             log("Cannot operate equipment here.");return false;
@@ -428,6 +438,8 @@ public final class InvestigationSession {
                 if(room<0||map.outside(room)){log("Salt must be placed in a traversable interior.");yield false;}
                 if(!loadout.consume(item)){log("No salt left. Refill at the van equipment rack.");yield false;}
                 saltRoom=room;saltTick=ticks;
+                double angle=yaw+Math.toRadians(Math.floorMod(placementRotationDegrees,360));
+                placedSalt=new PlacedSalt(room,x,map.groundHeight(x,z,room),z,angle);
                 log("Salt scattered in "+map.roomName(room)+". Return later to check for tracks.");
                 yield true;
             }
