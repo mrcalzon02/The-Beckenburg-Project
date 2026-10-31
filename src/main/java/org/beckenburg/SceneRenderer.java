@@ -56,6 +56,11 @@ public final class SceneRenderer {
         return changedOnlyLighting()&&lightingSettings.dependencyReuse()
             &&!Boolean.getBoolean("beckenburg.lighting.factorDependencies.disabled");
     }
+    // Still photographs need an exact synchronous lens frame, not an earlier
+    // asynchronous GPU readback. Normal gameplay continues using the GPU.
+    private boolean photographicSoftwareRaster;
+    void photographicSoftwareRaster(){photographicSoftwareRaster=true;}
+    private boolean gpuAvailable(){return !photographicSoftwareRaster&&GpuWorldRenderer.active()!=null;}
     private int renderWidth=W,renderHeight=H;
     private double nativeFocal=153; // fixed vertical lens; widescreen adds peripheral geometry
     private double focal=nativeFocal;
@@ -153,6 +158,7 @@ public final class SceneRenderer {
     private final dev.mrcalzon.weather.WeatherModule weatherFx=
         new dev.mrcalzon.weather.WeatherModule(0x4245434b454e4255L);
     private boolean weatherInitialized;
+    private MissionWeather.State lastWeatherState;
     private int weatherRevision=-1;
     public dev.mrcalzon.weather.WeatherModule weatherModule(){return weatherFx;}
     private double lastWeatherClock=Double.NaN,weatherLightScale=1.0,weatherFogScale=1.0;
@@ -163,6 +169,7 @@ public final class SceneRenderer {
     }
     public void setWeather(MissionWeather.State state){
         if(state==null)throw new IllegalArgumentException("weather state");
+        lastWeatherState=state;
         if(weatherInitialized&&weatherRevision==state.revision()
                 &&weatherKind==state.weather()&&weatherIntensity==state.intensity())return;
         weatherKind=state.weather();weatherIntensity=state.intensity();
@@ -224,6 +231,53 @@ public final class SceneRenderer {
     /** Host-issued inventory only: do not spawn unpurchased instruments. */
     public java.util.Map<String,EquipmentTiers.Tier> rackToolTiers=java.util.Map.of();
     public java.util.List<VanRackStock.Entry> rackInventory;
+    /** Copy real scene state to the dedicated camera lens renderer, never the player's pixels.
+     * Host-authorized ghost visibility remains exactly what this hunter can see. */
+    void copyPhotographicWorld(SceneRenderer source,EquipmentTiers.Tier tier){
+        if(!photographicSoftwareRaster)throw new IllegalStateException("photo renderer must be synchronous");
+        Objects.requireNonNull(source);
+        Objects.requireNonNull(tier);
+        setPsxPreset(source.psxPreset);
+        setFieldOfView(EquipmentOptics.forTier(tier).videoFieldOfView());
+        x=source.x;z=source.z;yaw=source.yaw;pitch=source.pitch;
+        // Camera raised to the viewfinder: lens forward of the hunter's eye,
+        // not the world frame or HUD cached at a different pose/tick.
+        x+=Math.sin(yaw)*.12;z+=Math.cos(yaw)*.12;
+        eyeHeight=source.eyeHeight-.04;
+        lamp=source.lamp;lampReach=source.lampReach;
+        lampIntensity=source.lampIntensity;lampWidth=source.lampWidth;
+        flameLamp=source.flameLamp;
+        uvLamp=source.uvLamp;uvTier=source.uvTier;
+        uvMarks=source.uvMarks;uvTick=source.uvTick;
+        activeRite=source.activeRite;strikeUntilTick=source.strikeUntilTick;
+        additionalGhostBodies=source.additionalGhostBodies;
+        hauntings=source.hauntings;
+        environmentLight=source.environmentLight;fogDensity=source.fogDensity;
+        environmentPowerOn=source.environmentPowerOn;
+        if(source.lastWeatherState!=null)setWeather(source.lastWeatherState);
+        placedWritingBookRoom=source.placedWritingBookRoom;
+        writingBookX=source.writingBookX;writingBookY=source.writingBookY;
+        writingBookZ=source.writingBookZ;
+        writingBookHasPosition=source.writingBookHasPosition;
+        writingBookTier=source.writingBookTier;writingBookStyle=source.writingBookStyle;
+        soloPlacedSalt=source.soloPlacedSalt;
+        roomLights=source.roomLights;roomLightTick=source.roomLightTick;
+        hidingDensity=source.hidingDensity;
+        rackStock=source.rackStock;rackToolTiers=source.rackToolTiers;
+        rackInventory=source.rackInventory;
+        tripods.clear();tripods.putAll(source.tripods);
+        portablePositions.clear();portablePositions.putAll(source.portablePositions);
+        droppedGear.clear();droppedGear.putAll(source.droppedGear);
+        videoCameras.clear();videoCameras.putAll(source.videoCameras);
+        sensorPositions.clear();sensorPositions.putAll(source.sensorPositions);
+        dotsPositions.clear();dotsPositions.putAll(source.dotsPositions);
+        incense.clear();incense.addAll(source.incense);
+        dotsPassRoom=source.dotsPassRoom;dotsPassUntil=source.dotsPassUntil;
+        dotsPassX=source.dotsPassX;dotsPassY=source.dotsPassY;dotsPassZ=source.dotsPassZ;
+        laserContacts.clear();laserContacts.putAll(source.laserContacts);
+        dotsPowered.clear();dotsPowered.putAll(source.dotsPowered);
+        laserPowered.clear();laserPowered.putAll(source.laserPowered);
+    }
     public BufferedImage image(){return frame;}
     public int[] pixels(){return pixels;}
     public double[] depths(){return depths;}
@@ -1429,7 +1483,7 @@ public final class SceneRenderer {
         for(var instance:scene.instances()){
             if(!instance.visible(x,eyeHeight,z,yaw,pitch,hx,hy,NEAR))continue;
             visible++;
-            boolean resident=worldResidentEnabled&&GpuWorldRenderer.active()!=null&&!uvLamp
+            boolean resident=worldResidentEnabled&&gpuAvailable()&&!uvLamp
                 &&!instance.mesh.equals("tv_mp_1")
                 &&!portableLightActive;
             var chunk=resident?residentScenery.get(instance):null;
@@ -2037,6 +2091,7 @@ public final class SceneRenderer {
      * previous resident framebuffer with coincidentally identical dimensions. */
     public long submittedGpuFrameId(){return lastSubmittedGpuFrame;}
     private boolean drawGpuFaces(List<Face> faces,HouseMap map){
+        if(photographicSoftwareRaster)return false;
         GpuWorldRenderer backend=GpuWorldRenderer.active();
         if(backend==null)return false;
         if(!backend.ready())throw new IllegalStateException(
@@ -2177,7 +2232,7 @@ public final class SceneRenderer {
         appendRetainedWorld(out,enclosure,"enclosure",map);
         if(exportFullLevel){roadsideModels(out,map);vanModel(out,map.van(),java.util.Set.of(),map);}
         int rejected=0,skippedFaces=0,candidateFaces=0;
-        boolean omitResidentShell=!exportFullLevel&&GpuWorldRenderer.active()!=null
+        boolean omitResidentShell=!exportFullLevel&&gpuAvailable()
             &&!uvLamp&&dotsPositions.isEmpty()&&!hasActivePortableLight();
         for(ShellChunk chunk:staticShellChunks(map)){
             if(!exportFullLevel&&shellChunkCulling&&!shellChunkInFrustum(chunk)){
@@ -2693,7 +2748,7 @@ public final class SceneRenderer {
         // Non-rendering socket passes must not replace the real geometry
         // owned by the same authored socket (for example a hiding cupboard).
         if(source.isEmpty())return;
-        if(!worldResidentEnabled||map==null||exportFullLevel||GpuWorldRenderer.active()==null||uvLamp
+        if(!worldResidentEnabled||map==null||exportFullLevel||!gpuAvailable()||uvLamp
             ||hasActivePortableLight()){out.addAll(source);return;}
         var previous=auxiliaryWorld.get(key);
         if(previous==null||previous.source()!=source){
@@ -2922,7 +2977,7 @@ public final class SceneRenderer {
         if(editorSelection!=null)box(dynamic,editorSelection[0]-.04,editorSelection[1]+.02,
             editorSelection[2]-.04,.08,1.4,.08,0xffcb54);
         List<Face> castle;
-        if(exportFullLevel||GpuWorldRenderer.active()==null||!castleResidentEnabled){
+        if(exportFullLevel||!gpuAvailable()||!castleResidentEnabled){
             castle=new ArrayList<>(castleStaticGeometry);
             for(var assembly:castleActiveAssemblies)castle.addAll(assembly.faces);
             castle.addAll(dynamic);
@@ -3214,7 +3269,7 @@ public final class SceneRenderer {
     private boolean fullyDepthOccluded(Point a,Point b,Point c){
         // GPU frames may be asynchronous: never compare current geometry to
         // the previous completed GPU color/depth readback.
-        if(!depthEarlyReject||GpuWorldRenderer.active()!=null)return false;
+        if(!depthEarlyReject||gpuAvailable())return false;
         double near=Math.min(a.z,Math.min(b.z,c.z));
         if(near<=NEAR || !Double.isFinite(near))return false;
         double ax=PsxPipeline.snap(renderWidth*.5+a.x/a.z*focal,psxPreset);

@@ -1309,7 +1309,7 @@ public final class LanHost implements AutoCloseable {
                             if((ghost.manifested()&&room==ghost.room())||optical)
                                 taskDone(ContractRewards.Task.PHOTO_EVENT);
                             reading="Exposure captured / "+remaining+" frames remaining";
-                            // The client captures its *actual rendered frame* on receipt.
+                            // The client keeps its shutter-time lens render until this acceptance; never takes an acknowledgement-time screenshot.
                             // No image-recognition or ghost-presence check exists.
                         }
                         case "IGNITER" -> {

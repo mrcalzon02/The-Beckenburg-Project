@@ -17,6 +17,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
     private LevelOpeningCinematic opening;
     private final SceneRenderer videoRenderer=new SceneRenderer();
+    private final SceneRenderer photoRenderer=new SceneRenderer();
     private final java.util.Map<Integer,LanVideoCameras.Camera> videoCameras=new HashMap<>();
     private final java.util.Map<Integer,Boolean> videoPowered=new HashMap<>();
     private final java.util.Map<String,Integer> batterySeconds=new HashMap<>();
@@ -212,6 +213,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         toolGrip.reset();releaseVoice();timer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
         VanLiveScreens.suspendCamera();
         capturedCameraImage=null;
+        pendingPhoto=null;
     }
     private void beginVoice(LanChat.Channel channel){
         if(health<=0||!caseResult.isEmpty()||chatInput.isVisible())return;
@@ -885,12 +887,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     try{
                         EquipmentTiers.Tier photoTier=equipmentTier.getOrDefault(
                             "PHOTO_CAMERA",EquipmentTiers.Tier.I);
-                        lastPhoto=pendingPhoto!=null?pendingPhoto:
-                            HunterPhotography.snapshot(renderer.image(),photoTier);
+                        if(pendingPhoto==null)
+                            throw new IllegalStateException("no shutter-time camera lens frame");
+                        lastPhoto=pendingPhoto;
                         lastPhotoPath=HunterPhotography.save(lastPhoto,
                             HunterPhotography.defaultFolder(),seat,++photoExposure);
                         lastPhotoUntil=tick+35;
-                    }catch(java.io.IOException ex){
+                    }catch(java.io.IOException|IllegalStateException ex){
                         feedback="PHOTO SAVE ERROR: "+ex.getMessage();
                     }finally{pendingPhoto=null;}
                 }
@@ -920,6 +923,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     }
                 feedback=frame;
             }else if(frame.startsWith("ACCEPT|")||frame.startsWith("REJECT|")||frame.startsWith("EVIDENCE|")||frame.startsWith("RITUAL|")) {
+                if(frame.startsWith("REJECT|")&&pendingPhoto!=null)pendingPhoto=null;
                 feedback=frame;
                 // A rejected host action is local feedback, not a world sound:
                 // no ghost stimulus, no false proof of a successful item use.
@@ -1826,9 +1830,23 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             if(held.equals("UV_LIGHT"))sendAction("UV inspection",client::scanUv);
             return; // powered light emits continuously, switch stays on RMB
         }
-        if(held.equals("PHOTO_CAMERA"))
-            pendingPhoto=HunterPhotography.snapshot(renderer.image(),
-                equipmentTier.getOrDefault("PHOTO_CAMERA",EquipmentTiers.Tier.I));
+        if(held.equals("PHOTO_CAMERA")){
+            // Exactly one outstanding exposure: never match a subsequent frame
+            // to an earlier host acknowledgement.
+            if(pendingPhoto!=null){feedback="AWAITING CAMERA SHUTTER ACCEPTANCE";return;}
+            try{
+                pendingPhoto=CameraSnapshot.network(photoRenderer,renderer,map,
+                    new ArrayList<>(peers.values()),apparition,tick*.1,
+                    List.copyOf(counterMarks),
+                    equipmentTier.getOrDefault("PHOTO_CAMERA",EquipmentTiers.Tier.I));
+                client.useHeldEquipment();
+                feedback="Awaiting host photograph acceptance";
+            }catch(IOException|RuntimeException error){
+                pendingPhoto=null;
+                feedback="CAMERA CAPTURE FAILED: "+error.getMessage();
+            }
+            return;
+        }
         sendAction("use device",client::useHeldEquipment);
     }
     private void placeCurrentTool(){

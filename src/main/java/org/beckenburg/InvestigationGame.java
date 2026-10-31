@@ -668,6 +668,7 @@ public final class InvestigationGame {
         private final Set<Integer> down=new HashSet<>();
         private final HouseMap map;
         private final SceneRenderer scene=new SceneRenderer();
+        private final SceneRenderer photoRenderer=new SceneRenderer();
         private final RoomLighting lights=new RoomLighting();
         private final InvestigationSession session;
         private final boolean campaignMode;
@@ -699,6 +700,9 @@ public final class InvestigationGame {
         private VanLiveScreens.Panel focusedVanPanel;
         private final SiteCaseFiles.Reader assignmentReader=new SiteCaseFiles.Reader(),storyReader=new SiteCaseFiles.Reader();
         private int useHeldUntilTick;
+        private java.awt.image.BufferedImage lastPhoto;
+        private java.nio.file.Path lastPhotoPath;
+        private int photoExposure,lastPhotoUntil;
         private final ToolBeltHud.Grip toolGrip=new ToolBeltHud.Grip();
         private boolean toolPlacement;
         private int placementRotation,lastMouseUseTick=-100000;
@@ -1344,6 +1348,23 @@ public final class InvestigationGame {
                 LanSound.Cue spoken=session.spiritBoxReplyCue();
                 if(spoken!=null)GameSfx.play(spoken);
             }else GameSfx.play(cue);
+            // A photograph is real film even when no apparition is visible:
+            // the gameplay boolean only reports evidence, not shutter success.
+            if(device==EquipmentLoadout.Item.PHOTO_CAMERA
+                    &&loadout.usesLeft(device)<before){
+                try{
+                    lastPhoto=CameraSnapshot.solo(photoRenderer,scene,map,session,
+                        frameCount/30.0,
+                        assistants.stream().map(CampaignAlly::sprite).toList(),
+                        EquipmentTiers.Tier.I);
+                    lastPhotoPath=HunterPhotography.save(lastPhoto,
+                        HunterPhotography.defaultFolder(),0,++photoExposure);
+                    lastPhotoUntil=session.ticks()+35;
+                    showVanNotice("PHOTO SAVED: "+lastPhotoPath.getFileName());
+                }catch(java.io.IOException|RuntimeException error){
+                    showVanNotice("PHOTO SAVE ERROR: "+error.getMessage());
+                }
+            }
             return accepted;
         }
         private InteractionFocus.Target focusTarget(){
@@ -1510,6 +1531,13 @@ public final class InvestigationGame {
                     return;
                 }
                 GraphicsOptions.current().draw(g,scene.image(),width,stageH);
+                if(lastPhoto!=null&&session.ticks()<=lastPhotoUntil){
+                    int pw=Math.min(180,width/4);
+                    int ph=Math.max(85,pw*lastPhoto.getHeight()/lastPhoto.getWidth());
+                    int px=width-pw-13;
+                    g.setColor(Color.DARK_GRAY);g.fillRect(px-3,48,pw+6,ph+6);
+                    g.drawImage(lastPhoto,px,51,pw,ph,null);
+                }
                 if(map.clutter().held(0)<0)HeldToolView.draw(g,width,stageH,loadout.equipped().name(),session.ticks(),
                     toolGrip.held(),scene.lamp,session.deviceReading(loadout.equipped().name()),
                     EquipmentTiers.Tier.I,toolGrip.amount());
