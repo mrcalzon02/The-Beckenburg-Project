@@ -29,7 +29,7 @@ public final class AdaptiveNavigationRegions {
                 throw new IllegalArgumentException("Invalid authored navigation area");
         }
     }
-    public enum Connection { STAIRS, LADDER, DROP }
+    public enum Connection { STAIRS, LADDER, DROP, RAMP }
     /** Authored traversal; an opening by itself is NEVER an automatic connection. */
     public record Transition(String from,String to,double fromX,double fromZ,
                              double toX,double toZ,Connection connection) {
@@ -371,6 +371,14 @@ public final class AdaptiveNavigationRegions {
                     profile.footprint()))continue;
             double rise=Math.abs(query.support(t.from(),t.fromX(),t.fromZ()).y()
                 -query.support(t.to(),t.toX(),t.toZ()).y());
+            if(t.connection()==Connection.RAMP){
+                // Unlike a ladder or an authored stair, a smooth ramp link
+                // never bridges a gap or teleports across a floor height.
+                // Transition anchors must be co-located and step-continuous.
+                if(Math.hypot(t.fromX()-t.toX(),t.fromZ()-t.toZ())>1e-5
+                    ||rise>profile.footprint().maxStep()+1e-7)
+                    continue;
+            }
             double cost=Math.hypot(a.x()-t.fromX(),a.z()-t.fromZ())
                 +Math.hypot(b.x()-t.toX(),b.z()-t.toZ())+rise+1;
             adjacent.get(from).add(new Edge(to,cost,t.connection(),
