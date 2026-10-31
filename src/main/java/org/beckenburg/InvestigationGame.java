@@ -1572,7 +1572,7 @@ public final class InvestigationGame {
                     g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
                     String[] hints={
                         "WASD move / SHIFT sprint / CLICK mouse-look",
-                        "E interact / F flashlight / 1-4 select gear / R use",
+                        "E interact / F flashlight / 1-4 select gear / HOLD LMB use",
                         "C ward / B rite / 5-6 class skills / Z cross / G ward / H salt",
                         "T health medicine / Y sanity medicine",
                         "J journal / M map / Q hold team callout wheel",
