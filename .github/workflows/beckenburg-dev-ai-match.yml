@@ -7,6 +7,9 @@ on:
     paths:
       - 'src/main/java/org/beckenburg/DevAdminSnapshot.java'
       - 'src/main/java/org/beckenburg/DevMatchSession.java'
+      - 'src/main/java/org/beckenburg/DevMatchClientAi.java'
+      - 'src/main/java/org/beckenburg/DevMatchOutcomeReport.java'
+      - 'src/main/java/org/beckenburg/DevAdminPanel.java'
       - 'src/main/java/org/beckenburg/LanHost.java'
       - '.github/workflows/beckenburg-dev-ai-match.yml'
 
@@ -49,6 +52,15 @@ jobs:
           & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.DevMatchSession --dev-ai-match --bots --seconds=8
           if ($LASTEXITCODE -ne 0) { throw "Seven-client AI activity acceptance failed: exit $LASTEXITCODE" }
 
+      - name: Run full combat and deduction scenario (advisory gameplay outcome)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.DevMatchSession --dev-ai-match --bots --ghost=DEMON --seconds=120
+          if ($LASTEXITCODE -ne 0) { throw "Behavioral scenario failed to run: exit $LASTEXITCODE" }
+          Get-Content 'build\dev-match\objective-results.txt'
+
       - name: Capture diagnostics even after failure
         if: always()
         shell: pwsh
@@ -64,7 +76,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: beckenburg-dev-match-phase0-${{ github.run_number }}
+          name: beckenburg-dev-match-combat-evidence-${{ github.run_number }}
           path: |
             build/dev-match/
             build/e2e/lan-full-round.txt
