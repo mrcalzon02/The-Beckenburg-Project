@@ -43,6 +43,7 @@ final class DevMatchClientAi implements AutoCloseable {
     private int lastIdentifyRequest=-1000,lastRiteRequest=-1000,lastWardRequest=-1000;
     private int health=100,stress,seenScanCount,observedSignals,suspectedAnchor=-1,ghostHeading=180;
     private GhostIdentity.Type hypothesis;
+    private boolean guessAttempted;
     private final FieldJournal notes=new FieldJournal();
     private final Set<String> distinctSamples=new HashSet<>();
     private final Map<Integer,Integer> emfStrongRooms=new HashMap<>();
@@ -221,23 +222,32 @@ final class DevMatchClientAi implements AutoCloseable {
     }
     private void hunterTurn()throws IOException {
         if(room<0)return;
-        if(tick-lastScanTick>=145+random.nextInt(25)){
+        if(room<HouseMap.EXTRACTION_ROOM&&tick-lastScanTick>=75+random.nextInt(20)){
             lastScanTick=tick;
             LanCase.Tool tool=LanCase.Tool.values()[Math.floorMod((tick/140)+Integer.parseInt(seat.substring(1)),LanCase.Tool.values().length)];
             sendAction("SCAN "+tool+" R"+room,()->client.scan(tool));
             seenScanCount++;
         }
         if(health<=0)return;
-        // A deduction can only be attempted when real, received clues reduce
-        // the published journal shortlist to one identity. No blind guesses.
-        if(hypothesis==null&&tick-lastIdentifyRequest>80&&notes.seenCount()>=2){
-            var possibilities=GhostFieldGuide.shortlist(notes);
-            if(possibilities.size()==1){
-                hypothesis=possibilities.get(0);
+        // One designated investigator makes ONE evidence-based deduction.
+        // Never use rejection responses as a brute-force species oracle.
+        if(seat.equals("H1")&&!guessAttempted&&tick>=300&&notes.seenCount()>=2){
+            var possibilities=GhostFieldGuide.ordered(notes);
+            boolean realDiagnostic=notes.status(GhostFieldGuide.Clue.EMF_OVER_SIX)==FieldJournal.Status.SEEN
+                ||notes.status(GhostFieldGuide.Clue.EXTREME_HEAT)==FieldJournal.Status.SEEN
+                ||notes.status(GhostFieldGuide.Clue.EXTREME_COLD)==FieldJournal.Status.SEEN
+                ||notes.status(GhostFieldGuide.Clue.GHOST_WRITING)==FieldJournal.Status.SEEN;
+            if(!possibilities.isEmpty()&&realDiagnostic){
+                // Without unmistakable Ancient/Elder clues, favor the known
+                // base species over an otherwise indistinguishable variant.
+                GhostIdentity.Type candidate=possibilities.stream()
+                    .filter(t->!t.ancient()&&!t.elder()).findFirst()
+                    .orElse(possibilities.get(0));
+                guessAttempted=true;
                 lastIdentifyRequest=tick;
                 identifications.incrementAndGet();
-                GhostIdentity.Type guess=hypothesis;
-                sendAction("IDENTIFY "+guess,()->client.identify(guess));
+                sendAction("IDENTIFY "+candidate+" from "+notes.seenCount()+" clues",
+                    ()->client.identify(candidate));
                 return;
             }
         }
