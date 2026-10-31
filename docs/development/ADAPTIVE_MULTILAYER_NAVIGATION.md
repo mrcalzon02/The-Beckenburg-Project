@@ -120,3 +120,22 @@ The authored operation document is entrance-seams.bin, independent of the source
 The adaptive flood fill now loads method 1/2 seam barriers, method 3 independent tab supports, and explicit ramp-to-tab navigation endpoints. It visually marks the three kinds of opening in the 2D authoring map. The targeted Java 17 test is EntranceSeamDocumentTest: subdivision, tile de-stitch separation, tab punching and standability, no outdoor AI cross-edge route, disk persistence, idempotent reapplication and source PNG seam preservation.
 
 **Status boundary:** this is actual editor-side collision/query/topology authoring. Full 3D cave-mouth mesh emission, visual subterranean-tile re-welding, GPU rendering and live Hunter/ghost movement integration are still future work. The editor may not claim an authored seam is already a playable cave entrance.
+
+
+## N4 — Real authored 3D entrance mesh emission and inspection (2026-10-31)
+
+From **Smooth Ramp Entrances**, select a ramp and press **3D MESH PREVIEW** or **EXPORT MESH OBJ**. From **ENTRANCE SEAMS 1/2/3**, select a seam or tab and use the same 3D preview/export commands. The preview is a rotatable, zoomable projection of actual generated mesh triangles, labeled explicitly as an editor inspection view and **not an in-game screenshot**.
+
+The source-consistent geometry generator, \`TerrainEntranceMesh\`, emits:
+
+- Outdoor terrain triangles from **real 16-bit heightmap pixel samples** and actual adaptive quadtree leaves; polygon edge vertices follow \`AdaptiveTerrainTopology.edgeBreaks\`, including fine/coarse neighbors. Split terrain borders are exported with separately owned vertex indices rather than automatically rewelded.
+- The original-height **detached navigation tab** as its own mesh part. Punched outer surface leaves remain absent from the outdoor surface mesh.
+- Continuous cubic-Hermite ramp triangles using the **identical height function** used by collision/navigation, including C1-eased mouth and interior grades.
+- Independently authored underground floor slabs, omitting surface patches where the ramp overlaps the destination floor.
+- **Exposed rock cheek walls** *only* where a real cutout meets a physical ramp and an adjoining uncut terrain edge. Wall endpoints use source terrain heights and ramp heights; no arbitrary-depth fake cavern wall or unrequested backdrop is invented.
+
+The **geometry-only OBJ** output has named groups for surface seam sides, detached tabs, ramps, floors and rock edges. It includes UV coordinates but **does not fabricate a replacement diffuse texture**. The exporter parses the written file through \`EditorMeshPipeline.read\` before publishing it, and the editor performs a second readback after export. Geometry is limited to 16,000 triangles and a bounded source-cell region: larger entrances must be exported in chunks, not silently downsampled.
+
+Windows Java 17 \`TerrainEntranceMeshTest\` checks adaptive mesh face orientation and source-height agreement, separate sides of existing and new cut seams, preserved detached tab triangles, ramp/query height agreement, non-fabricated cave cheek walls, OBJ roundtrip group and face preservation, sparse outer-tile borders and original source heightmap seam integrity. This test blocks only on a functional mesh/export regression, not visual style.
+
+**Still pending:** hooking emitted OBJ/GLB or mesh batches into the live game-level renderer and collision/AI runtime; dynamically streaming many tiles, building full tunnel/ceiling walls beyond authored rock edges, and texture/material assignment from the approved asset library. OBJ output is an inspectable intermediate asset, not proof of a finished in-game cave.
