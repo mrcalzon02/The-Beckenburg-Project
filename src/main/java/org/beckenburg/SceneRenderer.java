@@ -3629,4 +3629,85 @@ public final class SceneRenderer {
             pixels[k]=(Math.min(255,red)<<16)|(Math.min(255,green)<<8)|Math.min(255,blue);
         }
     }
+
+    /**
+     * Separate DEV ASSET ROOM scene, deliberately not a HouseMap.Site or player
+     * lobby. Uses the *production* GLB->Face importer, perspective UV sampler,
+     * z-buffer, and directional character renderer. No proxy cubes for assets;
+     * solid plinths/floor are only staging furniture. A bad mesh remains
+     * reported as bad rather than being substituted with a fake asset.
+     *
+     * Six real items per bay, unlimited sequential bays from the live registry.
+     */
+    public void drawDevAssetRoom(List<DevAssetReviewCatalog.Entry> bay,double clock,double rotation){
+        Objects.requireNonNull(bay);
+        if(bay.size()>6)throw new IllegalArgumentException("At most six physical exhibits per bay");
+        paintSky(clock);
+        Arrays.fill(depths,Double.POSITIVE_INFINITY);
+        environmentLight=1;
+        weatherLightScale=1;
+        fogDensity=0;
+        List<Face> stage=new ArrayList<>();
+        box(stage,-8,-.35,-8,16,.32,23,0x373a43);
+        for(int j=0;j<6;j++){
+            double px=devAssetX(j),pz=devAssetZ(j);
+            box(stage,px-1.18,-.03,pz-1.14,2.36,.23,2.28,j%2==0?0x777881:0x646671);
+            box(stage,px-1.22,-.05,pz-1.18,2.44,.055,2.36,0xb2a68e);
+        }
+        for(int j=0;j<bay.size();j++){
+            var entry=bay.get(j);
+            if(entry.sprite())continue;
+            double px=devAssetX(j),pz=devAssetZ(j);
+            try{
+                double[] bounds=castleBounds(entry.id());
+                double span=Math.max(bounds[3],Math.max(bounds[4],bounds[5]));
+                if(!Double.isFinite(span)||span<=0)throw new IllegalStateException("Invalid source dimensions");
+                double scale=Math.min(22,Math.min(2.0/Math.max(.0001,Math.max(bounds[3],bounds[5])),
+                    2.15/Math.max(.0001,bounds[4])));
+                double angle=rotation;
+                double cx=bounds[0]*scale,cz=bounds[2]*scale;
+                double x=px-(cx*Math.cos(angle)-cz*Math.sin(angle));
+                double z=pz-(cx*Math.sin(angle)+cz*Math.cos(angle));
+                imported(stage,entry.id(),x,.2-bounds[1]*scale,z,scale,angle);
+            }catch(RuntimeException badMesh){
+                // The missing/broken mesh is not visually replaced. Only an
+                // explicit red error pedestal is drawn for diagnostic visibility.
+                box(stage,px-.5,.25,pz-.5,1,.12,1,0x90202b);
+            }
+        }
+        for(Face f:stage){
+            if(!faceInFrustum(f))continue;
+            var clipped=clip(new Vertex(camera(f.a),f.au,f.av),
+                new Vertex(camera(f.b),f.bu,f.bv),
+                new Vertex(camera(f.c),f.cu,f.cv));
+            for(int k=1;k+1<clipped.size();k++)
+                triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),f.color,f.material,.96);
+        }
+        // Use packaged authored sprite cutouts, including real alpha/feet,
+        // NOT a generated 3D stand-in for player models or ghosts.
+        for(int j=0;j<bay.size();j++){
+            var entry=bay.get(j);
+            if(!entry.sprite())continue;
+            double px=devAssetX(j),pz=devAssetZ(j);
+            try{
+                DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,px,pz,180,
+                    entry.id(),1.82,1.00,.21,255,true,
+                    renderWidth,renderHeight,focal);
+            }catch(RuntimeException badArt){
+                // Diagnostic catalog will explicitly show MISSING; keep
+                // the exhibit empty rather than pretending to have its art.
+            }
+        }
+        PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
+        applyGraphicsEffects(clock);
+    }
+    public static double devAssetX(int index){
+        if(index<0||index>=6)throw new IllegalArgumentException("review exhibit index");
+        return (index%3-1)*4.6;
+    }
+    public static double devAssetZ(int index){
+        if(index<0||index>=6)throw new IllegalArgumentException("review exhibit index");
+        return index/3==0?4.5:10.5;
+    }
+
 }
