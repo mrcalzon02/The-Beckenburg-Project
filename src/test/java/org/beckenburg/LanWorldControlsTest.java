@@ -29,6 +29,11 @@ public final class LanWorldControlsTest {
         SwingUtilities.invokeAndWait(()->panel.keyPressed(new KeyEvent(panel,KeyEvent.KEY_PRESSED,
                 System.currentTimeMillis(),0,key,KeyEvent.CHAR_UNDEFINED)));
     }
+    static void tap(LanWorldPanel panel,int key)throws Exception{
+        press(panel,key);
+        SwingUtilities.invokeAndWait(()->panel.keyReleased(new KeyEvent(panel,KeyEvent.KEY_RELEASED,
+            System.currentTimeMillis(),0,key,KeyEvent.CHAR_UNDEFINED)));
+    }
     public static void main(String[] args)throws Exception{
         try(LanHost host=new LanHost("127.0.0.1",0);
             Peer a=new Peer(host.port(),"Cleric");
@@ -41,6 +46,15 @@ public final class LanWorldControlsTest {
             SwingUtilities.invokeAndWait(()->instance[0]=new LanWorldPanel(a.client));
             LanWorldPanel panel=instance[0];
             try{
+                tap(panel,KeyEvent.VK_TAB);
+                check(panel.casefileOpen(),"Tab opens the evidence ledger anywhere in an investigation");
+                press(panel,KeyEvent.VK_ESCAPE);
+                check(!panel.casefileOpen(),"Escape closes ledger and returns to gameplay");
+                press(panel,KeyEvent.VK_F1);
+                tap(panel,KeyEvent.VK_TAB);
+                check(panel.casefileOpen(),"Tab overrides the help overlay and opens evidence ledger");
+                press(panel,KeyEvent.VK_ESCAPE);
+                check(!panel.casefileOpen(),"ledger closes cleanly after help overlay");
                 press(panel,KeyEvent.VK_2);check(panel.selectedTool()==LanCase.Tool.THERMOMETER,"hotkey 2 selects thermometer");
                 press(panel,KeyEvent.VK_R);
                 String measurement=a.await("ACCEPT|GEARUSE|THERMOMETER|");
