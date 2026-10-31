@@ -391,7 +391,8 @@ final class DevMatchClientAi implements AutoCloseable {
         // cycling between outdoor rooms 12 and 13, never gathering evidence
         // near the ghost.
         if(map.outside(room)){
-            List<Integer> entrances=choices.stream().filter(r->!map.outside(r)).toList();
+            List<Integer> entrances=new ArrayList<>(
+                choices.stream().filter(r->!map.outside(r)).toList());
             if(!entrances.isEmpty()){
                 entrances.sort(Integer::compareTo);
                 return entrances.get(Math.floorMod(Integer.parseInt(seat.substring(1))-1,
