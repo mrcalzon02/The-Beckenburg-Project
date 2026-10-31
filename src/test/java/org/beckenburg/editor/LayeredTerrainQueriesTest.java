@@ -41,9 +41,11 @@ public final class LayeredTerrainQueriesTest {
                 "Cutout removes surface only, never lower stacked layers");
             check(layered.canStand("sewer",15.5,9.5,agent),
                 "Sewer is independently walkable under other layers");
-            check(!layered.canStand("bunker",15.5,9.5,
-                    new LayeredTerrainQueries.Agent(.15,3.25,35,.25)),
-                "Original terrain above bunker constrains headroom");
+            var tall=new LayeredTerrainQueries.Agent(.15,3.25,35,.25);
+            check(layered.canStand("bunker",15.5,9.5,tall),
+                "A real cutout removes the overhead source-terrain ceiling");
+            check(!layered.canStand("bunker",14.5,9.5,tall),
+                "Intact terrain above bunker constrains headroom");
             var wall=new LayeredTerrainQueries.Solid("sewer-wall",
                 17,-4,8,17.35,-1.6,11);
             var blocked=new LayeredTerrainQueries(world,topo,List.of(lower,upper),
