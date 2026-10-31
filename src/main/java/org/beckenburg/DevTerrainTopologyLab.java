@@ -6,6 +6,8 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import org.beckenburg.editor.AdaptiveTerrainTopology;
+import org.beckenburg.editor.AdaptiveNavigationRegions;
+import org.beckenburg.editor.LayeredTerrainQueries;
 import org.beckenburg.editor.StitchedHeightmapWorld;
 
 /**
@@ -23,6 +25,12 @@ public final class DevTerrainTopologyLab {
     private final StitchedHeightmapWorld source;
     private AdaptiveTerrainTopology topology;
     private List<Triangle> surface=List.of();
+    /** Real source-derived nav diagnostics; independent of showroom model meshes. */
+    public record NavigationReport(int regions,int connections,int routeSteps,
+                                   long topologyRevision,String error) {
+        public boolean passed(){return error==null;}
+    }
+    private NavigationReport navigation=new NavigationReport(0,0,0,0,"Not built");
 
     private DevTerrainTopologyLab(StitchedHeightmapWorld source)throws IOException {
         this.source=source;
@@ -56,12 +64,40 @@ public final class DevTerrainTopologyLab {
     public int splitCount(){return topology.splitCount();}
     public int cutoutCount(){return topology.cutoutCount();}
     public List<Triangle> triangles(){return surface;}
+    public NavigationReport navigation(){return navigation;}
     public void refresh()throws IOException {
         AdaptiveTerrainTopology next=AdaptiveTerrainTopology.open(source);
         List<Triangle> rebuilt=build(next);
-        // Publish together only after successful read/triangulation.
+        NavigationReport report;
+        try {
+            var query=new LayeredTerrainQueries(source,next,List.of(),List.of());
+            double cell=source.settings().metresPerCell();
+            double ox=source.settings().originX(),oz=source.settings().originZ();
+            var agent=new AdaptiveNavigationRegions.Profile(
+                new LayeredTerrainQueries.Agent(.10,1.65,42,.24),false,false);
+            double left=ox+(START_X+.25)*cell;
+            double right=ox+(START_X+CELLS_X-.25)*cell;
+            double north=oz+(START_Z+.25)*cell;
+            double south=oz+(START_Z+CELLS_Z-.25)*cell;
+            var graph=AdaptiveNavigationRegions.build(query,agent,
+                List.of(new AdaptiveNavigationRegions.Area("surface",
+                    left,north,right,south)),List.of(),.125);
+            double middle=oz+(START_Z+2.5)*cell;
+            var route=graph.route("surface",ox+(START_X+.65)*cell,middle,
+                "surface",ox+(START_X+CELLS_X-.65)*cell,middle);
+            var metrics=graph.metrics();
+            report=new NavigationReport(metrics.acceptedRegions(),metrics.edges(),
+                route.size(),metrics.topologyRevision(),
+                route.isEmpty()?"No safe route across topology QA area":null);
+        }catch(IOException|RuntimeException navFailure){
+            report=new NavigationReport(0,0,0,next.revision(),
+                "Navigation graph failed: "+navFailure.getMessage());
+        }
+        // Surface geometry remains visible if navigation diagnostics fail; neither
+        // a missing route nor a graph error is misreported as acceptance success.
         topology=next;
         surface=List.copyOf(rebuilt);
+        navigation=report;
     }
     private List<Triangle> build(AdaptiveTerrainTopology state)throws IOException {
         List<Triangle> out=new ArrayList<>();
