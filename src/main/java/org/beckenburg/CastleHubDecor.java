@@ -35,9 +35,11 @@ public final class CastleHubDecor {
         f("sofa_1",4.0,20.0,.74,0,.98,.48),
         f("armchair_1",7.25,19.6,.78,Math.PI/2,.44,.60),
         f("dinner_table_1",5.65,18.2,.65,0,.56,.38),
-        // Operations and multiplayer offices
-        f("display_cabinet_mp_2",11.3,13.3,.75,0,.51,.25),
-        f("display_cabinet_mp_2",16.0,13.3,.75,0,.51,.25),
+        // Operations storage belongs in the covered eastern office, not in
+        // the open arrival courtyard (x 10.5..20.5, z 11.5..34).
+        // Face the two fronts into the office from its east wall.
+        f("display_cabinet_mp_2",27.55,26.8,.75,-Math.PI/2,.51,.25),
+        f("display_cabinet_mp_2",27.55,30.0,.75,-Math.PI/2,.51,.25),
         f("chair_mp_5",24.1,17.7,1.12,0,.35,.39),
         f("tv_table_1_4",25.15,20.0,.82,Math.PI/2,.29,.69),
         f("armchair_1",22.3,20.0,.77,0,.57,.42),
