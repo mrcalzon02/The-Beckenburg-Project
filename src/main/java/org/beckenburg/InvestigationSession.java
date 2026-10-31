@@ -91,6 +91,12 @@ public final class InvestigationSession {
     }
     public MissionWeather.State weather(){return missionWeather.state();}
     private int lastEvidenceTick=-10000,lastEvidenceRoom=-1,lastEvidenceStrength;
+    private int lastVocalEventTick=-1,lastVocalEventRoom=-1,lastSpiritReplyTick=-1;
+    private SpiritBoxResponses.Phrase latestSpiritReply;
+    /** This is a presentation cue, not a confirmed evidence identity. */
+    public LanSound.Cue spiritBoxReplyCue(){
+        return latestSpiritReply==null?null:latestSpiritReply.cue;
+    }
     private final GhostDomain ghost;
     private final GhostHauntingFolio hauntingFolio;
     private final java.util.ArrayDeque<GhostHauntingFolio.Occurrence> hauntings=
@@ -330,6 +336,11 @@ public final class InvestigationSession {
                     case WHISPER->3;case DISTURB->8;case MANIFEST->9;
                     case STRIKE,SIGNATURE->10;case DRIFT->0;
                 };
+                if(result.action()==GhostDomain.Action.WHISPER
+                        ||result.action()==GhostDomain.Action.SIGNATURE){
+                    lastVocalEventTick=ticks;
+                    lastVocalEventRoom=result.room();
+                }
                 if(power>0){
                     lastEvidenceTick=ticks;
                     lastEvidenceRoom=result.room();
@@ -479,8 +490,19 @@ public final class InvestigationSession {
             case THERMOMETER -> {
                 reading=rawTemperatureAt(x,y,z);
             }
-            case SPIRIT_BOX -> reading=room==ghost.room()
-                ?"Voice response detected":"No response detected";
+            case SPIRIT_BOX -> {
+                double distance=Math.hypot(x-map.centerX(ghost.room()),
+                    z-map.centerZ(ghost.room()));
+                boolean fresh=SpiritBoxResponses.qualifies(room,ghost.room(),
+                    lastVocalEventRoom,lastVocalEventTick,ticks,true,
+                    GhostEvidenceProfile.compatible(ghost.type(),GhostFieldGuide.Clue.SPIRIT_REPLY),
+                    distance,
+                    EquipmentTiers.stage("SPIRIT_BOX",EquipmentTiers.Tier.I).reachCm()/100.0,
+                    lastSpiritReplyTick);
+                latestSpiritReply=fresh?SpiritBoxResponses.choose(lastVocalEventTick,0):null;
+                if(fresh)lastSpiritReplyTick=lastVocalEventTick;
+                reading=SpiritBoxResponses.observation(latestSpiritReply);
+            }
             default -> throw new AssertionError(tool);
         }
         lastReadings.put(tool,reading);
