@@ -288,15 +288,17 @@ public final class LayeredTerrainQueries {
                 // but should not act as 5 cm high ceilings. This exemption
                 // applies ONLY at an explicitly authored ramp overlap.
                 boolean seam=false;
-                for(Ramp ramp:ramps)if(ramp.contains(p.x(),p.z())
-                    &&(ramp.layer().equals(p.layer())&&
-                         (higher.layer().equals(SURFACE)
-                            ||higher.layer().equals(ramp.targetLayer())
-                            ||isDetachedTab(higher.layer(),p.x(),p.z())))
-                       ||higher.layer().equals(ramp.layer())&&
-                         (p.layer().equals(SURFACE)
-                            ||p.layer().equals(ramp.targetLayer())
-                            ||isDetachedTab(p.layer(),p.x(),p.z())))){
+                for(Ramp ramp:ramps){
+                    if(!ramp.contains(p.x(),p.z()))continue;
+                    boolean upperApproach=higher.layer().equals(SURFACE)
+                        ||higher.layer().equals(ramp.targetLayer())
+                        ||isDetachedTab(higher.layer(),p.x(),p.z());
+                    boolean lowerApproach=p.layer().equals(SURFACE)
+                        ||p.layer().equals(ramp.targetLayer())
+                        ||isDetachedTab(p.layer(),p.x(),p.z());
+                    if(!(ramp.layer().equals(p.layer())&&upperApproach
+                         ||ramp.layer().equals(higher.layer())&&lowerApproach))
+                        continue;
                     double axis=ramp.axis(p.x(),p.z());
                     boolean fromExterior=p.layer().equals(SURFACE)||higher.layer().equals(SURFACE);
                     if(seams!=null)for(var tab:seams.tabs())if(tab.contains(p.x(),p.z())
