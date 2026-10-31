@@ -198,6 +198,48 @@ public final class LayeredTerrainQueries {
         }
         return true;
     }
+    /**
+     * Conservative source-triangle slope audit for coarse regions. Nine navigation
+     * probes alone can miss a narrow ridge or ravine between their sample rays.
+     * Scan the actual stitched PNG grid (two source triangles per base cell)
+     * independent of how coarsely the renderer has tessellated that area.
+     * Large/unknown areas demand subdivision instead of speculative clearance.
+     */
+    public boolean steepSourceWithin(Rect area,Agent agent)throws IOException {
+        Objects.requireNonNull(agent);
+        var settings=world.settings();
+        double size=settings.metresPerCell();
+        double xmin=(area.x0()-settings.originX())/size;
+        double xmax=(area.x1()-settings.originX())/size;
+        double zmin=(area.z0()-settings.originZ())/size;
+        double zmax=(area.z1()-settings.originZ())/size;
+        if(!finite(xmin,xmax,zmin,zmax))return true;
+        long loX=(long)Math.floor(xmin),hiX=(long)Math.ceil(xmax)-1;
+        long loZ=(long)Math.floor(zmin),hiZ=(long)Math.ceil(zmax)-1;
+        long width=hiX-loX+1,depth=hiZ-loZ+1;
+        if(width<=0||depth<=0)return true;
+        if(width>32||depth>32||width*depth>512)return true;
+        int n=settings.tileCells();
+        for(long z=loZ;z<=hiZ;z++)for(long x=loX;x<=hiX;x++){
+            long tileX=Math.floorDiv(x,n),tileZ=Math.floorDiv(z,n);
+            if(tileX < -1_000_000||tileX>1_000_000
+                ||tileZ < -1_000_000||tileZ>1_000_000
+                ||!world.hasTile((int)tileX,(int)tileZ))return true;
+            int tx=(int)tileX,tz=(int)tileZ;
+            int ix=(int)Math.floorMod(x,n),iz=(int)Math.floorMod(z,n);
+            double a=world.metres(world.sample(tx,tz,ix,iz));
+            double b=world.metres(world.sample(tx,tz,ix+1,iz));
+            double c=world.metres(world.sample(tx,tz,ix+1,iz+1));
+            double d=world.metres(world.sample(tx,tz,ix,iz+1));
+            // This is EXACTLY the diagonal split used by StitchedHeightmapWorld.height.
+            double slope1=Math.hypot((b-a)/size,(c-b)/size);
+            double slope2=Math.hypot((c-d)/size,(d-a)/size);
+            if(Math.max(slope1,slope2)>agent.slope()+1e-7)
+                return true;
+        }
+        return false;
+    }
+
     /** Does a region contain a physical feature requiring local nav refinement? */
     public boolean crossesFeature(String layer,Rect area) {
         if(layer.equals(SURFACE)){
