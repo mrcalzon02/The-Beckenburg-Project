@@ -44,6 +44,10 @@ public final class RampEntranceEditor extends JPanel {
         setBorder(BorderFactory.createEmptyBorder(7,7,7,7));
         JPanel buttons=new JPanel(new FlowLayout(FlowLayout.LEFT,5,3));
         button(buttons,"ADD RAMP",()->edit(null));
+        button(buttons,"ENTRANCE SEAMS 1/2/3",()->{
+            try{EntranceSeamEditor.open(frame,world);}
+            catch(IOException|RuntimeException failure){error("Entrance seam editor failed",failure);}
+        });
         button(buttons,"EDIT",()->{
             var item=list.getSelectedValue();
             if(item!=null)edit(item);else status.setText("Select a ramp");
