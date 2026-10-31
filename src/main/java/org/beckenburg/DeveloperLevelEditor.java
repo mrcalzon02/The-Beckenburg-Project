@@ -672,7 +672,7 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private void addLamp(){
         if(mission!=null){status.setText("Castle-only fixture; mission lighting must use level sockets");return;}
-        double px=renderer.x+Math.sin(renderer.y)*2;
+        double px=renderer.x+Math.sin(renderer.yaw)*2;
         double pz=renderer.z+Math.cos(renderer.yaw)*2;
         String id="light"+System.nanoTime();
         operate(()->data.put(new CastleLevelEdits.Lamp(id,"ceiling_lamp_1_on",
