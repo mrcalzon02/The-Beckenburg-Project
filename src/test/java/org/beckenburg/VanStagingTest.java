@@ -35,6 +35,30 @@ public final class VanStagingTest {
         var exit=van.location(VanStaging.Station.EXTRACTION);
         check(session.extract(exit.x(),exit.z()),"working extraction console position");
         check(session.outcome()==InvestigationSession.Outcome.RETREATED,"extraction resolves partial retreat");
+        // Actual imported exterior, not a replacement cardboard cuboid:
+        // retain the original textured surface and volume-backed 3D wheels.
+        var original=GlbProps.model("ggbot_car08_van_shell");
+        check(original.triangles().size()>300,"original vehicle is a real imported GLB mesh");
+        var outer=original.triangles().stream().filter(SceneRenderer::vanExteriorTriangle).toList();
+        check(outer.size()>200,"reusable van includes most original exterior geometry");
+        check(outer.stream().allMatch(t->t.material()>=GlbProps.TEXTURE_BASE),
+            "van exterior keeps the imported texture atlas, not flat body colors");
+        var rearEdge=SceneRenderer.vanExteriorLocal(0,0,-2.10);
+        var frontEdge=SceneRenderer.vanExteriorLocal(0,0,2.04);
+        var roofEdge=SceneRenderer.vanExteriorLocal(1.71,2.32,0);
+        check(Math.abs(rearEdge[2]-VanStaging.FRONT)<1e-6,
+            "source model rear aligned to operational cargo entrance");
+        check(Math.abs(frontEdge[2]-(VanStaging.REAR+VanStaging.CAB_LENGTH))<1e-6,
+            "imported body includes full front cab at gameplay collision depth");
+        check(Math.abs(roofEdge[0]-VanStaging.HALF_WIDTH)<1e-6 &&
+            Math.abs(roofEdge[1]-VanStaging.ROOF_Y)<1e-6,
+            "actual imported body scaled onto authoritative vehicle envelope");
+        var castleVan=CastleSurroundings.courtyardVan();
+        check(Math.abs(castleVan.placement().x()-CastleSurroundings.parkedVehicles().get(0).x())<1e-6,
+            "Castle and mission van share identical prefab dimensions");
+        var side=castleVan.world(VanStaging.HALF_WIDTH-.04,0);
+        check(CastleSurroundings.courtyardVanBlocks(side.x(),side.z(),.08),
+            "Castle courtyard van collision matches playable van wall");
         SceneRenderer renderer=new SceneRenderer();
         renderer.x=van.spawn().x();renderer.z=van.spawn().z();renderer.yaw=Math.PI;
         renderer.draw(house,session,0);
