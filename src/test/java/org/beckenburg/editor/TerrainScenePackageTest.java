@@ -45,6 +45,17 @@ public final class TerrainScenePackageTest {
                 "OBJ editor geometry does not pretend to be game-ready GLB");
             check(TerrainScenePackage.inspect(world,scene).isEmpty(),
                 "Packaged OBJ asset verifies hash and geometry inventory");
+            var fingerprintBefore=TerrainScenePackage.sourceFingerprint(world,bounds);
+            var refinement=AdaptiveTerrainTopology.open(world);
+            refinement.split(new AdaptiveTerrainTopology.Node(3,3,0,0,0));
+            refinement.save();
+            check(!fingerprintBefore.equals(TerrainScenePackage.sourceFingerprint(world,bounds))
+                &&TerrainScenePackage.inspect(world,scene).stream()
+                    .anyMatch(message->message.contains("STALE")),
+                "Changing the authored quadtree must flag a checksum-valid OBJ as stale");
+            pkg.publish("patch_0",bounds);
+            check(TerrainScenePackage.inspect(world,scene).isEmpty(),
+                "Rebaking after source changes refreshes the published provenance");
             var persisted=pkg.openScene();
             check(persisted.nodes().equals(scene.nodes()),
                 "Saved scene restores mesh, parent graph and existing unrelated nodes");
