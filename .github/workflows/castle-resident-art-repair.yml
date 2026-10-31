@@ -1,0 +1,32 @@
+name: Diagnostic recover original Castle resident art (nonblocking)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/repair_castle_sprite_art.py'
+      - '.github/workflows/castle-resident-art-repair.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  master-vs-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install offline image-analysis dependencies
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0 numpy==2.2.6 opencv-python-headless==4.11.0.86
+      - name: Match existing Castle cutouts to original concept masters and render high-fidelity candidates
+        continue-on-error: true # Source-art cosmetics are NOT a release/build gate.
+        run: python tools/repair_castle_sprite_art.py --out build/castle-resident-art-repair
+      - name: Preserve unmodified originals and source-vs-generated comparisons for inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: castle-residents-original-vs-old-vs-rebuilt-nonblocking
+          path: build/castle-resident-art-repair/
+          if-no-files-found: warn
+          retention-days: 21
