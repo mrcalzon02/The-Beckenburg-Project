@@ -6,6 +6,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Collections;
+import java.util.WeakHashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import javax.imageio.ImageIO;
@@ -47,7 +50,51 @@ public final class DirectionalSprites {
         return w>=128&&w<=512&&h>=224&&h<=896&&w*7==h*4;
     }
     private static final Map<String,BufferedImage> IMAGES=load();
+    // A four-view cutout has different amounts of transparent margin on each
+    // side. Without an alpha-derived pivot, angle swaps make NPCs jump laterally
+    // even though their authoritative world location hasn't moved.
+    private static final Map<BufferedImage,Double> BODY_PIVOT_X=
+        Collections.synchronizedMap(new WeakHashMap<>());
+    private record PoseKey(String identity,long x,long z,int heading){}
+    private static final ConcurrentHashMap<PoseKey,Integer> LAST_FACING=new ConcurrentHashMap<>();
+    private static final double FACING_HYSTERESIS_DEGREES=8.0;
     private DirectionalSprites() { }
+    /** Vertical, torso-centred silhouette pivot in original sprite pixels.
+     * Ignore isolated bright cutout flecks, accessories and transparent padding.
+     * This changes projection only, never the approved PNGs or actor coordinates.
+     */
+    static double bodyPivotX(BufferedImage sprite){
+        return BODY_PIVOT_X.computeIfAbsent(sprite,image->{
+            int w=image.getWidth(),h=image.getHeight(),left=w,right=-1;
+            int y0=h/3,y1=(h*2)/3;
+            for(int x=0;x<w;x++){
+                int count=0;
+                for(int y=y0;y<y1;y++)if((image.getRGB(x,y)>>>24)>=128)count++;
+                if(count>=Math.max(2,(y1-y0)/12)){
+                    left=Math.min(left,x);right=Math.max(right,x);
+                }
+            }
+            return right<left?(w-1)*.5:(left+right)*.5;
+        });
+    }
+    /** Small camera movements must not switch among the discrete source
+     * turnarounds on every frame at a 45-degree threshold.
+     */
+    static int stableFacing(String identity,int heading,double entityX,double entityZ,
+            double cameraX,double cameraZ){
+        int raw=facing(heading,entityX,entityZ,cameraX,cameraZ);
+        if(!GroundedSpriteFeet.isGroundedHuman(identity))return raw;
+        var key=new PoseKey(identity,Math.round(entityX*1000),Math.round(entityZ*1000),heading);
+        // These are stable Castle NPC positions, not moving network actors.
+        if(LAST_FACING.size()>256)LAST_FACING.clear();
+        double a=Math.toDegrees(Math.atan2(cameraX-entityX,cameraZ-entityZ))-heading;
+        int selected=LAST_FACING.compute(key,(k,old)->{
+            if(old==null)return raw;
+            double delta=Math.abs(Math.IEEEremainder(a-old*45.0,360.0));
+            return delta<=22.5+FACING_HYSTERESIS_DEGREES?old:raw;
+        });
+        return selected;
+    }
 
     private static Map<String,BufferedImage> load(){
         Map<String,BufferedImage> frames=new HashMap<>();
@@ -302,10 +349,16 @@ public final class DirectionalSprites {
         double baseY=elevation-1.62,topY=elevation+height-1.62;
         double nearBottom=baseY*sy+ahead*cy,nearTop=topY*sy+ahead*cy;
         if(nearBottom<NEAR||nearTop<NEAR)return;
-        double foot=renderHeight/2.0-(baseY*cy-ahead*sy)/nearBottom*focal;
-        double head=renderHeight/2.0-(topY*cy-ahead*sy)/nearTop*focal;
+        // A billboard is a vertical, flat cutout. Camera pitch repositions it
+        // on screen but must never tip, skew or resize head versus feet.
+        // Use one centre depth for both endpoints and horizontal projection.
+        double anchorDepth=(nearBottom+nearTop)/2;
+        if(anchorDepth<NEAR)return;
+        double foot=renderHeight/2.0-(baseY*cy-ahead*sy)/anchorDepth*focal;
+        double head=renderHeight/2.0-(topY*cy-ahead*sy)/anchorDepth*focal;
         if(head>=foot)return;
-        BufferedImage sprite=frame(character,facing(heading,entityX,entityZ,cameraX,cameraZ),phase,animationFrame);
+        BufferedImage sprite=frame(character,stableFacing(character,heading,
+            entityX,entityZ,cameraX,cameraZ),phase,animationFrame);
         // Grounded people have direction-dependent transparent bottom padding.
         // Move the image sampling rectangle (not its source pixels) so the last
         // visible shoe row stays at the actual world-floor contact projection.
@@ -315,9 +368,12 @@ public final class DirectionalSprites {
             foot+=shift;
             head+=shift;
         }
-        double anchorDepth=(nearBottom+nearTop)/2;
-        double cx=renderWidth/2.0+right/anchorDepth*focal;
         double halfW=focal*width/(2*anchorDepth);
+        double cx=renderWidth/2.0+right/anchorDepth*focal;
+        // Re-centre the authored silhouette on its immutable world pivot.
+        // Old code treated arbitrary transparent frame margins as body width.
+        if(GroundedSpriteFeet.isGroundedHuman(character))
+            cx+=(sprite.getWidth()*.5-bodyPivotX(sprite))*2*halfW/sprite.getWidth();
         int x0=Math.max(0,(int)Math.floor(cx-halfW)),x1=Math.min(renderWidth-1,(int)Math.ceil(cx+halfW));
         int y0=Math.max(0,(int)Math.floor(head)),y1=Math.min(renderHeight-1,(int)Math.ceil(foot));
         if(x0>x1||y0>y1)return;
