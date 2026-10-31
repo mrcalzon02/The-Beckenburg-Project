@@ -204,6 +204,12 @@ public final class LayeredTerrainQueries {
     }
     public Set<String> layers(){return layers;}
     public List<Floor> floors(){return floors;}
+    private boolean isDetachedTab(String layer,double x,double z){
+        if(seams==null)return false;
+        for(var tab:seams.tabs())if(tab.layer().equals(layer)&&tab.contains(x,z))
+            return true;
+        return false;
+    }
     public List<Ramp> ramps(){return ramps;}
     public EntranceSeamDocument seams(){return seams;}
     public boolean blocksAuthoredSeam(String layer,double ax,double az,double bx,double bz){
@@ -285,10 +291,12 @@ public final class LayeredTerrainQueries {
                 for(Ramp ramp:ramps)if(ramp.contains(p.x(),p.z())
                     &&(ramp.layer().equals(p.layer())&&
                          (higher.layer().equals(SURFACE)
-                            ||higher.layer().equals(ramp.targetLayer()))
+                            ||higher.layer().equals(ramp.targetLayer())
+                            ||isDetachedTab(higher.layer(),p.x(),p.z())))
                        ||higher.layer().equals(ramp.layer())&&
                          (p.layer().equals(SURFACE)
-                            ||p.layer().equals(ramp.targetLayer())))){
+                            ||p.layer().equals(ramp.targetLayer())
+                            ||isDetachedTab(p.layer(),p.x(),p.z())))){
                     double axis=ramp.axis(p.x(),p.z());
                     boolean fromExterior=p.layer().equals(SURFACE)||higher.layer().equals(SURFACE);
                     if(seams!=null)for(var tab:seams.tabs())if(tab.contains(p.x(),p.z())
