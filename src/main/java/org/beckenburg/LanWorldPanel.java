@@ -1378,29 +1378,6 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     g.drawString("E PICK UP "+nearby.tool().replace('_',' '),width/2+14,h/2-8);}
                 else InteractionFocus.draw(g,width,h,focusTarget());
             }
-            String alert=null;Color alertColor=new Color(216,196,216);
-            if(health==0){alert="INCAPACITATED / SPECTATE UNTIL RESULT";alertColor=new Color(245,154,159);}
-            else if(frenzyPhase==GhostFrenzy.Phase.WARNING){
-                alert="GHOST FRENZY INCOMING / "+(frenzyTicks/10)+"s TO REACT";
-                alertColor=new Color(255,181,125);
-            }else if(frenzyPhase==GhostFrenzy.Phase.RAGING){
-                alert="GHOST FRENZY / "+(frenzyTicks/10)+"s / HIDE OR BREAK SIGHT";
-                alertColor=new Color(255,141,137);
-            }else if(threatUntilTick>=tick && threatTarget>=0){
-                alert="STRIKE WIND-UP / EVADE OR BREAK SIGHT ("+(threatUntilTick-tick)+")";
-                alertColor=new Color(255,172,145);
-            }else if(apparition!=null){
-                String phase=apparition.phase()==LanGhostAnimation.Phase.MATERIALIZE?"MATERIALIZING"
-                    :apparition.phase()==LanGhostAnimation.Phase.RECOVER?"RECOVERING":"MANIFESTED";
-                alert="ENTITY "+phase+" / USE WARDS";alertColor=new Color(226,156,195);
-            }
-            // Ambient sounds play in-world; do not turn them into a running
-            // textual evidence feed. Keep only actionable danger alerts above.
-            if(alert!=null){
-                int aw=Math.min(width-24,Math.max(330,g.getFontMetrics().stringWidth(alert)+22));
-                g.setColor(new Color(27,17,27,229));g.fillRoundRect(12,87,aw,32,7,7);
-                g.setColor(alertColor);g.drawString(alert,23,108);
-            }
             String[] belt=equippedGear;
             boolean power=held.equals("FLASHLIGHT")?flashlightOn:
                 held.equals("UV_LIGHT")?uvLightOn:
