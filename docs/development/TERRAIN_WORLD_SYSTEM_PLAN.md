@@ -35,6 +35,12 @@ Background references: [Epic World Partition](https://dev.epicgames.com/document
 - Generator samples global integer vertex coordinates and a fixed seed; generating tiles in any order yields the same shared border. Terrain edits are separate from seed-based source and explicitly dirty the dependent tiles/LODs.
 - Sparse world size is **not** limited by `TerrainZoneDocument.Grid`'s 65,536-vertex finite editing cap. That cap remains appropriate only for finite grid documents.
 
+### Heightfields do not replace actual 3D caves and structures
+
+A heightmap represents **one elevation per horizontal X/Z coordinate**. It cannot describe two vertically stacked floors, cave ceilings, overhangs, bridges or mine shafts correctly on its own. Treat it as the outdoor ground foundation, with separate authored volumetric meshes / solid collision / portals for excavations, multi-floor geometry and exposed rock faces. A subtractive hole mask in the ground permits cave entrances but must not invent a walkable terrain surface inside the void. The editor must show which system owns collision at each position (terrain ground, structural mesh, stair, water, tunnel). Keep the same real gameplay collision/nav system at every LOD, regardless of which visual layer is currently drawn.
+
+**Acceptance fixtures:** tunnel under a surface hill remains navigable without terrain snapping the player onto the roof; bridge and road span keep their own supports; cave mouth remains open in every streamed LOD, including scope view from far outside; long-distance cliff/cave silhouettes cannot turn into solid averaged berms that falsely hide distant characters.
+
 ## 3. Long-distance LOD: visual simplification cannot change reality
 
 **Non-negotiable:** game physics, character feet, projectiles, ground-contact, AI, hiding and line-of-sight resolve against authoritative high-fidelity world geometry, **not** a rendered LOD proxy. If a character stands on a real ridge at 2 miles, averaging a distant chunk must not produce an apparent mountain in front of them or a false exposed position.
