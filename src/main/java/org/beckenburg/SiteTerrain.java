@@ -9,10 +9,24 @@ public final class SiteTerrain {
     public static final double STEP=.5,ROAD_Z=72,BACK_Z=1,RISE=HunterPosture.STANDING_HEIGHT;
     public static final String VERSION="blackpine-graded-terrain-v1";
     private static final Map<String,SiteTerrain> CACHE=new LinkedHashMap<>();
+    /** Saved manual terrain revisions are picked up when loading a map again. */
     public static synchronized SiteTerrain of(LevelDefinition level){
         if(!level.id().equals("blackpine"))return null;
-        SiteTerrain found=CACHE.get(level.revision());if(found!=null)return found;
-        var terrain=new SiteTerrain(level);if(CACHE.size()>=4)CACHE.remove(CACHE.keySet().iterator().next());CACHE.put(level.revision(),terrain);return terrain;
+        java.nio.file.Path path=org.beckenburg.editor.TerrainZoneDocument.defaultPath(level.id());
+        String stamp="";
+        try{
+            if(java.nio.file.Files.isRegularFile(path))
+                stamp=java.nio.file.Files.getLastModifiedTime(path).toString()
+                    +":"+java.nio.file.Files.size(path);
+        }catch(java.io.IOException problem){
+            throw new IllegalStateException("Cannot inspect authored terrain revision",problem);
+        }
+        String key=level.revision()+":"+stamp;
+        SiteTerrain found=CACHE.get(key);if(found!=null)return found;
+        var terrain=new SiteTerrain(level);
+        if(CACHE.size()>=4)CACHE.remove(CACHE.keySet().iterator().next());
+        CACHE.put(key,terrain);
+        return terrain;
     }
     public final double x0=3,z0=1,x1=68,z1=79.5;
     public final int nx=(int)((x1-x0)/STEP)+1,nz=(int)((z1-z0)/STEP)+1;
@@ -25,6 +39,19 @@ public final class SiteTerrain {
         for(var r:level.rooms())if(!r.outside()&&r.id()!=11)pads.add(new Pad(r.x0(),r.z0(),r.x1(),r.z1(),r.y()));
         pads.add(new Pad(25,15.75,29,18.75,level.room(6).y()));pads.add(new Pad(16,45.75,20,48.75,level.room(2).y()));
         for(int iz=0;iz<nz;iz++)for(int ix=0;ix<nx;ix++)heights[iz*nx+ix]=sculpt(x0+ix*STEP,z0+iz*STEP);
+        // One set of vertices drives actual visible terrain and collision.
+        // No authored file means unchanged original Blackpine heights.
+        java.nio.file.Path path=org.beckenburg.editor.TerrainZoneDocument.defaultPath(level.id());
+        if(java.nio.file.Files.isRegularFile(path)){
+            try{
+                var edits=org.beckenburg.editor.TerrainZoneDocument.load(path,level.id(),
+                    new org.beckenburg.editor.TerrainZoneDocument.Grid(x0,z0,STEP,nx,nz));
+                for(int iz=0;iz<nz;iz++)for(int ix=0;ix<nx;ix++)
+                    heights[iz*nx+ix]+=edits.delta(ix,iz);
+            }catch(java.io.IOException error){
+                throw new IllegalStateException("Cannot load authored Blackpine terrain",error);
+            }
+        }
     }
     public static double grade(double z){return RISE*Math.max(0,Math.min(1,(ROAD_Z-z)/(ROAD_Z-BACK_Z)));}
     private static double smooth(double a,double b,double value){double t=Math.max(0,Math.min(1,(value-a)/(b-a)));return t*t*(3-2*t);}
