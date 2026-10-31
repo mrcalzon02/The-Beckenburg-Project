@@ -130,7 +130,7 @@ public final class DeveloperLevelEditor extends JPanel {
         operate(()->mission.add(prop));
         refresh();selectId("MISSION_PROP",Integer.toString(mission.size()-1));
     }
-    private final JSpinner workPlane=new JSpinner(new SpinnerNumberModel(0.,-.5,12.,.5));
+    private final JSpinner workPlane=new JSpinner(new SpinnerNumberModel(0.,-12.,24.,.5));
     private final JSpinner surfaceHeight=new JSpinner(new SpinnerNumberModel(3.4,.1,12.,.1));
     private final JComboBox<String> gridSnap=new JComboBox<>(new String[]{"Off","0.25 m","0.5 m","1 m","2 m"});
     private Point dragOrigin;
@@ -316,11 +316,19 @@ public final class DeveloperLevelEditor extends JPanel {
         toolStrip.add(new JLabel("Grid"));toolStrip.add(gridSnap);
         JButton overhead=button("TOP");
         overhead.addActionListener(e->{
-            renderer.x=21;renderer.z=18;renderer.eyeHeight=11;
+            renderer.x=mission==null?21:maxX()*.5;
+            renderer.z=mission==null?18:maxZ()*.5;
+            renderer.eyeHeight=mission==null?11:24;
             renderer.yaw=0;renderer.pitch=-1.48;viewport.requestFocusInWindow();
         });
         JButton ground=button("GROUND");
         ground.addActionListener(e->{
+            if(mission!=null){
+                var start=missionMap==null?mission.level().room(0).spawn():missionMap.level().room(0).spawn();
+                renderer.x=start.x();renderer.z=start.z();renderer.eyeHeight=start.y()+1.62;
+                renderer.pitch=-.12;workPlane.setValue(start.y());
+                viewport.requestFocusInWindow();return;
+            }
             double[] start=data.spawn();
             renderer.x=start[0];renderer.z=start[1];renderer.eyeHeight=1.62;
             renderer.yaw=start[2];renderer.pitch=-.12;
@@ -328,6 +336,13 @@ public final class DeveloperLevelEditor extends JPanel {
         });
         JButton upper=button("UPPER");
         upper.addActionListener(e->{
+            if(mission!=null){
+                var higher=mission.level().rooms().stream().filter(r->r.y()>1)
+                    .findFirst().orElse(mission.level().room(0));
+                renderer.x=higher.cx();renderer.z=higher.cz();renderer.eyeHeight=higher.y()+1.62;
+                renderer.pitch=-.25;workPlane.setValue(higher.y());
+                viewport.requestFocusInWindow();return;
+            }
             renderer.x=17.5;renderer.z=15;renderer.eyeHeight=5.02;
             renderer.pitch=-.25;workPlane.setValue(3.4);
             viewport.requestFocusInWindow();
@@ -362,7 +377,10 @@ public final class DeveloperLevelEditor extends JPanel {
         commands.add(authoringGuide);
         JButton sceneAudit=button("SCENE AUDIT");
         sceneAudit.setToolTipText("Check this live castle scene for intersecting objects and duplicate IDs; non-blocking warnings");
-        sceneAudit.addActionListener(e->showSceneAudit());
+        sceneAudit.addActionListener(e->{
+            if(mission!=null){status.setText("Castle-only geometry audit; mission audit pending");return;}
+            showSceneAudit();
+        });
         commands.add(sceneAudit);
         JButton importModel=button("IMPORT MODEL");
         importModel.setToolTipText("OBJ, STL or GLB import with live reduction preview, size warnings and part-preserving rollback");
@@ -590,10 +608,10 @@ public final class DeveloperLevelEditor extends JPanel {
         tools.add(new JLabel("Tile X"));tools.add(tileX);
         tools.add(new JLabel("Tile Z"));tools.add(tileZ);
         tools.add(new JLabel("Material"));tools.add(material);
-        JButton fill=button("PAINT FLOOR");fill.addActionListener(e->operate(()->{
+        JButton fill=button("PAINT FLOOR");fill.addActionListener(e->castleOnly(()->{
             data.paintFloor(integer(tileX),integer(tileZ),material.getSelectedIndex());
         }));tools.add(fill);
-        JButton wall=button("PAINT WALL");wall.addActionListener(e->operate(()->{
+        JButton wall=button("PAINT WALL");wall.addActionListener(e->castleOnly(()->{
             data.paintWall(integer(wallIndex),material.getSelectedIndex());
         }));tools.add(wall);
         tools.add(new JLabel("Wall ID"));tools.add(wallIndex);
@@ -603,11 +621,11 @@ public final class DeveloperLevelEditor extends JPanel {
             updateNav();
         });tools.add(focusTile);
         JButton block=button("SET NAV");
-        block.addActionListener(e->operate(()->data.setNavBlocked(integer(tileX),
+        block.addActionListener(e->castleOnly(()->data.setNavBlocked(integer(tileX),
             integer(tileZ),navBlocked.isSelected())));
         tools.add(block);
         tools.add(navBlocked);tools.add(navOverlay);
-        JButton spawn=button("SPAWN HERE");spawn.addActionListener(e->operate(()->{
+        JButton spawn=button("SPAWN HERE");spawn.addActionListener(e->castleOnly(()->{
             data.setSpawn(renderer.x,renderer.z,renderer.yaw);
             refresh();
         }));tools.add(spawn);
@@ -620,6 +638,12 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private static int integer(JSpinner s){return ((Number)s.getValue()).intValue();}
     private static double value(JSpinner s){return ((Number)s.getValue()).doubleValue();}
+    private void castleOnly(Runnable action){
+        if(mission!=null){
+            status.setText("This Castle-only command cannot modify another level");return;
+        }
+        operate(action);
+    }
     private void operate(Runnable action){
         try{
             if(mission==null){history.execute(action);castleDirty=true;}
