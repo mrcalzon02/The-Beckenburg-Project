@@ -3,6 +3,7 @@ package org.beckenburg;
 import javax.swing.*;
 import org.beckenburg.editor.EditorTool;
 import org.beckenburg.editor.EditorHistory;
+import org.beckenburg.LevelDefinition.Prop;
 import org.beckenburg.editor.EditorPalettePanel;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
@@ -29,6 +30,106 @@ public final class DeveloperLevelEditor extends JPanel {
     private final CastleEditorProject project=new CastleEditorProject(data);
     private EditorPalettePanel assetPalette;
     private final EditorHistory<CastleLevelEdits.Snapshot> history=new EditorHistory<>(project,60);
+    /** The same inspector, GLB browser and camera can target a live mission source. */
+    private LevelAuthoringSession mission;
+    private EditorHistory<List<Prop>> missionHistory;
+    private HouseMap missionMap;
+    private HouseMap.Site missionSite;
+    private boolean castleDirty,missionDirty;
+    private double maxX(){return mission==null?CastleHubMap.WIDTH:missionMap==null?HouseMap.WIDTH:missionMap.width();}
+    private double maxZ(){return mission==null?CastleHubMap.HEIGHT:missionMap==null?HouseMap.HEIGHT:missionMap.height();}
+    private void refreshMissionPreview(){missionMap=null;}
+    private boolean saveCurrent(){
+        try{
+            if(mission==null){project.save();castleDirty=false;
+                status.setText("SAVED  "+project.documentPath());
+            }else{mission.save();missionDirty=false;
+                status.setText("SAVED  "+mission.documentPath());
+            }
+            viewport.requestFocusInWindow();return true;
+        }catch(IOException failure){
+            JOptionPane.showMessageDialog(window,failure.getMessage(),"Save failed",JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+    private boolean confirmSceneSwitch(){
+        if(!(mission==null?castleDirty:missionDirty))return true;
+        int answer=JOptionPane.showConfirmDialog(window,
+            "Save changes to the current level before switching?",
+            "Unsaved level edits",JOptionPane.YES_NO_CANCEL_OPTION);
+        if(answer==JOptionPane.CANCEL_OPTION||answer==JOptionPane.CLOSED_OPTION)return false;
+        return answer!=JOptionPane.YES_OPTION||saveCurrent();
+    }
+    private void selectLevel(){
+        var names=new ArrayList<String>();
+        names.add("CASTLE BECKENBURG");
+        for(var site:HouseMap.Site.values())if(site!=HouseMap.Site.HOLLOW_CREEK)
+            names.add(site.name());
+        String before=missionSite==null?"CASTLE BECKENBURG":missionSite.name();
+        String choice=(String)JOptionPane.showInputDialog(window,
+            "Open an existing game level. Edits use that level's real geometry and models.",
+            "OPEN LEVEL",JOptionPane.PLAIN_MESSAGE,null,names.toArray(),before);
+        if(choice==null||choice.equals(before)||!confirmSceneSwitch())return;
+        try{
+            if(choice.equals("CASTLE BECKENBURG")){
+                mission=null;missionSite=null;missionHistory=null;missionMap=null;
+                double[] spawn=data.spawn();
+                renderer.x=spawn[0];renderer.z=spawn[1];renderer.eyeHeight=1.62;
+                renderer.yaw=spawn[2];renderer.pitch=-.12;
+            }else{
+                var site=HouseMap.Site.valueOf(choice);
+                var loaded=new LevelAuthoringSession(site);
+                // Prepare the real game map before replacing the visible level.
+                var playable=new HouseMap(site,loaded.level());
+                mission=loaded;missionSite=site;
+                missionHistory=new EditorHistory<>(loaded,60);missionMap=playable;
+                var spawn=playable.level().room(0).spawn();
+                renderer.x=spawn.x();renderer.z=spawn.z();
+                renderer.eyeHeight=spawn.y()+1.62;renderer.yaw=0;renderer.pitch=-.12;
+            }
+            chosen=null;renderer.clearEditorSelection();lightVolumeOverlay.setSelected(false);
+            lightVolume=null;lightVolumeKey="";filter.setText("");
+            refresh();
+            window.setTitle("Beckenburg — Developer Level Editor — "+
+                (mission==null?"Castle Beckenburg":mission.title()));
+            status.setText("OPEN  "+(mission==null?data.path():mission.documentPath()));
+        }catch(Exception failure){
+            JOptionPane.showMessageDialog(window,failure.toString(),
+                "Could not open level",JOptionPane.ERROR_MESSAGE);
+        }
+        viewport.requestFocusInWindow();
+    }
+    private int selectedProp(){
+        if(chosen==null||!"MISSION_PROP".equals(chosen.kind))return -1;
+        try{int index=Integer.parseInt(chosen.id);return index>=0&&index<mission.size()?index:-1;}
+        catch(NumberFormatException ignored){return -1;}
+    }
+    private int missionRoom(double px,double py,double pz){
+        var levels=mission.level().rooms();
+        for(var room:levels)if(px>=room.x0()&&px<=room.x1()
+            &&pz>=room.z0()&&pz<=room.z1()
+            &&Math.abs(room.y()-py)<.8)return room.id();
+        int best=0;double nearest=Double.POSITIVE_INFINITY;
+        for(var room:levels){double d=Math.hypot(room.cx()-px,room.cz()-pz)
+            +Math.abs(room.y()-py)*4;
+            if(d<nearest){nearest=d;best=room.id();}
+        }
+        return best;
+    }
+    private void addMissionAsset(double px,double pz){
+        String mesh=(String)library.getSelectedItem();if(mesh==null)return;
+        double py=value(workPlane);
+        int room=missionRoom(px,py,pz);
+        // Mesh-derived dimensions, not a generic bounding box pasted on every model.
+        double[] bounds=SceneRenderer.castleBounds(mesh);
+        double size=.8;
+        double halfX=Math.max(0,bounds[3]*size/2);
+        double halfZ=Math.max(0,bounds[5]*size/2);
+        var prop=new Prop(mesh,room,px,py,pz,size,0,halfX,halfZ,
+            Math.max(0,bounds[4]*size),"floor");
+        operate(()->mission.add(prop));
+        refresh();selectId("MISSION_PROP",Integer.toString(mission.size()-1));
+    }
     private final JSpinner workPlane=new JSpinner(new SpinnerNumberModel(0.,-.5,12.,.5));
     private final JSpinner surfaceHeight=new JSpinner(new SpinnerNumberModel(3.4,.1,12.,.1));
     private final JComboBox<String> gridSnap=new JComboBox<>(new String[]{"Off","0.25 m","0.5 m","1 m","2 m"});
@@ -249,6 +350,10 @@ public final class DeveloperLevelEditor extends JPanel {
         var commands=new JPanel(new FlowLayout(FlowLayout.RIGHT,4,0));
         JButton save=button("SAVE"),export=button("EXPORT"),reset=button("RESET");
         JButton undoButton=button("UNDO"),redoButton=button("REDO");
+        JButton openLevel=button("OPEN LEVEL");
+        openLevel.setToolTipText("Edit the Castle or an existing investigation level through its game scene");
+        openLevel.addActionListener(e->selectLevel());
+        commands.add(openLevel);
         undoButton.addActionListener(e->undo());redoButton.addActionListener(e->redo());
         commands.add(undoButton);commands.add(redoButton);
         JButton authoringGuide=button("PSX GUIDE");
@@ -295,7 +400,16 @@ public final class DeveloperLevelEditor extends JPanel {
         save.addActionListener(e->save());
         export.addActionListener(e->export());
         reset.addActionListener(e->{
-            if(JOptionPane.showConfirmDialog(window,"Reset all castle scene overrides?","Reset level",
+            if(mission!=null){
+                if(JOptionPane.showConfirmDialog(window,
+                    "Restore the shipped "+mission.title()+" props? This replaces its saved object edits.",
+                    "Reset level",JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE)
+                    ==JOptionPane.YES_OPTION){
+                    operate(()->mission.resetToSource());chosen=null;refresh();
+                    save();
+                }
+            }else if(JOptionPane.showConfirmDialog(window,
+                "Reset all castle scene overrides?","Reset level",
                 JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE)==JOptionPane.YES_OPTION){
                 data.reset();refresh();save();
             }
@@ -508,13 +622,18 @@ public final class DeveloperLevelEditor extends JPanel {
     private static double value(JSpinner s){return ((Number)s.getValue()).doubleValue();}
     private void operate(Runnable action){
         try{
-            history.execute(action);
+            if(mission==null){history.execute(action);castleDirty=true;}
+            else{missionHistory.execute(action);missionDirty=true;refreshMissionPreview();}
             updateNav();status.setText("Modified scene — SAVE to persist");
         }
         catch(RuntimeException e){JOptionPane.showMessageDialog(window,e.getMessage(),
             "Invalid level edit",JOptionPane.ERROR_MESSAGE);}
     }
     private void addAsset(){
+        if(mission!=null){
+            addMissionAsset(renderer.x+Math.sin(renderer.yaw)*2.4,
+                renderer.z+Math.cos(renderer.yaw)*2.4);return;
+        }
         String mesh=(String)library.getSelectedItem();if(mesh==null)return;
         double aheadX=renderer.x+Math.sin(renderer.yaw)*2.4;
         double aheadZ=renderer.z+Math.cos(renderer.yaw)*2.4;
@@ -528,7 +647,8 @@ public final class DeveloperLevelEditor extends JPanel {
         refresh();selectId("PROP",id);
     }
     private void addLamp(){
-        double px=renderer.x+Math.sin(renderer.yaw)*2;
+        if(mission!=null){status.setText("Castle-only fixture; mission lighting must use level sockets");return;}
+        double px=renderer.x+Math.sin(renderer.y)*2;
         double pz=renderer.z+Math.cos(renderer.yaw)*2;
         String id="light"+System.nanoTime();
         operate(()->data.put(new CastleLevelEdits.Lamp(id,"ceiling_lamp_1_on",
@@ -537,6 +657,11 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private void remove(){
         if(chosen==null)return;
+        if(mission!=null){
+            int index=selectedProp();
+            if(index<0){status.setText("Select a mission object to remove");return;}
+            operate(()->mission.remove(index));chosen=null;refresh();return;
+        }
         Row row=chosen;
         if("PROP".equals(row.kind))operate(()->data.removeProp(row.id));
         else if("LAMP".equals(row.kind))operate(()->data.removeLamp(row.id));
@@ -555,7 +680,12 @@ public final class DeveloperLevelEditor extends JPanel {
         if(row==null){chosen=null;renderer.clearEditorSelection();return;}
         chosen=row;modifying=true;
         try{
-            if(row.kind.equals("PROP")){
+            if(row.kind.equals("MISSION_PROP")&&mission!=null){
+                Prop p=mission.prop(Integer.parseInt(row.id));
+                x.setValue(p.x());y.setValue(p.y());z.setValue(p.z());
+                yaw.setValue(Math.toDegrees(p.yaw()));scale.setValue(p.scale());
+                width.setValue(p.halfX());depth.setValue(p.halfZ());
+            }else if(row.kind.equals("PROP")){
                 CastleLevelEdits.Prop item=data.props().stream().filter(p->p.id().equals(row.id))
                     .findFirst().orElse(null);
                 if(item==null)return;
@@ -589,6 +719,17 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private void applySelection(){
         if(modifying||chosen==null)return;
+        if(mission!=null){
+            int index=selectedProp();if(index<0)return;
+            operate(()->{
+                Prop old=mission.prop(index);
+                mission.put(index,new Prop(old.mesh(),
+                    missionRoom(value(x),value(y),value(z)),
+                    value(x),value(y),value(z),value(scale),
+                    Math.toRadians(value(yaw)),value(width),value(depth),
+                    old.height()*value(scale)/old.scale(),old.support()));
+            });return;
+        }
         Row r=chosen;
         operate(()->{
             switch(r.kind){
@@ -632,6 +773,16 @@ public final class DeveloperLevelEditor extends JPanel {
         rows.clear();
         String q=filter.getText().strip().toLowerCase(Locale.ROOT);
         var list=new ArrayList<Row>();
+        if(mission!=null){
+            for(int i=0;i<mission.size();i++){
+                var p=mission.prop(i);
+                list.add(new Row("MISSION_PROP",Integer.toString(i),
+                    "PROP • "+i+" • "+p.mesh()+" [room "+p.room()+"]"));
+            }
+            for(Row row:list)if(q.isEmpty()||row.description.toLowerCase(Locale.ROOT).contains(q))
+                rows.addElement(row);
+            selectId(kind,id);updateNav();return;
+        }
         for(var p:data.props())list.add(new Row("PROP",p.id(),p.id()+"  •  "+p.mesh()));
         for(var l:data.lamps())list.add(new Row("LAMP",l.id(),l.id()+"  •  "+l.on()+"  [LIGHT]"));
         for(var surface:data.surfaces())list.add(new Row("SURFACE",surface.id(),
@@ -644,6 +795,14 @@ public final class DeveloperLevelEditor extends JPanel {
         selectId(kind,id);updateNav();
     }
     private void updateNav(){
+        if(mission!=null){
+            navInfo.setText("LEVEL  "+mission.title()
+                +"\nAuthoritative game scene: "+mission.documentPath()
+                +"\n"+mission.size()+" editable props; same GLBs and collision as live game."
+                +"\nCastle-only floor tiles, stations and walls are not applied to investigation maps."
+                +"\nChanges require SAVE and a new case load.");
+            navInfo.setCaretPosition(0);return;
+        }
         int px=integer(tileX),pz=integer(tileZ),w=integer(wallIndex);
         navBlocked.setSelected(data.navBlocked(px,pz));
         var wall=CastleHubArchitecturalPlan.walls().get(w);
@@ -664,7 +823,10 @@ public final class DeveloperLevelEditor extends JPanel {
         for(int i=0;i<rows.size();i++){
             Row r=rows.get(i);
             double px,pz,py;
-            if("PROP".equals(r.kind)){
+            if("MISSION_PROP".equals(r.kind)&&mission!=null){
+                var p=mission.prop(Integer.parseInt(r.id));
+                px=p.x();pz=p.z();py=p.y()+.8;
+            }else if("PROP".equals(r.kind)){
                 var p=data.props().stream().filter(t->t.id().equals(r.id)).findFirst().orElse(null);
                 if(p==null)continue;px=p.x();pz=p.z();py=p.y()+.8;
             }else if("LAMP".equals(r.kind)){
@@ -691,8 +853,8 @@ public final class DeveloperLevelEditor extends JPanel {
     private void advance(double amount){
         renderer.x+=Math.sin(renderer.yaw)*amount;
         renderer.z+=Math.cos(renderer.yaw)*amount;
-        renderer.x=Math.max(.2,Math.min(43.8,renderer.x));
-        renderer.z=Math.max(.2,Math.min(35.8,renderer.z));
+        renderer.x=Math.max(.2,Math.min(maxX()-.2,renderer.x));
+        renderer.z=Math.max(.2,Math.min(maxZ()-.2,renderer.z));
     }
     private void frame(){
         double step=keys.contains(KeyEvent.VK_SHIFT)?.95:.34;
@@ -713,9 +875,16 @@ public final class DeveloperLevelEditor extends JPanel {
         if(keys.contains(KeyEvent.VK_UP))renderer.pitch=Math.min(1.35,renderer.pitch+.045);
         if(keys.contains(KeyEvent.VK_DOWN))renderer.pitch=Math.max(-1.35,renderer.pitch-.045);
         renderer.eyeHeight=Math.max(.25,Math.min(11,renderer.eyeHeight));
-        renderer.setEditorNavigation(navOverlay.isSelected());
-        try{renderer.drawCastle(map,clock+=.05,true);
-            requestLightVolumePreview();
+        renderer.setEditorNavigation(navOverlay.isSelected()&&mission==null);
+        try{
+            clock+=.05;
+            if(mission==null){
+                renderer.drawCastle(map,clock,true);
+                requestLightVolumePreview();
+            }else{
+                if(missionMap==null)missionMap=new HouseMap(missionSite,mission.level());
+                renderer.drawPractice(missionMap,List.of(),clock);
+            }
         }
         catch(RuntimeException problem){
             timer.stop();BeckenburgDiagnostics.fail("Developer editor viewport",problem);
@@ -790,11 +959,36 @@ public final class DeveloperLevelEditor extends JPanel {
             // Keep placement deterministic when looking at the horizon.
             travel=3.5/Math.max(.15,forward);
         }
-        return new Point(snap(clamp(renderer.x+dx*travel,.5,43.5)),
-            snap(clamp(renderer.z+dz*travel,.5,35.5)));
+        return new Point(snap(clamp(renderer.x+dx*travel,.5,maxX()-.5)),
+            snap(clamp(renderer.z+dz*travel,.5,maxZ()-.5)));
     }
     private void editViewport(int fromX,int fromY,Point begin,Point end){
         if(begin==null||end==null)return;
+        if(mission!=null){
+            switch(tool){
+                case SELECT -> pick(fromX,fromY);
+                case PROP -> addMissionAsset(end.x,end.z);
+                case DELETE -> {pick(fromX,fromY);remove();}
+                case MOVE -> {
+                    pick(fromX,fromY);
+                    int index=selectedProp();
+                    if(index>=0){
+                        Prop p=mission.prop(index);
+                        operate(()->mission.put(index,new Prop(p.mesh(),
+                            missionRoom(p.x()+end.x-begin.x,p.y(),p.z()+end.z-begin.z),
+                            p.x()+end.x-begin.x,p.y(),p.z()+end.z-begin.z,
+                            p.scale(),p.yaw(),p.halfX(),p.halfZ(),p.height(),p.support())));
+                        refresh();
+                    }
+                }
+                case ROTATE -> {pick(fromX,fromY);rotateSelection();}
+                case SCALE -> {pick(fromX,fromY);status.setText(
+                    "Scale mission props through the selected object inspector");}
+                default -> status.setText("This tool edits Castle-only architecture. "
+                    +"Mission geometry editing requires the common level geometry adapter.");
+            }
+            viewport.requestFocusInWindow();return;
+        }
         switch(tool){
             case SELECT -> pick(fromX,fromY);
             case WALL,FLOOR,ROOF -> drawSurface(begin,end,tool);
@@ -886,6 +1080,13 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private void rotateSelection(){
         if(chosen==null)return;
+        if(mission!=null){
+            int index=selectedProp();if(index<0)return;
+            Prop p=mission.prop(index);
+            operate(()->mission.put(index,new Prop(p.mesh(),p.room(),p.x(),p.y(),p.z(),
+                p.scale(),p.yaw()+Math.PI/2,p.halfZ(),p.halfX(),p.height(),p.support())));
+            return;
+        }
         Row row=chosen;
         if("PROP".equals(row.kind)){
             operate(()->{
@@ -911,6 +1112,7 @@ public final class DeveloperLevelEditor extends JPanel {
         refresh();selectId(row.kind,row.id);
     }
     private void addAsset(Point target){
+        if(mission!=null){addMissionAsset(target.x,target.z);return;}
         String mesh=(String)library.getSelectedItem();if(mesh==null)return;
         String id="asset"+System.nanoTime();
         operate(()->data.put(new CastleLevelEdits.Prop(id,mesh,target.x,
@@ -918,6 +1120,7 @@ public final class DeveloperLevelEditor extends JPanel {
         refresh();selectId("PROP",id);
     }
     private void addLamp(Point target){
+        if(mission!=null){status.setText("Mission fixtures use authored level light sockets");return;}
         String id="light"+System.nanoTime();
         operate(()->data.put(new CastleLevelEdits.Lamp(id,"ceiling_lamp_1_on",
             "ceiling_lamp_1_off",target.x,clamp(value(workPlane)+3.38,0,9),
@@ -927,6 +1130,14 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private void duplicate(){
         if(chosen==null)return;
+        if(mission!=null){
+            int index=selectedProp();if(index<0)return;
+            Prop p=mission.prop(index);
+            operate(()->mission.add(new Prop(p.mesh(),p.room(),
+                p.x()+1,p.y(),p.z()+1,p.scale(),p.yaw(),
+                p.halfX(),p.halfZ(),p.height(),p.support())));
+            refresh();selectId("MISSION_PROP",Integer.toString(mission.size()-1));return;
+        }
         Row selected=chosen;
         String id="copy"+System.nanoTime();
         switch(selected.kind){
@@ -953,26 +1164,27 @@ public final class DeveloperLevelEditor extends JPanel {
         refresh();selectId(selected.kind,id);
     }
     private void undo(){
-        if(!history.undo())return;
+        if(mission==null){if(!history.undo())return;castleDirty=true;}
+        else{if(!missionHistory.undo())return;missionDirty=true;refreshMissionPreview();}
         chosen=null;renderer.clearEditorSelection();refresh();
         status.setText("Undo • scene modified, SAVE to persist");
     }
     private void redo(){
-        if(!history.redo())return;
+        if(mission==null){if(!history.redo())return;castleDirty=true;}
+        else{if(!missionHistory.redo())return;missionDirty=true;refreshMissionPreview();}
         chosen=null;renderer.clearEditorSelection();refresh();
         status.setText("Redo • scene modified, SAVE to persist");
     }
-    private void save(){
-        try{project.save();status.setText("SAVED  "+project.documentPath());viewport.requestFocusInWindow();}
-        catch(IOException e){JOptionPane.showMessageDialog(window,e.getMessage(),"Save failed",JOptionPane.ERROR_MESSAGE);}
-    }
+    private void save(){saveCurrent();}
     private void export(){
         JFileChooser chooser=new JFileChooser();chooser.setDialogTitle("Export level editor document");
-        chooser.setSelectedFile(new java.io.File("castle-beckenburg.properties"));
+        chooser.setSelectedFile(new java.io.File(mission==null
+            ?"castle-beckenburg.properties":missionSite.name().toLowerCase(Locale.ROOT)+".bscn"));
         if(chooser.showSaveDialog(window)!=JFileChooser.APPROVE_OPTION)return;
+        if(!saveCurrent())return;
         try{
-            data.save();
-            Files.copy(data.path(),chooser.getSelectedFile().toPath(),StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(mission==null?data.path():mission.documentPath(),
+                chooser.getSelectedFile().toPath(),StandardCopyOption.REPLACE_EXISTING);
             status.setText("EXPORTED "+chooser.getSelectedFile());
         }catch(IOException e){JOptionPane.showMessageDialog(window,e.getMessage(),"Export failed",JOptionPane.ERROR_MESSAGE);}
     }
