@@ -42,6 +42,13 @@ jobs:
           & java '-Djava.awt.headless=true' '-Dbeckenburg.ai.profile=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.DevMatchSession --dev-ai-match --seconds=6
           if ($LASTEXITCODE -ne 0) { throw "Development match smoke failed with exit code $LASTEXITCODE" }
 
+      - name: Exercise seven ongoing independent AI clients (headless)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.DevMatchSession --dev-ai-match --bots --seconds=8
+          if ($LASTEXITCODE -ne 0) { throw "Seven-client AI activity acceptance failed: exit $LASTEXITCODE" }
+
       - name: Capture diagnostics even after failure
         if: always()
         shell: pwsh
