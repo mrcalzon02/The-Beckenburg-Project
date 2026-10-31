@@ -43,6 +43,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
     private final JFrame frame;
     private final StitchedHeightmapWorld world;
     private final AdaptiveNavMeshEdits edits;
+    private LayeredTerrainDocument geometry;
     private final JSpinner tileX=spinner(0,-999999,999999);
     private final JSpinner tileZ=spinner(0,-999999,999999);
     private final JSpinner cellX,cellZ;
@@ -89,6 +90,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         super(new BorderLayout(5,5));
         this.frame=frame;this.world=world;
         this.edits=AdaptiveNavMeshEdits.open(world);
+        this.geometry=LayeredTerrainDocument.open(world);
         cellX=spinner(0,0,world.settings().tileCells()-1);
         cellZ=spinner(0,0,world.settings().tileCells()-1);
         tileX.setValue(tx);tileZ.setValue(tz);
@@ -155,8 +157,8 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         canvas.setBackground(new Color(19,22,27));
         add(canvas,BorderLayout.CENTER);
         JPanel footer=new JPanel(new java.awt.GridLayout(2,1,3,2));
-        footer.add(new JLabel("Click any region (including grey, unreachable regions). Blue=reachable; grey=regress candidate; "+
-            "red=gate/trim; orange=seed. All trims persist."));
+        footer.add(new JLabel("Blue=reachable; grey=unreachable; red=gate/trim; orange=seed; "+
+            "teal=floor outline; white=solid; magenta=vertical link."));
         footer.add(status);
         add(footer,BorderLayout.SOUTH);
 
@@ -171,8 +173,10 @@ public final class AdaptiveNavMeshEditor extends JPanel {
             if(signature!=seenSignature){
                 seenSignature=signature;
                 changeVersion++;selected=null;
-                try{refreshLayers();}
-                catch(IOException failure){
+                try{
+                    geometry=LayeredTerrainDocument.open(world);
+                    refreshLayers();
+                }catch(IOException failure){
                     updateStatus("Cannot read authored underground layers: "+failure.getMessage());
                     return;
                 }
@@ -192,7 +196,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         String previous=currentLayer();
         var layers=new LinkedHashSet<String>();
         layers.add(LayeredTerrainQueries.SURFACE);
-        for(var floor:LayeredTerrainDocument.open(world).floors())layers.add(floor.layer());
+        for(var floor:geometry.floors())layers.add(floor.layer());
         if(previewLayer.getItemCount()==layers.size()){
             boolean same=true;
             for(int i=0;i<previewLayer.getItemCount();i++)
@@ -456,6 +460,32 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                         active?new Color(77,122,157):new Color(85,88,96));
                     out.fillRect(x,z,w,h);
                     out.setColor(new Color(28,48,60));out.drawRect(x,z,w,h);
+                }
+            }
+            // Show physically authored geometry even when this nav layer has
+            // no reachable regions yet. This is world-space editor data,
+            // never a simulated 3D screenshot.
+            out.setColor(new Color(63,208,192));
+            for(var floor:geometry.floors())if(floor.layer().equals(currentLayer())){
+                int x=px(floor.x0(),a),z=pz(floor.z0(),a);
+                out.drawRect(x,z,px(floor.x1(),a)-x,pz(floor.z1(),a)-z);
+            }
+            out.setColor(new Color(218,225,235));
+            for(var solid:geometry.solids()){
+                int x=px(solid.x0(),a),z=pz(solid.z0(),a);
+                out.drawRect(x,z,px(solid.x1(),a)-x,pz(solid.z1(),a)-z);
+            }
+            out.setColor(new Color(201,106,222));
+            for(var link:geometry.links()){
+                if(link.from().equals(currentLayer())){
+                    int x=px(link.fromX(),a),z=pz(link.fromZ(),a);
+                    out.fillOval(x-4,z-4,9,9);
+                    out.drawString(link.connection().name()+" -> "+link.to(),x+6,z-6);
+                }
+                if(link.to().equals(currentLayer())){
+                    int x=px(link.toX(),a),z=pz(link.toZ(),a);
+                    out.drawOval(x-5,z-5,11,11);
+                    out.drawString(link.from()+" -> "+link.connection().name(),x+6,z+10);
                 }
             }
             for(var ex:edits.exclusions())if(ex.layer().equals(currentLayer())){
