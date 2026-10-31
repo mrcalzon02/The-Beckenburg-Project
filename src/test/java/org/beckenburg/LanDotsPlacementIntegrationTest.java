@@ -109,7 +109,13 @@ public final class LanDotsPlacementIntegrationTest {
                     "rejected van placement must not create host-owned projector geometry");
 
                 synchronized(mutex){AuthoredTestSupport.place(map,world,0,map.spawn(4));}
-                rotate(panel,6); // Six 15-degree wheel steps => 90 degree placement.
+                rotate(panel,6); // Six 15-degree wheel steps => +90 degrees relative to hunter facing.
+                final int expectedHeading;
+                synchronized(mutex){
+                    expectedHeading=Math.floorMod(world.body(0).heading()+90,360);
+                    check(expectedHeading!=world.body(0).heading(),
+                        "wheel rotation must change the actual host-relative heading");
+                }
                 int sent=a.mark(),observer=b.mark();
                 click(panel);
                 String outcome=a.await(sent,s->s.startsWith("ACCEPT|GEARUSE|")
@@ -122,8 +128,8 @@ public final class LanDotsPlacementIntegrationTest {
                     "teammate must receive same deployed projector pose");
                 check(c.await(0,"DOTS|PLACE|0|4|").equals(placement),
                     "third hunter must receive the same authoritative projector transform");
-                check(placement.endsWith("|I|90"),
-                    "projector orientation must include wheel rotation: "+placement);
+                check(placement.endsWith("|I|"+expectedHeading),
+                    "projector orientation must add wheel rotation to host facing: "+placement);
                 feed(panel,placement);feed(panel,powered);feed(panel,outcome);
                 check(!state(panel,"toolPlacement")&&!state(panel,"placementPending"),
                     "accepted placement dismisses the aim preview");
@@ -136,10 +142,10 @@ public final class LanDotsPlacementIntegrationTest {
                 check(observerRenderer.dotsPositions.containsKey(0)
                     &&observerRenderer.dotsPowered.getOrDefault(0,false)
                     &&observerRenderer.dotsPositions.get(0).equals(renderer.dotsPositions.get(0))
-                    &&observerRenderer.dotsPositions.get(0).heading()==90,
-                    "second hunter's actual 3D renderer must show the same powered 90-degree pose");
+                    &&observerRenderer.dotsPositions.get(0).heading()==expectedHeading,
+                    "second hunter's 3D renderer must show the host-relative rotated pose");
                 check(dots.at(0)!=null&&dots.at(0).room()==4
-                    &&dots.at(0).heading()==90,
+                    &&dots.at(0).heading()==expectedHeading,
                     "host must own real positioned, rotated DOTS geometry");
 
                 // A hunter may not remotely reclaim a deployed projector from another room.
