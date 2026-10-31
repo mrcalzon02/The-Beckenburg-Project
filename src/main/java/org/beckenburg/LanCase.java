@@ -265,13 +265,14 @@ public final class LanCase {
                 ||eventStrength<0||eventStrength>10)
             return new Report(false,"invalid environmental scan context");
         if(tool==Tool.SPIRIT_BOX){
-            // A handheld Spirit Box samples an actual nearby voice event. The
-            // unattended station variant intentionally cannot collect speech.
-            // Silence is a valid direct observation, not a rejected button press.
-            boolean reply=allowsEvidence(HardEvidenceQuota.Family.SPIRIT_BOX)
-                &&room==ghostRoom&&room==eventRoom&&eventStrength>0;
-            return new Report(true,"READING SPIRIT_BOX in "+room+" - "
-                +(reply?"Voice response detected":"No response detected"));
+            // Only the live host/solo controller can attest to a real vocal
+            // action, its source location and whether this exact event was
+            // already heard. A generic event-strength scan is NOT a spoken
+            // response: never fabricate a "yes" from room proximity alone.
+            // The owning controller replaces this neutral reading with the
+            // actual played phrase only after SpiritBoxResponses validates it.
+            return new Report(true,"READING SPIRIT_BOX in "+room+" - "+
+                SpiritBoxResponses.observation(null));
         }
         return stationMeasured(tool,room,ghostRoom,tick,eventRoom,eventStrength);
     }
