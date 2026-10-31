@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -35,6 +37,31 @@ final class DevMatchClientAi implements AutoCloseable {
     private double x,y,z,lastX=Double.NaN,lastZ=Double.NaN;
     private boolean observedPose,closed;
     private String legalActions="[]";
+    private GhostFrenzy.Phase frenzy=GhostFrenzy.Phase.CALM;
+    private LanGhostHearing.Event heard;
+    private int lastFrenzyRequest=-1000,lastFrenzyAttack=-1000,lastStrikeAttempt=-1000;
+    private int lastIdentifyRequest=-1000,lastRiteRequest=-1000,lastWardRequest=-1000;
+    private int health=100,stress,seenScanCount,observedSignals;
+    private GhostIdentity.Type hypothesis;
+    private final FieldJournal notes=new FieldJournal();
+    private final Set<String> distinctSamples=new HashSet<>();
+    private final Map<Integer,Integer> emfStrongRooms=new HashMap<>();
+    private final Map<Integer,Integer> coldRooms=new HashMap<>();
+    private final Map<Integer,Integer> hotRooms=new HashMap<>();
+    private final java.util.concurrent.atomic.AtomicInteger commands=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger accepted=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger rejected=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger attacks=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger identifications=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger rituals=new java.util.concurrent.atomic.AtomicInteger();
+    record Stats(String seat,int commands,int accepted,int rejected,int attacks,
+                 int identifications,int rituals,int observations,int health,int stress,
+                 String hypothesis,String state){}
+    Stats stats(){
+        return new Stats(seat,commands.get(),accepted.get(),rejected.get(),
+            attacks.get(),identifications.get(),rituals.get(),observedSignals,
+            health,stress,String.valueOf(hypothesis),dashboard.getOrDefault(seat,""));
+    }
     private final Map<Integer,Integer> visited=new HashMap<>();
 
     DevMatchClientAi(LanClient client,HouseMap.Site site,Map<String,String> dashboard,int seed){
@@ -83,6 +110,26 @@ final class DevMatchClientAi implements AutoCloseable {
                         observedPose=true;
                         if(prior!=room){previousRoom=prior;targetRoom=-1;}
                     }
+                    case "GHEAR" -> {
+                        if(ghost)heard=LanGhostHearing.decode(frame);
+                    }
+                    case "FRENZY" -> {
+                        if(ghost&&p.size()>=2)frenzy=GhostFrenzy.Phase.valueOf(p.get(1));
+                    }
+                    case "PROGRESS" -> {
+                        if(!ghost&&p.size()>=3){
+                            health=Integer.parseInt(p.get(1));stress=Integer.parseInt(p.get(2));
+                        }
+                    }
+                    case "NOTE" -> {
+                        if(!ghost)notes.accept(FieldJournal.Note.decode(frame));
+                    }
+                    case "CASEFILE" -> {
+                        if(!ghost)observeCasefile(LanEvidenceJournal.Entry.decode(frame));
+                    }
+                    case "IDENTIFIED" -> {
+                        if(!ghost&&p.size()>=2)hypothesis=GhostIdentity.Type.valueOf(p.get(1));
+                    }
                     case "STATE" -> {
                         if(p.size()>=2)tick=Math.max(tick,Integer.parseInt(p.get(1)));
                         if(ghost&&p.size()>=6)legalActions=p.get(5);
@@ -91,6 +138,8 @@ final class DevMatchClientAi implements AutoCloseable {
                         if(p.size()==2)map.applyDoorSnapshot(p.get(1));
                     }
                     case "ACCEPT","REJECT" -> {
+                        if(frame.startsWith("ACCEPT|"))accepted.incrementAndGet();
+                        else if(frame.startsWith("REJECT|"))rejected.incrementAndGet();
                         if(frame.startsWith("REJECT|")&&frame.contains("blocked"))
                             blocked++;
                         else if(frame.startsWith("ACCEPT|STEP")||frame.startsWith("ACCEPT|GSTEP"))
@@ -102,6 +151,44 @@ final class DevMatchClientAi implements AutoCloseable {
             }catch(RuntimeException invalid){dashboard.put(seat,"unreadable own client frame: "+invalid.getMessage());}
         }
     }
+    /** Read ONLY ordinary casefile measurements; never know current ghost species. */
+    private void observeCasefile(LanEvidenceJournal.Entry item){
+        if(item==null)return;
+        String key=item.tick()+"/"+item.seat()+"/"+item.tool();
+        if(!distinctSamples.add(key))return;
+        observedSignals++;
+        String reading=item.reading();
+        if(item.tool().equals("EMF")){
+            java.util.regex.Matcher m=java.util.regex.Pattern.compile("EMF ([0-9]+)/10").matcher(reading);
+            if(m.find()&&Integer.parseInt(m.group(1))>=8){
+                int count=emfStrongRooms.merge(item.room(),1,Integer::sum);
+                if(count>=2)markSeen(GhostFieldGuide.Clue.EMF_OVER_SIX,item.tick());
+            }
+        }else if(item.tool().equals("THERMOMETER")&&item.room()<HouseMap.INDOOR_ROOMS){
+            java.util.regex.Matcher m=java.util.regex.Pattern.compile("(-?[0-9]+(?:\\.[0-9]+)?)\\s*°?C").matcher(reading);
+            if(m.find()){
+                double c=Double.parseDouble(m.group(1));
+                if(c<0&&coldRooms.merge(item.room(),1,Integer::sum)>=2)
+                    markSeen(GhostFieldGuide.Clue.EXTREME_COLD,item.tick());
+                else if(c>=32.3&&hotRooms.merge(item.room(),1,Integer::sum)>=2)
+                    markSeen(GhostFieldGuide.Clue.EXTREME_HEAT,item.tick());
+            }
+        }else if(item.tool().equals("SPIRIT_BOX")&&reading.contains("Voice response detected"))
+            markSeen(GhostFieldGuide.Clue.SPIRIT_REPLY,item.tick());
+    }
+    private void markSeen(GhostFieldGuide.Clue clue,int sampleTick){
+        if(notes.status(clue)!=FieldJournal.Status.SEEN){
+            notes.set(clue,FieldJournal.Status.SEEN,ghost?0:Integer.parseInt(seat.substring(1))-1,
+                Math.max(0,sampleTick));
+            dashboard.put(seat,"EVIDENCE "+clue+" / "+GhostFieldGuide.shortlist(notes).size()+" candidates");
+        }
+    }
+    private void sendAction(String name,Action action)throws IOException{
+        commands.incrementAndGet();
+        action.perform();
+        dashboard.put(seat,name+" / tick "+tick);
+    }
+    @FunctionalInterface private interface Action {void perform()throws IOException;}
     private void act()throws IOException {
         if(tick==lastMotionTick)return; // host movement is one input per authoritative tick
         lastMotionTick=tick;
@@ -112,13 +199,53 @@ final class DevMatchClientAi implements AutoCloseable {
         if(tick-lastScanTick>=145+random.nextInt(25)){
             lastScanTick=tick;
             LanCase.Tool tool=LanCase.Tool.values()[Math.floorMod((tick/140)+Integer.parseInt(seat.substring(1)),LanCase.Tool.values().length)];
-            client.scan(tool);
-            dashboard.put(seat,"SCAN "+tool+" / R"+room);
+            sendAction("SCAN "+tool+" R"+room,()->client.scan(tool));
+            seenScanCount++;
+        }
+        if(health<=0)return;
+        // A deduction can only be attempted when real, received clues reduce
+        // the published journal shortlist to one identity. No blind guesses.
+        if(hypothesis==null&&tick-lastIdentifyRequest>80&&notes.seenCount()>=2){
+            var possibilities=GhostFieldGuide.shortlist(notes);
+            if(possibilities.size()==1){
+                hypothesis=possibilities.get(0);
+                lastIdentifyRequest=tick;
+                identifications.incrementAndGet();
+                GhostIdentity.Type guess=hypothesis;
+                sendAction("IDENTIFY "+guess,()->client.identify(guess));
+                return;
+            }
+        }
+        if(hypothesis!=null){
+            var rite=RitualSites.site(map,hypothesis.rite());
+            // Anchor ward is attempted only when genuinely visiting a suspected
+            // source room, not with a hidden host ghost-room lookup.
+            if(room==4&&tick-lastWardRequest>150){
+                lastWardRequest=tick;
+                sendAction("WARD source",client::ward);
+                return;
+            }
+            if(room==rite.room()&&rite.near(new LanWorld.Body(x,y,z,0,room))
+                    &&tick-lastRiteRequest>90){
+                lastRiteRequest=tick;
+                rituals.incrementAndGet();
+                switch(hypothesis.rite()){
+                    case BANISHMENT -> sendAction("BANISH",client::banish);
+                    case CLEANSING -> sendAction("CLEANSE",client::cleanse);
+                    case ABSOLUTION -> sendAction("ABSOLVE",client::absolve);
+                }
+                return;
+            }
+            if(room!=rite.room())targetRoom=routeToward(room,rite.room());
         }
         if(room!=lastActionRoom){
-            lastActionRoom=room;targetRoom=-1;blocked=0;
+            lastActionRoom=room;
+            if(hypothesis==null)targetRoom=-1;
+            blocked=0;
         }
-        if(targetRoom<0||targetRoom==room||!map.adjacentRooms(room).contains(targetRoom))
+        if(hypothesis!=null&&room!=RitualSites.site(map,hypothesis.rite()).room())
+            targetRoom=routeToward(room,RitualSites.site(map,hypothesis.rite()).room());
+        else if(targetRoom<0||targetRoom==room||!map.adjacentRooms(room).contains(targetRoom))
             targetRoom=chooseNextRoom();
         if(targetRoom<0)return;
         LevelDefinition.Portal portal=null;
@@ -130,8 +257,7 @@ final class DevMatchClientAi implements AutoCloseable {
         double dist=Math.hypot(x-portal.x(),z-portal.z());
         if(portal.door()&&!map.doorOpen(portal.id())&&dist<1.35&&tick-lastDoorTick>=18){
             lastDoorTick=tick;
-            client.door();
-            dashboard.put(seat,"DOOR to R"+targetRoom);
+            sendAction("DOOR to R"+targetRoom,client::door);
             return;
         }
         double gx,gz;
@@ -156,10 +282,25 @@ final class DevMatchClientAi implements AutoCloseable {
             if(blocked>24){targetRoom=-1;blocked=0;}
         }
         double d=Math.hypot(vx,vz);
-        client.step((int)Math.round(100*vx/d),(int)Math.round(100*vz/d));
-        dashboard.put(seat,"EXPLORE R"+room+" -> R"+targetRoom+
-            " / "+Math.round(x*10)/10.0+","+Math.round(z*10)/10.0);
+        int dx=(int)Math.round(100*vx/d),dz=(int)Math.round(100*vz/d);
+        sendAction("EXPLORE R"+room+" -> R"+targetRoom,()->client.step(dx,dz));
         lastX=x;lastZ=z;
+    }
+    private int routeToward(int from,int goal){
+        if(from==goal)return from;
+        int[] parent=new int[HouseMap.ROOM_COUNT];
+        java.util.Arrays.fill(parent,-1);
+        java.util.ArrayDeque<Integer> q=new java.util.ArrayDeque<>();
+        q.add(from);parent[from]=from;
+        while(!q.isEmpty()&&parent[goal]<0){
+            int at=q.remove();
+            for(int next:map.adjacentRooms(at))
+                if(parent[next]<0){parent[next]=at;q.add(next);}
+        }
+        if(parent[goal]<0)return -1;
+        int next=goal;
+        while(parent[next]!=from)next=parent[next];
+        return next;
     }
     private int chooseNextRoom(){
         List<Integer> choices=new ArrayList<>(map.adjacentRooms(room));
@@ -169,36 +310,75 @@ final class DevMatchClientAi implements AutoCloseable {
               .thenComparingInt(r->Math.floorMod(r*11+Integer.parseInt(seat.substring(1))*7,17)));
         return choices.get(Math.min(choices.size()-1,random.nextInt(Math.min(2,choices.size()))));
     }
+    /** Only GHEAR bearing, own pose, own legal moves and frenzy frames inform ghost AI. */
     private void ghostTurn()throws IOException {
         if(room<0)return;
-        if(tick-lastGhostEvent>=45&&legalActions!=null){
-            GhostDomain.Action chosen=null;
-            for(GhostDomain.Action action:new GhostDomain.Action[]{
-                    GhostDomain.Action.WHISPER,GhostDomain.Action.DISTURB,
-                    GhostDomain.Action.SIGNATURE,GhostDomain.Action.MANIFEST,
-                    GhostDomain.Action.DRIFT}){
-                if(legalActions.contains(action.name())){
-                    chosen=action;
-                    if(random.nextInt(4)==0)break;
-                }
-            }
-            if(chosen!=null){
-                int nextRoom=room;
-                if(chosen==GhostDomain.Action.DRIFT){
-                    var exits=map.ghostExits(room);
-                    if(!exits.isEmpty())nextRoom=exits.get(random.nextInt(exits.size()));
-                }
-                lastGhostEvent=tick;
-                client.ghost(chosen,nextRoom);majorAttempts++;
-                dashboard.put(seat,"GHOST "+chosen+" -> R"+nextRoom+" / #"+majorAttempts);
+        if(frenzy==GhostFrenzy.Phase.RAGING){
+            if(tick-lastFrenzyAttack>=14){
+                lastFrenzyAttack=tick;
+                GhostFrenzy.Attack attack=majorAttempts++%3==0
+                    ?GhostFrenzy.Attack.DREAD:GhostFrenzy.Attack.CLAW;
+                attacks.incrementAndGet();
+                sendAction("FATTACK "+attack,()->client.frenzyAttack(attack));
                 return;
             }
+        }else if(frenzy==GhostFrenzy.Phase.CALM){
+            if(tick>=135&&tick-lastFrenzyRequest>=75){
+                lastFrenzyRequest=tick;
+                attacks.incrementAndGet();
+                sendAction("FRENZY attempt",client::frenzy);
+                return;
+            }
+            if(legalActions.contains("STRIKE")&&tick-lastStrikeAttempt>=28){
+                lastStrikeAttempt=tick;
+                attacks.incrementAndGet();
+                sendAction("STRIKE reach test",
+                    ()->client.ghost(GhostDomain.Action.STRIKE,room));
+                return;
+            }
+            if(tick-lastGhostEvent>=45){
+                GhostDomain.Action chosen=null;
+                for(GhostDomain.Action action:new GhostDomain.Action[]{
+                        GhostDomain.Action.MANIFEST,GhostDomain.Action.SIGNATURE,
+                        GhostDomain.Action.WHISPER,GhostDomain.Action.DISTURB,
+                        GhostDomain.Action.DRIFT}){
+                    if(legalActions.contains(action.name())){
+                        chosen=action;
+                        if(random.nextInt(4)==0)break;
+                    }
+                }
+                if(chosen!=null){
+                    int nextRoom=room;
+                    if(chosen==GhostDomain.Action.DRIFT){
+                        var exits=map.ghostExits(room);
+                        if(!exits.isEmpty()){
+                            // Audible hunter activity only supplies coarse bearing.
+                            nextRoom=exits.get(random.nextInt(exits.size()));
+                        }
+                    }
+                    lastGhostEvent=tick;
+                    int dest=nextRoom;
+                    GhostDomain.Action action=chosen;
+                    sendAction("GHOST "+action+" R"+dest,
+                        ()->client.ghost(action,dest));
+                    return;
+                }
+            }
         }
+        // Orient toward a genuine sound bearing, without any hunter position.
         int direction=Math.floorMod(tick/12+3,4);
         int[][] steps={{90,0},{0,90},{-90,0},{0,-90}};
+        if(heard!=null&&tick-heard.tick()<30){
+            switch(heard.direction()){
+                case LEFT -> direction=2;
+                case RIGHT -> direction=0;
+                case AHEAD,HERE -> direction=1;
+                case BEHIND -> direction=3;
+            }
+        }
         int[] v=steps[direction];
-        client.ghostStep(v[0],v[1]);
-        dashboard.put(seat,"HAUNT R"+room+" / step "+v[0]+","+v[1]);
+        sendAction("GSTEP "+v[0]+","+v[1],
+            ()->client.ghostStep(v[0],v[1]));
     }
     @Override public void close(){
         closed=true;
