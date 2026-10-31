@@ -21,10 +21,14 @@ public final class CastleSurroundings {
      new ParkedVehicle("ggbot_car05",21.2,56.5,1.0,Math.PI)
  );
  public static List<ParkedVehicle> parkedVehicles(){return PARKED;}
- /** Matching world-space collision for the courtyard staging van. */
+ /** The castle uses the exact same measured, model-backed van as every case;
+  * only its world placement differs. Collision and appearance share VanStaging.
+  */
+ private static final VanStaging COURTYARD_VAN=new VanStaging(
+     new VanStaging.Placement(PARKED.get(0).x(),0,PARKED.get(0).z(),PARKED.get(0).yaw()));
+ public static VanStaging courtyardVan(){return COURTYARD_VAN;}
  public static boolean courtyardVanBlocks(double x,double z,double r){
-  var van=PARKED.get(0);
-  return Math.abs(x-van.x())<1.17+r&&Math.abs(z-van.z())<2.75+r;
+  return COURTYARD_VAN.collides(x,z,r);
  }
 
  public static List<RoadPoint> road(){return List.of(new RoadPoint(15.5,34.4),new RoadPoint(16,65),new RoadPoint(26,95),new RoadPoint(5,145));}
