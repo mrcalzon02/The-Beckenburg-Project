@@ -131,6 +131,7 @@ javac --release 17 -encoding UTF-8 -cp build\classes -d build\test @build\source
 rem E2E has exactly one blocking criterion: the actual packaged TCP investigation.
 rem Art/audio/balance diagnostics execute in the separate non-blocking workflow step.
 if /I "%~1"=="e2e" goto package_jar_only
+java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.SpiritBoxResponsesTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.SoundCoverageTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.AudioDeviceRecoveryTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.EnvironmentAudioTest || exit /b 1
