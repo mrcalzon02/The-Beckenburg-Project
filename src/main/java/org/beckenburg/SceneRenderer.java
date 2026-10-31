@@ -190,6 +190,9 @@ public final class SceneRenderer {
     public GhostWriting.Style writingBookStyle;
     public final java.util.Map<Integer,VanTripods.Stand> tripods=new java.util.HashMap<>();
     public final java.util.Map<String,LanPortableLights.Light> portablePositions=new java.util.HashMap<>();
+    // Local-only placement is handed over by InvestigationSession, not guessed
+    // by the renderer. Network sessions use the separate host marks instead.
+    private InvestigationSession.PlacedSalt soloPlacedSalt;
     public final java.util.Map<Integer,LanVideoCameras.Camera> videoCameras=
         new java.util.HashMap<>();
     public final java.util.Map<Integer,VanSensorStations.Station> sensorPositions=
@@ -1243,6 +1246,12 @@ public final class SceneRenderer {
             // Visible prepared circle is constrained to the anchor room; it is not a magic menu flag.
             quad(out,new Point(wx-.8,.035,wz-.8),new Point(wx+.8,.035,wz-.8),new Point(wx+.8,.035,wz-.65),new Point(wx-.8,.035,wz-.65),0x9b85b8);
             quad(out,new Point(wx-.8,.035,wz+.65),new Point(wx+.8,.035,wz+.65),new Point(wx+.8,.035,wz+.8),new Point(wx-.8,.035,wz+.8),0x9b85b8);
+        }
+        if(soloPlacedSalt!=null&&Math.hypot(soloPlacedSalt.x()-x,soloPlacedSalt.z()-z)<14){
+            var salt=soloPlacedSalt;
+            imported(out,EquipmentModelCatalog.variant("SALT",
+                EquipmentTiers.Tier.I,"deployed"),salt.x(),salt.y(),salt.z(),
+                1.0,salt.headingRadians());
         }
         for(WorldMark mark:marks) {
             double mx=mark.x(),mz=mark.z(),yy=mark.height();
@@ -2983,10 +2992,12 @@ public final class SceneRenderer {
     }
     /** Render a 3D LAN apparition at its actual server-disclosed pose, never a guessed room center. */
     public void drawNetwork(HouseMap map,List<RemoteBody> others,Apparition apparition,double clock){
+        soloPlacedSalt=null;
         render(map,-1,apparition!=null,-1,-1,clock,others,apparition);
     }
     public void drawNetwork(HouseMap map,List<RemoteBody> others,Apparition apparition,double clock,
             List<WorldMark> markers){
+        soloPlacedSalt=null;
         render(map,-1,apparition!=null,-1,-1,clock,others,apparition,markers);
     }
     public void draw(HouseMap map,InvestigationSession session,double clock){
@@ -3017,6 +3028,7 @@ public final class SceneRenderer {
                 type.ancient()?"ancient_twins_b":"twins_b")));
         }else setAdditionalGhostBodies(List.of());
         // Solo shares the same event visualization contract as the LAN client.
+        soloPlacedSalt=session.placedSalt();
         setHauntings(session.hauntings());
         uvLamp=session.uvPowered();uvTier=EquipmentTiers.Tier.I;uvTick=session.ticks();
         uvMarks=session.uvVisible(x,eyeHeight-HunterPosture.eye(session.crouched()),z,yaw);
