@@ -93,6 +93,10 @@ public final class AdaptiveTopologyEditor extends JPanel {
         button(target,"MERGE",()->mutate(false));
         button(target,"CUT HOLE",()->mutateCutout(true));
         button(target,"RESTORE SURFACE",()->mutateCutout(false));
+        button(target,"ENTRANCE SEAMS 1/2/3",()->{
+            try{EntranceSeamEditor.open(frame,world);}
+            catch(IOException|RuntimeException failure){error("Entrance seam editor failed",failure);}
+        });
         button(target,"NAV FLOOD EDITOR",()->{
             try{AdaptiveNavMeshEditor.open(frame,world,n(tileX),n(tileZ));}
             catch(IOException|RuntimeException failure){error("Navigation editor failed",failure);}
