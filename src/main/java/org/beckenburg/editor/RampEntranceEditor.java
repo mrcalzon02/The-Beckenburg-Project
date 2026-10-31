@@ -29,6 +29,7 @@ public final class RampEntranceEditor extends JPanel {
     private final JLabel status=new JLabel();
     private final ArrayDeque<RampEntranceDocument.Snapshot> undo=new ArrayDeque<>();
     private final ArrayDeque<RampEntranceDocument.Snapshot> redo=new ArrayDeque<>();
+    private final ArrayDeque<AdaptiveTerrainTopology.Snapshot> cutUndo=new ArrayDeque<>();
 
     public static JFrame open(Window owner,StitchedHeightmapWorld world)throws IOException{
         JFrame f=new JFrame("Beckenburg — Smooth Surface Entrances");
@@ -49,6 +50,8 @@ public final class RampEntranceEditor extends JPanel {
         });
         button(buttons,"DELETE",this::remove);
         button(buttons,"AUDIT ENTRANCE",this::audit);
+        button(buttons,"CARVE OPENING",this::carve);
+        button(buttons,"UNDO CARVE",this::undoCarve);
         button(buttons,"UNDO",()->history(false));
         button(buttons,"REDO",()->history(true));
         button(buttons,"VERIFY SAVE",this::save);
@@ -170,6 +173,40 @@ public final class RampEntranceEditor extends JPanel {
         }catch(IOException|RuntimeException failure){
             document.restore(before);error("Ramp history failed",failure);
         }
+    }
+    private void carve(){
+        var ramp=list.getSelectedValue();
+        if(ramp==null){status.setText("Select a ramp entrance to carve");return;}
+        if(JOptionPane.showConfirmDialog(frame,
+            "Carve adaptive terrain only where source ground obstructs "+ramp.id()
+            +"? The heightmap PNG will remain unchanged. The mouth lip and deep roof are preserved.",
+            "Confirm source topology cutouts",JOptionPane.YES_NO_OPTION)
+            !=JOptionPane.YES_OPTION)return;
+        try{
+            var topology=AdaptiveTerrainTopology.open(world);
+            var before=topology.snapshot();
+            var result=RampApertureCarver.carve(world,topology,ramp,
+                new LayeredTerrainQueries.Agent(.1,1.65,42,.24));
+            if(result.changed()){
+                topology.save();
+                if(!topology.snapshot().equals(AdaptiveTerrainTopology.open(world).snapshot()))
+                    throw new IOException("Carved terrain did not persist to disk");
+                cutUndo.push(before);
+            }
+            refresh("Ramp aperture: "+result.newCutouts()+" new removed terrain patches, "
+                +result.newSplits()+" refinements");
+        }catch(IOException|RuntimeException failure){error("Ramp aperture carve failed",failure);}
+    }
+    private void undoCarve(){
+        if(cutUndo.isEmpty())return;
+        var before=cutUndo.peek();
+        try{
+            var topology=AdaptiveTerrainTopology.open(world);
+            topology.restore(before);topology.save();
+            if(!topology.snapshot().equals(AdaptiveTerrainTopology.open(world).snapshot()))
+                throw new IOException("Cutout undo failed disk readback");
+            cutUndo.pop();refresh("Restored topology before last ramp carving");
+        }catch(IOException|RuntimeException failure){error("Cutout undo failed",failure);}
     }
     private void save(){
         try{
