@@ -30,6 +30,7 @@ public final class LevelPlans {
     /** Unmodified shipped authoring source; shared by editor and gameplay. */
     static LevelDefinition buildSource(HouseMap.Site site) {
         return switch(site.name()) {
+            case "USER" -> UserLevelLibrary.source();
             case "HOUSE" -> house();
             case "HOLLOW_CREEK" -> HollowCreekLevel.build();
             case "MANSION" -> wing("mansion","Blackthorn Manor",10,20,26,38,3.6,
