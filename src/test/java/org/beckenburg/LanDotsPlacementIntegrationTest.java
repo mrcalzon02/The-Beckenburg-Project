@@ -126,8 +126,29 @@ public final class LanDotsPlacementIntegrationTest {
                 check(dots.at(0)!=null&&dots.at(0).room()==4
                     &&dots.at(0).heading()==90,
                     "host must own real positioned, rotated DOTS geometry");
+
+                // Empty batteries must not trap deployed evidence hardware in the world.
+                synchronized(mutex){
+                    FieldEquipment[] kits=(FieldEquipment[])LooseClutterNetworkTest.field(host,"equipment");
+                    @SuppressWarnings("unchecked")
+                    java.util.Map<String,Integer> battery=(java.util.Map<String,Integer>)
+                        LooseClutterNetworkTest.field(kits[0],"batteryTicks");
+                    battery.put("DOTS_PROJECTOR",0);
+                }
+                press(panel,KeyEvent.VK_G);
+                int retrieveAt=a.mark();
+                click(panel);
+                String retrieval=a.await(retrieveAt,s->s.startsWith("ACCEPT|GEARUSE|")
+                    ||s.startsWith("REJECT|"),"recover drained placed projector");
+                check(retrieval.startsWith("ACCEPT|GEARUSE|DOTS_PROJECTOR|")
+                    &&retrieval.contains("Projector retrieved"),
+                    "even an exhausted projector remains physically retrievable: "+retrieval);
+                String cleared=a.await(retrieveAt,"DOTS|CLEAR|0");
+                feed(panel,cleared);feed(panel,retrieval);
+                check(dots.at(0)==null&&!renderer.dotsPositions.containsKey(0),
+                    "retrieved projector disappears from both host and client world state");
             }finally{SwingUtilities.invokeAndWait(panel::close);}
-            System.out.println("PASS: LAN DOTS rack/equip, failed preview retry, mouse placement, host ACK and replicated powered geometry");
+            System.out.println("PASS: LAN DOTS rack/equip, failed preview retry, mouse placement, host ACK, shared powered geometry and exhausted retrieval");
         }
     }
 }
