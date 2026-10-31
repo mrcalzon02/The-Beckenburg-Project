@@ -87,7 +87,7 @@ public final class DevAssetReviewCatalog {
     public static Audit audit(Entry entry){
         try {
             if(entry.sprite()){
-                BufferedImage image=DirectionalSprites.frame(entry.id(),0);
+                BufferedImage image=DirectionalSprites.frame(entry.id(),0,LanGhostAnimation.Phase.LURK,0);
                 if(image==null||image.getWidth()<1||image.getHeight()<1)
                     return new Audit("MISSING",0,0,0,0,0,0,0,0,0,"No frame");
                 int alpha=0,opaque=0;
