@@ -92,6 +92,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final ToolBeltHud.Grip toolGrip=new ToolBeltHud.Grip();
     private boolean toolPlacement,placementPending;
     private String placementPendingTool;
+    private void clearPlacementSelection(){
+        toolPlacement=false;placementPending=false;placementPendingTool=null;
+        placementRotation=0;toolGrip.release();
+    }
     private int placementRotation,lastRepeatTick=-100000;
     private boolean nightVision,flashlightOn,firelightOn;
     private boolean uvLightOn;
@@ -204,6 +208,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     }
     public void close(){
         if(opening!=null){opening.close();opening=null;}
+        clearPlacementSelection();
         toolGrip.reset();releaseVoice();timer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
         VanLiveScreens.suspendCamera();
         capturedCameraImage=null;
@@ -264,6 +269,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         try{
             List<String> p=LanProtocol.parts(frame);
             if(p.size()==3&&p.get(0).equals("SITE")){
+                clearPlacementSelection();
                 map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));lights.setSourceRunning(true);
                 map.configureHiding(renderer.hidingDensity);
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
@@ -598,6 +604,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 renderer.activeRite=null;renderer.strikeUntilTick=-1;
                 atmosphere.setRitual(false);atmosphere.setHunt(false);
                 caseResult=frame.substring(7);feedback="CASE CLOSED: "+caseResult;
+                clearPlacementSelection();
                 keys.clear();
             }else if(p.get(0).equals("CAMGHOST")){
                 if(p.size()!=5&&p.size()!=11)throw new IllegalArgumentException("bad camera manifestation");
@@ -1709,22 +1716,22 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 var target=focusTarget();if(target!=null)sendAction("interaction",()->client.interact(target,renderer.yaw,renderer.pitch));
             }
             case KeyEvent.VK_1 -> {
-                activeGearSlot=0;toolPlacement=false;toolGrip.release();
+                clearPlacementSelection();activeGearSlot=0;
                 selected=LanCase.Tool.EMF;
                 sendAction("select gear",()->client.selectGearSlot(0));
             }
             case KeyEvent.VK_2 -> {
-                activeGearSlot=1;toolPlacement=false;toolGrip.release();
+                clearPlacementSelection();activeGearSlot=1;
                 selected=LanCase.Tool.THERMOMETER;
                 sendAction("select gear",()->client.selectGearSlot(1));
             }
             case KeyEvent.VK_3 -> {
-                activeGearSlot=2;toolPlacement=false;toolGrip.release();
+                clearPlacementSelection();activeGearSlot=2;
                 selected=LanCase.Tool.SPIRIT_BOX;
                 sendAction("select gear",()->client.selectGearSlot(2));
             }
             case KeyEvent.VK_4 -> {
-                activeGearSlot=3;toolPlacement=false;toolGrip.release();
+                clearPlacementSelection();activeGearSlot=3;
                 
                 sendAction("select gear",()->client.selectGearSlot(3));
             }
