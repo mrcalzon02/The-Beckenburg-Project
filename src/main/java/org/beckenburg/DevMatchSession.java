@@ -111,9 +111,10 @@ public final class DevMatchSession {
         snapshots.add(b.append("]}").toString());
     }
 
-    private void execute(int seconds,boolean admin,boolean continuousBots)throws Exception {
+    private void execute(int seconds,boolean admin,boolean continuousBots,
+                         GhostIdentity.Type scenarioGhost)throws Exception {
         List<Peer> peers=new ArrayList<>();
-        try(LanHost host=new LanHost(HOST,0,GhostIdentity.Type.SPIRIT,
+        try(LanHost host=new LanHost(HOST,0,scenarioGhost,
                 CustomContract.standard(6),false,true,HouseMap.Site.HOUSE)){
             host.enableAiDiagnostics(true);
             try {
@@ -232,6 +233,7 @@ public final class DevMatchSession {
                         require(!now.ghost().hostAiFallback(),"host fallback enabled while ghost occupied");
                         capture(now);
                         if(snapshots.size()>4000)snapshots.subList(0,2000).clear();
+                        if(now.outcome()!=LanCase.Outcome.ACTIVE&&!admin)break;
                         Thread.sleep(250);
                     }
                 }finally{
@@ -239,6 +241,11 @@ public final class DevMatchSession {
                     for(DevMatchClientAi driver:drivers)driver.close();
                 }
                 DevAdminSnapshot after=host.devAdminSnapshot();
+                if(continuousBots){
+                    List<DevMatchClientAi.Stats> results=new ArrayList<>();
+                    for(DevMatchClientAi driver:drivers)results.add(driver.stats());
+                    DevMatchOutcomeReport.write(OUTPUT,after,results,seconds);
+                }
                 capture(after);
                 require(after.tick()>before.tick(),"authoritative simulation did not advance");
                 require(after.hunters().size()==6&&after.connectedPlayers()==7,
@@ -266,10 +273,13 @@ public final class DevMatchSession {
         boolean selected=false;
         int seconds=-1;
         boolean admin=false,continuousBots=false;
+        GhostIdentity.Type scenarioGhost=GhostIdentity.Type.SPIRIT;
         for(String arg:args){
             if(arg.equals("--dev-ai-match"))selected=true;
             else if(arg.equals("--admin")){admin=true;continuousBots=true;}
             else if(arg.equals("--bots"))continuousBots=true;
+            else if(arg.startsWith("--ghost="))
+                scenarioGhost=GhostIdentity.Type.valueOf(arg.substring("--ghost=".length()));
             else if(arg.startsWith("--seconds="))seconds=Integer.parseInt(arg.substring(10));
             else throw new IllegalArgumentException("unexpected developer option: "+arg);
         }
@@ -287,7 +297,7 @@ public final class DevMatchSession {
         DevMatchSession session=new DevMatchSession();
         String status="STARTUP_FAILURE";
         try{
-            session.execute(seconds,admin,continuousBots);
+            session.execute(seconds,admin,continuousBots,scenarioGhost);
             status=admin?"DEV_ADMIN_CLOSED":continuousBots?"DEV_BOTS_PASS":"PHASE_0_PASS";
         }catch(Throwable error){
             status="FAIL: "+error;
