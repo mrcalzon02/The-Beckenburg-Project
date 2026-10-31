@@ -51,6 +51,11 @@ jobs:
         shell: cmd
         run: java -Djava.awt.headless=true -ea -cp build\classes org.beckenburg.BeckenburgRegressionSuite
 
+      - name: Review ghost voice expansion routing and asset duration (advisory)
+        continue-on-error: true
+        shell: cmd
+        run: java -Djava.awt.headless=true -ea -cp "build\\classes;build\\test" org.beckenburg.GhostVoiceExpansionTest
+
       - name: Launch packaged JAR, verify splash to live menu to multiplayer UI
         shell: pwsh
         working-directory: .

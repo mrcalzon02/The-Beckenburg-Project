@@ -17,7 +17,7 @@ final class RecordedSfx {
     private static final int STING_VARIANTS=6;
     private static final int GHOST_LINE_VARIANTS=20;
     // Full spoken utterances can be longer than the four-second Foley safety cap.
-    private static final int MAX_GHOST_VOICE_BYTES=16000*4*12;
+    private static final int MAX_GHOST_VOICE_BYTES=16000*4*16;
     // Short Foley clips must not monopolize the single effects line behind critical attack cues.
     private static final int MAX_PCM_BYTES=16000*4*4;
     private static final int SHORT_MECHANICAL_BYTES=16000*4;
@@ -33,23 +33,53 @@ final class RecordedSfx {
         return cue.name().toLowerCase(java.util.Locale.ROOT)+"_"+index+".wav";
     }
 
-    /** Cosmetic voice choice from the authoritative event tick alone.
-     * No ghost identity, location, or client-local RNG enters selection.
-     * A missing recording falls back to the existing synthesized cue.
+    /** Only presentation: the event already exists and was spatially projected by
+     * the authoritative solo/host world. Names are provisional acoustic tags, NOT
+     * evidence, translated dialogue, target detection, or hidden ghost coordinates.
+     */
+    private static final int[] GHOST_AMBIENT={21,22,24};
+    private static final int[] GHOST_SEARCH={24,26,29};
+    private static final int[] GHOST_MANIFEST={23,24,29};
+    private static final int[] GHOST_HUNT={25,26,28,29};
+    private static final int[] GHOST_STRIKE={23,25,26,29};
+    private static final int[] GHOST_JUMP={23,25};
+    private static String ghostVariant(LanSound.CueEvent event,int[] pool){
+        int index=Math.floorMod(event.tick()*13+event.cue().ordinal()*11,pool.length);
+        return String.format(java.util.Locale.ROOT,"ghost_line_%02d.wav",pool[index]);
+    }
+    private static String originalLine(LanSound.CueEvent event){
+        int index=Math.floorMod((event.tick()/5)*7+event.cue().ordinal()*13,
+            GHOST_LINE_VARIANTS)+1;
+        return String.format(java.util.Locale.ROOT,"ghost_line_%02d.wav",index);
+    }
+    /** Sparse, deterministic contextual variations preserve legacy lines 1-20.
+     * Track 27 is an exact duplicate of 26 and intentionally has no second WAV.
      */
     static String ghostVoiceName(LanSound.CueEvent event){
         if(event==null)throw new IllegalArgumentException("event");
         LanSound.Cue cue=event.cue();
         int selector=Math.floorMod(event.tick()*31+cue.ordinal()*7,60);
         return switch(cue){
-            case WHISPER -> selector%9==0?"ghost_idles.wav":null;
-            case IMPACT -> selector%3==0?"ghost_jump.wav":null;
-            case MANIFEST,STRIKE,TENSION_BUILD -> {
-                if(selector%5!=0)yield null;
-                int index=Math.floorMod((event.tick()/5)*7+cue.ordinal()*13,
-                    GHOST_LINE_VARIANTS)+1;
-                yield "ghost_line_"+String.format(java.util.Locale.ROOT,"%02d",index)+".wav";
-            }
+            case WHISPER ->
+                selector%9==0?"ghost_idles.wav":
+                selector%11==0?ghostVariant(event,GHOST_AMBIENT):null;
+            case DISTURB -> selector%17==0?ghostVariant(event,GHOST_AMBIENT):null;
+            case GHOST_DRIFT -> selector%11==0?ghostVariant(event,GHOST_AMBIENT):null;
+            case FOOTFALL -> selector%13==0?ghostVariant(event,GHOST_SEARCH):null;
+            case MANIFEST ->
+                selector%5==0?originalLine(event):
+                selector%7==0?ghostVariant(event,GHOST_MANIFEST):null;
+            case TENSION_BUILD ->
+                selector%5==0?originalLine(event):
+                selector%7==0?ghostVariant(event,GHOST_HUNT):null;
+            case STRIKE ->
+                selector%5==0?originalLine(event):
+                selector%7==0?ghostVariant(event,GHOST_STRIKE):null;
+            case IMPACT ->
+                selector%3==0?"ghost_jump.wav":
+                selector%5==0?ghostVariant(event,GHOST_JUMP):null;
+            case HORROR_STING_A,HORROR_STING_B,HORROR_STING_C ->
+                selector%13==0?ghostVariant(event,GHOST_JUMP):null;
             default -> null;
         };
     }
@@ -152,6 +182,11 @@ final class RecordedSfx {
         return out;
     }
     static boolean isPackaged(LanSound.Cue cue){
+        if((cue==LanSound.Cue.DISTURB||cue==LanSound.Cue.GHOST_DRIFT)
+                &&original("ghost_line_21.wav")!=null)return true;
+        if(cue==LanSound.Cue.FOOTFALL&&original("ghost_line_26.wav")!=null)
+            return true;
+
         if(cue==LanSound.Cue.WHISPER&&original("ghost_idles.wav")!=null)return true;
         if(cue==LanSound.Cue.IMPACT&&original("ghost_jump.wav")!=null)return true;
         if(cue==LanSound.Cue.MANIFEST||cue==LanSound.Cue.STRIKE
