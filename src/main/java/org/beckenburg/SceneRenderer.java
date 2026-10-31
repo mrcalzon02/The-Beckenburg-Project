@@ -2911,7 +2911,8 @@ public final class SceneRenderer {
         if(eyeHeight<2.0){
             DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
                 CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z,0,"lore_master",
-                1.79,.98,0,255,lightsOn&&map.lightOn(CastleArchive.KEEPER_X,1.0,
+                1.79,.98,GroundedSpriteFeet.relativeElevation(0,eyeHeight),255,
+                lightsOn&&map.lightOn(CastleArchive.KEEPER_X,1.0,
                     CastleArchive.KEEPER_Z),renderWidth,renderHeight,focal);
             // Same physical coordinates as the existing independent dialogue zones.
             for(var resident:CastleRelations.Resident.values()){
@@ -2924,7 +2925,8 @@ public final class SceneRenderer {
                     case MATTHIS_ROOK->throw new AssertionError("Matthis already drawn");
                 };
                 DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
-                    resident.x,resident.z,0,art,1.79,.98,0,255,
+                    resident.x,resident.z,0,art,1.79,.98,
+                    GroundedSpriteFeet.relativeElevation(0,eyeHeight),255,
                     lightsOn&&map.lightOn(resident.x,1.0,resident.z),
                     renderWidth,renderHeight,focal);
             }
