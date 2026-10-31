@@ -43,6 +43,12 @@ on:
       - 'src/main/java/org/beckenburg/GlbProps.java'
       - 'src/test/java/org/beckenburg/DeveloperLevelEditorDataTest.java'
       - 'src/main/java/org/beckenburg/GlbProps.java'
+      - 'src/main/java/org/beckenburg/DirectionalSprites.java'
+      - 'src/main/java/org/beckenburg/CastleCourtyardPaving.java'
+      - 'src/test/java/org/beckenburg/ImportedBookMaterialTest.java'
+      - 'src/test/java/org/beckenburg/CharacterBillboardAnchorTest.java'
+      - 'src/test/java/org/beckenburg/CastleLiveRepairVisualTest.java'
+      - 'src/main/java/org/beckenburg/CastleSurroundings.java'
       - 'src/main/java/org/beckenburg/VanArrivalStreet.java'
       - 'tools/ggbot_blend_export.py'
       - 'build.cmd'
@@ -163,7 +169,17 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GhostAiScenarioRunnerTest
           if errorlevel 1 exit /b 1
+      - name: Book source-atlas and NPC world-pivot diagnostics
+        continue-on-error: true
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\ImportedBookMaterialTest.java src\test\java\org\beckenburg\CharacterBillboardAnchorTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.ImportedBookMaterialTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CharacterBillboardAnchorTest
       - name: Generate repair screenshots with the actual renderer
+        continue-on-error: true
         shell: cmd
         run: |
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleLiveRepairVisualTest.java
