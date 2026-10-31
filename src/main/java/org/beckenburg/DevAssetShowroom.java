@@ -338,6 +338,18 @@ public final class DevAssetShowroom implements AutoCloseable {
             Path image=folder.resolve(String.format("bay-%04d.png",start/BAY));
             ImageIO.write(sheet,"png",image.toFile());imageCount++;
         }
+        // An actual close-range 640x400 shot for EVERY exhibit makes the
+        // gallery useful for broken UVs, not just distant silhouettes.
+        if(focus==null)for(int i=0;i<entries.size();i++){
+            var e=entries.get(i);
+            scene.x=SceneRenderer.devAssetX(0);
+            scene.z=SceneRenderer.devAssetZ(0)-3.15;
+            scene.eyeHeight=1.30;scene.yaw=0;scene.pitch=-.06;
+            scene.drawDevAssetRoom(List.of(e),i*.03,0);
+            Path filename=folder.resolve(String.format("asset-%04d.png",i));
+            ImageIO.write(scene.image(),"png",filename.toFile());
+            imageCount++;
+        }
         if(focus!=null){
             DevAssetReviewCatalog.Entry chosen=null;
             for(var e:entries)if(e.id().equals(focus)||e.key().equalsIgnoreCase(focus)){
@@ -356,7 +368,7 @@ public final class DevAssetShowroom implements AutoCloseable {
         }
         String status="Dev room: "+entries.size()+" registered assets, "+loaded+
             " loaded, "+review+" needs review, "+missing+" missing; "+imageCount+
-            " actual renderer PNG bay screenshots.\n"+
+            " actual renderer PNGs (bay overviews + individual close-ups).\n"+
             "Important: LOADED means decodable and sampled, NOT visually approved.\n"+
             "Missing/flat/UV and registry warnings are diagnostic; no cosmetic release gate.\n";
         Files.writeString(folder.resolve("review-summary.txt"),status,StandardCharsets.UTF_8);
