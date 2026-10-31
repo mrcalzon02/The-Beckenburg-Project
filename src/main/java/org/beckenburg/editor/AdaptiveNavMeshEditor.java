@@ -44,6 +44,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
     private final StitchedHeightmapWorld world;
     private final AdaptiveNavMeshEdits edits;
     private LayeredTerrainDocument geometry;
+    private RampEntranceDocument ramps;
     private final JSpinner tileX=spinner(0,-999999,999999);
     private final JSpinner tileZ=spinner(0,-999999,999999);
     private final JSpinner cellX,cellZ;
@@ -91,6 +92,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         this.frame=frame;this.world=world;
         this.edits=AdaptiveNavMeshEdits.open(world);
         this.geometry=LayeredTerrainDocument.open(world);
+        this.ramps=RampEntranceDocument.open(world);
         cellX=spinner(0,0,world.settings().tileCells()-1);
         cellZ=spinner(0,0,world.settings().tileCells()-1);
         tileX.setValue(tx);tileZ.setValue(tz);
@@ -175,6 +177,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                 changeVersion++;selected=null;
                 try{
                     geometry=LayeredTerrainDocument.open(world);
+                    ramps=RampEntranceDocument.open(world);
                     refreshLayers();
                 }catch(IOException failure){
                     updateStatus("Cannot read authored underground layers: "+failure.getMessage());
@@ -197,6 +200,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         var layers=new LinkedHashSet<String>();
         layers.add(LayeredTerrainQueries.SURFACE);
         for(var floor:geometry.floors())layers.add(floor.layer());
+        for(var ramp:ramps.ramps())layers.add(ramp.layer());
         if(previewLayer.getItemCount()==layers.size()){
             boolean same=true;
             for(int i=0;i<previewLayer.getItemCount();i++)
@@ -235,8 +239,9 @@ public final class AdaptiveNavMeshEditor extends JPanel {
     }
     private long fileSignature(){
         int tx=n(tileX),tz=n(tileZ);
-        return 31*(31*(31*stamp(world.directory().resolve("adaptive-topology.bin"))
+        return 31*(31*(31*(31*stamp(world.directory().resolve("adaptive-topology.bin"))
             +stamp(edits.path()))+stamp(world.directory().resolve("layered-geometry.bin")))
+            +stamp(world.directory().resolve("ramp-entrances.bin")))
             +stamp(world.tilePath(tx,tz));
     }
     private void modify(Runnable action){
@@ -340,9 +345,10 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                 // Read a stable, saved copy; never race an active editor mutation.
                 var copy=AdaptiveNavMeshEdits.open(world);
                 var geometry=LayeredTerrainDocument.open(world);
+                var entrances=RampEntranceDocument.open(world);
                 var physical=new LayeredTerrainQueries(world,
                     AdaptiveTerrainTopology.open(world),
-                    geometry.floors(),geometry.solids());
+                    geometry.floors(),geometry.solids(),entrances.ramps());
                 var profile=new AdaptiveNavigationRegions.Profile(
                     new LayeredTerrainQueries.Agent(.10,1.65,42,.24),
                     allowLadders,allowDrops);
@@ -355,8 +361,17 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                         areas.add(new AdaptiveNavigationRegions.Area(floor.layer(),
                             x0,z0,x1,z1));
                 }
+                for(var ramp:entrances.ramps()){
+                    double x0=Math.max(area.x0(),ramp.x0()),x1=Math.min(area.x1(),ramp.x1());
+                    double z0=Math.max(area.z0(),ramp.z0()),z1=Math.min(area.z1(),ramp.z1());
+                    if(x1>x0&&z1>z0)
+                        areas.add(new AdaptiveNavigationRegions.Area(ramp.layer(),
+                            x0,z0,x1,z1));
+                }
+                var links=new ArrayList<>(geometry.links());
+                links.addAll(entrances.connections());
                 return AdaptiveNavigationRegions.build(physical,profile,
-                    areas,geometry.links(),copy,resolution);
+                    areas,links,copy,resolution);
             }
             @Override protected void done(){
                 running=false;
@@ -469,6 +484,17 @@ public final class AdaptiveNavMeshEditor extends JPanel {
             for(var floor:geometry.floors())if(floor.layer().equals(currentLayer())){
                 int x=px(floor.x0(),a),z=pz(floor.z0(),a);
                 out.drawRect(x,z,px(floor.x1(),a)-x,pz(floor.z1(),a)-z);
+            }
+            out.setColor(new Color(83,193,114));
+            for(var ramp:ramps.ramps())if(ramp.layer().equals(currentLayer())
+                ||currentLayer().equals(LayeredTerrainQueries.SURFACE)
+                ||ramp.targetLayer().equals(currentLayer())){
+                int x=px(ramp.x0(),a),z=pz(ramp.z0(),a);
+                out.drawRect(x,z,px(ramp.x1(),a)-x,pz(ramp.z1(),a)-z);
+                int mx=px(ramp.mouthX(),a),mz=pz(ramp.mouthZ(),a);
+                int ix=px(ramp.insideX(),a),iz=pz(ramp.insideZ(),a);
+                out.drawLine(mx,mz,ix,iz);
+                out.drawString(ramp.id(),mx+5,mz+13);
             }
             out.setColor(new Color(218,225,235));
             for(var solid:geometry.solids()){
