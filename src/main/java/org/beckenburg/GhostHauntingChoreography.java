@@ -154,58 +154,15 @@ public final class GhostHauntingChoreography {
         return -1;
     }
 
-    /** PSX-era storyboarding: visual gestures, not a second ghost actor. */
+    /** Storyboard motifs use the same physically scoped, organic PSX spectral
+     * texture engine as unscored events. There are no HUD bars or fake actors.
+     */
     public static void paint(int[] pixels,int width,int height,
-            GhostHauntingFolio.Occurrence event,int tick) {
+            GhostHauntingFolio.Occurrence event,int tick){
         Score score=forEvent(event.entry().id());
-        if(score==null||tick<event.startTick()||tick>=event.untilTick())return;
-        int age=tick-event.startTick();
-        double t=age/(double)event.entry().duration();
-        double swell=Math.sin(Math.PI*t);
-        if(swell<=0)return;
-        int[] original=pixels.clone(); // scanline shifts always sample the complete earlier image
-        int seed=event.entry().id().hashCode();
-        for(int y=0;y<height;y++)for(int x=0;x<width;x++){
-            double nx=(x-width*.5)/(width*.5),ny=(y-height*.5)/(height*.5);
-            double radius=Math.hypot(nx,ny);
-            double phase=Math.sin(age*.39),grain=Math.sin(x*.68+y*1.71+seed*.001+age*.8);
-            int dx=0;
-            double effect=switch(score.motif()){
-                case LAMP_STROBE->(age%11<3?1.0:.05)*swell*(.35+.65*Math.abs(grain));
-                case RADIO_GLITCH->(y%7<2?.85:.19)*swell*grain;
-                case PERSPECTIVE_BEND->swell*Math.sin(y*.065+age*.14);
-                case DOORFRAME_WIPE->swell*(Math.abs(nx+.28-.42*t)<.055?1:-.25);
-                case SHROUD_SWIRL->swell*Math.sin(radius*16-age*.27+Math.atan2(ny,nx)*2);
-                case FLICKER_STEP->swell*(age%13<4?1:-.32)*(Math.abs(nx-.12*Math.sin(age*.1))<.33?1:.12);
-                case ICE_BLOOM->swell*(Math.sin((Math.abs(nx)+Math.abs(ny))*(14+12*t))>.84?1:-.18);
-                case EDGE_WATCHER->swell*(radius>.66?(radius-.66)*2.7:-.18);
-                case IMPACT_RING->swell*(Math.abs(radius-(age%29)/23.0)<.085?1:-.22);
-                case GRASPING_EDGES->swell*(Math.abs(nx)>1.0-.48*swell
-                    +.10*Math.sin(ny*11+age*.22)?-1:.17);
-                case TWIN_ECHO->swell*(Math.abs(nx+.48)<.10||Math.abs(nx-.48)<.10?1:-.15);
-                case BLADE_SWEEP->swell*(Math.abs(nx+ny*.65-1.3+2.6*t)<.09?1:-.17);
-                case PLAGUE_MIASMA->swell*Math.sin(nx*10+ny*8+age*.10+2*Math.sin(nx*4));
-                case NOTHIC_IRIS->swell*(Math.abs(radius-(.72-.55*t))<.13?1:-.22);
-            };
-            if(score.motif()==Motif.RADIO_GLITCH&&y%7<2)dx=(int)(8*grain*swell);
-            if(score.motif()==Motif.PERSPECTIVE_BEND)dx=(int)(5*swell*Math.sin(y*.08+age*.14));
-            int sourceX=Math.max(0,Math.min(width-1,x+dx));
-            int col=original[y*width+sourceX];
-            int delta=(int)(Math.max(-1,Math.min(1,effect))*55);
-            int r=(col>>16)&255,g=(col>>8)&255,b=col&255;
-            if(score.motif()==Motif.ICE_BLOOM||score.motif()==Motif.PLAGUE_MIASMA){
-                r=clamp(r-delta/3);g=clamp(g+delta/2);
-                b=clamp(b+(score.motif()==Motif.ICE_BLOOM?delta:-delta/3));
-            }else if(score.motif()==Motif.EDGE_WATCHER||score.motif()==Motif.GRASPING_EDGES
-                    ||score.motif()==Motif.FLICKER_STEP||score.motif()==Motif.DOORFRAME_WIPE){
-                r=clamp(r-Math.abs(delta));g=clamp(g-Math.abs(delta));b=clamp(b-Math.abs(delta)/2);
-            }else{
-                r=clamp(r+delta);g=clamp(g+delta);b=clamp(b+delta);
-            }
-            pixels[y*width+x]=(r<<16)|(g<<8)|b;
-        }
+        if(score==null)return;
+        HauntingScreenFx.paint(pixels,width,height,event,tick,score.motif());
     }
-    private static int clamp(int n){return Math.max(0,Math.min(255,n));}
 
     /** Pure stereo 16-bit audio, no sound hardware or UI thread requirement. */
     public static byte[] synthesize(SoundFrame frame,int effectsVolume){
