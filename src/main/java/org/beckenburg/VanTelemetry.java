@@ -1,16 +1,20 @@
 package org.beckenburg;
 import java.util.Random;
-/** Host-only indirect sensor. Never discloses true ghost energy to hunters. */
+/** Host-only indirect activity sensor. High readings follow energy expenditure,
+ * not the ghost's remaining reserve; never disclose exact energy to hunters. */
 public final class VanTelemetry {
     public static final int HUNTERS=6;
     private final Random rng;
     private int lastSample=-100000,activity;
-    private double filtered=3;
+    private double filtered=0;
     public VanTelemetry(long seed){rng=new Random(seed);}
     public int sample(int tick,int energy){
         if(tick<0||energy<0||energy>100||tick<lastSample)throw new IllegalArgumentException("bad activity input");
         if(tick-lastSample>=12){
-            double target=energy/10.0+(rng.nextDouble()-.5)*3.2;
+            // Ghosts spend energy to act. A depleted reserve means elevated recent
+            // expenditure, while a fully recovered ghost trends toward quiet.
+            // Preserve the existing noise, smoothing, and delayed sampling.
+            double target=(100-energy)/10.0+(rng.nextDouble()-.5)*3.2;
             if(rng.nextInt(15)==0)target+=(rng.nextBoolean()?1:-1)*1.5;
             filtered=filtered*.48+target*.52;
             activity=Math.max(0,Math.min(10,(int)Math.round(filtered)));
