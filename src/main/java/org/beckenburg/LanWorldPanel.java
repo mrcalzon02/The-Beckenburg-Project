@@ -114,7 +114,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final java.util.EnumMap<LanCase.Tool,String> lastMeasurement=
         new java.util.EnumMap<>(LanCase.Tool.class);
     private int casefileScroll;
-    private boolean casefileOpen,helpVisible,interactionHeld;
+    private boolean casefileOpen,helpVisible,interactionHeld,ledgerTabHeld;
     private String interfaceOpen="";private int mapFloor;
     private final SiteCaseFiles.Reader assignmentReader=new SiteCaseFiles.Reader(),storyReader=new SiteCaseFiles.Reader();
     private final FieldJournal fieldNotes=new FieldJournal();
@@ -125,8 +125,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         this.client=Objects.requireNonNull(client);
         if(client.seat().equals("GHOST"))throw new IllegalArgumentException("hunter-only world view");
         seat=Integer.parseInt(client.seat().substring(1))-1;
-        setFocusable(true);setBackground(Color.BLACK);setLayout(null);
+        setFocusable(true);setFocusTraversalKeysEnabled(false);
+        setBackground(Color.BLACK);setLayout(null);
         chatInput.setVisible(false);
+        chatInput.setFocusTraversalKeysEnabled(false);
         chatInput.setFont(new Font(Font.MONOSPACED,Font.PLAIN,14));
         chatInput.setBackground(new Color(15,20,28));
         chatInput.setForeground(new Color(229,232,222));
@@ -134,8 +136,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         chatInput.addActionListener(e->submitChat());
         chatInput.addKeyListener(new KeyAdapter(){
             @Override public void keyPressed(KeyEvent e){
-            if(e.getKeyCode()==KeyEvent.VK_E){if(interactionHeld)return;interactionHeld=true;}
+                if(e.getKeyCode()==KeyEvent.VK_E){if(interactionHeld)return;interactionHeld=true;}
                 if(e.getKeyCode()==KeyEvent.VK_ESCAPE){closeChat();e.consume();}
+                else if(e.getKeyCode()==KeyEvent.VK_TAB){
+                    closeChat();toggleEvidenceLedger();e.consume();
+                }
             }
         });
         add(chatInput);
@@ -205,8 +210,20 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private void closeChat(){
         chatInput.setVisible(false);
         chatInput.setText("");
-        requestFocusInWindow();
+        mouseLook.resume();
         repaint();
+    }
+    /** Tab opens the evidence ledger regardless of which in-game interface is up. */
+    private void toggleEvidenceLedger(){
+        if(casefileOpen&&journalPage==1){
+            casefileOpen=false;
+            mouseLook.resume();
+        }else{
+            interfaceOpen="";
+            casefileOpen=true;journalPage=1;helpVisible=false;
+            keys.clear();mouseLook.release();
+        }
+        keys.clear();repaint();
     }
     private void submitChat(){
         String message=chatInput.getText();
@@ -989,7 +1006,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             sendAction("buy "+kind,()->client.purchaseSupply(kind,tier));
             break;
         }
-        requestFocusInWindow();
+        mouseLook.resume();
     }
     /** One scrollable rack, clear source-derived product comparisons, direct controls. */
     private void showEquipmentRack(){
@@ -1015,7 +1032,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         view.add(recharge,java.awt.BorderLayout.SOUTH);
         try{GameDialogs.showMessageDialog(this,view,"EQUIPMENT LIBRARY",GameDialogs.PLAIN_MESSAGE);}
         finally{rackCatalog=null;}
-        requestFocusInWindow();
+        mouseLook.resume();
     }
     private void consumeMedicine(FieldSupplies.Kind kind){
         int offset=kind.ordinal()*3;
@@ -1399,7 +1416,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 String[] hints={"WASD move / Ctrl crouch  /  SHIFT sprint  /  CLICK mouse-look",
                     "1-4 belt / LMB use / R camera aim / LMB shutter / RMB power",
                     "Z cross / G ward / H salt / 5-6 class abilities / K medicine",
-                    "J casefile  /  TAB journal  /  I guess  /  P submit",
+                    "J casefile  /  TAB evidence ledger  /  SHIFT+TAB pages",
                     "ENTER chat  /  F2 radio  /  F3-F4 voice  /  F7 voice options",
                     "ESC exit world  /  F1 close this help"};
                 int yy=hy+55;for(String hint:hints){g.drawString(hint,hx+18,yy);yy+=25;}
@@ -1666,6 +1683,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     }
     @Override public void keyPressed(KeyEvent e){
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
+        if(e.getKeyCode()==KeyEvent.VK_TAB){
+            if(ledgerTabHeld)return;
+            ledgerTabHeld=true;
+            if(opening!=null){opening.close();opening=null;}
+            if(e.isShiftDown()&&casefileOpen){
+                journalPage=(journalPage+1)%3;keys.clear();mouseLook.release();repaint();
+            }else toggleEvidenceLedger();
+            e.consume();return;
+        }
         if(opening!=null){
             if(e.getKeyCode()==KeyEvent.VK_SPACE
                 ||e.getKeyCode()==KeyEvent.VK_ENTER
@@ -1675,7 +1701,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 ||e.getKeyCode()==KeyEvent.VK_S
                 ||e.getKeyCode()==KeyEvent.VK_D){
                 opening.close();opening=null;
-                keys.clear();mouseLook.release();
+                keys.clear();mouseLook.resume();
                 repaint();
                 if(e.getKeyCode()!=KeyEvent.VK_W
                     &&e.getKeyCode()!=KeyEvent.VK_A
@@ -1685,21 +1711,23 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
         if(chatInput.isVisible())return;
         if(e.getKeyCode()==KeyEvent.VK_M&&insideVan()&&!casefileOpen){
-            if(interfaceOpen.equals("MAP"))interfaceOpen="";
+            if(interfaceOpen.equals("MAP")){interfaceOpen="";mouseLook.resume();}
             else{interfaceOpen="MAP";vanMapScroll=0;keys.clear();mouseLook.release();}
             repaint();return;
         }
         if(!interfaceOpen.isEmpty()){
             if(interfaceOpen.equals("BRIEFING")||interfaceOpen.startsWith("STORY_")){
-                if(e.getKeyCode()==KeyEvent.VK_ESCAPE||e.getKeyCode()==KeyEvent.VK_E)interfaceOpen="";
-                else (interfaceOpen.equals("BRIEFING")?assignmentReader:storyReader).key(e.getKeyCode());
+                if(e.getKeyCode()==KeyEvent.VK_ESCAPE||e.getKeyCode()==KeyEvent.VK_E){
+                    interfaceOpen="";mouseLook.resume();
+                }else (interfaceOpen.equals("BRIEFING")?assignmentReader:storyReader).key(e.getKeyCode());
                 keys.clear();repaint();return;
             }
             if(interfaceOpen.equals("MAP")&&e.getKeyCode()==KeyEvent.VK_C){
                 cycleVanCamera();repaint();return;
             }
-            if(e.getKeyCode()==KeyEvent.VK_ESCAPE||e.getKeyCode()==KeyEvent.VK_E)interfaceOpen="";
-            else if(e.getKeyCode()==KeyEvent.VK_PAGE_UP||e.getKeyCode()==KeyEvent.VK_RIGHT){
+            if(e.getKeyCode()==KeyEvent.VK_ESCAPE||e.getKeyCode()==KeyEvent.VK_E){
+                interfaceOpen="";mouseLook.resume();
+            }else if(e.getKeyCode()==KeyEvent.VK_PAGE_UP||e.getKeyCode()==KeyEvent.VK_RIGHT){
                 mapFloor++;vanMapScroll=0;
             }else if(e.getKeyCode()==KeyEvent.VK_PAGE_DOWN||e.getKeyCode()==KeyEvent.VK_LEFT){
                 mapFloor--;vanMapScroll=0;
@@ -1707,8 +1735,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             else if(e.getKeyCode()==KeyEvent.VK_DOWN)vanMapScroll++;
             repaint();return;
         }
-        if(e.getKeyCode()==KeyEvent.VK_F1){helpVisible=!helpVisible;keys.clear();mouseLook.release();repaint();return;}
-        if(helpVisible){if(e.getKeyCode()==KeyEvent.VK_ESCAPE)helpVisible=false;repaint();return;}
+        if(e.getKeyCode()==KeyEvent.VK_F1){
+            helpVisible=!helpVisible;keys.clear();
+            if(helpVisible)mouseLook.release();else mouseLook.resume();
+            repaint();return;
+        }
+        if(helpVisible){
+            if(e.getKeyCode()==KeyEvent.VK_ESCAPE){helpVisible=false;mouseLook.resume();}
+            repaint();return;
+        }
         if(e.getKeyCode()==KeyEvent.VK_F3){
             beginVoice(LanChat.Channel.LOCAL);return;
         }
@@ -1719,17 +1754,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(e.getKeyCode()==KeyEvent.VK_ENTER){releaseVoice();openChat(LanChat.Channel.LOCAL);return;}
         if(e.getKeyCode()==KeyEvent.VK_F2){openChat(LanChat.Channel.RADIO);return;}
         if(e.getKeyCode()==KeyEvent.VK_ESCAPE && casefileOpen){
-            casefileOpen=false;repaint();return;
+            casefileOpen=false;mouseLook.resume();repaint();return;
         }
         if(e.getKeyCode()==KeyEvent.VK_J){
             casefileOpen=!casefileOpen;
             if(casefileOpen){journalPage=0;mouseLook.release();keys.clear();}
+            else mouseLook.resume();
             repaint();return;
-        }
-        if(e.getKeyCode()==KeyEvent.VK_TAB){
-            if(!casefileOpen){casefileOpen=true;journalPage=1;mouseLook.release();keys.clear();}
-            else journalPage=(journalPage+1)%3;
-            e.consume();repaint();return;
         }
         if(casefileOpen&&journalPage==0){
             int rows=Math.min(casefile.size(),Math.min(8,Math.max(1,(Math.max(160,getHeight()-82)-135)/37)));
@@ -1922,13 +1953,14 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     public String caseFeedback(){return feedback;}
     @Override public void keyReleased(KeyEvent e){
             if(e.getKeyCode()==KeyEvent.VK_E)interactionHeld=false;
+        if(e.getKeyCode()==KeyEvent.VK_TAB)ledgerTabHeld=false;
         keys.remove(e.getKeyCode());
         if(e.getKeyCode()==KeyEvent.VK_F3&&heldVoice==LanChat.Channel.LOCAL)releaseVoice();
         if(e.getKeyCode()==KeyEvent.VK_F4&&heldVoice==LanChat.Channel.RADIO)releaseVoice();
     }
     @Override public void keyTyped(KeyEvent e){}
     @Override public void focusGained(FocusEvent e){}
-    @Override public void focusLost(FocusEvent e){interactionHeld=false;toolGrip.release();toolPlacement=false;
+    @Override public void focusLost(FocusEvent e){interactionHeld=false;ledgerTabHeld=false;toolGrip.release();toolPlacement=false;
         keys.clear();releaseVoice();mouseLook.release();
     }
 }
