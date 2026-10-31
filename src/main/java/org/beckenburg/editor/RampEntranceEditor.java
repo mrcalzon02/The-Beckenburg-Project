@@ -160,7 +160,8 @@ public final class RampEntranceEditor extends JPanel {
     private void history(boolean isRedo){
         var from=isRedo?redo:undo;
         if(from.isEmpty())return;
-        var target=from.peek(),before=document.snapshot();
+        var target=from.peek();
+        var before=document.snapshot();
         try{
             document.restore(target);document.save();
             if(!document.snapshot().equals(RampEntranceDocument.open(world).snapshot()))
