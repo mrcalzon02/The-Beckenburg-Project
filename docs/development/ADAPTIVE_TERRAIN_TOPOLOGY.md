@@ -122,3 +122,12 @@ cameras and screenshots must still behave unchanged.
 
 This is **a staging fixture for A2 and early A4**, not proof that A3 authored
 sculpting, physical collision or T5/T6 distant scope occlusion works.
+
+
+## 8. Cutout and multi-level navigation requirements (2026-10-31)
+
+**Correction to the earlier design:** adaptive topology must support punching true holes in terrain and multiple overlapping 3D floors/ceilings at the same X/Z for caves, caverns, mines, bunkers and sewers. A heightfield alone cannot provide this. Sparse cutout leaf flags are now in authoring format v2; the human editor has cut/restore controls, and the isolated DEV patch suppresses cutout triangles. Underground mesh, matching collision, portal connectivity and layered gameplay are NOT yet implemented.
+
+See [Layered Terrain and Real Excavation](TERRAIN_LAYERED_CAVITIES.md) for authored surface cuts, 3D subsurface layers, entrance perimeter welding and collision/occlusion acceptance.
+
+**Separate requirement:** low/high rendering mesh densities must not respectively under- or over-sample NPC waypoints. Use independently built adaptive nav regions with physical clearance sampling, explicit layer/portal IDs, hierarchical routes and verified local swept movement. See [Adaptive Multi-Layer Navigation](ADAPTIVE_MULTILAYER_NAVIGATION.md) for the staged design and diagnostics. Camera/render LOD must never become NPC collision authority.
