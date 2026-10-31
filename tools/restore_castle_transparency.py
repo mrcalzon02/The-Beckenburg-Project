@@ -11,6 +11,7 @@ repacking after verifying all 16 sprites; all source PNGs remain untouched.
 """
 from __future__ import annotations
 import argparse
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -21,6 +22,7 @@ from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
 ASSETS=ROOT/"assets/runtime/castle-support-directions.zip"
+MANIFEST=ROOT/"assets/runtime/castle-support-alpha-repair-manifest.json"
 PEOPLE=("elsbeth_vale","rowan_pike","tomas_greaves","sister_mirelle_ash")
 VIEWS=("front","side","back","right")
 
@@ -75,9 +77,14 @@ def extract(rgba: np.ndarray):
     keep=np.zeros((h,w),np.uint8)
     for k in range(1,n):
         area=int(stats[k,cv2.CC_STAT_AREA])
-        # Body, lower separated boots, and larger source accessories.
+        cx,cy,cw,ch=(int(stats[k,i]) for i in (
+            cv2.CC_STAT_LEFT,cv2.CC_STAT_TOP,cv2.CC_STAT_WIDTH,cv2.CC_STAT_HEIGHT))
+        # Remove the small source-sheet labels beneath the boots, and isolated
+        # straight panel guides. Legitimate boot/strap components are larger.
+        caption=cy>=int(h*.91) and ch<=14 and area<350
+        guide=cw<=4 and ch>=26 and area<500
         near_existing=(np.count_nonzero((cc==k)&(old>0))>max(10,area*.18))
-        if area >= max(85,large*.015) and near_existing:
+        if area >= max(85,large*.015) and near_existing and not (caption or guide):
             keep[cc==k]=1
     keep=cv2.morphologyEx(keep,cv2.MORPH_CLOSE,
          cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(3,3)))
@@ -125,6 +132,12 @@ def preview(old:Image.Image,new:Image.Image,path:Path):
 def run(out:Path,write:bool):
     out.mkdir(parents=True,exist_ok=True)
     before=ASSETS.read_bytes()
+    before_sha=hashlib.sha256(before).hexdigest()
+    if write and MANIFEST.is_file():
+        prior=json.loads(MANIFEST.read_text())
+        if prior.get("result_archive_sha256")==before_sha:
+            print("SOURCE_ALPHA_ALREADY_INSTALLED",before_sha,flush=True)
+            return
     zipin=zipfile.ZipFile(io.BytesIO(before))
     old={f.filename:zipin.read(f) for f in zipin.infolist() if not f.is_dir()}
     updated={}
@@ -153,7 +166,18 @@ def run(out:Path,write:bool):
                 assert set(check.namelist())==set(old)
             dest.replace(ASSETS)
         finally:dest.unlink(missing_ok=True)
-        print("ALPHA_REPAIRED_ALL_16_FRAMES",flush=True)
+        masters=ROOT/"assets/concept-art/v001/04-npcs"
+        original_sources={name:hashlib.sha256((masters/(name+"-master-concept.png")).read_bytes()).hexdigest()
+            for name in ("elsbeth-vale","rowan-pike","tomas-greaves","sister-mirelle-ash")}
+        after_sha=hashlib.sha256(ASSETS.read_bytes()).hexdigest()
+        MANIFEST.write_text(json.dumps({
+            "method":"source-sampled RGB plus fresh GrabCut alpha; 16 directional frames",
+            "original_source_sha256":original_sources,
+            "previous_archive_sha256":before_sha,
+            "result_archive_sha256":after_sha,
+            "frames":report,
+        },indent=2)+"\n")
+        print("ALPHA_REPAIRED_ALL_16_FRAMES",after_sha,flush=True)
     else:
         print("PREVIEW_ONLY_NO_RUNTIME_ASSET_MUTATION",flush=True)
 
