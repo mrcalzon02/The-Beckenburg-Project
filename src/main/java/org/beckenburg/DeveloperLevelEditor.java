@@ -285,6 +285,14 @@ public final class DeveloperLevelEditor extends JPanel {
         billboardLab.addActionListener(e->org.beckenburg.editor.EditorBillboardLab.show(window));
         commands.add(billboardLab);
         JButton waterModules=new JButton("WATER",new dev.mrcalzon.water.WaterIcon());waterModules.setToolTipText("Reusable water modules, shapes, snap handles and weather preview");waterModules.addActionListener(e->EnvironmentModuleEditor.open(window,"castle"));commands.add(waterModules);
+
+        JButton terrainZones=button("TERRAIN / ZONES");
+        terrainZones.setToolTipText("Manual terrain height-offset brushes and loading-zone authoring; machine interface later");
+        terrainZones.addActionListener(e->org.beckenburg.editor.TerrainZoneEditor.open(
+            window,"blackpine",java.util.List.of("blackpine","castle","house",
+                "farmhouse","school","mansion","prison","asylum","academy",
+                "college","church","hollow-creek")));
+        commands.add(terrainZones);
         save.addActionListener(e->save());
         export.addActionListener(e->export());
         reset.addActionListener(e->{
