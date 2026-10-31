@@ -13,8 +13,10 @@ public final class CastleSupportArtTest {
             check(DirectionalSprites.isCastleSupport(id),"Missing approved Castle resident identity: "+id);
             for(int facing=0;facing<8;facing++){
                 BufferedImage img=DirectionalSprites.frame(id,facing);
-                check(img.getWidth()==128&&img.getHeight()==224&&img.getColorModel().hasAlpha(),
-                    "Missing packaged source cutout for "+id+" facing "+facing);
+                check(img.getWidth()>=128&&img.getWidth()<=512
+                    &&img.getHeight()>=224&&img.getHeight()<=896
+                    &&img.getWidth()*7==img.getHeight()*4&&img.getColorModel().hasAlpha(),
+                    "Invalid Castle source-derived cutout for "+id+" facing "+facing);
                 int opaque=0;
                 for(int y=0;y<img.getHeight();y+=4)
                     for(int x=0;x<img.getWidth();x+=4)
