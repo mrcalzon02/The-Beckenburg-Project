@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 1196,
+  "count": 1204,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -12154,6 +12154,86 @@
       "height": 480,
       "bytes": 569486,
       "sha256": "859129e39f3bdf9b621cdc8afcd252208746b363270d02cfe5268452d7b4b2db"
+    },
+    {
+      "path": "development/quality/castle-resident-art/source-diagnostic/previews/elsbeth-vale-current-front-matte.png",
+      "url": "development/quality/castle-resident-art/source-diagnostic/previews/elsbeth-vale-current-front-matte.png",
+      "title": "Elsbeth vale current front matte",
+      "kind": "Development review",
+      "width": 768,
+      "height": 448,
+      "bytes": 335096,
+      "sha256": "47332453fca43812c30a297dfa98a82b36c153c63bfc779047fe0bb1be169da7"
+    },
+    {
+      "path": "development/quality/castle-resident-art/source-diagnostic/previews/elsbeth-vale-master-overview.png",
+      "url": "development/quality/castle-resident-art/source-diagnostic/previews/elsbeth-vale-master-overview.png",
+      "title": "Elsbeth vale master overview",
+      "kind": "Development review",
+      "width": 1000,
+      "height": 750,
+      "bytes": 1285619,
+      "sha256": "f6bc405ed5ec18019c117f5ad568b73b6544876774aa83d6889958c06df82b11"
+    },
+    {
+      "path": "development/quality/castle-resident-art/source-diagnostic/previews/rowan-pike-current-front-matte.png",
+      "url": "development/quality/castle-resident-art/source-diagnostic/previews/rowan-pike-current-front-matte.png",
+      "title": "Rowan pike current front matte",
+      "kind": "Development review",
+      "width": 768,
+      "height": 448,
+      "bytes": 296758,
+      "sha256": "c2738dc0cf7f4daca2cc714b86c128b8bc3d0858facfefdf74d93975d674a487"
+    },
+    {
+      "path": "development/quality/castle-resident-art/source-diagnostic/previews/rowan-pike-master-overview.png",
+      "url": "development/quality/castle-resident-art/source-diagnostic/previews/rowan-pike-master-overview.png",
+      "title": "Rowan pike master overview",
+      "kind": "Development review",
+      "width": 1000,
+      "height": 750,
+      "bytes": 1271537,
+      "sha256": "2a0f4da2acd7139aea8b23e7a236d7f68749da1b76df86bf9c730933666131ee"
+    },
+    {
+      "path": "development/quality/castle-resident-art/source-diagnostic/previews/sister-mirelle-ash-current-front-matte.png",
+      "url": "development/quality/castle-resident-art/source-diagnostic/previews/sister-mirelle-ash-current-front-matte.png",
+      "title": "Sister mirelle ash current front matte",
+      "kind": "Development review",
+      "width": 768,
+      "height": 448,
+      "bytes": 299757,
+      "sha256": "3a9c22371bf268b9ecec7fca27dfc75d6bf951520461d47cb7506a6b6bf550d6"
+    },
+    {
+      "path": "development/quality/castle-resident-art/source-diagnostic/previews/sister-mirelle-ash-master-overview.png",
+      "url": "development/quality/castle-resident-art/source-diagnostic/previews/sister-mirelle-ash-master-overview.png",
+      "title": "Sister mirelle ash master overview",
+      "kind": "Development review",
+      "width": 1000,
+      "height": 750,
+      "bytes": 1285929,
+      "sha256": "da248fc2e0a2f357deb5aecfd9f0d5dcb72315bb8223624d0f9582e3e1b1ef28"
+    },
+    {
+      "path": "development/quality/castle-resident-art/source-diagnostic/previews/tomas-greaves-current-front-matte.png",
+      "url": "development/quality/castle-resident-art/source-diagnostic/previews/tomas-greaves-current-front-matte.png",
+      "title": "Tomas greaves current front matte",
+      "kind": "Development review",
+      "width": 768,
+      "height": 448,
+      "bytes": 300696,
+      "sha256": "78edbd80a1baaaf555b3ab029c29066c3996c7809fac291f7708facb59eb806e"
+    },
+    {
+      "path": "development/quality/castle-resident-art/source-diagnostic/previews/tomas-greaves-master-overview.png",
+      "url": "development/quality/castle-resident-art/source-diagnostic/previews/tomas-greaves-master-overview.png",
+      "title": "Tomas greaves master overview",
+      "kind": "Development review",
+      "width": 1000,
+      "height": 750,
+      "bytes": 1300251,
+      "sha256": "8c6b62ac13a69dd9546eefd833dc85e876a11e373304f18f5d0e98289f46816d"
     }
   ]
 }
