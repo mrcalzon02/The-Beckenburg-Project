@@ -39,6 +39,13 @@ public final class DirectionalSprites {
     public static boolean isCastleSupport(String identity){
         return java.util.Arrays.asList(SUPPORT_IDENTITIES).contains(identity);
     }
+    private static boolean validCastleSpriteSize(BufferedImage image){
+        if(image==null||!image.getColorModel().hasAlpha())return false;
+        int w=image.getWidth(),h=image.getHeight();
+        // Both the original 128x224 cutouts and source-RGB 256x448 repairs.
+        // Keep the original world-space silhouette ratio unchanged.
+        return w>=128&&w<=512&&h>=224&&h<=896&&w*7==h*4;
+    }
     private static final Map<String,BufferedImage> IMAGES=load();
     private DirectionalSprites() { }
 
@@ -183,8 +190,7 @@ public final class DirectionalSprites {
                     if(!java.util.Arrays.asList(LORE_DIRECTIONS).contains(view))
                         throw new IOException("Invalid Castle resident view: "+name);
                     BufferedImage image=ImageIO.read(zip);
-                    if(image==null||image.getWidth()!=128||image.getHeight()!=224
-                            ||!image.getColorModel().hasAlpha())
+                    if(!validCastleSpriteSize(image))
                         throw new IOException("Invalid Castle sprite image: "+name);
                     if(frames.putIfAbsent(parts[0]+"/"+view,image)!=null)
                         throw new IOException("Duplicate Castle sprite: "+name);
