@@ -47,8 +47,14 @@ jobs:
         shell: pwsh
         continue-on-error: true
         run: |
-          & java '-Djava.awt.headless=true' -cp 'build\beckenburg-game.jar' org.beckenburg.DevAssetShowroom --dev-room --capture --output=build/dev-room
+          & java '-Djava.awt.headless=true' -cp 'build\beckenburg-game.jar' org.beckenburg.InvestigationGame --dev-room --capture --output=build/dev-room
           if ($LASTEXITCODE -ne 0) { Write-Warning "Advisory art preview had errors. Inspect logs and screenshots." }
+          if (Test-Path 'build/dev-room/inventory.csv') {
+            Write-Output 'Representative asset failures or source-registration findings:'
+            Get-Content 'build/dev-room/inventory.csv' |
+              Select-String ',MISSING,|,REVIEW_UV,|,REVIEW_REGISTRATION,' |
+              Select-Object -First 32
+          }
       - name: Record source revision
         if: always()
         shell: pwsh
