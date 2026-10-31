@@ -28,7 +28,17 @@ public final class CastleSurroundings {
      new VanStaging.Placement(PARKED.get(0).x(),0,PARKED.get(0).z(),PARKED.get(0).yaw()));
  public static VanStaging courtyardVan(){return COURTYARD_VAN;}
  public static boolean courtyardVanBlocks(double x,double z,double r){
-  return COURTYARD_VAN.collides(x,z,r);
+  // The Castle version is parked and non-operational. It uses the exact
+  // physical outer silhouette of the playable van but its cargo area is
+  // closed to traversal, unlike an investigation's open equipment bay.
+  // This prevents players walking through the parked vehicle's centre.
+  if(!Double.isFinite(x+z+r)||r<0)return true;
+  var local=COURTYARD_VAN.local(x,z);
+  double closestX=Math.max(-VanStaging.HALF_WIDTH,
+      Math.min(VanStaging.HALF_WIDTH,local.x()));
+  double closestZ=Math.max(VanStaging.FRONT,
+      Math.min(VanStaging.REAR+VanStaging.CAB_LENGTH,local.z()));
+  return Math.hypot(local.x()-closestX,local.z()-closestZ)<=r;
  }
 
  public static List<RoadPoint> road(){return List.of(new RoadPoint(15.5,34.4),new RoadPoint(16,65),new RoadPoint(26,95),new RoadPoint(5,145));}
