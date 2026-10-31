@@ -273,6 +273,15 @@ public final class GlbProps {
     public static synchronized Model decode(byte[] bytes)throws IOException{
         return decode(bytes,null);
     }
+    /** Developer asset room only: preserve the actual named asset's UV origin
+     * behavior while auditing source GLBs that are NOT runtime approved.
+     * This method does not modify the normal game's model allowlist.
+     */
+    static synchronized Model decodeForReview(byte[] bytes,String resourceName)throws IOException{
+        if(resourceName==null||!resourceName.matches("[A-Za-z0-9_-]{1,90}"))
+            throw new IOException("Invalid dev room source ID");
+        return decode(bytes,resourceName);
+    }
     private static synchronized Model decode(byte[] bytes,String resourceName)throws IOException{
         if(bytes.length<28||bytes.length>4_000_000)throw new IOException("GLB size");
         ByteBuffer bb=ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN);
