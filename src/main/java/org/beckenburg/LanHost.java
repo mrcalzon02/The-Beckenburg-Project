@@ -332,6 +332,26 @@ public final class LanHost implements AutoCloseable {
     public String aiDiagnosticsCsv(){
         return org.beckenburg.editor.ai.NpcAiTelemetryReport.csv(aiDiagnostics.snapshot());
     }
+    /**
+     * Local developer inspector only: never sent in broadcastWorld(), included in
+     * seats[], or exposed to bot controllers. All fields refer to one host tick.
+     */
+    public DevAdminSnapshot devAdminSnapshot(){
+        synchronized(mutex){
+            List<DevAdminSnapshot.Hunter> hunters=new ArrayList<>(HUNTERS);
+            for(int i=0;i<HUNTERS;i++){
+                Peer player=seats[i];
+                hunters.add(new DevAdminSnapshot.Hunter("H"+(i+1),
+                    player!=null,player!=null&&player.ready,world.body(i),
+                    mission.health(i),mission.stress(i),mission.alive(i)));
+            }
+            Peer spectral=seats[GHOST_SEAT];
+            return new DevAdminSnapshot(tick,running,hunters,
+                new DevAdminSnapshot.Ghost(spectral!=null,spectral!=null&&spectral.ready,
+                    spectral==null,ghostPose.pose(),ghost.energy(),ghost.manifested()),
+                ghostType,mission.identified(),mission.outcome(),casefile.snapshot());
+        }
+    }
     public boolean running(){synchronized(mutex){return running;}}
     public int connected(){synchronized(mutex){int count=0;for(Peer peer:seats)if(peer!=null)count++;return count;}}
     public int reservedSeats(){synchronized(mutex){int count=0;for(Reservation r:reserved)if(r!=null)count++;return count;}}
