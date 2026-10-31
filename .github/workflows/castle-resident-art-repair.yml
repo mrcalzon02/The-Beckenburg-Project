@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'tools/repair_castle_sprite_art.py'
+      - 'src/test/java/org/beckenburg/CastleResidentArtRenderAudit.java'
       - '.github/workflows/castle-resident-art-repair.yml'
   workflow_dispatch:
 concurrency:
@@ -28,6 +29,17 @@ jobs:
         id: recover
         continue-on-error: true # A visual issue never blocks the game release.
         run: python tools/repair_castle_sprite_art.py --out build/castle-resident-art-repair --write
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Capture real Castle in-game source-vs-PSX closeups (nonblocking)
+        continue-on-error: true
+        run: |
+          sh build.sh
+          mkdir -p build/test
+          javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/CastleResidentArtRenderAudit.java
+          java -Djava.awt.headless=true -cp build/classes:build/test org.beckenburg.CastleResidentArtRenderAudit build/castle-resident-art-render
       - name: Record source audit results and publish only completely verified artwork
         if: always()
         run: |
@@ -52,6 +64,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: castle-residents-original-vs-old-vs-rebuilt-nonblocking
-          path: build/castle-resident-art-repair/
+          path: |
+            build/castle-resident-art-repair/
+            build/castle-resident-art-render/
           if-no-files-found: warn
           retention-days: 21
