@@ -1704,6 +1704,17 @@ public final class InvestigationGame {
             }
             return;
         }
+        // Hidden, explicit developer asset room. Never expose it as an
+        // ordinary case or multiplayer map and never alter campaign state.
+        if(java.util.Arrays.asList(args).contains("--dev-room")){
+            try{DevAssetShowroom.main(args);}
+            catch(Exception failure){
+                BeckenburgDiagnostics.fail("Developer asset review room",failure);
+                failure.printStackTrace(System.err);
+                System.exit(1);
+            }
+            return;
+        }
         if(GraphicsEnvironment.isHeadless()){
             BeckenburgDiagnostics.record("Headless runtime; GUI unavailable");
             System.err.println("A graphical Windows/Linux desktop is required for the Swing client.");
