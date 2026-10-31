@@ -21,7 +21,6 @@ public final class CameraSnapshotTest {
     public static void main(String[] args)throws Exception{
         HouseMap map=BlackpineLevel.map();
         SceneRenderer hunter=new SceneRenderer(),lens=new SceneRenderer();
-        lens.photographicSoftwareRaster();
         hunter.x=48.5;hunter.z=32.3;hunter.eyeHeight=map.floorY(0)+1.62;
         hunter.yaw=0;hunter.pitch=0;hunter.lamp=false;
         BufferedImage ahead=CameraSnapshot.network(lens,hunter,map,List.of(),
