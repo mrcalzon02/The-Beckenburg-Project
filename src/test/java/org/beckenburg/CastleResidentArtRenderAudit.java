@@ -16,9 +16,12 @@ public final class CastleResidentArtRenderAudit {
     private CastleResidentArtRenderAudit() { }
 
     private static final double[][] CAMERAS = {
-        {0, -2.4}, {-2.4, 0}, {2.4, 0}, {0, 2.4},
-        {-1.8, -1.8}, {1.8, 1.8}, {-1.8, 1.8}, {1.8, -1.8},
-        {0, -2.9}, {-2.9, 0}, {2.9, 0}, {0, 2.9}
+        // The previous capture checked only the first two safe cameras:
+        // both were behind/to the left of Tomas, so his front was NEVER tested.
+        // Start with the front of the approved +Z-facing resident sprites.
+        {0, 2.4}, {-2.4, 0}, {2.4, 0}, {0, -2.4},
+        {1.8, 1.8}, {-1.8, 1.8}, {1.8, -1.8}, {-1.8, -1.8},
+        {0, 2.9}, {-2.9, 0}, {2.9, 0}, {0, -2.9}
     };
 
     private static String slug(String name) {
@@ -83,7 +86,7 @@ public final class CastleResidentArtRenderAudit {
                     System.out.println("CASTLE_ART_SCREENSHOT " + name);
                 }
                 views++;
-                if (views == 2) break;
+                if (views == 4) break;
             }
             if (views == 0) {
                 missing++;
