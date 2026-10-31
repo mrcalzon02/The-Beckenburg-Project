@@ -41,7 +41,7 @@ final class DevMatchClientAi implements AutoCloseable {
     private LanGhostHearing.Event heard;
     private int lastFrenzyRequest=-1000,lastFrenzyAttack=-1000,lastStrikeAttempt=-1000;
     private int lastIdentifyRequest=-1000,lastRiteRequest=-1000,lastWardRequest=-1000;
-    private int health=100,stress,seenScanCount,observedSignals,suspectedAnchor=-1;
+    private int health=100,stress,seenScanCount,observedSignals,suspectedAnchor=-1,ghostHeading=180;
     private GhostIdentity.Type hypothesis;
     private final FieldJournal notes=new FieldJournal();
     private final Set<String> distinctSamples=new HashSet<>();
@@ -61,12 +61,14 @@ final class DevMatchClientAi implements AutoCloseable {
     private final java.util.concurrent.atomic.AtomicInteger rituals=new java.util.concurrent.atomic.AtomicInteger();
     record Stats(String seat,int commands,int accepted,int rejected,int attacks,
                  int identifications,int rituals,int observations,int health,int stress,
+                 int roomsVisited,boolean enteredSite,
                  int frenzyStarts,int effectiveAttacks,int goodScans,int correctResponses,
                  int ritesStarted,String hypothesis,String state){}
     Stats stats(){
         return new Stats(seat,commands.get(),accepted.get(),rejected.get(),
             attacks.get(),identifications.get(),rituals.get(),observedSignals,
-            health,stress,frenzyStarts.get(),effectiveAttacks.get(),goodScans.get(),
+            health,stress,visited.size(),visited.keySet().stream().anyMatch(r->r<HouseMap.EXTRACTION_ROOM),
+            frenzyStarts.get(),effectiveAttacks.get(),goodScans.get(),
             correctResponses.get(),ritesStarted.get(),
             String.valueOf(hypothesis),dashboard.getOrDefault(seat,""));
     }
@@ -115,6 +117,7 @@ final class DevMatchClientAi implements AutoCloseable {
                         y=Integer.parseInt(p.get(3))/1000.0;
                         z=Integer.parseInt(p.get(4))/1000.0;
                         tick=Math.max(tick,Integer.parseInt(p.get(6)));
+                        ghostHeading=Integer.parseInt(p.get(5));
                         observedPose=true;
                         if(prior!=room){previousRoom=prior;targetRoom=-1;}
                     }
@@ -285,7 +288,15 @@ final class DevMatchClientAi implements AutoCloseable {
         double gx,gz;
         // Use the actual authored threshold and opposite-room center; never
         // teleport or ask the host where the ghost/other bots are.
-        if(dist>0.75){
+        if(room==HouseMap.EXTRACTION_ROOM&&targetRoom==13){
+            // All six hunters spawn at different offsets inside the REAL van.
+            // First converge on its physical centre aisle, then walk down the
+            // lowered cargo ramp. Never aim straight through a side wall.
+            var local=map.van().local(x,z);
+            var waypoint=map.van().world(0,
+                local.z()>VanStaging.FRONT+.68?VanStaging.FRONT+.67:VanStaging.FRONT-.70);
+            gx=waypoint.x();gz=waypoint.z();
+        }else if(dist>0.75){
             gx=portal.x();gz=portal.z();
         }else{
             gx=map.centerX(targetRoom);gz=map.centerZ(targetRoom);
@@ -297,14 +308,30 @@ final class DevMatchClientAi implements AutoCloseable {
         }
         double vx=gx-x,vz=gz-z;
         if(Math.hypot(vx,vz)<.10){targetRoom=-1;return;}
-        if(blocked>4){
-            int phase=(tick/8+Integer.parseInt(seat.substring(1)))%4;
-            double theta=Math.atan2(vx,vz)+(phase%2==0?.75:-.75);
-            vx=Math.sin(theta);vz=Math.cos(theta);
-            if(blocked>24){targetRoom=-1;blocked=0;}
+        // Use the same authored collision geometry as an actual hunter but
+        // only for planning (the authoritative host still validates STEP).
+        // A repeated blocked input must NOT be our default navigation behavior.
+        double heading=Math.atan2(vx,vz);
+        double[] offsets=blocked>3
+            ?new double[]{.7,-.7,1.15,-1.15,1.6,-1.6,2.2,-2.2,0,.34,-.34}
+            :new double[]{0,.32,-.32,.68,-.68,1.1,-1.1,1.58,-1.58};
+        double chooseX=Double.NaN,chooseZ=Double.NaN;
+        var start=new LevelDefinition.Vec(x,y,z);
+        for(double offset:offsets){
+            double angle=heading+offset,nx=Math.sin(angle),nz=Math.cos(angle);
+            double moveX=x+nx*.31,moveZ=z+nz*.31;
+            if(map.resolveMove(start,moveX,moveZ)==null
+                ||map.resolveMove(start,moveX,z)==null
+                ||map.resolveMove(start,x,moveZ)==null)continue;
+            chooseX=nx;chooseZ=nz;break;
         }
-        double d=Math.hypot(vx,vz);
-        int dx=(int)Math.round(100*vx/d),dz=(int)Math.round(100*vz/d);
+        if(!Double.isFinite(chooseX)){
+            blocked++;
+            if(blocked%16==0)targetRoom=-1;
+            dashboard.put(seat,"NO VALID WALK STEP R"+room+" -> R"+targetRoom);
+            return;
+        }
+        int dx=(int)Math.round(100*chooseX),dz=(int)Math.round(100*chooseZ);
         sendAction("EXPLORE R"+room+" -> R"+targetRoom,()->client.step(dx,dz));
         lastX=x;lastZ=z;
     }
@@ -374,8 +401,29 @@ final class DevMatchClientAi implements AutoCloseable {
                     if(chosen==GhostDomain.Action.DRIFT){
                         var exits=map.ghostExits(room);
                         if(!exits.isEmpty()){
-                            // Audible hunter activity only supplies coarse bearing.
-                            nextRoom=exits.get(random.nextInt(exits.size()));
+                            // A GHEAR cue is directional only, never a
+                            // hidden room/coordinate. Prefer a connected door
+                            // facing the audible bearing; roam if the cue fades.
+                            int choice=random.nextInt(exits.size());
+                            if(heard!=null&&tick-heard.tick()<35){
+                                double requested=switch(heard.direction()){
+                                    case AHEAD,HERE -> ghostHeading;
+                                    case LEFT -> ghostHeading+90;
+                                    case RIGHT -> ghostHeading-90;
+                                    case BEHIND -> ghostHeading+180;
+                                };
+                                double best=-Double.MAX_VALUE;
+                                for(int i=0;i<exits.size();i++){
+                                    int roomChoice=exits.get(i);
+                                    double dx=map.centerX(roomChoice)-x;
+                                    double dz=map.centerZ(roomChoice)-z;
+                                    double bearing=Math.toRadians(requested);
+                                    double score=(dx*Math.sin(bearing)+dz*Math.cos(bearing))/
+                                        Math.max(.01,Math.hypot(dx,dz));
+                                    if(score>best){best=score;choice=i;}
+                                }
+                            }
+                            nextRoom=exits.get(choice);
                         }
                     }
                     lastGhostEvent=tick;
