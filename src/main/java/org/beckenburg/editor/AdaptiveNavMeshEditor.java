@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -20,6 +22,7 @@ import java.util.concurrent.ExecutionException;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -46,6 +49,9 @@ public final class AdaptiveNavMeshEditor extends JPanel {
     private final JSpinner navResolution=new JSpinner(
         new SpinnerNumberModel(.5,.125,4.0,.125));
     private final JCheckBox continuous=new JCheckBox("Continuous rebuild");
+    private final JComboBox<String> previewLayer=new JComboBox<>();
+    private final JCheckBox ladders=new JCheckBox("Agent ladders",true);
+    private final JCheckBox controlledDrops=new JCheckBox("Agent drops");
     private final JLabel status=new JLabel();
     private final MapCanvas canvas=new MapCanvas();
     private final ArrayDeque<AdaptiveNavMeshEdits.Snapshot> undo=new ArrayDeque<>();
@@ -94,7 +100,18 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         addSpinner(location,"Cell X",cellX);addSpinner(location,"Z",cellZ);
         location.add(new JLabel("Min nav region (m)"));
         location.add(navResolution);
+        location.add(new JLabel("Layer"));
+        location.add(previewLayer);
         location.add(new JLabel("Viewport: up to 8×8 source cells"));
+        refreshLayers();
+        previewLayer.addActionListener(e->{
+            selected=null;drawingGate=false;
+            updateStatus("Layer changed: pulse to inspect");
+        });
+        ladders.addActionListener(e->settingsChanged());
+        controlledDrops.addActionListener(e->settingsChanged());
+        location.add(ladders);
+        location.add(controlledDrops);
         controls.add(location);
         JPanel buttons=new JPanel(new FlowLayout(FlowLayout.LEFT,4,1));
         continuous.setSelected(edits.continuous());
@@ -102,7 +119,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         buttons.add(continuous);
         button(buttons,"FLOOD FILL PULSE",this::pulse);
         button(buttons,"SEED AT CLICK",()->modify(()->edits.addSeed(
-            new AdaptiveNavMeshEdits.Seed("surface",clickX,clickZ))));
+            new AdaptiveNavMeshEdits.Seed(currentLayer(),clickX,clickZ))));
         button(buttons,"DRAW BLOCKED GATE",()->{
             drawingGate=true;
             barrierStartX=Double.NaN;barrierStartZ=Double.NaN;
@@ -127,6 +144,10 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         button(editsRow,"UNDO",()->history(false));
         button(editsRow,"REDO",()->history(true));
         button(editsRow,"SAVE MASKS",this::save);
+        button(editsRow,"UNDERGROUND GEOMETRY",()->{
+            try{LayeredGeometryEditor.open(frame,world);}
+            catch(IOException|RuntimeException failure){error("Layer editor failed",failure);}
+        });
         controls.add(editsRow);
         add(controls,BorderLayout.NORTH);
 
@@ -140,24 +161,52 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         add(footer,BorderLayout.SOUTH);
 
         for(JSpinner field:new JSpinner[]{tileX,tileZ,cellX,cellZ,navResolution})
-            field.addChangeListener(e->{
-                selected=null;
-                updateStatus("Viewport changed; pulse to regenerate");
-                if(continuous.isSelected())pulse();
-            });
+            field.addChangeListener(e->settingsChanged());
         var bounds=view();
         clickX=(bounds.x0()+bounds.x1())*.5;
         clickZ=(bounds.z0()+bounds.z1())*.5;
         seenSignature=fileSignature();
         watcher=new Timer(1250,e->{
-            if(!continuous.isSelected())return;
             long signature=fileSignature();
             if(signature!=seenSignature){
-                seenSignature=signature; pulse();
+                seenSignature=signature;
+                changeVersion++;selected=null;
+                try{refreshLayers();}
+                catch(IOException failure){
+                    updateStatus("Cannot read authored underground layers: "+failure.getMessage());
+                    return;
+                }
+                if(continuous.isSelected())pulse();
+                else updateStatus("External geometry/topology edit detected; manual pulse required");
             }
         });
         watcher.start();
         updateStatus("No mesh generated: click FLOOD FILL PULSE");
+        if(continuous.isSelected())pulse();
+    }
+    private String currentLayer(){
+        Object selected=previewLayer.getSelectedItem();
+        return selected==null?LayeredTerrainQueries.SURFACE:selected.toString();
+    }
+    private void refreshLayers()throws IOException {
+        String previous=currentLayer();
+        var layers=new LinkedHashSet<String>();
+        layers.add(LayeredTerrainQueries.SURFACE);
+        for(var floor:LayeredTerrainDocument.open(world).floors())layers.add(floor.layer());
+        if(previewLayer.getItemCount()==layers.size()){
+            boolean same=true;
+            for(int i=0;i<previewLayer.getItemCount();i++)
+                if(!layers.contains(previewLayer.getItemAt(i)))same=false;
+            if(same)return;
+        }
+        previewLayer.removeAllItems();
+        for(String layer:layers)previewLayer.addItem(layer);
+        previewLayer.setSelectedItem(layers.contains(previous)?previous:
+            LayeredTerrainQueries.SURFACE);
+    }
+    private void settingsChanged(){
+        selected=null;changeVersion++;
+        updateStatus("Viewport/agent changed; flood pulse required");
         if(continuous.isSelected())pulse();
     }
     private static void addSpinner(JPanel p,String name,JSpinner spinner){
@@ -182,8 +231,9 @@ public final class AdaptiveNavMeshEditor extends JPanel {
     }
     private long fileSignature(){
         int tx=n(tileX),tz=n(tileZ);
-        return 31*(31*stamp(world.directory().resolve("adaptive-topology.bin"))
-            +stamp(edits.path()))+stamp(world.tilePath(tx,tz));
+        return 31*(31*(31*stamp(world.directory().resolve("adaptive-topology.bin"))
+            +stamp(edits.path()))+stamp(world.directory().resolve("layered-geometry.bin")))
+            +stamp(world.tilePath(tx,tz));
     }
     private void modify(Runnable action){
         var before=edits.snapshot();
@@ -276,6 +326,8 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         final long issued=changeVersion;
         final var area=view();
         final double resolution=((Number)navResolution.getValue()).doubleValue();
+        final boolean allowLadders=ladders.isSelected();
+        final boolean allowDrops=controlledDrops.isSelected();
         running=true;
         updateStatus("Building adaptive nav regions and seeded flood fill...");
         new SwingWorker<AdaptiveNavigationRegions.Graph,Void>(){
@@ -283,12 +335,24 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                     throws Exception {
                 // Read a stable, saved copy; never race an active editor mutation.
                 var copy=AdaptiveNavMeshEdits.open(world);
+                var geometry=LayeredTerrainDocument.open(world);
                 var physical=new LayeredTerrainQueries(world,
-                    AdaptiveTerrainTopology.open(world),List.of(),List.of());
+                    AdaptiveTerrainTopology.open(world),
+                    geometry.floors(),geometry.solids());
                 var profile=new AdaptiveNavigationRegions.Profile(
-                    new LayeredTerrainQueries.Agent(.10,1.65,42,.24),false,false);
+                    new LayeredTerrainQueries.Agent(.10,1.65,42,.24),
+                    allowLadders,allowDrops);
+                var areas=new ArrayList<AdaptiveNavigationRegions.Area>();
+                areas.add(area);
+                for(var floor:geometry.floors()){
+                    double x0=Math.max(area.x0(),floor.x0()),x1=Math.min(area.x1(),floor.x1());
+                    double z0=Math.max(area.z0(),floor.z0()),z1=Math.min(area.z1(),floor.z1());
+                    if(x1>x0&&z1>z0)
+                        areas.add(new AdaptiveNavigationRegions.Area(floor.layer(),
+                            x0,z0,x1,z1));
+                }
                 return AdaptiveNavigationRegions.build(physical,profile,
-                    List.of(area),List.of(),copy,resolution);
+                    areas,geometry.links(),copy,resolution);
             }
             @Override protected void done(){
                 running=false;
@@ -314,7 +378,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         var m=graph==null?null:graph.metrics();
         status.setText(reason+" | mode "+(continuous.isSelected()?"continuous":"manual")+
             " | seeds "+edits.seeds().size()+" | gates "+edits.barriers().size()+
-            " | trims "+edits.exclusions().size()+
+            " | layer "+currentLayer()+" | trims "+edits.exclusions().size()+
             (m==null?" | NO NAV GRAPH": " | "+(generatedVersion==changeVersion?
                 "current":"STALE; PULSE REQUIRED")+" | regions "+m.acceptedRegions()+
             " | links "+m.edges()+" | probes "+m.evaluatedCells()));
@@ -350,7 +414,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                                 if(dx>=dz)z=z0;else x=x0;
                                 double finalX=x,finalZ=z;
                                 modify(()->edits.addBarrier(new AdaptiveNavMeshEdits.Barrier(
-                                    "surface",x0,z0,finalX,finalZ)));
+                                    currentLayer(),x0,z0,finalX,finalZ)));
                             }
                         }
                         return;
@@ -358,7 +422,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                     clickX=x;clickZ=z;selected=null;
                     if(graph!=null&&generatedVersion==changeVersion)
                         for(var r:graph.candidates().regions())
-                        if(r.layer().equals("surface")&&r.contains(x,z)){
+                        if(r.layer().equals(currentLayer())&&r.contains(x,z)){
                             selected=r;break;
                         }
                     updateStatus(selected==null?"No navigable region under cursor":
@@ -383,7 +447,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                 for(var r:graph.regions())reachable.add(new Bounds(
                     r.layer(),r.x0(),r.z0(),r.x1(),r.z1()));
                 for(var r:graph.candidates().regions()){
-                    if(!r.layer().equals("surface"))continue;
+                    if(!r.layer().equals(currentLayer()))continue;
                     int x=px(r.x0(),a),z=pz(r.z0(),a);
                     int w=Math.max(1,px(r.x1(),a)-x),h=Math.max(1,pz(r.z1(),a)-z);
                     boolean active=reachable.contains(new Bounds(
@@ -394,25 +458,25 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                     out.setColor(new Color(28,48,60));out.drawRect(x,z,w,h);
                 }
             }
-            for(var ex:edits.exclusions())if(ex.layer().equals("surface")){
+            for(var ex:edits.exclusions())if(ex.layer().equals(currentLayer())){
                 out.setColor(new Color(80,21,30,180));
                 int x=px(ex.x0(),a),z=pz(ex.z0(),a);
                 out.fillRect(x,z,Math.max(1,px(ex.x1(),a)-x),
                     Math.max(1,pz(ex.z1(),a)-z));
             }
             out.setColor(new Color(226,69,72));
-            for(var b:edits.barriers())if(b.layer().equals("surface")){
+            for(var b:edits.barriers())if(b.layer().equals(currentLayer())){
                 out.drawLine(px(b.x0(),a),pz(b.z0(),a),
                     px(b.x1(),a),pz(b.z1(),a));
             }
             out.setColor(new Color(249,175,65));
-            for(var seed:edits.seeds())if(seed.layer().equals("surface")){
+            for(var seed:edits.seeds())if(seed.layer().equals(currentLayer())){
                 int x=px(seed.x(),a),z=pz(seed.z(),a);
                 out.fillOval(x-4,z-4,9,9);
             }
             out.setColor(new Color(218,225,227));
             out.drawRect(left,top,side,side);
-            out.drawString("NAV FLOOD AUTHORING: REAL HEIGHTMAP, NOT GAMEPLAY",12,17);
+            out.drawString("NAV FLOOD: "+currentLayer()+" (world coordinates, NOT GAMEPLAY)",12,17);
             out.dispose();
         }
         private int px(double x,AdaptiveNavigationRegions.Area a){
