@@ -139,3 +139,17 @@ The **geometry-only OBJ** output has named groups for surface seam sides, detach
 Windows Java 17 \`TerrainEntranceMeshTest\` checks adaptive mesh face orientation and source-height agreement, separate sides of existing and new cut seams, preserved detached tab triangles, ramp/query height agreement, non-fabricated cave cheek walls, OBJ roundtrip group and face preservation, sparse outer-tile borders and original source heightmap seam integrity. This test blocks only on a functional mesh/export regression, not visual style.
 
 **Still pending:** hooking emitted OBJ/GLB or mesh batches into the live game-level renderer and collision/AI runtime; dynamically streaming many tiles, building full tunnel/ceiling walls beyond authored rock edges, and texture/material assignment from the approved asset library. OBJ output is an inspectable intermediate asset, not proof of a finished in-game cave.
+
+
+## N5 — Reusable runtime-scene document and terrain package module (2026-10-31)
+
+The portable Java 17 editor kit now provides two deliberately separate functional modules:
+
+- **RuntimeSceneDocument** serializes any game-owned RuntimeScene adapter into an atomic, versioned \`scene.bin\` with stable scene ID, node IDs, hierarchy, transforms, layers, component types and string properties. On load it enforces bounds, rejects bad parent graphs, checks deterministic disk readback, and can restore into an existing matching runtime scene without overwriting a different level.
+- **TerrainScenePackage** is an opt-in EnvironmentModule with \`AUTHORING\`, \`SERIALIZATION\`, and \`DIAGNOSTICS\` capabilities. Given saved source terrain and explicit patch bounds, it builds the *real* TerrainEntranceMesh, publishes geometry-only OBJ into \`scene-package/meshes/<chunk>.obj\`, checks the importer and SHA-256 hash, and registers a stable \`terrain-<chunk>\` scene node carrying a \`world://\` URI, mesh part/triangle counts and source-query file references. Regenerating a named chunk replaces only its owned mesh/node, not unrelated props or a foreign OBJ. Failed operations restore the scene and previous geometry. The scene itself is saved in \`scene-package/scene.bin\`.
+
+**Editor route:** Stitched World → **TERRAIN SCENE PACKAGE**. Select tile, local cell offsets and a bounded patch side; specify the stable chunk ID. **3D MESH PREVIEW** generates an inspection view without saving it. **PUBLISH PATCH TO SCENE** bakes OBJ and saves the authoritative scene manifest asynchronously. **VERIFY PACKAGE** checks current files and hashes; **RELOAD SCENE** refreshes from disk.
+
+This is a real reusable scene **data handoff**, not a claim that runtime SceneRenderer already parses these OBJ asset references. Explicit \`rendererStatus=requires-host-adapter\`, \`materialStatus=unassigned\`, and \`collisionStatus=query-authoring-only\` deliberately prevent placeholder material art and phantom collision. A future Beckenburg adapter must import/stream these mesh sections into GPU buffers, bind approved material assets, and supply authoritative collision/navmesh to Hunters and ghosts. Separate render/material/AI diagnostics must not gate release for aesthetic differences.
+
+Functional tests \`RuntimeSceneDocumentTest\` and \`TerrainScenePackageTest\` run in Windows Java 17 acceptance. They cover save/reload, identity isolation, stable node updates, integrity verification, rejection of un-conformed seams, refusing to overwrite foreign assets, rollback and 16-bit heightmap/source preservation.
