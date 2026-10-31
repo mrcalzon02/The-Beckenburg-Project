@@ -156,12 +156,12 @@ public final class HeldInstrumentMesh {
                             &&originalY>=screenBottom&&originalY<=screenTop){
                         if(cameraView==null)rgb=0x09191b; // unpowered LCD, never atlas garbage
                         else{
-                            double u=(faceX-screenLeft)/(screenRight-screenLeft);
-                            double v=(screenTop-originalY)/(screenTop-screenBottom);
+                            double lensU=(faceX-screenLeft)/(screenRight-screenLeft);
+                            double lensV=(screenTop-originalY)/(screenTop-screenBottom);
                             int ix=Math.min(cameraView.getWidth()-1,Math.max(0,
-                                (int)(u*cameraView.getWidth())));
+                                (int)(lensU*cameraView.getWidth())));
                             int iy=Math.min(cameraView.getHeight()-1,Math.max(0,
-                                (int)(v*cameraView.getHeight())));
+                                (int)(lensV*cameraView.getHeight())));
                             rgb=cameraView.getRGB(ix,iy)&0xffffff;
                         }
                     }
