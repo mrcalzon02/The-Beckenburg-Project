@@ -66,13 +66,17 @@ public final class SiteRoomCompassAudit {
     }
     private record Camera(double x,double y,double z,boolean trueCentre,double offset){}
     private static Camera camera(HouseMap map,LevelDefinition.Room room){
-        double cx=(room.x0()+room.x1())/2,cz=(room.z0()+room.z1())/2;
+        return cameraAt(map,room,(room.x0()+room.x1())/2,(room.z0()+room.z1())/2,7.0);
+    }
+    private static Camera cameraAt(HouseMap map,LevelDefinition.Room room,
+            double cx,double cz,double maxOffset){
         double fy=map.groundHeight(cx,cz,room.id());
         if(map.traversable(cx,fy,cz)&&map.roomAt(cx,fy,cz)==room.id())
             return new Camera(cx,fy,cz,true,0);
         // Seek the nearest actual game-legal point on the same room/floor.
         Camera best=null;
-        for(double dz=-7.0;dz<=7.0;dz+=.35)for(double dx=-7.0;dx<=7.0;dx+=.35){
+        for(double dz=-maxOffset;dz<=maxOffset;dz+=.35)
+            for(double dx=-maxOffset;dx<=maxOffset;dx+=.35){
             double xx=cx+dx,zz=cz+dz;
             if(xx<=room.x0()+.28||xx>=room.x1()-.28
                 ||zz<=room.z0()+.28||zz>=room.z1()-.28)continue;
@@ -257,6 +261,54 @@ public final class SiteRoomCompassAudit {
                 +"Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?\n"
                 +"Does the actual door and stair network make physical sense?\n";
             Files.writeString(roomDir.resolve("room-essay.txt"),notes,StandardCharsets.UTF_8);
+            // One game-zone can contain multiple actual architectural bays:
+            // the school's two upper-corridor washrooms are the critical example.
+            // Capture those subspaces rather than overlooking them because the
+            // evidence/network protocol aggregates them into room #7.
+            List<double[]> bays=new ArrayList<>();
+            List<String> bayNames=new ArrayList<>();
+            for(var socket:level.sockets())if(socket.room()==room.id()
+                    &&socket.type().equals("service_reservation")){
+                bays.add(new double[]{socket.x(),socket.z()});
+                bayNames.add("service-bay-"+bayNames.size());
+            }
+            for(var p:level.portals())if(p.a()==room.id()&&p.b()==room.id()
+                    &&p.door()&&bays.size()<12){
+                bays.add(new double[]{p.x(),p.z()});
+                bayNames.add("internal-door-"+p.id());
+            }
+            if(!bays.isEmpty()){
+                Path sub=roomDir.resolve("subspaces");
+                Files.createDirectories(sub);
+                StringBuilder baysCsv=new StringBuilder("subspace,anchor_x,anchor_z,camera_x,camera_z,")
+                    .append("camera_offset_m,traversable,capture_count\n");
+                for(int b=0;b<bays.size()&&b<12;b++){
+                    double bx=bays.get(b)[0],bz=bays.get(b)[1];
+                    Camera bay=cameraAt(map,room,bx,bz,2.4);
+                    int bayCaptures=0;
+                    Path bayDir=sub.resolve(bayNames.get(b));
+                    Files.createDirectories(bayDir);
+                    if(bay!=null)for(int f=0;f<4;f++){
+                        scene.x=bay.x();scene.z=bay.z();scene.eyeHeight=bay.y()+1.62;
+                        scene.yaw=HEADING[f];scene.pitch=-.07;
+                        try{
+                            scene.drawNetwork(map,List.of(),-1,12.0);
+                            writePng(scene.image(),bayDir.resolve(FACING[f]+".png"));
+                            bayCaptures++;
+                        }catch(Exception ex){
+                            Files.writeString(bayDir.resolve(FACING[f]+".error.txt"),ex.toString());
+                        }
+                    }
+                    baysCsv.append(bayNames.get(b)).append(',').append(fmt(bx))
+                        .append(',').append(fmt(bz)).append(',')
+                        .append(bay==null?"":fmt(bay.x())).append(',')
+                        .append(bay==null?"":fmt(bay.z())).append(',')
+                        .append(bay==null?"":fmt(bay.offset())).append(',')
+                        .append(bay!=null).append(',').append(bayCaptures).append('\n');
+                }
+                Files.writeString(sub.resolve("subspace-matrix.csv"),baysCsv,
+                    StandardCharsets.UTF_8);
+            }
         }
         Files.writeString(out.resolve("room-matrix.csv"),rows,StandardCharsets.UTF_8);
         Files.writeString(out.resolve("site-purpose-review.txt"),
