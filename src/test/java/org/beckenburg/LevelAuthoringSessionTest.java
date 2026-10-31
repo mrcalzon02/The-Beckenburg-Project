@@ -52,7 +52,33 @@ public final class LevelAuthoringSessionTest {
             reopened.save();
             check(LevelPlans.build(site).props().equals(nativeSource.props()),
                 "Reset returns to the source level without destroying other maps");
-            System.out.println("PASS authored GLB and physics roundtrip, reset and cross-map isolation");
+            // New and Open create real game-addressable missions, not fake previews.
+            UserLevelLibrary.create("FirstCustom",HouseMap.Site.HOUSE);
+            check("FirstCustom".equals(UserLevelLibrary.activeId()),"New level becomes selected");
+            var customOne=new LevelAuthoringSession(HouseMap.Site.USER);
+            check(customOne.props().equals(nativeSource.props()),
+                "New level inherited exact source geometry and objects");
+            Prop original=customOne.prop(index);
+            Prop shifted=new Prop(original.mesh(),original.room(),
+                original.x()+.25,original.y(),original.z()+.25,original.scale(),
+                original.yaw(),original.halfX(),original.halfZ(),
+                original.height(),original.support());
+            customOne.put(index,shifted);
+            customOne.save();
+            check(SiteCatalog.Location.USER.playable(),
+                "New user map is visible as a playable solo contract");
+            check(new HouseMap(HouseMap.Site.USER).level().props().get(index).equals(shifted),
+                "Live user mission reads changed authored geometry");
+            UserLevelLibrary.create("SecondCustom",HouseMap.Site.SCHOOL);
+            check(UserLevelLibrary.names().size()==2,
+                "Multiple named custom levels must coexist");
+            check(LevelPlans.build(HouseMap.Site.USER).props().equals(
+                LevelPlans.buildSource(HouseMap.Site.SCHOOL).props()),
+                "Second map starts from its selected template, not the previous map");
+            UserLevelLibrary.activate("FirstCustom");
+            check(LevelPlans.build(HouseMap.Site.USER).props().get(index).equals(shifted),
+                "Reopening named level preserves the first level's own scene");
+            System.out.println("PASS authored GLB and physics roundtrip, custom map creation, live load and isolation");
         }finally{
             System.setProperty("user.home",home);
             try(var files=Files.walk(temporary)){
