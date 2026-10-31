@@ -32,10 +32,16 @@ public final class LevelAuthoringSession implements EditorProject<List<Prop>> {
         this.source=LevelPlans.buildSource(site);
         props.addAll(loadProps(site,source));
     }
-    public String id(){return "beckenburg/"+site.name().toLowerCase(Locale.ROOT);}
+    public String id(){return sceneId(site);}
+    private static String sceneId(HouseMap.Site site){
+        return site==HouseMap.Site.USER
+            ?"beckenburg/user/"+UserLevelLibrary.activeId()
+            :"beckenburg/"+site.name().toLowerCase(Locale.ROOT);
+    }
     public String title(){return source.title();}
     public Path documentPath(){return path(site);}
     public static Path path(HouseMap.Site site){
+        if(site==HouseMap.Site.USER)return UserLevelLibrary.activeDocument();
         return Path.of(System.getProperty("user.home"),".beckenburg","editor","levels",
             site.name().toLowerCase(Locale.ROOT)+".bscn").toAbsolutePath().normalize();
     }
@@ -88,9 +94,12 @@ public final class LevelAuthoringSession implements EditorProject<List<Prop>> {
         return List.copyOf(result);
     }
     public synchronized void save() throws IOException {
-        InMemoryRuntimeScene document=new InMemoryRuntimeScene(id());
-        for(int i=0;i<props.size();i++){
-            Prop p=props.get(i);
+        saveProps(documentPath(),id(),props);
+    }
+    static void saveProps(Path destination,String id,List<Prop> source) throws IOException {
+        InMemoryRuntimeScene document=new InMemoryRuntimeScene(id);
+        for(int i=0;i<source.size();i++){
+            Prop p=source.get(i);
             document.replace(new RuntimeScene.Node("prop-"+i,p.mesh(),null,"world",
                 new RuntimeScene.Transform(p.x(),p.y(),p.z(),0,
                     Math.toDegrees(p.yaw()),0,p.scale(),p.scale(),p.scale()),
@@ -101,13 +110,13 @@ public final class LevelAuthoringSession implements EditorProject<List<Prop>> {
                     "height",Double.toString(p.height()),
                     "support",p.support())))));
         }
-        RuntimeSceneDocument.save(documentPath(),document);
+        RuntimeSceneDocument.save(destination,document);
     }
     private static List<Prop> loadProps(HouseMap.Site site,LevelDefinition source) throws IOException {
         Path path=path(site);
         if(!Files.exists(path))return source.props();
         var scene=RuntimeSceneDocument.load(path);
-        String id="beckenburg/"+site.name().toLowerCase(Locale.ROOT);
+        String id=sceneId(site);
         if(!scene.sceneId().equals(id))
             throw new IOException("Level document identity mismatch: "+path);
         ArrayList<Prop> result=new ArrayList<>();
