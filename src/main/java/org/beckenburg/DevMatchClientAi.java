@@ -317,8 +317,13 @@ final class DevMatchClientAi implements AutoCloseable {
             // First converge on its physical centre aisle, then walk down the
             // lowered cargo ramp. Never aim straight through a side wall.
             var local=map.van().local(x,z);
+            // The old staging point sat almost on its own switch threshold.
+            // A single .31 m STEP could put a hunter inside the .10 m goal
+            // dead-zone while still on the first branch: H2/H5 then stopped
+            // forever after 1-6 accepted steps. Cross the switch threshold
+            // BEFORE reaching the intermediate waypoint; stay in the real aisle.
             var waypoint=map.van().world(0,
-                local.z()>VanStaging.FRONT+.68?VanStaging.FRONT+.67:VanStaging.FRONT-.70);
+                local.z()>VanStaging.FRONT+.65?VanStaging.FRONT+.15:VanStaging.FRONT-.95);
             gx=waypoint.x();gz=waypoint.z();
         }else if(dist>0.75){
             gx=portal.x();gz=portal.z();
@@ -379,6 +384,20 @@ final class DevMatchClientAi implements AutoCloseable {
         List<Integer> choices=new ArrayList<>(map.adjacentRooms(room));
         choices.removeIf(r->r==HouseMap.EXTRACTION_ROOM||r==room);
         if(choices.isEmpty())return -1;
+        // Enter the actual building before doing a random yard patrol. Every
+        // exterior room with a real authored doorway to an interior room can
+        // route directly through that door under host-controlled collision.
+        // Without this priority all four mobile hunters spent 120 seconds
+        // cycling between outdoor rooms 12 and 13, never gathering evidence
+        // near the ghost.
+        if(map.outside(room)){
+            List<Integer> entrances=choices.stream().filter(r->!map.outside(r)).toList();
+            if(!entrances.isEmpty()){
+                entrances.sort(Integer::compareTo);
+                return entrances.get(Math.floorMod(Integer.parseInt(seat.substring(1))-1,
+                    entrances.size()));
+            }
+        }
         choices.sort(Comparator.comparingInt((Integer r)->visited.getOrDefault(r,0))
               .thenComparingInt(r->Math.floorMod(r*11+Integer.parseInt(seat.substring(1))*7,17)));
         return choices.get(Math.min(choices.size()-1,random.nextInt(Math.min(2,choices.size()))));
