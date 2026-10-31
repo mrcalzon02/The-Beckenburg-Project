@@ -1,0 +1,75 @@
+name: Beckenburg Imported Van Exterior Visual Review
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/main/java/org/beckenburg/CastleSurroundings.java'
+      - 'src/main/java/org/beckenburg/VanStaging.java'
+      - 'src/test/java/org/beckenburg/VanStagingTest.java'
+      - 'src/test/java/org/beckenburg/VanFitCapture.java'
+      - 'assets/runtime/models/ggbot_car08_van_shell.glb'
+      - '.github/workflows/van-exterior-visual-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: beckenburg-van-visual
+  cancel-in-progress: true
+jobs:
+  van-capture:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile playable Java game and packaged assets
+        shell: cmd
+        run: call build.cmd package
+      - name: Source GLB, shell, wheel volume and shared Castle geometry assertions
+        shell: cmd
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\VanStagingTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.VanStagingTest
+          if errorlevel 1 exit /b 1
+      - name: Capture imported van from seven real gameplay camera positions
+        continue-on-error: true
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\LevelVisualCapture.java src\test\java\org\beckenburg\VanFitCapture.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -cp build\classes;build\test org.beckenburg.VanFitCapture
+          if errorlevel 1 exit /b 1
+      - name: Capture castle and mission van from engine viewport (advisory)
+        continue-on-error: true
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleAndVanVisualAcceptanceTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -cp build\classes;build\test org.beckenburg.CastleAndVanVisualAcceptanceTest
+          if errorlevel 1 exit /b 1
+      - name: Record the exact commit inspected
+        if: always()
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force 'build/e2e/van-source-review' | Out-Null
+          "source_sha=${{ github.sha }}" | Set-Content 'build/e2e/van-source-review/source-sha.txt'
+          "model=assets/runtime/models/ggbot_car08_van_shell.glb" | Add-Content 'build/e2e/van-source-review/source-sha.txt'
+          "model_type=original textured source GLB (fit-only; original bytes unchanged)" | Add-Content 'build/e2e/van-source-review/source-sha.txt'
+      - name: Archive authentic perspective screenshots for visual inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-imported-van-live-render-review
+          path: |
+            development/levels/previews/van/*.png
+            build/e2e/van-*.png
+            build/e2e/castle-ground-courtyard.png
+            build/e2e/van-source-review/
+          if-no-files-found: warn
+          retention-days: 21
