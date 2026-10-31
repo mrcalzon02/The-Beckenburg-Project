@@ -139,6 +139,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.Ps
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.PsxHorrorUiTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SoundtrackAudioTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SpiritBoxResponsesTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanSpiritBoxAudioIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SoundCoverageTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.AudioDeviceRecoveryTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.EnvironmentAudioTest
