@@ -19,6 +19,9 @@ on:
       - 'src/main/java/org/beckenburg/editor/EntranceSeamEditor.java'
       - 'src/main/java/org/beckenburg/editor/TerrainEntranceMesh.java'
       - 'src/main/java/org/beckenburg/editor/TerrainEntrancePreview.java'
+      - 'src/main/java/org/beckenburg/editor/RuntimeSceneDocument.java'
+      - 'src/main/java/org/beckenburg/editor/TerrainScenePackage.java'
+      - 'src/main/java/org/beckenburg/editor/TerrainScenePackageEditor.java'
       - 'src/main/java/org/beckenburg/editor/LayeredGeometryEditor.java'
       - 'src/main/java/org/beckenburg/editor/AdaptiveTopologyEditor.java'
       - 'src/main/java/org/beckenburg/editor/StitchedWorldEditor.java'
@@ -32,6 +35,8 @@ on:
       - 'src/test/java/org/beckenburg/editor/RampEntranceDocumentTest.java'
       - 'src/test/java/org/beckenburg/editor/EntranceSeamDocumentTest.java'
       - 'src/test/java/org/beckenburg/editor/TerrainEntranceMeshTest.java'
+      - 'src/test/java/org/beckenburg/editor/RuntimeSceneDocumentTest.java'
+      - 'src/test/java/org/beckenburg/editor/TerrainScenePackageTest.java'
       - 'tools/build-editor-kit.cmd'
       - '.github/workflows/terrain-world-modules.yml'
   workflow_dispatch:
@@ -124,4 +129,14 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\TerrainEntranceMeshTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.TerrainEntranceMeshTest
+          if errorlevel 1 exit /b 1
+
+      - name: Real terrain-to-runtime-scene package and asset integrity acceptance
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\RuntimeSceneDocumentTest.java src\test\java\org\beckenburg\editor\TerrainScenePackageTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.RuntimeSceneDocumentTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.TerrainScenePackageTest
           if errorlevel 1 exit /b 1
