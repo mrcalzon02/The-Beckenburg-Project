@@ -6,6 +6,9 @@ on:
       - 'tools/repair_castle_sprite_art.py'
       - '.github/workflows/castle-resident-art-repair.yml'
   workflow_dispatch:
+concurrency:
+  group: castle-resident-source-art-repair-main
+  cancel-in-progress: false
 permissions:
   contents: write
 jobs:
@@ -25,18 +28,24 @@ jobs:
         id: recover
         continue-on-error: true # A visual issue never blocks the game release.
         run: python tools/repair_castle_sprite_art.py --out build/castle-resident-art-repair --write
-      - name: Publish only a completely verified resident artwork batch on main
-        if: steps.recover.outcome == 'success'
+      - name: Record source audit results and publish only completely verified artwork
+        if: always()
         run: |
-          if git diff --quiet -- assets/runtime/castle-support-directions.zip; then
-            echo 'Archive already matches the latest verified source-derived output'
-            exit 0
+          if test -f build/castle-resident-art-repair/audit.json; then
+            cp build/castle-resident-art-repair/audit.json docs/development/castle-resident-art-repair-audit.json
           fi
-          git diff --check
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- assets/runtime/castle-support-directions.zip
-          git commit -m "assets(castle): restore resident sprite RGB from canonical master art"
+          git add -- docs/development/castle-resident-art-repair-audit.json
+          if test "${{ steps.recover.outcome }}" = success; then
+            git add -- assets/runtime/castle-support-directions.zip
+          fi
+          if git diff --cached --quiet; then
+            echo 'No new source audit or packaged sprite changes'
+            exit 0
+          fi
+          git diff --cached --check
+          git commit -m "assets(castle): source-fidelity diagnostic and verified sprite derivatives"
           git push origin HEAD:main
       - name: Upload original-vs-128x224-vs-rebuilt comparisons and matching report
         if: always()
