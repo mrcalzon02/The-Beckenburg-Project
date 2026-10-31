@@ -52,7 +52,9 @@ public final class AdaptiveNavigationRegions {
         double x(){return (x0+x1)*.5;}
         double z(){return (z0+z1)*.5;}
     }
-    public record Edge(int to,double cost,Connection connection){}
+    /** Exact verified traversal anchors, even when adjacent region centroids are offset. */
+    public record Edge(int to,double cost,Connection connection,
+                       double entryX,double entryZ,double exitX,double exitZ) {}
     public record PathStep(int region,String layer,double x,double y,double z,
                            Connection arriveVia){}
     public record Metrics(int evaluatedCells,int acceptedRegions,int edges,
@@ -95,10 +97,14 @@ public final class AdaptiveNavigationRegions {
                 return List.of(new PathStep(start,from,sx,a.y(),sz,null),
                     new PathStep(finish,to,tx,b.y(),tz,null));
             }
+            Region initial=regions.get(start),finalRegion=regions.get(finish);
+            if(!query.canTraverse(from,sx,sz,initial.x(),initial.z(),profile.footprint())
+                ||!query.canTraverse(to,finalRegion.x(),finalRegion.z(),tx,tz,
+                    profile.footprint()))return List.of();
             double[] costs=new double[regions.size()];
             Arrays.fill(costs,Double.POSITIVE_INFINITY);
             int[] previous=new int[regions.size()];
-            Connection[] via=new Connection[regions.size()];
+            Edge[] via=new Edge[regions.size()];
             Arrays.fill(previous,-1);
             record Candidate(int id,double score){}
             PriorityQueue<Candidate> pending=new PriorityQueue<>(
@@ -114,7 +120,7 @@ public final class AdaptiveNavigationRegions {
                     if(alt<costs[edge.to()]){
                         costs[edge.to()]=alt;
                         previous[edge.to()]=next.id();
-                        via[edge.to()]=edge.connection();
+                        via[edge.to()]=edge;
                         pending.add(new Candidate(edge.to(),alt));
                     }
                 }
@@ -125,11 +131,26 @@ public final class AdaptiveNavigationRegions {
             java.util.Collections.reverse(ids);
             List<PathStep> steps=new ArrayList<>();
             steps.add(new PathStep(start,from,sx,query.support(from,sx,sz).y(),sz,null));
-            for(int i=1;i<ids.size();i++){
-                Region r=regions.get(ids.get(i));
-                steps.add(new PathStep(r.id(),r.layer(),r.x(),r.centreY(),r.z(),
-                    via[r.id()]));
+            for(int i=0;i<ids.size()-1;i++){
+                Region current=regions.get(ids.get(i));
+                Region next=regions.get(ids.get(i+1));
+                Edge edge=via[next.id()];
+                if(edge==null)throw new IllegalStateException("Route lost its connector");
+                // Preserve the centre->portal->centre corridor that was physically
+                // tested during graph construction. Direct centroid shortcuts could
+                // otherwise cross a punched hole or a corner of an obstructing wall.
+                steps.add(new PathStep(current.id(),current.layer(),current.x(),
+                    current.centreY(),current.z(),null));
+                var entry=query.support(current.layer(),edge.entryX(),edge.entryZ());
+                var exit=query.support(next.layer(),edge.exitX(),edge.exitZ());
+                if(entry==null||exit==null)return List.of();
+                steps.add(new PathStep(current.id(),current.layer(),entry.x(),entry.y(),
+                    entry.z(),null));
+                steps.add(new PathStep(next.id(),next.layer(),exit.x(),exit.y(),
+                    exit.z(),edge.connection()));
             }
+            Region last=regions.get(finish);
+            steps.add(new PathStep(last.id(),last.layer(),last.x(),last.centreY(),last.z(),null));
             steps.add(new PathStep(finish,to,tx,query.support(to,tx,tz).y(),tz,null));
             return List.copyOf(steps);
         }
@@ -250,8 +271,8 @@ public final class AdaptiveNavigationRegions {
                 continue;
             double cost=Math.hypot(a.x()-px,a.z()-pz)
                 +Math.hypot(b.x()-px,b.z()-pz);
-            adjacent.get(i).add(new Edge(j,cost,null));
-            adjacent.get(j).add(new Edge(i,cost,null));
+            adjacent.get(i).add(new Edge(j,cost,null,px,pz,px,pz));
+            adjacent.get(j).add(new Edge(i,cost,null,px,pz,px,pz));
         }
     }
     private int locate(String layer,double x,double z){
@@ -277,9 +298,11 @@ public final class AdaptiveNavigationRegions {
                 -query.support(t.to(),t.toX(),t.toZ()).y());
             double cost=Math.hypot(a.x()-t.fromX(),a.z()-t.fromZ())
                 +Math.hypot(b.x()-t.toX(),b.z()-t.toZ())+rise+1;
-            adjacent.get(from).add(new Edge(to,cost,t.connection()));
+            adjacent.get(from).add(new Edge(to,cost,t.connection(),
+                t.fromX(),t.fromZ(),t.toX(),t.toZ()));
             if(t.connection()!=Connection.DROP)
-                adjacent.get(to).add(new Edge(from,cost,t.connection()));
+                adjacent.get(to).add(new Edge(from,cost,t.connection(),
+                    t.toX(),t.toZ(),t.fromX(),t.fromZ()));
         }
     }
 }
