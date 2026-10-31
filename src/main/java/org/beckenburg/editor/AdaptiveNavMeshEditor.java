@@ -204,9 +204,11 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         }catch(IOException|RuntimeException ex){error("Mask save failed",ex);}
     }
     private void history(boolean forward){
-        var input=forward?redo:undo,output=forward?undo:redo;
+        var input=forward?redo:undo;
+        var output=forward?undo:redo;
         if(input.isEmpty())return;
-        var target=input.peek(),prior=edits.snapshot();
+        var target=input.peek();
+        var prior=edits.snapshot();
         try{
             edits.restore(target);edits.save();
             if(!edits.snapshot().equals(AdaptiveNavMeshEdits.open(world).snapshot()))
