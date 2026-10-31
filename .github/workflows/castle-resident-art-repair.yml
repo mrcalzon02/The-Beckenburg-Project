@@ -29,17 +29,6 @@ jobs:
         id: recover
         continue-on-error: true # A visual issue never blocks the game release.
         run: python tools/repair_castle_sprite_art.py --out build/castle-resident-art-repair --write
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-      - name: Capture real Castle in-game source-vs-PSX closeups (nonblocking)
-        continue-on-error: true
-        run: |
-          sh build.sh
-          mkdir -p build/test
-          javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/CastleResidentArtRenderAudit.java
-          java -Djava.awt.headless=true -cp build/classes:build/test org.beckenburg.CastleResidentArtRenderAudit build/castle-resident-art-render
       - name: Record source audit results and publish only completely verified artwork
         if: always()
         run: |
@@ -59,6 +48,17 @@ jobs:
           git diff --cached --check
           git commit -m "assets(castle): source-fidelity diagnostic and verified sprite derivatives"
           git push origin HEAD:main
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Capture real Castle in-game source-vs-PSX closeups (nonblocking)
+        continue-on-error: true
+        run: |
+          sh build.sh
+          mkdir -p build/test
+          javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/CastleResidentArtRenderAudit.java
+          java -Djava.awt.headless=true -cp build/classes:build/test org.beckenburg.CastleResidentArtRenderAudit build/castle-resident-art-render
       - name: Upload original-vs-128x224-vs-rebuilt comparisons and matching report
         if: always()
         uses: actions/upload-artifact@v4
