@@ -31,6 +31,7 @@ public final class EntranceSeamEditor extends JPanel {
     private final JLabel status=new JLabel();
     private final ArrayDeque<EntranceSeamDocument.Snapshot> undo=new ArrayDeque<>();
     private final ArrayDeque<EntranceSeamDocument.Snapshot> redo=new ArrayDeque<>();
+    private AdaptiveTerrainTopology.Snapshot beforeConform,afterConform;
     public static JFrame open(Window owner,StitchedHeightmapWorld world)throws IOException {
         JFrame f=new JFrame("Beckenburg — Entrance Seam and Detached Tab Editor");
         f.setContentPane(new EntranceSeamEditor(f,world));
@@ -49,6 +50,7 @@ public final class EntranceSeamEditor extends JPanel {
         button(top,"EDIT SELECTED",this::editSelected);
         button(top,"DELETE",this::removeSelected);
         button(top,"CONFORM LEAVES + PUNCH TABS",this::conform);
+        button(top,"REVERT LAST CONFORM",this::revertConform);
         button(top,"UNDO",()->history(false));button(top,"REDO",()->history(true));
         button(top,"VERIFY SAVE",this::save);
         add(top,BorderLayout.NORTH);add(new JScrollPane(list),BorderLayout.CENTER);
@@ -165,10 +167,29 @@ public final class EntranceSeamEditor extends JPanel {
             !=JOptionPane.YES_OPTION)return;
         try{
             var topology=AdaptiveTerrainTopology.open(world);
+            var prior=topology.snapshot();
             var result=EntranceSeamTopology.apply(world,topology,doc);
+            beforeConform=prior;
+            afterConform=topology.snapshot();
             refresh("Applied: "+result.newSplits()+" adaptive splits, "+
                 result.newCutouts()+" source punches; disk verified");
         }catch(IOException|RuntimeException failure){error("Could not conform entrance",failure);}
+    }
+    private void revertConform(){
+        if(beforeConform==null||afterConform==null){
+            status.setText("No conform operation to revert in this editor session");return;
+        }
+        try{
+            var topology=AdaptiveTerrainTopology.open(world);
+            if(!topology.snapshot().equals(afterConform)){
+                status.setText("Terrain topology changed externally: refusing unsafe revert");return;
+            }
+            topology.restore(beforeConform);topology.save();
+            if(!AdaptiveTerrainTopology.open(world).snapshot().equals(beforeConform))
+                throw new IOException("Topology revert readback mismatch");
+            beforeConform=null;afterConform=null;
+            refresh("Reverted previous conform leaves/punches; authoring masks unchanged");
+        }catch(IOException|RuntimeException problem){error("Conform revert failed",problem);}
     }
     private void history(boolean forward){
         var input=forward?redo:undo;
