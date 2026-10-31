@@ -312,12 +312,142 @@
     "RENDER_UNAVAILABLE",
     "INTERNAL"
   ],
-  "nextTask": "M0-01",
+  "nextTask": "T0 focused tests and T1 focused stitched-world acceptance; then T2 human-world editor",
   "evidence": {
     "sourceVerified": false,
     "installedWindowsVerified": false,
     "mcpConnected": false,
     "agentEditedRealScene": false,
-    "notes": "Documentation ledger only. Each implemented task must update with commit SHA, test names, workflow run URL, real evidence, and blockers."
-  }
+    "notes": "Human module-first priority updated 2026-10-31. T0 and T1 have source commits; focused Windows acceptance still pending; all terrain rendering, streaming/LOD and agent-to-world connection unverified."
+  },
+  "executionOrder": "Human terrain/loading-zone/stitched-world modules (T0-T8) first; then existing agentic milestones M0-M6. Agent adapters must reuse tested module operations.",
+  "terrainWorldPlan": "docs/development/TERRAIN_WORLD_SYSTEM_PLAN.md",
+  "modulePrerequisites": [
+    {
+      "id": "T0",
+      "name": "Manual finite terrain brushes and loading-zone document baseline",
+      "status": "implemented_unverified",
+      "source": [
+        "src/main/java/org/beckenburg/editor/TerrainZoneDocument.java",
+        "src/main/java/org/beckenburg/editor/TerrainZoneEditor.java",
+        "src/main/java/org/beckenburg/SiteTerrain.java"
+      ],
+      "accept": [
+        "Java17 focused module/document test",
+        "Windows editor opens and saved Blackpine height edits alter real terrain"
+      ],
+      "blockers": [
+        "Actual installed editor/terrain validation pending",
+        "Zone handoff not implemented"
+      ]
+    },
+    {
+      "id": "T1",
+      "name": "Portable 16-bit stitched PNG tile authority and exact seams",
+      "status": "implemented_unverified",
+      "source": [
+        "src/main/java/org/beckenburg/editor/StitchedHeightmapWorld.java",
+        "src/test/java/org/beckenburg/editor/StitchedHeightmapWorldTest.java"
+      ],
+      "accept": [
+        "Focused Java17 compile and test",
+        "Exact shared edges and corners/negative tile indexes",
+        "Sparse bounded cache, non-destructive import and canonical triangle sampling"
+      ],
+      "blockers": [
+        "Focused workflow result pending",
+        "Not yet bound to runtime renderer/physics"
+      ]
+    },
+    {
+      "id": "T2",
+      "name": "Human stitched-world import/generate/brush/editor UI",
+      "status": "planned",
+      "dependsOn": [
+        "T1"
+      ],
+      "accept": [
+        "Manual 3x3 map import/generate/export and save/reload",
+        "No user-visible second preview world",
+        "Seam diagnostics and undo"
+      ]
+    },
+    {
+      "id": "T3",
+      "name": "Live outdoor terrain renderer and physics backed by canonical stitched tiles",
+      "status": "planned",
+      "dependsOn": [
+        "T2"
+      ],
+      "accept": [
+        "Rendered triangles and feet height match exactly",
+        "Actual game scene screenshot and crossing proof"
+      ]
+    },
+    {
+      "id": "T4",
+      "name": "Bounded streaming and hierarchical LOD error/min-max summaries",
+      "status": "planned",
+      "dependsOn": [
+        "T3"
+      ],
+      "accept": [
+        "Memory budget independent of continent size",
+        "Exact source unchanged by LOD",
+        "Invalidation on edited shared boundaries"
+      ]
+    },
+    {
+      "id": "T5",
+      "name": "Scope-sensitive distance LOD and crack-free transitions",
+      "status": "planned",
+      "dependsOn": [
+        "T4"
+      ],
+      "accept": [
+        "Screen-space error responds to FOV and resolution",
+        "Real renderer transitions no false cracks"
+      ]
+    },
+    {
+      "id": "T6",
+      "name": "Distant character and ridge occlusion correctness",
+      "status": "planned",
+      "dependsOn": [
+        "T5"
+      ],
+      "accept": [
+        "Actor visible through true line of sight is not buried by LOD proxy",
+        "Truly blocked actor stays blocked",
+        "Exact authoritative physics/LOS and rendering agree at miles-range scope zoom"
+      ]
+    },
+    {
+      "id": "T7",
+      "name": "Layered textures, biome/road/erosion/water and distant vegetation management",
+      "status": "planned",
+      "dependsOn": [
+        "T3",
+        "T4"
+      ],
+      "accept": [
+        "Deterministic procedural regeneration",
+        "Authoring data and runtime semantics identical"
+      ]
+    },
+    {
+      "id": "T8",
+      "name": "Loading-zone gameplay integration and host-authoritative multiplayer/world revision checks",
+      "status": "planned",
+      "dependsOn": [
+        "T3",
+        "T6"
+      ],
+      "accept": [
+        "Map transition and spawn validation",
+        "No uncontrolled mission transition",
+        "Real host/guest deterministic terrain and zone state"
+      ]
+    }
+  ]
 }
