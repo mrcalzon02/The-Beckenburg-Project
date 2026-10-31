@@ -26,8 +26,10 @@ public final class LanDroppedGearIntegrationTest {
     }
     public static void main(String[] args)throws Exception {
         try(var host=new LanHost("127.0.0.1",0);
-            var a=new Peer(host.port(),"DropOwner");var b=new Peer(host.port(),"Observer")){
-            a.client.ready();b.client.ready();a.await(0,"LOBBY|");
+            var a=new Peer(host.port(),"DropOwner");var b=new Peer(host.port(),"Observer");
+            var c=new Peer(host.port(),"Witness")){
+            a.client.ready();b.client.ready();c.client.ready();
+            a.await(0,"LOBBY|3|AI|3|WAITING");
             a.client.start();a.await(0,"INFO|mission started");
             a.client.view3D();a.await(0,"ACCEPT|VIEW3D");
             b.client.view3D();b.await(0,"ACCEPT|VIEW3D");
