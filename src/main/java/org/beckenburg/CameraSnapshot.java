@@ -18,6 +18,12 @@ public final class CameraSnapshot {
             throw new IllegalStateException("no completed camera lens frame");
         return HunterPhotography.snapshot(camera.image(),tier);
     }
+    private static BufferedImage preview(SceneRenderer camera){
+        var diagnostics=camera.frameDiagnostics();
+        if(diagnostics==null||diagnostics.gpu())
+            throw new IllegalStateException("no synchronous camera preview");
+        return HunterPhotography.snapshot(camera.image());
+    }
 
     /** Lens view of the hunter's authoritative visible multiplayer world. */
     public static BufferedImage network(SceneRenderer camera,SceneRenderer hunter,
@@ -26,10 +32,25 @@ public final class CameraSnapshot {
             List<SceneRenderer.WorldMark> marks,EquipmentTiers.Tier tier){
         Objects.requireNonNull(camera);Objects.requireNonNull(map);
         Objects.requireNonNull(hunters);Objects.requireNonNull(marks);
+        renderNetwork(camera,hunter,map,hunters,apparition,clock,marks,tier);
+        return finished(camera,tier);
+    }
+    private static void renderNetwork(SceneRenderer camera,SceneRenderer hunter,
+            HouseMap map,List<SceneRenderer.RemoteBody> hunters,
+            SceneRenderer.Apparition apparition,double clock,
+            List<SceneRenderer.WorldMark> marks,EquipmentTiers.Tier tier){
         camera.photographicSoftwareRaster();
         camera.copyPhotographicWorld(hunter,tier);
         camera.drawNetwork(map,hunters,apparition,clock,marks);
-        return finished(camera,tier);
+    }
+    public static BufferedImage previewNetwork(SceneRenderer camera,SceneRenderer hunter,
+            HouseMap map,List<SceneRenderer.RemoteBody> hunters,
+            SceneRenderer.Apparition apparition,double clock,
+            List<SceneRenderer.WorldMark> marks,EquipmentTiers.Tier tier){
+        Objects.requireNonNull(camera);Objects.requireNonNull(map);
+        Objects.requireNonNull(hunters);Objects.requireNonNull(marks);
+        renderNetwork(camera,hunter,map,hunters,apparition,clock,marks,tier);
+        return preview(camera);
     }
 
     /** Solo uses the same world renderer and actual current session models. */
@@ -38,9 +59,22 @@ public final class CameraSnapshot {
             List<SceneRenderer.RemoteBody> allies,EquipmentTiers.Tier tier){
         Objects.requireNonNull(camera);Objects.requireNonNull(map);
         Objects.requireNonNull(session);Objects.requireNonNull(allies);
+        renderSolo(camera,hunter,map,session,clock,allies,tier);
+        return finished(camera,tier);
+    }
+    private static void renderSolo(SceneRenderer camera,SceneRenderer hunter,
+            HouseMap map,InvestigationSession session,double clock,
+            List<SceneRenderer.RemoteBody> allies,EquipmentTiers.Tier tier){
         camera.photographicSoftwareRaster();
         camera.copyPhotographicWorld(hunter,tier);
         camera.draw(map,session,clock,allies);
-        return finished(camera,tier);
+    }
+    public static BufferedImage previewSolo(SceneRenderer camera,SceneRenderer hunter,
+            HouseMap map,InvestigationSession session,double clock,
+            List<SceneRenderer.RemoteBody> allies,EquipmentTiers.Tier tier){
+        Objects.requireNonNull(camera);Objects.requireNonNull(map);
+        Objects.requireNonNull(session);Objects.requireNonNull(allies);
+        renderSolo(camera,hunter,map,session,clock,allies,tier);
+        return preview(camera);
     }
 }

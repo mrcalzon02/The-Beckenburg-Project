@@ -703,6 +703,8 @@ public final class InvestigationGame {
         private java.awt.image.BufferedImage lastPhoto;
         private java.nio.file.Path lastPhotoPath;
         private int photoExposure,lastPhotoUntil;
+        private java.awt.image.BufferedImage liveCameraView;
+        private int lastCameraPreviewTick=-100000;
         private final ToolBeltHud.Grip toolGrip=new ToolBeltHud.Grip();
         private boolean toolPlacement;
         private int placementRotation,lastMouseUseTick=-100000;
@@ -807,14 +809,22 @@ public final class InvestigationGame {
                             if(operateMouseTool())toolPlacement=false;
                             return;
                         }
-                        toolGrip.hold();
-                        if(loadout.equipped()!=EquipmentLoadout.Item.UV_LAMP)operateMouseTool();
+                        if(loadout.equipped()==EquipmentLoadout.Item.PHOTO_CAMERA){
+                            if(ToolBeltHud.shutterAllowed("PHOTO_CAMERA",toolGrip.held()))
+                                operateMouseTool();
+                            else showVanNotice("Press R to raise the camera before taking a picture.");
+                        }else{
+                            toolGrip.hold();
+                            if(loadout.equipped()!=EquipmentLoadout.Item.UV_LAMP)operateMouseTool();
+                        }
                     }else if(SwingUtilities.isRightMouseButton(event)
                             &&loadout.equipped()==EquipmentLoadout.Item.UV_LAMP)
                         operateMouseTool();
                 }
                 @Override public void mouseReleased(MouseEvent event){
-                    if(SwingUtilities.isLeftMouseButton(event))toolGrip.release();
+                    if(SwingUtilities.isLeftMouseButton(event)
+                            &&loadout.equipped()!=EquipmentLoadout.Item.PHOTO_CAMERA)
+                        toolGrip.release();
                 }
             });
             addMouseWheelListener(event->{
@@ -1121,6 +1131,21 @@ public final class InvestigationGame {
             }
             scene.draw(map,session,frameCount++/30.0,
                 assistants.stream().map(CampaignAlly::sprite).toList());
+            if(loadout.equipped()==EquipmentLoadout.Item.PHOTO_CAMERA&&isShowing()
+                    &&session.ticks()-lastCameraPreviewTick>=4){
+                lastCameraPreviewTick=session.ticks();
+                try{
+                    liveCameraView=CameraSnapshot.previewSolo(photoRenderer,scene,map,
+                        session,frameCount/30.0,
+                        assistants.stream().map(CampaignAlly::sprite).toList(),
+                        EquipmentTiers.Tier.I);
+                }catch(RuntimeException error){
+                    liveCameraView=null;
+                    showVanNotice("CAMERA LIVE VIEW FAILED: "+error.getMessage());
+                }
+            }else if(loadout.equipped()!=EquipmentLoadout.Item.PHOTO_CAMERA){
+                liveCameraView=null;lastCameraPreviewTick=-100000;
+            }
             if(frameCount==1)BeckenburgDeveloperTrace.caseStage("active");
             perfHud.sample(System.nanoTime()-diagnosticFrameStart,scene,map,assistants.size(),"SOLO");
             repaint();
@@ -1288,7 +1313,12 @@ public final class InvestigationGame {
                 }
             }
             if(key==KeyEvent.VK_E){if(briefingShown){briefingShown=false;repaint();return;}interactFocused();down.add(key);repaint();return;}
-            if(key==KeyEvent.VK_R&&!toolPlacement)operateMouseTool();
+            if(key==KeyEvent.VK_R&&!toolPlacement){
+                if(loadout.equipped()==EquipmentLoadout.Item.PHOTO_CAMERA){
+                    if(toolGrip.held())toolGrip.release();else toolGrip.hold();
+                    showVanNotice(toolGrip.held()?"CAMERA RAISED / LMB SHUTTER":"CAMERA LOWERED");
+                }else operateMouseTool();
+            }
             if(key==KeyEvent.VK_C){
                 boolean placed=session.placeWard(scene.x,feetY(),scene.z);
                 GameSfx.play(placed?LanSound.Cue.WARD:LanSound.Cue.UI_REJECT);
@@ -1335,6 +1365,11 @@ public final class InvestigationGame {
         }
         private boolean operateMouseTool(){
             EquipmentLoadout.Item device=loadout.equipped();
+            if(device==EquipmentLoadout.Item.PHOTO_CAMERA
+                    &&!ToolBeltHud.shutterAllowed("PHOTO_CAMERA",toolGrip.held())){
+                showVanNotice("Press R to raise the camera before taking a picture.");
+                return false;
+            }
             if(toolGrip.held()&&lastMouseUseTick==session.ticks())return false;
             lastMouseUseTick=session.ticks();
             int before=loadout.usesLeft(device);
@@ -1540,7 +1575,8 @@ public final class InvestigationGame {
                 }
                 if(map.clutter().held(0)<0)HeldToolView.draw(g,width,stageH,loadout.equipped().name(),session.ticks(),
                     toolGrip.held(),scene.lamp,session.deviceReading(loadout.equipped().name()),
-                    EquipmentTiers.Tier.I,toolGrip.amount());
+                    EquipmentTiers.Tier.I,toolGrip.amount(),
+                    loadout.equipped()==EquipmentLoadout.Item.PHOTO_CAMERA?liveCameraView:null);
                 g.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));
                 g.setColor(new Color(224,218,197));g.drawString(map.clutter().held(0)>=0?"F5 DROP / F12 THROW / ] EXAMINE":"",12,stageH-124);
                 g.setColor(new Color(14,19,25,222));

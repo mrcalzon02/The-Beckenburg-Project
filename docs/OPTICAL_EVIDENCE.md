@@ -103,3 +103,29 @@ privacy, photographed pixels, emitted GPU RGB, device facts, physical stations,
 map rendering and the corrected Blackpine slab. GPU bridge checks do not stand
 in for an actual OpenGL context. Record newly found issues and older-map audits
 before promoting any location or calling a release accepted.
+
+
+## Actual held camera viewfinders and deliberate shutter control (31 October 2026)
+
+Photo cameras and held video cameras display a periodically refreshed *rendered
+world image from the physical lens position* on the rear LCD geometry of their
+own original tier-specific 3D models. The previous source texture atlas is no
+longer mistaken for a screen image. The visible scene is composed from the
+investigator's authoritative world/ghost visibility; this is not evidence
+detection or a generated paranormal picture. Refreshes are cadence-limited to
+avoid continuous second-world rendering while the player walks.
+
+With PHOTO_CAMERA equipped, **R** toggles the camera between a lowered carry
+pose and a raised eye-level pose. **Left click** takes a picture **only while
+raised**; holding or releasing the mouse never raises or lowers it. R is not
+a shutter shortcut. Changing slots or losing focus lowers the camera. E
+continues to interact with the world. Each accepted shutter press records a
+separate fresh synchronous lens exposure (also when nothing paranormal is
+present) and saves the original PNG in the player's Beckenburg/Photos folder.
+Multiplayer holds the frame pending authoritative host acceptance. Video-camera
+placement/retrieval and remote van feeds are unchanged.
+
+Acceptance: CameraViewfinderTest checks physical rear-LCD pixel replacement for
+each still-camera tier and the video-camera model, plus shutter gating. The
+existing CameraSnapshotTest checks true lens perspective, camera yaw, and PNG
+pixel preservation. These are functional checks, not subjective art-quality gates.

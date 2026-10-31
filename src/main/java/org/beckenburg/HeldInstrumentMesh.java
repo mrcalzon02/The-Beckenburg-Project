@@ -10,7 +10,7 @@ public final class HeldInstrumentMesh {
     private HeldInstrumentMesh(){}
     private static final int W=240,H=250;
     private static final Map<String,BufferedImage> cache=new HashMap<>();
-    private record Live(String status,BufferedImage image){}
+    private record Live(String status,BufferedImage cameraView,BufferedImage image){}
     private static final Map<String,Live> live=new HashMap<>();
     public static String source(String kind,EquipmentTiers.Tier tier){
         if(kind==null||tier==null)return null;
@@ -19,19 +19,36 @@ public final class HeldInstrumentMesh {
     }
     public static synchronized BufferedImage image(String kind,EquipmentTiers.Tier tier){
         String name=source(kind,tier);if(name==null)throw new IllegalArgumentException("No physical instrument mesh for "+kind);
-        return cache.computeIfAbsent(name,n->raster(n,null));
+        return cache.computeIfAbsent(name,n->raster(n,null,null));
     }
     public static synchronized BufferedImage image(String kind,EquipmentTiers.Tier tier,String status){
         String name=source(kind,tier);if(status==null||status.isBlank())return image(kind,tier);
-        var old=live.get(name);if(old==null||!old.status.equals(status)){old=new Live(status,raster(name,status));live.put(name,old);}return old.image;
+        return image(kind,tier,status,null);
+    }
+    /** Updated camera pixels are composited only on the physical back LCD faces. */
+    public static synchronized BufferedImage image(String kind,EquipmentTiers.Tier tier,
+            String status,BufferedImage cameraView){
+        String name=source(kind,tier);
+        if(name==null)throw new IllegalArgumentException("No physical instrument mesh for "+kind);
+        if(cameraView==null&&!cameraModel(name)&&(status==null||status.isBlank()))
+            return image(kind,tier);
+        var old=live.get(name);
+        if(old==null||!Objects.equals(old.status,status)||old.cameraView!=cameraView){
+            old=new Live(status,cameraView,raster(name,status,cameraView));live.put(name,old);
+        }
+        return old.image;
     }
     public static void draw(Graphics2D g,int width,int height,String kind,EquipmentTiers.Tier tier){draw(g,width,height,kind,tier,null);}
     public static void draw(Graphics2D g,int width,int height,String kind,EquipmentTiers.Tier tier,String status){
+        draw(g,width,height,kind,tier,status,null);
+    }
+    public static void draw(Graphics2D g,int width,int height,String kind,
+            EquipmentTiers.Tier tier,String status,BufferedImage cameraView){
         if(width<180||height<140)return;
         double factor=Math.max(.5,Math.min(1.85,Math.min(width/850.0,height/480.0)));
         int w=(int)Math.round(W*factor),h=(int)Math.round(H*factor);
         // Leave the bottom equipment strip clear, keeping controls and LCD visible.
-        g.drawImage(image(kind,tier,status),width-w-18,height-h-83,w,h,null);
+        g.drawImage(image(kind,tier,status,cameraView),width-w-18,height-h-83,w,h,null);
     }
     /** Model-facing convention: +Z is the control face on authored upright meters.
      * Optical emitters/camera lenses point away from the operator, into the scene.
@@ -46,6 +63,9 @@ public final class HeldInstrumentMesh {
         if(name.contains("photo_camera")||name.contains("video_camera")||(name.contains("flashlight")&&!name.equals("exploration_flashlight"))||name.contains("uv_light")){x=-x;z=-z;}
         return new GlbProps.Vertex(x,y,z,p.u(),p.v());
     }
+    private static boolean cameraModel(String name){
+        return name.contains("photo_camera")||name.contains("video_camera");
+    }
     private static boolean digital(int material){String n=GlbProps.materialName(material).toLowerCase(Locale.ROOT);return n.equals("pixel screen")||n.equals("screen")||n.startsWith("display ")||n.contains("temperature lcd");}
     private static BufferedImage display(String name,String status){
         var out=new BufferedImage(144,112,BufferedImage.TYPE_INT_RGB);var g=out.createGraphics();
@@ -56,7 +76,7 @@ public final class HeldInstrumentMesh {
         }finally{g.dispose();}return out;
     }
     private record Panel(double x0,double y0,double x1,double y1,int up){}
-    private static BufferedImage raster(String name,String status){
+    private static BufferedImage raster(String name,String status,BufferedImage cameraView){
         var triangles=GlbProps.model(name).triangles();
         var panels=new HashMap<Integer,Panel>();
         for(var t:triangles)if(digital(t.material())){
@@ -70,6 +90,22 @@ public final class HeldInstrumentMesh {
         double[] low={Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY},high={-Double.MAX_VALUE,-Double.MAX_VALUE,-Double.MAX_VALUE};
         for(var t:triangles)for(var source:List.of(t.a(),t.b(),t.c())){var p=pose(name,source);double[] v={p.x(),p.y(),p.z()};for(int n=0;n<3;n++){low[n]=Math.min(low[n],v[n]);high[n]=Math.max(high[n],v[n]);}}
         double span=Math.max(.04,Math.max(high[0]-low[0],Math.max(high[1]-low[1],high[2]-low[2]))),scale=192/span,cx=(low[0]+high[0])/2,cy=(low[1]+high[1])/2,cz=(low[2]+high[2])/2;
+        // Authored camera rear faces are on source -Z (posed toward the operator).
+        // The camera LCD occupies the central rear panel, not the entire textured atlas.
+        // Tier housings keep their original geometry and local dimensions.
+        double cameraLowZ=Double.POSITIVE_INFINITY;
+        for(var tri:triangles)for(var p:List.of(tri.a(),tri.b(),tri.c()))cameraLowZ=Math.min(cameraLowZ,p.z());
+        double backTolerance=name.contains("video_camera")?.004:Math.max(.003,(high[2]-low[2])*.055);
+        double screenLeft=-cx-(high[0]-low[0])*.32,screenRight=-cx+(high[0]-low[0])*.32;
+        double screenBottom=cy-(high[1]-low[1])*.30,screenTop=cy+(high[1]-low[1])*.30;
+        // The video chassis is much longer than its flat rear LCD: keep the
+        // live feed on the back surface, not across its entire camcorder body.
+        if(name.contains("video_camera")){
+            screenLeft=-cx-(high[0]-low[0])*.19;
+            screenRight=-cx+(high[0]-low[0])*.19;
+            screenBottom=cy-(high[1]-low[1])*.23;
+            screenTop=cy+(high[1]-low[1])*.23;
+        }
         for(var t:triangles){
             var original=new GlbProps.Vertex[]{t.a(),t.b(),t.c()};double[] sx=new double[3],sy=new double[3],depth=new double[3];
             for(int i=0;i<3;i++){var p=pose(name,original[i]);double x=p.x()-cx,y=p.y()-cy,z=p.z()-cz;
@@ -110,6 +146,25 @@ public final class HeldInstrumentMesh {
                     int tier=Integer.parseInt(name.substring(name.length()-1)),level=tier-1;double half=(.095+.014*level)*.72/2,top=.025+(.058+.012*tier)/2,bottom=.025-(.058+.012*tier)/2;
                     double x=a*t.a().x()+b*t.b().x()+c*t.c().x(),y=a*t.a().y()+b*t.b().y()+c*t.c().y(),zz=a*t.a().z()+b*t.b().z()+c*t.c().z();
                     if(Math.abs(x)<=half&&y>=bottom&&y<=top&&zz>=(.035+.006*level)/2+.004){int lx=(int)((x+half)/(2*half)*143),ly=(int)((top-y)/(top-bottom)*111);rgb=lcd.getRGB(Math.max(0,Math.min(143,lx)),Math.max(0,Math.min(111,ly)));}
+                }
+                // Replace the *rasterized camera rear plane* with the actual
+                // live lens frame. Pixel selection uses source-space geometry
+                // and the existing z-buffer: other mesh surfaces remain in front.
+                if(cameraModel(name)&&originalZ<=cameraLowZ+backTolerance){
+                    double faceX=-originalX; // camera is turned toward the player
+                    if(faceX>=screenLeft&&faceX<=screenRight
+                            &&originalY>=screenBottom&&originalY<=screenTop){
+                        if(cameraView==null)rgb=0x09191b; // unpowered LCD, never atlas garbage
+                        else{
+                            double u=(faceX-screenLeft)/(screenRight-screenLeft);
+                            double v=(screenTop-originalY)/(screenTop-screenBottom);
+                            int ix=Math.min(cameraView.getWidth()-1,Math.max(0,
+                                (int)(u*cameraView.getWidth())));
+                            int iy=Math.min(cameraView.getHeight()-1,Math.max(0,
+                                (int)(v*cameraView.getHeight())));
+                            rgb=cameraView.getRGB(ix,iy)&0xffffff;
+                        }
+                    }
                 }
                 pixels[index]=0xff000000|rgb;zBuffer[index]=z;
             }

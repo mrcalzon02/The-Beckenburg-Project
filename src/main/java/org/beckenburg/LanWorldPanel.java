@@ -107,6 +107,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private java.nio.file.Path lastPhotoPath;
     private int lastPhotoUntil;
     private int photoExposure;
+    private java.awt.image.BufferedImage liveCameraView;
+    private int lastCameraPreviewTick=-100000;
     private String caseResult="";
     private final List<LanEvidenceJournal.Entry> casefile=new ArrayList<>();
     private final java.util.EnumMap<LanCase.Tool,String> lastMeasurement=
@@ -165,14 +167,23 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                         ||chatInput.isVisible()||health<=0||!caseResult.isEmpty())return;
                 if(SwingUtilities.isLeftMouseButton(event)){
                     if(toolPlacement){placeCurrentTool();return;}
-                    toolGrip.hold();useMouseTool();repaint();
+                    if(ToolBeltHud.stillCamera(equippedGear[activeGearSlot])){
+                        if(ToolBeltHud.shutterAllowed(equippedGear[activeGearSlot],toolGrip.held()))
+                            useMouseTool();
+                        else feedback="PRESS R TO RAISE CAMERA FIRST";
+                    }else{
+                        toolGrip.hold();useMouseTool();
+                    }
+                    repaint();
                 }else if(SwingUtilities.isRightMouseButton(event)
                         &&ToolBeltHud.switchable(equippedGear[activeGearSlot])){
                     sendAction("toggle tool power",client::useHeldEquipment);
                 }
             }
             @Override public void mouseReleased(MouseEvent event){
-                if(SwingUtilities.isLeftMouseButton(event))toolGrip.release();
+                if(SwingUtilities.isLeftMouseButton(event)
+                        &&!ToolBeltHud.stillCamera(equippedGear[activeGearSlot]))
+                    toolGrip.release();
             }
         });
         addFocusListener(mouseLook);addFocusListener(this);
@@ -214,6 +225,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         VanLiveScreens.suspendCamera();
         capturedCameraImage=null;
         pendingPhoto=null;
+        liveCameraView=null;
     }
     private void beginVoice(LanChat.Channel channel){
         if(health<=0||!caseResult.isEmpty()||chatInput.isVisible())return;
@@ -1161,6 +1173,26 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         renderer.setHauntings(new ArrayList<>(hauntings));
         renderer.setAdditionalGhostBodies(new ArrayList<>(pairedGhostBodies.values()));
         renderer.drawNetwork(map,new ArrayList<>(peers.values()),apparition,tick*.1,List.copyOf(counterMarks));
+        // A camera carried in hand shows its own live, pose-correct rear LCD.
+        // Only sample when a visible investigator has the device equipped;
+        // bound the extra synchronous lens render to 2.5 samples per second.
+        String cameraGear=equippedGear[activeGearSlot];
+        if(ToolBeltHud.cameraView(cameraGear)&&map.clutter().held(seat)<0&&isShowing()
+                &&tick-lastCameraPreviewTick>=4){
+            lastCameraPreviewTick=tick;
+            try{
+                liveCameraView=CameraSnapshot.previewNetwork(photoRenderer,renderer,map,
+                    new ArrayList<>(peers.values()),apparition,tick*.1,
+                    List.copyOf(counterMarks),
+                    equipmentTier.getOrDefault(cameraGear,EquipmentTiers.Tier.I));
+            }catch(RuntimeException error){
+                liveCameraView=null;
+                feedback="CAMERA LIVE VIEW FAILED: "+error.getMessage();
+            }
+        }else if(!ToolBeltHud.cameraView(cameraGear)){
+            liveCameraView=null;
+            lastCameraPreviewTick=-100000;
+        }
         // Van receiver renders the *same live world* from the physical camera's
         // position. No canned image, inferred spectral object or proof overlay.
         // The existing host-approved live camera renderer is reused, not
@@ -1300,7 +1332,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             boolean placedPortable=renderer.portablePositions.containsKey(seat+":"+held);
             if(map.clutter().held(seat)<0&&!placedPortable&&!FieldEquipment.EMPTY.equals(held))HeldToolView.draw(g,getWidth(),h,visual,tick,
                 toolGrip.held(),renderer.lamp,deviceReading.get(held),
-                equipmentTier.getOrDefault(held,EquipmentTiers.Tier.I),toolGrip.amount());
+                equipmentTier.getOrDefault(held,EquipmentTiers.Tier.I),toolGrip.amount(),
+                ToolBeltHud.cameraView(held)?liveCameraView:null);
             drawHunterNameplates(g,h);
             g.setColor(new Color(224,218,197));g.drawString(map.clutter().held(seat)>=0?"F5 DROP / F12 THROW / ] EXAMINE":"",12,h-96);
             SprintHud.draw(g,12,h-76,Math.min(248,getWidth()-24),
@@ -1364,7 +1397,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 g.setColor(new Color(236,207,157));g.drawString("HUNTER CONTROLS  /  F1 CLOSE",hx+18,hy+29);
                 g.setColor(new Color(218,225,221));
                 String[] hints={"WASD move / Ctrl crouch  /  SHIFT sprint  /  CLICK mouse-look",
-                    "1-4 belt / HOLD LMB use / RMB power / G place or EMF drop",
+                    "1-4 belt / LMB use / R camera aim / LMB shutter / RMB power",
                     "Z cross / G ward / H salt / 5-6 class abilities / K medicine",
                     "J casefile  /  TAB journal  /  I guess  /  P submit",
                     "ENTER chat  /  F2 radio  /  F3-F4 voice  /  F7 voice options",
@@ -1763,11 +1796,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             case KeyEvent.VK_F -> sendAction("place/retrieve ground light",
                 ()->client.placeHeldEquipment());
             case KeyEvent.VK_R -> {
-                heldUseUntilTick=tick+4;
-                if(equippedGear[activeGearSlot].equals("PHOTO_CAMERA"))
-                    pendingPhoto=HunterPhotography.snapshot(renderer.image(),
-                        equipmentTier.getOrDefault("PHOTO_CAMERA",EquipmentTiers.Tier.I));
-                sendAction("use device",()->client.useHeldEquipment());
+                if(ToolBeltHud.stillCamera(equippedGear[activeGearSlot])){
+                    if(keys.add(KeyEvent.VK_R)){
+                        if(toolGrip.held())toolGrip.release();else toolGrip.hold();
+                        feedback=toolGrip.held()?"CAMERA RAISED / LMB SHUTTER":"CAMERA LOWERED";
+                    }
+                }else{
+                    heldUseUntilTick=tick+4;
+                    sendAction("use device",()->client.useHeldEquipment());
+                }
             }
             case KeyEvent.VK_Z -> sendAction("cross",()->client.deploy(HunterCounters.Kind.CROSS));
             case KeyEvent.VK_G -> {
@@ -1831,6 +1868,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             return; // powered light emits continuously, switch stays on RMB
         }
         if(held.equals("PHOTO_CAMERA")){
+            if(!ToolBeltHud.shutterAllowed(held,toolGrip.held())){
+                feedback="PRESS R TO RAISE CAMERA FIRST";return;
+            }
             // Exactly one outstanding exposure: never match a subsequent frame
             // to an earlier host acknowledgement.
             if(pendingPhoto!=null){feedback="AWAITING CAMERA SHUTTER ACCEPTANCE";return;}

@@ -149,12 +149,29 @@ public final class HeldToolView {
     /** Move the actual textured foreground tool toward center while it is held for use. */
     public static void draw(Graphics2D graphics,int width,int height,String kind,long tick,
             boolean operating,boolean flashlightOn,String measurement,EquipmentTiers.Tier tier,double raised){
+        draw(graphics,width,height,kind,tick,operating,flashlightOn,measurement,tier,raised,null);
+    }
+    /** The camera's existing mesh is aimed toward the eye; the LCD is its
+     * own rear plane sampled from the real lens, not a separate HUD window. */
+    public static void draw(Graphics2D graphics,int width,int height,String kind,long tick,
+            boolean operating,boolean flashlightOn,String measurement,EquipmentTiers.Tier tier,
+            double raised,java.awt.image.BufferedImage cameraView){
         if(graphics==null)return;
         Graphics2D pose=(Graphics2D)graphics.create();
         try{
             double focus=Math.max(0,Math.min(1,raised));
             pose.translate(-width*.37*focus,-height*.14*focus);
-            draw(pose,width,height,kind,tick,operating,flashlightOn,measurement,tier);
+            if(ToolBeltHud.stillCamera(kind)){
+                // At full aim, the physical viewfinder fills the useful center
+                // without turning into an unrelated fullscreen UI panel.
+                pose.translate(width*.50,height*.38);
+                pose.scale(1+.38*focus,1+.38*focus);
+                pose.translate(-width*.50,-height*.38);
+            }
+            if(HeldInstrumentMesh.source(kind,tier==null?EquipmentTiers.Tier.I:tier)!=null)
+                HeldInstrumentMesh.draw(pose,width,height,kind,
+                    tier==null?EquipmentTiers.Tier.I:tier,measurement,cameraView);
+            else draw(pose,width,height,kind,tick,operating,flashlightOn,measurement,tier);
         }finally{pose.dispose();}
     }
     private static void body(Graphics2D g,int x,int y,int w,int h,int color){

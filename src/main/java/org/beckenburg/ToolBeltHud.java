@@ -21,6 +21,10 @@ public final class ToolBeltHud {
             default -> false;
         };
     }
+    /** Still cameras use R to toggle the raised viewfinder; LMB only exposes film while aimed. */
+    public static boolean stillCamera(String id){return normal(id).equals("PHOTO_CAMERA");}
+    public static boolean cameraView(String id){return stillCamera(id)||normal(id).equals("VIDEO_CAMERA");}
+    public static boolean shutterAllowed(String id,boolean aimed){return stillCamera(id)&&aimed;}
     public static boolean repeatable(String id){
         return switch(normal(id)){
             case "EMF_READER","EMF","THERMOMETER","SPIRIT_BOX","SPECTRAL_PRISM",
@@ -69,6 +73,7 @@ public final class ToolBeltHud {
             int total=cell*4+15,x0=(width-total)/2,y=height-cell-12;
             String id=normal(slots[active]);
             String actions=placing?"LMB PLACE  WHEEL ROTATE  G CANCEL":
+                stillCamera(id)?(held?"R LOWER  LMB SHUTTER  E INTERACT":"R RAISE CAMERA  E INTERACT"):
                 "LMB USE"+(switchable(id)?"  RMB POWER":"")+
                 (placeable(id)?"  G PLACE":id.equals("EMF_READER")?"  G DROP":"")+"  E INTERACT";
             int barW=Math.min(width-24,Math.max(310,total+22));
@@ -100,7 +105,7 @@ public final class ToolBeltHud {
                 g.setColor(new Color(188,237,196));g.drawString(Integer.toString(i+1),sx+5,y+14);
             }
             String status=id.replace('_',' ')+(switchable(id)?powered?" / ON":" / OFF":"")+
-                (held?" / ACTIVE":"");
+                (held?(stillCamera(id)?" / AIMING":" / ACTIVE"):"");
             g.setColor(new Color(9,19,22,220));
             int statusW=Math.min(width-24,Math.max(170,g.getFontMetrics().stringWidth(status)+16));
             g.fillRoundRect((width-statusW)/2,y-59,statusW,22,5,5);
