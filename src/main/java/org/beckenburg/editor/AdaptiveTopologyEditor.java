@@ -136,7 +136,8 @@ public final class AdaptiveTopologyEditor extends JPanel {
     }
     private void undo(){
         if(undo.isEmpty())return;
-        var next=undo.pop(),before=topology.snapshot();
+        var next=undo.pop();
+        var before=topology.snapshot();
         try{
             topology.restore(next);
             redo.push(before);
@@ -149,7 +150,8 @@ public final class AdaptiveTopologyEditor extends JPanel {
     }
     private void redo(){
         if(redo.isEmpty())return;
-        var next=redo.pop(),before=topology.snapshot();
+        var next=redo.pop();
+        var before=topology.snapshot();
         try{
             topology.restore(next);
             undo.push(before);
