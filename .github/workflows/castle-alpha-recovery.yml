@@ -1,4 +1,4 @@
-name: Evaluate source-RGB Castle NPC alpha restoration (nonblocking)
+name: Recover and visually test Castle NPC silhouettes (nonblocking)
 on:
   push:
     branches: [main]
@@ -24,8 +24,23 @@ jobs:
       - name: Re-segment all sixteen character frames using canonical source RGB
         id: matte
         continue-on-error: true # Pure appearance does not block functional release.
-        run: python tools/restore_castle_transparency.py --out development/quality/castle-resident-art/alpha-proposals/previews
-      - name: Publish actual before-and-after alpha previews for independent inspection
+        run: python tools/restore_castle_transparency.py --out development/quality/castle-resident-art/alpha-proposals/previews --write
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Capture real game-engine photos of newly repaired residents
+        id: ingame
+        continue-on-error: true # Cosmetic visual QA; no release blocking.
+        run: |
+          sh build.sh --capture-only
+          mkdir -p build/test
+          javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/CastleResidentArtRenderAudit.java
+          java -Djava.awt.headless=true -cp build/classes:build/test org.beckenburg.CastleResidentArtRenderAudit build/castle-resident-art-render
+          mkdir -p development/quality/castle-resident-art/captures
+          cp build/castle-resident-art-render/*.png development/quality/castle-resident-art/captures/
+          cp build/castle-resident-art-render/captures.csv development/quality/castle-resident-art/captures.csv
+      - name: Publish rebuilt character alpha and actual in-game comparison captures
         if: steps.matte.outcome == 'success'
         continue-on-error: true
         run: |
@@ -33,9 +48,13 @@ jobs:
           python tools/build_development_gallery.py --check
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- assets/runtime/castle-support-directions.zip assets/runtime/castle-support-alpha-repair-manifest.json
           git add -- development/quality/castle-resident-art/alpha-proposals/previews development/gallery/index.json beckenburg-development-gallery.html
+          if test "${{ steps.ingame.outcome }}" = "success"; then
+            git add -- development/quality/castle-resident-art/captures.csv development/quality/castle-resident-art/captures
+          fi
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "test(castle): compare original-source alpha rebuild for every resident facing"
+          git commit -m "assets(castle): restore four-resident alpha masks from original master art and capture game screens"
           for attempt in 1 2 3; do
             git fetch origin main
             git rebase origin/main || { git rebase --abort || true; exit 1; }
@@ -46,5 +65,7 @@ jobs:
         if: always()
         with:
           name: castle-npc-new-alpha-masks-review
-          path: development/quality/castle-resident-art/alpha-proposals/previews
+          path: |
+            development/quality/castle-resident-art/alpha-proposals/previews
+            build/castle-resident-art-render/
           if-no-files-found: warn
