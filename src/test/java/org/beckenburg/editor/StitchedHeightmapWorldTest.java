@@ -77,7 +77,7 @@ public final class StitchedHeightmapWorldTest {
             check(ImageIO.write(image,"png",sample.toFile()),"16-bit encoder available");
             terrain.importTile(0,0,sample,false);
             equal(terrain.height(.75,.25),250,"Real triangle ABC, matching SiteTerrain diagonal");
-            equal(terrain.height(.25,.75),250,"Real triangle ACD, matching SiteTerrain diagonal");
+            equal(terrain.height(.25,.75),300,"Real triangle ACD, matching SiteTerrain diagonal");
 
             // Failure safety: reject a mismatched neighbor before touching the existing file.
             byte[] original=Files.readAllBytes(world.tilePath(0,0));
