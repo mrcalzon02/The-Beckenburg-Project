@@ -157,22 +157,32 @@ public final class LayeredTerrainQueries {
     private final List<Floor> floors;
     private final List<Ramp> ramps;
     private final List<Solid> solids;
+    private final EntranceSeamDocument seams;
     private final Set<String> layers;
 
     public LayeredTerrainQueries(StitchedHeightmapWorld world,AdaptiveTerrainTopology topology,
                                  List<Floor> floors,List<Solid> solids) {
-        this(world,topology,floors,solids,List.of());
+        this(world,topology,floors,solids,List.of(),null);
     }
     public LayeredTerrainQueries(StitchedHeightmapWorld world,AdaptiveTerrainTopology topology,
                                  List<Floor> floors,List<Solid> solids,List<Ramp> ramps) {
+        this(world,topology,floors,solids,ramps,null);
+    }
+    public LayeredTerrainQueries(StitchedHeightmapWorld world,AdaptiveTerrainTopology topology,
+                                 List<Floor> floors,List<Solid> solids,List<Ramp> ramps,
+                                 EntranceSeamDocument seams) {
         this.world=Objects.requireNonNull(world);
         this.topology=Objects.requireNonNull(topology);
         this.floors=List.copyOf(floors);
         this.ramps=List.copyOf(ramps);
         this.solids=List.copyOf(solids);
+        this.seams=seams;
         var ids=new HashSet<String>();
         ids.add(SURFACE);
         for(Floor floor:this.floors)ids.add(floor.layer());
+        if(seams!=null)for(var tab:seams.tabs())
+            if(!ids.add(tab.layer()))
+                throw new IllegalArgumentException("Detached tab layer ID must be unique: "+tab.layer());
         for(Ramp ramp:this.ramps){
             if(!ids.add(ramp.layer()))
                 throw new IllegalArgumentException("Ramp layer ID must be unique: "+ramp.layer());
@@ -195,6 +205,11 @@ public final class LayeredTerrainQueries {
     public Set<String> layers(){return layers;}
     public List<Floor> floors(){return floors;}
     public List<Ramp> ramps(){return ramps;}
+    public EntranceSeamDocument seams(){return seams;}
+    public boolean blocksAuthoredSeam(String layer,double ax,double az,double bx,double bz){
+        return seams!=null&&layer.equals(SURFACE)
+            &&seams.blocksSurface(ax,az,bx,bz);
+    }
     public List<Solid> solids(){return solids;}
     public long topologyRevision(){return topology.revision();}
 
@@ -202,6 +217,21 @@ public final class LayeredTerrainQueries {
     public Support support(String layer,double x,double z)throws IOException {
         if(!finite(x,z)||!layers.contains(layer))
             throw new IllegalArgumentException("Unknown layer or non-finite position");
+        if(seams!=null){
+            for(var tab:seams.tabs())if(tab.contains(x,z)){
+                if(layer.equals(SURFACE))return null;
+                if(layer.equals(tab.layer())){
+                    var w=world.settings();
+                    long cx=(long)Math.floor((x-w.originX())/w.metresPerCell());
+                    long cz=(long)Math.floor((z-w.originZ())/w.metresPerCell());
+                    long tx=Math.floorDiv(cx,w.tileCells());
+                    long tz=Math.floorDiv(cz,w.tileCells());
+                    if(tx < -1000000||tx>1000000||tz < -1000000||tz>1000000
+                        ||!world.hasTile((int)tx,(int)tz))return null;
+                    return new Support(layer,x,world.height(x,z),z);
+                }
+            }
+        }
         if(!layer.equals(SURFACE)){
             for(Ramp ramp:ramps)
                 if(ramp.layer().equals(layer)&&ramp.contains(x,z))
@@ -260,8 +290,12 @@ public final class LayeredTerrainQueries {
                          (p.layer().equals(SURFACE)
                             ||p.layer().equals(ramp.targetLayer())))){
                     double axis=ramp.axis(p.x(),p.z());
+                    boolean fromExterior=p.layer().equals(SURFACE)||higher.layer().equals(SURFACE);
+                    if(seams!=null)for(var tab:seams.tabs())if(tab.contains(p.x(),p.z())
+                        &&(p.layer().equals(tab.layer())||higher.layer().equals(tab.layer())))
+                        fromExterior=true;
                     boolean atMouth=axis<=Math.min(1.5,ramp.length()*.25)
-                        &&(p.layer().equals(SURFACE)||higher.layer().equals(SURFACE));
+                        &&fromExterior;
                     boolean atExit=ramp.length()-axis<=.8
                         &&(p.layer().equals(ramp.targetLayer())
                            ||higher.layer().equals(ramp.targetLayer()));
@@ -305,6 +339,7 @@ public final class LayeredTerrainQueries {
     public boolean canTraverse(String layer,double ax,double az,double bx,double bz,
                                Agent agent)throws IOException {
         if(!finite(ax,az,bx,bz))throw new IllegalArgumentException("Non-finite segment");
+        if(blocksAuthoredSeam(layer,ax,az,bx,bz))return false;
         double distance=Math.hypot(bx-ax,bz-az);
         int steps=Math.max(1,(int)Math.ceil(distance/.0625));
         if(steps>8192)return false; // Long routes belong to the region graph.
@@ -364,6 +399,7 @@ public final class LayeredTerrainQueries {
 
     /** Does a region contain a physical feature requiring local nav refinement? */
     public boolean crossesFeature(String layer,Rect area) {
+        if(seams!=null&&seams.crossesFeature(layer,area))return true;
         if(layer.equals(SURFACE)){
             for(var cut:topology.cutoutNodes()){
                 double factor=world.settings().metresPerCell()/AdaptiveTerrainTopology.UNITS_PER_CELL;
