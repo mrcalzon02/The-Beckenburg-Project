@@ -23,7 +23,7 @@ import java.util.function.Predicate;
  *           --dev-ai-match --seconds=6
  */
 public final class DevMatchSession {
-    private static final Path OUTPUT=Path.of("build","dev-match");
+    private static Path OUTPUT=Path.of("build","dev-match");
     private static final String HOST="127.0.0.1";
     private final List<String> events=new ArrayList<>();
     private final List<String> snapshots=new ArrayList<>();
@@ -280,6 +280,9 @@ public final class DevMatchSession {
             throw new IllegalArgumentException("duration must be 2..3600 seconds, or 0 for ADMIN");
         if(admin&&java.awt.GraphicsEnvironment.isHeadless())
             throw new IllegalStateException("--admin needs an interactive desktop (use --bots for CI)");
+        // An installed Windows app may run from a protected Program Files
+        // directory. Manual/admin traces belong under the user's own profile.
+        if(admin)OUTPUT=Path.of(System.getProperty("user.home"),".beckenburg","dev-match");
         Files.createDirectories(OUTPUT);
         DevMatchSession session=new DevMatchSession();
         String status="STARTUP_FAILURE";
