@@ -83,3 +83,42 @@ Windows UI interaction still require separate verification. A3–A6 remain plann
 - Quadtree/continuous LOD historical reference: https://courses.cs.duke.edu/cps124/fall02/notes/12_datastructures/lod_terrain.html
 
 These are architectural references, not imported dependencies or assertions that our engine has completed its renderer.
+
+
+## 7. Reuse of the model-showcase DEV room (2026-10-31)
+
+User requested topology testing alongside existing exhibits. Beckenburg's
+\`--dev-room\` is a separate actual-renderer *model showroom*, not a gameplay
+heightfield map, so we reuse its renderer and free camera without registering
+the QA patch as a mission or moving the six model stands.
+
+- \`DevTerrainTopologyLab\` creates/reopens an isolated 2-tile 16-bit test world
+  at \`~/.beckenburg/dev-room/topology-qa\`. It seeds a depth-1/depth-2 example
+  immediately against the neighboring unsplit cell at the original PNG boundary;
+  an existing QA source is never overwritten.
+- \`DevAssetShowroom\` adds explicit on/off, edit and reload controls. The patch
+  is opt-in in an unused side aisle. Existing model catalog and unmodified
+  3-argument \`SceneRenderer.drawDevAssetRoom\` still render exactly as before.
+- \`DevTerrainTopologyLab.build\` enumerates real authored leaves, gathers
+  each neighbor's global edge-break positions, triangulates an edge-conforming
+  polygon fan, and samples the **actual source triangle** height. Its triangles
+  are passed into the existing software 3D renderer for live depth tests.
+  Depth colors are diagnostic. There is **no independent authored vertex
+  displacement, terrain-body collision, lighting/texture atlas integration,
+  character occlusion proof or gameplay runtime adapter** yet.
+- Reopen / reload reads actual saved topology from disk. A malformed document
+  reports failure and keeps the prior lab geometry rather than faking success.
+- Optional headless DEV capture: \`DevAssetShowroom --dev-room --terrain-qa-capture
+  --output=build/dev-room\` writes a *real* scene renderer screenshot and
+  a source/triangle-count report. The visual review CI treats the capture as
+  advisory. Verify Windows CI success and capture artifact separately before
+  calling the DEV lab fully accepted.
+
+QA tasks: manually split tile 0 cell (15,7) along the tile 1 boundary, inspect
+the resulting diagnostic subdivisions in the real 3D renderer, save/reload,
+verify both coarse/fine sides draw without a visible gap, compare source PNG
+hashes, and document FPS and rendering artifacts. The existing model asset
+cameras and screenshots must still behave unchanged.
+
+This is **a staging fixture for A2 and early A4**, not proof that A3 authored
+sculpting, physical collision or T5/T6 distant scope occlusion works.
