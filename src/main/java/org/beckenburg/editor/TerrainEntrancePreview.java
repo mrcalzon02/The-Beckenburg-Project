@@ -44,6 +44,7 @@ public final class TerrainEntrancePreview extends JPanel {
         JButton export=new JButton("EXPORT ACTUAL OBJ GEOMETRY");
         export.addActionListener(e->chooseExport(this,output));
         top.add(export);top.add(wires);
+        wires.addActionListener(e->canvas.repaint());
         JButton reset=new JButton("RESET CAMERA");
         reset.addActionListener(e->{canvas.yaw=Math.toRadians(42);
             canvas.pitch=Math.toRadians(26);canvas.zoom=1;canvas.repaint();});
