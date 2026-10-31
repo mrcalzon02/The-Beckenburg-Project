@@ -349,7 +349,7 @@ public final class LanHost implements AutoCloseable {
             return new DevAdminSnapshot(tick,running,hunters,
                 new DevAdminSnapshot.Ghost(spectral!=null,spectral!=null&&spectral.ready,
                     spectral==null,ghostPose.pose(),ghost.energy(),ghost.manifested()),
-                ghostType,mission.identified(),mission.outcome(),casefile.snapshot());
+                ghostType,mission.identified(),mission.outcome(),map.doorSnapshot(),map.windowSnapshot(),casefile.snapshot());
         }
     }
     public boolean running(){synchronized(mutex){return running;}}
