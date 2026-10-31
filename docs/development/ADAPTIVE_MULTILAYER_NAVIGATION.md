@@ -105,3 +105,18 @@ The real `DevTerrainTopologyLab` now computes diagnostic surface nav regions/lin
 **Test:** \`LayeredTerrainDocumentTest\` validates source tile preservation, three physically distinct floors, stairs/ladder capability restrictions, obstacle collision, persistence and readback, overlap rejection, orphan-link rejection and snapshot restoration. It runs in Windows Java 17 focused terrain acceptance.
 
 **Important:** This milestone supplies **editor-owned physical query geometry**, not full cave meshes, mesh welding at the surface cutouts, model rendering, or live game collision. A stair link in the nav graph is author intent, not an animated staircase or automatic level-instance transfer. Those runtime and visual connections remain subsequent tasks.
+
+
+## N3 — Three distinct terrain entrance seam methods (2026-10-31)
+
+Open Stitched World → Adaptive Topology → ENTRANCE SEAMS 1/2/3 (also linked from Smooth Ramp Entrances). All three are topology operations, not level heights:
+
+1. **Method 1 — NEW INTERIOR SEAM.** Add a source-tile interior seam along adaptive-grid-aligned endpoints. The explicit CONFORM LEAVES + PUNCH TABS command refines actual quadtree leaves until the seam coincides with their edges. Crossing the new seam on the outside surface is blocked. A separate CUT HOLE operation, or Method 3, can create the corresponding opening. The seam retains its underground destination layer identity.
+2. **Method 2 — DE-STITCH TILE EDGE.** Select a real existing source-tile boundary. The surface graph stops connecting across this boundary, preserving both underlying heightmap tiles while recording the intended underground destination. Rendering/mesh ownership of the replaced edge remains a downstream integration; it is not automatically connected to an underground render tile yet.
+3. **Method 3 — DETACHED TAB / PUNCH.** A matching Method 1 seam is required along one edge of a rectangular tab. The explicit CONFORM command splits and punches the outer source leaves underneath this patch, and the physical query module reassigns the *same original height surface* to an independent named navigation layer. Normal outdoor surface connections do not regenerate over it. A ramp mouth inside the tab stitches to this distinct tab layer rather than to the main outdoor surface.
+
+The authored operation document is entrance-seams.bin, independent of the source PNG, adaptive-topology.bin, layered-geometry.bin, ramp-entrances.bin and navmesh-authoring.bin. Editor masks have undo/redo and disk readback. The explicit physical CONFORM command also provides REVERT LAST CONFORM, which refuses to erase unrelated subsequent topology edits. Original 16-bit source height pixels are never rewritten by this work.
+
+The adaptive flood fill now loads method 1/2 seam barriers, method 3 independent tab supports, and explicit ramp-to-tab navigation endpoints. It visually marks the three kinds of opening in the 2D authoring map. The targeted Java 17 test is EntranceSeamDocumentTest: subdivision, tile de-stitch separation, tab punching and standability, no outdoor AI cross-edge route, disk persistence, idempotent reapplication and source PNG seam preservation.
+
+**Status boundary:** this is actual editor-side collision/query/topology authoring. Full 3D cave-mouth mesh emission, visual subterranean-tile re-welding, GPU rendering and live Hunter/ghost movement integration are still future work. The editor may not claim an authored seam is already a playable cave entrance.
