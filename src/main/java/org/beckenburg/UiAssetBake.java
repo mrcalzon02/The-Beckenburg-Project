@@ -48,6 +48,14 @@ public final class UiAssetBake {
             if(!Files.isRegularFile(item))throw new IOException("Missing individual tier icon: "+item);
             Files.copy(item,icons.resolve(item.getFileName()),StandardCopyOption.REPLACE_EXISTING);count++;
         }
+        // Some optional gear has a tiered source icon but no legacy plain-name
+        // preview. Reuse the same approved Tier-I render, never synthesize art.
+        for(var tool:EquipmentRegistry.all()){
+            String key=ItemIconAtlas.key(tool);
+            Path base=icons.resolve(key+".png");
+            if(!Files.isRegularFile(base))
+                Files.copy(icons.resolve(key+"_t1.png"),base);
+        }
         for(int tier=1;tier<=3;tier++){
             Path item=tierIcons.resolve("health_supplies_t"+tier+".png");
             if(!Files.isRegularFile(item))throw new IOException("Missing medical tier icon: "+item);
