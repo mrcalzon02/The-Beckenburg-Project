@@ -41,6 +41,93 @@ public final class LayeredTerrainQueries {
                 throw new IllegalArgumentException("Invalid solid geometry");
         }
     }
+    /** Smooth C1 ramp whose height is actual query geometry, not a nav-only jump.
+     * The mouth face is at the minimum edge for EAST/SOUTH and the maximum
+     * edge for WEST/NORTH. A Hermite curve matches authored mouth/interior
+     * elevations and grades, including zero-grade flat bunker transitions. */
+    public record Ramp(String id,String layer,String targetLayer,Direction direction,
+                       double x0,double z0,double x1,double z1,
+                       double mouthY,double interiorY,
+                       double mouthGrade,double interiorGrade) {
+        public enum Direction { EAST,WEST,NORTH,SOUTH }
+        public Ramp {
+            if(id==null||id.isBlank()||layer==null||layer.isBlank()
+                ||targetLayer==null||targetLayer.isBlank()
+                ||layer.equals(SURFACE)||layer.equals(targetLayer)||direction==null
+                ||!finite(x0,z0,x1,z1,mouthY,interiorY,mouthGrade,interiorGrade)
+                ||x1-x0<.6||z1-z0<.6)
+                throw new IllegalArgumentException("Invalid ramp dimensions or layers");
+            if(Math.abs(mouthGrade)>2||Math.abs(interiorGrade)>2)
+                throw new IllegalArgumentException("Ramp grades exceed supported range");
+            if(length(direction,x0,z0,x1,z1)<1.0)
+                throw new IllegalArgumentException("Ramp must be at least one meter long");
+        }
+        private static double length(Direction d,double x0,double z0,double x1,double z1){
+            return d==Direction.EAST||d==Direction.WEST?x1-x0:z1-z0;
+        }
+        public double length(){return length(direction,x0,z0,x1,z1);}
+        public double width(){return direction==Direction.EAST||direction==Direction.WEST?
+            z1-z0:x1-x0;}
+        public double axis(double x,double z){
+            return switch(direction){
+                case EAST->x-x0;case WEST->x1-x;
+                case SOUTH->z-z0;case NORTH->z1-z;
+            };
+        }
+        public boolean contains(double x,double z){
+            return x>=x0&&x<x1&&z>=z0&&z<z1;
+        }
+        public double height(double x,double z){
+            double t=Math.max(0,Math.min(1,axis(x,z)/length()));
+            // Cubic Hermite with derivatives measured in metres rise per
+            // horizontal metre. Derivative at t=0 = mouthGrade, t=1 = interiorGrade.
+            double t2=t*t,t3=t2*t,L=length();
+            return (2*t3-3*t2+1)*mouthY
+                +(t3-2*t2+t)*L*mouthGrade
+                +(-2*t3+3*t2)*interiorY
+                +(t3-t2)*L*interiorGrade;
+        }
+        public double mouthX(){return direction==Direction.EAST?x0:
+            direction==Direction.WEST?x1:(x0+x1)*.5;}
+        public double mouthZ(){return direction==Direction.SOUTH?z0:
+            direction==Direction.NORTH?z1:(z0+z1)*.5;}
+        public double insideX(){return direction==Direction.EAST?x1:
+            direction==Direction.WEST?x0:(x0+x1)*.5;}
+        public double insideZ(){return direction==Direction.SOUTH?z1:
+            direction==Direction.NORTH?z0:(z0+z1)*.5;}
+        public double entranceX(double inset){return direction==Direction.EAST?x0+inset:
+            direction==Direction.WEST?x1-inset:(x0+x1)*.5;}
+        public double entranceZ(double inset){return direction==Direction.SOUTH?z0+inset:
+            direction==Direction.NORTH?z1-inset:(z0+z1)*.5;}
+        public double exitX(double inset){return direction==Direction.EAST?x1-inset:
+            direction==Direction.WEST?x0+inset:(x0+x1)*.5;}
+        public double exitZ(double inset){return direction==Direction.SOUTH?z1-inset:
+            direction==Direction.NORTH?z0+inset:(z0+z1)*.5;}
+        /** Geometry triangles are sampled from the same height function as collision. */
+        public List<double[]> triangles(int longitudinalSamples) {
+            if(longitudinalSamples<1||longitudinalSamples>256)
+                throw new IllegalArgumentException("Ramp tessellation samples must be 1..256");
+            List<double[]> out=new ArrayList<>();
+            for(int i=0;i<longitudinalSamples;i++){
+                double a=i*length()/longitudinalSamples;
+                double b=(i+1)*length()/longitudinalSamples;
+                double[] v0=corner(a,0),v1=corner(a,1);
+                double[] v2=corner(b,0),v3=corner(b,1);
+                out.add(new double[]{v0[0],v0[1],v0[2],v2[0],v2[1],v2[2],
+                    v1[0],v1[1],v1[2]});
+                out.add(new double[]{v2[0],v2[1],v2[2],v3[0],v3[1],v3[2],
+                    v1[0],v1[1],v1[2]});
+            }
+            return List.copyOf(out);
+        }
+        private double[] corner(double fromMouth,double lateral){
+            double x=entranceX(fromMouth),z=entranceZ(fromMouth);
+            if(direction==Direction.EAST||direction==Direction.WEST)
+                z=z0+(z1-z0)*lateral;
+            else x=x0+(x1-x0)*lateral;
+            return new double[]{x,height(x,z),z};
+        }
+    }
     public record Agent(double radius,double height,double maxSlopeDegrees,
                         double maxStep) {
         public Agent {
@@ -68,18 +155,28 @@ public final class LayeredTerrainQueries {
     private final StitchedHeightmapWorld world;
     private final AdaptiveTerrainTopology topology;
     private final List<Floor> floors;
+    private final List<Ramp> ramps;
     private final List<Solid> solids;
     private final Set<String> layers;
 
     public LayeredTerrainQueries(StitchedHeightmapWorld world,AdaptiveTerrainTopology topology,
                                  List<Floor> floors,List<Solid> solids) {
+        this(world,topology,floors,solids,List.of());
+    }
+    public LayeredTerrainQueries(StitchedHeightmapWorld world,AdaptiveTerrainTopology topology,
+                                 List<Floor> floors,List<Solid> solids,List<Ramp> ramps) {
         this.world=Objects.requireNonNull(world);
         this.topology=Objects.requireNonNull(topology);
         this.floors=List.copyOf(floors);
+        this.ramps=List.copyOf(ramps);
         this.solids=List.copyOf(solids);
         var ids=new HashSet<String>();
         ids.add(SURFACE);
         for(Floor floor:this.floors)ids.add(floor.layer());
+        for(Ramp ramp:this.ramps){
+            if(!ids.add(ramp.layer()))
+                throw new IllegalArgumentException("Ramp layer ID must be unique: "+ramp.layer());
+        }
         // Each separately named layer has at most one floor at a given X/Z.
         for(int i=0;i<this.floors.size();i++)
             for(int j=i+1;j<this.floors.size();j++){
@@ -97,6 +194,7 @@ public final class LayeredTerrainQueries {
     }
     public Set<String> layers(){return layers;}
     public List<Floor> floors(){return floors;}
+    public List<Ramp> ramps(){return ramps;}
     public List<Solid> solids(){return solids;}
     public long topologyRevision(){return topology.revision();}
 
@@ -105,6 +203,9 @@ public final class LayeredTerrainQueries {
         if(!finite(x,z)||!layers.contains(layer))
             throw new IllegalArgumentException("Unknown layer or non-finite position");
         if(!layer.equals(SURFACE)){
+            for(Ramp ramp:ramps)
+                if(ramp.layer().equals(layer)&&ramp.contains(x,z))
+                    return new Support(layer,x,ramp.height(x,z),z);
             for(Floor floor:floors)
                 if(floor.layer().equals(layer)&&floor.contains(x,z))
                     return new Support(layer,x,floor.height(x,z),z);
@@ -146,8 +247,29 @@ public final class LayeredTerrainQueries {
     private boolean clearance(Support p,Agent agent) throws IOException {
         // A different overhead walkable floor is also a solid slab/ceiling.
         for(Support higher:stack(p.x(),p.z()))
-            if(higher.y()>p.y()+1e-7 && higher.y()<p.y()+agent.height()+1e-7)
-                return false;
+            if(higher.y()>p.y()+1e-7 && higher.y()<p.y()+agent.height()+1e-7){
+                // Co-located doorway lips are separate named walkable layers
+                // but should not act as 5 cm high ceilings. This exemption
+                // applies ONLY at an explicitly authored ramp overlap.
+                boolean seam=false;
+                for(Ramp ramp:ramps)if(ramp.contains(p.x(),p.z())
+                    &&(ramp.layer().equals(p.layer())&&
+                         (higher.layer().equals(SURFACE)
+                            ||higher.layer().equals(ramp.targetLayer()))
+                       ||higher.layer().equals(ramp.layer())&&
+                         (p.layer().equals(SURFACE)
+                            ||p.layer().equals(ramp.targetLayer())))){
+                    double axis=ramp.axis(p.x(),p.z());
+                    boolean atMouth=axis<=.8
+                        &&(p.layer().equals(SURFACE)||higher.layer().equals(SURFACE));
+                    boolean atExit=ramp.length()-axis<=.8
+                        &&(p.layer().equals(ramp.targetLayer())
+                           ||higher.layer().equals(ramp.targetLayer()));
+                    seam=(atMouth||atExit)&&higher.y()-p.y()<=agent.maxStep()+1e-7;
+                    if(seam)break;
+                }
+                if(!seam)return false;
+            }
         for(Solid solid:solids){
             double cx=Math.max(solid.x0(),Math.min(p.x(),solid.x1()));
             double cz=Math.max(solid.z0(),Math.min(p.z(),solid.z1()));
@@ -250,9 +372,15 @@ public final class LayeredTerrainQueries {
                     ox+cut.x1()*factor,oz+cut.z1()*factor);
                 if(area.crosses(cutRect)&&!cutRect.includes(area))return true;
             }
-        }else for(Floor floor:floors)if(floor.layer().equals(layer)){
+        }else {
+            for(Ramp ramp:ramps)if(ramp.layer().equals(layer)){
+                Rect bound=new Rect(ramp.x0(),ramp.z0(),ramp.x1(),ramp.z1());
+                if(area.crosses(bound)&&!bound.includes(area))return true;
+            }
+            for(Floor floor:floors)if(floor.layer().equals(layer)){
             Rect bound=new Rect(floor.x0(),floor.z0(),floor.x1(),floor.z1());
             if(area.crosses(bound)&&!bound.includes(area))return true;
+            }
         }
         for(Solid solid:solids){
             Rect bound=new Rect(solid.x0(),solid.z0(),solid.x1(),solid.z1());
