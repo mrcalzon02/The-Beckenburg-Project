@@ -131,6 +131,8 @@ public final class LanHost implements AutoCloseable {
     private final GhostActionCadence actionCadence;
     private final LanCase mission;
     private final LanEvidenceJournal casefile=new LanEvidenceJournal();
+    /** One reply per actual host vocal event per hunter; scans cannot replay proof. */
+    private final int[] lastSpiritReplyEventTick={-1,-1,-1,-1,-1,-1};
     /** Host-only audit of actual inflicted damage, never a LAN or ghost AI frame. */
     private final ArrayDeque<DevAdminSnapshot.CombatEvent> devCombatEvents=new ArrayDeque<>();
 
@@ -1150,6 +1152,7 @@ public final class LanHost implements AutoCloseable {
                     int room=world.body(peer.slot).room();
                     EquipmentTiers.Stage stage=gear.stage(id);
                     String reading;
+                    SpiritBoxResponses.Phrase spiritReply=null;
                     switch(id){
                         case "EMF_READER", "THERMOMETER" -> {
                             // The probe ALWAYS measures the current air/field.
@@ -1176,18 +1179,23 @@ public final class LanHost implements AutoCloseable {
                             // Never append a supernatural validity assessment.
                         }
                         case "SPIRIT_BOX" -> {
-                            boolean voiceEvent=room==lastEvidenceEventRoom
-                                &&tick-lastEvidenceEventTick<=45
-                                &&tick>=lastEvidenceEventTick
-                                &&mission.allowsEvidence(HardEvidenceQuota.Family.SPIRIT_BOX)
-                                &&(lastEvidenceEventAction==GhostDomain.Action.WHISPER
-                                    ||lastEvidenceEventAction==GhostDomain.Action.SIGNATURE)
-                                &&Math.hypot(world.body(peer.slot).x()-ghostPose.pose().x(),
-                                     world.body(peer.slot).z()-ghostPose.pose().z())
-                                    <=stage.reachCm()/100.0;
+                            // This instrument responds ONLY to a real, recent host
+                            // vocal action that is within this actual tier's reach.
+                            boolean voiced=lastEvidenceEventAction==GhostDomain.Action.WHISPER
+                                ||lastEvidenceEventAction==GhostDomain.Action.SIGNATURE;
+                            double distance=Math.hypot(world.body(peer.slot).x()-ghostPose.pose().x(),
+                                world.body(peer.slot).z()-ghostPose.pose().z());
+                            boolean replyNow=SpiritBoxResponses.qualifies(room,ghost.room(),
+                                lastEvidenceEventRoom,lastEvidenceEventTick,tick,voiced,
+                                mission.allowsEvidence(HardEvidenceQuota.Family.SPIRIT_BOX),
+                                distance,stage.reachCm()/100.0,
+                                lastSpiritReplyEventTick[peer.slot]);
+                            if(replyNow){
+                                spiritReply=SpiritBoxResponses.choose(lastEvidenceEventTick,peer.slot);
+                                lastSpiritReplyEventTick[peer.slot]=lastEvidenceEventTick;
+                            }
                             taskDone(ContractRewards.Task.SPIRIT_SAMPLE);
-                            reading=voiceEvent?"Voice response / spectral vocal event detected":
-                                "No direct vocal response";
+                            reading=SpiritBoxResponses.observation(spiritReply);
                         }
                         case "SOUND_RECORDER" -> {
                             if(recorders[peer.slot].recording()){
@@ -1485,6 +1493,14 @@ public final class LanHost implements AutoCloseable {
                     notifyHunters(casefile.recordDevice(tick,peer.slot,room,id,
                         LanEvidenceJournal.Finding.OBSERVED,reading));
                     reply(peer,"ACCEPT|GEARUSE|"+id+"|"+reading);
+                    if(id.equals("SPIRIT_BOX")){
+                        // Device-local audio, not a world ghost vocal emission:
+                        // no extra ghost event, evidence increment or journal tick.
+                        reply(peer,new LanSound.CueEvent(LanSound.Cue.SPIRIT_BOX_STATIC,
+                            0,32,tick).frame());
+                        if(spiritReply!=null)reply(peer,new LanSound.CueEvent(
+                            spiritReply.cue,0,92,tick).frame());
+                    }
                     LanSound.Cue deviceCue=switch(id){
                         case "PHOTO_CAMERA"->LanSound.Cue.CAMERA;
                         case "GHOST_WRITING_BOOK"->reading.startsWith("Writing book placed")
@@ -1631,6 +1647,30 @@ public final class LanHost implements AutoCloseable {
                         :mission.scanMeasured(peer.slot,tool,hunterRooms[peer.slot],
                             ghost.room(),tick,scanEventRoom,scanEventPower,
                             GhostEvidenceProfile.emfSuppressed(ghostType));
+                    SpiritBoxResponses.Phrase scannedReply=null;
+                    if(tool==LanCase.Tool.SPIRIT_BOX&&result.accepted()){
+                        int sourceRoom=peer.worldMode?world.body(peer.slot).room():hunterRooms[peer.slot];
+                        boolean voiced=lastEvidenceEventAction==GhostDomain.Action.WHISPER
+                            ||lastEvidenceEventAction==GhostDomain.Action.SIGNATURE;
+                        boolean fresh=SpiritBoxResponses.qualifies(sourceRoom,ghost.room(),
+                            lastEvidenceEventRoom,lastEvidenceEventTick,tick,voiced,
+                            mission.allowsEvidence(HardEvidenceQuota.Family.SPIRIT_BOX),
+                            peer.worldMode?Math.hypot(world.body(peer.slot).x()-ghostPose.pose().x(),
+                                world.body(peer.slot).z()-ghostPose.pose().z()):Double.POSITIVE_INFINITY,
+                            2.1,lastSpiritReplyEventTick[peer.slot]);
+                        if(fresh){
+                            scannedReply=SpiritBoxResponses.choose(lastEvidenceEventTick,peer.slot);
+                            lastSpiritReplyEventTick[peer.slot]=lastEvidenceEventTick;
+                        }
+                        result=new LanCase.Report(true,"READING SPIRIT_BOX in "+sourceRoom+
+                            " - "+SpiritBoxResponses.observation(scannedReply));
+                        if(peer.worldMode){
+                            reply(peer,new LanSound.CueEvent(LanSound.Cue.SPIRIT_BOX_STATIC,
+                                0,32,tick).frame());
+                            if(scannedReply!=null)reply(peer,new LanSound.CueEvent(
+                                scannedReply.cue,0,92,tick).frame());
+                        }
+                    }
                     answerHunter(peer,"SCAN",result);
                     if(result.accepted()){
                         taskDone(switch(tool){
