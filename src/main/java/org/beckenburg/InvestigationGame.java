@@ -1660,6 +1660,17 @@ public final class InvestigationGame {
     }
     public static void main(String[] args){
         BeckenburgDiagnostics.install();
+        // Opt-in developer command line only. No admin menu entry or normal
+        // multiplayer spectator seat; works from the packaged Windows EXE.
+        if(java.util.Arrays.asList(args).contains("--dev-ai-match")){
+            try{DevMatchSession.main(args);}
+            catch(Exception failure){
+                BeckenburgDiagnostics.fail("Developer AI match startup",failure);
+                failure.printStackTrace(System.err);
+                System.exit(1);
+            }
+            return;
+        }
         if(GraphicsEnvironment.isHeadless()){
             BeckenburgDiagnostics.record("Headless runtime; GUI unavailable");
             System.err.println("A graphical Windows/Linux desktop is required for the Swing client.");
