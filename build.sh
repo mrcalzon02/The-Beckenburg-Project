@@ -189,6 +189,10 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.Va
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanDotsProjectorsTest
 # Host-authoritative evidence equipment must be placeable via the actual 3D mouse controls.
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanDotsPlacementIntegrationTest
+# Source art and model positioning are nonblocking diagnostics, never release gates.
+if ! java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.DotsProjectorModelDiagnosticTest; then
+    printf '%s\n' 'ADVISORY: deployed DOTS artwork diagnostic failed (nonblocking)' >&2
+fi
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.OptionalEvidenceReadingsTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.GhostEvidenceMatrixTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanFieldEquipmentIntegrationTest
