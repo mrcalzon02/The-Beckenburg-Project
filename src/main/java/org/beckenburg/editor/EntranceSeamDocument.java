@@ -122,8 +122,12 @@ public final class EntranceSeamDocument {
         return Math.abs(q-Math.rint(q))<1e-7;
     }
     private boolean lattice(double coordinate,double origin){
-        double step=world.settings().metresPerCell()/AdaptiveTerrainTopology.UNITS_PER_CELL;
-        double q=(coordinate-origin)/step;
+        double edge=world.settings().metresPerCell();
+        for(int depth=1;depth<=AdaptiveTerrainTopology.MAX_DEPTH;depth++){
+            if(edge*.5<AdaptiveTerrainTopology.MIN_LEAF_METRES)break;
+            edge*=.5;
+        }
+        double q=(coordinate-origin)/edge;
         return Math.abs(q-Math.rint(q))<1e-7;
     }
     private void validate(Snapshot data){
