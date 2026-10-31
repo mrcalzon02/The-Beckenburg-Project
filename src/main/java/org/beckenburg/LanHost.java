@@ -131,6 +131,9 @@ public final class LanHost implements AutoCloseable {
     private final GhostActionCadence actionCadence;
     private final LanCase mission;
     private final LanEvidenceJournal casefile=new LanEvidenceJournal();
+    /** Host-only audit of actual inflicted damage, never a LAN or ghost AI frame. */
+    private final ArrayDeque<DevAdminSnapshot.CombatEvent> devCombatEvents=new ArrayDeque<>();
+
     private final GhostWriting writingBook=new GhostWriting();
     /** Persistent placement from real hunter coordinates, never supplied by clients. */
     private record SensorStation(String id,int room,double x,double z){}
@@ -349,7 +352,7 @@ public final class LanHost implements AutoCloseable {
             return new DevAdminSnapshot(tick,running,hunters,
                 new DevAdminSnapshot.Ghost(spectral!=null,spectral!=null&&spectral.ready,
                     spectral==null,ghostPose.pose(),ghost.energy(),ghost.manifested()),
-                ghostType,mission.identified(),mission.outcome(),map.doorSnapshot(),map.windowSnapshot(),casefile.snapshot());
+                ghostType,mission.identified(),mission.outcome(),map.doorSnapshot(),map.windowSnapshot(),casefile.snapshot(),List.copyOf(devCombatEvents));
         }
     }
     public boolean running(){synchronized(mutex){return running;}}
@@ -2109,8 +2112,19 @@ public final class LanHost implements AutoCloseable {
     private void distributeEffect(GhostDomain.Resolution result,boolean[] affected){
         if(!result.applied())return;
         boolean[] wasAlive=new boolean[HUNTERS];
-        for(int i=0;i<HUNTERS;i++)wasAlive[i]=(seats[i]!=null||reserved[i]!=null)&&mission.alive(i);
+        int[] beforeHealth=new int[HUNTERS];
+        for(int i=0;i<HUNTERS;i++){
+            wasAlive[i]=(seats[i]!=null||reserved[i]!=null)&&mission.alive(i);
+            beforeHealth[i]=mission.health(i);
+        }
         mission.applyGhostEffect(result.room(),hunterRooms,result,affected);
+        // Count ONLY actual health removed by an authorized resolved ghost effect.
+        for(int i=0;i<HUNTERS;i++)if(wasAlive[i]&&beforeHealth[i]>mission.health(i)){
+            int damage=beforeHealth[i]-mission.health(i);
+            devCombatEvents.addLast(new DevAdminSnapshot.CombatEvent(tick,"H"+(i+1),
+                result.action().name(),damage,!mission.alive(i)));
+            if(devCombatEvents.size()>256)devCombatEvents.removeFirst();
+        }
         if(result.fear()>0||result.harm()>0)
             for(int i=0;i<HUNTERS;i++)if(wasAlive[i]&&affected[i]&&hunterRooms[i]==result.room()&&seats[i]!=null)
                 {
