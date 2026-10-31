@@ -461,6 +461,21 @@ public final class CastleLevelEdits {
                         deck.height(),CastleRooms.SLAB,deck.material()));
                 }
             }
+            // Two operations cabinets were mistakenly authored outdoors in
+            // the arrival courtyard. Update only the exact unedited original
+            // placements, preserving every manually positioned editor object.
+            // Keep their stable IDs so existing inventories/editor saves work.
+            for(int i=0;i<2;i++){
+                String id="ground"+(18+i);
+                var cabinet=incomingProps.get(id);
+                if(cabinet!=null&&cabinet.mesh().equals("display_cabinet_mp_2")
+                    &&cabinet.x()==(i==0?11.3:16.0)
+                    &&cabinet.z()==13.3&&cabinet.scale()==.75){
+                    incomingProps.put(id,new Prop(cabinet.id(),cabinet.mesh(),
+                        27.55,cabinet.y(),i==0?26.8:30.0,cabinet.scale(),
+                        -Math.PI/2,cabinet.halfX(),cabinet.halfZ(),cabinet.upper()));
+                }
+            }
             // Relocate one proven wall-penetrating armchair in older castle
             // scenes. Apply only to the exact original pose so editor adjustments
             // remain untouched.
