@@ -2684,9 +2684,19 @@ public final class SceneRenderer {
         for(var c:cells){
             double x0=c.x0(),x1=c.x1(),z0=c.z0(),z1=c.z1(),y=c.top(),bottom=y-CastleRooms.SLAB;
             int mat=c.material();
-            if(y==0)mat=map.floorMaterial((x0+x1)*.5,(z0+z1)*.5);
+            double mx=(x0+x1)*.5,mz=(z0+z1)*.5;
+            if(y==0){
+                mat=map.floorMaterial(mx,mz);
+                var zone=CastleRooms.at(mx,0,mz);
+                // Only the default open-air ground is flagged as courtyard;
+                // editor-painted alternative surfaces keep their own material.
+                if(zone!=null&&zone.outside()&&mat==MaterialAtlas.STONE
+                        &&(zone.id().equals("court")||zone.id().equals("gate")))
+                    mat=CastleCourtyardPaving.material();
+            }
+            double tile=mat>=GlbProps.TEXTURE_BASE?4:1;
             texturedQuad(out,new Point(x0,y,z0),new Point(x1,y,z0),new Point(x1,y,z1),new Point(x0,y,z1),mat,
-                x0,z0,x1,z0,x1,z1,x0,z1,0xffffff);
+                x0/tile,z0/tile,x1/tile,z0/tile,x1/tile,z1/tile,x0/tile,z1/tile,0xffffff);
             texturedQuad(out,new Point(x0,bottom,z1),new Point(x1,bottom,z1),new Point(x1,bottom,z0),new Point(x0,bottom,z0),MaterialAtlas.CEILING,
                 x0,z1,x1,z1,x1,z0,x0,z0,0xffffff);
         }
