@@ -62,12 +62,16 @@ public final class AdaptiveNavigationRegions {
     public static final class Graph {
         private final LayeredTerrainQueries query;
         private final Profile profile;
+        private final AdaptiveNavMeshEdits edits;
+        private final long editsRevision;
         private final List<Region> regions;
         private final List<List<Edge>> adjacent;
         private final Metrics metrics;
         Graph(LayeredTerrainQueries query,Profile profile,List<Region> regions,
-              List<List<Edge>> adjacent,int evaluated,int rejected) {
-            this.query=query;this.profile=profile;
+              List<List<Edge>> adjacent,int evaluated,int rejected,
+              AdaptiveNavMeshEdits edits) {
+            this.query=query;this.profile=profile;this.edits=edits;
+            this.editsRevision=edits==null?0:edits.revision();
             this.regions=List.copyOf(regions);
             this.adjacent=adjacent.stream().map(List::copyOf).toList();
             int links=this.adjacent.stream().mapToInt(List::size).sum();
@@ -76,7 +80,9 @@ public final class AdaptiveNavigationRegions {
         public List<Region> regions(){return regions;}
         public Metrics metrics(){return metrics;}
         public List<Edge> connections(int id){return adjacent.get(id);}
-        public boolean stale(){return metrics.topologyRevision()!=query.topologyRevision();}
+        public boolean stale(){return metrics.topologyRevision()!=query.topologyRevision()
+            ||edits!=null&&editsRevision!=edits.revision();}
+        public long authoredRevision(){return editsRevision;}
 
         private int regionAt(String layer,double x,double z){
             for(Region r:regions)if(r.layer().equals(layer)&&r.contains(x,z))
@@ -158,13 +164,14 @@ public final class AdaptiveNavigationRegions {
 
     private final LayeredTerrainQueries query;
     private final Profile profile;
+    private final AdaptiveNavMeshEdits edits;
     private final double minCell;
     private final ArrayList<Region> regions=new ArrayList<>();
     private final List<List<Edge>> adjacent=new ArrayList<>();
     private int evaluated,rejected;
     private AdaptiveNavigationRegions(LayeredTerrainQueries query,Profile profile,
-                                      double minCell) {
-        this.query=query;this.profile=profile;this.minCell=minCell;
+                                      AdaptiveNavMeshEdits edits,double minCell) {
+        this.query=query;this.profile=profile;this.edits=edits;this.minCell=minCell;
     }
     /**
      * Build a sparse graph for EXPLICIT areas/layers. Authored polygons/ramp
@@ -173,11 +180,22 @@ public final class AdaptiveNavigationRegions {
     public static Graph build(LayeredTerrainQueries query,Profile profile,
                               List<Area> areas,List<Transition> transitions,
                               double minCell)throws IOException {
+        return build(query,profile,areas,transitions,null,minCell);
+    }
+    /**
+     * Authored flood fill: keep only the regions reachable from editor seeds
+     * across physically valid, non-excluded/non-barred connections. Manual trims
+     * and blocked transition doors are applied BEFORE flooding, so they cannot
+     * silently regrow on a later pulse or continuous rebuild.
+     */
+    public static Graph build(LayeredTerrainQueries query,Profile profile,
+                              List<Area> areas,List<Transition> transitions,
+                              AdaptiveNavMeshEdits edits,double minCell)throws IOException {
         Objects.requireNonNull(query);Objects.requireNonNull(profile);
         Objects.requireNonNull(areas);Objects.requireNonNull(transitions);
         if(!Double.isFinite(minCell)||minCell<.125||minCell>20)
             throw new IllegalArgumentException("Invalid navigation sampling resolution");
-        AdaptiveNavigationRegions builder=new AdaptiveNavigationRegions(query,profile,minCell);
+        AdaptiveNavigationRegions builder=new AdaptiveNavigationRegions(query,profile,edits,minCell);
         for(Area area:areas){
             if(!query.layers().contains(area.layer()))
                 throw new IllegalArgumentException("Unknown layer "+area.layer());
@@ -186,8 +204,41 @@ public final class AdaptiveNavigationRegions {
         for(int i=0;i<builder.regions.size();i++)builder.adjacent.add(new ArrayList<>());
         builder.joinPeers();
         builder.joinTransitions(transitions);
-        return new Graph(query,profile,builder.regions,builder.adjacent,
-            builder.evaluated,builder.rejected);
+        return builder.floodFromSeeds();
+    }
+    private Graph floodFromSeeds() {
+        if(edits==null||edits.seeds().isEmpty())
+            return new Graph(query,profile,regions,adjacent,evaluated,rejected,edits);
+        boolean[] reached=new boolean[regions.size()];
+        java.util.ArrayDeque<Integer> pending=new java.util.ArrayDeque<>();
+        for(var seed:edits.seeds()){
+            int id=locate(seed.layer(),seed.x(),seed.z());
+            if(id>=0&&!reached[id]){reached[id]=true;pending.add(id);}
+        }
+        while(!pending.isEmpty()){
+            int id=pending.removeFirst();
+            for(Edge e:adjacent.get(id))
+                if(!reached[e.to()]){reached[e.to()]=true;pending.addLast(e.to());}
+        }
+        int[] remap=new int[regions.size()];
+        java.util.Arrays.fill(remap,-1);
+        List<Region> kept=new ArrayList<>();
+        for(int i=0;i<regions.size();i++)if(reached[i]){
+            Region r=regions.get(i);
+            remap[i]=kept.size();
+            kept.add(new Region(kept.size(),r.layer(),r.x0(),r.z0(),
+                r.x1(),r.z1(),r.centreY()));
+        }
+        List<List<Edge>> linked=new ArrayList<>();
+        for(int i=0;i<regions.size();i++)if(reached[i]){
+            List<Edge> edges=new ArrayList<>();
+            for(Edge e:adjacent.get(i))if(reached[e.to()])
+                edges.add(new Edge(remap[e.to()],e.cost(),e.connection(),
+                    e.entryX(),e.entryZ(),e.exitX(),e.exitZ()));
+            linked.add(edges);
+        }
+        return new Graph(query,profile,kept,linked,evaluated,
+            rejected+regions.size()-kept.size(),edits);
     }
     private boolean safe(String layer,double x,double z)throws IOException {
         return query.canStand(layer,x,z,profile.footprint());
@@ -211,14 +262,17 @@ public final class AdaptiveNavigationRegions {
         if(++evaluated>MAX_CELLS)
             throw new IllegalStateException("Navigation refinement budget exceeded");
         var extent=new LayeredTerrainQueries.Rect(x0,z0,x1,z1);
-        boolean details=query.crossesFeature(layer,extent)
+        boolean editedRegion=edits!=null&&edits.excluded(layer,x0,z0,x1,z1);
+        boolean editBoundary=edits!=null&&edits.needsSplit(layer,x0,z0,x1,z1);
+        if(editedRegion&&!editBoundary){rejected++;return;}
+        boolean details=query.crossesFeature(layer,extent)||editBoundary
             ||(layer.equals(LayeredTerrainQueries.SURFACE)
                 &&query.steepSourceWithin(extent,profile.footprint()));
         double w=x1-x0,d=z1-z0;
         boolean safe=allSamplesSafe(layer,x0,z0,x1,z1);
         // A doubtful region is subdivided; at the minimum size it is blocked,
         // NEVER blindly considered traversable because a corner looks fine.
-        if(details||!safe){
+        if(details||!safe||editedRegion){
             if(w>minCell+EPS||d>minCell+EPS){
                 double mx=(x0+x1)*.5,mz=(z0+z1)*.5;
                 if(w>minCell+EPS&&d>minCell+EPS){
@@ -235,7 +289,7 @@ public final class AdaptiveNavigationRegions {
                 }
                 return;
             }
-            if(!safe||details){rejected++;return;}
+            if(!safe||details||editedRegion){rejected++;return;}
         }
         if(regions.size()>=MAX_REGIONS)
             throw new IllegalStateException("Navigation region budget exceeded");
@@ -270,6 +324,8 @@ public final class AdaptiveNavigationRegions {
                 px=(Math.max(a.x0(),b.x0())+Math.min(a.x1(),b.x1()))*.5;
             }
             String layer=a.layer();
+            if(edits!=null&&edits.blocks(layer,a.x(),a.z(),b.x(),b.z()))
+                continue;
             if(!query.canTraverse(layer,a.x(),a.z(),px,pz,profile.footprint())
                 ||!query.canTraverse(layer,px,pz,b.x(),b.z(),profile.footprint()))
                 continue;
@@ -294,6 +350,10 @@ public final class AdaptiveNavigationRegions {
             if(from<0||to<0||!safe(t.from(),t.fromX(),t.fromZ())
                 ||!safe(t.to(),t.toX(),t.toZ()))continue;
             Region a=regions.get(from),b=regions.get(to);
+            if(edits!=null&&(
+                    edits.blocks(a.layer(),a.x(),a.z(),t.fromX(),t.fromZ())
+                    ||edits.blocks(b.layer(),t.toX(),t.toZ(),b.x(),b.z())))
+                continue;
             if(!query.canTraverse(a.layer(),a.x(),a.z(),t.fromX(),t.fromZ(),
                     profile.footprint()) ||
                 !query.canTraverse(b.layer(),t.toX(),t.toZ(),b.x(),b.z(),
