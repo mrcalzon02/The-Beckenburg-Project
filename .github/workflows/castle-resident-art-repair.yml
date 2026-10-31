@@ -64,12 +64,44 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Capture real Castle in-game source-vs-PSX closeups (nonblocking)
+        id: capture
         continue-on-error: true
         run: |
-          sh build.sh
+          sh build.sh --capture-only
           mkdir -p build/test
           javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/CastleResidentArtRenderAudit.java
           java -Djava.awt.headless=true -cp build/classes:build/test org.beckenburg.CastleResidentArtRenderAudit build/castle-resident-art-render
+      - name: Publish genuine in-game resident screenshots to development gallery
+        if: steps.capture.outcome == 'success'
+        continue-on-error: true # Diagnostic images must never block the release.
+        run: |
+          count=$(find build/castle-resident-art-render -maxdepth 1 -name '*.png' | wc -l)
+          test "$count" -ge 8 || { echo "Too few visible in-game screenshots: $count" >&2; exit 1; }
+          target=development/quality/castle-resident-art/captures
+          mkdir -p "$target"
+          cp build/castle-resident-art-render/*.png "$target"/
+          cp build/castle-resident-art-render/captures.csv development/quality/castle-resident-art/
+          git add -- "$target" development/quality/castle-resident-art/captures.csv
+          python tools/build_development_gallery.py
+          git add -- development/gallery/index.json beckenburg-development-gallery.html
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'All resident screenshot PNGs already published unchanged'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "test(castle): publish actual renderer NPC source-vs-PSX screenshots"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort || true; exit 1; }
+            if git push origin HEAD:main; then
+              echo "Published $count in-game screenshots to development gallery"
+              exit 0
+            fi
+          done
+          echo 'Screenshot gallery push could not be verified' >&2
+          exit 1
       - name: Upload original-vs-128x224-vs-rebuilt comparisons and matching report
         if: always()
         uses: actions/upload-artifact@v4
