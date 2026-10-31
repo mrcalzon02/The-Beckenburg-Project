@@ -24,6 +24,16 @@ public final class PortalLightCellFilterTest {
     public static void main(String[] args){
         check(!PortalLightCellFilter.mayCross(-3,1,0,-2,0,0,1,0,0,0,1,false,false),
                 "same-side receiver cannot cross the door");
+        // The source's own cell is NOT automatically dependent on a
+        // distant doorway. This prevents a redundant resident-light rebuild.
+        check(!PortalLightCellFilter.mayCross(-3.2,1,0,-4,1,0,1,0,0,0,1,false,false),
+                "source cell entirely before a door must retain its occlusion revision");
+        check(!PortalLightCellFilter.mayCross(0,1,-3.2,0,1,-4,1,0,0,0,1,true,false),
+                "along-X source cell before a door must retain its occlusion revision");
+        check(PortalLightCellFilter.mayCross(-.1,1,0,-1,1,0,1,0,0,0,1,false,false),
+                "source cell near the door plane must remain conservatively invalidated");
+        check(PortalLightCellFilter.mayCross(0,1,-.1,0,1,-1,1,0,0,0,1,true,false),
+                "near-plane along-X source cell must remain conservative");
         check(!PortalLightCellFilter.mayCross(-3,1,0,2,0,12,1,0,0,0,1,false,false),
                 "off-axis receiver cannot cross the door");
         check(!PortalLightCellFilter.mayCross(-3,5,0,2,5,0,1,0,0,0,1,false,false),
@@ -56,6 +66,6 @@ public final class PortalLightCellFilterTest {
             }
         }
         check(crossingSamples>100,"insufficient real crossing rays in deterministic sample");
-        System.out.println("PASS portal-cell conservative filter: 8 directed cases and 3000 seeded cells; crossing rays="+crossingSamples);
+        System.out.println("PASS portal-cell conservative filter: 12 directed cases and 3000 seeded cells; crossing rays="+crossingSamples);
     }
 }
