@@ -32,6 +32,14 @@ public final class CastleLiveRepairVisualTest {
         view.x=14.5;view.z=8.5;view.eyeHeight=5.02;
         view.yaw=Math.PI;view.pitch=-.09;
         capture(view,map,"upper-library-new-lights");
+        // Direct inspection of imported leather-book atlases in the actual
+        // Castle renderer and lighting, not an unrelated concept/source image.
+        view.x=13.5;view.z=5.5;view.eyeHeight=1.52;
+        view.yaw=Math.PI;view.pitch=-.29;
+        capture(view,map,"castle-imported-books-reading-desk");
+        view.x=35.5;view.z=27.1;view.eyeHeight=1.54;
+        view.yaw=Math.PI;view.pitch=-.32;
+        capture(view,map,"castle-imported-books-archive-desk");
         view.x=13.5;view.z=26;view.eyeHeight=1.62;
         view.yaw=Math.PI;view.pitch=.18;
         capture(view,map,"castle-rooflines");
