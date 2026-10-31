@@ -67,6 +67,7 @@ public final class StitchedWorldEditor extends JPanel {
         addButton(commands,"IMPORT PNG",this::importTile);
         addButton(commands,"EXPORT PNG",this::exportTile);
         addButton(commands,"VERIFY SEAMS",this::verify);
+        addButton(commands,"ADAPTIVE TOPOLOGY",this::adaptiveTopology);
         add(commands,BorderLayout.NORTH);
         preview.setPreferredSize(new Dimension(520,500));
         preview.setBackground(new Color(25,30,35));
@@ -158,6 +159,14 @@ public final class StitchedWorldEditor extends JPanel {
             Files.copy(world.tilePath(x(),z()),target,StandardCopyOption.REPLACE_EXISTING);
             status.setText("Exported identical 16-bit source PNG to "+target);
         }catch(IOException failure){error("PNG export failed",failure);}
+    }
+    private void adaptiveTopology(){
+        if(!ready())return;
+        try{
+            AdaptiveTopologyEditor.open(frame,world,x(),z());
+        }catch(IOException|RuntimeException failure){
+            error("Adaptive topology editor failed to open",failure);
+        }
     }
     private void verify(){
         if(!ready())return;
