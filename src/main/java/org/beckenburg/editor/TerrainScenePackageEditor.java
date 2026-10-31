@@ -95,7 +95,7 @@ public final class TerrainScenePackageEditor extends JPanel {
         refresh("Scene package loaded");
     }
     private static int number(JSpinner s){return ((Number)s.getValue()).intValue();}
-    private TerrainEntranceMesh.Bounds bounds(){
+    private TerrainEntranceMesh.Bounds selectedBounds(){
         var s=world.settings();
         long x=(long)number(tileX)*s.tileCells()+number(cellX);
         long z=(long)number(tileZ)*s.tileCells()+number(cellZ);
@@ -119,7 +119,7 @@ public final class TerrainScenePackageEditor extends JPanel {
         final TerrainEntranceMesh.Bounds area;
         try{
             TerrainScenePackage.idForChunk(name);
-            area=bounds();
+            area=selectedBounds();
             if(scene.find(TerrainScenePackage.idForChunk(name))!=null
                 &&JOptionPane.showConfirmDialog(frame,
                     "Rebuild the previously published geometry for "+name+"?",
@@ -143,7 +143,7 @@ public final class TerrainScenePackageEditor extends JPanel {
     }
     private void preview(){
         final TerrainEntranceMesh.Bounds area;
-        try{area=bounds();}
+        try{area=selectedBounds();}
         catch(RuntimeException failure){error("Invalid mesh bounds",failure);return;}
         busy(true);status.setText("Generating selected 3D terrain patch...");
         new SwingWorker<TerrainEntranceMesh.Output,Void>(){
