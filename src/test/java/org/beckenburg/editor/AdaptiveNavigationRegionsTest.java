@@ -94,6 +94,21 @@ public final class AdaptiveNavigationRegionsTest {
             var blocked=graph(obstructed,hunter,broad,List.of());
             check(blocked.route("surface",3.5,6,"surface",8.5,6).isEmpty(),
                 "Full-height solid wall prevents a phantom route across region centres");
+            // A single steep source grid vertex lies between broad nav probes.
+            // Even without visual refinement, exact source triangles must force
+            // local navigation refinement instead of authorizing a flat shortcut.
+            var png=javax.imageio.ImageIO.read(source.tilePath(0,0).toFile());
+            png.getRaster().setSample(6,6,0,65535);
+            Path altered=tmp.resolve("steep-source.png");
+            check(javax.imageio.ImageIO.write(png,"png",altered.toFile()),
+                "16-bit test PNG encoder available");
+            source.importTile(0,0,altered,true);
+            var coarseBounds=new LayeredTerrainQueries.Rect(2,2,10,10);
+            check(normal.steepSourceWithin(coarseBounds,hunter.footprint()),
+                "Steep source vertex is detected even when broad probes might miss it");
+            var steep=graph(normal,hunter,broad,List.of());
+            check(steep.regions().size()>1,
+                "Coarsely rendered heightfield with a narrow ridge gains adaptive navigation detail");
             check(source.verifySeams().isEmpty(),
                 "Navigation never modifies original stitched height data");
             System.out.println("PASS adaptive nav: sparse regions, cutout refinement, locked layers, ability links, solid obstacles");
