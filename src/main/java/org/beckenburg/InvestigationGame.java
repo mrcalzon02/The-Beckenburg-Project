@@ -699,6 +699,9 @@ public final class InvestigationGame {
         private VanLiveScreens.Panel focusedVanPanel;
         private final SiteCaseFiles.Reader assignmentReader=new SiteCaseFiles.Reader(),storyReader=new SiteCaseFiles.Reader();
         private int useHeldUntilTick;
+        private final ToolBeltHud.Grip toolGrip=new ToolBeltHud.Grip();
+        private boolean toolPlacement;
+        private int placementRotation,lastMouseUseTick=-100000;
         private final VanTelemetry monitor=new VanTelemetry(20261017L);
         private int lastVanScreenTick=-100000,latestVanActivity;
         private boolean wasInsideVan;
@@ -791,6 +794,29 @@ public final class InvestigationGame {
             },()->opening==null&&!mapShown&&!journalShown&&!briefingShown
                 &&focusedVanPanel==null&&!helpVisible&&!chatInput.isVisible());
             addKeyListener(this);addMouseMotionListener(mouseLook);addMouseListener(mouseLook);
+            addMouseListener(new MouseAdapter(){
+                @Override public void mousePressed(MouseEvent event){
+                    if(opening!=null||mapShown||journalShown||briefingShown||helpVisible
+                            ||wheelOpen||chatInput.isVisible()||focusedVanPanel!=null)return;
+                    if(SwingUtilities.isLeftMouseButton(event)){
+                        if(toolPlacement){operateMouseTool();toolPlacement=false;return;}
+                        toolGrip.hold();
+                        if(loadout.equipped()!=EquipmentLoadout.Item.UV_LAMP)operateMouseTool();
+                    }else if(SwingUtilities.isRightMouseButton(event)
+                            &&loadout.equipped()==EquipmentLoadout.Item.UV_LAMP)
+                        operateMouseTool();
+                }
+                @Override public void mouseReleased(MouseEvent event){
+                    if(SwingUtilities.isLeftMouseButton(event))toolGrip.release();
+                }
+            });
+            addMouseWheelListener(event->{
+                if(toolPlacement){
+                    placementRotation=Math.floorMod(placementRotation+
+                        event.getWheelRotation()*15,360);
+                    event.consume();repaint();
+                }
+            });
             addFocusListener(mouseLook);addFocusListener(this);
             // Reproducible case seed, varies by session, no silent random site conversion.
             long roundSeed=campaignMode?campaignSeed:20261015L+ordinal;
@@ -956,6 +982,9 @@ public final class InvestigationGame {
                 p.z()>=VanStaging.FRONT && p.z()<VanStaging.REAR-.2;
         }
         private void frame(){
+            toolGrip.advance();
+            if(toolGrip.held()&&ToolBeltHud.repeatable(FieldEquipment.campaignId(loadout.equipped()))
+                    &&session.ticks()-lastMouseUseTick>=7)operateMouseTool();
             long diagnosticFrameStart=System.nanoTime();
             if(opening!=null){
                 if(opening.complete()){
@@ -1209,6 +1238,7 @@ public final class InvestigationGame {
                 down.add(key);repaint();return;
             }
             if(key>=KeyEvent.VK_1&&key<=KeyEvent.VK_4){
+                toolGrip.release();toolPlacement=false;
                 loadout.select(key-KeyEvent.VK_1);
                 GameSfx.play(LanSound.Cue.SELECT);
             }
@@ -1224,6 +1254,10 @@ public final class InvestigationGame {
             }
             if(key==KeyEvent.VK_P&&assistant!=null){
                 orderAssistantZone();
+            }
+            if(key==KeyEvent.VK_G
+                    &&ToolBeltHud.placeable(FieldEquipment.campaignId(loadout.equipped()))){
+                toolPlacement=!toolPlacement;toolGrip.release();placementRotation=0;
             }
             if(key==KeyEvent.VK_F){
                 scene.lamp=!scene.lamp;
@@ -1247,16 +1281,7 @@ public final class InvestigationGame {
                 }
             }
             if(key==KeyEvent.VK_E){if(briefingShown){briefingShown=false;repaint();return;}interactFocused();down.add(key);repaint();return;}
-            if(key==KeyEvent.VK_R){
-                EquipmentLoadout.Item device=loadout.equipped();
-                int usesBefore=loadout.usesLeft(device);
-                boolean accepted=session.useEquipment(loadout,scene.x,feetY(),scene.z,scene.yaw);
-                int usesAfter=loadout.usesLeft(device);
-                LanSound.Cue cue=AudioActionRouting.soloDevice(device,
-                    accepted,usesBefore,usesAfter,session.uvPowered());
-                if(cue!=LanSound.Cue.UI_REJECT)useHeldUntilTick=session.ticks()+4;
-                GameSfx.play(cue);
-            }
+            if(key==KeyEvent.VK_R)operateMouseTool();
             if(key==KeyEvent.VK_C){
                 boolean placed=session.placeWard(scene.x,feetY(),scene.z);
                 GameSfx.play(placed?LanSound.Cue.WARD:LanSound.Cue.UI_REJECT);
@@ -1300,6 +1325,17 @@ public final class InvestigationGame {
                 showVanNotice(assistant.report());
             }
             last=System.nanoTime();timer.start();requestFocusInWindow();
+        }
+        private void operateMouseTool(){
+            EquipmentLoadout.Item device=loadout.equipped();
+            if(toolGrip.held()&&lastMouseUseTick==session.ticks())return;
+            lastMouseUseTick=session.ticks();
+            int before=loadout.usesLeft(device);
+            boolean accepted=session.useEquipment(loadout,scene.x,feetY(),scene.z,scene.yaw);
+            LanSound.Cue cue=AudioActionRouting.soloDevice(device,accepted,before,
+                loadout.usesLeft(device),session.uvPowered());
+            if(cue!=LanSound.Cue.UI_REJECT)useHeldUntilTick=session.ticks()+4;
+            GameSfx.play(cue);
         }
         private InteractionFocus.Target focusTarget(){
             return InteractionFocus.pick(map,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,!session.hidden()&&session.health()>0,HunterPosture.eye(session.crouched())),VanRackStock.solo(profile,loadout));
@@ -1446,7 +1482,7 @@ public final class InvestigationGame {
             repaint();
         }
         @Override public void focusGained(FocusEvent e){last=System.nanoTime();}
-        @Override public void focusLost(FocusEvent e){interactionHeld=false;down.clear();mouseLook.release();wheelOpen=false;}
+        @Override public void focusLost(FocusEvent e){interactionHeld=false;toolGrip.release();toolPlacement=false;down.clear();mouseLook.release();wheelOpen=false;}
         @Override protected void paintComponent(Graphics graphics){super.paintComponent(graphics);
             Graphics2D g=(Graphics2D)graphics.create();
             try{
@@ -1466,7 +1502,8 @@ public final class InvestigationGame {
                 }
                 GraphicsOptions.current().draw(g,scene.image(),width,stageH);
                 if(map.clutter().held(0)<0)HeldToolView.draw(g,width,stageH,loadout.equipped().name(),session.ticks(),
-                    session.ticks()<=useHeldUntilTick,scene.lamp,session.deviceReading(loadout.equipped().name()));
+                    toolGrip.held(),scene.lamp,session.deviceReading(loadout.equipped().name()),
+                    EquipmentTiers.Tier.I,toolGrip.amount());
                 g.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));
                 g.setColor(new Color(224,218,197));g.drawString(map.clutter().held(0)>=0?"F5 DROP / F12 THROW / ] EXAMINE":"",12,stageH-124);
                 g.setColor(new Color(14,19,25,222));
@@ -1503,16 +1540,12 @@ public final class InvestigationGame {
                     g.setColor(new Color(238,196,109));
                     g.drawString("CALLOUT: "+lastPing.phrase().spoken+" ["+map.roomName(lastPing.zone())+"]",23,139);
                 }
-                int gearY=stageH-112;
-                g.setColor(new Color(13,20,27,222));g.fillRoundRect(12,gearY,346,100,9,9);
-                g.setColor(new Color(236,206,155));
-                g.drawString("EQUIPMENT / 1-4 SELECT / R USE / F1 HELP",23,gearY+20);
-                for(int i=0;i<EquipmentLoadout.SLOTS;i++){
-                    String item=loadout.at(i).label.toUpperCase();
-                    if(item.length()>17)item=item.substring(0,14)+"...";
-                    g.setColor(i==loadout.activeSlot()?new Color(166,238,194):new Color(194,207,211));
-                    g.drawString((i+1)+"  "+item,23+(i%2)*167,gearY+45+(i/2)*27);
-                }
+                String[] toolBelt=new String[EquipmentLoadout.SLOTS];
+                for(int i=0;i<toolBelt.length;i++)toolBelt[i]=FieldEquipment.campaignId(loadout.at(i));
+                ToolBeltHud.draw(g,width,stageH,toolBelt,loadout.activeSlot(),
+                    session.deviceReading(loadout.equipped().name()),toolGrip.held(),
+                    loadout.equipped()==EquipmentLoadout.Item.UV_LAMP&&session.uvPowered(),
+                    toolPlacement,placementRotation);
                 g.setColor(new Color(13,19,25,215));g.fillRoundRect(Math.max(12,width-126),12,114,30,8,8);
                 g.setColor(new Color(225,219,200));g.drawString("ESC PAUSE",Math.max(23,width-116),32);
                 if(!journalShown&&!mapShown&&!briefingShown&&focusedVanPanel==null&&!wheelOpen&&!helpVisible)InteractionFocus.draw(g,width,stageH,focusTarget());
