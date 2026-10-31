@@ -156,7 +156,7 @@ public class EquipmentCatalogPanel extends JPanel {
         String copy=offer.medicine()!=null?"Restores "+FieldSupplies.Tier.values()[offer.tier().ordinal()].restore(offer.medicine())+" "+offer.medicine().name().toLowerCase(Locale.ROOT):
             EquipmentStoreDescriptions.describe(offer.id(),offer.tier()).details();
         details.setText(offer.title()+" / TIER "+(offer.tier().ordinal()+1)+"\n"+state(offer)+" / £"+offer.price()+"\n\n"+copy+
-            "\n\nYOUR LOADOUT\n"+String.join("\n",Arrays.stream(carried).map(id->id==null?"Awaiting inventory":EquipmentRegistry.get(id).name()).toList())+
+            "\n\nYOUR LOADOUT\n"+String.join("\n",Arrays.stream(carried).map(id->id==null?"Awaiting inventory":FieldEquipment.EMPTY.equals(id)?"Empty slot":EquipmentRegistry.get(id).name()).toList())+
             (campaign?"\n\nCampaign inventory belongs to the host. Mission guests keep their own saves.":"\n\nMultiplayer contract inventory. Career earnings are saved separately.")+
             (!offer.functional()?"\n\nThis item is listed here but is not available for purchase until its field behavior is implemented.":""));
         details.setCaretPosition(0);offers.repaint();

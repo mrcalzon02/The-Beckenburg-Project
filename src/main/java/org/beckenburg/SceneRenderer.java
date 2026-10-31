@@ -190,6 +190,7 @@ public final class SceneRenderer {
     public GhostWriting.Style writingBookStyle;
     public final java.util.Map<Integer,VanTripods.Stand> tripods=new java.util.HashMap<>();
     public final java.util.Map<String,LanPortableLights.Light> portablePositions=new java.util.HashMap<>();
+    public final java.util.Map<Long,LanDroppedGear.Drop> droppedGear=new java.util.HashMap<>();
     // Local-only placement is handed over by InvestigationSession, not guessed
     // by the renderer. Network sessions use the separate host marks instead.
     private InvestigationSession.PlacedSalt soloPlacedSalt;
@@ -1190,6 +1191,11 @@ public final class SceneRenderer {
         for(LanPortableLights.Light light:portablePositions.values())
             if(Math.hypot(light.x()-x,light.z()-z)<13.5)
                 imported(out,light.mesh(),light.x(),light.y()+.035,light.z(),1.0,0);
+        // Replicated dropped instruments use their actual approved 3D source mesh.
+        for(var drop:droppedGear.values())if(Math.hypot(drop.x()-x,drop.z()-z)<13.5){
+            String mesh=EquipmentModelCatalog.model(drop.tool(),drop.tier());
+            imported(out,mesh,drop.x(),drop.y()-castleBounds(mesh)[1]+.012,drop.z(),1.0,0);
+        }
         // Tripods are real placed supports, never decor dropped by the map loader.
         for(VanTripods.Stand stand:tripods.values())
             if(Math.hypot(stand.x()-x,stand.z()-z)<13.5)

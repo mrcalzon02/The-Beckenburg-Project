@@ -12,6 +12,7 @@ import java.util.Objects;
  */
 public final class FieldEquipment {
     public static final int SLOTS=4;
+    public static final String EMPTY="EMPTY";
     private static final String[] START={"EMF_READER","THERMOMETER",
         "SPIRIT_BOX","UV_LIGHT"};
     private static final java.util.Set<String> ENABLED=java.util.Set.of(
@@ -79,6 +80,22 @@ public final class FieldEquipment {
         current=slot;
     }
     public String active(){return slots[current];}
+    /** Host-only handoff: the dropped device cannot remain in the belt. */
+    void dropActive(String id){
+        if(!"EMF_READER".equals(id)||!id.equals(active()))
+            throw new IllegalArgumentException("only the carried EMF reader can be dropped in this slice");
+        slots[current]=EMPTY;
+    }
+    void restoreDropped(String id,int originalSlot){
+        if(!"EMF_READER".equals(id)||owned(id)==null)
+            throw new IllegalArgumentException("unknown dropped equipment");
+        for(String item:slots)if(item.equals(id))
+            throw new IllegalArgumentException("equipment already carried");
+        int target=originalSlot>=0&&originalSlot<SLOTS&&slots[originalSlot].equals(EMPTY)?originalSlot:-1;
+        if(target<0)for(int i=0;i<SLOTS;i++)if(slots[i].equals(EMPTY)){target=i;break;}
+        if(target<0)throw new IllegalArgumentException("empty belt slot required to retrieve equipment");
+        slots[target]=id;current=target;
+    }
     public String at(int slot){
         if(slot<0||slot>=SLOTS)throw new IllegalArgumentException("invalid gear slot");
         return slots[slot];
@@ -213,7 +230,8 @@ public final class FieldEquipment {
     public String frame(int credits){
         StringBuilder b=new StringBuilder("GEARSTATE|").append(credits)
             .append('|').append(current);
-        for(String id:slots)b.append('|').append(id).append(':').append(owned(id));
+        for(String id:slots)b.append('|').append(id).append(':')
+            .append(id.equals(EMPTY)?"NONE":owned(id));
         return b.toString();
     }
     /** Every outbound packet must honor LanProtocol's ten-field limit. */

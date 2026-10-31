@@ -173,6 +173,7 @@ public final class LanHost implements AutoCloseable {
     private final VanTelemetry monitor=new VanTelemetry(20261017L);
     private final FieldSupplies[] supplies=new FieldSupplies[HUNTERS];
     private final FieldEquipment[] equipment=new FieldEquipment[HUNTERS];
+    private final LanDroppedGear droppedGear=new LanDroppedGear();
     private final FieldSoundRecorder[] recorders=new FieldSoundRecorder[HUNTERS];
     private final int[] lastRecordingPlayback={-10000,-10000,-10000,-10000,-10000,-10000};
     private final int[] lastHunterSound={-10000,-10000,-10000,-10000,-10000,-10000};
@@ -746,6 +747,8 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,"TRIPOD|RESET");
                     for(VanTripods.Stand stand:tripods.all())reply(peer,stand.frame());
                     for(String portablePacket:portableLights.snapshot())reply(peer,portablePacket);
+                    reply(peer,"GEARDROP|RESET");
+                    for(var dropped:droppedGear.snapshot())reply(peer,dropped.frame());
                     reply(peer,supplies[peer.slot].frame());
                     sendEquipmentState(peer);
                     reply(peer,"PARTY|"+partyMembers()+"|"+partyMembers());
@@ -846,7 +849,7 @@ public final class LanHost implements AutoCloseable {
                         throw new IllegalArgumentException("interaction heading changed");
                     var observer=new LooseClutter.Observer(peer.slot,b.x(),b.y(),b.z(),yaw,pitch,!world.hidden(peer.slot),HunterPosture.eye(world.crouched(peer.slot)));
                     boolean[] present=new boolean[HUNTERS];for(int n=0;n<HUNTERS;n++)present[n]=seats[n]!=null||reserved[n]!=null;
-                    var target=InteractionFocus.pick(map,observer,VanRackStock.aggregate(equipment,supplies,counters,present));
+                    var target=InteractionFocus.pick(map,observer,VanRackStock.aggregate(equipment,supplies,counters,present,droppedGear.worldKeys()));
                     if(target==null||!target.kind().name().equals(p.get(1))||!target.id().equals(p.get(2)))
                         throw new IllegalArgumentException("look directly at the visible object within reach");
                     switch(target.kind()){
@@ -856,6 +859,7 @@ public final class LanHost implements AutoCloseable {
                             String[] unit=target.id().split(":");String id=unit[0];var tier=EquipmentTiers.Tier.valueOf(unit[1]);
                             if(FieldEquipment.functional(id)){
                                 if(equipment[peer.slot].owned(id)!=tier)throw new IllegalArgumentException("this tier belongs to another investigator");
+                                if(droppedGear.heldInWorld(peer.slot,id))throw new IllegalArgumentException("instrument is physically dropped in the world");
                                 equipment[peer.slot].equip(equipment[peer.slot].activeSlot(),id);sendEquipmentState(peer);
                             }else if(id.equals("HEALTH_SUPPLIES")||id.equals("SANITY_MEDICATION")){
                                 var kind=id.equals("HEALTH_SUPPLIES")?FieldSupplies.Kind.HEALTH:FieldSupplies.Kind.SANITY;
@@ -1041,6 +1045,8 @@ public final class LanHost implements AutoCloseable {
                         throw new IllegalArgumentException("recharge at the actual van equipment rack");
                     if(cameras.at(peer.slot)!=null)
                         throw new IllegalArgumentException("retrieve deployed camera before recharging");
+                    if(droppedGear.hasOwner(peer.slot))
+                        throw new IllegalArgumentException("retrieve dropped equipment before rack service");
                     if(recorders[peer.slot].recording())stopRecording(peer.slot);
                     equipment[peer.slot].rechargeAtVan();
                     reply(peer,"ACCEPT|GEARREFILL|FILM AND BATTERIES RESTORED");
@@ -1060,6 +1066,8 @@ public final class LanHost implements AutoCloseable {
                     if(id.equals("SOUND_RECORDER")&&recorders[peer.slot].recording())
                         throw new IllegalArgumentException("stop recording before upgrading hardware");
                     if(campaignProfile!=null)throw new IllegalArgumentException("Campaign gear is issued; buy supplies at the host campaign depot");
+                    if(droppedGear.heldInWorld(peer.slot,id))
+                        throw new IllegalArgumentException("retrieve dropped instrument before upgrading");
                     int cost=equipment[peer.slot].upgradePrice(id,tier);
                     if(!supplies[peer.slot].spend(cost))
                         throw new IllegalArgumentException("insufficient credits for instrument");
@@ -1079,6 +1087,8 @@ public final class LanHost implements AutoCloseable {
                     if(running&&map.van().stationAt(world.body(peer.slot).x(),world.body(peer.slot).z())
                             !=VanStaging.Station.EQUIPMENT)
                         throw new IllegalArgumentException("change field equipment at the van rack");
+                    if(droppedGear.heldInWorld(peer.slot,id))
+                        throw new IllegalArgumentException("instrument is dropped in the world, not on the rack");
                     equipment[peer.slot].equip(slot,id);
                     reply(peer,"ACCEPT|GEAREQUIP|"+slot+"|"+id);
                     actorCue(peer.slot,LanSound.Cue.PICKUP);
@@ -1093,6 +1103,23 @@ public final class LanHost implements AutoCloseable {
                     equipment[peer.slot].selectSlot(slot);
                     actorCue(peer.slot,LanSound.Cue.SELECT);
                     sendEquipmentState(peer);
+                }
+                case "GEARDROP" -> {
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
+                        throw new IllegalArgumentException("physical hunter required to drop equipment");
+                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(1)));ensureActiveHunter(peer);
+                    var item=droppedGear.drop(equipment[peer.slot],peer.slot,world.body(peer.slot),map);
+                    notifyHunters(item.frame());reply(peer,"ACCEPT|GEARDROP|"+item.id());
+                    sendEquipmentState(peer);broadcastRack();actorCue(peer.slot,LanSound.Cue.DROP);
+                }
+                case "GEARPICK" -> {
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=3)
+                        throw new IllegalArgumentException("physical hunter required to pick up equipment");
+                    long id=LanProtocol.integer(p.get(1),1,HUNTERS);
+                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(2)));ensureActiveHunter(peer);
+                    var item=droppedGear.pickup(equipment[peer.slot],peer.slot,id,world.body(peer.slot),map);
+                    notifyHunters("GEARDROP|TAKE|"+item.id());reply(peer,"ACCEPT|GEARPICK|"+item.id());
+                    sendEquipmentState(peer);broadcastRack();actorCue(peer.slot,LanSound.Cue.PICKUP);
                 }
                 case "RECPLAY" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
@@ -2906,7 +2933,7 @@ public final class LanHost implements AutoCloseable {
     private final Map<Peer,String> rackSent=new WeakHashMap<>();
     private void broadcastRack(){
         boolean[] present=new boolean[HUNTERS];for(int i=0;i<HUNTERS;i++)present[i]=seats[i]!=null||reserved[i]!=null;
-        var stock=VanRackStock.aggregate(equipment,supplies,counters,present);String key=stock.toString();
+        var stock=VanRackStock.aggregate(equipment,supplies,counters,present,droppedGear.worldKeys());String key=stock.toString();
         for(int i=0;i<HUNTERS;i++){Peer peer=seats[i];if(peer!=null&&peer.worldMode&&!key.equals(rackSent.get(peer))){
             for(String frame:VanRackStock.frames(stock,tick))reply(peer,frame);rackSent.put(peer,key);
         }}

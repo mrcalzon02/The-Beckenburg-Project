@@ -46,6 +46,10 @@ jobs:
         working-directory: .
         run: build.cmd e2e
 
+      - name: Verify authoritative dropped gear, empty slots and TCP pickup
+        shell: cmd
+        run: java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanDroppedGearIntegrationTest
+
       - name: Diagnose full regression manifest (advisory; not a release gate)
         continue-on-error: true
         shell: cmd

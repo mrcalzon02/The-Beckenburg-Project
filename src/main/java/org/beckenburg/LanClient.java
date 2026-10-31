@@ -210,6 +210,12 @@ public final class LanClient implements AutoCloseable {
             throw new IllegalArgumentException("clockwiseDegrees must be 0..359");
         send("GEARUSE|"+(++sequence)+"|"+clockwiseDegrees);
     }
+    /** Host-owned physical gear, not a visual-only clutter token. */
+    public synchronized void dropHeldEquipment()throws IOException{send("GEARDROP|"+(++sequence));}
+    public synchronized void pickupDroppedEquipment(long id)throws IOException{
+        if(id<1||id>6)throw new IllegalArgumentException("invalid dropped gear identity");
+        send("GEARPICK|"+id+"|"+(++sequence));
+    }
     /** Deploy or retrieve a portable ground light at the real hunter position. */
     public synchronized void placeHeldEquipment()throws IOException{
         send("GEARPLACE|"+(++sequence));

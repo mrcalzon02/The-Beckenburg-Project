@@ -23,12 +23,16 @@ public final class VanRackStock {
         if(count<=0)return;String key=id+":"+tier;Entry old=result.get(key);result.put(key,new Entry(id,tier,count+(old==null?0:old.count)));
     }
     public static List<Entry> aggregate(FieldEquipment[] gear,FieldSupplies[] medicine,HunterCounters counters,boolean[] present){
+        return aggregate(gear,medicine,counters,present,Set.of());
+    }
+    /** Field-dropped equipment is not simultaneously on a van shelf. */
+    public static List<Entry> aggregate(FieldEquipment[] gear,FieldSupplies[] medicine,HunterCounters counters,boolean[] present,Set<String> worldDropped){
         Map<String,Entry> result=new TreeMap<>();
         for(int seat=0;seat<present.length;seat++)if(present[seat]){
             var g=gear[seat];Set<String> carried=new HashSet<>();for(int slot=0;slot<FieldEquipment.SLOTS;slot++)carried.add(g.at(slot));
             for(String id:FieldEquipment.workingTools())if(
                     EquipmentRegistry.get(id).origin()!=EquipmentRegistry.Origin.TRUCK
-                    &&!carried.contains(id)&&g.owned(id)!=null
+                    &&!carried.contains(id)&&!worldDropped.contains(seat+":"+id)&&g.owned(id)!=null
                     &&!(Set.of("INCENSE","CHALK_SIGIL_KIT").contains(id)&&g.remaining(id)==0))add(result,id,g.owned(id),1);
             for(var kind:FieldSupplies.Kind.values())for(var tier:FieldSupplies.Tier.values())
                 add(result,kind==FieldSupplies.Kind.HEALTH?"HEALTH_SUPPLIES":"SANITY_MEDICATION",EquipmentTiers.Tier.values()[tier.ordinal()],medicine[seat].stock(kind,tier));

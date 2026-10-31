@@ -70,7 +70,7 @@ public final class ToolBeltHud {
             String id=normal(slots[active]);
             String actions=placing?"LMB PLACE  WHEEL ROTATE  G CANCEL":
                 "LMB USE"+(switchable(id)?"  RMB POWER":"")+
-                (placeable(id)?"  G PLACE":"")+"  E INTERACT";
+                (placeable(id)?"  G PLACE":id.equals("EMF_READER")?"  G DROP":"")+"  E INTERACT";
             int barW=Math.min(width-24,Math.max(310,total+22));
             g.setColor(new Color(8,17,23,228));
             g.fillRoundRect((width-barW)/2,y-34,barW,29,7,7);
@@ -87,7 +87,8 @@ public final class ToolBeltHud {
                 g.setStroke(new BasicStroke(i==active?3f:1f));
                 g.drawRoundRect(sx+1,y+1,cell-2,cell-2,7,7);
                 String tool=normal(slots[i]);
-                ImageIcon icon=ItemIconAtlas.get(tool.toLowerCase(Locale.ROOT),Math.max(24,cell-18));
+                ImageIcon icon=tool.equals(FieldEquipment.EMPTY)?null:
+                    ItemIconAtlas.get(tool.toLowerCase(Locale.ROOT),Math.max(24,cell-18));
                 if(icon!=null)icon.paintIcon(null,g,sx+(cell-icon.getIconWidth())/2,y+6);
                 else{
                     String text=tool.replace('_',' ');

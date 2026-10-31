@@ -276,7 +276,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 renderer.eyeHeight=map.floorY(HouseMap.EXTRACTION_ROOM)+1.62;
                 rackSnapshot.reset();
                 buildingAudio.setMap(map);audio.clearFixtures();
-                peers.clear();videoCameras.clear();renderer.videoCameras.clear();renderer.dotsPositions.clear();apparition=null;
+                peers.clear();videoCameras.clear();renderer.videoCameras.clear();renderer.dotsPositions.clear();renderer.droppedGear.clear();apparition=null;
                 pairedGhostBodies.clear();pairedGhostTicks.clear();
                 cameraGhostBodies.clear();cameraGhostTicks.clear();hauntings.clear();
                 ghostAppearance=GhostManifestationVisual.UNREVEALED;
@@ -502,17 +502,29 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.size()==8&&p.get(0).equals("SUPPLY")){
                 fieldCredits=LanProtocol.integer(p.get(1),0,100000);
                 for(int i=0;i<6;i++)medicine[i]=LanProtocol.integer(p.get(i+2),0,4);
+            }else if(p.get(0).equals("GEARDROP")){
+                if(p.size()==2&&p.get(1).equals("RESET"))renderer.droppedGear.clear();
+                else if(p.size()==3&&p.get(1).equals("TAKE"))
+                    renderer.droppedGear.remove((long)LanProtocol.integer(p.get(2),1,6));
+                else if(p.size()==11&&p.get(1).equals("ITEM")){
+                    var item=LanDroppedGear.Drop.decode(p);renderer.droppedGear.put(item.id(),item);
+                }else throw new IllegalArgumentException("invalid physical gear packet");
             }else if(p.size()==7&&p.get(0).equals("GEARSTATE")){
                 fieldCredits=LanProtocol.integer(p.get(1),0,100000);
                 activeGearSlot=LanProtocol.integer(p.get(2),0,FieldEquipment.SLOTS-1);
                 for(int i=0;i<FieldEquipment.SLOTS;i++){
                     String[] parts=p.get(i+3).split(":",-1);
-                    if(parts.length!=2||!FieldEquipment.functional(parts[0]))
+                    if(parts.length!=2||(!FieldEquipment.functional(parts[0])
+                            &&!FieldEquipment.EMPTY.equals(parts[0])))
                         throw new IllegalArgumentException("invalid owned equipment");
                     equippedGear[i]=parts[0];
-                    equipmentTier.put(parts[0],EquipmentTiers.Tier.valueOf(parts[1]));
+                    if(FieldEquipment.EMPTY.equals(parts[0])){
+                        if(!"NONE".equals(parts[1]))throw new IllegalArgumentException("invalid empty slot tier");
+                    }else equipmentTier.put(parts[0],EquipmentTiers.Tier.valueOf(parts[1]));
                 }
-                feedback="EQUIPPED: "+equippedGear[activeGearSlot]+" / "+equipmentTier.get(equippedGear[activeGearSlot]);
+                feedback=FieldEquipment.EMPTY.equals(equippedGear[activeGearSlot])
+                    ?"EMPTY BELT SLOT - E TO PICK UP NEARBY GEAR"
+                    :"EQUIPPED: "+equippedGear[activeGearSlot]+" / "+equipmentTier.get(equippedGear[activeGearSlot]);
             }else if(p.get(0).equals("GEAROWNED")){
                 for(int i=1;i<p.size();i++){
                     String[] parts=p.get(i).split(":",-1);
@@ -1178,6 +1190,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             videoRenderer.tripods.putAll(renderer.tripods);
             videoRenderer.portablePositions.clear();
             videoRenderer.portablePositions.putAll(renderer.portablePositions);
+            videoRenderer.droppedGear.clear();videoRenderer.droppedGear.putAll(renderer.droppedGear);
             videoRenderer.writingBookX=renderer.writingBookX;
             videoRenderer.writingBookY=renderer.writingBookY;
             videoRenderer.writingBookZ=renderer.writingBookZ;
@@ -1281,7 +1294,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             String held=equippedGear[activeGearSlot];
             String visual=held.equals("EMF_READER")?"EMF":held;
             boolean placedPortable=renderer.portablePositions.containsKey(seat+":"+held);
-            if(map.clutter().held(seat)<0&&!placedPortable)HeldToolView.draw(g,getWidth(),h,visual,tick,
+            if(map.clutter().held(seat)<0&&!placedPortable&&!FieldEquipment.EMPTY.equals(held))HeldToolView.draw(g,getWidth(),h,visual,tick,
                 toolGrip.held(),renderer.lamp,deviceReading.get(held),
                 equipmentTier.getOrDefault(held,EquipmentTiers.Tier.I),toolGrip.amount());
             drawHunterNameplates(g,h);
@@ -1305,7 +1318,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             g.drawString("CASE "+casefile.size()+" READINGS / "+hardEvidenceLevel.name()+
                 " / GUESS "+selectedGuess,24,66);
             g.setColor(new Color(225,212,178));g.drawString("+",width/2,h/2);
-            if(!casefileOpen&&interfaceOpen.isEmpty()&&!helpVisible)InteractionFocus.draw(g,width,h,focusTarget());
+            if(!casefileOpen&&interfaceOpen.isEmpty()&&!helpVisible){
+                var nearby=aimedDroppedGear();
+                if(nearby!=null){g.setColor(new Color(169,238,184));
+                    g.drawString("E PICK UP "+nearby.tool().replace('_',' '),width/2+14,h/2-8);}
+                else InteractionFocus.draw(g,width,h,focusTarget());
+            }
             String alert=null;Color alertColor=new Color(216,196,216);
             if(health==0){alert="INCAPACITATED / SPECTATE UNTIL RESULT";alertColor=new Color(245,154,159);}
             else if(frenzyPhase==GhostFrenzy.Phase.WARNING){
@@ -1342,7 +1360,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 g.setColor(new Color(236,207,157));g.drawString("HUNTER CONTROLS  /  F1 CLOSE",hx+18,hy+29);
                 g.setColor(new Color(218,225,221));
                 String[] hints={"WASD move / Ctrl crouch  /  SHIFT sprint  /  CLICK mouse-look",
-                    "1-4 belt / HOLD LMB use / RMB power / G place / wheel rotate",
+                    "1-4 belt / HOLD LMB use / RMB power / G place or EMF drop",
                     "Z cross / G ward / H salt / 5-6 class abilities / K medicine",
                     "J casefile  /  TAB journal  /  I guess  /  P submit",
                     "ENTER chat  /  F2 radio  /  F3-F4 voice  /  F7 voice options",
@@ -1713,7 +1731,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }
             case KeyEvent.VK_ESCAPE -> {keys.clear();releaseVoice();mouseLook.release();InGamePauseMenu.execute(this);}
             case KeyEvent.VK_E -> {
-                var target=focusTarget();if(target!=null)sendAction("interaction",()->client.interact(target,renderer.yaw,renderer.pitch));
+                if(!interfaceOpen.isEmpty()||helpVisible||opening!=null||chatInput.isVisible())return;
+                var dropped=aimedDroppedGear();
+                if(dropped!=null)sendAction("pick up gear",()->client.pickupDroppedEquipment(dropped.id()));
+                else{var target=focusTarget();if(target!=null)sendAction("interaction",()->client.interact(target,renderer.yaw,renderer.pitch));}
             }
             case KeyEvent.VK_1 -> {
                 clearPlacementSelection();activeGearSlot=0;
@@ -1746,7 +1767,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }
             case KeyEvent.VK_Z -> sendAction("cross",()->client.deploy(HunterCounters.Kind.CROSS));
             case KeyEvent.VK_G -> {
-                if(ToolBeltHud.placeable(equippedGear[activeGearSlot])){
+                if(equippedGear[activeGearSlot].equals("EMF_READER"))
+                    sendAction("drop EMF reader",client::dropHeldEquipment);
+                else if(ToolBeltHud.placeable(equippedGear[activeGearSlot])){
                     if(!placementPending){
                         toolPlacement=!toolPlacement;toolGrip.release();placementRotation=0;
                     }
@@ -1796,7 +1819,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     }
     private void useMouseTool(){
         String held=equippedGear[activeGearSlot];
-        if(ToolBeltHud.placeable(held))return;
+        if(ToolBeltHud.placeable(held)||FieldEquipment.EMPTY.equals(held))return;
         if(lastRepeatTick==tick)return;
         lastRepeatTick=tick;
         if(ToolBeltHud.switchable(held)){
@@ -1822,6 +1845,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             feedback="PLACEMENT NOT SENT: "+error.getMessage();
         }
         repaint();
+    }
+    private LanDroppedGear.Drop aimedDroppedGear(){
+        return LanDroppedGear.aimed(renderer.droppedGear.values(),seat,map,
+            renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw);
     }
     private InteractionFocus.Target focusTarget(){
         return InteractionFocus.pick(map,new LooseClutter.Observer(seat,renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z,renderer.yaw,renderer.pitch,health>0&&!concealed,eyeOffset()),rackSnapshot.stock());
