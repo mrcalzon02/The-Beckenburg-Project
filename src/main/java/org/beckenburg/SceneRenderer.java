@@ -426,6 +426,11 @@ public final class SceneRenderer {
                 v[0].u(),v[0].v(),v[1].u(),v[1].v(),v[2].u(),v[2].v()));
         }
     }
+    /** Approved physical deployed D.O.T.S. model selected from the real tier catalog. */
+    static String dotsDeployedMesh(EquipmentTiers.Tier tier){
+        return EquipmentModelCatalog.variant("DOTS_PROJECTOR",tier,"deployed");
+    }
+
     /** Original mesh triangles retain source UVs and material indices. Their
      * source pivots are NOT assumed to be at the wall/ceiling attachment point.
      * Anchoring to measured source bounds prevents half-embedded floating GLBs.
@@ -1227,7 +1232,12 @@ public final class SceneRenderer {
         // Projected light is a physical effect, not an evidence qualification check.
         for(LanDotsProjectors.Placement placement:dotsPositions.values()){
             if(Math.hypot(placement.x()-x,placement.z()-z)>13.5)continue;
-            imported(out,"vape_mp_1",placement.x(),placement.y()+.10,placement.z(),2.0,-Math.toRadians(placement.heading()));
+            String mesh=dotsDeployedMesh(placement.tier());
+            // Rest the actual approved deployed GLB on the measured floor.
+            // The old "vape_mp_1" placeholder was not projector hardware.
+            double floor=map.groundHeight(placement.x(),placement.z(),placement.room());
+            imported(out,mesh,placement.x(),floor-castleBounds(mesh)[1]+.015,
+                placement.z(),1.0,-Math.toRadians(placement.heading()));
         }
         for(var station:sensorPositions.values())if(station.tool().equals("LASER_GRID")&&laserPowered.getOrDefault(station.owner(),true)){
             var contact=laserContacts.get(station.id());if(contact!=null&&(roomLightTick<contact.tick()||roomLightTick-contact.tick()>3))contact=null;
