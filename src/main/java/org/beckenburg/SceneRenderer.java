@@ -1108,12 +1108,16 @@ public final class SceneRenderer {
                 texturedQuad(out,edge[0],edge[1],new Point(edge[1].x,-.65,edge[1].z),new Point(edge[0].x,-.65,edge[0].z),MaterialAtlas.STONE,0,0,length,0,length,.6,0,.6,0xffffff);
             uv+=length*.48;
         }
-        // Static roadside PSX van and original textured cars. These are pure
-        // triangles in the cached exterior: NO VanStaging, equipment, services,
-        // extraction commands, multiplayer state or interactive cargo doors.
-        for(var parked:CastleSurroundings.parkedVehicles())
-            castleProp(out,parked.mesh(),parked.x(),parked.z()<34?0:CastleSurroundings.groundHeight(parked.x(),parked.z()),parked.z(),
-                parked.scale(),parked.yaw());
+        // The courtyard and investigations draw the *same fully fitted van*
+        // through the reusable VanStaging module, with the original imported
+        // textured exterior. Parked passenger cars remain separate GLB props.
+        vanModel(out,CastleSurroundings.courtyardVan(),java.util.Set.of(),null);
+        for(var parked:CastleSurroundings.parkedVehicles()){
+            if(parked.mesh().equals("ggbot_car08_van_shell"))continue;
+            castleProp(out,parked.mesh(),parked.x(),
+                parked.z()<34?0:CastleSurroundings.groundHeight(parked.x(),parked.z()),
+                parked.z(),parked.scale(),parked.yaw());
+        }
         castleEnvironment=List.copyOf(out);return castleEnvironment;
     }
 
