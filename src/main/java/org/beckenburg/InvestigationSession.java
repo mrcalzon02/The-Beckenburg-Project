@@ -161,7 +161,10 @@ public final class InvestigationSession {
         }
         hidden=true;hidingAt=new LevelDefinition.Vec(x,y,z);log("HIDDEN IN CUPBOARD / L to emerge. Moving exposes you.");return true;
     }
-    private String message = "Inspect the haunting, record instrument measurements, prepare a ward, and attempt the rite.";
+    // HUD messages are short-lived responses to genuine player actions or danger.
+    // Ambient ghost effects are represented by sounds, lighting and world geometry.
+    private String message = "";
+    private int messageTick=-100000;
 
     public InvestigationSession(HouseMap map, Role role, long seed) {
         this(map,role,seed,1);
@@ -257,10 +260,13 @@ public final class InvestigationSession {
     }
     public Outcome outcome() { return outcome; }
     public String message() { return message; }
+    /** Do not leave text pinned over the view or narrate every ambient ghost action. */
+    public String hudMessage() {return ticks-messageTick<=35?message:"";}
     public List<String> journal() { return Collections.unmodifiableList(journal); }
     public String statusLine() { return (hidden?"HIDDEN  ":"")+(crouched?"CROUCHED  ":"")+"INJURY " + (maxHealth-health) + "  FEAR " + stress + "  MEASURED TOOLS " + measuredTools.size() + "  WARDS " + wards; }
     private void log(String text) {
         message = text;
+        messageTick=ticks;
         journal.add(String.format("%02d:%02d  %s",ticks/600,(ticks/10)%60,text));
         if(journal.size()>64) journal.remove(2);
     }
@@ -297,7 +303,7 @@ public final class InvestigationSession {
         int feed=GhostTraits.passiveFear(ghost.type(),ticks,playerRoom==ghost.room()?1:0);
         if(feed>0){
             stress=Math.min(100,stress+classSkills.fear(0,discipline(),ticks,feed));
-            if(ticks%90==0)log("Your sanity keeps draining. Something is feeding on your presence.");
+            // Ambient fear is felt through stress and audio, never a repeating text hint.
         }
         if(ghost.room()>=0&&ghost.room()<spectralTrace.length){
             if(haunted&&GhostTraits.of(ghost.type()).leavesUv()){
@@ -361,11 +367,8 @@ public final class InvestigationSession {
                     if(effect!=null)roomLights.pulse(result.room(),effect,ticks);
                 }
                 if(result.fear()>0) stress=Math.min(100,stress+classSkills.fear(0,discipline(),ticks,result.fear()+partySize-1));
-                // Only present events a hunter could plausibly hear in their current room.
-                if(playerRoom==result.room() && result.action()==GhostDomain.Action.WHISPER)
-                    log("An indistinct whisper moves through "+map.roomName(playerRoom)+".");
-                if(playerRoom==result.room() && result.action()==GhostDomain.Action.DISTURB)
-                    log("Loose objects shudder in "+map.roomName(playerRoom)+".");
+                // Whisper/disturbance cues remain physical sounds, light disruptions
+                // and object movement. Never narrate ambient evidence on the HUD.
                 map.clutter().haunt(ghost.type(),result,List.of(clutterObserver),ticks);
                 if(result.harm()>0&&!hidden) {
                     int wound=classSkills.harm(0,discipline(),ticks,prepared?Math.min(result.harm(),4):result.harm()+CampaignPartyRules.additionalHarm(partySize));
