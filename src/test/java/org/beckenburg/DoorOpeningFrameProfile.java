@@ -22,10 +22,13 @@ public final class DoorOpeningFrameProfile {
         GpuWorldRenderer.Frame previous;
         private GpuWorldRenderer.Result result;
         private long changedResources, uploadedBytes, generationChanges;
+        private long frameRevisions, frameBytes, frameSceneChanges;
         private final java.util.Map<Long,Long> resources=new java.util.HashMap<>();
         @Override public boolean ready(){return true;}
         @Override public String rendererDescription(){return "GPU submission recorder; not hardware"; }
         @Override public void submit(GpuWorldRenderer.Frame frame){
+            long beforeRevisions=changedResources,beforeBytes=uploadedBytes;
+            long beforeScenes=generationChanges;
             if(previous!=null&&previous.sceneId()!=frame.sceneId()){
                 generationChanges++;
                 resources.clear();
@@ -41,6 +44,11 @@ public final class DoorOpeningFrameProfile {
                 }
             }
             previous=frame;
+            // Per-submission deltas distinguish one door action from the
+            // cumulative totals (which also include warmup and baseline).
+            frameRevisions=changedResources-beforeRevisions;
+            frameBytes=uploadedBytes-beforeBytes;
+            frameSceneChanges=generationChanges-beforeScenes;
             // Pure recorder reports no hardware completion; this does not
             // claim pixels, GPU latency, VRAM, or GPU frame-rate acceptance.
             result=null;
@@ -50,6 +58,9 @@ public final class DoorOpeningFrameProfile {
         long changedResources(){return changedResources;}
         long uploadedBytes(){return uploadedBytes;}
         long generationChanges(){return generationChanges;}
+        long frameRevisions(){return frameRevisions;}
+        long frameBytes(){return frameBytes;}
+        long frameSceneChanges(){return frameSceneChanges;}
     }
 
     private static final class Sample {
@@ -99,7 +110,8 @@ public final class DoorOpeningFrameProfile {
         renderer.pitch=-.03;
         renderer.lamp=false;
         List<Sample> samples=new ArrayList<>();
-        StringBuilder csv=new StringBuilder("backend,phase,toggle,frame,door_open,door_fraction,wall_ms,render_ms,build_ms,geometry_ms,effects_ms,shadow_rays,normal_rays,invalidated_cells,lighting_samples,cache_hits,world_builds,world_hits,world_bytes,scene_id,scene_changes,resource_revisions,submitted_bytes,heap_used_bytes,gc_ms\n");
+        List<Sample> revisionSamples=new ArrayList<>(),byteSamples=new ArrayList<>();
+        StringBuilder csv=new StringBuilder("backend,phase,toggle,frame,door_open,door_fraction,wall_ms,render_ms,build_ms,geometry_ms,effects_ms,shadow_rays,normal_rays,invalidated_cells,lighting_samples,cache_hits,world_builds,world_hits,world_bytes,scene_id,scene_changes,resource_revisions,submitted_bytes,heap_used_bytes,gc_ms,frame_resource_revisions,frame_submitted_bytes,frame_scene_changes\n");
         long baselineGc=gcMillis(),initialScene=-1;
         int frame=0;
         long maxRays=0,maxInvalidated=0;
@@ -127,7 +139,7 @@ public final class DoorOpeningFrameProfile {
             maxInvalidated=Math.max(maxInvalidated,light.invalidatedCells());
             samples.add(new Sample(phase,elapsed/1_000_000.0));
             csv.append(String.format(Locale.ROOT,
-                "%s,%s,%d,%d,%s,%.4f,%.3f,%.3f,%.3f,%.3f,%.3f,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d%n",
+                "%s,%s,%d,%d,%s,%.4f,%.3f,%.3f,%.3f,%.3f,%.3f,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d%n",
                 backend,phase,toggle,frame,map.doorOpen(portal.id()),
                 map.doorOpenFraction(portal.id()),elapsed/1e6,
                 m.totalNs()/1e6,m.sceneBuildNs()/1e6,
@@ -136,7 +148,14 @@ public final class DoorOpeningFrameProfile {
                 light.samples(),light.cacheHits(),resident.builds(),resident.hits(),
                 resident.bytes(),sceneId,recorder==null?0:recorder.generationChanges(),
                 recorder==null?0:recorder.changedResources(),
-                recorder==null?0:recorder.uploadedBytes(),heapUsed(),gcMillis()));
+                recorder==null?0:recorder.uploadedBytes(),heapUsed(),gcMillis(),
+                recorder==null?0:recorder.frameRevisions(),
+                recorder==null?0:recorder.frameBytes(),
+                recorder==null?0:recorder.frameSceneChanges()));
+            if(recorder!=null){
+                revisionSamples.add(new Sample(phase,recorder.frameRevisions()));
+                byteSamples.add(new Sample(phase,recorder.frameBytes()));
+            }
             frame++;
             // Exercise actual 450ms swing rather than snapping only at endpoints.
             // Slow CPU draws also count as actual frame latency; never assert FPS.
@@ -156,6 +175,11 @@ public final class DoorOpeningFrameProfile {
                 percentile(samples,phase,.50),percentile(samples,phase,.95),
                 percentile(samples,phase,.99)));
         }
+        if(recorder!=null)report.append(String.format(Locale.ROOT,
+            "toggle_frame_resource_revisions_p50=%.0f p95=%.0f"
+                +" toggle_frame_submitted_bytes_p50=%.0f p95=%.0f%n",
+            percentile(revisionSamples,"toggle",.50),percentile(revisionSamples,"toggle",.95),
+            percentile(byteSamples,"toggle",.50),percentile(byteSamples,"toggle",.95)));
         report.append("peak_shadow_rays=").append(maxRays)
               .append(" peak_invalidated_cells=").append(maxInvalidated)
               .append(" gc_delta_ms=").append(gcMillis()-baselineGc)
