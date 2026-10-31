@@ -50,7 +50,7 @@ public final class HeldInstrumentMesh {
     private static BufferedImage display(String name,String status){
         var out=new BufferedImage(144,112,BufferedImage.TYPE_INT_RGB);var g=out.createGraphics();
         try{g.setColor(new Color(7,23,20));g.fillRect(0,0,144,112);g.setColor(new Color(144,223,175));g.setFont(new Font(Font.MONOSPACED,Font.BOLD,24));
-            String text=status==null?"READY / R USE":status.replace("Air ","").replace("REC ","REC\n").replace(" / PEAK ","\nPK ").replace(" / ","\n").replace("; ","\n");
+            String text=status==null?"READY / LMB USE":status.replace("Air ","").replace("REC ","REC\n").replace(" / PEAK ","\nPK ").replace(" / ","\n").replace("; ","\n");
             if(name.contains("sound_recorder"))text=text.replace(" / PEAK ","\nPK ").replace(" / ","\n").replace(" clips"," CLP");
             int y=26;for(String line:text.split("\\n")){for(int i=0;i<line.length()&&y<110;i+=9){g.drawString(line.substring(i,Math.min(i+9,line.length())),5,y);y+=29;}}
         }finally{g.dispose();}return out;
