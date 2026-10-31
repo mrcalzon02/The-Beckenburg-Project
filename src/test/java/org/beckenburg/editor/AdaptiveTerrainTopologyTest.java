@@ -79,6 +79,37 @@ public final class AdaptiveTerrainTopologyTest {
             check(Arrays.equals(tileBytes, Files.readAllBytes(source.tilePath(0, 0))),
                 "Topology edits never mutate 16-bit PNG source bytes");
 
+            // Genuine removed faces; NOT alpha-only, zero-height or fake floor geometry.
+            var mouth = new AdaptiveTerrainTopology.Node(15, 7, 1, 0, 1);
+            reopened.punch(mouth);
+            check(reopened.isCutout(mouth) && reopened.cutoutCount() == 1,
+                "Selected subcell is an open surface hole");
+            fail(() -> reopened.merge(root),
+                "Merging mixed solid/open nodes must not silently fill the cave mouth");
+            check(reopened.isCutout(mouth) && reopened.splitCount() == 2,
+                "Rejected merge is non-destructive");
+            reopened.split(mouth);
+            check(reopened.cutoutCount() == 4 && reopened.splitCount() == 3,
+                "Refining a hole preserves the removed area as four children");
+            var nested = new AdaptiveTerrainTopology.Node(15, 7, 2, 0, 2);
+            reopened.fill(nested);
+            check(!reopened.isCutout(nested) && reopened.cutoutCount() == 3,
+                "Filling one subquadrant does not fill other holes");
+            reopened.save();
+            var holesReopened = AdaptiveTerrainTopology.open(source);
+            check(holesReopened.snapshot().equals(reopened.snapshot()),
+                "Cutout and split state survives atomic save/readback");
+            var holeSnapshot = holesReopened.snapshot();
+            holesReopened.fill(new AdaptiveTerrainTopology.Node(15, 7, 2, 1, 2));
+            holesReopened.restore(holeSnapshot);
+            check(holesReopened.cutoutCount() == 3,
+                "Undo snapshot restores the same deleted faces");
+            holesReopened.restore(savedSnapshot);
+            check(holesReopened.cutoutCount() == 0 && holesReopened.splitCount() == 2,
+                "Restoring old topology snapshot removes all cutouts");
+            check(Arrays.equals(tileBytes, Files.readAllBytes(source.tilePath(0, 0))),
+                "Cutting terrain does not modify source PNG bytes");
+
             var negativeRoot = new AdaptiveTerrainTopology.Node(-1, 3, 0, 0, 0);
             reopened.split(negativeRoot);
             check(reopened.leaves(-1, 3).size() == 4,

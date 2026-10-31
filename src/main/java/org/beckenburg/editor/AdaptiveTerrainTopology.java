@@ -25,7 +25,8 @@ import java.util.TreeSet;
  * are integer dyadic coordinates shared across source PNG tile boundaries.
  */
 public final class AdaptiveTerrainTopology {
-    public static final int FORMAT_VERSION = 1;
+    public static final int FORMAT_VERSION = 2;
+    public static final int MAX_CUTOUTS = 20_000;
     public static final int MAX_DEPTH = 6;
     public static final int MAX_SPLITS = 20_000;
     public static final int UNITS_PER_CELL = 1 << MAX_DEPTH;
@@ -59,12 +60,18 @@ public final class AdaptiveTerrainTopology {
 
     /** Edge order follows X increasing for N/S, Z increasing for E/W. */
     public enum Edge { NORTH, SOUTH, EAST, WEST }
-    public record Snapshot(List<Node> splits) {
-        public Snapshot { splits = List.copyOf(splits); }
+    public record Snapshot(List<Node> splits, List<Node> cutouts) {
+        public Snapshot {
+            splits = List.copyOf(splits);
+            cutouts = List.copyOf(cutouts);
+        }
+        public Snapshot(List<Node> splits) { this(splits, List.of()); }
     }
 
     private final StitchedHeightmapWorld source;
     private final LinkedHashSet<Node> splits = new LinkedHashSet<>();
+    /** Deleted terrain surface LEAVES, not empty/zero-height vertices. */
+    private final LinkedHashSet<Node> cutouts = new LinkedHashSet<>();
     private long revision = 1;
 
     private AdaptiveTerrainTopology(StitchedHeightmapWorld source) {
@@ -78,8 +85,11 @@ public final class AdaptiveTerrainTopology {
             throw new IOException("Oversized adaptive topology file");
         try (DataInputStream in = new DataInputStream(
                 new BufferedInputStream(Files.newInputStream(file)))) {
-            if (in.readInt() != MAGIC || in.readInt() != FORMAT_VERSION)
+            if (in.readInt() != MAGIC)
                 throw new IOException("Unrecognized adaptive topology file");
+            int version = in.readInt();
+            if (version != 1 && version != FORMAT_VERSION)
+                throw new IOException("Unsupported adaptive topology version " + version);
             var settings = source.settings();
             if (in.readInt() != settings.tileCells()
                 || Double.compare(in.readDouble(), settings.metresPerCell()) != 0
@@ -96,9 +106,20 @@ public final class AdaptiveTerrainTopology {
             for (int i = 0; i < count; i++)
                 loaded.add(new Node(in.readLong(), in.readLong(),
                     in.readUnsignedByte(), in.readUnsignedByte(), in.readUnsignedByte()));
+            List<Node> removed = new ArrayList<>();
+            if (version >= 2) {
+                int removedCount = in.readInt();
+                if (removedCount < 0 || removedCount > MAX_CUTOUTS)
+                    throw new IOException("Unsafe cutout node count");
+                for (int i = 0; i < removedCount; i++)
+                    removed.add(new Node(in.readLong(), in.readLong(),
+                        in.readUnsignedByte(), in.readUnsignedByte(), in.readUnsignedByte()));
+            }
             if (in.read() != -1) throw new IOException("Trailing adaptive topology data");
             topology.validate(loaded);
+            topology.validateCutouts(loaded, removed);
             topology.splits.addAll(loaded);
+            topology.cutouts.addAll(removed);
             return topology;
         } catch (RuntimeException invalid) {
             throw new IOException("Invalid adaptive topology document", invalid);
@@ -110,7 +131,36 @@ public final class AdaptiveTerrainTopology {
     public List<Node> splitNodes() {
         return splits.stream().sorted(NODE_ORDER).toList();
     }
-    public Snapshot snapshot() { return new Snapshot(splitNodes()); }
+    public List<Node> cutoutNodes() {
+        return cutouts.stream().sorted(NODE_ORDER).toList();
+    }
+    public int cutoutCount() { return cutouts.size(); }
+    public Snapshot snapshot() { return new Snapshot(splitNodes(), cutoutNodes()); }
+    public boolean isCutout(Node leaf) {
+        Objects.requireNonNull(leaf);
+        sourceCell(leaf.cellX(), leaf.cellZ());
+        if (!existsAsLeaf(leaf)) throw new IllegalArgumentException("Not a leaf");
+        return cutouts.contains(leaf);
+    }
+    /** Remove a selected terrain leaf's surface, leaving the source PNG intact. */
+    public void punch(Node leaf) {
+        Objects.requireNonNull(leaf);
+        sourceCell(leaf.cellX(), leaf.cellZ());
+        if (!existsAsLeaf(leaf)) throw new IllegalArgumentException("Punch requires a leaf");
+        if (cutouts.contains(leaf)) throw new IllegalArgumentException("Surface already cut");
+        if (cutouts.size() >= MAX_CUTOUTS)
+            throw new IllegalStateException("Cutout budget exceeded");
+        cutouts.add(leaf);
+        revision++;
+    }
+    /** Undo a cut without altering source height values or adjacent cells. */
+    public void fill(Node leaf) {
+        Objects.requireNonNull(leaf);
+        sourceCell(leaf.cellX(), leaf.cellZ());
+        if (!existsAsLeaf(leaf) || !cutouts.remove(leaf))
+            throw new IllegalArgumentException("Fill requires an existing cutout leaf");
+        revision++;
+    }
 
     private void sourceCell(long gx, long gz) {
         long tx = Math.floorDiv(gx, source.settings().tileCells());
@@ -137,21 +187,38 @@ public final class AdaptiveTerrainTopology {
             if (n.depth() > 0 && !seen.contains(n.parent()))
                 throw new IllegalArgumentException("Adaptive split missing its parent");
     }
+    private void validateCutouts(List<Node> tree, List<Node> removed) {
+        if (removed.size() > MAX_CUTOUTS)
+            throw new IllegalArgumentException("Cutout budget exceeded");
+        Set<Node> nodes = new HashSet<>(tree);
+        Set<Node> seen = new HashSet<>();
+        for (Node leaf : removed) {
+            sourceCell(leaf.cellX(), leaf.cellZ());
+            if (!seen.add(leaf)) throw new IllegalArgumentException("Duplicate cutout");
+            if (!existsAsLeaf(leaf, nodes))
+                throw new IllegalArgumentException("Cutout must identify an existing leaf");
+        }
+    }
     public void restore(Snapshot snapshot) {
         Objects.requireNonNull(snapshot);
         validate(snapshot.splits());
-        if (!splits.equals(new HashSet<>(snapshot.splits()))) {
+        validateCutouts(snapshot.splits(), snapshot.cutouts());
+        if (!splits.equals(new HashSet<>(snapshot.splits()))
+                || !cutouts.equals(new HashSet<>(snapshot.cutouts()))) {
             splits.clear();
             splits.addAll(snapshot.splits());
+            cutouts.clear();
+            cutouts.addAll(snapshot.cutouts());
             revision++;
         }
     }
-    private boolean existsAsLeaf(Node node) {
-        if (splits.contains(node)) return false;
+    private boolean existsAsLeaf(Node node) { return existsAsLeaf(node, splits); }
+    private static boolean existsAsLeaf(Node node, Set<Node> tree) {
+        if (tree.contains(node)) return false;
         Node current = node;
         while (current.depth() > 0) {
             current = current.parent();
-            if (!splits.contains(current)) return false;
+            if (!tree.contains(current)) return false;
         }
         return true;
     }
@@ -167,6 +234,16 @@ public final class AdaptiveTerrainTopology {
             throw new IllegalArgumentException("Split requires an existing unsplit leaf");
         if (splits.size() >= MAX_SPLITS)
             throw new IllegalStateException("Adaptive split budget exceeded");
+        boolean open = cutouts.contains(node);
+        if (open && cutouts.size() + 3 > MAX_CUTOUTS)
+            throw new IllegalStateException("Cutout budget exceeded by subdivision");
+        // An open area stays open when refined: replace its cut leaf with four cut children.
+        if (open) {
+            cutouts.remove(node);
+            for (int dz = 0; dz < 2; dz++) for (int dx = 0; dx < 2; dx++)
+                cutouts.add(new Node(node.cellX(), node.cellZ(), node.depth()+1,
+                    node.localX()*2+dx, node.localZ()*2+dz));
+        }
         splits.add(node);
         revision++;
     }
@@ -175,7 +252,17 @@ public final class AdaptiveTerrainTopology {
         Objects.requireNonNull(node);
         if (!splits.contains(node))
             throw new IllegalArgumentException("Merge requires an existing split node");
+        // Never silently fill part of a cave mouth when simplifying the topology.
+        List<Node> branch = leaves(node.cellX(), node.cellZ()).stream()
+            .filter(leaf -> descendantOrSelf(leaf, node)).toList();
+        boolean anyCut = branch.stream().anyMatch(cutouts::contains);
+        boolean allCut = branch.stream().allMatch(cutouts::contains);
+        if (anyCut && !allCut)
+            throw new IllegalArgumentException(
+                "Cannot merge mixed solid/open terrain; fill or cut leaves explicitly");
         splits.removeIf(child -> descendantOrSelf(child, node));
+        cutouts.removeIf(child -> descendantOrSelf(child, node));
+        if (allCut) cutouts.add(node);
         revision++;
     }
     private static boolean descendantOrSelf(Node child, Node parent) {
@@ -252,7 +339,9 @@ public final class AdaptiveTerrainTopology {
     }
     public void save() throws IOException {
         List<Node> nodes = splitNodes();
+        List<Node> removed = cutoutNodes();
         validate(nodes);
+        validateCutouts(nodes, removed);
         Path destination = path();
         Files.createDirectories(destination.getParent());
         Path temporary = Files.createTempFile(destination.getParent(), ".adaptive-", ".tmp");
@@ -271,6 +360,14 @@ public final class AdaptiveTerrainTopology {
                 out.writeLong(s.seed());
                 out.writeInt(nodes.size());
                 for (Node n : nodes) {
+                    out.writeLong(n.cellX());
+                    out.writeLong(n.cellZ());
+                    out.writeByte(n.depth());
+                    out.writeByte(n.localX());
+                    out.writeByte(n.localZ());
+                }
+                out.writeInt(removed.size());
+                for (Node n : removed) {
                     out.writeLong(n.cellX());
                     out.writeLong(n.cellZ());
                     out.writeByte(n.depth());
