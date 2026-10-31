@@ -174,8 +174,8 @@ public final class TerrainEntranceMesh {
             warnings.add("No authored ramps found; export contains source/tab/floor geometry");
     }
     private String part(AdaptiveTerrainTopology.Node leaf){
-        double cx=worldX((leaf.x0()+leaf.x1())/2);
-        double cz=worldZ((leaf.z0()+leaf.z1())/2);
+        double cx=(worldX(leaf.x0())+worldX(leaf.x1()))*.5;
+        double cz=(worldZ(leaf.z0())+worldZ(leaf.z1()))*.5;
         for(var tab:seams.tabs())if(tab.contains(cx,cz))
             return "tab_"+tab.id();
         var section=new StringBuilder("surface");
@@ -212,7 +212,7 @@ public final class TerrainEntranceMesh {
         var west=topology.edgeBreaks(leaf,AdaptiveTerrainTopology.Edge.WEST);
         for(int i=west.size()-2;i>0;i--)ring.add(surface(x0,worldZ(west.get(i))));
         for(int i=0;i<ring.size();i++)
-            add(part,center,ring.get(i),ring.get((i+1)%ring.size()));
+            add(part,center,ring.get((i+1)%ring.size()),ring.get(i));
         if(part.startsWith("tab_"))tabFaces+=ring.size();
     }
     private void cutWalls(AdaptiveTerrainTopology.Node leaf)throws IOException {
@@ -252,8 +252,14 @@ public final class TerrainEntranceMesh {
                 double[] t0=vertex(x0,upper0,z0),t1=vertex(x1,upper1,z1);
                 double[] b0=vertex(x0,Math.min(upper0,lower0),z0),
                          b1=vertex(x1,Math.min(upper1,lower1),z1);
-                add("rock_edge_"+ramp.id(),t0,b0,t1);
-                add("rock_edge_"+ramp.id(),t1,b0,b1);
+                if(edge==AdaptiveTerrainTopology.Edge.NORTH
+                    ||edge==AdaptiveTerrainTopology.Edge.EAST){
+                    add("rock_edge_"+ramp.id(),t0,t1,b0);
+                    add("rock_edge_"+ramp.id(),t1,b1,b0);
+                }else{
+                    add("rock_edge_"+ramp.id(),t0,b0,t1);
+                    add("rock_edge_"+ramp.id(),t1,b0,b1);
+                }
                 wallSegments++;
             }
         }
@@ -294,7 +300,10 @@ public final class TerrainEntranceMesh {
             double[] a=vertex(face[0],face[1],face[2]);
             double[] b=vertex(face[3],face[4],face[5]);
             double[] c=vertex(face[6],face[7],face[8]);
-            add("ramp_"+r.id(),a,b,c);
+            double upward=(b[2]-a[2])*(c[0]-a[0])
+                -(b[0]-a[0])*(c[2]-a[2]);
+            if(upward>=0)add("ramp_"+r.id(),a,b,c);
+            else add("ramp_"+r.id(),a,c,b);
             rampFaces++;
         }
     }
