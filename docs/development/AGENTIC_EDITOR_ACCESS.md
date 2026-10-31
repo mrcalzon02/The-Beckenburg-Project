@@ -2,7 +2,8 @@
 
 **Owner direction:** 2026-10-31. **Repository:** `mrcalzon02/The-Beckenburg-Project`, `main`.  
 **Inspected source baseline:** `3f42f2ce2110c084e34525f975a3bc8ce5a0e98f`.  
-**Document status:** specification and execution plan; NOT a claim that machine control, headless operation, or an MCP connection is working.  
+**Document status:** specification and execution plan; NOT a claim that machine control, headless operation, or an MCP connection is working.
+**Owner superseding sequence:** complete and validate human-operated terrain, loading-zone, stitched-heightmap and terrain-LOD modules **before** any corresponding agentic controls. See [`TERRAIN_WORLD_SYSTEM_PLAN.md`](TERRAIN_WORLD_SYSTEM_PLAN.md), gates T0–T9. This document covers the later agent access work, not the current first build gate.  
 **Machine task ledger:** [`AGENTIC_EDITOR_ACCESS_TASKS.json`](AGENTIC_EDITOR_ACCESS_TASKS.json).
 
 ## 1. User outcome and scope
@@ -164,9 +165,11 @@ Status vocabulary: `planned`, `in_progress`, `implemented_unverified`, `tested`,
 
 ## 8. First next task
 
-**Implement M1-01 only:** add the read-only in-process observation service around the same live `CastleLevelEdits` snapshot and asset catalog, along with testable `getScene` / `getObject` / `getCapabilities` calls. No writes or fake rendering. Next wire an authenticated loopback endpoint, actual viewport capture and lifecycle tests. Record SHA/test proof after each independently completed slice. Later phases remain planned.
+**Prerequisite first: terrain-world gates T0–T8** in [`TERRAIN_WORLD_SYSTEM_PLAN.md`](TERRAIN_WORLD_SYSTEM_PLAN.md). Finish real human authoring, original terrain collision/rendering integration, stitched images, LOD/scope-safe visibility, streaming and validated loading transitions before making those features agent-controllable. The original M1-01 read-only in-process observation service is retained as a later task; M1–M5 remain planned. A portable tile module does not qualify as complete world rendering or agent access.
 
 ## 9. Current checkpoint
+
+- **2026-10-31 module-first update:** Human-operated terrain, loading zones and stitched open-world terrain precede agent control. The initial finite-grid terrain/zone source and Blackpine height offsets have been committed; the portable stitched PNG class and focused test workflow are committed but not marked tested until actual Java 17 CI evidence exists. LOD, physics/render integration, scope-safe visibility and loading-zone gameplay transitions remain planned.
 
 - **2026-10-31:** documentation and machine task ledger are being authored from inspected `main` baseline `3f42f2ce`. No completed agent-driven editing, Windows live-client connection, headless command execution or MCP integration is claimed by this checkpoint.
 - Previous source inspection confirmed the shared scene, snapshots, current Castle-only audit and portable core. A Git object/blob not included in `main` is **not** a delivered implementation. Do not promote it as such.
