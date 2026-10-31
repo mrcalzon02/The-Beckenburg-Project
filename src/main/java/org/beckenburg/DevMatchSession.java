@@ -249,14 +249,22 @@ public final class DevMatchSession {
                     // seven independent TCP clients, not merely connected seats.
                     // Combat wins, ghost deductions and ritual success remain
                     // advisory behavior metrics, not release requirements.
+                    int hunterMoves=0,ghostMoves=0;
                     for(DevMatchClientAi.Stats bot:results){
-                        System.out.println("DEV AI "+bot.seat()+" commands="+bot.commands()
-                            +" accepted="+bot.accepted()+" rejected="+bot.rejected()
-                            +" enteredSite="+bot.enteredSite()+" scans="+bot.goodScans()
-                            +" attacks="+bot.attacks());
+                        System.out.println("DEV AI "+bot.seat()+" autonomousCommands="+bot.commands()
+                            +" hostAccepted="+bot.accepted()+" acceptedMovement="+bot.acceptedMoves()
+                            +" rejected="+bot.rejected()+" enteredSite="+bot.enteredSite()
+                            +" scans="+bot.goodScans()+" attacks="+bot.attacks());
                         require(bot.commands()>0,
                             "connected "+bot.seat()+" issued no autonomous LAN commands");
+                        require(bot.accepted()>0,
+                            "connected "+bot.seat()+" got no host-accepted autonomous action");
+                        if(bot.seat().equals("GHOST"))ghostMoves+=bot.acceptedMoves();
+                        else hunterMoves+=bot.acceptedMoves();
                     }
+                    require(hunterMoves>0&&ghostMoves>0,
+                        "autonomous real-client spatial input never advanced both teams: hunter moves="
+                            +hunterMoves+" ghost moves="+ghostMoves);
                 }
                 capture(after);
                 require(after.tick()>before.tick(),"authoritative simulation did not advance");
