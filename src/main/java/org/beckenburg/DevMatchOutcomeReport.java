@@ -102,6 +102,9 @@ final class DevMatchOutcomeReport {
             .append(" enteredSite ").append(bot.enteredSite())
             .append(" enteredInterior ").append(bot.enteredInterior())
             .append(" acceptedMoves ").append(bot.acceptedMoves())
+            .append(" finalRoom ").append(bot.finalRoom())
+            .append(" pos ").append(String.format(java.util.Locale.ROOT,"%.2f,%.2f",bot.finalX(),bot.finalZ()))
+            .append(" blocked ").append(bot.blockedSteps())
             .append(" hypothesis ").append(bot.hypothesis())
             .append(" last: ").append(bot.state()).append('\n');
         Files.createDirectories(root);
