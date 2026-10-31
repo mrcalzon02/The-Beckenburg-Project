@@ -41,13 +41,18 @@ final class DevMatchClientAi implements AutoCloseable {
     private LanGhostHearing.Event heard;
     private int lastFrenzyRequest=-1000,lastFrenzyAttack=-1000,lastStrikeAttempt=-1000;
     private int lastIdentifyRequest=-1000,lastRiteRequest=-1000,lastWardRequest=-1000;
-    private int health=100,stress,seenScanCount,observedSignals;
+    private int health=100,stress,seenScanCount,observedSignals,suspectedAnchor=-1;
     private GhostIdentity.Type hypothesis;
     private final FieldJournal notes=new FieldJournal();
     private final Set<String> distinctSamples=new HashSet<>();
     private final Map<Integer,Integer> emfStrongRooms=new HashMap<>();
     private final Map<Integer,Integer> coldRooms=new HashMap<>();
     private final Map<Integer,Integer> hotRooms=new HashMap<>();
+    private final java.util.concurrent.atomic.AtomicInteger frenzyStarts=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger effectiveAttacks=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger goodScans=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger correctResponses=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger ritesStarted=new java.util.concurrent.atomic.AtomicInteger();
     private final java.util.concurrent.atomic.AtomicInteger commands=new java.util.concurrent.atomic.AtomicInteger();
     private final java.util.concurrent.atomic.AtomicInteger accepted=new java.util.concurrent.atomic.AtomicInteger();
     private final java.util.concurrent.atomic.AtomicInteger rejected=new java.util.concurrent.atomic.AtomicInteger();
@@ -56,11 +61,14 @@ final class DevMatchClientAi implements AutoCloseable {
     private final java.util.concurrent.atomic.AtomicInteger rituals=new java.util.concurrent.atomic.AtomicInteger();
     record Stats(String seat,int commands,int accepted,int rejected,int attacks,
                  int identifications,int rituals,int observations,int health,int stress,
-                 String hypothesis,String state){}
+                 int frenzyStarts,int effectiveAttacks,int goodScans,int correctResponses,
+                 int ritesStarted,String hypothesis,String state){}
     Stats stats(){
         return new Stats(seat,commands.get(),accepted.get(),rejected.get(),
             attacks.get(),identifications.get(),rituals.get(),observedSignals,
-            health,stress,String.valueOf(hypothesis),dashboard.getOrDefault(seat,""));
+            health,stress,frenzyStarts.get(),effectiveAttacks.get(),goodScans.get(),
+            correctResponses.get(),ritesStarted.get(),
+            String.valueOf(hypothesis),dashboard.getOrDefault(seat,""));
     }
     private final Map<Integer,Integer> visited=new HashMap<>();
 
@@ -138,8 +146,16 @@ final class DevMatchClientAi implements AutoCloseable {
                         if(p.size()==2)map.applyDoorSnapshot(p.get(1));
                     }
                     case "ACCEPT","REJECT" -> {
-                        if(frame.startsWith("ACCEPT|"))accepted.incrementAndGet();
-                        else if(frame.startsWith("REJECT|"))rejected.incrementAndGet();
+                        if(frame.startsWith("ACCEPT|")){
+                            accepted.incrementAndGet();
+                            if(frame.startsWith("ACCEPT|FRENZY"))frenzyStarts.incrementAndGet();
+                            if(frame.startsWith("ACCEPT|FATTACK")||frame.startsWith("ACCEPT|GHOST|STRIKE"))
+                                effectiveAttacks.incrementAndGet();
+                            if(frame.startsWith("ACCEPT|SCAN"))goodScans.incrementAndGet();
+                            if(frame.startsWith("ACCEPT|IDENTIFY"))correctResponses.incrementAndGet();
+                            if(frame.startsWith("ACCEPT|BANISH")||frame.startsWith("ACCEPT|ABSOLVE")
+                                    ||frame.startsWith("ACCEPT|CLEANSE"))ritesStarted.incrementAndGet();
+                        }else if(frame.startsWith("REJECT|"))rejected.incrementAndGet();
                         if(frame.startsWith("REJECT|")&&frame.contains("blocked"))
                             blocked++;
                         else if(frame.startsWith("ACCEPT|STEP")||frame.startsWith("ACCEPT|GSTEP"))
@@ -162,16 +178,22 @@ final class DevMatchClientAi implements AutoCloseable {
             java.util.regex.Matcher m=java.util.regex.Pattern.compile("EMF ([0-9]+)/10").matcher(reading);
             if(m.find()&&Integer.parseInt(m.group(1))>=8){
                 int count=emfStrongRooms.merge(item.room(),1,Integer::sum);
-                if(count>=2)markSeen(GhostFieldGuide.Clue.EMF_OVER_SIX,item.tick());
+                if(count>=2){
+                    suspectedAnchor=item.room(); // inferred from repeat instrument readings
+                    markSeen(GhostFieldGuide.Clue.EMF_OVER_SIX,item.tick());
+                }
             }
         }else if(item.tool().equals("THERMOMETER")&&item.room()<HouseMap.INDOOR_ROOMS){
             java.util.regex.Matcher m=java.util.regex.Pattern.compile("(-?[0-9]+(?:\\.[0-9]+)?)\\s*°?C").matcher(reading);
             if(m.find()){
                 double c=Double.parseDouble(m.group(1));
-                if(c<0&&coldRooms.merge(item.room(),1,Integer::sum)>=2)
+                if(c<0&&coldRooms.merge(item.room(),1,Integer::sum)>=2){
+                    suspectedAnchor=item.room();
                     markSeen(GhostFieldGuide.Clue.EXTREME_COLD,item.tick());
-                else if(c>=32.3&&hotRooms.merge(item.room(),1,Integer::sum)>=2)
+                }else if(c>=32.3&&hotRooms.merge(item.room(),1,Integer::sum)>=2){
+                    suspectedAnchor=item.room();
                     markSeen(GhostFieldGuide.Clue.EXTREME_HEAT,item.tick());
+                }
             }
         }else if(item.tool().equals("SPIRIT_BOX")&&reading.contains("Voice response detected"))
             markSeen(GhostFieldGuide.Clue.SPIRIT_REPLY,item.tick());
@@ -218,9 +240,9 @@ final class DevMatchClientAi implements AutoCloseable {
         }
         if(hypothesis!=null){
             var rite=RitualSites.site(map,hypothesis.rite());
-            // Anchor ward is attempted only when genuinely visiting a suspected
-            // source room, not with a hidden host ghost-room lookup.
-            if(room==4&&tick-lastWardRequest>150){
+            // Host anchor never enters this client. A ward is only attempted at
+            // a room inferred from real, independently received instrument clues.
+            if(room==suspectedAnchor&&tick-lastWardRequest>150){
                 lastWardRequest=tick;
                 sendAction("WARD source",client::ward);
                 return;
