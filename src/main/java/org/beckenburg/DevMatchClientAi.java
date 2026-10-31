@@ -64,6 +64,7 @@ final class DevMatchClientAi implements AutoCloseable {
     record Stats(String seat,int commands,int accepted,int acceptedMoves,int rejected,int attacks,
                  int identifications,int rituals,int observations,int health,int stress,
                  int roomsVisited,boolean enteredSite,boolean enteredInterior,
+                 int finalRoom,double finalX,double finalZ,int blockedSteps,
                  int frenzyStarts,int effectiveAttacks,int goodScans,int correctResponses,
                  int ritesStarted,String hypothesis,String state){}
     Stats stats(){
@@ -72,6 +73,7 @@ final class DevMatchClientAi implements AutoCloseable {
             health,stress,visited.size(),
             visited.keySet().stream().anyMatch(r->r<HouseMap.EXTRACTION_ROOM),
             visited.keySet().stream().anyMatch(r->r<HouseMap.INDOOR_ROOMS),
+            room,x,z,blocked,
             frenzyStarts.get(),effectiveAttacks.get(),goodScans.get(),
             correctResponses.get(),ritesStarted.get(),
             String.valueOf(hypothesis),dashboard.getOrDefault(seat,""));
