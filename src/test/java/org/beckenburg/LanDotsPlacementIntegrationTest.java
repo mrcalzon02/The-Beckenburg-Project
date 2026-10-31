@@ -69,6 +69,7 @@ public final class LanDotsPlacementIntegrationTest {
             a.await(0,"LOBBY|3|AI|3|WAITING");
             int started=a.mark();a.client.start();a.await(started,"INFO|mission started");
             int view=a.mark();a.client.view3D();a.await(view,"ACCEPT|VIEW3D");
+            int observerView=b.mark();b.client.view3D();b.await(observerView,"ACCEPT|VIEW3D");
             HouseMap map=(HouseMap)LooseClutterNetworkTest.field(host,"map");
             LanWorld world=(LanWorld)LooseClutterNetworkTest.field(host,"world");
             Object mutex=LooseClutterNetworkTest.field(host,"mutex");
@@ -83,9 +84,12 @@ public final class LanDotsPlacementIntegrationTest {
             String equipment=a.await(stateMark,"GEARSTATE|");
             check(equipment.contains("DOTS_PROJECTOR:I"),
                 "host must include projector in selected four-slot belt");
-            final LanWorldPanel[] holder=new LanWorldPanel[1];
-            SwingUtilities.invokeAndWait(()->holder[0]=new LanWorldPanel(a.client));
-            LanWorldPanel panel=holder[0];
+            final LanWorldPanel[] holder=new LanWorldPanel[2];
+            SwingUtilities.invokeAndWait(()->{
+                holder[0]=new LanWorldPanel(a.client);
+                holder[1]=new LanWorldPanel(b.client);
+            });
+            LanWorldPanel panel=holder[0],observerPanel=holder[1];
             try{
                 feed(panel,equipment);
                 press(panel,KeyEvent.VK_G);
@@ -100,6 +104,9 @@ public final class LanDotsPlacementIntegrationTest {
                 feed(panel,rejected);
                 check(state(panel,"toolPlacement")&&!state(panel,"placementPending"),
                     "failed placement must stay aimable/retryable");
+                LanDotsProjectors dots=(LanDotsProjectors)LooseClutterNetworkTest.field(host,"dots");
+                check(dots.at(0)==null,
+                    "rejected van placement must not create host-owned projector geometry");
 
                 synchronized(mutex){AuthoredTestSupport.place(map,world,0,map.spawn(4));}
                 rotate(panel,6); // Six 15-degree wheel steps => 90 degree placement.
@@ -113,19 +120,52 @@ public final class LanDotsPlacementIntegrationTest {
                 String powered=a.await(sent,"DOTS|POWER|0|1");
                 check(b.await(observer,"DOTS|PLACE|0|4|").equals(placement),
                     "teammate must receive same deployed projector pose");
+                check(c.await(0,"DOTS|PLACE|0|4|").equals(placement),
+                    "third hunter must receive the same authoritative projector transform");
                 check(placement.endsWith("|I|90"),
                     "projector orientation must include wheel rotation: "+placement);
                 feed(panel,placement);feed(panel,powered);feed(panel,outcome);
                 check(!state(panel,"toolPlacement")&&!state(panel,"placementPending"),
                     "accepted placement dismisses the aim preview");
                 SceneRenderer renderer=(SceneRenderer)LooseClutterNetworkTest.field(panel,"renderer");
+                feed(observerPanel,placement);feed(observerPanel,powered);
+                SceneRenderer observerRenderer=(SceneRenderer)LooseClutterNetworkTest.field(observerPanel,"renderer");
                 check(renderer.dotsPositions.containsKey(0)
                     &&renderer.dotsPowered.getOrDefault(0,false),
-                    "3D network client must render the powered placed projector");
-                LanDotsProjectors dots=(LanDotsProjectors)LooseClutterNetworkTest.field(host,"dots");
+                    "placing hunter's 3D renderer must show the powered projector");
+                check(observerRenderer.dotsPositions.containsKey(0)
+                    &&observerRenderer.dotsPowered.getOrDefault(0,false)
+                    &&observerRenderer.dotsPositions.get(0).equals(renderer.dotsPositions.get(0))
+                    &&observerRenderer.dotsPositions.get(0).heading()==90,
+                    "second hunter's actual 3D renderer must show the same powered 90-degree pose");
                 check(dots.at(0)!=null&&dots.at(0).room()==4
                     &&dots.at(0).heading()==90,
                     "host must own real positioned, rotated DOTS geometry");
+
+                // A hunter may not remotely reclaim a deployed projector from another room.
+                synchronized(mutex){AuthoredTestSupport.place(map,world,0,map.spawn(5));}
+                press(panel,KeyEvent.VK_G);
+                int remoteAt=a.mark(),remoteObserver=b.mark();
+                click(panel);
+                String remoteDenied=a.await(remoteAt,s->s.startsWith("REJECT|")
+                    ||s.startsWith("ACCEPT|GEARUSE|"),"out-of-reach retrieval response");
+                check(remoteDenied.startsWith("REJECT|")
+                    &&remoteDenied.contains("physical location"),
+                    "host must refuse remote projector retrieval: "+remoteDenied);
+                feed(panel,remoteDenied);
+                check(state(panel,"toolPlacement")&&!state(panel,"placementPending"),
+                    "remote retrieval rejection must preserve the aiming preview");
+                synchronized(mutex){
+                    FieldEquipment[] kits=(FieldEquipment[])LooseClutterNetworkTest.field(host,"equipment");
+                    check(dots.at(0)!=null&&dots.at(0).room()==4
+                        &&kits[0].powered("DOTS_PROJECTOR")
+                        &&kits[0].at(0).equals("DOTS_PROJECTOR"),
+                        "rejected remote retrieval must preserve host geometry, power and belt ownership");
+                    AuthoredTestSupport.place(map,world,0,map.spawn(4));
+                }
+                check(b.frames.subList(remoteObserver,b.frames.size()).stream()
+                    .noneMatch(s->s.startsWith("DOTS|CLEAR|0")),
+                    "rejected remote retrieval must never broadcast a phantom clear");
 
                 // Empty batteries must not trap deployed evidence hardware in the world.
                 synchronized(mutex){
@@ -135,8 +175,8 @@ public final class LanDotsPlacementIntegrationTest {
                         LooseClutterNetworkTest.field(kits[0],"batteryTicks");
                     battery.put("DOTS_PROJECTOR",0);
                 }
-                press(panel,KeyEvent.VK_G);
-                int retrieveAt=a.mark();
+                // Preview is still open from the denied remote retrieval; return and click.
+                int retrieveAt=a.mark(),retrieveObserver=b.mark();
                 click(panel);
                 String retrieval=a.await(retrieveAt,s->s.startsWith("ACCEPT|GEARUSE|")
                     ||s.startsWith("REJECT|"),"recover drained placed projector");
@@ -144,11 +184,22 @@ public final class LanDotsPlacementIntegrationTest {
                     &&retrieval.contains("Projector retrieved"),
                     "even an exhausted projector remains physically retrievable: "+retrieval);
                 String cleared=a.await(retrieveAt,"DOTS|CLEAR|0");
+                check(b.await(retrieveObserver,"DOTS|CLEAR|0").equals(cleared),
+                    "second hunter must receive the authoritative retrieval event");
                 feed(panel,cleared);feed(panel,retrieval);
-                check(dots.at(0)==null&&!renderer.dotsPositions.containsKey(0),
-                    "retrieved projector disappears from both host and client world state");
-            }finally{SwingUtilities.invokeAndWait(panel::close);}
-            System.out.println("PASS: LAN DOTS rack/equip, failed preview retry, mouse placement, host ACK, shared powered geometry and exhausted retrieval");
+                feed(observerPanel,cleared);
+                synchronized(mutex){
+                    FieldEquipment[] kits=(FieldEquipment[])LooseClutterNetworkTest.field(host,"equipment");
+                    check(dots.at(0)==null&&!kits[0].powered("DOTS_PROJECTOR")
+                        &&kits[0].at(0).equals("DOTS_PROJECTOR")
+                        &&kits[0].owned("DOTS_PROJECTOR")!=null,
+                        "retrieval must conserve the original belt item and turn off its host power");
+                }
+                check(!renderer.dotsPositions.containsKey(0)
+                    &&!observerRenderer.dotsPositions.containsKey(0),
+                    "retrieved projector must disappear from both hunters' real 3D renderers");
+            }finally{SwingUtilities.invokeAndWait(()->{panel.close();observerPanel.close();});}
+            System.out.println("PASS: LAN DOTS rack/equip, rejected placement/remote retrieval, mouse rotation, three-client replication, two renderers and exhausted recovery");
         }
     }
 }
