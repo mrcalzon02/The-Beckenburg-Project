@@ -19,6 +19,8 @@ on:
       - 'src/main/java/org/beckenburg/LevelPlans.java'
       - 'src/main/java/org/beckenburg/DevAssetReviewCatalog.java'
       - 'src/main/java/org/beckenburg/DevAssetShowroom.java'
+      - 'src/main/java/org/beckenburg/DevTerrainTopologyLab.java'
+      - 'src/main/java/org/beckenburg/editor/AdaptiveTerrainTopology.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
       - '.github/workflows/dev-room-asset-review.yml'
 
@@ -55,6 +57,12 @@ jobs:
               Select-String ',MISSING,|,REVIEW_UV,|,REVIEW_REGISTRATION,' |
               Select-Object -First 32
           }
+      - name: Capture opt-in adaptive topology from the real DEV renderer (advisory)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          & java '-Djava.awt.headless=true' -cp 'build\beckenburg-game.jar' org.beckenburg.DevAssetShowroom --dev-room --terrain-qa-capture --output=build/dev-room
+          if ($LASTEXITCODE -ne 0) { Write-Warning "Terrain topology diagnostic capture failed; inspect source and render logs." }
       - name: Record source revision
         if: always()
         shell: pwsh
