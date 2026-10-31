@@ -80,6 +80,31 @@ public final class GlbProps {
     }
     private static final List<double[]> diffuseFactors=new ArrayList<>();
     private static final Map<Long,Integer> foliagePalettes=new HashMap<>();
+    /** Only the legacy purchased book collection uses this very dark source
+     * atlas. No blanket changes to library wood, pages or other imported art. */
+    static boolean bookCoverMaterial(String resourceName){
+        return resourceName!=null&&
+            (resourceName.matches("book_mp_[1-5]")||
+             resourceName.equals("open_book_mp_1"));
+    }
+    /** Tone-map the existing source RGB for legibility under dim lights.
+     * Identical geometry, original UVs and alpha; source artwork is never edited.
+     * A gamma below 1 brightens the deep leather colors, revealing the source
+     * detail rather than replacing it with flat recolored quads. */
+    static BufferedImage readableBookCover(BufferedImage original){
+        var out=new BufferedImage(original.getWidth(),original.getHeight(),
+            BufferedImage.TYPE_INT_ARGB);
+        for(int y=0;y<original.getHeight();y++)for(int x=0;x<original.getWidth();x++){
+            int px=original.getRGB(x,y),a=px>>>24;
+            int r=bookTone((px>>>16)&255),g=bookTone((px>>>8)&255),
+                b=bookTone(px&255);
+            out.setRGB(x,y,(a<<24)|(r<<16)|(g<<8)|b);
+        }
+        return out;
+    }
+    static int bookTone(int original){
+        return (int)Math.round(255*Math.pow(original/255.0,.61));
+    }
     private static final Map<String,Integer> surfaceMaterials=new HashMap<>();
     /** Independently revisioned 2D faces used by procedural flat van monitors.
      * Textures are never recreated for a new reading: only the named material
@@ -326,6 +351,13 @@ public final class GlbProps {
             if(picture==null||picture.getWidth()<2||picture.getHeight()<2||
                 picture.getWidth()>2048||picture.getHeight()>2048)
                 throw new IOException("Invalid embedded PNG");
+            // The actual source book atlas is exceptionally dark. At the
+            // castle's real low ambient intensity its leather/gilded covers
+            // collapse into black blocks. Apply a non-destructive display
+            // transfer to a fresh runtime image only; source PNG/GLB bytes,
+            // original UVs and all other imported textures remain untouched.
+            if(bookCoverMaterial(resourceName))
+                picture=readableBookCover(picture);
             materialIds[i]=TEXTURE_BASE+textures.size();
             textures.add(picture);
             vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)));
