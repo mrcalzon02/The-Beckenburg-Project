@@ -105,6 +105,7 @@ public final class LevelAuthoringSession implements EditorProject<List<Prop>> {
                     Math.toDegrees(p.yaw()),0,p.scale(),p.scale(),p.scale()),
                 List.of(new RuntimeScene.Component(COMPONENT,Map.of(
                     "mesh",p.mesh(),"room",Integer.toString(p.room()),
+                    "yawRad",Double.toString(p.yaw()),
                     "halfX",Double.toString(p.halfX()),
                     "halfZ",Double.toString(p.halfZ()),
                     "height",Double.toString(p.height()),
@@ -128,7 +129,9 @@ public final class LevelAuthoringSession implements EditorProject<List<Prop>> {
                 var data=node.components().get(0).properties();
                 var t=node.transform();
                 Prop prop=new Prop(data.get("mesh"),Integer.parseInt(data.get("room")),
-                    t.x(),t.y(),t.z(),t.scaleX(),Math.toRadians(t.yaw()),
+                    t.x(),t.y(),t.z(),t.scaleX(),
+                    data.containsKey("yawRad")?Double.parseDouble(data.get("yawRad"))
+                        :Math.toRadians(t.yaw()),
                     Double.parseDouble(data.get("halfX")),
                     Double.parseDouble(data.get("halfZ")),
                     Double.parseDouble(data.get("height")),data.get("support"));
