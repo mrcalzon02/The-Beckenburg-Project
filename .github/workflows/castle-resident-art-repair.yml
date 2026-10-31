@@ -63,6 +63,9 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      # Capture front/back/left/right where collision and occlusion permit.
+      # Use CURRENT main: a previous run failed before capture during an
+      # unrelated Spirit Box enum build break that was subsequently repaired.
       - name: Capture real Castle in-game source-vs-PSX closeups (nonblocking)
         id: capture
         continue-on-error: true
