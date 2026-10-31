@@ -498,8 +498,6 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 }else feedback="INVESTIGATOR "+(down+1)+" IS DOWN";
             }else if(p.get(0).equals("IDENTIFIED")&&p.size()==3){
                 feedback="TEAM IDENTIFIED "+p.get(1)+" - REQUIRED "+p.get(2);
-            }else if(p.get(0).equals("TELL")&&p.size()==2){
-                feedback="ENTITY TELL: "+p.get(1);
             }else if(p.get(0).equals("SITES")&&p.size()==4){
                 feedback="Ritual sites: Banish="+map.roomName(LanProtocol.integer(p.get(1),0,14))+" / Cleanse="+map.roomName(LanProtocol.integer(p.get(2),0,14))+" / Absolve="+map.roomName(LanProtocol.integer(p.get(3),0,14));
             }else if(p.get(0).equals("COUNTER")){
