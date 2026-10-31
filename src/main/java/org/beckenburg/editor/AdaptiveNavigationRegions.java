@@ -64,13 +64,20 @@ public final class AdaptiveNavigationRegions {
         private final Profile profile;
         private final AdaptiveNavMeshEdits edits;
         private final long editsRevision;
+        private final Graph candidates;
         private final List<Region> regions;
         private final List<List<Edge>> adjacent;
         private final Metrics metrics;
         Graph(LayeredTerrainQueries query,Profile profile,List<Region> regions,
               List<List<Edge>> adjacent,int evaluated,int rejected,
               AdaptiveNavMeshEdits edits) {
+            this(query,profile,regions,adjacent,evaluated,rejected,edits,null);
+        }
+        Graph(LayeredTerrainQueries query,Profile profile,List<Region> regions,
+              List<List<Edge>> adjacent,int evaluated,int rejected,
+              AdaptiveNavMeshEdits edits,Graph candidates) {
             this.query=query;this.profile=profile;this.edits=edits;
+            this.candidates=candidates;
             this.editsRevision=edits==null?0:edits.revision();
             this.regions=List.copyOf(regions);
             this.adjacent=adjacent.stream().map(List::copyOf).toList();
@@ -78,6 +85,9 @@ public final class AdaptiveNavigationRegions {
             this.metrics=new Metrics(evaluated,regions.size(),links,rejected,query.topologyRevision());
         }
         public List<Region> regions(){return regions;}
+        /** Inspector-only pre-flood graph, with authored gates/trims already applied.
+         * Unreachable polygons are visible for manual regression but never routed. */
+        public Graph candidates(){return candidates==null?this:candidates;}
         public Metrics metrics(){return metrics;}
         public List<Edge> connections(int id){return adjacent.get(id);}
         public boolean stale(){return metrics.topologyRevision()!=query.topologyRevision()
@@ -207,8 +217,9 @@ public final class AdaptiveNavigationRegions {
         return builder.floodFromSeeds();
     }
     private Graph floodFromSeeds() {
+        Graph full=new Graph(query,profile,regions,adjacent,evaluated,rejected,edits);
         if(edits==null||edits.seeds().isEmpty())
-            return new Graph(query,profile,regions,adjacent,evaluated,rejected,edits);
+            return full;
         boolean[] reached=new boolean[regions.size()];
         java.util.ArrayDeque<Integer> pending=new java.util.ArrayDeque<>();
         for(var seed:edits.seeds()){
@@ -238,7 +249,7 @@ public final class AdaptiveNavigationRegions {
             linked.add(edges);
         }
         return new Graph(query,profile,kept,linked,evaluated,
-            rejected+regions.size()-kept.size(),edits);
+            rejected+regions.size()-kept.size(),edits,full);
     }
     private boolean safe(String layer,double x,double z)throws IOException {
         return query.canStand(layer,x,z,profile.footprint());
