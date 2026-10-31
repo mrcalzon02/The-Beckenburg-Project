@@ -212,11 +212,14 @@ public final class DeveloperLevelEditor extends JPanel {
     public static void open(Window parent){
         var frame=new JFrame("Beckenburg — Developer Level Editor");
         var editor=new DeveloperLevelEditor(frame);
-        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         frame.setContentPane(editor);
         frame.setSize(1300,790);frame.setMinimumSize(new Dimension(900,570));
         frame.setLocationRelativeTo(parent);
         frame.addWindowListener(new WindowAdapter(){
+            @Override public void windowClosing(WindowEvent e){
+                if(editor.confirmSceneSwitch())frame.dispose();
+            }
             @Override public void windowClosed(WindowEvent e){
                 editor.editorClosed=true;
                 editor.timer.stop();
