@@ -696,7 +696,7 @@ public final class InvestigationGame {
         private String vanNotice="";
         private int vanNoticeExpires;
         private String storyReading="";
-        private boolean briefingShown,interactionHeld;private int mapFloor;
+        private boolean briefingShown,interactionHeld,ledgerTabHeld;private int mapFloor;
         private VanLiveScreens.Panel focusedVanPanel;
         private final SiteCaseFiles.Reader assignmentReader=new SiteCaseFiles.Reader(),storyReader=new SiteCaseFiles.Reader();
         private int useHeldUntilTick;
@@ -780,6 +780,7 @@ public final class InvestigationGame {
             powerOn=conditions.initiallyPowered();
             syncEnvironment();
             setFocusable(true);
+            setFocusTraversalKeysEnabled(false); // Tab opens the evidence ledger.
             setLayout(null);
             chatInput.setName("campaign.chat");
             chatInput.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
@@ -787,10 +788,14 @@ public final class InvestigationGame {
             chatInput.setForeground(new Color(224,230,215));
             chatInput.setCaretColor(new Color(246,211,162));
             chatInput.setVisible(false);
+            chatInput.setFocusTraversalKeysEnabled(false);
             chatInput.addActionListener(e->submitTeamChat());
             chatInput.addKeyListener(new KeyAdapter(){
                 @Override public void keyPressed(KeyEvent e){
                     if(e.getKeyCode()==KeyEvent.VK_ESCAPE){closeTeamChat();e.consume();}
+                    else if(e.getKeyCode()==KeyEvent.VK_TAB){
+                        closeTeamChat();toggleEvidenceLedger();e.consume();
+                    }
                 }
             });
             add(chatInput);
@@ -881,7 +886,19 @@ public final class InvestigationGame {
         }
         private void closeTeamChat(){
             chatInput.setVisible(false);chatInput.setText("");
-            down.clear();requestFocusInWindow();repaint();
+            down.clear();mouseLook.resume();repaint();
+        }
+        /** Tab is the universal evidence-ledger hotkey, including over other game UIs. */
+        private void toggleEvidenceLedger(){
+            if(journalShown&&!archiveShown){
+                journalShown=false;mouseLook.resume();
+            }else{
+                journalShown=true;archiveShown=false;mapShown=false;briefingShown=false;
+                focusedVanPanel=null;helpVisible=false;wheelOpen=false;
+                down.clear();mouseLook.release();
+                GameSfx.play(LanSound.Cue.BOOK);
+            }
+            down.clear();repaint();
         }
         private LanWorld.Body playerSpeaker(){
             return new LanWorld.Body(scene.x,feetY(),scene.z,
@@ -1212,25 +1229,34 @@ public final class InvestigationGame {
             }
             last=System.nanoTime();timer.start();
             BeckenburgDeveloperTrace.caseStage("active");
-            requestFocusInWindow();
+            mouseLook.resume();
         }
         @Override public void keyPressed(KeyEvent e){
             if(chatInput.isVisible())return;
             int key=e.getKeyCode();
             if(DebugPerformanceHud.hotkey(e)){repaint();return;}
+            if(key==KeyEvent.VK_TAB){
+                if(ledgerTabHeld)return;
+                ledgerTabHeld=true;
+                if(opening!=null){opening.close();opening=null;last=System.nanoTime();}
+                if(e.isShiftDown()&&journalShown){
+                    archiveShown=!archiveShown;down.clear();mouseLook.release();repaint();
+                }else toggleEvidenceLedger();
+                e.consume();return;
+            }
             if(opening!=null){
                 if(key==KeyEvent.VK_SPACE||key==KeyEvent.VK_ENTER
                     ||key==KeyEvent.VK_ESCAPE){
                     opening.close();opening=null;last=System.nanoTime();
                     BeckenburgDeveloperTrace.caseStage("opening skipped to hunter");
-                    down.clear();
+                    down.clear();mouseLook.resume();
                 }
                 repaint();return;
             }
             if(down.contains(key))return;
             if(focusedVanPanel!=null){
                 if(key==KeyEvent.VK_E||key==KeyEvent.VK_ESCAPE){
-                    focusedVanPanel=null;down.clear();requestFocusInWindow();repaint();
+                    focusedVanPanel=null;down.clear();mouseLook.resume();repaint();
                 }
                 return;
             }
@@ -1240,22 +1266,33 @@ public final class InvestigationGame {
             if(key==KeyEvent.VK_F1){
                 helpVisible=!helpVisible;
                 if(helpVisible){down.clear();mouseLook.release();wheelOpen=false;}
+                else mouseLook.resume();
                 repaint();return;
             }
-            if(helpVisible){if(key==KeyEvent.VK_ESCAPE){helpVisible=false;repaint();}return;}
-            if(key==KeyEvent.VK_ESCAPE){if(mapShown||journalShown||briefingShown){mapShown=journalShown=briefingShown=false;down.clear();repaint();return;}if(wheelOpen){wheelOpen=false;down.remove(KeyEvent.VK_Q);repaint();}else pause();return;}
-            if(briefingShown){if(key==KeyEvent.VK_E)briefingShown=false;else (storyReading.isEmpty()?assignmentReader:storyReader).key(key);down.clear();repaint();return;}
+            if(helpVisible){if(key==KeyEvent.VK_ESCAPE){helpVisible=false;mouseLook.resume();repaint();}return;}
+            if(key==KeyEvent.VK_ESCAPE){if(mapShown||journalShown||briefingShown){
+                mapShown=journalShown=briefingShown=archiveShown=false;
+                down.clear();mouseLook.resume();repaint();return;
+            }if(wheelOpen){wheelOpen=false;down.remove(KeyEvent.VK_Q);repaint();}else pause();return;}
+            if(briefingShown){
+                if(key==KeyEvent.VK_E){briefingShown=false;mouseLook.resume();}
+                else (storyReading.isEmpty()?assignmentReader:storyReader).key(key);
+                down.clear();repaint();return;
+            }
             if(mapShown){
-                if(key==KeyEvent.VK_PAGE_UP)mapFloor++;else if(key==KeyEvent.VK_PAGE_DOWN)mapFloor--;else if(key==KeyEvent.VK_M||key==KeyEvent.VK_E)mapShown=false;
+                if(key==KeyEvent.VK_PAGE_UP)mapFloor++;
+                else if(key==KeyEvent.VK_PAGE_DOWN)mapFloor--;
+                else if(key==KeyEvent.VK_M||key==KeyEvent.VK_E){mapShown=false;mouseLook.resume();}
                 down.clear();repaint();return;
             }
             if(journalShown){
-                if(key==KeyEvent.VK_TAB){archiveShown=!archiveShown;down.clear();repaint();return;}
                 if(archiveShown&&key==KeyEvent.VK_LEFT){
                     soloArchiveIndex=Math.floorMod(soloArchiveIndex-1,GhostIdentity.Type.values().length);
                 }else if(archiveShown&&key==KeyEvent.VK_RIGHT){
                     soloArchiveIndex=(soloArchiveIndex+1)%GhostIdentity.Type.values().length;
-                }else if(key==KeyEvent.VK_J||key==KeyEvent.VK_E)journalShown=false;
+                }else if(key==KeyEvent.VK_J||key==KeyEvent.VK_E){
+                    journalShown=false;archiveShown=false;mouseLook.resume();
+                }
                 down.clear();repaint();return;
             }
             if(key==KeyEvent.VK_Q){
@@ -1344,8 +1381,16 @@ public final class InvestigationGame {
             }
             if(key==KeyEvent.VK_T)useMedicine(FieldSupplies.Kind.HEALTH);
             if(key==KeyEvent.VK_Y)useMedicine(FieldSupplies.Kind.SANITY);
-            if(key==KeyEvent.VK_J){journalShown=!journalShown;down.clear();mouseLook.release();GameSfx.play(LanSound.Cue.BOOK);}
-            if(key==KeyEvent.VK_M){mapShown=!mapShown;down.clear();mouseLook.release();GameSfx.play(LanSound.Cue.BOOK);}
+            if(key==KeyEvent.VK_J){
+                journalShown=!journalShown;archiveShown=false;down.clear();
+                if(journalShown){mouseLook.release();GameSfx.play(LanSound.Cue.BOOK);}
+                else mouseLook.resume();
+            }
+            if(key==KeyEvent.VK_M){
+                mapShown=!mapShown;down.clear();
+                if(mapShown){mouseLook.release();GameSfx.play(LanSound.Cue.BOOK);}
+                else mouseLook.resume();
+            }
             if(key==KeyEvent.VK_X && session.extract(scene.x,feetY(),scene.z)) {timer.stop();endCase("Extraction processed.");return;}
             down.add(key);repaint();
         }
@@ -1361,7 +1406,7 @@ public final class InvestigationGame {
                 for(var ally:assistants)ally.investigate(room);
                 showVanNotice(assistant.report());
             }
-            last=System.nanoTime();timer.start();requestFocusInWindow();
+            last=System.nanoTime();timer.start();mouseLook.resume();
         }
         private boolean operateMouseTool(){
             EquipmentLoadout.Item device=loadout.equipped();
@@ -1501,6 +1546,8 @@ public final class InvestigationGame {
             switch(station){
                 case BRIEFING -> {
                     storyReading="";assignmentReader.reset();briefingShown=!briefingShown;
+                    if(briefingShown){down.clear();mouseLook.release();}
+                    else mouseLook.resume();
                     showVanNotice(briefingShown?"CASE BOARD OPEN — current role, objectives and progress":"Case board closed.");
                     GameSfx.play(briefingShown?LanSound.Cue.BOOK:LanSound.Cue.UI_BACK);
                 }
@@ -1519,6 +1566,7 @@ public final class InvestigationGame {
             }
         }
         @Override public void keyReleased(KeyEvent e){
+            if(e.getKeyCode()==KeyEvent.VK_TAB)ledgerTabHeld=false;
             if(e.getKeyCode()==KeyEvent.VK_E)interactionHeld=false;
             down.remove(e.getKeyCode());
             if(e.getKeyCode()==KeyEvent.VK_Q && wheelOpen){
@@ -1547,7 +1595,7 @@ public final class InvestigationGame {
             repaint();
         }
         @Override public void focusGained(FocusEvent e){last=System.nanoTime();}
-        @Override public void focusLost(FocusEvent e){interactionHeld=false;toolGrip.release();toolPlacement=false;down.clear();mouseLook.release();wheelOpen=false;}
+        @Override public void focusLost(FocusEvent e){interactionHeld=false;ledgerTabHeld=false;toolGrip.release();toolPlacement=false;down.clear();mouseLook.release();wheelOpen=false;}
         @Override protected void paintComponent(Graphics graphics){super.paintComponent(graphics);
             Graphics2D g=(Graphics2D)graphics.create();
             try{
