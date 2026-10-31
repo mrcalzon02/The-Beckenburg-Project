@@ -1335,7 +1335,11 @@ public final class InvestigationGame {
             LanSound.Cue cue=AudioActionRouting.soloDevice(device,accepted,before,
                 loadout.usesLeft(device),session.uvPowered());
             if(cue!=LanSound.Cue.UI_REJECT)useHeldUntilTick=session.ticks()+4;
-            GameSfx.play(cue);
+            if(device==EquipmentLoadout.Item.SPIRIT_BOX&&accepted){
+                GameSfx.play(LanSound.Cue.SPIRIT_BOX_STATIC);
+                LanSound.Cue spoken=session.spiritBoxReplyCue();
+                if(spoken!=null)GameSfx.play(spoken);
+            }else GameSfx.play(cue);
         }
         private InteractionFocus.Target focusTarget(){
             return InteractionFocus.pick(map,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,!session.hidden()&&session.health()>0,HunterPosture.eye(session.crouched())),VanRackStock.solo(profile,loadout));
