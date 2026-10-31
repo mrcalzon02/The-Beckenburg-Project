@@ -9,7 +9,7 @@ public final class LevelPlans {
     private LevelPlans() { }
     /** Shared source-space collision placement used by map generation and editor. */
     static double originOffsetZ(Prop p){
-        return switch(p.mesh()){
+        return switch(LivedAssets.base(p.mesh())){
             case "sofa_1"->.4975*p.scale();
             case "armchair_1"->.495*p.scale();
             case "tv_table_1_4"->-.05*p.scale();
@@ -22,7 +22,7 @@ public final class LevelPlans {
         double off=originOffsetZ(p);
         return new Collider(p.x()-Math.sin(p.yaw())*off,p.y(),
             p.z()+Math.cos(p.yaw())*off,p.halfX(),p.halfZ(),
-            p.mesh().equals("level_lived_sideboard")?.85:p.height(),p.yaw());
+            LivedAssets.base(p.mesh()).equals("level_lived_sideboard")?.85:p.height(),p.yaw());
     }
     public static LevelDefinition build(HouseMap.Site site) {
         return LevelAuthoringSession.apply(site,buildSource(site));
