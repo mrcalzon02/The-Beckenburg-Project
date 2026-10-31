@@ -8,7 +8,8 @@ public final class SiteCatalog {
     public enum Location {
         HOUSE(MissionSites.title("HOUSE"),true), MANSION(MissionSites.title("MANSION"),true), PRISON(MissionSites.title("PRISON"),true),
         ASYLUM(MissionSites.title("ASYLUM"),true), SCHOOL(MissionSites.title("SCHOOL"),true), FARMHOUSE(MissionSites.title("FARMHOUSE"),true),
-        ACADEMY(MissionSites.title("ACADEMY"),true), COLLEGE(MissionSites.title("COLLEGE"),true), CHURCH(MissionSites.title("CHURCH"),true);
+        ACADEMY(MissionSites.title("ACADEMY"),true), COLLEGE(MissionSites.title("COLLEGE"),true),
+        CHURCH(MissionSites.title("CHURCH"),true), USER("User authored level",true);
         public final String label;
         private final boolean playable;
         private volatile Boolean geometryValidated;
@@ -16,13 +17,18 @@ public final class SiteCatalog {
         /** Authoring availability is static per build. Do not rebuild a complete
          * 15-room level every time Swing paints a combo-box label. */
         public synchronized boolean playable(){
+            if(this==USER)return UserLevelLibrary.activeId()!=null;
             if(!playable)return false;
             if(geometryValidated!=null)return geometryValidated;
             try{geometryValidated=LevelPlans.build(HouseMap.Site.valueOf(name())).rooms().size()==15;}
             catch(IllegalArgumentException unavailable){geometryValidated=false;}
             return geometryValidated;
         }
-        @Override public String toString(){return label+(playable()?" / PLAYABLE":" / IN PRODUCTION");}
+        @Override public String toString(){
+            return (this==USER&&UserLevelLibrary.activeId()!=null
+                ?label+" ("+UserLevelLibrary.activeId()+")":label)
+                +(playable()?" / PLAYABLE":" / IN PRODUCTION");
+        }
     }
     public enum Conditions {
         STANDARD("Normal weather",1.0,1.0,true),
