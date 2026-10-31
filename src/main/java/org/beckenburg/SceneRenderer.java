@@ -599,28 +599,59 @@ public final class SceneRenderer {
         box(faces,handle.x()-.045,.96,handle.z()-.04,.09,.13,.08,0xd8c9a1);
     }
 
-    /** Low-poly vehicle tyres are outside the cargo shell, never visible
-     * through the internal equipment and computer walls.
+    /** Fit the shipped textured GGBot van mesh onto the one authoritative
+     * playable cargo/cab dimensions. The GLB's original UVs and normals stay
+     * untouched. Only the instance-space scale/length are adjusted.
+     * Imported car08 includes internal seats/floor: these must not be painted
+     * over the existing usable investigation cargo room.
      */
-    private static void vanWheel(List<Face> out,VanStaging van,
-                                 double x,double z){
-        int sides=12;
-        int tyre=0x25282b,hub=0x959895;
-        for(int i=0;i<sides;i++){
-            double a=i*Math.PI*2/sides,b=(i+1)*Math.PI*2/sides;
-            var ca=van.world(x,z);
-            var pa=van.world(x,z+.34*Math.cos(a));
-            var pb=van.world(x,z+.34*Math.cos(b));
-            var ha=van.world(x+(x<0?-.018:.018),z+.15*Math.cos(a));
-            var hb=van.world(x+(x<0?-.018:.018),z+.15*Math.cos(b));
-            Point center=new Point(ca.x(),.36,ca.z());
-            Point outerA=new Point(pa.x(),.36+.34*Math.sin(a),pa.z());
-            Point outerB=new Point(pb.x(),.36+.34*Math.sin(b),pb.z());
-            Point hubCenter=new Point(ca.x()+(x<0?-.021:.021),.36,ca.z());
-            Point hubA=new Point(ha.x(),.36+.15*Math.sin(a),ha.z());
-            Point hubB=new Point(hb.x(),.36+.15*Math.sin(b),hb.z());
-            out.add(new Face(center,outerA,outerB,tyre,-1,0,0,0,0,0,0));
-            out.add(new Face(hubCenter,hubA,hubB,hub,-1,0,0,0,0,0,0));
+    static double[] vanExteriorLocal(double x,double y,double z){
+        double span=VanStaging.REAR+VanStaging.CAB_LENGTH-VanStaging.FRONT;
+        return new double[]{x*VanStaging.HALF_WIDTH/1.71,
+            y*VanStaging.ROOF_Y/2.32,
+            VanStaging.FRONT+(z+2.10)*span/4.14};
+    }
+    /** The original GLB has a sealed rear cap and passenger interior. Keep the
+     * textured *external* metal, cab, windows and volumetric tyres, but cut the
+     * rear loading opening and keep the preexisting operational cargo cabin.
+     * This is a render-only face selection, never a source asset modification.
+     */
+    static boolean vanExteriorTriangle(GlbProps.Triangle face){
+        var a=face.a();var b=face.b();var c=face.c();
+        double maxZ=Math.max(a.z(),Math.max(b.z(),c.z()));
+        double minZ=Math.min(a.z(),Math.min(b.z(),c.z()));
+        // The rear cargo doors are the game's existing working paired leaves.
+        if(maxZ < -1.93)return false;
+        // Cab geometry is allowed to remain whole; it is not a walkable room.
+        if(minZ>=.90)return true;
+        // Do not place the donor vehicle's internal seats/dashboard inside
+        // the player's tool rack, monitors or six-person walking aisle.
+        boolean exteriorLeft=a.x() < -1.52&&b.x() < -1.52&&c.x() < -1.52;
+        boolean exteriorRight=a.x() > 1.52&&b.x() > 1.52&&c.x() > 1.52;
+        boolean outsideRoof=a.y()>2.16&&b.y()>2.16&&c.y()>2.16;
+        boolean solidTyre=Math.abs(a.x())>1.17&&Math.abs(b.x())>1.17&&
+            Math.abs(c.x())>1.17&&a.y()<.87&&b.y()<.87&&c.y()<.87&&
+            Math.signum(a.x())==Math.signum(b.x())&&
+            Math.signum(b.x())==Math.signum(c.x());
+        return exteriorLeft||exteriorRight||outsideRoof||solidTyre;
+    }
+    /** The model, not box-built panels or flat triangle-fan wheels, is the
+     * exterior. This exact helper is used at every investigation site. */
+    private static void vanImportedExterior(List<Face> faces,VanStaging van){
+        GlbProps.Model source=GlbProps.model("ggbot_car08_van_shell");
+        double yaw=van.placement().yaw(),cos=Math.cos(yaw),sin=Math.sin(yaw);
+        for(GlbProps.Triangle triangle:source.triangles()){
+            if(!vanExteriorTriangle(triangle))continue;
+            var vertices=new GlbProps.Vertex[]{triangle.a(),triangle.b(),triangle.c()};
+            Point[] pp=new Point[3];
+            for(int i=0;i<3;i++){
+                double[] local=vanExteriorLocal(vertices[i].x(),vertices[i].y(),vertices[i].z());
+                var world=van.world(local[0],local[2]);
+                pp[i]=new Point(world.x(),local[1],world.z());
+            }
+            faces.add(new Face(pp[0],pp[1],pp[2],0xffffff,triangle.material(),
+                vertices[0].u(),vertices[0].v(),vertices[1].u(),vertices[1].v(),
+                vertices[2].u(),vertices[2].v()));
         }
     }
     /** A real sloped roof section in the van's local coordinate system.
@@ -741,41 +772,20 @@ public final class SceneRenderer {
         texturedQuad(faces,new Point(ra.x(),0,ra.z()),new Point(rd.x(),floor,rd.z()),new Point(rc.x(),floor,rc.z()),new Point(rb.x(),0,rb.z()),MaterialAtlas.IRON,0,0,0,1.5,1.32,1.5,1.32,0,0xffffff);
         for(int n=1;n<10;n++){double z=f-VanStaging.RAMP_LENGTH+n*VanStaging.RAMP_LENGTH/10;
             vanBox(faces,van,-.65,floor*n/10+.006,z,1.30,.012,.025,MaterialAtlas.IRON);}
-        // Original online body profile is retained with measured wall thickness and roof shoulders.
-        vanBox(faces,van,-w,floor,f,w-iw,shoulder-floor,r-f,MaterialAtlas.IRON);
-        vanBox(faces,van,iw,floor,f,w-iw,shoulder-floor,r-f,MaterialAtlas.IRON);
+        // Production exterior is the actual supplied GLB, not procedural
+        // cardboard walls/cab or zero-thickness triangle-fan tyres.
+        vanImportedExterior(faces,van);
+        // Preserve only the useful existing cargo liner, deck, ramp, support,
+        // bulkhead, operational fixtures and accessible six-hunter interior.
         vanBox(faces,van,-iw,floor+.02,f+.08,.025,shoulder-floor-.03,r-f-.16,MaterialAtlas.AGED_WOOD);
         vanBox(faces,van,iw-.025,floor+.02,f+.08,.025,shoulder-floor-.03,r-f-.16,MaterialAtlas.AGED_WOOD);
-        vanSlope(faces,van,-w,shoulder,-ir-.10,h,f,r,MaterialAtlas.IRON);
-        vanSlope(faces,van,w,shoulder,ir+.10,h,f,r,MaterialAtlas.IRON);
         vanSlope(faces,van,-iw+.025,shoulder,-ir,h-.095,f+.08,r-.08,MaterialAtlas.CEILING);
         vanSlope(faces,van,iw-.025,shoulder,ir,h-.095,f+.08,r-.08,MaterialAtlas.CEILING);
-        vanBox(faces,van,-ir-.10,h-.04,f,(ir+.10)*2,.11,r-f,MaterialAtlas.IRON);
         vanBox(faces,van,-ir,h-.095,f+.08,ir*2,.025,r-f-.16,MaterialAtlas.CEILING);
-        vanBox(faces,van,-w,floor,r-.08,w*2,h-floor,.08,MaterialAtlas.IRON);
-        // Cab, sloped windscreen, bonnet, lamps and mirrors are at road-vehicle scale.
-        double nose=r+VanStaging.CAB_LENGTH;
-        vanBox(faces,van,-w+.04,.40,r,w*2-.08,1.02,VanStaging.CAB_LENGTH-.16,MaterialAtlas.IRON);
-        vanBox(faces,van,-w+.04,1.43,r,w*2-.08,.83,.85,MaterialAtlas.IRON);
-        VanStaging.Position wa=van.world(-w+.08,r+.85),wb=van.world(w-.08,r+.85);
-        VanStaging.Position wc=van.world(w-.08,r+1.64),wd=van.world(-w+.08,r+1.64);
-        quad(faces,new Point(wa.x(),2.27,wa.z()),new Point(wb.x(),2.27,wb.z()),new Point(wc.x(),1.44,wc.z()),new Point(wd.x(),1.44,wd.z()),0x344856);
-        // Side glazing is inset on both cab doors.
-        for(double side:new double[]{-w-.006,w+.006}){
-            VanStaging.Position a=van.world(side,r+.15),bb=van.world(side,r+.77),c=van.world(side,r+1.27);
-            quad(faces,new Point(a.x(),1.52,a.z()),new Point(bb.x(),1.52,bb.z()),new Point(bb.x(),2.13,bb.z()),new Point(a.x(),2.13,a.z()),0x344856);
-            quad(faces,new Point(bb.x(),1.52,bb.z()),new Point(c.x(),1.52,c.z()),new Point(bb.x(),2.13,bb.z()),new Point(bb.x(),1.52,bb.z()),0x344856);
-            vanBox(faces,van,side-.015,1.02,r+.32,.03,.06,.17,MaterialAtlas.IRON);
-            vanBox(faces,van,side<0?-1.235:1.095,1.38,r+.76,.14,.24,.10,MaterialAtlas.IRON);
-            vanBox(faces,van,side<0?-1.10:w,1.48,r+.81,.09,.025,.04,MaterialAtlas.IRON);
-        }
-        vanBox(faces,van,-w-.02,.35,nose-.16,w*2+.04,.22,.16,MaterialAtlas.IRON);
-        vanBox(faces,van,-.55,.62,nose+.002,1.10,.25,.025,MaterialAtlas.CONCRETE);
-        for(double side:new double[]{-.88,.65})vanBox(faces,van,side,.96,nose-.15,.23,.18,.035,MaterialAtlas.WINDOW);
-        for(double side:new double[]{-w-.035,w+.035})for(double axle:new double[]{f+1.05,r+1.28})vanWheel(faces,van,side,axle);
-        // Rear wheel housings are inside the fitted wall volumes, leaving the aisle clear.
-        for(double x:new double[]{-iw,iw-.19})vanBox(faces,van,x,floor,f+.65,.19,.25,.84,MaterialAtlas.IRON);
-        for(double side:new double[]{-w-.01,w-.015})vanBox(faces,van,side,.32,f+.10,.025,.10,r-f-.2,MaterialAtlas.IRON);
+        // Driver's cab remains partitioned: the actual model cab is nonwalkable.
+        vanBox(faces,van,-iw,floor,r-.08,iw*2,h-floor,.08,MaterialAtlas.IRON);
+        for(double x:new double[]{-iw,iw-.19})
+            vanBox(faces,van,x,floor,f+.65,.19,.25,.84,MaterialAtlas.IRON);
         for(double z=f+.35;z<r-.15;z+=.65){
             for(double x:new double[]{-iw+.025,iw-.055})vanBox(faces,van,x,floor+.03,z,.03,shoulder-floor-.05,.035,MaterialAtlas.IRON);
             vanBox(faces,van,-ir,h-.13,z,ir*2,.025,.035,MaterialAtlas.IRON);
