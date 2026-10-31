@@ -52,14 +52,34 @@ jobs:
           & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.DevMatchSession --dev-ai-match --bots --seconds=8
           if ($LASTEXITCODE -ne 0) { throw "Seven-client AI activity acceptance failed: exit $LASTEXITCODE" }
 
-      - name: Run full combat and deduction scenario (advisory gameplay outcome)
+      - name: Run three real AI-vs-AI scenarios (advisory gameplay outcomes)
         continue-on-error: true
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.DevMatchSession --dev-ai-match --bots --ghost=DEMON --seconds=120
-          if ($LASTEXITCODE -ne 0) { throw "Behavioral scenario failed to run: exit $LASTEXITCODE" }
-          Get-Content 'build\dev-match\objective-results.txt'
+          $failures = @()
+          foreach ($species in @('DEMON', 'WRAITH', 'SPIRIT')) {
+            Write-Host "===== AUTHORITATIVE SEVEN-CLIENT MATCH: $species ====="
+            & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.DevMatchSession --dev-ai-match --bots "--ghost=$species" --seconds=120
+            $exitCode = $LASTEXITCODE
+            $caseFolder = Join-Path 'build\dev-match-scenarios' $species
+            New-Item -ItemType Directory -Force $caseFolder | Out-Null
+            if (Test-Path 'build\dev-match') {
+              Copy-Item 'build\dev-match\*' $caseFolder -Recurse -Force
+            }
+            if (Test-Path (Join-Path $caseFolder 'objective-results.txt')) {
+              Get-Content (Join-Path $caseFolder 'objective-results.txt')
+            } else {
+              Write-Warning "$species produced no objective-results.txt"
+            }
+            if ($exitCode -ne 0) {
+              $failures += "$species exit $exitCode"
+              Write-Warning "$species match failed to run; captured its available trace"
+            }
+          }
+          if ($failures.Count -gt 0) {
+            throw "Advisory AI scenario failures (gameplay release remains unaffected): $($failures -join '; ')"
+          }
 
       - name: Capture diagnostics even after failure
         if: always()
@@ -79,6 +99,7 @@ jobs:
           name: beckenburg-dev-match-combat-evidence-${{ github.run_number }}
           path: |
             build/dev-match/
+            build/dev-match-scenarios/
             build/e2e/lan-full-round.txt
           if-no-files-found: warn
           retention-days: 14
