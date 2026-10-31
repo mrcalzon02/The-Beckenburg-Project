@@ -31,6 +31,14 @@ public final class TerrainEntranceMeshTest {
                 "approach-tab","entrance-tab","bunker",4.5,4,6,6));
             seams.save();
             var topology=AdaptiveTerrainTopology.open(world);
+            boolean refusedUnconformed=false;
+            try{
+                TerrainEntranceMesh.build(world,new TerrainEntranceMesh.Bounds(3,3,7,8));
+            }catch(IllegalStateException expected){
+                refusedUnconformed=expected.getMessage().contains("CONFORM");
+            }
+            check(refusedUnconformed,
+                "Un-conformed method-1 seam and tab must not be exported as falsely welded geometry");
             EntranceSeamTopology.apply(world,topology,seams);
             for(int x=6;x<12;x++)for(int z=4;z<6;z++)
                 topology.punch(new AdaptiveTerrainTopology.Node(x,z,0,0,0));
@@ -61,10 +69,16 @@ public final class TerrainEntranceMeshTest {
                         check(Math.abs(v.y()-ramp.height(v.x(),v.z()))<1e-8,
                             "Rendered ramp triangle must share actual collision height");
                 }
-                if(t.part().startsWith("surface")||t.part().startsWith("tab_"))
+                if(t.part().startsWith("surface")||t.part().startsWith("tab_")){
                     for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()})
                         check(Math.abs(v.y()-world.height(v.x(),v.z()))<1e-7,
                             "Actual source surface and tab geometry preserve pixel-derived height");
+                    double mx=(t.a().x()+t.b().x()+t.c().x())/3,
+                           mz=(t.a().z()+t.b().z()+t.c().z())/3,
+                           my=(t.a().y()+t.b().y()+t.c().y())/3;
+                    check(Math.abs(world.height(mx,mz)-my)<1e-6,
+                        "Triangle interiors must preserve source heightmap interpolation, not just corners");
+                }
                 if(t.part().startsWith("surface")||t.part().startsWith("ramp_")
                     ||t.part().startsWith("tab_")||t.part().startsWith("floor_"))
                     check(up(t)>0,"Visible upward terrain and floor triangles must face the sky");
