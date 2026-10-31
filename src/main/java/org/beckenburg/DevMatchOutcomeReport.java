@@ -15,10 +15,11 @@ final class DevMatchOutcomeReport {
 
     static void write(Path root,DevAdminSnapshot state,List<DevMatchClientAi.Stats> stats,
                       int actualSeconds)throws java.io.IOException {
-        int totalCommands=0,accepted=0,rejected=0,attacks=0,frenzies=0,
+        int siteEntrants=0,totalCommands=0,accepted=0,rejected=0,attacks=0,frenzies=0,
             effectiveAttacks=0,scans=0,identificationAttempts=0,identifiedAccepts=0,
             ritualsAttempted=0,ritesStarted=0;
         for(var bot:stats){
+            if(!bot.seat().equals("GHOST")&&bot.enteredSite())siteEntrants++;
             totalCommands+=bot.commands();accepted+=bot.accepted();
             rejected+=bot.rejected();attacks+=bot.attacks();
             frenzies+=bot.frenzyStarts();effectiveAttacks+=bot.effectiveAttacks();
@@ -72,6 +73,8 @@ final class DevMatchOutcomeReport {
         summary.append("Host-applied ghost health damage: ").append(actualDamage)
             .append("; ghost-effect-attributed incapacitations: ").append(hostAttributedDeaths)
             .append("; all downed hunters: ").append(incapacitated).append("/6\n");
+        summary.append("Hunter clients that physically entered the investigation site: ")
+            .append(siteEntrants).append("/6\\n");
         summary.append("Actual host casefile observations: ")
             .append(state.observedCasefile().size()).append("\n");
         summary.append("Ordinary-client commands: ").append(totalCommands)
@@ -86,6 +89,8 @@ final class DevMatchOutcomeReport {
             .append(bot.commands()).append(" accepted ").append(bot.accepted())
             .append(" rejected ").append(bot.rejected())
             .append(" samples ").append(bot.observations())
+            .append(" visitedRooms ").append(bot.roomsVisited())
+            .append(" enteredSite ").append(bot.enteredSite())
             .append(" hypothesis ").append(bot.hypothesis())
             .append(" last: ").append(bot.state()).append('\n');
         Files.createDirectories(root);
@@ -112,6 +117,7 @@ final class DevMatchOutcomeReport {
             "  \"actual_ghost_damage\": "+actualDamage+",\n"+
             "  \"ghost_attributed_kills\": "+hostAttributedDeaths+",\n"+
             "  \"incapacitated_hunters\": "+incapacitated+",\n"+
+            "  \"site_entered_hunters\": "+siteEntrants+",\n"+
             "  \"accepted_scans\": "+scans+",\n"+
             "  \"casefile_samples\": "+state.observedCasefile().size()+",\n"+
             "  \"client_command_count\": "+totalCommands+",\n"+
