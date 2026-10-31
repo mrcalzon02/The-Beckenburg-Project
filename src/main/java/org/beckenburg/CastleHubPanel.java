@@ -39,8 +39,10 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private JButton quartermasterClose;
     private JPanel serviceOverlay;
     private Runnable serviceBack;
-    private String notice="Welcome to Beckenburg Castle. The equipment is real; look and press E.";
-    private int noticeTicks=100;
+    // Never automatically narrate Castle entry. Context prompts appear only
+    // when aiming at actual interactive objects.
+    private String notice="";
+    private int noticeTicks;
     public CastleHubPanel(ProfileStore profile,Actions actions){
         this.profile=java.util.Objects.requireNonNull(profile);
         this.actions=java.util.Objects.requireNonNull(actions);
@@ -136,9 +138,9 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     public void closeService(){
         if(serviceOverlay!=null){remove(serviceOverlay);serviceOverlay=null;serviceBack=null;storeOpen=false;last=System.nanoTime();}
         revalidate();repaint();
-        if(isShowing()&&!storeOpen)SwingUtilities.invokeLater(()->{
-            if(!storeOpen)requestFocusInWindow();
-        });
+        if(isShowing()&&!storeOpen&&!archive.opened()){
+            look.resume();
+        }
     }
     /** Existing PSX panels, buttons and approved model thumbnails stay inside
      * the same world viewport and share the live persisted Castle profile. */
@@ -173,7 +175,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         quartermaster.setVisible(false);
         last=System.nanoTime();
         down.clear();
-        requestFocusInWindow();
+        look.resume();
         repaint();
     }
     private void frame(){
@@ -311,7 +313,11 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             if(key==KeyEvent.VK_ESCAPE)closeQuartermaster();
             return;
         }
-        if(archive.opened()){archive.key(key);repaint();return;}
+        if(archive.opened()){
+            archive.key(key);
+            if(!archive.opened())look.resume();
+            repaint();return;
+        }
         if(key==KeyEvent.VK_ESCAPE){
             if(gateExitSeconds>=0){
                 gateExitSeconds=-1;gateExitCancelled=true;
