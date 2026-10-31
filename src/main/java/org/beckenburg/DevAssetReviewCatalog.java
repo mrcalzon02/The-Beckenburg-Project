@@ -77,7 +77,7 @@ public final class DevAssetReviewCatalog {
         synchronized(SOURCE_REVIEW_CACHE){
             cached=SOURCE_REVIEW_CACHE.get(id);
             if(cached==null){
-                cached=GlbProps.decode(java.nio.file.Files.readAllBytes(file));
+                cached=GlbProps.decodeForReview(java.nio.file.Files.readAllBytes(file),id);
                 SOURCE_REVIEW_CACHE.put(id,cached);
             }
             return cached;
