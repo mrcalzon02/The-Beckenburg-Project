@@ -54,6 +54,8 @@ public final class RampEntranceEditor extends JPanel {
         });
         button(buttons,"DELETE",this::remove);
         button(buttons,"AUDIT ENTRANCE",this::audit);
+        button(buttons,"3D MESH PREVIEW",()->previewMesh(false));
+        button(buttons,"EXPORT MESH OBJ",()->previewMesh(true));
         button(buttons,"CARVE OPENING",this::carve);
         button(buttons,"UNDO CARVE",this::undoCarve);
         button(buttons,"UNDO",()->history(false));
@@ -219,6 +221,20 @@ public final class RampEntranceEditor extends JPanel {
                 throw new IOException("Ramp save readback mismatch");
             refresh("Ramp authoring verified on disk");
         }catch(IOException|RuntimeException failure){error("Ramp verification failed",failure);}
+    }
+    private void previewMesh(boolean export){
+        var selected=list.getSelectedValue();
+        if(selected==null){
+            status.setText("Select an authored ramp to preview its physical 3D mesh");return;
+        }
+        try{
+            var result=TerrainEntranceMesh.build(world,
+                TerrainEntranceMesh.around(selected,2));
+            if(export)TerrainEntrancePreview.chooseExport(frame,result);
+            else TerrainEntrancePreview.open(frame,result);
+            status.setText("Generated "+result.mesh().triangles().size()
+                +" real triangles; cut-edge walls "+result.exposedWallSegments());
+        }catch(IOException|RuntimeException failure){error("Entrance mesh generation failed",failure);}
     }
     private void audit(){
         var r=list.getSelectedValue();
