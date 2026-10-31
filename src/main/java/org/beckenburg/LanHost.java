@@ -1493,19 +1493,12 @@ public final class LanHost implements AutoCloseable {
                     notifyHunters(casefile.recordDevice(tick,peer.slot,room,id,
                         LanEvidenceJournal.Finding.OBSERVED,reading));
                     reply(peer,"ACCEPT|GEARUSE|"+id+"|"+reading);
-                    if(id.equals("SPIRIT_BOX")){
-                        // Device-local audio, not a world ghost vocal emission:
-                        // no extra ghost event, evidence increment or journal tick.
-                        reply(peer,new LanSound.CueEvent(LanSound.Cue.SPIRIT_BOX_STATIC,
-                            0,32,tick).frame());
-                        if(spiritReply!=null)reply(peer,new LanSound.CueEvent(
-                            spiritReply.cue,0,92,tick).frame());
-                    }
                     LanSound.Cue deviceCue=switch(id){
                         case "PHOTO_CAMERA"->LanSound.Cue.CAMERA;
                         case "GHOST_WRITING_BOOK"->reading.startsWith("Writing book placed")
                             ?LanSound.Cue.DROP:LanSound.Cue.BOOK;
-                        case "EMF_READER","THERMOMETER","SPIRIT_BOX","UV_LIGHT",
+                        case "SPIRIT_BOX"->LanSound.Cue.SPIRIT_BOX_STATIC;
+                        case "EMF_READER","THERMOMETER","UV_LIGHT",
                                 "SOUND_RECORDER"->LanSound.Cue.SCANNER;
                         case "DOTS_PROJECTOR"->dots.at(peer.slot)==null
                                     ?LanSound.Cue.DOTS_STOP:LanSound.Cue.DOTS_MOTOR;
@@ -1518,6 +1511,7 @@ public final class LanHost implements AutoCloseable {
                         default->LanSound.Cue.EQUIPMENT;
                     };
                     recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,deviceCue);
+                    if(spiritReply!=null)emitSpiritBoxPhrase(peer.slot,spiritReply.cue);
                 }
                 case "BUY" -> {
                     if(peer.slot==GHOST_SEAT||p.size()!=4||(!running&&everStarted)||(running&&!peer.worldMode))
@@ -1664,12 +1658,6 @@ public final class LanHost implements AutoCloseable {
                         }
                         result=new LanCase.Report(true,"READING SPIRIT_BOX in "+sourceRoom+
                             " - "+SpiritBoxResponses.observation(scannedReply));
-                        if(peer.worldMode){
-                            reply(peer,new LanSound.CueEvent(LanSound.Cue.SPIRIT_BOX_STATIC,
-                                0,32,tick).frame());
-                            if(scannedReply!=null)reply(peer,new LanSound.CueEvent(
-                                scannedReply.cue,0,92,tick).frame());
-                        }
                     }
                     answerHunter(peer,"SCAN",result);
                     if(result.accepted()){
@@ -1678,7 +1666,11 @@ public final class LanHost implements AutoCloseable {
                             case THERMOMETER->ContractRewards.Task.THERMAL_SAMPLE;
                             case SPIRIT_BOX->ContractRewards.Task.SPIRIT_SAMPLE;
                         });
-                        recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,LanSound.Cue.SCANNER);
+                        recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,
+                            tool==LanCase.Tool.SPIRIT_BOX
+                                ?LanSound.Cue.SPIRIT_BOX_STATIC:LanSound.Cue.SCANNER);
+                        if(scannedReply!=null&&peer.worldMode)
+                            emitSpiritBoxPhrase(peer.slot,scannedReply.cue);
                         String note=casefile.record(tick,peer.slot,hunterRooms[peer.slot],tool,result);
                         if(note!=null)notifyHunters(note);
                     }
@@ -1950,6 +1942,25 @@ public final class LanHost implements AutoCloseable {
         }
     }
     private void recordSound(int seat,LanGhostPursuit.Sound type){recordSound(seat,type,null);}
+    /** The handheld box, not an omnipresent ghost, produces this spoken sample.
+     * Its real physical location determines listeners and live recorder capture.
+     * Audio never grants proof or reveals hidden entity coordinates. */
+    private void emitSpiritBoxPhrase(int speakerSeat,LanSound.Cue voice){
+        LanWorld.Body speaker=world.body(speakerSeat);
+        for(int listener=0;listener<HUNTERS;listener++){
+            Peer peer=seats[listener];
+            if(peer==null||!peer.worldMode)continue;
+            LanWorld.Body target=world.body(listener);
+            LanSound.CueEvent sound=LanSound.project(map,target,speaker.room(),
+                speaker.x(),speaker.y(),speaker.z(),voice,tick);
+            sound=LanSound.weatherMask(sound,weather.state(),
+                map.outside(speaker.room())||map.outside(target.room()));
+            if(sound==null)continue;
+            reply(peer,sound.frame());
+            recorders[listener].capture(sound,
+                Math.hypot(speaker.x()-target.x(),speaker.z()-target.z()));
+        }
+    }
     private void sealedDoorRattle(Peer peer){
         if(peer.slot<0||peer.slot>=HUNTERS||tick-lastSealedDoorRattleTick[peer.slot]<18)return;
         lastSealedDoorRattleTick[peer.slot]=tick;
