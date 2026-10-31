@@ -73,6 +73,12 @@ public final class GlbProps {
     // glTF 2.0 origin is upper-left. Apply it to vehicles and new authored
     // surface atlases; legacy art keeps its previously reviewed mapping.
     private static final List<Boolean> vehicleUvMaterials=new ArrayList<>();
+    /** These imported fluorescent GLBs use glTF image-space (top-left) UVs.
+     * Keep their original source images and mesh coordinates untouched. */
+    static boolean fluorescentGltfUv(String name){
+        return name!=null&&(name.matches("ceiling_lamp_[14]_(on|off)")
+            ||name.equals("level_utility_light"));
+    }
     static int imageRow(double v,int height,boolean gltfTopLeft){
         if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
         double fractional=v-Math.floor(v);
@@ -360,7 +366,7 @@ public final class GlbProps {
                 picture=readableBookCover(picture);
             materialIds[i]=TEXTURE_BASE+textures.size();
             textures.add(picture);
-            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)));
+            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)));
             materialNames.add(String.valueOf(obj(materials.get(i)).getOrDefault("name","")));
             double[] color=vec(pbr.get("baseColorFactor"),1,1,1,1);
             diffuseFactors.add(color);
