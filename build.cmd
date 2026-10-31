@@ -133,6 +133,7 @@ rem Art/audio/balance diagnostics execute in the separate non-blocking workflow 
 if /I "%~1"=="e2e" goto package_jar_only
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.SpiritBoxResponsesTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.LanSpiritBoxAudioIntegrationTest || exit /b 1
+java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.HauntingScreenFxTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.SoundCoverageTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.AudioDeviceRecoveryTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.EnvironmentAudioTest || exit /b 1
