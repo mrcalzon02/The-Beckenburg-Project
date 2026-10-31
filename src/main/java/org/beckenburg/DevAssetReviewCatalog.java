@@ -15,7 +15,7 @@ import java.util.TreeSet;
  */
 public final class DevAssetReviewCatalog {
     private DevAssetReviewCatalog(){}
-    public enum Kind { HUNTER, GHOST, CASTLE_NPC, EQUIPMENT, IMPORTED, WORLD_MODEL }
+    public enum Kind { HUNTER, GHOST, CASTLE_NPC, EQUIPMENT, IMPORTED, WORLD_MODEL, SOURCE_ONLY }
     public record Entry(Kind kind,String id) {
         public String key(){return kind.name()+"/"+id;}
         public boolean sprite(){return kind==Kind.HUNTER||kind==Kind.GHOST||kind==Kind.CASTLE_NPC;}
@@ -42,10 +42,36 @@ public final class DevAssetReviewCatalog {
                 equipment.contains(id)?Kind.EQUIPMENT:Kind.WORLD_MODEL;
             out.add(new Entry(kind,id));
         }
+        // Source GLBs in the checkout which have not been approved for normal
+        // gameplay must still be reviewable. They remain SOURCE_ONLY, never
+        // gain authority to spawn in a real level.
+        java.nio.file.Path source=java.nio.file.Path.of("assets","runtime","models");
+        if(java.nio.file.Files.isDirectory(source))try(var paths=java.nio.file.Files.list(source)){
+            Set<String> known=new java.util.HashSet<>();
+            for(var item:out)if(!item.sprite())known.add(item.id());
+            for(var file:paths.filter(p->p.getFileName().toString().endsWith(".glb")).toList()){
+                String filename=file.getFileName().toString();
+                String id=filename.substring(0,filename.length()-4);
+                if(!known.contains(id)&&id.matches("[A-Za-z0-9_-]{1,90}"))
+                    out.add(new Entry(Kind.SOURCE_ONLY,id));
+            }
+        }catch(java.io.IOException failure){
+            System.err.println("DEV ROOM source catalog inspection: "+failure.getMessage());
+        }
         out.sort(Comparator.comparing((Entry e)->e.kind().ordinal()).thenComparing(Entry::id));
         return List.copyOf(out);
     }
 
+    /** Development-only source loading. Does NOT alter GlbProps approvals. */
+    public static GlbProps.Model sourceModel(String id)throws java.io.IOException{
+        if(id==null||!id.matches("[A-Za-z0-9_-]{1,90}"))
+            throw new java.io.IOException("invalid review-only model name");
+        java.nio.file.Path file=java.nio.file.Path.of("assets","runtime","models",id+".glb");
+        if(!java.nio.file.Files.isRegularFile(file,java.nio.file.LinkOption.NOFOLLOW_LINKS)
+            ||java.nio.file.Files.size(file)>4_000_000)
+            throw new java.io.IOException("source-only GLB unavailable or over budget");
+        return GlbProps.decode(java.nio.file.Files.readAllBytes(file));
+    }
     /** Decoder/material presence is an objective diagnostic, not texture-art approval. */
     public static Audit audit(Entry entry){
         try {
@@ -65,7 +91,8 @@ public final class DevAssetReviewCatalog {
                     "source sprite "+image.getWidth()+"x"+image.getHeight()+
                     " alphaPixels="+alpha+" visibleSamples="+opaque);
             }
-            var model=GlbProps.model(entry.id());
+            var model=entry.kind()==Kind.SOURCE_ONLY
+                ?sourceModel(entry.id()):GlbProps.model(entry.id());
             int n=model.triangles().size();
             if(n==0)return new Audit("MISSING",0,0,0,0,0,0,0,0,0,"No geometry");
             var materials=new TreeSet<Integer>();
@@ -90,9 +117,11 @@ public final class DevAssetReviewCatalog {
             }
             if(!Double.isFinite(lx))return new Audit("MISSING",n,materials.size(),0,0,0,0,0,0,0,"Nonfinite mesh");
             String state=uvProblems>0||materials.isEmpty()?"REVIEW_UV":
-                colors.size()<2?"REVIEW_TEXTURE":"LOADED";
+                colors.size()<2?"REVIEW_TEXTURE":
+                entry.kind()==Kind.SOURCE_ONLY?"REVIEW_REGISTRATION":"LOADED";
             String details="uniqueSampleColors="+colors.size()+"; invalidUV/material="+uvProblems+
-                "; source geometry preserved";
+                "; source geometry preserved"+(entry.kind()==Kind.SOURCE_ONLY?
+                "; not approved for normal gameplay":"");
             return new Audit(state,n,materials.size(),textureSamples,lx,ly,lz,hx,hy,hz,details);
         }catch(Exception | LinkageError issue){
             return new Audit("MISSING",0,0,0,0,0,0,0,0,0,
