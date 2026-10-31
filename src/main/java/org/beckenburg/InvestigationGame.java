@@ -1638,7 +1638,7 @@ public final class InvestigationGame {
                 g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
                 g.drawString(status,24,66);
                 g.setColor(new Color(232,225,195));g.drawString("+",width/2-4,stageH/2+4);
-                String msg=session.message();
+                String msg=session.hudMessage();
                 if(!msg.isBlank()){
                     if(msg.length()>75)msg=msg.substring(0,72)+"...";
                     g.setColor(new Color(14,19,25,228));
