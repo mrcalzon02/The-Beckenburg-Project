@@ -68,6 +68,7 @@ public final class StitchedWorldEditor extends JPanel {
         addButton(commands,"EXPORT PNG",this::exportTile);
         addButton(commands,"VERIFY SEAMS",this::verify);
         addButton(commands,"ADAPTIVE TOPOLOGY",this::adaptiveTopology);
+        addButton(commands,"TERRAIN SCENE PACKAGE",this::scenePackage);
         add(commands,BorderLayout.NORTH);
         preview.setPreferredSize(new Dimension(520,500));
         preview.setBackground(new Color(25,30,35));
@@ -166,6 +167,13 @@ public final class StitchedWorldEditor extends JPanel {
             AdaptiveTopologyEditor.open(frame,world,x(),z());
         }catch(IOException|RuntimeException failure){
             error("Adaptive topology editor failed to open",failure);
+        }
+    }
+    private void scenePackage(){
+        if(!ready())return;
+        try{TerrainScenePackageEditor.open(frame,world,x(),z());}
+        catch(IOException|RuntimeException failure){
+            error("Cannot open terrain scene package editor",failure);
         }
     }
     private void verify(){
