@@ -23,6 +23,8 @@ public final class CameraSnapshotTest {
         SceneRenderer hunter=new SceneRenderer(),lens=new SceneRenderer();
         hunter.x=48.5;hunter.z=32.3;hunter.eyeHeight=map.floorY(0)+1.62;
         hunter.yaw=0;hunter.pitch=0;hunter.lamp=false;
+        hunter.roomLights=new RoomLighting();
+        hunter.roomLights.acceptSnapshot("000000000000");
         BufferedImage ahead=CameraSnapshot.network(lens,hunter,map,List.of(),
             null,1.0,List.of(),EquipmentTiers.Tier.II);
         check(ahead.getWidth()==320&&ahead.getHeight()==200,
