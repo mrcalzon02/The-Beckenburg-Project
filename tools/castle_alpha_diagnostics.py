@@ -24,8 +24,8 @@ def main():
         for identity,master in MASTERS.items():
             image=Image.open(ROOT/"assets/concept-art/v001/04-npcs"/(master+"-master-concept.png")).convert("RGB")
             print("MASTER",identity,image.size,flush=True)
-            image.thumbnail((1000,760),Image.Resampling.LANCZOS)
-            image.save(dest/(master+"-master-overview.png"),optimize=True)
+            image.thumbnail((800,630),Image.Resampling.LANCZOS)
+            image.save(dest/(master+"-master-overview.jpg"),quality=75,optimize=True)
             reference=Image.open(io.BytesIO(source.read(
                 f"assets/castle_support/{identity}/front.png"))).convert("RGBA")
             ref=reference.resize((256,448),Image.Resampling.LANCZOS)
