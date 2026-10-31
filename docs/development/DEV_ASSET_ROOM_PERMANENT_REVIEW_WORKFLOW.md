@@ -43,3 +43,46 @@ The workflow enumerates the actual GlbProps.availableModels, EquipmentModelCatal
 **Cosmetic and visual asset reviews are diagnostic only and must never block builds or releases.** Source compilation, launching, required game functionality, and the existing multiplayer acceptance remain functional gates. An automated decoder pass does not certify visual fidelity; a human reviews the captured geometry and source art.
 
 This room is not meant to alter campaign saves or add a hidden dev player to standard matchmaking. It exists solely as a permanent, repeatable visual QA scene.
+
+
+## Opt-in terrain topology QA in the same DEV room
+
+The DEV asset showroom now has three separate developer actions: **Topology QA on/off**,
+**Edit QA topology**, and **Reload QA topology**. These do not change the normal model
+catalog, plinth positions, imported textures, camera controls, or ordinary source asset
+screenshots. The patch appears only when enabled, in the otherwise unused right side
+aisle. Enabling it first creates (or subsequently reopens) an isolated 16-bit
+stitched-heightmap test world under
+\`%USERPROFILE%\\.beckenburg\\dev-room\\topology-qa\\\`, with two adjacent
+PNG tiles and an authored refinement example spanning their shared base-cell boundary.
+The test fixture is never added to campaign maps or the model allowlist.
+
+The colored 3D patch is made from the real 16-bit source heights and saved
+\`AdaptiveTerrainTopology\` leaves in \`SceneRenderer.drawDevAssetRoom\`.
+Different authored subdivision depths use different diagnostic tints.
+It is deliberately **not** a physical ground/collision implementation:
+the current vertex heights still come from canonical base heightmap triangle
+interpolation, and subdivision metadata alone cannot create cliffs or local
+independent sculpting detail.
+
+Use **Edit QA topology** to open the human adaptive editor, select cells and
+subquadrants, split/merge, then save. Closing that editor reloads its saved
+source data into the DEV renderer; the explicit Reload button allows manual
+readback. Use the free camera to move around the patch and F12 for an actual
+rendered screenshot (not concept art). Reopening the DEV room leaves existing
+saved QA terrain data intact. Errors in saved topology do not silently replace
+it with invented default geometry.
+
+To capture the exact dev renderer's topology patch without a GUI:
+
+    java -Djava.awt.headless=true -cp "build\\beckenburg-game.jar" org.beckenburg.DevAssetShowroom --dev-room --terrain-qa-capture --output=build/dev-room
+
+This writes \`terrain-topology-devroom-real-render.png\` and
+\`terrain-topology-devroom-report.txt\`. The existing DEV room visual-review
+CI also attempts this capture as a **diagnostic only**.
+
+Acceptance work still outstanding: height offsets on sparse shared dyadic
+vertices; cell-edge/PNG-border sculpt transactions and rollback; visually
+watertight deforming mesh, gameplay collision/LOS from the identical geometry;
+zoom-sensitive LOD and true distant actor/occlusion tests. A real renderer
+screenshot of the current *undeformed* patch is not proof of any of those.
