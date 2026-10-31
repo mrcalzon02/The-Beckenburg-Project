@@ -173,7 +173,8 @@ public final class EntranceSeamEditor extends JPanel {
     private void history(boolean forward){
         var input=forward?redo:undo;
         if(input.isEmpty())return;
-        var before=doc.snapshot(),target=input.peek();
+        var before=doc.snapshot();
+        var target=input.peek();
         try{
             doc.restore(target);doc.save();
             if(!doc.snapshot().equals(EntranceSeamDocument.open(world).snapshot()))
