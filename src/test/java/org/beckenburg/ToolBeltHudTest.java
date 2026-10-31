@@ -28,7 +28,16 @@ public final class ToolBeltHudTest {
                 3,null,true,false,true,135);
         }finally{g.dispose();}
         require((frame.getRGB(456,500)>>>24)!=0,"center belt visible");
-        // Only an actively inspected device may expose a current reading above the belt.
+        // Every actual catalog item must show its approved real model icon, not
+        // a silent text label caused by a missing legacy base preview.
+        for(var tool:EquipmentRegistry.all())
+            require(ItemIconAtlas.get(tool.id().toLowerCase(java.util.Locale.ROOT),48)!=null,
+                "missing illustrated tool belt image: "+tool.id());
+        require(ToolBeltHud.focusedReadingX(850,0)==712
+            &&ToolBeltHud.focusedReadingX(850,1)==425
+            &&ToolBeltHud.focusedReadingY(555,1)<ToolBeltHud.focusedReadingY(555,0),
+            "live readout travels from the right into the center with the tool");
+        // A current device reading is visible only while inspection is held.
         BufferedImage idle=new BufferedImage(850,555,BufferedImage.TYPE_INT_ARGB);
         BufferedImage active=new BufferedImage(850,555,BufferedImage.TYPE_INT_ARGB);
         Graphics2D idleGraphics=idle.createGraphics(),activeGraphics=active.createGraphics();
@@ -37,8 +46,8 @@ public final class ToolBeltHudTest {
             ToolBeltHud.draw(idleGraphics,850,555,belt,0,"EMF 6/10",false,false,false,0);
             ToolBeltHud.draw(activeGraphics,850,555,belt,0,"EMF 6/10",true,false,false,0);
         }finally{idleGraphics.dispose();activeGraphics.dispose();}
-        require((idle.getRGB(425,390)>>>24)==0
-            &&(active.getRGB(425,390)>>>24)>0,
+        require((idle.getRGB(425,150)>>>24)==0
+            &&(active.getRGB(425,150)>>>24)>0,
             "authoritative reading only visible during held use");
         System.out.println("ToolBeltHudTest PASS");
     }
