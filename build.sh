@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 mkdir -p build
 rm -rf build/classes build/test
 mkdir -p build/classes build/test
-javac --release 17 -encoding UTF-8 -d build/classes src/main/java/hbnet/*.java water-module/src/main/java/dev/mrcalzon/water/*.java lighting-module/src/main/java/dev/mrcalzon/lighting/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/*.java
+javac --release 17 -encoding UTF-8 -d build/classes src/main/java/hbnet/*.java water-module/src/main/java/dev/mrcalzon/water/*.java lighting-module/src/main/java/dev/mrcalzon/lighting/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/editor/ai/*.java src/main/java/org/beckenburg/*.java
 # Bake approved model-review thumbnails and Castle screenshot into the actual game JAR.
 java -Djava.awt.headless=true -cp build/classes org.beckenburg.UiAssetBake . build/classes/org/beckenburg build/Beckenburg.ico
 mkdir -p build/classes/META-INF
