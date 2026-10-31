@@ -186,6 +186,8 @@ public final class LanHost implements AutoCloseable {
     /** Recent authorized spectral events provide genuine transient EMF peaks. */
     private int lastEvidenceEventTick=-10000,lastEvidenceEventRoom=-1,lastEvidenceEventPower;
     private GhostDomain.Action lastEvidenceEventAction=GhostDomain.Action.DRIFT;
+    /** A vocal event outlives unrelated EMF/physical events for its real window. */
+    private int lastVocalEventTick=-1,lastVocalEventRoom=-1;
     private final int[] lastGhostFootstepCueTick=new int[HUNTERS];
     private final int[] lastVoiceCueTick=new int[HUNTERS];
     private LanTelegraphedStrike.Pending pendingStrike;
@@ -1181,18 +1183,17 @@ public final class LanHost implements AutoCloseable {
                         case "SPIRIT_BOX" -> {
                             // This instrument responds ONLY to a real, recent host
                             // vocal action that is within this actual tier's reach.
-                            boolean voiced=lastEvidenceEventAction==GhostDomain.Action.WHISPER
-                                ||lastEvidenceEventAction==GhostDomain.Action.SIGNATURE;
+                            boolean voiced=lastVocalEventTick>=0;
                             double distance=Math.hypot(world.body(peer.slot).x()-ghostPose.pose().x(),
                                 world.body(peer.slot).z()-ghostPose.pose().z());
                             boolean replyNow=SpiritBoxResponses.qualifies(room,ghost.room(),
-                                lastEvidenceEventRoom,lastEvidenceEventTick,tick,voiced,
+                                lastVocalEventRoom,lastVocalEventTick,tick,voiced,
                                 mission.allowsEvidence(HardEvidenceQuota.Family.SPIRIT_BOX),
                                 distance,stage.reachCm()/100.0,
                                 lastSpiritReplyEventTick[peer.slot]);
                             if(replyNow){
-                                spiritReply=SpiritBoxResponses.choose(lastEvidenceEventTick,peer.slot);
-                                lastSpiritReplyEventTick[peer.slot]=lastEvidenceEventTick;
+                                spiritReply=SpiritBoxResponses.choose(lastVocalEventTick,peer.slot);
+                                lastSpiritReplyEventTick[peer.slot]=lastVocalEventTick;
                             }
                             taskDone(ContractRewards.Task.SPIRIT_SAMPLE);
                             reading=SpiritBoxResponses.observation(spiritReply);
@@ -1627,11 +1628,10 @@ public final class LanHost implements AutoCloseable {
                         ?Math.max(0,lastEvidenceEventPower-eventAge/7):0;
                     // A nearby ghost isn't itself a talking radio. Only a real
                     // WHISPER/SIGNATURE with remaining strength can yield a reply.
-                    boolean actualVoice=lastEvidenceEventAction==GhostDomain.Action.WHISPER
-                        ||lastEvidenceEventAction==GhostDomain.Action.SIGNATURE;
-                    int scanEventRoom=tool==LanCase.Tool.SPIRIT_BOX&&!actualVoice
-                        ?-1:lastEvidenceEventRoom;
-                    int scanEventPower=tool==LanCase.Tool.SPIRIT_BOX&&!actualVoice
+                    boolean actualVoice=lastVocalEventTick>=0;
+                    int scanEventRoom=tool==LanCase.Tool.SPIRIT_BOX
+                        ?lastVocalEventRoom:lastEvidenceEventRoom;
+                    int scanEventPower=tool==LanCase.Tool.SPIRIT_BOX
                         ?0:eventPower;
                     mission.setEvidenceHeating(lights.supplied());
                     LanCase.Report result=peer.worldMode
@@ -1644,17 +1644,16 @@ public final class LanHost implements AutoCloseable {
                     SpiritBoxResponses.Phrase scannedReply=null;
                     if(tool==LanCase.Tool.SPIRIT_BOX&&result.accepted()){
                         int sourceRoom=peer.worldMode?world.body(peer.slot).room():hunterRooms[peer.slot];
-                        boolean voiced=lastEvidenceEventAction==GhostDomain.Action.WHISPER
-                            ||lastEvidenceEventAction==GhostDomain.Action.SIGNATURE;
+                        boolean voiced=lastVocalEventTick>=0;
                         boolean fresh=SpiritBoxResponses.qualifies(sourceRoom,ghost.room(),
-                            lastEvidenceEventRoom,lastEvidenceEventTick,tick,voiced,
+                            lastVocalEventRoom,lastVocalEventTick,tick,voiced,
                             mission.allowsEvidence(HardEvidenceQuota.Family.SPIRIT_BOX),
                             peer.worldMode?Math.hypot(world.body(peer.slot).x()-ghostPose.pose().x(),
                                 world.body(peer.slot).z()-ghostPose.pose().z()):Double.POSITIVE_INFINITY,
                             2.1,lastSpiritReplyEventTick[peer.slot]);
                         if(fresh){
-                            scannedReply=SpiritBoxResponses.choose(lastEvidenceEventTick,peer.slot);
-                            lastSpiritReplyEventTick[peer.slot]=lastEvidenceEventTick;
+                            scannedReply=SpiritBoxResponses.choose(lastVocalEventTick,peer.slot);
+                            lastSpiritReplyEventTick[peer.slot]=lastVocalEventTick;
                         }
                         result=new LanCase.Report(true,"READING SPIRIT_BOX in "+sourceRoom+
                             " - "+SpiritBoxResponses.observation(scannedReply));
@@ -2244,6 +2243,11 @@ public final class LanHost implements AutoCloseable {
             case WHISPER->3;case DISTURB->8;case MANIFEST->9;
             case STRIKE,SIGNATURE->10;case DRIFT->0;
         };
+        if(result.action()==GhostDomain.Action.WHISPER
+                ||result.action()==GhostDomain.Action.SIGNATURE){
+            lastVocalEventTick=tick;
+            lastVocalEventRoom=result.room();
+        }
         if(eventPower>0){
             if(mission.allowsEvidence(HardEvidenceQuota.Family.WRITING)&&writingBook.witness(20261018L,tick,result,ghostType))
                 notifyHunters(writingBook.writingFrame());
