@@ -98,7 +98,9 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         button(buttons,"SEED AT CLICK",()->modify(()->edits.addSeed(
             new AdaptiveNavMeshEdits.Seed("surface",clickX,clickZ))));
         button(buttons,"DRAW BLOCKED GATE",()->{
-            drawingGate=true;status.setText("Choose first and second gate endpoints on the map");
+            drawingGate=true;
+            barrierStartX=Double.NaN;barrierStartZ=Double.NaN;
+            status.setText("Choose first and second gate endpoints on the map");
         });
         button(buttons,"TRIM SELECTED",()->trimSelected(false));
         button(buttons,"TRIM CONNECTED",()->trimSelected(true));
@@ -187,7 +189,8 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                 throw new IOException("Navigation masks failed disk readback");
             undo.push(before);if(undo.size()>80)undo.removeLast();redo.clear();
             changeVersion++;seenSignature=fileSignature();
-            updateStatus("Authored navigation masks saved");
+            selected=null;
+            updateStatus("Authored navigation masks saved; graph needs fresh flood pulse");
             if(continuous.isSelected())pulse();
         }catch(IOException|RuntimeException failure){
             edits.restore(before);
@@ -211,6 +214,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
             input.pop();output.push(prior);
             continuous.setSelected(edits.continuous());
             changeVersion++;seenSignature=fileSignature();
+            selected=null;
             if(continuous.isSelected())pulse();
             else updateStatus("Authoring changed; manual pulse required");
         }catch(IOException|RuntimeException failure){
