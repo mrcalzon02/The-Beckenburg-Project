@@ -1131,12 +1131,15 @@ public final class LanHost implements AutoCloseable {
                     actorCue(peer.slot,AudioActionRouting.portableLight(installed!=null));
                 }
                 case "GEARUSE" -> {
-                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||(p.size()!=2&&p.size()!=3))
                         throw new IllegalArgumentException("hunter instrument required");
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(1)));
                     ensureActiveHunter(peer);
                     FieldEquipment gear=equipment[peer.slot];
                     String id=gear.active();
+                    int rotation=p.size()==3?LanProtocol.integer(p.get(2),0,359):0;
+                    if(rotation!=0&&!ToolBeltHud.placeable(id))
+                        throw new IllegalArgumentException("rotation requires a placeable tool");
                     if(!gear.ready(id,tick))
                         throw new IllegalArgumentException(
                             gear.batterySecondsLeft(id)==0?
@@ -1197,7 +1200,7 @@ public final class LanHost implements AutoCloseable {
                                 throw new IllegalArgumentException("D.O.T.S. projection requires a room");
                             LanDotsProjectors.Placement placed=dots.placeOrRemove(peer.slot,room,
                                 world.body(peer.slot).x(),world.body(peer.slot).y(),world.body(peer.slot).z(),
-                                gear.owned(id),world.body(peer.slot).heading());
+                                gear.owned(id),Math.floorMod(world.body(peer.slot).heading()+rotation,360));
                             if(placed==null){
                                 gear.setPower(id,false);notifyHunters("DOTS|POWER|"+peer.slot+"|0");
                                 reading="Projector retrieved / emission ended";
@@ -1236,6 +1239,9 @@ public final class LanHost implements AutoCloseable {
                             if(cameras.at(peer.slot)==null&&gear.batterySecondsLeft(id)==0)
                                 throw new IllegalArgumentException("camera battery empty: return to van");
                             LanWorld.Body cameraBody=world.body(peer.slot);
+                            if(rotation!=0)cameraBody=new LanWorld.Body(cameraBody.x(),
+                                cameraBody.y(),cameraBody.z(),
+                                Math.floorMod(cameraBody.heading()+rotation,360),cameraBody.room());
                             LanVideoCameras.Camera station=cameras.placeOrRetrieve(
                                 peer.slot,cameraBody,gear.owned(id),
                                 tripods.near(cameraBody,.9));
