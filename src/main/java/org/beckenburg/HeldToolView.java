@@ -146,6 +146,17 @@ public final class HeldToolView {
             g.drawString("TIER "+tier,-65,52);
         }finally{g.dispose();}
     }
+    /** Move the actual textured foreground tool toward center while it is held for use. */
+    public static void draw(Graphics2D graphics,int width,int height,String kind,long tick,
+            boolean operating,boolean flashlightOn,String measurement,EquipmentTiers.Tier tier,double raised){
+        if(graphics==null)return;
+        Graphics2D pose=(Graphics2D)graphics.create();
+        try{
+            double focus=Math.max(0,Math.min(1,raised));
+            pose.translate(-width*.37*focus,-height*.14*focus);
+            draw(pose,width,height,kind,tick,operating,flashlightOn,measurement,tier);
+        }finally{pose.dispose();}
+    }
     private static void body(Graphics2D g,int x,int y,int w,int h,int color){
         g.setColor(new Color(0x0e1116));g.fillRoundRect(x-4,y-4,w+8,h+9,14,14);
         g.setColor(new Color(color));g.fillRoundRect(x,y,w,h,9,9);
