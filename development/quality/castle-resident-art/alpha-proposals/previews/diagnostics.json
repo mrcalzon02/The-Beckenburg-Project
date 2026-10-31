@@ -1,0 +1,338 @@
+[
+  {
+    "identity": "elsbeth_vale",
+    "view": "front",
+    "background_rgb": [
+      13,
+      14,
+      15
+    ],
+    "cutoff_lab": 19.18,
+    "old_opaque_pixels": 38858,
+    "new_opaque_pixels": 54843,
+    "foreground_ratio": 1.411,
+    "new_bbox": [
+      41,
+      14,
+      182,
+      434
+    ],
+    "old_alpha_zero_new_foreground": 9544,
+    "old_alpha_hole_fill": 16389
+  },
+  {
+    "identity": "elsbeth_vale",
+    "view": "side",
+    "background_rgb": [
+      12,
+      14,
+      15
+    ],
+    "cutoff_lab": 29.25,
+    "old_opaque_pixels": 32496,
+    "new_opaque_pixels": 43195,
+    "foreground_ratio": 1.329,
+    "new_bbox": [
+      57,
+      13,
+      155,
+      435
+    ],
+    "old_alpha_zero_new_foreground": 5481,
+    "old_alpha_hole_fill": 10968
+  },
+  {
+    "identity": "elsbeth_vale",
+    "view": "back",
+    "background_rgb": [
+      12,
+      13,
+      15
+    ],
+    "cutoff_lab": 15.0,
+    "old_opaque_pixels": 40481,
+    "new_opaque_pixels": 55517,
+    "foreground_ratio": 1.371,
+    "new_bbox": [
+      43,
+      7,
+      189,
+      441
+    ],
+    "old_alpha_zero_new_foreground": 9488,
+    "old_alpha_hole_fill": 15123
+  },
+  {
+    "identity": "elsbeth_vale",
+    "view": "right",
+    "background_rgb": [
+      12,
+      13,
+      15
+    ],
+    "cutoff_lab": 39.46,
+    "old_opaque_pixels": 33096,
+    "new_opaque_pixels": 49510,
+    "foreground_ratio": 1.496,
+    "new_bbox": [
+      57,
+      12,
+      171,
+      436
+    ],
+    "old_alpha_zero_new_foreground": 10216,
+    "old_alpha_hole_fill": 16661
+  },
+  {
+    "identity": "rowan_pike",
+    "view": "front",
+    "background_rgb": [
+      10,
+      11,
+      12
+    ],
+    "cutoff_lab": 18.0,
+    "old_opaque_pixels": 35005,
+    "new_opaque_pixels": 47048,
+    "foreground_ratio": 1.344,
+    "new_bbox": [
+      53,
+      15,
+      175,
+      421
+    ],
+    "old_alpha_zero_new_foreground": 6976,
+    "old_alpha_hole_fill": 12852
+  },
+  {
+    "identity": "rowan_pike",
+    "view": "side",
+    "background_rgb": [
+      9,
+      11,
+      12
+    ],
+    "cutoff_lab": 27.65,
+    "old_opaque_pixels": 31354,
+    "new_opaque_pixels": 39699,
+    "foreground_ratio": 1.266,
+    "new_bbox": [
+      63,
+      11,
+      149,
+      437
+    ],
+    "old_alpha_zero_new_foreground": 4038,
+    "old_alpha_hole_fill": 9038
+  },
+  {
+    "identity": "rowan_pike",
+    "view": "back",
+    "background_rgb": [
+      9,
+      11,
+      12
+    ],
+    "cutoff_lab": 15.0,
+    "old_opaque_pixels": 41253,
+    "new_opaque_pixels": 48756,
+    "foreground_ratio": 1.182,
+    "new_bbox": [
+      45,
+      8,
+      172,
+      432
+    ],
+    "old_alpha_zero_new_foreground": 3328,
+    "old_alpha_hole_fill": 8076
+  },
+  {
+    "identity": "rowan_pike",
+    "view": "right",
+    "background_rgb": [
+      9,
+      11,
+      12
+    ],
+    "cutoff_lab": 23.81,
+    "old_opaque_pixels": 34661,
+    "new_opaque_pixels": 45065,
+    "foreground_ratio": 1.3,
+    "new_bbox": [
+      50,
+      7,
+      161,
+      428
+    ],
+    "old_alpha_zero_new_foreground": 4636,
+    "old_alpha_hole_fill": 10750
+  },
+  {
+    "identity": "tomas_greaves",
+    "view": "front",
+    "background_rgb": [
+      10,
+      12,
+      12
+    ],
+    "cutoff_lab": 17.43,
+    "old_opaque_pixels": 37213,
+    "new_opaque_pixels": 54493,
+    "foreground_ratio": 1.464,
+    "new_bbox": [
+      34,
+      0,
+      190,
+      425
+    ],
+    "old_alpha_zero_new_foreground": 11944,
+    "old_alpha_hole_fill": 17645
+  },
+  {
+    "identity": "tomas_greaves",
+    "view": "side",
+    "background_rgb": [
+      10,
+      12,
+      12
+    ],
+    "cutoff_lab": 34.04,
+    "old_opaque_pixels": 32902,
+    "new_opaque_pixels": 42261,
+    "foreground_ratio": 1.284,
+    "new_bbox": [
+      46,
+      3,
+      156,
+      423
+    ],
+    "old_alpha_zero_new_foreground": 5420,
+    "old_alpha_hole_fill": 10328
+  },
+  {
+    "identity": "tomas_greaves",
+    "view": "back",
+    "background_rgb": [
+      10,
+      11,
+      11
+    ],
+    "cutoff_lab": 15.0,
+    "old_opaque_pixels": 38540,
+    "new_opaque_pixels": 55332,
+    "foreground_ratio": 1.436,
+    "new_bbox": [
+      36,
+      0,
+      195,
+      430
+    ],
+    "old_alpha_zero_new_foreground": 11416,
+    "old_alpha_hole_fill": 17024
+  },
+  {
+    "identity": "tomas_greaves",
+    "view": "right",
+    "background_rgb": [
+      10,
+      11,
+      11
+    ],
+    "cutoff_lab": 34.87,
+    "old_opaque_pixels": 33917,
+    "new_opaque_pixels": 44194,
+    "foreground_ratio": 1.303,
+    "new_bbox": [
+      53,
+      3,
+      161,
+      422
+    ],
+    "old_alpha_zero_new_foreground": 5746,
+    "old_alpha_hole_fill": 10867
+  },
+  {
+    "identity": "sister_mirelle_ash",
+    "view": "front",
+    "background_rgb": [
+      10,
+      12,
+      12
+    ],
+    "cutoff_lab": 32.96,
+    "old_opaque_pixels": 35548,
+    "new_opaque_pixels": 45985,
+    "foreground_ratio": 1.294,
+    "new_bbox": [
+      56,
+      19,
+      166,
+      429
+    ],
+    "old_alpha_zero_new_foreground": 5444,
+    "old_alpha_hole_fill": 11581
+  },
+  {
+    "identity": "sister_mirelle_ash",
+    "view": "side",
+    "background_rgb": [
+      9,
+      11,
+      11
+    ],
+    "cutoff_lab": 17.43,
+    "old_opaque_pixels": 31535,
+    "new_opaque_pixels": 43536,
+    "foreground_ratio": 1.381,
+    "new_bbox": [
+      67,
+      5,
+      145,
+      443
+    ],
+    "old_alpha_zero_new_foreground": 6923,
+    "old_alpha_hole_fill": 12581
+  },
+  {
+    "identity": "sister_mirelle_ash",
+    "view": "back",
+    "background_rgb": [
+      9,
+      11,
+      11
+    ],
+    "cutoff_lab": 15.0,
+    "old_opaque_pixels": 36442,
+    "new_opaque_pixels": 50242,
+    "foreground_ratio": 1.379,
+    "new_bbox": [
+      53,
+      8,
+      168,
+      440
+    ],
+    "old_alpha_zero_new_foreground": 7295,
+    "old_alpha_hole_fill": 14070
+  },
+  {
+    "identity": "sister_mirelle_ash",
+    "view": "right",
+    "background_rgb": [
+      9,
+      11,
+      12
+    ],
+    "cutoff_lab": 38.69,
+    "old_opaque_pixels": 32767,
+    "new_opaque_pixels": 43361,
+    "foreground_ratio": 1.323,
+    "new_bbox": [
+      53,
+      10,
+      152,
+      438
+    ],
+    "old_alpha_zero_new_foreground": 5697,
+    "old_alpha_hole_fill": 11656
+  }
+]
