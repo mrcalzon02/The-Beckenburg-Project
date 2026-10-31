@@ -335,7 +335,8 @@ public final class AdaptiveNavigationRegions {
                 px=(Math.max(a.x0(),b.x0())+Math.min(a.x1(),b.x1()))*.5;
             }
             String layer=a.layer();
-            if(edits!=null&&edits.blocks(layer,a.x(),a.z(),b.x(),b.z()))
+            if(query.blocksAuthoredSeam(layer,a.x(),a.z(),b.x(),b.z())
+                ||edits!=null&&edits.blocks(layer,a.x(),a.z(),b.x(),b.z()))
                 continue;
             if(!query.canTraverse(layer,a.x(),a.z(),px,pz,profile.footprint())
                 ||!query.canTraverse(layer,px,pz,b.x(),b.z(),profile.footprint()))
