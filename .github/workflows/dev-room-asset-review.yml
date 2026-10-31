@@ -1,0 +1,65 @@
+name: Developer Asset Room - Continuous Visual Review
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/runtime/models/**'
+      - 'assets/runtime/character-directions*'
+      - 'assets/runtime/ghost-sprite-parts/**'
+      - 'assets/runtime/elder-masters/**'
+      - 'assets/runtime/*directions.zip'
+      - 'src/main/java/org/beckenburg/GlbProps.java'
+      - 'src/main/java/org/beckenburg/DirectionalSprites.java'
+      - 'src/main/java/org/beckenburg/GhostSpriteAtlas.java'
+      - 'src/main/java/org/beckenburg/CharacterVisuals.java'
+      - 'src/main/java/org/beckenburg/EquipmentModelCatalog.java'
+      - 'src/main/java/org/beckenburg/LevelAssets.java'
+      - 'src/main/java/org/beckenburg/LevelPlans.java'
+      - 'src/main/java/org/beckenburg/DevAssetReviewCatalog.java'
+      - 'src/main/java/org/beckenburg/DevAssetShowroom.java'
+      - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - '.github/workflows/dev-room-asset-review.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: beckenburg-dev-room-main
+  cancel-in-progress: true
+
+jobs:
+  diagnostic-gallery:
+    name: Actual textured renderer screenshots (advisory art check)
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile and package actual assets (functional)
+        shell: cmd
+        run: build.cmd e2e
+      - name: Enumerate every runtime model/character and take real scene captures
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          & java '-Djava.awt.headless=true' -cp 'build\beckenburg-game.jar' org.beckenburg.DevAssetShowroom --dev-room --capture --output=build/dev-room
+          if ($LASTEXITCODE -ne 0) { Write-Warning "Advisory art preview had errors. Inspect logs and screenshots." }
+      - name: Record source revision
+        if: always()
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force 'build/dev-room' | Out-Null
+          "source=CI" | Set-Content 'build/dev-room/revision.txt'
+      - name: Upload real in-engine PNG screenshots and per-asset diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-dev-asset-room
+          path: build/dev-room/
+          if-no-files-found: warn
+          retention-days: 21
