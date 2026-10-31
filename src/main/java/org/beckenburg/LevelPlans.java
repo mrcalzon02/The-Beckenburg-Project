@@ -7,7 +7,28 @@ import org.beckenburg.LevelDefinition.*;
 /** Authored metre-based buildings; no room-grid inference or random source stretching. */
 public final class LevelPlans {
     private LevelPlans() { }
+    /** Shared source-space collision placement used by map generation and editor. */
+    static double originOffsetZ(Prop p){
+        return switch(p.mesh()){
+            case "sofa_1"->.4975*p.scale();
+            case "armchair_1"->.495*p.scale();
+            case "tv_table_1_4"->-.05*p.scale();
+            case "level_blackboard"->.11*p.scale();
+            case "level_lockers"->.045*p.scale();
+            default->0;
+        };
+    }
+    static Collider propCollider(Prop p){
+        double off=originOffsetZ(p);
+        return new Collider(p.x()-Math.sin(p.yaw())*off,p.y(),
+            p.z()+Math.cos(p.yaw())*off,p.halfX(),p.halfZ(),
+            p.mesh().equals("level_lived_sideboard")?.85:p.height(),p.yaw());
+    }
     public static LevelDefinition build(HouseMap.Site site) {
+        return LevelAuthoringSession.apply(site,buildSource(site));
+    }
+    /** Unmodified shipped authoring source; shared by editor and gameplay. */
+    static LevelDefinition buildSource(HouseMap.Site site) {
         return switch(site.name()) {
             case "HOUSE" -> house();
             case "HOLLOW_CREEK" -> HollowCreekLevel.build();
@@ -373,7 +394,8 @@ public final class LevelPlans {
             Room utility=rooms.get(breaker);socket("breaker",breaker,utility.x0()+.035,utility.y()+1.35,utility.z0()+2,Math.PI/2,"electrical-panel");
             int[] ritualRooms={main,(main+3)%12,12};String[] rites={"banishment","cleansing","absolution"};
             for(int i=0;i<3;i++){Room r=rooms.get(ritualRooms[i]);socket("ritual",r.id(),r.cx(),r.y(),r.cz(),0,rites[i]);}
-            for(Prop p:props)if(p.halfX()>0&&p.halfZ()>0){double off=originOffsetZ(p);colliders.add(new Collider(p.x()-Math.sin(p.yaw())*off,p.y(),p.z()+Math.cos(p.yaw())*off,p.halfX(),p.halfZ(),p.mesh().equals("level_lived_sideboard")?.85:p.height(),p.yaw()));}
+            for(Prop p:props)if(p.halfX()>0&&p.halfZ()>0)
+                colliders.add(LevelPlans.propCollider(p));
             // Choose the aged skin after placement/support/collision are finalized.
             // Clean library assets remain available without changing any geometry.
             props.replaceAll(p->new Prop(LivedAssets.worn(p.mesh()),p.room(),p.x(),p.y(),p.z(),p.scale(),p.yaw(),p.halfX(),p.halfZ(),p.height(),LivedAssets.worn(p.support())));
@@ -429,10 +451,7 @@ public final class LevelPlans {
                 if(Math.abs(q.x()-Math.sin(q.yaw())*originOffsetZ(q)-p.x()+Math.sin(p.yaw())*originOffsetZ(p))<hx+qx+.12&&Math.abs(q.z()+Math.cos(q.yaw())*originOffsetZ(q)-p.z()-Math.cos(p.yaw())*originOffsetZ(p))<hz+qz+.12)return true;
             }return false;
         }
-        private double originOffsetZ(Prop p){return switch(p.mesh()){
-            case "sofa_1"->.4975*p.scale();case "armchair_1"->.495*p.scale();
-            case "tv_table_1_4"->-.05*p.scale();case "level_blackboard"->.11*p.scale();
-            case "level_lockers"->.045*p.scale();default->0;};}
+        private double originOffsetZ(Prop p){return LevelPlans.originOffsetZ(p);}
 
         void installSwitch(int ri){
             Room r=rooms.get(ri);double best=-1;double[] selected=null;
