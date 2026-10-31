@@ -1171,6 +1171,8 @@ public final class LanHost implements AutoCloseable {
                     ensureActiveHunter(peer);
                     FieldEquipment gear=equipment[peer.slot];
                     String id=gear.active();
+                    if(FieldEquipment.EMPTY.equals(id))
+                        throw new IllegalArgumentException("empty equipment slot cannot use a device");
                     int rotation=p.size()==3?LanProtocol.integer(p.get(2),0,359):0;
                     if(rotation!=0&&!ToolBeltHud.placeable(id))
                         throw new IllegalArgumentException("rotation requires a placeable tool");
