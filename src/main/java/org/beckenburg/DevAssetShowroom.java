@@ -31,7 +31,7 @@ public final class DevAssetShowroom implements AutoCloseable {
     private final JList<DevAssetReviewCatalog.Entry> catalog=new JList<>(listModel);
     private final JLabel status=new JLabel();
     private final JComboBox<String> type=new JComboBox<>(new String[]{
-        "ALL","HUNTER","GHOST","CASTLE_NPC","EQUIPMENT","IMPORTED","WORLD_MODEL"});
+        "ALL","HUNTER","GHOST","CASTLE_NPC","EQUIPMENT","IMPORTED","WORLD_MODEL","SOURCE_ONLY"});
     private final JTextField search=new JTextField();
     private final JTextArea details=new JTextArea();
     private final Set<Integer> keys=new HashSet<>();
@@ -244,7 +244,7 @@ public final class DevAssetShowroom implements AutoCloseable {
             Path file=outputRoot().getParent().resolve("manual-review.csv");
             Files.createDirectories(file.getParent());
             if(!Files.exists(file))Files.writeString(file,
-                "time,asset,decision,comment\\n",StandardCharsets.UTF_8);
+                "time,asset,decision,comment\n",StandardCharsets.UTF_8);
             Files.writeString(file,csv(java.time.Instant.now().toString())+","+
                 csv(e.key())+","+verdict+","+csv(comment)+"\n",
                 StandardCharsets.UTF_8,java.nio.file.StandardOpenOption.APPEND);
@@ -330,9 +330,9 @@ public final class DevAssetShowroom implements AutoCloseable {
                 for(int i=0;i<exhibits.size();i++){
                     var e=exhibits.get(i);
                     String label=(start+i)+" / "+e.kind()+" / "+e.id();
-                    if(label.length()>51)label=label.substring(0,48)+"...";
+                    if(label.length()>30)label=label.substring(0,27)+"...";
                     g.setColor(Color.WHITE);
-                    g.drawString(label,10+(i%2)*318,418+(i/2)*23);
+                    g.drawString(label,10+(i%3)*213,424+(i/3)*25);
                 }
             }finally{g.dispose();}
             Path image=folder.resolve(String.format("bay-%04d.png",start/BAY));
