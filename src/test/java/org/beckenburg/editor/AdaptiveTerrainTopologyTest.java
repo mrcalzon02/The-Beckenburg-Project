@@ -109,6 +109,25 @@ public final class AdaptiveTerrainTopologyTest {
                 "Restoring old topology snapshot removes all cutouts");
             check(Arrays.equals(tileBytes, Files.readAllBytes(source.tilePath(0, 0))),
                 "Cutting terrain does not modify source PNG bytes");
+            var seamLeft = new AdaptiveTerrainTopology.Node(15, 8, 0, 0, 0);
+            var seamRight = new AdaptiveTerrainTopology.Node(16, 8, 0, 0, 0);
+            reopened.punch(seamLeft);
+            reopened.punch(seamRight);
+            check(reopened.isCutout(seamLeft) && reopened.isCutout(seamRight),
+                "Independent openings may span a stitched PNG tile boundary");
+            reopened.fill(seamLeft);
+            check(!reopened.isCutout(seamLeft) && reopened.isCutout(seamRight),
+                "Filling one side never restores the other side");
+            reopened.restore(savedSnapshot);
+            // Older v1 documents from previous builds must still load.
+            reopened.save();
+            byte[] modern = Files.readAllBytes(reopened.path());
+            byte[] legacy = Arrays.copyOf(modern, modern.length - 4);
+            java.nio.ByteBuffer.wrap(legacy).putInt(4, 1);
+            Files.write(reopened.path(), legacy);
+            check(AdaptiveTerrainTopology.open(source).snapshot().equals(savedSnapshot),
+                "Previous format v1 opens without fabricated holes");
+            Files.write(reopened.path(), modern);
 
             var negativeRoot = new AdaptiveTerrainTopology.Node(-1, 3, 0, 0, 0);
             reopened.split(negativeRoot);

@@ -91,6 +91,8 @@ public final class AdaptiveTopologyEditor extends JPanel {
         addField(target,"Quadrant Z",subZ);
         button(target,"SPLIT",()->mutate(true));
         button(target,"MERGE",()->mutate(false));
+        button(target,"CUT HOLE",()->mutateCutout(true));
+        button(target,"RESTORE SURFACE",()->mutateCutout(false));
         button(target,"UNDO",this::undo);
         button(target,"REDO",this::redo);
         button(target,"SAVE TOPOLOGY",this::save);
@@ -100,8 +102,8 @@ public final class AdaptiveTopologyEditor extends JPanel {
         canvas.setBackground(new Color(31,36,42));
         add(canvas,BorderLayout.CENTER);
         JPanel bottom = new JPanel(new GridLayout(2,1,2,3));
-        bottom.add(new JLabel("2D authored topology, NOT gameplay. Click a subcell to select it at the chosen depth;"+
-            " HEIGHT values still come from the original 16-bit source."));
+        bottom.add(new JLabel("2D authored topology, NOT gameplay. Dark cells = removed surface (holes)."+
+            " Click to select quadrant. Underground mesh/collision comes later."));
         bottom.add(status);
         add(bottom,BorderLayout.SOUTH);
         for (JSpinner spinner : new JSpinner[]{tileX,tileZ,cellX,cellZ,depth,subX,subZ})
@@ -134,6 +136,20 @@ public final class AdaptiveTopologyEditor extends JPanel {
             refresh();
         }catch(RuntimeException ex){error("Refinement rejected",ex);}
     }
+    private void mutateCutout(boolean cut) {
+        try {
+            var before=topology.snapshot();
+            if (cut) topology.punch(selected());
+            else topology.fill(selected());
+            undo.push(before);
+            if (undo.size()>64) undo.removeLast();
+            redo.clear();
+            dirty=true;
+            refresh();
+        } catch(RuntimeException ex) {
+            error("Terrain cutout rejected", ex);
+        }
+    }
     private void undo(){
         if(undo.isEmpty())return;
         var next=undo.pop();
@@ -165,8 +181,8 @@ public final class AdaptiveTopologyEditor extends JPanel {
     private boolean save(){
         try{
             topology.save();
-            if(!AdaptiveTerrainTopology.open(world).splitNodes()
-                    .equals(topology.splitNodes()))
+            if(!AdaptiveTerrainTopology.open(world).snapshot()
+                    .equals(topology.snapshot()))
                 throw new IOException("Saved topology differs from immediate disk readback");
             dirty=false;
             refresh();
@@ -205,6 +221,7 @@ public final class AdaptiveTopologyEditor extends JPanel {
         }
         status.setText("Global base cell "+gx()+","+gz()+
             " | "+leaves+" leaves | "+topology.splitCount()+" split nodes"+
+            " | "+topology.cutoutCount()+" OPEN surface patches"+
             " | revision "+topology.revision()+(dirty?" | UNSAVED":" | SAVED / UNMODIFIED")+issue);
         canvas.repaint();
     }
@@ -239,9 +256,10 @@ public final class AdaptiveTopologyEditor extends JPanel {
                     int h=Math.max(1, (leaf.localZ()+1)*length/unit
                                       -leaf.localZ()*length/unit);
                     int shade=65+Math.min(125,leaf.depth()*26);
-                    out.setColor(new Color(shade,shade,shade));
+                    boolean cut=topology.isCutout(leaf);
+                    out.setColor(cut ? new Color(11,12,16) : new Color(shade,shade,shade));
                     out.fillRect(x,z,w,h);
-                    out.setColor(new Color(20,30,42));
+                    out.setColor(cut ? new Color(214,111,68) : new Color(20,30,42));
                     out.drawRect(x,z,w,h);
                 }
                 int units=1<<n(depth);

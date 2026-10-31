@@ -45,12 +45,16 @@ public final class DevTerrainTopologyLab {
             AdaptiveTerrainTopology topology=AdaptiveTerrainTopology.open(source);
             topology.split(new AdaptiveTerrainTopology.Node(15,7,0,0,0));
             topology.split(new AdaptiveTerrainTopology.Node(15,7,1,1,0));
+            // Real missing surface patches in the two-tile source fixture.
+            topology.punch(new AdaptiveTerrainTopology.Node(15,7,1,0,1));
+            topology.punch(new AdaptiveTerrainTopology.Node(14,7,0,0,0));
             topology.save();
         }
         return new DevTerrainTopologyLab(source);
     }
     public StitchedHeightmapWorld source(){return source;}
     public int splitCount(){return topology.splitCount();}
+    public int cutoutCount(){return topology.cutoutCount();}
     public List<Triangle> triangles(){return surface;}
     public void refresh()throws IOException {
         AdaptiveTerrainTopology next=AdaptiveTerrainTopology.open(source);
@@ -64,6 +68,8 @@ public final class DevTerrainTopologyLab {
         for(int gz=START_Z;gz<START_Z+CELLS_Z;gz++)
             for(int gx=START_X;gx<START_X+CELLS_X;gx++)
                 for(var leaf:state.leaves(gx,gz)){
+                    // Omit actual surface triangles. No invisible texture or zero-height plane.
+                    if(state.isCutout(leaf))continue;
                     List<Sample> perimeter=new ArrayList<>();
                     for(long x:state.edgeBreaks(leaf,AdaptiveTerrainTopology.Edge.NORTH))
                         append(perimeter,new Sample(x,leaf.z0()));
