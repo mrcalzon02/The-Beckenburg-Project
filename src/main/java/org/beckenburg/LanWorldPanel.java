@@ -89,6 +89,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final java.util.Map<String,String> deviceReading=new java.util.HashMap<>();
     private int activeGearSlot;
     private int heldUseUntilTick;
+    private final ToolBeltHud.Grip toolGrip=new ToolBeltHud.Grip();
+    private boolean toolPlacement;
+    private int placementRotation,lastRepeatTick=-100000;
     private boolean nightVision,flashlightOn,firelightOn;
     private boolean uvLightOn;
     private final java.util.List<UvEvidenceMarks.Mark> uvSurfaceMarks=new java.util.ArrayList<>();
@@ -144,6 +147,28 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 }
             }
         });
+        addMouseWheelListener(event->{
+            if(toolPlacement&&!casefileOpen&&interfaceOpen.isEmpty()){
+                placementRotation=Math.floorMod(placementRotation+event.getWheelRotation()*15,360);
+                event.consume();repaint();
+            }
+        });
+        addMouseListener(new MouseAdapter(){
+            @Override public void mousePressed(MouseEvent event){
+                if(casefileOpen||!interfaceOpen.isEmpty()||helpVisible||opening!=null
+                        ||chatInput.isVisible()||health<=0||!caseResult.isEmpty())return;
+                if(SwingUtilities.isLeftMouseButton(event)){
+                    if(toolPlacement){placeCurrentTool();return;}
+                    toolGrip.hold();useMouseTool();repaint();
+                }else if(SwingUtilities.isRightMouseButton(event)
+                        &&ToolBeltHud.switchable(equippedGear[activeGearSlot])){
+                    sendAction("toggle tool power",client::useHeldEquipment);
+                }
+            }
+            @Override public void mouseReleased(MouseEvent event){
+                if(SwingUtilities.isLeftMouseButton(event))toolGrip.release();
+            }
+        });
         addFocusListener(mouseLook);addFocusListener(this);
         timer=new javax.swing.Timer(110,e->frame());timer.start();
     }
@@ -178,7 +203,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     }
     public void close(){
         if(opening!=null){opening.close();opening=null;}
-        releaseVoice();timer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
+        toolGrip.reset();releaseVoice();timer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
         VanLiveScreens.suspendCamera();
         capturedCameraImage=null;
     }
@@ -974,6 +999,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(vanDisplay)VanLiveScreens.camera(null,"SWITCHING CAMERA");
     }
     private void frame(){
+        toolGrip.advance();
+        if(toolGrip.held()&&!toolPlacement&&ToolBeltHud.repeatable(equippedGear[activeGearSlot])
+                &&tick-lastRepeatTick>=repeatInterval())useMouseTool();
         long diagnosticsStart=System.nanoTime();
         if(opening!=null){
             if(opening.complete()||!caseResult.isEmpty()){
@@ -1226,9 +1254,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             String held=equippedGear[activeGearSlot];
             String visual=held.equals("EMF_READER")?"EMF":held;
             boolean placedPortable=renderer.portablePositions.containsKey(seat+":"+held);
-            if(map.clutter().held(seat)<0&&!placedPortable)HeldToolView.draw(g,getWidth(),h,visual,tick,tick<=heldUseUntilTick,
-                renderer.lamp,deviceReading.get(held),
-                equipmentTier.getOrDefault(held,EquipmentTiers.Tier.I));
+            if(map.clutter().held(seat)<0&&!placedPortable)HeldToolView.draw(g,getWidth(),h,visual,tick,
+                toolGrip.held(),renderer.lamp,deviceReading.get(held),
+                equipmentTier.getOrDefault(held,EquipmentTiers.Tier.I),toolGrip.amount());
             drawHunterNameplates(g,h);
             g.setColor(new Color(224,218,197));g.drawString(map.clutter().held(seat)>=0?"F5 DROP / F12 THROW / ] EXAMINE":"",12,h-96);
             SprintHud.draw(g,12,h-76,Math.min(248,getWidth()-24),
@@ -1274,29 +1302,20 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 g.setColor(new Color(27,17,27,229));g.fillRoundRect(12,87,aw,32,7,7);
                 g.setColor(alertColor);g.drawString(alert,23,108);
             }
-            int quickWidth=Math.min(width-24,380),quickX=width-quickWidth-12;
-            int quickY=h-91;
-            g.setColor(new Color(11,19,27,230));g.fillRoundRect(quickX,quickY,quickWidth,79,9,9);
-            g.setColor(new Color(233,211,165));
-            String heldName=equippedGear[activeGearSlot];
-            String batt=batterySeconds.containsKey(heldName)?"  /  BAT "+batterySeconds.get(heldName)+"s":"";
-            g.drawString("["+(activeGearSlot+1)+"] "+heldName+" / "+
-                equipmentTier.getOrDefault(heldName,EquipmentTiers.Tier.I)+batt,quickX+11,quickY+22);
-            g.setColor(new Color(206,217,218));
-            g.drawString(health==0?"OBSERVATION ONLY":"R USE  /  F6 RACK  /  K MEDICINE",quickX+11,quickY+42);
-            LanVoiceClientAudio voice=client.voice();
-            String mic=voice==null?"OFF":voice.muted()?"MUTED":
-                voice.transmitting()?"TRANSMITTING":voice.connected()?"READY":"LINKING";
-            g.setColor(new Color(153,213,190));
-            g.drawString("VOICE "+mic+"  /  5 "+HunterDiscipline.primary(myClass).label+
-                "  6 "+HunterDiscipline.secondary(myClass).label+"  /  F1 CONTROLS",quickX+11,quickY+61);
+            String[] belt=equippedGear;
+            boolean power=held.equals("FLASHLIGHT")?flashlightOn:
+                held.equals("UV_LIGHT")?uvLightOn:
+                held.equals("FIRELIGHT")?firelightOn:
+                held.equals("HEAD_GEAR")?nightVision:false;
+            ToolBeltHud.draw(g,width,h,belt,activeGearSlot,deviceReading.get(held),
+                toolGrip.held(),power,toolPlacement,placementRotation);
             if(helpVisible){
                 int hw=Math.min(width-36,510),hx=(width-hw)/2,hy=Math.max(90,(h-210)/2);
                 g.setColor(new Color(13,19,27,245));g.fillRoundRect(hx,hy,hw,210,10,10);
                 g.setColor(new Color(236,207,157));g.drawString("HUNTER CONTROLS  /  F1 CLOSE",hx+18,hy+29);
                 g.setColor(new Color(218,225,221));
                 String[] hints={"WASD move / Ctrl crouch  /  SHIFT sprint  /  CLICK mouse-look",
-                    "1-4 equip / R use / F place light / E interact / F6 rack",
+                    "1-4 belt / HOLD LMB use / RMB power / G place / wheel rotate",
                     "Z cross / G ward / H salt / 5-6 class abilities / K medicine",
                     "J casefile  /  TAB journal  /  I guess  /  P submit",
                     "ENTER chat  /  F2 radio  /  F3-F4 voice  /  F7 voice options",
@@ -1654,6 +1673,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             if(e.getKeyCode()==KeyEvent.VK_RIGHT){guideGhostIndex=(guideGhostIndex+1)%GhostIdentity.Type.values().length;repaint();return;}
         }
         if(casefileOpen)return; // An open journal never triggers world equipment or movement.
+        if(toolPlacement&&e.getKeyCode()==KeyEvent.VK_ESCAPE){
+            toolPlacement=false;toolGrip.release();repaint();return;
+        }
         switch(e.getKeyCode()){
             case KeyEvent.VK_F5,KeyEvent.VK_F12,KeyEvent.VK_CLOSE_BRACKET -> {
                 var o=new LooseClutter.Observer(seat,renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z,renderer.yaw,renderer.pitch,true,eyeOffset());
@@ -1667,22 +1689,22 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 var target=focusTarget();if(target!=null)sendAction("interaction",()->client.interact(target,renderer.yaw,renderer.pitch));
             }
             case KeyEvent.VK_1 -> {
-                activeGearSlot=0;
+                activeGearSlot=0;toolPlacement=false;toolGrip.release();
                 selected=LanCase.Tool.EMF;
                 sendAction("select gear",()->client.selectGearSlot(0));
             }
             case KeyEvent.VK_2 -> {
-                activeGearSlot=1;
+                activeGearSlot=1;toolPlacement=false;toolGrip.release();
                 selected=LanCase.Tool.THERMOMETER;
                 sendAction("select gear",()->client.selectGearSlot(1));
             }
             case KeyEvent.VK_3 -> {
-                activeGearSlot=2;
+                activeGearSlot=2;toolPlacement=false;toolGrip.release();
                 selected=LanCase.Tool.SPIRIT_BOX;
                 sendAction("select gear",()->client.selectGearSlot(2));
             }
             case KeyEvent.VK_4 -> {
-                activeGearSlot=3;
+                activeGearSlot=3;toolPlacement=false;toolGrip.release();
                 
                 sendAction("select gear",()->client.selectGearSlot(3));
             }
@@ -1696,7 +1718,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 sendAction("use device",()->client.useHeldEquipment());
             }
             case KeyEvent.VK_Z -> sendAction("cross",()->client.deploy(HunterCounters.Kind.CROSS));
-            case KeyEvent.VK_G -> sendAction("thrown ward",()->client.deploy(HunterCounters.Kind.WARD));
+            case KeyEvent.VK_G -> {
+                if(ToolBeltHud.placeable(equippedGear[activeGearSlot])){
+                    toolPlacement=!toolPlacement;toolGrip.release();placementRotation=0;
+                }else sendAction("thrown ward",()->client.deploy(HunterCounters.Kind.WARD));
+            }
             case KeyEvent.VK_H -> sendAction("salt",()->client.deploy(HunterCounters.Kind.SALT));
             case KeyEvent.VK_U -> sendAction("UV",()->client.scanUv());
             case KeyEvent.VK_F8 -> sendAction("deploy writing book",()->client.placeBook());
@@ -1732,6 +1758,35 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             default -> {if(health>0)keys.add(e.getKeyCode());}
         }
     }
+    private int repeatInterval(){
+        String held=equippedGear[activeGearSlot];
+        if(!ToolBeltHud.repeatable(held))return Integer.MAX_VALUE;
+        try{return Math.max(4,EquipmentTiers.stage(held,
+            equipmentTier.getOrDefault(held,EquipmentTiers.Tier.I)).intervalTicks());}
+        catch(IllegalArgumentException bad){return 10;}
+    }
+    private void useMouseTool(){
+        String held=equippedGear[activeGearSlot];
+        if(ToolBeltHud.placeable(held))return;
+        if(lastRepeatTick==tick)return;
+        lastRepeatTick=tick;
+        if(ToolBeltHud.switchable(held)){
+            if(held.equals("UV_LIGHT"))sendAction("UV inspection",client::scanUv);
+            return; // powered light emits continuously, switch stays on RMB
+        }
+        if(held.equals("PHOTO_CAMERA"))
+            pendingPhoto=HunterPhotography.snapshot(renderer.image(),
+                equipmentTier.getOrDefault("PHOTO_CAMERA",EquipmentTiers.Tier.I));
+        sendAction("use device",client::useHeldEquipment);
+    }
+    private void placeCurrentTool(){
+        if(!ToolBeltHud.placeable(equippedGear[activeGearSlot]))return;
+        String held=equippedGear[activeGearSlot];
+        if(held.equals("FLASHLIGHT")||held.equals("FIRELIGHT"))
+            sendAction("place/retrieve",client::placeHeldEquipment);
+        else sendAction("place/retrieve",()->client.useHeldEquipment(placementRotation));
+        toolPlacement=false;toolGrip.release();
+    }
     private InteractionFocus.Target focusTarget(){
         return InteractionFocus.pick(map,new LooseClutter.Observer(seat,renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z,renderer.yaw,renderer.pitch,health>0&&!concealed,eyeOffset()),rackSnapshot.stock());
     }
@@ -1752,7 +1807,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     }
     @Override public void keyTyped(KeyEvent e){}
     @Override public void focusGained(FocusEvent e){}
-    @Override public void focusLost(FocusEvent e){interactionHeld=false;
+    @Override public void focusLost(FocusEvent e){interactionHeld=false;toolGrip.release();toolPlacement=false;
         keys.clear();releaseVoice();mouseLook.release();
     }
 }
