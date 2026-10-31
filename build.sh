@@ -134,6 +134,8 @@ if ! java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenbu
 fi
 # Preserve case-start trace lifecycle parity with the mandatory Windows manifest.
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.BeckenburgDeveloperTraceTest
+# Solo world placement is gameplay functionality; reject broken orientation/charges.
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SoloSaltPlacementTest
 # Verify authored multi-storey levels and actual packaged scenery.
 for check in MergedMaterialMetadataTest HollowCreekFacilitiesAssetTest HollowCreekPavilionAssetTest HollowCreekRefinementAssetsTest HidingBudgetTest HollowCreekDockAssetsTest HollowCreekTentAssetsTest HollowCreekBoundaryAssetsTest HollowCreekTerrainAssetTest TerrainFoundationAssetsTest DotsRayFieldTest OpticalEvidenceTest LanOpticalEvidenceNetworkTest BlackpineLightingTest BlackpineDeckDepthTest AuthoredLevelPhysicsTest AuthoredLevelReachabilityTest AuthoredLevelStateTest AuthoredLevelNetworkTest AuthoredLevelRitualCaseTest AuthoredUtilitiesTest SoloElevationTest EquipmentAssetAssignmentsTest LevelRenderAcceptanceTest WorldViewHandednessTest LevelSurfaceIntegrityTest LivedLevelDressingTest LooseClutterTest LooseClutterNetworkTest HauntedFixturesTest VanHumanScaleTest VanRackStockTest VanRackNetworkTest InteractionFocusTest InteractionNetworkTest HeldDeviceReadoutTest FixtureSoundscapeTest DomesticFitoutTest LevelEnclosureTest PhysicalLightingTest SurroundingClearanceTest; do
     java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg."$check"
