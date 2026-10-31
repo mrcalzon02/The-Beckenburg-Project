@@ -15,11 +15,16 @@ final class DevMatchOutcomeReport {
 
     static void write(Path root,DevAdminSnapshot state,List<DevMatchClientAi.Stats> stats,
                       int actualSeconds)throws java.io.IOException {
-        int siteEntrants=0,totalCommands=0,accepted=0,rejected=0,attacks=0,frenzies=0,
+        int siteEntrants=0,interiorEntrants=0,hunterMoves=0,ghostMoves=0,
+            totalCommands=0,accepted=0,rejected=0,attacks=0,frenzies=0,
             effectiveAttacks=0,scans=0,identificationAttempts=0,identifiedAccepts=0,
             ritualsAttempted=0,ritesStarted=0;
         for(var bot:stats){
-            if(!bot.seat().equals("GHOST")&&bot.enteredSite())siteEntrants++;
+            if(!bot.seat().equals("GHOST")){
+                if(bot.enteredSite())siteEntrants++;
+                if(bot.enteredInterior())interiorEntrants++;
+                hunterMoves+=bot.acceptedMoves();
+            }else ghostMoves+=bot.acceptedMoves();
             totalCommands+=bot.commands();accepted+=bot.accepted();
             rejected+=bot.rejected();attacks+=bot.attacks();
             frenzies+=bot.frenzyStarts();effectiveAttacks+=bot.effectiveAttacks();
@@ -73,8 +78,12 @@ final class DevMatchOutcomeReport {
         summary.append("Host-applied ghost health damage: ").append(actualDamage)
             .append("; ghost-effect-attributed incapacitations: ").append(hostAttributedDeaths)
             .append("; all downed hunters: ").append(incapacitated).append("/6\n");
-        summary.append("Hunter clients that physically entered the investigation site: ")
-            .append(siteEntrants).append("/6\\n");
+        summary.append("Hunters that physically left the van: ")
+            .append(siteEntrants).append("/6\n");
+        summary.append("Hunters that physically entered the building: ")
+            .append(interiorEntrants).append("/6\n");
+        summary.append("Autonomous host-accepted movement: hunters ")
+            .append(hunterMoves).append("; ghost ").append(ghostMoves).append("\n");
         summary.append("Actual host casefile observations: ")
             .append(state.observedCasefile().size()).append("\n");
         summary.append("Ordinary-client commands: ").append(totalCommands)
@@ -91,6 +100,8 @@ final class DevMatchOutcomeReport {
             .append(" samples ").append(bot.observations())
             .append(" visitedRooms ").append(bot.roomsVisited())
             .append(" enteredSite ").append(bot.enteredSite())
+            .append(" enteredInterior ").append(bot.enteredInterior())
+            .append(" acceptedMoves ").append(bot.acceptedMoves())
             .append(" hypothesis ").append(bot.hypothesis())
             .append(" last: ").append(bot.state()).append('\n');
         Files.createDirectories(root);
@@ -118,6 +129,9 @@ final class DevMatchOutcomeReport {
             "  \"ghost_attributed_kills\": "+hostAttributedDeaths+",\n"+
             "  \"incapacitated_hunters\": "+incapacitated+",\n"+
             "  \"site_entered_hunters\": "+siteEntrants+",\n"+
+            "  \"interior_entered_hunters\": "+interiorEntrants+",\n"+
+            "  \"hunter_accepted_moves\": "+hunterMoves+",\n"+
+            "  \"ghost_accepted_moves\": "+ghostMoves+",\n"+
             "  \"accepted_scans\": "+scans+",\n"+
             "  \"casefile_samples\": "+state.observedCasefile().size()+",\n"+
             "  \"client_command_count\": "+totalCommands+",\n"+
