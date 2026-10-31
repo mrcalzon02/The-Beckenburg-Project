@@ -25,7 +25,7 @@ public final class MouseLook extends MouseAdapter implements FocusListener {
     private final Delta listener;
     private final Cursor originalCursor, hiddenCursor;
     private Robot robot;
-    private boolean captured, hasPrevious;
+    private boolean captured, hasPrevious, resumeRequested;
     private int previousX, previousY;
 
     private final java.util.function.BooleanSupplier capturePermitted;
@@ -55,12 +55,20 @@ public final class MouseLook extends MouseAdapter implements FocusListener {
     /** The capture gesture must originate inside a visible, focused play viewport. */
     public void capture(){
         if(captured||!capturePermitted.getAsBoolean()||!view.isShowing()||!view.isFocusOwner())return;
-        captured=true;hasPrevious=false;
+        captured=true;hasPrevious=false;resumeRequested=false;
         view.setCursor(hiddenCursor);
         centerPointer();
     }
+    /** Re-enter first-person control when a game-owned full-screen UI closes.
+     * Only the actual focused/visible viewport can capture the pointer.
+     * A pending focus transfer is completed by focusGained, not by another click. */
+    public void resume(){
+        resumeRequested=true;
+        view.requestFocusInWindow();
+        SwingUtilities.invokeLater(this::capture);
+    }
     public void release(){
-        captured=false;hasPrevious=false;
+        captured=false;hasPrevious=false;resumeRequested=false;
         view.setCursor(originalCursor);
     }
     public void close(){release();}
@@ -84,7 +92,9 @@ public final class MouseLook extends MouseAdapter implements FocusListener {
     }
     @Override public void mouseDragged(MouseEvent event){mouseMoved(event);}
     @Override public void mouseExited(MouseEvent event){if(robot==null)release();}
-    @Override public void focusGained(FocusEvent event) { /* click to regain capture */ }
+    @Override public void focusGained(FocusEvent event) {
+        if(resumeRequested)capture();
+    }
     @Override public void focusLost(FocusEvent event){release();}
     private void applyDelta(int dx,int dy){
         // Drop single huge jumps from lost focus, window relocation or broken mouse warps.
