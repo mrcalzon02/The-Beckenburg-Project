@@ -87,7 +87,10 @@ public final class TerrainEntranceMeshTest {
             check(read.triangles().stream().map(EditorMeshPipeline.Triangle::part)
                 .collect(java.util.stream.Collectors.toSet()).equals(parts),
                 "OBJ roundtrip must preserve all authored part names");
-            long vertexLines=Files.lines(exported).filter(x->x.startsWith("v ")).count();
+            long vertexLines;
+            try(var lines=Files.lines(exported)){
+                vertexLines=lines.filter(x->x.startsWith("v ")).count();
+            }
             check(vertexLines==tris.size()*3L,
                 "Every face must own its own vertices, without automatic de-stitch re-weld");
             var sparse=StitchedHeightmapWorld.create(dir.resolve("sparse"),
