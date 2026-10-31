@@ -1,6 +1,14 @@
 # Live human developer admin — seven AI clients / eight roles
 
-**Developer-only entrypoint.** Run from the project checkout on Windows after running `build.cmd e2e` once:
+**Developer-only entrypoint.** If you have the installed Windows release containing this implementation, open Command Prompt in the game's installation directory and invoke:
+
+```cmd
+Beckenburg.exe --dev-ai-match --admin
+```
+
+This runs the hidden development mode from the real packaged executable; the normal game menu remains unchanged. The resulting interactive admin-session logs go to `%USERPROFILE%\\.beckenburg\\dev-match\\`.
+
+Alternatively run from the project checkout on Windows after running `build.cmd e2e` once:
 
 ```cmd
 dev-match.cmd
@@ -36,6 +44,6 @@ For bounded, headless socket tests, run:
 java -Djava.awt.headless=true -ea -cp "build\beckenburg-game.jar;build\test" org.beckenburg.DevMatchSession --dev-ai-match --bots --seconds=8
 ```
 
-Artifacts from each bounded or human-closed run are placed in `build/dev-match/`: `match-manifest.json`, `admin-snapshots.jsonl`, `timeline.jsonl`, `host-profiling.csv`, `result.txt`. For long manual sessions, snapshot logs rotate their oldest entries to avoid unbounded memory.
+Headless/CI artifacts go to `build/dev-match/`; interactive host-admin artifacts go to `%USERPROFILE%\\.beckenburg\\dev-match\\`: `match-manifest.json`, `admin-snapshots.jsonl`, `timeline.jsonl`, `host-profiling.csv`, `result.txt`. For long manual sessions, snapshot logs rotate their oldest entries to avoid unbounded memory.
 
 **Important:** GitHub Actions uses a Windows runner for bounded, headless testing and artifacts, **not** an interactive desktop you can connect to. Run `dev-match.cmd` locally to watch the AI match live. This is an independent tool rather than a public menu option.
