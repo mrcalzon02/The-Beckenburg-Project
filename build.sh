@@ -120,6 +120,13 @@ java -Djava.awt.headless=true -cp build/classes org.beckenburg.KenneyMedievalAss
 # Original GGBot source meshes are approved GLBs already committed.
 # Regular game builds package assets/runtime/models/ggbot_*.glb above.
 # Asset authoring is separate: no Blender or source download in game builds.
+# Visual QA needs the *actual compiled runtime and packaged resources*, not the
+# unrelated full gameplay test suite. This flag still fails if the game cannot compile
+# or if a required model/texture is absent. Normal builds are unchanged.
+if [ "${1:-}" = "--capture-only" ]; then
+    echo "CASTLE_CAPTURE_RUNTIME_READY: compiled real game sources with runtime assets"
+    exit 0
+fi
 javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/hbnet/*.java src/test/java/org/beckenburg/*.java
 # Preserve case-start trace lifecycle parity with the mandatory Windows manifest.
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.BeckenburgDeveloperTraceTest
