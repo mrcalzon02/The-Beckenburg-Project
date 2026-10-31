@@ -158,6 +158,7 @@ public final class TerrainEntranceMesh {
             if(tx < -1_000_000||tx>1_000_000||tz < -1_000_000||tz>1_000_000
                 ||!world.hasTile((int)tx,(int)tz))continue;
             for(var leaf:topology.leaves(cx,cz)){
+                verifyConformed(leaf);
                 leaves++;
                 String part=part(leaf);
                 if(!topology.isCutout(leaf) ||part.startsWith("tab_"))
@@ -172,6 +173,20 @@ public final class TerrainEntranceMesh {
             warnings.add("No exposed ramp-edge walls in selected area; source cuts may be absent");
         if(entrances.ramps().isEmpty())
             warnings.add("No authored ramps found; export contains source/tab/floor geometry");
+    }
+    private void verifyConformed(AdaptiveTerrainTopology.Node leaf){
+        double x0=worldX(leaf.x0()),z0=worldZ(leaf.z0());
+        double x1=worldX(leaf.x1()),z1=worldZ(leaf.z1());
+        for(var edge:seams.edges())if(edge.intersectsInterior(x0,z0,x1,z1))
+            throw new IllegalStateException("Un-conformed entrance seam "+edge.id()
+                +": run CONFORM LEAVES + PUNCH TABS before exporting 3D geometry");
+        double mx=(x0+x1)*.5,mz=(z0+z1)*.5;
+        for(var tab:seams.tabs())if(tab.contains(mx,mz)
+            &&(!topology.isCutout(leaf)
+                ||x0<tab.x0()-EPS||x1>tab.x1()+EPS
+                ||z0<tab.z0()-EPS||z1>tab.z1()+EPS))
+            throw new IllegalStateException("Detached tab "+tab.id()
+                +" is not punched/isolated: run CONFORM LEAVES + PUNCH TABS");
     }
     private String part(AdaptiveTerrainTopology.Node leaf){
         double cx=(worldX(leaf.x0())+worldX(leaf.x1()))*.5;
