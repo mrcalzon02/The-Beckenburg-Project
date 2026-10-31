@@ -71,6 +71,16 @@ public final class TerrainScenePackage implements EnvironmentModule {
         if(existing!=null&&!existing.components().stream().anyMatch(c->
             c.type().equals(COMPONENT)&&chunk.equals(c.properties().get("chunk"))))
             throw new IOException("Node ID already belongs to another scene object");
+        if(Files.exists(geometry)&&existing==null)
+            throw new IOException("Refusing to overwrite an OBJ without an owned terrain scene node");
+        if(Files.exists(scenePath)){
+            var saved=RuntimeSceneDocument.load(scenePath);
+            if(!saved.sceneId().equals(scene.sceneId()))
+                throw new IOException("Scene package belongs to another scene");
+            for(var old:saved.nodes())if(old.components().stream().anyMatch(c->
+                c.type().equals(COMPONENT))&&scene.find(old.id())==null)
+                throw new IOException("Refusing to drop previously published chunk "+old.id());
+        }
         // A failed geometry build must not modify any scene or published file.
         var generated=TerrainEntranceMesh.build(world,bounds);
         Files.createDirectories(folder);
