@@ -20,7 +20,11 @@ public record DevAdminSnapshot(
         LanCase.Outcome outcome,
         String doorSnapshot,
         String windowSnapshot,
-        List<String> observedCasefile) {
+        List<String> observedCasefile,
+        List<CombatEvent> combatEvents) {
+
+    /** Events are recorded AFTER host-authorized damage resolution, not inferred from AI commands. */
+    public record CombatEvent(int tick,String seat,String action,int damage,boolean downed) { }
 
     public record Hunter(String seat, boolean connected, boolean ready,
                          LanWorld.Body body, int health, int stress, boolean alive) {
@@ -40,6 +44,7 @@ public record DevAdminSnapshot(
     public DevAdminSnapshot {
         hunters = List.copyOf(hunters);
         observedCasefile = List.copyOf(observedCasefile);
+        combatEvents = List.copyOf(combatEvents);
         Objects.requireNonNull(ghost);
         Objects.requireNonNull(trueGhostType);
         Objects.requireNonNull(outcome);
