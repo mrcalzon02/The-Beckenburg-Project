@@ -799,7 +799,10 @@ public final class InvestigationGame {
                     if(opening!=null||mapShown||journalShown||briefingShown||helpVisible
                             ||wheelOpen||chatInput.isVisible()||focusedVanPanel!=null)return;
                     if(SwingUtilities.isLeftMouseButton(event)){
-                        if(toolPlacement){operateMouseTool();toolPlacement=false;return;}
+                        if(toolPlacement){
+                            if(operateMouseTool())toolPlacement=false;
+                            return;
+                        }
                         toolGrip.hold();
                         if(loadout.equipped()!=EquipmentLoadout.Item.UV_LAMP)operateMouseTool();
                     }else if(SwingUtilities.isRightMouseButton(event)
@@ -1281,7 +1284,7 @@ public final class InvestigationGame {
                 }
             }
             if(key==KeyEvent.VK_E){if(briefingShown){briefingShown=false;repaint();return;}interactFocused();down.add(key);repaint();return;}
-            if(key==KeyEvent.VK_R)operateMouseTool();
+            if(key==KeyEvent.VK_R&&!toolPlacement)operateMouseTool();
             if(key==KeyEvent.VK_C){
                 boolean placed=session.placeWard(scene.x,feetY(),scene.z);
                 GameSfx.play(placed?LanSound.Cue.WARD:LanSound.Cue.UI_REJECT);
@@ -1326,12 +1329,13 @@ public final class InvestigationGame {
             }
             last=System.nanoTime();timer.start();requestFocusInWindow();
         }
-        private void operateMouseTool(){
+        private boolean operateMouseTool(){
             EquipmentLoadout.Item device=loadout.equipped();
-            if(toolGrip.held()&&lastMouseUseTick==session.ticks())return;
+            if(toolGrip.held()&&lastMouseUseTick==session.ticks())return false;
             lastMouseUseTick=session.ticks();
             int before=loadout.usesLeft(device);
-            boolean accepted=session.useEquipment(loadout,scene.x,feetY(),scene.z,scene.yaw);
+            boolean accepted=session.useEquipment(loadout,scene.x,feetY(),scene.z,
+                scene.yaw,toolPlacement?placementRotation:0);
             LanSound.Cue cue=AudioActionRouting.soloDevice(device,accepted,before,
                 loadout.usesLeft(device),session.uvPowered());
             if(cue!=LanSound.Cue.UI_REJECT)useHeldUntilTick=session.ticks()+4;
@@ -1340,6 +1344,7 @@ public final class InvestigationGame {
                 LanSound.Cue spoken=session.spiritBoxReplyCue();
                 if(spoken!=null)GameSfx.play(spoken);
             }else GameSfx.play(cue);
+            return accepted;
         }
         private InteractionFocus.Target focusTarget(){
             return InteractionFocus.pick(map,new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,!session.hidden()&&session.health()>0,HunterPosture.eye(session.crouched())),VanRackStock.solo(profile,loadout));
