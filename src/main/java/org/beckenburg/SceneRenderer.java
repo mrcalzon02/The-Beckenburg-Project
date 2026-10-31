@@ -3743,6 +3743,59 @@ public final class SceneRenderer {
     }
 
     /**
+     * Real GLB/triangle preview for portable, independently saved authored scenes.
+     * This is not Castle or House gameplay: no baked castle fixtures, NPCs or
+     * invented playable room topology. Only nodes present in the document render.
+     */
+    public void drawAuthoredScene(org.beckenburg.editor.RuntimeScene scene,double clock){
+        Objects.requireNonNull(scene);
+        paintSky(clock);
+        Arrays.fill(depths,Double.POSITIVE_INFINITY);
+        environmentLight=1.25;weatherLightScale=1;fogDensity=0;
+        var faces=new ArrayList<Face>();
+        // A neutral, editor-only measuring grid, not saved world geometry.
+        for(int at=-20;at<=20;at+=2){
+            box(faces,at-.012,-.065,-20,.024,.018,40,0x585c63);
+            box(faces,-20,-.065,at-.012,40,.018,.024,0x585c63);
+        }
+        for(var node:scene.nodes()){
+            var t=node.transform();
+            for(var c:node.components()){
+                if("mesh.glb".equals(c.type())){
+                    String mesh=c.properties().get("mesh");
+                    if(mesh==null||mesh.isBlank())
+                        throw new IllegalArgumentException("Missing mesh for "+node.id());
+                    // Identical model importer, source UVs, pivot and transform as gameplay.
+                    imported(faces,mesh,t.x(),t.y(),t.z(),t.scaleX(),t.scaleY(),t.scaleZ(),
+                        Math.toRadians(t.yaw()));
+                }else if("geometry.box".equals(c.type())){
+                    int rgb=0x9d9992;
+                    if(c.properties().containsKey("color"))
+                        rgb=Integer.parseInt(c.properties().get("color"),16)&0xffffff;
+                    box(faces,t.x()-t.scaleX()/2,t.y(),t.z()-t.scaleZ()/2,
+                        t.scaleX(),t.scaleY(),t.scaleZ(),rgb);
+                }
+            }
+        }
+        if(editorSelection!=null){
+            // Thin focus indicator only; never a replacement mesh.
+            double[] p=editorSelection;
+            box(faces,p[0]-.055,p[1],p[2]-.055,.11,.9,.11,0xe9bf59);
+        }
+        for(Face f:faces){
+            if(!faceInFrustum(f))continue;
+            var clipped=clip(new Vertex(camera(f.a),f.au,f.av),
+                new Vertex(camera(f.b),f.bu,f.bv),
+                new Vertex(camera(f.c),f.cu,f.cv));
+            for(int i=1;i+1<clipped.size();i++)
+                triangle(clipped.get(0),clipped.get(i),clipped.get(i+1),
+                    f.color,f.material,1.12);
+        }
+        PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
+        applyGraphicsEffects(clock);
+    }
+
+    /**
      * Separate DEV ASSET ROOM scene, deliberately not a HouseMap.Site or player
      * lobby. Uses the *production* GLB->Face importer, perspective UV sampler,
      * z-buffer, and directional character renderer. No proxy cubes for assets;
