@@ -63,13 +63,15 @@ final class DevMatchClientAi implements AutoCloseable {
     private final java.util.concurrent.atomic.AtomicInteger rituals=new java.util.concurrent.atomic.AtomicInteger();
     record Stats(String seat,int commands,int accepted,int acceptedMoves,int rejected,int attacks,
                  int identifications,int rituals,int observations,int health,int stress,
-                 int roomsVisited,boolean enteredSite,
+                 int roomsVisited,boolean enteredSite,boolean enteredInterior,
                  int frenzyStarts,int effectiveAttacks,int goodScans,int correctResponses,
                  int ritesStarted,String hypothesis,String state){}
     Stats stats(){
         return new Stats(seat,commands.get(),accepted.get(),acceptedMoves.get(),rejected.get(),
             attacks.get(),identifications.get(),rituals.get(),observedSignals,
-            health,stress,visited.size(),visited.keySet().stream().anyMatch(r->r<HouseMap.EXTRACTION_ROOM),
+            health,stress,visited.size(),
+            visited.keySet().stream().anyMatch(r->r<HouseMap.EXTRACTION_ROOM),
+            visited.keySet().stream().anyMatch(r->r<HouseMap.INDOOR_ROOMS),
             frenzyStarts.get(),effectiveAttacks.get(),goodScans.get(),
             correctResponses.get(),ritesStarted.get(),
             String.valueOf(hypothesis),dashboard.getOrDefault(seat,""));
