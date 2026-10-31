@@ -62,6 +62,8 @@ public final class DevAssetReviewCatalog {
         return List.copyOf(out);
     }
 
+    private static final java.util.Map<String,GlbProps.Model> SOURCE_REVIEW_CACHE=
+        new java.util.concurrent.ConcurrentHashMap<>();
     /** Development-only source loading. Does NOT alter GlbProps approvals. */
     public static GlbProps.Model sourceModel(String id)throws java.io.IOException{
         if(id==null||!id.matches("[A-Za-z0-9_-]{1,90}"))
@@ -70,7 +72,16 @@ public final class DevAssetReviewCatalog {
         if(!java.nio.file.Files.isRegularFile(file,java.nio.file.LinkOption.NOFOLLOW_LINKS)
             ||java.nio.file.Files.size(file)>4_000_000)
             throw new java.io.IOException("source-only GLB unavailable or over budget");
-        return GlbProps.decode(java.nio.file.Files.readAllBytes(file));
+        GlbProps.Model cached=SOURCE_REVIEW_CACHE.get(id);
+        if(cached!=null)return cached;
+        synchronized(SOURCE_REVIEW_CACHE){
+            cached=SOURCE_REVIEW_CACHE.get(id);
+            if(cached==null){
+                cached=GlbProps.decode(java.nio.file.Files.readAllBytes(file));
+                SOURCE_REVIEW_CACHE.put(id,cached);
+            }
+            return cached;
+        }
     }
     /** Decoder/material presence is an objective diagnostic, not texture-art approval. */
     public static Audit audit(Entry entry){
