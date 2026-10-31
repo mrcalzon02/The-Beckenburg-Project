@@ -1393,9 +1393,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 String phase=apparition.phase()==LanGhostAnimation.Phase.MATERIALIZE?"MATERIALIZING"
                     :apparition.phase()==LanGhostAnimation.Phase.RECOVER?"RECOVERING":"MANIFESTED";
                 alert="ENTITY "+phase+" / USE WARDS";alertColor=new Color(226,156,195);
-            }else if(!activeSoundCaption().isEmpty()){
-                alert="HEARD: "+activeSoundCaption();alertColor=new Color(210,194,237);
             }
+            // Ambient sounds play in-world; do not turn them into a running
+            // textual evidence feed. Keep only actionable danger alerts above.
             if(alert!=null){
                 int aw=Math.min(width-24,Math.max(330,g.getFontMetrics().stringWidth(alert)+22));
                 g.setColor(new Color(27,17,27,229));g.fillRoundRect(12,87,aw,32,7,7);
