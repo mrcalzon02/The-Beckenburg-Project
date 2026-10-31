@@ -9,7 +9,7 @@
 
 - **H1–H6:** six genuine `LanClient` hunter peers, each controlled by a separate AI driver.
 - **GHOST:** one genuine `LanClient` ghost peer driven by ghost AI. This must suppress the host's usual unoccupied-ghost AI takeover so we do **not** have two ghost controllers.
-- **ADMIN:** one extra development-only observer **outside** `LanHost.seats[0..6]`, outside `LanWorld`'s six hunters, and outside `LanCase` party count/outcome/settlement. Technically **8 connected participants** (7 playing + 1 observing), even if informally called the "secret seventh player."
+- **ADMIN:** one extra development-only observer **outside** `LanHost.seats[0..6]`, outside `LanWorld`'s six hunters, and outside `LanCase` party count/outcome/settlement. Technically **8 roles in the development session** (7 networked players + 1 host-local observer initially), even if informally called the "secret seventh player."
 
 The admin is invisible in normal lobby/participant UI, cannot take gear, block doors, be injured, consume a hunter slot, receive payouts, vote in readiness, or accidentally become an in-world witness. Its camera is detached from actor collision, not a hunter avatar with god mode.
 
