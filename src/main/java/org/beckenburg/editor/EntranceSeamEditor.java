@@ -50,6 +50,8 @@ public final class EntranceSeamEditor extends JPanel {
         button(top,"EDIT SELECTED",this::editSelected);
         button(top,"DELETE",this::removeSelected);
         button(top,"CONFORM LEAVES + PUNCH TABS",this::conform);
+        button(top,"3D MESH PREVIEW",()->previewMesh(false));
+        button(top,"EXPORT OBJ",()->previewMesh(true));
         button(top,"REVERT LAST CONFORM",this::revertConform);
         button(top,"UNDO",()->history(false));button(top,"REDO",()->history(true));
         button(top,"VERIFY SAVE",this::save);
@@ -157,6 +159,27 @@ public final class EntranceSeamEditor extends JPanel {
             if(value instanceof EntranceSeamDocument.EdgeCut edge)doc.removeEdge(edge);
             if(value instanceof EntranceSeamDocument.DetachedTab tab)doc.removeTab(tab);
         });
+    }
+    private void previewMesh(boolean export){
+        var selected=list.getSelectedValue();
+        if(selected==null){
+            status.setText("Select an authored seam or tab first");return;
+        }
+        try{
+            double x0,z0,x1,z1;
+            if(selected instanceof EntranceSeamDocument.EdgeCut e){
+                x0=Math.min(e.x0(),e.x1());x1=Math.max(e.x0(),e.x1());
+                z0=Math.min(e.z0(),e.z1());z1=Math.max(e.z0(),e.z1());
+            }else if(selected instanceof EntranceSeamDocument.DetachedTab t){
+                x0=t.x0();z0=t.z0();x1=t.x1();z1=t.z1();
+            }else throw new IllegalArgumentException("Unknown entrance element");
+            var mesh=TerrainEntranceMesh.build(world,
+                new TerrainEntranceMesh.Bounds(x0-3,z0-3,x1+3,z1+3));
+            if(export)TerrainEntrancePreview.chooseExport(frame,mesh);
+            else TerrainEntrancePreview.open(frame,mesh);
+            status.setText("Generated "+mesh.mesh().triangles().size()+
+                " physical source mesh faces; "+mesh.exposedWallSegments()+" cave-edge segments");
+        }catch(IOException|RuntimeException failure){error("Entrance mesh preview failed",failure);}
     }
     private void conform(){
         if(JOptionPane.showConfirmDialog(frame,
