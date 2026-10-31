@@ -204,6 +204,12 @@ public final class LanClient implements AutoCloseable {
     public synchronized void useHeldEquipment()throws IOException{
         send("GEARUSE|"+(++sequence));
     }
+    /** Relative direction for a field deployment, validated by the host. */
+    public synchronized void useHeldEquipment(int clockwiseDegrees)throws IOException{
+        if(clockwiseDegrees<0||clockwiseDegrees>=360)
+            throw new IllegalArgumentException("clockwiseDegrees must be 0..359");
+        send("GEARUSE|"+(++sequence)+"|"+clockwiseDegrees);
+    }
     /** Deploy or retrieve a portable ground light at the real hunter position. */
     public synchronized void placeHeldEquipment()throws IOException{
         send("GEARPLACE|"+(++sequence));
