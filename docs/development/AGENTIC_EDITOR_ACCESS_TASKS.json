@@ -312,13 +312,13 @@
     "RENDER_UNAVAILABLE",
     "INTERNAL"
   ],
-  "nextTask": "T0 focused tests and T1 focused stitched-world acceptance; then T2 human-world editor",
+  "nextTask": "T2 cross-tile sculpt transaction with undo/reload; actual manually installed editor proof; then T3 runtime terrain authority",
   "evidence": {
     "sourceVerified": false,
     "installedWindowsVerified": false,
     "mcpConnected": false,
     "agentEditedRealScene": false,
-    "notes": "Human module-first priority updated 2026-10-31. T0 and T1 have source commits; focused Windows acceptance still pending; all terrain rendering, streaming/LOD and agent-to-world connection unverified."
+    "notes": "T1 focused Java17 terrain-module CI PASS at ac81d6f (run 41228485115). T2 manual source window added for focused CI; installation and runtime tests still pending. T3-T9 unverified."
   },
   "executionOrder": "Human terrain/loading-zone/stitched-world modules (T0-T8) first; then existing agentic milestones M0-M6. Agent adapters must reuse tested module operations.",
   "terrainWorldPlan": "docs/development/TERRAIN_WORLD_SYSTEM_PLAN.md",
@@ -344,7 +344,7 @@
     {
       "id": "T1",
       "name": "Portable 16-bit stitched PNG tile authority and exact seams",
-      "status": "implemented_unverified",
+      "status": "tested",
       "source": [
         "src/main/java/org/beckenburg/editor/StitchedHeightmapWorld.java",
         "src/test/java/org/beckenburg/editor/StitchedHeightmapWorldTest.java"
@@ -362,7 +362,7 @@
     {
       "id": "T2",
       "name": "Human stitched-world import/generate/brush/editor UI",
-      "status": "planned",
+      "status": "in_progress",
       "dependsOn": [
         "T1"
       ],
@@ -370,6 +370,16 @@
         "Manual 3x3 map import/generate/export and save/reload",
         "No user-visible second preview world",
         "Seam diagnostics and undo"
+      ],
+      "source": [
+        "src/main/java/org/beckenburg/editor/StitchedWorldEditor.java",
+        "src/main/java/org/beckenburg/editor/StitchedHeightmapWorld.java",
+        "src/main/java/org/beckenburg/editor/TerrainZoneEditor.java"
+      ],
+      "blockers": [
+        "Manual cross-border sculpt and undo/redo not yet implemented",
+        "Stitched outdoor gameplay renderer/physics not connected",
+        "Actual installed Windows UI run and screenshot pending"
       ]
     },
     {

@@ -230,6 +230,48 @@ public final class StitchedHeightmapWorld {
             importTile(x,z,temp,false);
         }finally{Files.deleteIfExists(temp);}
     }
+
+    /**
+     * Create a small contiguous region without overwriting existing source images.
+     * An ordinary failure rolls back every tile created by this invocation. No
+     * crash/power-loss atomicity is promised for multiple individual PNG files.
+     */
+    public synchronized List<Tile> generateRegion(int startX,int startZ,int width,int depth)
+            throws IOException {
+        if(width<1||depth<1||width>3||depth>3)
+            throw new IllegalArgumentException("Region must be 1..3 tiles per axis");
+        List<Tile> requested=new ArrayList<>();
+        for(int z=0;z<depth;z++)for(int x=0;x<width;x++){
+            long tx=(long)startX+x,tz=(long)startZ+z;
+            if(tx>Integer.MAX_VALUE||tz>Integer.MAX_VALUE)
+                throw new IllegalArgumentException("Tile index overflow");
+            int ix=(int)tx,iz=(int)tz;
+            validIndex(ix,iz);
+            if(hasTile(ix,iz))
+                throw new IOException("Region contains an existing tile: "+ix+","+iz);
+            requested.add(new Tile(ix,iz));
+        }
+        List<Tile> created=new ArrayList<>();
+        try {
+            for(Tile t:requested){
+                generateTile(t.x(),t.z());
+                created.add(t);
+            }
+        }catch(IOException|RuntimeException failure){
+            for(int i=created.size()-1;i>=0;i--){
+                Tile t=created.get(i);
+                try {
+                    Files.deleteIfExists(tilePath(t.x(),t.z()));
+                    cache.remove(t);
+                }catch(IOException rollbackFailure){
+                    failure.addSuppressed(rollbackFailure);
+                }
+            }
+            throw failure;
+        }
+        return List.copyOf(created);
+    }
+
     public double metres(int sample){
         if(sample<0||sample>65535)throw new IllegalArgumentException("Invalid height sample");
         return settings.minElevation()+

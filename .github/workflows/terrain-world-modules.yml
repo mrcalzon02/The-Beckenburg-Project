@@ -6,6 +6,7 @@ on:
       - 'src/main/java/org/beckenburg/editor/TerrainZoneDocument.java'
       - 'src/main/java/org/beckenburg/editor/TerrainZoneEditor.java'
       - 'src/main/java/org/beckenburg/editor/StitchedHeightmapWorld.java'
+      - 'src/main/java/org/beckenburg/editor/StitchedWorldEditor.java'
       - 'src/test/java/org/beckenburg/editor/TerrainZoneDocumentTest.java'
       - 'src/test/java/org/beckenburg/editor/StitchedHeightmapWorldTest.java'
       - 'tools/build-editor-kit.cmd'

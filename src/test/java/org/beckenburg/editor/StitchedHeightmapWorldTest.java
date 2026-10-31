@@ -104,6 +104,25 @@ public final class StitchedHeightmapWorldTest {
             catch(java.io.IOException expected){rejected=true;}
             check(rejected,"8-bit RGB PNG rejected; 16-bit sample precision required");
             check(!terrain.hasTile(1,0),"Failed import does not create a tile");
+
+            // Human editor 3x3 region command is bounded, deterministic and non-overwriting.
+            var batch=StitchedHeightmapWorld.create(root.resolve("batch"),settings);
+            var created=batch.generateRegion(-1,-1,3,3);
+            check(created.size()==9 && batch.tiles().size()==9,"Nine contiguous source PNGs created");
+            check(batch.verifySeams().isEmpty(),"Generated nine tiles have matching source borders");
+            check(batch.cachedTiles()<=settings.cacheTiles(),"Region operation honors bounded cache");
+            byte[] protectedImage=Files.readAllBytes(batch.tilePath(0,0));
+            rejected=false;
+            try{batch.generateRegion(0,0,2,2);}catch(java.io.IOException expected){rejected=true;}
+            check(rejected,"Overlapping region is rejected before any replacement");
+            check(Arrays.equals(protectedImage,Files.readAllBytes(batch.tilePath(0,0))),
+                  "Rejected region preserves source byte-for-byte");
+            check(batch.tiles().size()==9,"Rejected region leaves no new tiles");
+            rejected=false;
+            try{batch.generateRegion(Integer.MAX_VALUE,0,2,2);}
+            catch(IllegalArgumentException expected){rejected=true;}
+            check(rejected,"Region tile-index overflow rejected before writing");
+
             System.out.println("PASS stitched world: 16-bit PNG, global deterministic tiles, seams, negative indices, triangle height, LRU and rollback");
         } finally { delete(root); }
     }

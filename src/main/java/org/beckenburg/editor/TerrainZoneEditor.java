@@ -108,6 +108,10 @@ public final class TerrainZoneEditor extends JPanel {
         redoButton.addActionListener(e->redo());
         save.addActionListener(e->save());
         header.add(undoButton);header.add(redoButton);header.add(save);
+        JButton stitchedWorld=new JButton("STITCHED WORLD");
+        stitchedWorld.setToolTipText("Separate 16-bit world source-map editor; not a live 3D runtime preview");
+        stitchedWorld.addActionListener(e->StitchedWorldEditor.open(frame));
+        header.add(stitchedWorld);
         add(header,BorderLayout.NORTH);
         add(canvas,BorderLayout.CENTER);
         JPanel side=new JPanel(new BorderLayout(5,4));

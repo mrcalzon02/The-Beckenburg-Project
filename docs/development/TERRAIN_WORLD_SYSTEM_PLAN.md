@@ -98,3 +98,28 @@ Statuses until proved: **T0 work in progress; T1–T9 planned**. Earlier Beckenb
 ## 7. Release and resource discipline
 
 Only objective broken build, launch, essential gameplay or required multiplayer/update function blocks shipping. Visual cracks, biased LOD, content/biome mismatches and authoring quality warnings are developer diagnostics unless they objectively break play. Never mask a known failure by disabling a task or replacing a real playable map with synthetic placeholders. No forced push. Preserve current game environments and original art. Maintain source hashes and no unrelated edits.
+
+
+## 8. Implementation increment — manual stitched world source window (2026-10-31)
+
+T1 source proof: the Windows Java 17 terrain-module acceptance workflow succeeded for commit
+ac81d6f92002f3729234592cccd016d4dfdd926e:
+https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41228485115 .
+This verifies focused standalone Java module tests, not a running world renderer.
+
+T2 **in progress**: \`StitchedWorldEditor\` is reachable from the existing finite
+Terrain / Zones editor via **STITCHED WORLD**. It edits real source-world files
+(not a synthetic game scene), supporting world creation/open, tile-coordinate
+navigation, bounded 2D tile thumbnails, single-tile and 3×3 deterministic
+generation, non-overwriting 16-bit imports, source-identical exports and seam
+inspection. A 3×3 generation rejects existing files before writing and attempts
+to roll back newly created files if a normal operation fails. Multi-file crash
+durability, sculpting with cross-border edits, undo/redo, in-game runtime
+integration and render verification **are not implemented** by this step.
+Source writes are immediate and visibly labeled as such.
+
+Next: implement a revisioned multi-tile edit transaction that atomically
+updates shared-border vertices and supports undo/redo and crash recovery;
+then bind the stitched-world source to actual outdoor renderer + physics
+(T3). Do not claim T2 accepted until a human can sculpt/save/undo/reload
+a real 3x3 world and reproduce seam diagnostics.
