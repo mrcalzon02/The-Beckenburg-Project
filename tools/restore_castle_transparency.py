@@ -93,8 +93,11 @@ def extract(rgba: np.ndarray):
     new_area=int((alpha>120).sum())
     ratio=new_area/max(1,old_area)
     bbox=cv2.boundingRect((alpha>120).astype("uint8"))
-    if not(.63<=ratio<=1.42) or bbox[3]<h*.70 or bbox[2]<w*.20:
-        raise ValueError(f"Unreliable silhouette area/bounds ratio={ratio:.3f} bbox={bbox}")
+    # Diagnostic pass must produce ALL candidate previews, including large
+    # corrections to a badly perforated old alpha. Only reject catastrophic
+    # matches here; strict per-character visual approval precedes ZIP writing.
+    if not(.48<=ratio<=2.2) or bbox[3]<h*.60 or bbox[2]<w*.15:
+        raise ValueError(f"Catastrophic silhouette area/bounds ratio={ratio:.3f} bbox={bbox}")
     output=np.dstack((rgb,alpha))
     return output,{
         "background_rgb":background.tolist(),"cutoff_lab":round(cutoff,2),
