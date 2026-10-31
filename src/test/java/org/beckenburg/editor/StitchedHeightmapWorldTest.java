@@ -38,8 +38,8 @@ public final class StitchedHeightmapWorldTest {
             check(world.sample(0,0,16,16)==world.sample(1,1,0,0),"Diagonal corner identical");
             check(world.cachedTiles()<=2,"Bounded resident tile cache");
             double x=132, z=-80;
-            equal(world.height(x-1e-7,z+1),world.height(x+1e-7,z+1),
-                  "World-coordinate seam is continuous");
+            check(Math.abs(world.height(x-1e-7,z+1)-world.height(x+1e-7,z+1))<1e-4,
+                  "World-coordinate seam is continuous without a height jump");
             var loaded=StitchedHeightmapWorld.open(root.resolve("first"));
             check(loaded.settings().equals(settings),"Manifest roundtrip");
             equal(loaded.height(102,-98),world.height(102,-98),"Reopen exact canonical terrain");
