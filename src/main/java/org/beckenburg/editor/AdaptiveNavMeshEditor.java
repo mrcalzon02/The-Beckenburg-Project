@@ -55,7 +55,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
     private AdaptiveNavigationRegions.Region selected;
     private double clickX,clickZ,barrierStartX,barrierStartZ;
     private boolean drawingGate,running,rerun;
-    private long changeVersion,seenSignature;
+    private long changeVersion,seenSignature,generatedVersion=-1;
 
     private static JSpinner spinner(int value,int min,int max){
         return new JSpinner(new SpinnerNumberModel(value,min,max,1));
@@ -230,6 +230,10 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         }
     }
     private void trimSelected(boolean connected){
+        if(graph==null||generatedVersion!=changeVersion||graph.stale()){
+            updateStatus("Authored edits changed: use Flood Fill Pulse before trimming");
+            return;
+        }
         if(selected==null){updateStatus("Click a generated region first");return;}
         if(!connected){
             var r=selected;
@@ -291,13 +295,13 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                 try{
                     var built=get();
                     if(changeVersion==issued){
-                        graph=built;selected=null;
+                        graph=built;generatedVersion=issued;selected=null;
                         updateStatus("Flood pulse complete");
                     }else rerun=true;
                 }catch(InterruptedException interrupted){
                     Thread.currentThread().interrupt();error("Navigation pulse interrupted",interrupted);
                 }catch(ExecutionException failure){
-                    graph=null;selected=null;
+                    graph=null;generatedVersion=-1;selected=null;
                     Throwable root=failure.getCause();
                     error("Navigation pulse failed",new IOException(root==null?
                         failure.toString():root.toString(),failure));
@@ -311,7 +315,8 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         status.setText(reason+" | mode "+(continuous.isSelected()?"continuous":"manual")+
             " | seeds "+edits.seeds().size()+" | gates "+edits.barriers().size()+
             " | trims "+edits.exclusions().size()+
-            (m==null?" | NO NAV GRAPH": " | regions "+m.acceptedRegions()+
+            (m==null?" | NO NAV GRAPH": " | "+(generatedVersion==changeVersion?
+                "current":"STALE; PULSE REQUIRED")+" | regions "+m.acceptedRegions()+
             " | links "+m.edges()+" | probes "+m.evaluatedCells()));
         canvas.repaint();
     }
@@ -351,7 +356,8 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                         return;
                     }
                     clickX=x;clickZ=z;selected=null;
-                    if(graph!=null)for(var r:graph.candidates().regions())
+                    if(graph!=null&&generatedVersion==changeVersion)
+                        for(var r:graph.candidates().regions())
                         if(r.layer().equals("surface")&&r.contains(x,z)){
                             selected=r;break;
                         }
