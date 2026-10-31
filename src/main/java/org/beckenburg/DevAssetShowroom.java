@@ -248,7 +248,7 @@ public final class DevAssetShowroom implements AutoCloseable {
      * save metadata and actual renderer screenshots. Missing/flat visuals are
      * findings and must NOT gate release. Source files are never rewritten.
      */
-    public static void capture(Path folder,int maxEntries)throws IOException {
+    public static void capture(Path folder,int maxEntries,String focus)throws IOException {
         Files.createDirectories(folder);
         List<DevAssetReviewCatalog.Entry> entries=DevAssetReviewCatalog.entries();
         if(maxEntries>0)entries=entries.subList(0,Math.min(maxEntries,entries.size()));
@@ -290,12 +290,44 @@ public final class DevAssetShowroom implements AutoCloseable {
         scene.setRenderSize(640,400);
         scene.lamp=false;
         int imageCount=0;
-        for(int start=0;start<entries.size();start+=BAY){
+        for(int start=0;start<entries.size()&&focus==null;start+=BAY){
             var exhibits=entries.subList(start,Math.min(start+BAY,entries.size()));
             scene.x=0;scene.z=-5;scene.eyeHeight=1.7;scene.yaw=0;scene.pitch=-.06;
             scene.drawDevAssetRoom(exhibits,0,0);
+            // Contact-sheet caption lives BELOW the unmodified real renderer
+            // frame. Never paint labels over imported textures/silhouettes.
+            BufferedImage sheet=new BufferedImage(640,493,BufferedImage.TYPE_INT_RGB);
+            Graphics2D g=sheet.createGraphics();
+            try{
+                g.setColor(new Color(16,18,24));g.fillRect(0,0,640,493);
+                g.drawImage(scene.image(),0,0,null);
+                g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,11));
+                for(int i=0;i<exhibits.size();i++){
+                    var e=exhibits.get(i);
+                    String label=(start+i)+" / "+e.kind()+" / "+e.id();
+                    if(label.length()>51)label=label.substring(0,48)+"...";
+                    g.setColor(Color.WHITE);
+                    g.drawString(label,10+(i%2)*318,418+(i/2)*23);
+                }
+            }finally{g.dispose();}
             Path image=folder.resolve(String.format("bay-%04d.png",start/BAY));
-            ImageIO.write(scene.image(),"png",image.toFile());imageCount++;
+            ImageIO.write(sheet,"png",image.toFile());imageCount++;
+        }
+        if(focus!=null){
+            DevAssetReviewCatalog.Entry chosen=null;
+            for(var e:entries)if(e.id().equals(focus)||e.key().equalsIgnoreCase(focus)){
+                chosen=e;break;
+            }
+            if(chosen==null)throw new IOException("Requested review asset not registered: "+focus);
+            for(int angle=0;angle<4;angle++){
+                scene.x=SceneRenderer.devAssetX(0);
+                scene.z=SceneRenderer.devAssetZ(0)-3.4;
+                scene.eyeHeight=1.35;scene.yaw=0;scene.pitch=-.08;
+                scene.drawDevAssetRoom(List.of(chosen),angle*.12,angle*Math.PI/2);
+                ImageIO.write(scene.image(),"png",
+                    folder.resolve("focused-"+chosen.kind()+"-"+chosen.id()+"-"+angle+".png").toFile());
+                imageCount++;
+            }
         }
         String status="Dev room: "+entries.size()+" registered assets, "+loaded+
             " loaded, "+review+" needs review, "+missing+" missing; "+imageCount+
@@ -309,16 +341,18 @@ public final class DevAssetShowroom implements AutoCloseable {
     public static void main(String[] args)throws Exception{
         boolean selected=false,capture=false;
         int limit=0;Path output=Path.of("build","dev-room");
+        String focus=null;
         for(String arg:args){
             if(arg.equals("--dev-room"))selected=true;
             else if(arg.equals("--capture"))capture=true;
             else if(arg.startsWith("--limit="))limit=Integer.parseInt(arg.substring(8));
             else if(arg.startsWith("--output="))output=Path.of(arg.substring(9));
+            else if(arg.startsWith("--asset="))focus=arg.substring(8);
             else throw new IllegalArgumentException("Unknown dev-room option "+arg);
         }
         if(!selected)throw new IllegalArgumentException("Explicit --dev-room required");
         if(limit<0||limit>10000)throw new IllegalArgumentException("Invalid review limit");
-        if(capture){capture(output,limit);return;}
+        if(capture){capture(output,limit,focus);return;}
         if(GraphicsEnvironment.isHeadless())
             throw new IllegalStateException("Interactive dev room requires a desktop; use --capture for headless");
         SwingUtilities.invokeLater(DevAssetShowroom::new);
