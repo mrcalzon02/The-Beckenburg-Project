@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.beckenburg.editor.AdaptiveTerrainTopology;
 import org.beckenburg.editor.AdaptiveNavigationRegions;
+import org.beckenburg.editor.AdaptiveNavMeshEdits;
 import org.beckenburg.editor.LayeredTerrainQueries;
 import org.beckenburg.editor.StitchedHeightmapWorld;
 
@@ -79,9 +80,10 @@ public final class DevTerrainTopologyLab {
             double right=ox+(START_X+CELLS_X-.25)*cell;
             double north=oz+(START_Z+.25)*cell;
             double south=oz+(START_Z+CELLS_Z-.25)*cell;
+            var edits=AdaptiveNavMeshEdits.open(source);
             var graph=AdaptiveNavigationRegions.build(query,agent,
                 List.of(new AdaptiveNavigationRegions.Area("surface",
-                    left,north,right,south)),List.of(),.125);
+                    left,north,right,south)),List.of(),edits,.125);
             double middle=oz+(START_Z+2.5)*cell;
             var route=graph.route("surface",ox+(START_X+.65)*cell,middle,
                 "surface",ox+(START_X+CELLS_X-.65)*cell,middle);
