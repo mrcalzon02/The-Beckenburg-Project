@@ -3657,7 +3657,13 @@ public final class SceneRenderer {
      * Six real items per bay, unlimited sequential bays from the live registry.
      */
     public void drawDevAssetRoom(List<DevAssetReviewCatalog.Entry> bay,double clock,double rotation){
+        drawDevAssetRoom(bay,clock,rotation,List.of());
+    }
+    /** Opt-in actual 3D terrain topology diagnostic inside the original asset room. */
+    public void drawDevAssetRoom(List<DevAssetReviewCatalog.Entry> bay,double clock,double rotation,
+                                 List<DevTerrainTopologyLab.Triangle> topologyPatch){
         Objects.requireNonNull(bay);
+        Objects.requireNonNull(topologyPatch);
         if(bay.size()>6)throw new IllegalArgumentException("At most six physical exhibits per bay");
         paintSky(clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
@@ -3676,6 +3682,20 @@ public final class SceneRenderer {
             double px=devAssetX(j),pz=devAssetZ(j);
             box(stage,px-1.18,-.03,pz-1.14,2.36,.23,2.28,j%2==0?0xb9bcc2:0xaeb4be);
             box(stage,px-1.22,-.05,pz-1.18,2.44,.055,2.36,0xb2a68e);
+        }
+        if(!topologyPatch.isEmpty()){
+            // Physically rendered, opt-in source-topology QA patch in unused side aisle.
+            // Asset plinths, original model meshes and default capture path stay untouched.
+            final double px=DevTerrainTopologyLab.PATCH_X,pz=DevTerrainTopologyLab.PATCH_Z;
+            box(stage,px-.06,-.025,pz-.06,4.12,.05,.055,0xc0a36e);
+            box(stage,px-.06,-.025,pz+3.005,4.12,.05,.055,0xc0a36e);
+            box(stage,px-.06,-.025,pz-.06,.055,.05,3.12,0xc0a36e);
+            box(stage,px+4.005,-.025,pz-.06,.055,.05,3.12,0xc0a36e);
+            for(var tri:topologyPatch)
+                stage.add(new Face(new Point(tri.a().x(),tri.a().y(),tri.a().z()),
+                    new Point(tri.b().x(),tri.b().y(),tri.b().z()),
+                    new Point(tri.c().x(),tri.c().y(),tri.c().z()),
+                    tri.color(),-1,0,0,0,0,0,0));
         }
         for(int j=0;j<bay.size();j++){
             var entry=bay.get(j);
