@@ -12,7 +12,7 @@ From checkout after running build.cmd e2e:
 
     dev-room.cmd
 
-The showroom is an unlimited series of six-exhibit 3D bays. The left-side searchable catalog contains all approved environment models, every equipment model and variant, all registered local imported models, the ghost identities (including ancients and elders), playable hunters and all castle-support NPCs.
+The showroom is an unlimited series of six-exhibit 3D bays. The left-side searchable catalog contains all approved environment models, every equipment model and variant, all registered local imported models, all unapproved source-only GLBs present in a source checkout (marked SOURCE_ONLY and never enabled in gameplay), the ghost identities (including ancients and elders), playable hunters and all castle-support NPCs.
 
 Click a model in the catalog to teleport the developer camera to it; PgUp/PgDn change bays; 1–6 teleport to a stand; WASD and Q/E fly without collision; Shift moves faster; drag mouse to look; R rotates exhibits and F12 captures the exact active renderer PNG. The saved image goes to the Windows user profile, .beckenburg/dev-room/captures.
 
@@ -36,9 +36,9 @@ Replace MODEL_ID with a real listed asset identifier.
 - REVIEW_UV: UV or material samples fail; inspect screenshots/source.
 - REVIEW_TEXTURE: the sampled texture appears unusually uniform; possible issue, not proof.
 - MISSING: runtime sprite/GLB cannot load.
-- REVIEW_REGISTRATION: a local packaged GLB is not in the approved runtime registry.
+- REVIEW_REGISTRATION: a source GLB is not in the approved runtime registry. It is still displayed as a SOURCE_ONLY exhibit in the development checkout, without granting any gameplay approval.
 
-The workflow enumerates the actual GlbProps.availableModels, EquipmentModelCatalog, ImportedAssetLibrary, GhostIdentity.Type and CharacterVisuals registries automatically. It also lists source-model files omitted from the registry in the CSV. It captures the actual 3D renderer in six-stand PNG contact sheets with a separate caption band, reports every asset and uploads them to GitHub Actions artifacts.
+The workflow enumerates the actual GlbProps.availableModels, EquipmentModelCatalog, ImportedAssetLibrary, GhostIdentity.Type and CharacterVisuals registries automatically. It also directly previews source-only GLBs in the developer checkout using the same original GLB texture sampler; installed builds show only packaged/approved assets and their separately registered local imports. It captures the actual 3D renderer in six-stand PNG contact sheets with a separate caption band, reports every asset and uploads them to GitHub Actions artifacts.
 
 **Cosmetic and visual asset reviews are diagnostic only and must never block builds or releases.** Source compilation, launching, required game functionality, and the existing multiplayer acceptance remain functional gates. An automated decoder pass does not certify visual fidelity; a human reviews the captured geometry and source art.
 
