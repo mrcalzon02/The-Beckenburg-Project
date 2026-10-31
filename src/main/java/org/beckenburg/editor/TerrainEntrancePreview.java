@@ -33,11 +33,12 @@ import javax.swing.JPanel;
  */
 public final class TerrainEntrancePreview extends JPanel {
     private final TerrainEntranceMesh.Output output;
-    private final MeshCanvas canvas=new MeshCanvas();
+    private final MeshCanvas canvas;
     private final JCheckBox wires=new JCheckBox("Wireframe",true);
     private TerrainEntrancePreview(TerrainEntranceMesh.Output output){
         super(new BorderLayout(4,4));
         this.output=output;
+        this.canvas=new MeshCanvas();
         setBorder(BorderFactory.createEmptyBorder(7,7,7,7));
         JPanel top=new JPanel(new FlowLayout(FlowLayout.LEFT,6,3));
         JButton export=new JButton("EXPORT ACTUAL OBJ GEOMETRY");
