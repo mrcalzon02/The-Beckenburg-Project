@@ -3664,8 +3664,7 @@ public final class SceneRenderer {
             if(entry.sprite())continue;
             double px=devAssetX(j),pz=devAssetZ(j);
             try{
-                GlbProps.Model source=entry.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY?
-                    DevAssetReviewCatalog.sourceModel(entry.id()):GlbProps.model(entry.id());
+                GlbProps.Model source=devReviewModel(entry);
                 double[] bounds=devAssetBounds(source);
                 double span=Math.max(bounds[3],Math.max(bounds[4],bounds[5]));
                 if(!Double.isFinite(span)||span<=0)throw new IllegalStateException("Invalid source dimensions");
@@ -3708,6 +3707,15 @@ public final class SceneRenderer {
         }
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         applyGraphicsEffects(clock);
+    }
+    private static GlbProps.Model devReviewModel(DevAssetReviewCatalog.Entry entry){
+        try{
+            return entry.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY
+                ?DevAssetReviewCatalog.sourceModel(entry.id())
+                :GlbProps.model(entry.id());
+        }catch(java.io.IOException unavailable){
+            throw new IllegalStateException("Review source unavailable: "+entry.id(),unavailable);
+        }
     }
     private static double[] devAssetBounds(GlbProps.Model model){
         double loX=Double.POSITIVE_INFINITY,loY=loX,loZ=loX;
