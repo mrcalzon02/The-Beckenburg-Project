@@ -104,6 +104,15 @@ public final class LanDotsPlacementIntegrationTest {
                 feed(panel,rejected);
                 check(state(panel,"toolPlacement")&&!state(panel,"placementPending"),
                     "failed placement must stay aimable/retryable");
+                // Slot changes are allowed after a host rejection and must
+                // clear any obsolete aim/ack state before the next attempt.
+                press(panel,KeyEvent.VK_2);
+                check(!state(panel,"toolPlacement")&&!state(panel,"placementPending"),
+                    "switching away must cancel the prior projector preview");
+                press(panel,KeyEvent.VK_1);
+                press(panel,KeyEvent.VK_G);
+                check(state(panel,"toolPlacement"),
+                    "reselecting the projector must allow a fresh placement");
                 LanDotsProjectors dots=(LanDotsProjectors)LooseClutterNetworkTest.field(host,"dots");
                 check(dots.at(0)==null,
                     "rejected van placement must not create host-owned projector geometry");
@@ -147,6 +156,16 @@ public final class LanDotsPlacementIntegrationTest {
                 check(dots.at(0)!=null&&dots.at(0).room()==4
                     &&dots.at(0).heading()==expectedHeading,
                     "host must own real positioned, rotated DOTS geometry");
+                // Every placed model is the real approved tier-specific deployed
+                // equipment, never the old generic vape prop.
+                for(var tier:EquipmentTiers.Tier.values()){
+                    String mesh=SceneRenderer.dotsDeployedMesh(tier);
+                    check(mesh.equals(EquipmentModelCatalog.variant("DOTS_PROJECTOR",tier,"deployed"))
+                        &&EquipmentModelCatalog.approved(mesh)
+                        &&!GlbProps.model(mesh).triangles().isEmpty()
+                        &&Double.isFinite(SceneRenderer.castleBounds(mesh)[1]),
+                        "actual deployed DOTS GLB must exist and have measurable floor bounds: "+tier);
+                }
 
                 // A hunter may not remotely reclaim a deployed projector from another room.
                 synchronized(mutex){AuthoredTestSupport.place(map,world,0,map.spawn(5));}
