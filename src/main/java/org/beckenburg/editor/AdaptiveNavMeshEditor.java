@@ -41,6 +41,8 @@ public final class AdaptiveNavMeshEditor extends JPanel {
     private final JSpinner tileX=spinner(0,-999999,999999);
     private final JSpinner tileZ=spinner(0,-999999,999999);
     private final JSpinner cellX,cellZ;
+    private final JSpinner navResolution=new JSpinner(
+        new SpinnerNumberModel(.5,.125,4.0,.125));
     private final JCheckBox continuous=new JCheckBox("Continuous rebuild");
     private final JLabel status=new JLabel();
     private final MapCanvas canvas=new MapCanvas();
@@ -88,6 +90,8 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         JPanel location=new JPanel(new FlowLayout(FlowLayout.LEFT,4,1));
         addSpinner(location,"Tile X",tileX);addSpinner(location,"Z",tileZ);
         addSpinner(location,"Cell X",cellX);addSpinner(location,"Z",cellZ);
+        location.add(new JLabel("Min nav region (m)"));
+        location.add(navResolution);
         location.add(new JLabel("Viewport: up to 8×8 source cells"));
         controls.add(location);
         JPanel buttons=new JPanel(new FlowLayout(FlowLayout.LEFT,4,1));
@@ -133,7 +137,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         footer.add(status);
         add(footer,BorderLayout.SOUTH);
 
-        for(JSpinner field:new JSpinner[]{tileX,tileZ,cellX,cellZ})
+        for(JSpinner field:new JSpinner[]{tileX,tileZ,cellX,cellZ,navResolution})
             field.addChangeListener(e->{
                 selected=null;
                 updateStatus("Viewport changed; pulse to regenerate");
@@ -263,6 +267,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         if(running){rerun=true;return;}
         final long issued=changeVersion;
         final var area=view();
+        final double resolution=((Number)navResolution.getValue()).doubleValue();
         running=true;
         updateStatus("Building adaptive nav regions and seeded flood fill...");
         new SwingWorker<AdaptiveNavigationRegions.Graph,Void>(){
@@ -275,7 +280,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                 var profile=new AdaptiveNavigationRegions.Profile(
                     new LayeredTerrainQueries.Agent(.10,1.65,42,.24),false,false);
                 return AdaptiveNavigationRegions.build(physical,profile,
-                    List.of(area),List.of(),copy,.125);
+                    List.of(area),List.of(),copy,resolution);
             }
             @Override protected void done(){
                 running=false;
