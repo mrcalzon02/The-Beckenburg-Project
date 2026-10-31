@@ -210,7 +210,9 @@ public final class AdaptiveNavigationRegions {
         if(++evaluated>MAX_CELLS)
             throw new IllegalStateException("Navigation refinement budget exceeded");
         var extent=new LayeredTerrainQueries.Rect(x0,z0,x1,z1);
-        boolean details=query.crossesFeature(layer,extent);
+        boolean details=query.crossesFeature(layer,extent)
+            ||(layer.equals(LayeredTerrainQueries.SURFACE)
+                &&query.steepSourceWithin(extent,profile.footprint()));
         double w=x1-x0,d=z1-z0;
         boolean safe=allSamplesSafe(layer,x0,z0,x1,z1);
         // A doubtful region is subdivided; at the minimum size it is blocked,
