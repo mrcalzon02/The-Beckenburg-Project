@@ -53,6 +53,10 @@ public final class LayeredGeometryEditor extends JPanel {
         setBorder(BorderFactory.createEmptyBorder(8,8,8,8));
         JPanel toolbar=new JPanel(new FlowLayout(FlowLayout.LEFT,4,3));
         button(toolbar,"ADD FLOOR",()->editFloor(null));
+        button(toolbar,"SMOOTH RAMP ENTRANCES",()->{
+            try{RampEntranceEditor.open(frame,world);}
+            catch(IOException|RuntimeException failure){error("Ramp editor failed",failure);}
+        });
         button(toolbar,"ADD SOLID",()->editSolid(null));
         button(toolbar,"ADD CONNECTION",()->editLink(null));
         button(toolbar,"EDIT SELECTED",this::editSelected);
