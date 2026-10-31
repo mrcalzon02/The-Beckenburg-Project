@@ -112,8 +112,30 @@ public final class TerrainEntranceMesh {
         return world.settings().originZ()+unit*
             world.settings().metresPerCell()/AdaptiveTerrainTopology.UNITS_PER_CELL;
     }
+    private double heightAt(double x,double z)throws IOException {
+        // A sample exactly on the *far* border of a sparse source tile must
+        // use that tile's last height pixel when the adjoining tile is absent.
+        // Never invent a nonexistent neighbor merely to export a mesh border.
+        try{return world.height(x,z);}
+        catch(IOException missing){
+            var settings=world.settings();
+            double tile=settings.tileWidthMetres();
+            double gx=(x-settings.originX())/tile;
+            double gz=(z-settings.originZ())/tile;
+            boolean edgeX=Math.abs(gx-Math.rint(gx))<1e-9;
+            boolean edgeZ=Math.abs(gz-Math.rint(gz))<1e-9;
+            double eps=settings.metresPerCell()*1e-8;
+            for(int choice=1;choice<=3;choice++){
+                double sx=x-((choice&1)!=0&&edgeX?eps:0);
+                double sz=z-((choice&2)!=0&&edgeZ?eps:0);
+                try{return world.height(sx,sz);}
+                catch(IOException alsoMissing){/* try the other valid border */ }
+            }
+            throw missing;
+        }
+    }
     private double[] surface(double x,double z)throws IOException {
-        return new double[]{x,world.height(x,z),z};
+        return new double[]{x,heightAt(x,z),z};
     }
     private static double[] vertex(double x,double y,double z){
         return new double[]{x,y,z};
@@ -224,7 +246,7 @@ public final class TerrainEntranceMesh {
                     ramp=candidate;break;
                 }
                 if(ramp==null)continue;
-                double upper0=world.height(x0,z0),upper1=world.height(x1,z1);
+                double upper0=heightAt(x0,z0),upper1=heightAt(x1,z1);
                 double lower0=ramp.height(x0,z0),lower1=ramp.height(x1,z1);
                 if(upper0-lower0<.02&&upper1-lower1<.02)continue;
                 double[] t0=vertex(x0,upper0,z0),t1=vertex(x1,upper1,z1);
@@ -303,7 +325,7 @@ public final class TerrainEntranceMesh {
         }
         Path folder=destination.toAbsolutePath().getParent();
         Files.createDirectories(folder);
-        Path tmp=Files.createTempFile(folder,".entrance-mesh-",".tmp");
+        Path tmp=Files.createTempFile(folder,".entrance-mesh-",".obj");
         try{
             Files.writeString(tmp,text.toString(),StandardCharsets.UTF_8);
             // Verify that the exact exporter output parses through the editor's
