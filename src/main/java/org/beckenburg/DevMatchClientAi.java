@@ -56,17 +56,18 @@ final class DevMatchClientAi implements AutoCloseable {
     private final java.util.concurrent.atomic.AtomicInteger ritesStarted=new java.util.concurrent.atomic.AtomicInteger();
     private final java.util.concurrent.atomic.AtomicInteger commands=new java.util.concurrent.atomic.AtomicInteger();
     private final java.util.concurrent.atomic.AtomicInteger accepted=new java.util.concurrent.atomic.AtomicInteger();
+    private final java.util.concurrent.atomic.AtomicInteger acceptedMoves=new java.util.concurrent.atomic.AtomicInteger();
     private final java.util.concurrent.atomic.AtomicInteger rejected=new java.util.concurrent.atomic.AtomicInteger();
     private final java.util.concurrent.atomic.AtomicInteger attacks=new java.util.concurrent.atomic.AtomicInteger();
     private final java.util.concurrent.atomic.AtomicInteger identifications=new java.util.concurrent.atomic.AtomicInteger();
     private final java.util.concurrent.atomic.AtomicInteger rituals=new java.util.concurrent.atomic.AtomicInteger();
-    record Stats(String seat,int commands,int accepted,int rejected,int attacks,
+    record Stats(String seat,int commands,int accepted,int acceptedMoves,int rejected,int attacks,
                  int identifications,int rituals,int observations,int health,int stress,
                  int roomsVisited,boolean enteredSite,
                  int frenzyStarts,int effectiveAttacks,int goodScans,int correctResponses,
                  int ritesStarted,String hypothesis,String state){}
     Stats stats(){
-        return new Stats(seat,commands.get(),accepted.get(),rejected.get(),
+        return new Stats(seat,commands.get(),accepted.get(),acceptedMoves.get(),rejected.get(),
             attacks.get(),identifications.get(),rituals.get(),observedSignals,
             health,stress,visited.size(),visited.keySet().stream().anyMatch(r->r<HouseMap.EXTRACTION_ROOM),
             frenzyStarts.get(),effectiveAttacks.get(),goodScans.get(),
@@ -86,7 +87,16 @@ final class DevMatchClientAi implements AutoCloseable {
         dashboard.put(seat,"booting real LAN AI client");
     }
     void onFrame(String frame){if(!closed)inbox.offer(frame);}
-    void begin(){executor.scheduleWithFixedDelay(this::updateSafely,180,180,TimeUnit.MILLISECONDS);}
+    void begin(){
+        // Apply initial site/pose/casefile snapshots before AI decisions begin,
+        // but never count scripted host/lobby setup acknowledgments as actions
+        // performed by this autonomous client.
+        processFrames();
+        accepted.set(0);acceptedMoves.set(0);rejected.set(0);
+        frenzyStarts.set(0);effectiveAttacks.set(0);goodScans.set(0);
+        correctResponses.set(0);ritesStarted.set(0);
+        executor.scheduleWithFixedDelay(this::updateSafely,180,180,TimeUnit.MILLISECONDS);
+    }
     private void updateSafely(){
         if(closed)return;
         try{processFrames();if(tick>=0&&observedPose)act();}
@@ -152,6 +162,8 @@ final class DevMatchClientAi implements AutoCloseable {
                     case "ACCEPT","REJECT" -> {
                         if(frame.startsWith("ACCEPT|")){
                             accepted.incrementAndGet();
+                            if(frame.startsWith("ACCEPT|STEP")||frame.startsWith("ACCEPT|GSTEP"))
+                                acceptedMoves.incrementAndGet();
                             if(frame.startsWith("ACCEPT|FRENZY"))frenzyStarts.incrementAndGet();
                             if(frame.startsWith("ACCEPT|FATTACK")||frame.startsWith("ACCEPT|GHOST|STRIKE"))
                                 effectiveAttacks.incrementAndGet();
