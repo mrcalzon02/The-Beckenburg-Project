@@ -123,3 +123,37 @@ updates shared-border vertices and supports undo/redo and crash recovery;
 then bind the stitched-world source to actual outdoor renderer + physics
 (T3). Do not claim T2 accepted until a human can sculpt/save/undo/reload
 a real 3x3 world and reproduce seam diagnostics.
+
+## 9. Adaptive authored topology (2026-10-31)
+
+See **[Adaptive Terrain Topology contract](ADAPTIVE_TERRAIN_TOPOLOGY.md)**.
+This is a separate *authoring-detail* system layered on stitched 16-bit base
+cells, not a camera-dependent distance LOD and not a higher-resolution rewrite
+of every source PNG. A base cell may be subdivided recursively only where
+needed; nodes use signed global base-cell indexes and dyadic subcell coordinates.
+Neighbor edge-break lists permit a later mesh builder to triangulate both
+sides of a T-junction against the same positions. Merely generating edge lists
+does **not** prove the GPU draws a crack-free surface.
+
+Implementation sources:
+- \`AdaptiveTerrainTopology.java\` sparse split/merge, leaf enumeration, signed
+  cross-tile neighbor edge breaks, save/load, revision and snapshot restore.
+- \`AdaptiveTopologyEditor.java\` human-operated 2D quadtree inspector, refine,
+  merge, undo/redo, explicit save with re-open verification.
+- \`StitchedWorldEditor.java\` provides the ADAPTIVE TOPOLOGY entry point.
+- \`AdaptiveTerrainTopologyTest.java\` tests nested splits, cross-source-tile
+  boundaries, negative indexes, failed mutations, save/reload and malformed files.
+
+**Status:** A1 Java source + focused CI acceptance passed at
+\`e7eca44c34ff7273312b0745c472f6d3f1ad4f4c\`
+([workflow run 41229681626](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41229681626)).
+A2 panel source added; the post-UI focused compile, installed Windows editor
+interaction and real screenshots need separate evidence. No authored
+subvertex height displacement yet (A3). The runtime renderer, collision/LOS
+and mesh stitching remain unimplemented (A4+); don't count topology metadata
+as visual/physical terrain detail or proof of distance visibility correctness.
+
+Immediate dependency order: A2 manual save/reload acceptance, A3 globally
+shared vertex height delta plus cross-border transactions, A4 conforming
+triangulation and real runtime integration, then existing LOD/scoped actor
+verification T4–T6, agent access last.

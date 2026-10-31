@@ -312,13 +312,13 @@
     "RENDER_UNAVAILABLE",
     "INTERNAL"
   ],
-  "nextTask": "T2 cross-tile sculpt transaction with undo/reload; actual manually installed editor proof; then T3 runtime terrain authority",
+  "nextTask": "A2 verify Java17 focused workflow and Windows installed UI; A3 shared-vertex height delta transaction; A4 runtime mesh and collision",
   "evidence": {
     "sourceVerified": false,
     "installedWindowsVerified": false,
     "mcpConnected": false,
     "agentEditedRealScene": false,
-    "notes": "T1 focused Java17 terrain-module CI PASS at ac81d6f (run 41228485115). T2 manual source window added for focused CI; installation and runtime tests still pending. T3-T9 unverified."
+    "notes": "T1 stitched-world and A1 adaptive topology focused Java17 workflow pass. A2 UI source committed and acceptance pending; A3-A6 and T3-T9 no runtime proof."
   },
   "executionOrder": "Human terrain/loading-zone/stitched-world modules (T0-T8) first; then existing agentic milestones M0-M6. Agent adapters must reuse tested module operations.",
   "terrainWorldPlan": "docs/development/TERRAIN_WORLD_SYSTEM_PLAN.md",
@@ -374,12 +374,15 @@
       "source": [
         "src/main/java/org/beckenburg/editor/StitchedWorldEditor.java",
         "src/main/java/org/beckenburg/editor/StitchedHeightmapWorld.java",
-        "src/main/java/org/beckenburg/editor/TerrainZoneEditor.java"
+        "src/main/java/org/beckenburg/editor/TerrainZoneEditor.java",
+        "src/main/java/org/beckenburg/editor/AdaptiveTerrainTopology.java",
+        "src/main/java/org/beckenburg/editor/AdaptiveTopologyEditor.java",
+        "src/test/java/org/beckenburg/editor/AdaptiveTerrainTopologyTest.java"
       ],
       "blockers": [
-        "Manual cross-border sculpt and undo/redo not yet implemented",
-        "Stitched outdoor gameplay renderer/physics not connected",
-        "Actual installed Windows UI run and screenshot pending"
+        "Human Windows 2D topology window launch and editing acceptance pending",
+        "Sparse globally keyed dyadic height-delta sculpt/undo and cross-tile transactions not implemented",
+        "Conforming runtime renderer and collision are not connected"
       ]
     },
     {
@@ -459,5 +462,49 @@
         "Real host/guest deterministic terrain and zone state"
       ]
     }
-  ]
+  ],
+  "adaptiveTopology": {
+    "contract": "docs/development/ADAPTIVE_TERRAIN_TOPOLOGY.md",
+    "reason": "Recursive authored density over stitched 16-bit base cells; separate from render distance LOD",
+    "stages": [
+      {
+        "id": "A0",
+        "name": "Design and dependency map",
+        "status": "tested",
+        "evidence": "Design contract committed"
+      },
+      {
+        "id": "A1",
+        "name": "Sparse signed global quadtree and neighbor edge break core",
+        "status": "tested",
+        "evidence": "Focused Java17 Windows workflow 41229681626 success at e7eca44"
+      },
+      {
+        "id": "A2",
+        "name": "Human subcell refine/merge/undo/save UI",
+        "status": "implemented_unverified",
+        "evidence": "Source wired; post-UI CI and actual Windows interaction pending"
+      },
+      {
+        "id": "A3",
+        "name": "Sparse shared dyadic vertex height displacement with rollback",
+        "status": "planned"
+      },
+      {
+        "id": "A4",
+        "name": "Conforming mesh and gameplay collision/LOS from same geometry",
+        "status": "planned"
+      },
+      {
+        "id": "A5",
+        "name": "Distant LOD and scope visual correctness",
+        "status": "planned"
+      },
+      {
+        "id": "A6",
+        "name": "Authorized agent access after human/runtime acceptance",
+        "status": "planned"
+      }
+    ]
+  }
 }

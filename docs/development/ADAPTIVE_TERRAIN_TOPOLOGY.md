@@ -71,7 +71,10 @@ The source core must expose: leaf enumeration, world/dyadic bounds, neighbor edg
 | A5 DISTANCE & SCOPES | LOD selection, min/max error envelopes, scope/actor correctness | Human-sized distant actor genuinely visible vs ridge-hidden, real rendered z-buffer, teleport/zoom/origin-shift |
 | A6 AGENT ACCESS | Observe, manipulate and verify same approved editor operations, later | Authorized real-scene readback and undo; no parallel simulated scene |
 
-**Initially:** design only. As modules land, record their actual commit and CI evidence separately. A1 or A2 is **not** A3–A6. Finite TerrainZoneDocument and existing loading-zone handoff remain independent.
+**Current implementation:** A0 spec committed. A1 core and regression tests
+passed Windows Java 17 focused CI at e7eca44c ([run 41229681626](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41229681626)).
+A2 human interface source was added subsequently; compilation and a physical
+Windows UI interaction still require separate verification. A3–A6 remain planned. A1 or A2 is **not** A3–A6. Finite TerrainZoneDocument and existing loading-zone handoff remain independent.
 
 ## 6. Reference basis
 
