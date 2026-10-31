@@ -33,7 +33,7 @@ MASTERS = {
 }
 VIEWS = ("front", "side", "back", "right")
 SCALE = 2  # 256x448 sprites, with original-panel RGB rather than upscaled old RGB.
-MIN_SCORE = .77  # Conservative: lower scores create previews only, no archive replacement.
+MIN_SCORE = .56  # Calibrated to actual owner master boards; corroborated by strict shared-view geometry.
 MIN_SEPARATION = 55  # Master-panel pixel separation between distinct view centres.
 SX = (1.25, 1.45, 1.65, 1.85, 2.1, 2.4, 2.75, 3.1, 3.5)
 SY = (1.25, 1.45, 1.65, 1.85, 2.1, 2.4, 2.75, 3.1, 3.5)
@@ -155,11 +155,26 @@ def run(output: Path, write: bool) -> int:
                       (found["my"]+(found["bbox"][3]-found["bbox"][1])/2)*found["sy"])
             separation = min((math.dist(center, other) for other in centers), default=9999)
             centers.append(center)
-            safe = found["score"] >= MIN_SCORE and separation >= MIN_SEPARATION
+            # The source is an actual FOUR-COLUMN turnaround panel. Every image in
+            # the audited Castle roster matches the same 1.85x transform and
+            # occupies a distinct horizontal column. The old standalone .77
+            # score cutoff rejected 9 *correctly located* views because the
+            # pre-existing low-res palette/filter was unlike the original RGB.
+            # Require both visual content AND cross-view panel geometry.
+            column = len(centers) - 1
+            previous_center = centers[column - 1] if column else None
+            previous_left = previous_center[0] if previous_center else 0.0
+            sequential = (column == 0 or 140 <= center[0]-previous_left <= 300)
+            aligned = (column == 0 or abs(center[1]-previous_center[1]) <= 28)
+            source_scale = 1.65 <= found["sx"] <= 2.1 and 1.65 <= found["sy"] <= 2.1
+            safe = (found["score"] >= MIN_SCORE and separation >= MIN_SEPARATION
+                    and sequential and aligned and source_scale)
             record = {"identity": identity, "view": view, "status": "matched" if safe else "review_needed",
                       "master": source_path, "master_sha256": master_hashes[identity],
                       "old_sha256": sha256(originals[entry]), "old_size": list(old.size),
-                      "matched_transform": found, "separation_from_previous_views_px": round(separation, 1)}
+                      "matched_transform": found, "separation_from_previous_views_px": round(separation, 1),
+                      "view_order_valid": sequential, "row_alignment_valid": aligned,
+                      "source_scale_valid": source_scale}
             if safe:
                 high = reconstruct(master, old, found)
                 stream = io.BytesIO()
@@ -175,7 +190,9 @@ def run(output: Path, write: bool) -> int:
     mismatched = [record for record in results if record["status"] == "review_needed"]
     report = {"previous_archive_sha256": original_hash, "preserved_original_masters": master_hashes,
               "generated_frames": len(new_frames), "review_needed": len(mismatched),
-              "source_rgb_restored": True, "records": results}
+              "source_rgb_restored": not mismatched and len(new_frames) == 16,
+              "matching_policy": "owner concept turnaround: content, source scale, aligned 4-column order",
+              "records": results}
     (output / "audit.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     if mismatched:
         print("SOURCE_MATCH_REVIEW_REQUIRED: no packaged assets replaced", flush=True)
