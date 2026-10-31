@@ -26,6 +26,7 @@ public final class CameraSnapshot {
             List<SceneRenderer.WorldMark> marks,EquipmentTiers.Tier tier){
         Objects.requireNonNull(camera);Objects.requireNonNull(map);
         Objects.requireNonNull(hunters);Objects.requireNonNull(marks);
+        camera.photographicSoftwareRaster();
         camera.copyPhotographicWorld(hunter,tier);
         camera.drawNetwork(map,hunters,apparition,clock,marks);
         return finished(camera,tier);
@@ -37,6 +38,7 @@ public final class CameraSnapshot {
             List<SceneRenderer.RemoteBody> allies,EquipmentTiers.Tier tier){
         Objects.requireNonNull(camera);Objects.requireNonNull(map);
         Objects.requireNonNull(session);Objects.requireNonNull(allies);
+        camera.photographicSoftwareRaster();
         camera.copyPhotographicWorld(hunter,tier);
         camera.draw(map,session,clock,allies);
         return finished(camera,tier);
