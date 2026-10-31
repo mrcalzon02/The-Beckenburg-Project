@@ -66,7 +66,7 @@ public final class LayeredTerrainDocument {
                 in.readDouble(),in.readDouble(),in.readDouble(),in.readDouble()));
             for(int i=0;i<s;i++)solids.add(new LayeredTerrainQueries.Solid(
                 in.readUTF(),in.readDouble(),in.readDouble(),in.readDouble(),
-                in.readDouble(),in.readDouble(),in.readDouble(),in.readDouble()));
+                in.readDouble(),in.readDouble(),in.readDouble()));
             for(int i=0;i<l;i++){
                 String from=in.readUTF(),to=in.readUTF();
                 double fx=in.readDouble(),fz=in.readDouble(),tx=in.readDouble(),tz=in.readDouble();
