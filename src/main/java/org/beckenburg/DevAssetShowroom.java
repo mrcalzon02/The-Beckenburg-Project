@@ -436,7 +436,14 @@ public final class DevAssetShowroom implements AutoCloseable {
         scene.setRenderSize(640,400);
         scene.x=8.1;scene.z=.2;scene.eyeHeight=1.45;scene.yaw=0;
         scene.pitch=-.26;scene.lamp=false;
+        scene.drawDevAssetRoom(List.of(),0,0);
+        int[] ordinaryRoom=scene.pixels().clone();
         scene.drawDevAssetRoom(List.of(),0,0,lab.triangles());
+        int changedPixels=0;
+        int[] actual=scene.pixels();
+        for(int i=0;i<actual.length;i++)if(actual[i]!=ordinaryRoom[i])changedPixels++;
+        if(changedPixels<40)
+            throw new IOException("Topology QA patch not visible in real scene renderer: "+changedPixels+" changed pixels");
         Path image=folder.resolve("terrain-topology-devroom-real-render.png");
         if(!ImageIO.write(scene.image(),"png",image.toFile()))
             throw new IOException("No real PNG renderer encoder available");
@@ -444,6 +451,7 @@ public final class DevAssetShowroom implements AutoCloseable {
             "source="+lab.source().directory()+"\n"+
             "splits="+lab.splitCount()+"\n"+
             "actualSourceDerivedTriangles="+lab.triangles().size()+"\n"+
+            "changedPixelsVersusOrdinaryStudio="+changedPixels+"\n"+
             "renderer=SceneRenderer.drawDevAssetRoom\n"+
             "status=DEV QA patch only; gameplay collision/LOD not wired\n",
             StandardCharsets.UTF_8);
