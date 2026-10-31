@@ -56,6 +56,35 @@ public final class TerrainScenePackageTest {
             pkg.publish("patch_0",bounds);
             check(TerrainScenePackage.inspect(world,scene).isEmpty(),
                 "Rebaking after source changes refreshes the published provenance");
+            // Force a host adapter failure *after* the replacement OBJ has been
+            // staged and installed, and prove both disk asset and scene rollback.
+            byte[] previousMesh=Files.readAllBytes(pub.geometryFile());
+            byte[] previousManifest=Files.readAllBytes(pub.sceneFile());
+            var resistantDelegate=pkg.openScene();
+            RuntimeScene refusing=new RuntimeScene(){
+                public String sceneId(){return resistantDelegate.sceneId();}
+                public List<Node> nodes(){return resistantDelegate.nodes();}
+                public void replace(Node node){
+                    throw new IllegalStateException("Injected host refusal");
+                }
+                public void remove(String id){resistantDelegate.remove(id);}
+                public Snapshot snapshot(){return resistantDelegate.snapshot();}
+                public void restore(Snapshot snapshot){resistantDelegate.restore(snapshot);}
+            };
+            var changedAgain=AdaptiveTerrainTopology.open(world);
+            changedAgain.split(new AdaptiveTerrainTopology.Node(4,4,0,0,0));
+            changedAgain.save();
+            boolean publishRolledBack=false;
+            try{TerrainScenePackage.publish(world,refusing,"patch_0",bounds);}
+            catch(java.io.IOException expected){publishRolledBack=true;}
+            check(publishRolledBack
+                &&java.util.Arrays.equals(previousMesh,Files.readAllBytes(pub.geometryFile()))
+                &&java.util.Arrays.equals(previousManifest,Files.readAllBytes(pub.sceneFile()))
+                &&resistantDelegate.nodes().equals(scene.nodes()),
+                "Host rejection after OBJ replacement rolls back bytes, manifest and scene");
+            pkg.publish("patch_0",bounds);
+            check(TerrainScenePackage.inspect(world,scene).isEmpty(),
+                "Successful retry replaces restored OBJ with the current authored geometry");
             var persisted=pkg.openScene();
             check(persisted.nodes().equals(scene.nodes()),
                 "Saved scene restores mesh, parent graph and existing unrelated nodes");
