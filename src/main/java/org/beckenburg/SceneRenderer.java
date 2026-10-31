@@ -3649,14 +3649,20 @@ public final class SceneRenderer {
         if(bay.size()>6)throw new IllegalArgumentException("At most six physical exhibits per bay");
         paintSky(clock);
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
-        environmentLight=1;
+        // Intentionally neutral 3D review studio: no midnight sky, no fog,
+        // no stylized color correction to conceal UV or material damage.
+        environmentLight=1.33;
         weatherLightScale=1;
         fogDensity=0;
         List<Face> stage=new ArrayList<>();
-        box(stage,-8,-.35,-8,16,.32,23,0x373a43);
+        box(stage,-11,-.37,-11,22,.34,31,0xa7aab0); // grounded grey floor
+        box(stage,-11,-.03,19.5,22,7.2,.28,0xd3d2d0); // neutral back wall
+        box(stage,-11,-.03,-11,.28,7.2,30.5,0xbebfbe); // left wall
+        box(stage,10.72,-.03,-11,.28,7.2,30.5,0xbebfbe); // right wall
+        box(stage,-11,7,-11,22,.18,30.5,0xe5e3dd); // ceiling
         for(int j=0;j<6;j++){
             double px=devAssetX(j),pz=devAssetZ(j);
-            box(stage,px-1.18,-.03,pz-1.14,2.36,.23,2.28,j%2==0?0x777881:0x646671);
+            box(stage,px-1.18,-.03,pz-1.14,2.36,.23,2.28,j%2==0?0xb9bcc2:0xaeb4be);
             box(stage,px-1.22,-.05,pz-1.18,2.44,.055,2.36,0xb2a68e);
         }
         for(int j=0;j<bay.size();j++){
@@ -3687,7 +3693,7 @@ public final class SceneRenderer {
                 new Vertex(camera(f.b),f.bu,f.bv),
                 new Vertex(camera(f.c),f.cu,f.cv));
             for(int k=1;k+1<clipped.size();k++)
-                triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),f.color,f.material,.96);
+                triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),f.color,f.material,1.12);
         }
         // Use packaged authored sprite cutouts, including real alpha/feet,
         // NOT a generated 3D stand-in for player models or ghosts.
