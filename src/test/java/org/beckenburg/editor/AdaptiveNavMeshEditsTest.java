@@ -43,6 +43,9 @@ public final class AdaptiveNavMeshEditsTest {
             var pruned=graph(world,topology,AdaptiveNavMeshEdits.open(world),areas);
             check(pruned.regions().size()==1,
                 "Flood from inside seed stops at explicitly authored level-transition gate");
+            check(pruned.candidates().regions().size()==2
+                    &&pruned.candidates().connections(0).isEmpty(),
+                "Both sides remain selectable in editor, but blocked gateway has no traversable link");
             check(pruned.route("surface",3.5,5,"surface",6.5,5).isEmpty(),
                 "Open geometry past transition door is not navigable");
             var revision=edits.revision();
