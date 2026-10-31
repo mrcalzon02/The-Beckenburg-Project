@@ -103,6 +103,7 @@ public final class TerrainScenePackage implements EnvironmentModule {
             meshMeta.put("uri",uri);
             meshMeta.put("format","obj");
             meshMeta.put("sha256",checksum);
+            meshMeta.put("sourceSha256",sourceFingerprint(world,bounds));
             meshMeta.put("triangles",Integer.toString(imported.triangles().size()));
             meshMeta.put("groups",Integer.toString(parts));
             meshMeta.put("materialStatus","unassigned");
@@ -180,6 +181,14 @@ public final class TerrainScenePackage implements EnvironmentModule {
                     if(!Files.isRegularFile(file))throw new IOException("Mesh asset is missing");
                     if(!sha256(file).equals(c.properties().get("sha256")))
                         throw new IOException("Mesh has changed since publishing");
+                    var p=c.properties();
+                    var area=new TerrainEntranceMesh.Bounds(
+                        Double.parseDouble(p.get("boundsX0")),
+                        Double.parseDouble(p.get("boundsZ0")),
+                        Double.parseDouble(p.get("boundsX1")),
+                        Double.parseDouble(p.get("boundsZ1")));
+                    if(!sourceFingerprint(world,area).equals(p.get("sourceSha256")))
+                        throw new IOException("Published mesh is STALE: terrain, seams, ramps or layers changed");
                     var mesh=EditorMeshPipeline.read(file);
                     if(mesh.triangles().size()!=
                         Integer.parseInt(c.properties().get("triangles")))
@@ -189,6 +198,60 @@ public final class TerrainScenePackage implements EnvironmentModule {
                 }
             }
         return List.copyOf(issues);
+    }
+    /**
+     * Content fingerprint of the exact source tile span and the versioned
+     * authoring documents that drive mesh emission. Conservative invalidation
+     * of one document invalidates all derived chunks; no hash is derived from
+     * file timestamps or a visual preview.
+     */
+    public static String sourceFingerprint(StitchedHeightmapWorld world,
+            TerrainEntranceMesh.Bounds bounds)throws IOException {
+        Objects.requireNonNull(world);Objects.requireNonNull(bounds);
+        var settings=world.settings();
+        double scale=settings.metresPerCell();
+        long sx=(long)Math.floor((bounds.x0()-settings.originX())/scale);
+        long ex=(long)Math.ceil((bounds.x1()-settings.originX())/scale)-1;
+        long sz=(long)Math.floor((bounds.z0()-settings.originZ())/scale);
+        long ez=(long)Math.ceil((bounds.z1()-settings.originZ())/scale)-1;
+        if(ex<sx||ez<sz||ex-sx>2048||ez-sz>2048)
+            throw new IOException("Source fingerprint region outside terrain mesh budget");
+        long x0=Math.floorDiv(sx,settings.tileCells());
+        long x1=Math.floorDiv(ex,settings.tileCells());
+        long z0=Math.floorDiv(sz,settings.tileCells());
+        long z1=Math.floorDiv(ez,settings.tileCells());
+        if((x1-x0+1)*(z1-z0+1)>64)
+            throw new IOException("Source fingerprint exceeds 64 tile inputs");
+        try{
+            var hash=MessageDigest.getInstance("SHA-256");
+            update(hash,settings.toString());
+            for(long z=z0;z<=z1;z++)for(long x=x0;x<=x1;x++){
+                update(hash,"tile:"+x+":"+z);
+                Path tile=world.tilePath((int)x,(int)z);
+                updateFile(hash,tile);
+            }
+            for(String source:List.of("adaptive-topology.bin","entrance-seams.bin",
+                    "ramp-entrances.bin","layered-geometry.bin")){
+                update(hash,source);
+                updateFile(hash,world.directory().resolve(source));
+            }
+            return java.util.HexFormat.of().formatHex(hash.digest());
+        }catch(NoSuchAlgorithmException impossible){
+            throw new IllegalStateException("JDK missing SHA-256",impossible);
+        }
+    }
+    private static void update(MessageDigest hash,String text){
+        hash.update(text.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+        hash.update((byte)0);
+    }
+    private static void updateFile(MessageDigest hash,Path path)throws IOException{
+        if(!Files.exists(path)){update(hash,"absent");return;}
+        if(!Files.isRegularFile(path))throw new IOException("Authoring input is not a file: "+path);
+        try(var stream=Files.newInputStream(path)){
+            byte[] data=new byte[8192];int n;
+            while((n=stream.read(data))!=-1)if(n>0)hash.update(data,0,n);
+        }
+        hash.update((byte)0);
     }
     private static String sha256(Path path)throws IOException{
         try{
