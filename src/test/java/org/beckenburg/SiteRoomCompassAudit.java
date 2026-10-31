@@ -42,7 +42,8 @@ public final class SiteRoomCompassAudit {
         "ACADEMY|cloister,lecture,laboratory,dining,library,dormitory,staff offices,quadrangle",
         "COLLEGE|administration,classroom,laboratory,lecture theatre,library,student union,residence,service access",
         "CHURCH|nave,vestibule,chancel,side chapel,vestry,choir,crypt,belfry",
-        "HOLLOW_CREEK|camping,trail,lake,ranger,services,parking,shoreline"
+        "HOLLOW_CREEK|camping,trail,lake,ranger,services,parking,shoreline",
+        "BLACKPINE|sawmill,office,mess,workers,cabin,log yard,forest,maintenance"
     };
     private static String escape(String s){
         return s==null?"":s.replace("\r"," ").replace("\n"," ").replace(",",";")
@@ -120,11 +121,11 @@ public final class SiteRoomCompassAudit {
             if(p.kind().equals(kind)||kind.equals("access")&&!p.kind().equals("window"))n++;
         return n;
     }
-    private static String semantic(HouseMap map){
+    private static String semantic(HouseMap map,String siteId){
         StringBuilder out=new StringBuilder();
         String names=String.join(" ",map.level().rooms().stream().map(r->r.name().toLowerCase(Locale.ROOT)).toList());
         String rubric=null;
-        for(String entry:RUBRIC)if(entry.startsWith(map.site().name()+"|"))rubric=entry.substring(entry.indexOf('|')+1);
+        for(String entry:RUBRIC)if(entry.startsWith(siteId+"|"))rubric=entry.substring(entry.indexOf('|')+1);
         if(rubric==null)return "No archetype rubric authored yet.";
         String[] wants=rubric.split(",");
         List<String> present=new ArrayList<>(),missing=new ArrayList<>();
@@ -144,14 +145,13 @@ public final class SiteRoomCompassAudit {
             .append("Recognizable by authored zone name: ").append(present).append("\n")
             .append("Not recognizable by zone name: ").append(missing).append("\n")
             .append("A feature may exist within a larger room; inspect screenshots and props before declaring it absent.\n");
-        if(Set.of(HouseMap.Site.PRISON,HouseMap.Site.ASYLUM,HouseMap.Site.MANSION,
-                HouseMap.Site.ACADEMY,HouseMap.Site.COLLEGE).contains(map.site()))
+        if(Set.of("PRISON","ASYLUM","MANSION","ACADEMY","COLLEGE").contains(siteId))
             out.append("STRUCTURAL PRIORITY: Shares the generic LevelPlans.wing cross-wing floorplan. ")
                .append("Renaming rooms and furnishing them does not establish the claimed institution's spatial function.\n");
-        if(map.site()==HouseMap.Site.SCHOOL)
+        if(siteId.equals("SCHOOL"))
             out.append("USER PRIORITY: inspect student bathrooms, door privacy, accessible circulation, ")
                 .append("locker/changing relationship, and their adjacency to classrooms and gym.\n");
-        if(map.site()==HouseMap.Site.PRISON)
+        if(siteId.equals("PRISON"))
             out.append("USER PRIORITY: inspect actual individual cells, corridor/gallery supervision, ")
                 .append("locked sequence (public -> intake -> controlled circulation -> cells), ")
                 .append("visitation separation and secure yard/perimeter.\n");
@@ -169,9 +169,12 @@ public final class SiteRoomCompassAudit {
         return out;
     }
     private static void audit(HouseMap.Site site,Path root)throws Exception{
-        Path out=root.resolve(site.name().toLowerCase(Locale.ROOT));
+        auditMap(new HouseMap(site),site.name(),root);
+    }
+    private static void auditMap(HouseMap map,String siteId,Path root)throws Exception{
+        Path out=root.resolve(siteId.toLowerCase(Locale.ROOT));
         Files.createDirectories(out);
-        var map=new HouseMap(site);
+        HouseMap.Site site=map.site();
         var level=map.level();
         for(var p:level.portals())if(p.door())map.toggleDoor(p.id()); // open for route/capture audit
         var lights=new RoomLighting();
@@ -312,21 +315,22 @@ public final class SiteRoomCompassAudit {
         }
         Files.writeString(out.resolve("room-matrix.csv"),rows,StandardCharsets.UTF_8);
         Files.writeString(out.resolve("site-purpose-review.txt"),
-            "SITE "+site+" / "+level.title()+"\n"
-            +"Status: "+(SiteCatalog.playable(site)?"PLAYABLE":"PROTOTYPE / NOT DISPATCHABLE")+"\n"
+            "SITE "+siteId+" / "+level.title()+"\n"
+            +"Status: "+(!siteId.equals("BLACKPINE")&&SiteCatalog.playable(site)
+                ?"PLAYABLE":"PROTOTYPE / NOT DISPATCHABLE")+"\n"
             +"Room capture: "+captures+" actual full-direction PNGs; "+missing
             +" missing/failed views; "+uncentered+" geometric centres obstructed.\n"
             +"Route graph (from van): "+Arrays.toString(reachable)+"\n"
             +"Architecture: "+level.rooms().size()+" gameplay zones; "
             +level.portals().size()+" portals; "+level.stairs().size()+" flights; "
             +level.props().size()+" decorative/physical props.\n\n"
-            +semantic(map)
+            +semantic(map,siteId)
             +"\nMANUAL REVIEW REQUIRED: graphics and architecture cannot be certified by "
             +"automatic room-name matching, frame hashes or prop counts.\n"
             +"Access condition is a door-open baseline; test doors closed/locked and "
             +"escape/fire routes separately before changes.\n",
             StandardCharsets.UTF_8);
-        System.out.println("SITE_AUDIT "+site+" captures="+captures
+        System.out.println("SITE_AUDIT "+siteId+" captures="+captures
             +" missing="+missing+" blocked_centre="+uncentered
             +" topology_reached="+reachable.length);
     }
@@ -390,6 +394,20 @@ public final class SiteRoomCompassAudit {
             else throw new IllegalArgumentException("Unknown audit option "+arg);
         }
         Files.createDirectories(output);
+        StringBuilder inventory=new StringBuilder("site_id,title,source_stage,has_live_room_cameras\n");
+        for(var site:MissionSites.all()){
+            String stage=site.headquarters()?"HEADQUARTERS":
+                site.playable()?"DISPATCHABLE":
+                site.id().equals("WLD-01")||site.id().equals("WLD-02")
+                    ?"NATIVE_PROTOTYPE_NOT_UNLOCKED":"SOURCE_LAYOUT_OR_BLOCKOUT_ONLY";
+            boolean captured=site.headquarters()&&castle||site.playable()
+                ||site.id().equals("WLD-01")
+                ||site.id().equals("WLD-02")&&prototypes;
+            inventory.append(site.id()).append(',').append(escape(site.title()))
+                .append(',').append(stage).append(',').append(captured).append('\n');
+        }
+        Files.writeString(output.resolve("whole-project-site-inventory.csv"),inventory,
+            StandardCharsets.UTF_8);
         StringBuilder failures=new StringBuilder();
         for(HouseMap.Site site:HouseMap.Site.values()){
             if(!chosen.equals("ALL")&&!chosen.equals(site.name()))continue;
@@ -399,6 +417,13 @@ public final class SiteRoomCompassAudit {
                 Files.createDirectories(output.resolve(site.name().toLowerCase(Locale.ROOT)));
                 Files.writeString(output.resolve(site.name().toLowerCase(Locale.ROOT))
                     .resolve("AUDIT_ERROR.txt"),e.toString());
+            }
+        }
+        if(chosen.equals("ALL")||chosen.equals("BLACKPINE")){
+            try{auditMap(BlackpineLevel.map(),"BLACKPINE",output);}
+            catch(Exception e){
+                failures.append("BLACKPINE / ").append(e).append('\n');
+                Files.writeString(output.resolve("BLACKPINE_AUDIT_ERROR.txt"),e.toString());
             }
         }
         if(castle&&chosen.equals("ALL")){
