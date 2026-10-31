@@ -245,6 +245,18 @@ public final class DevMatchSession {
                     List<DevMatchClientAi.Stats> results=new ArrayList<>();
                     for(DevMatchClientAi driver:drivers)results.add(driver.stats());
                     DevMatchOutcomeReport.write(OUTPUT,after,results,seconds);
+                    // The short acceptance scenario must prove activity by all
+                    // seven independent TCP clients, not merely connected seats.
+                    // Combat wins, ghost deductions and ritual success remain
+                    // advisory behavior metrics, not release requirements.
+                    for(DevMatchClientAi.Stats bot:results){
+                        System.out.println("DEV AI "+bot.seat()+" commands="+bot.commands()
+                            +" accepted="+bot.accepted()+" rejected="+bot.rejected()
+                            +" enteredSite="+bot.enteredSite()+" scans="+bot.goodScans()
+                            +" attacks="+bot.attacks());
+                        require(bot.commands()>0,
+                            "connected "+bot.seat()+" issued no autonomous LAN commands");
+                    }
                 }
                 capture(after);
                 require(after.tick()>before.tick(),"authoritative simulation did not advance");
