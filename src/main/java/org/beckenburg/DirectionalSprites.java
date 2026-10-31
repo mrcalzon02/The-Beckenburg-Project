@@ -305,13 +305,22 @@ public final class DirectionalSprites {
         double foot=renderHeight/2.0-(baseY*cy-ahead*sy)/nearBottom*focal;
         double head=renderHeight/2.0-(topY*cy-ahead*sy)/nearTop*focal;
         if(head>=foot)return;
+        BufferedImage sprite=frame(character,facing(heading,entityX,entityZ,cameraX,cameraZ),phase,animationFrame);
+        // Grounded people have direction-dependent transparent bottom padding.
+        // Move the image sampling rectangle (not its source pixels) so the last
+        // visible shoe row stays at the actual world-floor contact projection.
+        // Supernatural bodies retain their authored hover/manifestation effects.
+        if(GroundedSpriteFeet.isGroundedHuman(character)){
+            double shift=GroundedSpriteFeet.bottomPaddingShift(sprite,foot-head);
+            foot+=shift;
+            head+=shift;
+        }
         double anchorDepth=(nearBottom+nearTop)/2;
         double cx=renderWidth/2.0+right/anchorDepth*focal;
         double halfW=focal*width/(2*anchorDepth);
         int x0=Math.max(0,(int)Math.floor(cx-halfW)),x1=Math.min(renderWidth-1,(int)Math.ceil(cx+halfW));
         int y0=Math.max(0,(int)Math.floor(head)),y1=Math.min(renderHeight-1,(int)Math.ceil(foot));
         if(x0>x1||y0>y1)return;
-        BufferedImage sprite=frame(character,facing(heading,entityX,entityZ,cameraX,cameraZ),phase,animationFrame);
         int sw=sprite.getWidth(),sh=sprite.getHeight();
         double screenWidth=halfW*2,screenHeight=foot-head;
         double fog=Math.min(.75,Math.max(0,(anchorDepth-5)/15));
