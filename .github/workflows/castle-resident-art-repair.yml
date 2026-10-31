@@ -1,4 +1,4 @@
-name: Diagnostic recover original Castle resident art (nonblocking)
+name: Recover original Castle resident RGB textures (nonblocking)
 on:
   push:
     branches: [main]
@@ -7,22 +7,38 @@ on:
       - '.github/workflows/castle-resident-art-repair.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
-  master-vs-runtime:
+  recover-and-inspect:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install offline image-analysis dependencies
+      - name: Install reproducible pixel-matching dependencies
         run: python -m pip install --disable-pip-version-check pillow==11.3.0 numpy==2.2.6 opencv-python-headless==4.11.0.86
-      - name: Match existing Castle cutouts to original concept masters and render high-fidelity candidates
-        continue-on-error: true # Source-art cosmetics are NOT a release/build gate.
-        run: python tools/repair_castle_sprite_art.py --out build/castle-resident-art-repair
-      - name: Preserve unmodified originals and source-vs-generated comparisons for inspection
+      - name: Recover from original masters, never from low-resolution RGB
+        id: recover
+        continue-on-error: true # A visual issue never blocks the game release.
+        run: python tools/repair_castle_sprite_art.py --out build/castle-resident-art-repair --write
+      - name: Publish only a completely verified resident artwork batch on main
+        if: steps.recover.outcome == 'success'
+        run: |
+          if git diff --quiet -- assets/runtime/castle-support-directions.zip; then
+            echo 'Archive already matches the latest verified source-derived output'
+            exit 0
+          fi
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- assets/runtime/castle-support-directions.zip
+          git commit -m "assets(castle): restore resident sprite RGB from canonical master art"
+          git push origin HEAD:main
+      - name: Upload original-vs-128x224-vs-rebuilt comparisons and matching report
         if: always()
         uses: actions/upload-artifact@v4
         with:
