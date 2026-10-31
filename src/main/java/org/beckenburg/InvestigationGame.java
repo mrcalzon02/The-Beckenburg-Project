@@ -1549,7 +1549,7 @@ public final class InvestigationGame {
                 ToolBeltHud.draw(g,width,stageH,toolBelt,loadout.activeSlot(),
                     session.deviceReading(loadout.equipped().name()),toolGrip.held(),
                     loadout.equipped()==EquipmentLoadout.Item.UV_LAMP&&session.uvPowered(),
-                    toolPlacement,placementRotation);
+                    toolPlacement,placementRotation,toolGrip.amount());
                 g.setColor(new Color(13,19,25,215));g.fillRoundRect(Math.max(12,width-126),12,114,30,8,8);
                 g.setColor(new Color(225,219,200));g.drawString("ESC PAUSE",Math.max(23,width-116),32);
                 if(!journalShown&&!mapShown&&!briefingShown&&focusedVanPanel==null&&!wheelOpen&&!helpVisible)InteractionFocus.draw(g,width,stageH,focusTarget());
