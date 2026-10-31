@@ -47,7 +47,18 @@ jobs:
           fi
           git diff --cached --check
           git commit -m "assets(castle): source-fidelity diagnostic and verified sprite derivatives"
-          git push origin HEAD:main
+          # main receives frequent parallel development commits. Rebase, NEVER force push.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort || true; exit 1; }
+            if git push origin HEAD:main; then
+              echo "Published verified artwork audit (attempt $attempt)"
+              exit 0
+            fi
+            echo "Concurrent main update; refreshing before retry $attempt" >&2
+          done
+          echo "Could not publish rebuilt art after bounded fast-forward retries" >&2
+          exit 1
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
