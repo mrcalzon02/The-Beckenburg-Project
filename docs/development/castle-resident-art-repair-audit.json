@@ -1,0 +1,465 @@
+{
+  "previous_archive_sha256": "78d33b0fc1a3f1b10740b0b6bb452075d9d721e8f003ba3211aea11371015e0d",
+  "preserved_original_masters": {
+    "elsbeth_vale": "8b96cdd3b776d74fb8afbc95737b9f3457cbbe77cfe94faf8dbc918d66d272f5",
+    "rowan_pike": "2ca22c0efaa147414ca59c82d559bf9a5182ebcd381e07398669c1378772bfab",
+    "tomas_greaves": "c29cd4fdaa8c48b79b6201cdb229a7a0c5c8093c95cd931605924d175fac89e4",
+    "sister_mirelle_ash": "add24232af48839f8a043b7b5574f9e15c3880f300370001198fb9aa913923cb"
+  },
+  "generated_frames": 7,
+  "review_needed": 9,
+  "source_rgb_restored": true,
+  "records": [
+    {
+      "identity": "elsbeth_vale",
+      "view": "front",
+      "status": "review_needed",
+      "master": "assets/concept-art/v001/04-npcs/elsbeth-vale-master-concept.png",
+      "master_sha256": "8b96cdd3b776d74fb8afbc95737b9f3457cbbe77cfe94faf8dbc918d66d272f5",
+      "old_sha256": "12a37479322c54436c0b9e45adbd1127214d14fa9ad0ab05842f6b66461c88eb",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.71184,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 217,
+        "my": 83,
+        "bbox": [
+          21,
+          4,
+          110,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 9999
+    },
+    {
+      "identity": "elsbeth_vale",
+      "view": "side",
+      "status": "review_needed",
+      "master": "assets/concept-art/v001/04-npcs/elsbeth-vale-master-concept.png",
+      "master_sha256": "8b96cdd3b776d74fb8afbc95737b9f3457cbbe77cfe94faf8dbc918d66d272f5",
+      "old_sha256": "4fcd2088baf2468c014a72e1aa7c6bba9042f3a8c110283ec305f73936404aca",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.71443,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 323,
+        "my": 85,
+        "bbox": [
+          28,
+          6,
+          107,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 186.9
+    },
+    {
+      "identity": "elsbeth_vale",
+      "view": "back",
+      "status": "review_needed",
+      "master": "assets/concept-art/v001/04-npcs/elsbeth-vale-master-concept.png",
+      "master_sha256": "8b96cdd3b776d74fb8afbc95737b9f3457cbbe77cfe94faf8dbc918d66d272f5",
+      "old_sha256": "c642f96c8ebb4741417a1cd855324b05045512a45dd053c3c19e4d16452caa79",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.6964,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 415,
+        "my": 87,
+        "bbox": [
+          21,
+          6,
+          110,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 179.5
+    },
+    {
+      "identity": "elsbeth_vale",
+      "view": "right",
+      "status": "review_needed",
+      "master": "assets/concept-art/v001/04-npcs/elsbeth-vale-master-concept.png",
+      "master_sha256": "8b96cdd3b776d74fb8afbc95737b9f3457cbbe77cfe94faf8dbc918d66d272f5",
+      "old_sha256": "48927312565d689bdfd2f899247fbc15456a488790633726cdb11c81b94d01f9",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.68749,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 516,
+        "my": 87,
+        "bbox": [
+          21,
+          7,
+          108,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 185.0
+    },
+    {
+      "identity": "rowan_pike",
+      "view": "front",
+      "status": "matched",
+      "master": "assets/concept-art/v001/04-npcs/rowan-pike-master-concept.png",
+      "master_sha256": "2ca22c0efaa147414ca59c82d559bf9a5182ebcd381e07398669c1378772bfab",
+      "old_sha256": "d8117a3c67501766d33a41475ea1b2934bc1d7e58012332421a1776ed08c5403",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.9005,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 215,
+        "my": 83,
+        "bbox": [
+          19,
+          2,
+          111,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 9999,
+      "new_sha256": "55b8cf959e28611f89d313109dcd253748280b8861904917bdd481ede039d622",
+      "new_size": [
+        256,
+        448
+      ]
+    },
+    {
+      "identity": "rowan_pike",
+      "view": "side",
+      "status": "matched",
+      "master": "assets/concept-art/v001/04-npcs/rowan-pike-master-concept.png",
+      "master_sha256": "2ca22c0efaa147414ca59c82d559bf9a5182ebcd381e07398669c1378772bfab",
+      "old_sha256": "b3c7beb43a0de01112d40c38e3b991480f5f4461f80fea64e51dd5faa7f6b593",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.77219,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 316,
+        "my": 84,
+        "bbox": [
+          21,
+          2,
+          107,
+          220
+        ]
+      },
+      "separation_from_previous_views_px": 181.3,
+      "new_sha256": "47c0630dcc0ebe91d5960b79c1672e70e427b60923731489bb9855358a3ef213",
+      "new_size": [
+        256,
+        448
+      ]
+    },
+    {
+      "identity": "rowan_pike",
+      "view": "back",
+      "status": "matched",
+      "master": "assets/concept-art/v001/04-npcs/rowan-pike-master-concept.png",
+      "master_sha256": "2ca22c0efaa147414ca59c82d559bf9a5182ebcd381e07398669c1378772bfab",
+      "old_sha256": "55cf06702ce55b5a33ed72258e1c8e38aa55a9279d3e0acf36e39571451341cb",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.86884,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 413,
+        "my": 84,
+        "bbox": [
+          17,
+          2,
+          110,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 185.9,
+      "new_sha256": "489cbd6587a67269704a5672dd6764af97f963578c41614fbe312daf18fa4126",
+      "new_size": [
+        256,
+        448
+      ]
+    },
+    {
+      "identity": "rowan_pike",
+      "view": "right",
+      "status": "matched",
+      "master": "assets/concept-art/v001/04-npcs/rowan-pike-master-concept.png",
+      "master_sha256": "2ca22c0efaa147414ca59c82d559bf9a5182ebcd381e07398669c1378772bfab",
+      "old_sha256": "3a901b575a93bdacbb62c0dbb6e6a241e4e2bece5e8f18e1c4076887292f98fa",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.87498,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 517,
+        "my": 84,
+        "bbox": [
+          24,
+          2,
+          108,
+          221
+        ]
+      },
+      "separation_from_previous_views_px": 184.1,
+      "new_sha256": "aef751f5bd68c29591fef431b6745827b756643a2de299e2e2beee2aea987265",
+      "new_size": [
+        256,
+        448
+      ]
+    },
+    {
+      "identity": "tomas_greaves",
+      "view": "front",
+      "status": "review_needed",
+      "master": "assets/concept-art/v001/04-npcs/tomas-greaves-master-concept.png",
+      "master_sha256": "c29cd4fdaa8c48b79b6201cdb229a7a0c5c8093c95cd931605924d175fac89e4",
+      "old_sha256": "76c6b10f1becfd510679bb3b0c792dc7f7c7eb0edb251e76fbb95a74c408b945",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.59753,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 215,
+        "my": 83,
+        "bbox": [
+          19,
+          3,
+          109,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 9999
+    },
+    {
+      "identity": "tomas_greaves",
+      "view": "side",
+      "status": "review_needed",
+      "master": "assets/concept-art/v001/04-npcs/tomas-greaves-master-concept.png",
+      "master_sha256": "c29cd4fdaa8c48b79b6201cdb229a7a0c5c8093c95cd931605924d175fac89e4",
+      "old_sha256": "58d81d754580681603754ce2b86b4c1166e3b2ddf894238becdafb5e243c0681",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.62251,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 324,
+        "my": 81,
+        "bbox": [
+          25,
+          2,
+          103,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 190.6
+    },
+    {
+      "identity": "tomas_greaves",
+      "view": "back",
+      "status": "review_needed",
+      "master": "assets/concept-art/v001/04-npcs/tomas-greaves-master-concept.png",
+      "master_sha256": "c29cd4fdaa8c48b79b6201cdb229a7a0c5c8093c95cd931605924d175fac89e4",
+      "old_sha256": "174db91fb264ae944a8cf7d8f7d331ec5810e824d07afa8068abae6db4294ed9",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.60471,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 414,
+        "my": 83,
+        "bbox": [
+          19,
+          3,
+          109,
+          220
+        ]
+      },
+      "separation_from_previous_views_px": 177.6
+    },
+    {
+      "identity": "tomas_greaves",
+      "view": "right",
+      "status": "review_needed",
+      "master": "assets/concept-art/v001/04-npcs/tomas-greaves-master-concept.png",
+      "master_sha256": "c29cd4fdaa8c48b79b6201cdb229a7a0c5c8093c95cd931605924d175fac89e4",
+      "old_sha256": "5cd49c0cea57d3020c38ed004b9fafe147a89ce9d73377d757db25bbb41bf16a",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.63418,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 520,
+        "my": 83,
+        "bbox": [
+          26,
+          3,
+          108,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 188.7
+    },
+    {
+      "identity": "sister_mirelle_ash",
+      "view": "front",
+      "status": "matched",
+      "master": "assets/concept-art/v001/04-npcs/sister-mirelle-ash-master-concept.png",
+      "master_sha256": "add24232af48839f8a043b7b5574f9e15c3880f300370001198fb9aa913923cb",
+      "old_sha256": "9a304272f8bc843ef06d344dde5ad01f94d04eb3de8912355f357ba92846a4da",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.79112,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 223,
+        "my": 83,
+        "bbox": [
+          27,
+          3,
+          110,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 9999,
+      "new_sha256": "42c6822658320378aba67f9409f4e4764a7995badd0248c6041b72057a21cf6d",
+      "new_size": [
+        256,
+        448
+      ]
+    },
+    {
+      "identity": "sister_mirelle_ash",
+      "view": "side",
+      "status": "matched",
+      "master": "assets/concept-art/v001/04-npcs/sister-mirelle-ash-master-concept.png",
+      "master_sha256": "add24232af48839f8a043b7b5574f9e15c3880f300370001198fb9aa913923cb",
+      "old_sha256": "96672fd05153615694ba99b249dd2172e36a411a05388eb9863741d56fc730e8",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.81399,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 326,
+        "my": 82,
+        "bbox": [
+          32,
+          2,
+          107,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 183.2,
+      "new_sha256": "98520fae948d17fa8ea558d16fdb079c55b676efb3abde3574bd031a738a8d47",
+      "new_size": [
+        256,
+        448
+      ]
+    },
+    {
+      "identity": "sister_mirelle_ash",
+      "view": "back",
+      "status": "review_needed",
+      "master": "assets/concept-art/v001/04-npcs/sister-mirelle-ash-master-concept.png",
+      "master_sha256": "add24232af48839f8a043b7b5574f9e15c3880f300370001198fb9aa913923cb",
+      "old_sha256": "a5823ac4139d7b4cb406add686f032369ce5a5605caaf2b2671ba5655a143b3a",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.69996,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 420,
+        "my": 83,
+        "bbox": [
+          26,
+          3,
+          110,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 182.2
+    },
+    {
+      "identity": "sister_mirelle_ash",
+      "view": "right",
+      "status": "matched",
+      "master": "assets/concept-art/v001/04-npcs/sister-mirelle-ash-master-concept.png",
+      "master_sha256": "add24232af48839f8a043b7b5574f9e15c3880f300370001198fb9aa913923cb",
+      "old_sha256": "7e79987d7da73d7e5b04a9cbca116585b1a746ebef18c3acc15e213f7d1685e6",
+      "old_size": [
+        128,
+        224
+      ],
+      "matched_transform": {
+        "score": 0.8173,
+        "sx": 1.85,
+        "sy": 1.85,
+        "mx": 520,
+        "my": 82,
+        "bbox": [
+          26,
+          2,
+          103,
+          222
+        ]
+      },
+      "separation_from_previous_views_px": 178.5,
+      "new_sha256": "a37ba79261a041c7f0c698461d1805b61aebe9b7f766d3328a035de33639b50c",
+      "new_size": [
+        256,
+        448
+      ]
+    }
+  ]
+}
