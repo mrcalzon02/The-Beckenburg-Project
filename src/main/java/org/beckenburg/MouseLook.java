@@ -65,7 +65,9 @@ public final class MouseLook extends MouseAdapter implements FocusListener {
     public void resume(){
         resumeRequested=true;
         view.requestFocusInWindow();
-        SwingUtilities.invokeLater(this::capture);
+        SwingUtilities.invokeLater(()->{
+            if(resumeRequested)capture();
+        });
     }
     public void release(){
         captured=false;hasPrevious=false;resumeRequested=false;
