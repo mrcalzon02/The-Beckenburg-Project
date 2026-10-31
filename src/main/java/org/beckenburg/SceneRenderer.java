@@ -3690,7 +3690,8 @@ public final class SceneRenderer {
             if(!entry.sprite())continue;
             double px=devAssetX(j),pz=devAssetZ(j);
             try{
-                DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,px,pz,180,
+                DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,px,pz,
+                    Math.floorMod(180+(int)Math.round(Math.toDegrees(rotation)),360),
                     entry.id(),1.82,1.00,.21,255,true,
                     renderWidth,renderHeight,focal);
             }catch(RuntimeException badArt){
