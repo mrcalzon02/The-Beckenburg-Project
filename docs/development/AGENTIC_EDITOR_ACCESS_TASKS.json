@@ -1,0 +1,323 @@
+{
+  "schema": "beckenburg.agentic-editor-access-tasks/v1",
+  "created": "2026-10-31",
+  "sourceBaseline": "3f42f2ce2110c084e34525f975a3bc8ce5a0e98f",
+  "contract": "docs/development/AGENTIC_EDITOR_ACCESS.md",
+  "statusDefinitions": {
+    "planned": "No implementation proof.",
+    "in_progress": "Implementation underway; not yet accepted.",
+    "implemented_unverified": "Code exists, but required tests/readback incomplete.",
+    "tested": "All stated acceptance tests have evidence; distinguish source and physical runtime.",
+    "blocked": "Dependency or objective failure prevents this task."
+  },
+  "sourceOfTruth": "Real runtime scene and existing editor transactions; no parallel simulated preview",
+  "gates": {
+    "release": "Only objective broken build, launch, essential gameplay, required multiplayer or updater function may block release. Art and diagnostics are advisory.",
+    "security": "Agent interfaces disabled by default, authenticated, loopback only, least privilege, no shell/filesystem access.",
+    "completion": "Do not count draft documentation, unpublished blobs, packaging, or missing real installed runtime as completed machine access."
+  },
+  "milestones": [
+    {
+      "id": "M0",
+      "name": "Preflight and compatible baseline",
+      "tasks": [
+        {
+          "id": "M0-01",
+          "name": "Capture main SHA, current recovery gates, editor/portable tests and focused CI",
+          "scope": [
+            "AGENTS.md",
+            "development/RECOVERY_PLAN_2026-10-25.md",
+            ".github/workflows/standalone-editor-kit.yml"
+          ],
+          "status": "planned",
+          "accept": [
+            "Exact-source SHA and linked workflow outcome",
+            "No-regression baseline recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M1",
+      "name": "Observation read only",
+      "tasks": [
+        {
+          "id": "M1-01",
+          "name": "In-process snapshot service for current live scene, objects, revisions, capabilities and assets",
+          "scope": [
+            "src/main/java/org/beckenburg/CastleLevelEdits.java",
+            "src/main/java/org/beckenburg/CastleEditorProject.java",
+            "src/main/java/org/beckenburg/editor/RuntimeScene.java"
+          ],
+          "status": "planned",
+          "accept": [
+            "Read same scene instance as GUI and game",
+            "Unsaved manual edit immediately visible through service",
+            "Stable IDs and consistent snapshot; no mutation API"
+          ]
+        },
+        {
+          "id": "M1-02",
+          "name": "Opt-in authenticated loopback GET protocol and shutdown lifecycle",
+          "scope": [
+            "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M1-01"
+          ],
+          "accept": [
+            "Only loopback bound and randomized bearer token",
+            "Auth and non-GET methods rejected",
+            "No listener after editor closes"
+          ]
+        },
+        {
+          "id": "M1-03",
+          "name": "Actual editor viewport capture and existing scene diagnostic output",
+          "scope": [
+            "src/main/java/org/beckenburg/SceneRenderer.java",
+            "src/main/java/org/beckenburg/CastleEditorAudit.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M1-02"
+          ],
+          "accept": [
+            "PNG originates from real runtime/editor renderer",
+            "Includes current scene revision and provenance",
+            "Audit warnings remain advisory"
+          ]
+        },
+        {
+          "id": "M1-04",
+          "name": "Windows running editor observation end-to-end and evidence record",
+          "scope": [
+            "src/test/java/org/beckenburg/DeveloperEditorLaunchTest.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M1-01",
+            "M1-02",
+            "M1-03"
+          ],
+          "accept": [
+            "Live open editor, manual edit, remote-local readback and screenshot",
+            "Denied anonymous and mutation request tests",
+            "Saved test logs and commit SHA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M2",
+      "name": "Transactional manipulation",
+      "tasks": [
+        {
+          "id": "M2-01",
+          "name": "Validated and version-checked editor commands with batch rollback",
+          "scope": [
+            "src/main/java/org/beckenburg/editor/EditorHistory.java",
+            "src/main/java/org/beckenburg/editor/RuntimeScene.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M1-04"
+          ],
+          "accept": [
+            "One authoritative transaction and one undo event",
+            "Stale revision rejected and no scene change",
+            "Partial batch failure restores exact prior snapshot"
+          ]
+        },
+        {
+          "id": "M2-02",
+          "name": "Typed Castle commands: transform, props, lamps, surfaces, doors, spawn, nav",
+          "scope": [
+            "src/main/java/org/beckenburg/CastleLevelEdits.java",
+            "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M2-01"
+          ],
+          "accept": [
+            "Agent and human GUI observe identical result",
+            "Duplicate idempotency request makes no second object",
+            "Undo/redo and save/reload preserve scene"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "name": "Real-scene verification",
+      "tasks": [
+        {
+          "id": "M3-01",
+          "name": "Readback proof, runtime capture, real collision/navigation/reference audit",
+          "scope": [
+            "src/main/java/org/beckenburg/CastleEditorAudit.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M2-02"
+          ],
+          "accept": [
+            "Return separately committed/saved/verified flags",
+            "Failures are structured, revisioned and truthful",
+            "Real engine-generated evidence; no source artwork substitute"
+          ]
+        },
+        {
+          "id": "M3-02",
+          "name": "Isolated playtest plus exact restoration of unsaved editor state",
+          "scope": [
+            "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M3-01"
+          ],
+          "accept": [
+            "Castle gameplay uses same authored data",
+            "Editor returns with unsaved edits intact",
+            "Real multiplayer host state unaffected"
+          ]
+        },
+        {
+          "id": "M3-03",
+          "name": "House and basement adapter fixture validations",
+          "scope": [
+            "src/main/java/org/beckenburg/editor/RuntimeScene.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M3-02"
+          ],
+          "accept": [
+            "Only supported adapters are advertised",
+            "Door/opening collision and stair reachability proof",
+            "Measured render timing where available; no invented FPS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M4",
+      "name": "Headless access",
+      "tasks": [
+        {
+          "id": "M4-01",
+          "name": "CLI and script execution against same Editor Agent Service",
+          "scope": [
+            "src/main/java/org/beckenburg/editor/RuntimeScene.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M3-01"
+          ],
+          "accept": [
+            "No Swing dependency in headless service",
+            "Deterministic edit, readback, exit code and rollback",
+            "No fake viewport when renderer unavailable"
+          ]
+        },
+        {
+          "id": "M4-02",
+          "name": "Independent second Java 17 synthetic project adapter",
+          "scope": [
+            "src/test/java/org/beckenburg/editor/EditorCorePortabilityTest.java"
+          ],
+          "status": "planned",
+          "dependsOn": [
+            "M4-01"
+          ],
+          "accept": [
+            "No Castle imports",
+            "Same protocol and error semantics",
+            "Save/reload deterministic"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M5",
+      "name": "MCP adapter and authorized agent",
+      "tasks": [
+        {
+          "id": "M5-01",
+          "name": "MCP tools/resources adapter mapping directly to service capabilities",
+          "scope": [],
+          "status": "planned",
+          "dependsOn": [
+            "M4-01",
+            "M3-02"
+          ],
+          "accept": [
+            "Tools are discoverable with typed schemas",
+            "Local authorization and capability-scoped writes",
+            "No remote shell, arbitrary files, or player-session access"
+          ]
+        },
+        {
+          "id": "M5-02",
+          "name": "Real installed editor agent repair demonstration",
+          "scope": [],
+          "status": "planned",
+          "dependsOn": [
+            "M5-01"
+          ],
+          "accept": [
+            "Agent observes actual Castle scene",
+            "One reversible furnished-room/repair edit verified by readback",
+            "Actual screenshot and audit with source SHA and limitations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M6",
+      "name": "Portable modules and wider adoption",
+      "tasks": [
+        {
+          "id": "M6-01",
+          "name": "Second-game/module adapters after main editor acceptance",
+          "scope": [],
+          "status": "planned",
+          "dependsOn": [
+            "M5-02",
+            "M4-02"
+          ],
+          "accept": [
+            "Portable contracts prove independent game reuse",
+            "No implicit cross-repo migration"
+          ]
+        }
+      ]
+    }
+  ],
+  "errorCodes": [
+    "UNAUTHORIZED",
+    "READ_ONLY",
+    "INVALID_ARGUMENT",
+    "NOT_FOUND",
+    "STALE_REVISION",
+    "ASSET_MISSING",
+    "OUT_OF_BOUNDS",
+    "COLLISION",
+    "UNSUPPORTED_CAPABILITY",
+    "TIMEOUT",
+    "SAVE_FAILED",
+    "RENDER_UNAVAILABLE",
+    "INTERNAL"
+  ],
+  "nextTask": "M0-01",
+  "evidence": {
+    "sourceVerified": false,
+    "installedWindowsVerified": false,
+    "mcpConnected": false,
+    "agentEditedRealScene": false,
+    "notes": "Documentation ledger only. Each implemented task must update with commit SHA, test names, workflow run URL, real evidence, and blockers."
+  }
+}
