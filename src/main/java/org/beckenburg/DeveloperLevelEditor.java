@@ -187,7 +187,6 @@ public final class DeveloperLevelEditor extends JPanel {
         });
 
         var header=new JPanel(new BorderLayout(6,0));
-        header.add(new JLabel("DEVELOPER LEVEL EDITOR   /   CASTLE BECKENBURG  /  LIVE SCENE"),BorderLayout.WEST);
         JPanel toolStrip=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));
         ButtonGroup tools=new ButtonGroup();
         for(EditorTool option:EditorTool.values()){
