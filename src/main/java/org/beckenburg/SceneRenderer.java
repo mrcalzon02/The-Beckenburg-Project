@@ -356,7 +356,12 @@ public final class SceneRenderer {
     /** Source triangles with independent axis scales for medieval wall modules. */
     private static void imported(List<Face> out,String id,
             double x,double y,double z,double sx,double sy,double sz,double yaw){
-        var model=GlbProps.model(id);var variation=FoliageVariation.profile(id,x,z);
+        imported(out,id,GlbProps.model(id),x,y,z,sx,sy,sz,yaw);
+    }
+    /** Identical production geometry transform for dev-only not-yet-approved source GLBs. */
+    private static void imported(List<Face> out,String id,GlbProps.Model model,
+            double x,double y,double z,double sx,double sy,double sz,double yaw){
+        var variation=FoliageVariation.profile(id,x,z);
         final double cos=Math.cos(yaw+variation.rotation()),sin=Math.sin(yaw+variation.rotation());
         double height=FoliageVariation.foliage(id)?model.triangles().stream().flatMap(t->java.util.stream.Stream.of(t.a(),t.b(),t.c())).mapToDouble(GlbProps.Vertex::y).max().orElse(1)*sy:1;
         for(GlbProps.Triangle t:model.triangles()){
@@ -3659,7 +3664,9 @@ public final class SceneRenderer {
             if(entry.sprite())continue;
             double px=devAssetX(j),pz=devAssetZ(j);
             try{
-                double[] bounds=castleBounds(entry.id());
+                GlbProps.Model source=entry.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY?
+                    DevAssetReviewCatalog.sourceModel(entry.id()):GlbProps.model(entry.id());
+                double[] bounds=devAssetBounds(source);
                 double span=Math.max(bounds[3],Math.max(bounds[4],bounds[5]));
                 if(!Double.isFinite(span)||span<=0)throw new IllegalStateException("Invalid source dimensions");
                 double scale=Math.min(22,Math.min(2.0/Math.max(.0001,Math.max(bounds[3],bounds[5])),
@@ -3668,7 +3675,7 @@ public final class SceneRenderer {
                 double cx=bounds[0]*scale,cz=bounds[2]*scale;
                 double x=px-(cx*Math.cos(angle)-cz*Math.sin(angle));
                 double z=pz-(cx*Math.sin(angle)+cz*Math.cos(angle));
-                imported(stage,entry.id(),x,.2-bounds[1]*scale,z,scale,angle);
+                imported(stage,entry.id(),source,x,.2-bounds[1]*scale,z,scale,scale,scale,angle);
             }catch(RuntimeException badMesh){
                 // The missing/broken mesh is not visually replaced. Only an
                 // explicit red error pedestal is drawn for diagnostic visibility.
@@ -3701,6 +3708,17 @@ public final class SceneRenderer {
         }
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         applyGraphicsEffects(clock);
+    }
+    private static double[] devAssetBounds(GlbProps.Model model){
+        double loX=Double.POSITIVE_INFINITY,loY=loX,loZ=loX;
+        double hiX=Double.NEGATIVE_INFINITY,hiY=hiX,hiZ=hiX;
+        for(var t:model.triangles())for(var v:new GlbProps.Vertex[]{t.a(),t.b(),t.c()}){
+            loX=Math.min(loX,v.x());hiX=Math.max(hiX,v.x());
+            loY=Math.min(loY,v.y());hiY=Math.max(hiY,v.y());
+            loZ=Math.min(loZ,v.z());hiZ=Math.max(hiZ,v.z());
+        }
+        if(!Double.isFinite(loX))throw new IllegalArgumentException("Invalid review model bounds");
+        return new double[]{(loX+hiX)*.5,loY,(loZ+hiZ)*.5,hiX-loX,hiY-loY,hiZ-loZ};
     }
     public static double devAssetX(int index){
         if(index<0||index>=6)throw new IllegalArgumentException("review exhibit index");
