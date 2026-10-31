@@ -132,6 +132,7 @@ rem E2E has exactly one blocking criterion: the actual packaged TCP investigatio
 rem Art/audio/balance diagnostics execute in the separate non-blocking workflow step.
 rem Hunter presentation QA is advisory; real build/launch and multiplayer tests still gate.
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.ToolBeltHudTest || echo ADVISORY: hunter tool belt/held-device presentation failed (nonblocking)
+java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.DotsProjectorModelDiagnosticTest || echo ADVISORY: deployed DOTS model artwork check failed (nonblocking)
 if /I "%~1"=="e2e" goto package_jar_only
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.SpiritBoxResponsesTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.LanSpiritBoxAudioIntegrationTest || exit /b 1
