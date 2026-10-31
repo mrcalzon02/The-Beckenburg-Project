@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 concurrency:
   group: beckenburg-dev-ai-match-${{ github.ref }}
@@ -91,6 +92,52 @@ jobs:
               Set-Content -Path 'build\dev-match\result.txt'
           }
 
+      - name: Publish authoritative AI results to issue 55 (nonblocking reporting)
+        if: always()
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PRIOR_STEPS_STATUS: ${{ job.status }}
+        run: |
+          $ErrorActionPreference = 'Continue'
+          $marker = '<!-- beckenburg-dev-ai-results -->'
+          $runUrl = "https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID"
+          $parts = @(
+            $marker,
+            '## Latest authoritative AI-vs-AI run',
+            "- Run: $runUrl",
+            "- Commit: $env:GITHUB_SHA",
+            "- Test execution status before report step: $env:PRIOR_STEPS_STATUS",
+            '- Seven genuine TCP players; off-seat admin; source: host-authoritative state',
+            ''
+          )
+          foreach ($species in @('DEMON', 'WRAITH', 'SPIRIT')) {
+            $parts += "### $species"
+            $report = Join-Path (Join-Path 'build\dev-match-scenarios' $species) 'objective-results.txt'
+            if (Test-Path $report) {
+              $parts += '```text'
+              $parts += @(Get-Content $report | Select-Object -First 16)
+              $parts += '```'
+            } else {
+              $parts += 'No completed scenario report. Check job logs/artifacts for the actual failure.'
+            }
+            $parts += ''
+          }
+          $parts += 'Full logs/host combat CSVs: workflow run artifacts. Missing outcomes are not passes.'
+          $body = $parts -join "`n"
+          New-Item -ItemType Directory -Force 'build\dev-match' | Out-Null
+          $payloadPath = 'build\dev-match\issue-report.json'
+          @{ body = $body } | ConvertTo-Json -Depth 4 | Set-Content -Path $payloadPath -Encoding utf8
+          $commentsRaw = & gh api -X GET "repos/$env:GITHUB_REPOSITORY/issues/55/comments?per_page=100" 2>$null
+          if ($LASTEXITCODE -ne 0) { Write-Warning 'AI results issue lookup failed (advisory only)'; exit 0 }
+          $comments = @($commentsRaw | ConvertFrom-Json)
+          $existing = $comments | Where-Object { $_.body -like "$marker*" } | Select-Object -First 1
+          if ($existing) {
+            & gh api -X PATCH "repos/$env:GITHUB_REPOSITORY/issues/comments/$($existing.id)" --input $payloadPath | Out-Null
+          } else {
+            & gh api -X POST "repos/$env:GITHUB_REPOSITORY/issues/55/comments" --input $payloadPath | Out-Null
+          }
+          if ($LASTEXITCODE -ne 0) { Write-Warning 'AI results issue update failed (advisory only)' }
       - name: Upload real LAN and admin trace artifacts
         if: always()
         uses: actions/upload-artifact@v4
