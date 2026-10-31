@@ -123,7 +123,7 @@ jobs:
             $report = Join-Path (Join-Path 'build\dev-match-scenarios' $species) 'objective-results.txt'
             if (Test-Path $report) {
               $parts += '```text'
-              $parts += @(Get-Content $report | Select-Object -First 16)
+              $parts += @(Get-Content $report | Select-Object -First 40)
               $parts += '```'
             } else {
               $parts += 'No completed scenario report. Check job logs/artifacts for the actual failure.'
