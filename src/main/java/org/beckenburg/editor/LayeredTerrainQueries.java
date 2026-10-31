@@ -260,7 +260,7 @@ public final class LayeredTerrainQueries {
                          (p.layer().equals(SURFACE)
                             ||p.layer().equals(ramp.targetLayer())))){
                     double axis=ramp.axis(p.x(),p.z());
-                    boolean atMouth=axis<=.8
+                    boolean atMouth=axis<=Math.min(1.5,ramp.length()*.25)
                         &&(p.layer().equals(SURFACE)||higher.layer().equals(SURFACE));
                     boolean atExit=ramp.length()-axis<=.8
                         &&(p.layer().equals(ramp.targetLayer())
