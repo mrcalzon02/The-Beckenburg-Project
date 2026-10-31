@@ -187,6 +187,8 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.Re
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.TierModelForgeTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.VanCargoDoorTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanDotsProjectorsTest
+# Host-authoritative evidence equipment must be placeable via the actual 3D mouse controls.
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanDotsPlacementIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.OptionalEvidenceReadingsTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.GhostEvidenceMatrixTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanFieldEquipmentIntegrationTest
