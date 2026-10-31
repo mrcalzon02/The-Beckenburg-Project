@@ -28,6 +28,18 @@ public final class ToolBeltHudTest {
                 3,null,true,false,true,135);
         }finally{g.dispose();}
         require((frame.getRGB(456,500)>>>24)!=0,"center belt visible");
+        // Only an actively inspected device may expose a current reading above the belt.
+        BufferedImage idle=new BufferedImage(850,555,BufferedImage.TYPE_INT_ARGB);
+        BufferedImage active=new BufferedImage(850,555,BufferedImage.TYPE_INT_ARGB);
+        Graphics2D idleGraphics=idle.createGraphics(),activeGraphics=active.createGraphics();
+        try{
+            String[] belt={"EMF_READER","THERMOMETER","SPIRIT_BOX","DOTS_PROJECTOR"};
+            ToolBeltHud.draw(idleGraphics,850,555,belt,0,"EMF 6/10",false,false,false,0);
+            ToolBeltHud.draw(activeGraphics,850,555,belt,0,"EMF 6/10",true,false,false,0);
+        }finally{idleGraphics.dispose();activeGraphics.dispose();}
+        require((idle.getRGB(425,390)>>>24)==0
+            &&(active.getRGB(425,390)>>>24)>0,
+            "authoritative reading only visible during held use");
         System.out.println("ToolBeltHudTest PASS");
     }
     private static void require(boolean condition,String description){
