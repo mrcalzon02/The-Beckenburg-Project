@@ -90,3 +90,18 @@ The real `DevTerrainTopologyLab` now computes diagnostic surface nav regions/lin
 **Acceptance:** \`AdaptiveNavMeshEditsTest\` exercises physical geometry remaining open behind a blocked level-transition gate, persistent no-regrowth after seed flood, trimming sub-areas from otherwise coarse navigable regions, undo snapshots, source tile preservation, and continuous mode persistence. It is a functional Windows Java 17 test, not a cosmetic release blocker.
 
 **Not yet integrated:** A live runtime agent does not consume this authored graph, and a blocked nav edge is *not* an actual collision wall. Layered cave mesh and production scene physics remain separate milestones. An editor window preview is not proof of Hunter/ghost AI traversal.
+
+
+## N2b — Persisted underground authoring from the navigation editor (2026-10-31)
+
+**Open:** Stitched World → Adaptive Topology → NAV FLOOD EDITOR → **UNDERGROUND GEOMETRY**. The layered geometry window lists and allows adding, revising and deleting independent floors, axis-aligned solids and cross-layer traversal links. Undo/redo and save perform immediate disk readback. Source heightmap PNGs and adaptive cutout topology are untouched.
+
+- **Floor:** named layer (for example \`bunker\` or \`sewer\`), world-space X/Z rectangle, base height and X/Z rise. Multiple nonoverlapping slabs can share one layer. Overlapping slabs on the same layer are rejected.
+- **Solid:** unique ID plus world-space 3D bounding box; collision-query clearance and navigation authoring reject impassable solid walls and ceilings. This does **not** create a visible wall mesh.
+- **Connection:** explicit \`STAIRS\`, \`LADDER\` or \`DROP\` link between two named layers at authored endpoints. Both endpoints must be within their destination support slabs; links with orphaned layers are rejected. Cross-layer routes remain capability-gated.
+- **Viewport:** choose the layer to inspect; flood rebuild consumes the saved floor/solid/link data. Existing nav seeds, gates and exclusions remain layer-specific. Editor overlay uses teal floor outlines, white obstacle rectangles and magenta transition markers. Agent ladder/drop capability toggles affect reachability.
+- **Storage:** separate bounded, atomically saved \`layered-geometry.bin\` alongside \`navmesh-authoring.bin\` and \`adaptive-topology.bin\`, leaving the source \`tile_*.png\` unchanged. Authored geometry is independent of generated nav region IDs.
+
+**Test:** \`LayeredTerrainDocumentTest\` validates source tile preservation, three physically distinct floors, stairs/ladder capability restrictions, obstacle collision, persistence and readback, overlap rejection, orphan-link rejection and snapshot restoration. It runs in Windows Java 17 focused terrain acceptance.
+
+**Important:** This milestone supplies **editor-owned physical query geometry**, not full cave meshes, mesh welding at the surface cutouts, model rendering, or live game collision. A stair link in the nav graph is author intent, not an animated staircase or automatic level-instance transfer. Those runtime and visual connections remain subsequent tasks.
