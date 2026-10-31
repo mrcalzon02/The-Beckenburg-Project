@@ -13,7 +13,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayDeque;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -132,8 +134,8 @@ public final class AdaptiveNavMeshEditor extends JPanel {
         canvas.setBackground(new Color(19,22,27));
         add(canvas,BorderLayout.CENTER);
         JPanel footer=new JPanel(new java.awt.GridLayout(2,1,3,2));
-        footer.add(new JLabel("Click to select region. Gate: two clicks. Seed=orange; gate=red; trimmed=dark; regions=blue. "+
-            "Trim persists after rebuild."));
+        footer.add(new JLabel("Click any region (including grey, unreachable regions). Blue=reachable; grey=regress candidate; "+
+            "red=gate/trim; orange=seed. All trims persist."));
         footer.add(status);
         add(footer,BorderLayout.SOUTH);
 
@@ -236,12 +238,14 @@ public final class AdaptiveNavMeshEditor extends JPanel {
             return;
         }
         if(graph==null||graph.stale()){updateStatus("Pulse an up-to-date mesh first");return;}
-        boolean[] seen=new boolean[graph.regions().size()];
+        // Selection may belong to the unreachable side of a blocked level gate.
+        var candidates=graph.candidates();
+        boolean[] seen=new boolean[candidates.regions().size()];
         var queue=new ArrayDeque<Integer>();
         queue.add(selected.id());seen[selected.id()]=true;
         while(!queue.isEmpty()){
             int id=queue.removeFirst();
-            for(var edge:graph.connections(id))if(!seen[edge.to()]){
+            for(var edge:candidates.connections(id))if(!seen[edge.to()]){
                 seen[edge.to()]=true;queue.addLast(edge.to());
             }
         }
@@ -254,7 +258,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
             "Permanently trim "+count+" connected navigation regions? "+
             "A flood pulse cannot restore them. UNDO can.",
             "Confirm connected trim",JOptionPane.YES_NO_OPTION)!=JOptionPane.YES_OPTION)return;
-        var regions=graph.regions();
+        var regions=candidates.regions();
         modify(()->{
             for(int i=0;i<seen.length;i++)if(seen[i]){
                 var r=regions.get(i);
@@ -347,7 +351,7 @@ public final class AdaptiveNavMeshEditor extends JPanel {
                         return;
                     }
                     clickX=x;clickZ=z;selected=null;
-                    if(graph!=null)for(var r:graph.regions())
+                    if(graph!=null)for(var r:graph.candidates().regions())
                         if(r.layer().equals("surface")&&r.contains(x,z)){
                             selected=r;break;
                         }
@@ -365,13 +369,24 @@ public final class AdaptiveNavMeshEditor extends JPanel {
             var a=view();
             out.setColor(new Color(46,49,53));
             out.fillRect(left,top,side,side);
-            if(graph!=null)for(var r:graph.regions()){
-                if(!r.layer().equals("surface"))continue;
-                int x=px(r.x0(),a),z=pz(r.z0(),a);
-                int w=Math.max(1,px(r.x1(),a)-x),h=Math.max(1,pz(r.z1(),a)-z);
-                out.setColor(r.equals(selected)?new Color(219,166,63):new Color(77,122,157));
-                out.fillRect(x,z,w,h);
-                out.setColor(new Color(28,48,60));out.drawRect(x,z,w,h);
+            if(graph!=null){
+                // Candidate graph includes unreachable cells beyond author-blocked
+                // doors, so they can still be selected for permanent regression.
+                record Bounds(String layer,double x0,double z0,double x1,double z1){}
+                Set<Bounds> reachable=new HashSet<>();
+                for(var r:graph.regions())reachable.add(new Bounds(
+                    r.layer(),r.x0(),r.z0(),r.x1(),r.z1()));
+                for(var r:graph.candidates().regions()){
+                    if(!r.layer().equals("surface"))continue;
+                    int x=px(r.x0(),a),z=pz(r.z0(),a);
+                    int w=Math.max(1,px(r.x1(),a)-x),h=Math.max(1,pz(r.z1(),a)-z);
+                    boolean active=reachable.contains(new Bounds(
+                        r.layer(),r.x0(),r.z0(),r.x1(),r.z1()));
+                    out.setColor(r.equals(selected)?new Color(219,166,63):
+                        active?new Color(77,122,157):new Color(85,88,96));
+                    out.fillRect(x,z,w,h);
+                    out.setColor(new Color(28,48,60));out.drawRect(x,z,w,h);
+                }
             }
             for(var ex:edits.exclusions())if(ex.layer().equals("surface")){
                 out.setColor(new Color(80,21,30,180));
