@@ -25,6 +25,7 @@ from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = ROOT / "assets/runtime/castle-support-directions.zip"
+BASELINE_AUDIT = ROOT / "docs/development/castle-resident-art-repair-audit.json"
 MASTERS = {
     "elsbeth_vale": "assets/concept-art/v001/04-npcs/elsbeth-vale-master-concept.png",
     "rowan_pike": "assets/concept-art/v001/04-npcs/rowan-pike-master-concept.png",
@@ -130,6 +131,15 @@ def run(output: Path, write: bool) -> int:
                      for identity, path in MASTERS.items()}
     results = []
     new_frames = {}
+    # Reuse fully recorded 16-view transforms only when the original PNG bytes
+    # and source reference cutouts still have their exact audited SHA-256 hashes.
+    # This avoids costly/ambiguous re-matching each time the workflow is retried.
+    baseline_records = {}
+    if BASELINE_AUDIT.is_file():
+        baseline = json.loads(BASELINE_AUDIT.read_text(encoding="utf-8"))
+        baseline_records = {(record["identity"], record["view"]): record
+                            for record in baseline.get("records", [])
+                            if "matched_transform" in record}
     with zipfile.ZipFile(ARCHIVE) as prior:
         originals = {item.filename: prior.read(item) for item in prior.infolist()
                      if not item.is_dir()}
@@ -150,7 +160,13 @@ def run(output: Path, write: bool) -> int:
                                     "size": list(old.size), "master_sha256": master_hashes[identity]})
                     continue
                 raise ValueError(f"Unexpected frame size for {entry}: {old.size}")
-            found = match(master_rgb, old)
+            previous = baseline_records.get((identity, view))
+            if (previous is not None and previous.get("master_sha256") == master_hashes[identity]
+                    and previous.get("old_sha256") == sha256(originals[entry])):
+                found = previous["matched_transform"]
+                print("HASH_VERIFIED_SOURCE_TRANSFORM", identity, view, flush=True)
+            else:
+                found = match(master_rgb, old)
             center = ((found["mx"]+(found["bbox"][2]-found["bbox"][0])/2)*found["sx"],
                       (found["my"]+(found["bbox"][3]-found["bbox"][1])/2)*found["sy"])
             separation = min((math.dist(center, other) for other in centers), default=9999)
