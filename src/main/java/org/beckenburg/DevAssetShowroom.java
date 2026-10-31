@@ -210,9 +210,13 @@ public final class DevAssetShowroom implements AutoCloseable {
             topologyLab=DevTerrainTopologyLab.open();
             renderer.x=8.1;renderer.z=0.2;renderer.eyeHeight=1.45;
             renderer.yaw=0;renderer.pitch=-.26;
-            status.setText("3D TOPOLOGY QA on: "+topologyLab.splitCount()+
-                " authored splits, "+topologyLab.triangles().size()+
-                " triangles. Model stands preserved; collision/LOD NOT integrated.");
+            var nav=topologyLab.navigation();
+            status.setText("3D TOPOLOGY QA: "+topologyLab.splitCount()+
+                " splits, "+topologyLab.cutoutCount()+" holes, "+
+                topologyLab.triangles().size()+" triangles | NAV: "+
+                (nav.passed()?nav.regions()+" regions, "+nav.connections()+
+                    " edges, "+nav.routeSteps()+" route points":"FAILED "+nav.error())+
+                " | Collision/LOD NOT connected to gameplay.");
             viewport.requestFocusInWindow();
         }catch(IOException|RuntimeException failure){
             status.setText("Topology QA unavailable: "+failure.getMessage());
@@ -237,9 +241,13 @@ public final class DevAssetShowroom implements AutoCloseable {
         if(topologyLab==null){status.setText("Topology QA is off.");return;}
         try{
             topologyLab.refresh();
-            status.setText("REAL 3D topology QA readback: "+topologyLab.splitCount()+
-                " splits, "+topologyLab.triangles().size()+
-                " triangles; source heightmaps unchanged; NO gameplay collision yet.");
+            var nav=topologyLab.navigation();
+            status.setText("QA readback: "+topologyLab.splitCount()+" splits, "+
+                topologyLab.cutoutCount()+" holes, "+topologyLab.triangles().size()+
+                " triangles | NAV: "+(nav.passed()?nav.regions()+" regions, "+
+                nav.connections()+" edges, "+nav.routeSteps()+" route points":
+                "FAILED "+nav.error())+
+                "; NO game collision/nav adapter yet.");
         }catch(IOException|RuntimeException failure){
             status.setText("Topology readback rejected; previous QA mesh retained: "+
                 failure.getMessage());
@@ -451,6 +459,11 @@ public final class DevAssetShowroom implements AutoCloseable {
             "source="+lab.source().directory()+"\n"+
             "splits="+lab.splitCount()+"\n"+
             "actualSourceDerivedTriangles="+lab.triangles().size()+"\n"+
+            "cutoutLeaves="+lab.cutoutCount()+"\n"+
+            "navigationRegions="+lab.navigation().regions()+"\n"+
+            "navigationEdges="+lab.navigation().connections()+"\n"+
+            "navigationRoutePoints="+lab.navigation().routeSteps()+"\n"+
+            "navigationDiagnostic="+(lab.navigation().passed()?"PASS":lab.navigation().error())+"\n"+
             "changedPixelsVersusOrdinaryStudio="+changedPixels+"\n"+
             "renderer=SceneRenderer.drawDevAssetRoom\n"+
             "status=DEV QA patch only; gameplay collision/LOD not wired\n",
