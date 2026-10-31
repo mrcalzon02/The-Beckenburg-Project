@@ -90,7 +90,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private int activeGearSlot;
     private int heldUseUntilTick;
     private final ToolBeltHud.Grip toolGrip=new ToolBeltHud.Grip();
-    private boolean toolPlacement;
+    private boolean toolPlacement,placementPending;
+    private String placementPendingTool;
     private int placementRotation,lastRepeatTick=-100000;
     private boolean nightVision,flashlightOn,firelightOn;
     private boolean uvLightOn;
@@ -877,7 +878,21 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 if(p.get(2).equals("EMF_READER"))lastMeasurement.put(LanCase.Tool.EMF,p.get(3));
                 if(p.get(2).equals("THERMOMETER"))lastMeasurement.put(LanCase.Tool.THERMOMETER,p.get(3));
                 if(p.get(2).equals("SPIRIT_BOX"))lastMeasurement.put(LanCase.Tool.SPIRIT_BOX,p.get(3));
+                // A placement preview may close only when the host has really
+                // accepted the physical deployment/retrieval, never on click.
+                if(placementPending&&p.get(2).equals(placementPendingTool)){
+                    placementPending=false;placementPendingTool=null;
+                    toolPlacement=false;toolGrip.release();
+                }
                 feedback=p.get(2)+" / "+p.get(3);
+            }else if(p.size()==3&&p.get(0).equals("ACCEPT")
+                    &&p.get(1).equals("GEARPLACE")){
+                if(placementPending&&(placementPendingTool.equals("FLASHLIGHT")
+                        ||placementPendingTool.equals("FIRELIGHT"))){
+                    placementPending=false;placementPendingTool=null;
+                    toolPlacement=false;toolGrip.release();
+                }
+                feedback=frame;
             }else if(frame.startsWith("ACCEPT|SCAN|")){
                 String value=frame.substring(12);
                 for(LanCase.Tool tool:LanCase.Tool.values())
@@ -889,7 +904,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 feedback=frame;
                 // A rejected host action is local feedback, not a world sound:
                 // no ghost stimulus, no false proof of a successful item use.
-                if(p.get(0).equals("REJECT"))GameSfx.play(LanSound.Cue.UI_REJECT);
+                if(p.get(0).equals("REJECT")){
+                    // Preserve the location/rotation preview so the hunter can
+                    // move into a valid room and retry without losing the tool.
+                    placementPending=false;placementPendingTool=null;
+                    GameSfx.play(LanSound.Cue.UI_REJECT);
+                }
             }
         }catch(IllegalArgumentException ignored){feedback="Invalid world update rejected";}
         repaint();
@@ -1720,7 +1740,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             case KeyEvent.VK_Z -> sendAction("cross",()->client.deploy(HunterCounters.Kind.CROSS));
             case KeyEvent.VK_G -> {
                 if(ToolBeltHud.placeable(equippedGear[activeGearSlot])){
-                    toolPlacement=!toolPlacement;toolGrip.release();placementRotation=0;
+                    if(!placementPending){
+                        toolPlacement=!toolPlacement;toolGrip.release();placementRotation=0;
+                    }
                 }else sendAction("thrown ward",()->client.deploy(HunterCounters.Kind.WARD));
             }
             case KeyEvent.VK_H -> sendAction("salt",()->client.deploy(HunterCounters.Kind.SALT));
@@ -1780,12 +1802,19 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         sendAction("use device",client::useHeldEquipment);
     }
     private void placeCurrentTool(){
-        if(!ToolBeltHud.placeable(equippedGear[activeGearSlot]))return;
+        if(placementPending||!ToolBeltHud.placeable(equippedGear[activeGearSlot]))return;
         String held=equippedGear[activeGearSlot];
-        if(held.equals("FLASHLIGHT")||held.equals("FIRELIGHT"))
-            sendAction("place/retrieve",client::placeHeldEquipment);
-        else sendAction("place/retrieve",()->client.useHeldEquipment(placementRotation));
-        toolPlacement=false;toolGrip.release();
+        if(health<=0||!caseResult.isEmpty())return;
+        try{
+            if(held.equals("FLASHLIGHT")||held.equals("FIRELIGHT"))
+                client.placeHeldEquipment();
+            else client.useHeldEquipment(placementRotation);
+            placementPending=true;placementPendingTool=held;
+            feedback="AWAITING HOST PLACEMENT: "+held;
+        }catch(IOException|IllegalArgumentException error){
+            feedback="PLACEMENT NOT SENT: "+error.getMessage();
+        }
+        repaint();
     }
     private InteractionFocus.Target focusTarget(){
         return InteractionFocus.pick(map,new LooseClutter.Observer(seat,renderer.x,renderer.eyeHeight-eyeOffset(),renderer.z,renderer.yaw,renderer.pitch,health>0&&!concealed,eyeOffset()),rackSnapshot.stock());
