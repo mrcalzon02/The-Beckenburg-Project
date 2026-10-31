@@ -42,8 +42,16 @@ public final class AdaptiveNavigationRegionsTest {
             var around=graph(normal,hunter,broad,List.of());
             check(around.regions().size()>1,
                 "A fine physical hole forces local refinement of coarse nav region");
-            check(around.route("surface",3,6.5,"surface",9,6.5).size()>2,
+            var aroundHole=around.route("surface",3,6.5,"surface",9,6.5);
+            check(aroundHole.size()>2,
                 "AI can route around a real hole without crossing its missing surface");
+            for(int i=1;i<aroundHole.size();i++){
+                var previous=aroundHole.get(i-1);
+                var next=aroundHole.get(i);
+                check(normal.canTraverse("surface",previous.x(),previous.z(),
+                        next.x(),next.z(),hunter.footprint()),
+                    "Every emitted same-layer waypoint segment must physically avoid the hole");
+            }
             var previous=around.metrics().topologyRevision();
             topo.fill(new AdaptiveTerrainTopology.Node(6,6,0,0,0));
             check(around.stale()&&previous!=topo.revision(),
