@@ -2317,14 +2317,8 @@ public final class LanHost implements AutoCloseable {
                 case MINOR->22;case MODERATE->42;case DANGEROUS->70;case SIGNATURE->100;};
             notifyHunters("LIGHTFX|"+result.room()+"|"+disruption+"|"+tick+"|"+expires);
         }
-        if(result.action()==GhostDomain.Action.SIGNATURE)
-            for(int i=0;i<HUNTERS;i++)if(seats[i]!=null&&hunterRooms[i]==result.room())
-                reply(seats[i],"TELL|"+GhostTraits.of(ghostType).clue());
-        GhostBehavior.Profile behavior=GhostBehavior.profile(ghostType);
-        if(result.action()==behavior.favored())
-            for(int i=0;i<HUNTERS;i++)if(seats[i]!=null&&mission.alive(i)
-                    &&map.adjacentRooms(result.room()).contains(hunterRooms[i]))
-                reply(seats[i],"TELL|"+behavior.tell());
+        // No ghost-identity clue text is pushed to hunters. Accepted actions
+        // still produce their real manifestations, sound, lights and equipment evidence.
         var score=haunt==null?null:GhostHauntingChoreography.forEvent(haunt.entry().id());
         if(score!=null){
             var track=new HauntTrack(haunt,soundOrigin==null?ghostPose.pose():soundOrigin);
