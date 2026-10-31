@@ -1295,7 +1295,7 @@ public final class InvestigationGame {
                 if(outcome.accepted())GameSfx.play(ability==HunterDiscipline.Ability.SURVEY
                     ?LanSound.Cue.SCANNER:LanSound.Cue.WARD);
             }
-            if(key==KeyEvent.VK_Z||key==KeyEvent.VK_G||key==KeyEvent.VK_H){
+            if(key==KeyEvent.VK_Z||(key==KeyEvent.VK_G&&!ToolBeltHud.placeable(FieldEquipment.campaignId(loadout.equipped())))||key==KeyEvent.VK_H){
                 HunterCounters.Kind kind=key==KeyEvent.VK_Z?HunterCounters.Kind.CROSS:
                     key==KeyEvent.VK_G?HunterCounters.Kind.WARD:HunterCounters.Kind.SALT;
                 boolean deployed=session.deployCounter(kind,scene.x,feetY(),scene.z,scene.yaw);
