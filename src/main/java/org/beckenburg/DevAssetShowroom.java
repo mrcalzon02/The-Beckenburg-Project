@@ -114,6 +114,8 @@ public final class DevAssetShowroom implements AutoCloseable {
         JButton shot=new JButton("Save actual renderer PNG");
         JButton refresh=new JButton("Rescan registry");
         JButton inspect=new JButton("Inspect selected");
+        JButton approve=new JButton("Mark looks correct");
+        JButton needsWork=new JButton("Flag texture/model defect");
         prev.addActionListener(e->changePage(-1));
         next.addActionListener(e->changePage(1));
         shot.addActionListener(e->saveCurrentCapture());
@@ -121,7 +123,9 @@ public final class DevAssetShowroom implements AutoCloseable {
         inspect.addActionListener(e->{
             if(catalog.getSelectedValue()!=null)inspect(catalog.getSelectedValue());
         });
-        for(JButton b:new JButton[]{prev,next,shot,refresh,inspect})buttons.add(b);
+        approve.addActionListener(e->recordManualReview("VISUAL_APPROVED"));
+        needsWork.addActionListener(e->recordManualReview("NEEDS_REPAIR"));
+        for(JButton b:new JButton[]{prev,next,shot,refresh,inspect,approve,needsWork})buttons.add(b);
         JPanel right=new JPanel(new BorderLayout());
         right.add(buttons,BorderLayout.NORTH);right.add(viewport,BorderLayout.CENTER);
         status.setBorder(BorderFactory.createEmptyBorder(6,12,7,12));
@@ -225,6 +229,27 @@ public final class DevAssetShowroom implements AutoCloseable {
             }
             d.dispose();
         }
+    }
+    /** Human signoff is stored separately from automatically checked-in source art. */
+    private void recordManualReview(String verdict){
+        DevAssetReviewCatalog.Entry e=catalog.getSelectedValue();
+        if(e==null&&selected>=0&&selected<bay.size())e=bay.get(selected);
+        if(e==null){status.setText("Choose an asset first");return;}
+        String comment=JOptionPane.showInputDialog(window,
+            verdict.equals("NEEDS_REPAIR")?"Describe the visible issue (UV/texture/sprite/model):":
+                "Visual review note (original source fidelity verified):",
+            "DEV ROOM / "+e.key(),JOptionPane.PLAIN_MESSAGE);
+        if(comment==null)return;
+        try{
+            Path file=outputRoot().getParent().resolve("manual-review.csv");
+            Files.createDirectories(file.getParent());
+            if(!Files.exists(file))Files.writeString(file,
+                "time,asset,decision,comment\\n",StandardCharsets.UTF_8);
+            Files.writeString(file,csv(java.time.Instant.now().toString())+","+
+                csv(e.key())+","+verdict+","+csv(comment)+"\n",
+                StandardCharsets.UTF_8,java.nio.file.StandardOpenOption.APPEND);
+            status.setText("Review decision saved for "+e.key()+" → "+file);
+        }catch(IOException failure){status.setText("Could not save review: "+failure.getMessage());}
     }
     private static Path outputRoot(){
         return Path.of(System.getProperty("user.home"),".beckenburg","dev-room","captures");
