@@ -128,6 +128,10 @@ if [ "${1:-}" = "--capture-only" ]; then
     exit 0
 fi
 javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/hbnet/*.java src/test/java/org/beckenburg/*.java
+# Cosmetic HUD composition diagnostics must never block a functional game release.
+if ! java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.ToolBeltHudTest; then
+    printf '%s\n' 'ADVISORY: hunter tool belt/held-device presentation check failed (nonblocking)' >&2
+fi
 # Preserve case-start trace lifecycle parity with the mandatory Windows manifest.
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.BeckenburgDeveloperTraceTest
 # Verify authored multi-storey levels and actual packaged scenery.
