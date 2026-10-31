@@ -61,7 +61,15 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         look=new MouseLook(this,(dx,dy)->MouseLook.rotate(renderer,dx,dy),()->!archive.opened()&&!storeOpen);
         addKeyListener(this);addFocusListener(this);addFocusListener(look);
         addMouseListener(look);addMouseMotionListener(look);
-        addMouseListener(new MouseAdapter(){@Override public void mousePressed(MouseEvent e){if(archive.opened()&&e.getButton()==MouseEvent.BUTTON1){CastleArchive.click(archive,e.getX(),e.getY(),getWidth(),getHeight());repaint();}}});
+        addMouseListener(new MouseAdapter(){
+            @Override public void mousePressed(MouseEvent e){
+                if(archive.opened()&&e.getButton()==MouseEvent.BUTTON1){
+                    CastleArchive.click(archive,e.getX(),e.getY(),getWidth(),getHeight());
+                    if(!archive.opened())look.resume();
+                    repaint();
+                }
+            }
+        });
         addMouseWheelListener(e->{if(archive.opened()){archive.scroll(e.getWheelRotation()*3);repaint();}});
         renderer.drawCastle(map,0);
         timer=new javax.swing.Timer(33,e->frame());timer.start();
