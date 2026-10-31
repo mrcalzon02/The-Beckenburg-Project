@@ -1638,13 +1638,6 @@ public final class InvestigationGame {
                 g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
                 g.drawString(status,24,66);
                 g.setColor(new Color(232,225,195));g.drawString("+",width/2-4,stageH/2+4);
-                String msg=session.hudMessage();
-                if(!msg.isBlank()){
-                    if(msg.length()>75)msg=msg.substring(0,72)+"...";
-                    g.setColor(new Color(14,19,25,228));
-                    g.fillRoundRect(12,88,Math.min(width-24,610),30,7,7);
-                    g.setColor(new Color(182,218,205));g.drawString(msg,23,108);
-                }
                 if(assistant!=null){
                     g.setColor(new Color(13,20,27,224));
                     g.fillRoundRect(12,157,Math.min(width-24,685),39,7,7);
@@ -1656,7 +1649,6 @@ public final class InvestigationGame {
                     g.drawString(observed.substring(0,Math.min(88,observed.length())),23,190);
                 }
                 drawTeamChat(g,width,stageH);
-                drawChapterNarration(g,width,stageH);
                 if(lastPing!=null && callouts.visible(session.ticks()).contains(lastPing)){
                     g.setColor(new Color(238,196,109));
                     g.drawString("CALLOUT: "+lastPing.phrase().spoken+" ["+map.roomName(lastPing.zone())+"]",23,139);
@@ -1670,10 +1662,6 @@ public final class InvestigationGame {
                 g.setColor(new Color(13,19,25,215));g.fillRoundRect(Math.max(12,width-126),12,114,30,8,8);
                 g.setColor(new Color(225,219,200));g.drawString("ESC PAUSE",Math.max(23,width-116),32);
                 if(!journalShown&&!mapShown&&!briefingShown&&focusedVanPanel==null&&!wheelOpen&&!helpVisible)InteractionFocus.draw(g,width,stageH,focusTarget());
-                if(vanNoticeExpires>session.ticks()){
-                    g.setColor(new Color(160,218,216));
-                    g.drawString(vanNotice.substring(0,Math.min(vanNotice.length(),78)),24,Math.max(146,stageH-155));
-                }
                 // Always-on instrument sidebar while physically inside the van.
                 if(insideVan())drawVanMeters(g);
                 if(briefingShown)drawBriefing(g);
