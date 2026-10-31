@@ -187,6 +187,9 @@ final class RecordedSfx {
         if(cue==LanSound.Cue.FOOTFALL&&original("ghost_line_26.wav")!=null)
             return true;
 
+        if(cue==LanSound.Cue.SPIRIT_BOX_LEAVE||cue==LanSound.Cue.SPIRIT_BOX_HELP
+                ||cue==LanSound.Cue.SPIRIT_BOX_HERE||cue==LanSound.Cue.SPIRIT_BOX_OUT)
+            return original(cue.name().toLowerCase(java.util.Locale.ROOT)+".wav")!=null;
         if(cue==LanSound.Cue.WHISPER&&original("ghost_idles.wav")!=null)return true;
         if(cue==LanSound.Cue.IMPACT&&original("ghost_jump.wav")!=null)return true;
         if(cue==LanSound.Cue.MANIFEST||cue==LanSound.Cue.STRIKE
