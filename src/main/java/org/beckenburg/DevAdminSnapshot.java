@@ -18,6 +18,8 @@ public record DevAdminSnapshot(
         GhostIdentity.Type trueGhostType,
         GhostIdentity.Type hunterIdentification,
         LanCase.Outcome outcome,
+        String doorSnapshot,
+        String windowSnapshot,
         List<String> observedCasefile) {
 
     public record Hunter(String seat, boolean connected, boolean ready,
@@ -41,6 +43,8 @@ public record DevAdminSnapshot(
         Objects.requireNonNull(ghost);
         Objects.requireNonNull(trueGhostType);
         Objects.requireNonNull(outcome);
+        Objects.requireNonNull(doorSnapshot);
+        Objects.requireNonNull(windowSnapshot);
     }
 
     public int connectedPlayers() {
