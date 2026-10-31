@@ -27,7 +27,7 @@ public final class ToolBeltHudTest {
                 new String[]{"EMF_READER","THERMOMETER","SPIRIT_BOX","DOTS_PROJECTOR"},
                 3,null,true,false,true,135);
         }finally{g.dispose();}
-        require((frame.getRGB(425,525)>>>24)!=0,"center belt visible");
+        require((frame.getRGB(456,500)>>>24)!=0,"center belt visible");
         System.out.println("ToolBeltHudTest PASS");
     }
     private static void require(boolean condition,String description){
