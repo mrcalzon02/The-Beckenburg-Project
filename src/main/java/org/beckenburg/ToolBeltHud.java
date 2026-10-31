@@ -32,6 +32,14 @@ public final class ToolBeltHud {
         };
     }
     private static String normal(String name){return name==null?"":name.toUpperCase(Locale.ROOT);}
+    static int focusedReadingX(int width,double raised){
+        double amount=Math.max(0,Math.min(1,raised));
+        return (int)Math.round((width-138)*(1-amount)+width*.50*amount);
+    }
+    static int focusedReadingY(int height,double raised){
+        double amount=Math.max(0,Math.min(1,raised));
+        return Math.max(12,(int)Math.round((height-250)*(1-amount)+height*.25*amount));
+    }
     public static final class Grip {
         private boolean held;
         private double amount;
@@ -47,6 +55,12 @@ public final class ToolBeltHud {
     }
     public static void draw(Graphics2D original,int width,int height,String[] slots,
             int active,String reading,boolean held,boolean powered,boolean placing,int rotation){
+        draw(original,width,height,slots,active,reading,held,powered,placing,rotation,held?1:0);
+    }
+    /** The focused reading travels with the tool's actual raised pose. */
+    public static void draw(Graphics2D original,int width,int height,String[] slots,
+            int active,String reading,boolean held,boolean powered,boolean placing,int rotation,
+            double raised){
         if(original==null||slots==null||slots.length!=4||active<0||active>=4
                 ||width<310||height<220)return;
         Graphics2D g=(Graphics2D)original.create();
@@ -91,13 +105,17 @@ public final class ToolBeltHud {
             g.fillRoundRect((width-statusW)/2,y-59,statusW,22,5,5);
             g.setColor(new Color(181,233,200));
             g.drawString(status,(width-statusW)/2+8,y-44);
-            if(reading!=null&&!reading.isBlank()&&held){
+            if(reading!=null&&!reading.isBlank()&&(held||raised>.02)){
+                // Follow the same easing value as HeldToolView, not a separate
+                // HUD timer. Keep the reading in the useful central sight area.
                 String clipped=reading.substring(0,Math.min(reading.length(),Math.max(18,(width-48)/8)));
                 int rw=Math.min(width-24,g.getFontMetrics().stringWidth(clipped)+16);
+                int cx=focusedReadingX(width,raised),top=focusedReadingY(height,raised);
+                int rx=Math.max(12,Math.min(width-rw-12,cx-rw/2));
                 g.setColor(new Color(11,27,24,235));
-                g.fillRoundRect((width-rw)/2,y-84,rw,22,5,5);
+                g.fillRoundRect(rx,top,rw,25,5,5);
                 g.setColor(new Color(140,235,183));
-                g.drawString(clipped,(width-rw)/2+8,y-69);
+                g.drawString(clipped,rx+8,top+17);
             }
             if(placing){
                 int cx=width/2,cy=height/2;
