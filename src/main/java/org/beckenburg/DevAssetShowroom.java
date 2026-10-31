@@ -40,6 +40,7 @@ public final class DevAssetShowroom implements AutoCloseable {
     private int page,selected=-1,dragX,dragY;
     private boolean closed;
     private double clock,rotation;
+    private DevTerrainTopologyLab topologyLab;
 
     private DevAssetShowroom(){
         if(GraphicsEnvironment.isHeadless())throw new IllegalStateException("Dev room requires a graphical desktop");
@@ -116,6 +117,9 @@ public final class DevAssetShowroom implements AutoCloseable {
         JButton inspect=new JButton("Inspect selected");
         JButton approve=new JButton("Mark looks correct");
         JButton needsWork=new JButton("Flag texture/model defect");
+        JButton topologyButton=new JButton("Topology QA on/off");
+        JButton topologyEdit=new JButton("Edit QA topology");
+        JButton topologyReload=new JButton("Reload QA topology");
         prev.addActionListener(e->changePage(-1));
         next.addActionListener(e->changePage(1));
         shot.addActionListener(e->saveCurrentCapture());
@@ -125,7 +129,11 @@ public final class DevAssetShowroom implements AutoCloseable {
         });
         approve.addActionListener(e->recordManualReview("VISUAL_APPROVED"));
         needsWork.addActionListener(e->recordManualReview("NEEDS_REPAIR"));
-        for(JButton b:new JButton[]{prev,next,shot,refresh,inspect,approve,needsWork})buttons.add(b);
+        topologyButton.addActionListener(e->toggleTopology());
+        topologyEdit.addActionListener(e->editTopology());
+        topologyReload.addActionListener(e->reloadTopology());
+        for(JButton b:new JButton[]{prev,next,shot,refresh,inspect,approve,needsWork,
+                                    topologyButton,topologyEdit,topologyReload})buttons.add(b);
         JPanel right=new JPanel(new BorderLayout());
         right.add(buttons,BorderLayout.NORTH);right.add(viewport,BorderLayout.CENTER);
         status.setBorder(BorderFactory.createEmptyBorder(6,12,7,12));
@@ -192,6 +200,51 @@ public final class DevAssetShowroom implements AutoCloseable {
             "\n"+a.details()+
             "\n\nSTATUS IS DIAGNOSTIC ONLY. Inspect screenshot and source UVs before approving art.");
     }
+    private void toggleTopology(){
+        if(topologyLab!=null){
+            topologyLab=null;
+            status.setText("DEV ROOM: topology QA off; original showroom unchanged.");
+            return;
+        }
+        try{
+            topologyLab=DevTerrainTopologyLab.open();
+            renderer.x=8.1;renderer.z=0.2;renderer.eyeHeight=1.45;
+            renderer.yaw=0;renderer.pitch=-.26;
+            status.setText("3D TOPOLOGY QA on: "+topologyLab.splitCount()+
+                " authored splits, "+topologyLab.triangles().size()+
+                " triangles. Model stands preserved; collision/LOD NOT integrated.");
+            viewport.requestFocusInWindow();
+        }catch(IOException|RuntimeException failure){
+            status.setText("Topology QA unavailable: "+failure.getMessage());
+        }
+    }
+    private void editTopology(){
+        if(topologyLab==null){
+            status.setText("Enable Topology QA to create/open isolated test source world first.");
+            return;
+        }
+        try{
+            JFrame editor=org.beckenburg.editor.AdaptiveTopologyEditor.open(
+                window,topologyLab.source(),0,0);
+            editor.addWindowListener(new WindowAdapter(){
+                @Override public void windowClosed(WindowEvent e){reloadTopology();}
+            });
+        }catch(IOException|RuntimeException failure){
+            status.setText("Cannot open topology editor: "+failure.getMessage());
+        }
+    }
+    private void reloadTopology(){
+        if(topologyLab==null){status.setText("Topology QA is off.");return;}
+        try{
+            topologyLab.refresh();
+            status.setText("REAL 3D topology QA readback: "+topologyLab.splitCount()+
+                " splits, "+topologyLab.triangles().size()+
+                " triangles; source heightmaps unchanged; NO gameplay collision yet.");
+        }catch(IOException|RuntimeException failure){
+            status.setText("Topology readback rejected; previous QA mesh retained: "+
+                failure.getMessage());
+        }
+    }
     private void frame(){
         if(closed)return;
         double step=keys.contains(KeyEvent.VK_SHIFT)?.7:.27;
@@ -203,7 +256,8 @@ public final class DevAssetShowroom implements AutoCloseable {
         if(keys.contains(KeyEvent.VK_E))renderer.eyeHeight+=step;
         if(keys.contains(KeyEvent.VK_LEFT))renderer.yaw-=.065;
         if(keys.contains(KeyEvent.VK_RIGHT))renderer.yaw+=.065;
-        try{renderer.drawDevAssetRoom(bay,clock+=.06,rotation);}
+        try{renderer.drawDevAssetRoom(bay,clock+=.06,rotation,
+                 topologyLab==null?List.of():topologyLab.triangles());}
         catch(RuntimeException problem){
             details.setText("DEV ROOM RENDER FAILURE\n"+problem);
             timer.stop();BeckenburgDiagnostics.fail("Developer asset review",problem);
@@ -374,14 +428,36 @@ public final class DevAssetShowroom implements AutoCloseable {
         Files.writeString(folder.resolve("review-summary.txt"),status,StandardCharsets.UTF_8);
         System.out.println(status);
     }
+    /** Real renderer capture of the opt-in topology source patch, not concept art. */
+    public static void captureTopology(Path folder)throws IOException {
+        DevTerrainTopologyLab lab=DevTerrainTopologyLab.open();
+        Files.createDirectories(folder);
+        SceneRenderer scene=new SceneRenderer();
+        scene.setRenderSize(640,400);
+        scene.x=8.1;scene.z=.2;scene.eyeHeight=1.45;scene.yaw=0;
+        scene.pitch=-.26;scene.lamp=false;
+        scene.drawDevAssetRoom(List.of(),0,0,lab.triangles());
+        Path image=folder.resolve("terrain-topology-devroom-real-render.png");
+        if(!ImageIO.write(scene.image(),"png",image.toFile()))
+            throw new IOException("No real PNG renderer encoder available");
+        Files.writeString(folder.resolve("terrain-topology-devroom-report.txt"),
+            "source="+lab.source().directory()+"\n"+
+            "splits="+lab.splitCount()+"\n"+
+            "actualSourceDerivedTriangles="+lab.triangles().size()+"\n"+
+            "renderer=SceneRenderer.drawDevAssetRoom\n"+
+            "status=DEV QA patch only; gameplay collision/LOD not wired\n",
+            StandardCharsets.UTF_8);
+        System.out.println("Rendered actual DEV ROOM terrain QA PNG: "+image);
+    }
     private static String csv(String value){return "\""+value.replace("\"","\"\"").replace("\n"," ")+"\"";}
     public static void main(String[] args)throws Exception{
-        boolean selected=false,capture=false;
+        boolean selected=false,capture=false,terrainCapture=false;
         int limit=0;Path output=Path.of("build","dev-room");
         String focus=null;
         for(String arg:args){
             if(arg.equals("--dev-room"))selected=true;
             else if(arg.equals("--capture"))capture=true;
+            else if(arg.equals("--terrain-qa-capture"))terrainCapture=true;
             else if(arg.startsWith("--limit="))limit=Integer.parseInt(arg.substring(8));
             else if(arg.startsWith("--output="))output=Path.of(arg.substring(9));
             else if(arg.startsWith("--asset="))focus=arg.substring(8);
@@ -389,6 +465,9 @@ public final class DevAssetShowroom implements AutoCloseable {
         }
         if(!selected)throw new IllegalArgumentException("Explicit --dev-room required");
         if(limit<0||limit>10000)throw new IllegalArgumentException("Invalid review limit");
+        if(capture&&terrainCapture)
+            throw new IllegalArgumentException("Choose either model capture or topology QA capture");
+        if(terrainCapture){captureTopology(output);return;}
         if(capture){capture(output,limit,focus);return;}
         if(GraphicsEnvironment.isHeadless())
             throw new IllegalStateException("Interactive dev room requires a desktop; use --capture for headless");
