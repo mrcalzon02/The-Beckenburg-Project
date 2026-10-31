@@ -66,12 +66,12 @@ public final class AdaptiveNavigationRegions {
         private final List<List<Edge>> adjacent;
         private final Metrics metrics;
         Graph(LayeredTerrainQueries query,Profile profile,List<Region> regions,
-              List<List<Edge>> adjacent,int evaluated) {
+              List<List<Edge>> adjacent,int evaluated,int rejected) {
             this.query=query;this.profile=profile;
             this.regions=List.copyOf(regions);
             this.adjacent=adjacent.stream().map(List::copyOf).toList();
             int links=this.adjacent.stream().mapToInt(List::size).sum();
-            this.metrics=new Metrics(evaluated,regions.size(),links,0,query.topologyRevision());
+            this.metrics=new Metrics(evaluated,regions.size(),links,rejected,query.topologyRevision());
         }
         public List<Region> regions(){return regions;}
         public Metrics metrics(){return metrics;}
@@ -161,7 +161,7 @@ public final class AdaptiveNavigationRegions {
     private final double minCell;
     private final ArrayList<Region> regions=new ArrayList<>();
     private final List<List<Edge>> adjacent=new ArrayList<>();
-    private int evaluated;
+    private int evaluated,rejected;
     private AdaptiveNavigationRegions(LayeredTerrainQueries query,Profile profile,
                                       double minCell) {
         this.query=query;this.profile=profile;this.minCell=minCell;
@@ -186,7 +186,8 @@ public final class AdaptiveNavigationRegions {
         for(int i=0;i<builder.regions.size();i++)builder.adjacent.add(new ArrayList<>());
         builder.joinPeers();
         builder.joinTransitions(transitions);
-        return new Graph(query,profile,builder.regions,builder.adjacent,builder.evaluated);
+        return new Graph(query,profile,builder.regions,builder.adjacent,
+            builder.evaluated,builder.rejected);
     }
     private boolean safe(String layer,double x,double z)throws IOException {
         return query.canStand(layer,x,z,profile.footprint());
@@ -234,13 +235,14 @@ public final class AdaptiveNavigationRegions {
                 }
                 return;
             }
-            if(!safe||details)return;
+            if(!safe||details){rejected++;return;}
         }
         if(regions.size()>=MAX_REGIONS)
             throw new IllegalStateException("Navigation region budget exceeded");
         var support=query.support(layer,(x0+x1)*.5,(z0+z1)*.5);
         if(support!=null)
             regions.add(new Region(regions.size(),layer,x0,z0,x1,z1,support.y()));
+        else rejected++;
     }
     private static double overlap(double a0,double a1,double b0,double b1){
         return Math.min(a1,b1)-Math.max(a0,b0);
