@@ -141,46 +141,29 @@ unblinking_judgment|Unblinking Judgment|SIGNATURE|SIGNATURE|DISTORT|SIGNATURE|95
             LanProtocol.integer(p.get(3),0,99999999));
     }
 
-    /** Low-cost, deterministic PSX disturbance; local-room only, cosmetic only. */
+    /** One animated, event-scoped spectral texture layer, never screen bars.
+     * When several hauntings overlap, render the strongest active effect once:
+     * avoid stacking multiple full-screen passes and hiding the investigation.
+     */
     public static void paint(int[] pixels,int width,int height,List<Occurrence> events,int room,int tick){
         if(room<0||events==null||events.isEmpty())return;
+        Occurrence strongest=null;
+        double peak=0;
         for(Occurrence event:events){
-            if(!event.active(tick,room))continue;
-            // Selected bespoke scores override—not stack atop—the generic filter.
-            if(GhostHauntingChoreography.forEvent(event.entry().id())!=null){
-                GhostHauntingChoreography.paint(pixels,width,height,event,tick);
-                continue;
-            }
-            double life=(tick-event.startTick())/(double)event.entry().duration();
-            int strength=(int)Math.round(34*Math.sin(Math.PI*life));
-            if(strength<=0)continue;
-            for(int y=0;y<height;y+=2)for(int x=0;x<width;x+=2){
-                double radius=Math.min(1.0,Math.hypot((x-width*.5)/(width*.5),
-                    (y-height*.5)/(height*.5)));
-                int noise=Math.floorMod(x*13+y*7+event.startTick()*3+tick*11,17);
-                int change=switch(event.entry().visual()){
-                    case VEIL-> (int)(strength*(.25+.55*(1-radius)));
-                    case SHADOW-> -(int)(strength*(.35+.65*radius));
-                    case STATIC-> noise<5?strength:-strength/3;
-                    case CHILL-> (int)(strength*(.25+.75*radius));
-                    case PULSE-> ((tick/2+x/16)%6<3?strength:-strength/2);
-                    case DISTORT-> (int)(strength*Math.sin((x+y*.65+tick*3)*.08));
-                };
-                for(int dy=0;dy<2&&y+dy<height;dy++)
-                    for(int dx=0;dx<2&&x+dx<width;dx++){
-                        int at=(y+dy)*width+x+dx,col=pixels[at];
-                        int r=(col>>>16)&255,g=(col>>>8)&255,b=col&255;
-                        if(event.entry().visual()==Visual.CHILL){
-                            r=clamp(r-change/2);g=clamp(g+change/4);b=clamp(b+change);
-                        }else if(event.entry().visual()==Visual.VEIL){
-                            r=clamp(r+change/4);g=clamp(g+change/2);b=clamp(b+change);
-                        }else{
-                            r=clamp(r+change);g=clamp(g+change);b=clamp(b+change);
-                        }
-                        pixels[at]=(r<<16)|(g<<8)|b;
-                    }
-            }
+            if(event==null||!event.active(tick,room))continue;
+            int priority=switch(event.entry().tier()){
+                case AMBIENT->1;case MINOR->2;case MODERATE->3;
+                case MAJOR->4;case DANGEROUS->5;case SIGNATURE->6;
+            };
+            double weight=priority*Math.sin(Math.PI*(tick-event.startTick())
+                /event.entry().duration());
+            if(weight>peak){peak=weight;strongest=event;}
         }
+        if(strongest==null)return;
+        GhostHauntingChoreography.Score score=
+            GhostHauntingChoreography.forEvent(strongest.entry().id());
+        HauntingScreenFx.paint(pixels,width,height,strongest,tick,
+            score==null?null:score.motif());
     }
-    private static int clamp(int value){return Math.max(0,Math.min(255,value));}
+
 }
