@@ -40,6 +40,9 @@ public final class TerrainEntranceMeshTest {
             check(refusedUnconformed,
                 "Un-conformed method-1 seam and tab must not be exported as falsely welded geometry");
             EntranceSeamTopology.apply(world,topology,seams);
+            // A finer leaf on the east side of an existing tile border
+            // must force a conforming midpoint in the west-side coarse face.
+            topology.split(new AdaptiveTerrainTopology.Node(16,6,0,0,0));
             for(int x=6;x<12;x++)for(int z=4;z<6;z++)
                 topology.punch(new AdaptiveTerrainTopology.Node(x,z,0,0,0));
             topology.save();
@@ -91,6 +94,22 @@ public final class TerrainEntranceMeshTest {
             check(parts.stream().anyMatch(x->x.contains("tile-deweld_a"))
                 &&parts.stream().anyMatch(x->x.contains("tile-deweld_b")),
                 "Method 2 existing tile border must keep two separately grouped sides");
+            boolean coarseMid=false,fineMid=false;
+            for(var t:tris){
+                boolean aSide=t.part().contains("tile-deweld_a");
+                boolean bSide=t.part().contains("tile-deweld_b");
+                if(!aSide&&!bSide)continue;
+                for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
+                    if(Math.abs(v.x()-16)<1e-9&&Math.abs(v.z()-6.5)<1e-9){
+                        if(aSide)coarseMid=true;
+                        if(bSide)fineMid=true;
+                        check(Math.abs(v.y()-world.height(16,6.5))<1e-8,
+                            "Both source tile sides must use the exact same seam vertex height");
+                    }
+                }
+            }
+            check(coarseMid&&fineMid,
+                "Coarse and refined terrain sides must both emit shared edge breakpoint at 6.5 m");
             check(parts.stream().anyMatch(x->x.contains("cave-cut_a"))
                 &&parts.stream().anyMatch(x->x.contains("cave-cut_b")),
                 "Method 1 interior seam must keep two separately grouped sides");
