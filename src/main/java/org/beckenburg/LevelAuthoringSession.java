@@ -60,6 +60,10 @@ public final class LevelAuthoringSession implements EditorProject<List<Prop>> {
             ||p.scale()<=0||p.scale()>10||p.halfX()<0||p.halfZ()<0||p.height()<0)
             throw new IllegalArgumentException("Invalid mission prop");
     }
+    public synchronized void resetToSource(){
+        props.clear();props.addAll(source.props());
+    }
+    public LevelDefinition sourceLevel(){return source;}
     public synchronized List<Prop> snapshot(){return List.copyOf(props);}
     public synchronized void restore(List<Prop> snapshot){
         Objects.requireNonNull(snapshot);
