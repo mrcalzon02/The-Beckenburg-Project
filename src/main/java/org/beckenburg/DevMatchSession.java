@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
@@ -31,9 +33,18 @@ public final class DevMatchSession {
         final String label;
         final LanClient client;
         final CopyOnWriteArrayList<String> frames=new CopyOnWriteArrayList<>();
+        private volatile DevMatchClientAi driver;
         Peer(int port,String name,boolean ghost,String ownerCredential)throws IOException {
             label=name;
-            client=new LanClient(HOST,port,ghost,name,"",ownerCredential,frames::add);
+            client=new LanClient(HOST,port,ghost,name,"",ownerCredential,frame->{
+                DevMatchClientAi bot=driver;
+                if(bot==null)frames.add(frame);else bot.onFrame(frame);
+            });
+        }
+        void attach(DevMatchClientAi bot){
+            driver=bot;
+            for(String frame:frames)bot.onFrame(frame);
+            frames.clear();
         }
         int mark(){return frames.size();}
         String waitFor(int start,Predicate<String> filter,String description,long timeoutMillis)throws Exception {
@@ -100,7 +111,7 @@ public final class DevMatchSession {
         snapshots.add(b.append("]}").toString());
     }
 
-    private void execute(int seconds)throws Exception {
+    private void execute(int seconds,boolean admin,boolean continuousBots)throws Exception {
         List<Peer> peers=new ArrayList<>();
         try(LanHost host=new LanHost(HOST,0,GhostIdentity.Type.SPIRIT,
                 CustomContract.standard(6),false,true,HouseMap.Site.HOUSE)){
@@ -194,13 +205,38 @@ public final class DevMatchSession {
                             ||f.startsWith("REJECT|"),"ordinary major ghost command",6000),
                         host.devAdminSnapshot().tick());
 
-                long until=System.nanoTime()+TimeUnit.SECONDS.toNanos(seconds);
-                while(System.nanoTime()<until){
-                    DevAdminSnapshot now=host.devAdminSnapshot();
-                    require(now.connectedPlayers()==7,"lost a real TCP player connection");
-                    require(!now.ghost().hostAiFallback(),"host fallback enabled while ghost occupied");
-                    capture(now);
-                    Thread.sleep(250);
+                Map<String,String> botIntents=new ConcurrentHashMap<>();
+                List<DevMatchClientAi> drivers=new ArrayList<>();
+                DevAdminPanel adminPanel=null;
+                try{
+                    if(continuousBots){
+                        for(int i=0;i<peers.size();i++){
+                            Peer p=peers.get(i);
+                            DevMatchClientAi bot=new DevMatchClientAi(p.client,
+                                HouseMap.Site.HOUSE,botIntents,i+1);
+                            p.attach(bot);
+                            drivers.add(bot);
+                            bot.begin();
+                        }
+                    }
+                    if(admin){
+                        adminPanel=DevAdminPanel.open(host,HouseMap.Site.HOUSE,
+                            botIntents,()->{});
+                        System.out.println("ADMIN (YOU): six hunter sockets and one ghost socket; ADMIN off-seat.");
+                    }
+                    long until=seconds==0?Long.MAX_VALUE:
+                        System.nanoTime()+TimeUnit.SECONDS.toNanos(seconds);
+                    while(System.nanoTime()<until && (adminPanel==null||adminPanel.isOpen())){
+                        DevAdminSnapshot now=host.devAdminSnapshot();
+                        require(now.connectedPlayers()==7,"lost a real TCP player connection");
+                        require(!now.ghost().hostAiFallback(),"host fallback enabled while ghost occupied");
+                        capture(now);
+                        if(snapshots.size()>4000)snapshots.subList(0,2000).clear();
+                        Thread.sleep(250);
+                    }
+                }finally{
+                    if(adminPanel!=null)adminPanel.close();
+                    for(DevMatchClientAi driver:drivers)driver.close();
                 }
                 DevAdminSnapshot after=host.devAdminSnapshot();
                 capture(after);
@@ -211,7 +247,10 @@ public final class DevMatchSession {
                     "PASS: seven ordinary LAN clients connected, ready and entered match.\n"+
                     "Six hunter clients issued scans and spatial inputs; ghost client issued spatial and major inputs.\n"+
                     "Admin is a separate host-local read-only snapshot, not a player.\n"+
-                    "Phase 0 smoke only: full autonomous hunting, free-fly UI and outcome testing NOT YET IMPLEMENTED.\n"+
+                    (admin?"Human developer admin viewer ran; free-fly, follow and evidence inspection enabled.\\n":
+                      continuousBots?"Continuous ordinary-client basic AI drivers operated.\\n":
+                      "Phase 0 smoke only; no sustained AI drivers.\\n")+
+                    "Full autonomous investigation, warding and rituals NOT YET IMPLEMENTED.\\n"+
                     "Latest tick: "+after.tick()+"; outcome: "+after.outcome()+"\n",
                     StandardCharsets.UTF_8);
                 Files.writeString(OUTPUT.resolve("host-profiling.csv"),
@@ -225,20 +264,28 @@ public final class DevMatchSession {
 
     public static void main(String[] args)throws Exception {
         boolean selected=false;
-        int seconds=6;
+        int seconds=-1;
+        boolean admin=false,continuousBots=false;
         for(String arg:args){
             if(arg.equals("--dev-ai-match"))selected=true;
+            else if(arg.equals("--admin")){admin=true;continuousBots=true;}
+            else if(arg.equals("--bots"))continuousBots=true;
             else if(arg.startsWith("--seconds="))seconds=Integer.parseInt(arg.substring(10));
             else throw new IllegalArgumentException("unexpected developer option: "+arg);
         }
         if(!selected)throw new IllegalArgumentException("explicit --dev-ai-match required; not a public menu mode");
-        if(seconds<2||seconds>120)throw new IllegalArgumentException("bounded seconds must be 2..120");
+        if(seconds<0)seconds=admin?0:6;
+        if(seconds==0&&!admin)throw new IllegalArgumentException("unbounded duration requires --admin");
+        if(seconds<0||seconds>3600||(seconds>0&&seconds<2))
+            throw new IllegalArgumentException("duration must be 2..3600 seconds, or 0 for ADMIN");
+        if(admin&&java.awt.GraphicsEnvironment.isHeadless())
+            throw new IllegalStateException("--admin needs an interactive desktop (use --bots for CI)");
         Files.createDirectories(OUTPUT);
         DevMatchSession session=new DevMatchSession();
         String status="STARTUP_FAILURE";
         try{
-            session.execute(seconds);
-            status="PHASE_0_PASS";
+            session.execute(seconds,admin,continuousBots);
+            status=admin?"DEV_ADMIN_CLOSED":continuousBots?"DEV_BOTS_PASS":"PHASE_0_PASS";
         }catch(Throwable error){
             status="FAIL: "+error;
             Files.writeString(OUTPUT.resolve("result.txt"),status+"\n",StandardCharsets.UTF_8);
