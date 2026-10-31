@@ -60,44 +60,93 @@ public final class DeveloperLevelEditor extends JPanel {
         if(answer==JOptionPane.CANCEL_OPTION||answer==JOptionPane.CLOSED_OPTION)return false;
         return answer!=JOptionPane.YES_OPTION||saveCurrent();
     }
+    private void openMission(HouseMap.Site site)throws IOException{
+        var loaded=new LevelAuthoringSession(site);
+        // Use the playable HouseMap itself, not a second scene interpretation.
+        var playable=new HouseMap(site,loaded.level());
+        mission=loaded;missionSite=site;
+        missionHistory=new EditorHistory<>(loaded,60);missionMap=playable;
+        var spawn=playable.level().room(0).spawn();
+        renderer.x=spawn.x();renderer.z=spawn.z();
+        renderer.eyeHeight=spawn.y()+1.62;renderer.yaw=0;renderer.pitch=-.12;
+        workPlane.setValue(spawn.y());
+    }
+    private void finishSceneOpen(){
+        chosen=null;renderer.clearEditorSelection();lightVolumeOverlay.setSelected(false);
+        lightVolume=null;lightVolumeKey="";filter.setText("");
+        refresh();
+        window.setTitle("Beckenburg — Developer Level Editor — "+
+            (mission==null?"Castle Beckenburg":mission.title()));
+        status.setText("OPEN  "+(mission==null?data.path():mission.documentPath()));
+        viewport.requestFocusInWindow();
+    }
     private void selectLevel(){
         var names=new ArrayList<String>();
         names.add("CASTLE BECKENBURG");
-        for(var site:HouseMap.Site.values())if(site!=HouseMap.Site.HOLLOW_CREEK)
-            names.add(site.name());
-        String before=missionSite==null?"CASTLE BECKENBURG":missionSite.name();
+        for(var site:HouseMap.Site.values())
+            if(site!=HouseMap.Site.HOLLOW_CREEK&&site!=HouseMap.Site.USER)
+                names.add(site.name());
+        try{
+            for(String id:UserLevelLibrary.names())names.add("USER: "+id);
+        }catch(IOException problem){
+            JOptionPane.showMessageDialog(window,problem.getMessage(),
+                "Cannot enumerate user levels",JOptionPane.ERROR_MESSAGE);return;
+        }
+        String before=missionSite==null?"CASTLE BECKENBURG":
+            missionSite==HouseMap.Site.USER?"USER: "+UserLevelLibrary.activeId():missionSite.name();
         String choice=(String)JOptionPane.showInputDialog(window,
-            "Open an existing game level. Edits use that level's real geometry and models.",
+            "Open an existing game level (including saved custom levels).",
             "OPEN LEVEL",JOptionPane.PLAIN_MESSAGE,null,names.toArray(),before);
         if(choice==null||choice.equals(before)||!confirmSceneSwitch())return;
+        String previousUser=UserLevelLibrary.activeId();
         try{
             if(choice.equals("CASTLE BECKENBURG")){
                 mission=null;missionSite=null;missionHistory=null;missionMap=null;
                 double[] spawn=data.spawn();
                 renderer.x=spawn[0];renderer.z=spawn[1];renderer.eyeHeight=1.62;
                 renderer.yaw=spawn[2];renderer.pitch=-.12;
-            }else{
-                var site=HouseMap.Site.valueOf(choice);
-                var loaded=new LevelAuthoringSession(site);
-                // Prepare the real game map before replacing the visible level.
-                var playable=new HouseMap(site,loaded.level());
-                mission=loaded;missionSite=site;
-                missionHistory=new EditorHistory<>(loaded,60);missionMap=playable;
-                var spawn=playable.level().room(0).spawn();
-                renderer.x=spawn.x();renderer.z=spawn.z();
-                renderer.eyeHeight=spawn.y()+1.62;renderer.yaw=0;renderer.pitch=-.12;
-            }
-            chosen=null;renderer.clearEditorSelection();lightVolumeOverlay.setSelected(false);
-            lightVolume=null;lightVolumeKey="";filter.setText("");
-            refresh();
-            window.setTitle("Beckenburg — Developer Level Editor — "+
-                (mission==null?"Castle Beckenburg":mission.title()));
-            status.setText("OPEN  "+(mission==null?data.path():mission.documentPath()));
+                workPlane.setValue(0.);
+            }else if(choice.startsWith("USER: ")){
+                UserLevelLibrary.activate(choice.substring(6));
+                openMission(HouseMap.Site.USER);
+            }else openMission(HouseMap.Site.valueOf(choice));
+            finishSceneOpen();
         }catch(Exception failure){
+            try{
+                if(previousUser!=null)UserLevelLibrary.activate(previousUser);
+            }catch(IOException restoreFailed){failure.addSuppressed(restoreFailed);}
             JOptionPane.showMessageDialog(window,failure.toString(),
                 "Could not open level",JOptionPane.ERROR_MESSAGE);
         }
-        viewport.requestFocusInWindow();
+    }
+    private void newLevel(){
+        if(!confirmSceneSwitch())return;
+        String id=JOptionPane.showInputDialog(window,
+            "New level ID (letters, numbers, underscores or hyphens):",
+            "NEW LEVEL",JOptionPane.PLAIN_MESSAGE);
+        if(id==null)return;
+        id=id.strip();
+        var sources=new ArrayList<HouseMap.Site>();
+        for(var site:HouseMap.Site.values())
+            if(site!=HouseMap.Site.HOLLOW_CREEK&&site!=HouseMap.Site.USER)sources.add(site);
+        HouseMap.Site template=(HouseMap.Site)JOptionPane.showInputDialog(window,
+            "Choose an existing level as the initial architecture and gameplay scaffold.",
+            "NEW LEVEL",JOptionPane.PLAIN_MESSAGE,null,sources.toArray(),
+            HouseMap.Site.HOUSE);
+        if(template==null)return;
+        String prior=UserLevelLibrary.activeId();
+        try{
+            UserLevelLibrary.create(id,template);
+            openMission(HouseMap.Site.USER);
+            finishSceneOpen();
+            status.setText("CREATED "+id+" from "+template+
+                " • SAVE edits; the active custom level appears in solo investigations");
+        }catch(Exception failure){
+            try{if(prior!=null)UserLevelLibrary.activate(prior);}
+            catch(IOException restoreFailed){failure.addSuppressed(restoreFailed);}
+            JOptionPane.showMessageDialog(window,failure.toString(),
+                "New level failed",JOptionPane.ERROR_MESSAGE);
+        }
     }
     private int selectedProp(){
         if(chosen==null||!"MISSION_PROP".equals(chosen.kind))return -1;
@@ -368,10 +417,12 @@ public final class DeveloperLevelEditor extends JPanel {
         var commands=new JPanel(new FlowLayout(FlowLayout.RIGHT,4,0));
         JButton save=button("SAVE"),export=button("EXPORT"),reset=button("RESET");
         JButton undoButton=button("UNDO"),redoButton=button("REDO");
-        JButton openLevel=button("OPEN LEVEL");
-        openLevel.setToolTipText("Edit the Castle or an existing investigation level through its game scene");
+        JButton openLevel=button("OPEN LEVEL"),newLevel=button("NEW LEVEL");
+        openLevel.setToolTipText("Open any existing Castle, investigation or saved user level");
         openLevel.addActionListener(e->selectLevel());
-        commands.add(openLevel);
+        newLevel.setToolTipText("Create a named playable level from an existing map scaffold");
+        newLevel.addActionListener(e->newLevel());
+        commands.add(newLevel);commands.add(openLevel);
         undoButton.addActionListener(e->undo());redoButton.addActionListener(e->redo());
         commands.add(undoButton);commands.add(redoButton);
         JButton authoringGuide=button("PSX GUIDE");
