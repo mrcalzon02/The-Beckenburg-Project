@@ -1,0 +1,42 @@
+name: Terrain and Loading Zone Module Acceptance
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/main/java/org/beckenburg/editor/TerrainZoneDocument.java'
+      - 'src/main/java/org/beckenburg/editor/TerrainZoneEditor.java'
+      - 'src/main/java/org/beckenburg/editor/StitchedHeightmapWorld.java'
+      - 'src/test/java/org/beckenburg/editor/TerrainZoneDocumentTest.java'
+      - 'src/test/java/org/beckenburg/editor/StitchedHeightmapWorldTest.java'
+      - 'tools/build-editor-kit.cmd'
+      - '.github/workflows/terrain-world-modules.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  focused-terrain-module-tests:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile real portable editor module
+        shell: cmd
+        run: call tools\build-editor-kit.cmd
+      - name: Terrain and loading-zone document acceptance
+        shell: cmd
+        run: |
+          if not exist build\editor-kit\test mkdir build\editor-kit\test
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\TerrainZoneDocumentTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.TerrainZoneDocumentTest
+          if errorlevel 1 exit /b 1
+      - name: Stitched 16-bit open world heightmap and seam acceptance
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\StitchedHeightmapWorldTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.StitchedHeightmapWorldTest
+          if errorlevel 1 exit /b 1
