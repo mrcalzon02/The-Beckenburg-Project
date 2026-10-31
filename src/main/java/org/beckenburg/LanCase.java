@@ -309,9 +309,7 @@ public final class LanCase {
                 reading="Air "+sample.displayText(EvidenceSignals.Unit.CELSIUS)
                     +" / "+sample.displayText(EvidenceSignals.Unit.FAHRENHEIT);
             }
-            case SPIRIT_BOX -> reading=allowsEvidence(HardEvidenceQuota.Family.SPIRIT_BOX)
-                    &&room==ghostRoom&&room==eventRoom&&eventStrength>0
-                ?"Voice response detected":"No response detected";
+            case SPIRIT_BOX -> reading=SpiritBoxResponses.observation(null);
             default -> throw new AssertionError(tool);
         }
         return new Report(true,"READING "+tool+" in "+room+" - "+reading);
