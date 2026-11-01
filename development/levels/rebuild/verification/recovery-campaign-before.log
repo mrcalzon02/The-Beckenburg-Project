@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Chapter four cannot silently use House geometry as a placeholder
+	at org.beckenburg.CampaignStoryProgressionTest.check(CampaignStoryProgressionTest.java:9)
+	at org.beckenburg.CampaignStoryProgressionTest.main(CampaignStoryProgressionTest.java:109)

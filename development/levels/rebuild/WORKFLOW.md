@@ -50,3 +50,12 @@ See `house/terrain-verification.md`. DEV-174 is fixed for this isolated pilot an
 **Publication boundary:** the evidence/log approval is recorded above. Automatic review subsequently rejected a combined source/native-assets/evidence push because it considered the earlier approval evidence-only. A broader publication question is pending; do not retry that combined upload without its answer. Continue authorized local implementation and scoped local commits. Remote branch last verified at `d406a5f4`; local `be3f9802` and this terrain checkpoint still need authorized publication and exact-SHA CI.
 
 Next: finish the measured rough-plan batch and detailed House facilities/structure/parcel pilot, then propagate its proven construction method. Every basement/cavity must receive its own saved editor opening and physical/optical/render evidence. Remaining mission/LAN/hardware/recovery and all later refinement gates are unchanged.
+
+
+## Dispatch/campaign recovery and publication authorization — 1 November
+
+The owner explicitly approved full rebuild publication: source changes, generated map/model files, Blender scenes, captures, design data and verification evidence on `map/first-principles-rebuild-plan` in `mrcalzon02/The-Beckenburg-Project`. This resolves the earlier combined-upload approval barrier. Publish accumulated checkpoints through the normal expected-head path and verify remote readback; do not keep treating evidence-only scope as the current authorization.
+
+Reproduced and corrected DEV-175: stale selection/campaign checks assumed only three maps before the current nine-built-in/USER catalog. Against the actual packaged JAR, all nine built-ins now render with distinct source ownership, unselected USER and Hollow Creek remain unavailable, and nine physical campaign victories advance one chapter at a time with restart/receipt/no-skip checks. All thirteen unintegrated campaign destinations remain blocked. These recovery checks are explicit advisory steps in the existing room-audit workflow; they do not accept the generic institutional architecture.
+
+Remote main remains `fba22b2a`; previous installer success and older full-round/advisory failures are unchanged at this read. Issue #6 remains open. Next publish/dispatch exact-source audit/full-round/GPU checks, inspect their actual steps and logs, and continue the measured rough-plan batch.

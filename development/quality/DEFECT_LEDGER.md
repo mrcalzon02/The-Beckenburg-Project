@@ -2376,6 +2376,20 @@ Evidence and verification: HouseRebuildTerrainTest passes: 30 saved subdivisions
 
 Older-map obligation: Individually audit House, Farmhouse, School, Church, institutional service basements, crypts, mines, tunnels and all stacked remote cavities.
 
+### DEV-175 — Selection and campaign regressions still assume three built-in maps
+
+**Status:** fixed in regression coverage; no map art or promotion acceptance implied · **Affected:** SiteSelectionTest and CampaignStoryProgressionTest on current nine-built-in catalog plus USER authoring slot
+
+Selection fails its nine-total-enum assumption before rendering; campaign fails after third victory because it assumes chapter four must be unavailable.
+
+Cause / uncertainty: Tests predate the current built-in availability and USER slot; restoring the older lock state would change current production behavior.
+
+Fix / next action: Assert the explicit nine-built-in dispatch contract, isolate the USER profile, render each distinct source and retain prototype rejection. Exercise physical campaign victories, no-skip locks, duplicate-receipt rejection, restart persistence and correct source ownership through all nine available chapters; reject all unintegrated destinations. Run these independently in the existing map audit workflow.
+
+Evidence and verification: Before: SiteSelectionTest fails all-planned-families assertion; CampaignStoryProgressionTest fails fourth-chapter-unavailable assertion. After: both pass against packaged JAR, all nine maps rendered and all nine actual victory gates persisted. Logs in development/levels/rebuild/verification/recovery-*-{before,after}.log. This does not certify generic institution architecture, LAN or physical GPU acceptance.
+
+Older-map obligation: Current dispatch availability does not accept any generic institution layout; rebuilt geometry still requires all per-map gates.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

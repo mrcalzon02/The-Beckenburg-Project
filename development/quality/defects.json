@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "issues": [
     {
       "id": "DEV-001",
@@ -1860,6 +1860,17 @@
       "action": "Use saved editor AdaptiveTerrainTopology punched leaves and actual TerrainEntranceMesh geometry; bind the same missing triangles into real rendering, native body/support and optical queries. Test an unpunched negative control and original PNG byte preservation.",
       "evidence": "HouseRebuildTerrainTest passes: 30 saved subdivisions/52 punched leaves; source PNG unchanged; reopen, idempotence and atomic invalid-boundary rollback; 3,430 exact shared render/body/support/optical faces; real cellar-stair player/object/sight passage; separately published unpunched editor-world control blocks all three. HouseRebuildPhysicsTest still reaches all 15 zones through 61,328 swept positions. TerrainSceneNativePhysicsTest passes existing terrain/rail, stale/tamper and replay checks. Reopened native pilot matches 37,949 runtime triangles/UVs; basement cutaway and actual stair views retained. No all-map acceptance.",
       "older_maps": "Individually audit House, Farmhouse, School, Church, institutional service basements, crypts, mines, tunnels and all stacked remote cavities."
+    },
+    {
+      "id": "DEV-175",
+      "title": "Selection and campaign regressions still assume three built-in maps",
+      "status": "fixed in regression coverage; no map art or promotion acceptance implied",
+      "affected": "SiteSelectionTest and CampaignStoryProgressionTest on current nine-built-in catalog plus USER authoring slot",
+      "symptom": "Selection fails its nine-total-enum assumption before rendering; campaign fails after third victory because it assumes chapter four must be unavailable.",
+      "cause": "Tests predate the current built-in availability and USER slot; restoring the older lock state would change current production behavior.",
+      "action": "Assert the explicit nine-built-in dispatch contract, isolate the USER profile, render each distinct source and retain prototype rejection. Exercise physical campaign victories, no-skip locks, duplicate-receipt rejection, restart persistence and correct source ownership through all nine available chapters; reject all unintegrated destinations. Run these independently in the existing map audit workflow.",
+      "evidence": "Before: SiteSelectionTest fails all-planned-families assertion; CampaignStoryProgressionTest fails fourth-chapter-unavailable assertion. After: both pass against packaged JAR, all nine maps rendered and all nine actual victory gates persisted. Logs in development/levels/rebuild/verification/recovery-*-{before,after}.log. This does not certify generic institution architecture, LAN or physical GPU acceptance.",
+      "older_maps": "Current dispatch availability does not accept any generic institution layout; rebuilt geometry still requires all per-map gates."
     }
   ],
   "audit_categories": [
