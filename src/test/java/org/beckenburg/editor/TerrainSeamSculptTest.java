@@ -80,7 +80,14 @@ public final class TerrainSeamSculptTest {
             // A session can still save as non-destructive edits while a layer
             // document blocks committing it into the original PNG files.
             check(Files.exists(noDuplicate.path()),"Unbaked seam edit remains resumable");
-            System.out.println("PASS shared 4-tile sculpt, undo/redo, save/readback, journaled bake, layer guard");
+            noDuplicate.discard();
+            check(!Files.exists(noDuplicate.path())&&noDuplicate.changedVertices()==0,
+                "Discard clears editing session but never modifies source");
+            check(disk.sample(0,0,32,32)==baked,
+                "Discard preserves last authoritative baked height");
+            check(new TerrainSeamSculpt(disk,0,0).changedVertices()==0,
+                "Reopening discarded session starts clean");
+            System.out.println("PASS shared 4-tile sculpt, undo/redo, save/readback, journaled bake, layer guard and discard");
         }finally{
             try(var walk=Files.walk(root)){
                 for(Path p:walk.sorted(Comparator.reverseOrder()).toList())
