@@ -3,6 +3,8 @@ package org.beckenburg.editor;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;
@@ -108,6 +110,7 @@ public final class TerrainLayerStack {
     private final double step,min,max;
     private final int[] source;
     private long sourceCrc;
+    private String documentFingerprint;
     private final ArrayList<Layer> layers=new ArrayList<>();
     private final byte[] material;
     private final BitSet frozen;
@@ -728,6 +731,25 @@ public final class TerrainLayerStack {
     public Path path(){
         return world.directory().resolve("terrain-layers").resolve("tile_"+tx+"_"+tz+".bin");
     }
+    private static String documentHash(Path path)throws IOException{
+        if(!Files.isRegularFile(path))return null;
+        try {
+            MessageDigest hash=MessageDigest.getInstance("SHA-256");
+            try(var stream=Files.newInputStream(path)){
+                byte[] bytes=new byte[8192];int size;
+                while((size=stream.read(bytes))!=-1)
+                    if(size>0)hash.update(bytes,0,size);
+            }
+            return HexFormat.of().formatHex(hash.digest());
+        }catch(NoSuchAlgorithmException impossible){
+            throw new IllegalStateException("SHA-256 is required by the JDK",impossible);
+        }
+    }
+    /** Detect a second open editor writing the same layer document. */
+    private void verifyDocumentRevision()throws IOException{
+        if(!Objects.equals(documentFingerprint,documentHash(path())))
+            throw new IOException("Terrain layer document changed in another editor; reopen before saving");
+    }
     private void load()throws IOException {
         if(!Files.isRegularFile(path()))return;
         if(Files.size(path())>MAX_LAYERS*(long)pixels*8+pixels*2L+32768)
@@ -769,6 +791,7 @@ public final class TerrainLayerStack {
             }
             if(in.read()!=-1)throw new IOException("Unexpected data after terrain document");
         }
+        documentFingerprint=documentHash(path());
     }
     /**
      * Create a staged copy of a valid saved authoring document with ONLY its
@@ -804,7 +827,7 @@ public final class TerrainLayerStack {
             throw new IOException("Source changed since terrain editor opened: reopen layers");
     }
     public void save()throws IOException {
-        finishStroke();verifyCurrentSource();
+        finishStroke();verifyCurrentSource();verifyDocumentRevision();
         Files.createDirectories(path().getParent());
         Path temp=Files.createTempFile(path().getParent(),".terrain-",".tmp");
         try{
@@ -821,6 +844,7 @@ public final class TerrainLayerStack {
                 for(int i=frozen.nextSetBit(0);i>=0;i=frozen.nextSetBit(i+1))out.writeInt(i);
             }
             Files.move(temp,path(),StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
+            documentFingerprint=documentHash(path());
             dirty=false;
         }finally{Files.deleteIfExists(temp);}
     }
@@ -829,7 +853,7 @@ public final class TerrainLayerStack {
      * reject modifications on any border rather than corrupt adjacent terrain.
      */
     public void bake()throws IOException {
-        finishStroke();
+        finishStroke();verifyCurrentSource();verifyDocumentRevision();
         int[] updated=new int[pixels];
         for(int z=0;z<side;z++)for(int x=0;x<side;x++){
             int i=id(x,z);double h=composed(i);
