@@ -3757,6 +3757,13 @@ public final class SceneRenderer {
     /** Opt-in actual 3D terrain topology diagnostic inside the original asset room. */
     public void drawDevAssetRoom(List<DevAssetReviewCatalog.Entry> bay,double clock,double rotation,
                                  List<DevTerrainTopologyLab.Triangle> topologyPatch){
+        drawDevAssetRoom(bay,clock,rotation,topologyPatch,List.of());
+    }
+    /** Real geometry and approved prop models in the SAME DEV room renderer. */
+    public void drawDevAssetRoom(List<DevAssetReviewCatalog.Entry> bay,double clock,double rotation,
+                                 List<DevTerrainTopologyLab.Triangle> topologyPatch,
+                                 List<DevInfrastructureShowcase.Prop> samples){
+        Objects.requireNonNull(samples);
         Objects.requireNonNull(bay);
         Objects.requireNonNull(topologyPatch);
         if(bay.size()>6)throw new IllegalArgumentException("At most six physical exhibits per bay");
@@ -3791,6 +3798,24 @@ public final class SceneRenderer {
                     new Point(tri.b().x(),tri.b().y(),tri.b().z()),
                     new Point(tri.c().x(),tri.c().y(),tri.c().z()),
                     tri.color(),-1,0,0,0,0,0,0));
+        }
+        for(var prop:samples){
+            // No modeled proxy boxes. Import the actual existing reviewed GLB
+            // through the same production model -> Face -> UV renderer pathway.
+            GlbProps.Model actual=GlbProps.model(prop.modelId());
+            if(actual==null)throw new IllegalStateException(
+                "Missing approved infrastructure sample model "+prop.modelId());
+            double[] bounds=devAssetBounds(actual);
+            if(!Double.isFinite(bounds[4])||bounds[4]<=.0001)
+                throw new IllegalStateException("Invalid infrastructure GLB bounds "+prop.modelId());
+            double scale=prop.height()/bounds[4];
+            double centerX=bounds[0]+bounds[3]*.5;
+            double centerZ=bounds[2]+bounds[5]*.5;
+            imported(stage,prop.modelId(),actual,
+                prop.x()-centerX*scale,
+                prop.y()-bounds[1]*scale,
+                prop.z()-centerZ*scale,
+                scale,scale,scale,prop.yaw());
         }
         for(int j=0;j<bay.size();j++){
             var entry=bay.get(j);
