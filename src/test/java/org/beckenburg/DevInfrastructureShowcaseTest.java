@@ -39,6 +39,22 @@ public final class DevInfrastructureShowcaseTest {
             "Distant placement must NOT teleport or snap to unrelated terrain");
         check(WaterTerrainSnap.connect(request.moved(0,.5,0),socket,.4,false)==null,
             "Water height mismatch must reject incompatible socket");
+        var editor=new WaterEditorModel(new WaterDocument("dev-infrastructure-demo",
+            List.of(request)));
+        editor.setTerrainSockets(List.of(socket));
+        editor.select(List.of("new-module"));
+        editor.beginGesture();
+        var selectedMatch=editor.snapSelected(.4,false);
+        editor.endGesture(false);
+        check(selectedMatch!=null&&
+            selectedMatch.targetId().equals("river-socket-test-join")&&
+            Math.abs(editor.selected().get(0).z()-b.z())<1e-8,
+            "Existing water editor snaps selected water to terrain sockets");
+        check(editor.undo()&&editor.selected().get(0).equals(request),
+            "Water editor undo restores unsnapped placement as one transaction");
+        check(editor.redo()&&Math.abs(editor.selected().get(0).z()-b.z())<1e-8,
+            "Water editor redo restores the exact river connection");
+
         Path folder=Files.createTempDirectory("dev-infrastructure-water");
         try {
             Path target=sample.exportWater(folder.resolve("water.water"));
