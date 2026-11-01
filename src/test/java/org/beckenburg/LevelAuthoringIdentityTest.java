@@ -19,6 +19,10 @@ public final class LevelAuthoringIdentityTest {
         var home=Files.createTempDirectory("mission-identity-");
         String previous=System.getProperty("user.home");System.setProperty("user.home",home.toString());
         try{
+            for(var builtIn:HouseMap.Site.values())if(builtIn!=HouseMap.Site.USER&&builtIn!=HouseMap.Site.HOLLOW_CREEK){
+                var baseline=new LevelAuthoringSession(builtIn);baseline.validate();
+                check(baseline.props().equals(LevelPlans.buildSource(builtIn).props()),"Opening "+builtIn+" preserves all shipped native props");
+            }
             var site=HouseMap.Site.HOUSE;var nativeSource=LevelPlans.buildSource(site);
             // Existing BSCN v1 files already contain node IDs. Do not rewrite the format.
             LevelAuthoringSession.saveProps(LevelAuthoringSession.path(site),"beckenburg/house",nativeSource.props());

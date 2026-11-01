@@ -29,11 +29,12 @@
             "development/RECOVERY_PLAN_2026-10-25.md",
             ".github/workflows/standalone-editor-kit.yml"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "accept": [
             "Exact-source SHA and linked workflow outcome",
             "No-regression baseline recorded"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -49,12 +50,13 @@
             "src/main/java/org/beckenburg/CastleEditorProject.java",
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "accept": [
             "Read same scene instance as GUI and game",
             "Unsaved manual edit immediately visible through service",
             "Stable IDs and consistent snapshot; no mutation API"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         },
         {
           "id": "M1-02",
@@ -79,7 +81,7 @@
             "src/main/java/org/beckenburg/SceneRenderer.java",
             "src/main/java/org/beckenburg/CastleEditorAudit.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M1-02"
           ],
@@ -87,7 +89,8 @@
             "PNG originates from real runtime/editor renderer",
             "Includes current scene revision and provenance",
             "Audit warnings remain advisory"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         },
         {
           "id": "M1-04",
@@ -95,7 +98,7 @@
           "scope": [
             "src/test/java/org/beckenburg/DeveloperEditorLaunchTest.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M1-01",
             "M1-02",
@@ -105,7 +108,8 @@
             "Live open editor, manual edit, remote-local readback and screenshot",
             "Denied anonymous and mutation request tests",
             "Saved test logs and commit SHA"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -120,7 +124,7 @@
             "src/main/java/org/beckenburg/editor/EditorHistory.java",
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M1-04"
           ],
@@ -128,7 +132,8 @@
             "One authoritative transaction and one undo event",
             "Stale revision rejected and no scene change",
             "Partial batch failure restores exact prior snapshot"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         },
         {
           "id": "M2-02",
@@ -137,7 +142,7 @@
             "src/main/java/org/beckenburg/CastleLevelEdits.java",
             "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M2-01"
           ],
@@ -145,7 +150,8 @@
             "Agent and human GUI observe identical result",
             "Duplicate idempotency request makes no second object",
             "Undo/redo and save/reload preserve scene"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -159,7 +165,7 @@
           "scope": [
             "src/main/java/org/beckenburg/CastleEditorAudit.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M2-02"
           ],
@@ -167,7 +173,8 @@
             "Return separately committed/saved/verified flags",
             "Failures are structured, revisioned and truthful",
             "Real engine-generated evidence; no source artwork substitute"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         },
         {
           "id": "M3-02",
@@ -191,7 +198,7 @@
           "scope": [
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M3-02"
           ],
@@ -199,7 +206,8 @@
             "Only supported adapters are advertised",
             "Door/opening collision and stair reachability proof",
             "Measured render timing where available; no invented FPS"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -213,7 +221,7 @@
           "scope": [
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M3-01"
           ],
@@ -221,7 +229,8 @@
             "No Swing dependency in headless service",
             "Deterministic edit, readback, exit code and rollback",
             "No fake viewport when renderer unavailable"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         },
         {
           "id": "M4-02",
@@ -229,7 +238,7 @@
           "scope": [
             "src/test/java/org/beckenburg/editor/EditorCorePortabilityTest.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M4-01"
           ],
@@ -237,7 +246,8 @@
             "No Castle imports",
             "Same protocol and error semantics",
             "Save/reload deterministic"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -506,5 +516,70 @@
         "status": "planned"
       }
     ]
-  }
+  },
+  "activeOwnerGoal": {
+    "date": "2026-11-01",
+    "order": [
+      "finish small reusable Editor Agent Service over proven human/runtime operations",
+      "continue staged G0 through G12"
+    ],
+    "branch": "map/first-principles-rebuild-plan",
+    "status": "active",
+    "reference": "docs/development/EDITOR_AGENT_SERVICE.md"
+  },
+  "implementationCheckpoints": [
+    {
+      "sourceSha": "a3886b6cb62e0ac64d1a15f2d562b11738037bec",
+      "scope": "Native active Castle/mission service, shared transactions/history, save/reopen, real captures, targeted checks, trusted local headless protocol",
+      "localEvidence": [
+        "EditorAgentServiceTest",
+        "EditorAgentGuiTest",
+        "EditorCorePortabilityTest",
+        "LevelAuthoringSessionTest",
+        "DeveloperLevelEditorDataTest",
+        "tools/verify_editor_agent_cli.py"
+      ],
+      "standaloneCi": {
+        "run": 41323907995,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41323912531,
+        "status": "cancelled-superseded"
+      },
+      "limitations": [
+        "No authenticated MCP/network adapter",
+        "No installed-release or full gameplay acceptance"
+      ]
+    },
+    {
+      "sourceSha": "fcf7c52eb1368b3b016044a781e6c8966b419604",
+      "scope": "G1 persisted mission IDs, identity snapshots, pinned USER document ownership and native unsupported-transform rejection",
+      "localEvidence": [
+        "LevelAuthoringIdentityTest",
+        "LevelAuthoringSessionTest",
+        "EditorAgentServiceTest",
+        "EditorAgentGuiTest",
+        "tools/verify_editor_agent_cli.py"
+      ],
+      "standaloneCi": {
+        "run": 41324865446,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41324869128,
+        "status": "in_progress"
+      },
+      "limitations": [
+        "G0 original PDF byte verification unavailable",
+        "G1 journaling, cancellation, broader migrations and revision/resource events remain",
+        "Dedicated service workflow cannot dispatch until present on default branch (HTTP 404)"
+      ]
+    }
+  ],
+  "nextGoalWork": [
+    "Inspect exact-source CI results and repair objective regressions without weakening gates",
+    "Continue G1 journaling/recovery and migration/cancellation contracts over authoritative documents",
+    "Proceed to human-operated G2 topology foundation, then remaining dependency-ordered gates; never accept later gates from core tests"
+  ]
 }
