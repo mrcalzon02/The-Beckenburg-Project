@@ -52,10 +52,23 @@ public final class TerrainEntrancePreview extends JPanel {
         canvas.setPreferredSize(new Dimension(820,600));
         add(canvas,BorderLayout.CENTER);
         var m=output.mesh();
-        JLabel foot=new JLabel("REAL TRIANGLES — editor geometry inspection, not a gameplay screenshot"
-            +" | faces "+m.triangles().size()+" | source leaves "+output.sourceLeaves()
+        String details;
+        if(m.name().startsWith("Railway_")){
+            int ballast=0,rails=0,sleepers=0;
+            for(var tri:m.triangles()){
+                switch(tri.part()){
+                    case "rail_ballast" -> ballast++;
+                    case "rail_left","rail_right" -> rails++;
+                    case "rail_sleepers" -> sleepers++;
+                }
+            }
+            details=" | ballast faces "+ballast+" | rail faces "+rails+
+                " | sleeper faces "+sleepers;
+        }else details=" | source leaves "+output.sourceLeaves()
             +" | ramp "+output.rampTriangles()+" | tab "+output.tabTriangles()
-            +" | cave wall segments "+output.exposedWallSegments());
+            +" | cave wall segments "+output.exposedWallSegments();
+        JLabel foot=new JLabel("REAL TRIANGLES — editor geometry inspection, not a gameplay screenshot"
+            +" | faces "+m.triangles().size()+details);
         add(foot,BorderLayout.SOUTH);
     }
     public static JFrame open(Window owner,TerrainEntranceMesh.Output output){
