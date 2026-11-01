@@ -32,7 +32,12 @@ public final class TerrainRailMeshTest {
             check(parts.equals(Set.of("rail_ballast","rail_left","rail_right","rail_sleepers")),
                 "Distinct modeled ballast, two rails, and sleepers");
             check(maxY-minY>.45,"Raised rails and finite-depth ballast are 3D, not sheets");
-            int upwardBallast=0,downwardBottom=0,upwardSleepers=0,upwardRailheads=0;
+            // A prism writes its top pair, bottom pair, then its four
+            // walls (two triangles each). Elevation changes along the grade,
+            // so global Y thresholds misclassify some bottom caps as tops.
+            var faceOrdinal=new HashMap<String,Integer>();
+            var topVerified=new HashSet<String>();
+            var bottomVerified=new HashSet<String>();
             for(var face:out.mesh().triangles()){
                 var a=face.a();var b=face.b();var c=face.c();
                 double nx=(b.y()-a.y())*(c.z()-a.z())-(b.z()-a.z())*(c.y()-a.y());
@@ -40,23 +45,17 @@ public final class TerrainRailMeshTest {
                 double nz=(b.x()-a.x())*(c.y()-a.y())-(b.y()-a.y())*(c.x()-a.x());
                 check(nx*nx+ny*ny+nz*nz>1e-14,
                     "No zero-area railway triangle may enter renderer or physics");
-                if(Math.abs(a.y()-b.y())<1e-7&&Math.abs(a.y()-c.y())<1e-7){
-                    if(face.part().equals("rail_ballast")){
-                        if(a.y()>14.95){check(ny>0,"Ballast top must face upward");upwardBallast++;}
-                        if(a.y()<14.7){check(ny<0,"Ballast underside must face downward");downwardBottom++;}
-                    }
-                    if(face.part().equals("rail_sleepers")&&a.y()>15.15){
-                        check(ny>0,"Sleeper walking face must point upward");upwardSleepers++;
-                    }
-                    if((face.part().equals("rail_left")||face.part().equals("rail_right"))
-                        &&a.y()>15.3){
-                        check(ny>0,"Steel railhead faces must point upward");upwardRailheads++;
-                    }
+                int ordinal=faceOrdinal.merge(face.part(),1,Integer::sum)-1;
+                if(ordinal%12<2){
+                    check(ny>0,"Top surface must face upward on "+face.part());
+                    topVerified.add(face.part());
+                }else if(ordinal%12<4){
+                    check(ny<0,"Bottom surface must face downward on "+face.part());
+                    bottomVerified.add(face.part());
                 }
             }
-            check(upwardBallast>0&&downwardBottom>0
-                &&upwardSleepers>0&&upwardRailheads>0,
-                "Physical rail sections require oriented solid top and bottom faces");
+            check(topVerified.equals(parts)&&bottomVerified.equals(parts),
+                "Every physical ballast, sleeper and steel rail section has oriented top and bottom faces");
             Path file=root.resolve("track.obj");
             TerrainRailMesh.export(world,alignment,TerrainRailMesh.Profile.standard(),file);
             var imported=EditorMeshPipeline.read(file);
