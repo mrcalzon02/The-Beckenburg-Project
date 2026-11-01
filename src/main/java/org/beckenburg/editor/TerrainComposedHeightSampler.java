@@ -40,6 +40,40 @@ public final class TerrainComposedHeightSampler {
         cached.put(key,result);
         return result;
     }
+    /**
+     * Resolved material ID for physical interactions, tool queries and a host
+     * terrain renderer. Samples the nearest authored grid vertex, with the same
+     * tile ownership rule as height(). Managed route overlays never rewrite
+     * authored material IDs, and explicit paint always takes precedence.
+     */
+    public int surfaceMaterial(double x,double z)throws IOException{
+        if(!Double.isFinite(x)||!Double.isFinite(z))
+            throw new IllegalArgumentException("Non-finite composed material point");
+        var settings=world.settings();
+        double span=settings.tileWidthMetres();
+        double gridX=(x-settings.originX())/span;
+        double gridZ=(z-settings.originZ())/span;
+        if(gridX< -1_000_000||gridX>=1_000_001||
+            gridZ< -1_000_000||gridZ>=1_000_001)
+            throw new IllegalArgumentException("World point outside supported tile space");
+        int tx=(int)Math.floor(gridX),tz=(int)Math.floor(gridZ);
+        int[] ownersX=exactBorder(gridX)?new int[]{tx,tx-1}:new int[]{tx};
+        int[] ownersZ=exactBorder(gridZ)?new int[]{tz,tz-1}:new int[]{tz};
+        for(int ownerZ:ownersZ)for(int ownerX:ownersX){
+            if(Math.abs((long)ownerX)>1_000_000||
+                Math.abs((long)ownerZ)>1_000_000||
+                !world.hasTile(ownerX,ownerZ))continue;
+            double lx=(gridX-ownerX)*n,lz=(gridZ-ownerZ)*n;
+            if(lx< -1e-7||lz< -1e-7||lx>n+1e-7||lz>n+1e-7)continue;
+            int sx=(int)Math.round(Math.max(0,Math.min(n,lx)));
+            int sz=(int)Math.round(Math.max(0,Math.min(n,lz)));
+            var authored=layers(ownerX,ownerZ);
+            return authored.isPresent()?
+                authored.get().surfaceMaterial(sx,sz):
+                TerrainLayerStack.Material.GRASS.ordinal();
+        }
+        throw new IOException("No stitched terrain tile owns material at "+x+","+z);
+    }
     private static boolean exactBorder(double f){
         return Math.abs(f-Math.rint(f))<1e-9;
     }
