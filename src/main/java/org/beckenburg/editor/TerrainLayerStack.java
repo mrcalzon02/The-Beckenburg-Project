@@ -57,6 +57,7 @@ public final class TerrainLayerStack {
         for(int v:data){c.update(v&255);c.update(v>>>8);}
         return c.getValue();
     }
+    public StitchedHeightmapWorld worldForWorkbench(){return world;}
     public int cells(){return n;}
     public int tileX(){return tx;}
     public int tileZ(){return tz;}
