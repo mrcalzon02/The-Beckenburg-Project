@@ -1,0 +1,14 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Cemetery-lane van apron,Unload at the cemetery lane,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Lychgate and entry court,Enter through the lychgate and orient respectfully,16,12,0,3,avenue;chapel;cottage;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+avenue,Main cemetery avenue,Follow the principal burial-ground procession route,8,40,0,3,east-graves;entry;garden,REVIEW_IN_S02,NOT_ESTABLISHED
+chapel,Ruined chapel,Gather for memorial use within surviving structure,18,18,0,3,entry;garden,REVIEW_IN_S02,NOT_ESTABLISHED
+cottage,Caretaker cottage,House the caretaker and everyday domestic functions,14,18,0,3,east-graves;entry;tool,REVIEW_IN_S02,NOT_ESTABLISHED
+garden,Memorial garden,Remember the dead in a distinct maintained garden,18,18,0,3,avenue;chapel;old-graves;west-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+east-graves,East grave plots,Arrange later grave plots along supported paths,18,18,0,3,avenue;cottage;east-stair;old-graves,REVIEW_IN_S02,NOT_ESTABLISHED
+old-graves,Old numbered markers,Preserve the earlier burial pattern and markers,24,16,0,3,east-graves;garden,REVIEW_IN_S02,NOT_ESTABLISHED
+tool,Caretaker tool store,Maintain grounds with stored tools,8,10,0,3,cottage,REVIEW_IN_S02,NOT_ESTABLISHED
+west-stair,West ossuary vestibule,Reach the ossuary through its western vestibule,10,8,0,3,garden;ossuary,REVIEW_IN_S02,NOT_ESTABLISHED
+east-stair,East ossuary vestibule,Provide an independent eastern ossuary connection,10,8,0,3,east-graves;ossuary,REVIEW_IN_S02,NOT_ESTABLISHED
+ossuary,Ossuary passage,Move through a supported underground memorial passage,24,8,-3,3,chamber;east-stair;west-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+chamber,Memorial record chamber,Keep burial records and memorial material,12,12,-3,3,ossuary,REVIEW_IN_S02,NOT_ESTABLISHED

@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.AssertionError: Rendered house shell exceeds its authored footprint: 24.0,0.72,9.955
+	at org.beckenburg.HouseRebuildShellTest.main(HouseRebuildShellTest.java:31)

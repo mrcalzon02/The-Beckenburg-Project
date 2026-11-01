@@ -1,0 +1,16 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+r00,Nave,Gather worshippers with clear seating and aisles,8.0,22.0,0.0,6.0,r01;r02;r03;r04;r05;r07;r11,REVIEW_IN_S02,NOT_ESTABLISHED
+r01,Vestibule,Shelter arrivals before entering the nave,8.0,5.0,0.0,3.0,entry;r00,REVIEW_IN_S02,NOT_ESTABLISHED
+r02,Parish office,Administer parish work with confidential storage,8.0,8.0,0.0,3.0,r00;r03,REVIEW_IN_S02,NOT_ESTABLISHED
+r03,Confessional chamber,Provide a private conversation enclosure,8.0,8.0,0.0,3.0,r00;r02,REVIEW_IN_S02,NOT_ESTABLISHED
+r04,Chancel and altar,Support worship with an intelligible altar arrangement,8.0,6.0,0.0,5.0,r00;r06,REVIEW_IN_S02,NOT_ESTABLISHED
+r05,Side chapel,Provide a smaller quiet worship setting,8.0,12.0,0.0,4.0,r00;r06,REVIEW_IN_S02,NOT_ESTABLISHED
+r06,Vestry,Store and prepare vestments and service materials,8.0,8.0,0.0,3.0,grounds;r04;r05,REVIEW_IN_S02,NOT_ESTABLISHED
+r07,Choir loft,Accommodate singers with safe loft access,8.0,8.0,3.0,3.0,r00;r08;r09,REVIEW_IN_S02,NOT_ESTABLISHED
+r08,Bell tower stair chamber,Provide actual tower ascent with landings and guards,8.0,8.0,3.0,3.0,r07;r10,REVIEW_IN_S02,NOT_ESTABLISHED
+r09,Organ archive,Store music and organ maintenance records,8.0,8.0,3.0,3.0,r07,REVIEW_IN_S02,NOT_ESTABLISHED
+r10,Belfry,House bells with supported access and framed openings,8.0,8.0,6.0,3.0,r08,REVIEW_IN_S02,NOT_ESTABLISHED
+r11,Crypt,Accommodate burial or memorial functions beneath the church,24.0,28.0,-3.0,3.0,r00,REVIEW_IN_S02,NOT_ESTABLISHED
+grounds,Rear grounds / exterior,Provide cemetery maintenance and rear access,36,39,0,12,entry;r06,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Approach / arrival,Approach the public church entrance,40,19.4,0,12,grounds;r01;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+stage,Van service apron,Stage expedition equipment without blocking parish access,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED

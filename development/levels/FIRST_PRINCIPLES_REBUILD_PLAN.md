@@ -94,6 +94,8 @@ Run swept movement from the van through every required room and socket approach,
 
 ### S04 — Engineer terrain, boundaries and site infrastructure
 
+**Additional owner requirement, 31 October:** Basement/cavity construction must use the editor's persistent terrain hole-punching topology. An architectural stair/deck void alone is insufficient: remove the actual world-ground faces above the cavity, consume the same mesh in world collision/optical queries, preserve valid floor/wall/stair support and demonstrate real above/below views and traversal. Check the broad backdrop/ground sheet as well as room decks. Do not replace this with transparency or a renderer-only exception.
+
 **Work:** Starting from accepted rough circulation, shape actual slopes, drainage, rock/shore edges, terraces and excavations. Fit foundations, retaining structures, cuts, crossings and guard edges to the terrain. Apply `DESQUAREIFY_GATE.md`: preserve rectangular constructed slabs where purposeful, remove zone-shaped ground patches and arbitrary planning pads. Grade walking routes using actual mesh support and full capsule clearance.
 
 Author near/middle/far composition and closed physical site boundaries using each edge/sky packet. Inspect from highest accessible floors and shorelines. Keep water out of sealed interiors/holds; a water plane, fog or painted horizon cannot contain players. Place remote power sources, service boards and cable-route reservations. Any terrain change updates foundations, paths, van elevation and all affected anchors together.

@@ -1,0 +1,17 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Front-drive van apron,Stage equipment clear of patient arrival,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Front drive,Approach reception along the public drive,16,10,0,3,reception;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+reception,Admissions reception,Receive patients and visitors with private interview space,16,12,0,3,entry;records;spine,REVIEW_IN_S02,NOT_ESTABLISHED
+spine,Central ward corridor,Distribute staff and patients to separate ward functions,6,30,0,3,day;dining;reception;treatment;upper;west-link,REVIEW_IN_S02,NOT_ESTABLISHED
+records,Records office,Keep confidential patient records under staff control,12,12,0,3,day;reception,REVIEW_IN_S02,NOT_ESTABLISHED
+day,Day room,Provide supervised sitting and ordinary daytime activity,18,16,0,3,court;records;spine,REVIEW_IN_S02,NOT_ESTABLISHED
+ward,Patient ward,Accommodate patient beds with observation and bedside access,22,16,0,3,chapel;court;west-link,REVIEW_IN_S02,NOT_ESTABLISHED
+west-link,Garden ward passage,Connect ward activity to sheltered garden access,6,16,0,3,chapel;spine;ward,REVIEW_IN_S02,NOT_ESTABLISHED
+treatment,Treatment theatre,Provide a treatment workspace with clean supply access,16,14,0,3,hydro;spine,REVIEW_IN_S02,NOT_ESTABLISHED
+hydro,Hydrotherapy room,Provide private bathing and associated drying/changing,14,14,0,3,dining;treatment,REVIEW_IN_S02,NOT_ESTABLISHED
+dining,Dining ward,Serve ward meals with adjacent food-service provision,20,16,0,3,hydro;plant;spine,REVIEW_IN_S02,NOT_ESTABLISHED
+chapel,Remembrance chapel,Offer quiet remembrance without crossing treatment work,18,16,0,3,ward;west-link,REVIEW_IN_S02,NOT_ESTABLISHED
+court,Walled courtyard,Provide daylight and supervised outdoor activity,10,28,0,3,day;ward,REVIEW_IN_S02,NOT_ESTABLISHED
+upper,Upper ward gallery,Connect upper care rooms and staff support,6,30,3.4,3,spine;upper-ward,REVIEW_IN_S02,NOT_ESTABLISHED
+upper-ward,Upper patient ward,Accommodate upper patient beds with nearby sanitation,18,16,3.4,3,upper,REVIEW_IN_S02,NOT_ESTABLISHED
+plant,Basement boiler,Maintain heating and utilities through service access,20,16,-3,3,dining,REVIEW_IN_S02,NOT_ESTABLISHED

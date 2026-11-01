@@ -1,0 +1,20 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Roadside van bay,Unload from the roadside service bay,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Motor court entrance,Enter the motor court without crossing private rooms,16,10,0,3,court;office;service;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+court,Uneven parking court,Park and distribute guests through a drained courtyard,20,22,0,3,eastwalk;entry;westwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+westwalk,West exterior room walk,Reach west guest rooms along a clear exterior walk,3,28,0,3,court;northwalk;office;room1;room2;room3;room4,REVIEW_IN_S02,NOT_ESTABLISHED
+eastwalk,East exterior room walk,Reach east guest rooms along a clear exterior walk,3,28,0,3,court;laundry;northwalk;room5;room6;room7;room8,REVIEW_IN_S02,NOT_ESTABLISHED
+northwalk,North connecting walk,Connect guest walks through a supported northern route,26,3,0,3,eastwalk;service;westwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+office,Reception and key desk,Receive guests issue keys and manage records,10,8,0,3,entry;manager;westwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+manager,Manager apartment,Provide separate manager living and sleeping functions,7,10,0,3,office,REVIEW_IN_S02,NOT_ESTABLISHED
+laundry,Linen and laundry,Wash dry and store guest linen,7,6,0,3,eastwalk;plant,REVIEW_IN_S02,NOT_ESTABLISHED
+plant,Heating and service room,Maintain heating power and water distribution,7,6,0,3,laundry;service,REVIEW_IN_S02,NOT_ESTABLISHED
+service,Rear service yard,Receive supplies and remove waste behind guest activity,10,34,0,3,entry;northwalk;plant,REVIEW_IN_S02,NOT_ESTABLISHED
+room1,West guest room 1,Sleep wash and store luggage in west guest unit one,7,5,0,3,westwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+room5,East guest room 5,Sleep wash and store luggage in east guest unit five,7,5,0,3,eastwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+room2,West guest room 2,Sleep wash and store luggage in west guest unit two,7,5,0,3,westwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+room6,East guest room 6,Sleep wash and store luggage in east guest unit six,7,5,0,3,eastwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+room3,West guest room 3,Sleep wash and store luggage in west guest unit three,7,5,0,3,westwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+room7,East guest room 7,Sleep wash and store luggage in east guest unit seven,7,5,0,3,eastwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+room4,West guest room 4,Sleep wash and store luggage in west guest unit four,7,5,0,3,westwalk,REVIEW_IN_S02,NOT_ESTABLISHED
+room8,East guest room 8,Sleep wash and store luggage in east guest unit eight,7,5,0,3,eastwalk,REVIEW_IN_S02,NOT_ESTABLISHED

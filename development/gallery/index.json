@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2158,
+  "count": 2237,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -19854,6 +19854,796 @@
       "height": 200,
       "bytes": 31021,
       "sha256": "f63348a4ce71e7f5fc85e17f92d8e133e8f5f335c803839641d59e2e9f41aa37"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 40126,
+      "sha256": "2b7275d830174a0a6ec361da8a8232bcecba966daee03e99480e57ea02c5e6d8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 190008,
+      "sha256": "dcf6d6458111c75fd1dc364d657f431551655e6b7ab99ac007a477b0e19e99ca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 56018,
+      "sha256": "73d2435667f1e8ae49d944dc9f93c165c423f4c423449698ea654b6a47241546"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 37825,
+      "sha256": "0e662ed8bebf83d9719baf78ca201df404d84cc41ea17b623393cb285553f46f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 49781,
+      "sha256": "1d9d4dd41a0c39b64e9898887467ec5b4f3eb132dea747fc6acdb44b46878d06"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 39676,
+      "sha256": "7637c3d7522798ea8f3868d1bf6c42e2973c0ffa89bff09a8d9a9ad5bef26ca6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 118584,
+      "sha256": "e37eba38a59c8bf2fac2221f33585dfba0c4f152ec30a772cb8dfa4620f18089"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 28746,
+      "sha256": "8fdb8d122457f084b81014bc6108ec2f8c5c25d4aa3ccd862835ca118129d21c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 27909,
+      "sha256": "60d8461e6b63eb1cd79d61afb79b32d1de70d44d56a5e539fc8dc9fd13cbbd05"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/01-family-sitting-room/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 20462,
+      "sha256": "aefa7db3d3476884380417115b50b1afa68dd7fa68743d080830deaf9a5dd324"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 39888,
+      "sha256": "23799097e6c1ce692cfceb77ef8181ccd08d9e191ebbf1c5ea361191617da5b5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 131884,
+      "sha256": "5e9696b2103fb5f93f5589e7fbcd3cb4a07c027b9e201e1af5b64cc3bbfb1b36"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 29281,
+      "sha256": "7f195b2769dd0f5c54c6c045ea1ab43505443bd7c3e8c9b4e5de9ee9e0c16421"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 35737,
+      "sha256": "31b1c8444765f56184c1adb1bd4e99998706656cce5b66ec60da26a311b58b26"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/02-kitchen-and-cellar-access/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 23144,
+      "sha256": "947611ab3d63d4006c4ca84e14ccfe143fa7b36bf1b9cce7abebfd9427b67146"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 33029,
+      "sha256": "fbdf4b2bbb5a4dbea7c6ec8aa909ce81d0f46848ad91b608ce1c8c86c86ea1b1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 148745,
+      "sha256": "34f4a5974ad19016bf646ace397d7b2d6c473d5034c1b225c79a7df0b643e228"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 34955,
+      "sha256": "1830515b9ce126f8497d4ecd6c6defa07bdfafe774f467e3b56961d77bc0b321"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 39663,
+      "sha256": "b66b9c66352f545485eb51f834bc33be251c1f2d5dcca916996ec621bdb480ba"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/03-family-dining-room/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 39877,
+      "sha256": "a04aadcfd576a310b250244d56784e66e3db62e573a20c48b15d6f5f97443e3a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 42145,
+      "sha256": "fed84604c5728f860e87e34e2a8d560f0cb2d79f1ac6d804f8def46cb7df2659"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 180772,
+      "sha256": "3d7e3427e41aa127783cd209dba2b1e2576f89894e16f0e126b0a18a2dee3d66"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 38816,
+      "sha256": "9c53983aa3410bf202e57ddd16d0c49efbe0e2b8174815695f5f8206de6c0a0e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 46854,
+      "sha256": "e76630375766c19279cf4e7612347ad45959f4baa3622f74665188e1886f0464"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/04-stair-and-service-passage/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 48483,
+      "sha256": "6113a3d6ea72741f3668f0294c313912391ca2a09e856371009a8108fddee7f4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 22472,
+      "sha256": "217769e956923f5922bcd16c6faf57c2b3a526dd3a74d0f12518b5deb75b557d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 127085,
+      "sha256": "b5ff00b0c1d51999b0978e149567ef4fc1725d7721a69e52fa20400b5ead3f8c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 20360,
+      "sha256": "e8c7ce3f740021cc6d0281ad6c29069d132a025f3f5ea64bc8731e7f30075811"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 43714,
+      "sha256": "043b3f691c433dcd24b8a0c449d7e53662e7ebd62ee8f6f12a45cac5ca896e16"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/05-upper-landing-and-linen-storage/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 38484,
+      "sha256": "7a25f87fe6b1eae917145343d81a446d10c24fb74d3712922dead23becf58d60"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 30277,
+      "sha256": "fdb56a890910f1f3cb70d67f8c890c24b25f48ff85d74c4bcb646c42165ce4da"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 94376,
+      "sha256": "d5d0bddbf098b61e7a5d476c125600d38894a62031c7ddb69f0028b09129edb4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 21335,
+      "sha256": "4ac7ff5e4ab353cbbf636de606d56670d7dfe7ef98eb6bfe153b8624b0a35ae3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 24016,
+      "sha256": "e10c196b10a94c654435d4e56b8c3d7d0b567ead4a84cbfdf51b0c58fd69aff2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/06-parents-bedroom-and-dressing/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 17732,
+      "sha256": "c38a4214edca574344feea904e865b9e94ce5246d805cc5c5ad4a8ec2d71f652"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 23445,
+      "sha256": "ecc95b4eb0f31cbd85aaea254183fdf05aed3514663d0be925db3d5dd3ef775c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 95849,
+      "sha256": "817f9c8954ff13f05e400867d87f14e28f3c7f2218f76ffbd436ea3e80567329"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 24404,
+      "sha256": "40fbfe39a641fba9c8fb826cfb1630cbbbc25628ca5b8dddd637f8b6ce8ee3d2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 26796,
+      "sha256": "230b482992eab06a448cba34e532830f61ae7ff7bdc46feb17c3f796084ef0da"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/07-child-bedroom-and-study/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 20739,
+      "sha256": "04977bb98d03d0bc2836b7d27cbde99b016f094d18b7baf9c0cc21708c66f4fb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 35715,
+      "sha256": "19d3977b572fb118e2a8756969b1fe4c2c4cc1f2df82efd2aeec8c947f0fb179"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 152565,
+      "sha256": "cf16a365f323a2ffe66edfd58dbe53f5009e06fcefb97a5c7291f32fe0ef2d30"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 36858,
+      "sha256": "bfee2332850dd4b1de9ee81bf268304ab12abf6b8a9ed272f0eabd98706b485d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 38858,
+      "sha256": "5262eb8a99f707f995436b7da9a95c984ede57d7d4a98748753c9596ff4b5782"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/08-family-bathroom/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 35632,
+      "sha256": "cfbed24c54e0d50ab7dbac61d1c1e142b2f11dbaa47a11fa7b7eeb54cf633324"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 13498,
+      "sha256": "410f51cb05c6482ba02065431571f4a0f390a6a712d63f6d40a198477f0f9c87"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 80977,
+      "sha256": "8bc296e2e370b8940b6e32d2de78404e7ccedf52436f6b389c251b19c0c68350"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 15972,
+      "sha256": "8d8af85111f197de713ef59755f39fe4b9b72d43c1fd07c381626838321ac52d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 33217,
+      "sha256": "9669717e6fbce0f5ddb6f7be777a24d3bb4cb69706e4234249cfb68ed8158923"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/09-cellar-work-passage/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 15914,
+      "sha256": "5733d8cf57a27828a3fa040bc5ebb1dd6d5f1ebb5fec79a3460cd1363ebdcb70"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 18012,
+      "sha256": "309ff1a116d7ebb42d09be1dc39d181a9138f52d6b0ab8167bc14dcab576f690"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 81957,
+      "sha256": "fc2248053c47e67c424bce387906f6eae1d83ce1dfc776a7a790be1ca569ec8e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 19601,
+      "sha256": "cf9e303d37e5cdb7aba7980095b2c041d4eeceeb9ef96eba0f852a9ea5567253"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 24456,
+      "sha256": "7fcf148c92215255208e7f6b5df3b17615aa8a2cb9b77fe7bc1d7c07e5ac13dc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/10-heating-hot-water-and-laundry/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 18907,
+      "sha256": "206c2d6ef9369ad58e8905b1012926d301a08db784e2eb07b3f1a35a9b2f0782"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 17385,
+      "sha256": "702e0469ff6051e7d5ccaa1e6cc6dff09bc3e99eebf6f64fd0f976e001496397"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 88080,
+      "sha256": "28f4fc6f68286bd56cf6b5aaaee80ddac014ae06047994c56d03908ee48133df"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 21661,
+      "sha256": "242982e2550d94a6379fac8bf42ba300f059d6d90447c8c4ed2507ddd66bc3ee"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 23813,
+      "sha256": "a561436eec09cc2f3f33a6385e6379ea311a3f27df5a07c574174dd7f56260d2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/11-household-and-seasonal-store/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 23963,
+      "sha256": "69d9f91880c5442d27aa4642f3f6e798d791ca1388b3fc7cbe634e9340b87ce3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 17973,
+      "sha256": "4ecce669db7a037639224bc7576677ef82db625d5877f82dc44ba0332f5f6b38"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 86784,
+      "sha256": "9c8ce38d921930fffc130b7854db8d92e6ad3c5d9a81e50cb41e87795fcb563a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 11666,
+      "sha256": "8d026a96e6c2bcef3336b1606d11c164402ca3903182fbdb97300d68d2a402ce"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 39189,
+      "sha256": "df5543f2fa89f575efd41cdae4a281df2ecd19524da3a45f90991c45ae89bc7f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/12-rear-garden-and-patio-reservation/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 14440,
+      "sha256": "ac759b886d35ad0670a0c762e4079b757c02f77193ec400a19e20d845fc71ea1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 17843,
+      "sha256": "2ea70945ae0bdff25c14ad7dc09d266949b93116359ee84a3e57e9efec792ced"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 94854,
+      "sha256": "e4728832ef80d2a6e660a7e89d750b774495b2467aed668238abc744e0675003"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 31426,
+      "sha256": "1ad6a33659b294fdbca47e1f30c5ba7e50dbf69d92c009e49ff71ebba23bc34d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 20981,
+      "sha256": "6d327306c2789b8923ce69b978013deac7de316f89099948ca349a93c2a9881c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/13-street-and-entrance-approach/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 24364,
+      "sha256": "04ccd35cc2a617ae2131e29baf81bc7daf18eaedc3aa4446ce135ff5f4d16a98"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/east.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/east.png",
+      "title": "East",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 34788,
+      "sha256": "4d1e2ba1379f8e44e58afa769a9c5f4b4db0fd89f980bc10f03adeed330eda24"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/four-way.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/four-way.png",
+      "title": "Four way",
+      "kind": "Runtime graybox capture",
+      "width": 640,
+      "height": 440,
+      "bytes": 119798,
+      "sha256": "19147ad69fb0e0add2c93908a0123ab44736c31bbb65eb3b93c0620bd08bdc3b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/north.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/north.png",
+      "title": "North",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 24844,
+      "sha256": "f57a2160e382e26aafae6ec0a5da6b1e2ec55b0aa29e9abe8c376e754361e5e5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/south.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/south.png",
+      "title": "South",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 25333,
+      "sha256": "faf991e340f51d1772d0bac4b314418896f05b0f851e8ce2c2878472260d14c4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/west.png",
+      "url": "development/levels/rebuild/captures/house-graybox/house_rebuild/14-van-cargo-interior/west.png",
+      "title": "West",
+      "kind": "Runtime graybox capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 30873,
+      "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
+    },
+    {
+      "path": "development/levels/rebuild/previews/briar-rebuild-blender-front.png",
+      "url": "development/levels/rebuild/previews/briar-rebuild-blender-front.png",
+      "title": "Briar rebuild blender front",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1397254,
+      "sha256": "577c7c8e77d9c61d03b6aa32e66b6c956aa1b55205ed3c3343c19ac0c4dd53fb"
+    },
+    {
+      "path": "development/levels/rebuild/previews/briar-rebuild-blender-ground-cutaway.png",
+      "url": "development/levels/rebuild/previews/briar-rebuild-blender-ground-cutaway.png",
+      "title": "Briar rebuild blender ground cutaway",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1579455,
+      "sha256": "cdc0c98f1662336683bab862a0e65e66d091be8aed7fa56b3cdd555e96403465"
+    },
+    {
+      "path": "development/levels/rebuild/previews/briar-rebuild-blender-rear.png",
+      "url": "development/levels/rebuild/previews/briar-rebuild-blender-rear.png",
+      "title": "Briar rebuild blender rear",
+      "kind": "Native scene overview",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1467741,
+      "sha256": "ab85d450f544a239a749a96b31711d25740eda54c6e7298309aa1f5badc2b612"
+    },
+    {
+      "path": "development/levels/rebuild/previews/rejected-legacy-envelope-blender-exterior.png",
+      "url": "development/levels/rebuild/previews/rejected-legacy-envelope-blender-exterior.png",
+      "title": "Rejected legacy envelope blender exterior",
+      "kind": "Rejected native study",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1162455,
+      "sha256": "2540cd7443e4adc66511980fc45380c108dc731d739f9b45ee90b100a875577a"
     },
     {
       "path": "development/levels/rebuild/previews/source-blockouts-native-fitout.png",

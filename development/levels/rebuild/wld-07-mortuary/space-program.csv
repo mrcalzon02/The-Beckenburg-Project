@@ -1,0 +1,21 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Cemetery-lane van apron,Unload at the shared cemetery lane,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Lychgate and entry court,Enter the parent burial ground,16,12,0,3,avenue;chapel;cottage;mort-reception;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+avenue,Main cemetery avenue,Follow the principal procession route,8,40,0,3,east-graves;entry;garden,REVIEW_IN_S02,NOT_ESTABLISHED
+chapel,Ruined chapel,Use the existing memorial chapel,18,18,0,3,entry;garden,REVIEW_IN_S02,NOT_ESTABLISHED
+cottage,Caretaker cottage,Maintain the caretaker dwelling,14,18,0,3,east-graves;entry;tool,REVIEW_IN_S02,NOT_ESTABLISHED
+garden,Memorial garden,Visit the memorial garden,18,18,0,3,avenue;chapel;old-graves;west-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+east-graves,East grave plots,Reach later burial plots,18,18,0,3,avenue;cottage;east-stair;old-graves,REVIEW_IN_S02,NOT_ESTABLISHED
+old-graves,Old numbered markers,Preserve earlier numbered markers,24,16,0,3,east-graves;garden,REVIEW_IN_S02,NOT_ESTABLISHED
+tool,Caretaker tool store,Maintain grounds from the shared tool store,8,10,0,3,cottage,REVIEW_IN_S02,NOT_ESTABLISHED
+west-stair,West ossuary vestibule,Enter the western ossuary vestibule,10,8,0,3,garden;ossuary,REVIEW_IN_S02,NOT_ESTABLISHED
+east-stair,East ossuary vestibule,Enter the eastern ossuary vestibule,10,8,0,3,east-graves;ossuary,REVIEW_IN_S02,NOT_ESTABLISHED
+ossuary,Ossuary passage,Traverse the existing underground memorial passage,24,8,-3,3,chamber;east-stair;west-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+chamber,Memorial record chamber,Consult cemetery records,12,12,-3,3,ossuary,REVIEW_IN_S02,NOT_ESTABLISHED
+mort-reception,Vale Mortuary reception,Receive visitors and arrange funeral services,12,10,0,3,entry;mort-bay;mort-hall;mort-office;mort-viewing,REVIEW_IN_S02,NOT_ESTABLISHED
+mort-viewing,Viewing room,Gather privately for viewing and remembrance,12,14,0,3,mort-hall;mort-prep;mort-reception,REVIEW_IN_S02,NOT_ESTABLISHED
+mort-prep,Preparation room,Prepare remains privately with washing and clean/soiled separation,12,10,0,3,mort-cold;mort-viewing,REVIEW_IN_S02,NOT_ESTABLISHED
+mort-cold,Cold storage,Store remains in a separate serviced cold space,12,8,0,3,mort-office;mort-prep,REVIEW_IN_S02,NOT_ESTABLISHED
+mort-office,Mortuary office,Administer confidential records and staff tasks,12,8,0,3,mort-cold;mort-reception,REVIEW_IN_S02,NOT_ESTABLISHED
+mort-bay,Discreet service bay,Receive transfers through a discreet service entrance,12,12,0,3,mort-reception,REVIEW_IN_S02,NOT_ESTABLISHED
+mort-hall,Mortuary side hall,Connect public and staff functions through controlled privacy thresholds,4,24,0,3,mort-reception;mort-viewing,REVIEW_IN_S02,NOT_ESTABLISHED

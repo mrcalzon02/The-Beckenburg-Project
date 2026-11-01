@@ -1,0 +1,18 @@
+route_id,source_a,source_b,source_kind,reserved_clear_width_m,source_polyline_length_m,predicted_walk_seconds_at_1_4_mps,source_note,physical_acceptance
+L01,r00,r01,level,1.8,13.5,9.64,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L02,r00,r02,level,1.1,12.062,8.62,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L03,r00,r03,level,1.1,8.123,5.8,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L04,r00,r04,level,2.0,14.0,10.0,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L05,r00,r05,level,1.5,9.0,6.43,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L06,r05,r06,level,1.1,10.0,7.14,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L07,r04,r06,level,1.1,8.123,5.8,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L08,r02,r03,level,1.1,8.0,5.71,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L09,r07,r08,level,1.05,8.246,5.89,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L10,r07,r09,level,1.05,8.246,5.89,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L11,r01,entry,level,1.8,21.5,15.36,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L12,r06,grounds,level,1.1,41.0,29.29,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L13,r00,r07,stairs,1.5,5.66,4.04,"Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",NOT_PHYSICALLY_VERIFIED
+L14,r11,r00,stairs,1.5,5.66,4.04,"Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",NOT_PHYSICALLY_VERIFIED
+L15,r08,r10,stairs,1.5,5.66,4.04,"Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",NOT_PHYSICALLY_VERIFIED
+L16,grounds,entry,level,2,39.0,27.86,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L17,entry,stage,level,2,18.358,13.11,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED

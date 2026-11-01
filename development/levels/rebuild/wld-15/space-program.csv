@@ -1,0 +1,17 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Quayside van apron,Unload from the van on the quayside,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Quay cargo lane,Transfer equipment along the quay cargo lane,16,4,0,3,quay;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+quay,Mooring quay,Moor and service the permanently retired vessel,16,12,0,3,aft;entry;portpier,REVIEW_IN_S02,NOT_ESTABLISHED
+portpier,Port service pier,Reach the port side along a supported service pier,6,32,0,3,aft;quay,REVIEW_IN_S02,NOT_ESTABLISHED
+aft,Aft working deck,Handle working-deck gear with clear deck circulation,20,14,0,3,crew;galley;mess;portpier;quay;side,REVIEW_IN_S02,NOT_ESTABLISHED
+processing,Fish processing hall,Process catch through an intelligible equipment sequence,16,22,0,3,engine;fore;galley;mess,REVIEW_IN_S02,NOT_ESTABLISHED
+galley,Galley,Prepare crew meals within the galley,8,10,0,3,aft;processing,REVIEW_IN_S02,NOT_ESTABLISHED
+mess,Crew mess,Eat together clear of galley work,8,10,0,3,aft;processing,REVIEW_IN_S02,NOT_ESTABLISHED
+side,Starboard deck walkway,Move along the supported starboard side deck,2,32,0,3,aft;fore,REVIEW_IN_S02,NOT_ESTABLISHED
+fore,Foredeck,Work mooring and deck gear forward,16,10,0,3,processing;pump;side,REVIEW_IN_S02,NOT_ESTABLISHED
+engine,Engine room,Maintain propulsion machinery without implying active sailing,16,16,-3,3,hold;processing,REVIEW_IN_S02,NOT_ESTABLISHED
+hold,Chilled fish hold,Store chilled catch within a dry sealed hold,16,20,-3,3,engine;pump,REVIEW_IN_S02,NOT_ESTABLISHED
+pump,Bilge pump room,Maintain bilge pumps below the working decks,16,6,-3,3,fore;hold,REVIEW_IN_S02,NOT_ESTABLISHED
+crew,Crew bunks,Sleep and store crew belongings with sanitary provision,16,10,3,3,aft;net,REVIEW_IN_S02,NOT_ESTABLISHED
+bridge,Wheelhouse,Observe navigation and vessel records from the wheelhouse,16,12,6,3,net,REVIEW_IN_S02,NOT_ESTABLISHED
+net,Net and gear store,Dry repair and store fishing nets and gear,16,10,3,3,bridge;crew,REVIEW_IN_S02,NOT_ESTABLISHED

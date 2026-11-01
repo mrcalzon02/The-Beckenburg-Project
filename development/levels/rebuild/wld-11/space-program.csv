@@ -1,0 +1,14 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Causeway van apron,Unload on a supported dry causeway,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Raised causeway landing,Enter the raised settlement at a stable landing,16,14,0,3,south-deck;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+main,Main settlement boardwalk,Distribute residents along the main boardwalk,4,48,1.2,3,chapel;house-a;north-deck;south-deck;warehouse,REVIEW_IN_S02,NOT_ESTABLISHED
+service,Service boardwalk,Carry supplies along a parallel service boardwalk,4,48,1.2,3,house-b;north-deck;pump;shack;south-deck;warehouse,REVIEW_IN_S02,NOT_ESTABLISHED
+south-deck,South crossing deck,Connect routes at the southern supported crossing,24,6,1.2,3,entry;main;service,REVIEW_IN_S02,NOT_ESTABLISHED
+north-deck,North crossing deck,Connect routes at the northern supported crossing,24,6,1.2,3,ferry;main;service,REVIEW_IN_S02,NOT_ESTABLISHED
+house-a,West stilt house,Live and sleep in a supported western stilt house,16,16,1.2,3,main,REVIEW_IN_S02,NOT_ESTABLISHED
+house-b,East stilt house,Live and sleep in a distinct eastern stilt house,14,16,1.2,3,service,REVIEW_IN_S02,NOT_ESTABLISHED
+chapel,Settlement chapel,Gather for settlement worship or remembrance,16,18,1.2,3,main,REVIEW_IN_S02,NOT_ESTABLISHED
+warehouse,Flooded warehouse dry deck,Store goods on the warehouse dry deck,16,22,1.2,3,main;service,REVIEW_IN_S02,NOT_ESTABLISHED
+shack,Fishing shack,Work and store fishing equipment in shelter,12,14,1.2,3,service,REVIEW_IN_S02,NOT_ESTABLISHED
+ferry,Ferry stage,Reach a former ferry landing without water traversal,12,14,1.2,3,north-deck,REVIEW_IN_S02,NOT_ESTABLISHED
+pump,Pump / wash shelter,Maintain pumping and washing facilities above floodwater,12,10,1.2,3,service,REVIEW_IN_S02,NOT_ESTABLISHED

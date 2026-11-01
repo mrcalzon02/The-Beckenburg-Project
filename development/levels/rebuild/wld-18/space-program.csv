@@ -1,0 +1,17 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Service road van apron,Unload at the existing maintenance roadhead,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Security approach,Approach through a controlled security threshold,16,14,0,3,servicehouse;stage;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+servicehouse,Surface service building,Receive and administer service staff,18,16,0,3,entry;exit,REVIEW_IN_S02,NOT_ESTABLISHED
+yard,Fenced maintenance yard,Move deliveries within the enclosed maintenance yard,24,16,0,3,entry;head;shop,REVIEW_IN_S02,NOT_ESTABLISHED
+head,Access headhouse,Enter the inert underground installation,12,12,0,3,exhibit;shop;west;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+shop,Maintenance workshop,Maintain components at workbenches and stores,14,12,0,3,head;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+exit,Hillside emergency exit,Reach an independent supported hillside emergency exit,6,20,0,3,servicehouse;west,REVIEW_IN_S02,NOT_ESTABLISHED
+upperring,Upper shaft gallery,Traverse a guarded upper annular shaft gallery,20,20,-4,3,exhibit;west,REVIEW_IN_S02,NOT_ESTABLISHED
+lowring,Lower shaft gallery,Traverse a separately supported lower shaft gallery,20,20,-8,3,crew;east,REVIEW_IN_S02,NOT_ESTABLISHED
+west,Upper west access,Connect western upper service rooms,14,12,-4,3,crew;exit;head;records;upperring,REVIEW_IN_S02,NOT_ESTABLISHED
+records,Maintenance records,Consult maintenance records on supported task furniture,14,14,-4,3,west,REVIEW_IN_S02,NOT_ESTABLISHED
+exhibit,Inert control equipment room,Inspect inert disconnected control racks,14,20,-4,3,east;head;upperring,REVIEW_IN_S02,NOT_ESTABLISHED
+east,Lower east access,Connect eastern lower service rooms,14,20,-8,3,exhibit;lowring;plant,REVIEW_IN_S02,NOT_ESTABLISHED
+crew,Lower crew room,Rest and store crew belongings away from plant,14,12,-8,3,lowring;pump;west,REVIEW_IN_S02,NOT_ESTABLISHED
+pump,Sump and pump room,Maintain sump collection at the actual low point,14,12,-8,3,crew,REVIEW_IN_S02,NOT_ESTABLISHED
+plant,Lower ventilation plant,Maintain air-handling and service distribution,14,14,-8,3,east,REVIEW_IN_S02,NOT_ESTABLISHED

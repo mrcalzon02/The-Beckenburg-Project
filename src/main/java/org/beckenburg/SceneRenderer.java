@@ -1712,7 +1712,10 @@ public final class SceneRenderer {
             int owner=map.roomAt((guard.x0()+guard.x1())/2,guard.y(),(guard.z0()+guard.z1())/2);
             own(out,part,owner<0?4:owner);
         }
-        if(map.site()==HouseMap.Site.HOUSE)houseExterior(out,level);
+        // This skin contains the original House's measured facade/porch.
+        // A revised House definition must not inherit that unrelated envelope
+        // merely because it uses the same gameplay site slot.
+        if(map.site()==HouseMap.Site.HOUSE&&level.id().equals("house"))houseExterior(out,level);
         else {
         // Roofs follow the actual upper footprint; pitched planes meet at a ridge.
         for(var r:level.rooms())if(!r.outside()&&r.y()>=0&&level.rooms().stream().noneMatch(up->!up.outside()&&up.y()>r.y()
@@ -2618,12 +2621,12 @@ public final class SceneRenderer {
     private void castleRamparts(List<Face> out){
         double y=CastleHubArchitecturalPlan.GROUND_CEILING;
         for(int xx=2;xx<43;xx+=2){
-            
+
             box(out,xx,y,33.80,1.10,.78,.32,0x8c7c6a);
             if(xx<28)box(out,xx,y,.84,1.10,.78,.32,0x8c7c6a);
         }
         for(int zz=2;zz<34;zz+=2){
-            
+
             box(out,.84,y,zz,.32,.78,1.10,0x8c7c6a);
             if(zz>=4)box(out,42.84,y,zz,.32,.78,1.10,0x8c7c6a);
         }
@@ -3306,7 +3309,7 @@ public final class SceneRenderer {
         return length<1e-8?a:new Point(x/length,y/length,z/length);
     }
     private static double edge2(Point a,Point b){return (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y)+(a.z-b.z)*(a.z-b.z);}
-    /** 
+    /**
      * CPU fallback only: exact conservative screen-bounds rejection against
      * ALREADY DRAWN depth. If even the triangle's NEAREST point is behind
      * every pixel in its snapped raster bounding box, none of its pixels

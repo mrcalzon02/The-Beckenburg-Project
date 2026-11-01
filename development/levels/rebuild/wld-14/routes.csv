@@ -1,0 +1,25 @@
+route_id,source_a,source_b,source_kind,reserved_clear_width_m,source_polyline_length_m,predicted_walk_seconds_at_1_4_mps,source_note,physical_acceptance
+route-01,stage,entry,level,1.5,12.0,8.57,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-02,entry,porch,level,1.5,12.0,8.57,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-03,porch,foyer,level,1.5,12.649,9.04,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-04,foyer,sitting,level,1.5,8.0,5.71,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-05,sitting,workroom,level,1.5,12.166,8.69,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-06,workroom,store,level,1.5,13.0,9.29,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-07,store,kitchen,level,1.5,12.166,8.69,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-08,kitchen,foyer,level,1.5,9.0,6.43,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-09,store,stairs,level,1.5,11.662,8.33,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-10,stairs,upperhall,stairs,1.5,20.616,14.73,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-11,upperhall,study,level,1.5,11.662,8.33,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-12,study,bed,level,1.5,13.0,9.29,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-13,bed,service-upper,level,1.5,10.0,7.14,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-14,service-upper,service-stair,stairs,1.5,20.616,14.73,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-15,service-stair,workroom,level,1.5,10.0,7.14,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-16,store,passage,level,1.5,14.318,10.23,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-17,passage,tower0,level,1.5,13.104,9.36,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-18,kitchen,yard,level,1.5,18.682,13.34,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-19,yard,generator,level,1.5,13.153,9.39,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-20,tower0,tower1,stairs,1.5,17.921,12.8,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-21,tower1,tower2,stairs,1.5,17.921,12.8,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-22,tower2,tower3,stairs,1.5,17.921,12.8,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-23,tower3,tower4,stairs,1.5,17.921,12.8,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED
+route-24,tower4,tower5,stairs,1.5,17.921,12.8,"Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",NOT_PHYSICALLY_VERIFIED

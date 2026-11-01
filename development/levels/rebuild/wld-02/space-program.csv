@@ -1,0 +1,14 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Camp-road van apron,Unload at the real campground roadhead,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Ranger gate / noticeboard,Check notices and orient at the ranger entrance,16,12,0,3,bath;ranger;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+ranger,Ranger cabin,Administer campsite use and provide ranger shelter,14,12,0,3,camp-a;entry;store,REVIEW_IN_S02,NOT_ESTABLISHED
+bath,Bathhouse,Provide private toilets washing and maintenance access,14,12,0,3,entry;pavilion,REVIEW_IN_S02,NOT_ESTABLISHED
+pavilion,Dining pavilion,Eat and shelter under the supported communal pavilion,16,16,0,3,bath;camp-a;camp-b,REVIEW_IN_S02,NOT_ESTABLISHED
+camp-a,West tent pitches,Pitch tents with circulation and service clearances,16,18,0,3,camper;junction;pavilion;ranger,REVIEW_IN_S02,NOT_ESTABLISHED
+camp-b,East tent pitches,Provide a second campsite cluster fitted to terrain,16,18,0,3,creek;junction;pavilion,REVIEW_IN_S02,NOT_ESTABLISHED
+junction,Trail-marker junction,Orient walkers between actual trail branches,16,14,0,3,camp-a;camp-b;shore,REVIEW_IN_S02,NOT_ESTABLISHED
+camper,Abandoned camper,Show a distinct former camping occupation,10,12,0,3,camp-a,REVIEW_IN_S02,NOT_ESTABLISHED
+shore,Lakeside clearing,Reach the shore without eroding an unsupported bank,16,16,0,3,creek;dock;junction,REVIEW_IN_S02,NOT_ESTABLISHED
+dock,Lake dock,Access lake-related gear on a supported dock,8,14,0,3,shore,REVIEW_IN_S02,NOT_ESTABLISHED
+creek,Creek footbridge,Cross the creek on a real supported bridge,12,10,0,3,camp-b;shore,REVIEW_IN_S02,NOT_ESTABLISHED
+store,Ranger tool store,Maintain tools supplies and campground infrastructure,6,10,0,3,ranger,REVIEW_IN_S02,NOT_ESTABLISHED

@@ -1,0 +1,15 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Shore-road van apron,Unload beside the shore access road,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Shore street,Distribute arrivals along a coherent shore street,24,14,0,3,cottage-a;cottage-b;quay;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+cottage-a,West fisherman cottage,Accommodate one fishing household,16,12,0,3,entry;quay,REVIEW_IN_S02,NOT_ESTABLISHED
+cottage-b,East fisherman cottage,Accommodate a distinct second fishing household,16,12,0,3,entry;quay,REVIEW_IN_S02,NOT_ESTABLISHED
+quay,Quay apron,Transfer landed goods between shore and piers,24,18,0,3,cottage-a;cottage-b;east-stair;entry;pier-e;pier-w;west-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+pier-w,West dock walkway,Reach west-side boats and working sheds,4,26,0,3,boathouse;crossdock;quay,REVIEW_IN_S02,NOT_ESTABLISHED
+pier-e,East dock walkway,Reach east-side boats and working sheds,4,26,0,3,crossdock;net;quay,REVIEW_IN_S02,NOT_ESTABLISHED
+crossdock,Cross-dock,Transfer goods between the parallel piers,24,4,0,3,fish;pier-e;pier-w,REVIEW_IN_S02,NOT_ESTABLISHED
+boathouse,Boathouse,Store and maintain small watercraft,16,18,0,3,pier-w;west-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+net,Net shed,Dry repair and store nets with task clearance,12,14,0,3,pier-e,REVIEW_IN_S02,NOT_ESTABLISHED
+fish,Fish house,Handle and store landed catch,16,14,0,3,crossdock,REVIEW_IN_S02,NOT_ESTABLISHED
+undercroft,Dry tidal undercroft,Inspect a dry accessible tidal understructure,16,12,-2.5,3,east-stair;west-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+west-stair,West shore stair bay,Descend from the west shore with guards,12,10,0,3,boathouse;quay;undercroft,REVIEW_IN_S02,NOT_ESTABLISHED
+east-stair,East shore stair bay,Provide an independent guarded eastern descent,12,10,0,3,quay;undercroft,REVIEW_IN_S02,NOT_ESTABLISHED

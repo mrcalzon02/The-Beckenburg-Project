@@ -1,0 +1,7 @@
+FAIL HOUSE stair ascent 0 t=0.975 from=Vec[x=20.5, y=2.706666666666666, z=18.06]
+FAIL HOUSE incorrect top height
+FAIL HOUSE stair top entry/exit 0
+FAIL HOUSE stair descent 0 t=0.9916666666666667
+HOUSE XYZ geometry checked
+Exception in thread "main" java.lang.AssertionError: 4 geometry failures
+	at org.beckenburg.AuthoredLevelPhysicsTest.main(AuthoredLevelPhysicsTest.java:46)

@@ -2320,6 +2320,62 @@ Evidence and verification: Actual MissionBoardIntegrationTest passes locally, co
 
 Older-map obligation: Keep custom authoring slots separate from fixed built-in/campaign roster and saved ordinals; do not silently substitute a built-in map.
 
+### DEV-171 — House graybox top stair intersects the foyer partition
+
+**Status:** corrected-locally; pilot only · **Affected:** Isolated Briar House rebuild graybox
+
+The first actual physics run failed the last ascent steps, top landing and descent; swept navigation could not reach four upper rooms.
+
+Cause / uncertainty: The stair ended 0.20m from a lower-floor partition, within the capsule/wall clearance at the last rise.
+
+Fix / next action: Move the foyer partition and doorway to leave 0.60m clearance beyond the top stair endpoint. Keep the shared physics unchanged.
+
+Evidence and verification: house-rebuild-physics-first.log and house-rebuild-reachability-first.log reproduce failure; final physics and 61,328-position swept reachability pass, with all 15 zones and sockets reached.
+
+Older-map obligation: Recheck both ends of every flight after changing room proportions; graph or midpoint checks do not certify landings.
+
+### DEV-172 — House graybox service panel placed inside its doorway aperture
+
+**Status:** corrected-locally; pilot only · **Affected:** House rebuild heating/laundry service room
+
+AuthoredUtilitiesTest HOUSE_REBUILD failed service-panel has clear operating position.
+
+Cause / uncertainty: Panel and cellar/service doorway were authored at the same wall coordinate.
+
+Fix / next action: Move the panel onto actual solid wall north of the doorway, preserving the aperture and working approach.
+
+Evidence and verification: house-rebuild-utilities-first.log fails; current utility checks pass twelve switches, the panel, fourteen acoustic links and two stairs.
+
+Older-map obligation: Review fixtures against every actual aperture and clear aim/operating point after layout edits.
+
+### DEV-173 — Legacy House envelope overlaid on a smaller rebuilt interior
+
+**Status:** corrected-locally; shared renderer source binding · **Affected:** House rebuild graybox; future revised sources using House gameplay slot
+
+Native export showed blank outer walls and a legacy roof hiding actual revised windows and entrances.
+
+Cause / uncertainty: Renderer selected fixed original House cladding/porch coordinates by the HouseMap site enum, independent of the revised LevelDefinition.
+
+Fix / next action: Bind that fixed legacy skin only to the original house source ID. Revised definitions use their own authored shell. Register and test the correct suburban setting.
+
+Evidence and verification: HouseRebuildShellTest failed at x24 beyond the revised footprint before correction; now checks 20,817 elevated shell vertices and correct setting. Real runtime/native views and rejected source are retained.
+
+Older-map obligation: Audit every hardcoded facade/roof/enclosure against its source coordinates before reusing a gameplay slot.
+
+### DEV-174 — Basement architectural opening does not remove the broad world-ground sheet
+
+**Status:** open; owner-directed editor terrain-hole integration in progress · **Affected:** Rebuilt House pilot and older cellar/cavity maps requiring independent audit
+
+Architectural stair/deck openings can pass movement while a separate broad world-ground/backdrop sheet still spans the basement elevation. Owner explicitly requires genuine world-floor holes.
+
+Cause / uncertainty: Room/deck voids and the broad terrain/backdrop surface currently have different generation paths. The latter is not removed by the architectural void.
+
+Fix / next action: Use saved editor AdaptiveTerrainTopology punched leaves and actual TerrainEntranceMesh geometry; bind the same missing triangles into real rendering, native body/support and optical queries. Test an unpunched negative control and original PNG byte preservation.
+
+Evidence and verification: Owner steering 31 October and source inspection of SceneRenderer.enclosureScenery; current pilot movement/native parity does not certify world-floor removal.
+
+Older-map obligation: Individually audit House, Farmhouse, School, Church, institutional service basements, crypts, mines, tunnels and all stacked remote cavities.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

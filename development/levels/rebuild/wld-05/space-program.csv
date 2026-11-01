@@ -1,0 +1,15 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Mine-road van apron,Unload at the mine service road,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Mine gate / surface yard,Receive workers and deliveries in the surface yard,20,14,0,3,adit;assay;shack;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+shack,Miners shack,Shelter crew and store daily personal items,18,16,0,3,entry;stores,REVIEW_IN_S02,NOT_ESTABLISHED
+assay,Assay office,Prepare and record ore samples,14,16,0,3,entry;wash,REVIEW_IN_S02,NOT_ESTABLISHED
+stores,Surface stores,Store tools and consumables beside surface access,12,16,0,3,adit;shack,REVIEW_IN_S02,NOT_ESTABLISHED
+adit,Adit mouth,Enter the excavated workings through a supported adit,20,20,0,3,entry;haul;stores;vent;wash,REVIEW_IN_S02,NOT_ESTABLISHED
+haul,Main haul junction,Distribute haul and pedestrian movement underground,16,22,-6,3,adit;ore-east;ore-west,REVIEW_IN_S02,NOT_ESTABLISHED
+ore-west,West ore room,Work one ore face with credible shoring,18,22,-6,3,cross;haul;lower;vent,REVIEW_IN_S02,NOT_ESTABLISHED
+ore-east,East ore room,Work a separate ore face and equipment position,18,22,-6,3,cross;haul,REVIEW_IN_S02,NOT_ESTABLISHED
+cross,North crosscut,Connect extraction routes through an actual crosscut,32,12,-6,3,lift;ore-east;ore-west,REVIEW_IN_S02,NOT_ESTABLISHED
+lift,Collapsed lift barrier bay,Observe collapsed lift remains from a contained safe bay,10,12,-6,3,cross,REVIEW_IN_S02,NOT_ESTABLISHED
+lower,Lower working chamber,Access lower extraction workings by real stairs or grade,18,22,-10,3,ore-west;vent,REVIEW_IN_S02,NOT_ESTABLISHED
+vent,Ventilation return,Return through a physically supported ventilation passage,18,20,-6,3,adit;lower;ore-west,REVIEW_IN_S02,NOT_ESTABLISHED
+wash,Surface washhouse,Wash and change before leaving the worksite,14,16,0,3,adit;assay,REVIEW_IN_S02,NOT_ESTABLISHED

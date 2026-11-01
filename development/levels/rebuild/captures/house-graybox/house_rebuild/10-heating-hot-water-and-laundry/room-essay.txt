@@ -1,0 +1,12 @@
+Room 10: Heating hot-water and laundry
+Site: The Briar House — rebuild graybox / first-principles-graybox-v1-f633efc651b435e0
+Bounds (X,Z): 15.00,10.00 -> 21.60,14.70; floor -2.40m; clear height 2.40m
+Geometric centre: 18.30,12.35; traversable: true
+Actual 4-view camera: 18.30,-2.40,12.35; displacement 0.00m
+Portal access / windows / stairs: P11 door -> 9 Cellar work passage 1.05m @(15.00,-2.40,12.40); P13 door -> 11 Household and seasonal store 1.05m @(18.30,-2.40,14.70)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 5
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

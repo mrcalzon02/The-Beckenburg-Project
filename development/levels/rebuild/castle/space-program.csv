@@ -1,0 +1,24 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Expedition van departure apron,Load the canonical van and begin expeditions,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Gatehouse / arrival court,Arrive through the existing gate sequence,24,12,0,3,court;great;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+court,Central castle courtyard,Orient investigators between headquarters functions,48,44,0,3,armory;entry;map;north;west,REVIEW_IN_S02,NOT_ESTABLISHED
+great,Great hall / briefing,Brief a team around supported map and contract surfaces,24,14,0,6,dining;entry;map,REVIEW_IN_S02,NOT_ESTABLISHED
+map,Map / assignment office,Prepare assignments and maintain operational records,20,16,0,3,court;dining;great;west,REVIEW_IN_S02,NOT_ESTABLISHED
+dining,Kitchen / common room,Prepare and share meals with cleanup provision,20,14,0,3,great;map,REVIEW_IN_S02,NOT_ESTABLISHED
+west,West service passage,Connect back-of-house service rooms,6,28,0,3,archive;court;map;north;upper,REVIEW_IN_S02,NOT_ESTABLISHED
+archive,Occult archive / study,Consult and preserve occult records with staff oversight,14,28,0,3,train-entry;vault;west,REVIEW_IN_S02,NOT_ESTABLISHED
+armory,Armory / supply shop,Issue and return physical equipment from organized stock,20,16,0,3,court;workshop,REVIEW_IN_S02,NOT_ESTABLISHED
+workshop,Machine / chemistry workshop,Repair and prepare tools with safe working clearance,20,20,0,3,armory;infirmary,REVIEW_IN_S02,NOT_ESTABLISHED
+infirmary,Infirmary,Provide first aid and temporary recovery,20,16,0,3,north;workshop,REVIEW_IN_S02,NOT_ESTABLISHED
+chapel,Chapel / sanctuary,Provide quiet reflection and study of ritual practice,18,16,0,3,north;research,REVIEW_IN_S02,NOT_ESTABLISHED
+research,Research laboratory,Examine samples and documents at supported task surfaces,16,16,0,3,chapel;radio,REVIEW_IN_S02,NOT_ESTABLISHED
+radio,Radio / network operations,Coordinate communications and network operations,14,16,0,3,north;research,REVIEW_IN_S02,NOT_ESTABLISHED
+upper,Upper west gallery,Reach upper rooms without intersecting stairs or guards,6,44,3.6,3,lodging;restoration;west,REVIEW_IN_S02,NOT_ESTABLISHED
+lodging,Investigator accommodation,Sleep and store personal belongings away from public work,14,28,3.6,3,upper,REVIEW_IN_S02,NOT_ESTABLISHED
+restoration,Restoration gallery,Explain repair of the historic building through actual work areas,24,14,6.5,3,upper,REVIEW_IN_S02,NOT_ESTABLISHED
+vault,Captured relic vault,Secure captured objects with deliberate access control,14,28,-3,3,archive,REVIEW_IN_S02,NOT_ESTABLISHED
+train-entry,Protected training vestibule,Enter practice spaces without entering live ritual activity,30,14,0,3,archive;train-a;train-b;train-c,REVIEW_IN_S02,NOT_ESTABLISHED
+train-b,Banishment training bay,Practice banishment through its real tutorial contract,10,14,0,3,train-entry,REVIEW_IN_S02,NOT_ESTABLISHED
+train-c,Cleansing training bay,Practice cleansing through its real tutorial contract,10,14,0,3,train-entry,REVIEW_IN_S02,NOT_ESTABLISHED
+train-a,Absolution training bay,Practice absolution through its real tutorial contract,10,14,0,3,train-entry,REVIEW_IN_S02,NOT_ESTABLISHED
+north,North covered walk,Connect northern functions under continuous cover,48,5,0,3,chapel;court;infirmary;radio;west,REVIEW_IN_S02,NOT_ESTABLISHED

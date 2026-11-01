@@ -28,3 +28,15 @@ Locally passing scoped checks: CastleSupportArtTest (with real furniture/unsuppo
 5. Preserve newer Hollow Creek geometry/water/terrain authority and current Castle HQ behavior; the older shell contact sheet is reference history only.
 
 All 348 decisions remain individually tracked. S00 inventory work is in progress for every site; later stages have not earned acceptance.
+
+## Function-program and House construction-pilot milestone
+
+Authored normal-use activities for all 456 named spaces across all 29 packets, with 554 existing route reservations and 141 explicit subordinate-room/task-zone requirements. Each packet now has a generated function brief, space program and route worksheet. Proposed capacities are design decisions for former normal use, not historical facts, NPC populations or player-limit changes. Measured references, final privacy/adjacency decisions and dimensions remain under review; S01 is IN_PROGRESS.
+
+`HouseRebuild.java` now builds an isolated real-runtime House graybox. It does not replace dispatched House geometry. The ground loop, independent private-room entrances, separate kitchen/cellar stair and preserved canonical van use the same LevelDefinition/HouseMap/SceneRenderer authority as the game. Current local checks pass: door/stair physics, 61,328 swept positions reaching all 15 zones and functional reservations, exact deck/wall/guard surfaces, twelve usable switches, service panel, fourteen acoustic doors and two stair links. Sixty room-direction views are captured. The native source was reopened and compared vertex-by-vertex and UV-by-UV against 34,521 actual runtime triangles; source and inspection hashes are recorded in `house/native-graybox-verification.json`. Native front/rear/temporary-cutaway images are labeled by type. Rejected legacy-envelope source/render is preserved.
+
+The pilot exposed and corrected a top-stair/foyer partition collision, a service panel authored into its doorway, a legacy fixed-size House skin applied to revised coordinates, and an urban fallback setting for the revised suburban House. The per-room roof is temporary graybox construction; exterior parcel clearance, terrain, structural refinement, furnishing and all full mission/hardware gates remain outstanding.
+
+**New owner steering:** Architectural deck voids must be accompanied by genuine terrain-editor hole punching for basement/cavity sections. Investigation found a separate broad world-ground/backdrop sheet. The pilot's current architectural movement checks do not certify that sheet. The next work slice uses AdaptiveTerrainTopology's persisted punched leaves, TerrainEntranceMesh and the existing native physics adapter to connect actual missing world faces to rendering, collision and visibility, with a filled-surface negative control. Do not mark the basement or terrain stage accepted before this passes.
+
+The owner explicitly approved verification-log and recovery-note upload on 31 October after the automated review rejection. Publication authorization persists; no repeat permission question is needed for these authorized project evidence checkpoints.

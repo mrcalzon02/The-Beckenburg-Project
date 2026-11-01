@@ -1,0 +1,15 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Canyon-road van apron,Unload at the canyon roadhead,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Canyon mouth,Enter the canyon through a bounded approach,16,14,0,3,floor;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+floor,Canyon floor,Traverse the natural canyon drainage floor,28,26,0,3,entry;shelter;wash,REVIEW_IN_S02,NOT_ESTABLISHED
+shelter,Modern expedition shelter,Shelter expedition personnel and everyday supplies,16,12,0,3,floor;lower-path,REVIEW_IN_S02,NOT_ESTABLISHED
+wash,Expedition sample shelter,Handle and record expedition samples at task surfaces,12,12,0,3,floor,REVIEW_IN_S02,NOT_ESTABLISHED
+lower-path,Lower switchback terrace,Climb the lower terrace on a supported switchback,16,24,4,3,return;shelter;upper-path,REVIEW_IN_S02,NOT_ESTABLISHED
+upper-path,Upper switchback terrace,Reach the upper terrace through real graded transitions,28,12,8,3,chamber;dwellings;lower-path,REVIEW_IN_S02,NOT_ESTABLISHED
+dwellings,Fictional cliff-dwelling terrace,Show fictional historical occupation in researched context,28,18,8,3,gallery;upper-path,REVIEW_IN_S02,NOT_ESTABLISHED
+gallery,Cave entrance gallery,Pass through a geologically coherent cave threshold,18,18,8,3,alcove;dwellings;fork;lower-cave,REVIEW_IN_S02,NOT_ESTABLISHED
+fork,Branching cave junction,Choose between physically separate cave passages,10,18,8,3,chamber;gallery,REVIEW_IN_S02,NOT_ESTABLISHED
+chamber,Dry side chamber,Explore a dry enclosed chamber with safe headroom,16,18,8,3,fork;upper-path,REVIEW_IN_S02,NOT_ESTABLISHED
+lower-cave,Lower cave chamber,Reach a distinctly lower supported cave chamber,18,18,4,3,gallery;return,REVIEW_IN_S02,NOT_ESTABLISHED
+return,Rock-arch return shelf,Return along a supported natural shelf,18,18,4,3,lower-cave;lower-path,REVIEW_IN_S02,NOT_ESTABLISHED
+alcove,Expedition records alcove,Consult expedition records protected from exposure,12,12,8,3,gallery,REVIEW_IN_S02,NOT_ESTABLISHED

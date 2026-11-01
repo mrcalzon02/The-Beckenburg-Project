@@ -1,0 +1,15 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Maintenance-road van apron,Unload at the railway maintenance road,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Rail access gate,Enter through the controlled maintenance access,16,12,0,3,siding;signal;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+signal,Signal hut,Observe track conditions and maintain signaling records,16,14,0,3,cutting;entry;west-return,REVIEW_IN_S02,NOT_ESTABLISHED
+cutting,Rail cutting,Traverse the actual railway cutting beside alignment,12,34,0,3,coach-a;coach-b;signal;trestle,REVIEW_IN_S02,NOT_ESTABLISHED
+coach-a,Derailed passenger coach,Inspect passenger compartments and their surviving circulation,8,16,0,3,cutting;west-return,REVIEW_IN_S02,NOT_ESTABLISHED
+coach-b,Derailed baggage coach,Inspect baggage storage and service access,8,16,0,3,cutting;siding,REVIEW_IN_S02,NOT_ESTABLISHED
+siding,Maintenance siding,Move maintenance equipment clear of the main line,10,46,0,3,coach-b;crossing;entry;store,REVIEW_IN_S02,NOT_ESTABLISHED
+store,Track stores hut,Store track tools and replacement parts,12,14,0,3,siding,REVIEW_IN_S02,NOT_ESTABLISHED
+trestle,Trestle guarded deck,Cross on a supported guarded railway structure,12,20,0,3,crossing;cutting;lower;tunnel,REVIEW_IN_S02,NOT_ESTABLISHED
+tunnel,Tunnel mouth / dry bore,Enter a dry supported tunnel with proper clearance,12,30,0,3,refuge;trestle,REVIEW_IN_S02,NOT_ESTABLISHED
+refuge,Tunnel maintenance refuge,Stand clear of the tunnel route in a real recess,12,12,0,3,crossing;tunnel,REVIEW_IN_S02,NOT_ESTABLISHED
+lower,Lower service walkway,Maintain the underside through a separate supported walkway,6,20,-3,3,trestle;west-return,REVIEW_IN_S02,NOT_ESTABLISHED
+west-return,Cutting west return path,Return beside the cutting along grounded terrain,10,40,0,3,coach-a;lower;signal,REVIEW_IN_S02,NOT_ESTABLISHED
+crossing,North maintenance crossing,Cross the alignment at a deliberately authored maintenance point,22,10,0,3,refuge;siding;trestle,REVIEW_IN_S02,NOT_ESTABLISHED

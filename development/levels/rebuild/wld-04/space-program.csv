@@ -1,0 +1,14 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Forest-road van apron,Unload at the forest-road stopping place,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Lower trail gate,Enter the managed trail through its gate,16,12,0,3,lower;return;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+lower,Lower signed trail,Climb the lower route along actual terrain,12,18,0,3,bend;entry,REVIEW_IN_S02,NOT_ESTABLISHED
+bend,Boulder trail bend,Turn around a grounded boulder landmark,16,12,3,3,clearing;hut;lower,REVIEW_IN_S02,NOT_ESTABLISHED
+clearing,Hillside clearing,Orient between station facilities and tower access,20,16,6,3,bend;foot;hut;return;ruin,REVIEW_IN_S02,NOT_ESTABLISHED
+hut,Maintenance hut,Maintain the outpost using stored tools,16,12,6,3,bend;clearing,REVIEW_IN_S02,NOT_ESTABLISHED
+ruin,Ruined ranger station,Show the footprint and remnants of an earlier station,14,16,6,3,clearing;store,REVIEW_IN_S02,NOT_ESTABLISHED
+store,Ranger store,Store station supplies beneath real shelter,10,10,6,3,return;ruin,REVIEW_IN_S02,NOT_ESTABLISHED
+return,Contour return path,Return along a supported contour path,14,18,3,3,clearing;entry;store,REVIEW_IN_S02,NOT_ESTABLISHED
+foot,Tower footing / fenced base,Enter the supported fenced tower base,12,12,6,3,clearing;landing,REVIEW_IN_S02,NOT_ESTABLISHED
+landing,Tower midway landing,Rest and turn on a real intermediate tower landing,4,12,10.5,3,cab;foot,REVIEW_IN_S02,NOT_ESTABLISHED
+cab,Lookout cab,Observe and communicate from the lookout cabin,6,6,15,3,deck;landing,REVIEW_IN_S02,NOT_ESTABLISHED
+deck,Lookout exterior deck,Inspect the horizon behind actual tower guardrails,6,6,15,3,cab,REVIEW_IN_S02,NOT_ESTABLISHED

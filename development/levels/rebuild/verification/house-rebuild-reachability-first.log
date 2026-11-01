@@ -1,0 +1,15 @@
+briar-rebuild reached elevations -2.4..2.666666666666667
+UNREACHABLE HOUSE room=5 Upper landing and linen storage
+UNREACHABLE HOUSE room=6 Parents bedroom and dressing
+UNREACHABLE HOUSE room=7 Child bedroom and study
+UNREACHABLE HOUSE room=8 Family bathroom
+UNREACHABLE SOCKET HOUSE evidence room=5
+UNREACHABLE SOCKET HOUSE switch room=5
+UNREACHABLE SOCKET HOUSE evidence room=6
+UNREACHABLE SOCKET HOUSE switch room=6
+UNREACHABLE SOCKET HOUSE evidence room=7
+UNREACHABLE SOCKET HOUSE switch room=7
+UNREACHABLE SOCKET HOUSE evidence room=8
+UNREACHABLE SOCKET HOUSE switch room=8
+Exception in thread "main" java.lang.AssertionError: HOUSE 12 unreachable goals, visited=56817
+	at org.beckenburg.AuthoredLevelReachabilityTest.main(AuthoredLevelReachabilityTest.java:33)

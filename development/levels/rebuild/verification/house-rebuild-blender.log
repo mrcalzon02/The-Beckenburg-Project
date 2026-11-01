@@ -1,0 +1,11 @@
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\levels\build_scene.py:28: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new(f'Original diffuse {mid} tint {color:06x}');mat.use_nodes=True
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\levels\build_scene.py:97: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene=bpy.context.scene;scene.world=bpy.data.worlds.new('Night environment');scene.world.use_nodes=True
+00:08.391  render           | Saved: 'C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\levels\previews\briar-rebuild-graybox-blender-exterior.png'
+Info: Saved as "briar-rebuild-graybox.blend"
+EDITABLE_GRAYBOX_SOURCE briar-rebuild 40967 runtime triangles
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit
+Error: Not freed memory blocks: 1, total unfreed memory 0.000023 MB

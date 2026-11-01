@@ -1,0 +1,18 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Campus service van apron,Unload equipment at the campus roadhead,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Campus green approach,Orient arrivals toward distinct academic buildings,16,12,0,3,plaza;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+plaza,Main facade plaza,Distribute pedestrians between building entrances,36,14,0,3,entry;lobby;union,REVIEW_IN_S02,NOT_ESTABLISHED
+lobby,Teaching lobby,Receive teaching-block users and identify destinations,14,12,0,3,lecture;plaza;seminar;tunnel-west,REVIEW_IN_S02,NOT_ESTABLISHED
+lecture,Lecture theatre,Teach a larger seated audience with clear sightlines,14,20,0,6,lab;lobby,REVIEW_IN_S02,NOT_ESTABLISHED
+seminar,Seminar classroom,Teach discussion groups around usable tables,14,12,0,3,lab;lobby,REVIEW_IN_S02,NOT_ESTABLISHED
+lab,Laboratory,Support supervised practical work and service storage,14,20,0,3,lecture;library;seminar;tunnel,REVIEW_IN_S02,NOT_ESTABLISHED
+library,Library reading room,Read and consult material in quiet daylit space,28,14,0,3,lab;res-lobby;stacks,REVIEW_IN_S02,NOT_ESTABLISHED
+stacks,Library stacks,Store and retrieve books through real aisles,28,14,3.6,3,bridge;library,REVIEW_IN_S02,NOT_ESTABLISHED
+bridge,Upper campus bridge,Connect library floors through a supported bridge,14,8,3.6,3,dorm;stacks,REVIEW_IN_S02,NOT_ESTABLISHED
+dorm,Dormitory corridor / rooms,Provide private residential rooms with shared facilities,16,18,3.6,3,bridge;res-lobby,REVIEW_IN_S02,NOT_ESTABLISHED
+res-lobby,Residence stair lobby,Distribute residents between stairs and private rooms,16,18,0,3,dorm;library;rear;union,REVIEW_IN_S02,NOT_ESTABLISHED
+union,Union cafe,Prepare and serve informal food with cleanup support,16,12,0,3,admin;plaza;res-lobby,REVIEW_IN_S02,NOT_ESTABLISHED
+admin,Administration office,Handle institutional administration and records,12,12,0,3,rear;union,REVIEW_IN_S02,NOT_ESTABLISHED
+rear,Rear quad and parking,Receive deliveries without occupying the campus green,12,24,0,3,admin;res-lobby,REVIEW_IN_S02,NOT_ESTABLISHED
+tunnel,Maintenance tunnel hub,Distribute maintenance access beneath selected buildings,12,18,-3,3,lab;tunnel-west,REVIEW_IN_S02,NOT_ESTABLISHED
+tunnel-west,West service tunnel,Connect western services through supported tunnel geometry,18,6,-3,3,lobby;tunnel,REVIEW_IN_S02,NOT_ESTABLISHED

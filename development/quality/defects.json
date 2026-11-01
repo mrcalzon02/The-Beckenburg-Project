@@ -1816,6 +1816,50 @@
       "action": "Provide the established User authored level slot label without opening a user project or adding a campaign chapter.",
       "evidence": "Actual MissionBoardIntegrationTest passes locally, covering packaged pictures, asynchronous loading, retained 22-chapter order, prototype privacy and locked/unlocked dispatch.",
       "older_maps": "Keep custom authoring slots separate from fixed built-in/campaign roster and saved ordinals; do not silently substitute a built-in map."
+    },
+    {
+      "id": "DEV-171",
+      "title": "House graybox top stair intersects the foyer partition",
+      "status": "corrected-locally; pilot only",
+      "affected": "Isolated Briar House rebuild graybox",
+      "symptom": "The first actual physics run failed the last ascent steps, top landing and descent; swept navigation could not reach four upper rooms.",
+      "cause": "The stair ended 0.20m from a lower-floor partition, within the capsule/wall clearance at the last rise.",
+      "action": "Move the foyer partition and doorway to leave 0.60m clearance beyond the top stair endpoint. Keep the shared physics unchanged.",
+      "evidence": "house-rebuild-physics-first.log and house-rebuild-reachability-first.log reproduce failure; final physics and 61,328-position swept reachability pass, with all 15 zones and sockets reached.",
+      "older_maps": "Recheck both ends of every flight after changing room proportions; graph or midpoint checks do not certify landings."
+    },
+    {
+      "id": "DEV-172",
+      "title": "House graybox service panel placed inside its doorway aperture",
+      "status": "corrected-locally; pilot only",
+      "affected": "House rebuild heating/laundry service room",
+      "symptom": "AuthoredUtilitiesTest HOUSE_REBUILD failed service-panel has clear operating position.",
+      "cause": "Panel and cellar/service doorway were authored at the same wall coordinate.",
+      "action": "Move the panel onto actual solid wall north of the doorway, preserving the aperture and working approach.",
+      "evidence": "house-rebuild-utilities-first.log fails; current utility checks pass twelve switches, the panel, fourteen acoustic links and two stairs.",
+      "older_maps": "Review fixtures against every actual aperture and clear aim/operating point after layout edits."
+    },
+    {
+      "id": "DEV-173",
+      "title": "Legacy House envelope overlaid on a smaller rebuilt interior",
+      "status": "corrected-locally; shared renderer source binding",
+      "affected": "House rebuild graybox; future revised sources using House gameplay slot",
+      "symptom": "Native export showed blank outer walls and a legacy roof hiding actual revised windows and entrances.",
+      "cause": "Renderer selected fixed original House cladding/porch coordinates by the HouseMap site enum, independent of the revised LevelDefinition.",
+      "action": "Bind that fixed legacy skin only to the original house source ID. Revised definitions use their own authored shell. Register and test the correct suburban setting.",
+      "evidence": "HouseRebuildShellTest failed at x24 beyond the revised footprint before correction; now checks 20,817 elevated shell vertices and correct setting. Real runtime/native views and rejected source are retained.",
+      "older_maps": "Audit every hardcoded facade/roof/enclosure against its source coordinates before reusing a gameplay slot."
+    },
+    {
+      "id": "DEV-174",
+      "title": "Basement architectural opening does not remove the broad world-ground sheet",
+      "status": "open; owner-directed editor terrain-hole integration in progress",
+      "affected": "Rebuilt House pilot and older cellar/cavity maps requiring independent audit",
+      "symptom": "Architectural stair/deck openings can pass movement while a separate broad world-ground/backdrop sheet still spans the basement elevation. Owner explicitly requires genuine world-floor holes.",
+      "cause": "Room/deck voids and the broad terrain/backdrop surface currently have different generation paths. The latter is not removed by the architectural void.",
+      "action": "Use saved editor AdaptiveTerrainTopology punched leaves and actual TerrainEntranceMesh geometry; bind the same missing triangles into real rendering, native body/support and optical queries. Test an unpunched negative control and original PNG byte preservation.",
+      "evidence": "Owner steering 31 October and source inspection of SceneRenderer.enclosureScenery; current pilot movement/native parity does not certify world-floor removal.",
+      "older_maps": "Individually audit House, Farmhouse, School, Church, institutional service basements, crypts, mines, tunnels and all stacked remote cavities."
     }
   ],
   "audit_categories": [

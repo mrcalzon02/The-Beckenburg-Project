@@ -5,9 +5,10 @@ import org.beckenburg.LevelDefinition.*;
 public final class AuthoredLevelReachabilityTest {
  public static void main(String[] args){
   boolean blackpine=args.length>0&&args[0].equals("BLACKPINE");
-  HouseMap.Site[] sites=blackpine?new HouseMap.Site[]{HouseMap.Site.FARMHOUSE}:args.length==0?new HouseMap.Site[]{HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}:new HouseMap.Site[]{HouseMap.Site.valueOf(args[0])};
+  boolean rebuild=args.length>0&&args[0].equals("HOUSE_REBUILD");
+  HouseMap.Site[] sites=blackpine||rebuild?new HouseMap.Site[]{HouseMap.Site.HOUSE}:args.length==0?new HouseMap.Site[]{HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}:new HouseMap.Site[]{HouseMap.Site.valueOf(args[0])};
   for(HouseMap.Site site:sites){
-   HouseMap map=blackpine?BlackpineLevel.map():new HouseMap(site);for(Portal p:map.level().portals())if(p.door())map.openDoorBetweenRooms(p.a(),p.b());
+   HouseMap map=rebuild?HouseRebuild.graybox():blackpine?BlackpineLevel.map():new HouseMap(site);for(Portal p:map.level().portals())if(p.door())map.openDoorBetweenRooms(p.a(),p.b());
    ArrayDeque<Vec> queue=new ArrayDeque<>();Set<String> seen=new HashSet<>();List<Vec> reachable=new ArrayList<>();
    Vec origin=map.spawn(14);queue.add(origin);seen.add(key(origin));
    while(!queue.isEmpty()){

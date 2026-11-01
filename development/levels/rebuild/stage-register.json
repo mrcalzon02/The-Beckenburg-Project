@@ -134,11 +134,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/academy/space-program.csv",
+            "development/levels/rebuild/academy/routes.csv",
+            "development/levels/rebuild/academy/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -239,11 +244,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/asylum/space-program.csv",
+            "development/levels/rebuild/asylum/routes.csv",
+            "development/levels/rebuild/asylum/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -342,11 +352,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/castle/space-program.csv",
+            "development/levels/rebuild/castle/routes.csv",
+            "development/levels/rebuild/castle/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -445,11 +460,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/church/space-program.csv",
+            "development/levels/rebuild/church/routes.csv",
+            "development/levels/rebuild/church/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -550,11 +570,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/college/space-program.csv",
+            "development/levels/rebuild/college/routes.csv",
+            "development/levels/rebuild/college/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -653,11 +678,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/farmhouse/space-program.csv",
+            "development/levels/rebuild/farmhouse/routes.csv",
+            "development/levels/rebuild/farmhouse/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -757,25 +787,40 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/house/space-program.csv",
+            "development/levels/rebuild/house/routes.csv",
+            "development/levels/rebuild/house/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "src/main/java/org/beckenburg/HouseRebuild.java",
+            "development/levels/rebuild/house/graybox-definition.json",
+            "development/levels/rebuild/captures/house-graybox/house_rebuild/room-matrix.csv",
+            "development/levels/rebuild/house/native-graybox-verification.json"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Use terrain-editor punched topology for the separate world-ground sheet, then inspect real basement opening and traversal; complete terrain/structure/facility gates before promotion."
         },
         "S03": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "src/main/java/org/beckenburg/HouseRebuild.java",
+            "development/levels/rebuild/house/graybox-definition.json",
+            "development/levels/rebuild/captures/house-graybox/house_rebuild/room-matrix.csv",
+            "development/levels/rebuild/house/native-graybox-verification.json"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Use terrain-editor punched topology for the separate world-ground sheet, then inspect real basement opening and traversal; complete terrain/structure/facility gates before promotion."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -862,11 +907,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/mansion/space-program.csv",
+            "development/levels/rebuild/mansion/routes.csv",
+            "development/levels/rebuild/mansion/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -967,11 +1017,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/prison/space-program.csv",
+            "development/levels/rebuild/prison/routes.csv",
+            "development/levels/rebuild/prison/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -1070,11 +1125,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/school/space-program.csv",
+            "development/levels/rebuild/school/routes.csv",
+            "development/levels/rebuild/school/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -1174,11 +1234,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-01/space-program.csv",
+            "development/levels/rebuild/wld-01/routes.csv",
+            "development/levels/rebuild/wld-01/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -1280,11 +1345,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-02/space-program.csv",
+            "development/levels/rebuild/wld-02/routes.csv",
+            "development/levels/rebuild/wld-02/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -1385,11 +1455,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-03/space-program.csv",
+            "development/levels/rebuild/wld-03/routes.csv",
+            "development/levels/rebuild/wld-03/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -1490,11 +1565,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-04/space-program.csv",
+            "development/levels/rebuild/wld-04/routes.csv",
+            "development/levels/rebuild/wld-04/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -1595,11 +1675,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-05/space-program.csv",
+            "development/levels/rebuild/wld-05/routes.csv",
+            "development/levels/rebuild/wld-05/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -1700,11 +1785,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-06/space-program.csv",
+            "development/levels/rebuild/wld-06/routes.csv",
+            "development/levels/rebuild/wld-06/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -1805,11 +1895,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-07/space-program.csv",
+            "development/levels/rebuild/wld-07/routes.csv",
+            "development/levels/rebuild/wld-07/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -1910,11 +2005,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-08/space-program.csv",
+            "development/levels/rebuild/wld-08/routes.csv",
+            "development/levels/rebuild/wld-08/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2015,11 +2115,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-09/space-program.csv",
+            "development/levels/rebuild/wld-09/routes.csv",
+            "development/levels/rebuild/wld-09/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2120,11 +2225,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-10/space-program.csv",
+            "development/levels/rebuild/wld-10/routes.csv",
+            "development/levels/rebuild/wld-10/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2225,11 +2335,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-11/space-program.csv",
+            "development/levels/rebuild/wld-11/routes.csv",
+            "development/levels/rebuild/wld-11/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2330,11 +2445,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-12/space-program.csv",
+            "development/levels/rebuild/wld-12/routes.csv",
+            "development/levels/rebuild/wld-12/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2435,11 +2555,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-13/space-program.csv",
+            "development/levels/rebuild/wld-13/routes.csv",
+            "development/levels/rebuild/wld-13/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2539,11 +2664,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-14/space-program.csv",
+            "development/levels/rebuild/wld-14/routes.csv",
+            "development/levels/rebuild/wld-14/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2643,11 +2773,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-15/space-program.csv",
+            "development/levels/rebuild/wld-15/routes.csv",
+            "development/levels/rebuild/wld-15/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2747,11 +2882,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-16/space-program.csv",
+            "development/levels/rebuild/wld-16/routes.csv",
+            "development/levels/rebuild/wld-16/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2851,11 +2991,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-17/space-program.csv",
+            "development/levels/rebuild/wld-17/routes.csv",
+            "development/levels/rebuild/wld-17/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -2955,11 +3100,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-18/space-program.csv",
+            "development/levels/rebuild/wld-18/routes.csv",
+            "development/levels/rebuild/wld-18/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",
@@ -3060,11 +3210,16 @@
           "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
         },
         "S01": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+          "evidence": [
+            "development/levels/rebuild/function-programs.json",
+            "development/levels/rebuild/wld-07-mortuary/space-program.csv",
+            "development/levels/rebuild/wld-07-mortuary/routes.csv",
+            "development/levels/rebuild/wld-07-mortuary/brief.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
           "status": "NOT_AUDITED",

@@ -1,0 +1,18 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Mountain-road van apron,Unload at the mountain-road terminus,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Monastery gate terrace,Approach the monastery through its gate terrace,16,12,0,3,gatehouse;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+gatehouse,Gatehouse,Receive visitors and supervise entry,16,6,0,3,entry;south,REVIEW_IN_S02,NOT_ESTABLISHED
+west,West cloister,Connect western communal rooms under cover,6,28,0,3,catacombs;dorm;north;south,REVIEW_IN_S02,NOT_ESTABLISHED
+east,East cloister,Connect eastern residential/service rooms under cover,6,28,0,3,north;refectory;south;tower-base,REVIEW_IN_S02,NOT_ESTABLISHED
+north,North cloister,Connect archive and worship functions under cover,42,6,0,3,archive;catacombs;east;garden;vestry;west,REVIEW_IN_S02,NOT_ESTABLISHED
+south,South cloister,Close the sheltered communal circulation loop,42,6,0,3,east;garden;gatehouse;west,REVIEW_IN_S02,NOT_ESTABLISHED
+garden,Herb garden,Grow and maintain herbs beside water access,30,28,0,3,north;south,REVIEW_IN_S02,NOT_ESTABLISHED
+archive,Archive,Read and preserve monastic records,20,14,0,3,north;vestry,REVIEW_IN_S02,NOT_ESTABLISHED
+refectory,Refectory,Prepare serve and clear communal meals,18,20,0,3,east;rear,REVIEW_IN_S02,NOT_ESTABLISHED
+dorm,Dormitory,Sleep with personal storage and nearby sanitation,16,28,0,3,west,REVIEW_IN_S02,NOT_ESTABLISHED
+tower-base,Bell tower stair base,Enter a supported bell-tower stair,10,14,0,3,bell;east;rear,REVIEW_IN_S02,NOT_ESTABLISHED
+bell,Bell chamber,Maintain and operate bells from guarded structure,10,14,6,3,tower-base,REVIEW_IN_S02,NOT_ESTABLISHED
+catacombs,Catacomb cross passage,Connect underground burial and memorial spaces,42,6,-3,3,chamber;north;west,REVIEW_IN_S02,NOT_ESTABLISHED
+chamber,Subterranean chapter chamber,Gather or consult memorial records below ground,20,14,-3,3,catacombs,REVIEW_IN_S02,NOT_ESTABLISHED
+vestry,Wash / vestry,Wash and prepare clothing or worship materials,16,14,0,3,archive;north,REVIEW_IN_S02,NOT_ESTABLISHED
+rear,Rear service terrace,Receive supplies along a separate supported service terrace,8,14,0,3,refectory;tower-base,REVIEW_IN_S02,NOT_ESTABLISHED

@@ -1,0 +1,16 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+r00,Mudroom,Remove muddy clothing before entering shared rooms,6.0,5.0,0.0,3.0,grounds;r01;r04,REVIEW_IN_S02,NOT_ESTABLISHED
+r01,Farm parlour,Sit and receive visitors away from farm work,8.0,8.0,0.0,3.0,r00;r02,REVIEW_IN_S02,NOT_ESTABLISHED
+r02,Farm kitchen,Prepare household meals with water and storage,8.0,7.0,0.0,3.0,grounds;r01;r03,REVIEW_IN_S02,NOT_ESTABLISHED
+r03,Family dining room,Eat together next to food preparation,6.0,3.0,0.0,3.0,r02;r04,REVIEW_IN_S02,NOT_ESTABLISHED
+r04,Central stair passage,Connect family rooms and separate stair flights,6.0,7.0,0.0,3.0,r00;r03;r05;r09,REVIEW_IN_S02,NOT_ESTABLISHED
+r05,Upper farm landing,Reach bedrooms and a private washroom,6.0,15.0,3.0,3.0,r04;r06;r07,REVIEW_IN_S02,NOT_ESTABLISHED
+r06,Parents bedroom,Sleep with personal storage and bedside access,8.0,8.0,3.0,3.0,r05,REVIEW_IN_S02,NOT_ESTABLISHED
+r07,Child bedroom,Sleep and play with age-appropriate storage,8.0,7.0,3.0,3.0,r05,REVIEW_IN_S02,NOT_ESTABLISHED
+r08,Barn hayloft,Store dry hay on a supported loading deck,12.0,8.0,3.0,3.0,r10,REVIEW_IN_S02,NOT_ESTABLISHED
+r09,Root cellar,Store produce in suitable cellar conditions,14.0,15.0,-3.0,3.0,r04,REVIEW_IN_S02,NOT_ESTABLISHED
+r10,Barn interior,Shelter agricultural work with feed and stall access,12.0,15.0,0.0,6.0,grounds;r08,REVIEW_IN_S02,NOT_ESTABLISHED
+r11,Tool shed,Repair tools and store parts near the workyard,8.0,7.0,0.0,3.0,grounds,REVIEW_IN_S02,NOT_ESTABLISHED
+grounds,Rear grounds / exterior,Connect farm buildings through drained working ground,43,29,0,12,entry;r00;r02;r10;r11,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Approach / arrival,Arrive through the lane and yard,47,19.4,0,12,grounds;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+stage,Van service apron,Unload expedition equipment clear of agricultural circulation,16.0,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED

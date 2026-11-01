@@ -29,7 +29,7 @@ public final class LevelSceneSource {
     public static void main(String[] args)throws Exception{
         if(args.length>0&&args[0].equals("CASTLE_REBUILD")){castle();return;}
         if(args.length>0&&(args[0].equals("ARRIVAL")||args[0].equals("CASTLE_SURROUNDINGS")||args[0].startsWith("ENCLOSURE_"))){module(args[0]);return;}
-        HouseMap map=args.length>0&&args[0].equals("BLACKPINE")?BlackpineLevel.map():new HouseMap(args.length>0?HouseMap.Site.valueOf(args[0]):HouseMap.Site.HOUSE);
+        HouseMap map=args.length>0&&args[0].equals("HOUSE_REBUILD")?HouseRebuild.graybox():args.length>0&&args[0].equals("BLACKPINE")?BlackpineLevel.map():new HouseMap(args.length>0?HouseMap.Site.valueOf(args[0]):HouseMap.Site.HOUSE);
         map.configureHiding(100); // Editable authoring source includes every potential cupboard.
         Path out=Path.of("build/level-verification/scenes",map.level().id());Files.createDirectories(out.resolve("textures"));
         SceneRenderer scene=new SceneRenderer();scene.x=21;scene.z=22;

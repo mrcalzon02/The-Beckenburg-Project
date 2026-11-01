@@ -11,5 +11,9 @@ def apply(scene,definition):
   scene['source_of_truth']='VanArrivalTile.java / VanArrivalStreet.java / VanStaging.java';scene['assembly_role']='Canonical reusable van and arrival road module; apply destination dock once'
  elif name.startswith('enclosure-'):
   scene['source_of_truth']='LevelEnclosure.java / CastleSurroundings.java';scene['assembly_role']='Reusable surroundings template; investigation building is not included'
+ elif name=='briar-rebuild':
+  scene['source_of_truth']='HouseRebuild.java / LevelDefinition.java / FixtureLighting.java'
+  scene['assembly_role']='First-principles House graybox; real runtime geometry; not a completed or dispatched investigation'
+  scene['production_status']='graybox pilot; terrain, facilities, dressing and mission acceptance pending'
  else:
   scene['source_of_truth']='LevelPlans.java / LevelDefinition.java / FixtureLighting.java';scene['assembly_role']='Complete authored investigation level with runtime-matching geometry and functional metadata'

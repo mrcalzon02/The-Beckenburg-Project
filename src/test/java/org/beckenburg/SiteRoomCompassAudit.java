@@ -182,7 +182,11 @@ public final class SiteRoomCompassAudit {
         Files.createDirectories(out);
         HouseMap.Site site=map.site();
         var level=map.level();
-        for(var p:level.portals())if(p.door())map.toggleDoor(p.id()); // open for route/capture audit
+        for(var p:level.portals())if(p.door()){
+            if(!map.doorOpen(p.id()))map.toggleDoor(p.id());
+            // This is a settled-door inspection, not a door-animation capture.
+            map.doorOpenFraction(p.id(),System.nanoTime()+HouseMap.DOOR_SWING_NANOS);
+        }
         var lights=new RoomLighting();
         var scene=new SceneRenderer();scene.setRenderSize(320,200);
         scene.setPsxPreset(PsxPipeline.Preset.CLASSIC);scene.roomLights=lights;
@@ -265,7 +269,7 @@ public final class SiteRoomCompassAudit {
                 +"Portal access / windows / stairs: "+portalText(map,room)+"\n"
                 +"Connected in authored portal graph to van: "+reachableRoom+"\n"
                 +"Props: "+props+"; sockets: "+sockets+"\n"
-                +"AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its \n"
+                +"AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its\n"
                 +"shape, props, sightlines and doors? Are entrances, circulation and privacy believable?\n"
                 +"Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?\n"
                 +"Does the actual door and stair network make physical sense?\n";
@@ -322,7 +326,7 @@ public final class SiteRoomCompassAudit {
         Files.writeString(out.resolve("room-matrix.csv"),rows,StandardCharsets.UTF_8);
         Files.writeString(out.resolve("site-purpose-review.txt"),
             "SITE "+siteId+" / "+level.title()+"\n"
-            +"Status: "+(!siteId.equals("BLACKPINE")&&SiteCatalog.playable(site)
+            +"Status: "+(!siteId.equals("BLACKPINE")&&!siteId.equals("HOUSE_REBUILD")&&SiteCatalog.playable(site)
                 ?"PLAYABLE":"PROTOTYPE / NOT DISPATCHABLE")+"\n"
             +"Room capture: "+captures+" actual full-direction PNGs; "+missing
             +" missing/failed views; "+uncentered+" geometric centres obstructed.\n"
@@ -415,6 +419,7 @@ public final class SiteRoomCompassAudit {
         Files.writeString(output.resolve("whole-project-site-inventory.csv"),inventory,
             StandardCharsets.UTF_8);
         StringBuilder failures=new StringBuilder();
+        if(chosen.equals("HOUSE_REBUILD"))auditMap(HouseRebuild.graybox(),"HOUSE_REBUILD",output);
         for(HouseMap.Site site:HouseMap.Site.values()){
             if(!chosen.equals("ALL")&&!chosen.equals(site.name()))continue;
             // User-authored projects are not part of the built-in map roster.

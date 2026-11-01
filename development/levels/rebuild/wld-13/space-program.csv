@@ -1,0 +1,15 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Forest-road van apron,Unload at the forest service road,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Cannery gate / service yard,Receive deliveries through the cannery service yard,20,14,0,3,processing;side-yard;stage;wash,REVIEW_IN_S02,NOT_ESTABLISHED
+processing,Fish-processing floor,Receive prepare process and discharge catch,24,30,0,6,boiler;cold;entry;gallery;office;stores,REVIEW_IN_S02,NOT_ESTABLISHED
+cold,Refrigerated stores,Hold perishable stock with service access,16,18,0,3,processing;side-yard,REVIEW_IN_S02,NOT_ESTABLISHED
+boiler,Boiler house,Generate process heat and support maintenance,16,18,0,3,mess;processing;wash,REVIEW_IN_S02,NOT_ESTABLISHED
+wash,Workers washroom,Wash and change separately from food processing,16,12,0,3,boiler;bunk;entry,REVIEW_IN_S02,NOT_ESTABLISHED
+office,Managers office,Administer production payroll and records,12,12,0,3,dock;processing;stores,REVIEW_IN_S02,NOT_ESTABLISHED
+stores,Packing / dry stores,Pack and store processed goods before dispatch,12,12,0,3,dock;office;processing,REVIEW_IN_S02,NOT_ESTABLISHED
+dock,Shipping dock,Load finished goods at the supported shipping dock,24,14,0,3,office;stores,REVIEW_IN_S02,NOT_ESTABLISHED
+bunk,Workers bunkhouse,Sleep and store workers belongings,16,18,0,3,forest;mess;wash,REVIEW_IN_S02,NOT_ESTABLISHED
+mess,Workers mess,Prepare and serve crew meals,16,18,0,3,boiler;bunk;forest,REVIEW_IN_S02,NOT_ESTABLISHED
+forest,Forest edge return,Return along the actual forest-edge path,8,36,0,3,bunk;mess,REVIEW_IN_S02,NOT_ESTABLISHED
+side-yard,East service return,Move services and waste around the processing hall,16,18,0,3,cold;entry,REVIEW_IN_S02,NOT_ESTABLISHED
+gallery,Inspection mezzanine,Inspect processing equipment from a supported guarded mezzanine,6,30,3,3,processing,REVIEW_IN_S02,NOT_ESTABLISHED

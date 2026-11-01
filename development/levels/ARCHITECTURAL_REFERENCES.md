@@ -1,5 +1,15 @@
 # Architectural references and production decisions
 
+## 31 October first-principles rebuild research intake
+
+Reopened/read primary-source text for the following references during rebuild baseline work. These sources inform original fictional function/circulation; none supplies measured game coordinates or certifies structural engineering. No external photographs/textures were copied into game art.
+
+- [Eastern State Penitentiary's own history](https://easternstate.org/about/history-of-eastern-state-penitentiary): read the institutional account of distinct cellblocks, supervision from a connecting hub, ventilation intent and later expansions. Applied inference: custody, observation and changes of use must organize actual cells, thresholds and circulation. Beckenburg retains its proposed parallel-wing compound rather than copying a radial plan. No measured cell drawing was inspected in this intake; exact cell geometry remains for the measured design pass.
+- [NPS Kirkbride's Hospital](https://www.nps.gov/places/kirkbrides-hospital.htm): read the account of wings branching from a central building and the emphasis on daylight, air, gardens and daily patient activity. Applied inference: St. Dymphna's wards, common rooms, service provision and outdoor access need distinct spatial relationships. The page is a historical summary, not a measured ward plan; no exact dimensions are taken from it.
+- [LOC/NPS HABS NY-6298 Public School No. 4](https://tile.loc.gov/storage-services/master/pnp/habshaer/ny/ny1500/ny1598/data/ny1598data.pdf): reopened the 19-page historical/descriptive report; inspected opening text identifying the school, six building campaigns and retained classroom/assembly fittings. Applied inference: additions and specialist spaces should explain the school layout. This intake does not claim visual inspection of plan sheets or a sanitation/accessibility standard.
+
+Further per-location measured reference inspection remains outstanding. Earlier recorded references and inspection limitations below remain in force.
+
 Reviewed 2026-10-19. These are architectural research references, not claims that the game reproduces a historic building. The approved Beckenburg environment PNGs remain the visual direction. Plans, room functions and measured source meshes determine the actual geometry; generated drawing coordinates do not.
 
 ## Approved original boards

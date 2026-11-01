@@ -1,0 +1,37 @@
+{
+  "status": "NATIVE_PARITY_PASS_NOT_MAP_ACCEPTANCE",
+  "level": "briar-rebuild",
+  "revision": "first-principles-graybox-v1-f633efc651b435e0",
+  "native_sha256": "075a04fb29833eeba6c3a6d89a1ba224393ca471905d3c62b074858ac2e43632",
+  "runtime_geometry_sha256": "712c62d48d70ef9e616fd1e729ab52ac05900a0b0cb33005dd6d8bb8d98cbd07",
+  "definition_sha256": "a49a27e4f11f8efbe254cc6851373af77284494e29d94f00c2f2707656631583",
+  "triangles_compared_vertex_by_vertex_and_uv": 34521,
+  "packed_images": 107,
+  "portal_anchors": 27,
+  "spawn_anchors": 15,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/previews/briar-rebuild-blender-front.png",
+      "sha256": "577c7c8e77d9c61d03b6aa32e66b6c956aa1b55205ed3c3343c19ac0c4dd53fb",
+      "type": "Native inspection view"
+    },
+    {
+      "path": "development/levels/rebuild/previews/briar-rebuild-blender-rear.png",
+      "sha256": "ab85d450f544a239a749a96b31711d25740eda54c6e7298309aa1f5badc2b612",
+      "type": "Native inspection view"
+    },
+    {
+      "path": "development/levels/rebuild/previews/briar-rebuild-blender-ground-cutaway.png",
+      "sha256": "cdc0c98f1662336683bab862a0e65e66d091be8aed7fa56b3cdd555e96403465",
+      "type": "Native cutaway"
+    }
+  ],
+  "native_file_unchanged_after_inspection": true,
+  "remaining": [
+    "terrain and boundaries",
+    "structural refinement",
+    "facilities and furniture",
+    "story and wear",
+    "complete mission/LAN/GPU and human acceptance"
+  ]
+}

@@ -1,0 +1,18 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Carriage-drive van apron,Unload equipment on the carriage approach,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Entrance terrace,Receive guests beneath a formal entrance sequence,16,10,0,3,foyer;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+foyer,Entrance foyer,Receive coats and orient guests to reception rooms,16,10,0,3,ballroom;drawing;entry;stair,REVIEW_IN_S02,NOT_ESTABLISHED
+stair,Grand stair hall,Distribute formal circulation around the main stair,8,18,0,7.2,foyer;gallery;library;service,REVIEW_IN_S02,NOT_ESTABLISHED
+drawing,Drawing room,Receive and entertain visitors in seated groups,16,10,0,3,foyer;library,REVIEW_IN_S02,NOT_ESTABLISHED
+library,Library,Read and consult the household collection,16,18,0,3,drawing;garden;stair,REVIEW_IN_S02,NOT_ESTABLISHED
+ballroom,Ballroom,Gather and dance in a structurally clear large room,18,28,0,7.2,dining;foyer,REVIEW_IN_S02,NOT_ESTABLISHED
+dining,Dining hall,Serve formal meals from the service side,18,12,0,3,ballroom;scullery,REVIEW_IN_S02,NOT_ESTABLISHED
+scullery,Scullery / kitchen,Prepare food and clean utensils behind reception rooms,18,10,0,3,dining;service,REVIEW_IN_S02,NOT_ESTABLISHED
+service,Servants corridor,Move staff supplies and waste without crossing formal events,8,40,0,3,cellar;garden;scullery;servants;stair,REVIEW_IN_S02,NOT_ESTABLISHED
+garden,Walled rear garden,Use and maintain a bounded estate garden,24,22,0,3,greenhouse;library;service,REVIEW_IN_S02,NOT_ESTABLISHED
+greenhouse,Greenhouse,Raise and maintain plants with water and storage,12,10,0,3,garden,REVIEW_IN_S02,NOT_ESTABLISHED
+gallery,Upper gallery,Distribute guests and residents to private upper rooms,8,28,3.6,3,servants;stair;suite,REVIEW_IN_S02,NOT_ESTABLISHED
+suite,Master suite,Sleep dress and wash with private support spaces,16,18,3.6,3,gallery,REVIEW_IN_S02,NOT_ESTABLISHED
+servants,Upper servants passage,Connect staff accommodation and service stairs,8,40,3.6,3,attic;gallery;service,REVIEW_IN_S02,NOT_ESTABLISHED
+attic,Attic archive,Store estate records and disused belongings,16,18,7.2,3,servants,REVIEW_IN_S02,NOT_ESTABLISHED
+cellar,Wine cellar,Store and retrieve cellar provisions through service access,18,12,-3,3,service,REVIEW_IN_S02,NOT_ESTABLISHED
