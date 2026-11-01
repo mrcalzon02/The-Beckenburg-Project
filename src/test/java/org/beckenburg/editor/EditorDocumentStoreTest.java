@@ -88,6 +88,17 @@ public final class EditorDocumentStoreTest {
                 RuntimeScene.Transform.identity(),List.of(component)));
             fails(()->RuntimeSceneDocument.save(target,large));
             check(Arrays.equals(prior,Files.readAllBytes(target)),"Actual BSCN encoder stops at storage budget without changing document");
+            Path guarded=root.resolve("guarded.bscn");
+            EditorDocumentStore.saveIfUnchanged(guarded,out->out.write(nextBytes),RuntimeSceneDocument::readRaw,RuntimeSceneDocument::readRaw,null);
+            String observed=EditorMeshPipeline.sourceFingerprint(nextBytes);
+            fails(()->EditorDocumentStore.saveIfUnchanged(guarded,out->out.write(prior),RuntimeSceneDocument::readRaw,RuntimeSceneDocument::readRaw,null));
+            check(Arrays.equals(nextBytes,Files.readAllBytes(guarded)),"Expected-missing guard cannot overwrite an existing document");
+            byte[] lateChange="external change during staging".getBytes(java.nio.charset.StandardCharsets.UTF_8);
+            fails(()->EditorDocumentStore.saveIfUnchanged(guarded,out->{out.write(prior);Files.write(guarded,lateChange);},RuntimeSceneDocument::readRaw,RuntimeSceneDocument::readRaw,observed));
+            check(Arrays.equals(lateChange,Files.readAllBytes(guarded))&&!Files.exists(EditorDocumentStore.journal(guarded)),"Observed fingerprint rechecked after staging before any source replacement");
+            Files.delete(guarded);
+            fails(()->EditorDocumentStore.saveIfUnchanged(guarded,out->out.write(prior),RuntimeSceneDocument::readRaw,RuntimeSceneDocument::readRaw,observed));
+            check(!Files.exists(guarded),"External deletion is not silently recreated by stale editor");
             Path lock=target.resolveSibling("."+target.getFileName()+".editor.lock");
             try(var channel=FileChannel.open(lock,StandardOpenOption.WRITE);var held=channel.lock()){
                 fails(()->RuntimeSceneDocument.save(target,after));

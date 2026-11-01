@@ -2018,13 +2018,35 @@
     {
       "id": "DEV-189",
       "title": "Human mesh import report prints literal newline escapes",
-      "status": "fixed-scoped; actual human import GUI regression and capture pass",
+      "status": "fixed-scoped; native41358289381 and standalone41358301989 CI accepted",
       "affected": "AssetImportDialog style/texture warnings and source report",
       "symptom": "The actual import dock displays a literal backslash-n between style commentary and source metadata, producing an unnecessarily long horizontally clipped report line.",
       "cause": "Three report strings contain a double-escaped newline instead of a Java newline escape.",
       "action": "Use actual newline escapes; assert the complete human report contains no literal backslash-n sequence.",
       "evidence": "Actual before capture development/quality/evidence/mesh-topology-2026-11-01/import-review-before-newline-fix.png; corrected actual GUI capture import-review.png. AssetImportTopologyGuiTest loads real OBJ, reviews topology, publishes actual runtime GLB and proves exact source preservation.",
       "older_maps": "Human import report only; no model geometry/material or game-world edits."
+    },
+    {
+      "id": "DEV-190",
+      "title": "Human asset publication can reread a source changed after review",
+      "status": "fixed-scoped locally; new-source CI pending",
+      "affected": "AssetImportDialog source observation/publication and ImportedAssetLibrary provenance",
+      "symptom": "A reviewed OBJ can be published with stale geometry but newly changed source archive; GLB regression0 rereads and directly publishes externally replaced geometry that the user never reviewed.",
+      "cause": "The human importer retained decoded triangles but no fingerprint of their exact captured bytes, and publication reopened the source without a revision precondition.",
+      "action": "Parse the captured bounded OBJ/STL bytes and pin their SHA; retain the exact GLB/native load fingerprint. Refuse changed sources before publication and check again when capturing registry input. Preserve exact native authoring bytes alongside the original/runtime model. Disable edits during publication.",
+      "evidence": "AssetImportTopologyGuiTest modifies actual OBJ geometry after review and replaces a valid zero-regression GLB; both attempts fail with no new approved asset or source overwrite. Successful publication compares every runtime triangle corner and exact original/authoring archive bytes.",
+      "older_maps": "Human import path only. Existing programmatic publish remains source-compatible; the human workflow uses the checked entry point. No existing art or map geometry changed."
+    },
+    {
+      "id": "DEV-191",
+      "title": "Native topology prototype used a backup validator as a save precondition",
+      "status": "fixed before first editable-topology publication; guarded native project tests pass",
+      "affected": "New EditorTopologyProject competing-editor saves and portable EditorDocumentStore API",
+      "symptom": "The new two-editor regression initially failed because a stale native topology editor overwrote a newer save despite its validator throwing IOException.",
+      "cause": "The existing format validator intentionally controls whether prior bytes qualify for backup; invalid prior data may still be replaced. It is not an authorization or optimistic-concurrency hook.",
+      "action": "Add a separate saveIfUnchanged operation with an expected SHA or expected-missing state, checked under the writer lock after staging and before backup/journal/source replacement. Adopt it for the native topology project. Keep existing unguarded save behavior explicit and compatible.",
+      "evidence": "EditorTopologyProjectTest reproduces two live projects on one native file, verifies refusal preserves newer disk and unsaved live edits, then observes/reopens/saves successfully. EditorDocumentStoreTest injects a noncooperative write during staging and external deletion; guarded saves preserve both. Existing real child-process crash/replay tests continue to pass.",
+      "older_maps": "Caught in the new indexed-topology prototype before delivery. Legacy mission/Castle callers retain their prior semantics until explicit resource-fingerprint adoption; do not infer that all existing serializers now enforce this new precondition."
     }
   ],
   "audit_categories": [

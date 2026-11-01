@@ -18,8 +18,13 @@
   },
   "fullCi": {
     "run": 41357690056,
-    "status": "in_progress",
-    "expectedManifest": 307
+    "status": "success; raw manifest verified",
+    "expectedManifest": 307,
+    "passed": 307,
+    "failed": 0,
+    "skipped": 0,
+    "manifest": 307,
+    "rawEvidence": "editor-full-round-efca9b11.txt"
   },
   "limits": [
     "No scene stored in change metadata; edits remain on native authoring objects.",

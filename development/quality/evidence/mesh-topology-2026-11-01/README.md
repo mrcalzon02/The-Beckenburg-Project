@@ -1,5 +1,7 @@
-# Actual human import UI captures
+# Actual human import/authoring UI captures
 
-Both PNGs are real Swing component captures from AssetImportTopologyGuiTest, showing a four-face test OBJ in the existing human importer. `import-review.png` shows the corrected report and derived topology review; `import-review-before-newline-fix.png` preserves the observed DEV-189 formatting error. They are UI/fixture evidence, not authored map/model art or installed gameplay acceptance.
+The initial `import-review.png` and `import-review-before-newline-fix.png` are actual Swing component captures from the read-only topology checkpoint96aea898. The latter preserves the observed DEV-189 formatting defect.
 
-The test presses the real Publish button, resolves the resulting GLB through the game decoder and verifies unchanged source/archive bytes. The topology remains read-only at this checkpoint; no editing, remeshing, material fidelity or completed G2 gate is asserted.
+`indexed-vertex-authoring.png` is a later actual component capture after human vertex0 moved to X=-0.25, with stable-ID selection highlight and native mesh save/reopen controls. The test uses real buttons and fresh native source load, compares every published runtime corner, and verifies exact original/editable source archives and changed-source refusals.
+
+All images show a four-face test OBJ fixture in the human tool. They are UI/fixture evidence, not authored map/model art, installed gameplay, renderer-quality or complete G2 acceptance. Selection/gizmos, primitives, edge/face modeling and full material/normal interchange remain open.

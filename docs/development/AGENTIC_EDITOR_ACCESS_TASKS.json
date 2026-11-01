@@ -703,8 +703,11 @@
       },
       "fullRoundCi": {
         "run": 41357690056,
-        "status": "in_progress",
-        "manifestEntries": 307
+        "status": "success",
+        "manifestEntries": 307,
+        "passed": 307,
+        "failed": 0,
+        "unexecuted": 0
       },
       "evidence": "development/quality/evidence/editor-changes-2026-11-01.json",
       "limitations": [
@@ -724,11 +727,11 @@
       ],
       "nativeHostCi": {
         "run": 41358289381,
-        "status": "in_progress"
+        "status": "success"
       },
       "standaloneCi": {
         "run": 41358301989,
-        "status": "in_progress"
+        "status": "success"
       },
       "evidence": "development/quality/evidence/mesh-topology-2026-11-01/evidence.json",
       "limitations": [
@@ -738,8 +741,9 @@
     }
   ],
   "nextGoalWork": [
-    "Verify exact-source CI for transaction change metadata and native mission revision cache",
-    "Continue G1 broader migration/ownership contracts and granular Castle dependency descriptors; do not claim bounds for rendering from physics extents",
-    "Continue G2 human mesh topology in the existing mesh pipeline with accepted foundation contracts; later G3-G12 remain dependency-gated"
+    "Verify exact-source native/standalone/full CI for indexed human mesh editing and checked asset publication",
+    "Adopt conditional disk revisions in legacy mission/Castle persistence without changing stable identity or migration semantics",
+    "Continue G2 primitives, actual selection/gizmos, reversible edge/face modeling and full normal/material interchange on the same native topology project",
+    "Continue dependency-ordered G3-G12; do not expose unverified modeling through agents or claim original PDF provenance/installed acceptance"
   ]
 }

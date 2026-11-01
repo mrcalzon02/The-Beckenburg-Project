@@ -51,15 +51,29 @@ public final class EditorMeshPipeline {
     }
     private EditorMeshPipeline(){}
 
-    public static Mesh read(Path file)throws IOException{
-        if(!Files.isRegularFile(file))throw new IOException("Not a regular model file");
-        long length=Files.size(file);
-        if(length<=0||length>MAX_SOURCE_BYTES)throw new IOException("Model exceeds 32 MiB input ceiling");
-        byte[] raw=Files.readAllBytes(file);
-        String name=file.getFileName().toString();
+    public static byte[] readSource(Path file,int maximum)throws IOException{
+        if(maximum<1||maximum>MAX_SOURCE_BYTES)throw new IllegalArgumentException("Invalid source budget");
+        if(!Files.isRegularFile(file,java.nio.file.LinkOption.NOFOLLOW_LINKS))throw new IOException("Not a regular model file");
+        if(Files.size(file)>maximum)throw new IOException("Model source exceeds byte budget");
+        try(var input=Files.newInputStream(file)){
+            byte[] raw=input.readNBytes(maximum+1);
+            if(raw.length==0||raw.length>maximum)throw new IOException("Model source exceeds byte budget");return raw;
+        }
+    }
+    public static String sourceFingerprint(byte[] bytes){
+        try{return java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(bytes));}
+        catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}
+    }
+    public static Mesh read(Path file)throws IOException{return decode(file.getFileName().toString(),readSource(file,(int)MAX_SOURCE_BYTES));}
+    /** Parse exactly the captured source bytes whose digest is shown/reviewed by the host. */
+    public static Mesh read(String name,byte[] source)throws IOException{
+        if(source.length==0||source.length>MAX_SOURCE_BYTES)throw new IOException("Model source exceeds byte budget");
+        return decode(name,source.clone());
+    }
+    private static Mesh decode(String name,byte[] raw)throws IOException{
         String lower=name.toLowerCase(Locale.ROOT);
-        if(lower.endsWith(".obj"))return obj(name,new String(raw,StandardCharsets.UTF_8),length);
-        if(lower.endsWith(".stl"))return stl(name,raw,length);
+        if(lower.endsWith(".obj"))return obj(name,new String(raw,StandardCharsets.UTF_8),raw.length);
+        if(lower.endsWith(".stl"))return stl(name,raw,raw.length);
         throw new IOException("Portable mesh reader supports OBJ and STL; GLB uses the game's glTF decoder");
     }
 

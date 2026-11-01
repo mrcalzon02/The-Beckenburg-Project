@@ -117,7 +117,20 @@ public final class EditorDocumentStore {
         Files.createDirectories(target.getParent());
         locked(target,()->{recoverLocked(target,format);cleanupStaging(target);saveLocked(target,writer,format,prepared,observer);return null;});
     }
+    /** Compare the observed disk revision inside the writer lock, after staging.
+     * A null fingerprint requires a previously missing document. Format validation
+     * controls backup eligibility; it is deliberately separate from this guard.
+     */
+    public static void saveIfUnchanged(Path destination,Writer writer,Validator format,Validator prepared,String expectedSha256)throws IOException{
+        Path target=normalize(destination);Objects.requireNonNull(writer);Objects.requireNonNull(format);Objects.requireNonNull(prepared);
+        if(expectedSha256!=null&&!expectedSha256.matches("[0-9a-f]{64}"))throw new IllegalArgumentException("Invalid document fingerprint");
+        Files.createDirectories(target.getParent());
+        locked(target,()->{recoverLocked(target,format);cleanupStaging(target);saveLocked(target,writer,format,prepared,NO_OBSERVER,expectedSha256,true);return null;});
+    }
     private static void saveLocked(Path target,Writer writer,Validator format,Validator prepared,Observer observer)throws IOException{
+        saveLocked(target,writer,format,prepared,observer,null,false);
+    }
+    private static void saveLocked(Path target,Writer writer,Validator format,Validator prepared,Observer observer,String expectedSha256,boolean guarded)throws IOException{
         Path temp=stage(target,writer,MAX_BYTES);
         Path log=journal(target);
         boolean existed=Files.exists(target);
@@ -127,6 +140,8 @@ public final class EditorDocumentStore {
             prepared.validate(temp);
             byte[] next=read(temp,MAX_BYTES),old=existed?read(target,MAX_BYTES):new byte[0];
             before=digest(old);
+            if(guarded&&(existed?(expectedSha256==null||!expectedSha256.equals(java.util.HexFormat.of().formatHex(before))):expectedSha256!=null))
+                throw new IOException("Editor document changed on disk; reopen before saving: "+target);
             if(existed&&Arrays.equals(old,next))return; // Keep the last DISTINCT good backup.
             if(existed){
                 boolean valid=true;

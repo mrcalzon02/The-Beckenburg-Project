@@ -9,7 +9,12 @@ import java.util.*;
 public final class EditorMeshTopology {
     public enum Code { DEGENERATE_FACE, NON_MANIFOLD_EDGE, EDGE_ORIENTATION, NON_MANIFOLD_VERTEX }
     public record Issue(Code code,int element,String detail) {}
-    public record Vertex(String part,double x,double y,double z) {}
+    public record Vertex(String part,double x,double y,double z) {
+        public Vertex {
+            if(part==null||part.isBlank()||!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))
+                throw new IllegalArgumentException("Invalid topology position");
+        }
+    }
     public record HalfEdge(int origin,int destination,int face,int next,int previous,int twin,
                            boolean boundary,boolean uvSeam) {}
     public record Face(String part,int edge,int island) {}
@@ -48,9 +53,18 @@ public final class EditorMeshTopology {
     private static Vertex point(String part,EditorMeshPipeline.Vertex v){return new Vertex(part,zero(v.x()),zero(v.y()),zero(v.z()));}
     private static boolean sameUv(EditorMeshPipeline.Vertex a,EditorMeshPipeline.Vertex b){return a.u()==b.u()&&a.v()==b.v();}
     private static int next(int edge){return edge/3*3+(edge%3+1)%3;}
-    public static EditorMeshTopology build(EditorMeshPipeline.Mesh mesh){
+    public static EditorMeshTopology build(EditorMeshPipeline.Mesh mesh){return build(mesh,null,null);}
+    /** Explicit topology keeps distinct vertex IDs distinct even at coincident positions. */
+    public static EditorMeshTopology buildIndexed(EditorMeshPipeline.Mesh mesh,List<Vertex> vertices,int[] origins){
+        Objects.requireNonNull(mesh);
+        if(vertices.size()>EditorMeshPipeline.MAX_TRIANGLES*3||origins.length!=mesh.triangles().size()*3)
+            throw new IllegalArgumentException("Indexed topology budget/count mismatch");
+        return build(mesh,List.copyOf(vertices),origins.clone());
+    }
+    private static EditorMeshTopology build(EditorMeshPipeline.Mesh mesh,List<Vertex> explicit,int[] explicitOrigins){
         Objects.requireNonNull(mesh);int count=mesh.triangles().size(),total=Math.multiplyExact(count,3);
-        var vertices=new ArrayList<Vertex>();var indices=new HashMap<Vertex,Integer>();
+        if(explicitOrigins!=null&&explicitOrigins.length!=total)throw new IllegalArgumentException("Corner count mismatch");
+        var vertices=explicit==null?new ArrayList<Vertex>():new ArrayList<>(explicit);var indices=new HashMap<Vertex,Integer>();
         int[] origin=new int[total],twin=new int[total];Arrays.fill(twin,-1);
         boolean[] boundary=new boolean[total],seam=new boolean[total];
         // Three 19-bit indices fit in one positive long at the import budget.
@@ -63,7 +77,16 @@ public final class EditorMeshTopology {
             var t=mesh.triangles().get(i);var values=new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()};
             for(int j=0;j<3;j++){
                 int e=i*3+j;corners[e]=values[j];var point=point(t.part(),values[j]);
-                Integer id=indices.get(point);if(id==null){id=vertices.size();indices.put(point,id);vertices.add(point);}origin[e]=id;
+                if(explicitOrigins!=null){
+                    int id=explicitOrigins[e];
+                    if(id<0||id>=vertices.size())throw new IllegalArgumentException("Unknown indexed vertex");
+                    var expected=vertices.get(id);
+                    if(!point.part().equals(expected.part())||point.x()!=expected.x()||point.y()!=expected.y()||point.z()!=expected.z())
+                        throw new IllegalArgumentException("Indexed corner differs from authoritative vertex");
+                    origin[e]=id;
+                }else{
+                    Integer id=indices.get(point);if(id==null){id=vertices.size();indices.put(point,id);vertices.add(point);}origin[e]=id;
+                }
             }
             double ax=t.b().x()-t.a().x(),ay=t.b().y()-t.a().y(),az=t.b().z()-t.a().z();
             double bx=t.c().x()-t.a().x(),by=t.c().y()-t.a().y(),bz=t.c().z()-t.a().z();

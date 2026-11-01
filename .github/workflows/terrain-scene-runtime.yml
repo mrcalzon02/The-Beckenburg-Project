@@ -14,6 +14,8 @@ on:
       - 'src/main/java/org/beckenburg/CastleEditorAgent.java'
       - 'src/main/java/org/beckenburg/AssetImportDialog.java'
       - 'src/main/java/org/beckenburg/editor/EditorMeshTopology.java'
+      - 'src/main/java/org/beckenburg/editor/EditorTopologyProject.java'
+      - 'src/main/java/org/beckenburg/ImportedAssetLibrary.java'
       - 'src/test/java/org/beckenburg/CastleDocumentRecoveryTest.java'
       - 'src/main/java/org/beckenburg/GroundRecovery.java'
       - 'src/main/java/org/beckenburg/HouseMap.java'

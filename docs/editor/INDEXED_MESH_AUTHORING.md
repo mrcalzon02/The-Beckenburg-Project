@@ -1,0 +1,20 @@
+# Indexed mesh authoring checkpoint
+
+The existing **IMPORT MODEL** dock now owns an `EditorTopologyProject` for OBJ/STL and native `.btop` sources. The working mesh is authoritative: adjacency, wireframe/reduction preview and published GLB triangles derive from its stable indexed vertices, face IDs, named parts and per-corner UVs. This is a human authoring workflow, not an agent scene or a second game renderer.
+
+## Working operations
+
+- Choose a source, select its vertex ID and edit X/Y/Z, then press **MOVE VERTEX**. The selected actual vertex is highlighted in the working viewport. A move that introduces a degenerate face is refused.
+- **UNDO MESH / REDO MESH** use the portable `EditorHistory` against this same project. Moving distinct vertices onto coincident positions does not weld their IDs or face connectivity.
+- **SAVE MESH** writes a versioned native `.btop` document under the editor topology directory; its actual path is reported and available on the Save button tooltip. **REOPEN MESH** is undoable. The source chooser also opens saved `.btop` documents in fresh projects.
+- Native saves enforce the shared8MiB output budget, staged readback, journal recovery, distinct prior version and cooperative writer lock. An observed disk SHA is checked inside the lock **after staging**; another editor's newer save or external deletion cannot be overwritten by a stale project. Explicit reopen observes that actual newer revision. Unknown schema versions and foreign-source backups fail without replacing live state.
+- **PUBLISH TO EDITOR** validates the reviewed source fingerprint, saves/archives the exact edited `.btop` authoring document, and publishes through the existing GLB writer, native game decoder and imported asset registry. Original input and editable authoring bytes have separate SHA metadata beside the generated runtime GLB. Source changes after review refuse publication; raw GLB level0 cannot bypass this check by rereading unobserved data.
+- GLB source vertex editing is explicitly unavailable while the current regeneration path cannot retain its original material/normal bindings. Unmodified GLB publication retains exact reviewed bytes; existing lossy-reduction confirmation remains in place.
+
+The `.btop` v1 schema stores owning project ID, original-source fingerprint, source name/size, stable vertices, stable faces, part ownership and corner UVs. Double-precision authoring values remain native; game GLB output uses the existing float buffers. Metadata and counts are bounded. Native schema v1 currently rejects future versions rather than inventing a migration. Original OBJ/STL bytes are retained even after edits; native documents are intentionally editable and retain their previous distinct save.
+
+## Evidence and limits
+
+`EditorTopologyProjectTest` proves native roundtrip, coincident-ID preservation (with a geometric-welding negative control), signed-zero handling, part/UV preservation, degenerate refusal, shared history, recovery, foreign/version controls, competing-editor lost-update refusal and bounded output. `EditorDocumentStoreTest` also changes the target during staging and verifies preservation, along with its actual child-process crash tests. `AssetImportTopologyGuiTest` drives the real buttons and fresh native source load, compares **every published corner's position, winding and UV** with `GlbProps.model`, checks exact source/authoring archives, and rejects changed OBJ and zero-regression GLB inputs. The independent Java17 editor JAR and complete native acceptance suite pass locally.
+
+This is a partial G2 foundation. Selection currently uses stable IDs, not triangle picking/gizmos. Parametric primitives, edge/face selection and modeling operations, full normals/material interchange, and local dirty GPU updates remain open. OBJ/STL use the existing fallback material path; no complete textured G2 sample or G2 exit is claimed. No new mesh operations are exposed through agent/headless/MCP adapters at this checkpoint. Conditional disk-save adoption in legacy mission/Castle adapters remains separate G1 work.

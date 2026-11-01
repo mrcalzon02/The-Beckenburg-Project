@@ -2574,7 +2574,7 @@ Older-map obligation: Applies to the shared local CLI for every host. Does not a
 
 ### DEV-189 — Human mesh import report prints literal newline escapes
 
-**Status:** fixed-scoped; actual human import GUI regression and capture pass · **Affected:** AssetImportDialog style/texture warnings and source report
+**Status:** fixed-scoped; native41358289381 and standalone41358301989 CI accepted · **Affected:** AssetImportDialog style/texture warnings and source report
 
 The actual import dock displays a literal backslash-n between style commentary and source metadata, producing an unnecessarily long horizontally clipped report line.
 
@@ -2585,6 +2585,34 @@ Fix / next action: Use actual newline escapes; assert the complete human report 
 Evidence and verification: Actual before capture development/quality/evidence/mesh-topology-2026-11-01/import-review-before-newline-fix.png; corrected actual GUI capture import-review.png. AssetImportTopologyGuiTest loads real OBJ, reviews topology, publishes actual runtime GLB and proves exact source preservation.
 
 Older-map obligation: Human import report only; no model geometry/material or game-world edits.
+
+### DEV-190 — Human asset publication can reread a source changed after review
+
+**Status:** fixed-scoped locally; new-source CI pending · **Affected:** AssetImportDialog source observation/publication and ImportedAssetLibrary provenance
+
+A reviewed OBJ can be published with stale geometry but newly changed source archive; GLB regression0 rereads and directly publishes externally replaced geometry that the user never reviewed.
+
+Cause / uncertainty: The human importer retained decoded triangles but no fingerprint of their exact captured bytes, and publication reopened the source without a revision precondition.
+
+Fix / next action: Parse the captured bounded OBJ/STL bytes and pin their SHA; retain the exact GLB/native load fingerprint. Refuse changed sources before publication and check again when capturing registry input. Preserve exact native authoring bytes alongside the original/runtime model. Disable edits during publication.
+
+Evidence and verification: AssetImportTopologyGuiTest modifies actual OBJ geometry after review and replaces a valid zero-regression GLB; both attempts fail with no new approved asset or source overwrite. Successful publication compares every runtime triangle corner and exact original/authoring archive bytes.
+
+Older-map obligation: Human import path only. Existing programmatic publish remains source-compatible; the human workflow uses the checked entry point. No existing art or map geometry changed.
+
+### DEV-191 — Native topology prototype used a backup validator as a save precondition
+
+**Status:** fixed before first editable-topology publication; guarded native project tests pass · **Affected:** New EditorTopologyProject competing-editor saves and portable EditorDocumentStore API
+
+The new two-editor regression initially failed because a stale native topology editor overwrote a newer save despite its validator throwing IOException.
+
+Cause / uncertainty: The existing format validator intentionally controls whether prior bytes qualify for backup; invalid prior data may still be replaced. It is not an authorization or optimistic-concurrency hook.
+
+Fix / next action: Add a separate saveIfUnchanged operation with an expected SHA or expected-missing state, checked under the writer lock after staging and before backup/journal/source replacement. Adopt it for the native topology project. Keep existing unguarded save behavior explicit and compatible.
+
+Evidence and verification: EditorTopologyProjectTest reproduces two live projects on one native file, verifies refusal preserves newer disk and unsaved live edits, then observes/reopens/saves successfully. EditorDocumentStoreTest injects a noncooperative write during staging and external deletion; guarded saves preserve both. Existing real child-process crash/replay tests continue to pass.
+
+Older-map obligation: Caught in the new indexed-topology prototype before delivery. Legacy mission/Castle callers retain their prior semantics until explicit resource-fingerprint adoption; do not infer that all existing serializers now enforce this new precondition.
 
 ## Required audit categories
 
