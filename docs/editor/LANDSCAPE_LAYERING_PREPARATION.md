@@ -27,7 +27,11 @@ never by adding dependencies to `org.beckenburg.editor`.
 ## Existing handoff contracts
 
 - `StitchedHeightmapWorld`: authoritative, seam-validated R16 source tiles.
-- `TerrainLayerStack`: non-destructive height, protection, legacy material IDs,\n  and individually paintable sculpt-layer alpha masks (v2), with source bake,\n  source-format v1 migration and sparse mixed-edit history.
+- `TerrainLayerStack` v3: non-destructive height, protection, eight stable
+  material IDs, sculpt-layer alpha masks (v2+) and explicit authored-material
+  provenance, including deliberately painted GRASS. Version 1 and 2 files
+  remain readable, though historical painted-GRASS provenance was not stored.
+  Erasing authored paint reveals managed route material without altering R16.
 - `TerrainTopologyFields`: derived terrain normals/slope proxy,
   curvature, D8 drainage, flow-direction/speed estimates and moisture proxy.
   Fields are **not** actual hydraulic sediment particle measurements.
@@ -35,9 +39,14 @@ never by adding dependencies to `org.beckenburg.editor`.
 - `TerrainInfrastructureSplines` v2: legacy routes remain unmodified on
   migration; newly managed road/rail/river alignments supply deterministic
   reversible procedural terrain grading, rebuilding on edit/delete with
-  collision and authored mesh heights using the same sampler. Route material
-  overlay and track junction geometries remain pending.
-- `TerrainRailMesh`: portable genuine ballast, sleepers and left/right rail\n  geometry exported through the shared terrain mesh writer; optional host\n  adapter still needed for live rendering/collision.\n- `StitchedHeightmapWorld.importTilesBatch`: seam-aware, rollback-journaled\n  source PNG replacement across up to nine tiles, with recovery on reopen.
+  collision and authored mesh heights using the same sampler. Reversible
+  material overlays are now rail GRAVEL, road DIRT, river RIVERBED, subordinate
+  to deliberate user paint. Junction geometry and shoulder blending remain pending.
+- `TerrainRailMesh`: portable genuine ballast, sleepers and left/right rail
+  geometry exported through the shared terrain mesh writer; optional host
+  adapter still needed for live rendering/collision.
+- `StitchedHeightmapWorld.importTilesBatch`: seam-aware, rollback-journaled
+  source PNG replacement across up to nine tiles, with recovery on reopen.
 - `TerrainComposedHeightSampler`: source plus saved sculpt-layer deltas and
   alpha masks use one identical height sampler for actual exported terrain mesh
   geometry and physical surface/navigation queries; scene fingerprints include
@@ -53,11 +62,12 @@ never by adding dependencies to `org.beckenburg.editor`.
 
 ## First implementation tranche, after finishing Terrain editor requirements
 
-**Route/material priority boundary:** Reversible infrastructure grading
-already preserves ordinary material paint. The next material-domain evaluator
-must combine user-painted material IDs and managed route corridor preferences
-explicitly, not repaint the base material array or treat source heightmap
-baking as a procedural-route save.
+**Route/material priority boundary:** Implemented portable precedence is:
+explicit human paint (including GRASS) over a managed route's material, over
+implicit default GRASS. Both `TerrainComposedHeightSampler.surfaceMaterial`
+and `LayeredTerrainQueries.groundMaterial` expose that result. The second
+specification must build its blend matrix atop this semantics, not repaint
+source material IDs or flatten procedural corridors into source heightmaps.
 
 1. **Stable material catalog.** Material profiles with immutable numeric IDs,
    albedo/tile atlas/normal/roughness/AO/height URI slots, physical surface type,
