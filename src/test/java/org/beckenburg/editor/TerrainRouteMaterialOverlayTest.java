@@ -52,6 +52,19 @@ public final class TerrainRouteMaterialOverlayTest {
                 "Undo hand-painted default reveals road overlay again");
             check(terrain.redo()&&terrain.surfaceMaterial(15,10)==grass,
                 "Redo restores the explicit GRASS priority");
+            terrain.eraseMaterialOverride(15,10,.4);
+            terrain.finishStroke();
+            check(!terrain.hasPaintedMaterial(15,10)&&
+                terrain.surfaceMaterial(15,10)==dirt,
+                "Erasing an authored override reveals the underlying road material");
+            check(terrain.undo()&&terrain.hasPaintedMaterial(15,10)&&
+                terrain.surfaceMaterial(15,10)==grass,
+                "Undoing the eraser restores the exact authored GRASS priority");
+            check(terrain.redo()&&!terrain.hasPaintedMaterial(15,10)&&
+                terrain.surfaceMaterial(15,10)==dirt,
+                "Redoing the eraser reveals the route again");
+            check(terrain.undo()&&terrain.surfaceMaterial(15,10)==grass,
+                "Undo restores the hand-paint before save");
             terrain.paintMaterial(17,10,.5,TerrainLayerStack.Material.MUD,90);
             terrain.finishStroke();
             check(terrain.surfaceMaterial(17,10)==TerrainLayerStack.Material.MUD.ordinal(),
@@ -102,6 +115,28 @@ public final class TerrainRouteMaterialOverlayTest {
             check(Arrays.equals(source,Files.readAllBytes(world.tilePath(0,0))),
                 "Route material changes never modify source R16 pixels");
             check(world.verifySeams().isEmpty(),"No terrain seam changes");
+
+            var infrastructure=TerrainInfrastructureSplines.open(world);
+            infrastructure.put(new TerrainInfrastructureSplines.Alignment(
+                "rail-surface",TerrainInfrastructureSplines.Kind.RAIL,
+                List.of(new TerrainLayerStack.Point(4,8,30),
+                    new TerrainLayerStack.Point(28,8,30)),1.4,1,4,true));
+            infrastructure.put(new TerrainInfrastructureSplines.Alignment(
+                "river-surface",TerrainInfrastructureSplines.Kind.RIVER,
+                List.of(new TerrainLayerStack.Point(4,27,20),
+                    new TerrainLayerStack.Point(28,27,20)),1.4,1,1000,true));
+            infrastructure.save();
+            afterMove.refreshManagedRoutes(infrastructure.list());
+            check(afterMove.surfaceMaterial(16,8)==TerrainLayerStack.Material.GRAVEL.ordinal(),
+                "Managed rail produces actual removable GRAVEL surface");
+            check(afterMove.surfaceMaterial(16,27)==TerrainLayerStack.Material.RIVERBED.ordinal(),
+                "Managed river produces actual removable RIVERBED surface");
+            infrastructure.remove("rail-surface");
+            infrastructure.remove("river-surface");infrastructure.save();
+            afterMove.refreshManagedRoutes(infrastructure.list());
+            check(afterMove.surfaceMaterial(16,8)==grass&&
+                afterMove.surfaceMaterial(16,27)==grass,
+                "All route surface categories disappear cleanly when deleted");
 
             // A saved v2 file lacked painted-material provenance. Its legacy
             // non-GRASS values are conservatively treated as authored.
