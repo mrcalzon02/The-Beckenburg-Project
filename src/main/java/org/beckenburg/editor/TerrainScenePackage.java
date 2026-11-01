@@ -229,6 +229,12 @@ public final class TerrainScenePackage implements EnvironmentModule {
                 update(hash,"tile:"+x+":"+z);
                 Path tile=world.tilePath((int)x,(int)z);
                 updateFile(hash,tile);
+                // The authored mesh and physical support can now directly
+                // consume saved non-destructive sculpt layers. These files
+                // MUST be fingerprinted to reject stale published geometry.
+                update(hash,"terrain-layer:"+x+":"+z);
+                updateFile(hash,world.directory().resolve("terrain-layers")
+                    .resolve("tile_"+x+"_"+z+".bin"));
             }
             for(String source:List.of("adaptive-topology.bin","entrance-seams.bin",
                     "ramp-entrances.bin","layered-geometry.bin")){
