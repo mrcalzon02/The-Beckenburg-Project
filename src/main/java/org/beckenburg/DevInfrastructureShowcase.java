@@ -136,7 +136,11 @@ public final class DevInfrastructureShowcase {
         }
         poleCount=faces.size()-p0;
     }
-    private WaterDocument river(){
+    public static WaterTerrainSnap.Socket riverSocket(){
+        return new WaterTerrainSnap.Socket("river-demo-join",
+            8.1,.075,15.05,0,1,1.16);
+    }
+    private WaterDocument river(WaterDocument sourceDocument){
         int from=faces.size();
         double z0=13.1,z1=17.3;
         // Contiguous riverbed with real sloped banks and exposed sediment.
@@ -155,15 +159,15 @@ public final class DevInfrastructureShowcase {
             1.16,2,0,setting,WaterPlacement.Shape.SQUARE);
         var initial=new WaterPlacement("dev-river-downstream",8.1,.075,16.18,
             1.16,2,0,setting,WaterPlacement.Shape.SQUARE);
-        var socket=new WaterTerrainSnap.Socket("river-demo-join",
-            8.1,.075,15.05,0,1,1.16);
+        var socket=riverSocket();
         var connected=WaterTerrainSnap.connect(initial,socket,.4,false);
         if(connected==null)throw new IllegalStateException(
             "Water module failed to snap downstream river to terrain end socket");
         var b=connected.water();
         if(Math.abs(b.z()-16.05)>.001)
             throw new IllegalStateException("Water river snap was not flush");
-        var document=new WaterDocument("dev-infrastructure-demo",List.of(a,b));
+        var document=sourceDocument==null?
+            new WaterDocument("dev-infrastructure-demo",List.of(a,b)):sourceDocument;
         // The water module owns true footprints, authoring and simulation data.
         // The showroom depicts those exact footprints as flat diagnostic surfaces;
         // this is not the game's animated/reflective water shader.
@@ -178,9 +182,11 @@ public final class DevInfrastructureShowcase {
         waterCount=faces.size()-waterBefore;
         return document;
     }
-    private DevInfrastructureShowcase(){
+    private DevInfrastructureShowcase(WaterDocument chosenWater){
+        if(chosenWater!=null&&!"dev-infrastructure-demo".equals(chosenWater.level()))
+            throw new IllegalArgumentException("Wrong DEV water document");
         rail();road();
-        water=river();
+        water=river(chosenWater);
         geometry=List.copyOf(faces);
         props=List.of(
             new Prop("level_tree_conifer",6.5,0.14,12.25,1.85,0),
@@ -192,7 +198,12 @@ public final class DevInfrastructureShowcase {
             new Prop("level_woodland_boulder",7.12,-.05,16.7,.32,1.6)
         );
     }
-    public static DevInfrastructureShowcase create(){return new DevInfrastructureShowcase();}
+    public static DevInfrastructureShowcase create(){
+        return new DevInfrastructureShowcase(null);
+    }
+    public static DevInfrastructureShowcase create(WaterDocument water){
+        return new DevInfrastructureShowcase(Objects.requireNonNull(water));
+    }
     public List<DevTerrainTopologyLab.Triangle> triangles(){return geometry;}
     public List<Prop> props(){return props;}
     public WaterDocument water(){return water;}
