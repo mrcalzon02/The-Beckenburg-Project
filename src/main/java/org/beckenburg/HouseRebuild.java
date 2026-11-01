@@ -8,6 +8,7 @@ import org.beckenburg.LevelDefinition.*;
  */
 public final class HouseRebuild {
     private HouseRebuild(){}
+    static final String TERRAIN_SHA="d8089757803fdc2fae41f9fc606a1e99ea75f4da482c01e54cf136bc6da3f499";
 
     public static HouseMap graybox(){return new HouseMap(HouseMap.Site.HOUSE,source());}
 
@@ -73,6 +74,7 @@ public final class HouseRebuild {
         b.socket("ritual",11,18.3,-2.4,17.6,0,"cleansing");
         b.socket("ritual",12,9,0,6,0,"absolution");
         var van=b.rooms.get(14);
+        b.socket("world-terrain",12,0,-.65,0,0,"briar-rebuild-world.hcs2#"+TERRAIN_SHA);
         return new LevelDefinition(b.id,"first-principles-graybox-v1",b.title,
             b.rooms,b.portals,b.stairs,b.voids,b.props,b.sockets,b.colliders,
             new Dock(van.cx(),0,van.cz(),-Math.PI/2),b.ambience);

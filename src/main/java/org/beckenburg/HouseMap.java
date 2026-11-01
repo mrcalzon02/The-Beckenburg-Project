@@ -12,6 +12,8 @@ public final class HouseMap {
     private final LevelDefinition level;
     private final SiteTerrain terrain;
     private final AuthoredSitePhysics nativeSite;
+    private final AuthoredSitePhysics worldSurface;
+    AuthoredSitePhysics worldSurface(){return worldSurface;}
     public boolean nativeSite(){return nativeSite!=null;}
     public SiteTerrain terrain(){return terrain;}
     private LooseClutter clutter;
@@ -67,7 +69,11 @@ public final class HouseMap {
         this(site,LevelPlans.build(site));
     }
     HouseMap(Site site,LevelDefinition definition){
+        this(site,definition,WorldTerrainSurface.of(definition));
+    }
+    HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface){
         this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
+        this.worldSurface=worldSurface;
         terrain=SiteTerrain.of(level);
         nativeSite=HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
         Dock d=level.dock();van=new VanStaging(new VanStaging.Placement(d.x(),d.y(),d.z(),d.yaw()));
@@ -245,6 +251,7 @@ public final class HouseMap {
     public boolean traversable(double x,double y,double z){return traversable(x,y,z,HunterPosture.STANDING_HEIGHT);}
     public boolean traversable(double x,double y,double z,double bodyHeight){
         if(!finite(x,y,z,bodyHeight)||bodyHeight<.9||bodyHeight>2.0)return false;double radius=.22;
+        if(worldSurface!=null&&worldSurface.bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(nativeSite!=null){Double sy=van.supportHeight(x,z);boolean blocked=van.collides(x,z,radius)&&y+bodyHeight>van.placement().y()&&y<van.placement().y()+VanStaging.ROOF_Y;
             if(sy!=null)return Math.abs(y-sy)<.08&&!blocked&&!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius);
             if(WorldWater.module(level.water()).bodies().stream().anyMatch(w->y<w.y()-.01&&w.wet(x,z)))return false;
@@ -307,6 +314,8 @@ public final class HouseMap {
     /** Small-body sweep, including its radius, ceiling and furnishing contact. */
     public boolean clearObjectPath(double ax,double ay,double az,double bx,double by,double bz,double radius,double half){
         if(!finite(ax,ay,az,bx,by,bz,radius,half)||radius<0||radius>.3||half<0||half>.4)return false;
+        if(worldSurface!=null)for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})
+            if(!worldSurface.clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
         if(nativeSite!=null){for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})if(!nativeSite.clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;return true;}
         int steps=Math.max(1,(int)Math.ceil(Math.sqrt((bx-ax)*(bx-ax)+(by-ay)*(by-ay)+(bz-az)*(bz-az))/.025));
         for(int n=1;n<=steps;n++){
@@ -330,6 +339,7 @@ public final class HouseMap {
      * All other doors, walls, storeys and furnishing still occlude the interaction ray. */
     public boolean clearInteractionSight(double ax,double ay,double az,double bx,double by,double bz,int selectedPortal){
         if(!finite(ax,ay,az,bx,by,bz))return false;
+        if(worldSurface!=null&&!worldSurface.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
         if(nativeSite!=null)return nativeSite.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz))&&van.clearSight(ax,ay,az,bx,by,bz);
         double distance=Math.sqrt((bx-ax)*(bx-ax)+(by-ay)*(by-ay)+(bz-az)*(bz-az));if(distance>40)return false;if(distance<.01)return true;
         int steps=(int)Math.ceil(distance/.075);

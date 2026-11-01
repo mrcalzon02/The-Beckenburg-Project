@@ -1032,7 +1032,15 @@ public final class SceneRenderer {
         double x0=level.room(13).x0()-45,x1=level.room(13).x1()+60,z0=level.room(12).z0()-50,z1=level.room(13).z1()+50;
         int ground=LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN?LevelMaterials.CONCRETE:MaterialAtlas.FOLIAGE;
         var terrain=SiteTerrain.of(level);
-        if(level.id().equals("blackpine")){
+        var worldSurface=WorldTerrainSurface.of(level);
+        if(worldSurface!=null){
+            for(int i=0;i<worldSurface.triangleCount();i++){
+                var t=worldSurface.triangle(i);var a=t.a();var b=t.b();var c=t.c();
+                faces.add(new Face(new Point(a.x(),a.y(),a.z()),new Point(b.x(),b.y(),b.z()),
+                    new Point(c.x(),c.y(),c.z()),0x9a9e89,ground,
+                    a.x()*.25,a.z()*.25,b.x()*.25,b.z()*.25,c.x()*.25,c.z()*.25));
+            }
+        }else if(level.id().equals("blackpine")){
             ground=GlbProps.model("level_woodland_floor").triangles().get(0).material();
         if(terrain==null)texturedQuad(faces,new Point(x0,-.08,z0),new Point(x1,-.08,z0),new Point(x1,-.08,z1),new Point(x0,-.08,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
         else terrainBackdrop(faces,terrain,x0,z0,x1,z1,ground);

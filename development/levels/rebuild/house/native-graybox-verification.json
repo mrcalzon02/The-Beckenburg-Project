@@ -1,32 +1,43 @@
 {
   "status": "NATIVE_PARITY_PASS_NOT_MAP_ACCEPTANCE",
   "level": "briar-rebuild",
-  "revision": "first-principles-graybox-v1-f633efc651b435e0",
-  "native_sha256": "075a04fb29833eeba6c3a6d89a1ba224393ca471905d3c62b074858ac2e43632",
-  "runtime_geometry_sha256": "712c62d48d70ef9e616fd1e729ab52ac05900a0b0cb33005dd6d8bb8d98cbd07",
-  "definition_sha256": "a49a27e4f11f8efbe254cc6851373af77284494e29d94f00c2f2707656631583",
-  "triangles_compared_vertex_by_vertex_and_uv": 34521,
+  "revision": "first-principles-graybox-v1-e720596579840f0c",
+  "native_sha256": "e424b185342aa7c25f51c8cd0c81a182f3d557c3325a1cff57963209b453a9d5",
+  "runtime_geometry_sha256": "618741f589a83bc143bf0633698f5a8c149ba16ace7621793cb06b9c05275f59",
+  "definition_sha256": "10673b1f69316310e097ad44444302aced8450595b4ac3b12d27b1cf2e52f921",
+  "triangles_compared_vertex_by_vertex_and_uv": 37949,
   "packed_images": 107,
   "portal_anchors": 27,
   "spawn_anchors": 15,
   "captures": [
     {
       "path": "development/levels/rebuild/previews/briar-rebuild-blender-front.png",
-      "sha256": "577c7c8e77d9c61d03b6aa32e66b6c956aa1b55205ed3c3343c19ac0c4dd53fb",
+      "sha256": "a855deaeca8f1f807f98c7756151c648c412ccbb43e059dfd015eafe51933a1e",
       "type": "Native inspection view"
     },
     {
       "path": "development/levels/rebuild/previews/briar-rebuild-blender-rear.png",
-      "sha256": "ab85d450f544a239a749a96b31711d25740eda54c6e7298309aa1f5badc2b612",
+      "sha256": "1bd1a2cfd6d090762d7d96ed0acae8e7c8bc61f5fcb6e00f7726f9b5b63c752d",
+      "type": "Native inspection view"
+    },
+    {
+      "path": "development/levels/rebuild/previews/briar-rebuild-blender-cellar-stair.png",
+      "sha256": "c9bba2055430fda9905172af9c6fe1906a3aab04e634349f10eab4f76c699b91",
       "type": "Native inspection view"
     },
     {
       "path": "development/levels/rebuild/previews/briar-rebuild-blender-ground-cutaway.png",
-      "sha256": "cdc0c98f1662336683bab862a0e65e66d091be8aed7fa56b3cdd555e96403465",
+      "sha256": "7a9a6945efe4c59feaa3b8b7178eab91ff6efd46d4d922c9e1fe6acf77775732",
+      "type": "Native cutaway"
+    },
+    {
+      "path": "development/levels/rebuild/previews/briar-rebuild-blender-basement-terrain-cutaway.png",
+      "sha256": "d28dfc6b58f4372ad1318403a444e3a44c3cd7ba76235ca3795ad8ad51920ba7",
       "type": "Native cutaway"
     }
   ],
   "native_file_unchanged_after_inspection": true,
+  "inspection_lighting_note": "Cellar-stair view uses a temporary area light for geometry review; not runtime lighting. Cutaways clip only in-memory inspection geometry.",
   "remaining": [
     "terrain and boundaries",
     "structural refinement",

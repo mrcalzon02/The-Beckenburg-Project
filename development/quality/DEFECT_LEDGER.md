@@ -2364,7 +2364,7 @@ Older-map obligation: Audit every hardcoded facade/roof/enclosure against its so
 
 ### DEV-174 — Basement architectural opening does not remove the broad world-ground sheet
 
-**Status:** open; owner-directed editor terrain-hole integration in progress · **Affected:** Rebuilt House pilot and older cellar/cavity maps requiring independent audit
+**Status:** fixed in isolated House pilot; other cellar/cavity sites remain open · **Affected:** Rebuilt House pilot and older cellar/cavity maps requiring independent audit
 
 Architectural stair/deck openings can pass movement while a separate broad world-ground/backdrop sheet still spans the basement elevation. Owner explicitly requires genuine world-floor holes.
 
@@ -2372,7 +2372,7 @@ Cause / uncertainty: Room/deck voids and the broad terrain/backdrop surface curr
 
 Fix / next action: Use saved editor AdaptiveTerrainTopology punched leaves and actual TerrainEntranceMesh geometry; bind the same missing triangles into real rendering, native body/support and optical queries. Test an unpunched negative control and original PNG byte preservation.
 
-Evidence and verification: Owner steering 31 October and source inspection of SceneRenderer.enclosureScenery; current pilot movement/native parity does not certify world-floor removal.
+Evidence and verification: HouseRebuildTerrainTest passes: 30 saved subdivisions/52 punched leaves; source PNG unchanged; reopen, idempotence and atomic invalid-boundary rollback; 3,430 exact shared render/body/support/optical faces; real cellar-stair player/object/sight passage; separately published unpunched editor-world control blocks all three. HouseRebuildPhysicsTest still reaches all 15 zones through 61,328 swept positions. TerrainSceneNativePhysicsTest passes existing terrain/rail, stale/tamper and replay checks. Reopened native pilot matches 37,949 runtime triangles/UVs; basement cutaway and actual stair views retained. No all-map acceptance.
 
 Older-map obligation: Individually audit House, Farmhouse, School, Church, institutional service basements, crypts, mines, tunnels and all stacked remote cavities.
 

@@ -89,11 +89,21 @@ def render(name, position, target):
     scene.render.filepath = str(destination)
     bpy.ops.render.render(write_still=True)
     captures.append({'path': destination.relative_to(ROOT).as_posix(), 'sha256': digest(destination),
-                     'type': 'Native cutaway' if name == 'ground-cutaway' else 'Native inspection view'})
+                     'type': 'Native cutaway' if name.endswith('cutaway') else 'Native inspection view'})
 
 
 render('front', (29, -32, 12), (17, -16, 2))
 render('rear', (3, 3, 11), (17, -15, 2))
+inspection_data = bpy.data.lights.new('Temporary cellar inspection light', 'AREA')
+inspection_data.energy = 100
+inspection_data.shape = 'DISK'
+inspection_data.size = 2
+inspection = bpy.data.objects.new('Temporary cellar inspection light', inspection_data)
+scene.collection.objects.link(inspection)
+inspection.location = (13.1, -14.1, .9)
+inspection.rotation_euler = (Vector((13.1, -11, -1.5))-inspection.location).to_track_quat('-Z', 'Y').to_euler()
+render('cellar-stair', (13.1, -14.25, 1.5), (13.1, -11, -1.8))
+inspection.hide_render = True
 for obj in meshes:
     bm = bmesh.new()
     bm.from_mesh(obj.data)
@@ -103,6 +113,15 @@ for obj in meshes:
     bm.to_mesh(obj.data)
     bm.free()
 render('ground-cutaway', (30, -34, 27), (17, -15, 0))
+for obj in meshes:
+    bm = bmesh.new()
+    bm.from_mesh(obj.data)
+    bmesh.ops.bisect_plane(bm, geom=list(bm.verts)+list(bm.edges)+list(bm.faces),
+                          dist=.0001, plane_co=(0, 0, -.1), plane_no=(0, 0, 1),
+                          clear_outer=True, clear_inner=False)
+    bm.to_mesh(obj.data)
+    bm.free()
+render('basement-terrain-cutaway', (30, -34, 23), (17, -15, -1.2))
 assert digest(NATIVE) == before, 'Inspection changed the delivered source'
 report = {'status': 'NATIVE_PARITY_PASS_NOT_MAP_ACCEPTANCE', 'level': definition['id'],
           'revision': definition['revision'], 'native_sha256': before,
@@ -112,6 +131,7 @@ report = {'status': 'NATIVE_PARITY_PASS_NOT_MAP_ACCEPTANCE', 'level': definition
           'packed_images': sum(image.source == 'FILE' for image in bpy.data.images),
           'portal_anchors': len(definition['portals']), 'spawn_anchors': 15,
           'captures': captures, 'native_file_unchanged_after_inspection': True,
+          'inspection_lighting_note': 'Cellar-stair view uses a temporary area light for geometry review; not runtime lighting. Cutaways clip only in-memory inspection geometry.',
           'remaining': ['terrain and boundaries', 'structural refinement', 'facilities and furniture',
                         'story and wear', 'complete mission/LAN/GPU and human acceptance']}
 (OUT / 'house/native-graybox-verification.json').write_bytes(

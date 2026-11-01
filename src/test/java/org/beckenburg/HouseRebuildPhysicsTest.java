@@ -9,6 +9,7 @@ public final class HouseRebuildPhysicsTest {
         LevelSurfaceIntegrityTest.main(pilot);
         AuthoredUtilitiesTest.main(pilot);
         HouseRebuildShellTest.main(new String[0]);
-        System.out.println("PASS House construction pilot; world-terrain holes and remaining map gates are separate");
+        HouseRebuildTerrainTest.main(new String[0]);
+        System.out.println("PASS House construction pilot including editor-punched world terrain; remaining map gates stay open");
     }
 }

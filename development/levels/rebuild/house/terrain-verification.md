@@ -1,0 +1,17 @@
+# House pilot — editor-punched world floor
+
+The isolated `briar-rebuild` pilot now uses the editor's persisted adaptive terrain cutouts. This is a verified construction slice, not map acceptance or a change to the dispatched House.
+
+`terrain-world/world.properties` defines the source datum and grid. The original 16-bit source PNG remains byte-identical after punching. `TerrainFootprintCutout` subdivides and punches through `AdaptiveTerrainTopology`, rejects nonconforming footprint boundaries transactionally, and preserves earlier cutouts. The full cellar footprint X12–21.6 / Z10–20.5 has 30 subdivisions and 52 removed leaves. Architectural floors, walls and stairs remain separate supported construction.
+
+`TerrainScenePackage` publishes the real conforming `TerrainEntranceMesh` as `scene-package/meshes/world.obj`. `TerrainSceneNativePhysics.encode` produces the same canonical HCS2 geometry consumed by gameplay. The source-bound runtime resource is `assets/runtime/sites/briar-rebuild-world.hcs2`, SHA-256 `d8089757803fdc2fae41f9fc606a1e99ea75f4da482c01e54cf136bc6da3f499`. Its binding is part of the level's multiplayer revision. The renderer replaces its broad ground sheet with these exact 3,430 triangles. Body, optical and small-object queries consult the same faces while retaining existing building collision and support.
+
+`HouseRebuildTerrainTest` checks saved/reopened cutouts, source preservation, idempotence, failed-boundary rollback, exported/package hash parity, missing terrain support within the cavity and retained support outside. A real filled editor-world control blocks stair-body passage, optical rays and small-object sweeps that pass through the punched version. It also checks the rendered ground-face count and absence of faces capping the basement. The control uses the fixture-free site profile because deliberately filling the cellar also prevents the House profile's automatic fixture reachability setup; building geometry and all physical query methods remain identical.
+
+The complete `HouseRebuildPhysicsTest` still passes 61,328 swept positions reaching all 15 zones, actual stairs/doors, architectural surfaces, mounted switches and acoustic links. Existing `TerrainSceneNativePhysicsTest` passes terrain/rail replay, support, optical and stale/tamper checks. Sixty actual runtime room views refreshed with zero missing. The reopened native scene matches all 37,949 runtime triangles and UVs; its inspection leaves the delivered native file unchanged.
+
+The native basement-terrain cutaway temporarily removes above-ground geometry for inspection. The cellar-stair view uses a temporary area light for readability. Neither alters the saved scene or claims runtime lighting parity. See `native-graybox-verification.json` for exact native/export/capture hashes.
+
+Reproduce with `HouseRebuildTerrainAuthor`, rebuild the package, then run `HouseRebuildPhysicsTest`, `TerrainSceneNativePhysicsTest`, `LevelSceneSource HOUSE_REBUILD`, the standard Blender source builder and `verify_house_graybox.py`. A changed export hash requires explicit source-binding review; the author tool fails on drift.
+
+Still open: terrain shaping and parcel clearances, final roof/structure, facilities/furnishing, weathering/story, complete mission/LAN/GPU/human acceptance, and independent editor holes for every other basement, crypt, mine, tunnel and cavity. No other map inherits acceptance from this pilot.
