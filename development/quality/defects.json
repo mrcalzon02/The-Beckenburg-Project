@@ -2014,6 +2014,17 @@
       "action": "Wrap the captured stdout stream with an explicit UTF-8 PrintStream before redirecting runtime diagnostics to stderr. Force Windows-1252 as the test JVM default and require exact native Unicode labels in decoded responses.",
       "evidence": "Expanded verify_editor_agent_cli.py reproduces UnicodeDecodeError before the fix and passes mission/Castle edit, save, fresh-process reopen and recovery after the fix; native Castle bullet labels survive UTF-8 decoding. Exact a99d0a1d source native workflow41352028873 SUCCESS and full41352069449 raw passed=306 failed=0 skipped=0 manifest=306; see evidence/editor-full-round-a99d0a1d.txt.",
       "older_maps": "Applies to the shared local CLI for every host. Does not add a listener, authentication or arbitrary script execution."
+    },
+    {
+      "id": "DEV-189",
+      "title": "Human mesh import report prints literal newline escapes",
+      "status": "fixed-scoped; actual human import GUI regression and capture pass",
+      "affected": "AssetImportDialog style/texture warnings and source report",
+      "symptom": "The actual import dock displays a literal backslash-n between style commentary and source metadata, producing an unnecessarily long horizontally clipped report line.",
+      "cause": "Three report strings contain a double-escaped newline instead of a Java newline escape.",
+      "action": "Use actual newline escapes; assert the complete human report contains no literal backslash-n sequence.",
+      "evidence": "Actual before capture development/quality/evidence/mesh-topology-2026-11-01/import-review-before-newline-fix.png; corrected actual GUI capture import-review.png. AssetImportTopologyGuiTest loads real OBJ, reviews topology, publishes actual runtime GLB and proves exact source preservation.",
+      "older_maps": "Human import report only; no model geometry/material or game-world edits."
     }
   ],
   "audit_categories": [

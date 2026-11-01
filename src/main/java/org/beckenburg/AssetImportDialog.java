@@ -2,6 +2,7 @@ package org.beckenburg;
 
 import org.beckenburg.editor.EditorGlbWriter;
 import org.beckenburg.editor.EditorMeshPipeline;
+import org.beckenburg.editor.EditorMeshTopology;
 
 import javax.swing.*;
 import java.awt.*;
@@ -45,7 +46,7 @@ public final class AssetImportDialog {
     private int revision;
     private boolean busy;
     private volatile long sourceTextureBytes;
-    private AssetImportDialog(JFrame parent,Consumer<String> published){
+    AssetImportDialog(JFrame parent,Consumer<String> published){
         this.parent=parent;this.published=published;
         dialog=new JDialog(parent,"Asset Import / PSX Regression Lab",false);
         JPanel content=new JPanel(new BorderLayout(5,5));
@@ -93,7 +94,10 @@ public final class AssetImportDialog {
         file.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(
             "Mesh files (*.obj, *.stl, *.glb)","obj","stl","glb"));
         if(file.showOpenDialog(dialog)!=JFileChooser.APPROVE_OPTION)return;
-        Path candidate=file.getSelectedFile().toPath();
+        loadSource(file.getSelectedFile().toPath());
+    }
+    /** Same native import path for the human chooser and source-backed verification. */
+    void loadSource(Path candidate){
         busy=true;choose.setEnabled(false);apply.setEnabled(false);
         pathLabel.setText("Reading "+candidate.getFileName()+"...");
         new SwingWorker<EditorMeshPipeline.Mesh,Void>(){
@@ -137,36 +141,42 @@ public final class AssetImportDialog {
             }
         }.execute();
     }
+    private record Review(EditorMeshPipeline.Result reduction,EditorMeshTopology topology){}
     private void recalculate(){
         if(source==null||busy)return;
         final EditorMeshPipeline.Mesh mesh=source;
         final int level=slider.getValue(),request=++revision;
         apply.setEnabled(false);details.setText("Computing regression level "+level+"...");
-        new SwingWorker<EditorMeshPipeline.Result,Void>(){
-            @Override protected EditorMeshPipeline.Result doInBackground(){
-                return EditorMeshPipeline.regress(mesh,level);
+        new SwingWorker<Review,Void>(){
+            @Override protected Review doInBackground(){
+                var reduction=EditorMeshPipeline.regress(mesh,level);
+                return new Review(reduction,EditorMeshTopology.build(reduction.optimized()));
             }
             @Override protected void done(){
                 if(request!=revision||mesh!=source)return;
                 try{
-                    result=get();
+                    var review=get();result=review.reduction();
                     int after=result.parts().stream().mapToInt(EditorMeshPipeline.PartStats::after).sum();
                     StringBuilder report=new StringBuilder();
                     report.append("PSX look preset: ").append(preset.getSelectedItem())
-                          .append(" (advisory; the game is not running on real PS1 hardware)\\n");
+                          .append(" (advisory; the game is not running on real PS1 hardware)\n");
                     int[] limits={100,800,1200,4000,Integer.MAX_VALUE};
                     int max=limits[preset.getSelectedIndex()];
                     if(after>max)report.append("STYLE WARNING: ").append(after)
                         .append(" triangles exceeds the chosen ").append(max)
-                        .append("-triangle visual target.\\n");
+                        .append("-triangle visual target.\n");
                     if(sourceTextureBytes>512*1024)report.append("TEXTURE MEMORY WARNING: approx ")
                         .append(sourceTextureBytes/1024)
-                        .append(" KiB decoded GLB RGBA texture pixels (excludes renderer/cache copies).\\n");
+                        .append(" KiB decoded GLB RGBA texture pixels (excludes renderer/cache copies).\n");
                     report.append("Source: ").append(mesh.name()).append("  /  ").append(mesh.sourceBytes()).append(" bytes")
                           .append("\nGeometry: ").append(mesh.triangles().size()).append(" -> ").append(after)
                           .append(" triangles  |  estimated CPU triangle storage: ")
                           .append(result.sourceMemoryBytes()/1024).append(" -> ")
                           .append(result.optimizedMemoryBytes()/1024).append(" KiB\n");
+                    report.append(review.topology().summary()).append("\n");
+                    for(var issue:review.topology().issues().stream().limit(12).toList())
+                        report.append("TOPOLOGY: ").append(issue.code()).append(" #").append(issue.element()).append(" ").append(issue.detail()).append("\n");
+                    if(review.topology().issueCount()>12)report.append("Additional topology findings omitted from this view.\n");
                     for(var part:result.parts())report.append(part.overRegression()?"!! ":"   ")
                         .append(part.name()).append(": ").append(part.before()).append(" -> ")
                         .append(part.after()).append(" triangles, ").append(part.verticesBefore())

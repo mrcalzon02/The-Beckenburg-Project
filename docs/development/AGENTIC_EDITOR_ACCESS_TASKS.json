@@ -689,6 +689,28 @@
       "limitations": [
         "G1 incremental deltas, dependency/resource revision events and broader migrations remain open"
       ]
+    },
+    {
+      "sourceSha": "efca9b11f225334afc75cc8491be603ca442b244",
+      "scope": "Commit-only native mission deltas, fingerprints/dependencies and human viewport revision invalidation",
+      "nativeHostCi": {
+        "run": 41357679458,
+        "status": "success"
+      },
+      "standaloneCi": {
+        "run": 41357684425,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41357690056,
+        "status": "in_progress",
+        "manifestEntries": 307
+      },
+      "evidence": "development/quality/evidence/editor-changes-2026-11-01.json",
+      "limitations": [
+        "Granular Castle changes, rendering dirty regions and broader schema migrations remain open",
+        "No complete G1-G12 or installed acceptance inferred"
+      ]
     }
   ],
   "nextGoalWork": [

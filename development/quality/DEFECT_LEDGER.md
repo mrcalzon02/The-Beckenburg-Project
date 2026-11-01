@@ -2572,6 +2572,20 @@ Evidence and verification: Expanded verify_editor_agent_cli.py reproduces Unicod
 
 Older-map obligation: Applies to the shared local CLI for every host. Does not add a listener, authentication or arbitrary script execution.
 
+### DEV-189 — Human mesh import report prints literal newline escapes
+
+**Status:** fixed-scoped; actual human import GUI regression and capture pass · **Affected:** AssetImportDialog style/texture warnings and source report
+
+The actual import dock displays a literal backslash-n between style commentary and source metadata, producing an unnecessarily long horizontally clipped report line.
+
+Cause / uncertainty: Three report strings contain a double-escaped newline instead of a Java newline escape.
+
+Fix / next action: Use actual newline escapes; assert the complete human report contains no literal backslash-n sequence.
+
+Evidence and verification: Actual before capture development/quality/evidence/mesh-topology-2026-11-01/import-review-before-newline-fix.png; corrected actual GUI capture import-review.png. AssetImportTopologyGuiTest loads real OBJ, reviews topology, publishes actual runtime GLB and proves exact source preservation.
+
+Older-map obligation: Human import report only; no model geometry/material or game-world edits.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
