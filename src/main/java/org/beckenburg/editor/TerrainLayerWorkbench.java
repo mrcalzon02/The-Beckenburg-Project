@@ -36,6 +36,11 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final JSpinner strength=spin(2,.01,1000,.5);
     private final JSpinner target=spin(0,-100000,100000,1);
     private final JSpinner inner=spin(.2,0,.95,.05);
+    private final JSpinner brushSpacing=spin(1,.1,128,.25);
+    private final JSpinner brushRotation=spin(0,-360,360,5);
+    private final JSpinner minBrushHeight=spin(-1000000,-1000000,1000000,10);
+    private final JSpinner maxBrushHeight=spin(1000000,-1000000,1000000,10);
+    private final JSpinner maxBrushSlope=spin(90,0,90,1);
     private final JCheckBox sampleFlatten=new JCheckBox("Sample flatten height on press",false);
     private final JComboBox<TerrainLayerStack.Noise> noise=new JComboBox<>(TerrainLayerStack.Noise.values());
     private final JCheckBox liveNoise=new JCheckBox("LIVE LOW-RES PREVIEW (uncommitted)",false);
@@ -50,6 +55,8 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final JButton save=new JButton("SAVE LAYERS");
     private final JButton undo=new JButton("UNDO"),redo=new JButton("REDO");
     private BufferedImage image,stampImage;
+    private TerrainBrushProfile.Alpha brushAlpha;
+    private TerrainBrushProfile.Stroke brushStroke;
     private boolean loadingLayer,busy;
     private final TerrainInfrastructureSplines routes;
     private final java.util.ArrayList<TerrainLayerStack.Point> gradeControls=new java.util.ArrayList<>();
@@ -97,6 +104,15 @@ public final class TerrainLayerWorkbench extends JPanel {
         field(sidebar,"Target height / terrace step",target);
         field(sidebar,"Inner radius",inner);field(sidebar,"Edge falloff",falloff);
         sidebar.add(sampleFlatten);
+        field(sidebar,"Dab spacing (grid)",brushSpacing);
+        field(sidebar,"Alpha rotation (degrees)",brushRotation);
+        field(sidebar,"Minimum brush elevation",minBrushHeight);
+        field(sidebar,"Maximum brush elevation",maxBrushHeight);
+        field(sidebar,"Maximum slope (degrees)",maxBrushSlope);
+        button(sidebar,"LOAD BRUSH ALPHA PNG",this::loadBrushAlpha);
+        button(sidebar,"CLEAR BRUSH ALPHA",()->{
+            brushAlpha=null;refresh("Custom alpha cleared; circular falloff active");
+        });
         field(sidebar,"Surface material",material);
         section(sidebar,"PROCEDURAL");
         field(sidebar,"Noise",noise);field(sidebar,"Cycles / tile",cycles);
@@ -137,7 +153,7 @@ public final class TerrainLayerWorkbench extends JPanel {
         JPanel center=new JPanel(new BorderLayout(4,4));
         JPanel views=new JPanel(new FlowLayout(FlowLayout.LEFT,5,2));
         views.add(new JLabel("Inspect"));views.add(view);
-        views.add(new JLabel("Click + drag to edit; grade paths by clicking two endpoints"));
+        views.add(new JLabel("Click/drag sculpt; add multiple route controls, then apply"));
         center.add(views,BorderLayout.NORTH);
         canvas.setBackground(new Color(25,29,34));
         center.add(canvas,BorderLayout.CENTER);
@@ -301,6 +317,23 @@ public final class TerrainLayerWorkbench extends JPanel {
             refresh("Applied and persisted "+alignment.kind()+" "+alignment.id());
         }catch(IOException|RuntimeException ex){error(ex);}
     }
+    private void loadBrushAlpha(){
+        JFileChooser picker=new JFileChooser();
+        if(picker.showOpenDialog(frame)!=JFileChooser.APPROVE_OPTION)return;
+        try {
+            BufferedImage image=ImageIO.read(picker.getSelectedFile());
+            if(image==null)throw new IOException("Cannot read selected brush-alpha image");
+            brushAlpha=TerrainBrushProfile.Alpha.fromImage(image);
+            refresh("Custom brush alpha loaded (not yet saved as preset)");
+        }catch(IOException|RuntimeException ex){error(ex);}
+    }
+    private TerrainBrushProfile.Settings precisionSettings(){
+        return new TerrainBrushProfile.Settings(
+            val(radius),val(strength),val(target),val(inner),
+            falloff.getSelectedIndex(),val(brushSpacing),val(brushRotation),
+            val(minBrushHeight),val(maxBrushHeight),val(maxBrushSlope),
+            (TerrainLayerStack.FlattenLimit)flattenLimit.getSelectedItem());
+    }
     private void loadStamp(){
         JFileChooser picker=new JFileChooser();
         if(picker.showOpenDialog(frame)!=JFileChooser.APPROVE_OPTION)return;
@@ -340,9 +373,8 @@ public final class TerrainLayerWorkbench extends JPanel {
                     if(pressed&&sampleFlatten.isSelected()
                         &&brush.getSelectedItem()==TerrainLayerStack.Brush.FLATTEN)
                         target.setValue(stack.height(x,z));
-                    stack.brush((TerrainLayerStack.Brush)brush.getSelectedItem(),
-                        x,z,r,val(strength),val(target),val(inner),falloff.getSelectedIndex(),
-                        (TerrainLayerStack.FlattenLimit)flattenLimit.getSelectedItem());
+                    stack.brushPrecision((TerrainLayerStack.Brush)brush.getSelectedItem(),
+                        x,z,precisionSettings(),brushAlpha);
                 }
                 case "PAINT MATERIAL" -> stack.paintMaterial(x,z,r,
                     (TerrainLayerStack.Material)material.getSelectedItem(),90);
@@ -375,16 +407,36 @@ public final class TerrainLayerWorkbench extends JPanel {
                     (int)Math.round(e.getY()*(double)stack.cells()/Math.max(1,getHeight()-1))));}
                 @Override public void mousePressed(MouseEvent e){
                     if(!SwingUtilities.isLeftMouseButton(e)||busy)return;
-                    drawing=true;applyAt(posX(e),posZ(e),true);
+                    drawing=true;
+                    int x=posX(e),z=posZ(e);
+                    if("SCULPT".equals(action.getSelectedItem())){
+                        try{
+                            if(sampleFlatten.isSelected()
+                                &&brush.getSelectedItem()==TerrainLayerStack.Brush.FLATTEN)
+                                target.setValue(stack.height(x,z));
+                            var profile=precisionSettings();
+                            var alpha=brushAlpha;
+                            var mode=(TerrainLayerStack.Brush)brush.getSelectedItem();
+                            brushStroke=new TerrainBrushProfile.Stroke(profile.spacing(),
+                                (px,pz)->stack.brushPrecision(mode,px,pz,profile,alpha));
+                            brushStroke.begin(x,z);render();
+                        }catch(RuntimeException ex){drawing=false;brushStroke=null;error(ex);}
+                    }else applyAt(x,z,true);
                 }
                 @Override public void mouseDragged(MouseEvent e){
-                    if(drawing&&action.getSelectedItem().equals("SCULPT"))
-                        applyAt(posX(e),posZ(e),false);
-                    else if(drawing&&action.getSelectedItem().equals("PAINT MATERIAL"))
+                    if(!drawing)return;
+                    if("SCULPT".equals(action.getSelectedItem())&&brushStroke!=null){
+                        try{brushStroke.move(posX(e),posZ(e));render();}
+                        catch(RuntimeException ex){drawing=false;brushStroke.end();
+                            brushStroke=null;stack.finishStroke();error(ex);}
+                    }else if("PAINT MATERIAL".equals(action.getSelectedItem()))
                         applyAt(posX(e),posZ(e),false);
                 }
                 @Override public void mouseReleased(MouseEvent e){
-                    if(drawing){drawing=false;stack.finishStroke();refresh("Stroke completed");}
+                    if(drawing){
+                        drawing=false;if(brushStroke!=null){brushStroke.end();brushStroke=null;}
+                        stack.finishStroke();refresh("Stroke completed");
+                    }
                 }
             };
             addMouseListener(mouse);addMouseMotionListener(mouse);
