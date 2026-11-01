@@ -250,10 +250,21 @@ public final class TerrainLayerStack {
         for(var route:managedRoutes){
             var samples=TerrainInfrastructureSplines.evaluate(route,step);
             var local=new ArrayList<Point>(samples.size());
-            for(var p:samples)local.add(new Point(
-                p.x()-(long)tx*n,p.z()-(long)tz*n,p.elevation()));
-            GradeField field=gradeField(local,route.halfWidth(),route.shoulder());
+            double xMin=Double.POSITIVE_INFINITY,xMax=Double.NEGATIVE_INFINITY;
+            double zMin=Double.POSITIVE_INFINITY,zMax=Double.NEGATIVE_INFINITY;
+            for(var p:samples){
+                double x=p.x()-(long)tx*n,z=p.z()-(long)tz*n;
+                xMin=Math.min(xMin,x);xMax=Math.max(xMax,x);
+                zMin=Math.min(zMin,z);zMax=Math.max(zMax,z);
+                local.add(new Point(x,z,p.elevation()));
+            }
             double radius=route.halfWidth()+route.shoulder();
+            // Avoid allocating full-tile distance/elevation grids for routes
+            // clearly outside this tile. Evaluated samples include all actual
+            // Catmull-Rom curve overshoots and are safer than control bounds.
+            if(xMax+radius<1||zMax+radius<1||xMin-radius>=n||zMin-radius>=n)
+                continue;
+            GradeField field=gradeField(local,route.halfWidth(),route.shoulder());
             for(int z=1;z<n;z++)for(int x=1;x<n;x++){
                 if(!editable(x,z))continue;
                 int i=id(x,z);double distance=field.distance()[i];
@@ -917,7 +928,10 @@ public final class TerrainLayerStack {
      */
     public void bake()throws IOException {
         finishStroke();verifyCurrentSource();verifyDocumentRevision();
-        if(!managedRoutes.isEmpty())
+        boolean gradesThisTile=false;
+        for(double change:infrastructureDelta)
+            if(Math.abs(change)>1e-6){gradesThisTile=true;break;}
+        if(gradesThisTile)
             throw new IOException("Managed infrastructure grading is procedural; "+
                 "baking would make route deletion irreversible. Export scene geometry "+
                 "with the composed heights instead.");
