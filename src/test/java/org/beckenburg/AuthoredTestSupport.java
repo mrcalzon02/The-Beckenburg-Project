@@ -2,6 +2,31 @@ package org.beckenburg;
 
 /** Physical test fixtures use authored metre coordinates and explicit elevation. */
 final class AuthoredTestSupport {
+    /** Persist a real USER project in an isolated profile, retain every map in
+     * all-map tests, and restore the developer profile before assertions run. */
+    record UserFixture(java.nio.file.Path folder,HouseMap authored) implements AutoCloseable {
+        HouseMap map(HouseMap.Site site){return site==HouseMap.Site.USER?authored:new HouseMap(site);}
+        public void close()throws java.io.IOException{
+            try(var files=java.nio.file.Files.walk(folder)){
+                for(var file:files.sorted(java.util.Comparator.reverseOrder()).toList())java.nio.file.Files.deleteIfExists(file);
+            }
+        }
+    }
+    static UserFixture userFixture()throws java.io.IOException{
+        var folder=java.nio.file.Files.createTempDirectory("beckenburg-authored-fixture-");
+        String home=System.getProperty("user.home"),selected=UserLevelLibrary.activeId();
+        try{
+            var fixture=new UserFixture(folder,ReviewMapFixtures.userLevel(folder));
+            check(home.equals(System.getProperty("user.home"))&&java.util.Objects.equals(selected,UserLevelLibrary.activeId()),
+                "Persisted USER fixture must leave developer profile and selection unchanged");
+            return fixture;
+        }catch(java.io.IOException|RuntimeException|Error failure){
+            try(var files=java.nio.file.Files.walk(folder)){
+                for(var file:files.sorted(java.util.Comparator.reverseOrder()).toList())java.nio.file.Files.deleteIfExists(file);
+            }
+            throw failure;
+        }
+    }
     static final HouseMap.Site[] SITES={HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL};
     static LevelDefinition.Portal door(HouseMap map,int a,int b){return map.level().portals().stream()
         .filter(p->p.door()&&p.joins(a,b)).findFirst().orElseThrow();}

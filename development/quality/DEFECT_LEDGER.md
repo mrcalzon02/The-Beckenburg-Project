@@ -2392,15 +2392,15 @@ Older-map obligation: Current dispatch availability does not accept any generic 
 
 ### DEV-176 — All-map reviews construct USER without a persisted project
 
-**Status:** local source fix and headless flyover pass; exact-source OpenGL validation pending · **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest
+**Status:** review fixture and four all-map regressions fixed locally; scoped GPU baseline passed; newest full-regression acceptance pending · **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest; RoomAcousticPresetsTest, HidingBudgetTest, AllMapLightingCoverageTest, VanLightingAndCastleDoorTest
 
 Mesa workflow 41320075324 passes the core smoke, then world-residency exits after HOLLOW_CREEK; the retained frame CSV has every built-in/prototype but no USER row. Flyover regression similarly instantiates every enum without its authoring prerequisite.
 
 Cause / uncertainty: USER is a selected authored-project slot, not a built-in map. The reviews construct it in an empty default authoring profile.
 
-Fix / next action: Create and persist an explicit House-derived USER source inside an isolated review evidence home; assert absent selection fails first, load the actual saved source, restore the real home before frame sampling, and retain USER coverage.
+Fix / next action: Create and persist an explicit House-derived USER source inside an isolated review evidence home; assert absent selection fails first, load the actual saved source, restore the real home before frame sampling, and retain USER coverage. Reuse that real persisted fixture through AuthoredTestSupport for all four all-map regressions, retain every enum value and original behavioral assertion, and clean only the temporary profile.
 
-Evidence and verification: Downloaded exact-SHA Mesa artifact ends after HOLLOW_CREEK-torch-repeat. New packaged LevelOpeningFlyoverTest passes all eleven map enum values including persisted USER and unchanged physical spawn. Java 17 package/all-root-tests compile. Real GPU review remains pending new-source CI; do not call it fixed on GPU yet.
+Evidence and verification: Downloaded exact-SHA Mesa artifact ends after HOLLOW_CREEK-torch-repeat. New packaged LevelOpeningFlyoverTest passes all eleven map enum values including persisted USER and unchanged physical spawn. Java 17 package/all-root-tests compile. Real GPU review remains pending new-source CI; do not call it fixed on GPU yet. Full-round 41324869128 at fcf7c52e passed packaged TCP/UI but raw manifest was 260 passed / 12 failed / 27 unexecuted of 299, including these four absent-USER failures. All four were reproduced locally, then passed with the persisted fixture: soundscape sample parity, 12 locations at 101 hiding densities, USER physical lighting, and all 11 van map types. Before/after logs retained under build/editor-agent-evidence. Earlier exact-source GPU 41322252644 at d4294b4c passed; no newer hardware or full manifest acceptance is inferred.
 
 Older-map obligation: Every enum-driven review must handle USER prerequisites explicitly rather than assuming a built-in source or selecting a developer project.
 

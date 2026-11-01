@@ -1,0 +1,52 @@
+{
+  "schema": "beckenburg.scoped-regression-evidence/v1",
+  "baselineRun": 41324869128,
+  "baselineSource": "fcf7c52eb1368b3b016044a781e6c8966b419604",
+  "localHost": "Windows / Java 17.0.12",
+  "fixture": "ReviewMapFixtures persisted House-derived USER project in isolated temporary home; original profile and selected project preserved",
+  "originalAssertions": "Retained, including every enum value; native-site exclusions unchanged",
+  "results": [
+    {
+      "test": "RoomAcousticPresetsTest",
+      "before": "FAIL: No authored user level selected",
+      "after": [
+        "PASS: reusable per-room soundscapes and host microphone gains"
+      ],
+      "sourceSha256Lf": "6b246dd9c9c1dc2dd156e1f98799b9a2b106e52f3a08e9b697d62be472144b2c"
+    },
+    {
+      "test": "HidingBudgetTest",
+      "before": "FAIL: No authored user level selected",
+      "after": [
+        "PASS combined indoor/outdoor maximum 3 on 12 built locations, all 101 density settings, zero-cover and monotonic selection"
+      ],
+      "sourceSha256Lf": "d09ff9daf3cf018bec496587f1699cf82ab5168162c5c6a06ba61f76e7e19787"
+    },
+    {
+      "test": "AllMapLightingCoverageTest",
+      "before": "FAIL: No authored user level selected",
+      "after": [
+        "PASS HOUSE actual entry illumination, immediate blackout and ceiling mounting",
+        "PASS FARMHOUSE actual entry illumination, immediate blackout and ceiling mounting",
+        "PASS SCHOOL actual entry illumination, immediate blackout and ceiling mounting",
+        "PASS MANSION actual entry illumination, immediate blackout and ceiling mounting",
+        "PASS PRISON actual entry illumination, immediate blackout and ceiling mounting",
+        "PASS ASYLUM actual entry illumination, immediate blackout and ceiling mounting",
+        "PASS ACADEMY actual entry illumination, immediate blackout and ceiling mounting",
+        "PASS COLLEGE actual entry illumination, immediate blackout and ceiling mounting",
+        "PASS CHURCH actual entry illumination, immediate blackout and ceiling mounting",
+        "PASS USER actual entry illumination, immediate blackout and ceiling mounting"
+      ],
+      "sourceSha256Lf": "194be861833b30f42fcd0e4d5b00701bc495f7e2e3bf93b2174d66d85655f1fd"
+    },
+    {
+      "test": "VanLightingAndCastleDoorTest",
+      "before": "FAIL: No authored user level selected",
+      "after": [
+        "PASS all 11 van map types including persisted USER: upper racks and work area on own supply; Castle door hinges, storey mounting, closed/open collision and shadows"
+      ],
+      "sourceSha256Lf": "775413fa010635b72caab35df2b0a20bfdf3d5bdad713ccc3930600fa3255c44"
+    }
+  ],
+  "limits": "Four focused passes do not certify the remaining eight baseline failures, full manifest or installed hardware."
+}

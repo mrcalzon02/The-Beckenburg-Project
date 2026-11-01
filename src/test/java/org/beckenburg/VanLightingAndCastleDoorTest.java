@@ -2,9 +2,10 @@ package org.beckenburg;
 /** Physical sources and hinges, not screen-space brightness shortcuts. */
 public final class VanLightingAndCastleDoorTest {
     static void check(boolean yes,String message){if(!yes)throw new AssertionError(message);}
-    public static void main(String[] args){
+    public static void main(String[] args)throws Exception{
+      try(var user=AuthoredTestSupport.userFixture()){
         for(var site:HouseMap.Site.values()){
-            var map=new HouseMap(site);var lighting=new FixtureLighting(map);var circuits=new RoomLighting();circuits.setBreaker(false);lighting.frame(circuits,0);
+            var map=user.map(site);var lighting=new FixtureLighting(map);var circuits=new RoomLighting();circuits.setBreaker(false);lighting.frame(circuits,0);
             check(lighting.sources().stream().filter(s->s.kind()==FixtureLighting.Kind.VAN_DIFFUSER).count()==6,"Six real diffuser samples on three fittings");
             var van=map.van();for(double z:new double[]{-1.5,0,1.4})for(double x:new double[]{-.7,0,.7}){var p=van.world(x,z);double e=lighting.sample(14,p.x(),van.floorY()+1.65,p.z()).energy();check(e>1.05,"Van upper rack/work area must be illuminated on vehicle supply: "+site+" "+e);}
         }
@@ -16,6 +17,7 @@ public final class VanLightingAndCastleDoorTest {
             check(CastleTimberDoors.crosses(slot,false,x-(horizontal?0:1),bottom+1,z-(horizontal?1:0),x+(horizontal?0:1),bottom+1,z+(horizontal?1:0)),"Closed fitted leaf casts shadow");
             check(!CastleTimberDoors.crosses(slot,true,x-(horizontal?0:1),bottom+1,z-(horizontal?1:0),x+(horizontal?0:1),bottom+1,z+(horizontal?1:0)),"Open leaves clear central light path");
         }
-        System.out.println("PASS all10van layouts: upper racks and work area on own supply; Castle door hinges, storey mounting, closed/open collision and shadows");
+        System.out.println("PASS all "+HouseMap.Site.values().length+" van map types including persisted USER: upper racks and work area on own supply; Castle door hinges, storey mounting, closed/open collision and shadows");
+      }
     }
 }

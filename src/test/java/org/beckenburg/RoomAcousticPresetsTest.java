@@ -6,10 +6,11 @@ import java.util.Set;
 /** Every authored site obtains deterministic reusable room-ambience identities. */
 public final class RoomAcousticPresetsTest {
     private static void ok(boolean v,String label){if(!v)throw new AssertionError(label);}
-    public static void main(String[] args){
+    public static void main(String[] args)throws Exception{
+      try(var user=AuthoredTestSupport.userFixture()){
         Set<RoomAcousticPresets.Type> used=new HashSet<>();
         for(HouseMap.Site site:HouseMap.Site.values()){
-            LevelDefinition level=new HouseMap(site).level();
+            LevelDefinition level=user.map(site).level();
             for(var room:level.rooms()){
                 var preset=RoomAcousticPresets.forRoom(level,room.id());
                 used.add(preset);
@@ -47,5 +48,6 @@ public final class RoomAcousticPresetsTest {
         ok(RoomAcousticPresets.forRoom(house,10)==RoomAcousticPresets.Type.MECHANICAL,
             "boiler room has mechanical ambience");
         System.out.println("PASS: reusable per-room soundscapes and host microphone gains");
+      }
     }
 }
