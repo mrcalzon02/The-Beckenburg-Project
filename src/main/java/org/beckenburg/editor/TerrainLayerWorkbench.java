@@ -49,7 +49,9 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final JButton undo=new JButton("UNDO"),redo=new JButton("REDO");
     private BufferedImage image,stampImage;
     private boolean loadingLayer,busy;
-    private TerrainLayerStack.Point gradeStart;
+    private final TerrainInfrastructureSplines routes;
+    private final java.util.ArrayList<TerrainLayerStack.Point> gradeControls=new java.util.ArrayList<>();
+    private final JTextField routeName=new JTextField("route-1",14);
     private boolean drawing;
 
     public static JFrame open(Window owner,StitchedHeightmapWorld world,int tx,int tz)throws IOException {
@@ -75,9 +77,10 @@ public final class TerrainLayerWorkbench extends JPanel {
         return new JSpinner(new SpinnerNumberModel(v,min,max,step));
     }
     private static double val(JSpinner s){return ((Number)s.getValue()).doubleValue();}
-    private TerrainLayerWorkbench(JFrame frame,TerrainLayerStack stack){
+    private TerrainLayerWorkbench(JFrame frame,TerrainLayerStack stack)throws IOException{
         super(new BorderLayout(5,5));this.frame=frame;this.stack=stack;
         this.sourceWorld=stack.worldForWorkbench();this.sourceX=stack.tileX();this.sourceZ=stack.tileZ();
+        this.routes=TerrainInfrastructureSplines.open(sourceWorld);
         setBorder(BorderFactory.createEmptyBorder(7,7,7,7));
         JPanel bar=new JPanel(new FlowLayout(FlowLayout.LEFT,4,2));
         bar.add(new JLabel("Layer"));bar.add(layers);bar.add(visible);
@@ -122,7 +125,9 @@ public final class TerrainLayerWorkbench extends JPanel {
             refresh("Material unlocked: "+material.getSelectedItem());
         });
         button(sidebar,"LOAD HEIGHT STAMP PNG",this::loadStamp);
-        button(sidebar,"CLEAR GRADE START",()->{gradeStart=null;refresh("Grade start cleared");});
+        field(sidebar,"Route name / stable ID",routeName);
+        button(sidebar,"APPLY AND SAVE ROUTE",this::applyRoute);
+        button(sidebar,"CLEAR ROUTE POINTS",()->{gradeControls.clear();refresh("Route draft cleared");});
         JScrollPane scroll=new JScrollPane(sidebar);
         scroll.setPreferredSize(new Dimension(290,500));
         scroll.getVerticalScrollBar().setUnitIncrement(18);
@@ -151,7 +156,7 @@ public final class TerrainLayerWorkbench extends JPanel {
         noise.addActionListener(e->{if(liveNoise.isSelected())render();});
         for(JSpinner field:new JSpinner[]{cycles,amplitude,octaves,seed})
             field.addChangeListener(e->{if(liveNoise.isSelected())render();});
-        action.addActionListener(e->{gradeStart=null;});
+        action.addActionListener(e->{gradeControls.clear();});
         rebuildLayers();render();
         refresh("Editing tile "+stack.tileX()+","+stack.tileZ()+" — unsaved edits are separate from source");
     }
@@ -262,6 +267,38 @@ public final class TerrainLayerWorkbench extends JPanel {
             return new TerrainLayerStack(world,sourceX,sourceZ);
         }
     }
+    private void applyRoute(){
+        if(busy)return;
+        try{
+            if(gradeControls.size()<2)throw new IllegalArgumentException(
+                "Click at least two control points on the terrain first");
+            String tool=(String)action.getSelectedItem();
+            TerrainInfrastructureSplines.Kind kind=switch(tool){
+                case "GRADE RAIL" -> TerrainInfrastructureSplines.Kind.RAIL;
+                case "GRADE ROAD" -> TerrainInfrastructureSplines.Kind.ROAD;
+                case "GRADE RIVER" -> TerrainInfrastructureSplines.Kind.RIVER;
+                default -> throw new IllegalArgumentException("Choose a GRADE operation");
+            };
+            double maximum=kind==TerrainInfrastructureSplines.Kind.RAIL?4:
+                kind==TerrainInfrastructureSplines.Kind.ROAD?12:1000;
+            double controlLimit=kind==TerrainInfrastructureSplines.Kind.RAIL?3:
+                kind==TerrainInfrastructureSplines.Kind.ROAD?9:1000;
+            var controls=kind==TerrainInfrastructureSplines.Kind.RIVER?
+                List.copyOf(gradeControls):
+                TerrainInfrastructureSplines.limitGrade(gradeControls,
+                    stack.metresPerCell(),controlLimit);
+            var alignment=new TerrainInfrastructureSplines.Alignment(
+                routeName.getText().trim(),kind,controls,val(radius),
+                val(radius)*(kind==TerrainInfrastructureSplines.Kind.RAIL?2:1),
+                maximum);
+            // Check geometric viability before touching either layer or route file.
+            TerrainInfrastructureSplines.evaluate(alignment,stack.metresPerCell());
+            routes.apply(stack,alignment);
+            routes.put(alignment);routes.save();
+            gradeControls.clear();routeName.setText("route-"+(routes.list().size()+1));
+            refresh("Applied and persisted "+alignment.kind()+" "+alignment.id());
+        }catch(IOException|RuntimeException ex){error(ex);}
+    }
     private void loadStamp(){
         JFileChooser picker=new JFileChooser();
         if(picker.showOpenDialog(frame)!=JFileChooser.APPROVE_OPTION)return;
@@ -311,12 +348,13 @@ public final class TerrainLayerWorkbench extends JPanel {
                         stack.stamp(stamp(),x,z,r,val(strength)/100);
                 }
                 case "GRADE RAIL","GRADE ROAD","GRADE RIVER" -> {
-                    if(!pressed)return;
-                    if(gradeStart==null){gradeStart=new TerrainLayerStack.Point(x,z,stack.height(x,z));
-                        status.setText("Select the second grade endpoint");return;}
-                    var end=new TerrainLayerStack.Point(x,z,stack.height(x,z));
-                    double shoulder=mode.equals("GRADE RAIL")?r*2:r;
-                    stack.gradePath(List.of(gradeStart,end),r,shoulder);gradeStart=null;
+                    if(pressed){
+                        gradeControls.add(new TerrainLayerStack.Point(
+                            (long)stack.tileX()*stack.cells()+x,
+                            (long)stack.tileZ()*stack.cells()+z,stack.height(x,z)));
+                        status.setText("Route controls: "+gradeControls.size()+
+                            " — add more or APPLY AND SAVE ROUTE");
+                    }
                 }
             }
             if(!mode.equals("SCULPT"))stack.finishStroke();
@@ -349,6 +387,18 @@ public final class TerrainLayerWorkbench extends JPanel {
         @Override protected void paintComponent(Graphics g){
             super.paintComponent(g);
             if(image!=null)g.drawImage(image,0,0,getWidth(),getHeight(),null);
+            if(!gradeControls.isEmpty()){
+                g.setColor(Color.YELLOW);
+                int lastX=0,lastY=0;boolean have=false;
+                for(var p:gradeControls){
+                    int x=(int)Math.round((p.x()-(long)stack.tileX()*stack.cells())*
+                        getWidth()/stack.cells());
+                    int y=(int)Math.round((p.z()-(long)stack.tileZ()*stack.cells())*
+                        getHeight()/stack.cells());
+                    if(have)g.drawLine(lastX,lastY,x,y);
+                    g.fillOval(x-4,y-4,8,8);lastX=x;lastY=y;have=true;
+                }
+            }
             g.setColor(new Color(220,220,220,100));
             g.drawRect(0,0,getWidth()-1,getHeight()-1);
         }
