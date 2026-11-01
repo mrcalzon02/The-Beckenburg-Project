@@ -377,26 +377,54 @@ public final class TerrainLayerStack {
             }
         finishStroke();
     }
-    /** Grade a railway, road, or river polyline; points are local grid positions. */
+    /**
+     * Grade a railway, road, or river corridor from local-grid spline samples.
+     * Work is limited to segment bounding boxes rather than iterating every
+     * spline sample for every terrain vertex (important for long railways).
+     */
     public void gradePath(List<Point> points,double halfWidth,double shoulder){
-        if(points==null||points.size()<2||points.size()>256||halfWidth<=0||shoulder<0)
-            throw new IllegalArgumentException("Path parameters");
+        if(points==null||points.size()<2||points.size()>50_000
+            ||!Double.isFinite(halfWidth)||halfWidth<=0||halfWidth>512
+            ||!Double.isFinite(shoulder)||shoulder<0||shoulder>512)
+            throw new IllegalArgumentException("Invalid path parameters");
+        double radius=halfWidth+shoulder;
+        double[] distance=new double[pixels],elevation=new double[pixels];
+        Arrays.fill(distance,Double.POSITIVE_INFINITY);
+        for(int k=1;k<points.size();k++){
+            Point a=Objects.requireNonNull(points.get(k-1)),
+                  b=Objects.requireNonNull(points.get(k));
+            if(!Double.isFinite(a.x())||!Double.isFinite(a.z())
+                ||!Double.isFinite(a.elevation())||!Double.isFinite(b.x())
+                ||!Double.isFinite(b.z())||!Double.isFinite(b.elevation()))
+                throw new IllegalArgumentException("Non-finite spline point");
+            double dx=b.x()-a.x(),dz=b.z()-a.z(),ls=dx*dx+dz*dz;
+            if(ls<1e-9)continue;
+            int x0=Math.max(1,(int)Math.floor(Math.min(a.x(),b.x())-radius));
+            int x1=Math.min(n-1,(int)Math.ceil(Math.max(a.x(),b.x())+radius));
+            int z0=Math.max(1,(int)Math.floor(Math.min(a.z(),b.z())-radius));
+            int z1=Math.min(n-1,(int)Math.ceil(Math.max(a.z(),b.z())+radius));
+            if(x0>x1||z0>z1)continue;
+            for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++){
+                if(!editable(x,z))continue;
+                double t=Math.max(0,Math.min(1,
+                    ((x-a.x())*dx+(z-a.z())*dz)/ls));
+                double d=Math.hypot(x-a.x()-t*dx,z-a.z()-t*dz);
+                int i=id(x,z);
+                if(d<distance[i]){
+                    distance[i]=d;
+                    elevation[i]=a.elevation()+(b.elevation()-a.elevation())*t;
+                }
+            }
+        }
         finishStroke();
         for(int z=1;z<n;z++)for(int x=1;x<n;x++){
             if(!editable(x,z))continue;
-            double best=Double.POSITIVE_INFINITY,elevation=0;
-            for(int k=1;k<points.size();k++){
-                Point a=points.get(k-1),b=points.get(k);
-                double dx=b.x-a.x,dz=b.z-a.z,ls=dx*dx+dz*dz;
-                if(ls<1e-9)continue;
-                double t=Math.max(0,Math.min(1,((x-a.x)*dx+(z-a.z)*dz)/ls));
-                double distance=Math.hypot(x-a.x-t*dx,z-a.z-t*dz);
-                if(distance<best){best=distance;elevation=a.elevation+(b.elevation-a.elevation)*t;}
-            }
-            if(best>=halfWidth+shoulder)continue;
-            double blend=best<=halfWidth?1:shoulder==0?0:
-                falloff(best-halfWidth,shoulder,0,1);
-            write(x,z,height(x,z)+(elevation-height(x,z))*blend);
+            int i=id(x,z);double d=distance[i];
+            if(d>=radius)continue;
+            double blend=d<=halfWidth?1:shoulder==0?0:
+                falloff(d-halfWidth,shoulder,0,1);
+            double current=height(x,z);
+            write(x,z,current+(elevation[i]-current)*blend);
         }
         finishStroke();
     }
