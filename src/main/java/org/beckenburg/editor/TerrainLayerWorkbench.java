@@ -20,12 +20,12 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final int sourceX,sourceZ;
     private final JLabel status=new JLabel("Layered terrain editor");
     private final JPanel canvas=new Canvas();
-    private final JComboBox<String> view=new JComboBox<>(new String[]{"HEIGHT","MATERIALS","SLOPES","FROZEN MASK","FLOW ACCUMULATION","CURVATURE"});
+    private final JComboBox<String> view=new JComboBox<>(new String[]{"HEIGHT","MATERIALS","SLOPES","FROZEN MASK","FLOW ACCUMULATION","CURVATURE","LAYER MASK"});
     private final JComboBox<String> layers=new JComboBox<>();
     private final JCheckBox visible=new JCheckBox("Layer on",true);
     private final JSlider opacity=new JSlider(0,100,100);
     private final JComboBox<String> action=new JComboBox<>(new String[]{
-        "SCULPT","PAINT MATERIAL","FREEZE","THAW","GRADE RAIL","GRADE ROAD","GRADE RIVER","STAMP"});
+        "SCULPT","PAINT MATERIAL","PAINT LAYER MASK","FREEZE","THAW","GRADE RAIL","GRADE ROAD","GRADE RIVER","STAMP"});
     private final JComboBox<TerrainLayerStack.Brush> brush=new JComboBox<>(TerrainLayerStack.Brush.values());
     private final JComboBox<TerrainLayerStack.FlattenLimit> flattenLimit=
         new JComboBox<>(TerrainLayerStack.FlattenLimit.values());
@@ -33,6 +33,8 @@ public final class TerrainLayerWorkbench extends JPanel {
         new JComboBox<>(TerrainLayerStack.Material.values());
     private final JComboBox<String> falloff=new JComboBox<>(new String[]{"LINEAR","SMOOTH","SHARP"});
     private final JSpinner radius=spin(6,.5,512,.5);
+    private final JSpinner maskTarget=spin(0,0,1,.05);
+    private final JSpinner maskStrength=spin(1,.05,1,.05);
     private final JSpinner strength=spin(2,.01,1000,.5);
     private final JSpinner target=spin(0,-100000,100000,1);
     private final JSpinner inner=spin(.2,0,.95,.05);
@@ -129,6 +131,8 @@ public final class TerrainLayerWorkbench extends JPanel {
         button(sidebar,"LOAD BRUSH PRESET",this::loadBrushPreset);
         button(sidebar,"DELETE PRESET RECORD...",this::deleteBrushPreset);
         field(sidebar,"Surface material",material);
+        field(sidebar,"Layer mask value",maskTarget);
+        field(sidebar,"Layer mask influence",maskStrength);
         section(sidebar,"PROCEDURAL");
         field(sidebar,"Noise",noise);field(sidebar,"Cycles / tile",cycles);
         field(sidebar,"Amplitude (metres)",amplitude);field(sidebar,"Octaves",octaves);
@@ -206,7 +210,7 @@ public final class TerrainLayerWorkbench extends JPanel {
         save.addActionListener(e->save());
         bake.addActionListener(e->bake());
         view.addActionListener(e->{
-            if(view.getSelectedIndex()>=4&&topologyPreview==null)
+            if((view.getSelectedIndex()==4||view.getSelectedIndex()==5)&&topologyPreview==null)
                 status.setText("Derived topology not built: use BAKE FLOW / CURVATURE DATA");
             render();
         });
@@ -291,6 +295,11 @@ public final class TerrainLayerWorkbench extends JPanel {
                     double c=Math.atan(topologyPreview.curvature(sx,sz)*10);
                     int value=(int)Math.max(0,Math.min(255,
                         127+Math.round(c*80)));
+                    rgb=(value<<16)|(value<<8)|value;
+                }
+                case 6 -> {
+                    int value=(int)Math.round(255*stack.layerMask(
+                        stack.activeLayer(),sx,sz));
                     rgb=(value<<16)|(value<<8)|value;
                 }
                 default -> {
@@ -577,6 +586,8 @@ public final class TerrainLayerWorkbench extends JPanel {
                     stack.brushPrecision((TerrainLayerStack.Brush)brush.getSelectedItem(),
                         x,z,precisionSettings(),brushAlpha);
                 }
+                case "PAINT LAYER MASK" -> stack.paintLayerMask(
+                    x,z,r,val(maskTarget),val(maskStrength));
                 case "PAINT MATERIAL" -> stack.paintMaterial(x,z,r,
                     (TerrainLayerStack.Material)material.getSelectedItem(),90);
                 case "FREEZE","THAW" -> stack.freezeRect((int)(x-r),(int)(z-r),
@@ -606,7 +617,8 @@ public final class TerrainLayerWorkbench extends JPanel {
                     }
                 }
             }
-            if(!mode.equals("SCULPT")&&!mode.equals("PAINT MATERIAL"))stack.finishStroke();
+            if(!mode.equals("SCULPT")&&!mode.equals("PAINT MATERIAL")
+                &&!mode.equals("PAINT LAYER MASK"))stack.finishStroke();
             render();
         }catch(RuntimeException ex){drawing=false;stack.finishStroke();error(ex);}
     }
@@ -647,7 +659,8 @@ public final class TerrainLayerWorkbench extends JPanel {
                         try{brushStroke.move(posX(e),posZ(e));render();}
                         catch(RuntimeException ex){drawing=false;brushStroke.end();
                             brushStroke=null;stack.finishStroke();error(ex);}
-                    }else if("PAINT MATERIAL".equals(action.getSelectedItem()))
+                    }else if("PAINT MATERIAL".equals(action.getSelectedItem())
+                        ||"PAINT LAYER MASK".equals(action.getSelectedItem()))
                         applyAt(posX(e),posZ(e),false);
                     else if(draggedRouteControl>=0&&
                         ((String)action.getSelectedItem()).startsWith("GRADE ")){
