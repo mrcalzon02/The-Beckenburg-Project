@@ -12,7 +12,7 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 | Procedural noise | `TerrainLayerStack.Noise`: Perlin, Simplex, Worley, ridged, billow, domain warp | Deterministic octave stack; no graph UI |
 | Live low-res generation preview | Workbench `LIVE LOW-RES PREVIEW` | 2D analytical height preview, not live 3D |
 | Non-destructive stacked sculpt layers | `TerrainLayerStack` v2 with editable per-layer sample masks, enable and opacity; existing v1 files are readable | Up to 12 layers; source heightmaps remain unchanged until explicit bake |
-| Non-destructive seam authoring | `TerrainSeamSculpt`: unique global vertices, 3×3 viewport of existing tiles, sparse stroke undo/redo, durable save/reopen and explicit guarded R16 source bake | Source bake refuses affected tiles with layer documents; interactive cross-tile layer-mask integration pending |
+| Non-destructive seam authoring | `TerrainSeamSculpt`: unique global vertices, 3×3 viewport, sparse undo/redo, save/reopen, guarded source bake; coordinated layer-document rebasing preserves v1/v2 sculpt deltas, masks, materials and freeze state | Seam edits are still kept in a separate authoring session until bake; interactive cross-tile layer-mask editing remains pending |
 | Precision brush base | Raise/lower/smooth/flatten/revert/trench/terrace; inner radius, three curves, alpha images, rotation, event-independent dab spacing, elevation/slope guards | No mesh stamp-angle fitting yet |
 | Brush hot-swap presets | `TerrainBrushPresets`: versioned atomic save/load/delete, bundled alpha and numeric profiles | Presets scoped to a world; share/export UX later |
 | Localized differential undo/redo | Mixed sparse height, material paint, freeze/unfreeze, material locks and layer enable/opacity history; painted drag grouped into one edit | Session history is memory-resident; layer add/delete and route documents are not yet undoable |
@@ -26,7 +26,7 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 | Infrastructure grading | `gradePath` with bounded segment rasterization (up to 50k samples), persistent `TerrainInfrastructureSplines`; saved route load/edit/drag/delete in workbench | Reapplying an edited route does not automatically undo its previous terrain grade; track mesh export is a separate module |
 | Grade constraints | Rail/road maximum grade validation; clamp controls to target grade | No turnout, bridge or tunnel geometry |\n| Real railway track geometry | `TerrainRailMesh` builds ballast prisms, two extruded rails and spaced sleeper meshes from RAIL alignments; shared real-mesh inspector and validated OBJ export | Geometry-only: no switch, bridge, tunnel, rolling-stock physics or host-renderer adapter |
 | Background operations | SwingWorker for heavy generation, erosion, save, bake | Full GPU/physics pipeline not wired |
-| Safe explicit source bake | Checks 16-bit range and source checksum; tile border frozen; single-tile and journaled multi-tile PNG imports | Multi-file writes are journal-recoverable on reopen, not atomically visible to concurrent external readers |
+| Safe explicit source bake | Checks R16 range and checksum; journaled batches can include both source PNGs and existing authored layer documents under explicit opt-in, with rollback of both | Multi-file writes are journal-recoverable on reopen, not atomically visible to concurrent external readers |
 | Durable document | Backward-compatible v1 terrain read, v2 sculpt-mask writer, atomic binary layer and spline documents | Source PNG remains authoritative until deliberate bake |
 | Dependency dirty regions | `TerrainLayerStack.EditEvent`: per-transaction bounds, affected domains, revisions and explicit listeners; no per-dab callbacks | Consumers must subscribe and schedule actual foliage/nav/physics rebuilds; no runtime adapter yet |
 | Source/runtime separation | Editor package standalone JAR and separate functional CI | Game renderer and physics integration still incomplete |
@@ -35,7 +35,8 @@ Implementation entry point: `StitchedWorldEditor` > **LAYERED TERRAIN TOOLS**.
 Standalone build: `tools/build-editor-kit.sh` or `tools/build-editor-kit.cmd`.
 Tests: `TerrainLayerStackTest`, `TerrainInfrastructureSplinesTest`,
 `TerrainBrushProfileTest`, `TerrainBrushPresetsTest`,
-`TerrainErosionRegionTest`, `TerrainMixedHistoryTest`,\n`TerrainTopologyFieldsTest`, `TerrainEditEventTest`,\n`TerrainRailMeshTest`, `StitchedHeightmapBatchTest`,\n`TerrainLayerMaskTest`, `TerrainSeamSculptTest`;
+`TerrainErosionRegionTest`, `TerrainMixedHistoryTest`,\n`TerrainTopologyFieldsTest`, `TerrainEditEventTest`,\n`TerrainRailMeshTest`, `StitchedHeightmapBatchTest`,\n`TerrainLayerMaskTest`, `TerrainSeamSculptTest`,
+`StitchedHeightmapLayerRebaseTest`;
 workflow: `.github/workflows/standalone-editor-kit.yml`.
 
 ## Mandatory preservation rules
@@ -78,7 +79,7 @@ workflow: `.github/workflows/standalone-editor-kit.yml`.
 - Grade embankments/cuttings while supporting our three seam/cutout entrance methods.
 - Build real switches, bridge/tunnel geometry and route intersections, not painted heightmap approximations. Real standalone rail/ballast/sleeper geometry is now exported as OBJ.
 - Produce portable spline and corridor output consumed by rail and AI/nav modules.
-- Integrate seam brush edits directly into v2 non-destructive terrain layers, including multi-tile sculpt masks and coordinated source rebasing. Separate seam sessions and batch baking are implemented; true cross-process atomic visibility is not available.
+- Integrate cross-tile edits into v2 per-layer sculpt masks while keeping shared vertices seam-safe *before* source bake. Coordinated source PNG + saved layer CRC rebasing is now journaled and implemented; the cross-tile edit session remains separate until bake, and cross-process atomic visibility is not available.
 
 ### Materials, visualization and engine adapters
 - Implement tile/face material-ID grids for strict retro mode, atlas packing,
