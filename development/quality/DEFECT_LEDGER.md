@@ -2390,6 +2390,34 @@ Evidence and verification: Before: SiteSelectionTest fails all-planned-families 
 
 Older-map obligation: Current dispatch availability does not accept any generic institution layout; rebuilt geometry still requires all per-map gates.
 
+### DEV-176 — All-map reviews construct USER without a persisted project
+
+**Status:** local source fix and headless flyover pass; exact-source OpenGL validation pending · **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest
+
+Mesa workflow 41320075324 passes the core smoke, then world-residency exits after HOLLOW_CREEK; the retained frame CSV has every built-in/prototype but no USER row. Flyover regression similarly instantiates every enum without its authoring prerequisite.
+
+Cause / uncertainty: USER is a selected authored-project slot, not a built-in map. The reviews construct it in an empty default authoring profile.
+
+Fix / next action: Create and persist an explicit House-derived USER source inside an isolated review evidence home; assert absent selection fails first, load the actual saved source, restore the real home before frame sampling, and retain USER coverage.
+
+Evidence and verification: Downloaded exact-SHA Mesa artifact ends after HOLLOW_CREEK-torch-repeat. New packaged LevelOpeningFlyoverTest passes all eleven map enum values including persisted USER and unchanged physical spawn. Java 17 package/all-root-tests compile. Real GPU review remains pending new-source CI; do not call it fixed on GPU yet.
+
+Older-map obligation: Every enum-driven review must handle USER prerequisites explicitly rather than assuming a built-in source or selecting a developer project.
+
+### DEV-177 — Windows checkout rewrites hash-bound editor terrain source bytes
+
+**Status:** local attribute fix and Git checkout-filter proof; exact-source CI pending · **Affected:** Saved House editor terrain world.properties and published world.obj; HouseRebuildTerrainTest in Windows CI
+
+Full-round 41320069837 at ddcef3be passes 61,328 pilot positions and utilities but fails Editor scene integrity. Raw full-manifest transcript contradicts advisory step success labels.
+
+Cause / uncertainty: Git autocrlf=true converts the committed LF properties and OBJ into CRLF, changing both persisted source and mesh fingerprints. Reproduced with git cat-file --filters: stored OBJ SHA 0c18e683... becomes 1db2c7cf..., world properties df6b917f... becomes 2f03b7b3....
+
+Fix / next action: Mark saved rebuild terrain-world files -text in .gitattributes so byte fingerprints survive checkout; add an actual Git-filter verifier for true/false/input modes and include concrete inspector errors in terrain failures. Do not weaken hash or tamper checks.
+
+Evidence and verification: Git-filter verifier proves all five saved world files match committed bytes across Windows/Unix/input checkout configurations. Packaged House pilot passes again, including 61,328 swept positions and real editor-hole positive/negative controls. Existing source and native physics hashes remain unchanged. Exact new-source Windows CI remains pending.
+
+Older-map obligation: Preserve exact authoring source and published geometry bytes for every future saved terrain world; line-ending portability is not permission to bypass source staleness or tamper checks.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

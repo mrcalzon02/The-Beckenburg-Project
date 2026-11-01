@@ -22,7 +22,8 @@ public final class HouseRebuildTerrainTest {
         }catch(IllegalArgumentException expected){require(snapshot.equals(topology.snapshot()),"Failed punch changed terrain");}
         require(Arrays.equals(before,Files.readAllBytes(world.tilePath(0,0))),"Source heights changed");
         var scene=new TerrainScenePackage(world).openScene();
-        require(TerrainScenePackage.inspect(world,scene).isEmpty(),"Editor scene integrity failed");
+        var issues=TerrainScenePackage.inspect(world,scene);
+        require(issues.isEmpty(),"Editor scene integrity failed: "+issues);
         var exported=TerrainSceneNativePhysics.load(world,scene);
         var map=HouseRebuild.graybox();var punched=map.worldSurface();
         require(punched!=null&&punched.sha256().equals(exported.sourceSha256()),"Runtime differs from saved editor export");

@@ -1,0 +1,8 @@
+HOUSE XYZ geometry checked
+briar-rebuild reached elevations -2.4..2.8
+PASS briar-rebuild: swept van route reaches all15 zones and all functional sockets, 61328 positions
+PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards
+PASS authored utilities: 12 reachable wall switches, 14 door acoustic links, 2 vertical stair links, source elevation and ambience
+PASS rebuilt House shell follows authored coordinates: 20817 elevated vertices
+PASS persisted editor holes: source unchanged, rollback/idempotence, 3430 shared render/collision faces, basement player/object/sight passage and filled-ground negatives
+PASS House construction pilot including editor-punched world terrain; remaining map gates stay open

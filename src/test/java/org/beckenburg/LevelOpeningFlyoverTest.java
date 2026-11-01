@@ -3,9 +3,10 @@ package org.beckenburg;
 /** A map opening is a spectator camera, never a player teleport or AI tick. */
 public final class LevelOpeningFlyoverTest {
     private static void ok(boolean yes,String why){if(!yes)throw new AssertionError(why);}
-    public static void main(String[] args){
+    public static void main(String[] args)throws Exception{
         for(var site:HouseMap.Site.values()){
-            HouseMap map=new HouseMap(site);
+            HouseMap map=site==HouseMap.Site.USER
+                ?ReviewMapFixtures.userLevel(java.nio.file.Path.of("build/flyover-review")):new HouseMap(site);
             var spawn=map.van().spawn(0);
             var player=new LevelOpeningFlyover.Pose(spawn.x(),
                 map.van().floorY()+1.62,spawn.z(),-Math.PI/2,-.09);

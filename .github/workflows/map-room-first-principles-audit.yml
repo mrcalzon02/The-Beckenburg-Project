@@ -36,6 +36,9 @@ jobs:
     timeout-minutes: 65
     steps:
       - uses: actions/checkout@v4
+      - name: Preserve exact saved editor terrain source and mesh bytes
+        shell: cmd
+        run: python tools/check_map_rebuild_terrain_checkout.py
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
