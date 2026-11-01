@@ -27,6 +27,11 @@ public final class TerrainSeamSculptTest {
             check(session.editable(32,32),"Shared corner editable when all four owners exist");
             check(!session.editable(0,0),"Patch exterior is frozen without neighbor");
             double initial=session.height(32,32);
+            boolean invalidDabRejected=false;
+            try{session.raise(32,32,2,10000);}
+            catch(java.io.IOException expected){invalidDabRejected=true;}
+            check(invalidDabRejected&&session.changedVertices()==0,
+                "Out-of-range brush dab fails without partially changing any vertex");
             session.raise(32,32,3,11);
             session.raise(32.5,32.5,3,3);
             check(session.changedVertices()>1,"Brush includes multiple global samples");
