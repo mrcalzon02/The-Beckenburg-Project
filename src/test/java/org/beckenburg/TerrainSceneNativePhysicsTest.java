@@ -63,8 +63,12 @@ public final class TerrainSceneNativePhysicsTest {
             catch(java.io.IOException expected){rejected=true;}
             check(rejected,"Stale modified rail source is rejected, not silently used in gameplay");
             TerrainRailScenePackage.publish(world,scene,"mainline");
+            // Terrain chunks conservatively fingerprint managed route controls
+            // because grading changes can alter physical terrain elevation.
+            TerrainScenePackage.publish(world,scene,"ground",
+                new TerrainEntranceMesh.Bounds(1,1,7,7));
             check(TerrainSceneNativePhysics.load(world,scene).triangles()>0,
-                "Rebuilt railway scene re-enters the canonical runtime physics parser");
+                "Rebuilt terrain and railway re-enter the canonical runtime physics parser");
             Files.writeString(published.geometryFile(),"tampered");
             rejected=false;
             try{TerrainSceneNativePhysics.load(world,scene);}
