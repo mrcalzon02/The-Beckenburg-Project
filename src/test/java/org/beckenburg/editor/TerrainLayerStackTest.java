@@ -20,6 +20,10 @@ public final class TerrainLayerStackTest {
             int seamBefore=world.sample(0,0,32,17);
             var a=new TerrainLayerStack(world,0,0);
             double base=a.height(16,16),edge=a.height(32,17);
+            double[][] preview=a.previewNoise(TerrainLayerStack.Noise.PERLIN,7,3,10,3,17);
+            near(a.height(16,16),base,"Read-only noise preview cannot alter source");
+            check(!a.dirty(),"Preview must not dirty authoring document");
+            check(Double.isFinite(preview[8][8]),"Preview produces finite height data");
             check(a.layerCount()==1,"Default authoring layer");
             a.brush(TerrainLayerStack.Brush.RAISE,16,16,4,10,0,0,1);
             a.finishStroke();
