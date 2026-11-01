@@ -9,19 +9,20 @@ public final class LanGhostHearingTest {
     }
     public static void main(String[] args){
         HouseMap map=new HouseMap();
-        double x=map.centerX(4),z=map.centerZ(4);
-        LanGhostSpatial.Pose ghost=new LanGhostSpatial.Pose(4,x,z,0);
-        var event=LanGhostHearing.project(map,ghost,4,x,z+2,LanGhostPursuit.Sound.FOOTSTEP,10);
+        var fixture=AuthoredTestSupport.flatCross(map,1.5);int room=fixture.room();var at=fixture.at();
+        double x=at.x(),z=at.z(),offset=1.5;
+        LanGhostSpatial.Pose ghost=new LanGhostSpatial.Pose(room,x,at.y(),z,0);
+        var event=LanGhostHearing.project(map,ghost,room,x,z+offset,LanGhostPursuit.Sound.FOOTSTEP,10);
         ok(event!=null&&event.direction()==LanGhostHearing.Direction.AHEAD
             &&event.strength()==LanGhostHearing.Strength.LOUD,"forward loud footsteps");
         ok(LanGhostHearing.decode(event.frame()).equals(event),"bounded codec roundtrip");
-        ok(LanGhostHearing.project(map,ghost,4,x+2,z,LanGhostPursuit.Sound.DOOR,11)
+        ok(LanGhostHearing.project(map,ghost,room,x+offset,z,LanGhostPursuit.Sound.DOOR,11)
             .direction()==LanGhostHearing.Direction.LEFT,"left");
-        ok(LanGhostHearing.project(map,ghost,4,x-2,z,LanGhostPursuit.Sound.DOOR,11)
+        ok(LanGhostHearing.project(map,ghost,room,x-offset,z,LanGhostPursuit.Sound.DOOR,11)
             .direction()==LanGhostHearing.Direction.RIGHT,"right");
-        ok(LanGhostHearing.project(map,ghost,4,x,z-2,LanGhostPursuit.Sound.DOOR,11)
+        ok(LanGhostHearing.project(map,ghost,room,x,z-offset,LanGhostPursuit.Sound.DOOR,11)
             .direction()==LanGhostHearing.Direction.BEHIND,"behind");
-        ok(LanGhostHearing.project(map,new LanGhostSpatial.Pose(4,x,z,90),4,x,z+2,
+        ok(LanGhostHearing.project(map,new LanGhostSpatial.Pose(room,x,at.y(),z,90),room,x,z+offset,
             LanGhostPursuit.Sound.DOOR,11).direction()==LanGhostHearing.Direction.RIGHT,"rotated listener");
         var door=AuthoredTestSupport.door(map,4,3);
         var listener=AuthoredTestSupport.side(map,door,4,.8);var source=AuthoredTestSupport.side(map,door,3,.8);
@@ -35,9 +36,9 @@ public final class LanGhostHearingTest {
         ok(LanGhostHearing.project(map,ghost,HouseMap.EXTRACTION_ROOM,
             map.centerX(HouseMap.EXTRACTION_ROOM),map.centerZ(HouseMap.EXTRACTION_ROOM),
             LanGhostPursuit.Sound.RITUAL,11)==null,"safe van never leaks");
-        ok(LanGhostHearing.project(map,ghost,4,Double.NaN,z,LanGhostPursuit.Sound.DOOR,11)==null,
+        ok(LanGhostHearing.project(map,ghost,room,Double.NaN,z,LanGhostPursuit.Sound.DOOR,11)==null,
             "invalid source rejected");
-        ok(LanGhostHearing.project(map,ghost,4,nx,nz,LanGhostPursuit.Sound.DOOR,11)==null,
+        ok(LanGhostHearing.project(map,ghost,room,nx,nz,LanGhostPursuit.Sound.DOOR,11)==null,
             "forged source room rejected");
         for(String s:new String[]{"GHEAR|FOOTSTEP|RIGHT|CLOSE|6","GHEAR|FOOTSTEP|NORTH|LOUD|6",
             "GHEAR|FOOTSTEP|LEFT|LOUD|-1","GHEAR|FOOTSTEP|LEFT|LOUD|2|PRIVATE"})bad(s);

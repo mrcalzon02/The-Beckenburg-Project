@@ -1,0 +1,145 @@
+{
+  "schema": "beckenburg.scoped-recovery-evidence/v1",
+  "baselineRun": 41327744396,
+  "baselineSource": "11b57bbf72556e82a079939f166e1608a33ed363",
+  "baselineManifest": {
+    "passed": 291,
+    "failed": 9,
+    "unexecuted": 0,
+    "total": 300
+  },
+  "runtimeFixes": [
+    "Restore paint of received sound captions, strike warning and bounded resolution feedback",
+    "Use the same position-relative native support query in movement and recovery"
+  ],
+  "contractRepairs": "Preserve all approved voice/sprite assets and real vocal semantics; acoustic points use real room/floor support; USER boundary test gets persisted native prerequisite",
+  "localHost": "Windows, Java 17.0.12, native source classes plus existing packaged resources",
+  "results": [
+    {
+      "test": "GhostVoicePackRoutingTest",
+      "localResult": "pass",
+      "output": [
+        "PASS GhostVoicePackRoutingTest / 20 legacy strike lines, four contextual strike lines, idle and jump; no synthetic evidence"
+      ],
+      "sourceSha256Lf": "68c38bae0721a9bb785fe4bcb7bd0811690e42573036a290c177614af1db343b"
+    },
+    {
+      "test": "HandheldSpiritBoxEvidenceTest",
+      "localResult": "pass",
+      "output": [
+        "PASS: accepted handheld raw static, no fabricated reply from generic events, wrong-room negatives and station separation"
+      ],
+      "sourceSha256Lf": "79752c0fc2346905b1e738d053a5373e00e287abb60ee8bdc534236eae66665d"
+    },
+    {
+      "test": "LanGhostHearingTest",
+      "localResult": "pass",
+      "output": [
+        "PASS: door-sensitive human ghost hearing, direction, privacy, codec and audio"
+      ],
+      "sourceSha256Lf": "fb2cfb784ff30ed3b35fb5833f6ebaaad1db8a70975cf064af3e0e986e10bb1f"
+    },
+    {
+      "test": "LanSoundTest",
+      "localResult": "pass",
+      "output": [
+        "PASS: listener-relative host sound projection, ghost privacy, bounded frames, stereo PCM and mute amplitude"
+      ],
+      "sourceSha256Lf": "6f9fee96088cfdce8de2edf4593614931029b842ac15c658ec664773b28b4fd6"
+    },
+    {
+      "test": "LanSoundHudTest",
+      "localResult": "pass",
+      "output": [
+        "PASS: silent-device accessibility audio caption, directional label and expiry"
+      ],
+      "sourceSha256Lf": "0914fcfa4ce1dcb2593a050032f0338015e9d22b72830811f70a827a18fd7573"
+    },
+    {
+      "test": "LanTelegraphedHudTest",
+      "localResult": "pass",
+      "output": [
+        "PASS: on-screen red strike wind-up and evasion feedback render in the LAN HUD"
+      ],
+      "sourceSha256Lf": "3eb048289234f8464ef66e5e994d7b34b3d420195f64d2984cfc6e5d8731ea0b"
+    },
+    {
+      "test": "DirectionalSpritesIntegrationTest",
+      "localResult": "pass",
+      "output": [
+        "2026-11-01T17:11:27.129934Z [main] RENDER SLOW stage=idle faces=116547 visible_faces=61692 culled_faces=54855 target=320x200 build_ms=794 lighting_raster_ms=504",
+        "PASS: 61 verified frames including Twins, lore master and Castle support; 8 sectors, depth occlusion and real LAN ghost renderer"
+      ],
+      "sourceSha256Lf": "41c89acb7cf5152a01053ef1fa0fef666d20de42ca6b1e74b006e415c00ebdd9"
+    },
+    {
+      "test": "LanSpatialEvidenceIntegrationTest",
+      "localResult": "pass",
+      "output": [
+        "PASS: four-peer spatial tool range, in-range proof, ghost privacy and defended resolution"
+      ],
+      "sourceSha256Lf": "10a1f13e79dc515eac860ff7b5586b62d5f443248a378348efe3928308d8f73b"
+    },
+    {
+      "test": "AllMapArchitecturalJoinTest",
+      "localResult": "pass",
+      "output": [
+        "PASS HOUSE 755 closed wall/floor/corner boundary rays and 178 actual clear stair rays",
+        "PASS FARMHOUSE 755 closed wall/floor/corner boundary rays and 267 actual clear stair rays",
+        "PASS SCHOOL 754 closed wall/floor/corner boundary rays and 179 actual clear stair rays",
+        "PASS MANSION 754 closed wall/floor/corner boundary rays and 179 actual clear stair rays",
+        "PASS PRISON 754 closed wall/floor/corner boundary rays and 178 actual clear stair rays",
+        "PASS ASYLUM 754 closed wall/floor/corner boundary rays and 178 actual clear stair rays",
+        "PASS ACADEMY 754 closed wall/floor/corner boundary rays and 179 actual clear stair rays",
+        "PASS COLLEGE 754 closed wall/floor/corner boundary rays and 179 actual clear stair rays",
+        "PASS CHURCH 755 closed wall/floor/corner boundary rays and 267 actual clear stair rays",
+        "PASS USER 755 closed wall/floor/corner boundary rays and 178 actual clear stair rays",
+        "PASS total7544 closed and 1962 open stair probes; native maps require separate physical-mesh review"
+      ],
+      "sourceSha256Lf": "619a7479449070221d3623faeb5abde65516e657fb45dff327d677069018c92f"
+    },
+    {
+      "test": "GroundRecoverySupportParityTest",
+      "localResult": "pass",
+      "output": [
+        "PASS native support parity: accepted host moves survive next tick, stair overlap preserves lower support, round trip and real penetration recovery"
+      ],
+      "sourceSha256Lf": "f26de5cf77321c9573f23cc54487a69d84f310dd5095444f288079ec2a199092"
+    }
+  ],
+  "negativeControl": [
+    "Exception in thread \"main\" java.lang.AssertionError: Ground recovery changed an accepted native movement at Body[x=21.929999999999996, y=0.0, z=18.0, heading=270, room=4] into Body[x=22.179999999999996, y=1.5000000000000007, z=18.0, heading=270, room=5]",
+    "\tat org.beckenburg.GroundRecoverySupportParityTest.check(GroundRecoverySupportParityTest.java:7)",
+    "\tat org.beckenburg.GroundRecoverySupportParityTest.main(GroundRecoverySupportParityTest.java:16)"
+  ],
+  "adjacentPassing": [
+    "GhostVoiceExpansionTest",
+    "SpiritBoxResponsesTest",
+    "LanSpiritBoxAudioIntegrationTest",
+    "AuthoredLevelPhysicsTest",
+    "TerrainAndRecoveryTest (scratch output directory; actual authored textures/reports unchanged)"
+  ],
+  "captures": [
+    {
+      "file": "development/quality/evidence/lan-hud-2026-11-01/sound-and-strike.png",
+      "sha256": "e4ea4f0c9295e760f47b66f082a229024fa0775c0e62e1d32d90003e59e01359",
+      "kind": "Native LanWorldPanel headless HUD component capture; black world background is an unstarted case, not full-world gameplay evidence"
+    },
+    {
+      "file": "development/quality/evidence/lan-hud-2026-11-01/sound-caption.png",
+      "sha256": "64096dcb07fe64316cde0ccc347065c30bc84988c442093f36d19ab87c4037df",
+      "kind": "Native LanWorldPanel headless HUD component capture; black world background is an unstarted case, not full-world gameplay evidence"
+    },
+    {
+      "file": "development/quality/evidence/lan-hud-2026-11-01/strike-evaded.png",
+      "sha256": "675f6044ecdab6412302073e5acb9200a624503ea9e6a5688ff277718657cd4b",
+      "kind": "Native LanWorldPanel headless HUD component capture; black world background is an unstarted case, not full-world gameplay evidence"
+    },
+    {
+      "file": "development/quality/evidence/lan-hud-2026-11-01/strike-warning.png",
+      "sha256": "e61556d2e815d4e915e400044df547c75e1b4c54e0cb6273ccf4a2536d8341eb",
+      "kind": "Native LanWorldPanel headless HUD component capture; black world background is an unstarted case, not full-world gameplay evidence"
+    }
+  ],
+  "limits": "No geometry/art changed; no complete G1-G12, installed-hardware, subjective audio/art, or newest-source full regression acceptance inferred."
+}

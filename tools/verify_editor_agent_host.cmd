@@ -4,9 +4,9 @@ cd /d "%~dp0.."
 if not exist build\test mkdir build\test
 set "BECK_EDITOR_AGENT_CP=build\classes"
 if not "%~1"=="" set "BECK_EDITOR_AGENT_CP=%~1"
-javac --release 17 -encoding UTF-8 -cp "%BECK_EDITOR_AGENT_CP%" -d build\test src\test\java\org\beckenburg\EditorAgentServiceTest.java src\test\java\org\beckenburg\EditorAgentGuiTest.java src\test\java\org\beckenburg\LevelAuthoringIdentityTest.java src\test\java\org\beckenburg\LevelAuthoringRecoveryTest.java src\test\java\org\beckenburg\VerificationPreferencesFactory.java
+javac --release 17 -encoding UTF-8 -cp "%BECK_EDITOR_AGENT_CP%" -d build\test src\test\java\org\beckenburg\EditorAgentServiceTest.java src\test\java\org\beckenburg\EditorAgentGuiTest.java src\test\java\org\beckenburg\LevelAuthoringIdentityTest.java src\test\java\org\beckenburg\LevelAuthoringRecoveryTest.java src\test\java\org\beckenburg\GroundRecoverySupportParityTest.java src\test\java\org\beckenburg\AuthoredTestSupport.java src\test\java\org\beckenburg\VerificationPreferencesFactory.java
 if errorlevel 1 exit /b 1
-for %%T in (EditorAgentServiceTest LevelAuthoringIdentityTest LevelAuthoringRecoveryTest) do (
+for %%T in (GroundRecoverySupportParityTest EditorAgentServiceTest LevelAuthoringIdentityTest LevelAuthoringRecoveryTest) do (
   java -Djava.awt.headless=true -Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.%%T
   if errorlevel 1 exit /b 1
 )

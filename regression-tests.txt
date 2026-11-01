@@ -70,6 +70,8 @@ GhostEvidenceMatrixTest
 LanFieldEquipmentIntegrationTest
 LanMeasuredEvidenceTest
 HandheldSpiritBoxEvidenceTest
+SpiritBoxResponsesTest
+LanSpiritBoxAudioIntegrationTest
 SoloEnvironmentalEvidenceTest
 GhostBehaviorTest
 LanGhostIdentityTest
@@ -204,6 +206,7 @@ LanLobbyTest
 LanOwnerReadyAckTest
 SmokeTest
 AuthoredLevelPhysicsTest
+GroundRecoverySupportParityTest
 HouseRebuildPhysicsTest
 AuthoredLevelReachabilityTest
 AuthoredLevelStateTest

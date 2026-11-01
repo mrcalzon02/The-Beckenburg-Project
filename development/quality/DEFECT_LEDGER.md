@@ -2392,7 +2392,7 @@ Older-map obligation: Current dispatch availability does not accept any generic 
 
 ### DEV-176 — All-map reviews construct USER without a persisted project
 
-**Status:** review fixture and four all-map regressions fixed locally; scoped GPU baseline passed; newest full-regression acceptance pending · **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest; RoomAcousticPresetsTest, HidingBudgetTest, AllMapLightingCoverageTest, VanLightingAndCastleDoorTest
+**Status:** review fixture and four all-map regressions fixed locally; scoped GPU baseline passed; newest full-regression acceptance pending · **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest; RoomAcousticPresetsTest, HidingBudgetTest, AllMapLightingCoverageTest, VanLightingAndCastleDoorTest; AllMapArchitecturalJoinTest
 
 Mesa workflow 41320075324 passes the core smoke, then world-residency exits after HOLLOW_CREEK; the retained frame CSV has every built-in/prototype but no USER row. Flyover regression similarly instantiates every enum without its authoring prerequisite.
 
@@ -2400,7 +2400,7 @@ Cause / uncertainty: USER is a selected authored-project slot, not a built-in ma
 
 Fix / next action: Create and persist an explicit House-derived USER source inside an isolated review evidence home; assert absent selection fails first, load the actual saved source, restore the real home before frame sampling, and retain USER coverage. Reuse that real persisted fixture through AuthoredTestSupport for all four all-map regressions, retain every enum value and original behavioral assertion, and clean only the temporary profile.
 
-Evidence and verification: Downloaded exact-SHA Mesa artifact ends after HOLLOW_CREEK-torch-repeat. New packaged LevelOpeningFlyoverTest passes all eleven map enum values including persisted USER and unchanged physical spawn. Java 17 package/all-root-tests compile. Real GPU review remains pending new-source CI; do not call it fixed on GPU yet. Full-round 41324869128 at fcf7c52e passed packaged TCP/UI but raw manifest was 260 passed / 12 failed / 27 unexecuted of 299, including these four absent-USER failures. All four were reproduced locally, then passed with the persisted fixture: soundscape sample parity, 12 locations at 101 hiding densities, USER physical lighting, and all 11 van map types. Before/after logs retained under build/editor-agent-evidence. Earlier exact-source GPU 41322252644 at d4294b4c passed; no newer hardware or full manifest acceptance is inferred.
+Evidence and verification: Downloaded exact-SHA Mesa artifact ends after HOLLOW_CREEK-torch-repeat. New packaged LevelOpeningFlyoverTest passes all eleven map enum values including persisted USER and unchanged physical spawn. Java 17 package/all-root-tests compile. Real GPU review remains pending new-source CI; do not call it fixed on GPU yet. Full-round 41324869128 at fcf7c52e passed packaged TCP/UI but raw manifest was 260 passed / 12 failed / 27 unexecuted of 299, including these four absent-USER failures. All four were reproduced locally, then passed with the persisted fixture: soundscape sample parity, 12 locations at 101 hiding densities, USER physical lighting, and all 11 van map types. Before/after logs retained under build/editor-agent-evidence. Earlier exact-source GPU 41322252644 at d4294b4c passed; no newer hardware or full manifest acceptance is inferred. Next full-round 41327744396 at 11b57bbf executes all 300 tests (291 pass / 9 fail / 0 unexecuted), exposing the same missing-USER prerequisite in AllMapArchitecturalJoinTest. It now retains all original boundary/aperture assertions with the persisted fixture and passes 7,544 closed and 1,962 open probes including USER locally; exact newest-source CI pending.
 
 Older-map obligation: Every enum-driven review must handle USER prerequisites explicitly rather than assuming a built-in source or selecting a developer project.
 
@@ -2487,6 +2487,62 @@ Fix / next action: Route BSCN encoding through EditorDocumentStore with a bounde
 Evidence and verification: EditorDocumentStoreTest rejects both a writer exceeding 8 MiB and a real BSCN scene with otherwise valid 30-by-128 large-property entries, preserving exact target bytes and no pending journal. Actual child-process crash/replay, native mission recovery, terrain/rail publication and HCS2 physics regressions pass locally.
 
 Older-map obligation: The bound applies to all BSCN producers without changing format v1 or existing source files. It does not certify other serializers or physical power-loss durability.
+
+### DEV-183 — LAN HUD receives but does not paint sound captions and strike warnings
+
+**Status:** fixed-scoped locally; exact-source CI pending · **Affected:** LanWorldPanel accessibility, muted/no-device sound cues and telegraphed strike feedback
+
+Unchanged LanSoundHudTest and LanTelegraphedHudTest fail with absent lavender caption pixels and warning pixel counts 0/0 despite valid received state.
+
+Cause / uncertainty: The current paint path no longer consumes activeSoundCaption, threatUntilTick or threatOutcome; only state and diegetic monitor updates remain.
+
+Fix / next action: Restore transient caption and strike/resolution bars, including arrival/journal overlays. Keep simultaneous warning/caption rows distinct and expire host-timed feedback.
+
+Evidence and verification: Original pixel assertions now pass; added simultaneous-caption, rendered expiry and resolved-evasion checks pass through native LanWorldPanel with real local TCP peers. Inspected PNGs under development/quality/evidence/lan-hud-2026-11-01 are actual headless HUD component captures, not world/gameplay acceptance.
+
+Older-map obligation: The shared LAN HUD fix applies across maps. Installed-game, muted-device and arrival-case acceptance remain separate.
+
+### DEV-184 — Ground recovery snaps an accepted lower-floor move onto overlapping stairs
+
+**Status:** fixed-scoped locally; negative control proves prior failure; exact-source CI pending · **Affected:** GroundRecovery, HouseMap position-relative support, LanWorld host ticks and LanSpatialEvidenceIntegrationTest
+
+Accepted House movement at x21.93/y0/z18 is changed on the next tick to x22.18/y1.5/z18 in room5, then subsequent real TCP motion is collision-rejected.
+
+Cause / uncertainty: Walking resolves support relative to current elevation, while recovery validates against groundHeight and nominal stair height above valid feet.
+
+Fix / next action: Reuse the exact position-relative supportNear query already used by movement before treating supported feet as penetration. Preserve existing traversability/body-height checks and true penetration recovery.
+
+Evidence and verification: GroundRecoverySupportParityTest fails against the previous compiled GroundRecovery at the exact floor-jump assertion and passes after the fix. Accepted host movement, same-floor round trip, .06m/10m penetration controls, shipped room spawns, original graded-terrain recovery in an isolated output directory, authored stairs/physics, and four-peer spatial evidence round all pass locally.
+
+Older-map obligation: No geometry or body-clearance rule changed. Broader underside/stair visual clearance and each map fitness gate remain unaccepted; valid supported poses must not be reinterpreted by a second height authority.
+
+### DEV-185 — Legacy regression contracts reject approved voice/sprite packs and neutral Spirit Box readings
+
+**Status:** test contracts reconciled locally; exact-source CI pending · **Affected:** GhostVoicePackRoutingTest, DirectionalSpritesIntegrationTest and HandheldSpiritBoxEvidenceTest
+
+Tests expect exactly 20 strike routes, 45 total frames, and automatic voice detection from generic event strength; actual approved runtime has 24 strike routes, 61 frames and host-attested spoken responses.
+
+Cause / uncertainty: Assertions predate eight unique voice expansion clips, sixteen Castle support frames, and the explicit real-vocal Spirit Box contract.
+
+Fix / next action: Retain exact coverage of all twenty legacy strike lines plus four approved contextual strike lines; verify all sixty-one frames and actor directions; require static from generic scans and verify real spoken positives through the existing host-authorized TCP integration.
+
+Evidence and verification: Updated exact-set/count and native depth/manifestation assertions pass. GhostVoiceExpansionTest, SpiritBoxResponsesTest and LanSpiritBoxAudioIntegrationTest also pass, proving the expansion, actual packaged speech, real host vocal replies, withheld/non-vocal/range rules and no van-wide broadcast. No production asset or speech-evidence rule was changed.
+
+Older-map obligation: These are compatibility assertions for current approved source contracts, not art-quality, subjective audio or full gameplay acceptance.
+
+### DEV-186 — Acoustic direction fixtures cross native stairs while claiming one room/floor
+
+**Status:** test fixtures corrected locally; exact-source CI pending · **Affected:** LanGhostHearingTest, LanSoundTest and spatial evidence integration diagnostics
+
+House hall spawn plus X offsets resolves to staircase support at +1.5m/room5 or -1.5m/room9, so forged same-room source assertions receive null instead of a bearing.
+
+Cause / uncertainty: Older flat-room offsets and zero-height listener constructors ignore authored stairs and actual bedroom elevation.
+
+Fix / next action: Select cardinal hearing points through native room/support/body queries, use the hall flat axis with a rotated listener for full stereo pan, and retain actual listener elevation. Spatial TCP checks now read host BODY/SITE state, fail immediately on rejection, and verify actual same-room/floor distance and return coordinates.
+
+Evidence and verification: All original direction, door attenuation, privacy, stereo-energy and malformed-frame assertions pass locally. The native probe records the exact changed floor/room for the old offsets; real TCP spatial-range completion passes after the independent GroundRecovery production fix.
+
+Older-map obligation: Fixture selection never changes geometry, substitutes a preview map, drops a bearing or skips a native collision check. Cross-floor audio-model acceptance remains a separate gate.
 
 ## Required audit categories
 

@@ -69,6 +69,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private int frenzyTicks;
     private int threatTarget=-1;
     private String threatOutcome="";
+    private int threatOutcomeUntilTick=-1;
     private final MouseLook mouseLook;
     private final LanAudio audio=new LanAudio();
     private final LevelSoundscape buildingAudio=new LevelSoundscape(map);
@@ -612,11 +613,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     threatUntilTick=tick+ticks;
                     renderer.strikeUntilTick=threatUntilTick;
                     threatOutcome="";
+                    threatOutcomeUntilTick=-1;
                 }else if(p.size()==3&&(p.get(1).equals("EVADED")||p.get(1).equals("HIT"))){
                     threatTarget=LanProtocol.integer(p.get(2),0,5);
                     threatUntilTick=-1;
                     renderer.strikeUntilTick=-1;
                     threatOutcome=p.get(1).equals("HIT")?"SPECTRAL STRIKE CONNECTED":"STRIKE EVADED — KEEP MOVING";
+                    threatOutcomeUntilTick=tick+20;
                     feedback=threatOutcome;
                 }else throw new IllegalArgumentException("invalid threat packet");
             }else if(p.size()==3&&p.get(0).equals("RITUAL")&&p.get(1).equals("STARTED")){
@@ -1295,6 +1298,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             int h=getHeight();
             if(opening!=null){
                 opening.draw(g,getWidth(),h);
+                drawAccessibilitySignals(g);
                 perfHud.draw(g,getWidth(),h);
                 return;
             }
@@ -1449,8 +1453,33 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     g.drawString(raw.length()>max?raw.substring(0,max-3)+"...":raw,33,y+16);
                 }
             }
+            drawAccessibilitySignals(g);
             perfHud.draw(g,getWidth(),getHeight());
         }finally{g.dispose();}
+    }
+    /** These host-authored transient cues remain readable even when audio is
+     * muted, a journal is open, or the skippable arrival is still displayed. */
+    private void drawAccessibilitySignals(Graphics2D g){
+        int top=87,width=Math.min(615,getWidth()-24);
+        if(width<80)return;
+        if(threatUntilTick>=tick){
+            String target=threatTarget==seat?"YOU":"H"+(threatTarget+1);
+            drawSignal(g,top,width,String.format(Locale.ROOT,"SPECTRAL STRIKE / %s / %.1fs — MOVE TO EVADE",
+                target,(threatUntilTick-tick)/10.0),new Color(255,126,57));
+            top+=32;
+        }else if(!threatOutcome.isEmpty()&&tick<=threatOutcomeUntilTick){
+            drawSignal(g,top,width,threatOutcome,threatOutcome.startsWith("STRIKE EVADED")
+                ?new Color(177,233,193):new Color(255,126,57));top+=32;
+        }
+        String caption=activeSoundCaption();
+        if(!caption.isEmpty())drawSignal(g,top,width,caption,new Color(207,184,244));
+    }
+    private static void drawSignal(Graphics2D g,int top,int width,String text,Color color){
+        g.setColor(new Color(10,14,23,235));g.fillRoundRect(12,top,width,28,8,8);
+        g.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));g.setColor(color);
+        var metrics=g.getFontMetrics();
+        while(!text.isEmpty()&&metrics.stringWidth(text)>width-24)text=text.substring(0,text.length()-1);
+        g.drawString(text,24,top+19);
     }
     /** Three compact chat rows by default; editing reveals six. No extra menu hierarchy. */
     private void drawChat(Graphics2D g,int viewHeight){

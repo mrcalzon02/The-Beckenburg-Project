@@ -8,21 +8,18 @@ public final class HandheldSpiritBoxEvidenceTest {
         var casefile=new LanCase(4);
         var quiet=casefile.scanMeasured(0,LanCase.Tool.SPIRIT_BOX,4,4,100,-1,0);
         ok(quiet.accepted()&&quiet.message().contains("READING SPIRIT_BOX")
-            &&quiet.message().contains("No response"),
+            &&quiet.message().contains("Radio static; no intelligible voice"),
             "Pressing handheld Spirit Box must produce a real silent measurement");
         var inRange=casefile.scanMeasured(0,LanCase.Tool.SPIRIT_BOX,4,4,101,4,8);
         ok(inRange.accepted(),"Only unattended station should reject speech measurements");
-        if(casefile.allowsEvidence(HardEvidenceQuota.Family.SPIRIT_BOX))
-            ok(inRange.message().contains("Voice response detected"),
-                "Real in-range voiced ghost event must produce its allowed response");
-        else
-            ok(inRange.message().contains("No response"),
-                "Withheld hard evidence must not create a positive voice reading");
+        ok(inRange.message().contains("Radio static; no intelligible voice")
+            &&!inRange.message().contains("Vocal fragment heard"),
+            "Generic event strength and room proximity cannot attest to actual played speech");
         var otherRoom=casefile.scanMeasured(0,LanCase.Tool.SPIRIT_BOX,3,4,102,4,8);
-        ok(otherRoom.accepted()&&otherRoom.message().contains("No response"),
+        ok(otherRoom.accepted()&&otherRoom.message().contains("Radio static; no intelligible voice"),
             "Same real event from the wrong room must not produce a response");
         var station=casefile.stationMeasured(LanCase.Tool.SPIRIT_BOX,4,4,103,4,8);
         ok(!station.accepted(),"Unattended station cannot sample ghost speech");
-        System.out.println("PASS: handheld voice sampling, event-linked detection, silent negatives and station separation");
+        System.out.println("PASS: accepted handheld raw static, no fabricated reply from generic events, wrong-room negatives and station separation");
     }
 }

@@ -7,6 +7,24 @@ import java.awt.image.BufferedImage;
 /** Every acoustic cue has a visual caption, including when audio is muted/unavailable. */
 public final class LanSoundHudTest {
     static void ok(boolean b,String msg){if(!b)throw new AssertionError(msg);}
+    private static BufferedImage frame(LanWorldPanel panel){
+        var image=new BufferedImage(850,555,BufferedImage.TYPE_INT_RGB);
+        var graphics=image.createGraphics();panel.paint(graphics);graphics.dispose();return image;
+    }
+    private static int captionPixels(BufferedImage frame,int top){
+        int count=0;
+        for(int y=top;y<top+32;y++)for(int x=12;x<600;x++){
+            int rgb=frame.getRGB(x,y),r=(rgb>>>16)&255,g=(rgb>>>8)&255,b=rgb&255;
+            if(b>r&&r>g&&b>160)count++;
+        }
+        return count;
+    }
+    private static void capture(String[] args,String name,BufferedImage image){
+        if(args.length==0)return;
+        try{var root=java.nio.file.Path.of(args[0]);java.nio.file.Files.createDirectories(root);
+            javax.imageio.ImageIO.write(image,"PNG",root.resolve(name).toFile());}
+        catch(java.io.IOException failure){throw new RuntimeException(failure);}
+    }
     public static void main(String[] args)throws Exception{
         System.setProperty("beckenburg.audio.mute","true");
         try(LanHost host=new LanHost("127.0.0.1",0);
@@ -28,8 +46,14 @@ public final class LanSoundHudTest {
                     if(b>r && r>green && b>160)lavender++;
                 }
                 ok(lavender>30,"on-screen audio caption actually paints");
+                capture(args,"sound-caption.png",frame);
+                panel[0].onEvent("THREAT|START|8|0");
+                var combined=frame(panel[0]);
+                ok(captionPixels(combined,119)>30,"Caption remains visible below simultaneous strike warning");
+                capture(args,"sound-and-strike.png",combined);
                 panel[0].onEvent(new LanWorld(new HouseMap()).bodyFrame(0,75));
                 ok(panel[0].activeSoundCaption().isEmpty(),"outdated sound caption expires");
+                ok(captionPixels(frame(panel[0]),87)<30,"Expired caption is removed from rendered HUD too");
                 }finally{panel[0].close();}
             });
         }

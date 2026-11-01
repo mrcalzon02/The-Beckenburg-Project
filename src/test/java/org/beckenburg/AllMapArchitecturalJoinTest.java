@@ -1,9 +1,9 @@
 package org.beckenburg;
 /** Dense receiver-side boundary probes on each built indoor map, not full visual acceptance. */
 public final class AllMapArchitecturalJoinTest {
-    public static void main(String[] args){int total=0,open=0;
+    public static void main(String[] args)throws Exception{try(var user=AuthoredTestSupport.userFixture()){int total=0,open=0;
         for(var site:HouseMap.Site.values()){
-            var map=new HouseMap(site);if(map.nativeSite())continue;int count=0;
+            var map=user.map(site);if(map.nativeSite())continue;int count=0;
             for(var r:map.level().rooms())if(!r.outside()){
                 for(double t:new double[]{.05,.2,.5,.8,.95})for(double h:new double[]{.061,.12,r.height()-.061}){
                     double y=r.y()+h,x=r.x0()+(r.x1()-r.x0())*t,z=r.z0()+(r.z1()-r.z0())*t;
@@ -17,6 +17,7 @@ public final class AllMapArchitecturalJoinTest {
         }
         if(open<1000)throw new AssertionError("Insufficient real stair-aperture coverage");
         System.out.println("PASS total"+total+" closed and "+open+" open stair probes; native maps require separate physical-mesh review");
+      }
     }
     private static String ArraysText(double[] p){return java.util.Arrays.toString(p);}
     private static int stairApertures(HouseMap map){int count=0;

@@ -1,0 +1,23 @@
+Source: 11b57bbf72556e82a079939f166e1608a33ed363
+Workflow: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41327744396
+Job: 124911152450
+Required packaged TCP, GUI/executable launch: SUCCESS.
+Advisory full manifest: 291 passed, 9 failed, 0 unexecuted of 300. This is not a full pass.
+The three appended native editor service/identity/recovery tests executed and passed.
+Raw selected log lines:
+
+2026-11-01T16:45:27.5686670Z FAIL GhostVoicePackRoutingTest processExit=1
+2026-11-01T16:47:13.0052528Z FAIL HandheldSpiritBoxEvidenceTest processExit=1
+2026-11-01T16:47:25.0592619Z FAIL LanGhostHearingTest processExit=1
+2026-11-01T16:47:45.3771534Z FAIL LanSpatialEvidenceIntegrationTest processExit=1
+2026-11-01T16:48:58.9530811Z FAIL LanSoundTest processExit=1
+2026-11-01T16:49:05.7748972Z FAIL LanSoundHudTest processExit=1
+2026-11-01T16:49:33.1841546Z FAIL LanTelegraphedHudTest processExit=1
+2026-11-01T16:49:37.6145734Z FAIL DirectionalSpritesIntegrationTest processExit=1
+2026-11-01T16:55:42.9832516Z FAIL AllMapArchitecturalJoinTest processExit=1
+2026-11-01T16:57:18.6509600Z TEST PASS LevelAuthoringSessionTest elapsed=1669ms
+2026-11-01T16:58:09.3420462Z TEST PASS EditorAgentServiceTest elapsed=5354ms
+2026-11-01T16:58:11.5469418Z TEST PASS LevelAuthoringIdentityTest elapsed=2205ms
+2026-11-01T16:58:13.7993134Z TEST PASS LevelAuthoringRecoveryTest elapsed=2251ms
+2026-11-01T16:58:13.8091350Z REGRESSION SUMMARY passed=291 failed=9 skipped=0 manifest=300
+2026-11-01T16:58:13.8124975Z ##[error]Exception in thread "main" java.lang.IllegalStateException: Release regression gate failed: 9 test failures; 0 not executed

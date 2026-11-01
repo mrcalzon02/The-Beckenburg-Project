@@ -288,7 +288,9 @@ public final class HouseMap {
         if(lowest!=null)return lowest.y();
         return terrain!=null?terrain.height(x,z):roomHint>=0&&roomHint<15?level.room(roomHint).y():0;
     }
-    private Double supportNear(double x,double z,double previousY){
+    /** Position-relative support shared by movement and ground recovery. A
+     * nominal stair above valid feet must not become a recovery teleport. */
+    Double supportNear(double x,double z,double previousY){
         Double vanY=van.supportHeight(x,z);if(vanY!=null)return Math.abs(vanY-previousY)<.251?vanY:null;
         if(nativeSite!=null){var s=nativeSite.support(x,z,previousY,.251);return s==null?null:s.y();}
         Double best=null;double delta=.251;
