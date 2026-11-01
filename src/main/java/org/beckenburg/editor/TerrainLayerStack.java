@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
  * Border vertices are protected until a multi-tile transaction is available.
  */
 public final class TerrainLayerStack {
-    private static final int MAGIC=0x544C5354, VERSION=1, MAX_LAYERS=12;
+    private static final int MAGIC=0x544C5354, VERSION=2, MAX_LAYERS=12;
     public enum Brush { RAISE, LOWER, SMOOTH, FLATTEN, REVERT, TRENCH, TERRACE }
     public enum FlattenLimit { BOTH, RAISE_ONLY, LOWER_ONLY }
     public enum Noise { PERLIN, SIMPLEX, WORLEY, RIDGED, BILLOW, DOMAIN_WARP }
@@ -43,7 +43,7 @@ public final class TerrainLayerStack {
         }
     }
     public record LayerInfo(String name,boolean enabled,double opacity) {}
-    public enum EditDomain { HEIGHT, MATERIAL, PROTECTION, LAYER_CONFIGURATION }
+    public enum EditDomain { HEIGHT, MATERIAL, PROTECTION, LAYER_CONFIGURATION, LAYER_MASK }
     /**
      * Local sample-space inclusive bounds, delivered only when an edit
      * transaction completes. A host can convert them to world coordinates.
@@ -54,8 +54,11 @@ public final class TerrainLayerStack {
     }
     private static final class Layer {
         String name; boolean enabled=true; float opacity=1;
-        final float[] delta;
-        Layer(String name,int pixels){this.name=name;delta=new float[pixels];}
+        final float[] delta,mask;
+        Layer(String name,int pixels){
+            this.name=name;delta=new float[pixels];mask=new float[pixels];
+            Arrays.fill(mask,1f);
+        }
     }
     /** Each edit contains only the vertices that actually changed. */
     private interface Change { void apply(boolean forward); }
@@ -64,6 +67,13 @@ public final class TerrainLayerStack {
         public void apply(boolean forward){
             float[] values=forward?after:before;
             for(int i=0;i<indices.length;i++)layer.delta[indices[i]]=values[i];
+        }
+    }
+    private record MaskChange(Layer layer,int[] indices,float[] before,float[] after)
+            implements Change {
+        public void apply(boolean forward){
+            float[] values=forward?after:before;
+            for(int i=0;i<indices.length;i++)layer.mask[indices[i]]=values[i];
         }
     }
     private record MaterialChange(byte[] target,int[] indices,byte[] before,byte[] after)
@@ -103,6 +113,7 @@ public final class TerrainLayerStack {
     private final BitSet frozen;
     private final Deque<Change> undo=new ArrayDeque<>(),redo=new ArrayDeque<>();
     private final TreeMap<Integer,Float> pending=new TreeMap<>();
+    private final TreeMap<Integer,Float> pendingMasks=new TreeMap<>();
     private final TreeMap<Integer,Byte> pendingMaterials=new TreeMap<>();
     private final TreeMap<Integer,Boolean> pendingFrozen=new TreeMap<>();
     private int active;
@@ -126,6 +137,7 @@ public final class TerrainLayerStack {
     private static EnumSet<EditDomain> changeDomains(Change change){
         EnumSet<EditDomain> result=EnumSet.noneOf(EditDomain.class);
         if(change instanceof HeightChange)result.add(EditDomain.HEIGHT);
+        else if(change instanceof MaskChange)result.add(EditDomain.LAYER_MASK);
         else if(change instanceof MaterialChange)result.add(EditDomain.MATERIAL);
         else if(change instanceof FreezeChange)result.add(EditDomain.PROTECTION);
         else if(change instanceof LayerConfigChange)result.add(EditDomain.LAYER_CONFIGURATION);
@@ -193,10 +205,38 @@ public final class TerrainLayerStack {
     private double sourceMetres(int i){return min+(max-min)*source[i]/65535.0;}
     private double composed(int i){
         double h=sourceMetres(i);
-        for(Layer l:layers)if(l.enabled)h+=l.delta[i]*l.opacity;
+        for(Layer l:layers)if(l.enabled)h+=l.delta[i]*l.opacity*l.mask[i];
         return h;
     }
     public double height(int x,int z){bounds(x,z);return composed(id(x,z));}
+    public double layerMask(int layerIndex,int x,int z){
+        bounds(x,z);return layer(layerIndex).mask[id(x,z)];
+    }
+    /** Mask paint only affects the selected sculpt layer; zero preserves base terrain. */
+    public void paintLayerMask(double cx,double cz,double radius,
+                               double target,double strength){
+        if(!Double.isFinite(cx)||!Double.isFinite(cz)
+            ||!Double.isFinite(radius)||radius<=0||radius>n
+            ||!Double.isFinite(target)||target<0||target>1
+            ||!Double.isFinite(strength)||strength<=0||strength>1)
+            throw new IllegalArgumentException("Layer mask brush values");
+        Layer activeLayer=layer(active);
+        int x0=Math.max(1,(int)Math.floor(cx-radius)),x1=Math.min(n-1,(int)Math.ceil(cx+radius));
+        int z0=Math.max(1,(int)Math.floor(cz-radius)),z1=Math.min(n-1,(int)Math.ceil(cz+radius));
+        for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++){
+            if(!editable(x,z))continue;
+            double distance=Math.hypot(x-cx,z-cz);
+            if(distance>=radius)continue;
+            double blend=strength*(1-distance/radius);
+            int i=id(x,z);
+            float previous=activeLayer.mask[i];
+            float next=(float)(previous+(target-previous)*blend);
+            if(previous==next)continue;
+            pendingMasks.putIfAbsent(i,previous);
+            activeLayer.mask[i]=Math.max(0,Math.min(1,next));
+            dirty=true;
+        }
+    }
     public int material(int x,int z){bounds(x,z);return material[id(x,z)]&255;}
     public boolean frozen(int x,int z){bounds(x,z);return frozen.get(id(x,z));}
     private void bounds(int x,int z){
@@ -271,12 +311,14 @@ public final class TerrainLayerStack {
         int i=id(x,z);
         if(!Double.isFinite(target))throw new IllegalArgumentException("Non-finite edit");
         float old=l.delta[i];
-        float next=(float)(old+(target-composed(i))/l.opacity);
+        float weight=l.opacity*l.mask[i];
+        if(weight<=0)return;
+        float next=(float)(old+(target-composed(i))/weight);
         if(!Float.isFinite(next)||old==next)return;
         pending.putIfAbsent(i,old);l.delta[i]=next;dirty=true;
     }
     public void finishStroke(){
-        if(pending.isEmpty()&&pendingMaterials.isEmpty()&&pendingFrozen.isEmpty())return;
+        if(pending.isEmpty()&&pendingMasks.isEmpty()&&pendingMaterials.isEmpty()&&pendingFrozen.isEmpty())return;
         List<Change> edits=new ArrayList<>(3);
         if(!pending.isEmpty()){
             Layer l=layer(active);int count=pending.size(),k=0;
@@ -285,6 +327,14 @@ public final class TerrainLayerStack {
                 int i=e.getKey();ids[k]=i;a[k]=e.getValue();b[k]=l.delta[i];k++;
             }
             edits.add(new HeightChange(l,ids,a,b));
+        }
+        if(!pendingMasks.isEmpty()){
+            Layer l=layer(active);int count=pendingMasks.size(),k=0;
+            int[] ids=new int[count];float[] a=new float[count],b=new float[count];
+            for(var e:pendingMasks.entrySet()){
+                int i=e.getKey();ids[k]=i;a[k]=e.getValue();b[k]=l.mask[i];k++;
+            }
+            edits.add(new MaskChange(l,ids,a,b));
         }
         if(!pendingMaterials.isEmpty()){
             int count=pendingMaterials.size(),k=0;
@@ -307,9 +357,15 @@ public final class TerrainLayerStack {
         int minX=n,minZ=n,maxX=0,maxZ=0;
         EnumSet<EditDomain> domains=EnumSet.noneOf(EditDomain.class);
         if(!pending.isEmpty())domains.add(EditDomain.HEIGHT);
+        if(!pendingMasks.isEmpty())domains.add(EditDomain.LAYER_MASK);
         if(!pendingMaterials.isEmpty())domains.add(EditDomain.MATERIAL);
         if(!pendingFrozen.isEmpty())domains.add(EditDomain.PROTECTION);
         for(int index:pending.keySet()){
+            int x=index%side,z=index/side;
+            minX=Math.min(minX,x);minZ=Math.min(minZ,z);
+            maxX=Math.max(maxX,x);maxZ=Math.max(maxZ,z);
+        }
+        for(int index:pendingMasks.keySet()){
             int x=index%side,z=index/side;
             minX=Math.min(minX,x);minZ=Math.min(minZ,z);
             maxX=Math.max(maxX,x);maxZ=Math.max(maxZ,z);
@@ -324,7 +380,7 @@ public final class TerrainLayerStack {
             minX=Math.min(minX,x);minZ=Math.min(minZ,z);
             maxX=Math.max(maxX,x);maxZ=Math.max(maxZ,z);
         }
-        pending.clear();pendingMaterials.clear();pendingFrozen.clear();
+        pending.clear();pendingMasks.clear();pendingMaterials.clear();pendingFrozen.clear();
         changed(minX,minZ,maxX,maxZ,domains);
     }
     public boolean undo(){
@@ -674,10 +730,12 @@ public final class TerrainLayerStack {
     }
     private void load()throws IOException {
         if(!Files.isRegularFile(path()))return;
-        if(Files.size(path())>MAX_LAYERS*(long)pixels*4+pixels*2L+32768)
+        if(Files.size(path())>MAX_LAYERS*(long)pixels*8+pixels*2L+32768)
             throw new IOException("Oversized terrain authoring document");
         try(var in=new DataInputStream(new BufferedInputStream(Files.newInputStream(path())))){
-            if(in.readInt()!=MAGIC||in.readInt()!=VERSION||in.readInt()!=n
+            if(in.readInt()!=MAGIC)throw new IOException("Unknown terrain layers");
+            int version=in.readInt();
+            if((version!=1&&version!=VERSION)||in.readInt()!=n
                 ||in.readLong()!=sourceCrc)throw new IOException("Incompatible or stale terrain layers");
             int count=in.readInt();
             if(count<1||count>MAX_LAYERS)throw new IOException("Invalid layer count");
@@ -691,6 +749,12 @@ public final class TerrainLayerStack {
                 for(int i=0;i<pixels;i++){
                     l.delta[i]=in.readFloat();
                     if(!Float.isFinite(l.delta[i]))throw new IOException("Non-finite terrain data");
+                }
+                if(version>=2)for(int i=0;i<pixels;i++){
+                    float value=in.readFloat();
+                    if(!Float.isFinite(value)||value<0||value>1)
+                        throw new IOException("Invalid sculpt layer mask");
+                    l.mask[i]=value;
                 }
                 layers.add(l);
             }
@@ -717,6 +781,7 @@ public final class TerrainLayerStack {
                 for(Layer l:layers){
                     out.writeUTF(l.name);out.writeBoolean(l.enabled);out.writeFloat(l.opacity);
                     for(float v:l.delta)out.writeFloat(v);
+                    for(float v:l.mask)out.writeFloat(v);
                 }
                 out.writeInt(active);out.write(material);
                 out.writeInt(frozen.cardinality());
@@ -756,7 +821,7 @@ public final class TerrainLayerStack {
         System.arraycopy(updated,0,source,0,pixels);
         sourceCrc=crc(updated);
         for(Layer l:layers)Arrays.fill(l.delta,0);
-        undo.clear();redo.clear();pending.clear();pendingMaterials.clear();pendingFrozen.clear();dirty=true;
+        undo.clear();redo.clear();pending.clear();pendingMasks.clear();pendingMaterials.clear();pendingFrozen.clear();dirty=true;
         // Preserve material IDs, frozen geometry and layer configuration. Only
         // height deltas are rebased against the new authoritative PNG.
         save();
