@@ -57,6 +57,7 @@ public final class TerrainSeamSculptEditor extends JPanel {
         this.frame=Objects.requireNonNull(frame);
         this.world=Objects.requireNonNull(world);
         centerX=tx;centerZ=tz;n=world.settings().tileCells();
+        ((SpinnerNumberModel)radius.getModel()).setMaximum(Math.min(n,64));
         session=new TerrainSeamSculpt(world,tx,tz);
         setBorder(BorderFactory.createEmptyBorder(7,7,7,7));
         JPanel toolbar=new JPanel(new FlowLayout(FlowLayout.LEFT,5,3));
