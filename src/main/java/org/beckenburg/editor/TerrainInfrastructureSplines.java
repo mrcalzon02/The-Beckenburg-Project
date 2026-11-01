@@ -2,6 +2,8 @@ package org.beckenburg.editor;
 
 import java.io.*;
 import java.nio.file.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 /**
@@ -41,7 +43,22 @@ public final class TerrainInfrastructureSplines {
         }
     }
     private final Path file;
+    private String savedFingerprint;
     private final LinkedHashMap<String,Alignment> alignments=new LinkedHashMap<>();
+    private static String sha256(Path path)throws IOException{
+        if(!Files.isRegularFile(path))return null;
+        try{
+            MessageDigest hash=MessageDigest.getInstance("SHA-256");
+            try(var stream=Files.newInputStream(path)){
+                byte[] buffer=new byte[8192];int size;
+                while((size=stream.read(buffer))!=-1)
+                    if(size>0)hash.update(buffer,0,size);
+            }
+            return HexFormat.of().formatHex(hash.digest());
+        }catch(NoSuchAlgorithmException missing){
+            throw new IllegalStateException("SHA-256 unavailable",missing);
+        }
+    }
     private TerrainInfrastructureSplines(Path file){this.file=file;}
     public static TerrainInfrastructureSplines open(StitchedHeightmapWorld world)throws IOException{
         Objects.requireNonNull(world);
@@ -76,6 +93,7 @@ public final class TerrainInfrastructureSplines {
             }
             if(in.read()!=-1)throw new IOException("Trailing infrastructure spline data");
         }
+        result.savedFingerprint=sha256(result.file);
         return result;
     }
     public Path path(){return file;}
@@ -88,6 +106,9 @@ public final class TerrainInfrastructureSplines {
     }
     public boolean remove(String id){return alignments.remove(id)!=null;}
     public void save()throws IOException{
+        if(!Objects.equals(savedFingerprint,sha256(file)))
+            throw new IOException("Infrastructure route document was changed by another editor; "+
+                "reopen before saving");
         Files.createDirectories(file.getParent());
         Path temp=Files.createTempFile(file.getParent(),".splines-",".tmp");
         try{
@@ -105,6 +126,7 @@ public final class TerrainInfrastructureSplines {
                 }
             }
             Files.move(temp,file,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
+            savedFingerprint=sha256(file);
         }finally{Files.deleteIfExists(temp);}
     }
     private static double catmull(double p0,double p1,double p2,double p3,double t){
