@@ -61,6 +61,8 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final TerrainInfrastructureSplines routes;
     private final java.util.ArrayList<TerrainLayerStack.Point> gradeControls=new java.util.ArrayList<>();
     private final JTextField routeName=new JTextField("route-1",14);
+    private final JComboBox<String> savedRoutes=new JComboBox<>();
+    private int draggedRouteControl=-1;
     private boolean drawing;
 
     public static JFrame open(Window owner,StitchedHeightmapWorld world,int tx,int tz)throws IOException {
@@ -143,6 +145,9 @@ public final class TerrainLayerWorkbench extends JPanel {
             refresh("Material unlocked: "+material.getSelectedItem());
         });
         button(sidebar,"LOAD HEIGHT STAMP PNG",this::loadStamp);
+        field(sidebar,"Saved route",savedRoutes);
+        button(sidebar,"LOAD ROUTE FOR EDITING",this::loadRoute);
+        button(sidebar,"DELETE ROUTE RECORD...",this::deleteRoute);
         field(sidebar,"Route name / stable ID",routeName);
         button(sidebar,"APPLY AND SAVE ROUTE",this::applyRoute);
         button(sidebar,"CLEAR ROUTE POINTS",()->{gradeControls.clear();refresh("Route draft cleared");});
@@ -174,7 +179,8 @@ public final class TerrainLayerWorkbench extends JPanel {
         noise.addActionListener(e->{if(liveNoise.isSelected())render();});
         for(JSpinner field:new JSpinner[]{cycles,amplitude,octaves,seed})
             field.addChangeListener(e->{if(liveNoise.isSelected())render();});
-        action.addActionListener(e->{gradeControls.clear();});
+        action.addActionListener(e->{gradeControls.clear();draggedRouteControl=-1;});
+        refreshSavedRoutes();
         rebuildLayers();render();
         refresh("Editing tile "+stack.tileX()+","+stack.tileZ()+" — unsaved edits are separate from source");
     }
@@ -285,6 +291,45 @@ public final class TerrainLayerWorkbench extends JPanel {
             return new TerrainLayerStack(world,sourceX,sourceZ);
         }
     }
+    private void refreshSavedRoutes(){
+        String selection=(String)savedRoutes.getSelectedItem();
+        savedRoutes.removeAllItems();
+        for(var route:routes.list())savedRoutes.addItem(route.id());
+        if(selection!=null) savedRoutes.setSelectedItem(selection);
+    }
+    private TerrainInfrastructureSplines.Alignment selectedRoute(){
+        String id=(String)savedRoutes.getSelectedItem();
+        if(id==null)return null;
+        for(var route:routes.list())if(route.id().equals(id))return route;
+        return null;
+    }
+    private void loadRoute(){
+        var route=selectedRoute();
+        if(route==null){status.setText("No saved route selected");return;}
+        gradeControls.clear();gradeControls.addAll(route.controls());
+        routeName.setText(route.id());
+        radius.setValue(Math.min(512,Math.max(.5,route.halfWidth())));
+        action.setSelectedItem(switch(route.kind()){
+            case RAIL -> "GRADE RAIL";
+            case ROAD -> "GRADE ROAD";
+            case RIVER -> "GRADE RIVER";
+        });
+        // The operation selection resets draft handles; restore the selected route.
+        gradeControls.clear();gradeControls.addAll(route.controls());
+        refresh("Loaded "+route.id()+" for manual control-point adjustment");
+    }
+    private void deleteRoute(){
+        var route=selectedRoute();
+        if(route==null)return;
+        if(JOptionPane.showConfirmDialog(frame,
+            "Remove saved alignment "+route.id()+"? Existing graded terrain will NOT be restored.",
+            "Delete route record only",JOptionPane.YES_NO_OPTION,
+            JOptionPane.WARNING_MESSAGE)!=JOptionPane.YES_OPTION)return;
+        try{
+            routes.remove(route.id());routes.save();gradeControls.clear();
+            refreshSavedRoutes();refresh("Removed route record "+route.id()+"; terrain layers unchanged");
+        }catch(IOException ex){error(ex);}
+    }
     private void applyRoute(){
         if(busy)return;
         try{
@@ -313,9 +358,17 @@ public final class TerrainLayerWorkbench extends JPanel {
             TerrainInfrastructureSplines.evaluate(alignment,stack.metresPerCell());
             routes.apply(stack,alignment);
             routes.put(alignment);routes.save();
-            gradeControls.clear();routeName.setText("route-"+(routes.list().size()+1));
+            gradeControls.clear();refreshSavedRoutes();
+            savedRoutes.setSelectedItem(alignment.id());
+            int next=routes.list().size()+1;
+            while(hasRoute("route-"+next))next++;
+            routeName.setText("route-"+next);
             refresh("Applied and persisted "+alignment.kind()+" "+alignment.id());
         }catch(IOException|RuntimeException ex){error(ex);}
+    }
+    private boolean hasRoute(String id){
+        for(var route:routes.list())if(route.id().equals(id))return true;
+        return false;
     }
     private void loadBrushAlpha(){
         JFileChooser picker=new JFileChooser();
@@ -386,11 +439,22 @@ public final class TerrainLayerWorkbench extends JPanel {
                 }
                 case "GRADE RAIL","GRADE ROAD","GRADE RIVER" -> {
                     if(pressed){
-                        gradeControls.add(new TerrainLayerStack.Point(
-                            (long)stack.tileX()*stack.cells()+x,
-                            (long)stack.tileZ()*stack.cells()+z,stack.height(x,z)));
-                        status.setText("Route controls: "+gradeControls.size()+
-                            " — add more or APPLY AND SAVE ROUTE");
+                        draggedRouteControl=-1;
+                        double gx=(long)stack.tileX()*stack.cells()+x;
+                        double gz=(long)stack.tileZ()*stack.cells()+z;
+                        double near=2.0;
+                        for(int k=0;k<gradeControls.size();k++){
+                            var p=gradeControls.get(k);
+                            double d=Math.hypot(p.x()-gx,p.z()-gz);
+                            if(d<near){near=d;draggedRouteControl=k;}
+                        }
+                        if(draggedRouteControl<0){
+                            gradeControls.add(new TerrainLayerStack.Point(gx,gz,
+                                stack.height(x,z)));
+                            status.setText("Route controls: "+gradeControls.size()+
+                                " — drag a control to move, or save alignment");
+                        }else status.setText("Dragging route control "+
+                            (draggedRouteControl+1)+" (elevation preserved)");
                     }
                 }
             }
@@ -431,10 +495,21 @@ public final class TerrainLayerWorkbench extends JPanel {
                             brushStroke=null;stack.finishStroke();error(ex);}
                     }else if("PAINT MATERIAL".equals(action.getSelectedItem()))
                         applyAt(posX(e),posZ(e),false);
+                    else if(draggedRouteControl>=0&&
+                        ((String)action.getSelectedItem()).startsWith("GRADE ")){
+                        var old=gradeControls.get(draggedRouteControl);
+                        gradeControls.set(draggedRouteControl,
+                            new TerrainLayerStack.Point(
+                                (long)stack.tileX()*stack.cells()+posX(e),
+                                (long)stack.tileZ()*stack.cells()+posZ(e),
+                                old.elevation()));
+                        render();
+                    }
                 }
                 @Override public void mouseReleased(MouseEvent e){
                     if(drawing){
-                        drawing=false;if(brushStroke!=null){brushStroke.end();brushStroke=null;}
+                        drawing=false;draggedRouteControl=-1;
+                        if(brushStroke!=null){brushStroke.end();brushStroke=null;}
                         stack.finishStroke();refresh("Stroke completed");
                     }
                 }
@@ -444,6 +519,19 @@ public final class TerrainLayerWorkbench extends JPanel {
         @Override protected void paintComponent(Graphics g){
             super.paintComponent(g);
             if(image!=null)g.drawImage(image,0,0,getWidth(),getHeight(),null);
+            // Stored alignments remain inspectable even when no draft is active.
+            g.setColor(new Color(68,206,214,145));
+            for(var route:routes.list()){
+                boolean have=false;int px=0,py=0;
+                for(var p:route.controls()){
+                    int x=(int)Math.round((p.x()-(long)stack.tileX()*stack.cells())*
+                        getWidth()/stack.cells());
+                    int y=(int)Math.round((p.z()-(long)stack.tileZ()*stack.cells())*
+                        getHeight()/stack.cells());
+                    if(have)g.drawLine(px,py,x,y);
+                    px=x;py=y;have=true;
+                }
+            }
             if(!gradeControls.isEmpty()){
                 g.setColor(Color.YELLOW);
                 int lastX=0,lastY=0;boolean have=false;
