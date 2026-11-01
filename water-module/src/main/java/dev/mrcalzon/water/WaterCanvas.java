@@ -31,6 +31,14 @@ public final class WaterCanvas extends JPanel {
  private Point support(WaterPlacement p,int x,int z){double nx=x*Math.cos(p.yaw())-z*Math.sin(p.yaw()),nz=x*Math.sin(p.yaw())+z*Math.cos(p.yaw()),best=-Double.MAX_VALUE,sx=0,sz=0;int n=0;for(var v:p.polygon().points()){double d=(v.x()-p.x())*nx+(v.z()-p.z())*nz;if(d>best+1e-7){best=d;sx=v.x();sz=v.z();n=1;}else if(Math.abs(d-best)<1e-7){sx+=v.x();sz+=v.z();n++;}}return new Point(sx/n,sz/n);}
  private List<Handle> handles(){var h=new ArrayList<Handle>();for(var p:model.selected()){h.add(new Handle(p.id(),0,0,0,new Point(p.x(),p.z())));for(int[] d:new int[][]{{-1,-1},{0,-1},{1,-1},{1,0},{1,1},{0,1},{-1,1},{-1,0}})h.add(new Handle(p.id(),1,d[0],d[1],support(p,d[0],d[1])));double distance=p.depth()/2+18/zoom;h.add(new Handle(p.id(),2,0,0,new Point(p.x()+Math.sin(p.yaw())*distance,p.z()-Math.cos(p.yaw())*distance)));}return h;}
  private void paintPlan(Graphics2D g){g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);g.setColor(new Color(34,49,56));double spacing=zoom*Math.max(1,Math.pow(10,Math.floor(Math.log10(25/zoom))));for(double x=view.getWidth()/2.-cx*zoom%spacing;x<view.getWidth();x+=spacing)g.drawLine((int)x,0,(int)x,view.getHeight());for(double y=view.getHeight()/2.-cz*zoom%spacing;y<view.getHeight();y+=spacing)g.drawLine(0,(int)y,view.getWidth(),(int)y);var selected=model.selected();for(var p:model.document().placements()){var path=new Path2D.Double();boolean first=true;for(var v:p.polygon().points()){var q=screen(v);if(first){path.moveTo(q.x,q.y);first=false;}else path.lineTo(q.x,q.y);}path.closePath();boolean chosen=selected.contains(p);g.setColor(chosen?new Color(39,129,158,155):new Color(24,79,104,110));g.fill(path);g.setColor(chosen?new Color(132,230,240):new Color(62,144,168));g.setStroke(new BasicStroke(chosen?2:1));g.draw(path);var at=screen(new Point(p.x(),p.z()));new WaterIcon().paintIcon(view,g,at.x-12,at.y-12);g.drawString(p.id(),at.x+15,at.y);}
+  for(var socket:model.terrainSockets()){
+   var point=screen(new Point(socket.x(),socket.z()));
+   g.setColor(new Color(255,194,81));g.setStroke(new BasicStroke(2));
+   g.drawOval(point.x-6,point.y-6,12,12);
+   g.drawLine(point.x-9,point.y,point.x+9,point.y);
+   g.drawLine(point.x,point.y-9,point.x,point.y+9);
+   g.drawString("RIVER SNAP "+socket.id(),point.x+11,point.y-9);
+  }
   for(var h:handles()){var at=screen(h.p);g.setColor(h.kind==2?new Color(255,190,80):new Color(164,237,245));if(h.kind!=0){g.fillRect(at.x-4,at.y-4,8,8);if(h.kind==2)g.drawString("rotate",at.x+7,at.y);}}
   if(guide!=null){var a=screen(guide.target().a());var b=screen(guide.target().b());g.setColor(new Color(130,255,146));g.setStroke(new BasicStroke(4));g.drawLine(a.x,a.y,b.x,b.y);}g.setColor(Color.LIGHT_GRAY);g.drawString("PLAN · X/Z metres · water surface footprints",8,16);
  }
