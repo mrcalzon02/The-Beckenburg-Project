@@ -24,11 +24,13 @@ public final class DoorOpeningFrameProfile {
         private long changedResources, uploadedBytes, generationChanges;
         private long frameRevisions, frameBytes, frameSceneChanges;
         private final java.util.Map<Long,Long> resources=new java.util.HashMap<>();
+        private final List<String> revisedThisFrame=new ArrayList<>();
         @Override public boolean ready(){return true;}
         @Override public String rendererDescription(){return "GPU submission recorder; not hardware"; }
         @Override public void submit(GpuWorldRenderer.Frame frame){
             long beforeRevisions=changedResources,beforeBytes=uploadedBytes;
             long beforeScenes=generationChanges;
+            revisedThisFrame.clear();
             if(previous!=null&&previous.sceneId()!=frame.sceneId()){
                 generationChanges++;
                 resources.clear();
@@ -41,6 +43,11 @@ public final class DoorOpeningFrameProfile {
                     resources.put(surface.resourceId(),surface.revision());
                     uploadedBytes+=(long)surface.vertices().length*Float.BYTES;
                     changedResources++;
+                    // Exact revised resident IDs/materials identify which
+                    // shell/fixture batches still upload on a real door swing.
+                    revisedThisFrame.add(surface.resourceId()+","+
+                        surface.material()+","+surface.revision()+","+
+                        ((long)surface.vertices().length*Float.BYTES));
                 }
             }
             previous=frame;
@@ -112,10 +119,14 @@ public final class DoorOpeningFrameProfile {
         List<Sample> samples=new ArrayList<>();
         List<Sample> revisionSamples=new ArrayList<>(),byteSamples=new ArrayList<>();
         StringBuilder csv=new StringBuilder("backend,phase,toggle,frame,door_open,door_fraction,wall_ms,render_ms,build_ms,geometry_ms,effects_ms,shadow_rays,normal_rays,invalidated_cells,lighting_samples,cache_hits,world_builds,world_hits,world_bytes,scene_id,scene_changes,resource_revisions,submitted_bytes,heap_used_bytes,gc_ms,frame_resource_revisions,frame_submitted_bytes,frame_scene_changes\n");
+        StringBuilder resourceCsv=new StringBuilder(
+            "phase,toggle,frame,door_open,resource_id,material,revision,vertex_bytes\n");
         long baselineGc=gcMillis(),initialScene=-1;
         int frame=0;
         long maxRays=0,maxInvalidated=0;
-        for(int step=0;step<4+10+16*4;step++){
+        // At least twenty complete open/close transitions are required by
+        // the House door regression contract; exercise 24 toggles.
+        for(int step=0;step<4+10+24*4;step++){
             String phase;
             int toggle=-1;
             if(step<4)phase="warmup";
@@ -135,6 +146,8 @@ public final class DoorOpeningFrameProfile {
             var resident=renderer.worldResidentStats();
             long sceneId=recorder==null?-1:recorder.sceneId();
             if(initialScene<0&&sceneId>0)initialScene=sceneId;
+            if(recorder!=null&&initialScene>0&&sceneId!=initialScene)
+                throw new AssertionError("House door changed the GPU scene identity");
             maxRays=Math.max(maxRays,light.shadowRays()+light.normalRays());
             maxInvalidated=Math.max(maxInvalidated,light.invalidatedCells());
             samples.add(new Sample(phase,elapsed/1_000_000.0));
@@ -153,6 +166,11 @@ public final class DoorOpeningFrameProfile {
                 recorder==null?0:recorder.frameBytes(),
                 recorder==null?0:recorder.frameSceneChanges()));
             if(recorder!=null){
+                for(String changed:recorder.revisedThisFrame)
+                    resourceCsv.append(phase).append(',').append(toggle)
+                        .append(',').append(frame).append(',')
+                        .append(map.doorOpen(portal.id())).append(',')
+                        .append(changed).append('\n');
                 revisionSamples.add(new Sample(phase,recorder.frameRevisions()));
                 byteSamples.add(new Sample(phase,recorder.frameBytes()));
             }
@@ -163,6 +181,8 @@ public final class DoorOpeningFrameProfile {
         }
         Files.writeString(root.resolve("door-"+backend+".csv"),
             csv.toString(),StandardCharsets.UTF_8);
+        if(recorder!=null)Files.writeString(root.resolve("door-submission-resources.csv"),
+            resourceCsv.toString(),StandardCharsets.UTF_8);
         StringBuilder report=new StringBuilder();
         report.append("PROFILER source=actual HouseMap and SceneRenderer; mode=").append(backend)
               .append("; door_id=").append(portal.id())
@@ -191,7 +211,8 @@ public final class DoorOpeningFrameProfile {
             report.toString(),StandardCharsets.UTF_8);
         System.out.print(report);
         // Structural correctness only; timing thresholds are strictly diagnostic.
-        if(frame!=78||Files.size(root.resolve("door-"+backend+".csv"))==0)
+        if(frame!=110||Files.size(root.resolve("door-"+backend+".csv"))==0
+            ||recorder!=null&&Files.size(root.resolve("door-submission-resources.csv"))==0)
             throw new AssertionError("Incomplete actual door profile");
     }
 }
