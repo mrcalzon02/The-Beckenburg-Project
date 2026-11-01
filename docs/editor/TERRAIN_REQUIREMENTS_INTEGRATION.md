@@ -15,13 +15,13 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 | Precision brush base | Raise/lower/smooth/flatten/revert/trench/terrace; inner radius, three curves, alpha images, rotation, event-independent dab spacing, elevation/slope guards | No mesh stamp-angle fitting yet |
 | Localized differential undo/redo | Sparse per-vertex height changes, per stroke | Session history is memory-resident; other data edits not yet undoable |
 | Terrain stamping | `stamp` and image-based height stamp in workbench | Height textures only; no arbitrary 3D mesh conversion |
-| Thermal erosion | Talus relaxation, iterative local source protection | Simplified four-neighbor solver |
-| Hydraulic erosion | Seeded droplets, downhill sediment transport/evaporation | No persisted flow-velocity/sediment maps |
-| Aeolian erosion | Directional mass transfer | No raycast wind shadowing yet |
+| Thermal erosion | Talus relaxation and bounded selected-region iterations; protects source seams | Simplified four-neighbor solver |
+| Hydraulic erosion | Seeded droplets constrained to active region, downhill sediment transport/evaporation | No persisted flow-velocity/sediment maps |
+| Aeolian erosion | Directional mass transfer inside selectable region | No raycast wind shadowing yet |
 | Slope/height auto-biomes | `autoBiome`, `slope` | Fixed rules; not yet a node-based rule graph |
 | Surface materials | Eight stable material IDs and paint brush | Renderer/footstep/physics adapter must consume these |
 | Freeze/exclusion masks | Rectangle freeze, material-based lock and brush respect | No mesh-hull raycast or cylinder masks yet |
-| Infrastructure grading | `gradePath`, persistent `TerrainInfrastructureSplines`; saved route load/edit/drag/delete in workbench | Spline controls and road/rail/river grading; not track mesh generation |
+| Infrastructure grading | `gradePath` with bounded segment rasterization (up to 50k samples), persistent `TerrainInfrastructureSplines`; saved route load/edit/drag/delete in workbench | Road/rail/river grading; not track mesh generation |
 | Grade constraints | Rail/road maximum grade validation; clamp controls to target grade | No turnout, bridge or tunnel geometry |
 | Background operations | SwingWorker for heavy generation, erosion, save, bake | Full GPU/physics pipeline not wired |
 | Safe explicit source bake | Checks 16-bit range and source checksum; tile border frozen; 16-bit PNG import with seam validation | No multi-tile seamless atomic commit |
@@ -31,7 +31,7 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 Implementation entry point: `StitchedWorldEditor` > **LAYERED TERRAIN TOOLS**.
 Standalone build: `tools/build-editor-kit.sh` or `tools/build-editor-kit.cmd`.
 Tests: `TerrainLayerStackTest`, `TerrainInfrastructureSplinesTest`,
-`TerrainBrushProfileTest`;
+`TerrainBrushProfileTest`, `TerrainErosionRegionTest`;
 workflow: `.github/workflows/standalone-editor-kit.yml`.
 
 ## Mandatory preservation rules
@@ -60,7 +60,7 @@ workflow: `.github/workflows/standalone-editor-kit.yml`.
   operations, masks, splines and erosion. Unlimited logical history requires disk paging.
 
 ### Simulation and derived outputs
-- Localized erosion selections with halo samples across adjacent tiles, cancellation
+- Multi-tile localized erosion with halo samples across adjacent tiles, cancellation
   checkpoints, deterministic seeds, protected gameplay zones and conservative transfer.
 - Persist hydraulic flow direction/velocity, sediment depth and moisture channels as
   versioned derived layers, with explicit invalidation on terrain edits.
