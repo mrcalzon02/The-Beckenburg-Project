@@ -21,6 +21,7 @@ on:
       - 'src/main/java/org/beckenburg/editor/TerrainEntrancePreview.java'
       - 'src/main/java/org/beckenburg/editor/RuntimeSceneDocument.java'
       - 'src/main/java/org/beckenburg/editor/TerrainScenePackage.java'
+      - 'src/main/java/org/beckenburg/editor/TerrainRailScenePackage.java'
       - 'src/main/java/org/beckenburg/editor/TerrainScenePackageEditor.java'
       - 'src/main/java/org/beckenburg/editor/LayeredGeometryEditor.java'
       - 'src/main/java/org/beckenburg/editor/AdaptiveTopologyEditor.java'
@@ -37,6 +38,7 @@ on:
       - 'src/test/java/org/beckenburg/editor/TerrainEntranceMeshTest.java'
       - 'src/test/java/org/beckenburg/editor/RuntimeSceneDocumentTest.java'
       - 'src/test/java/org/beckenburg/editor/TerrainScenePackageTest.java'
+      - 'src/test/java/org/beckenburg/editor/TerrainRailScenePackageTest.java'
       - 'tools/build-editor-kit.cmd'
       - '.github/workflows/terrain-world-modules.yml'
   workflow_dispatch:
