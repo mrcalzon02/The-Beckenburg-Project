@@ -2546,7 +2546,7 @@ Older-map obligation: Fixture selection never changes geometry, substitutes a pr
 
 ### DEV-187 — Castle editor properties saves lack journal recovery and distinct previous versions
 
-**Status:** fixed-scoped locally; new-source CI pending · **Affected:** CastleLevelEdits native properties persistence and Castle human/headless editor service
+**Status:** fixed-scoped; exact-source native CI and full 306/306 regression accepted · **Affected:** CastleLevelEdits native properties persistence and Castle human/headless editor service
 
 Mission documents support interrupted-save replay and explicit previous-save recovery, while Castle properties writes have no journal or previous version and timestamps change identical saves.
 
@@ -2554,13 +2554,13 @@ Cause / uncertainty: Castle retains a separate temporary-file replacement serial
 
 Fix / next action: Preserve native Properties format and all existing migrations; use the bounded native decoder for readback and recovery validation, deterministic sorted bytes, journaled atomic replacement and one prior distinct document. Enable recovery on the authoritative singleton through the same human menu, shared history and CLI.
 
-Evidence and verification: CastleDocumentRecoveryTest passes native full-state roundtrip, removed objects, no-op backup retention, corrupt source and invalid backup refusal, same-singleton recovery/undo and legacy migrations. Existing CastleEditorGeometryTest and CastleLightingPlacementRepairTest pass unchanged. Extended actual Windows editor menu and headless fresh-process acceptance pass.
+Evidence and verification: CastleDocumentRecoveryTest passes native full-state roundtrip, removed objects, no-op backup retention, corrupt source and invalid backup refusal, same-singleton recovery/undo and legacy migrations. Existing CastleEditorGeometryTest and CastleLightingPlacementRepairTest pass unchanged. Extended actual Windows editor menu and headless fresh-process acceptance pass. Exact a99d0a1d source native workflow41352028873 SUCCESS and full41352069449 raw passed=306 failed=0 skipped=0 manifest=306; see evidence/editor-full-round-a99d0a1d.txt.
 
 Older-map obligation: Castle properties only. Mission/BSCN format unchanged. Decoding uses private native codec state with no renderer/editor/agent binding. Generic store process-crash tests remain applicable; physical power-loss and installed-game acceptance remain separate.
 
 ### DEV-188 — Headless editor JSON uses Windows system encoding instead of UTF-8
 
-**Status:** fixed-scoped; native process regression passes with Windows-1252 JVM default · **Affected:** EditorAgentCli main response stream and Castle hierarchy labels
+**Status:** fixed-scoped; exact-source native CI and full 306/306 regression accepted · **Affected:** EditorAgentCli main response stream and Castle hierarchy labels
 
 The public Castle inspect response contains bullet characters encoded as Windows-1252 byte 0x95, causing the UTF-8 Python client to fail decoding JSON.
 
@@ -2568,7 +2568,7 @@ Cause / uncertainty: Input explicitly selects UTF-8, but the response stream reu
 
 Fix / next action: Wrap the captured stdout stream with an explicit UTF-8 PrintStream before redirecting runtime diagnostics to stderr. Force Windows-1252 as the test JVM default and require exact native Unicode labels in decoded responses.
 
-Evidence and verification: Expanded verify_editor_agent_cli.py reproduces UnicodeDecodeError before the fix and passes mission/Castle edit, save, fresh-process reopen and recovery after the fix; native Castle bullet labels survive UTF-8 decoding.
+Evidence and verification: Expanded verify_editor_agent_cli.py reproduces UnicodeDecodeError before the fix and passes mission/Castle edit, save, fresh-process reopen and recovery after the fix; native Castle bullet labels survive UTF-8 decoding. Exact a99d0a1d source native workflow41352028873 SUCCESS and full41352069449 raw passed=306 failed=0 skipped=0 manifest=306; see evidence/editor-full-round-a99d0a1d.txt.
 
 Older-map obligation: Applies to the shared local CLI for every host. Does not add a listener, authentication or arbitrary script execution.
 

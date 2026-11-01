@@ -36,6 +36,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private EditorHistory<LevelAuthoringSession.Snapshot> missionHistory;
     private EditorAgentService<LevelAuthoringSession.Snapshot> missionAgent;
     private HouseMap missionMap;
+    private long missionMapRevision=-1;
     private HouseMap.Site missionSite;
     private boolean castleDirty,missionDirty;
     private double maxX(){return mission==null?CastleHubMap.WIDTH:missionMap==null?HouseMap.WIDTH:missionMap.width();}
@@ -67,11 +68,15 @@ public final class DeveloperLevelEditor extends JPanel {
         // Use the playable HouseMap itself, not a second scene interpretation.
         var playable=new HouseMap(site,loaded.level());
         mission=loaded;missionSite=site;
-        missionHistory=new EditorHistory<>(loaded,60);missionMap=playable;
+        missionHistory=new EditorHistory<>(loaded,60);missionMap=playable;missionMapRevision=loaded.revision();
         missionAgent=new EditorAgentService<>(new LevelEditorAgent(loaded,this::currentMissionMap,renderer,()->{
             requireEditorThread();
             if(mission!=loaded)throw new IllegalStateException("Scene is no longer active");
-        }),missionHistory,()->{missionDirty=true;refreshMissionPreview();refresh();},()->missionDirty=false);
+        }),missionHistory,event->{
+            missionDirty=true;
+            if(event.details().fullScene()||!event.details().dependencies().isEmpty())refreshMissionPreview();
+            refresh();
+        },()->missionDirty=false);
         var spawn=playable.level().room(0).spawn();
         renderer.x=spawn.x();renderer.z=spawn.z();
         renderer.eyeHeight=spawn.y()+1.62;renderer.yaw=0;renderer.pitch=-.12;
@@ -211,8 +216,9 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private HouseMap currentMissionMap(){
         if(mission==null)throw new IllegalStateException("No mission is active");
-        if(missionMap==null||!missionMap.level().props().equals(mission.props()))
-            missionMap=new HouseMap(missionSite,mission.level());
+        if(missionMap==null||missionMapRevision!=mission.revision()){
+            missionMap=new HouseMap(missionSite,mission.level());missionMapRevision=mission.revision();
+        }
         return missionMap;
     }
     private final JPanel viewport=new JPanel(){

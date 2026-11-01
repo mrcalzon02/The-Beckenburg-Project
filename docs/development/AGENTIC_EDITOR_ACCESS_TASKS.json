@@ -675,23 +675,25 @@
       ],
       "nativeHostCi": {
         "run": 41352028873,
-        "status": "in_progress"
+        "status": "success"
       },
       "fullRoundCi": {
         "run": 41352069449,
-        "status": "in_progress",
-        "manifestEntries": 306
+        "status": "success",
+        "manifestEntries": 306,
+        "passed": 306,
+        "failed": 0,
+        "unexecuted": 0
       },
       "evidence": "development/quality/evidence/castle-editor-persistence-2026-11-01.json",
       "limitations": [
-        "G1 incremental deltas, dependency/resource revision events and broader migrations remain open",
-        "New exact-source CI not yet terminal; no installed/hardware or G0-G12 completion inferred"
+        "G1 incremental deltas, dependency/resource revision events and broader migrations remain open"
       ]
     }
   ],
   "nextGoalWork": [
-    "Finish G1 dependency ownership/revision events and incremental delta contracts, preserving the actual host data authority",
-    "Retain broader schema migration and cross-platform acceptance gates; Castle native journal/recovery and legacy migration checks now pass locally",
-    "Advance dependency-ordered G2-G12 human workflows with corresponding authoritative runtime acceptance; authenticated MCP remains a later adapter"
+    "Verify exact-source CI for transaction change metadata and native mission revision cache",
+    "Continue G1 broader migration/ownership contracts and granular Castle dependency descriptors; do not claim bounds for rendering from physics extents",
+    "Continue G2 human mesh topology in the existing mesh pipeline with accepted foundation contracts; later G3-G12 remain dependency-gated"
   ]
 }

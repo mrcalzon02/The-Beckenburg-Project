@@ -18,12 +18,17 @@
   "ci": {
     "nativeHost": {
       "run": 41352028873,
-      "status": "dispatched; acceptance pending"
+      "status": "success"
     },
     "fullRound": {
       "run": 41352069449,
-      "status": "dispatched; raw manifest acceptance pending",
-      "expectedManifest": 306
+      "status": "success; raw manifest verified",
+      "expectedManifest": 306,
+      "passed": 306,
+      "failed": 0,
+      "skipped": 0,
+      "manifest": 306,
+      "rawEvidence": "editor-full-round-a99d0a1d.txt"
     }
   },
   "priorAcceptedSource": {

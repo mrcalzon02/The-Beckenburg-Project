@@ -81,10 +81,16 @@ public final class EditorAgentGuiTest {
                     var open=DeveloperLevelEditor.class.getDeclaredMethod("openMission",HouseMap.Site.class);
                     open.setAccessible(true);open.invoke(e,HouseMap.Site.HOUSE);
                     var service=e.agentService();var before=service.inspect();var node=before.hierarchy().get(0);
+                    var currentMap=DeveloperLevelEditor.class.getDeclaredMethod("currentMissionMap");currentMap.setAccessible(true);
+                    Object initialMap=currentMap.invoke(e);
+                    check(initialMap==currentMap.invoke(e),"Unchanged native revision reuses actual map");
                     service.save(before.revision());
                     service.transact(before.revision(),"move-prop",Map.of("id",node.id(),
                         "x",Double.toString(node.x()+.125),"y",Double.toString(node.y()),"z",Double.toString(node.z())));
                     check(service.inspect().hierarchy().get(0).x()==node.x()+.125,"Agent edit visible in active human editor");
+                    Object editedMap=currentMap.invoke(e);
+                    check(initialMap!=editedMap&&editedMap==currentMap.invoke(e),"Committed native change invalidates map exactly until revision is consumed");
+                    check(((HouseMap)editedMap).level().props().get(0).x()==node.x()+.125,"Cache rebuild consumes authoritative native props");
                     var undo=button(e,"UNDO");check(undo!=null,"Human undo button exists");undo.doClick();
                     check(service.inspect().hierarchy().get(0).x()==node.x(),"Human undo reverses agent edit");
                     var redo=button(e,"REDO");redo.doClick();

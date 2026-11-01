@@ -30,6 +30,8 @@ public final class EditorAgentService<S> {
         List<String> operations();
         void apply(String operation, Map<String,String> arguments);
         void validate();
+        /** Derive metadata from actual native snapshots. Unknown hosts invalidate all dependencies. */
+        default EditorChange.Details changes(S before,S after){return EditorChange.Details.full();}
         void reopen() throws IOException;
         default void recoverPrevious()throws IOException{throw new UnsupportedOperationException("Previous-save recovery unavailable");}
         Capture capture(Path destination) throws IOException;
@@ -38,15 +40,32 @@ public final class EditorAgentService<S> {
     }
     private final Host<S> host;
     private final EditorHistory<S> history;
-    private final Runnable changed,saved;
+    private final java.util.function.Consumer<EditorChange> changed;
+    private final Runnable saved;
     public EditorAgentService(Host<S> host, EditorHistory<S> history) {
         this(host,history,()->{},()->{});
     }
     public EditorAgentService(Host<S> host, EditorHistory<S> history, Runnable changed, Runnable saved) {
-        this.host=Objects.requireNonNull(host);
-        this.history=Objects.requireNonNull(history);
+        this(host,history,notification(changed),saved);
+    }
+    private static java.util.function.Consumer<EditorChange> notification(Runnable changed){
+        Objects.requireNonNull(changed);return event->changed.run();
+    }
+    /** Trusted human host notification, called once after a committed transaction.
+     * Consumers must not throw or perform reentrant edits. No event is emitted for rollback.
+     */
+    public EditorAgentService(Host<S> host, EditorHistory<S> history,
+                              java.util.function.Consumer<EditorChange> changed, Runnable saved) {
+        this.host=Objects.requireNonNull(host);this.history=Objects.requireNonNull(history);
         this.changed=Objects.requireNonNull(changed);this.saved=Objects.requireNonNull(saved);
         if(!history.isFor(host.project()))throw new IllegalArgumentException("History belongs to another scene");
+    }
+    private void publish(S before,long revision){
+        EditorChange.Details details;
+        // Metadata failure cannot conceal a committed native mutation or undo.
+        try{details=Objects.requireNonNull(host.changes(before,host.project().snapshot()));}
+        catch(RuntimeException failure){details=EditorChange.Details.full();}
+        changed.accept(new EditorChange(host.project().id(),host.project().documentPath(),revision,host.revision(),details));
     }
     public Inspection<S> inspect() {
         capable(Capability.INSPECT);
@@ -95,11 +114,18 @@ public final class EditorAgentService<S> {
     /** Human commands use the exact same transaction/history boundary. */
     public void edit(Runnable operation) {
         capable(Capability.TRANSACT);
+        S before=host.project().snapshot();long revision=host.revision();
         history.execute(()->{operation.run();host.validate();});
-        changed.run();
+        publish(before,revision);
     }
-    public Evidence<Boolean> undo(long expected) {require(expected);capable(Capability.UNDO);boolean ok=history.undo();if(ok)changed.run();return evidence(ok);}
-    public Evidence<Boolean> redo(long expected) {require(expected);capable(Capability.REDO);boolean ok=history.redo();if(ok)changed.run();return evidence(ok);}
+    public Evidence<Boolean> undo(long expected) {
+        require(expected);capable(Capability.UNDO);S before=host.project().snapshot();
+        boolean ok=history.undo();if(ok)publish(before,expected);return evidence(ok);
+    }
+    public Evidence<Boolean> redo(long expected) {
+        require(expected);capable(Capability.REDO);S before=host.project().snapshot();
+        boolean ok=history.redo();if(ok)publish(before,expected);return evidence(ok);
+    }
     public Evidence<Path> save(long expected) throws IOException {
         require(expected);capable(Capability.SAVE);host.validate();host.project().save();saved.run();return evidence(host.project().documentPath());
     }
