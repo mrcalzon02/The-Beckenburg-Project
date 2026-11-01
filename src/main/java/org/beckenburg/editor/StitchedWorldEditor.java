@@ -76,6 +76,7 @@ public final class StitchedWorldEditor extends JPanel {
         addButton(toolCommands,"ADAPTIVE TOPOLOGY",this::adaptiveTopology);
         addButton(toolCommands,"TERRAIN SCENE PACKAGE",this::scenePackage);
         addButton(toolCommands,"LAYERED TERRAIN TOOLS",this::layeredTerrain);
+        addButton(toolCommands,"CROSS-TILE SCULPT",this::seamSculpt);
         toolbar.add(worldCommands);toolbar.add(fileCommands);toolbar.add(toolCommands);
         add(toolbar,BorderLayout.NORTH);
         preview.setPreferredSize(new Dimension(520,500));
@@ -225,6 +226,13 @@ public final class StitchedWorldEditor extends JPanel {
         try{TerrainScenePackageEditor.open(frame,world,x(),z());}
         catch(IOException|RuntimeException failure){
             error("Cannot open terrain scene package editor",failure);
+        }
+    }
+    private void seamSculpt(){
+        if(!ready())return;
+        try{TerrainSeamSculptEditor.open(frame,world,x(),z());}
+        catch(IOException|RuntimeException failure){
+            error("Cannot open cross-tile sculpting editor",failure);
         }
     }
     private void layeredTerrain(){
