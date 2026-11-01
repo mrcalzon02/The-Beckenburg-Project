@@ -25,6 +25,14 @@ public final class TerrainLayerStackTest {
             check(!a.dirty(),"Preview must not dirty authoring document");
             check(Double.isFinite(preview[8][8]),"Preview produces finite height data");
             check(a.layerCount()==1,"Default authoring layer");
+            a.brush(TerrainLayerStack.Brush.FLATTEN,16,16,3,1,base-10,0,1,
+                TerrainLayerStack.FlattenLimit.RAISE_ONLY);
+            a.finishStroke();
+            near(a.height(16,16),base,"Raise-only flatten never lowers land");
+            a.brush(TerrainLayerStack.Brush.FLATTEN,16,16,3,1,base+10,0,1,
+                TerrainLayerStack.FlattenLimit.LOWER_ONLY);
+            a.finishStroke();
+            near(a.height(16,16),base,"Lower-only flatten never raises land");
             a.brush(TerrainLayerStack.Brush.RAISE,16,16,4,10,0,0,1);
             a.finishStroke();
             check(a.height(16,16)>base+9,"Sculpt modifies layer");
