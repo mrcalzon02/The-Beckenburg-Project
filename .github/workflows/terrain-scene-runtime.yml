@@ -4,6 +4,10 @@ on:
     branches: [main]
     paths:
       - 'src/main/java/org/beckenburg/TerrainSceneNativePhysics.java'
+      - 'src/main/java/org/beckenburg/UserLevelLibrary.java'
+      - 'src/main/java/org/beckenburg/DeveloperLevelEditor.java'
+      - 'src/main/java/org/beckenburg/EnvironmentModuleEditor.java'
+      - 'src/main/java/org/beckenburg/editor/StitchedWorldEditor.java'
       - 'src/test/java/org/beckenburg/TerrainSceneNativePhysicsTest.java'
       - 'src/main/java/org/beckenburg/editor/TerrainRailMesh.java'
       - 'src/main/java/org/beckenburg/editor/TerrainRailScenePackage.java'
