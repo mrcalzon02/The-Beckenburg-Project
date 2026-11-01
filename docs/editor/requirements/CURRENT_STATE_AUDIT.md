@@ -1,0 +1,34 @@
+# G0 current-state audit — 1 November 2026
+
+Audited implementation baseline: `a3886b6cb62e0ac64d1a15f2d562b11738037bec`. This audit continues the owner's G0–G12 goal after the initial Editor Agent Service. The source register retains all seven owner documents and earlier contracts. Four full text archives now have LF-normalized UTF-8 SHA-256 pins, independently checked page-marker counts (36, 19, 29, 18), and unchanged recorded original PDF hashes. `python tools/audit_editor_requirements.py` checks that chain; `--require-originals` returns 2 while original binary verification is unavailable. Text hashes do not verify PDF diagrams or replace PDF provenance.
+
+**G0 remains PARTIAL:** all seven original PDFs are absent from the repository; the three older entries also lack original hashes. Original-byte verification cannot be claimed. This archival gap does not prevent work on already approved, testable human/editor contracts, but G0 is not marked accepted and dependent gates cannot be accepted merely from this document.
+
+| Gate | Existing authoritative implementation / overlap | Current scoped evidence | Remaining work / state |
+|---|---|---|---|
+| G1 | `EditorProject`, `RuntimeScene`, `RuntimeSceneDocument`, `EditorHistory`, active `EditorAgentService`; native Castle and mission adapters | Java 17 complete host compilation; portable scene identity/document/rollback tests; actual Windows editor shared history; native saved game load; headless protocol | PARTIAL. Mission positional IDs, migration coverage, journaled recovery, cancellation, source ownership/revision events remain |
+| G2 | `EditorMeshPipeline` and `EditorGlbWriter` import/export bounded triangle meshes; existing terrain topology is terrain-specific | Existing mesh regression passes OBJ, ASCII/binary STL, GLB export and per-part reduction controls | PARTIAL. No general editable half-edge mesh, parametric edit history, full selection/picking/gizmos, UV seam/manifold modeling gate |
+| G3 | Terrain sculpt/layer tools and non-destructive mesh reduction exist | Prior terrain subsystem evidence is separate; mesh reduction regression passes | PLANNED for general topology sculpt/remesh/tablet pipeline; clustering is not quad remesh |
+| G4 | `TerrainLayerStack`, `AdaptiveTerrainTopology`, `TerrainScenePackage`, `TerrainRailScenePackage`, `TerrainSceneNativePhysics`, `UserLevelLibrary` | Existing scoped native physics tests and recovery entries; not a new full terrain acceptance run | PARTIAL. Preserve T0–T9, exact source hashes, native geometry/physics/LOS/nav and actual material/render/multiplayer acceptance |
+| G5 | `SoundDocument` owns bounded immutable persisted volumes; `SoundVolume` models BOX/SPHERE and attenuation; `LevelSoundscape` runs JavaSound on its existing worker; `SoundVolumeEditor` edits that document | SoundVolumeTest, FixtureSoundscapeTest and EnvironmentalSoundRoutingTest pass | PARTIAL. No claim of OpenAL/EFX/HRTF, acoustic material/portal propagation, budgeted real-geometry occlusion or hardware hot-plug acceptance |
+| G6 | `EditorSoundProfile`/`EditorSoundLab` author PCM WAVs; existing game category playback and LAN voice remain distinct host paths | EditorSoundProfileTest passes format/bounds/source preservation; fixture loops and routing pass | PARTIAL. PCM conversion is not a dialogue sidechain, limiter, output-profile or speaker intelligibility acceptance |
+| G7 | `EditorAnimationClip`/Lab author rigid-part timelines and separate ROOT motion; original model import remains intact | EditorAnimationClipTest passes stepped/linear samples, pruning, bounds and atomic persistence | PARTIAL. No skeletal joint/bind/skin/IK/weight editor or runtime skinned-mesh acceptance |
+| G8 | `EnvironmentModules` and existing NPC rulebook are domain-specific registries | No universal archetype contract acceptance executed | PLANNED. Do not relabel existing catalogs as a universal simulation registry |
+| G9 | Existing game gameplay is host-specific | No new isolated genre-plugin sample accepted | PLANNED for each admitted plugin; other repositories remain out of scope |
+| G10 | Existing Java executors and typed host commands; no untrusted script engine admitted by this slice | Service allowlists commands; no shell/script endpoint | PLANNED. Process isolation, quotas, broker, cancellation and idempotency need actual implementation and adversarial tests |
+| G11 | Local active-project service, real renderer capture, shared human/agent history, bounded batches and trusted local CLI | Native service, Windows GUI, unrelated portable project and public CLI process tests pass | PARTIAL. Authenticated MCP/remote access, playtest restore, broader scopes and advanced-module gates remain open |
+| G12 | Existing Windows CI and standalone kit; software native captures | Scoped local Windows Java 17 tests passed. Exact-source standalone/full-round workflows dispatched separately | PARTIAL. CI outcomes, complete full-round results, Linux/host parity and physical installed runtime acceptance remain separate |
+
+## Audio and animation boundaries
+
+`LevelSoundscape` already owns a dedicated Java 17 thread and `SourceDataLine` lifecycle. `LanAudio` owns queued game cues/fixture synthesis, and `LanVoiceClientAudio` owns JavaSound microphone/playback workers plus LAN packet buffers. Extend these through a measured backend boundary; do not introduce a second authoritative audio state or call a configured context HRTF acceptance. Audio model, category mixer, fixture lifecycle and voice transport have different responsibilities.
+
+`EditorAnimationClip` explicitly documents rigid-part poses and ROOT motion. `EditorMeshPipeline.Mesh` is a bounded triangle list whose output is used for interchange and reduction; it is not a half-edge graph or skinned skeleton. Future G2/G7 source data must feed the existing host render/import path as derived output.
+
+## Java 17 compatibility
+
+The actual host and portable service compile with `--release 17`, without preview flags. The source PDFs' virtual-thread executors, finalized `java.lang.foreign` APIs and record-deconstruction switches remain illustrative newer-JDK examples; no such example was copied into the Java 17 baseline. Classloader isolation is not treated as a security sandbox. Optional native/audio/input backends must report absence and retain working fallbacks.
+
+## Next integrated slice
+
+G1: replace mission positional identity with persisted stable node IDs while keeping the existing BSCN reader compatible, preserving IDs through remove/undo/save/reopen, and pin USER session document identity/path so switching active custom levels cannot redirect an existing session's writes. Prove through native game load and actual editor tests. Then continue G1 journaling/migrations/cancellation and G2's human modeling foundation; do not infer closure of G4–G12 from core tests.

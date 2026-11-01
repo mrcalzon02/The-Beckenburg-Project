@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "chainId": "beckenburg-java17-editor-requirements",
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "purpose": "Owner-supplied editing, engine, terrain and audio source document chain. Index authoritative PDF provenance separately from repository transcriptions and staged integration status.",
   "authoritativePlan": "docs/editor/requirements/STAGED_INTEGRATION_PLAN.md",
   "preservationRules": [
@@ -101,7 +101,8 @@
         "input and interchange",
         "skeletons",
         "preset animation"
-      ]
+      ],
+      "textArchiveSha256Lf": "d832d8a5719653d17b2f2c4813ff9bb06353d49fc3816d10f3bc7197109e142e"
     },
     {
       "id": "soundscape-environment-manager",
@@ -126,7 +127,8 @@
         "mixer",
         "speaker profile",
         "dialogue clarity"
-      ]
+      ],
+      "textArchiveSha256Lf": "59a77b6cf13081fd8d3b484e798362f695b0c5052450f8f9b196c8941bd4d2da"
     },
     {
       "id": "engine-base",
@@ -153,7 +155,8 @@
         "telemetry",
         "DSL",
         "diagnostics"
-      ]
+      ],
+      "textArchiveSha256Lf": "9eae433f1730dfdc7ede0ed5dd20faa6a06c7b73ee129f012746875dd828a5b4"
     },
     {
       "id": "multi-genre-game-creation-engine",
@@ -182,7 +185,8 @@
         "action",
         "survival",
         "roguelike"
-      ]
+      ],
+      "textArchiveSha256Lf": "2b7d2595db0ec950b3651de5b1d97420bc9278977d71b5c0d83019e806e79928"
     }
   ],
   "stages": [
@@ -190,8 +194,9 @@
       "id": "G0",
       "name": "Provenance and gap audit",
       "dependsOn": [],
-      "status": "documented",
-      "acceptance": "all seven sources in index; four new full text archives with verified provenance"
+      "status": "partial-current-state-audited-original-bytes-unavailable",
+      "acceptance": "all seven sources in index; four new full text archives with verified provenance",
+      "audit": "docs/editor/requirements/CURRENT_STATE_AUDIT.md"
     },
     {
       "id": "G1",
@@ -199,7 +204,7 @@
       "dependsOn": [
         "G0"
       ],
-      "status": "planned"
+      "status": "partial-native-service-and-scene-tests-passed-local"
     },
     {
       "id": "G2",
@@ -287,7 +292,7 @@
         "G8",
         "G10"
       ],
-      "status": "planned-after-human-integration"
+      "status": "partial-local-active-service-no-authenticated-remote-adapter"
     },
     {
       "id": "G12",
