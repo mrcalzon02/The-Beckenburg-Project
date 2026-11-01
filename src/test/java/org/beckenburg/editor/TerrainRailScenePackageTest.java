@@ -33,6 +33,12 @@ public final class TerrainRailScenePackageTest {
                 &&Files.isRegularFile(result.sceneFile())
                 &&scene.find(result.nodeId())!=null&&scene.find("keep")!=null,
                 "Rail and previous objects share exactly one saved scene");
+            world.generateRegion(0,0,1,1);
+            var ground=TerrainScenePackage.publish(world,scene,"ground",
+                new TerrainEntranceMesh.Bounds(1,1,6,6));
+            check(scene.find(ground.nodeId())!=null&&scene.find(result.nodeId())!=null
+                &&TerrainScenePackage.inspect(world,scene).isEmpty(),
+                "Publishing genuine terrain into the same document preserves the rail node");
             check(TerrainRailScenePackage.inspect(world,scene).isEmpty(),
                 "Actual OBJ, hash, source and rail groups verify");
             var persisted=pkg.openScene();
@@ -82,7 +88,7 @@ public final class TerrainRailScenePackageTest {
             TerrainRailScenePackage.publish(world,scene,"mainline");
             check(TerrainRailScenePackage.inspect(world,scene).isEmpty(),
                 "Known owned railway can be safely rebuilt");
-            check(scene.nodes().size()==2&&rebuilt.nodeId().equals(result.nodeId()),
+            check(scene.nodes().size()==3&&rebuilt.nodeId().equals(result.nodeId()),
                 "Stable railway scene identity across repeated exports");
             System.out.println("PASS persisted railway scene geometry, shared scene, OBJ/hash/source audits, staleness, rollback and ownership");
         }finally{
