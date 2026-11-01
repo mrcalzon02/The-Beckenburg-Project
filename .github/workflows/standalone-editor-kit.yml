@@ -23,6 +23,14 @@ jobs:
       - name: Build reusable jar without game files or 3D assets
         shell: cmd
         run: call tools\build-editor-kit.cmd
+      - name: Verify persisted railway meshes and shared scene publication
+        shell: cmd
+        run: |
+          if not exist build\editor-kit\test mkdir build\editor-kit\test
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\TerrainRailScenePackageTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.TerrainRailScenePackageTest
+          if errorlevel 1 exit /b 1
       - name: Prove editor library works with an unrelated project adapter
         shell: cmd
         run: |
