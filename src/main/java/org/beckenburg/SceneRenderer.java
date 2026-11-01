@@ -3820,8 +3820,10 @@ public final class SceneRenderer {
             if(!Double.isFinite(bounds[4])||bounds[4]<=.0001)
                 throw new IllegalStateException("Invalid infrastructure GLB bounds "+prop.modelId());
             double scale=prop.height()/bounds[4];
-            double centerX=bounds[0]+bounds[3]*.5;
-            double centerZ=bounds[2]+bounds[5]*.5;
+            // devAssetBounds already returns X/Z midpoints, not minima.
+            // Correct origin is essential: don't sink trees/boulders sideways.
+            double centerX=bounds[0];
+            double centerZ=bounds[2];
             imported(stage,prop.modelId(),actual,
                 prop.x()-centerX*scale,
                 prop.y()-bounds[1]*scale,
