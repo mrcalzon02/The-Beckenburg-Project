@@ -177,6 +177,7 @@ public final class TerrainLayerWorkbench extends JPanel {
         button(sidebar,"LOAD HEIGHT STAMP PNG",this::loadStamp);
         field(sidebar,"Saved route",savedRoutes);
         button(sidebar,"LOAD ROUTE FOR EDITING",this::loadRoute);
+        button(sidebar,"INSPECT / EXPORT REAL RAIL TRACK",this::railMesh);
         button(sidebar,"DELETE ROUTE RECORD...",this::deleteRoute);
         field(sidebar,"Route name / stable ID",routeName);
         button(sidebar,"APPLY AND SAVE ROUTE",this::applyRoute);
@@ -377,6 +378,32 @@ public final class TerrainLayerWorkbench extends JPanel {
         // The operation selection resets draft handles; restore the selected route.
         gradeControls.clear();gradeControls.addAll(route.controls());
         refresh("Loaded "+route.id()+" for manual control-point adjustment");
+    }
+    private void railMesh(){
+        if(busy)return;
+        var route=selectedRoute();
+        if(route==null||route.kind()!=TerrainInfrastructureSplines.Kind.RAIL){
+            status.setText("Select an existing RAIL route to inspect its physical mesh");
+            return;
+        }
+        busy=true;status.setText("Building actual ballast, rails and sleepers...");
+        new SwingWorker<TerrainRailMesh.Output,Void>(){
+            @Override protected TerrainRailMesh.Output doInBackground(){
+                return TerrainRailMesh.build(sourceWorld.settings(),route,
+                    TerrainRailMesh.Profile.standard());
+            }
+            @Override protected void done(){
+                busy=false;
+                try{
+                    var result=get();
+                    TerrainEntrancePreview.open(frame,new TerrainEntranceMesh.Output(
+                        result.mesh(),0,0,0,0,List.of()),"Rail Track Geometry Inspection");
+                    status.setText("Real mesh: "+result.mesh().triangles().size()+
+                        " triangles, "+result.sleepers()+" sleepers; geometry-only OBJ available");
+                }catch(InterruptedException ex){Thread.currentThread().interrupt();error(ex);}
+                catch(java.util.concurrent.ExecutionException ex){error(ex);}
+            }
+        }.execute();
     }
     private void deleteRoute(){
         var route=selectedRoute();
