@@ -220,7 +220,7 @@ public final class TerrainLayerWorkbench extends JPanel {
             protected Void doInBackground()throws Exception{job.run();return null;}
             protected void done(){
                 busy=false;
-                try{get();refresh(name+" completed");}
+                try{get();if(name.startsWith("Baking"))rebuildLayers();refresh(name+" completed");}
                 catch(InterruptedException ex){Thread.currentThread().interrupt();error(ex);}
                 catch(ExecutionException ex){error(ex);}
             }
