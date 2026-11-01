@@ -35,10 +35,18 @@ never by adding dependencies to `org.beckenburg.editor`.
 - `TerrainInfrastructureSplines`: road/rail/river width, shoulder and grade
   metadata for corridor material and exclusion overrides.
 - `TerrainRailMesh`: portable genuine ballast, sleepers and left/right rail\n  geometry exported through the shared terrain mesh writer; optional host\n  adapter still needed for live rendering/collision.\n- `StitchedHeightmapWorld.importTilesBatch`: seam-aware, rollback-journaled\n  source PNG replacement across up to nine tiles, with recovery on reopen.
+- `TerrainComposedHeightSampler`: source plus saved sculpt-layer deltas and
+  alpha masks use one identical height sampler for actual exported terrain mesh
+  geometry and physical surface/navigation queries; scene fingerprints include
+  layer files. Long-lived query consumers explicitly refresh after edits.
+- `TerrainLayerStack`: blocks stale saves after another editor changes either
+  the source tile or authored document; the source batch journal can rebase
+  layer checksum metadata without changing its creative content.
 - `TerrainSeamSculpt` and `TerrainSeamSculptEditor`: global-vertex
   non-destructive seam editing, sparse undo, session save/reopen, source
-  fingerprint checks, discard, and guarded explicit batch bake. A future
-  transaction must integrate these sessions with v2 per-tile sculpt masks.
+  fingerprint checks, discard, and guarded explicit batch bake. Source-bake
+  transactions now rebase v1/v2 layer documents in the SAME recovery journal;
+  live cross-tile sculpt-mask painting is still a separate authoring task.
 
 ## First implementation tranche, after finishing Terrain editor requirements
 
