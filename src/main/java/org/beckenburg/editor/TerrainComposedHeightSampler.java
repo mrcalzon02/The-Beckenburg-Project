@@ -31,7 +31,11 @@ public final class TerrainComposedHeightSampler {
         if(cached.containsKey(key))return cached.get(key);
         Path file=world.directory().resolve("terrain-layers")
             .resolve("tile_"+x+"_"+z+".bin");
-        Optional<TerrainLayerStack> result=Files.isRegularFile(file)?
+        // A route's managed procedural grade exists even when no ordinary
+        // sculpt-layer document has been saved on this tile yet.
+        Path routes=world.directory().resolve("terrain-infrastructure-splines.bin");
+        Optional<TerrainLayerStack> result=
+            Files.isRegularFile(file)||Files.isRegularFile(routes)?
             Optional.of(new TerrainLayerStack(world,x,z)):Optional.empty();
         cached.put(key,result);
         return result;
