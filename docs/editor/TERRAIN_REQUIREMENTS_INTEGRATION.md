@@ -22,7 +22,7 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 | Slope/height auto-biomes | `autoBiome`, `slope` | Fixed rules; not yet a node-based rule graph |
 | Surface materials | Eight stable material IDs and paint brush | Renderer/footstep/physics adapter must consume these |
 | Freeze/exclusion masks | Rectangle freeze, material-based lock and brush respect | No mesh-hull raycast or cylinder masks yet |
-| Infrastructure grading | `gradePath` with bounded segment rasterization (up to 50k samples), persistent `TerrainInfrastructureSplines`; saved route load/edit/drag/delete in workbench | Road/rail/river grading; not track mesh generation |
+| Infrastructure grading | `gradePath` with bounded segment rasterization (up to 50k samples), persistent `TerrainInfrastructureSplines`; saved route load/edit/drag/delete in workbench | Reapplying an edited route does not automatically undo its previous terrain grade; no track mesh generation |
 | Grade constraints | Rail/road maximum grade validation; clamp controls to target grade | No turnout, bridge or tunnel geometry |
 | Background operations | SwingWorker for heavy generation, erosion, save, bake | Full GPU/physics pipeline not wired |
 | Safe explicit source bake | Checks 16-bit range and source checksum; tile border frozen; 16-bit PNG import with seam validation | No multi-tile seamless atomic commit |
