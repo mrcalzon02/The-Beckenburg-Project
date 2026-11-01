@@ -2432,6 +2432,48 @@ Evidence and verification: EditorAgentServiceTest, EditorAgentGuiTest and tools/
 
 Older-map obligation: Protocol correction applies to every supported host; no map geometry changed or broader map fitness asserted.
 
+### DEV-179 — Mission deletion renumbers surviving authored object IDs
+
+**Status:** fixed-scoped; local native, GUI and headless regressions pass; exact-source CI pending · **Affected:** LevelAuthoringSession hierarchy, saved BSCN nodes, undo and agent ID lookup
+
+Removing prop index zero changed every later prop-N identity; saving recreated IDs from indices.
+
+Cause / uncertainty: Hierarchy and serializer regenerated IDs from current list positions, and history retained only prop values.
+
+Fix / next action: Preserve BSCN v1 node IDs, assign new UUID IDs on add, snapshot IDs with native props, resolve agent edits by persisted ID and keep one native scene.
+
+Evidence and verification: LevelAuthoringIdentityTest passes deletion, stable-ID move, shared undo/redo, deterministic repeated saves, reopen and real HouseMap prop equality. Existing Windows GUI and public CLI tests rerun.
+
+Older-map obligation: Existing BSCN v1 IDs remain valid; no map geometry or broad fitness acceptance implied.
+
+### DEV-180 — Existing USER authoring session follows another active custom document
+
+**Status:** fixed-scoped; local two-project ownership regression passes; exact-source CI pending · **Affected:** LevelAuthoringSession USER id, documentPath, save and reopen
+
+After opening one USER session then selecting a second project, the older session resolved the second project ID/path dynamically and could save its props there.
+
+Cause / uncertainty: Session identity and destination were read from global UserLevelLibrary.activeId/activeDocument on every access.
+
+Fix / next action: Pin document ID and path at session open. Save and reopen use the pinned source and destination.
+
+Evidence and verification: LevelAuthoringIdentityTest creates two projects with different templates, saves/reopens the older session while the second is active, proves second bytes unchanged, then verifies first through real game loading.
+
+Older-map obligation: Ownership protection covers all new USER sessions; no corrupted prior project is automatically reconstructed.
+
+### DEV-181 — Mission BSCN load silently flattens unsupported portable transforms
+
+**Status:** fixed-scoped; local native rejection and state-preservation regression passes; exact-source CI pending · **Affected:** LevelAuthoringSession native loader and LevelPlans authored mission load
+
+Portable nodes can express parenting, pitch/roll and nonuniform scale, but mission loading discarded those fields and built different native geometry.
+
+Cause / uncertainty: Loader consumed only world position, yaw and scaleX without checking unsupported transform fields; native apply also used weaker prop validation.
+
+Fix / next action: Reject unsupported parent/pitch/roll/nonuniform transformations explicitly and apply the same native prop validator in editor and game loading.
+
+Evidence and verification: LevelAuthoringIdentityTest saves an actual valid portable BSCN with nonuniform scale, requires native reopen failure and checks the entire previous scene snapshot remains intact. Existing scene persistence and real editor checks pass.
+
+Older-map obligation: Existing supported yaw/uniform-scale documents are preserved. Unsupported externally authored documents require explicit conversion rather than silent geometry loss.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

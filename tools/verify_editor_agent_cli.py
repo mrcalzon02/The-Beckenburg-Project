@@ -27,7 +27,7 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
 
     first = run(['inspect'])[0]['result']
     assert 'move-prop' in first['operations'] and 'CAPTURE' in first['capabilities']
-    prop = first['state'][0]
+    prop = first['state']['props'][0]
     moved_x = prop['x'] + .125
     revision = first['revision']
     rows = run([
@@ -39,7 +39,7 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
         'inspect',
     ])
     assert all(row['ok'] for row in rows)
-    assert rows[-1]['result']['state'][0]['x'] == moved_x
+    assert rows[-1]['result']['state']['props'][0]['x'] == moved_x
     assert all(check['passed'] for check in rows[-2]['result']['result'])
     assert Path(rows[3]['result']['result']['file']).read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
     reopened = run(['inspect'])[0]['result']

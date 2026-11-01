@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 /** Mission adapter: reads/writes the active authoring session; the supplied
  * HouseMap is the same native game map used by the human editor viewport.
  */
-public final class LevelEditorAgent implements EditorAgentService.Host<List<Prop>> {
+public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuthoringSession.Snapshot> {
     private final LevelAuthoringSession session;
     private final Supplier<HouseMap> map;
     private final SceneRenderer renderer;
@@ -33,8 +33,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<List<Prop
         if(!operation.equals("move-prop")||!args.keySet().equals(java.util.Set.of("id","x","y","z")))
             throw new IllegalArgumentException("Expected move-prop with id, x, y, z");
         String id=args.get("id");
-        if(!id.matches("prop-[0-9]+"))throw new IllegalArgumentException("Unknown prop ID: "+id);
-        int index=Integer.parseInt(id.substring(5));
+        int index=session.indexOf(id);
         var p=session.prop(index);
         session.put(index,new Prop(p.mesh(),p.room(),Double.parseDouble(args.get("x")),
             Double.parseDouble(args.get("y")),Double.parseDouble(args.get("z")),

@@ -33,8 +33,8 @@ public final class DeveloperLevelEditor extends JPanel {
     private final EditorHistory<CastleLevelEdits.Snapshot> history=new EditorHistory<>(project,60);
     /** The same inspector, GLB browser and camera can target a live mission source. */
     private LevelAuthoringSession mission;
-    private EditorHistory<List<Prop>> missionHistory;
-    private EditorAgentService<List<Prop>> missionAgent;
+    private EditorHistory<LevelAuthoringSession.Snapshot> missionHistory;
+    private EditorAgentService<LevelAuthoringSession.Snapshot> missionAgent;
     private HouseMap missionMap;
     private HouseMap.Site missionSite;
     private boolean castleDirty,missionDirty;

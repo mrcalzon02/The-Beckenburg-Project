@@ -30,7 +30,7 @@ public final class EditorAgentServiceTest {
                 "y",Double.toString(original.y()),"z",Double.toString(original.z()));
             service.transact(initial,"move-prop",move);
             check(session.prop(0).x()==original.x()+.125,"Agent modified actual active authoring session");
-            check(service.inspect().state().equals(session.props()),"Unsaved readback is exact");
+            check(service.inspect().state().props().equals(session.props()),"Unsaved readback is exact");
             rejects(()->service.transact(initial,"move-prop",move));
             check(service.test(session.revision(),"mission-runtime-parity").result().stream().allMatch(EditorAgentService.Check::passed),
                 "Native HouseMap rendering props and collision match edited scene");
