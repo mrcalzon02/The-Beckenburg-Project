@@ -136,9 +136,22 @@ public final class DevInfrastructureShowcase {
         }
         poleCount=faces.size()-p0;
     }
+    private static StitchedHeightmapWorld.Settings demoWorld(){
+        return new StitchedHeightmapWorld.Settings(32,.5,0,0,-50,50,7121L,4);
+    }
+    public static TerrainInfrastructureSplines.Alignment riverRoute(){
+        return new TerrainInfrastructureSplines.Alignment("dev-river",
+            TerrainInfrastructureSplines.Kind.RIVER,
+            List.of(new TerrainLayerStack.Point(16.2,26.2,.075),
+                new TerrainLayerStack.Point(16.2,30.1,.075),
+                new TerrainLayerStack.Point(16.2,34.6,.075)),
+            1.16,1,100,true);
+    }
+    public static List<WaterTerrainSnap.Socket> riverSockets(){
+        return TerrainRiverWaterSockets.fromRoute(riverRoute(),demoWorld());
+    }
     public static WaterTerrainSnap.Socket riverSocket(){
-        return new WaterTerrainSnap.Socket("river-demo-join",
-            8.1,.075,15.05,0,1,1.16);
+        return riverSockets().get(1);
     }
     private WaterDocument river(WaterDocument sourceDocument){
         int from=faces.size();
