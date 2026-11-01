@@ -658,6 +658,35 @@
         "HUD PNGs are native headless component captures with unstarted world background, not full gameplay visuals",
         "No art/geometry changed, no installed/hardware or G1-G12 completion inferred"
       ]
+    },
+    {
+      "sourceSha": "a99d0a1dac4944fb1b3297add502b3291590fd4d",
+      "scope": "Native Castle journal/recovery parity and UTF-8 local protocol",
+      "localEvidence": [
+        "CastleDocumentRecoveryTest",
+        "CastleEditorGeometryTest",
+        "CastleLightingPlacementRepairTest",
+        "EditorAgentGuiTest",
+        "headlessProtocol",
+        "EditorAgentServiceTest",
+        "LevelAuthoringIdentityTest",
+        "LevelAuthoringRecoveryTest",
+        "GroundRecoverySupportParityTest"
+      ],
+      "nativeHostCi": {
+        "run": 41352028873,
+        "status": "in_progress"
+      },
+      "fullRoundCi": {
+        "run": 41352069449,
+        "status": "in_progress",
+        "manifestEntries": 306
+      },
+      "evidence": "development/quality/evidence/castle-editor-persistence-2026-11-01.json",
+      "limitations": [
+        "G1 incremental deltas, dependency/resource revision events and broader migrations remain open",
+        "New exact-source CI not yet terminal; no installed/hardware or G0-G12 completion inferred"
+      ]
     }
   ],
   "nextGoalWork": [

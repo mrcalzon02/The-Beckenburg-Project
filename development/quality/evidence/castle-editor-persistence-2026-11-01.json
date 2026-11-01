@@ -1,0 +1,46 @@
+{
+  "schema": "beckenburg.editor-persistence-evidence/v1",
+  "sourceSha": "a99d0a1dac4944fb1b3297add502b3291590fd4d",
+  "branch": "map/first-principles-rebuild-plan",
+  "remoteReadback": "git ls-remote matched exact source SHA",
+  "java": "Java 17 complete host source compilation with --release 17",
+  "checks": {
+    "CastleDocumentRecoveryTest": "PASS: full native snapshot roundtrip, removals, deterministic no-op and exact previous bytes, corrupt file and invalid backup refusal, native singleton recovery, shared undo, legacy structure backup",
+    "CastleEditorGeometryTest": "PASS unchanged: wall/floor/roof, paint, undo, native collision/shadows and legacy migration",
+    "CastleLightingPlacementRepairTest": "PASS unchanged: native lighting, deleted fixture preservation, existing-scene migration",
+    "EditorAgentGuiTest": "PASS actual Windows editor: Castle and mission recovery via human menu, human undo/redo, same native scene, PNG capture, stale/closed owner rejection",
+    "headlessProtocol": "PASS actual fresh Java processes: mission and Castle edit/save/reopen/recovery, exact UTF-8 Unicode labels with JVM windows-1252 default, native parity and stale rejection",
+    "EditorAgentServiceTest": "PASS native mission/Castle transactions, cancellation/rollback, shared history, capture and owner checks",
+    "LevelAuthoringIdentityTest": "PASS native stable IDs and pinned USER ownership",
+    "LevelAuthoringRecoveryTest": "PASS native mission recovery and foreign-backup refusal",
+    "GroundRecoverySupportParityTest": "PASS native host support parity"
+  },
+  "ci": {
+    "nativeHost": {
+      "run": 41352028873,
+      "status": "dispatched; acceptance pending"
+    },
+    "fullRound": {
+      "run": 41352069449,
+      "status": "dispatched; raw manifest acceptance pending",
+      "expectedManifest": 306
+    }
+  },
+  "priorAcceptedSource": {
+    "sha": "ff93601a9921ff210e408dee99921592184b472e",
+    "fullRound": 41330858899,
+    "rawSummary": "passed=303 failed=0 skipped=0 manifest=303",
+    "nativeHost": 41330853164
+  },
+  "sourceHashes": {
+    "src\\main\\java\\org\\beckenburg\\CastleLevelEdits.java": "fa9eacae071febf42bf1f27f89723cb7bcb0bbf4131bf1c97d5dc42c29512f28",
+    "src\\main\\java\\org\\beckenburg\\EditorAgentCli.java": "48e793dd1a39933d33d6ec9ec8234f6eb078490d7af28fedc639f1502e3fe04d",
+    "src\\test\\java\\org\\beckenburg\\CastleDocumentRecoveryTest.java": "fda8d5a72c2fe96e6471c82ffefc5b2c8efeb5e740865fe3b1fa28ff0f687f90"
+  },
+  "limits": [
+    "Private native decoder scratch state has no editor/renderer/agent binding; actual operations bind CastleLevelEdits.current().",
+    "Generic document-store child-process crash tests remain the process-crash evidence; this checkpoint adds native schema/migration/menu/CLI integration.",
+    "No physical power-loss, installed full-loop or G1-G12 completion inferred.",
+    "Incremental deltas, revision/dependency events, broader migrations and authenticated MCP remain open."
+  ]
+}
