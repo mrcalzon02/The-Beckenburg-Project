@@ -7,14 +7,22 @@ import java.util.*;
 /**
  * Independent, persistent road/rail/river design splines, expressed in GLOBAL
  * heightmap sample coordinates, not a Beckenburg scene or game object.
- * Applying an alignment modifies a selected non-destructive terrain layer.
+ * Legacy v1 alignments were directly painted into terrain layers. V2 managed
+ * alignments form a deterministic non-destructive procedural overlay, which
+ * can be rebuilt or removed without touching unrelated sculpt/material data.
  * Track meshes, switches, rolling stock and runtime collision are separate adapters.
  */
 public final class TerrainInfrastructureSplines {
-    private static final int MAGIC=0x5453504C,VERSION=1,MAX=512;
+    private static final int MAGIC=0x5453504C,VERSION=2,MAX=512;
     public enum Kind { RAIL, ROAD, RIVER }
     public record Alignment(String id,Kind kind,List<TerrainLayerStack.Point> controls,
-                            double halfWidth,double shoulder,double maximumGradePercent) {
+                            double halfWidth,double shoulder,double maximumGradePercent,
+                            boolean managed) {
+        /** Legacy call sites retain their original directly-painted semantics. */
+        public Alignment(String id,Kind kind,List<TerrainLayerStack.Point> controls,
+                         double halfWidth,double shoulder,double maximumGradePercent){
+            this(id,kind,controls,halfWidth,shoulder,maximumGradePercent,false);
+        }
         public Alignment {
             if(id==null||!id.matches("[A-Za-z0-9_-]{1,64}")||kind==null
                 ||controls==null||controls.size()<2||controls.size()>256
@@ -42,7 +50,9 @@ public final class TerrainInfrastructureSplines {
         if(!Files.isRegularFile(result.file))return result;
         if(Files.size(result.file)>4_000_000)throw new IOException("Oversized spline document");
         try(var in=new DataInputStream(new BufferedInputStream(Files.newInputStream(result.file)))){
-            if(in.readInt()!=MAGIC||in.readInt()!=VERSION)
+            if(in.readInt()!=MAGIC)throw new IOException("Unknown infrastructure spline");
+            int format=in.readInt();
+            if(format!=1&&format!=VERSION)
                 throw new IOException("Unsupported infrastructure spline format");
             int count=in.readInt();
             if(count<0||count>MAX)throw new IOException("Invalid spline count");
@@ -52,13 +62,14 @@ public final class TerrainInfrastructureSplines {
                     throw new IOException("Unknown infrastructure profile");
                 Kind kind=Kind.values()[index];
                 double width=in.readDouble(),shoulder=in.readDouble(),grade=in.readDouble();
+                boolean managed=format>=2&&in.readBoolean();
                 int points=in.readInt();if(points<2||points>256)
                     throw new IOException("Invalid control count");
                 List<TerrainLayerStack.Point> controls=new ArrayList<>();
                 for(int j=0;j<points;j++)controls.add(
                     new TerrainLayerStack.Point(in.readDouble(),in.readDouble(),in.readDouble()));
                 Alignment a;
-                try{a=new Alignment(id,kind,controls,width,shoulder,grade);}
+                try{a=new Alignment(id,kind,controls,width,shoulder,grade,managed);}
                 catch(IllegalArgumentException ex){throw new IOException("Invalid spline entry",ex);}
                 if(result.alignments.putIfAbsent(id,a)!=null)
                     throw new IOException("Duplicate infrastructure spline ID");
@@ -86,6 +97,7 @@ public final class TerrainInfrastructureSplines {
                     out.writeUTF(a.id());out.writeInt(a.kind().ordinal());
                     out.writeDouble(a.halfWidth());out.writeDouble(a.shoulder());
                     out.writeDouble(a.maximumGradePercent());
+                    out.writeBoolean(a.managed());
                     out.writeInt(a.controls().size());
                     for(var p:a.controls()){
                         out.writeDouble(p.x());out.writeDouble(p.z());out.writeDouble(p.elevation());
