@@ -23,7 +23,6 @@ public final class DevInfrastructureShowcase {
     private final List<DevTerrainTopologyLab.Triangle> geometry;
     private final List<Prop> props;
     private final WaterDocument water;
-    private final int railFaces,roadFaces,poleFaces,riverFaces,waterFaces;
     private static final int LIMIT=6500;
     private final ArrayList<DevTerrainTopologyLab.Triangle> faces=new ArrayList<>();
     private int railCount,roadCount,poleCount,riverCount,waterCount;
