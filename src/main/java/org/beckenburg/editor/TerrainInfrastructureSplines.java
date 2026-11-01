@@ -125,7 +125,8 @@ public final class TerrainInfrastructureSplines {
         // Rail/road centerline grade is a functional geometry constraint, not a visual test.
         if(a.kind()!=Kind.RIVER){
             for(int i=1;i<result.size();i++){
-                var b=result.get(i),previous=result.get(i-1);
+                var b=result.get(i);
+                var previous=result.get(i-1);
                 double horizontal=Math.hypot(b.x()-previous.x(),b.z()-previous.z())*
                     metresPerSample;
                 double grade=horizontal==0?Double.POSITIVE_INFINITY:
@@ -146,7 +147,8 @@ public final class TerrainInfrastructureSplines {
         var result=new ArrayList<TerrainLayerStack.Point>();
         result.add(controls.get(0));
         for(int i=1;i<controls.size();i++){
-            var prev=result.get(result.size()-1),next=controls.get(i);
+            var prev=result.get(result.size()-1);
+            var next=controls.get(i);
             double run=Math.hypot(next.x()-prev.x(),next.z()-prev.z())*metresPerSample;
             double rise=run*percent/100;
             double clamped=Math.max(prev.elevation()-rise,
