@@ -21,6 +21,15 @@ public final class DevInfrastructureShowcaseTest {
         for(var prop:sample.props())
             check(Files.isRegularFile(Path.of("assets/runtime/models",prop.modelId()+".glb")),
                 "Missing source GLB "+prop.modelId());
+        var authored=DevInfrastructureShowcase.riverSockets();
+        check(authored.size()==DevInfrastructureShowcase.riverRoute().controls().size(),
+            "All authored river control points publish real water snap sockets");
+        var middle=authored.get(1);
+        check(Math.abs(middle.x()-8.1)<1e-8&&
+            Math.abs(middle.z()-15.05)<1e-8&&
+            Math.abs(middle.width()-1.16)<1e-8&&
+            Math.abs(middle.downstreamZ()-1)<1e-8,
+            "River socket must derive coordinates, width and tangent from authored spline");
         var doc=sample.water();
         check(doc.placements().size()==2,"Both upstream and downstream water bodies present");
         var a=doc.placements().get(0),b=doc.placements().get(1);
