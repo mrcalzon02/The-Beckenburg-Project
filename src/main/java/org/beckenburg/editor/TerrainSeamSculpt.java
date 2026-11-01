@@ -270,7 +270,8 @@ public final class TerrainSeamSculpt {
     /**
      * Explicit source bake. Quantization happens ONCE per unique global vertex;
      * every owner receives the exact same R16 sample. Existing layered authoring
-     * documents are protected against invalidation rather than silently erased.
+     * documents are rebased within the same rollback journal, retaining masks,
+     * materials, protective regions and every non-destructive sculpt delta.
      */
     public void bake()throws IOException{
         finishStroke();verifySource();
@@ -279,11 +280,6 @@ public final class TerrainSeamSculpt {
         for(var e:override.entrySet()){
             var v=vertex(e.getKey());
             for(var tile:owners(v.x(),v.z())){
-                Path layer=world.directory().resolve("terrain-layers").resolve(
-                    "tile_"+tile.x()+"_"+tile.z()+".bin");
-                if(Files.exists(layer))throw new IOException(
-                    "A layered terrain document depends on this source tile: "+layer+
-                    ". Export/rebase that document before baking cross-tile seams.");
                 if(!output.containsKey(tile)){
                     int[] pixels=new int[(n+1)*(n+1)];
                     for(int z=0;z<=n;z++)for(int x=0;x<=n;x++)
@@ -320,7 +316,10 @@ public final class TerrainSeamSculpt {
                     throw new IOException("No 16-bit PNG writer available");
                 files.put(entry.getKey(),file);
             }
-            world.importTilesBatch(files,true);
+            // Existing per-tile sculpt deltas, layer masks, materials and
+            // frozen regions keep their authored values. Their source CRC
+            // changes in the SAME rollback-journaled batch as all tile PNGs.
+            world.importTilesBatch(files,true,true);
             override.clear();undo.clear();redo.clear();pending.clear();
             // Session metadata is stale after source changes; the old file must
             // not silently apply a second copy of the same sculpt operation.
