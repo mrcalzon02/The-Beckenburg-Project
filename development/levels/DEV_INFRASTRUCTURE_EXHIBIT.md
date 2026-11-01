@@ -83,6 +83,37 @@ re-publish identity, rollback and foreign asset protection in the standalone
 editor CI. This functional regression is separate from the DEV room's
 non-blocking subjective visual inspection.
 
+## Game-side physical scene intake (opt-in, bounded)
+
+`TerrainSceneNativePhysics.load(world,scene)` now verifies the published
+terrain and railway OBJ assets through the SAME scene package inspector and
+converts their actual triangles into the existing Beckenburg `AuthoredSitePhysics`
+HCS2 engine. It does not invent collision AABBs or a second nav/collision
+implementation. Surface normals determine the support classification:
+
+- Upward terrain and ballast faces at or below the existing HCS2 maximum
+  walking grade are support triangles.
+- Sleeper and steel rail geometry is physically solid and can occlude sight,
+  but is **not** falsely classified as a full-width walkable platform.
+- Hash mismatches, stale source fingerprints, unsupported extents and absent
+  walking support reject the native import rather than silently improvising
+  geometry. Arbitrary terrain worlds beyond the native HCS2 +/-256m envelope
+  are explicitly rejected; world-streamed physics is a separate task.
+
+The native HCS2 parser and its existing support/raycast routines remain the
+only gameplay physics calculations used by this adapter. The adapter is
+available for host integration and verified by
+`TerrainSceneNativePhysicsTest`; it is **not yet automatically bound to
+HouseMap, multiplayer world snapshots, AI navmesh or live game rendering**.
+No gameplay map acceptance is implied by a successful isolated import.
+
+Custom `USER` maps now open the working `StitchedWorldEditor` from the
+actual developer editor's **TERRAIN / ZONES** command. Their worlds are saved
+under `.beckenburg/editor/user-levels/<level>/terrain-worlds/<world>`, not in
+the shared stitched-world source directory. The portable world editor accepts
+a host-scoped root and prevents opening terrain from outside that scope.
+Existing built-in level terrain tools retain their previous paths.
+
 ## Automated verification and evidence
 
 `.github/workflows/dev-room-asset-review.yml`:
