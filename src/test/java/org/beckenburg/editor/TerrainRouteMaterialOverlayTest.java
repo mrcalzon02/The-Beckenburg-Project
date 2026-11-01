@@ -138,6 +138,29 @@ public final class TerrainRouteMaterialOverlayTest {
                 afterMove.surfaceMaterial(16,27)==grass,
                 "All route surface categories disappear cleanly when deleted");
 
+            // Existing crash-recoverable source rebasing must retain the
+            // newly added V3 explicit GRASS paint provenance byte-for-byte.
+            var tile=new StitchedHeightmapWorld.Tile(0,0);
+            var sourceImage=new java.awt.image.BufferedImage(33,33,
+                java.awt.image.BufferedImage.TYPE_USHORT_GRAY);
+            for(int z=0;z<=32;z++)for(int x=0;x<=32;x++)
+                sourceImage.getRaster().setSample(x,z,0,
+                    world.sample(0,0,x,z));
+            int oldR16=world.sample(0,0,13,13);
+            sourceImage.getRaster().setSample(13,13,0,oldR16+1);
+            Path replacement=root.resolve("updated-source.png");
+            check(javax.imageio.ImageIO.write(sourceImage,"png",replacement.toFile()),
+                "R16 PNG encoder exists");
+            world.importTilesBatch(Map.of(tile,replacement),true,true);
+            var rebased=new TerrainLayerStack(world,0,0);
+            check(rebased.hasPaintedMaterial(15,10)&&
+                rebased.material(15,10)==grass&&
+                rebased.hasPaintedMaterial(17,10)&&
+                rebased.material(17,10)==TerrainLayerStack.Material.MUD.ordinal(),
+                "Coordinated source rebase preserves V3 painted override provenance");
+            check(world.sample(0,0,13,13)==oldR16+1,
+                "Rebased source includes intended changed R16 pixel");
+
             // A saved v2 file lacked painted-material provenance. Its legacy
             // non-GRASS values are conservatively treated as authored.
             var legacy=StitchedHeightmapWorld.create(root.resolve("v2"),
