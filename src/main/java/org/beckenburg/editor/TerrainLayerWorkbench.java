@@ -193,8 +193,8 @@ public final class TerrainLayerWorkbench extends JPanel {
         layers.addActionListener(e->selectLayer());
         visible.addActionListener(e->configureLayer());
         opacity.addChangeListener(e->{if(!opacity.getValueIsAdjusting())configureLayer();});
-        undo.addActionListener(e->{if(stack.undo())refresh("Undid terrain stroke");});
-        redo.addActionListener(e->{if(stack.redo())refresh("Redid terrain stroke");});
+        undo.addActionListener(e->{if(stack.undo())refresh("Undid terrain edit");});
+        redo.addActionListener(e->{if(stack.redo())refresh("Redid terrain edit");});
         save.addActionListener(e->save());
         bake.addActionListener(e->bake());
         view.addActionListener(e->render());
@@ -547,7 +547,7 @@ public final class TerrainLayerWorkbench extends JPanel {
                     }
                 }
             }
-            if(!mode.equals("SCULPT"))stack.finishStroke();
+            if(!mode.equals("SCULPT")&&!mode.equals("PAINT MATERIAL"))stack.finishStroke();
             render();
         }catch(RuntimeException ex){drawing=false;stack.finishStroke();error(ex);}
     }
