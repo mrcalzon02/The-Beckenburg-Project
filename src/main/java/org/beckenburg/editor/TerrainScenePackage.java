@@ -78,8 +78,10 @@ public final class TerrainScenePackage implements EnvironmentModule {
             if(!saved.sceneId().equals(scene.sceneId()))
                 throw new IOException("Scene package belongs to another scene");
             for(var old:saved.nodes())if(old.components().stream().anyMatch(c->
-                c.type().equals(COMPONENT))&&scene.find(old.id())==null)
-                throw new IOException("Refusing to drop previously published chunk "+old.id());
+                c.type().equals(COMPONENT)||
+                    c.type().equals(TerrainRailScenePackage.COMPONENT))
+                &&!old.equals(scene.find(old.id())))
+                throw new IOException("Saved scene package changed; reload before replacing "+old.id());
         }
         // A failed geometry build must not modify any scene or published file.
         var generated=TerrainEntranceMesh.build(world,bounds);
