@@ -40,9 +40,11 @@ public final class TerrainScenePackageEditor extends JPanel {
     private final JSpinner cellZ=new JSpinner(new SpinnerNumberModel(0,0,1023,1));
     private final JSpinner cells=new JSpinner(new SpinnerNumberModel(8,1,32,1));
     private final JTextField chunk=new JTextField("tile_0_0_patch",18);
+    private final JTextField railRoute=new JTextField("",14);
     private final JTextArea inventory=new JTextArea(15,76);
     private final JLabel status=new JLabel();
     private final JButton publish=new JButton("PUBLISH PATCH TO SCENE");
+    private final JButton publishRail=new JButton("PUBLISH SAVED RAIL TO SCENE");
     private final JButton preview=new JButton("3D MESH PREVIEW");
     private final JButton verify=new JButton("VERIFY PACKAGE");
     private final JButton reload=new JButton("RELOAD SCENE");
@@ -75,10 +77,12 @@ public final class TerrainScenePackageEditor extends JPanel {
         form.add(new JLabel("Z"));form.add(cellZ);
         form.add(new JLabel("Patch side (cells)"));form.add(cells);
         form.add(new JLabel("Stable chunk ID"));form.add(chunk);
+        form.add(new JLabel("Saved rail route ID"));form.add(railRoute);
         add(form,BorderLayout.NORTH);
         JPanel actions=new JPanel(new FlowLayout(FlowLayout.LEFT,6,3));
-        actions.add(publish);actions.add(preview);actions.add(verify);actions.add(reload);
+        actions.add(publish);actions.add(publishRail);actions.add(preview);actions.add(verify);actions.add(reload);
         publish.addActionListener(e->publish());
+        publishRail.addActionListener(e->publishRail());
         preview.addActionListener(e->preview());
         verify.addActionListener(e->verify());
         reload.addActionListener(e->reload());
@@ -111,7 +115,7 @@ public final class TerrainScenePackageEditor extends JPanel {
             z0+number(cells)*s.metresPerCell());
     }
     private void busy(boolean busy){
-        publish.setEnabled(!busy);preview.setEnabled(!busy);
+        publish.setEnabled(!busy);publishRail.setEnabled(!busy);preview.setEnabled(!busy);
         verify.setEnabled(!busy);reload.setEnabled(!busy);
     }
     private void publish(){
@@ -141,6 +145,31 @@ public final class TerrainScenePackageEditor extends JPanel {
             }
         }.execute();
     }
+    private void publishRail(){
+        final String route=railRoute.getText().trim();
+        try{
+            TerrainRailScenePackage.idForRail(route);
+            if(scene.find(TerrainRailScenePackage.idForRail(route))!=null
+                &&JOptionPane.showConfirmDialog(frame,
+                    "Rebuild the published railway for "+route+"?",
+                    "Replace owned rail mesh",JOptionPane.YES_NO_OPTION)
+                    !=JOptionPane.YES_OPTION)return;
+        }catch(RuntimeException failure){error("Invalid rail selection",failure);return;}
+        busy(true);status.setText("Publishing actual saved railway alignment...");
+        new SwingWorker<TerrainRailScenePackage.Published,Void>(){
+            @Override protected TerrainRailScenePackage.Published doInBackground()throws Exception{
+                return TerrainRailScenePackage.publish(world,scene,route);
+            }
+            @Override protected void done(){
+                busy(false);
+                try{
+                    var result=get();
+                    refresh("Published "+result.nodeId()+": "+
+                        result.triangles()+" real triangles, "+result.sleepers()+" sleepers");
+                }catch(Exception failure){error("Rail publication failed",failure);}
+            }
+        }.execute();
+    }
     private void preview(){
         final TerrainEntranceMesh.Bounds area;
         try{area=selectedBounds();}
@@ -165,7 +194,9 @@ public final class TerrainScenePackageEditor extends JPanel {
         busy(true);status.setText("Checking actual published OBJ assets...");
         new SwingWorker<List<String>,Void>(){
             @Override protected List<String> doInBackground()throws Exception{
-                return TerrainScenePackage.inspect(world,scene);
+                var issues=new java.util.ArrayList<String>(TerrainScenePackage.inspect(world,scene));
+                issues.addAll(TerrainRailScenePackage.inspect(world,scene));
+                return List.copyOf(issues);
             }
             @Override protected void done(){
                 busy(false);
@@ -198,7 +229,21 @@ public final class TerrainScenePackageEditor extends JPanel {
                 s.append(" | triangles ").append(c.properties().get("triangles"));
                 s.append(" | texture ").append(c.properties().get("materialStatus"));
             }
+            for(var c:node.components())if(c.type().equals(TerrainRailScenePackage.COMPONENT)){
+                s.append("\n    RAIL OBJ: ").append(c.properties().get("uri"));
+                s.append(" | sleepers ").append(c.properties().get("sleepers"));
+                s.append(" | renderer ").append(c.properties().get("rendererStatus"));
+            }
             s.append('\n');
+        }
+        try{
+            var routes=TerrainInfrastructureSplines.open(world).list();
+            s.append("\nSAVED RAIL ALIGNMENTS:\n");
+            for(var route:routes)if(route.kind()==TerrainInfrastructureSplines.Kind.RAIL)
+                s.append("  ").append(route.id()).append(" — ")
+                    .append(route.controls().size()).append(" controls\n");
+        }catch(IOException problem){
+            s.append("\nCannot read saved routes: ").append(problem.getMessage()).append('\n');
         }
         inventory.setText(s.toString());inventory.setCaretPosition(0);
         status.setText(message);
