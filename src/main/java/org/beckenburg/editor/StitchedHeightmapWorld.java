@@ -212,6 +212,15 @@ public final class StitchedHeightmapWorld {
      */
     public synchronized void importTilesBatch(Map<Tile,Path> inputs,boolean replace)
             throws IOException {
+        importTilesBatch(inputs,replace,false);
+    }
+    /**
+     * Opt-in coordinated layer rebasing. A source replacement that touches
+     * saved non-destructive layers MUST either opt into their checksum-only
+     * rebase or fail before changing any source tile.
+     */
+    public synchronized void importTilesBatch(Map<Tile,Path> inputs,boolean replace,
+                                               boolean rebaseLayers)throws IOException {
         Objects.requireNonNull(inputs);
         if(inputs.isEmpty()||inputs.size()>9)
             throw new IllegalArgumentException("Batch must contain 1..9 tiles");
@@ -235,12 +244,26 @@ public final class StitchedHeightmapWorld {
             for(var entry:candidates.entrySet())
                 checkAdjacent(entry.getKey().x(),entry.getKey().z(),
                     entry.getValue(),candidates);
+            List<Tile> layered=new ArrayList<>();
+            for(Tile key:order){
+                Path document=root.resolve("terrain-layers").resolve(
+                    "tile_"+key.x()+"_"+key.z()+".bin");
+                if(Files.exists(document)){
+                    if(!rebaseLayers)throw new IOException(
+                        "Source tile has authored terrain layers; explicitly request coordinated rebase: "+key);
+                    if(!Files.isRegularFile(document))
+                        throw new IOException("Invalid authored layer document: "+document);
+                    layered.add(key);
+                }
+            }
             Files.createDirectory(journal);
             boolean manifestReady=false;
             try{
                 Properties manifest=new Properties();
-                manifest.setProperty("format","heightmap-batch-v1");
+                manifest.setProperty("format",layered.isEmpty()?"heightmap-batch-v1":"heightmap-batch-v2");
                 manifest.setProperty("count",Integer.toString(order.size()));
+                if(!layered.isEmpty())manifest.setProperty("layerCount",
+                    Integer.toString(layered.size()));
                 for(int i=0;i<order.size();i++){
                     Tile key=order.get(i);
                     Path destination=tilePath(key.x(),key.z());
@@ -256,6 +279,21 @@ public final class StitchedHeightmapWorld {
                     manifest.setProperty("entry."+i,
                         key.x()+","+key.z()+","+existed);
                 }
+                for(int i=0;i<layered.size();i++){
+                    Tile key=layered.get(i);
+                    String name="tile_"+key.x()+"_"+key.z()+".bin";
+                    Path original=root.resolve("terrain-layers").resolve(name);
+                    Path backup=journal.resolve("old_layer_"+name);
+                    Files.copy(original,backup);
+                    Path staged=journal.resolve("new_layer_"+name);
+                    TerrainLayerStack.stageRebasedDocument(this,key.x(),key.z(),
+                        candidates.get(key),staged);
+                    // Check source files again after staging; externally
+                    // modified authoring files must never be silently replaced.
+                    if(Files.mismatch(original,backup)!=-1)
+                        throw new IOException("Layer document changed during preflight: "+name);
+                    manifest.setProperty("layer."+i,key.x()+","+key.z());
+                }
                 Path config=journal.resolve("manifest.tmp");
                 try(var output=Files.newOutputStream(config)){manifest.store(output,
                     "Stitched heightmap batch rollback manifest");}
@@ -268,6 +306,13 @@ public final class StitchedHeightmapWorld {
                         tilePath(key.x(),key.z()),StandardCopyOption.ATOMIC_MOVE,
                         StandardCopyOption.REPLACE_EXISTING);
                     cache.remove(key);
+                }
+                for(Tile key:layered){
+                    String name="tile_"+key.x()+"_"+key.z()+".bin";
+                    Files.move(journal.resolve("new_layer_"+name),
+                        root.resolve("terrain-layers").resolve(name),
+                        StandardCopyOption.ATOMIC_MOVE,
+                        StandardCopyOption.REPLACE_EXISTING);
                 }
                 Path success=journal.resolve("committed.tmp");
                 Files.writeString(success,"complete");
@@ -319,7 +364,9 @@ public final class StitchedHeightmapWorld {
         }
         Properties manifest=new Properties();
         try(var input=Files.newInputStream(manifestPath)){manifest.load(input);}
-        if(!"heightmap-batch-v1".equals(manifest.getProperty("format")))
+        String format=manifest.getProperty("format");
+        boolean rebased="heightmap-batch-v2".equals(format);
+        if(!rebased&&!"heightmap-batch-v1".equals(format))
             throw new IOException("Unknown pending heightmap transaction; manual recovery needed");
         int count;
         try{count=Integer.parseInt(manifest.getProperty("count"));}
@@ -347,6 +394,31 @@ public final class StitchedHeightmapWorld {
                 throw new IOException("Pending batch original missing for "+name);
             destinations.add(destination);backups.add(backup);existed.add(prior);
         }
+        List<Path> layeredDestinations=new ArrayList<>();
+        List<Path> layeredBackups=new ArrayList<>();
+        if(rebased){
+            int layerCount;
+            try{layerCount=Integer.parseInt(manifest.getProperty("layerCount"));}
+            catch(RuntimeException bad){throw new IOException("Invalid layer rebase count",bad);}
+            if(layerCount<1||layerCount>9||layerCount>count)
+                throw new IOException("Invalid layer rebase count");
+            for(int i=0;i<layerCount;i++){
+                String line=manifest.getProperty("layer."+i,"");
+                if(!line.matches("-?[0-9]+,-?[0-9]+"))
+                    throw new IOException("Invalid rebased layer entry");
+                String[] parts=line.split(",");
+                int x,z;
+                try{x=Integer.parseInt(parts[0]);z=Integer.parseInt(parts[1]);}
+                catch(NumberFormatException bad){throw new IOException("Invalid layer coordinates",bad);}
+                validIndex(x,z);
+                String name="tile_"+x+"_"+z+".bin";
+                Path backup=folder.resolve("old_layer_"+name);
+                if(!Files.isRegularFile(backup))
+                    throw new IOException("Cannot restore missing authored layer backup: "+name);
+                layeredBackups.add(backup);
+                layeredDestinations.add(directory.resolve("terrain-layers").resolve(name));
+            }
+        }
         for(int i=0;i<count;i++){
             if(existed.get(i)){
                 Path temp=Files.createTempFile(directory,".recovery-",".png");
@@ -356,6 +428,16 @@ public final class StitchedHeightmapWorld {
                         StandardCopyOption.REPLACE_EXISTING);
                 }finally{Files.deleteIfExists(temp);}
             }else Files.deleteIfExists(destinations.get(i));
+        }
+        for(int i=0;i<layeredBackups.size();i++){
+            Path destination=layeredDestinations.get(i);
+            Path temporary=Files.createTempFile(destination.getParent(),
+                ".layer-recovery-",".tmp");
+            try{
+                Files.copy(layeredBackups.get(i),temporary,StandardCopyOption.REPLACE_EXISTING);
+                Files.move(temporary,destination,StandardCopyOption.ATOMIC_MOVE,
+                    StandardCopyOption.REPLACE_EXISTING);
+            }finally{Files.deleteIfExists(temporary);}
         }
         clearBatchJournal(folder);
     }
