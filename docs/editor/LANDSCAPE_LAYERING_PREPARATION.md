@@ -32,8 +32,11 @@ never by adding dependencies to `org.beckenburg.editor`.
   curvature, D8 drainage, flow-direction/speed estimates and moisture proxy.
   Fields are **not** actual hydraulic sediment particle measurements.
   Fingerprints invalidate derived maps when sculpting changes heights.
-- `TerrainInfrastructureSplines`: road/rail/river width, shoulder and grade
-  metadata for corridor material and exclusion overrides.
+- `TerrainInfrastructureSplines` v2: legacy routes remain unmodified on
+  migration; newly managed road/rail/river alignments supply deterministic
+  reversible procedural terrain grading, rebuilding on edit/delete with
+  collision and authored mesh heights using the same sampler. Route material
+  overlay and track junction geometries remain pending.
 - `TerrainRailMesh`: portable genuine ballast, sleepers and left/right rail\n  geometry exported through the shared terrain mesh writer; optional host\n  adapter still needed for live rendering/collision.\n- `StitchedHeightmapWorld.importTilesBatch`: seam-aware, rollback-journaled\n  source PNG replacement across up to nine tiles, with recovery on reopen.
 - `TerrainComposedHeightSampler`: source plus saved sculpt-layer deltas and
   alpha masks use one identical height sampler for actual exported terrain mesh
@@ -49,6 +52,12 @@ never by adding dependencies to `org.beckenburg.editor`.
   live cross-tile sculpt-mask painting is still a separate authoring task.
 
 ## First implementation tranche, after finishing Terrain editor requirements
+
+**Route/material priority boundary:** Reversible infrastructure grading
+already preserves ordinary material paint. The next material-domain evaluator
+must combine user-painted material IDs and managed route corridor preferences
+explicitly, not repaint the base material array or treat source heightmap
+baking as a procedural-route save.
 
 1. **Stable material catalog.** Material profiles with immutable numeric IDs,
    albedo/tile atlas/normal/roughness/AO/height URI slots, physical surface type,
