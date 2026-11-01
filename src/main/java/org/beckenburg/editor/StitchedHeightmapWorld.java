@@ -273,7 +273,11 @@ public final class StitchedHeightmapWorld {
                 Files.writeString(success,"complete");
                 Files.move(success,journal.resolve("COMMITTED"),
                     StandardCopyOption.ATOMIC_MOVE);
-                clearBatchJournal(journal);
+                // The COMMITTED marker is the durability boundary. If deleting
+                // recovery files fails, retain the committed journal for safe
+                // cleanup on the next open; do not falsely report a failed commit.
+                try{clearBatchJournal(journal);}
+                catch(IOException cleanupDeferred){/* safe committed journal */ }
             }catch(IOException|RuntimeException failure){
                 try{
                     if(manifestReady)recoverPendingBatchUnlocked(root);
