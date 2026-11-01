@@ -20,7 +20,7 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final int sourceX,sourceZ;
     private final JLabel status=new JLabel("Layered terrain editor");
     private final JPanel canvas=new Canvas();
-    private final JComboBox<String> view=new JComboBox<>(new String[]{"HEIGHT","MATERIALS","SLOPES","FROZEN MASK"});
+    private final JComboBox<String> view=new JComboBox<>(new String[]{"HEIGHT","MATERIALS","SLOPES","FROZEN MASK","FLOW ACCUMULATION","CURVATURE"});
     private final JComboBox<String> layers=new JComboBox<>();
     private final JCheckBox visible=new JCheckBox("Layer on",true);
     private final JSlider opacity=new JSlider(0,100,100);
@@ -57,6 +57,7 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final JButton save=new JButton("SAVE LAYERS");
     private final JButton undo=new JButton("UNDO"),redo=new JButton("REDO");
     private BufferedImage image,stampImage;
+    private volatile TerrainTopologyFields topologyPreview;
     private TerrainBrushProfile.Alpha brushAlpha;
     private TerrainBrushProfile.Stroke brushStroke;
     private boolean loadingLayer,busy;
@@ -157,6 +158,12 @@ public final class TerrainLayerWorkbench extends JPanel {
             background("Wind sediment transport",()->stack.wind(count,1,0,rate,area));
         });
         section(sidebar,"MASKS / INFRASTRUCTURE");
+        button(sidebar,"BAKE FLOW / CURVATURE DATA",()->background(
+            "Building terrain topology fields",()->{
+                TerrainTopologyFields result=TerrainTopologyFields.calculate(stack);
+                result.save(stack);
+                topologyPreview=result;
+            }));
         button(sidebar,"AUTO BIOME MATERIALS",()->background("Autopainting materials",
             ()->stack.autoBiome(val(target),val(target)+300,45)));
         button(sidebar,"LOCK CURRENT MATERIAL",()->{
@@ -193,11 +200,15 @@ public final class TerrainLayerWorkbench extends JPanel {
         layers.addActionListener(e->selectLayer());
         visible.addActionListener(e->configureLayer());
         opacity.addChangeListener(e->{if(!opacity.getValueIsAdjusting())configureLayer();});
-        undo.addActionListener(e->{if(stack.undo())refresh("Undid terrain edit");});
-        redo.addActionListener(e->{if(stack.redo())refresh("Redid terrain edit");});
+        undo.addActionListener(e->{if(stack.undo()){topologyPreview=null;refresh("Undid terrain edit");}});
+        redo.addActionListener(e->{if(stack.redo()){topologyPreview=null;refresh("Redid terrain edit");}});
         save.addActionListener(e->save());
         bake.addActionListener(e->bake());
-        view.addActionListener(e->render());
+        view.addActionListener(e->{
+            if(view.getSelectedIndex()>=4&&topologyPreview==null)
+                status.setText("Derived topology not built: use BAKE FLOW / CURVATURE DATA");
+            render();
+        });
         liveNoise.addActionListener(e->render());
         noise.addActionListener(e->{if(liveNoise.isSelected())render();});
         for(JSpinner field:new JSpinner[]{cycles,amplitude,octaves,seed})
@@ -238,12 +249,13 @@ public final class TerrainLayerWorkbench extends JPanel {
     private void configureLayer(){
         if(loadingLayer||layers.getSelectedIndex()<0||busy)return;
         stack.configureLayer(layers.getSelectedIndex(),visible.isSelected(),opacity.getValue()/100.0);
+        topologyPreview=null;
         refresh("Layer settings updated");
     }
     private void addLayer(){
         String name=JOptionPane.showInputDialog(frame,"Name for new non-destructive layer","New Layer");
         if(name==null)return;
-        try{stack.addLayer(name.trim());rebuildLayers();refresh("Layer added");}
+        try{stack.addLayer(name.trim());topologyPreview=null;rebuildLayers();refresh("Layer added");}
         catch(RuntimeException ex){error(ex);}
     }
     private void refresh(String message){
@@ -266,6 +278,20 @@ public final class TerrainLayerWorkbench extends JPanel {
                 case 2 -> {int s=(int)Math.min(255,stack.slope(sx,sz)*4);
                     rgb=(s<<16)|((255-s)<<8)|50;}
                 case 3 -> rgb=stack.frozen(sx,sz)?0xff2020:0x4e6a6f;
+                case 4 -> {
+                    if(topologyPreview==null){rgb=0x424242;break;}
+                    double a=topologyPreview.accumulation(sx,sz);
+                    int value=(int)Math.max(0,Math.min(255,
+                        255*Math.log1p(a)/Math.log1p((n+1.0)*(n+1.0))));
+                    rgb=(value<<8)|(value>>2);
+                }
+                case 5 -> {
+                    if(topologyPreview==null){rgb=0x424242;break;}
+                    double c=Math.atan(topologyPreview.curvature(sx,sz)*10);
+                    int value=(int)Math.max(0,Math.min(255,
+                        127+Math.round(c*80)));
+                    rgb=(value<<16)|(value<<8)|value;
+                }
                 default -> {
                     double elevation=temporary==null?stack.height(sx,sz):temporary[z][x];
                     double norm=(elevation-stack.minimumElevation())/
@@ -280,7 +306,11 @@ public final class TerrainLayerWorkbench extends JPanel {
     }
     @FunctionalInterface private interface Job{void run()throws Exception;}
     private void background(String name,Job job){
-        if(busy)return;busy=true;status.setText(name+" running (editable source remains intact)...");
+        if(busy)return;
+        if(!name.equals("Building terrain topology fields")&&
+            !name.equals("Saving non-destructive terrain layers"))
+            topologyPreview=null;
+        busy=true;status.setText(name+" running (editable source remains intact)...");
         new SwingWorker<Void,Void>(){
             protected Void doInBackground()throws Exception{job.run();return null;}
             protected void done(){
@@ -387,6 +417,7 @@ public final class TerrainLayerWorkbench extends JPanel {
             // Check geometric viability before touching either layer or route file.
             TerrainInfrastructureSplines.evaluate(alignment,stack.metresPerCell());
             routes.apply(stack,alignment);
+            topologyPreview=null;
             routes.put(alignment);routes.save();
             gradeControls.clear();refreshSavedRoutes();
             savedRoutes.setSelectedItem(alignment.id());
@@ -508,6 +539,7 @@ public final class TerrainLayerWorkbench extends JPanel {
     private void applyAt(int x,int z,boolean pressed){
         if(busy)return;
         try{
+            topologyPreview=null;
             String mode=(String)action.getSelectedItem();
             double r=val(radius);
             switch(mode){
