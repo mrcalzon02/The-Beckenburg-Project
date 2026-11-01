@@ -63,8 +63,10 @@ public final class TerrainSeamSculptEditor extends JPanel {
         toolbar.add(new JLabel("Radius (grid)"));toolbar.add(radius);
         toolbar.add(new JLabel("Height / dab (metres)"));toolbar.add(amount);toolbar.add(lower);
         JButton undo=new JButton("UNDO"),redo=new JButton("REDO"),
-            save=new JButton("SAVE SESSION"),bake=new JButton("BAKE SHARED TILES...");
-        toolbar.add(undo);toolbar.add(redo);toolbar.add(save);toolbar.add(bake);
+            save=new JButton("SAVE SESSION"),discard=new JButton("DISCARD SESSION..."),
+            bake=new JButton("BAKE SHARED TILES...");
+        toolbar.add(undo);toolbar.add(redo);toolbar.add(save);
+        toolbar.add(discard);toolbar.add(bake);
         add(toolbar,BorderLayout.NORTH);
         add(canvas,BorderLayout.CENTER);
         JPanel footer=new JPanel(new GridLayout(3,1));
@@ -83,6 +85,15 @@ public final class TerrainSeamSculptEditor extends JPanel {
             catch(IOException|RuntimeException failure){error(failure);}
         });
         save.addActionListener(e->background("Saving seam authoring session",()->session.save()));
+        discard.addActionListener(e->{
+            if(busy)return;
+            if(JOptionPane.showConfirmDialog(frame,
+                "Discard ALL saved and unsaved seam edits in this viewport? "+
+                "Authoritative heightmap source PNGs are not affected.",
+                "Discard cross-tile sculpting session",JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE)!=JOptionPane.YES_OPTION)return;
+            background("Discarding authored seam session",session::discard);
+        });
         bake.addActionListener(e->{
             if(busy)return;
             if(session.changedVertices()==0){refresh("No edited vertices to bake");return;}
@@ -134,7 +145,7 @@ public final class TerrainSeamSculptEditor extends JPanel {
     private BufferedImage renderPreview(){
         // Fixed maximum preview complexity: very large tiles never require
         // a full-resolution GUI framebuffer or per-pixel world recomputation.
-        final int size=257;
+        final int size=129;
         BufferedImage result=new BufferedImage(size,size,BufferedImage.TYPE_INT_RGB);
         long originX=((long)centerX-1)*n,originZ=((long)centerZ-1)*n;
         for(int z=0;z<size;z++)for(int x=0;x<size;x++){
