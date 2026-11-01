@@ -15,6 +15,7 @@ import javax.imageio.ImageIO;
 public final class TerrainLayerStack {
     private static final int MAGIC=0x544C5354, VERSION=1, MAX_LAYERS=12;
     public enum Brush { RAISE, LOWER, SMOOTH, FLATTEN, REVERT, TRENCH, TERRACE }
+    public enum FlattenLimit { BOTH, RAISE_ONLY, LOWER_ONLY }
     public enum Noise { PERLIN, SIMPLEX, WORLEY, RIDGED, BILLOW, DOMAIN_WARP }
     public enum Material { GRASS, ROCK, DIRT, SAND, MUD, SNOW, GRAVEL, RIVERBED }
     public record Point(double x,double z,double elevation) {}
@@ -186,6 +187,11 @@ public final class TerrainLayerStack {
     }
     public void brush(Brush mode,double cx,double cz,double radius,double strength,
                       double target,double inner,int curve){
+        brush(mode,cx,cz,radius,strength,target,inner,curve,FlattenLimit.BOTH);
+    }
+    public void brush(Brush mode,double cx,double cz,double radius,double strength,
+                      double target,double inner,int curve,FlattenLimit direction){
+        Objects.requireNonNull(direction);
         if(radius<=0||radius>n||!Double.isFinite(radius)||!Double.isFinite(strength)
            ||!Double.isFinite(target)||inner<0||inner>=1||curve<0||curve>2)
             throw new IllegalArgumentException("Invalid brush configuration");
@@ -199,7 +205,11 @@ public final class TerrainLayerStack {
             switch(mode){
                 case RAISE -> dest=h+strength*f;
                 case LOWER -> dest=h-Math.abs(strength)*f;
-                case FLATTEN -> dest=h+(target-h)*a;
+                case FLATTEN -> {
+                    if(direction==FlattenLimit.RAISE_ONLY&&target<=h)break;
+                    if(direction==FlattenLimit.LOWER_ONLY&&target>=h)break;
+                    dest=h+(target-h)*a;
+                }
                 case REVERT -> dest=h+(sourceMetres(id(x,z))-h)*a;
                 case TRENCH -> dest=h-Math.abs(strength)*f;
                 case TERRACE -> {
