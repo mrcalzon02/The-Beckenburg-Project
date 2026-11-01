@@ -51,6 +51,8 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final JSpinner iterations=spin(5,1,100,1);
     private final JSpinner talus=spin(35,1,88,1);
     private final JSpinner erosionRate=spin(.12,.01,.25,.01);
+    private final JCheckBox localizedErosion=new JCheckBox("LOCAL EROSION (right-click center)",true);
+    private int erosionCenterX,erosionCenterZ;
     private final JButton bake=new JButton("BAKE SOURCE...");
     private final JButton save=new JButton("SAVE LAYERS");
     private final JButton undo=new JButton("UNDO"),redo=new JButton("REDO");
@@ -92,6 +94,7 @@ public final class TerrainLayerWorkbench extends JPanel {
         super(new BorderLayout(5,5));this.frame=frame;this.stack=stack;
         this.sourceWorld=stack.worldForWorkbench();this.sourceX=stack.tileX();this.sourceZ=stack.tileZ();
         this.routes=TerrainInfrastructureSplines.open(sourceWorld);
+        erosionCenterX=stack.cells()/2;erosionCenterZ=stack.cells()/2;
         setBorder(BorderFactory.createEmptyBorder(7,7,7,7));
         JPanel bar=new JPanel(new FlowLayout(FlowLayout.LEFT,4,2));
         bar.add(new JLabel("Layer"));bar.add(layers);bar.add(visible);
@@ -127,12 +130,23 @@ public final class TerrainLayerWorkbench extends JPanel {
         section(sidebar,"EROSION");
         field(sidebar,"Iterations",iterations);field(sidebar,"Talus angle",talus);
         field(sidebar,"Thermal transfer",erosionRate);
-        button(sidebar,"THERMAL EROSION",()->background("Thermal erosion",
-            ()->stack.thermal((int)val(iterations),val(talus),val(erosionRate))));
-        button(sidebar,"HYDRAULIC EROSION",()->background("Hydraulic droplets",
-            ()->stack.hydraulic((int)val(iterations)*150,32,(long)val(seed),.10,.25)));
-        button(sidebar,"WIND EROSION +X",()->background("Wind sediment transport",
-            ()->stack.wind((int)val(iterations),1,0,val(erosionRate))));
+        sidebar.add(localizedErosion);
+        localizedErosion.addActionListener(e->render());
+        button(sidebar,"THERMAL EROSION",()->{
+            int count=(int)val(iterations);double angle=val(talus),rate=val(erosionRate);
+            var area=erosionArea();
+            background("Thermal erosion",()->stack.thermal(count,angle,rate,area));
+        });
+        button(sidebar,"HYDRAULIC EROSION",()->{
+            int count=(int)val(iterations)*150;long rng=(long)val(seed);
+            var area=erosionArea();
+            background("Hydraulic droplets",()->stack.hydraulic(count,32,rng,.10,.25,area));
+        });
+        button(sidebar,"WIND EROSION +X",()->{
+            int count=(int)val(iterations);double rate=val(erosionRate);
+            var area=erosionArea();
+            background("Wind sediment transport",()->stack.wind(count,1,0,rate,area));
+        });
         section(sidebar,"MASKS / INFRASTRUCTURE");
         button(sidebar,"AUTO BIOME MATERIALS",()->background("Autopainting materials",
             ()->stack.autoBiome(val(target),val(target)+300,45)));
@@ -290,6 +304,12 @@ public final class TerrainLayerWorkbench extends JPanel {
             var world=sourceWorld;
             return new TerrainLayerStack(world,sourceX,sourceZ);
         }
+    }
+    private TerrainLayerStack.Region erosionArea(){
+        return localizedErosion.isSelected()?
+            TerrainLayerStack.Region.around(erosionCenterX,erosionCenterZ,
+                val(radius),stack.cells()):
+            new TerrainLayerStack.Region(1,1,stack.cells()-1,stack.cells()-1);
     }
     private void refreshSavedRoutes(){
         String selection=(String)savedRoutes.getSelectedItem();
@@ -470,7 +490,13 @@ public final class TerrainLayerWorkbench extends JPanel {
                 private int posZ(MouseEvent e){return Math.max(0,Math.min(stack.cells(),
                     (int)Math.round(e.getY()*(double)stack.cells()/Math.max(1,getHeight()-1))));}
                 @Override public void mousePressed(MouseEvent e){
-                    if(!SwingUtilities.isLeftMouseButton(e)||busy)return;
+                    if(busy)return;
+                    if(SwingUtilities.isRightMouseButton(e)){
+                        erosionCenterX=posX(e);erosionCenterZ=posZ(e);
+                        refresh("Local erosion centered at "+erosionCenterX+","+erosionCenterZ);
+                        return;
+                    }
+                    if(!SwingUtilities.isLeftMouseButton(e))return;
                     drawing=true;
                     int x=posX(e),z=posZ(e);
                     if("SCULPT".equals(action.getSelectedItem())){
@@ -519,6 +545,16 @@ public final class TerrainLayerWorkbench extends JPanel {
         @Override protected void paintComponent(Graphics g){
             super.paintComponent(g);
             if(image!=null)g.drawImage(image,0,0,getWidth(),getHeight(),null);
+            if(localizedErosion.isSelected()){
+                int n=stack.cells();
+                double r=val(radius);
+                int x=(int)Math.round((erosionCenterX-r)*getWidth()/n);
+                int y=(int)Math.round((erosionCenterZ-r)*getHeight()/n);
+                int w=(int)Math.round(2*r*getWidth()/n);
+                int h=(int)Math.round(2*r*getHeight()/n);
+                g.setColor(new Color(250,179,67,170));
+                g.drawRect(x,y,w,h);
+            }
             // Stored alignments remain inspectable even when no draft is active.
             g.setColor(new Color(68,206,214,145));
             for(var route:routes.list()){
