@@ -224,6 +224,9 @@ public final class LayeredTerrainQueries {
     public double groundHeight(double x,double z)throws IOException{
         return surfaceHeights.height(x,z);
     }
+    /** Called when authored layers are saved or a coordinated source bake completes. */
+    public void refreshAuthoredTerrain(){surfaceHeights.invalidate();}
+
 
     /** Never returns a source support for a punched-out leaf or missing tile. */
     public Support support(String layer,double x,double z)throws IOException {
