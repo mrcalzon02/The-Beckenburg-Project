@@ -41,6 +41,7 @@ public final class DevAssetShowroom implements AutoCloseable {
     private boolean closed;
     private double clock,rotation;
     private DevTerrainTopologyLab topologyLab;
+    private DevInfrastructureShowcase infrastructureShowcase;
 
     private DevAssetShowroom(){
         if(GraphicsEnvironment.isHeadless())throw new IllegalStateException("Dev room requires a graphical desktop");
@@ -120,6 +121,8 @@ public final class DevAssetShowroom implements AutoCloseable {
         JButton topologyButton=new JButton("Topology QA on/off");
         JButton topologyEdit=new JButton("Edit QA topology");
         JButton topologyReload=new JButton("Reload QA topology");
+        JButton demo=new JButton("Infrastructure demo on/off");
+        JButton demoWater=new JButton("Export demo water...");
         prev.addActionListener(e->changePage(-1));
         next.addActionListener(e->changePage(1));
         shot.addActionListener(e->saveCurrentCapture());
@@ -132,8 +135,11 @@ public final class DevAssetShowroom implements AutoCloseable {
         topologyButton.addActionListener(e->toggleTopology());
         topologyEdit.addActionListener(e->editTopology());
         topologyReload.addActionListener(e->reloadTopology());
+        demo.addActionListener(e->toggleInfrastructureShowcase());
+        demoWater.addActionListener(e->exportInfrastructureWater());
         for(JButton b:new JButton[]{prev,next,shot,refresh,inspect,approve,needsWork,
-                                    topologyButton,topologyEdit,topologyReload})buttons.add(b);
+                                    topologyButton,topologyEdit,topologyReload,demo,demoWater})
+            buttons.add(b);
         JPanel right=new JPanel(new BorderLayout());
         right.add(buttons,BorderLayout.NORTH);right.add(viewport,BorderLayout.CENTER);
         status.setBorder(BorderFactory.createEmptyBorder(6,12,7,12));
@@ -200,6 +206,51 @@ public final class DevAssetShowroom implements AutoCloseable {
             "\n"+a.details()+
             "\n\nSTATUS IS DIAGNOSTIC ONLY. Inspect screenshot and source UVs before approving art.");
     }
+    private void toggleInfrastructureShowcase(){
+        if(infrastructureShowcase!=null){
+            infrastructureShowcase=null;
+            status.setText("DEV ROOM: infrastructure material review off.");
+            return;
+        }
+        try {
+            // The two demos occupy the same side aisle, not two different
+            // development maps. Explicitly choose one rather than overlap.
+            topologyLab=null;
+            infrastructureShowcase=DevInfrastructureShowcase.create();
+            renderer.x=8.2;renderer.z=.45;renderer.eyeHeight=2.1;
+            renderer.yaw=0;renderer.pitch=-.23;
+            var demo=infrastructureShowcase;
+            status.setText("DEV INFRASTRUCTURE: "+demo.railFaces()+
+                " rail faces, "+demo.roadFaces()+" road, "+demo.poleFaces()+
+                " pole/wire, "+demo.riverFaces()+" banks, "+demo.waterFaces()+
+                " snap-connected water faces; textured GLB trees/rocks");
+            viewport.requestFocusInWindow();
+        }catch(RuntimeException failure){
+            infrastructureShowcase=null;
+            status.setText("Cannot open infrastructure demo: "+failure.getMessage());
+        }
+    }
+    private void exportInfrastructureWater(){
+        if(infrastructureShowcase==null){
+            status.setText("Enable the infrastructure demo before exporting its water.");
+            return;
+        }
+        JFileChooser picker=new JFileChooser();
+        picker.setDialogTitle("Export real water module document from DEV river snaps");
+        picker.setSelectedFile(new java.io.File("dev-infrastructure-demo.water"));
+        if(picker.showSaveDialog(window)!=JFileChooser.APPROVE_OPTION)return;
+        Path selected=picker.getSelectedFile().toPath();
+        if(Files.exists(selected)&&JOptionPane.showConfirmDialog(window,
+                "Replace the selected water module document?",
+                "Confirm water export",JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE)!=JOptionPane.YES_OPTION)return;
+        try{
+            infrastructureShowcase.exportWater(selected);
+            status.setText("Water module exported and read back: "+selected);
+        }catch(IOException|RuntimeException failure){
+            status.setText("Water export failed: "+failure.getMessage());
+        }
+    }
     private void toggleTopology(){
         if(topologyLab!=null){
             topologyLab=null;
@@ -207,6 +258,7 @@ public final class DevAssetShowroom implements AutoCloseable {
             return;
         }
         try{
+            infrastructureShowcase=null;
             topologyLab=DevTerrainTopologyLab.open();
             renderer.x=8.1;renderer.z=0.2;renderer.eyeHeight=1.45;
             renderer.yaw=0;renderer.pitch=-.26;
@@ -265,7 +317,9 @@ public final class DevAssetShowroom implements AutoCloseable {
         if(keys.contains(KeyEvent.VK_LEFT))renderer.yaw-=.065;
         if(keys.contains(KeyEvent.VK_RIGHT))renderer.yaw+=.065;
         try{renderer.drawDevAssetRoom(bay,clock+=.06,rotation,
-                 topologyLab==null?List.of():topologyLab.triangles());}
+                 topologyLab!=null?topologyLab.triangles():
+                     infrastructureShowcase!=null?infrastructureShowcase.triangles():List.of(),
+                 infrastructureShowcase==null?List.of():infrastructureShowcase.props());}
         catch(RuntimeException problem){
             details.setText("DEV ROOM RENDER FAILURE\n"+problem);
             timer.stop();BeckenburgDiagnostics.fail("Developer asset review",problem);
