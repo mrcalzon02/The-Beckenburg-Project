@@ -62,7 +62,12 @@ public final class TerrainRailMesh {
         faces.add(new EditorMeshPipeline.Triangle(part,va,vb,vc));
     }
     private void quad(String part,double[] a,double[] b,double[] c,double[] d){
-        triangle(part,a,b,c);triangle(part,a,c,d);
+        // Cross sections are emitted with the centreline's left normal
+        // (-tangentZ,+tangentX). Their original A-B-C winding pointed INTO
+        // the ballast/sleeper/rail prism: top faces pointed down and left
+        // walls pointed right. Reverse each triangle so render back-face
+        // culling and walkable support use the actual outward normals.
+        triangle(part,a,c,b);triangle(part,a,d,c);
     }
     private static double[] cross(Centre c,double offset,double y){
         return p(c.x()+c.nx()*offset,c.y()+y,c.z()+c.nz()*offset);
