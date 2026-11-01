@@ -1,0 +1,3042 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "timezone": "America/Anchorage",
+  "status": "PLAN_ONLY",
+  "source_baseline": "ad9bb45c20c3754931637bdfa50968a35defeaf9",
+  "scope": {
+    "base_locations": 28,
+    "annexes": 1,
+    "packets": 29
+  },
+  "authority_note": "Rebuild acceptance tracking only; does not replace recovery, release, equipment or runtime source authorities.",
+  "plan": "development/levels/FIRST_PRINCIPLES_REBUILD_PLAN.md",
+  "site_packages": "development/levels/FIRST_PRINCIPLES_SITE_PACKAGES.md",
+  "roster_source": "development/levels/edge-sky-plans/catalog.json",
+  "allowed_states": [
+    "NOT_AUDITED",
+    "IN_PROGRESS",
+    "BLOCKED",
+    "REVISE",
+    "ACCEPTED",
+    "NOT_APPLICABLE"
+  ],
+  "acceptance_record_rule": "Decisions require source_sha, evidence, next_action and applicable defect references; NOT_APPLICABLE requires a recorded reason. Unexecuted stages retain null SHA and empty evidence.",
+  "stages": [
+    {
+      "id": "S00",
+      "name": "baseline",
+      "depends_on": []
+    },
+    {
+      "id": "S01",
+      "name": "identity_and_function",
+      "depends_on": [
+        "S00"
+      ]
+    },
+    {
+      "id": "S02",
+      "name": "rough_layout",
+      "depends_on": [
+        "S01"
+      ]
+    },
+    {
+      "id": "S03",
+      "name": "physical_blockout",
+      "depends_on": [
+        "S02"
+      ]
+    },
+    {
+      "id": "S04",
+      "name": "terrain_and_boundaries",
+      "depends_on": [
+        "S03"
+      ]
+    },
+    {
+      "id": "S05",
+      "name": "structural_assembly",
+      "depends_on": [
+        "S04"
+      ]
+    },
+    {
+      "id": "S06",
+      "name": "services_and_gameplay",
+      "depends_on": [
+        "S05"
+      ]
+    },
+    {
+      "id": "S07",
+      "name": "functional_prop_fill",
+      "depends_on": [
+        "S06"
+      ]
+    },
+    {
+      "id": "S08",
+      "name": "construction_and_material_refinement",
+      "depends_on": [
+        "S07"
+      ]
+    },
+    {
+      "id": "S09",
+      "name": "wear_and_story",
+      "depends_on": [
+        "S08"
+      ]
+    },
+    {
+      "id": "S10",
+      "name": "atmosphere_and_encounters",
+      "depends_on": [
+        "S09"
+      ]
+    },
+    {
+      "id": "S11",
+      "name": "runtime_acceptance_and_publication",
+      "depends_on": [
+        "S10"
+      ]
+    }
+  ],
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "title": "St. Alban Academy",
+      "folder": "academy",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/academy/layout.json",
+        "development/levels/blockouts/academy/layout-source.json",
+        "development/levels/blockouts/academy/NEXT.md",
+        "development/levels/model-requirements/academy.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "ASYLUM",
+      "title": "St. Dymphna Hospital",
+      "folder": "asylum",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/asylum/layout.json",
+        "development/levels/blockouts/asylum/layout-source.json",
+        "development/levels/blockouts/asylum/NEXT.md",
+        "development/levels/model-requirements/asylum.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "CASTLE",
+      "title": "Castle Beckenburg",
+      "folder": "castle",
+      "expansion": false,
+      "role": "headquarters",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/castle/layout.json",
+        "development/levels/model-requirements/castle.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "CHURCH",
+      "title": "St. Brigid Parish",
+      "folder": "church",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/church/layout.json",
+        "development/levels/model-requirements/church.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "COLLEGE",
+      "title": "Beckenburg College",
+      "folder": "college",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/college/layout.json",
+        "development/levels/blockouts/college/layout-source.json",
+        "development/levels/blockouts/college/NEXT.md",
+        "development/levels/model-requirements/college.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "FARMHOUSE",
+      "title": "Hollowmere Farm",
+      "folder": "farmhouse",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/farmhouse/layout.json",
+        "development/levels/model-requirements/farmhouse.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "HOUSE",
+      "title": "The Briar House",
+      "folder": "house",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/house/layout.json",
+        "development/levels/model-requirements/house.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "MANSION",
+      "title": "Blackthorn Manor",
+      "folder": "mansion",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/mansion/layout.json",
+        "development/levels/blockouts/mansion/layout-source.json",
+        "development/levels/blockouts/mansion/NEXT.md",
+        "development/levels/model-requirements/mansion.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "PRISON",
+      "title": "Beckenburg Penitentiary",
+      "folder": "prison",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/prison/layout.json",
+        "development/levels/blockouts/prison/layout-source.json",
+        "development/levels/blockouts/prison/NEXT.md",
+        "development/levels/model-requirements/prison.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "SCHOOL",
+      "title": "Ravenshade School",
+      "folder": "school",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/school/layout.json",
+        "development/levels/model-requirements/school.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-01",
+      "title": "Blackpine Logging Camp",
+      "folder": "wld-01",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-01/layout.json",
+        "development/levels/model-requirements/wld-01.json",
+        "development/levels/power-plans/wld-01.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-02",
+      "title": "Camp Hollow Creek",
+      "folder": "wld-02",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-02/layout.json",
+        "development/levels/blockouts/wld-02/layout-source.json",
+        "development/levels/blockouts/wld-02/NEXT.md",
+        "development/levels/model-requirements/wld-02.json",
+        "development/levels/power-plans/wld-02.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-03",
+      "title": "Red Mesa Ancestral Caves",
+      "folder": "wld-03",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-03/layout.json",
+        "development/levels/blockouts/wld-03/layout-source.json",
+        "development/levels/blockouts/wld-03/NEXT.md",
+        "development/levels/model-requirements/wld-03.json",
+        "development/levels/power-plans/wld-03.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-04",
+      "title": "Widow's Peak Fire Lookout",
+      "folder": "wld-04",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-04/layout.json",
+        "development/levels/blockouts/wld-04/layout-source.json",
+        "development/levels/blockouts/wld-04/NEXT.md",
+        "development/levels/model-requirements/wld-04.json",
+        "development/levels/power-plans/wld-04.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-05",
+      "title": "Dead Man's Claim",
+      "folder": "wld-05",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-05/layout.json",
+        "development/levels/blockouts/wld-05/layout-source.json",
+        "development/levels/blockouts/wld-05/NEXT.md",
+        "development/levels/model-requirements/wld-05.json",
+        "development/levels/power-plans/wld-05.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-06",
+      "title": "Drowned Fisherman's Wharf",
+      "folder": "wld-06",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-06/layout.json",
+        "development/levels/blockouts/wld-06/layout-source.json",
+        "development/levels/blockouts/wld-06/NEXT.md",
+        "development/levels/model-requirements/wld-06.json",
+        "development/levels/power-plans/wld-06.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-07",
+      "title": "Saint Bartholomew's Forgotten Cemetery",
+      "folder": "wld-07",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-07/layout.json",
+        "development/levels/blockouts/wld-07/layout-source.json",
+        "development/levels/blockouts/wld-07/NEXT.md",
+        "development/levels/model-requirements/wld-07.json",
+        "development/levels/power-plans/wld-07.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-08",
+      "title": "Northwatch Research Station",
+      "folder": "wld-08",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-08/layout.json",
+        "development/levels/blockouts/wld-08/layout-source.json",
+        "development/levels/blockouts/wld-08/NEXT.md",
+        "development/levels/model-requirements/wld-08.json",
+        "development/levels/power-plans/wld-08.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-09",
+      "title": "Blackwater Hydroelectric Dam",
+      "folder": "wld-09",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-09/layout.json",
+        "development/levels/blockouts/wld-09/layout-source.json",
+        "development/levels/blockouts/wld-09/NEXT.md",
+        "development/levels/model-requirements/wld-09.json",
+        "development/levels/power-plans/wld-09.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-10",
+      "title": "Monastery of Ashen Bells",
+      "folder": "wld-10",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-10/layout.json",
+        "development/levels/blockouts/wld-10/layout-source.json",
+        "development/levels/blockouts/wld-10/NEXT.md",
+        "development/levels/model-requirements/wld-10.json",
+        "development/levels/power-plans/wld-10.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-11",
+      "title": "Mourning Marsh",
+      "folder": "wld-11",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-11/layout.json",
+        "development/levels/blockouts/wld-11/layout-source.json",
+        "development/levels/blockouts/wld-11/NEXT.md",
+        "development/levels/model-requirements/wld-11.json",
+        "development/levels/power-plans/wld-11.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-12",
+      "title": "Gallows Pass Railway",
+      "folder": "wld-12",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-12/layout.json",
+        "development/levels/blockouts/wld-12/layout-source.json",
+        "development/levels/blockouts/wld-12/NEXT.md",
+        "development/levels/model-requirements/wld-12.json",
+        "development/levels/power-plans/wld-12.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-13",
+      "title": "Greywater Cannery",
+      "folder": "wld-13",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-13/layout.json",
+        "development/levels/blockouts/wld-13/layout-source.json",
+        "development/levels/blockouts/wld-13/NEXT.md",
+        "development/levels/model-requirements/wld-13.json",
+        "development/levels/power-plans/wld-13.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-14",
+      "title": "Morrow Point Lightstation",
+      "folder": "wld-14",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-14/layout.json",
+        "development/levels/blockouts/wld-14/NEXT.md",
+        "development/levels/model-requirements/wld-14.json",
+        "development/levels/power-plans/wld-14.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-15",
+      "title": "MV Saint Elara",
+      "folder": "wld-15",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-15/layout.json",
+        "development/levels/blockouts/wld-15/NEXT.md",
+        "development/levels/model-requirements/wld-15.json",
+        "development/levels/power-plans/wld-15.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-16",
+      "title": "Eight Pines Motor Lodge",
+      "folder": "wld-16",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-16/layout.json",
+        "development/levels/blockouts/wld-16/NEXT.md",
+        "development/levels/model-requirements/wld-16.json",
+        "development/levels/power-plans/wld-16.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-17",
+      "title": "Battery Brackenhead",
+      "folder": "wld-17",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-17/layout.json",
+        "development/levels/blockouts/wld-17/NEXT.md",
+        "development/levels/model-requirements/wld-17.json",
+        "development/levels/power-plans/wld-17.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-18",
+      "title": "Site Cinder-6",
+      "folder": "wld-18",
+      "expansion": false,
+      "role": "investigation",
+      "depends_on": [],
+      "prior_sources": [
+        "development/levels/layouts/wld-18/layout.json",
+        "development/levels/blockouts/wld-18/NEXT.md",
+        "development/levels/model-requirements/wld-18.json",
+        "development/levels/power-plans/wld-18.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "title": "Saint Bartholomew's Cemetery & Vale Mortuary",
+      "folder": "wld-07-mortuary",
+      "expansion": true,
+      "role": "annex",
+      "depends_on": [
+        "WLD-07"
+      ],
+      "prior_sources": [
+        "development/levels/blockouts/wld-07-mortuary/NEXT.md",
+        "development/levels/model-requirements/wld-07-mortuary.json",
+        "development/levels/power-plans/wld-07-mortuary.json"
+      ],
+      "prior_evidence_note": "Existing source only; no rebuild stage accepted by this planning checkpoint.",
+      "stages": {
+        "S00": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Run baseline inspection"
+        },
+        "S01": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S02": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S03": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S04": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S05": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S06": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S07": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S08": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S09": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S10": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        },
+        "S11": {
+          "status": "NOT_AUDITED",
+          "source_sha": null,
+          "evidence": [],
+          "defects": [],
+          "next_action": "Complete prerequisite stage"
+        }
+      }
+    }
+  ]
+}
