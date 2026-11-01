@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "chainId": "beckenburg-java17-editor-requirements",
+  "updated": "2026-10-31",
+  "purpose": "Owner-supplied editing, engine, terrain and audio source document chain. Index authoritative PDF provenance separately from repository transcriptions and staged integration status.",
+  "authoritativePlan": "docs/editor/requirements/STAGED_INTEGRATION_PLAN.md",
+  "preservationRules": [
+    "Original PDF is authoritative for page layouts, illustrations and code examples.",
+    "Committed text extracts are traceable working copies, not binary PDF originals.",
+    "Only verified code/test acceptance can change a stage to implemented.",
+    "Preserve prior owner requirements without overwriting the terrain, landscape or gold-standard contracts.",
+    "Portable Java 17 modules precede host-adapter wiring, then agentic access.",
+    "Objective functional breakage alone may block release; visual and subjective findings are diagnostics."
+  ],
+  "sources": [
+    {
+      "id": "editor-gold-standards",
+      "order": 1,
+      "title": "Level Editor gold standards.pdf",
+      "prior": true,
+      "originalPdfCommitted": false,
+      "originalPdfSha256": null,
+      "sourcePages": 5,
+      "sourceStatus": "existing owner document referenced by committed analysis; original binary and full extract unavailable in this repository",
+      "analysisPaths": [
+        "docs/development/LEVEL_EDITOR_OVERHAUL_AUDIT.md",
+        "docs/development/PSX_RUNTIME_AND_EDITOR_SUITE_ARCHITECTURE.md"
+      ],
+      "covers": [
+        "WYSIWYG",
+        "scene and material editing",
+        "snapping",
+        "hierarchies",
+        "undo",
+        "playtest",
+        "asset browser"
+      ]
+    },
+    {
+      "id": "terrain-editor-requirements",
+      "order": 2,
+      "title": "Terrain editor requirements.pdf",
+      "prior": true,
+      "originalPdfCommitted": false,
+      "originalPdfSha256": null,
+      "sourcePages": 17,
+      "sourceStatus": "existing owner document with implemented/remaining requirement analysis; binary and full extract not archived",
+      "analysisPaths": [
+        "docs/editor/TERRAIN_REQUIREMENTS_INTEGRATION.md",
+        "docs/development/TERRAIN_WORLD_SYSTEM_PLAN.md"
+      ],
+      "covers": [
+        "stitched source",
+        "sculpt layers",
+        "erosion",
+        "graded roads and rail",
+        "height sampling",
+        "authoring"
+      ]
+    },
+    {
+      "id": "landscape-layering",
+      "order": 3,
+      "title": "Landscape layering.pdf",
+      "prior": true,
+      "originalPdfCommitted": false,
+      "originalPdfSha256": null,
+      "sourcePages": 8,
+      "sourceStatus": "existing owner document with prepared integration handoff; binary and full extract not archived",
+      "analysisPaths": [
+        "docs/editor/LANDSCAPE_LAYERING_PREPARATION.md"
+      ],
+      "covers": [
+        "Global Inputs & Data",
+        "Material Domain",
+        "Blend Domain Matrix",
+        "Master Output Graph"
+      ]
+    },
+    {
+      "id": "topological-editor",
+      "order": 4,
+      "title": "Topological editor.pdf",
+      "prior": false,
+      "originalPdfCommitted": false,
+      "originalPdfSha256": "ecd301284edb4746936cd7d79f5a791eeaee4ab444ea1ba5614ca6af0af99fef",
+      "originalPdfBytes": 565668,
+      "sourcePages": 36,
+      "textPageMarkers": 36,
+      "textArchivePath": "docs/editor/requirements/sources/topological-editor.txt",
+      "sourceStatus": "full available text archived, PDF binary not committed",
+      "plannedStages": [
+        "G2",
+        "G3",
+        "G4",
+        "G7"
+      ],
+      "covers": [
+        "half-edge modeling",
+        "sculpt and remesh",
+        "input and interchange",
+        "skeletons",
+        "preset animation"
+      ]
+    },
+    {
+      "id": "soundscape-environment-manager",
+      "order": 5,
+      "title": "Building a 3D Soundscape Environment Manager.pdf",
+      "prior": false,
+      "originalPdfCommitted": false,
+      "originalPdfSha256": "34ed1d64ebbf860c8a4ac65df0b87100559e1bfe2a2aae089746147d924aef90",
+      "originalPdfBytes": 264981,
+      "sourcePages": 19,
+      "textPageMarkers": 19,
+      "textArchivePath": "docs/editor/requirements/sources/soundscape-environment-manager.txt",
+      "sourceStatus": "full available text archived, PDF binary not committed",
+      "plannedStages": [
+        "G5",
+        "G6"
+      ],
+      "covers": [
+        "acoustic spaces/materials",
+        "occlusion/portals",
+        "OpenAL EFX HRTF",
+        "mixer",
+        "speaker profile",
+        "dialogue clarity"
+      ]
+    },
+    {
+      "id": "engine-base",
+      "order": 6,
+      "title": "Engine base.pdf",
+      "prior": false,
+      "originalPdfCommitted": false,
+      "originalPdfSha256": "5dbf8c39e5b434ae8a7231ae755cc8d7aac7855c532cf59d8b054409fdc01bb4",
+      "originalPdfBytes": 450464,
+      "sourcePages": 29,
+      "textPageMarkers": 29,
+      "textArchivePath": "docs/editor/requirements/sources/engine-base.txt",
+      "sourceStatus": "full available text archived, PDF binary not committed",
+      "plannedStages": [
+        "G1",
+        "G10",
+        "G11"
+      ],
+      "covers": [
+        "scripting",
+        "batching",
+        "OS/native capability broker",
+        "AI agent security",
+        "telemetry",
+        "DSL",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "multi-genre-game-creation-engine",
+      "order": 7,
+      "title": "multi-genre game creation engine.pdf",
+      "prior": false,
+      "originalPdfCommitted": false,
+      "originalPdfSha256": "dccf7dce17b740ae570ffb765d278c2d77ba720b0993231805cf6726bdb332d5",
+      "originalPdfBytes": 364217,
+      "sourcePages": 19,
+      "textPageMarkers": 18,
+      "textArchivePath": "docs/editor/requirements/sources/multi-genre-game-creation-engine.txt",
+      "sourceStatus": "full available text archived (18 page markers in 19-page PDF); PDF binary not committed",
+      "plannedStages": [
+        "G8",
+        "G9"
+      ],
+      "covers": [
+        "universal registry",
+        "puzzle",
+        "strategy",
+        "racing",
+        "RPG",
+        "horror",
+        "city builder",
+        "action",
+        "survival",
+        "roguelike"
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "id": "G0",
+      "name": "Provenance and gap audit",
+      "dependsOn": [],
+      "status": "documented",
+      "acceptance": "all seven sources in index; four new full text archives with verified provenance"
+    },
+    {
+      "id": "G1",
+      "name": "Portable editor/runtime scene contracts",
+      "dependsOn": [
+        "G0"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "G2",
+      "name": "Human-operable half-edge mesh and modeling",
+      "dependsOn": [
+        "G1"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "G3",
+      "name": "Sculpting, remesh and hardware input",
+      "dependsOn": [
+        "G2"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "G4",
+      "name": "Terrain/landscape and live-game scene adapters",
+      "dependsOn": [
+        "G1",
+        "G2"
+      ],
+      "status": "partial-existing-implementation-not-accepted"
+    },
+    {
+      "id": "G5",
+      "name": "Spatial soundscape scene and backend",
+      "dependsOn": [
+        "G1",
+        "G4"
+      ],
+      "status": "planned-on-existing-sound-components"
+    },
+    {
+      "id": "G6",
+      "name": "Dialogue mixing and output profiles",
+      "dependsOn": [
+        "G5"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "G7",
+      "name": "Rigging and animation pipeline",
+      "dependsOn": [
+        "G2",
+        "G3"
+      ],
+      "status": "planned-on-existing-animation-editor"
+    },
+    {
+      "id": "G8",
+      "name": "Universal archetype registry and simulation contracts",
+      "dependsOn": [
+        "G1"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "G9",
+      "name": "Multi-genre plugins with playable examples",
+      "dependsOn": [
+        "G4",
+        "G7",
+        "G8"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "G10",
+      "name": "Sandboxed scripting and machine broker",
+      "dependsOn": [
+        "G1",
+        "G8"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "G11",
+      "name": "Permissioned agent APIs, compact commands and diagnostics",
+      "dependsOn": [
+        "G1",
+        "G8",
+        "G10"
+      ],
+      "status": "planned-after-human-integration"
+    },
+    {
+      "id": "G12",
+      "name": "Cross-platform acceptance and optional cross-game adoption",
+      "dependsOn": [
+        "G1"
+      ],
+      "status": "planned-for-each-admitted-host"
+    }
+  ],
+  "earlierLinkedContracts": [
+    "docs/development/TERRAIN_WORLD_SYSTEM_PLAN.md",
+    "docs/editor/TERRAIN_REQUIREMENTS_INTEGRATION.md",
+    "docs/editor/LANDSCAPE_LAYERING_PREPARATION.md",
+    "docs/development/PSX_RUNTIME_AND_EDITOR_SUITE_ARCHITECTURE.md",
+    "docs/development/LEVEL_EDITOR_OVERHAUL_AUDIT.md",
+    "docs/development/ADAPTIVE_TERRAIN_TOPOLOGY.md",
+    "docs/development/TERRAIN_LAYERED_CAVITIES.md",
+    "docs/development/ADAPTIVE_MULTILAYER_NAVIGATION.md",
+    "docs/development/AGENTIC_EDITOR_ACCESS.md"
+  ],
+  "compatibilityNotes": [
+    "java.lang.foreign finalized in JDK 22, not available as written in Java 17.",
+    "Virtual threads introduced in Java 21, not standard Java 17.",
+    "Record-pattern switch source examples need rewriting for Java 17.",
+    "ClassLoader is not an untrusted-code security sandbox.",
+    "OpenAL HRTF / DSP samples are illustrative, not complete native effect handling.",
+    "Remeshing and auto-rigging may alter UVs, hard edges and asset identities; preview/approval required."
+  ]
+}
