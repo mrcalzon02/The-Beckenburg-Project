@@ -1,0 +1,34 @@
+Source: ff93601a9921ff210e408dee99921592184b472e
+Workflow: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41330858899
+Job: 124920470364; completed success. Raw log excerpts follow.
+2026-11-01T17:21:08.8709771Z PASS: TCP EMF drop, empty slot, E pickup, ownership, reach, rollback and duplicate rejection
+2026-11-01T17:21:16.2058864Z PASS all ten packaged scenes, left menu, responsive layout and live button
+2026-11-01T17:21:43.5238803Z PASS packaged pictures, async UI load, saved chapter order, prototype privacy and actual locked/unlocked dispatch
+2026-11-01T17:21:57.9363171Z PASS: multiplayer class ownership, live sensor survey, cooldowns, ghost isolation
+2026-11-01T17:22:24.7575476Z PASS: 576 explicitly approved packaged GLBs, real triangles and embedded textures
+2026-11-01T17:22:24.7957571Z TEST PASS PackagedSourceModelsTest elapsed=11800ms
+2026-11-01T17:22:48.0507533Z PASS: TCP EMF drop, empty slot, E pickup, ownership, reach, rollback and duplicate rejection
+2026-11-01T17:23:32.4261798Z PASS: ordered nonblocking TCP delivery, bounded backlog, slow-peer isolation
+2026-11-01T17:23:57.9195230Z PASS: TCP heartbeat RTT 0/50/150ms, one lost PONG, recovery and host continuity
+2026-11-01T17:25:44.2897706Z PASS: human controls Twin A, Twin B autonomously patrols and streams live positions over TCP
+2026-11-01T17:26:36.8510214Z PASS: deployed lights, switching, tier housings, multiplayer pickup
+2026-11-01T17:26:41.4492847Z PASS: TCP placed sensor, motion alarm, retrieval, ghost privacy
+2026-11-01T17:27:19.3509919Z PASS: genuine TCP EOF emits exactly one disconnect; local close stays silent
+2026-11-01T17:27:19.5463758Z PASS: 12 TCP exits deliver LEAVE and EOF despite unread incoming updates
+2026-11-01T17:27:50.5708346Z PASS: four TCP clients, seats/readiness/start, host-validated moves, ghost parity, damage, authority, replay and private projection
+2026-11-01T17:29:29.3012088Z PASS HOUSE exact door/window meshes: 15 doors, 9 windows
+2026-11-01T17:29:29.9843247Z PASS FARMHOUSE exact door/window meshes: 12 doors, 4 windows
+2026-11-01T17:29:31.2259672Z PASS SCHOOL exact door/window meshes: 25 doors, 8 windows
+2026-11-01T17:29:51.7601822Z PASS real TCP crouch/stand snapshots, unchanged authoritative feet and ghost-role rejection
+2026-11-01T17:29:58.1445244Z PASS TCP UV power, genuine positioned trace, exhaustion blackout, ghost privacy and physical powered laser installation
+2026-11-01T17:30:30.9719388Z PASS real TCP campaign co-op, six-seat cap, bot substitution/refund, guest isolation, host receipt and multiplayer lobby purchases
+2026-11-01T17:30:42.8016284Z PASS campaign and multiplayer are children of the actual Castle viewport; no lobby Window path exists
+2026-11-01T17:30:51.5404386Z PASS Castle warehouse multiplayer scope, campaign Quartermaster and common catalog
+2026-11-01T17:31:37.9244382Z PASS named Extras editor click, Options route, --editor, Windows shortcut, shipped JAR and kit
+2026-11-01T17:32:24.0580246Z REGRESSION SUMMARY passed=303 failed=0 skipped=0 manifest=303
+2026-11-01T17:32:35.1978534Z E2E PASS Castle-first startup, pause/options overlay, Quartermaster and multiplayer workstation
+2026-11-01T17:32:38.8419259Z PASS Beckenburg packaged desktop, multiplayer UI and solo case startup
+2026-11-01T17:33:00.7975070Z [36;1m  'PASS: native Windows app-image reached fully initialized Castle' |[0m
+2026-11-01T17:33:00.7975929Z [36;1m  Write-Host 'PASS Native Windows executable loaded to the Castle; not just a running splash'[0m
+2026-11-01T17:33:12.2566699Z PASS Native Windows executable loaded to the Castle; not just a running splash
+Scope: 303/303 regression entries, packaged TCP/UI and Windows app-image checks. Physical installed-game acceptance and later source changes are separate.

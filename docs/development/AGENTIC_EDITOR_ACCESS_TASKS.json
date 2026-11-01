@@ -643,24 +643,26 @@
       ],
       "nativeHostCi": {
         "run": 41330853164,
-        "status": "in_progress"
+        "status": "success"
       },
       "fullRoundCi": {
         "run": 41330858899,
-        "status": "in_progress",
-        "manifestEntries": 303
+        "status": "success",
+        "manifestEntries": 303,
+        "passed": 303,
+        "failed": 0,
+        "unexecuted": 0
       },
-      "evidence": "development/quality/evidence/recovery-contracts-2026-11-01.json",
+      "evidence": "development/quality/evidence/editor-full-round-ff93601a.txt",
       "limitations": [
-        "Newest-source complete regression and native-host acceptance not yet terminal",
         "HUD PNGs are native headless component captures with unstarted world background, not full gameplay visuals",
         "No art/geometry changed, no installed/hardware or G1-G12 completion inferred"
       ]
     }
   ],
   "nextGoalWork": [
-    "Inspect terminal native-host 41330853164 and full-round 41330858899 raw logs; do not restart live runs or infer a full pass from advisory labels",
-    "Continue remaining G1 Castle properties journaling/recovery, broader migrations, incremental changes and resource ownership/revision events",
-    "Advance to G2 human topology and dependency-ordered G0-G12 stages only with corresponding authoritative runtime/human acceptance"
+    "Finish G1 dependency ownership/revision events and incremental delta contracts, preserving the actual host data authority",
+    "Retain broader schema migration and cross-platform acceptance gates; Castle native journal/recovery and legacy migration checks now pass locally",
+    "Advance dependency-ordered G2-G12 human workflows with corresponding authoritative runtime acceptance; authenticated MCP remains a later adapter"
   ]
 }

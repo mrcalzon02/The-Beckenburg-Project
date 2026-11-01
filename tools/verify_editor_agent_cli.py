@@ -14,7 +14,7 @@ output = Path(args.output).resolve()
 output.mkdir(parents=True, exist_ok=True)
 
 with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
-    command = [args.java, '-Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory',
+    command = [args.java, '-Dfile.encoding=windows-1252', '-Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory',
                '-cp', args.classpath, 'org.beckenburg.EditorAgentCli', 'HOUSE', home]
 
     def run(lines, expected=0):
@@ -50,4 +50,18 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     stale = run([f'edit\t0\tmove-prop\tid=prop-0\tx=0\ty=0\tz=0', 'inspect'], expected=1)
     assert not stale[0]['ok'] and stale[1]['result']['state'] == recovered['state']
     (output / 'headless-results.json').write_text(json.dumps(rows, indent=2), encoding='utf-8')
-print('PASS headless public protocol: JSON, real edit/save/recovery, renderer capture, native parity, process reopen and stale rejection')
+    command[-2:] = ['CASTLE', str(Path(home) / 'castle-project')]
+    first_castle = run(['inspect'])[0]['result']
+    assert 'RECOVER_PREVIOUS' in first_castle['capabilities']
+    assert '\u2022' in json.dumps(first_castle, ensure_ascii=False), 'Native Unicode labels survive UTF-8 transport'
+    revision = first_castle['revision']
+    rows_castle = run([f'save\t{revision}',
+                       f'edit\t{revision}\tset-spawn\tx=13.5\tz=19\tyaw=1.125',
+                       f'save\t{revision + 1}', 'inspect'])
+    assert all(row['ok'] for row in rows_castle)
+    reopened_castle = run(['inspect'])[0]['result']
+    assert reopened_castle['state'] == rows_castle[-1]['result']['state']
+    recovered_castle = run([f'recover\t{reopened_castle["revision"]}', 'inspect'])[-1]['result']
+    assert recovered_castle['state'] == first_castle['state'], 'Castle CLI recovery restores exact native scene'
+    (output / 'headless-castle-results.json').write_text(json.dumps(rows_castle, indent=2), encoding='utf-8')
+print('PASS headless public protocol: mission/Castle JSON edit/save/recovery, renderer capture, native parity, process reopen and stale rejection')

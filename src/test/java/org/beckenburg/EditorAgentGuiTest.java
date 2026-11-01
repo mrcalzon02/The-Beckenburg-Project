@@ -69,6 +69,15 @@ public final class EditorAgentGuiTest {
                 try{
                     var e=editor.get();var castle=e.agentService();var state=castle.inspect();
                     castle.capture(state.revision(),output.resolve("castle.png"));
+                    double originalYaw=CastleLevelEdits.current().spawn()[2];
+                    castle.save(state.revision());
+                    castle.transact(castle.inspect().revision(),"set-spawn",Map.of("x","13.5","z","19","yaw","1.125"));
+                    castle.save(castle.inspect().revision());
+                    Files.writeString(castle.inspect().document(),"format=invalid");
+                    recoverThroughMenu(e);
+                    check(CastleLevelEdits.current().spawn()[2]==originalYaw,"Human Castle recovery uses same singleton");
+                    button(e,"UNDO").doClick();
+                    check(CastleLevelEdits.current().spawn()[2]==1.125,"Human undo restores pre-recovery Castle edits");
                     var open=DeveloperLevelEditor.class.getDeclaredMethod("openMission",HouseMap.Site.class);
                     open.setAccessible(true);open.invoke(e,HouseMap.Site.HOUSE);
                     var service=e.agentService();var before=service.inspect();var node=before.hierarchy().get(0);
@@ -103,6 +112,6 @@ public final class EditorAgentGuiTest {
             });
             try(var files=Files.walk(home)){files.sorted(java.util.Comparator.reverseOrder()).forEach(p->{try{Files.deleteIfExists(p);}catch(Exception ignored){}});}
         }
-        System.out.println("PASS real Windows editor: mission service, human undo/redo, save/reopen, actual recovery menu, runtime parity, Castle/House PNGs and stale/closed scene rejection");
+        System.out.println("PASS real Windows editor: mission/Castle service and recovery, human undo/redo, save/reopen, actual recovery menu, runtime parity, Castle/House PNGs and stale/closed scene rejection");
     }
 }

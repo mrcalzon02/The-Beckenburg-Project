@@ -2,10 +2,9 @@ package org.beckenburg;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
+import org.beckenburg.editor.EditorDocumentStore;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -201,10 +200,12 @@ public final class CastleLevelEdits {
     private static Path defaultPath(){
         return Path.of(System.getProperty("user.home"),".beckenburg","editor","castle.properties");
     }
-    public CastleLevelEdits(Path path) {
+    public CastleLevelEdits(Path path) {this(path,true);}
+    // The decoder uses native codec scratch state, never attached to an editor or agent.
+    private CastleLevelEdits(Path path,boolean loadFromDisk) {
         this.path=Objects.requireNonNull(path).toAbsolutePath().normalize();
         defaults();
-        if(Files.isRegularFile(path))try{load();}catch(IOException e){
+        if(loadFromDisk&&(Files.exists(this.path)||Files.exists(EditorDocumentStore.journal(this.path))))try{load();}catch(IOException e){
             throw new IllegalStateException("Castle editor overrides cannot load: "+path,e);
         }
     }
@@ -349,16 +350,41 @@ public final class CastleLevelEdits {
         try{load();revision++;}
         catch(IOException|RuntimeException failure){restore(before);throw failure;}
     }
-    private void load()throws IOException{
+    private static Properties readProperties(Path file)throws IOException{
+        if(Files.size(file)>EditorDocumentStore.MAX_BYTES)throw new IOException("Castle document exceeds byte budget");
         Properties p=new Properties();
-        try(InputStream in=Files.newInputStream(path)){p.load(in);}
-        if(!"1".equals(p.getProperty("format")))
-            throw new IOException("Unsupported castle editor document version");
+        try(InputStream in=Files.newInputStream(file)){
+            byte[] bytes=in.readNBytes(EditorDocumentStore.MAX_BYTES+1);
+            if(bytes.length>EditorDocumentStore.MAX_BYTES)throw new IOException("Castle document exceeds byte budget");
+            p.load(new java.io.ByteArrayInputStream(bytes));
+        }catch(IllegalArgumentException malformed){throw new IOException("Invalid castle properties",malformed);}
+        return p;
+    }
+    private static CastleLevelEdits decode(Path file)throws IOException{
+        var decoded=new CastleLevelEdits(file,false);
+        decoded.decode(readProperties(file));return decoded;
+    }
+    private void load()throws IOException{
+        EditorDocumentStore.recoverPending(path,CastleLevelEdits::decode);
+        Properties p=readProperties(path);
+        var decoded=new CastleLevelEdits(path,false);decoded.decode(p);
         if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){
             Path backup=path.resolveSibling(path.getFileName()+".before-structure-v2.properties");
             if(!Files.exists(backup))Files.copy(path,backup);
-            defaults();save();return;
-        }
+            restore(decoded.snapshot());save();
+        }else restore(decoded.snapshot());
+    }
+    /** Explicit disk recovery, reloaded into this same authoritative runtime object. */
+    public synchronized void recoverPrevious()throws IOException{
+        EditorDocumentStore.restorePrevious(path,CastleLevelEdits::decode);
+        reopen();
+    }
+    private void decode(Properties p)throws IOException{
+        if(!"1".equals(p.getProperty("format")))
+            throw new IOException("Unsupported castle editor document version");
+        try{
+            if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){defaults();return;}
+        }catch(RuntimeException invalid){throw new IOException("Invalid castle structure version",invalid);}
         try{
             Map<String,Prop> incomingProps=new LinkedHashMap<>();
             Map<String,Lamp> incomingLights=new LinkedHashMap<>();
@@ -567,7 +593,7 @@ public final class CastleLevelEdits {
             spawnX=sx;spawnZ=sz;spawnYaw=syaw;revision++;
         }catch(RuntimeException e){throw new IOException("Invalid castle editor document: "+path,e);}
     }
-    /** Atomic replacement prevents partial save data if the app is interrupted. */
+    /** Journaled atomic save, with one prior valid distinct document for explicit recovery. */
     public synchronized void save()throws IOException{
         Properties p=new Properties();p.setProperty("format","1");
         p.setProperty("structure.layout","2");
@@ -621,15 +647,20 @@ public final class CastleLevelEdits {
         for(int t:navBlocked)p.setProperty("nav."+t,"true");
         p.setProperty("spawn.x",""+spawnX);p.setProperty("spawn.z",""+spawnZ);
         p.setProperty("spawn.yaw",""+spawnYaw);
-        Files.createDirectories(path.getParent());
-        Path pending=Files.createTempFile(path.getParent(),"castle-", ".pending");
-        try{
-            try(OutputStream out=Files.newOutputStream(pending)){p.store(out,"Beckenburg developer castle scene");}
-            try{Files.move(pending,path,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);}
-            catch(java.nio.file.AtomicMoveNotSupportedException ex){
-                Files.move(pending,path,StandardCopyOption.REPLACE_EXISTING);
+        EditorDocumentStore.save(path,out->{
+            // Use the standard escaping one bounded field at a time. Drop only
+            // its timestamp header; sorted fields make identical saves identical.
+            var field=new Properties();var encoded=new java.io.ByteArrayOutputStream();
+            for(String key:new java.util.TreeSet<>(p.stringPropertyNames())){
+                field.clear();field.setProperty(key,p.getProperty(key));encoded.reset();field.store(encoded,null);
+                byte[] line=encoded.toByteArray();int start=0;
+                while(start<line.length&&line[start++]!='\n'){}
+                out.write(line,start,line.length-start);
             }
-        }finally{Files.deleteIfExists(pending);}
+        },CastleLevelEdits::decode,file->{
+            decode(file);
+            if(!p.equals(readProperties(file)))throw new IOException("Castle save readback differs from live state");
+        });
     }
     public Path path(){return path;}
 }

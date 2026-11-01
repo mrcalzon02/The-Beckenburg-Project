@@ -19,7 +19,7 @@ public final class EditorAgentCli {
         if(args.length!=2)throw new IllegalArgumentException("Usage: EditorAgentCli CASTLE|HOUSE|SCHOOL|... project-home");
         System.setProperty("user.home",Path.of(args[1]).toAbsolutePath().normalize().toString());
         System.setProperty("java.awt.headless","true");
-        PrintStream responses=System.out;
+        PrintStream responses=new PrintStream(System.out,true,StandardCharsets.UTF_8);
         // Runtime diagnostics must never corrupt the JSON response stream.
         System.setOut(System.err);
         Thread owner=Thread.currentThread();

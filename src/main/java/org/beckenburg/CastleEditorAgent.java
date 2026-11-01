@@ -24,7 +24,7 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
     public long revision(){return scene.revision();}
     public void checkAccess(){access.run();}
     public java.util.Set<EditorAgentService.Capability> capabilities(){
-        return java.util.EnumSet.complementOf(java.util.EnumSet.of(EditorAgentService.Capability.RECOVER_PREVIOUS));
+        return java.util.EnumSet.allOf(EditorAgentService.Capability.class);
     }
     public List<String> operations(){return List.of("set-spawn");}
     public void apply(String operation, Map<String,String> args){
@@ -38,6 +38,7 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
                 throw new IllegalArgumentException("Non-finite scene node: "+node.id());
     }
     public void reopen()throws IOException{scene.reopen();}
+    public void recoverPrevious()throws IOException{scene.recoverPrevious();}
     public EditorAgentService.Capture capture(Path destination)throws IOException{
         // Render now. Never return the previous timer frame or a synthetic preview.
         renderer.drawCastle(map,0,true);
