@@ -291,7 +291,7 @@ public final class TerrainLayerWorkbench extends JPanel {
             int sx=x*n/(res-1),sz=z*n/(res-1),rgb;
             switch(view.getSelectedIndex()){
                 case 1 -> rgb=new int[]{0x648b48,0x777b82,0x80644b,0xc5b47e,
-                    0x554638,0xb7c4cf,0x93928e,0x526a6f}[stack.material(sx,sz)];
+                    0x554638,0xb7c4cf,0x93928e,0x526a6f}[stack.surfaceMaterial(sx,sz)];
                 case 2 -> {int s=(int)Math.min(255,stack.slope(sx,sz)*4);
                     rgb=(s<<16)|((255-s)<<8)|50;}
                 case 3 -> rgb=stack.frozen(sx,sz)?0xff2020:0x4e6a6f;
