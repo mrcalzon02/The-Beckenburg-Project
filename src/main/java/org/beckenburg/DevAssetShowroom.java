@@ -245,7 +245,7 @@ public final class DevAssetShowroom implements AutoCloseable {
             var initial=existing.placements().isEmpty()?
                 infrastructureShowcase.water():existing;
             var model=new dev.mrcalzon.water.WaterEditorModel(initial);
-            model.setTerrainSockets(List.of(DevInfrastructureShowcase.riverSocket()));
+            model.setTerrainSockets(DevInfrastructureShowcase.riverSockets());
             model.select(List.of("dev-river-downstream"));
             JFrame editor=new JFrame("DEV ROOM — RIVER MODULE AND TERRAIN SNAP");
             var panel=new dev.mrcalzon.water.WaterEditorPanel(model,
