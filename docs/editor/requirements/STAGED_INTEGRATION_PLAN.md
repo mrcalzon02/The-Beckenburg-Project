@@ -22,6 +22,8 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 
 ## Stages and acceptance gates
 
+**2026-11-01 owner priority:** first finish the small [Editor Agent Service](../../development/EDITOR_AGENT_SERVICE.md) around existing human operations and authoritative runtime adapters, then continue G0–G12. The service now has local Java 17, actual Windows editor and headless-process acceptance for native mission/Castle state, shared history, save/reopen, renderer capture and focused tests. This does not admit unfinished terrain/model/audio operations or close full G11: authenticated MCP, scripting and broader host acceptance remain gated.
+
 ### G0 — Requirements intake, deduplication and current-state audit
 **Inputs:** all seven owner document references (four new, three prior) and current Beckenburg code/recovery work. **Deliverable:** this chain manifest, exact source provenance, requirement-to-module map, and audit of what exists, what overlaps, what is a proposal, and what cannot compile on Java 17.
 - Record the existing EditorProject / RuntimeScene / EditorHistory / EditorMeshPipeline / TerrainLayerStack / AdaptiveTerrainTopology / TerrainSceneNativePhysics entry points.

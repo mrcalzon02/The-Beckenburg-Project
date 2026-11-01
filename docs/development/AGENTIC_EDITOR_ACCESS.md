@@ -6,6 +6,8 @@
 **Owner superseding sequence:** complete and validate human-operated terrain, loading-zone, stitched-heightmap and terrain-LOD modules **before** any corresponding agentic controls. See [`TERRAIN_WORLD_SYSTEM_PLAN.md`](TERRAIN_WORLD_SYSTEM_PLAN.md), gates T0–T9. This document covers the later agent access work, not the current first build gate.  
 **Machine task ledger:** [`AGENTIC_EDITOR_ACCESS_TASKS.json`](AGENTIC_EDITOR_ACCESS_TASKS.json).
 
+**2026-11-01 owner priority update:** finish a small reusable service over proven existing editor operations first, then continue G0–G12. [Implemented service and evidence](EDITOR_AGENT_SERVICE.md) covers native mission and Castle adapters, shared human/agent transactions/history, save/reopen, genuine captures, structured tests and local headless protocol. No authenticated network/MCP adapter is claimed. Terrain-specific controls still require their human/runtime gates; the broader milestone acceptance below remains open.
+
 ## 1. User outcome and scope
 
 An authorized agent must eventually be able to carry out: **"Open Castle Beckenburg; inspect the second floor; find and fix misplaced geometry; furnish the room; check collisions; playtest; show me an actual rendered result."** It must perform operations on the *same* editor/game scene that human tools use, not manufacture a second approximation or merely commit scene-looking code.

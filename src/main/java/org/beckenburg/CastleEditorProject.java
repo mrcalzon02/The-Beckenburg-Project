@@ -11,6 +11,7 @@ import java.util.List;
 public final class CastleEditorProject implements EditorProject<CastleLevelEdits.Snapshot> {
     private final CastleLevelEdits castle;
     public CastleEditorProject(CastleLevelEdits castle){this.castle=java.util.Objects.requireNonNull(castle);}
+    CastleLevelEdits scene(){return castle;}
     public String id(){return "beckenburg/castle";}
     public String title(){return "Castle Beckenburg";}
     public Path documentPath(){return castle.path();}

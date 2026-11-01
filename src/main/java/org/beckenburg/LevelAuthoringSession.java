@@ -26,6 +26,7 @@ public final class LevelAuthoringSession implements EditorProject<List<Prop>> {
     private final HouseMap.Site site;
     private final LevelDefinition source;
     private final ArrayList<Prop> props = new ArrayList<>();
+    private long revision=1;
 
     public LevelAuthoringSession(HouseMap.Site site) throws IOException {
         this.site=Objects.requireNonNull(site);
@@ -49,14 +50,21 @@ public final class LevelAuthoringSession implements EditorProject<List<Prop>> {
     public synchronized int size(){return props.size();}
     public synchronized Prop prop(int index){return props.get(index);}
     public synchronized void put(int index,Prop prop){
-        checkProp(prop);props.set(index,prop);
+        checkProp(prop);props.set(index,prop);revision++;
     }
     public synchronized void add(Prop prop){
         checkProp(prop);
         if(props.size()>=4096)throw new IllegalStateException("Level object limit");
-        props.add(prop);
+        props.add(prop);revision++;
     }
-    public synchronized void remove(int index){props.remove(index);}
+    public synchronized void remove(int index){props.remove(index);revision++;}
+    public synchronized long revision(){return revision;}
+    public synchronized void validate(){for(Prop prop:props)checkProp(prop);}
+    public synchronized void reopen()throws IOException{
+        var loaded=loadProps(site,source);
+        for(Prop prop:loaded)checkProp(prop);
+        props.clear();props.addAll(loaded);revision++;
+    }
     private void checkProp(Prop p){
         Objects.requireNonNull(p);
         if(p.room()<0||p.room()>=source.rooms().size()
@@ -67,13 +75,14 @@ public final class LevelAuthoringSession implements EditorProject<List<Prop>> {
             throw new IllegalArgumentException("Invalid mission prop");
     }
     public synchronized void resetToSource(){
-        props.clear();props.addAll(source.props());
+        props.clear();props.addAll(source.props());revision++;
     }
     public LevelDefinition sourceLevel(){return source;}
     public synchronized List<Prop> snapshot(){return List.copyOf(props);}
     public synchronized void restore(List<Prop> snapshot){
         Objects.requireNonNull(snapshot);
-        props.clear();props.addAll(snapshot);
+        for(Prop prop:snapshot)checkProp(prop);
+        props.clear();props.addAll(snapshot);revision++;
     }
     public synchronized LevelDefinition level(){
         return compose(source,props);

@@ -1893,6 +1893,17 @@
       "action": "Mark saved rebuild terrain-world files -text in .gitattributes so byte fingerprints survive checkout; add an actual Git-filter verifier for true/false/input modes and include concrete inspector errors in terrain failures. Do not weaken hash or tamper checks.",
       "evidence": "Git-filter verifier proves all five saved world files match committed bytes across Windows/Unix/input checkout configurations. Packaged House pilot passes again, including 61,328 swept positions and real editor-hole positive/negative controls. Existing source and native physics hashes remain unchanged. Exact new-source Windows CI remains pending.",
       "older_maps": "Preserve exact authoring source and published geometry bytes for every future saved terrain world; line-ending portability is not permission to bypass source staleness or tamper checks."
+    },
+    {
+      "id": "DEV-178",
+      "title": "Editor agent CLI recursively encodes Path as Iterable",
+      "status": "fixed-scoped; local Java 17 native and public-process tests pass",
+      "affected": "New EditorAgentCli inspect/capture/save JSON output",
+      "symptom": "Initial native service acceptance raised StackOverflowError while encoding an inspection document path.",
+      "cause": "java.nio.file.Path implements Iterable<Path>; the output encoder treated path components as nested lists before string conversion.",
+      "action": "Encode Path as a string before the iterable branch. Keep public CLI process coverage for inspect, edit/save, capture, native parity and reopen.",
+      "evidence": "EditorAgentServiceTest, EditorAgentGuiTest and tools/verify_editor_agent_cli.py pass locally on Java 17; real House/Castle PNGs generated and inspected. Exact-source CI pending publication.",
+      "older_maps": "Protocol correction applies to every supported host; no map geometry changed or broader map fitness asserted."
     }
   ],
   "audit_categories": [

@@ -28,6 +28,7 @@ public final class EditorHistory<S> {
         redo.clear();
     }
     public boolean canUndo(){return !undo.isEmpty();}
+    public boolean isFor(EditorProject<?> candidate){return project==candidate;}
     public boolean canRedo(){return !redo.isEmpty();}
     public boolean undo(){
         if(undo.isEmpty())return false;

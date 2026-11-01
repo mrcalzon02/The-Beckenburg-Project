@@ -2418,6 +2418,20 @@ Evidence and verification: Git-filter verifier proves all five saved world files
 
 Older-map obligation: Preserve exact authoring source and published geometry bytes for every future saved terrain world; line-ending portability is not permission to bypass source staleness or tamper checks.
 
+### DEV-178 — Editor agent CLI recursively encodes Path as Iterable
+
+**Status:** fixed-scoped; local Java 17 native and public-process tests pass · **Affected:** New EditorAgentCli inspect/capture/save JSON output
+
+Initial native service acceptance raised StackOverflowError while encoding an inspection document path.
+
+Cause / uncertainty: java.nio.file.Path implements Iterable<Path>; the output encoder treated path components as nested lists before string conversion.
+
+Fix / next action: Encode Path as a string before the iterable branch. Keep public CLI process coverage for inspect, edit/save, capture, native parity and reopen.
+
+Evidence and verification: EditorAgentServiceTest, EditorAgentGuiTest and tools/verify_editor_agent_cli.py pass locally on Java 17; real House/Castle PNGs generated and inspected. Exact-source CI pending publication.
+
+Older-map obligation: Protocol correction applies to every supported host; no map geometry changed or broader map fitness asserted.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

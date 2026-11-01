@@ -343,6 +343,12 @@ public final class CastleLevelEdits {
     private static int integer(Properties p,String name){
         return Integer.parseInt(Objects.requireNonNull(p.getProperty(name),name));
     }
+    /** Reload into this same runtime object, restoring all live state on failure. */
+    public synchronized void reopen()throws IOException{
+        Snapshot before=snapshot();
+        try{load();revision++;}
+        catch(IOException|RuntimeException failure){restore(before);throw failure;}
+    }
     private void load()throws IOException{
         Properties p=new Properties();
         try(InputStream in=Files.newInputStream(path)){p.load(in);}

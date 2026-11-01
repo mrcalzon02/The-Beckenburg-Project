@@ -40,6 +40,27 @@ public final class EditorCorePortabilityTest {
             history.execute(()->project.state=9);
             check(history.undo()&&project.state==8,"Generic undo");
             check(history.redo()&&project.state==9,"Generic redo");
+            var service=new EditorAgentService<>(new EditorAgentService.Host<Integer>(){
+                public EditorProject<Integer> project(){return project;}
+                public long revision(){return project.state;}
+                public void checkAccess(){}
+                public java.util.Set<EditorAgentService.Capability> capabilities(){
+                    return java.util.EnumSet.complementOf(java.util.EnumSet.of(EditorAgentService.Capability.CAPTURE));
+                }
+                public List<String> operations(){return List.of("increment");}
+                public void apply(String operation,java.util.Map<String,String> arguments){project.state++;}
+                public void validate(){if(project.state<0)throw new IllegalArgumentException("Negative state");}
+                public void reopen()throws IOException{project.state=Integer.parseInt(Files.readString(project.documentPath()));}
+                public EditorAgentService.Capture capture(Path destination){throw new UnsupportedOperationException("No renderer");}
+                public List<String> tests(){return List.of("positive");}
+                public List<EditorAgentService.Check> test(String id){return List.of(new EditorAgentService.Check("POSITIVE",project.state>0,"Project state"));}
+            },history);
+            service.transact(9,"increment",java.util.Map.of());
+            check(project.state==10&&service.inspect().state()==10,"Portable service edits host-owned data");
+            service.undo(10);check(project.state==9,"Agent and human share portable history");
+            boolean unavailable=false;
+            try{service.capture(9,folder.resolve("fake.png"));}catch(UnsupportedOperationException expected){unavailable=true;}
+            check(unavailable&&!Files.exists(folder.resolve("fake.png")),"Host without renderer cannot fabricate capture");
             boolean failed=false;
             try{history.execute(()->{project.state=999;throw new IllegalStateException("bad");});}
             catch(IllegalStateException expected){failed=true;}
