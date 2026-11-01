@@ -353,11 +353,27 @@ public final class TerrainLayerStack {
         frozen.set(i,value);dirty=true;
     }
     private void writeMaterial(int i,byte value){
+        writeMaterial(i,value,true);
+    }
+    private void writeMaterial(int i,byte value,boolean authored){
         // Explicitly painting GRASS is meaningful over a gravel/road corridor.
-        if(material[i]==value&&materialPainted.get(i))return;
+        if(material[i]==value&&materialPainted.get(i)==authored)return;
         pendingMaterials.putIfAbsent(i,material[i]);
         pendingPainted.putIfAbsent(i,materialPainted.get(i));
-        material[i]=value;materialPainted.set(i);dirty=true;
+        material[i]=value;materialPainted.set(i,authored);dirty=true;
+    }
+    /** Erase only authored material priority, revealing any procedural route. */
+    public void eraseMaterialOverride(double cx,double cz,double radius){
+        if(!Double.isFinite(cx)||!Double.isFinite(cz)
+            ||!Double.isFinite(radius)||radius<=0||radius>n)
+            throw new IllegalArgumentException("Invalid material erase brush");
+        int x0=Math.max(1,(int)Math.floor(cx-radius)),
+            x1=Math.min(n-1,(int)Math.ceil(cx+radius));
+        int z0=Math.max(1,(int)Math.floor(cz-radius)),
+            z1=Math.min(n-1,(int)Math.ceil(cz+radius));
+        for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++)
+            if(editable(x,z)&&Math.hypot(x-cx,z-cz)<=radius)
+                writeMaterial(id(x,z),(byte)Material.GRASS.ordinal(),false);
     }
     public void freezeRect(int x0,int z0,int x1,int z1,boolean freeze){
         finishStroke();
