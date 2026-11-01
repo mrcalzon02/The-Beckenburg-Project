@@ -17,6 +17,8 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.LinkedHashMap;
+import java.util.regex.Pattern;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -65,6 +67,7 @@ public final class StitchedWorldEditor extends JPanel {
         addButton(commands,"GENERATE TILE",()->generate(false));
         addButton(commands,"GENERATE 3x3",()->generate(true));
         addButton(commands,"IMPORT PNG",this::importTile);
+        addButton(commands,"IMPORT STITCHED PNG BATCH",this::importBatch);
         addButton(commands,"EXPORT PNG",this::exportTile);
         addButton(commands,"VERIFY SEAMS",this::verify);
         addButton(commands,"ADAPTIVE TOPOLOGY",this::adaptiveTopology);
@@ -147,6 +150,49 @@ public final class StitchedWorldEditor extends JPanel {
             world.importTile(x(),z(),picker.getSelectedFile().toPath(),false);
             refresh();
         }catch(IOException|RuntimeException failure){error("16-bit PNG import rejected",failure);}
+    }
+    private static final Pattern BATCH_NAME=
+        Pattern.compile("tile_(-?[0-9]+)_(-?[0-9]+)\\.png");
+    private void importBatch(){
+        if(!ready())return;
+        JFileChooser picker=new JFileChooser();
+        picker.setDialogTitle("Choose 1..9 tile_X_Z.png source files for seam-validated batch");
+        picker.setMultiSelectionEnabled(true);
+        if(picker.showOpenDialog(frame)!=JFileChooser.APPROVE_OPTION)return;
+        java.io.File[] files=picker.getSelectedFiles();
+        if(files.length<1||files.length>9){
+            error("Invalid stitched batch",new IllegalArgumentException(
+                "Select between one and nine properly named 16-bit tiles"));
+            return;
+        }
+        Map<StitchedHeightmapWorld.Tile,Path> input=new LinkedHashMap<>();
+        try{
+            int existing=0;
+            for(var file:files){
+                var match=BATCH_NAME.matcher(file.getName());
+                if(!match.matches())
+                    throw new IllegalArgumentException(
+                        "Files must be named tile_X_Z.png: "+file.getName());
+                int ix=Integer.parseInt(match.group(1)),iz=Integer.parseInt(match.group(2));
+                var coordinate=new StitchedHeightmapWorld.Tile(ix,iz);
+                if(input.putIfAbsent(coordinate,file.toPath())!=null)
+                    throw new IllegalArgumentException("Duplicate tile coordinate "+coordinate);
+                // Also validates supported tile index range.
+                if(world.hasTile(ix,iz))existing++;
+            }
+            String message="Import "+input.size()+" 16-bit heightmap tiles together? "+
+                "All seams will be validated before source replacement. "+
+                existing+" existing tile(s) will be replaced. "+
+                "A rollback journal protects interrupted batch writes.";
+            if(JOptionPane.showConfirmDialog(frame,message,"Confirm source tile batch",
+                JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE)!=JOptionPane.YES_OPTION)
+                return;
+            world.importTilesBatch(input,true);
+            refresh();
+            status.setText("Committed "+input.size()+" source tile(s), with verified shared seams");
+        }catch(IOException|RuntimeException problem){
+            error("Stitched batch import rejected; source not accepted",problem);
+        }
     }
     private void exportTile(){
         if(!ready())return;
