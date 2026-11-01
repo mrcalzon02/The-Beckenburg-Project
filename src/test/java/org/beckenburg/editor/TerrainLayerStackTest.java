@@ -64,11 +64,12 @@ public final class TerrainLayerStackTest {
             check(c.material(16,16)<TerrainLayerStack.Material.values().length,"Material readback");
             check(world.verifySeams().isEmpty(),"Editor operations cannot alter source seams");
             c.bake();
-            check(!Files.exists(c.path()),"Baked layer file is cleared");
+            check(Files.exists(c.path()),"Baked layer file preserves authored material and mask metadata");
             check(world.verifySeams().isEmpty(),"Baked source retained stitched neighbors");
             check(world.sample(0,0,32,17)==seamBefore,"Baked neighbor border unchanged");
             var fresh=new TerrainLayerStack(world,0,0);
             near(fresh.height(16,16),c.height(16,16),"Baked elevations read back");
+            check(fresh.material(16,16)==c.material(16,16),"Baked surface material retained");
             System.out.println("PASS portable layer stack, noise, sparse undo, masks, grading, erosion, stamps, persistence and safe bake");
         }finally{
             try(var walk=Files.walk(root)){for(Path p:walk.sorted(java.util.Comparator.reverseOrder()).toList())
