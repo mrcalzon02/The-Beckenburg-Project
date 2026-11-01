@@ -27,13 +27,14 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 | Background operations | SwingWorker for heavy generation, erosion, save, bake | Full GPU/physics pipeline not wired |
 | Safe explicit source bake | Checks 16-bit range and source checksum; tile border frozen; 16-bit PNG import with seam validation | No multi-tile seamless atomic commit |
 | Durable document | Versioned atomic binary layer and spline file writes | Source PNG remains authoritative until deliberate bake |
+| Dependency dirty regions | `TerrainLayerStack.EditEvent`: per-transaction bounds, affected domains, revisions and explicit listeners; no per-dab callbacks | Consumers must subscribe and schedule actual foliage/nav/physics rebuilds; no runtime adapter yet |
 | Source/runtime separation | Editor package standalone JAR and separate functional CI | Game renderer and physics integration still incomplete |
 
 Implementation entry point: `StitchedWorldEditor` > **LAYERED TERRAIN TOOLS**.
 Standalone build: `tools/build-editor-kit.sh` or `tools/build-editor-kit.cmd`.
 Tests: `TerrainLayerStackTest`, `TerrainInfrastructureSplinesTest`,
 `TerrainBrushProfileTest`, `TerrainBrushPresetsTest`,
-`TerrainErosionRegionTest`, `TerrainMixedHistoryTest`,\n`TerrainTopologyFieldsTest`;
+`TerrainErosionRegionTest`, `TerrainMixedHistoryTest`,\n`TerrainTopologyFieldsTest`, `TerrainEditEventTest`;
 workflow: `.github/workflows/standalone-editor-kit.yml`.
 
 ## Mandatory preservation rules
@@ -66,8 +67,7 @@ workflow: `.github/workflows/standalone-editor-kit.yml`.
   checkpoints, deterministic seeds, protected gameplay zones and conservative transfer.
 - Add actual hydraulic particle velocity, sediment depth and wetness outputs to the existing versioned topology cache (which currently stores only height-derived D8 drainage and moisture estimates); preserve explicit input-fingerprint invalidation.
 - Implement wind shadow ray marching and angle-of-repose brush constraints.
-- Tie vegetation, water drainage, terrain materials, collision and navigation to dirty
-  region notifications. Recompute expensive physics on stroke completion, not per sample.
+- Wire actual foliage, water, terrain materials, collision and navigation rebuild adapters to the portable dirty-region event contract; notifications are implemented, but consumers and physics rebuild throttling are still pending.
 - Add background bake progress, cancel and crash-recovery journaling for multi-tile patches.
 
 ### Infrastructure / train module
