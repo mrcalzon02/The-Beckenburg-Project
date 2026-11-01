@@ -172,6 +172,9 @@ public final class TerrainInfrastructureSplines {
     /** Existing paths are independent; applying one is explicit and editable. */
     public void apply(TerrainLayerStack editor,Alignment spline){
         Objects.requireNonNull(editor);Objects.requireNonNull(spline);
+        if(spline.managed())
+            throw new IllegalArgumentException("Managed infrastructure is a reversible "+
+                "procedural layer. Use refreshManagedRoutes, not direct painting.");
         var points=evaluate(spline,editor.metresPerCell());
         var local=new ArrayList<TerrainLayerStack.Point>();
         for(var p:points)local.add(new TerrainLayerStack.Point(
