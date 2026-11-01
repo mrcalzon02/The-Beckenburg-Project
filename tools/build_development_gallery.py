@@ -22,6 +22,7 @@ for path in sorted(set(paths)):
     elif '/performance/hardware/' in path:kind='Runtime GPU diagnostic'
     elif '/fixture-join-diagnostic/' in path:kind='Runtime lighting diagnostic'
     elif '/rebuild/previews/rejected-' in path:kind='Rejected native study'
+    elif '/rebuild/previews/' in path and 'rough-plan' in p.stem:kind='Planning diagram'
     elif '/rebuild/previews/' in path and p.stem.endswith('cutaway'):kind='Native inspection cutaway'
     elif '/rebuild/captures/house-graybox/' in path:kind='Runtime graybox capture'
     elif '/rebuild/captures/baseline/' in path:kind='Runtime baseline capture'

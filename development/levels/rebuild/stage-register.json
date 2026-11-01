@@ -1147,11 +1147,19 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "tools/build_map_rebuild_roughs.py",
+            "development/levels/rebuild/school/rough-layout.json",
+            "development/levels/rebuild/school/rough-plan.svg",
+            "development/levels/rebuild/school/rough-sections.svg",
+            "development/levels/rebuild/school/rough-asset-bounds.json",
+            "development/levels/rebuild/school/rough-decisions.md",
+            "development/levels/rebuild/previews/school-revised-rough-plan.png"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Resolve secondary upper exit, detailed privacy/fixture/PE storage and structural decisions in the rough batch; then build actual collision/render geometry and saved editor terrain opening. No School runtime rebuild accepted."
         },
         "S03": {
           "status": "NOT_AUDITED",

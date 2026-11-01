@@ -29,7 +29,7 @@ def render_svg(data):
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height:.0f}" viewBox="0 0 {width} {height:.0f}">',
            '<style>text{font-family:Arial,sans-serif;fill:#1c2a37}.small{font-size:12px}.label{font-size:13px;font-weight:bold}.title{font-size:26px;font-weight:bold}</style>',
            f'<rect width="100%" height="100%" fill="#f5f4ef"/><text x="32" y="38" class="title">{esc(data["title"])}</text>',
-           f'<text x="32" y="65" font-size="15">{esc(data["id"])} · ROUGH LAYOUT v1 · metres · planning only</text>',
+           f'<text x="32" y="65" font-size="15">{esc(data["id"])} · ROUGH LAYOUT v{data.get("version",1)} · metres · planning only</text>',
            '<text x="32" y="90" class="small">Cyan: route reservation · amber dashed: elevation change · B/C/A: ritual clear areas · numbered spaces: key below</text>']
     for fi, y in enumerate(ys):
         top = 120+fi*panel_h

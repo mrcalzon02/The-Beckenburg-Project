@@ -80,3 +80,10 @@ pavilion zone, six posts on 12m bearing lines, 120mm vertically deep closed roof
 These are fictional authoring dimensions, not certified structural engineering.
 Independent validation uses actual mesh contact, ray intersections, face normals,
 manifold edges, floor coverage and conservative planning-route clearances.
+
+
+## 1 November 2026 — School rough and Prison function review
+
+Reopened [LOC/NPS HABS NY-6298 Public School No. 4 descriptive report](https://tile.loc.gov/storage-services/master/pnp/habshaer/ny/ny1500/ny1598/data/ny1598data.pdf), especially PDF page 3 text on distinct corridors, sanitary and nurse facilities and gym/assembly additions. Applied inference: preserve specialized rooms and separate ordinary public, private and service routes. The revised School dimensions are original game proposals based on source furniture bounds; this is not measured historical drawing inspection or regulatory guidance.
+
+Reopened [NPS Alcatraz Cellhouse](https://www.nps.gov/places/000/alcatraz-cellhouse.htm): text distinguishes cellblocks and hospital functions. Applied inference for the next Prison rough: construct individual cells, galleries and controlled thresholds, with examination/recovery/medical storage separate from ordinary custody circulation. No exact cell dimensions or historical capacity are taken from that page.

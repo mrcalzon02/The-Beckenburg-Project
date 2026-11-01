@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2239,
+  "count": 2240,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -20664,6 +20664,16 @@
       "height": 800,
       "bytes": 1162455,
       "sha256": "2540cd7443e4adc66511980fc45380c108dc731d739f9b45ee90b100a875577a"
+    },
+    {
+      "path": "development/levels/rebuild/previews/school-revised-rough-plan.png",
+      "url": "development/levels/rebuild/previews/school-revised-rough-plan.png",
+      "title": "School revised rough plan",
+      "kind": "Planning diagram",
+      "width": 1500,
+      "height": 1018,
+      "bytes": 92497,
+      "sha256": "e3467192c3f1b8436ad57e9cd69ccf39085015f0182fb0ebce1d7cebe406da54"
     },
     {
       "path": "development/levels/rebuild/previews/source-blockouts-native-fitout.png",
