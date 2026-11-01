@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Consumer;
 import java.util.zip.CRC32;
 import javax.imageio.ImageIO;
 
@@ -41,6 +43,15 @@ public final class TerrainLayerStack {
         }
     }
     public record LayerInfo(String name,boolean enabled,double opacity) {}
+    public enum EditDomain { HEIGHT, MATERIAL, PROTECTION, LAYER_CONFIGURATION }
+    /**
+     * Local sample-space inclusive bounds, delivered only when an edit
+     * transaction completes. A host can convert them to world coordinates.
+     */
+    public record EditEvent(long revision,int x0,int z0,int x1,int z1,
+                            Set<EditDomain> domains) {
+        public EditEvent { domains=Set.copyOf(domains); }
+    }
     private static final class Layer {
         String name; boolean enabled=true; float opacity=1;
         final float[] delta;
@@ -96,6 +107,32 @@ public final class TerrainLayerStack {
     private final TreeMap<Integer,Boolean> pendingFrozen=new TreeMap<>();
     private int active;
     private boolean dirty;
+    private long editRevision;
+    private final CopyOnWriteArrayList<Consumer<EditEvent>> listeners=
+        new CopyOnWriteArrayList<>();
+    public void addChangeListener(Consumer<EditEvent> listener){
+        listeners.add(Objects.requireNonNull(listener));
+    }
+    public void removeChangeListener(Consumer<EditEvent> listener){
+        listeners.remove(listener);
+    }
+    public long editRevision(){return editRevision;}
+    /** Listeners run on the editing caller's thread, never inside a per-vertex loop. */
+    private void changed(int x0,int z0,int x1,int z1,Set<EditDomain> domains){
+        if(domains.isEmpty())return;
+        EditEvent event=new EditEvent(++editRevision,x0,z0,x1,z1,domains);
+        for(var listener:listeners)listener.accept(event);
+    }
+    private static EnumSet<EditDomain> changeDomains(Change change){
+        EnumSet<EditDomain> result=EnumSet.noneOf(EditDomain.class);
+        if(change instanceof HeightChange)result.add(EditDomain.HEIGHT);
+        else if(change instanceof MaterialChange)result.add(EditDomain.MATERIAL);
+        else if(change instanceof FreezeChange)result.add(EditDomain.PROTECTION);
+        else if(change instanceof LayerConfigChange)result.add(EditDomain.LAYER_CONFIGURATION);
+        else if(change instanceof CompoundChange group)
+            for(Change item:group.changes())result.addAll(changeDomains(item));
+        return result;
+    }
 
     public TerrainLayerStack(StitchedHeightmapWorld world,int tx,int tz)throws IOException{
         this.world=Objects.requireNonNull(world);
@@ -138,7 +175,9 @@ public final class TerrainLayerStack {
         finishStroke();
         if(layers.size()>=MAX_LAYERS)throw new IllegalStateException("Maximum 12 terrain layers");
         if(name==null||name.isBlank()||name.length()>64)throw new IllegalArgumentException("Layer name");
-        layers.add(new Layer(name,pixels));active=layers.size()-1;dirty=true;return active;
+        layers.add(new Layer(name,pixels));active=layers.size()-1;dirty=true;
+        changed(0,0,n,n,EnumSet.of(EditDomain.LAYER_CONFIGURATION));
+        return active;
     }
     public void configureLayer(int i,boolean enabled,double opacity){
         finishStroke();
@@ -149,6 +188,7 @@ public final class TerrainLayerStack {
         if(l.enabled==enabled&&l.opacity==desired)return;
         Change change=new LayerConfigChange(l,l.enabled,l.opacity,enabled,desired);
         change.apply(true);undo.push(change);redo.clear();dirty=true;
+        changed(0,0,n,n,EnumSet.of(EditDomain.LAYER_CONFIGURATION));
     }
     private double sourceMetres(int i){return min+(max-min)*source[i]/65535.0;}
     private double composed(int i){
@@ -263,17 +303,43 @@ public final class TerrainLayerStack {
             edits.add(new FreezeChange(frozen,ids,a,b));
         }
         undo.push(edits.size()==1?edits.get(0):new CompoundChange(List.copyOf(edits)));
-        redo.clear();pending.clear();pendingMaterials.clear();pendingFrozen.clear();
+        redo.clear();
+        int minX=n,minZ=n,maxX=0,maxZ=0;
+        EnumSet<EditDomain> domains=EnumSet.noneOf(EditDomain.class);
+        if(!pending.isEmpty())domains.add(EditDomain.HEIGHT);
+        if(!pendingMaterials.isEmpty())domains.add(EditDomain.MATERIAL);
+        if(!pendingFrozen.isEmpty())domains.add(EditDomain.PROTECTION);
+        for(int index:pending.keySet()){
+            int x=index%side,z=index/side;
+            minX=Math.min(minX,x);minZ=Math.min(minZ,z);
+            maxX=Math.max(maxX,x);maxZ=Math.max(maxZ,z);
+        }
+        for(int index:pendingMaterials.keySet()){
+            int x=index%side,z=index/side;
+            minX=Math.min(minX,x);minZ=Math.min(minZ,z);
+            maxX=Math.max(maxX,x);maxZ=Math.max(maxZ,z);
+        }
+        for(int index:pendingFrozen.keySet()){
+            int x=index%side,z=index/side;
+            minX=Math.min(minX,x);minZ=Math.min(minZ,z);
+            maxX=Math.max(maxX,x);maxZ=Math.max(maxZ,z);
+        }
+        pending.clear();pendingMaterials.clear();pendingFrozen.clear();
+        changed(minX,minZ,maxX,maxZ,domains);
     }
     public boolean undo(){
         finishStroke();if(undo.isEmpty())return false;
         Change c=undo.pop();c.apply(false);
-        redo.push(c);dirty=true;return true;
+        redo.push(c);dirty=true;
+        changed(0,0,n,n,changeDomains(c));
+        return true;
     }
     public boolean redo(){
         finishStroke();if(redo.isEmpty())return false;
         Change c=redo.pop();c.apply(true);
-        undo.push(c);dirty=true;return true;
+        undo.push(c);dirty=true;
+        changed(0,0,n,n,changeDomains(c));
+        return true;
     }
     private static double falloff(double d,double r,double inner,int curve){
         if(d>=r)return 0;
@@ -694,5 +760,6 @@ public final class TerrainLayerStack {
         // Preserve material IDs, frozen geometry and layer configuration. Only
         // height deltas are rebased against the new authoritative PNG.
         save();
+        changed(0,0,n,n,EnumSet.of(EditDomain.HEIGHT,EditDomain.LAYER_CONFIGURATION));
     }
 }
