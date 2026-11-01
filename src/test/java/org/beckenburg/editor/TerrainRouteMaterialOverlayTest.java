@@ -63,10 +63,20 @@ public final class TerrainRouteMaterialOverlayTest {
                 "V3 material provenance survives save and reopen");
             check(reloaded.surfaceMaterial(16,10)==dirt,
                 "Unpainted vertices remain procedural after reopen");
+            var physical=new LayeredTerrainQueries(world,
+                AdaptiveTerrainTopology.open(world),List.of(),List.of());
+            check(physical.groundMaterial(32,20)==dirt,
+                "Physics material queries see procedural road DIRT at world coordinates");
+            check(physical.groundMaterial(30,20)==grass,
+                "Physics material queries see explicit GRASS paint priority");
 
             var revised=TerrainInfrastructureSplines.open(world);
             revised.put(road(23));revised.save();
             reloaded.refreshManagedRoutes(revised.list());
+            physical.refreshAuthoredTerrain();
+            check(physical.groundMaterial(32,20)==grass &&
+                physical.groundMaterial(32,46)==dirt,
+                "Persistent physical query refresh follows relocated corridor");
             check(reloaded.surfaceMaterial(16,10)==grass,
                 "Moving road restores original material along previous corridor");
             check(reloaded.surfaceMaterial(16,23)==dirt,
