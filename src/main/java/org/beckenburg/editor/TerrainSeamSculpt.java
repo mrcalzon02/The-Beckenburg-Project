@@ -35,6 +35,12 @@ public final class TerrainSeamSculpt {
     public TerrainSeamSculpt(StitchedHeightmapWorld world,int x,int z)throws IOException{
         this.world=Objects.requireNonNull(world);this.centerX=x;this.centerZ=z;
         this.n=world.settings().tileCells();
+        if(((long)x-1)*n<Integer.MIN_VALUE||
+            ((long)x+2)*n>Integer.MAX_VALUE||
+            ((long)z-1)*n<Integer.MIN_VALUE||
+            ((long)z+2)*n>Integer.MAX_VALUE)
+            throw new IllegalArgumentException(
+                "Selected seam window exceeds 32-bit global grid coordinates");
         this.path=world.directory().resolve("terrain-seam-sessions")
             .resolve("center_"+x+"_"+z+".bin");
         for(int dz=-1;dz<=1;dz++)for(int dx=-1;dx<=1;dx++){
@@ -108,6 +114,9 @@ public final class TerrainSeamSculpt {
             throw new IllegalArgumentException("Invalid shared-seam brush");
         int x0=(int)Math.floor(gx-radius),x1=(int)Math.ceil(gx+radius);
         int z0=(int)Math.floor(gz-radius),z1=(int)Math.ceil(gz+radius);
+        // Validate every touched sample before making any mutation.
+        TreeMap<Long,Double> nextValues=new TreeMap<>();
+        TreeMap<Long,Double> previousValues=new TreeMap<>();
         for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++){
             double d=Math.hypot(x-gx,z-gz);
             if(d>=radius||!editable(x,z))continue;
@@ -117,12 +126,19 @@ public final class TerrainSeamSculpt {
             double min=world.settings().minElevation(),max=world.settings().maxElevation();
             if(next<min||next>max)throw new IOException(
                 "Seam brush would exceed 16-bit terrain height range");
-            pending.putIfAbsent(k,override.getOrDefault(k,base(x,z)));
-            if(override.size()>=MAX_EDITS&&!override.containsKey(k))
-                throw new IOException("Maximum seam session vertex budget exceeded");
-            override.put(k,next);
-            dirty=true;
+            nextValues.put(k,next);
+            previousValues.put(k,previous);
         }
+        int newKeys=0;
+        for(long k:nextValues.keySet())if(!override.containsKey(k))newKeys++;
+        if(override.size()+newKeys>MAX_EDITS)
+            throw new IOException("Maximum seam session vertex budget exceeded");
+        for(var entry:nextValues.entrySet()){
+            long k=entry.getKey();
+            pending.putIfAbsent(k,previousValues.get(k));
+            override.put(k,entry.getValue());
+        }
+        if(!nextValues.isEmpty())dirty=true;
     }
     public void finishStroke(){
         if(pending.isEmpty())return;
@@ -139,7 +155,10 @@ public final class TerrainSeamSculpt {
             double v=forward?d.after():d.before();
             if(!editable(d.vertex.x(),d.vertex.z()))
                 throw new IOException("Source ownership changed during undo");
-            override.put(k,v);
+            var point=d.vertex();
+            double baseline=base(point.x(),point.z());
+            if(Math.abs(v-baseline)<1e-9)override.remove(k);
+            else override.put(k,v);
         }
         dirty=true;
     }
