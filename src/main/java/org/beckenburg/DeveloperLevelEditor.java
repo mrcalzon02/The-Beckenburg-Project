@@ -472,10 +472,17 @@ public final class DeveloperLevelEditor extends JPanel {
         commands.add(waterModules);
 
         JButton terrainZones=button("TERRAIN / ZONES");
-        terrainZones.setToolTipText("Manual terrain height-offset brushes and loading-zone authoring; machine interface later");
+        terrainZones.setToolTipText("Edit level terrain and loading zones. USER maps open their own stitched 16-bit terrain worlds, never shared world sources.");
         terrainZones.addActionListener(e->{
             if(missionSite==HouseMap.Site.USER){
-                status.setText("Custom map terrain requires its own level-scoped document adapter");return;
+                String levelId=UserLevelLibrary.activeId();
+                if(levelId==null){
+                    status.setText("Select an authored USER level before editing its terrain");return;
+                }
+                var root=UserLevelLibrary.folder(levelId).resolve("terrain-worlds");
+                org.beckenburg.editor.StitchedWorldEditor.open(window,root);
+                status.setText("USER terrain worlds are level scoped: "+root);
+                return;
             }
             org.beckenburg.editor.TerrainZoneEditor.open(window,
                 missionSite==null?"castle":missionSite.name().toLowerCase(Locale.ROOT),
