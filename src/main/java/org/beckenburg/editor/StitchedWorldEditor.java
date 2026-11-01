@@ -69,12 +69,13 @@ public final class StitchedWorldEditor extends JPanel {
         addButton(commands,"VERIFY SEAMS",this::verify);
         addButton(commands,"ADAPTIVE TOPOLOGY",this::adaptiveTopology);
         addButton(commands,"TERRAIN SCENE PACKAGE",this::scenePackage);
+        addButton(commands,"LAYERED TERRAIN TOOLS",this::layeredTerrain);
         add(commands,BorderLayout.NORTH);
         preview.setPreferredSize(new Dimension(520,500));
         preview.setBackground(new Color(25,30,35));
         add(preview,BorderLayout.CENTER);
         JLabel hint=new JLabel("2D 16-bit source heights only. Click an adjacent tile to recenter. "+
-            "PNG writes save immediately; sculpt/undo and runtime rendering are not connected yet.");
+            "Source PNG generation/import saves immediately; layered sculpt and history use a separate workbench.");
         JPanel footer=new JPanel(new GridLayout(2,1,2,2));
         footer.add(hint);footer.add(status);
         add(footer,BorderLayout.SOUTH);
@@ -174,6 +175,13 @@ public final class StitchedWorldEditor extends JPanel {
         try{TerrainScenePackageEditor.open(frame,world,x(),z());}
         catch(IOException|RuntimeException failure){
             error("Cannot open terrain scene package editor",failure);
+        }
+    }
+    private void layeredTerrain(){
+        if(!ready())return;
+        try{TerrainLayerWorkbench.open(frame,world,x(),z());}
+        catch(IOException|RuntimeException failure){
+            error("Cannot open layered terrain workbench",failure);
         }
     }
     private void verify(){
