@@ -35,6 +35,10 @@ never by adding dependencies to `org.beckenburg.editor`.
 - `TerrainInfrastructureSplines`: road/rail/river width, shoulder and grade
   metadata for corridor material and exclusion overrides.
 - `TerrainRailMesh`: portable genuine ballast, sleepers and left/right rail\n  geometry exported through the shared terrain mesh writer; optional host\n  adapter still needed for live rendering/collision.\n- `StitchedHeightmapWorld.importTilesBatch`: seam-aware, rollback-journaled\n  source PNG replacement across up to nine tiles, with recovery on reopen.
+- `TerrainSeamSculpt` and `TerrainSeamSculptEditor`: global-vertex
+  non-destructive seam editing, sparse undo, session save/reopen, source
+  fingerprint checks, discard, and guarded explicit batch bake. A future
+  transaction must integrate these sessions with v2 per-tile sculpt masks.
 
 ## First implementation tranche, after finishing Terrain editor requirements
 
