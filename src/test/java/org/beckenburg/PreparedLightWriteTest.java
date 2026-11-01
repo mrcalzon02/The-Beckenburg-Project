@@ -1,6 +1,7 @@
 package org.beckenburg;
 
 import java.util.*;
+import java.nio.file.*;
 
 /** Direct GPU vertex RGB writes must preserve the original sampled float bits. */
 public final class PreparedLightWriteTest {
@@ -57,6 +58,24 @@ public final class PreparedLightWriteTest {
         return result;
     }
     public static void main(String[] args)throws Exception{
+        // USER maps are authored, not bundled. Exercise the real saved scene
+        // in a temporary home rather than requiring or changing player files.
+        String previousHome=System.getProperty("user.home");
+        Path temporaryHome=Files.createTempDirectory("beckenburg-preparedlightwritetest-");
+        try{
+            System.setProperty("user.home",temporaryHome.toString());
+            UserLevelLibrary.create("gpuAcceptance",HouseMap.Site.HOUSE);
+            runAcceptance();
+        }finally{
+            if(previousHome==null)System.clearProperty("user.home");
+            else System.setProperty("user.home",previousHome);
+            try(var paths=Files.walk(temporaryHome)){
+                for(var p:paths.sorted(Comparator.reverseOrder()).toList())
+                    Files.deleteIfExists(p);
+            }
+        }
+    }
+    private static void runAcceptance()throws Exception{
         var castle=new CastleHubMap();var light=new FixtureLighting(castle);light.castleFrame(true,25);
         var prepared=probes(light);check(!prepared.isEmpty(),"Actual authored light probes required");
         var dependency=light.dependencies(prepared);
