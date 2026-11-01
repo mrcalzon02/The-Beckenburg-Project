@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBuffer;
 import java.awt.image.Raster;
 import java.io.IOException;
+import java.nio.channels.FileChannel;
+import java.nio.file.StandardOpenOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -70,6 +72,9 @@ public final class StitchedHeightmapWorld {
         Path dir=Objects.requireNonNull(root).toAbsolutePath().normalize();
         Properties props=new Properties();
         try(var in=Files.newInputStream(dir.resolve("world.properties"))){props.load(in);}
+        // Recover any interrupted multi-tile replacement before a reader can
+        // observe a half-installed heightmap region.
+        recoverPendingBatch(dir);
         if(!FORMAT.equals(props.getProperty("format")))
             throw new IOException("Unknown stitched-world format");
         try {
@@ -156,12 +161,20 @@ public final class StitchedHeightmapWorld {
         return data[z*(settings.tileCells()+1)+x];
     }
     private void checkAdjacent(int x,int z,int[] values)throws IOException {
+        checkAdjacent(x,z,values,Map.of());
+    }
+    private void checkAdjacent(int x,int z,int[] values,Map<Tile,int[]> candidates)
+            throws IOException {
         int n=settings.tileCells();
         for(int dx=-1;dx<=1;dx++)for(int dz=-1;dz<=1;dz++){
             if(dx==0&&dz==0)continue;
-            int tx=x+dx,tz=z+dz;
-            if(!hasTile(tx,tz))continue;
-            int[] neighbor=tile(tx,tz);
+            long xx=(long)x+dx,zz=(long)z+dz;
+            if(Math.abs(xx)>1_000_000||Math.abs(zz)>1_000_000)continue;
+            int tx=(int)xx,tz=(int)zz;
+            Tile neighborKey=new Tile(tx,tz);
+            int[] replacement=candidates.get(neighborKey);
+            if(replacement==null&&!hasTile(tx,tz))continue;
+            int[] neighbor=replacement!=null?replacement:tile(tx,tz);
             if(dx!=0&&dz!=0){
                 int a=at(values,dx<0?0:n,dz<0?0:n);
                 int b=at(neighbor,dx<0?n:0,dz<0?n:0);
@@ -190,6 +203,159 @@ public final class StitchedHeightmapWorld {
             cache.remove(new Tile(x,z));
         }finally{Files.deleteIfExists(tmp);}
     }
+    private static final String BATCH_FOLDER=".pending-heightmap-batch";
+    /**
+     * Batch import of up to nine mutually stitched tiles. All staged source
+     * pixels are decoded and cross-validated before ANY authoritative PNG is
+     * changed. The journal restores original files on next open after a crash.
+     * This is not a promise of cross-process atomic visibility during a write.
+     */
+    public synchronized void importTilesBatch(Map<Tile,Path> inputs,boolean replace)
+            throws IOException {
+        Objects.requireNonNull(inputs);
+        if(inputs.isEmpty()||inputs.size()>9)
+            throw new IllegalArgumentException("Batch must contain 1..9 tiles");
+        Path journal=root.resolve(BATCH_FOLDER);
+        // Prevent two instances from committing/recovering the same journal.
+        try(var channel=FileChannel.open(root.resolve(".heightmap-batch-lock"),
+                    StandardOpenOption.CREATE,StandardOpenOption.WRITE);
+            var lock=channel.lock()){
+            recoverPendingBatchUnlocked(root);
+            Map<Tile,int[]> candidates=new LinkedHashMap<>();
+            List<Tile> order=new ArrayList<>(inputs.keySet());
+            order.sort(Comparator.comparingInt(Tile::z).thenComparingInt(Tile::x));
+            for(Tile key:order){
+                if(key==null)throw new IllegalArgumentException("Null tile coordinate");
+                validIndex(key.x(),key.z());
+                Path path=Objects.requireNonNull(inputs.get(key));
+                if(hasTile(key.x(),key.z())&&!replace)
+                    throw new IOException("Existing tile requires explicit replacement: "+key);
+                candidates.put(key,decode(path));
+            }
+            for(var entry:candidates.entrySet())
+                checkAdjacent(entry.getKey().x(),entry.getKey().z(),
+                    entry.getValue(),candidates);
+            Files.createDirectory(journal);
+            boolean manifestReady=false;
+            try{
+                Properties manifest=new Properties();
+                manifest.setProperty("format","heightmap-batch-v1");
+                manifest.setProperty("count",Integer.toString(order.size()));
+                for(int i=0;i<order.size();i++){
+                    Tile key=order.get(i);
+                    Path destination=tilePath(key.x(),key.z());
+                    String name="tile_"+key.x()+"_"+key.z()+".png";
+                    Path staged=journal.resolve("new_"+name);
+                    Files.copy(inputs.get(key),staged);
+                    // Re-decoding staged bytes prevents a changing input file
+                    // from silently invalidating the earlier source preflight.
+                    if(!java.util.Arrays.equals(decode(staged),candidates.get(key)))
+                        throw new IOException("Staged tile differs from preflight: "+name);
+                    boolean existed=Files.exists(destination);
+                    if(existed)Files.copy(destination,journal.resolve("old_"+name));
+                    manifest.setProperty("entry."+i,
+                        key.x()+","+key.z()+","+existed);
+                }
+                Path config=journal.resolve("manifest.tmp");
+                try(var output=Files.newOutputStream(config)){manifest.store(output,
+                    "Stitched heightmap batch rollback manifest");}
+                Files.move(config,journal.resolve("manifest.properties"),
+                    StandardCopyOption.ATOMIC_MOVE);
+                manifestReady=true;
+                for(Tile key:order){
+                    String name="tile_"+key.x()+"_"+key.z()+".png";
+                    Files.move(journal.resolve("new_"+name),
+                        tilePath(key.x(),key.z()),StandardCopyOption.ATOMIC_MOVE,
+                        StandardCopyOption.REPLACE_EXISTING);
+                    cache.remove(key);
+                }
+                Path success=journal.resolve("committed.tmp");
+                Files.writeString(success,"complete");
+                Files.move(success,journal.resolve("COMMITTED"),
+                    StandardCopyOption.ATOMIC_MOVE);
+                clearBatchJournal(journal);
+            }catch(IOException|RuntimeException failure){
+                try{
+                    if(manifestReady)recoverPendingBatchUnlocked(root);
+                    else clearBatchJournal(journal);
+                }catch(IOException rollback){
+                    failure.addSuppressed(rollback);
+                }
+                for(Tile key:order)cache.remove(key);
+                throw failure;
+            }
+        }
+    }
+    private static void clearBatchJournal(Path folder)throws IOException{
+        if(!Files.exists(folder))return;
+        try(var entries=Files.walk(folder)){
+            for(Path path:entries.sorted(Comparator.reverseOrder()).toList())
+                Files.deleteIfExists(path);
+        }
+    }
+    private static void recoverPendingBatch(Path directory)throws IOException {
+        if(!Files.exists(directory.resolve(BATCH_FOLDER)))return;
+        try(var channel=FileChannel.open(directory.resolve(".heightmap-batch-lock"),
+                    StandardOpenOption.CREATE,StandardOpenOption.WRITE);
+            var lock=channel.lock()){
+            recoverPendingBatchUnlocked(directory);
+        }
+    }
+    private static void recoverPendingBatchUnlocked(Path directory)throws IOException{
+        Path folder=directory.resolve(BATCH_FOLDER);
+        if(!Files.exists(folder))return;
+        if(Files.exists(folder.resolve("COMMITTED"))){
+            clearBatchJournal(folder);return;
+        }
+        Path manifestPath=folder.resolve("manifest.properties");
+        if(!Files.exists(manifestPath)){
+            // No authoritative file could have been modified before the
+            // manifest was published, so discard the incomplete staging.
+            clearBatchJournal(folder);return;
+        }
+        Properties manifest=new Properties();
+        try(var input=Files.newInputStream(manifestPath)){manifest.load(input);}
+        if(!"heightmap-batch-v1".equals(manifest.getProperty("format")))
+            throw new IOException("Unknown pending heightmap transaction; manual recovery needed");
+        int count;
+        try{count=Integer.parseInt(manifest.getProperty("count"));}
+        catch(RuntimeException problem){throw new IOException("Invalid pending batch count",problem);}
+        if(count<1||count>9)throw new IOException("Invalid pending batch entry count");
+        // First ensure all backups are present. Never partially restore a
+        // journal that has already lost one of its required originals.
+        List<Path> destinations=new ArrayList<>();
+        List<Path> backups=new ArrayList<>();
+        List<Boolean> existed=new ArrayList<>();
+        for(int i=0;i<count;i++){
+            String line=manifest.getProperty("entry."+i,"");
+            if(!line.matches("-?[0-9]+,-?[0-9]+,(true|false)"))
+                throw new IOException("Invalid pending batch manifest entry");
+            String[] values=line.split(",");
+            int x,z;
+            try{x=Integer.parseInt(values[0]);z=Integer.parseInt(values[1]);}
+            catch(NumberFormatException bad){throw new IOException("Invalid batch tile index",bad);}
+            validIndex(x,z);
+            String name="tile_"+x+"_"+z+".png";
+            Path destination=directory.resolve(name);
+            Path backup=folder.resolve("old_"+name);
+            boolean prior=Boolean.parseBoolean(values[2]);
+            if(prior&&!Files.isRegularFile(backup))
+                throw new IOException("Pending batch original missing for "+name);
+            destinations.add(destination);backups.add(backup);existed.add(prior);
+        }
+        for(int i=0;i<count;i++){
+            if(existed.get(i)){
+                Path temp=Files.createTempFile(directory,".recovery-",".png");
+                try{
+                    Files.copy(backups.get(i),temp,StandardCopyOption.REPLACE_EXISTING);
+                    Files.move(temp,destinations.get(i),StandardCopyOption.ATOMIC_MOVE,
+                        StandardCopyOption.REPLACE_EXISTING);
+                }finally{Files.deleteIfExists(temp);}
+            }else Files.deleteIfExists(destinations.get(i));
+        }
+        clearBatchJournal(folder);
+    }
+
     private static long mix(long v){
         v=(v^(v>>>30))*0xbf58476d1ce4e5b9L;
         v=(v^(v>>>27))*0x94d049bb133111ebL;
