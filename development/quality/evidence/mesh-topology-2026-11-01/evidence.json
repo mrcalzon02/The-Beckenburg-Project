@@ -1,0 +1,34 @@
+{
+  "schema": "beckenburg.mesh-topology-evidence/v1",
+  "sourceSha": "96aea89824f67aa9bb25cac9ed9a4c4cff524900",
+  "scope": "Read-only half-edge adjacency and actual human import review",
+  "checks": [
+    "Complete native Java17 source compilation",
+    "Independent editor JAR without game classes/assets",
+    "EditorMeshTopologyTest: cycles/twins, open/closed manifolds, UV seams, part ownership, disconnected fans, winding/nonmanifold/degenerate controls and bounded diagnostics",
+    "EditorMeshTopologyTest --stress with -Xmx256m: maximum120000faces/360000vertices/360000half-edges",
+    "AssetImportTopologyGuiTest: actual source load, report/PNG, publish button, native GLB/model readback, exact source and archive bytes",
+    "AssetImportRuntimeTest unchanged: OBJ to native GLB, actual Castle placement/save/reopen",
+    "EditorCorePortabilityTest: portable service and metadata fallback"
+  ],
+  "ci": {
+    "nativeHost": {
+      "run": 41358289381,
+      "status": "dispatched"
+    },
+    "standalone": {
+      "run": 41358301989,
+      "status": "dispatched"
+    }
+  },
+  "captures": {
+    "import-review.png": "actual human importer fixture UI, not world/model art acceptance",
+    "import-review-before-newline-fix.png": "actual observed DEV-189 formatting defect"
+  },
+  "limits": [
+    "Read-only topology derived from actual importer triangles; no agent operations admitted.",
+    "Source part boundaries and corner UVs preserved; current importer lacks full material/normal interchange.",
+    "Selection, primitives, editable topology, native topology persistence and G2 exit remain open.",
+    "G1 full307 acceptance still pending; G0 provenance and G3-G12 remain open."
+  ]
+}

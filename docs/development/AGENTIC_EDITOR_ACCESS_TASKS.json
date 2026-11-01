@@ -711,6 +711,30 @@
         "Granular Castle changes, rendering dirty regions and broader schema migrations remain open",
         "No complete G1-G12 or installed acceptance inferred"
       ]
+    },
+    {
+      "sourceSha": "96aea89824f67aa9bb25cac9ed9a4c4cff524900",
+      "scope": "G2 read-only half-edge foundation in real human mesh importer",
+      "localEvidence": [
+        "EditorMeshTopologyTest",
+        "Maximum input --stress under256MiB heap",
+        "AssetImportTopologyGuiTest",
+        "AssetImportRuntimeTest",
+        "Independent editor JAR and complete native Java17 compilation"
+      ],
+      "nativeHostCi": {
+        "run": 41358289381,
+        "status": "in_progress"
+      },
+      "standaloneCi": {
+        "run": 41358301989,
+        "status": "in_progress"
+      },
+      "evidence": "development/quality/evidence/mesh-topology-2026-11-01/evidence.json",
+      "limitations": [
+        "Read-only derived topology, not completed editable G2 authoring",
+        "Native topology persistence, vertex/edge/face operations, full materials/normals and later stages remain open"
+      ]
     }
   ],
   "nextGoalWork": [
