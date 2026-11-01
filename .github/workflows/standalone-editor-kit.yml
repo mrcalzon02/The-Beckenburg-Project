@@ -209,6 +209,15 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\\editor-kit\\LevelEditorKit-Java17.jar;build\\editor-kit\\test org.beckenburg.editor.TerrainComposedHeightSamplerTest
           if errorlevel 1 exit /b 1
+      - name: Verify existing entrance mesh, conforming seams and durable scene package
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\\editor-kit\\LevelEditorKit-Java17.jar -d build\\editor-kit\\test src\\test\\java\\org\\beckenburg\\editor\\TerrainEntranceMeshTest.java src\\test\\java\\org\\beckenburg\\editor\\TerrainScenePackageTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\editor-kit\\LevelEditorKit-Java17.jar;build\\editor-kit\\test org.beckenburg.editor.TerrainEntranceMeshTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\editor-kit\\LevelEditorKit-Java17.jar;build\\editor-kit\\test org.beckenburg.editor.TerrainScenePackageTest
+          if errorlevel 1 exit /b 1
       - uses: actions/upload-artifact@v4
         with:
           name: portable-level-editor-java17
