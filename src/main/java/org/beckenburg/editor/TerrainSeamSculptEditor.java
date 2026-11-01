@@ -72,7 +72,7 @@ public final class TerrainSeamSculptEditor extends JPanel {
         add(canvas,BorderLayout.CENTER);
         JPanel footer=new JPanel(new GridLayout(3,1));
         footer.add(new JLabel("2D R16 source + layered seam edits. Draw across adjoining tiles. Gray areas lack full vertex ownership."));
-        footer.add(new JLabel("SAVE retains an editable authoring session. BAKE explicitly replaces source tiles together, with rollback."));
+        footer.add(new JLabel("SAVE retains an editable session. BAKE updates tiles and saved terrain layers together, with rollback."));
         footer.add(status);
         add(footer,BorderLayout.SOUTH);
         undo.addActionListener(e->{
@@ -101,7 +101,9 @@ public final class TerrainSeamSculptEditor extends JPanel {
             int answer=JOptionPane.showConfirmDialog(frame,
                 "Commit the shared seam edits into authoritative R16 PNG tiles? "+
                 "This operation modifies all affected owner tiles together. "+
-                "Layered terrain documents referencing those source tiles are protected.",
+                "Existing saved terrain layers will be rebased in the SAME recovery journal; "+
+                "their height deltas, masks, materials and protection will be retained. "+
+                "Reopen other terrain workbenches after this bake.",
                 "Explicit multi-tile source bake",JOptionPane.YES_NO_OPTION,
                 JOptionPane.WARNING_MESSAGE);
             if(answer!=JOptionPane.YES_OPTION)return;
