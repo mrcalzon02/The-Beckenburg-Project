@@ -233,6 +233,15 @@ public final class TerrainSeamSculpt {
         }finally{Files.deleteIfExists(tmp);}
     }
     /**
+     * Explicitly abandon an authored seam session without touching source
+     * PNGs. Caller must obtain confirmation before discarding local work.
+     */
+    public void discard()throws IOException{
+        Files.deleteIfExists(path);
+        override.clear();pending.clear();undo.clear();redo.clear();
+        dirty=false;
+    }
+    /**
      * Explicit source bake. Quantization happens ONCE per unique global vertex;
      * every owner receives the exact same R16 sample. Existing layered authoring
      * documents are protected against invalidation rather than silently erased.
