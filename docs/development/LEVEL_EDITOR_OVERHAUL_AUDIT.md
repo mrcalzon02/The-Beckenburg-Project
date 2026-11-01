@@ -101,3 +101,12 @@ Test each requirement using representative Castle, house, basement and outdoor e
 The Castle editor command strip now offers **SCENE AUDIT** in addition to **PSX GUIDE**. `CastleEditorAudit.inspect` reads the same `CastleLevelEdits` snapshot and `wallBlocks` collision used by the running game, checks centre intersection of lamps and props with authored walls, globally duplicated IDs across Castle authoring kinds, blocked spawn tiles and wall-embedded spawns. Findings include kind, ID and coordinates; the dialog has refresh and jump-to-object actions, clears hierarchy filtering, positions the editor camera and highlights the selected object. No finding gates publication or rewrites a map automatically. Wall-mounted fixtures and tightly placed furniture require human review; the centre-point test does **not** prove complete mesh bounds or absence of all penetrations.
 
 `CastleEditorAuditTest` creates a temporary wall, prop and lamp and checks collision-backed warnings, disappearance after wall removal, duplicate IDs and blocked spawn state. The focused Castle workflow runs this optional diagnostic with `continue-on-error: true`. Successful Java 17 compile and test execution must still be checked against the relevant GitHub Actions run. This is a **Castle-specific real-scene diagnostic**, not proof that the future portable `RuntimeScene` core supports all scenes or all requested inspector authoring.
+
+## Owner-source continuation (2026-10-31)
+
+The original *Level Editor gold standards.pdf* audit is retained in the same
+[owner document chain](../editor/requirements/DOCUMENT_CHAIN.md) as the later
+Terrain editor requirements, Landscape layering, Topological editor, Soundscape,
+Engine base and multi-genre game-creation inputs. See the
+[staged integration plan](../editor/requirements/STAGED_INTEGRATION_PLAN.md)
+for dependencies and explicit non-implementation status of new requirements.
