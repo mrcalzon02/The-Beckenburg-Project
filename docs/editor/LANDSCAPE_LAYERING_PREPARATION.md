@@ -136,3 +136,11 @@ source material IDs or flatten procedural corridors into source heightmaps.
 - Add first-spec material/terrain dependency dirty-region notifications.
 - Then implement the four tiers from the bottom upward; verify generic
   project adapters before connecting Beckenburg-specific rendering.
+
+## Unified owner requirements document chain (2026-10-31)
+
+The existing four-tier landscape materials specification continues under
+[document chain](requirements/DOCUMENT_CHAIN.md) and
+[staged cross-module gates](requirements/STAGED_INTEGRATION_PLAN.md),
+particularly G4. Topological editing, audio and genre plugins must reuse the
+same terrain material and scene identity, without replacing this four-tier model.
