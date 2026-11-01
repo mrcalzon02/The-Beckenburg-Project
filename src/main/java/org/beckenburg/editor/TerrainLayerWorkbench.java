@@ -667,6 +667,7 @@ public final class TerrainLayerWorkbench extends JPanel {
                 }
             }
             if(!mode.equals("SCULPT")&&!mode.equals("PAINT MATERIAL")
+                &&!mode.equals("ERASE MATERIAL OVERRIDE")
                 &&!mode.equals("PAINT LAYER MASK"))stack.finishStroke();
             render();
         }catch(RuntimeException ex){drawing=false;stack.finishStroke();error(ex);}
