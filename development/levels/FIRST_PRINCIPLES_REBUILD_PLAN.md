@@ -2,6 +2,8 @@
 
 Owner direction: 31 October 2026, America/Anchorage. Status: **planning delivered; rebuild execution not started by this checkpoint**. Source baseline: `ad9bb45c20c3754931637bdfa50968a35defeaf9`, synchronized from online `main`. Scope: **28 base locations, including Castle HQ, plus the existing cemetery/mortuary annex**. No additional locations are introduced.
 
+Execution was subsequently authorized on 31 October. Follow [the live rebuild workflow](rebuild/WORKFLOW.md), [source/capture inventory](rebuild/source-baseline.json) and stage register for actual progress. The planning checkpoint status above is historical, not a claim that execution remains unstarted.
+
 ## 1. Outcome and governing decisions
 
 Every location must make sense as a place before it is dressed as a horror level. Its terrain, construction, circulation, services, daily activities and subsequent damage must explain its appearance. A prison needs actual cells and control layers; a school needs a coherent teaching day, washrooms and specialist spaces; a home needs ordinary household relationships. A room name and an asset count establish neither architecture nor identity.

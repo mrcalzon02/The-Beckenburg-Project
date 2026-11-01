@@ -1,0 +1,12 @@
+Room 3: Laboratory
+Site: Beckenburg College / production-2026-10-20-lived-location-v1-c3226f8e5f4a671c
+Bounds (X,Z): 7.00,10.00 -> 22.00,19.33; floor 0.00m; clear height 3.60m
+Geometric centre: 14.50,14.67; traversable: true
+Actual 4-view camera: 14.50,0.00,14.67; displacement 0.00m
+Portal access / windows / stairs: P6 door -> 0 Campus concourse 1.35m @(22.00,0.00,14.67); P9 door -> 2 Seminar classroom 1.20m @(14.50,0.00,19.33); P22 window -> 12 Rear quadrangle 1.25m @(7.00,0.00,14.67)
+Connected in authored portal graph to van: true
+Props: 3; sockets: 11
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

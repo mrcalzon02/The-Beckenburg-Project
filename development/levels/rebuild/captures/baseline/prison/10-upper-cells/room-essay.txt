@@ -1,0 +1,12 @@
+Room 10: Upper cells
+Site: Beckenburg Penitentiary / production-2026-10-20-lived-location-v1-60942e272a0ae2d0
+Bounds (X,Z): 27.00,10.00 -> 39.00,34.00; floor 3.40m; clear height 3.00m
+Geometric centre: 33.00,22.00; traversable: true
+Actual 4-view camera: 33.00,3.40,22.00; displacement 0.00m
+Portal access / windows / stairs: P14 door -> 7 Cell gallery 1.35m @(27.00,3.40,22.00); P28 window -> 12 Exercise yard 1.25m @(39.00,3.40,22.00)
+Connected in authored portal graph to van: true
+Props: 3; sockets: 11
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

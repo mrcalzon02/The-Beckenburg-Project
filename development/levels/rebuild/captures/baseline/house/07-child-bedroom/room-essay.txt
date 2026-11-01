@@ -1,0 +1,12 @@
+Room 7: Child bedroom
+Site: The Briar House / production-2026-10-20-lived-location-v1-31a060513814dc2d
+Bounds (X,Z): 12.00,10.00 -> 18.00,17.00; floor 3.00m; clear height 3.00m
+Geometric centre: 15.00,13.50; traversable: true
+Actual 4-view camera: 15.00,3.00,13.50; displacement 0.00m
+Portal access / windows / stairs: P9 door -> 5 Upper landing 1.10m @(18.00,3.00,16.00); P11 door -> 6 Master bedroom 1.05m @(15.00,3.00,17.00); P24 window -> 12 Rear yard and patio 1.25m @(15.00,3.00,10.00)
+Connected in authored portal graph to van: true
+Props: 12; sockets: 8
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

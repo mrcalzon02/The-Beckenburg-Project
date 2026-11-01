@@ -1,0 +1,12 @@
+Room 4: Main hall and stair
+Site: The Briar House / production-2026-10-20-lived-location-v1-31a060513814dc2d
+Bounds (X,Z): 18.00,15.00 -> 24.00,21.00; floor 0.00m; clear height 3.00m
+Geometric centre: 21.00,18.00; traversable: true
+Actual 4-view camera: 21.00,0.00,18.00; displacement 0.00m
+Portal access / windows / stairs: P5 door -> 3 Dining nook 1.15m @(21.00,0.00,15.00); P6 door -> 0 Foyer 1.40m @(21.00,0.00,21.00); P7 door -> 1 Living room 1.10m @(18.00,0.00,20.50); P17 stair -> 5 Upper landing 1.50m @(22.50,0.00,15.60); P18 stair -> 9 Cellar stair landing 1.50m @(19.80,-3.00,20.40); STAIR0 4 -> 5 floor 0.00 to 3.00; STAIR1 9 -> 4 floor -3.00 to 0.00
+Connected in authored portal graph to van: true
+Props: 5; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

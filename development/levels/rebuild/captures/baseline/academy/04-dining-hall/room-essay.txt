@@ -1,0 +1,12 @@
+Room 4: Dining hall
+Site: St. Alban Academy / production-2026-10-20-lived-location-v1-35f49587a92eecc8
+Bounds (X,Z): 27.00,25.33 -> 39.00,34.00; floor 0.00m; clear height 3.60m
+Geometric centre: 33.00,29.67; traversable: true
+Actual 4-view camera: 33.00,0.00,29.67; displacement 0.00m
+Portal access / windows / stairs: P3 door -> 0 Cloister passage 1.35m @(27.00,0.00,29.67); P10 door -> 5 Headmaster office 1.20m @(33.00,0.00,25.33); P23 window -> 12 Rear quadrangle 1.25m @(39.00,0.00,29.67)
+Connected in authored portal graph to van: true
+Props: 1; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

@@ -1,0 +1,12 @@
+Room 2: Lecture room
+Site: St. Alban Academy / production-2026-10-20-lived-location-v1-35f49587a92eecc8
+Bounds (X,Z): 10.00,16.67 -> 21.00,25.33; floor 0.00m; clear height 3.60m
+Geometric centre: 15.50,21.00; traversable: true
+Actual 4-view camera: 15.50,0.00,21.00; displacement 0.00m
+Portal access / windows / stairs: P4 door -> 0 Cloister passage 1.35m @(21.00,0.00,21.00); P8 door -> 1 Reception hall 1.20m @(15.50,0.00,25.33); P9 door -> 3 Laboratory study 1.20m @(15.50,0.00,16.67); P21 window -> 12 Rear quadrangle 1.25m @(10.00,0.00,21.00)
+Connected in authored portal graph to van: true
+Props: 3; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

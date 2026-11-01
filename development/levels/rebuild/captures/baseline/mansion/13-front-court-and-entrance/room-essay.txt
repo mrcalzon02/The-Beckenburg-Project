@@ -1,0 +1,12 @@
+Room 13: Front court and entrance
+Site: Blackthorn Manor / production-2026-10-20-lived-location-v1-87d5c036158d1207
+Bounds (X,Z): 2.00,32.00 -> 42.00,52.40; floor 0.00m; clear height 12.00m
+Geometric centre: 22.00,42.20; traversable: true
+Actual 4-view camera: 22.00,0.00,42.20; displacement 0.00m
+Portal access / windows / stairs: P0 open -> 12 Rear garden terrace 3.00m @(8.00,0.00,32.00); P1 open -> 14 Van cargo interior 1.48m @(21.87,0.00,45.00); P16 door -> 0 Grand staircase hall 1.80m @(23.00,0.00,32.00)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 45
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

@@ -1,0 +1,12 @@
+Room 13: School steps and bus loop
+Site: Ravenshade School / production-2026-10-20-lived-location-v1-97b23b0a6674e5b7
+Bounds (X,Z): 5.00,38.00 -> 51.00,58.40; floor 0.00m; clear height 12.00m
+Geometric centre: 28.00,48.20; traversable: true
+Actual 4-view camera: 28.00,0.00,48.20; displacement 0.00m
+Portal access / windows / stairs: P0 open -> 12 Rear playground and blacktop 3.00m @(7.00,0.00,38.00); P1 open -> 14 Van cargo interior 1.48m @(25.87,0.00,51.00); P16 door -> 0 Front office and foyer 1.80m @(24.00,0.00,38.00); P22 window -> 2 Classroom A 1.25m @(15.00,0.00,38.00); P24 window -> 4 Cafeteria 1.25m @(35.00,0.00,38.00); P26 window -> 8 School library 1.25m @(15.00,3.60,38.00); P28 window -> 10 Assembly hall 1.25m @(35.00,3.60,38.00)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 21
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

@@ -1,0 +1,12 @@
+Room 8: Records office
+Site: St. Dymphna Hospital / production-2026-10-20-lived-location-v1-3edfcaaae4318eb8
+Bounds (X,Z): 9.00,22.00 -> 21.00,34.00; floor 3.40m; clear height 3.00m
+Geometric centre: 15.00,28.00; traversable: true
+Actual 4-view camera: 15.00,3.40,28.00; displacement 0.00m
+Portal access / windows / stairs: P12 door -> 7 Upper ward gallery 1.20m @(21.00,3.40,30.00); P15 door -> 9 Seclusion ward 1.10m @(15.00,3.40,22.00); P26 window -> 12 Rear quadrangle 1.25m @(9.00,3.40,30.00)
+Connected in authored portal graph to van: true
+Props: 4; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

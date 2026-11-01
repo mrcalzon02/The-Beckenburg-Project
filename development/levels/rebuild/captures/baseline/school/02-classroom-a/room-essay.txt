@@ -1,0 +1,12 @@
+Room 2: Classroom A
+Site: Ravenshade School / production-2026-10-20-lived-location-v1-97b23b0a6674e5b7
+Bounds (X,Z): 10.00,24.00 -> 20.00,38.00; floor 0.00m; clear height 3.60m
+Geometric centre: 15.00,31.00; traversable: true
+Actual 4-view camera: 15.00,0.00,31.00; displacement 0.00m
+Portal access / windows / stairs: P3 door -> 0 Front office and foyer 1.35m @(20.00,0.00,35.00); P5 door -> 1 Main school corridor 1.35m @(20.00,0.00,28.00); P8 door -> 3 Science classroom 1.20m @(15.00,0.00,24.00); P21 window -> 12 Rear playground and blacktop 1.25m @(10.00,0.00,29.00); P22 window -> 13 School steps and bus loop 1.25m @(15.00,0.00,38.00)
+Connected in authored portal graph to van: true
+Props: 25; sockets: 8
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

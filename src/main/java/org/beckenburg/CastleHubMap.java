@@ -141,6 +141,14 @@ public final class CastleHubMap {
 
     public boolean traversable(double x,double z){return groundTraversable(x,z,0);}
     private boolean groundTraversable(double x,double z,double elevation){
+        return groundTraversable(x,z,elevation,true);
+    }
+    /** Placement inspection excludes the resident's own body, but retains
+     * floors, walls, doors, service fixtures and all furnishing collision. */
+    boolean residentPlacementClear(double x,double z){
+        return groundTraversable(x,z,0,false);
+    }
+    private boolean groundTraversable(double x,double z,double elevation,boolean includeResident){
         if(CastleHubArchitecturalPlan.onStairs(x,z)&&elevation+.10<CastleHubArchitecturalPlan.stairHeight(x,z))return false;
         if(!Double.isFinite(x)||!Double.isFinite(z))return false;
         double r=.21;
@@ -152,7 +160,7 @@ public final class CastleHubMap {
             ||CastleSurroundings.courtyardVanBlocks(x,z,r)
             ||CastleWarehouse.blocks(x,z,r)
             ||CastleServiceFixtures.blocks(x,z,r)
-            ||CastleArchive.occupies(x,z,r)
+            ||(includeResident&&CastleArchive.occupies(x,z,r))
             ||closedLeafBlocks(x,elevation,z,r))return false;
         for(Furnishing item:furnishings())
             if(Math.abs(x-item.x())<item.halfWidth()+r &&

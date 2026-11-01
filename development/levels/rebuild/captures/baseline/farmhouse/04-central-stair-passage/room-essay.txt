@@ -1,0 +1,12 @@
+Room 4: Central stair passage
+Site: Hollowmere Farm / production-2026-10-20-lived-location-v1-51c40097d2dcf39e
+Bounds (X,Z): 20.00,15.00 -> 26.00,22.00; floor 0.00m; clear height 3.00m
+Geometric centre: 23.00,18.50; traversable: true
+Actual 4-view camera: 23.00,0.00,18.50; displacement 0.00m
+Portal access / windows / stairs: P5 door -> 3 Family dining room 1.10m @(21.50,0.00,15.00); P6 door -> 0 Mudroom 1.25m @(21.50,0.00,22.00); P13 stair -> 5 Upper farm landing 1.50m @(24.50,0.00,16.10); P14 stair -> 9 Root cellar 1.50m @(21.50,-3.00,20.90); STAIR0 4 -> 5 floor 0.00 to 3.00; STAIR1 9 -> 4 floor -3.00 to 0.00
+Connected in authored portal graph to van: true
+Props: 3; sockets: 6
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

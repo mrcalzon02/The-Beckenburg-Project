@@ -1,0 +1,12 @@
+Room 0: Mudroom
+Site: Hollowmere Farm / production-2026-10-20-lived-location-v1-51c40097d2dcf39e
+Bounds (X,Z): 20.00,22.00 -> 26.00,27.00; floor 0.00m; clear height 3.00m
+Geometric centre: 23.00,24.50; traversable: true
+Actual 4-view camera: 23.00,0.00,24.50; displacement 0.00m
+Portal access / windows / stairs: P2 door -> 1 Farm parlour 1.10m @(20.00,0.00,24.00); P6 door -> 4 Central stair passage 1.25m @(21.50,0.00,22.00); P9 door -> 12 Orchard and ritual field 1.20m @(23.00,0.00,27.00)
+Connected in authored portal graph to van: true
+Props: 13; sockets: 9
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

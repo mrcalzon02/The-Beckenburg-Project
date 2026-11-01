@@ -2250,17 +2250,75 @@ Evidence and verification: Source push and remote readback confirmed. New Castle
 
 Older-map obligation: Audit actual inventory/store routing in campaign preparation, multiplayer van rack, campaign co-op host/guest screens and existing menu back navigation individually. One Castle routing fix is not cross-mode persistence acceptance.
 
-### DEV-166 — Investigation doors snap instead of swinging
+### DEV-166 — Investigation doors snap between poses rather than physically swinging
 
-**Status:** animation-source-pushed-CI-and-installed-review-pending · **Affected:** House/Farmhouse/School and other HouseMap investigation portals, both solo and LAN
+**Status:** animation-source-pushed-CI-and-installed-review-pending · **Affected:** House, Farmhouse, School and shared HouseMap investigation portals (solo/LAN, including host door snapshots)
 
-The first House door instantly teleported to its open or closed pose, and the renderer's portal-only retained-mesh key could change the entire GPU scene identity when that door switched state. This was separately reported with an interaction hitch and full-screen flash (issue #44).
+Pressing E instantly swaps closed/open geometry; no visible motion, and the old portal-key cache path also resets the complete OpenGL scene while repainting.
 
-Code commits `814d7c1`, `ad2176c`, and `d1c857c` add a reversible, 450ms eased leaf swing, a moving-leaf centre-ray hit target, and settled-state GPU mesh caching keyed by the door pose, without a global GPU scene ID replacement. Solo now plays the door cue (`6def2a3`). `DoorSwingTest` was committed in `62b0ef3` and added to the full regression manifest in `b0afe0a`. An unrelated pre-existing `GpuUiSmoke` duplicate-variable compilation blocker was repaired in `f8fe48e`.
+Cause / uncertainty: Door state was stored solely as a Boolean, consumed directly by imported door geometry and interaction rays. Portal geometry caching reused the portal-only residency key, forcing GPU scene ID change when the same door switched pose.
 
-**Verification:** Source pushed; exact-source Java/full-round/GPU acceptance and actual Windows door-open/close captures remain pending. Physical collision still follows authoritative Boolean state immediately (not the rendered moving leaf). Broad CPU occlusion invalidation and installed hitch remain tracked separately under issue #44. Confirm pivot accuracy, first-frame continuity, LAN host/guest parity, light-through-door behavior, collision, and door sound before closing.
+Fix / next action: Source commits 814d7c1, ad2176c, d1c857c animate per-door eased visual opening/closing for 450ms, support mid-swing reversal and unchanged host snapshots, render moving leaves as transient meshes with settled-pose-specific retained GPU keys and maintain ray alignment. 62b0ef3 adds DoorSwingTest to full regression manifest b0afe0a4. 6def2a3 aligns solo door sound with LanSound.Cue.DOOR. Compile blocker in unrelated GPU acceptance smoke variable repaired in f8fe48e. Authoritative open/closed collision remains immediate; physical sweep collision is a separate acceptance/design concern. Broad CPU lighting-cache invalidation remains in issue #44.
 
-**Older-map obligation:** Inspect each authored site's hinge/pivot and multi-leaf doors, Castle gates, and van doors independently; do not generalize House acceptance.
+Evidence and verification: Live user report 2026-10-29 (House door snaps, hitches, flashes). Source pushes verified individually; full-round CI and real installed Windows GPU frame/motion capture pending. Do not claim measured 450ms visible animation without hardware frames and profile.
+
+Older-map obligation: Audit all authored site door meshes, hinge pivots, double doors/gates, Castle doorway and van cargo doors independently; shared HouseMap source alone does not certify older maps.
+
+### DEV-167 — Room audit omitted real exterior views beyond its search radius
+
+**Status:** corrected-locally; complete-roster baseline review pending · **Affected:** School and generic institution exterior zones; other large exterior ownership volumes
+
+The first baseline recorded 56 views and four missing views for School and several institutions despite existing outdoor support.
+
+Cause / uncertainty: The seven-metre camera search stayed inside building footprints that overlap the exterior gameplay ownership rectangle. ALL also included the unrelated USER authoring slot.
+
+Fix / next action: Search the full owning room bounds when the local search finds no valid same-zone camera; skip USER in built-in ALL scope while retaining explicit USER audits. Permit direct CASTLE capture.
+
+Evidence and verification: Corrected School/Prison/College and other targeted audit logs show 60 directional views, zero missing, and an explicitly displaced exterior camera. Actual matrices and PNGs: development/levels/rebuild/captures/baseline/.
+
+Older-map obligation: Inspect displaced cameras and coverage individually; camera availability never proves route or architecture acceptance.
+
+### DEV-168 — Rowan Pike intersects the Castle network-desk chair
+
+**Status:** corrected-locally; publication and visual closeout pending · **Affected:** Castle Beckenburg operations / Rowan Pike
+
+After excluding the keeper self-collision from placement inspection, CastleSupportArtTest reproducibly failed for Rowan Pike.
+
+Cause / uncertainty: Resident (23.75,17.40) intersected chair_mp_5 at (24.1,17.7), whose collider is half-width .35/half-depth .39 plus .21 body clearance.
+
+Fix / next action: Move the shared resident/render/interaction anchor to (23.30,17.40), preserving the chair and network station.
+
+Evidence and verification: Measured collision inspection identified the exact chair; CastleSupportArtTest, CastleRelationsTest and CastleHubIntegrationTest pass locally with JDK17. Separate real-renderer after views: development/levels/rebuild/captures/after-resident-fix/castle/.
+
+Older-map obligation: Audit every resident and supporting furniture independently; do not generalize to investigation props or moved editor fixtures.
+
+### DEV-169 — Castle resident placement assertion treated its own body as an obstruction
+
+**Status:** corrected-locally; wider resident approach review pending · **Affected:** CastleSupportArtTest / Matthis Rook placement inspection
+
+The advisory CI and local test failed at Matthis Rook although CastleHubIntegrationTest intentionally requires that players cannot walk through his body.
+
+Cause / uncertainty: The placement test called player traversable at the resident centre, which correctly includes CastleArchive.occupies.
+
+Fix / next action: Use a shared ground-placement query that excludes only character occupancy and retains floors, walls, doors, furnishings, warehouse and service fixture collision. Keep normal player traversal unchanged.
+
+Evidence and verification: CastleSupportArtTest now passes with negative controls for unsupported ground, furniture intersection and preserved keeper-body collision; CastleHubIntegrationTest also passes.
+
+Older-map obligation: Separate support/placement from self-collision in actor placement checks; never relax actual furniture or wall collision to satisfy a test.
+
+### DEV-170 — Labeling the USER authoring slot throws Unknown site USER
+
+**Status:** corrected-locally; remote acceptance pending · **Affected:** MissionSites.title / campaign-board and lobby authoring labels
+
+Full-round advisory run 41273695792 and local MissionBoardIntegrationTest reach IllegalArgumentException Unknown site USER while enumerating authoring enums.
+
+Cause / uncertainty: The USER enum was added to editor availability but is deliberately absent from built-in MissionSites/campaign order; title delegated unconditionally to that roster.
+
+Fix / next action: Provide the established User authored level slot label without opening a user project or adding a campaign chapter.
+
+Evidence and verification: Actual MissionBoardIntegrationTest passes locally, covering packaged pictures, asynchronous loading, retained 22-chapter order, prototype privacy and locked/unlocked dispatch.
+
+Older-map obligation: Keep custom authoring slots separate from fixed built-in/campaign roster and saved ordinals; do not silently substitute a built-in map.
 
 ## Required audit categories
 

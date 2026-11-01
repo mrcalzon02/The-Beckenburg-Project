@@ -1,0 +1,12 @@
+Room 5: Side chapel
+Site: St. Brigid Parish / production-2026-10-20-lived-location-v1-38d7eb377b0d2ccf
+Bounds (X,Z): 26.00,14.00 -> 34.00,26.00; floor 0.00m; clear height 4.00m
+Geometric centre: 30.00,20.00; traversable: true
+Actual 4-view camera: 30.00,0.00,20.00; displacement 0.00m
+Portal access / windows / stairs: P6 door -> 0 Nave 1.50m @(26.00,0.00,20.00); P7 door -> 6 Vestry 1.10m @(30.00,0.00,14.00); P20 window -> 12 Graveyard and rectory garden 1.25m @(34.00,0.00,20.00)
+Connected in authored portal graph to van: true
+Props: 3; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

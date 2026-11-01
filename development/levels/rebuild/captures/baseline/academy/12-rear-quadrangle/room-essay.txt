@@ -1,0 +1,12 @@
+Room 12: Rear quadrangle
+Site: St. Alban Academy / production-2026-10-20-lived-location-v1-35f49587a92eecc8
+Bounds (X,Z): 6.00,1.00 -> 43.00,34.00; floor 0.00m; clear height 12.00m
+Geometric centre: 24.50,17.50; traversable: true
+Actual 4-view camera: 24.20,0.00,7.75; displacement 9.75m
+Portal access / windows / stairs: P0 open -> 13 Front court and entrance 3.00m @(8.00,0.00,34.00); P17 door -> 0 Cloister passage 1.40m @(24.00,0.00,8.00); P20 window -> 1 Reception hall 1.25m @(10.00,0.00,29.67); P21 window -> 2 Lecture room 1.25m @(10.00,0.00,21.00); P22 window -> 3 Laboratory study 1.25m @(10.00,0.00,12.33); P23 window -> 4 Dining hall 1.25m @(39.00,0.00,29.67); P24 window -> 5 Headmaster office 1.25m @(39.00,0.00,21.00); P25 window -> 6 Library 1.25m @(39.00,0.00,12.33); P26 window -> 8 Dormitory west 1.25m @(10.00,3.60,30.00); P27 window -> 9 Dormitory east 1.25m @(10.00,3.60,12.00); P28 window -> 10 Restricted stacks 1.25m @(39.00,3.60,21.00)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 3
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

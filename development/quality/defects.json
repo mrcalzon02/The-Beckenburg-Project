@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-29",
+  "updated": "2026-10-31",
   "issues": [
     {
       "id": "DEV-001",
@@ -1772,6 +1772,50 @@
       "action": "Source commits 814d7c1, ad2176c, d1c857c animate per-door eased visual opening/closing for 450ms, support mid-swing reversal and unchanged host snapshots, render moving leaves as transient meshes with settled-pose-specific retained GPU keys and maintain ray alignment. 62b0ef3 adds DoorSwingTest to full regression manifest b0afe0a4. 6def2a3 aligns solo door sound with LanSound.Cue.DOOR. Compile blocker in unrelated GPU acceptance smoke variable repaired in f8fe48e. Authoritative open/closed collision remains immediate; physical sweep collision is a separate acceptance/design concern. Broad CPU lighting-cache invalidation remains in issue #44.",
       "evidence": "Live user report 2026-10-29 (House door snaps, hitches, flashes). Source pushes verified individually; full-round CI and real installed Windows GPU frame/motion capture pending. Do not claim measured 450ms visible animation without hardware frames and profile.",
       "older_maps": "Audit all authored site door meshes, hinge pivots, double doors/gates, Castle doorway and van cargo doors independently; shared HouseMap source alone does not certify older maps."
+    },
+    {
+      "id": "DEV-167",
+      "title": "Room audit omitted real exterior views beyond its search radius",
+      "status": "corrected-locally; complete-roster baseline review pending",
+      "affected": "School and generic institution exterior zones; other large exterior ownership volumes",
+      "symptom": "The first baseline recorded 56 views and four missing views for School and several institutions despite existing outdoor support.",
+      "cause": "The seven-metre camera search stayed inside building footprints that overlap the exterior gameplay ownership rectangle. ALL also included the unrelated USER authoring slot.",
+      "action": "Search the full owning room bounds when the local search finds no valid same-zone camera; skip USER in built-in ALL scope while retaining explicit USER audits. Permit direct CASTLE capture.",
+      "evidence": "Corrected School/Prison/College and other targeted audit logs show 60 directional views, zero missing, and an explicitly displaced exterior camera. Actual matrices and PNGs: development/levels/rebuild/captures/baseline/.",
+      "older_maps": "Inspect displaced cameras and coverage individually; camera availability never proves route or architecture acceptance."
+    },
+    {
+      "id": "DEV-168",
+      "title": "Rowan Pike intersects the Castle network-desk chair",
+      "status": "corrected-locally; publication and visual closeout pending",
+      "affected": "Castle Beckenburg operations / Rowan Pike",
+      "symptom": "After excluding the keeper self-collision from placement inspection, CastleSupportArtTest reproducibly failed for Rowan Pike.",
+      "cause": "Resident (23.75,17.40) intersected chair_mp_5 at (24.1,17.7), whose collider is half-width .35/half-depth .39 plus .21 body clearance.",
+      "action": "Move the shared resident/render/interaction anchor to (23.30,17.40), preserving the chair and network station.",
+      "evidence": "Measured collision inspection identified the exact chair; CastleSupportArtTest, CastleRelationsTest and CastleHubIntegrationTest pass locally with JDK17. Separate real-renderer after views: development/levels/rebuild/captures/after-resident-fix/castle/.",
+      "older_maps": "Audit every resident and supporting furniture independently; do not generalize to investigation props or moved editor fixtures."
+    },
+    {
+      "id": "DEV-169",
+      "title": "Castle resident placement assertion treated its own body as an obstruction",
+      "status": "corrected-locally; wider resident approach review pending",
+      "affected": "CastleSupportArtTest / Matthis Rook placement inspection",
+      "symptom": "The advisory CI and local test failed at Matthis Rook although CastleHubIntegrationTest intentionally requires that players cannot walk through his body.",
+      "cause": "The placement test called player traversable at the resident centre, which correctly includes CastleArchive.occupies.",
+      "action": "Use a shared ground-placement query that excludes only character occupancy and retains floors, walls, doors, furnishings, warehouse and service fixture collision. Keep normal player traversal unchanged.",
+      "evidence": "CastleSupportArtTest now passes with negative controls for unsupported ground, furniture intersection and preserved keeper-body collision; CastleHubIntegrationTest also passes.",
+      "older_maps": "Separate support/placement from self-collision in actor placement checks; never relax actual furniture or wall collision to satisfy a test."
+    },
+    {
+      "id": "DEV-170",
+      "title": "Labeling the USER authoring slot throws Unknown site USER",
+      "status": "corrected-locally; remote acceptance pending",
+      "affected": "MissionSites.title / campaign-board and lobby authoring labels",
+      "symptom": "Full-round advisory run 41273695792 and local MissionBoardIntegrationTest reach IllegalArgumentException Unknown site USER while enumerating authoring enums.",
+      "cause": "The USER enum was added to editor availability but is deliberately absent from built-in MissionSites/campaign order; title delegated unconditionally to that roster.",
+      "action": "Provide the established User authored level slot label without opening a user project or adding a campaign chapter.",
+      "evidence": "Actual MissionBoardIntegrationTest passes locally, covering packaged pictures, asynchronous loading, retained 22-chapter order, prototype privacy and locked/unlocked dispatch.",
+      "older_maps": "Keep custom authoring slots separate from fixed built-in/campaign roster and saved ordinals; do not silently substitute a built-in map."
     }
   ],
   "audit_categories": [

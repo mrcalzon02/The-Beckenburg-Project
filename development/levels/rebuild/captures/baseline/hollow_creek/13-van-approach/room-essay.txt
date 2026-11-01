@@ -1,0 +1,12 @@
+Room 13: Van approach
+Site: Camp Hollow Creek / native-site-v1-f46e6482c5ffa735
+Bounds (X,Z): 24.00,68.00 -> 40.00,84.00; floor 1.50m; clear height 10.00m
+Geometric centre: 32.00,76.00; traversable: true
+Actual 4-view camera: 32.00,1.93,75.65; displacement 0.35m
+Portal access / windows / stairs: P0 trail -> 0 Ranger gate / noticeboard 2.00m @(32.00,1.50,72.00); P15 trail -> 12 Woodland arrival trail 3.00m @(32.00,1.50,73.00); P16 trail -> 14 Expedition van 1.20m @(32.00,1.50,74.30)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 1
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

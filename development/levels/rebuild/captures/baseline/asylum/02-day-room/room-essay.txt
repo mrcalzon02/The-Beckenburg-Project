@@ -1,0 +1,12 @@
+Room 2: Day room
+Site: St. Dymphna Hospital / production-2026-10-20-lived-location-v1-3edfcaaae4318eb8
+Bounds (X,Z): 9.00,18.00 -> 21.00,26.00; floor 0.00m; clear height 3.40m
+Geometric centre: 15.00,22.00; traversable: true
+Actual 4-view camera: 15.00,0.00,22.00; displacement 0.00m
+Portal access / windows / stairs: P4 door -> 0 Central ward corridor 1.35m @(21.00,0.00,22.00); P8 door -> 1 Admission reception 1.20m @(15.00,0.00,26.00); P9 door -> 3 Dining ward 1.20m @(15.00,0.00,18.00); P21 window -> 12 Rear quadrangle 1.25m @(9.00,0.00,22.00)
+Connected in authored portal graph to van: true
+Props: 8; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

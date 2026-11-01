@@ -42,5 +42,10 @@ public final class MissionSites {
             .stream().map(MissionSites::byId).toList();
     }
     public static Entry byId(String id){return ALL.stream().filter(e->e.id().equals(id)).findFirst().orElseThrow(()->new IllegalArgumentException("Unknown site "+id));}
-    public static String title(String id){return byId(id.equals("HOLLOW_CREEK")?"WLD-02":id).title();}
+    public static String title(String id){
+        // USER is an authoring slot, not a campaign chapter or a built-in site.
+        // Labeling a lobby must work before a user project has been selected.
+        if("USER".equals(id))return "User authored level";
+        return byId(id.equals("HOLLOW_CREEK")?"WLD-02":id).title();
+    }
 }

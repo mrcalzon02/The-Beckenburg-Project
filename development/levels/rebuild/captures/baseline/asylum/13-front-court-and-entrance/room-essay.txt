@@ -1,0 +1,12 @@
+Room 13: Front court and entrance
+Site: St. Dymphna Hospital / production-2026-10-20-lived-location-v1-3edfcaaae4318eb8
+Bounds (X,Z): 2.50,34.00 -> 44.00,54.40; floor 0.00m; clear height 12.00m
+Geometric centre: 23.25,44.20; traversable: true
+Actual 4-view camera: 23.25,0.00,44.20; displacement 0.00m
+Portal access / windows / stairs: P0 open -> 12 Rear quadrangle 3.00m @(7.00,0.00,34.00); P1 open -> 14 Van cargo interior 1.48m @(22.37,0.00,47.00); P16 door -> 0 Central ward corridor 1.80m @(24.00,0.00,34.00)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 23
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

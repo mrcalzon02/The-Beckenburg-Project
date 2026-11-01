@@ -1,0 +1,12 @@
+Room 12: Exercise yard
+Site: Beckenburg Penitentiary / production-2026-10-20-lived-location-v1-60942e272a0ae2d0
+Bounds (X,Z): 4.00,3.00 -> 43.00,34.00; floor 0.00m; clear height 12.00m
+Geometric centre: 23.50,18.50; traversable: true
+Actual 4-view camera: 23.60,0.00,9.85; displacement 8.65m
+Portal access / windows / stairs: P0 open -> 13 Front court and entrance 3.00m @(6.00,0.00,34.00); P17 door -> 0 Main cell block 1.40m @(23.50,0.00,10.00); P20 window -> 1 Intake lobby 1.25m @(8.00,0.00,30.00); P21 window -> 2 Guard station 1.25m @(8.00,0.00,22.00); P22 window -> 3 Mess hall 1.25m @(8.00,0.00,14.00); P23 window -> 4 Secondary cell block 1.25m @(39.00,0.00,30.00); P24 window -> 5 Infirmary 1.25m @(39.00,0.00,22.00); P25 window -> 6 Chapel visitation 1.25m @(39.00,0.00,14.00); P26 window -> 8 Isolation wing 1.25m @(8.00,3.40,30.00); P27 window -> 9 Records office 1.25m @(8.00,3.40,14.00); P28 window -> 10 Upper cells 1.25m @(39.00,3.40,22.00)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 3
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

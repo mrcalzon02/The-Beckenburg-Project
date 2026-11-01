@@ -67,7 +67,13 @@ public final class SiteRoomCompassAudit {
     }
     private record Camera(double x,double y,double z,boolean trueCentre,double offset){}
     private static Camera camera(HouseMap map,LevelDefinition.Room room){
-        return cameraAt(map,room,(room.x0()+room.x1())/2,(room.z0()+room.z1())/2,7.0);
+        double cx=(room.x0()+room.x1())/2,cz=(room.z0()+room.z1())/2;
+        Camera local=cameraAt(map,room,cx,cz,7.0);
+        // Exterior ownership rectangles may underlie whole buildings. Their
+        // nearest real outdoor surface can be farther than seven metres from
+        // the centre; an arbitrary search radius must not erase a site's yard.
+        return local!=null?local:cameraAt(map,room,cx,cz,
+            Math.max(room.x1()-room.x0(),room.z1()-room.z0())/2);
     }
     private static Camera cameraAt(HouseMap map,LevelDefinition.Room room,
             double cx,double cz,double maxOffset){
@@ -411,6 +417,9 @@ public final class SiteRoomCompassAudit {
         StringBuilder failures=new StringBuilder();
         for(HouseMap.Site site:HouseMap.Site.values()){
             if(!chosen.equals("ALL")&&!chosen.equals(site.name()))continue;
+            // User-authored projects are not part of the built-in map roster.
+            // An explicit --site=USER remains available for their owner.
+            if(chosen.equals("ALL")&&site==HouseMap.Site.USER)continue;
             if(!prototypes&&!SiteCatalog.playable(site))continue;
             try{audit(site,output);}catch(Exception e){
                 failures.append(site).append(" / ").append(e).append('\n');
@@ -426,7 +435,7 @@ public final class SiteRoomCompassAudit {
                 Files.writeString(output.resolve("BLACKPINE_AUDIT_ERROR.txt"),e.toString());
             }
         }
-        if(castle&&chosen.equals("ALL")){
+        if(castle&&(chosen.equals("ALL")||chosen.equals("CASTLE"))){
             try{castle(output);}catch(Exception e){
                 failures.append("CASTLE / ").append(e).append('\n');
                 Files.writeString(output.resolve("CASTLE_AUDIT_ERROR.txt"),e.toString());

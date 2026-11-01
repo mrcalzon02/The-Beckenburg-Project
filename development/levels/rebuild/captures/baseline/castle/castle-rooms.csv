@@ -1,0 +1,11 @@
+room_name,floor,camera_x,camera_z,center_traversable,usable_camera,north,east,south,west
+Armory,0.00,5.75,6.25,true,true,armory/north.png,armory/east.png,armory/south.png,armory/west.png
+Briefing and contracts,0.00,15.00,6.25,true,true,contracts/north.png,contracts/east.png,contracts/south.png,contracts/west.png
+Wardrobe and lounge,0.00,24.00,6.25,true,true,wardrobe/north.png,wardrobe/east.png,wardrobe/south.png,wardrobe/west.png
+Practice and common room,0.00,5.75,22.75,true,true,practice/north.png,practice/east.png,practice/south.png,practice/west.png
+Arrival courtyard,0.00,15.50,22.75,true,true,court/north.png,court/east.png,court/south.png,court/west.png
+Expedition operations,0.00,24.50,22.50,false,true,operations/north.png,operations/east.png,operations/south.png,operations/west.png
+Common archive,0.00,35.50,11.00,false,true,archive/north.png,archive/east.png,archive/south.png,archive/west.png
+Quartermaster store,0.00,35.75,25.75,true,true,store/north.png,store/east.png,store/south.png,store/west.png
+Gate threshold,0.00,15.50,35.00,true,true,gate/north.png,gate/east.png,gate/south.png,gate/west.png
+Upper library,3.40,15.00,6.50,false,true,library/north.png,library/east.png,library/south.png,library/west.png

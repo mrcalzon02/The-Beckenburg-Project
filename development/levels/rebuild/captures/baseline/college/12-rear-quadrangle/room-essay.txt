@@ -1,0 +1,12 @@
+Room 12: Rear quadrangle
+Site: Beckenburg College / production-2026-10-20-lived-location-v1-c3226f8e5f4a671c
+Bounds (X,Z): 3.00,3.00 -> 49.00,38.00; floor 0.00m; clear height 12.00m
+Geometric centre: 26.00,20.50; traversable: true
+Actual 4-view camera: 25.75,0.00,9.75; displacement 10.75m
+Portal access / windows / stairs: P0 open -> 13 Front court and entrance 3.00m @(5.00,0.00,38.00); P17 door -> 0 Campus concourse 1.40m @(25.50,0.00,10.00); P20 window -> 1 Administration 1.25m @(7.00,0.00,33.33); P21 window -> 2 Seminar classroom 1.25m @(7.00,0.00,24.00); P22 window -> 3 Laboratory 1.25m @(7.00,0.00,14.67); P23 window -> 4 Student union cafe 1.25m @(45.00,0.00,33.33); P24 window -> 5 Lecture theatre 1.25m @(45.00,0.00,24.00); P25 window -> 6 Library reading room 1.25m @(45.00,0.00,14.67); P26 window -> 8 Library stacks 1.25m @(7.00,3.60,34.00); P27 window -> 9 Dormitory corridor 1.25m @(7.00,3.60,14.00); P28 window -> 10 Tutorial room 1.25m @(45.00,3.60,24.00)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 3
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

@@ -1,0 +1,12 @@
+Room 0: Cloister passage
+Site: St. Alban Academy / production-2026-10-20-lived-location-v1-35f49587a92eecc8
+Bounds (X,Z): 21.00,8.00 -> 27.00,34.00; floor 0.00m; clear height 3.60m
+Geometric centre: 24.00,21.00; traversable: true
+Actual 4-view camera: 24.00,0.00,21.00; displacement 0.00m
+Portal access / windows / stairs: P2 door -> 1 Reception hall 1.35m @(21.00,0.00,29.67); P3 door -> 4 Dining hall 1.35m @(27.00,0.00,29.67); P4 door -> 2 Lecture room 1.35m @(21.00,0.00,21.00); P5 door -> 5 Headmaster office 1.35m @(27.00,0.00,21.00); P6 door -> 3 Laboratory study 1.35m @(21.00,0.00,12.33); P7 door -> 6 Library 1.35m @(27.00,0.00,12.33); P16 door -> 13 Front court and entrance 1.80m @(24.00,0.00,34.00); P17 door -> 12 Rear quadrangle 1.40m @(24.00,0.00,8.00); P18 stair -> 7 Upper cloister 1.50m @(22.25,0.00,10.00); P19 stair -> 11 Basement archive 1.50m @(25.75,-3.00,32.00); STAIR0 0 -> 7 floor 0.00 to 3.60; STAIR1 11 -> 0 floor -3.00 to 0.00
+Connected in authored portal graph to van: true
+Props: 1; sockets: 8
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

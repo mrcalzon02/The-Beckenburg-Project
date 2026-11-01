@@ -29,13 +29,20 @@ public final class CastleSupportArtTest {
         check(CastleRelations.Resident.values().length==5,
             "Matthis Rook and four distinct support character interactions");
         var stations=CastleHubMap.Station.values();
+        var map=new CastleHubMap();
         for(var resident:CastleRelations.Resident.values()){
-            check(new CastleHubMap().traversable(resident.x,resident.z),
+            check(map.residentPlacementClear(resident.x,resident.z),
                 "Resident sprite must stand on accessible Castle floor: "+resident.name);
             for(var station:stations)check(Math.hypot(station.x-resident.x,
                 station.z-resident.z)>.45,
                 "Resident must not occupy the workstation itself: "+resident.name);
         }
+        check(!map.traversable(CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z),
+            "Placement review must preserve the keeper's actual body collision");
+        check(!map.residentPlacementClear(0,0),"Placement review rejects unsupported ground");
+        var furnishing=CastleHubMap.furnishings().get(0);
+        check(!map.residentPlacementClear(furnishing.x(),furnishing.z()),
+            "Placement review still rejects furniture intersections");
         check(DirectionalSprites.frame("lore_master",0)!=null,
             "The canonical Matthis Rook sprite remains loaded");
         System.out.println("PASS Castle support character sprites: 16 cutouts, valid placements, five residents");

@@ -1,0 +1,12 @@
+Room 5: Upper farm landing
+Site: Hollowmere Farm / production-2026-10-20-lived-location-v1-51c40097d2dcf39e
+Bounds (X,Z): 20.00,12.00 -> 26.00,27.00; floor 3.00m; clear height 3.00m
+Geometric centre: 23.00,19.50; traversable: true
+Actual 4-view camera: 23.00,3.00,19.50; displacement 0.00m
+Portal access / windows / stairs: P7 door -> 6 Parents bedroom 1.05m @(20.00,3.00,23.00); P8 door -> 7 Child bedroom 1.05m @(20.00,3.00,18.20); P13 stair -> 4 Central stair passage 1.50m @(24.50,0.00,16.10); P20 door -> 5 Upper farm landing 1.00m @(23.30,3.00,15.40); STAIR0 4 -> 5 floor 0.00 to 3.00
+Connected in authored portal graph to van: true
+Props: 13; sockets: 17
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

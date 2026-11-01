@@ -1,0 +1,12 @@
+Room 0: Ranger gate / noticeboard
+Site: Camp Hollow Creek / native-site-v1-f46e6482c5ffa735
+Bounds (X,Z): 24.00,60.00 -> 40.00,72.00; floor 1.00m; clear height 8.00m
+Geometric centre: 32.00,66.00; traversable: true
+Actual 4-view camera: 32.00,1.00,66.00; displacement 0.00m
+Portal access / windows / stairs: P0 trail -> 13 Van approach 2.00m @(32.00,1.50,72.00); P1 trail -> 1 Ranger clearing 2.00m @(22.00,0.50,58.94); P2 trail -> 2 Washhouse clearing 2.00m @(42.00,0.30,58.94)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 1
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

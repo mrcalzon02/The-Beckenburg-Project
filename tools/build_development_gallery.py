@@ -21,6 +21,8 @@ for path in sorted(set(paths)):
     elif '/ci-ui/' in path:kind='Game UI verification'
     elif '/performance/hardware/' in path:kind='Runtime GPU diagnostic'
     elif '/fixture-join-diagnostic/' in path:kind='Runtime lighting diagnostic'
+    elif '/rebuild/captures/baseline/' in path:kind='Runtime baseline capture'
+    elif '/rebuild/captures/' in path:kind='Runtime capture'
     elif '/castle-survey/' in path:kind='Runtime GPU capture'
     elif '/lighting-camera-audit/' in path or '/van-castle-repair/' in path or '/metal-refinement/' in path:kind='Runtime capture'
     elif '/water-editor/' in path:kind='Editor UI verification'
