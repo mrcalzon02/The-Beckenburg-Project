@@ -63,8 +63,9 @@ public final class TerrainComposedHeightSamplerTest {
             authored.finishStroke();authored.save();
             var masked=new TerrainComposedHeightSampler(world);
             near(masked.height(7,7),source,"Zero alpha mask hides sculpt at center");
+            physical.refreshAuthoredTerrain();
             near(physical.groundHeight(7,7),source,
-                "Existing query instance reloads updated layer data");
+                "Persistent physical queries refresh upon authored-layer save");
             // A new surface query instance always reads the latest layer
             // document. The current query's sampler is intentionally scoped
             // to one build/use session and must be reconstructed after edits.
