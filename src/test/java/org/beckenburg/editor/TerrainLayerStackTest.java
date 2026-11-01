@@ -52,7 +52,7 @@ public final class TerrainLayerStackTest {
             b.autoBiome(-50,500,45);
             b.gradePath(List.of(new TerrainLayerStack.Point(4,4,25),
                 new TerrainLayerStack.Point(26,26,30)),2,3);
-            near(b.height(16,16),27,"Rail grade interpolation");
+            near(b.height(16,16),25+5.0*12/22,"Rail grade interpolation");
             b.thermal(2,35,.12);
             b.hydraulic(20,15,91L,.1,.2);
             b.wind(2,1,0,.03);
