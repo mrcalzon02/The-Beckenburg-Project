@@ -770,8 +770,41 @@ public final class TerrainLayerStack {
             if(in.read()!=-1)throw new IOException("Unexpected data after terrain document");
         }
     }
+    /**
+     * Create a staged copy of a valid saved authoring document with ONLY its
+     * source checksum updated. Sculpt deltas, per-layer opacity masks, painted
+     * material IDs and protection bits remain byte-identical. The caller must
+     * commit this alongside its new source PNG in one recovery-journal batch.
+     */
+    static void stageRebasedDocument(StitchedHeightmapWorld world,int tx,int tz,
+                                      int[] nextSource,Path destination)throws IOException{
+        Objects.requireNonNull(world);Objects.requireNonNull(nextSource);
+        Objects.requireNonNull(destination);
+        int count=(world.settings().tileCells()+1)*(world.settings().tileCells()+1);
+        if(nextSource.length!=count)throw new IOException("Invalid rebased source dimension");
+        for(int v:nextSource)if(v<0||v>65535)
+            throw new IOException("Rebased source sample outside R16");
+        TerrainLayerStack original=new TerrainLayerStack(world,tx,tz);
+        Path saved=original.path();
+        if(!Files.isRegularFile(saved))
+            throw new IOException("No saved layer document for coordinated rebase");
+        Files.copy(saved,destination,StandardCopyOption.REPLACE_EXISTING);
+        // First fields are constant for both v1 and v2:
+        // magic (4), version (4), cell count (4), source CRC32 (8).
+        try(var file=new RandomAccessFile(destination.toFile(),"rw")){
+            file.seek(12);file.writeLong(crc(nextSource));
+        }
+    }
+    /** Refuse overwriting a saved document whose source tile changed. */
+    private void verifyCurrentSource()throws IOException{
+        int[] current=new int[pixels];
+        for(int z=0;z<side;z++)for(int x=0;x<side;x++)
+            current[id(x,z)]=world.sample(tx,tz,x,z);
+        if(crc(current)!=sourceCrc)
+            throw new IOException("Source changed since terrain editor opened: reopen layers");
+    }
     public void save()throws IOException {
-        finishStroke();
+        finishStroke();verifyCurrentSource();
         Files.createDirectories(path().getParent());
         Path temp=Files.createTempFile(path().getParent(),".terrain-",".tmp");
         try{
