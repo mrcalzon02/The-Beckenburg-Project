@@ -19,7 +19,7 @@ public final class TerrainSceneNativePhysicsTest {
     public static void main(String[] args)throws Exception{
         Path folder=Files.createTempDirectory("terrain-runtime-physics");
         try{
-            var settings=new StitchedHeightmapWorld.Settings(32,2,0,0,-200,1000,42L,4);
+            var settings=new StitchedHeightmapWorld.Settings(32,2,0,0,-4,4,42L,4);
             var world=StitchedHeightmapWorld.create(folder.resolve("world"),settings);
             var routeFile=TerrainInfrastructureSplines.open(world);
             routeFile.put(route(27));routeFile.save();
