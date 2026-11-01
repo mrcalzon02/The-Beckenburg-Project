@@ -186,6 +186,18 @@ public final class TerrainLayerWorkbench extends JPanel {
         field(sidebar,"Route name / stable ID",routeName);
         button(sidebar,"APPLY AND SAVE ROUTE",this::applyRoute);
         button(sidebar,"CLEAR ROUTE POINTS",()->{gradeControls.clear();refresh("Route draft cleared");});
+        button(sidebar,"CROSS-TILE SEAM SCULPT...",()->{
+            if(busy)return;
+            if(stack.dirty()){
+                JOptionPane.showMessageDialog(frame,
+                    "Save or discard the current unsaved single-tile terrain layer changes "+
+                    "before opening a separate cross-tile editing session.",
+                    "Protect current terrain authoring",JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            try{TerrainSeamSculptEditor.open(frame,sourceWorld,sourceX,sourceZ);}
+            catch(IOException|RuntimeException ex){error(ex);}
+        });
         JScrollPane scroll=new JScrollPane(sidebar);
         scroll.setPreferredSize(new Dimension(290,500));
         scroll.getVerticalScrollBar().setUnitIncrement(18);
