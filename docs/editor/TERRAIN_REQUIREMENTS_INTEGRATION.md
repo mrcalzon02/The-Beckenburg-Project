@@ -8,10 +8,11 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 
 | Requirement | Implementation | Limit |
 |---|---|---|
-| Stitched 16-bit source heightmaps | `StitchedHeightmapWorld`, `StitchedWorldEditor`; seam-validated, journaled import of up to nine PNG tiles in one batch with reopen-time rollback | Painting shared seams across tiles from the interactive brush still pending |
+| Stitched 16-bit source heightmaps | `StitchedHeightmapWorld`, `StitchedWorldEditor` with seam-validated, journaled batches (up to nine tiles), crash recovery, and interactive shared-vertex seam sculpt | The cross-tile brush uses its own non-destructive session; merging it with sculpt-layer v2 masks is pending |
 | Procedural noise | `TerrainLayerStack.Noise`: Perlin, Simplex, Worley, ridged, billow, domain warp | Deterministic octave stack; no graph UI |
 | Live low-res generation preview | Workbench `LIVE LOW-RES PREVIEW` | 2D analytical height preview, not live 3D |
 | Non-destructive stacked sculpt layers | `TerrainLayerStack` v2 with editable per-layer sample masks, enable and opacity; existing v1 files are readable | Up to 12 layers; source heightmaps remain unchanged until explicit bake |
+| Non-destructive seam authoring | `TerrainSeamSculpt`: unique global vertices, 3×3 viewport of existing tiles, sparse stroke undo/redo, durable save/reopen and explicit guarded R16 source bake | Source bake refuses affected tiles with layer documents; interactive cross-tile layer-mask integration pending |
 | Precision brush base | Raise/lower/smooth/flatten/revert/trench/terrace; inner radius, three curves, alpha images, rotation, event-independent dab spacing, elevation/slope guards | No mesh stamp-angle fitting yet |
 | Brush hot-swap presets | `TerrainBrushPresets`: versioned atomic save/load/delete, bundled alpha and numeric profiles | Presets scoped to a world; share/export UX later |
 | Localized differential undo/redo | Mixed sparse height, material paint, freeze/unfreeze, material locks and layer enable/opacity history; painted drag grouped into one edit | Session history is memory-resident; layer add/delete and route documents are not yet undoable |
@@ -22,7 +23,7 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 | Slope/height auto-biomes | `autoBiome`, `slope` | Fixed rules; not yet a node-based rule graph |\n| Derived topology / drainage | `TerrainTopologyFields`: analytical curvature, slope, D8 flow direction/speed estimates, accumulation and moisture proxies; versioned disk cache + height fingerprint | Not simulated droplet flow/sediment; no cross-tile drainage yet |
 | Surface materials | Eight stable material IDs and paint brush | Renderer/footstep/physics adapter must consume these |
 | Freeze/exclusion masks | Rectangle freeze, material-based lock and brush respect | No mesh-hull raycast or cylinder masks yet |
-| Infrastructure grading | `gradePath` with bounded segment rasterization (up to 50k samples), persistent `TerrainInfrastructureSplines`; saved route load/edit/drag/delete in workbench | Reapplying an edited route does not automatically undo its previous terrain grade; no track mesh generation |
+| Infrastructure grading | `gradePath` with bounded segment rasterization (up to 50k samples), persistent `TerrainInfrastructureSplines`; saved route load/edit/drag/delete in workbench | Reapplying an edited route does not automatically undo its previous terrain grade; track mesh export is a separate module |
 | Grade constraints | Rail/road maximum grade validation; clamp controls to target grade | No turnout, bridge or tunnel geometry |\n| Real railway track geometry | `TerrainRailMesh` builds ballast prisms, two extruded rails and spaced sleeper meshes from RAIL alignments; shared real-mesh inspector and validated OBJ export | Geometry-only: no switch, bridge, tunnel, rolling-stock physics or host-renderer adapter |
 | Background operations | SwingWorker for heavy generation, erosion, save, bake | Full GPU/physics pipeline not wired |
 | Safe explicit source bake | Checks 16-bit range and source checksum; tile border frozen; single-tile and journaled multi-tile PNG imports | Multi-file writes are journal-recoverable on reopen, not atomically visible to concurrent external readers |
@@ -34,7 +35,7 @@ Implementation entry point: `StitchedWorldEditor` > **LAYERED TERRAIN TOOLS**.
 Standalone build: `tools/build-editor-kit.sh` or `tools/build-editor-kit.cmd`.
 Tests: `TerrainLayerStackTest`, `TerrainInfrastructureSplinesTest`,
 `TerrainBrushProfileTest`, `TerrainBrushPresetsTest`,
-`TerrainErosionRegionTest`, `TerrainMixedHistoryTest`,\n`TerrainTopologyFieldsTest`, `TerrainEditEventTest`,\n`TerrainRailMeshTest`, `StitchedHeightmapBatchTest`,\n`TerrainLayerMaskTest`;
+`TerrainErosionRegionTest`, `TerrainMixedHistoryTest`,\n`TerrainTopologyFieldsTest`, `TerrainEditEventTest`,\n`TerrainRailMeshTest`, `StitchedHeightmapBatchTest`,\n`TerrainLayerMaskTest`, `TerrainSeamSculptTest`;
 workflow: `.github/workflows/standalone-editor-kit.yml`.
 
 ## Mandatory preservation rules
@@ -77,7 +78,7 @@ workflow: `.github/workflows/standalone-editor-kit.yml`.
 - Grade embankments/cuttings while supporting our three seam/cutout entrance methods.
 - Build real switches, bridge/tunnel geometry and route intersections, not painted heightmap approximations. Real standalone rail/ballast/sleeper geometry is now exported as OBJ.
 - Produce portable spline and corridor output consumed by rail and AI/nav modules.
-- Connect interactive brushes to seam-aware batch editing across multiple live tiles; current PNG batch imports are journaled and recovered on open, while interactive multi-tile sculpting and true cross-process atomic visibility are not yet available.
+- Integrate seam brush edits directly into v2 non-destructive terrain layers, including multi-tile sculpt masks and coordinated source rebasing. Separate seam sessions and batch baking are implemented; true cross-process atomic visibility is not available.
 
 ### Materials, visualization and engine adapters
 - Implement tile/face material-ID grids for strict retro mode, atlas packing,
