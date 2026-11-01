@@ -1,6 +1,7 @@
 package org.beckenburg;
 
 import java.lang.reflect.Method;
+import java.nio.file.*;
 import java.util.*;
 
 /** Differential source-face checks; hardware image/lighting acceptance is separate. */
@@ -29,6 +30,23 @@ public final class DynamicGeometryRetentionTest {
             Math.round(s.z()*1000)+","+Math.round(yaw*1000)+","+Math.round(roll*1000)+","+holder;
     }
     public static void main(String[] args)throws Exception{
+        // USER requires a selected authored level, unlike the bundled sites.
+        // Use real saved editor data in an isolated home, leaving user levels untouched.
+        String originalHome=System.getProperty("user.home");
+        Path isolatedHome=Files.createTempDirectory("beckenburg-geometry-retention-");
+        try{
+            System.setProperty("user.home",isolatedHome.toString());
+            UserLevelLibrary.create("retentionTest",HouseMap.Site.HOUSE);
+            runAcceptance();
+        }finally{
+            if(originalHome==null)System.clearProperty("user.home");
+            else System.setProperty("user.home",originalHome);
+            try(var paths=Files.walk(isolatedHome)){
+                for(var p:paths.sorted(Comparator.reverseOrder()).toList())Files.deleteIfExists(p);
+            }
+        }
+    }
+    private static void runAcceptance()throws Exception{
         String flag="beckenburg.dynamic.geometry.cache.disabled",old=System.getProperty(flag);
         SceneRenderer cached,rebuilt;
         try{
