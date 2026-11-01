@@ -7,7 +7,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -24,7 +23,7 @@ public final class RuntimeSceneDocument {
     private static final int MAGIC=0x4253434e; // BSCN
     public static final int VERSION=1;
     private static final int MAX_NODES=4096,MAX_COMPONENTS=32,MAX_PROPS=128;
-    private static final long MAX_FILE_BYTES=8L*1024*1024;
+    private static final long MAX_FILE_BYTES=EditorDocumentStore.MAX_BYTES;
     private RuntimeSceneDocument(){}
     private static String checked(String value,int max,String what)throws IOException {
         if(value==null||value.length()>max)
@@ -66,11 +65,8 @@ public final class RuntimeSceneDocument {
     public static void save(Path destination,RuntimeScene scene)throws IOException{
         Objects.requireNonNull(destination);Objects.requireNonNull(scene);
         validate(scene);
-        Path parent=destination.toAbsolutePath().normalize().getParent();
-        Files.createDirectories(parent);
-        Path temp=Files.createTempFile(parent,".runtime-scene-",".tmp");
-        try{
-            try(var out=new DataOutputStream(new BufferedOutputStream(Files.newOutputStream(temp)))){
+        EditorDocumentStore.save(destination,output->{
+            try(var out=new DataOutputStream(new BufferedOutputStream(output))){
                 out.writeInt(MAGIC);out.writeInt(VERSION);out.writeUTF(scene.sceneId());
                 out.writeInt(scene.nodes().size());
                 for(var n:scene.nodes()){
@@ -93,18 +89,25 @@ public final class RuntimeSceneDocument {
                     }
                 }
             }
-            if(Files.size(temp)>MAX_FILE_BYTES)
-                throw new IOException("Scene document exceeds 8 MiB budget");
-            var check=load(temp);
+        },RuntimeSceneDocument::readRaw,temp->{
+            var check=readRaw(temp);
             if(!check.sceneId().equals(scene.sceneId())
                 ||!check.nodes().equals(scene.nodes()))
                 throw new IOException("Scene save/readback did not preserve nodes");
-            Files.move(temp,destination,StandardCopyOption.ATOMIC_MOVE,
-                StandardCopyOption.REPLACE_EXISTING);
-        }finally{Files.deleteIfExists(temp);}
+        });
     }
     public static InMemoryRuntimeScene load(Path path)throws IOException{
         Objects.requireNonNull(path);
+        recoverPending(path);
+        return readRaw(path);
+    }
+    public static void recoverPending(Path path)throws IOException{
+        EditorDocumentStore.recoverPending(path,RuntimeSceneDocument::readRaw);
+    }
+    public static void restorePrevious(Path path,EditorDocumentStore.Validator hostValidator)throws IOException{
+        EditorDocumentStore.restorePrevious(path,RuntimeSceneDocument::readRaw,hostValidator);
+    }
+    static InMemoryRuntimeScene readRaw(Path path)throws IOException{
         if(!Files.isRegularFile(path)||Files.size(path)>MAX_FILE_BYTES)
             throw new IOException("Missing or oversized scene document");
         try(var in=new DataInputStream(new BufferedInputStream(Files.newInputStream(path)))){

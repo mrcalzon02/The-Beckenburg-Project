@@ -19,6 +19,38 @@ public final class EditorAgentGuiTest {
         return null;
     }
     private static void check(boolean ok,String why){if(!ok)throw new AssertionError(why);}
+    private static <T> T component(Container parent,Class<T> type){
+        for(var child:parent.getComponents()){
+            if(type.isInstance(child))return type.cast(child);
+            if(child instanceof Container nested){T found=component(nested,type);if(found!=null)return found;}
+        }
+        return null;
+    }
+    /** Drive the actual human verification menu and recovery confirmation. */
+    private static void recoverThroughMenu(DeveloperLevelEditor editor){
+        var stage=new java.util.concurrent.atomic.AtomicInteger();
+        var failure=new AtomicReference<String>();long started=System.nanoTime();
+        Timer driver=new Timer(50,event->{
+            for(Window window:Window.getWindows())if(window instanceof JDialog dialog&&dialog.isShowing()){
+                var pane=component(dialog,JOptionPane.class);if(pane==null)continue;
+                if(stage.get()==0&&dialog.getTitle().equals("Scene verification")){
+                    var choice=component(dialog,JComboBox.class);
+                    if(choice==null){failure.set("Human recovery chooser missing");dialog.dispose();return;}
+                    choice.setSelectedItem("RECOVER PREVIOUS SAVE");
+                    pane.setInputValue("RECOVER PREVIOUS SAVE");stage.incrementAndGet();pane.setValue(JOptionPane.OK_OPTION);
+                }else if(stage.get()==1&&dialog.getTitle().equals("Recover saved scene")){
+                    stage.incrementAndGet();pane.setValue(JOptionPane.OK_OPTION);
+                }else if(stage.get()==2&&dialog.getTitle().equals("Scene evidence")){
+                    stage.incrementAndGet();pane.setValue(JOptionPane.OK_OPTION);
+                }else if(dialog.getTitle().equals("Scene verification failed")){
+                    failure.set("Human recovery failed");pane.setValue(JOptionPane.OK_OPTION);
+                }
+                if(System.nanoTime()-started>15_000_000_000L){failure.set("Human recovery dialog timed out");dialog.dispose();}
+            }
+        });
+        driver.start();try{button(editor,"VERIFY SCENE").doClick();}finally{driver.stop();}
+        check(failure.get()==null&&stage.get()==3,"Actual human recovery menu completed: "+failure.get());
+    }
     public static void main(String[] args)throws Exception{
         Path output=Path.of(args.length==0?"build/editor-agent-evidence":args[0]).toAbsolutePath();Files.createDirectories(output);
         Path home=Files.createTempDirectory("editor-agent-gui-");
@@ -40,6 +72,7 @@ public final class EditorAgentGuiTest {
                     var open=DeveloperLevelEditor.class.getDeclaredMethod("openMission",HouseMap.Site.class);
                     open.setAccessible(true);open.invoke(e,HouseMap.Site.HOUSE);
                     var service=e.agentService();var before=service.inspect();var node=before.hierarchy().get(0);
+                    service.save(before.revision());
                     service.transact(before.revision(),"move-prop",Map.of("id",node.id(),
                         "x",Double.toString(node.x()+.125),"y",Double.toString(node.y()),"z",Double.toString(node.z())));
                     check(service.inspect().hierarchy().get(0).x()==node.x()+.125,"Agent edit visible in active human editor");
@@ -53,6 +86,11 @@ public final class EditorAgentGuiTest {
                         "Real editor's HouseMap has same reopened props and colliders");
                     service.capture(service.inspect().revision(),output.resolve("house.png"));
                     Files.writeString(output.resolve("house-inspection.json"),EditorAgentCli.json(service.inspect()));
+                    Files.writeString(service.inspect().document(),"corrupt fixture document");
+                    recoverThroughMenu(e);
+                    check(service.inspect().hierarchy().get(0).x()==node.x(),"Human recovery restores previous real saved prop");
+                    undo.doClick();
+                    check(service.inspect().hierarchy().get(0).x()==node.x()+.125,"Human undo restores pre-recovery unsaved edit");
                     try{castle.inspect();throw new AssertionError("Old Castle service remains active");}
                     catch(IllegalStateException expected){}
                 }catch(Exception failure){throw new RuntimeException(failure);}
@@ -65,6 +103,6 @@ public final class EditorAgentGuiTest {
             });
             try(var files=Files.walk(home)){files.sorted(java.util.Comparator.reverseOrder()).forEach(p->{try{Files.deleteIfExists(p);}catch(Exception ignored){}});}
         }
-        System.out.println("PASS real Windows editor: mission service, human undo/redo, save/reopen, runtime parity, Castle/House PNGs and stale/closed scene rejection");
+        System.out.println("PASS real Windows editor: mission service, human undo/redo, save/reopen, actual recovery menu, runtime parity, Castle/House PNGs and stale/closed scene rejection");
     }
 }

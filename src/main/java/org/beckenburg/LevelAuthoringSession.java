@@ -82,6 +82,13 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     public synchronized void reopen()throws IOException{
         restore(loadState(document,documentId,source));
     }
+    public synchronized void recoverPrevious()throws IOException{
+        RuntimeSceneDocument.restorePrevious(document,path->{
+            var candidate=loadState(path,documentId,source);
+            for(var prop:candidate.props())checkProp(prop);
+        });
+        reopen();
+    }
     private void checkProp(Prop p){
         checkProp(p,source);
     }
@@ -151,6 +158,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         RuntimeSceneDocument.save(destination,document);
     }
     private static Snapshot loadState(Path path,String id,LevelDefinition source) throws IOException {
+        RuntimeSceneDocument.recoverPending(path);
         if(!Files.exists(path))return sourceState(id,source.props());
         var scene=RuntimeSceneDocument.load(path);
         if(!scene.sceneId().equals(id))
@@ -183,8 +191,11 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         return new Snapshot(id,ids,result);
     }
     static LevelDefinition apply(HouseMap.Site site,LevelDefinition source){
-        if(!Files.exists(path(site)))return source;
-        try{return compose(source,loadState(path(site),sceneId(site),source).props());}
+        try{
+            RuntimeSceneDocument.recoverPending(path(site));
+            if(!Files.exists(path(site)))return source;
+            return compose(source,loadState(path(site),sceneId(site),source).props());
+        }
         catch(IOException bad){
             throw new IllegalStateException("Cannot load authored "+site+" level",bad);
         }

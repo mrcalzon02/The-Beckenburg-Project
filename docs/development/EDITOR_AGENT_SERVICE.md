@@ -9,6 +9,9 @@ Owner priority, 2026-11-01: finish a small service over proven human editor oper
 - Inspection returns the actual unsaved authoring snapshot, hierarchy, document path, revision and explicit capabilities/operation/test lists.
 - Every exposed write requires the last observed revision. A transaction contains 1–64 allowlisted commands and creates one shared undo entry. Invalid commands restore the entire before-state. Human edits, Undo, Redo and Save use this same service/history.
 - Save uses existing host serialization. Reopen replaces state in the existing authoring object, is undoable, and rolls back malformed input.
+- Mission BSCN saves now use the portable `EditorDocumentStore`: 8 MiB enforced during output, forced staged bytes and checksummed write-ahead journal, atomic replacement, one distinct valid previous document and a per-document writer lock. Reopen finishes an interrupted save only when current bytes still match its recorded prior/committed hash. Corrupt journals and externally changed targets fail without overwriting them. This is tested process-crash recovery; filesystem/provider power-loss durability is not asserted.
+- The human mission verification menu and headless `recover` request explicitly restore the previous saved version through native identity/prop validation. The same live session and history are used. Undo restores the preceding live edits, while the recovered disk document changes only through a later explicit save. Castle retains its existing properties serializer and reports previous-save recovery unavailable.
+- Typed batches accept an owner-side cancellation predicate and honor thread interruption between host operations. Cancellation rolls back the whole native state, including IDs, and preserves prior undo/redo history; it does not preempt a single running host operation.
 - Capture renders a new frame through the host's `SceneRenderer` at the current viewport camera and returns PNG path, dimensions, renderer entry point and scene revision. A host without capture capability fails explicitly.
 - Targeted tests return individual `{code, passed, detail}` checks plus scene identity/revision. `castle-scene-audit` reports the existing advisory centre-probe audit, not full geometry acceptance. `mission-runtime-parity` compares native `HouseMap` props and colliders with current unsaved authoring data; it is not a full gameplay test.
 
@@ -35,6 +38,7 @@ undo<TAB>revision
 redo<TAB>revision
 save<TAB>revision
 reopen<TAB>revision
+recover<TAB>revision
 capture<TAB>revision<TAB>C:/path/to/frame.png
 test<TAB>revision<TAB>mission-runtime-parity
 ```
@@ -43,8 +47,8 @@ One JSON response is emitted per request on stdout; runtime diagnostics go to st
 
 ## Evidence and remaining gates
 
-`EditorAgentServiceTest` exercises real mission/Castle state, stale rejection, shared history, mid-batch rollback, saved game load, undoable reopen, corrupt-document recovery, renderer PNG, owner-thread enforcement and CLI failures. `EditorAgentGuiTest` opens the actual Windows editor, edits a House prop, clicks human Undo/Redo, saves/reopens, verifies native collider parity, captures Castle/House PNGs, rejects the inactive Castle service and rejects closed-editor access. `EditorCorePortabilityTest` exercises a small unrelated project without game files and proves a renderer-less host cannot fake capture.
+`EditorAgentServiceTest` exercises real mission/Castle state, stale rejection, shared history, mid-batch/cancellation rollback, saved game load, undoable reopen, corruption rejection, renderer PNG, owner-thread enforcement and CLI failures. `EditorAgentGuiTest` opens the actual Windows editor, edits a House prop, clicks human Undo/Redo, saves/reopens, drives the real recovery chooser/confirmation, verifies native collider parity, captures Castle/House PNGs, rejects the inactive Castle service and rejects closed-editor access. `LevelAuthoringRecoveryTest` proves exact native save recovery and game loading with wrong-scene negative controls. `EditorDocumentStoreTest` halts actual child processes before/after atomic replacement and verifies exact replay, backup, conflict/corruption/path checks, output bounds and writer locking without game files. `EditorCorePortabilityTest` exercises a small unrelated project without game files and proves a renderer-less host cannot fake capture.
 
 Local Java 17 compilation and these tests passed during implementation. GUI captures are under `build/editor-agent-evidence/` and were visually inspected. This is source-editor evidence, not installed-release, physical FPS, full gameplay or G11/MCP acceptance. Follow the recovery checkpoint for exact committed SHA and remote CI results.
 
-G1's stable mission IDs and pinned USER ownership are implemented and locally tested. Continue G0's provenance/gap audit and G1's remaining migration, journaling, cancellation and ownership/revision-event contracts before admitting new G2–G12 capabilities. Service existence does not close those gates.
+G1's stable mission IDs, pinned USER ownership, journaled BSCN persistence and cooperative batch cancellation are implemented and locally tested. Continue G0's provenance/gap audit and G1's broader migrations, Castle persistence, dependency ownership/revision events and incremental deltas before admitting new G2–G12 capabilities. Service existence does not close those gates.

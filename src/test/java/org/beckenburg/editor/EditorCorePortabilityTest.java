@@ -45,7 +45,7 @@ public final class EditorCorePortabilityTest {
                 public long revision(){return project.state;}
                 public void checkAccess(){}
                 public java.util.Set<EditorAgentService.Capability> capabilities(){
-                    return java.util.EnumSet.complementOf(java.util.EnumSet.of(EditorAgentService.Capability.CAPTURE));
+                    return java.util.EnumSet.complementOf(java.util.EnumSet.of(EditorAgentService.Capability.CAPTURE,EditorAgentService.Capability.RECOVER_PREVIOUS));
                 }
                 public List<String> operations(){return List.of("increment");}
                 public void apply(String operation,java.util.Map<String,String> arguments){project.state++;}

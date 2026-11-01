@@ -72,6 +72,7 @@ public final class EditorAgentCli {
                         case "redo" -> service.redo(revision);
                         case "save" -> service.save(revision);
                         case "reopen" -> service.reopen(revision);
+                        case "recover" -> service.recoverPrevious(revision);
                         case "capture" -> service.capture(revision,Path.of(parts[2]));
                         case "test" -> service.test(revision,parts[2]);
                         default -> throw new IllegalArgumentException("Unknown command: "+command);

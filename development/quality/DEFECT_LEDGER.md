@@ -2474,6 +2474,20 @@ Evidence and verification: LevelAuthoringIdentityTest saves an actual valid port
 
 Older-map obligation: Existing supported yaw/uniform-scale documents are preserved. Unsupported externally authored documents require explicit conversion rather than silent geometry loss.
 
+### DEV-182 — BSCN output budget checked only after full serialization
+
+**Status:** fixed-scoped; local portable crash/storage and native persistence tests pass; exact-source CI pending · **Affected:** RuntimeSceneDocument save output, including mission and terrain/rail documents
+
+Valid node/component count limits still allow more than 8 MiB of serialized properties; the previous implementation checked file size only after writing the complete temporary file.
+
+Cause / uncertainty: MAX_FILE_BYTES was enforced after stream closure rather than during output, permitting unbounded excess temporary-file writes relative to the document budget.
+
+Fix / next action: Route BSCN encoding through EditorDocumentStore with a bounded output stream, staged readback validation, forced journal and atomic replacement. Leave the current document unchanged on budget failure.
+
+Evidence and verification: EditorDocumentStoreTest rejects both a writer exceeding 8 MiB and a real BSCN scene with otherwise valid 30-by-128 large-property entries, preserving exact target bytes and no pending journal. Actual child-process crash/replay, native mission recovery, terrain/rail publication and HCS2 physics regressions pass locally.
+
+Older-map obligation: The bound applies to all BSCN producers without changing format v1 or existing source files. It does not certify other serializers or physical power-loss durability.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

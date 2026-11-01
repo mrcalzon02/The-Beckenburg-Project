@@ -1,0 +1,32 @@
+Source: fcf7c52eb1368b3b016044a781e6c8966b419604
+Workflow: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41324869128
+Job: 124902643106
+Workflow/job conclusion: SUCCESS for required packaged TCP/UI/executable checks.
+Advisory regression is NOT a pass: 260 passed, 12 failed, 0 skipped, 27 unexecuted of 299.
+Selected raw job-log lines follow. No tests or failures were removed.
+
+2026-11-01T16:12:14.8670559Z ##[error]Exception in thread "main" java.lang.AssertionError: all 20 numbered recordings must be reachable
+2026-11-01T16:12:14.8817683Z FAIL GhostVoicePackRoutingTest processExit=1
+2026-11-01T16:14:09.5636906Z ##[error]Exception in thread "main" java.lang.AssertionError: Pressing handheld Spirit Box must produce a real silent measurement
+2026-11-01T16:14:09.6033514Z FAIL HandheldSpiritBoxEvidenceTest processExit=1
+2026-11-01T16:14:21.0637374Z FAIL LanGhostHearingTest processExit=1
+2026-11-01T16:14:40.9622433Z ##[error]Exception in thread "main" java.lang.AssertionError: missing ACCEPT|STEP on H1
+2026-11-01T16:14:41.0107794Z FAIL LanSpatialEvidenceIntegrationTest processExit=1
+2026-11-01T16:15:52.7644893Z ##[error]Exception in thread "main" java.lang.AssertionError: listener-relative stereo pan
+2026-11-01T16:15:52.7894162Z FAIL LanSoundTest processExit=1
+2026-11-01T16:15:58.1791929Z Caused by: java.lang.AssertionError: on-screen audio caption actually paints
+2026-11-01T16:15:59.3087652Z FAIL LanSoundHudTest processExit=1
+2026-11-01T16:16:25.1613081Z ##[error]Exception in thread "main" java.lang.AssertionError: warning text must visibly change HUD colors: 0 0
+2026-11-01T16:16:26.2812881Z FAIL LanTelegraphedHudTest processExit=1
+2026-11-01T16:16:30.7919344Z ##[error]Exception in thread "main" java.lang.AssertionError: 12 legacy, 24 masters, 3 Observer overlaps, 8 Twins and 4 lore-master frames
+2026-11-01T16:16:30.9174839Z FAIL DirectionalSpritesIntegrationTest processExit=1
+2026-11-01T16:18:45.5464453Z ##[error]Exception in thread "main" java.lang.IllegalStateException: No authored user level selected
+2026-11-01T16:18:45.5997566Z FAIL RoomAcousticPresetsTest processExit=1
+2026-11-01T16:22:00.6553494Z ##[error]Exception in thread "main" java.lang.IllegalStateException: No authored user level selected
+2026-11-01T16:22:00.6896661Z FAIL HidingBudgetTest processExit=1
+2026-11-01T16:22:17.2651481Z ##[error]Exception in thread "main" java.lang.IllegalStateException: No authored user level selected
+2026-11-01T16:22:17.3004136Z FAIL AllMapLightingCoverageTest processExit=1
+2026-11-01T16:22:18.8821764Z ##[error]Exception in thread "main" java.lang.IllegalStateException: No authored user level selected
+2026-11-01T16:22:18.9193192Z FAIL VanLightingAndCastleDoorTest processExit=1
+2026-11-01T16:22:18.9194150Z FAIL STOP: 12 broken tests; no game artifact permitted
+2026-11-01T16:22:18.9267299Z REGRESSION SUMMARY passed=260 failed=12 skipped=0 manifest=299

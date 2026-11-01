@@ -23,7 +23,9 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
     public CastleEditorProject project(){return project;}
     public long revision(){return scene.revision();}
     public void checkAccess(){access.run();}
-    public java.util.Set<EditorAgentService.Capability> capabilities(){return java.util.Set.of(EditorAgentService.Capability.values());}
+    public java.util.Set<EditorAgentService.Capability> capabilities(){
+        return java.util.EnumSet.complementOf(java.util.EnumSet.of(EditorAgentService.Capability.RECOVER_PREVIOUS));
+    }
     public List<String> operations(){return List.of("set-spawn");}
     public void apply(String operation, Map<String,String> args){
         if(!operation.equals("set-spawn")||!args.keySet().equals(java.util.Set.of("x","z","yaw")))

@@ -12,7 +12,7 @@ import java.util.Set;
  * already supported by its human editor and runtime.
  */
 public final class EditorAgentService<S> {
-    public enum Capability { INSPECT, TRANSACT, UNDO, REDO, SAVE, REOPEN, CAPTURE, TEST }
+    public enum Capability { INSPECT, TRANSACT, UNDO, REDO, SAVE, REOPEN, RECOVER_PREVIOUS, CAPTURE, TEST }
     public record Check(String code, boolean passed, String detail) {}
     public record Inspection<S>(String sceneId, long revision, Path document,
                                 S state, List<EditorProject.Node> hierarchy,
@@ -31,6 +31,7 @@ public final class EditorAgentService<S> {
         void apply(String operation, Map<String,String> arguments);
         void validate();
         void reopen() throws IOException;
+        default void recoverPrevious()throws IOException{throw new UnsupportedOperationException("Previous-save recovery unavailable");}
         Capture capture(Path destination) throws IOException;
         List<String> tests();
         List<Check> test(String id);
@@ -66,13 +67,30 @@ public final class EditorAgentService<S> {
     }
     /** One bounded batch is one undo step; any invalid command rolls it all back. */
     public Evidence<Void> transact(long expected, List<Command> commands) {
+        return transact(expected,commands,()->false);
+    }
+    /** Cancellation is cooperative between bounded host operations, on the owner
+     * thread. A cancelled batch restores the full scene and preserves history. */
+    public Evidence<Void> transact(long expected, List<Command> commands,
+                                   java.util.function.BooleanSupplier cancelled) {
         require(expected);
+        Objects.requireNonNull(cancelled);
         var batch=List.copyOf(commands);
         if(batch.isEmpty()||batch.size()>64)throw new IllegalArgumentException("Expected 1–64 commands");
         for(var command:batch)if(!host.operations().contains(command.operation()))
             throw new IllegalArgumentException("Unsupported operation: "+command.operation());
-        edit(()->{for(var command:batch)host.apply(command.operation(),command.arguments());});
+        edit(()->{
+            cancelIfRequested(cancelled);
+            for(var command:batch){
+                host.apply(command.operation(),command.arguments());
+                cancelIfRequested(cancelled);
+            }
+        });
         return evidence(null);
+    }
+    private static void cancelIfRequested(java.util.function.BooleanSupplier cancelled){
+        if(Thread.currentThread().isInterrupted()||cancelled.getAsBoolean())
+            throw new java.util.concurrent.CancellationException("Editor batch cancelled; scene restored");
     }
     /** Human commands use the exact same transaction/history boundary. */
     public void edit(Runnable operation) {
@@ -96,6 +114,15 @@ public final class EditorAgentService<S> {
     }
     public Evidence<Capture> capture(long expected, Path destination) throws IOException {
         require(expected);capable(Capability.CAPTURE);return evidence(host.capture(destination));
+    }
+    /** Explicit disk recovery, followed by reload into the same live object.
+     * Undo restores the prior live edit; it does not rewrite the recovered file. */
+    public Evidence<Void> recoverPrevious(long expected)throws IOException{
+        require(expected);capable(Capability.RECOVER_PREVIOUS);
+        try{
+            edit(()->{try{host.recoverPrevious();}catch(IOException failure){throw new java.io.UncheckedIOException(failure);}});
+        }catch(java.io.UncheckedIOException failure){throw failure.getCause();}
+        return evidence(null);
     }
     public Evidence<List<Check>> test(long expected, String id) {
         require(expected);

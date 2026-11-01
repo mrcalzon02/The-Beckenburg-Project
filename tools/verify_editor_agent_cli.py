@@ -32,6 +32,7 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     revision = first['revision']
     rows = run([
         'inspect',
+        f'save\t{revision}',
         f'edit\t{revision}\tmove-prop\tid=prop-0\tx={moved_x}\ty={prop["y"]}\tz={prop["z"]}',
         f'save\t{revision + 1}',
         f'capture\t{revision + 1}\t{output / "headless-house.png"}',
@@ -41,10 +42,12 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     assert all(row['ok'] for row in rows)
     assert rows[-1]['result']['state']['props'][0]['x'] == moved_x
     assert all(check['passed'] for check in rows[-2]['result']['result'])
-    assert Path(rows[3]['result']['result']['file']).read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
+    assert Path(rows[4]['result']['result']['file']).read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
     reopened = run(['inspect'])[0]['result']
     assert reopened['state'] == rows[-1]['result']['state'], 'Separate real host loads saved authoring state'
+    recovered = run([f'recover\t{reopened["revision"]}', 'inspect'])[-1]['result']
+    assert recovered['state'] == first['state'], 'Explicit headless recovery restores exact previous native document'
     stale = run([f'edit\t0\tmove-prop\tid=prop-0\tx=0\ty=0\tz=0', 'inspect'], expected=1)
-    assert not stale[0]['ok'] and stale[1]['result']['state'] == reopened['state']
+    assert not stale[0]['ok'] and stale[1]['result']['state'] == recovered['state']
     (output / 'headless-results.json').write_text(json.dumps(rows, indent=2), encoding='utf-8')
-print('PASS headless public protocol: JSON, real edit/save, renderer capture, native parity, process reopen and stale rejection')
+print('PASS headless public protocol: JSON, real edit/save/recovery, renderer capture, native parity, process reopen and stale rejection')

@@ -1307,9 +1307,11 @@ public final class DeveloperLevelEditor extends JPanel {
     private void save(){saveCurrent();}
     private void showAgentEvidence(){
         var service=agentService();
+        var choices=new ArrayList<>(List.of("INSPECT","TEST","CAPTURE PNG","REOPEN SAVED"));
+        if(service.inspect().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
         String choice=(String)JOptionPane.showInputDialog(window,"Inspect, test or capture the active game scene.",
             "Scene verification",JOptionPane.PLAIN_MESSAGE,null,
-            new String[]{"INSPECT","TEST","CAPTURE PNG","REOPEN SAVED"},"INSPECT");
+            choices.toArray(),"INSPECT");
         if(choice==null)return;
         try{
             var state=service.inspect();Object result;
@@ -1324,6 +1326,11 @@ public final class DeveloperLevelEditor extends JPanel {
                     if(JOptionPane.showConfirmDialog(window,"Reopen saved scene? Current edits remain undoable.",
                         "Reopen",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
                     result=service.reopen(state.revision());
+                }
+                case "RECOVER PREVIOUS SAVE" -> {
+                    if(JOptionPane.showConfirmDialog(window,"Restore the previous valid saved scene? Current live edits remain undoable.",
+                        "Recover saved scene",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+                    result=service.recoverPrevious(state.revision());
                 }
                 default -> result=state;
             }

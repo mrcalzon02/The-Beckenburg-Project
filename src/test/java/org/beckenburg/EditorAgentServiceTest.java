@@ -43,6 +43,25 @@ public final class EditorAgentServiceTest {
                 new EditorAgentService.Command("move-prop",move),new EditorAgentService.Command("move-prop",invalid))));
             check(session.prop(0).equals(moved),"Mid-batch failure restores every edit");
             rejects(()->service.transact(session.revision(),"shell",Map.of()));
+            var beforeCancel=session.snapshot();
+            var polls=new java.util.concurrent.atomic.AtomicInteger();
+            var cancellationMove=new java.util.LinkedHashMap<>(move);
+            cancellationMove.put("x",Double.toString(original.x()+.5));
+            try{
+                service.transact(session.revision(),List.of(new EditorAgentService.Command("move-prop",cancellationMove),
+                    new EditorAgentService.Command("move-prop",move)),()->polls.incrementAndGet()==2);
+                throw new AssertionError("Cancellation ignored");
+            }catch(java.util.concurrent.CancellationException expected){}
+            check(session.snapshot().equals(beforeCancel),"Cancellation after first native edit restores full scene identity and props");
+            service.undo(session.revision());check(session.prop(0).equals(original),"Cancelled batch adds no undo entry and preserves earlier history");
+            service.redo(session.revision());check(session.prop(0).equals(moved),"Earlier redo remains valid after cancelled batch");
+            Thread.currentThread().interrupt();
+            try{
+                service.transact(session.revision(),List.of(new EditorAgentService.Command("move-prop",move)));
+                throw new AssertionError("Owner interruption ignored");
+            }catch(java.util.concurrent.CancellationException expected){}
+            finally{Thread.interrupted();}
+            check(session.snapshot().equals(beforeCancel),"Interrupted owner cannot leave partial edits");
             var unrelated=new LevelAuthoringSession(HouseMap.Site.SCHOOL);
             rejects(()->new EditorAgentService<>(host,new EditorHistory<>(unrelated,2)));
             service.save(session.revision());

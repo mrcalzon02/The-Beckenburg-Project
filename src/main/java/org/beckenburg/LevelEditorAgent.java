@@ -41,6 +41,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     }
     public void validate(){session.validate();}
     public void reopen()throws IOException{session.reopen();}
+    public void recoverPrevious()throws IOException{session.recoverPrevious();}
     public EditorAgentService.Capture capture(Path destination)throws IOException{
         renderer.drawPractice(map.get(),List.of(),0);
         var image=renderer.image();

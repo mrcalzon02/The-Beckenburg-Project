@@ -1937,6 +1937,17 @@
       "action": "Reject unsupported parent/pitch/roll/nonuniform transformations explicitly and apply the same native prop validator in editor and game loading.",
       "evidence": "LevelAuthoringIdentityTest saves an actual valid portable BSCN with nonuniform scale, requires native reopen failure and checks the entire previous scene snapshot remains intact. Existing scene persistence and real editor checks pass.",
       "older_maps": "Existing supported yaw/uniform-scale documents are preserved. Unsupported externally authored documents require explicit conversion rather than silent geometry loss."
+    },
+    {
+      "id": "DEV-182",
+      "title": "BSCN output budget checked only after full serialization",
+      "status": "fixed-scoped; local portable crash/storage and native persistence tests pass; exact-source CI pending",
+      "affected": "RuntimeSceneDocument save output, including mission and terrain/rail documents",
+      "symptom": "Valid node/component count limits still allow more than 8 MiB of serialized properties; the previous implementation checked file size only after writing the complete temporary file.",
+      "cause": "MAX_FILE_BYTES was enforced after stream closure rather than during output, permitting unbounded excess temporary-file writes relative to the document budget.",
+      "action": "Route BSCN encoding through EditorDocumentStore with a bounded output stream, staged readback validation, forced journal and atomic replacement. Leave the current document unchanged on budget failure.",
+      "evidence": "EditorDocumentStoreTest rejects both a writer exceeding 8 MiB and a real BSCN scene with otherwise valid 30-by-128 large-property entries, preserving exact target bytes and no pending journal. Actual child-process crash/replay, native mission recovery, terrain/rail publication and HCS2 physics regressions pass locally.",
+      "older_maps": "The bound applies to all BSCN producers without changing format v1 or existing source files. It does not certify other serializers or physical power-loss durability."
     }
   ],
   "audit_categories": [
