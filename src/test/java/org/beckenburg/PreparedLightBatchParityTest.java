@@ -1,6 +1,7 @@
 package org.beckenburg;
 
 import java.util.*;
+import java.nio.file.*;
 
 /** Exact production-submission parity and array ownership; recording, not GPU rasterization. */
 public final class PreparedLightBatchParityTest {
@@ -25,7 +26,25 @@ public final class PreparedLightBatchParityTest {
             check(Arrays.equals(x.vertices(),y.vertices()),"All production vertex floats match dense relighting at batch "+i);
         }
     }
-    public static void main(String[] args){
+    public static void main(String[] args)throws Exception{
+        // USER maps are authored, not bundled. Exercise the real saved scene
+        // in a temporary home rather than requiring or changing player files.
+        String previousHome=System.getProperty("user.home");
+        Path temporaryHome=Files.createTempDirectory("beckenburg-preparedlightbatchparitytest-");
+        try{
+            System.setProperty("user.home",temporaryHome.toString());
+            UserLevelLibrary.create("gpuAcceptance",HouseMap.Site.HOUSE);
+            runAcceptance();
+        }finally{
+            if(previousHome==null)System.clearProperty("user.home");
+            else System.setProperty("user.home",previousHome);
+            try(var paths=Files.walk(temporaryHome)){
+                for(var p:paths.sorted(Comparator.reverseOrder()).toList())
+                    Files.deleteIfExists(p);
+            }
+        }
+    }
+    private static void runAcceptance(){
         var backend=new Recording();GpuWorldRenderer.install(backend);
         String flag="beckenburg.lighting.changedOnly.disabled",previous=System.getProperty(flag);
         SceneRenderer fast,dense;
