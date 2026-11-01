@@ -191,23 +191,42 @@ public final class TerrainLayerStack {
     }
     public void brush(Brush mode,double cx,double cz,double radius,double strength,
                       double target,double inner,int curve,FlattenLimit direction){
-        Objects.requireNonNull(direction);
-        if(radius<=0||radius>n||!Double.isFinite(radius)||!Double.isFinite(strength)
-           ||!Double.isFinite(target)||inner<0||inner>=1||curve<0||curve>2)
-            throw new IllegalArgumentException("Invalid brush configuration");
+        brushPrecision(mode,cx,cz,new TerrainBrushProfile.Settings(
+            radius,strength,target,inner,curve,1,0,
+            -Double.MAX_VALUE,Double.MAX_VALUE,90,direction),null);
+    }
+    /**
+     * Masked, rotated brush with explicit height/slope exclusions. Opacity is
+     * applied at every editable vertex and does not change the source heightmap.
+     * All dabs within a stroke share the existing sparse undo transaction.
+     */
+    public void brushPrecision(Brush mode,double cx,double cz,
+                               TerrainBrushProfile.Settings settings,
+                               TerrainBrushProfile.Alpha alpha){
+        Objects.requireNonNull(mode);Objects.requireNonNull(settings);
+        double radius=settings.radius(),strength=settings.strength(),
+            target=settings.target(),inner=settings.inner();
+        int curve=settings.curve();
+        if(!Double.isFinite(cx)||!Double.isFinite(cz)||radius>n)
+            throw new IllegalArgumentException("Brush outside supported tile scale");
         int x0=Math.max(1,(int)Math.floor(cx-radius)),x1=Math.min(n-1,(int)Math.ceil(cx+radius));
         int z0=Math.max(1,(int)Math.floor(cz-radius)),z1=Math.min(n-1,(int)Math.ceil(cz+radius));
         for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++){
             if(!editable(x,z))continue;
+            double h=height(x,z);
+            if(h<settings.minElevation()||h>settings.maxElevation()
+                ||slope(x,z)>settings.maxSlopeDegrees())continue;
             double f=falloff(Math.hypot(x-cx,z-cz),radius,inner,curve);
+            if(alpha!=null)f*=alpha.sample((x-cx)/radius,
+                (z-cz)/radius,settings.rotationDegrees());
             if(f<=0)continue;
-            double h=height(x,z),a=Math.min(1,Math.abs(strength)*f),dest=h;
+            double a=Math.min(1,Math.abs(strength)*f),dest=h;
             switch(mode){
                 case RAISE -> dest=h+strength*f;
                 case LOWER -> dest=h-Math.abs(strength)*f;
                 case FLATTEN -> {
-                    if(direction==FlattenLimit.RAISE_ONLY&&target<=h)break;
-                    if(direction==FlattenLimit.LOWER_ONLY&&target>=h)break;
+                    if(settings.flattenLimit()==FlattenLimit.RAISE_ONLY&&target<=h)break;
+                    if(settings.flattenLimit()==FlattenLimit.LOWER_ONLY&&target>=h)break;
                     dest=h+(target-h)*a;
                 }
                 case REVERT -> dest=h+(sourceMetres(id(x,z))-h)*a;
@@ -217,7 +236,8 @@ public final class TerrainLayerStack {
                     dest=h+(Math.rint(h/unit)*unit-h)*a;
                 }
                 case SMOOTH -> {
-                    double avg=(height(x-1,z)+height(x+1,z)+height(x,z-1)+height(x,z+1))*0.25;
+                    double avg=(height(x-1,z)+height(x+1,z)
+                        +height(x,z-1)+height(x,z+1))*.25;
                     dest=h+(avg-h)*a;
                 }
             }
