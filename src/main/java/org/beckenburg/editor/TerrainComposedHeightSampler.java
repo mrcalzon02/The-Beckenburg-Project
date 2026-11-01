@@ -24,6 +24,8 @@ public final class TerrainComposedHeightSampler {
     public TerrainComposedHeightSampler(StitchedHeightmapWorld world){
         this.world=Objects.requireNonNull(world);n=world.settings().tileCells();
     }
+    /** Host/editor calls this when a completed terrain-layer edit is saved. */
+    public void invalidate(){cached.clear();}
     private Optional<TerrainLayerStack> layers(int x,int z)throws IOException{
         var key=new StitchedHeightmapWorld.Tile(x,z);
         if(cached.containsKey(key))return cached.get(key);
