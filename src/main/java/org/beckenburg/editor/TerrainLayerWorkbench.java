@@ -430,12 +430,29 @@ public final class TerrainLayerWorkbench extends JPanel {
         var route=selectedRoute();
         if(route==null)return;
         if(JOptionPane.showConfirmDialog(frame,
-            "Remove saved alignment "+route.id()+"? Existing graded terrain will NOT be restored.",
-            "Delete route record only",JOptionPane.YES_NO_OPTION,
+            route.managed()?
+                "Delete managed "+route.kind()+" route "+route.id()+
+                "? Its procedural terrain grade will be removed without changing hand-sculpted layers.":
+                "Delete legacy route record "+route.id()+
+                "? Previously painted terrain grades cannot automatically be reversed.",
+            route.managed()?"Delete managed route":"Delete legacy route metadata",JOptionPane.YES_NO_OPTION,
             JOptionPane.WARNING_MESSAGE)!=JOptionPane.YES_OPTION)return;
         try{
-            routes.remove(route.id());routes.save();gradeControls.clear();
-            refreshSavedRoutes();refresh("Removed route record "+route.id()+"; terrain layers unchanged");
+            var before=routes.list();
+            routes.remove(route.id());
+            try{
+                stack.refreshManagedRoutes(routes.list());
+                routes.save();
+            }catch(IOException|RuntimeException failed){
+                routes.put(route);
+                stack.refreshManagedRoutes(before);
+                throw failed;
+            }
+            gradeControls.clear();topologyPreview=null;
+            refreshSavedRoutes();
+            refresh(route.managed()?
+                "Removed managed route and restored prior terrain base: "+route.id():
+                "Removed legacy route metadata only: "+route.id());
         }catch(IOException ex){error(ex);}
     }
     private void applyRoute(){
@@ -461,18 +478,37 @@ public final class TerrainLayerWorkbench extends JPanel {
             var alignment=new TerrainInfrastructureSplines.Alignment(
                 routeName.getText().trim(),kind,controls,val(radius),
                 val(radius)*(kind==TerrainInfrastructureSplines.Kind.RAIL?2:1),
-                maximum);
-            // Check geometric viability before touching either layer or route file.
+                maximum,true);
+            var oldRoute=routes.list().stream()
+                .filter(r->r.id().equals(alignment.id())).findFirst().orElse(null);
+            if(oldRoute!=null&&!oldRoute.managed())
+                throw new IllegalStateException("This route was authored with legacy direct "+
+                    "terrain painting. Its old grading cannot be reversed without history. "+
+                    "Choose a NEW route ID to use reversible procedural grading.");
+            // First stage and validate the complete managed route geometry in
+            // memory; save the only authoritative spline file once it succeeds.
             TerrainInfrastructureSplines.evaluate(alignment,stack.metresPerCell());
-            routes.apply(stack,alignment);
+            var before=routes.list();
+            var proposed=new ArrayList<>(before);
+            proposed.removeIf(r->r.id().equals(alignment.id()));
+            proposed.add(alignment);
+            stack.refreshManagedRoutes(proposed);
+            try{
+                routes.put(alignment);
+                routes.save();
+            }catch(IOException|RuntimeException failed){
+                if(oldRoute==null)routes.remove(alignment.id());
+                else routes.put(oldRoute);
+                stack.refreshManagedRoutes(before);
+                throw failed;
+            }
             topologyPreview=null;
-            routes.put(alignment);routes.save();
             gradeControls.clear();refreshSavedRoutes();
             savedRoutes.setSelectedItem(alignment.id());
             int next=routes.list().size()+1;
             while(hasRoute("route-"+next))next++;
             routeName.setText("route-"+next);
-            refresh("Applied and persisted "+alignment.kind()+" "+alignment.id());
+            refresh("Applied reversible procedural "+alignment.kind()+" "+alignment.id());
         }catch(IOException|RuntimeException ex){error(ex);}
     }
     private boolean hasRoute(String id){
