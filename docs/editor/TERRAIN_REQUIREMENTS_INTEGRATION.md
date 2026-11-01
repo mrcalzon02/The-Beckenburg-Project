@@ -121,3 +121,12 @@ Authoring data must be portable into non-Beckenburg projects. Runtime collision,
 navigation, visual materials and physics require separate actual integration and
 verification. The present work is a tested foundational implementation, not a claim
 of full feature parity with the entire PDF.
+
+## Unified owner requirements document chain (2026-10-31)
+
+This remains the detailed **terrain** implementation contract. The added topology,
+soundscape, engine base and multi-genre source inputs are registered **alongside**
+this document, not instead of it: [source chain](requirements/DOCUMENT_CHAIN.md)
+and [dependency-ordered gates G0–G12](requirements/STAGED_INTEGRATION_PLAN.md).
+The prior landscape-layering handoff remains active; feature acceptance still
+requires code and runtime tests rather than this documentation link.
