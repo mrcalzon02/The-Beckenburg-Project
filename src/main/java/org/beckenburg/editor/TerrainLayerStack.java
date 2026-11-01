@@ -505,20 +505,26 @@ public final class TerrainLayerStack {
             maxX=Math.max(maxX,x);maxZ=Math.max(maxZ,z);
         }
         pending.clear();pendingMasks.clear();pendingMaterials.clear();pendingPainted.clear();pendingFrozen.clear();
-        rebuildManagedRoutes();
+        // A material-only stroke modifies resolved priority but not the
+        // corridor grade or geometry. Avoid unnecessary full route rasterization.
+        if(!domains.equals(EnumSet.of(EditDomain.MATERIAL)))rebuildManagedRoutes();
         changed(minX,minZ,maxX,maxZ,domains);
     }
     public boolean undo(){
         finishStroke();if(undo.isEmpty())return false;
         Change c=undo.pop();c.apply(false);
-        redo.push(c);dirty=true;rebuildManagedRoutes();
+        redo.push(c);dirty=true;
+        if(!changeDomains(c).equals(EnumSet.of(EditDomain.MATERIAL)))
+            rebuildManagedRoutes();
         changed(0,0,n,n,changeDomains(c));
         return true;
     }
     public boolean redo(){
         finishStroke();if(redo.isEmpty())return false;
         Change c=redo.pop();c.apply(true);
-        undo.push(c);dirty=true;rebuildManagedRoutes();
+        undo.push(c);dirty=true;
+        if(!changeDomains(c).equals(EnumSet.of(EditDomain.MATERIAL)))
+            rebuildManagedRoutes();
         changed(0,0,n,n,changeDomains(c));
         return true;
     }
