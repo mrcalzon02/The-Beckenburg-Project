@@ -76,3 +76,14 @@ No claim of a working general-purpose engine, complete editor, successful test r
 ## Curated PSX source acceptance (2026-10-30)
 
 Five owner PDFs are filtered in the [human engineering wiki](../wiki/psx-editor-engineering-guide.md) and [machine-readable adoption manifest](psx-editor-reference.json). They establish priorities for scene authoring, measured lighting, safe navigation and accessible PSX-style UI. They are guidance, not evidence of completed implementation. An offline reference viewer ships as part of the portable editor core and is available from the Beckenburg editor command strip.
+
+## Source-document chain continuation (2026-10-31)
+
+The previously supplied *Level Editor gold standards.pdf* remains authoritative
+for its established editor requirements. The four new owner documents
+(*Topological editor*, *Building a 3D Soundscape Environment Manager*,
+*Engine base*, and *multi-genre game creation engine*) are indexed with the
+prior terrain and landscape specifications in the
+[unified owner requirements chain](../editor/requirements/DOCUMENT_CHAIN.md).
+The [dependency-gated plan](../editor/requirements/STAGED_INTEGRATION_PLAN.md)
+preserves this architecture's separation of portable kit and actual game runtime.
