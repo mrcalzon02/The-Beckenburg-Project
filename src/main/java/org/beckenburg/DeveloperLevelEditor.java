@@ -479,7 +479,7 @@ public final class DeveloperLevelEditor extends JPanel {
                 if(levelId==null){
                     status.setText("Select an authored USER level before editing its terrain");return;
                 }
-                var root=UserLevelLibrary.folder(levelId).resolve("terrain-worlds");
+                var root=UserLevelLibrary.terrainWorldsFolder(levelId);
                 org.beckenburg.editor.StitchedWorldEditor.open(window,root);
                 status.setText("USER terrain worlds are level scoped: "+root);
                 return;
