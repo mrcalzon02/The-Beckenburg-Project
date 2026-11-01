@@ -27,14 +27,14 @@ never by adding dependencies to `org.beckenburg.editor`.
 ## Existing handoff contracts
 
 - `StitchedHeightmapWorld`: authoritative, seam-validated R16 source tiles.
-- `TerrainLayerStack`: non-destructive height, protection, material ID masks,
-  with source bake and sparse mixed-edit history.
+- `TerrainLayerStack`: non-destructive height, protection, legacy material IDs,\n  and individually paintable sculpt-layer alpha masks (v2), with source bake,\n  source-format v1 migration and sparse mixed-edit history.
 - `TerrainTopologyFields`: derived terrain normals/slope proxy,
   curvature, D8 drainage, flow-direction/speed estimates and moisture proxy.
   Fields are **not** actual hydraulic sediment particle measurements.
   Fingerprints invalidate derived maps when sculpting changes heights.
 - `TerrainInfrastructureSplines`: road/rail/river width, shoulder and grade
   metadata for corridor material and exclusion overrides.
+- `TerrainRailMesh`: portable genuine ballast, sleepers and left/right rail\n  geometry exported through the shared terrain mesh writer; optional host\n  adapter still needed for live rendering/collision.\n- `StitchedHeightmapWorld.importTilesBatch`: seam-aware, rollback-journaled\n  source PNG replacement across up to nine tiles, with recovery on reopen.
 
 ## First implementation tranche, after finishing Terrain editor requirements
 
