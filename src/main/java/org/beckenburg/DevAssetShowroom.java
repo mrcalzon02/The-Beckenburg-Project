@@ -122,7 +122,8 @@ public final class DevAssetShowroom implements AutoCloseable {
         JButton topologyEdit=new JButton("Edit QA topology");
         JButton topologyReload=new JButton("Reload QA topology");
         JButton demo=new JButton("Infrastructure demo on/off");
-        JButton demoWater=new JButton("Export demo water...");
+        JButton demoWater=new JButton("Edit river snap/water...");
+        JButton exportDemoWater=new JButton("Export demo water...");
         prev.addActionListener(e->changePage(-1));
         next.addActionListener(e->changePage(1));
         shot.addActionListener(e->saveCurrentCapture());
@@ -136,9 +137,11 @@ public final class DevAssetShowroom implements AutoCloseable {
         topologyEdit.addActionListener(e->editTopology());
         topologyReload.addActionListener(e->reloadTopology());
         demo.addActionListener(e->toggleInfrastructureShowcase());
-        demoWater.addActionListener(e->exportInfrastructureWater());
+        demoWater.addActionListener(e->editInfrastructureWater());
+        exportDemoWater.addActionListener(e->exportInfrastructureWater());
         for(JButton b:new JButton[]{prev,next,shot,refresh,inspect,approve,needsWork,
-                                    topologyButton,topologyEdit,topologyReload,demo,demoWater})
+                                    topologyButton,topologyEdit,topologyReload,demo,demoWater,
+                                    exportDemoWater})
             buttons.add(b);
         JPanel right=new JPanel(new BorderLayout());
         right.add(buttons,BorderLayout.NORTH);right.add(viewport,BorderLayout.CENTER);
@@ -228,6 +231,53 @@ public final class DevAssetShowroom implements AutoCloseable {
         }catch(RuntimeException failure){
             infrastructureShowcase=null;
             status.setText("Cannot open infrastructure demo: "+failure.getMessage());
+        }
+    }
+    private void editInfrastructureWater(){
+        if(infrastructureShowcase==null){
+            status.setText("Enable the infrastructure demo to edit river sockets.");
+            return;
+        }
+        try{
+            // This is the actual portable water editor and WaterCanvas,
+            // connected to the same model as the runtime module. No fake UI.
+            var existing=WorldWater.load("dev-infrastructure-demo");
+            var initial=existing.placements().isEmpty()?
+                infrastructureShowcase.water():existing;
+            var model=new dev.mrcalzon.water.WaterEditorModel(initial);
+            model.setTerrainSockets(List.of(DevInfrastructureShowcase.riverSocket()));
+            model.select(List.of("dev-river-downstream"));
+            JFrame editor=new JFrame("DEV ROOM — RIVER MODULE AND TERRAIN SNAP");
+            var panel=new dev.mrcalzon.water.WaterEditorPanel(model,
+                ()->new dev.mrcalzon.water.WaterEditorPanel.Origin(8.1,.075,16.05),
+                ()->{
+                    try{
+                        WorldWater.save(model.document());
+                        var check=WorldWater.load("dev-infrastructure-demo");
+                        if(!check.equals(model.document()))
+                            throw new IOException("Water save/readback mismatch");
+                        infrastructureShowcase=DevInfrastructureShowcase.create(check);
+                        model.markSaved();
+                        status.setText("River water module saved and DEV exhibit refreshed");
+                    }catch(IOException failure){
+                        throw new java.io.UncheckedIOException(failure);
+                    }
+                });
+            var canvas=new dev.mrcalzon.water.WaterCanvas(model,
+                panel::snappingEnabled,panel::angleSnappingEnabled,
+                ()->.075);
+            JSplitPane split=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
+                canvas,panel);
+            split.setResizeWeight(.70);
+            editor.setContentPane(split);
+            editor.setSize(1170,760);
+            editor.setMinimumSize(new Dimension(780,490));
+            editor.setLocationRelativeTo(window);
+            editor.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            editor.setVisible(true);
+            status.setText("Native water editor opened with visible river snap socket");
+        }catch(RuntimeException failure){
+            status.setText("Cannot open river water editor: "+failure.getMessage());
         }
     }
     private void exportInfrastructureWater(){
