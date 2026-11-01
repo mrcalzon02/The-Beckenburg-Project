@@ -114,6 +114,9 @@ public final class TerrainLayerStack {
     private final ArrayList<Layer> layers=new ArrayList<>();
     private final byte[] material;
     private final BitSet frozen;
+    /** Ephemeral, reproducible output from v2 managed route metadata. */
+    private final double[] infrastructureDelta;
+    private List<TerrainInfrastructureSplines.Alignment> managedRoutes=List.of();
     private final Deque<Change> undo=new ArrayDeque<>(),redo=new ArrayDeque<>();
     private final TreeMap<Integer,Float> pending=new TreeMap<>();
     private final TreeMap<Integer,Float> pendingMasks=new TreeMap<>();
@@ -159,8 +162,11 @@ public final class TerrainLayerStack {
         for(int z=0;z<side;z++)for(int x=0;x<side;x++)source[id(x,z)]=world.sample(tx,tz,x,z);
         sourceCrc=crc(source);
         material=new byte[pixels];frozen=new BitSet(pixels);
+        infrastructureDelta=new double[pixels];
         layers.add(new Layer("Sculpt",pixels));
         load();
+        // Legacy route documents never auto-apply a second grading pass.
+        refreshManagedRoutes(TerrainInfrastructureSplines.open(world).list());
     }
     private int id(int x,int z){return z*side+x;}
     private static long crc(int[] data){
@@ -191,6 +197,7 @@ public final class TerrainLayerStack {
         if(layers.size()>=MAX_LAYERS)throw new IllegalStateException("Maximum 12 terrain layers");
         if(name==null||name.isBlank()||name.length()>64)throw new IllegalArgumentException("Layer name");
         layers.add(new Layer(name,pixels));active=layers.size()-1;dirty=true;
+        rebuildManagedRoutes();
         changed(0,0,n,n,EnumSet.of(EditDomain.LAYER_CONFIGURATION));
         return active;
     }
@@ -203,13 +210,56 @@ public final class TerrainLayerStack {
         if(l.enabled==enabled&&l.opacity==desired)return;
         Change change=new LayerConfigChange(l,l.enabled,l.opacity,enabled,desired);
         change.apply(true);undo.push(change);redo.clear();dirty=true;
+        rebuildManagedRoutes();
         changed(0,0,n,n,EnumSet.of(EditDomain.LAYER_CONFIGURATION));
     }
     private double sourceMetres(int i){return min+(max-min)*source[i]/65535.0;}
-    private double composed(int i){
+    private double baseComposed(int i){
         double h=sourceMetres(i);
         for(Layer l:layers)if(l.enabled)h+=l.delta[i]*l.opacity*l.mask[i];
         return h;
+    }
+    private double composed(int i){return baseComposed(i)+infrastructureDelta[i];}
+    public int managedRouteCount(){return managedRoutes.size();}
+    /**
+     * Regenerate the procedural road/rail/river grade from saved alignments.
+     * The authoring height layers, source R16, material paint and protection
+     * masks are NEVER overwritten. Edited routes therefore leave no old bed.
+     */
+    public void refreshManagedRoutes(List<TerrainInfrastructureSplines.Alignment> routes){
+        Objects.requireNonNull(routes);
+        finishStroke();
+        var selected=new ArrayList<TerrainInfrastructureSplines.Alignment>();
+        for(var route:routes)if(Objects.requireNonNull(route).managed()){
+            // Validate before mutating existing route heights.
+            TerrainInfrastructureSplines.evaluate(route,step);
+            selected.add(route);
+        }
+        selected.sort(Comparator.comparing(TerrainInfrastructureSplines.Alignment::id));
+        managedRoutes=List.copyOf(selected);
+        rebuildManagedRoutes();
+        changed(0,0,n,n,EnumSet.of(EditDomain.HEIGHT));
+    }
+    /** Recomputes only in memory; the route document is the authority. */
+    private void rebuildManagedRoutes(){
+        Arrays.fill(infrastructureDelta,0);
+        for(var route:managedRoutes){
+            var samples=TerrainInfrastructureSplines.evaluate(route,step);
+            var local=new ArrayList<Point>(samples.size());
+            for(var p:samples)local.add(new Point(
+                p.x()-(long)tx*n,p.z()-(long)tz*n,p.elevation()));
+            GradeField field=gradeField(local,route.halfWidth(),route.shoulder());
+            double radius=route.halfWidth()+route.shoulder();
+            for(int z=1;z<n;z++)for(int x=1;x<n;x++){
+                if(!editable(x,z))continue;
+                int i=id(x,z);double distance=field.distance()[i];
+                if(distance>=radius)continue;
+                double blend=distance<=route.halfWidth()?1:route.shoulder()==0?0:
+                    falloff(distance-route.halfWidth(),route.shoulder(),0,1);
+                double current=baseComposed(i)+infrastructureDelta[i];
+                infrastructureDelta[i]+=(field.elevation()[i]-current)*blend;
+            }
+        }
     }
     public double height(int x,int z){bounds(x,z);return composed(id(x,z));}
     public double layerMask(int layerIndex,int x,int z){
@@ -384,19 +434,20 @@ public final class TerrainLayerStack {
             maxX=Math.max(maxX,x);maxZ=Math.max(maxZ,z);
         }
         pending.clear();pendingMasks.clear();pendingMaterials.clear();pendingFrozen.clear();
+        rebuildManagedRoutes();
         changed(minX,minZ,maxX,maxZ,domains);
     }
     public boolean undo(){
         finishStroke();if(undo.isEmpty())return false;
         Change c=undo.pop();c.apply(false);
-        redo.push(c);dirty=true;
+        redo.push(c);dirty=true;rebuildManagedRoutes();
         changed(0,0,n,n,changeDomains(c));
         return true;
     }
     public boolean redo(){
         finishStroke();if(redo.isEmpty())return false;
         Change c=redo.pop();c.apply(true);
-        undo.push(c);dirty=true;
+        undo.push(c);dirty=true;rebuildManagedRoutes();
         changed(0,0,n,n,changeDomains(c));
         return true;
     }
@@ -586,7 +637,9 @@ public final class TerrainLayerStack {
      * Work is limited to segment bounding boxes rather than iterating every
      * spline sample for every terrain vertex (important for long railways).
      */
-    public void gradePath(List<Point> points,double halfWidth,double shoulder){
+    private record GradeField(double[] distance,double[] elevation) {}
+    private GradeField gradeField(List<Point> points,double halfWidth,double shoulder){
+
         if(points==null||points.size()<2||points.size()>50_000
             ||!Double.isFinite(halfWidth)||halfWidth<=0||halfWidth>512
             ||!Double.isFinite(shoulder)||shoulder<0||shoulder>512)
@@ -620,6 +673,12 @@ public final class TerrainLayerStack {
                 }
             }
         }
+        return new GradeField(distance,elevation);
+    }
+    public void gradePath(List<Point> points,double halfWidth,double shoulder){
+        GradeField field=gradeField(points,halfWidth,shoulder);
+        double[] distance=field.distance(),elevation=field.elevation();
+        double radius=halfWidth+shoulder;
         finishStroke();
         for(int z=1;z<n;z++)for(int x=1;x<n;x++){
             if(!editable(x,z))continue;
@@ -854,6 +913,10 @@ public final class TerrainLayerStack {
      */
     public void bake()throws IOException {
         finishStroke();verifyCurrentSource();verifyDocumentRevision();
+        if(!managedRoutes.isEmpty())
+            throw new IOException("Managed infrastructure grading is procedural; "+
+                "baking would make route deletion irreversible. Export scene geometry "+
+                "with the composed heights instead.");
         int[] updated=new int[pixels];
         for(int z=0;z<side;z++)for(int x=0;x<side;x++){
             int i=id(x,z);double h=composed(i);
