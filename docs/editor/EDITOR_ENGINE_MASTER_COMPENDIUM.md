@@ -4743,3 +4743,625 @@ java
 
 Use code with caution.
 
+
+
+---
+
+## Part IV — Earlier PSX-era editor recommendation and creation guides
+
+These sources consolidate the previous nine-PDF PSX intake and the separate owner-written menu/campaign/billboards brief. PDFs not currently present as binaries are represented here by the full existing source-informed guides, **not** by invented PDF transcriptions. Where multiple guides overlap, source distinctions remain intact.
+
+
+---
+
+### Source: Gold standards, level building, PSX lighting, UI and asset editor engineering guide
+
+**Original repository path:** `docs/wiki/psx-editor-engineering-guide.md`.
+
+# PSX-inspired editor and runtime — curated engineering reference
+
+**Adoption review:** 2026-10-30 · **Scope:** Beckenburg Java 17 runtime and the portable editor kit · **Status:** normative design guidance, **not** a claim that all requested tools are implemented.
+
+This guide adapts five owner-provided PDFs selectively. It is not an instruction to emulate an actual PlayStation's fragile hardware. The editor must author **the actual running game**, not a decorative second renderer. Beckenburg gameplay, authoritative networking and accessibility take precedence over historical fidelity.
+
+## Source register and adoption verdict
+
+| Owner reference | Where the advice belongs | Verdict |
+| --- | --- | --- |
+| *Level Editor gold standards* (5 pages) | Editor core, scene, inspector, persistence, UX, diagnostics | **Adopt as feature acceptance criteria**, phased; existing [editor audit](../development/LEVEL_EDITOR_OVERHAUL_AUDIT.md) governs current completion claims |
+| *PSX level building* (18 pages) | Materials/presentation profiles, geometry authoring, layouts, portals and atmosphere | **Adopt selectively**; never intentionally break collision, input, readability or streamed-world integrity |
+| *PSX lighting engine* (6 pages) | Unified lighting module plus renderer post-process; editor gets adapters | **Adapt existing modules**, avoid a duplicate lighting engine; see [lighting review](../lighting/LIGHTING_MODULE.md) |
+| *PSX NPC-AI-1* (17 pages) | Authored navigation, portal metadata, AI diagnostics and fair simulation | **Adapt with constraints**; see [source-level AI review](../ai/PSX_NPC_AI_ADOPTION.md) |
+| *PSX UI guide and user* (20 pages) | Input abstraction, compact UI language, controller navigation, accessibility | **Adopt usable interaction rules; historic presentation optional**, never insert intentional latency or invented memory-card requirements |
+
+These are owner-supplied design references, not independent historical or benchmark verification. Recommendations labeled as PSX hardware facts in them should be independently checked before being repeated as hardware-engineering claims. The editor is Java 17 with a software renderer and optional GPU backend, **not** native PS1 C/MIPS.
+
+## Cross-cutting non-negotiables
+
+1. **Game/runtime first, editor second.** A single authoritative scene model drives renderer, collision, physics, navigation, audio, evidence, ghost powers, van, ritual zones and environment modules. The editor is an adapter/view/controller onto that same model. Preview, playtest and shipped scenes must use identical actual assets, fixtures and spatial coordinates.
+2. **Stable identity and versionable state.** Object, scene, room, portal, layer and prefab identities remain stable through edits, save/load, Undo/Redo, import and playtest restoration. Save atomically; reject invalid references without silently converting live game state.
+3. **Parity and fairness outrank retro tricks.** The host owns ghost/hunter state and evidence. An AI ghost and player ghost operate under the same permitted sensory inputs, movement restrictions, ability costs and timers. No seeing through walls, van entry, hiding-pocket entry or omniscient aim shortcuts.
+4. **Presentation knobs cannot become gameplay bypasses.** Resolution, quantization, color depth, dither, affine mapping, jitter, palette treatment, distance fog and lighting visual profiles must never change line-of-sight, evidence visibility guarantees, collision, locked doors or network outcomes. Exclude Swing inspector text/gizmos from global PSX warp.
+5. **Performance must be observed.** Show editor FPS and p50/p95/p99 frame timings, CPU build/raster/post-process, GPU uploads/readback where real, AI budget, draw calls/triangles, source probes, dirty lighting cells, heap and GC. Update dirty regions, avoid unnecessary full-scene invalidation. Optional limits warn; only objective nonworking game/installer/multiplayer requirements block release.
+6. **No inert authoring controls.** Every exposed slider, toggle, inspector, shortcut, prefab, brush, button or view must affect the live authored scene or actual runtime. Hide or mark unsupported facilities as unavailable rather than rendering decorative controls.
+
+## Level construction: rules to implement
+
+**Authoring structure.** Grid/vertex/edge/surface/object snapping, true XYZ transform and parent hierarchy, separate visual/collision/navigation/trigger layers, selected-object inspector, material alignment and reusable prefabs. A floor over a basement must have an actual stair/shaft opening and collision route. Houses must remain recognizable buildings rather than arbitrary untextured cubes; avoid clipped shelving, wall lamps and furniture. The **same canonical van prefab** serves castle and mission. Exterior terrain, roofs and walls must be compatible with world topology and weather.
+
+**Visibility and staging.** Room sectors, door/portal topology, occlusion/interest queries and selective asset loading can keep the game fast. Camera framing, threshold composition, distance fog, vertical loops, readable landmark texture contrast, audio landmarks and paced negative space are useful design tools. Fog is owned by the unified weather module—do not restore a separate “fog / outage / weather” mission-condition selector. Never unload a room by freezing gameplay just to imitate CD-ROM seeks, reveal unbuilt voids, or force fixed cameras on a first-person game.
+
+**Retro materials / rendering.** Prefer compact hand-authored diffuse textures, nearest-neighbor/pixelated profiles, intentionally limited polygon density, authored color gradients, optional 4x4 dithering/quantization, optional PSX vertex/UV jitter and affine distortion. Treat 64/128/256 px textures, 320x240 and 4:3 as **art-direction presets**, not universal hard caps; modern widescreen and scalable accessible text must remain supported. A visual seam/wobble is okay only as a bounded rendering effect; structural gaps, physics tunneling, geometry bleed, unreadable text, and real world/skybox holes are defects.
+
+**Tools and visual diagnostics.** Add portal/room/PVS visualizers, collision/navigation/trigger overlays, light reach with actual occluders, texture seam and wall-penetration checks, basements and vertical passage QA, item/van clearance and jump-to-object warnings. Collision geometry may deliberately be simpler than visible geometry, but it must remain aligned with actual playable floors/walls.
+
+## Lighting: existing authority and editor adaptation
+
+The **existing** `dev.mrcalzon.lighting.LightingModule`, `FixtureLighting`, `SceneRenderer` and `PsxPipeline` remain responsible. Add authored fixture inspectors, radius/diffusion reach overlays, occlusion probes, power-circuit state, scene preview and measured cache invalidation through published APIs; do not introduce a rival shader/CPU light system. Existing diffusion width and invalidation-cell size are distinct controls, not a “priority” winner for lights in one cell. Source contributions must be occlusion-aware; self-emission must not illuminate the far side of a masonry wall. The PDF's per-pixel fallback, optional CLUTs and mesh subdivision are candidates **only if** supported by renderer and a measurable, justified need. Do not blindly subdivide every surface, add redundant post-process passes or recalculate a whole House after a door opens. Benchmark the real door profile and review p95/p99, rays, upload bytes, cache revisions and visual evidence.
+
+## Navigation and AI: safe adoption
+
+The editor should expose real traversable room/portal and stair connections, authored waypoint/cover/ambush metadata, safe door-state edge invalidation, route reachability diagnostics and optional offline PVS/next-hop preprocessing. These are **authoring accelerators**, not replacement runtime rules.
+
+Keep Beckenburg's host-owned 100 ms simulation, audible-event ghost perception, door/material/weather sound attenuation, swept collisions, stable ghost action cadence, van exclusion and hiding rules. Dynamic topology updates must be reflected in valid routes. AI may cache results, throttle optional decisions and avoid excess allocations **when profiling demonstrates benefit**; hearing, contact, rituals, essential reactions and authoritative events cannot be throttled out. No 4-edge artificial node cap, global teleport-on-stuck, PS1 2 MB memory ledger, GTE/MIPS assembly, universal no-allocation ban, fake ghost gaze detection or NPC omniscience. Measure before introducing object pools, time slicing or path queues.
+
+## UI and input: PSX visual language, modern usability
+
+Use compact rectangular panels, sharp optional pixel fonts, bounded dithered backplates, visible selection, controller D-pad navigation, predictable back/escape, mouse/keyboard/controller parity, configurable bindings/deadzones and instantaneous functional response. Maintain scroll and page-jump, text-skip plus history, subtitle/audio cue alternatives, adjustable UI scale/contrast and inclusive readibility. The low-res 4:3 mockup is a **preset**, not a lock on desktop aspect ratio, internationalization or accessibility. No fake CD seek freeze, mandatory button delay, unreadable UI at 240p, forced memory-card ritual, impossible 1 MB VRAM cap, or nonremappable input. The editor UI itself should stay legible at modern resolution, even when the 3D viewport imitates PSX rendering.
+
+## Editor implementation acceptance map
+
+| Level | Deliverable | Evidence required |
+| --- | --- | --- |
+| P0 | Runtime parity, live scene/collision, stable scene IDs, atomic save and safe edit/playtest snapshot | Editor and game read same scene; round-trip load; unsaved edits survive playtest |
+| P1 | True gizmos and snapping, hierarchy/layers, typed inspectors, authored portal/navigation/lighting helpers | Real placement and doorway/stair test, inspector update in rendered world |
+| P2 | On-demand frame/AI/lighting profilers, collision/occlusion debug views, prefab and replacement tooling | Door-opening p95/p99, no full redraw, vanished assets identified |
+| P3 | Advanced brushes, macro API, docking, multi-user locking, optional player sharing | Live functionality; no inert controls or untrusted arbitrary script execution |
+
+**Concrete fixtures:** House door opening; House wall-clipping furniture; all cellar entrances; Castle wall-mounted lamps and rear shelves; Castle/field van identity; dense weather fog; ghost sensing and hiding/van exclusions; UI navigation under mouse, keyboard and controller. Warnings and subjective quality checks remain diagnostic unless they demonstrate an objectively nonfunctional product.
+
+## Maintenance, machine access and publication
+
+- Machine catalog: [PSX authoring adoption JSON](../development/psx-editor-reference.json), with stable IDs, applicability classes, source page references, integration owner and acceptance proof. This is **a guidance manifest**, not evidence of runtime feature completion.
+- Existing detailed authorities: [Editor audit](../development/LEVEL_EDITOR_OVERHAUL_AUDIT.md), [suite architecture](../development/PSX_RUNTIME_AND_EDITOR_SUITE_ARCHITECTURE.md), [lighting module](../lighting/LIGHTING_MODULE.md), [AI adoption review](../ai/PSX_NPC_AI_ADOPTION.md).
+- The standalone Java 17 editor kit includes a concise offline guide viewer. The wiki and manifest are versioned sources; the viewer is an orientation aid, not the implementation authority.
+- For the two sites, publish the same policy with site-relative links. Original PDFs remain owner-supplied source material; these pages are an **adapted synthesis** rather than a verbatim republication.
+- Actual installed Windows playtest, network/camera and hardware GPU profiling remain separate verifications. Do not equate a successful documentation commit with those tests.
+
+## Current editor-facing adoption checkpoint (2026-10-30)
+
+- The **PSX GUIDE** toolbar action opens a bundled offline `EditorAuthoringReference` viewer and links to the full Markdown/JSON authorities; it is available in the portable editor JAR.
+- The **SCENE AUDIT** toolbar action is Castle-specific: real `CastleLevelEdits` wall collision checks for possibly embedded props/lights, globally duplicate authoring IDs, spawn wall/nav blockers and a jump-to-object review. It is manually invoked, not a per-frame profiler or full geometric mesh-intersection solver.
+- `CastleEditorAuditTest` is a non-blocking focused-workflow diagnostic. A successful source commit does not prove the full Windows installer and interactive window acceptance.
+- General-purpose prefab placement, PVS export, typed cross-game inspector, live one-button playtest and scene-format parity remain roadmap work, **not** delivered by these documentation and initial audit changes.
+
+
+
+---
+
+### Source: PSX asset import, preparation and regression
+
+**Original repository path:** `docs/wiki/psx-asset-import-and-regression.md`.
+
+# PSX Asset Import, Reduction and Over-Regression
+
+**Authority:** owner-supplied *Developing assets for the PlayStation 1 (PSX) architecture.pdf* (13 pages). This guide is a curated engineering adaptation for Beckenburg's Java 17 **PSX-style modern runtime**, not a claim that the game runs on original PS1 hardware. **Implementation checkpoint:** 2026-10-30. [Architecture](../development/PSX_RUNTIME_AND_EDITOR_SUITE_ARCHITECTURE.md) · [Machine rules](../development/psx-asset-import-reference.json).
+
+## Core import workflow
+1. Open the developer level editor and select **IMPORT MODEL** from the toolbar or Assets dock.
+2. Choose **OBJ**, **STL** (ASCII/binary), or glTF 2.0 **GLB** with embedded PNG textures. These are the **implemented readers**. A text **.gltf**, FBX, DAE/Collada, PLY, USD/USDZ and Blender project files are **not** silently accepted as working native readers.
+3. Preview the **source** and **reduced derivative** side by side with live triangle and named-part counts. Choose an advisory asset budget and geometry regression level 0–12. Level 0 retains geometry and an original GLB byte-for-byte; increased levels use deterministic spatial vertex clustering.
+4. Review explicit warnings for excess source size, estimated CPU triangle memory, large decoded texture memory, vanishing parts and style-budget excess. Preset budgets are **advisory**, never game-release gates.
+5. **OVER-REGRESSION** identifies a named OBJ group/part that loses nearly all its faces or unique positions. A head, arm, wheel or separate prop section may become a flat remnant or disappear entirely. If all drawable triangles collapse, **Publish** is disabled; partial collapse requires an explicit confirm. The source remains untouched.
+6. **Publish** writes a bounded GLB derivative and original input to the user's own `~/.beckenburg/editor/imports` library, plus source hash, sizes, regression level and warnings. It uses the real `GlbProps.decode` before registration; the game/editor references the same `import_<hash>` ID in scene saves. Imported items appear under **Models / Imported**. Place using the normal PROP tool and save the Castle scene.
+
+**Important limitation:** reduction currently clusters vertices; it is not curvature-aware, bone-aware, silhouette-aware or a production quadric-error-metric decimator. OBJ `o`/`g` names preserve analysis boundaries; the current GLB decoder flattens named mesh-node identity to one `GLB assembly` part for reduction analysis. A GLB imported at level 0 retains its original embedded textures. When reducing a GLB, the generated derivative currently uses an explicit checker fallback atlas and **does not retain original material/rig/named-node identity**; the UI warns and requires confirmation. OBJ material libraries/MTL links are not yet converted; STL has no material UVs. Neither format conversion nor LOD conversion grants a source model redistribution license. Source-copy policy is user-local by default, not a global repository upload.
+
+## PSX source rules — selective adoption
+
+| PDF section/pages | Adapt into modern editor | Do **not** import as literal runtime defect |
+| --- | --- | --- |
+| Core do/don't, pages 1–2 | Warnings for small texture atlases, palette/nearest-neighbor style, polygon/VRAM estimates, affine-warp simulation as an optional rendering profile | Force all art to 16–256px, remove modern depth testing, break textures, or require integer-space physics |
+| Puppet characters, pages 2–3 | Preserve named head/arms/torso parts, origins, joint clearances, distinct facial/texture variants and multiple authoring LODs | Flatten animation rigs or destroy weights automatically during import |
+| Vehicles, page 4 and page 9 | Keep roof/hood panels and independent wheels visually distinct; caution against over-aggressive reduction | Replace 3D wheels with 2D sprites as a required rule, or deliberately make van models look like cardboard |
+| Visibility/LODs, pages 6–7 and 10–11 | Separate near/far variants; protect important silhouette edges. Far LOD can be cheap; near LOD must remain readable | Assume a single camera or hardcode historical PS1 draw-distance limits across Beckenburg |
+| Genre assets, pages 7–10 | Distinguish weapons/pickups from architectural props; preserve gameplay-significant contours and mechanical attachment points | Automatically collapse first-person weapons to single planes regardless of functionality |
+| Textures/lighting, pages 11–12 | Optional palettization, quantization, nearest-neighbor and baked-detail authoring in harmony with unified LightingModule | Make the game unlit or bypass authoritative dynamic occlusion/flashlights |
+| Architecture, page 13 | Room/portal visibility cells, modular repeated surfaces and useful art-direction hints | Reinstate fog-as-mission-condition selector or artificially clip collision to mimic hardware |
+
+The PDF's representative budgets are **style references**, not universal targets: under ~100 triangles for simple props; ~300–800 for characters; up to ~1,200 for particular close-up fighters. Level-of-detail variants can legitimately be far smaller. Other PSX source claims are historically framed and must be checked against actual modern rendering behavior before engineering decisions. We maintain collision fidelity, depth handling, memory safety, functionality, and accessibility.
+
+## Safety and budget contracts
+- Read only finite geometry from files of at most 32 MiB; cap raw triangle count (120,000). Use non-blocking SwingWorker ingestion and regression to avoid freezing the game editor.
+- Export currently supports at most 16,000 triangle-soup triangles per model and 4,000,000 bytes per GLB, reflecting **the current real game decoder**, rather than arbitrary nominal PS1 budgets.
+- Estimate CPU triangle storage separately from actual source file size and decoded image texture bytes; do not claim these are exact GPU/heap allocations. Profiler instrumentation is a separate next step.
+- Preserve the source original and SHA-256 alongside output, with atomic file replacement, safe stable IDs, bounded local library scanning, and no executable authoring tool dependency.
+- Don't fetch arbitrary remote URLs inside the importer, execute scripts embedded in source data, or treat source texture/asset licensing as automatic.
+- Source and optimized mesh are compared in the UI; a regression warning is **editor diagnostic**, not a CI release blocker.
+- Require a pre-publish real decoder check and a saved-level round trip. A successful build proves compilation, not visual parity or game balance.
+
+## Implementation and verified-vs-planned scope
+
+**Implemented source paths:** `editor/EditorMeshPipeline`, `editor/EditorGlbWriter`, `AssetImportDialog`, `ImportedAssetLibrary`, `GlbProps`, `CastleLevelEdits`, `CastleEditorProject`, `EditorPalettePanel`. Automated tests: `editor/EditorMeshPipelineTest` (portable), `AssetImportRuntimeTest` (native GLB decoder and persistent placement). Check the matching Actions jobs for actual outcome; do not infer success merely from an implementation commit.
+
+**Next import upgrades:** native JSON glTF 2.0 + external buffer/image resolver constrained to an import sandbox; PLY support; material/texture MTL conversion; original GLB node/group-aware reduction; part locks and important-bone/socket protection; UV island/material seam preservation; silhouette/normal/rig integrity tests; faster quadric-error simplification; multiple LOD exports and draw-distance preview; texture quantization and atlas bake with exact estimated texture heap; automatic metadata/permissions provenance; asset repair and unreferenced cache cleanup. **Original high-resolution assets and approved low-poly sibling exports remain separate artifacts under the established asset archiving policy**, with their own verified storage destination.
+
+**Release rule:** only objective build, launch, essential function and required multiplayer failures can block delivery. Model style, polygon count and over-regression thresholds are authoring warnings; the editor may disallow exporting an actually empty GLB because the current runtime cannot render it.
+
+
+
+---
+
+### Source: Animation authoring from PSX animations gold-1.pdf
+
+**Original repository path:** `docs/wiki/psx-animation-authoring.md`.
+
+# PSX Animation Authoring — Curated Engineering Reference
+
+**Source:** owner-supplied **PSX animations gold-1.pdf**, 8 pages, SHA-256 `e23ca682ac405dec241b256aabf484ce541554aac56065f733749e7895a549e7`. **Status:** selectively adopted for Beckenburg's Java 17 PSX-styled runtime and portable editor kit. [Machine source/disposition ledger](../development/psx-reference-ingestion-2026-10-30.json). This is a source-informed reference, not a promise that all historical PlayStation techniques are in game.
+
+## What has actually been wired
+**ANIMATE** on the Beckenburg developer editor toolbar opens the portable `EditorAnimationLab`. `EditorAnimationClip` provides named, independent rigid-part pose tracks, 15/30 FPS keyframe timelines, stepped and optional linear authoring previews, a distinct root-displacement track, bounded 8,192-key clips, first/last-preserving pruning of redundant stepped poses, and an atomic, diffable `.anim` document. A local XY puppet preview and key editing afford direct authoring without installing Blender. Automated `EditorAnimationClipTest` covers playback, key pruning, root-motion separation, format round-trip and bounds.
+
+**Scope boundary:** the editor lab does not yet animate an actor in gameplay, import Blender/FBX/glTF animations, drive the ghost controller, bind collision boxes, alter multiplayer authority, or produce a compressed runtime binary. An authored file is a *clip source* only; those integrations need real adapters and test cases.
+
+## Selective adoption, with source pages
+
+| Source pages | Guidance to adopt | Implementation and caveat |
+| --- | --- | --- |
+| 1 | Rigid segmented mesh hierarchy vs vertex-keyframe morphing; independent parts; keyframe reduction | Rigid-part named pose authoring exists; morph vertex streams and joint hierarchy parenting are planned |
+| 1–2 | Low-resolution preview, vertex snap, cycle/memory estimates | Existing game renderer offers retro profile; animation lab has a 2D projection, not true render-parity 3D animation preview. Profiling integration planned |
+| 2 | Hierarchical transform reuse, offline constraint bake, interleaved clip data | Architecture targets; no claims of full hierarchy or pre-bake yet |
+| 2–3 | 15/30 Hz sampling, separate locomotion root from local mesh motion, UV swaps | Implemented discrete sampling and isolated root track; UV-animated faces planned |
+| 3–4 | Readable extreme key poses, optional stepped interpolation, one-frame impact, texture palette | Recommended **style profile**; not mandatory for every game, animation, cutscene or accessibility mode |
+| 4–5 | Detect disconnected joint gaps, broken limb pivots, atlas bleeding, excessive key density | Diagnostics/rig structural tests planned; do not turn intentional visual tricks into broken collision or invisible entities |
+| 5–7 | Dialogue gesture injection, optional portrait mouth swaps, hit-stall poses, genre-specific locomotion | Game-specific authoring templates planned; Beckenburg ghosts must remain host-controlled and telegraph abilities fairly |
+| 7–8 | Track camera shots separately; avoid decoupled camera/actor poses | Camera track support planned; only apply deliberate low-frame styling where legible and comfortable |
+
+## High-priority next acceptance tasks
+1. Register actual rigid-part hierarchy and pivot validation (parent-loop rejection, joint-gap preview, protected head/hand/feet sockets). Keep scene collision independent from visual animation.
+2. Add true 3D pose preview with the **same** renderer, materials and lighting as gameplay; bind imported GLB submesh identifiers without destructive conversion. The current GLB geometry-regression importer loses part identities on reduction: fix before moving character rigs across.
+3. Add keyframe timeline channels for UV/texture swap, event markers and telegraphed strike moments. Never let an animator grant visibility or a strike independent of game rules.
+4. Add an optional, non-destructive fixed-point/15-bit/nearest-neighbor visual profile, not forced true-PS1 CPU restrictions. Profile clip memory/CPU and warn without blocking releases for stylistic issues.
+5. Define `AnimationRuntimeAdapter` to map validated clips to existing `LanGhostAnimation` phase messages, preserving host authorization and preexisting visibility rules. Test solo/LAN parity **before** calling runtime integration complete.
+
+## Rejected hardware-era mandates
+The document presents historical PS1 limitations as absolutes. Beckenburg is **not** a native PS1 executable: do not require fixed-point GTE, intentional input lag, broken Z behavior, disabled modern collision, disabled dynamic lighting, visible limb gaps, floor clipping, 320×240-only readable UI, or obsolete RAM caps. The source itself contains inconsistent Z-buffer claims; preserve its art-direction idea rather than treating that as a runtime specification. A true retro look should remain a chosen rendering/animation profile, without making UI text, navigation, tools, or ghost fairness worse.
+
+**Release rule:** visual style, clip density and silhouette differences are *diagnostic*. Only game functionality/build/launch/essential multiplayer breakage may block a release.
+
+
+
+---
+
+### Source: PSX Arrow sound-design source and adopted practices
+
+**Original repository path:** `docs/wiki/psx-arrow-audio-design.md`.
+
+# PSX Arrow Audio — Reusable Retro Sound-Design Reference
+
+**Source:** owner-supplied **🏹 Sound Design_ The PSX _Arrow_ Aesthetic.pdf**, 9 pages, SHA-256 `a3bc12a57828c9ceecf4728f3adc8ba2b0c52051c41f92b298fc90acf24d55a0`. The document describes **arrow/projectile sounds**. Beckenburg does **not** acquire a bow weapon merely by absorbing this source. Generalize reusable sound design cautiously: a short ghost/tool/interaction sound may use some of the same synthesis/voice-budget techniques, but arrow gameplay is neither requested nor implemented by this reference.
+
+## Source content and relevance
+- **Pages 1–2:** PS1 SPU-era sample/voice budgets, VAG ADPCM, 11,025/22,050 Hz mono examples and a synthetic/filtered whoosh plus dry wooden impact transient. Use as **historical reference and optional retro-audio preset**, not a hard 512KB/24-voice limit in modern Java.
+- **Pages 2–3:** envelope/pitch bend for perceived flight speed, impact body and separate shared reverb. Useful for an *asset-authoring preview* or a scoped arrow/throwable sound family in games that actually contain projectiles.
+- **Pages 3–5:** ADSR envelope, pitch modulation, shared reverb send, voice stealing/priority, panning and sample-cache accounting. Adopt bounded queues and categories only where measured overload/voice masking exists; preserve critical proximity/evidence cues.
+- **Pages 6–9:** the guide proposes dry source assets, optional DSP bitcrushing, modern procedural synthesis, reverb bus and a nominal four-voice projectile pool. Treat these as **creative presets**; they are not verified engine APIs nor universal acoustics rules. Its “zero RAM” description of procedural audio is figurative, not a literal memory-allocation guarantee.
+
+## Existing Beckenburg ownership
+`SoundVolumeEditor` already supports spatial volumes, falloff, pitch, gain, fade, loop and local audition. `SoundVolumeAudio`, `RecordedSfx`, `GameSfx`, `LanSound` and the audit documents under `docs/audio/` own audible playback/coverage. **Do not spawn another competing sound engine** from this PDF or erase real-source/provenance checks. The source does not prove that a new sound asset exists or that an arrow projectile should be added to the game.
+
+## Proposed authoring-only PSX audio profile
+A reusable audio-asset pipeline may support original WAV import, mono/downsampled *derivatives*, sample length/decoded-byte estimates, per-category voice priority, stepped pitch envelopes, 1–2 short transient layers, dry/wet audition and room effect routing. Preserve full-quality sources and metadata and leave voice cues/evidence audibility intact. Use opt-in 11.025/22.05kHz/8–16-bit export profiles; default gameplay should prefer **audible clarity**, not gratuitous clipping, distortion or physical-media wait screens. Any import must validate licensing, file size, sampling format, clipping and origin and must never execute embedded data.
+
+## Specific adoption decisions
+
+| Item | Decision | Rationale |
+| --- | --- | --- |
+| Short dry sounds, compressed derivatives, source-preserving import | **Adopt where applicable** | Small files, predictable loading and mix clarity |
+| Separate whoosh/transient/impact and pitch variation | **Optional per game sound** | Relevant to arrows/projectiles; not required for EMF detector, UI or spirits |
+| Authoring a shared reverb send and material/room presets | **Adapt to existing SoundVolume module** | One real audio authority with credible positional attenuation and material/door/weather differences |
+| Voice priority and limit diagnostics | **Adopt with profiling** | Prioritize UI and gameplay-critical audio; no invented PS1 hard cap |
+| Mono/subtitle/visual cues for essential evidence | **Mandatory accessibility consideration** | Retro aesthetics cannot deny players needed sensory information |
+| Native VAG/XA conversion, exact PS1 SPU RAM maps, fixed 24 voices | **Reject as compulsory** | We ship Java/Windows, not Sony PS1 hardware |
+| Intentionally broken clicks, hard cuts, 1-second stalls | **Reject by default** | Avoid unnecessary audio defects and user-facing latency |
+
+## Acceptance
+An authored asset must be playable in the same audio routing as the game before it is marked integrated. Test at least three listening conditions: close/front, behind walls/door, and from the van; use existing simulation/event sound semantics and don't render remote camera/audio streams when no listener is consuming them. Profile concurrent sound load. Audio style/quality diagnostics are advisory; build/launch and genuine missing **essential** audio behavior may block a release when functionality truly fails.
+
+## Current authoring implementation (2026-10-30)
+
+The editor's **SFX ASSETS** action opens `EditorSoundLab`, backed by portable `EditorSoundProfile`. It inspects bounded PCM WAV source length, channel count, sample rate, file bytes and decoded PCM bytes; it can export a **separate** mono 11,025 Hz or 22,050 Hz 8-/16-bit WAV derivative while preserving the original. `EditorSoundProfileTest` exercises stereo-to-mono conversion, valid WAV re-decode, source preservation and format rejection. This is an **audio-source preparation tool**, not a connected gameplay event, projectile weapon, new mixer or SPU emulator. Those distinctions are intentional.
+
+
+
+---
+
+### Source: PSX-era level editor: event graphs, campaign flow, authoring
+
+**Original repository path:** `docs/wiki/psx-era-editor-campaign-tools.md`.
+
+# PSX-Era Level Editor — Campaign, Events & Authoring Contracts
+
+**Source:** owner-supplied **PSX-era level editor.pdf**, 9 pages, SHA-256 `dc3bbd98dd74f573aeaf3b63578ebdb52def99f00adf50f37a2c835687a950a3`. **Disposition:** selectively adopt the *editor workflow and graph discipline* for a modern Java 17 game, not raw-PS1 disc tools. [Machine batch ledger](../development/psx-reference-ingestion-2026-10-30.json).
+
+## Source-to-Beckenburg reconciliation
+
+| Source section/pages | Correct placement in our toolchain | Status |
+| --- | --- | --- |
+| Spawning, page 1 | Real entity authoring with estimated visible draw/LOD rings, per-room active AI counts, editor-only budget warnings, direction arrows, location/floor validity | **Partially existing**: current scene/prop/light tools, overlay/navigation audit and model-size warnings; dedicated spawn gizmo and active-AI-budget profiler **planned** |
+| Campaign graph/flags, pages 1–2 | Stable map entrance/exit IDs, directed level transitions, typed persistent campaign flags and stage-preview overrides; explicit persistence ownership | **Planned**, do not fake a finished campaign graph or checkpoint engine |
+| UI flow, page 2 | Optional UI menu state graph, focus/escape recovery, string localization IDs and Z-layer editing; test all branches | **Planned**, integrate shared UI rather than spawning a second menu implementation |
+| Saves, pages 2–3 | Atomic saves, versioned schema/migrations, corruption recovery and test fixtures for out-of-space/unavailable storage | **Atomic castle editor saves exist**; PS1 card blocks/emulated physical cards **rejected as required platform function** |
+| Triggers/scripts, page 3 | Visible AABB trigger volumes, typed event ports and safe template actions; runtime execution trace and no arbitrary scripts from untrusted user levels | **Planned**, match the existing game event/ritual/door APIs instead of forked trigger simulation |
+| Team source control, page 4 | Sub-level separation, explicit ownership and versioned/diffable scene documents | **Partially existing** editor snapshots, existing props/surface documents; source-control UX planned |
+| Textures/VRAM, pages 4–5 | Material atlas inspection, memory-use estimates, palette variants and warnings | **Partly existing** via GLB importer and active game texture atlas. Literal PS1 T-pages and 512KB SPU management are optional simulations, **not hard limits** |
+| Audio, page 5 | Sound source and reverb-zone controls, directional falloff, preview, data-driven event bindings | **Existing** `SoundVolumeEditor`, `SoundVolumeAudio`, `SoundDocument` with placement/falloff preview. Native XA/VAG conversion and SPU emulation **not planned for a Java 17 game** |
+| Collision, pages 5–6 | Colliders separate from visual LODs; walkability, stairs, doorway volumes, material-ID diagnostics | **Partially existing** collision/nav checks; dedicated collision brush and per-face sound material painting planned |
+| Animation, page 6 | Rigid-part animation authoring, low-frame sampling, redundant-key pruning | **Initial tool implemented** `EditorAnimationClip` and `EditorAnimationLab`; live actor integration outstanding |
+| Hardware build, pages 6–9 | Keep existing Windows Java installer, game/runtime test workflow and optional software/GPU render modes | **Native .TIM/.TMD/.VAG, .bin/.cue ISO, CD-ROM sector ordering and DuckStation launcher rejected as mandatory**; a separate actual-PS1 exporter would be a distinct project |
+
+## Safety and architecture nonnegotiables
+- Every visible editor operation must either mutate the authoritative game scene through real adapters or be labeled **authoring-only**. Never misrepresent mockup/editor-only data as live-game functionality.
+- Reference IDs resolve to actual assets; save/load round-trips retain transforms, layers and parent IDs. Preserve originals and implement migrations without destroying authored data.
+- Use **the unified lighting and weather modules**, actual water module and existing sound-volume module; do not reinvent competing simulation, independent fog selector or new game audio engine in the editor.
+- Underlying host-owned AI/ghost logic stays authoritative. A campaign/editor trigger may not reveal hidden hunter positions to ghosts, allow ghost van entry, or change attack timing outside host rules.
+- Budget and classic-hardware-era counts are warning channels. The active renderer/Java memory/performance measurements, not a native PS1 spec sheet, determine what is truly executable.
+- Scene regression QA should test that open doors connect physically, basements have walkable stair openings, and imported props don't block critical traversable routes; never block a release merely over taste or an out-of-date visual expectation.
+
+## Prioritized expansion
+First wire campaign map graph and typed flag registry to the existing mission scene data; expose trigger visualizations and actual door/stair/nav paths in the editor. Next add scene persistence and invalid-reference repair, authored entry/exit preview and 100% actual-game playtest. Then add edit/preview for sound zones, spawn orientation, and collision proxy gizmos. Keep sandboxed user-level scripting constrained to vetted actions and explicit permissions; do not deserialize arbitrary executable Java code from map content.
+
+## 2026-10-30 authoring module checkpoint
+
+**CAMPAIGN** on the game editor opens `EditorCampaignLab`. Its portable `EditorCampaignFlow` accepts only bounded typed lifecycle commands (START/PAUSE/RESUME/COMPLETE/STOP/RESET), preserves named simulation flags across STOP, detects duplicate commands, maintains reference→asset dependencies, and writes diff-friendly authoring state. **It does not start or stop any live game session.** `EditorCampaignFlowTest` checks idempotence, invalid transitions, reference guards and save/load.
+
+**BILLBOARDS** opens `EditorBillboardLab`, backed by `EditorBillboardProfile` for source-preserving PNG/JPEG → separate PNG derivatives. The current 2D source/processed comparison, 256/512 canvas options, aspect-preserving nearest-neighbor fit, RGB555/332 quantization, optional ordered dither and estimated decoded RGBA bytes are actual editor controls. A **game-renderer 3D mapped preview, scene placement adapter, skybox/atmosphere commit and per-scene VRAM counters remain outstanding**, and the UI labels the current preview as 2D authoring-only.
+
+
+
+---
+
+### Source: Owner brief: menu/save, campaign, billboard and background authoring
+
+**Original repository path:** `docs/wiki/psx-editor-menu-campaign-billboards.md`.
+
+# PSX Editor: Menu/Save, Campaign Control, Billboards, and Backgrounds
+
+**Authority:** owner-provided *Editor-Based Manipulation System* design brief, 2026-10-30 (inline design guidance, not one of the nine uploaded PDFs). This reference belongs beside the other PSX editor engineering sources in `docs/wiki/`, and is mirrored to Home Brew's `docs/beckenburg/wiki/` with an API-discoverable JSON contract.
+
+**Target:** Beckenburg's Java 17 **modern game with a PSX-style rendering profile**. Historical PlayStation memory cards, T-pages, and disc latency are **optional simulation targets**, not hard runtime requirements. The existing game renderer, lighting, `SoundVolumeEditor`, authoritative campaign/mission state, UI and asset loader remain the owners; **never implement duplicate gameplay systems just to match a document**.
+
+## Menu and save management
+
+- **Editor-facing UI graph:** inspect menu screens, actions, transitions, focus order and escape/back paths, with a shallow three-level *style preset* and an explicit override where needed. Every actionable control must resolve to a real action or a deliberate disabled/coming-soon state, not a dead button.
+- **Retro skin:** optional readable bitmap/monospace font, high-contrast backing plates, crisp keyboard/controller focus, instant item-to-item selection and optional short feedback sounds; keep mouse, screen-reader-scale options and accessibility. Retain modern input and actual reliable save behavior.
+- **Save editor:** expose save-slot titles/icon preview, per-slot payload bytes, version, timestamp and validity; allow optional historical 15-block, 8KiB-per-block *simulation* for an emulation profile only. Default Beckenburg saves remain unconstrained by physical PS1 memory cards. Do not invent a formatting wait before real save operations; a brief **cancelable decorative** animation is permissible if the underlying action stays immediate.
+- **Safety:** atomic writes, document migrations, corrupt-file warnings and explicit dependency notices before deleting a menu action/save reference. No path should silently discard campaign progress.
+
+## Campaign script and lifecycle authoring
+
+- **Visual flow states:** `PENDING → ACTIVE ↔ PAUSED → COMPLETE`, with explicit `STOP → PENDING` cleanup/reset. Green = Active, red = stopped/pending, amber = paused/needs review; completed can use a neutral distinct indicator. Do not infer green merely from a button click.
+- **Idempotent operations:** duplicate START and RESUME cannot create duplicate active systems; duplicate STOP must be harmless. Complete may only happen from Active when actually authorized. An editor mock simulation must be labeled as such until adapted to real mission state.
+- **Cleanup ownership:** stopping an actual game session must call existing lifecycle cleanup, release only session-owned temporary entities, reset *temporary* variables and restore an authorized start position. Never silently erase persistent campaign flags, player inventory or multiplayer state.
+- **Bounded event logic:** no unrestricted imported Java, external scripts, runaway busy loops or synchronous editor-thread execution. Prefer typed trigger actions, bounded event queues and time/step quotas. Guard against recursion and no-yield cycles; preview/test the graph before attaching actions to the game.
+- **Dependency inspection:** warn before deleting an asset, menu state, event, flag or trigger referenced by live scripts or maps. Provide source/referrer IDs, safe retargeting and migration. The editor must not automatically modify the referenced objects until confirmed.
+- **Editor graph:** model stages as nodes with typed start, pause, resume, complete and stop edges; display actual script state separately from authored design. Restore from an editor testing snapshot without affecting gameplay sessions.
+
+## Billboard, skybox and 3D background authoring
+
+- **Source vs. mapped preview:** show an unmodified source bitmap alongside a textured 3D plane/skybox with the actual game's sampler, UVs, alpha/culling and lighting preview. The desired preview is *the live renderer*, not an unrelated image mockup; mark an interim 2D preview honestly.
+- **Retro image presets:** anchor a preview to 256×256, 512×256 or another power-of-two/retro framing preset, with aspect-preserving padding/cropping rather than destructive rescale. Palette reduction, CLUT swaps, nearest-neighbor and ordered dithering are optional render profiles, never mandatory source corruption.
+- **Source preservation:** keep the original image, license/provenance, pixel dimensions and hash. Commit/bake a derivative only when the user confirms; provide undo/revert and the ability to inspect the final mapped result.
+- **Performance:** do not trigger expensive scene relights or full environment rebuilds on each text edit. Debounce/lightweight preview, then explicit **BAKE/COMMIT** for heavy changes. Any baking task should be cancelable, provide progress and retain the previous working asset on failure.
+- **Budget overlay:** per-layer estimates for UI sprites, billboard textures, background textures, and other decoded images; label GPU/heap **estimates** separately from measured allocator statistics. Support selectable historical PS1 VRAM simulation without treating it as an actual 1MB limit on a Windows Java game.
+
+## Engineering adoption matrix
+
+| Requirement | Disposition | Current status |
+| --- | --- | --- |
+| Menu/save state graph and UI focus recovery | Adopt | Planned editor adapters; existing UI must remain the authoritative implementation |
+| Virtual 15-block memory card boot/format manager | Optional aesthetic/hardware profile | Planned, not a real Beckenburg save requirement |
+| Typed bounded campaign flow and lifecycle preview | Adopt | Portable authoring-only state model targeted; actual game lifecycle adapter separate |
+| Idempotent START/STOP and cleanup | Adopt | Must be verified on actual game lifecycle before marking integrated |
+| Explicit asset/script dependency warnings | Adopt | Planned graph/ref index and deletion guards |
+| Billboard source/3D mapped split preview | Adopt | Planned runtime-renderer adapter |
+| Palette/CLUT/retro atlas preview and bake | Adapt | Atlas/import foundation exists; billboard-specific non-destructive bake planned |
+| Visual VRAM budget | Adapt | Diagnostic/optional simulated historical profile, not a hard release gate |
+| No nested menus, smooth scrolling or modern input | Reject as absolute | Optional style defaults, preserving accessibility and user choice |
+| Artificial load/format delays and synchronous hard loops | Reject as runtime requirements | Gameplay input stays responsive; no busy loops |
+
+## Minimum acceptance tests
+
+1. Menu graph: no orphaned routes, every Back returns somewhere valid, controller/keyboard/mouse behavior remains accessible.
+2. Campaign: START twice creates one active session, PAUSE/RESUME and STOP are idempotent, invalid transitions are explicit, no event loop can run forever, and STOP never erases persistent inventory.
+3. Dependency: delete an asset with active references → warning with concrete referrers; cancel must leave the project untouched.
+4. Billboard: source hash remains unchanged; 2D and in-engine mapped result correctly preserve orientation/aspect; a failed bake restores the last valid asset; optional retro effects do not warp text or collision.
+5. Performance: expensive textures, scripts and light changes are scheduled/committed, not re-run per keystroke; counters distinguish estimated bytes from measured heap/GPU usage.
+
+The PSX reference documents are engineering *guidance*, not executable specifications that override host-authoritative ghost fairness, collision, weather, lighting, audio or release policy. Aesthetic warnings remain diagnostic; only genuinely broken functionality belongs in a release gate.
+
+## Implemented authoring slice (2026-10-30)
+
+The game editor now exposes **CAMPAIGN** and **BILLBOARDS** on its toolbar. Campaign is a *non-executing typed state-graph simulation* with idempotent transition commands, flags and declared asset dependency warnings. Billboards is a *2D asset preparation tool* with source-vs-retro derivative, aspect-safe presets, optional palette reduction/dithering, decoded RGBA memory estimates and explicit PNG baking without source overwrite. Java source: `editor/EditorCampaignFlow`, `editor/EditorCampaignLab`, `editor/EditorBillboardProfile`, `editor/EditorBillboardLab`. Separate portable tests exercise transition and file safety. No campaign action presently alters the actual game's mission state; no billboard is yet drawn using the live 3D game rasterizer.
+
+This first slice is deliberately more limited than the full blueprint. The next source integration must use the authoritative runtime mission/cutscene/trigger APIs and actual scene billboard materials, rather than creating editor-only impostors that never appear in gameplay.
+
+
+
+---
+
+### Source: NPC/AI canonical authoring inspector
+
+**Original repository path:** `docs/wiki/psx-npc-ai-authoring.md`.
+
+# NPC / AI Authoring and Automation — Canonical Ghost Rule Inspector
+
+**Architecture checkpoint: 2026-10-30.** This is a reusable Java 17 **editor AI module**, separate from the gameplay ghost engine. Source inspiration: the supplied 17-page *PSX NPC-AI-1.pdf*, the existing [AI adoption analysis](../ai/PSX_NPC_AI_ADOPTION.md), and the game's **actual executable ghost rule classes**. Historical PS1 RAM/GTE/MIPS limitations are stylistic references, not runtime specifications.
+
+## What the working module reads
+
+The editor's **NPC / AI** button opens `GhostAiRuleLab`. It uses the dedicated portable package `org.beckenburg.editor.ai`:
+
+- `NpcRuleBook`: typed, immutable species definitions; stable IDs and base/variant relationships; labels for locomotion, traversal, visibility, energy charging, preferred action, frenzy thresholds, and candidate evidence. It rejects duplicate/invalid rule IDs, explains rules in readable terms, and emits advisory structural findings. An on-demand **AUDIT ROSTER** command lists these findings; **EXPORT RULES JSON** atomically writes a deterministic source-derived species catalog (\`NpcRuleExport\`) to the chosen file. Neither touches live NPCs.
+- `NpcDecisionWorkbench`: read-only legality explanations, safe candidate proposals, explicitly **host-verified spatial-victim** guard for physical strikes, portal-exit validity, and bounded 512-observation deterministic replay. It only uses already-filtered coarse observations. **It never dispatches actions.**
+
+The **game adapter**, `GhostAiRuleAdapter`, reads all `GhostIdentity.Type.values()` from **actual runtime source**, including Ancient and Elder variants:
+
+| Runtime owner | Values interpreted in editor |
+| --- | --- |
+| `GhostIdentity` | stable species/base/variant, assigned rite, described archetype |
+| `GhostTraits` | WALK/FLOAT, DOORS/WALLS, VISIBLE/CAMERA_ONLY/ORBS, energy charge condition and period, movement multiplier, UV and solitary-hunt constraint |
+| `GhostBehavior` | favored event, per-species AI bias period, event tell |
+| `GhostFrenzy` | energy entrance cost, earliest tick, permitted CLAW/DREAD attack families |
+| `GhostEvidenceMatrix` | **possible** EMF, temperature, writing, UV, camera and additional sensor evidence; no evidence is confirmed by this table |
+| `GhostDomain.observe()` | **host-approved** legal action list, current room, exits, coarse hearing, energy and manifestation; sole legality authority |
+
+No duplicate handwritten species matrix was introduced: changes to the canonical Java rules are reflected the next time the editor opens the rulebook.
+
+## Manual test workflow
+
+1. Open the level editor → **NPC / AI**, choose one of the actual ghost species.
+2. Read the species contract and distinguish *inherited base mechanics* from Ancient/Elder variant identity. Confirm camera-only ghosts and wall-travel restrictions in the actual source.
+3. Pick an isolated **10 Hz** test tick and a **synthetic host hearing** condition. The tool builds a fresh `GhostDomain(new HouseMap(), ...)` and advances it one simulation tick at a time, **without touching the running investigation**.
+4. Click **SIMULATE LEGAL ACTIONS**. The right pane displays real `observe()` energy, room, portal exits, manifestation, and legal actions. It then explains each proposed or rejected action using `NpcDecisionWorkbench`.
+5. The **host-verified spatial victim** checkbox is explicitly labeled as a sandbox precondition. An audible hunter **does not** prove physical strike contact. The editor cannot grant a strike or reveal exact player coordinates.
+
+The preview is deliberately not a production ghost AI. It does **not** reproduce stochastic haunting roll deadlines, real active-room acoustics/weather, physical pursuit, joint geometry, or measured in-game hunter contact. Any results must not be interpreted as proof of gameplay acceptance without real host tests.
+
+## Architecture invariants
+
+- **One authority**: real `GhostDomain.dispatch` applies action energy/cooldowns/fear/harm, and `LanGhostPursuit`, `LanAcoustics`, `LanGhostSpatial`, `HouseMap`, the host clock and collision keep their existing authority. The editor must never reimplement these systems to shortcut a behavior preview.
+- **Perception security**: NPC decision input must be derived from **legitimately delivered events and coarse room/portal information**, not hunter health, exact body position, gear, private journal, hidden identity or extraction-van state. No wall-phase is granted except for species/paths the actual host permits.
+- **Presentation vs gameplay**: AI staggering, caching and visualization can reduce overhead but never skip immediate sound, strike telegraphs, movement/collision, ritual/hunt, and multiplayer safety conditions.
+- **Portable interface**: new NPC types (hunter allies, guards, wildlife) use a distinct adapter that supplies an explicit `NpcRuleBook.Rule` and filtered `NpcDecisionWorkbench.Observation`; they must not be passed fabricated ghost species attributes.
+- **Performance**: bounded editor previews are on a SwingWorker, not the paint/EDT loop. Production AI scheduling must be measured on real maps; no full A* over every actor each frame, no unvalidated teleport recovery, no arbitrary 8-character cap.
+- **Testing and release**: portable rulebook/replay tests run in **Modular Level Editor Standalone**; canonical roster and isolated `GhostDomain` behavior are checked in **Focused Castle Repair Checks** as non-blocking diagnostics. Only objective build/launch/essential game or required multiplayer failures may block a release.
+
+## What is implemented versus next
+
+**Implemented source:** `src/main/java/org/beckenburg/editor/ai/NpcRuleBook.java`, `NpcDecisionWorkbench.java`, `src/main/java/org/beckenburg/GhostAiRuleAdapter.java`, `GhostAiRuleLab.java`, developer-editor button, explicit package compilation in Windows game and standalone editor kit. Tests: `NpcRuleWorkbenchTest` and `GhostAiRuleAdapterTest` (test results must be read from GitHub Actions).
+
+**Implemented second module layer:** [Host telemetry, navigation, and deterministic scenario documentation](psx-npc-ai-telemetry-navigation.md). The source now includes `NpcAiTelemetry` and `NpcAiTelemetryReport` (per-host rolling duration samples and aggregate CSV), `GhostAiNavigationAudit` (actual portal/acoustic checks) and `GhostAiScenarioRunner` (bounded real-domain/cadence decision replay). The **NPC / AI** dialog exposes **AUDIT NAV** and **PROFILE RULES**. Host recording is off by default, explicitly enabled locally, and never shared with multiplayer clients. New CI tests are submitted; passing earlier tests must not be interpreted as proof of the latest commits.
+
+**Next priorities:**
+
+1. **Attach permissioned live-host profiler readout** to developer UI (current UI displays isolated scenario timings; actual per-host metrics are accessible from trusted JVM code/local stderr).
+2. **Collision and acoustic invalidation coverage**: verify dynamic door crossings, stair connectivity, swept movement and weather/material sound-path changes; record route topology revisions without bypassing the existing HouseMap and LanAcoustics.
+3. **Expand scenario fidelity**: cover frenzy warning/recovery, wards, ritual interruption, human-to-AI takeover and actual LAN host parity without inventing ghost perception.
+4. **Behavior editing with safety**: editable proposed parameters in a sandbox with diff/review; never mutate canonical rules without an explicit approved patch or run arbitrary user scripts.
+5. **Other NPC adapters**: connect existing hunter, ally and Twin companions through their own canonical behavior systems rather than pretending all NPCs are ghosts.
+6. **End-to-end real-world profiles**: pair existing door-opening CPU/GPU diagnostics with host timing histograms, allocation/GC statistics and real playtesting before any scheduler or AI cadence changes.
+
+This is a true first step toward an NPC/AI tool suite, **not a declaration that all NPC behavior authoring or automated AI gameplay has been implemented**.
+
+
+
+---
+
+### Source: NPC/AI telemetry, navigation and seeded scenarios
+
+**Original repository path:** `docs/wiki/psx-npc-ai-telemetry-navigation.md`.
+
+# NPC/AI Tools — Host Telemetry, Navigation Audits & Seeded Rule Scenarios
+
+**2026-10-30 implementation checkpoint.** Companion to [NPC/AI canonical rule inspector](psx-npc-ai-authoring.md) and the [PSX NPC-AI adoption analysis](../ai/PSX_NPC_AI_ADOPTION.md). This page records actual Java 17 source entrypoints and explicitly distinguishes host instrumentation from authoring-only tests.
+
+## Live, per-host performance sampling
+
+`org.beckenburg.editor.ai.NpcAiTelemetry` is a **portable, bounded diagnostic recorder**, compiled into both the standalone level editor kit and the game. `LanHost` owns **one instance per host**, and `LanGhostPursuit` receives that instance for acoustic/route timing. Metrics are:
+
+| Metric | Actual code path instrumented | Note |
+| --- | --- | --- |
+| `HOST_TICK` | `LanHost.tickSafely()`, including real simulation processing | Whole host tick, not AI-only CPU cost |
+| `PERCEPTION` | `ghost.observe()` inside authoritative AI tick | Host-generated legal action observation only |
+| `DECISION` | `LanGhostPursuit.decide(...)` inside host tick | Actual production AI choice, not the authoring workbench |
+| `APPROACH` | `LanGhostPursuit.approach(...)` inside host tick | Direction decision; `LanGhostSpatial.step` still owns movement |
+| `HEARING` | `LanAcoustics.audible(...)` in real host sound delivery, and `LanGhostPursuit.heard` acoustic processing | May record two distinct checks for one audible event |
+| `ROUTE` | `LanGhostPursuit.route(...)` | Real bounded BFS; no replacement pathfinder |
+
+Each metric records **at most the newest 256 durations**, while retaining a total call count. `snapshot()` computes p50/p95/p99, minimum, maximum and mean over the current window. **No hunter coordinates, identity, health, inventory, secret role, journal, inferred position, acoustic cell location, or other player information is recorded.** No telemetry is sent to any multiplayer packet or GhostDomain observation.
+
+Profiling is disabled by default. To enable it for a **locally controlled host process**, start the JVM with `-Dbeckenburg.ai.profile=true`, or invoke `LanHost.enableAiDiagnostics(true)` through trusted *in-process* developer code. `LanHost.aiDiagnosticsSnapshot()` returns a read-only snapshot; `aiDiagnosticsCsv()` provides a CSV report. When a profiled host is closed, it prints the aggregate CSV to **local stderr**, never the LAN. `NpcAiTelemetryReport.save(...)` supports atomic export of the same aggregate CSV. The flag is opt-in because even nanosecond sampling has runtime overhead.
+
+**Important limits:** these are Java wall-clock timings of real functions on the hardware that executes them, **not GPU frametimes**, absolute CPU-cycle counts, complete Java allocation/GC analysis, or proof of stable 30/60 FPS. Compare p50/p95/p99 to real baseline captures and the separate door-opening profiler before altering cadence. Disabled sampling must impose negligible overhead and never change the AI decision logic.
+
+## Real-world portal and acoustic navigation audit
+
+`GhostAiNavigationAudit` reads the actual `HouseMap.ghostExits` (including authored doors/stairs) and `LanAcoustics.cost`. It lists directed links, reverse-link problems, unreachable room IDs, acoustic disconnects and the van/extraction boundary. `GhostAiNavigationAudit.path(map,from,to)` computes a **read-only** bounded breadth-first traversal; it **cannot** move the ghost or grant illegal wall travel. Closed doors can still be an authorized route: the collision/door API decides whether physical passage is possible at execution time.
+
+The editor's **NPC / AI → AUDIT NAV** takes an existing authored site from `HouseMap.Site`, constructs a **fresh, isolated** map, and reports links, route-to-origin and hearing losses. It does not edit that map or perform live-scene traversal. Findings are diagnostic: an intentionally isolated room may not be a gameplay defect; verify authored layout before repair. Future live visualization should use actual editor camera/viewport overlays and jump-to-problem rather than a second scene renderer.
+
+## Seeded, bounded ghost-rule scenarios
+
+`GhostAiScenarioRunner.run(species,site,durationTicks,seed,syntheticSound)` runs for **1–1800 ticks** using actual:
+- `GhostDomain.advance/observe/dispatch`, including real energy/cooldowns/legal actions;
+- `GhostActionCadence` with a **seeded authoring-test RNG** for reproducibility;
+- `LanGhostPursuit.decide/heard`, with the game's real `LanAcoustics` and portal graph;
+- the shared `NpcAiTelemetry` for observed rule/decision/hearing/route costs.
+
+A synthetic sound source may pulse every 40 ticks from **authored room 4**. Its position is a controlled test marker, **not a real player tracker**. No physical strike contact is ever supplied, so the runner rejects all `STRIKE` attempts. It stores at most 128 recent action resolutions. Results expose accepted, rejected and DRIFT counts, remaining rule-domain energy and aggregate timings. All rule decisions use real code, but this **is not a full LAN host, physics, ghost pose/collision, camera/lighting, ward, frenzy or player-contact simulation**. The editor's **NPC / AI → PROFILE RULES** displays this isolated trace and performance metrics, with explicit scope warnings.
+
+## Diagnostics acceptance and next integrations
+
+- The `NpcAiTelemetryTest` portable regression validates default-off behavior, bounded rolling percentiles, opt-in toggles, reset, and CSV with **no session secrets**.
+- The `GhostAiNavigationAuditTest` game diagnostic validates actual portal edges, hearing costs, no extraction path and instrumented pursuit hearing.
+- The `GhostAiScenarioRunnerTest` runs multiple base/Ancient/Elder species with a fixed seed, compares repeatable action traces, and forbids synthetic strikes. These game-side performance/behavior tests are **non-blocking diagnostics** under the release policy; failures still need repair and honest reporting.
+- The full game build/launch, authentic ghost-human parity and essential multiplayer are the only applicable objective release gates. Subjective AI balance, timing targets and retro aesthetics remain advisory.
+
+**Still outstanding:** a permissioned **live-host readout** wired into the developer UI (currently profiling is readable in the local process or stderr, while editor profiling is isolated), physical waypoint/door geometry visualization, acoustic topology invalidation metrics, event/collision/animation and memory-allocation profiling, actual Frenzy/ward/ritual scenarios, AI ally adapters, and LAN AI/human equivalence tests. No hardcoded native-PS1 scratchpad or NPC slot limits.
+
+
+
+---
+
+### Source: NPC/AI source adoption assessment
+
+**Original repository path:** `docs/ai/PSX_NPC_AI_ADOPTION.md`.
+
+# PSX NPC-AI architecture reference — Beckenburg adoption review
+
+**Reference:** user-supplied 17-page `PSX NPC-AI-1.pdf` (30 October 2026).
+This is an engineering adaptation of its recommendations, **not** an instruction
+to reproduce original PlayStation hardware limitations in a Java 17 Windows game.
+
+## First dependency: measured House door-opening profiles
+
+The dedicated GitHub Actions workflow
+`.github/workflows/door-opening-profiler.yml` builds the actual game on
+Windows/Java 17, then runs `DoorOpeningFrameProfile` in separate JVMs:
+- **CPU software:** real authored House, real `SceneRenderer.drawPractice`,
+  baseline frames, 16 alternating actual door transitions, and swing frames.
+- **GPU submission recorder:** real world-buffer preparation and explicit
+  resident resource revision accounting. A recorder is **not** OpenGL timing.
+- Each produces baseline/toggle/swing/recovery p50, p95, p99 CSV and
+  peak shadow rays, invalidated cells, scene generations, upload bytes, GC and
+  heap snapshots. They are diagnostic; no subjective FPS/art release gate.
+- Installed Windows hardware GPU timing, visual inspection and real-player
+  input still require separate acceptance. Do not claim those from the
+  CPU or recording backends.
+
+**Implementation dependency:** inspect the actual CSV and profiler results
+before changing the AI update cadence or doing an unmeasured rewrite. A door
+hitch with zero AI actors is by definition not repaired by throttling AI.
+
+## Directly applicable recommendations (priority order)
+
+### P0 — Preserve simulation correctness while measuring
+1. Profile the host's existing **10 Hz** authoritative tick and the solo
+   practice simulation separately. Time AI decisions, route queries, sensory
+   work, physical collision and animation/image preparation. Report bounded
+   p50/p95/p99, allocation/GC and actor counts; diagnostic only.
+2. Keep one authoritative tick number and **no AI-side wall-clock loops**.
+   Rendering may skip frames; commands, ghost deadlines, player collision,
+   ritual state and network snapshots cannot be skipped arbitrarily.
+3. Stabilize door-change handling: cache room connectivity and each
+   actor's route until the destination/topology changes. Invalidate using
+   portal revisions rather than rebuilding an entire graph or restarting all
+   actors on every camera frame.
+
+### P1 — Low-risk navigation and sensing
+4. **Reuse authored room/portal graphs**. `CampaignAlly.route` uses a
+   breadth-first traversal with fresh arrays/queue/path allocations whenever
+   an ally changes rooms. `LanHost.campaignBotInput` builds a new BFS every
+   input call when rooms differ; `LanGhostPursuit.route` does another
+   bounded search; all are over only ~15 rooms, so first measure whether
+   object churn is material. A cached next-hop table per topology revision
+   is a candidate, not a justification for a new unbounded A* engine.
+5. **Bound expensive decisions**, not movement or responsiveness.
+   Use an event/goal-dirty flag and per-actor deterministic time slots for
+   patrol target selection. Hearing, being attacked, door collision,
+   spectator input and ritual/hunt reactions must still be delivered
+   immediately through their existing authoritative paths.
+6. **Sound propagation cannot become a simple flat distance check.**
+   `LanAcoustics` already traverses physical portals, closed doors,
+   materials, floors and weather noise; the ghost excludes the extraction
+   van. Cache a room-to-room attenuation matrix by door/window topology
+   revision if its Dijkstra/priority-queue allocations show up in profiling.
+   Approximate the sound source position without leaking exact hunter state.
+7. **Persist navigation intent and use tolerance/hysteresis** at door
+   thresholds, nearby goal nodes and search/alert states. Use small
+   squared-distance comparisons where they simplify hot checks, while
+   preserving actual `HouseMap.resolveMove` swept collision.
+8. **Coalesce simultaneous route requests** with a bounded, fair host
+   scheduler only if measured demand warrants it. An AI can keep its
+   previously safe target for a short, explicit interval; don't produce
+   starvation, fake teleportation or delayed emergency decisions.
+
+### P2 — Editor and authoring accelerators, conditional
+9. Export prevalidated portal/waypoint adjacency and optional cover/ambush
+   tags *for existing authored sites*. Never blindly cap nodes to four
+   connections: preserve all real door/stair links or insert a validated
+   intermediate node.
+10. Precompute static *potential* room visibility/sector interest for
+    **render/candidate rejection only**. Dynamic doors, transparent windows,
+    vertical floors, flashlight/evidence interactions and shared LAN state
+    still need authoritative runtime checks.
+11. Preload known animation/sprite variants at scene preparation so an
+    NPC switching to alert/hurt doesn't synchronously import a 3D model or
+    decode images on the host tick/EDT. Measure memory tradeoffs first.
+12. Use presentation-only staggered bark/footstep animation offsets and
+    natural telegraphing **where fair**; do not alter ghost identity,
+    evidence entitlement, attack rules or cadence merely to hide slow AI.
+
+## Parts not appropriate to import literally
+
+- The PDF's MIPS/GTE assembly, 12-bit fixed-point arithmetic, 360-entry
+  sine/cosine LUT, PSX 1 KB scratchpad, 2 MB RAM ledger, GPU VRAM data
+  tricks, manual unrolling, and fixed 4–8 NPC slots are **hardware-specific**,
+  not sensible Java 17 optimizations. Modern JVM optimizations must be
+  measured rather than cargo-culted.
+- Its recommendation to turn off far-away brains or only activate full
+  combat when inside the player's field of view would create exploitable
+  multiplayer/gameplay discontinuities. Instead reduce *presentation*,
+  optional cosmetic inspection and redundant planning while retaining
+  authoritative sound, collision, deadlines and simulation continuity.
+- Its proximity "Spidey Sense", gaze-triggered aggression and exact
+  omniscience cheats conflict with Beckenburg's intended **auditory ghost
+  awareness** and fairness. Ghosts must not acquire hunter positions from
+  visibility, stare direction, hidden evidence, or van location.
+- Node teleportation, temporary collision disabling and a jump to the
+  nearest node are **not acceptable safety recovery defaults**. Stuck
+  actors should diagnose, choose a valid alternative portal and replan
+  without passing through walls/floors or hiding pockets.
+- Hazard-zone shortcuts must not bypass real line-of-sight and collision
+  checks for rituals, attacks or evidence. NPCs/ghosts cannot enter the
+  safe van where forbidden, and player ghosts cannot enter hiding spaces.
+- The PDF's absolute bans on dynamic allocations, trigonometry, A*,
+  steering, and complex sound are historical design cautions, not proof
+  of current bottlenecks on JVMs. Prefer measured bounded work.
+
+## Existing implementation facts to preserve
+
+- `LanHost` owns a scheduled 100 ms tick; multiplayer authority and ghost
+  forced-action cadence (5–45 s) remain host-owned.
+- `CampaignAlly` already uses portal BFS and the same swept move/elevation
+  resolver as the player; `GhostPracticeHunterAi` uses audible cue events
+  and room-level suspicions, not true ghost identities.
+- `LanGhostPursuit` uses finite recent sound-memory and coarse location
+  rather than continuous private hunter tracking; `LanGhostSpatial`
+  forbids the extraction van and hiding pockets.
+- `TwinCompanionAi` is a simulated second actor with sound and movement
+  state; it may not teleport, cross solid walls or invent secondary damage.
+- `LanAcoustics` charges attenuation through authored doors and materials,
+  including weather noise, instead of a naive omnidirectional radius.
+
+## Acceptance and documentation
+
+Build Java 17, run a controlled authored House/Castle navigation case and
+door-toggle case with **real** ally, practice hunter, AI ghost and Twin
+actor on separate scenarios. Include vanilla baseline and optimized
+rerun with identical seeded intent, player inputs and portal transitions.
+Validate legal rooms, no wall/floor phasing, no safe-van or hiding-space
+entry by ghosts, unchanged evidence/ritual outcomes, no omniscient hunt,
+consistent host and connected-client snapshots, and bounded path work.
+
+Write per-scenario summaries for decision/route/sensory/collision time,
+path request backlog age, allocation/GC, active actor counts and p99
+simulation-tick time. Flag quality/performance anomalies as **diagnostic**;
+only objectively nonfunctional build, startup, essential gameplay or
+multiplayer/update failures are release-blocking.
+
+**Status:** adoption design prepared; no claim of AI refactor implementation,
+installed Windows playtest, or actual GPU FPS improvement.
+
