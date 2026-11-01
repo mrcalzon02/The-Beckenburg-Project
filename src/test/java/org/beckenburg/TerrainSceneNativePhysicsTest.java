@@ -19,6 +19,15 @@ public final class TerrainSceneNativePhysicsTest {
     public static void main(String[] args)throws Exception{
         Path folder=Files.createTempDirectory("terrain-runtime-physics");
         try{
+            Path a=UserLevelLibrary.terrainWorldsFolder("customA");
+            Path b=UserLevelLibrary.terrainWorldsFolder("customB");
+            check(!a.equals(b)&&a.endsWith(Path.of("customA","terrain-worlds"))
+                &&b.endsWith(Path.of("customB","terrain-worlds")),
+                "USER worlds have different authoritative per-level directories");
+            boolean badLevel=false;
+            try{UserLevelLibrary.terrainWorldsFolder("../escape");}
+            catch(IllegalArgumentException expected){badLevel=true;}
+            check(badLevel,"Level-scoped terrain cannot escape with crafted IDs");
             var settings=new StitchedHeightmapWorld.Settings(32,2,0,0,-4,4,42L,4);
             var world=StitchedHeightmapWorld.create(folder.resolve("world"),settings);
             var routeFile=TerrainInfrastructureSplines.open(world);
