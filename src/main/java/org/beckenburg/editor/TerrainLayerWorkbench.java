@@ -489,7 +489,7 @@ public final class TerrainLayerWorkbench extends JPanel {
             // memory; save the only authoritative spline file once it succeeds.
             TerrainInfrastructureSplines.evaluate(alignment,stack.metresPerCell());
             var before=routes.list();
-            var proposed=new ArrayList<>(before);
+            var proposed=new java.util.ArrayList<>(before);
             proposed.removeIf(r->r.id().equals(alignment.id()));
             proposed.add(alignment);
             stack.refreshManagedRoutes(proposed);
