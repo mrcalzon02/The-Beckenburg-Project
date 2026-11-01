@@ -13,6 +13,7 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 | Live low-res generation preview | Workbench `LIVE LOW-RES PREVIEW` | 2D analytical height preview, not live 3D |
 | Non-destructive stacked sculpt layers | `TerrainLayerStack` | Up to 12 named layers with enable and opacity |
 | Precision brush base | Raise/lower/smooth/flatten/revert/trench/terrace; inner radius, three curves, alpha images, rotation, event-independent dab spacing, elevation/slope guards | No mesh stamp-angle fitting yet |
+| Brush hot-swap presets | `TerrainBrushPresets`: versioned atomic save/load/delete, bundled alpha and numeric profiles | Presets scoped to a world; share/export UX later |
 | Localized differential undo/redo | Sparse per-vertex height changes, per stroke | Session history is memory-resident; other data edits not yet undoable |
 | Terrain stamping | `stamp` and image-based height stamp in workbench | Height textures only; no arbitrary 3D mesh conversion |
 | Thermal erosion | Talus relaxation and bounded selected-region iterations; protects source seams | Simplified four-neighbor solver |
@@ -31,7 +32,8 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 Implementation entry point: `StitchedWorldEditor` > **LAYERED TERRAIN TOOLS**.
 Standalone build: `tools/build-editor-kit.sh` or `tools/build-editor-kit.cmd`.
 Tests: `TerrainLayerStackTest`, `TerrainInfrastructureSplinesTest`,
-`TerrainBrushProfileTest`, `TerrainErosionRegionTest`;
+`TerrainBrushProfileTest`, `TerrainBrushPresetsTest`,
+`TerrainErosionRegionTest`;
 workflow: `.github/workflows/standalone-editor-kit.yml`.
 
 ## Mandatory preservation rules
@@ -50,7 +52,7 @@ workflow: `.github/workflows/standalone-editor-kit.yml`.
 ## Next integration passes, in dependency order
 
 ### Authoring data and precision
-- Add independent Bezier falloff curves for plateau interior/exterior and brush presets; directional raise-only/lower-only flattening and image alpha/spacing/rotation are integrated.
+- Add independent Bezier falloff curves for plateau interior/exterior and project-independent preset sharing; local brush preset save/load and directional flattening, alpha/spacing/rotation are integrated.
 - Add non-destructive per-layer masks, explicit per-pixel alpha and per-layer bounds.
 - Add resampling with landscape-preserving interpolation and irreversible resolution-change
   preview. Preserve world-space datum, source seam positions and landmark control points.
