@@ -166,7 +166,7 @@ public final class TerrainLayerStack {
         layers.add(new Layer("Sculpt",pixels));
         load();
         // Legacy route documents never auto-apply a second grading pass.
-        refreshManagedRoutes(TerrainInfrastructureSplines.open(world).list());
+        setManagedRoutes(TerrainInfrastructureSplines.open(world).list(),false);
     }
     private int id(int x,int z){return z*side+x;}
     private static long crc(int[] data){
@@ -227,8 +227,12 @@ public final class TerrainLayerStack {
      * masks are NEVER overwritten. Edited routes therefore leave no old bed.
      */
     public void refreshManagedRoutes(List<TerrainInfrastructureSplines.Alignment> routes){
+        setManagedRoutes(routes,true);
+    }
+    private void setManagedRoutes(List<TerrainInfrastructureSplines.Alignment> routes,
+                                  boolean notifyListeners){
         Objects.requireNonNull(routes);
-        finishStroke();
+        if(notifyListeners)finishStroke();
         var selected=new ArrayList<TerrainInfrastructureSplines.Alignment>();
         for(var route:routes)if(Objects.requireNonNull(route).managed()){
             // Validate before mutating existing route heights.
@@ -238,7 +242,7 @@ public final class TerrainLayerStack {
         selected.sort(Comparator.comparing(TerrainInfrastructureSplines.Alignment::id));
         managedRoutes=List.copyOf(selected);
         rebuildManagedRoutes();
-        changed(0,0,n,n,EnumSet.of(EditDomain.HEIGHT));
+        if(notifyListeners)changed(0,0,n,n,EnumSet.of(EditDomain.HEIGHT));
     }
     /** Recomputes only in memory; the route document is the authority. */
     private void rebuildManagedRoutes(){
