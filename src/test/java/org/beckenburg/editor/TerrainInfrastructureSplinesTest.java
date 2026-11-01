@@ -47,6 +47,15 @@ public final class TerrainInfrastructureSplinesTest {
             stack.save();var again=new TerrainLayerStack(world,0,0);
             check(again.material(15,12)==TerrainLayerStack.Material.GRAVEL.ordinal(),
                 "Corridor material survives editor reopening");
+            var longRoute=new TerrainInfrastructureSplines.Alignment("rail-long",
+                TerrainInfrastructureSplines.Kind.RAIL,
+                List.of(new TerrainLayerStack.Point(-250,20,25),
+                    new TerrainLayerStack.Point(250,20,25)),2,2,4);
+            check(TerrainInfrastructureSplines.evaluate(longRoute,2).size()>256,
+                "Long smooth rail route exceeds former 256-sample limit");
+            reopened.apply(again,longRoute);
+            check(Math.abs(again.height(16,20)-25)<.01,
+                "Long rail profile grades tile without artificial segment cap");
             check(!reopened.remove("missing"),"Removing unknown route is harmless");
             check(reopened.remove("road-1"),"Route deletion works");
             System.out.println("PASS terrain spline persistence, multi-point interpolation, rail grade constraints, gravel corridor and source protection");
