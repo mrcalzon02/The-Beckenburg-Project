@@ -224,6 +224,10 @@ public final class LayeredTerrainQueries {
     public double groundHeight(double x,double z)throws IOException{
         return surfaceHeights.height(x,z);
     }
+    /** Real composed surface ID for footsteps/collision/render material lookup. */
+    public int groundMaterial(double x,double z)throws IOException{
+        return surfaceHeights.surfaceMaterial(x,z);
+    }
     /** Called when authored layers are saved or a coordinated source bake completes. */
     public void refreshAuthoredTerrain(){surfaceHeights.invalidate();}
 
