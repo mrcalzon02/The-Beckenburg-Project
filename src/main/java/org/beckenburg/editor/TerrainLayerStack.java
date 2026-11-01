@@ -19,6 +19,27 @@ public final class TerrainLayerStack {
     public enum Noise { PERLIN, SIMPLEX, WORLEY, RIDGED, BILLOW, DOMAIN_WARP }
     public enum Material { GRASS, ROCK, DIRT, SAND, MUD, SNOW, GRAVEL, RIVERBED }
     public record Point(double x,double z,double elevation) {}
+    /** Inclusive grid-space bounds for localized terrain solvers. */
+    public record Region(int x0,int z0,int x1,int z1) {
+        public Region {
+            if(x0>x1||z0>z1)throw new IllegalArgumentException("Invalid erosion region");
+        }
+        public boolean contains(int x,int z){
+            return x>=x0&&x<=x1&&z>=z0&&z<=z1;
+        }
+        public static Region around(double cx,double cz,double radius,int tileCells){
+            if(!Double.isFinite(cx)||!Double.isFinite(cz)
+                ||!Double.isFinite(radius)||radius<=0||tileCells<2)
+                throw new IllegalArgumentException("Invalid erosion selection");
+            int x0=Math.max(1,(int)Math.floor(cx-radius)),
+                z0=Math.max(1,(int)Math.floor(cz-radius));
+            int x1=Math.min(tileCells-1,(int)Math.ceil(cx+radius)),
+                z1=Math.min(tileCells-1,(int)Math.ceil(cz+radius));
+            if(x0>x1||z0>z1)
+                throw new IllegalArgumentException("Erosion region does not intersect tile");
+            return new Region(x0,z0,x1,z1);
+        }
+    }
     public record LayerInfo(String name,boolean enabled,double opacity) {}
     private static final class Layer {
         String name; boolean enabled=true; float opacity=1;
@@ -379,27 +400,37 @@ public final class TerrainLayerStack {
         }
         finishStroke();
     }
+    private Region validatedRegion(Region region){
+        Objects.requireNonNull(region);
+        if(region.x0()<1||region.z0()<1||region.x1()>=n||region.z1()>=n)
+            throw new IllegalArgumentException("Erosion region must be inside source tile seam");
+        return region;
+    }
     /** Talus relaxation in the selected tile; frozen pixels and seam vertices never move. */
     public void thermal(int iterations,double talusDegrees,double rate){
+        thermal(iterations,talusDegrees,rate,new Region(1,1,n-1,n-1));
+    }
+    public void thermal(int iterations,double talusDegrees,double rate,Region region){
+        region=validatedRegion(region);
         if(iterations<1||iterations>100||talusDegrees<=0||talusDegrees>=89
             ||rate<=0||rate>.25)throw new IllegalArgumentException("Thermal erosion parameters");
         finishStroke();
         double talus=Math.tan(Math.toRadians(talusDegrees))*step;
         for(int pass=0;pass<iterations;pass++){
             float[] flow=new float[pixels];
-            for(int z=1;z<n;z++)for(int x=1;x<n;x++){
+            for(int z=region.z0();z<=region.z1();z++)for(int x=region.x0();x<=region.x1();x++){
                 if(!editable(x,z))continue;
                 int i=id(x,z);double h=composed(i);
                 int[] xs={x-1,x+1,x,x},zs={z,z,z-1,z+1};
                 for(int d=0;d<4;d++){
-                    if(!editable(xs[d],zs[d]))continue;
+                    if(!region.contains(xs[d],zs[d])||!editable(xs[d],zs[d]))continue;
                     int neighbor=id(xs[d],zs[d]);
                     double excess=h-composed(neighbor)-talus;
                     if(excess>0){float move=(float)(excess*rate*.25);
                         flow[i]-=move;flow[neighbor]+=move;}
                 }
             }
-            for(int z=1;z<n;z++)for(int x=1;x<n;x++){
+            for(int z=region.z0();z<=region.z1();z++)for(int x=region.x0();x<=region.x1();x++){
                 int i=id(x,z);if(flow[i]!=0)write(x,z,composed(i)+flow[i]);
             }
         }
@@ -407,19 +438,25 @@ public final class TerrainLayerStack {
     }
     /** Seeded localized droplet erosion with water loss and sediment deposition. */
     public void hydraulic(int droplets,int lifetime,long seed,double erode,double deposit){
+        hydraulic(droplets,lifetime,seed,erode,deposit,new Region(1,1,n-1,n-1));
+    }
+    public void hydraulic(int droplets,int lifetime,long seed,double erode,
+                          double deposit,Region region){
+        region=validatedRegion(region);
         if(droplets<1||droplets>200000||lifetime<1||lifetime>200
             ||erode<=0||erode>1||deposit<=0||deposit>1)
             throw new IllegalArgumentException("Hydraulic erosion parameters");
         finishStroke();Random random=new Random(seed);
         for(int d=0;d<droplets;d++){
-            int x=1+random.nextInt(n-1),z=1+random.nextInt(n-1);
+            int x=region.x0()+random.nextInt(region.x1()-region.x0()+1),
+                z=region.z0()+random.nextInt(region.z1()-region.z0()+1);
             double sediment=0,water=1;
             for(int stepNo=0;stepNo<lifetime&&water>.01;stepNo++){
                 if(!editable(x,z))break;
                 double h=height(x,z),lowest=h;int nx=x,nz=z;
                 for(int[] off:new int[][]{{-1,0},{1,0},{0,-1},{0,1}}){
                     int xx=x+off[0],zz=z+off[1];
-                    if(editable(xx,zz)&&height(xx,zz)<lowest){
+                    if(region.contains(xx,zz)&&editable(xx,zz)&&height(xx,zz)<lowest){
                         lowest=height(xx,zz);nx=xx;nz=zz;
                     }
                 }
@@ -436,20 +473,24 @@ public final class TerrainLayerStack {
     }
     /** Conservative directional soil transport; repeat to simulate dune migration. */
     public void wind(int iterations,int dx,int dz,double amount){
+        wind(iterations,dx,dz,amount,new Region(1,1,n-1,n-1));
+    }
+    public void wind(int iterations,int dx,int dz,double amount,Region region){
+        region=validatedRegion(region);
         if(iterations<1||iterations>100||Math.abs(dx)>1||Math.abs(dz)>1
             ||(dx==0&&dz==0)||amount<=0||amount>2)
             throw new IllegalArgumentException("Wind parameters");
         finishStroke();
         for(int pass=0;pass<iterations;pass++){
             float[] flow=new float[pixels];
-            for(int z=1;z<n;z++)for(int x=1;x<n;x++){
+            for(int z=region.z0();z<=region.z1();z++)for(int x=region.x0();x<=region.x1();x++){
                 int nx=x+dx,nz=z+dz;
-                if(!editable(x,z)||!editable(nx,nz))continue;
+                if(!editable(x,z)||!region.contains(nx,nz)||!editable(nx,nz))continue;
                 double slope=Math.max(0,height(x,z)-height(nx,nz));
                 float moved=(float)(Math.min(amount,.02+slope*.02));
                 flow[id(x,z)]-=moved;flow[id(nx,nz)]+=moved;
             }
-            for(int z=1;z<n;z++)for(int x=1;x<n;x++)
+            for(int z=region.z0();z<=region.z1();z++)for(int x=region.x0();x<=region.x1();x++)
                 if(flow[id(x,z)]!=0&&editable(x,z))
                     write(x,z,height(x,z)+flow[id(x,z)]);
         }
