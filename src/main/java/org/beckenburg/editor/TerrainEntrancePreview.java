@@ -71,6 +71,12 @@ public final class TerrainEntrancePreview extends JPanel {
             +" | faces "+m.triangles().size()+details);
         add(foot,BorderLayout.SOUTH);
     }
+    /** Inspect a genuine built rail mesh using the existing orbiting geometry viewer. */
+    public static JFrame openRail(Window owner,TerrainRailMesh.Output output){
+        if(output==null)throw new IllegalArgumentException("Rail mesh required");
+        return open(owner,new TerrainEntranceMesh.Output(
+            output.mesh(),0,0,0,0,List.of()),"Authored Railway Mesh Inspection");
+    }
     public static JFrame open(Window owner,TerrainEntranceMesh.Output output){
         return open(owner,output,"Authored Terrain Mesh Inspection");
     }
