@@ -262,22 +262,44 @@ public final class TerrainLayerStack {
                 z+perlin(x*.7+17,z*.7,seed+89)*2,seed);
         };
     }
+    private double fractal(Noise type,long seed,double cycles,int octaves,double gx,double gz){
+        double value=0,weight=1,total=0;
+        for(int o=0;o<octaves;o++){
+            double freq=cycles*Math.pow(2,o)/n;
+            value+=weight*signal(type,gx*freq,gz*freq,seed+o*9973L);
+            total+=weight;weight*=.5;
+        }
+        return value/total;
+    }
+    private static void noiseParameters(double cycles,double amplitude,int octaves){
+        if(!Double.isFinite(cycles)||cycles<=0||cycles>512
+            ||!Double.isFinite(amplitude)||Math.abs(amplitude)>100000
+            ||octaves<1||octaves>8)throw new IllegalArgumentException("Noise parameters");
+    }
+    public double minimumElevation(){return min;}
+    public double maximumElevation(){return max;}
+    /** Low-resolution preview is read-only and never touches a layer or source PNG. */
+    public double[][] previewNoise(Noise type,long seed,double cycles,double amplitude,
+                                   int octaves,int resolution){
+        noiseParameters(cycles,amplitude,octaves);
+        if(resolution<2||resolution>256)throw new IllegalArgumentException("Preview size");
+        double[][] preview=new double[resolution][resolution];
+        for(int z=0;z<resolution;z++)for(int x=0;x<resolution;x++){
+            int sx=x*n/(resolution-1),sz=z*n/(resolution-1);
+            double gx=(long)tx*n+sx,gz=(long)tz*n+sz;
+            preview[z][x]=height(sx,sz)+amplitude*fractal(type,seed,cycles,octaves,gx,gz);
+        }
+        return preview;
+    }
     /** Deterministic absolute global coordinates prevent tile-dependent noise seams. */
     public void noise(Noise type,long seed,double cyclesPerTile,double amplitude,int octaves){
-        if(!Double.isFinite(cyclesPerTile)||cyclesPerTile<=0||cyclesPerTile>512
-            ||!Double.isFinite(amplitude)||Math.abs(amplitude)>100000||octaves<1||octaves>8)
-            throw new IllegalArgumentException("Noise parameters");
+        noiseParameters(cyclesPerTile,amplitude,octaves);
         finishStroke();
         for(int z=1;z<n;z++)for(int x=1;x<n;x++){
             if(!editable(x,z))continue;
             double gx=(long)tx*n+x,gz=(long)tz*n+z;
-            double value=0,amp=1,total=0;
-            for(int o=0;o<octaves;o++){
-                double freq=cyclesPerTile*Math.pow(2,o)/n;
-                value+=amp*signal(type,gx*freq,gz*freq,seed+o*9973L);
-                total+=amp;amp*=.5;
-            }
-            write(x,z,height(x,z)+amplitude*value/total);
+            write(x,z,height(x,z)+
+                amplitude*fractal(type,seed,cyclesPerTile,octaves,gx,gz));
         }
         finishStroke();
     }
