@@ -21,13 +21,13 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 | Hydraulic erosion | Seeded droplets constrained to active region, downhill sediment transport/evaporation | Droplet speed/sediment outputs not yet persisted |
 | Aeolian erosion | Directional mass transfer inside selectable region | No raycast wind shadowing yet |
 | Slope/height auto-biomes | `autoBiome`, `slope` | Fixed rules; not yet a node-based rule graph |\n| Derived topology / drainage | `TerrainTopologyFields`: analytical curvature, slope, D8 flow direction/speed estimates, accumulation and moisture proxies; versioned disk cache + height fingerprint | Not simulated droplet flow/sediment; no cross-tile drainage yet |
-| Surface materials | Eight stable material IDs and paint brush | Renderer/footstep/physics adapter must consume these |
+| Surface materials | Eight stable IDs; explicit authored-material bitset; reversible GRAVEL/DIRT/RIVERBED managed corridor surfaces; paint and erase-override brush; preview + world-space physical material query | Live Beckenburg renderer/footsteps still require a host adapter; no blending between route shoulder materials yet |
 | Freeze/exclusion masks | Rectangle freeze, material-based lock and brush respect | No mesh-hull raycast or cylinder masks yet |
-| Infrastructure grading | Shared bounded grade rasterizer supports v2 managed road/rail/river splines as a deterministic in-memory procedural overlay; moving/deleting managed routes removes their old grade without changing source or hand sculpt; old v1 splines remain legacy | Previously painted legacy route grades have no recoverable provenance; managed routes do not yet paint reversible material overlays or affect shared tile-border heights |
+| Infrastructure grading | Bounded grade rasterizer with reversible road/rail/river height and material overlays; route move/delete rebuilds without destroying painted material/height source; legacy v1 routes remain unmanaged | Old painted legacy grades lack provenance; procedural overlays still do not alter shared border samples |
 | Grade constraints | Rail/road maximum grade validation; clamp controls to target grade | No turnout, bridge or tunnel geometry |\n| Real railway track geometry | `TerrainRailMesh` builds ballast prisms, two extruded rails and spaced sleeper meshes from RAIL alignments; shared real-mesh inspector and validated OBJ export | Geometry-only: no switch, bridge, tunnel, rolling-stock physics or host-renderer adapter |
 | Background operations | SwingWorker for heavy generation, erosion, save, bake | Full GPU/physics pipeline not wired |
 | Safe explicit source bake | Checks R16 range and checksum; journaled batches can include both source PNGs and existing authored layer documents under explicit opt-in, with rollback of both | Multi-file writes are journal-recoverable on reopen, not atomically visible to concurrent external readers |
-| Durable document | Backward-compatible v1 terrain read, v2 sculpt-mask writer, atomic binary layer and spline documents | Source PNG remains authoritative until deliberate bake |
+| Durable document | Backward-compatible v1/v2 terrain reads; v3 explicit paint-provenance and sculpt-mask writer; SHA-256 stale-save safety and atomic binary layer/spline writes | v1/v2 intentionally painted GRASS cannot be distinguished from their unpainted default, so historical GRASS provenance cannot be reconstructed |
 | Dependency dirty regions | `TerrainLayerStack.EditEvent`: per-transaction bounds, affected domains, revisions and explicit listeners; no per-dab callbacks | Consumers must subscribe and schedule actual foliage/nav/physics rebuilds; no runtime adapter yet |
 | Shared authored-surface geometry | `TerrainComposedHeightSampler` provides one exact triangle-height function to `TerrainEntranceMesh` and `LayeredTerrainQueries`, using saved unbaked sculpt/mask layers; source scene fingerprint includes layer files | Runtime Beckenburg host renderer/collision adapter not yet wired; long-lived queries must explicitly refresh cached data after layer saves |
 | Concurrent document safety | Saved layer documents use SHA-256 optimistic readback and reject stale edits/bakes; coordinated rebases retain authored metadata | Cross-process source reads are not fully atomic |
@@ -39,7 +39,8 @@ Tests: `TerrainLayerStackTest`, `TerrainInfrastructureSplinesTest`,
 `TerrainBrushProfileTest`, `TerrainBrushPresetsTest`,
 `TerrainErosionRegionTest`, `TerrainMixedHistoryTest`,\n`TerrainTopologyFieldsTest`, `TerrainEditEventTest`,\n`TerrainRailMeshTest`, `StitchedHeightmapBatchTest`,\n`TerrainLayerMaskTest`, `TerrainSeamSculptTest`,
 `StitchedHeightmapLayerRebaseTest`, `TerrainLayerConcurrentSaveTest`,
-`TerrainComposedHeightSamplerTest`, `TerrainManagedInfrastructureTest`;
+`TerrainComposedHeightSamplerTest`, `TerrainManagedInfrastructureTest`,
+`TerrainRouteMaterialOverlayTest`;
 workflow: `.github/workflows/standalone-editor-kit.yml`.
 
 ## Mandatory preservation rules
@@ -73,8 +74,11 @@ workflow: `.github/workflows/standalone-editor-kit.yml`.
   without a saved ordinary sculpt document.
 - Legacy v1 route records retain their original directly-painted semantics; no
   fictitious reconstruction of already overwritten heights is attempted.
-- Next: reversible procedural route *material overlays*, junction/switch geometry,
-  bridge/tunnel physical structures, and multi-tile grade seam coordination.
+- Managed route material overlays now display GRAVEL for rails, DIRT for roads,
+  RIVERBED for rivers; explicit user-painted GRASS/MUD wins. Erasing paint
+  overrides reveals the route again, with grouped undo/redo and v3 persistence.
+- Next: junction/switch geometry, bridge/tunnel physical structures, blended
+  material shoulders and multi-tile grade seam coordination.
 - While managed routes exist, source bake refuses to flatten their procedure
   irreversibly into R16. Export authored mesh geometry instead.
 
