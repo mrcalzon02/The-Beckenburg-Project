@@ -153,6 +153,7 @@ public final class LayeredTerrainQueries {
     }
 
     private final StitchedHeightmapWorld world;
+    private final TerrainComposedHeightSampler surfaceHeights;
     private final AdaptiveTerrainTopology topology;
     private final List<Floor> floors;
     private final List<Ramp> ramps;
@@ -172,6 +173,7 @@ public final class LayeredTerrainQueries {
                                  List<Floor> floors,List<Solid> solids,List<Ramp> ramps,
                                  EntranceSeamDocument seams) {
         this.world=Objects.requireNonNull(world);
+        this.surfaceHeights=new TerrainComposedHeightSampler(world);
         this.topology=Objects.requireNonNull(topology);
         this.floors=List.copyOf(floors);
         this.ramps=List.copyOf(ramps);
@@ -218,6 +220,10 @@ public final class LayeredTerrainQueries {
     }
     public List<Solid> solids(){return solids;}
     public long topologyRevision(){return topology.revision();}
+    /** The SAME height used by the emitted terrain surface mesh. */
+    public double groundHeight(double x,double z)throws IOException{
+        return surfaceHeights.height(x,z);
+    }
 
     /** Never returns a source support for a punched-out leaf or missing tile. */
     public Support support(String layer,double x,double z)throws IOException {
@@ -234,7 +240,7 @@ public final class LayeredTerrainQueries {
                     long tz=Math.floorDiv(cz,w.tileCells());
                     if(tx < -1000000||tx>1000000||tz < -1000000||tz>1000000
                         ||!world.hasTile((int)tx,(int)tz))return null;
-                    return new Support(layer,x,world.height(x,z),z);
+                    return new Support(layer,x,groundHeight(x,z),z);
                 }
             }
         }
@@ -266,7 +272,7 @@ public final class LayeredTerrainQueries {
             if(localX>=ax&&localX<ax+leaf.units()
                 &&localZ>=az&&localZ<az+leaf.units())
                 return topology.isCutout(leaf)?null:
-                    new Support(layer,x,world.height(x,z),z);
+                    new Support(layer,x,groundHeight(x,z),z);
         }
         throw new IllegalStateException("Valid source cell has no adaptive leaf");
     }
