@@ -3789,11 +3789,13 @@ public final class SceneRenderer {
         if(!topologyPatch.isEmpty()){
             // Physically rendered, opt-in source-topology QA patch in unused side aisle.
             // Asset plinths, original model meshes and default capture path stay untouched.
-            final double px=DevTerrainTopologyLab.PATCH_X,pz=DevTerrainTopologyLab.PATCH_Z;
-            box(stage,px-.06,-.025,pz-.06,4.12,.05,.055,0xc0a36e);
-            box(stage,px-.06,-.025,pz+3.005,4.12,.05,.055,0xc0a36e);
-            box(stage,px-.06,-.025,pz-.06,.055,.05,3.12,0xc0a36e);
-            box(stage,px+4.005,-.025,pz-.06,.055,.05,3.12,0xc0a36e);
+            if(samples.isEmpty()){
+                final double px=DevTerrainTopologyLab.PATCH_X,pz=DevTerrainTopologyLab.PATCH_Z;
+                box(stage,px-.06,-.025,pz-.06,4.12,.05,.055,0xc0a36e);
+                box(stage,px-.06,-.025,pz+3.005,4.12,.05,.055,0xc0a36e);
+                box(stage,px-.06,-.025,pz-.06,.055,.05,3.12,0xc0a36e);
+                box(stage,px+4.005,-.025,pz-.06,.055,.05,3.12,0xc0a36e);
+            }
             for(var tri:topologyPatch)
                 stage.add(new Face(new Point(tri.a().x(),tri.a().y(),tri.a().z()),
                     new Point(tri.b().x(),tri.b().y(),tri.b().z()),
