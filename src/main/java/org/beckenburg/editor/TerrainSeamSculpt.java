@@ -53,9 +53,35 @@ public final class TerrainSeamSculpt {
         if(!world.hasTile(x,z))throw new IOException("Center tile must exist");
         if(source.size()<2)throw new IOException(
             "Cross-tile sculpt needs at least two adjacent existing tiles");
-        if(!world.verifySeams().isEmpty())throw new IOException(
-            "Cannot sculpt over a world with existing source seam failures");
+        verifyLoadedTileSeams();
         load();
+    }
+    /**
+     * Validate ONLY the loaded 3x3 editing region. Large worlds may contain
+     * thousands of other tiles unrelated to this seam stroke.
+     */
+    private void verifyLoadedTileSeams()throws IOException{
+        for(var key:source.keySet()){
+            int tx=key.x(),tz=key.z();
+            var right=new StitchedHeightmapWorld.Tile(tx+1,tz);
+            var bottom=new StitchedHeightmapWorld.Tile(tx,tz+1);
+            var diagonal=new StitchedHeightmapWorld.Tile(tx+1,tz+1);
+            var otherDiagonal=new StitchedHeightmapWorld.Tile(tx-1,tz+1);
+            if(source.containsKey(right))
+                for(int i=0;i<=n;i++)
+                    if(world.sample(tx,tz,n,i)!=world.sample(tx+1,tz,0,i))
+                        throw new IOException("Pre-existing east-west seam mismatch at "+key);
+            if(source.containsKey(bottom))
+                for(int i=0;i<=n;i++)
+                    if(world.sample(tx,tz,i,n)!=world.sample(tx,tz+1,i,0))
+                        throw new IOException("Pre-existing north-south seam mismatch at "+key);
+            if(source.containsKey(diagonal)&&
+                world.sample(tx,tz,n,n)!=world.sample(tx+1,tz+1,0,0))
+                throw new IOException("Pre-existing diagonal seam mismatch at "+key);
+            if(source.containsKey(otherDiagonal)&&
+                world.sample(tx,tz,0,n)!=world.sample(tx-1,tz+1,n,0))
+                throw new IOException("Pre-existing diagonal seam mismatch at "+key);
+        }
     }
     public int tileCells(){return n;}
     public int centerX(){return centerX;}
