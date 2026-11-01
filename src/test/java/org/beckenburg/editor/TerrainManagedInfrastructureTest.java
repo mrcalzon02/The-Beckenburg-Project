@@ -42,6 +42,7 @@ public final class TerrainManagedInfrastructureTest {
             var routes=TerrainInfrastructureSplines.open(world);
             var old=route("road-a",10,125,true);
             routes.put(old);routes.save();
+            var conflicting=TerrainInfrastructureSplines.open(world);
             var loaded=TerrainInfrastructureSplines.open(world);
             check(loaded.list().size()==1&&loaded.list().get(0).managed(),
                 "Version 2 preserves authoritatively managed route mode");
@@ -52,6 +53,10 @@ public final class TerrainManagedInfrastructureTest {
                 new TerrainEntranceMesh.Bounds(10,9,26,26));
             var relocated=route("road-a",23,140,true);
             routes.put(relocated);routes.save();
+            boolean staleRouteRefused=false;
+            try{conflicting.save();}
+            catch(java.io.IOException expected){staleRouteRefused=true;}
+            check(staleRouteRefused,"Stale route editor cannot erase newer route metadata");
             terrain.refreshManagedRoutes(routes.list());
             near(terrain.height(14,10),original,
                 "Route relocation removes ALL old grading residue");
