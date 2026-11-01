@@ -236,6 +236,10 @@ public final class TerrainScenePackage implements EnvironmentModule {
                 updateFile(hash,world.directory().resolve("terrain-layers")
                     .resolve("tile_"+x+"_"+z+".bin"));
             }
+            // Managed road/rail/river corridors are procedural inputs, so
+            // modifying their saved controls invalidates published geometry.
+            update(hash,"terrain-infrastructure-splines.bin");
+            updateFile(hash,world.directory().resolve("terrain-infrastructure-splines.bin"));
             for(String source:List.of("adaptive-topology.bin","entrance-seams.bin",
                     "ramp-entrances.bin","layered-geometry.bin")){
                 update(hash,source);
