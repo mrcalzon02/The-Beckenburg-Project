@@ -1,6 +1,7 @@
 package org.beckenburg;
 
 import java.util.*;
+import java.nio.file.*;
 
 /** CPU-side production submission contract. This recording backend does not
  * rasterize and is explicitly not evidence of hardware FPS or image parity. */
@@ -28,7 +29,25 @@ public final class WorldResidencyTest {
         }
         return count;
     }
-    public static void main(String[] args){
+    public static void main(String[] args)throws Exception{
+        // USER maps are authored, not bundled. Exercise the real saved scene
+        // in a temporary home rather than requiring or changing player files.
+        String previousHome=System.getProperty("user.home");
+        Path temporaryHome=Files.createTempDirectory("beckenburg-worldresidencytest-");
+        try{
+            System.setProperty("user.home",temporaryHome.toString());
+            UserLevelLibrary.create("gpuAcceptance",HouseMap.Site.HOUSE);
+            runAcceptance();
+        }finally{
+            if(previousHome==null)System.clearProperty("user.home");
+            else System.setProperty("user.home",previousHome);
+            try(var paths=Files.walk(temporaryHome)){
+                for(var p:paths.sorted(Comparator.reverseOrder()).toList())
+                    Files.deleteIfExists(p);
+            }
+        }
+    }
+    private static void runAcceptance(){
         var backend=new Recording();GpuWorldRenderer.install(backend);
         var renderer=new SceneRenderer();renderer.lamp=false;
         var castle=new CastleHubMap();renderer.x=13.5;renderer.z=20.5;renderer.yaw=.1;renderer.pitch=-.05;
