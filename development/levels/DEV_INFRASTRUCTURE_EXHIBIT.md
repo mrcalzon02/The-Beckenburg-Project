@@ -50,6 +50,39 @@ The component is portable: no hard-coded Beckenburg game types were inserted
 into the water module, and the river-to-water conversion lives in the host
 adapter. The source R16 tiles and normal gameplay level files are unaffected.
 
+## Portable authored-rail scene export
+
+The real terrain module now exposes **3D RAIL PREVIEW** and **PUBLISH SAVED
+RAIL TO SCENE** from `TerrainScenePackageEditor`. To author a durable rail:
+
+1. In the existing terrain infrastructure spline editor, save a **RAIL**
+   route in the world's `terrain-infrastructure-splines.bin` document.
+2. Open the terrain-to-scene package panel, enter its exact saved route ID,
+   and choose **3D RAIL PREVIEW** to inspect the actual ballast, twin rails,
+   and sleeper faces with the existing orbiting mesh inspector.
+3. Choose **PUBLISH SAVED RAIL TO SCENE**. This uses the same
+   `scene-package/scene.bin` manifest as terrain chunks, adds a stable
+   `terrain-rail-<routeId>` scene node, and publishes its genuine OBJ under
+   `scene-package/meshes/rail-<routeId>.obj`.
+4. **VERIFY PACKAGE** checks actual OBJ groups, triangle inventory, file
+   checksums, and saved route source fingerprints for both terrain and rails.
+   A changed saved spline flags the published mesh as STALE; rebuild the
+   route's owned node. Foreign OBJ files are never overwritten.
+
+`TerrainRailScenePackage` is part of the independently compiled Java 17
+editor library; it calls the existing `TerrainRailMesh`, `RuntimeScene`,
+`EditorMeshPipeline` and `TerrainScenePackage`, not a Beckenburg-only
+renderer or a parallel scene system. The railway scene material, game
+collision/navmesh and runtime renderer bindings are explicitly **not yet
+integrated**; scene export and real geometry inspection are distinct from
+live game-world acceptance. The source 16-bit terrain tiles are unchanged.
+
+`TerrainRailScenePackageTest` verifies genuine mesh generation, shared
+terrain-and-rail scene persistence, stale-source rejection, readback,
+re-publish identity, rollback and foreign asset protection in the standalone
+editor CI. This functional regression is separate from the DEV room's
+non-blocking subjective visual inspection.
+
 ## Automated verification and evidence
 
 `.github/workflows/dev-room-asset-review.yml`:
