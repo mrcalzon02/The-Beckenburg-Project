@@ -27,6 +27,8 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final JComboBox<String> action=new JComboBox<>(new String[]{
         "SCULPT","PAINT MATERIAL","FREEZE","THAW","GRADE RAIL","GRADE ROAD","GRADE RIVER","STAMP"});
     private final JComboBox<TerrainLayerStack.Brush> brush=new JComboBox<>(TerrainLayerStack.Brush.values());
+    private final JComboBox<TerrainLayerStack.FlattenLimit> flattenLimit=
+        new JComboBox<>(TerrainLayerStack.FlattenLimit.values());
     private final JComboBox<TerrainLayerStack.Material> material=
         new JComboBox<>(TerrainLayerStack.Material.values());
     private final JComboBox<String> falloff=new JComboBox<>(new String[]{"LINEAR","SMOOTH","SHARP"});
@@ -337,7 +339,8 @@ public final class TerrainLayerWorkbench extends JPanel {
                         &&brush.getSelectedItem()==TerrainLayerStack.Brush.FLATTEN)
                         target.setValue(stack.height(x,z));
                     stack.brush((TerrainLayerStack.Brush)brush.getSelectedItem(),
-                        x,z,r,val(strength),val(target),val(inner),falloff.getSelectedIndex());
+                        x,z,r,val(strength),val(target),val(inner),falloff.getSelectedIndex(),
+                        (TerrainLayerStack.FlattenLimit)flattenLimit.getSelectedItem());
                 }
                 case "PAINT MATERIAL" -> stack.paintMaterial(x,z,r,
                     (TerrainLayerStack.Material)material.getSelectedItem(),90);
