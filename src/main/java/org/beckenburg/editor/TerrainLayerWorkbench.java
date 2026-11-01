@@ -25,7 +25,7 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final JCheckBox visible=new JCheckBox("Layer on",true);
     private final JSlider opacity=new JSlider(0,100,100);
     private final JComboBox<String> action=new JComboBox<>(new String[]{
-        "SCULPT","PAINT MATERIAL","PAINT LAYER MASK","FREEZE","THAW","GRADE RAIL","GRADE ROAD","GRADE RIVER","STAMP"});
+        "SCULPT","PAINT MATERIAL","ERASE MATERIAL OVERRIDE","PAINT LAYER MASK","FREEZE","THAW","GRADE RAIL","GRADE ROAD","GRADE RIVER","STAMP"});
     private final JComboBox<TerrainLayerStack.Brush> brush=new JComboBox<>(TerrainLayerStack.Brush.values());
     private final JComboBox<TerrainLayerStack.FlattenLimit> flattenLimit=
         new JComboBox<>(TerrainLayerStack.FlattenLimit.values());
@@ -638,6 +638,7 @@ public final class TerrainLayerWorkbench extends JPanel {
                     x,z,r,val(maskTarget),val(maskStrength));
                 case "PAINT MATERIAL" -> stack.paintMaterial(x,z,r,
                     (TerrainLayerStack.Material)material.getSelectedItem(),90);
+                case "ERASE MATERIAL OVERRIDE" -> stack.eraseMaterialOverride(x,z,r);
                 case "FREEZE","THAW" -> stack.freezeRect((int)(x-r),(int)(z-r),
                     (int)(x+r),(int)(z+r),mode.equals("FREEZE"));
                 case "STAMP" -> {
@@ -708,6 +709,7 @@ public final class TerrainLayerWorkbench extends JPanel {
                         catch(RuntimeException ex){drawing=false;brushStroke.end();
                             brushStroke=null;stack.finishStroke();error(ex);}
                     }else if("PAINT MATERIAL".equals(action.getSelectedItem())
+                        ||"ERASE MATERIAL OVERRIDE".equals(action.getSelectedItem())
                         ||"PAINT LAYER MASK".equals(action.getSelectedItem()))
                         applyAt(posX(e),posZ(e),false);
                     else if(draggedRouteControl>=0&&
