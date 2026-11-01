@@ -316,9 +316,11 @@ public final class TerrainLayerWorkbench extends JPanel {
         int h=Math.min(129,stampImage.getHeight()),w=Math.min(129,stampImage.getWidth());
         float[][] result=new float[h][w];
         var raster=stampImage.getRaster();
+        int bits=Math.min(16,raster.getSampleModel().getSampleSize(0));
+        double fullScale=(1<<bits)-1.0;
         for(int z=0;z<h;z++)for(int x=0;x<w;x++){
             int sx=x*(stampImage.getWidth()-1)/(w-1),sz=z*(stampImage.getHeight()-1)/(h-1);
-            result[z][x]=raster.getSample(sx,sz,0);
+            result[z][x]=(float)(raster.getSample(sx,sz,0)/fullScale);
         }
         return result;
     }
@@ -348,7 +350,7 @@ public final class TerrainLayerWorkbench extends JPanel {
                     (int)(x+r),(int)(z+r),mode.equals("FREEZE"));
                 case "STAMP" -> {
                     if(pressed&&stampImage!=null)
-                        stack.stamp(stamp(),x,z,r,val(strength)/100);
+                        stack.stamp(stamp(),x,z,r,val(strength));
                 }
                 case "GRADE RAIL","GRADE ROAD","GRADE RIVER" -> {
                     if(pressed){
