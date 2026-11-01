@@ -29,6 +29,10 @@ public final class UserLevelLibrary {
         return id;
     }
     public static Path folder(String id){return root().resolve(validateId(id));}
+    /** Author-owned custom terrain worlds never share a directory with built-in maps. */
+    public static Path terrainWorldsFolder(String id){
+        return folder(id).resolve("terrain-worlds");
+    }
     public static Path document(String id){return folder(id).resolve("scene.bscn");}
     public static List<String> names()throws IOException {
         if(!Files.isDirectory(root()))return List.of();
