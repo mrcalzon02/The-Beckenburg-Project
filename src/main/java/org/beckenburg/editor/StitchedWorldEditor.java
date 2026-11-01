@@ -43,21 +43,28 @@ public final class StitchedWorldEditor extends JPanel {
     private final JPanel preview=new TilePreview();
     private final Map<StitchedHeightmapWorld.Tile,BufferedImage> thumbnails=new HashMap<>();
     private StitchedHeightmapWorld world;
+    private final Path scopedWorldsRoot;
     private int left,top,side;
 
     public static JFrame open(Window owner){
+        return open(owner,null);
+    }
+    /** Optional host-owned world root keeps USER terrain separate from all other levels. */
+    public static JFrame open(Window owner,Path scopedWorldsRoot){
         JFrame f=new JFrame("Level Editor Kit — Stitched 16-bit Source World");
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        f.setContentPane(new StitchedWorldEditor(f));
+        f.setContentPane(new StitchedWorldEditor(f,scopedWorldsRoot));
         f.setMinimumSize(new Dimension(800,500));
         f.setSize(1030,680);
         f.setLocationRelativeTo(owner);
         f.setVisible(true);
         return f;
     }
-    private StitchedWorldEditor(JFrame frame){
+    private StitchedWorldEditor(JFrame frame,Path scopedWorldsRoot){
         super(new BorderLayout(6,6));
         this.frame=frame;
+        this.scopedWorldsRoot=scopedWorldsRoot==null?null:
+            scopedWorldsRoot.toAbsolutePath().normalize();
         setBorder(BorderFactory.createEmptyBorder(8,8,8,8));
         JPanel toolbar=new JPanel(new GridLayout(3,1,0,0));
         JPanel worldCommands=new JPanel(new FlowLayout(FlowLayout.LEFT,5,2));
@@ -99,7 +106,8 @@ public final class StitchedWorldEditor extends JPanel {
     private int x(){return ((Number)tx.getValue()).intValue();}
     private int z(){return ((Number)tz.getValue()).intValue();}
     private Path worldsRoot(){
-        return Path.of(System.getProperty("user.home"),".beckenburg","editor","stitched-worlds");
+        return scopedWorldsRoot!=null?scopedWorldsRoot:
+            Path.of(System.getProperty("user.home"),".beckenburg","editor","stitched-worlds");
     }
     private static JTextField field(String value){return new JTextField(value,12);}
     private void createWorld(){
@@ -134,7 +142,10 @@ public final class StitchedWorldEditor extends JPanel {
         picker.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         if(picker.showOpenDialog(frame)!=JFileChooser.APPROVE_OPTION)return;
         try{
-            StitchedHeightmapWorld opened=StitchedHeightmapWorld.open(picker.getSelectedFile().toPath());
+            Path selected=picker.getSelectedFile().toPath().toAbsolutePath().normalize();
+            if(scopedWorldsRoot!=null&&!selected.startsWith(scopedWorldsRoot))
+                throw new IOException("Selected world is outside this level's scoped terrain folder");
+            StitchedHeightmapWorld opened=StitchedHeightmapWorld.open(selected);
             world=opened;tx.setValue(0);tz.setValue(0);refresh();
         }catch(IOException|RuntimeException failure){error("Cannot open world",failure);}
     }
