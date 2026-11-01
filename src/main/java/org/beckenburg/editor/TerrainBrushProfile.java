@@ -49,6 +49,14 @@ public final class TerrainBrushProfile {
                 }
             }
         }
+        public float[][] snapshot(){
+            float[][] copy=new float[height][width];
+            for(int z=0;z<height;z++)
+                System.arraycopy(values[z],0,copy[z],0,width);
+            return copy;
+        }
+        public int width(){return width;}
+        public int height(){return height;}
         public static Alpha fromImage(BufferedImage image) {
             Objects.requireNonNull(image,"image");
             if(image.getWidth()<2||image.getHeight()<2
