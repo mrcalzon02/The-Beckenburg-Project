@@ -17,7 +17,7 @@ import javax.imageio.ImageIO;
  * Border vertices are protected until a multi-tile transaction is available.
  */
 public final class TerrainLayerStack {
-    private static final int MAGIC=0x544C5354, VERSION=2, MAX_LAYERS=12;
+    private static final int MAGIC=0x544C5354, VERSION=3, MAX_LAYERS=12;
     public enum Brush { RAISE, LOWER, SMOOTH, FLATTEN, REVERT, TRENCH, TERRACE }
     public enum FlattenLimit { BOTH, RAISE_ONLY, LOWER_ONLY }
     public enum Noise { PERLIN, SIMPLEX, WORLEY, RIDGED, BILLOW, DOMAIN_WARP }
@@ -78,11 +78,17 @@ public final class TerrainLayerStack {
             for(int i=0;i<indices.length;i++)layer.mask[indices[i]]=values[i];
         }
     }
-    private record MaterialChange(byte[] target,int[] indices,byte[] before,byte[] after)
+    private record MaterialChange(byte[] target,BitSet painted,int[] indices,
+                                  byte[] before,byte[] after,
+                                  boolean[] wasPainted,boolean[] nowPainted)
             implements Change {
         public void apply(boolean forward){
             byte[] values=forward?after:before;
-            for(int i=0;i<indices.length;i++)target[indices[i]]=values[i];
+            boolean[] flags=forward?nowPainted:wasPainted;
+            for(int i=0;i<indices.length;i++){
+                target[indices[i]]=values[i];
+                painted.set(indices[i],flags[i]);
+            }
         }
     }
     private record FreezeChange(BitSet target,int[] indices,boolean[] before,
@@ -113,7 +119,11 @@ public final class TerrainLayerStack {
     private String documentFingerprint;
     private final ArrayList<Layer> layers=new ArrayList<>();
     private final byte[] material;
+    /** Explicit GRASS paint is distinct from the implicit default. */
+    private final BitSet materialPainted;
     private final BitSet frozen;
+    /** Managed route surface; -1 outside its material corridor. */
+    private final byte[] infrastructureMaterial;
     /** Ephemeral, reproducible output from v2 managed route metadata. */
     private final double[] infrastructureDelta;
     private List<TerrainInfrastructureSplines.Alignment> managedRoutes=List.of();
@@ -121,6 +131,7 @@ public final class TerrainLayerStack {
     private final TreeMap<Integer,Float> pending=new TreeMap<>();
     private final TreeMap<Integer,Float> pendingMasks=new TreeMap<>();
     private final TreeMap<Integer,Byte> pendingMaterials=new TreeMap<>();
+    private final TreeMap<Integer,Boolean> pendingPainted=new TreeMap<>();
     private final TreeMap<Integer,Boolean> pendingFrozen=new TreeMap<>();
     private int active;
     private boolean dirty;
@@ -161,7 +172,8 @@ public final class TerrainLayerStack {
         source=new int[pixels];
         for(int z=0;z<side;z++)for(int x=0;x<side;x++)source[id(x,z)]=world.sample(tx,tz,x,z);
         sourceCrc=crc(source);
-        material=new byte[pixels];frozen=new BitSet(pixels);
+        material=new byte[pixels];materialPainted=new BitSet(pixels);
+        infrastructureMaterial=new byte[pixels];frozen=new BitSet(pixels);
         infrastructureDelta=new double[pixels];
         layers.add(new Layer("Sculpt",pixels));
         load();
@@ -242,11 +254,12 @@ public final class TerrainLayerStack {
         selected.sort(Comparator.comparing(TerrainInfrastructureSplines.Alignment::id));
         managedRoutes=List.copyOf(selected);
         rebuildManagedRoutes();
-        if(notifyListeners)changed(0,0,n,n,EnumSet.of(EditDomain.HEIGHT));
+        if(notifyListeners)changed(0,0,n,n,EnumSet.of(EditDomain.HEIGHT,EditDomain.MATERIAL));
     }
     /** Recomputes only in memory; the route document is the authority. */
     private void rebuildManagedRoutes(){
         Arrays.fill(infrastructureDelta,0);
+        Arrays.fill(infrastructureMaterial,(byte)-1);
         for(var route:managedRoutes){
             var samples=TerrainInfrastructureSplines.evaluate(route,step);
             var local=new ArrayList<Point>(samples.size());
@@ -273,6 +286,12 @@ public final class TerrainLayerStack {
                     falloff(distance-route.halfWidth(),route.shoulder(),0,1);
                 double current=baseComposed(i)+infrastructureDelta[i];
                 infrastructureDelta[i]+=(field.elevation()[i]-current)*blend;
+                if(distance<=route.halfWidth()&&!frozen.get(i))
+                    infrastructureMaterial[i]=(byte)switch(route.kind()){
+                        case RAIL -> Material.GRAVEL.ordinal();
+                        case ROAD -> Material.DIRT.ordinal();
+                        case RIVER -> Material.RIVERBED.ordinal();
+                    };
             }
         }
     }
@@ -305,7 +324,22 @@ public final class TerrainLayerStack {
             dirty=true;
         }
     }
+    /** Existing base-material semantics retained for source authoring. */
     public int material(int x,int z){bounds(x,z);return material[id(x,z)]&255;}
+    public boolean hasPaintedMaterial(int x,int z){
+        bounds(x,z);return materialPainted.get(id(x,z));
+    }
+    /** Resolved ID for preview, geometry adapter and physical surface queries. */
+    public int surfaceMaterial(int x,int z){
+        bounds(x,z);
+        int i=id(x,z);
+        return materialPainted.get(i)||infrastructureMaterial[i]<0?
+            material[i]&255:infrastructureMaterial[i]&255;
+    }
+    /** -1 indicates no managed route surface at this vertex. */
+    public int managedRouteMaterial(int x,int z){
+        bounds(x,z);return infrastructureMaterial[id(x,z)];
+    }
     public boolean frozen(int x,int z){bounds(x,z);return frozen.get(id(x,z));}
     private void bounds(int x,int z){
         if(x<0||z<0||x>n||z>n)throw new IllegalArgumentException("Outside tile");
@@ -319,9 +353,11 @@ public final class TerrainLayerStack {
         frozen.set(i,value);dirty=true;
     }
     private void writeMaterial(int i,byte value){
-        if(material[i]==value)return;
+        // Explicitly painting GRASS is meaningful over a gravel/road corridor.
+        if(material[i]==value&&materialPainted.get(i))return;
         pendingMaterials.putIfAbsent(i,material[i]);
-        material[i]=value;dirty=true;
+        pendingPainted.putIfAbsent(i,materialPainted.get(i));
+        material[i]=value;materialPainted.set(i);dirty=true;
     }
     public void freezeRect(int x0,int z0,int x1,int z1,boolean freeze){
         finishStroke();
@@ -407,10 +443,14 @@ public final class TerrainLayerStack {
         if(!pendingMaterials.isEmpty()){
             int count=pendingMaterials.size(),k=0;
             int[] ids=new int[count];byte[] a=new byte[count],b=new byte[count];
+            boolean[] oldFlags=new boolean[count],newFlags=new boolean[count];
             for(var e:pendingMaterials.entrySet()){
-                int i=e.getKey();ids[k]=i;a[k]=e.getValue();b[k]=material[i];k++;
+                int i=e.getKey();ids[k]=i;a[k]=e.getValue();b[k]=material[i];
+                oldFlags[k]=pendingPainted.get(i);
+                newFlags[k]=materialPainted.get(i);k++;
             }
-            edits.add(new MaterialChange(material,ids,a,b));
+            edits.add(new MaterialChange(material,materialPainted,ids,a,b,
+                oldFlags,newFlags));
         }
         if(!pendingFrozen.isEmpty()){
             int count=pendingFrozen.size(),k=0;
@@ -448,7 +488,7 @@ public final class TerrainLayerStack {
             minX=Math.min(minX,x);minZ=Math.min(minZ,z);
             maxX=Math.max(maxX,x);maxZ=Math.max(maxZ,z);
         }
-        pending.clear();pendingMasks.clear();pendingMaterials.clear();pendingFrozen.clear();
+        pending.clear();pendingMasks.clear();pendingMaterials.clear();pendingPainted.clear();pendingFrozen.clear();
         rebuildManagedRoutes();
         changed(minX,minZ,maxX,maxZ,domains);
     }
@@ -826,12 +866,12 @@ public final class TerrainLayerStack {
     }
     private void load()throws IOException {
         if(!Files.isRegularFile(path()))return;
-        if(Files.size(path())>MAX_LAYERS*(long)pixels*8+pixels*2L+32768)
+        if(Files.size(path())>MAX_LAYERS*(long)pixels*8+pixels*10L+32768)
             throw new IOException("Oversized terrain authoring document");
         try(var in=new DataInputStream(new BufferedInputStream(Files.newInputStream(path())))){
             if(in.readInt()!=MAGIC)throw new IOException("Unknown terrain layers");
             int version=in.readInt();
-            if((version!=1&&version!=VERSION)||in.readInt()!=n
+            if((version!=1&&version!=2&&version!=VERSION)||in.readInt()!=n
                 ||in.readLong()!=sourceCrc)throw new IOException("Incompatible or stale terrain layers");
             int count=in.readInt();
             if(count<1||count>MAX_LAYERS)throw new IOException("Invalid layer count");
@@ -862,6 +902,23 @@ public final class TerrainLayerStack {
             for(int k=0;k<size;k++){int index=in.readInt();
                 if(index<0||index>=pixels)throw new IOException("Invalid freeze vertex");
                 frozen.set(index);
+            }
+            if(version>=3){
+                int countPainted=in.readInt();
+                if(countPainted<0||countPainted>pixels)
+                    throw new IOException("Invalid painted-material mask");
+                for(int k=0;k<countPainted;k++){
+                    int index=in.readInt();
+                    if(index<0||index>=pixels||materialPainted.get(index))
+                        throw new IOException("Invalid painted-material index");
+                    materialPainted.set(index);
+                }
+            }else{
+                // Versions 1 and 2 did not retain paint provenance.
+                // All non-default IDs are treated as authored overrides;
+                // an old explicitly painted GRASS cell cannot be inferred.
+                for(int i=0;i<pixels;i++)
+                    if(material[i]!=0)materialPainted.set(i);
             }
             if(in.read()!=-1)throw new IOException("Unexpected data after terrain document");
         }
@@ -916,6 +973,9 @@ public final class TerrainLayerStack {
                 out.writeInt(active);out.write(material);
                 out.writeInt(frozen.cardinality());
                 for(int i=frozen.nextSetBit(0);i>=0;i=frozen.nextSetBit(i+1))out.writeInt(i);
+                out.writeInt(materialPainted.cardinality());
+                for(int i=materialPainted.nextSetBit(0);i>=0;
+                    i=materialPainted.nextSetBit(i+1))out.writeInt(i);
             }
             Files.move(temp,path(),StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
             documentFingerprint=documentHash(path());
