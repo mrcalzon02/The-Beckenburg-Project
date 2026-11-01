@@ -3802,9 +3802,17 @@ public final class SceneRenderer {
         for(var prop:samples){
             // No modeled proxy boxes. Import the actual existing reviewed GLB
             // through the same production model -> Face -> UV renderer pathway.
-            GlbProps.Model actual=GlbProps.model(prop.modelId());
-            if(actual==null)throw new IllegalStateException(
-                "Missing approved infrastructure sample model "+prop.modelId());
+            GlbProps.Model actual;
+            try{
+                // The DEV room may inspect packaged source-only GLBs without
+                // granting them gameplay approval or replacing them with boxes.
+                actual=GlbProps.availableModels().contains(prop.modelId())
+                    ?GlbProps.model(prop.modelId())
+                    :DevAssetReviewCatalog.sourceModel(prop.modelId());
+            }catch(IOException sourceFailure){
+                throw new IllegalStateException(
+                    "Missing infrastructure sample GLB "+prop.modelId(),sourceFailure);
+            }
             double[] bounds=devAssetBounds(actual);
             if(!Double.isFinite(bounds[4])||bounds[4]<=.0001)
                 throw new IllegalStateException("Invalid infrastructure GLB bounds "+prop.modelId());
