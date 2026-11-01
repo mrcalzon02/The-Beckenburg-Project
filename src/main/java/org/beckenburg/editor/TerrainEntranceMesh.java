@@ -113,26 +113,9 @@ public final class TerrainEntranceMesh {
             world.settings().metresPerCell()/AdaptiveTerrainTopology.UNITS_PER_CELL;
     }
     private double heightAt(double x,double z)throws IOException {
-        // A sample exactly on the *far* border of a sparse source tile must
-        // use that tile's last height pixel when the adjoining tile is absent.
-        // Never invent a nonexistent neighbor merely to export a mesh border.
-        try{return world.height(x,z);}
-        catch(IOException missing){
-            var settings=world.settings();
-            double tile=settings.tileWidthMetres();
-            double gx=(x-settings.originX())/tile;
-            double gz=(z-settings.originZ())/tile;
-            boolean edgeX=Math.abs(gx-Math.rint(gx))<1e-9;
-            boolean edgeZ=Math.abs(gz-Math.rint(gz))<1e-9;
-            double eps=settings.metresPerCell()*1e-8;
-            for(int choice=1;choice<=3;choice++){
-                double sx=x-((choice&1)!=0&&edgeX?eps:0);
-                double sz=z-((choice&2)!=0&&edgeZ?eps:0);
-                try{return world.height(sx,sz);}
-                catch(IOException alsoMissing){/* try the other valid border */ }
-            }
-            throw missing;
-        }
+        // Use the identical composed surface function as physical support and
+        // navigation queries. No second renderer or independently recreated mesh.
+        return physical.groundHeight(x,z);
     }
     private double[] surface(double x,double z)throws IOException {
         return new double[]{x,heightAt(x,z),z};
