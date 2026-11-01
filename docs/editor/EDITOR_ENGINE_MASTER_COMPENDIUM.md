@@ -5365,3 +5365,1534 @@ multiplayer/update failures are release-blocking.
 **Status:** adoption design prepared; no claim of AI refactor implementation,
 installed Windows playtest, or actual GPU FPS improvement.
 
+
+
+---
+
+## Part V — Terrain, environment, navigation, visual and agentic implementation contracts
+
+These are existing committed technical requirements, including details of tested partial implementations and explicitly unfinished acceptance. They are preserved without replacing one another, and should be read using the stage dependencies in Part II.
+
+
+---
+
+### Source: Terrain requirements (17-page owner PDF: existing integration contract)
+
+**Original repository path:** `docs/editor/TERRAIN_REQUIREMENTS_INTEGRATION.md`.
+
+# Terrain Editor Requirements — implementation contract
+
+Basis: user-provided *Terrain editor requirements.pdf* (17 pages). This document
+tracks implementation, not promises. The editor is a reusable Java 17 library:
+the Beckenburg game renderer is an optional consumer, not its source of truth.
+
+## Shipped in the standalone LevelEditorKit Java17 build
+
+| Requirement | Implementation | Limit |
+|---|---|---|
+| Stitched 16-bit source heightmaps | `StitchedHeightmapWorld`, `StitchedWorldEditor` with seam-validated, journaled batches (up to nine tiles), crash recovery, and interactive shared-vertex seam sculpt | The cross-tile brush uses its own non-destructive session; merging it with sculpt-layer v2 masks is pending |
+| Procedural noise | `TerrainLayerStack.Noise`: Perlin, Simplex, Worley, ridged, billow, domain warp | Deterministic octave stack; no graph UI |
+| Live low-res generation preview | Workbench `LIVE LOW-RES PREVIEW` | 2D analytical height preview, not live 3D |
+| Non-destructive stacked sculpt layers | `TerrainLayerStack` v2 with editable per-layer sample masks, enable and opacity; existing v1 files are readable | Up to 12 layers; source heightmaps remain unchanged until explicit bake |
+| Non-destructive seam authoring | `TerrainSeamSculpt`: unique global vertices, 3×3 viewport, sparse undo/redo, save/reopen, guarded source bake; coordinated layer-document rebasing preserves v1/v2 sculpt deltas, masks, materials and freeze state | Seam edits are still kept in a separate authoring session until bake; interactive cross-tile layer-mask editing remains pending |
+| Precision brush base | Raise/lower/smooth/flatten/revert/trench/terrace; inner radius, three curves, alpha images, rotation, event-independent dab spacing, elevation/slope guards | No mesh stamp-angle fitting yet |
+| Brush hot-swap presets | `TerrainBrushPresets`: versioned atomic save/load/delete, bundled alpha and numeric profiles | Presets scoped to a world; share/export UX later |
+| Localized differential undo/redo | Mixed sparse height, material paint, freeze/unfreeze, material locks and layer enable/opacity history; painted drag grouped into one edit | Session history is memory-resident; layer add/delete and route documents are not yet undoable |
+| Terrain stamping | `stamp` and image-based height stamp in workbench | Height textures only; no arbitrary 3D mesh conversion |
+| Thermal erosion | Talus relaxation and bounded selected-region iterations; protects source seams | Simplified four-neighbor solver |
+| Hydraulic erosion | Seeded droplets constrained to active region, downhill sediment transport/evaporation | Droplet speed/sediment outputs not yet persisted |
+| Aeolian erosion | Directional mass transfer inside selectable region | No raycast wind shadowing yet |
+| Slope/height auto-biomes | `autoBiome`, `slope` | Fixed rules; not yet a node-based rule graph |\n| Derived topology / drainage | `TerrainTopologyFields`: analytical curvature, slope, D8 flow direction/speed estimates, accumulation and moisture proxies; versioned disk cache + height fingerprint | Not simulated droplet flow/sediment; no cross-tile drainage yet |
+| Surface materials | Eight stable IDs; explicit authored-material bitset; reversible GRAVEL/DIRT/RIVERBED managed corridor surfaces; paint and erase-override brush; preview + world-space physical material query | Live Beckenburg renderer/footsteps still require a host adapter; no blending between route shoulder materials yet |
+| Freeze/exclusion masks | Rectangle freeze, material-based lock and brush respect | No mesh-hull raycast or cylinder masks yet |
+| Infrastructure grading | Bounded grade rasterizer with reversible road/rail/river height and material overlays; route move/delete rebuilds without destroying painted material/height source; legacy v1 routes remain unmanaged | Old painted legacy grades lack provenance; procedural overlays still do not alter shared border samples |
+| Grade constraints | Rail/road maximum grade validation; clamp controls to target grade | No turnout, bridge or tunnel geometry |\n| Real railway track geometry | `TerrainRailMesh` builds ballast prisms, two extruded rails and spaced sleeper meshes from RAIL alignments; shared real-mesh inspector and validated OBJ export | Geometry-only: no switch, bridge, tunnel, rolling-stock physics or host-renderer adapter |
+| Background operations | SwingWorker for heavy generation, erosion, save, bake | Full GPU/physics pipeline not wired |
+| Safe explicit source bake | Checks R16 range and checksum; journaled batches can include both source PNGs and existing authored layer documents under explicit opt-in, with rollback of both | Multi-file writes are journal-recoverable on reopen, not atomically visible to concurrent external readers |
+| Durable document | Backward-compatible v1/v2 terrain reads; v3 explicit paint-provenance and sculpt-mask writer; SHA-256 stale-save safety and atomic binary layer/spline writes | v1/v2 intentionally painted GRASS cannot be distinguished from their unpainted default, so historical GRASS provenance cannot be reconstructed |
+| Dependency dirty regions | `TerrainLayerStack.EditEvent`: per-transaction bounds, affected domains, revisions and explicit listeners; no per-dab callbacks | Consumers must subscribe and schedule actual foliage/nav/physics rebuilds; no runtime adapter yet |
+| Shared authored-surface geometry | `TerrainComposedHeightSampler` provides one exact triangle-height function to `TerrainEntranceMesh` and `LayeredTerrainQueries`, using saved unbaked sculpt/mask layers; source scene fingerprint includes layer files | Runtime Beckenburg host renderer/collision adapter not yet wired; long-lived queries must explicitly refresh cached data after layer saves |
+| Concurrent document safety | Saved layer documents use SHA-256 optimistic readback and reject stale edits/bakes; coordinated rebases retain authored metadata | Cross-process source reads are not fully atomic |
+| Source/runtime separation | Editor package standalone JAR and separate functional CI | Game renderer and physics integration still incomplete |
+
+Implementation entry point: `StitchedWorldEditor` > **LAYERED TERRAIN TOOLS**.
+Standalone build: `tools/build-editor-kit.sh` or `tools/build-editor-kit.cmd`.
+Tests: `TerrainLayerStackTest`, `TerrainInfrastructureSplinesTest`,
+`TerrainBrushProfileTest`, `TerrainBrushPresetsTest`,
+`TerrainErosionRegionTest`, `TerrainMixedHistoryTest`,\n`TerrainTopologyFieldsTest`, `TerrainEditEventTest`,\n`TerrainRailMeshTest`, `StitchedHeightmapBatchTest`,\n`TerrainLayerMaskTest`, `TerrainSeamSculptTest`,
+`StitchedHeightmapLayerRebaseTest`, `TerrainLayerConcurrentSaveTest`,
+`TerrainComposedHeightSamplerTest`, `TerrainManagedInfrastructureTest`,
+`TerrainRouteMaterialOverlayTest`;
+workflow: `.github/workflows/standalone-editor-kit.yml`.
+
+## Mandatory preservation rules
+
+1. Existing 16-bit PNGs are authoritative until the user explicitly approves a bake.
+2. No game-specific meshes, assets, level classes or renderer references may enter the
+   portable terrain engines. Beckenburg-specific integration belongs in adapters.
+3. A single-tile bake must preserve every shared edge sample exactly, or fail; no
+   automatic seam patching or arbitrary overwrites.
+4. A failed operation reports failure; never display a fake 3D/game screenshot.
+5. Material IDs, masks and layer configuration survive baking. Edits support save/reopen.
+6. Functional failures (compile, data corruption, broken save/reopen, required runtime
+   integration) may block a release. Visual quality, texture look and style are diagnostic.
+7. Preview calculations must not mutate terrain or generate excessive full-map work.
+
+## Next integration passes, in dependency order
+
+### Authoring data and precision
+- Add independent Bezier falloff curves for plateau interior/exterior and project-independent preset sharing; local brush preset save/load and directional flattening, alpha/spacing/rotation are integrated.
+- Add per-layer editable extent bounds and mask clipping profiles; per-vertex per-layer sculpt masks are now implemented with undo/redo, view inspection and versioned save/reopen.
+- Add resampling with landscape-preserving interpolation and irreversible resolution-change
+  preview. Preserve world-space datum, source seam positions and landmark control points.
+- Add mesh-to-height stamping using real mesh ray projection, normalized histogram
+  matching, slope/water/grid anchor snapping and generated stamp previews.
+- Add disk-backed, bounded-memory differential undo/redo covering materials, layer
+  operations, masks, splines and erosion. Unlimited logical history requires disk paging.
+
+### Reversible infrastructure authoring
+- Managed route v2 grades now rebuild from spline metadata, preserve hand-sculpted heights
+  and material paint, and are sampled by terrain mesh and physical queries even
+  without a saved ordinary sculpt document.
+- Legacy v1 route records retain their original directly-painted semantics; no
+  fictitious reconstruction of already overwritten heights is attempted.
+- Managed route material overlays now display GRAVEL for rails, DIRT for roads,
+  RIVERBED for rivers; explicit user-painted GRASS/MUD wins. Erasing paint
+  overrides reveals the route again, with grouped undo/redo and v3 persistence.
+- Next: junction/switch geometry, bridge/tunnel physical structures, blended
+  material shoulders and multi-tile grade seam coordination.
+- While managed routes exist, source bake refuses to flatten their procedure
+  irreversibly into R16. Export authored mesh geometry instead.
+
+### Simulation and derived outputs
+- Multi-tile localized erosion with halo samples across adjacent tiles, cancellation
+  checkpoints, deterministic seeds, protected gameplay zones and conservative transfer.
+- Add actual hydraulic particle velocity, sediment depth and wetness outputs to the existing versioned topology cache (which currently stores only height-derived D8 drainage and moisture estimates); preserve explicit input-fingerprint invalidation.
+- Implement wind shadow ray marching and angle-of-repose brush constraints.
+- Connect host-level foliage, water, materials, collision and navigation rebuild adapters to the portable dirty-region contract; editor-side mesh and support queries share the same composed height sampler, but host collision and actual rendering remain unverified. Long-lived queries expose explicit refresh rather than per-sample file scans.
+- Add background bake progress, cancel and crash-recovery journaling for multi-tile patches.
+
+### Infrastructure / train module
+- Expose persisted spline control handles, tangents, profile edits and path list in UI.
+- Add railway cross sections: ballast, sleepers, rails, minimum curvature,
+  banking/cant, switches, junctions, station platforms and multiple tracks.
+- Grade embankments/cuttings while supporting our three seam/cutout entrance methods.
+- Build real switches, bridge/tunnel geometry and route intersections, not painted heightmap approximations. Real standalone rail/ballast/sleeper geometry is now exported as OBJ.
+- Produce portable spline and corridor output consumed by rail and AI/nav modules.
+- Integrate cross-tile edits into v2 per-layer sculpt masks while keeping shared vertices seam-safe *before* source bake. Coordinated source PNG + saved layer CRC rebasing is now journaled and implemented; the cross-tile edit session remains separate until bake, and cross-process atomic visibility is not available.
+
+### Materials, visualization and engine adapters
+- Implement tile/face material-ID grids for strict retro mode, atlas packing,
+  vertex colors, palette/nearest-neighbor rules, baked lighting and optional affine warp.
+- Implement modern renderer adapter separately: normalized splat weights, height-blend
+  transitions, slope-aware triplanar projection, macro-variation and physically anchored
+  surface types. Actual material sample budgets are renderer/hardware specific; the
+  source document's four-layer ceiling is a suggested optimization, not a universal law.
+- Add biome-rule graphs with textures, foliage and audio rule outputs.
+- Implement explicit adapter capability negotiation for virtual texturing, packed
+  normal/roughness maps, terrain LOD and optional GPU displacement. Do not require
+  modern APIs for the PSX renderer.
+- Capture genuine editor/game screenshots for visual diagnostics, never as
+  release-blocking tests.
+
+## Next document handoff\n\nThe supplied *Landscape layering.pdf* (eight pages) is separately analyzed in\n[LANDSCAPE_LAYERING_PREPARATION.md](LANDSCAPE_LAYERING_PREPARATION.md).\nIts four-tier material/shader architecture remains pending until the first\nterrain authoring specification reaches an explicit, verified scope boundary.\n\n## Definition of complete
+
+Every named tool in the source document is either usable end-to-end with
+save/reopen, undo, and source protection, or clearly marked unavailable in the UI.
+Authoring data must be portable into non-Beckenburg projects. Runtime collision,
+navigation, visual materials and physics require separate actual integration and
+verification. The present work is a tested foundational implementation, not a claim
+of full feature parity with the entire PDF.
+
+## Unified owner requirements document chain (2026-10-31)
+
+This remains the detailed **terrain** implementation contract. The added topology,
+soundscape, engine base and multi-genre source inputs are registered **alongside**
+this document, not instead of it: [source chain](requirements/DOCUMENT_CHAIN.md)
+and [dependency-ordered gates G0–G12](requirements/STAGED_INTEGRATION_PLAN.md).
+The prior landscape-layering handoff remains active; feature acceptance still
+requires code and runtime tests rather than this documentation link.
+
+
+
+---
+
+### Source: Landscape layering (eight-page owner PDF: four-tier material architecture)
+
+**Original repository path:** `docs/editor/LANDSCAPE_LAYERING_PREPARATION.md`.
+
+# Landscape Layering — next specification preparation
+
+**Status:** READY FOR IMPLEMENTATION AFTER TERRAIN REQUIREMENTS. This is
+architecture/preflight for the user's eight-page `Landscape layering.pdf`,
+not a claim that its material/shader features have been implemented.
+The first specification remains authoritative for active work:
+[Terrain requirements integration](TERRAIN_REQUIREMENTS_INTEGRATION.md).
+
+## 4-tier design from the supplied document
+
+| Tier | Document terminology | Reusable editor responsibility | Engine integration boundary |
+|---|---|---|---|
+| 1 | Global Inputs & Data | Shared world coordinates, deterministic source heights, terrain material IDs, protection masks, wind, derived curvature/flow/moisture | Neutral attribute buffers and revision/fingerprint IDs |
+| 2 | The Material Domain | Grass, soil, rock, snow and extensible stable material profiles, per-material UV scale, optional packed maps | Unreal/Unity-specific Material Attributes and `SetMaterialAttributes` belong to host adapter, NOT the editor model |
+| 3 | Blend Domain Matrix | Curvature, height, slope and flow classifiers, priority/weight normalization, horizon-noise variation, override masks | Portable evaluator and diagnostic mask previews; host may compile a shader |
+| 4 | Master Output Graph | Layered terrain outputs, PSX tile-ID/vertex-color or optional modern material inputs | Renderer-owned RVT/parallax/normal/displacement facilities, with explicit capability flags |
+
+The document defines the topology chain as elevation -> structural slope ->
+steep/flat decisions and low-elevation curvature/AO -> cavity/ridge decisions.
+Keep this separable from authored terrain heights. It also recommends
+`SetMaterialAttributes`, `StaticSwitchParameter`, `Shared: Wrap`,
+`PixelNormalWS`, `VertexNormalWS`, RVT and shader-wave optimization.
+These names are **Unreal/HLSL-specific examples**, not portable Java 17 API
+requirements. Implement equivalent semantics in engine-specific adapters,
+never by adding dependencies to `org.beckenburg.editor`.
+
+## Existing handoff contracts
+
+- `StitchedHeightmapWorld`: authoritative, seam-validated R16 source tiles.
+- `TerrainLayerStack` v3: non-destructive height, protection, eight stable
+  material IDs, sculpt-layer alpha masks (v2+) and explicit authored-material
+  provenance, including deliberately painted GRASS. Version 1 and 2 files
+  remain readable, though historical painted-GRASS provenance was not stored.
+  Erasing authored paint reveals managed route material without altering R16.
+- `TerrainTopologyFields`: derived terrain normals/slope proxy,
+  curvature, D8 drainage, flow-direction/speed estimates and moisture proxy.
+  Fields are **not** actual hydraulic sediment particle measurements.
+  Fingerprints invalidate derived maps when sculpting changes heights.
+- `TerrainInfrastructureSplines` v2: legacy routes remain unmodified on
+  migration; newly managed road/rail/river alignments supply deterministic
+  reversible procedural terrain grading, rebuilding on edit/delete with
+  collision and authored mesh heights using the same sampler. Reversible
+  material overlays are now rail GRAVEL, road DIRT, river RIVERBED, subordinate
+  to deliberate user paint. Junction geometry and shoulder blending remain pending.
+- `TerrainRailMesh`: portable genuine ballast, sleepers and left/right rail
+  geometry exported through the shared terrain mesh writer; optional host
+  adapter still needed for live rendering/collision.
+- `StitchedHeightmapWorld.importTilesBatch`: seam-aware, rollback-journaled
+  source PNG replacement across up to nine tiles, with recovery on reopen.
+- `TerrainComposedHeightSampler`: source plus saved sculpt-layer deltas and
+  alpha masks use one identical height sampler for actual exported terrain mesh
+  geometry and physical surface/navigation queries; scene fingerprints include
+  layer files. Long-lived query consumers explicitly refresh after edits.
+- `TerrainLayerStack`: blocks stale saves after another editor changes either
+  the source tile or authored document; the source batch journal can rebase
+  layer checksum metadata without changing its creative content.
+- `TerrainSeamSculpt` and `TerrainSeamSculptEditor`: global-vertex
+  non-destructive seam editing, sparse undo, session save/reopen, source
+  fingerprint checks, discard, and guarded explicit batch bake. Source-bake
+  transactions now rebase v1/v2 layer documents in the SAME recovery journal;
+  live cross-tile sculpt-mask painting is still a separate authoring task.
+
+## First implementation tranche, after finishing Terrain editor requirements
+
+**Route/material priority boundary:** Implemented portable precedence is:
+explicit human paint (including GRASS) over a managed route's material, over
+implicit default GRASS. Both `TerrainComposedHeightSampler.surfaceMaterial`
+and `LayeredTerrainQueries.groundMaterial` expose that result. The second
+specification must build its blend matrix atop this semantics, not repaint
+source material IDs or flatten procedural corridors into source heightmaps.
+
+1. **Stable material catalog.** Material profiles with immutable numeric IDs,
+   albedo/tile atlas/normal/roughness/AO/height URI slots, physical surface type,
+   texture scale and supported render profiles. Keep legacy material IDs stable.
+   Add Moss and Concrete to the catalog for the document's nine-material test.
+2. **Neutral four-tier evaluation model.** Typed inputs, material description,
+   topology blend rule graph and output buffer; no host engine class imports.
+   Rules include slope normals, height-gradient start/range with world-space
+   low-frequency perturbation, curvature/cavity classification and downstream
+   moisture. Human-authored material overrides have declared priority.
+3. **CPU reference evaluator and real preview.** Deterministic testable topology
+   masks and material assignments for a selected region, with ability to
+   inspect each tier separately before any shader is involved.
+4. **Renderer capability profile.** `RETRO_PSX` baseline: tile material-ID
+   lookup, atlas/nearest-neighbor, vertex lighting; optional `MODERN`
+   with normalized layer weights, height blending, distance UV biasing,
+   triplanar, packed textures and RVT only if host supports them.
+   Mobile/standalone-VR profiles use a lean fallback and no mandatory RVT.
+5. **Nine-material stress scene.** Grass, Dirt, Gravel, Rock, Sand, Mud,
+   Moss, Snow, Concrete. Test all authored material IDs decode, blend
+   weights normalize, no missing resource references, and all configured
+   host rendering paths build and launch. Shader complexity/pixel imagery
+   are **diagnostic outputs only**; visual style does not block release.
+6. **Host-specific shader adapters.** Only after neutral evaluator is
+   stable, implement adapters to actual Beckenburg/other project renderer
+   capabilities: UV inputs, shared sampler state, optional static feature
+   variants, distance LOD, packed texture maps, and RVT where supported.
+
+## Source-derived feature inventory (eight-page document)
+
+- Four tiers and package-each-material-attribute guidance.
+- Material-function instruction-count *target* (<35 recommended).
+- Shared UV inputs, world-space dot-product slope, vertex/pixel normal mix.
+- Height falloff with noise-warped elevation boundary.
+- Curvature/cavity or baked AO approximation.
+- Sampler sharing and near/far UV blend.
+- RVT/virtual texture optional optimization, with matching texture
+  dimensions and power-of-two mip layouts.
+- Two packed maps: albedo RGB + height A; normal XY + roughness B + AO A.
+- Height-field contrast blend scalar `Global_Blend_Contrast` (source
+  recommendation: 0.02–0.07), plus flow-vector-driven silt/debris.
+- Static feature variants and optional SM6 wave-based culling.
+- Platform split: desktop/console modern optimization vs. mobile/VR
+  low-overhead, no required displacement/RVT.
+- Nine-layer overlap stress test, close/far shader complexity inspection.
+
+## Explicit engineering cautions
+
+- Do not reproduce the PDF's Unreal node names in portable core interfaces.
+- Do not treat `Shared: Wrap` as a universal setting outside Unreal or
+  assume a universal four-layer/16-sampler limit across all GPUs.
+- Do not promise that an RVT page makes an arbitrary number of materials free;
+  baking, updates, residency and memory remain real runtime costs.
+- Flow-driven dirt/silt shaders must distinguish **derived drainage proxies**
+  from physically simulated sediment fields.
+- Do not call purely analytical previews an actual in-game render.
+- Keep hard release gates strictly functional; shader complexity, visual
+  artifacts and retro style remain diagnostic screenshot-based review.
+
+## Preconditions for starting active implementation
+
+- Verify standalone Java 17 editor build with first-spec tests.
+- Finish / deliberately scope missing first-spec features: multi-tile seam-
+  safe editing, true infrastructure geometry, robust rerouting, materials
+  and collision/nav integration.
+- Add first-spec material/terrain dependency dirty-region notifications.
+- Then implement the four tiers from the bottom upward; verify generic
+  project adapters before connecting Beckenburg-specific rendering.
+
+## Unified owner requirements document chain (2026-10-31)
+
+The existing four-tier landscape materials specification continues under
+[document chain](requirements/DOCUMENT_CHAIN.md) and
+[staged cross-module gates](requirements/STAGED_INTEGRATION_PLAN.md),
+particularly G4. Topological editing, audio and genre plugins must reuse the
+same terrain material and scene identity, without replacing this four-tier model.
+
+
+
+---
+
+### Source: Stitched heightmap and long-distance terrain world system
+
+**Original repository path:** `docs/development/TERRAIN_WORLD_SYSTEM_PLAN.md`.
+
+# Beckenburg Terrain World System — engine and editor contract
+
+**Owner requirements (2026-10-31):** build the human-operable terrain and loading-zone modules first, then their agentic interface. Support both finite authored sites and extremely large, unified, stitched-heightmap open worlds. Support miles of sight distance without distant people/objects being falsely buried or exposed by averaged LOD hills.
+
+**Status:** architectural specification and staged acceptance criteria. This file is not proof that streaming, runtime LOD or open-world gameplay is complete. The existing `TerrainZoneDocument` and `TerrainZoneEditor` are finite-grid foundations; Blackpine's `SiteTerrain` consumes saved height offsets. Independent stitched-tile support is a new module milestone and must be verified separately.
+
+## 1. PSX-era baseline, modern technique, and Beckenburg extension
+
+| Domain | PSX-era typical constraint | Modern established approach | Beckenburg requirement (not automatically implemented) |
+|---|---|---|---|
+| World size | Predivided maps, loading screens, heavily limited geometry memory | World partition / streaming cells | Globally addressed tile coordinates with sparse creation, edit, and load, not one huge image or fixed volume; loading zones optional for interiors and disconnected worlds |
+| Elevation | Low-resolution static geometry, coarse meshes | 16-bit+ heightfields, tiled import, terrain sculpt/paint | Multiple independent 16-bit PNG height tiles sharing exact borders; global metre scale and datum; lossless editable source separate from runtime caches |
+| Landscape generation | Manually assembled terrain and repeating textures | Seeded noise, biome masks, erosion and splat maps | Reproducible multi-octave generator, seeded biome/landform masks, editable overrides, import/export and provenance; no unreviewed destructive rebake |
+| Detail near/far | Fixed draw distance, fog, pop-in | Quadtree/clipmap/geomorph, screen-space-error LOD | Multiple distance rings from exact source, measured geometric-error bounds, LOD stitching, hysteresis, geomorph; distance in world metres, not arbitrary tile count |
+| Occlusion | Painter sorting/z-buffer limitations and aggressive cutoffs | Depth/occlusion culling, HLOD and visibility data | Canonical *full-resolution* terrain for line of sight and actor physics; LOD mesh NEVER authoritative for gameplay obstruction or actor support |
+| Precision | Small coordinate range, large-world jitter | Origin rebasing, relative/64-bit world coordinates | 64-bit tile indices or doubles for world positions; local floats for GPU vertices; origin shift is presentation-only and preserves gameplay coordinates |
+| Texture | Tiny atlases and repeated UVs | Virtual textures, clipmaps, layered materials | Biome weights / splat masks and distance texture mips; preserve PSX aesthetic as a configurable presentation effect, not a geographic limit |
+| Objects/foliage | Sparse hand-placed objects or sprites | Instanced vegetation, impostors, HLOD | Deterministic scattering, stable persistent IDs, per-biome density, instance batching and separate object LOD and collision |
+| Physics/navigation | Simple mostly loaded regions | Independent collision/nav meshes in resident cells | Exactly supported sampled terrain and separate simulation interest zones; unloaded visual tiles don't invalidate authoritative actors or host AI |
+| Editing | Fixed levels and heavy offline rebuild | Non-destructive brushes, layer history, asynchronous baking | Human editor with terrain brush, texture layers, road cuts, water integration, local procedural regeneration, undo/redo, region locks and exact saved readback |
+| Networking | Small synchronous map state | Partition state replication and interest management | Host-authoritative world and seed, separately versioned tile deltas, revisions and affected-zone updates; no client-authoritative terrain height |
+| Testing | Manual eyeball checks | Differential geometry/performance tests | Seam, ray, scope, crest, cross-LOD, long-distance actors, fast travel and streamer-load test fixtures, with actual engine captures |
+
+Background references: [Epic World Partition](https://dev.epicgames.com/documentation/en-us/unreal-engine/world-partition-in-unreal-engine) (streaming cells); [Epic HLOD](https://dev.epicgames.com/documentation/en-us/unreal-engine/world-partition---hierarchical-level-of-detail-in-unreal-engine) (distant proxies); [Cesium 3D Tiles spec](https://github.com/CesiumGS/3d-tiles/blob/main/specification/README.adoc) (geometric error and screen-space refinement); [NVIDIA GPU Gems 2, geometry clipmaps](https://developer.nvidia.com/gpugems/gpugems2/part-i-geometric-complexity/chapter-2-terrain-rendering-using-gpu-based-geometry) (nested LOD rings and transition morphs). These provide comparisons, not vendor code to copy or evidence Beckenburg already works this way.
+
+## 2. Unified terrain coordinate / tile model
+
+- One global XY-in-horizontal convention for our game: **X/Z horizontal, Y metres up**, and one world elevation datum. Named source/world origin; no implicit image stretch to world size.
+- A world manifest records `worldId`, schema version, tile cells N (power of two), metres per cell, world origin X/Z, elevation minimum and maximum, generation seed, texture-layer catalog, and precision/revision. One **N+1 by N+1** 16-bit grayscale tile image contributes N by N cells.
+- Tile `(tx,tz)` covers `[originX + tx*N*step, originX + (tx+1)*N*step]` and equivalent Z. Negative tile indices are valid.
+- Edge heights are **identical numeric 16-bit samples** between adjacent tiles. Reject conflicting imports, offer previewed repair modes later. Verify corners shared by four tiles. No bilinear mismatch, duplicate last-column ambiguity or silently painted seam.
+- Global quantization means identical sample `q` maps to exactly one elevation `minY + (q/65535)*(maxY-minY)`. A local 16-bit scale per tile is forbidden because it breaks seams.
+- Height query uses the **same triangle diagonal** for renderer/physics (not one bilinear function for walking and different GPU triangles). Sparse unknown tiles return explicit unavailable status; do not silently return sea level.
+- Tile imports and edits are atomic, revisioned and recoverable; bounded PNG decode, tile cache, overflow checks and stable file naming. Source 16-bit images are preserved. Runtime mesh/LODs are derived caches, not the master terrain.
+- Generator samples global integer vertex coordinates and a fixed seed; generating tiles in any order yields the same shared border. Terrain edits are separate from seed-based source and explicitly dirty the dependent tiles/LODs.
+- Sparse world size is **not** limited by `TerrainZoneDocument.Grid`'s 65,536-vertex finite editing cap. That cap remains appropriate only for finite grid documents.
+
+### Heightfields do not replace actual 3D caves and structures
+
+A heightmap represents **one elevation per horizontal X/Z coordinate**. It cannot describe two vertically stacked floors, cave ceilings, overhangs, bridges or mine shafts correctly on its own. Treat it as the outdoor ground foundation, with separate authored volumetric meshes / solid collision / portals for excavations, multi-floor geometry and exposed rock faces. A subtractive hole mask in the ground permits cave entrances but must not invent a walkable terrain surface inside the void. The editor must show which system owns collision at each position (terrain ground, structural mesh, stair, water, tunnel). Keep the same real gameplay collision/nav system at every LOD, regardless of which visual layer is currently drawn.
+
+**Acceptance fixtures:** tunnel under a surface hill remains navigable without terrain snapping the player onto the roof; bridge and road span keep their own supports; cave mouth remains open in every streamed LOD, including scope view from far outside; long-distance cliff/cave silhouettes cannot turn into solid averaged berms that falsely hide distant characters.
+
+## 3. Long-distance LOD: visual simplification cannot change reality
+
+**Non-negotiable:** game physics, character feet, projectiles, ground-contact, AI, hiding and line-of-sight resolve against authoritative high-fidelity world geometry, **not** a rendered LOD proxy. If a character stands on a real ridge at 2 miles, averaging a distant chunk must not produce an apparent mountain in front of them or a false exposed position.
+
+1. **Canonical terrain pyramid.** Level 0 is exact stitched source height samples + deltas, with mesh diagonal fixed. Every coarser tile stores a representative height, *minimum/maximum* height envelope, maximum deviation from the exact surface in metres, sampling/datum and source revision. Height-only averaging is insufficient for visibility.
+2. **LOD selection.** Distance rings may start with steps of 1, 2, 4, 8, 16... cells, but screen-space geometric error, camera FOV and viewport resolution drive refine/cull, not distance alone. Scopes/binocular zoom reduce world-space footprint per pixel and therefore demand finer LOD even when far away.
+3. **Conservative occlusion.** To determine whether a terrain tile could hide an actor, use a hierarchical min/max elevation envelope to rapidly classify candidates, then fine/full-resolution terrain ray tests for ambiguous cases. Never let a **coarse mesh's render depth alone** decide that a character is hidden. If exact terrain isn't resident, prefetch the needed samples or mark visibility undecided; do not fabricate an occluder or expose a guaranteed hidden target.
+4. **Render correction for actor silhouettes.** A correct gameplay ray alone does not solve a wrong visual z-buffer. If a distant actor is potentially visible through a scope, force-fine terrain refinement along the camera-to-actor corridor or use a carefully depth-validated special occlusion path, preserving ridge silhouette. A coarse proxy must not draw over a correctly visible actor. Do not draw the actor through real foreground hills.
+5. **Cracks and transitions.** Neighbour LODs have shared logical border samples and deterministic seam-stitch meshes, or skirts only where visually acceptable. Prefer geomorph/hysteresis to hide LOD popping. Physics elevation does not morph with the camera.
+6. **Independent budgets.** Streams for terrain height, texture, foliage, and simulation run on separate budgets; prioritise camera/aim corridor and destination warm-up. Avoid synchronous disk/PNG decoding on render thread.
+7. **Origin rebasing.** Keep world positions stable in double/global space; shift only frame-local render coordinates and preserve deterministic simulation, raycasts and network messages.
+
+### Required regression: scoped actor behind averaged hill
+
+Construct two adjacent tiles with a narrow saddle and a high shoulder. Place a human-sized actor on an exact lower surface beyond the saddle. Choose a coarse averaged LOD that would place geometry in front of the actor in a naive z-buffer. From a scoped camera several kilometres away:
+
+- Authoritative fine-resolution raycast and hit test agree with actor support and line-of-sight.
+- Coarse min/max bound marks the ray ambiguous, forces refine/exact verification and does not classify the actor as hidden without proof.
+- Rendered depth shows the actor if actual terrain leaves the ray clear; hides the actor if actual ridge blocks it.
+- Results persist after tile unload/reload, tile edge crossing, mismatched neighbor LOD, FOV change/zoom, rapid travel and origin shift.
+- Negative counterpart: actor behind a real ridge stays hidden (no see-through LOD bug). Both distant and nearby physics must agree.
+- Each assertion needs actual scene coordinates, tile hashes, exact/coarse height samples, LOD selection, ray intersection, screenshot and source SHA.
+
+## 4. Streaming and generation
+
+Use a quadtree for sparse persistent world spatial indexing and a resident-budget LRU for decoded source tiles. The render pipeline creates nested LOD regions around camera and optional explicit interest sources (scope sightline, waypoint, remote player, editor camera). Use async prioritized requests, cancellation, bounded outstanding tasks, deterministic fallback to a known coarser resident tile, and revision-aware eviction. Support cold-start, traversal, teleport, night/fog, and worst-case altitude/scope tests. **No** world-wide allocation proportional to a hypothetical full continent; memory should scale with loaded regions and configured budgets.
+
+LOD summaries must be invalidated/rebuilt after edited source vertices, including any touching neighbouring tiles; stale mesh or stale occlusion summaries are unsafe. A shared source seam edit must modify both sides atomically or reject.
+
+## 5. Human editor modules before agent access
+
+The editor must first let a human create/open a world, choose import vs procedural generation, select tile(s) or rectangular regions, view the stitched topology, set local brush/texture parameters, preview LOD shells, inspect seam defects, change biome and road layers, and save with undo. Loading zones are *optional* authored triggers linking interiors/disconnected worlds; streaming of adjacent outdoor tiles must **not** depend on hand-placed loading volumes.
+
+Dedicated inspectors: tile coordinates, actual world metre bounds, min/max elevations, seam conflicts, LOD error, current resident/cache bytes, streaming requests, visible LOD band, authoritative actor-ground and visibility diagnostic rays. Do not falsely label 2D authoring maps as live game screenshots. Preserve original Beckenburg Castle and map workflows.
+
+**Then** add the separately planned observation/manipulation/verification/headless/MCP agent interfaces to these proven human operations, never a second engine.
+
+## 6. Dependency-ordered implementation and evidence
+
+| Gate | Implementation deliverable | Must prove before marked accepted |
+|---|---|---|
+| T0 | Preserve finite terrain/loading-zone document and authoring UI, compile and run tests | Existing Castle, Blackpine, water/weather and saves unchanged |
+| T1 | Independent Java 17 stitched world manifest, 16-bit grayscale PNG import, exact border checks, deterministic tile generation, true triangle height sampling, bounded LRU | Neighbor/corner/negative-index/absent-tile/byte-validity tests, local Java compile and standalone CI |
+| T2 | Human stitched-world editor window; tile viewport, generate/import/export, seam diagnostics and undo | A manually created 3x3 world loads back exactly; corrupt tile import rolls back |
+| T3 | Integrate stitched-world canonical height into an *actual outdoor runtime adapter* with matching collision and rendering | Real ground support and renderer sample agree at edges and non-planar diagonals; actual map screenshot |
+| T4 | Hierarchical min/max/error LOD summaries and independent stream budgets | Memory bounded independent of world extent; no cracks or stale caches; measured timings |
+| T5 | Distance LOD rings + morph and zoom-sensitive screen-space error | FOV/resolution/refinement and quick camera motion; visual frames with real render proof |
+| T6 | Long-range accurate visibility/occlusion including scope rays and distant actors | Both scoped buried-actor and real-ridge-hidden tests; origin-shift/ray case pass; no incorrect GPU depth |
+| T7 | Biomes, texture layers, erosion and vegetation/roads, weather/water integration | Stable reproducible textures, footprint/collision and no editor/runtime divergence |
+| T8 | Multiplayer host-synchronized world/tile revisions and optional loading-zone game handoff | Real host/guest consistency, deterministic spawn, rollback and updates unaffected |
+| T9 | Agentic interface after human/runtime modules work | An authorized agent reads/edits/verifies this **same** world, no unproved completion claims |
+
+Statuses until proved: **T0 work in progress; T1–T9 planned**. Earlier Beckenburg 16 terrain foundations and Blackpine grading are not a general stitched/streaming/LOD implementation. Note exact test/CI evidence and revise these statuses per real completed gate.
+
+## 7. Release and resource discipline
+
+Only objective broken build, launch, essential gameplay or required multiplayer/update function blocks shipping. Visual cracks, biased LOD, content/biome mismatches and authoring quality warnings are developer diagnostics unless they objectively break play. Never mask a known failure by disabling a task or replacing a real playable map with synthetic placeholders. No forced push. Preserve current game environments and original art. Maintain source hashes and no unrelated edits.
+
+
+## 8. Implementation increment — manual stitched world source window (2026-10-31)
+
+T1 source proof: the Windows Java 17 terrain-module acceptance workflow succeeded for commit
+ac81d6f92002f3729234592cccd016d4dfdd926e:
+https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41228485115 .
+This verifies focused standalone Java module tests, not a running world renderer.
+
+T2 **in progress**: \`StitchedWorldEditor\` is reachable from the existing finite
+Terrain / Zones editor via **STITCHED WORLD**. It edits real source-world files
+(not a synthetic game scene), supporting world creation/open, tile-coordinate
+navigation, bounded 2D tile thumbnails, single-tile and 3×3 deterministic
+generation, non-overwriting 16-bit imports, source-identical exports and seam
+inspection. A 3×3 generation rejects existing files before writing and attempts
+to roll back newly created files if a normal operation fails. Multi-file crash
+durability, sculpting with cross-border edits, undo/redo, in-game runtime
+integration and render verification **are not implemented** by this step.
+Source writes are immediate and visibly labeled as such.
+
+Next: implement a revisioned multi-tile edit transaction that atomically
+updates shared-border vertices and supports undo/redo and crash recovery;
+then bind the stitched-world source to actual outdoor renderer + physics
+(T3). Do not claim T2 accepted until a human can sculpt/save/undo/reload
+a real 3x3 world and reproduce seam diagnostics.
+
+## 9. Adaptive authored topology (2026-10-31)
+
+See **[Adaptive Terrain Topology contract](ADAPTIVE_TERRAIN_TOPOLOGY.md)**.
+This is a separate *authoring-detail* system layered on stitched 16-bit base
+cells, not a camera-dependent distance LOD and not a higher-resolution rewrite
+of every source PNG. A base cell may be subdivided recursively only where
+needed; nodes use signed global base-cell indexes and dyadic subcell coordinates.
+Neighbor edge-break lists permit a later mesh builder to triangulate both
+sides of a T-junction against the same positions. Merely generating edge lists
+does **not** prove the GPU draws a crack-free surface.
+
+Implementation sources:
+- \`AdaptiveTerrainTopology.java\` sparse split/merge, leaf enumeration, signed
+  cross-tile neighbor edge breaks, save/load, revision and snapshot restore.
+- \`AdaptiveTopologyEditor.java\` human-operated 2D quadtree inspector, refine,
+  merge, undo/redo, explicit save with re-open verification.
+- \`StitchedWorldEditor.java\` provides the ADAPTIVE TOPOLOGY entry point.
+- \`AdaptiveTerrainTopologyTest.java\` tests nested splits, cross-source-tile
+  boundaries, negative indexes, failed mutations, save/reload and malformed files.
+
+**Status:** A1 Java source + focused CI acceptance passed at
+\`e7eca44c34ff7273312b0745c472f6d3f1ad4f4c\`
+([workflow run 41229681626](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41229681626)).
+A2 panel source added; the post-UI focused compile, installed Windows editor
+interaction and real screenshots need separate evidence. No authored
+subvertex height displacement yet (A3). The runtime renderer, collision/LOS
+and mesh stitching remain unimplemented (A4+); don't count topology metadata
+as visual/physical terrain detail or proof of distance visibility correctness.
+
+Immediate dependency order: A2 manual save/reload acceptance, A3 globally
+shared vertex height delta plus cross-border transactions, A4 conforming
+triangulation and real runtime integration, then existing LOD/scoped actor
+verification T4–T6, agent access last.
+
+
+
+---
+
+### Source: Authored adaptive terrain topology
+
+**Original repository path:** `docs/development/ADAPTIVE_TERRAIN_TOPOLOGY.md`.
+
+# Beckenburg Adaptive Terrain Topology — design and staged implementation
+
+**2026-10-31 — scope:** human-authored, persistent, sparse recursive terrain refinement *within* independently stitched heightmap tiles. This is **not** a replacement for the tiled 16-bit heightmap source and **not** distance-based rendering LOD. Continue human-accessible editor modules before any machine/agent interface.
+
+## 1. Sketch: topology is authored where needed
+
+```text
+STITCHED 16-BIT SOURCE TILES (tile edges share exact height values)
++---------------------+---------------------+
+| coarse hillside     | cliff base          |
+| . . . . . . . . . . | . . . . . . . . . . |
+|          +----------+----------+          |
+|          |  fine    |  coarse  |          |
+|          | +--+--+  |          |          |
+|          | |++|++|  |          |          |
+|          | +--+--+  |          |          |
+|          +----------+----------+          |
++---------------------+---------------------+
+
+One original heightmap quad
+ depth 0: [           one base cell           ]
+ depth 1: [        ][        ]  each axis => 4 children
+ depth 2: [    ][    ][    ][    ]  selected children subdivide again
+ depth 3+: recursive refinement only where authoring requires it
+
+Independent, orthogonal systems:
+ SOURCE: stitched 16-bit heights and their provenance
+ AUTHORING: persistent quadtree split nodes + future sparse high-resolution height deltas
+ DISPLAY: distance/zoom-dependent mesh LOD derived from canonical authored world
+```
+
+Note the drawings illustrate *quadtree subdivision*, not proof of a crack-free runtime mesh.
+
+## 2. Authoritative coordinates, boundaries and persistence
+
+- Global **X/Z** with Y upwards (metres). A canonical source tile contains N×N *base cells* plus N+1 height samples on each side; heightmap decoding/triangles remain the responsibility of `StitchedHeightmapWorld`.
+- An adaptive root is exactly one base cell indexed by globally signed integer `(gx,gz)`; e.g. tile boundary cell X `(tx*N+N-1)` is adjacent to `((tx+1)*N)`. Do not introduce tile-local boundary identities that could disagree.
+- Node address `(gx,gz,depth,localX,localZ)`, with `0 <= localX,localZ < 2^depth`. Nodes subdivide into NW/NE/SW/SE quadrants. Only explicitly split nodes persist; unmodified cells consume zero per-cell storage. Parent closure, max subdivision depth, a minimum physical edge length and a node-budget limit prevent runaway allocations.
+- For portable, exact edge comparison use integer **dyadic** coordinates at a fixed maximum subdivision lattice, `unit=2^MAX_DEPTH` per base cell. Negative global coordinates must use floor division. Refinement/splitting of base-cell edges must work across PNG tile boundaries.
+- A new vertex created by subdivision initially samples the *exact source triangle* from the stitched heightmap (not bilinear averaging). Splitting **does not raise/lower** terrain by itself.
+- Future authored displacement is a separate sparse vertex layer keyed by **global dyadic integer coordinates**, with one displacement value per shared vertex. An edit touching a tile edge is a multi-tile transaction; never create two different heights for the same vertex.
+- Topology files are versioned, bounded, atomic-save, tied to the heightmap world's exact grid/settings and validated on load. Reopen must preserve the same split tree and edge data. Source tile PNGs are never rewritten by splitting/merging metadata.
+
+## 3. Boundary conformity: no naive T-junction meshes
+
+If a leaf's opposite side is subdivided more deeply, the coarse leaf must *also* expose its neighbor's edge-break positions to the eventual mesh builder. The geometry adapter is required to triangulate against those shared break positions **using identical positions and heights**. Returning lists of edge breaks is *not* sufficient proof of a watertight GPU mesh.
+
+We choose **edge-conforming polygon triangulation** over automatically refining a whole continent to the same depth. Recursive split balancing (neighbor depth gap <= 1) may be added as a bounded optimization, not a hidden requirement of editing. Unequal depths can meet only when the mesh builder consumes all edge breaks; arbitrary-depth mismatch must not silently become skirts or a visual-only seam mask.
+
+The source core must expose: leaf enumeration, world/dyadic bounds, neighbor edge-break positions, source-sample lookup, split/merge/snapshot/readback and explicit failure modes.
+
+**Failure cases:** absent/unloaded source tile, depth/budget overflow, non-leaf split, missing parent, conflicting PNG edges, malformed/cross-world topology document, save failure, stale revision, and wrong-thread UI use. No operation should partially mutate state on a validation error.
+
+## 4. Terrain physics, distant vision and limits of heightfields
+
+- **Height ownership:** before runtime adapter T3, this module only stores authoring topology. Nothing should pretend that a refined mountain automatically appears in gameplay. The runtime adapter must use the identical triangulated authored surface for ground contact, projectile/ray queries, AI navigation and mesh emission.
+- **LOD is downstream:** authored splits do not disappear because camera distance changes. Distant LOD may approximate, but must retain an error envelope and fine-resolution corridor refinement for scopes and distant actors. Exact terrain determines true occlusion; GPU depth must also be refined or corrected to avoid burying visible actors behind coarse proxy geometry.
+- **Caves/overhangs:** a heightfield (even adaptively refined) still represents only one Y per X/Z. Use separately owned solid mesh/volumetric geometry and ground cutout/portal masks for caves, bridges, tunnels and cliffs with undersides.
+- **Material detail:** textures/atlas UV density, splat masks, decals and surface displacement should use independent resolution policy. Increasing geometric topology is not the same as increasing texture resolution; prevent atlas bleeding across tile/LOD seams.
+- **Precision:** double-precision global metres (and integer global dyadic indices) for authoritative address; subtract rebased render origin before GPU float conversion.
+
+## 5. Stages, acceptance and status
+
+| Stage | Deliverable | Tests |
+|---|---|---|
+| A0 DESIGN | This explicit contract and dependency map | Correct base-cell/address examples and failure cases |
+| A1 CORE | Sparse Java 17 split/merge quadtree, leaf enumeration, global dyadic bounds, cross-cell edge breaks, snapshot/restore, bounded atomic topology file | Nested splits, signed coordinates, 16-bit tile boundary, no source change, save/reload, corrupt file rejection, node limits |
+| A2 HUMAN UI | Choose tile/base cell/subcell, refine/merge, undo/redo, inspect topology density and edge breaks; save explicitly | Human edits 3×3 world, sees density change, save/reopen exact, existing editor unchanged |
+| A3 HEIGHT DETAIL | Non-destructive sparse dyadic vertex height offsets, world ownership, atomic cross-border edits and revision/invalidation | Cross-border brush, no cracks, failed batch rolled back, true triangle surface and saved readback |
+| A4 GAME ADAPTER | Conforming triangle generation, collision/nav/ray consistency, real-world rendering and chunk invalidation | Captured real renderer, terrain foot heights/edge crossing, no visible seam; runtime uses authored surface |
+| A5 DISTANCE & SCOPES | LOD selection, min/max error envelopes, scope/actor correctness | Human-sized distant actor genuinely visible vs ridge-hidden, real rendered z-buffer, teleport/zoom/origin-shift |
+| A6 AGENT ACCESS | Observe, manipulate and verify same approved editor operations, later | Authorized real-scene readback and undo; no parallel simulated scene |
+
+**Current implementation:** A0 spec committed. A1 core and regression tests
+passed Windows Java 17 focused CI at e7eca44c ([run 41229681626](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41229681626)).
+A2 human interface source was added subsequently; compilation and a physical
+Windows UI interaction still require separate verification. A3–A6 remain planned. A1 or A2 is **not** A3–A6. Finite TerrainZoneDocument and existing loading-zone handoff remain independent.
+
+## 6. Reference basis
+
+- Frostbite *Adaptive Hardware-accelerated Terrain Tessellation* documents T-vertices and stitch permutations: https://media.contentapi.ea.com/content/dam/eacom/frostbite/files/adaptive-terrain-tessellation.pdf
+- Adaptive mesh discussion and edge-split remedy: https://www.mdpi.com/2071-1050/11/7/2137
+- Quadtree/continuous LOD historical reference: https://courses.cs.duke.edu/cps124/fall02/notes/12_datastructures/lod_terrain.html
+
+These are architectural references, not imported dependencies or assertions that our engine has completed its renderer.
+
+
+## 7. Reuse of the model-showcase DEV room (2026-10-31)
+
+User requested topology testing alongside existing exhibits. Beckenburg's
+\`--dev-room\` is a separate actual-renderer *model showroom*, not a gameplay
+heightfield map, so we reuse its renderer and free camera without registering
+the QA patch as a mission or moving the six model stands.
+
+- \`DevTerrainTopologyLab\` creates/reopens an isolated 2-tile 16-bit test world
+  at \`~/.beckenburg/dev-room/topology-qa\`. It seeds a depth-1/depth-2 example
+  immediately against the neighboring unsplit cell at the original PNG boundary;
+  an existing QA source is never overwritten.
+- \`DevAssetShowroom\` adds explicit on/off, edit and reload controls. The patch
+  is opt-in in an unused side aisle. Existing model catalog and unmodified
+  3-argument \`SceneRenderer.drawDevAssetRoom\` still render exactly as before.
+- \`DevTerrainTopologyLab.build\` enumerates real authored leaves, gathers
+  each neighbor's global edge-break positions, triangulates an edge-conforming
+  polygon fan, and samples the **actual source triangle** height. Its triangles
+  are passed into the existing software 3D renderer for live depth tests.
+  Depth colors are diagnostic. There is **no independent authored vertex
+  displacement, terrain-body collision, lighting/texture atlas integration,
+  character occlusion proof or gameplay runtime adapter** yet.
+- Reopen / reload reads actual saved topology from disk. A malformed document
+  reports failure and keeps the prior lab geometry rather than faking success.
+- Optional headless DEV capture: \`DevAssetShowroom --dev-room --terrain-qa-capture
+  --output=build/dev-room\` writes a *real* scene renderer screenshot and
+  a source/triangle-count report. The visual review CI treats the capture as
+  advisory. Verify Windows CI success and capture artifact separately before
+  calling the DEV lab fully accepted.
+
+QA tasks: manually split tile 0 cell (15,7) along the tile 1 boundary, inspect
+the resulting diagnostic subdivisions in the real 3D renderer, save/reload,
+verify both coarse/fine sides draw without a visible gap, compare source PNG
+hashes, and document FPS and rendering artifacts. The existing model asset
+cameras and screenshots must still behave unchanged.
+
+This is **a staging fixture for A2 and early A4**, not proof that A3 authored
+sculpting, physical collision or T5/T6 distant scope occlusion works.
+
+
+## 8. Cutout and multi-level navigation requirements (2026-10-31)
+
+**Correction to the earlier design:** adaptive topology must support punching true holes in terrain and multiple overlapping 3D floors/ceilings at the same X/Z for caves, caverns, mines, bunkers and sewers. A heightfield alone cannot provide this. Sparse cutout leaf flags are now in authoring format v2; the human editor has cut/restore controls, and the isolated DEV patch suppresses cutout triangles. Underground mesh, matching collision, portal connectivity and layered gameplay are NOT yet implemented.
+
+See [Layered Terrain and Real Excavation](TERRAIN_LAYERED_CAVITIES.md) for authored surface cuts, 3D subsurface layers, entrance perimeter welding and collision/occlusion acceptance.
+
+**Separate requirement:** low/high rendering mesh densities must not respectively under- or over-sample NPC waypoints. Use independently built adaptive nav regions with physical clearance sampling, explicit layer/portal IDs, hierarchical routes and verified local swept movement. See [Adaptive Multi-Layer Navigation](ADAPTIVE_MULTILAYER_NAVIGATION.md) for the staged design and diagnostics. Camera/render LOD must never become NPC collision authority.
+
+
+
+---
+
+### Source: Layered terrain cavities, real holes, caves and entrances
+
+**Original repository path:** `docs/development/TERRAIN_LAYERED_CAVITIES.md`.
+
+# Layered Terrain and Real Excavation — Beckenburg Editor
+
+**Requirement confirmed 2026-10-31:** Adaptive terrain authoring MUST make genuine holes, caves, cavern networks, bunkers, sewer systems, tunnels, mines and multiple stacked walkable levels straightforward. This is a human-editor feature before any agentic interface.
+
+## Geometry and data ownership
+
+1. **Stitched source heightfield:** immutable 16-bit reference samples. One Y per X/Z cannot represent a cave roof and cave floor simultaneously.
+2. **Sparse adaptive surface topology:** independently authored quadtree split nodes and persistent *open* leaf masks. A cut removes the actual terrain faces; it is not transparency, a lowered height, or a decal. Undo and restore expose the original source geometry. Shared coordinates cross PNG tile borders.
+3. **Layered 3D submeshes:** separately addressable geometry, in arbitrary world X/Y/Z, supporting ceilings, floors, roofs, walls, caves with overhangs and tunnels under other tunnels. One X/Z position may contain multiple valid surfaces.
+4. **Entrance connections:** explicit perimeter/portal reference joining surface cutout edges to an underground mesh opening; optional rock rim, lining, shaft, door, stair, ladder or ramp. An incomplete hole is explicitly an open void and receives no invented bottom or cap.
+
+Each solid surface has a stable layer ID and revisions independent of rendering LOD. Physics, nav and occlusion derive from authoritative source+cutouts+3D submeshes, never from averaged distant graphics.
+
+## User-facing operations
+
+- **Cut Hole**, **Restore Surface** on selected leaf (already implemented as authoring API); extend to brush, polygon/ring and silhouette-aware selection. All edits reversible, bounded and atomic.
+- **Refine Hole Rim** preserves open state upon split. **Merge** rejects mixed open/solid areas unless the user explicitly fills/cuts to make them uniform; no accidental tunnel sealing.
+- **Create Underground Layer** with depth, width/ceiling profiles and textured geometry. Support arbitrary branching and crossing paths.
+- **Extrude Entrance** consumes the open perimeter, generates a matched side-wall loop and tunnel cross-section, then connects to a placed cavern/sewer/bunker mesh. Keep portal connections inspectable.
+- **Layer panel**, cutaway/section view, vertical slice, wireframe and entrance graph. Editors can isolate upper ground, roof, interiors and individual underground strata without changing collision.
+- **Local undo/redo, readback and revisioned save** must include mask, boundary, layer meshes, portals and invalidation references together.
+
+## Real gameplay consequences
+
+- **Collision:** missing terrain faces must also be missing in collision and line/ray tests. A hunter entering a hole hits the actual cavity floor, not an invisible source-heightfield lid. Support valid falls and intentional dangerous voids.
+- **AI navigation:** a route crosses the cutout only via a walkable ramp, stair, ladder or other explicit traversal link. Navigating to an opening is not permission to walk across it. The multilayer navigation policy is specified in [ADAPTIVE_MULTILAYER_NAVIGATION.md](ADAPTIVE_MULTILAYER_NAVIGATION.md).
+- **Lighting/visibility:** cave mouth, tunnel and ceiling surfaces occlude correctly; sky exposure and placed lights recognize real apertures. The far visual terrain proxy must not visually seal an entrance that is truly open. Scopes and distant actors must be evaluated against exact geometry.
+- **Streaming:** when an entrance is reachable, its immediate connected underground chunk is prepared before collision/navigation transition. Links remain valid across map tiles and stacked levels.
+- **Water/hazards:** floods, sewer flow, air and material effects are independently authored world volumes and use real enclosure and passage data.
+- **Performance:** rebuild only edited cells, intersecting seams, portals and invalidated collision/nav/light fragments. Preserve GPU batching and bounded persistent caches. No global re-bake per frame.
+
+## Current milestone and tests (not full runtime support)
+
+**Implemented in code, awaiting CI readback:** AdaptiveTerrainTopology v2 persists sparse hole leaves with backwards read of v1. It offers `punch`, `fill`, snapshot/restore, safe refinement and guarded merge. AdaptiveTopologyEditor exposes CUT HOLE and RESTORE SURFACE; the isolated DevTerrainTopologyLab skips cutout triangles when drawing. The DEV-room's preexisting studio floor can still appear beneath the sample terrain: that is **not** a real excavated chamber.
+
+**Still missing:** cave mesh authoring, tunnel/portal extrusion, connected collision/LOS/nav, actual gameplay cutouts, distant LOD/occlusion parity, and integrated layer-specific saves. Do not label a 3D diagnostic render as proof of these.
+
+### Acceptance path
+
+1. Round-trip a single subdivided hole, half-filled rim, tile-border opening and legacy uncut v1 document. Confirm original 16-bit PNGs retain byte identity.
+2. In real dev-room screenshots, prove a cut deletes terrain triangles; follow-up build must expose a separate cavity floor/wall and render it through a real opening.
+3. Attach a multi-branch cave beneath intact hillside with one real entrance, stairs to second stratum and sewer crossing below; test distinct Y layers at equal X/Z.
+4. Exercise in-game collision, AI crossing, flashlight shadows, camera visibility, scope distance LOD and water volume boundaries under randomized edit revisions.
+5. Profile localized regeneration versus area size; art judgments remain advisory, broken functionality blocks acceptance.
+
+
+
+---
+
+### Source: Adaptive multilayer navigation, flood controls and three seam methods
+
+**Original repository path:** `docs/development/ADAPTIVE_MULTILAYER_NAVIGATION.md`.
+
+# Adaptive Multi-Layer Navigation — Beckenburg Terrain, Hunters and Ghosts
+
+**Requirement confirmed 2026-10-31:** NPC routes must be adaptive under both low- and high-density topology, and through stacked underground spaces. Rendering mesh vertex count **must not** dictate navigation node count. Human editor modules come first; agents later invoke the same sanctioned operations.
+
+## The critical separation
+
+1. **Exact physical world:** stitched terrain source, authored sparse height detail (when implemented), cutout masks, doors, placed objects, underground layered solid geometry and authoritative collision.
+2. **Navigation surface:** agent-specific traversable regions constructed by validating precise physical geometry. This is independent of camera/distance/rendering LOD. A coarse-looking terrain patch can still be scanned at finer sampling to establish gradient, obstacle and clearance limits.
+3. **Search representation:** hierarchical region/portal graph with compact polygonal areas (and per-layer ID), plus local high-detail connections only at difficult transitions. A forest clearing does NOT require one waypoint per visual vertex; a narrow sewer turn DOES require enough local samples even when the visible mesh is coarse.
+4. **Behavior:** existing HouseMap and ghost room/portal rules remain authoritative for their current maps. A new world-navigation adapter refines local routes, without quietly overriding ghost door restrictions, evidence perception, permissions or van boundaries.
+
+Do not derive walkability from a visual LOD approximation or use a geometry simplifier whose error can mask a hole, cliff or doorway.
+
+## Adaptive construction
+
+- Partition walkable geometry into **regions** by tile, loaded chunk, vertical layer and connected components. A region may contain large convex or locally simple polygons, not thousands of unneeded triangles.
+- Subdivide locally where **traversal complexity** demands: sharp elevation gradient, step height, fall hazard, tight clearance, obstacle proximity, hole boundary, portal, slope break, branching corridor, AI turn radius or a jump/ladder/ramp link.
+- For *coarse* source terrain, probe the canonical collision/height function adaptively within cells; refine until surface error, maximum slope and clearance are bounded. Never accept 'looks flat at vertices' as proof of safe passage.
+- For *fine* visual mesh, simplify by merging adjacent navigable polygons **only if** exact collision samples and swept-volume checks prove consistent clearance, slope, connectivity and no missed hazard/portal. Do not store a waypoint for every decorative triangle.
+- Preserve critical nodes: entrances, narrow choke points, bridges, stairs, vertical connections, door thresholds, hazard boundaries and cover/visibility-critical corners. These are topology constraints, not optional low-detail approximations.
+- Make the builder deterministic, budgeted, incremental and revision-based. A changed terrain leaf or cave wall invalidates only touching navigation regions and portal links. Retain stable IDs for unaffected regions. Never silently mark dirty chunks as walkable.
+- Neighbor regions connect through **explicit traversable portals**, with measured width/height and ability requirements. A cutout is initially a void: it becomes an entrance link only if a valid floor, ramp, stair, ladder or drop behavior connects it.
+
+## Runtime routing
+
+**Stage A — strategic route:** A* or another suitable bounded search through region/portal graph, from start layer to destination layer. Cost accounts for actual distance, door effort, exposure, environmental hazards and agent abilities. Never authorize crossing a closed/blocked or player-only boundary by guessing.
+
+**Stage B — local route:** Corridor/funnel smoothing through navigable polygons; add local intermediate points only as required by geometry and turning constraints. Validate each segment against authoritative swept collision. Adjacent avatars and movable furniture are handled by short-horizon local avoidance, not full navmesh rebuild every tick.
+
+**Stage C — recovery:** If a segment fails real collision, mark its local edge invalid, locally refine sampling or replan around it. Never repeatedly push an NPC into an invisible slope or teleport through rock. Surface/floor Y is resolved with layer ID and actual collision, *not* closest heightfield Y. Avoid allowing agents on underground sewer level to snap to the surface road.
+
+**Agent profiles:** hunter, crouching hunter, ghost (with explicit ghost-specific capabilities), and optional larger entities have height, radius, slope, step, jump/drop, ladder, door and water tolerances. A single mesh cache may share raw geometry, but passability/links differ per ability class; ghost powers require explicit rules rather than universal clipping.
+
+**Dynamic changes:** open/closed doors, temporary equipment, moved clutter, blocked rubble, terrain edits and water changes update edge costs/availability or localized mesh revisions. Live multiplayer server owns route collision truth, not an individual client's approximate LOD.
+
+## LOD, scopes and tall worlds
+
+- Camera distance should NEVER lower authoritative navigation accuracy; nav streaming is based on active NPCs, routes, portals and nearby goals, independently of view.
+- A faraway actor may use cheaper **planning** across coarse region graph, but exact local movement and position need high-fidelity surfaces once simulated. Predictive loading along path avoids stopping at a cave threshold.
+- Visual LOD and depth occlusion must honor cutouts, passage envelopes and real cave roofs. Scope zoom may force visual refinement, but should not rewrite a NPC's route or move it to a different floor.
+- Track `(regionId, layerId, polygonId)` for the agent; X/Z alone cannot identify a ground plane in a multilayer scene.
+
+## Tests and instrumentation
+
+Test all examples with *physical* route probes and actor simulation, not only generated graph connectivity:
+
+| Environment | Test |
+|---|---|
+| Huge nearly flat meadow with dense decorative triangles | Few nav regions, no explosion in graph/search cost |
+| Coarsely sampled hill with narrow ravine | Collision probing detects ravine and builds sufficient safe local points |
+| High-detail rubble and narrow furniture passages | Clearance-constrained route correctly rejects oversized agent |
+| Hole punched in field | No false edge crosses the open void; explicit bridge/ramp works |
+| Cutout across stitched PNG border | Stable links and equal positions on both sides |
+| Two rooms stacked at same X/Z | Independent nav layer IDs, no wrong-floor snap |
+| Bunker stairs, cave branches, deeper sewer crossing | Connectivity only through authored vertical/portal links |
+| Doors, fallen clutter, flooding | Incremental local invalidation, route recovery without infinite collision loop |
+| Scope observing NPC a mile away | NPC remains on correct terrain; visual occlusion does not bury/expose it incorrectly |
+
+Capture deterministic seeds, generated region/node counts, memory/CPU build times, path search p50/p95, max error bounds, failed segment count, number of local invalidations and behavior traces. Maintain acceptance tests for ghost/Hunter movement rules separately. Visual screenshots are advisory; failure to move/collide/navigate is objective functionality.
+
+## Implementation staging
+
+**N0 design:** document system and expose diagnostic requirements (this milestone).
+**N1 geometry adapter:** build authoritative layered collision/height samples and cutout boundaries, with stable per-layer IDs.
+**N2 sparse region builder:** generate verified walkable polygons with clearance/slope error bounds; join layer-aware portals.
+**N3 hierarchical search:** high-level route + local funnel/swept-volume validation; agent profiles and recovery.
+**N4 incremental updates:** doors, moving clutter, terrain edits, water, streaming; replan only impacted regions.
+**N5 DEV room and AI simulation:** build indoor/outdoor/cave test fixtures, display regions/portals, allow six AI hunters + ghost and admin observer, collect real movement traces and collision failures.
+**N6 agentic editor:** make agents read and invoke approved editor APIs with undo and real-scene readback.
+
+**Status (2026-10-31):** N0 is documented. N1 now has a **standalone diagnostic/query prototype** in `editor/LayeredTerrainQueries.java` that samples real stitched source triangles, excludes punched cutout leaves, retains independent floor layer IDs, and checks AABB solids, capsule-footprint support and headroom. N2 has a **standalone adaptive region-graph prototype** in `editor/AdaptiveNavigationRegions.java` with bounded split budgets, exact source-gradient inspection, physical portal validation, confirmed portal waypoints and explicit ability-gated vertical links. The corresponding deterministic acceptance tests are `LayeredTerrainQueriesTest` and `AdaptiveNavigationRegionsTest`. The initial Windows CI for N1/N2 passed at [run 41231554595](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41231554595); revised waypoint validation passed at [run 41231621400](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41231621400). The later steep-source-PNG regression requires its own CI result, and must not be counted as passed before readback.
+
+The real `DevTerrainTopologyLab` now computes diagnostic surface nav regions/links and a sample cross-cutout route beside its real renderer patch, exposed in `DevAssetShowroom` status and headless report. Physical cave mesh authoring, fully conforming 3D collision, production runtime movement, navmesh integration with `GhostPracticeHunterAi` and `GhostAiNavigationAudit`, multiplayer replication, dynamic stream invalidation, and live six-hunter simulation **remain outstanding**. An explicit transition in the graph describes an author-approved connection; it is not yet proof that the actual ladder, staircase, animation or swept movement implementation exists. N3–N6 are not implemented, and the prototype must not replace the game's existing movement authority until runtime parity is tested.
+
+
+## N2a — Authored seed flood, selective regression and protected transition barriers (2026-10-31)
+
+**Editor UI:** Open a stitched source world, choose **Adaptive Topology → NAV FLOOD EDITOR**. The dedicated Swing editor displays an up-to-8×8-source-cell area in actual world coordinates.
+
+- **Continuous rebuild:** persisted per world; when enabled, regenerate a diagnostic graph after each author edit and when source/topology files change. Builds use a worker rather than freezing the editor. When disabled, changes still save but the graph only updates via **FLOOD FILL PULSE**. The **minimum region size** is adjustable separately from the render topology to trade local detail against graph size.
+- **Seed at click:** authored entry/start for the reachable-component flood. If no seed has been authored, the builder returns all physically valid candidate regions for inspection. With one or more seeds, only reachable regions are in the final navigation graph.
+- **Draw blocked gate:** click two axis-aligned segment endpoints across an open doorway, loading-zone transition, prohibited passage or NPC-only boundary. The generator refuses graph connections crossing the segment even when the 3D models appear open. A segment only blocks its actual span; AI can legitimately go around its ends if geometry permits. Use persistent trimming or enclosing collision barriers when a whole destination instance must be excluded.
+- **Trim selected:** click a generated polygon, then permanently remove its world-space rectangle from the navigable output. **Trim connected:** deliberately remove the entire displayed connected branch, with a confirmation count. Rebuilds never restore these authored masks. The editor retains **grey, unreachable pre-flood candidate polygons** past a barred gateway so you can select the disconnected side and permanently regress it without ever allowing the AI to navigate there. The flood-reachable output alone is used for routes.
+- **Untrim last / Remove last gate / Remove last seed / Undo / Redo:** edit the separate persisted authoring document. Save and immediate disk readback verify the authored state.
+
+**Storage:** \`navmesh-authoring.bin\` is separate from source \`tile_*.png\` and \`adaptive-topology.bin\`. It stores stable world-space seeds, exclusions, blocked gate segments, and manual/continuous mode. Generated region indices are not permanent; only source-coordinate masks are. The document uses a bounded binary format and atomic replacement.
+
+**Builder integration:** \`AdaptiveNavigationRegions.build(..., AdaptiveNavMeshEdits, minCell)\` augments the existing exact-collision subdivider: refine near cut masks and gate interiors, reject regions intersecting forbidden masks, omit blocked peer connections and ability-restricted vertical links, and breadth-first flood from seeds over the remaining connectivity. No renderer LOD determines this output. Graphs reject stale authored/topology revisions. \`DevTerrainTopologyLab\` uses the same saved masks on QA refresh.
+
+**Acceptance:** \`AdaptiveNavMeshEditsTest\` exercises physical geometry remaining open behind a blocked level-transition gate, persistent no-regrowth after seed flood, trimming sub-areas from otherwise coarse navigable regions, undo snapshots, source tile preservation, and continuous mode persistence. It is a functional Windows Java 17 test, not a cosmetic release blocker.
+
+**Not yet integrated:** A live runtime agent does not consume this authored graph, and a blocked nav edge is *not* an actual collision wall. Layered cave mesh and production scene physics remain separate milestones. An editor window preview is not proof of Hunter/ghost AI traversal.
+
+
+## N2b — Persisted underground authoring from the navigation editor (2026-10-31)
+
+**Open:** Stitched World → Adaptive Topology → NAV FLOOD EDITOR → **UNDERGROUND GEOMETRY**. The layered geometry window lists and allows adding, revising and deleting independent floors, axis-aligned solids and cross-layer traversal links. Undo/redo and save perform immediate disk readback. Source heightmap PNGs and adaptive cutout topology are untouched.
+
+- **Floor:** named layer (for example \`bunker\` or \`sewer\`), world-space X/Z rectangle, base height and X/Z rise. Multiple nonoverlapping slabs can share one layer. Overlapping slabs on the same layer are rejected.
+- **Solid:** unique ID plus world-space 3D bounding box; collision-query clearance and navigation authoring reject impassable solid walls and ceilings. This does **not** create a visible wall mesh.
+- **Connection:** explicit \`STAIRS\`, \`LADDER\` or \`DROP\` link between two named layers at authored endpoints. Both endpoints must be within their destination support slabs; links with orphaned layers are rejected. Cross-layer routes remain capability-gated.
+- **Viewport:** choose the layer to inspect; flood rebuild consumes the saved floor/solid/link data. Existing nav seeds, gates and exclusions remain layer-specific. Editor overlay uses teal floor outlines, white obstacle rectangles and magenta transition markers. Agent ladder/drop capability toggles affect reachability.
+- **Storage:** separate bounded, atomically saved \`layered-geometry.bin\` alongside \`navmesh-authoring.bin\` and \`adaptive-topology.bin\`, leaving the source \`tile_*.png\` unchanged. Authored geometry is independent of generated nav region IDs.
+
+**Test:** \`LayeredTerrainDocumentTest\` validates source tile preservation, three physically distinct floors, stairs/ladder capability restrictions, obstacle collision, persistence and readback, overlap rejection, orphan-link rejection and snapshot restoration. It runs in Windows Java 17 focused terrain acceptance.
+
+**Important:** This milestone supplies **editor-owned physical query geometry**, not full cave meshes, mesh welding at the surface cutouts, model rendering, or live game collision. A stair link in the nav graph is author intent, not an animated staircase or automatic level-instance transfer. Those runtime and visual connections remain subsequent tasks.
+
+
+## N3 — Three distinct terrain entrance seam methods (2026-10-31)
+
+Open Stitched World → Adaptive Topology → ENTRANCE SEAMS 1/2/3 (also linked from Smooth Ramp Entrances). All three are topology operations, not level heights:
+
+1. **Method 1 — NEW INTERIOR SEAM.** Add a source-tile interior seam along adaptive-grid-aligned endpoints. The explicit CONFORM LEAVES + PUNCH TABS command refines actual quadtree leaves until the seam coincides with their edges. Crossing the new seam on the outside surface is blocked. A separate CUT HOLE operation, or Method 3, can create the corresponding opening. The seam retains its underground destination layer identity.
+2. **Method 2 — DE-STITCH TILE EDGE.** Select a real existing source-tile boundary. The surface graph stops connecting across this boundary, preserving both underlying heightmap tiles while recording the intended underground destination. Rendering/mesh ownership of the replaced edge remains a downstream integration; it is not automatically connected to an underground render tile yet.
+3. **Method 3 — DETACHED TAB / PUNCH.** A matching Method 1 seam is required along one edge of a rectangular tab. The explicit CONFORM command splits and punches the outer source leaves underneath this patch, and the physical query module reassigns the *same original height surface* to an independent named navigation layer. Normal outdoor surface connections do not regenerate over it. A ramp mouth inside the tab stitches to this distinct tab layer rather than to the main outdoor surface.
+
+The authored operation document is entrance-seams.bin, independent of the source PNG, adaptive-topology.bin, layered-geometry.bin, ramp-entrances.bin and navmesh-authoring.bin. Editor masks have undo/redo and disk readback. The explicit physical CONFORM command also provides REVERT LAST CONFORM, which refuses to erase unrelated subsequent topology edits. Original 16-bit source height pixels are never rewritten by this work.
+
+The adaptive flood fill now loads method 1/2 seam barriers, method 3 independent tab supports, and explicit ramp-to-tab navigation endpoints. It visually marks the three kinds of opening in the 2D authoring map. The targeted Java 17 test is EntranceSeamDocumentTest: subdivision, tile de-stitch separation, tab punching and standability, no outdoor AI cross-edge route, disk persistence, idempotent reapplication and source PNG seam preservation.
+
+**Status boundary:** this is actual editor-side collision/query/topology authoring. Full 3D cave-mouth mesh emission, visual subterranean-tile re-welding, GPU rendering and live Hunter/ghost movement integration are still future work. The editor may not claim an authored seam is already a playable cave entrance.
+
+
+## N4 — Real authored 3D entrance mesh emission and inspection (2026-10-31)
+
+From **Smooth Ramp Entrances**, select a ramp and press **3D MESH PREVIEW** or **EXPORT MESH OBJ**. From **ENTRANCE SEAMS 1/2/3**, select a seam or tab and use the same 3D preview/export commands. The preview is a rotatable, zoomable projection of actual generated mesh triangles, labeled explicitly as an editor inspection view and **not an in-game screenshot**.
+
+The source-consistent geometry generator, \`TerrainEntranceMesh\`, emits:
+
+- Outdoor terrain triangles from **real 16-bit heightmap pixel samples** and actual adaptive quadtree leaves; polygon edge vertices follow \`AdaptiveTerrainTopology.edgeBreaks\`, including fine/coarse neighbors. Split terrain borders are exported with separately owned vertex indices rather than automatically rewelded.
+- The original-height **detached navigation tab** as its own mesh part. Punched outer surface leaves remain absent from the outdoor surface mesh.
+- Continuous cubic-Hermite ramp triangles using the **identical height function** used by collision/navigation, including C1-eased mouth and interior grades.
+- Independently authored underground floor slabs, omitting surface patches where the ramp overlaps the destination floor.
+- **Exposed rock cheek walls** *only* where a real cutout meets a physical ramp and an adjoining uncut terrain edge. Wall endpoints use source terrain heights and ramp heights; no arbitrary-depth fake cavern wall or unrequested backdrop is invented.
+
+The **geometry-only OBJ** output has named groups for surface seam sides, detached tabs, ramps, floors and rock edges. It includes UV coordinates but **does not fabricate a replacement diffuse texture**. The exporter parses the written file through \`EditorMeshPipeline.read\` before publishing it, and the editor performs a second readback after export. Geometry is limited to 16,000 triangles and a bounded source-cell region: larger entrances must be exported in chunks, not silently downsampled.
+
+Windows Java 17 \`TerrainEntranceMeshTest\` checks adaptive mesh face orientation and source-height agreement, separate sides of existing and new cut seams, preserved detached tab triangles, ramp/query height agreement, non-fabricated cave cheek walls, OBJ roundtrip group and face preservation, sparse outer-tile borders and original source heightmap seam integrity. This test blocks only on a functional mesh/export regression, not visual style.
+
+**Still pending:** hooking emitted OBJ/GLB or mesh batches into the live game-level renderer and collision/AI runtime; dynamically streaming many tiles, building full tunnel/ceiling walls beyond authored rock edges, and texture/material assignment from the approved asset library. OBJ output is an inspectable intermediate asset, not proof of a finished in-game cave.
+
+
+## N5 — Reusable runtime-scene document and terrain package module (2026-10-31)
+
+The portable Java 17 editor kit now provides two deliberately separate functional modules:
+
+- **RuntimeSceneDocument** serializes any game-owned RuntimeScene adapter into an atomic, versioned \`scene.bin\` with stable scene ID, node IDs, hierarchy, transforms, layers, component types and string properties. On load it enforces bounds, rejects bad parent graphs, checks deterministic disk readback, and can restore into an existing matching runtime scene without overwriting a different level.
+- **TerrainScenePackage** is an opt-in EnvironmentModule with \`AUTHORING\`, \`SERIALIZATION\`, and \`DIAGNOSTICS\` capabilities. Given saved source terrain and explicit patch bounds, it builds the *real* TerrainEntranceMesh, publishes geometry-only OBJ into \`scene-package/meshes/<chunk>.obj\`, checks the importer and SHA-256 hash, and registers a stable \`terrain-<chunk>\` scene node carrying a \`world://\` URI, mesh part/triangle counts and source-query file references. Regenerating a named chunk replaces only its owned mesh/node, not unrelated props or a foreign OBJ. Failed operations restore the scene and previous geometry. The scene itself is saved in \`scene-package/scene.bin\`.
+
+**Source staleness safeguard:** published scene nodes also store a SHA-256 fingerprint of the source 16-bit tiles covering their patch plus the authored adaptive topology, seam, ramp, and underground-layer documents. **VERIFY PACKAGE** distinguishes an untouched OBJ from an up-to-date OBJ; changing those inputs reports **STALE** until the chunk is rebuilt. Existing assets are never silently regenerated or overwritten because of a warning.
+
+**Editor route:** Stitched World → **TERRAIN SCENE PACKAGE**. Select tile, local cell offsets and a bounded patch side; specify the stable chunk ID. **3D MESH PREVIEW** generates an inspection view without saving it. **PUBLISH PATCH TO SCENE** bakes OBJ and saves the authoritative scene manifest asynchronously. **VERIFY PACKAGE** checks current files and hashes; **RELOAD SCENE** refreshes from disk.
+
+This is a real reusable scene **data handoff**, not a claim that runtime SceneRenderer already parses these OBJ asset references. Explicit \`rendererStatus=requires-host-adapter\`, \`materialStatus=unassigned\`, and \`collisionStatus=query-authoring-only\` deliberately prevent placeholder material art and phantom collision. A future Beckenburg adapter must import/stream these mesh sections into GPU buffers, bind approved material assets, and supply authoritative collision/navmesh to Hunters and ghosts. Separate render/material/AI diagnostics must not gate release for aesthetic differences.
+
+Functional tests \`RuntimeSceneDocumentTest\` and \`TerrainScenePackageTest\` run in Windows Java 17 acceptance. They cover save/reload, identity isolation, stable node updates, integrity verification, rejection of un-conformed seams, refusing to overwrite foreign assets, rollback and 16-bit heightmap/source preservation.
+
+
+
+---
+
+### Source: Lighting editor and runtime module
+
+**Original repository path:** `docs/lighting/LIGHTING_MODULE.md`.
+
+# Beckenburg Lighting Module
+
+**Java 17 implementation:** `lighting-module/src/main/java/dev/mrcalzon/lighting/LightingModule.java`. The module contains immutable settings, built-in profiles, range validation and persistent local preferences. It does not own world state, Swing widgets, the GPU, or network authority. `FixtureLighting`, `SceneRenderer`, and the existing Castle Options screen consume it.
+
+## Available Options
+
+| Setting | Allowed values | Actual behavior |
+|---|---|---|
+| Profile | Performance / Balanced / Quality / Custom | Prepopulates the other fields; manual edits select Custom |
+| Ambient fill | 50–150% | Scalar for ambient light contributions |
+| Fixture brightness | 50–150% | Scales authored world-source power **and matching emissive fixture glow**; does not change handheld flashlight hardware |
+| Fixture reach | 65–140% | Scales source radius and affected shadow regions |
+| Cosmetic flicker | 0–200% | Controls candle and TV fluctuation only |
+| Cache allowance | 50–150% | Scales supported CPU lighting, stationary-shadow, stable GPU and auxiliary resident-world budgets; **not a total JVM/GPU memory cap** (immutable House shell resource cache is not governed by this control) |
+| Lighting invalidation cell | 2, 4, 8 metres | Spatial revision grouping; **not lightmap or ray-sampling resolution** |
+| Distant outdoor LOD | On/off | Optional outdoor-only distance sampling, with physical LOS |
+| Changed-only vertex updates | On/off | Reuses unchanged vertex colours/arrays |
+| Source dependency reuse | On/off | Skips unchanged fixture-source probe batches |
+
+**Performance, Balanced and Quality preserve identical authored ambient, fixture power, reach and cosmetic flicker.** Preset differences affect cache sizing and distant outdoor LOD, not evidence visibility. The brightness/reach sliders are explicit Custom appearance controls. Named presets load their canonical current definitions, automatically replacing obsolete per-preset values saved by earlier builds.
+
+**Balanced** reproduces the preceding lighting defaults (100% values, four-metre cells, three optimizations on). Settings apply on **APPLY OPTIONS** and persist through Java Preferences. The active renderer notices a changed immutable snapshot and refreshes scene lighting caches **once**; individual doors and switches remain local updates, not global rebuild triggers.
+
+**Multiplayer and game rules remain authoritative**: no client setting changes room power, switches, blackout, ghost hearing/vision, hidden evidence, collision, door state, or shadow ray correctness. No external Blender/Chocolatey/runtime asset dependency is added.
+
+## Packaging and verification
+
+Both `build.sh` and `build.cmd` now compile and package the standalone lighting module in `beckenburg-game.jar` and assert the class is present. `src/test/java/org/beckenburg/LightingModuleTest.java` is a separate optional diagnostic, **not a cosmetic release blocker**.
+
+Pending acceptance: clean Java 17 Windows/Linux builds, actual Options-save/relaunch, House/Castle/solo/LAN parity, door open/close performance at each profile, stable scene IDs on ordinary door interactions, p50/p95/p99 frame time, upload bytes, cache hit rates, and no lighting through solid walls. Source commits and the packaging scripts alone do not prove those results.
+
+## Initial implementation audit (2026-10-29)
+
+Code review found and corrected: (1) the Performance and Quality presets had changed authored source strength and reach, conflating visibility with performance; (2) emissive bulbs/TV materials did not follow the world-source brightness slider; (3) named presets could reload saved obsolete custom values while still displaying the preset name; (4) the UI used misleading labels for world-source brightness, invalidation-cell size and cache **allowance**. Expanded optional diagnostic `LightingModuleTest` checks preset visual invariants, physical beam/math boundaries, and unchanged host lighting circuits.
+
+**Known unverified / intentionally not claimed:** the immutable authored House-shell cache is not under the new percentage cache allowance; it needs a separate correctly bounded resource-ownership design rather than unsafe VBO eviction. Windows and installed GPU tests have not yet been run; the module's independent source/Java syntax and pipeline integration are subject to a clean actual JDK 17 full-game compile. No new release gate has been added.
+
+
+## PSX lighting engine PDF cross-check (six-page supplied reference)
+
+The supplied document recommends: 5-bit RGB quantization, per-vertex/Gouraud
+illumination, optional clamping and overflow, per-mesh subdivision, ambient
+and additive colour combination, alpha/STP hygiene, affine UV and screen
+snapping, 4x4 ordered dithering, optional indexed CLUTs, avoiding T-junction
+cracks, and avoiding excessive tiny batches.
+
+**Already implemented elsewhere (do not duplicate in this module):**
+- `PsxPipeline.finishFrame` quantizes and Bayer-dithers the finished world
+  framebuffer; `PsxPipeline.snap` and `uv` implement the existing PSX
+  presets. These are presentation effects and must not warp the Swing UI.
+- `SceneRenderer` prepares vertex lighting, keeps resident source meshes
+  with revisioned VBO IDs, uses limited near-camera subdivision and retains
+  OpenGL colour interpolation. The handheld camera flashlight is deliberately
+  a GPU fragment effect; converting it to a CPU full-world relight would
+  recreate the door/camera hitch. Don't introduce another global light pass.
+- `FixtureLighting` maintains hard occlusion checks against actual doors,
+  geometry and source positions, as well as colour and shadow caches.
+
+**Newly connected:** independent source reach and diffuse-edge width.
+`LightingModule.Settings.diffusionPercent` (5–100%) sets how much of each
+source radius is used for the fade band. At 100% it is identical to the
+original `1-distance/radius` falloff; a narrower band retains a stronger
+inner core. `LightModel.diffusionFade` is constant-time math, used by
+both prepared-probe and live CPU samples. It adds no blur shader, shadow
+map, full-screen pass, GPU texture, or new ray. This is light-edge softness,
+**not a physically simulated penumbra or volumetric scattering**.
+
+**Light cell layer priority:** the PDF does not prescribe light layers or
+a priority mechanism. The implementation spatially indexes *contributing
+sources*, then adds ambient and actual physically occluded source
+contributions, with self-emissive surfaces applied as a max rather than an
+unoccluded illumination source. Host power/outage/interference decide
+fixture activation. There is no explicit ordered light-layer override
+scheduler yet, and it must not be invented merely to choose a winning
+lamp inside a spatial cell. If future gameplay effects require overrides,
+they should be resolved before local light sampling and must never bypass
+wall LOS or authoritative network rules.
+
+**Post-processing:** `SceneRenderer` currently performs the ordered RGB
+PSX pass and then `GraphicsEffects.apply`; these are two distinct
+full-frame traversals when effects are enabled. They are measured
+independently. Do not add a second shader dither, an automatic fragment
+lighting mode, or a CLUT conversion on top of the current look without a
+demonstrated need. `GraphicsEffects` already bypasses itself when all
+additional effects are off.
+
+**Performance diagnostics** (`LightingFrameProfiler`):
+- A 120-frame bounded primitive-array rolling window records CPU frame,
+  scene build, geometry/raster, PSX quantization/dither, and optional
+  graphics-effects duration; it also records triangle high-water marks,
+  shadow rays, changed lighting cells and delayed GPU readback counts.
+- `SceneRenderer.lightingPerformance()` returns p50/p95/p99 frame times,
+  p95 stage times and peaks on demand. Recording is O(1) with no sorting,
+  allocations or I/O on the per-frame path. Percentile sorting is only
+  performed when a snapshot is explicitly requested.
+- Pass `-Dbeckenburg.lighting.profile=true` to opt in to one local
+  `LIGHTING PERF` log approximately every five seconds. No telemetry,
+  no online upload, and no added blocking GitHub test.
+- These are **CPU timings**. Async GPU duration and VRAM residency require
+  separate backend/driver instrumentation: GPU readback latency is a
+  symptom metric, not a substitute for GPU timer queries.
+
+**Follow-up acceptance**: compare all three presets at 200p, 360p and
+540p for the same camera/door scene: p50/p95/p99 *frame* times,
+PSX/post-processing ratio, after-door frame drop, retained vs rebuilt VBO
+counts, GC pauses, CPU and GPU frame workloads, live shadow correctness,
+T-junction gaps, and emissive/normal parity. Investigate any full-screen
+CPU pass or shadow-probe burst that exceeds the chosen frame budget. As
+always, non-functional appearance/performance diagnostics are non-blocking
+unless the actual game does not function.
+
+**Not included by default:** per-fragment Phong/PBR lighting, expensive
+soft-shadow blur, CLUT conversion, variable per-pixel ray casting,
+additional alpha simulations, or a large collection of microscopic
+per-light draw calls. These are optional/editor concerns, not necessary
+for an efficient PSX-style horror game.
+
+
+
+---
+
+### Source: Rendering and environment rigging source register
+
+**Original repository path:** `docs/PSX_RENDERING_AND_ENVIRONMENT_RIGGING.md`.
+
+# Beckenburg — PSX Rendering, Environment Rigging & Shader Source Register
+
+**2026-10-18 | Status: asset/design catalogue, not a runtime feature claim.** The authoritative machine-readable source list is [`software/beckenburg/assets/psx-shaders/index.json`](../../software/beckenburg/assets/psx-shaders/index.json). The owner's [Drive master asset index](https://docs.google.com/document/d/18G144Qd0-L5rL7NdqxMykqkXaBHtu8-ytr_yYPol6rI/edit) is the asset-source counterpart. Read alongside [Hardware, Accessibility, Graphics & Menu Options](HARDWARE_ACCESSIBILITY_GRAPHICS_AND_OPTIONS_STANDARD.md) and [Quality Gates](QUALITY_GATES.md).
+
+## Renderer reality and boundaries
+
+Beckenburg currently runs a **Java 17-targeted Swing/software raster renderer** for the prototype. A Godot `.gdshader`, Unity `.shader`, or libGDX GLSL `.glsl` is **not executable or importable by this rasterizer**. Do not put a random shader in the game assets directory and claim an effect has been implemented. The first runtime route is a **Beckenburg-owned CPU raster/postprocess implementation** with tests; a future GPU backend must be a deliberate engine decision with feature detection, Java/Windows packaging and fallback. The catalogue contains links/metadata only, **no copied external shader code**.
+
+Our €11 owner-purchased **PSX Mega Pack v3.2.1** models and textures are a *separate* source/licence from the external shaders below. Its pack-wide commercial-use grant does not extend to unrelated shader repositories, and shader licences do not grant rights to unrelated model packs. Keep original paid archives on the owner's Drive; select and provenance-track only models genuinely used by the game.
+
+## Source index / reuse policy
+
+The full register contains nine candidates, their upstream links, engine, licence and **not-imported** status. Prioritize:
+
+| ID | Library | License (source checked unless stated) | Backend | Beckenburg decision |
+|---|---|---|---|---|
+| PSX-S001 | [snotbane/psx_visuals](https://github.com/snotbane/psx_visuals) | Unlicense | Godot 4 | Preferred public-domain behaviour reference: vertex jitter, UV affine, fog, 5-bit color, dither |
+| PSX-S002 | [Rytelier/Godot-PSX-Visuals](https://github.com/Rytelier/Godot-PSX-Visuals) | MIT | Godot 4.4+ | Rich environment/material reference; copyright/permission notice if adapted verbatim |
+| PSX-S003 | [MenacingMecha/godot-psx-style-demo](https://github.com/MenacingMecha/godot-psx-style-demo) | MIT | Godot 4 | Lean material system, billboards and fog reference |
+| PSX-S004 | [AnalogFeelings/godot-psx](https://github.com/AnalogFeelings/godot-psx) | MIT | Godot 4 | Archived; contrast material versus screen-space stages |
+| PSX-S005 | [TotesNotJosh/Godot-PSX](https://github.com/TotesNotJosh/Godot-PSX) | CC0 | Godot 4.4+ | 15-bit/dither postprocess reference; object shader not yet shipped as described |
+| PSX-S006 | [TotesNotJosh/PS1-3D-Shader](https://github.com/TotesNotJosh/PS1-3D-Shader) | CC BY 4.0 | Unity | Attribution required if copying; reference only now |
+| PSX-S007 | [davidbrowne17/PsxShader](https://github.com/davidbrowne17/PsxShader) | CC BY-SA 3.0 per repository LICENSE.txt | libGDX / Kotlin / GLSL | JVM-adjacent example; **do not vendor** without share-alike review |
+| PSX-S008 | [Francisco Cidade PSX - Godot Shader](https://store.godotengine.org/asset/fcidade/psx-godot-shader/) | CC0 per store | Godot 4.6 | Current all-in-one example; source archive still uninspected, store marks release unstable |
+| PSX-S009 | [scolastico/psx_visuals_gd4](https://github.com/scolastico/psx_visuals_gd4) | MIT per Godot listing, upstream audit pending | Godot 4 | Runtime material-conversion design reference only |
+
+Each index entry is **available for investigation**, not embedded in the executable. Licensing obligations belong with **each external source**, not the purchased PSX model pack. If code is eventually vendored: pin upstream commit/version, retain required license/attribution in the package, store source path, SHA-256 and transformation notes, and separately test the actual backend.
+
+## Beckenburg-owned rendering feature matrix (all PROPOSED unless a test proves otherwise)
+
+| Feature ID | CPU implementation target | Visual tuning & limits | Important cross-system requirements |
+|---|---|---|---|
+| PX-01 Pixel canvas | Render world to fixed low-res buffer, nearest-neighbour integer-ish scale/letterbox | Baseline 320×240 (4:3), 426×240 (~16:9), 640×360 comfort; never distort camera aspect | Keep menus, small evidence text and HUD native-resolution/readable; pointer mapping must account for scale and bars |
+| PX-02 Vertex snap | Quantize *projected* screen-space vertex positions before triangle raster | 0 / subtle / authentic; stable with viewport size and camera motion | Visual-only: **never snap server-world coordinates, triggers, collision or ghost detection volumes** |
+| PX-03 Affine UV | Interpolate u/v in screen space instead of perspective-correct u/z,v/z; blend with perspective mapping | Off / subtle / authentic, avoid maximal warp on long floors | Keep meshes sub-divided enough for doors, walls, floors and evidence decals; prevent UV crawl masking symbols |
+| PX-04 Texture sampling | Nearest sampling, selectable conventional filtering fallback; mip/bias controlled | 64/128/256 px typical texture targets, power-of-two as convenient, atlas with gutters | UV seam inspection, consistent texel density, readability for labels, fingerprints, ghost writing and tool displays |
+| PX-05 Color depth | RGB 5 bits per channel (15-bit-like) and optional palette quantization in postprocess | Off / reduced / 5:5:5; alpha handled separately | Preserve functional contrast, color-blind alternatives, grayscale checks; do not quantize procedural equipment data itself |
+| PX-06 Dither | 4×4 ordered Bayer pattern applied before RGB quantization; anchored to final pixel grid | off/25/50/100% with static matrix, no random temporal noise | No stochastic scene flashing, ghost traces/motion text must stay legible; screenshot-deterministic |
+| PX-07 Distance fog | Distance blend or per-vertex haze with tunable near/far per map/weather | Fog may hide geometry but cannot defeat mandatory visual evidence range | Flashlights, D.O.T.S., UV/thermal presentation use tested contrast priority; the host alone decides what evidence exists |
+| PX-08 Lighting | Per-vertex/flat lighting, low fixed ambient, emulated vertex fog, local emissive meshes | Limit light radius, intensity, color; preserve physically meaningful darkness | Couple lamp meshes, toggles and flickers to existing RoomLighting; flashlight cone and van screens remain functional |
+| PX-09 Transparency | Alpha cutout leaves/fences; explicit sorting for glass, decals, particles and ghosts | Prefer hard cutout over expensive blended foliage; scene-order deterministic | Do not let postprocessing occlude clues, physical silhouettes or player/ghost tells |
+| PX-10 Retro optics | Subtle chromatic offset, vignette, film grain/CRT pass only where appropriate | Default restrained/off for user-sensitive effects; CRT on diegetic monitor material, not entire menu | Photos/camera evidence use defined capture source and host events; no accessibility-hostile motion/flash defaults |
+
+A genuine preset is a synchronized set of supported, tested subfeatures. **Do not expose dead graphics controls**. Design presets can be documented now without pretending the CPU renderer already supports them. Effect state is client-local and must not alter authoritative ghost class, manifestations, range, equipment numerical readings or networking.
+
+### Suggested visual profiles — draft, not wired into settings
+
+- **Cinematic horror (default target):** 426×240 widescreen world; subtle projected snap; partial affine warping; nearest sampled 128 px textures; gentle static dither; 5:5:5 tone; aggressive-but-legible distance fog; native-resolution HUD.
+- **Authentic PSX:** 320×240 4:3 or letterboxed, full pixel snap/affine, 5:5:5 with 4×4 ordered dither; strong fog; limited vertex-lit surfaces; expect old-school instability without game-logic instability.
+- **Readable/comfort:** 640×360 or higher internal canvas; vertex snap/affine/grain disabled or reduced; fog and darkness lifted only within fair-play limits; UI and tool text crisp; documented high-contrast and reduced-flicker overrides.
+- **Low-spec CPU:** internal resolution/per-object density/particle count and drawing complexity reduced after benchmarking; no claim of a particular FPS without Windows hardware evidence.
+
+## Environmental rigging contract (applicable to castle hub, van and all planned investigation maps)
+
+**World/layout:** use one authored placement unit/grid scale with exact world-to-model transforms, pivots, handedness, collision plane, measured door clearances and stairs. Record `.glb` source name+hash and level placement; no duplicate unlicensed stand-in. Divide scenes into room/portal cells so doors, hallways, adjoining rooms and van apertures participate in visibility and audio occlusion. Keep navigation, movement/hiding probes and evidence-spawn volumes separate from the visual mesh and PSX snap.
+
+**Modular architecture:** prefabs for straight/corner/end wall, door frame, hinge-door, shutter, trim, stair, balcony, floor/ceiling, railing, windows, basement entrances and outdoor fence/gate. Seal backsides; use repeatable UVs and atlas gutters so affine sampling doesn't expose cracks. Define door hinge/pivot, lock state, swing arc, max opening, collision footprint and authoritative network state. A flickering light should swap or change an existing luminaire material state, not spawn an unrelated lamp model.
+
+**Lighting rig:** classify ambient sky, powered room lights, portable tools, candles/lamps, emergency lights, paranormal flash/flicker, ghost manifestations and diegetic screens. Every placed switch has a room/power group; each light has location, radius, falloff, color, flicker ceiling, shadow/occlusion policy and on/off visible-source mesh. Bake vertex colors/ambient hints where possible but retain actual dynamic signals from RoomLighting. Candle/fire or security monitors don't turn into functional EMF or ghost indications without host event input.
+
+**Outdoor rig:** low-poly ground and paths with atlas/UV seams; Retro Tree source-preserving trunks/leaf cutouts; distance LOD/billboards and fog horizon; night sky, weather and ambient audio zoned per biome/courtyard. Avoid foliage sorting spikes and render-thread overdraw on older Windows CPUs. Vegetation density presets may change decoration, **not hiding-spot, path or line-of-sight gameplay** unless explicitly host-authored/replicated.
+
+**Character/entity rig:** consistent coordinate scale, orientation, hip/root, skeleton hierarchy, hand sockets and head/camera offsets. Declare flashlight/EMF/book/grab interaction anchors; male/female lowpoly source bases remain actual source meshes, not interchangeable generated previews. Ensure tool swaps align with real source geometry. Ghost entity readability prioritizes user-approved concept silhouettes, gender variants, flicker state and visible event timing, not internet placeholders. Any billboard sprites must face appropriately without corrupting hit/collision or multiplayer state.
+
+**Surface classes:** opaque textured architecture, double-sided cutout vegetation, unlit signage/ritual marks, emissive bulbs, glass/mirrors, wet surfaces, decal evidence and CRT monitors. Avoid per-frame temporary materials in hot render loops; cache geometry/texture and material variants. Keep runtime authorship and licensing IDs in a single manifest. Reserve high contrast for functional UV, ghost book markings, D.O.T.S. traces, salt footprints and emergency navigation.
+
+**Gameplay clarity:** no shader profile may fabricate/suppress ghost evidence, change EMF (normal 2–7), mislead the thermometer, omit actual ritual sites, ghost/door interactions or make Tier I–III tool displays unreadable. Graphics settings alter *how* information is shown, never *which host-authorized information exists*. Asymmetric ghost view may have different aesthetic treatment but the same host simulation and privacy rules.
+
+## Integration windows and acceptance gates
+
+1. **Inventory:** reconcile the nine source references and licence texts; no external binary/source additions yet. File status stays `INDEXED_REFERENCE_NOT_IMPORTED`; no claims of installed shaders.
+2. **Baseline render:** capture deterministic image of one existing purchased-pack GLB, a lit/unlit ceiling lamp, door edge and tools from the real Java renderer. Measure draw calls, frame time and color/contrast with pixel canvas disabled/enabled.
+3. **First real slice:** implement independently authored CPU pixel buffer downscale/nearest upscale and 5:5:5 4×4 Bayer dither with tests and readable native UI. Only promote these IDs after a passing Java render test and screenshots from the actual game.
+4. **Geometry slice:** CPU vertex screen snap and affine UV mode alongside correct perspective alternative. Test triangles across clipping, nearby camera, extreme FOV, door rotation, long floors, transparency and resize/fullscreen.
+5. **Environment slice:** integrate room-linked fog, light group material state, castle/van placements and outdoor billboard/cutout sorting; validate against host-owned switch states and real maps.
+6. **Quality:** stress six hunters and human ghost view; evidence tool Tier I–III displays, D.O.T.S., writing book and ritual visuals; test accessible reduced-flicker/comfort profile, colorblind and 4:3/16:9 scaling. Profile older Windows CPUs and verify no network simulation divergence.
+7. **Promotion:** register output snapshots/logs and fresh Java/Windows build evidence against `QUALITY_GATES.md`. Publish only the specific source/asset licences actually included. If a GPU renderer later replaces the CPU path, reconfirm every effect in real build; nothing auto-transitions to `INTEGRATED`.
+
+**Source/file state as of this catalogue:** PSX shader references recorded, architecture/rigging standards written; **none of the nine upstream shaders has been bundled, executed or shown in a Beckenburg playable build by this change**.
+
+
+
+---
+
+### Source: Permanent DEV-room model and asset visual-review workflow
+
+**Original repository path:** `docs/development/DEV_ASSET_ROOM_PERMANENT_REVIEW_WORKFLOW.md`.
+
+# Beckenburg — Permanent DEV Asset Room Review
+
+This is a standalone, separate development room, not a normal haunted map, not a player seat and not a multiplayer observer. Actual game meshes retain their approved original embedded textures, UV mapping and triangle geometry. Character exhibits use actual packaged directional sprite frames. There are no invented surrogate models.
+
+## Launch and inspect
+
+From installed Windows game folder:
+
+    Beckenburg.exe --dev-room
+
+From checkout after running build.cmd e2e:
+
+    dev-room.cmd
+
+The showroom is an unlimited series of six-exhibit 3D bays. The left-side searchable catalog contains all approved environment models, every equipment model and variant, all registered local imported models, all unapproved source-only GLBs present in a source checkout (marked SOURCE_ONLY and never enabled in gameplay), the ghost identities (including ancients and elders), playable hunters and all castle-support NPCs.
+
+Click a model in the catalog to teleport the developer camera to it; PgUp/PgDn change bays; 1–6 teleport to a stand; WASD and Q/E fly without collision; Shift moves faster; drag mouse to look; R rotates exhibits and F12 captures the exact active renderer PNG. The saved image goes to the Windows user profile, .beckenburg/dev-room/captures.
+
+For four focused image angles of an actual model on headless machines, use:
+
+    java -Djava.awt.headless=true -cp "build\beckenburg-game.jar" org.beckenburg.DevAssetShowroom --dev-room --capture --asset=MODEL_ID --output=build/dev-room
+
+Replace MODEL_ID with a real listed asset identifier.
+
+## Mandatory workflow for any model/character addition or change
+
+1. Register the model in the runtime's approved library and keep its original files intact. When imported through the level editor, the model automatically enters ImportedAssetLibrary, which the showroom enumerates.
+2. Verify the asset appears in the DEV ROOM without adding a second hand-maintained filename list. If it does not, fix the *owning* runtime catalog rather than hiding an issue in the showroom.
+3. Teleport to its real 3D stand. Check front/side/back texture mapping, alpha, feet, scale, material selection, geometry holes and whether it still looks like the approved source. Capture visual evidence.
+4. If the asset is bad, repair the actual importer, original-to-runtime binding, mesh transform or source model. The showroom MUST NOT cosmetically hide the defect by replacing the model, repainting textures, flattening UVs or swapping in generic cubes.
+5. Check the next GitHub Actions "Developer Asset Room - Continuous Visual Review" results. It must inventory the asset, and its real-render screenshot must be available for review. Re-review changed assets.
+
+## Automated audit meanings
+
+- LOADED: real model/sprite decoded and texture samples were readable; NOT a visual approval.
+- REVIEW_UV: UV or material samples fail; inspect screenshots/source.
+- REVIEW_TEXTURE: the sampled texture appears unusually uniform; possible issue, not proof.
+- MISSING: runtime sprite/GLB cannot load.
+- REVIEW_REGISTRATION: a source GLB is not in the approved runtime registry. It is still displayed as a SOURCE_ONLY exhibit in the development checkout, without granting any gameplay approval.
+
+The workflow enumerates the actual GlbProps.availableModels, EquipmentModelCatalog, ImportedAssetLibrary, GhostIdentity.Type and CharacterVisuals registries automatically. It also directly previews source-only GLBs in the developer checkout using the same original GLB texture sampler; installed builds show only packaged/approved assets and their separately registered local imports. It runs the packaged game's real --dev-room entrypoint, captures the actual 3D renderer in six-stand PNG contact sheets AND one close-range PNG for every individual exhibit, reports every asset and uploads them to GitHub Actions artifacts. The showroom uses a neutral enclosed studio and does not repaint the original textures.
+
+**Cosmetic and visual asset reviews are diagnostic only and must never block builds or releases.** Source compilation, launching, required game functionality, and the existing multiplayer acceptance remain functional gates. An automated decoder pass does not certify visual fidelity; a human reviews the captured geometry and source art.
+
+This room is not meant to alter campaign saves or add a hidden dev player to standard matchmaking. It exists solely as a permanent, repeatable visual QA scene.
+
+
+## Opt-in terrain topology QA in the same DEV room
+
+The DEV asset showroom now has three separate developer actions: **Topology QA on/off**,
+**Edit QA topology**, and **Reload QA topology**. These do not change the normal model
+catalog, plinth positions, imported textures, camera controls, or ordinary source asset
+screenshots. The patch appears only when enabled, in the otherwise unused right side
+aisle. Enabling it first creates (or subsequently reopens) an isolated 16-bit
+stitched-heightmap test world under
+\`%USERPROFILE%\\.beckenburg\\dev-room\\topology-qa\\\`, with two adjacent
+PNG tiles and an authored refinement example spanning their shared base-cell boundary.
+The test fixture is never added to campaign maps or the model allowlist.
+
+The colored 3D patch is made from the real 16-bit source heights and saved
+\`AdaptiveTerrainTopology\` leaves in \`SceneRenderer.drawDevAssetRoom\`.
+Different authored subdivision depths use different diagnostic tints.
+It is deliberately **not** a physical ground/collision implementation:
+the current vertex heights still come from canonical base heightmap triangle
+interpolation, and subdivision metadata alone cannot create cliffs or local
+independent sculpting detail.
+
+Use **Edit QA topology** to open the human adaptive editor, select cells and
+subquadrants, split/merge, then save. Closing that editor reloads its saved
+source data into the DEV renderer; the explicit Reload button allows manual
+readback. Use the free camera to move around the patch and F12 for an actual
+rendered screenshot (not concept art). Reopening the DEV room leaves existing
+saved QA terrain data intact. Errors in saved topology do not silently replace
+it with invented default geometry.
+
+To capture the exact dev renderer's topology patch without a GUI:
+
+    java -Djava.awt.headless=true -cp "build\\beckenburg-game.jar" org.beckenburg.DevAssetShowroom --dev-room --terrain-qa-capture --output=build/dev-room
+
+This writes \`terrain-topology-devroom-real-render.png\` and
+\`terrain-topology-devroom-report.txt\`. The existing DEV room visual-review
+CI also attempts this capture as a **diagnostic only**.
+
+Acceptance work still outstanding: height offsets on sparse shared dyadic
+vertices; cell-edge/PNG-border sculpt transactions and rollback; visually
+watertight deforming mesh, gameplay collision/LOS from the identical geometry;
+zoom-sensitive LOD and true distant actor/occlusion tests. A real renderer
+screenshot of the current *undeformed* patch is not proof of any of those.
+
+
+
+---
+
+### Source: Permanent infrastructure exhibit; terrain and rail physical adapter status
+
+**Original repository path:** `development/levels/DEV_INFRASTRUCTURE_EXHIBIT.md`.
+
+# Existing DEV Room — Infrastructure Material and Water Demonstration
+
+This is a toggleable, substantial construction exhibit inside the **existing**
+`DevAssetShowroom` side aisle, not a new gameplay map, second renderer or
+unreviewed replacement art. Default six-model bays remain unchanged.
+
+## Open and review
+
+Run `dev-room.cmd`, open the normal DEV model/character room, and click
+**Infrastructure demo on/off**. Use WASD/QE free-flight; inspect all three
+sections, then **Save actual renderer PNG** for a real source/model review.
+
+The exhibit occupies the showroom's previously unused side aisle:
+
+- **Rail sample:** genuine `TerrainRailMesh` ballast, individual sleepers and
+  two extruded steel rails using its existing profile and mesh triangles.
+- **Road sample:** physically graded lateral shoulders, crowned asphalt,
+  pavement markings, surrounding ground and a run of round wooden utility
+  poles with actual crossarms and suspended two-wire spans.
+- **River sample:** real channel bed with sloped bank geometry, exposed
+  sediment, rock GLBs, grass edges, and two true `WaterPlacement` bodies
+  joined through `WaterSnap`. Water body footprints are explicitly rendered
+  as *diagnostic geometry*, not passed off as live water shader screenshots.
+- **Vegetation and rocks:** the real packaged GLB assets such as
+  `level_tree_conifer`, `level_tree_broadleaf`,
+  `level_camp_pine_refined_a`, `level_woodland_boulder` and
+  `level_camp_siteart_rocks`; the same `SceneRenderer.imported` path used
+  by the regular DEV room. If a model is not approved for gameplay, its real
+  source-only model is loaded through the review-only importer, not granted
+  approval silently or replaced with a generic colored block.
+
+## Real water integration and snap points
+
+`TerrainRiverWaterSockets.fromRoute` turns **existing RIVER spline controls**
+into positional/oriented `WaterTerrainSnap.Socket` objects. Each socket
+inherits its location, elevation, width and local downstream tangent from the
+actual authored route. `WaterTerrainSnap.connect` invokes the installed
+`WaterSnap.find` edge/height/rotation matcher, never approximate screen-space
+snapping or duplicate fluid physics.
+
+Click **Edit river snap/water...** to open the existing portable `WaterCanvas`
+and `WaterEditorPanel`. All authored river socket controls display as orange
+crosshairs. Drag a selected water body to a socket or use **Snap selected**;
+the usual water-editor undo/redo applies. **Save** writes a real
+`dev-infrastructure-demo.water` document through `WorldWater.save`,
+readbacks through `WorldWater.load`, and updates the DEV room water footprints.
+**Export demo water...** supports explicit standalone document export.
+
+The component is portable: no hard-coded Beckenburg game types were inserted
+into the water module, and the river-to-water conversion lives in the host
+adapter. The source R16 tiles and normal gameplay level files are unaffected.
+
+## Portable authored-rail scene export
+
+The real terrain module now exposes **3D RAIL PREVIEW** and **PUBLISH SAVED
+RAIL TO SCENE** from `TerrainScenePackageEditor`. To author a durable rail:
+
+1. In the existing terrain infrastructure spline editor, save a **RAIL**
+   route in the world's `terrain-infrastructure-splines.bin` document.
+2. Open the terrain-to-scene package panel, enter its exact saved route ID,
+   and choose **3D RAIL PREVIEW** to inspect the actual ballast, twin rails,
+   and sleeper faces with the existing orbiting mesh inspector.
+3. Choose **PUBLISH SAVED RAIL TO SCENE**. This uses the same
+   `scene-package/scene.bin` manifest as terrain chunks, adds a stable
+   `terrain-rail-<routeId>` scene node, and publishes its genuine OBJ under
+   `scene-package/meshes/rail-<routeId>.obj`.
+4. **VERIFY PACKAGE** checks actual OBJ groups, triangle inventory, file
+   checksums, and saved route source fingerprints for both terrain and rails.
+   A changed saved spline flags the published mesh as STALE; rebuild the
+   route's owned node. Foreign OBJ files are never overwritten.
+
+`TerrainRailScenePackage` is part of the independently compiled Java 17
+editor library; it calls the existing `TerrainRailMesh`, `RuntimeScene`,
+`EditorMeshPipeline` and `TerrainScenePackage`, not a Beckenburg-only
+renderer or a parallel scene system. The railway scene material, game
+collision/navmesh and runtime renderer bindings are explicitly **not yet
+integrated**; scene export and real geometry inspection are distinct from
+live game-world acceptance. The source 16-bit terrain tiles are unchanged.
+
+`TerrainRailScenePackageTest` verifies genuine mesh generation, shared
+terrain-and-rail scene persistence, stale-source rejection, readback,
+re-publish identity, rollback and foreign asset protection in the standalone
+editor CI. This functional regression is separate from the DEV room's
+non-blocking subjective visual inspection.
+
+## Game-side physical scene intake (opt-in, bounded)
+
+`TerrainSceneNativePhysics.load(world,scene)` now verifies the published
+terrain and railway OBJ assets through the SAME scene package inspector and
+converts their actual triangles into the existing Beckenburg `AuthoredSitePhysics`
+HCS2 engine. It does not invent collision AABBs or a second nav/collision
+implementation. Surface normals determine the support classification:
+
+- Upward terrain and ballast faces at or below the existing HCS2 maximum
+  walking grade are support triangles.
+- Sleeper and steel rail geometry is physically solid and can occlude sight,
+  but is **not** falsely classified as a full-width walkable platform.
+- Hash mismatches, stale source fingerprints, unsupported extents and absent
+  walking support reject the native import rather than silently improvising
+  geometry. Arbitrary terrain worlds beyond the native HCS2 +/-256m envelope
+  are explicitly rejected; world-streamed physics is a separate task.
+
+The native HCS2 parser and its existing support/raycast routines remain the
+only gameplay physics calculations used by this adapter. The adapter is
+available for host integration and verified by
+`TerrainSceneNativePhysicsTest`; it is **not yet automatically bound to
+HouseMap, multiplayer world snapshots, AI navmesh or live game rendering**.
+No gameplay map acceptance is implied by a successful isolated import.
+
+Custom `USER` maps now open the working `StitchedWorldEditor` from the
+actual developer editor's **TERRAIN / ZONES** command. Their worlds are saved
+under `.beckenburg/editor/user-levels/<level>/terrain-worlds/<world>`, not in
+the shared stitched-world source directory. The portable world editor accepts
+a host-scoped root and prevents opening terrain from outside that scope.
+Existing built-in level terrain tools retain their previous paths.
+
+## Automated verification and evidence
+
+`.github/workflows/dev-room-asset-review.yml`:
+- **Release-relevant functional test:** genuine rail/road/poles/river geometry
+  exists; original tree/rock GLB files exist; water sockets derive from the
+  authored spline; snapping rejects distant or wrong-height requests; water
+  undo/redo and native module export/readback/build succeed.
+- **Advisory visual diagnostics:** launches the same real
+  `SceneRenderer.drawDevAssetRoom` at three observation points to write
+  `dev-infrastructure-actual-00.png` through `02.png` and a report,
+  alongside other DEV room screenshots. These may report broken/missing art
+  but cannot block a build solely for visual quality.
+
+`DevAssetShowroom --dev-room --infrastructure-demo-capture --output=build/dev-room`
+does not fabricate or AI-generate any in-game screenshot.
+
+### Explicit limitations
+
+This exhibit proves sample mesh construction, actual model import, real water
+module data and water socket math. It does **not** prove the full Beckenburg
+gameplay map's terrain collision/navmesh adapters or the full animated water
+shader in the DEV scene. The DEV river shows actual `WaterDocument`
+footprints using untextured diagnostic surfaces; later host water-renderer
+integration should use that same native document, not a second water system.
+
+
+
+---
+
+### Source: Active water editor integration handoff
+
+**Original repository path:** `development/levels/ACTIVE_WATER_EDITOR_HANDOFF.md`.
+
+# Active water editor integration — 25 October 2026
+
+Latest user scope: independent water module editor placement icon; live wave/transparency/texture-sheet/flow-direction/speed controls; multi-selection; reusable per-map save/export; real SQUARE/CIRCLE/OBLONG/OCTAGON/PILL footprints; draggable editor handles and edge/rim snapping. Also audit weather integration. Keep approved texture scroll rates. Continue active all-map goal; do not mark it complete.
+
+Published implementation:6574a8c (native bridge, stronger160mm waves +60mm shore run-up, real visible-depth solid-contact foam, ballistic spray,38-section actual dry hull, new silt/stone bed,48–97% opacity, WebM+MP4 player). Earlier6ef84b5 material/player revision browser-tested all4 primary WebMs playing; actual screenshot proof archived. Latest gallery has768PNG entries. Network DNS recovered after3 failures. Source/refinement/usage/handoff and defect ledger throughDEV-114 already published. All actual capture batches exit0 after graceful GPU worker shutdown. Full multiplayer CI previously blocked by stale equipment counts (fixed) then stale all-cupboard assumptions (fixed in6574); newer full CI needs inspection. Native mission remains locked; no full LAN/human/performance acceptance inferred.
+
+Current uncommitted portable editor core in water-module/src/main/java/dev/mrcalzon/water/: WaterSettings,WaterPlacement,WaterDocument,WaterTextures,WaterEditorModel,WaterEditorPanel,WaterIcon,WaterSnap. All compile independently with Java17. Existing WaterEffects now has backwards-compatible contact/spray switches; Body has backwards-compatible optional seamKey. Compatible overlapping tiles deduplicate actual ray hits; distinct-height transparent bodies still layer. Shapes are actual polygon masks; circles keep a real diameter, octagons respect stated bounds, pills support either axis. Snap uses real facing footprint segments with small optional angle alignment; curved-rim fallback uses closest boundary points and no rotation. Gesture history supports one undo for a drag+snap and exact cancellation. Tests WaterEditorModelTest and WaterShapesSnapTest both pass against build/water-editor-check.
+
+Current host wiring compiled successfully via offline Maven: WorldWater adapter loads per-map local overrides from property beckenburg.water.documents or ~/.beckenburg/editor/water, then packaged /org/beckenburg/water/<id>.water, then defaults. Current Hollow Creek default preserves exact rectangle/basin/hull and approved texture motion. Other maps default empty. Native bed/hull resolved by profile, generic flat-depth fallback supported. Optional assets:// PNG registry/import is bounded. LevelDefinition now owns an immutable WaterDocument and includes its canonical revision in asset/host handshake; old constructor preserved. CastleHubMap also owns an immutable water document. SceneRenderer now uses generic sceneWater for missions/castle with a live preview override and frame-matched module snapshot; newly added pinCompletedGpuFrame should be checked actually consumes pinned result (replacement may miss typed available declaration). Native player-water guard follows the map document. No generic closed-room water physics has been claimed.
+
+Still required: implement actual EnvironmentModuleEditor host window/viewport + map chooser, connect portable panel to WorldWater, add real draggable size/move/rotate/edge handles and snap preview, save/export/import texture UI, add entry/icon in existing DeveloperLevelEditor assets/toolbar, and an authorized standalone GPU editor launch flag for actual UI verification. Plan is read-only existing level geometry + editable water, background renderer worker with immutable camera/module snapshot, copied completed image, generation-safe map switching. Preserve original castle editor geometry controls. Need test actual UI placement/parameter changes/shapes/multi-selection/snapping/save+reload, capture and publish honest screenshots. Do not stop at the portable model only.
+
+Weather audit: RecordedWeatherTest, MissionWeatherTest, WeatherAssetsIntegrationTest all passed on actual packaged resources. Core rain/snow/fog/wind/lightning/thunder/roof coverage/scheduling/audio are implemented. Source inspection found no editor weather inspector; GPU path appendGpuFace does not apply weatherCoating (software path does); castle previously drew sky but omitted particle mesh pass, which current uncommitted sceneWater wiring added. Generic weather roof exposure still needs validation, particularly castle/new native roofs. Add a preview inspector or report exact remaining scope; do not claim GPU wet/snow coatings complete. Weather should remain host-authoritative in play; preview controls are separate.
+
+Environment: explicit unified workdir, JDK17 C:/Program Files/Java/jdk-17/bin, offline Maven C:/Users/Admin/scoop/apps/maven/current/bin/mvn.cmd (require_escalated normally succeeds). Runtime capture classpath gpu-client/target/BeckenburgGPU.jar;build/camp-detail-check/classes;build/unification/classes, jar first. Prefix every PowerShell -D argument with quotes (unquoted -Djava.awt.headless=true becomes bad mainclass). Private cache contains all946models and resources; source runtime assets committed. Root build scripts currently compile water/*.java, so portable Swing classes stay same package. Need package saved .water profiles/imported textures in build scripts/GPU pom. Read/write UTF-8 explicitly; preserve upstream shader bytes (.gitattributes -text). GUI tests must override water documents/assets roots into workspace build/, not mutate user .beckenburg. No subagents authorized.
+
+Preserve unrelated files: evidence-book-pages.json,hollow-creek-fitted-fit.json,world-lore.json modified; blackpine-story.json,blackpine-terrain.json,foliage-variation.json,scenery-instancing.json untracked. Exclude them from commits. Sparse checkout: new water-module files require git add --sparse. Fetch/ancestor-check before authorized git push origin HEAD:main; never force. Continue pending gallery verifier session59011 only if still running; get final output and preserve delivery proof. Browser tool blocks local file pages; use published HTTPS page, not a local-server workaround. CUA tab claims can expire on user steering; reacquire/create same IAB as needed. Last successful WebM browser tab4 was paused after proof, may be stale.
+
+
+CHECKPOINT UPDATE: EnvironmentModuleEditor, actual WaterGamePreview and portable WaterCanvas now implemented. Offline GPU and standalone SDK Maven packages pass. Actual OpenGL UI copy, pill shape,250→201m resize,30degree rotation, save, four undos and restore verified. Isolated save path build/water-editor-live; screenshot live-handles.png labelled Editor UI verification. All water/editor/shape tests,969HollowCreekroutes/939sweeps and three weather suites pass. Actual HOUSE/FARMHOUSE/SCHOOL host/client test passes after sandbox socket denial resolved via escalation. New sound-volume request is next; GPU ground coating and per-roof audits remain open. Full Hollow Creek mission/LAN/performance acceptance remains open; all-map goal stays active.
+
+2026-10-26 pending sound checkpoint: SoundVolume, SoundDocument, SoundVolumeAudio, SoundVolumeEditor and X-ray SoundVolumeGizmos compile; SoundVolumeTest passes attenuation, stereo, power, one-shots, mute, atomic save and immutable handshake. Actual OpenGL window displayed seeded Hollow Creek bounds; user stopped Computer Use before completing Sound volumes tab review. UI review, publication evidence and listening acceptance remain open. Latest user priority is all-map new lighting/camera/texture compatibility audit; preserve these sound changes while reconciling main.
+
+
+
+---
+
+### Source: Agentic observation, manipulation and verification implementation contract
+
+**Original repository path:** `docs/development/AGENTIC_EDITOR_ACCESS.md`.
+
+# Agentic access to the Beckenburg editor — implementation contract
+
+**Owner direction:** 2026-10-31. **Repository:** `mrcalzon02/The-Beckenburg-Project`, `main`.  
+**Inspected source baseline:** `3f42f2ce2110c084e34525f975a3bc8ce5a0e98f`.  
+**Document status:** specification and execution plan; NOT a claim that machine control, headless operation, or an MCP connection is working.
+**Owner superseding sequence:** complete and validate human-operated terrain, loading-zone, stitched-heightmap and terrain-LOD modules **before** any corresponding agentic controls. See [`TERRAIN_WORLD_SYSTEM_PLAN.md`](TERRAIN_WORLD_SYSTEM_PLAN.md), gates T0–T9. This document covers the later agent access work, not the current first build gate.  
+**Machine task ledger:** [`AGENTIC_EDITOR_ACCESS_TASKS.json`](AGENTIC_EDITOR_ACCESS_TASKS.json).
+
+## 1. User outcome and scope
+
+An authorized agent must eventually be able to carry out: **"Open Castle Beckenburg; inspect the second floor; find and fix misplaced geometry; furnish the room; check collisions; playtest; show me an actual rendered result."** It must perform operations on the *same* editor/game scene that human tools use, not manufacture a second approximation or merely commit scene-looking code.
+
+Deliver the capabilities incrementally, each independently demonstrated before expanding:
+
+1. **Observation** — live scene identity, hierarchy, components, assets, rendered view, collision/navigation and nonblocking diagnostics.
+2. **Manipulation** — structured, bounded and reversible edits through the exact editor/runtime command boundary.
+3. **Verification** — post-edit readback, runtime render/playtest, scene validation, stored evidence and honest success/failure results.
+4. **Headless access** — scripts and CLI can carry out those capabilities without an open Swing window, while optionally attaching to one.
+5. **MCP adapter** — an authorized agent can discover and invoke the same capabilities through an MCP server, without UI coordinate automation.
+
+"One at a time" means no milestone is described as delivered based solely on a document or on components built for a later milestone. An early observation bridge can be useful without exposing mutations. No requirement to migrate other game repositories now.
+
+## 2. Existing code and current limitations
+
+Source inspection establishes the following **existing**, not hypothetical, components:
+
+| Source | Verified behavior | Limit |
+| --- | --- | --- |
+| `src/main/java/org/beckenburg/DeveloperLevelEditor.java` | Swing editor displaying `SceneRenderer.drawCastle`; uses the Castle scene, hierarchy, inspector and ~90 ms viewport timer | No verified external machine command channel; Castle viewport is not a general-purpose headless backend |
+| `src/main/java/org/beckenburg/CastleLevelEdits.java` | Persistent real Castle scene; snapshots and restore; props, lamps, architectural surfaces, stations, doors, spawn, paint, blocked tiles; revision counter | Castle-specific persistence; unsaved edits must not be mistaken for saved document |
+| `src/main/java/org/beckenburg/CastleEditorProject.java` | `EditorProject` adapter exposes Castle hierarchy, asset catalog, snapshots and save | Flat representation, not yet full runtime scene/physics/typed inspector parity |
+| `src/main/java/org/beckenburg/editor/RuntimeScene.java` and `InMemoryRuntimeScene.java` | Portable node IDs, parent/layer, transform/components, replace/remove and snapshots | Portable contract exists; it is not yet an authoritative adapter for all live Beckenburg scene kinds |
+| `src/main/java/org/beckenburg/editor/EditorHistory.java` | Bounded transactional undo/redo; failing command restores before-state | Must become part of the authoritative machine-edit operation path, rather than a separate history |
+| `src/main/java/org/beckenburg/CastleEditorAudit.java` | Diagnostics for duplicate IDs, embedded prop/light centres, blocked spawn using actual Castle collision | Advisory, limited sampling; not exhaustive mesh-overlap/physics/navigation proof |
+| `tools/build-editor-kit.sh` and `tools/build-editor-kit.cmd` | Package the portable Java 17 editor classes | A distributable JAR does not imply a connected agent, live machine access or an operational MCP adapter |
+
+Read and obey existing architecture/quality contracts: `LEVEL_EDITOR_OVERHAUL_AUDIT.md`, `MODULAR_LEVEL_EDITOR.md`, `PSX_RUNTIME_AND_EDITOR_SUITE_ARCHITECTURE.md`, `../wiki/psx-editor-engineering-guide.md`, and repository `AGENTS.md`. Preserve active recovery gates and existing game/multiplayer/updater behavior. A previously prepared but **uncommitted Git blob** is not a feature and must not be counted as delivered.
+
+## 3. Architectural boundary — one authoritative scene
+
+```text
+  human Swing editor     headless CLI       agent / MCP client
+         |                    |                   |
+         +--------------------+-------------------+
+                              |
+              permissioned Editor Agent Service
+      observe | transact | diagnose | verify | capture
+                              |
+        same authoritative editor/runtime scene model
+              |                 |                |
+          renderer         physics/nav       document IO
+```
+
+- **Game/runtime is authoritative.** No parallel "agent scene", preview-only geometry or independent physics. Existing Castle data remains a specific adapter; portable abstractions do not import Castle classes or Swing.
+- **Transport is an adapter.** An in-process Java service exposes operations first; loopback HTTP/JSON, command line and MCP wrap that service rather than each implementing custom scene mutations.
+- **Stable IDs and revisions.** Each operation addresses `sceneId`, `objectId`, and relevant expected revision. Never resolve a mutation by ambiguous label or approximate screen position alone.
+- **Thread correctness.** Swing changes/UI capture execute on EDT as appropriate; runtime scene commits use one serialized transaction boundary. Never read half-applied edits.
+- **Persistence is separate from mutation.** In-memory editing does not silently overwrite files; save uses existing authoritative persistence with atomic replacement, backup/recovery, version/readback checks.
+- **Environment systems** (lighting, water, weather, audio, nav, ghost AI) remain authoritative in their own modules. Agent tooling discovers adapters and cannot silently invent a substitute system.
+- **Network authority stays with gameplay host.** Editor playtests are isolated and must not mutate a real multiplayer session.
+
+## 4. Machine protocol v1
+
+Use a versioned envelope, independent of HTTP/MCP wiring.
+
+**Read request:** `operation`, `sceneId`, `requestId`, optional `objectId`, filters/limits and viewport settings.  
+**Write request (future phase):** additionally `expectedRevision`, typed arguments, explicit permission scope and unique idempotency key.  
+**Response:** `schemaVersion`, `requestId`, `sceneId`, `revisionBefore`, `revisionAfter`, `ok`, `result` or `error`, `verified`, `evidence`.
+
+Illustrative response (schema proposal, **not an observed result**):
+
+```json
+{
+  "schemaVersion": "beckenburg.agent/v1",
+  "requestId": "example-001",
+  "sceneId": "beckenburg/castle",
+  "revisionBefore": 42,
+  "revisionAfter": 42,
+  "ok": false,
+  "verified": false,
+  "error": {
+    "code": "STALE_REVISION",
+    "message": "Scene changed after the agent's inspection.",
+    "retryable": true
+  },
+  "evidence": []
+}
+```
+
+The response schema must distinguish **accepted**, **committed**, **saved**, **verified**, and **playtested**. An accepted command is not a verified scene edit. Captures are labeled genuine in-game/editor renders only when generated from the actual renderer with source revision and capture metadata. Never substitute artwork.
+
+## 5. Failure contract — errors are expected, safe and inspectable
+
+The requirement is **recoverability and truthful reporting**, not pretending there will be no errors.
+
+1. Validate authentication, capability, object ID, asset reference, transform bounds, collision rules and expected revision **before** a write.
+2. Capture a before-state and execute the entire logical edit as **one transaction**. On exception or failed validation, roll back to exactly that state and return a structured failure; do not leave half a room altered.
+3. A command only returns `verified=true` after re-querying the same authoritative scene and comparing affected IDs, transforms, components and expected revision. A save only returns `saved=true` after a durable filesystem readback. Visual/playtest verification must be separately identified.
+4. Use bounded timeouts, bounded queues, response/payload caps, cancellation, lifecycle cleanup and idempotency keys. Retrying the same edit must not duplicate props or lights.
+5. Reject stale revisions before mutation; report current revision. If two agents compete, serialize writes and report conflicts, never silently overwrite.
+6. Use fixed error classes: `UNAUTHORIZED`, `READ_ONLY`, `INVALID_ARGUMENT`, `NOT_FOUND`, `STALE_REVISION`, `ASSET_MISSING`, `OUT_OF_BOUNDS`, `COLLISION`, `UNSUPPORTED_CAPABILITY`, `TIMEOUT`, `SAVE_FAILED`, `RENDER_UNAVAILABLE`, `INTERNAL`. Each includes `code`, user-safe `message`, `retryable` and request ID. Never reveal tokens, local private paths or stack traces to an untrusted client.
+7. **Fail closed** when readback is unavailable: return "unverified", not "success." Store redacted diagnostic logs and attach source revision / test artifacts.
+8. Preserve autosave/recovery and older file versions; never destroy known-good scene data because a machine command failed. Every edit must remain undoable via the same human editor history.
+9. Diagnostic geometry/art/balance warnings are **nonblocking**, except demonstrably nonfunctional build/launch/essential gameplay or required multiplayer/update behavior according to owner release policy.
+
+**Required negative tests:** invalid mesh; invalid coordinates/NaN; stale revision; nonexistent ID; duplicate idempotency key; partial batch failure; undo/redo across human and agent actions; simulated disk-full save; renderer unavailable; terminated session; unauthorized request; TCP remote bind attempt; malformed/oversized command; two concurrent conflicting writes. Each must prove actual before/after state and correct error classification.
+
+## 6. Execution milestones, in dependency order
+
+### M0 — preparation and compatibility baseline (not a new feature)
+
+Inspect current `main` SHA, relevant existing CI and recovery ledger. Verify the existing Castle editor launch, scene audit, portable runtime scene and history tests. Record exact pass/fail state, do not infer installed Windows acceptance from a Linux simulation. Preserve main branch; no destructive rewrites, no forced pushes.
+
+**Exit:** exact SHA, reproducible test commands, current failure list and a no-regression check.
+
+### M1 — OBSERVATION: live read-only access (first implementation milestone)
+
+- Add a bounded, opt-in read-only observation service directly backed by the active Castle/editor scene: `capabilities`, `scene`, `objects`, `object/{id}`, `assets`, `diagnostics`, `viewport capture`. Provide stable identifiers, transforms, materials, lighting attributes, navigation metadata, revision, editor-versus-saved state and available capabilities.
+- Snapshot scene data coherently; include unsaved in-memory edits; acquire viewport captures from the actual renderer, never a separately re-created mock scene. Track image dimensions, revision and render status.
+- Provide an authorization-protected local machine endpoint (suggest loopback-only HTTP/JSON). **Disabled by default**, bind `127.0.0.1` only, use random per-session bearer token, do not expose token in URL, log or source control, reject non-GET methods during this phase. Enforce request/response limits. Local bridge availability is not the same thing as this ChatGPT session being connected.
+- Keep the generic service interface independent of Swing; attach the Castle renderer and game-specific data through an adapter.
+- Reuse `CastleEditorAudit`; label findings as advisory, incomplete centre probes, not proof of zero intersections.
+
+**Acceptance:** start actual editor, query its unsaved scene, move a prop manually, query again and observe same stable ID with changed transform/revision; compare returned object catalog with editor hierarchy; obtain actual rendered viewport PNG; prove no write endpoint or unauthorized access; close editor and prove listener shuts down. Test launch and running scene on the supported Windows runtime. Log exact SHA, request-response evidence and screenshots.
+
+### M2 — MANIPULATION: transactional structured commands
+
+Implement first: `select`, `setTransform`, `placeAsset`, `setProperty`, `delete`, `duplicate`, `group/parent` where supported, `undo`, `redo`, `save`, `restore`. Only publish operations backed by real supported runtime/editor capabilities; report unsupported ones explicitly. Add typed commands for doors, lights, surfaces, spawns, nav and scene modules incrementally. Preserve IDs and asset pivots, apply collision-aware placement and use one transaction per logical edit with revision preconditions. Expose batch edits with all-or-nothing rollback.
+
+**Acceptance:** one agent-driven Castle room furnish/repair task; exact readback, repeat/idempotency and undo/redo proof; simulated mid-batch error restores every prior object; save/reload with IDs and components identical. Both agent and human edit the *same* scene and same history.
+
+### M3 — VERIFICATION: inspect → edit → prove
+
+Expose explicit `audit`, `captureViewport`, `compareRevision`, `validateReferences`, `inspectCollision`, `runPlaytest`, `endPlaytestAndRestore`, and structured evidence manifest; implement only when corresponding real runtime adapters exist. The actual game renderer, navigation and collision must be used. Playtest snapshots unsaved work, runs actual gameplay in an isolated session and restores editing state without losing changes. Record frame timing where measurable; label absent metrics unavailable rather than inventing them.
+
+**Acceptance:** actual Castle, first House, and basement scenario regression; prop-wall collision warnings, missing/unreachable stair opening, and door-opening performance diagnostics; screenshot from actual renderer, successful and failed cases; one-click equivalent playtest and exact unsaved-state return. Only claim fixture coverage for environments with a working editor/runtime adapter.
+
+### M4 — HEADLESS automation and scripting
+
+Build a CLI/client that connects to the same service or instantiates the runtime safely in headless mode; supports inspection, deterministic edit batches, dry-run, validate, rollback, and machine-readable output. Provide scripts for a small unrelated Java 17 synthetic scene to prove absence of Castle/Swing dependence. Headless captures need an actual supported renderer; do not fabricate a screenshot if none is available.
+
+**Acceptance:** scripted project with no window, exit codes matching structured results, reproducible scene serialization, failed edit rollback, and match of headless vs GUI scene records.
+
+### M5 — MCP agent adapter and supervised end-to-end task
+
+Expose tool/resource names mapping **one-to-one** to the same service (for example `list_scenes`, `inspect_scene`, `inspect_object`, `list_assets`, `capture_viewport`, `run_diagnostics`, `apply_scene_edit`, `undo_scene_edit`, `verify_scene_edit`). Publish discoverable capability scopes, schemas and concrete errors. Local MCP uses authenticated explicit opt-in; never silently open ports or grant arbitrary file/shell access. A connected agent can perform a bounded room repair after observation and receive confirmed real-scene readback.
+
+**Acceptance:** authorized agent connects to *running installed editor* via the intended client, lists objects, performs a reversible real edit, saves after explicit scope authorization, observes an actual runtime capture and audit, and reports what was and wasn't proved. Reject unauthorized client and cleanly disconnect; no player multiplayer exposure.
+
+### M6 — portability and optional expansion
+
+Once M1–M5 have evidence, generalize adapters across other game scenes and modules and prove a small independent game adapter. Consider standalone extraction only after second-project proof; avoid any speculative cross-repo migration.
+
+## 7. Task-level delivery evidence
+
+For **every** task store a ledger entry with:
+
+- Task ID; capability; exact source files and affected runtime subsystem; dependencies; current status.
+- Pre-change SHA and final pushed SHA; specific acceptance test(s) and results, including failures.
+- Test class / workflow run URL and logs; real data and renderer captures labeled with provenance.
+- Verified remote readback of committed content. A created blob or successful API write is **not** remote branch verification.
+- What remains unverified, limitations, security behavior, next executable task.
+
+Status vocabulary: `planned`, `in_progress`, `implemented_unverified`, `tested`, `blocked`. Do not use `tested` without evidence of source tests, and do not conflate source tests with live installed acceptance. Only objective essential-function breakage gates shipping; visual and editorial findings remain advisory.
+
+## 8. First next task
+
+**Prerequisite first: terrain-world gates T0–T8** in [`TERRAIN_WORLD_SYSTEM_PLAN.md`](TERRAIN_WORLD_SYSTEM_PLAN.md). Finish real human authoring, original terrain collision/rendering integration, stitched images, LOD/scope-safe visibility, streaming and validated loading transitions before making those features agent-controllable. The original M1-01 read-only in-process observation service is retained as a later task; M1–M5 remain planned. A portable tile module does not qualify as complete world rendering or agent access.
+
+## 9. Current checkpoint
+
+- **2026-10-31 module-first update:** Human-operated terrain, loading zones and stitched open-world terrain precede agent control. The initial finite-grid terrain/zone source and Blackpine height offsets have been committed; the portable stitched PNG class and focused test workflow are committed but not marked tested until actual Java 17 CI evidence exists. LOD, physics/render integration, scope-safe visibility and loading-zone gameplay transitions remain planned.
+
+- **2026-10-31:** documentation and machine task ledger are being authored from inspected `main` baseline `3f42f2ce`. No completed agent-driven editing, Windows live-client connection, headless command execution or MCP integration is claimed by this checkpoint.
+- Previous source inspection confirmed the shared scene, snapshots, current Castle-only audit and portable core. A Git object/blob not included in `main` is **not** a delivered implementation. Do not promote it as such.
+
+
+
+---
+
+## Part VI — Machine-readable source ledgers and update workflow
+
+The following JSON contracts remain separate machine-readable canonical inputs. Their existence and source paths are recorded here rather than dumping raw JSON into a reader-facing requirements document: 
+
+- \`docs/editor/requirements/DOCUMENT_CHAIN.json\` — seven-source chain, original-PDF checksums/bytes and 13-stage dependency ledger.
+- \`docs/development/psx-reference-ingestion-2026-10-30.json\` — nine PSX source filenames, provenance, deduplication, adoption, SHA-256 and engine-specific decisions.
+- \`docs/development/psx-editor-reference.json\` — structured PSX editor source decisions.
+- \`docs/development/psx-editor-manipulation-contract.json\` — menu/save, campaign and billboard structural contract.
+- \`docs/development/psx-npc-ai-authoring.json\` — NPC/AI authoring contract.
+- \`docs/development/AGENTIC_EDITOR_ACCESS_TASKS.json\` — agent observation, manipulation, verification, headless and MCP milestones.
+
+### Rules for maintaining this single master document
+
+1. Original owner recommendations are not silently discarded, rewritten as an already-working implementation, or confused with historical test status.
+2. When a new source is supplied, register filename, provenance, content coverage and concrete integration dependencies; append the complete available text or the corresponding source-based approved engineering guide in its own labeled appendix.
+3. Increment the master reference version and record the linked source SHA and current CI state. Confirm remote main readback after writing.
+4. Preserve source fidelity: formulas, figures, code or screenshots that are missing from extracted text must be marked as limitations, not guessed.
+5. Keep the separate original guide files for software maintainers and clean Git diffs; this compiled master is a reading and discovery document, not a substitute for subsystem ownership.
+6. Do not block builds for subjective appearance, balance or design preferences. Objective broken build, launch, required gameplay/persistence/multiplayer/update may block.
+
+**End of consolidated master source text.**
