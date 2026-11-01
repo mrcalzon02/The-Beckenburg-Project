@@ -27,9 +27,10 @@ public final class TerrainBrushProfileTest {
             var profile=new TerrainBrushProfile.Settings(5,8,0,.1,1,2,0,
                 -Double.MAX_VALUE,Double.MAX_VALUE,90,
                 TerrainLayerStack.FlattenLimit.BOTH);
+            double whiteBefore=terrain.height(16,17);
             terrain.brushPrecision(TerrainLayerStack.Brush.RAISE,16,16,profile,stripe);
             terrain.finishStroke();
-            check(terrain.height(16,17)>baseline+0,"Masked brush modifies white region");
+            check(terrain.height(16,17)>whiteBefore+0.1,"Masked brush modifies white region");
             check(terrain.undo(),"Masked dab is undoable");
             near(terrain.height(16,16),baseline,"Mask undo retains original sampled height");
             check(terrain.redo(),"Masked dab is redoable");
