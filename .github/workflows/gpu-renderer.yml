@@ -18,6 +18,9 @@ on:
       - 'src/main/java/org/beckenburg/FixtureLighting.java'
       - 'src/test/java/org/beckenburg/VanHouseViewportProfileTest.java'
       - 'src/test/java/org/beckenburg/DynamicGeometryRetentionTest.java'
+      - 'src/test/java/org/beckenburg/PreparedLightWriteTest.java'
+      - 'src/test/java/org/beckenburg/PreparedLightBatchParityTest.java'
+      - 'src/test/java/org/beckenburg/WorldResidencyTest.java'
       - '.github/workflows/gpu-renderer.yml'
   workflow_dispatch:
 permissions:
