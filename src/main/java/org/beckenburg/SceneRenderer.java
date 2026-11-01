@@ -1866,6 +1866,17 @@ public final class SceneRenderer {
     private record ShellGpuKey(int chunk,int material){}
     private record ResidentShell(int lod,long lightVersion,long id,long revision,
             float[] vertices){}
+    /** A resident VBO revision describes its exact eight-float vertex payload,
+     * not the number of lighting invalidation passes. Compare raw bits so
+     * signed zero and even unusual float payloads never mask a real change. */
+    static boolean sameResidentVertices(float[] previous,float[] candidate){
+        if(previous==candidate)return true;
+        if(previous.length!=candidate.length)return false;
+        for(int i=0;i<previous.length;i++)
+            if(Float.floatToRawIntBits(previous[i])!=Float.floatToRawIntBits(candidate[i]))
+                return false;
+        return true;
+    }
     private final java.util.Map<ShellGpuKey,ResidentShell> residentShell=new java.util.HashMap<>();
     private long shellResidentBuilds,shellResidentHits,shellResidentBytes;
     public record ShellResidentStats(long builds,long hits,long bytes,int batches){}
@@ -2002,6 +2013,16 @@ public final class SceneRenderer {
                     ShellGpuKey key=new ShellGpuKey(chunkIndex,built.getKey());
                     ResidentShell old=residentShell.get(key);
                     float[] vertices=built.getValue().complete();
+                    if(old!=null&&sameResidentVertices(old.vertices(),vertices)){
+                        // A nearby door may invalidate a large House-shell
+                        // region without changing this material's actual RGB.
+                        // Keep its immutable VBO and revision; still advance
+                        // the lighting version to avoid rechecking every frame.
+                        residentShell.put(key,new ResidentShell(lod,lightVersion,
+                            old.id(),old.revision(),old.vertices()));
+                        shellResidentHits++;
+                        continue;
+                    }
                     if(old!=null)shellResidentBytes-=(long)old.vertices().length*Float.BYTES;
                     ResidentShell replacement=new ResidentShell(lod,lightVersion,
                         old==null?GpuWorldRenderer.nextId():old.id(),
@@ -2908,12 +2929,20 @@ public final class SceneRenderer {
             }
             for(var built:batches.entrySet()){
                 var old=chunk.batches.get(built.getKey());float[] vertices=built.getValue().complete();
-                chunk.batches.put(built.getKey(),new ResidentShell(lod,version,
-                    old==null?GpuWorldRenderer.nextId():old.id(),old==null?1:old.revision()+1,vertices));
+                if(old!=null&&sameResidentVertices(old.vertices(),vertices)){
+                    // Visibility was conservatively re-probed, but identical
+                    // final vertices do not warrant a driver VBO upload.
+                    chunk.batches.put(built.getKey(),new ResidentShell(lod,version,
+                        old.id(),old.revision(),old.vertices()));
+                    residentWorldHits++;
+                }else{
+                    chunk.batches.put(built.getKey(),new ResidentShell(lod,version,
+                        old==null?GpuWorldRenderer.nextId():old.id(),old==null?1:old.revision()+1,vertices));
+                    residentWorldBuilds++;
+                }
                 chunk.lights.put(built.getKey(),List.copyOf(built.getValue().lights));
                 if(lightDependenciesEnabled())chunk.dependencies.put(built.getKey(),fixtureLighting.dependencies(
                     built.getValue().lights.stream().map(WorldVertexLight::probe).toList()));
-                residentWorldBuilds++;
             }
             chunk.lod=lod;chunk.lightVersion=version;chunk.occluderVersion=localOccluder;residentWorldBytes+=after-before;
         }else residentWorldHits+=chunk.batches.size();
