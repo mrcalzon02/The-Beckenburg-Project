@@ -524,15 +524,82 @@ public final class DevAssetShowroom implements AutoCloseable {
             StandardCharsets.UTF_8);
         System.out.println("Rendered actual DEV ROOM terrain QA PNG: "+image);
     }
+    /**
+     * Real screenshots from the EXISTING showroom renderer, using the same
+     * import pipeline as the six-object asset bays. Not a separate level and
+     * not an invented water shader. Exported WaterDocument is the same native
+     * module consumed by WorldWater.
+     */
+    public static void captureInfrastructure(Path folder)throws IOException {
+        Files.createDirectories(folder);
+        var demo=DevInfrastructureShowcase.create();
+        if(demo.railFaces()<=0||demo.roadFaces()<=0||demo.poleFaces()<=0||
+           demo.riverFaces()<=0||demo.waterFaces()<=0||demo.props().size()<5)
+            throw new IOException("DEV infrastructure scene is missing real geometry");
+        Path nativeWater=demo.exportWater(folder.resolve("dev-infrastructure-demo.water"));
+        // Instantiate through the actual game adapter; failure is reported,
+        // not hidden behind a painted water rectangle.
+        try{
+            var module=WorldWater.build(demo.water());
+            if(module.bodies().size()!=2)
+                throw new IOException("Actual water module did not contain both snapped bodies");
+        }catch(RuntimeException invalid){
+            throw new IOException("DEV river does not build in actual water module",invalid);
+        }
+        SceneRenderer scene=new SceneRenderer();
+        scene.setRenderSize(640,400);scene.lamp=false;
+        double[][] shots={
+            {8.15,2.0,.4,0,-.22},
+            {8.1,1.8,7.25,0,-.25},
+            {8.1,2.0,12.15,0,-.27}
+        };
+        int totalChanged=0;
+        for(int i=0;i<shots.length;i++){
+            double[] view=shots[i];
+            scene.x=view[0];scene.eyeHeight=view[1];scene.z=view[2];
+            scene.yaw=view[3];scene.pitch=view[4];
+            scene.drawDevAssetRoom(List.of(),i*.02,0);
+            int[] empty=scene.pixels().clone();
+            scene.drawDevAssetRoom(List.of(),i*.02,0,demo.triangles(),demo.props());
+            int altered=0;int[] actual=scene.pixels();
+            for(int pixel=0;pixel<actual.length;pixel++)
+                if(actual[pixel]!=empty[pixel])altered++;
+            totalChanged+=altered;
+            Path file=folder.resolve(String.format("dev-infrastructure-actual-%02d.png",i));
+            if(!ImageIO.write(scene.image(),"png",file.toFile()))
+                throw new IOException("Actual renderer PNG encoding unavailable");
+        }
+        if(totalChanged<100)
+            throw new IOException("Infrastructure geometry invisible in developer renderer: "+
+                totalChanged+" changed pixels");
+        Files.writeString(folder.resolve("dev-infrastructure-report.txt"),
+            "level=EXISTING DEV ASSET SHOWROOM\\n"+
+            "renderer=SceneRenderer.drawDevAssetRoom\\n"+
+            "railFaces="+demo.railFaces()+"\\n"+
+            "roadFaces="+demo.roadFaces()+"\\n"+
+            "telephonePoleAndWireFaces="+demo.poleFaces()+"\\n"+
+            "riverBankFaces="+demo.riverFaces()+"\\n"+
+            "waterFootprintFaces="+demo.waterFaces()+"\\n"+
+            "importedOriginalGLBProps="+demo.props().size()+"\\n"+
+            "realWaterModuleDocument="+nativeWater+"\\n"+
+            "snapModule=WaterTerrainSnap+WaterSnap\\n"+
+            "actualChangedPixels="+totalChanged+"\\n"+
+            "note=Water polygons are a footprint diagnostic, not the game's animated water shader\\n"+
+            "note=Gameplay world physics/nav adapters not claimed by this DEV exhibit\\n",
+            StandardCharsets.UTF_8);
+        System.out.println("Captured DEV infrastructure via actual SceneRenderer: "+
+            totalChanged+" changed pixels in "+folder);
+    }
     private static String csv(String value){return "\""+value.replace("\"","\"\"").replace("\n"," ")+"\"";}
     public static void main(String[] args)throws Exception{
-        boolean selected=false,capture=false,terrainCapture=false;
+        boolean selected=false,capture=false,terrainCapture=false,infrastructureCapture=false;
         int limit=0;Path output=Path.of("build","dev-room");
         String focus=null;
         for(String arg:args){
             if(arg.equals("--dev-room"))selected=true;
             else if(arg.equals("--capture"))capture=true;
             else if(arg.equals("--terrain-qa-capture"))terrainCapture=true;
+            else if(arg.equals("--infrastructure-demo-capture"))infrastructureCapture=true;
             else if(arg.startsWith("--limit="))limit=Integer.parseInt(arg.substring(8));
             else if(arg.startsWith("--output="))output=Path.of(arg.substring(9));
             else if(arg.startsWith("--asset="))focus=arg.substring(8);
@@ -540,8 +607,9 @@ public final class DevAssetShowroom implements AutoCloseable {
         }
         if(!selected)throw new IllegalArgumentException("Explicit --dev-room required");
         if(limit<0||limit>10000)throw new IllegalArgumentException("Invalid review limit");
-        if(capture&&terrainCapture)
-            throw new IllegalArgumentException("Choose either model capture or topology QA capture");
+        if((capture?1:0)+(terrainCapture?1:0)+(infrastructureCapture?1:0)>1)
+            throw new IllegalArgumentException("Choose only one DEV room capture mode");
+        if(infrastructureCapture){captureInfrastructure(output);return;}
         if(terrainCapture){captureTopology(output);return;}
         if(capture){capture(output,limit,focus);return;}
         if(GraphicsEnvironment.isHeadless())
