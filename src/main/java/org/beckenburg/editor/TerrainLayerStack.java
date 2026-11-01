@@ -46,7 +46,42 @@ public final class TerrainLayerStack {
         final float[] delta;
         Layer(String name,int pixels){this.name=name;delta=new float[pixels];}
     }
-    private record Change(Layer layer,int[] indices,float[] before,float[] after) {}
+    /** Each edit contains only the vertices that actually changed. */
+    private interface Change { void apply(boolean forward); }
+    private record HeightChange(Layer layer,int[] indices,float[] before,float[] after)
+            implements Change {
+        public void apply(boolean forward){
+            float[] values=forward?after:before;
+            for(int i=0;i<indices.length;i++)layer.delta[indices[i]]=values[i];
+        }
+    }
+    private record MaterialChange(byte[] target,int[] indices,byte[] before,byte[] after)
+            implements Change {
+        public void apply(boolean forward){
+            byte[] values=forward?after:before;
+            for(int i=0;i<indices.length;i++)target[indices[i]]=values[i];
+        }
+    }
+    private record FreezeChange(BitSet target,int[] indices,boolean[] before,
+                                boolean[] after) implements Change {
+        public void apply(boolean forward){
+            boolean[] values=forward?after:before;
+            for(int i=0;i<indices.length;i++)target.set(indices[i],values[i]);
+        }
+    }
+    private record LayerConfigChange(Layer layer,boolean wasEnabled,float wasOpacity,
+                                     boolean enabled,float opacity) implements Change {
+        public void apply(boolean forward){
+            layer.enabled=forward?enabled:wasEnabled;
+            layer.opacity=forward?opacity:wasOpacity;
+        }
+    }
+    private record CompoundChange(List<Change> changes) implements Change {
+        public void apply(boolean forward){
+            if(forward)for(Change c:changes)c.apply(true);
+            else for(int i=changes.size()-1;i>=0;i--)changes.get(i).apply(false);
+        }
+    }
     private final StitchedHeightmapWorld world;
     private final int tx,tz,n,side,pixels;
     private final double step,min,max;
@@ -57,6 +92,8 @@ public final class TerrainLayerStack {
     private final BitSet frozen;
     private final Deque<Change> undo=new ArrayDeque<>(),redo=new ArrayDeque<>();
     private final TreeMap<Integer,Float> pending=new TreeMap<>();
+    private final TreeMap<Integer,Byte> pendingMaterials=new TreeMap<>();
+    private final TreeMap<Integer,Boolean> pendingFrozen=new TreeMap<>();
     private int active;
     private boolean dirty;
 
@@ -107,7 +144,11 @@ public final class TerrainLayerStack {
         finishStroke();
         if(!Double.isFinite(opacity)||opacity<0||opacity>1)
             throw new IllegalArgumentException("Opacity must be between 0 and 1");
-        Layer l=layer(i);l.enabled=enabled;l.opacity=(float)opacity;dirty=true;
+        Layer l=layer(i);
+        float desired=(float)opacity;
+        if(l.enabled==enabled&&l.opacity==desired)return;
+        Change change=new LayerConfigChange(l,l.enabled,l.opacity,enabled,desired);
+        change.apply(true);undo.push(change);redo.clear();dirty=true;
     }
     private double sourceMetres(int i){return min+(max-min)*source[i]/65535.0;}
     private double composed(int i){
@@ -124,28 +165,43 @@ public final class TerrainLayerStack {
     private boolean editable(int x,int z){
         return x>0&&z>0&&x<n&&z<n&&!frozen.get(id(x,z));
     }
+    private void writeFrozen(int i,boolean value){
+        if(frozen.get(i)==value)return;
+        pendingFrozen.putIfAbsent(i,frozen.get(i));
+        frozen.set(i,value);dirty=true;
+    }
+    private void writeMaterial(int i,byte value){
+        if(material[i]==value)return;
+        pendingMaterials.putIfAbsent(i,material[i]);
+        material[i]=value;dirty=true;
+    }
     public void freezeRect(int x0,int z0,int x1,int z1,boolean freeze){
         finishStroke();
         for(int z=Math.max(0,z0);z<=Math.min(n,z1);z++)
             for(int x=Math.max(0,x0);x<=Math.min(n,x1);x++)
-                frozen.set(id(x,z),freeze);
-        dirty=true;
+                writeFrozen(id(x,z),freeze);
+        finishStroke();
     }
     public void lockMaterial(Material type,boolean lock){
+        Objects.requireNonNull(type);
         finishStroke();
-        for(int i=0;i<pixels;i++)if((material[i]&255)==type.ordinal())frozen.set(i,lock);
-        dirty=true;
+        for(int i=0;i<pixels;i++)
+            if((material[i]&255)==type.ordinal())writeFrozen(i,lock);
+        finishStroke();
     }
+    /** Paint dabs accumulate until the caller finishes its drag stroke. */
     public void paintMaterial(double cx,double cz,double radius,Material type,double maxSlope){
-        if(radius<=0||!Double.isFinite(radius)||!Double.isFinite(maxSlope))
+        Objects.requireNonNull(type);
+        if(radius<=0||!Double.isFinite(radius)||!Double.isFinite(cx)
+            ||!Double.isFinite(cz)||!Double.isFinite(maxSlope)
+            ||maxSlope<0||maxSlope>90)
             throw new IllegalArgumentException("Invalid material brush");
         int x0=Math.max(1,(int)Math.floor(cx-radius)),x1=Math.min(n-1,(int)Math.ceil(cx+radius));
         int z0=Math.max(1,(int)Math.floor(cz-radius)),z1=Math.min(n-1,(int)Math.ceil(cz+radius));
         for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++){
             if(!editable(x,z)||Math.hypot(x-cx,z-cz)>radius)continue;
-            if(slope(x,z)<=maxSlope)material[id(x,z)]=(byte)type.ordinal();
+            if(slope(x,z)<=maxSlope)writeMaterial(id(x,z),(byte)type.ordinal());
         }
-        dirty=true;
     }
     public double slope(int x,int z){
         bounds(x,z);
@@ -163,9 +219,9 @@ public final class TerrainLayerStack {
             Material m=s>cliffDegrees?Material.ROCK:
                 h<waterLine?Material.RIVERBED:h>snowLine?Material.SNOW:
                 s>22?Material.GRAVEL:Material.GRASS;
-            material[id(x,z)]=(byte)m.ordinal();
+            writeMaterial(id(x,z),(byte)m.ordinal());
         }
-        dirty=true;
+        finishStroke();
     }
     /** A stroke records only modified float samples; no full-tile undo copies. */
     private void write(int x,int z,double target){
@@ -180,20 +236,43 @@ public final class TerrainLayerStack {
         pending.putIfAbsent(i,old);l.delta[i]=next;dirty=true;
     }
     public void finishStroke(){
-        if(pending.isEmpty())return;
-        Layer l=layer(active);int count=pending.size(),k=0;
-        int[] ids=new int[count];float[] a=new float[count],b=new float[count];
-        for(var e:pending.entrySet()){int i=e.getKey();ids[k]=i;a[k]=e.getValue();b[k]=l.delta[i];k++;}
-        undo.push(new Change(l,ids,a,b));redo.clear();pending.clear();
+        if(pending.isEmpty()&&pendingMaterials.isEmpty()&&pendingFrozen.isEmpty())return;
+        List<Change> edits=new ArrayList<>(3);
+        if(!pending.isEmpty()){
+            Layer l=layer(active);int count=pending.size(),k=0;
+            int[] ids=new int[count];float[] a=new float[count],b=new float[count];
+            for(var e:pending.entrySet()){
+                int i=e.getKey();ids[k]=i;a[k]=e.getValue();b[k]=l.delta[i];k++;
+            }
+            edits.add(new HeightChange(l,ids,a,b));
+        }
+        if(!pendingMaterials.isEmpty()){
+            int count=pendingMaterials.size(),k=0;
+            int[] ids=new int[count];byte[] a=new byte[count],b=new byte[count];
+            for(var e:pendingMaterials.entrySet()){
+                int i=e.getKey();ids[k]=i;a[k]=e.getValue();b[k]=material[i];k++;
+            }
+            edits.add(new MaterialChange(material,ids,a,b));
+        }
+        if(!pendingFrozen.isEmpty()){
+            int count=pendingFrozen.size(),k=0;
+            int[] ids=new int[count];boolean[] a=new boolean[count],b=new boolean[count];
+            for(var e:pendingFrozen.entrySet()){
+                int i=e.getKey();ids[k]=i;a[k]=e.getValue();b[k]=frozen.get(i);k++;
+            }
+            edits.add(new FreezeChange(frozen,ids,a,b));
+        }
+        undo.push(edits.size()==1?edits.get(0):new CompoundChange(List.copyOf(edits)));
+        redo.clear();pending.clear();pendingMaterials.clear();pendingFrozen.clear();
     }
     public boolean undo(){
         finishStroke();if(undo.isEmpty())return false;
-        Change c=undo.pop();for(int i=0;i<c.indices.length;i++)c.layer.delta[c.indices[i]]=c.before[i];
+        Change c=undo.pop();c.apply(false);
         redo.push(c);dirty=true;return true;
     }
     public boolean redo(){
         finishStroke();if(redo.isEmpty())return false;
-        Change c=redo.pop();for(int i=0;i<c.indices.length;i++)c.layer.delta[c.indices[i]]=c.after[i];
+        Change c=redo.pop();c.apply(true);
         undo.push(c);dirty=true;return true;
     }
     private static double falloff(double d,double r,double inner,int curve){
@@ -611,7 +690,7 @@ public final class TerrainLayerStack {
         System.arraycopy(updated,0,source,0,pixels);
         sourceCrc=crc(updated);
         for(Layer l:layers)Arrays.fill(l.delta,0);
-        undo.clear();redo.clear();pending.clear();dirty=true;
+        undo.clear();redo.clear();pending.clear();pendingMaterials.clear();pendingFrozen.clear();dirty=true;
         // Preserve material IDs, frozen geometry and layer configuration. Only
         // height deltas are rebased against the new authoritative PNG.
         save();
