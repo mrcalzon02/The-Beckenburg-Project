@@ -1,0 +1,37 @@
+# Editor requirements document chain
+
+**Canonical index:** [DOCUMENT_CHAIN.json](DOCUMENT_CHAIN.json) (machine-readable and versioned).
+**Implementation sequence:** [STAGED_INTEGRATION_PLAN.md](STAGED_INTEGRATION_PLAN.md) (gates G0–G12).
+**Current scope:** portable Java 17 LevelEditorKit with game-owned Beckenburg host adapters.
+
+This chain **extends** the already committed [terrain requirements](../TERRAIN_REQUIREMENTS_INTEGRATION.md), [landscape layering](../LANDSCAPE_LAYERING_PREPARATION.md), [PSX runtime/editor architecture](../../development/PSX_RUNTIME_AND_EDITOR_SUITE_ARCHITECTURE.md), [gold-standards audit](../../development/LEVEL_EDITOR_OVERHAUL_AUDIT.md), adaptive topology, layered caves, multilayer navigation and the [agentic access contract](../../development/AGENTIC_EDITOR_ACCESS.md). None is removed or superseded.
+
+## Ordered owner-source register
+
+| # | Owner-supplied PDF | Registered requirement document / source transcription | Intake state |
+|---|---|---|---|
+| 1 | Level Editor gold standards.pdf (5 pp) | [Overhaul audit](../../development/LEVEL_EDITOR_OVERHAUL_AUDIT.md) | Existing analysis; PDF binary/extract not archived |
+| 2 | Terrain editor requirements.pdf (17 pp) | [Terrain implementation contract](../TERRAIN_REQUIREMENTS_INTEGRATION.md) | Existing analysis; PDF binary/extract not archived |
+| 3 | Landscape layering.pdf (8 pp) | [Four-tier landscape handoff](../LANDSCAPE_LAYERING_PREPARATION.md) | Existing analysis; PDF binary/extract not archived |
+| 4 | Topological editor.pdf (36 pp) | [Full extracted text](sources/topological-editor.txt) | New archived text; integration planned |
+| 5 | Building a 3D Soundscape Environment Manager.pdf (19 pp) | [Full extracted text](sources/soundscape-environment-manager.txt) | New archived text; integration planned |
+| 6 | Engine base.pdf (29 pp) | [Full extracted text](sources/engine-base.txt) | New archived text; integration planned |
+| 7 | multi-genre game creation engine.pdf (19 PDF pages; 18 extracted text page markers) | [Full extracted text](sources/multi-genre-game-creation-engine.txt) | New archived text; integration planned |
+
+**Provenance and fidelity:** all four new PDFs were read from the supplied attachments. The linked text files contain the complete available extracted text with explicit source-page markers. They do **not** contain diagrams/pictures, preserve exact PDF layout, or equal the binary original. Original PDF filenames, byte sizes, full-document SHA-256 digests and current binary-archival status are recorded in [DOCUMENT_CHAIN.json](DOCUMENT_CHAIN.json). No PDF binary was committed by this ingestion; the original uploads remain necessary for authoritative visual comparison. Do not alter a checksum or mark a PDF as physically archived unless its binary bytes are actually in the repository and read back.
+
+## How to continue the sequence
+
+1. Open [STAGED_INTEGRATION_PLAN.md](STAGED_INTEGRATION_PLAN.md), select the earliest unaccepted gate whose dependencies have passed and check the linked original source requirements.
+2. Open the corresponding real implementation modules and prior contracts; perform one integrated implementation slice. *Do not construct an alternative scene/runtime/renderer just to satisfy an example.*
+3. Run standalone Java 17 tests, applicable host runtime/CI tests, actual save/reload and real gameplay/dev-room evidence where relevant. Link precise SHA and workflow run.
+4. Update the stage status in [DOCUMENT_CHAIN.json](DOCUMENT_CHAIN.json), the relevant earlier subsystem contract, and [recovery checkpoint](../../../development/RECOVERY_PLAN_2026-10-25.md). Mark a stage complete only when its own acceptance evidence exists.
+5. Keep optional plugins, new JDK/native capabilities and agent access behind explicit scope/feature gates. No unrequested changes to other game repositories.
+
+## Priority and compatibility
+
+G1 portable contract and G4 unfinished real-terrain binding are immediate foundations. Work on G2 topology and G5 pure audio documents may proceed independently after their corresponding shared data definitions exist. G8 registry and G9 genre tools follow deliberate plugin boundaries; G10 script and G11 agent execution are **after proven human editing**, not substitutes for it.
+
+**Java 17 warning:** the source PDFs include newer Java examples (virtual-thread executors from Java 21, finalized java.lang.foreign from Java 22 and later record-pattern switches), unimplemented audio DSP stubs, and assumptions about script sandboxing. These must be adapted and validated; never copy them verbatim and call them integrated.
+
+**Test policy:** actual broken build, launch, save/reopen, required gameplay/multiplayer/update are release blockers. Source-document format checks, artistic quality, rendering appearance and audio taste are review diagnostics only.
