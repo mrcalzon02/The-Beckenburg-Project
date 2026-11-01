@@ -59,17 +59,24 @@ public final class TerrainEntrancePreview extends JPanel {
         add(foot,BorderLayout.SOUTH);
     }
     public static JFrame open(Window owner,TerrainEntranceMesh.Output output){
-        JFrame frame=new JFrame("Beckenburg — Authored Entrance Mesh Inspection");
+        return open(owner,output,"Authored Terrain Mesh Inspection");
+    }
+    public static JFrame open(Window owner,TerrainEntranceMesh.Output output,String title){
+        JFrame frame=new JFrame("Level Editor Kit — "+title);
         frame.setContentPane(new TerrainEntrancePreview(output));
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setMinimumSize(new Dimension(660,440));frame.setSize(1040,730);
         frame.setLocationRelativeTo(owner);frame.setVisible(true);
         return frame;
     }
+    private static String outputFileName(String meshName){
+        String clean=meshName.replaceAll("[^A-Za-z0-9_-]","_");
+        return (clean.isBlank()?"authored-terrain":clean)+".obj";
+    }
     public static void chooseExport(java.awt.Component owner,TerrainEntranceMesh.Output result){
         JFileChooser chooser=new JFileChooser();
-        chooser.setDialogTitle("Export authored entrance mesh (geometry-only OBJ)");
-        chooser.setSelectedFile(new java.io.File("beckenburg-authored-entrance.obj"));
+        chooser.setDialogTitle("Export real authored mesh (geometry-only OBJ)");
+        chooser.setSelectedFile(new java.io.File(outputFileName(result.mesh().name())));
         if(chooser.showSaveDialog(owner)!=JFileChooser.APPROVE_OPTION)return;
         Path path=chooser.getSelectedFile().toPath();
         if(!path.getFileName().toString().toLowerCase().endsWith(".obj"))
