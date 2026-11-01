@@ -1,0 +1,46 @@
+name: Rowan Pike source-alpha and Castle scene evidence (diagnostic)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/audit_rowan_alpha.py'
+      - '.github/workflows/castle-rowan-alpha-evidence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rowan-alpha-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image-analysis dependencies
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0 numpy==2.2.6 scipy==1.15.3
+      - name: Synthetic alpha-hole detector regression
+        run: python tools/audit_rowan_alpha.py --self-test
+      - name: Inspect all four actual shipped Rowan Pike facings without modifying art
+        run: python tools/audit_rowan_alpha.py --out build/rowan-alpha-review
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile real Castle renderer and packaged runtime assets
+        run: sh build.sh --capture-only
+      - name: Capture actual Castle cameras in original-texture and Classic modes
+        run: |
+          mkdir -p build/test
+          javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/org/beckenburg/CastleResidentArtRenderAudit.java
+          java -Djava.awt.headless=true -cp build/classes:build/test org.beckenburg.CastleResidentArtRenderAudit build/castle-resident-art-render
+      - name: Preserve source alpha diagnostics and actual Castle captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rowan-pike-four-facings-real-castle-evidence
+          path: |
+            build/rowan-alpha-review/
+            build/castle-resident-art-render/rowan-pike-*.png
+            build/castle-resident-art-render/captures.csv
+          if-no-files-found: warn
