@@ -29,7 +29,7 @@ public final class TerrainLayerStack {
     private final int tx,tz,n,side,pixels;
     private final double step,min,max;
     private final int[] source;
-    private final long sourceCrc;
+    private long sourceCrc;
     private final ArrayList<Layer> layers=new ArrayList<>();
     private final byte[] material;
     private final BitSet frozen;
@@ -510,15 +510,11 @@ public final class TerrainLayerStack {
             world.importTile(tx,tz,temp,true);
         }finally{Files.deleteIfExists(temp);}
         System.arraycopy(updated,0,source,0,pixels);
+        sourceCrc=crc(updated);
         for(Layer l:layers)Arrays.fill(l.delta,0);
         undo.clear();redo.clear();pending.clear();dirty=true;
-        // The persistent file is now invalid until rebased onto the new source CRC.
-        // Persist the rebased stack in this same explicit bake operation.
-        saveRebased();
-    }
-    private void saveRebased()throws IOException {
-        Files.deleteIfExists(path());
-        // Re-open initializes clean layers. Avoid writing a document with the old CRC.
-        dirty=false;
+        // Preserve material IDs, frozen geometry and layer configuration. Only
+        // height deltas are rebased against the new authoritative PNG.
+        save();
     }
 }
