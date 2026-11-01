@@ -1,0 +1,47 @@
+{
+  "schema": "beckenburg.editor-acceptance-evidence/v1",
+  "source": "5ebc7ab89ef7312d0c7085febaca4699544056de",
+  "runs": [
+    {
+      "id": 41327215891,
+      "name": "standalone editor",
+      "conclusion": "success"
+    },
+    {
+      "id": 41327218903,
+      "name": "terrain runtime plus native editor service",
+      "conclusion": "success"
+    }
+  ],
+  "verifiedLogLines": [
+    {
+      "job": 124909570113,
+      "line": "2026-11-01T16:38:01.7644360Z PASS portable document store: actual process crashes before/after rename, exact replay, backup recovery, conflicts, corruption, ownership, output budget and writer lock"
+    },
+    {
+      "job": 124909580561,
+      "line": "2026-11-01T16:38:49.4010521Z PASS native mission/Castle service: stale rejection, shared undo, batch rollback, save/game load/reopen, renderer capture, owner thread and CLI"
+    },
+    {
+      "job": 124909580561,
+      "line": "2026-11-01T16:38:51.6010053Z PASS G1 native identity: legacy BSCN, deletion, shared undo/redo, stable-ID edit, deterministic save/reopen, unsupported transform rejection and USER ownership"
+    },
+    {
+      "job": 124909580561,
+      "line": "2026-11-01T16:38:53.2469128Z PASS native mission recovery: distinct backup, corrupt-file rejection, explicit restore, shared undo, real game load and foreign-scene isolation"
+    },
+    {
+      "job": 124909580561,
+      "line": "2026-11-01T16:39:04.7919502Z PASS real Windows editor: mission service, human undo/redo, save/reopen, actual recovery menu, runtime parity, Castle/House PNGs and stale/closed scene rejection"
+    },
+    {
+      "job": 124909580561,
+      "line": "2026-11-01T16:39:16.4349644Z PASS headless public protocol: JSON, real edit/save/recovery, renderer capture, native parity, process reopen and stale rejection"
+    },
+    {
+      "job": 124909580561,
+      "line": "2026-11-01T16:39:16.4459633Z PASS native editor service, real human editor, recovery and headless protocol"
+    }
+  ],
+  "limits": "Scoped Java 17 portable and Windows native editor acceptance. Does not certify full G1-G12, physical power-loss/hardware acceptance, authenticated MCP or full game regression."
+}

@@ -568,18 +568,68 @@
       },
       "fullRoundCi": {
         "run": 41324869128,
-        "status": "in_progress"
+        "status": "success-required-steps; advisory-manifest-failed",
+        "passed": 260,
+        "failed": 12,
+        "unexecuted": 27,
+        "manifest": 299
       },
       "limitations": [
         "G0 original PDF byte verification unavailable",
         "G1 journaling, cancellation, broader migrations and revision/resource events remain",
         "Dedicated service workflow cannot dispatch until present on default branch (HTTP 404)"
       ]
+    },
+    {
+      "sourceSha": "5ebc7ab89ef7312d0c7085febaca4699544056de",
+      "scope": "G1 journaled and bounded BSCN persistence, explicit native mission save recovery and cancellable typed batches",
+      "localEvidence": [
+        "EditorDocumentStoreTest (actual process halt before/after atomic replacement)",
+        "LevelAuthoringRecoveryTest",
+        "EditorAgentServiceTest (real changed-prop cancellation rollback)",
+        "EditorAgentGuiTest (real recovery chooser and confirmation)",
+        "tools/verify_editor_agent_host.cmd",
+        "terrain/rail scene publication and native HCS2 regressions"
+      ],
+      "standaloneCi": {
+        "run": 41327215891,
+        "status": "success"
+      },
+      "nativeHostCi": {
+        "run": 41327218903,
+        "status": "success"
+      },
+      "evidence": "development/quality/evidence/editor-persistence-5ebc7ab8.json",
+      "limitations": [
+        "Castle properties persistence not yet journaled; recovery capability unavailable there",
+        "Process-crash recovery is not all-filesystem physical power-loss acceptance",
+        "Broader migrations, incremental deltas and dependency ownership/revision events remain G1 work",
+        "Authenticated MCP and full G0-G12 acceptance remain open"
+      ]
+    },
+    {
+      "sourceSha": "11b57bbf72556e82a079939f166e1608a33ed363",
+      "scope": "REC-01 four map-wide regressions use a real persisted USER prerequisite without dropping assertions or map types",
+      "localEvidence": [
+        "RoomAcousticPresetsTest",
+        "HidingBudgetTest",
+        "AllMapLightingCoverageTest",
+        "VanLightingAndCastleDoorTest"
+      ],
+      "fullRoundCi": {
+        "run": 41327744396,
+        "status": "in_progress"
+      },
+      "evidence": "development/quality/evidence/persisted-user-regressions-2026-11-01.json",
+      "limitations": [
+        "Eight other baseline failures not claimed fixed",
+        "Full-manifest and physical acceptance not inferred from scoped passes"
+      ]
     }
   ],
   "nextGoalWork": [
-    "Inspect exact-source CI results and repair objective regressions without weakening gates",
-    "Continue G1 journaling/recovery and migration/cancellation contracts over authoritative documents",
-    "Proceed to human-operated G2 topology foundation, then remaining dependency-ordered gates; never accept later gates from core tests"
+    "Inspect terminal full-round 41327744396 raw transcript, not just the advisory success label; repair objective regressions",
+    "Continue G1 Castle journal/recovery, broader schema migrations, incremental changes and dependency ownership/revision events",
+    "Proceed to human-operated G2 topology and remaining dependency-ordered G0-G12 gates; do not infer acceptance from plans or narrow core tests"
   ]
 }
