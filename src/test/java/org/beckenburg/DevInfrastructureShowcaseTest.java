@@ -32,7 +32,8 @@ public final class DevInfrastructureShowcaseTest {
             "River socket must derive coordinates, width and tangent from authored spline");
         var doc=sample.water();
         check(doc.placements().size()==2,"Both upstream and downstream water bodies present");
-        var a=doc.placements().get(0),b=doc.placements().get(1);
+        var a=doc.placements().get(0);
+        var b=doc.placements().get(1);
         check(Math.abs(a.y()-b.y())<1e-8&&
             Math.abs((a.z()+a.depth()*.5)-(b.z()-b.depth()*.5))<1e-7,
             "Water socket must align adjacent modules with no seam or overlap");
