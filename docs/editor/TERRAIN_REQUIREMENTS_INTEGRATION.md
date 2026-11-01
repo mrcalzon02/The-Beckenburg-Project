@@ -23,7 +23,7 @@ the Beckenburg game renderer is an optional consumer, not its source of truth.
 | Slope/height auto-biomes | `autoBiome`, `slope` | Fixed rules; not yet a node-based rule graph |\n| Derived topology / drainage | `TerrainTopologyFields`: analytical curvature, slope, D8 flow direction/speed estimates, accumulation and moisture proxies; versioned disk cache + height fingerprint | Not simulated droplet flow/sediment; no cross-tile drainage yet |
 | Surface materials | Eight stable material IDs and paint brush | Renderer/footstep/physics adapter must consume these |
 | Freeze/exclusion masks | Rectangle freeze, material-based lock and brush respect | No mesh-hull raycast or cylinder masks yet |
-| Infrastructure grading | `gradePath` with bounded segment rasterization (up to 50k samples), persistent `TerrainInfrastructureSplines`; saved route load/edit/drag/delete in workbench | Reapplying an edited route does not automatically undo its previous terrain grade; track mesh export is a separate module |
+| Infrastructure grading | Shared bounded grade rasterizer supports v2 managed road/rail/river splines as a deterministic in-memory procedural overlay; moving/deleting managed routes removes their old grade without changing source or hand sculpt; old v1 splines remain legacy | Previously painted legacy route grades have no recoverable provenance; managed routes do not yet paint reversible material overlays or affect shared tile-border heights |
 | Grade constraints | Rail/road maximum grade validation; clamp controls to target grade | No turnout, bridge or tunnel geometry |\n| Real railway track geometry | `TerrainRailMesh` builds ballast prisms, two extruded rails and spaced sleeper meshes from RAIL alignments; shared real-mesh inspector and validated OBJ export | Geometry-only: no switch, bridge, tunnel, rolling-stock physics or host-renderer adapter |
 | Background operations | SwingWorker for heavy generation, erosion, save, bake | Full GPU/physics pipeline not wired |
 | Safe explicit source bake | Checks R16 range and checksum; journaled batches can include both source PNGs and existing authored layer documents under explicit opt-in, with rollback of both | Multi-file writes are journal-recoverable on reopen, not atomically visible to concurrent external readers |
@@ -39,7 +39,7 @@ Tests: `TerrainLayerStackTest`, `TerrainInfrastructureSplinesTest`,
 `TerrainBrushProfileTest`, `TerrainBrushPresetsTest`,
 `TerrainErosionRegionTest`, `TerrainMixedHistoryTest`,\n`TerrainTopologyFieldsTest`, `TerrainEditEventTest`,\n`TerrainRailMeshTest`, `StitchedHeightmapBatchTest`,\n`TerrainLayerMaskTest`, `TerrainSeamSculptTest`,
 `StitchedHeightmapLayerRebaseTest`, `TerrainLayerConcurrentSaveTest`,
-`TerrainComposedHeightSamplerTest`;
+`TerrainComposedHeightSamplerTest`, `TerrainManagedInfrastructureTest`;
 workflow: `.github/workflows/standalone-editor-kit.yml`.
 
 ## Mandatory preservation rules
@@ -66,6 +66,17 @@ workflow: `.github/workflows/standalone-editor-kit.yml`.
   matching, slope/water/grid anchor snapping and generated stamp previews.
 - Add disk-backed, bounded-memory differential undo/redo covering materials, layer
   operations, masks, splines and erosion. Unlimited logical history requires disk paging.
+
+### Reversible infrastructure authoring
+- Managed route v2 grades now rebuild from spline metadata, preserve hand-sculpted heights
+  and material paint, and are sampled by terrain mesh and physical queries even
+  without a saved ordinary sculpt document.
+- Legacy v1 route records retain their original directly-painted semantics; no
+  fictitious reconstruction of already overwritten heights is attempted.
+- Next: reversible procedural route *material overlays*, junction/switch geometry,
+  bridge/tunnel physical structures, and multi-tile grade seam coordination.
+- While managed routes exist, source bake refuses to flatten their procedure
+  irreversibly into R16. Export authored mesh geometry instead.
 
 ### Simulation and derived outputs
 - Multi-tile localized erosion with halo samples across adjacent tiles, cancellation
