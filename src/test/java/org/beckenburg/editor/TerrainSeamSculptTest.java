@@ -63,31 +63,65 @@ public final class TerrainSeamSculptTest {
             var noDuplicate=new TerrainSeamSculpt(disk,0,0);
             check(noDuplicate.changedVertices()==0,"Reopened post-bake session is clean");
 
-            // Authoring documents tied to pre-bake checksums must NOT be
-            // silently invalidated by another source-level seam transaction.
+            // Existing terrain-layer authoring data is now rebased IN the same
+            // journal transaction; the layer itself must remain byte-for-byte
+            // identical after its source fingerprint fields.
             var protectedLayer=new TerrainLayerStack(disk,0,0);
             protectedLayer.addLayer("Preserve this author's work");
+            protectedLayer.selectLayer(0);
+            protectedLayer.brush(TerrainLayerStack.Brush.RAISE,13,13,2,7,0,0,1);
+            protectedLayer.finishStroke();
+            protectedLayer.paintLayerMask(13,13,3,0,.7);
+            protectedLayer.finishStroke();
+            protectedLayer.paintMaterial(13,13,2,TerrainLayerStack.Material.MUD,90);
+            protectedLayer.finishStroke();
+            protectedLayer.freezeRect(12,12,14,14,true);
             protectedLayer.save();
+            double oldMask=protectedLayer.layerMask(0,13,13);
+            double oldDelta=protectedLayer.height(13,13)-
+                (disk.settings().minElevation()+
+                 (disk.settings().maxElevation()-disk.settings().minElevation())*
+                 disk.sample(0,0,13,13)/65535.0);
+            int oldMaterial=protectedLayer.material(13,13);
+            boolean oldFrozen=protectedLayer.frozen(13,13);
+            var originalBytes=Files.readAllBytes(protectedLayer.path());
             noDuplicate.raise(32,32,2,5);noDuplicate.finishStroke();
-            boolean blocked=false;
-            try{noDuplicate.bake();}
-            catch(java.io.IOException expected){blocked=true;}
-            check(blocked,"Existing layered authoring document blocks destructive seam bake");
-            check(disk.sample(0,0,32,32)==baked,
-                "Blocked bake keeps source unchanged");
-            check(disk.verifySeams().isEmpty(),"Blocked bake keeps all seams intact");
-            noDuplicate.save();
-            // A session can still save as non-destructive edits while a layer
-            // document blocks committing it into the original PNG files.
-            check(Files.exists(noDuplicate.path()),"Unbaked seam edit remains resumable");
-            noDuplicate.discard();
-            check(!Files.exists(noDuplicate.path())&&noDuplicate.changedVertices()==0,
+            noDuplicate.bake();
+            int secondBake=disk.sample(0,0,32,32);
+            check(secondBake!=baked,"A second seam bake updates source with authored layers");
+            check(disk.verifySeams().isEmpty(),"Rebased seam bake preserves all shared edges");
+            var reloaded=new TerrainLayerStack(disk,0,0);
+            near(reloaded.layerMask(0,13,13),oldMask,"Rebased sculpt mask preserved");
+            near(reloaded.height(13,13)-
+                (disk.settings().minElevation()+
+                 (disk.settings().maxElevation()-disk.settings().minElevation())*
+                 disk.sample(0,0,13,13)/65535.0),oldDelta,
+                "Layer height delta preserved when source moves");
+            check(reloaded.material(13,13)==oldMaterial&&
+                reloaded.frozen(13,13)==oldFrozen,"Paint and protection data retained");
+            var changedBytes=Files.readAllBytes(protectedLayer.path());
+            check(changedBytes.length==originalBytes.length,"No layer document truncation");
+            for(int i=0;i<originalBytes.length;i++)
+                if(i<12||i>=20)
+                    check(originalBytes[i]==changedBytes[i],
+                        "Rebase may only update source checksum bytes");
+            boolean staleRejected=false;
+            try{protectedLayer.save();}
+            catch(java.io.IOException correct){staleRejected=true;}
+            check(staleRejected,"Editor open before source rebase cannot overwrite newer data");
+
+            var discardable=new TerrainSeamSculpt(disk,0,0);
+            discardable.raise(32,32,2,3);discardable.finishStroke();
+            discardable.save();
+            check(Files.exists(discardable.path()),"Unbaked seam edit remains resumable");
+            discardable.discard();
+            check(!Files.exists(discardable.path())&&discardable.changedVertices()==0,
                 "Discard clears editing session but never modifies source");
-            check(disk.sample(0,0,32,32)==baked,
+            check(disk.sample(0,0,32,32)==secondBake,
                 "Discard preserves last authoritative baked height");
             check(new TerrainSeamSculpt(disk,0,0).changedVertices()==0,
                 "Reopening discarded session starts clean");
-            System.out.println("PASS shared 4-tile sculpt, undo/redo, save/readback, journaled bake, layer guard and discard");
+            System.out.println("PASS shared 4-tile sculpt, undo/redo, save/readback, journaled bake, coordinated layer rebase and discard");
         }finally{
             try(var walk=Files.walk(root)){
                 for(Path p:walk.sorted(Comparator.reverseOrder()).toList())
