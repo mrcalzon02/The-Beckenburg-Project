@@ -61,6 +61,9 @@ public final class TerrainLayerWorkbench extends JPanel {
     private TerrainBrushProfile.Stroke brushStroke;
     private boolean loadingLayer,busy;
     private final TerrainInfrastructureSplines routes;
+    private final TerrainBrushPresets presets;
+    private final JComboBox<String> presetNames=new JComboBox<>();
+    private final JTextField presetName=new JTextField("brush-1",12);
     private final java.util.ArrayList<TerrainLayerStack.Point> gradeControls=new java.util.ArrayList<>();
     private final JTextField routeName=new JTextField("route-1",14);
     private final JComboBox<String> savedRoutes=new JComboBox<>();
@@ -94,6 +97,7 @@ public final class TerrainLayerWorkbench extends JPanel {
         super(new BorderLayout(5,5));this.frame=frame;this.stack=stack;
         this.sourceWorld=stack.worldForWorkbench();this.sourceX=stack.tileX();this.sourceZ=stack.tileZ();
         this.routes=TerrainInfrastructureSplines.open(sourceWorld);
+        this.presets=new TerrainBrushPresets(sourceWorld);
         erosionCenterX=stack.cells()/2;erosionCenterZ=stack.cells()/2;
         setBorder(BorderFactory.createEmptyBorder(7,7,7,7));
         JPanel bar=new JPanel(new FlowLayout(FlowLayout.LEFT,4,2));
@@ -118,6 +122,11 @@ public final class TerrainLayerWorkbench extends JPanel {
         button(sidebar,"CLEAR BRUSH ALPHA",()->{
             brushAlpha=null;refresh("Custom alpha cleared; circular falloff active");
         });
+        field(sidebar,"Saved brush preset",presetNames);
+        field(sidebar,"New preset name",presetName);
+        button(sidebar,"SAVE BRUSH PRESET",this::saveBrushPreset);
+        button(sidebar,"LOAD BRUSH PRESET",this::loadBrushPreset);
+        button(sidebar,"DELETE PRESET RECORD...",this::deleteBrushPreset);
         field(sidebar,"Surface material",material);
         section(sidebar,"PROCEDURAL");
         field(sidebar,"Noise",noise);field(sidebar,"Cycles / tile",cycles);
@@ -195,6 +204,7 @@ public final class TerrainLayerWorkbench extends JPanel {
             field.addChangeListener(e->{if(liveNoise.isSelected())render();});
         action.addActionListener(e->{gradeControls.clear();draggedRouteControl=-1;});
         refreshSavedRoutes();
+        refreshBrushPresets();
         rebuildLayers();render();
         refresh("Editing tile "+stack.tileX()+","+stack.tileZ()+" — unsaved edits are separate from source");
     }
@@ -389,6 +399,65 @@ public final class TerrainLayerWorkbench extends JPanel {
     private boolean hasRoute(String id){
         for(var route:routes.list())if(route.id().equals(id))return true;
         return false;
+    }
+    private void refreshBrushPresets(){
+        try{
+            String selection=(String)presetNames.getSelectedItem();
+            presetNames.removeAllItems();
+            for(String name:presets.list())presetNames.addItem(name);
+            if(selection!=null)presetNames.setSelectedItem(selection);
+        }catch(IOException ex){error(ex);}
+    }
+    private void saveBrushPreset(){
+        if(busy)return;
+        String name=presetName.getText().trim();
+        try{
+            boolean existing=presets.list().contains(name);
+            if(existing&&JOptionPane.showConfirmDialog(frame,
+                "Replace brush preset "+name+"?","Replace brush preset",
+                JOptionPane.YES_NO_OPTION)!=JOptionPane.YES_OPTION)return;
+            presets.save(name,new TerrainBrushPresets.Preset(
+                (TerrainLayerStack.Brush)brush.getSelectedItem(),
+                precisionSettings(),brushAlpha),existing);
+            refreshBrushPresets();presetNames.setSelectedItem(name);
+            refresh("Saved self-contained brush preset: "+name);
+        }catch(IOException|RuntimeException ex){error(ex);}
+    }
+    private void loadBrushPreset(){
+        if(busy)return;
+        String name=(String)presetNames.getSelectedItem();
+        if(name==null)return;
+        try{
+            var p=presets.open(name);var settings=p.settings();
+            if(settings.radius()>512||settings.strength()<.01
+                ||settings.strength()>1000||settings.spacing()<.1
+                ||settings.spacing()>128||settings.minElevation()<-1000000
+                ||settings.maxElevation()>1000000)
+                throw new IOException("Preset exceeds supported editor control ranges");
+            brush.setSelectedItem(p.brush());radius.setValue(settings.radius());
+            strength.setValue(settings.strength());target.setValue(settings.target());
+            inner.setValue(settings.inner());falloff.setSelectedIndex(settings.curve());
+            brushSpacing.setValue(settings.spacing());
+            brushRotation.setValue(settings.rotationDegrees());
+            minBrushHeight.setValue(settings.minElevation());
+            maxBrushHeight.setValue(settings.maxElevation());
+            maxBrushSlope.setValue(settings.maxSlopeDegrees());
+            flattenLimit.setSelectedItem(settings.flattenLimit());
+            brushAlpha=p.alpha();presetName.setText(name);
+            refresh("Restored brush preset: "+name);
+        }catch(IOException|RuntimeException ex){error(ex);}
+    }
+    private void deleteBrushPreset(){
+        if(busy)return;
+        String name=(String)presetNames.getSelectedItem();
+        if(name==null)return;
+        if(JOptionPane.showConfirmDialog(frame,"Delete saved brush preset "+name+"?",
+            "Delete preset only",JOptionPane.YES_NO_OPTION,
+            JOptionPane.WARNING_MESSAGE)!=JOptionPane.YES_OPTION)return;
+        try{
+            presets.delete(name);refreshBrushPresets();
+            refresh("Deleted brush preset record: "+name);
+        }catch(IOException|RuntimeException ex){error(ex);}
     }
     private void loadBrushAlpha(){
         JFileChooser picker=new JFileChooser();
