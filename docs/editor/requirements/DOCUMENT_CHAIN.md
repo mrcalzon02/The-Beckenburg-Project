@@ -35,3 +35,9 @@ G1 portable contract and G4 unfinished real-terrain binding are immediate founda
 **Java 17 warning:** the source PDFs include newer Java examples (virtual-thread executors from Java 21, finalized java.lang.foreign from Java 22 and later record-pattern switches), unimplemented audio DSP stubs, and assumptions about script sandboxing. These must be adapted and validated; never copy them verbatim and call them integrated.
 
 **Test policy:** actual broken build, launch, save/reopen, required gameplay/multiplayer/update are release blockers. Source-document format checks, artistic quality, rendering appearance and audio taste are review diagnostics only.
+
+## Consolidated all-in-one master (2026-11-01)
+
+**[Editor, Engine and Game-Creation Master Compendium](../EDITOR_ENGINE_MASTER_COMPENDIUM.md)** is the single long-form reading document for this full editor creation effort. It includes the integrated recommendations, the G0–G12 staged plan, all four new source-PDF text archives, full copies of previously committed PSX editor/animation/AI/audio/menu/asset guides, and detailed terrain/landscape/topology/navigation/lighting/water/model review/agent contracts: **29 labeled source sections in one file**. It also indexes the earlier nine-PDF PSX reference ingestion (including duplicate source names and recorded checksums) and the owner's inline menu/campaign/billboard brief.
+
+Unlike this seven-source intake register, the master joins the earlier independent PSX editor engineering document family as well. It is a compiled reference, **not** a replacement for original files or proof all its recommendations are implemented. Original PDFs remain authoritative for diagrams and page layout. The full master is also mirrored into the owner's Google Drive as a native Google Doc, title: *Beckenburg Editor & Game Creation — Master Recommendations Compendium (2026-11-01)*; the repository remains the versioned textual source of truth.
