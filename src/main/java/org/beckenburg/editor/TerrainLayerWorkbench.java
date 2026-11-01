@@ -36,6 +36,7 @@ public final class TerrainLayerWorkbench extends JPanel {
     private final JSpinner inner=spin(.2,0,.95,.05);
     private final JCheckBox sampleFlatten=new JCheckBox("Sample flatten height on press",false);
     private final JComboBox<TerrainLayerStack.Noise> noise=new JComboBox<>(TerrainLayerStack.Noise.values());
+    private final JCheckBox liveNoise=new JCheckBox("LIVE LOW-RES PREVIEW (uncommitted)",false);
     private final JSpinner cycles=spin(4,.05,512,.5);
     private final JSpinner amplitude=spin(15,-10000,10000,1);
     private final JSpinner octaves=spin(4,1,8,1);
@@ -96,6 +97,7 @@ public final class TerrainLayerWorkbench extends JPanel {
         field(sidebar,"Noise",noise);field(sidebar,"Cycles / tile",cycles);
         field(sidebar,"Amplitude (metres)",amplitude);field(sidebar,"Octaves",octaves);
         field(sidebar,"Seed",seed);
+        sidebar.add(liveNoise);
         button(sidebar,"APPLY NOISE TO LAYER",()->background("Procedural noise",
             ()->stack.noise((TerrainLayerStack.Noise)noise.getSelectedItem(),
                 (long)val(seed),val(cycles),val(amplitude),(int)val(octaves))));
@@ -145,6 +147,10 @@ public final class TerrainLayerWorkbench extends JPanel {
         save.addActionListener(e->save());
         bake.addActionListener(e->bake());
         view.addActionListener(e->render());
+        liveNoise.addActionListener(e->render());
+        noise.addActionListener(e->{if(liveNoise.isSelected())render();});
+        for(JSpinner field:new JSpinner[]{cycles,amplitude,octaves,seed})
+            field.addChangeListener(e->{if(liveNoise.isSelected())render();});
         action.addActionListener(e->{gradeStart=null;});
         rebuildLayers();render();
         refresh("Editing tile "+stack.tileX()+","+stack.tileZ()+" — unsaved edits are separate from source");
@@ -195,6 +201,10 @@ public final class TerrainLayerWorkbench extends JPanel {
         int res=Math.min(256,stack.cells()+1);
         BufferedImage bitmap=new BufferedImage(res,res,BufferedImage.TYPE_INT_RGB);
         int n=stack.cells();
+        double[][] temporary=liveNoise.isSelected()&&view.getSelectedIndex()==0
+            ?stack.previewNoise((TerrainLayerStack.Noise)noise.getSelectedItem(),
+                (long)val(seed),val(cycles),val(amplitude),(int)val(octaves),res)
+            :null;
         for(int z=0;z<res;z++)for(int x=0;x<res;x++){
             int sx=x*n/(res-1),sz=z*n/(res-1),rgb;
             switch(view.getSelectedIndex()){
@@ -204,7 +214,9 @@ public final class TerrainLayerWorkbench extends JPanel {
                     rgb=(s<<16)|((255-s)<<8)|50;}
                 case 3 -> rgb=stack.frozen(sx,sz)?0xff2020:0x4e6a6f;
                 default -> {
-                    double norm=(stack.height(sx,sz)+200)/1200;
+                    double elevation=temporary==null?stack.height(sx,sz):temporary[z][x];
+                    double norm=(elevation-stack.minimumElevation())/
+                        (stack.maximumElevation()-stack.minimumElevation());
                     int grey=(int)Math.max(0,Math.min(255,norm*255));
                     rgb=(grey<<16)|(grey<<8)|grey;
                 }
@@ -220,7 +232,9 @@ public final class TerrainLayerWorkbench extends JPanel {
             protected Void doInBackground()throws Exception{job.run();return null;}
             protected void done(){
                 busy=false;
-                try{get();if(name.startsWith("Baking"))rebuildLayers();refresh(name+" completed");}
+                try{get();if(name.startsWith("Baking"))rebuildLayers();
+                    if(name.equals("Procedural noise"))liveNoise.setSelected(false);
+                    refresh(name+" completed");}
                 catch(InterruptedException ex){Thread.currentThread().interrupt();error(ex);}
                 catch(ExecutionException ex){error(ex);}
             }
