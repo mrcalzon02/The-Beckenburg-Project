@@ -73,6 +73,10 @@ public final class GlbProps {
     // glTF 2.0 origin is upper-left. Apply it to vehicles and new authored
     // surface atlases; legacy art keeps its previously reviewed mapping.
     private static final List<Boolean> vehicleUvMaterials=new ArrayList<>();
+    // Original glTF samplers are per texture: the two lighter casing images
+    // explicitly clamp while the lit flame's independent image repeats.
+    private static final List<Integer> samplerWrapS=new ArrayList<>();
+    private static final List<Integer> samplerWrapT=new ArrayList<>();
     /** These imported fluorescent GLBs use glTF image-space (top-left) UVs.
      * Keep their original source images and mesh coordinates untouched. */
     static boolean fluorescentGltfUv(String name){
@@ -123,10 +127,22 @@ public final class GlbProps {
                 "blender_igniter_2_lit","blender_sanity_medication_2"
             ).contains(name);
     }
+    // glTF sampler: REPEAT=10497, CLAMP_TO_EDGE=33071, MIRRORED_REPEAT=33648.
+    static double wrapUv(double coordinate,int mode){
+        if(!Double.isFinite(coordinate))throw new IllegalArgumentException("UV coordinate");
+        if(mode==33071)return Math.max(0.0,Math.min(1.0,coordinate));
+        double tile=Math.floor(coordinate),part=coordinate-tile;
+        if(mode==33648&&Math.abs(tile%2.0)>=1.0)return 1.0-part;
+        return part;
+    }
     static int imageRow(double v,int height,boolean gltfTopLeft){
-        if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
-        double fractional=v-Math.floor(v);
-        return Math.min(height-1,(int)((gltfTopLeft?fractional:1.0-fractional)*height));
+        return imageRow(v,height,gltfTopLeft,10497);
+    }
+    static int imageRow(double v,int height,boolean gltfTopLeft,int wrap){
+        if(height<1)throw new IllegalArgumentException("UV image height");
+        double coord=wrapUv(v,wrap);
+        int row=(int)Math.floor((gltfTopLeft?coord:1.0-coord)*height);
+        return Math.max(0,Math.min(height-1,row));
     }
     private static final List<double[]> diffuseFactors=new ArrayList<>();
     private static final Map<Long,Integer> foliagePalettes=new HashMap<>();
@@ -181,7 +197,7 @@ public final class GlbProps {
     public static synchronized int surfaceMaterial(String name,BufferedImage image){
         Integer cached=surfaceMaterials.get(name);if(cached!=null)return cached;
         if(image==null||image.getWidth()>2048||image.getHeight()>2048)throw new IllegalArgumentException("terrain diffuse budget");
-        int id=TEXTURE_BASE+textures.size();textures.add(image);vehicleUvMaterials.add(false);materialNames.add(name);diffuseFactors.add(new double[]{1,1,1,1});surfaceMaterials.put(name,id);return id;
+        int id=TEXTURE_BASE+textures.size();textures.add(image);vehicleUvMaterials.add(false);samplerWrapS.add(10497);samplerWrapT.add(10497);materialNames.add(name);diffuseFactors.add(new double[]{1,1,1,1});surfaceMaterials.put(name,id);return id;
     }
     /** Sixteen bounded texel variants per leaf material. Source UVs and shared source pixels remain intact. */
     public static synchronized int foliageMaterial(int original,long seed){
@@ -195,12 +211,12 @@ public final class GlbProps {
             int r=(int)(((rgb>>16)&255)*(brightness+warmth)*speckle),g=(int)(((rgb>>8)&255)*brightness*speckle),b=(int)((rgb&255)*(brightness-warmth)*speckle);
             copy.setRGB(x,y,(Math.min(255,r)<<16)|(Math.min(255,g)<<8)|Math.min(255,b));
         }
-        int id=TEXTURE_BASE+textures.size();textures.add(copy);vehicleUvMaterials.add(vehicleUvMaterials.get(original-TEXTURE_BASE));materialNames.add(materialName(original)+" foliage texel variant "+variant);
+        int id=TEXTURE_BASE+textures.size();textures.add(copy);vehicleUvMaterials.add(vehicleUvMaterials.get(original-TEXTURE_BASE));samplerWrapS.add(samplerWrapS.get(original-TEXTURE_BASE));samplerWrapT.add(samplerWrapT.get(original-TEXTURE_BASE));materialNames.add(materialName(original)+" foliage texel variant "+variant);
         diffuseFactors.add(diffuseFactors.get(original-TEXTURE_BASE).clone());foliagePalettes.put(key,id);return id;
     }
     private static final Map<String,Integer> televisionMaterials=new HashMap<>();
     private static final Map<Integer,Integer> televisionPhases=new HashMap<>();
-    public static synchronized int televisionMaterial(double x,double y,double z){String key=x+":"+y+":"+z;return televisionMaterials.computeIfAbsent(key,k->{int id=TEXTURE_BASE+textures.size();textures.add(new BufferedImage(128,64,BufferedImage.TYPE_INT_RGB));vehicleUvMaterials.add(false);diffuseFactors.add(new double[]{1,1,1,1});materialNames.add("Television static surface");return id;});}
+    public static synchronized int televisionMaterial(double x,double y,double z){String key=x+":"+y+":"+z;return televisionMaterials.computeIfAbsent(key,k->{int id=TEXTURE_BASE+textures.size();textures.add(new BufferedImage(128,64,BufferedImage.TYPE_INT_RGB));vehicleUvMaterials.add(false);samplerWrapS.add(10497);samplerWrapT.add(10497);diffuseFactors.add(new double[]{1,1,1,1});materialNames.add("Television static surface");return id;});}
     public static synchronized void updateTelevision(int material,boolean active,int tick){int phase=active?tick:-1;if(televisionPhases.getOrDefault(material,-2)==phase)return;televisionPhases.put(material,phase);var im=textures.get(material-TEXTURE_BASE);
         for(int y=0;y<64;y++)for(int x=0;x<128;x++){int hash=(x*73856093)^(y*19349663)^(tick*83492791);hash^=hash>>>13;int grey=active?80+Math.floorMod(hash,151):8;if(active&&(y+tick)%11==0)grey/=2;im.setRGB(x,y,(grey<<16)|(grey<<8)|grey);}
     }
@@ -302,9 +318,9 @@ public final class GlbProps {
         if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
             throw new IllegalArgumentException("Invalid imported texture");
         BufferedImage image=material==vanCrtMaterial?vanCrtImage:textures.get(index);
-        int x=Math.min(image.getWidth()-1,(int)((u-Math.floor(u))*image.getWidth()));
+        int x=Math.min(image.getWidth()-1,(int)(wrapUv(u,samplerWrapS.get(index))*image.getWidth()));
         // GGBot's Blender source uses the actual glTF image origin at top-left.
-        int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index));
+        int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),samplerWrapT.get(index));
         int rgb=image.getRGB(x,y)&0xffffff;
         // GLB material baseColorFactor is part of the original material.
         // Previously ignored, washing out the 128px van shell's deliberate
@@ -322,8 +338,8 @@ public final class GlbProps {
         if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
             throw new IllegalArgumentException("Invalid imported alpha");
         BufferedImage image=textures.get(index);
-        int x=Math.min(image.getWidth()-1,(int)((u-Math.floor(u))*image.getWidth()));
-        int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index));
+        int x=Math.min(image.getWidth()-1,(int)(wrapUv(u,samplerWrapS.get(index))*image.getWidth()));
+        int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),samplerWrapT.get(index));
         int texAlpha=(image.getRGB(x,y)>>>24)&255;
         return Math.max(0,Math.min(255,(int)Math.round(
             texAlpha*diffuseFactors.get(index)[3])));
@@ -380,6 +396,7 @@ public final class GlbProps {
         List<Object> views=arr(root.get("bufferViews")),accessors=arr(root.get("accessors"));
         List<Object> images=arr(root.get("images")),materials=arr(root.get("materials"));
         List<Object> glTextures=arr(root.get("textures")),nodes=arr(root.get("nodes"));
+        List<Object> samplers=root.get("samplers")==null?List.of():arr(root.get("samplers"));
         List<Object> meshes=arr(root.get("meshes"));
         if(views.size()>4096||accessors.size()>4096||nodes.size()>128||
             meshes.size()>128||images.size()>64)throw new IOException("GLB budget exceeded");
@@ -389,7 +406,16 @@ public final class GlbProps {
             Object base=pbr.get("baseColorTexture");
             if(base==null)throw new IOException("Material has no original texture");
             int textureIndex=integer(obj(base).get("index"));
-            int imageIndex=integer(obj(glTextures.get(textureIndex)).get("source"));
+            Map<String,Object> texture=obj(glTextures.get(textureIndex));
+            int imageIndex=integer(texture.get("source"));
+            int samplerIndex=get(texture,"sampler",-1);
+            if(samplerIndex>=samplers.size()||samplerIndex< -1)
+                throw new IOException("Invalid source glTF sampler");
+            Map<String,Object> sampler=samplerIndex<0?Map.of():obj(samplers.get(samplerIndex));
+            int wrapS=get(sampler,"wrapS",10497),wrapT=get(sampler,"wrapT",10497);
+            if((wrapS!=10497&&wrapS!=33071&&wrapS!=33648)||
+                    (wrapT!=10497&&wrapT!=33071&&wrapT!=33648))
+                throw new IOException("Unsupported source glTF sampler wrap");
             Map<String,Object> image=obj(images.get(imageIndex));
             if(!"image/png".equals(image.get("mimeType"))||
                 image.get("bufferView")==null)throw new IOException("Unsupported embedded image");
@@ -410,6 +436,8 @@ public final class GlbProps {
                 picture=readableBookCover(picture);
             materialIds[i]=TEXTURE_BASE+textures.size();
             textures.add(picture);
+            samplerWrapS.add(wrapS);
+            samplerWrapT.add(wrapT);
             vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)||reviewedSourceGltfUv(resourceName)||diagnosticBookUvOrigin(resourceName)||diagnosticRemainingUvOrigin(resourceName)));
             materialNames.add(String.valueOf(obj(materials.get(i)).getOrDefault("name","")));
             double[] color=vec(pbr.get("baseColorFactor"),1,1,1,1);
