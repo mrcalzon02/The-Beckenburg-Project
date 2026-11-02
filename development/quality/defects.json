@@ -1776,23 +1776,23 @@
     {
       "id": "DEV-167",
       "title": "26 numbered model assets require source/UV/material and rendered visual repair",
-      "status": "open-source-id-mapping-and-actual-render-review",
-      "affected": "Asset IDs asset-0564, asset-0566, asset-0586, asset-0597..0602, asset-0428, asset-0209..0210, asset-0204..0207, asset-0254, asset-0099, asset-0106..0107, asset-0145, asset-0002, asset-0026, asset-0022, asset-0001, asset-0086; all relevant maps and developer room",
+      "status": "four-real-render-verified-corrections-remaining-22-open",
+      "affected": "26 owner-confirmed historical dev-room capture IDs, mapped by development/assets/texture-revision-review-2026-11-01.json; six Hollow Creek entries are authored bedroll scene instances, not terrain tiles",
       "symptom": "Owner flags suspected misaligned exterior textures and severe graphical defects across imported and 3D-authored asset families; supplied list has 26 distinct numeric asset IDs and an additional screenshot.",
-      "cause": "Unknown per model; must distinguish source UV error, wrong material-to-primitive binding, exported image/atlas mismatch, glTF V-axis sampling, geometry/normal defects and runtime UV treatment. Numeric IDs are not the runtime GLB filenames; never guess a mapping.",
-      "action": "Source-of-truth ordered queue development/assets/texture-revision-review-2026-11-01.json. Resolve numeric asset IDs to original source filename/hash, inspect source GLB/Blender and actual runtime rendering in DevAssetShowroom, repair as source-preserving derivative, then capture real before/after PNGs and source readback. Non-blocking tools/audit_glb_materials.py reports per-material/UV structure only.",
-      "evidence": "2026-11-01 owner-supplied text and screenshot; initial main head e1a9b5f. Runtime directory has 949 entries and no asset-#### filenames; no verified mapping or completed per-asset image comparison yet. Inspected original runtime examples ceiling_lamp_1_off, ceiling_lamp_4_on/off, level_utility_light, blender_video_camera_1; embedded PNGs/multi-material associations exist in several, so their render quality is not established by structural metadata.",
+      "cause": "Verified glTF source-PNG V-origin mismatch for metal_barrel_mp_1, canned_food_mp_1/2, and CC0 Kenney medieval detail barrel; per-asset defect causes for other 22 still require source and in-scene comparison. Hollow Creek six use dark authored material/UV atlas, not a missing scene registration; no arbitrary recolor or geometry replacement performed.",
+      "action": "Four source-preserving targeted runtime V-origin corrections visually accepted. Remaining 22: compare four-angle screenshots to original Blender/GLB/spite sources, prioritize Hollow Creek bedroll authored atlas revisions, then fireplace orientation/surface materials, television natural facing, old-book spine/page atlas, medication and sprite crops. Preserve untouched originals and source-linked master files. Actual preview state is diagnostic, never a release gate.",
+      "evidence": "Verified real SceneRenderer images: 3 barrel/can fixes at developer-room run 41380366943, artifact 13112887060 (source 42f486b); Kenney barrel at 41381478095, artifact 13113780988 (source 4bd4f38). Original Kenney archive and detail-barrel GLB source hashes recorded in texture-revision-review-2026-11-01.json. Source-approved native Hollow Creek bedroll models were misclassified as SOURCE_ONLY; dev registry correction 4ea2b5f and stable focus updates committed. Remaining 22 lack postrepair proof.",
       "older_maps": "Audit any level using these assets after mapping; House, Castle, Farmhouse, School and every shared fixture use require independent placement/orientation and material captures. Visual defects are diagnostic and not release blockers."
     },
     {
       "id": "DEV-168",
       "title": "Editor GLB reduction silently substitutes checkerboard for imported material/UV artwork",
-      "status": "source-guard-pushed-CI-and-GUI-review-pending",
+      "status": "source-guard-and-Windows-CI-verified-existing-derivatives-unaudited",
       "affected": "AssetImportDialog, ImportedAssetLibrary and any GLB optimization imported via the developer editor",
       "symptom": "Previously nonzero GLB regression could be published with a single fallback checkerboard texture replacing original named material bindings and per-part source UV/material identity after dialog warning.",
       "cause": "EditorMeshPipeline flattens imported GLB geometry to triangles without source material identifiers; EditorGlbWriter.encode writes a generic one-material checkerboard on export. Warning/confirmation alone still permitted destructive derivative publication.",
       "action": "Commit 2a3271b adds persistent publish guard; 0af5f9f disables unsafe GUI button and blocks bypass; df65881 adds regression check for unchanged level-zero GLB bytes and refusal of nonzero GLB regression. Source-only/no-destructive GLB publishing remains available; material-preserving decimation remains future implementation.",
-      "evidence": "GitHub main updates were read back; Java compile, integration tests and actual editor GUI inspection pending. Existing derivative GLBs are not automatically repaired and must be checked against their originals.",
+      "evidence": "Editor guard commits 2a3271b and 0af5f9f read back, test df65881 added; matching Windows installer workflow 41380366927 and developer room workflow 41380366943 completed success at source ce0c01d4. Original GLB publishing byte-identical at level zero, reduced GLB material-loss path blocked. GUI manual interaction and preexisting damaged derivative audit remain open. Asset-specific visual assertions removed from release-blocking GlbPropsTest in eec70ef.",
       "older_maps": "Identify previously imported GLB derivatives that used nonzero regression; compare source/runtime SHA and visual texture mapping, replace only after authoring a real corrected derivative. Do not infer existing models have been repaired by the new guard."
     }
   ],
