@@ -2262,6 +2262,34 @@ Code commits `814d7c1`, `ad2176c`, and `d1c857c` add a reversible, 450ms eased l
 
 **Older-map obligation:** Inspect each authored site's hinge/pivot and multi-leaf doors, Castle gates, and van doors independently; do not generalize House acceptance.
 
+### DEV-167 — 26 numbered model assets require source/UV/material and rendered visual repair
+
+**Status:** open-source-id-mapping-and-actual-render-review · **Affected:** Asset IDs asset-0564, asset-0566, asset-0586, asset-0597..0602, asset-0428, asset-0209..0210, asset-0204..0207, asset-0254, asset-0099, asset-0106..0107, asset-0145, asset-0002, asset-0026, asset-0022, asset-0001, asset-0086; all relevant maps and developer room
+
+Owner flags suspected misaligned exterior textures and severe graphical defects across imported and 3D-authored asset families; supplied list has 26 distinct numeric asset IDs and an additional screenshot.
+
+Cause / uncertainty: Unknown per model; must distinguish source UV error, wrong material-to-primitive binding, exported image/atlas mismatch, glTF V-axis sampling, geometry/normal defects and runtime UV treatment. Numeric IDs are not the runtime GLB filenames; never guess a mapping.
+
+Fix / next action: Source-of-truth ordered queue development/assets/texture-revision-review-2026-11-01.json. Resolve numeric asset IDs to original source filename/hash, inspect source GLB/Blender and actual runtime rendering in DevAssetShowroom, repair as source-preserving derivative, then capture real before/after PNGs and source readback. Non-blocking tools/audit_glb_materials.py reports per-material/UV structure only.
+
+Evidence and verification: 2026-11-01 owner-supplied text and screenshot; initial main head e1a9b5f. Runtime directory has 949 entries and no asset-#### filenames; no verified mapping or completed per-asset image comparison yet. Inspected original runtime examples ceiling_lamp_1_off, ceiling_lamp_4_on/off, level_utility_light, blender_video_camera_1; embedded PNGs/multi-material associations exist in several, so their render quality is not established by structural metadata.
+
+Older-map obligation: Audit any level using these assets after mapping; House, Castle, Farmhouse, School and every shared fixture use require independent placement/orientation and material captures. Visual defects are diagnostic and not release blockers.
+
+### DEV-168 — Editor GLB reduction silently substitutes checkerboard for imported material/UV artwork
+
+**Status:** source-guard-pushed-CI-and-GUI-review-pending · **Affected:** AssetImportDialog, ImportedAssetLibrary and any GLB optimization imported via the developer editor
+
+Previously nonzero GLB regression could be published with a single fallback checkerboard texture replacing original named material bindings and per-part source UV/material identity after dialog warning.
+
+Cause / uncertainty: EditorMeshPipeline flattens imported GLB geometry to triangles without source material identifiers; EditorGlbWriter.encode writes a generic one-material checkerboard on export. Warning/confirmation alone still permitted destructive derivative publication.
+
+Fix / next action: Commit 2a3271b adds persistent publish guard; 0af5f9f disables unsafe GUI button and blocks bypass; df65881 adds regression check for unchanged level-zero GLB bytes and refusal of nonzero GLB regression. Source-only/no-destructive GLB publishing remains available; material-preserving decimation remains future implementation.
+
+Evidence and verification: GitHub main updates were read back; Java compile, integration tests and actual editor GUI inspection pending. Existing derivative GLBs are not automatically repaired and must be checked against their originals.
+
+Older-map obligation: Identify previously imported GLB derivatives that used nonzero regression; compare source/runtime SHA and visual texture mapping, replace only after authoring a real corrected derivative. Do not infer existing models have been repaired by the new guard.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
