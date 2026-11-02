@@ -64,6 +64,9 @@ public final class EditorDocumentStore {
             return bytes;
         }
     }
+    /** Exact bounded document bytes for codecs which must bind a decoded state to its revision. */
+    public static byte[] readDocument(Path path)throws IOException{return read(normalize(path),MAX_BYTES);}
+    public static String fingerprint(byte[] bytes){return java.util.HexFormat.of().formatHex(digest(bytes));}
     private static byte[] digest(byte[] bytes){
         try{return MessageDigest.getInstance("SHA-256").digest(bytes);}
         catch(NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}

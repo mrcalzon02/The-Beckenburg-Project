@@ -1,0 +1,6 @@
+Source: 0fb70ac20610f5e373e64f0243aafde92c7d1e2d
+Workflow: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41360981244
+Job: 125011076846; completed success. Raw log excerpt:
+2026-11-01T23:25:52.4745133Z REGRESSION SUMMARY passed=307 failed=0 skipped=0 manifest=307
+Native editor workflow 41360968300 and standalone editor workflow 41360973706 also succeeded at this source, including actual indexed mesh authoring/publication and bounded topology checks.
+Later native disk/snapshot/schema/bootstrap/history repairs require their own exact-source CI. Physical installed-game acceptance is separate.

@@ -15,6 +15,9 @@ HorrorAudioRoutingTest
 CastleHubIntegrationTest
 CastleDocumentRecoveryTest
 EditorChangeIntegrationTest
+EditorDiskRevisionTest
+CastleSnapshotContractTest
+EditorSchemaCompatibilityTest
 CastleEditorGeometryTest
 CastleLightingPlacementRepairTest
 CastleHomeInteractionTest

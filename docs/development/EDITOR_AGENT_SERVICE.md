@@ -43,7 +43,7 @@ capture<TAB>revision<TAB>C:/path/to/frame.png
 test<TAB>revision<TAB>mission-runtime-parity
 ```
 
-One JSON response is emitted per request on stdout; runtime diagnostics go to stderr. `ok` denotes successful request execution; inspect each test check for pass/fail. Exit status is 1 if any request or test failed, otherwise 0 at EOF. Input lines are limited to 16 KiB. The process has normal local project/file permissions; this is a trusted local CLI, not an authentication/security boundary. No remote MCP, arbitrary script/class/shell execution or terrain commands are exposed.
+One JSON response is emitted per request on stdout; runtime diagnostics go to stderr. `ok` denotes successful request execution; inspect each test check for pass/fail. Exit status is 1 if any request or test failed, otherwise 0 at EOF. Requests are limited to 16,384 UTF-16 code units while reading, before unbounded line buffering. A protocol read/limit error emits a structured `phase: protocol` failure and terminates the process. Startup failures emit `phase: open` and do not create a placeholder scene. Both output channels are UTF-8 independently of the Java17 platform default. The process has normal local project/file permissions; this is a trusted local CLI, not an authentication/security boundary. No remote MCP, arbitrary script/class/shell execution or terrain commands are exposed.
 
 ## Evidence and remaining gates
 
@@ -62,3 +62,17 @@ The portable `EditorChange` record carries the owning scene/document, before/aft
 The mission adapter compares complete native prop records by persisted ID, so rotation, mesh, collision dimensions and other same-position edits are detected. Physics dirty bounds union the old/new **actual** `LevelPlans.propCollider` footprints, including origin offsets, rotation and native height corrections. These bounds do not claim GLB/render extents; the renderer and immutable native map still rebuild conservatively. The human viewport consumes notifications and native revision changes instead of comparing/copying the full prop list on every frame. Castle currently uses full invalidation.
 
 `EditorChangeIntegrationTest` proves committed batch coalescing, no rollback/cancellation leakage, exact owner/revision provenance, native fingerprints, rotated collider coverage, removal/undo/addition, redo/reopen and Castle fallback. The actual GUI test checks that unchanged revisions reuse the native map and a committed edit rebuilds it from authoritative props. The standalone adapter test proves failed metadata extraction still invalidates a committed edit. Notification callbacks are trusted synchronous host code; no external subscription/remote API or arbitrary callback surface is exposed.
+
+## Observed disk revisions and recovery before open
+
+Native mission and Castle sessions now retain the exact SHA of the bytes they decoded or successfully saved. Save compares this observed revision inside the shared writer lock after staging; competing edits and external deletions refuse without replacing newer files or discarding unsaved live edits. Explicit reopen observes the newer file; shared undo can restore the prior live edit, and a subsequent explicit save deliberately writes it against that now-observed disk revision. Undo never rewinds disk ownership. Snapshot data is immutable, and failed host restores retain undo/redo targets instead of consuming history.
+
+For a corrupt document that prevents creating the runtime, invoke the same validated recovery operation **before opening**:
+
+```text
+java -cp build/beckenburg-game.jar org.beckenburg.EditorAgentCli CASTLE C:/path/to/project-home --recover-previous
+```
+
+Then send normal `inspect`/other requests. The flag explicitly replaces the target with its validated previous document, using the same backend as the human recovery menu, and only then constructs the actual host. It does not create a default/fake scene to make recovery available. Without the flag, invalid input remains untouched and startup returns a structured error.
+
+Native schema compatibility is explicit: mission components must contain only supported fields; custom labels/layers, contradictory duplicate yaw values and unsupported transforms are refused rather than discarded. Legacy optional `yawRad` remains supported. Future Castle layout versions and station coordinates that the human editor rejects cannot be installed through load/recovery. Castle codecs for explicitly selected files no longer initialize or migrate an unrelated default runtime profile. Door serialization uses stable socket order, preserving useful prior versions after value-equivalent remove/reinstall or history restore.

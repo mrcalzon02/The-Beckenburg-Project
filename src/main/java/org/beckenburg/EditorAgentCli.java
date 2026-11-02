@@ -16,12 +16,28 @@ import java.util.Map;
 public final class EditorAgentCli {
     private EditorAgentCli(){}
     public static void main(String[] args)throws Exception{
-        if(args.length!=2)throw new IllegalArgumentException("Usage: EditorAgentCli CASTLE|HOUSE|SCHOOL|... project-home");
+        PrintStream responses=new PrintStream(System.out,true,StandardCharsets.UTF_8);
+        // Both channels use UTF-8 independently of Java17 platform defaults.
+        System.setErr(new PrintStream(System.err,true,StandardCharsets.UTF_8));
+        System.setOut(System.err);
+        int code;
+        try{code=open(args,responses);}
+        catch(Exception|LinkageError failure){
+            Throwable cause=failure;while(cause.getCause()!=null&&cause.getCause()!=cause)cause=cause.getCause();
+            responses.println(json(Map.of("ok",false,"phase","open","error",cause.toString())));responses.flush();
+            failure.printStackTrace(System.err);code=1;
+        }
+        if(code!=0)System.exit(code);
+    }
+    private static int open(String[] args,PrintStream responses)throws Exception{
+        if(args.length<2||args.length>3||(args.length==3&&!args[2].equals("--recover-previous")))
+            throw new IllegalArgumentException("Usage: EditorAgentCli CASTLE|HOUSE|SCHOOL|... project-home [--recover-previous]");
         System.setProperty("user.home",Path.of(args[1]).toAbsolutePath().normalize().toString());
         System.setProperty("java.awt.headless","true");
-        PrintStream responses=new PrintStream(System.out,true,StandardCharsets.UTF_8);
-        // Runtime diagnostics must never corrupt the JSON response stream.
-        System.setOut(System.err);
+        if(args.length==3){
+            if(args[0].equalsIgnoreCase("CASTLE"))CastleLevelEdits.recoverSavedDocument();
+            else LevelAuthoringSession.recoverSavedDocument(HouseMap.Site.valueOf(args[0].toUpperCase(java.util.Locale.ROOT)));
+        }
         Thread owner=Thread.currentThread();
         Runnable access=()->{if(Thread.currentThread()!=owner)throw new IllegalStateException("Wrong runtime owner thread");};
         SceneRenderer renderer=new SceneRenderer();renderer.setRenderSize(560,350);renderer.lamp=false;
@@ -40,14 +56,30 @@ public final class EditorAgentCli {
             service=new EditorAgentService<>(new LevelEditorAgent(session,()->new HouseMap(site,session.level()),renderer,access),
                 new EditorHistory<>(session,60));
         }
-        int code=run(service,new BufferedReader(new InputStreamReader(System.in,StandardCharsets.UTF_8)),responses);
-        if(code!=0)System.exit(code);
+        return run(service,new BufferedReader(new InputStreamReader(System.in,StandardCharsets.UTF_8)),responses);
+    }
+    private static String readRequest(BufferedReader input)throws java.io.IOException{
+        var line=new StringBuilder();
+        for(int value;(value=input.read())!=-1;){
+            if(value=='\n')return line.toString();
+            if(value=='\r'){
+                input.mark(1);int next=input.read();if(next!=-1&&next!='\n')input.reset();return line.toString();
+            }
+            if(line.length()==16384)throw new java.io.IOException("Request exceeds 16384 UTF-16 code units");
+            line.append((char)value);
+        }
+        return line.length()==0?null:line.toString();
     }
     static int run(EditorAgentService<?> service,BufferedReader requests,PrintStream responses)throws Exception{
         boolean failed=false;
-        for(String line;(line=requests.readLine())!=null;){
+        for(;;){
+            String line;
+            try{line=readRequest(requests);}
+            catch(java.io.IOException failure){
+                responses.println(json(Map.of("ok",false,"phase","protocol","error",failure.toString())));responses.flush();return 1;
+            }
+            if(line==null)break;
             try{
-                if(line.length()>16384)throw new IllegalArgumentException("Request too large");
                 String[] parts=line.split("\t",-1);String command=parts[0];Object result;
                 if(command.equals("inspect")){
                     if(parts.length!=1)throw new IllegalArgumentException("inspect takes no arguments");

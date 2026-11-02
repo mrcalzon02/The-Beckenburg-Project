@@ -1,0 +1,25 @@
+{
+  "sourceSha": "0fb70ac20610f5e373e64f0243aafde92c7d1e2d",
+  "scope": "Stable indexed human vertex authoring, native persistence, checked publication and editable archives",
+  "nativeCi": {
+    "run": 41360968300,
+    "status": "success"
+  },
+  "standaloneCi": {
+    "run": 41360973706,
+    "status": "success"
+  },
+  "fullCi": {
+    "run": 41360981244,
+    "status": "success",
+    "passed": 307,
+    "failed": 0,
+    "skipped": 0,
+    "rawEvidence": "../editor-full-round-0fb70ac2.txt"
+  },
+  "limits": [
+    "Partial G2: primitives, picking/gizmos, edge/face modeling and full normal/material interchange remain open",
+    "Later native guard/snapshot/schema/bootstrap/history changes have independent source/CI checkpoints",
+    "No installed hardware or complete G0-G12 acceptance inferred"
+  ]
+}

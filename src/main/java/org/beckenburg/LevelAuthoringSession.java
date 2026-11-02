@@ -29,6 +29,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     private final ArrayList<Prop> props = new ArrayList<>();
     private final ArrayList<String> propIds = new ArrayList<>();
     private long revision=1;
+    private String diskFingerprint;
     /** Identity is authoring metadata paired with the native props, not another scene. */
     public record Snapshot(String sceneId,List<String> ids,List<Prop> props){
         public Snapshot{
@@ -44,7 +45,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         Objects.requireNonNull(site);
         this.documentId=sceneId(site);this.document=path(site);
         this.source=LevelPlans.buildSource(site);
-        restore(loadState(document,documentId,source));
+        var loaded=loadRevision(document,documentId,source);restore(loaded.state());diskFingerprint=loaded.fingerprint();
     }
     public String id(){return documentId;}
     private static String sceneId(HouseMap.Site site){
@@ -80,15 +81,18 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     public synchronized long revision(){return revision;}
     public synchronized void validate(){snapshot();for(Prop prop:props)checkProp(prop);}
     public synchronized void reopen()throws IOException{
-        restore(loadState(document,documentId,source));
+        var loaded=loadRevision(document,documentId,source);restore(loaded.state());diskFingerprint=loaded.fingerprint();
     }
-    public synchronized void recoverPrevious()throws IOException{
+    public static void recoverSavedDocument(HouseMap.Site site)throws IOException{
+        recoverPreviousDocument(path(site),sceneId(site),LevelPlans.buildSource(site));
+    }
+    private static void recoverPreviousDocument(Path document,String documentId,LevelDefinition source)throws IOException{
         RuntimeSceneDocument.restorePrevious(document,path->{
             var candidate=loadState(path,documentId,source);
-            for(var prop:candidate.props())checkProp(prop);
+            for(var prop:candidate.props())checkProp(prop,source);
         });
-        reopen();
     }
+    public synchronized void recoverPrevious()throws IOException{recoverPreviousDocument(document,documentId,source);reopen();}
     private void checkProp(Prop p){
         checkProp(p,source);
     }
@@ -131,7 +135,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         return List.copyOf(result);
     }
     public synchronized void save() throws IOException {
-        saveState(documentPath(),snapshot());
+        diskFingerprint=RuntimeSceneDocument.saveIfUnchanged(documentPath(),sceneDocument(snapshot()),diskFingerprint);
     }
     static void saveProps(Path destination,String id,List<Prop> source) throws IOException {
         saveState(destination,sourceState(id,source));
@@ -140,7 +144,8 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         var ids=new ArrayList<String>();for(int i=0;i<props.size();i++)ids.add("prop-"+i);
         return new Snapshot(id,ids,props);
     }
-    private static void saveState(Path destination,Snapshot state)throws IOException{
+    private static void saveState(Path destination,Snapshot state)throws IOException{RuntimeSceneDocument.save(destination,sceneDocument(state));}
+    private static InMemoryRuntimeScene sceneDocument(Snapshot state){
         InMemoryRuntimeScene document=new InMemoryRuntimeScene(state.sceneId());
         for(int i=0;i<state.props().size();i++){
             Prop p=state.props().get(i);
@@ -155,12 +160,14 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                     "height",Double.toString(p.height()),
                     "support",p.support())))));
         }
-        RuntimeSceneDocument.save(destination,document);
+        return document;
     }
-    private static Snapshot loadState(Path path,String id,LevelDefinition source) throws IOException {
+    private record Loaded(Snapshot state,String fingerprint){}
+    private static Snapshot loadState(Path path,String id,LevelDefinition source)throws IOException{return loadRevision(path,id,source).state();}
+    private static Loaded loadRevision(Path path,String id,LevelDefinition source) throws IOException {
         RuntimeSceneDocument.recoverPending(path);
-        if(!Files.exists(path))return sourceState(id,source.props());
-        var scene=RuntimeSceneDocument.load(path);
+        if(!Files.exists(path))return new Loaded(sourceState(id,source.props()),null);
+        var loaded=RuntimeSceneDocument.loadRevision(path);var scene=loaded.scene();
         if(!scene.sceneId().equals(id))
             throw new IOException("Level document identity mismatch: "+path);
         ArrayList<Prop> result=new ArrayList<>();
@@ -171,7 +178,18 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                 throw new IOException("Unsupported level node "+node.id());
             try{
                 var data=node.components().get(0).properties();
+                var required=java.util.Set.of("mesh","room","halfX","halfZ","height","support");
+                var allowed=java.util.Set.of("mesh","room","halfX","halfZ","height","support","yawRad");
+                if(!data.keySet().containsAll(required)||!allowed.containsAll(data.keySet()))
+                    throw new IllegalArgumentException("Unsupported native prop properties");
+                if(!node.name().equals(data.get("mesh"))||!node.layer().equals("world"))
+                    throw new IllegalArgumentException("Native mission cannot preserve custom node labels/layers");
                 var t=node.transform();
+                if(data.containsKey("yawRad")){
+                    double degrees=Math.toDegrees(Double.parseDouble(data.get("yawRad")));
+                    if(!Double.isFinite(degrees)||Math.abs(degrees-t.yaw())>Math.max(1e-10,Math.ulp(t.yaw())*4))
+                        throw new IllegalArgumentException("Contradictory native and portable yaw values");
+                }
                 if(node.parentId()!=null||t.pitch()!=0||t.roll()!=0
                     ||t.scaleX()!=t.scaleY()||t.scaleX()!=t.scaleZ())
                     throw new IllegalArgumentException("Mission runtime supports root props with yaw and uniform scale only");
@@ -188,7 +206,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                 throw new IOException("Invalid level object "+node.id()+" in "+path,invalid);
             }
         }
-        return new Snapshot(id,ids,result);
+        return new Loaded(new Snapshot(id,ids,result),loaded.fingerprint());
     }
     static LevelDefinition apply(HouseMap.Site site,LevelDefinition source){
         try{

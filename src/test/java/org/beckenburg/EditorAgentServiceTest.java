@@ -96,6 +96,18 @@ public final class EditorAgentServiceTest {
             int code=EditorAgentCli.run(service,new java.io.BufferedReader(new java.io.StringReader("inspect\nunknown\t"+session.revision()+"\n")),
                 new java.io.PrintStream(responses, true,java.nio.charset.StandardCharsets.UTF_8));
             check(code==1&&responses.toString(java.nio.charset.StandardCharsets.UTF_8).contains("\"ok\":false"),"CLI returns structured failures and failing exit status");
+            var consumed=new java.util.concurrent.atomic.AtomicInteger();var beforeProtocol=session.snapshot();
+            var excessive=new java.io.Reader(){
+                public int read(char[] chars,int offset,int length)throws java.io.IOException{
+                    int total=consumed.addAndGet(length);if(total>=32768)throw new java.io.IOException("Reader guard: unbounded line buffering");
+                    java.util.Arrays.fill(chars,offset,offset+length,'x');return length;
+                }
+                public void close(){}
+            };
+            var boundedOutput=new java.io.ByteArrayOutputStream();
+            int bounded=EditorAgentCli.run(service,new java.io.BufferedReader(excessive),new java.io.PrintStream(boundedOutput,true,java.nio.charset.StandardCharsets.UTF_8));
+            check(bounded==1&&consumed.get()<32768&&boundedOutput.toString(java.nio.charset.StandardCharsets.UTF_8).contains("protocol")
+                &&session.snapshot().equals(beforeProtocol),"Request limit applies before unbounded buffering or any native edit");
             System.out.println("PASS native mission/Castle service: stale rejection, shared undo, batch rollback, save/game load/reopen, renderer capture, owner thread and CLI");
         }finally{
             System.setProperty("user.home",previous);

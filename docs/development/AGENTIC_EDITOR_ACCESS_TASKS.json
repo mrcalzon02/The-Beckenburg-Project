@@ -738,12 +738,35 @@
         "Read-only derived topology, not completed editable G2 authoring",
         "Native topology persistence, vertex/edge/face operations, full materials/normals and later stages remain open"
       ]
+    },
+    {
+      "sourceSha": "0fb70ac20610f5e373e64f0243aafde92c7d1e2d",
+      "scope": "Human indexed vertex edit/undo/native save/reopen/fresh load with checked runtime publication",
+      "nativeHostCi": {
+        "run": 41360968300,
+        "status": "success"
+      },
+      "standaloneCi": {
+        "run": 41360973706,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41360981244,
+        "status": "success",
+        "passed": 307,
+        "failed": 0,
+        "unexecuted": 0
+      },
+      "evidence": "development/quality/evidence/mesh-topology-2026-11-01/indexed-authoring-evidence.json",
+      "limitations": [
+        "G2 remains partial; no agent mesh commands are admitted",
+        "Later resource/snapshot/bootstrap contracts have a separate checkpoint"
+      ]
     }
   ],
   "nextGoalWork": [
-    "Verify exact-source native/standalone/full CI for indexed human mesh editing and checked asset publication",
-    "Adopt conditional disk revisions in legacy mission/Castle persistence without changing stable identity or migration semantics",
-    "Continue G2 primitives, actual selection/gizmos, reversible edge/face modeling and full normal/material interchange on the same native topology project",
-    "Continue dependency-ordered G3-G12; do not expose unverified modeling through agents or claim original PDF provenance/installed acceptance"
+    "Verify new exact-source310 native/standalone/full results for disk/snapshot/schema/bootstrap/history contracts",
+    "Continue G2 human parametric primitives and actual selection/gizmos on the same indexed project; then reversible edge/face modeling and material/normal interchange",
+    "Continue dependency-ordered G3-G12 without fake scene data or premature gate completion; original PDF bytes and installed hardware acceptance remain separate"
   ]
 }
