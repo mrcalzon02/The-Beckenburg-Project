@@ -62,6 +62,11 @@ public final class ImportedAssetLibrary {
             throw new IOException("Optimized GLB does not fit game decoder");
         String ext=extension(original);
         if(!Set.of("obj","stl","glb").contains(ext))throw new IOException("Unsupported source type");
+        // The portable mesh regression exporter substitutes a single
+        // checkerboard material. Never lose a GLB's authored UV/material
+        // assignment, even if a caller bypasses the Swing import dialog.
+        if(ext.equals("glb") && level!=0)
+            throw new IOException("Textured GLB regression is unsupported: retain original UVs/materials; optimize in a material-preserving authoring tool");
         String id="import_"+hex(sha256(join(source,output))).substring(0,16);
         Files.createDirectories(root());
         Path mesh=root().resolve(id+".glb");
