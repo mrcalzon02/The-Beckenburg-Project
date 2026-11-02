@@ -66,7 +66,7 @@ def repair_sheet(original: bytes, facing: str) -> tuple[bytes, dict]:
             strip[:, xlo:xhi] = ~keep[:, xlo:xhi]
             strong += int(np.count_nonzero(strip & (alpha >= 24)))
             transparent += int(np.count_nonzero(strip & (alpha != 0)))
-            untouched_body += int(np.count_nonzero(keep[:, xlo:xhi] & (alpha >= 24)))
+            untouched_body += int(np.count_nonzero(keep[:, xlo:xhi] & (alpha[:, xlo:xhi] >= 24)))
             alpha[strip] = 0
             if np.any((alpha[:, xlo:xhi] >= 24) & ~keep[:, xlo:xhi]):
                 raise AssertionError("Detached edge line survived the cleanup")
