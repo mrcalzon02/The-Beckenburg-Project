@@ -42,6 +42,7 @@ def repair_sheet(original: bytes, facing: str) -> tuple[bytes, dict]:
     transparent = 0
     strong = 0
     untouched_body = 0
+    preserved_faded_frames = 0
     for row in range(ROWS):
         for col in range(COLS):
             tile = array[row * CELL_H:(row + 1) * CELL_H,
@@ -54,7 +55,11 @@ def repair_sheet(original: bytes, facing: str) -> tuple[bytes, dict]:
                 raise ValueError(f"Missing original ghost body: {facing} {row}/{col}")
             principal = max(range(1, count), key=lambda n: int(stats[n, cv2.CC_STAT_AREA]))
             if stats[principal, cv2.CC_STAT_AREA] < 400:
-                raise ValueError(f"Original ghost silhouette too small: {facing}")
+                # The source atlas also contains intentional fade/dissipate
+                # frames with only a few surviving bright pixels. Those are
+                # not a missing/defective body; do not strip or repaint them.
+                preserved_faded_frames += 1
+                continue
             # One-pixel fringe around connected source body protects antialias
             # coverage at the clothing edge, but cannot reach the thin border.
             keep = cv2.dilate(
@@ -81,6 +86,7 @@ def repair_sheet(original: bytes, facing: str) -> tuple[bytes, dict]:
         "facing": facing, "detached_alpha_pixels_cleared": transparent,
         "visible_line_pixels_cleared": strong,
         "protected_original_body_pixels": untouched_body,
+        "preserved_faded_source_frames": preserved_faded_frames,
         "source_rgb_unchanged": True,
     }
 
