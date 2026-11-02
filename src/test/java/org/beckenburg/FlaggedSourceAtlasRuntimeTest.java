@@ -83,6 +83,21 @@ public final class FlaggedSourceAtlasRuntimeTest {
         check(fireplaceMaterials.contains("Material #3")
                 && fireplaceMaterials.contains("Material #4"),
             "Original fireplace wood and wall texture materials not bound");
+        check(!GlbProps.diagnosticLegacyUvOrigin("level_fireplace"),
+            "Production source UV may not use legacy diagnostic by default");
+        System.setProperty("beckenburg.devroom.legacyBottomLeftUV", "true");
+        try {
+            check(GlbProps.diagnosticLegacyUvOrigin("level_fireplace"),
+                "Fireplace legacy A/B selectable for capture");
+            check(GlbProps.diagnosticLegacyUvOrigin("blender_igniter_2_lit"),
+                "Equipment legacy A/B selectable for capture");
+            check(GlbProps.diagnosticLegacyUvOrigin("book_mp_2"),
+                "Book legacy A/B selectable for capture");
+            check(!GlbProps.diagnosticLegacyUvOrigin("wardrobe_mp_1"),
+                "Unrelated models excluded from legacy A/B");
+        } finally {
+            System.clearProperty("beckenburg.devroom.legacyBottomLeftUV");
+        }
         // No global flip: unrelated imported assets retain their established
         // runtime sampling until their own exact source/render is reviewed.
         check(!GlbProps.reviewedSourceGltfUv("wardrobe_mp_1"), "Unrelated atlas changed");
