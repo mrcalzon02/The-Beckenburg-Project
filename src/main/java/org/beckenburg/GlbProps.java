@@ -88,7 +88,8 @@ public final class GlbProps {
      * Other purchased models remain unchanged pending their own comparison. */
     static boolean reviewedSourceGltfUv(String name){
         return "metal_barrel_mp_1".equals(name)||
-            "canned_food_mp_1".equals(name)||"canned_food_mp_2".equals(name);
+            "canned_food_mp_1".equals(name)||"canned_food_mp_2".equals(name)||
+            "kenney_medieval_detail_barrel".equals(name);
     }
     static int imageRow(double v,int height,boolean gltfTopLeft){
         if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
