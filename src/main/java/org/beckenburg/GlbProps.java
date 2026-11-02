@@ -96,7 +96,7 @@ public final class GlbProps {
      * as glTF top-left, preserving original GLB/UV/source image bytes. */
     static boolean diagnosticBookUvOrigin(String name){
         return Boolean.getBoolean("beckenburg.devroom.bookTopLeftUV")
-            &&bookCoverMaterial(name);
+            &&(bookCoverMaterial(name)||"blender_ghost_writing_book_2".equals(name));
     }
     static int imageRow(double v,int height,boolean gltfTopLeft){
         if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
