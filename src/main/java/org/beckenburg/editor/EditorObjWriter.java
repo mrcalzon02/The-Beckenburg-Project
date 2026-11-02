@@ -18,9 +18,14 @@ public final class EditorObjWriter {
         return ids;
     }
     public static void write(EditorTopologyProject.State state,OutputStream output)throws IOException{
+        if(!state.materials().isEmpty())throw new IOException("Plain OBJ cannot retain embedded native materials; save BTOP or publish GLB");
+        write(state,output,Map.of(),null);
+    }
+    static void write(EditorTopologyProject.State state,OutputStream output,Map<String,String> aliases,String library)throws IOException{
         var ids=indices(state);var points=new HashMap<Long,EditorTopologyProject.Vertex>();for(var v:state.vertices())points.put(v.id(),v);
         var writer=new BufferedWriter(new OutputStreamWriter(output,StandardCharsets.UTF_8));
         writer.write("# Beckenburg native topology copy: Y up, X/Z horizontal; UVs unmodified\n");
+        if(library!=null)writer.write("mtllib "+library+"\n");
         for(var v:state.vertices())writer.write("v "+v.x()+" "+v.y()+" "+v.z()+"\n");
         for(var f:state.faces())for(var c:List.of(f.a(),f.b(),f.c()))writer.write("vt "+c.u()+" "+c.v()+"\n");
         for(var f:state.faces()){
@@ -29,9 +34,10 @@ public final class EditorObjWriter {
                 var n=corner.normal()==null?flat:corner.normal();writer.write("vn "+n.x()+" "+n.y()+" "+n.z()+"\n");
             }
         }
-        String part=null;int face=0;
+        String part=null,material=null;int face=0;
         for(var f:state.faces()){
             if(!f.part().equals(part)){part=f.part();writer.write("o "+part+"\n");}
+            if(library!=null&&!f.material().equals(material)){material=f.material();String alias=aliases.get(material);if(alias==null)throw new IOException("Missing material export alias");writer.write("usemtl "+alias+"\n");}
             writer.write("f");int corner=0;for(var c:List.of(f.a(),f.b(),f.c())){writer.write(" "+ids.get(c.vertex())+"/"+(face*3+corner+1)+"/"+(face*3+corner+1));corner++;}writer.write("\n");face++;
         }writer.flush();
     }
@@ -39,13 +45,17 @@ public final class EditorObjWriter {
     private static EditorMeshPipeline.Vertex vertex(EditorTopologyProject.Corner c,Map<Long,EditorTopologyProject.Vertex> points){var p=points.get(c.vertex());return new EditorMeshPipeline.Vertex(p.x(),p.y(),p.z(),c.u(),c.v(),c.normal());}
     /** Readback uses the same native OBJ decoder as the actual human importer. */
     public static void validate(EditorTopologyProject.State state,byte[] bytes)throws IOException{
-        var ids=indices(state);var parsed=EditorMeshPipeline.read("export.obj",bytes);
+        validate(state,EditorMeshPipeline.read("export.obj",bytes));
+    }
+    static void validate(EditorTopologyProject.State state,EditorMeshPipeline.Mesh parsed)throws IOException{
+        var ids=indices(state);
+        if(!parsed.materials().equals(state.materials()))throw new IOException("OBJ readback material definitions differ");
         if(parsed.triangles().size()!=state.faces().size())throw new IOException("OBJ readback face count differs");
         var expected=new ArrayList<Long>();for(var f:state.faces())for(var c:List.of(f.a(),f.b(),f.c()))expected.add((long)ids.get(c.vertex())-1);
         if(!parsed.cornerVertexIds().equals(expected))throw new IOException("OBJ readback changed native connectivity");
         var positions=new HashMap<Long,EditorTopologyProject.Vertex>();for(var p:state.vertices())positions.put(p.id(),p);
         for(int i=0;i<state.faces().size();i++){
-            var f=state.faces().get(i);var t=parsed.triangles().get(i);if(!f.part().equals(t.part()))throw new IOException("OBJ readback part differs");
+            var f=state.faces().get(i);var t=parsed.triangles().get(i);if(!f.part().equals(t.part())||!f.material().equals(t.material()))throw new IOException("OBJ readback part/material differs");
             var nativeTriangle=new EditorMeshPipeline.Triangle(f.part(),vertex(f.a(),positions),vertex(f.b(),positions),vertex(f.c(),positions));var flat=faceNormal(nativeTriangle);
             var actual=List.of(t.a(),t.b(),t.c());var corners=List.of(f.a(),f.b(),f.c());
             for(int j=0;j<3;j++){var a=actual.get(j);var c=corners.get(j);var p=positions.get(c.vertex());if(a.x()!=p.x()||a.y()!=p.y()||a.z()!=p.z()||a.u()!=c.u()||a.v()!=c.v())throw new IOException("OBJ readback geometry/UV/winding differs");var expectedNormal=c.normal()==null?flat:c.normal();if(!expectedNormal.equals(a.normal()))throw new IOException("OBJ readback corner normal differs");}

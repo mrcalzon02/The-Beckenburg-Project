@@ -2880,6 +2880,34 @@ Evidence and verification: Exact47f563b native project compiled from its Git blo
 
 Older-map obligation: No source art rewritten. Intermediate regression was corrected before remote publication; identity actions must not manufacture dirty state, new asset hashes or metadata normalization.
 
+### DEV-211 — Merged atlas checkpoint has two failing full-regression art assertions despite green advisory workflow
+
+**Status:** open; exact terminal raw 308/310 recorded; source-art review required before any golden update · **Affected:** GhostSpriteAtlasIntegrationTest, TwinBodyVisualTest at merged source bcd7469828f8736a5dfb5c6266a48543573fb294
+
+Full run41486307374 completed with green workflow status but raw regression job125417465992 reports passed308 failed2 skipped0 manifest310. Ghost archive bytes6883065 differ from expected6868626; Twin A side-frame fingerprint differs from previous approved silhouette.
+
+Cause / uncertainty: Full manifest is explicitly advisory in this workflow. Main source atlas repairs were merged; existing fixed-byte/fingerprint expectations have not been reconciled through actual visual/source review. Green workflow status is insufficient acceptance.
+
+Fix / next action: Retain raw failures and previous goldens, compare actual atlas/side silhouette against approved original source before determining test staleness versus visual regression. Do not change artwork or bless new hashes merely to pass. Keep factual renderer acceptance separate.
+
+Evidence and verification: development/quality/evidence/editor-full-round-bcd74698.txt records exact failures and summary. Companion GPU41486319863 job125420512759 genuinely passes actual11-map residency and3 UI cycles; see editor-gpu-bcd74698.txt.
+
+Older-map obligation: No blanket old-map/art acceptance. Preserve original owner art, all source repairs, and existing visual-golden tests until reviewed.
+
+### DEV-212 — OBJ material declarations are silently discarded by geometry-only native import and GLB fallback
+
+**Status:** fixed-scoped; actual human material window/native/bundle/runtime tests pass locally; exact-source CI pending · **Affected:** EditorMeshPipeline OBJ mtllib/usemtl, EditorTopologyProject native schema and EditorGlbWriter
+
+Actual previous3ca731b5 pipeline imports a material-bearing OBJ but exposes no native material table and emits generated checkerboard instead of original map_Kd PNG/material assignment.
+
+Cause / uncertainty: Native triangles held geometry/UV/normals only and the GLB writer generated one fallback atlas; no immutable source material/binding schema or dependency capture existed.
+
+Fix / next action: Capture original PNG, factors, alpha/cutoff, wraps and UV origin in native BTOPv3 with face references. Use explicit MTL parsing/context/dependency validation, same preview/history/save and actual game GLB compiler; preserve material-bearing OBJ via validated atomic bundle. Plain export refuses material loss. Material window has independent layout and native UV/face selection, not a parallel scene.
+
+Evidence and verification: Exact3ca731b5 Git blobs compiled in build/material-negative-control reproduce geometry-only import. EditorMeshMaterialTest checks native/history/fresh open, real OBJ/MTL dependencies and bundle readback. AssetImportMaterialsGuiTest drives actual face selection/window/PNG/cancel/apply/save/publish, exact UV/RGBA/wrap/tint and real renderer screenshot; repeated scoped previews release transient runtime registrations. Fixture evidence material-workspace-2026-11-02.
+
+Older-map obligation: Do not bulk-reimport existing assets, overwrite source textures or flatten GLB node/pivot/material provenance. Existing geometry-only v1 and normal v2 paths remain compatible. Full painting/PBR/editable source GLB remains open.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -14,12 +14,13 @@ public final class EditorTopologyProjectTest {
                 new EditorMeshPipeline.Triangle("part",v(2,0),v(3,0),v(2,1))),117);
             var project=EditorTopologyProject.fromMesh(source,EditorChange.fingerprint("actual fixture source"),home.resolve("model.btop"));
             var history=new EditorHistory<>(project,60);var initial=project.snapshot();project.save();byte[] first=Files.readAllBytes(project.documentPath());
-            check(project.mesh().equals(source),"Imported geometry, named parts and corner UVs roundtrip without editing");
+            check(project.mesh().triangles().equals(source.triangles())&&project.mesh().materials().equals(source.materials())&&project.mesh().name().equals(source.name())&&project.mesh().sourceBytes()==source.sourceBytes(),"Imported geometry, named parts and corner UVs roundtrip without editing");
             long id=initial.vertices().get(0).id();history.execute(()->project.moveVertex(id,2,0,0));
             var edited=project.snapshot();
             project.moveVertex(id,2,-0.0,0);check(project.topology().manifold(),"Signed zero is the same geometric position without losing indexed identity");project.restore(edited);
             check(project.topology().vertices().size()==6&&project.topology().islands()==2&&project.topology().manifold(),"Coincident positions preserve distinct indexed vertex identities");
-            check(EditorMeshTopology.build(project.mesh()).vertices().size()==5,"Negative control: geometric regrouping would silently weld explicit IDs");
+            check(EditorMeshTopology.build(project.mesh()).vertices().size()==6,"Derived mesh carries authoritative native position identities");
+            check(EditorMeshTopology.build(new EditorMeshPipeline.Mesh(project.mesh().name(),project.mesh().triangles(),project.mesh().sourceBytes())).vertices().size()==5,"Negative control: discarding native IDs would silently weld coincident positions");
             check(initial.faces().equals(edited.faces()),"Vertex edit preserves face IDs, part ownership and every corner UV");
             check(history.undo()&&project.snapshot().equals(initial),"Shared history restores original indexed topology");
             check(history.redo()&&project.snapshot().equals(edited),"Shared redo restores same vertex IDs and native geometry");
@@ -38,7 +39,7 @@ public final class EditorTopologyProjectTest {
             Files.copy(foreign.documentPath(),EditorDocumentStore.previous(project.documentPath()),StandardCopyOption.REPLACE_EXISTING);
             try{project.recoverPrevious();throw new AssertionError("Foreign topology backup accepted");}catch(java.io.IOException expected){}
             check(project.snapshot().equals(edited)&&Arrays.equals(first,Files.readAllBytes(project.documentPath())),"Foreign ID backup preserves native authoring/disk bytes");
-            byte[] future=first.clone();future[7]=3;Files.write(project.documentPath(),future);
+            byte[] future=first.clone();future[7]=4;Files.write(project.documentPath(),future);
             try{project.reopen();throw new AssertionError("Unknown future version accepted");}catch(java.io.IOException expected){}
             check(project.snapshot().equals(edited)&&Arrays.equals(future,Files.readAllBytes(project.documentPath())),"Unsupported native version retained without reinterpretation");
             Files.write(project.documentPath(),first);

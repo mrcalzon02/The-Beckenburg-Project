@@ -1,4 +1,4 @@
-"""Check the seven-source requirements chain without claiming feature acceptance.
+"""Check the owner-source requirements chain without claiming feature acceptance.
 
 Text hashes normalize line endings; original PDF hashes are verified only when
 an explicit archived binary path exists. Missing originals are reported as gaps.
@@ -26,8 +26,10 @@ def registered_path(relative):
     return path
 
 
-if len(register['sources']) != 7 or len({s['id'] for s in register['sources']}) != 7:
-    errors.append('Expected seven distinct owner sources')
+required_sources = {'editor-gold-standards', 'terrain-editor-requirements', 'landscape-layering', 'topological-editor', 'soundscape-environment-manager', 'engine-base', 'multi-genre-game-creation-engine', 'texture-painting'}
+source_ids = [s['id'] for s in register['sources']]
+if len(source_ids) != len(set(source_ids)) or not required_sources.issubset(source_ids):
+    errors.append('Expected all eight distinct registered owner sources')
 for source in register['sources']:
     result = {'id': source['id'], 'originalPdf': 'UNAVAILABLE', 'textArchive': 'NOT_ARCHIVED'}
     for relative in source.get('analysisPaths', []):

@@ -1,0 +1,10 @@
+Source bcd7469828f8736a5dfb5c6266a48543573fb294
+GitHub job 125417465992; terminal raw log excerpt retrieved 2026-11-02
+2026-11-02T17:02:41.0734147Z TEST START org.beckenburg.GhostSpriteAtlasIntegrationTest
+2026-11-02T17:02:41.2195821Z ##[error]Exception in thread "main" java.lang.AssertionError: ghost resource bytes changed: 6883065
+2026-11-02T17:02:41.2393882Z FAIL GhostSpriteAtlasIntegrationTest processExit=1
+2026-11-02T17:02:50.1440078Z TEST START org.beckenburg.TwinBodyVisualTest
+2026-11-02T17:02:50.9727668Z ##[error]Exception in thread "main" java.lang.AssertionError: Twin A side-view head/feet crop differs from approved complete art
+2026-11-02T17:02:51.0649183Z FAIL TwinBodyVisualTest processExit=1
+2026-11-02T17:11:09.0866968Z REGRESSION SUMMARY passed=308 failed=2 skipped=0 manifest=310
+2026-11-02T17:11:09.0906189Z ##[error]Exception in thread "main" java.lang.IllegalStateException: Release regression gate failed: 2 test failures; 0 not executed

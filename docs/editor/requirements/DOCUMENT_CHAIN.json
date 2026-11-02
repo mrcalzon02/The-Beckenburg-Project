@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "chainId": "beckenburg-java17-editor-requirements",
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "purpose": "Owner-supplied editing, engine, terrain and audio source document chain. Index authoritative PDF provenance separately from repository transcriptions and staged integration status.",
   "authoritativePlan": "docs/editor/requirements/STAGED_INTEGRATION_PLAN.md",
   "preservationRules": [
@@ -187,6 +187,35 @@
         "roguelike"
       ],
       "textArchiveSha256Lf": "2b7d2595db0ec950b3651de5b1d97420bc9278977d71b5c0d83019e806e79928"
+    },
+    {
+      "id": "texture-painting",
+      "order": 8,
+      "title": "🛠️ Texture Painting.pdf",
+      "prior": false,
+      "originalPdfCommitted": true,
+      "originalPdfSha256": "d74413254ef722d1e2b9a47745eea64ad44741b5c9b8026907e170fdfc4ab727",
+      "originalPdfBytes": 243324,
+      "sourcePages": 10,
+      "originalPdfPath": "docs/editor/requirements/sources/texture-painting.pdf",
+      "sourceStatus": "Owner-supplied original archived with complete page-marked text; material/UV requirements mapped, implementation partial",
+      "analysisPaths": [
+        "docs/editor/requirements/TEXTURE_PAINTING_INTEGRATION.md"
+      ],
+      "covers": [
+        "layered multi-channel painting",
+        "UV seam cutting/unwrapping/packing",
+        "projection/symmetry",
+        "localized MIP updates and tile undo",
+        "brush UX and tablet input",
+        "independent material workspace",
+        "same native command/history authority",
+        "recovery/live reload",
+        "bounded agent execution and actual screenshots"
+      ],
+      "textArchivePath": "docs/editor/requirements/sources/texture-painting.txt",
+      "textPageMarkers": 10,
+      "textArchiveSha256Lf": "1064dcd131fa2ed5e671efcec14d8aa43189382f45cdf33650ac5d41f780f828"
     }
   ],
   "stages": [

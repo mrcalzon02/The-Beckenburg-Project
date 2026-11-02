@@ -1,0 +1,73 @@
+{
+  "type": "actual human/native/runtime fixture, not production model art",
+  "baseline": "3ca731b5b1f67f36ec5ad7180102ca6556b55ab3",
+  "artifacts": {
+    "material-binding-original.png": {
+      "bytes": 86,
+      "sha256": "e3f161da3cc326cd246468bd6a50ff3642a630e63b622bb7c8c47bd03289eee4"
+    },
+    "material-binding-preview.png": {
+      "bytes": 63030,
+      "sha256": "ba1ec1225c0b2462e03e593961826128268c103b02962693275a2b08c4b9e00a"
+    },
+    "material-binding-runtime.png": {
+      "bytes": 33313,
+      "sha256": "86768169c9e32d8436a8eeda25ca268007a801e3321daf5824d61002453171c1"
+    },
+    "material-binding.btop": {
+      "bytes": 949,
+      "sha256": "fb083ca49367710794a6b88a705ed4f08ee174ca4842b2a2ac1a6524e39a7b4e"
+    },
+    "material-binding.glb": {
+      "bytes": 3284,
+      "sha256": "f197d2392f77251019ca64cb8d3771044c883d95052118580affbb939397bd1f"
+    },
+    "material-binding.obj.zip": {
+      "bytes": 1593,
+      "sha256": "f5822c97d881f75ebc4982f94a0ba7a80ad7ebaabe103fc36399bd55e3ed49d9"
+    },
+    "material-workspace.png": {
+      "bytes": 73995,
+      "sha256": "d7a2d2bfb288cbb58146d3aa999dfc7d369123c19398e3fd5fedb82b631157b6"
+    },
+    "MaterialLossControl.java": {
+      "bytes": 568,
+      "sha256": "17f4c9ac9669850009f1e4b63eb2ebf87020eb286ac5f6fe26eae13941487405"
+    },
+    "previous-checkerboard.glb": {
+      "bytes": 1112,
+      "sha256": "4378d75dc0441e601806cf990074a1ee03b13e1ad7f26d33926a8769f73df9c0"
+    },
+    "requirements-audit.json": {
+      "bytes": 2524,
+      "sha256": "19388133e8fe1a2ac30e8d31d4775018daae83ed3e127f22cfa576276da96699"
+    }
+  },
+  "sourceSha256Lf": {
+    "src/main/java/org/beckenburg/AssetImportDialog.java": "dc366ab6a447f5ef3dda9b424fb93d756c8ee7422cdc26ba1adfebc1bc94d9ca",
+    "src/main/java/org/beckenburg/GlbProps.java": "226ea99861ce897d190ddeb37db00b340d37f5d06f4e5918bb894b3c8a23e6d4",
+    "src/main/java/org/beckenburg/SceneRenderer.java": "9415a6c10dc2e7ed395427afa47677b61b5fb2cc953756ca613160a06d152d4e",
+    "src/main/java/org/beckenburg/editor/EditorGlbJson.java": "a6a130cd39fcbc46af4b83e8b864e24492dbe095aa2d55b60c7873fab9a9bbb9",
+    "src/main/java/org/beckenburg/editor/EditorMaterialGlbWriter.java": "eedc414872c699b31b97d00e1c5bceba47187850f626ca1217e19289aebeff8b",
+    "src/main/java/org/beckenburg/editor/EditorMaterialWorkspace.java": "6e8bf94f245527a60b40d016591aa41e4421c5053c121c5b7a4ae28370ba332b",
+    "src/main/java/org/beckenburg/editor/EditorMeshMaterial.java": "b009e35123f32983cf066ba6f32d0ae8100e4e5005225c8cae61827caf9dde85",
+    "src/main/java/org/beckenburg/editor/EditorMeshPipeline.java": "5240eb8d4ad367c80a776ef3cc52d2a834567a42da7941727b45fd4035ffbe9c",
+    "src/main/java/org/beckenburg/editor/EditorObjBundle.java": "c6b0e94b6577591246989766b5294be6bd8f48b48db08f567c37cdc323aedfb3",
+    "src/main/java/org/beckenburg/editor/EditorObjMaterials.java": "9adfb005856cde1402fa92bd06907bbccac6a92e610f4e412bb0257fa9e8315e",
+    "src/main/java/org/beckenburg/editor/EditorObjWriter.java": "4044adf820af79690016aba3bb2e57d3914e95b5c69214d8188cbda23ef2247b",
+    "src/main/java/org/beckenburg/editor/EditorTopologyProject.java": "a7490d263bd5fa79f542d7354978a28cb399d8cd1680ddcfc33b44be4b371b73",
+    "src/test/java/org/beckenburg/AssetImportMaterialsGuiTest.java": "e045d5557652bfa06292314e0faec30c333dcbe8e56fcc31f013abb6f7a9d055",
+    "src/test/java/org/beckenburg/editor/EditorMeshMaterialTest.java": "765669d01ed4fef9d94b9078bef938bf2798ffc70601b9e7886013acfd6b9dcf"
+  },
+  "verification": {
+    "hostCompile": "PASS Java17 complete game/editor/water/lighting",
+    "nativeHost": "PASS full tools/verify_editor_agent_host.cmd including materials window and headless CLI",
+    "portableJar": "PASS independent Java17 and EditorMeshMaterialTest",
+    "meshRegression": "PASS topology/OBJ/normal/repair/transform/face/primitives/picking/source identity",
+    "maximumNormalTransform": "PASS 120000faces/360000vertices under256MiB",
+    "requirementsChain": "PASS 8sources, texture PDF original SHA and10 text pages verified;7 older originals missing",
+    "previousFull": "308passed/2failed/0skipped at bcd74698; unresolved DEV211",
+    "previousGpu": "PASS actual11map residency and3UI cycles at bcd74698",
+    "exactNewSourceCI": "pending after publication"
+  }
+}

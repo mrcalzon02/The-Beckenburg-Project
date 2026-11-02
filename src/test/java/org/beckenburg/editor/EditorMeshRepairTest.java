@@ -32,7 +32,7 @@ public final class EditorMeshRepairTest {
             var ids=before.vertices().stream().map(EditorTopologyProject.Vertex::id).toList();var preview=p.previewWeld(ids);
             check(p.snapshot()==before&&!history.canUndo(),"Weld preview does not alter native authority");
             check(preview.snapshot().vertices().size()==4&&preview.snapshot().faces().size()==2&&preview.topology().manifold()&&preview.topology().boundaryEdges()==4&&preview.topology().uvSeams()==1,"Weld joins source seam while retaining per-corner UV seam");
-            check(preview.mesh().equals(original),"Explicit identity weld cannot change rendered positions, winding or UV");
+            check(preview.mesh().triangles().equals(original.triangles())&&preview.mesh().materials().equals(original.materials()),"Explicit identity weld cannot change rendered positions, winding, UV or materials");
             history.execute(()->p.applyPreview(preview));var welded=p.snapshot();
             check(history.undo()&&p.snapshot().equals(before)&&history.redo()&&p.snapshot().equals(welded),"One history step restores exact pre/post weld identities");
             p.save();check(EditorTopologyProject.open(p.documentPath()).snapshot().equals(welded),"Native persistence retains welded IDs and corner UVs");

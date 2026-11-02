@@ -40,6 +40,8 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 - Establish schema migrations with compatibility tests before adding new component types. Add capability flags so unsupported host features do not claim success.
 **Exit:** standalone kit compiles on Java 17; round-trip/migration/rollback and existing scene tests pass; the same node is consumed by editor and real host.
 
+**2026-11-02 owner addition:** [Texture Painting](TEXTURE_PAINTING_INTEGRATION.md) extends G2/G3/G10/G11/G12. Materials require their own modification window and texture/UV layout; the modeling and level modules retain their own layouts. This extends the full plan without renumbering or closing its gates.
+
 ### G2 — Topological mesh foundation and parametric modeling (human operated)
 **Depends on:** G1. **Source:** Topological editor, pages 1–9, 15–18.
 - Add an editable half-edge/winged-edge adjacency graph with twins, next/prev, boundaries, islands, face materials, UV seams, normals and explicit topology errors; keep the existing render triangle buffers as derived output.
@@ -54,6 +56,7 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 ### G3 — Sculpting, remeshing, high-fidelity interchange and input
 **Depends on:** G2. **Source:** Topological editor, pages 1–18.
 - Clay/standard, grab, smooth, flatten/planar brushes; falloff, screen-space radius, stroke interpolation, symmetry, topology-safe deltas, brush-local normal rebuild.
+- Implement the human texture/UV workflow mapped in [Texture Painting integration](TEXTURE_PAINTING_INTEGRATION.md): layered Albedo/Roughness/Metallic/Normal, blend modes, localized MIP updates/tile undo, seam-aware projection/symmetry, unwrap/packing/pins/density/relax, brush UX, autosave/recovery and live links. Match source/native/runtime channel capabilities explicitly; unrendered channels and larger resolution targets remain open until actual backends support them.
 - Non-destructive quad-dominant remesh preview and controlled apply; do not arbitrarily remesh authored textured geometry, erase hand-placed UVs or change low-poly styling without authorization. Treat non-manifold repair as explicit preview/transaction.
 - Asynchronous save/export and bounded regional GPU buffer updates. Add pressure/tilt and high-frequency tablet adapters only where hardware APIs are available, with mouse fallback. Mocap/VRPN/OpenVR adapters optional, isolated and bounded.
 **Exit:** deterministic stroke replay and undo, geometry/UV preservation, no missing faces after sculpt, performance tests demonstrate no full-frame global mesh rebuild during local strokes.

@@ -418,6 +418,12 @@ public final class GlbProps {
     public static synchronized Model decode(byte[] bytes)throws IOException{
         return decode(bytes,null);
     }
+    /** Render a captured native candidate using real runtime materials, then release all transient registrations. */
+    static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation)throws IOException{
+        List<List<?>> tables=List.of(textures,vehicleUvMaterials,samplerWrapS,samplerWrapT,materialNames,diffuseFactors);int[] lengths=tables.stream().mapToInt(List::size).toArray();int first=TEXTURE_BASE+textures.size();
+        try{renderer.drawNativeMaterialReview(decode(bytes,null),rotation);return renderer.image();}
+        finally{for(int i=0;i<tables.size();i++)tables.get(i).subList(lengths[i],tables.get(i).size()).clear();gltfBlendMaterials.removeIf(id->id>=first);gltfMaskCutoffs.keySet().removeIf(id->id>=first);}
+    }
     /** Developer asset room only: preserve the actual named asset's UV origin
      * behavior while auditing source GLBs that are NOT runtime approved.
      * This method does not modify the normal game's model allowlist.
@@ -508,6 +514,10 @@ public final class GlbProps {
             samplerWrapS.add(wrapS);
             samplerWrapT.add(wrapT);
             vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)||reviewedSourceGltfUv(resourceName)||diagnosticBookUvOrigin(resourceName)||diagnosticRemainingUvOrigin(resourceName)) && !diagnosticLegacyUvOrigin(resourceName));
+            Object nativeExtras=obj(materials.get(i)).get("extras");
+            if(nativeExtras instanceof Map<?,?> extras&&extras.get("beckenburgUvOrigin")!=null){
+                String origin=String.valueOf(extras.get("beckenburgUvOrigin"));if(!origin.equals("TOP_LEFT")&&!origin.equals("BOTTOM_LEFT"))throw new IOException("Unknown authored material UV origin");vehicleUvMaterials.set(vehicleUvMaterials.size()-1,origin.equals("TOP_LEFT"));
+            }
             materialNames.add(String.valueOf(obj(materials.get(i)).getOrDefault("name","")));
             double[] color=vec(pbr.get("baseColorFactor"),1,1,1,1);
             diffuseFactors.add(color);

@@ -17,6 +17,7 @@ This chain **extends** the already committed [terrain requirements](../TERRAIN_R
 | 5 | Building a 3D Soundscape Environment Manager.pdf (19 pp) | [Full extracted text](sources/soundscape-environment-manager.txt) | New archived text; integration planned |
 | 6 | Engine base.pdf (29 pp) | [Full extracted text](sources/engine-base.txt) | New archived text; integration planned |
 | 7 | multi-genre game creation engine.pdf (19 PDF pages; 18 extracted text page markers) | [Full extracted text](sources/multi-genre-game-creation-engine.txt) | New archived text; integration planned |
+| 8 | Texture Painting.pdf (10 pp) | [Original PDF](sources/texture-painting.pdf), [complete extract](sources/texture-painting.txt), [acceptance map](TEXTURE_PAINTING_INTEGRATION.md) | Original bytes/SHA archived; native material foundation partial; painting/unwrap pending |
 
 **Provenance and fidelity:** all four new PDFs were read from the supplied attachments. The linked text files contain the complete available extracted text with explicit source-page markers. They do **not** contain diagrams/pictures, preserve exact PDF layout, or equal the binary original. Original PDF filenames, byte sizes, full-document SHA-256 digests and current binary-archival status are recorded in [DOCUMENT_CHAIN.json](DOCUMENT_CHAIN.json). No PDF binary was committed by this ingestion; the original uploads remain necessary for authoritative visual comparison. Do not alter a checksum or mark a PDF as physically archived unless its binary bytes are actually in the repository and read back.
 

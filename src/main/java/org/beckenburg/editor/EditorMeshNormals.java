@@ -24,7 +24,7 @@ public final class EditorMeshNormals {
         var a=edge(after.a(),after.b());var b=edge(after.a(),after.c());var n=face(after);double determinant=dot(a,cross(b,n));
         if(!Double.isFinite(determinant)||determinant<=0)throw new IllegalArgumentException("Invalid normal differential");
         var dualA=cross(b,n);var dualB=cross(n,a);
-        return new Triangle(after.part(),transport(before.a(),after.a(),oldA,oldB,oldN,dualA,dualB,n,determinant),transport(before.b(),after.b(),oldA,oldB,oldN,dualA,dualB,n,determinant),transport(before.c(),after.c(),oldA,oldB,oldN,dualA,dualB,n,determinant));
+        return new Triangle(after.part(),transport(before.a(),after.a(),oldA,oldB,oldN,dualA,dualB,n,determinant),transport(before.b(),after.b(),oldA,oldB,oldN,dualA,dualB,n,determinant),transport(before.c(),after.c(),oldA,oldB,oldN,dualA,dualB,n,determinant),after.material());
     }
     private static Vertex transport(Vertex before,Vertex after,Normal oldA,Normal oldB,Normal oldN,Normal dualA,Normal dualB,Normal n,double determinant){
         if(before.normal()==null)return after;var normal=unit(before.normal());double a=dot(oldA,normal)/determinant,b=dot(oldB,normal)/determinant,c=dot(oldN,normal);

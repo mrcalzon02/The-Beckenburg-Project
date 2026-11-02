@@ -3857,6 +3857,15 @@ public final class SceneRenderer {
         }
     }
 
+    /** Material window uses the production import, clip, depth and textured triangle pipeline. */
+    void drawNativeMaterialReview(GlbProps.Model model,double rotation){
+        for(int yy=0;yy<renderHeight;yy++)for(int xx=0;xx<renderWidth;xx++)pixels[yy*renderWidth+xx]=((xx/16+yy/16)&1)==0?0x41474f:0x343a42;
+        Arrays.fill(depths,Double.POSITIVE_INFINITY);environmentLight=1;weatherLightScale=1;fogDensity=0;
+        x=0;z=-3.3;eyeHeight=1.1;yaw=0;pitch=0;lamp=false;
+        var bounds=devAssetBounds(model);double scale=2/Math.max(.0001,Math.max(bounds[3],Math.max(bounds[4],bounds[5])));double cx=bounds[0]*scale,cz=bounds[2]*scale;
+        var faces=new ArrayList<Face>();imported(faces,"native_material_review",model,-cx*Math.cos(rotation)+cz*Math.sin(rotation),.1-bounds[1]*scale,-cx*Math.sin(rotation)-cz*Math.cos(rotation),scale,scale,scale,rotation);
+        for(var f:faces){if(!faceInFrustum(f))continue;var clipped=clip(new Vertex(camera(f.a),f.au,f.av),new Vertex(camera(f.b),f.bu,f.bv),new Vertex(camera(f.c),f.cu,f.cv));for(int k=1;k+1<clipped.size();k++)triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),f.color,f.material,1);}
+    }
     /**
      * Separate DEV ASSET ROOM scene, deliberately not a HouseMap.Site or player
      * lobby. Uses the *production* GLB->Face importer, perspective UV sampler,

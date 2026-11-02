@@ -16,6 +16,7 @@ import javax.imageio.ImageIO;
 public final class EditorGlbWriter {
     private EditorGlbWriter(){}
     public static byte[] encode(EditorMeshPipeline.Mesh mesh)throws IOException {
+        if(!mesh.materials().isEmpty())return EditorMaterialGlbWriter.encode(mesh);
         int count=mesh.triangles().size()*3;
         if(count<3||count>48000)throw new IOException(
             "Export needs 1..16000 triangles per model under existing 4 MiB GLB budget; reduce or split first");

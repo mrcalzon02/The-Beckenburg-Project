@@ -32,19 +32,21 @@ public final class EditorMeshPipeline {
             if(!Double.isFinite(x+y+z+u+v))throw new IllegalArgumentException("Nonfinite vertex");
         }
     }
-    public record Triangle(String part,Vertex a,Vertex b,Vertex c) {
+    public record Triangle(String part,Vertex a,Vertex b,Vertex c,String material) {
+        public Triangle(String part,Vertex a,Vertex b,Vertex c){this(part,a,b,c,"");}
         public Triangle {
-            if(part==null||part.isBlank()||a==null||b==null||c==null)
+            if(part==null||part.isBlank()||a==null||b==null||c==null||material==null)
                 throw new IllegalArgumentException("Invalid triangle");
         }
     }
     /** Optional per-corner source position identities. Empty means the source supplied no indices. */
-    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds) {
+    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials) {
+        public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds){this(name,triangles,sourceBytes,cornerVertexIds,List.of());}
         public Mesh(String name,List<Triangle> triangles,long sourceBytes){this(name,triangles,sourceBytes,List.of());}
         public Mesh {
             if(name==null||name.isBlank()||triangles==null
                 ||triangles.size()>MAX_TRIANGLES||sourceBytes<0)throw new IllegalArgumentException("Invalid mesh");
-            triangles=List.copyOf(triangles);
+            triangles=List.copyOf(triangles);materials=List.copyOf(materials);EditorMeshMaterial.validateTable(materials);var known=new HashSet<String>();for(var m:materials)known.add(m.key());for(var t:triangles)if(!t.material().isEmpty()&&!known.contains(t.material()))throw new IllegalArgumentException("Unresolved face material");
             if(cornerVertexIds==null||!cornerVertexIds.isEmpty()&&cornerVertexIds.size()!=triangles.size()*3)
                 throw new IllegalArgumentException("Source topology corner count mismatch");
             cornerVertexIds=List.copyOf(cornerVertexIds);
@@ -75,7 +77,7 @@ public final class EditorMeshPipeline {
         try{return java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(bytes));}
         catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}
     }
-    public static Mesh read(Path file)throws IOException{return decode(file.getFileName().toString(),readSource(file,(int)MAX_SOURCE_BYTES));}
+    public static Mesh read(Path file)throws IOException{return EditorObjMaterials.capture(file).mesh();}
     /** Parse exactly the captured source bytes whose digest is shown/reviewed by the host. */
     public static Mesh read(String name,byte[] source)throws IOException{
         if(source.length==0||source.length>MAX_SOURCE_BYTES)throw new IOException("Model source exceeds byte budget");
@@ -83,16 +85,17 @@ public final class EditorMeshPipeline {
     }
     private static Mesh decode(String name,byte[] raw)throws IOException{
         String lower=name.toLowerCase(Locale.ROOT);
-        if(lower.endsWith(".obj"))return obj(name,new String(raw,StandardCharsets.UTF_8),raw.length);
+        if(lower.endsWith(".obj.zip"))return EditorObjBundle.read(name,raw);
+        if(lower.endsWith(".obj"))return obj(name,new String(raw,StandardCharsets.UTF_8),raw.length,List.of(),Map.of());
         if(lower.endsWith(".stl"))return stl(name,raw,raw.length);
         throw new IOException("Portable mesh reader supports OBJ and STL; GLB uses the game's glTF decoder");
     }
 
-    private static Mesh obj(String name,String raw,long size)throws IOException{
+    static Mesh obj(String name,String raw,long size,List<EditorMeshMaterial> materials,Map<String,String> aliases)throws IOException{
         List<double[]> xyz=new ArrayList<>(),uv=new ArrayList<>();List<Normal> normals=new ArrayList<>();
         List<Triangle> triangles=new ArrayList<>();
         List<Long> sourceIds=new ArrayList<>();
-        String part="Object";
+        String part="Object",material="";
         int lineNumber=0;
         try(var input=new java.io.BufferedReader(new java.io.StringReader(raw))){
             for(String line;(line=input.readLine())!=null;){
@@ -101,6 +104,8 @@ public final class EditorMeshPipeline {
                 if(text.isEmpty()||text.startsWith("#"))continue;
                 String[] tokens=text.split("\\s+",258);
                 switch(tokens[0]){
+                    case "mtllib" -> {if(aliases.isEmpty())throw new IOException("OBJ material library requires source-file context");}
+                    case "usemtl" -> {String label=text.substring(6).strip();material=aliases.get(label);if(material==null)throw new IOException("Unresolved OBJ material: "+label);}
                     case "o","g" -> {if(tokens.length>1)part=tokens[1];}
                     case "v" -> {if(tokens.length<4)throw new IOException("Invalid OBJ position");
                         if(xyz.size()>=MAX_TRIANGLES*3)throw new IOException("OBJ position declaration budget exceeded");
@@ -116,7 +121,7 @@ public final class EditorMeshPipeline {
                         ObjCorner first=faceVertex(tokens[1],xyz,uv,normals),previous=faceVertex(tokens[2],xyz,uv,normals);
                         for(int k=3;k<tokens.length;k++){
                             ObjCorner next=faceVertex(tokens[k],xyz,uv,normals);
-                            triangles.add(new Triangle(part,first.vertex(),previous.vertex(),next.vertex()));
+                            triangles.add(new Triangle(part,first.vertex(),previous.vertex(),next.vertex(),material));
                             sourceIds.add((long)first.index());sourceIds.add((long)previous.index());sourceIds.add((long)next.index());previous=next;
                             if(triangles.size()>MAX_TRIANGLES)throw new IOException("OBJ triangle budget exceeded");
                         }
@@ -127,7 +132,7 @@ public final class EditorMeshPipeline {
             throw new IOException("Invalid OBJ at line "+lineNumber,err);
         }
         if(triangles.isEmpty())throw new IOException("OBJ has no faces");
-        return new Mesh(name,triangles,size,sourceIds);
+        return new Mesh(name,triangles,size,sourceIds,materials);
     }
     private static int positionIndex(String raw,int count)throws IOException{
         int value=Integer.parseInt(raw);
@@ -231,8 +236,8 @@ public final class EditorMeshPipeline {
             for(Triangle t:entry.getValue()){
                 Vertex a=snap(t.a(),cell),b=snap(t.b(),cell),c=snap(t.c(),cell);
                 if(area2(a,b,c)<1e-20)continue;
-                String key=a+"|"+b+"|"+c;
-                if(seen.add(key))output.add(EditorMeshNormals.transport(t,new Triangle(entry.getKey(),a,b,c)));
+                String key=t.material()+"|"+a+"|"+b+"|"+c;
+                if(seen.add(key))output.add(EditorMeshNormals.transport(t,new Triangle(entry.getKey(),a,b,c,t.material())));
             }
             after.put(entry.getKey(),output);
         }
@@ -252,7 +257,7 @@ public final class EditorMeshPipeline {
         long beforeMemory=estimatedBytes(source.triangles()),afterMemory=estimatedBytes(combined);
         if(beforeMemory>16L*1024*1024)warnings.add("MEMORY: estimated source triangle data >16 MiB (not full process heap)");
         if(combined.isEmpty())warnings.add("INVALID RESULT: reduction removed all drawable triangles. Publishing is disabled.");
-        Mesh result=new Mesh(source.name(),combined,source.sourceBytes());
+        Mesh result=new Mesh(source.name(),combined,source.sourceBytes(),List.of(),source.materials());
         // The over-regressed preview is represented by stats even when no drawable triangles survive.
         return new Result(source,result,level,stats,warnings,beforeMemory,afterMemory);
     }

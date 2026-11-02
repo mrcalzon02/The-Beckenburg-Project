@@ -8,7 +8,7 @@ import java.util.*;
  * derived from stable indexed vertices/corner UVs. No game scene is duplicated.
  */
 public final class EditorTopologyProject implements EditorProject<EditorTopologyProject.State> {
-    private static final int MAGIC=0x42544f50,VERSION=2,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
+    private static final int MAGIC=0x42544f50,VERSION=3,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
     public record Vertex(long id,String part,double x,double y,double z){
         public Vertex {
             text(part);if(id<0||!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))throw new IllegalArgumentException("Invalid topology vertex");
@@ -18,17 +18,19 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         public Corner(long vertex,double u,double v){this(vertex,u,v,null);}
         public Corner {if(vertex<0||!Double.isFinite(u)||!Double.isFinite(v))throw new IllegalArgumentException("Invalid corner");}
     }
-    public record Face(long id,String part,Corner a,Corner b,Corner c){
-        public Face {text(part);if(id<0)throw new IllegalArgumentException("Invalid face ID");Objects.requireNonNull(a);Objects.requireNonNull(b);Objects.requireNonNull(c);}
+    public record Face(long id,String part,Corner a,Corner b,Corner c,String material){
+        public Face(long id,String part,Corner a,Corner b,Corner c){this(id,part,a,b,c,"");}
+        public Face {text(part);if(id<0||material==null)throw new IllegalArgumentException("Invalid face ID/material");Objects.requireNonNull(a);Objects.requireNonNull(b);Objects.requireNonNull(c);}
     }
-    public record State(String sceneId,String sourceFingerprint,String name,long sourceBytes,List<Vertex> vertices,List<Face> faces){
+    public record State(String sceneId,String sourceFingerprint,String name,long sourceBytes,List<Vertex> vertices,List<Face> faces,List<EditorMeshMaterial> materials){
+        public State(String sceneId,String sourceFingerprint,String name,long sourceBytes,List<Vertex> vertices,List<Face> faces){this(sceneId,sourceFingerprint,name,sourceBytes,vertices,faces,List.of());}
         public State {
-            text(sceneId);text(name);vertices=List.copyOf(vertices);faces=List.copyOf(faces);
+            text(sceneId);text(name);vertices=List.copyOf(vertices);faces=List.copyOf(faces);materials=List.copyOf(materials);EditorMeshMaterial.validateTable(materials);var materialKeys=new HashSet<String>();for(var material:materials)materialKeys.add(material.key());
             if(sourceFingerprint==null||!sourceFingerprint.matches("[0-9a-f]{64}")||sourceBytes<0||vertices.size()>MAX_VERTICES||faces.size()>EditorMeshPipeline.MAX_TRIANGLES)
                 throw new IllegalArgumentException("Invalid topology state");
             var ids=new HashMap<Long,Vertex>();for(var vertex:vertices)if(ids.putIfAbsent(vertex.id(),vertex)!=null)throw new IllegalArgumentException("Duplicate vertex ID");
             var faceIds=new HashSet<Long>();for(var face:faces){
-                if(!faceIds.add(face.id()))throw new IllegalArgumentException("Duplicate face ID");
+                if(!faceIds.add(face.id()))throw new IllegalArgumentException("Duplicate face ID");if(!face.material().isEmpty()&&!materialKeys.contains(face.material()))throw new IllegalArgumentException("Unresolved native face material");
                 for(var corner:List.of(face.a(),face.b(),face.c())){
                     var vertex=ids.get(corner.vertex());if(vertex==null||!vertex.part().equals(face.part()))throw new IllegalArgumentException("Foreign/missing face vertex");
                 }
@@ -50,9 +52,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         for(int i=0;i<mesh.triangles().size();i++){
             var triangle=mesh.triangles().get(i);var uv=List.of(triangle.a(),triangle.b(),triangle.c());var corners=new ArrayList<Corner>();
             for(int j=0;j<3;j++)corners.add(new Corner(graph.edges().get(i*3+j).origin(),uv.get(j).u(),uv.get(j).v(),uv.get(j).normal()));
-            faces.add(new Face(i,triangle.part(),corners.get(0),corners.get(1),corners.get(2)));
+            faces.add(new Face(i,triangle.part(),corners.get(0),corners.get(1),corners.get(2),triangle.material()));
         }
-        return new EditorTopologyProject(path,new State("mesh-"+UUID.randomUUID(),sourceFingerprint,mesh.name(),mesh.sourceBytes(),vertices,faces));
+        return new EditorTopologyProject(path,new State("mesh-"+UUID.randomUUID(),sourceFingerprint,mesh.name(),mesh.sourceBytes(),vertices,faces,mesh.materials()));
     }
     public String id(){return id;}
     public synchronized String title(){return state.name();}
@@ -85,6 +87,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         if(!isCurrent(observation))throw new IOException("Native mesh changed since export review");
         if(target.toAbsolutePath().normalize().equals(path))throw new IOException("OBJ export cannot replace the native authoring document");
         State expected=state;
+        if(target.getFileName().toString().toLowerCase(java.util.Locale.ROOT).endsWith(".obj.zip")){
+            EditorDocumentStore.saveIfUnchanged(target,out->EditorObjBundle.write(expected,out),file->EditorObjBundle.read("export.obj.zip",EditorMeshPipeline.readSource(file,EditorDocumentStore.MAX_BYTES)),file->EditorObjBundle.validate(expected,EditorMeshPipeline.readSource(file,EditorDocumentStore.MAX_BYTES)),expectedTargetSha);return;
+        }
         EditorDocumentStore.saveIfUnchanged(target,out->EditorObjWriter.write(expected,out),
             file->EditorMeshPipeline.read("export.obj",EditorMeshPipeline.readSource(file,EditorDocumentStore.MAX_BYTES)),
             file->EditorObjWriter.validate(expected,EditorMeshPipeline.readSource(file,EditorDocumentStore.MAX_BYTES)),expectedTargetSha);
@@ -101,13 +106,14 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     private static EditorMeshPipeline.Mesh mesh(State state){
         var vertices=vertices(state);var triangles=new ArrayList<EditorMeshPipeline.Triangle>();
-        for(var face:state.faces())triangles.add(new EditorMeshPipeline.Triangle(face.part(),corner(face.a(),vertices),corner(face.b(),vertices),corner(face.c(),vertices)));
-        return new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes());
+        for(var face:state.faces())triangles.add(new EditorMeshPipeline.Triangle(face.part(),corner(face.a(),vertices),corner(face.b(),vertices),corner(face.c(),vertices),face.material()));
+        var ids=new ArrayList<Long>();for(var face:state.faces()){ids.add(face.a().vertex());ids.add(face.b().vertex());ids.add(face.c().vertex());}
+        return new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes(),ids,state.materials());
     }
     private static Map<Long,Vertex> indexVertices(List<Vertex> values){var map=new HashMap<Long,Vertex>();for(var v:values)map.put(v.id(),v);return map;}
-    private static EditorMeshPipeline.Triangle triangle(Face f,Map<Long,Vertex> values){return new EditorMeshPipeline.Triangle(f.part(),corner(f.a(),values),corner(f.b(),values),corner(f.c(),values));}
+    private static EditorMeshPipeline.Triangle triangle(Face f,Map<Long,Vertex> values){return new EditorMeshPipeline.Triangle(f.part(),corner(f.a(),values),corner(f.b(),values),corner(f.c(),values),f.material());}
     private static Corner normalCorner(Corner c,EditorMeshPipeline.Normal n){return new Corner(c.vertex(),c.u(),c.v(),n);}
-    private static Face normalFace(Face f,EditorMeshPipeline.Triangle t){return new Face(f.id(),f.part(),normalCorner(f.a(),t.a().normal()),normalCorner(f.b(),t.b().normal()),normalCorner(f.c(),t.c().normal()));}
+    private static Face normalFace(Face f,EditorMeshPipeline.Triangle t){return new Face(f.id(),f.part(),normalCorner(f.a(),t.a().normal()),normalCorner(f.b(),t.b().normal()),normalCorner(f.c(),t.c().normal()),f.material());}
     public synchronized EditorMeshPipeline.Mesh mesh(){return mesh(state);}
     public synchronized EditorMeshTopology topology(){return topology(state);}
     private static EditorMeshTopology topology(State state){
@@ -159,7 +165,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
                 inset?p.y()+(cy-p.y())*amount:p.y()+ny*amount,inset?p.z()+(cz-p.z())*amount:p.z()+nz*amount));
             newCorners.add(new Corner(id,inset?old.u()+(cu-old.u())*amount:old.u(),inset?old.v()+(cv-old.v())*amount:old.v(),old.normal()));
         }
-        var cap=new Face(face.id(),face.part(),newCorners.get(0),newCorners.get(1),newCorners.get(2));
+        var cap=new Face(face.id(),face.part(),newCorners.get(0),newCorners.get(1),newCorners.get(2),face.material());
         if(operation==FaceEdit.INSET){
             var updated=EditorMeshNormals.transport(triangle(face,byId),triangle(cap,indexVertices(newVertices)));
             cap=normalFace(cap,updated);
@@ -172,9 +178,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
                 var pa=points.get(i);var pb=points.get(j);double edge=Math.hypot(Math.hypot(pb.x()-pa.x(),pb.y()-pa.y()),pb.z()-pa.z());
                 oldA=new Corner(oldA.vertex(),0,0);oldB=new Corner(oldB.vertex(),edge,0);newA=new Corner(newA.vertex(),0,Math.abs(amount));newB=new Corner(newB.vertex(),edge,Math.abs(amount));
             }
-            newFaces.add(new Face(faceMax+1+i*2,face.part(),oldA,oldB,newB));newFaces.add(new Face(faceMax+2+i*2,face.part(),oldA,newB,newA));
+            newFaces.add(new Face(faceMax+1+i*2,face.part(),oldA,oldB,newB,face.material()));newFaces.add(new Face(faceMax+2+i*2,face.part(),oldA,newB,newA,face.material()));
         }
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces);
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces,state.materials());
         if(!topology(after).manifold())throw new IllegalArgumentException("Model edit would introduce invalid topology");
         return new EditPreview(this,state,after,revision,operation+" face "+faceId+" / +3 vertices, +6 triangles");
     }
@@ -207,9 +213,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             var a=weldCorner(f.a(),replacements);var b=weldCorner(f.b(),replacements);var c=weldCorner(f.c(),replacements);
             boolean changed=a.vertex()!=f.a().vertex()||b.vertex()!=f.b().vertex()||c.vertex()!=f.c().vertex();
             if(changed&&(a.vertex()==b.vertex()||b.vertex()==c.vertex()||c.vertex()==a.vertex())){removed++;continue;}
-            newFaces.add(new Face(f.id(),f.part(),a,b,c));
+            newFaces.add(new Face(f.id(),f.part(),a,b,c,f.material()));
         }
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces);
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces,state.materials());
         if(!topology(after).manifold())throw new IllegalArgumentException("Weld would leave invalid topology; select complete seams or repair degenerate faces first");
         return new EditPreview(this,state,after,revision,"WELD COINCIDENT / -"+replacements.size()+" vertices, -"+removed+" collapsed triangles");
     }
@@ -219,7 +225,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var positions=vertices(state);var remaining=new ArrayList<Face>();
         for(var face:state.faces()){double size=area(face,positions);if(size>0&&Double.isFinite(size))remaining.add(face);}
         int removed=state.faces().size()-remaining.size();if(removed==0)throw new IllegalArgumentException("No degenerate native faces to remove");
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),remaining);
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),remaining,state.materials());
         if(!topology(after).manifold())throw new IllegalArgumentException("Other topology errors remain; repair requires a valid resulting mesh");
         return new EditPreview(this,state,after,revision,"REMOVE DEGENERATES / -"+removed+" triangles; vertex IDs retained");
     }
@@ -227,7 +233,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var used=new HashSet<Long>();for(var f:state.faces()){used.add(f.a().vertex());used.add(f.b().vertex());used.add(f.c().vertex());}
         var retained=state.vertices().stream().filter(v->used.contains(v.id())).toList();int removed=state.vertices().size()-retained.size();
         if(removed==0)throw new IllegalArgumentException("No unused native vertices to remove");
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),retained,state.faces());
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),retained,state.faces(),state.materials());
         return new EditPreview(this,state,after,revision,"REMOVE UNUSED / -"+removed+" vertices; surviving IDs and faces retained");
     }
     private static double area(Face face,Map<Long,Vertex> vertices){
@@ -251,6 +257,17 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             next.put(id,new Vertex(id,v.part(),v.x()+dx,v.y()+dy,v.z()+dz));
         }
         replaceVertices(old,next,selected);
+    }
+    public synchronized EditPreview previewBindMaterial(long faceId,EditorMeshMaterial material){
+        Objects.requireNonNull(material);if(material.key().isEmpty())throw new IllegalArgumentException("Cannot bind an unnamed material");
+        var materials=new ArrayList<>(state.materials());var existing=materials.stream().filter(m->m.key().equals(material.key())).findFirst();
+        if(existing.isPresent()&&!existing.get().equals(material))throw new IllegalArgumentException("Material identity collision");
+        if(existing.isEmpty())materials.add(material);
+        var faces=new ArrayList<Face>();boolean found=false;for(var face:state.faces())if(face.id()==faceId){found=true;faces.add(new Face(face.id(),face.part(),face.a(),face.b(),face.c(),material.key()));}else faces.add(face);
+        if(!found)throw new IllegalArgumentException("Unknown native face");
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,materials);
+        if(after.equals(state))throw new IllegalArgumentException("Face already uses this material");
+        return new EditPreview(this,state,after,revision,"BIND MATERIAL / face "+faceId+" / "+material.name());
     }
     public enum Transform { ROTATE, SCALE_AXIS, SCALE_UNIFORM }
     /** Global axes, explicit origin/selection-centroid pivot. Candidate only; shared Apply owns mutation. */
@@ -292,10 +309,10 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         for(var face:state.faces()){
             boolean touched=selected.contains(face.a().vertex())||selected.contains(face.b().vertex())||selected.contains(face.c().vertex());
             if(!touched||face.a().normal()==null&&face.b().normal()==null&&face.c().normal()==null){faces.add(face);continue;}
-            if(selected.contains(face.a().vertex())&&selected.contains(face.b().vertex())&&selected.contains(face.c().vertex()))faces.add(new Face(face.id(),face.part(),normalCorner(face.a(),transform.apply(face.a().normal())),normalCorner(face.b(),transform.apply(face.b().normal())),normalCorner(face.c(),transform.apply(face.c().normal()))));
+            if(selected.contains(face.a().vertex())&&selected.contains(face.b().vertex())&&selected.contains(face.c().vertex()))faces.add(new Face(face.id(),face.part(),normalCorner(face.a(),transform.apply(face.a().normal())),normalCorner(face.b(),transform.apply(face.b().normal())),normalCorner(face.c(),transform.apply(face.c().normal())),face.material()));
             else faces.add(normalFace(face,EditorMeshNormals.transport(triangle(face,old),triangle(face,next))));
         }
-        return new State(state.sceneId(),state.sourceFingerprint(),state.name(),state.sourceBytes(),values,faces);
+        return new State(state.sceneId(),state.sourceFingerprint(),state.name(),state.sourceBytes(),values,faces,state.materials());
     }
     /** Append a reviewed primitive without welding existing vertices or reassigning their IDs. */
     public synchronized void appendPrimitive(EditorMeshPrimitives.Parameters parameters){
@@ -317,18 +334,19 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             for(int j=0;j<3;j++)corners.add(new Corner(base+graph.edges().get(i*3+j).origin(),uv.get(j).u(),uv.get(j).v(),uv.get(j).normal()));
             faces.add(new Face(nextFace++,part,corners.get(0),corners.get(1),corners.get(2)));
         }
-        state=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),vertices,faces);revision++;
+        state=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),vertices,faces,state.materials());revision++;
     }
     private static void write(State state,OutputStream out)throws IOException{
         boolean normals=state.faces().stream().anyMatch(f->f.a().normal()!=null||f.b().normal()!=null||f.c().normal()!=null);
-        var data=new DataOutputStream(out);data.writeInt(MAGIC);data.writeInt(normals?VERSION:1);
+        int version=state.materials().isEmpty()?(normals?2:1):VERSION;
+        var data=new DataOutputStream(out);data.writeInt(MAGIC);data.writeInt(version);
         data.writeUTF(state.sceneId());data.writeUTF(state.sourceFingerprint());data.writeUTF(state.name());data.writeLong(state.sourceBytes());
         data.writeInt(state.vertices().size());for(var v:state.vertices()){
             data.writeLong(v.id());data.writeUTF(v.part());data.writeDouble(v.x());data.writeDouble(v.y());data.writeDouble(v.z());
         }
         data.writeInt(state.faces().size());for(var f:state.faces()){
-            data.writeLong(f.id());data.writeUTF(f.part());for(var c:List.of(f.a(),f.b(),f.c())){data.writeLong(c.vertex());data.writeDouble(c.u());data.writeDouble(c.v());if(normals){data.writeBoolean(c.normal()!=null);if(c.normal()!=null){data.writeDouble(c.normal().x());data.writeDouble(c.normal().y());data.writeDouble(c.normal().z());}}}
-        }data.flush();
+            data.writeLong(f.id());data.writeUTF(f.part());for(var c:List.of(f.a(),f.b(),f.c())){data.writeLong(c.vertex());data.writeDouble(c.u());data.writeDouble(c.v());if(version>=2){data.writeBoolean(c.normal()!=null);if(c.normal()!=null){data.writeDouble(c.normal().x());data.writeDouble(c.normal().y());data.writeDouble(c.normal().z());}}}if(version>=3)data.writeUTF(f.material());
+        }if(version>=3)EditorMeshMaterial.writeTable(data,state.materials());data.flush();
     }
     private static int count(DataInputStream data,int max)throws IOException{int count=data.readInt();if(count<0||count>max)throw new IOException("Topology count budget exceeded");return count;}
     private static State read(Path path)throws IOException{return decode(EditorMeshPipeline.readSource(path,EditorDocumentStore.MAX_BYTES));}
@@ -348,10 +366,11 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
                     if(version>=2){int present=data.readUnsignedByte();if(present>1)throw new IOException("Invalid native corner-normal flag");if(present==1)normal=new EditorMeshPipeline.Normal(data.readDouble(),data.readDouble(),data.readDouble());}
                     corners.add(new Corner(vertex,u,v,normal));
                 }
-                faces.add(new Face(face,part,corners.get(0),corners.get(1),corners.get(2)));
+                faces.add(new Face(face,part,corners.get(0),corners.get(1),corners.get(2),version>=3?data.readUTF():""));
             }
+            var materials=version>=3?EditorMeshMaterial.readTable(data):List.<EditorMeshMaterial>of();
             if(data.read()!=-1)throw new IOException("Trailing native topology data");
-            return new State(id,source,name,size,vertices,faces);
+            return new State(id,source,name,size,vertices,faces,materials);
         }catch(IllegalArgumentException invalid){throw new IOException("Invalid native topology",invalid);}
     }
     private State owned(Path file)throws IOException{
