@@ -2971,3 +2971,7 @@ The exact previous18001e8a game decoder samples blue ff0000ff at source (.25,.25
 GlbSourceAuthorityTest uv reproduces old actual runtime failure and current pass. Human source-backed publication checks RGBA8000ff00 on the original asymmetric PNG. Named purchased models, Blender UV/CRT and Hollow Creek BLEND tests pass locally. See evidence/source-glb-2026-11-02/.
 
 Scope: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
+
+## DEV-217 — Packaged test compilation omits portable GLB fixtures
+
+Exact57337f4f full41546195876/job125622271926 fails compiling host GLB tests because the top-level test glob excludes EditorGlbAuthoringTest and its PNG fixture. Native41546191383 and standalone41546137572 pass with explicit dependencies. Both standard build scripts now include those two shared test sources. No production fixture code or art/golden changes. Corrected full/TCP acceptance remains pending and DEV211 remains open.

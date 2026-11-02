@@ -7,7 +7,11 @@
     "fullRound": 41546195876,
     "gpu": 41546201023,
     "state": "live/pending; do not restart on polling timeout",
-    "nativeWorkflow": "terrain-scene-runtime.yml, registered403277127; includes actual verify_editor_agent_host.cmd; branch-only editor-agent-service.yml filename dispatch unavailable on default branch"
+    "nativeWorkflow": "terrain-scene-runtime.yml, registered403277127; includes actual verify_editor_agent_host.cmd; branch-only editor-agent-service.yml filename dispatch unavailable on default branch",
+    "standaloneResult": "SUCCESS",
+    "nativeTerrainHostResult": "SUCCESS",
+    "fullRoundResult": "FAILED before TCP; DEV217 shared test sources omitted; both build scripts corrected; clean complete host test-source compilation PASS",
+    "gpuResult": "live; retain41546201023"
   },
   "sha256": {
     "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "f30f040beb13f1fbc11a5137c81a6baa119169ece943e22d1470e5525d7ad5f0",

@@ -1,0 +1,11 @@
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:49.9254681Z src\test\java\org\beckenburg\GlbSourceAuthorityTest.java:3: error: cannot find symbol
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:49.9256142Z import org.beckenburg.editor.EditorGlbAuthoringTest;
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:49.9258137Z   symbol:   class EditorGlbAuthoringTest
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:50.7455200Z src\test\java\org\beckenburg\AssetImportGlbGuiTest.java:28: error: cannot find symbol
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:50.7513328Z         Path root=Files.createTempDirectory("human-source-glb-");String oldHome=System.getProperty("user.home");System.setProperty("user.home",root.toString());Path output=Path.of("build/editor-agent-evidence").toAbsolutePath();Files.createDirectories(output);Path source=root.resolve("assembly.glb");byte[] original=EditorGlbAuthoringTest.externalFixture();Files.write(source,original);
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:50.7518455Z   symbol:   variable EditorGlbAuthoringTest
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:52.4656498Z src\test\java\org\beckenburg\GlbSourceAuthorityTest.java:8: error: cannot find symbol
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:52.4659590Z         var model=GlbProps.decode(EditorGlbAuthoringTest.externalFixture());
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:52.4661706Z   symbol:   variable EditorGlbAuthoringTest
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:53.8306063Z 3 errors
+packaged-multiplayer-round	Assemble all game resources and run actual TCP multiplayer round	2026-11-02T23:34:53.8735945Z ##[error]Process completed with exit code 1.

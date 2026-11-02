@@ -2322,6 +2322,17 @@
       "action": "Use source top-left origin for generic external imports unless explicitly declared otherwise; retain exact legacy editor generator and reviewed named-source rules. Keep original image and UV bytes.",
       "evidence": "GlbSourceAuthorityTest uv reproduces old actual runtime failure and current pass. Human source-backed publication checks RGBA8000ff00 on the original asymmetric PNG. Named purchased models, Blender UV/CRT and Hollow Creek BLEND tests pass locally. See evidence/source-glb-2026-11-02/.",
       "older_maps": "Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open."
+    },
+    {
+      "id": "DEV-217",
+      "title": "Packaged full-round test compilation omits shared portable GLB fixture sources",
+      "status": "fixed-scoped; clean full host test-source compilation checked; corrected exact-source CI pending",
+      "affected": "build.cmd and build.sh test source lists",
+      "symptom": "Source57337f4f full41546195876/job125622271926 fails before TCP acceptance: EditorGlbAuthoringTest is absent while compiling AssetImportGlbGuiTest and GlbSourceAuthorityTest. Standalone41546137572 and native41546191383 pass because their explicit fixture dependencies are present.",
+      "cause": "The game build compiles only top-level host test sources, while new human/runtime tests reuse portable test fixtures in the editor subpackage.",
+      "action": "Include exactly the shared GLB and PNG fixture source files in both standard host build scripts; retain independent editor JAR compilation and do not move test fixtures into production code.",
+      "evidence": "Exact failed remote compiler diagnostics retained in source-glb evidence. Clean host test compilation must include all top-level host/hbnet sources plus the two portable fixture dependencies; full corrected acceptance remains distinct from native/standalone passes.",
+      "older_maps": "Build integration only; no source art/goldens changed. Existing DEV211 advisory art assertions remain open, and failed pre-TCP run does not prove gameplay."
     }
   ],
   "audit_categories": [

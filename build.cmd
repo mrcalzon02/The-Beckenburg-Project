@@ -20,6 +20,9 @@ if not exist build\test mkdir build\test
 > build\sources-tests.txt (
   for %%F in (src\test\java\hbnet\*.java) do @echo "src/test/java/hbnet/%%~nxF"
   for %%F in (src\test\java\org\beckenburg\*.java) do @echo "src/test/java/org/beckenburg/%%~nxF"
+  rem Native GLB GUI/runtime tests share portable source/PNG fixtures.
+  echo "src/test/java/org/beckenburg/editor/EditorGlbAuthoringTest.java"
+  echo "src/test/java/org/beckenburg/editor/EditorMeshMaterialTest.java"
 )
 javac --release 17 -encoding UTF-8 -d build\classes @build\sources-main.txt || exit /b 1
 rem Asset thumbnails are baked from reviewed 3D model captures and shipped inside JAR.

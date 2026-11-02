@@ -127,7 +127,7 @@ if [ "${1:-}" = "--capture-only" ]; then
     echo "CASTLE_CAPTURE_RUNTIME_READY: compiled real game sources with runtime assets"
     exit 0
 fi
-javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/hbnet/*.java src/test/java/org/beckenburg/*.java
+javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/hbnet/*.java src/test/java/org/beckenburg/*.java src/test/java/org/beckenburg/editor/EditorGlbAuthoringTest.java src/test/java/org/beckenburg/editor/EditorMeshMaterialTest.java
 # Cosmetic HUD composition diagnostics must never block a functional game release.
 if ! java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.ToolBeltHudTest; then
     printf '%s\n' 'ADVISORY: hunter tool belt/held-device presentation check failed (nonblocking)' >&2
