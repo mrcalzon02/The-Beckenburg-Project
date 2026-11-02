@@ -25,6 +25,35 @@ jobs:
               blender_ghost_writing_book_2 blender_health_supplies_1 \
               blender_igniter_2 blender_igniter_2_lit blender_sanity_medication_2 \
             --output build/flagged-source/uv
+      - name: Log exact source atlas, UV and sampler evidence for unresolved assets
+        continue-on-error: true
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.audit_glb_materials import audit
+
+          for model in (
+              "level_fireplace", "tv_mp_1",
+              "blender_health_supplies_1",
+              "blender_igniter_2", "blender_igniter_2_lit",
+              "blender_sanity_medication_2"
+          ):
+              report = audit(Path("assets/runtime/models") / (model + ".glb"))
+              compact = {
+                  "id": model,
+                  "warnings": report["warnings"],
+                  "textures": report["textures"],
+                  "materials": report["materials"],
+                  "primitives": [
+                      {"mesh": p["mesh"], "primitive": p["primitive"],
+                       "material": p["material"], "uv": p.get("uv")}
+                      for p in report["primitives"]
+                  ],
+              }
+              print("SOURCE_ATLAS " + json.dumps(compact, separators=(",", ":")))
+          PY
       - name: Preserve original authored models, scene and character source packages
         shell: bash
         run: |
