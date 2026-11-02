@@ -91,6 +91,13 @@ public final class GlbProps {
             "canned_food_mp_1".equals(name)||"canned_food_mp_2".equals(name)||
             "kenney_medieval_detail_barrel".equals(name);
     }
+    /** Optional DEV ROOM A/B comparison, never enabled by the normal game.
+     * Capture the same approved authored models with PNG V-origin interpreted
+     * as glTF top-left, preserving original GLB/UV/source image bytes. */
+    static boolean diagnosticBookUvOrigin(String name){
+        return Boolean.getBoolean("beckenburg.devroom.bookTopLeftUV")
+            &&bookCoverMaterial(name);
+    }
     static int imageRow(double v,int height,boolean gltfTopLeft){
         if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
         double fractional=v-Math.floor(v);
@@ -378,7 +385,7 @@ public final class GlbProps {
                 picture=readableBookCover(picture);
             materialIds[i]=TEXTURE_BASE+textures.size();
             textures.add(picture);
-            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)||reviewedSourceGltfUv(resourceName)));
+            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)||reviewedSourceGltfUv(resourceName)||diagnosticBookUvOrigin(resourceName)));
             materialNames.add(String.valueOf(obj(materials.get(i)).getOrDefault("name","")));
             double[] color=vec(pbr.get("baseColorFactor"),1,1,1,1);
             diffuseFactors.add(color);
