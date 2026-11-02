@@ -1,0 +1,7 @@
+Previous source: 0fb70ac20610f5e373e64f0243aafde92c7d1e2d
+Expected failing regression against previous compiled EditorHistory:
+Exception in thread "main" java.lang.AssertionError: Failed undo rolls back partial host state and retains original history stacks
+	at org.beckenburg.editor.EditorHistoryFailureTest.check(EditorHistoryFailureTest.java:8)
+	at org.beckenburg.editor.EditorHistoryFailureTest.main(EditorHistoryFailureTest.java:24)
+
+New EditorHistoryFailureTest passes in standalone Java17 editor JAR.

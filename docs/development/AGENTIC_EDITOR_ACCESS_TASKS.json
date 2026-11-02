@@ -763,6 +763,41 @@
         "G2 remains partial; no agent mesh commands are admitted",
         "Later resource/snapshot/bootstrap contracts have a separate checkpoint"
       ]
+    },
+    {
+      "sourceSha": "47b4ad47b6761dad3692c2391e3f2a678604a79d",
+      "scope": "Trusted native service contracts complete locally: conditional disk saves, immutable values, schema fidelity, bootstrap recovery, bounded protocol and failure-safe history; main renderer reconciled",
+      "localEvidence": [
+        "Complete native Java17 source compilation after merging main e1a9b5f8",
+        "EditorAgentServiceTest including bounded unending-reader input refusal",
+        "EditorChangeIntegrationTest",
+        "EditorDiskRevisionTest: real mission/Castle peers, current singleton/game readback, unsaved edits, observe/undo/save, deletion/recovery and USER pinning",
+        "CastleSnapshotContractTest: immutable values, complete native validation, canonical door history and isolated default profile child",
+        "EditorSchemaCompatibilityTest: no metadata/yaw/future-layout flattening",
+        "LevelAuthoringIdentityTest and LevelAuthoringRecoveryTest",
+        "CastleDocumentRecoveryTest and existing Castle geometry/lighting migration tests",
+        "Actual Windows EditorAgentGuiTest and AssetImportTopologyGuiTest, real renderer/component PNGs and corner-for-corner runtime GLB readback",
+        "Public CLI fresh processes: House independent of corrupt Castle, structured open failures, explicit pre-open native recovery, Windows-1252/Unicode paths, stale codes and native parity",
+        "Independent editor JAR: EditorHistoryFailureTest, EditorDocumentStoreTest actual child crashes/staged races, RuntimeSceneContractTest, EditorCorePortabilityTest, EditorTopologyProjectTest"
+      ],
+      "nativeHostCi": {
+        "run": 41367120522,
+        "status": "in_progress"
+      },
+      "standaloneCi": {
+        "run": 41367126147,
+        "status": "in_progress"
+      },
+      "fullRoundCi": {
+        "run": 41367132677,
+        "status": "in_progress",
+        "manifestEntries": 310
+      },
+      "evidence": "development/quality/evidence/editor-native-contracts-2026-11-01.json",
+      "limitations": [
+        "Exact current-source CI not yet terminal",
+        "Authenticated MCP, full G0-G12 and physical installed/hardware gates remain separate"
+      ]
     }
   ],
   "nextGoalWork": [
