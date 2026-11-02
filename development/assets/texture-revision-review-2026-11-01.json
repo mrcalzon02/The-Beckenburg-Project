@@ -613,7 +613,7 @@
     {
       "id": "asset-0022",
       "review_order": 24,
-      "status": "source-alpha-repaired-awaiting-four-angle-game-render-approval",
+      "status": "render-verified-source-alpha-line-fix",
       "source_filename": "assets/concept-art/v001/03-ghosts/possessive-ghost-profile.png",
       "source_sha256": null,
       "runtime_model": null,
@@ -622,7 +622,43 @@
       "source_capture": "artifact:13105143372/asset-0022.png",
       "runtime_capture": "artifact:13105143372/asset-0022.png",
       "repair_commit": "ea0ac19750172cba6b83796b9ce5920ea558f4fd",
-      "verification": null,
+      "verification": {
+        "game_renderer_run": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41405326985",
+        "artifact_id": 13122898542,
+        "baseline_artifact": "beckenburg-fixed-camera-character-review.zip",
+        "methods": [
+          "real 640x400 DevAssetShowroom four-angle before-after comparisons",
+          "pixel-by-pixel difference on identical camera angles",
+          "advisory packaged GhostSpriteAtlas runtime regression"
+        ],
+        "pixel_diff": {
+          "angle_0": {
+            "changed_pixels": 344,
+            "bbox_xyxy": [
+              364,
+              167,
+              367,
+              346
+            ]
+          },
+          "angle_1": {
+            "changed_pixels": 0
+          },
+          "angle_2": {
+            "changed_pixels": 188,
+            "bbox_xyxy": [
+              274,
+              149,
+              277,
+              257
+            ]
+          },
+          "angle_3": {
+            "changed_pixels": 0
+          }
+        },
+        "assessment": "Detached vertical lines removed from both affected visible angles; character silhouette unchanged; two unaffected angles render pixel-identically. Source RGB and 181 unrelated atlas entries preserved."
+      },
       "kind": "GHOST",
       "runtime_id": "possessive",
       "runtime_path": "assets/runtime/ghost-sprite-parts/ghost-sprite-expansion-v3.zip.part00..part08",
@@ -726,6 +762,6 @@
     "corrected_source_pngs": 4,
     "preserved_source_pngs": 181,
     "visible_line_pixels_cleared": 7015,
-    "pending": "Actual game renderer four-angle close-up and visual approval. Structural and source integrity checks do not constitute art acceptance."
+    "pending": "Four-angle game renderer inspected: targeted line defect accepted. Broader ghost animation/art-quality changes remain separate diagnostics."
   }
 }
