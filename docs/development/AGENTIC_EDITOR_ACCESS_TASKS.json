@@ -13,7 +13,7 @@
   "sourceOfTruth": "Real runtime scene and existing editor transactions; no parallel simulated preview",
   "gates": {
     "release": "Only objective broken build, launch, essential gameplay, required multiplayer or updater function may block release. Art and diagnostics are advisory.",
-    "security": "Agent interfaces disabled by default, authenticated, loopback only, least privilege, no shell/filesystem access.",
+    "security": "No listener is opened by the trusted local service/CLI; the process retains normal user file permissions. Later remote interfaces require explicit opt-in, authentication and scoped capabilities; no arbitrary shell/filesystem or player-session surface.",
     "completion": "Do not count draft documentation, unpublished blobs, packaging, or missing real installed runtime as completed machine access."
   },
   "milestones": [
@@ -50,13 +50,13 @@
             "src/main/java/org/beckenburg/CastleEditorProject.java",
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "in_progress",
+          "status": "tested",
           "accept": [
             "Read same scene instance as GUI and game",
             "Unsaved manual edit immediately visible through service",
-            "Stable IDs and consistent snapshot; no mutation API"
+            "Stable IDs and immutable observations; writes use separate checked transactions"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "Native EditorAgentServiceTest, EditorAgentGuiTest, LevelAuthoringIdentityTest and CastleSnapshotContractTest; exact-source checkpoints retained below. Trusted local scope; remote authentication remains M1-02/M5."
         },
         {
           "id": "M1-02",
@@ -81,16 +81,16 @@
             "src/main/java/org/beckenburg/SceneRenderer.java",
             "src/main/java/org/beckenburg/CastleEditorAudit.java"
           ],
-          "status": "in_progress",
+          "status": "tested",
           "dependsOn": [
-            "M1-02"
+            "M1-01"
           ],
           "accept": [
             "PNG originates from real runtime/editor renderer",
             "Includes current scene revision and provenance",
             "Audit warnings remain advisory"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "Actual SceneRenderer captures from native service/GUI/headless tests include exact scene/revision/renderer provenance; advisory audit limitations are explicit."
         },
         {
           "id": "M1-04",
@@ -124,16 +124,16 @@
             "src/main/java/org/beckenburg/editor/EditorHistory.java",
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "in_progress",
+          "status": "tested",
           "dependsOn": [
-            "M1-04"
+            "M1-01"
           ],
           "accept": [
             "One authoritative transaction and one undo event",
             "Stale revision rejected and no scene change",
             "Partial batch failure restores exact prior snapshot"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "Native stale/batch/cancellation rollback tests, shared human undo/redo, source disk guard and failed-restore regression; no generic scripting or remote writes are admitted."
         },
         {
           "id": "M2-02",
@@ -217,20 +217,21 @@
       "tasks": [
         {
           "id": "M4-01",
-          "name": "CLI and script execution against same Editor Agent Service",
+          "name": "Trusted headless CLI batches against the same service; broad scripting deferred",
           "scope": [
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "in_progress",
+          "status": "tested",
           "dependsOn": [
-            "M3-01"
+            "M2-01",
+            "M1-03"
           ],
           "accept": [
             "No Swing dependency in headless service",
             "Deterministic edit, readback, exit code and rollback",
             "No fake viewport when renderer unavailable"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "Public process protocol tests: native mission/Castle edit/save/reopen/recovery, real PNG and collider parity, corrupt-start recovery without placeholder scene, Unicode/Windows-1252 channels, stale/refusal exit codes. Portable renderer-less host cannot fake capture."
         },
         {
           "id": "M4-02",
@@ -768,5 +769,10 @@
     "Verify new exact-source310 native/standalone/full results for disk/snapshot/schema/bootstrap/history contracts",
     "Continue G2 human parametric primitives and actual selection/gizmos on the same indexed project; then reversible edge/face modeling and material/normal interchange",
     "Continue dependency-ordered G3-G12 without fake scene data or premature gate completion; original PDF bytes and installed hardware acceptance remain separate"
-  ]
+  ],
+  "ownerPriority": {
+    "date": "2026-11-01",
+    "scope": "Deliver the small trusted in-process service and headless interface around proven human/native operations first; authenticated remote/MCP and broad scripting remain later stages.",
+    "dependencyAdjustment": "Local inspection, capture and transactions do not require the originally proposed loopback transport; installed/authenticated acceptance retains its separate requirements."
+  }
 }

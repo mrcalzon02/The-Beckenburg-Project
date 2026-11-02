@@ -25,6 +25,9 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
         assert len(rows) == len(lines), (len(rows), len(lines))
         return rows
 
+    unrelated_castle = Path(home) / '.beckenburg' / 'editor' / 'castle.properties'
+    unrelated_castle.parent.mkdir(parents=True, exist_ok=True)
+    unrelated_castle.write_text('format=invalid', encoding='utf-8')
     first = run(['inspect'])[0]['result']
     assert 'move-prop' in first['operations'] and 'CAPTURE' in first['capabilities']
     prop = first['state']['props'][0]
@@ -57,6 +60,7 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     bootstrapped = run(['inspect'], recover=True)[0]['result']
     assert bootstrapped['state'] == reopened['state'], 'Explicit pre-open recovery restores actual prior mission bytes before creating runtime'
     (output / 'headless-results.json').write_text(json.dumps(rows, indent=2), encoding='utf-8')
+    assert unrelated_castle.read_text(encoding='utf-8') == 'format=invalid', 'Mission host never loads or migrates an unrelated Castle scene'
     command[-2:] = ['CASTLE', str(Path(home) / 'castle-project-caf\u00e9')]
     first_castle = run(['inspect'])[0]['result']
     assert 'RECOVER_PREVIOUS' in first_castle['capabilities']
