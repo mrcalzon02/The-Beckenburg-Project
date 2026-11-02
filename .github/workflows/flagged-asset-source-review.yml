@@ -1,0 +1,50 @@
+name: Flagged Asset Source Review Archive
+# Advisory source materials for inspecting the actual imported/authored GLBs.
+# Copies originals verbatim; never mutates game assets or blocks a release.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/flagged-asset-source-review.yml'
+permissions:
+  contents: read
+jobs:
+  archive-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect exact source GLB texture islands without rewriting textures
+        shell: bash
+        run: |
+          mkdir -p build/flagged-source
+          python3 tools/inspect_flagged_uv.py \
+            --models level_fireplace tv_mp_1 open_book_mp_1 \
+              book_mp_2 book_mp_3 book_mp_4 book_mp_5 \
+              blender_ghost_writing_book_2 blender_health_supplies_1 \
+              blender_igniter_2 blender_igniter_2_lit blender_sanity_medication_2 \
+            --output build/flagged-source/uv
+      - name: Preserve original authored models, scene and character source packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/flagged-source/models build/flagged-source/blender build/flagged-source/sprites
+          for id in level_fireplace tv_mp_1 open_book_mp_1 \
+            book_mp_2 book_mp_3 book_mp_4 book_mp_5 blender_ghost_writing_book_2 \
+            blender_health_supplies_1 blender_igniter_2 blender_igniter_2_lit blender_sanity_medication_2; do
+            cp "assets/runtime/models/$id.glb" "build/flagged-source/models/$id.glb"
+          done
+          cp development/levels/blender/level_fireplace.blend build/flagged-source/blender/
+          for item in character-directions.zip twins-directions.zip directional-sprites.zip; do
+            cp "assets/runtime/$item" build/flagged-source/sprites/
+          done
+          find build/flagged-source/models -name '*.glb' -print0 | sort -z | xargs -0 sha256sum > build/flagged-source/source-sha256.txt
+          printf 'source_commit=%s\nassets_originals_unchanged=true\nart_validation=advisory\n' "$GITHUB_SHA" > build/flagged-source/revision.txt
+      - name: Upload original model files and UV/source PNG review
+        uses: actions/upload-artifact@v4
+        with:
+          name: flagged-model-originals-uv-review
+          path: build/flagged-source/
+          retention-days: 14
+          if-no-files-found: error
