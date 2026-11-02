@@ -91,6 +91,15 @@ jobs:
         run: |
           python tools/inspect_flagged_uv.py --output build/dev-room/source-uv
           if ($LASTEXITCODE -ne 0) { Write-Warning "Source UV diagnostics unavailable; release unaffected." }
+      - name: A/B render purchased book texture origin using original GLBs (advisory)
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $ids = @('open_book_mp_1','book_mp_2','book_mp_3','book_mp_4','book_mp_5')
+          foreach ($id in $ids) {
+            & java '-Djava.awt.headless=true' '-Dbeckenburg.devroom.bookTopLeftUV=true' -cp 'build\beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--capture' "--asset=$id" "--output=build/dev-room/book-uv-alternative/$id"
+            if ($LASTEXITCODE -ne 0) { Write-Warning "Book atlas A/B preview unavailable: $id" }
+          }
       - name: Record source revision
         if: always()
         shell: pwsh
