@@ -11,7 +11,10 @@
     "standaloneResult": "SUCCESS",
     "nativeTerrainHostResult": "SUCCESS",
     "fullRoundResult": "FAILED before TCP; DEV217 shared test sources omitted; both build scripts corrected; clean complete host test-source compilation PASS",
-    "gpuResult": "live; retain41546201023"
+    "gpuResult": "SUCCESS all3 jobs; actual Castle/11map OpenGL residency raw in gpu-57337f4f.txt",
+    "correctedFullRound": 41547165572,
+    "correctedFullSource": "da2b21da1eb1a895ff01da1bc979278097b415c2",
+    "correctedFullState": "live; actual build/TCP step passed; advisory full manifest in progress"
   },
   "sha256": {
     "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "f30f040beb13f1fbc11a5137c81a6baa119169ece943e22d1470e5525d7ad5f0",

@@ -2333,6 +2333,17 @@
       "action": "Include exactly the shared GLB and PNG fixture source files in both standard host build scripts; retain independent editor JAR compilation and do not move test fixtures into production code.",
       "evidence": "Exact failed remote compiler diagnostics retained in source-glb evidence. Clean host test compilation must include all top-level host/hbnet sources plus the two portable fixture dependencies; full corrected acceptance remains distinct from native/standalone passes.",
       "older_maps": "Build integration only; no source art/goldens changed. Existing DEV211 advisory art assertions remain open, and failed pre-TCP run does not prove gameplay."
+    },
+    {
+      "id": "DEV-218",
+      "title": "Camera picker generalization drops existing enum-typed binary API signatures",
+      "status": "fixed before perspective publication; actual prior-compiled client fails intermediate and passes final independent JAR",
+      "affected": "EditorMeshPicking public pick(State,Projection,double,double) and prepare(State,Projection)",
+      "symptom": "A client compiled against the published da2b21da picker throws NoSuchMethodError when the intermediate camera generalization replaces enum parameter signatures with Projector parameters.",
+      "cause": "Source calls still compile because Projection implements Projector, but JVM method descriptors include the original enum parameter type.",
+      "action": "Retain original typed overloads and delegate to the new Projector implementation; keep the display-camera requirement for perspective. Add signature guards and run the unchanged prior-compiled client against the real final JAR.",
+      "evidence": "perspective-workspace evidence contains real intermediate negative and final positive outputs, the same compiled consumer and source. Consumer was compiled against exact da2b21da picker Git blob. Final independent Java17 JAR and maximum old/new picking tests pass under256MiB.",
+      "older_maps": "Unpublished intermediate integration defect, corrected before publication. No scene or source asset changes. Portable public signatures remain stable; this does not prove all other G1/G2 APIs or gate completion."
     }
   ],
   "audit_categories": [

@@ -2975,3 +2975,7 @@ Scope: Do not rewrite source art or infer complete old-map visual acceptance. Re
 ## DEV-217 — Packaged test compilation omits portable GLB fixtures
 
 Exact57337f4f full41546195876/job125622271926 fails compiling host GLB tests because the top-level test glob excludes EditorGlbAuthoringTest and its PNG fixture. Native41546191383 and standalone41546137572 pass with explicit dependencies. Both standard build scripts now include those two shared test sources. No production fixture code or art/golden changes. Corrected full/TCP acceptance remains pending and DEV211 remains open.
+
+## DEV-218 — Camera extension drops existing compiled picker signatures
+
+The unpublished Projector generalization passed source tests but a client compiled against exact da2b21da picker failed with NoSuchMethodError. Restored enum-typed public pick/prepare overloads delegating to Projector. The identical compiled consumer now passes against the actual independent JAR; signature guards and maximum camera/orthographic tests pass. Actual negative/positive outputs and consumer are in perspective-workspace evidence. No source art or scene edits; fixed before perspective publication.

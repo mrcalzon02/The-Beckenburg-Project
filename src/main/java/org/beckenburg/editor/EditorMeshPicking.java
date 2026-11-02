@@ -2,17 +2,49 @@ package org.beckenburg.editor;
 
 import java.util.*;
 
-/** Triangle-level orthographic queries derived directly from native indexed authoring state. */
+/** Triangle-level camera queries derived directly from native indexed authoring state. */
 public final class EditorMeshPicking {
     public record Point(double x,double y,double depth){}
-    public enum Projection {
-        ISOMETRIC,FRONT,TOP,SIDE;
+    public interface Projector {
+        Point project(double x,double y,double z);
+        default boolean perspective(){return false;}
+        default double worldScale(double x,double y,double z){return 1;}
+        default Point axisDirection(double x,double y,double z,int axis){var a=project(x,y,z);var b=project(x+(axis==0?1:0),y+(axis==1?1:0),z+(axis==2?1:0));return new Point(b.x()-a.x(),b.y()-a.y(),0);}
+        default double axisDelta(double x,double y,double z,int axis,double dx,double dy){var v=axisDirection(x,y,z,axis);double length=v.x()*v.x()+v.y()*v.y();if(length<1e-24)throw new IllegalArgumentException("Axis is edge-on to camera");return (dx*v.x()+dy*v.y())/length;}
+    }
+    public enum Projection implements Projector {
+        ISOMETRIC,FRONT,TOP,SIDE,PERSPECTIVE;
         public Point project(double x,double y,double z){return switch(this){
             case ISOMETRIC->new Point(.83*x-.55*z,-(.95*y+.24*x+.35*z),-.5225*x+.4225*y-.7885*z);
             case FRONT->new Point(x,-y,-z);
             case TOP->new Point(x,z,y);
             case SIDE->new Point(z,-y,x);
+            case PERSPECTIVE->throw new IllegalStateException("Perspective requires the same fitted Camera for display and queries");
         };}
+    }
+    /** Immutable orbit camera. Coordinates are normalized by source radius; depth is reciprocal eye distance. */
+    public static final class Camera implements Projector {
+        private final double x,y,z,radius;private final double[] right,up,near;
+        public Camera(double x,double y,double z,double radius,double yawDegrees,double pitchDegrees){
+            if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z)||!Double.isFinite(radius)||radius<=0||!Double.isFinite(yawDegrees)||!Double.isFinite(pitchDegrees)||Math.abs(pitchDegrees)>89)throw new IllegalArgumentException("Invalid orbit camera");
+            this.x=x;this.y=y;this.z=z;this.radius=radius;double yaw=Math.toRadians(yawDegrees),pitch=Math.toRadians(pitchDegrees),sy=Math.sin(yaw),cy=Math.cos(yaw),sp=Math.sin(pitch),cp=Math.cos(pitch);right=new double[]{cy,0,-sy};up=new double[]{-sy*sp,cp,-cy*sp};near=new double[]{sy*cp,sp,cy*cp};
+        }
+        private double dot(double[] axis,double a,double b,double c){return axis[0]*a+axis[1]*b+axis[2]*c;}
+        private double distance(double a,double b,double c){return 3-dot(near,(a-x)/radius,(b-y)/radius,(c-z)/radius);}
+        public Point project(double a,double b,double c){double d=distance(a,b,c);if(!Double.isFinite(d)||d<=.05)return new Point(Double.NaN,Double.NaN,Double.NaN);return new Point(dot(right,(a-x)/radius,(b-y)/radius,(c-z)/radius)/d,-dot(up,(a-x)/radius,(b-y)/radius,(c-z)/radius)/d,1/d);}
+        public boolean perspective(){return true;}
+        public double worldScale(double a,double b,double c){return radius*distance(a,b,c);}
+        public Point axisDirection(double a,double b,double c,int axis){var p=project(a,b,c);double d=distance(a,b,c);return new Point((right[axis]+p.x()*near[axis])/(radius*d),(-up[axis]+p.y()*near[axis])/(radius*d),0);}
+        public double axisDelta(double a,double b,double c,int axis,double dx,double dy){
+            var direction=axisDirection(a,b,c,axis);double length=direction.x()*direction.x()+direction.y()*direction.y();if(!Double.isFinite(length)||length<1e-24)throw new IllegalArgumentException("Axis is edge-on to camera");double along=(dx*direction.x()+dy*direction.y())/length;var p=project(a,b,c);boolean horizontal=Math.abs(direction.x())>=Math.abs(direction.y());double delta=(horizontal?direction.x():direction.y())*along,target=(horizontal?p.x():p.y())+delta,d=distance(a,b,c),e=-near[axis]/radius,basis=(horizontal?right[axis]:-up[axis])/radius;double denominator=basis-target*e;
+            if(Math.abs(denominator)<1e-15/radius)throw new IllegalArgumentException("Axis drag crosses camera horizon");double result=delta*d/denominator;if(!Double.isFinite(result)||d+e*result<=.05)throw new IllegalArgumentException("Axis drag crosses camera near plane");return result;
+        }
+    }
+    /** Stable framing derived from actual authoring vertices, never mutable scene state. */
+    public static Camera camera(Collection<EditorMeshPipeline.Vertex> vertices,double yaw,double pitch){
+        double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX,maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
+        for(var v:vertices){minX=Math.min(minX,v.x());minY=Math.min(minY,v.y());minZ=Math.min(minZ,v.z());maxX=Math.max(maxX,v.x());maxY=Math.max(maxY,v.y());maxZ=Math.max(maxZ,v.z());}
+        if(vertices.isEmpty())return new Camera(0,0,0,1,yaw,pitch);double radius=Math.hypot(Math.hypot(maxX*.5-minX*.5,maxY*.5-minY*.5),maxZ*.5-minZ*.5);return new Camera(minX*.5+maxX*.5,minY*.5+maxY*.5,minZ*.5+maxZ*.5,Math.max(1e-6,radius),yaw,pitch);
     }
     public record Hit(long faceId,long vertexId,long edgeA,long edgeB,double depth,double u,double v){}
     private EditorMeshPicking(){}
@@ -25,21 +57,27 @@ public final class EditorMeshPicking {
     /** Returns the nearest actual triangle, then the closest projected vertex/edge on that triangle.
      * Coordinates are projection-space values, before the UI's scale and translation.
      */
-    public static Optional<Hit> pick(EditorTopologyProject.State state,Projection projection,double x,double y){
+    /** Retain binary signatures used by existing compiled editor clients. */
+    public static Optional<Hit> pick(EditorTopologyProject.State state,Projection projection,double x,double y){return pick(state,(Projector)projection,x,y);}
+    public static Prepared prepare(EditorTopologyProject.State state,Projection projection){return prepare(state,(Projector)projection);}
+    public static Optional<Hit> pick(EditorTopologyProject.State state,Projector projection,double x,double y){
         return prepare(state,projection).pick(x,y);
     }
-    public static Prepared prepare(EditorTopologyProject.State state,Projection projection){return new Prepared(state,projection);}
+    public static Prepared prepare(EditorTopologyProject.State state,Projector projection){
+        if(projection==Projection.PERSPECTIVE)throw new IllegalArgumentException("Perspective queries require the display camera");return new Prepared(state,projection);
+    }
     /** Immutable spatial index of projected native triangles, never an editable scene. */
     public static final class Prepared {
         private static final int MAX_TESTS=5_000_000;
         private final EditorTopologyProject.State state;
+        private final boolean perspective;
         private final Map<Long,Point> points=new HashMap<>();
         private final Triangle[] triangles;
         private final List<Node> nodes=new ArrayList<>();
         private record Triangle(EditorTopologyProject.Face face,Point a,Point b,Point c,double minX,double minY,double maxX,double maxY){}
         private record Node(double minX,double minY,double maxX,double maxY,int from,int to,int left,int right){}
-        private Prepared(EditorTopologyProject.State state,Projection projection){
-            this.state=Objects.requireNonNull(state);Objects.requireNonNull(projection);
+        private Prepared(EditorTopologyProject.State state,Projector projection){
+            this.state=Objects.requireNonNull(state);Objects.requireNonNull(projection);perspective=projection.perspective();
             for(var v:state.vertices())points.put(v.id(),projection.project(v.x(),v.y(),v.z()));
             var all=new ArrayList<Triangle>();
             for(var f:state.faces()){
@@ -82,6 +120,7 @@ public final class EditorMeshPicking {
                     if(segment(p[j],p[(j+1)%3],x,y)<segment(p[edge],p[(edge+1)%3],x,y))edge=j;
                 }
                 var corners=List.of(face.a(),face.b(),face.c());long edgeA=corners.get(edge).vertex(),edgeB=corners.get((edge+1)%3).vertex();
+                if(perspective){double reciprocal=depth;a=a*p[0].depth()/reciprocal;b=b*p[1].depth()/reciprocal;c=c*p[2].depth()/reciprocal;}
                 hit=new Hit(face.id(),corners.get(vertex).vertex(),Math.min(edgeA,edgeB),Math.max(edgeA,edgeB),depth,
                     a*face.a().u()+b*face.b().u()+c*face.c().u(),a*face.a().v()+b*face.b().v()+c*face.c().v());
             }return hit;

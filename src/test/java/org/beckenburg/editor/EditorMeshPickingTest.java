@@ -24,6 +24,7 @@ public final class EditorMeshPickingTest {
     }
     public static void main(String[] args){
         for(var projection:EditorMeshPicking.Projection.values()){
+            if(projection==EditorMeshPicking.Projection.PERSPECTIVE)continue;
             var state=layers(projection);var a=state.vertices().get(3);var b=state.vertices().get(4);var c=state.vertices().get(5);
             var pa=projection.project(a.x(),a.y(),a.z());var pb=projection.project(b.x(),b.y(),b.z());var pc=projection.project(c.x(),c.y(),c.z());
             double x=.8*pa.x()+.15*pb.x()+.05*pc.x(),y=.8*pa.y()+.15*pb.y()+.05*pc.y();

@@ -1,0 +1,22 @@
+{
+  "priorSource": "da2b21da1eb1a895ff01da1bc979278097b415c2",
+  "local": "PASS: entire native suite, focused cancellation/publish and independent Java17 maximum camera/picking checks",
+  "ci": "pending new-source publication; preserve prior full41547165572",
+  "sha256": {
+    "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "617bcf3919b6a1de328720b4b8b77b3b988992cd75f085e12e4e419ca705a8b5",
+    "src\\main\\java\\org\\beckenburg\\editor\\EditorMeshPicking.java": "9af6d6be31277cd305c88e7c800db52775222a835982517685201daa5aabeb51",
+    "src\\test\\java\\org\\beckenburg\\AssetImportPerspectiveGuiTest.java": "8a4463ae02b1307a36c8e735265c1b8110aa82546d8612da4761c7c01f47b9e3",
+    "src\\test\\java\\org\\beckenburg\\editor\\EditorPerspectivePickingTest.java": "35d33cc70a730d971188d5bdd9171ea73c034951d4dea368c8195b5247a67239",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\human-perspective-model.btop": "6b1b934604053e3a218f654bc6907d38188528d38743bec27009e765aa6e55c5",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\human-perspective-model.png": "a7a327c557aa5d0b507b50dae88d3fc45d433aea993a6b4aabf0b06f1bf9d9f5",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\human-perspective-runtime.glb": "42463bcbfc1f2f6a9f1309b13d0b921d8cd18cdace5a833a1c6f5caae74893da",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\human-perspective-source.obj": "c7f5576a7d1a1a46c4c2545cf938a20b6472ddc48f557e02aa9ef5fb69995ed6",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\native-suite.txt": "c49219b7a19ac55cfb4a2535a2155043262f7f74908a8dfefd094f4c172743ab",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\negative.txt": "beb6e836dd23a3444ab0d8250fd6ec163461a8e26e55779867b953036cdf3e92",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\PickingAbiControl.class": "93d46ed11b363df179aa081988773b4c84a4917bcc3791fc02355fc71e3d4db9",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\PickingAbiControl.java": "37cbd66993fa9d8a6a8873efc85b2d0a463f0476050ccbf61f5146c24f0ca7cc",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\positive.txt": "59e72a0e59f4d63032bcbb2abe663327becb85e965d67ba014ec4e7056f85c75",
+    "development\\quality\\evidence\\perspective-workspace-2026-11-02\\README.md": "7e4b05968df808e680928127a89ea26119984377bf2d059d518dbb5f27cd8629"
+  },
+  "compatibility": "PASS actual prior-compiled client against final standalone JAR; DEV218 fixed before publication"
+}

@@ -55,6 +55,8 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 
 **Source-backed GLB checkpoint2026-11-02:** supported static indexed PNG GLB now uses the same game decoder and actual native BTOPv4. Original hierarchy/matrix/TRS pivots, shared instances and raw source materials/bytes survive edits, human EXPORT GLB and fresh reopen. Model and Material Editor retain independent windows/layouts with shared native authority/history. Unsupported rigs/morph/additional/sparse attributes/texture transforms remain read-only; full PBR rendering, remaining modeling and whole G2 exit remain open. See [actual authoring scope](../INDEXED_MESH_AUTHORING.md#source-backed-static-glb-and-separate-workspaces).
 
+**Perspective checkpoint2026-11-02:** actual model viewport now has perspective orbit/pan/zoom/fit. Drawing, BVH triangle/box/lasso selection and projective axis gestures use the same immutable fitted camera; native edits still use shared validation/history and real runtime publication. Actual human checks and maximum120000-face/360000-vertex256MiB portable picking pass. Loop/ring, local/normal tools, bevel/slide, incremental updates and full G2 exit remain open.
+
 ### G3 — Sculpting, remeshing, high-fidelity interchange and input
 **Depends on:** G2. **Source:** Topological editor, pages 1–18.
 - Clay/standard, grab, smooth, flatten/planar brushes; falloff, screen-space radius, stroke interpolation, symmetry, topology-safe deltas, brush-local normal rebuild.
