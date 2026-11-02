@@ -14,11 +14,18 @@
     "src/test/java/org/beckenburg/editor/EditorMeshRepairTest.java": "89594fd9ad95bc5c3d22dad2aa1fbb837c4565fb6167933fab7669dafb4a9845",
     "src/test/java/org/beckenburg/AssetImportMeshRepairGuiTest.java": "1bed0b80a0c03908a30afbac8622bd863967c305d258a0c7385cc0c9ae2e4e4f"
   },
-  "ci": "pending exact-source publication",
+  "ci": {
+    "standalone": 41398588377,
+    "nativeHost": 41398593057,
+    "fullRound": 41398597964,
+    "status": "dispatched; inspect terminal results and raw full manifest"
+  },
   "limits": [
     "Exact coincident per-part welding only; smallest stable ID retained",
     "Unselected invalid faces are not silently deleted by welding",
     "Both repairs require a valid resulting topology; general regional/nonmanifold repair remains open",
     "No new agent mesh API, G2 completion or physical acceptance inferred"
-  ]
+  ],
+  "sourceSha": "5f34852b202f364c60fd88dd172cd4b78c090307",
+  "remoteReadback": "git ls-remote matched exact5f34852b on approved branch"
 }
