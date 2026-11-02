@@ -35,12 +35,47 @@ public final class EditorMeshPickingTest {
             var reversed=new EditorTopologyProject.State(state.sceneId(),state.sourceFingerprint(),state.name(),0,state.vertices(),List.of(state.faces().get(1),state.faces().get(0)));
             check(EditorMeshPicking.pick(reversed,projection,x,y).orElseThrow().equals(hit),"Result independent of traversal order");
             check(EditorMeshPicking.pick(state,projection,pa.x(),pa.y()).orElseThrow().vertexId()==103,"Triangle boundary hit");
+            var prepared=EditorMeshPicking.prepare(state,projection);
+            check(prepared.verticesInBox(-10,-10,10,10,false).equals(Set.of(103L,104L,105L)),"Visible-only box excludes exact overlapping back layer in "+projection);
+            check(prepared.verticesInBox(-10,-10,10,10,true).equals(Set.of(100L,101L,102L,103L,104L,105L)),"X-ray box retains hidden native vertices");
+            var near=prepared.verticesInBox(pa.x()-1e-6,pa.y()-1e-6,pa.x()+1e-6,pa.y()+1e-6,false);
+            check(near.equals(Set.of(103L)),"Tight native vertex box");
+            var lasso=List.of(new EditorMeshPicking.Point(pa.x()-.01,pa.y(),0),new EditorMeshPicking.Point(pa.x(),pa.y()-.01,0),new EditorMeshPicking.Point(pa.x()+.01,pa.y(),0),new EditorMeshPicking.Point(pa.x(),pa.y()+.01,0));
+            check(prepared.verticesInLasso(lasso,false).equals(Set.of(103L)),"Visible lasso uses exact triangle occlusion");
+            check(prepared.verticesInLasso(lasso,true).equals(Set.of(100L,103L)),"X-ray lasso keeps overlapping IDs");
+            try{prepared.verticesInLasso(lasso.subList(0,2),true);throw new AssertionError("Short lasso");}catch(IllegalArgumentException expected){}
+            try{near.add(99L);throw new AssertionError("Mutable selection");}catch(UnsupportedOperationException expected){}
             var empty=new EditorTopologyProject.State(state.sceneId(),state.sourceFingerprint(),state.name(),0,List.of(),List.of());
             check(EditorMeshPicking.pick(empty,projection,0,0).isEmpty(),"Empty native mesh");
         }
         var state=layers(EditorMeshPicking.Projection.FRONT);
+        var concave=List.of(new EditorMeshPicking.Point(-.2,-1.2,0),new EditorMeshPicking.Point(1.2,-1.2,0),new EditorMeshPicking.Point(1.2,.2,0),new EditorMeshPicking.Point(.2,.2,0),new EditorMeshPicking.Point(.2,-.2,0),new EditorMeshPicking.Point(-.2,-.2,0));
+        check(EditorMeshPicking.prepare(state,EditorMeshPicking.Projection.FRONT).verticesInLasso(concave,false).equals(Set.of(104L,105L)),"Concave lasso excludes native corner inside bounding box but outside polygon");
+        try{EditorMeshPicking.prepare(state,EditorMeshPicking.Projection.FRONT).verticesInLasso(List.of(new EditorMeshPicking.Point(0,0,0),new EditorMeshPicking.Point(1,0,0),new EditorMeshPicking.Point(2,0,0)),true);throw new AssertionError("Collinear lasso");}catch(IllegalArgumentException expected){}
         check(EditorMeshPicking.pick(state,EditorMeshPicking.Projection.SIDE,0,0).isEmpty(),"Edge-on triangles cannot masquerade as surfaces");
         try{EditorMeshPicking.pick(state,EditorMeshPicking.Projection.FRONT,Double.NaN,0);throw new AssertionError("Nonfinite pick");}catch(IllegalArgumentException expected){}
-        System.out.println("PASS actual indexed triangle picking: four projections, nearest overlapping surface, stable face/edge/vertex IDs, interpolated UV, traversal order, boundaries, misses and edge-on rejection");
+        var crowdedVertices=new ArrayList<EditorTopologyProject.Vertex>();var crowdedFaces=new ArrayList<EditorTopologyProject.Face>();
+        for(int i=0;i<2500;i++){
+            long base=(long)i*3;crowdedVertices.add(new EditorTopologyProject.Vertex(base,"crowded",0,0,0));crowdedVertices.add(new EditorTopologyProject.Vertex(base+1,"crowded",1,0,0));crowdedVertices.add(new EditorTopologyProject.Vertex(base+2,"crowded",0,1,0));
+            crowdedFaces.add(new EditorTopologyProject.Face(i,"crowded",c(base,0,0),c(base+1,1,0),c(base+2,0,1)));
+        }
+        var crowded=new EditorTopologyProject.State("crowded","0".repeat(64),"crowded",0,crowdedVertices,crowdedFaces);
+        var bounded=EditorMeshPicking.prepare(crowded,EditorMeshPicking.Projection.FRONT);
+        try{bounded.verticesInBox(-1,-2,2,1,false);throw new AssertionError("Unbounded overlapping selection");}
+        catch(IllegalArgumentException expected){check(expected.getMessage().contains("budget"),"Structured bounded-work refusal");}
+        check(bounded.verticesInBox(-1,-2,2,1,true).size()==7500,"X-ray remains exact without occlusion work");
+        if(args.length>0){
+            var vertices=new ArrayList<EditorTopologyProject.Vertex>();var faces=new ArrayList<EditorTopologyProject.Face>();
+            for(int i=0;i<EditorMeshPipeline.MAX_TRIANGLES;i++){
+                long base=(long)i*3;double x=i*2;
+                vertices.add(new EditorTopologyProject.Vertex(base,"stress",x,0,0));vertices.add(new EditorTopologyProject.Vertex(base+1,"stress",x+1,0,0));vertices.add(new EditorTopologyProject.Vertex(base+2,"stress",x,1,0));
+                faces.add(new EditorTopologyProject.Face(i,"stress",c(base,0,0),c(base+1,1,0),c(base+2,0,1)));
+            }
+            var max=new EditorTopologyProject.State("max-native","0".repeat(64),"stress",0,vertices,faces);vertices=null;faces=null;
+            var prepared=EditorMeshPicking.prepare(max,EditorMeshPicking.Projection.FRONT);
+            check(prepared.pick(200.25,-.25).orElseThrow().faceId()==100,"Maximum native triangle query");
+            check(prepared.verticesInBox(-1,-2,EditorMeshPipeline.MAX_TRIANGLES*2,1,false).size()==EditorMeshPipeline.MAX_TRIANGLES*3,"All maximum native vertices visible under bounded query work");
+        }
+        System.out.println("PASS actual indexed picking and visible/X-ray boxes: four projections, overlapping surface visibility, stable IDs/UV, boundaries, misses, edge-on rejection and immutable selection");
     }
 }

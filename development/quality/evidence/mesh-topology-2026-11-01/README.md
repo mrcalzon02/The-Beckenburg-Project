@@ -11,3 +11,5 @@ All images show a four-face test OBJ fixture in the human tool. They are UI/fixt
 `triangle-selection.png` is a later actual fixture UI capture: real mouse clicks select a native face in FRONT view, then ISOMETRIC view displays its highlight. Individual triangle/vertex/edge/face picking is now implemented; multi-selection, gizmos and modeling remain open. Primitive721103f2 native41368621679 and standalone41368616675 completed SUCCESS.
 
 `global-move-gizmos.png` captures the real selected fixture face and native global X/Y/Z handles after actual mouse drags, undo/redo and a canceled final drag. This remains UI fixture evidence, not production model art. Global translation is implemented; advanced coordinate systems/pivots, rotation/scale, multi-selection and modeling remain open.
+
+`area-selection.png` is actual fixture UI after visible/X-ray box/lasso gestures and a shared native group move. The two triangles overlap in FRONT projection, so six distinct selected IDs occupy three screen positions. Real decoder readback verifies both layers. This remains UI/fixture evidence, not model art or full G2 acceptance.

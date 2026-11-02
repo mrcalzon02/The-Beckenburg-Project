@@ -1,0 +1,49 @@
+{
+  "schema": "beckenburg.human-mesh-g2/v1",
+  "publishedSource": "cfcdea5b5d5cbb0126783a63c9a2a0c4db97048a",
+  "accepted": {
+    "primitives": {
+      "sha": "721103f271143e1f4036f9841d6761130388e3f7",
+      "native": 41368621679,
+      "standalone": 41368616675
+    },
+    "picking": {
+      "sha": "1d323311d975a86159fe2ebd6207a6f09770d3ab",
+      "native": 41369066729,
+      "standalone": 41369064320,
+      "full": 41369072022,
+      "passed": 310,
+      "failed": 0,
+      "skipped": 0
+    },
+    "gizmos": {
+      "sha": "cfcdea5b5d5cbb0126783a63c9a2a0c4db97048a",
+      "native": 41369687086,
+      "standalone": 41369683760
+    }
+  },
+  "localWorkingChanges": {
+    "feature": "Human visible/X-ray vertex boxes and lassos, immutable native projection BVH, bounded work and multi-selection gizmo integration",
+    "publication": "review service recovered; reconciling concurrent main before approved-branch publication",
+    "checks": [
+      "Complete Java17 host compilation",
+      "Independent editor JAR Java17 build",
+      "EditorMeshPickingTest --stress under256MiB:120000 faces/360000 vertices, all visible vertex queries, dense-work refusal, exact concave lasso and overlapping visibility",
+      "Actual workspace-only AssetImportBoxSelectionGuiTest: mouse box/lasso visible/Xray, cancellation, stale revision, group move/undo/redo and every native game-decoder corner"
+    ],
+    "canonicalLfSha256": {
+      "src/main/java/org/beckenburg/AssetImportDialog.java": "34d82c484bb65de5d0211cd1256fd07111934e8f49ea9a4622e8386a8f89a9a3",
+      "src/main/java/org/beckenburg/editor/EditorMeshPicking.java": "ba01550f908c0fe55dcf42438c148f0a020d598dc6cb1ff2c4ce9ceb9ac8c531",
+      "src/test/java/org/beckenburg/AssetImportBoxSelectionGuiTest.java": "5d25c89dc169ac50eb599d6e25cf2337639add4b44de0aae3d90217677800ef4",
+      "src/test/java/org/beckenburg/editor/EditorMeshPickingTest.java": "efc54224fe78c8cfe90c2ca49daa0f4d42af9337f249e73cb67248c9f90cbea5"
+    },
+    "standaloneArtifact": "build/editor-kit/LevelEditorKit-area-selection.jar (workspace-local java.io.tmpdir avoids sandbox cross-root jar staging)"
+  },
+  "limits": [
+    "Partial G2, no gate completion inferred",
+    "No new agent/headless/MCP mesh operations",
+    "Area gestures replace vertex selection; additive/subtractive and edge/face regions remain open",
+    "Rotation/scale, local/normal transforms, loop/ring, reversible modeling, full normal/material interchange and laterG3-G12 remain open",
+    "No physical hardware/installed acceptance inferred"
+  ]
+}
