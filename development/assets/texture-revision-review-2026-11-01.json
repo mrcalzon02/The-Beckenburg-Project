@@ -613,20 +613,21 @@
     {
       "id": "asset-0022",
       "review_order": 24,
-      "status": "mapped-visible-review-needed",
-      "source_filename": null,
+      "status": "source-alpha-repaired-awaiting-four-angle-game-render-approval",
+      "source_filename": "assets/concept-art/v001/03-ghosts/possessive-ghost-profile.png",
       "source_sha256": null,
       "runtime_model": null,
-      "origin": "unknown-imported-or-authored",
-      "diagnostic": "Decoder LOADED (sprites and runtime WORLD/EQUIPMENT) or REVIEW_REGISTRATION (six source-only Hollow Creek pieces); none imply visual approval.",
+      "origin": "approved-directional-ghost-sprite-master-and-9-part-runtime-atlas",
+      "diagnostic": "Original v3 shipped Possessive atlas contained thin detached vertical alpha lines beside the silhouette in front, back-right, back and back-left directional sheets. Exact indexed-palette source cleanup removed 7015 visibly opaque line pixels, retained original RGB for every pixel, preserved 181 other source PNG entries and intentionally faint dissipate frames. Runtime four-angle visual acceptance remains pending.",
       "source_capture": "artifact:13105143372/asset-0022.png",
       "runtime_capture": "artifact:13105143372/asset-0022.png",
-      "repair_commit": null,
+      "repair_commit": "ea0ac19750172cba6b83796b9ce5920ea558f4fd",
       "verification": null,
       "kind": "GHOST",
       "runtime_id": "possessive",
-      "runtime_path": null,
-      "sprite_identity": "possessive"
+      "runtime_path": "assets/runtime/ghost-sprite-parts/ghost-sprite-expansion-v3.zip.part00..part08",
+      "sprite_identity": "possessive",
+      "source_repair_preview": "development/verification/possessive-source-line-alpha-repair.png"
     },
     {
       "id": "asset-0001",
@@ -716,5 +717,15 @@
     "renderer_closeup_capture_commit": "1658ed8f55a9b5b85ec22a8c000a8664ebaf9e75",
     "pending": "Inspect four-angle close-up captures of three repaired sprites; Possessive (asset-0022) remains source-visual review without speculative changes.",
     "source_bytes_preserved": true
+  },
+  "possessive_alpha_followup": {
+    "repair_commit": "ea0ac19750172cba6b83796b9ce5920ea558f4fd",
+    "verified_workflow_run": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41405005103",
+    "original_atlas_sha256": "8cdbe69101a951c0862b81a4b3b9a7555e9be8068f735466c2c77b5cd33a876d",
+    "corrected_atlas_sha256": "e5a2a80d25e7d003ed3ab109fc42316d8fe745bce199390d92de60f68adfa3cc",
+    "corrected_source_pngs": 4,
+    "preserved_source_pngs": 181,
+    "visible_line_pixels_cleared": 7015,
+    "pending": "Actual game renderer four-angle close-up and visual approval. Structural and source integrity checks do not constitute art acceptance."
   }
 }
