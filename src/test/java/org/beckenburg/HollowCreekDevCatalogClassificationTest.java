@@ -19,17 +19,22 @@ public final class HollowCreekDevCatalogClassificationTest {
         check(entries.get("level_npc_matthis_rook_proxy").kind()
             ==DevAssetReviewCatalog.Kind.WORLD_MODEL,
             "Approved Matthis is improperly classified SOURCE_ONLY");
-        check(entries.get("level_site_academy_terrain").kind()
-            ==DevAssetReviewCatalog.Kind.SOURCE_ONLY,
-            "Unapproved external terrain must not be silently promoted");
+        // These sixteen original terrain meshes are explicitly approved
+        // by TerrainFoundationAssets. This does NOT authorize treating their
+        // unfinished maps as playable, but the meshes are production assets.
+        for(String terrain:TerrainFoundationAssets.MODELS){
+            check(LevelAssets.approved(terrain),"Approved terrain unexpectedly denied: "+terrain);
+            check(entries.get(terrain).kind()==DevAssetReviewCatalog.Kind.WORLD_MODEL,
+                "Approved terrain incorrectly classified SOURCE_ONLY: "+terrain);
+        }
         check(entries.get("level_camp_pavilion_services").kind()
             ==DevAssetReviewCatalog.Kind.SOURCE_ONLY,
             "Unapproved pavilion services must not be silently promoted");
         int sourceOnly=(int)entries.values().stream()
             .filter(e->e.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY).count();
-        check(sourceOnly==17,
-            "Expected remaining 17 review-only terrain/pavilion meshes; got "+sourceOnly);
-        System.out.println("PASS native source approval catalog: Matthis shipped, "
-            +"17 unapproved meshes remain review-only");
+        check(sourceOnly==1,
+            "Expected only unapproved pavilion services in source review; got "+sourceOnly);
+        System.out.println("PASS native source approval catalog: Matthis and 16 terrain "
+            +"meshes approved (not playable maps), one pavilion services review-only");
     }
 }
