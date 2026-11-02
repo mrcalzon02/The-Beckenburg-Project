@@ -93,7 +93,7 @@ def main() -> None:
     repaired.save(buff, format="PNG")
     new_bytes = buff.getvalue()
     for name in original:
-        if name != ENTRY and name not in manifest["directions"][name.split("/")[2].removesuffix(".png")][name.split("/")[1]]["path"]:
+        if name != ENTRY and name != manifest["directions"][name.split("/")[2].removesuffix(".png")][name.split("/")[1]]["path"]:
             raise ValueError("Twin source identity registry changed")
     entries = {**original, ENTRY: new_bytes}
     with zipfile.ZipFile(ARCHIVE, "w", compression=zipfile.ZIP_DEFLATED,
