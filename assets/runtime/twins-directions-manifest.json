@@ -43,11 +43,11 @@
           316,
           614
         ],
-        "visible_pixels": 5669,
-        "head_pixels": 891,
-        "torso_pixels": 3035,
-        "feet_pixels": 1589,
-        "sha256": "abb7ce512e46a991d0cbedd12373f09993a1a8ba05422559faee8e10f51bb055"
+        "visible_pixels": 6851,
+        "head_pixels": 1635,
+        "torso_pixels": 3294,
+        "feet_pixels": 1746,
+        "sha256": "040068271412a08ba873ae2db070b0f69f4e7c88c1578bb60df9271c09a19902"
       },
       "b": {
         "path": "twins/b/side.png",
@@ -129,5 +129,17 @@
     128,
     224
   ],
-  "archive_sha256": "6646b02471e3744003da614581b9b4020a61125c429ce76a7c4440c6ca320240"
+  "archive_sha256": "5e100032dd97623f60216f7cd657c338f709b13c7f2fd68b97ed5d8475aae41b",
+  "side_head_source_repair": {
+    "source_crop": [
+      242,
+      281,
+      316,
+      614
+    ],
+    "repaired_entry": "twins/a/side.png",
+    "unchanged_entries": 7,
+    "source_rgb_unchanged": true,
+    "renderer_verification": "pending four-angle in-game visual comparison"
+  }
 }

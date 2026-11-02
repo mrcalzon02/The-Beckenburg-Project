@@ -77,6 +77,16 @@ public final class GlbProps {
     // explicitly clamp while the lit flame's independent image repeats.
     private static final List<Integer> samplerWrapS=new ArrayList<>();
     private static final List<Integer> samplerWrapT=new ArrayList<>();
+    // Preserve the source glTF material alphaMode. Texture alpha alone is
+    // insufficient: OPAQUE materials must remain opaque even if their PNG
+    // contains otherwise-transparent pixels. The 67 original Hollow Creek
+    // foliage cards explicitly declare BLEND with mostly transparent PNGs.
+    private static final java.util.Set<Integer> gltfBlendMaterials=new java.util.HashSet<>();
+    private static final Map<Integer,Double> gltfMaskCutoffs=new HashMap<>();
+    static synchronized boolean gltfBlended(int material){return gltfBlendMaterials.contains(material);}
+    static synchronized double gltfMaskCutoff(int material){
+        return gltfMaskCutoffs.getOrDefault(material,-1.0);
+    }
     /** These imported fluorescent GLBs use glTF image-space (top-left) UVs.
      * Keep their original source images and mesh coordinates untouched. */
     static boolean fluorescentGltfUv(String name){
@@ -221,15 +231,21 @@ public final class GlbProps {
     public static synchronized int foliageMaterial(int original,long seed){
         int variant=Math.floorMod((int)(seed^(seed>>>32)),16);
         long key=((long)original<<32)|variant;Integer cached=foliagePalettes.get(key);if(cached!=null)return cached;
-        BufferedImage source=textures.get(original-TEXTURE_BASE),copy=new BufferedImage(source.getWidth(),source.getHeight(),BufferedImage.TYPE_INT_RGB);
+        BufferedImage source=textures.get(original-TEXTURE_BASE),copy=new BufferedImage(source.getWidth(),source.getHeight(),BufferedImage.TYPE_INT_ARGB);
         double warmth=(variant%4-1.5)*.025,brightness=.89+(variant/4)*.035;
         for(int y=0;y<source.getHeight();y++)for(int x=0;x<source.getWidth();x++){
             int rgb=source.getRGB(x,y),hash=(x*73856093)^(y*19349663)^(variant*83492791);hash^=hash>>>13;
             double speckle=1+(Math.floorMod(hash,17)-8)*.006+.018*Math.sin((x+variant*3)*.24+(y-variant)*.33);
             int r=(int)(((rgb>>16)&255)*(brightness+warmth)*speckle),g=(int)(((rgb>>8)&255)*brightness*speckle),b=(int)((rgb&255)*(brightness-warmth)*speckle);
-            copy.setRGB(x,y,(Math.min(255,r)<<16)|(Math.min(255,g)<<8)|Math.min(255,b));
+            copy.setRGB(x,y,(rgb&0xff000000)|(Math.min(255,r)<<16)|(Math.min(255,g)<<8)|Math.min(255,b));
         }
         int id=TEXTURE_BASE+textures.size();textures.add(copy);vehicleUvMaterials.add(vehicleUvMaterials.get(original-TEXTURE_BASE));samplerWrapS.add(samplerWrapS.get(original-TEXTURE_BASE));samplerWrapT.add(samplerWrapT.get(original-TEXTURE_BASE));materialNames.add(materialName(original)+" foliage texel variant "+variant);
+        // Every source-preserving foliage tint inherits the original GLB alpha
+        // mode as well as its actual alpha pixels. A derived tree must not
+        // become a black opaque rectangle merely because its tint differs.
+        if(gltfBlendMaterials.contains(original))gltfBlendMaterials.add(id);
+        Double mask=gltfMaskCutoffs.get(original);
+        if(mask!=null)gltfMaskCutoffs.put(id,mask);
         diffuseFactors.add(diffuseFactors.get(original-TEXTURE_BASE).clone());foliagePalettes.put(key,id);return id;
     }
     private static final Map<String,Integer> televisionMaterials=new HashMap<>();
@@ -349,6 +365,26 @@ public final class GlbProps {
         int blue=Math.max(0,Math.min(255,(int)Math.round((rgb&255)*factor[2])));
         return (red<<16)|(green<<8)|blue;
     }
+    /** One original GLB PNG lookup for RGB+alpha, including baseColorFactor.
+     * Required for glTF BLEND / MASK; the usual opaque renderer retains its
+     * existing sampled RGB and does not accidentally become translucent. */
+    public static synchronized int sampleRgba(int material,double u,double v){
+        int index=material-TEXTURE_BASE;
+        if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
+            throw new IllegalArgumentException("Invalid glTF RGBA material");
+        BufferedImage image=textures.get(index);
+        int x=Math.min(image.getWidth()-1,
+            (int)(wrapUv(u,samplerWrapS.get(index))*image.getWidth()));
+        int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),
+            samplerWrapT.get(index));
+        int source=image.getRGB(x,y);
+        double[] f=diffuseFactors.get(index);
+        int a=Math.max(0,Math.min(255,(int)Math.round(((source>>>24)&255)*f[3])));
+        int r=Math.max(0,Math.min(255,(int)Math.round(((source>>16)&255)*f[0])));
+        int g=Math.max(0,Math.min(255,(int)Math.round(((source>>8)&255)*f[1])));
+        int b=Math.max(0,Math.min(255,(int)Math.round((source&255)*f[2])));
+        return (a<<24)|(r<<16)|(g<<8)|b;
+    }
     /** Preserve original alpha for the shared VFX GLBs; ordinary room materials
      * retain the game's existing opaque software-rasterizer path. */
     public static synchronized int sampleAlpha(int material,double u,double v){
@@ -453,6 +489,21 @@ public final class GlbProps {
             if(bookCoverMaterial(resourceName))
                 picture=readableBookCover(picture);
             materialIds[i]=TEXTURE_BASE+textures.size();
+            // Khronos glTF 2.0 alphaMode: OPAQUE (default), MASK or BLEND.
+            // The imported tree sheets explicitly require BLEND; ignoring it
+            // produced a black opaque rectangle around each real tree.
+            Map<String,Object> mat=obj(materials.get(i));
+            String mode=String.valueOf(mat.getOrDefault("alphaMode","OPAQUE"));
+            if("BLEND".equals(mode))gltfBlendMaterials.add(materialIds[i]);
+            else if("MASK".equals(mode)){
+                Object threshold=mat.getOrDefault("alphaCutoff",0.5);
+                if(!(threshold instanceof Number n)
+                        ||!Double.isFinite(n.doubleValue())
+                        ||n.doubleValue()<0||n.doubleValue()>1)
+                    throw new IOException("Invalid original glTF alphaCutoff");
+                gltfMaskCutoffs.put(materialIds[i],n.doubleValue());
+            }else if(!"OPAQUE".equals(mode))
+                throw new IOException("Unsupported original glTF alphaMode "+mode);
             textures.add(picture);
             samplerWrapS.add(wrapS);
             samplerWrapT.add(wrapT);

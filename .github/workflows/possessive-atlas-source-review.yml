@@ -1,0 +1,64 @@
+name: Flagged Ghost Atlas Source Inspection (advisory)
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/possessive-atlas-source-review.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    # Never block builds/releases on visual judgement.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble original shipped ghost sprite archive
+        run: |
+          set -euo pipefail
+          mkdir -p build/possessive-source
+          cat assets/runtime/ghost-sprite-parts/ghost-sprite-expansion-v3.zip.part0[0-8] > build/possessive-source/runtime-v3.zip
+          unzip -t build/possessive-source/runtime-v3.zip | tail -2
+          sha256sum build/possessive-source/runtime-v3.zip > build/possessive-source/archive-hash.txt
+      - name: Extract original Possessive and Twins images with directional identity
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import io
+          import json
+          from pathlib import Path
+          import zipfile
+          root = Path("build/possessive-source")
+          with zipfile.ZipFile(root/"runtime-v3.zip") as z:
+              matches = [x for x in z.namelist() if any(
+                  x.startswith("frames/" + identity + "/")
+                  for identity in ("possessive", "twins")
+              ) and x.endswith(".png")]
+              for identity in ("possessive", "twins"):
+                  source_count = sum(x.startswith("frames/" + identity + "/") for x in matches)
+                  if source_count != 8:
+                      raise ValueError(f"Expected 8 {identity} source atlas views; got {source_count}")
+              for path in matches:
+                  data = z.read(path)
+                  out = root / path
+                  out.parent.mkdir(parents=True, exist_ok=True)
+                  out.write_bytes(data)
+              (root/"source-index.json").write_text(json.dumps({
+                  "source_archive": "exact shipped ghost-sprite-expansion-v3.zip",
+                  "identities": ["possessive", "twins"],
+                  "entries": sorted(matches),
+                  "note": "Unmodified source images, not approved visual fixes"
+              }, indent=2)+"\n")
+          PY
+          cp assets/concept-art/v001/03-ghosts/possessive-ghost-profile.png build/possessive-source/approved-master-possessive.png
+          cp assets/concept-art/v001/03-ghosts/twins-ghost-profile.png build/possessive-source/approved-master-twins.png
+          rm build/possessive-source/runtime-v3.zip
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flagged-exact-ghost-atlases-and-original-masters
+          path: build/possessive-source/
+          if-no-files-found: warn
+          retention-days: 14

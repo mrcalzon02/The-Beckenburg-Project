@@ -259,6 +259,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         if(ids.isEmpty()||ids.size()>MAX_VERTICES||axis<0||axis>2||!Double.isFinite(amount)
                 ||(operation==Transform.ROTATE?Math.abs(amount)>36000:amount<.000001||amount>1000000))
             throw new IllegalArgumentException("Invalid native transform parameters");
+        if(operation==Transform.ROTATE?Math.IEEEremainder(amount,360)==0:amount==1)throw new IllegalArgumentException("Transform does not change selected vertices");
         var selected=new HashSet<>(ids);var old=vertices(state);var next=new HashMap<>(old);
         for(long id:selected)if(!old.containsKey(id))throw new IllegalArgumentException("Unknown vertex ID");
         double px=0,py=0,pz=0;

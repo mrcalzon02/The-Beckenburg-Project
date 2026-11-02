@@ -545,6 +545,19 @@ public final class DevAssetShowroom implements AutoCloseable {
                         Path out=folder.resolve("review-"+e.kind()+"-"+e.id()+"-"+angle+".png");
                         ImageIO.write(scene.image(),"png",out.toFile());
                         imageCount++;
+                        if(e.sprite()){
+                            // The standard 3.4 m review camera makes faces
+                            // less than a few dozen pixels high. Preserve
+                            // that baseline, and ALSO capture close real
+                            // render views for source/alpha defect inspection.
+                            scene.z=SceneRenderer.devAssetZ(0)-2.25;
+                            scene.eyeHeight=1.75;scene.pitch=-.08;
+                            scene.drawDevAssetRoom(List.of(e),angle*.12,angle*Math.PI/2);
+                            ImageIO.write(scene.image(),"png",
+                                folder.resolve("review-close-"+e.kind()+"-"+e.id()+
+                                    "-"+angle+".png").toFile());
+                            imageCount++;
+                        }
                     }
                     reviewed++;
                 }
@@ -569,6 +582,15 @@ public final class DevAssetShowroom implements AutoCloseable {
                 ImageIO.write(scene.image(),"png",
                     folder.resolve("focused-"+chosen.kind()+"-"+chosen.id()+"-"+angle+".png").toFile());
                 imageCount++;
+                if(chosen.sprite()){
+                    scene.z=SceneRenderer.devAssetZ(0)-2.25;
+                    scene.eyeHeight=1.75;scene.pitch=-.08;
+                    scene.drawDevAssetRoom(List.of(chosen),angle*.12,angle*Math.PI/2);
+                    ImageIO.write(scene.image(),"png",
+                        folder.resolve("focused-close-"+chosen.kind()+"-"+
+                            chosen.id()+"-"+angle+".png").toFile());
+                    imageCount++;
+                }
             }
         }
         String status="Dev room: "+entries.size()+" registered assets, "+loaded+

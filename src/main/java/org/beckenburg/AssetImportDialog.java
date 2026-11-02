@@ -254,7 +254,7 @@ public final class AssetImportDialog {
             String previous=Files.exists(target)?EditorDocumentStore.fingerprint(EditorMeshPipeline.readSource(target,EditorDocumentStore.MAX_BYTES)):null;
             topologyProject.exportObj(workingObservation,target,previous);
             details.append("\nEXPORTED OBJ COPY "+target);return true;
-        }catch(IOException failure){details.append("\nEXPORT REFUSED: "+failure.getMessage());return false;}
+        }catch(IOException failure){details.append("\nEXPORT REFUSED: "+failure.getMessage());workspace.setBrowsersVisible(true);return false;}
     }
     private void requestClose(){
         if(busy)return;
@@ -336,7 +336,7 @@ public final class AssetImportDialog {
                     if(project!=topologyProject||project.revision()!=nativeRevision||project.snapshot()!=state)throw new IOException("Mesh changed during modeling preview");
                     modelingPreview=review.edit();modelingMesh=review.mesh();modelingBounds=review.bounds();selectionLabel.setText(review.edit().description());selectionLabel.setToolTipText(review.edit().description());details.append("\nNATIVE PREVIEW: "+review.edit().description()+". Apply to commit.");
                 }catch(java.util.concurrent.CancellationException canceled){details.append("\nModel preview canceled.");}
-                catch(Exception failure){details.append("\nMODEL EDIT REFUSED: "+rootMessage(failure));}
+                catch(Exception failure){String message="MODEL EDIT REFUSED: "+rootMessage(failure);details.append("\n"+message);selectionLabel.setText(message);selectionLabel.setToolTipText(message);}
                 refreshMeshControls();preview.repaint();
             }
         }.execute();

@@ -1,0 +1,32 @@
+name: Hollow Creek original billboard source inspection (advisory)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - tools/audit_hollow_creek_billboards.py
+      - .github/workflows/hollow-creek-billboard-source-review.yml
+permissions:
+  contents: read
+jobs:
+  original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original PNG metadata reader
+        run: python -m pip install pillow
+      - name: Inspect actual native glTF material alpha modes and images
+        run: python tools/audit_hollow_creek_billboards.py
+      - name: Preserve original PNG alpha and source identity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollow-creek-67-billboard-original-alpha-audit
+          path: build/hollow-creek-billboard-inspection/
+          if-no-files-found: warn
+          retention-days: 21

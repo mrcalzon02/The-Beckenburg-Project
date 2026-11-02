@@ -2266,15 +2266,15 @@ Older-map obligation: Audit all authored site door meshes, hinge pivots, double 
 
 ### DEV-167 — 26 numbered model assets require source/UV/material and rendered visual repair
 
-**Status:** ten-render-verified-twelve-runtime-uv-fixes-awaiting-capture-four-sprite-sources-pending · **Affected:** 26 owner-confirmed historical assets: 10 four-angle renderer-verified repairs; 12 source-aligned runtime UV fixes awaiting new shipped-build four-angle acceptance; 4 directional-sprite identities pending source-board inspection.
+**Status:** 26-of-26-targeted-source-asset-repairs-four-angle-render-verified · **Affected:** All 26 original owner-flagged asset identities now have documented scoped repairs and exact four-angle in-game visual acceptance. Separate full-scene placement, silhouette design, material quality and gameplay fit remain independently auditable.
 
 Owner flags suspected misaligned exterior textures and severe graphical defects across imported and 3D-authored asset families; supplied list has 26 distinct numeric asset IDs and an additional screenshot.
 
-Cause / uncertainty: Confirmed original PNG V-row inversion in the metal/canned/Kenney barrels and labeled imports. Six Hollow Creek authored bedrolls had incorrect UV seam geometry and were restored against clean original seams. Fireplace legacy V interpretation placed wood/marble on wrong mesh surfaces in four-angle A/B; original 1024px wood and wall atlas top-left mapping aligns. The remaining four flagged observer/demonologist/twins/possessive resources are directional sprites, not imported GLBs; source-board completeness and alpha need further review.
+Cause / uncertainty: Imported source glTF atlas V-orientation mismatches, six authored bedroll seam UV mistakes, clipped Hunter hair/boots from board segmentation, blue Twin side-head matte defect, and detached source alpha strips in Possessive/Twins packaged ghost atlases. Corrected with original source artwork/materials only.
 
-Fix / next action: Already shipped: four verified per-model V-orientation corrections plus six source-fidelity bedroll UV restorations. Subsequently committed source-aligned V correction for six original book assets, TV, four equipment models and fireplace (12 models total), retaining original embedded GLB/PNG bytes. Fireplace corrected via four-angle source A/B. GLB sampler wrap handling preserves original per-material CLAMP/REPEAT. Next: inspect latest native dev-room screenshots on the actual final commit before marking these twelve render-verified. Resolve four remaining sprite identities by comparing exact approved high-resolution original boards and runtime cutouts; do not synthesize nonexistent feet or recolor texture atlases.
+Fix / next action: Targeted corrective work complete for all 26 original flags. Original textures/meshes preserved except approved six bedroll UV restorations; source-aligned imported 3D V sampling, actor alpha segmentation and indexed ghost strip removals shipped. Continue independent review of map placement/collision, detailed texture aesthetic quality, character motions and the other 85 non-targeted diagnostic review flags. Do not treat completion of these specific repairs as acceptance of unrelated defects; visual checks remain non-release-blocking.
 
-Evidence and verification: Verified ten in runs 41380366943, 41381478095 and 41385429621. Source-A/B fireplace four-angle real renderer run 41391474750 (artifact 13117947106). Targeted 5-import GLB source-material and sampler-wrap test passed on CI run 41391997943. Fireplace fix 01ac2b5, test b0baa226; diagnostic now captures genuinely OLD bottom-left against corrected regular render (commit 676378e), not identical copies. Source master archive workflow 41392566377. Asset-by-asset queue: development/assets/texture-revision-review-2026-11-01.json. Latest source/art validation ongoing, no visual acceptance asserted.
+Evidence and verification: Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180°, only 642 pixels changed each at 90/270° inside x274-282 y206-321 around removed strand; both figures intact.
 
 Older-map obligation: Audit any level using these assets after mapping; House, Castle, Farmhouse, School and every shared fixture use require independent placement/orientation and material captures. Visual defects are diagnostic and not release blockers.
 
@@ -2837,6 +2837,48 @@ Fix / next action: Carry actual registered import directions through world inver
 Evidence and verification: AssetImportNormalsGuiTest inspects actual production faces after nonuniform placement/yaw, actual subdivided faces/owners and actual native House lamp direction response; software and GPU prepared RGB match. Real fixture rasterizer and UI captures are in evidence/corner-normals-2026-11-02/.
 
 Older-map obligation: No broad visual signoff: inspect existing authored-normal props/van and renderer behavior individually. Required actual GPU/full-round checks remain source-pinned and pending until observed.
+
+### DEV-169 — Hollow Creek 67 original alpha tree billboards rendered as opaque black rectangles
+
+**Status:** 67-tree-alpha-software-render-verified-catalog-repaired-GPU-and-live-site-visuals-pending · **Affected:** 67 approved Hollow Creek original glTF BLEND tree billboards with black-background card defect (software renderer), plus 17 additional production-approved models (16 terrain source meshes and Matthis proxy) previously miscataloged as SOURCE_ONLY. One pavilion-services model remains genuinely review-only.
+
+The original developer-room gallery rendered 67 alpha tree crowns as opaque black rectangular cards. The source registry incorrectly called 16 already-approved terrain mesh exports and the approved Matthis proxy unapproved. Separate maps containing terrain source assets are NOT automatically completed or approved for gameplay.
+
+Cause / uncertainty: Software triangle renderer ignored original GLB alphaMode BLEND and source PNG alpha, flattening source transparent pixels to black while incorrectly writing depth. Foliage palette variation discarded ARGB. The catalog sampled only transparent UV corners and categorized source models using a narrower HollowCreekScene allowlist rather than the true LevelAssets.approved allowlist.
+
+Fix / next action: Source glTF ALPHA BLEND support and hardware-neutral RGB+alpha material decoding committed. The exact original 67 tree cards now draw transparent background and actual branch art in software renderer (67/67 individual real gallery comparisons visually accepted). The first native gallery completed success at run 41410917812. Approved Matthis proxy and all 16 TerrainFoundationAssets meshes are now correctly cataloged as WORLD_MODEL, with only pavilion services remaining SOURCE_ONLY; their site maps remain unfinished. Corrected regression now passed as an advisory step in Windows workflow 41412400705. Continue production GPU/live-site lighting and side-view inspection separately. Neither style nor art tests block release.
+
+Evidence and verification: Source glTF audit 41409865926 artifact 13124519834: 67 two-triangle source BLEND textures, valid PNG alpha (representative source 520105 clear + 30093 partial + 39626 opaque pixels). Windows real game build and source material test in 41410917812 success; developer-room 998-asset screenshot artifact 13125039813 verifies all 67 black rectangles gone. In the black-card bounding regions over 67 assets, total dark pixels fell from 2,242,086 to 6,059; sample asset 284 fell from 33,429 to 86. Actual image comparisons preserve branch silhouettes. Production runtime catalog now 997 LOADED, 1 source-only. The original 26 DEV-167 target review remains closed. Corrected audit regression step 'Validate Hollow Creek source approval and catalog membership' succeeded in followup Windows run 41412400705 at commit 23af62e, confirming 16 TerrainFoundationAssets meshes and Matthis recognized as approved original source models. 67 before/after actual screenshot comparisons and per-asset pixel metrics packaged separately for owner review.
+
+Older-map obligation: Verify Hollow Creek tree billboard compositing in playable camera view, under weather/lighting and hardware GPU backend (if active). Inspect 16 approved terrain GLBs independently before any integration of unfinished maps. Pavilion services remains unapproved until separately justified; never auto-promote it.
+
+### DEV-209 — Normal-aware OBJ export can bypass degenerate refusal or leak an unchecked error
+
+**Status:** fixed-scoped; exact intermediate negative control and current native I/O refusal tests passed; remote acceptance pending · **Affected:** EditorObjWriter normal-bearing and missing-normal degenerate face export
+
+Intermediate47f563b exports a degenerate triangle when its corners have explicit normals; missing-normal degenerate faces can escape as unchecked normal-math errors rather than the existing checked export refusal.
+
+Cause / uncertainty: The new normal writer validated attributes only through effective corner normals; authored values bypassed geometric face validation and derived-vector validation used unchecked math exceptions.
+
+Fix / next action: Validate finite nondegenerate face geometry independently of authored attributes and adapt invalid normal math to IOException in writing/readback. Preserve missing or pre-existing destinations on refusal.
+
+Evidence and verification: Exact47f563b EditorObjWriter compiled from its Git blob fails the current production-backend test with Degenerate face exported, authored=true. Corrected EditorCornerNormalsTest checks both authored/missing-normal cases and structured IOException with no destination publication. See evidence/corner-normals-2026-11-02/.
+
+Older-map obligation: Regression was found and corrected in this local implementation before remote publication. Keep normal metadata validation distinct from geometry validity; no silent repair or broad map acceptance.
+
+### DEV-210 — Identity model transforms can alter raw normal values or introduce floating-point drift
+
+**Status:** fixed-scoped; exact intermediate negative control and current native epoch/history checks passed; remote acceptance pending · **Affected:** EditorTopologyProject previewTransform with unit scale or whole-turn rotation
+
+Intermediate47f563b accepts axis scale1 on authored normal(0,0,2) because normal normalization changes its stored magnitude. Whole-turn rotations can also produce tiny coordinate differences instead of a no-op.
+
+Cause / uncertainty: Identity detection relied on equality after floating-point coordinate and attribute transformation rather than rejecting mathematically neutral input before computing it.
+
+Fix / next action: Reject unit scales and rotations equivalent to whole turns before native geometry/normal work. Preserve exact snapshot, epoch and history on refusal.
+
+Evidence and verification: Exact47f563b native project compiled from its Git blob fails the current identity-transform regression with Invalid normal input accepted. Corrected EditorCornerNormalsTest checks axis scale1, rotation360 and unchanged snapshot/revision/history.
+
+Older-map obligation: No source art rewritten. Intermediate regression was corrected before remote publication; identity actions must not manufacture dirty state, new asset hashes or metadata normalization.
 
 ## Required audit categories
 

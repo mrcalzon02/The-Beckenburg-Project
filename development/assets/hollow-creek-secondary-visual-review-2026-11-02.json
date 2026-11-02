@@ -1,0 +1,83 @@
+{
+  "baseline_workflow": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41408571829",
+  "baseline_artifact_id": 13125290269,
+  "source_audit_run": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41409865926",
+  "source_audit_artifact_id": 13124519834,
+  "original_26_item_queue": "DEV-167 (remains closed)",
+  "new_issue": "DEV-169",
+  "observed_legacy_review_texture": 67,
+  "observed_legacy_source_only": 18,
+  "confirmed_source": "67 original 2-triangle native GLBs with BLEND + transparent embedded PNG. All flagged by first-vertex-only texture sampler and software alpha-opaque rendering.",
+  "sample_original_alpha": {
+    "id": "level_hc_native_284_0",
+    "png_pixels": 589824,
+    "fully_transparent": 520105,
+    "partial": 30093,
+    "fully_opaque": 39626,
+    "alpha_mode": "BLEND"
+  },
+  "approved_matthis_proxy": "level_npc_matthis_rook_proxy",
+  "review_only_not_approved": [
+    "level_camp_pavilion_services"
+  ],
+  "fixes_pushed": [
+    "f53488bca993b9bafebcb7b3a2ad2d393294e744",
+    "7e3e085519b624298c388b0bb2e155e186fc3256",
+    "5166da252a13c5b92b14e35c6b43c535f7113a26",
+    "df1ab1b99662f0c0a0f9da658d8a3719ddf15518",
+    "d6dcc05e53efc0d8756bad36fa24b414b07cb451",
+    "7beb28b04f2f1846914a3f8f22489ff75e937a3e"
+  ],
+  "post_commit_gallery_run": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41410917812",
+  "visual_acceptance": "Software original developer-room cutouts for all 67 accepted. Other GPU/gameplay lighting and terrain placement remain independent.",
+  "cosmetic_checks_block_release": false,
+  "observed_original_source_only": 18,
+  "current_source_only": 1,
+  "current_source_only_names": [
+    "level_camp_pavilion_services"
+  ],
+  "previously_unindexed_but_production_approved": [
+    "level_npc_matthis_rook_proxy",
+    "level_site_academy_terrain",
+    "level_site_asylum_terrain",
+    "level_site_college_terrain",
+    "level_site_mansion_terrain",
+    "level_site_prison_terrain",
+    "level_site_wld_03_terrain",
+    "level_site_wld_04_terrain",
+    "level_site_wld_05_terrain",
+    "level_site_wld_06_terrain",
+    "level_site_wld_07_terrain",
+    "level_site_wld_08_terrain",
+    "level_site_wld_09_terrain",
+    "level_site_wld_10_terrain",
+    "level_site_wld_11_terrain",
+    "level_site_wld_12_terrain",
+    "level_site_wld_13_terrain"
+  ],
+  "production_status_note": "TerrainFoundationAssets.MODELS explicitly approves 16 original mesh exports as assets. This does not approve or finish the parent site maps; Matthis proxy already approved via LevelAssets.",
+  "post_commit_gallery_artifact_id": 13125039813,
+  "post_commit_loaded": 997,
+  "post_commit_needs_review": 1,
+  "original_total_assets": 998,
+  "alpha_card_before_after_pixel_metrics": {
+    "number_of_source_billboards": 67,
+    "stable_capture_roi_xyxy": [
+      221,
+      92,
+      419,
+      286
+    ],
+    "near_black_threshold": "all RGB channels < 24",
+    "before_nearly_black_pixels": 2242086,
+    "after_nearly_black_pixels": 6059,
+    "representative_284_before": 33429,
+    "representative_284_after": 86,
+    "all_67_shows_major_reduction": true
+  },
+  "catalog_regression_correction_commit": "23af62ee25d4f50ed37569ce0e7fba4c46af04eb",
+  "catalog_regression_post_correction_ci": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41412400705",
+  "catalog_regression_post_correction_result": "success (advisory step completed on corrected test)",
+  "renderer_software_visual_acceptance": "67/67 actual developer-room captures accepted, original art preserved; see run 41410917812 artifact 13125039813",
+  "remaining_validation": "Actual Hollow Creek gameplay camera/light/weather and separately installed GPU backend not yet directly tested."
+}

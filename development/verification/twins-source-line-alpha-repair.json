@@ -1,0 +1,47 @@
+{
+  "original_archive_sha256": "e5a2a80d25e7d003ed3ab109fc42316d8fe745bce199390d92de60f68adfa3cc",
+  "repaired_archive_sha256": "e436b9980906dafc8aeca16fe556582638bc40caae10789734d6057e5923b24c",
+  "repaired_pngs": [
+    "frames/twins/front_left.png",
+    "frames/twins/front_right.png",
+    "frames/twins/left.png",
+    "frames/twins/right.png"
+  ],
+  "unchanged_png_entries": 181,
+  "original_rgb_preserved": true,
+  "in_game_visual_approval": "pending new four-angle DEV renderer screenshots",
+  "repairs": [
+    {
+      "facing": "front_right",
+      "visible_line_pixels_removed": 3954,
+      "detached_components_removed": 31,
+      "frames_changed": 28,
+      "intentionally_faded_frames_preserved": 4,
+      "source_rgb_preserved": true
+    },
+    {
+      "facing": "right",
+      "visible_line_pixels_removed": 3938,
+      "detached_components_removed": 32,
+      "frames_changed": 28,
+      "intentionally_faded_frames_preserved": 4,
+      "source_rgb_preserved": true
+    },
+    {
+      "facing": "left",
+      "visible_line_pixels_removed": 3835,
+      "detached_components_removed": 29,
+      "frames_changed": 27,
+      "intentionally_faded_frames_preserved": 4,
+      "source_rgb_preserved": true
+    },
+    {
+      "facing": "front_left",
+      "visible_line_pixels_removed": 3939,
+      "detached_components_removed": 32,
+      "frames_changed": 28,
+      "intentionally_faded_frames_preserved": 4,
+      "source_rgb_preserved": true
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+name: Repair Possessive Ghost Original Alpha Lines (advisory)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/repair_possessive_atlas_lines.py'
+      - '.github/workflows/repair-possessive-atlas.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  restore-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install source-alpha tools
+        run: python -m pip install --disable-pip-version-check numpy opencv-python-headless pillow
+      - name: Remove only proven detached Possessive alpha-strip artifacts
+        id: repair
+        run: python tools/repair_possessive_atlas_lines.py
+      - name: Verify reassembled archive and all eight independent original facings
+        if: steps.repair.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat assets/runtime/ghost-sprite-parts/ghost-sprite-expansion-v3.zip.part0[0-8] > /tmp/beckenburg-ghost-v3.zip
+          unzip -t /tmp/beckenburg-ghost-v3.zip | tail -2
+          python3 - <<'PY'
+          import json,zipfile,hashlib
+          from pathlib import Path
+          root=Path('development/verification')
+          report=json.loads((root/'possessive-source-line-alpha-repair.json').read_text())
+          with zipfile.ZipFile('/tmp/beckenburg-ghost-v3.zip') as z:
+              names=set(z.namelist())
+              assert len(report['changed_pngs']) == 4
+              assert all(name in names for name in report['changed_pngs'])
+              assert len([x for x in names if x.startswith('frames/possessive/') and x.endswith('.png')]) == 8
+          assert report['repaired_archive_sha256'] == hashlib.sha256(Path('/tmp/beckenburg-ghost-v3.zip').read_bytes()).hexdigest()
+          print('PASS final 9-part runtime archive and four verified source alpha fixes')
+          PY
+      - name: Preserve exact original-vs-repaired ghost source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: possessive-alpha-original-source-repair
+          path: |
+            development/verification/possessive-source-line-alpha-repair.png
+            development/verification/possessive-source-line-alpha-repair.json
+          retention-days: 21
+          if-no-files-found: warn
+      - name: Commit corrected shipped ghost sprite parts and evidence
+        if: steps.repair.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Beckenburg source-art repair"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/runtime/ghost-sprite-parts/ghost-sprite-expansion-v3.zip.part0[0-8] \
+            development/verification/possessive-source-line-alpha-repair.png \
+            development/verification/possessive-source-line-alpha-repair.json
+          if git diff --cached --quiet; then
+            echo "No original source alpha lines left to repair"
+            exit 0
+          fi
+          git commit -m "Remove four detached Possessive source-alpha lines from shipped ghost atlas"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "PASS pushed actual corrected 9-part ghost atlas to main"
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Unable to push ghost atlas without overwriting concurrent history"
+          exit 1

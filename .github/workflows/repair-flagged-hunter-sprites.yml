@@ -1,0 +1,113 @@
+name: Repair Flagged Hunter Source Cutouts (advisory art)
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/repair_flagged_hunter_cutouts.py
+      - tools/repair_twins_side_head.py
+      - .github/workflows/repair-flagged-hunter-sprites.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # Cosmetic diagnostics are never release-blocking.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install source-art segmentation dependencies
+        run: python -m pip install --disable-pip-version-check numpy opencv-python-headless pillow
+      - name: Rebuild only flagged Observer and Demonologist frames from canonical boards
+        id: regenerate
+        run: python tools/repair_flagged_hunter_cutouts.py
+      - name: Restore only blue Twin side head from original paired master
+        id: twins
+        run: python tools/repair_twins_side_head.py
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Build real game with regenerated source sprite archives
+        id: build_runtime
+        continue-on-error: true
+        shell: bash
+        run: |
+          # This advisory gallery still records functional test failures.
+          # A full Linux regression can fail independently of the repaired
+          # source art (currently: No authored user level selected).
+          set +e
+          bash build.sh
+          test_result=$?
+          set -e
+          if [ "$test_result" -ne 0 ]; then
+            echo "::warning::Full Linux regression exited $test_result; capture-only package assembled from already compiled and packaged authentic runtime classes/resources."
+            test -s build/classes/org/beckenburg/InvestigationGame.class
+            test -s build/classes/org/beckenburg/character-directions.zip
+            test -s build/classes/org/beckenburg/twins-directions.zip
+            test -s build/classes/org/beckenburg/ghost-sprite-expansion-v3.zip
+            jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes .
+          fi
+          test -s build/beckenburg-game.jar
+          jar tf build/beckenburg-game.jar | grep -q 'org/beckenburg/DevAssetShowroom.class'
+          jar tf build/beckenburg-game.jar | grep -q 'org/beckenburg/character-directions.zip'
+      - name: Capture the four exact repaired identities with the real renderer
+        if: steps.build_runtime.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          for id in observer demonologist twins possessive; do
+            java -Djava.awt.headless=true -cp build/beckenburg-game.jar \
+              org.beckenburg.DevAssetShowroom --dev-room --capture \
+              "--asset=$id" "--output=build/flagged-runtime/$id"
+          done
+      - name: Preserve actual close-up four-angle renderer captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flagged-character-real-render-closeups
+          path: build/flagged-runtime/
+          if-no-files-found: warn
+          retention-days: 21
+      - name: Preserve full-size before/after source cutouts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flagged-hunter-head-boots-original-source-comparison
+          path: |
+            development/verification/flagged-hunter-source-repair.png
+            development/verification/twins-side-head-source-repair.png
+          if-no-files-found: warn
+          retention-days: 21
+      - name: Commit actual regenerated runtime archive and review manifest
+        if: steps.regenerate.outcome == 'success' && steps.twins.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Beckenburg source-art repair"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/runtime/character-directions.zip assets/runtime/character-directions-manifest.json development/verification/flagged-hunter-source-repair.png assets/runtime/twins-directions.zip assets/runtime/twins-directions-manifest.json development/verification/twins-side-head-source-repair.png
+          if git diff --cached --quiet; then
+            echo "No source cutout changes"
+            exit 0
+          fi
+          git commit -m "Restore canonical Hunter boots and blue Twin head in packaged sprite atlases"
+          # Never force-push. A moving main is retried with a normal rebase
+          # and a bounded count; an unresolvable conflict is a truthful failure.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Committed source-backed runtime sprites to main"
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Could not push repaired sprites without modifying remote history"
+          exit 1

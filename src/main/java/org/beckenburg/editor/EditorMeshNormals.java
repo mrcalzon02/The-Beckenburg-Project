@@ -27,7 +27,7 @@ public final class EditorMeshNormals {
         return new Triangle(after.part(),transport(before.a(),after.a(),oldA,oldB,oldN,dualA,dualB,n,determinant),transport(before.b(),after.b(),oldA,oldB,oldN,dualA,dualB,n,determinant),transport(before.c(),after.c(),oldA,oldB,oldN,dualA,dualB,n,determinant));
     }
     private static Vertex transport(Vertex before,Vertex after,Normal oldA,Normal oldB,Normal oldN,Normal dualA,Normal dualB,Normal n,double determinant){
-        if(before.normal()==null)return after;var normal=before.normal();double a=dot(oldA,normal)/determinant,b=dot(oldB,normal)/determinant,c=dot(oldN,normal);
+        if(before.normal()==null)return after;var normal=unit(before.normal());double a=dot(oldA,normal)/determinant,b=dot(oldB,normal)/determinant,c=dot(oldN,normal);
         var updated=unit(new Normal(a*dualA.x()+b*dualB.x()+c*n.x(),a*dualA.y()+b*dualB.y()+c*n.y(),a*dualA.z()+b*dualB.z()+c*n.z()));
         return new Vertex(after.x(),after.y(),after.z(),after.u(),after.v(),updated);
     }

@@ -1,0 +1,55 @@
+{
+  "source_archive_sha256": "8cdbe69101a951c0862b81a4b3b9a7555e9be8068f735466c2c77b5cd33a876d",
+  "repaired_archive_sha256": "e5a2a80d25e7d003ed3ab109fc42316d8fe745bce199390d92de60f68adfa3cc",
+  "changed_pngs": [
+    "frames/possessive/back.png",
+    "frames/possessive/back_left.png",
+    "frames/possessive/back_right.png",
+    "frames/possessive/front.png"
+  ],
+  "unchanged_png_entries": 181,
+  "source_rgb_preserved": true,
+  "runtime_visual_approval": "pending post-commit game renderer capture",
+  "repairs": [
+    {
+      "facing": "front",
+      "detached_alpha_pixels_cleared": 34496,
+      "visible_line_pixels_cleared": 1297,
+      "protected_original_body_pixels": 0,
+      "preserved_faded_source_frames": 4,
+      "source_rgb_unchanged": true,
+      "original_sha256": "2195ca56af93eef593953470b4af075e2413f1a6e41c0371a4e78e3a338867aa",
+      "corrected_sha256": "fd7e066c475292a9663696c71840a1db7a43904ba4b8afe1439ac87f9b7a9d9a"
+    },
+    {
+      "facing": "back_right",
+      "detached_alpha_pixels_cleared": 37632,
+      "visible_line_pixels_cleared": 2288,
+      "protected_original_body_pixels": 0,
+      "preserved_faded_source_frames": 4,
+      "source_rgb_unchanged": true,
+      "original_sha256": "472bb56eaf78c73e9500945e33c1a2b6cf1658932b3f5f3b4dfa0ff92bbb2072",
+      "corrected_sha256": "ab14a7fc233ee3482b3c21d64fd2c6623b51fbccf46682a19cc13516a96633ad"
+    },
+    {
+      "facing": "back",
+      "detached_alpha_pixels_cleared": 37122,
+      "visible_line_pixels_cleared": 1311,
+      "protected_original_body_pixels": 178,
+      "preserved_faded_source_frames": 4,
+      "source_rgb_unchanged": true,
+      "original_sha256": "6c5d5269fa83ec4961488ec1b756effc4ef089100e2b2217c1d55a8361c38a40",
+      "corrected_sha256": "2d91a8356496bb99845a3c1a4ef2f4ff45b36ba76316f7867b0222bba66a9b20"
+    },
+    {
+      "facing": "back_left",
+      "detached_alpha_pixels_cleared": 37632,
+      "visible_line_pixels_cleared": 2119,
+      "protected_original_body_pixels": 0,
+      "preserved_faded_source_frames": 4,
+      "source_rgb_unchanged": true,
+      "original_sha256": "b6701d2093849ccb88f9b76912c67d06b27f8e40c2980d24e1ebbf85e7095dc0",
+      "corrected_sha256": "a26274c077017b87f8374bea9c4fe0c06f9eddb7418a09d23f967f9ec3543c00"
+    }
+  ]
+}
