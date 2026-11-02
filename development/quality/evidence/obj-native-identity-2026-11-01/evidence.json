@@ -19,5 +19,13 @@
     "Existing BTOP documents retain their explicit IDs; no silent split/repair",
     "No new agent/MCP mesh operations or G2 exit acceptance"
   ],
-  "ci": "pending exact-source publication"
+  "ci": {
+    "standalone": 41390498466,
+    "nativeHost": 41390504086,
+    "fullRound": 41390507634,
+    "status": "dispatched; inspect raw full manifest before accepting"
+  },
+  "sourceSha": "4be25e3a61f865dd4d185c5fdf88489fb36851f8",
+  "implementationCommit": "4006e527",
+  "remoteReadback": "git ls-remote matched exact4be25e3a on approved branch"
 }
