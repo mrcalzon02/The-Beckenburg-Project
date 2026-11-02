@@ -16,6 +16,7 @@ on:
       - 'src/main/java/org/beckenburg/DirectionalSprites.java'
       - 'src/main/java/org/beckenburg/GhostSpriteAtlas.java'
       - 'src/test/java/org/beckenburg/PossessiveAtlasRuntimeTest.java'
+      - 'src/test/java/org/beckenburg/TwinsAtlasRuntimeTest.java'
       - 'src/main/java/org/beckenburg/CharacterVisuals.java'
       - 'src/main/java/org/beckenburg/EquipmentModelCatalog.java'
       - 'src/main/java/org/beckenburg/LevelAssets.java'
@@ -54,6 +55,15 @@ jobs:
       - name: Compile and package actual assets (functional)
         shell: cmd
         run: build.cmd e2e
+      - name: Check actual Twins source alpha strips with game decoder (advisory)
+        continue-on-error: true
+        shell: cmd
+        run: |
+          if not exist build\\test mkdir build\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\test src\\test\\java\\org\\beckenburg\\TwinsAtlasRuntimeTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\test org.beckenburg.TwinsAtlasRuntimeTest
+          if errorlevel 1 exit /b 1
       - name: Check packed Possessive source alpha with actual game decoder (advisory)
         continue-on-error: true
         shell: cmd
