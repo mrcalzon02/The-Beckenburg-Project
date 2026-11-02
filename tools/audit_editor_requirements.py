@@ -45,9 +45,25 @@ for source in register['sources']:
                 errors.append(f'{source["id"]}: normalized text archive hash mismatch')
             if len(markers) != source['textPageMarkers'] or len({m[0] for m in markers}) != len(markers):
                 errors.append(f'{source["id"]}: missing or duplicate extracted page markers')
+            if source.get('originalPdfCommitted') and not source.get('verifiedPdfExtractPath'):
+                if [int(m[0]) for m in markers] != list(range(1, source['sourcePages'] + 1)) or any(int(m[1]) != source['sourcePages'] for m in markers):
+                    errors.append(f'{source["id"]}: complete PDF extraction page sequence differs')
+    if source.get('verifiedPdfExtractPath'):
+        path = registered_path(source['verifiedPdfExtractPath'])
+        if path:
+            text = path.read_text(encoding='utf-8')
+            digest = hashlib.sha256(text.encode('utf-8')).hexdigest()
+            markers = re.findall(r'<PARSED TEXT FOR PAGE: (\d+) / (\d+)>', text)
+            result.update(directPdfText='CHECKED', directPdfTextSha256Lf=digest, directPdfPages=len(markers))
+            if digest != source.get('verifiedPdfExtractSha256Lf'):
+                errors.append(f'{source["id"]}: direct PDF text hash mismatch')
+            if len(markers) != source['verifiedPdfExtractPageMarkers'] or [int(m[0]) for m in markers] != list(range(1, source['sourcePages'] + 1)) or any(int(m[1]) != source['sourcePages'] for m in markers):
+                errors.append(f'{source["id"]}: direct PDF extraction page sequence differs')
     if source.get('originalPdfPath'):
         path = registered_path(source['originalPdfPath'])
         if path:
+            if source.get('originalPdfBytes') != path.stat().st_size:
+                errors.append(f'{source["id"]}: ORIGINAL PDF byte size mismatch')
             digest = hashlib.sha256(path.read_bytes()).hexdigest()
             if digest != source.get('originalPdfSha256'):
                 errors.append(f'{source["id"]}: ORIGINAL PDF hash mismatch')

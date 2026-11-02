@@ -18,10 +18,10 @@
       "order": 1,
       "title": "Level Editor gold standards.pdf",
       "prior": true,
-      "originalPdfCommitted": false,
-      "originalPdfSha256": null,
+      "originalPdfCommitted": true,
+      "originalPdfSha256": "ea093401390be6fe445c6e989ac21fa31abfcdc4877faa6fd3a92dffa8737935",
       "sourcePages": 5,
-      "sourceStatus": "existing owner document referenced by committed analysis; original binary and full extract unavailable in this repository",
+      "sourceStatus": "original PDF bytes archived and SHA verified; complete direct PDF text extraction page-count checked; prior transcriptions retained where present",
       "analysisPaths": [
         "docs/development/LEVEL_EDITOR_OVERHAUL_AUDIT.md",
         "docs/development/PSX_RUNTIME_AND_EDITOR_SUITE_ARCHITECTURE.md"
@@ -34,17 +34,23 @@
         "undo",
         "playtest",
         "asset browser"
-      ]
+      ],
+      "textArchivePath": "docs/editor/requirements/sources/editor-gold-standards.txt",
+      "textArchiveSha256Lf": "0509403f43156eb889e2c94a72dce97a2162afa4e92b0c8ab18314509f4560f2",
+      "textPageMarkers": 5,
+      "originalPdfPath": "docs/editor/requirements/sources/editor-gold-standards.pdf",
+      "originalPdfBytes": 142485,
+      "pdfTextExtractor": "pypdf 6.10.0; LF/trailing-space normalization only"
     },
     {
       "id": "terrain-editor-requirements",
       "order": 2,
       "title": "Terrain editor requirements.pdf",
       "prior": true,
-      "originalPdfCommitted": false,
-      "originalPdfSha256": null,
+      "originalPdfCommitted": true,
+      "originalPdfSha256": "593e815e8847a8761e831aebb2f078b979e0d99a486a74de194861897f77a3ac",
       "sourcePages": 17,
-      "sourceStatus": "existing owner document with implemented/remaining requirement analysis; binary and full extract not archived",
+      "sourceStatus": "original PDF bytes archived and SHA verified; complete direct PDF text extraction page-count checked; prior transcriptions retained where present",
       "analysisPaths": [
         "docs/editor/TERRAIN_REQUIREMENTS_INTEGRATION.md",
         "docs/development/TERRAIN_WORLD_SYSTEM_PLAN.md"
@@ -56,17 +62,23 @@
         "graded roads and rail",
         "height sampling",
         "authoring"
-      ]
+      ],
+      "textArchivePath": "docs/editor/requirements/sources/terrain-editor-requirements.txt",
+      "textArchiveSha256Lf": "023fd83b2f810eb0fb4ecd3f114235b281a4f4b4c5555c9103327ebec294f379",
+      "textPageMarkers": 17,
+      "originalPdfPath": "docs/editor/requirements/sources/terrain-editor-requirements.pdf",
+      "originalPdfBytes": 403352,
+      "pdfTextExtractor": "pypdf 6.10.0; LF/trailing-space normalization only"
     },
     {
       "id": "landscape-layering",
       "order": 3,
       "title": "Landscape layering.pdf",
       "prior": true,
-      "originalPdfCommitted": false,
-      "originalPdfSha256": null,
+      "originalPdfCommitted": true,
+      "originalPdfSha256": "fc11a9ed67aaa58429fb79e6bfaaf98a43ec7f7a6609e64a823c7206059fcfd4",
       "sourcePages": 8,
-      "sourceStatus": "existing owner document with prepared integration handoff; binary and full extract not archived",
+      "sourceStatus": "original PDF bytes archived and SHA verified; complete direct PDF text extraction page-count checked; prior transcriptions retained where present",
       "analysisPaths": [
         "docs/editor/LANDSCAPE_LAYERING_PREPARATION.md"
       ],
@@ -75,20 +87,26 @@
         "Material Domain",
         "Blend Domain Matrix",
         "Master Output Graph"
-      ]
+      ],
+      "textArchivePath": "docs/editor/requirements/sources/landscape-layering.txt",
+      "textArchiveSha256Lf": "428bcc27dc5bd9f56c6ba38495c297d729e434ea368a3ef563a17efe24f4f51f",
+      "textPageMarkers": 8,
+      "originalPdfPath": "docs/editor/requirements/sources/landscape-layering.pdf",
+      "originalPdfBytes": 266333,
+      "pdfTextExtractor": "pypdf 6.10.0; LF/trailing-space normalization only"
     },
     {
       "id": "topological-editor",
       "order": 4,
       "title": "Topological editor.pdf",
       "prior": false,
-      "originalPdfCommitted": false,
+      "originalPdfCommitted": true,
       "originalPdfSha256": "ecd301284edb4746936cd7d79f5a791eeaee4ab444ea1ba5614ca6af0af99fef",
       "originalPdfBytes": 565668,
       "sourcePages": 36,
       "textPageMarkers": 36,
       "textArchivePath": "docs/editor/requirements/sources/topological-editor.txt",
-      "sourceStatus": "full available text archived, PDF binary not committed",
+      "sourceStatus": "original PDF bytes archived and SHA verified; complete direct PDF text extraction page-count checked; prior transcriptions retained where present",
       "plannedStages": [
         "G2",
         "G3",
@@ -102,20 +120,25 @@
         "skeletons",
         "preset animation"
       ],
-      "textArchiveSha256Lf": "d832d8a5719653d17b2f2c4813ff9bb06353d49fc3816d10f3bc7197109e142e"
+      "textArchiveSha256Lf": "d832d8a5719653d17b2f2c4813ff9bb06353d49fc3816d10f3bc7197109e142e",
+      "verifiedPdfExtractPath": "docs/editor/requirements/sources/topological-editor-pdf.txt",
+      "verifiedPdfExtractSha256Lf": "8489f9a66ad284387fe7f63d5d33ca7de06679533a02bf6b95659d55d79e09a2",
+      "verifiedPdfExtractPageMarkers": 36,
+      "originalPdfPath": "docs/editor/requirements/sources/topological-editor.pdf",
+      "pdfTextExtractor": "pypdf 6.10.0; LF/trailing-space normalization only"
     },
     {
       "id": "soundscape-environment-manager",
       "order": 5,
       "title": "Building a 3D Soundscape Environment Manager.pdf",
       "prior": false,
-      "originalPdfCommitted": false,
+      "originalPdfCommitted": true,
       "originalPdfSha256": "34ed1d64ebbf860c8a4ac65df0b87100559e1bfe2a2aae089746147d924aef90",
       "originalPdfBytes": 264981,
       "sourcePages": 19,
       "textPageMarkers": 19,
       "textArchivePath": "docs/editor/requirements/sources/soundscape-environment-manager.txt",
-      "sourceStatus": "full available text archived, PDF binary not committed",
+      "sourceStatus": "original PDF bytes archived and SHA verified; complete direct PDF text extraction page-count checked; prior transcriptions retained where present",
       "plannedStages": [
         "G5",
         "G6"
@@ -128,20 +151,25 @@
         "speaker profile",
         "dialogue clarity"
       ],
-      "textArchiveSha256Lf": "59a77b6cf13081fd8d3b484e798362f695b0c5052450f8f9b196c8941bd4d2da"
+      "textArchiveSha256Lf": "59a77b6cf13081fd8d3b484e798362f695b0c5052450f8f9b196c8941bd4d2da",
+      "verifiedPdfExtractPath": "docs/editor/requirements/sources/soundscape-environment-manager-pdf.txt",
+      "verifiedPdfExtractSha256Lf": "df94b45e04b78c1201458042d98ddbfc3c0e94505d04736cd3aaf6dd527cf01d",
+      "verifiedPdfExtractPageMarkers": 19,
+      "originalPdfPath": "docs/editor/requirements/sources/soundscape-environment-manager.pdf",
+      "pdfTextExtractor": "pypdf 6.10.0; LF/trailing-space normalization only"
     },
     {
       "id": "engine-base",
       "order": 6,
       "title": "Engine base.pdf",
       "prior": false,
-      "originalPdfCommitted": false,
+      "originalPdfCommitted": true,
       "originalPdfSha256": "5dbf8c39e5b434ae8a7231ae755cc8d7aac7855c532cf59d8b054409fdc01bb4",
       "originalPdfBytes": 450464,
       "sourcePages": 29,
       "textPageMarkers": 29,
       "textArchivePath": "docs/editor/requirements/sources/engine-base.txt",
-      "sourceStatus": "full available text archived, PDF binary not committed",
+      "sourceStatus": "original PDF bytes archived and SHA verified; complete direct PDF text extraction page-count checked; prior transcriptions retained where present",
       "plannedStages": [
         "G1",
         "G10",
@@ -156,20 +184,25 @@
         "DSL",
         "diagnostics"
       ],
-      "textArchiveSha256Lf": "9eae433f1730dfdc7ede0ed5dd20faa6a06c7b73ee129f012746875dd828a5b4"
+      "textArchiveSha256Lf": "9eae433f1730dfdc7ede0ed5dd20faa6a06c7b73ee129f012746875dd828a5b4",
+      "verifiedPdfExtractPath": "docs/editor/requirements/sources/engine-base-pdf.txt",
+      "verifiedPdfExtractSha256Lf": "9e99412edaab8b4df7e8244f34812bac0096df2627f93111f766f1b027601265",
+      "verifiedPdfExtractPageMarkers": 29,
+      "originalPdfPath": "docs/editor/requirements/sources/engine-base.pdf",
+      "pdfTextExtractor": "pypdf 6.10.0; LF/trailing-space normalization only"
     },
     {
       "id": "multi-genre-game-creation-engine",
       "order": 7,
       "title": "multi-genre game creation engine.pdf",
       "prior": false,
-      "originalPdfCommitted": false,
+      "originalPdfCommitted": true,
       "originalPdfSha256": "dccf7dce17b740ae570ffb765d278c2d77ba720b0993231805cf6726bdb332d5",
       "originalPdfBytes": 364217,
       "sourcePages": 19,
       "textPageMarkers": 18,
       "textArchivePath": "docs/editor/requirements/sources/multi-genre-game-creation-engine.txt",
-      "sourceStatus": "full available text archived (18 page markers in 19-page PDF); PDF binary not committed",
+      "sourceStatus": "original PDF bytes archived and SHA verified; complete direct PDF text extraction page-count checked; prior transcriptions retained where present",
       "plannedStages": [
         "G8",
         "G9"
@@ -186,7 +219,12 @@
         "survival",
         "roguelike"
       ],
-      "textArchiveSha256Lf": "2b7d2595db0ec950b3651de5b1d97420bc9278977d71b5c0d83019e806e79928"
+      "textArchiveSha256Lf": "2b7d2595db0ec950b3651de5b1d97420bc9278977d71b5c0d83019e806e79928",
+      "verifiedPdfExtractPath": "docs/editor/requirements/sources/multi-genre-game-creation-engine-pdf.txt",
+      "verifiedPdfExtractSha256Lf": "a7812cdf304ebaf23ff7fb75d881de35c86cab8c3869546111d8dda344922d44",
+      "verifiedPdfExtractPageMarkers": 19,
+      "originalPdfPath": "docs/editor/requirements/sources/multi-genre-game-creation-engine.pdf",
+      "pdfTextExtractor": "pypdf 6.10.0; LF/trailing-space normalization only"
     },
     {
       "id": "texture-painting",
@@ -223,8 +261,8 @@
       "id": "G0",
       "name": "Provenance and gap audit",
       "dependsOn": [],
-      "status": "partial-current-state-audited-original-bytes-unavailable",
-      "acceptance": "all seven sources in index; four new full text archives with verified provenance",
+      "status": "accepted-intake-original-bytes-hashes-page-extractions-and-current-state-audit-2026-11-02",
+      "acceptance": "all eight original owner PDFs archived and hash/byte-size verified;143 original pages directly extracted/checked; prior transcriptions preserved; source-to-module/gate and current implementation audit refreshed; no runtime feature acceptance implied",
       "audit": "docs/editor/requirements/CURRENT_STATE_AUDIT.md"
     },
     {
@@ -233,7 +271,7 @@
       "dependsOn": [
         "G0"
       ],
-      "status": "partial-native-mission-castle-journal-recovery-tested-deltas-resource-events-open"
+      "status": "partial-native-mission-castle-journal-recovery-stable-ids-commit-deltas-resource-events-tested;broader-contracts-open"
     },
     {
       "id": "G2",
@@ -241,7 +279,7 @@
       "dependsOn": [
         "G1"
       ],
-      "status": "partial-human-indexed-primitives-selection-move-face-modeling-exact-weld-degenerate-repair; advanced-modeling-and-interchange-open"
+      "status": "partial-native-indexed-modeling-normals-material-v3-UV-transforms-tested;original-editable-GLB-and-remaining-modeling-open"
     },
     {
       "id": "G3",

@@ -1,6 +1,6 @@
 # Unified Editor/Engine Requirements — staged integration plan
 
-**Owner intake:** 2026-10-31. **Target:** reusable, portable Java 17 editor/engine kit, integrated through existing Beckenburg host adapters without a parallel renderer, scene model, audio state, collision solver, or AI world. **Status:** PLANNED; this plan itself implements no features. **Source register:** [DOCUMENT_CHAIN.md](DOCUMENT_CHAIN.md) and [DOCUMENT_CHAIN.json](DOCUMENT_CHAIN.json).
+**Owner intake:** 2026-10-31. **Target:** reusable, portable Java 17 editor/engine kit, integrated through existing Beckenburg host adapters without a parallel renderer, scene model, audio state, collision solver, or AI world. **Status:** ACTIVE; G0 intake accepted2026-11-02, G1–G12 remain partial/planned. This plan itself implements no runtime features. **Source register:** [DOCUMENT_CHAIN.md](DOCUMENT_CHAIN.md) and [DOCUMENT_CHAIN.json](DOCUMENT_CHAIN.json).
 
 ## Authority, scope, and existing chain
 
@@ -25,12 +25,12 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 **2026-11-01 owner priority:** first finish the small [Editor Agent Service](../../development/EDITOR_AGENT_SERVICE.md) around existing human operations and authoritative runtime adapters, then continue G0–G12. The service now has local Java 17, actual Windows editor and headless-process acceptance for native mission/Castle state, shared history, save/reopen, renderer capture and focused tests. This does not admit unfinished terrain/model/audio operations or close full G11: authenticated MCP, scripting and broader host acceptance remain gated.
 
 ### G0 — Requirements intake, deduplication and current-state audit
-**Inputs:** all seven owner document references (four new, three prior) and current Beckenburg code/recovery work. **Deliverable:** this chain manifest, exact source provenance, requirement-to-module map, and audit of what exists, what overlaps, what is a proposal, and what cannot compile on Java 17.
+**Inputs:** all eight owner document references (the original seven plus Texture Painting) and current Beckenburg code/recovery work. **Deliverable:** this chain manifest, exact source provenance, requirement-to-module map, and audit of what exists, what overlaps, what is a proposal, and what cannot compile on Java 17.
 - Record the existing EditorProject / RuntimeScene / EditorHistory / EditorMeshPipeline / TerrainLayerStack / AdaptiveTerrainTopology / TerrainSceneNativePhysics entry points.
 - Audit SoundDocument, SoundVolume, LevelSoundscape, SoundVolumeEditor, EditorSoundLab/Profile, Room/portal geometry, existing javax.sound playback and LAN voice before selecting a hardware backend.
 - Audit EditorAnimationClip/Lab and model import pipelines before adding a separate rig animation controller.
 - Maintain separate states: EXISTING_VERIFIED, PARTIAL, PLANNED, BLOCKED, OUT_OF_SCOPE; a document commit never counts as feature completion.
-**Exit:** source hashes checked, owner documents indexed, no orphaned prior requirements. **Plan entry accepted; runtime features are not.**
+**Exit:** source hashes checked, owner documents indexed, no orphaned prior requirements. **Accepted2026-11-02:** eight original PDFs/143 direct page extractions, prior transcriptions and module contracts indexed; `audit_editor_requirements.py --require-originals` reports0 errors/0 gaps. See CURRENT_STATE_AUDIT.md for actual code/evidence and open gates. Runtime features are not accepted by this intake gate.
 
 ### G1 — Stable portable runtime/editor and transactional data contracts
 **Depends on:** G0. **Sources:** Engine base; Level Editor gold standards; terrain/landscape contracts.

@@ -2910,7 +2910,7 @@ Older-map obligation: Do not bulk-reimport existing assets, overwrite source tex
 
 ### DEV-213 — OBJ material dependency containment compares lexical aliases with canonical asset root
 
-**Status:** fixed locally; exact644 standalone failure and directory-alias negative/positive controls reproduced; new-source CI pending · **Affected:** EditorObjMaterials.Reader.resolve; standalone Windows material import41506322166/job125486457313
+**Status:** fixed-scoped; exact318 standalone41508789243 and native41508797528 SUCCESS, including real material/UV regressions · **Affected:** EditorObjMaterials.Reader.resolve; standalone Windows material import41506322166/job125486457313
 
 A dependency inside the selected asset root is rejected with Material dependency escapes the asset root. Native suite passes while Windows standalone material test fails; an in-root directory junction reproduces the same exception against exact644 editor JAR.
 
@@ -2918,7 +2918,7 @@ Cause / uncertainty: Asset root was canonicalized with toRealPath, but containme
 
 Fix / next action: Resolve the dependency to its canonical real path before checking containment against the canonical root. Retain relative-path restrictions and actual outside-root refusal; record canonical dependency fingerprints.
 
-Evidence and verification: Exact644 standalone raw excerpt under evidence/material-uv-2026-11-02. DependencyAliasControl compiled against the exact published JAR fails through build/material-root-alias, then passes against corrected source with one original material. EditorMeshMaterialTest still refuses ../outside dependency and changed MTL. Actual source-aware OBJ/MTL human UV test also passes.
+Evidence and verification: Exact644 standalone raw excerpt under evidence/material-uv-2026-11-02. DependencyAliasControl compiled against the exact published JAR fails through build/material-root-alias, then passes against corrected source with one original material. EditorMeshMaterialTest still refuses ../outside dependency and changed MTL. Actual source-aware OBJ/MTL human UV test also passes. Corrected source31876318 exact standalone job125494894856 passes native material and maximum UV steps; native job125494926967 raw human material/UV and complete suite PASS are retained in material-uv evidence.
 
 Older-map obligation: No bulk source migration or bypass of containment. Keep absolute/outside-root, unsupported options and changed-dependency guards. Await exact new-source standalone acceptance.
 

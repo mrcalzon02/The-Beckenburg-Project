@@ -67,12 +67,26 @@
     "source644Full": {
       "run": 41506342845,
       "job": 125486528370,
-      "status": "in_progress; preserve handle"
+      "status": "completed workflow success, raw308 passed/2 failed/0 skipped/310; DEV211 remains open"
     },
     "source644Gpu": {
       "run": 41506353573,
       "status": "queued; preserve handle"
+    },
+    "source318Standalone": {
+      "run": 41508789243,
+      "job": 125494894856,
+      "status": "success",
+      "scope": "native materials/OBJ bundle and maximum UV traversal steps passed"
+    },
+    "source318Native": {
+      "run": 41508797528,
+      "job": 125494926967,
+      "status": "success",
+      "scope": "actual human material/UV plus complete native service/GUI/CLI suite raw PASS"
     }
   },
-  "remaining": "G0 original PDFs; full G2 source GLB identities/node/pivots/materials/UV, remaining modeling/selection; TP painting/unwrap/packing/pins/layers and G3-G12; no complete gate claimed"
+  "remaining": "G0 originals now recovered and strict intake accepted separately; full G2 source GLB identities/node/pivots/materials/UV, remaining modeling/selection; TP painting/unwrap/packing/pins/layers and G3-G12; no complete gate claimed",
+  "implementationSha": "31876318f03760fe7a60866de174302e6c30a39b",
+  "publication": "pushed; exact remote SHA verified"
 }

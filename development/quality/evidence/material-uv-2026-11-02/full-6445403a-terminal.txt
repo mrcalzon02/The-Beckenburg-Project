@@ -1,0 +1,6 @@
+Source6445403a36b18bcadbe2454ebb1f13824e3fcb82; run41506342845 job125486528370
+2026-11-02T19:10:16.6868080Z ##[error]Exception in thread "main" java.lang.AssertionError: ghost resource bytes changed: 6883065
+2026-11-02T19:10:16.7013045Z FAIL GhostSpriteAtlasIntegrationTest processExit=1
+2026-11-02T19:10:27.3533423Z ##[error]Exception in thread "main" java.lang.AssertionError: Twin A side-view head/feet crop differs from approved complete art
+2026-11-02T19:10:27.5195366Z FAIL TwinBodyVisualTest processExit=1
+2026-11-02T19:19:09.2882614Z REGRESSION SUMMARY passed=308 failed=2 skipped=0 manifest=310

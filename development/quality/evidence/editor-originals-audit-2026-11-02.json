@@ -1,0 +1,77 @@
+{
+  "schema": "beckenburg.editor-requirements-audit/v1",
+  "sources": [
+    {
+      "id": "editor-gold-standards",
+      "originalPdf": "HASH_VERIFIED",
+      "textArchive": "CHECKED",
+      "textSha256Lf": "0509403f43156eb889e2c94a72dce97a2162afa4e92b0c8ab18314509f4560f2",
+      "pageMarkers": 5
+    },
+    {
+      "id": "terrain-editor-requirements",
+      "originalPdf": "HASH_VERIFIED",
+      "textArchive": "CHECKED",
+      "textSha256Lf": "023fd83b2f810eb0fb4ecd3f114235b281a4f4b4c5555c9103327ebec294f379",
+      "pageMarkers": 17
+    },
+    {
+      "id": "landscape-layering",
+      "originalPdf": "HASH_VERIFIED",
+      "textArchive": "CHECKED",
+      "textSha256Lf": "428bcc27dc5bd9f56c6ba38495c297d729e434ea368a3ef563a17efe24f4f51f",
+      "pageMarkers": 8
+    },
+    {
+      "id": "topological-editor",
+      "originalPdf": "HASH_VERIFIED",
+      "textArchive": "CHECKED",
+      "textSha256Lf": "d832d8a5719653d17b2f2c4813ff9bb06353d49fc3816d10f3bc7197109e142e",
+      "pageMarkers": 36,
+      "directPdfText": "CHECKED",
+      "directPdfTextSha256Lf": "8489f9a66ad284387fe7f63d5d33ca7de06679533a02bf6b95659d55d79e09a2",
+      "directPdfPages": 36
+    },
+    {
+      "id": "soundscape-environment-manager",
+      "originalPdf": "HASH_VERIFIED",
+      "textArchive": "CHECKED",
+      "textSha256Lf": "59a77b6cf13081fd8d3b484e798362f695b0c5052450f8f9b196c8941bd4d2da",
+      "pageMarkers": 19,
+      "directPdfText": "CHECKED",
+      "directPdfTextSha256Lf": "df94b45e04b78c1201458042d98ddbfc3c0e94505d04736cd3aaf6dd527cf01d",
+      "directPdfPages": 19
+    },
+    {
+      "id": "engine-base",
+      "originalPdf": "HASH_VERIFIED",
+      "textArchive": "CHECKED",
+      "textSha256Lf": "9eae433f1730dfdc7ede0ed5dd20faa6a06c7b73ee129f012746875dd828a5b4",
+      "pageMarkers": 29,
+      "directPdfText": "CHECKED",
+      "directPdfTextSha256Lf": "9e99412edaab8b4df7e8244f34812bac0096df2627f93111f766f1b027601265",
+      "directPdfPages": 29
+    },
+    {
+      "id": "multi-genre-game-creation-engine",
+      "originalPdf": "HASH_VERIFIED",
+      "textArchive": "CHECKED",
+      "textSha256Lf": "2b7d2595db0ec950b3651de5b1d97420bc9278977d71b5c0d83019e806e79928",
+      "pageMarkers": 18,
+      "directPdfText": "CHECKED",
+      "directPdfTextSha256Lf": "a7812cdf304ebaf23ff7fb75d881de35c86cab8c3869546111d8dda344922d44",
+      "directPdfPages": 19
+    },
+    {
+      "id": "texture-painting",
+      "originalPdf": "HASH_VERIFIED",
+      "textArchive": "CHECKED",
+      "textSha256Lf": "1064dcd131fa2ed5e671efcec14d8aa43189382f45cdf33650ac5d41f780f828",
+      "pageMarkers": 10
+    }
+  ],
+  "errors": [],
+  "provenanceGaps": [],
+  "g0Accepted": true,
+  "featureAcceptance": "Not evaluated by this provenance check"
+}
