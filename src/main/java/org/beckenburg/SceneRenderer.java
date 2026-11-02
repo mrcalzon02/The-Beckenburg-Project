@@ -1889,6 +1889,11 @@ public final class SceneRenderer {
         return true;
     }
     private final java.util.Map<ShellGpuKey,ResidentShell> residentShell=new java.util.HashMap<>();
+    // A chunk can contain several materials in disjoint parts of a room.
+    // Their immutable receiver bounds are cached independently: a door
+    // shadow touching plaster must not retessellate distant timber merely
+    // because both materials share one 256-face shell chunk.
+    private final java.util.Map<ShellGpuKey,ShellChunk> residentShellMaterialBounds=new java.util.HashMap<>();
     private long shellResidentBuilds,shellResidentHits,shellResidentBytes;
     public record ShellResidentStats(long builds,long hits,long bytes,int batches){}
     public ShellResidentStats shellResidentStats(){
@@ -1916,6 +1921,7 @@ public final class SceneRenderer {
         stableGpuCacheOrder.clear();
         stableGpuBytes=0;
         residentShell.clear();
+        residentShellMaterialBounds.clear();
         shellResidentBytes=0;
     }
     /** Keep camera-space rasterization on OpenGL while retaining the stationary
@@ -1979,6 +1985,27 @@ public final class SceneRenderer {
             stableGpuEvictions++;
         }
     }
+    /** Conservative AABB of only this material's actual authored receivers.
+     * A chunk's full bounds may include unrelated materials on both sides of
+     * a door. This is only a tighter invalidation region, never a visibility
+     * shortcut: actual light rays and the full vertex payload remain unchanged. */
+    private ShellChunk shellMaterialBounds(ShellChunk chunk,int material){
+        double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX;
+        double maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
+        for(int i=chunk.start;i<chunk.end;i++){
+            Face face=preparedShellFaces.get(i);
+            if(face.material!=material)continue;
+            for(Point point:new Point[]{face.a,face.b,face.c}){
+                minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);
+                minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);
+                minZ=Math.min(minZ,point.z);maxZ=Math.max(maxZ,point.z);
+            }
+        }
+        if(!Double.isFinite(minX))throw new IllegalStateException(
+            "Missing shell material "+material+" in chunk "+chunk.start);
+        return new ShellChunk(chunk.room,chunk.start,chunk.end,
+            minX,minY,minZ,maxX,maxY,maxZ);
+    }
     /** World-space, revisioned immutable House shell VBOs.
      * Each contiguous spatial/room chunk is a separate resource, and
      * OpenGL retains its VBO across camera transforms. Supplying the cached
@@ -1993,29 +2020,37 @@ public final class SceneRenderer {
             // Retained geometry keeps the full close-range probe topology.
             // Walking across a distance threshold must not retessellate walls.
             int lod=chunk.room>=0&&chunk.room<12?3:0;
-            long lightVersion=fixtureLighting.regionVersion(
-                chunk.minX-.09,chunk.minY-.09,chunk.minZ-.09,
-                chunk.maxX+.09,chunk.maxY+.09,chunk.maxZ+.09);
-            // One VBO per chunk/material, not thousands of draw calls per
-            // source triangle; updating the LOD replaces the same resource.
-            var materials=new java.util.HashSet<Integer>();
+            var materials=new java.util.LinkedHashSet<Integer>();
             for(int i=chunk.start;i<chunk.end;i++)
                 materials.add(preparedShellFaces.get(i).material);
-            boolean rebuild=false;
+            var stale=new java.util.HashSet<Integer>();
+            var versions=new java.util.HashMap<Integer,Long>();
             for(int material:materials){
-                ResidentShell prev=residentShell.get(new ShellGpuKey(chunkIndex,material));
-                if(prev==null||prev.lod()!=lod||prev.lightVersion()!=lightVersion){
-                    rebuild=true;break;
-                }
+                ShellGpuKey key=new ShellGpuKey(chunkIndex,material);
+                ShellChunk region=residentShellMaterialBounds.computeIfAbsent(
+                    key,ignored->shellMaterialBounds(chunk,material));
+                long version=fixtureLighting.regionVersion(
+                    region.minX-.09,region.minY-.09,region.minZ-.09,
+                    region.maxX+.09,region.maxY+.09,region.maxZ+.09);
+                versions.put(material,version);
+                ResidentShell prev=residentShell.get(key);
+                if(prev==null||prev.lod()!=lod||prev.lightVersion()!=version)
+                    stale.add(material);
             }
-            if(rebuild){
+            if(!stale.isEmpty()){
+                // Only materials with changed receiver cells need fresh rays,
+                // tessellation and a possible VBO revision. Unchanged batches
+                // keep their exact ID, revision, vertex payload and GPU residency.
                 var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
                 boolean previousMode=preparingStableGpuFace;
                 int previousLod=preparingStableGpuLod;
                 preparingStableGpuFace=true;preparingStableGpuLod=lod;
                 try{
-                    for(int i=chunk.start;i<chunk.end;i++)
-                        appendGpuFace(preparedShellFaces.get(i),chunk.room,0,batches);
+                    for(int i=chunk.start;i<chunk.end;i++){
+                        Face face=preparedShellFaces.get(i);
+                        if(stale.contains(face.material))
+                            appendGpuFace(face,chunk.room,0,batches);
+                    }
                 }finally{
                     preparingStableGpuFace=previousMode;
                     preparingStableGpuLod=previousLod;
@@ -2024,24 +2059,23 @@ public final class SceneRenderer {
                     ShellGpuKey key=new ShellGpuKey(chunkIndex,built.getKey());
                     ResidentShell old=residentShell.get(key);
                     float[] vertices=built.getValue().complete();
+                    long version=versions.get(built.getKey());
                     if(old!=null&&sameResidentVertices(old.vertices(),vertices)){
-                        // A nearby door may invalidate a large House-shell
-                        // region without changing this material's actual RGB.
-                        // Keep its immutable VBO and revision; still advance
-                        // the lighting version to avoid rechecking every frame.
-                        residentShell.put(key,new ResidentShell(lod,lightVersion,
+                        // Conservative invalidation did not change the material.
+                        residentShell.put(key,new ResidentShell(lod,version,
                             old.id(),old.revision(),old.vertices()));
                         shellResidentHits++;
                         continue;
                     }
                     if(old!=null)shellResidentBytes-=(long)old.vertices().length*Float.BYTES;
-                    ResidentShell replacement=new ResidentShell(lod,lightVersion,
+                    ResidentShell replacement=new ResidentShell(lod,version,
                         old==null?GpuWorldRenderer.nextId():old.id(),
                         old==null?1:old.revision()+1,vertices);
                     residentShell.put(key,replacement);
                     shellResidentBytes+=(long)vertices.length*Float.BYTES;
                     shellResidentBuilds++;
                 }
+                shellResidentHits+=materials.size()-stale.size();
             }else shellResidentHits+=materials.size();
             lastGpuFrustumFaces+=chunk.end-chunk.start;
             for(int material:materials){
