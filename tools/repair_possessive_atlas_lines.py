@@ -34,10 +34,22 @@ DIRECTIONS = ("front", "front_right", "right", "back_right",
 
 
 def repair_sheet(original: bytes, facing: str) -> tuple[bytes, dict]:
-    image = Image.open(io.BytesIO(original)).convert("RGBA")
+    # The shipped PNGs are 32-colour indexed P images with a tRNS palette.
+    # Expanding them to RGBA would overflow the fixed nine-part ZIP layout.
+    source_indexed = Image.open(io.BytesIO(original))
+    if source_indexed.mode != "P":
+        raise ValueError("Possessive source atlas must retain its indexed palette")
+    palette = source_indexed.getpalette()
+    alpha_palette = source_indexed.info.get("transparency")
+    count_colors = len(palette) // 3
+    if not isinstance(alpha_palette, bytes) or len(alpha_palette) != count_colors or count_colors * 2 > 256:
+        raise ValueError("Unexpected original indexed palette/transparency")
+    image = source_indexed.convert("RGBA")
     if image.size != (CELL_W * COLS, CELL_H * ROWS):
         raise ValueError(f"Unexpected shipped Possessive {facing} atlas dimensions")
     array = np.asarray(image).copy()
+    original_indices = np.asarray(source_indexed, dtype=np.uint8)
+    cleared = np.zeros(original_indices.shape, dtype=bool)
     xlo, xhi = STRIPS[facing]
     transparent = 0
     strong = 0
@@ -72,6 +84,9 @@ def repair_sheet(original: bytes, facing: str) -> tuple[bytes, dict]:
             strong += int(np.count_nonzero(strip & (alpha >= 24)))
             transparent += int(np.count_nonzero(strip & (alpha != 0)))
             untouched_body += int(np.count_nonzero(keep[:, xlo:xhi] & (alpha[:, xlo:xhi] >= 24)))
+            tile_clear = cleared[row * CELL_H:(row + 1) * CELL_H,
+                                 col * CELL_W:(col + 1) * CELL_W]
+            tile_clear |= strip & (alpha != 0)
             alpha[strip] = 0
             if np.any((alpha[:, xlo:xhi] >= 24) & ~keep[:, xlo:xhi]):
                 raise AssertionError("Detached edge line survived the cleanup")
@@ -80,8 +95,25 @@ def repair_sheet(original: bytes, facing: str) -> tuple[bytes, dict]:
     # The original RGB pixels are preserved even under newly transparent alpha.
     if not np.array_equal(array[:, :, :3], np.asarray(image)[:, :, :3]):
         raise AssertionError("Possessive source RGB changed")
+    # Duplicate the ORIGINAL palette with transparent aliases for removed
+    # pixels. Every original RGB value survives exactly, including where
+    # its source alpha is removed. Unchanged pixels keep their palette index
+    # and original alpha. PNG stays indexed rather than 4-channel RGBA.
+    amended = original_indices.copy()
+    amended[cleared] = amended[cleared] + count_colors
+    png = Image.fromarray(amended, "P")
+    png.putpalette(palette + palette)
+    png.info["transparency"] = alpha_palette + bytes(count_colors)
     output = io.BytesIO()
-    Image.fromarray(array, "RGBA").save(output, format="PNG")
+    png.save(output, format="PNG", optimize=False, compress_level=9)
+    actual = np.asarray(Image.open(io.BytesIO(output.getvalue())).convert("RGBA"))
+    original_rgba = np.asarray(image)
+    if not np.array_equal(actual[:, :, :3], original_rgba[:, :, :3]):
+        raise AssertionError("Source RGB changed in indexed PNG repair")
+    if not np.array_equal(actual[:, :, 3][~cleared], original_rgba[:, :, 3][~cleared]):
+        raise AssertionError("Untargeted alpha changed")
+    if np.any(actual[:, :, 3][cleared]):
+        raise AssertionError("Detached source line still has alpha")
     return output.getvalue(), {
         "facing": facing, "detached_alpha_pixels_cleared": transparent,
         "visible_line_pixels_cleared": strong,
@@ -97,6 +129,13 @@ def main() -> None:
         raise ValueError("Missing actual nine-part shipped v3 archive")
     original_parts = [p.read_bytes() for p in part_paths]
     original = b"".join(original_parts)
+    if REPORT.is_file():
+        prior = json.loads(REPORT.read_text(encoding="utf-8"))
+        if prior.get("repaired_archive_sha256") == hashlib.sha256(original).hexdigest():
+            print("PASS Possessive source atlas already repaired; no further edits")
+            return
+    if hashlib.sha256(original).hexdigest() != "8cdbe69101a951c0862b81a4b3b9a7555e9be8068f735466c2c77b5cd33a876d":
+        raise ValueError("Unrecognized original ghost archive; never alter unknown source")
     with zipfile.ZipFile(io.BytesIO(original)) as z:
         original_entries = {name: z.read(name) for name in z.namelist()}
         source_info = list(z.infolist())
