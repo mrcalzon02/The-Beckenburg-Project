@@ -57,7 +57,12 @@ public final class DevAssetReviewCatalog {
                     // through HollowCreekScene's verified instance registry;
                     // they are not unapproved loose source models. Keep a
                     // single catalog entry without altering game approvals.
-                    Kind discovered=HollowCreekScene.approved(id)?
+                    // Never call an asset "unapproved" when the production
+                    // LevelAssets allowlist already permits it. In particular
+                    // Matthis Rook's authored proxy is a shipped model rather
+                    // than an editor-only source; optional site terrain remains
+                    // intentionally review-only until separately approved.
+                    Kind discovered=LevelAssets.approved(id)?
                         Kind.WORLD_MODEL:Kind.SOURCE_ONLY;
                     out.add(new Entry(discovered,id));
                 }
