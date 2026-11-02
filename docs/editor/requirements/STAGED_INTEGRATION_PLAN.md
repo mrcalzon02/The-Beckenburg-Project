@@ -49,7 +49,7 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 - Native topology+editor-state binary with version/migration; explicit glTF/GLB and OBJ import/export, coordinates/handedness, normals, UV and material roundtrip; no OBJ as hot editing state.
 **Exit:** create/edit/export/import/reopen a textured sample with correct facing, geometry counts and transformed hard-edge normals; tests prove roundtrip, manifold controls, undo and bounded memory. Capture actual editor frames as advisory review.
 
-**Implementation checkpoint:** [indexed mesh authoring](../INDEXED_MESH_AUTHORING.md) provides real human vertex editing, stable indexed native state, undo/save/reopen, topology diagnostics and checked runtime publication. This is partial G2; remaining exit requirements above are unchanged.
+**Implementation checkpoint:** [indexed mesh authoring](../INDEXED_MESH_AUTHORING.md) provides real human vertex editing, stable indexed native state, undo/save/reopen, topology diagnostics and checked runtime publication. This is partial G2; native-indexed OBJ copy/readback and explicit unused-vertex cleanup are also implemented. Authored normals/material interchange and the remaining exit requirements above are unchanged.
 
 ### G3 — Sculpting, remeshing, high-fidelity interchange and input
 **Depends on:** G2. **Source:** Topological editor, pages 1–18.

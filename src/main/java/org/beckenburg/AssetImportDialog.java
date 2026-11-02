@@ -1,6 +1,7 @@
 package org.beckenburg;
 
 import org.beckenburg.editor.EditorGlbWriter;
+import org.beckenburg.editor.EditorDocumentStore;
 import org.beckenburg.editor.EditorMeshPipeline;
 import org.beckenburg.editor.EditorMeshTopology;
 import org.beckenburg.editor.EditorTopologyProject;
@@ -51,7 +52,7 @@ public final class AssetImportDialog {
     private final JSpinner vertexY=new JSpinner(new SpinnerNumberModel(0d,-1e9,1e9,.05));
     private final JSpinner vertexZ=new JSpinner(new SpinnerNumberModel(0d,-1e9,1e9,.05));
     private final JButton moveVertex=new JButton("MOVE VERTEX"),undoMesh=new JButton("UNDO MESH"),redoMesh=new JButton("REDO MESH");
-    private final JButton saveMesh=new JButton("SAVE MESH"),reopenMesh=new JButton("REOPEN MESH");
+    private final JButton saveMesh=new JButton("SAVE MESH"),reopenMesh=new JButton("REOPEN MESH"),exportMesh=new JButton("EXPORT OBJ");
     private final JComboBox<EditorMeshPrimitives.Kind> primitiveKind=new JComboBox<>(EditorMeshPrimitives.Kind.values());
     private final JSpinner primitiveWidth=new JSpinner(new SpinnerNumberModel(1d,.0001,10000d,.1));
     private final JSpinner primitiveHeight=new JSpinner(new SpinnerNumberModel(1d,.0001,10000d,.1));
@@ -86,7 +87,7 @@ public final class AssetImportDialog {
     private List<EditorMeshPipeline.Triangle> modelingBounds;
     private int modelingGeneration;
     private boolean modelingPreparing;
-    private final JButton previewWeld=new JButton("PREVIEW WELD COINCIDENT"),previewDegenerates=new JButton("PREVIEW REMOVE DEGENERATES");
+    private final JButton previewWeld=new JButton("PREVIEW WELD COINCIDENT"),previewDegenerates=new JButton("PREVIEW REMOVE DEGENERATES"),previewUnused=new JButton("PREVIEW REMOVE UNUSED");
     private EditorTopologyProject topologyProject;
     private EditorTopologyProject.Observation workingObservation;
     private EditorTopologyProject.Vertex selectedVertex;
@@ -143,7 +144,7 @@ public final class AssetImportDialog {
         for(var item:List.of(new Object[]{"X",vertexX},new Object[]{"Y",vertexY},new Object[]{"Z",vertexZ})){
             vertexInputs.add(new JLabel((String)item[0]));vertexInputs.add((JSpinner)item[1]);
         }
-        vertexActions.add(moveVertex);vertexActions.add(undoMesh);vertexActions.add(redoMesh);vertexActions.add(saveMesh);vertexActions.add(reopenMesh);
+        vertexActions.add(moveVertex);vertexActions.add(undoMesh);vertexActions.add(redoMesh);vertexActions.add(saveMesh);vertexActions.add(reopenMesh);vertexActions.add(exportMesh);
         vertexActions.add(new JLabel("Move grid (0 off)"));meshSnap.setPreferredSize(new Dimension(65,24));vertexActions.add(meshSnap);
         JPanel areaActions=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));areaActions.add(boxSelect);areaActions.add(areaShape);areaActions.add(xraySelect);
         areaActions.add(new JLabel("Drag in the working mesh; Escape cancels. Selected vertices share the move gizmo."));actionRows.add(areaActions,BorderLayout.SOUTH);
@@ -156,6 +157,7 @@ public final class AssetImportDialog {
         undoMesh.addActionListener(e->{if(!busy&&meshHistory!=null&&meshHistory.undo())meshChanged();});
         redoMesh.addActionListener(e->{if(!busy&&meshHistory!=null&&meshHistory.redo())meshChanged();});
         saveMesh.addActionListener(e->saveAuthoring());
+        exportMesh.addActionListener(e->chooseObjExport());
         reopenMesh.addActionListener(e->meshEdit(()->{try{
             topologyProject.reopen();
             if(path!=null&&path.toAbsolutePath().normalize().equals(topologyProject.documentPath()))reviewedSourceFingerprint=topologyProject.diskFingerprint();
@@ -179,10 +181,11 @@ public final class AssetImportDialog {
         faceOperation.addActionListener(e->clearModelingPreview());faceAmount.addChangeListener(e->clearModelingPreview());
         previewFaceEdit.addActionListener(e->previewModelingEdit());cancelFaceEdit.addActionListener(e->clearModelingPreview());
         applyFaceEdit.addActionListener(e->{if(modelingPreview!=null&&!busy){var edit=modelingPreview;meshEdit(()->topologyProject.applyPreview(edit));if(topologyProject.snapshot()==edit.snapshot()){selectedHit=null;selectionLabel.setText("Model edit committed");}clearModelingPreview();}});
-        JPanel repairControls=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));repairControls.add(previewWeld);repairControls.add(previewDegenerates);repairControls.add(new JLabel("Explicit native repair; inspect candidate, then Apply."));
+        JPanel repairControls=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));repairControls.add(previewWeld);repairControls.add(previewDegenerates);repairControls.add(previewUnused);
         previewWeld.setToolTipText("Select vertices with X-ray/area selection. Exact coincident positions weld per part; UV seams stay per corner.");
         previewWeld.addActionListener(e->{var ids=java.util.Set.copyOf(selectedVertices);beginModelingPreview(p->p.previewWeld(ids));});
         previewDegenerates.addActionListener(e->beginModelingPreview(EditorTopologyProject::previewRemoveDegenerates));
+        previewUnused.addActionListener(e->beginModelingPreview(EditorTopologyProject::previewRemoveUnusedVertices));
         JPanel modelingRows=new JPanel(new BorderLayout());modelingRows.add(modelingControls,BorderLayout.NORTH);modelingRows.add(repairControls,BorderLayout.SOUTH);
         JPanel vertexAndModeling=new JPanel(new BorderLayout());vertexAndModeling.add(vertexControls,BorderLayout.NORTH);vertexAndModeling.add(modelingRows,BorderLayout.SOUTH);
         JPanel lower=new JPanel(new BorderLayout());lower.add(preset,BorderLayout.NORTH);lower.add(primitiveControls,BorderLayout.CENTER);lower.add(vertexAndModeling,BorderLayout.SOUTH);
@@ -220,6 +223,24 @@ public final class AssetImportDialog {
             details.append("\nSAVED MESH "+topologyProject.documentPath());refreshMeshControls();return true;
         }catch(IOException failure){details.append("\nSAVE FAILED: "+failure.getMessage());return false;}
     }
+    private void chooseObjExport(){
+        if(topologyProject==null||busy||modelingPreview!=null)return;
+        JFileChooser chooser=new JFileChooser();chooser.setDialogTitle("Export native mesh as OBJ copy");
+        chooser.setSelectedFile(topologyProject.documentPath().resolveSibling("mesh-export.obj").toFile());
+        if(chooser.showSaveDialog(dialog)==JFileChooser.APPROVE_OPTION)exportObj(chooser.getSelectedFile().toPath());
+    }
+    boolean exportObj(Path destination){
+        if(topologyProject==null||busy||modelingPreview!=null)return false;
+        try{
+            Path target=destination.toAbsolutePath().normalize();
+            if(!target.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".obj"))throw new IOException("Choose an .obj destination");
+            if(path!=null&&target.equals(path.toAbsolutePath().normalize()))throw new IOException("Export cannot replace the original source");
+            if(!topologyProject.isCurrent(workingObservation))throw new IOException("Native mesh changed; review again before exporting");
+            String previous=Files.exists(target)?EditorDocumentStore.fingerprint(EditorMeshPipeline.readSource(target,EditorDocumentStore.MAX_BYTES)):null;
+            topologyProject.exportObj(workingObservation,target,previous);
+            details.append("\nEXPORTED OBJ COPY "+target);return true;
+        }catch(IOException failure){details.append("\nEXPORT REFUSED: "+failure.getMessage());return false;}
+    }
     private void requestClose(){
         if(busy)return;
         if(hasUnsavedMeshChanges()){
@@ -231,7 +252,7 @@ public final class AssetImportDialog {
     }
     private void refreshMeshControls(){
         boolean editable=topologyProject!=null&&!busy&&modelingPreview==null;
-        for(var component:List.of(vertexId,vertexX,vertexY,vertexZ,moveVertex,saveMesh,reopenMesh))component.setEnabled(editable);
+        for(var component:List.of(vertexId,vertexX,vertexY,vertexZ,moveVertex,saveMesh,reopenMesh,exportMesh))component.setEnabled(editable);
         undoMesh.setEnabled(editable&&meshHistory.canUndo());redoMesh.setEnabled(editable&&meshHistory.canRedo());
         if(editable)saveMesh.setToolTipText("Save native topology to "+topologyProject.documentPath());
         newMesh.setEnabled(!busy);previewPrimitive.setEnabled(editable);applyPrimitive.setEnabled(editable&&reviewedPrimitive!=null);
@@ -241,7 +262,7 @@ public final class AssetImportDialog {
         boxSelect.setEnabled(editable);xraySelect.setEnabled(editable);areaShape.setEnabled(editable);
         faceOperation.setEnabled(topologyProject!=null&&!busy);faceAmount.setEnabled(topologyProject!=null&&!busy);
         previewFaceEdit.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
-        previewWeld.setEnabled(editable&&selectionMode.getSelectedIndex()==0&&selectedVertices.size()>1);previewDegenerates.setEnabled(editable);
+        previewWeld.setEnabled(editable&&selectionMode.getSelectedIndex()==0&&selectedVertices.size()>1);previewDegenerates.setEnabled(editable);previewUnused.setEnabled(editable);
         applyFaceEdit.setEnabled(!busy&&modelingPreview!=null);cancelFaceEdit.setEnabled(modelingPreview!=null||modelingPreparing);
         updatePublishAvailability();
     }

@@ -80,6 +80,14 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         if(!isCurrent(observation))throw new IOException("Native mesh changed since review; review again before publishing");
         save();return new SavedReview(snapshotBytes(),diskFingerprint);
     }
+    public synchronized void exportObj(Observation observation,Path target,String expectedTargetSha)throws IOException{
+        if(!isCurrent(observation))throw new IOException("Native mesh changed since export review");
+        if(target.toAbsolutePath().normalize().equals(path))throw new IOException("OBJ export cannot replace the native authoring document");
+        State expected=state;
+        EditorDocumentStore.saveIfUnchanged(target,out->EditorObjWriter.write(expected,out),
+            file->EditorMeshPipeline.read("export.obj",EditorMeshPipeline.readSource(file,EditorDocumentStore.MAX_BYTES)),
+            file->EditorObjWriter.validate(expected,EditorMeshPipeline.readSource(file,EditorDocumentStore.MAX_BYTES)),expectedTargetSha);
+    }
     public synchronized void restore(State value){
         if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint()))throw new IllegalArgumentException("Topology belongs to another source/project");
         state=value;revision++;
@@ -204,6 +212,13 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),remaining);
         if(!topology(after).manifold())throw new IllegalArgumentException("Other topology errors remain; repair requires a valid resulting mesh");
         return new EditPreview(this,state,after,revision,"REMOVE DEGENERATES / -"+removed+" triangles; vertex IDs retained");
+    }
+    public synchronized EditPreview previewRemoveUnusedVertices(){
+        var used=new HashSet<Long>();for(var f:state.faces()){used.add(f.a().vertex());used.add(f.b().vertex());used.add(f.c().vertex());}
+        var retained=state.vertices().stream().filter(v->used.contains(v.id())).toList();int removed=state.vertices().size()-retained.size();
+        if(removed==0)throw new IllegalArgumentException("No unused native vertices to remove");
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),retained,state.faces());
+        return new EditPreview(this,state,after,revision,"REMOVE UNUSED / -"+removed+" vertices; surviving IDs and faces retained");
     }
     private static double area(Face face,Map<Long,Vertex> vertices){
         var a=vertices.get(face.a().vertex());var b=vertices.get(face.b().vertex());var c=vertices.get(face.c().vertex());

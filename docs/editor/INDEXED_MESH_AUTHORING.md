@@ -55,7 +55,7 @@ Select FACE mode and click an actual triangle. Choose EXTRUDE (signed normal dis
 
 Pending face previews disable ordinary edit/publish controls. Save/reopen and publication consume committed native data. Publication is bound to an observation of that actual native owner/revision, not the UI mesh cache. A changed source refuses before writes; explicit review observes the new source. Reviewed save/capture is atomic with native edits and returns immutable exact bytes/fingerprint. Later edits remain unsaved, and the native project owns dirty-state tracking. The exact prior UI demonstrated a real native/runtime mismatch; the corrected human test verifies coherence.
 
-`EditorFaceModelingTest`, `AssetImportFaceModelingGuiTest` and `AssetImportPublicationRevisionGuiTest` cover this workflow through the independent JAR, actual buttons/mouse, native persistence/archive and every game-decoder corner. Current operations target a single triangulated face; multi-face regions, weld/repair, bevel/slide, advanced transforms and full material/normal interchange remain open. No mesh operations have been added to the agent interface.
+`EditorFaceModelingTest`, `AssetImportFaceModelingGuiTest` and `AssetImportPublicationRevisionGuiTest` cover this workflow through the independent JAR, actual buttons/mouse, native persistence/archive and every game-decoder corner. Current operations target a single triangulated face; multi-face regions, bevel/slide, advanced transforms and full material/normal interchange remain open. No mesh operations have been added to the agent interface.
 
 ## Explicit weld and degenerate repair
 
@@ -64,3 +64,14 @@ Select vertices (X-ray area selection can include all sides of complete seams), 
 **PREVIEW REMOVE DEGENERATES** explicitly removes zero/nonfinite-area triangles from the native document, retaining every surviving face/corner and all vertex IDs. Both operations use **APPLY MODEL EDIT / CANCEL MODEL EDIT**, shared history, native save/reopen and ordinary checked runtime publication. Working and candidate geometry are derived from native snapshots; no separate editable scene exists. Current repairs require a valid result; arbitrary distance welding, partial regional repair, orientation fixes and nonmanifold surgery remain open.
 
 `EditorMeshRepairTest --stress` verifies the full120000-face/360000-source-vertex workload under256MiB. `AssetImportMeshRepairGuiTest` drives real area selection/buttons and compares every published native game corner and archived native state. The original source remains unchanged. Full normals/material interchange and the G2 exit remain open.
+
+
+## Native OBJ copy and unused vertex cleanup
+
+**EXPORT OBJ** writes a deterministic Y-up copy directly from the current native observation. The normal human Save chooser uses the same owner/revision guard and journaled compare-and-save store as native persistence. The written copy is read back through the real OBJ importer, checking every referenced position identity, part, corner UV, position and winding before publication. Separate coincident vertices remain separate; welded vertices retain shared connectivity and UV seams. Existing target revisions are checked under the writer lock. The original input and native BTOP destination cannot be replaced through this action. Export leaves native history and dirty-state unchanged.
+
+OBJ uses contiguous file indices and derived unit flat face normals. Native numeric IDs survive in BTOP; OBJ reimport assigns new native IDs while retaining connectivity. Custom authored normals and MTL/texture interchange remain open. Part names must be single tokens, all native vertices must be referenced and output is bounded by the shared 8MiB document limit. Refusal preserves the existing export.
+
+**PREVIEW REMOVE UNUSED** explicitly shows a candidate without unreferenced vertices, retaining every surviving stable ID and exact face/corner data. Apply, Cancel, Undo and Redo use the ordinary native transaction path. This is useful after degenerate-face removal; export never silently discards native vertices.
+
+`EditorObjWriterTest` runs using the independent editor JAR. The expanded `AssetImportMeshRepairGuiTest` drives the actual Save chooser, fresh human reimport, cleanup buttons/history and publication through the real game GLB decoder. [Fixture evidence](../../development/quality/evidence/obj-export-2026-11-01/README.md) records the scope. This is further partial G2; the textured hard-edge normal/material exit and remaining modeling requirements are still open.
