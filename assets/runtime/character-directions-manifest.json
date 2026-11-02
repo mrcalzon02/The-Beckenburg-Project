@@ -71,50 +71,50 @@
       "views": {
         "front": {
           "entry": "assets/observer/front.png",
-          "bytes": 36322,
-          "sha256": "52ca9df81be9138848d005517565cd2bd3b4a2bf32a0dfa8a13c54a5168c9770",
-          "visible_pixels": 14986,
+          "bytes": 29317,
+          "sha256": "740fbc5613eec7b2fedaf1e3b8a8fff69d537ad578237bc00100fe62ab31627c",
+          "visible_pixels": 9711,
           "crop": [
             24,
             294,
             206,
-            685
+            706
           ]
         },
         "side": {
           "entry": "assets/observer/side.png",
-          "bytes": 24075,
-          "sha256": "33a8a63877fbeabfdc7430f83420628a36fe068a3d3b89fa34e1c796e2e4c294",
-          "visible_pixels": 8503,
+          "bytes": 24241,
+          "sha256": "3f0841121207c6ec0a74cbece6352d5a7e4936a545135ebdb05879edd3f0dae8",
+          "visible_pixels": 8424,
           "crop": [
             215,
             294,
             370,
-            685
+            706
           ]
         },
         "back": {
           "entry": "assets/observer/back.png",
-          "bytes": 32121,
-          "sha256": "8ba33c15c879e8fdc520f76fcf3bbda6b1bc11d73c3b1a935b51a4bd963df1cc",
-          "visible_pixels": 13410,
+          "bytes": 29000,
+          "sha256": "f5dbd110c1153a6665c31c967888f13dc1e653f2feec8bec5787f016abb2616c",
+          "visible_pixels": 9854,
           "crop": [
             383,
             294,
             554,
-            685
+            706
           ]
         },
         "three_quarter": {
           "entry": "assets/observer/three_quarter.png",
-          "bytes": 31682,
-          "sha256": "e5b4068540b37daf636a7f875ed118fd464d8729531a2acfaa42a2192efe5baa",
-          "visible_pixels": 12960,
+          "bytes": 29718,
+          "sha256": "a58f1de414825a85a8fcb0a5d9d154d839ef1b0f7f933ee05cf20d478ee099e3",
+          "visible_pixels": 9927,
           "crop": [
             574,
             294,
             735,
-            685
+            706
           ]
         }
       }
@@ -125,50 +125,50 @@
       "views": {
         "front": {
           "entry": "assets/demonologist/front.png",
-          "bytes": 42606,
-          "sha256": "933d62eeb1f05d7a15f9dc4ebdd596b507507ce9d4e7ab89421757bd68e1c032",
-          "visible_pixels": 16730,
+          "bytes": 34267,
+          "sha256": "3e6f6556684cd68537dfae52651442b07683e02072a05127eafb8b61fdeed34e",
+          "visible_pixels": 11622,
           "crop": [
             23,
             291,
             208,
-            690
+            706
           ]
         },
         "side": {
           "entry": "assets/demonologist/side.png",
-          "bytes": 27239,
-          "sha256": "4ab02ce2612db992431c3d882f697fb7ac07cb9c48973249ccd5a899f702c336",
-          "visible_pixels": 9579,
+          "bytes": 24291,
+          "sha256": "f68912875cbbedd1655ce981cf5e778d7da29ef21d8420367ae9b5c27a8fcb41",
+          "visible_pixels": 8076,
           "crop": [
             215,
             291,
             371,
-            690
+            706
           ]
         },
         "back": {
           "entry": "assets/demonologist/back.png",
-          "bytes": 40847,
-          "sha256": "3e084e4018d31ed554ff50b1d2f283e69615760e170ddf2037fe1f63eaddb83d",
-          "visible_pixels": 16577,
+          "bytes": 31738,
+          "sha256": "eb2e1c3aab03f3695297f162d0ca03b7cade41c1c0b389aab2e3d117ab7a463b",
+          "visible_pixels": 11296,
           "crop": [
             380,
             291,
             544,
-            690
+            706
           ]
         },
         "three_quarter": {
           "entry": "assets/demonologist/three_quarter.png",
-          "bytes": 40396,
-          "sha256": "2a162d649c7d9f4015074aa90d20f7cef6f49a18aec7bcbbab61c56526032bdf",
-          "visible_pixels": 16451,
+          "bytes": 32384,
+          "sha256": "cebe109f27909d60af27ac1746ee987e58976982a263bfc0889a72959fdad435",
+          "visible_pixels": 11363,
           "crop": [
             550,
             291,
             734,
-            690
+            706
           ]
         }
       }
@@ -336,5 +336,20 @@
       }
     }
   },
-  "archive_sha256": "f28a16367f55787b97b5fbb6f79dd5f98109628f23616709da9750b5c88564b0"
+  "archive_sha256": "ba092d31224fa6f9312dd6243a4c1e8d933932955db777cb4d26ced6bccc85fe",
+  "source_silhouette_repair": {
+    "targets": [
+      "assets/demonologist/back.png",
+      "assets/demonologist/front.png",
+      "assets/demonologist/side.png",
+      "assets/demonologist/three_quarter.png",
+      "assets/observer/back.png",
+      "assets/observer/front.png",
+      "assets/observer/side.png",
+      "assets/observer/three_quarter.png"
+    ],
+    "unchanged_source_frames": 16,
+    "method": "original-board silhouette, enclosed dark-detail fill, boots through row 706",
+    "visual_approval": "requires post-commit in-engine screenshots"
+  }
 }
