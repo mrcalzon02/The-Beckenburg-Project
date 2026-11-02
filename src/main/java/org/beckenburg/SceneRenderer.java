@@ -3750,6 +3750,12 @@ public final class SceneRenderer {
         double x2=PsxPipeline.snap(renderWidth*.5+c.x/c.z*focal,psxPreset),y2=PsxPipeline.snap(renderHeight*.5-c.y/c.z*focal,psxPreset);
         double denom=(y1-y2)*(x0-x2)+(x2-x1)*(y0-y2);
         if(Math.abs(denom)<1e-8)return;
+        // Decode material transparency once per face, not for every pixel.
+        // Ordinary opaque meshes retain their original fast depth-tested path.
+        boolean gltfBlend=material>=GlbProps.TEXTURE_BASE
+            &&GlbProps.gltfBlended(material);
+        double gltfCutoff=material>=GlbProps.TEXTURE_BASE
+            ?GlbProps.gltfMaskCutoff(material):-1.0;
         int lowX=Math.max(0,(int)Math.floor(Math.min(x0,Math.min(x1,x2))));
         int highX=Math.min(renderWidth-1,(int)Math.ceil(Math.max(x0,Math.max(x1,x2))));
         int lowY=Math.max(0,(int)Math.floor(Math.min(y0,Math.min(y1,y2))));
@@ -3761,6 +3767,7 @@ public final class SceneRenderer {
             if(u<0||v<0||w<0)continue;
             double inv=u/a.z+v/b.z+w/c.z,d=1/inv;int k=py*renderWidth+px;
             if(d>=depths[k])continue;
+            int sampledAlpha=255;
             if(material>=0) {
                 // Perspective-correct material lookup. Screen-space UV interpolation
                 // distorts strongly at PS-era FOV and is unsuitable for room walls.
@@ -3769,7 +3776,16 @@ public final class SceneRenderer {
                 double vv=PsxPipeline.uv((u*va.v/a.z + v*vb.v/b.z + w*vc.v/c.z)/inv,
                     u*va.v+v*vb.v+w*vc.v,psxPreset);
                 if(material==UV_RESIDUE&&GlbProps.sampleAlpha(material,uu,vv)<.5)continue;
-                int texel=material>=GlbProps.TEXTURE_BASE
+                int texel;
+                if(gltfBlend||gltfCutoff>=0){
+                    // Preserve source glTF BLEND/MASK rather than painting
+                    // original transparent tree crowns as black quads.
+                    int rgba=GlbProps.sampleRgba(material,uu,vv);
+                    sampledAlpha=rgba>>>24;
+                    if(gltfBlend&&sampledAlpha<=1)continue;
+                    if(gltfCutoff>=0&&sampledAlpha<gltfCutoff*255)continue;
+                    texel=rgba&0xffffff;
+                }else texel=material>=GlbProps.TEXTURE_BASE
                     ?GlbProps.sample(material,uu,vv)
                     :material>=LevelMaterials.BASE?LevelMaterials.sample(material,uu,vv):MaterialAtlas.sample(material,uu,vv);
                 int tr=(texel>>16)&255,tg=(texel>>8)&255,tb=texel&255;
@@ -3777,7 +3793,10 @@ public final class SceneRenderer {
                     ((tg*((tint>>8)&255)/255)<<8) |
                      (tb*(tint&255)/255);
             }
-            depths[k]=d;
+            // A partial BLEND pixel overlays the already depth-tested world
+            // but must not occlude opaque ground or distant trees. MASK
+            // pixels above glTF cutoff remain fully depth-writing geometry.
+            if(!gltfBlend||sampledAlpha==255)depths[k]=d;
             if(wet>0||snow>0){
                 // Preserve the original scene texture. Wetness darkens it; snow
                 // whitens only exposed horizontal surfaces, not room walls.
@@ -3802,7 +3821,14 @@ public final class SceneRenderer {
             int red=(int)(((color>>16)&255)*Math.max(.025,Math.min(1.6,lr+lightingDither))),green=(int)(((color>>8)&255)*Math.max(.025,Math.min(1.6,lg+lightingDither))),blue=(int)((color&255)*Math.max(.025,Math.min(1.6,lb+lightingDither)));
             double fog=Math.min(.96,Math.max(0,(d-5)/15)*fogDensity*weatherFogScale);
             red=(int)(red*(1-fog)+18*fog);green=(int)(green*(1-fog)+21*fog);blue=(int)(blue*(1-fog)+30*fog);
-            pixels[k]=(Math.min(255,red)<<16)|(Math.min(255,green)<<8)|Math.min(255,blue);
+            red=Math.min(255,red);green=Math.min(255,green);blue=Math.min(255,blue);
+            if(gltfBlend&&sampledAlpha<255){
+                int background=pixels[k],ia=255-sampledAlpha;
+                red=(red*sampledAlpha+((background>>16)&255)*ia+127)/255;
+                green=(green*sampledAlpha+((background>>8)&255)*ia+127)/255;
+                blue=(blue*sampledAlpha+(background&255)*ia+127)/255;
+            }
+            pixels[k]=(red<<16)|(green<<8)|blue;
         }
     }
 
