@@ -1,0 +1,1 @@
+import java.nio.file.*;import org.beckenburg.editor.*;public class DependencyAliasControl{public static void main(String[] args)throws Exception{var capture=EditorObjMaterials.capture(Path.of(args[0]));System.out.println("PASS canonical dependency alias: "+capture.mesh().materials().size());}}

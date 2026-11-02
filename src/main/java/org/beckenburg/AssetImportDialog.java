@@ -108,6 +108,12 @@ public final class AssetImportDialog {
     private final JButton openMaterials=new JButton("MATERIALS / UV...");
     private final JLabel materialRuntime=new JLabel("Actual runtime preview",SwingConstants.CENTER);
     private final JSpinner materialRotation=new JSpinner(new SpinnerNumberModel(0d,-360d,360d,15d));
+    private final JComboBox<EditorTopologyProject.UvTransform> uvOperation=new JComboBox<>(EditorTopologyProject.UvTransform.values());
+    private final JComboBox<String> uvScope=new JComboBox<>(new String[]{"Selected face","Connected UV island"}),uvPivot=new JComboBox<>(new String[]{"UV bounds center","UV origin"});
+    private final JSpinner uvFirst=new JSpinner(new SpinnerNumberModel(.1,-1000000d,1000000d,.05)),uvSecond=new JSpinner(new SpinnerNumberModel(0d,-1000000d,1000000d,.05));
+    private final JLabel uvFirstLabel=new JLabel("U distance"),uvSecondLabel=new JLabel("V distance");
+    private final JButton previewUv=new JButton("PREVIEW UV TRANSFORM");
+    private JTabbedPane materialTools;
     private EditorTopologyProject.State materialRenderState;
     private double materialRenderedRotation=Double.NaN;
     private boolean materialRendering;
@@ -191,6 +197,9 @@ public final class AssetImportDialog {
         materialSwatch.setPreferredSize(new Dimension(250,112));
         materialList.addActionListener(e->{refreshMaterialSwatch();refreshMaterialWindow();});
         openMaterials.addActionListener(e->openMaterials());
+        uvOperation.addActionListener(e->{clearModelingPreview();var operation=(EditorTopologyProject.UvTransform)uvOperation.getSelectedItem();uvFirstLabel.setText(operation==EditorTopologyProject.UvTransform.ROTATE?"Degrees":operation==EditorTopologyProject.UvTransform.SCALE?"U factor":"U distance");uvSecondLabel.setText(operation==EditorTopologyProject.UvTransform.SCALE?"V factor":"V distance");uvSecond.setVisible(operation!=EditorTopologyProject.UvTransform.ROTATE);uvSecondLabel.setVisible(operation!=EditorTopologyProject.UvTransform.ROTATE);uvFirst.setValue(operation==EditorTopologyProject.UvTransform.ROTATE?90d:operation==EditorTopologyProject.UvTransform.SCALE?1d:.1);uvSecond.setValue(operation==EditorTopologyProject.UvTransform.SCALE?1d:0d);});
+        uvScope.addActionListener(e->clearModelingPreview());uvPivot.addActionListener(e->clearModelingPreview());uvFirst.addChangeListener(e->clearModelingPreview());uvSecond.addChangeListener(e->clearModelingPreview());
+        previewUv.addActionListener(e->{if(selectedHit==null||topologyProject==null||busy)return;long face=selectedHit.faceId();boolean island=uvScope.getSelectedIndex()==1,origin=uvPivot.getSelectedIndex()==1;var operation=(EditorTopologyProject.UvTransform)uvOperation.getSelectedItem();double first=((Number)uvFirst.getValue()).doubleValue(),second=operation==EditorTopologyProject.UvTransform.ROTATE?0:((Number)uvSecond.getValue()).doubleValue();beginModelingPreview(p->p.previewUvTransform(face,island,operation,first,second,origin));});
         chooseMaterial.addActionListener(e->{
             if(busy||topologyProject==null||selectedHit==null)return;
             var chooser=new JFileChooser();chooser.setDialogTitle("Embed PNG material in native mesh");chooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("PNG texture","png"));
@@ -324,10 +333,13 @@ public final class AssetImportDialog {
             materialDialog.addWindowListener(new WindowAdapter(){public void windowClosing(WindowEvent e){if(modelingPreview!=null)clearModelingPreview();materialDialog.setVisible(false);}});
             materialRuntime.setPreferredSize(new Dimension(280,190));
             var runtime=new JPanel(new BorderLayout(4,4));runtime.add(new JLabel("ACTUAL RUNTIME PREVIEW"),BorderLayout.NORTH);runtime.add(materialRuntime,BorderLayout.CENTER);runtime.add(EditorTopologyWorkspace.form("Model rotation",materialRotation),BorderLayout.SOUTH);materialRotation.addChangeListener(e->refreshMaterialWindow());
-            var settings=EditorTopologyWorkspace.column(new JLabel("MATERIAL PROPERTIES"),EditorTopologyWorkspace.form("Material",materialList),materialSwatch,previewMaterial,new JSeparator(),EditorTopologyWorkspace.form("New PNG wrap",materialWrap,"Alpha",materialAlpha,"UV origin",materialOrigin),chooseMaterial,new JLabel("<html>PNG changes are captured in a native preview.<br>Apply commits one face assignment.</html>"));
-            var commands=new JPanel(new FlowLayout(FlowLayout.RIGHT,5,3));commands.add(sharedMaterialAction("Undo",undoMesh));commands.add(sharedMaterialAction("Redo",redoMesh));commands.add(sharedMaterialAction("Save document",saveMesh));commands.add(sharedMaterialAction("Apply material",applyFaceEdit));commands.add(sharedMaterialAction("Cancel preview",cancelFaceEdit));
+            var bindings=EditorTopologyWorkspace.column(new JLabel("MATERIAL PROPERTIES"),EditorTopologyWorkspace.form("Material",materialList),materialSwatch,previewMaterial,new JSeparator(),EditorTopologyWorkspace.form("New PNG wrap",materialWrap,"Alpha",materialAlpha,"UV origin",materialOrigin),chooseMaterial,new JLabel("<html>PNG changes are captured in a native preview.<br>Apply commits one face assignment.</html>"));
+            var values=new JPanel(new GridLayout(0,2,5,5));values.add(uvFirstLabel);values.add(uvFirst);values.add(uvSecondLabel);values.add(uvSecond);
+            var uvSettings=EditorTopologyWorkspace.column(new JLabel("NATIVE CORNER UVS"),EditorTopologyWorkspace.form("Operation",uvOperation,"Scope",uvScope,"Pivot",uvPivot),values,previewUv,new JLabel("<html>Island traversal stops at UV seams<br>and material boundaries.<br>Negative scale mirrors UVs.<br>Zero scale is refused.<br>Apply / Cancel uses native history.</html>"));
+            materialTools=new JTabbedPane();materialTools.addTab("Materials",bindings);materialTools.addTab("UV transform",uvSettings);
+            var commands=new JPanel(new FlowLayout(FlowLayout.RIGHT,5,3));commands.add(sharedMaterialAction("Undo",undoMesh));commands.add(sharedMaterialAction("Redo",redoMesh));commands.add(sharedMaterialAction("Save document",saveMesh));commands.add(sharedMaterialAction("Apply edit",applyFaceEdit));commands.add(sharedMaterialAction("Cancel preview",cancelFaceEdit));
             var back=new JButton("Return to modeling");back.addActionListener(e->{if(modelingPreview!=null)clearModelingPreview();materialDialog.setVisible(false);dialog.toFront();});commands.add(back);
-            materialWorkspace=new EditorMaterialWorkspace(settings,runtime,commands,id->{
+            materialWorkspace=new EditorMaterialWorkspace(materialTools,runtime,commands,id->{
                 if(busy||modelingPreview!=null||topologyProject==null)return;
                 var face=topologyProject.snapshot().faces().stream().filter(f->f.id()==id).findFirst().orElse(null);if(face==null)return;
                 selectedHit=new EditorMeshPicking.Hit(face.id(),face.a().vertex(),face.a().vertex(),face.b().vertex(),0,0,0);selectionLabel.setText("Face "+id);refreshMeshControls();preview.repaint();
@@ -384,7 +396,8 @@ public final class AssetImportDialog {
         faceOperation.setEnabled(topologyProject!=null&&!busy);faceAmount.setEnabled(topologyProject!=null&&!busy);
         previewFaceEdit.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
         chooseMaterial.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);previewMaterial.setEnabled(chooseMaterial.isEnabled()&&materialList.getSelectedItem()!=null);
-        for(var c:List.of(materialList,materialWrap,materialAlpha,materialOrigin))c.setEnabled(editable);
+        for(var c:List.of(materialList,materialWrap,materialAlpha,materialOrigin,uvOperation,uvScope,uvPivot,uvFirst,uvSecond))c.setEnabled(editable);
+        previewUv.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
         if(topologyProject!=null)sourceTextureBytes=topologyProject.snapshot().materials().stream().mapToLong(m->(long)m.width()*m.height()*4).sum();
         previewWeld.setEnabled(editable&&selectionMode.getSelectedIndex()==0&&selectedVertices.size()>1);previewDegenerates.setEnabled(editable);previewUnused.setEnabled(editable);
         previewTransform.setEnabled(editable&&!selectedIds().isEmpty());

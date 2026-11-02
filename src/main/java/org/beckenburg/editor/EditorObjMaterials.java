@@ -35,7 +35,7 @@ public final class EditorObjMaterials {
         Path resolve(Path base,String name)throws IOException{
             if(name.isBlank()||name.indexOf('"')>=0||name.indexOf('\0')>=0)throw new IOException("Unsupported material dependency path");
             Path relative=Path.of(name);if(relative.isAbsolute())throw new IOException("Material dependency must be relative to the asset root");
-            Path path=base.resolve(relative).normalize();if(!path.startsWith(root)||!path.toRealPath().startsWith(root))throw new IOException("Material dependency escapes the asset root");return path;
+            Path path=base.resolve(relative).normalize().toRealPath();if(!path.startsWith(root))throw new IOException("Material dependency escapes the asset root");return path;
         }
         byte[] read(Path file,int max)throws IOException{
             if(dependencies.size()>=128&&!dependencies.containsKey(file))throw new IOException("Material dependency count exceeded");

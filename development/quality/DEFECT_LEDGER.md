@@ -2908,6 +2908,34 @@ Evidence and verification: Exact3ca731b5 Git blobs compiled in build/material-ne
 
 Older-map obligation: Do not bulk-reimport existing assets, overwrite source textures or flatten GLB node/pivot/material provenance. Existing geometry-only v1 and normal v2 paths remain compatible. Full painting/PBR/editable source GLB remains open.
 
+### DEV-213 — OBJ material dependency containment compares lexical aliases with canonical asset root
+
+**Status:** fixed locally; exact644 standalone failure and directory-alias negative/positive controls reproduced; new-source CI pending · **Affected:** EditorObjMaterials.Reader.resolve; standalone Windows material import41506322166/job125486457313
+
+A dependency inside the selected asset root is rejected with Material dependency escapes the asset root. Native suite passes while Windows standalone material test fails; an in-root directory junction reproduces the same exception against exact644 editor JAR.
+
+Cause / uncertainty: Asset root was canonicalized with toRealPath, but containment first compared an uncanonicalized dependency path, so equivalent alias/short-path spellings could differ.
+
+Fix / next action: Resolve the dependency to its canonical real path before checking containment against the canonical root. Retain relative-path restrictions and actual outside-root refusal; record canonical dependency fingerprints.
+
+Evidence and verification: Exact644 standalone raw excerpt under evidence/material-uv-2026-11-02. DependencyAliasControl compiled against the exact published JAR fails through build/material-root-alias, then passes against corrected source with one original material. EditorMeshMaterialTest still refuses ../outside dependency and changed MTL. Actual source-aware OBJ/MTL human UV test also passes.
+
+Older-map obligation: No bulk source migration or bypass of containment. Keep absolute/outside-root, unsupported options and changed-dependency guards. Await exact new-source standalone acceptance.
+
+### DEV-214 — Material UV inspector can grow wider than its viewport and clip numeric input
+
+**Status:** fixed before UV publication; actual window capture and input-bounds assertion passed · **Affected:** EditorMaterialWorkspace material/UV properties scroll pane
+
+UV transform explanatory label expanded the inspector preferred width, showing a horizontal scrollbar and clipping the angle spinner at the right side.
+
+Cause / uncertainty: Scroll pane used raw preferred width of the settings/tab content rather than tracking the available inspector width.
+
+Fix / next action: Use a Scrollable properties container that tracks viewport width; wrap explanatory text and preserve a bounded minimum inspector width. Label shared native Apply as Apply edit for both materials and UV operations.
+
+Evidence and verification: AssetImportUvGuiTest captures the actual independent material window and asserts the UV input bounds fit inside it, while proving current native snapshot/material/selection and runtime UVs.
+
+Older-map obligation: This changes only the independent material workspace composition. Main level and topology tool layouts remain unchanged; it does not implement painting/unwrap.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -269,6 +269,43 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         if(after.equals(state))throw new IllegalArgumentException("Face already uses this material");
         return new EditPreview(this,state,after,revision,"BIND MATERIAL / face "+faceId+" / "+material.name());
     }
+    public enum UvTransform { MOVE, ROTATE, SCALE }
+    /** UV islands follow actual half-edge twins, authored seams and material boundaries. */
+    public synchronized EditPreview previewUvTransform(long faceId,boolean island,UvTransform operation,double first,double second,boolean origin){
+        Objects.requireNonNull(operation);
+        if(!Double.isFinite(first)||!Double.isFinite(second)||Math.abs(first)>1_000_000||Math.abs(second)>1_000_000
+            ||operation==UvTransform.SCALE&&(Math.abs(first)<.000001||Math.abs(second)<.000001)
+            ||operation==UvTransform.ROTATE&&Math.abs(first)>36000)throw new IllegalArgumentException("Invalid native UV transform");
+        if(operation==UvTransform.MOVE&&first==0&&second==0||operation==UvTransform.SCALE&&first==1&&second==1||operation==UvTransform.ROTATE&&Math.IEEEremainder(first,360)==0)throw new IllegalArgumentException("UV transform does not change selected corners");
+        int start=-1;for(int i=0;i<state.faces().size();i++)if(state.faces().get(i).id()==faceId){start=i;break;}
+        if(start<0)throw new IllegalArgumentException("Unknown native UV face");
+        boolean[] selected=new boolean[state.faces().size()];selected[start]=true;int count=1;
+        if(island){
+            var graph=topology(state);int[] queue=new int[state.faces().size()];queue[0]=start;int head=0;
+            while(head<count){int face=queue[head++];var source=state.faces().get(face);for(int i=0;i<3;i++){
+                var edge=graph.edges().get(face*3+i);if(edge.twin()<0||edge.uvSeam())continue;int other=graph.edges().get(edge.twin()).face();
+                if(!selected[other]&&source.material().equals(state.faces().get(other).material())){selected[other]=true;queue[count++]=other;}
+            }}
+        }
+        // Bounds center is stable under triangle tessellation and per-corner UV seam duplication.
+        double minU=Double.POSITIVE_INFINITY,minV=minU,maxU=Double.NEGATIVE_INFINITY,maxV=maxU;
+        for(int i=0;i<selected.length;i++)if(selected[i])for(var c:List.of(state.faces().get(i).a(),state.faces().get(i).b(),state.faces().get(i).c())){minU=Math.min(minU,c.u());maxU=Math.max(maxU,c.u());minV=Math.min(minV,c.v());maxV=Math.max(maxV,c.v());}
+        double pu=origin?0:minU*.5+maxU*.5,pv=origin?0:minV*.5+maxV*.5;
+        double radians=StrictMath.toRadians(first),sin=StrictMath.sin(radians),cos=StrictMath.cos(radians);var faces=new ArrayList<Face>(state.faces().size());
+        for(int i=0;i<selected.length;i++){
+            var f=state.faces().get(i);if(!selected[i]){faces.add(f);continue;}var corners=new ArrayList<Corner>(3);
+            for(var c:List.of(f.a(),f.b(),f.c())){double u=c.u()-pu,v=c.v()-pv;
+                if(operation==UvTransform.MOVE){u=c.u()+first;v=c.v()+second;}
+                else if(operation==UvTransform.ROTATE){double nextU=cos*u-sin*v;v=sin*u+cos*v+pv;u=nextU+pu;}
+                else{u=u*first+pu;v=v*second+pv;}
+                if(!Double.isFinite(u)||!Double.isFinite(v)||Math.abs(u)>1e9||Math.abs(v)>1e9)throw new IllegalArgumentException("UV transform exceeds native coordinate budget");corners.add(new Corner(c.vertex(),u,v,c.normal()));
+            }
+            faces.add(new Face(f.id(),f.part(),corners.get(0),corners.get(1),corners.get(2),f.material()));
+        }
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,state.materials());
+        if(after.equals(state))throw new IllegalArgumentException("UV transform changes no native corner");
+        return new EditPreview(this,state,after,revision,"UV "+operation+" / "+count+" faces / "+(origin?"UV origin":"UV bounds center"));
+    }
     public enum Transform { ROTATE, SCALE_AXIS, SCALE_UNIFORM }
     /** Global axes, explicit origin/selection-centroid pivot. Candidate only; shared Apply owns mutation. */
     public synchronized EditPreview previewTransform(Collection<Long> ids,Transform operation,int axis,double amount,boolean origin){

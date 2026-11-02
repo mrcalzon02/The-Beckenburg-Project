@@ -1,0 +1,78 @@
+{
+  "schema": "beckenburg.native-uv-evidence/v1",
+  "baseline": "4ff75ecd1d162cb066b3440bb644074eb554e590",
+  "type": "Actual editor/native/runtime fixture; not production art or G2 exit",
+  "sourceSha256Lf": {
+    "src/main/java/org/beckenburg/AssetImportDialog.java": "8046cce168198ee9e245bf729b4c226c5bdc77a5697b2b0ae3ad6b536dc71cab",
+    "src/main/java/org/beckenburg/editor/EditorTopologyProject.java": "67c4e1d764b6e38f37f46f3e9f7fca2db286b572cab60cc064dbe4a48e45fcb4",
+    "src/main/java/org/beckenburg/editor/EditorMaterialWorkspace.java": "5cab3e5641d0a7e21e5e6e97d42024cbbed4c233746699beb36a6c5dbd22dd0f",
+    "src/main/java/org/beckenburg/editor/EditorObjMaterials.java": "cb49bb600b6b930e1d15fb3888da68b6b9c210c2333c5924aa62edfe39e4f19a",
+    "src/test/java/org/beckenburg/AssetImportUvGuiTest.java": "7462e235a6dc231981c1552b8fa13c32c0a7418dc33f14281f9f964b8d225b28",
+    "src/test/java/org/beckenburg/editor/EditorUvTransformTest.java": "576181a4c2f1290daf97311ff8e7fb44b92002e81cfce1ed627f70e3ed3328f2"
+  },
+  "artifacts": {
+    "alias-control.txt": {
+      "bytes": 303,
+      "sha256": "ffba0b4b76c5030c950d42ae57f205e469ccb96c5eb40b8c059c6cbb1163caaa"
+    },
+    "DependencyAliasControl.java": {
+      "bytes": 294,
+      "sha256": "8f26872802a6a3d1ad7a41329e43649f68a422bb2c353e3d38a01187bcfc45ca"
+    },
+    "standalone-6445403a-failure.txt": {
+      "bytes": 831,
+      "sha256": "018d4b8c5c506ebf2a69b0d63b97d7456308f2bbf14cbae9bf4d82ca69d0fb55"
+    },
+    "uv-transform-material-window.png": {
+      "bytes": 62757,
+      "sha256": "0f05ef58a55fff5d2cda229d46b3a18a29ba1d31493b4143c0cf1ca0b9b8e3df"
+    },
+    "uv-transform-preview.png": {
+      "bytes": 55426,
+      "sha256": "95dd83c7a0d43c958ce5f4a4fa341dceaa3fe4bc9b0f9901af2d9655a56a0fec"
+    },
+    "uv-transform.btop": {
+      "bytes": 911,
+      "sha256": "a3fed0accc768677b4a14ed638bb21e40446835da1cb4c896e70378c0af2e890"
+    },
+    "uv-transform.glb": {
+      "bytes": 1816,
+      "sha256": "0e4219b18d30e9f5cfb216cd8234fa9b58926fab53d888b65649d42a49f33b2e"
+    },
+    "uv-transform.obj.zip": {
+      "bytes": 1211,
+      "sha256": "b6bb013b9ae5ebf49381b643338c6d681d0a4a0e534dd92ea3f781a98cde917c"
+    }
+  },
+  "local": {
+    "fullJava17Host": "PASS",
+    "nativeServiceGuiRecoveryHeadlessSuite": "PASS including UV workflow; width-only layout refinement additionally passed targeted UI check",
+    "independentJava17Jar": "PASS material test and maximum UV traversal under256MiB",
+    "nativeUV": "PASS face/island MOVE/ROTATE/signed SCALE, source seams/material boundaries/IDs, untouched geometry/raw normals, cancel/history/stale/no-op guards, actual native save/reopen/OBJ bundle",
+    "humanUV": "PASS source-aware OBJ/MTL, actual face controls, exact canvas/current native observation, every actual runtime UV and changed texel, source/archive protection",
+    "aliasRegression": "exact644 independent JAR fails same in-root directory alias; corrected source passes; actual outside-root refusal remains"
+  },
+  "ci": {
+    "source644Standalone": {
+      "run": 41506322166,
+      "job": 125486457313,
+      "status": "failure",
+      "defect": "DEV-213 fixed locally; corrected-source acceptance pending"
+    },
+    "source644Native": {
+      "run": 41506330136,
+      "job": 125486483302,
+      "status": "success"
+    },
+    "source644Full": {
+      "run": 41506342845,
+      "job": 125486528370,
+      "status": "in_progress; preserve handle"
+    },
+    "source644Gpu": {
+      "run": 41506353573,
+      "status": "queued; preserve handle"
+    }
+  },
+  "remaining": "G0 original PDFs; full G2 source GLB identities/node/pivots/materials/UV, remaining modeling/selection; TP painting/unwrap/packing/pins/layers and G3-G12; no complete gate claimed"
+}

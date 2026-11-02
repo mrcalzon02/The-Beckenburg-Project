@@ -11,6 +11,14 @@ import javax.imageio.ImageIO;
 
 /** Material-owned UV/texture workspace. All geometry and bindings are immutable native observations. */
 public final class EditorMaterialWorkspace extends JPanel {
+    private static final class Properties extends JPanel implements Scrollable {
+        Properties(JComponent content){super(new BorderLayout());add(content,BorderLayout.NORTH);}
+        public Dimension getPreferredScrollableViewportSize(){return new Dimension(290,360);}
+        public int getScrollableUnitIncrement(Rectangle r,int axis,int direction){return 24;}
+        public int getScrollableBlockIncrement(Rectangle r,int axis,int direction){return Math.max(24,r.height-24);}
+        public boolean getScrollableTracksViewportWidth(){return true;}
+        public boolean getScrollableTracksViewportHeight(){return false;}
+    }
     private EditorTopologyProject.State state;
     private EditorMeshMaterial material;
     private BufferedImage texture;
@@ -32,7 +40,7 @@ public final class EditorMaterialWorkspace extends JPanel {
         var center=new JPanel(new BorderLayout(3,5));var heading=new JPanel(new BorderLayout());heading.add(new JLabel("TEXTURE / UV VIEW"),BorderLayout.WEST);heading.add(reset,BorderLayout.EAST);center.add(heading,BorderLayout.NORTH);center.add(canvas,BorderLayout.CENTER);
         canvas.addMouseWheelListener(e->{zoom=Math.max(.25,Math.min(16,zoom*Math.pow(1.15,-e.getPreciseWheelRotation())));canvas.repaint();});
         var mouse=new MouseAdapter(){public void mousePressed(MouseEvent e){if(SwingUtilities.isMiddleMouseButton(e))panStart=e.getPoint();else if(SwingUtilities.isLeftMouseButton(e))pick(e.getPoint());}public void mouseDragged(MouseEvent e){if(panStart!=null){panX+=e.getX()-panStart.x;panY+=e.getY()-panStart.y;panStart=e.getPoint();canvas.repaint();}}public void mouseReleased(MouseEvent e){panStart=null;}};canvas.addMouseListener(mouse);canvas.addMouseMotionListener(mouse);
-        var right=new JPanel(new BorderLayout(4,8));right.add(new JScrollPane(settings),BorderLayout.CENTER);right.add(runtime,BorderLayout.SOUTH);right.setPreferredSize(new Dimension(300,500));
+        var right=new JPanel(new BorderLayout(4,8));var properties=new JScrollPane(new Properties(settings));properties.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);right.add(properties,BorderLayout.CENTER);right.add(runtime,BorderLayout.SOUTH);right.setPreferredSize(new Dimension(300,500));right.setMinimumSize(new Dimension(240,200));
         var split=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,center,right);split.setResizeWeight(.7);split.setBorder(null);add(left,BorderLayout.WEST);add(split,BorderLayout.CENTER);
         var bottom=new JPanel(new BorderLayout(4,4));bottom.add(status,BorderLayout.NORTH);bottom.add(commands,BorderLayout.SOUTH);add(bottom,BorderLayout.SOUTH);
     }
