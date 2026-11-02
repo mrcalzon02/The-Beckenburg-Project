@@ -541,9 +541,9 @@ public final class DevAssetShowroom implements AutoCloseable {
                     reviewed++;
                 }
                 Files.writeString(folder.resolve("flagged-review-summary.txt"),
-                    "source="+reviewFile+"\\nrequested="+flagged.size()+
-                    "\\nmatched="+reviewed+"\\nanglesPerAsset=4\\n"+
-                    "Rendered images are visual evidence, not automatic texture-art approval.\\n",
+                    "source="+reviewFile+"\nrequested="+flagged.size()+
+                    "\nmatched="+reviewed+"\nanglesPerAsset=4\n"+
+                    "Rendered images are visual evidence, not automatic texture-art approval.\n",
                     StandardCharsets.UTF_8);
             }
         }
