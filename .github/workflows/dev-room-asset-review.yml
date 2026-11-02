@@ -11,6 +11,8 @@ on:
       - 'assets/runtime/elder-masters/**'
       - 'assets/runtime/*directions.zip'
       - 'src/main/java/org/beckenburg/GlbProps.java'
+      - 'tools/inspect_flagged_uv.py'
+      - 'development/assets/texture-review-focus.txt'
       - 'src/main/java/org/beckenburg/DirectionalSprites.java'
       - 'src/main/java/org/beckenburg/GhostSpriteAtlas.java'
       - 'src/main/java/org/beckenburg/CharacterVisuals.java'
@@ -83,6 +85,12 @@ jobs:
         run: |
           & java '-Djava.awt.headless=true' -cp 'build\beckenburg-game.jar' org.beckenburg.DevAssetShowroom --dev-room --terrain-qa-capture --output=build/dev-room
           if ($LASTEXITCODE -ne 0) { Write-Warning "Terrain topology diagnostic capture failed; inspect source and render logs." }
+      - name: Extract source PNG atlases and actual UV island overlays (advisory)
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          python tools/inspect_flagged_uv.py --output build/dev-room/source-uv
+          if ($LASTEXITCODE -ne 0) { Write-Warning "Source UV diagnostics unavailable; release unaffected." }
       - name: Record source revision
         if: always()
         shell: pwsh
