@@ -139,11 +139,38 @@ public final class DevAssetReviewCatalog {
                 }
             }
             if(!Double.isFinite(lx))return new Audit("MISSING",n,materials.size(),0,0,0,0,0,0,0,"Nonfinite mesh");
+            // Original alpha-masked native foliage cards have only two
+            // triangles. Their six corner vertices all sample the same clear
+            // PNG border; testing those corners alone reports one black color
+            // and falsely calls a genuinely textured tree defective.
+            // Sample INSIDE the actual source UV triangles, ignoring fully
+            // transparent source texels. An entirely empty or flat source
+            // still remains flagged, with no cosmetic release gate.
+            int interiorVisible=0,interiorClear=0;
+            if(colors.size()<2&&n<=2&&materials.stream().anyMatch(GlbProps::gltfBlended)){
+                for(var t:model.triangles()){
+                    if(!GlbProps.gltfBlended(t.material()))continue;
+                    for(int row=1;row<17&&textureSamples<192;row++)
+                        for(int col=1;col<17-row&&textureSamples<192;col++){
+                            double b=(row+.5)/17,c=(col+.5)/17,a=1-b-c;
+                            double u=a*t.a().u()+b*t.b().u()+c*t.c().u();
+                            double v=a*t.a().v()+b*t.b().v()+c*t.c().v();
+                            int rgba=GlbProps.sampleRgba(t.material(),u,v);
+                            if((rgba>>>24)<24)interiorClear++;
+                            else{interiorVisible++;colors.add(rgba&0xffffff);}
+                            textureSamples++;
+                        }
+                }
+            }
             String state=uvProblems>0||materials.isEmpty()?"REVIEW_UV":
                 colors.size()<2?"REVIEW_TEXTURE":
                 entry.kind()==Kind.SOURCE_ONLY?"REVIEW_REGISTRATION":"LOADED";
             String details="uniqueSampleColors="+colors.size()+"; invalidUV/material="+uvProblems+
-                "; source geometry preserved"+(entry.kind()==Kind.SOURCE_ONLY?
+                "; source geometry preserved"+
+                (interiorVisible+interiorClear>0
+                    ?"; interior original glTF BLEND UV samples visible="+interiorVisible+
+                      " transparent="+interiorClear:"")+
+                (entry.kind()==Kind.SOURCE_ONLY?
                 "; not approved for normal gameplay":"");
             return new Audit(state,n,materials.size(),textureSamples,lx,ly,lz,hx,hy,hz,details);
         }catch(Exception | LinkageError issue){
