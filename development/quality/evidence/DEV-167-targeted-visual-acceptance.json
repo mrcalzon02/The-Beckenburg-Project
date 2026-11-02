@@ -1,0 +1,254 @@
+{
+  "audit_id": "DEV-167",
+  "inspection": "targeted source texture UV / directional cutout repair",
+  "total_flagged": 26,
+  "render_verified": 26,
+  "scope_limits": "Not full level or animation acceptance; non-targeted defects remain open.",
+  "latest_renderer_workflow": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41408571829",
+  "latest_capture_artifact_id": 13125290269,
+  "binary_commit": "828659674770cdc00a6c0b07be9f4b7521588b88",
+  "canonical_asset_ledger": "development/assets/texture-revision-review-2026-11-01.json",
+  "earlier_renderer_workflow": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41405326985",
+  "twins_before_after_pixel_differences": [
+    0,
+    642,
+    0,
+    642
+  ],
+  "fixes": [
+    {
+      "id": "asset-0564",
+      "runtime_id": "metal_barrel_mp_1",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-uv-fix",
+      "source_repair_commit": "42f486b4acaa099db2dbb0e236f71be027040f48",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13112887060
+    },
+    {
+      "id": "asset-0566",
+      "runtime_id": "open_book_mp_1",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "e2d6fd3329247eae94502893dd486247f989e404",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0586",
+      "runtime_id": "tv_mp_1",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "e151854df8c78c9bac5a10a62a0430797782b3a5",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0597",
+      "runtime_id": "level_hc_native_000_0",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-authored-uv-restoration",
+      "source_repair_commit": "4679b59e75df7ef252051c1a4ec1a675ff2af853",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13115167470
+    },
+    {
+      "id": "asset-0598",
+      "runtime_id": "level_hc_native_001_0",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-authored-uv-restoration",
+      "source_repair_commit": "4679b59e75df7ef252051c1a4ec1a675ff2af853",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13115167470
+    },
+    {
+      "id": "asset-0599",
+      "runtime_id": "level_hc_native_002_0",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-authored-uv-restoration",
+      "source_repair_commit": "4679b59e75df7ef252051c1a4ec1a675ff2af853",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13115167470
+    },
+    {
+      "id": "asset-0600",
+      "runtime_id": "level_hc_native_003_0",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-authored-uv-restoration",
+      "source_repair_commit": "4679b59e75df7ef252051c1a4ec1a675ff2af853",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13115167470
+    },
+    {
+      "id": "asset-0601",
+      "runtime_id": "level_hc_native_004_0",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-authored-uv-restoration",
+      "source_repair_commit": "4679b59e75df7ef252051c1a4ec1a675ff2af853",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13115167470
+    },
+    {
+      "id": "asset-0602",
+      "runtime_id": "level_hc_native_005_0",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-authored-uv-restoration",
+      "source_repair_commit": "4679b59e75df7ef252051c1a4ec1a675ff2af853",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13115167470
+    },
+    {
+      "id": "asset-0428",
+      "runtime_id": "level_fireplace",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "01ac2b5acefe217d658c031acc1b2d5e93efade3",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0209",
+      "runtime_id": "canned_food_mp_1",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-uv-fix",
+      "source_repair_commit": "42f486b4acaa099db2dbb0e236f71be027040f48",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13112887060
+    },
+    {
+      "id": "asset-0210",
+      "runtime_id": "canned_food_mp_2",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-uv-fix",
+      "source_repair_commit": "42f486b4acaa099db2dbb0e236f71be027040f48",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13112887060
+    },
+    {
+      "id": "asset-0204",
+      "runtime_id": "book_mp_2",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "5f6e315d2f7b761a807b02aca0b9ad5617d3ac73",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0205",
+      "runtime_id": "book_mp_3",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "5f6e315d2f7b761a807b02aca0b9ad5617d3ac73",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0206",
+      "runtime_id": "book_mp_4",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "5f6e315d2f7b761a807b02aca0b9ad5617d3ac73",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0207",
+      "runtime_id": "book_mp_5",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "5f6e315d2f7b761a807b02aca0b9ad5617d3ac73",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0254",
+      "runtime_id": "kenney_medieval_detail_barrel",
+      "kind": "WORLD_MODEL",
+      "status": "render-verified-targeted-uv-fix",
+      "source_repair_commit": "4bd4f3853209fe83bc013f09fe13a2feeb5d5cca",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13113780988
+    },
+    {
+      "id": "asset-0099",
+      "runtime_id": "blender_health_supplies_1",
+      "kind": "EQUIPMENT",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "e151854df8c78c9bac5a10a62a0430797782b3a5",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0106",
+      "runtime_id": "blender_igniter_2",
+      "kind": "EQUIPMENT",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "e151854df8c78c9bac5a10a62a0430797782b3a5",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0107",
+      "runtime_id": "blender_igniter_2_lit",
+      "kind": "EQUIPMENT",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "e151854df8c78c9bac5a10a62a0430797782b3a5",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0145",
+      "runtime_id": "blender_sanity_medication_2",
+      "kind": "EQUIPMENT",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "e151854df8c78c9bac5a10a62a0430797782b3a5",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0002",
+      "runtime_id": "observer",
+      "kind": "HUNTER",
+      "status": "render-verified-targeted-sprite-cutout-restoration",
+      "source_repair_commit": "9f275cb39c8cee2303d52978b481843637bf034b",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0026",
+      "runtime_id": "twins",
+      "kind": "GHOST",
+      "status": "render-verified-targeted-twins-source-cutout-and-alpha-repair",
+      "source_repair_commit": "3f6f06fc93bbba94b37b4c6d410af69fa6af5d7e",
+      "followup_alpha_commit": "828659674770cdc00a6c0b07be9f4b7521588b88",
+      "renderer_verification_artifact": 13125290269
+    },
+    {
+      "id": "asset-0022",
+      "runtime_id": "possessive",
+      "kind": "GHOST",
+      "status": "render-verified-source-alpha-line-fix",
+      "source_repair_commit": "ea0ac19750172cba6b83796b9ce5920ea558f4fd",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0001",
+      "runtime_id": "demonologist",
+      "kind": "HUNTER",
+      "status": "render-verified-targeted-sprite-cutout-restoration",
+      "source_repair_commit": "9f275cb39c8cee2303d52978b481843637bf034b",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    },
+    {
+      "id": "asset-0086",
+      "runtime_id": "blender_ghost_writing_book_2",
+      "kind": "EQUIPMENT",
+      "status": "render-verified-targeted-source-uv-fix",
+      "source_repair_commit": "5f6e315d2f7b761a807b02aca0b9ad5617d3ac73",
+      "followup_alpha_commit": null,
+      "renderer_verification_artifact": 13122898542
+    }
+  ]
+}

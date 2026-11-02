@@ -838,21 +838,60 @@
     {
       "id": "asset-0026",
       "review_order": 23,
-      "status": "source-cutout-repaired-awaiting-four-angle-close-render-verification",
+      "status": "render-verified-targeted-twins-source-cutout-and-alpha-repair",
       "source_filename": null,
       "source_sha256": null,
       "runtime_model": null,
       "origin": "unknown-imported-or-authored",
-      "diagnostic": "Restored blue Twin original side-facing hair and face by closing the source RGB head silhouette; only twins/a/side.png changed, other seven original Twin frames byte-identical; no alternate model or invented head.",
+      "diagnostic": "Restored blue Twin original side-facing hair and face by closing the source RGB head silhouette; only twins/a/side.png changed, other seven original Twin frames byte-identical; no alternate model or invented head. Subsequently, the separate packaged Twins ghost atlas was found to contain detached vertical side-view alpha lines in four directional sheets. Original indexed RGB preserved, 15666 extraneous opaque line pixels cleared, all 181 other packed ghost source images unchanged; exact four-angle real runtime confirms only strand pixels changed.",
       "source_capture": "artifact:13105143372/asset-0026.png",
-      "runtime_capture": "artifact:13105143372/asset-0026.png",
+      "runtime_capture": "artifact:13125290269/review-close-GHOST-twins-0.png",
       "repair_commit": "3f6f06fc93bbba94b37b4c6d410af69fa6af5d7e",
-      "verification": null,
+      "verification": {
+        "game_renderer_run": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41408571829",
+        "artifact_id": 13125290269,
+        "source_cutout_repair_commit": "3f6f06fc93bbba94b37b4c6d410af69fa6af5d7e",
+        "ghost_atlas_alpha_repair_commit": "828659674770cdc00a6c0b07be9f4b7521588b88",
+        "inspected_angles_degrees": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "sprite_decoder_test": "org.beckenburg.TwinsAtlasRuntimeTest PASS (all 8 facings and 256 cells)",
+        "changed_pixels_by_angle": [
+          0,
+          642,
+          0,
+          642
+        ],
+        "changed_bbox_xyxy_by_angle": [
+          null,
+          [
+            274,
+            206,
+            282,
+            321
+          ],
+          null,
+          [
+            274,
+            206,
+            282,
+            321
+          ]
+        ],
+        "alpha_strands_cleared_in_source": 15666,
+        "unchanged_other_ghost_png_entries": 181,
+        "original_rgb_unchanged": true,
+        "scope": "Confirmed targeted Twins alpha strand removed with no changes outside narrow side-view band; independent blue Twin side head repaired from canonical master. Other animation/art-balance/level placement remains separately unaudited."
+      },
       "kind": "GHOST",
       "runtime_id": "twins",
       "runtime_path": null,
       "sprite_identity": "twins",
-      "source_repair_preview": "development/verification/twins-side-head-source-repair.png"
+      "source_repair_preview": "development/verification/twins-side-head-source-repair.png",
+      "ghost_atlas_alpha_repair_commit": "828659674770cdc00a6c0b07be9f4b7521588b88"
     },
     {
       "id": "asset-0022",
@@ -1041,5 +1080,20 @@
     "preserved_source_pngs": 181,
     "visible_line_pixels_cleared": 7015,
     "pending": "Four-angle game renderer inspected: targeted line defect accepted. Broader ghost animation/art-quality changes remain separate diagnostics."
+  },
+  "twins_source_alpha_followup": {
+    "status": "targeted-side-alpha-repair-render-verified",
+    "decoder_and_render_workflow": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41408571829",
+    "artifact_id": 13125290269,
+    "patched_archive_sha256": "e436b9980906dafc8aeca16fe556582638bc40caae10789734d6057e5923b24c",
+    "original_archive_sha256": "e5a2a80d25e7d003ed3ab109fc42316d8fe745bce199390d92de60f68adfa3cc",
+    "source_rgbs_preserved": true,
+    "render_pixel_diff": {
+      "angle_0": 0,
+      "angle_90": 642,
+      "angle_180": 0,
+      "angle_270": 642
+    },
+    "note": "All original 26 asset-specific texture/cutout defects are now scoped as render-verified. This is NOT a blanket certification of level placement, full appearance quality, animation, multiplayer or frame performance."
   }
 }
