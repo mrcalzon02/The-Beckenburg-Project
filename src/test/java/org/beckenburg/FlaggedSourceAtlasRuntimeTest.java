@@ -70,9 +70,21 @@ public final class FlaggedSourceAtlasRuntimeTest {
                 "Lighter casing must clamp to bottom-right source texel: " + lighter);
         }
 
-        // In particular, the large fireplace and unrelated legacy GLBs must
-        // not change without inspecting their individual source/screen renders.
-        check(!GlbProps.reviewedSourceGltfUv("level_fireplace"), "Unreviewed fireplace changed");
+        // The source fireplace's four-angle A/B screenshots establish that
+        // its original wood/marble islands require top-left glTF V sampling.
+        check(GlbProps.reviewedSourceGltfUv("level_fireplace"),
+            "Four-angle verified fireplace source atlas still inverted");
+        var fireplace = GlbProps.model("level_fireplace");
+        check(fireplace.triangles().size() >= 1500,
+            "Source fireplace mesh lost original detailed geometry");
+        java.util.Set<String> fireplaceMaterials = new java.util.HashSet<>();
+        for (var triangle : fireplace.triangles())
+            fireplaceMaterials.add(GlbProps.materialName(triangle.material()));
+        check(fireplaceMaterials.contains("Material #3")
+                && fireplaceMaterials.contains("Material #4"),
+            "Original fireplace wood and wall texture materials not bound");
+        // No global flip: unrelated imported assets retain their established
+        // runtime sampling until their own exact source/render is reviewed.
         check(!GlbProps.reviewedSourceGltfUv("wardrobe_mp_1"), "Unrelated atlas changed");
         check(!GlbProps.reviewedSourceGltfUv("ceiling_lamp_2_on"), "Unrelated lamp changed");
 
