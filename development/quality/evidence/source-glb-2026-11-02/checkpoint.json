@@ -1,7 +1,14 @@
 {
   "baselineSource": "18001e8a412204bdc073cd80e413c1f6b682e3ed",
   "localChecks": "PASS; native-suite.txt and portable Java17 tests",
-  "ci": "pending new exact-source publication",
+  "ci": {
+    "standalone": 41546137572,
+    "nativeTerrainHost": 41546191383,
+    "fullRound": 41546195876,
+    "gpu": 41546201023,
+    "state": "live/pending; do not restart on polling timeout",
+    "nativeWorkflow": "terrain-scene-runtime.yml, registered403277127; includes actual verify_editor_agent_host.cmd; branch-only editor-agent-service.yml filename dispatch unavailable on default branch"
+  },
   "sha256": {
     "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "f30f040beb13f1fbc11a5137c81a6baa119169ece943e22d1470e5525d7ad5f0",
     "src\\main\\java\\org\\beckenburg\\GlbProps.java": "023cf732e194b12f9198e1a8908d241f2d0fe041017b8822c2d59a60b84ccb80",
@@ -28,5 +35,7 @@
     "development\\quality\\evidence\\source-glb-2026-11-02\\original.glb": "79c9b901e6af985a5a0a571272f2d885a45b191857e7fdc3c8814eb3cf2bd69a",
     "development\\quality\\evidence\\source-glb-2026-11-02\\README.md": "0efa23b2843ce20781eb4e791647dee77694eaa22bd73bc821743ddd1553ecd7",
     "development\\quality\\evidence\\source-glb-2026-11-02\\uv-negative.txt": "c0bc169d44ff377c7aea3db9b46f57c06314f070a399df07ad9704e7e3d63c97"
-  }
+  },
+  "publishedSource": "57337f4fd98b21cc579e235a538ea2af22f32954",
+  "remoteVerified": true
 }
