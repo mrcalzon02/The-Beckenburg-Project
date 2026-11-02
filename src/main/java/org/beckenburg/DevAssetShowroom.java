@@ -551,7 +551,7 @@ public final class DevAssetShowroom implements AutoCloseable {
                             // that baseline, and ALSO capture close real
                             // render views for source/alpha defect inspection.
                             scene.z=SceneRenderer.devAssetZ(0)-2.25;
-                            scene.eyeHeight=.95;scene.pitch=0;
+                            scene.eyeHeight=1.75;scene.pitch=-.08;
                             scene.drawDevAssetRoom(List.of(e),angle*.12,angle*Math.PI/2);
                             ImageIO.write(scene.image(),"png",
                                 folder.resolve("review-close-"+e.kind()+"-"+e.id()+
@@ -584,7 +584,7 @@ public final class DevAssetShowroom implements AutoCloseable {
                 imageCount++;
                 if(chosen.sprite()){
                     scene.z=SceneRenderer.devAssetZ(0)-2.25;
-                    scene.eyeHeight=.95;scene.pitch=0;
+                    scene.eyeHeight=1.75;scene.pitch=-.08;
                     scene.drawDevAssetRoom(List.of(chosen),angle*.12,angle*Math.PI/2);
                     ImageIO.write(scene.image(),"png",
                         folder.resolve("focused-close-"+chosen.kind()+"-"+
