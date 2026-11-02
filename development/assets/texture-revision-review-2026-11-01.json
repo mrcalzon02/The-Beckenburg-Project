@@ -315,15 +315,15 @@
     {
       "id": "asset-0428",
       "review_order": 10,
-      "status": "mapped-visible-review-needed",
+      "status": "source-uv-runtime-fixed-awaiting-four-angle-visual-review",
       "source_filename": null,
       "source_sha256": null,
       "runtime_model": "level_fireplace",
       "origin": "unknown-imported-or-authored",
-      "diagnostic": "Decoder LOADED (sprites and runtime WORLD/EQUIPMENT) or REVIEW_REGISTRATION (six source-only Hollow Creek pieces); none imply visual approval.",
+      "diagnostic": "Actual developer-room A/B screenshots show legacy V inverted fireplace wood, stone and green marble mapping; glTF top-left UV displays source-aligned fireplace from 0/90/180/270 degrees. Original mesh, UV and both 1024px PNG atlases unchanged. Shipped build still requires post-commit four-angle capture for acceptance.",
       "source_capture": "artifact:13105143372/asset-0428.png",
-      "runtime_capture": "artifact:13105143372/asset-0428.png",
-      "repair_commit": null,
+      "runtime_capture": "artifact:13117947106/remaining-uv-alternative/level_fireplace/focused-WORLD_MODEL-level_fireplace-0.png",
+      "repair_commit": "01ac2b5acefe217d658c031acc1b2d5e93efade3",
       "verification": null,
       "kind": "WORLD_MODEL",
       "runtime_id": "level_fireplace",
@@ -690,5 +690,21 @@
       "e2d6fd3329247eae94502893dd486247f989e404"
     ],
     "verification": "All six must be visually compared against original printed atlas using exact in-engine captures; no structural-source change should be called render-verified yet."
+  },
+  "fireplace_uv_followup": {
+    "comparison_run": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41391474750",
+    "artifact_id": 13117947106,
+    "comparison_angles": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "original_image_sha256": [
+      "df579f86af25d2aee7960bd0a3d6170151dd553b74e6f10841c62cf14ed0cf7f",
+      "d8097ace1a2cc45f67c45a3348016f3f9a22eb2e7e21569550d85b2a98ba045b"
+    ],
+    "patch_commit": "01ac2b5acefe217d658c031acc1b2d5e93efade3",
+    "pending": "Read back new shipped runtime render in latest developer-room capture before marking render-verified."
   }
 }
