@@ -240,6 +240,12 @@ public final class GlbProps {
             copy.setRGB(x,y,(rgb&0xff000000)|(Math.min(255,r)<<16)|(Math.min(255,g)<<8)|Math.min(255,b));
         }
         int id=TEXTURE_BASE+textures.size();textures.add(copy);vehicleUvMaterials.add(vehicleUvMaterials.get(original-TEXTURE_BASE));samplerWrapS.add(samplerWrapS.get(original-TEXTURE_BASE));samplerWrapT.add(samplerWrapT.get(original-TEXTURE_BASE));materialNames.add(materialName(original)+" foliage texel variant "+variant);
+        // Every source-preserving foliage tint inherits the original GLB alpha
+        // mode as well as its actual alpha pixels. A derived tree must not
+        // become a black opaque rectangle merely because its tint differs.
+        if(gltfBlendMaterials.contains(original))gltfBlendMaterials.add(id);
+        Double mask=gltfMaskCutoffs.get(original);
+        if(mask!=null)gltfMaskCutoffs.put(id,mask);
         diffuseFactors.add(diffuseFactors.get(original-TEXTURE_BASE).clone());foliagePalettes.put(key,id);return id;
     }
     private static final Map<String,Integer> televisionMaterials=new HashMap<>();
