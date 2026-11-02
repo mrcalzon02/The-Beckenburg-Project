@@ -44,6 +44,32 @@ public final class FlaggedSourceAtlasRuntimeTest {
         check(GlbProps.imageRow(0.875, 8, true) == 7, "Bottom source atlas row");
         check(GlbProps.imageRow(0.125, 8, false) == 7, "Legacy row remains unchanged");
 
+        // Respect authored glTF sampler wrap modes. The original lighter body
+        // requests CLAMP_TO_EDGE; its separate lit-flame image uses REPEAT.
+        check(GlbProps.wrapUv(-0.25, 33071) == 0.0, "Clamped U lower edge");
+        check(GlbProps.wrapUv(1.25, 33071) == 1.0, "Clamped U upper edge");
+        check(GlbProps.wrapUv(-0.25, 10497) == 0.75, "Repeat sampler negative UV");
+        check(GlbProps.wrapUv(1.25, 10497) == 0.25, "Repeat sampler positive UV");
+        check(GlbProps.wrapUv(1.25, 33648) == 0.75, "Mirror sampler alternate tile");
+        check(GlbProps.imageRow(1.0, 8, true, 33071) == 7,
+            "Clamped glTF source V=1 selects bottom atlas row");
+        for (String lighter : new String[]{"blender_igniter_2", "blender_igniter_2_lit"}) {
+            int material = -1;
+            for (GlbProps.Triangle triangle : GlbProps.model(lighter).triangles()) {
+                if (GlbProps.materialName(triangle.material()).startsWith("lighters_mp_1")) {
+                    material = triangle.material();
+                    break;
+                }
+            }
+            check(material >= GlbProps.TEXTURE_BASE, "No source lighter material: " + lighter);
+            check(GlbProps.sample(material, -0.25, -0.25) ==
+                    GlbProps.sample(material, 0.0, 0.0),
+                "Lighter casing must clamp to top-left source texel: " + lighter);
+            check(GlbProps.sample(material, 1.25, 1.25) ==
+                    GlbProps.sample(material, 1.0, 1.0),
+                "Lighter casing must clamp to bottom-right source texel: " + lighter);
+        }
+
         // In particular, the large fireplace and unrelated legacy GLBs must
         // not change without inspecting their individual source/screen renders.
         check(!GlbProps.reviewedSourceGltfUv("level_fireplace"), "Unreviewed fireplace changed");
