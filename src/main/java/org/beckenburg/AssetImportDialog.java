@@ -2,6 +2,7 @@ package org.beckenburg;
 
 import org.beckenburg.editor.EditorGlbWriter;
 import org.beckenburg.editor.EditorDocumentStore;
+import org.beckenburg.editor.EditorTopologyWorkspace;
 import org.beckenburg.editor.EditorMeshPipeline;
 import org.beckenburg.editor.EditorMeshTopology;
 import org.beckenburg.editor.EditorTopologyProject;
@@ -40,10 +41,10 @@ public final class AssetImportDialog {
             super.paintComponent(g);
             Graphics2D p=(Graphics2D)g.create();
             p.setColor(new Color(20,24,29));p.fillRect(0,0,getWidth(),getHeight());
-            if(source!=null)draw(p,source.triangles(),0,getWidth()/2,topologyProject==null?"SOURCE":"WORKING MESH");
+            if(source!=null)draw(p,source.triangles(),0,workingViewportWidth(),topologyProject==null?"SOURCE":"WORKING MESH");
             if(modelingMesh!=null)draw(p,modelingMesh.triangles(),getWidth()/2,getWidth()-getWidth()/2,"MODEL EDIT PREVIEW");
             else if(primitivePreview!=null)draw(p,primitivePreview.triangles(),getWidth()/2,getWidth()-getWidth()/2,"PRIMITIVE PREVIEW");
-            else if(result!=null)draw(p,result.optimized().triangles(),getWidth()/2,getWidth()-getWidth()/2,"PREVIEW");
+            else if(result!=null&&comparisonVisible())draw(p,result.optimized().triangles(),workingViewportWidth(),getWidth()-workingViewportWidth(),"PREVIEW");
             p.dispose();
         }
     };
@@ -73,7 +74,7 @@ public final class AssetImportDialog {
     private double dragDelta;
     private final JToggleButton boxSelect=new JToggleButton("AREA SELECT");
     private final JComboBox<String> areaShape=new JComboBox<>(new String[]{"BOX","LASSO"});
-    private final JCheckBox xraySelect=new JCheckBox("X-ray");
+    private final JCheckBox xraySelect=new JCheckBox("X-ray"),compareView=new JCheckBox("Compare");
     private java.util.Set<Long> selectedVertices=java.util.Set.of();
     private Point boxStart,boxEnd;
     private int selectionGeneration;
@@ -88,6 +89,19 @@ public final class AssetImportDialog {
     private int modelingGeneration;
     private boolean modelingPreparing;
     private final JButton previewWeld=new JButton("PREVIEW WELD COINCIDENT"),previewDegenerates=new JButton("PREVIEW REMOVE DEGENERATES"),previewUnused=new JButton("PREVIEW REMOVE UNUSED");
+    private final JComboBox<EditorTopologyProject.Transform> transformKind=new JComboBox<>(EditorTopologyProject.Transform.values());
+    private final JComboBox<String> transformAxis=new JComboBox<>(new String[]{"X","Y","Z"}),transformPivot=new JComboBox<>(new String[]{"Selection centroid","World origin"});
+    private final JSpinner transformAmount=new JSpinner(new SpinnerNumberModel(90d,-36000d,1000000d,1d)),angleSnap=new JSpinner(new SpinnerNumberModel(15d,0d,360d,1d));
+    private final JButton previewTransform=new JButton("PREVIEW TRANSFORM");
+    private EditorTopologyWorkspace workspace;
+    private record MeshPart(String name,int vertices,int faces){@Override public String toString(){return name+" / "+faces+" triangles";}}
+    private final JTextField partSearch=new JTextField();
+    private final DefaultListModel<MeshPart> partRows=new DefaultListModel<>();
+    private final JList<MeshPart> partList=new JList<>(partRows);
+    private EditorTopologyProject.State listedParts;
+    private boolean updatingParts;
+
+    private final JPanel inspectorCards=new JPanel(new CardLayout());
     private EditorTopologyProject topologyProject;
     private EditorTopologyProject.Observation workingObservation;
     private EditorTopologyProject.Vertex selectedVertex;
@@ -102,52 +116,33 @@ public final class AssetImportDialog {
     private volatile long sourceTextureBytes;
     AssetImportDialog(JFrame parent,Consumer<String> published){
         this.parent=parent;this.published=published;
-        dialog=new JDialog(parent,"Asset Import / PSX Regression Lab",false);
+        dialog=new JDialog(parent,"Model Editor — Mesh & Topology",false);
         JPanel content=new JPanel(new BorderLayout(5,5));
-        JPanel head=new JPanel(new BorderLayout(5,4));
-        head.add(pathLabel,BorderLayout.CENTER);
         choose.addActionListener(e->openSource());
-        head.add(choose,BorderLayout.EAST);
         slider.setPaintTicks(true);slider.setMajorTickSpacing(2);slider.setPaintLabels(true);
         slider.setToolTipText("Level 0 preserves source geometry; 12 intentionally collapses small parts. This is not a triangle-budget target.");
         slider.addChangeListener(e->{if(!slider.getValueIsAdjusting()&&source!=null)recalculate();});
         preset.setToolTipText("Advisory visual/style budget only; never a hard release gate");
         preset.addActionListener(e->{if(source!=null&&result!=null)updateReport();});
-        JPanel controls=new JPanel(new BorderLayout(3,3));
-        controls.add(new JLabel("Geometry regression / vertex clustering (0 = original)"),BorderLayout.NORTH);
-        controls.add(slider,BorderLayout.CENTER);
         JButton reset=new JButton("RESET");
         reset.addActionListener(e->slider.setValue(0));
-        controls.add(reset,BorderLayout.EAST);
-        JPanel vertexControls=new JPanel(new BorderLayout());
-        JPanel vertexInputs=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));
-        JPanel vertexActions=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));
-        JPanel actionRows=new JPanel(new BorderLayout());actionRows.add(vertexActions,BorderLayout.NORTH);
-        vertexControls.add(vertexInputs,BorderLayout.NORTH);vertexControls.add(actionRows,BorderLayout.SOUTH);
-        vertexInputs.add(new JLabel("Vertex ID"));vertexInputs.add(vertexId);
-        vertexInputs.add(meshView);vertexInputs.add(selectionMode);vertexInputs.add(selectionLabel);
+
+        compareView.setToolTipText("Compare working geometry with the reduction preview; pending model edits always show both views.");compareView.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();preview.repaint();});
         meshView.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();preview.repaint();});selectionMode.addActionListener(e->{cancelAxisDrag();refreshMeshControls();preview.repaint();});
         preview.addMouseListener(new MouseAdapter(){
             @Override public void mousePressed(MouseEvent e){if(e.getButton()==MouseEvent.BUTTON1){if(!beginAxisDrag(e.getX(),e.getY())){
-                if(boxSelect.isSelected()&&!busy&&modelingPreview==null&&topologyProject!=null&&e.getX()<preview.getWidth()/2){boxStart=e.getPoint();boxEnd=e.getPoint();selectionPath=new ArrayList<>();selectionPath.add(e.getPoint());lassoGesture=areaShape.getSelectedIndex()==1;preview.repaint();}
+                if(boxSelect.isSelected()&&!busy&&modelingPreview==null&&topologyProject!=null&&e.getX()<workingViewportWidth()){boxStart=e.getPoint();boxEnd=e.getPoint();selectionPath=new ArrayList<>();selectionPath.add(e.getPoint());lassoGesture=areaShape.getSelectedIndex()==1;preview.repaint();}
                 else pickMesh(e.getX(),e.getY());
             }}else {cancelAxisDrag();cancelBoxSelection();}}
             @Override public void mouseReleased(MouseEvent e){if(e.getButton()==MouseEvent.BUTTON1){if(axisDrag!=null)finishAxisDrag();else finishBoxSelection();}}
         });
         preview.addMouseMotionListener(new MouseMotionAdapter(){@Override public void mouseDragged(MouseEvent e){
-            if(axisDrag!=null)updateAxisDrag(e.getX(),e.getY());else if(boxStart!=null){boxEnd=new Point(Math.max(0,Math.min(preview.getWidth()/2-1,e.getX())),Math.max(0,Math.min(preview.getHeight()-1,e.getY())));
+            if(axisDrag!=null)updateAxisDrag(e.getX(),e.getY());else if(boxStart!=null){boxEnd=new Point(Math.max(0,Math.min(workingViewportWidth()-1,e.getX())),Math.max(0,Math.min(preview.getHeight()-1,e.getY())));
                 if(lassoGesture&&selectionPath.get(selectionPath.size()-1).distance(boxEnd)>=3&&selectionPath.size()<=2048)selectionPath.add(boxEnd);preview.repaint();}
         }});
         dialog.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"cancel-axis-drag");
         dialog.getRootPane().getActionMap().put("cancel-axis-drag",new AbstractAction(){public void actionPerformed(ActionEvent e){cancelAxisDrag();cancelBoxSelection();clearModelingPreview();}});
         for(var spinner:List.of(vertexId,vertexX,vertexY,vertexZ))spinner.setPreferredSize(new Dimension(65,24));
-        for(var item:List.of(new Object[]{"X",vertexX},new Object[]{"Y",vertexY},new Object[]{"Z",vertexZ})){
-            vertexInputs.add(new JLabel((String)item[0]));vertexInputs.add((JSpinner)item[1]);
-        }
-        vertexActions.add(moveVertex);vertexActions.add(undoMesh);vertexActions.add(redoMesh);vertexActions.add(saveMesh);vertexActions.add(reopenMesh);vertexActions.add(exportMesh);
-        vertexActions.add(new JLabel("Move grid (0 off)"));meshSnap.setPreferredSize(new Dimension(65,24));vertexActions.add(meshSnap);
-        JPanel areaActions=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));areaActions.add(boxSelect);areaActions.add(areaShape);areaActions.add(xraySelect);
-        areaActions.add(new JLabel("Drag in the working mesh; Escape cancels. Selected vertices share the move gizmo."));actionRows.add(areaActions,BorderLayout.SOUTH);
         areaShape.addActionListener(e->cancelBoxSelection());
         boxSelect.setToolTipText("Drag a box or lasso in the working mesh; unchecked X-ray selects only visible vertices.");
         meshSnap.setToolTipText("Drag colored axis endpoints; Escape or right-click cancels. Grid snaps movement distance in world units.");
@@ -162,51 +157,69 @@ public final class AssetImportDialog {
             topologyProject.reopen();
             if(path!=null&&path.toAbsolutePath().normalize().equals(topologyProject.documentPath()))reviewedSourceFingerprint=topologyProject.diskFingerprint();
         }catch(IOException failure){throw new java.io.UncheckedIOException(failure);}}));
-        JPanel primitiveInputs=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));
-        primitiveInputs.add(newMesh);primitiveInputs.add(primitiveKind);
         for(var item:List.of(new Object[]{"W",primitiveWidth},new Object[]{"H",primitiveHeight},new Object[]{"D",primitiveDepth},
                 new Object[]{"Segments",primitiveSegments},new Object[]{"Rings/grid",primitiveRings})){
-            primitiveInputs.add(new JLabel((String)item[0]));var spinner=(JSpinner)item[1];spinner.setPreferredSize(new Dimension(58,24));primitiveInputs.add(spinner);
+            var spinner=(JSpinner)item[1];spinner.setPreferredSize(new Dimension(58,24));
             spinner.addChangeListener(e->clearPrimitivePreview());
         }
         primitiveKind.addActionListener(e->clearPrimitivePreview());
-        JPanel primitiveActions=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));primitiveActions.add(previewPrimitive);primitiveActions.add(applyPrimitive);
-        primitiveActions.add(new JLabel("Y up; centered at origin. Preview first, then append as one undoable part."));
-        JPanel primitiveControls=new JPanel(new BorderLayout());primitiveControls.add(primitiveInputs,BorderLayout.NORTH);primitiveControls.add(primitiveActions,BorderLayout.SOUTH);
         newMesh.addActionListener(e->newAuthoringMesh());previewPrimitive.addActionListener(e->previewPrimitive());
         applyPrimitive.addActionListener(e->{if(reviewedPrimitive!=null){var parameters=reviewedPrimitive;meshEdit(()->topologyProject.appendPrimitive(parameters));clearPrimitivePreview();}});
-        JPanel modelingControls=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));modelingControls.add(faceOperation);modelingControls.add(new JLabel("Distance / inset fraction"));faceAmount.setPreferredSize(new Dimension(70,24));modelingControls.add(faceAmount);
-        modelingControls.add(previewFaceEdit);modelingControls.add(applyFaceEdit);modelingControls.add(cancelFaceEdit);
         faceAmount.setToolTipText("Select a FACE. Extrude: signed normal distance. Inset: fraction greater than0 and less than1.");
         faceOperation.addActionListener(e->clearModelingPreview());faceAmount.addChangeListener(e->clearModelingPreview());
         previewFaceEdit.addActionListener(e->previewModelingEdit());cancelFaceEdit.addActionListener(e->clearModelingPreview());
         applyFaceEdit.addActionListener(e->{if(modelingPreview!=null&&!busy){var edit=modelingPreview;meshEdit(()->topologyProject.applyPreview(edit));if(topologyProject.snapshot()==edit.snapshot()){selectedHit=null;selectionLabel.setText("Model edit committed");}clearModelingPreview();}});
-        JPanel repairControls=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));repairControls.add(previewWeld);repairControls.add(previewDegenerates);repairControls.add(previewUnused);
         previewWeld.setToolTipText("Select vertices with X-ray/area selection. Exact coincident positions weld per part; UV seams stay per corner.");
         previewWeld.addActionListener(e->{var ids=java.util.Set.copyOf(selectedVertices);beginModelingPreview(p->p.previewWeld(ids));});
         previewDegenerates.addActionListener(e->beginModelingPreview(EditorTopologyProject::previewRemoveDegenerates));
         previewUnused.addActionListener(e->beginModelingPreview(EditorTopologyProject::previewRemoveUnusedVertices));
-        JPanel modelingRows=new JPanel(new BorderLayout());modelingRows.add(modelingControls,BorderLayout.NORTH);modelingRows.add(repairControls,BorderLayout.SOUTH);
-        JPanel vertexAndModeling=new JPanel(new BorderLayout());vertexAndModeling.add(vertexControls,BorderLayout.NORTH);vertexAndModeling.add(modelingRows,BorderLayout.SOUTH);
-        JPanel lower=new JPanel(new BorderLayout());lower.add(preset,BorderLayout.NORTH);lower.add(primitiveControls,BorderLayout.CENTER);lower.add(vertexAndModeling,BorderLayout.SOUTH);
-        controls.add(lower,BorderLayout.SOUTH);refreshMeshControls();
-        JPanel top=new JPanel(new BorderLayout(4,5));
-        top.add(head,BorderLayout.NORTH);top.add(controls,BorderLayout.SOUTH);
-        content.add(top,BorderLayout.NORTH);
-        preview.setPreferredSize(new Dimension(780,310));
-        JPanel middle=new JPanel(new BorderLayout(4,4));
-        middle.add(preview,BorderLayout.CENTER);
+        transformKind.addActionListener(e->{clearModelingPreview();transformAmount.setValue(transformKind.getSelectedItem()==EditorTopologyProject.Transform.ROTATE?90d:1d);});
+        transformAxis.addActionListener(e->clearModelingPreview());transformPivot.addActionListener(e->clearModelingPreview());transformAmount.addChangeListener(e->clearModelingPreview());angleSnap.addChangeListener(e->clearModelingPreview());
+        previewTransform.addActionListener(e->{
+            var ids=java.util.Set.copyOf(selectedIds());var operation=(EditorTopologyProject.Transform)transformKind.getSelectedItem();int axis=transformAxis.getSelectedIndex();boolean origin=transformPivot.getSelectedIndex()==1;
+            double value=((Number)transformAmount.getValue()).doubleValue(),snap=((Number)angleSnap.getValue()).doubleValue();
+            if(operation==EditorTopologyProject.Transform.ROTATE&&snap>0)value=Math.rint(value/snap)*snap;double reviewed=value;
+            beginModelingPreview(p->p.previewTransform(ids,operation,axis,reviewed,origin));
+        });
         details.setEditable(false);details.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
-        middle.add(new JScrollPane(details),BorderLayout.SOUTH);
-        content.add(middle,BorderLayout.CENTER);
         JPanel footer=new JPanel(new FlowLayout(FlowLayout.RIGHT,4,4));
         JButton close=new JButton("CLOSE");close.addActionListener(e->requestClose());
         apply.setEnabled(false);apply.addActionListener(e->publish());
         footer.add(new JLabel("Original retained; source and derivative are stored separately"));
         footer.add(apply);footer.add(close);
-        content.add(footer,BorderLayout.SOUTH);
         content.setBorder(BorderFactory.createEmptyBorder(6,6,6,6));
-        dialog.setContentPane(content);dialog.setSize(1010,820);
+        // Existing native controls and actions, arranged around the modeling viewport.
+        var menus=new JMenuBar();menus.add(EditorTopologyWorkspace.menu("File",newMesh,choose,saveMesh,reopenMesh,exportMesh,close));menus.add(EditorTopologyWorkspace.menu("Edit",undoMesh,redoMesh));
+        EditorTopologyWorkspace.shortcut(menus.getMenu(0),1,KeyEvent.VK_O);EditorTopologyWorkspace.shortcut(menus.getMenu(0),2,KeyEvent.VK_S);EditorTopologyWorkspace.shortcut(menus.getMenu(1),0,KeyEvent.VK_Z);EditorTopologyWorkspace.shortcut(menus.getMenu(1),1,KeyEvent.VK_Y);
+        var inspector=new JPanel(new BorderLayout(0,8));var toolTitle=new JLabel("SELECT");inspector.add(toolTitle,BorderLayout.NORTH);inspector.add(new JScrollPane(inspectorCards),BorderLayout.CENTER);inspector.add(EditorTopologyWorkspace.column(applyFaceEdit,cancelFaceEdit),BorderLayout.SOUTH);
+        inspector.setBorder(BorderFactory.createEmptyBorder(8,5,5,5));
+        inspectorCards.add("Select",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Area shape",areaShape,"Occlusion",xraySelect),boxSelect,new JLabel("Drag in the working view. Escape cancels.")));
+        inspectorCards.add("Move",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Vertex ID",vertexId,"X",vertexX,"Y",vertexY,"Z",vertexZ,"Grid (0 off)",meshSnap),moveVertex));
+        inspectorCards.add("Transform",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Operation",transformKind,"Global axis",transformAxis,"Degrees / factor",transformAmount,"Pivot",transformPivot,"Angle snap",angleSnap),previewTransform));
+        inspectorCards.add("Create",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Primitive",primitiveKind,"Width",primitiveWidth,"Height",primitiveHeight,"Depth",primitiveDepth,"Segments",primitiveSegments,"Rings / grid",primitiveRings),previewPrimitive,applyPrimitive));
+        inspectorCards.add("Face",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Operation",faceOperation,"Distance / fraction",faceAmount),previewFaceEdit));
+        inspectorCards.add("Repair",EditorTopologyWorkspace.column(previewWeld,previewDegenerates,previewUnused));
+        inspectorCards.add("Review",EditorTopologyWorkspace.column(new JLabel("Geometry regression (0 = original)"),slider,reset,preset));
+        var toolsBar=new JPanel(new GridLayout(0,1,2,3));ButtonGroup toolModes=new ButtonGroup();
+        String[] toolNames={"Select","Move","Transform","Create","Face","Repair","Review"};
+        for(int i=0;i<toolNames.length;i++){int index=i;var button=new JToggleButton(toolNames[i]);button.setMargin(new Insets(8,5,8,5));button.setToolTipText("Show "+toolNames[i].toLowerCase(Locale.ROOT)+" settings");button.addActionListener(e->{((CardLayout)inspectorCards.getLayout()).show(inspectorCards, index==2?"Transform":toolNames[index]);toolTitle.setText(toolNames[index].toUpperCase(Locale.ROOT));workspace.setInspectorVisible(true);});toolModes.add(button);toolsBar.add(button);if(i==0)button.setSelected(true);}
+        var toolsDock=new JPanel(new CardLayout());var toolsPanel=new JPanel(new BorderLayout());toolsPanel.add(toolsBar,BorderLayout.NORTH);toolsDock.add(toolsPanel,"Tools");
+        var partsPanel=new JPanel(new BorderLayout(3,5));partsPanel.setBorder(BorderFactory.createEmptyBorder(3,2,3,2));var partsHead=EditorTopologyWorkspace.column(new JLabel("NATIVE MESH PARTS"),partSearch);partsPanel.add(partsHead,BorderLayout.NORTH);partsPanel.add(new JScrollPane(partList),BorderLayout.CENTER);toolsDock.add(partsPanel,"Parts");toolsDock.setPreferredSize(new Dimension(76,500));
+        partSearch.setToolTipText("Filter parts from the current native mesh");partSearch.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){public void insertUpdate(javax.swing.event.DocumentEvent e){refreshPartRows();}public void removeUpdate(javax.swing.event.DocumentEvent e){refreshPartRows();}public void changedUpdate(javax.swing.event.DocumentEvent e){refreshPartRows();}});
+        partList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);partList.addListSelectionListener(e->{if(!e.getValueIsAdjusting()&&!updatingParts&&partList.getSelectedValue()!=null)selectPart(partList.getSelectedValue().name());});
+        var partsToggle=new JButton("Mesh parts");partsToggle.addActionListener(e->{boolean show=toolsDock.getPreferredSize().width<100;((CardLayout)toolsDock.getLayout()).show(toolsDock,show?"Parts":"Tools");toolsDock.setPreferredSize(new Dimension(show?195:76,500));toolsDock.revalidate();});
+        var context=new JPanel(new BorderLayout(6,0));var viewOptions=new JPanel(new FlowLayout(FlowLayout.LEFT,4,2));viewOptions.add(meshView);viewOptions.add(selectionMode);viewOptions.add(compareView);context.add(viewOptions,BorderLayout.WEST);context.add(selectionLabel,BorderLayout.CENTER);
+        var viewportArea=new JPanel(new BorderLayout(0,3));viewportArea.add(context,BorderLayout.NORTH);viewportArea.add(preview,BorderLayout.CENTER);
+        var browsers=new JTabbedPane();browsers.addTab("Diagnostics",new JScrollPane(details));
+        workspace=new EditorTopologyWorkspace(viewportArea,toolsDock,inspector,browsers,290);
+        var diagnostics=new JButton("Diagnostics");diagnostics.addActionListener(e->workspace.setBrowsersVisible(!workspace.browsersVisible()));
+        var focus=new JButton("Focus view");focus.setToolTipText("Ctrl+Space: hide/restore tools and panels");focus.addActionListener(e->workspace.toggleFocus());
+        menus.add(EditorTopologyWorkspace.menu("View",partsToggle,diagnostics,focus));dialog.setJMenuBar(menus);
+        var commandBar=new JPanel(new BorderLayout(4,0));commandBar.add(pathLabel,BorderLayout.CENTER);var quick=new JPanel(new FlowLayout(FlowLayout.RIGHT,3,0));quick.add(undoMesh);quick.add(redoMesh);quick.add(partsToggle);quick.add(diagnostics);quick.add(focus);commandBar.add(quick,BorderLayout.EAST);
+        content.add(commandBar,BorderLayout.NORTH);content.add(workspace,BorderLayout.CENTER);content.add(footer,BorderLayout.SOUTH);
+        dialog.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_SPACE,InputEvent.CTRL_DOWN_MASK),"focus-workspace");
+        dialog.getRootPane().getActionMap().put("focus-workspace",new AbstractAction(){public void actionPerformed(ActionEvent e){workspace.toggleFocus();}});
+        dialog.setContentPane(content);dialog.setSize(1280,850);dialog.setMinimumSize(new Dimension(900,620));
         dialog.setLocationRelativeTo(parent);
         dialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         dialog.addWindowListener(new WindowAdapter(){@Override public void windowClosing(WindowEvent e){requestClose();}});
@@ -250,19 +263,42 @@ public final class AssetImportDialog {
         }
         dialog.dispose();
     }
+    private void refreshPartRows(){
+        updatingParts=true;
+        try{
+            partRows.clear();if(topologyProject==null)return;
+            var counts=new java.util.LinkedHashMap<String,int[]>();var state=topologyProject.snapshot();
+            for(var vertex:state.vertices())counts.computeIfAbsent(vertex.part(),key->new int[2])[0]++;
+            for(var face:state.faces())counts.computeIfAbsent(face.part(),key->new int[2])[1]++;
+            String filter=partSearch.getText().strip().toLowerCase(Locale.ROOT);
+            counts.forEach((name,count)->{if(name.toLowerCase(Locale.ROOT).contains(filter))partRows.addElement(new MeshPart(name,count[0],count[1]));});listedParts=state;
+        }finally{updatingParts=false;}
+    }
+    private void selectPart(String part){
+        if(busy||modelingPreview!=null||topologyProject==null)return;
+        cancelAxisDrag();cancelBoxSelection();boolean needsReview=!topologyProject.isCurrent(workingObservation);if(needsReview)refreshWorkingObservation();
+        var ids=new java.util.LinkedHashSet<Long>();for(var vertex:workingObservation.snapshot().vertices())if(vertex.part().equals(part))ids.add(vertex.id());
+        selectionMode.setSelectedItem("VERTEX");selectedHit=null;
+        if(!ids.isEmpty()){vertexId.setValue(ids.iterator().next());selectVertex();}
+        selectedVertices=java.util.Set.copyOf(ids);selectionLabel.setText(part+" / "+ids.size()+" native vertices");refreshMeshControls();if(needsReview)recalculate();preview.repaint();
+    }
     private void refreshMeshControls(){
-        boolean editable=topologyProject!=null&&!busy&&modelingPreview==null;
+        if(topologyProject==null?listedParts!=null:listedParts!=topologyProject.snapshot()){refreshPartRows();if(topologyProject==null)listedParts=null;}
+
+        boolean editable=topologyProject!=null&&!busy&&modelingPreview==null;partList.setEnabled(editable);partSearch.setEnabled(!busy);
         for(var component:List.of(vertexId,vertexX,vertexY,vertexZ,moveVertex,saveMesh,reopenMesh,exportMesh))component.setEnabled(editable);
         undoMesh.setEnabled(editable&&meshHistory.canUndo());redoMesh.setEnabled(editable&&meshHistory.canRedo());
         if(editable)saveMesh.setToolTipText("Save native topology to "+topologyProject.documentPath());
         newMesh.setEnabled(!busy);previewPrimitive.setEnabled(editable);applyPrimitive.setEnabled(editable&&reviewedPrimitive!=null);
         for(var component:List.of(primitiveKind,primitiveWidth,primitiveHeight,primitiveDepth,primitiveSegments,primitiveRings))component.setEnabled(editable);
-        meshView.setEnabled(!busy);selectionMode.setEnabled(editable);
+        meshView.setEnabled(!busy);selectionMode.setEnabled(editable);compareView.setEnabled(!busy&&modelingPreview==null);
         meshSnap.setEnabled(editable);
         boxSelect.setEnabled(editable);xraySelect.setEnabled(editable);areaShape.setEnabled(editable);
         faceOperation.setEnabled(topologyProject!=null&&!busy);faceAmount.setEnabled(topologyProject!=null&&!busy);
         previewFaceEdit.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
         previewWeld.setEnabled(editable&&selectionMode.getSelectedIndex()==0&&selectedVertices.size()>1);previewDegenerates.setEnabled(editable);previewUnused.setEnabled(editable);
+        previewTransform.setEnabled(editable&&!selectedIds().isEmpty());
+        for(var component:List.of(transformKind,transformAxis,transformPivot,transformAmount,angleSnap))component.setEnabled(topologyProject!=null&&!busy);
         applyFaceEdit.setEnabled(!busy&&modelingPreview!=null);cancelFaceEdit.setEnabled(modelingPreview!=null||modelingPreparing);
         updatePublishAvailability();
     }
@@ -271,6 +307,8 @@ public final class AssetImportDialog {
             &&(topologyProject==null||topologyProject.isCurrent(workingObservation))&&!result.optimized().triangles().isEmpty()
             &&(!source.name().toLowerCase(Locale.ROOT).endsWith(".glb")||result.level()==0));
     }
+    private boolean comparisonVisible(){return compareView.isSelected()||modelingMesh!=null||primitivePreview!=null||(result!=null&&result.level()>0);}
+    int workingViewportWidth(){return comparisonVisible()?preview.getWidth()/2:preview.getWidth();}
     private void clearModelingPreview(){if(modelingPreview!=null&&topologyProject!=null)topologyProject.cancelPreview(modelingPreview);modelingGeneration++;modelingPreparing=false;modelingPreview=null;modelingMesh=null;modelingBounds=null;refreshMeshControls();preview.repaint();}
     private record ModelingReview(EditorTopologyProject.EditPreview edit,EditorMeshPipeline.Mesh mesh,List<EditorMeshPipeline.Triangle> bounds){}
     private void previewModelingEdit(){
@@ -294,7 +332,7 @@ public final class AssetImportDialog {
                 try{
                     if(request!=modelingGeneration)throw new java.util.concurrent.CancellationException();var review=get();
                     if(project!=topologyProject||project.revision()!=nativeRevision||project.snapshot()!=state)throw new IOException("Mesh changed during modeling preview");
-                    modelingPreview=review.edit();modelingMesh=review.mesh();modelingBounds=review.bounds();details.append("\nNATIVE PREVIEW: "+review.edit().description()+". Apply to commit.");
+                    modelingPreview=review.edit();modelingMesh=review.mesh();modelingBounds=review.bounds();selectionLabel.setText(review.edit().description());selectionLabel.setToolTipText(review.edit().description());details.append("\nNATIVE PREVIEW: "+review.edit().description()+". Apply to commit.");
                 }catch(java.util.concurrent.CancellationException canceled){details.append("\nModel preview canceled.");}
                 catch(Exception failure){details.append("\nMODEL EDIT REFUSED: "+rootMessage(failure));}
                 refreshMeshControls();preview.repaint();
@@ -589,8 +627,8 @@ public final class AssetImportDialog {
         return new Viewport((xmin+xmax)*.5,(ymin+ymax)*.5,scale,left,width,getPreviewHeight());
     }
     private void pickMesh(int x,int y){
-        if(busy||modelingPreview!=null||topologyProject==null||source.triangles().isEmpty()||x<0||x>=preview.getWidth()/2)return;
-        var view=viewport(workingReference(),0,preview.getWidth()/2);
+        if(busy||modelingPreview!=null||topologyProject==null||source.triangles().isEmpty()||x<0||x>=workingViewportWidth())return;
+        var view=viewport(workingReference(),0,workingViewportWidth());
         double px=(x-view.left()-view.width()/2)/view.scale()+view.centerX(),py=(y-view.height()/2)/view.scale()+view.centerY();
         selectedHit=EditorMeshPicking.pick(topologyProject.snapshot(),projection(),px,py).orElse(null);
         if(selectedHit==null){selectedVertex=null;selectedVertices=java.util.Set.of();selectionLabel.setText("No triangle selected");refreshMeshControls();preview.repaint();return;}
@@ -614,7 +652,7 @@ public final class AssetImportDialog {
         var ids=selectedIds();if(ids.isEmpty())return List.of();double x=0,y=0,z=0;int count=0;
         for(var v:topologyProject.snapshot().vertices())if(ids.contains(v.id())){x+=v.x();y+=v.y();z+=v.z();count++;}
         if(count!=ids.size())return List.of();
-        var view=viewport(workingReference(),0,preview.getWidth()/2);var anchor=projection().project(x/count,y/count,z/count);
+        var view=viewport(workingReference(),0,workingViewportWidth());var anchor=projection().project(x/count,y/count,z/count);
         double ax=view.x(anchor.x()),ay=view.y(anchor.y());var zero=projection().project(0,0,0);var handles=new ArrayList<GizmoHandle>();
         for(int axis=0;axis<3;axis++){
             var p=projection().project(axis==0?1:0,axis==1?1:0,axis==2?1:0);double ux=(p.x()-zero.x())*view.scale(),uy=(p.y()-zero.y())*view.scale(),length=Math.hypot(ux,uy);
@@ -623,7 +661,7 @@ public final class AssetImportDialog {
         return handles;
     }
     private boolean beginAxisDrag(int x,int y){
-        if(busy||modelingPreview!=null||x>=preview.getWidth()/2)return false;
+        if(busy||modelingPreview!=null||x>=workingViewportWidth())return false;
         for(var h:gizmoHandles())if(Math.hypot(x-h.x(),y-h.y())<=8){
             axisDrag=new AxisDrag(topologyProject.snapshot(),topologyProject.revision(),selectedIds(),h,x,y,((Number)meshSnap.getValue()).doubleValue());dragDelta=0;preview.repaint();return true;
         }return false;
@@ -640,7 +678,7 @@ public final class AssetImportDialog {
         if(boxStart==null||topologyProject==null)return;var start=boxStart;var end=boxEnd;boolean lasso=lassoGesture;var path=selectionPath==null?List.<Point>of():List.copyOf(selectionPath);cancelBoxSelection();
         if(source.triangles().isEmpty())return;int request=selectionGeneration;
         var project=topologyProject;var state=project.snapshot();long nativeRevision=project.revision();var selectedProjection=projection();boolean xray=xraySelect.isSelected();
-        var view=viewport(workingReference(),0,preview.getWidth()/2);
+        var view=viewport(workingReference(),0,workingViewportWidth());
         double minX=(Math.min(start.x,end.x)-view.width()/2)/view.scale()+view.centerX(),maxX=(Math.max(start.x,end.x)-view.width()/2)/view.scale()+view.centerX();
         double minY=(Math.min(start.y,end.y)-view.height()/2)/view.scale()+view.centerY(),maxY=(Math.max(start.y,end.y)-view.height()/2)/view.scale()+view.centerY();
         var polygon=path.stream().map(p->new EditorMeshPicking.Point((p.x-view.width()/2)/view.scale()+view.centerX(),(p.y-view.height()/2)/view.scale()+view.centerY(),0)).toList();

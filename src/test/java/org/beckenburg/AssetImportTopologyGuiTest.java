@@ -157,7 +157,7 @@ public final class AssetImportTopologyGuiTest {
                 var dock=ui.get();((JButton)field(dock,"previewPrimitive")).doClick();
                 // Click the real FRONT viewport at a stable interior point of the actual native mesh.
                 ((JComboBox<?>)field(dock,"meshView")).setSelectedItem(org.beckenburg.editor.EditorMeshPicking.Projection.FRONT);
-                var canvas=(JPanel)field(dock,"preview");int half=canvas.getWidth()/2,height=Math.max(180,canvas.getHeight());
+                var canvas=(JPanel)field(dock,"preview");int half=dock.workingViewportWidth(),height=Math.max(180,canvas.getHeight());
                 double scale=Math.min((half-26)/2d,(height-36)/1d);
                 double rawX=.15,rawY=-.2;int clickX=half/2+(int)Math.round(rawX*scale),clickY=height/2+(int)Math.round(rawY*scale);
                 var state=nativeProject.get().snapshot();

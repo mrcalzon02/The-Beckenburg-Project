@@ -75,3 +75,10 @@ OBJ uses contiguous file indices and derived unit flat face normals. Native nume
 **PREVIEW REMOVE UNUSED** explicitly shows a candidate without unreferenced vertices, retaining every surviving stable ID and exact face/corner data. Apply, Cancel, Undo and Redo use the ordinary native transaction path. This is useful after degenerate-face removal; export never silently discards native vertices.
 
 `EditorObjWriterTest` runs using the independent editor JAR. The expanded `AssetImportMeshRepairGuiTest` drives the actual Save chooser, fresh human reimport, cleanup buttons/history and publication through the real game GLB decoder. [Fixture evidence](../../development/quality/evidence/obj-export-2026-11-01/README.md) records the scope. This is further partial G2; the textured hard-edge normal/material exit and remaining modeling requirements are still open.
+
+
+## Model-specific workspace and previewed transforms
+
+The model editor now has its own `EditorTopologyWorkspace`: a large single working view, optional native comparison, left tool/part selection, one contextual inspector and collapsible Diagnostics. Ctrl+Space restores the prior panels after Focus View. File/Edit/View expose existing native commands and Ctrl+O/S/Z/Y. The main level layout is unchanged; other modules own their own screen arrangements. See the [full gold-standards applicability review](requirements/MODULE_WORKSPACE_AUDIT.md).
+
+The Transform tool previews right-handed global rotation, positive axis/uniform scale and world-origin/selection-centroid pivots. Rotation can snap to a selected angle increment. Native IDs, faces and corner UVs stay intact; derived flat facing follows transformed geometry. Apply/Cancel, history, stale guards, native save/reopen and runtime publication use the same existing native transaction path. Negative/zero scale, nonfinite/over-budget parameters, unknown vertices and no-op candidates refuse. Mirrors, local/normal transforms, custom authored-normal transforms and self-intersection repair are not claimed.

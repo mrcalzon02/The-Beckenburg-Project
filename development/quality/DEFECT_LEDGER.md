@@ -2796,6 +2796,20 @@ Evidence and verification: AssetImportPublicationRevisionGuiTest against exact4b
 
 Older-map obligation: Existing mismatched published derivatives are not silently rewritten; compare their original/native/runtime provenance individually. No new agent/MCP mesh operations are enabled.
 
+### DEV-205 — Topological editor exposes every tool row and crowds out the working viewport
+
+**Status:** fixed-scoped; local actual GUI/native tests passed, remote acceptance pending · **Affected:** AssetImportDialog / topological model workspace only
+
+Owner reports a horrifically messy modeling UI: all primitive, vertex, selection, transform, face, repair and reduction controls compete with a shallow viewport; ordinary editing shows a redundant comparison.
+
+Cause / uncertainty: Unconditional stacked controls and fixed two-view assumptions accumulated with native modeling operations.
+
+Fix / next action: Use a model-owned contextual workspace, native part outliner, single working view, explicit/pending comparisons, collapsible diagnostics and focus restoration. Preserve actual native handlers/history/persistence/runtime publication. Main level-view source is unchanged.
+
+Evidence and verification: EditorTopologyWorkspaceGuiTest plus actual human picking/selection/modeling/export/publication tests pass locally. Fixture captures: development/quality/evidence/topology-workspace-2026-11-01/. Full standards applicability review: docs/editor/requirements/MODULE_WORKSPACE_AUDIT.md.
+
+Older-map obligation: No map/model art modified. Other modules require their own workflow-specific workspace audit; do not inherit this model layout or claim complete gold-standard acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

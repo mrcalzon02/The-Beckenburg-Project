@@ -22,11 +22,11 @@ public final class AssetImportBoxSelectionGuiTest {
     private static void event(JPanel canvas,int kind,int x,int y){canvas.dispatchEvent(new MouseEvent(canvas,kind,System.currentTimeMillis(),kind==MouseEvent.MOUSE_DRAGGED?InputEvent.BUTTON1_DOWN_MASK:0,x,y,kind==MouseEvent.MOUSE_DRAGGED?0:1,false,kind==MouseEvent.MOUSE_DRAGGED?MouseEvent.NOBUTTON:MouseEvent.BUTTON1));}
     private static void box(AssetImportDialog dock,boolean xray)throws Exception{
         ((JCheckBox)field(dock,"xraySelect")).setSelected(xray);var canvas=(JPanel)field(dock,"preview");
-        event(canvas,MouseEvent.MOUSE_PRESSED,10,10);event(canvas,MouseEvent.MOUSE_DRAGGED,canvas.getWidth()/2-10,canvas.getHeight()-10);event(canvas,MouseEvent.MOUSE_RELEASED,canvas.getWidth()/2-10,canvas.getHeight()-10);
+        event(canvas,MouseEvent.MOUSE_PRESSED,10,10);event(canvas,MouseEvent.MOUSE_DRAGGED,dock.workingViewportWidth()-10,canvas.getHeight()-10);event(canvas,MouseEvent.MOUSE_RELEASED,dock.workingViewportWidth()-10,canvas.getHeight()-10);
     }
     private static void lasso(AssetImportDialog dock,boolean xray)throws Exception{
         ((JComboBox<?>)field(dock,"areaShape")).setSelectedItem("LASSO");((JCheckBox)field(dock,"xraySelect")).setSelected(xray);
-        var canvas=(JPanel)field(dock,"preview");int half=canvas.getWidth()/2,height=Math.max(180,canvas.getHeight());double scale=Math.min(half-26,height-36);
+        var canvas=(JPanel)field(dock,"preview");int half=dock.workingViewportWidth(),height=Math.max(180,canvas.getHeight());double scale=Math.min(half-26,height-36);
         int x=half/2-(int)Math.round(scale*.5),y=height/2+(int)Math.round(scale*.5);
         event(canvas,MouseEvent.MOUSE_PRESSED,x-8,y);event(canvas,MouseEvent.MOUSE_DRAGGED,x,y-8);event(canvas,MouseEvent.MOUSE_DRAGGED,x+8,y);event(canvas,MouseEvent.MOUSE_DRAGGED,x,y+8);event(canvas,MouseEvent.MOUSE_DRAGGED,x-8,y);event(canvas,MouseEvent.MOUSE_RELEASED,x-8,y);
     }

@@ -19,7 +19,7 @@ public final class AssetImportFaceModelingGuiTest {
     private static void button(AssetImportDialog dock,String name)throws Exception{((JButton)field(dock,name)).doClick();}
     private static void selectFace(AssetImportDialog dock)throws Exception{
         ((JComboBox<?>)field(dock,"meshView")).setSelectedItem(EditorMeshPicking.Projection.FRONT);((JComboBox<?>)field(dock,"selectionMode")).setSelectedItem("FACE");
-        var canvas=(JPanel)field(dock,"preview");int half=canvas.getWidth()/2,height=Math.max(180,canvas.getHeight());double scale=Math.min(half-26,height-36);
+        var canvas=(JPanel)field(dock,"preview");int half=dock.workingViewportWidth(),height=Math.max(180,canvas.getHeight());double scale=Math.min(half-26,height-36);
         int x=half/2+(int)Math.round((.25-.5)*scale),y=height/2+(int)Math.round((-.25+.5)*scale);
         canvas.dispatchEvent(new MouseEvent(canvas,MouseEvent.MOUSE_PRESSED,System.currentTimeMillis(),0,x,y,1,false,MouseEvent.BUTTON1));
         var hit=(EditorMeshPicking.Hit)field(dock,"selectedHit");check(hit!=null&&hit.faceId()==0,"Real viewport click selects original/cap native face0");

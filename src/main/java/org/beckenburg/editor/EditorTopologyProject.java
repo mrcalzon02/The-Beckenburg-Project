@@ -242,13 +242,41 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         }
         replaceVertices(old,next,selected);
     }
+    public enum Transform { ROTATE, SCALE_AXIS, SCALE_UNIFORM }
+    /** Global axes, explicit origin/selection-centroid pivot. Candidate only; shared Apply owns mutation. */
+    public synchronized EditPreview previewTransform(Collection<Long> ids,Transform operation,int axis,double amount,boolean origin){
+        Objects.requireNonNull(ids);Objects.requireNonNull(operation);
+        if(ids.isEmpty()||ids.size()>MAX_VERTICES||axis<0||axis>2||!Double.isFinite(amount)
+                ||(operation==Transform.ROTATE?Math.abs(amount)>36000:amount<.000001||amount>1000000))
+            throw new IllegalArgumentException("Invalid native transform parameters");
+        var selected=new HashSet<>(ids);var old=vertices(state);var next=new HashMap<>(old);
+        for(long id:selected)if(!old.containsKey(id))throw new IllegalArgumentException("Unknown vertex ID");
+        double px=0,py=0,pz=0;
+        if(!origin)for(var v:state.vertices())if(selected.contains(v.id())){px+=v.x()/selected.size();py+=v.y()/selected.size();pz+=v.z()/selected.size();}
+        double radians=StrictMath.toRadians(amount),sin=StrictMath.sin(radians),cos=StrictMath.cos(radians);
+        for(var v:state.vertices())if(selected.contains(v.id())){
+            double x=v.x()-px,y=v.y()-py,z=v.z()-pz;
+            if(operation==Transform.ROTATE){
+                if(axis==0){double yy=cos*y-sin*z;z=sin*y+cos*z;y=yy;}
+                else if(axis==1){double xx=cos*x+sin*z;z=-sin*x+cos*z;x=xx;}
+                else{double xx=cos*x-sin*y;y=sin*x+cos*y;x=xx;}
+            }else{if(operation==Transform.SCALE_UNIFORM||axis==0)x*=amount;if(operation==Transform.SCALE_UNIFORM||axis==1)y*=amount;if(operation==Transform.SCALE_UNIFORM||axis==2)z*=amount;}
+            next.put(v.id(),new Vertex(v.id(),v.part(),x+px,y+py,z+pz));
+        }
+        var after=replacementState(old,next,selected);
+        if(after.equals(state))throw new IllegalArgumentException("Transform does not change selected vertices");
+        return new EditPreview(this,state,after,revision,operation+" / "+selected.size()+" vertices / global "+"XYZ".charAt(axis)+" / "+amount+" / "+(origin?"world origin":"selection centroid"));
+    }
     private void replaceVertices(Map<Long,Vertex> old,Map<Long,Vertex> next,Set<Long> selected){
+        state=replacementState(old,next,selected);revision++;
+    }
+    private State replacementState(Map<Long,Vertex> old,Map<Long,Vertex> next,Set<Long> selected){
         for(var face:state.faces())if(selected.contains(face.a().vertex())||selected.contains(face.b().vertex())||selected.contains(face.c().vertex())){
             double area=area(face,next);
             if(!Double.isFinite(area)||(area==0&&area(face,old)>0))throw new IllegalArgumentException("Vertex move degenerates a face");
         }
         var values=new ArrayList<Vertex>();for(var v:state.vertices())values.add(next.get(v.id()));
-        state=new State(state.sceneId(),state.sourceFingerprint(),state.name(),state.sourceBytes(),values,state.faces());revision++;
+        return new State(state.sceneId(),state.sourceFingerprint(),state.name(),state.sourceBytes(),values,state.faces());
     }
     /** Append a reviewed primitive without welding existing vertices or reassigning their IDs. */
     public synchronized void appendPrimitive(EditorMeshPrimitives.Parameters parameters){
