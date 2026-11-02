@@ -98,6 +98,18 @@ public final class GlbProps {
         return Boolean.getBoolean("beckenburg.devroom.bookTopLeftUV")
             &&(bookCoverMaterial(name)||"blender_ghost_writing_book_2".equals(name));
     }
+    /** Developer-only A/B atlas origin for the remaining user-flagged
+     * environmental/equipment models. Runtime default stays untouched until
+     * the original source texture and actual four-angle renders are compared.
+     * This property is opt-in only in advisory dev-room capture. */
+    static boolean diagnosticRemainingUvOrigin(String name){
+        return Boolean.getBoolean("beckenburg.devroom.remainingTopLeftUV")
+            &&name!=null&&java.util.Set.of(
+                "level_fireplace","tv_mp_1",
+                "blender_health_supplies_1","blender_igniter_2",
+                "blender_igniter_2_lit","blender_sanity_medication_2"
+            ).contains(name);
+    }
     static int imageRow(double v,int height,boolean gltfTopLeft){
         if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
         double fractional=v-Math.floor(v);
@@ -385,7 +397,7 @@ public final class GlbProps {
                 picture=readableBookCover(picture);
             materialIds[i]=TEXTURE_BASE+textures.size();
             textures.add(picture);
-            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)||reviewedSourceGltfUv(resourceName)||diagnosticBookUvOrigin(resourceName)));
+            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)||reviewedSourceGltfUv(resourceName)||diagnosticBookUvOrigin(resourceName)||diagnosticRemainingUvOrigin(resourceName)));
             materialNames.add(String.valueOf(obj(materials.get(i)).getOrDefault("name","")));
             double[] color=vec(pbr.get("baseColorFactor"),1,1,1,1);
             diffuseFactors.add(color);
