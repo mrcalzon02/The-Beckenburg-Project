@@ -2290,6 +2290,20 @@ Evidence and verification: Editor guard commits 2a3271b and 0af5f9f read back, t
 
 Older-map obligation: Identify previously imported GLB derivatives that used nonzero regression; compare source/runtime SHA and visual texture mapping, replace only after authoring a real corrected derivative. Do not infer existing models have been repaired by the new guard.
 
+### DEV-169 — Hollow Creek 67 original alpha tree billboards rendered as opaque black rectangles
+
+**Status:** renderer-source-alpha-and-catalog-repair-committed-awaiting-actual-in-game-acceptance · **Affected:** 67 approved Hollow Creek native camera-facing tree cards (level_hc_native_284_0..350_0); unrelated Matthis proxy falsely cataloged source-only; 17 truly unapproved source-only site/pavilion meshes remain review-only.
+
+Actual prior developer-room capture shows opaque black rectangular backdrop around each original tree instead of genuine cutout foliage. Original tree PNG is correct. Catalog also flagged transparent corner-only UV samples as a flat untextured model; Matthis showed as unapproved even though LevelAssets.approved returned true.
+
+Cause / uncertainty: All 67 original 2-triangle models declare glTF BLEND, have valid alpha PNG atlases (majority fully transparent), and are marked billboard=1 in native scene manifest. The shared software triangle rasterizer discarded material alpha and wrote opaque black pixels/depth; foliage variant conversion discarded alpha; catalog sampled only transparent PNG UV corners and overlooked LevelAssets approvals.
+
+Fix / next action: Commits 7e3e085519 restore original glTF BLEND/MASK registry and single RGB+alpha source sampling; 5166da252a renders material alpha in actual software scene and developer room; df1ab1b996 and 7beb28b04f preserve source PNG alpha and alphaMode during palette variation. Commit f53488bca9 classifies approved Matthis via the true production registry; d6dcc05e53 samples source UV interiors to avoid spurious flat-texture flags. Tests 55b8e31245 and e640fe0588 are advisory. No source GLB/PNG is replaced or painted. Await post-push in-game and DEV room four-angle screenshot acceptance; 17 other source-only models are not silently approved.
+
+Evidence and verification: Prior genuine renderer gallery: 41408571829 artifact 13125290269, 67 black tree rectangles + 18 source-only diagnostics in inventory.csv. Exact original-glTF source inspection run 41409865926 artifact 13124519834 PASS 67 BLEND modes and original alpha PNGs; scene manifest explicitly marks all 67 as billboards. Native alpha and catalog code patch commits above, new Windows dev room workflow run 41410917812 pending. No source replacement or cosmetic release gate.
+
+Older-map obligation: Inspect Hollow Creek gameplay billboards at multiple view distances/angles and production GPU path if installed. Verify that the 17 source-only terrain/pavilion exports remain non-publication preview artifacts pending explicit separate integration and that no other glTF BLEND material was accidentally drawn as opaque.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

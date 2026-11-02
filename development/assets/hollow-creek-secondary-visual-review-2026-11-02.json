@@ -1,0 +1,50 @@
+{
+  "baseline_workflow": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41408571829",
+  "baseline_artifact_id": 13125290269,
+  "source_audit_run": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41409865926",
+  "source_audit_artifact_id": 13124519834,
+  "original_26_item_queue": "DEV-167 (remains closed)",
+  "new_issue": "DEV-169",
+  "observed_legacy_review_texture": 67,
+  "observed_legacy_source_only": 18,
+  "confirmed_source": "67 original 2-triangle native GLBs with BLEND + transparent embedded PNG. All flagged by first-vertex-only texture sampler and software alpha-opaque rendering.",
+  "sample_original_alpha": {
+    "id": "level_hc_native_284_0",
+    "png_pixels": 589824,
+    "fully_transparent": 520105,
+    "partial": 30093,
+    "fully_opaque": 39626,
+    "alpha_mode": "BLEND"
+  },
+  "approved_matthis_proxy": "level_npc_matthis_rook_proxy",
+  "review_only_not_approved": [
+    "level_camp_pavilion_services",
+    "level_site_academy_terrain",
+    "level_site_asylum_terrain",
+    "level_site_college_terrain",
+    "level_site_mansion_terrain",
+    "level_site_prison_terrain",
+    "level_site_wld_03_terrain",
+    "level_site_wld_04_terrain",
+    "level_site_wld_05_terrain",
+    "level_site_wld_06_terrain",
+    "level_site_wld_07_terrain",
+    "level_site_wld_08_terrain",
+    "level_site_wld_09_terrain",
+    "level_site_wld_10_terrain",
+    "level_site_wld_11_terrain",
+    "level_site_wld_12_terrain",
+    "level_site_wld_13_terrain"
+  ],
+  "fixes_pushed": [
+    "f53488bca993b9bafebcb7b3a2ad2d393294e744",
+    "7e3e085519b624298c388b0bb2e155e186fc3256",
+    "5166da252a13c5b92b14e35c6b43c535f7113a26",
+    "df1ab1b99662f0c0a0f9da658d8a3719ddf15518",
+    "d6dcc05e53efc0d8756bad36fa24b414b07cb451",
+    "7beb28b04f2f1846914a3f8f22489ff75e937a3e"
+  ],
+  "post_commit_gallery_run": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41410917812",
+  "visual_acceptance": "pending CI actual renderer A/B and game smoke review",
+  "cosmetic_checks_block_release": false
+}
