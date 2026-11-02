@@ -91,7 +91,11 @@ public final class GlbProps {
      * GLB and UV byte; only correct the runtime PNG row interpretation.
      * Other purchased models remain unchanged pending their own comparison. */
     static boolean reviewedSourceGltfUv(String name){
-        return "metal_barrel_mp_1".equals(name)||
+        // Exact-source fireplace A/B real-render captures show the wood and
+        // green-marble islands aligned only when sampled at glTF's top-left V.
+        // No source mesh, UV coordinates, or original PNG pixels are modified.
+        return "level_fireplace".equals(name)||
+            "metal_barrel_mp_1".equals(name)||
             "canned_food_mp_1".equals(name)||"canned_food_mp_2".equals(name)||
             "kenney_medieval_detail_barrel".equals(name)||
             (name!=null&&name.matches("book_mp_[2-5]"))||
