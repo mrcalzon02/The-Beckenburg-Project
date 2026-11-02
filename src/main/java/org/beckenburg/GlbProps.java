@@ -92,7 +92,17 @@ public final class GlbProps {
             "kenney_medieval_detail_barrel".equals(name)||
             (name!=null&&name.matches("book_mp_[2-5]"))||
             "open_book_mp_1".equals(name)||
-            "blender_ghost_writing_book_2".equals(name);
+            "blender_ghost_writing_book_2".equals(name)||
+            // These five source GLBs are native Khronos glTF/Blender exports.
+            // Their original embedded PNGs and TEXCOORD_0 are top-left
+            // image-space; legacy inverted sampling was reading the opposite
+            // atlas rows (TV fascia, medical labels and lighter body).
+            // Scope this to inspected model identities, not the whole library.
+            "tv_mp_1".equals(name)||
+            "blender_health_supplies_1".equals(name)||
+            "blender_igniter_2".equals(name)||
+            "blender_igniter_2_lit".equals(name)||
+            "blender_sanity_medication_2".equals(name);
     }
     /** Optional DEV ROOM A/B comparison, never enabled by the normal game.
      * Capture the same approved authored models with PNG V-origin interpreted
