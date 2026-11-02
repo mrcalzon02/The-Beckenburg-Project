@@ -575,38 +575,40 @@
     {
       "id": "asset-0002",
       "review_order": 22,
-      "status": "mapped-visible-review-needed",
+      "status": "source-cutout-repaired-awaiting-four-angle-close-render-verification",
       "source_filename": null,
       "source_sha256": null,
       "runtime_model": null,
       "origin": "unknown-imported-or-authored",
-      "diagnostic": "Decoder LOADED (sprites and runtime WORLD/EQUIPMENT) or REVIEW_REGISTRATION (six source-only Hollow Creek pieces); none imply visual approval.",
+      "diagnostic": "The old four-view source extraction cropped y=685, amputating boots. Rebuilt all four actual approved source views using silhouette-aware segmentation through the photographed soles (y=706), restoring source hair and retaining 16 other character PNGs byte-identically.",
       "source_capture": "artifact:13105143372/asset-0002.png",
       "runtime_capture": "artifact:13105143372/asset-0002.png",
-      "repair_commit": null,
+      "repair_commit": "9f275cb39c8cee2303d52978b481843637bf034b",
       "verification": null,
       "kind": "HUNTER",
       "runtime_id": "observer",
       "runtime_path": null,
-      "sprite_identity": "observer"
+      "sprite_identity": "observer",
+      "source_repair_preview": "development/verification/flagged-hunter-source-repair.png"
     },
     {
       "id": "asset-0026",
       "review_order": 23,
-      "status": "mapped-visible-review-needed",
+      "status": "source-cutout-repaired-awaiting-four-angle-close-render-verification",
       "source_filename": null,
       "source_sha256": null,
       "runtime_model": null,
       "origin": "unknown-imported-or-authored",
-      "diagnostic": "Decoder LOADED (sprites and runtime WORLD/EQUIPMENT) or REVIEW_REGISTRATION (six source-only Hollow Creek pieces); none imply visual approval.",
+      "diagnostic": "Restored blue Twin original side-facing hair and face by closing the source RGB head silhouette; only twins/a/side.png changed, other seven original Twin frames byte-identical; no alternate model or invented head.",
       "source_capture": "artifact:13105143372/asset-0026.png",
       "runtime_capture": "artifact:13105143372/asset-0026.png",
-      "repair_commit": null,
+      "repair_commit": "3f6f06fc93bbba94b37b4c6d410af69fa6af5d7e",
       "verification": null,
       "kind": "GHOST",
       "runtime_id": "twins",
       "runtime_path": null,
-      "sprite_identity": "twins"
+      "sprite_identity": "twins",
+      "source_repair_preview": "development/verification/twins-side-head-source-repair.png"
     },
     {
       "id": "asset-0022",
@@ -629,20 +631,21 @@
     {
       "id": "asset-0001",
       "review_order": 25,
-      "status": "mapped-visible-review-needed",
+      "status": "source-cutout-repaired-awaiting-four-angle-close-render-verification",
       "source_filename": null,
       "source_sha256": null,
       "runtime_model": null,
       "origin": "unknown-imported-or-authored",
-      "diagnostic": "Decoder LOADED (sprites and runtime WORLD/EQUIPMENT) or REVIEW_REGISTRATION (six source-only Hollow Creek pieces); none imply visual approval.",
+      "diagnostic": "The old four-view extraction stopped at y=690 and dark hair segmentation removed rear/top head regions. Rebuilt all four source views at y=706 using real master RGB contours; all other 16 unrelated character PNG bytes preserved.",
       "source_capture": "artifact:13105143372/asset-0001.png",
       "runtime_capture": "artifact:13105143372/asset-0001.png",
-      "repair_commit": null,
+      "repair_commit": "9f275cb39c8cee2303d52978b481843637bf034b",
       "verification": null,
       "kind": "HUNTER",
       "runtime_id": "demonologist",
       "runtime_path": null,
-      "sprite_identity": "demonologist"
+      "sprite_identity": "demonologist",
+      "source_repair_preview": "development/verification/flagged-hunter-source-repair.png"
     },
     {
       "id": "asset-0086",
@@ -706,5 +709,12 @@
     ],
     "patch_commit": "01ac2b5acefe217d658c031acc1b2d5e93efade3",
     "pending": "Read back new shipped runtime render in latest developer-room capture before marking render-verified."
+  },
+  "character_cutout_followup": {
+    "hunter_repair_commit": "9f275cb39c8cee2303d52978b481843637bf034b",
+    "twins_repair_commit": "3f6f06fc93bbba94b37b4c6d410af69fa6af5d7e",
+    "renderer_closeup_capture_commit": "1658ed8f55a9b5b85ec22a8c000a8664ebaf9e75",
+    "pending": "Inspect four-angle close-up captures of three repaired sprites; Possessive (asset-0022) remains source-visual review without speculative changes.",
+    "source_bytes_preserved": true
   }
 }
