@@ -79,6 +79,17 @@ public final class GlbProps {
         return name!=null&&(name.matches("ceiling_lamp_[14]_(on|off)")
             ||name.equals("level_utility_light"));
     }
+    /** Targeted owner-reported source UV repair. The original metal-barrel
+     * and canned-food GLBs map their circular caps into the lower portion of
+     * their own PNG atlases (V approx 0.7..1). The legacy bottom-left sampler
+     * was instead fetching the upper label/side rows, producing the observed
+     * half-black barrel cap and corrupted can labels. Preserve every source
+     * GLB and UV byte; only correct the runtime PNG row interpretation.
+     * Other purchased models remain unchanged pending their own comparison. */
+    static boolean reviewedSourceGltfUv(String name){
+        return "metal_barrel_mp_1".equals(name)||
+            "canned_food_mp_1".equals(name)||"canned_food_mp_2".equals(name);
+    }
     static int imageRow(double v,int height,boolean gltfTopLeft){
         if(!Double.isFinite(v)||height<1)throw new IllegalArgumentException("UV V");
         double fractional=v-Math.floor(v);
@@ -366,7 +377,7 @@ public final class GlbProps {
                 picture=readableBookCover(picture);
             materialIds[i]=TEXTURE_BASE+textures.size();
             textures.add(picture);
-            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)));
+            vehicleUvMaterials.add(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)||reviewedSourceGltfUv(resourceName)));
             materialNames.add(String.valueOf(obj(materials.get(i)).getOrDefault("name","")));
             double[] color=vec(pbr.get("baseColorFactor"),1,1,1,1);
             diffuseFactors.add(color);
