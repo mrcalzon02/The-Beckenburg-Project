@@ -23,7 +23,10 @@
     "nativeHost": 41396364295,
     "fullRound": 41396371226,
     "gpu": 41396374380,
-    "status": "dispatched; inspect exact-source terminal results and raw regression summary"
+    "status": "success",
+    "passed": 310,
+    "failed": 0,
+    "skipped": 0
   },
   "limits": [
     "Single triangulated face only; region modeling and geometric intersection repair remain open",

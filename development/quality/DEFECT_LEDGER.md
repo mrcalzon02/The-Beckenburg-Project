@@ -2784,7 +2784,7 @@ Older-map obligation: No authored source file is rewritten. Existing native form
 
 ### DEV-204 — Model publication can pair an old reviewed runtime mesh with newer native authoring state
 
-**Status:** fixed-scoped locally; exact-source CI pending · **Affected:** Actual AssetImportDialog, EditorTopologyProject native observations/reviewed saves and runtime publication
+**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted · **Affected:** Actual AssetImportDialog, EditorTopologyProject native observations/reviewed saves and runtime publication
 
 A real native edit after review can save/archive native X=-0.25 while publishing cached runtime X=0.0; independent UI dirty flags may miss native changes.
 
@@ -2792,7 +2792,7 @@ Cause / uncertainty: The reviewed reduction was checked against a UI mesh cache,
 
 Fix / next action: Use owner-bound immutable native observations, refuse stale review before writes, atomically validate/save/capture the reviewed native bytes and fingerprint, publish the same reviewed render input, and derive unsaved state from the native project. Explicit re-review refreshes actual native state while retaining valid selection.
 
-Evidence and verification: AssetImportPublicationRevisionGuiTest against exact4be25e3a UI source prints actual runtime x=0.0 / actual native x=-0.25 and fails. Corrected actual UI refuses all stale writes, then publishes matching native/runtime data after real human re-review. Native tests verify immutable saved bytes, fingerprint, later unsaved edits, and distinct epoch handling. Full local native service/modeling/GUI/CLI suite passes. See evidence/face-modeling-2026-11-01/.
+Evidence and verification: AssetImportPublicationRevisionGuiTest against exact4be25e3a UI source prints actual runtime x=0.0 / actual native x=-0.25 and fails. Corrected actual UI refuses all stale writes, then publishes matching native/runtime data after real human re-review. Native tests verify immutable saved bytes, fingerprint, later unsaved edits, and distinct epoch handling. Full local native service/modeling/GUI/CLI suite passes. See evidence/face-modeling-2026-11-01/. Exact848f8b21 native41396364295 and standalone41396361150 SUCCESS; full41396371226 raw310/310, zero failed/skipped. GPU41396374380 all11-map residency and three UI cycles also SUCCESS.
 
 Older-map obligation: Existing mismatched published derivatives are not silently rewritten; compare their original/native/runtime provenance individually. No new agent/MCP mesh operations are enabled.
 

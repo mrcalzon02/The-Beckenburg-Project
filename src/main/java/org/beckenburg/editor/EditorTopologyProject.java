@@ -166,6 +166,45 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         state=preview.after;revision++;preview.canceled=true;
     }
     public synchronized void cancelPreview(EditPreview preview){if(preview.owner!=this)throw new IllegalArgumentException("Foreign native preview");preview.canceled=true;}
+    private record WeldPosition(String part,double x,double y,double z){}
+    /** Explicit exact-position weld within each selected part; corner UVs never become vertex attributes. */
+    public synchronized EditPreview previewWeld(Collection<Long> selection){
+        Objects.requireNonNull(selection);var selected=new HashSet<>(selection);
+        if(selected.size()<2||selected.size()>MAX_VERTICES)throw new IllegalArgumentException("Weld needs at least two selected native vertices");
+        int found=0;for(var v:state.vertices())if(selected.contains(v.id()))found++;
+        if(found!=selected.size())throw new IllegalArgumentException("Unknown selected vertex ID");
+        var groups=new HashMap<WeldPosition,Long>();var replacements=new HashMap<Long,Long>();
+        for(var v:state.vertices())if(selected.contains(v.id())){
+            var key=new WeldPosition(v.part(),v.x()==0?0:v.x(),v.y()==0?0:v.y(),v.z()==0?0:v.z());
+            groups.merge(key,v.id(),Math::min);
+        }
+        for(var v:state.vertices())if(selected.contains(v.id())){
+            long target=groups.get(new WeldPosition(v.part(),v.x()==0?0:v.x(),v.y()==0?0:v.y(),v.z()==0?0:v.z()));
+            if(target!=v.id())replacements.put(v.id(),target);
+        }
+        if(replacements.isEmpty())throw new IllegalArgumentException("Selected vertices have no coincident positions within a part");
+        var newVertices=new ArrayList<Vertex>();for(var v:state.vertices())if(!replacements.containsKey(v.id()))newVertices.add(v);
+        var newFaces=new ArrayList<Face>();int removed=0;
+        for(var f:state.faces()){
+            var a=weldCorner(f.a(),replacements);var b=weldCorner(f.b(),replacements);var c=weldCorner(f.c(),replacements);
+            boolean changed=a.vertex()!=f.a().vertex()||b.vertex()!=f.b().vertex()||c.vertex()!=f.c().vertex();
+            if(changed&&(a.vertex()==b.vertex()||b.vertex()==c.vertex()||c.vertex()==a.vertex())){removed++;continue;}
+            newFaces.add(new Face(f.id(),f.part(),a,b,c));
+        }
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces);
+        if(!topology(after).manifold())throw new IllegalArgumentException("Weld would leave invalid topology; select complete seams or repair degenerate faces first");
+        return new EditPreview(this,state,after,revision,"WELD COINCIDENT / -"+replacements.size()+" vertices, -"+removed+" collapsed triangles");
+    }
+    private static Corner weldCorner(Corner value,Map<Long,Long> replacements){return new Corner(replacements.getOrDefault(value.vertex(),value.vertex()),value.u(),value.v());}
+    /** Remove invalid zero/non-finite-area triangles explicitly, retaining every surviving stable ID/UV. */
+    public synchronized EditPreview previewRemoveDegenerates(){
+        var positions=vertices(state);var remaining=new ArrayList<Face>();
+        for(var face:state.faces()){double size=area(face,positions);if(size>0&&Double.isFinite(size))remaining.add(face);}
+        int removed=state.faces().size()-remaining.size();if(removed==0)throw new IllegalArgumentException("No degenerate native faces to remove");
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),remaining);
+        if(!topology(after).manifold())throw new IllegalArgumentException("Other topology errors remain; repair requires a valid resulting mesh");
+        return new EditPreview(this,state,after,revision,"REMOVE DEGENERATES / -"+removed+" triangles; vertex IDs retained");
+    }
     private static double area(Face face,Map<Long,Vertex> vertices){
         var a=vertices.get(face.a().vertex());var b=vertices.get(face.b().vertex());var c=vertices.get(face.c().vertex());
         double x=b.x()-a.x(),y=b.y()-a.y(),z=b.z()-a.z(),u=c.x()-a.x(),v=c.y()-a.y(),w=c.z()-a.z();

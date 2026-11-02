@@ -1,0 +1,24 @@
+{
+  "schema": "beckenburg.native-mesh-repair/v1",
+  "baselineSource": "848f8b2148ea63537127021814e4aaf1fadc8f6b",
+  "localChecks": [
+    "Complete Java17 host compilation",
+    "Entire actual native service/modeling/repair/publication/headless suite PASS",
+    "Independent Java17 JAR repair max120000 faces/360000 source IDs under256MiB",
+    "Existing independent face modeling and native topology/history/persistence tests PASS",
+    "Actual human selection/preview/apply/undo/save and every actual game-decoder corner/native archive"
+  ],
+  "canonicalLfSha256": {
+    "src/main/java/org/beckenburg/editor/EditorTopologyProject.java": "a739c3aa86b52f3f3344ac84a4cc8e1aa92d3efa675a6510e4cc8dd05dc9e3cb",
+    "src/main/java/org/beckenburg/AssetImportDialog.java": "f04ed3b8b2d00a1403caa311aff82e9fc7722f57cc08914fbbb9d9d140e61c5d",
+    "src/test/java/org/beckenburg/editor/EditorMeshRepairTest.java": "89594fd9ad95bc5c3d22dad2aa1fbb837c4565fb6167933fab7669dafb4a9845",
+    "src/test/java/org/beckenburg/AssetImportMeshRepairGuiTest.java": "1bed0b80a0c03908a30afbac8622bd863967c305d258a0c7385cc0c9ae2e4e4f"
+  },
+  "ci": "pending exact-source publication",
+  "limits": [
+    "Exact coincident per-part welding only; smallest stable ID retained",
+    "Unselected invalid faces are not silently deleted by welding",
+    "Both repairs require a valid resulting topology; general regional/nonmanifold repair remains open",
+    "No new agent mesh API, G2 completion or physical acceptance inferred"
+  ]
+}

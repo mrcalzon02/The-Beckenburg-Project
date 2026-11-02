@@ -40,7 +40,7 @@ public final class AssetImportDialog {
             Graphics2D p=(Graphics2D)g.create();
             p.setColor(new Color(20,24,29));p.fillRect(0,0,getWidth(),getHeight());
             if(source!=null)draw(p,source.triangles(),0,getWidth()/2,topologyProject==null?"SOURCE":"WORKING MESH");
-            if(modelingMesh!=null)draw(p,modelingMesh.triangles(),getWidth()/2,getWidth()-getWidth()/2,"FACE EDIT PREVIEW");
+            if(modelingMesh!=null)draw(p,modelingMesh.triangles(),getWidth()/2,getWidth()-getWidth()/2,"MODEL EDIT PREVIEW");
             else if(primitivePreview!=null)draw(p,primitivePreview.triangles(),getWidth()/2,getWidth()-getWidth()/2,"PRIMITIVE PREVIEW");
             else if(result!=null)draw(p,result.optimized().triangles(),getWidth()/2,getWidth()-getWidth()/2,"PREVIEW");
             p.dispose();
@@ -80,12 +80,13 @@ public final class AssetImportDialog {
     private boolean lassoGesture;
     private final JComboBox<EditorTopologyProject.FaceEdit> faceOperation=new JComboBox<>(EditorTopologyProject.FaceEdit.values());
     private final JSpinner faceAmount=new JSpinner(new SpinnerNumberModel(.25,-10000d,10000d,.05));
-    private final JButton previewFaceEdit=new JButton("PREVIEW FACE EDIT"),applyFaceEdit=new JButton("APPLY FACE EDIT"),cancelFaceEdit=new JButton("CANCEL FACE EDIT");
+    private final JButton previewFaceEdit=new JButton("PREVIEW FACE EDIT"),applyFaceEdit=new JButton("APPLY MODEL EDIT"),cancelFaceEdit=new JButton("CANCEL MODEL EDIT");
     private EditorTopologyProject.EditPreview modelingPreview;
     private EditorMeshPipeline.Mesh modelingMesh;
     private List<EditorMeshPipeline.Triangle> modelingBounds;
     private int modelingGeneration;
     private boolean modelingPreparing;
+    private final JButton previewWeld=new JButton("PREVIEW WELD COINCIDENT"),previewDegenerates=new JButton("PREVIEW REMOVE DEGENERATES");
     private EditorTopologyProject topologyProject;
     private EditorTopologyProject.Observation workingObservation;
     private EditorTopologyProject.Vertex selectedVertex;
@@ -177,8 +178,13 @@ public final class AssetImportDialog {
         faceAmount.setToolTipText("Select a FACE. Extrude: signed normal distance. Inset: fraction greater than0 and less than1.");
         faceOperation.addActionListener(e->clearModelingPreview());faceAmount.addChangeListener(e->clearModelingPreview());
         previewFaceEdit.addActionListener(e->previewModelingEdit());cancelFaceEdit.addActionListener(e->clearModelingPreview());
-        applyFaceEdit.addActionListener(e->{if(modelingPreview!=null&&!busy){var edit=modelingPreview;meshEdit(()->topologyProject.applyPreview(edit));if(topologyProject.snapshot()==edit.snapshot()){selectedHit=null;selectionLabel.setText("Face edit committed");}clearModelingPreview();}});
-        JPanel vertexAndModeling=new JPanel(new BorderLayout());vertexAndModeling.add(vertexControls,BorderLayout.NORTH);vertexAndModeling.add(modelingControls,BorderLayout.SOUTH);
+        applyFaceEdit.addActionListener(e->{if(modelingPreview!=null&&!busy){var edit=modelingPreview;meshEdit(()->topologyProject.applyPreview(edit));if(topologyProject.snapshot()==edit.snapshot()){selectedHit=null;selectionLabel.setText("Model edit committed");}clearModelingPreview();}});
+        JPanel repairControls=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));repairControls.add(previewWeld);repairControls.add(previewDegenerates);repairControls.add(new JLabel("Explicit native repair; inspect candidate, then Apply."));
+        previewWeld.setToolTipText("Select vertices with X-ray/area selection. Exact coincident positions weld per part; UV seams stay per corner.");
+        previewWeld.addActionListener(e->{var ids=java.util.Set.copyOf(selectedVertices);beginModelingPreview(p->p.previewWeld(ids));});
+        previewDegenerates.addActionListener(e->beginModelingPreview(EditorTopologyProject::previewRemoveDegenerates));
+        JPanel modelingRows=new JPanel(new BorderLayout());modelingRows.add(modelingControls,BorderLayout.NORTH);modelingRows.add(repairControls,BorderLayout.SOUTH);
+        JPanel vertexAndModeling=new JPanel(new BorderLayout());vertexAndModeling.add(vertexControls,BorderLayout.NORTH);vertexAndModeling.add(modelingRows,BorderLayout.SOUTH);
         JPanel lower=new JPanel(new BorderLayout());lower.add(preset,BorderLayout.NORTH);lower.add(primitiveControls,BorderLayout.CENTER);lower.add(vertexAndModeling,BorderLayout.SOUTH);
         controls.add(lower,BorderLayout.SOUTH);refreshMeshControls();
         JPanel top=new JPanel(new BorderLayout(4,5));
@@ -197,7 +203,7 @@ public final class AssetImportDialog {
         footer.add(apply);footer.add(close);
         content.add(footer,BorderLayout.SOUTH);
         content.setBorder(BorderFactory.createEmptyBorder(6,6,6,6));
-        dialog.setContentPane(content);dialog.setSize(1010,780);
+        dialog.setContentPane(content);dialog.setSize(1010,820);
         dialog.setLocationRelativeTo(parent);
         dialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         dialog.addWindowListener(new WindowAdapter(){@Override public void windowClosing(WindowEvent e){requestClose();}});
@@ -235,6 +241,7 @@ public final class AssetImportDialog {
         boxSelect.setEnabled(editable);xraySelect.setEnabled(editable);areaShape.setEnabled(editable);
         faceOperation.setEnabled(topologyProject!=null&&!busy);faceAmount.setEnabled(topologyProject!=null&&!busy);
         previewFaceEdit.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
+        previewWeld.setEnabled(editable&&selectionMode.getSelectedIndex()==0&&selectedVertices.size()>1);previewDegenerates.setEnabled(editable);
         applyFaceEdit.setEnabled(!busy&&modelingPreview!=null);cancelFaceEdit.setEnabled(modelingPreview!=null||modelingPreparing);
         updatePublishAvailability();
     }
@@ -247,14 +254,18 @@ public final class AssetImportDialog {
     private record ModelingReview(EditorTopologyProject.EditPreview edit,EditorMeshPipeline.Mesh mesh,List<EditorMeshPipeline.Triangle> bounds){}
     private void previewModelingEdit(){
         if(busy||topologyProject==null||selectedHit==null||selectionMode.getSelectedIndex()!=2)return;
+        long face=selectedHit.faceId();var operation=(EditorTopologyProject.FaceEdit)faceOperation.getSelectedItem();double amount=((Number)faceAmount.getValue()).doubleValue();
+        beginModelingPreview(p->p.previewFaceEdit(face,operation,amount));
+    }
+    private void beginModelingPreview(java.util.function.Function<EditorTopologyProject,EditorTopologyProject.EditPreview> editOperation){
+        if(busy||topologyProject==null)return;
         if(!topologyProject.isCurrent(workingObservation)){workingObservation=topologyProject.observe();source=workingObservation.mesh();}
         cancelAxisDrag();cancelBoxSelection();clearPrimitivePreview();clearModelingPreview();
-        var project=topologyProject;var state=workingObservation.snapshot();long nativeRevision=workingObservation.revision(),face=selectedHit.faceId();int request=modelingGeneration;
-        var operation=(EditorTopologyProject.FaceEdit)faceOperation.getSelectedItem();double amount=((Number)faceAmount.getValue()).doubleValue();var working=source;
-        busy=true;modelingPreparing=true;choose.setEnabled(false);refreshMeshControls();details.append("\nPreparing native face edit...");
+        var project=topologyProject;var state=workingObservation.snapshot();long nativeRevision=workingObservation.revision();int request=modelingGeneration;var working=source;
+        busy=true;modelingPreparing=true;choose.setEnabled(false);refreshMeshControls();details.append("\nPreparing native model edit...");
         new SwingWorker<ModelingReview,Void>(){
             protected ModelingReview doInBackground(){
-                var edit=project.previewFaceEdit(face,operation,amount);var mesh=edit.mesh();var bounds=new ArrayList<>(working.triangles());bounds.addAll(mesh.triangles());
+                var edit=editOperation.apply(project);var mesh=edit.mesh();var bounds=new ArrayList<>(working.triangles());bounds.addAll(mesh.triangles());
                 return new ModelingReview(edit,mesh,List.copyOf(bounds));
             }
             protected void done(){
@@ -263,7 +274,7 @@ public final class AssetImportDialog {
                     if(request!=modelingGeneration)throw new java.util.concurrent.CancellationException();var review=get();
                     if(project!=topologyProject||project.revision()!=nativeRevision||project.snapshot()!=state)throw new IOException("Mesh changed during modeling preview");
                     modelingPreview=review.edit();modelingMesh=review.mesh();modelingBounds=review.bounds();details.append("\nNATIVE PREVIEW: "+review.edit().description()+". Apply to commit.");
-                }catch(java.util.concurrent.CancellationException canceled){details.append("\nFace preview canceled.");}
+                }catch(java.util.concurrent.CancellationException canceled){details.append("\nModel preview canceled.");}
                 catch(Exception failure){details.append("\nMODEL EDIT REFUSED: "+rootMessage(failure));}
                 refreshMeshControls();preview.repaint();
             }
