@@ -120,6 +120,42 @@ public final class AssetImportTopologyGuiTest {
             await(()->{try{return ((JTextArea)field(ui.get(),"details")).getText().contains("PUBLISH FAILED:");}catch(Exception e){throw new RuntimeException(e);}});
             check(published.get()==null&&ImportedAssetLibrary.available().equals(approved)&&Arrays.equals(changedGlb,Files.readAllBytes(glb)),
                 "Zero-regression GLB cannot bypass review by rereading externally replaced geometry");
+            SwingUtilities.invokeAndWait(()->{try{((JButton)field(ui.get(),"newMesh")).doClick();}catch(Exception e){throw new RuntimeException(e);}});
+            var nativeProject=new AtomicReference<org.beckenburg.editor.EditorTopologyProject>();
+            SwingUtilities.invokeAndWait(()->{try{
+                var dock=ui.get();var project=(org.beckenburg.editor.EditorTopologyProject)field(dock,"topologyProject");nativeProject.set(project);
+                check(project.snapshot().faces().isEmpty(),"New human mesh starts empty in native state");
+                for(var kind:org.beckenburg.editor.EditorMeshPrimitives.Kind.values()){
+                    var before=project.snapshot();
+                    ((JComboBox<?>)field(dock,"primitiveKind")).setSelectedItem(kind);
+                    ((JButton)field(dock,"previewPrimitive")).doClick();
+                    check(project.snapshot()==before,"Human primitive preview leaves actual authoring state untouched");
+                    check(((JButton)field(dock,"applyPrimitive")).isEnabled(),"Reviewed primitive is explicitly applicable");
+                    if(kind==org.beckenburg.editor.EditorMeshPrimitives.Kind.BOX){
+                        ((JSpinner)field(dock,"primitiveWidth")).setValue(2d);
+                        check(!((JButton)field(dock,"applyPrimitive")).isEnabled(),"Changing parameters invalidates prior primitive review");
+                        ((JButton)field(dock,"previewPrimitive")).doClick();
+                    }
+                    ((JButton)field(dock,"applyPrimitive")).doClick();var after=project.snapshot();
+                    check(after.faces().size()>before.faces().size(),"Human apply commits real primitive geometry");
+                    ((JButton)field(dock,"undoMesh")).doClick();check(project.snapshot().equals(before),"Human primitive undo");
+                    ((JButton)field(dock,"redoMesh")).doClick();check(project.snapshot().equals(after),"Human primitive redo");
+                }
+                ((JButton)field(dock,"saveMesh")).doClick();
+                check(org.beckenburg.editor.EditorTopologyProject.open(project.documentPath()).snapshot().equals(project.snapshot()),"Fresh native primitive document readback");
+            }catch(Exception e){throw new RuntimeException(e);}});
+            await(()->{try{return ((JButton)field(ui.get(),"apply")).isEnabled();}catch(Exception e){throw new RuntimeException(e);}});
+            SwingUtilities.invokeAndWait(()->{try{
+                var dock=ui.get();((JButton)field(dock,"previewPrimitive")).doClick();
+                var content=((JDialog)field(dock,"dialog")).getContentPane();
+                var image=new BufferedImage(content.getWidth(),content.getHeight(),BufferedImage.TYPE_INT_ARGB);var g=image.createGraphics();
+                try{content.printAll(g);}finally{g.dispose();}ImageIO.write(image,"png",output.resolveSibling("mesh-primitives-human.png").toFile());
+                ((JButton)field(dock,"apply")).doClick();
+            }catch(Exception e){throw new RuntimeException(e);}});
+            await(()->published.get()!=null);runtimeMesh(published.get(),nativeProject.get().mesh());
+            var primitiveArchive=org.beckenburg.editor.EditorTopologyProject.open(ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop"));
+            check(primitiveArchive.snapshot().equals(nativeProject.get().snapshot()),"Published primitive retains exact native IDs and corner UVs");
+            System.out.println("PASS real human five-primitive preview/apply/undo/redo, parameter invalidation, new native mesh/save/fresh reopen, UI PNG and every published runtime GLB corner");
             System.out.println("PASS actual human mesh authoring: stable vertex move/undo/redo, native save/reopen/fresh chooser load, topology review/UI PNG, runtime GLB publish, exact editable/original source archives and changed-source rejection");
         }finally{
             SwingUtilities.invokeAndWait(()->{if(ui.get()!=null)try{((JDialog)field(ui.get(),"dialog")).dispose();}catch(Exception e){throw new RuntimeException(e);}});

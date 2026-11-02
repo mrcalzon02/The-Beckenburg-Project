@@ -94,6 +94,28 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var values=new ArrayList<Vertex>();for(var v:state.vertices())values.add(v.id()==id?replacement:v);
         state=new State(state.sceneId(),state.sourceFingerprint(),state.name(),state.sourceBytes(),values,state.faces());revision++;
     }
+    /** Append a reviewed primitive without welding existing vertices or reassigning their IDs. */
+    public synchronized void appendPrimitive(EditorMeshPrimitives.Parameters parameters){
+        var mesh=EditorMeshPrimitives.preview(parameters);
+        if((long)state.faces().size()+mesh.triangles().size()>EditorMeshPipeline.MAX_TRIANGLES)
+            throw new IllegalArgumentException("Project triangle budget exceeded");
+        var graph=EditorMeshTopology.build(mesh);
+        if(graph.issueCount()!=0)throw new IllegalArgumentException("Invalid primitive topology");
+        long nextVertex=state.vertices().stream().mapToLong(Vertex::id).max().orElse(-1)+1;
+        long nextFace=state.faces().stream().mapToLong(Face::id).max().orElse(-1)+1;
+        if(nextVertex<0||nextFace<0||nextVertex>Long.MAX_VALUE-graph.vertices().size()||nextFace>Long.MAX_VALUE-mesh.triangles().size())
+            throw new IllegalArgumentException("Primitive ID budget exceeded");
+        String part="primitive-"+nextFace+"-"+parameters.kind().name().toLowerCase(Locale.ROOT);
+        var vertices=new ArrayList<>(state.vertices());var faces=new ArrayList<>(state.faces());
+        for(var v:graph.vertices())vertices.add(new Vertex(nextVertex++,part,v.x(),v.y(),v.z()));
+        long base=nextVertex-graph.vertices().size();
+        for(int i=0;i<mesh.triangles().size();i++){
+            var t=mesh.triangles().get(i);var uv=List.of(t.a(),t.b(),t.c());var corners=new ArrayList<Corner>();
+            for(int j=0;j<3;j++)corners.add(new Corner(base+graph.edges().get(i*3+j).origin(),uv.get(j).u(),uv.get(j).v()));
+            faces.add(new Face(nextFace++,part,corners.get(0),corners.get(1),corners.get(2)));
+        }
+        state=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),vertices,faces);revision++;
+    }
     private static void write(State state,OutputStream out)throws IOException{
         var data=new DataOutputStream(out);data.writeInt(MAGIC);data.writeInt(VERSION);
         data.writeUTF(state.sceneId());data.writeUTF(state.sourceFingerprint());data.writeUTF(state.name());data.writeLong(state.sourceBytes());

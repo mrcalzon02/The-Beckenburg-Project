@@ -27,11 +27,11 @@
   "ci": {
     "nativeHost": {
       "run": 41367120522,
-      "status": "in_progress"
+      "status": "success"
     },
     "standalone": {
       "run": 41367126147,
-      "status": "in_progress"
+      "status": "success"
     },
     "fullRound": {
       "run": 41367132677,
@@ -60,6 +60,6 @@
     "Trusted local source/service/headless scope; authenticated MCP and broad scripting remain later gates.",
     "Partial G2 indexed vertex authoring is delivered; primitives/picking/gizmos/edge-face modeling/material-normal interchange remain open.",
     "No G0-G12, physical installed-loop, power-loss or FPS completion inferred.",
-    "Upstream GPU41362364664 failed its later UI smoke after real engine/Mesa checks passed; artifact diagnosis remains separate from local CPU/native service acceptance."
+    "Correction: upstream GPU41362364664 stopped in WorldResidencyGpuReview before USER-first; UI smoke was never reached. Source6b9088f4 constructed USER without a persisted project (existing DEV-176). Current branch already uses ReviewMapFixtures.userLevel; exact combined GPU41368128355 is running, not yet accepted."
   ]
 }

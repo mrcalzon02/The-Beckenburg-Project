@@ -5,3 +5,5 @@ The initial `import-review.png` and `import-review-before-newline-fix.png` are a
 `indexed-vertex-authoring.png` is a later actual component capture after human vertex0 moved to X=-0.25, with stable-ID selection highlight and native mesh save/reopen controls. The test uses real buttons and fresh native source load, compares every published runtime corner, and verifies exact original/editable source archives and changed-source refusals.
 
 All images show a four-face test OBJ fixture in the human tool. They are UI/fixture evidence, not authored map/model art, installed gameplay, renderer-quality or complete G2 acceptance. Selection/gizmos, primitives, edge/face modeling and full material/normal interchange remain open.
+
+`primitive-authoring.png` captures the actual human dock after five separately owned primitive fixture parts were committed, with a pending torus preview. Native topology reports five islands, 16 plane boundary edges and zero issues. This is fixture UI evidence, not production model art or complete G2 acceptance. Primitive creation is now implemented; picking/gizmos, edge/face modeling and full interchange remain open.
