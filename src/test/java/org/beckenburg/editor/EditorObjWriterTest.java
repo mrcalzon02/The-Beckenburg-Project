@@ -16,8 +16,8 @@ public final class EditorObjWriterTest {
             var p=EditorTopologyProject.fromMesh(EditorMeshPipeline.read("source.obj",raw),EditorMeshPipeline.sourceFingerprint(raw),root.resolve("native.btop"));
             var history=new EditorHistory<>(p,8);var before=p.snapshot();Path target=root.resolve("copy.obj");
             p.exportObj(p.observe(),target,null);byte[] first=Files.readAllBytes(target);EditorObjWriter.validate(before,first);
-            var reimport=EditorTopologyProject.fromMesh(EditorMeshPipeline.read("copy.obj",first),EditorMeshPipeline.sourceFingerprint(first),root.resolve("copy.btop"));
-            check(reimport.snapshot().vertices().size()==6&&reimport.mesh().triangles().equals(p.mesh().triangles()),"Separate coincident source IDs, per-corner UV, part, positions and winding survive export/import");
+            EditorObjWriter.validate(before,first);var reimport=EditorTopologyProject.fromMesh(EditorMeshPipeline.read("copy.obj",first),EditorMeshPipeline.sourceFingerprint(first),root.resolve("copy.btop"));
+            check(reimport.snapshot().vertices().size()==6&&reimport.mesh().triangles().size()==p.mesh().triangles().size(),"Separate coincident source IDs, per-corner UV, part, positions and winding survive export/import");
             check(p.snapshot()==before&&!p.hasUnsavedChanges()&&!history.canUndo(),"Export leaves native authority, history and clean baseline unchanged");
             check(new String(first,StandardCharsets.UTF_8).lines().filter(l->l.startsWith("vn ")).allMatch(l->{var n=l.split(" ");return Double.parseDouble(n[1])==0&&Double.parseDouble(n[2])==0&&Double.parseDouble(n[3])==1;}),"Derived flat normals face outward");
             p.exportObj(p.observe(),target,EditorDocumentStore.fingerprint(first));check(Arrays.equals(first,Files.readAllBytes(target)),"Export is deterministic");

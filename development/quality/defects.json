@@ -1796,14 +1796,14 @@
       "older_maps": "Identify previously imported GLB derivatives that used nonzero regression; compare source/runtime SHA and visual texture mapping, replace only after authoring a real corrected derivative. Do not infer existing models have been repaired by the new guard."
     },
     {
-      "id": "DEV-169",
+      "id": "DEV-208",
       "title": "Castle resident placement assertion treated its own body as an obstruction",
       "status": "corrected-locally; wider resident approach review pending",
       "affected": "CastleSupportArtTest / Matthis Rook placement inspection",
       "symptom": "The advisory CI and local test failed at Matthis Rook although CastleHubIntegrationTest intentionally requires that players cannot walk through his body.",
       "cause": "The placement test called player traversable at the resident centre, which correctly includes CastleArchive.occupies.",
       "action": "Use a shared ground-placement query that excludes only character occupancy and retains floors, walls, doors, furnishings, warehouse and service fixture collision. Keep normal player traversal unchanged.",
-      "evidence": "CastleSupportArtTest now passes with negative controls for unsupported ground, furniture intersection and preserved keeper-body collision; CastleHubIntegrationTest also passes.",
+      "evidence": "CastleSupportArtTest now passes with negative controls for unsupported ground, furniture intersection and preserved keeper-body collision; CastleHubIntegrationTest also passes. Historical branch identifier DEV-169 collided with main Hollow Creek alpha-tree defect; canonical merged identifier is DEV-208. See DEFECT_ID_RECONCILIATION_2026-11-01.md.",
       "older_maps": "Separate support/placement from self-collision in actor placement checks; never relax actual furniture or wall collision to satisfy a test."
     },
     {
@@ -2201,6 +2201,28 @@
       "action": "Use a model-owned contextual workspace, native part outliner, single working view, explicit/pending comparisons, collapsible diagnostics and focus restoration. Preserve actual native handlers/history/persistence/runtime publication. Main level-view source is unchanged.",
       "evidence": "EditorTopologyWorkspaceGuiTest plus actual human picking/selection/modeling/export/publication tests pass locally. Fixture captures: development/quality/evidence/topology-workspace-2026-11-01/. Full standards applicability review: docs/editor/requirements/MODULE_WORKSPACE_AUDIT.md.",
       "older_maps": "No map/model art modified. Other modules require their own workflow-specific workspace audit; do not inherit this model layout or claim complete gold-standard acceptance."
+    },
+    {
+      "id": "DEV-206",
+      "title": "Authored corner normals are discarded by model import, native state and export",
+      "status": "fixed-scoped; exact pre-fix negative control and local native/portable/human tests passed; remote acceptance pending",
+      "affected": "OBJ/STL importer, native indexed corner schema, transform/modeling paths, OBJ/GLB export and read-only GLB normal inspection",
+      "symptom": "A real OBJ normal(0,0,2) becomes zero direction in the actual game decoder after editor publication. Hard-edge/smooth corner attributes cannot survive native save or transforms.",
+      "cause": "Portable vertices and native corners contained only position/UV data; vn/STL directions were discarded and generated GLB omitted NORMAL.",
+      "action": "Keep validated optional immutable corner normals; write v2 only for normal-bearing BTOP and preserve v1 otherwise. Retain raw OBJ/native values, apply inverse-transpose/differential under native edits, preserve stable IDs and UVs, validate real importer readback and write normalized glTF NORMAL. Show actual attributes in the model-only overlay/read-only GLB view.",
+      "evidence": "Exact3cd88128 old importer/writer fails NormalLossControl through the real GlbProps decoder with0,0,0; corrected classes pass the identical control. EditorCornerNormalsTest --stress and AssetImportNormalsGuiTest pass; see evidence/corner-normals-2026-11-02/.",
+      "older_maps": "No source art rewritten. Existing normal-less native files retain v1 encoding. Audit each previously published derivative against its own authored source; do not silently replace registered imports or claim all materials preserved."
+    },
+    {
+      "id": "DEV-207",
+      "title": "Imported model normals do not reach software lighting and are dropped during subdivision",
+      "status": "fixed-scoped; local production placement/subdivision/native-light parity tests passed; GPU/full regression pending",
+      "affected": "SceneRenderer imported mesh placement, software drawLitFace and directional-light preparation",
+      "symptom": "Even decoded authored normal metadata is omitted from imported Face attributes; software drawLitFace samples without normals and its subdivided children lose normal/owner attributes. GPU has a directional path that software does not match.",
+      "cause": "Imported faces used the no-normal constructor, software vertices bypassed directional sampling, and subdivision used the geometry-only constructor.",
+      "action": "Carry actual registered import directions through world inverse-transpose/yaw, preserve/interpolate normal and owner attributes through software subdivision, and share the existing directional adjustment between software and GPU vertex preparation. Preserve concurrent source-alpha repairs during reconciliation.",
+      "evidence": "AssetImportNormalsGuiTest inspects actual production faces after nonuniform placement/yaw, actual subdivided faces/owners and actual native House lamp direction response; software and GPU prepared RGB match. Real fixture rasterizer and UI captures are in evidence/corner-normals-2026-11-02/.",
+      "older_maps": "No broad visual signoff: inspect existing authored-normal props/van and renderer behavior individually. Required actual GPU/full-round checks remain source-pinned and pending until observed."
     }
   ],
   "audit_categories": [

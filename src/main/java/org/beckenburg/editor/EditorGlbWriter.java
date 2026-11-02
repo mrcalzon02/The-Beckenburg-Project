@@ -25,8 +25,9 @@ public final class EditorGlbWriter {
         ByteArrayOutputStream image=new ByteArrayOutputStream();
         if(!ImageIO.write(checker,"png",image))throw new IOException("PNG image encoder unavailable");
         byte[] png=image.toByteArray();
-        int posBytes=count*12,uvBytes=count*8,indexBytes=count*2;
-        int imageStart=pad4(posBytes+uvBytes+indexBytes);
+        boolean normals=mesh.triangles().stream().anyMatch(t->t.a().normal()!=null||t.b().normal()!=null||t.c().normal()!=null);
+        int posBytes=count*12,uvBytes=count*8,indexBytes=count*2,normalStart=pad4(posBytes+uvBytes+indexBytes),normalBytes=normals?count*12:0;
+        int imageStart=pad4(normalStart+normalBytes);
         int binSize=pad4(imageStart+png.length);
         ByteBuffer binary=ByteBuffer.allocate(binSize).order(ByteOrder.LITTLE_ENDIAN);
         for(var t:mesh.triangles())for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
@@ -36,19 +37,22 @@ public final class EditorGlbWriter {
             binary.putFloat((float)v.u());binary.putFloat((float)v.v());
         }
         for(int i=0;i<count;i++)binary.putShort((short)i);
+        if(normals){binary.position(normalStart);for(var t:mesh.triangles())for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
+            var n=EditorMeshNormals.unit(EditorMeshNormals.effective(t,v));binary.putFloat((float)n.x());binary.putFloat((float)n.y());binary.putFloat((float)n.z());
+        }}
         binary.position(imageStart);binary.put(png);
         String json="{\"asset\":{\"version\":\"2.0\",\"generator\":\"Beckenburg EditorAssetPipeline\"},"+
             "\"scene\":0,\"scenes\":[{\"nodes\":[0]}],\"nodes\":[{\"name\":\"Imported Model\",\"mesh\":0}],"+
-            "\"meshes\":[{\"primitives\":[{\"attributes\":{\"POSITION\":0,\"TEXCOORD_0\":1},"+
+            "\"meshes\":[{\"primitives\":[{\"attributes\":{\"POSITION\":0,\"TEXCOORD_0\":1"+(normals?",\"NORMAL\":3":"")+"},"+
             "\"indices\":2,\"material\":0,\"mode\":4}]}],"+
             "\"buffers\":[{\"byteLength\":"+binSize+"}],"+
             "\"bufferViews\":[{\"buffer\":0,\"byteOffset\":0,\"byteLength\":"+posBytes+"},"+
             "{\"buffer\":0,\"byteOffset\":"+posBytes+",\"byteLength\":"+uvBytes+"},"+
             "{\"buffer\":0,\"byteOffset\":"+(posBytes+uvBytes)+",\"byteLength\":"+indexBytes+"},"+
-            "{\"buffer\":0,\"byteOffset\":"+imageStart+",\"byteLength\":"+png.length+"}],"+
+            "{\"buffer\":0,\"byteOffset\":"+imageStart+",\"byteLength\":"+png.length+"}"+(normals?",{\"buffer\":0,\"byteOffset\":"+normalStart+",\"byteLength\":"+normalBytes+"}":"")+"],"+
             "\"accessors\":[{\"bufferView\":0,\"componentType\":5126,\"count\":"+count+",\"type\":\"VEC3\"},"+
             "{\"bufferView\":1,\"componentType\":5126,\"count\":"+count+",\"type\":\"VEC2\"},"+
-            "{\"bufferView\":2,\"componentType\":5123,\"count\":"+count+",\"type\":\"SCALAR\"}],"+
+            "{\"bufferView\":2,\"componentType\":5123,\"count\":"+count+",\"type\":\"SCALAR\"}"+(normals?",{\"bufferView\":4,\"componentType\":5126,\"count\":"+count+",\"type\":\"VEC3\"}":"")+"],"+
             "\"images\":[{\"bufferView\":3,\"mimeType\":\"image/png\"}],"+
             "\"textures\":[{\"source\":0}],"+
             "\"materials\":[{\"name\":\"PSX preview fallback atlas (replace with licensed art)\","+

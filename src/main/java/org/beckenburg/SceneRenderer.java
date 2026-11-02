@@ -422,6 +422,7 @@ public final class SceneRenderer {
             double x,double y,double z,double sx,double sy,double sz,double yaw){
         var variation=FoliageVariation.profile(id,x,z);
         final double cos=Math.cos(yaw+variation.rotation()),sin=Math.sin(yaw+variation.rotation());
+        boolean importedNormals=ImportedAssetLibrary.approved(id);
         double height=FoliageVariation.foliage(id)?model.triangles().stream().flatMap(t->java.util.stream.Stream.of(t.a(),t.b(),t.c())).mapToDouble(GlbProps.Vertex::y).max().orElse(1)*sy:1;
         for(GlbProps.Triangle t:model.triangles()){
             GlbProps.Vertex[] vv={t.a(),t.b(),t.c()};
@@ -435,8 +436,13 @@ public final class SceneRenderer {
             int material=FoliageVariation.foliage(id)&&FoliageVariation.leafMaterial(GlbProps.materialName(t.material()))?GlbProps.foliageMaterial(t.material(),variation.seed()):t.material();
             out.add(new Face(pp[0],pp[1],pp[2],0xffffff,id.equals("tv_mp_1")&&GlbProps.materialName(t.material()).equals("crt_screen_mp_1")?GlbProps.televisionMaterial(x,y,z):material,
                 vv[0].u(),vv[0].v(),vv[1].u(),vv[1].v(),
-                vv[2].u(),vv[2].v()));
+                vv[2].u(),vv[2].v(),-1,importedNormals?importedNormal(vv[0],sx,sy,sz,cos,sin):null,importedNormals?importedNormal(vv[1],sx,sy,sz,cos,sin):null,importedNormals?importedNormal(vv[2],sx,sy,sz,cos,sin):null));
         }
+    }
+    /** Authored model directions use the same world inverse-transpose as actual position placement. */
+    private static Point importedNormal(GlbProps.Vertex v,double sx,double sy,double sz,double cos,double sin){
+        if(sx==0||sy==0||sz==0)return null;double x=v.nx()/sx,y=v.ny()/sy,z=v.nz()/sz,length=Math.hypot(Math.hypot(x,y),z);
+        if(length==0||!Double.isFinite(length))return null;x/=length;y/=length;z/=length;return new Point(x*cos-z*sin,y,x*sin+z*cos);
     }
     /** Align castle prop footprints to authored sockets and rest their measured
      * lowest vertex on the supporting surface. GLB source origins are arbitrary. */
@@ -2141,7 +2147,7 @@ public final class SceneRenderer {
             result=new Vertex(p,u,v,Math.max(rgb.r(),glow.r()),
                 Math.max(rgb.g(),glow.g()),Math.max(rgb.b(),glow.b()));
         }else result=litVertex(p,u,v,material,room,true);
-        if(normal!=null){var n=fixtureLighting.sampleNormal(room,p.x,p.y,p.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,p.x,p.y,p.z);result=new Vertex(p,u,v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));}
+        result=normalLight(result,p,room,normal);
         // Static fixture/emissive and occlusion-approved local lights retain
         // their CPU probes. The handheld camera lamp is now evaluated for
         // every visible fragment by OpenGL, rather than baked per vertex.
@@ -3406,14 +3412,22 @@ public final class SceneRenderer {
             &&depth<lightingSubdivisionLimit(Math.max(0,
                 Math.min(ca0.z,Math.min(cb0.z,cc0.z))))
             &&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
-            Point ab=mid(f.a,f.b),bc=mid(f.b,f.c),ca=mid(f.c,f.a);double abu=(f.au+f.bu)/2,abv=(f.av+f.bv)/2,bcu=(f.bu+f.cu)/2,bcv=(f.bv+f.cv)/2,cau=(f.cu+f.au)/2,cav=(f.cv+f.av)/2;
-            drawLitFace(new Face(f.a,ab,ca,f.color,f.material,f.au,f.av,abu,abv,cau,cav),room,depth+1);drawLitFace(new Face(ab,f.b,bc,f.color,f.material,abu,abv,f.bu,f.bv,bcu,bcv),room,depth+1);drawLitFace(new Face(ca,bc,f.c,f.color,f.material,cau,cav,bcu,bcv,f.cu,f.cv),room,depth+1);drawLitFace(new Face(ab,bc,ca,f.color,f.material,abu,abv,bcu,bcv,cau,cav),room,depth+1);return;
+            for(var child:subdivideLitFace(f))drawLitFace(child,room,depth+1);return;
         }
-        List<Vertex> pts=clip(litVertex(f.a,f.au,f.av,f.material,room),litVertex(f.b,f.bu,f.bv,f.material,room),litVertex(f.c,f.cu,f.cv,f.material,room));var weather=weatherCoating(f,room);
+        List<Vertex> pts=clip(normalLight(litVertex(f.a,f.au,f.av,f.material,room),f.a,room,f.na),normalLight(litVertex(f.b,f.bu,f.bv,f.material,room),f.b,room,f.nb),normalLight(litVertex(f.c,f.cu,f.cv,f.material,room),f.c,room,f.nc));var weather=weatherCoating(f,room);
         double wet=weather==null?0:weather.wet();
         double snow=weather==null?0:Math.min(1,weather.snowMetres()/.06);
         for(int i=1;i<pts.size()-1;i++)
             triangle(pts.get(0),pts.get(i),pts.get(i+1),f.color,f.material,1,wet,snow);
+    }
+    private Vertex normalLight(Vertex result,Point world,int room,Point normal){
+        if(normal==null)return result;var n=fixtureLighting.sampleNormal(room,world.x,world.y,world.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,world.x,world.y,world.z);
+        return new Vertex(result.p,result.u,result.v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));
+    }
+    private static List<Face> subdivideLitFace(Face f){
+        Point ab=mid(f.a,f.b),bc=mid(f.b,f.c),ca=mid(f.c,f.a),nab=midNormal(f.na,f.nb),nbc=midNormal(f.nb,f.nc),nca=midNormal(f.nc,f.na);
+        double abu=(f.au+f.bu)/2,abv=(f.av+f.bv)/2,bcu=(f.bu+f.cu)/2,bcv=(f.bv+f.cv)/2,cau=(f.cu+f.au)/2,cav=(f.cv+f.av)/2;
+        return List.of(new Face(f.a,ab,ca,f.color,f.material,f.au,f.av,abu,abv,cau,cav,f.room,f.na,nab,nca),new Face(ab,f.b,bc,f.color,f.material,abu,abv,f.bu,f.bv,bcu,bcv,f.room,nab,f.nb,nbc),new Face(ca,bc,f.c,f.color,f.material,cau,cav,bcu,bcv,f.cu,f.cv,f.room,nca,nbc,f.nc),new Face(ab,bc,ca,f.color,f.material,abu,abv,bcu,bcv,cau,cav,f.room,nab,nbc,nca));
     }
     /** Register only exposed walkable ground or outward roof faces. Real room
      * topology, not ghost location, determines if a surface sees the sky. */

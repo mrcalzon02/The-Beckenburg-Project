@@ -1,0 +1,11 @@
+# Authoritative corner-normal fixture and pre-fix control
+
+Source baseline3cd88128 loses an OBJ authored normal(0,0,2) before the actual game GLB decoder: `AssertionError: Authored source normal lost before actual game decoder:0.0,0.0,0.0`. Exact baseline EditorMeshPipeline/EditorGlbWriter are compiled from Git blobs into build/editor-normal-negative/classes. The same compiled NormalLossControl passes using corrected production classes. No substitute decoder or scene is used.
+
+The actual human model editor imports shared positions with separate corner UV/normal seams, previews/cancels/applies snapped Y rotation and nonuniform X scale, exercises shared undo/redo and native save/fresh open, then publishes to the actual game GLB decoder/library. Every position/UV/winding and unit corner direction is checked. Native raw normal magnitudes remain in BTOP/OBJ. The actual production placement builder uses inverse-transpose/yaw, software subdivision retains normal/room attributes, and actual software/GPU vertex preparation gives matching native-lamp directional values. A real DEV room rasterizer capture shows the published fixture geometry/UVs. It is neutral inspection lighting, not a production art or complete textured-material acceptance image.
+
+The model-specific normal overlay derives from actual corner attributes, with explicitly labeled flat fallback and bounded sampling. Read-only GLB inspection uses decoded normals and does not create an editable native project. These are UI/runtime fixtures; no main-view layout change or agent mesh endpoint is added.
+
+The independent Java17 kit verifies BTOP v1 exact no-normal encoding, v2 deterministic normal-bearing persistence, malformed/future guards, native history, OBJ exact readback, ASCII/binary STL, partial-face differential, cap/sides, and normal-bearing120000-face/360000-vertex transforms under256MiB. Existing maximum weld/transform, native persistence, face modeling and OBJ/STL/export compatibility pass. Full native service/human/recovery/CLI suite passes locally. Original source bytes remain unchanged.
+
+Full material/texture binding and editable GLB source identities remain open. Existing no-normal GLB exports retain their prior encoding; no-normal BTOP documents remain v1. Authored attribute additions are local to the authoritative native schema and derived runtime data.

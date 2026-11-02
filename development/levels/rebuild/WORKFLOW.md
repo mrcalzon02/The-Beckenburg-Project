@@ -11,7 +11,7 @@ Goal activated 31 October 2026, America/Anchorage: execute the complete staged r
 - Inspected all House cardinal panels and its approved concept; recorded specific retain/refit/replace decisions in `house/baseline-review.md`. Inspected the Prison main-hall directions and its existing compound preview, plus the School upper-corridor panel. Prison's current hall is visibly not a constructed cellhouse.
 - Reviewed a contact sheet of 23 **existing** native blockout previews. These historical shell studies are not new geometry and do not supersede later Blackpine/Hollow Creek authoring. Source-only sites still need detailed native inspection and runtime construction.
 - Added deterministic, hash-pinned source inventories for all 29 packets, including the annex's actual `layout-expansions/` path, existing native files, requirements and power/edge packets. `python tools/build_map_rebuild_baseline.py --check` checks staleness and does not accept maps.
-- Corrected three recovery issues exposed by the baseline: the Matthis placement assertion's self-collision, Rowan's actual intersection with the network chair, and `MissionSites.title("USER")` throwing before a user project is selected. Player collision and fixed campaign ordinals remain intact. See DEV-200/201 (historical branch DEV-167/168) and DEV-169/170.
+- Corrected three recovery issues exposed by the baseline: the Matthis placement assertion's self-collision, Rowan's actual intersection with the network chair, and `MissionSites.title("USER")` throwing before a user project is selected. Player collision and fixed campaign ordinals remain intact. See DEV-200/201 (historical branch DEV-167/168) and DEV-208/170 (historical branch DEV-169 for Matthis).
 
 ## Recovery observations
 

@@ -4,6 +4,7 @@ import org.beckenburg.editor.EditorGlbWriter;
 import org.beckenburg.editor.EditorDocumentStore;
 import org.beckenburg.editor.EditorTopologyWorkspace;
 import org.beckenburg.editor.EditorMeshPipeline;
+import org.beckenburg.editor.EditorMeshNormals;
 import org.beckenburg.editor.EditorMeshTopology;
 import org.beckenburg.editor.EditorTopologyProject;
 import org.beckenburg.editor.EditorHistory;
@@ -74,7 +75,7 @@ public final class AssetImportDialog {
     private double dragDelta;
     private final JToggleButton boxSelect=new JToggleButton("AREA SELECT");
     private final JComboBox<String> areaShape=new JComboBox<>(new String[]{"BOX","LASSO"});
-    private final JCheckBox xraySelect=new JCheckBox("X-ray"),compareView=new JCheckBox("Compare");
+    private final JCheckBox xraySelect=new JCheckBox("X-ray"),compareView=new JCheckBox("Compare"),normalOverlay=new JCheckBox("Normals");
     private java.util.Set<Long> selectedVertices=java.util.Set.of();
     private Point boxStart,boxEnd;
     private int selectionGeneration;
@@ -127,6 +128,7 @@ public final class AssetImportDialog {
         JButton reset=new JButton("RESET");
         reset.addActionListener(e->slider.setValue(0));
 
+        normalOverlay.setToolTipText("Actual per-corner normals; derived face directions where none are authored. Large meshes use a bounded display sample.");normalOverlay.addActionListener(e->preview.repaint());
         compareView.setToolTipText("Compare working geometry with the reduction preview; pending model edits always show both views.");compareView.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();preview.repaint();});
         meshView.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();preview.repaint();});selectionMode.addActionListener(e->{cancelAxisDrag();refreshMeshControls();preview.repaint();});
         preview.addMouseListener(new MouseAdapter(){
@@ -208,7 +210,7 @@ public final class AssetImportDialog {
         partSearch.setToolTipText("Filter parts from the current native mesh");partSearch.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){public void insertUpdate(javax.swing.event.DocumentEvent e){refreshPartRows();}public void removeUpdate(javax.swing.event.DocumentEvent e){refreshPartRows();}public void changedUpdate(javax.swing.event.DocumentEvent e){refreshPartRows();}});
         partList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);partList.addListSelectionListener(e->{if(!e.getValueIsAdjusting()&&!updatingParts&&partList.getSelectedValue()!=null)selectPart(partList.getSelectedValue().name());});
         var partsToggle=new JButton("Mesh parts");partsToggle.addActionListener(e->{boolean show=toolsDock.getPreferredSize().width<100;((CardLayout)toolsDock.getLayout()).show(toolsDock,show?"Parts":"Tools");toolsDock.setPreferredSize(new Dimension(show?195:76,500));toolsDock.revalidate();});
-        var context=new JPanel(new BorderLayout(6,0));var viewOptions=new JPanel(new FlowLayout(FlowLayout.LEFT,4,2));viewOptions.add(meshView);viewOptions.add(selectionMode);viewOptions.add(compareView);context.add(viewOptions,BorderLayout.WEST);context.add(selectionLabel,BorderLayout.CENTER);
+        var context=new JPanel(new BorderLayout(6,0));var viewOptions=new JPanel(new FlowLayout(FlowLayout.LEFT,4,2));viewOptions.add(meshView);viewOptions.add(selectionMode);viewOptions.add(compareView);viewOptions.add(normalOverlay);context.add(viewOptions,BorderLayout.WEST);context.add(selectionLabel,BorderLayout.CENTER);
         var viewportArea=new JPanel(new BorderLayout(0,3));viewportArea.add(context,BorderLayout.NORTH);viewportArea.add(preview,BorderLayout.CENTER);
         var browsers=new JTabbedPane();browsers.addTab("Diagnostics",new JScrollPane(details));
         workspace=new EditorTopologyWorkspace(viewportArea,toolsDock,inspector,browsers,290);
@@ -392,6 +394,10 @@ public final class AssetImportDialog {
         refreshMeshControls();
         if(slider.getValue()!=0)slider.setValue(0);else recalculate();
     }
+    private static EditorMeshPipeline.Vertex glbCorner(GlbProps.Vertex v){
+        var normal=v.nx()==0&&v.ny()==0&&v.nz()==0?null:new EditorMeshPipeline.Normal(v.nx(),v.ny(),v.nz());
+        return new EditorMeshPipeline.Vertex(v.x(),v.y(),v.z(),v.u(),v.v(),normal);
+    }
     private record Loaded(EditorMeshPipeline.Mesh mesh,EditorTopologyProject project,String note,String reviewedFingerprint){}
     private void openSource(){
         if(hasUnsavedMeshChanges()&&JOptionPane.showConfirmDialog(dialog,"Discard unsaved mesh edits before opening another source?",
@@ -434,9 +440,9 @@ public final class AssetImportDialog {
                     for(var triangle:decoded.triangles()){
                         var a=triangle.a();var b=triangle.b();var c=triangle.c();
                         all.add(new EditorMeshPipeline.Triangle("GLB assembly",
-                            new EditorMeshPipeline.Vertex(a.x(),a.y(),a.z(),a.u(),a.v()),
-                            new EditorMeshPipeline.Vertex(b.x(),b.y(),b.z(),b.u(),b.v()),
-                            new EditorMeshPipeline.Vertex(c.x(),c.y(),c.z(),c.u(),c.v())));
+                            glbCorner(a),
+                            glbCorner(b),
+                            glbCorner(c)));
                     }
                     return new Loaded(new EditorMeshPipeline.Mesh(candidate.getFileName().toString(),all,bytes.length),null,
                         "GLB vertex editing unavailable until original material and normal bindings can be retained.",EditorMeshPipeline.sourceFingerprint(bytes));
@@ -722,6 +728,13 @@ public final class AssetImportDialog {
                 var p=projection().project(v.x(),v.y(),v.z());xs[k]=view.x(p.x());ys[k]=view.y(p.y());k++;
             }
             g.drawPolygon(xs,ys,3);
+        }
+        if(normalOverlay.isSelected()){
+            g.setColor(new Color(75,232,193));g.drawString("CORNER NORMALS / authored or derived / sampled",left+10,34);
+            int step=Math.max(1,(tris.size()+399)/400);double length=28/view.scale();
+            for(int i=0;i<tris.size();i+=step){var triangle=tris.get(i);for(var v:List.of(triangle.a(),triangle.b(),triangle.c()))try{
+                var n=EditorMeshNormals.unit(EditorMeshNormals.effective(triangle,v));var a=projection().project(v.x(),v.y(),v.z());var b=projection().project(v.x()+n.x()*length,v.y()+n.y()*length,v.z()+n.z()*length);g.drawLine(view.x(a.x()),view.y(a.y()),view.x(b.x()),view.y(b.y()));
+            }catch(IllegalArgumentException degenerate){/* Degenerate geometry has no derived normal; native diagnostics retain the issue. */}}
         }
         if(title.equals("WORKING MESH")&&selectedVertex!=null&&selectedVertices.contains(selectedVertex.id())){
             var v=selectedVertex;var p=projection().project(v.x(),v.y(),v.z());int px=view.x(p.x()),py=view.y(p.y());
