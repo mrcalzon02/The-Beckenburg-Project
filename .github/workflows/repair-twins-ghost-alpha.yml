@@ -1,0 +1,82 @@
+name: Repair Twins Ghost Detached Source Alpha (advisory art)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/repair_twins_ghost_atlas_lines.py'
+      - '.github/workflows/repair-twins-ghost-alpha.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  repair-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original indexed sprite diagnostics
+        run: python -m pip install --disable-pip-version-check numpy opencv-python-headless pillow
+      - name: Repair four proven detached Twins ghost source lines
+        id: repair
+        run: python tools/repair_twins_ghost_atlas_lines.py
+      - name: Verify real archive is intact after source repair
+        if: steps.repair.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat assets/runtime/ghost-sprite-parts/ghost-sprite-expansion-v3.zip.part0[0-8] > /tmp/beckenburg-twins-ghost-v3.zip
+          unzip -t /tmp/beckenburg-twins-ghost-v3.zip | tail -2
+          python3 - <<'PY'
+          import hashlib,json,zipfile
+          from pathlib import Path
+          report=json.loads(Path('development/verification/twins-source-line-alpha-repair.json').read_text())
+          archive=Path('/tmp/beckenburg-twins-ghost-v3.zip')
+          assert report['repaired_archive_sha256']==hashlib.sha256(archive.read_bytes()).hexdigest()
+          with zipfile.ZipFile(archive) as z:
+              entries=set(z.namelist())
+              assert len(report['repaired_pngs'])==4
+              assert len([n for n in entries if n.startswith('frames/twins/') and n.endswith('.png')])==8
+              assert all(n in entries for n in report['repaired_pngs'])
+          print('PASS 9-part original ghost archive, all 8 Twins facings, 4 source alpha repairs')
+          PY
+      - name: Upload original vs repaired Twins evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: twins-original-detached-alpha-repair
+          path: |
+            development/verification/twins-source-line-alpha-repair.png
+            development/verification/twins-source-line-alpha-repair.json
+          retention-days: 21
+          if-no-files-found: warn
+      - name: Commit repaired actual game atlas, no force-push
+        if: steps.repair.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Beckenburg source-art repair"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/runtime/ghost-sprite-parts/ghost-sprite-expansion-v3.zip.part0[0-8] \
+            development/verification/twins-source-line-alpha-repair.png \
+            development/verification/twins-source-line-alpha-repair.json
+          if git diff --cached --quiet; then
+            echo "No changed original source parts"
+            exit 0
+          fi
+          git commit -m "Remove detached Twins ghost source alpha strands from shipped atlas"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "PASS pushed actual corrected nine-part ghost atlas"
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Source repair could not be safely pushed on moving main"
+          exit 1
