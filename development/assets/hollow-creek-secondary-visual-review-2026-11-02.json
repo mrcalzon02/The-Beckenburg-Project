@@ -76,5 +76,8 @@
     "all_67_shows_major_reduction": true
   },
   "catalog_regression_correction_commit": "23af62ee25d4f50ed37569ce0e7fba4c46af04eb",
-  "catalog_regression_post_correction_ci": "pending"
+  "catalog_regression_post_correction_ci": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41412400705",
+  "catalog_regression_post_correction_result": "success (advisory step completed on corrected test)",
+  "renderer_software_visual_acceptance": "67/67 actual developer-room captures accepted, original art preserved; see run 41410917812 artifact 13125039813",
+  "remaining_validation": "Actual Hollow Creek gameplay camera/light/weather and separately installed GPU backend not yet directly tested."
 }
