@@ -2392,7 +2392,7 @@ Older-map obligation: Current dispatch availability does not accept any generic 
 
 ### DEV-176 — All-map reviews construct USER without a persisted project
 
-**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 · **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest; RoomAcousticPresetsTest, HidingBudgetTest, AllMapLightingCoverageTest, VanLightingAndCastleDoorTest; AllMapArchitecturalJoinTest
+**Status:** fixed-scoped; raw310/310 regression plus actual all11-map GPU and three UI cycles accepted · **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest; RoomAcousticPresetsTest, HidingBudgetTest, AllMapLightingCoverageTest, VanLightingAndCastleDoorTest; AllMapArchitecturalJoinTest
 
 Mesa workflow 41320075324 passes the core smoke, then world-residency exits after HOLLOW_CREEK; the retained frame CSV has every built-in/prototype but no USER row. Flyover regression similarly instantiates every enum without its authoring prerequisite.
 
@@ -2400,7 +2400,7 @@ Cause / uncertainty: USER is a selected authored-project slot, not a built-in ma
 
 Fix / next action: Create and persist an explicit House-derived USER source inside an isolated review evidence home; assert absent selection fails first, load the actual saved source, restore the real home before frame sampling, and retain USER coverage. Reuse that real persisted fixture through AuthoredTestSupport for all four all-map regressions, retain every enum value and original behavioral assertion, and clean only the temporary profile.
 
-Evidence and verification: Downloaded exact-SHA Mesa artifact ends after HOLLOW_CREEK-torch-repeat. New packaged LevelOpeningFlyoverTest passes all eleven map enum values including persisted USER and unchanged physical spawn. Java 17 package/all-root-tests compile. Real GPU review remains pending new-source CI; do not call it fixed on GPU yet. Full-round 41324869128 at fcf7c52e passed packaged TCP/UI but raw manifest was 260 passed / 12 failed / 27 unexecuted of 299, including these four absent-USER failures. All four were reproduced locally, then passed with the persisted fixture: soundscape sample parity, 12 locations at 101 hiding densities, USER physical lighting, and all 11 van map types. Before/after logs retained under build/editor-agent-evidence. Earlier exact-source GPU 41322252644 at d4294b4c passed; no newer hardware or full manifest acceptance is inferred. Next full-round 41327744396 at 11b57bbf executes all 300 tests (291 pass / 9 fail / 0 unexecuted), exposing the same missing-USER prerequisite in AllMapArchitecturalJoinTest. It now retains all original boundary/aperture assertions with the persisted fixture and passes 7,544 closed and 1,962 open probes including USER locally; exact newest-source CI pending. Exact ff93601a source CI: full-round 41330858899 raw summary passed=303 failed=0 skipped=0 manifest=303; native editor host 41330853164 success. See evidence/editor-full-round-ff93601a.txt. Physical installed acceptance remains separate.
+Evidence and verification: Downloaded exact-SHA Mesa artifact ends after HOLLOW_CREEK-torch-repeat. New packaged LevelOpeningFlyoverTest passes all eleven map enum values including persisted USER and unchanged physical spawn. Java 17 package/all-root-tests compile. Real GPU review remains pending new-source CI; do not call it fixed on GPU yet. Full-round 41324869128 at fcf7c52e passed packaged TCP/UI but raw manifest was 260 passed / 12 failed / 27 unexecuted of 299, including these four absent-USER failures. All four were reproduced locally, then passed with the persisted fixture: soundscape sample parity, 12 locations at 101 hiding densities, USER physical lighting, and all 11 van map types. Before/after logs retained under build/editor-agent-evidence. Earlier exact-source GPU 41322252644 at d4294b4c passed; no newer hardware or full manifest acceptance is inferred. Next full-round 41327744396 at 11b57bbf executes all 300 tests (291 pass / 9 fail / 0 unexecuted), exposing the same missing-USER prerequisite in AllMapArchitecturalJoinTest. It now retains all original boundary/aperture assertions with the persisted fixture and passes 7,544 closed and 1,962 open probes including USER locally; exact newest-source CI pending. Exact ff93601a source CI: full-round 41330858899 raw summary passed=303 failed=0 skipped=0 manifest=303; native editor host 41330853164 success. See evidence/editor-full-round-ff93601a.txt. Physical installed acceptance remains separate. Later main6b9088f4 GPU41362364664 still lacks this branch repair and reproduces the same pre-USER stop. Combined c679aedb GPU41368128355 SUCCESS, actual residency all11 map types including persisted USER and all three UI cycles; raw excerpts in evidence/editor-gpu-c679aedb.txt. Physical hardware acceptance remains separate.
 
 Older-map obligation: Every enum-driven review must handle USER prerequisites explicitly rather than assuming a built-in source or selecting a developer project.
 
@@ -2616,7 +2616,7 @@ Older-map obligation: Caught in the new indexed-topology prototype before delive
 
 ### DEV-192 — Castle snapshots expose mutable station arrays and compare array identity
 
-**Status:** fixed-scoped locally; current exact-source CI pending · **Affected:** CastleLevelEdits.Snapshot and shared history observations
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** CastleLevelEdits.Snapshot and shared history observations
 
 Caller-owned station arrays/maps can mutate a retained snapshot; two snapshots of equal native state compare unequal because arrays use identity.
 
@@ -2624,13 +2624,13 @@ Cause / uncertainty: The public record had no defensive constructor/accessor or 
 
 Fix / next action: Defensively own all collections/coordinate arrays, return isolated coordinate copies, validate structural fields and implement value equality/hash.
 
-Evidence and verification: CastleSnapshotContractTest mutates constructor inputs and accessor arrays, verifies retained/native values and equality/hash, then restores and saves/reopens exact state.
+Evidence and verification: CastleSnapshotContractTest mutates constructor inputs and accessor arrays, verifies retained/native values and equality/hash, then restores and saves/reopens exact state. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
 
 Older-map obligation: Native snapshot values only; no map/model geometry changes.
 
 ### DEV-193 — Castle decoder accepts station states rejected by the human editor
 
-**Status:** fixed-scoped locally; current exact-source CI pending · **Affected:** Castle properties load and previous-save recovery
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Castle properties load and previous-save recovery
 
 Nonfinite/out-of-world station coordinates can pass the old native decoder; backup validation can install data the live editor cannot represent.
 
@@ -2638,13 +2638,13 @@ Cause / uncertainty: Station properties were parsed without the bounds/finite ch
 
 Fix / next action: Validate complete native snapshot invariants during decode and reject invalid station data before recovery replacement.
 
-Evidence and verification: NaN station backup and x999 current-file controls preserve exact valid target/live scene on failure; actual human bounds are shared.
+Evidence and verification: NaN station backup and x999 current-file controls preserve exact valid target/live scene on failure; actual human bounds are shared. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
 
 Older-map obligation: Invalid external/backup data is refused; existing valid native saves and legacy geometry/lighting migrations retain their acceptance.
 
 ### DEV-194 — Mission native loading silently discards unsupported metadata and contradictory yaw
 
-**Status:** fixed-scoped locally; current exact-source CI pending · **Affected:** LevelAuthoringSession BSCN adapter
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** LevelAuthoringSession BSCN adapter
 
 Unknown component properties, custom node labels/layers and yaw fields inconsistent with portable transforms are ignored then lost or misinterpreted on native save.
 
@@ -2652,13 +2652,13 @@ Cause / uncertainty: The native adapter extracted its known prop fields without 
 
 Fix / next action: Refuse unrepresentable fields/metadata and inconsistent duplicate yaw while retaining the existing legacy optional-yaw fallback.
 
-Evidence and verification: EditorSchemaCompatibilityTest preserves exact source bytes/live state for all negative cases and proves legacy yaw save/reopen; existing native identity tests remain intact.
+Evidence and verification: EditorSchemaCompatibilityTest preserves exact source bytes/live state for all negative cases and proves legacy yaw save/reopen; existing native identity tests remain intact. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
 
 Older-map obligation: No claim that arbitrary generic BSCN data is supported by native mission runtime; unsupported schemas fail explicitly.
 
 ### DEV-195 — Castle future layout versions can be rewritten as current version2
 
-**Status:** fixed-scoped locally; current exact-source CI pending · **Affected:** Castle properties schema migrations
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Castle properties schema migrations
 
 A format1 file with layout3 is interpreted with current fields and a later save stamps layout2, risking loss of future data.
 
@@ -2666,13 +2666,13 @@ Cause / uncertainty: Migration branches checked only whether layout versions wer
 
 Fix / next action: Reject future/invalid layout versions before applying live state; retain supported legacy0/1 and current2 handling.
 
-Evidence and verification: EditorSchemaCompatibilityTest protects exact bytes and native state for future versions of all six layout families.
+Evidence and verification: EditorSchemaCompatibilityTest protects exact bytes and native state for future versions of all six layout families. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
 
 Older-map obligation: Older supported migrations remain tested separately; this does not admit unknown future schemas.
 
 ### DEV-196 — Explicit Castle codecs eagerly initialize an unrelated default profile
 
-**Status:** fixed-scoped locally; current exact-source CI pending · **Affected:** CastleLevelEdits default singleton initialization
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** CastleLevelEdits default singleton initialization
 
 Constructing a codec for an explicit path can fail on, read or migrate the default user Castle instead of only touching the selected resource.
 
@@ -2680,13 +2680,13 @@ Cause / uncertainty: The default runtime singleton was created in the outer clas
 
 Fix / next action: Initialize the authoritative runtime through a lazy holder accessed only by current(); explicit codecs remain scoped to their own paths.
 
-Evidence and verification: A fresh child with a corrupt unrelated default profile successfully saves/reopens an explicit file without touching the sentinel; actual current() still rejects the corrupt default.
+Evidence and verification: A fresh child with a corrupt unrelated default profile successfully saves/reopens an explicit file without touching the sentinel; actual current() still rejects the corrupt default. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
 
 Older-map obligation: Agent adapters continue to require the actual singleton; no independent codec instance is admitted as game runtime.
 
 ### DEV-197 — Value-equivalent Castle door order changes rotate prior-save history
 
-**Status:** fixed-scoped locally; current exact-source CI pending · **Affected:** Castle Properties serializer and distinct backups
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Castle Properties serializer and distinct backups
 
 Removing/reinstalling the same fixed door changes map insertion order and serialized numeric indices despite identical native authoring value.
 
@@ -2694,13 +2694,13 @@ Cause / uncertainty: Door entries were emitted in mutable insertion order.
 
 Fix / next action: Serialize fixed door socket assignments in canonical ID order.
 
-Evidence and verification: CastleSnapshotContractTest proves equal native values after a door cycle produce identical bytes and retain the actual prior distinct saved version.
+Evidence and verification: CastleSnapshotContractTest proves equal native values after a door cycle produce identical bytes and retain the actual prior distinct saved version. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
 
 Older-map obligation: Canonical writer ordering is compatible with existing ID-based readers; no door geometry or behavior changes.
 
 ### DEV-198 — Headless request cap is checked after unbounded readLine buffering
 
-**Status:** fixed-scoped locally; current exact-source CI pending · **Affected:** EditorAgentCli input protocol
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** EditorAgentCli input protocol
 
 A delimiter-free oversized request can grow the entire line in memory before the advertised request limit is checked.
 
@@ -2708,13 +2708,13 @@ Cause / uncertainty: BufferedReader.readLine was called before inspecting the le
 
 Fix / next action: Read with a bounded builder, emit a structured protocol failure and stop on overflow/read failure; document code-unit limits precisely.
 
-Evidence and verification: The native service test supplies a guarded unending reader and proves failure before32768 characters are consumed and before any scene edit.
+Evidence and verification: The native service test supplies a guarded unending reader and proves failure before32768 characters are consumed and before any scene edit. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
 
 Older-map obligation: Trusted local protocol only; no remote listener/security sandbox is claimed.
 
 ### DEV-199 — Failed undo/redo consumes history before the native restore succeeds
 
-**Status:** fixed-scoped locally; current exact-source CI pending · **Affected:** Portable EditorHistory and all project adapters
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Portable EditorHistory and all project adapters
 
 A host restore failure can leave partial state and pop/move undo/redo entries, preventing a safe retry; rollback failure can hide the original command cause.
 
@@ -2722,7 +2722,7 @@ Cause / uncertainty: History stacks were modified before restore committed, and 
 
 Fix / next action: Restore from peeked targets first, roll back partial failure, commit stack transfer only on success, and preserve rollback failures as suppressed causes.
 
-Evidence and verification: EditorHistoryFailureTest proves retained stacks/state/retry and failure provenance; it fails against the previous compiled0fb70ac2 implementation and passes after repair.
+Evidence and verification: EditorHistoryFailureTest proves retained stacks/state/retry and failure provenance; it fails against the previous compiled0fb70ac2 implementation and passes after repair. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
 
 Older-map obligation: Native adapters and standalone projects share this boundary; arbitrary persistently broken host restores cannot be claimed successful.
 

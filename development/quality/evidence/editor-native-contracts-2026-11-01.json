@@ -35,8 +35,18 @@
     },
     "fullRound": {
       "run": 41367132677,
-      "status": "in_progress",
-      "expectedManifest": 310
+      "status": "success",
+      "expectedManifest": 310,
+      "passed": 310,
+      "failed": 0,
+      "skipped": 0,
+      "rawExcerpt": "editor-full-round-47b4ad47.txt"
+    },
+    "gpu": {
+      "sourceSha": "c679aedbca82e2e334f22e2500a93f9515868a9f",
+      "run": 41368128355,
+      "status": "success",
+      "rawExcerpt": "editor-gpu-c679aedb.txt"
     }
   },
   "priorAcceptedSource": {
@@ -60,6 +70,6 @@
     "Trusted local source/service/headless scope; authenticated MCP and broad scripting remain later gates.",
     "Partial G2 indexed vertex authoring is delivered; primitives/picking/gizmos/edge-face modeling/material-normal interchange remain open.",
     "No G0-G12, physical installed-loop, power-loss or FPS completion inferred.",
-    "Correction: upstream GPU41362364664 stopped in WorldResidencyGpuReview before USER-first; UI smoke was never reached. Source6b9088f4 constructed USER without a persisted project (existing DEV-176). Current branch already uses ReviewMapFixtures.userLevel; exact combined GPU41368128355 is running, not yet accepted."
+    "Upstream6b9088f4 GPU41362364664 failed before USER-first (DEV-176), not UI smoke. Current persisted USER source passed actual Mesa all11 map residency plus three real UI cycles in GPU41368128355 at c679aedb. No physical GPU/FPS completion inferred."
   ]
 }

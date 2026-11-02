@@ -147,6 +147,22 @@ public final class AssetImportTopologyGuiTest {
             await(()->{try{return ((JButton)field(ui.get(),"apply")).isEnabled();}catch(Exception e){throw new RuntimeException(e);}});
             SwingUtilities.invokeAndWait(()->{try{
                 var dock=ui.get();((JButton)field(dock,"previewPrimitive")).doClick();
+                // Click the real FRONT viewport at a stable interior point of the actual native mesh.
+                ((JComboBox<?>)field(dock,"meshView")).setSelectedItem(org.beckenburg.editor.EditorMeshPicking.Projection.FRONT);
+                var canvas=(JPanel)field(dock,"preview");int half=canvas.getWidth()/2,height=Math.max(180,canvas.getHeight());
+                double scale=Math.min((half-26)/2d,(height-36)/1d);
+                double rawX=.15,rawY=-.2;int clickX=half/2+(int)Math.round(rawX*scale),clickY=height/2+(int)Math.round(rawY*scale);
+                var state=nativeProject.get().snapshot();
+                var expected=org.beckenburg.editor.EditorMeshPicking.pick(state,org.beckenburg.editor.EditorMeshPicking.Projection.FRONT,
+                    (clickX-half/2)/scale,(clickY-height/2)/scale).orElseThrow();
+                for(String mode:java.util.List.of("VERTEX","EDGE","FACE")){
+                    ((JComboBox<?>)field(dock,"selectionMode")).setSelectedItem(mode);
+                    canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_PRESSED,System.currentTimeMillis(),0,clickX,clickY,1,false,java.awt.event.MouseEvent.BUTTON1));
+                    var actual=(org.beckenburg.editor.EditorMeshPicking.Hit)field(dock,"selectedHit");
+                    check(actual!=null&&actual.faceId()==expected.faceId()&&actual.vertexId()==expected.vertexId()&&actual.edgeA()==expected.edgeA()&&actual.edgeB()==expected.edgeB(),"Real mouse event selects native triangle and stable "+mode+" IDs");
+                    check(nativeProject.get().snapshot()==state,"Picking cannot mutate geometry or history");
+                }
+                ((JComboBox<?>)field(dock,"meshView")).setSelectedItem(org.beckenburg.editor.EditorMeshPicking.Projection.ISOMETRIC);
                 var content=((JDialog)field(dock,"dialog")).getContentPane();
                 var image=new BufferedImage(content.getWidth(),content.getHeight(),BufferedImage.TYPE_INT_ARGB);var g=image.createGraphics();
                 try{content.printAll(g);}finally{g.dispose();}ImageIO.write(image,"png",output.resolveSibling("mesh-primitives-human.png").toFile());
@@ -155,7 +171,7 @@ public final class AssetImportTopologyGuiTest {
             await(()->published.get()!=null);runtimeMesh(published.get(),nativeProject.get().mesh());
             var primitiveArchive=org.beckenburg.editor.EditorTopologyProject.open(ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop"));
             check(primitiveArchive.snapshot().equals(nativeProject.get().snapshot()),"Published primitive retains exact native IDs and corner UVs");
-            System.out.println("PASS real human five-primitive preview/apply/undo/redo, parameter invalidation, new native mesh/save/fresh reopen, UI PNG and every published runtime GLB corner");
+            System.out.println("PASS real human five-primitive preview/apply/undo/redo, parameter invalidation, new native mesh/save/fresh reopen, real mouse triangle/vertex/edge/face selection, UI PNG and every published runtime GLB corner");
             System.out.println("PASS actual human mesh authoring: stable vertex move/undo/redo, native save/reopen/fresh chooser load, topology review/UI PNG, runtime GLB publish, exact editable/original source archives and changed-source rejection");
         }finally{
             SwingUtilities.invokeAndWait(()->{if(ui.get()!=null)try{((JDialog)field(ui.get(),"dialog")).dispose();}catch(Exception e){throw new RuntimeException(e);}});

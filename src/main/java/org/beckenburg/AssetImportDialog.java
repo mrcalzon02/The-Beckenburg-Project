@@ -6,6 +6,7 @@ import org.beckenburg.editor.EditorMeshTopology;
 import org.beckenburg.editor.EditorTopologyProject;
 import org.beckenburg.editor.EditorHistory;
 import org.beckenburg.editor.EditorMeshPrimitives;
+import org.beckenburg.editor.EditorMeshPicking;
 
 import javax.swing.*;
 import java.awt.*;
@@ -59,6 +60,10 @@ public final class AssetImportDialog {
     private final JButton newMesh=new JButton("NEW MESH"),previewPrimitive=new JButton("PREVIEW PRIMITIVE"),applyPrimitive=new JButton("APPLY PRIMITIVE");
     private EditorMeshPipeline.Mesh primitivePreview;
     private EditorMeshPrimitives.Parameters reviewedPrimitive;
+    private final JComboBox<EditorMeshPicking.Projection> meshView=new JComboBox<>(EditorMeshPicking.Projection.values());
+    private final JComboBox<String> selectionMode=new JComboBox<>(new String[]{"VERTEX","EDGE","FACE"});
+    private final JLabel selectionLabel=new JLabel("Click a triangle in the working mesh");
+    private EditorMeshPicking.Hit selectedHit;
     private EditorTopologyProject topologyProject;
     private EditorTopologyProject.Vertex selectedVertex;
     private EditorHistory<EditorTopologyProject.State> meshHistory;
@@ -95,6 +100,9 @@ public final class AssetImportDialog {
         JPanel vertexActions=new JPanel(new FlowLayout(FlowLayout.LEFT,3,2));
         vertexControls.add(vertexInputs,BorderLayout.NORTH);vertexControls.add(vertexActions,BorderLayout.SOUTH);
         vertexInputs.add(new JLabel("Vertex ID"));vertexInputs.add(vertexId);
+        vertexInputs.add(meshView);vertexInputs.add(selectionMode);vertexInputs.add(selectionLabel);
+        meshView.addActionListener(e->preview.repaint());selectionMode.addActionListener(e->preview.repaint());
+        preview.addMouseListener(new MouseAdapter(){@Override public void mousePressed(MouseEvent e){pickMesh(e.getX(),e.getY());}});
         for(var spinner:List.of(vertexId,vertexX,vertexY,vertexZ))spinner.setPreferredSize(new Dimension(65,24));
         for(var item:List.of(new Object[]{"X",vertexX},new Object[]{"Y",vertexY},new Object[]{"Z",vertexZ})){
             vertexInputs.add(new JLabel((String)item[0]));vertexInputs.add((JSpinner)item[1]);
@@ -173,6 +181,7 @@ public final class AssetImportDialog {
         if(editable)saveMesh.setToolTipText("Save native topology to "+topologyProject.documentPath());
         newMesh.setEnabled(!busy);previewPrimitive.setEnabled(editable);applyPrimitive.setEnabled(editable&&reviewedPrimitive!=null);
         for(var component:List.of(primitiveKind,primitiveWidth,primitiveHeight,primitiveDepth,primitiveSegments,primitiveRings))component.setEnabled(editable);
+        meshView.setEnabled(!busy);selectionMode.setEnabled(editable);
     }
     private void clearPrimitivePreview(){primitivePreview=null;reviewedPrimitive=null;applyPrimitive.setEnabled(false);preview.repaint();}
     private void previewPrimitive(){
@@ -194,14 +203,14 @@ public final class AssetImportDialog {
             Path document=Path.of(System.getProperty("user.home"),".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop");
             var mesh=new EditorMeshPipeline.Mesh("New mesh",List.of(),0);
             var project=EditorTopologyProject.fromMesh(mesh,EditorMeshPipeline.sourceFingerprint("native-mesh-v1".getBytes(java.nio.charset.StandardCharsets.UTF_8)),document);
-            project.save();clearPrimitivePreview();topologyProject=project;meshHistory=new EditorHistory<>(project,60);source=mesh;result=null;
+            project.save();clearPrimitivePreview();selectedHit=null;selectionLabel.setText("Click a triangle in the working mesh");topologyProject=project;meshHistory=new EditorHistory<>(project,60);source=mesh;result=null;
             path=document;reviewedSourceFingerprint=project.diskFingerprint();authoringNote="Native primitive authoring; generated fallback atlas.";sourceTextureBytes=0;meshDirty=false;
             vertexId.setValue(0L);selectVertex();refreshMeshControls();pathLabel.setText(document.getFileName()+" | native authoring");
             if(slider.getValue()!=0)slider.setValue(0);else recalculate();
         }catch(IOException|RuntimeException failure){details.append("\nNEW MESH FAILED: "+rootMessage(failure));}
     }
     private void selectVertex(){
-        selectedVertex=null;if(topologyProject==null)return;long id=((Number)vertexId.getValue()).longValue();
+        preview.repaint();selectedVertex=null;if(topologyProject==null)return;long id=((Number)vertexId.getValue()).longValue();
         for(var v:topologyProject.snapshot().vertices())if(v.id()==id){selectedVertex=v;vertexX.setValue(v.x());vertexY.setValue(v.y());vertexZ.setValue(v.z());return;}
     }
     private void meshEdit(Runnable operation){
@@ -226,6 +235,7 @@ public final class AssetImportDialog {
     }
     /** Same native import path for the human chooser and source-backed verification. */
     void loadSource(Path candidate){
+        selectedHit=null;selectionLabel.setText("Click a triangle in the working mesh");
         clearPrimitivePreview();
         busy=true;choose.setEnabled(false);apply.setEnabled(false);
         pathLabel.setText("Reading "+candidate.getFileName()+"...");
@@ -413,20 +423,37 @@ public final class AssetImportDialog {
         while(failure.getCause()!=null)failure=failure.getCause();
         return String.valueOf(failure.getMessage());
     }
-    /** Both panels use the SOURCE bounds: shrinking topology cannot trick the eye
-     * by zooming the remaining stump to fill the frame. */
+    private EditorMeshPicking.Projection projection(){return (EditorMeshPicking.Projection)meshView.getSelectedItem();}
+    private record Viewport(double centerX,double centerY,double scale,int left,int width,int height){
+        int x(double value){return left+width/2+(int)Math.round((value-centerX)*scale);}
+        int y(double value){return height/2+(int)Math.round((value-centerY)*scale);}
+    }
+    private Viewport viewport(List<EditorMeshPipeline.Triangle> reference,int left,int width){
+        double xmin=Double.POSITIVE_INFINITY,ymin=xmin,xmax=Double.NEGATIVE_INFINITY,ymax=xmax;
+        for(var t:reference)for(var v:List.of(t.a(),t.b(),t.c())){
+            var p=projection().project(v.x(),v.y(),v.z());xmin=Math.min(xmin,p.x());xmax=Math.max(xmax,p.x());ymin=Math.min(ymin,p.y());ymax=Math.max(ymax,p.y());
+        }
+        double scale=Math.min((width-26)/Math.max(1e-6,xmax-xmin),(getPreviewHeight()-36)/Math.max(1e-6,ymax-ymin));
+        return new Viewport((xmin+xmax)*.5,(ymin+ymax)*.5,scale,left,width,getPreviewHeight());
+    }
+    private void pickMesh(int x,int y){
+        if(busy||topologyProject==null||source.triangles().isEmpty()||x<0||x>=preview.getWidth()/2)return;
+        var view=viewport(source.triangles(),0,preview.getWidth()/2);
+        double px=(x-view.left()-view.width()/2)/view.scale()+view.centerX(),py=(y-view.height()/2)/view.scale()+view.centerY();
+        selectedHit=EditorMeshPicking.pick(topologyProject.snapshot(),projection(),px,py).orElse(null);
+        if(selectedHit==null){selectionLabel.setText("No triangle selected");preview.repaint();return;}
+        if(selectionMode.getSelectedIndex()==0){vertexId.setValue(selectedHit.vertexId());selectVertex();}
+        selectionLabel.setText(switch(selectionMode.getSelectedIndex()){
+            case 0->"Vertex "+selectedHit.vertexId()+" / face "+selectedHit.faceId();
+            case 1->"Edge "+selectedHit.edgeA()+" - "+selectedHit.edgeB();
+            default->"Face "+selectedHit.faceId();});
+        preview.repaint();
+    }
+    /** Regression panels share source bounds; the separate pending primitive has its own bounds. */
     private void draw(Graphics2D g,List<EditorMeshPipeline.Triangle> tris,int left,int width,String title){
         List<EditorMeshPipeline.Triangle> reference=title.equals("PRIMITIVE PREVIEW")?tris:source.triangles();
         if(reference.isEmpty()){g.setColor(Color.LIGHT_GRAY);g.drawString(title+" / empty",left+10,18);return;}
-        double xmin=Double.POSITIVE_INFINITY,ymin=xmin,xmax=Double.NEGATIVE_INFINITY,ymax=xmax;
-        for(var t:reference)for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
-            double ax=v.x()*.83-v.z()*.55,ay=-(v.y()*.95+v.x()*.24+v.z()*.35);
-            xmin=Math.min(xmin,ax);xmax=Math.max(xmax,ax);
-            ymin=Math.min(ymin,ay);ymax=Math.max(ymax,ay);
-        }
-        double scale=Math.min((width-26)/Math.max(1e-6,xmax-xmin),
-                              (getPreviewHeight()-36)/Math.max(1e-6,ymax-ymin));
-        double centerX=(xmin+xmax)*.5,centerY=(ymin+ymax)*.5;
+        var view=viewport(reference,left,width);
         g.setColor(new Color(181,206,213));
         g.drawString(title+"  /  "+tris.size()+" triangles",left+10,18);
         int skip=Math.max(1,tris.size()/12000);
@@ -435,16 +462,24 @@ public final class AssetImportDialog {
             var t=tris.get(i);
             int[] xs=new int[3],ys=new int[3];int k=0;
             for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
-                double ax=v.x()*.83-v.z()*.55,ay=-(v.y()*.95+v.x()*.24+v.z()*.35);
-                xs[k]=left+width/2+(int)Math.round((ax-centerX)*scale);
-                ys[k]=getPreviewHeight()/2+(int)Math.round((ay-centerY)*scale);k++;
+                var p=projection().project(v.x(),v.y(),v.z());xs[k]=view.x(p.x());ys[k]=view.y(p.y());k++;
             }
             g.drawPolygon(xs,ys,3);
         }
         if(title.equals("WORKING MESH")&&selectedVertex!=null){
-            var v=selectedVertex;double ax=v.x()*.83-v.z()*.55,ay=-(v.y()*.95+v.x()*.24+v.z()*.35);
-            int px=left+width/2+(int)Math.round((ax-centerX)*scale),py=getPreviewHeight()/2+(int)Math.round((ay-centerY)*scale);
+            var v=selectedVertex;var p=projection().project(v.x(),v.y(),v.z());int px=view.x(p.x()),py=view.y(p.y());
             g.setColor(new Color(255,218,87));g.fillOval(px-4,py-4,8,8);g.drawString("v"+v.id(),px+7,py-6);
+        }
+        if(title.equals("WORKING MESH")&&selectedHit!=null&&selectionMode.getSelectedIndex()>0){
+            var state=topologyProject.snapshot();var ids=new java.util.HashMap<Long,EditorTopologyProject.Vertex>();for(var v:state.vertices())ids.put(v.id(),v);
+            var face=state.faces().stream().filter(f->f.id()==selectedHit.faceId()).findFirst().orElse(null);
+            if(face!=null){
+                long[] points=selectionMode.getSelectedIndex()==1?new long[]{selectedHit.edgeA(),selectedHit.edgeB()}:new long[]{face.a().vertex(),face.b().vertex(),face.c().vertex(),face.a().vertex()};
+                g.setColor(new Color(255,218,87));g.setStroke(new BasicStroke(3));
+                for(int i=1;i<points.length;i++){var a=ids.get(points[i-1]);var b=ids.get(points[i]);if(a==null||b==null)continue;
+                    var pa=projection().project(a.x(),a.y(),a.z());var pb=projection().project(b.x(),b.y(),b.z());g.drawLine(view.x(pa.x()),view.y(pa.y()),view.x(pb.x()),view.y(pb.y()));}
+                g.setStroke(new BasicStroke(1));
+            }
         }
         if(result!=null&&title.equals("PREVIEW")){
             java.util.Map<String,double[]> centroids=new java.util.LinkedHashMap<>();
@@ -460,9 +495,7 @@ public final class AssetImportDialog {
             for(var part:centroids.entrySet()){
                 double[] c=part.getValue();
                 double a=c[0]/c[3],b=c[1]/c[3],d=c[2]/c[3];
-                double ax=a*.83-d*.55,ay=-(b*.95+a*.24+d*.35);
-                int px=left+width/2+(int)Math.round((ax-centerX)*scale);
-                int py=getPreviewHeight()/2+(int)Math.round((ay-centerY)*scale);
+                var p=projection().project(a,b,d);int px=view.x(p.x()),py=view.y(p.y());
                 g.fillOval(px-4,py-4,8,8);
                 g.drawString(part.getKey()+" — COLLAPSED",px+7,py-5);
             }

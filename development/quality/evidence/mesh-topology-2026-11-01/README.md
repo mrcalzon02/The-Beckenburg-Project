@@ -7,3 +7,5 @@ The initial `import-review.png` and `import-review-before-newline-fix.png` are a
 All images show a four-face test OBJ fixture in the human tool. They are UI/fixture evidence, not authored map/model art, installed gameplay, renderer-quality or complete G2 acceptance. Selection/gizmos, primitives, edge/face modeling and full material/normal interchange remain open.
 
 `primitive-authoring.png` captures the actual human dock after five separately owned primitive fixture parts were committed, with a pending torus preview. Native topology reports five islands, 16 plane boundary edges and zero issues. This is fixture UI evidence, not production model art or complete G2 acceptance. Primitive creation is now implemented; picking/gizmos, edge/face modeling and full interchange remain open.
+
+`triangle-selection.png` is a later actual fixture UI capture: real mouse clicks select a native face in FRONT view, then ISOMETRIC view displays its highlight. Individual triangle/vertex/edge/face picking is now implemented; multi-selection, gizmos and modeling remain open. Primitive721103f2 native41368621679 and standalone41368616675 completed SUCCESS.
