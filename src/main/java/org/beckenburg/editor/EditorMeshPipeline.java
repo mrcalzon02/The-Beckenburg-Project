@@ -40,7 +40,8 @@ public final class EditorMeshPipeline {
         }
     }
     /** Optional per-corner source position identities. Empty means the source supplied no indices. */
-    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials) {
+    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds) {
+        public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials){this(name,triangles,sourceBytes,cornerVertexIds,materials,null,List.of());}
         public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds){this(name,triangles,sourceBytes,cornerVertexIds,List.of());}
         public Mesh(String name,List<Triangle> triangles,long sourceBytes){this(name,triangles,sourceBytes,List.of());}
         public Mesh {
@@ -49,7 +50,7 @@ public final class EditorMeshPipeline {
             triangles=List.copyOf(triangles);materials=List.copyOf(materials);EditorMeshMaterial.validateTable(materials);var known=new HashSet<String>();for(var m:materials)known.add(m.key());for(var t:triangles)if(!t.material().isEmpty()&&!known.contains(t.material()))throw new IllegalArgumentException("Unresolved face material");
             if(cornerVertexIds==null||!cornerVertexIds.isEmpty()&&cornerVertexIds.size()!=triangles.size()*3)
                 throw new IllegalArgumentException("Source topology corner count mismatch");
-            cornerVertexIds=List.copyOf(cornerVertexIds);
+            cornerVertexIds=List.copyOf(cornerVertexIds);faceIds=List.copyOf(faceIds);if(!faceIds.isEmpty()&&(faceIds.size()!=triangles.size()||new HashSet<>(faceIds).size()!=faceIds.size()||faceIds.stream().anyMatch(id->id<0)))throw new IllegalArgumentException("Invalid native face IDs");
             for(long id:cornerVertexIds)if(id<0)throw new IllegalArgumentException("Invalid source position ID");
         }
     }
@@ -197,6 +198,7 @@ public final class EditorMeshPipeline {
      * and heads must remain named parts, never merged into an anonymous mesh. */
     public static Result regress(Mesh source,int level){
         if(level<0||level>12)throw new IllegalArgumentException("Regression level 0..12");
+        if(source.glbSource()!=null&&level>0)throw new IllegalArgumentException("Source-backed GLB reduction requires preserved node/primitive bindings; use native model edits");
         if(level==0){
             Map<String,List<Triangle>> groups=new LinkedHashMap<>();
             for(Triangle t:source.triangles())

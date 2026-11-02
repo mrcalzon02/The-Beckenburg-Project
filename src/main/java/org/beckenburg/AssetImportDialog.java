@@ -57,7 +57,7 @@ public final class AssetImportDialog {
     private final JSpinner vertexY=new JSpinner(new SpinnerNumberModel(0d,-1e9,1e9,.05));
     private final JSpinner vertexZ=new JSpinner(new SpinnerNumberModel(0d,-1e9,1e9,.05));
     private final JButton moveVertex=new JButton("MOVE VERTEX"),undoMesh=new JButton("UNDO MESH"),redoMesh=new JButton("REDO MESH");
-    private final JButton saveMesh=new JButton("SAVE MESH"),reopenMesh=new JButton("REOPEN MESH"),exportMesh=new JButton("EXPORT OBJ");
+    private final JButton saveMesh=new JButton("SAVE MESH"),reopenMesh=new JButton("REOPEN MESH"),exportMesh=new JButton("EXPORT OBJ"),exportGlb=new JButton("EXPORT GLB");
     private final JComboBox<EditorMeshPrimitives.Kind> primitiveKind=new JComboBox<>(EditorMeshPrimitives.Kind.values());
     private final JSpinner primitiveWidth=new JSpinner(new SpinnerNumberModel(1d,.0001,10000d,.1));
     private final JSpinner primitiveHeight=new JSpinner(new SpinnerNumberModel(1d,.0001,10000d,.1));
@@ -120,7 +120,7 @@ public final class AssetImportDialog {
     private EditorTopologyProject.State listedMaterials;
     private EditorObjMaterials.Capture sourceCapture;
     private EditorTopologyWorkspace workspace;
-    private record MeshPart(String name,int vertices,int faces){@Override public String toString(){return name+" / "+faces+" triangles";}}
+    private record MeshPart(String name,int vertices,int faces,String label){@Override public String toString(){return label+" / "+faces+" triangles";}}
     private final JTextField partSearch=new JTextField();
     private final DefaultListModel<MeshPart> partRows=new DefaultListModel<>();
     private final JList<MeshPart> partList=new JList<>(partRows);
@@ -180,6 +180,7 @@ public final class AssetImportDialog {
         redoMesh.addActionListener(e->{if(!busy&&meshHistory!=null&&meshHistory.redo())meshChanged();});
         saveMesh.addActionListener(e->saveAuthoring());
         exportMesh.addActionListener(e->chooseObjExport());
+        exportGlb.addActionListener(e->{if(topologyProject==null||busy||modelingPreview!=null)return;var chooser=new JFileChooser();chooser.setDialogTitle("Export source-preserving GLB copy");chooser.setSelectedFile(topologyProject.documentPath().resolveSibling("mesh-export.glb").toFile());if(chooser.showSaveDialog(dialog)==JFileChooser.APPROVE_OPTION)exportGlb(chooser.getSelectedFile().toPath());});
         reopenMesh.addActionListener(e->meshEdit(()->{try{
             topologyProject.reopen();
             if(path!=null&&path.toAbsolutePath().normalize().equals(topologyProject.documentPath()))reviewedSourceFingerprint=topologyProject.diskFingerprint();
@@ -195,6 +196,7 @@ public final class AssetImportDialog {
         faceAmount.setToolTipText("Select a FACE. Extrude: signed normal distance. Inset: fraction greater than0 and less than1.");
         faceOperation.addActionListener(e->clearModelingPreview());faceAmount.addChangeListener(e->clearModelingPreview());
         materialSwatch.setPreferredSize(new Dimension(250,112));
+        materialList.setRenderer(new DefaultListCellRenderer(){public Component getListCellRendererComponent(JList<?> list,Object value,int index,boolean selected,boolean focus){putClientProperty("html.disable",true);return super.getListCellRendererComponent(list,value,index,selected,focus);}});
         materialList.addActionListener(e->{refreshMaterialSwatch();refreshMaterialWindow();});
         openMaterials.addActionListener(e->openMaterials());
         uvOperation.addActionListener(e->{clearModelingPreview();var operation=(EditorTopologyProject.UvTransform)uvOperation.getSelectedItem();uvFirstLabel.setText(operation==EditorTopologyProject.UvTransform.ROTATE?"Degrees":operation==EditorTopologyProject.UvTransform.SCALE?"U factor":"U distance");uvSecondLabel.setText(operation==EditorTopologyProject.UvTransform.SCALE?"V factor":"V distance");uvSecond.setVisible(operation!=EditorTopologyProject.UvTransform.ROTATE);uvSecondLabel.setVisible(operation!=EditorTopologyProject.UvTransform.ROTATE);uvFirst.setValue(operation==EditorTopologyProject.UvTransform.ROTATE?90d:operation==EditorTopologyProject.UvTransform.SCALE?1d:.1);uvSecond.setValue(operation==EditorTopologyProject.UvTransform.SCALE?1d:0d);});
@@ -228,7 +230,7 @@ public final class AssetImportDialog {
         footer.add(apply);footer.add(close);
         content.setBorder(BorderFactory.createEmptyBorder(6,6,6,6));
         // Existing native controls and actions, arranged around the modeling viewport.
-        var menus=new JMenuBar();menus.add(EditorTopologyWorkspace.menu("File",newMesh,choose,saveMesh,reopenMesh,exportMesh,close));menus.add(EditorTopologyWorkspace.menu("Edit",undoMesh,redoMesh));
+        var menus=new JMenuBar();menus.add(EditorTopologyWorkspace.menu("File",newMesh,choose,saveMesh,reopenMesh,exportMesh,exportGlb,close));menus.add(EditorTopologyWorkspace.menu("Edit",undoMesh,redoMesh));
         EditorTopologyWorkspace.shortcut(menus.getMenu(0),1,KeyEvent.VK_O);EditorTopologyWorkspace.shortcut(menus.getMenu(0),2,KeyEvent.VK_S);EditorTopologyWorkspace.shortcut(menus.getMenu(1),0,KeyEvent.VK_Z);EditorTopologyWorkspace.shortcut(menus.getMenu(1),1,KeyEvent.VK_Y);
         var inspector=new JPanel(new BorderLayout(0,8));var toolTitle=new JLabel("SELECT");inspector.add(toolTitle,BorderLayout.NORTH);inspector.add(new JScrollPane(inspectorCards),BorderLayout.CENTER);inspector.add(EditorTopologyWorkspace.column(applyFaceEdit,cancelFaceEdit),BorderLayout.SOUTH);
         inspector.setBorder(BorderFactory.createEmptyBorder(8,5,5,5));
@@ -293,6 +295,10 @@ public final class AssetImportDialog {
             details.append("\nEXPORTED OBJ COPY "+target);return true;
         }catch(IOException failure){details.append("\nEXPORT REFUSED: "+failure.getMessage());workspace.setBrowsersVisible(true);return false;}
     }
+    boolean exportGlb(Path destination){
+        if(topologyProject==null||busy||modelingPreview!=null)return false;
+        try{Path target=destination.toAbsolutePath().normalize();if(!target.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".glb"))throw new IOException("Choose a .glb destination");if(path!=null&&target.equals(path.toAbsolutePath().normalize()))throw new IOException("Export cannot replace original source");String previous=Files.exists(target)?EditorDocumentStore.fingerprint(EditorMeshPipeline.readSource(target,4_000_000)):null;topologyProject.exportGlb(workingObservation,target,previous);details.append("\nEXPORTED GLB COPY "+target);return true;}catch(IOException failure){details.append("\nGLB EXPORT REFUSED: "+failure.getMessage());workspace.setBrowsersVisible(true);return false;}
+    }
     private void requestClose(){
         if(busy)return;
         if(hasUnsavedMeshChanges()){
@@ -310,7 +316,7 @@ public final class AssetImportDialog {
             for(var vertex:state.vertices())counts.computeIfAbsent(vertex.part(),key->new int[2])[0]++;
             for(var face:state.faces())counts.computeIfAbsent(face.part(),key->new int[2])[1]++;
             String filter=partSearch.getText().strip().toLowerCase(Locale.ROOT);
-            counts.forEach((name,count)->{if(name.toLowerCase(Locale.ROOT).contains(filter))partRows.addElement(new MeshPart(name,count[0],count[1]));});listedParts=state;
+            counts.forEach((name,count)->{String label=state.glbSource()==null?name:state.glbSource().partLabel(name);if((name+" "+label).toLowerCase(Locale.ROOT).contains(filter))partRows.addElement(new MeshPart(name,count[0],count[1],label));});listedParts=state;
         }finally{updatingParts=false;}
     }
     private void selectPart(String part){
@@ -385,7 +391,7 @@ public final class AssetImportDialog {
         if(topologyProject==null?listedParts!=null:listedParts!=topologyProject.snapshot()){refreshPartRows();if(topologyProject==null)listedParts=null;}
 
         boolean editable=topologyProject!=null&&!busy&&modelingPreview==null;partList.setEnabled(editable);partSearch.setEnabled(!busy);
-        for(var component:List.of(vertexId,vertexX,vertexY,vertexZ,moveVertex,saveMesh,reopenMesh,exportMesh))component.setEnabled(editable);
+        for(var component:List.of(vertexId,vertexX,vertexY,vertexZ,moveVertex,saveMesh,reopenMesh,exportMesh,exportGlb))component.setEnabled(editable);
         undoMesh.setEnabled(editable&&meshHistory.canUndo());redoMesh.setEnabled(editable&&meshHistory.canRedo());
         if(editable)saveMesh.setToolTipText("Save native topology to "+topologyProject.documentPath());
         newMesh.setEnabled(!busy);previewPrimitive.setEnabled(editable);applyPrimitive.setEnabled(editable&&reviewedPrimitive!=null);
@@ -533,6 +539,8 @@ public final class AssetImportDialog {
                 if(extension.endsWith(".glb")){
                     if(Files.size(candidate)>4_000_000)throw new IOException("Current game GLB decoder limit is 4 MiB");
                     byte[] bytes=EditorMeshPipeline.readSource(candidate,4_000_000);
+                    String unsupported;
+                    try{Path document=Path.of(System.getProperty("user.home"),".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop");var project=EditorTopologyProject.fromGlb(candidate.getFileName().toString(),bytes,document);return new Loaded(project.mesh(),project,"Original GLB hierarchy/pivots/material metadata retained; native edits own the selected node instance.",EditorMeshPipeline.sourceFingerprint(bytes));}catch(IOException notEditable){unsupported=notEditable.getMessage();}
                     var decoded=GlbProps.decode(bytes);
                     java.util.Set<Integer> mats=new java.util.HashSet<>();
                     long texBytes=0;
@@ -549,7 +557,7 @@ public final class AssetImportDialog {
                             glbCorner(c)));
                     }
                     return new Loaded(new EditorMeshPipeline.Mesh(candidate.getFileName().toString(),all,bytes.length),null,
-                        "GLB vertex editing unavailable until original material and normal bindings can be retained.",EditorMeshPipeline.sourceFingerprint(bytes));
+                        "GLB retained read-only: "+unsupported,EditorMeshPipeline.sourceFingerprint(bytes));
                 }
                 sourceTextureBytes=0;
                 byte[] bytes=EditorMeshPipeline.readSource(candidate,(int)EditorMeshPipeline.MAX_SOURCE_BYTES);
@@ -587,7 +595,8 @@ public final class AssetImportDialog {
         final int level=slider.getValue(),request=++revision;
         final EditorTopologyProject.Observation observation=workingObservation;
         final EditorTopologyProject project=topologyProject;
-        apply.setEnabled(false);details.setText("Computing regression level "+level+"...");
+        result=null;apply.setEnabled(false);details.setText("Computing regression level "+level+"...");
+        if(mesh.glbSource()!=null&&level>0){details.setText("PUBLISH DISABLED: source-backed GLB reduction requires preserved node/primitive/material bindings. Use level 0 or native model edits.");return;}
         new SwingWorker<Review,Void>(){
             @Override protected Review doInBackground(){
                 var reduction=EditorMeshPipeline.regress(mesh,level);
@@ -629,7 +638,7 @@ public final class AssetImportDialog {
                     for(String warning:result.warnings())report.append("WARNING: ").append(warning).append("\n");
                     if(mesh.name().toLowerCase(Locale.ROOT).endsWith(".glb")&&level>0)
                         report.append("WARNING: GLB material and named-node identities are not carried into regenerated fallback textures.\n");
-                    if(mesh.name().toLowerCase(Locale.ROOT).endsWith(".obj"))
+                    if(mesh.name().toLowerCase(Locale.ROOT).endsWith(".obj")&&mesh.materials().isEmpty())
                         report.append("NOTE: OBJ source MTL/texture links are not yet converted; uses a generated low-res fallback atlas.\n");
                     if(mesh.name().toLowerCase(Locale.ROOT).endsWith(".stl"))
                         report.append("NOTE: STL contains no UV/material atlas; uses a generated low-res fallback atlas.\n");
@@ -694,9 +703,10 @@ public final class AssetImportDialog {
                         expectedSource=saved.diskFingerprint();savedSourceFingerprint.set(expectedSource);
                     }
                 }
-                byte[] output=chosen.level()==0&&original.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".glb")
+                byte[] output=authoringProject==null&&chosen.level()==0&&original.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".glb")
                     ?sourceBytes:EditorGlbWriter.encode(chosen.optimized());
                 // Use the exact decoder that live gameplay will use. No mock preview-only mesh.
+                if(authoringProject!=null)EditorGlbWriter.validate(chosen.optimized(),output);
                 GlbProps.decode(output);
                 int after=chosen.parts().stream().mapToInt(EditorMeshPipeline.PartStats::after).sum();
                 return ImportedAssetLibrary.publishReviewed(original,output,chosen.level(),

@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.AssertionError: Actual runtime ignores original node matrix/pivot: Vertex[x=3.0, y=0.0, z=2.0, u=0.0, v=0.0, nx=1.0, ny=0.0, nz=-2.2204460492503126E-16]
+	at org.beckenburg.GlbSourceAuthorityTest.main(GlbSourceAuthorityTest.java:11)

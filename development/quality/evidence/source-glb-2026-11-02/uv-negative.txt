@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.AssertionError: Actual external GLB has vertically flipped original PNG: ff0000ff
+	at org.beckenburg.GlbSourceAuthorityTest.main(GlbSourceAuthorityTest.java:15)

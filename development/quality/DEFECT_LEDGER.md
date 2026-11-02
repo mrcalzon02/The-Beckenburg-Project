@@ -2953,3 +2953,21 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
+
+## Source-backed GLB defects — 2026-11-02
+
+### DEV-215 — Runtime GLB decoder ignores original node matrix and changes source pivots
+
+The exact previous18001e8a game decoder places the source fixture first vertex at (3,0,2), although its actual matrix plus parent hierarchy places it at (3,0,1). Use the shared bounded runtime reader for actual game and human editor, including original matrix/TRS hierarchy and inverse-transpose normals. Preserve all original transforms and compile edits back into source local coordinates.
+
+GlbSourceAuthorityTest matrix fails against exact18001e8a GlbProps and passes against current game. Fixture has parent rotation/translation, a nonuniform matrix child and a shared mesh instance. Bundled1088-source audit finds no active nonidentity node.matrix; source audit is not placed-map acceptance. See evidence/source-glb-2026-11-02/.
+
+Scope: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
+
+### DEV-216 — Generic external GLB textures use inverted legacy PNG origin
+
+The exact previous18001e8a game decoder samples blue ff0000ff at source (.25,.25), where the original external glTF PNG is red ffff0000. Use source top-left origin for generic external imports unless explicitly declared otherwise; retain exact legacy editor generator and reviewed named-source rules. Keep original image and UV bytes.
+
+GlbSourceAuthorityTest uv reproduces old actual runtime failure and current pass. Human source-backed publication checks RGBA8000ff00 on the original asymmetric PNG. Named purchased models, Blender UV/CRT and Hollow Creek BLEND tests pass locally. See evidence/source-glb-2026-11-02/.
+
+Scope: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.

@@ -8,7 +8,7 @@ import java.util.*;
  * derived from stable indexed vertices/corner UVs. No game scene is duplicated.
  */
 public final class EditorTopologyProject implements EditorProject<EditorTopologyProject.State> {
-    private static final int MAGIC=0x42544f50,VERSION=3,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
+    private static final int MAGIC=0x42544f50,VERSION=4,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
     public record Vertex(long id,String part,double x,double y,double z){
         public Vertex {
             text(part);if(id<0||!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))throw new IllegalArgumentException("Invalid topology vertex");
@@ -22,12 +22,14 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         public Face(long id,String part,Corner a,Corner b,Corner c){this(id,part,a,b,c,"");}
         public Face {text(part);if(id<0||material==null)throw new IllegalArgumentException("Invalid face ID/material");Objects.requireNonNull(a);Objects.requireNonNull(b);Objects.requireNonNull(c);}
     }
-    public record State(String sceneId,String sourceFingerprint,String name,long sourceBytes,List<Vertex> vertices,List<Face> faces,List<EditorMeshMaterial> materials){
+    public record State(String sceneId,String sourceFingerprint,String name,long sourceBytes,List<Vertex> vertices,List<Face> faces,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource){
+        public State(String sceneId,String sourceFingerprint,String name,long sourceBytes,List<Vertex> vertices,List<Face> faces,List<EditorMeshMaterial> materials){this(sceneId,sourceFingerprint,name,sourceBytes,vertices,faces,materials,null);}
         public State(String sceneId,String sourceFingerprint,String name,long sourceBytes,List<Vertex> vertices,List<Face> faces){this(sceneId,sourceFingerprint,name,sourceBytes,vertices,faces,List.of());}
         public State {
             text(sceneId);text(name);vertices=List.copyOf(vertices);faces=List.copyOf(faces);materials=List.copyOf(materials);EditorMeshMaterial.validateTable(materials);var materialKeys=new HashSet<String>();for(var material:materials)materialKeys.add(material.key());
             if(sourceFingerprint==null||!sourceFingerprint.matches("[0-9a-f]{64}")||sourceBytes<0||vertices.size()>MAX_VERTICES||faces.size()>EditorMeshPipeline.MAX_TRIANGLES)
                 throw new IllegalArgumentException("Invalid topology state");
+            if(glbSource!=null){if(!glbSource.fingerprint().equals(sourceFingerprint))throw new IllegalArgumentException("Foreign GLB source provenance");try{for(var original:glbSource.nativeMaterials())if(!materials.contains(original))throw new IllegalArgumentException("Original GLB material provenance must be retained");}catch(IOException invalid){throw new IllegalArgumentException("Invalid GLB source materials",invalid);}}
             var ids=new HashMap<Long,Vertex>();for(var vertex:vertices)if(ids.putIfAbsent(vertex.id(),vertex)!=null)throw new IllegalArgumentException("Duplicate vertex ID");
             var faceIds=new HashSet<Long>();for(var face:faces){
                 if(!faceIds.add(face.id()))throw new IllegalArgumentException("Duplicate face ID");if(!face.material().isEmpty()&&!materialKeys.contains(face.material()))throw new IllegalArgumentException("Unresolved native face material");
@@ -39,12 +41,13 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     private final Path path;
     private final String id,sourceFingerprint;
+    private final EditorGlbReader.Document sourceGlb;
     private State state;
     private State cleanState;
     private String diskFingerprint;
     private long revision=1;
     private static void text(String value){if(value==null||value.isBlank()||value.length()>512)throw new IllegalArgumentException("Invalid topology text");}
-    private EditorTopologyProject(Path path,State state){this.path=path.toAbsolutePath().normalize();this.state=state;this.cleanState=state;id=state.sceneId();sourceFingerprint=state.sourceFingerprint();}
+    private EditorTopologyProject(Path path,State state){this.path=path.toAbsolutePath().normalize();this.state=state;this.cleanState=state;id=state.sceneId();sourceFingerprint=state.sourceFingerprint();sourceGlb=state.glbSource();}
     /** Preserve supplied corner identities; unindexed triangle sources use geometric connectivity per part. */
     public static EditorTopologyProject fromMesh(EditorMeshPipeline.Mesh mesh,String sourceFingerprint,Path path){
         var graph=EditorMeshTopology.build(mesh);var vertices=new ArrayList<Vertex>();var faces=new ArrayList<Face>();
@@ -52,10 +55,11 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         for(int i=0;i<mesh.triangles().size();i++){
             var triangle=mesh.triangles().get(i);var uv=List.of(triangle.a(),triangle.b(),triangle.c());var corners=new ArrayList<Corner>();
             for(int j=0;j<3;j++)corners.add(new Corner(graph.edges().get(i*3+j).origin(),uv.get(j).u(),uv.get(j).v(),uv.get(j).normal()));
-            faces.add(new Face(i,triangle.part(),corners.get(0),corners.get(1),corners.get(2),triangle.material()));
+            faces.add(new Face(mesh.faceIds().isEmpty()?i:mesh.faceIds().get(i),triangle.part(),corners.get(0),corners.get(1),corners.get(2),triangle.material()));
         }
-        return new EditorTopologyProject(path,new State("mesh-"+UUID.randomUUID(),sourceFingerprint,mesh.name(),mesh.sourceBytes(),vertices,faces,mesh.materials()));
+        return new EditorTopologyProject(path,new State("mesh-"+UUID.randomUUID(),sourceFingerprint,mesh.name(),mesh.sourceBytes(),vertices,faces,mesh.materials(),mesh.glbSource()));
     }
+    public static EditorTopologyProject fromGlb(String name,byte[] original,Path path)throws IOException{var document=EditorGlbReader.read(original);document.requireEditable();try{var project=fromMesh(document.mesh(name),document.fingerprint(),path);project.snapshotBytes();return project;}catch(IllegalArgumentException invalid){throw new IOException("GLB topology exceeds supported native authoring capabilities",invalid);}}
     public String id(){return id;}
     public synchronized String title(){return state.name();}
     public Path documentPath(){return path;}
@@ -85,6 +89,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     public synchronized void exportObj(Observation observation,Path target,String expectedTargetSha)throws IOException{
         if(!isCurrent(observation))throw new IOException("Native mesh changed since export review");
+        if(state.glbSource()!=null)throw new IOException("OBJ cannot preserve original GLB hierarchy/pivots; save BTOP or export a GLB copy");
         if(target.toAbsolutePath().normalize().equals(path))throw new IOException("OBJ export cannot replace the native authoring document");
         State expected=state;
         if(target.getFileName().toString().toLowerCase(java.util.Locale.ROOT).endsWith(".obj.zip")){
@@ -94,8 +99,14 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             file->EditorMeshPipeline.read("export.obj",EditorMeshPipeline.readSource(file,EditorDocumentStore.MAX_BYTES)),
             file->EditorObjWriter.validate(expected,EditorMeshPipeline.readSource(file,EditorDocumentStore.MAX_BYTES)),expectedTargetSha);
     }
+    public synchronized void exportGlb(Observation observation,Path target,String expectedTargetSha)throws IOException{
+        if(!isCurrent(observation))throw new IOException("Native mesh changed since GLB export review");if(target.toAbsolutePath().normalize().equals(path))throw new IOException("GLB copy cannot replace the native authoring document");
+        var mesh=mesh(state);byte[] bytes=EditorGlbWriter.encode(mesh);EditorGlbWriter.validate(mesh,bytes);
+        EditorDocumentStore.saveIfUnchanged(target,out->out.write(bytes),file->EditorGlbReader.read(EditorMeshPipeline.readSource(file,4_000_000)),file->EditorGlbWriter.validate(mesh,EditorMeshPipeline.readSource(file,4_000_000)),expectedTargetSha);
+    }
     public synchronized void restore(State value){
         if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint()))throw new IllegalArgumentException("Topology belongs to another source/project");
+        if(!Objects.equals(sourceGlb,value.glbSource()))throw new IllegalArgumentException("Native restore cannot replace/drop original GLB provenance");
         state=value;revision++;
     }
     public List<Asset> assets(){return List.of();}
@@ -108,7 +119,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var vertices=vertices(state);var triangles=new ArrayList<EditorMeshPipeline.Triangle>();
         for(var face:state.faces())triangles.add(new EditorMeshPipeline.Triangle(face.part(),corner(face.a(),vertices),corner(face.b(),vertices),corner(face.c(),vertices),face.material()));
         var ids=new ArrayList<Long>();for(var face:state.faces()){ids.add(face.a().vertex());ids.add(face.b().vertex());ids.add(face.c().vertex());}
-        return new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes(),ids,state.materials());
+        return new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes(),ids,state.materials(),state.glbSource(),state.faces().stream().map(Face::id).toList());
     }
     private static Map<Long,Vertex> indexVertices(List<Vertex> values){var map=new HashMap<Long,Vertex>();for(var v:values)map.put(v.id(),v);return map;}
     private static EditorMeshPipeline.Triangle triangle(Face f,Map<Long,Vertex> values){return new EditorMeshPipeline.Triangle(f.part(),corner(f.a(),values),corner(f.b(),values),corner(f.c(),values),f.material());}
@@ -180,7 +191,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             }
             newFaces.add(new Face(faceMax+1+i*2,face.part(),oldA,oldB,newB,face.material()));newFaces.add(new Face(faceMax+2+i*2,face.part(),oldA,newB,newA,face.material()));
         }
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces,state.materials());
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces,state.materials(),state.glbSource());
         if(!topology(after).manifold())throw new IllegalArgumentException("Model edit would introduce invalid topology");
         return new EditPreview(this,state,after,revision,operation+" face "+faceId+" / +3 vertices, +6 triangles");
     }
@@ -215,7 +226,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             if(changed&&(a.vertex()==b.vertex()||b.vertex()==c.vertex()||c.vertex()==a.vertex())){removed++;continue;}
             newFaces.add(new Face(f.id(),f.part(),a,b,c,f.material()));
         }
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces,state.materials());
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces,state.materials(),state.glbSource());
         if(!topology(after).manifold())throw new IllegalArgumentException("Weld would leave invalid topology; select complete seams or repair degenerate faces first");
         return new EditPreview(this,state,after,revision,"WELD COINCIDENT / -"+replacements.size()+" vertices, -"+removed+" collapsed triangles");
     }
@@ -225,7 +236,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var positions=vertices(state);var remaining=new ArrayList<Face>();
         for(var face:state.faces()){double size=area(face,positions);if(size>0&&Double.isFinite(size))remaining.add(face);}
         int removed=state.faces().size()-remaining.size();if(removed==0)throw new IllegalArgumentException("No degenerate native faces to remove");
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),remaining,state.materials());
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),remaining,state.materials(),state.glbSource());
         if(!topology(after).manifold())throw new IllegalArgumentException("Other topology errors remain; repair requires a valid resulting mesh");
         return new EditPreview(this,state,after,revision,"REMOVE DEGENERATES / -"+removed+" triangles; vertex IDs retained");
     }
@@ -233,7 +244,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var used=new HashSet<Long>();for(var f:state.faces()){used.add(f.a().vertex());used.add(f.b().vertex());used.add(f.c().vertex());}
         var retained=state.vertices().stream().filter(v->used.contains(v.id())).toList();int removed=state.vertices().size()-retained.size();
         if(removed==0)throw new IllegalArgumentException("No unused native vertices to remove");
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),retained,state.faces(),state.materials());
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),retained,state.faces(),state.materials(),state.glbSource());
         return new EditPreview(this,state,after,revision,"REMOVE UNUSED / -"+removed+" vertices; surviving IDs and faces retained");
     }
     private static double area(Face face,Map<Long,Vertex> vertices){
@@ -265,7 +276,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         if(existing.isEmpty())materials.add(material);
         var faces=new ArrayList<Face>();boolean found=false;for(var face:state.faces())if(face.id()==faceId){found=true;faces.add(new Face(face.id(),face.part(),face.a(),face.b(),face.c(),material.key()));}else faces.add(face);
         if(!found)throw new IllegalArgumentException("Unknown native face");
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,materials);
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,materials,state.glbSource());
         if(after.equals(state))throw new IllegalArgumentException("Face already uses this material");
         return new EditPreview(this,state,after,revision,"BIND MATERIAL / face "+faceId+" / "+material.name());
     }
@@ -302,7 +313,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             }
             faces.add(new Face(f.id(),f.part(),corners.get(0),corners.get(1),corners.get(2),f.material()));
         }
-        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,state.materials());
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,state.materials(),state.glbSource());
         if(after.equals(state))throw new IllegalArgumentException("UV transform changes no native corner");
         return new EditPreview(this,state,after,revision,"UV "+operation+" / "+count+" faces / "+(origin?"UV origin":"UV bounds center"));
     }
@@ -349,7 +360,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             if(selected.contains(face.a().vertex())&&selected.contains(face.b().vertex())&&selected.contains(face.c().vertex()))faces.add(new Face(face.id(),face.part(),normalCorner(face.a(),transform.apply(face.a().normal())),normalCorner(face.b(),transform.apply(face.b().normal())),normalCorner(face.c(),transform.apply(face.c().normal())),face.material()));
             else faces.add(normalFace(face,EditorMeshNormals.transport(triangle(face,old),triangle(face,next))));
         }
-        return new State(state.sceneId(),state.sourceFingerprint(),state.name(),state.sourceBytes(),values,faces,state.materials());
+        return new State(state.sceneId(),state.sourceFingerprint(),state.name(),state.sourceBytes(),values,faces,state.materials(),state.glbSource());
     }
     /** Append a reviewed primitive without welding existing vertices or reassigning their IDs. */
     public synchronized void appendPrimitive(EditorMeshPrimitives.Parameters parameters){
@@ -371,11 +382,11 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             for(int j=0;j<3;j++)corners.add(new Corner(base+graph.edges().get(i*3+j).origin(),uv.get(j).u(),uv.get(j).v(),uv.get(j).normal()));
             faces.add(new Face(nextFace++,part,corners.get(0),corners.get(1),corners.get(2)));
         }
-        state=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),vertices,faces,state.materials());revision++;
+        state=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),vertices,faces,state.materials(),state.glbSource());revision++;
     }
     private static void write(State state,OutputStream out)throws IOException{
         boolean normals=state.faces().stream().anyMatch(f->f.a().normal()!=null||f.b().normal()!=null||f.c().normal()!=null);
-        int version=state.materials().isEmpty()?(normals?2:1):VERSION;
+        int version=state.glbSource()!=null?4:state.materials().isEmpty()?(normals?2:1):3;
         var data=new DataOutputStream(out);data.writeInt(MAGIC);data.writeInt(version);
         data.writeUTF(state.sceneId());data.writeUTF(state.sourceFingerprint());data.writeUTF(state.name());data.writeLong(state.sourceBytes());
         data.writeInt(state.vertices().size());for(var v:state.vertices()){
@@ -383,7 +394,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         }
         data.writeInt(state.faces().size());for(var f:state.faces()){
             data.writeLong(f.id());data.writeUTF(f.part());for(var c:List.of(f.a(),f.b(),f.c())){data.writeLong(c.vertex());data.writeDouble(c.u());data.writeDouble(c.v());if(version>=2){data.writeBoolean(c.normal()!=null);if(c.normal()!=null){data.writeDouble(c.normal().x());data.writeDouble(c.normal().y());data.writeDouble(c.normal().z());}}}if(version>=3)data.writeUTF(f.material());
-        }if(version>=3)EditorMeshMaterial.writeTable(data,state.materials());data.flush();
+        }if(version>=3)EditorMeshMaterial.writeTable(data,state.materials());if(version>=4){byte[] glb=state.glbSource().original();data.writeInt(glb.length);data.write(glb);}data.flush();
     }
     private static int count(DataInputStream data,int max)throws IOException{int count=data.readInt();if(count<0||count>max)throw new IOException("Topology count budget exceeded");return count;}
     private static State read(Path path)throws IOException{return decode(EditorMeshPipeline.readSource(path,EditorDocumentStore.MAX_BYTES));}
@@ -406,12 +417,13 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
                 faces.add(new Face(face,part,corners.get(0),corners.get(1),corners.get(2),version>=3?data.readUTF():""));
             }
             var materials=version>=3?EditorMeshMaterial.readTable(data):List.<EditorMeshMaterial>of();
+            EditorGlbReader.Document glb=null;if(version>=4){int length=data.readInt();if(length<28||length>4_000_000)throw new IOException("Native GLB source byte budget exceeded");byte[] original=data.readNBytes(length);if(original.length!=length)throw new EOFException("Truncated GLB source");glb=EditorGlbReader.read(original);glb.requireEditable();}
             if(data.read()!=-1)throw new IOException("Trailing native topology data");
-            return new State(id,source,name,size,vertices,faces,materials);
+            return new State(id,source,name,size,vertices,faces,materials,glb);
         }catch(IllegalArgumentException invalid){throw new IOException("Invalid native topology",invalid);}
     }
     private State owned(Path file)throws IOException{
-        State value=read(file);if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint()))throw new IOException("Foreign topology project/source");return value;
+        State value=read(file);if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint())||!Objects.equals(sourceGlb,value.glbSource()))throw new IOException("Foreign topology project/source provenance");return value;
     }
     public synchronized byte[] snapshotBytes()throws IOException{
         var buffer=new ByteArrayOutputStream();var bounded=new FilterOutputStream(buffer){
@@ -437,7 +449,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     public synchronized void reopen()throws IOException{
         EditorDocumentStore.recoverPending(path,this::owned);byte[] bytes=EditorMeshPipeline.readSource(path,EditorDocumentStore.MAX_BYTES);State value=decode(bytes);
-        if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint()))throw new IOException("Foreign topology project/source");
+        if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint())||!Objects.equals(sourceGlb,value.glbSource()))throw new IOException("Foreign topology project/source provenance");
         restore(value);diskFingerprint=EditorMeshPipeline.sourceFingerprint(bytes);cleanState=value;
     }
     public synchronized void recoverPrevious()throws IOException{EditorDocumentStore.restorePrevious(path,this::owned);reopen();}

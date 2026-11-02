@@ -53,6 +53,8 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 
 **Implementation checkpoint:** [indexed mesh authoring](../INDEXED_MESH_AUTHORING.md) provides real human vertex editing, stable indexed native state, undo/save/reopen, topology diagnostics and checked runtime publication. This is partial G2; native-indexed OBJ copy/readback and explicit unused-vertex cleanup are also implemented. Authored normals/material interchange and the remaining exit requirements above are unchanged.
 
+**Source-backed GLB checkpoint2026-11-02:** supported static indexed PNG GLB now uses the same game decoder and actual native BTOPv4. Original hierarchy/matrix/TRS pivots, shared instances and raw source materials/bytes survive edits, human EXPORT GLB and fresh reopen. Model and Material Editor retain independent windows/layouts with shared native authority/history. Unsupported rigs/morph/additional/sparse attributes/texture transforms remain read-only; full PBR rendering, remaining modeling and whole G2 exit remain open. See [actual authoring scope](../INDEXED_MESH_AUTHORING.md#source-backed-static-glb-and-separate-workspaces).
+
 ### G3 — Sculpting, remeshing, high-fidelity interchange and input
 **Depends on:** G2. **Source:** Topological editor, pages 1–18.
 - Clay/standard, grab, smooth, flatten/planar brushes; falloff, screen-space radius, stroke interpolation, symmetry, topology-safe deltas, brush-local normal rebuild.

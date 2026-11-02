@@ -1,0 +1,32 @@
+{
+  "baselineSource": "18001e8a412204bdc073cd80e413c1f6b682e3ed",
+  "localChecks": "PASS; native-suite.txt and portable Java17 tests",
+  "ci": "pending new exact-source publication",
+  "sha256": {
+    "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "f30f040beb13f1fbc11a5137c81a6baa119169ece943e22d1470e5525d7ad5f0",
+    "src\\main\\java\\org\\beckenburg\\GlbProps.java": "023cf732e194b12f9198e1a8908d241f2d0fe041017b8822c2d59a60b84ccb80",
+    "src\\main\\java\\org\\beckenburg\\editor\\EditorGlbReader.java": "c7f6e33089d13a4f78c9e339b28d85c5a636e8a7229959725396efaa1d46f5c4",
+    "src\\main\\java\\org\\beckenburg\\editor\\EditorGlbDocumentWriter.java": "18bd4e5f0848b01ac894124a49de84ae9d0d1920c760b41a09f0af325b22edc0",
+    "src\\main\\java\\org\\beckenburg\\editor\\EditorGlbWriter.java": "2637ba1164cdb7033949a167f6f5d348aa2dce5f59c02263d7112bc403a02fcb",
+    "src\\main\\java\\org\\beckenburg\\editor\\EditorGlbJson.java": "cfc6ace881288d2a67feb86174914b2fc6b692db4353b3b7d2d8fbc72439f706",
+    "src\\main\\java\\org\\beckenburg\\editor\\EditorTopologyProject.java": "118d527ad95d07572a756cf7a99a972d2176eb570772f7035f99ecc728b89db6",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\baseline-full-a813.txt": "675621b0a5c04ce29fad30f27ea48bd28785137ac77091cf6180b04840d3fbe9",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\current-positive.txt": "c686714b9c4b3ce1aef1cc0f34015c26eb6fd8cbb715078f629aa470172ca4b9",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\edited.btop": "4b19dc211e43a50c644c8e8d2d192f5760842eb7a8bf7aca85518738c136dabd",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\edited.glb": "e3cc426be50e0c70332042779e0ae1debcd7f09eae66bc1400fd24a373083e96",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\glb-human-edited.glb": "4f90dd67231ce2557c6b6e133b8588da85f8ea1e9e16b3d6e32141760701f0a9",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\glb-human-exact.glb": "b65fd7742a43cb235f5a958e16e0a3f4289d4e2ce5a44bc1dce7536fc8f5760e",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\glb-human-material-window.png": "a1125a67ae26714a4419554c7b8de4f13aab38c1932245ed31a379827e52c462",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\glb-human-model-window.png": "974aecea80124f1549cacb2be9e39a7f72039670fc7e20e341af1c36bc782903",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\glb-human-model.btop": "8a4d511a0ae2e80871863de269ee0b36ad06bacd2a40de28c87483c931055b9c",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\glb-human-original.glb": "b65fd7742a43cb235f5a958e16e0a3f4289d4e2ce5a44bc1dce7536fc8f5760e",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\glb-human-runtime.glb": "4f90dd67231ce2557c6b6e133b8588da85f8ea1e9e16b3d6e32141760701f0a9",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\glb-human-uv-preview.png": "208363f50a71907e2d2effd3747cde0a5d27e090ca86ec1f5b02b30c0d9b9c81",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\glb-source-matrix-audit.json": "347d1a535947b990be0834af0a0f2c954b904418515bd9099f94974d983d56ac",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\matrix-negative.txt": "0968e3b55abe91b0ef92a9b28fba41efe2bc857d4425edd9f749e5e7ec309d59",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\native-suite.txt": "97c8c2deac1d3667886171120e632063efccdfbe4a3ca33fc459d4211d9216d0",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\original.glb": "79c9b901e6af985a5a0a571272f2d885a45b191857e7fdc3c8814eb3cf2bd69a",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\README.md": "0efa23b2843ce20781eb4e791647dee77694eaa22bd73bc821743ddd1553ecd7",
+    "development\\quality\\evidence\\source-glb-2026-11-02\\uv-negative.txt": "c0bc169d44ff377c7aea3db9b46f57c06314f070a399df07ad9704e7e3d63c97"
+  }
+}

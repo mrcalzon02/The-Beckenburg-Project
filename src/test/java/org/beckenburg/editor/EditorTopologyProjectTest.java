@@ -39,7 +39,7 @@ public final class EditorTopologyProjectTest {
             Files.copy(foreign.documentPath(),EditorDocumentStore.previous(project.documentPath()),StandardCopyOption.REPLACE_EXISTING);
             try{project.recoverPrevious();throw new AssertionError("Foreign topology backup accepted");}catch(java.io.IOException expected){}
             check(project.snapshot().equals(edited)&&Arrays.equals(first,Files.readAllBytes(project.documentPath())),"Foreign ID backup preserves native authoring/disk bytes");
-            byte[] future=first.clone();future[7]=4;Files.write(project.documentPath(),future);
+            byte[] future=first.clone();future[7]=5;Files.write(project.documentPath(),future);
             try{project.reopen();throw new AssertionError("Unknown future version accepted");}catch(java.io.IOException expected){}
             check(project.snapshot().equals(edited)&&Arrays.equals(future,Files.readAllBytes(project.documentPath())),"Unsupported native version retained without reinterpretation");
             Files.write(project.documentPath(),first);

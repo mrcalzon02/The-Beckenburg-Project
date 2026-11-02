@@ -113,7 +113,7 @@ public final class AssetImportTopologyGuiTest {
             SwingUtilities.invokeAndWait(()->ui.get().loadSource(glb));
             await(()->{try{return ((JButton)field(ui.get(),"apply")).isEnabled();}catch(Exception e){throw new RuntimeException(e);}});
             SwingUtilities.invokeAndWait(()->{try{
-                check(!((JButton)field(ui.get(),"moveVertex")).isEnabled(),"GLB editing cannot silently discard original material/normal bindings");
+                var glbProject=(org.beckenburg.editor.EditorTopologyProject)field(ui.get(),"topologyProject");check(glbProject!=null&&glbProject.snapshot().glbSource()!=null&&((JButton)field(ui.get(),"moveVertex")).isEnabled(),"Supported GLB edits retain original source/material/normal provenance in native authority");check(Arrays.equals(glbProject.snapshot().glbSource().original(),Files.readAllBytes(glb)),"Actual original GLB remains embedded without flattening source provenance");
                 ((JSlider)field(ui.get(),"slider")).setValue(1);
             }catch(Exception e){throw new RuntimeException(e);}});
             await(()->{try{return ((JTextArea)field(ui.get(),"details")).getText().contains("PUBLISH DISABLED:");}catch(Exception e){throw new RuntimeException(e);}});
