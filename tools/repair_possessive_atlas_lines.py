@@ -134,15 +134,22 @@ def main() -> None:
         for name, payload in original_entries.items():
             if name not in changed and verify.read(name) != payload:
                 raise AssertionError(f"Unrelated ghost sprite changed: {name}")
-    # Existing packaging assembles the 9 parts in numeric order. Preserve all
-    # eight original 768 KiB part boundaries and one nonempty final remainder.
-    split = len(original_parts[0])
-    if any(len(x) != split for x in original_parts[:-1]):
-        raise ValueError("Unexpected source v3 part layout")
-    if not (split * 8 < len(patched) < split * 9):
-        raise ValueError("Patched archive does not fit exactly nine parts")
-    for index, part in enumerate(part_paths):
-        part.write_bytes(patched[index * split:(index + 1) * split])
+    # Existing packaging concatenates nine numbered parts; it does NOT
+    # depend on the old 768 KiB byte offsets. Recompressing the unchanged
+    # source PNG entries can shrink the ZIP well below eight old part spans.
+    # Rebalance all nine parts without padding, appending bogus ZIP members,
+    # altering any existing PNG bytes, or exceeding the previous per-part cap.
+    old_cap = len(original_parts[0])
+    if any(len(x) != old_cap for x in original_parts[:-1]):
+        raise ValueError("Unexpected original v3 part layout")
+    split = (len(patched) + 8) // 9
+    if split > old_cap:
+        raise ValueError("Repacked source ZIP exceeds existing per-part budget")
+    chunks = [patched[index * split:(index + 1) * split] for index in range(9)]
+    if not all(chunks) or b"".join(chunks) != patched:
+        raise AssertionError("Rebalanced nine-part archive did not round-trip")
+    for part, data in zip(part_paths, chunks):
+        part.write_bytes(data)
 
     REPORT.write_text(json.dumps({
         "source_archive_sha256": hashlib.sha256(original).hexdigest(),
