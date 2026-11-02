@@ -27,7 +27,15 @@ public final class GlbPropsTest {
             }
             assert colors.size()>3:"Source albedo not decoded for "+names[i];
         }
-        try {
+        // Preserve the atlas-coordinate fix without changing all legacy
+        // materials or silently flipping unrelated source meshes.
+        assert GlbProps.reviewedSourceGltfUv("metal_barrel_mp_1");
+        assert GlbProps.reviewedSourceGltfUv("canned_food_mp_1");
+        assert GlbProps.reviewedSourceGltfUv("canned_food_mp_2");
+        assert !GlbProps.reviewedSourceGltfUv("open_book_mp_1");
+        assert GlbProps.imageRow(.75,256,true)==192:
+            "Corrected glTF cap UV must sample the lower image row";
+                try {
             GlbProps.model("not_in_the_owner_library");
             throw new AssertionError("Unapproved model must be rejected");
         }catch(IllegalArgumentException expected){/* strict allowlist */}
