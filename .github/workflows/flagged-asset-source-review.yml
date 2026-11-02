@@ -25,6 +25,35 @@ jobs:
               blender_ghost_writing_book_2 blender_health_supplies_1 \
               blender_igniter_2 blender_igniter_2_lit blender_sanity_medication_2 \
             --output build/flagged-source/uv
+      - name: Log exact source atlas, UV and sampler evidence for unresolved assets
+        continue-on-error: true
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.audit_glb_materials import audit
+
+          for model in (
+              "level_fireplace", "tv_mp_1",
+              "blender_health_supplies_1",
+              "blender_igniter_2", "blender_igniter_2_lit",
+              "blender_sanity_medication_2"
+          ):
+              report = audit(Path("assets/runtime/models") / (model + ".glb"))
+              compact = {
+                  "id": model,
+                  "warnings": report["warnings"],
+                  "textures": report["textures"],
+                  "materials": report["materials"],
+                  "primitives": [
+                      {"mesh": p["mesh"], "primitive": p["primitive"],
+                       "material": p["material"], "uv": p.get("uv")}
+                      for p in report["primitives"]
+                  ],
+              }
+              print("SOURCE_ATLAS " + json.dumps(compact, separators=(",", ":")))
+          PY
       - name: Preserve original authored models, scene and character source packages
         shell: bash
         run: |
@@ -41,6 +70,17 @@ jobs:
           done
           find build/flagged-source/models -name '*.glb' -print0 | sort -z | xargs -0 sha256sum > build/flagged-source/source-sha256.txt
           printf 'source_commit=%s\nassets_originals_unchanged=true\nart_validation=advisory\n' "$GITHUB_SHA" > build/flagged-source/revision.txt
+      - name: Preserve exact high-resolution character source boards for repair assessment
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/flagged-source/character-masters
+          cp assets/concept-art/v001/01-hunters/observer-character-profile.png build/flagged-source/character-masters/
+          cp assets/concept-art/v001/01-hunters/demonologist-character-profile.png build/flagged-source/character-masters/
+          cp assets/concept-art/v001/03-ghosts/twins-ghost-profile.png build/flagged-source/character-masters/
+          cp assets/concept-art/v001/03-ghosts/possessive-ghost-profile.png build/flagged-source/character-masters/
+          find build/flagged-source/character-masters -type f -print0 | sort -z | xargs -0 sha256sum > build/flagged-source/master-sha256.txt
+          echo "These are unmodified canonical source boards, not generated substitutes." > build/flagged-source/character-masters/README.txt
       - name: Upload original model files and UV/source PNG review
         uses: actions/upload-artifact@v4
         with:

@@ -6,19 +6,24 @@
     "Full native service/recovery/actual GUI/area/face/publication/headless suite PASS",
     "Independent Java17 JAR: face modeling/native topology under256MiB",
     "Actual source/token cancel, stale/foreign rejection, one-step undo/redo and native save/reopen",
-    "Source/runtime publication mismatch negative control; corrected coherent publication and all native/runtime corners"
+    "Source/runtime publication mismatch negative control; corrected coherent publication and all native/runtime corners",
+    "Complete merged Java17 build and full native service/human modeling/publication/headless suite PASS",
+    "Concurrent FlaggedSourceAtlasRuntimeTest five source/sampler bindings PASS; visual acceptance remains separate"
   ],
   "canonicalLfSha256": {
     "src/main/java/org/beckenburg/editor/EditorTopologyProject.java": "15ad2a800482d9bddb45d951a56c828414d5db5a53519c94f1a92e3f71e3b152",
     "src/main/java/org/beckenburg/AssetImportDialog.java": "204894b391ee3ec7fdad457a1c334a7626ced0105db61d97f98ecb4ea98f2cdb",
     "src/test/java/org/beckenburg/editor/EditorFaceModelingTest.java": "1a46ad0e7751e06c6a90593ef627b8061fda6de22ce2f83de32a31cd790edd61",
     "src/test/java/org/beckenburg/AssetImportFaceModelingGuiTest.java": "3a86aed96363c181fbf071f09da12bfcdf100b0bd64830f0b2314f7a9fb40297",
-    "src/test/java/org/beckenburg/AssetImportPublicationRevisionGuiTest.java": "940cd3f2ea8a96f5d33eab6990a2340700fad1a1a2806c43761fcdad72785520"
+    "src/test/java/org/beckenburg/AssetImportPublicationRevisionGuiTest.java": "940cd3f2ea8a96f5d33eab6990a2340700fad1a1a2806c43761fcdad72785520",
+    "src/main/java/org/beckenburg/GlbProps.java": "ec58f2bfa0a26918477aa48621926388337636b2291e85d23a322a49a59766ed"
   },
   "ci": "pending exact-source publication",
   "limits": [
     "Single triangulated face only; region modeling and geometric intersection repair remain open",
     "Full normals/material interchange and G2 exit remain open",
     "No new model agent/MCP operations or physical acceptance inferred"
-  ]
+  ],
+  "implementationCommit": "cff401ec",
+  "mergedMain": "1b38b95c"
 }

@@ -91,22 +91,22 @@ jobs:
         run: |
           python tools/inspect_flagged_uv.py --output build/dev-room/source-uv
           if ($LASTEXITCODE -ne 0) { Write-Warning "Source UV diagnostics unavailable; release unaffected." }
-      - name: A/B render purchased book texture origin using original GLBs (advisory)
+      - name: Capture legacy inverted-V book control against corrected normal runtime (advisory) (advisory)
         shell: pwsh
         continue-on-error: true
         run: |
           $ids = @('open_book_mp_1','book_mp_2','book_mp_3','book_mp_4','book_mp_5','blender_ghost_writing_book_2')
           foreach ($id in $ids) {
-            & java '-Djava.awt.headless=true' '-Dbeckenburg.devroom.bookTopLeftUV=true' -cp 'build\beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--capture' "--asset=$id" "--output=build/dev-room/book-uv-alternative/$id"
+            & java '-Djava.awt.headless=true' '-Dbeckenburg.devroom.legacyBottomLeftUV=true' -cp 'build\beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--capture' "--asset=$id" "--output=build/dev-room/book-uv-legacy/$id"
             if ($LASTEXITCODE -ne 0) { Write-Warning "Book atlas A/B preview unavailable: $id" }
           }
-      - name: A/B render remaining source atlases from original GLBs (advisory)
+      - name: Capture legacy inverted-V controls for fireplace, TV and equipment (advisory) (advisory)
         shell: pwsh
         continue-on-error: true
         run: |
           $ids = @('level_fireplace','tv_mp_1','blender_health_supplies_1','blender_igniter_2','blender_igniter_2_lit','blender_sanity_medication_2')
           foreach ($id in $ids) {
-            & java '-Djava.awt.headless=true' '-Dbeckenburg.devroom.remainingTopLeftUV=true' -cp 'build\beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--capture' "--asset=$id" "--output=build/dev-room/remaining-uv-alternative/$id"
+            & java '-Djava.awt.headless=true' '-Dbeckenburg.devroom.legacyBottomLeftUV=true' -cp 'build\beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--capture' "--asset=$id" "--output=build/dev-room/remaining-uv-legacy/$id"
             if ($LASTEXITCODE -ne 0) { Write-Warning "UV-origin comparison unavailable: $id" }
           }
       - name: Record source revision
