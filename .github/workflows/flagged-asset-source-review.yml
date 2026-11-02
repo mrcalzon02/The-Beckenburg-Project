@@ -70,6 +70,17 @@ jobs:
           done
           find build/flagged-source/models -name '*.glb' -print0 | sort -z | xargs -0 sha256sum > build/flagged-source/source-sha256.txt
           printf 'source_commit=%s\nassets_originals_unchanged=true\nart_validation=advisory\n' "$GITHUB_SHA" > build/flagged-source/revision.txt
+      - name: Preserve exact high-resolution character source boards for repair assessment
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/flagged-source/character-masters
+          cp assets/concept-art/v001/01-hunters/observer-character-profile.png build/flagged-source/character-masters/
+          cp assets/concept-art/v001/01-hunters/demonologist-character-profile.png build/flagged-source/character-masters/
+          cp assets/concept-art/v001/03-ghosts/twins-ghost-profile.png build/flagged-source/character-masters/
+          cp assets/concept-art/v001/03-ghosts/possessive-ghost-profile.png build/flagged-source/character-masters/
+          find build/flagged-source/character-masters -type f -print0 | sort -z | xargs -0 sha256sum > build/flagged-source/master-sha256.txt
+          echo "These are unmodified canonical source boards, not generated substitutes." > build/flagged-source/character-masters/README.txt
       - name: Upload original model files and UV/source PNG review
         uses: actions/upload-artifact@v4
         with:
