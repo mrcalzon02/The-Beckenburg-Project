@@ -231,13 +231,13 @@ public final class GlbProps {
     public static synchronized int foliageMaterial(int original,long seed){
         int variant=Math.floorMod((int)(seed^(seed>>>32)),16);
         long key=((long)original<<32)|variant;Integer cached=foliagePalettes.get(key);if(cached!=null)return cached;
-        BufferedImage source=textures.get(original-TEXTURE_BASE),copy=new BufferedImage(source.getWidth(),source.getHeight(),BufferedImage.TYPE_INT_RGB);
+        BufferedImage source=textures.get(original-TEXTURE_BASE),copy=new BufferedImage(source.getWidth(),source.getHeight(),BufferedImage.TYPE_INT_ARGB);
         double warmth=(variant%4-1.5)*.025,brightness=.89+(variant/4)*.035;
         for(int y=0;y<source.getHeight();y++)for(int x=0;x<source.getWidth();x++){
             int rgb=source.getRGB(x,y),hash=(x*73856093)^(y*19349663)^(variant*83492791);hash^=hash>>>13;
             double speckle=1+(Math.floorMod(hash,17)-8)*.006+.018*Math.sin((x+variant*3)*.24+(y-variant)*.33);
             int r=(int)(((rgb>>16)&255)*(brightness+warmth)*speckle),g=(int)(((rgb>>8)&255)*brightness*speckle),b=(int)((rgb&255)*(brightness-warmth)*speckle);
-            copy.setRGB(x,y,(Math.min(255,r)<<16)|(Math.min(255,g)<<8)|Math.min(255,b));
+            copy.setRGB(x,y,(rgb&0xff000000)|(Math.min(255,r)<<16)|(Math.min(255,g)<<8)|Math.min(255,b));
         }
         int id=TEXTURE_BASE+textures.size();textures.add(copy);vehicleUvMaterials.add(vehicleUvMaterials.get(original-TEXTURE_BASE));samplerWrapS.add(samplerWrapS.get(original-TEXTURE_BASE));samplerWrapT.add(samplerWrapT.get(original-TEXTURE_BASE));materialNames.add(materialName(original)+" foliage texel variant "+variant);
         diffuseFactors.add(diffuseFactors.get(original-TEXTURE_BASE).clone());foliagePalettes.put(key,id);return id;
