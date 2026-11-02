@@ -27,7 +27,7 @@ def audit(path):
     gltf = json.loads(data[20:20 + js_len])
     bin_header = 20 + js_len
     bin_len, bin_type = struct.unpack_from("<I4s", data, bin_header)
-    if bin_type != b"BIN\\x00" or bin_header + 8 + bin_len > len(data):
+    if bin_type != b"BIN\x00" or bin_header + 8 + bin_len > len(data):
         raise ValueError("invalid GLB binary chunk")
     bin_start = bin_header + 8
     buffers = gltf.get("bufferViews", [])
@@ -49,7 +49,7 @@ def audit(path):
                 "uri": img.get("uri"), "embedded": "bufferView" in img}
         if "bufferView" in img:
             raw = read_view(img["bufferView"])
-            if raw.startswith(b"\\x89PNG\\r\\n\\x1a\\n") and len(raw) >= 24:
+            if raw.startswith(b"\x89PNG\r\n\x1a\n") and len(raw) >= 24:
                 item["width"], item["height"] = struct.unpack_from(">II", raw, 16)
             else:
                 warn.append(f"image {index}: non-PNG embedded bitmap (review runtime decoder support)")
@@ -139,7 +139,7 @@ def main():
         except (OSError, ValueError, KeyError, IndexError, TypeError, struct.error) as exc:
             results.append({"path": str(model), "status": "cannot-parse", "warnings": [str(exc)]})
     output = {"schema_version": 1, "diagnostic_only": True, "count": len(results), "models": results}
-    payload = json.dumps(output, indent=2) + "\\n"
+    payload = json.dumps(output, indent=2) + "\n"
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(payload, encoding="utf-8")
