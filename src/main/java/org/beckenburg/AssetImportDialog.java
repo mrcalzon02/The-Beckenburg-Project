@@ -64,6 +64,11 @@ public final class AssetImportDialog {
     private final JComboBox<String> selectionMode=new JComboBox<>(new String[]{"VERTEX","EDGE","FACE"});
     private final JLabel selectionLabel=new JLabel("Click a triangle in the working mesh");
     private EditorMeshPicking.Hit selectedHit;
+    private final JSpinner meshSnap=new JSpinner(new SpinnerNumberModel(.05,0d,1000d,.05));
+    private record GizmoHandle(int axis,int x,int y,double anchorX,double anchorY,double unitX,double unitY){}
+    private record AxisDrag(EditorTopologyProject.State before,long revision,java.util.Set<Long> ids,GizmoHandle handle,int startX,int startY,double grid){}
+    private AxisDrag axisDrag;
+    private double dragDelta;
     private EditorTopologyProject topologyProject;
     private EditorTopologyProject.Vertex selectedVertex;
     private EditorHistory<EditorTopologyProject.State> meshHistory;
@@ -101,13 +106,21 @@ public final class AssetImportDialog {
         vertexControls.add(vertexInputs,BorderLayout.NORTH);vertexControls.add(vertexActions,BorderLayout.SOUTH);
         vertexInputs.add(new JLabel("Vertex ID"));vertexInputs.add(vertexId);
         vertexInputs.add(meshView);vertexInputs.add(selectionMode);vertexInputs.add(selectionLabel);
-        meshView.addActionListener(e->preview.repaint());selectionMode.addActionListener(e->preview.repaint());
-        preview.addMouseListener(new MouseAdapter(){@Override public void mousePressed(MouseEvent e){pickMesh(e.getX(),e.getY());}});
+        meshView.addActionListener(e->{cancelAxisDrag();preview.repaint();});selectionMode.addActionListener(e->{cancelAxisDrag();preview.repaint();});
+        preview.addMouseListener(new MouseAdapter(){
+            @Override public void mousePressed(MouseEvent e){if(e.getButton()==MouseEvent.BUTTON1){if(!beginAxisDrag(e.getX(),e.getY()))pickMesh(e.getX(),e.getY());}else cancelAxisDrag();}
+            @Override public void mouseReleased(MouseEvent e){if(e.getButton()==MouseEvent.BUTTON1)finishAxisDrag();}
+        });
+        preview.addMouseMotionListener(new MouseMotionAdapter(){@Override public void mouseDragged(MouseEvent e){updateAxisDrag(e.getX(),e.getY());}});
+        dialog.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0),"cancel-axis-drag");
+        dialog.getRootPane().getActionMap().put("cancel-axis-drag",new AbstractAction(){public void actionPerformed(ActionEvent e){cancelAxisDrag();}});
         for(var spinner:List.of(vertexId,vertexX,vertexY,vertexZ))spinner.setPreferredSize(new Dimension(65,24));
         for(var item:List.of(new Object[]{"X",vertexX},new Object[]{"Y",vertexY},new Object[]{"Z",vertexZ})){
             vertexInputs.add(new JLabel((String)item[0]));vertexInputs.add((JSpinner)item[1]);
         }
         vertexActions.add(moveVertex);vertexActions.add(undoMesh);vertexActions.add(redoMesh);vertexActions.add(saveMesh);vertexActions.add(reopenMesh);
+        vertexActions.add(new JLabel("Move grid (0 off)"));meshSnap.setPreferredSize(new Dimension(65,24));vertexActions.add(meshSnap);
+        meshSnap.setToolTipText("Drag colored axis endpoints; Escape or right-click cancels. Grid snaps movement distance in world units.");
         vertexId.addChangeListener(e->selectVertex());
         moveVertex.addActionListener(e->meshEdit(()->topologyProject.moveVertex(((Number)vertexId.getValue()).longValue(),
             ((Number)vertexX.getValue()).doubleValue(),((Number)vertexY.getValue()).doubleValue(),((Number)vertexZ.getValue()).doubleValue())));
@@ -182,6 +195,7 @@ public final class AssetImportDialog {
         newMesh.setEnabled(!busy);previewPrimitive.setEnabled(editable);applyPrimitive.setEnabled(editable&&reviewedPrimitive!=null);
         for(var component:List.of(primitiveKind,primitiveWidth,primitiveHeight,primitiveDepth,primitiveSegments,primitiveRings))component.setEnabled(editable);
         meshView.setEnabled(!busy);selectionMode.setEnabled(editable);
+        meshSnap.setEnabled(editable);
     }
     private void clearPrimitivePreview(){primitivePreview=null;reviewedPrimitive=null;applyPrimitive.setEnabled(false);preview.repaint();}
     private void previewPrimitive(){
@@ -198,6 +212,7 @@ public final class AssetImportDialog {
     }
     private void newAuthoringMesh(){
         if(busy)return;
+        cancelAxisDrag();
         if(meshDirty&&JOptionPane.showConfirmDialog(dialog,"Discard unsaved mesh edits before creating a new mesh?","Unsaved mesh",JOptionPane.YES_NO_OPTION)!=JOptionPane.YES_OPTION)return;
         try{
             Path document=Path.of(System.getProperty("user.home"),".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop");
@@ -235,6 +250,7 @@ public final class AssetImportDialog {
     }
     /** Same native import path for the human chooser and source-backed verification. */
     void loadSource(Path candidate){
+        cancelAxisDrag();
         selectedHit=null;selectionLabel.setText("Click a triangle in the working mesh");
         clearPrimitivePreview();
         busy=true;choose.setEnabled(false);apply.setEnabled(false);
@@ -449,6 +465,47 @@ public final class AssetImportDialog {
             default->"Face "+selectedHit.faceId();});
         preview.repaint();
     }
+    private java.util.Set<Long> selectedIds(){
+        if(topologyProject==null)return java.util.Set.of();
+        if(selectionMode.getSelectedIndex()==0)return selectedVertex==null?java.util.Set.of():java.util.Set.of(selectedVertex.id());
+        if(selectedHit==null)return java.util.Set.of();
+        if(selectionMode.getSelectedIndex()==1)return java.util.Set.copyOf(List.of(selectedHit.edgeA(),selectedHit.edgeB()));
+        return topologyProject.snapshot().faces().stream().filter(f->f.id()==selectedHit.faceId()).findFirst()
+            .map(f->java.util.Set.copyOf(List.of(f.a().vertex(),f.b().vertex(),f.c().vertex()))).orElse(java.util.Set.of());
+    }
+    private List<GizmoHandle> gizmoHandles(){
+        if(busy||topologyProject==null||source.triangles().isEmpty())return List.of();
+        var ids=selectedIds();if(ids.isEmpty())return List.of();double x=0,y=0,z=0;int count=0;
+        for(var v:topologyProject.snapshot().vertices())if(ids.contains(v.id())){x+=v.x();y+=v.y();z+=v.z();count++;}
+        if(count!=ids.size())return List.of();
+        var view=viewport(source.triangles(),0,preview.getWidth()/2);var anchor=projection().project(x/count,y/count,z/count);
+        double ax=view.x(anchor.x()),ay=view.y(anchor.y());var zero=projection().project(0,0,0);var handles=new ArrayList<GizmoHandle>();
+        for(int axis=0;axis<3;axis++){
+            var p=projection().project(axis==0?1:0,axis==1?1:0,axis==2?1:0);double ux=(p.x()-zero.x())*view.scale(),uy=(p.y()-zero.y())*view.scale(),length=Math.hypot(ux,uy);
+            if(length>1e-9)handles.add(new GizmoHandle(axis,(int)Math.round(ax+ux/length*48),(int)Math.round(ay+uy/length*48),ax,ay,ux,uy));
+        }
+        return handles;
+    }
+    private boolean beginAxisDrag(int x,int y){
+        if(busy||x>=preview.getWidth()/2)return false;
+        for(var h:gizmoHandles())if(Math.hypot(x-h.x(),y-h.y())<=8){
+            axisDrag=new AxisDrag(topologyProject.snapshot(),topologyProject.revision(),selectedIds(),h,x,y,((Number)meshSnap.getValue()).doubleValue());dragDelta=0;preview.repaint();return true;
+        }return false;
+    }
+    private void updateAxisDrag(int x,int y){
+        if(axisDrag==null)return;var h=axisDrag.handle();
+        double value=((x-axisDrag.startX())*h.unitX()+(y-axisDrag.startY())*h.unitY())/(h.unitX()*h.unitX()+h.unitY()*h.unitY());
+        dragDelta=axisDrag.grid()>0?Math.rint(value/axisDrag.grid())*axisDrag.grid():value;
+        selectionLabel.setText("Move "+"XYZ".charAt(h.axis())+" = "+String.format(Locale.ROOT,"%.4f",dragDelta));preview.repaint();
+    }
+    private void cancelAxisDrag(){if(axisDrag!=null)selectionLabel.setText("Move canceled");axisDrag=null;dragDelta=0;preview.repaint();}
+    private void finishAxisDrag(){
+        if(axisDrag==null)return;var drag=axisDrag;double delta=dragDelta;axisDrag=null;dragDelta=0;preview.repaint();
+        if(topologyProject.revision()!=drag.revision()||topologyProject.snapshot()!=drag.before()){selectionLabel.setText("Move refused");details.append("\nMOVE REFUSED: mesh changed during drag");return;}
+        if(delta==0)return;int axis=drag.handle().axis();
+        meshEdit(()->topologyProject.translateVertices(drag.ids(),axis==0?delta:0,axis==1?delta:0,axis==2?delta:0));
+        selectionLabel.setText(topologyProject.snapshot()==drag.before()?"Move refused":"Moved "+"XYZ".charAt(axis)+" = "+String.format(Locale.ROOT,"%.4f",delta));
+    }
     /** Regression panels share source bounds; the separate pending primitive has its own bounds. */
     private void draw(Graphics2D g,List<EditorMeshPipeline.Triangle> tris,int left,int width,String title){
         List<EditorMeshPipeline.Triangle> reference=title.equals("PRIMITIVE PREVIEW")?tris:source.triangles();
@@ -480,6 +537,16 @@ public final class AssetImportDialog {
                     var pa=projection().project(a.x(),a.y(),a.z());var pb=projection().project(b.x(),b.y(),b.z());g.drawLine(view.x(pa.x()),view.y(pa.y()),view.x(pb.x()),view.y(pb.y()));}
                 g.setStroke(new BasicStroke(1));
             }
+        }
+        if(title.equals("WORKING MESH")){
+            Color[] colors={new Color(255,100,100),new Color(100,235,130),new Color(110,165,255)};
+            for(var h:gizmoHandles()){
+                g.setColor(colors[h.axis()]);g.setStroke(new BasicStroke(2));g.drawLine((int)h.anchorX(),(int)h.anchorY(),h.x(),h.y());g.fillRect(h.x()-4,h.y()-4,8,8);g.drawString("XYZ".substring(h.axis(),h.axis()+1),h.x()+6,h.y()-5);
+                if(axisDrag!=null&&axisDrag.handle().axis()==h.axis()){
+                    int dx=(int)Math.round(h.anchorX()+h.unitX()*dragDelta),dy=(int)Math.round(h.anchorY()+h.unitY()*dragDelta);
+                    g.drawOval(dx-6,dy-6,12,12);g.drawString("release to commit / Esc cancels",dx+10,dy+12);
+                }
+            }g.setStroke(new BasicStroke(1));
         }
         if(result!=null&&title.equals("PREVIEW")){
             java.util.Map<String,double[]> centroids=new java.util.LinkedHashMap<>();

@@ -13,6 +13,7 @@ public final class AssetImportTopologyGuiTest {
     private static Object field(Object owner,String name)throws Exception{
         var f=owner.getClass().getDeclaredField(name);f.setAccessible(true);return f.get(owner);
     }
+    private static Object call(Object owner,String name)throws Exception{var m=owner.getClass().getDeclaredMethod(name);m.setAccessible(true);return m.invoke(owner);}
     private static void await(java.util.function.BooleanSupplier done)throws Exception{
         long end=System.nanoTime()+30_000_000_000L;
         while(System.nanoTime()<end){var ready=new java.util.concurrent.atomic.AtomicBoolean();
@@ -163,6 +164,46 @@ public final class AssetImportTopologyGuiTest {
                     check(nativeProject.get().snapshot()==state,"Picking cannot mutate geometry or history");
                 }
                 ((JComboBox<?>)field(dock,"meshView")).setSelectedItem(org.beckenburg.editor.EditorMeshPicking.Projection.ISOMETRIC);
+                for(String mode:java.util.List.of("VERTEX","EDGE","FACE")){
+                    ((JComboBox<?>)field(dock,"selectionMode")).setSelectedItem(mode);
+                    var before=nativeProject.get().snapshot();
+                    var selected=new java.util.HashSet<Long>();
+                    if(mode.equals("VERTEX"))selected.add(((Number)((JSpinner)field(dock,"vertexId")).getValue()).longValue());
+                    else if(mode.equals("EDGE")){selected.add(expected.edgeA());selected.add(expected.edgeB());}
+                    else {var face=before.faces().stream().filter(f->f.id()==expected.faceId()).findFirst().orElseThrow();selected.add(face.a().vertex());selected.add(face.b().vertex());selected.add(face.c().vertex());}
+                    var handles=(java.util.List<?>)call(dock,"gizmoHandles");var handle=handles.stream().filter(h->{try{return ((Integer)field(h,"axis"))==0;}catch(Exception e){throw new RuntimeException(e);}}).findFirst().orElseThrow();
+                    int sx=(Integer)field(handle,"x"),sy=(Integer)field(handle,"y");int ex=sx+(int)Math.round((Double)field(handle,"unitX")*.1),ey=sy+(int)Math.round((Double)field(handle,"unitY")*.1);
+                    canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_PRESSED,System.currentTimeMillis(),0,sx,sy,1,false,java.awt.event.MouseEvent.BUTTON1));
+                    check(field(dock,"axisDrag")!=null,"Actual native axis endpoint starts "+mode+" drag");
+                    canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_DRAGGED,System.currentTimeMillis(),java.awt.event.InputEvent.BUTTON1_DOWN_MASK,ex,ey,0,false,java.awt.event.MouseEvent.NOBUTTON));
+                    double delta=(Double)field(dock,"dragDelta");check(delta!=0&&Math.abs(delta/.05-Math.rint(delta/.05))<1e-12,"World-grid snapping");
+                    check(nativeProject.get().snapshot()==before,"Gizmo preview leaves native state untouched until release");
+                    canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_RELEASED,System.currentTimeMillis(),0,ex,ey,1,false,java.awt.event.MouseEvent.BUTTON1));
+                    var after=nativeProject.get().snapshot();check(after!=before&&after.faces().equals(before.faces()),"Release commits native IDs/connectivity/UVs");
+                    for(int i=0;i<before.vertices().size();i++){var a=before.vertices().get(i);var b=after.vertices().get(i);
+                        check(b.x()==a.x()+(selected.contains(a.id())?delta:0)&&b.y()==a.y()&&b.z()==a.z(),"Only selected "+mode+" vertices move on actual global X axis");}
+                    ((JButton)field(dock,"undoMesh")).doClick();check(nativeProject.get().snapshot().equals(before),"One undo reverses entire gizmo drag");
+                    ((JButton)field(dock,"redoMesh")).doClick();check(nativeProject.get().snapshot().equals(after),"One redo restores exact gizmo result");
+                }
+                var cancelBefore=nativeProject.get().snapshot();var history=field(dock,"meshHistory");int undoCount=((java.util.ArrayDeque<?>)field(history,"undo")).size();
+                var cancelHandle=((java.util.List<?>)call(dock,"gizmoHandles")).get(0);int sx=(Integer)field(cancelHandle,"x"),sy=(Integer)field(cancelHandle,"y");
+                canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_PRESSED,System.currentTimeMillis(),0,sx,sy,1,false,java.awt.event.MouseEvent.BUTTON1));
+                canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_DRAGGED,System.currentTimeMillis(),java.awt.event.InputEvent.BUTTON1_DOWN_MASK,sx+20,sy,0,false,java.awt.event.MouseEvent.NOBUTTON));
+                var rootPane=((JDialog)field(dock,"dialog")).getRootPane();var cancelKey=rootPane.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).get(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0));
+                rootPane.getActionMap().get(cancelKey).actionPerformed(new java.awt.event.ActionEvent(canvas,0,"Escape"));
+                canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_RELEASED,System.currentTimeMillis(),0,sx+20,sy,1,false,java.awt.event.MouseEvent.BUTTON1));
+                check(nativeProject.get().snapshot()==cancelBefore&&((java.util.ArrayDeque<?>)field(history,"undo")).size()==undoCount,"Escape cancellation preserves native state and exact history depth");
+                // Even a native undo/redo back to the same snapshot must invalidate an older drag revision.
+                canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_PRESSED,System.currentTimeMillis(),0,sx,sy,1,false,java.awt.event.MouseEvent.BUTTON1));
+                canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_DRAGGED,System.currentTimeMillis(),java.awt.event.InputEvent.BUTTON1_DOWN_MASK,sx+20,sy,0,false,java.awt.event.MouseEvent.NOBUTTON));
+                ((JButton)field(dock,"undoMesh")).doClick();((JButton)field(dock,"redoMesh")).doClick();
+                check(nativeProject.get().snapshot()==cancelBefore,"Native redo returns the identical snapshot object");
+                canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_RELEASED,System.currentTimeMillis(),0,sx+20,sy,1,false,java.awt.event.MouseEvent.BUTTON1));
+                check(nativeProject.get().snapshot()==cancelBefore&&((java.util.ArrayDeque<?>)field(history,"undo")).size()==undoCount,"Native revision change refuses stale drag even at identical geometry");
+            }catch(Exception e){throw new RuntimeException(e);}});
+            await(()->{try{return ((JButton)field(ui.get(),"apply")).isEnabled();}catch(Exception e){throw new RuntimeException(e);}});
+            SwingUtilities.invokeAndWait(()->{try{
+                var dock=ui.get();
                 var content=((JDialog)field(dock,"dialog")).getContentPane();
                 var image=new BufferedImage(content.getWidth(),content.getHeight(),BufferedImage.TYPE_INT_ARGB);var g=image.createGraphics();
                 try{content.printAll(g);}finally{g.dispose();}ImageIO.write(image,"png",output.resolveSibling("mesh-primitives-human.png").toFile());
@@ -171,7 +212,7 @@ public final class AssetImportTopologyGuiTest {
             await(()->published.get()!=null);runtimeMesh(published.get(),nativeProject.get().mesh());
             var primitiveArchive=org.beckenburg.editor.EditorTopologyProject.open(ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop"));
             check(primitiveArchive.snapshot().equals(nativeProject.get().snapshot()),"Published primitive retains exact native IDs and corner UVs");
-            System.out.println("PASS real human five-primitive preview/apply/undo/redo, parameter invalidation, new native mesh/save/fresh reopen, real mouse triangle/vertex/edge/face selection, UI PNG and every published runtime GLB corner");
+            System.out.println("PASS real human primitives, native roundtrip, triangle selection, vertex/edge/face axis drag/grid/undo/redo, Escape cancellation, stale revision refusal, UI PNG and every runtime GLB corner");
             System.out.println("PASS actual human mesh authoring: stable vertex move/undo/redo, native save/reopen/fresh chooser load, topology review/UI PNG, runtime GLB publish, exact editable/original source archives and changed-source rejection");
         }finally{
             SwingUtilities.invokeAndWait(()->{if(ui.get()!=null)try{((JDialog)field(ui.get(),"dialog")).dispose();}catch(Exception e){throw new RuntimeException(e);}});

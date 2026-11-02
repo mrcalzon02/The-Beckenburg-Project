@@ -40,6 +40,21 @@ public final class EditorMeshPrimitivesTest {
                 project.save();byte[] bytes=project.snapshotBytes();check(Arrays.equals(bytes,Files.readAllBytes(project.documentPath())),"Canonical native bytes");
                 check(EditorTopologyProject.open(project.documentPath()).snapshot().equals(after),"Fresh native reopen");
             }
+            var beforeMove=project.snapshot();var all=beforeMove.vertices().stream().map(EditorTopologyProject.Vertex::id).toList();
+            history.execute(()->project.translateVertices(all,.25,-.5,.75));var moved=project.snapshot();
+            check(moved.faces().equals(beforeMove.faces()),"Translation preserves face IDs/connectivity and UVs");
+            for(int i=0;i<all.size();i++){var a=beforeMove.vertices().get(i);var b=moved.vertices().get(i);
+                check(a.id()==b.id()&&a.part().equals(b.part())&&b.x()==a.x()+.25&&b.y()==a.y()-.5&&b.z()==a.z()+.75,"Atomic global native translation");}
+            check(history.undo()&&project.snapshot().equals(beforeMove),"Native multi-vertex transform undo");
+            check(history.redo()&&project.snapshot().equals(moved),"Native multi-vertex transform redo");
+            refused(()->project.translateVertices(List.of(-1L),1,0,0));check(project.snapshot()==moved,"Unknown ID rejection is atomic");
+            refused(()->project.translateVertices(all,Double.NaN,0,0));check(project.snapshot()==moved,"Nonfinite translation is atomic");
+            refused(()->project.translateVertices(List.of(),1,0,0));
+            var face=moved.faces().get(0);var points=new HashMap<Long,EditorTopologyProject.Vertex>();for(var v:moved.vertices())points.put(v.id(),v);
+            var a=points.get(face.a().vertex());var b=points.get(face.b().vertex());
+            refused(()->project.translateVertices(List.of(a.id()),b.x()-a.x(),b.y()-a.y(),b.z()-a.z()));
+            check(project.snapshot()==moved,"Degenerating subset translation refuses entire change");
+            project.save();check(EditorTopologyProject.open(project.documentPath()).snapshot().equals(moved),"Transformed native save/fresh reopen");
             for(var kind:EditorMeshPrimitives.Kind.values()){
                 refused(()->new EditorMeshPrimitives.Parameters(kind,Double.NaN,1,1,12,4));
                 refused(()->new EditorMeshPrimitives.Parameters(kind,0,1,1,12,4));

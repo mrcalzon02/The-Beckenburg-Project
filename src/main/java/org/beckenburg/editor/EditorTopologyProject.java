@@ -87,11 +87,26 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     public synchronized void moveVertex(long id,double x,double y,double z){
         var old=vertices(state);var vertex=old.get(id);if(vertex==null)throw new IllegalArgumentException("Unknown vertex ID");
         var replacement=new Vertex(id,vertex.part(),x,y,z);var next=new HashMap<>(old);next.put(id,replacement);
-        for(var face:state.faces())if(face.a().vertex()==id||face.b().vertex()==id||face.c().vertex()==id){
+        replaceVertices(old,next,Set.of(id));
+    }
+    /** Atomic global-axis translation of native IDs; no coordinate-based welding or partial edit. */
+    public synchronized void translateVertices(Collection<Long> ids,double dx,double dy,double dz){
+        Objects.requireNonNull(ids);
+        if(ids.isEmpty()||ids.size()>MAX_VERTICES||!Double.isFinite(dx)||!Double.isFinite(dy)||!Double.isFinite(dz))
+            throw new IllegalArgumentException("Invalid native translation");
+        var selected=new HashSet<>(ids);var old=vertices(state);var next=new HashMap<>(old);
+        for(var id:selected){
+            var v=old.get(id);if(v==null)throw new IllegalArgumentException("Unknown vertex ID");
+            next.put(id,new Vertex(id,v.part(),v.x()+dx,v.y()+dy,v.z()+dz));
+        }
+        replaceVertices(old,next,selected);
+    }
+    private void replaceVertices(Map<Long,Vertex> old,Map<Long,Vertex> next,Set<Long> selected){
+        for(var face:state.faces())if(selected.contains(face.a().vertex())||selected.contains(face.b().vertex())||selected.contains(face.c().vertex())){
             double area=area(face,next);
             if(!Double.isFinite(area)||(area==0&&area(face,old)>0))throw new IllegalArgumentException("Vertex move degenerates a face");
         }
-        var values=new ArrayList<Vertex>();for(var v:state.vertices())values.add(v.id()==id?replacement:v);
+        var values=new ArrayList<Vertex>();for(var v:state.vertices())values.add(next.get(v.id()));
         state=new State(state.sceneId(),state.sourceFingerprint(),state.name(),state.sourceBytes(),values,state.faces());revision++;
     }
     /** Append a reviewed primitive without welding existing vertices or reassigning their IDs. */
