@@ -2,6 +2,7 @@ package org.beckenburg;
 
 import org.beckenburg.editor.EditorGlbWriter;
 import org.beckenburg.editor.EditorMeshPipeline;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -50,7 +51,21 @@ public final class AssetImportRuntimeTest {
             var loaded=new CastleLevelEdits(level);
             check(loaded.props().stream().anyMatch(p->p.id().equals("import_test")
                 &&p.mesh().equals(id)),"Castle save/load references real imported model");
-            System.out.println("PASS OBJ > generated GLB > game decode > registry > authored prop > reload");
+            // Level-zero original GLB is preserved byte-for-byte. Nonzero
+            // regression must not silently replace its source materials.
+            Path originalGlb=root.resolve("source_with_materials.glb");
+            Files.write(originalGlb,output);
+            String exact=ImportedAssetLibrary.publish(originalGlb,output,0,4,4,"exact GLB");
+            check(java.util.Arrays.equals(ImportedAssetLibrary.read(exact),output),
+                "Exact GLB import must keep its authored texture and geometry bytes");
+            boolean rejected=false;
+            try{
+                ImportedAssetLibrary.publish(originalGlb,output,1,4,4,"unsafe reduction");
+            }catch(IOException expected){
+                rejected=expected.getMessage().contains("Textured GLB regression is unsupported");
+            }
+            check(rejected,"Reduced textured GLB must not be published as checkerboard substitute");
+                        System.out.println("PASS OBJ > generated GLB > game decode > registry > authored prop > reload");
         }finally{
             System.setProperty("user.home",home);
             try(var walk=Files.walk(root)){
