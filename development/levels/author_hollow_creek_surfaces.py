@@ -181,6 +181,13 @@ for o in list(bpy.context.scene.objects):
     source=o.get('refinement_source')
     if source not in templates:continue
     t=templates[source];assert len(o.data.loops)==len(t.data.loops),(o.name,'loop topology mismatch')
+    # Loop count alone is NOT evidence of a safe per-corner UV mapping:
+    # the same count can describe entirely different polygons/loop ordering.
+    # Never stamp a baked source atlas across a reordered fitted mesh.
+    assert len(o.data.polygons)==len(t.data.polygons),(o.name,'polygon topology mismatch')
+    assert all(p.vertex_index==q.vertex_index
+               for p,q in zip(o.data.loops,t.data.loops)),(
+        o.name,'authored UV transfer requires identical vertex-to-loop ordering')
     before=[tuple(v.co) for v in o.data.vertices];o.data=o.data.copy()
     o.data.materials.clear();o.data.materials.append(t.data.materials[0])
     for p in o.data.polygons:p.material_index=0
