@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - tools/repair_flagged_hunter_cutouts.py
+      - tools/repair_twins_side_head.py
       - .github/workflows/repair-flagged-hunter-sprites.yml
   workflow_dispatch:
 permissions:
@@ -26,27 +27,32 @@ jobs:
       - name: Rebuild only flagged Observer and Demonologist frames from canonical boards
         id: regenerate
         run: python tools/repair_flagged_hunter_cutouts.py
+      - name: Restore only blue Twin side head from original paired master
+        id: twins
+        run: python tools/repair_twins_side_head.py
       - name: Preserve full-size before/after source cutouts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: flagged-hunter-head-boots-original-source-comparison
-          path: development/verification/flagged-hunter-source-repair.png
+          path: |
+            development/verification/flagged-hunter-source-repair.png
+            development/verification/twins-side-head-source-repair.png
           if-no-files-found: warn
           retention-days: 21
       - name: Commit actual regenerated runtime archive and review manifest
-        if: steps.regenerate.outcome == 'success'
+        if: steps.regenerate.outcome == 'success' && steps.twins.outcome == 'success'
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "Beckenburg source-art repair"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- assets/runtime/character-directions.zip assets/runtime/character-directions-manifest.json development/verification/flagged-hunter-source-repair.png
+          git add -- assets/runtime/character-directions.zip assets/runtime/character-directions-manifest.json development/verification/flagged-hunter-source-repair.png assets/runtime/twins-directions.zip assets/runtime/twins-directions-manifest.json development/verification/twins-side-head-source-repair.png
           if git diff --cached --quiet; then
             echo "No source cutout changes"
             exit 0
           fi
-          git commit -m "Restore original Observer and Demonologist heads and boots in packaged sprite atlas"
+          git commit -m "Restore canonical Hunter boots and blue Twin head in packaged sprite atlases"
           # Never force-push. A moving main is retried with a normal rebase
           # and a bounded count; an unresolvable conflict is a truthful failure.
           for attempt in 1 2 3; do
