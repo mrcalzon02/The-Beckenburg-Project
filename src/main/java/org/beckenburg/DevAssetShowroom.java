@@ -443,6 +443,14 @@ public final class DevAssetShowroom implements AutoCloseable {
         Files.createDirectories(folder);
         List<DevAssetReviewCatalog.Entry> entries=DevAssetReviewCatalog.entries();
         if(maxEntries>0)entries=entries.subList(0,Math.min(maxEntries,entries.size()));
+        // An explicit focus capture must not decode all ~1,000 unrelated
+        // models or waste time generating whole-catalog art diagnostics.
+        if(focus!=null){
+            String requested=focus;
+            entries=entries.stream().filter(e->e.id().equals(requested)
+                ||e.key().equalsIgnoreCase(requested)).toList();
+            if(entries.isEmpty())throw new IOException("Requested review asset not registered: "+requested);
+        }
         StringBuilder report=new StringBuilder(
             "kind,id,state,triangles,materials,textureSamples,minX,minY,minZ,maxX,maxY,maxZ,details\n");
         int loaded=0,review=0,missing=0;
