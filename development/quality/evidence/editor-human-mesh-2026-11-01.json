@@ -63,14 +63,17 @@
       "src/test/java/org/beckenburg/AssetImportTopologyGuiTest.java": "19c189c3c2df9bac85041a42b4fe396e30f6b5d0104b36c05d9fb4260ffcd336",
       "src/test/java/org/beckenburg/AssetImportBoxSelectionGuiTest.java": "5d25c89dc169ac50eb599d6e25cf2337639add4b44de0aae3d90217677800ef4"
     },
-    "publication": "pushed and git ls-remote verified approved branch; exact-source CI pending",
+    "publication": "remote verified; all four exact-source acceptance workflows successful",
     "sourceSha": "1e505d5ed16a886218e4bdf00e585c9194d582ae",
     "ci": {
       "standalone": 41387774742,
       "nativeHost": 41387782860,
       "fullRound": 41387790138,
       "gpu": 41387796364,
-      "status": "dispatched; results must be inspected, including raw full manifest summary"
+      "status": "success",
+      "passed": 310,
+      "failed": 0,
+      "skipped": 0
     }
   }
 }

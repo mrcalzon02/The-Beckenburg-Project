@@ -4,7 +4,8 @@ import java.util.*;
 
 /** Bounded adjacency derived from the exact human import mesh. Named parts stay
  * separate; per-corner UVs remain in the source. This graph never repairs,
- * welds, reorders or replaces authored triangles implicitly.
+ * welds, reorders or replaces authored triangles. Unindexed buffers derive
+ * connectivity per part/position; supplied source/native indices take precedence.
  */
 public final class EditorMeshTopology {
     public enum Code { DEGENERATE_FACE, NON_MANIFOLD_EDGE, EDGE_ORIENTATION, NON_MANIFOLD_VERTEX }
@@ -53,6 +54,7 @@ public final class EditorMeshTopology {
     private static Vertex point(String part,EditorMeshPipeline.Vertex v){return new Vertex(part,zero(v.x()),zero(v.y()),zero(v.z()));}
     private static boolean sameUv(EditorMeshPipeline.Vertex a,EditorMeshPipeline.Vertex b){return a.u()==b.u()&&a.v()==b.v();}
     private static int next(int edge){return edge/3*3+(edge%3+1)%3;}
+    private record SourceVertex(String part,long id){}
     public static EditorMeshTopology build(EditorMeshPipeline.Mesh mesh){return build(mesh,null,null);}
     /** Explicit topology keeps distinct vertex IDs distinct even at coincident positions. */
     public static EditorMeshTopology buildIndexed(EditorMeshPipeline.Mesh mesh,List<Vertex> vertices,int[] origins){
@@ -64,7 +66,7 @@ public final class EditorMeshTopology {
     private static EditorMeshTopology build(EditorMeshPipeline.Mesh mesh,List<Vertex> explicit,int[] explicitOrigins){
         Objects.requireNonNull(mesh);int count=mesh.triangles().size(),total=Math.multiplyExact(count,3);
         if(explicitOrigins!=null&&explicitOrigins.length!=total)throw new IllegalArgumentException("Corner count mismatch");
-        var vertices=explicit==null?new ArrayList<Vertex>():new ArrayList<>(explicit);var indices=new HashMap<Vertex,Integer>();
+        var vertices=explicit==null?new ArrayList<Vertex>():new ArrayList<>(explicit);var indices=new HashMap<Object,Integer>();
         int[] origin=new int[total],twin=new int[total];Arrays.fill(twin,-1);
         boolean[] boundary=new boolean[total],seam=new boolean[total];
         // Three 19-bit indices fit in one positive long at the import budget.
@@ -85,7 +87,11 @@ public final class EditorMeshTopology {
                         throw new IllegalArgumentException("Indexed corner differs from authoritative vertex");
                     origin[e]=id;
                 }else{
-                    Integer id=indices.get(point);if(id==null){id=vertices.size();indices.put(point,id);vertices.add(point);}origin[e]=id;
+                    Object key=mesh.cornerVertexIds().isEmpty()?point:new SourceVertex(t.part(),mesh.cornerVertexIds().get(e));
+                    Integer id=indices.get(key);
+                    if(id==null){id=vertices.size();indices.put(key,id);vertices.add(point);}
+                    else if(!vertices.get(id).equals(point))throw new IllegalArgumentException("Source position identity has contradictory coordinates");
+                    origin[e]=id;
                 }
             }
             double ax=t.b().x()-t.a().x(),ay=t.b().y()-t.a().y(),az=t.b().z()-t.a().z();

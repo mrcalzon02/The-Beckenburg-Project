@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: OBJ position indices must preserve six authored identities instead of implicitly welding the coincident pair
+	at org.beckenburg.editor.EditorObjIdentityTest.check(EditorObjIdentityTest.java:9)
+	at org.beckenburg.editor.EditorObjIdentityTest.main(EditorObjIdentityTest.java:35)

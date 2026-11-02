@@ -33,11 +33,17 @@ public final class EditorMeshPipeline {
                 throw new IllegalArgumentException("Invalid triangle");
         }
     }
-    public record Mesh(String name,List<Triangle> triangles,long sourceBytes) {
+    /** Optional per-corner source position identities. Empty means the source supplied no indices. */
+    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds) {
+        public Mesh(String name,List<Triangle> triangles,long sourceBytes){this(name,triangles,sourceBytes,List.of());}
         public Mesh {
             if(name==null||name.isBlank()||triangles==null
                 ||triangles.size()>MAX_TRIANGLES||sourceBytes<0)throw new IllegalArgumentException("Invalid mesh");
             triangles=List.copyOf(triangles);
+            if(cornerVertexIds==null||!cornerVertexIds.isEmpty()&&cornerVertexIds.size()!=triangles.size()*3)
+                throw new IllegalArgumentException("Source topology corner count mismatch");
+            cornerVertexIds=List.copyOf(cornerVertexIds);
+            for(long id:cornerVertexIds)if(id<0)throw new IllegalArgumentException("Invalid source position ID");
         }
     }
     public record PartStats(String name,int before,int after,int verticesBefore,int verticesAfter,
@@ -80,25 +86,30 @@ public final class EditorMeshPipeline {
     private static Mesh obj(String name,String raw,long size)throws IOException{
         List<double[]> xyz=new ArrayList<>(),uv=new ArrayList<>();
         List<Triangle> triangles=new ArrayList<>();
+        List<Long> sourceIds=new ArrayList<>();
         String part="Object";
         int lineNumber=0;
-        try{
-            for(String line:raw.split("\\R")){
+        try(var input=new java.io.BufferedReader(new java.io.StringReader(raw))){
+            for(String line;(line=input.readLine())!=null;){
                 lineNumber++;String text=line.strip();
+                int comment=text.indexOf('#');if(comment>=0)text=text.substring(0,comment).strip();
                 if(text.isEmpty()||text.startsWith("#"))continue;
-                String[] tokens=text.split("\\s+");
+                String[] tokens=text.split("\\s+",258);
                 switch(tokens[0]){
                     case "o","g" -> {if(tokens.length>1)part=tokens[1];}
                     case "v" -> {if(tokens.length<4)throw new IOException("Invalid OBJ position");
+                        if(xyz.size()>=MAX_TRIANGLES*3)throw new IOException("OBJ position declaration budget exceeded");
                         xyz.add(new double[]{Double.parseDouble(tokens[1]),Double.parseDouble(tokens[2]),Double.parseDouble(tokens[3])});}
                     case "vt" -> {if(tokens.length<3)throw new IOException("Invalid OBJ UV");
+                        if(uv.size()>=MAX_TRIANGLES*3)throw new IOException("OBJ UV declaration budget exceeded");
                         uv.add(new double[]{Double.parseDouble(tokens[1]),Double.parseDouble(tokens[2])});}
                     case "f" -> {
                         if(tokens.length<4||tokens.length>257)throw new IOException("Invalid OBJ face degree");
-                        Vertex first=faceVertex(tokens[1],xyz,uv),previous=faceVertex(tokens[2],xyz,uv);
+                        ObjCorner first=faceVertex(tokens[1],xyz,uv),previous=faceVertex(tokens[2],xyz,uv);
                         for(int k=3;k<tokens.length;k++){
-                            Vertex next=faceVertex(tokens[k],xyz,uv);
-                            triangles.add(new Triangle(part,first,previous,next));previous=next;
+                            ObjCorner next=faceVertex(tokens[k],xyz,uv);
+                            triangles.add(new Triangle(part,first.vertex(),previous.vertex(),next.vertex()));
+                            sourceIds.add((long)first.index());sourceIds.add((long)previous.index());sourceIds.add((long)next.index());previous=next;
                             if(triangles.size()>MAX_TRIANGLES)throw new IOException("OBJ triangle budget exceeded");
                         }
                     }
@@ -108,7 +119,7 @@ public final class EditorMeshPipeline {
             throw new IOException("Invalid OBJ at line "+lineNumber,err);
         }
         if(triangles.isEmpty())throw new IOException("OBJ has no faces");
-        return new Mesh(name,triangles,size);
+        return new Mesh(name,triangles,size,sourceIds);
     }
     private static int positionIndex(String raw,int count)throws IOException{
         int value=Integer.parseInt(raw);
@@ -116,16 +127,17 @@ public final class EditorMeshPipeline {
         if(value==0||index<0||index>=count)throw new IOException("OBJ index out of bounds");
         return index;
     }
-    private static Vertex faceVertex(String s,List<double[]> xyz,List<double[]> uv)throws IOException{
+    private record ObjCorner(Vertex vertex,int index){}
+    private static ObjCorner faceVertex(String s,List<double[]> xyz,List<double[]> uv)throws IOException{
         String[] indices=s.split("/",-1);
         if(indices.length>3)throw new IOException("Invalid OBJ face reference");
-        double[] p=xyz.get(positionIndex(indices[0],xyz.size()));
+        int index=positionIndex(indices[0],xyz.size());double[] p=xyz.get(index);
         double u=0,v=0;
         if(indices.length>1&&!indices[1].isEmpty()){
             double[] t=uv.get(positionIndex(indices[1],uv.size()));
             u=t[0];v=t[1];
         }
-        return new Vertex(p[0],p[1],p[2],u,v);
+        return new ObjCorner(new Vertex(p[0],p[1],p[2],u,v),index);
     }
     private static Mesh stl(String name,byte[] raw,long size)throws IOException{
         List<Triangle> triangles=new ArrayList<>();

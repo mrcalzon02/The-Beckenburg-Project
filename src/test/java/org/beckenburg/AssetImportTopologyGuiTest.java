@@ -219,6 +219,39 @@ public final class AssetImportTopologyGuiTest {
             await(()->published.get()!=null);runtimeMesh(published.get(),nativeProject.get().mesh());
             var primitiveArchive=org.beckenburg.editor.EditorTopologyProject.open(ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop"));
             check(primitiveArchive.snapshot().equals(nativeProject.get().snapshot()),"Published primitive retains exact native IDs and corner UVs");
+            Path coincident=home.resolve("coincident.obj");Files.writeString(coincident,"""
+                o shell
+                v 0 0 0
+                v 1 0 0
+                v 0 1 0
+                v 0 0 0
+                v -1 0 0
+                v 0 -1 0
+                vt 0 0
+                vt 1 0
+                vt 0 1
+                f 1/1 2/2 3/3
+                f 4/1 5/2 6/3
+                """);byte[] indexedSource=Files.readAllBytes(coincident);published.set(null);
+            SwingUtilities.invokeAndWait(()->ui.get().loadSource(coincident));
+            await(()->{try{return ((JButton)field(ui.get(),"apply")).isEnabled();}catch(Exception e){throw new RuntimeException(e);}});
+            var indexedProject=new AtomicReference<org.beckenburg.editor.EditorTopologyProject>();
+            SwingUtilities.invokeAndWait(()->{try{
+                var dock=ui.get();var project=(org.beckenburg.editor.EditorTopologyProject)field(dock,"topologyProject");indexedProject.set(project);((JComboBox<?>)field(dock,"selectionMode")).setSelectedItem("VERTEX");
+                check(project.snapshot().vertices().size()==6&&project.topology().manifold(),"Real human OBJ import preserves distinct coincident source identities");
+                ((JSpinner)field(dock,"vertexX")).setValue(-.25);((JButton)field(dock,"moveVertex")).doClick();
+                var second=project.snapshot().faces().get(1);var other=project.snapshot().vertices().stream().filter(v->v.id()==second.a().vertex()).findFirst().orElseThrow();
+                check(other.x()==0&&other.y()==0&&other.z()==0,"Actual human move cannot drag the unrelated coincident source vertex");
+            }catch(Exception e){throw new RuntimeException(e);}});
+            await(()->{try{return ((JButton)field(ui.get(),"apply")).isEnabled();}catch(Exception e){throw new RuntimeException(e);}});
+            SwingUtilities.invokeAndWait(()->{try{
+                var dock=ui.get();var content=((JDialog)field(dock,"dialog")).getContentPane();var image=new BufferedImage(content.getWidth(),content.getHeight(),BufferedImage.TYPE_INT_ARGB);var g=image.createGraphics();try{content.printAll(g);}finally{g.dispose();}
+                ImageIO.write(image,"png",output.resolveSibling("obj-index-identity-human.png").toFile());((JButton)field(dock,"apply")).doClick();
+            }catch(Exception e){throw new RuntimeException(e);}});
+            await(()->published.get()!=null);runtimeMesh(published.get(),indexedProject.get().mesh());
+            check(Arrays.equals(indexedSource,Files.readAllBytes(coincident))&&Arrays.equals(indexedSource,Files.readAllBytes(ImportedAssetLibrary.root().resolve(published.get()+".source.obj"))),"Exact original OBJ and source archive remain unchanged");
+            check(org.beckenburg.editor.EditorTopologyProject.open(ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop")).snapshot().equals(indexedProject.get().snapshot()),"Published native archive retains source index identity and edited positions");
+            System.out.println("PASS actual human OBJ source identities: six native vertices, independent coincident edit, exact source/native archives and every real runtime GLB corner");
             System.out.println("PASS real human primitives, native roundtrip, triangle selection, vertex/edge/face axis drag/grid/undo/redo, Escape cancellation, stale revision refusal, UI PNG and every runtime GLB corner");
             System.out.println("PASS actual human mesh authoring: stable vertex move/undo/redo, native save/reopen/fresh chooser load, topology review/UI PNG, runtime GLB publish, exact editable/original source archives and changed-source rejection");
         }finally{

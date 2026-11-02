@@ -41,6 +41,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     private long revision=1;
     private static void text(String value){if(value==null||value.isBlank()||value.length()>512)throw new IllegalArgumentException("Invalid topology text");}
     private EditorTopologyProject(Path path,State state){this.path=path.toAbsolutePath().normalize();this.state=state;id=state.sceneId();sourceFingerprint=state.sourceFingerprint();}
+    /** Preserve supplied corner identities; unindexed triangle sources use geometric connectivity per part. */
     public static EditorTopologyProject fromMesh(EditorMeshPipeline.Mesh mesh,String sourceFingerprint,Path path){
         var graph=EditorMeshTopology.build(mesh);var vertices=new ArrayList<Vertex>();var faces=new ArrayList<Face>();
         for(int i=0;i<graph.vertices().size();i++){var v=graph.vertices().get(i);vertices.add(new Vertex(i,v.part(),v.x(),v.y(),v.z()));}

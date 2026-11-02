@@ -2754,6 +2754,34 @@ Evidence and verification: Measured collision inspection identified the exact ch
 
 Older-map obligation: Audit every resident and supporting furniture independently; do not generalize to investigation props or moved editor fixtures.
 
+### DEV-202 — OBJ import implicitly welds distinct authored position indices
+
+**Status:** fixed-scoped locally; exact-source CI pending · **Affected:** EditorMeshPipeline OBJ reader, EditorMeshTopology derivation and actual human native mesh import
+
+Six referenced source positions containing a distinct coincident pair become five native vertices, creating an unintended shared edit and disconnected fan. Moving one authored source vertex can drag another piece.
+
+Cause / uncertainty: The OBJ parser discarded source position references and native import inferred connectivity only from part and coordinate equality.
+
+Fix / next action: Retain immutable optional per-corner source position identities; build native topology from those identities, keeping corner UVs separate. Verify contradictory source references, preserve the legacy unindexed constructor and keep BTOP v1 native state unchanged.
+
+Evidence and verification: Exact1e505d5e parser/topology classes reproduce the six-to-five assertion failure. Corrected native importer keeps six identities, original sharing and UV seams, negative OBJ indices/fans, shared undo/redo and save/reopen. Real human import/move/publication verifies the unrelated coincident vertex remains stationary, exact source/native archives and every native GLB corner. Maximum120000 indexed faces/360000 vertices pass in the independent Java17 JAR under256MiB. See evidence/obj-native-identity-2026-11-01/.
+
+Older-map obligation: Existing saved BTOP IDs remain authoritative and are never silently split/rebuilt. Previously welded native projects require explicit source-based reimport and edit review. Unindexed STL/render buffers retain their documented per-part geometric connectivity policy; full normal/material interchange remains open.
+
+### DEV-203 — Inline OBJ face comments are parsed as vertex references
+
+**Status:** fixed-scoped locally; exact-source CI pending · **Affected:** Portable OBJ source reader and human importer
+
+An otherwise readable authored face followed by an inline comment fails with an invalid OBJ/# position-index exception.
+
+Cause / uncertainty: Only whole comment lines were skipped; the face tokenizer included trailing comment words as vertex references.
+
+Fix / next action: Strip trailing comments before bounded tokenization and stream lines. Bound position/UV declarations to the portable source-index budget.
+
+Evidence and verification: Exact1e505d5e parser fails the targeted comment check with Invalid OBJ at line11 caused by index #. Corrected reader retains the same authored corner identities with or without the trailing comment; native source bytes remain archived unchanged. See evidence/obj-native-identity-2026-11-01/obj-inline-comment-negative.txt.
+
+Older-map obligation: No authored source file is rewritten. Existing native formats and previously readable OBJ geometry retain their version and native state.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
