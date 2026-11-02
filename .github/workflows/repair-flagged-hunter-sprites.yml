@@ -30,6 +30,34 @@ jobs:
       - name: Restore only blue Twin side head from original paired master
         id: twins
         run: python tools/repair_twins_side_head.py
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Build real game with regenerated source sprite archives
+        id: build_runtime
+        continue-on-error: true
+        shell: bash
+        run: bash build.sh
+      - name: Capture the four exact repaired identities with the real renderer
+        if: steps.build_runtime.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          for id in observer demonologist twins possessive; do
+            java -Djava.awt.headless=true -cp build/beckenburg-game.jar \
+              org.beckenburg.DevAssetShowroom --dev-room --capture \
+              "--asset=$id" "--output=build/flagged-runtime/$id"
+          done
+      - name: Preserve actual close-up four-angle renderer captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flagged-character-real-render-closeups
+          path: build/flagged-runtime/
+          if-no-files-found: warn
+          retention-days: 21
       - name: Preserve full-size before/after source cutouts
         if: always()
         uses: actions/upload-artifact@v4
