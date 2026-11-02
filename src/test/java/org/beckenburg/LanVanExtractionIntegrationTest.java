@@ -74,7 +74,7 @@ public final class LanVanExtractionIntegrationTest {
                         "accurate host extraction snapshot for H"+(i+1));
                 for(int i=0;i<hunters;i++)if(!(departed&&i==1)){
                     Wire peer=peers.get(i);
-                    peer.expect("RESULT|RETREATED");
+                    if(i!=0)peer.expect("RESULT|RETREATED"); // leader already consumed it
                     check(peer.count("RESULT|RETREATED")==1,
                         "exactly one result per connected hunter");
                 }
