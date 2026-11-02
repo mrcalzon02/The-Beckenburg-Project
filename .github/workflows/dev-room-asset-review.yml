@@ -23,6 +23,7 @@ on:
       - 'src/main/java/org/beckenburg/LevelPlans.java'
       - 'src/main/java/org/beckenburg/DevAssetReviewCatalog.java'
       - 'src/test/java/org/beckenburg/HollowCreekDevCatalogClassificationTest.java'
+      - 'src/test/java/org/beckenburg/HollowCreekBillboardAlphaRuntimeTest.java'
       - 'src/main/java/org/beckenburg/DevAssetShowroom.java'
       - 'src/main/java/org/beckenburg/DevTerrainTopologyLab.java'
       - 'src/main/java/org/beckenburg/DevInfrastructureShowcase.java'
@@ -73,6 +74,15 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\test src\\test\\java\\org\\beckenburg\\PossessiveAtlasRuntimeTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\test org.beckenburg.PossessiveAtlasRuntimeTest
+          if errorlevel 1 exit /b 1
+      - name: Verify real native tree BLEND cutouts and original source alpha (advisory)
+        continue-on-error: true
+        shell: cmd
+        run: |
+          if not exist build\\dev-room\\test mkdir build\\dev-room\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\dev-room\\test src\\test\\java\\org\\beckenburg\\HollowCreekBillboardAlphaRuntimeTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.HollowCreekBillboardAlphaRuntimeTest
           if errorlevel 1 exit /b 1
       - name: Validate Hollow Creek source approval and catalog membership (advisory)
         continue-on-error: true
