@@ -18,12 +18,20 @@
     "src/test/java/org/beckenburg/AssetImportPublicationRevisionGuiTest.java": "940cd3f2ea8a96f5d33eab6990a2340700fad1a1a2806c43761fcdad72785520",
     "src/main/java/org/beckenburg/GlbProps.java": "ec58f2bfa0a26918477aa48621926388337636b2291e85d23a322a49a59766ed"
   },
-  "ci": "pending exact-source publication",
+  "ci": {
+    "standalone": 41396361150,
+    "nativeHost": 41396364295,
+    "fullRound": 41396371226,
+    "gpu": 41396374380,
+    "status": "dispatched; inspect exact-source terminal results and raw regression summary"
+  },
   "limits": [
     "Single triangulated face only; region modeling and geometric intersection repair remain open",
     "Full normals/material interchange and G2 exit remain open",
     "No new model agent/MCP operations or physical acceptance inferred"
   ],
   "implementationCommit": "cff401ec",
-  "mergedMain": "1b38b95c"
+  "mergedMain": "1b38b95c",
+  "sourceSha": "848f8b2148ea63537127021814e4aaf1fadc8f6b",
+  "remoteReadback": "git ls-remote matched exact848f8b21 on approved branch"
 }
