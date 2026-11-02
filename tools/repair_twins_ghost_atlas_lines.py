@@ -55,6 +55,14 @@ def repair_png(binary,facing):
             if not np.any(candidate):continue
             margin=cv2.dilate(candidate,np.ones((3,3),np.uint8),iterations=1)>0
             body=cv2.dilate(np.uint8(labels==principal),np.ones((3,3),np.uint8),iterations=1)>0
+            # Remove disconnected subpixel crumbs left in the same source
+            # strip, but never touch the principal sisters' body silhouette.
+            stray=(labels>0)&(labels!=principal)
+            stray[:35,:]=False
+            stray[97:,:]=False
+            stray[:,:xmin]=False
+            stray[:,xmax:]=False
+            margin |= stray
             margin &= ~body
             margin[:,:xmin]=False
             margin[:,xmax:]=False
@@ -124,11 +132,20 @@ def main():
         for name,payload in entries.items():
             if name not in patches and archive.read(name)!=payload:
                 raise AssertionError('Other original sprite altered: '+name)
-    split=len(parts[0])
-    if any(len(x)!=split for x in parts[:-1]) or not split*8<len(new)<split*9:
-        raise ValueError('Repacked original atlas exceeds original 9-part layout')
-    for i,p in enumerate(files):
-        p.write_bytes(new[i*split:(i+1)*split])
+    # The prior Possessive fix distributed the ZIP evenly across all nine
+    # parts. Re-split after recompression: their original byte offsets are
+    # not meaningful; ordered concatenation is the only runtime contract.
+    old_cap=len(parts[0])
+    if any(len(x)!=old_cap for x in parts[:-1]):
+        raise ValueError('Original nine-part boundary layout invalid')
+    split=(len(new)+8)//9
+    if split>786432:
+        raise ValueError('Repaired ZIP exceeds GitHub-safe nine-part budget')
+    chunks=[new[i*split:(i+1)*split] for i in range(9)]
+    if not all(chunks) or b''.join(chunks)!=new:
+        raise AssertionError('Rebalanced nine-part archive does not roundtrip')
+    for p,data in zip(files,chunks):
+        p.write_bytes(data)
     record={'original_archive_sha256':sha,
             'repaired_archive_sha256':hashlib.sha256(new).hexdigest(),
             'repaired_pngs':sorted(patches),
