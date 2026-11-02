@@ -1,0 +1,4 @@
+STALE PUBLICATION CONTROL actual runtime x=0.0 actual native x=-0.25
+Exception in thread "main" java.lang.AssertionError: Publishing an unreviewed native revision must be refused instead of archiving new native geometry with an old runtime mesh
+	at org.beckenburg.AssetImportPublicationRevisionGuiTest.check(AssetImportPublicationRevisionGuiTest.java:11)
+	at org.beckenburg.AssetImportPublicationRevisionGuiTest.main(AssetImportPublicationRevisionGuiTest.java:23)

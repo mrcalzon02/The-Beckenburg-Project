@@ -2161,24 +2161,35 @@
     {
       "id": "DEV-202",
       "title": "OBJ import implicitly welds distinct authored position indices",
-      "status": "fixed-scoped locally; exact-source CI pending",
+      "status": "fixed-scoped; exact-source native/standalone and raw310/310 regression accepted",
       "affected": "EditorMeshPipeline OBJ reader, EditorMeshTopology derivation and actual human native mesh import",
       "symptom": "Six referenced source positions containing a distinct coincident pair become five native vertices, creating an unintended shared edit and disconnected fan. Moving one authored source vertex can drag another piece.",
       "cause": "The OBJ parser discarded source position references and native import inferred connectivity only from part and coordinate equality.",
       "action": "Retain immutable optional per-corner source position identities; build native topology from those identities, keeping corner UVs separate. Verify contradictory source references, preserve the legacy unindexed constructor and keep BTOP v1 native state unchanged.",
-      "evidence": "Exact1e505d5e parser/topology classes reproduce the six-to-five assertion failure. Corrected native importer keeps six identities, original sharing and UV seams, negative OBJ indices/fans, shared undo/redo and save/reopen. Real human import/move/publication verifies the unrelated coincident vertex remains stationary, exact source/native archives and every native GLB corner. Maximum120000 indexed faces/360000 vertices pass in the independent Java17 JAR under256MiB. See evidence/obj-native-identity-2026-11-01/.",
+      "evidence": "Exact1e505d5e parser/topology classes reproduce the six-to-five assertion failure. Corrected native importer keeps six identities, original sharing and UV seams, negative OBJ indices/fans, shared undo/redo and save/reopen. Real human import/move/publication verifies the unrelated coincident vertex remains stationary, exact source/native archives and every native GLB corner. Maximum120000 indexed faces/360000 vertices pass in the independent Java17 JAR under256MiB. See evidence/obj-native-identity-2026-11-01/. Exact4be25e3a native41390504086 and standalone41390498466 SUCCESS; full41390507634 raw310/310, zero failed/skipped.",
       "older_maps": "Existing saved BTOP IDs remain authoritative and are never silently split/rebuilt. Previously welded native projects require explicit source-based reimport and edit review. Unindexed STL/render buffers retain their documented per-part geometric connectivity policy; full normal/material interchange remains open."
     },
     {
       "id": "DEV-203",
       "title": "Inline OBJ face comments are parsed as vertex references",
-      "status": "fixed-scoped locally; exact-source CI pending",
+      "status": "fixed-scoped; exact-source native/standalone and raw310/310 regression accepted",
       "affected": "Portable OBJ source reader and human importer",
       "symptom": "An otherwise readable authored face followed by an inline comment fails with an invalid OBJ/# position-index exception.",
       "cause": "Only whole comment lines were skipped; the face tokenizer included trailing comment words as vertex references.",
       "action": "Strip trailing comments before bounded tokenization and stream lines. Bound position/UV declarations to the portable source-index budget.",
-      "evidence": "Exact1e505d5e parser fails the targeted comment check with Invalid OBJ at line11 caused by index #. Corrected reader retains the same authored corner identities with or without the trailing comment; native source bytes remain archived unchanged. See evidence/obj-native-identity-2026-11-01/obj-inline-comment-negative.txt.",
+      "evidence": "Exact1e505d5e parser fails the targeted comment check with Invalid OBJ at line11 caused by index #. Corrected reader retains the same authored corner identities with or without the trailing comment; native source bytes remain archived unchanged. See evidence/obj-native-identity-2026-11-01/obj-inline-comment-negative.txt. Exact4be25e3a native41390504086 and standalone41390498466 SUCCESS; full41390507634 raw310/310, zero failed/skipped.",
       "older_maps": "No authored source file is rewritten. Existing native formats and previously readable OBJ geometry retain their version and native state."
+    },
+    {
+      "id": "DEV-204",
+      "title": "Model publication can pair an old reviewed runtime mesh with newer native authoring state",
+      "status": "fixed-scoped locally; exact-source CI pending",
+      "affected": "Actual AssetImportDialog, EditorTopologyProject native observations/reviewed saves and runtime publication",
+      "symptom": "A real native edit after review can save/archive native X=-0.25 while publishing cached runtime X=0.0; independent UI dirty flags may miss native changes.",
+      "cause": "The reviewed reduction was checked against a UI mesh cache, not the native owner/revision. Native save and later serialization were separate state observations.",
+      "action": "Use owner-bound immutable native observations, refuse stale review before writes, atomically validate/save/capture the reviewed native bytes and fingerprint, publish the same reviewed render input, and derive unsaved state from the native project. Explicit re-review refreshes actual native state while retaining valid selection.",
+      "evidence": "AssetImportPublicationRevisionGuiTest against exact4be25e3a UI source prints actual runtime x=0.0 / actual native x=-0.25 and fails. Corrected actual UI refuses all stale writes, then publishes matching native/runtime data after real human re-review. Native tests verify immutable saved bytes, fingerprint, later unsaved edits, and distinct epoch handling. Full local native service/modeling/GUI/CLI suite passes. See evidence/face-modeling-2026-11-01/.",
+      "older_maps": "Existing mismatched published derivatives are not silently rewritten; compare their original/native/runtime provenance individually. No new agent/MCP mesh operations are enabled."
     }
   ],
   "audit_categories": [

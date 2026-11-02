@@ -23,7 +23,10 @@
     "standalone": 41390498466,
     "nativeHost": 41390504086,
     "fullRound": 41390507634,
-    "status": "dispatched; inspect raw full manifest before accepting"
+    "status": "success",
+    "passed": 310,
+    "failed": 0,
+    "skipped": 0
   },
   "sourceSha": "4be25e3a61f865dd4d185c5fdf88489fb36851f8",
   "implementationCommit": "4006e527",

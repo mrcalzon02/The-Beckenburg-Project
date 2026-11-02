@@ -37,10 +37,11 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     private final Path path;
     private final String id,sourceFingerprint;
     private State state;
+    private State cleanState;
     private String diskFingerprint;
     private long revision=1;
     private static void text(String value){if(value==null||value.isBlank()||value.length()>512)throw new IllegalArgumentException("Invalid topology text");}
-    private EditorTopologyProject(Path path,State state){this.path=path.toAbsolutePath().normalize();this.state=state;id=state.sceneId();sourceFingerprint=state.sourceFingerprint();}
+    private EditorTopologyProject(Path path,State state){this.path=path.toAbsolutePath().normalize();this.state=state;this.cleanState=state;id=state.sceneId();sourceFingerprint=state.sourceFingerprint();}
     /** Preserve supplied corner identities; unindexed triangle sources use geometric connectivity per part. */
     public static EditorTopologyProject fromMesh(EditorMeshPipeline.Mesh mesh,String sourceFingerprint,Path path){
         var graph=EditorMeshTopology.build(mesh);var vertices=new ArrayList<Vertex>();var faces=new ArrayList<Face>();
@@ -57,6 +58,28 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     public Path documentPath(){return path;}
     public synchronized long revision(){return revision;}
     public synchronized State snapshot(){return state;}
+    public synchronized boolean hasUnsavedChanges(){return !state.equals(cleanState);}
+    public static final class Observation {
+        private final EditorTopologyProject owner;
+        private final State state;
+        private final long revision;
+        private Observation(EditorTopologyProject owner,State state,long revision){this.owner=owner;this.state=state;this.revision=revision;}
+        public State snapshot(){return state;}
+        public long revision(){return revision;}
+        public EditorMeshPipeline.Mesh mesh(){return EditorTopologyProject.mesh(state);}
+        public EditorMeshTopology topology(){return EditorTopologyProject.topology(state);}
+    }
+    public synchronized Observation observe(){return new Observation(this,state,revision);}
+    public synchronized boolean isCurrent(Observation observation){return observation!=null&&observation.owner==this&&observation.state==state&&observation.revision==revision;}
+    public record SavedReview(byte[] bytes,String diskFingerprint){
+        public SavedReview {bytes=bytes.clone();}
+        @Override public byte[] bytes(){return bytes.clone();}
+    }
+    /** The saved bytes and revision check share the same native monitor as edits. */
+    public synchronized SavedReview saveReviewed(Observation observation)throws IOException{
+        if(!isCurrent(observation))throw new IOException("Native mesh changed since review; review again before publishing");
+        save();return new SavedReview(snapshotBytes(),diskFingerprint);
+    }
     public synchronized void restore(State value){
         if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint()))throw new IllegalArgumentException("Topology belongs to another source/project");
         state=value;revision++;
@@ -73,13 +96,76 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes());
     }
     public synchronized EditorMeshPipeline.Mesh mesh(){return mesh(state);}
-    public synchronized EditorMeshTopology topology(){
+    public synchronized EditorMeshTopology topology(){return topology(state);}
+    private static EditorMeshTopology topology(State state){
         var positions=new ArrayList<EditorMeshTopology.Vertex>();var ids=new HashMap<Long,Integer>();
         for(var v:state.vertices()){ids.put(v.id(),positions.size());positions.add(new EditorMeshTopology.Vertex(v.part(),v.x(),v.y(),v.z()));}
         int[] origins=new int[state.faces().size()*3];int i=0;
         for(var face:state.faces())for(var corner:List.of(face.a(),face.b(),face.c()))origins[i++]=ids.get(corner.vertex());
-        return EditorMeshTopology.buildIndexed(mesh(),positions,origins);
+        return EditorMeshTopology.buildIndexed(mesh(state),positions,origins);
     }
+    public enum FaceEdit { EXTRUDE, INSET }
+    /** A validated candidate in this project's native schema; it owns no editor/runtime authority. */
+    public static final class EditPreview {
+        private final EditorTopologyProject owner;
+        private final State before,after;
+        private final long revision;
+        private final String description;
+        private boolean canceled;
+        private EditPreview(EditorTopologyProject owner,State before,State after,long revision,String description){this.owner=owner;this.before=before;this.after=after;this.revision=revision;this.description=description;}
+        public State snapshot(){return after;}
+        public EditorMeshPipeline.Mesh mesh(){return EditorTopologyProject.mesh(after);}
+        public EditorMeshTopology topology(){return EditorTopologyProject.topology(after);}
+        public String description(){return description;}
+    }
+    /** Single-triangle region edit. Existing vertices/faces retain IDs; cap retains the selected face ID. */
+    public synchronized EditPreview previewFaceEdit(long faceId,FaceEdit operation,double amount){
+        Objects.requireNonNull(operation);
+        if(!Double.isFinite(amount)||operation==FaceEdit.INSET&&(amount<=0||amount>=1)
+            ||operation==FaceEdit.EXTRUDE&&(amount==0||Math.abs(amount)>10000))
+            throw new IllegalArgumentException("Extrude needs a nonzero distance up to10000; inset needs a fraction between0 and1");
+        var face=state.faces().stream().filter(f->f.id()==faceId).findFirst().orElseThrow(()->new IllegalArgumentException("Unknown native face ID"));
+        if(state.vertices().size()>MAX_VERTICES-3||state.faces().size()>EditorMeshPipeline.MAX_TRIANGLES-6)
+            throw new IllegalArgumentException("Model edit exceeds topology budget");
+        long vertexMax=state.vertices().stream().mapToLong(Vertex::id).max().orElse(-1),faceMax=state.faces().stream().mapToLong(Face::id).max().orElse(-1);
+        if(vertexMax>Long.MAX_VALUE-3||faceMax>Long.MAX_VALUE-6)throw new IllegalArgumentException("Model edit exceeds ID budget");
+        var byId=vertices(state);var corners=List.of(face.a(),face.b(),face.c());var points=corners.stream().map(c->byId.get(c.vertex())).toList();
+        var a=points.get(0);var b=points.get(1);var c=points.get(2);
+        double x=b.x()-a.x(),y=b.y()-a.y(),z=b.z()-a.z(),u=c.x()-a.x(),v=c.y()-a.y(),w=c.z()-a.z();
+        double nx=y*w-z*v,ny=z*u-x*w,nz=x*v-y*u,length=Math.hypot(Math.hypot(nx,ny),nz);
+        if(length==0||!Double.isFinite(length))throw new IllegalArgumentException("Selected face has no finite normal");
+        if(!topology(state).manifold())throw new IllegalArgumentException("Model edit requires oriented manifold input; inspect or repair topology first");
+        nx/=length;ny/=length;nz/=length;
+        double cx=a.x()/3+b.x()/3+c.x()/3,cy=a.y()/3+b.y()/3+c.y()/3,cz=a.z()/3+b.z()/3+c.z()/3;
+        double cu=face.a().u()/3+face.b().u()/3+face.c().u()/3,cv=face.a().v()/3+face.b().v()/3+face.c().v()/3;
+        var newVertices=new ArrayList<>(state.vertices());var newCorners=new ArrayList<Corner>();
+        for(int i=0;i<3;i++){
+            var p=points.get(i);var old=corners.get(i);long id=vertexMax+1+i;
+            boolean inset=operation==FaceEdit.INSET;
+            newVertices.add(new Vertex(id,face.part(),inset?p.x()+(cx-p.x())*amount:p.x()+nx*amount,
+                inset?p.y()+(cy-p.y())*amount:p.y()+ny*amount,inset?p.z()+(cz-p.z())*amount:p.z()+nz*amount));
+            newCorners.add(new Corner(id,inset?old.u()+(cu-old.u())*amount:old.u(),inset?old.v()+(cv-old.v())*amount:old.v()));
+        }
+        var cap=new Face(face.id(),face.part(),newCorners.get(0),newCorners.get(1),newCorners.get(2));
+        var newFaces=new ArrayList<Face>();for(var old:state.faces())newFaces.add(old.id()==face.id()?cap:old);
+        for(int i=0;i<3;i++){
+            int j=(i+1)%3;var oldA=corners.get(i);var oldB=corners.get(j);var newA=newCorners.get(i);var newB=newCorners.get(j);
+            if(operation==FaceEdit.EXTRUDE){
+                var pa=points.get(i);var pb=points.get(j);double edge=Math.hypot(Math.hypot(pb.x()-pa.x(),pb.y()-pa.y()),pb.z()-pa.z());
+                oldA=new Corner(oldA.vertex(),0,0);oldB=new Corner(oldB.vertex(),edge,0);newA=new Corner(newA.vertex(),0,Math.abs(amount));newB=new Corner(newB.vertex(),edge,Math.abs(amount));
+            }
+            newFaces.add(new Face(faceMax+1+i*2,face.part(),oldA,oldB,newB));newFaces.add(new Face(faceMax+2+i*2,face.part(),oldA,newB,newA));
+        }
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),newVertices,newFaces);
+        if(!topology(after).manifold())throw new IllegalArgumentException("Model edit would introduce invalid topology");
+        return new EditPreview(this,state,after,revision,operation+" face "+faceId+" / +3 vertices, +6 triangles");
+    }
+    public synchronized void applyPreview(EditPreview preview){
+        Objects.requireNonNull(preview);
+        if(preview.canceled||preview.owner!=this||preview.before!=state||preview.revision!=revision)throw new IllegalArgumentException("Model preview is canceled or belongs to a stale or foreign native revision");
+        state=preview.after;revision++;preview.canceled=true;
+    }
+    public synchronized void cancelPreview(EditPreview preview){if(preview.owner!=this)throw new IllegalArgumentException("Foreign native preview");preview.canceled=true;}
     private static double area(Face face,Map<Long,Vertex> vertices){
         var a=vertices.get(face.a().vertex());var b=vertices.get(face.b().vertex());var c=vertices.get(face.c().vertex());
         double x=b.x()-a.x(),y=b.y()-a.y(),z=b.z()-a.z(),u=c.x()-a.x(),v=c.y()-a.y(),w=c.z()-a.z();
@@ -180,6 +266,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         EditorDocumentStore.saveIfUnchanged(path,out->out.write(bytes),this::owned,
             file->{if(!expected.equals(owned(file)))throw new IOException("Topology readback differs from authoring state");},previous);
         diskFingerprint=EditorMeshPipeline.sourceFingerprint(bytes);
+        cleanState=expected;
     }
     public static EditorTopologyProject open(Path path)throws IOException{
         EditorDocumentStore.recoverPending(path,EditorTopologyProject::read);
@@ -189,7 +276,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     public synchronized void reopen()throws IOException{
         EditorDocumentStore.recoverPending(path,this::owned);byte[] bytes=EditorMeshPipeline.readSource(path,EditorDocumentStore.MAX_BYTES);State value=decode(bytes);
         if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint()))throw new IOException("Foreign topology project/source");
-        restore(value);diskFingerprint=EditorMeshPipeline.sourceFingerprint(bytes);
+        restore(value);diskFingerprint=EditorMeshPipeline.sourceFingerprint(bytes);cleanState=value;
     }
     public synchronized void recoverPrevious()throws IOException{EditorDocumentStore.restorePrevious(path,this::owned);reopen();}
 }
