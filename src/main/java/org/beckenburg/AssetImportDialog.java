@@ -386,8 +386,11 @@ public final class AssetImportDialog {
                         report.append("NOTE: OBJ source MTL/texture links are not yet converted; uses a generated low-res fallback atlas.\n");
                     if(mesh.name().toLowerCase(Locale.ROOT).endsWith(".stl"))
                         report.append("NOTE: STL contains no UV/material atlas; uses a generated low-res fallback atlas.\n");
+                    boolean texturedGlb=mesh.name().toLowerCase(Locale.ROOT).endsWith(".glb");
+                    if(texturedGlb&&level>0)report.append(
+                        "PUBLISH DISABLED: this regression exporter would replace original GLB materials with a checkerboard. Use level 0 or a UV/material-preserving optimizer.\n");
                     details.setText(report.toString());details.setCaretPosition(0);
-                    apply.setEnabled(after>0);
+                    apply.setEnabled(after>0&&(!texturedGlb||level==0));
                     preview.repaint();
                 }catch(Exception err){details.setText("REGRESSION ERROR: "+rootMessage(err));apply.setEnabled(false);}
             }
@@ -405,11 +408,18 @@ public final class AssetImportDialog {
         if(source==null||result==null||path==null||busy)return;
         final int remaining=result.parts().stream().mapToInt(EditorMeshPipeline.PartStats::after).sum();
         if(remaining==0)return;
-        boolean lossyMaterial=source.name().toLowerCase(Locale.ROOT).endsWith(".glb")&&result.level()>0;
-        if(result.overRegressed()||lossyMaterial){
+        // This path is not a material-preserving GLB optimizer. Reject it,
+        // including programmatic invocations that bypass the disabled button.
+        if(source.name().toLowerCase(Locale.ROOT).endsWith(".glb")&&result.level()>0){
+            JOptionPane.showMessageDialog(dialog,
+                "Textured GLB reduction would discard source UV/material bindings. "+
+                "Use level 0 or repair/optimize the model with a material-preserving tool.",
+                "Unsafe GLB export blocked",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(result.overRegressed()){
             String msg=(result.overRegressed()?
                 "OVER-REGRESSION: one or more named parts have collapsed.\n":"")+
-                (lossyMaterial?"Original GLB material/part identity will be replaced by a fallback atlas.\n":"")+
                 "The untouched source will be preserved. Publish this destructive-looking variant anyway?";
             if(JOptionPane.showConfirmDialog(dialog,msg,"Explicit lossy import warning",
                 JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE)!=JOptionPane.YES_OPTION)return;

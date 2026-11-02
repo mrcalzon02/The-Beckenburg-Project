@@ -22,9 +22,17 @@
       "standalone": 41369683760
     }
   },
-  "localWorkingChanges": {
+  "limits": [
+    "Partial G2, no gate completion inferred",
+    "No new agent/headless/MCP mesh operations",
+    "Area gestures replace vertex selection; additive/subtractive and edge/face regions remain open",
+    "Rotation/scale, local/normal transforms, loop/ring, reversible modeling, full normal/material interchange and laterG3-G12 remain open",
+    "No physical hardware/installed acceptance inferred"
+  ],
+  "areaSelectionSourceSha": "41bbf57374070df9655dae71e4b9b041d3401009",
+  "areaSelectionCheckpoint": {
     "feature": "Human visible/X-ray vertex boxes and lassos, immutable native projection BVH, bounded work and multi-selection gizmo integration",
-    "publication": "review service recovered; reconciling concurrent main before approved-branch publication",
+    "publication": "local implementation checkpoint, reconciled main merge follows",
     "checks": [
       "Complete Java17 host compilation",
       "Independent editor JAR Java17 build",
@@ -39,11 +47,22 @@
     },
     "standaloneArtifact": "build/editor-kit/LevelEditorKit-area-selection.jar (workspace-local java.io.tmpdir avoids sandbox cross-root jar staging)"
   },
-  "limits": [
-    "Partial G2, no gate completion inferred",
-    "No new agent/headless/MCP mesh operations",
-    "Area gestures replace vertex selection; additive/subtractive and edge/face regions remain open",
-    "Rotation/scale, local/normal transforms, loop/ring, reversible modeling, full normal/material interchange and laterG3-G12 remain open",
-    "No physical hardware/installed acceptance inferred"
-  ]
+  "reconciled": {
+    "mainSha": "e2d6fd3329247eae94502893dd486247f989e404",
+    "checks": [
+      "Complete merged Java17 compilation",
+      "Entire native host/service/real GUI/area selection/CLI suite PASS",
+      "Actual GUI nonzero GLB reduction disabled, level0 re-enabled; exact source/native archives and every published runtime corner verified",
+      "Exact six merged GLB resource copies hash-verified in local runtime classpath"
+    ],
+    "canonicalLfSha256": {
+      "src/main/java/org/beckenburg/AssetImportDialog.java": "8c58662a72e9e94141618eb0d4c3cf318578b91bc06e8401339ca23871157240",
+      "src/main/java/org/beckenburg/ImportedAssetLibrary.java": "ea570005a40da1f3b1225890de008f72df0a9c7b2527ad66a8c9f8becf959ef3",
+      "src/main/java/org/beckenburg/GlbProps.java": "550aafea44aba1896769e887f5567b9adc04a15ac1abb6957385198724d2feca",
+      "src/main/java/org/beckenburg/editor/EditorMeshPicking.java": "ba01550f908c0fe55dcf42438c148f0a020d598dc6cb1ff2c4ce9ceb9ac8c531",
+      "src/test/java/org/beckenburg/AssetImportTopologyGuiTest.java": "19c189c3c2df9bac85041a42b4fe396e30f6b5d0104b36c05d9fb4260ffcd336",
+      "src/test/java/org/beckenburg/AssetImportBoxSelectionGuiTest.java": "5d25c89dc169ac50eb599d6e25cf2337639add4b44de0aae3d90217677800ef4"
+    },
+    "publication": "ready for approved branch; exact-source CI pending"
+  }
 }

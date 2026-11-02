@@ -114,7 +114,14 @@ public final class AssetImportTopologyGuiTest {
             await(()->{try{return ((JButton)field(ui.get(),"apply")).isEnabled();}catch(Exception e){throw new RuntimeException(e);}});
             SwingUtilities.invokeAndWait(()->{try{
                 check(!((JButton)field(ui.get(),"moveVertex")).isEnabled(),"GLB editing cannot silently discard original material/normal bindings");
+                ((JSlider)field(ui.get(),"slider")).setValue(1);
             }catch(Exception e){throw new RuntimeException(e);}});
+            await(()->{try{return ((JTextArea)field(ui.get(),"details")).getText().contains("PUBLISH DISABLED:");}catch(Exception e){throw new RuntimeException(e);}});
+            SwingUtilities.invokeAndWait(()->{try{
+                check(!((JButton)field(ui.get(),"apply")).isEnabled(),"Human GLB reduction cannot publish fallback materials over authored source bindings");
+                ((JSlider)field(ui.get(),"slider")).setValue(0);
+            }catch(Exception e){throw new RuntimeException(e);}});
+            await(()->{try{return ((JButton)field(ui.get(),"apply")).isEnabled();}catch(Exception e){throw new RuntimeException(e);}});
             byte[] changedGlb=org.beckenburg.editor.EditorGlbWriter.encode(org.beckenburg.editor.EditorMeshPipeline.read("tetra.obj",original));
             Files.write(glb,changedGlb);
             SwingUtilities.invokeAndWait(()->{try{((JButton)field(ui.get(),"apply")).doClick();}catch(Exception e){throw new RuntimeException(e);}});

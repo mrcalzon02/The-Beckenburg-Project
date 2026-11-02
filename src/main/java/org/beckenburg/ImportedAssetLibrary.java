@@ -69,6 +69,9 @@ public final class ImportedAssetLibrary {
             throw new IOException("Optimized GLB does not fit game decoder");
         String ext=extension(original);
         if(!Set.of("obj","stl","glb","btop").contains(ext))throw new IOException("Unsupported source type");
+        // Preserve the native source/authoring identity and main's material-loss refusal.
+        if(ext.equals("glb")&&level!=0)
+            throw new IOException("Textured GLB regression is unsupported: retain original UVs/materials; optimize in a material-preserving authoring tool");
         java.security.MessageDigest identity;
         try{identity=java.security.MessageDigest.getInstance("SHA-256");}catch(java.security.NoSuchAlgorithmException impossible){throw new IOException(impossible);}
         identity.update(source);identity.update(output);if(authoring!=null)identity.update(authoring);

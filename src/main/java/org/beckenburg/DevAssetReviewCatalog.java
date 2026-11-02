@@ -42,9 +42,9 @@ public final class DevAssetReviewCatalog {
                 equipment.contains(id)?Kind.EQUIPMENT:Kind.WORLD_MODEL;
             out.add(new Entry(kind,id));
         }
-        // Source GLBs in the checkout which have not been approved for normal
-        // gameplay must still be reviewable. They remain SOURCE_ONLY, never
-        // gain authority to spawn in a real level.
+        // Any model in the source checkout remains reviewable. Match an
+        // already approved Hollow Creek instance against its real runtime
+        // registry; only genuinely unapproved meshes remain SOURCE_ONLY.
         java.nio.file.Path source=java.nio.file.Path.of("assets","runtime","models");
         if(java.nio.file.Files.isDirectory(source))try(var paths=java.nio.file.Files.list(source)){
             Set<String> known=new java.util.HashSet<>();
@@ -52,8 +52,15 @@ public final class DevAssetReviewCatalog {
             for(var file:paths.filter(p->p.getFileName().toString().endsWith(".glb")).toList()){
                 String filename=file.getFileName().toString();
                 String id=filename.substring(0,filename.length()-4);
-                if(!known.contains(id)&&id.matches("[A-Za-z0-9_-]{1,90}"))
-                    out.add(new Entry(Kind.SOURCE_ONLY,id));
+                if(!known.contains(id)&&id.matches("[A-Za-z0-9_-]{1,90}")){
+                    // Hollow Creek native scene parts are shipped and consumed
+                    // through HollowCreekScene's verified instance registry;
+                    // they are not unapproved loose source models. Keep a
+                    // single catalog entry without altering game approvals.
+                    Kind discovered=HollowCreekScene.approved(id)?
+                        Kind.WORLD_MODEL:Kind.SOURCE_ONLY;
+                    out.add(new Entry(discovered,id));
+                }
             }
         }catch(java.io.IOException failure){
             System.err.println("DEV ROOM source catalog inspection: "+failure.getMessage());

@@ -27,6 +27,8 @@ public final class GlbPropsTest {
             }
             assert colors.size()>3:"Source albedo not decoded for "+names[i];
         }
+        // Asset-specific art mapping remains advisory and is verified by the
+        // development-room actual renderer screenshots, not release tests.
         try {
             GlbProps.model("not_in_the_owner_library");
             throw new AssertionError("Unapproved model must be rejected");

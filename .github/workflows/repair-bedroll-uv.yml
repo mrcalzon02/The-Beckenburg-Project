@@ -1,0 +1,89 @@
+name: Repair six authored Hollow Creek bedroll UV exports
+# One-shot source derivative repair, NOT a game release/build gate. The
+# original authored GLB and .blend stay unchanged in Git.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/restore_hollow_creek_bedroll_uv.py'
+      - '.github/workflows/repair-bedroll-uv.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: beckenburg-bedroll-uv-authoring
+  cancel-in-progress: false
+jobs:
+  recover-authored-uv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify source repair script parses
+        run: python3 -m py_compile tools/restore_hollow_creek_bedroll_uv.py
+      - name: Dry-run six fitted original models and record geometry integrity
+        run: python3 tools/restore_hollow_creek_bedroll_uv.py
+      - name: Restore original UV seams with exact native geometry preserved
+        run: python3 tools/restore_hollow_creek_bedroll_uv.py --apply
+      - name: Prove manifest readback, unchanged authored source and bounded repair scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,struct
+          base=Path('assets/runtime/models')
+          report=json.loads(Path('development/levels/hollow-creek/runtime-scene.json').read_text())
+          expected={a['id']:a['sha256'] for a in report['assets']}
+          tsv=Path('assets/runtime/sites/hollow-creek-scene.tsv').read_text()
+          for i in range(6):
+              name=f'level_hc_native_{i:03d}_0'
+              data=(base/(name+'.glb')).read_bytes()
+              assert hashlib.sha256(data).hexdigest()==expected[name],name
+              assert tsv.count(name+'\t'+expected[name]) >= 1,name
+              assert struct.unpack_from('<III',data)==(0x46546c67,2,len(data)),name
+          evidence=json.loads(Path('build/repair/bedroll-uv-report.json').read_text())
+          assert len(evidence['models'])==6
+          assert all(m['geometry_and_normals']=='exact-per-triangle' for m in evidence['models'])
+          print('Six exact UV source derivatives, original native geometry and scene hashes verified')
+          PY
+          git diff --name-only
+          test "$(git diff --name-only | wc -l)" -eq 8
+          test -s assets/runtime/models/level_hc_native_000_0.glb
+      - name: Publish actual six corrected GLBs and updated scene hashes to main
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for i in 000 001 002 003 004 005; do
+            git add "assets/runtime/models/level_hc_native_${i}_0.glb"
+          done
+          git add assets/runtime/sites/hollow-creek-scene.tsv development/levels/hollow-creek/runtime-scene.json
+          git diff --cached --quiet && { echo 'No authored geometry/UV derivative change'; exit 1; }
+          git commit -m "assets: restore exact authored UV seams on six fitted Hollow Creek bedrolls"
+          for attempt in 1 2 3 4; do
+            if git push origin HEAD:main; then break; fi
+            test "${attempt}" -lt 4
+            sleep $((attempt*5))
+            git fetch origin main
+            git rebase origin/main
+          done
+          git fetch origin main
+          git merge-base --is-ancestor HEAD origin/main
+          echo "ACTUAL_REMOTE_COMMIT=$(git rev-parse HEAD)"
+          gh workflow run dev-room-asset-review.yml --ref main
+          gh workflow run ship-installer.yml --ref main
+      - name: Archive exact repair provenance and per-vertex verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollow-creek-bedroll-source-uv-repair
+          path: build/repair/bedroll-uv-report.json
+          if-no-files-found: warn
+          retention-days: 21

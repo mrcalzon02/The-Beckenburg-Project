@@ -44,6 +44,17 @@ for original in sorted(scene.objects,key=lambda o:o.name):
     for loop,old_loop in zip(p.loop_indices,t.loops):layer.data[loop].uv=uv.data[old_loop].uv if uv else (0,0);normals.append(tuple(original.data.corner_normals[old_loop].vector))
    mesh.normals_split_custom_set(normals);id='level_hc_native_'+str(len(assets)).zfill(3)+'_'+str(chunk);o=bpy.data.objects.new(id,mesh);scene.collection.objects.link(o);bpy.ops.object.select_all(action='DESELECT');o.select_set(True);bpy.context.view_layer.objects.active=o
    file=ROOT/f'assets/runtime/models/{id}.glb';bpy.ops.export_scene.gltf(filepath=str(file),export_format='GLB',use_selection=True,export_yup=True)
+   # Original rolled bedding instances retain their fitted geometry, but this
+   # Blender-to-glTF path previously selected corrupted UV seams (63.5%/100%
+   # long-span triangles). Restore *only* the exact authored UV topology from
+   # the source GLB and verify every fitted triangle/normal before hashing.
+   # This is an authoring-time correctness repair, never a game release gate.
+   if original.name.startswith('Additional camp rolled bedding '):
+    sys.path.insert(0,str(ROOT/'tools'))
+    from restore_hollow_creek_bedroll_uv import Glb,restore
+    author=Glb((ROOT/'assets/runtime/models/level_camp_bedroll_rolled_tailored.glb').read_bytes())
+    corrected,stats=restore(author,Glb(file.read_bytes()),id)
+    file.write_bytes(corrected)
    assert file.stat().st_size<4000000,(id,file.stat().st_size)
    parts.append(dict(id=id,triangles=len(tris),bytes=file.stat().st_size,sha256=hashlib.sha256(file.read_bytes()).hexdigest(),source_object=original.name,source_triangle_start=start));bpy.data.objects.remove(o,do_unlink=True);bpy.data.meshes.remove(mesh)
   assets[key]=parts

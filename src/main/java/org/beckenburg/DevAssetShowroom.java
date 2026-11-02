@@ -443,6 +443,14 @@ public final class DevAssetShowroom implements AutoCloseable {
         Files.createDirectories(folder);
         List<DevAssetReviewCatalog.Entry> entries=DevAssetReviewCatalog.entries();
         if(maxEntries>0)entries=entries.subList(0,Math.min(maxEntries,entries.size()));
+        // An explicit focus capture must not decode all ~1,000 unrelated
+        // models or waste time generating whole-catalog art diagnostics.
+        if(focus!=null){
+            String requested=focus;
+            entries=entries.stream().filter(e->e.id().equals(requested)
+                ||e.key().equalsIgnoreCase(requested)).toList();
+            if(entries.isEmpty())throw new IOException("Requested review asset not registered: "+requested);
+        }
         StringBuilder report=new StringBuilder(
             "kind,id,state,triangles,materials,textureSamples,minX,minY,minZ,maxX,maxY,maxZ,details\n");
         int loaded=0,review=0,missing=0;
@@ -515,6 +523,37 @@ public final class DevAssetShowroom implements AutoCloseable {
             Path filename=folder.resolve(String.format("asset-%04d.png",i));
             ImageIO.write(scene.image(),"png",filename.toFile());
             imageCount++;
+        }
+        // Owner-flagged assets get extra angles in the ACTUAL renderer.
+        // Stable KIND/id keys survive catalog insertion and sorting changes;
+        // numeric asset-#### PNG ordinals do not. Cosmetic QA is advisory.
+        if(focus==null){
+            Path reviewFile=Path.of("development","assets","texture-review-focus.txt");
+            if(Files.isRegularFile(reviewFile)){
+                Set<String> flagged=new HashSet<>();
+                for(String line:Files.readAllLines(reviewFile,StandardCharsets.UTF_8)){
+                    String key=line.trim();
+                    if(!key.isEmpty()&&!key.startsWith("#"))flagged.add(key);
+                }
+                int reviewed=0;
+                for(var e:entries)if(flagged.contains(e.key())){
+                    for(int angle=0;angle<4;angle++){
+                        scene.x=SceneRenderer.devAssetX(0);
+                        scene.z=SceneRenderer.devAssetZ(0)-3.4;
+                        scene.eyeHeight=1.35;scene.yaw=0;scene.pitch=-.08;
+                        scene.drawDevAssetRoom(List.of(e),angle*.12,angle*Math.PI/2);
+                        Path out=folder.resolve("review-"+e.kind()+"-"+e.id()+"-"+angle+".png");
+                        ImageIO.write(scene.image(),"png",out.toFile());
+                        imageCount++;
+                    }
+                    reviewed++;
+                }
+                Files.writeString(folder.resolve("flagged-review-summary.txt"),
+                    "source="+reviewFile+"\nrequested="+flagged.size()+
+                    "\nmatched="+reviewed+"\nanglesPerAsset=4\n"+
+                    "Rendered images are visual evidence, not automatic texture-art approval.\n",
+                    StandardCharsets.UTF_8);
+            }
         }
         if(focus!=null){
             DevAssetReviewCatalog.Entry chosen=null;

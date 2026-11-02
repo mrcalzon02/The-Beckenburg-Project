@@ -1775,25 +1775,25 @@
     },
     {
       "id": "DEV-167",
-      "title": "Room audit omitted real exterior views beyond its search radius",
-      "status": "corrected-locally; complete-roster baseline review pending",
-      "affected": "School and generic institution exterior zones; other large exterior ownership volumes",
-      "symptom": "The first baseline recorded 56 views and four missing views for School and several institutions despite existing outdoor support.",
-      "cause": "The seven-metre camera search stayed inside building footprints that overlap the exterior gameplay ownership rectangle. ALL also included the unrelated USER authoring slot.",
-      "action": "Search the full owning room bounds when the local search finds no valid same-zone camera; skip USER in built-in ALL scope while retaining explicit USER audits. Permit direct CASTLE capture.",
-      "evidence": "Corrected School/Prison/College and other targeted audit logs show 60 directional views, zero missing, and an explicitly displaced exterior camera. Actual matrices and PNGs: development/levels/rebuild/captures/baseline/.",
-      "older_maps": "Inspect displaced cameras and coverage individually; camera availability never proves route or architecture acceptance."
+      "title": "26 numbered model assets require source/UV/material and rendered visual repair",
+      "status": "ten-real-render-verified-source-repairs-sixteen-open",
+      "affected": "26 owner-confirmed historical development-room capture IDs, with 10 real-render-verified repairs and 16 still open; stable source mapping development/assets/texture-revision-review-2026-11-01.json",
+      "symptom": "Owner flags suspected misaligned exterior textures and severe graphical defects across imported and 3D-authored asset families; supplied list has 26 distinct numeric asset IDs and an additional screenshot.",
+      "cause": "Verified: original source PNG V-row mismatch in metal_barrel_mp_1, canned_food_mp_1/2, and Kenney medieval detail barrel; broken authored UV seam topology for six fitted Hollow Creek native bedrolls. The clean original level_camp_bedroll_rolled_tailored.glb has 0% broad-span UV triangles, while all six native exports had 63.5%/100% across materials; clean source PNG bytes were identical. Other 16 require separate source/scene review.",
+      "action": "Four targeted per-model V-orientation fixes and six original UV seam geometry-preserving reexports committed. Future export guard in development/levels/export_hollow_creek_scene.py; source atlas loop transfer validates vertex ordering in development/levels/author_hollow_creek_surfaces.py. Remaining 16: source-based texture/palette and orientation review of TV, fireplace, book family, five equipment, four directional sprites, with actual model captures and no speculative replacements.",
+      "evidence": "Real-render-verified four UV origin corrections in runs 41380366943 and 41381478095; six authored native bedroll GLB repairs committed 4679b59e75df7ef252051c1a4ec1a675ff2af853 after successful bounded source repair workflow 41384717702. Exact-source triangle/normal bytewise positions and two embedded source PNGs preserved. Developer-room run 41385429621 at exact commit completed success, captured 26 reviewed identities × four angles; repaired bedroll textures show intact blue woven cloth and dark straps with no scrambled black atlas, and 0% UV >.35 for both materials. Full 26-asset mapping and per-item status in JSON review queue.",
+      "older_maps": "Audit any level using these assets after mapping; House, Castle, Farmhouse, School and every shared fixture use require independent placement/orientation and material captures. Visual defects are diagnostic and not release blockers."
     },
     {
       "id": "DEV-168",
-      "title": "Rowan Pike intersects the Castle network-desk chair",
-      "status": "corrected-locally; publication and visual closeout pending",
-      "affected": "Castle Beckenburg operations / Rowan Pike",
-      "symptom": "After excluding the keeper self-collision from placement inspection, CastleSupportArtTest reproducibly failed for Rowan Pike.",
-      "cause": "Resident (23.75,17.40) intersected chair_mp_5 at (24.1,17.7), whose collider is half-width .35/half-depth .39 plus .21 body clearance.",
-      "action": "Move the shared resident/render/interaction anchor to (23.30,17.40), preserving the chair and network station.",
-      "evidence": "Measured collision inspection identified the exact chair; CastleSupportArtTest, CastleRelationsTest and CastleHubIntegrationTest pass locally with JDK17. Separate real-renderer after views: development/levels/rebuild/captures/after-resident-fix/castle/.",
-      "older_maps": "Audit every resident and supporting furniture independently; do not generalize to investigation props or moved editor fixtures."
+      "title": "Editor GLB reduction silently substitutes checkerboard for imported material/UV artwork",
+      "status": "source-guard-and-Windows-CI-verified-existing-derivatives-unaudited",
+      "affected": "AssetImportDialog, ImportedAssetLibrary and any GLB optimization imported via the developer editor",
+      "symptom": "Previously nonzero GLB regression could be published with a single fallback checkerboard texture replacing original named material bindings and per-part source UV/material identity after dialog warning.",
+      "cause": "EditorMeshPipeline flattens imported GLB geometry to triangles without source material identifiers; EditorGlbWriter.encode writes a generic one-material checkerboard on export. Warning/confirmation alone still permitted destructive derivative publication.",
+      "action": "Commit 2a3271b adds persistent publish guard; 0af5f9f disables unsafe GUI button and blocks bypass; df65881 adds regression check for unchanged level-zero GLB bytes and refusal of nonzero GLB regression. Source-only/no-destructive GLB publishing remains available; material-preserving decimation remains future implementation.",
+      "evidence": "Editor guard commits 2a3271b and 0af5f9f read back, test df65881 added; matching Windows installer workflow 41380366927 and developer room workflow 41380366943 completed success at source ce0c01d4. Original GLB publishing byte-identical at level zero, reduced GLB material-loss path blocked. GUI manual interaction and preexisting damaged derivative audit remain open. Asset-specific visual assertions removed from release-blocking GlbPropsTest in eec70ef. Reconciled native host suite passes: AssetImportTopologyGuiTest drives the actual slider, proves nonzero GLB publish stays disabled and level0 re-enables; AssetImportRuntimeTest proves exact level0 bytes and native nonzero refusal. Preexisting damaged derivatives remain unaudited.",
+      "older_maps": "Identify previously imported GLB derivatives that used nonzero regression; compare source/runtime SHA and visual texture mapping, replace only after authoring a real corrected derivative. Do not infer existing models have been repaired by the new guard."
     },
     {
       "id": "DEV-169",
@@ -2135,6 +2135,28 @@
       "action": "Restore from peeked targets first, roll back partial failure, commit stack transfer only on success, and preserve rollback failures as suppressed causes.",
       "evidence": "EditorHistoryFailureTest proves retained stacks/state/retry and failure provenance; it fails against the previous compiled0fb70ac2 implementation and passes after repair. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.",
       "older_maps": "Native adapters and standalone projects share this boundary; arbitrary persistently broken host restores cannot be claimed successful."
+    },
+    {
+      "id": "DEV-200",
+      "title": "Room audit omitted real exterior views beyond its search radius",
+      "status": "corrected-locally; complete-roster baseline review pending",
+      "affected": "School and generic institution exterior zones; other large exterior ownership volumes",
+      "symptom": "The first baseline recorded 56 views and four missing views for School and several institutions despite existing outdoor support.",
+      "cause": "The seven-metre camera search stayed inside building footprints that overlap the exterior gameplay ownership rectangle. ALL also included the unrelated USER authoring slot.",
+      "action": "Search the full owning room bounds when the local search finds no valid same-zone camera; skip USER in built-in ALL scope while retaining explicit USER audits. Permit direct CASTLE capture.",
+      "evidence": "Corrected School/Prison/College and other targeted audit logs show 60 directional views, zero missing, and an explicitly displaced exterior camera. Actual matrices and PNGs: development/levels/rebuild/captures/baseline/. Historical branch identifier DEV-167 was reused independently on main; canonical merged identifier is DEV-200. See DEFECT_ID_RECONCILIATION_2026-11-01.md; original evidence is retained.",
+      "older_maps": "Inspect displaced cameras and coverage individually; camera availability never proves route or architecture acceptance."
+    },
+    {
+      "id": "DEV-201",
+      "title": "Rowan Pike intersects the Castle network-desk chair",
+      "status": "corrected-locally; publication and visual closeout pending",
+      "affected": "Castle Beckenburg operations / Rowan Pike",
+      "symptom": "After excluding the keeper self-collision from placement inspection, CastleSupportArtTest reproducibly failed for Rowan Pike.",
+      "cause": "Resident (23.75,17.40) intersected chair_mp_5 at (24.1,17.7), whose collider is half-width .35/half-depth .39 plus .21 body clearance.",
+      "action": "Move the shared resident/render/interaction anchor to (23.30,17.40), preserving the chair and network station.",
+      "evidence": "Measured collision inspection identified the exact chair; CastleSupportArtTest, CastleRelationsTest and CastleHubIntegrationTest pass locally with JDK17. Separate real-renderer after views: development/levels/rebuild/captures/after-resident-fix/castle/. Historical branch identifier DEV-168 was reused independently on main; canonical merged identifier is DEV-201. See DEFECT_ID_RECONCILIATION_2026-11-01.md; original evidence is retained.",
+      "older_maps": "Audit every resident and supporting furniture independently; do not generalize to investigation props or moved editor fixtures."
     }
   ],
   "audit_categories": [

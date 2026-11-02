@@ -1,54 +1,54 @@
 {
-  "status": "actual visible native scene export; runtime review pending",
+  "status": "actual authored native scene; six rolled-bedroll UVs restored from tailored source",
   "scene": "development/levels/hollow-creek/hollow-creek-green-grass.blend",
   "source_sha256": "e7d53ad52972b5963132876aa40540fa197c8f92db131d8360c90c378ee7740f",
-  "manifest_sha256": "2948d9e56b80a8e4582700b268826628e01db7485df95c1765c3bfbb56887bcc",
+  "manifest_sha256": "1b48a99c29f87f41133ab58903edee465a23391d7fba6ee3e0410b7f8221858e",
   "assets": [
     {
       "id": "level_hc_native_000_0",
       "triangles": 9748,
-      "bytes": 923008,
-      "sha256": "9cd98423e550996dd7b73048c316b6e89ddf4d26e22aa6a3c2eb17f4ce6a1d15",
+      "bytes": 923360,
+      "sha256": "a09c0cb3139ac609a74b2983aa06872ba3a93e950a0c0773af206916cb6e74e6",
       "source_object": "Additional camp rolled bedding 0",
       "source_triangle_start": 0
     },
     {
       "id": "level_hc_native_001_0",
       "triangles": 9748,
-      "bytes": 923004,
-      "sha256": "c209b4e31c4501e195dc1fc4bd4361c63dbea1ba09854bd65a9056fcf5f8258b",
+      "bytes": 923356,
+      "sha256": "bfd7c1f069a7744ac00c7ca588cf67f8fea4ef7230399136c10b234f89f13aac",
       "source_object": "Additional camp rolled bedding 1",
       "source_triangle_start": 0
     },
     {
       "id": "level_hc_native_002_0",
       "triangles": 9748,
-      "bytes": 923004,
-      "sha256": "8b475445f760a64eedcb0cd5bca451568840cce96db11d043fd772ae719d1f63",
+      "bytes": 923356,
+      "sha256": "32a268c670c0f99e7da5cd18039265c394ba187bee1c984d4d1252d90e3087f7",
       "source_object": "Additional camp rolled bedding 2",
       "source_triangle_start": 0
     },
     {
       "id": "level_hc_native_003_0",
       "triangles": 9748,
-      "bytes": 923008,
-      "sha256": "856ceeeac66f0e081f317dba4ddc35c269f24de0ab19348ea50e3d0fd2def643",
+      "bytes": 923360,
+      "sha256": "c4a616227258ac8e7e9513683940f3a8b40670a146bd51012d4085fdf180c762",
       "source_object": "Additional camp rolled bedding 3",
       "source_triangle_start": 0
     },
     {
       "id": "level_hc_native_004_0",
       "triangles": 9748,
-      "bytes": 923008,
-      "sha256": "6fef04a217a630c0f7f5fd6f4fbaff400bf6ae27921bce2a864fbd7e3c757952",
+      "bytes": 923360,
+      "sha256": "3630e01331a3245f3aaf6ee978d993bdfe3a39071b7a61ff914ba97b3defe70d",
       "source_object": "Additional camp rolled bedding 4",
       "source_triangle_start": 0
     },
     {
       "id": "level_hc_native_005_0",
       "triangles": 9748,
-      "bytes": 923004,
-      "sha256": "92a228a2768d9fe7a7cd27391265f37d83fc0cc052e581abe144128ad2959615",
+      "bytes": 923356,
+      "sha256": "3e413d5a8fc77504cd4f51d783885487da3f5f43eb4353be9f81ec55acf8b7e2",
       "source_object": "Additional camp rolled bedding 5",
       "source_triangle_start": 0
     },
@@ -3081,7 +3081,7 @@
   "instances": [
     {
       "id": "level_hc_native_000_0",
-      "sha256": "9cd98423e550996dd7b73048c316b6e89ddf4d26e22aa6a3c2eb17f4ce6a1d15",
+      "sha256": "a09c0cb3139ac609a74b2983aa06872ba3a93e950a0c0773af206916cb6e74e6",
       "matrix": [
         0.9702957272529602,
         0.0,
@@ -3113,7 +3113,7 @@
     },
     {
       "id": "level_hc_native_001_0",
-      "sha256": "c209b4e31c4501e195dc1fc4bd4361c63dbea1ba09854bd65a9056fcf5f8258b",
+      "sha256": "bfd7c1f069a7744ac00c7ca588cf67f8fea4ef7230399136c10b234f89f13aac",
       "matrix": [
         0.7880106568336487,
         0.0,
@@ -3145,7 +3145,7 @@
     },
     {
       "id": "level_hc_native_002_0",
-      "sha256": "8b475445f760a64eedcb0cd5bca451568840cce96db11d043fd772ae719d1f63",
+      "sha256": "32a268c670c0f99e7da5cd18039265c394ba187bee1c984d4d1252d90e3087f7",
       "matrix": [
         -0.7431447505950928,
         0.0,
@@ -3177,7 +3177,7 @@
     },
     {
       "id": "level_hc_native_003_0",
-      "sha256": "856ceeeac66f0e081f317dba4ddc35c269f24de0ab19348ea50e3d0fd2def643",
+      "sha256": "c4a616227258ac8e7e9513683940f3a8b40670a146bd51012d4085fdf180c762",
       "matrix": [
         0.9510564804077148,
         0.0,
@@ -3209,7 +3209,7 @@
     },
     {
       "id": "level_hc_native_004_0",
-      "sha256": "6fef04a217a630c0f7f5fd6f4fbaff400bf6ae27921bce2a864fbd7e3c757952",
+      "sha256": "3630e01331a3245f3aaf6ee978d993bdfe3a39071b7a61ff914ba97b3defe70d",
       "matrix": [
         -0.8746196627616882,
         0.0,
@@ -3241,7 +3241,7 @@
     },
     {
       "id": "level_hc_native_005_0",
-      "sha256": "92a228a2768d9fe7a7cd27391265f37d83fc0cc052e581abe144128ad2959615",
+      "sha256": "3e413d5a8fc77504cd4f51d783885487da3f5f43eb4353be9f81ec55acf8b7e2",
       "matrix": [
         0.838670551776886,
         0.0,
