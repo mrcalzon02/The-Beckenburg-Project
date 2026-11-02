@@ -1,7 +1,15 @@
 {
   "priorSource": "da2b21da1eb1a895ff01da1bc979278097b415c2",
   "local": "PASS: entire native suite, focused cancellation/publish and independent Java17 maximum camera/picking checks",
-  "ci": "pending new-source publication; preserve prior full41547165572",
+  "ci": {
+    "standalone": 41548342073,
+    "nativeTerrainHost": 41548346638,
+    "state": "live; retain exact handles without restart",
+    "previousFullRound": 41547165572,
+    "previousFullSource": "da2b21da1eb1a895ff01da1bc979278097b415c2",
+    "fullNext": "Wait for current full run terminal, inspect actual raw summary, then dispatch full at perspective source; do not cancel it",
+    "gpuScope": "57337f4f GPU41546201023 SUCCESS; actual decoder/GLB writers/SceneRenderer/GpuWorldRenderer unchanged through perspective checkpoint, verified by git diff"
+  },
   "sha256": {
     "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "617bcf3919b6a1de328720b4b8b77b3b988992cd75f085e12e4e419ca705a8b5",
     "src\\main\\java\\org\\beckenburg\\editor\\EditorMeshPicking.java": "9af6d6be31277cd305c88e7c800db52775222a835982517685201daa5aabeb51",
@@ -18,5 +26,7 @@
     "development\\quality\\evidence\\perspective-workspace-2026-11-02\\positive.txt": "59e72a0e59f4d63032bcbb2abe663327becb85e965d67ba014ec4e7056f85c75",
     "development\\quality\\evidence\\perspective-workspace-2026-11-02\\README.md": "7e4b05968df808e680928127a89ea26119984377bf2d059d518dbb5f27cd8629"
   },
-  "compatibility": "PASS actual prior-compiled client against final standalone JAR; DEV218 fixed before publication"
+  "compatibility": "PASS actual prior-compiled client against final standalone JAR; DEV218 fixed before publication",
+  "publishedSource": "d620857ef6a2387152ae2f38468081b651e64cf2",
+  "remoteVerified": true
 }
