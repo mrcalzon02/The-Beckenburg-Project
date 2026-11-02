@@ -1,0 +1,74 @@
+{
+  "schema": "beckenburg.material-workspace-checkpoint/v1",
+  "date": "2026-11-02",
+  "implementationSha": "6445403a36b18bcadbe2454ebb1f13824e3fcb82",
+  "branch": "map/first-principles-rebuild-plan",
+  "publication": "implementation pushed and exact remote SHA verified",
+  "ci": [
+    {
+      "id": 41506322166,
+      "name": "Modular Level Editor Standalone",
+      "source": "6445403a36b18bcadbe2454ebb1f13824e3fcb82",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41506322166"
+    },
+    {
+      "id": 41506330136,
+      "name": "Terrain Scene Runtime Physics Acceptance",
+      "source": "6445403a36b18bcadbe2454ebb1f13824e3fcb82",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41506330136"
+    },
+    {
+      "id": 41506342845,
+      "name": "Beckenburg Full Multiplayer Acceptance",
+      "source": "6445403a36b18bcadbe2454ebb1f13824e3fcb82",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41506342845"
+    },
+    {
+      "id": 41506353573,
+      "name": "Beckenburg GPU Renderer Acceptance",
+      "source": "6445403a36b18bcadbe2454ebb1f13824e3fcb82",
+      "status": "queued",
+      "conclusion": null,
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41506353573"
+    }
+  ],
+  "localAcceptance": "Complete Java17 host compile; full native service/GUI/recovery/headless suite including dedicated material window; independent editor JAR and native material bundle tests; portable mesh controls; maximum normal transform under256MiB",
+  "previousAcceptance": {
+    "source": "bcd7469828f8736a5dfb5c6266a48543573fb294",
+    "full": {
+      "run": 41486307374,
+      "job": 125417465992,
+      "passed": 308,
+      "failed": 2,
+      "skipped": 0,
+      "manifest": 310,
+      "defect": "DEV-211; green advisory workflow is not manifest acceptance"
+    },
+    "gpu": {
+      "run": 41486319863,
+      "job": 125420512759,
+      "actual11Maps": "PASS",
+      "realThreeUiCycles": "PASS"
+    },
+    "upstreamInstaller": {
+      "source": "7d7fcde385cadd3cc5a6a40a32093ad7d1dc7a57",
+      "run": 41412842347,
+      "workflow": "success; not this implementation's installer or physical installed-game acceptance"
+    }
+  },
+  "next": [
+    "Poll these exact live CI handles; inspect raw manifest and GPU results; do not restart live runs",
+    "Retain DEV-211 art goldens and source files until actual source/silhouette review resolves the two failures",
+    "Finish G2 original GLB hierarchy/pivot/material/normal/UV provenance and remaining native selection/modeling/transforms",
+    "Implement full Texture Painting TP01-18 human native layers/tiles/strokes/UV operations and recovery, then admit only proven human operations to the shared service",
+    "Continue all original G0-G12 requirements; no complete gate inferred"
+  ],
+  "goal": "active; not complete",
+  "layout": "Independent materials window and topology window; main level UI unchanged; same authoritative native project/history"
+}
