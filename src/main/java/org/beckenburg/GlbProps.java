@@ -91,6 +91,7 @@ public final class GlbProps {
             "canned_food_mp_1".equals(name)||"canned_food_mp_2".equals(name)||
             "kenney_medieval_detail_barrel".equals(name)||
             (name!=null&&name.matches("book_mp_[2-5]"))||
+            "open_book_mp_1".equals(name)||
             "blender_ghost_writing_book_2".equals(name);
     }
     /** Optional DEV ROOM A/B comparison, never enabled by the normal game.
