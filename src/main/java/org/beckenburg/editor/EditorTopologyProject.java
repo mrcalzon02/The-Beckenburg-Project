@@ -343,6 +343,24 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         if(after.equals(state))throw new IllegalArgumentException("Transform does not change selected vertices");
         return new EditPreview(this,state,after,revision,operation+" / "+selected.size()+" vertices / global "+"XYZ".charAt(axis)+" / "+amount+" / "+(origin?"world origin":"selection centroid"));
     }
+    /** Surface-normal axes come from the active native face; no authored-normal shading value defines geometry axes. */
+    public synchronized EditPreview previewTransform(Collection<Long> ids,Transform operation,int axis,double amount,boolean faceCenter,long activeFace){
+        Objects.requireNonNull(ids);Objects.requireNonNull(operation);
+        if(ids.isEmpty()||ids.size()>MAX_VERTICES||axis<0||axis>2||!Double.isFinite(amount)||(operation==Transform.ROTATE?Math.abs(amount)>36000:amount<.000001||amount>1000000))throw new IllegalArgumentException("Invalid native transform parameters");
+        if(operation==Transform.ROTATE?Math.IEEEremainder(amount,360)==0:amount==1)throw new IllegalArgumentException("Transform does not change selected vertices");
+        var basis=EditorMeshBasis.face(state,activeFace);var selected=new HashSet<>(ids);var old=vertices(state);var next=new HashMap<>(old);for(long id:selected)if(!old.containsKey(id))throw new IllegalArgumentException("Unknown vertex ID");
+        double px=faceCenter?basis.x():0,py=faceCenter?basis.y():0,pz=faceCenter?basis.z():0;
+        if(!faceCenter)for(var v:state.vertices())if(selected.contains(v.id())){px+=v.x()/selected.size();py+=v.y()/selected.size();pz+=v.z()/selected.size();}
+        double radians=StrictMath.toRadians(amount),sin=StrictMath.sin(radians),cos=StrictMath.cos(radians);
+        for(var v:state.vertices())if(selected.contains(v.id())){
+            double a=basis.component(v.x()-px,v.y()-py,v.z()-pz,0),b=basis.component(v.x()-px,v.y()-py,v.z()-pz,1),c=basis.component(v.x()-px,v.y()-py,v.z()-pz,2);
+            if(operation==Transform.ROTATE){if(axis==0){double value=cos*b-sin*c;c=sin*b+cos*c;b=value;}else if(axis==1){double value=cos*a+sin*c;c=-sin*a+cos*c;a=value;}else{double value=cos*a-sin*b;b=sin*a+cos*b;a=value;}}
+            else{if(operation==Transform.SCALE_UNIFORM||axis==0)a*=amount;if(operation==Transform.SCALE_UNIFORM||axis==1)b*=amount;if(operation==Transform.SCALE_UNIFORM||axis==2)c*=amount;}
+            next.put(v.id(),new Vertex(v.id(),v.part(),basis.world(a,b,c,0)+px,basis.world(a,b,c,1)+py,basis.world(a,b,c,2)+pz));
+        }
+        var after=replacementState(old,next,selected,n->basis.transformNormal(n,operation,axis,amount));if(after.equals(state))throw new IllegalArgumentException("Transform does not change selected vertices");
+        return new EditPreview(this,state,after,revision,operation+" / "+selected.size()+" vertices / surface "+"TBN".charAt(axis)+" / face "+activeFace+" / "+amount+" / "+(faceCenter?"face center":"selection centroid"));
+    }
     private void replaceVertices(Map<Long,Vertex> old,Map<Long,Vertex> next,Set<Long> selected){
         state=replacementState(old,next,selected);revision++;
     }

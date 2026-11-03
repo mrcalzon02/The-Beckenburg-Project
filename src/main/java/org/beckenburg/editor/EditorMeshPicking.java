@@ -9,6 +9,8 @@ public final class EditorMeshPicking {
         Point project(double x,double y,double z);
         default boolean perspective(){return false;}
         default double worldScale(double x,double y,double z){return 1;}
+        default Point direction(double x,double y,double z,EditorMeshPipeline.Normal axis){var a=project(x,y,z);var b=project(x+axis.x(),y+axis.y(),z+axis.z());return new Point(b.x()-a.x(),b.y()-a.y(),0);}
+        default double deltaAlong(double x,double y,double z,EditorMeshPipeline.Normal axis,double dx,double dy){var v=direction(x,y,z,axis);double length=v.x()*v.x()+v.y()*v.y();if(length<1e-24)throw new IllegalArgumentException("Axis is edge-on to camera");return (dx*v.x()+dy*v.y())/length;}
         default Point axisDirection(double x,double y,double z,int axis){var a=project(x,y,z);var b=project(x+(axis==0?1:0),y+(axis==1?1:0),z+(axis==2?1:0));return new Point(b.x()-a.x(),b.y()-a.y(),0);}
         default double axisDelta(double x,double y,double z,int axis,double dx,double dy){var v=axisDirection(x,y,z,axis);double length=v.x()*v.x()+v.y()*v.y();if(length<1e-24)throw new IllegalArgumentException("Axis is edge-on to camera");return (dx*v.x()+dy*v.y())/length;}
     }
@@ -34,9 +36,11 @@ public final class EditorMeshPicking {
         public Point project(double a,double b,double c){double d=distance(a,b,c);if(!Double.isFinite(d)||d<=.05)return new Point(Double.NaN,Double.NaN,Double.NaN);return new Point(dot(right,(a-x)/radius,(b-y)/radius,(c-z)/radius)/d,-dot(up,(a-x)/radius,(b-y)/radius,(c-z)/radius)/d,1/d);}
         public boolean perspective(){return true;}
         public double worldScale(double a,double b,double c){return radius*distance(a,b,c);}
-        public Point axisDirection(double a,double b,double c,int axis){var p=project(a,b,c);double d=distance(a,b,c);return new Point((right[axis]+p.x()*near[axis])/(radius*d),(-up[axis]+p.y()*near[axis])/(radius*d),0);}
-        public double axisDelta(double a,double b,double c,int axis,double dx,double dy){
-            var direction=axisDirection(a,b,c,axis);double length=direction.x()*direction.x()+direction.y()*direction.y();if(!Double.isFinite(length)||length<1e-24)throw new IllegalArgumentException("Axis is edge-on to camera");double along=(dx*direction.x()+dy*direction.y())/length;var p=project(a,b,c);boolean horizontal=Math.abs(direction.x())>=Math.abs(direction.y());double delta=(horizontal?direction.x():direction.y())*along,target=(horizontal?p.x():p.y())+delta,d=distance(a,b,c),e=-near[axis]/radius,basis=(horizontal?right[axis]:-up[axis])/radius;double denominator=basis-target*e;
+        public Point direction(double a,double b,double c,EditorMeshPipeline.Normal axis){var p=project(a,b,c);double d=distance(a,b,c),nearAxis=dot(near,axis.x(),axis.y(),axis.z());return new Point((dot(right,axis.x(),axis.y(),axis.z())+p.x()*nearAxis)/(radius*d),(-dot(up,axis.x(),axis.y(),axis.z())+p.y()*nearAxis)/(radius*d),0);}
+        public Point axisDirection(double a,double b,double c,int axis){return direction(a,b,c,unitAxis(axis));}
+        public double axisDelta(double a,double b,double c,int axis,double dx,double dy){return deltaAlong(a,b,c,unitAxis(axis),dx,dy);}
+        public double deltaAlong(double a,double b,double c,EditorMeshPipeline.Normal axis,double dx,double dy){
+            var direction=direction(a,b,c,axis);double length=direction.x()*direction.x()+direction.y()*direction.y();if(!Double.isFinite(length)||length<1e-24)throw new IllegalArgumentException("Axis is edge-on to camera");double along=(dx*direction.x()+dy*direction.y())/length;var p=project(a,b,c);boolean horizontal=Math.abs(direction.x())>=Math.abs(direction.y());double delta=(horizontal?direction.x():direction.y())*along,target=(horizontal?p.x():p.y())+delta,d=distance(a,b,c),e=-dot(near,axis.x(),axis.y(),axis.z())/radius,basis=(horizontal?dot(right,axis.x(),axis.y(),axis.z()):-dot(up,axis.x(),axis.y(),axis.z()))/radius;double denominator=basis-target*e;
             if(Math.abs(denominator)<1e-15/radius)throw new IllegalArgumentException("Axis drag crosses camera horizon");double result=delta*d/denominator;if(!Double.isFinite(result)||d+e*result<=.05)throw new IllegalArgumentException("Axis drag crosses camera near plane");return result;
         }
     }
@@ -46,6 +50,7 @@ public final class EditorMeshPicking {
         for(var v:vertices){minX=Math.min(minX,v.x());minY=Math.min(minY,v.y());minZ=Math.min(minZ,v.z());maxX=Math.max(maxX,v.x());maxY=Math.max(maxY,v.y());maxZ=Math.max(maxZ,v.z());}
         if(vertices.isEmpty())return new Camera(0,0,0,1,yaw,pitch);double radius=Math.hypot(Math.hypot(maxX*.5-minX*.5,maxY*.5-minY*.5),maxZ*.5-minZ*.5);return new Camera(minX*.5+maxX*.5,minY*.5+maxY*.5,minZ*.5+maxZ*.5,Math.max(1e-6,radius),yaw,pitch);
     }
+    public static EditorMeshPipeline.Normal unitAxis(int axis){return switch(axis){case 0->new EditorMeshPipeline.Normal(1,0,0);case 1->new EditorMeshPipeline.Normal(0,1,0);case 2->new EditorMeshPipeline.Normal(0,0,1);default->throw new IllegalArgumentException("Axis must be0..2");};}
     public record Hit(long faceId,long vertexId,long edgeA,long edgeB,double depth,double u,double v){}
     private EditorMeshPicking(){}
     private static double distance(Point a,double x,double y){return Math.hypot(a.x()-x,a.y()-y);}

@@ -15,10 +15,9 @@ public final class EquipmentAssetAssignmentsTest {
         Path file=Path.of(args.length==0?"development/assets/equipment-catalog/equipment-assets.json":args[0]);
         // Reuse the existing production JSON reader for fixture decoding only;
         // the catalog itself contains explicit mappings and never parses this manifest.
-        Class<?> parser=Class.forName("org.beckenburg.GlbProps$Json");
-        var constructor=parser.getDeclaredConstructor(String.class);constructor.setAccessible(true);
-        var read=parser.getDeclaredMethod("read");read.setAccessible(true);
-        Map<String,Object> manifest=(Map<String,Object>)read.invoke(constructor.newInstance(Files.readString(file)));
+        Class<?> parser=Class.forName("org.beckenburg.editor.EditorGlbJson");
+        var read=parser.getDeclaredMethod("read",String.class);read.setAccessible(true);
+        Map<String,Object> manifest=(Map<String,Object>)read.invoke(null,Files.readString(file));
         Set<String> canonical=new HashSet<>(),states=new HashSet<>(),all=new HashSet<>();
         int slots=0,stateSlots=0,families=0;
         for(Object item:(List<Object>)manifest.get("items")){

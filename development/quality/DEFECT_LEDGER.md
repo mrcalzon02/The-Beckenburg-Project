@@ -2979,3 +2979,29 @@ Exact57337f4f full41546195876/job125622271926 fails compiling host GLB tests bec
 ## DEV-218 — Camera extension drops existing compiled picker signatures
 
 The unpublished Projector generalization passed source tests but a client compiled against exact da2b21da picker failed with NoSuchMethodError. Restored enum-typed public pick/prepare overloads delegating to Projector. The identical compiled consumer now passes against the actual independent JAR; signature guards and maximum camera/orthographic tests pass. Actual negative/positive outputs and consumer are in perspective-workspace evidence. No source art or scene edits; fixed before perspective publication.
+
+## Surface integration and observed full-round defects — 2026-11-02
+
+### DEV-219 — Unanchored surface mode unboxes a null native face anchor
+
+Selecting surface-normal mode before a face has been picked throws NullPointerException in controls and painting. Keep the selected face ID explicitly boxed; missing anchor disables transform preview and produces no fake normal gizmo. Require an actual native face before deriving basis.
+
+surface-unanchored-negative.txt retains actual intermediate UI exception. AssetImportSurfaceGuiTest selects the visible Transform card and normal mode before picking, verifies disabled preview/empty handles, then completes real surface edits and game publication.
+
+Scope: Unpublished UI integration defect, corrected before publication. No source assets or other module layouts changed.
+
+### DEV-220 — Nearby projected gizmo handles can capture a precise click on the wrong axis
+
+An exact click on later axis2 selects earlier axis1 in published d620857e UI when projected handle hit regions overlap. Intermediate surface mode also reproduces axis2 incorrectly captured as axis0. Choose minimum distance within the existing8-pixel hit radius, keeping stable order for exact ties. Preserve native snapshot/epoch validation, cancellation and shared history.
+
+gizmo-d620-negative.txt comes from exact Git d620857e AssetImportDialog compiled separately and run with the same real world-axis control. gizmo-current-positive.txt passes. Surface test finds nearby actual projected handles through real orbit settings, clicks the exact later handle and proves cancel changes no native geometry.
+
+Scope: Editor input correction only; no map or source geometry is migrated. Identical projected handles remain deterministically tied and can be separated by orbiting the actual camera.
+
+### DEV-221 — Equipment assignment regression still reflects into the removed private GLB JSON reader
+
+Corrected full41547165572/job125625469653 is green advisory but raw307/310: alongside two DEV211 art assertions, equipment test throws ClassNotFoundException for GlbProps$Json. Use the actual shared production reader for fixture JSON; keep all original manifest/runtime mapping comparisons. Do not restore a second parser or weaken assignment/art assertions. Compile in a fresh main output directory and run without stale classes.
+
+equipment-da2b21da.txt records exact remote failure. equipment-clean-negative.txt reproduces in fresh main classes; equipment-clean-positive.txt passes43 families/129 stage aliases/53 states/162 unique resources with corrected test. No goldens changed.
+
+Scope: Test integration repair only. Actual packaged TCP stage passed in41547165572, but raw full regression remains unaccepted until corrected-source rerun. DEV211 source-art assertions remain open.

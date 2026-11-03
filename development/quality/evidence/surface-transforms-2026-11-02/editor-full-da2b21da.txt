@@ -1,0 +1,6 @@
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-02T23:46:57.9992768Z ##[error]Exception in thread "main" java.lang.AssertionError: ghost resource bytes changed: 6883065
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-02T23:46:58.0140873Z FAIL GhostSpriteAtlasIntegrationTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-02T23:47:26.3031298Z ##[error]Exception in thread "main" java.lang.AssertionError: Twin A side-view head/feet crop differs from approved complete art
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-02T23:47:26.3669422Z FAIL TwinBodyVisualTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-02T23:51:19.7862512Z FAIL EquipmentAssetAssignmentsTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-02T23:56:18.0385549Z REGRESSION SUMMARY passed=307 failed=3 skipped=0 manifest=310

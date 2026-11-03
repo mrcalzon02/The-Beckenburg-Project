@@ -2326,7 +2326,7 @@
     {
       "id": "DEV-217",
       "title": "Packaged full-round test compilation omits shared portable GLB fixture sources",
-      "status": "fixed-scoped; clean full host test-source compilation checked; corrected exact-source CI pending",
+      "status": "fixed-scoped; corrected full41547165572 build and actual TCP stage passed; raw307/310 has separate DEV211/221 failures",
       "affected": "build.cmd and build.sh test source lists",
       "symptom": "Source57337f4f full41546195876/job125622271926 fails before TCP acceptance: EditorGlbAuthoringTest is absent while compiling AssetImportGlbGuiTest and GlbSourceAuthorityTest. Standalone41546137572 and native41546191383 pass because their explicit fixture dependencies are present.",
       "cause": "The game build compiles only top-level host test sources, while new human/runtime tests reuse portable test fixtures in the editor subpackage.",
@@ -2344,6 +2344,39 @@
       "action": "Retain original typed overloads and delegate to the new Projector implementation; keep the display-camera requirement for perspective. Add signature guards and run the unchanged prior-compiled client against the real final JAR.",
       "evidence": "perspective-workspace evidence contains real intermediate negative and final positive outputs, the same compiled consumer and source. Consumer was compiled against exact da2b21da picker Git blob. Final independent Java17 JAR and maximum old/new picking tests pass under256MiB.",
       "older_maps": "Unpublished intermediate integration defect, corrected before publication. No scene or source asset changes. Portable public signatures remain stable; this does not prove all other G1/G2 APIs or gate completion."
+    },
+    {
+      "id": "DEV-219",
+      "title": "Unanchored surface mode unboxes a null native face anchor",
+      "status": "fixed before surface publication; actual human unanchored-mode refusal and complete workflow pass",
+      "affected": "AssetImportDialog activeSurfaceFace/normal mode and gizmo painting",
+      "symptom": "Selecting surface-normal mode before a face has been picked throws NullPointerException in controls and painting.",
+      "cause": "A conditional expression combined nullable Long normalAnchor with primitive selected face ID, forcing null unboxing.",
+      "action": "Keep the selected face ID explicitly boxed; missing anchor disables transform preview and produces no fake normal gizmo. Require an actual native face before deriving basis.",
+      "evidence": "surface-unanchored-negative.txt retains actual intermediate UI exception. AssetImportSurfaceGuiTest selects the visible Transform card and normal mode before picking, verifies disabled preview/empty handles, then completes real surface edits and game publication.",
+      "older_maps": "Unpublished UI integration defect, corrected before publication. No source assets or other module layouts changed."
+    },
+    {
+      "id": "DEV-220",
+      "title": "Nearby projected gizmo handles can capture a precise click on the wrong axis",
+      "status": "fixed-scoped; exact published d620857e world-space negative control and corrected world/surface GUI checks pass",
+      "affected": "AssetImportDialog beginAxisDrag; world and surface-normal projected handles",
+      "symptom": "An exact click on later axis2 selects earlier axis1 in published d620857e UI when projected handle hit regions overlap. Intermediate surface mode also reproduces axis2 incorrectly captured as axis0.",
+      "cause": "Hit testing chose the first handle within8 pixels rather than the nearest actual handle.",
+      "action": "Choose minimum distance within the existing8-pixel hit radius, keeping stable order for exact ties. Preserve native snapshot/epoch validation, cancellation and shared history.",
+      "evidence": "gizmo-d620-negative.txt comes from exact Git d620857e AssetImportDialog compiled separately and run with the same real world-axis control. gizmo-current-positive.txt passes. Surface test finds nearby actual projected handles through real orbit settings, clicks the exact later handle and proves cancel changes no native geometry.",
+      "older_maps": "Editor input correction only; no map or source geometry is migrated. Identical projected handles remain deterministically tied and can be separated by orbiting the actual camera."
+    },
+    {
+      "id": "DEV-221",
+      "title": "Equipment assignment regression still reflects into the removed private GLB JSON reader",
+      "status": "fixed-scoped; clean main/test compilation and complete manifest assignment test pass; new full CI pending",
+      "affected": "EquipmentAssetAssignmentsTest after shared GLB decoder extraction",
+      "symptom": "Corrected full41547165572/job125625469653 is green advisory but raw307/310: alongside two DEV211 art assertions, equipment test throws ClassNotFoundException for GlbProps$Json.",
+      "cause": "The test fixture decoder was coupled through reflection to the old private parser; production JSON parsing moved to the shared EditorGlbJson. Incremental local output could retain obsolete nested class files, so clean source verification is required.",
+      "action": "Use the actual shared production reader for fixture JSON; keep all original manifest/runtime mapping comparisons. Do not restore a second parser or weaken assignment/art assertions. Compile in a fresh main output directory and run without stale classes.",
+      "evidence": "equipment-da2b21da.txt records exact remote failure. equipment-clean-negative.txt reproduces in fresh main classes; equipment-clean-positive.txt passes43 families/129 stage aliases/53 states/162 unique resources with corrected test. No goldens changed.",
+      "older_maps": "Test integration repair only. Actual packaged TCP stage passed in41547165572, but raw full regression remains unaccepted until corrected-source rerun. DEV211 source-art assertions remain open."
     }
   ],
   "audit_categories": [

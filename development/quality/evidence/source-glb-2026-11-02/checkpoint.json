@@ -14,7 +14,7 @@
     "gpuResult": "SUCCESS all3 jobs; actual Castle/11map OpenGL residency raw in gpu-57337f4f.txt",
     "correctedFullRound": 41547165572,
     "correctedFullSource": "da2b21da1eb1a895ff01da1bc979278097b415c2",
-    "correctedFullState": "live; actual build/TCP step passed; advisory full manifest in progress"
+    "correctedFullState": "terminal SUCCESS advisory workflow; raw307/310. Build/TCP pass, DEV211 art2 and DEV221 private-reader test failure. DEV221 fixed/clean-output verified in surface checkpoint; new full pending."
   },
   "sha256": {
     "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "f30f040beb13f1fbc11a5137c81a6baa119169ece943e22d1470e5525d7ad5f0",

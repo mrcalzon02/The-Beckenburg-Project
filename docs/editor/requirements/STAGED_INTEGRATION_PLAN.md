@@ -57,6 +57,8 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 
 **Perspective checkpoint2026-11-02:** actual model viewport now has perspective orbit/pan/zoom/fit. Drawing, BVH triangle/box/lasso selection and projective axis gestures use the same immutable fitted camera; native edits still use shared validation/history and real runtime publication. Actual human checks and maximum120000-face/360000-vertex256MiB portable picking pass. Loop/ring, local/normal tools, bevel/slide, incremental updates and full G2 exit remain open.
 
+**Surface-normal checkpoint2026-11-02:** actual Transform inspector and movement gizmos derive T/B/N from a picked native face. Numeric rotation/scale and oblique dragging share native validation/history, pivot/normal transport and real save/runtime publication. Missing anchors refuse; source-backed GLB provenance remains intact. Maximum normal-bearing native mesh passes under256MiB. Persistent object-local frames, loop/ring, bevel/slide, incremental updates and whole G2 exit remain open.
+
 ### G3 — Sculpting, remeshing, high-fidelity interchange and input
 **Depends on:** G2. **Source:** Topological editor, pages 1–18.
 - Clay/standard, grab, smooth, flatten/planar brushes; falloff, screen-space radius, stroke interpolation, symmetry, topology-safe deltas, brush-local normal rebuild.

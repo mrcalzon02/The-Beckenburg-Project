@@ -4,11 +4,12 @@
   "ci": {
     "standalone": 41548342073,
     "nativeTerrainHost": 41548346638,
-    "state": "live; retain exact handles without restart",
+    "state": "standalone41548342073 and native41548346638 SUCCESS at d620857e",
     "previousFullRound": 41547165572,
     "previousFullSource": "da2b21da1eb1a895ff01da1bc979278097b415c2",
     "fullNext": "Wait for current full run terminal, inspect actual raw summary, then dispatch full at perspective source; do not cancel it",
-    "gpuScope": "57337f4f GPU41546201023 SUCCESS; actual decoder/GLB writers/SceneRenderer/GpuWorldRenderer unchanged through perspective checkpoint, verified by git diff"
+    "gpuScope": "57337f4f GPU41546201023 SUCCESS; actual decoder/GLB writers/SceneRenderer/GpuWorldRenderer unchanged through perspective checkpoint, verified by git diff",
+    "previousFullResult": "41547165572 SUCCESS advisory workflow; raw307/310, known DEV211 plus fixed DEV221; see surface evidence"
   },
   "sha256": {
     "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "617bcf3919b6a1de328720b4b8b77b3b988992cd75f085e12e4e419ca705a8b5",
