@@ -1,0 +1,15 @@
+2026-11-03T08:35:23.346670800Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-03T08:35:23.371613100Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-03T08:35:23.389948300Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-03T08:35:23.423998900Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-03T08:35:23.434665500Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-03T08:35:23.442803800Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-03T08:35:23.469223600Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-03T08:35:23.478348500Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-03T08:35:23.486455100Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-03T08:35:26.006649500Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=108379 visible_faces=57762 culled_faces=50617 target=320x200 build_ms=1900 lighting_raster_ms=576
+2026-11-03T08:35:28.429842600Z [main] RENDER SLOW stage=idle faces=121381 visible_faces=55954 culled_faces=65427 target=320x200 build_ms=42 lighting_raster_ms=169
+Exception in thread "main" java.lang.AssertionError: new scene resets gait cleric
+	at org.beckenburg.LanHunterAnimationGameplayTest.check(LanHunterAnimationGameplayTest.java:18)
+	at org.beckenburg.LanHunterAnimationGameplayTest.run(LanHunterAnimationGameplayTest.java:131)
+	at org.beckenburg.LanHunterAnimationGameplayTest.main(LanHunterAnimationGameplayTest.java:73)
