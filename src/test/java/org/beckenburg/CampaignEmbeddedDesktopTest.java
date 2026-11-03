@@ -18,16 +18,38 @@ public final class CampaignEmbeddedDesktopTest {
         long end=System.nanoTime()+15_000_000_000L;
         while(System.nanoTime()<end){if(edt(condition))return;Thread.sleep(50);}throw new AssertionError(label);
     }
+    static JLabel responseNotice(LanLobbyPanel panel)throws Exception{
+        var page=LanLobbyPanel.class.getDeclaredField("equipmentPage");
+        page.setAccessible(true);
+        var notice=EquipmentCatalogPanel.class.getDeclaredField("notice");
+        notice.setAccessible(true);
+        return (JLabel)notice.get(page.get(panel));
+    }
+    static void untilNoticed(java.util.concurrent.Callable<Boolean> condition,
+                             String label,java.util.List<String> observed)throws Exception{
+        try{until(condition,label);}
+        catch(AssertionError failure){
+            // The lobby transcript is deliberately redacted in Stream Safe mode.
+            // Assert the actual GUI notice channel instead of bypassing privacy.
+            throw new AssertionError(label+"; GUI notices="+observed,failure);
+        }
+    }
     public static void main(String[] args)throws Exception{
         if(GraphicsEnvironment.isHeadless())throw new AssertionError("Desktop required");
         Path dir=Files.createTempDirectory("embedded-campaign");var profile=new ProfileStore(dir.resolve("profile.properties"));
         profile.addNetworkPayout(UUID.randomUUID(),3000,0);profile.reserveMissionHunters(2);
         profile.purchaseCatalogGear("DOTS_PROJECTOR",EquipmentTiers.Tier.I);profile.equipCatalog(3,"DOTS_PROJECTOR");
         var chapter=profile.dispatchStory(0);JFrame[] frame={null};LanLobbyPanel[] lobby={null};boolean[] left={false};
+        java.util.List<String> uiNotices=new java.util.concurrent.CopyOnWriteArrayList<>();
         try{
             edt(()->{frame[0]=new JFrame("Campaign workflow acceptance");
                 lobby[0]=new LanLobbyPanel(active->{frame[0].setContentPane(active);frame[0].revalidate();},()->left[0]=true,
                     new LanLobbyPanel.CampaignLaunch(profile,chapter,2,false));
+                // Observe the real Swing feedback label before the asynchronous
+                // campaign starts. Stream Safe intentionally masks the lobby log.
+                responseNotice(lobby[0]).addPropertyChangeListener("text",change->{
+                    if(change.getNewValue() instanceof String value)uiNotices.add(value);
+                });
                 frame[0].setContentPane(lobby[0]);frame[0].setSize(1060,725);frame[0].setVisible(true);
                 return null;});
             // Single-player dispatch must host, ready, launch, and show the actual
@@ -47,19 +69,22 @@ public final class CampaignEmbeddedDesktopTest {
                 hunter[0]=(LanClient)clientField.get(lobby[0]);
                 // Entering the 3D scene switches the hunter to physical controls.
                 // Legacy room-mode EXTRACT must be rejected rather than silently paying out.
-                hunter[0].extract();return null;});
-            until(()->{var logField=LanLobbyPanel.class.getDeclaredField("log");logField.setAccessible(true);
-                return ((JTextArea)logField.get(lobby[0])).getText().contains(
-                    "REJECT|physical hunters must use the van door control");
-            },"Physical campaign hunter cannot use legacy EXTRACT");
+                return null;});
+            untilNoticed(()->uiNotices.contains("ACCEPT VIEW3D"),
+                "Host acknowledged physical mode through the campaign GUI",uiNotices);
+            edt(()->{hunter[0].extract();return null;});
+            untilNoticed(()->uiNotices.contains(
+                    "REJECT physical hunters must use the van door control"),
+                "Physical campaign hunter cannot use legacy EXTRACT",uiNotices);
             if(!owner[0].running()||!profile.archives().isEmpty())
                 throw new AssertionError("Rejected extraction changed host campaign state");
             // Exercise the same host-validated cargo control used by real 3D gameplay.
             edt(()->{hunter[0].vanDoor();return null;});
-            until(()->{var logField=LanLobbyPanel.class.getDeclaredField("log");logField.setAccessible(true);
-                String messages=((JTextArea)logField.get(lobby[0])).getText();
-                return messages.contains("ACCEPT|VANDOOR|CLOSED")&&messages.contains("RESULT|RETREATED");
-            },"Physical van door closes and host sends retreat result");
+            untilNoticed(()->uiNotices.contains("ACCEPT VANDOOR CLOSED"),
+                "Physical van door accepted through the GUI",uiNotices);
+            until(()->{var state=LanLobbyPanel.class.getDeclaredField("missionRunning");
+                state.setAccessible(true);return !state.getBoolean(lobby[0]);
+            },"GUI receives host retreat result and leaves running state");
             until(()->!owner[0].running()&&profile.archives().size()==1,"Host campaign result saved");
             // Reopen the actual profile file: an in-memory result is not durable acceptance.
             // The host writes atomically, but its in-memory archive may update first.
@@ -69,10 +94,8 @@ public final class CampaignEmbeddedDesktopTest {
                     &&reloaded.archives().get(0).outcome()==InvestigationSession.Outcome.RETREATED;
             },"Host campaign retreat durably archived exactly once");
             edt(()->{hunter[0].vanDoor();return null;});
-            until(()->{var logField=LanLobbyPanel.class.getDeclaredField("log");logField.setAccessible(true);
-                return ((JTextArea)logField.get(lobby[0])).getText().contains(
-                    "REJECT|hunter at cargo button required");
-            },"Repeated van-door command must be rejected");
+            untilNoticed(()->uiNotices.contains("REJECT hunter at cargo button required"),
+                "Repeated van-door command must be rejected",uiNotices);
             ProfileStore afterRepeat=new ProfileStore(dir.resolve("profile.properties"));afterRepeat.load();
             if(afterRepeat.archives().size()!=1)
                 throw new AssertionError("Repeated van-door command duplicated the campaign receipt");
