@@ -3272,6 +3272,76 @@ Evidence and verification: pre-lighting-cellar-stair-runtime.png and final cella
 
 Older-map obligation: New Castle structural-to-fit-out issue. Other enclosed stairs need individual support/occlusion/brightness and body-clearance reviews; no inferred older-map repair.
 
+### DEV-239 — Bounded Castle stock layout blocks the original store light switch approach
+
+**Status:** fixed-scoped; actual ground routes, all stock browsing stands and all room switches pass · **Affected:** Castle stock room / existing switch at28.73,26
+
+First ground construction test cannot stand at the legacy stock switch after fitting all15 racks into the bounded stock room.
+
+Cause / uncertainty: The relocated western rack bank projects into the former approach by40mm.
+
+Fix / next action: Move the same switch to25.9 on the real shoulder beside the entrance; preserve15 source-sized racks and all family/tier stock.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/castle-ground-rejected-stock-switch.log; final native route/switch/stock checks.
+
+Older-map obligation: Audit every location fixture approach after new walls or relocated stock; no general older-map repair inferred.
+
+### DEV-240 — Ground-room authoring helper loses the existing native annex ceiling query
+
+**Status:** fixed-scoped; packaged annex fixture, brightness, physical routes and exact save/reopen pass · **Affected:** CastleRooms.mountHeight / existing west annex
+
+Targeted CastleTrainingAnnexTest throws No ceiling at -8,27 after separating default fixture authoring from live singleton initialization.
+
+Cause / uncertainty: The authoring-only ceiling lookup considered the new core room table but omitted the generated annex spaces.
+
+Fix / next action: Include generated annex ceiling dimensions in authoring queries; retain actual native slab attachment as the independent runtime support check.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/castle-ground-rejected-annex-ceiling.log and final CastleTrainingAnnexTest. The retained log is an explicitly labeled current-source controlled omission; the original intermediate JAR was not retained.
+
+Older-map obligation: Castle helper regression repaired before ground publication; custom/legacy native geometry still needs actual support, not a guessed mount plane.
+
+### DEV-241 — Full regression manifest aborts on qualified new test names after running prior tests
+
+**Status:** local repair verified; fresh exact-source full CI still required · **Affected:** regression-tests.txt / actual BeckenburgRegressionSuite runner
+
+Prior b5e full41726781593 is green at workflow level but raw job aborts on org.beckenburg.CastleWorldTerrainTest without a final regression summary. Terrain check is not executed.
+
+Cause / uncertainty: The real runner accepts short class names only; new terrain/cellar entries used fully qualified names. Full preflight also exposes an existing duplicate HorrorAudioRoutingTest.
+
+Fix / next action: Use canonical short names, preserve each test once, validate every name/compiled entrypoint before launching children, require all Castle construction tests, and expose --validate. Actual subprocess negative controls reject qualified tail, duplicate and missing class before any test launches.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/prior-full-b5e.log; final321-entry --validate and BeckenburgRegressionManifestTest logs. Prior raw316 test passes,2 art failures, then invalid-entry abort; no full acceptance inferred.
+
+Older-map obligation: Keep GhostSpriteAtlasIntegrationTest and TwinBodyVisualTest artwork/goldens unchanged. No omission, duplicate inflation or advisory-green badge substitutes for complete raw-suite execution.
+
+### DEV-242 — GPU source compile job exhausts its limit before compilation during canonical checkout
+
+**Status:** mitigation implemented; exact-source remote compile remains pending · **Affected:** Existing GPU workflow Linux compile-gpu-java17 job
+
+GPU run41731832476/job126250898962 is cancelled while git fetch is running; source compilation never starts. Windows build and actual Mesa smoke succeed at91e8f47b.
+
+Cause / uncertainty: Canonical repository checkout consumes the full10-minute compile-job deadline.
+
+Fix / next action: Allow20 bounded minutes for the same full checkout, source compile and unchanged contract checks. Do not alter runtime performance thresholds or omit assets/tests.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/prior-gpu-compile-91e.log and prior-gpu-91e.json; fresh GPU run required.
+
+Older-map obligation: CI preparation correction only; physical GPU/platform acceptance remains independent and cannot be inferred from source compilation or software Mesa.
+
+### DEV-243 — New ground room owners and controls must not appear in older native geometry
+
+**Status:** fixed-scoped; native-structure-removal negative controls pass · **Affected:** Castle legacy/custom saved scenes / ground child-room metadata, switches and portal availability
+
+Source audit of the first ground refit finds that unconditional child room owners, new static switches and door sockets can describe rooms absent from an older native document.
+
+Cause / uncertainty: Room/circuit tables and socket metadata are compiled separately from the loaded native surface snapshot.
+
+Fix / next action: Tag the actual new native partition surfaces; activate child owners/new controls and ground portal rendering/body/optical behavior only with that native programme. Retain original broad room owners for saved geometry without those surfaces and retain every published lower doorway ID.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/CastleGroundConstructionTest checks removed programme surfaces, legacy owners, unavailable new switches and a forced closed ground leaf that must not create phantom body/optical blockage.
+
+Older-map obligation: Custom native documents and their objects are preserved. This is a source/negative-control repair, not a claim that every older edited Castle scene has been visually audited.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

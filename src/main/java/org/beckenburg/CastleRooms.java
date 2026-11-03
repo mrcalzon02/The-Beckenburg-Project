@@ -12,25 +12,27 @@ public final class CastleRooms {
                        double floor,double ceiling,boolean outside,int material){
         public boolean contains(double x,double z){return x>=x0&&x<=x1&&z>=z0&&z<=z1;}
     }
-    public static final List<Room> ALL=List.of(
-        new Room("armory","Armory",1,1,10.5,11.5,0,3.4,false,MaterialAtlas.PARQUET),
-        new Room("contracts","Briefing and contracts",10.5,1,19.5,11.5,0,3.4,false,MaterialAtlas.CARPET),
-        new Room("wardrobe","Wardrobe and lounge",19.5,1,28.5,11.5,0,3.4,false,MaterialAtlas.PARQUET),
-        new Room("practice","Practice and common room",1,11.5,10.5,34,0,3.4,false,MaterialAtlas.STONE),
-        new Room("court","Arrival courtyard",10.5,11.5,20.5,34,0,Double.NaN,true,MaterialAtlas.STONE),
-        new Room("operations","Expedition operations",20.5,11.5,28.5,34,0,3.4,false,MaterialAtlas.PARQUET),
-        new Room("archive","Common archive",28.5,4,43,17.5,0,3.4,false,MaterialAtlas.PARQUET),
-        new Room("store","Quartermaster store",28.5,17.5,43,34,0,3.4,false,MaterialAtlas.STONE),
-        new Room("gate","Gate threshold",13.2,34,17.8,36,0,Double.NaN,true,MaterialAtlas.STONE),
-        new Room("library","Upper library",10.5,1,19.5,11.5,3.4,6.8,false,MaterialAtlas.PARQUET));
+    public static final List<Room> ALL=rooms();
+    private static List<Room> rooms(){
+        var rooms=new ArrayList<>(CastleGroundLayout.ROOMS);
+        rooms.add(new Room("court","Arrival courtyard",10.5,11.5,20.5,34,0,Double.NaN,true,MaterialAtlas.STONE));
+        rooms.add(new Room("gate","Gate threshold",13.2,34,17.8,36,0,Double.NaN,true,MaterialAtlas.STONE));
+        rooms.add(new Room("library","Upper library",10.5,1,19.5,11.5,3.4,6.8,false,MaterialAtlas.PARQUET));
+        return List.copyOf(rooms);
+    }
     public static Room at(double x,double feet,double z){
+        if(Math.abs(feet)<.3&&!CastleGround.active())
+            for(var r:CastleGround.LEGACY_ROOMS)if(r.contains(x,z))return r;
         for(var r:ALL)if(Math.abs(r.floor-feet)<.3&&r.contains(x,z))return r;
         var cellar=CastleCellar.roomAt(x,feet,z);
         return cellar!=null?cellar:CastleAnnex.roomAt(x,feet,z);
     }
     public static boolean ground(double x,double z){return at(x,0,z)!=null;}
     public static double mountHeight(double x,double z,boolean upper){
-        var room=at(x,upper?3.4:0,z);
+        // Default fixture authoring must not initialize the runtime singleton recursively.
+        var room=ALL.stream().filter(r->r.floor()==(upper?3.4:0)&&r.contains(x,z)).findFirst().orElse(null);
+        if(room==null&&!upper&&CastleAnnex.SPACES.stream().anyMatch(r->x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()))
+            return CastleHubArchitecturalPlan.GROUND_CEILING-SLAB;
         if(room==null||room.outside)throw new IllegalArgumentException("No ceiling at "+x+","+z);
         return room.ceiling-SLAB;
     }

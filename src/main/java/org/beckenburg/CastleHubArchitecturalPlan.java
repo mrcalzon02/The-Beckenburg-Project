@@ -136,6 +136,7 @@ public final class CastleHubArchitecturalPlan {
         horizontal(out,11.5,10.5,19.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE,17.5);
         out.addAll(CastleAnnex.walls());
         out.addAll(CastleCellarLayout.WALLS);
+        out.addAll(CastleGroundLayout.WALLS);
         return List.copyOf(out);
     }
     private static void horizontal(List<Wall> out,double z,double from,double to,

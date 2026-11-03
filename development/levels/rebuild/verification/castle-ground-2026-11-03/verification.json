@@ -1,0 +1,213 @@
+{
+  "scope": "Native Castle ground core rooms/service fit-out and retained hub checks; not complete Castle acceptance",
+  "tests": {
+    "BeckenburgRegressionManifestTest": {
+      "passed": true,
+      "log": "castle-ground-BeckenburgRegressionManifestTest.log",
+      "sha256": "85536494918809fad36270a1a88611a95957e0c69b4d20cec823f3d8caed6e1b"
+    },
+    "CastleGroundConstructionTest": {
+      "passed": true,
+      "log": "castle-ground-CastleGroundConstructionTest.log",
+      "sha256": "17252b856bdcf4f893e99dd0a660c033f5e83b0cebb0ef7a8a17edcf259959b2"
+    },
+    "CastleRebuildTest": {
+      "passed": true,
+      "log": "castle-ground-CastleRebuildTest.log",
+      "sha256": "787a4cff5996703fc450171a229972849eb88e716e602afe3ae7f7eeec59368c"
+    },
+    "CastleHeadquartersRevisionTest": {
+      "passed": true,
+      "log": "castle-ground-CastleHeadquartersRevisionTest.log",
+      "sha256": "98b1c10b5ea0088ea01132e92111d8d258e4ecbf6738b81423815d7abd04bac0"
+    },
+    "CastleCellarConstructionTest": {
+      "passed": true,
+      "log": "castle-ground-CastleCellarConstructionTest.log",
+      "sha256": "d8db74bd0753c57cf872f4e4affc18511bee42663e08d3045da67303389082a4"
+    },
+    "CastleTrainingAnnexTest": {
+      "passed": true,
+      "log": "castle-ground-CastleTrainingAnnexTest.log",
+      "sha256": "920ddb4033e865a76ffabcce269e0f351baefa8d86d4716d47973284788a4711"
+    },
+    "CastleWorldTerrainTest": {
+      "passed": true,
+      "log": "castle-ground-CastleWorldTerrainTest.log",
+      "sha256": "6242110dded78948d82d210f3f485ce85448fcf300256175d440dae2712c0aaf"
+    },
+    "CastleLightingPlacementRepairTest": {
+      "passed": true,
+      "log": "castle-ground-CastleLightingPlacementRepairTest.log",
+      "sha256": "3e7e9fb1278c9e76df96d8a4105a812a6b0fbf42ec7f551b249370fce50e4cb1"
+    },
+    "CastleSnapshotContractTest": {
+      "passed": true,
+      "log": "castle-ground-CastleSnapshotContractTest.log",
+      "sha256": "11c5a80c58c4dd77dccdd707b4e32f5cf75c424c4f0c402776a014ccd9a78a70"
+    },
+    "CastleDocumentRecoveryTest": {
+      "passed": true,
+      "log": "castle-ground-CastleDocumentRecoveryTest.log",
+      "sha256": "90cd0cbf6339db63a6433d272beee7325aa55f76570438d114ff612d28a489d5"
+    },
+    "CastleEditorGeometryTest": {
+      "passed": true,
+      "log": "castle-ground-CastleEditorGeometryTest.log",
+      "sha256": "bbd32c3108aa5cb1bee720390a1d686de41daa2131ab041182159254e276eb96"
+    },
+    "CastlePortalSlotTest": {
+      "passed": true,
+      "log": "castle-ground-CastlePortalSlotTest.log",
+      "sha256": "8679f37379f314a8b00ff8ff1150e3bdb680a7b583a7167f18faba86f43ac81e"
+    },
+    "CastleHubIntegrationTest": {
+      "passed": true,
+      "log": "castle-ground-CastleHubIntegrationTest.log",
+      "sha256": "637def90a0df7516a0ce86b440d3fd10300660270290b0ca71f40c1c65212144"
+    },
+    "CastleSignedConstructionTest": {
+      "passed": true,
+      "log": "castle-ground-CastleSignedConstructionTest.log",
+      "sha256": "ea486b0b5bd37db6027ebe7aaf1ce0786be023a3fd6642e7e09f672afbc243fb"
+    },
+    "CastleHomeInteractionTest": {
+      "passed": true,
+      "log": "castle-ground-CastleHomeInteractionTest.log",
+      "sha256": "1f441c5d1162591cc31db27e160949ab9a30d895feb7f9e5d174438f1cb8c8f3"
+    },
+    "CastleInventoryWorkstationTest": {
+      "passed": true,
+      "log": "castle-ground-CastleInventoryWorkstationTest.log",
+      "sha256": "99883161026c9d51200bbe5af3ea93c6d5132910bfdcdd541153cd7d324d2b7a"
+    },
+    "CastleOrientationTest": {
+      "passed": true,
+      "log": "castle-ground-CastleOrientationTest.log",
+      "sha256": "86b31007c35bba35a08868dc2df2b8d1db37af1ea3629c091605ac581856a4e3"
+    },
+    "CastleContainedMenuTest": {
+      "passed": true,
+      "log": "castle-ground-CastleContainedMenuTest.log",
+      "sha256": "e62ec3aec1f8c104e43886a64db38b5605a448069d435f7f6e17b4ab89dcf83e"
+    },
+    "CastleRelationsTest": {
+      "passed": true,
+      "log": "castle-ground-CastleRelationsTest.log",
+      "sha256": "13dfb2033c48260b9a50fa09672b966c85a75fcbc95c5b28dcb0505d8ff0e6e4"
+    },
+    "CastleShelfLabelsTest": {
+      "passed": true,
+      "log": "castle-ground-CastleShelfLabelsTest.log",
+      "sha256": "fd82906959ff9c5ccd817cb1a360fb86a2de3c9abbed27b67d3af3f52427fa9a"
+    },
+    "CastleEditorAuditTest": {
+      "passed": true,
+      "log": "castle-ground-CastleEditorAuditTest.log",
+      "sha256": "fcd4126ec731599503ad65f80ea86b218788c3e2f7428ddfc7704a3225a0f9d1"
+    },
+    "CastleFurnitureWallAuditTest": {
+      "passed": true,
+      "log": "castle-ground-CastleFurnitureWallAuditTest.log",
+      "sha256": "4a3f5065c0d4a487c912b3fd61a73f9ee644447f392285d16644beb78f92c2ac"
+    },
+    "VanLightingAndCastleDoorTest": {
+      "passed": true,
+      "log": "castle-ground-VanLightingAndCastleDoorTest.log",
+      "sha256": "e70dccc2307c6874d47e60190a1fc719d9f33921773d0c6b853f1093d03589e7"
+    },
+    "HouseRebuildTerrainTest": {
+      "passed": true,
+      "log": "castle-ground-HouseRebuildTerrainTest.log",
+      "sha256": "ba55b67d5822620aed0ee5b4eff7cb7ab63fe59dbabc3b9607bfd5cf9f75551f"
+    },
+    "EditorAgentServiceTest": {
+      "passed": true,
+      "log": "castle-ground-EditorAgentServiceTest.log",
+      "sha256": "4b1dfeb7e12d6b639d2b62044b5d2f60801bc1ac28a3882900247f5e895d774f"
+    }
+  },
+  "manifest_preflight": {
+    "entries": 321,
+    "tests_executed_by_preflight": 0,
+    "actual_runner_controls_passed": true
+  },
+  "runtime_jar_sha256": "f24ebfcbd5aed5614a94dcf6bd1c49915e1f9156d042e7a491cda08c95fd9b29",
+  "source_sha256": {
+    "src/main/java/org/beckenburg/CastleAnnex.java": "b43c94f6b3142004d8a40f383f6d90daf15d3bc5b4e575119ed5896b897b9df9",
+    "src/main/java/org/beckenburg/CastleArchive.java": "68351e804a53a361bc472e1d633c4ebc0886b6974feccea430dc27b8cb9f2087",
+    "src/main/java/org/beckenburg/CastleCellar.java": "2ca79b35c2813a5da33219b30cc4bec62474f2f2ced1d232e3990736efde808d",
+    "src/main/java/org/beckenburg/CastleCellarLayout.java": "edc01bd66e23fb1cc13f56e53f568e841421db679cf110354c49a838ca0491fd",
+    "src/main/java/org/beckenburg/CastleCourtyardPaving.java": "bcc5d24a5fc18ea8b5468e21c96fff406a15c9ad4b78ec75f4d32d54ff903462",
+    "src/main/java/org/beckenburg/CastleDialoguePanel.java": "53ec54fed8e1ac472eb49335a551f3d8bc3cbf9b27c2b8d8094028a966eda6df",
+    "src/main/java/org/beckenburg/CastleDoorSlots.java": "90be96e62dda00fcaad6f129f4e95390683d99f2f9c3f1718913f6e7e763c9be",
+    "src/main/java/org/beckenburg/CastleEditorAgent.java": "1c4436c96fe6dc4bebe3c7b04f2783aa83a95033b9c5f4efcbcb615e58192d9e",
+    "src/main/java/org/beckenburg/CastleEditorAudit.java": "4387601e04316c66580e61e7936da547c73d972659be11dbd84d9b4c986bba2f",
+    "src/main/java/org/beckenburg/CastleEditorProject.java": "52140bab0058237e016b4b52d0fc09479bd488b3b240137bb6bc2909d9a014b3",
+    "src/main/java/org/beckenburg/CastleGateExit.java": "bce01304f28941d5f07afba1696e617945af3aba9db4bf1f0799fbe15eed669b",
+    "src/main/java/org/beckenburg/CastleGround.java": "de549a7c12679ebc0e6d4e171df0af8f480a4cdfe659c089b16e51a0a63d003b",
+    "src/main/java/org/beckenburg/CastleGroundLayout.java": "b877a8defeef67d6ea561aa3cecfb374e623f2b98faf28ee86b6e0f814fb6e16",
+    "src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java": "5becf6e43727284b63a0a63395c9d75d22ec372392c09eb003866c28d8017fba",
+    "src/main/java/org/beckenburg/CastleHubArchitecture.java": "f2650d997617a6919383a2f9fd08b84c45baf3b39a7e1a99f8a8c793ea1a139d",
+    "src/main/java/org/beckenburg/CastleHubDecor.java": "86e2ec32d69bddb907426c8bafec09d75e6805aa767b35fbbf73546a0c49c781",
+    "src/main/java/org/beckenburg/CastleHubMap.java": "9cbd7cc450bbce6aeb1f1a080fded6e787a7e99bb9f1e7360edd56395df27ee4",
+    "src/main/java/org/beckenburg/CastleHubPanel.java": "2dd0eb9e4ebd673149b4f8aae9dcf9f8d047fb1f1e072b3dc04eec5357aa6061",
+    "src/main/java/org/beckenburg/CastleLevelEdits.java": "8f31fd049eca1965d22b159c3906eafa41063fe8033a269c632315b0acae9063",
+    "src/main/java/org/beckenburg/CastleOrientation.java": "2dbe9dc5b50190bcf44e98c7029c798b904f809735197b141f957d4a00f8019c",
+    "src/main/java/org/beckenburg/CastlePerformanceReview.java": "231d43bb51ab97090cc82e3bab19ec9298af49b5b95f5dbd72cad20cd3268d87",
+    "src/main/java/org/beckenburg/CastleRelations.java": "30dbb6ff4ef4a423a73aaf6795cff4347542ff8abda4ab3b47ce0155b5e225e2",
+    "src/main/java/org/beckenburg/CastleRooms.java": "32609f7ba07c6ff34680b093b0a7fbeaf6e2159d693dc690429ddfa0c353e847",
+    "src/main/java/org/beckenburg/CastleServiceFixtures.java": "3d45651f434aac06b32d42354808af390f794c1d07fa0b7b5ec07c70cdf501f6",
+    "src/main/java/org/beckenburg/CastleShelfLabels.java": "66e4d73c657d30ae2899066c332fe88fb7b42fd5360e9dd203682348df2ba60b",
+    "src/main/java/org/beckenburg/CastleSurfaceTransforms.java": "7a8cfe9ce1a8fefe3cb82ec3a82509c457a3d878500c8399d9f51339dcd6f4fe",
+    "src/main/java/org/beckenburg/CastleSurroundings.java": "0fc179cf0dc66f6d882ebcd948e0e13ebcc60a081f34a9d23d49ed67d63b59fd",
+    "src/main/java/org/beckenburg/CastleSurveyReview.java": "10a06f04e32f45a2f45bbeb0ef22a5cc6734a21f517d5575c488831a4f2bf63e",
+    "src/main/java/org/beckenburg/CastleTimberDoors.java": "2d04e8b0306a11eda92b8e6d616edc1584b7502f6efe8669f47510b9aaf46200",
+    "src/main/java/org/beckenburg/CastleWallLampMount.java": "3b74a70b45d95ae32e3e13b72bda55796924d8fd85c458c98951f466a94bf26e",
+    "src/main/java/org/beckenburg/CastleWarehouse.java": "603267e84c5ed9c97cd1182bc36a9150bbf43bafbe06175736a19973fd0c6822",
+    "src/main/java/org/beckenburg/CastleWorldBounds.java": "e5259ce313eaf06711494b31f30301fd709ae18cb0d58e483eab21711b26ee91",
+    "src/main/java/org/beckenburg/CastleWorldTerrain.java": "d54a4203ae37732ac9b6da22ede11544111a2513fb0fdac91dfa985ca26ba915",
+    "src/main/java/org/beckenburg/SceneRenderer.java": "481a624b95c0db8d59317386a45a7aa8a02fdaec6a55dd071cd1beac5e16dbba",
+    "src/main/java/org/beckenburg/FixtureLighting.java": "75340d3eee336fb0cb8177c418bb153fa8504497b9864fb3d9387a7781207126",
+    "src/main/java/org/beckenburg/BeckenburgRegressionSuite.java": "4e29bebaeca1ead55137a0afc5752d9e6e8d3e0c6585e0293df3a20d9821fb38",
+    "tools/build_castle_ground.py": "7b5b21b2f8a4e647c94a9572eac81f37db340ec6c31775930ea8e932724c9a51",
+    "regression-tests.txt": "0059da1ce447e5bec1e9d8298d531cce44a909913a5138b85764863bf3320ab4",
+    ".github/workflows/gpu-renderer.yml": "98eb2b8e64bde39d0f415865bfbaab27100153fcd2307ca97e573f347e816876"
+  },
+  "captures_sha256": {
+    "ground-infirmary-runtime.png": "f0475cb3500e3041f3f2ee851c64bca31cf725af1b21f10ea602b14ed064c17c",
+    "ground-kitchen-runtime.png": "aeb20dd0562017acf8751b8fbbb908e61038ef3981843b2cb89bc76cf03738f6",
+    "ground-stock-runtime.png": "67eb982ee33ee3646d3c89d940d942e98b9972385c0a30a8789a46dd0351a35a",
+    "ground-washing-runtime.png": "62218c6f6ffe2f96ee94dcc8af0d71255440b118482a28d4579ab9f63e432b55"
+  },
+  "complete_castle": false,
+  "complete_all_map_goal": false,
+  "test_source_sha256": {
+    "src/test/java/org/beckenburg/BeckenburgRegressionManifestTest.java": "4941ccae0549d3690371e179c19a3fcfd6bac43c1a27d6d5aa5f349d85775bc4",
+    "src/test/java/org/beckenburg/CastleGroundConstructionTest.java": "8bde978877c81e34dc329c194d752ac07e44a93243dd8a3634f580f8bc28d36a",
+    "src/test/java/org/beckenburg/CastleRebuildTest.java": "67d5e1bc45c88cc225098d8fc1379c44cb6f231277408273d4e95cd8fc4c58a2",
+    "src/test/java/org/beckenburg/CastleHeadquartersRevisionTest.java": "7667e371c6f9bd5f0f37384c1b77b5282c1cc94caf3e592fb38a6a5537a7e7a7",
+    "src/test/java/org/beckenburg/CastleCellarConstructionTest.java": "ec5f8103ec15460b63ca6a920e0f0a920af364b76d44ee7261b8815ca3691083",
+    "src/test/java/org/beckenburg/CastleTrainingAnnexTest.java": "0f051a0e2f36239bd83675fc121bb4a87b00013bb49ee5bde1c2f4273cd87b3f",
+    "src/test/java/org/beckenburg/CastleWorldTerrainTest.java": "5be867a78a9ad7c77e3b59a9a1e0b6c3a8ad29232e24e619ad0daec3b898e0d6",
+    "src/test/java/org/beckenburg/CastleLightingPlacementRepairTest.java": "6788336367ba6493a341f14ff8d4ecffd4538de30299d3c7c28e07a4e2866a3c",
+    "src/test/java/org/beckenburg/CastleSnapshotContractTest.java": "a11f997bb08f2d358b8a2b7615735bde25c9f71980e729e8609d046c3319f7a8",
+    "src/test/java/org/beckenburg/CastleDocumentRecoveryTest.java": "fda8d5a72c2fe96e6471c82ffefc5b2c8efeb5e740865fe3b1fa28ff0f687f90",
+    "src/test/java/org/beckenburg/CastleEditorGeometryTest.java": "b7a2a7e895da7ecb4c1bcf9e074dd8bc29c980ca767277d2b75a86ce587244ba",
+    "src/test/java/org/beckenburg/CastlePortalSlotTest.java": "92e3ddc6895c0df5c0d566efc1ddc766ea85e69275eb13bc07baa632e6869438",
+    "src/test/java/org/beckenburg/CastleHubIntegrationTest.java": "8b974d658f4e7297c6ea30cdae64049349cc47d771017dfc1f71859804e89c01",
+    "src/test/java/org/beckenburg/CastleSignedConstructionTest.java": "8c3829b132b4706302981a46bbc4b7104068154004953e85a3e6e018f311f55b",
+    "src/test/java/org/beckenburg/CastleHomeInteractionTest.java": "1535bfb11cba592a53135e50939cb0044c35f90fb2221b1854964fc8bf2da040",
+    "src/test/java/org/beckenburg/CastleInventoryWorkstationTest.java": "3daf820c0a33be096296fc7f770f88ba3411800eef30f628a7e2fa5deb1ba2bd",
+    "src/test/java/org/beckenburg/CastleOrientationTest.java": "6d9ad3841356910d50110af937bcbbeac87e761d7459a4c67e5dd65f19e1c2f3",
+    "src/test/java/org/beckenburg/CastleContainedMenuTest.java": "337eabc1a303b9a20032cbebafbbcf15685444248601e0aaeb97ffda0edfd025",
+    "src/test/java/org/beckenburg/CastleRelationsTest.java": "1f663e8d168341916dd7a9194b3ed48ed9629d9cb6dcf8509a1f3a38124dcf04",
+    "src/test/java/org/beckenburg/CastleShelfLabelsTest.java": "a5392cfcd3b9d025b8946c4c7b16d72035581296eb48109295038feb5ff01d2d",
+    "src/test/java/org/beckenburg/CastleEditorAuditTest.java": "434e781d43e8981d54b2209ec4b2f137c9e6f49925f199720975f019cba10267",
+    "src/test/java/org/beckenburg/CastleFurnitureWallAuditTest.java": "4f2c16bb18f03eaa2a3bb531d7fc3ceca4ac7f17b88cb68d2660eb29b01f1cb0",
+    "src/test/java/org/beckenburg/VanLightingAndCastleDoorTest.java": "ddeb822762399aceedf1a01a9468fd57a2d61d574674d0c3bcc0882aaf433726",
+    "src/test/java/org/beckenburg/HouseRebuildTerrainTest.java": "395edb3db65be76953f9e48531416e4a08f2facc8d715c70d2a33968c446dd65",
+    "src/test/java/org/beckenburg/EditorAgentServiceTest.java": "cc07238132cc6e5ba17a48b8cf045a511ebe56a509fc63cab4fd1d6dd2b5e156"
+  },
+  "editor_service_response_sha256": "05812d0df9177fd921fc668af67896ce24e4280346fc127f82bfdd656c3d3db5"
+}

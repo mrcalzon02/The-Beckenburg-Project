@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2325,
+  "count": 2329,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -20294,6 +20294,46 @@
       "height": 625,
       "bytes": 607193,
       "sha256": "6e3a0be5bb4b88d4d2a26bd5788b56977db6cd7d4c363ac3f2f53c89ed8a3298"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/ground-infirmary-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/ground-infirmary-runtime.png",
+      "title": "Ground infirmary runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 625986,
+      "sha256": "f0475cb3500e3041f3f2ee851c64bca31cf725af1b21f10ea602b14ed064c17c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/ground-kitchen-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/ground-kitchen-runtime.png",
+      "title": "Ground kitchen runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 591094,
+      "sha256": "aeb20dd0562017acf8751b8fbbb908e61038ef3981843b2cb89bc76cf03738f6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/ground-stock-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/ground-stock-runtime.png",
+      "title": "Ground stock runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 745907,
+      "sha256": "67eb982ee33ee3646d3c89d940d942e98b9972385c0a30a8789a46dd0351a35a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/ground-washing-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/ground-washing-runtime.png",
+      "title": "Ground washing runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 497045,
+      "sha256": "62218c6f6ffe2f96ee94dcc8af0d71255440b118482a28d4579ab9f63e432b55"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/pre-lighting-cellar-stair-runtime.png",

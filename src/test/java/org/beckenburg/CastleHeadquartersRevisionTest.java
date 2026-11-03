@@ -12,7 +12,7 @@ public final class CastleHeadquartersRevisionTest {
    double dx=(v.x()-bounds[0])*scale,dz=(v.z()-bounds[2])*scale;
    double wx=x+dx*Math.cos(yaw)-dz*Math.sin(yaw),wz=z+dx*Math.sin(yaw)+dz*Math.cos(yaw);
    double wy=y+(v.y()-bounds[1])*scale;
-   check(wx>28.5+half&&wx<43-half&&wz>17.5+half&&wz<34-half&&wy>=-1e-7&&wy<3.4-CastleRooms.SLAB,
+   check(wx>28.5+half&&wx<37-half&&wz>17.5+half&&wz<34-half&&wy>=-1e-7&&wy<3.4-CastleRooms.SLAB,
        "actual transformed warehouse mesh crosses wall/floor/ceiling: "+mesh+" at "+wx+","+wy+","+wz);
   }
  }

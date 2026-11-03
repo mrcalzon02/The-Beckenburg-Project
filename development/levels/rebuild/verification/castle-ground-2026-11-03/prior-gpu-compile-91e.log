@@ -1,0 +1,112 @@
+compile-gpu-java17	Set up job	﻿2026-11-03T22:36:44.3459719Z Current runner version: '2.338.2'
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3477485Z ##[group]Runner Image Provisioner
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3478033Z Hosted Compute Agent
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3478433Z Version: 20261021.618
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3478818Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3479271Z Build Date: 2026-10-21T00:45:21Z
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3479754Z Worker ID: {bbe87fbe-043a-4f14-8e02-d1a99c65e996}
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3480169Z Region: westus3
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3480553Z Cloud: Azure
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3480890Z ##[endgroup]
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3481634Z ##[group]Operating System
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3482065Z Ubuntu
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3482378Z 24.04.5
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3482676Z LTS
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3483029Z ##[endgroup]
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3483358Z ##[group]Runner Image
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3483760Z Image: ubuntu-24.04
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3484147Z Version: 20261025.353.1
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3484737Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3486012Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3486619Z ##[endgroup]
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3487296Z ##[group]GITHUB_TOKEN Permissions
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3488588Z Contents: read
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3488997Z Metadata: read
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3489353Z ##[endgroup]
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3490660Z Secret source: Actions
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3491186Z Cache mode: write
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3491673Z Prepare workflow directory
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3696382Z Prepare all required actions
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.3727677Z Getting action download info
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.6732375Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+compile-gpu-java17	Set up job	2026-11-03T22:36:44.7587968Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+compile-gpu-java17	Set up job	2026-11-03T22:36:45.5477324Z Complete job name: compile-gpu-java17
+compile-gpu-java17	Run actions/checkout@v4	﻿2026-11-03T22:36:45.5998321Z ##[group]Run actions/checkout@v4
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.5998803Z with:
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.5999091Z   repository: mrcalzon02/The-Beckenburg-Project
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6001380Z   token: ***
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6001628Z   ssh-strict: true
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6001882Z   ssh-user: git
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6002142Z   persist-credentials: true
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6002423Z   clean: true
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6002684Z   sparse-checkout-cone-mode: true
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6002982Z   fetch-depth: 1
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6003231Z   fetch-tags: false
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6003485Z   show-progress: true
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6003742Z   lfs: false
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6003978Z   submodules: false
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6004250Z   set-safe-directory: true
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6004539Z   allow-unsafe-pr-checkout: false
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.6004917Z ##[endgroup]
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8287453Z Syncing repository: mrcalzon02/The-Beckenburg-Project
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8289176Z ##[group]Getting Git version info
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8289669Z Working directory is '/home/runner/work/The-Beckenburg-Project/The-Beckenburg-Project'
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8290443Z [command]/usr/bin/git version
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8362551Z git version 2.56.0
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8376696Z ##[endgroup]
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8388528Z Temporarily overriding HOME='/home/runner/work/_temp/9a27055a-8dfd-4df2-9fb8-10575bce6142' before making global git config changes
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8389893Z Adding repository directory to the temporary git global config as a safe directory
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8392255Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/The-Beckenburg-Project/The-Beckenburg-Project
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8436938Z Deleting the contents of '/home/runner/work/The-Beckenburg-Project/The-Beckenburg-Project'
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8440455Z ##[group]Initializing the repository
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8443620Z [command]/usr/bin/git init /home/runner/work/The-Beckenburg-Project/The-Beckenburg-Project
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8557746Z hint: Using 'master' as the name for the initial branch. This default branch name
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8559128Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8560010Z hint: to use in all of your new repositories, which will suppress this warning,
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8560667Z hint: call:
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8561009Z hint:
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8561479Z hint: 	git config --global init.defaultBranch <name>
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8562007Z hint:
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8562516Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8563383Z hint: 'development'. The just-created branch can be renamed via this command:
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8564061Z hint:
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8564414Z hint: 	git branch -m <name>
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8564815Z hint:
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8565386Z hint: Disable this message with "git config set advice.defaultBranchName false"
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8577792Z Initialized empty Git repository in /home/runner/work/The-Beckenburg-Project/The-Beckenburg-Project/.git/
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8587574Z [command]/usr/bin/git remote add origin https://github.com/mrcalzon02/The-Beckenburg-Project
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8633792Z ##[endgroup]
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8637122Z ##[group]Disabling automatic garbage collection
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8637737Z [command]/usr/bin/git config --local gc.auto 0
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8664541Z ##[endgroup]
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8665243Z ##[group]Setting up auth
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8669936Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.8699648Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.9032221Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.9070286Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.9262644Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.9299626Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.9487971Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.9530827Z ##[endgroup]
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.9531529Z ##[group]Fetching the repository
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:36:45.9539612Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +91e8f47b40c4494b51f9c72eeacde3c59d982033:refs/remotes/origin/map/first-principles-rebuild-plan
+compile-gpu-java17	Run actions/checkout@v4	2026-11-03T22:46:44.8531271Z ##[error]The operation was canceled.
+compile-gpu-java17	Post Run actions/checkout@v4	﻿2026-11-03T22:46:44.8681733Z Post job cleanup.
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9258325Z [command]/usr/bin/git version
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9284684Z git version 2.56.0
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9310671Z Temporarily overriding HOME='/home/runner/work/_temp/676124ce-5c33-4501-8714-2e3be03ffd47' before making global git config changes
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9311513Z Adding repository directory to the temporary git global config as a safe directory
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9314197Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/The-Beckenburg-Project/The-Beckenburg-Project
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9352087Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9381460Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9589779Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9615950Z http.https://github.com/.extraheader
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9624894Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9667086Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9926290Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+compile-gpu-java17	Post Run actions/checkout@v4	2026-11-03T22:46:44.9963601Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+compile-gpu-java17	Complete job	﻿2026-11-03T22:46:45.0328613Z Cleaning up orphan processes
+compile-gpu-java17	Complete job	2026-11-03T22:46:45.0593484Z Terminate orphan process: pid (2103) (git)
+compile-gpu-java17	Complete job	2026-11-03T22:46:45.0684249Z Terminate orphan process: pid (2104) (git)
+compile-gpu-java17	Complete job	2026-11-03T22:46:45.0774589Z Terminate orphan process: pid (2105) (git-remote-https)
+compile-gpu-java17	Complete job	2026-11-03T22:46:45.0872367Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -26,11 +26,11 @@ public final class CastleHubDecor {
         f("armchair_1",10.95,9.2,.82,0,.62,.44),
         f("sofa_1",16.0,9.0,.75,Math.PI/2,.48,1.0),
         // Dressing suite: wardrobes and TV lounge
-        f("wardrobe_mp_1",25.4,4.0,1.0,Math.PI/2,.34,.70),
+        f("wardrobe_mp_1",26.4,10.7,1.0,Math.PI,.70,.34),
         f("wardrobe_mp_1",25.4,8.4,1.0,Math.PI/2,.34,.70),
         f("sofa_1",21.4,9.0,.75,0,1.0,.48),
-        f("armchair_1",20.6,3.6,.82,0,.62,.44),
-        f("tv_table_1_4",24.35,2.1,1.0,Math.PI/2,.34,.83),
+        f("armchair_1",20.6,7.7,.82,0,.62,.44),
+        f("tv_table_1_4",27.4,6.7,1.0,Math.PI/2,.34,.83),
         // Courtyard gathering spot
         f("sofa_1",4.0,20.0,.74,0,.98,.48),
         f("armchair_1",7.25,19.6,.78,Math.PI/2,.44,.60),
@@ -57,7 +57,7 @@ public final class CastleHubDecor {
         f("armchair_1",33.0,27.7,.78,Math.PI,.61,.45),
         f("armchair_1",39.0,27.7,.78,0,.61,.45),
         f("display_cabinet_mp_2",40.5,30.5,.92,Math.PI/2,.32,.72),
-        f("sofa_1",5.5,27.8,.77,0,1.05,.48),
+        f("sofa_1",5.5,26.8,.77,0,1.05,.48),
         f("dinner_table_1",5.1,24.9,.70,0,.58,.40)
     );
     /** Measured second-storey library furnishings. They sit on the real
@@ -76,7 +76,7 @@ public final class CastleHubDecor {
     public record Accent(String mesh,double x,double y,double z,double scale,double yaw){}
     public static final List<Accent> ACCENTS=List.of(
         new Accent("open_book_mp_1",13.5,.88,3.4,.48,0),
-        new Accent("tv_mp_1",24.35,.75,2.1,.85,Math.PI/2),
+        new Accent("tv_mp_1",27.4,.75,6.7,.85,Math.PI/2),
         new Accent("tv_mp_1",25.15,.62,20.0,.67,Math.PI/2),
         new Accent("book_mp_1",5.65,.56,18.2,.36,0),
         new Accent("open_book_mp_1",35.5,.86,25.2,.40,.2));
@@ -141,7 +141,7 @@ public final class CastleHubDecor {
         // Different historical lamp families, fitted flush to stone-vault ceilings.
         ceiling("ceiling_lamp_1",5.0,5.5,.90),
         ceiling("ceiling_lamp_4",13.5,5.2,.67),
-        ceiling("ceiling_lamp_1",23.0,5.2,.90),
+        ceiling("ceiling_lamp_1",23.0,6.8,.90),
         ceiling("ceiling_lamp_4",5.0,17.5,.67),
         ceiling("ceiling_lamp_1",24.0,17.5,.85),
         ceiling("ceiling_lamp_4",35.0,10.0,.64),
@@ -173,7 +173,8 @@ public final class CastleHubDecor {
         ceiling("ceiling_lamp_1",35.0,21.7,.85),
         ceiling("ceiling_lamp_1",39.0,29.0,.82),
         upperCeiling("ceiling_lamp_1",13.5,5.0,.82),
-        upperCeiling("ceiling_lamp_4",16.7,8.7,.64));
+        upperCeiling("ceiling_lamp_4",16.7,8.7,.64),
+        ceiling("ceiling_lamp_1",3.1,32.4,.70));
     /** Refit existing mounts, then fill every room and the exterior circulation. */
     public static final List<Light> LIGHTS=buildLights();
     private static List<Light> buildLights(){
@@ -189,6 +190,13 @@ public final class CastleHubDecor {
                     out.add(new Light("ceiling_lamp_1_on","ceiling_lamp_1_off",x,y,z,.85,0,Mount.CEILING));
                 }
         }
+        // Small service rooms still need an actual supported fitting when a 4m grid has no sample.
+        for(var r:CastleRooms.ALL)if(!r.outside()){
+            double ceiling=r.ceiling()-CastleRooms.SLAB;
+            if(out.stream().noneMatch(l->l.mount()==Mount.CEILING&&Math.abs(l.y()-ceiling)<.1
+                &&l.x()>r.x0()+.6&&l.x()<r.x1()-.6&&l.z()>r.z0()+.6&&l.z()<r.z1()-.6))
+                out.add(new Light("ceiling_lamp_1_on","ceiling_lamp_1_off",(r.x0()+r.x1())/2,ceiling,(r.z0()+r.z1())/2,.65,0,Mount.CEILING));
+        }
         for(double z:new double[]{14,21,28}){
             out.add(sconce(10.73,z,-Math.PI/2));out.add(sconce(20.27,z,Math.PI/2));
         }
@@ -196,17 +204,33 @@ public final class CastleHubDecor {
         return List.copyOf(out);
     }
     public record Switch(double x,double y,double z,double yaw){}
-    public static final List<Switch> SWITCHES=List.of(
+    public static final List<Switch> GROUND_SWITCHES=List.of(
+        new Switch(24.5,1.20,5.23,Math.PI),
+        new Switch(23.73,1.20,4.55,-Math.PI/2),
+        new Switch(10.27,1.20,23,Math.PI/2),
+        new Switch(6.27,1.20,29.4,Math.PI/2),
+        new Switch(6.73,1.20,29.4,-Math.PI/2),
+        new Switch(37.23,1.20,24.8,-Math.PI/2),
+        new Switch(37.23,1.20,27,-Math.PI/2),
+        new Switch(28.27,1.20,28,Math.PI/2));
+    public static final List<Switch> SWITCHES=switches();
+    private static List<Switch> switches(){
+        var result=new ArrayList<>(List.of(
         new Switch(10.27,1.20,8.75,Math.PI/2),
         new Switch(10.73,1.20,3.0,-Math.PI/2),
-        new Switch(19.73,1.20,2.5,-Math.PI/2),
+        new Switch(19.73,1.20,3.9,-Math.PI/2),
         new Switch(10.27,1.20,14,Math.PI/2),
         new Switch(10.73,1.20,19,-Math.PI/2),
         new Switch(20.73,1.20,14,-Math.PI/2),
         new Switch(28.73,1.20,9,-Math.PI/2),
-        new Switch(28.73,1.20,26.0,-Math.PI/2),
+        new Switch(28.73,1.20,25.9,-Math.PI/2),
         new Switch(10.73,4.60,6.0,-Math.PI/2),
-        new Switch(28.73,-1.80,24.5,-Math.PI/2));
+        new Switch(28.73,-1.80,24.5,-Math.PI/2)));
+        result.addAll(GROUND_SWITCHES);return List.copyOf(result);
+    }
+    public static boolean switchAvailable(Switch s){
+        return (s.y()>=0||CastleCellar.active())&&(!GROUND_SWITCHES.contains(s)||CastleGround.active());
+    }
     /** Players must stand on traversable ground and actually look at a switch. */
     public static Switch aimed(CastleHubMap map,double x,double z,double yaw){
         return aimed(map,x,0,z,yaw);
@@ -215,6 +239,7 @@ public final class CastleHubDecor {
         if(!map.traversable(x,z,elevation)||!Double.isFinite(yaw))return null;
         Switch best=null;double alignment=.77;
         for(Switch s:SWITCHES){
+            if(!switchAvailable(s))continue;
             if(Math.abs(s.y()-(elevation+1.2))>.7)continue;
             double dx=s.x()-x,dz=s.z()-z,d=Math.hypot(dx,dz);
             if(d<.3||d>2.1)continue;

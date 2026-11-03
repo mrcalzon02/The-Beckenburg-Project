@@ -33,6 +33,7 @@ public final class CastleHubMap {
         if(!Double.isFinite(x+z+yaw))return null;
         CastleDoorSlots.Slot nearest=null;double best=0;
         for(var slot:CastleDoorSlots.all()){
+            if(!CastleDoorSlots.available(slot))continue;
             if(Math.abs(elevation-slot.bottom())>.6||CastleLevelEdits.current().doorType(slot.id())==CastleDoorSlots.Type.EMPTY)continue;
             double dx=slot.centerX()-x,dz=slot.centerZ()-z,d=Math.hypot(dx,dz);
             if(d<.35||d>2.8)continue;
@@ -43,6 +44,7 @@ public final class CastleHubMap {
     }
     private boolean closedLeafBlocks(double x,double y,double z,double r){
         for(var slot:CastleDoorSlots.all()){
+            if(!CastleDoorSlots.available(slot))continue;
             var type=CastleLevelEdits.current().doorType(slot.id());
             if(type==CastleDoorSlots.Type.WOOD){if(CastleTimberDoors.blocks(slot,doorOpen(slot.id()),x,y,z,r))return true;}
             else if(type!=CastleDoorSlots.Type.EMPTY&&!doorOpen(slot.id())&&CastleDoorSlots.leafBlocks(slot,x,y,z,r))return true;

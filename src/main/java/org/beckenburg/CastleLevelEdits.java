@@ -282,8 +282,9 @@ public final class CastleLevelEdits {
         int surfaceId=0;
         for(var wall:CastleHubArchitecturalPlan.walls()){
             int index=surfaceId++;
-            if(!wall.hasDoor())surfaces.put("wall"+index,
-                new Surface("wall"+index,Kind.WALL,
+            String wallId=CastleGroundLayout.WALLS.contains(wall)?"ground-wall"+CastleGroundLayout.WALLS.indexOf(wall):"wall"+index;
+            if(!wall.hasDoor())surfaces.put(wallId,
+                new Surface(wallId,Kind.WALL,
                     Math.min(wall.x0(),wall.x1()),Math.min(wall.z0(),wall.z1()),
                     Math.max(wall.x0(),wall.x1()),Math.max(wall.z0(),wall.z1()),
                     wall.bottom(),wall.top()-wall.bottom(),wall.material()));
@@ -321,6 +322,7 @@ public final class CastleLevelEdits {
         }
         CastleAnnex.installDefaults(surfaces,lamps);
         CastleCellar.installDefaults(surfaces,lamps);
+        CastleGround.installDefaults(props);
         for(var station:CastleHubMap.Station.values())
             stations.put(station,new double[]{station.x,station.z});
         spawnX=13.5;spawnZ=19.3;spawnYaw=Math.PI;

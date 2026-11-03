@@ -32,7 +32,7 @@ public final class CastleRebuildTest {
         }
         for(var room:CastleRooms.ALL)if(room.floor()==0){
             boolean reachable=false;for(int i=0;i<seen.length;i++)if(seen[i]&&room.contains((i%width)*.25,(i/width)*.25)){reachable=true;break;}
-            check(reachable,"supported route to "+room.name());
+            check(CastleGroundLayout.SEALED.contains(room.id())?!reachable:reachable,"open-room route or permanent context seal: "+room.name());
         }
         double elevation=0;
         for(double z=32.2;z>=21.8;z-=.05){elevation=CastleHubArchitecturalPlan.elevation(17.5,z,elevation);check(map.traversable(17.5,z,elevation),"stair ascent "+z);}

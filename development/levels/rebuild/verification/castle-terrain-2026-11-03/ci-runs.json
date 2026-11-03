@@ -15,5 +15,12 @@
       "workflow": "Beckenburg Full Multiplayer Acceptance"
     }
   ],
-  "next": "Inspect these exact runs/raw regression transcript without restarting. Continue actual Castle architectural cellar opening and continuous stair; all-map rebuild remains incomplete."
+  "next": "Inspect these exact runs/raw regression transcript without restarting. Continue actual Castle architectural cellar opening and continuous stair; all-map rebuild remains incomplete.",
+  "observed_final": {
+    "native": "success",
+    "gpu": "success",
+    "full_workflow": "success; advisory regression aborts on invalid qualified manifest entry",
+    "full_raw_scope": "316 pass events / 315 unique; GhostSpriteAtlasIntegrationTest and TwinBodyVisualTest fail; no final suite summary; terrain test skipped by invalid entry",
+    "evidence": "../castle-ground-2026-11-03/prior-ci-observation.json"
+  }
 }

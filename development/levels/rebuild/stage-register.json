@@ -411,14 +411,21 @@
             "src/main/java/org/beckenburg/CastleEditorAgent.java",
             "src/test/java/org/beckenburg/CastleSignedConstructionTest.java",
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json"
           ],
           "defects": [
             "DEV-236",
             "DEV-237",
-            "DEV-238"
+            "DEV-238",
+            "DEV-239",
+            "DEV-240",
+            "DEV-241",
+            "DEV-242",
+            "DEV-243"
           ],
-          "next_action": "Complete full Castle first: construct remaining ground domestic/service rooms, upper roof/bearing/lodging and six beds, native fit-out and protected training bindings, then full hub verification. Actual annex/cellar, saved terrain hole and native editable architectural void are built and locally checked; no complete-stage acceptance."
+          "next_action": "Finish Castle first. Native ground core now has15 reachable open rooms, sealed pantry, coherent stock/service/domestic fixtures and controls; annex/cellar retained. Construct upper roof/bearing/lodging/six beds and sealed context, then detailed fit-out/training/plant/relic services and full hub acceptance. No stage accepted; fresh complete raw-suite/GPU checks required."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -439,35 +446,58 @@
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json"
           ],
           "defects": [
             "DEV-236",
             "DEV-237",
-            "DEV-238"
+            "DEV-238",
+            "DEV-239",
+            "DEV-240",
+            "DEV-241",
+            "DEV-242",
+            "DEV-243"
           ],
-          "next_action": "Complete full Castle first: construct remaining ground domestic/service rooms, upper roof/bearing/lodging and six beds, native fit-out and protected training bindings, then full hub verification. Actual annex/cellar, saved terrain hole and native editable architectural void are built and locally checked; no complete-stage acceptance."
+          "next_action": "Finish Castle first. Native ground core now has15 reachable open rooms, sealed pantry, coherent stock/service/domestic fixtures and controls; annex/cellar retained. Construct upper roof/bearing/lodging/six beds and sealed context, then detailed fit-out/training/plant/relic services and full hub acceptance. No stage accepted; fresh complete raw-suite/GPU checks required."
         },
         "S06": {
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json"
           ],
           "defects": [
             "DEV-236",
             "DEV-237",
-            "DEV-238"
+            "DEV-238",
+            "DEV-239",
+            "DEV-240",
+            "DEV-241",
+            "DEV-242",
+            "DEV-243"
           ],
-          "next_action": "Complete full Castle first: construct remaining ground domestic/service rooms, upper roof/bearing/lodging and six beds, native fit-out and protected training bindings, then full hub verification. Actual annex/cellar, saved terrain hole and native editable architectural void are built and locally checked; no complete-stage acceptance."
+          "next_action": "Finish Castle first. Native ground core now has15 reachable open rooms, sealed pantry, coherent stock/service/domestic fixtures and controls; annex/cellar retained. Construct upper roof/bearing/lodging/six beds and sealed context, then detailed fit-out/training/plant/relic services and full hub acceptance. No stage accepted; fresh complete raw-suite/GPU checks required."
         },
         "S07": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json"
+          ],
+          "defects": [
+            "DEV-239",
+            "DEV-240",
+            "DEV-241",
+            "DEV-242",
+            "DEV-243"
+          ],
+          "next_action": "Finish Castle first. Native ground core now has15 reachable open rooms, sealed pantry, coherent stock/service/domestic fixtures and controls; annex/cellar retained. Construct upper roof/bearing/lodging/six beds and sealed context, then detailed fit-out/training/plant/relic services and full hub acceptance. No stage accepted; fresh complete raw-suite/GPU checks required."
         },
         "S08": {
           "status": "NOT_AUDITED",

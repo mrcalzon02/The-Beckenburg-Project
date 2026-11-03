@@ -424,6 +424,7 @@ public final class FixtureLighting {
   if(!map.worldSurface().clearSight(new LevelDefinition.Vec(ax,ay,az),new LevelDefinition.Vec(bx,by,bz)))return false;
   final double EPS=0.0001;
   for(var slot:CastleDoorSlots.all()){
+   if(!CastleDoorSlots.available(slot))continue;
    var type=CastleLevelEdits.current().doorType(slot.id());
    if(type==CastleDoorSlots.Type.WOOD){if(CastleTimberDoors.crosses(slot,map.doorOpen(slot.id()),ax,ay,az,bx,by,bz))return false;}
    else if(type!=CastleDoorSlots.Type.EMPTY&&!map.doorOpen(slot.id())&&CastleDoorSlots.crossesLeaf(slot,ax,ay,az,bx,by,bz))return false;

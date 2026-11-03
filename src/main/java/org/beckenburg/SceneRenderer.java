@@ -3083,7 +3083,7 @@ public final class SceneRenderer {
         for(var trim:CastleHubArchitecturalPlan.trims())if(trim.mesh().contains("tower"))
             imported(castle,trim.mesh(),trim.x(),trim.y(),trim.z(),trim.sx(),trim.sy(),trim.sz(),trim.yaw());
         for(var roof:CastleLevelEdits.current().roofs())castleRoof(castle,roof);
-        for(var sw:CastleHubDecor.SWITCHES)if(sw.y()>=0||CastleCellar.active())
+        for(var sw:CastleHubDecor.SWITCHES)if(CastleHubDecor.switchAvailable(sw))
             mountedLamp(castle,new CastleHubDecor.Light("light_switch_1","light_switch_1",
                 sw.x(),sw.y(),sw.z(),.85,sw.yaw(),CastleHubDecor.Mount.WALL),true);
         for(var piece:CastleServiceFixtures.all())
@@ -3133,6 +3133,7 @@ public final class SceneRenderer {
         }
         castleActiveAssemblies.clear();
         for(var slot:CastleDoorSlots.all()){
+            if(!CastleDoorSlots.available(slot))continue;
             var type=edits.doorType(slot.id());boolean open=map.doorOpen(slot.id());
             var key=new CastleDoorKey(slot.id(),type,open);
             castleActiveAssemblies.add(castleAssemblies.computeIfAbsent(key,k->{

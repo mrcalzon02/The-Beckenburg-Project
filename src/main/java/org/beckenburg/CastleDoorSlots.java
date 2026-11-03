@@ -26,6 +26,15 @@ public final class CastleDoorSlots {
   public double width(){return horizontal()?x1-x0:z1-z0;}
  }
  private static final List<Slot> SLOTS=discover();
+ private static final java.util.Set<String> GROUND_IDS=groundIds();
+ private static java.util.Set<String> groundIds(){
+  var result=new HashSet<String>();
+  for(var slot:SLOTS)for(var wall:CastleGroundLayout.WALLS)
+   if(wall.hasDoor()&&slot.bottom()==wall.bottom()&&slot.x0()==wall.x0()&&slot.x1()==wall.x1()
+      &&slot.z0()==wall.z0()&&slot.z1()==wall.z1())result.add(slot.id());
+  return java.util.Set.copyOf(result);
+ }
+ public static boolean available(Slot slot){return !GROUND_IDS.contains(slot.id())||CastleGround.active();}
  private static final java.util.Map<String,Slot> BY_ID=indexSlots();
  private static java.util.Map<String,Slot> indexSlots(){
   var result=new java.util.HashMap<String,Slot>();
@@ -43,7 +52,11 @@ public final class CastleDoorSlots {
            wall.horizontal()?"h":"v",
            Math.round((wall.horizontal()?wall.z0():wall.x0())*100),
            Math.round(wall.portalCenter()*100));
-   if(!names.add(id))throw new IllegalStateException("Duplicate physical portal "+id);
+   if(!names.add(id)){
+    // Retain every published earlier socket ID; appended storeys get an explicit elevation suffix.
+    id+="-y"+Math.round(wall.bottom()*100);
+    if(!names.add(id))throw new IllegalStateException("Duplicate physical portal at the same elevation "+id);
+   }
    slots.add(new Slot(id,wall.x0(),wall.z0(),wall.x1(),wall.z1(),
        wall.bottom(),gate?2.95:wall.bottom()<0?2.4:CastleHubArchitecturalPlan.DOOR_HEIGHT,gate));
   }
@@ -62,7 +75,8 @@ public final class CastleDoorSlots {
   if(slot==null)throw new IllegalArgumentException("Unknown physical castle doorway "+id);
   return slot;
  }
- public static Type initial(Slot slot){return slot.gate()?Type.PORTCULLIS:Type.EMPTY;}
+ public static Type initial(Slot slot){return slot.gate()?Type.PORTCULLIS:slot.bottom()==0&&slot.horizontal()&&Math.abs(slot.centerZ()-5)<1e-7
+    &&(Math.abs(slot.centerX()-21.5)<1e-7||Math.abs(slot.centerX()-26)<1e-7)?Type.WOOD:Type.EMPTY;}
  /** Solid core geometry has identical extent for visuals, collision and shadows. */
  public static boolean containsWall(CastleHubArchitecturalPlan.Wall wall,
                                       double x,double y,double z,double radius){
