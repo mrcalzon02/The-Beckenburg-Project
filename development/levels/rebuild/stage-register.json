@@ -929,11 +929,20 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "tools/build_map_rebuild_roughs.py",
+            "development/levels/rebuild/mansion/rough-layout.json",
+            "development/levels/rebuild/mansion/rough-plan.svg",
+            "development/levels/rebuild/mansion/rough-sections.svg",
+            "development/levels/rebuild/mansion/rough-asset-bounds.json",
+            "development/levels/rebuild/mansion/rough-decisions.md",
+            "development/levels/rebuild/mansion/rough-render-verification.json",
+            "development/levels/rebuild/previews/mansion-revised-rough-plan.png"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete references/support/privacy in full roster rough batch, then construct real formal/private/service spaces, stacked stairs, roof and saved editor cellar terrain holes. Dispatched generic Mansion remains unaccepted."
         },
         "S03": {
           "status": "NOT_AUDITED",

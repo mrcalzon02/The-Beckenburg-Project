@@ -1,0 +1,10 @@
+{
+  "source_sha": "906fb89a8d212d8614499ab53c75c04606aa8e47",
+  "status": "LIVE_AT_DISPATCH_NOT_ACCEPTANCE",
+  "runs": {
+    "editor_agent_service": 41681790664,
+    "gpu_renderer": 41681802504,
+    "full_multiplayer": 41681818348
+  },
+  "next_action": "Poll these exact handles to terminal and inspect actual raw checks; do not restart because a turn ends."
+}

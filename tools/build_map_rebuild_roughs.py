@@ -304,6 +304,133 @@ def prison():
                    'Complete native terrain holes, actual van/capsule stair routes, hunt/ritual tests, networking and runtime/native/GPU/human acceptance.'])
 
 
+def mansion():
+    zones,links=[],[]
+    def room(key,name,bounds,y,owner,kind='inside',height=3.6):
+        zones.append(dict(id=key,name=name,bounds=bounds,y=y,height=height,owner=owner,kind=kind,purpose=name))
+    for key,name,bounds,owner,kind in [
+        ('foyer','Entrance vestibule and guest orientation',[20,44,24,50],0,'circulation'),
+        ('visitor-wc','Visitor WC outside private residence',[24,44,28,47],0,'inside'),
+        ('coats','Guest coats and event cloakroom',[24,47,28,50],0,'inside'),
+        ('hall','Formal reception and stair approach',[20,36,28,44],0,'circulation'),
+        ('grand-stair','Grand stair with clear lower landing',[20,24,28,36],0,'circulation'),
+        ('library','Library shelves and reading tables',[8,24,20,36],1,'inside'),
+        ('drawing','Drawing room seated reception',[8,36,20,50],5,'inside'),
+        ('dining','Twelve-place formal dining',[28,32,40,42],2,'inside'),
+        ('morning','Morning room and household breakfast',[28,42,40,50],6,'inside'),
+        ('ballroom','Clear-span ballroom without upper deck',[40,30,54,50],4,'inside'),
+        ('service-pass','Dining serving passage',[28,28,40,32],3,'circulation'),
+        ('kitchen','Cooking and preparation with separate wash-up',[28,20,36,28],3,'inside'),
+        ('scullery','Dirty return and utensil washing',[36,20,40,28],3,'inside'),
+        ('pantry','Dry provisions and preparation pantry',[28,14,34,20],3,'inside'),
+        ('cold-store','Cold storage and dairy work',[34,14,40,20],3,'inside'),
+        ('service','Rear household service distribution',[40,14,43,30],9,'circulation'),
+        ('receiving','Delivery inspection and unpacking',[43,20,49,26],3,'inside'),
+        ('refuse','Enclosed waste awaiting service collection',[49,20,53,26],3,'inside'),
+        ('service-stair','Independent household service stair',[40,2,46,14],9,'circulation')]:
+        room(key,name,bounds,0,owner,kind,7.2 if key=='ballroom' else 3.6)
+    for key,name,bounds,owner,kind in [
+        ('gallery','Upper formal gallery and stair landing',[20,24,28,50],7,'circulation'),
+        ('suite-entry','Private suite entrance and sitting lobby',[8,36,20,40],8,'circulation'),
+        ('suite-bed','Principal bedroom',[8,40,16,50],8,'inside'),
+        ('suite-dress','Principal dressing room',[16,40,20,46],8,'inside'),
+        ('suite-bath','Principal private bath and WC',[16,46,20,50],8,'inside'),
+        ('guest-a','Guest bedroom A',[8,24,16,30],7,'inside'),
+        ('guest-a-entry','Guest A private entry',[16,27,20,30],7,'circulation'),
+        ('guest-a-bath','Guest A private washing and WC',[16,24,20,27],7,'inside'),
+        ('guest-b','Guest bedroom B',[8,30,16,36],7,'inside'),
+        ('guest-b-entry','Guest B private entry',[16,33,20,36],7,'circulation'),
+        ('guest-b-bath','Guest B private washing and WC',[16,30,20,33],7,'inside'),
+        ('upper-service-link','Controlled formal-to-service threshold',[28,28,40,32],9,'circulation'),
+        ('staff-corridor','Staff sleeping access',[28,20,40,24],9,'circulation'),
+        ('staff-a','Two staff beds and personal storage A',[28,14,34,20],9,'inside'),
+        ('staff-b','Two staff beds and personal storage B',[34,14,40,20],9,'inside'),
+        ('staff-bath','Staff washing and separate WC bays',[28,24,34,28],9,'inside'),
+        ('linen','Clean linen and household supplies',[34,24,40,28],9,'inside'),
+        ('upper-service','Upper service passage',[40,14,43,30],9,'circulation'),
+        ('upper-service-stair','Service stair upper landing',[40,2,46,14],9,'circulation')]:
+        room(key,name,bounds,3.6,owner,kind)
+    room('attic-stair','Attic stair and guarded landing',[40,2,46,14],7.2,10,'circulation',3)
+    room('attic-passage','Attic distribution under roof',[40,14,43,28],7.2,10,'circulation',3)
+    room('archive','Estate archive: dry papers and shelving',[28,14,40,21],7.2,10,height=3)
+    room('attic-store','Disused furniture and clear ritual bay',[28,21,40,28],7.2,10,height=3)
+    room('cellar-stair','Cellar service stair',[40,2,46,14],-3,11,'circulation',3)
+    room('cellar-pass','Cellar service distribution',[40,14,43,28],-3,11,'circulation',3)
+    room('plant','Heat hot water and electrical maintenance',[32,14,40,20],-3,11,height=3)
+    room('cellar-provisions','Cool provisions separate from plant',[28,14,32,20],-3,11,height=3)
+    room('wine','Wine racks and retrieval aisle',[28,20,40,28],-3,11,height=3)
+    room('garden','Estate garden envelope: terrain not accepted',[3,0,57,50],0,12,'outside',12)
+    room('entry','Entrance terrace and carriage approach',[3,50,57,65],0,13,'outside',12)
+    room('stage','Canonical van unloading reservation',[20,65,36,78],0,14,'staging',3)
+    byid={z['id']:z for z in zones}
+    def door(a,b,x,z,width=1.2,access='household'):
+        y=byid[a]['y'];assert byid[b]['y']==y
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='level',width=width,
+            points=[review.center(byid[a]),[x,y,z],review.center(byid[b])],threshold=[x,y,z],access=access,
+            note='Proposed physical threshold; diagram lines do not establish navigation.'))
+    for a,b,x,z in [
+        ('stage','entry',28,65),('entry','foyer',22,50),('foyer','visitor-wc',24,45.5),('foyer','coats',24,48.5),
+        ('foyer','hall',22,44),('hall','grand-stair',24,36),('hall','drawing',20,40),('grand-stair','library',20,30),
+        ('library','drawing',14,36),('hall','dining',28,39),('hall','morning',28,43),('dining','morning',34,42),
+        ('dining','ballroom',40,37),('morning','ballroom',40,46),('dining','service-pass',34,32),
+        ('service-pass','kitchen',32,28),('service-pass','scullery',38,28),('kitchen','scullery',36,24),
+        ('kitchen','pantry',31,20),('scullery','cold-store',38,20),('scullery','service',40,24),
+        ('service-pass','service',40,29),('service','service-stair',41.5,14),('service','receiving',43,23),
+        ('receiving','refuse',49,23),('receiving','garden',46,20),('refuse','garden',53,23),
+        ('service-stair','garden',43,2),('library','garden',8,30),('ballroom','garden',54,40),('garden','entry',55,50),
+        ('gallery','suite-entry',20,38),('suite-entry','suite-bed',12,40),('suite-entry','suite-dress',18,40),
+        ('suite-dress','suite-bath',18,46),('gallery','guest-a-entry',20,28.5),('guest-a-entry','guest-a',16,28.5),
+        ('guest-a-entry','guest-a-bath',18,27),('gallery','guest-b-entry',20,34.5),('guest-b-entry','guest-b',16,34.5),
+        ('guest-b-entry','guest-b-bath',18,33),('gallery','upper-service-link',28,30),
+        ('upper-service','linen',40,26),('linen','staff-corridor',37,24),('staff-corridor','staff-bath',31,24),
+        ('staff-corridor','staff-a',31,20),('staff-corridor','staff-b',37,20),('staff-corridor','upper-service',40,22),
+        ('upper-service-link','upper-service',40,29),('upper-service','upper-service-stair',41.5,14),
+        ('attic-stair','attic-passage',41.5,14),('attic-passage','archive',40,18),('attic-passage','attic-store',40,25),
+        ('cellar-stair','cellar-pass',41.5,14),('cellar-pass','plant',40,17),('cellar-pass','wine',40,24),
+        ('wine','cellar-provisions',30,20)]:door(a,b,x,z)
+    for a,b,x,z,y0,y1,width in [
+        ('grand-stair','gallery',24,26,0,3.6,1.8),
+        ('cellar-stair','service-stair',43,4,-3,0,1.3),
+        ('service-stair','upper-service-stair',43,4,0,3.6,1.3),
+        ('upper-service-stair','attic-stair',43,4,3.6,7.2,1.3)]:
+        rise=y1-y0;run=rise*1.6
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='stairs',width=width,points=[[x,y0,z],[x,y1,z+run]],
+            rise_m=rise,run_m=run,headroom_m=2.2,landing_depth_m=1.5,risers=20 if rise>3 else 18,
+            construction='Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.',
+            note='Measured reservation only; physical capsule/headroom and underside tests remain required.'))
+    return dict(version=2,id='MANSION',title='Blackthorn Manor — revised household-first rough',
+        status='S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED',site_bounds=[3,0,57,79],zones=zones,links=links,
+        capacity='Principal pair, two guest bedrooms for up to four guests, four staff beds; twelve-place formal dining.',
+        fit_assets=['bed_4','bed_5','toilet_mp_1','level_bath_basin','level_bathtub'],
+        prop_fit_reservations=[
+            dict(space=space,asset=asset,origin=origin) for space,asset,origin in [
+                ('suite-bed','bed_4',[12,3.6,45]),('guest-a','bed_4',[12,3.6,26.5]),('guest-b','bed_4',[12,3.6,32.5]),
+                ('staff-a','bed_5',[31,3.6,15.7]),('staff-a','bed_5',[31,3.6,18.3]),
+                ('staff-b','bed_5',[37,3.6,15.7]),('staff-b','bed_5',[37,3.6,18.3]),
+                ('suite-bath','level_bathtub',[18,3.585,49]),('suite-bath','toilet_mp_1',[19.3,3.835,47.1]),
+                ('suite-bath','level_bath_basin',[16.6,3.6,47.1]),
+                ('guest-a-bath','toilet_mp_1',[19.2,3.835,25]),('guest-a-bath','level_bath_basin',[16.6,3.6,25]),
+                ('guest-b-bath','toilet_mp_1',[19.2,3.835,31]),('guest-b-bath','level_bath_basin',[16.6,3.6,31])]],
+        rituals=[dict(rite='Banishment',zone='ballroom',point=[47,0,40]),
+                 dict(rite='Cleansing',zone='wine',point=[34,-3,24]),
+                 dict(rite='Absolution',zone='garden',point=[14,0,14])],
+        staging=dict(zone='stage',point=[28,0,71],yaw=-math.pi/2,cargo_route=[[24.372,0,71],[22,0,57],[22,0,50]],
+            note='Use actual canonical VanStaging placement; apron and cart route remain to be physically proved.'),
+        terrain_cutouts=[dict(bounds=bounds,world_surface_y=-.65,
+            method='Persisted editor AdaptiveTerrainTopology punched leaves beneath cellar/stair union; not yet authored')
+            for bounds in [[40,2,46,14],[28,14,43,28]]],
+        decisions=['Formal arrival reaches reception, library, drawing, dining and ballroom without crossing kitchens or private bedrooms.',
+            'Every guest bedroom has a bounded entry and private washing/WC; principal bedroom, dressing and bath are separately bounded.',
+            'Delivery, unpacking, refuse, cold/dry storage, cooking and dirty wash-up occupy a service wing with its own circulation.',
+            'Four staff beds and staff sanitation are reached from the service stair; cellar and attic do not require traversing a bedroom.',
+            'Ballroom is a tall independent wing: no automatic upper floor stamps; roof structure must span it credibly.'],
+        remaining=['Resolve actual furniture/fixture support, full-scale room fit, door swings and screened sanitary approaches.',
+            'Author stacked service stair return/landing guard interfaces, grand stair floor openings and roof/headroom geometry.',
+            'Separate electrical/hot-water plant from food and paper stores with actual enclosure and maintenance access.',
+            'Punch saved editor world terrain beneath the complete cellar; test render/body/optical/object passage with filled-ground negatives.',
+            'Build terrain and garden around play instead of rectangular pads; prove native/runtime parity, van routes, hunts, rituals, networking and hardware performance.'])
+
+
 def validate(data):
     zones={z['id']:z for z in data['zones']}
     assert len(zones)==len(data['zones'])
@@ -352,6 +479,24 @@ def validate(data):
                 assert y+lo[1]>=room['y']-1e-6 and y+hi[1]<room['y']+room['height']
                 assert x+hi[0]<=bx or x+lo[0]>=bxx or z+hi[2]<=bz or z+lo[2]>=bzz, 'Cell bed/fixture overlap '+cell['space']
         assert not any({l['a'],l['b']}=={'visitors','visitor-custody'} for l in data['links']), 'Visitor booth divider is not a custody doorway'
+    if data['id']=='MANSION':
+        measured={a['asset']:a for a in asset_bounds(data['fit_assets'])['assets']}
+        placed=[]
+        for item in data['prop_fit_reservations']:
+            room=zones[item['space']];a=measured[item['asset']];origin=item['origin'];lo=[x+y for x,y in zip(origin,a['local_min'])];hi=[x+y for x,y in zip(origin,a['local_max'])]
+            x0,z0,x1,z1=room['bounds']
+            assert x0+.08<=lo[0]<hi[0]<=x1-.08 and z0+.08<=lo[2]<hi[2]<=z1-.08,item
+            assert room['y']-1e-6<=lo[1]<hi[1]<=room['y']+room['height'],item
+            for previous,pl,ph in placed:
+                if previous['space']!=item['space']:continue
+                assert any(hi[k]<=pl[k] or lo[k]>=ph[k] for k in range(3)),(previous,item,'native asset overlap')
+            placed.append((item,lo,hi))
+        assert sum(i['asset']=='bed_5' for i in data['prop_fit_reservations'])==4
+        # Bedrooms must have a circulation doorway; a private bathroom cannot
+        # become the only route to a guest sleeping space.
+        for key in ['suite-bed','guest-a','guest-b','staff-a','staff-b']:
+            adjacent=[zones[b] for b in graph[key]]
+            assert any(z['kind']=='circulation' for z in adjacent),key
     for rite in data['rituals']:
         room=zones[rite['zone']];x,y,z=rite['point'];x0,z0,x1,z1=room['bounds']
         assert x0+2.2<=x<=x1-2.2 and z0+2.2<=z<=z1-2.2, 'Ritual clear area '+rite['zone']
@@ -404,7 +549,7 @@ def asset_bounds(names=None):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    for folder,data in [('school',school()),('prison',prison())]:
+    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion())]:
         spaces,links=validate(data)
         outputs={'rough-layout.json':json.dumps(data,indent=2,ensure_ascii=False)+'\n',
                  'rough-plan.svg':review.render_svg(data),'rough-sections.svg':sections(data),

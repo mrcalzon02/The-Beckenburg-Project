@@ -115,3 +115,8 @@ DEV-232 repairs the reproduced Church failure: contained choir-loft doors now pe
 Next: finish the complete roster rough batch and use this service diagnostic at map checkpoints; retain outstanding physical van shortcut test correction and both art-golden diagnoses. Full map rebuild remains active.
 
 All nine selectable maps pass the shared physical route check. Final packaged Church regression passes; no map acceptance is inferred.
+
+
+## Mansion household rough checkpoint - 3 November
+
+Revised S02 Mansion authority now generates50 spaces/61 proposed connections, separate formal/private/household circulation, two guest suites, principal washing/dressing, four staff beds, independent service stairs and an exact two-rectangle cellar terrain-hole union. Actual source-sized bed/bathroom bounds and pivots are checked. Planning PNG and four flight sections remain design evidence only. No stage accepted; dispatched Mansion is unchanged. Next: Farmhouse and the remaining roster roughs before general blockout.
