@@ -3031,3 +3031,8 @@ Valid native frame entries containing -0.0 fail exact GLB frame readback because
 zero-negative.txt/zero-positive.txt run the same FrameZeroControl against actual GLB writer/reader. EditorLocalFrameTest guards canonical identity and the final native/OBJ/GLB roundtrip.
 
 Scope: New unpublished component normalization, not an artwork or vertex-normal rewrite. Older native1-4 data stays compatible; native5 explicitly carries the new frame fields.
+
+
+### DEV-225 — Concurrent main host campaign persistence assertion
+
+OPEN: exact main ce146a69 full41566564774 and installer41566564773 both fail `Host campaign result saved`. Raw failed-step logs are retained in evidence/native-bevel-2026-11-02. Cause is unverified; temporal proximity to independent LAN extraction changes is not causation. Inspect actual packaged test and host persistence before changing code or expectations. Older-map/campaign acceptance remains unproven.

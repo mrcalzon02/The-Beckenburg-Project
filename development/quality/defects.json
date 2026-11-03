@@ -2410,6 +2410,17 @@
       "action": "Canonicalize only zero-valued frame coefficients at construction. Preserve finite nonzero coefficients, original source bytes, native vertices and raw corner attributes.",
       "evidence": "zero-negative.txt/zero-positive.txt run the same FrameZeroControl against actual GLB writer/reader. EditorLocalFrameTest guards canonical identity and the final native/OBJ/GLB roundtrip.",
       "older_maps": "New unpublished component normalization, not an artwork or vertex-normal rewrite. Older native1-4 data stays compatible; native5 explicitly carries the new frame fields."
+    },
+    {
+      "id": "DEV-225",
+      "title": "Concurrent main installer and full acceptance fail host campaign persistence assertion",
+      "status": "open; exact remote failure observed, cause not yet established",
+      "affected": "main ce146a69 packaged startup/multiplayer acceptance",
+      "symptom": "Both workflows stop at AssertionError: Host campaign result saved.",
+      "cause": "Unverified; follows independent LAN extraction changes, which alone do not prove causation.",
+      "action": "Inspect packaged test and host result persistence before changing implementation or expectations. Preserve editor branch and main concurrent work.",
+      "evidence": "main ce146a69 full41566564774 and installer41566564773; raw failed-step logs retained in native-bevel-2026-11-02.",
+      "older_maps": "Campaign/host behavior requires actual packaged regression; no map or release acceptance inferred."
     }
   ],
   "audit_categories": [

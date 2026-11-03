@@ -33,7 +33,9 @@
     "standalone": 41568226584,
     "native": 41568230411,
     "full": 41568234297,
-    "state": "Dispatched exact4496c5d5; retain live handles without restart"
+    "state": "Standalone terminal success; native/full last observed running, retain handles",
+    "standaloneState": "SUCCESS"
   },
-  "concurrentMain": "ce146a69 independent LAN room extraction fix; preserved on main"
+  "concurrentMain": "ce146a69 independent LAN room extraction fix; preserved on main",
+  "mainRecovery": "DEV-225: ce146a69 full41566564774/installer41566564773 host campaign result assertion"
 }
