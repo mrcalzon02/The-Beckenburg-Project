@@ -123,6 +123,9 @@ public final class LanCase {
     private int wardRoom=-1,ritualProgress=-1,unguardedTicks,ritualRoom=-1;
     private GhostIdentity.Rite selectedRite;
     private Outcome outcome=Outcome.ACTIVE;
+    /** Snapshot at the instant the host seals the van; never inferred from later movement. */
+    private final boolean[] extracted=new boolean[6];
+    public boolean extracted(int seat){hunter(seat);return extracted[seat];}
 
     public LanCase(int anchor) {this(anchor,new HouseMap());}
     public LanCase(int anchor,HouseMap map) {
@@ -375,7 +378,19 @@ public final class LanCase {
         if(outcome!=Outcome.ACTIVE||!active[seat]||health[seat]<=0)return new Report(false,"extraction unavailable");
         if(room!=HouseMap.EXTRACTION_ROOM)return new Report(false,"return to van staging");
         outcome=Outcome.RETREATED;
+        extracted[seat]=true;
         return new Report(true,"TEAM WITHDREW - haunting unresolved");
+    }
+    /** The physical van roster is host-derived, not a client-provided claim.
+     * Missing, disconnected, incapacitated and outside seats remain not extracted.
+     */
+    public Report extractWithRoster(int seat,int room,boolean[] aboard){
+        hunter(seat);
+        if(aboard==null||aboard.length!=6||!aboard[seat])
+            return new Report(false,"initiating hunter must be aboard");
+        Report result=extract(seat,room);
+        if(result.accepted())System.arraycopy(aboard,0,extracted,0,6);
+        return result;
     }
     public void applyGhostEffect(int room,int[] hunterRooms,GhostDomain.Resolution effect) {
         // Derive the legacy room-effect mask from the actual 3- or 6-seat snapshot.

@@ -50,6 +50,10 @@ jobs:
         shell: cmd
         run: java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanDroppedGearIntegrationTest
 
+      - name: Verify authoritative van-door retreat with outside and departed hunters
+        shell: cmd
+        run: java -Djava.awt.headless=true -ea -cp "build\\classes;build\\test" org.beckenburg.LanVanExtractionIntegrationTest
+
       - name: Diagnose full regression manifest (advisory; not a release gate)
         continue-on-error: true
         shell: cmd

@@ -40,7 +40,8 @@ public final class CampaignEmbeddedDesktopTest {
             },"Embedded campaign receives advancing world frames");
             edt(()->{int windows=0;for(Window w:Window.getWindows())if(w.isShowing())windows++;
                 if(windows!=1)throw new AssertionError("Campaign escaped the game window");
-                var field=LanLobbyPanel.class.getDeclaredField("connection");field.setAccessible(true);((LanClient)field.get(lobby[0])).extract();return null;});
+                // Physical 3D hunters finish through the host-authoritative cargo control.
+                var field=LanLobbyPanel.class.getDeclaredField("connection");field.setAccessible(true);((LanClient)field.get(lobby[0])).vanDoor();return null;});
             until(()->profile.archives().size()==1,"Host campaign result saved");
             edt(()->{button(frame[0].getContentPane(),"RETURN TO CASTLE LOBBY").doClick();return null;});
             until(()->lobby[0].isShowing(),"Return to same embedded lobby");
