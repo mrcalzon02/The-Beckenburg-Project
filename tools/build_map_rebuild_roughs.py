@@ -650,6 +650,122 @@ def asylum():
             'Complete terrain, native/runtime parity, van routes, electrical operation, hunts, rituals, networking, weathering/story and physical hardware acceptance.'])
 
 
+def academy():
+    zones,links,fit,sleeping=[],[],[],[]
+    def room(key,name,bounds,y,owner,kind='inside',height=3.6):
+        zones.append(dict(id=key,name=name,bounds=bounds,y=y,height=height,owner=owner,kind=kind,purpose=name))
+    for key,name,bounds,owner,kind in [
+        ('west','West sheltered cloister',[19,9,22,53],0,'circulation'),
+        ('east','East teaching cloister and return',[42,19,45,55],0,'circulation'),
+        ('north','North dining cloister',[22,19,42,22],0,'circulation'),
+        ('south','South entrance cloister',[22,42,42,45],0,'circulation'),
+        ('reception','Visitor reception and waiting',[22,45,32,53],1,'inside'),
+        ('visitor-wc','Visitor WC outside residence',[32,45,36,49],1,'inside'),
+        ('reception-store','Coats and visitor supplies',[32,49,36,53],1,'inside'),
+        ('reading','Library quiet reading',[7,32,19,42],6,'inside'),
+        ('library-issue','Library issue return and staff desk',[7,28,19,32],6,'inside'),
+        ('stacks','Open library stacks',[7,22,19,28],6,'inside'),
+        ('office','Headmaster private meeting room',[11,9,19,19],5,'inside'),
+        ('office-entry','Covered administration approach',[7,19,19,22],5,'circulation'),
+        ('staff-ground-wc','Staff private sanitary support',[7,9,11,13],5,'inside'),
+        ('office-records','Confidential staff records',[7,13,11,19],5,'inside'),
+        ('laundry','Household laundry and wash work',[22,4,28,9],0,'inside'),
+        ('house-store','Household stores under north residence',[28,4,34,9],0,'inside'),
+        ('staff-change','Kitchen and household staff changing',[34,4,40,9],5,'inside'),
+        ('bulk-food','Bulk food supplies and delivery buffer',[40,4,46,9],4,'inside'),
+        ('dining','Twenty-place pupil and staff dining',[22,9,34,19],4,'inside'),
+        ('kitchen','Kitchen preparation and cooking',[34,9,40,15],4,'inside'),
+        ('serving','Dining serving passage',[34,15,40,19],4,'circulation'),
+        ('pantry','Food provisions',[40,9,45,12],4,'inside'),
+        ('washup','Dirty dishes and cleanup',[40,12,45,19],4,'inside'),
+        ('receiving','Service receiving and unpacking',[45,9,50,15],4,'inside'),
+        ('refuse','Enclosed refuse awaiting removal',[45,15,50,19],4,'inside'),
+        ('lecture','Sixteen-place teaching room',[45,32,57,45],2,'inside'),
+        ('lab','Practical teaching benches and handwashing',[45,19,53,29],3,'inside'),
+        ('lab-prep','Secure practical supplies and preparation',[53,19,57,25],3,'inside'),
+        ('lab-wash','Practical cleanup and sink',[53,25,57,29],3,'inside'),
+        ('lab-entry','Lab coats and approach',[45,29,57,32],3,'circulation'),
+        ('main-stair','Main stair and archive approach',[7,42,19,53],0,'circulation'),
+        ('east-stair','Independent east return stair',[45,45,57,55],0,'circulation')]:room(key,name,bounds,0,owner,kind)
+    for key,name,bounds,owner,kind in [
+        ('upper-west','Upper west residential passage',[19,9,22,53],7,'circulation'),
+        ('upper-north','Upper dormitory distribution',[22,16,45,19],7,'circulation'),
+        ('upper-east','Upper teaching-library return',[42,19,45,55],7,'circulation'),
+        ('upper-main-stair','Main stair guarded upper landing',[7,42,19,53],7,'circulation'),
+        ('upper-east-stair','East stair guarded upper landing',[45,45,57,55],7,'circulation'),
+        ('student-change','Residential washing approach',[7,14,19,19],7,'circulation'),
+        ('student-wc','Student screened WC bays',[7,9,13,14],7,'inside'),
+        ('student-shower','Private student shower bays',[13,9,19,14],7,'inside'),
+        ('linen','Residential linen and cleaning supplies',[7,19,19,22],7,'inside'),
+        ('staff-a','Two resident staff beds A',[7,22,13,30],5,'inside'),
+        ('staff-b','Two resident staff beds B',[13,22,19,30],5,'inside'),
+        ('staff-hall','Staff sleeping approach',[7,30,19,33],5,'circulation'),
+        ('staff-wash','Resident staff WC and washing',[7,33,13,38],5,'inside'),
+        ('staff-work','Resident staff work room',[13,33,19,38],5,'inside'),
+        ('staff-common','Staff common room',[7,38,19,42],5,'inside'),
+        ('restricted','Supervised restricted library stacks',[45,19,57,29],10,'inside'),
+        ('study','Quiet advanced study and research',[45,32,57,45],10,'inside')]:room(key,name,bounds,3.6,owner,kind)
+    for i in range(4):
+        x=22+i*6;sid=f'dorm-{i+1}';room(sid,f'Four-place pupil sleeping room {i+1}',[x,4,x+6,16],3.6,8 if i<2 else 9);sleeping.append(sid)
+        for z in [6,8.8,11.6,14.4]:fit.append(dict(space=sid,asset='bed_5',origin=[x+3,3.6,z]))
+    for key,x in [('staff-a',7),('staff-b',13)]:
+        sleeping.append(key)
+        for z in [24,27]:fit.append(dict(space=key,asset='bed_5',origin=[x+3,3.6,z]))
+    for key,name,bounds,kind in [('archive','Dry institutional archive',[7,22,13,38],'inside'),('plant','Heat water and electrical maintenance',[13,22,19,38],'inside'),('cellar-hall','Archive and plant service approach',[7,38,19,42],'circulation'),('cellar-stair','Cellar stair below entrance range',[7,42,19,53],'circulation')]:room(key,name,bounds,-3,11,kind,3)
+    room('quad','Open quadrangle with real daylight',[22,22,42,42],0,12,'outside',12)
+    room('grounds','Academy service grounds envelope',[3,0,62,55],0,12,'outside',12)
+    room('entry','Gate court and public approach',[3,55,62,68],0,13,'outside',12)
+    room('stage','Canonical van gate apron',[24,68,40,81],0,14,'staging',3)
+    byid={z['id']:z for z in zones}
+    def door(a,b,x,z,width=1.3):
+        y=byid[a]['y'];assert byid[b]['y']==y
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='level',width=width,points=[review.center(byid[a]),[x,y,z],review.center(byid[b])],threshold=[x,y,z],access='household' if 'staff' in a+b else 'academic',note='Exact proposed opening; diagram paths are not runtime movement.'))
+    for a,b,x,z in [
+        ('stage','entry',32,68),('entry','grounds',60,55),('grounds','reception',27,53),
+        ('reception','visitor-wc',32,47),('reception','reception-store',32,51),('reception','south',27,45),
+        ('south','west',22,43.5),('south','east',42,43.5),('north','west',22,20.5),('north','east',42,20.5),
+        ('south','quad',32,42),('north','quad',32,22),('west','reading',19,37),('west','library-issue',19,30),
+        ('library-issue','stacks',13,28),('library-issue','reading',13,32),('west','office-entry',19,20.5),('office-entry','office',15,19),('office','staff-ground-wc',11,11),('office','office-records',11,16),('grounds','laundry',25,4),('grounds','house-store',31,4),('kitchen','staff-change',37,9),('grounds','staff-change',37,4),('pantry','bulk-food',42.5,9),
+        ('north','dining',28,19),('dining','serving',34,17),('serving','kitchen',37,15),('serving','washup',40,17),
+        ('kitchen','pantry',40,10.5),('pantry','receiving',45,10.5),('washup','refuse',45,17),
+        ('receiving','grounds',50,12),('refuse','grounds',50,17),('east','lecture',45,38),
+        ('east','lab-entry',45,30.5),('lab-entry','lab',49,29),('lab','lab-prep',53,22),('lab','lab-wash',53,27),
+        ('west','main-stair',19,43.5),('east','east-stair',45,54),('east-stair','grounds',57,50),
+        ('upper-west','upper-main-stair',19,51),('upper-west','upper-north',22,17.5),('upper-north','upper-east',43.5,19),
+        ('upper-east','upper-east-stair',45,54),('upper-west','student-change',19,16.5),
+        ('student-change','student-wc',10,14),('student-change','student-shower',16,14),('upper-west','linen',19,20.5),
+        ('upper-west','staff-hall',19,31.5),('staff-hall','staff-a',10,30),('staff-hall','staff-b',16,30),
+        ('staff-hall','staff-wash',10,33),('staff-hall','staff-work',16,33),('upper-west','staff-common',19,40),
+        ('upper-east','restricted',45,24),('upper-east','study',45,38),
+        ('cellar-stair','cellar-hall',16,42),('cellar-hall','archive',10,38),('cellar-hall','plant',16,38)]:door(a,b,x,z)
+    for i in range(4):door('upper-north',f'dorm-{i+1}',23+i*6,16)
+    for a,b,x,z,y0,y1,width in [('main-stair','upper-main-stair',16,44,0,3.6,1.5),('east-stair','upper-east-stair',54,47,0,3.6,1.5),('cellar-stair','main-stair',10,44,-3,0,1.3)]:
+        rise=y1-y0;run=rise*1.6
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='stairs',width=width,points=[[x,y0,z],[x,y1,z+run]],rise_m=rise,run_m=run,headroom_m=2.2,landing_depth_m=1.5,risers=20 if rise>3 else 18,
+            construction='Real deck voids, guards, floor/roof depth and open side bypasses remain required.',note='Measured section reservation; actual six-player and ghost traversal unproved.'))
+    return dict(version=2,id='ACADEMY',title='St. Alban Academy — revised residential cloister rough',status='S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED',site_bounds=[3,0,62,82],zones=zones,links=links,
+        capacity='Sixteen resident pupils in four actual four-place rooms, four resident staff beds, twenty dining places and sixteen teaching places.',
+        fit_assets=['bed_5','level_student_desk','chair_mp_5','toilet_mp_1','level_bath_basin'],prop_fit_reservations=fit,expected_single_beds=20,sleeping_spaces=sleeping,
+        rituals=[dict(rite='Banishment',zone='study',point=[51,3.6,38]),dict(rite='Cleansing',zone='archive',point=[10,-3,30]),dict(rite='Absolution',zone='quad',point=[32,0,32])],
+        staging=dict(zone='stage',point=[32,0,74],yaw=-math.pi/2,cargo_route=[[28.372,0,74],[27,0,60],[27,0,53]],note='Actual canonical van placement; cargo lane and ground support require runtime proof.'),
+        terrain_cutouts=[dict(bounds=[7,22,19,53],world_surface_y=-.65,method='Persisted editor topology punched leaves under archive, plant and stair; not yet authored')],
+        flow_reservations=[dict(id=key,path=path,avoid=avoid) for key,path,avoid in [
+            ('visitor',['stage','entry','grounds','reception','visitor-wc'],sleeping+['lab','archive']),
+            ('food-supply',['grounds','receiving','pantry','kitchen','serving','dining'],['washup','refuse']),
+            ('dish-return',['dining','serving','washup','refuse'],['pantry','kitchen']),
+            ('residential-return',['upper-north','upper-east','upper-east-stair','east-stair','grounds'],['restricted','study','lab','lecture'] )]],
+        decisions=['Four unequal ranges surround an actual open quadrangle; cloister and outside envelopes are not filled by a blanket upper slab.',
+            'Teaching and practical prep/cleanup remain in the east range; quiet library issue/reading/stacks remain west.',
+            'North sleeping rooms have real boundaries, individual storage obligations and side access beside full-scale beds; student and staff sanitary support are distinct.',
+            'Two independent upper return stairs serve the residential circulation without passing through occupied teaching or sleeping rooms.',
+            'Food, washing-up, provisions and refuse are separately bounded behind dining; archive and heat/utility plant have separate enclosures.'],
+        remaining=['Author actual individual storage, sanitary bays, task furniture, supported props and normal-use service infrastructure.',
+            'Resolve actual confidentiality controls and an accessible vertical route without creating a power-loss softlock; covered office approach and private staff sanitary enclosure are reserved.',
+            'Build full stair/roof/structure openings and load paths; upper restricted stacks and residential ranges require real support and daylight design.',
+            'Punch saved editor ground beneath the complete cellar/stair footprint and prove render/body/optical/object holes with filled negatives.',
+            'Shape quad/service terrain, place canonical van and prove six-player/hunt/ritual routes, native parity, networking, performance and final environmental storytelling.'])
+
+
 def validate(data):
     zones={z['id']:z for z in data['zones']}
     assert len(zones)==len(data['zones'])
@@ -776,7 +892,7 @@ def asset_bounds(names=None):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse()),('asylum',asylum())]:
+    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse()),('asylum',asylum()),('academy',academy())]:
         spaces,links=validate(data)
         outputs={'rough-layout.json':json.dumps(data,indent=2,ensure_ascii=False)+'\n',
                  'rough-plan.svg':review.render_svg(data),'rough-sections.svg':sections(data),

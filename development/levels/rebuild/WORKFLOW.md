@@ -133,3 +133,8 @@ DEV-233: corrected stale LanWorldControlsTest after actual before-state reproduc
 ## Asylum care-pavilion rough checkpoint - 3 November
 
 Revised S02 Asylum authority generates67 spaces/78 proposed links, sixteen patient places in eight bounded rooms, floor-specific observation/linen/sanitation, admissions privacy, treatment clean/soiled services, changing/bathing/drying, separate food/dirty dish routes, quiet care, patient lift reservation and separate cellar laundry/plant. Six program route sequences and sixteen native-sized bed reservations are checked. Two-rectangle saved editor terrain-hole union is explicit. PNG reviewed; no runtime dispatch or stage accepted. Continue Academy/College/Church/Castle and remote/annex rough batch; retain House construction pilot and all physical/native/network/performance gates.
+
+
+## Academy residential cloister checkpoint - 3 November
+
+Revised Academy S02 generates61 spaces/68 proposed links: real open quadrangle, covered public/staff circulation,16 pupil plus4 staff native-sized bed reservations, separate student/staff sanitation, bounded teaching/lab/library functions, kitchen/dirty-return/service rooms and two upper return stairs. North ground services support the reserved residence footprint; headmaster/records/private WC have a covered approach. Full editor terrain punching required for archive/plant/stair footprint. Plan reviewed; no stage/runtime promotion. Next College/Church/Castle and remaining remote/annex roughs, preserving batch order and all final physical/native/network/performance gates.

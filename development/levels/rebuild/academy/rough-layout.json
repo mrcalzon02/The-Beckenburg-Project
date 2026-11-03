@@ -1,0 +1,3371 @@
+{
+  "version": 2,
+  "id": "ACADEMY",
+  "title": "St. Alban Academy — revised residential cloister rough",
+  "status": "S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED",
+  "site_bounds": [
+    3,
+    0,
+    62,
+    82
+  ],
+  "zones": [
+    {
+      "id": "west",
+      "name": "West sheltered cloister",
+      "bounds": [
+        19,
+        9,
+        22,
+        53
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "West sheltered cloister"
+    },
+    {
+      "id": "east",
+      "name": "East teaching cloister and return",
+      "bounds": [
+        42,
+        19,
+        45,
+        55
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "East teaching cloister and return"
+    },
+    {
+      "id": "north",
+      "name": "North dining cloister",
+      "bounds": [
+        22,
+        19,
+        42,
+        22
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "North dining cloister"
+    },
+    {
+      "id": "south",
+      "name": "South entrance cloister",
+      "bounds": [
+        22,
+        42,
+        42,
+        45
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "South entrance cloister"
+    },
+    {
+      "id": "reception",
+      "name": "Visitor reception and waiting",
+      "bounds": [
+        22,
+        45,
+        32,
+        53
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Visitor reception and waiting"
+    },
+    {
+      "id": "visitor-wc",
+      "name": "Visitor WC outside residence",
+      "bounds": [
+        32,
+        45,
+        36,
+        49
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Visitor WC outside residence"
+    },
+    {
+      "id": "reception-store",
+      "name": "Coats and visitor supplies",
+      "bounds": [
+        32,
+        49,
+        36,
+        53
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Coats and visitor supplies"
+    },
+    {
+      "id": "reading",
+      "name": "Library quiet reading",
+      "bounds": [
+        7,
+        32,
+        19,
+        42
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Library quiet reading"
+    },
+    {
+      "id": "library-issue",
+      "name": "Library issue return and staff desk",
+      "bounds": [
+        7,
+        28,
+        19,
+        32
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Library issue return and staff desk"
+    },
+    {
+      "id": "stacks",
+      "name": "Open library stacks",
+      "bounds": [
+        7,
+        22,
+        19,
+        28
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Open library stacks"
+    },
+    {
+      "id": "office",
+      "name": "Headmaster private meeting room",
+      "bounds": [
+        11,
+        9,
+        19,
+        19
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Headmaster private meeting room"
+    },
+    {
+      "id": "office-entry",
+      "name": "Covered administration approach",
+      "bounds": [
+        7,
+        19,
+        19,
+        22
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "circulation",
+      "purpose": "Covered administration approach"
+    },
+    {
+      "id": "staff-ground-wc",
+      "name": "Staff private sanitary support",
+      "bounds": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Staff private sanitary support"
+    },
+    {
+      "id": "office-records",
+      "name": "Confidential staff records",
+      "bounds": [
+        7,
+        13,
+        11,
+        19
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Confidential staff records"
+    },
+    {
+      "id": "laundry",
+      "name": "Household laundry and wash work",
+      "bounds": [
+        22,
+        4,
+        28,
+        9
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "Household laundry and wash work"
+    },
+    {
+      "id": "house-store",
+      "name": "Household stores under north residence",
+      "bounds": [
+        28,
+        4,
+        34,
+        9
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "Household stores under north residence"
+    },
+    {
+      "id": "staff-change",
+      "name": "Kitchen and household staff changing",
+      "bounds": [
+        34,
+        4,
+        40,
+        9
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Kitchen and household staff changing"
+    },
+    {
+      "id": "bulk-food",
+      "name": "Bulk food supplies and delivery buffer",
+      "bounds": [
+        40,
+        4,
+        46,
+        9
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Bulk food supplies and delivery buffer"
+    },
+    {
+      "id": "dining",
+      "name": "Twenty-place pupil and staff dining",
+      "bounds": [
+        22,
+        9,
+        34,
+        19
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Twenty-place pupil and staff dining"
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen preparation and cooking",
+      "bounds": [
+        34,
+        9,
+        40,
+        15
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Kitchen preparation and cooking"
+    },
+    {
+      "id": "serving",
+      "name": "Dining serving passage",
+      "bounds": [
+        34,
+        15,
+        40,
+        19
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "Dining serving passage"
+    },
+    {
+      "id": "pantry",
+      "name": "Food provisions",
+      "bounds": [
+        40,
+        9,
+        45,
+        12
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Food provisions"
+    },
+    {
+      "id": "washup",
+      "name": "Dirty dishes and cleanup",
+      "bounds": [
+        40,
+        12,
+        45,
+        19
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Dirty dishes and cleanup"
+    },
+    {
+      "id": "receiving",
+      "name": "Service receiving and unpacking",
+      "bounds": [
+        45,
+        9,
+        50,
+        15
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Service receiving and unpacking"
+    },
+    {
+      "id": "refuse",
+      "name": "Enclosed refuse awaiting removal",
+      "bounds": [
+        45,
+        15,
+        50,
+        19
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Enclosed refuse awaiting removal"
+    },
+    {
+      "id": "lecture",
+      "name": "Sixteen-place teaching room",
+      "bounds": [
+        45,
+        32,
+        57,
+        45
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Sixteen-place teaching room"
+    },
+    {
+      "id": "lab",
+      "name": "Practical teaching benches and handwashing",
+      "bounds": [
+        45,
+        19,
+        53,
+        29
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Practical teaching benches and handwashing"
+    },
+    {
+      "id": "lab-prep",
+      "name": "Secure practical supplies and preparation",
+      "bounds": [
+        53,
+        19,
+        57,
+        25
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Secure practical supplies and preparation"
+    },
+    {
+      "id": "lab-wash",
+      "name": "Practical cleanup and sink",
+      "bounds": [
+        53,
+        25,
+        57,
+        29
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Practical cleanup and sink"
+    },
+    {
+      "id": "lab-entry",
+      "name": "Lab coats and approach",
+      "bounds": [
+        45,
+        29,
+        57,
+        32
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "circulation",
+      "purpose": "Lab coats and approach"
+    },
+    {
+      "id": "main-stair",
+      "name": "Main stair and archive approach",
+      "bounds": [
+        7,
+        42,
+        19,
+        53
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Main stair and archive approach"
+    },
+    {
+      "id": "east-stair",
+      "name": "Independent east return stair",
+      "bounds": [
+        45,
+        45,
+        57,
+        55
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Independent east return stair"
+    },
+    {
+      "id": "upper-west",
+      "name": "Upper west residential passage",
+      "bounds": [
+        19,
+        9,
+        22,
+        53
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Upper west residential passage"
+    },
+    {
+      "id": "upper-north",
+      "name": "Upper dormitory distribution",
+      "bounds": [
+        22,
+        16,
+        45,
+        19
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Upper dormitory distribution"
+    },
+    {
+      "id": "upper-east",
+      "name": "Upper teaching-library return",
+      "bounds": [
+        42,
+        19,
+        45,
+        55
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Upper teaching-library return"
+    },
+    {
+      "id": "upper-main-stair",
+      "name": "Main stair guarded upper landing",
+      "bounds": [
+        7,
+        42,
+        19,
+        53
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Main stair guarded upper landing"
+    },
+    {
+      "id": "upper-east-stair",
+      "name": "East stair guarded upper landing",
+      "bounds": [
+        45,
+        45,
+        57,
+        55
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "East stair guarded upper landing"
+    },
+    {
+      "id": "student-change",
+      "name": "Residential washing approach",
+      "bounds": [
+        7,
+        14,
+        19,
+        19
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Residential washing approach"
+    },
+    {
+      "id": "student-wc",
+      "name": "Student screened WC bays",
+      "bounds": [
+        7,
+        9,
+        13,
+        14
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Student screened WC bays"
+    },
+    {
+      "id": "student-shower",
+      "name": "Private student shower bays",
+      "bounds": [
+        13,
+        9,
+        19,
+        14
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Private student shower bays"
+    },
+    {
+      "id": "linen",
+      "name": "Residential linen and cleaning supplies",
+      "bounds": [
+        7,
+        19,
+        19,
+        22
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Residential linen and cleaning supplies"
+    },
+    {
+      "id": "staff-a",
+      "name": "Two resident staff beds A",
+      "bounds": [
+        7,
+        22,
+        13,
+        30
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Two resident staff beds A"
+    },
+    {
+      "id": "staff-b",
+      "name": "Two resident staff beds B",
+      "bounds": [
+        13,
+        22,
+        19,
+        30
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Two resident staff beds B"
+    },
+    {
+      "id": "staff-hall",
+      "name": "Staff sleeping approach",
+      "bounds": [
+        7,
+        30,
+        19,
+        33
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "circulation",
+      "purpose": "Staff sleeping approach"
+    },
+    {
+      "id": "staff-wash",
+      "name": "Resident staff WC and washing",
+      "bounds": [
+        7,
+        33,
+        13,
+        38
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Resident staff WC and washing"
+    },
+    {
+      "id": "staff-work",
+      "name": "Resident staff work room",
+      "bounds": [
+        13,
+        33,
+        19,
+        38
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Resident staff work room"
+    },
+    {
+      "id": "staff-common",
+      "name": "Staff common room",
+      "bounds": [
+        7,
+        38,
+        19,
+        42
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Staff common room"
+    },
+    {
+      "id": "restricted",
+      "name": "Supervised restricted library stacks",
+      "bounds": [
+        45,
+        19,
+        57,
+        29
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Supervised restricted library stacks"
+    },
+    {
+      "id": "study",
+      "name": "Quiet advanced study and research",
+      "bounds": [
+        45,
+        32,
+        57,
+        45
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Quiet advanced study and research"
+    },
+    {
+      "id": "dorm-1",
+      "name": "Four-place pupil sleeping room 1",
+      "bounds": [
+        22,
+        4,
+        28,
+        16
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Four-place pupil sleeping room 1"
+    },
+    {
+      "id": "dorm-2",
+      "name": "Four-place pupil sleeping room 2",
+      "bounds": [
+        28,
+        4,
+        34,
+        16
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Four-place pupil sleeping room 2"
+    },
+    {
+      "id": "dorm-3",
+      "name": "Four-place pupil sleeping room 3",
+      "bounds": [
+        34,
+        4,
+        40,
+        16
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Four-place pupil sleeping room 3"
+    },
+    {
+      "id": "dorm-4",
+      "name": "Four-place pupil sleeping room 4",
+      "bounds": [
+        40,
+        4,
+        46,
+        16
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Four-place pupil sleeping room 4"
+    },
+    {
+      "id": "archive",
+      "name": "Dry institutional archive",
+      "bounds": [
+        7,
+        22,
+        13,
+        38
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Dry institutional archive"
+    },
+    {
+      "id": "plant",
+      "name": "Heat water and electrical maintenance",
+      "bounds": [
+        13,
+        22,
+        19,
+        38
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Heat water and electrical maintenance"
+    },
+    {
+      "id": "cellar-hall",
+      "name": "Archive and plant service approach",
+      "bounds": [
+        7,
+        38,
+        19,
+        42
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Archive and plant service approach"
+    },
+    {
+      "id": "cellar-stair",
+      "name": "Cellar stair below entrance range",
+      "bounds": [
+        7,
+        42,
+        19,
+        53
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Cellar stair below entrance range"
+    },
+    {
+      "id": "quad",
+      "name": "Open quadrangle with real daylight",
+      "bounds": [
+        22,
+        22,
+        42,
+        42
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 12,
+      "kind": "outside",
+      "purpose": "Open quadrangle with real daylight"
+    },
+    {
+      "id": "grounds",
+      "name": "Academy service grounds envelope",
+      "bounds": [
+        3,
+        0,
+        62,
+        55
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 12,
+      "kind": "outside",
+      "purpose": "Academy service grounds envelope"
+    },
+    {
+      "id": "entry",
+      "name": "Gate court and public approach",
+      "bounds": [
+        3,
+        55,
+        62,
+        68
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "Gate court and public approach"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van gate apron",
+      "bounds": [
+        24,
+        68,
+        40,
+        81
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 14,
+      "kind": "staging",
+      "purpose": "Canonical van gate apron"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.0,
+          0,
+          74.5
+        ],
+        [
+          32,
+          0,
+          68
+        ],
+        [
+          32.5,
+          0,
+          61.5
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        68
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.5,
+          0,
+          61.5
+        ],
+        [
+          60,
+          0,
+          55
+        ],
+        [
+          32.5,
+          0,
+          27.5
+        ]
+      ],
+      "threshold": [
+        60,
+        0,
+        55
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L03",
+      "a": "grounds",
+      "b": "reception",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.5,
+          0,
+          27.5
+        ],
+        [
+          27,
+          0,
+          53
+        ],
+        [
+          27.0,
+          0,
+          49.0
+        ]
+      ],
+      "threshold": [
+        27,
+        0,
+        53
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L04",
+      "a": "reception",
+      "b": "visitor-wc",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          27.0,
+          0,
+          49.0
+        ],
+        [
+          32,
+          0,
+          47
+        ],
+        [
+          34.0,
+          0,
+          47.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        47
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L05",
+      "a": "reception",
+      "b": "reception-store",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          27.0,
+          0,
+          49.0
+        ],
+        [
+          32,
+          0,
+          51
+        ],
+        [
+          34.0,
+          0,
+          51.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        51
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L06",
+      "a": "reception",
+      "b": "south",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          27.0,
+          0,
+          49.0
+        ],
+        [
+          27,
+          0,
+          45
+        ],
+        [
+          32.0,
+          0,
+          43.5
+        ]
+      ],
+      "threshold": [
+        27,
+        0,
+        45
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L07",
+      "a": "south",
+      "b": "west",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.0,
+          0,
+          43.5
+        ],
+        [
+          22,
+          0,
+          43.5
+        ],
+        [
+          20.5,
+          0,
+          31.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        43.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L08",
+      "a": "south",
+      "b": "east",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.0,
+          0,
+          43.5
+        ],
+        [
+          42,
+          0,
+          43.5
+        ],
+        [
+          43.5,
+          0,
+          37.0
+        ]
+      ],
+      "threshold": [
+        42,
+        0,
+        43.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L09",
+      "a": "north",
+      "b": "west",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.0,
+          0,
+          20.5
+        ],
+        [
+          22,
+          0,
+          20.5
+        ],
+        [
+          20.5,
+          0,
+          31.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        20.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L10",
+      "a": "north",
+      "b": "east",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.0,
+          0,
+          20.5
+        ],
+        [
+          42,
+          0,
+          20.5
+        ],
+        [
+          43.5,
+          0,
+          37.0
+        ]
+      ],
+      "threshold": [
+        42,
+        0,
+        20.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L11",
+      "a": "south",
+      "b": "quad",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.0,
+          0,
+          43.5
+        ],
+        [
+          32,
+          0,
+          42
+        ],
+        [
+          32.0,
+          0,
+          32.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        42
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L12",
+      "a": "north",
+      "b": "quad",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.0,
+          0,
+          20.5
+        ],
+        [
+          32,
+          0,
+          22
+        ],
+        [
+          32.0,
+          0,
+          32.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        22
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L13",
+      "a": "west",
+      "b": "reading",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          0,
+          31.0
+        ],
+        [
+          19,
+          0,
+          37
+        ],
+        [
+          13.0,
+          0,
+          37.0
+        ]
+      ],
+      "threshold": [
+        19,
+        0,
+        37
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L14",
+      "a": "west",
+      "b": "library-issue",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          0,
+          31.0
+        ],
+        [
+          19,
+          0,
+          30
+        ],
+        [
+          13.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        19,
+        0,
+        30
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L15",
+      "a": "library-issue",
+      "b": "stacks",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          0,
+          30.0
+        ],
+        [
+          13,
+          0,
+          28
+        ],
+        [
+          13.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        13,
+        0,
+        28
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L16",
+      "a": "library-issue",
+      "b": "reading",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          0,
+          30.0
+        ],
+        [
+          13,
+          0,
+          32
+        ],
+        [
+          13.0,
+          0,
+          37.0
+        ]
+      ],
+      "threshold": [
+        13,
+        0,
+        32
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L17",
+      "a": "west",
+      "b": "office-entry",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          0,
+          31.0
+        ],
+        [
+          19,
+          0,
+          20.5
+        ],
+        [
+          13.0,
+          0,
+          20.5
+        ]
+      ],
+      "threshold": [
+        19,
+        0,
+        20.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L18",
+      "a": "office-entry",
+      "b": "office",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          0,
+          20.5
+        ],
+        [
+          15,
+          0,
+          19
+        ],
+        [
+          15.0,
+          0,
+          14.0
+        ]
+      ],
+      "threshold": [
+        15,
+        0,
+        19
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L19",
+      "a": "office",
+      "b": "staff-ground-wc",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          15.0,
+          0,
+          14.0
+        ],
+        [
+          11,
+          0,
+          11
+        ],
+        [
+          9.0,
+          0,
+          11.0
+        ]
+      ],
+      "threshold": [
+        11,
+        0,
+        11
+      ],
+      "access": "household",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L20",
+      "a": "office",
+      "b": "office-records",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          15.0,
+          0,
+          14.0
+        ],
+        [
+          11,
+          0,
+          16
+        ],
+        [
+          9.0,
+          0,
+          16.0
+        ]
+      ],
+      "threshold": [
+        11,
+        0,
+        16
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L21",
+      "a": "grounds",
+      "b": "laundry",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.5,
+          0,
+          27.5
+        ],
+        [
+          25,
+          0,
+          4
+        ],
+        [
+          25.0,
+          0,
+          6.5
+        ]
+      ],
+      "threshold": [
+        25,
+        0,
+        4
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L22",
+      "a": "grounds",
+      "b": "house-store",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.5,
+          0,
+          27.5
+        ],
+        [
+          31,
+          0,
+          4
+        ],
+        [
+          31.0,
+          0,
+          6.5
+        ]
+      ],
+      "threshold": [
+        31,
+        0,
+        4
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L23",
+      "a": "kitchen",
+      "b": "staff-change",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          37.0,
+          0,
+          12.0
+        ],
+        [
+          37,
+          0,
+          9
+        ],
+        [
+          37.0,
+          0,
+          6.5
+        ]
+      ],
+      "threshold": [
+        37,
+        0,
+        9
+      ],
+      "access": "household",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L24",
+      "a": "grounds",
+      "b": "staff-change",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.5,
+          0,
+          27.5
+        ],
+        [
+          37,
+          0,
+          4
+        ],
+        [
+          37.0,
+          0,
+          6.5
+        ]
+      ],
+      "threshold": [
+        37,
+        0,
+        4
+      ],
+      "access": "household",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L25",
+      "a": "pantry",
+      "b": "bulk-food",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          42.5,
+          0,
+          10.5
+        ],
+        [
+          42.5,
+          0,
+          9
+        ],
+        [
+          43.0,
+          0,
+          6.5
+        ]
+      ],
+      "threshold": [
+        42.5,
+        0,
+        9
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L26",
+      "a": "north",
+      "b": "dining",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          32.0,
+          0,
+          20.5
+        ],
+        [
+          28,
+          0,
+          19
+        ],
+        [
+          28.0,
+          0,
+          14.0
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        19
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L27",
+      "a": "dining",
+      "b": "serving",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          28.0,
+          0,
+          14.0
+        ],
+        [
+          34,
+          0,
+          17
+        ],
+        [
+          37.0,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        34,
+        0,
+        17
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L28",
+      "a": "serving",
+      "b": "kitchen",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          37.0,
+          0,
+          17.0
+        ],
+        [
+          37,
+          0,
+          15
+        ],
+        [
+          37.0,
+          0,
+          12.0
+        ]
+      ],
+      "threshold": [
+        37,
+        0,
+        15
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L29",
+      "a": "serving",
+      "b": "washup",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          37.0,
+          0,
+          17.0
+        ],
+        [
+          40,
+          0,
+          17
+        ],
+        [
+          42.5,
+          0,
+          15.5
+        ]
+      ],
+      "threshold": [
+        40,
+        0,
+        17
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L30",
+      "a": "kitchen",
+      "b": "pantry",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          37.0,
+          0,
+          12.0
+        ],
+        [
+          40,
+          0,
+          10.5
+        ],
+        [
+          42.5,
+          0,
+          10.5
+        ]
+      ],
+      "threshold": [
+        40,
+        0,
+        10.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L31",
+      "a": "pantry",
+      "b": "receiving",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          42.5,
+          0,
+          10.5
+        ],
+        [
+          45,
+          0,
+          10.5
+        ],
+        [
+          47.5,
+          0,
+          12.0
+        ]
+      ],
+      "threshold": [
+        45,
+        0,
+        10.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L32",
+      "a": "washup",
+      "b": "refuse",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          42.5,
+          0,
+          15.5
+        ],
+        [
+          45,
+          0,
+          17
+        ],
+        [
+          47.5,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        45,
+        0,
+        17
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L33",
+      "a": "receiving",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          47.5,
+          0,
+          12.0
+        ],
+        [
+          50,
+          0,
+          12
+        ],
+        [
+          32.5,
+          0,
+          27.5
+        ]
+      ],
+      "threshold": [
+        50,
+        0,
+        12
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L34",
+      "a": "refuse",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          47.5,
+          0,
+          17.0
+        ],
+        [
+          50,
+          0,
+          17
+        ],
+        [
+          32.5,
+          0,
+          27.5
+        ]
+      ],
+      "threshold": [
+        50,
+        0,
+        17
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L35",
+      "a": "east",
+      "b": "lecture",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          43.5,
+          0,
+          37.0
+        ],
+        [
+          45,
+          0,
+          38
+        ],
+        [
+          51.0,
+          0,
+          38.5
+        ]
+      ],
+      "threshold": [
+        45,
+        0,
+        38
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L36",
+      "a": "east",
+      "b": "lab-entry",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          43.5,
+          0,
+          37.0
+        ],
+        [
+          45,
+          0,
+          30.5
+        ],
+        [
+          51.0,
+          0,
+          30.5
+        ]
+      ],
+      "threshold": [
+        45,
+        0,
+        30.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L37",
+      "a": "lab-entry",
+      "b": "lab",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          51.0,
+          0,
+          30.5
+        ],
+        [
+          49,
+          0,
+          29
+        ],
+        [
+          49.0,
+          0,
+          24.0
+        ]
+      ],
+      "threshold": [
+        49,
+        0,
+        29
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L38",
+      "a": "lab",
+      "b": "lab-prep",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          49.0,
+          0,
+          24.0
+        ],
+        [
+          53,
+          0,
+          22
+        ],
+        [
+          55.0,
+          0,
+          22.0
+        ]
+      ],
+      "threshold": [
+        53,
+        0,
+        22
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L39",
+      "a": "lab",
+      "b": "lab-wash",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          49.0,
+          0,
+          24.0
+        ],
+        [
+          53,
+          0,
+          27
+        ],
+        [
+          55.0,
+          0,
+          27.0
+        ]
+      ],
+      "threshold": [
+        53,
+        0,
+        27
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L40",
+      "a": "west",
+      "b": "main-stair",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          0,
+          31.0
+        ],
+        [
+          19,
+          0,
+          43.5
+        ],
+        [
+          13.0,
+          0,
+          47.5
+        ]
+      ],
+      "threshold": [
+        19,
+        0,
+        43.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L41",
+      "a": "east",
+      "b": "east-stair",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          43.5,
+          0,
+          37.0
+        ],
+        [
+          45,
+          0,
+          54
+        ],
+        [
+          51.0,
+          0,
+          50.0
+        ]
+      ],
+      "threshold": [
+        45,
+        0,
+        54
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L42",
+      "a": "east-stair",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          51.0,
+          0,
+          50.0
+        ],
+        [
+          57,
+          0,
+          50
+        ],
+        [
+          32.5,
+          0,
+          27.5
+        ]
+      ],
+      "threshold": [
+        57,
+        0,
+        50
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L43",
+      "a": "upper-west",
+      "b": "upper-main-stair",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          3.6,
+          31.0
+        ],
+        [
+          19,
+          3.6,
+          51
+        ],
+        [
+          13.0,
+          3.6,
+          47.5
+        ]
+      ],
+      "threshold": [
+        19,
+        3.6,
+        51
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L44",
+      "a": "upper-west",
+      "b": "upper-north",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          3.6,
+          31.0
+        ],
+        [
+          22,
+          3.6,
+          17.5
+        ],
+        [
+          33.5,
+          3.6,
+          17.5
+        ]
+      ],
+      "threshold": [
+        22,
+        3.6,
+        17.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L45",
+      "a": "upper-north",
+      "b": "upper-east",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          33.5,
+          3.6,
+          17.5
+        ],
+        [
+          43.5,
+          3.6,
+          19
+        ],
+        [
+          43.5,
+          3.6,
+          37.0
+        ]
+      ],
+      "threshold": [
+        43.5,
+        3.6,
+        19
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L46",
+      "a": "upper-east",
+      "b": "upper-east-stair",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          43.5,
+          3.6,
+          37.0
+        ],
+        [
+          45,
+          3.6,
+          54
+        ],
+        [
+          51.0,
+          3.6,
+          50.0
+        ]
+      ],
+      "threshold": [
+        45,
+        3.6,
+        54
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L47",
+      "a": "upper-west",
+      "b": "student-change",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          3.6,
+          31.0
+        ],
+        [
+          19,
+          3.6,
+          16.5
+        ],
+        [
+          13.0,
+          3.6,
+          16.5
+        ]
+      ],
+      "threshold": [
+        19,
+        3.6,
+        16.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L48",
+      "a": "student-change",
+      "b": "student-wc",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          3.6,
+          16.5
+        ],
+        [
+          10,
+          3.6,
+          14
+        ],
+        [
+          10.0,
+          3.6,
+          11.5
+        ]
+      ],
+      "threshold": [
+        10,
+        3.6,
+        14
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L49",
+      "a": "student-change",
+      "b": "student-shower",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          3.6,
+          16.5
+        ],
+        [
+          16,
+          3.6,
+          14
+        ],
+        [
+          16.0,
+          3.6,
+          11.5
+        ]
+      ],
+      "threshold": [
+        16,
+        3.6,
+        14
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L50",
+      "a": "upper-west",
+      "b": "linen",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          3.6,
+          31.0
+        ],
+        [
+          19,
+          3.6,
+          20.5
+        ],
+        [
+          13.0,
+          3.6,
+          20.5
+        ]
+      ],
+      "threshold": [
+        19,
+        3.6,
+        20.5
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L51",
+      "a": "upper-west",
+      "b": "staff-hall",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          3.6,
+          31.0
+        ],
+        [
+          19,
+          3.6,
+          31.5
+        ],
+        [
+          13.0,
+          3.6,
+          31.5
+        ]
+      ],
+      "threshold": [
+        19,
+        3.6,
+        31.5
+      ],
+      "access": "household",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L52",
+      "a": "staff-hall",
+      "b": "staff-a",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          3.6,
+          31.5
+        ],
+        [
+          10,
+          3.6,
+          30
+        ],
+        [
+          10.0,
+          3.6,
+          26.0
+        ]
+      ],
+      "threshold": [
+        10,
+        3.6,
+        30
+      ],
+      "access": "household",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L53",
+      "a": "staff-hall",
+      "b": "staff-b",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          3.6,
+          31.5
+        ],
+        [
+          16,
+          3.6,
+          30
+        ],
+        [
+          16.0,
+          3.6,
+          26.0
+        ]
+      ],
+      "threshold": [
+        16,
+        3.6,
+        30
+      ],
+      "access": "household",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L54",
+      "a": "staff-hall",
+      "b": "staff-wash",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          3.6,
+          31.5
+        ],
+        [
+          10,
+          3.6,
+          33
+        ],
+        [
+          10.0,
+          3.6,
+          35.5
+        ]
+      ],
+      "threshold": [
+        10,
+        3.6,
+        33
+      ],
+      "access": "household",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L55",
+      "a": "staff-hall",
+      "b": "staff-work",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          3.6,
+          31.5
+        ],
+        [
+          16,
+          3.6,
+          33
+        ],
+        [
+          16.0,
+          3.6,
+          35.5
+        ]
+      ],
+      "threshold": [
+        16,
+        3.6,
+        33
+      ],
+      "access": "household",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L56",
+      "a": "upper-west",
+      "b": "staff-common",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          20.5,
+          3.6,
+          31.0
+        ],
+        [
+          19,
+          3.6,
+          40
+        ],
+        [
+          13.0,
+          3.6,
+          40.0
+        ]
+      ],
+      "threshold": [
+        19,
+        3.6,
+        40
+      ],
+      "access": "household",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L57",
+      "a": "upper-east",
+      "b": "restricted",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          43.5,
+          3.6,
+          37.0
+        ],
+        [
+          45,
+          3.6,
+          24
+        ],
+        [
+          51.0,
+          3.6,
+          24.0
+        ]
+      ],
+      "threshold": [
+        45,
+        3.6,
+        24
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L58",
+      "a": "upper-east",
+      "b": "study",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          43.5,
+          3.6,
+          37.0
+        ],
+        [
+          45,
+          3.6,
+          38
+        ],
+        [
+          51.0,
+          3.6,
+          38.5
+        ]
+      ],
+      "threshold": [
+        45,
+        3.6,
+        38
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L59",
+      "a": "cellar-stair",
+      "b": "cellar-hall",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          -3,
+          47.5
+        ],
+        [
+          16,
+          -3,
+          42
+        ],
+        [
+          13.0,
+          -3,
+          40.0
+        ]
+      ],
+      "threshold": [
+        16,
+        -3,
+        42
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L60",
+      "a": "cellar-hall",
+      "b": "archive",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          -3,
+          40.0
+        ],
+        [
+          10,
+          -3,
+          38
+        ],
+        [
+          10.0,
+          -3,
+          30.0
+        ]
+      ],
+      "threshold": [
+        10,
+        -3,
+        38
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L61",
+      "a": "cellar-hall",
+      "b": "plant",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          13.0,
+          -3,
+          40.0
+        ],
+        [
+          16,
+          -3,
+          38
+        ],
+        [
+          16.0,
+          -3,
+          30.0
+        ]
+      ],
+      "threshold": [
+        16,
+        -3,
+        38
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L62",
+      "a": "upper-north",
+      "b": "dorm-1",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          33.5,
+          3.6,
+          17.5
+        ],
+        [
+          23,
+          3.6,
+          16
+        ],
+        [
+          25.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "threshold": [
+        23,
+        3.6,
+        16
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L63",
+      "a": "upper-north",
+      "b": "dorm-2",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          33.5,
+          3.6,
+          17.5
+        ],
+        [
+          29,
+          3.6,
+          16
+        ],
+        [
+          31.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "threshold": [
+        29,
+        3.6,
+        16
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L64",
+      "a": "upper-north",
+      "b": "dorm-3",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          33.5,
+          3.6,
+          17.5
+        ],
+        [
+          35,
+          3.6,
+          16
+        ],
+        [
+          37.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "threshold": [
+        35,
+        3.6,
+        16
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L65",
+      "a": "upper-north",
+      "b": "dorm-4",
+      "kind": "level",
+      "width": 1.3,
+      "points": [
+        [
+          33.5,
+          3.6,
+          17.5
+        ],
+        [
+          41,
+          3.6,
+          16
+        ],
+        [
+          43.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "threshold": [
+        41,
+        3.6,
+        16
+      ],
+      "access": "academic",
+      "note": "Exact proposed opening; diagram paths are not runtime movement."
+    },
+    {
+      "id": "L66",
+      "a": "main-stair",
+      "b": "upper-main-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          16,
+          0,
+          44
+        ],
+        [
+          16,
+          3.6,
+          49.76
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Real deck voids, guards, floor/roof depth and open side bypasses remain required.",
+      "note": "Measured section reservation; actual six-player and ghost traversal unproved."
+    },
+    {
+      "id": "L67",
+      "a": "east-stair",
+      "b": "upper-east-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          54,
+          0,
+          47
+        ],
+        [
+          54,
+          3.6,
+          52.76
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Real deck voids, guards, floor/roof depth and open side bypasses remain required.",
+      "note": "Measured section reservation; actual six-player and ghost traversal unproved."
+    },
+    {
+      "id": "L68",
+      "a": "cellar-stair",
+      "b": "main-stair",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          10,
+          -3,
+          44
+        ],
+        [
+          10,
+          0,
+          48.8
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Real deck voids, guards, floor/roof depth and open side bypasses remain required.",
+      "note": "Measured section reservation; actual six-player and ghost traversal unproved."
+    }
+  ],
+  "capacity": "Sixteen resident pupils in four actual four-place rooms, four resident staff beds, twenty dining places and sixteen teaching places.",
+  "fit_assets": [
+    "bed_5",
+    "level_student_desk",
+    "chair_mp_5",
+    "toilet_mp_1",
+    "level_bath_basin"
+  ],
+  "prop_fit_reservations": [
+    {
+      "space": "dorm-1",
+      "asset": "bed_5",
+      "origin": [
+        25,
+        3.6,
+        6
+      ]
+    },
+    {
+      "space": "dorm-1",
+      "asset": "bed_5",
+      "origin": [
+        25,
+        3.6,
+        8.8
+      ]
+    },
+    {
+      "space": "dorm-1",
+      "asset": "bed_5",
+      "origin": [
+        25,
+        3.6,
+        11.6
+      ]
+    },
+    {
+      "space": "dorm-1",
+      "asset": "bed_5",
+      "origin": [
+        25,
+        3.6,
+        14.4
+      ]
+    },
+    {
+      "space": "dorm-2",
+      "asset": "bed_5",
+      "origin": [
+        31,
+        3.6,
+        6
+      ]
+    },
+    {
+      "space": "dorm-2",
+      "asset": "bed_5",
+      "origin": [
+        31,
+        3.6,
+        8.8
+      ]
+    },
+    {
+      "space": "dorm-2",
+      "asset": "bed_5",
+      "origin": [
+        31,
+        3.6,
+        11.6
+      ]
+    },
+    {
+      "space": "dorm-2",
+      "asset": "bed_5",
+      "origin": [
+        31,
+        3.6,
+        14.4
+      ]
+    },
+    {
+      "space": "dorm-3",
+      "asset": "bed_5",
+      "origin": [
+        37,
+        3.6,
+        6
+      ]
+    },
+    {
+      "space": "dorm-3",
+      "asset": "bed_5",
+      "origin": [
+        37,
+        3.6,
+        8.8
+      ]
+    },
+    {
+      "space": "dorm-3",
+      "asset": "bed_5",
+      "origin": [
+        37,
+        3.6,
+        11.6
+      ]
+    },
+    {
+      "space": "dorm-3",
+      "asset": "bed_5",
+      "origin": [
+        37,
+        3.6,
+        14.4
+      ]
+    },
+    {
+      "space": "dorm-4",
+      "asset": "bed_5",
+      "origin": [
+        43,
+        3.6,
+        6
+      ]
+    },
+    {
+      "space": "dorm-4",
+      "asset": "bed_5",
+      "origin": [
+        43,
+        3.6,
+        8.8
+      ]
+    },
+    {
+      "space": "dorm-4",
+      "asset": "bed_5",
+      "origin": [
+        43,
+        3.6,
+        11.6
+      ]
+    },
+    {
+      "space": "dorm-4",
+      "asset": "bed_5",
+      "origin": [
+        43,
+        3.6,
+        14.4
+      ]
+    },
+    {
+      "space": "staff-a",
+      "asset": "bed_5",
+      "origin": [
+        10,
+        3.6,
+        24
+      ]
+    },
+    {
+      "space": "staff-a",
+      "asset": "bed_5",
+      "origin": [
+        10,
+        3.6,
+        27
+      ]
+    },
+    {
+      "space": "staff-b",
+      "asset": "bed_5",
+      "origin": [
+        16,
+        3.6,
+        24
+      ]
+    },
+    {
+      "space": "staff-b",
+      "asset": "bed_5",
+      "origin": [
+        16,
+        3.6,
+        27
+      ]
+    }
+  ],
+  "expected_single_beds": 20,
+  "sleeping_spaces": [
+    "dorm-1",
+    "dorm-2",
+    "dorm-3",
+    "dorm-4",
+    "staff-a",
+    "staff-b"
+  ],
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "study",
+      "point": [
+        51,
+        3.6,
+        38
+      ]
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "archive",
+      "point": [
+        10,
+        -3,
+        30
+      ]
+    },
+    {
+      "rite": "Absolution",
+      "zone": "quad",
+      "point": [
+        32,
+        0,
+        32
+      ]
+    }
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32,
+      0,
+      74
+    ],
+    "yaw": -1.5707963267948966,
+    "cargo_route": [
+      [
+        28.372,
+        0,
+        74
+      ],
+      [
+        27,
+        0,
+        60
+      ],
+      [
+        27,
+        0,
+        53
+      ]
+    ],
+    "note": "Actual canonical van placement; cargo lane and ground support require runtime proof."
+  },
+  "terrain_cutouts": [
+    {
+      "bounds": [
+        7,
+        22,
+        19,
+        53
+      ],
+      "world_surface_y": -0.65,
+      "method": "Persisted editor topology punched leaves under archive, plant and stair; not yet authored"
+    }
+  ],
+  "flow_reservations": [
+    {
+      "id": "visitor",
+      "path": [
+        "stage",
+        "entry",
+        "grounds",
+        "reception",
+        "visitor-wc"
+      ],
+      "avoid": [
+        "dorm-1",
+        "dorm-2",
+        "dorm-3",
+        "dorm-4",
+        "staff-a",
+        "staff-b",
+        "lab",
+        "archive"
+      ]
+    },
+    {
+      "id": "food-supply",
+      "path": [
+        "grounds",
+        "receiving",
+        "pantry",
+        "kitchen",
+        "serving",
+        "dining"
+      ],
+      "avoid": [
+        "washup",
+        "refuse"
+      ]
+    },
+    {
+      "id": "dish-return",
+      "path": [
+        "dining",
+        "serving",
+        "washup",
+        "refuse"
+      ],
+      "avoid": [
+        "pantry",
+        "kitchen"
+      ]
+    },
+    {
+      "id": "residential-return",
+      "path": [
+        "upper-north",
+        "upper-east",
+        "upper-east-stair",
+        "east-stair",
+        "grounds"
+      ],
+      "avoid": [
+        "restricted",
+        "study",
+        "lab",
+        "lecture"
+      ]
+    }
+  ],
+  "decisions": [
+    "Four unequal ranges surround an actual open quadrangle; cloister and outside envelopes are not filled by a blanket upper slab.",
+    "Teaching and practical prep/cleanup remain in the east range; quiet library issue/reading/stacks remain west.",
+    "North sleeping rooms have real boundaries, individual storage obligations and side access beside full-scale beds; student and staff sanitary support are distinct.",
+    "Two independent upper return stairs serve the residential circulation without passing through occupied teaching or sleeping rooms.",
+    "Food, washing-up, provisions and refuse are separately bounded behind dining; archive and heat/utility plant have separate enclosures."
+  ],
+  "remaining": [
+    "Author actual individual storage, sanitary bays, task furniture, supported props and normal-use service infrastructure.",
+    "Resolve actual confidentiality controls and an accessible vertical route without creating a power-loss softlock; covered office approach and private staff sanitary enclosure are reserved.",
+    "Build full stair/roof/structure openings and load paths; upper restricted stacks and residential ranges require real support and daylight design.",
+    "Punch saved editor ground beneath the complete cellar/stair footprint and prove render/body/optical/object holes with filled negatives.",
+    "Shape quad/service terrain, place canonical van and prove six-player/hunt/ritual routes, native parity, networking, performance and final environmental storytelling."
+  ]
+}

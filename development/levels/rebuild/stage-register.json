@@ -146,11 +146,20 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "tools/build_map_rebuild_roughs.py",
+            "development/levels/rebuild/academy/rough-layout.json",
+            "development/levels/rebuild/academy/rough-plan.svg",
+            "development/levels/rebuild/academy/rough-sections.svg",
+            "development/levels/rebuild/academy/rough-asset-bounds.json",
+            "development/levels/rebuild/academy/rough-decisions.md",
+            "development/levels/rebuild/academy/rough-render-verification.json",
+            "development/levels/rebuild/previews/academy-revised-rough-plan.png"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Finish reference/support/privacy/accessibility review in full roster rough batch; construct real cloister/residence/teaching/service geometry, independent upper return stairs and persisted editor archive holes. Generic runtime remains unaccepted."
         },
         "S03": {
           "status": "NOT_AUDITED",

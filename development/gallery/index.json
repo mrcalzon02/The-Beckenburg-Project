@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2314,
+  "count": 2315,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -21054,6 +21054,16 @@
       "height": 200,
       "bytes": 30873,
       "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
+    },
+    {
+      "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",
+      "url": "development/levels/rebuild/previews/academy-revised-rough-plan.png",
+      "title": "Academy revised rough plan",
+      "kind": "Planning diagram",
+      "width": 1500,
+      "height": 1172,
+      "bytes": 123917,
+      "sha256": "4abcfe58cc512ffdfbb69f4ca78b0dea12f7afd19820efa28cadf83759590ee9"
     },
     {
       "path": "development/levels/rebuild/previews/asylum-revised-rough-plan.png",
