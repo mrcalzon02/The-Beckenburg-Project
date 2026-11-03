@@ -24,6 +24,8 @@ cp assets/runtime/directional-sprites.zip build/classes/org/beckenburg/direction
 # Six distinct identity-locked four-view Hunter/Elder character profiles.
 test -s assets/runtime/character-directions.zip
 cp assets/runtime/character-directions.zip build/classes/org/beckenburg/character-directions.zip
+test -s assets/runtime/hunter-animation.zip
+cp assets/runtime/hunter-animation.zip build/classes/org/beckenburg/hunter-animation.zip
 test -s assets/runtime/twins-directions.zip
 cp assets/runtime/twins-directions.zip build/classes/org/beckenburg/twins-directions.zip
 test -s assets/runtime/lore-master-directions.zip

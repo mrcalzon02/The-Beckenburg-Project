@@ -2562,6 +2562,7 @@ public final class SceneRenderer {
         }
     }
     /** First-person network rendering with low-poly teammate models and host-managed doors. */
+    private final HunterSpriteAnimation.Tracker hunterAnimation=new HunterSpriteAnimation.Tracker();
     public record RemoteBody(double x,double y,double z,int slot,int heading,String appearance,boolean crouched) {
         public RemoteBody(double x,double y,double z,int slot,int heading,String appearance){this(x,y,z,slot,heading,appearance,false);}
         public RemoteBody(double x,double y,double z,int slot,int heading){this(x,y,z,slot,heading,"observer");}
@@ -3657,13 +3658,11 @@ public final class SceneRenderer {
                 0,"observer",1.75,1.04,map.groundHeight(map.centerX(hunterRoom)-1.25,map.centerZ(hunterRoom)+2,hunterRoom)-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
         }
         for(RemoteBody person:others){
+            var pose=hunterAnimation.sample(person,clock);
             double distance=Math.hypot(person.x()-x,person.z()-z);
             if(distance>14||distance<1.35)continue;
-            DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,person.x(),person.z(),
-                person.heading(),person.appearance(),
-                CharacterVisuals.shape(person.appearance()).height()*(person.crouched()?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1),
-                CharacterVisuals.shape(person.appearance()).width(),
-                person.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
+            DirectionalSprites.drawHunter(pixels,depths,x,z,yaw,pitch,person,pose,
+                person.y()-(eyeHeight-1.62),lamp,renderWidth,renderHeight,focal);
         }
     }
     /** Render the actual v1 glTF meshes with perspective UVs and alpha. The

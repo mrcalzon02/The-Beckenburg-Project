@@ -68,6 +68,21 @@ def build():
             output.write_bytes(data)
     (ROOT / "assets/runtime/hunter-animation-manifest.json").write_text(json.dumps(manifest, indent=2)+"\n")
     preview.save(SOURCE / "preview.png")
+    animation = []
+    for pose in ("walk_a", "walk_b", "walk_a", "walk_b", "crouch"):
+        panel = Image.new("RGB", (480, 500), (35, 39, 46))
+        labels = ImageDraw.Draw(panel)
+        for col, hunter in enumerate(("cleric", "observer", "demonologist")):
+            labels.text((col*160+10, 5), hunter.title(), fill="white")
+            for row, view in enumerate(("front", "side")):
+                sprite = Image.open(ROOT / "assets/runtime/hunter-animation" / hunter / pose / f"{view}.png")
+                if pose == "crouch":
+                    sprite = sprite.resize((128, 132), Image.Resampling.LANCZOS)
+                panel.paste(sprite, (col*160+16, row*240+240-sprite.height), sprite)
+        labels.text((10, 485), pose.replace("_", " ").upper(), fill="white")
+        animation.append(panel)
+    animation[0].save(SOURCE / "animation-preview.gif", save_all=True,
+        append_images=animation[1:], duration=[220, 220, 220, 220, 1200], loop=0)
     print(f"Built {len(frames)} transparent hunter frames: {target}")
 
 
