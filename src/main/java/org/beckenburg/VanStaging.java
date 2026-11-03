@@ -111,8 +111,17 @@ public final class VanStaging {
     public boolean clearSight(double ax,double ay,double az,double bx,double by,double bz){
         var aa=local(ax,az);var bb=local(bx,bz);double[] a={aa.x(),ay-placement.y(),aa.z()},b={bb.x(),by-placement.y(),bb.z()};
         double w=HALF_WIDTH,iw=INTERIOR_HALF_WIDTH,f=FRONT,r=REAR,h=ROOF_Y,shoulder=ROOF_SHOULDER_Y,ir=INTERIOR_ROOF_HALF_WIDTH;
-        double[][] panels={{-w,FLOOR_Y,f,-iw,shoulder,r},{iw,FLOOR_Y,f,w,shoulder,r},{-w,FLOOR_Y-.13,f,w,FLOOR_Y,r},{-ir-.1,h-.095,f,ir+.1,h+.07,r},{-w,FLOOR_Y,r-.08,w,h,r+CAB_LENGTH}};
+        double wf=VanInteriorLayout.WHEEL_WELL_FRONT,wr=VanInteriorLayout.WHEEL_WELL_REAR,wi=VanInteriorLayout.WHEEL_WELL_INNER_X;
+        double[][] panels={{-w,FLOOR_Y,f,-iw,shoulder,r},{iw,FLOOR_Y,f,w,shoulder,r},
+            {-w,FLOOR_Y-.13,f,w,FLOOR_Y,wf},{-wi,FLOOR_Y-.13,wf,wi,FLOOR_Y,wr},{-w,FLOOR_Y-.13,wr,w,FLOOR_Y,r},
+            {-ir-.1,h-.095,f,ir+.1,h+.07,r},{-w,FLOOR_Y,r-.08,w,h,r+CAB_LENGTH}};
         for(var p:panels)if(rayBox(a,b,p))return false;
+        for(double side:new double[]{-1,1}){
+            double inner=side*VanInteriorLayout.WHEEL_WELL_INNER_X;
+            double outer=side*VanInteriorLayout.WHEEL_WELL_OUTER_X;
+            if(rayBox(a,b,new double[]{Math.min(inner,outer),FLOOR_Y,VanInteriorLayout.WHEEL_WELL_FRONT,
+                    Math.max(inner,outer),VanInteriorLayout.WHEEL_WELL_TOP,VanInteriorLayout.WHEEL_WELL_REAR}))return false;
+        }
         if(cargoDoorClosed&&rayBox(a,b,new double[]{-w,FLOOR_Y,f,w,h,f+.08}))return false;
         for(double side:new double[]{-1,1}){
             double[] p={side*w,shoulder,f},q={side*(ir+.1),h,f},s={side*(ir+.1),h,r},t={side*w,shoulder,r};

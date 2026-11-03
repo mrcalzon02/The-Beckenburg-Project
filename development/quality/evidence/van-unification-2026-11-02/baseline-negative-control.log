@@ -1,0 +1,19 @@
+VanWheelWellTest baseline 13932e06 exit=1
+java.lang.AssertionError: deck or wheel-well bottom must not cut across exterior wheel barrels
+	at org.beckenburg.VanWheelWellTest.check(VanWheelWellTest.java:5)
+	at org.beckenburg.VanWheelWellTest.main(VanWheelWellTest.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.beckenburg.VerificationMain.main(VerificationMain.java:6)
+
+VanRearFitTest baseline 13932e06 exit=1
+java.lang.AssertionError: rear sheet metal and hinge frame must share the actual donor opening
+	at org.beckenburg.VanRearFitTest.check(VanRearFitTest.java:5)
+	at org.beckenburg.VanRearFitTest.main(VanRearFitTest.java:8)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.beckenburg.VerificationMain.main(VerificationMain.java:6)

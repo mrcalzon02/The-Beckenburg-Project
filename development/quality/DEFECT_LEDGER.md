@@ -10,6 +10,62 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-230 — Rear cargo liner, roof and hinges sit behind the donor body and generic doors discard its atlas
+
+**Status:** fixed-scoped; 13 focused checks pass; installed GPU review pending · **Affected:** Shared Castle and every investigation-arrival van
+
+Rear liner/roof/floor project behind the outer shell; doors pivot from unsupported points and use plain panels with invented windows.
+
+Cause / uncertainty: Exterior fit uses bumper Z -2.10 rather than actual donor rear sheet-metal Z -1.982265830, shifting the body about 19cm forward of its interior. Donor large rear panel faces were omitted.
+
+Fix / next action: Use actual donor rear datum; join liner and exterior profiles with a finished rear frame; restore all six original donor door triangles/UV corners and attach visible hinges at outer jambs.
+
+Evidence and verification: VanRearFitTest checks actual rear datum, rendered UV corners and pivot attachment; matched rear-open, rear-closed and rear-frame views at all three captured sites. See development/levels/previews/van-unification/ and development/quality/evidence/van-unification-2026-11-02/.
+
+Older-map obligation: Shared-module code and all-site station regression verified; individual image review covers Castle, House and Hollow Creek. No complete older-map or installed GPU acceptance inferred.
+
+### DEV-229 — Full-width cargo deck slices through the exterior rear wheel barrels
+
+**Status:** fixed-scoped; 13 focused checks pass; installed GPU review pending · **Affected:** Shared Castle and every investigation-arrival van
+
+From outside, the raised cargo floor forms a horizontal sheet across each rear tyre.
+
+Cause / uncertainty: Prototype floor slab spans the full body width through the donor wheel opening; a bottom face on a wheel cover repeats the intersection.
+
+Fix / next action: Split the deck around both wheel openings, terminating it at the housing inner wall; leave wheel-well undersides open. Optical floor slabs share the cutout.
+
+Evidence and verification: VanWheelWellTest rejects actual deck triangles overlapping wheel volumes; matched exterior-wheel closeups at Castle, House and Hollow Creek. See development/levels/previews/van-unification/ and development/quality/evidence/van-unification-2026-11-02/.
+
+Older-map obligation: Shared-module code and all-site station regression verified; individual image review covers Castle, House and Hollow Creek. No complete older-map or installed GPU acceptance inferred.
+
+### DEV-227 — Imported rear tyres protrude through the unified van cargo floor
+
+**Status:** fixed-scoped; 13 focused local checks pass; installed GPU review pending · **Affected:** Shared Castle and investigation-arrival van module; runtime captures at Castle, House and Hollow Creek
+
+Rear tread and hub remain exposed above the cargo floor and beyond the small legacy wheel cover.
+
+Cause / uncertainty: Imported tyre bounds exceed the prototype cover in both height and longitudinal span.
+
+Fix / next action: Fit closed 3D metal wheel housings around the actual tyres; wrap lower shelving and native-size stock packing around the housing; share shelf and housing coordinates with optical/aim blockers.
+
+Evidence and verification: development/levels/previews/van-unification/: 42 matched before/after production software-renderer PNGs. VanWheelWellTest fails baseline actual cap geometry and passes repair; VanRackStockTest checks all 372 units per tier with no housing intersections. Thirteen passing focused logs: development/quality/evidence/van-unification-2026-11-02/.
+
+Older-map obligation: Shared assembly repair reaches every VanStaging consumer. All-site station access includes a persisted custom map. Individual visual evidence covers Castle, House and Hollow Creek only; this does not certify every older map, installed gameplay or GPU performance.
+
+### DEV-228 — All-site van integration test depends on a selected developer custom level
+
+**Status:** fixed-scoped; isolated all-site check passes · **Affected:** VanModuleIntegrationTest, USER site
+
+The all-site test throws No authored user level selected on a clean profile.
+
+Cause / uncertainty: Site.values() includes USER but the test constructs HouseMap(USER) without authoring/selecting a fixture.
+
+Fix / next action: Use existing AuthoredTestSupport.userFixture() and fixture.map(site), preserving USER and all built-in locations in the assertions.
+
+Evidence and verification: VanModuleIntegrationTest.log in development/quality/evidence/van-unification-2026-11-02/; isolated test home and temporary directory; no developer selection required.
+
+Older-map obligation: Test-fixture correction only; no runtime level selection behavior changes.
+
 ### DEV-226 — Playable hunters remain static while walking and crouch by squashing idle art
 
 **Status:** fixed-scoped; local Java 17 renderer checks pass; installed multiplayer review pending · **Affected:** All three playable hunter appearances in the shared teammate billboard renderer

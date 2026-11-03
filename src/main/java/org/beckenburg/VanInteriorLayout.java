@@ -27,6 +27,24 @@ public final class VanInteriorLayout {
         new CeilingLight(0,ROOF_Y-.025,.5),
         new CeilingLight(1.40,ROOF_Y-.025,.5));
     public static final double AISLE_HALF_WIDTH=.48;
+    /** Measured from the transformed donor rear tyres: |X| .721-.996,
+     * Y 0-.951, Z -1.112 to -.007. Enclose their cargo-side volume with a
+     * continuous metal housing, leaving the outside tread untouched. */
+    public static final double WHEEL_WELL_INNER_X=.69, WHEEL_WELL_OUTER_X=.917;
+    public static final double WHEEL_WELL_FRONT=-1.17, WHEEL_WELL_REAR=.07;
+    public static final double WHEEL_WELL_TOP=1.00;
+    public record ShelfBay(double back,double y,double z0,double z1){}
+    /** Lower shelves wrap around the housings; packing, rendering and aim
+     * blockers consume the same bays so no stock is buried inside a well. */
+    public static List<ShelfBay> shelfBays(int row){
+        double y=FLOOR_Y+.14+row*.33,top=y+.315;
+        double t=Math.max(0,(top-VanStaging.ROOF_SHOULDER_Y)/(ROOF_Y-VanStaging.ROOF_SHOULDER_Y));
+        double back=-VanStaging.INTERIOR_HALF_WIDTH+t*(VanStaging.INTERIOR_HALF_WIDTH-VanStaging.INTERIOR_ROOF_HALF_WIDTH)+.025;
+        if(y-.025>=WHEEL_WELL_TOP)return List.of(new ShelfBay(back,y,-1.94,1.54));
+        return List.of(new ShelfBay(back,y,-1.94,WHEEL_WELL_FRONT),
+            new ShelfBay(-WHEEL_WELL_INNER_X+.01,y,WHEEL_WELL_FRONT,WHEEL_WELL_REAR),
+            new ShelfBay(back,y,WHEEL_WELL_REAR,1.54));
+    }
     public static final int TOOL_COLUMNS=7,TOOL_ROWS=6,TOOL_CAPACITY=TOOL_COLUMNS*TOOL_ROWS;
     public static final double TOOL_COLUMN_PITCH=.50;
     public static final double TOOL_FIRST_Z=-1.70, TOOL_FIRST_Y=FLOOR_Y+.27, TOOL_ROW_PITCH=.32;
@@ -47,7 +65,9 @@ public final class VanInteriorLayout {
         List<ToolSocket> slots=new ArrayList<>();
         for(int i=0;i<catalog.size();i++){
             int row=i/TOOL_COLUMNS,col=i%TOOL_COLUMNS;
-            slots.add(new ToolSocket(catalog.get(i),row==5?-.64:-.70,
+            double z=TOOL_FIRST_Z+col*TOOL_COLUMN_PITCH;
+            boolean besideWell=TOOL_FIRST_Y+row*TOOL_ROW_PITCH<WHEEL_WELL_TOP&&z>=WHEEL_WELL_FRONT&&z<=WHEEL_WELL_REAR;
+            slots.add(new ToolSocket(catalog.get(i),besideWell?-.60:row==5?-.64:-.70,
                 TOOL_FIRST_Y+row*TOOL_ROW_PITCH,TOOL_FIRST_Z+col*TOOL_COLUMN_PITCH,row,col));
         }
         return List.copyOf(slots);

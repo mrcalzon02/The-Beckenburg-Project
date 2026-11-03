@@ -550,6 +550,10 @@ public final class SceneRenderer {
     /** Standard van shell and service fixtures. Reused unchanged on every location. */
     private static void vanBox(List<Face> faces,VanStaging van,
             double lx,double y,double lz,double sx,double sy,double sz,int material){
+        vanBox(faces,van,lx,y,lz,sx,sy,sz,material,true);
+    }
+    private static void vanBox(List<Face> faces,VanStaging van,
+            double lx,double y,double lz,double sx,double sy,double sz,int material,boolean bottom){
         // Translate all eight corners, preserving van yaw (including ninety-degree sites).
         VanStaging.Position a=van.world(lx,lz),b=van.world(lx+sx,lz),
             c=van.world(lx+sx,lz+sz),d=van.world(lx,lz+sz);
@@ -562,48 +566,42 @@ public final class SceneRenderer {
         texturedQuad(faces,p1,p2,p6,p5,material,0,0,sz,0,sz,sy,0,sy,0xf1f1f1);
         texturedQuad(faces,p2,p3,p7,p6,material,0,0,sx,0,sx,sy,0,sy,0xdadada);
         texturedQuad(faces,p4,p5,p6,p7,material,0,0,sx,0,sx,sz,0,sz,0xffffff);
-        texturedQuad(faces,p3,p2,p1,p0,material,0,0,sx,0,sx,sz,0,sz,0xbebebe);
+        if(bottom)texturedQuad(faces,p3,p2,p1,p0,material,0,0,sx,0,sx,sz,0,sz,0xbebebe);
     }
     /** Two independent cargo leaves pivot around the outer rear jambs.
      * Host collision remains authoritative in VanStaging: shut leaves seal
      * the doorway and opened leaves swing beyond the rear cargo entrance.
      */
     private static void cargoDoorLeaf(List<Face> faces,VanStaging van,boolean left){
-        double w=VanStaging.HALF_WIDTH,front=VanStaging.FRONT;
-        double hingeX=left?-w+.09:w-.09;
-        double inward=left?1:-1;
-        double span=w-.09;
-        // A proper pair of outward-opening rear doors, not an opaque sliding block.
-        double swing=van.cargoDoorClosed()?0:(left?-Math.toRadians(99):Math.toRadians(99));
-        double endX=hingeX+inward*span*Math.cos(swing);
-        double endZ=front+inward*span*Math.sin(swing);
-        // Two parallel surfaces make the door visible both inside and outside.
-        double nx=-(endZ-front)/span*.035,nz=(endX-hingeX)/span*.035;
-        VanStaging.Position a=van.world(hingeX+nx,front+nz);
-        VanStaging.Position b=van.world(endX+nx,endZ+nz);
-        VanStaging.Position c=van.world(endX-nx,endZ-nz);
-        VanStaging.Position d=van.world(hingeX-nx,front-nz);
-        Point a0=new Point(a.x(),VanStaging.FLOOR_Y,a.z()),a1=new Point(a.x(),VanStaging.ROOF_Y-.12,a.z());
-        Point b0=new Point(b.x(),VanStaging.FLOOR_Y,b.z()),b1=new Point(b.x(),VanStaging.ROOF_Y-.12,b.z());
-        Point c0=new Point(c.x(),VanStaging.FLOOR_Y,c.z()),c1=new Point(c.x(),VanStaging.ROOF_Y-.12,c.z());
-        Point d0=new Point(d.x(),VanStaging.FLOOR_Y,d.z()),d1=new Point(d.x(),VanStaging.ROOF_Y-.12,d.z());
-        quad(faces,a0,b0,b1,a1,left?0x78838b:0x707b83);
-        quad(faces,c0,d0,d1,c1,0x596770);
-        quad(faces,a0,d0,d1,a1,0x48565d);
-        quad(faces,b0,c0,c1,b1,0x616e77);
-        quad(faces,a1,b1,c1,d1,0x9ca3a5);
-        // A visible inset window is mounted in each door's upper half.
-        double u0=.20,u1=.83;
-        VanStaging.Position p=van.world(hingeX+(endX-hingeX)*u0+nx*.15,
-                                      front+(endZ-front)*u0+nz*.15);
-        VanStaging.Position q=van.world(hingeX+(endX-hingeX)*u1+nx*.15,
-                                      front+(endZ-front)*u1+nz*.15);
-        quad(faces,new Point(p.x(),1.68,p.z()),new Point(q.x(),1.68,q.z()),
-             new Point(q.x(),2.28,q.z()),new Point(p.x(),2.28,p.z()),0x344856);
-        // Door handles remain readable when shut or fully open.
-        VanStaging.Position handle=van.world(hingeX+(endX-hingeX)*.88,
-                                             front+(endZ-front)*.88);
-        box(faces,handle.x()-.045,.96,handle.z()-.04,.09,.13,.08,0xd8c9a1);
+        int material=GlbProps.model("ggbot_car08_van_shell").triangles().get(0).material();
+        var triangles=VanBodyGeometry.door(left);
+        for(var triangle:triangles){
+            Point[] outer=new Point[3],inner=new Point[3];
+            for(int i=0;i<3;i++){
+                var p=VanBodyGeometry.doorPoint(triangle[i],left,van.cargoDoorClosed(),-.015);
+                var q=VanBodyGeometry.doorPoint(triangle[i],left,van.cargoDoorClosed(),.025);
+                var a=van.world(p[0],p[2]);var b=van.world(q[0],q[2]);
+                outer[i]=new Point(a.x(),p[1],a.z());inner[i]=new Point(b.x(),q[1],b.z());
+            }
+            faces.add(new Face(outer[0],outer[1],outer[2],0xffffff,material,
+                triangle[0].u(),triangle[0].v(),triangle[1].u(),triangle[1].v(),triangle[2].u(),triangle[2].v()));
+            faces.add(new Face(inner[2],inner[1],inner[0],0xffffff,MaterialAtlas.IRON,0,0,1,0,1,1));
+        }
+        // Join only the perimeter edges; no internal diagonal seam or floating handle.
+        var first=triangles.get(0);var last=triangles.get(2);
+        var boundary=left?new VanBodyGeometry.Corner[]{first[0],first[1],last[1],first[2],triangles.get(1)[1]}
+            :new VanBodyGeometry.Corner[]{first[0],first[2],last[2],first[1],triangles.get(1)[2]};
+        for(int i=0;i<boundary.length;i++){
+            Point[] p=new Point[4];var a=boundary[i];var b=boundary[(i+1)%boundary.length];
+            int n=0;for(var v:new VanBodyGeometry.Corner[]{a,b,b,a}){
+                var q=VanBodyGeometry.doorPoint(v,left,van.cargoDoorClosed(),n<2?-.015:.025);
+                var world=van.world(q[0],q[2]);p[n++]=new Point(world.x(),q[1],world.z());
+            }
+            texturedQuad(faces,p[0],p[1],p[2],p[3],MaterialAtlas.IRON,0,0,1,0,1,.04,0,.04,0xffffff);
+        }
+        double hinge=left?-VanStaging.HALF_WIDTH:VanStaging.HALF_WIDTH;
+        for(double y:new double[]{.78,1.55,2.30})
+            vanBox(faces,van,hinge-.022,y,VanStaging.FRONT-.045,.044,.12,.09,MaterialAtlas.IRON);
     }
 
     /** Fit the shipped textured GGBot van mesh onto the one authoritative
@@ -614,9 +612,9 @@ public final class SceneRenderer {
      */
     static double[] vanExteriorLocal(double x,double y,double z){
         double span=VanStaging.REAR+VanStaging.CAB_LENGTH-VanStaging.FRONT;
-        return new double[]{x*VanStaging.HALF_WIDTH/1.71,
+        return new double[]{x*VanStaging.HALF_WIDTH/VanBodyGeometry.SOURCE_HALF_WIDTH,
             y*VanStaging.ROOF_Y/2.32,
-            VanStaging.FRONT+(z+2.10)*span/4.14};
+            VanStaging.FRONT+(z-VanBodyGeometry.SOURCE_REAR)*span/(2.04-VanBodyGeometry.SOURCE_REAR)};
     }
     /** The original GLB has a sealed rear cap and passenger interior. Keep the
      * textured *external* metal, cab, windows and volumetric tyres, but cut the
@@ -677,6 +675,24 @@ public final class SceneRenderer {
             new Point(cc.x(),yTop,cc.z()),
             new Point(d.x(),yTop,d.z()),material,
             0,0,len,0,len,yTop-yBottom,0,yTop-yBottom,0xffffff);
+    }
+    /** Finish the measured gap between exterior sheet metal and cargo liner
+     * at the actual donor rear opening, so no liner edge hangs behind it. */
+    private static void vanRearFrame(List<Face> out,VanStaging van){
+        double w=VanStaging.HALF_WIDTH,iw=VanStaging.INTERIOR_HALF_WIDTH;
+        double h=VanStaging.ROOF_Y,shoulder=VanStaging.ROOF_SHOULDER_Y,ir=VanStaging.INTERIOR_ROOF_HALF_WIDTH;
+        double outerShoulder=VanBodyGeometry.SOURCE_SHOULDER_Y*h/2.32;
+        double crown=VanBodyGeometry.SOURCE_CROWN_X*w/VanBodyGeometry.SOURCE_HALF_WIDTH;
+        double[][] outer={{-w,VanStaging.FLOOR_Y},{-w,outerShoulder},{-crown,h},{crown,h},{w,outerShoulder},{w,VanStaging.FLOOR_Y}};
+        double[][] inner={{-iw,VanStaging.FLOOR_Y},{-iw,shoulder},{-ir,h-.095},{ir,h-.095},{iw,shoulder},{iw,VanStaging.FLOOR_Y}};
+        for(int i=0;i<5;i++){
+            Point[] p=new Point[4];int n=0;
+            for(var q:new double[][]{outer[i],outer[i+1],inner[i+1],inner[i]}){
+                var world=van.world(q[0],VanStaging.FRONT+.028);p[n++]=new Point(world.x(),q[1],world.z());
+            }
+            texturedQuad(out,p[0],p[1],p[2],p[3],MaterialAtlas.IRON,0,0,1,0,1,.15,0,.15,0xffffff);
+        }
+        vanBox(out,van,-w,VanStaging.FLOOR_Y-.07,VanStaging.FRONT,w*2,.07,.06,MaterialAtlas.IRON);
     }
     /** One complete reusable VAN, shared by solo and network world renderers.
      * Architectural shell, floor, supports and socket data are all local to
@@ -770,7 +786,13 @@ public final class SceneRenderer {
         double floor=VanStaging.FLOOR_Y,h=VanStaging.ROOF_Y,iw=VanStaging.INTERIOR_HALF_WIDTH;
         double ir=VanStaging.INTERIOR_ROOF_HALF_WIDTH,shoulder=VanStaging.ROOF_SHOULDER_Y;
         // Raised van deck and a supported fold-out loading ramp share the movement surface.
-        vanBox(faces,van,-w,floor-.13,f,w*2,.13,r-f,MaterialAtlas.IRON);
+        // The deck stops at each wheel housing's inner wall. A full-width
+        // slab here would slice visibly through the exterior wheel barrels.
+        double wellFront=VanInteriorLayout.WHEEL_WELL_FRONT,wellRear=VanInteriorLayout.WHEEL_WELL_REAR;
+        double wellInner=VanInteriorLayout.WHEEL_WELL_INNER_X;
+        vanBox(faces,van,-w,floor-.13,f,w*2,.13,wellFront-f,MaterialAtlas.IRON);
+        vanBox(faces,van,-wellInner,floor-.13,wellFront,wellInner*2,.13,wellRear-wellFront,MaterialAtlas.IRON);
+        vanBox(faces,van,-w,floor-.13,wellRear,w*2,.13,r-wellRear,MaterialAtlas.IRON);
         vanBox(faces,van,-.50,floor+.001,f+.08,1,.012,r-f-.20,MaterialAtlas.IRON);
         for(double z=f+.3;z<r-.2;z+=.35)vanBox(faces,van,-.49,floor+.014,z,.98,.006,.018,MaterialAtlas.IRON);
         var ra=van.world(-VanStaging.RAMP_HALF_WIDTH,f-VanStaging.RAMP_LENGTH);
@@ -784,26 +806,26 @@ public final class SceneRenderer {
         vanImportedExterior(faces,van);
         // Preserve only the useful existing cargo liner, deck, ramp, support,
         // bulkhead, operational fixtures and accessible six-hunter interior.
-        vanBox(faces,van,-iw,floor+.02,f+.08,.025,shoulder-floor-.03,r-f-.16,MaterialAtlas.AGED_WOOD);
-        vanBox(faces,van,iw-.025,floor+.02,f+.08,.025,shoulder-floor-.03,r-f-.16,MaterialAtlas.AGED_WOOD);
-        vanSlope(faces,van,-iw+.025,shoulder,-ir,h-.095,f+.08,r-.08,MaterialAtlas.CEILING);
-        vanSlope(faces,van,iw-.025,shoulder,ir,h-.095,f+.08,r-.08,MaterialAtlas.CEILING);
-        vanBox(faces,van,-ir,h-.095,f+.08,ir*2,.025,r-f-.16,MaterialAtlas.CEILING);
+        vanBox(faces,van,-iw,floor,f,.025,shoulder-floor,r-f-.08,MaterialAtlas.AGED_WOOD);
+        vanBox(faces,van,iw-.025,floor,f,.025,shoulder-floor,r-f-.08,MaterialAtlas.AGED_WOOD);
+        vanSlope(faces,van,-iw+.025,shoulder,-ir,h-.095,f,r-.08,MaterialAtlas.CEILING);
+        vanSlope(faces,van,iw-.025,shoulder,ir,h-.095,f,r-.08,MaterialAtlas.CEILING);
+        vanBox(faces,van,-ir,h-.095,f,ir*2,.025,r-f-.08,MaterialAtlas.CEILING);
+        vanRearFrame(faces,van);
         // Driver's cab remains partitioned: the actual model cab is nonwalkable.
         vanBox(faces,van,-iw,floor,r-.08,iw*2,h-floor,.08,MaterialAtlas.IRON);
-        for(double x:new double[]{-iw,iw-.19})
-            vanBox(faces,van,x,floor,f+.65,.19,.25,.84,MaterialAtlas.IRON);
+        for(double x:new double[]{-VanInteriorLayout.WHEEL_WELL_OUTER_X,VanInteriorLayout.WHEEL_WELL_INNER_X})
+            vanBox(faces,van,x,floor,VanInteriorLayout.WHEEL_WELL_FRONT,
+                VanInteriorLayout.WHEEL_WELL_OUTER_X-VanInteriorLayout.WHEEL_WELL_INNER_X,
+                VanInteriorLayout.WHEEL_WELL_TOP-floor,
+                VanInteriorLayout.WHEEL_WELL_REAR-VanInteriorLayout.WHEEL_WELL_FRONT,MaterialAtlas.IRON,false);
         for(double z=f+.35;z<r-.15;z+=.65){
             for(double x:new double[]{-iw+.025,iw-.055})vanBox(faces,van,x,floor+.03,z,.03,shoulder-floor-.05,.035,MaterialAtlas.IRON);
             vanBox(faces,van,-ir,h-.13,z,ir*2,.025,.035,MaterialAtlas.IRON);
         }
         vanBox(faces,van,-iw+.03,floor+.05,-1.91,.035,1.93,3.45,MaterialAtlas.IRON);
-        for(int row=0;row<6;row++){
-            double y=floor+.14+row*.33,top=y+.315;
-            double t=Math.max(0,(top-VanStaging.ROOF_SHOULDER_Y)/(VanInteriorLayout.ROOF_Y-VanStaging.ROOF_SHOULDER_Y));
-            double back=-iw+t*(iw-ir)+.025;
-            vanBox(faces,van,back,y-.025,-1.94,-.51-back,.025,3.48,MaterialAtlas.AGED_WOOD);
-        }
+        for(int row=0;row<6;row++)for(var bay:VanInteriorLayout.shelfBays(row))
+            vanBox(faces,van,bay.back(),bay.y()-.025,bay.z0(),-.51-bay.back(),.025,bay.z1()-bay.z0(),MaterialAtlas.AGED_WOOD);
         for(double z:new double[]{-1.2,-.2,.8})
             vanBox(faces,van,.85,floor+1.36,z-.10,.04,.14,.20,MaterialAtlas.IRON);
         for(var light:VanInteriorLayout.CEILING_LIGHTS){var pos=van.world(0,light.z());imported(faces,"level_utility_light",pos.x(),light.mountY(),pos.z(),light.scale(),van.placement().yaw());}

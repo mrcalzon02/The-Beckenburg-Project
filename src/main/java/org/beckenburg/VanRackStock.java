@@ -70,12 +70,8 @@ public final class VanRackStock {
         }
         units.sort(Comparator.<Unit>comparingDouble(u->-u.d*u.h*u.w).thenComparing(u->u.entry.id).thenComparing(u->u.entry.tier).thenComparingInt(u->u.number));
         List<Box> free=new ArrayList<>();
-        for(int row=0;row<6;row++){
-            double y=VanStaging.FLOOR_Y+.14+row*.33,top=y+.315;
-            double t=Math.max(0,(top-VanStaging.ROOF_SHOULDER_Y)/(VanInteriorLayout.ROOF_Y-VanStaging.ROOF_SHOULDER_Y));
-            double back=-VanStaging.INTERIOR_HALF_WIDTH+t*(VanStaging.INTERIOR_HALF_WIDTH-VanStaging.INTERIOR_ROOF_HALF_WIDTH)+.025;
-            free.add(new Box(back,y,-1.94,-.51-back,.315,3.48,row));
-        }
+        for(int row=0;row<6;row++)for(var bay:VanInteriorLayout.shelfBays(row))
+            free.add(new Box(bay.back(),bay.y(),bay.z0(),-.51-bay.back(),.315,bay.z1()-bay.z0(),row));
         List<Placed> placed=new ArrayList<>();final double gap=.008;
         for(Unit u:units){
             Box best=null;double waste=Double.POSITIVE_INFINITY;
