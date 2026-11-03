@@ -956,6 +956,94 @@ def college():
             'Complete terrain around three buildings and canonical van; prove six-player/hunt/ritual routes, native/runtime/network parity, performance and final weathered storytelling detail.'])
 
 
+def church():
+    zones,links,fit=[],[],[]
+    def room(key,name,bounds,y,owner,kind='inside',height=3):
+        zones.append(dict(id=key,name=name,bounds=bounds,y=y,height=height,owner=owner,kind=kind,purpose=name))
+    for key,name,bounds,owner,kind,height in [
+        ('nave','Forty-place nave with centre and side aisles',[18,12,26,26],0,'inside',6),
+        ('rear-nave','Under-choir circulation and stair approach',[18,26,26,34],0,'circulation',3),
+        ('vestibule','Weather vestibule and arrival',[18,34,26,39],1,'circulation',3),
+        ('parish-lobby','Parish work approach',[13,30,18,34],2,'circulation',3),
+        ('office','Private parish work and meetings',[10,26,15,30],2,'inside',3),
+        ('records','Confidential parish records',[15,26,18,30],2,'inside',3),
+        ('parish-wc','Discreet parish sanitary support',[10,30,13,34],2,'inside',3),
+        ('conversation-entry','Quiet conversation waiting and access',[14,18,18,26],3,'circulation',3),
+        ('confessional','Private confessional conversation enclosure',[10,18,14,22],3,'inside',3),
+        ('consultation','Private parish consultation',[10,22,14,26],3,'inside',3),
+        ('chancel','Chancel and supported altar arrangement',[18,6,26,12],4,'inside',5),
+        ('chapel','Side chapel and quiet remembrance',[26,14,34,26],5,'inside',4),
+        ('vestry','Vestment preparation and service work',[26,6,31,14],6,'inside',3),
+        ('vestry-wash','Vestry washing and supported sink',[31,6,34,10],6,'inside',3),
+        ('vestments','Dry vestment storage',[31,10,34,14],6,'inside',3),
+        ('crypt-entry','Separate crypt stair and clear side bypass',[26,26,34,34],11,'circulation',3)]:room(key,name,bounds,0,owner,kind,height)
+    for key,name,bounds,owner,kind in [
+        ('choir-stair','Choir landing outside flight guards',[18,26,21,34],7,'circulation'),
+        ('choir','Choir seating and music stands',[21,26,26,34],7,'inside'),
+        ('tower-stair','Tower stair and protected side bypass',[10,26,18,34],8,'circulation'),
+        ('music-entry','Music and organ service approach',[26,26,29,34],9,'circulation'),
+        ('music-archive','Music scores and parish performance archive',[29,26,34,30],9,'inside'),
+        ('organ-service','Organ maintenance and working clearance',[29,30,34,34],9,'inside')]:room(key,name,bounds,3,owner,kind)
+    room('belfry','Bell frame with guarded inspection access',[10,26,18,34],6,10)
+    for key,name,bounds,kind in [
+        ('crypt-stair','Crypt stair lower approach',[26,26,34,34],'circulation'),
+        ('crypt-aisle','Crypt distribution and memorial approach',[22,12,26,34],'circulation'),
+        ('crypt-memorial','Crypt memorial chamber and clear rite bay',[10,26,22,34],'inside'),
+        ('vault-west-a','Sealed western burial vault A',[10,12,16,26],'inside'),
+        ('vault-west-b','Sealed western burial vault B',[16,12,22,26],'inside'),
+        ('vault-east','Sealed eastern burial vault',[26,12,34,26],'inside'),
+        ('vault-north','Sealed under-chancel burial vault',[10,6,34,12],'inside')]:room(key,name,bounds,-3,11,kind)
+    room('grounds','Churchyard and cemetery envelope',[4,0,40,39],0,12,'outside',12)
+    room('entry','Churchyard gate and entrance approach',[1,39,44,58.4],0,13,'outside',12)
+    room('stage','Canonical parish van apron',[14,45,30,58],0,14,'staging')
+    byid={z['id']:z for z in zones}
+    def door(a,b,x,z,width=1.2,opening='doorway'):
+        y=byid[a]['y'];assert byid[b]['y']==y
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='level',width=width,points=[review.center(byid[a]),[x,y,z],review.center(byid[b])],threshold=[x,y,z],opening=opening,access='parish',note='Exact proposed threshold; roof, wall, leaf and circulation must share this authority.'))
+    for a,b,x,z in [
+        ('stage','entry',22,45),('entry','vestibule',22,39),('vestibule','rear-nave',22,34),
+        ('rear-nave','parish-lobby',18,32),('parish-lobby','office',14,30),('parish-lobby','records',16.5,30),('parish-lobby','parish-wc',13,32),
+        ('nave','conversation-entry',18,22),('conversation-entry','confessional',14,20),('conversation-entry','consultation',14,24),
+        ('nave','chapel',26,20),('chancel','vestry',26,9),('vestry','chapel',28.5,14),('vestry','vestry-wash',31,8),('vestry','vestments',31,12),
+        ('chapel','crypt-entry',28.5,26),('chapel','grounds',34,20),('vestry','grounds',28.5,6),
+        ('choir-stair','choir',21,33),('choir-stair','tower-stair',18,33.25),('choir','music-entry',26,32.7),
+        ('music-entry','music-archive',29,28),('music-entry','organ-service',29,32),
+        ('crypt-stair','crypt-aisle',26,30),('crypt-aisle','crypt-memorial',22,30),
+        ('crypt-memorial','vault-west-a',13,26),('crypt-aisle','vault-west-b',22,20),('crypt-aisle','vault-east',26,20),('crypt-aisle','vault-north',24,12),
+        ('grounds','entry',6,39)]:door(a,b,x,z)
+    door('nave','rear-nave',22,26,7.6,'open structural archway')
+    door('nave','chancel',22,12,2,'open chancel archway')
+    for a,b,x,z,y0,y1,width in [('rear-nave','choir-stair',19.5,27.6,0,3,1.3),('tower-stair','belfry',16.5,27.6,3,6,1.3),('crypt-stair','crypt-entry',31.5,27.6,-3,0,1.3)]:
+        run=(y1-y0)*1.6
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='stairs',width=width,points=[[x,y0,z],[x,y1,z+run]],rise_m=y1-y0,run_m=run,headroom_m=2.2,landing_depth_m=1.5,risers=18,
+            construction='Real full-run voids, floor/roof depth, guards and unobstructed side bypass/end landings required.',note='Tower threshold is beyond the choir flight side guard, not inside its run. Crypt flight is outside nave seating.'))
+    for row in range(10):
+        for x in [19.3,20.3,23.7,24.7]:fit.append(dict(space='nave',asset='chair_mp_5',origin=[x,0,13.5+row*1.2],yaw=math.pi))
+    fit.extend([dict(space='parish-wc',asset='toilet_mp_1',origin=[11.5,.235,31.2]),dict(space='parish-wc',asset='level_bath_basin',origin=[10.6,0,33.1]),dict(space='vestry-wash',asset='level_bath_basin',origin=[33.4,0,8])])
+    return dict(version=2,id='CHURCH',title='St. Brigid Parish — revised worship and crypt rough',status='S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED',site_bounds=[1,0,44,59],zones=zones,links=links,
+        capacity='Forty seated nave places, a small choir and bounded parish work; normal-use seats do not create forty search rooms.',
+        seating_aisles=[dict(name='centre',bounds=[21,12,23,26]),dict(name='west side',bounds=[18.08,12,18.95,26]),dict(name='east side',bounds=[25.05,12,25.92,26])],
+        fit_assets=['chair_mp_5','toilet_mp_1','level_bath_basin'],prop_fit_reservations=fit,expected_single_beds=0,sleeping_spaces=[],
+        rituals=[dict(rite='Banishment',zone='chapel',point=[30,0,20]),dict(rite='Cleansing',zone='crypt-memorial',point=[16,-3,30]),dict(rite='Absolution',zone='grounds',point=[7,0,7])],
+        staging=dict(zone='stage',point=[22,0,51],yaw=-math.pi/2,cargo_route=[[18.372,0,51],[22,0,42],[22,0,39]],note='Use actual canonical van, ground support and parish gate clearance; no substitute vehicle geometry.'),
+        terrain_cutouts=[dict(bounds=[10,6,34,34],world_surface_y=-.65,method='Persisted editor AdaptiveTerrainTopology punching below the entire crypt including sealed vaults and stair. Architectural ceilings/foundation cover and floor voids remain separate construction requirements.')],
+        structural_interfaces=[dict(id='choir-front',standing_y=3,bounds=[18,26,26,34],requirement='Only rear choir has a deck. Nave/chancel remain tall, open volumes; build supported beam/pier load paths, guard and full flight opening.'),
+            dict(id='bell-frame',standing_y=6,bounds=[10,26,18,34],requirement='Tower masonry piers pass to ground foundations; bell load attaches to real braced frame, not floating roof props.')],
+        flow_reservations=[dict(id=key,path=path,avoid=avoid) for key,path,avoid in [
+            ('public-arrival',['stage','entry','vestibule','rear-nave','nave','chancel'],['office','records','crypt-entry']),
+            ('chapel-return',['nave','chapel','grounds','entry'],['vestry-wash','vestments']),
+            ('crypt-access',['chapel','crypt-entry','crypt-stair','crypt-aisle','crypt-memorial'],['nave','vault-west-a','vault-west-b','vault-east','vault-north'])]],
+        decisions=['Retain the distinctive parish footprint, nave/chancel, side chapel, choir at+3, belfry at+6 and crypt at-3, while replacing unsupported use of leftover room collections.',
+            'Move crypt flight to an east ground bay beneath music service; keep forty actual-sized nave seat reservations and clear centre/side aisles.',
+            'Parish meetings, confidential records and discreet sanitary room are bounded; vestry preparation, washing and dry vestments are separate.',
+            'Keep choir/tower thresholds beyond guard ends. Full physical upper-wall holes, supports and optical/player passage remain required.',
+            'Keep the memorial crypt playable while four larger burial vaults remain permanently sealed context, without tasks or ghost anchors inside.'],
+        remaining=['Author/inspect actual altar, choir, organ-maintenance, bell frame, masonry/roof beams, seating, support and source materials.',
+            'Construct permanent vault barriers, actual runtime sockets and shared native ownership inside the accessible envelope.',
+            'Punch saved world terrain below the complete crypt, with actual roof/ground cover and architectural stair openings; prove body/optical/object/render holes using filled-ground negatives.',
+            'Verify grounded parish arrival, stairs, closed/open doors, ghost/hunter routes, rituals, electrical operation, native/runtime/network parity and required performance; no round-time testing.'])
+
+
 SEARCH_LIMIT=json.loads((OUT/'SEARCH_ENVELOPE_POLICY.json').read_text(encoding='utf-8'))['maximum_accessible_spaces']
 
 
@@ -971,7 +1059,9 @@ def apply_search_envelope(data):
         'ACADEMY': 'stage entry grounds quad west east north south reception lecture lab-entry lab reading library-issue office-entry office dining serving kitchen main-stair east-stair upper-west upper-north upper-east upper-main-stair upper-east-stair dorm-1 dorm-3 study archive cellar-hall cellar-stair plant student-change student-wc student-shower visitor-wc lab-prep',
         'COLLEGE': 'stage entry green teaching-lobby teaching-hall lecture seminar lab-entry lab meeting admin teaching-stair upper-teaching-stair upper-teaching library-stair issue upper-library-stair upper-library-landing bridge-lobby bridge bridge-return res-bridge-approach teaching-library-link upper-res-hall res-west-1 res-east-1 upper-north-cross upper-north-stair north-stair north-cross res-hall cafe west-cellar-stair west-tunnel maintenance cross-tunnel east-tunnel east-cellar-stair res-cellar-stair rear-hall',
     }
-    if data['id']=='MANSION':
+    if data['id']=='CHURCH':
+        opened=all_ids-set('vault-west-a vault-west-b vault-east vault-north'.split())
+    elif data['id']=='MANSION':
         closed=set('coats visitor-wc pantry cold-store refuse suite-bath guest-a-bath guest-b guest-b-entry guest-b-bath staff-bath'.split())
         opened=all_ids-closed
     elif data['id'] in selected:opened=set(selected[data['id']].split())
@@ -1058,7 +1148,11 @@ def validate(data):
         measured={a['asset']:a for a in asset_bounds(data['fit_assets'])['assets']}
         placed=[]
         for item in data['prop_fit_reservations']:
-            room=zones[item['space']];a=measured[item['asset']];origin=item['origin'];lo=[x+y for x,y in zip(origin,a['local_min'])];hi=[x+y for x,y in zip(origin,a['local_max'])]
+            room=zones[item['space']];a=measured[item['asset']];origin=item['origin']
+            yaw=item.get('yaw',0);c,s=math.cos(yaw),math.sin(yaw)
+            corners=[(origin[0]+x*c+z*s,origin[2]-x*s+z*c) for x in [a['local_min'][0],a['local_max'][0]] for z in [a['local_min'][2],a['local_max'][2]]]
+            lo=[min(p[0] for p in corners),origin[1]+a['local_min'][1],min(p[1] for p in corners)]
+            hi=[max(p[0] for p in corners),origin[1]+a['local_max'][1],max(p[1] for p in corners)]
             x0,z0,x1,z1=room['bounds']
             assert x0+.08<=lo[0]<hi[0]<=x1-.08 and z0+.08<=lo[2]<hi[2]<=z1-.08,item
             assert room['y']-1e-6<=lo[1]<hi[1]<=room['y']+room['height'],item
@@ -1066,6 +1160,13 @@ def validate(data):
                 if previous['space']!=item['space']:continue
                 assert any(hi[k]<=pl[k] or lo[k]>=ph[k] for k in range(3)),(previous,item,'native asset overlap')
             placed.append((item,lo,hi))
+        if data['id']=='CHURCH':
+            seats=[(item,lo,hi) for item,lo,hi in placed if item['space']=='nave' and item['asset']=='chair_mp_5']
+            assert len(seats)==40,'Forty actual-size seat reservations'
+            for aisle in data['seating_aisles']:
+                x0,z0,x1,z1=aisle['bounds']
+                for item,lo,hi in seats:
+                    assert hi[0]<=x0 or lo[0]>=x1 or hi[2]<=z0 or lo[2]>=z1,('Seat blocks reserved nave aisle',aisle['name'],item)
         assert sum(i['asset']=='bed_5' for i in data['prop_fit_reservations'])==data.get('expected_single_beds',4 if data['id']=='MANSION' else 2)
         # Bedrooms must have a circulation doorway; a private bathroom cannot
         # become the only route to a guest sleeping space.
@@ -1168,7 +1269,7 @@ def asset_bounds(names=None):
 def main():
     envelopes={}
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse()),('asylum',asylum()),('academy',academy()),('college',college())]:
+    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse()),('asylum',asylum()),('academy',academy()),('college',college()),('church',church())]:
         data=apply_search_envelope(data)
         spaces,links=validate(data)
         envelopes[data['id']]=dict(folder=folder,accessible=data['search_envelope']['accessible_spaces'],sealed=data['search_envelope']['sealed_context_spaces'])

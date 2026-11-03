@@ -494,11 +494,22 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "tools/build_map_rebuild_roughs.py",
+            "development/levels/rebuild/church/rough-layout.json",
+            "development/levels/rebuild/church/rough-plan.svg",
+            "development/levels/rebuild/church/rough-sections.svg",
+            "development/levels/rebuild/church/rough-asset-bounds.json",
+            "development/levels/rebuild/church/rough-decisions.md",
+            "development/levels/rebuild/church/rough-render-verification.json",
+            "development/levels/rebuild/church/search-envelope.json",
+            "development/levels/rebuild/church/search-layout.json",
+            "development/levels/rebuild/previews/church-revised-rough-plan.png"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "next_action": "Construct actual nave/partial choir, parish/vestry/music support, guarded tower and separate crypt stair from this authority after the roster rough batch. Preserve29-space connected search, permanent vault seals, native source scale and full saved editor terrain punching; no round-time testing."
         },
         "S03": {
           "status": "NOT_AUDITED",

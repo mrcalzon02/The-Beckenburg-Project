@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2316,
+  "count": 2317,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -21124,6 +21124,16 @@
       "height": 800,
       "bytes": 1468391,
       "sha256": "1bd1a2cfd6d090762d7d96ed0acae8e7c8bc61f5fcb6e00f7726f9b5b63c752d"
+    },
+    {
+      "path": "development/levels/rebuild/previews/church-revised-rough-plan.png",
+      "url": "development/levels/rebuild/previews/church-revised-rough-plan.png",
+      "title": "Church revised rough plan",
+      "kind": "Planning diagram",
+      "width": 1500,
+      "height": 1482,
+      "bytes": 86670,
+      "sha256": "217fe8cef65a4a6f13937a3a03a586e41bd092dd58d8621c528a1ef3de0a95b1"
     },
     {
       "path": "development/levels/rebuild/previews/college-revised-rough-plan.png",

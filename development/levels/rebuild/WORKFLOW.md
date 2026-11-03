@@ -153,3 +153,8 @@ College design now has81 total architectural spaces but only40 accessible;41 are
 
 
 Owner clarification: build the maps; round-time testing is not part of this operation. Removed timed-mission gates from the active plan, all29 briefs, policy, register and rough generator. Preserve functional geometry/terrain/route and required gameplay verification; do not stall construction for round-duration experiments.
+
+
+## Church bounded construction rough - 3 November
+
+Church revised S02:33 spaces,29 accessible,4 sealed crypt vaults. Preserve characteristic footprint and0/+3/+6/-3 elevations; separate crypt stair beneath music wing frees nave seating. Forty native-size chair reservations keep2m centre and0.87m side aisles; parish/vestry/organ functions have real child rooms. Three measured flights include landing/headroom/guard obligations; tower threshold lies beyond choir guard. Full saved editor terrain punching under entire crypt remains mandatory. Plan reviewed; no runtime/stage acceptance. Continue Castle and remaining remote/annex roughs under<=40 accessible-space cap. Build maps without round-time testing.

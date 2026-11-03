@@ -32,10 +32,10 @@
       "id": "CHURCH",
       "folder": "church",
       "maximum": 40,
-      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
-      "accessible": null,
-      "sealed": null,
-      "evidence": null
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 29,
+      "sealed": 4,
+      "evidence": "development/levels/rebuild/church/search-envelope.json"
     },
     {
       "id": "COLLEGE",

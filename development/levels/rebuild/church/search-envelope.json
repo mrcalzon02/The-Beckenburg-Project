@@ -1,0 +1,241 @@
+{
+  "site": "CHURCH",
+  "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+  "maximum": 40,
+  "accessible_spaces": 29,
+  "sealed_context_spaces": 4,
+  "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+  "barriers": [
+    {
+      "link": "L26",
+      "a": "crypt-memorial",
+      "b": "vault-west-a",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L27",
+      "a": "crypt-aisle",
+      "b": "vault-west-b",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L28",
+      "a": "crypt-aisle",
+      "b": "vault-east",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L29",
+      "a": "crypt-aisle",
+      "b": "vault-north",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    }
+  ],
+  "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+  "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+  "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.",
+  "spaces": [
+    {
+      "id": "nave",
+      "name": "Forty-place nave with centre and side aisles",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "rear-nave",
+      "name": "Under-choir circulation and stair approach",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "vestibule",
+      "name": "Weather vestibule and arrival",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "parish-lobby",
+      "name": "Parish work approach",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "office",
+      "name": "Private parish work and meetings",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "records",
+      "name": "Confidential parish records",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "parish-wc",
+      "name": "Discreet parish sanitary support",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "conversation-entry",
+      "name": "Quiet conversation waiting and access",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "confessional",
+      "name": "Private confessional conversation enclosure",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "consultation",
+      "name": "Private parish consultation",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "chancel",
+      "name": "Chancel and supported altar arrangement",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "chapel",
+      "name": "Side chapel and quiet remembrance",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "vestry",
+      "name": "Vestment preparation and service work",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "vestry-wash",
+      "name": "Vestry washing and supported sink",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "vestments",
+      "name": "Dry vestment storage",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "crypt-entry",
+      "name": "Separate crypt stair and clear side bypass",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "choir-stair",
+      "name": "Choir landing outside flight guards",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "choir",
+      "name": "Choir seating and music stands",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "tower-stair",
+      "name": "Tower stair and protected side bypass",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "music-entry",
+      "name": "Music and organ service approach",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "music-archive",
+      "name": "Music scores and parish performance archive",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "organ-service",
+      "name": "Organ maintenance and working clearance",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "belfry",
+      "name": "Bell frame with guarded inspection access",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "crypt-stair",
+      "name": "Crypt stair lower approach",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "crypt-aisle",
+      "name": "Crypt distribution and memorial approach",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "crypt-memorial",
+      "name": "Crypt memorial chamber and clear rite bay",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "vault-west-a",
+      "name": "Sealed western burial vault A",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "vault-west-b",
+      "name": "Sealed western burial vault B",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "vault-east",
+      "name": "Sealed eastern burial vault",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "vault-north",
+      "name": "Sealed under-chancel burial vault",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "grounds",
+      "name": "Churchyard and cemetery envelope",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "entry",
+      "name": "Churchyard gate and entrance approach",
+      "owner": 13,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical parish van apron",
+      "owner": 14,
+      "access": "OPEN_SEARCH"
+    }
+  ]
+}
